@@ -1,0 +1,1067 @@
+{
+  "generated_at": "2026-11-08T05:46:40.437446+00:00",
+  "worker_slot": 7,
+  "branch": "review/all-unmatched-w07-source-review-20261107",
+  "base_commit": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "unmerged_dependency": "https://github.com/CultureBotAI/MediaIngredientMech/pull/1158",
+  "frozen_shard_source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-07.json",
+  "frozen_shard_sha256": "db9acb54fc821c0ec691d82bf91a05a831be9ad3e491e3a243f941eab84b7c61",
+  "source_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5",
+  "assigned_cases": 188,
+  "independent_review_complete_cases": 188,
+  "sources": {
+    "culturemech": 140,
+    "mediadive": 41,
+    "microbedecoder": 1,
+    "metatraits": 4,
+    "metatraits_gtdb": 2
+  },
+  "dispositions": {
+    "stock_product_mixture_context": 77,
+    "malformed_or_nonchemical_token": 4,
+    "unresolved": 50,
+    "existing_identity_or_alias": 42,
+    "broad_parent_relation_only": 5,
+    "supplied_form_correction": 6,
+    "new_distinct_ingredient_proposal": 4
+  },
+  "proposal_kinds": {
+    "edit_existing_owner": 30,
+    "new_owner": 70
+  },
+  "proposal_count": 100,
+  "evidence_count": 1473,
+  "evidence_kinds": {
+    "primary_source": 426,
+    "unsuccessful_search": 353,
+    "ontology": 96,
+    "source_snapshot": 587,
+    "local_validation": 2,
+    "independent_review": 5,
+    "native_record_review": 4
+  },
+  "existing_owners_compared": 77,
+  "cross_shard_dependency_case_count": 31,
+  "core_artifacts": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/decisions.json",
+      "sha256": "3c6b0f91601c80d59b7b36dbc624eb5399464a5d071c0ebcb98f8643bbbedae7"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/evidence.json",
+      "sha256": "7d23421abae7f3908d0c44ea142b39a51d237c04980270a40e3becb457702a06"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposals.json",
+      "sha256": "4a0b7f0f59161df72dd1c163d158a4250b6c13da735788d99baff32c4294663b"
+    },
+    {
+      "path": "reviews/structured/20261108T054535Z-worker07-source-owner-comparison/review.yaml",
+      "sha256": "e016499e29ae3c0dbe76888203c97bbf4fd981f7d8390a1352df2572b5ba1333"
+    },
+    {
+      "path": "reviews/structured/20261108T054535Z-worker07-source-owner-comparison/review.md",
+      "sha256": "85a99b1fd6f0fcebc2c23b0c8d498ad7f8cfa0c1f6772131edf98d5f353e2003"
+    }
+  ],
+  "native_review_bundle": "reviews/structured/20261108T054535Z-worker07-source-owner-comparison",
+  "filed_findings": [
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1169",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1170",
+    "https://github.com/CultureBotAI/CultureMech/issues/672"
+  ],
+  "existing_followups": [
+    "https://github.com/CultureBotAI/CultureMech/issues/408",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/702",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+  ],
+  "maintained_sources_changed": false,
+  "export_or_hold_approval": false,
+  "remaining_scientific_decisions": [
+    {
+      "case_id": "CM_NAME:031f11f74a53a14660c747b712eb60df233ef395794d4393bc320af5c1738de2",
+      "source_case_id": "Ground beef (fat-free)",
+      "source_label": "Ground beef (fat-free)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Compare each original ATCC chopped-meat preparation, including defatting/cooking and any permitted tissue substitutions, before asserting one reusable supplied-material owner."
+    },
+    {
+      "case_id": "CM_NAME:0426c50ff70dd82dd9dc72e7e3c3e79d0afe64c53a741d65e5aa46de0a853110",
+      "source_case_id": "Sodium acetate·6H2O",
+      "source_label": "Sodium acetate·6H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "An NBRC correction, original formulation, or supplier catalogue/CAS identifying the material called sodium acetate·6H2O in NBRC1284 is needed; do not substitute trihydrate."
+    },
+    {
+      "case_id": "CM_NAME:0b4f68b96737fecbf70d6253a9048cb45171b1288120e06f38a251234aad646f",
+      "source_case_id": "2m HCl",
+      "source_label": "2m HCl",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Obtain the original ATCC formulation or a correction establishing the meaning of “2m” and the actual solution strength; do not silently change m to M."
+    },
+    {
+      "case_id": "CM_NAME:0c83b123bd112992367bb6e14f89bbdf73238a6fd78a8d7e5906960346307ddb",
+      "source_case_id": "Cysteine hydrochloride hydrate",
+      "source_label": "Cysteine hydrochloride hydrate",
+      "disposition": "unresolved",
+      "missing_requirement": "Supplier/CAS or an original MB-medium formulation must specify cysteine stereochemistry and hydration number before selecting CHEBI91248 or another form."
+    },
+    {
+      "case_id": "CM_NAME:124fa17fd256ea30c20638a1fe1c4c2936069ddcac1c464f12d1804fca64910c",
+      "source_case_id": "Fe2(SO4)3",
+      "source_label": "Fe2(SO4)3",
+      "disposition": "unresolved",
+      "missing_requirement": "Split the JCM1267/MediaDive5407 prepared-solution occurrences from the NBRC239 and TOGO M3240 material occurrences; confirm percentage basis and salt hydration for each before source-specific mapping. Remaining non-JCM1267 supplied-form uncertainty and the source normalization/unit conflicts are not resolved by the exact JCM1267 stock proposal."
+    },
+    {
+      "case_id": "CM_NAME:142be94f4e5ec8b284b2f2208648b4532223cfdc30d9cc40b4c828ac5b7bd409",
+      "source_case_id": "EDTA, sodium salt",
+      "source_label": "EDTA, sodium salt",
+      "disposition": "unresolved",
+      "missing_requirement": "Recover the EDTA supplier/CAS or explicit Na count and hydration from NBRC1116 and the original nitrosolobus formulation; resolve the two occurrences separately if forms differ."
+    },
+    {
+      "case_id": "CM_NAME:14cc7b6b53f12cfa096edf7f91fc33f9980f761475a0a8ab6fc90bca0dd1eb62",
+      "source_case_id": "2.5% L-Cysteine . HCl",
+      "source_label": "2.5% L-Cysteine . HCl",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Verify the original ATCC stock preparation, percent basis (w/v or w/w), solvent and hydrate status before proposing a quantitatively defined stock."
+    },
+    {
+      "case_id": "CM_NAME:16f05e8064bcf00561ffc3c7a2b8c801f582e3fbe9e92ca5b12a7254a7c37e5d",
+      "source_case_id": "Sodium L--malate",
+      "source_label": "Sodium L--malate",
+      "disposition": "unresolved",
+      "missing_requirement": "Identify monosodium versus disodium salt and supplied hydration for both JCM recipes; independently remove misleading DL aliases from the L owner without assigning these source cases by convention."
+    },
+    {
+      "case_id": "CM_NAME:1714b91e2d6d571b8283a9bf1a6d946b790d0491a1a5c86125cb1c139fd1524e",
+      "source_case_id": "Cysteine-hydrochloride",
+      "source_label": "Cysteine-hydrochloride",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain original DSM135 formulation or supplier/CAS establishing stereochemistry and water content; do not inherit either CHEBI91247 or91248 from an unspecific alias."
+    },
+    {
+      "case_id": "CM_NAME:220969df6c511cdbe65c3b811d3ca7f711583cdd9ef2e03c41faf46ff0c98e0a",
+      "source_case_id": "Sodium Phosphite",
+      "source_label": "Sodium Phosphite",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain a correction or supplier/CAS resolving the printed NaPHO3·5H2O sodium/proton stoichiometry in Carini2014; keep the pentahydrate and original formula explicit."
+    },
+    {
+      "case_id": "CM_NAME:22fbca582bd0bc9f596294d77ef76494369434465f9e40dfa8bcb490733320d7",
+      "source_case_id": "Sodium molybdate hydrate (source formula unresolved)",
+      "source_label": "Sodium molybdate hydrate (source formula unresolved)",
+      "disposition": "unresolved",
+      "missing_requirement": "Resolve the printed 1992 one-sodium formula through an erratum or original authors’ material specification; retain source mass and unverified database molarity separately."
+    },
+    {
+      "case_id": "CM_NAME:2a8edeb636238d033f7ba513d719e179b94f6c1db3418583bfb98878cc7ba702",
+      "source_case_id": "lactic acid",
+      "source_label": "lactic acid",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the percent basis, acid stereochemistry and supplied solution specification for the JCM87 titrant before minting a quantitative stock or selecting a pure solute identity."
+    },
+    {
+      "case_id": "CM_NAME:3342115b7b50a7b32d658c5d1d165e6319e8dc9a81d64545d7d41fe0325cd882",
+      "source_case_id": "Hutner's basal salts",
+      "source_label": "Hutner's basal salts",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "An authoritative correction or product specification for the malformed molybdate component in DSMZ590 is needed before a chemically exact stock decomposition; preserve all original ingredients and pH adjustments."
+    },
+    {
+      "case_id": "CM_NAME:3351dcc8650d5b8eacb95fe693bc1c767f6a21d091942474277c526716484044",
+      "source_case_id": "Sodium tetrathionate",
+      "source_label": "Sodium tetrathionate",
+      "disposition": "unresolved",
+      "missing_requirement": "Resolve sodium tetrathionate supplied hydration/CAS and exact ontology availability from an original NBRC1022 material specification; preserve the current unmapped sodium-salt owner meanwhile."
+    },
+    {
+      "case_id": "CM_NAME:337d8060d03d2d2243b15ec1cb2d772a3fe1bc89ef93fedc689a3ad423840b57",
+      "source_case_id": "Cysteine HCl x H2O",
+      "source_label": "Cysteine HCl x H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain supplier/CAS or explicit stereochemical wording for the cysteine hydrochloride monohydrate in ATCC Methanogenium medium."
+    },
+    {
+      "case_id": "CM_NAME:349e40c339dc091cb07f33b43fdf1da4a7b888894d59e1a149a46958e239ebd3",
+      "source_case_id": "pectin (citrus peel)",
+      "source_label": "pectin (citrus peel)",
+      "disposition": "broad_parent_relation_only",
+      "missing_requirement": "A source/product-bound material decision is needed for citrus-peel pectin before an exact MIM owner is assigned; do not collapse it with apple pectin or generic polysaccharide from the same alternatives list."
+    },
+    {
+      "case_id": "CM_NAME:368fb6518774f5bc314040d230ec21eca8bb96f8ebd7a9d545c9c813f1d6a5d2",
+      "source_case_id": "Magnesium glycerophosphate",
+      "source_label": "Magnesium glycerophosphate",
+      "disposition": "unresolved",
+      "missing_requirement": "Recover the magnesium salt’s positional-isomer composition, stoichiometry and hydration or catalogue/CAS from the NBRC1397 source."
+    },
+    {
+      "case_id": "CM_NAME:386f980b57398e72815bc04e9fedca3ad9f02e94997b993d186f2c8b3aafb173",
+      "source_case_id": "Fe(NH4)2(SO4)2 x 12 H2O",
+      "source_label": "Fe(NH4)2(SO4)2 x 12 H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Resolve each DSMZ1148/1165 and MediaDive1036 source against an authoritative material specification or correction; distinguish ferric ammonium sulfate dodecahydrate from ferrous ammonium sulfate forms."
+    },
+    {
+      "case_id": "CM_NAME:3a43d217ffb5f8dd949c7d227a75143c9208bbd91fe402856747ef4d34822945",
+      "source_case_id": "Hutner's basal salts (see below)",
+      "source_label": "Hutner's basal salts (see below)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Obtain a JCM979 correction/product identity for the molybdate component and confirm the Metals44 substock before asserting a chemically exact reusable stock."
+    },
+    {
+      "case_id": "CM_NAME:3af7ea1141a6709c188b49804ac3dc72e7f285f2874a2b4e6ef090c05843b4c8",
+      "source_case_id": "NTA (sodium nitrilotriacetate)",
+      "source_label": "NTA (sodium nitrilotriacetate)",
+      "disposition": "unresolved",
+      "missing_requirement": "Resolve sodium stoichiometry and hydrate of the M3140 NTA material using source catalogue/CAS or explicit formula; do not choose trisodium monohydrate from abbreviation alone."
+    },
+    {
+      "case_id": "CM_NAME:3f250ca4a785d9a344c94a8b31eeefa36bbcd8a457ec4d88bf5005d0bd83c8dd",
+      "source_case_id": "Na2MoO3·2H2O",
+      "source_label": "Na2MoO3·2H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "An NBRC correction, original recipe or supplier/CAS must establish whether the MoO3 label denotes molybdate or another compound; preserve the exact O3 source spelling meanwhile."
+    },
+    {
+      "case_id": "CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2",
+      "source_case_id": "Modified Hutner's basal salts (see below)",
+      "source_label": "Modified Hutner's basal salts (see below)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Resolve the molybdenum stoichiometry in JCM900’s own recipe; a spelling similarity to another Hutner stock cannot supply the missing atom count."
+    },
+    {
+      "case_id": "CM_NAME:44806aef359a93dbf05658199dfba1a3a994fcf323dcce72b241795733925874",
+      "source_case_id": "sodium dithionate",
+      "source_label": "sodium dithionate",
+      "disposition": "unresolved",
+      "missing_requirement": "Recover JCM876 original supplier/CAS or an erratum resolving dithionate versus dithionite and supplied form; preserve the10–20mg/L comment and do not borrow Sodium_Dithionite aliases."
+    },
+    {
+      "case_id": "CM_NAME:4a35f314245c3c57e055c3a8d474723e0880518f69775dd3dc6ac9c1ebc29248",
+      "source_case_id": "Aminoacids (100 x)",
+      "source_label": "Aminoacids (100 x)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Identify the supplier/catalogue and constituent formulation of the 100x amino-acid stock used in DSMZ1193,1198 and1503; verify whether the same product was intended in all three."
+    },
+    {
+      "case_id": "CM_NAME:4a791ee13c45d641b3fdb0d65e7b9c51f79c0db197aacc7587a48bf3c77cc17a",
+      "source_case_id": "Na2MoO4·4H2O",
+      "source_label": "Na2MoO4·4H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the original NBRC1333 molybdate reagent specification/CAS or an erratum resolving the tetrahydrate; do not reuse the dihydrate by convention."
+    },
+    {
+      "case_id": "CM_NAME:4e4275dfe464c955db394634d0b8e86d9ba1a34ba1190816244dcc0e0913a8d8",
+      "source_case_id": "25% Sodium acetate",
+      "source_label": "25% Sodium acetate",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the original ATCC percent-basis and preparation for the 25% sodium acetate stock before a quantitative exact formulation proposal."
+    },
+    {
+      "case_id": "CM_NAME:4f44dff670d36850888b0bc014748c4d547ea57bed9d7c1a3f077179f5f5a084",
+      "source_case_id": "50% Sodium lactate",
+      "source_label": "50% Sodium lactate",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Verify NBRC989 supplied product/stereochemistry and percentage basis; correct the TOGO-derived G_PER_L occurrence from the primary ml quantity before fully specifying the stock and any supplied-form identity."
+    },
+    {
+      "case_id": "CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3",
+      "source_case_id": "Modified Hutner's basal salts (see Medium No. 900 )",
+      "source_label": "Modified Hutner's basal salts (see Medium No. 900 )",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Resolve JCM900’s malformed molybdate component and retain the exact JCM1429→900 stock reference before integration."
+    },
+    {
+      "case_id": "CM_NAME:52c936ccc84898a50386068b31e8b39c21f588eff9f07309331eae8650b7a7ee",
+      "source_case_id": "Salmon sperm DNA (Sigma)",
+      "source_label": "Salmon sperm DNA (Sigma)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the Sigma catalogue identifier or original material specification before equating this preparation with an existing salmon DNA owner; retain tissue origin and supplier meanwhile."
+    },
+    {
+      "case_id": "CM_NAME:53b155c3939ecab07e9e8f79331bff3a2a2311a87ce909c29b34afc3c4579b47",
+      "source_case_id": "Ground beef (fat free)",
+      "source_label": "Ground beef (fat free)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Compare the original meat preparation and any allowed substitution per occurrence before assigning a single supplied-material identity; retain the three KOMODO-derived concentration values independently."
+    },
+    {
+      "case_id": "CM_NAME:59686b3b59a0d42a7d77e06bdcd2dcb146290edce3960fa637be7fb50389e6f9",
+      "source_case_id": "Sodium monobasic phosphate",
+      "source_label": "Sodium monobasic phosphate",
+      "disposition": "unresolved",
+      "missing_requirement": "Establish whether this source denotes an unspecified salt concept or the water-free material of Nah2po4; recover the exact saline-basal supplier/CAS before assigning the source to this anhydrous-scoped owner. Do not use4.35g as molecular-form evidence."
+    },
+    {
+      "case_id": "CM_NAME:5ffed7bd758373be61c1ceb590c11a3f08b5d599b296ad95ec9cf4b6097f6a7b",
+      "source_case_id": "Sodium fumarate (adjust pH to 7.0)",
+      "source_label": "Sodium fumarate (adjust pH to 7.0)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Identify whether the source used supplied mono/disodium fumarate or prepared sodium fumarate by neutralization, and retain the pH adjustment in the recipe owner."
+    },
+    {
+      "case_id": "CM_NAME:653334f87dd8872e6c825e44c7ad5d3698d03970db4641c602e6221784f489fc",
+      "source_case_id": "DL--sodium Malate",
+      "source_label": "DL--sodium Malate",
+      "disposition": "unresolved",
+      "missing_requirement": "Recover the M570/JCM566 supplied salt stoichiometry/hydration; preserve DL and do not infer disodium or L identity from existing mixed owner synonyms."
+    },
+    {
+      "case_id": "CM_NAME:6c34dd22fcbcadb47b76381c3ae696c12de6f5d723b51a4e5191d52f7768ad12",
+      "source_case_id": "NiCI2.6H2O",
+      "source_label": "NiCI2.6H2O",
+      "disposition": "malformed_or_nonchemical_token",
+      "missing_requirement": "Verify the printed original SL12 source behind TOGO2277 before publishing the corrected chemical identity; preserve literalNiCI2.6H2O and correct24mg versus frozen24G_PER_L separately."
+    },
+    {
+      "case_id": "CM_NAME:70d65c7b853fd1eadcccbce624a98cbe756836e17e68ea33e83d8758cea4ccda",
+      "source_case_id": "NaII CO3",
+      "source_label": "NaII CO3",
+      "disposition": "unresolved",
+      "missing_requirement": "Recover the original YPS artificial-seawater preparation or supplier specification confirming bicarbonate versus carbonate for this exact0.2g input; retain the conflicting source text and annotation."
+    },
+    {
+      "case_id": "CM_NAME:74a257fe7d3d0fd70b97dda0d3aa6e3b5eb67af3cb6908d0e61fa6aa9c3843bb",
+      "source_case_id": "Tetrasodium EDTA",
+      "source_label": "Tetrasodium EDTA",
+      "disposition": "unresolved",
+      "missing_requirement": "Identify the Na4EDTA supplied hydrate/CAS for the Kaminskyj stock before selecting anhydrous, dihydrate or tetrahydrate; the50g/L stock calculation alone cannot choose."
+    },
+    {
+      "case_id": "CM_NAME:786d3bd1b5b9cd3ea112fd60d801086e8402b3f70cc2ace785c4717078eef6df",
+      "source_case_id": "Sodium borate",
+      "source_label": "Sodium borate",
+      "disposition": "unresolved",
+      "missing_requirement": "For MediaDB205/206/207 recover Deshpande1980 reagent table via Fang1989; for32 recover the exact Gerischer/Ornston1995 minimal-broth trace formulation and distinguish Davis broth; for320/391 recover Lee/Lee1996 trace-metal recipe; for288/289 obtain Song2008 fullCDM table or supplier identity. Resolve borate stoichiometry/hydration per family, retaining all existing database-only quantity limits."
+    },
+    {
+      "case_id": "CM_NAME:7ab6f875fa988b59199027485bbd0e9a1e0581c0c728384f66a7b77a79d43710",
+      "source_case_id": "Hemin (dissolved separately in 10 mM NaOH)",
+      "source_label": "Hemin (dissolved separately in 10 mM NaOH)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the separate hemin-in-NaOH preparation volume and form before defining that stock; correct source65mg versus frozen65G_PER_L without assuming a1L hemin substock."
+    },
+    {
+      "case_id": "CM_NAME:82c4199757ef5a7127e71b3e8a47ab29307be39ab8c7c47cbfb1d43a1b8a9afc",
+      "source_case_id": "K2HSO4",
+      "source_label": "K2HSO4",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain JCM788 erratum/original material specification resolving the extra potassium/proton or sulfur/phosphorus error; do not silently select phosphate or sulfate."
+    },
+    {
+      "case_id": "CM_NAME:87e2f09e483873dc5d06ea03900cd8e05b944f7bc38b8b7469bd94443cd94d58",
+      "source_case_id": "Cobalt ion",
+      "source_label": "Cobalt ion",
+      "disposition": "unresolved",
+      "missing_requirement": "Verify the exact trace-element recipe used by the2009 MediaDB36/37 study and preserve an explicit ion-to-supplied-salt relationship; do not replace Cobalt ion with cobalt chloride hexahydrate as exact identity."
+    },
+    {
+      "case_id": "CM_NAME:89dc10e05fef6ebabde311360b1562e2c574ecef6fb7641a1df55e35a79d66e9",
+      "source_case_id": "Ca-panthothenate",
+      "source_label": "Ca-panthothenate",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the UCM vitamin stock product/CAS or stereochemical specification; distinguish calcium D-pantothenate from the racemate before adding an exact alias."
+    },
+    {
+      "case_id": "CM_NAME:8c90d31130b8557e4100abd7a6c06a9c2bcc218a6e05499d5b02737eac0700bc",
+      "source_case_id": "trypticase (BBL)",
+      "source_label": "trypticase (BBL)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Confirm the BBL product/catalog and digestion specification before expanding the generic Trypticase owner supplied_form or granting a whole-product exact match."
+    },
+    {
+      "case_id": "CM_NAME:8fb530f6f219f59fb6814972d6e014214f5109e2d5cce19e9b2da1f87dfecbb3",
+      "source_case_id": "20% Sodium formate",
+      "source_label": "20% Sodium formate",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the ATCC sodium formate stock preparation specifying w/v versus w/w and solvent; retain the nominal 20% source-qualified stock without inferred mass concentration."
+    },
+    {
+      "case_id": "CM_NAME:99c59c797c3fca542a0e7a28f1db93cc8489ec251204b51c4d8d40498beb8b91",
+      "source_case_id": "Fe2(SO4)3 x H2O",
+      "source_label": "Fe2(SO4)3 x H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the ferric sulfate product CAS and hydration specification for each original recipe; distinguish monohydrate from variable hydrate before minting or linking an exact owner."
+    },
+    {
+      "case_id": "CM_NAME:9dd5bf6d80e4dc6918b71437e5f4455b61aecfd56d32a5b4a7872b2e86ce62f6",
+      "source_case_id": "Albumin fraction V, bovine",
+      "source_label": "Albumin fraction V, bovine",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Identify the fraction-V product in each original source before adding supplied_form; retain OADC nesting and do not add a universal resolving fraction-V synonym."
+    },
+    {
+      "case_id": "CM_NAME:9f5921c2ec9644e4ec999b64674ed0a74e1ff10239b9e22d58729e761a5e78e7",
+      "source_case_id": "4% L-Cysteine . HCl",
+      "source_label": "4% L-Cysteine . HCl",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "The source does not specify percentage basis, solvent and preparation pH for this 4% stock; retain them as unestablished rather than convert to 40 g/L."
+    },
+    {
+      "case_id": "CM_NAME:a5749d896d9a5e0bffd284f9774a5c1504e62aaa5d2281af1f123b0256086e9e",
+      "source_case_id": "3 M HCl",
+      "source_label": "3 M HCl",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Stock solvent, preparation method and any additive are unreported; a source-qualified nominal 3 M reagent can be represented only with partial formulation."
+    },
+    {
+      "case_id": "CM_NAME:a80006adf42fd2fc25ec98799db5a6c48fb0dad9b96dd7a437840082106a4963",
+      "source_case_id": "Fastidious Anaerobe Basal Broth (OXOID)",
+      "source_label": "Fastidious Anaerobe Basal Broth (OXOID)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Confirm the catalog for the DSMZ1203a product before equating Fastidious Anaerobe Basal Broth to CM0957; the dose coincidence supports a candidate, not catalog provenance."
+    },
+    {
+      "case_id": "CM_NAME:b04d83fa8fe25e905fdf22a46f350dacf8551a815dc0522e736bd8dbf274ad0f",
+      "source_case_id": "cysteine.HC1",
+      "source_label": "cysteine.HC1",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the original Trypticase Peptone Yeast broth protocol or cysteine product identity resolving stereochemistry and hydration; do not choose L anhydrous or L monohydrate from the token alone."
+    },
+    {
+      "case_id": "CM_NAME:b2e03cafaba6428eb2f65a985d65fe82aa6e77aebf4a24f675626f3d077b9811",
+      "source_case_id": "Calcium chloride dehydrate",
+      "source_label": "Calcium chloride dehydrate",
+      "disposition": "unresolved",
+      "missing_requirement": "ATCC clarification or product/formula evidence establishing the water count in SolutionA; the currently available original2467/2485 recipes repeat dehydrate without a formula."
+    },
+    {
+      "case_id": "CM_NAME:b38ba9d1a5124d7bc7d9c91b67abdd99b7e1a0c723325e336a7e7145aad6d34b",
+      "source_case_id": "Sodium EDTA",
+      "source_label": "Sodium EDTA",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain each of the five exact papers' sodiumEDTA reagent formula/catalog or detailed medium trace-stock specification. Family-specific retrieval paths and unavailable content are recorded; no general EDTA synonym or cross-paper hydrate assumption resolves these seven occurrences."
+    },
+    {
+      "case_id": "CM_NAME:b406b9b504ae1d6d586905b5e33a489188d858f2bb209473539a1248e682c133",
+      "source_case_id": "Vitamin B12 (Cobalamin)",
+      "source_label": "Vitamin B12 (Cobalamin)",
+      "disposition": "supplied_form_correction",
+      "missing_requirement": "Apply only the source-bound UTEX DAS occurrence correction to CHEBI:17439; no global Vitamin B12 (Cobalamin) alias is proposed. Preserve the original label and source sterilization instructions."
+    },
+    {
+      "case_id": "CM_NAME:b7ec2aca7ee69910149b0d43e904a4d3ce7085bb891a9284c2eeb9eb030a6db6",
+      "source_case_id": "8% NaHCO3 soluiton*",
+      "source_label": "8% NaHCO3 soluiton*",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "JCM1415 does not state w/v versus w/w, solvent or bicarbonate stock preparation; retain nominal 8% and filter-sterilized status without manufacturing an 80 g/L assertion."
+    },
+    {
+      "case_id": "CM_NAME:bce0e8c16f2fdd6703dddd0c6d92c399b967ad01d78987083c3caad27643209f",
+      "source_case_id": "NaOH 1 N",
+      "source_label": "NaOH 1 N",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Stock solvent, additional constituents, and percentage basis where applicable remain unspecified. Exact source-bound proposals are concrete; combining independent source-family stocks would require additional proof of preparation equivalence."
+    },
+    {
+      "case_id": "CM_NAME:bf6993fa31b9c42c095c08953545145a93b7e60c73c65efc71f30d460189495c",
+      "source_case_id": "Cysteine HCl.H2O",
+      "source_label": "Cysteine HCl.H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the supplier/CAS for the cysteine hydrochloride monohydrate used in M2794 before exact L-monohydrate assignment."
+    },
+    {
+      "case_id": "CM_NAME:bfe544d89654bf08a1ed2bf816fb0925bcfdbe07006627eb4ff62d22051a5974",
+      "source_case_id": "PPLO (Difco)",
+      "source_label": "PPLO (Difco)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Identify the Difco PPLO catalog and whether agar-free broth, serum fraction or another PPLO product is intended before an exact owner/product proposal."
+    },
+    {
+      "case_id": "CM_NAME:c034b8cb64cc7c4539b9a9a87a27f542bb7f8bdcb33cc9419ee7afd2f1df4707",
+      "source_case_id": "Ground beef (free of fat)",
+      "source_label": "Ground beef (free of fat)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Retain fat-removal preparation in source/product metadata; reconcile the intended source-qualified material scope with the generic Ground_Beef owner before adding a resolving alias."
+    },
+    {
+      "case_id": "CM_NAME:c2c482bbf12b1fabb3c75ae01be60d2a073650e27f89ae9a22a1e6515efa6b18",
+      "source_case_id": "2 M Sodium acetate (pH 7.0)",
+      "source_label": "2 M Sodium acetate (pH 7.0)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Retain pH7.0 and nominal 2 M explicitly, with unreported solvent and adjustment composition recorded as partial formulation."
+    },
+    {
+      "case_id": "CM_NAME:c4a3b426724587856bd1b6ac9e9b85accda92b889bb445b90ed99cede06b475b",
+      "source_case_id": "Dried shrimp",
+      "source_label": "Dried shrimp",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Obtain the NBRC854 dried-shrimp procurement/material specification (whole animal versus processed powder, species and drying treatment) before choosing a narrower biological-product owner."
+    },
+    {
+      "case_id": "CM_NAME:c7a18faad34eff9d3a5a95dda4b3c1342f59d5be81b14166eeb1d0ab6ca7754f",
+      "source_case_id": "Basal salts medium (BSM)",
+      "source_label": "Basal salts medium (BSM)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Verify the original BSM formulation behind M2405, especially ammonium sulfate stoichiometry and unusual calcium-chloride heptahydrate; no corrected chemically grounded composition is justified yet."
+    },
+    {
+      "case_id": "CM_NAME:d2212d370b342d9f4334d6d282fed8d7aeb19bcb7969caec11b46657981e77b2",
+      "source_case_id": "Modified Hutner's basal salts",
+      "source_label": "Modified Hutner's basal salts",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Resolve JCM900 molybdate formula and the JCM149 Metals44 component identities before complete chemical partonomy or equivalence to conventional Hutner salts; no Mo7 correction is inferred."
+    },
+    {
+      "case_id": "CM_NAME:d3bfa634d1ec46668ce876eab5871ab71b2e154f039678341b4a3a4001bf5914",
+      "source_case_id": "Cysteine-Sulfide Reducing Agent",
+      "source_label": "Cysteine-Sulfide Reducing Agent",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Compare both source reducing-agent subrecipes and resolve the sodium-sulfide stock's supplied form before any shared identity; a source-specific partial component transcription is possible without assuming equivalence."
+    },
+    {
+      "case_id": "CM_NAME:d3f3b6adb8e8a750dff6f76c3570df7e5957551a8499fc73f1c9d63f41c55fc0",
+      "source_case_id": "CysteineHCl",
+      "source_label": "CysteineHCl",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the ATCC RGCA cysteine hydrochloride product or CAS resolving L versus DL and hydrate versus anhydrous before aliasing."
+    },
+    {
+      "case_id": "CM_NAME:d8524a459d93b12ae4eb182c7b6f54a4ceef4a24dfed2c38abab90411a36cae8",
+      "source_case_id": "20 mM Sodium acetate",
+      "source_label": "20 mM Sodium acetate",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "The source leaves solvent, sodium-acetate hydrate used and stock preparation pH unreported; preserve these limits while representing the stated 20 mM stock."
+    },
+    {
+      "case_id": "CM_NAME:d90c4f46c2675a41fb58b1fe98cd8b57336fa9793bbaa3ab4cb5e01cab734f2b",
+      "source_case_id": "Sodium DL--malate",
+      "source_label": "Sodium DL--malate",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain sodium stoichiometry/CAS for the JCM138 sodium DL-malate; the source racemate alone is insufficient to choose disodium malate."
+    },
+    {
+      "case_id": "CM_NAME:dc771af5cfaaf422d6f3c754dde1ae3b9d5fffd9c40918d7d252cdc8ed80315d",
+      "source_case_id": "Sodium ammonium phosphate",
+      "source_label": "Sodium ammonium phosphate",
+      "disposition": "new_distinct_ingredient_proposal",
+      "missing_requirement": "Nine Schaechter occurrence identities resolved; native exact-parent/collision checks apply to the proposed new CAS owner. Eight remaining occurrences need exact source reagent evidence: three E2flasks require Durner/E2 specification; four Hassan and oneTseng require original medium formula/catalog. Failed content retrieval is recorded per family."
+    },
+    {
+      "case_id": "CM_NAME:de62f5de28188461b72a9cb065140dbd33f5ac8d3f5a2437cb8cb2095c2ea312",
+      "source_case_id": "0.1 M Tris-HCl (pH 7.5)",
+      "source_label": "0.1 M Tris-HCl (pH 7.5)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Resolve the NBRC981 buffer preparation proportions, solvent and titrant before complete component quantitation; retain nominal 0.1 M/pH7.5 in a source-qualified partial buffer proposal."
+    },
+    {
+      "case_id": "CM_NAME:df7a6e4c8a0b1161d925c592e02bcdb81d1c2ba4b5a813b78719992a2be33048",
+      "source_case_id": "3% L-Cysteine HCl x H2O solution",
+      "source_label": "3% L-Cysteine HCl x H2O solution",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover JCM825's percent basis and preparation details; record the nominal 3% source-qualified stock without converting a stock addition into solute identity."
+    },
+    {
+      "case_id": "CM_NAME:e1e81a8e8ecb180b9b01b930871a36e14674494443205e7f2d127aba6f6c628e",
+      "source_case_id": "1% Sodium fumarate",
+      "source_label": "1% Sodium fumarate",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Obtain the ATCC ETSA sodium-fumarate product and stock recipe specifying salt stoichiometry, percent basis and solvent before precise chemical components are asserted."
+    },
+    {
+      "case_id": "CM_NAME:e3da6f7bf1c5bae7d67767c3dc6e596c173aef40cc8ca7131c369352d22eca3c",
+      "source_case_id": "Sodium lactate, 60% syrup",
+      "source_label": "Sodium lactate, 60% syrup",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the ETSA syrup supplier/CAS, D/L composition and w/w versus w/v definition; retain the exact 60% syrup preparation label and measured addition."
+    },
+    {
+      "case_id": "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057",
+      "source_case_id": "5% L-Cysteine·HCl·H2O solution",
+      "source_label": "5% L-Cysteine·HCl·H2O solution",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Stock solvent, additional constituents, and percentage basis where applicable remain unspecified. Exact source-bound proposals are concrete; combining independent source-family stocks would require additional proof of preparation equivalence."
+    },
+    {
+      "case_id": "CM_NAME:e90cf51e8cba9ef4964d0ddb748cfcf83a1106c9ce93535bf84a46817efef6dc",
+      "source_case_id": "Basal salts solution",
+      "source_label": "Basal salts solution",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Resolve the variable MnSO4.xH2O product and methylene-blue supplied form for chemically complete component identities; the exact nominal recipe can be retained as partial composition now."
+    },
+    {
+      "case_id": "CM_NAME:ec5dfa1a10c697fb842cd626fd1f8980a7a0a2bdc0602e41a3e9f7c49acfe648",
+      "source_case_id": "1 M Tris base (pH 8)",
+      "source_label": "1 M Tris base (pH 8)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "The exact JCM923 TiNTA recipe leaves the 1M Tris pH8 solvent/titrant unspecified; represent the source-qualified nominal stock with partial composition, not pure Tris hydrochloride."
+    },
+    {
+      "case_id": "CM_NAME:ee2063b89d5bf0f6287830a6c5c469912d0082c38df9e5f3322be8ba02155963",
+      "source_case_id": "Magnesium citrate",
+      "source_label": "Magnesium citrate",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the BD220908 Lowenstein-Jensen product formulation and magnesium citrate stoichiometry/hydration; remove or correct the unrelated source pointer through CultureMech issue672 without guessing the exact citrate salt."
+    },
+    {
+      "case_id": "CM_NAME:ef6198902b25d38aa566fde56ba98563c271888c3bf28a8172a225d985a8c0de",
+      "source_case_id": "Hutners basal salts (see below)",
+      "source_label": "Hutners basal salts (see below)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Resolve the printed ammonium-molybdate formula and Na-EDTA salt hydration/stoichiometry before chemically complete composition or cross-source identity merging; quantities and raw source labels remain retained."
+    },
+    {
+      "case_id": "CM_NAME:f40cc6b6217cd935096c368b76efcc22f694bd3f09012dad3cfc4611c91455e2",
+      "source_case_id": "DL--Sodium malate",
+      "source_label": "DL--Sodium malate",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the JCM416 product CAS/formula to decide monosodium versus disodium racemate and hydrate; owner alias cleanup alone does not resolve this case."
+    },
+    {
+      "case_id": "CM_NAME:f4b7247eaa299ed8d4210187e01cdb21bb990e505cfab88096fdf0be7c9c298a",
+      "source_case_id": "Ground Beef (fat-free)",
+      "source_label": "Ground Beef (fat-free)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Reconcile source-specific fat-free meat preparation and the generic beef owner; do not turn a preparation-qualified input into a blanket synonym for every ground-beef product."
+    },
+    {
+      "case_id": "CM_NAME:f59260f7ed66e29822e70a79cb4993e421e0d793d58c7e093bcb1ca1cb4af502",
+      "source_case_id": "H4MoNa2O6·2H2O",
+      "source_label": "H4MoNa2O6·2H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain an authoritative correction or original reagent/CAS for NBRC1382 SL-10 molybdate: the currently available original recipe itself preserves H4MoNa2O6.2H2O and cannot settle dihydrate versus four-water total."
+    },
+    {
+      "case_id": "CM_NAME:f60372bfb81ec985743cbe4f00853d33a39dcb48dd9ceae0d54024f3e2f2eaaa",
+      "source_case_id": "5% L-Cysteine·HCl·H2O solution (pH 7.0)",
+      "source_label": "5% L-Cysteine·HCl·H2O solution (pH 7.0)",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Retain the nominal 5%/pH7 source-qualified preparation; identify percentage basis and pH-adjustment reagent before claiming complete formulation."
+    },
+    {
+      "case_id": "CM_NAME:f6a7d9a06e24d3ae6488a3cd630fdd8e4d0c4c45e452cb1da38ef3b40bbe662b",
+      "source_case_id": "5% L--Cysteine・HCl・H2O",
+      "source_label": "5% L--Cysteine・HCl・H2O",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Stock solvent, additional constituents, and percentage basis where applicable remain unspecified. Exact source-bound proposals are concrete; combining independent source-family stocks would require additional proof of preparation equivalence."
+    },
+    {
+      "case_id": "CM_NAME:f7b679968ef7e30c05d3e07fa88c4ab8b912292faff19cdfc577c9a51209f6b3",
+      "source_case_id": "0.2 M Sodium citrate",
+      "source_label": "0.2 M Sodium citrate",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover LS4D's sodium citrate stock recipe or reagent CAS and solvent/pH; no exact dry citrate alias is justified."
+    },
+    {
+      "case_id": "CM_NAME:f9fd97eb47ad435478945ddde4c92802a6e990d8cc8b6ca4236dea16ec4320a9",
+      "source_case_id": "EDTA (disodium magnesium salt)",
+      "source_label": "EDTA (disodium magnesium salt)",
+      "disposition": "unresolved",
+      "missing_requirement": "Identify the original BG11 magnesium-disodium-EDTA product/CAS and hydration; preserve its magnesium complex rather than normalize to generic Na2EDTA."
+    },
+    {
+      "case_id": "CM_NAME:fbe66f9b5808a970919063e1fe89858bf3cfa0fa85d947ae630eb237085f020f",
+      "source_case_id": "Na2MoO3",
+      "source_label": "Na2MoO3",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the original phosphate-buffered basal-medium trace-element formulation or supplier CAS proving the intended molybdenum salt before an O3-to-O4 correction."
+    },
+    {
+      "case_id": "CM_NAME:fcdfac93a41f30a11ac947015d7128b7a3ee328f9a64c6352d89b3def48714da",
+      "source_case_id": "CuSO2・5H2O",
+      "source_label": "CuSO2・5H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Authoritative correction or reagent identity for exact TOGO M2499, which itself repeats CuSO2.5H2O and has no original src_url. Other BG11 recipes with CuSO4.5H2O provide a candidate correction, not proof of source equivalence."
+    },
+    {
+      "case_id": "KG_CASE:07107c1e144c59cc0ed43fd145733dc7d8b9fc468f0ce4d5528f74aacc1dd4a1",
+      "source_case_id": "mediadive.ingredient:641",
+      "source_label": "Na2MoO4 x H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "A supplier certificate or corrected DSMZ 652 formulation identifying the water stoichiometry and form-specific registry identity is required."
+    },
+    {
+      "case_id": "KG_CASE:08d3d5e5918fd9519798cf0408965c809d7c12aa9ded408966ccef4eeaac5059",
+      "source_case_id": "kgmicrobe.compound:mono_and_disaccharides",
+      "source_label": "mono- and disaccharides",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "A constituent list and proportions, or a source declaration that this is a logical class rather than a material, is needed before any composition-bearing owner or exact chemical mapping."
+    },
+    {
+      "case_id": "KG_CASE:0e4c751b8b2918ec9eb5853d29f4fe0b95915087f0afb3580059d9fb2d24a658",
+      "source_case_id": "mediadive.ingredient:1438",
+      "source_label": "Sodium succinate dibasic",
+      "disposition": "unresolved",
+      "missing_requirement": "Verify the original reagent/catalogue or obtain source correction of the contradictory registry fields for ingredient 1438; retain the specific CAS owner without releasing the held payload."
+    },
+    {
+      "case_id": "KG_CASE:0f49175920bf5a8e60fd00bca44ce0ae02cd4a0ec237895569303a396b9e0fc6",
+      "source_case_id": "mediadive.ingredient:1621",
+      "source_label": "Whole egg",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "An originating recipe or supplier specification naming species, processing and whether the intact edible contents are meant is required for a more specific material owner."
+    },
+    {
+      "case_id": "KG_CASE:0fd9fd83d7a1c10030a47c4828ffc3282928f9a7bc16eb567a4a696fa5add9d7",
+      "source_case_id": "mediadive.ingredient:408",
+      "source_label": "Fresh egg mixture",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Taxon and yolk:white proportions remain unresolved component metadata; they do not prevent the proposed source-qualified local mixture identity. Do not substitute a chicken-specific or isolated-yolk term."
+    },
+    {
+      "case_id": "KG_CASE:12f33a8cda06d48f6eddb95984f4532096ca82feca85956de42f470658749e86",
+      "source_case_id": "kgmicrobe.compound:trans_styrylacetic_acid",
+      "source_label": "trans-styrylacetic acid",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "For promotion, establish the nearest valid molecular parent and source provenance connecting the substrate claim to the trans compound; do not substitute cis or unspecified styrylacetic acid."
+    },
+    {
+      "case_id": "KG_CASE:162d18475f6e771aeb76341bb8f7414b9fb92ae7692dcacd1244487c594344bd",
+      "source_case_id": "mediadive.ingredient:1079",
+      "source_label": "Fastidious Anaerobe Basal Broth",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Confirm the source product/catalogue version before a product-specific owner merge or complete component assertion."
+    },
+    {
+      "case_id": "KG_CASE:1d2e2cf41a5d87153aeed000208c4c3fb55e1cdca821427112ef1aceb5ded6b0",
+      "source_case_id": "mediadive.ingredient:2042",
+      "source_label": "Disodium succinate x 6 H2O",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Retain native review requirements for the published owner payload and existing held aliases before integration."
+    },
+    {
+      "case_id": "KG_CASE:222962e8ad728c63efb486e7fb9b52c3c34fc0ec961ee389bce717e4c380845d",
+      "source_case_id": "mediadive.ingredient:1997",
+      "source_label": "Trisodium citrate x 3 H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain a reagent certificate or corrected primary recipe identifying whether the three-water material is intended and its exact registry identity."
+    },
+    {
+      "case_id": "KG_CASE:2323488a302c5636597f524692aece7e0be6c3480c67e94199b714a154010d79",
+      "source_case_id": "mediadive.ingredient:291",
+      "source_label": "Fe2SO43 x H2O",
+      "disposition": "broad_parent_relation_only",
+      "missing_requirement": "Verify whether x H2O is an unspecified hydrate or literal monohydrate and establish a supplied-form registry identity before an exact owner payload."
+    },
+    {
+      "case_id": "KG_CASE:233c1703a507a0c9e437f3497d74b0bfbea0c752f3aa8ca5005088316a5012b7",
+      "source_case_id": "mediadive.ingredient:1590",
+      "source_label": "Titriplex1",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Coordinate duplicate-owner reconciliation and existing acid-owner payload defects; the alias proposal alone does not retire Titriplex1.yaml or release unrelated aliases."
+    },
+    {
+      "case_id": "KG_CASE:2635950d471ad26b8cb1d9f5df4d2fe6c4a7cdfc18ca1695a58cb19ec69d63ac",
+      "source_case_id": "mediadive.ingredient:1091",
+      "source_label": "Cysteine-HCl",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the original product/CAS with explicit stereochemistry and water state, and correct the QSY9 cross-reference before mapping to CHEBI:91247 or a racemate-specific substance."
+    },
+    {
+      "case_id": "KG_CASE:2c86368184e18ac04e7bc4fce8644b61ad861881b31744cec56839265c344806",
+      "source_case_id": "mediadive.ingredient:1678",
+      "source_label": "Na2MoO7 x 2 H2O",
+      "disposition": "supplied_form_correction",
+      "missing_requirement": "A source-bound override/correction referencing JCM 196 is needed for consumption; existing held owner aliases require separate review."
+    },
+    {
+      "case_id": "KG_CASE:2cceaeef1712d27a2b90d0e4f3c27b7419e6a8d7cbaf662e3f18f8e549d7e949",
+      "source_case_id": "mediadive.ingredient:1141",
+      "source_label": "Homo-PIPES",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Native review must resolve joined-synonym scope and unsupported role claims before whole-payload approval."
+    },
+    {
+      "case_id": "KG_CASE:2d0fbc49e3201630f3dd7268ab310e5d07c62039beb2d72d509f84bca59c7089",
+      "source_case_id": "mediadive.ingredient:1114",
+      "source_label": "Cysteine hydrochloride",
+      "disposition": "unresolved",
+      "missing_requirement": "The original reagent certificate or a corrected source record must establish stereochemistry and hydrate state; do not auto-reroute to the anhydrous L owner."
+    },
+    {
+      "case_id": "KG_CASE:2d30cabfc7239a909ca76631b758468ace7610483720552bfaf228d3ea889b54",
+      "source_case_id": "mediadive.ingredient:1466",
+      "source_label": "Soya pepton",
+      "disposition": "broad_parent_relation_only",
+      "missing_requirement": "Establish product scope and reconcile duplicate/broad-class ownership before changing the current exact FOODON grounding."
+    },
+    {
+      "case_id": "KG_CASE:3419b07e168ca9c5d60215660b0211728b3888a228ec980787a02a43f63a4f65",
+      "source_case_id": "mediadive.ingredient:1732",
+      "source_label": "Basal salts solution",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Shared B proposal records the complete JCM1209 nominal stock list; unresolved manganese-sulfate hydrate and methylene-blue form remain UNMAPPED components. Root must add the reverse case backlink."
+    },
+    {
+      "case_id": "KG_CASE:390053d0947100a6cb4a982bdd9502455800cc2d0215b39a09022619c012ad0c",
+      "source_case_id": "mediadive.ingredient:2436",
+      "source_label": "1-Naphtylacetic Acid",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Retain existing native review and token holds until the full exported payload is reconciled."
+    },
+    {
+      "case_id": "KG_CASE:39176cda33a3a243c4fe56e20476094cbbde405e83a7c43866e4e9c01c084dac",
+      "source_case_id": "mediadive.ingredient:1895",
+      "source_label": "K2HSO4",
+      "disposition": "malformed_or_nonchemical_token",
+      "missing_requirement": "A source correction or reagent catalogue identity is required before a chemical owner can be proposed."
+    },
+    {
+      "case_id": "KG_CASE:4123f5453207d49f0e51bb151aa40aa5ed9cb144018b114ab341b60c02645f09",
+      "source_case_id": "mediadive.ingredient:1416",
+      "source_label": "Na2MoO7O4 x 2 H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain a corrected DSMZ 1560 formulation or product/CAS certificate for the mineral-stock row before routing ingredient 1416 to dihydrate CHEBI:75213."
+    },
+    {
+      "case_id": "KG_CASE:474ac93022610e80bc34d2f6ab7a416e9e79b410b22210369ade23571f67fc61",
+      "source_case_id": "mediadive.ingredient:1860",
+      "source_label": "L-Cysteine x HCl x H2O solution",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover solvent/concentration and source-qualified stock composition before component assertions or any predicate correction; preserve current downstream holds."
+    },
+    {
+      "case_id": "KG_CASE:47b7f98c62ad014d1cdf0b3c0b0a1646970033968322d292e6c4a6948fde76a8",
+      "source_case_id": "mediadive.ingredient:1930",
+      "source_label": "Nitrilotriacetic acid trisodium salt monohydrate",
+      "disposition": "supplied_form_correction",
+      "missing_requirement": "Coordinator must integrate promotion/move, exact CAS row, broadMatch parent plus mandatory registry row, and reconcile duplicate source 1482 provenance; current downstream holds are not erased."
+    },
+    {
+      "case_id": "KG_CASE:49fa2172ea65ecfc9a8e6195e201212826c25398b4f0ec8bd34b5a1055c93159",
+      "source_case_id": "mediadive.ingredient:2134",
+      "source_label": "Bacto Panton",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "An original Difco/BD catalogue or corrected DSMZ product name and formulation is required for a more specific product owner; do not silently normalize Panton to another brand."
+    },
+    {
+      "case_id": "KG_CASE:4aa38c4e900182cfd9f63ff878e6e8cf2d705e03eef68c301dd4777a0721a9be",
+      "source_case_id": "mediadive.ingredient:770",
+      "source_label": "L-Cysteine HCl x H2O",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Coordinator should reconcile duplicate owners with complete source statistics and provenance, retaining inherited payload holds until reviewed."
+    },
+    {
+      "case_id": "KG_CASE:656e635db15ef49c5b212242823af460833a5ac3e4e4dd9aed9e8a53d270b717",
+      "source_case_id": "kgmicrobe.compound:cellostatin",
+      "source_label": "cellostatin",
+      "disposition": "unresolved",
+      "missing_requirement": "A primary structural characterization or authoritative registry record linking cellostatin to a specific structure and supplied form is required for promotion; discovery/production evidence alone is insufficient."
+    },
+    {
+      "case_id": "KG_CASE:67304cd492c605f3f189b52bb0876d1f6865412fbedf46e40020e9a287e44417",
+      "source_case_id": "kgmicrobe.compound:trans_styrylacetic_acid",
+      "source_label": "trans-styrylacetic acid",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Establish the molecular parent and historical source-to-trans-substrate linkage before changing identifier and published parent relation."
+    },
+    {
+      "case_id": "KG_CASE:67b7093aa01e7ccfcbc31bef2eb616170caac68564688ec849b8d1266566448c",
+      "source_case_id": "kgmicrobe.compound:l-alanine_4-nitroanilide",
+      "source_label": "L-alanine 4-nitroanilide",
+      "disposition": "broad_parent_relation_only",
+      "missing_requirement": "Verify a form-specific registry or an exact ontology concept supported by the repository validator before promotion; any C004813 relation must remain broad and registry-preserving."
+    },
+    {
+      "case_id": "KG_CASE:7948bf1ec77fe9f7edc45136563351f4d43f551dbb2451a564a1de32bc9cabde",
+      "source_case_id": "mediadive.ingredient:1852",
+      "source_label": "Sodium resazurin",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Nominal source-qualified stock proposal is concrete; UNKNOWN completeness retains unreported solvent/preparation details. Source-bound integration and complete owner review remain required."
+    },
+    {
+      "case_id": "KG_CASE:8130043b63c67f0e4b6ab8c93d89c601ec5b2bd6e53c7ef29acc636315297af5",
+      "source_case_id": "mediadive.ingredient:847",
+      "source_label": "Cyanocobalamine",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Reconcile the competing vitamin-class alias and inherited owner-payload holds before source consumption."
+    },
+    {
+      "case_id": "KG_CASE:81beda652081417213eba4c3d21b7e273575263949bd6bf1647eeeb0e0e76bfa",
+      "source_case_id": "mediadive.ingredient:1417",
+      "source_label": "Na-Nitrilotriacetat",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain the trace-stock reagent product/CAS with sodium stoichiometry and water state, or a corrected primary DSMZ 1560 formulation."
+    },
+    {
+      "case_id": "KG_CASE:87a3023cb2b6523988122d33d722774edb88942f02c97e21dd816a7954a0e850",
+      "source_case_id": "mediadive.ingredient:1680",
+      "source_label": "CMRL 1066",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the contemporaneous 042-1545 formulation and dilution basis before product merge or exact component inventory."
+    },
+    {
+      "case_id": "KG_CASE:8c75bfd344f2684dbebc66b342e002ae275248698f46f09945b1580400579684",
+      "source_case_id": "kgmicrobe.compound:etabetacin",
+      "source_label": "etabetacin",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain primary structural elucidation or an authoritative exact registry linkage for etabetacin, including any component/mixture distinction, before replacing the local registry."
+    },
+    {
+      "case_id": "KG_CASE:8e4d3cf9aef1f84007b584b506027e319f8285647083af699d0cbdecc1de4a62",
+      "source_case_id": "mediadive.ingredient:1562",
+      "source_label": "Sodiumbenzoate",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Retain native review and held-token checks before downstream release."
+    },
+    {
+      "case_id": "KG_CASE:8f368d39ec935e5ff4951158e77e38c8bb2a34484ce5ae79a0eaf1c475a4b3a0",
+      "source_case_id": "mediadive.ingredient:1083",
+      "source_label": "TAPS sodium salt",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Native review must retain the salt/free-acid boundary and assess unqualified aliases and computational role evidence separately."
+    },
+    {
+      "case_id": "KG_CASE:9ab36ad4b322d429ea1ed8d1f9a678f746bdb6d938737f0537bb177e19061565",
+      "source_case_id": "kgmicrobe.compound:l-alanine_4-nitroanilide",
+      "source_label": "L-alanine 4-nitroanilide",
+      "disposition": "broad_parent_relation_only",
+      "missing_requirement": "Verify a source-specific registry/ontology identity for the L form and its validator support before promotion; retain any generic heading only as a broad relation."
+    },
+    {
+      "case_id": "KG_CASE:a6b19d14188dc7b9dfec1be11bc0fa0847f929b724b529324189d2f897bb9bf0",
+      "source_case_id": "mediadive.ingredient:2132",
+      "source_label": "Difco 0001",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Recover the historical Difco 0001 catalogue formulation and determine which half-strength option the source row denotes before product/component curation."
+    },
+    {
+      "case_id": "KG_CASE:ac6686c0d61be7f652dcf0c2a495b463e1adf24fee613329fd02707bd19d759d",
+      "source_case_id": "mediadive.ingredient:2154",
+      "source_label": "MgSO4 x 7 H2O",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "The nominal source-qualified stock is now proposed with UNKNOWN component-list completeness. Solvent and preparation/final-volume convention remain unreported and must be verified before declaring complete composition."
+    },
+    {
+      "case_id": "KG_CASE:ae8ae53404df18ce150c7bb93e25c7bf473b5b2bdbef690747ad9fa78b44ece7",
+      "source_case_id": "mediadive.ingredient:1157",
+      "source_label": "L-Cysteine HCl",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain an original product identity or corrected primary ingredient record confirming L stereochemistry, anhydrous/hydrate form and appropriate CAS."
+    },
+    {
+      "case_id": "KG_CASE:b5fe6f2f30ffe4512e90b14ef0b7f557d89f28865fb4bc9dffae123dd178f277",
+      "source_case_id": "mediadive.ingredient:1989",
+      "source_label": "Basal mineral NaCl medium",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Source boundary is now represented by C-P07. Remaining follow-up is form-specific recursive review of the separately referenced stocks; it does not block the bounded basal preparation proposal with complete input enumeration."
+    },
+    {
+      "case_id": "KG_CASE:bd5686bd774f3246b1d7f121e97e20c7db142bfa397ecbbef99915326d809b16",
+      "source_case_id": "mediadive.ingredient:1036",
+      "source_label": "FeNH42SO42 x 12 H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain source correction/product identity for DSMZ 1148 and separate its occurrences from the ferric-alum DSMZ 1165 recipe before exact mapping."
+    },
+    {
+      "case_id": "KG_CASE:c26a75f93ba943b7c3d2b086d2f8854de0b53cd6bf718cb2f82686da5ef8bffb",
+      "source_case_id": "mediadive.ingredient:1888",
+      "source_label": "Trisodium citrate x H2O",
+      "disposition": "unresolved",
+      "missing_requirement": "Obtain a monohydrate product certificate or primary correction of JCM 758, then a form-specific identifier with appropriate parent; re-assess the current generic MeSH owner."
+    },
+    {
+      "case_id": "KG_CASE:c35f85e70ce97bd55f770143509729bfb301a1768aa70f4c5fe37f12fc848e9b",
+      "source_case_id": "mediadive.ingredient:1473",
+      "source_label": "Anaerobe Basal Broth CM0957",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "No further evidence is required for this nominal source/catalogue product proposal. Coordinator must validate the local registry row, named-medium component assertions and current source/version boundary before integration."
+    },
+    {
+      "case_id": "KG_CASE:dcd55a5ebcd552423dbd4675ae8236528f505692b77b04feba3feed9f075edf1",
+      "source_case_id": "mediadive.ingredient:2153",
+      "source_label": "L-15 powder",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Identify the supplier catalogue/pack formulation and distinguish powder contents from additional DSMZ 1600 supplements before product or stock curation."
+    },
+    {
+      "case_id": "KG_CASE:ddb492514c06ad36ad9be1c471484615dc7d4555d1b875dd23ff999c3733b7ca",
+      "source_case_id": "mediadive.ingredient:1503",
+      "source_label": "Na2 MoO4 x 2 H2O",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Keep source-specific and owner-payload holds until each affected alias/context is reviewed."
+    },
+    {
+      "case_id": "KG_CASE:e3f11fbd29d1d0f932986cc7179ec7190be4345af8b35da405a39816812a32fb",
+      "source_case_id": "mediadive.ingredient:878",
+      "source_label": "Calcium panthothenate",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Coordinator must compose this baseline-relative proposal with the separately reviewed B-part alias proposal and retain other owner review findings; issue 1157 already tracks this contamination."
+    },
+    {
+      "case_id": "KG_CASE:e51b8542973eebb6c0753cc44ed90966175428419727e04f64a78c9a9b6d48ef",
+      "source_case_id": "mediadive.ingredient:2045",
+      "source_label": "Fe2SO43",
+      "disposition": "stock_product_mixture_context",
+      "missing_requirement": "Nominal source-qualified stock proposal is concrete; UNKNOWN completeness retains unreported solvent/preparation details. Source-bound integration and complete owner review remain required."
+    },
+    {
+      "case_id": "KG_CASE:e7eff61770e1f6b938053cbef7806bddff1f85344724cae35805f5449c3ded43",
+      "source_case_id": "mediadive.ingredient:1198",
+      "source_label": "Cysteine HCl",
+      "disposition": "unresolved",
+      "missing_requirement": "Correct the source molecular identity/conversion using the original reagent or recipe, including stereo and water state, before mapping free cysteine versus hydrochloride."
+    },
+    {
+      "case_id": "KG_CASE:f134c5bd91d7eb03c439268ee34f5c5e3843f5c9628cf5c705e9f1ee31ca2a6e",
+      "source_case_id": "mediadive.ingredient:9",
+      "source_label": "Na2MoO4 x 2 H2O",
+      "disposition": "existing_identity_or_alias",
+      "missing_requirement": "Complete native owner payload review and source-bound hold reconciliation before downstream consumption."
+    }
+  ],
+  "commit_receipt": "Final pushed commit and remote verification are recorded after commit in .temp/all-unmatched-worker-07/final-handoff.json and the session final message; no circular self-commit hash is invented in this artifact.",
+  "independent_final_integration": {
+    "path": "reports/all_unmatched_20261107/worker-07/captures/integration-review-final.json",
+    "sha256": "fef705ca9f1d5e9604ae0b29246dfafbfe6a9b1915e8ed2888eeb3ba2d0808fd",
+    "readable_report": "reports/all_unmatched_20261107/worker-07/parts/integration-review-final.md"
+  },
+  "native_predecessor_bundle": "reviews/structured/20261108T054101Z-worker07-source-owner-comparison",
+  "native_finding_count": 5,
+  "checks": [
+    {
+      "name": "final-proposal-validation",
+      "command_receipt": "reports/all_unmatched_20261107/worker-07/logs/final-proposal-validation-command.json",
+      "sha256": "6ef8448f803e354c91275175f8533da20f987ceadd3d24c36547732d56b624b6",
+      "returncode": 0
+    },
+    {
+      "name": "final-owner-schema",
+      "command_receipt": "reports/all_unmatched_20261107/worker-07/logs/final-owner-schema-command.json",
+      "sha256": "c89d832135301a44411a7e6d68f6d568bc2c74af216528308e69c7f0b9b465a2",
+      "returncode": 0
+    },
+    {
+      "name": "structural-audit-final-v2",
+      "command_receipt": "reports/all_unmatched_20261107/worker-07/logs/structural-audit-final-v2-command.json",
+      "sha256": "0c9e69ac722bc054d3893c9fdb220eb542f035b8d41ea912dcf224c203d3a540",
+      "returncode": 0
+    },
+    {
+      "name": "native-check-final",
+      "command_receipt": "reports/all_unmatched_20261107/worker-07/logs/native-check-final-command.json",
+      "sha256": "42a5b6e0e90655180908f5c1dc2e6c4f959853e3646f1954446323d53b9048d1",
+      "returncode": 0
+    },
+    {
+      "name": "native-review-validate-and-save",
+      "log": "reports/all_unmatched_20261107/worker-07/logs/native-validate.log",
+      "result": "1 valid successor review; native saver succeeded, both immutable versions retained"
+    },
+    {
+      "name": "auditor-negative-controls",
+      "log": "reports/all_unmatched_20261107/worker-07/logs/auditor-controls-v2.log",
+      "result": "22 passed; original coverage-plugin configuration failure retained separately"
+    }
+  ],
+  "structural_audit": {
+    "path": "reports/all_unmatched_20261107/worker-07/structural-audit-final-v2.json",
+    "sha256": "0034a12d9b3560d10239ac1845eb8401a81563444eba3baabca65bb54ce371c3",
+    "status": "PASS",
+    "scientific_adequacy_or_approval_established": false
+  },
+  "native_existing_coverage_check": {
+    "valid_review_bundles": 1021,
+    "scope": "declared_scopes_only",
+    "returncode": 0
+  },
+  "validation_limitations": [
+    "Maintained sources unchanged; full synchronized export and publication gates remain coordinator responsibilities.",
+    "Case-specific scientific requirements remain; validation does not erase source or publication holds."
+  ]
+}

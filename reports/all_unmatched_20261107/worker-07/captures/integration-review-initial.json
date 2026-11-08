@@ -1,0 +1,65 @@
+{
+  "reviewer": "/root/integration_reviewer",
+  "primary_authorship": "None; independent of root assembly and all A/B/C primary decisions/proposals.",
+  "reviewed_at": "2026-11-08T05:26:38.942515+00:00",
+  "status": "findings_open",
+  "scope": "Preliminary integration inspection: assembler and validation/dependency helper code; four baseline-relative combined payload diffs; all75 proposal names/components/source contexts for overlap; exact JCM900/JCM979 primary captures; B final48-case review and C initial70-case review. Final author review freeze and staged branch diff not yet available.",
+  "input_hashes": {
+    "decisions.json": "0f59e3d90ee700d8f503abde57923b7e16cd5d87adbd3aac1a01b213baa1e8c1",
+    "evidence.json": "31cfee1737ba3996aece8c243ab221f69bef8e06ba40ae72937764fba10ef584",
+    "proposals.json": "beb8c064b03dcda6e10fa6df485832983d5ffc74fb07dca18e57da496912e548",
+    "parts/root-assemble.py": "3067ee13d4024a4e32151b9777ea2c8128c9535e8705467b87fb068f6b87d7fc",
+    "parts/root-validate-proposals.py": "2ba1ef0b0ce81cab2c584de9c5273b6981f8d2711b82e0063d62c1b47cf2c951",
+    "parts/root-cross-shard-dependencies.py": "4173f301a661fe52371971f3f6b3cd0f093596123f071fb3930d0ee5ac949ddc",
+    "parts/b-independent-c-review-final.json": "5dac5bf702ef379a2f7bea636f208f28f78483423295322e101d14ef0e9b50c2",
+    "captures/c-review-a-initial.json": "d3020bcec5059bc798bd8a3a0a27640aa61c3061c930f7d32ee70c0bf4d2dcd3",
+    "captures/a-source-7994c01631f9607b.html": "e916f2c4d87a5b98eb7cae7655caf95677f1bb7a4e24a9e8adfd453135901eeb",
+    "captures/a-source-d78eaec3d48cf38b.html": "a933ef7d21a623d1371164611e7eb6105851a197dcbaf72bed68341a52a0b8eb"
+  },
+  "findings": [
+    {
+      "finding_id": "INTEGRATION-01",
+      "severity": "major",
+      "status": "open",
+      "summary": "JCM900 and JCM979 source subrecipes are compositionally identical, but have separate new owner proposals.",
+      "proposal_ids": [
+        "A-PROPOSAL-JCM979_Hutner_Basal_Salts",
+        "B-PROPOSAL-jcm_900_modified_hutner_basal_salts"
+      ],
+      "evidence": [
+        "captures/a-source-7994c01631f9607b.html",
+        "captures/a-source-d78eaec3d48cf38b.html"
+      ],
+      "assessment": "Both primary stock tables have NTA10g, MgSO4 heptahydrate29.7g, CaCl2 dihydrate3.335g, literal (NH4)6MoO24 tetrahydrate9.25mg, FeSO4 heptahydrate99mg, Metals44 fromJCM149 50ml, water950ml, KOH about7.3g to initialpH7 and finalpH6.8 NaOH/H2SO4. Parent media/vitamin recipes differ outside the defined stock. Preserve malformed molybdate wording, but source-qualified nominal stock boundary can be shared.",
+      "acceptance": "One concrete nominal stock owner proposal spanning both exact source subrecipes; separate source cases, raw names, evidence and backlinks retained; independent re-review of combined source scope."
+    },
+    {
+      "finding_id": "INTEGRATION-02",
+      "severity": "minor",
+      "status": "open",
+      "summary": "Validation receipt names unique identifier count existing_catalogue_count.",
+      "acceptance": "Relabel as existing_unique_identifier_count or count original physical records accurately."
+    }
+  ],
+  "overlap_leads": [
+    {
+      "proposals": [
+        "A-PROPOSAL-TOGO_M2885_Hydrochloric_Acid_01M_Stock",
+        "A-PROPOSAL-TOGO_M3115_Hydrochloric_Acid_01M_Stock"
+      ],
+      "assessment": "Both source rows explicitly0.1M HCl,1L used in different trace stocks; neither provides complete stock solvent/preparation. Potential coordinator coalescence lead; not proof of different substances and not a full-formulation equivalence approval."
+    },
+    {
+      "proposals": [
+        "A-PROPOSAL-NBRC1507_Tris_HCl_01M_pH75_Buffer",
+        "B-PROPOSAL-nbrc_981_tris_hcl_01m_ph75"
+      ],
+      "assessment": "Same nominal0.1M Tris/HCl,pH7.5 but unspecified preparation/titrant/solvent. Preserve unresolved equivalence rather than infer distinct chemical preparations from source IDs."
+    }
+  ],
+  "limitations": [
+    "No new primary network retrieval needed for this integration check; inspected original saved capture bytes, not re-dated.",
+    "All188 case scientific review is provided by separate cross-review agents; this report reviews composition of those decisions and exact integration deltas.",
+    "No release approval, hold removal, maintained edits, merges, or downstream build."
+  ]
+}

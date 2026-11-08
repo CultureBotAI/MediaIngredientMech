@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:atcc1249_component_ii
+preferred_term: ATCC1249 ComponentII
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:atcc1249_component_ii
+  ontology_label: ATCC1249 ComponentII
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Exact batch inputs0.5g dipotassium hydrogenphosphate and200ml water; source
+  pH7.5 adjustment has unspecified titrant. Final volume not asserted. Distinct substock
+  from ATCC1249 ComponentsI/III. Raw assigned source label: Component II. Quantities
+  in notes preserve source preparation and are not final-medium concentrations. No
+  global synonym is added for this context-dependent label.'
+solution_type: BUFFER_SOLUTION
+components:
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: g
+- component_name: DI water
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/14184D242AA74EC48DF35188A5935BB4.ashx
+    source_record: ATCC1249 ComponentII
+    notes: Exact batch inputs0.5g dipotassium hydrogenphosphate and200ml water; source
+      pH7.5 adjustment has unspecified titrant. Final volume not asserted. Distinct
+      substock from ATCC1249 ComponentsI/III.
+  notes: Source does not establish complete preparation composition; unreported solvent
+    or pH-adjustment constituents remain unknown. No exhaustive list is claimed.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Exact batch inputs0.5g dipotassium hydrogenphosphate and200ml water; source pH7.5
+    adjustment has unspecified titrant. Final volume not asserted. Distinct substock
+    from ATCC1249 ComponentsI/III.
+  new_status: MAPPED
+  llm_assisted: true

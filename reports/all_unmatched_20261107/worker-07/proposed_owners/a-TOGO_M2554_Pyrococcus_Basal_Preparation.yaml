@@ -1,0 +1,75 @@
+identifier: kgmicrobe.ingredient:togo_m2554_pyrococcus_basal_preparation
+preferred_term: TOGO M2554 Pyrococcus basal preparation
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_m2554_pyrococcus_basal_preparation
+  ontology_label: TOGO M2554 Pyrococcus basal preparation
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2554
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Basal preparation is dispensed6ml per tube. Source explicitly excludes sodium
+  sulfide during basal preparation and separately supplies powdered sulfur0.18g per
+  tube; neither is included as a prepared-basal constituent. Raw source table includes
+  both and must remain available; no inferred final volume. Raw assigned source label:
+  Basal Medium. Quantities in notes preserve source preparation and are not final-medium
+  concentrations. No global synonym is added for this context-dependent label.'
+solution_type: COMPLEX_UNDEFINED
+components:
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: g
+- component_name: Resazurin
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: mg
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: mg
+- component_name: Sea water
+  reference_scope: UNMAPPED
+  concentration_value: '1000'
+  concentration_unit: ml
+- component_name: Yeast extract (BD212750)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: g
+- component_name: Bacto peptone (BD211677)
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: g
+- component_name: Wolfe mineral solution
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2554
+    source_record: TOGO M2554 Pyrococcus basal preparation
+    notes: Basal preparation is dispensed6ml per tube. Source explicitly excludes
+      sodium sulfide during basal preparation and separately supplies powdered sulfur0.18g
+      per tube; neither is included as a prepared-basal constituent. Raw source table
+      includes both and must remain available; no inferred final volume.
+  notes: Source does not establish complete preparation composition; unreported solvent
+    or pH-adjustment constituents remain unknown. No exhaustive list is claimed.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Basal preparation is dispensed6ml per tube. Source explicitly excludes sodium
+    sulfide during basal preparation and separately supplies powdered sulfur0.18g
+    per tube; neither is included as a prepared-basal constituent. Raw source table
+    includes both and must remain available; no inferred final volume.
+  new_status: MAPPED
+  llm_assisted: true

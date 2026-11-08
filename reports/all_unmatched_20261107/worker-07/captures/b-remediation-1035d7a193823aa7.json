@@ -1,0 +1,4 @@
+{
+  "status" : 500,
+  "message" : "SQL [select CAST(\"is_defining_ontology\" AS text) as \"facet_key\", count(*) from \"ols_entities\" where (true and (\"ts_search\" @@ to_tsquery('english', ?)) and \"ontology_id\" = ? and \"is_obsolete\" = ?) group by \"is_defining_ontology\" order by count(*) desc]; ERROR: out of memory\n  Detail: Failed on request of size 50331648 in memory context \"ExecutorState\"."
+}

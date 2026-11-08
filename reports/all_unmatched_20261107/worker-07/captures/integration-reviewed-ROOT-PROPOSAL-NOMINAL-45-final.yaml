@@ -1,0 +1,56 @@
+identifier: kgmicrobe.ingredient:togo_m2653_sodium_acetate_25percent_stock
+preferred_term: Sodium acetate 25% stock (TOGO M2653)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_m2653_sodium_acetate_25percent_stock
+  ontology_label: Sodium acetate 25% stock (TOGO M2653)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2653
+    notes: Nominal source-qualified preparation registry identity only. No exact pure-solute
+      ontology equivalence is asserted.
+components:
+- component_name: Sodium acetate (hydrate unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '25'
+  concentration_unit: PERCENT
+  source: Literal stock-strength label; percentage basis unspecified in this source.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2653
+    source_record: components[0].items[2]
+    notes: TOGO M2653 specifies a 4 mL aliquot of 25% sodium acetate stock. Percentage
+      basis, solvent and hydrate of the weighed starting material are unreported.
+      The frozen normalized amount 4 with a mass concentration unit is not evidence
+      for a mass fraction or final solute concentration. This is a nominal source-qualified
+      preparation, not a fully resolved chemical formulation. PERCENT preserves the
+      unspecified source percent basis; it is not PERCENT_WV or PERCENT_WW. UNKNOWN
+      component-list completeness records the unreported solvent/preparation inputs.
+      No generic raw source label is made a global resolving synonym and no inherited
+      hold is removed.
+notes: TOGO M2653 specifies a 4 mL aliquot of 25% sodium acetate stock. Percentage
+  basis, solvent and hydrate of the weighed starting material are unreported. The
+  frozen normalized amount 4 with a mass concentration unit is not evidence for a
+  mass fraction or final solute concentration. This is a nominal source-qualified
+  preparation, not a fully resolved chemical formulation. PERCENT preserves the unspecified
+  source percent basis; it is not PERCENT_WV or PERCENT_WW. UNKNOWN component-list
+  completeness records the unreported solvent/preparation inputs. No generic raw source
+  label is made a global resolving synonym and no inherited hold is removed.
+curation_history:
+- timestamp: '2026-11-08T05:29:10.357663+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: SOURCE_QUALIFIED_NOMINAL_STOCK_PROPOSED
+  changes: Address independent integration finding INTEGRATION-03 with an isolated
+    nominal stock proposal while retaining chemical and quantity uncertainty. TOGO
+    M2653 specifies a 4 mL aliquot of 25% sodium acetate stock. Percentage basis,
+    solvent and hydrate of the weighed starting material are unreported. The frozen
+    normalized amount 4 with a mass concentration unit is not evidence for a mass
+    fraction or final solute concentration.
+  new_status: MAPPED
+  llm_assisted: true

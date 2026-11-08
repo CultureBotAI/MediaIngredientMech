@@ -1,0 +1,132 @@
+identifier: kgmicrobe.ingredient:jcm_900_modified_hutner_basal_salts
+preferred_term: Hutner basal salts (JCM 900 and JCM 979)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_900_modified_hutner_basal_salts
+  ontology_label: Hutner basal salts (JCM 900 and JCM 979)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=979
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '29.7'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.335'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: (NH4)6MoO24·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Metals 44 (JCM149)
+  reference_scope: UNMAPPED
+  concentration_value: '50.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '950.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: KOH
+  reference_scope: UNMAPPED
+  source: About 7.3 g KOH to reach initial pH 7.0; approximate source-batch quantity,
+    not an exact final concentration.
+- component_name: NaOH or H2SO4
+  reference_scope: UNMAPPED
+  source: Alternative pH readjustment reagents; source does not require both.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900
+    source_record: JCM900 modified Hutner basal salts
+    notes: DissolveNTA;adjustpH7.0withKOHabout7.3g;addsalts;readjustpH6.8withNaOHorH2SO4.
+      Literal malformed(NH4)6MoO24.4H2O retained (missingMo7 cannot be inferred).
+      JCM149 Metals44 nested mixture remains unexpanded. COMPLETE means source inputs
+      retained, not complete resolved chemistry.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=979
+    source_record: JCM979 Hutner basal salts
+    notes: Literal nominal source-batch inputs. Molybdate formula (NH4)6MoO24·4H2O
+      is unresolved and retained UNMAPPED, not silently corrected to heptamolybdate.
+      Source states KOH about7.3g for NTA dissolution; this approximate amount is
+      preserved here rather than encoded as an exact concentration. Later NaOH orH2SO4
+      adjustment amount is unreported. Source-derived nominal identity only; no chemically
+      complete decomposition.
+  notes: 'Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID. The primary JCM 900 and JCM 979 stock subrecipes specify the same nine
+    named inputs, quantities, Metals 44 reference to JCM 149 and preparation: dissolve
+    NTA, adjust to pH 7.0 with about 7.3 g KOH, add the remaining ingredients, and
+    readjust to pH 6.8 with NaOH or H2SO4. Parent media and vitamin supplements differ
+    outside this stock boundary. The literal malformed (NH4)6MoO24·4H2O remains unresolved;
+    no heptamolybdate correction or exact chemical-component equivalence is asserted.
+    Raw source names Hutner''s basal salts (see below) and Modified Hutner''s basal
+    salts remain in the frozen case evidence; neither becomes a global stock synonym.
+    The canonical proposed local registry identifier retains JCM 900 provenance and
+    also covers this verified JCM 979 subrecipe.'
+notes: 'The primary JCM 900 and JCM 979 stock subrecipes specify the same nine named
+  inputs, quantities, Metals 44 reference to JCM 149 and preparation: dissolve NTA,
+  adjust to pH 7.0 with about 7.3 g KOH, add the remaining ingredients, and readjust
+  to pH 6.8 with NaOH or H2SO4. Parent media and vitamin supplements differ outside
+  this stock boundary. The literal malformed (NH4)6MoO24·4H2O remains unresolved;
+  no heptamolybdate correction or exact chemical-component equivalence is asserted.
+  Raw source names Hutner''s basal salts (see below) and Modified Hutner''s basal
+  salts remain in the frozen case evidence; neither becomes a global stock synonym.
+  The canonical proposed local registry identifier retains JCM 900 provenance and
+  also covers this verified JCM 979 subrecipe.'
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Literal nominal source-batch inputs. Molybdate formula (NH4)6MoO24·4H2O is unresolved
+    and retained UNMAPPED, not silently corrected to heptamolybdate. Source states
+    KOH about7.3g for NTA dissolution; this approximate amount is preserved here rather
+    than encoded as an exact concentration. Later NaOH orH2SO4 adjustment amount is
+    unreported. Source-derived nominal identity only; no chemically complete decomposition.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:27:37Z'
+  curator: all-unmatched-20261107-worker07-root
+  action: RECONCILE_ISOLATED_STOCK_PROPOSALS
+  changes: 'The primary JCM 900 and JCM 979 stock subrecipes specify the same nine
+    named inputs, quantities, Metals 44 reference to JCM 149 and preparation: dissolve
+    NTA, adjust to pH 7.0 with about 7.3 g KOH, add the remaining ingredients, and
+    readjust to pH 6.8 with NaOH or H2SO4. Parent media and vitamin supplements differ
+    outside this stock boundary. The literal malformed (NH4)6MoO24·4H2O remains unresolved;
+    no heptamolybdate correction or exact chemical-component equivalence is asserted.
+    Raw source names Hutner''s basal salts (see below) and Modified Hutner''s basal
+    salts remain in the frozen case evidence; neither becomes a global stock synonym.
+    The canonical proposed local registry identifier retains JCM 900 provenance and
+    also covers this verified JCM 979 subrecipe.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true

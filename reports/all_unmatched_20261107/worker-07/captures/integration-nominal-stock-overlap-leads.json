@@ -1,0 +1,764 @@
+{
+  "reviewer": "/root/integration_reviewer",
+  "inspected_at": "2026-11-08T05:37:38.497051+00:00",
+  "scope": "Final100 proposal scope and nominal-stock overlap leads; ingredients with same strength can share chemistry, but unknown full preparation prevents an identity decision from labels alone. This is not additional primary-science review of all B corrections; A owns that separate review.",
+  "proposals_sha256": "fcc74e714b1ce6250fd70513e6791801fe5f8c3ccc5b98a8dfd02fcd9e0516cd",
+  "groups": {
+    "nominal_01M_HCl": [
+      {
+        "proposal_id": "A-PROPOSAL-TOGO_M2885_Hydrochloric_Acid_01M_Stock",
+        "owner_path": "data/ingredients/mapped/TOGO_M2885_Hydrochloric_Acid_01M_Stock.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/a-TOGO_M2885_Hydrochloric_Acid_01M_Stock.yaml",
+          "sha256": "29a5ed5d0bdc3df4a9394caa615b7d9d091217eac3dad406c8ebcbfff0b90847"
+        },
+        "case_ids": [
+          "CM_NAME:23030c35f0c306661564697a3d7e9767a9f270e7afd0338f3f8e506563407294"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2885",
+            "source_record": "TOGO M2885 hydrochloric acid0.1M stock",
+            "notes": "Primary JSON uses1L of0.1M HCl in a trace-element stock. Full solvent recipe and lot unspecified; do not assert1g/L."
+          }
+        ]
+      },
+      {
+        "proposal_id": "A-PROPOSAL-TOGO_M3115_Hydrochloric_Acid_01M_Stock",
+        "owner_path": "data/ingredients/mapped/TOGO_M3115_Hydrochloric_Acid_01M_Stock.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/a-TOGO_M3115_Hydrochloric_Acid_01M_Stock.yaml",
+          "sha256": "dcf7e656250c11c0cf91910797a0d1c81e752eff69c5807b6295fdc20a81d96e"
+        },
+        "case_ids": [
+          "CM_NAME:47105de9c93629e9f29aebf0898401b858f5ec0b958cf81d3d49ef14bdbe0ab0"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3115",
+            "source_record": "TOGO M3115 hydrochloric acid0.1M stock",
+            "notes": "Exact primary JSON specifies1L of0.1M HCl as trace-stock solvent. Solvent composition and preparation not independently specified; preserveM rather than importingN from a similar formulation."
+          }
+        ]
+      }
+    ],
+    "nominal_01M_Tris_pH75": [
+      {
+        "proposal_id": "A-PROPOSAL-NBRC1507_Tris_HCl_01M_pH75_Buffer",
+        "owner_path": "data/ingredients/mapped/NBRC1507_Tris_HCl_01M_pH75_Buffer.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/a-NBRC1507_Tris_HCl_01M_pH75_Buffer.yaml",
+          "sha256": "fee1ee6d50153341ac16a466551a95edcf47ad2b3a532a72e283a7205837bbdd"
+        },
+        "case_ids": [
+          "CM_NAME:2936c2ff84f59836f8388c7d253fdf06da96a4c9207f05bd5f0eb01ae202088e"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507",
+            "source_record": "NBRC1507 Tris HCl0.1M pH7.5 buffer",
+            "notes": "Source specifies0.1M Tris/HCl,pH7.5; nominal total Tris moiety concentration retained, not independent concentrations for acid and conjugate base. Solvent and neutralization ratio unreported."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-nbrc_981_tris_hcl_01m_ph75",
+        "owner_path": "data/ingredients/mapped/nbrc_981_tris_hcl_01m_ph75.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-nbrc_981_tris_hcl_01m_ph75.yaml",
+          "sha256": "a60fff265f7323bac35c2a987934e23b92d1540f56f6db17ad038dfb10524786"
+        },
+        "case_ids": [
+          "CM_NAME:de62f5de28188461b72a9cb065140dbd33f5ac8d3f5a2437cb8cb2095c2ea312"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1768",
+            "source_record": "NBRC981 TrisHCl0.1M pH7.5 buffer",
+            "notes": "Nominal source-qualified stock only. pH7.5; source doesnot provide detailed acidbasecomposition or solvent; notpureTrisHClsalt. The source does not establish a complete constituent list; no omitted solvent or titrant is invented."
+          }
+        ]
+      }
+    ],
+    "nominal_1N_NaOH": [
+      {
+        "proposal_id": "A-PROPOSAL-DSM330_Sodium_Hydroxide_1N_Stock",
+        "owner_path": "data/ingredients/mapped/DSM330_Sodium_Hydroxide_1N_Stock.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/a-DSM330_Sodium_Hydroxide_1N_Stock.yaml",
+          "sha256": "064c3c312c9ae7207a40398b4a5f6fd1093adf1a56c8b1ce1a3e32634aed7e68"
+        },
+        "case_ids": [
+          "CM_NAME:3126f6fe7d7231259578f54724e23f146b2e18c46615d36ef37e03e44e9e283f"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf",
+            "source_record": "DSM330 sodium hydroxide1N stock",
+            "notes": "One ml of1N NaOH dissolves haemin before further dilution. Normality retained verbatim; no inferred molarity or final haemin-stock NaOH concentration."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-dsmz_110_sodium_hydroxide_1n",
+        "owner_path": "data/ingredients/mapped/dsmz_110_sodium_hydroxide_1n.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-dsmz_110_sodium_hydroxide_1n.yaml",
+          "sha256": "d44c9a119c22c39f82362587acb5b9d497ecfec2f84bd0376da8481c378b8221"
+        },
+        "case_ids": [
+          "CM_NAME:bce0e8c16f2fdd6703dddd0c6d92c399b967ad01d78987083c3caad27643209f"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110.pdf",
+            "source_record": "DSMZ110 sodium hydroxide1N stock",
+            "notes": "Original DSMZ110 specifies25ml of1N NaOH in meat extraction. Water in the meat extraction is a separate recipe input, not proof of stock solvent composition. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:d44c82c60cf3c8fc95145261c380e17433bc9d71697d8d915190455dc24a24c7, CM_OCC:ab892ee3e16d3d69d0db0474fde5b435fa2ca580237e797c7d270efed41002c7, CM_OCC:d08a370e8cd1b8628853aa6f7de2929960a3fa10a8ea7e2b1e3997eb141944d6, CM_OCC:697e1f819bb825c3a9d2a7e34b58e4a9a008f1e0f0c8f44223f0c0acd82da8fb, CM_OCC:d76af567fb1f8115ef59c13a619c6aa0d07db11635b0f41c4527d87f46789437, CM_OCC:2426ef10cf642eca42a7c5dc4467d393e20d2387cc0a54ea7eb219a47cde05e0, CM_OCC:1eef1ec9bcafefb6b49c4070512e7f6304e5f70d2b40fc425f6a34322440c9a0. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-dsmz_78_sodium_hydroxide_1n",
+        "owner_path": "data/ingredients/mapped/dsmz_78_sodium_hydroxide_1n.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-dsmz_78_sodium_hydroxide_1n.yaml",
+          "sha256": "83573e6f374cd49f08c9d6b8fb6ff8a20e666765816bc9aafb5356e7128419bc"
+        },
+        "case_ids": [
+          "CM_NAME:bce0e8c16f2fdd6703dddd0c6d92c399b967ad01d78987083c3caad27643209f"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78.pdf",
+            "source_record": "DSMZ78 sodium hydroxide1N stock",
+            "notes": "Original DSMZ78 specifies25ml of1N NaOH in meat extraction. Water in the meat extraction is a separate recipe input, not proof of stock solvent composition. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:b6fee1f20b7b3dfba921e9326dc0298aafc198a6e06cd6096f1b56530b5d10b0, CM_OCC:9f0cd0360b77e2438ccf0a0ee535bd7530d081f9379250cde4c7828c3a7c5fec, CM_OCC:a2042ae706e36e6eedf0063b2eb6e734a6de2bfc29f4f88459441fe44ce3b50f, CM_OCC:6fb574c58924baae04fb8a53144ac544608e9c236164bbb860e12be451ff4954, CM_OCC:4c4706caf10ee4782e3422bbdbb4eaa659f3bf5b9ad675557e40ab59a6d3ccc9. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-dsmz_110a_sodium_hydroxide_1n",
+        "owner_path": "data/ingredients/mapped/dsmz_110a_sodium_hydroxide_1n.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-dsmz_110a_sodium_hydroxide_1n.yaml",
+          "sha256": "0c27bdb78c2236629a7ac2d41bfa4c533e33cd164b47d220c9ed71da0ab69cfa"
+        },
+        "case_ids": [
+          "CM_NAME:bce0e8c16f2fdd6703dddd0c6d92c399b967ad01d78987083c3caad27643209f"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110a.pdf",
+            "source_record": "DSMZ110a sodium hydroxide1N stock",
+            "notes": "Original DSMZ110a specifies25ml of1N NaOH in meat extraction. Water in the meat extraction is a separate recipe input, not proof of stock solvent composition. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:a541259d4257ab6d39c502f10f7538f639bb1230dc38d745e3efea925f33d08b. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      }
+    ],
+    "nominal_5percent_L_cysteine_HCl_monohydrate": [
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1479_l_cysteine_hcl_monohydrate_5_percent_ph7",
+        "owner_path": "data/ingredients/mapped/jcm_1479_l_cysteine_hcl_monohydrate_5_percent_ph7.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1479_l_cysteine_hcl_monohydrate_5_percent_ph7.yaml",
+          "sha256": "319ca5792df1c451e9174b686a18973f3ee912d388d96032dd97a3e82f5a23d0"
+        },
+        "case_ids": [
+          "CM_NAME:f60372bfb81ec985743cbe4f00853d33a39dcb48dd9ceae0d54024f3e2f2eaaa"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1479",
+            "source_record": "JCM1479 L-cysteineHClmonohydrate5% pH7 stock",
+            "notes": "Nominal source-qualified stock only. pH7.0 and1mladdition explicit; percentagebasis,solvent,pHadjustment reagent unreported. The source does not establish a complete constituent list; no omitted solvent or titrant is invented."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1362_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1362_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1362_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "79785ded4d6953cc06b481796e32f3ac345ced444ceed753fc3d3289d195ad84"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1362",
+            "source_record": "JCM1362 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1362 specifies10ml of5% monohydrate stock. Autoclaved and stored under N2; added aseptically/anaerobically after standing the medium overnight. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:12e13868c572c37eab89fcb2e4cae3b459867c1b89a5f9f72b08b43e23069c29. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1415_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1415_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1415_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "cb4aafe37791aad94abad3bb4425a5a09505b61842605f56a720a808f4cdeb4f"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1415",
+            "source_record": "JCM1415 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1415 specifies5ml of5% monohydrate stock. Autoclaved and stored under N2; final separate stock addition. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:e40bf4a7ae8acb84b4535c88de11b089938a9b8fe1d3a02dd6ed7d6cd40c8449. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1422_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1422_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1422_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "c403acaeeb2ffbdc7d67e56b3b7c4835ac613f61cacacf190b17c73e3f809aff"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1422",
+            "source_record": "JCM1422 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1422 specifies4ml of5% monohydrate stock. Autoclaved and stored under N2; added prior to inoculation. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:69ecd9d6739ab65d7bc929233800c69c207be86ad1a5a1edbabcd3d50cad0135. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1462_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1462_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1462_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "b4ac429a8ba5a578f0854b44d1ca6ee509da61da2d2c23bed597852ba76f57cf"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1462",
+            "source_record": "JCM1462 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1462 specifies10ml of5% monohydrate stock. JCM1463 explicitly uses1462 with only NaCl changed9to21g/L, so the same referenced stock is inherited; other stock composition is not inferred. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:b81f71c8ac35a57742877d301bb5c3ce9110343250eb1faadab91c11ddb4ec50, CM_OCC:7d26338252fe4c54cda9a7be70b9efc4212ab73a42756b298c56a32fc000dce6. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1351_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1351_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1351_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "2927212475293eb2ccaf606e61724dab547f8b69bf519aff8f3d092c116a5a81"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1351",
+            "source_record": "JCM1351 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1351 specifies5ml of5% monohydrate stock. Separately added stock; final medium pH readjustment does not establish stock pH. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:c1a99c7a553aa88e3caf6b45f38033ee298087c76419f1fd0bbce00f6f858384. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1388_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1388_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1388_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "4ad67bb4b9e3a6a3d43d61f5c1ed8a709f6f87a9846c2f2f0624d9c5701aa6c1"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1388",
+            "source_record": "JCM1388 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1388 specifies5ml of5% monohydrate stock. Autoclaved and stored under N2; final separate stock addition. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:51f2b39991107fc0205d66ffe45cb327be64911ff438d3e4a9dbe8c536d7236a. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1389_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1389_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1389_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "46a9277323d5c5b0ebab163c7d9daa8ff1933877d0de4ad949e16247db0de8ba"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1389",
+            "source_record": "JCM1389 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1389 specifies5ml of5% monohydrate stock. Autoclaved and stored under N2; culture-supernatant context remains separate from the stock. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:2a89e315b2facb3346c112a07c6c71277fddef69856046619c7378c91aec649f. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1412_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1412_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1412_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "dd5bf3d1d60658be41e514b344364c009795683de5b3fe651ef1d144e20c1a7e"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+            "source_record": "JCM1412 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1412 specifies10ml of5% monohydrate stock. Autoclaved and stored under N2; separately added with glucose and sulfide stocks. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:e15017b4ed36424e014e20d1097422fff86177593be00a02f0a4c2f36f22d843. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1430_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1430_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1430_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "fa94cdc339a3e2ff1c12f15452ba0bc2b44d02a63869db07f578d96916bb8985"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1430",
+            "source_record": "JCM1430 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1430 specifies8ml of5% monohydrate stock. Stock addition to semi-solid heterotrophic medium; final-medium pH7 adjustment is not stock pH. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:681b0611a83710ae55228c8a44ed74ced011a98fc73eccfd823ae480134f7ee5. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1431_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1431_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1431_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "d9d5a9a4db96c29a2305e7ea4df76cb2346f5940efa2545a0bb13e731bf518b0"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1431",
+            "source_record": "JCM1431 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1431 specifies8ml of5% monohydrate stock. Stock addition to semi-solid autotrophic medium; final-medium pH7 adjustment is not stock pH. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:6bffac594f5c1d037179a604d71948dd1f6835766858cd7a88495a9a84bd4b33. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1435_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1435_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1435_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "3ee6b2104e57a66127ae38f8056c8a5ef2c83eda017072dfba02a5396722615b"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435",
+            "source_record": "JCM1435 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1435 specifies5ml of5% monohydrate stock. Autoclaved and stored under N2; added prior to use. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:96f024ba414413d2ac137133029874a8adeb94afd5044c396fd438886364f37e. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1474_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1474_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1474_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "7cc005968cd1c1ca9b8d32180490c87a88f0326b00025eab12ddf620d25d1e02"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474",
+            "source_record": "JCM1474 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1474 specifies10ml of5% monohydrate stock. Listed as separate5% solution in BL broth with2%NaCl; liver extract and final-medium pH7.2 are separate context. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:cf4e6c44faacbd0c3378ac2913145e2aa7265f298c6c4bbe84580a97227f54f7. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_1188_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_1188_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_1188_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "8f5b11f07357b7bf4942fea02ff6d8d5c89950446def9f4ec7142b6a213d097f"
+        },
+        "case_ids": [
+          "CM_NAME:e5e102f38e8fa6f746b3c69f4a2bc80cbb2d47af6c8fca2aefa53c18f44b9057"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1188",
+            "source_record": "JCM1188 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM1188 specifies6ml of5% monohydrate stock. Separately added sterile anaerobic stock; unstarred cysteine entry is not the filter-sterilized pyruvate/bicarbonate entries. Percentage basis remains unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:6c00adb0e53ef348ef323469e71e98b4280524d7f7a3887fe3bdefd79425d29f. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_794_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_794_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_794_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "b9254cf1a4777e5ea7f8ce947a41f9376c9c1ea3e93b082851835b8a8d0b84ad"
+        },
+        "case_ids": [
+          "CM_NAME:f6a7d9a06e24d3ae6488a3cd630fdd8e4d0c4c45e452cb1da38ef3b40bbe662b"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=794",
+            "source_record": "JCM794 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM794 specifies10ml per liter of5% monohydrate stock. Autoclaved anaerobic stock under N2. Frozen double-hyphen typography is preserved in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:84a93409a41a17bfac78a393b027fd6dacf166ba2e8838ec5162e50260397d87. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_687_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_687_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_687_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "d0d459e99c7d22f6236d602e0837ac7c8958f384509dc9799ff28990eb746686"
+        },
+        "case_ids": [
+          "CM_NAME:f6a7d9a06e24d3ae6488a3cd630fdd8e4d0c4c45e452cb1da38ef3b40bbe662b"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=687",
+            "source_record": "JCM687 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM687 specifies5ml per liter of5% monohydrate stock. TogoM708 explicitly inherits medium687 replacing only methanol with formate, supporting its cysteine stock inheritance; current JCM688 returns Nothingfound and is not evidentiary support. Frozen double-hyphen typography is preserved in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:88c477d01a597e94e55f07fa1928697c6ecc4c120229b81bcb00e31e45ac85a7, CM_OCC:6c4f1391b314558448b3cd3bcb106f8f566766b7f4b9ea0f015b0b04b3e400a4. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_705_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_705_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_705_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "00a5c8a08672164a374829a64b973446fda211ad41ca082ae3825cd658105da6"
+        },
+        "case_ids": [
+          "CM_NAME:f6a7d9a06e24d3ae6488a3cd630fdd8e4d0c4c45e452cb1da38ef3b40bbe662b"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=705",
+            "source_record": "JCM705 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM705 specifies5ml per liter of5% monohydrate stock. Autoclaved sterile stock added prior to use. Frozen double-hyphen typography is preserved in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:2f06d8ce18be9642e8d6a6020edb57bd0740e2c335a963b648b58bc227a33ccd. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_706_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_706_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_706_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "a6b97ec1f0b9a2f7fb2907b3993187fb3e05488d8487c326c1a4d2863415402d"
+        },
+        "case_ids": [
+          "CM_NAME:f6a7d9a06e24d3ae6488a3cd630fdd8e4d0c4c45e452cb1da38ef3b40bbe662b"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=706",
+            "source_record": "JCM706 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM706 specifies0.05ml per10ml medium of5% monohydrate stock. Concentration5% belongs to added stock; final10ml culture concentration is not asserted. Frozen double-hyphen typography is preserved in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:19be145b14c43da804561fc5eb51df588b9a5b1210a68c25c39e011abc68f397. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_822_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_822_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_822_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "059a259ba6df7dd8c8a505cd0864ede3a1a2ebdc9fc77e4e0025fdf584afd950"
+        },
+        "case_ids": [
+          "CM_NAME:f6a7d9a06e24d3ae6488a3cd630fdd8e4d0c4c45e452cb1da38ef3b40bbe662b"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=822",
+            "source_record": "JCM822 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM822 specifies10ml per liter of5% monohydrate stock. Separately added stock; adjacent sodium sulfide and phosphate buffer are distinct preparations. Frozen double-hyphen typography is preserved in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:b0280433fd4e5fd138355edef143cf001bb3cbedfdf56088540b2c8895349ebd. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      },
+      {
+        "proposal_id": "B-PROPOSAL-jcm_723_l_cysteine_hcl_monohydrate_5_percent",
+        "owner_path": "data/ingredients/mapped/jcm_723_l_cysteine_hcl_monohydrate_5_percent.yaml",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/b-jcm_723_l_cysteine_hcl_monohydrate_5_percent.yaml",
+          "sha256": "f7a7f49532b472c94c7d2ec6e4b5581795f18cfc0f2f6438791e2b43e3fbde2c"
+        },
+        "case_ids": [
+          "CM_NAME:f6a7d9a06e24d3ae6488a3cd630fdd8e4d0c4c45e452cb1da38ef3b40bbe662b"
+        ],
+        "source_evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=723",
+            "source_record": "JCM723 L-cysteine hydrochloride monohydrate5% stock",
+            "notes": "Original JCM723 specifies5ml per liter of5% monohydrate stock. Autoclaved and stored under N2; aseptically and anaerobically added prior to inoculation. Frozen double-hyphen typography is preserved in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:8cc2fc90db336c7deba9a3a38275bc21e102015f8e8d14958e38b8c348e03699. No cross-source equality or global raw-label alias is asserted."
+          }
+        ]
+      }
+    ]
+  },
+  "required_coordinator_action": "Compare these source-qualified nominal candidates with each other, other shard proposals and existing stock owners before minting. Do not interpret the number of proposal payloads as a number of proven distinct substances. Equivalence and non-equivalence are both unestablished for these groups; retain source-specific occurrence mapping and uncertainty. Verified identical JCM900/JCM979 stock was already reconciled separately.",
+  "explicit_occurrence_subset_checks": [
+    {
+      "proposal_id": "B-PROPOSAL-dsmz_110_sodium_hydroxide_1n",
+      "occurrence_ids": [
+        "CM_OCC:d44c82c60cf3c8fc95145261c380e17433bc9d71697d8d915190455dc24a24c7",
+        "CM_OCC:ab892ee3e16d3d69d0db0474fde5b435fa2ca580237e797c7d270efed41002c7",
+        "CM_OCC:d08a370e8cd1b8628853aa6f7de2929960a3fa10a8ea7e2b1e3997eb141944d6",
+        "CM_OCC:697e1f819bb825c3a9d2a7e34b58e4a9a008f1e0f0c8f44223f0c0acd82da8fb",
+        "CM_OCC:d76af567fb1f8115ef59c13a619c6aa0d07db11635b0f41c4527d87f46789437",
+        "CM_OCC:2426ef10cf642eca42a7c5dc4467d393e20d2387cc0a54ea7eb219a47cde05e0",
+        "CM_OCC:1eef1ec9bcafefb6b49c4070512e7f6304e5f70d2b40fc425f6a34322440c9a0"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-dsmz_78_sodium_hydroxide_1n",
+      "occurrence_ids": [
+        "CM_OCC:b6fee1f20b7b3dfba921e9326dc0298aafc198a6e06cd6096f1b56530b5d10b0",
+        "CM_OCC:9f0cd0360b77e2438ccf0a0ee535bd7530d081f9379250cde4c7828c3a7c5fec",
+        "CM_OCC:a2042ae706e36e6eedf0063b2eb6e734a6de2bfc29f4f88459441fe44ce3b50f",
+        "CM_OCC:6fb574c58924baae04fb8a53144ac544608e9c236164bbb860e12be451ff4954",
+        "CM_OCC:4c4706caf10ee4782e3422bbdbb4eaa659f3bf5b9ad675557e40ab59a6d3ccc9"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-dsmz_110a_sodium_hydroxide_1n",
+      "occurrence_ids": [
+        "CM_OCC:a541259d4257ab6d39c502f10f7538f639bb1230dc38d745e3efea925f33d08b"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1362_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:12e13868c572c37eab89fcb2e4cae3b459867c1b89a5f9f72b08b43e23069c29"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1415_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:e40bf4a7ae8acb84b4535c88de11b089938a9b8fe1d3a02dd6ed7d6cd40c8449"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1422_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:69ecd9d6739ab65d7bc929233800c69c207be86ad1a5a1edbabcd3d50cad0135"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1462_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:b81f71c8ac35a57742877d301bb5c3ce9110343250eb1faadab91c11ddb4ec50",
+        "CM_OCC:7d26338252fe4c54cda9a7be70b9efc4212ab73a42756b298c56a32fc000dce6"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1351_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:c1a99c7a553aa88e3caf6b45f38033ee298087c76419f1fd0bbce00f6f858384"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1388_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:51f2b39991107fc0205d66ffe45cb327be64911ff438d3e4a9dbe8c536d7236a"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1389_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:2a89e315b2facb3346c112a07c6c71277fddef69856046619c7378c91aec649f"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1412_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:e15017b4ed36424e014e20d1097422fff86177593be00a02f0a4c2f36f22d843"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1430_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:681b0611a83710ae55228c8a44ed74ced011a98fc73eccfd823ae480134f7ee5"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1431_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:6bffac594f5c1d037179a604d71948dd1f6835766858cd7a88495a9a84bd4b33"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1435_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:96f024ba414413d2ac137133029874a8adeb94afd5044c396fd438886364f37e"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1474_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:cf4e6c44faacbd0c3378ac2913145e2aa7265f298c6c4bbe84580a97227f54f7"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1188_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:6c00adb0e53ef348ef323469e71e98b4280524d7f7a3887fe3bdefd79425d29f"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_794_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:84a93409a41a17bfac78a393b027fd6dacf166ba2e8838ec5162e50260397d87"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_687_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:88c477d01a597e94e55f07fa1928697c6ecc4c120229b81bcb00e31e45ac85a7",
+        "CM_OCC:6c4f1391b314558448b3cd3bcb106f8f566766b7f4b9ea0f015b0b04b3e400a4"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_705_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:2f06d8ce18be9642e8d6a6020edb57bd0740e2c335a963b648b58bc227a33ccd"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_706_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:19be145b14c43da804561fc5eb51df588b9a5b1210a68c25c39e011abc68f397"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_822_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:b0280433fd4e5fd138355edef143cf001bb3cbedfdf56088540b2c8895349ebd"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_723_l_cysteine_hcl_monohydrate_5_percent",
+      "occurrence_ids": [
+        "CM_OCC:8cc2fc90db336c7deba9a3a38275bc21e102015f8e8d14958e38b8c348e03699"
+      ],
+      "subset_check": "PASS"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-Sodium_Ammonium_Hydrogen_Phosphate_Tetrahydrate",
+      "occurrence_ids": [
+        "CM_OCC:970e36812922d99597311f0c50257a7db4f2660af483394518b78e156409fd49",
+        "CM_OCC:67120010955fd31d3c95571e340730c4da72d327c06fce799c7a0fb4db2dfb4e",
+        "CM_OCC:6cbd74b51c026e4272d721870d99463ed0d78feb02afd9472e57600ddd8fe982",
+        "CM_OCC:e053fb23f5d8fad36c1dd372cabc296293b423aadd36712df2e9201573b7164a",
+        "CM_OCC:8ca58da14c7fa7b369630372d4fa180b69c4041f557b54f213dd9cf3cca59eac",
+        "CM_OCC:68406e5eb5ab3df05eb8c466a43eee3be6ca6c1bad905e71d46109344a33d611",
+        "CM_OCC:853912ffa25e7e1892ed323a192c77ede8cfe3c0e6673243f3925ccb69e6c945",
+        "CM_OCC:8d15942bf156839702452f02ec38e0038bef64bf7349d314e9795670c7b43f32",
+        "CM_OCC:2d0fac1396e34336883db69e8909023118729bca848dd9dd46676d62c7b1ce8d"
+      ],
+      "subset_check": "PASS"
+    }
+  ],
+  "additional_limits": [
+    "DSM590,DSM1144 andJCM631 Hutner-family recipes retain different literal/malformed component formulas, quantities or vitamin content; shared family names do not establish equality.",
+    "Stocks of different concentrations, sodium counts, stereo or hydrate qualifiers remain distinct unless source formulation provides stronger equivalence evidence."
+  ]
+}

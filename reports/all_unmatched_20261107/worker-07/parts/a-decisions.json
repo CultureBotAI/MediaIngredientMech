@@ -1,0 +1,2822 @@
+{
+  "schema_version": 1,
+  "worker_slot": 7,
+  "phase": "shard",
+  "shard_sha256": "db9acb54fc821c0ec691d82bf91a05a831be9ad3e491e3a243f941eab84b7c61",
+  "decisions": [
+    {
+      "case_id": "CM_NAME:00b903889d0c7637f9b81e7acade94f2ec459080c09c83cf95b4fb12a5c59ca3",
+      "case_input_sha256": "5f41cde4b9bac0aad47a2b8f6cb0eb615f17a7d100035ee35bfa433726aae32f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1 M NH4Cl",
+        "source_label": "1 M NH4Cl",
+        "raw_source_label": "1 M NH4Cl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:41e69344e3ca22f6fb825f165f0a01d91b697af0665051176498dcb1d822d84a"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM 574 explicitly adds 5 ml of a 1 M NH4Cl solution after cooling. The frozen flat ingredient value 5 G_PER_L loses the volume unit and stock boundary. A source-qualified 1 M ammonium chloride stock is justified; pure NH4Cl is only its solute.",
+      "applicability": "Applies to exact raw source label '1 M NH4Cl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM 574 explicitly adds 5 ml of a 1 M NH4Cl solution after cooling. The frozen flat ingredient value 5 G_PER_L loses the volume unit and stock boundary. A source-qualified 1 M ammonium chloride stock is justified; pure NH4Cl is only its solute.",
+      "evidence_ids": [
+        "A-CASE-0",
+        "A-RECIPE-0-0",
+        "A-RETRIEVAL-a-fetch-results-0",
+        "A-RETRIEVAL-a-fetch-json-results-0",
+        "A-WEB-0"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-JCM574_Ammonium_Chloride_1M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:02bde9bffafb8b400bd9224dd6ac964aefd3a969a40f99c9d6e8624834e4f167",
+      "case_input_sha256": "cc9f5f43064616236721c9a57e1edba78895abb919347e2799a9a0dc9e2d32e4",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "First, add to 50 ml of deionised water and pH to 7.2 with",
+        "source_label": "First, add to 50 ml of deionised water and pH to 7.2 with",
+        "raw_source_label": "First, add to 50 ml of deionised water and pH to 7.2 with"
+      },
+      "occurrence_ids": [
+        "CM_OCC:95e6ca6a58e86bf294bed4bab2542653e3dd5b5eaff8baf2401a602bab9d17db",
+        "CM_OCC:3919e33fcc204e4217b6a3696033a86dd33add5b5d46c5a1e3f6cd162059ab05"
+      ],
+      "disposition": "malformed_or_nonchemical_token",
+      "reasoning": "Both CCAP K and K35 place this wording in the preparation instruction under Tris stock, not in an ingredient row. Current primary PDFs give the instruction without an acid name after “with”; the frozen 2 MOLAR value does not turn the sentence into a substance. Correct the source extraction and retain this raw token only as provenance.",
+      "applicability": "Applies to exact raw source label 'First, add to 50 ml of deionised water and pH to 7.2 with' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. Both CCAP K and K35 place this wording in the preparation instruction under Tris stock, not in an ingredient row. Current primary PDFs give the instruction without an acid name after “with”; the frozen 2 MOLAR value does not turn the sentence into a substance. Correct the source extraction and retain this raw token only as provenance.",
+      "evidence_ids": [
+        "A-CASE-1",
+        "A-RECIPE-1-0",
+        "A-RECIPE-1-1",
+        "A-RETRIEVAL-a-fetch-results-1",
+        "A-RETRIEVAL-a-fetch-results-2",
+        "A-WEB-0"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation is authorized by this proposal-only review; the supported source disposition itself is the outcome and no additional active alias is warranted.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:031f11f74a53a14660c747b712eb60df233ef395794d4393bc320af5c1738de2",
+      "case_input_sha256": "50a6827546e233982e4a7c65a5fe1d32efd1f95f42d8714b36f2b54e529db9f1",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ground beef (fat-free)",
+        "source_label": "Ground beef (fat-free)",
+        "raw_source_label": "Ground beef (fat-free)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:efbd79fe6680449e06ba5f0369bedef6c64ef0d423a2260b755a979ab113711c",
+        "CM_OCC:e1e886b7edd16a635944c14012943c48d4dcdc1ba3477d795264d4fd6b93f865",
+        "CM_OCC:f6a228149c00499b6cab8b93b81ed022e2523ddbcf4ac23b9ac004e3b202498b"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The three chopped-meat source recipes use fat-free ground beef as a heterogeneous animal tissue preparation. They are neither beef extract nor a single purified nutrient. The source-specific removal of fat and subsequent meat processing must remain attached to each recipe; no exact alias to a generic beef ingredient is supported.",
+      "applicability": "Applies to exact raw source label 'Ground beef (fat-free)' and all 3 frozen occurrence objects, each verified against its complete recipe snapshot hash. The three chopped-meat source recipes use fat-free ground beef as a heterogeneous animal tissue preparation. They are neither beef extract nor a single purified nutrient. The source-specific removal of fat and subsequent meat processing must remain attached to each recipe; no exact alias to a generic beef ingredient is supported.",
+      "evidence_ids": [
+        "A-CASE-2",
+        "A-RECIPE-2-0",
+        "A-RECIPE-2-1",
+        "A-RECIPE-2-2",
+        "A-RETRIEVAL-a-fetch-results-3",
+        "A-RETRIEVAL-a-fetch-results-4",
+        "A-RETRIEVAL-a-fetch-results-5",
+        "A-RETRIEVAL-a-fetch-json-results-1",
+        "A-RETRIEVAL-a-fetch-json-results-2",
+        "A-RETRIEVAL-a-fetch-json-results-3",
+        "A-OWNER-Ground_Beef"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Compare each original ATCC chopped-meat preparation, including defatting/cooking and any permitted tissue substitutions, before asserting one reusable supplied-material owner.",
+      "missing_requirement": "Compare each original ATCC chopped-meat preparation, including defatting/cooking and any permitted tissue substitutions, before asserting one reusable supplied-material owner.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ground_Beef.yaml",
+          "sha256": "bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:0426c50ff70dd82dd9dc72e7e3c3e79d0afe64c53a741d65e5aa46de0a853110",
+      "case_input_sha256": "898127575694c08076e186a0c1b8492aa3607340660fbb3c6c0e21a48d3dae8a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium acetate·6H2O",
+        "source_label": "Sodium acetate·6H2O",
+        "raw_source_label": "Sodium acetate·6H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c124082d3781563fbb0f50fb44382b7b558724fba6d69a3c7d0f15225b3137ef"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC 1284 itself prints sodium acetate·6H2O, 400 mg, so this is not merely a CultureMech punctuation error. Replacing six waters by the familiar trihydrate would contradict the cited source. Its frozen 400 G_PER_L also loses the original milligram unit.",
+      "applicability": "Applies to exact raw source label 'Sodium acetate·6H2O' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC 1284 itself prints sodium acetate·6H2O, 400 mg, so this is not merely a CultureMech punctuation error. Replacing six waters by the familiar trihydrate would contradict the cited source. Its frozen 400 G_PER_L also loses the original milligram unit.",
+      "evidence_ids": [
+        "A-CASE-3",
+        "A-RECIPE-3-0",
+        "A-RETRIEVAL-a-fetch-results-6",
+        "A-RETRIEVAL-a-fetch-json-results-4",
+        "A-WEB-1"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "An NBRC correction, original formulation, or supplier catalogue/CAS identifying the material called sodium acetate·6H2O in NBRC1284 is needed; do not substitute trihydrate.",
+      "missing_requirement": "An NBRC correction, original formulation, or supplier catalogue/CAS identifying the material called sodium acetate·6H2O in NBRC1284 is needed; do not substitute trihydrate.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:06635bbeba0dc970df9d46d69c4bf735bdaced2fffc4a4a9b2d1ed04f8cdb7fb",
+      "case_input_sha256": "2a951cdb21c7747a720af4f2bc007d2a8a1056050663424c13b6ecdac9adf044",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Hunter's basal salts (see below)",
+        "source_label": "Hunter's basal salts (see below)",
+        "raw_source_label": "Hunter's basal salts (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:edbdebed80db829ef8a83079e4d3b87d21550817ddd8eb3c7065087b420807e2"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM 631 fully identifies Hunter’s basal salts as an NTA/mineral/vitamin stock, with Metals44 and pH adjustment, used at 20 ml. It differs compositionally from JCM900/979 Hutner stocks, including MgSO4 and CaCl2 amounts and vitamins. Propose a separately named JCM631 stock with explicit source partonomy.",
+      "applicability": "Applies to exact raw source label \"Hunter's basal salts (see below)\" and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM 631 fully identifies Hunter’s basal salts as an NTA/mineral/vitamin stock, with Metals44 and pH adjustment, used at 20 ml. It differs compositionally from JCM900/979 Hutner stocks, including MgSO4 and CaCl2 amounts and vitamins. Propose a separately named JCM631 stock with explicit source partonomy.",
+      "evidence_ids": [
+        "A-CASE-4",
+        "A-RECIPE-4-0",
+        "A-RETRIEVAL-a-fetch-results-7",
+        "A-RETRIEVAL-a-fetch-json-results-5",
+        "A-WEB-0"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-JCM631_Hunters_Basal_Salts"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:066a032c57492c50034343a02538cc6fb7f5b79397a546e8bc020cf52a2becbb",
+      "case_input_sha256": "17c8cb69a5f31fb3465fc5c1318bc933c5d585b37e188fd4467a927a0a385111",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "YE",
+        "source_label": "YE",
+        "raw_source_label": "YE"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6e4702e34a4038446a63f8122b288f076c0b8dce0bd7b9913a943f2ef2766461",
+        "CM_OCC:89d690e5097210fdc17131c4e54f8d03f431938a6bf650b9113ffcfc77e6a5d6"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The TOGO primary JSON for both M2423 and M2422 expands the exact component_name YE through GMO_001003 to Yeast extract. This resolves the abbreviation within both assigned recipes without inferring a supplier product, extract composition or role. The active Yeast_Extract owner is the matching generic ingredient.",
+      "applicability": "Applies to exact raw source label 'YE' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. The TOGO primary JSON for both M2423 and M2422 expands the exact component_name YE through GMO_001003 to Yeast extract. This resolves the abbreviation within both assigned recipes without inferring a supplier product, extract composition or role. The active Yeast_Extract owner is the matching generic ingredient.",
+      "evidence_ids": [
+        "A-CASE-5",
+        "A-RECIPE-5-0",
+        "A-RECIPE-5-1",
+        "A-RETRIEVAL-a-fetch-results-8",
+        "A-RETRIEVAL-a-fetch-results-9",
+        "A-RETRIEVAL-a-fetch-json-results-6",
+        "A-RETRIEVAL-a-fetch-json-results-7",
+        "A-RETRIEVAL-a-retry-results-11",
+        "A-OWNER-Yeast_Extract"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Yeast_Extract"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Yeast_Extract.yaml",
+          "sha256": "e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:0b4f68b96737fecbf70d6253a9048cb45171b1288120e06f38a251234aad646f",
+      "case_input_sha256": "e893f2cc084678e8966d5cb76a7aa37369551ef87598fbbaa246cb0e0a7f9f94",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2m HCl",
+        "source_label": "2m HCl",
+        "raw_source_label": "2m HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:72b9f5782c555bca46e7fdb5af1e8dcf8e9bd084d5792173f5ff0a14ac9ca140"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2553 uses 2m HCl to adjust pH and labels it hydrochloric acid solution; it does not supply conc_unit metadata or define whether lowercase m denotes molarity or molality. Preserve the titrant solution and its raw strength notation, separate from pure hydrogen chloride.",
+      "applicability": "Applies to exact raw source label '2m HCl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2553 uses 2m HCl to adjust pH and labels it hydrochloric acid solution; it does not supply conc_unit metadata or define whether lowercase m denotes molarity or molality. Preserve the titrant solution and its raw strength notation, separate from pure hydrogen chloride.",
+      "evidence_ids": [
+        "A-CASE-6",
+        "A-RECIPE-6-0",
+        "A-RETRIEVAL-a-fetch-results-10",
+        "A-RETRIEVAL-a-fetch-json-results-8"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Obtain the original ATCC formulation or a correction establishing the meaning of “2m” and the actual solution strength; do not silently change m to M.",
+      "missing_requirement": "Obtain the original ATCC formulation or a correction establishing the meaning of “2m” and the actual solution strength; do not silently change m to M.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:0c83b123bd112992367bb6e14f89bbdf73238a6fd78a8d7e5906960346307ddb",
+      "case_input_sha256": "c076b4231c02b41666e89de16e81a28d4f4d9ff410f6a669a49dc4f5c7095cfa",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Cysteine hydrochloride hydrate",
+        "source_label": "Cysteine hydrochloride hydrate",
+        "raw_source_label": "Cysteine hydrochloride hydrate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4985cb1639c134f4b4a06e80471b471d7d40dd6f6f97630fe7a2d242e49b0def"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "TOGO M3254 retains cysteine hydrochloride hydrate but supplies neither L/D/DL stereochemistry nor a water number. The nearby CHEBI91248 owner is specifically L-cysteine hydrochloride monohydrate. Shared cysteine/HCl/hydrate words do not resolve these omitted identity dimensions.",
+      "applicability": "Applies to exact raw source label 'Cysteine hydrochloride hydrate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M3254 retains cysteine hydrochloride hydrate but supplies neither L/D/DL stereochemistry nor a water number. The nearby CHEBI91248 owner is specifically L-cysteine hydrochloride monohydrate. Shared cysteine/HCl/hydrate words do not resolve these omitted identity dimensions.",
+      "evidence_ids": [
+        "A-CASE-7",
+        "A-RECIPE-7-0",
+        "A-RETRIEVAL-a-fetch-results-11",
+        "A-RETRIEVAL-a-fetch-json-results-9",
+        "A-RETRIEVAL-a-fetch-json-results-92",
+        "A-OWNER-L-cysteine_Hcl_X_H2o"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Supplier/CAS or an original MB-medium formulation must specify cysteine stereochemistry and hydration number before selecting CHEBI91248 or another form.",
+      "missing_requirement": "Supplier/CAS or an original MB-medium formulation must specify cysteine stereochemistry and hydration number before selecting CHEBI91248 or another form.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml",
+          "sha256": "62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:124fa17fd256ea30c20638a1fe1c4c2936069ddcac1c464f12d1804fca64910c",
+      "case_input_sha256": "6ef8dee384dbbca1e779e1b5a6dea22a9a527099d4a3a4433eba9f2087d9efc8",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Fe2(SO4)3",
+        "source_label": "Fe2(SO4)3",
+        "raw_source_label": "Fe2(SO4)3"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8ac8db7e03c09b3c06e72df935501c21b1a29d08e01ccc87de80ebec985bd944",
+        "CM_OCC:2d4b759d9180c79ba7e227312d92cf102a2185d7cdfa02dfabcacf8f620753f3",
+        "CM_OCC:f19fba69006fddb2de1c9ea66c80a3270a4d326a4e930bbf84ecef01fd8bf368",
+        "CM_OCC:192ee10e941e318663fd6ef1aef7987189d6b759d26c15436d73dd1f2bad8d52"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "This source-name case combines incompatible preparation scopes: JCM1267 adds 88.8 ml of 10% Fe2(SO4)3 in 0.01 N H2SO4, while NBRC239 lists a 0.005 g ferric sulfate ingredient. The flat JCM occurrence has lost both percentage/solvent and ml. Do not add Fe2(SO4)3 as a universal pure-substance alias across this case. Shared C-P10 provides the concrete nominal 10% ferric sulfate stock in 0.01 N sulfuric acid for only JCM1267-derived CultureMech:002433 and CultureMech:014319/MediaDive5407. The frozen 88.8 G_PER_L and 79.64125560538116 PERCENT_V_V are retained as historical normalization outputs; primary JCM1267 specifies 88.8 ml of prepared stock, not either frozen quantity as a validated final concentration. TOGO M3240 and M1463 remain outside this stock proposal.",
+      "applicability": "Applies to exact raw source label 'Fe2(SO4)3' and all 4 frozen occurrence objects, each verified against its complete recipe snapshot hash. This source-name case combines incompatible preparation scopes: JCM1267 adds 88.8 ml of 10% Fe2(SO4)3 in 0.01 N H2SO4, while NBRC239 lists a 0.005 g ferric sulfate ingredient. The flat JCM occurrence has lost both percentage/solvent and ml. Do not add Fe2(SO4)3 as a universal pure-substance alias across this case. C-P10 applies only to occurrences CM_OCC:8ac8db7e03c09b3c06e72df935501c21b1a29d08e01ccc87de80ebec985bd944 and CM_OCC:2d4b759d9180c79ba7e227312d92cf102a2185d7cdfa02dfabcacf8f620753f3; it is not a global Fe2(SO4)3 alias and does not settle the separate M3240/M1463 supplied materials.",
+      "evidence_ids": [
+        "A-CASE-8",
+        "A-RECIPE-8-0",
+        "A-RECIPE-8-1",
+        "A-RECIPE-8-2",
+        "A-RECIPE-8-3",
+        "A-RETRIEVAL-a-fetch-results-12",
+        "A-RETRIEVAL-a-fetch-results-13",
+        "A-RETRIEVAL-a-fetch-results-14",
+        "A-RETRIEVAL-a-fetch-json-results-10",
+        "A-RETRIEVAL-a-fetch-json-results-11",
+        "A-RETRIEVAL-a-fetch-json-results-105"
+      ],
+      "proposal_ids": [
+        "C-P10"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Split the JCM1267/MediaDive5407 prepared-solution occurrences from the NBRC239 and TOGO M3240 material occurrences; confirm percentage basis and salt hydration for each before source-specific mapping. Remaining non-JCM1267 supplied-form uncertainty and the source normalization/unit conflicts are not resolved by the exact JCM1267 stock proposal.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:12e1979a2a04cf0a7a578034feabc2b65300ce42d1bcba9ce5e53c3a8f343f44",
+      "case_input_sha256": "9a5a0740f2b9d1ba2b917858e8507a807662f4c0db424c00d5a1aa9c903019a2",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "L--Cysteine・H2O・HCl",
+        "source_label": "L--Cysteine・H2O・HCl",
+        "raw_source_label": "L--Cysteine・H2O・HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:31f213e12640acfc6fef43672e6281e9b7ae01042ae45aec37f48fe0184bd0c0",
+        "CM_OCC:e8763e00ba2ca883cdbf12cfa1ec253eb222cd13bce2439b190aa1e34ad4b165",
+        "CM_OCC:a4fe5e023f63e5f79694b0b4eddee1df8112d00a5942d973ef96b97f6d662e40",
+        "CM_OCC:e6ef8ea7c84e43959975c7f05f9252163d638efdc9744f371d4b8f6c81821991",
+        "CM_OCC:64f6eed53a548f3feaedaca0ea9b1a18bdf0f81b92059682c09332927fe6c952",
+        "CM_OCC:ae30d87c1fde67bf7b484e5c799e80e8bf177d5b79744c3edd6f277b1634cacb"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM552 explicitly specifies L-cysteine·H2O·HCl; JCM553 and627 inherit that recipe with named changes that do not alter this component. The six frozen spellings retain L configuration, hydrochloride and one water. CHEBI91248 independently describes that exact form, so a typed raw alias on the active hydrate owner is justified.",
+      "applicability": "Applies to exact raw source label 'L--Cysteine・H2O・HCl' and all 6 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM552 explicitly specifies L-cysteine·H2O·HCl; JCM553 and627 inherit that recipe with named changes that do not alter this component. The six frozen spellings retain L configuration, hydrochloride and one water. CHEBI91248 independently describes that exact form, so a typed raw alias on the active hydrate owner is justified.",
+      "evidence_ids": [
+        "A-CASE-9",
+        "A-RECIPE-9-0",
+        "A-RECIPE-9-1",
+        "A-RECIPE-9-2",
+        "A-RECIPE-9-3",
+        "A-RECIPE-9-4",
+        "A-RECIPE-9-5",
+        "A-RETRIEVAL-a-fetch-results-15",
+        "A-RETRIEVAL-a-fetch-results-16",
+        "A-RETRIEVAL-a-fetch-results-17",
+        "A-RETRIEVAL-a-fetch-json-results-12",
+        "A-RETRIEVAL-a-fetch-json-results-13",
+        "A-RETRIEVAL-a-fetch-json-results-14",
+        "A-RETRIEVAL-a-fetch-json-results-15",
+        "A-RETRIEVAL-a-fetch-json-results-16",
+        "A-RETRIEVAL-a-fetch-json-results-17",
+        "A-RETRIEVAL-a-fetch-json-results-92",
+        "A-WEB-1",
+        "A-OWNER-L-cysteine_Hcl_X_H2o"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-L-cysteine_Hcl_X_H2o"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml",
+          "sha256": "62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:142be94f4e5ec8b284b2f2208648b4532223cfdc30d9cc40b4c828ac5b7bd409",
+      "case_input_sha256": "c2a82257b92d67deb69cdd1e69c47036cb637557ff74dab17e6719076a7e36e3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "EDTA, sodium salt",
+        "source_label": "EDTA, sodium salt",
+        "raw_source_label": "EDTA, sodium salt"
+      },
+      "occurrence_ids": [
+        "CM_OCC:caf18d25f351841f8d001c935dc0baca264514f6062a47ee54d06a1e10a6476a",
+        "CM_OCC:706b58a96216e1078dfb93f1f30a1221a6769dcd8c1c9af712a3d033871be1da"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1116 and TOGO M2371 say EDTA sodium salt without specifying sodium stoichiometry or hydration. Current Na2-EDTA and tetrasodium tetrahydrate owners are distinct substances. Neither the use as a chelator nor surrounding trace salts chooses a form.",
+      "applicability": "Applies to exact raw source label 'EDTA, sodium salt' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC1116 and TOGO M2371 say EDTA sodium salt without specifying sodium stoichiometry or hydration. Current Na2-EDTA and tetrasodium tetrahydrate owners are distinct substances. Neither the use as a chelator nor surrounding trace salts chooses a form.",
+      "evidence_ids": [
+        "A-CASE-10",
+        "A-RECIPE-10-0",
+        "A-RECIPE-10-1",
+        "A-RETRIEVAL-a-fetch-results-18",
+        "A-RETRIEVAL-a-fetch-results-19",
+        "A-RETRIEVAL-a-fetch-json-results-18",
+        "A-RETRIEVAL-a-fetch-json-results-19",
+        "A-RETRIEVAL-a-fetch-json-results-100",
+        "A-OWNER-Na2-edta",
+        "A-OWNER-EDTA_Tetrasodium_Tetrahydrate_Salt"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the EDTA supplier/CAS or explicit Na count and hydration from NBRC1116 and the original nitrosolobus formulation; resolve the two occurrences separately if forms differ.",
+      "missing_requirement": "Recover the EDTA supplier/CAS or explicit Na count and hydration from NBRC1116 and the original nitrosolobus formulation; resolve the two occurrences separately if forms differ.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2-edta.yaml",
+          "sha256": "7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4"
+        },
+        {
+          "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+          "sha256": "4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:14cc7b6b53f12cfa096edf7f91fc33f9980f761475a0a8ab6fc90bca0dd1eb62",
+      "case_input_sha256": "ce07ae4a8c7013b6387de10764460292787add7012ec2f4913e8f3ba245f1b59",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2.5% L-Cysteine . HCl",
+        "source_label": "2.5% L-Cysteine . HCl",
+        "raw_source_label": "2.5% L-Cysteine . HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:26cc63a12d3e45e0925e076fbb78111e05534ca7d6c868af74d2e37de53d4e25"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2570 adds a 2.5% L-cysteine hydrochloride stock; that percentage-qualified preparation is not the pure CHEBI91247 salt or generic hydrate solution. The flat source has replaced a volume contribution by G_PER_L. The accessible source name does not state the percent basis or hydrate.",
+      "applicability": "Applies to exact raw source label '2.5% L-Cysteine . HCl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2570 adds a 2.5% L-cysteine hydrochloride stock; that percentage-qualified preparation is not the pure CHEBI91247 salt or generic hydrate solution. The flat source has replaced a volume contribution by G_PER_L. The accessible source name does not state the percent basis or hydrate.",
+      "evidence_ids": [
+        "A-CASE-11",
+        "A-RECIPE-11-0",
+        "A-RETRIEVAL-a-fetch-results-20",
+        "A-RETRIEVAL-a-fetch-json-results-20"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Verify the original ATCC stock preparation, percent basis (w/v or w/w), solvent and hydrate status before proposing a quantitatively defined stock.",
+      "missing_requirement": "Verify the original ATCC stock preparation, percent basis (w/v or w/w), solvent and hydrate status before proposing a quantitatively defined stock.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:16f05e8064bcf00561ffc3c7a2b8c801f582e3fbe9e92ca5b12a7254a7c37e5d",
+      "case_input_sha256": "151367a2e58afe6e68877e8b2cef756396a47d66d07c8216f93b084a9526f82d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium L--malate",
+        "source_label": "Sodium L--malate",
+        "raw_source_label": "Sodium L--malate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:03d9c7a237c25e5fbd83d1007d4b9be3e24588401aebedd445c0124350279e0a",
+        "CM_OCC:d7fe0ad242ae60ea47e07d36b51dd3510443a0d4824f19e0fa6e984b2dc6b53b"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "JCM520 and95 confirm Sodium L-malate, retaining the L stereochemical qualifier. They do not state sodium stoichiometry or hydrate. Current Sodium_Malate is specifically disodium(S)-malate and also carries contradictory DL aliases; that owner defect must not supply missing source identity evidence.",
+      "applicability": "Applies to exact raw source label 'Sodium L--malate' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM520 and95 confirm Sodium L-malate, retaining the L stereochemical qualifier. They do not state sodium stoichiometry or hydrate. Current Sodium_Malate is specifically disodium(S)-malate and also carries contradictory DL aliases; that owner defect must not supply missing source identity evidence.",
+      "evidence_ids": [
+        "A-CASE-12",
+        "A-RECIPE-12-0",
+        "A-RECIPE-12-1",
+        "A-RETRIEVAL-a-fetch-results-21",
+        "A-RETRIEVAL-a-fetch-results-22",
+        "A-RETRIEVAL-a-fetch-json-results-21",
+        "A-RETRIEVAL-a-fetch-json-results-22",
+        "A-RETRIEVAL-a-fetch-json-results-98",
+        "A-OWNER-Sodium_Malate"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Identify monosodium versus disodium salt and supplied hydration for both JCM recipes; independently remove misleading DL aliases from the L owner without assigning these source cases by convention.",
+      "missing_requirement": "Identify monosodium versus disodium salt and supplied hydration for both JCM recipes; independently remove misleading DL aliases from the L owner without assigning these source cases by convention.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Malate.yaml",
+          "sha256": "74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:1714b91e2d6d571b8283a9bf1a6d946b790d0491a1a5c86125cb1c139fd1524e",
+      "case_input_sha256": "c20e7f5ca422064f8ee6d50f728396f4c5e6f388accdf326149e6deb32ee3bba",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Cysteine-hydrochloride",
+        "source_label": "Cysteine-hydrochloride",
+        "raw_source_label": "Cysteine-hydrochloride"
+      },
+      "occurrence_ids": [
+        "CM_OCC:58b01126316a722e3f6a1c0990f012c3d4f9160a5772816acc12ac60201dcafc"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "TOGO M3149 confirms the unspecific cysteine-hydrochloride label but no stereochemistry or hydrate. Live issue905 documents that similarly unspecific MediaDive metadata conflicts among DL anhydrous and L hydrate identifiers. The frozen obsolete MediaIngredientMech numeric reference is not identity authority.",
+      "applicability": "Applies to exact raw source label 'Cysteine-hydrochloride' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M3149 confirms the unspecific cysteine-hydrochloride label but no stereochemistry or hydrate. Live issue905 documents that similarly unspecific MediaDive metadata conflicts among DL anhydrous and L hydrate identifiers. The frozen obsolete MediaIngredientMech numeric reference is not identity authority.",
+      "evidence_ids": [
+        "A-CASE-13",
+        "A-RECIPE-13-0",
+        "A-RETRIEVAL-a-fetch-results-23",
+        "A-RETRIEVAL-a-fetch-json-results-23",
+        "A-RETRIEVAL-a-fetch-json-results-93",
+        "A-OWNER-L-cysteine_Hcl_X_H2o"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Obtain original DSM135 formulation or supplier/CAS establishing stereochemistry and water content; do not inherit either CHEBI91247 or91248 from an unspecific alias.",
+      "missing_requirement": "Obtain original DSM135 formulation or supplier/CAS establishing stereochemistry and water content; do not inherit either CHEBI91247 or91248 from an unspecific alias.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml",
+          "sha256": "62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:17622b7fc174bbb091200f2569a93f8042e412befd95a8d72e6328f4e177248d",
+      "case_input_sha256": "8c2b7ddc807939c926e301c1244c98c990dd83d53675044f954dc12569007163",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Basal Medium",
+        "source_label": "Basal Medium",
+        "raw_source_label": "Basal Medium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:dbbfaae0a5f069e2beb6a72997e53f3baa7583e3be727008c28d006fa22bfcdd"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2554 identifies Basal Medium as the seawater/peptone/yeast/mineral preparation dispensed in 6 ml aliquots. It explicitly excludes sodium sulfide at the preparation step and uses separately supplied powdered sulfur. The frozen 6 G_PER_L is not a concentration. Propose the named basal preparation with only constituents actually retained in that preparation.",
+      "applicability": "Applies to exact raw source label 'Basal Medium' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2554 identifies Basal Medium as the seawater/peptone/yeast/mineral preparation dispensed in 6 ml aliquots. It explicitly excludes sodium sulfide at the preparation step and uses separately supplied powdered sulfur. The frozen 6 G_PER_L is not a concentration. Propose the named basal preparation with only constituents actually retained in that preparation.",
+      "evidence_ids": [
+        "A-CASE-14",
+        "A-RECIPE-14-0",
+        "A-RETRIEVAL-a-fetch-results-24",
+        "A-RETRIEVAL-a-fetch-json-results-24"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-TOGO_M2554_Pyrococcus_Basal_Preparation"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:220969df6c511cdbe65c3b811d3ca7f711583cdd9ef2e03c41faf46ff0c98e0a",
+      "case_input_sha256": "f0a4b15d8a7c086da135151d39a6ed0752cdb412a0642e61673eeaf1d3680ef1",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium Phosphite",
+        "source_label": "Sodium Phosphite",
+        "raw_source_label": "Sodium Phosphite"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6d74a8fae4c75dad783c342288fab61a1c3698009b8e7fd61bb278341fbf52f5"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "MediaDB479 was recovered through the web tool and links Carini2014 (doi:10.1038/ncomms5346). Its Methods/Cultivation details explicitly name phosphite as NaPHO3·5H2O. This resolves five waters but the printed one-sodium formula differs from the maintained dibasic pentahydrate; do not silently insert a second sodium. The source concentration1µM is consistent with0.001mM, independently of salt identity.",
+      "applicability": "Applies to exact raw source label 'Sodium Phosphite' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. MediaDB479 was recovered through the web tool and links Carini2014 (doi:10.1038/ncomms5346). Its Methods/Cultivation details explicitly name phosphite as NaPHO3·5H2O. This resolves five waters but the printed one-sodium formula differs from the maintained dibasic pentahydrate; do not silently insert a second sodium. The source concentration1µM is consistent with0.001mM, independently of salt identity.",
+      "evidence_ids": [
+        "A-CASE-15",
+        "A-RECIPE-15-0",
+        "A-RETRIEVAL-a-fetch-results-96",
+        "A-WEB-5",
+        "A-WEB-6",
+        "A-WEB-9",
+        "A-WEB-10",
+        "A-OWNER-Sodium_Phosphite_Dibasic_Pentahydrate"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Obtain a correction or supplier/CAS resolving the printed NaPHO3·5H2O sodium/proton stoichiometry in Carini2014; keep the pentahydrate and original formula explicit.",
+      "missing_requirement": "Obtain a correction or supplier/CAS resolving the printed NaPHO3·5H2O sodium/proton stoichiometry in Carini2014; keep the pentahydrate and original formula explicit.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Phosphite_Dibasic_Pentahydrate.yaml",
+          "sha256": "02f24e2580dfad82c4cf391fdd345d0e8fc60922ab8899da18704581fc86497e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:22fbca582bd0bc9f596294d77ef76494369434465f9e40dfa8bcb490733320d7",
+      "case_input_sha256": "650bb312b3aaf72545d8155a0dd432a6b28c7debc5ba42b3861e1e05ad5d257d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium molybdate hydrate (source formula unresolved)",
+        "source_label": "Sodium molybdate hydrate (source formula unresolved)",
+        "raw_source_label": "Sodium molybdate hydrate (source formula unresolved)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:93996da1b121b7597ebaae33b85eae59018174181f0ef7938761b25bc3e364fe",
+        "CM_OCC:98693c7db289f0d79e4aff446b3639f1a2a51e3f9f51a8b94dfc8a7e122f9cd3"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Both frozen yeast-mineral-medium records already contain a content-bound scientific hold: the 1992 source prints NaMoO4.2H2O, while a later formulation has Na2MoO4.2H2O. Their source notes explicitly prohibit repairing the sodium count or borrowing the later article. A failed new paper retrieval does not weaken that hold.",
+      "applicability": "Applies to exact raw source label 'Sodium molybdate hydrate (source formula unresolved)' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. Both frozen yeast-mineral-medium records already contain a content-bound scientific hold: the 1992 source prints NaMoO4.2H2O, while a later formulation has Na2MoO4.2H2O. Their source notes explicitly prohibit repairing the sodium count or borrowing the later article. A failed new paper retrieval does not weaken that hold.",
+      "evidence_ids": [
+        "A-CASE-16",
+        "A-RECIPE-16-0",
+        "A-RECIPE-16-1",
+        "A-RETRIEVAL-a-fetch-results-97",
+        "A-RETRIEVAL-a-fetch-json-results-106",
+        "A-OWNER-Na2moo4_X_2_H2o"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Resolve the printed 1992 one-sodium formula through an erratum or original authors’ material specification; retain source mass and unverified database molarity separately.",
+      "missing_requirement": "Resolve the printed 1992 one-sodium formula through an erratum or original authors’ material specification; retain source mass and unverified database molarity separately.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2moo4_X_2_H2o.yaml",
+          "sha256": "d8ecba6c664d94d9d0f0da89410808b99c3d6ad4cfeb55f122b5df2d7d8b5612"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:23030c35f0c306661564697a3d7e9767a9f270e7afd0338f3f8e506563407294",
+      "case_input_sha256": "679df0d321a2aef4982d9e0d6d42b6dee87a2ff37edf6804afbc979e19ce0b44",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1M HCl",
+        "source_label": "0.1M HCl",
+        "raw_source_label": "0.1M HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:bbeceda652365dd6591757a2310c0d560a2a6993d05ae1ac705b4a5b675bed9b"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2885 places 0.1M HCl as a 1 L solvent input to its trace-element stock and explicitly records conc_value0.1/conc_unitM. It is a reagent solution, not 1 g/L HCl. Propose a source-qualified 0.1 M hydrochloric-acid solution with no pure-compound equivalence.",
+      "applicability": "Applies to exact raw source label '0.1M HCl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2885 places 0.1M HCl as a 1 L solvent input to its trace-element stock and explicitly records conc_value0.1/conc_unitM. It is a reagent solution, not 1 g/L HCl. Propose a source-qualified 0.1 M hydrochloric-acid solution with no pure-compound equivalence.",
+      "evidence_ids": [
+        "A-CASE-17",
+        "A-RECIPE-17-0",
+        "A-RETRIEVAL-a-fetch-results-25",
+        "A-RETRIEVAL-a-fetch-json-results-25"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-TOGO_M2885_Hydrochloric_Acid_01M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:28699d4d45fe67467b745bfb9df16bc7d870bfd8ea4de402d982bca28727fc09",
+      "case_input_sha256": "b2f65138788e0d55f16aad50c186c2aba32c8e3c8a7e5f281e5a03fa8d5d0bb8",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1 M L--Cysteine・HCl・H2O",
+        "source_label": "0.1 M L--Cysteine・HCl・H2O",
+        "raw_source_label": "0.1 M L--Cysteine・HCl・H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0c9210308fc303efc3657e09ca1e8166f2c922ea48bfb606b2461ac9f05bc6a0"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1051 explicitly names 0.1 M L-cysteine·HCl·H2O, added as 10 ml from an anaerobic stock. Its exact solute form is supported by CHEBI91248; the complete named input is a solution. Preserve molarity and the volume contribution, not the frozen 10 G_PER_L interpretation.",
+      "applicability": "Applies to exact raw source label '0.1 M L--Cysteine・HCl・H2O' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM1051 explicitly names 0.1 M L-cysteine·HCl·H2O, added as 10 ml from an anaerobic stock. Its exact solute form is supported by CHEBI91248; the complete named input is a solution. Preserve molarity and the volume contribution, not the frozen 10 G_PER_L interpretation.",
+      "evidence_ids": [
+        "A-CASE-18",
+        "A-RECIPE-18-0",
+        "A-RETRIEVAL-a-fetch-results-26",
+        "A-RETRIEVAL-a-fetch-json-results-26"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-JCM1051_L_Cysteine_Hydrochloride_Monohydrate_01M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:287e8d4624154869e879a74678f47ebc4d92788de0f3ffbce4e4ba0b120ad924",
+      "case_input_sha256": "2bf27b3b67cd30a9da7e22d913f8024bf285efcc1999860e9d78ee2b03101441",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "L-Cysteine . HCl . H2O",
+        "source_label": "L-Cysteine . HCl . H2O",
+        "raw_source_label": "L-Cysteine . HCl . H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:31ec08e146ac1a59ccd4bddc46218003f8ee42c0d9d0f91c773820ffa849777d"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO M2575 retains explicit L-cysteine hydrochloride monohydrate in its cysteine/sulfide reducing solution. Membership inside a stock does not make this component the whole stock. The source string preserves L configuration and one water and matches CHEBI91248, supporting a raw-form alias only.",
+      "applicability": "Applies to exact raw source label 'L-Cysteine . HCl . H2O' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2575 retains explicit L-cysteine hydrochloride monohydrate in its cysteine/sulfide reducing solution. Membership inside a stock does not make this component the whole stock. The source string preserves L configuration and one water and matches CHEBI91248, supporting a raw-form alias only.",
+      "evidence_ids": [
+        "A-CASE-19",
+        "A-RECIPE-19-0",
+        "A-RETRIEVAL-a-fetch-results-27",
+        "A-RETRIEVAL-a-fetch-json-results-27",
+        "A-RETRIEVAL-a-fetch-json-results-92",
+        "A-OWNER-L-cysteine_Hcl_X_H2o"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-L-cysteine_Hcl_X_H2o"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml",
+          "sha256": "62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:2936c2ff84f59836f8388c7d253fdf06da96a4c9207f05bd5f0eb01ae202088e",
+      "case_input_sha256": "b74246a06343d7bb470e13b6fe45731cac0093f1e1427c45243a26437837b581",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1 M Tris/HCl (pH7.5)",
+        "source_label": "0.1 M Tris/HCl (pH7.5)",
+        "raw_source_label": "0.1 M Tris/HCl (pH7.5)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:81c5f7ba19b8db3f5fd647b84f5b8720d000f9f0356b7ca8ce36ba6fce3444bc"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC1507 specifies a 0.1 M Tris/HCl buffer at pH7.5. That buffered preparation is not pure Tris base or Tris hydrochloride. A source-qualified buffer record can retain the declared molarity/pH while leaving the unreported acid/base recipe ratio and solvent detail unasserted.",
+      "applicability": "Applies to exact raw source label '0.1 M Tris/HCl (pH7.5)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC1507 specifies a 0.1 M Tris/HCl buffer at pH7.5. That buffered preparation is not pure Tris base or Tris hydrochloride. A source-qualified buffer record can retain the declared molarity/pH while leaving the unreported acid/base recipe ratio and solvent detail unasserted.",
+      "evidence_ids": [
+        "A-CASE-20",
+        "A-RECIPE-20-0",
+        "A-RETRIEVAL-a-fetch-results-28",
+        "A-RETRIEVAL-a-fetch-json-results-28"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-NBRC1507_Tris_HCl_01M_pH75_Buffer"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:29445bd864e6106d8ea17db1da597a22baf46d2515a1231064c4ebb65769a691",
+      "case_input_sha256": "b2876a71cddb6da4378a6f864a2a243368013fd471b2bd9353f432886ae7a1c5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1M HCl",
+        "source_label": "1M HCl",
+        "raw_source_label": "1M HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2a541916ba4e371f897a56f1894dcfc18e6c18cffebcdde6dcf188e902afe837"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2596 uses 1M HCl in the sludge-fluid preparation. The source is a concentration-qualified hydrochloric acid reagent; the variable addition is not a fixed concentration in the final medium. Propose a source-qualified reagent identity, preserving source-use context.",
+      "applicability": "Applies to exact raw source label '1M HCl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2596 uses 1M HCl in the sludge-fluid preparation. The source is a concentration-qualified hydrochloric acid reagent; the variable addition is not a fixed concentration in the final medium. Propose a source-qualified reagent identity, preserving source-use context.",
+      "evidence_ids": [
+        "A-CASE-21",
+        "A-RECIPE-21-0",
+        "A-RETRIEVAL-a-fetch-results-29",
+        "A-RETRIEVAL-a-fetch-json-results-29"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-TOGO_M2596_Hydrochloric_Acid_1M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:296f6046f0b1bbdca21a4be4c9ef4e98b5cba5e81442b19d92e5fb36c8ad747a",
+      "case_input_sha256": "0fa53e4cdba3278d4f512caef302e3c8ec4ef7ccba50ef1d3b64af095974d343",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "L--Sodium lactate",
+        "source_label": "L--Sodium lactate",
+        "raw_source_label": "L--Sodium lactate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ccf40812ac3d3a4f0446994437d415939fbf32ba68cfaf5dfcc1af85ce40bbd4",
+        "CM_OCC:8706b666328d2d02e54916a4b8fd194e83c30f42ffbe8f393d5554204b236f65",
+        "CM_OCC:05066ec0e6cfef27d91134a3eec044fad35f1ea9d383d045470465785731c1d1",
+        "CM_OCC:2161234bfd765d51a91623174f78a3fba379e3fa15bf227ca9e5747182637a5e",
+        "CM_OCC:4a29c351bd56d402d0275951c0cd6b3f3b71880b80822d4800172f1fa5fcc4c2",
+        "CM_OCC:0090840ff38e4bae92d4dee4f4a2644395455973bc9bc7cb5750d413013a5717",
+        "CM_OCC:1acc96bc89429cd0e902b8eb01a57fbbce429fc62d0b30cd7be27e32b7455d93"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM552,627,1098,707 and757 explicitly name L-sodium lactate. All seven frozen occurrences retain L stereochemistry; nesting in JCM757 substrate solution changes use context, not the supplied solute. CHEBI232798 is sodium L-lactate. Add the exact double-hyphen spelling and reject the existing D,L synonym on the L owner.",
+      "applicability": "Applies to exact raw source label 'L--Sodium lactate' and all 7 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM552,627,1098,707 and757 explicitly name L-sodium lactate. All seven frozen occurrences retain L stereochemistry; nesting in JCM757 substrate solution changes use context, not the supplied solute. CHEBI232798 is sodium L-lactate. Add the exact double-hyphen spelling and reject the existing D,L synonym on the L owner.",
+      "evidence_ids": [
+        "A-CASE-22",
+        "A-RECIPE-22-0",
+        "A-RECIPE-22-1",
+        "A-RECIPE-22-2",
+        "A-RECIPE-22-3",
+        "A-RECIPE-22-4",
+        "A-RECIPE-22-5",
+        "A-RECIPE-22-6",
+        "A-RETRIEVAL-a-fetch-results-15",
+        "A-RETRIEVAL-a-fetch-results-17",
+        "A-RETRIEVAL-a-fetch-results-30",
+        "A-RETRIEVAL-a-fetch-results-31",
+        "A-RETRIEVAL-a-fetch-results-32",
+        "A-RETRIEVAL-a-fetch-json-results-12",
+        "A-RETRIEVAL-a-fetch-json-results-13",
+        "A-RETRIEVAL-a-fetch-json-results-16",
+        "A-RETRIEVAL-a-fetch-json-results-17",
+        "A-RETRIEVAL-a-fetch-json-results-30",
+        "A-RETRIEVAL-a-fetch-json-results-31",
+        "A-RETRIEVAL-a-fetch-json-results-32",
+        "A-RETRIEVAL-a-fetch-json-results-96",
+        "A-WEB-1",
+        "A-OWNER-Na-l-lactate"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Na-l-lactate"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na-l-lactate.yaml",
+          "sha256": "afab98b9150569dee9477d0b2820884c470c1e0865460d00630bdb20d3e68031"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1170"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:2a8edeb636238d033f7ba513d719e179b94f6c1db3418583bfb98878cc7ba702",
+      "case_input_sha256": "2b49633d249b1602de74763be02b2a48610a63b74179b4d3a155fd269eace130",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "lactic acid",
+        "source_label": "lactic acid",
+        "raw_source_label": "lactic acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ee48d4961df38ef5fc7838f1e60c033849c19a5fcca50a5c47f6d3da5506f421"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM87 actually specifies a 20% lactic-acid titrant as one alternative to hydrochloric acid, used to reach pH5.6. The frozen unqualified label omits the stock strength and alternative-use condition. Do not map this whole source occurrence to a pure lactic-acid enantiomer.",
+      "applicability": "Applies to exact raw source label 'lactic acid' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM87 actually specifies a 20% lactic-acid titrant as one alternative to hydrochloric acid, used to reach pH5.6. The frozen unqualified label omits the stock strength and alternative-use condition. Do not map this whole source occurrence to a pure lactic-acid enantiomer.",
+      "evidence_ids": [
+        "A-CASE-23",
+        "A-RECIPE-23-0",
+        "A-RETRIEVAL-a-fetch-results-33",
+        "A-RETRIEVAL-a-fetch-json-results-33",
+        "A-RETRIEVAL-a-fetch-json-results-104"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the percent basis, acid stereochemistry and supplied solution specification for the JCM87 titrant before minting a quantitative stock or selecting a pure solute identity.",
+      "missing_requirement": "Recover the percent basis, acid stereochemistry and supplied solution specification for the JCM87 titrant before minting a quantitative stock or selecting a pure solute identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:2b6be153bb4cea02433f490a4e6f6fe49f0ed74c380f3701bc48963892662c0d",
+      "case_input_sha256": "6d34c377136eafb44871602b4d017bb3dbaa0447e594059be833f73b03c9255e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Artifical sea water",
+        "source_label": "Artifical sea water",
+        "raw_source_label": "Artifical sea water"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ee51ccc6c3ca6b3cd6e55bba1c032e41ac9310a2f94ea80790874f6fe542f68d"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ600 gives the full artificial-seawater salt recipe and uses 250 ml of it. Its explicit constituent list differs from a generic seawater concept and is independent of the Hutner stock in the same medium. Propose a source-qualified seawater mixture retaining literal hydration and quantities.",
+      "applicability": "Applies to exact raw source label 'Artifical sea water' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. DSMZ600 gives the full artificial-seawater salt recipe and uses 250 ml of it. Its explicit constituent list differs from a generic seawater concept and is independent of the Hutner stock in the same medium. Propose a source-qualified seawater mixture retaining literal hydration and quantities.",
+      "evidence_ids": [
+        "A-CASE-24",
+        "A-RECIPE-24-0",
+        "A-RETRIEVAL-a-fetch-results-34",
+        "A-RETRIEVAL-a-fetch-json-results-34"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-DSM600_Artificial_Seawater"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:3126f6fe7d7231259578f54724e23f146b2e18c46615d36ef37e03e44e9e283f",
+      "case_input_sha256": "39441ac85e8b207a14564585acf29ab4f9de19bff257087656f5f7af9cb46fa9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NaOH (1 N)",
+        "source_label": "NaOH (1 N)",
+        "raw_source_label": "NaOH (1 N)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e172f54bccf27095625ef2cbc14a41f9bf6f1393c1261bbc1374a95b466e63e4",
+        "CM_OCC:47feecc5ae8b605f31dc666f0b77749e9378598133faeefcbd1a6b34231af3ac"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Both occurrences retain a 1 N NaOH reagent used to dissolve haemin before dilution. DSMZ330 provides the exact 1 ml reagent input; MediaDiveP2 notes explicitly refuse converting it to a pure-solid concentration. A stock record preserves normality without asserting an inferred molarity or final-medium NaOH amount.",
+      "applicability": "Applies to exact raw source label 'NaOH (1 N)' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. Both occurrences retain a 1 N NaOH reagent used to dissolve haemin before dilution. DSMZ330 provides the exact 1 ml reagent input; MediaDiveP2 notes explicitly refuse converting it to a pure-solid concentration. A stock record preserves normality without asserting an inferred molarity or final-medium NaOH amount.",
+      "evidence_ids": [
+        "A-CASE-25",
+        "A-RECIPE-25-0",
+        "A-RECIPE-25-1",
+        "A-RETRIEVAL-a-fetch-results-35",
+        "A-RETRIEVAL-a-fetch-results-36"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-DSM330_Sodium_Hydroxide_1N_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:31a348d39a4015042e7712b36c69fcc28cf1e32cc2e39460aaa534fd520be716",
+      "case_input_sha256": "1ead5aa6f3cf637632fc033aaac03e791db5811a57389532829213532e52304f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Basal broth",
+        "source_label": "Basal broth",
+        "raw_source_label": "Basal broth"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9c3fe2e02149e960dba42bdf501b83963ea60ecebb2cc487cf7d1ca2c578e636"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The TOGO M2228 primary record recovers Basal broth as a five-part preparation: yeast extract, phenol-red solution, bacitracin, meticillin and Solution1. Solution1 itself includes BHI, PPLO broth and Hanks salts; this is not equivalent to BHI alone. Propose an exact source-qualified complex stock and keep raw input amounts without an inferred final-volume denominator.",
+      "applicability": "Applies to exact raw source label 'Basal broth' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. The TOGO M2228 primary record recovers Basal broth as a five-part preparation: yeast extract, phenol-red solution, bacitracin, meticillin and Solution1. Solution1 itself includes BHI, PPLO broth and Hanks salts; this is not equivalent to BHI alone. Propose an exact source-qualified complex stock and keep raw input amounts without an inferred final-volume denominator.",
+      "evidence_ids": [
+        "A-CASE-26",
+        "A-RECIPE-26-0",
+        "A-RETRIEVAL-a-fetch-results-37",
+        "A-RETRIEVAL-a-fetch-json-results-35"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-TOGO_M2228_Basal_Broth"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:3342115b7b50a7b32d658c5d1d165e6319e8dc9a81d64545d7d41fe0325cd882",
+      "case_input_sha256": "eca6bc993c8d3125bd16a1699f7b85e12c4206e5232fe615de4862ee4f69ee27",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Hutner's basal salts",
+        "source_label": "Hutner's basal salts",
+        "raw_source_label": "Hutner's basal salts"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4ae4acbcdc673f21e757b44bb3c67f96456b7ecc79a7d5ce9534f5de1f138201"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ600 delegates Hutner salts to DSMZ590. The recovered DSMZ590 recipe is an NTA/mineral mixture with Metals44 and acid/base adjustment, not JCM631 Hunter salts. Its molybdate row is printed (NH4)6MoO7O24 x4H2O, so exact chemical component identity is unresolved even though the nominal recipe is recovered. A nominal source-qualified stock can nevertheless be proposed with the printed unresolved component retained UNMAPPED and a source-relative assertion; no chemically complete decomposition is claimed. Both cited recipes specify approximately7.3g KOH for dissolving NTA; that approximate input is preserved in proposed notes.",
+      "applicability": "Applies to exact raw source label \"Hutner's basal salts\" and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. DSMZ600 delegates Hutner salts to DSMZ590. The recovered DSMZ590 recipe is an NTA/mineral mixture with Metals44 and acid/base adjustment, not JCM631 Hunter salts. Its molybdate row is printed (NH4)6MoO7O24 x4H2O, so exact chemical component identity is unresolved even though the nominal recipe is recovered. A nominal source-qualified stock can nevertheless be proposed with the printed unresolved component retained UNMAPPED and a source-relative assertion; no chemically complete decomposition is claimed. Both cited recipes specify approximately7.3g KOH for dissolving NTA; that approximate input is preserved in proposed notes.",
+      "evidence_ids": [
+        "A-CASE-27",
+        "A-RECIPE-27-0",
+        "A-RETRIEVAL-a-fetch-results-34",
+        "A-RETRIEVAL-a-fetch-json-results-34",
+        "A-RETRIEVAL-a-retry-results-12",
+        "A-WEB-4"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-DSM590_Hutner_Basal_Salts"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "An authoritative correction or product specification for the malformed molybdate component in DSMZ590 is needed before a chemically exact stock decomposition; preserve all original ingredients and pH adjustments.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:3351dcc8650d5b8eacb95fe693bc1c767f6a21d091942474277c526716484044",
+      "case_input_sha256": "b41f853aa07d3665f67ddce73954e85cdb32d5ae2a2b09d6a76e8a5dfa19a6f3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium tetrathionate",
+        "source_label": "Sodium tetrathionate",
+        "raw_source_label": "Sodium tetrathionate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f03a0b82164c6ba95c5e831655e4d2fafe9aad906cf0a25499a7a63911bc166a"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1022 explicitly lists Sodium tetrathionate 2 g. This establishes the sodium salt family, not free tetrathionate ion identity or a particular hydrate. The existing Na-tetrathionate placeholder should not be promoted by substituting the ion owner.",
+      "applicability": "Applies to exact raw source label 'Sodium tetrathionate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC1022 explicitly lists Sodium tetrathionate 2 g. This establishes the sodium salt family, not free tetrathionate ion identity or a particular hydrate. The existing Na-tetrathionate placeholder should not be promoted by substituting the ion owner.",
+      "evidence_ids": [
+        "A-CASE-28",
+        "A-RECIPE-28-0",
+        "A-RETRIEVAL-a-fetch-results-38",
+        "A-RETRIEVAL-a-fetch-json-results-36",
+        "A-OWNER-Na-tetrathionate",
+        "A-OWNER-Tetrathionate"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Resolve sodium tetrathionate supplied hydration/CAS and exact ontology availability from an original NBRC1022 material specification; preserve the current unmapped sodium-salt owner meanwhile.",
+      "missing_requirement": "Resolve sodium tetrathionate supplied hydration/CAS and exact ontology availability from an original NBRC1022 material specification; preserve the current unmapped sodium-salt owner meanwhile.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+          "sha256": "0f62edf35ed515ead1f4ef678558f7a6e344bb479e48d530033fcf4a67ab4193"
+        },
+        {
+          "path": "data/ingredients/mapped/Tetrathionate.yaml",
+          "sha256": "de2e69f5e94b4fb6397f103a43bebf67c7868e97d10b049ad145d6ccb633712f"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:337d8060d03d2d2243b15ec1cb2d772a3fe1bc89ef93fedc689a3ad423840b57",
+      "case_input_sha256": "280f4a242f107b12bb3ea8ebfcc0398fd146c21e78a21f6a8548427044b2aad7",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Cysteine HCl x H2O",
+        "source_label": "Cysteine HCl x H2O",
+        "raw_source_label": "Cysteine HCl x H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:83b2583c4e62eb6c8ea10ed05645efbf20f7d1620b0ab04fc856d8d105fc1847"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "TOGO M2598 confirms Cysteine HCl xH2O but the name and available recipe text do not establish L versus DL. CHEBI91248 is L specific. A one-water suffix resolves hydration but cannot resolve stereochemistry.",
+      "applicability": "Applies to exact raw source label 'Cysteine HCl x H2O' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2598 confirms Cysteine HCl xH2O but the name and available recipe text do not establish L versus DL. CHEBI91248 is L specific. A one-water suffix resolves hydration but cannot resolve stereochemistry.",
+      "evidence_ids": [
+        "A-CASE-29",
+        "A-RECIPE-29-0",
+        "A-RETRIEVAL-a-fetch-results-39",
+        "A-RETRIEVAL-a-fetch-json-results-37",
+        "A-RETRIEVAL-a-fetch-json-results-92",
+        "A-OWNER-L-cysteine_Hcl_X_H2o"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Obtain supplier/CAS or explicit stereochemical wording for the cysteine hydrochloride monohydrate in ATCC Methanogenium medium.",
+      "missing_requirement": "Obtain supplier/CAS or explicit stereochemical wording for the cysteine hydrochloride monohydrate in ATCC Methanogenium medium.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-cysteine_Hcl_X_H2o.yaml",
+          "sha256": "62f2fc203583507010c6ceed694f1f9622973699d3387f1d6b66b0b61107bca8"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/905"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:349e40c339dc091cb07f33b43fdf1da4a7b888894d59e1a149a46958e239ebd3",
+      "case_input_sha256": "5128aa411c778afd66a197ed065d41ea5d171d78520ecbafbf9e64bf338dce63",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "pectin (citrus peel)",
+        "source_label": "pectin (citrus peel)",
+        "raw_source_label": "pectin (citrus peel)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:342b126e8973704e391196452a20d15494c455bd1f81091806fcfad678e1fa14"
+      ],
+      "disposition": "broad_parent_relation_only",
+      "reasoning": "TOGO M2313 lists citrus-peel pectin as one alternative carbon-source material. Citrus tissue origin is meaningful product scope; the generic CHEBI17309 Pectin record does not establish a supplier product or esterification preparation. Retain a broader pectin link only as a candidate, with no exact source alias.",
+      "applicability": "Applies to exact raw source label 'pectin (citrus peel)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2313 lists citrus-peel pectin as one alternative carbon-source material. Citrus tissue origin is meaningful product scope; the generic CHEBI17309 Pectin record does not establish a supplier product or esterification preparation. Retain a broader pectin link only as a candidate, with no exact source alias.",
+      "evidence_ids": [
+        "A-CASE-30",
+        "A-RECIPE-30-0",
+        "A-RETRIEVAL-a-fetch-results-40",
+        "A-RETRIEVAL-a-fetch-json-results-38"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "A source/product-bound material decision is needed for citrus-peel pectin before an exact MIM owner is assigned; do not collapse it with apple pectin or generic polysaccharide from the same alternatives list.",
+      "missing_requirement": "A source/product-bound material decision is needed for citrus-peel pectin before an exact MIM owner is assigned; do not collapse it with apple pectin or generic polysaccharide from the same alternatives list.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:368fb6518774f5bc314040d230ec21eca8bb96f8ebd7a9d545c9c813f1d6a5d2",
+      "case_input_sha256": "4a5d363b5af4cb3c9f95e2abbba2df4aee4db6753ebe35ca37d89ceabe49ad64",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Magnesium glycerophosphate",
+        "source_label": "Magnesium glycerophosphate",
+        "raw_source_label": "Magnesium glycerophosphate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4e70b2f2d770ceb67856fcf860e34be9c90c97b885534d52c428448ccd02fe2d"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1397 states magnesium glycerophosphate at 0.5 g without positional isomer, hydration or a supplier specification. Glycerophosphate salts can differ by isomer and hydrate; sodium-glycerophosphate issues1118/1053 illustrate why a formula family is not an exact product identity and do not decide this magnesium case.",
+      "applicability": "Applies to exact raw source label 'Magnesium glycerophosphate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC1397 states magnesium glycerophosphate at 0.5 g without positional isomer, hydration or a supplier specification. Glycerophosphate salts can differ by isomer and hydrate; sodium-glycerophosphate issues1118/1053 illustrate why a formula family is not an exact product identity and do not decide this magnesium case.",
+      "evidence_ids": [
+        "A-CASE-31",
+        "A-RECIPE-31-0",
+        "A-RETRIEVAL-a-fetch-results-41",
+        "A-RETRIEVAL-a-fetch-json-results-39"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the magnesium salt’s positional-isomer composition, stoichiometry and hydration or catalogue/CAS from the NBRC1397 source.",
+      "missing_requirement": "Recover the magnesium salt’s positional-isomer composition, stoichiometry and hydration or catalogue/CAS from the NBRC1397 source.",
+      "owner_records": [],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1118"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:37e251947859bb6474e261bbef9a0b103f5d4f708bf367f0f7b3df001d95537d",
+      "case_input_sha256": "65867b5e43a7b5caf5b0f902ef3b268b1580f6d709f3f1e3f4790c5f364cbed6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Albumin Fraction V Bovine (Sigma A9647)",
+        "source_label": "Albumin Fraction V Bovine (Sigma A9647)",
+        "raw_source_label": "Albumin Fraction V Bovine (Sigma A9647)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:41f2a163756753b7ddc99a54738ffd6cd0ee98d3e072404c72c2bb6ac9733c72",
+        "CM_OCC:66fa96f8bc7b70f12b75456acee2edb35488d3d3913d249834b86f00f817ffee",
+        "CM_OCC:6ec4336de742a317aca1c92d3305e515e99eab6de5bdedfe61b80f1be92fbb8d"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Sigma A9647 is bovine serum albumin, currently described as heat-shock fraction, pH7, lyophilized powder; the three recipes call it fractionV in OADC stock. The maintained Bovine_Serum_Albumin record already preserves A9647 as a source-specific supplied form and explicitly forbids making fraction/product names exact generic synonyms. Preserve that prior ruling.",
+      "applicability": "Applies to exact raw source label 'Albumin Fraction V Bovine (Sigma A9647)' and all 3 frozen occurrence objects, each verified against its complete recipe snapshot hash. Sigma A9647 is bovine serum albumin, currently described as heat-shock fraction, pH7, lyophilized powder; the three recipes call it fractionV in OADC stock. The maintained Bovine_Serum_Albumin record already preserves A9647 as a source-specific supplied form and explicitly forbids making fraction/product names exact generic synonyms. Preserve that prior ruling.",
+      "evidence_ids": [
+        "A-CASE-32",
+        "A-RECIPE-32-0",
+        "A-RECIPE-32-1",
+        "A-RECIPE-32-2",
+        "A-RETRIEVAL-a-fetch-results-42",
+        "A-RETRIEVAL-a-fetch-results-43",
+        "A-RETRIEVAL-a-fetch-results-44",
+        "A-RETRIEVAL-a-fetch-results-91",
+        "A-RETRIEVAL-a-fetch-json-results-40",
+        "A-RETRIEVAL-a-fetch-json-results-41",
+        "A-RETRIEVAL-a-fetch-json-results-42",
+        "A-WEB-2",
+        "A-OWNER-Bovine_Serum_Albumin"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation is authorized by this proposal-only review; the supported source disposition itself is the outcome and no additional active alias is warranted.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+          "sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:386f980b57398e72815bc04e9fedca3ad9f02e94997b993d186f2c8b3aafb173",
+      "case_input_sha256": "913948dad476322c586dbf486a0709cb9402b17e4dfe9745f9868e563d6745a0",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Fe(NH4)2(SO4)2 x 12 H2O",
+        "source_label": "Fe(NH4)2(SO4)2 x 12 H2O",
+        "raw_source_label": "Fe(NH4)2(SO4)2 x 12 H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f953df91183e961a2fa70a5c2c0d91d1290b9fd334eac2b429b7c9958eb52d1a",
+        "CM_OCC:98646de2c548c5f608050680d7ef5a4cd024b02e0f64859204fc448e2b676baa",
+        "CM_OCC:6ab6aee6cc93a13666402921f103839f01f83e9ad10bddb09034d503e057a738",
+        "CM_OCC:2ba22f503c75c3cb00038f495a88c2605753816b684fd6adc914c7deb8f4bbe7",
+        "CM_OCC:4a5cbcf19e39cef0d8727d85029540a815a0066fa8990c57200430848d0e24eb"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The five occurrences print two ammoniums with a dodecahydrate. DSMZ1165 instead prints Fe(NH4)(SO4)2 x12H2O (ferric ammonium sulfate), while DSMZ1148 still prints the two-ammonium formula. The change affects charge/oxidation and hydrate identity. No single exact salt can be inferred for the aggregate spelling.",
+      "applicability": "Applies to exact raw source label 'Fe(NH4)2(SO4)2 x 12 H2O' and all 5 frozen occurrence objects, each verified against its complete recipe snapshot hash. The five occurrences print two ammoniums with a dodecahydrate. DSMZ1165 instead prints Fe(NH4)(SO4)2 x12H2O (ferric ammonium sulfate), while DSMZ1148 still prints the two-ammonium formula. The change affects charge/oxidation and hydrate identity. No single exact salt can be inferred for the aggregate spelling.",
+      "evidence_ids": [
+        "A-CASE-33",
+        "A-RECIPE-33-0",
+        "A-RECIPE-33-1",
+        "A-RECIPE-33-2",
+        "A-RECIPE-33-3",
+        "A-RECIPE-33-4",
+        "A-RETRIEVAL-a-fetch-results-45",
+        "A-RETRIEVAL-a-fetch-results-46"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Resolve each DSMZ1148/1165 and MediaDive1036 source against an authoritative material specification or correction; distinguish ferric ammonium sulfate dodecahydrate from ferrous ammonium sulfate forms.",
+      "missing_requirement": "Resolve each DSMZ1148/1165 and MediaDive1036 source against an authoritative material specification or correction; distinguish ferric ammonium sulfate dodecahydrate from ferrous ammonium sulfate forms.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:38900e0af05c24e22b36c2fb9add2b08dd7384539a5661f7d0b3722ea860bb49",
+      "case_input_sha256": "4917f153aa382104abe53c9feba4011fef346f2c9098d69e07aacf5a46d472a6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Substrates*",
+        "source_label": "Substrates*",
+        "raw_source_label": "Substrates*"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a77e5aa256fabda2ee6acb0c4519b9dd2ea74f4be3a61c1e18bf9097dcfa59bc"
+      ],
+      "disposition": "malformed_or_nonchemical_token",
+      "reasoning": "NBRC1196 makes Substrates* a parameter and explains examples as vanillic acid and syringic acid etc. It is neither one substance nor a fixed mixture. Source-specific medium variants or an explicit selectable-substrate relation are required, not an ingredient identity.",
+      "applicability": "Applies to exact raw source label 'Substrates*' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC1196 makes Substrates* a parameter and explains examples as vanillic acid and syringic acid etc. It is neither one substance nor a fixed mixture. Source-specific medium variants or an explicit selectable-substrate relation are required, not an ingredient identity.",
+      "evidence_ids": [
+        "A-CASE-34",
+        "A-RECIPE-34-0",
+        "A-RETRIEVAL-a-fetch-results-47"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation is authorized by this proposal-only review; the supported source disposition itself is the outcome and no additional active alias is warranted.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:3a43d217ffb5f8dd949c7d227a75143c9208bbd91fe402856747ef4d34822945",
+      "case_input_sha256": "57766ea461bb54b129d0213b1d4da58da1df49004e44c7d1811a40f5681091f2",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Hutner's basal salts (see below)",
+        "source_label": "Hutner's basal salts (see below)",
+        "raw_source_label": "Hutner's basal salts (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:441343628ef84b7d270a7beb5df2fbb717fb3362a2cedcd9b7dea10267c3140d"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM979 provides Hutner salts and Metals44 but prints (NH4)6MoO24·4H2O, omitting the molybdenum count. Its Mg and Ca quantities differ from JCM631 Hunter stock. Retain the nominal stock boundary without repairing that chemically consequential formula or equating the names. A nominal source-qualified stock can nevertheless be proposed with the printed unresolved component retained UNMAPPED and a source-relative assertion; no chemically complete decomposition is claimed. Both cited recipes specify approximately7.3g KOH for dissolving NTA; that approximate input is preserved in proposed notes.",
+      "applicability": "Applies to exact raw source label \"Hutner's basal salts (see below)\" and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM979 provides Hutner salts and Metals44 but prints (NH4)6MoO24·4H2O, omitting the molybdenum count. Its Mg and Ca quantities differ from JCM631 Hunter stock. Retain the nominal stock boundary without repairing that chemically consequential formula or equating the names. A nominal source-qualified stock can nevertheless be proposed with the printed unresolved component retained UNMAPPED and a source-relative assertion; no chemically complete decomposition is claimed. Both cited recipes specify approximately7.3g KOH for dissolving NTA; that approximate input is preserved in proposed notes.",
+      "evidence_ids": [
+        "A-CASE-35",
+        "A-RECIPE-35-0",
+        "A-RETRIEVAL-a-fetch-results-48",
+        "A-RETRIEVAL-a-fetch-json-results-43"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-JCM979_Hutner_Basal_Salts"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Obtain a JCM979 correction/product identity for the molybdate component and confirm the Metals44 substock before asserting a chemically exact reusable stock.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:3af7ea1141a6709c188b49804ac3dc72e7f285f2874a2b4e6ef090c05843b4c8",
+      "case_input_sha256": "c47cc49cf69fa061ad3d558e478b7e5cffe8dcd72f24e6d1c57a52917f5be2e8",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NTA (sodium nitrilotriacetate)",
+        "source_label": "NTA (sodium nitrilotriacetate)",
+        "raw_source_label": "NTA (sodium nitrilotriacetate)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5efe1d538312d45060d031c721389574b34cf06bab22b3a322037b122c31cb2e"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "TOGO M3140 names NTA (sodium nitrilotriacetate), so the free acid is not an exact candidate. The label does not choose mono/disodium versus trisodium or a hydrate. Existing trisodium and disodium NTA owners are comparison candidates only.",
+      "applicability": "Applies to exact raw source label 'NTA (sodium nitrilotriacetate)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M3140 names NTA (sodium nitrilotriacetate), so the free acid is not an exact candidate. The label does not choose mono/disodium versus trisodium or a hydrate. Existing trisodium and disodium NTA owners are comparison candidates only.",
+      "evidence_ids": [
+        "A-CASE-36",
+        "A-RECIPE-36-0",
+        "A-RETRIEVAL-a-fetch-results-49",
+        "A-RETRIEVAL-a-fetch-json-results-44",
+        "A-RETRIEVAL-a-fetch-json-results-102",
+        "A-RETRIEVAL-a-retry-results-6",
+        "A-OWNER-Nitrilotriacetic_Acid_Trisodium_Salt",
+        "A-OWNER-Nitrilotriacetic_Acid_Disodium_Salt"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Resolve sodium stoichiometry and hydrate of the M3140 NTA material using source catalogue/CAS or explicit formula; do not choose trisodium monohydrate from abbreviation alone.",
+      "missing_requirement": "Resolve sodium stoichiometry and hydrate of the M3140 NTA material using source catalogue/CAS or explicit formula; do not choose trisodium monohydrate from abbreviation alone.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+          "sha256": "c68bf8109946d2a5ccd474860657d19663520960f962b9845de82b269940a137"
+        },
+        {
+          "path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Disodium_Salt.yaml",
+          "sha256": "fd8ee83cb2fad4bc16bd842f755b21c676ca1e4f42cabefd35516b7631acbb0d"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:3f250ca4a785d9a344c94a8b31eeefa36bbcd8a457ec4d88bf5005d0bd83c8dd",
+      "case_input_sha256": "0cc9b1139abf68218059488bbb64dc41a691042f508f50f178dd95a1d3dabb1e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na2MoO3·2H2O",
+        "source_label": "Na2MoO3·2H2O",
+        "raw_source_label": "Na2MoO3·2H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:c9adbeade5d800eedf4d62322f6bc2233259687102aa512344f83a8840386c9a",
+        "CM_OCC:168dca333892f3ef8b2cf692644fa51039a72266281f71168dd09db00381432f",
+        "CM_OCC:22801b7ae380a65f2b08902c4dd0c446dda8176740c3c320bf907624a43da110",
+        "CM_OCC:6fd87055713c296ef124daf3c8ad91e420f9caa6518cb96dc6df6266cefbcdac"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC302 and305 both retain Na2MoO3·2H2O, rather than the Na2MoO4·2H2O formula of CHEBI75213. The four frozen occurrences inherit this source-level formula conflict and milligram-to-gram flattening. Oxygen count cannot be silently repaired as lexical normalization.",
+      "applicability": "Applies to exact raw source label 'Na2MoO3·2H2O' and all 4 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC302 and305 both retain Na2MoO3·2H2O, rather than the Na2MoO4·2H2O formula of CHEBI75213. The four frozen occurrences inherit this source-level formula conflict and milligram-to-gram flattening. Oxygen count cannot be silently repaired as lexical normalization.",
+      "evidence_ids": [
+        "A-CASE-37",
+        "A-RECIPE-37-0",
+        "A-RECIPE-37-1",
+        "A-RECIPE-37-2",
+        "A-RECIPE-37-3",
+        "A-RETRIEVAL-a-fetch-results-50",
+        "A-RETRIEVAL-a-fetch-results-51",
+        "A-RETRIEVAL-a-fetch-json-results-45",
+        "A-RETRIEVAL-a-fetch-json-results-46",
+        "A-RETRIEVAL-a-fetch-json-results-47",
+        "A-RETRIEVAL-a-fetch-json-results-48",
+        "A-RETRIEVAL-a-fetch-json-results-106",
+        "A-OWNER-Na2moo4_X_2_H2o"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "An NBRC correction, original recipe or supplier/CAS must establish whether the MoO3 label denotes molybdate or another compound; preserve the exact O3 source spelling meanwhile.",
+      "missing_requirement": "An NBRC correction, original recipe or supplier/CAS must establish whether the MoO3 label denotes molybdate or another compound; preserve the exact O3 source spelling meanwhile.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2moo4_X_2_H2o.yaml",
+          "sha256": "d8ecba6c664d94d9d0f0da89410808b99c3d6ad4cfeb55f122b5df2d7d8b5612"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2",
+      "case_input_sha256": "880de0ef8249fb8cfaa366ec902f1fb0321822ccdcb6ec25f663f460027713af",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Modified Hutner's basal salts (see below)",
+        "source_label": "Modified Hutner's basal salts (see below)",
+        "raw_source_label": "Modified Hutner's basal salts (see below)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e916da3fdd3df2747a84780cee5d508ea67ed994821b9bf88f150b6cd0a3af30"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM900 recovers Modified Hutner salts with NTA, minerals and Metals44, but the molybdate row is (NH4)6MoO24·4H2O. This nominal recipe must remain separate from JCM631 and the vitamin solution also printed on the page. A safe exact chemical formulation requires resolution of the malformed molybdate component. Reuse primary_b’s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+      "applicability": "Applies to exact raw source label \"Modified Hutner's basal salts (see below)\" and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM900 recovers Modified Hutner salts with NTA, minerals and Metals44, but the molybdate row is (NH4)6MoO24·4H2O. This nominal recipe must remain separate from JCM631 and the vitamin solution also printed on the page. A safe exact chemical formulation requires resolution of the malformed molybdate component. Reuse primary_b’s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+      "evidence_ids": [
+        "A-CASE-38",
+        "A-RECIPE-38-0",
+        "A-RETRIEVAL-a-fetch-results-52",
+        "A-RETRIEVAL-a-fetch-json-results-49"
+      ],
+      "proposal_ids": [
+        "B-PROPOSAL-jcm_900_modified_hutner_basal_salts"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Resolve the molybdenum stoichiometry in JCM900’s own recipe; a spelling similarity to another Hutner stock cannot supply the missing atom count.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+      "shared_proposal_requested": "B proposal JCM900_Modified_Hutner_Basal_Salts"
+    },
+    {
+      "case_id": "CM_NAME:44806aef359a93dbf05658199dfba1a3a994fcf323dcce72b241795733925874",
+      "case_input_sha256": "3cf81fe57a8ada31e90e3563fad53a8c2358bc1da76d583dd1dc1c2ff3776118",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "sodium dithionate",
+        "source_label": "sodium dithionate",
+        "raw_source_label": "sodium dithionate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:0f29b6e2b3acecab7f1dd3d71deadeed87eb75e77fa5f3cd8e9201df166b1e40"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "TOGO M915 and the source-derived MediaDive J876 preparation comment both literally say sodium dithionate,10–20mg/L before inoculation. This independently confirms the spelling was not merely a frozen-import typo. Neither source supplies formula, CAS or hydration. Dithionite is chemically different and the use as a reducing additive cannot justify silently replacing the source reagent.",
+      "applicability": "Applies to exact raw source label 'sodium dithionate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M915 and the source-derived MediaDive J876 preparation comment both literally say sodium dithionate,10–20mg/L before inoculation. This independently confirms the spelling was not merely a frozen-import typo. Neither source supplies formula, CAS or hydration. Dithionite is chemically different and the use as a reducing additive cannot justify silently replacing the source reagent.",
+      "evidence_ids": [
+        "A-CASE-39",
+        "A-RECIPE-39-0",
+        "A-RETRIEVAL-a-fetch-results-53",
+        "A-RETRIEVAL-a-fetch-json-results-50",
+        "A-RETRIEVAL-a-retry-results-7",
+        "A-RETRIEVAL-a-more-results-0",
+        "A-RETRIEVAL-a-last-results-0"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover JCM876 original supplier/CAS or an erratum resolving dithionate versus dithionite and supplied form; preserve the10–20mg/L comment and do not borrow Sodium_Dithionite aliases.",
+      "missing_requirement": "Recover JCM876 original supplier/CAS or an erratum resolving dithionate versus dithionite and supplied form; preserve the10–20mg/L comment and do not borrow Sodium_Dithionite aliases.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:47105de9c93629e9f29aebf0898401b858f5ec0b958cf81d3d49ef14bdbe0ab0",
+      "case_input_sha256": "8922e9d856ee44659191bdd4688f143be789c4eaf1bfc31da5dc8981629546c6",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "0.1 M HCl",
+        "source_label": "0.1 M HCl",
+        "raw_source_label": "0.1 M HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:477b381bf4e78b77821151722c99a0b4d9ce8eec6c20244b834822bf86b0826a"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "A later successful exact TOGO M3115 API capture explicitly gives0.1M HCl, conc_unitM,1L as trace-stock solvent. The earlier access failures are superseded. This supports a source-qualified nominal reagent stock; the flattened1G_PER_L is not stock concentration. A comparative0.1N formulation is not substituted.",
+      "applicability": "Applies to exact raw source label '0.1 M HCl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. A later successful exact TOGO M3115 API capture explicitly gives0.1M HCl, conc_unitM,1L as trace-stock solvent. The earlier access failures are superseded. This supports a source-qualified nominal reagent stock; the flattened1G_PER_L is not stock concentration. A comparative0.1N formulation is not substituted.",
+      "evidence_ids": [
+        "A-CASE-40",
+        "A-RECIPE-40-0",
+        "A-RETRIEVAL-a-fetch-results-54",
+        "A-RETRIEVAL-a-fetch-json-results-51",
+        "A-RETRIEVAL-a-retry-results-1",
+        "A-RETRIEVAL-a-more-results-6",
+        "A-WEB-11",
+        "A-WEB-16",
+        "A-WEB-19"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-TOGO_M3115_Hydrochloric_Acid_01M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:4827091fba1bdc2848111d132950a506cb8c033c3f46382e6970c614b29bbe2e",
+      "case_input_sha256": "9b0c006ba5cf01e1ad8f73b8e116a50887d3bab2a20f84aae32ed119e4a8cf5d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium citrate・2H2O",
+        "source_label": "Sodium citrate・2H2O",
+        "raw_source_label": "Sodium citrate・2H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2450a0293ec5fcea3353b29b62a4952519adb55c11719b05f32a1fb2a2c1c3b9",
+        "CM_OCC:53af1609e3845695c3aaaffb2102c52e4e6dce67d5bab530f8bddc1f5376cdb7"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM704 and the frozen JCM833 lineage name sodium citrate dihydrate. CHEBI32142 uses that same chemical name for trisodium citrate dihydrate. The two-water qualification is explicit and retained; add the exact punctuation spelling to the active Na3-citrate dihydrate owner, never to anhydrous citrate. This is a documented conventional substance name: independent Sigma W302600 and Thermo S279 specifications explicitly equate sodium citrate dihydrate with trisodium citrate dihydrate, CAS6132-04-3, matching CHEBI32142. This nomenclature evidence supports the name-to-substance interpretation only; it does not assert that JCM bought either supplier product. Bare sodium NTA/malate lacks an equivalently specific hydrate-qualified naming witness in these cases.",
+      "applicability": "Applies to exact raw source label 'Sodium citrate・2H2O' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM704 and the frozen JCM833 lineage name sodium citrate dihydrate. CHEBI32142 uses that same chemical name for trisodium citrate dihydrate. The two-water qualification is explicit and retained; add the exact punctuation spelling to the active Na3-citrate dihydrate owner, never to anhydrous citrate. This is a documented conventional substance name: independent Sigma W302600 and Thermo S279 specifications explicitly equate sodium citrate dihydrate with trisodium citrate dihydrate, CAS6132-04-3, matching CHEBI32142. This nomenclature evidence supports the name-to-substance interpretation only; it does not assert that JCM bought either supplier product. Bare sodium NTA/malate lacks an equivalently specific hydrate-qualified naming witness in these cases.",
+      "evidence_ids": [
+        "A-CASE-41",
+        "A-RECIPE-41-0",
+        "A-RECIPE-41-1",
+        "A-RETRIEVAL-a-fetch-results-55",
+        "A-RETRIEVAL-a-fetch-results-56",
+        "A-RETRIEVAL-a-fetch-json-results-52",
+        "A-RETRIEVAL-a-fetch-json-results-53",
+        "A-RETRIEVAL-a-fetch-json-results-97",
+        "A-WEB-26",
+        "A-WEB-27",
+        "A-OWNER-Na3-citrate_X_2_H2o"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Na3-citrate_X_2_H2o"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na3-citrate_X_2_H2o.yaml",
+          "sha256": "3c1499ff6499f36840a5e3789a881515ef77b9db4781a38d4b2065b4838f8d10"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:4a35f314245c3c57e055c3a8d474723e0880518f69775dd3dc6ac9c1ebc29248",
+      "case_input_sha256": "69a4c7ab43af7be48a26d553ebe4a7df1cc7ec3dc5acf608a3e509848d624c36",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Aminoacids (100 x)",
+        "source_label": "Aminoacids (100 x)",
+        "raw_source_label": "Aminoacids (100 x)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8ddf355d59b0223696fa646551f2f34c4aaf3639952e35886746964332683434",
+        "CM_OCC:d23b6d9911b3e467c5cc1cba7ef51004b181a33b017312055349d4957306f437",
+        "CM_OCC:1b3e53869186e45e0c8cdeba5c4b83668f346cdca85fa86df676b670f58b6a5c"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "All three DSMZ cell-culture recipes add 0.5 ml of a 100x amino-acid stock to a 50.5 ml batch. CHEBI33709 amino acid is a class and not the whole mixture. The recovered recipes do not enumerate amino acids or identify a catalogue formulation, so neither one amino acid nor an arbitrary commercial blend is justified.",
+      "applicability": "Applies to exact raw source label 'Aminoacids (100 x)' and all 3 frozen occurrence objects, each verified against its complete recipe snapshot hash. All three DSMZ cell-culture recipes add 0.5 ml of a 100x amino-acid stock to a 50.5 ml batch. CHEBI33709 amino acid is a class and not the whole mixture. The recovered recipes do not enumerate amino acids or identify a catalogue formulation, so neither one amino acid nor an arbitrary commercial blend is justified.",
+      "evidence_ids": [
+        "A-CASE-42",
+        "A-RECIPE-42-0",
+        "A-RECIPE-42-1",
+        "A-RECIPE-42-2",
+        "A-RETRIEVAL-a-fetch-results-57",
+        "A-RETRIEVAL-a-fetch-results-58",
+        "A-RETRIEVAL-a-fetch-results-59"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Identify the supplier/catalogue and constituent formulation of the 100x amino-acid stock used in DSMZ1193,1198 and1503; verify whether the same product was intended in all three.",
+      "missing_requirement": "Identify the supplier/catalogue and constituent formulation of the 100x amino-acid stock used in DSMZ1193,1198 and1503; verify whether the same product was intended in all three.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:4a791ee13c45d641b3fdb0d65e7b9c51f79c0db197aacc7587a48bf3c77cc17a",
+      "case_input_sha256": "a1072f583b96ae200a2c9a171060dab64c334592ab587a672f483f242549d1c1",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na2MoO4·4H2O",
+        "source_label": "Na2MoO4·4H2O",
+        "raw_source_label": "Na2MoO4·4H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4617d358e3a2ea806bd8eb62206e710981c8972675a8f49aa76eadcfa45026cf"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1333 explicitly prints Na2MoO4·4H2O in a 1000x stock. The formula names four waters, not the existing dihydrate CHEBI75213. Its recipe amount is 0.1 g in 100 ml, not necessarily the frozen final-medium concentration. Preserve the four-water claim until the actual reagent is established.",
+      "applicability": "Applies to exact raw source label 'Na2MoO4·4H2O' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC1333 explicitly prints Na2MoO4·4H2O in a 1000x stock. The formula names four waters, not the existing dihydrate CHEBI75213. Its recipe amount is 0.1 g in 100 ml, not necessarily the frozen final-medium concentration. Preserve the four-water claim until the actual reagent is established.",
+      "evidence_ids": [
+        "A-CASE-43",
+        "A-RECIPE-43-0",
+        "A-RETRIEVAL-a-fetch-results-60",
+        "A-RETRIEVAL-a-fetch-json-results-54",
+        "A-RETRIEVAL-a-fetch-json-results-106",
+        "A-OWNER-Na2moo4_X_2_H2o"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Obtain the original NBRC1333 molybdate reagent specification/CAS or an erratum resolving the tetrahydrate; do not reuse the dihydrate by convention.",
+      "missing_requirement": "Obtain the original NBRC1333 molybdate reagent specification/CAS or an erratum resolving the tetrahydrate; do not reuse the dihydrate by convention.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2moo4_X_2_H2o.yaml",
+          "sha256": "d8ecba6c664d94d9d0f0da89410808b99c3d6ad4cfeb55f122b5df2d7d8b5612"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:4bee9399ba224538871bd03fa1ea8286285ec03895d30cbcca995f19a77534b7",
+      "case_input_sha256": "171188f11cce05b78866de843a018e9dff6ee92bf945ccfcd798954b5a732855",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "MnCl .4H 0",
+        "source_label": "MnCl .4H 0",
+        "raw_source_label": "MnCl .4H 0"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a3e184d29962c56dd1558a5c8727d985d631c599e20f64efeec30c6a284421da"
+      ],
+      "disposition": "supplied_form_correction",
+      "reasoning": "The CCAP Walnes primary PDF clearly prints MnCl2.4H2O in the nutrient stock; the frozen token MnCl .4H 0 has lost subscripts and letter O. Correct this exact source occurrence to manganese(II) chloride tetrahydrate while retaining the malformed token as extraction provenance; do not create an active malformed alias.",
+      "applicability": "Applies to exact raw source label 'MnCl .4H 0' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. The CCAP Walnes primary PDF clearly prints MnCl2.4H2O in the nutrient stock; the frozen token MnCl .4H 0 has lost subscripts and letter O. Correct this exact source occurrence to manganese(II) chloride tetrahydrate while retaining the malformed token as extraction provenance; do not create an active malformed alias.",
+      "evidence_ids": [
+        "A-CASE-44",
+        "A-RECIPE-44-0",
+        "A-RETRIEVAL-a-fetch-results-61",
+        "A-WEB-3"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "No maintained mutation is authorized by this proposal-only review; the supported source disposition itself is the outcome and no additional active alias is warranted.",
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:4e4275dfe464c955db394634d0b8e86d9ba1a34ba1190816244dcc0e0913a8d8",
+      "case_input_sha256": "738e0acc360d03952cd10934368c57250ca3810ad90997ccf058cab4ca81ea1d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "25% Sodium acetate",
+        "source_label": "25% Sodium acetate",
+        "raw_source_label": "25% Sodium acetate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:47a8c48d76db969fa174609364138c9de712e326f4008fda51ed2b9c2d9fc89f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2653 identifies 25% sodium acetate as a separate stock addition in methanogen medium, not pure sodium acetate. The frozen amount4 is detached from its volume unit. The name alone does not state w/v versus w/w or whether the amount is based on a hydrated starting reagent.",
+      "applicability": "Applies to exact raw source label '25% Sodium acetate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2653 identifies 25% sodium acetate as a separate stock addition in methanogen medium, not pure sodium acetate. The frozen amount4 is detached from its volume unit. The name alone does not state w/v versus w/w or whether the amount is based on a hydrated starting reagent.",
+      "evidence_ids": [
+        "A-CASE-45",
+        "A-RECIPE-45-0",
+        "A-RETRIEVAL-a-fetch-results-62",
+        "A-RETRIEVAL-a-fetch-json-results-55",
+        "A-RETRIEVAL-a-retry-results-9",
+        "A-RETRIEVAL-a-last-results-6",
+        "A-WEB-14"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the original ATCC percent-basis and preparation for the 25% sodium acetate stock before a quantitative exact formulation proposal.",
+      "missing_requirement": "Recover the original ATCC percent-basis and preparation for the 25% sodium acetate stock before a quantitative exact formulation proposal.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:4f44dff670d36850888b0bc014748c4d547ea57bed9d7c1a3f077179f5f5a084",
+      "case_input_sha256": "e557bda0d1aa6a286be2be70ccf5fe3cfd1b97a416f5c9d7e5c60bd19fe04905",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "50% Sodium lactate",
+        "source_label": "50% Sodium lactate",
+        "raw_source_label": "50% Sodium lactate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8563e34614f473b31191d66007551478faabfff3e3fcf568bd9cf00344c25fa0",
+        "CM_OCC:ffd6d81689f0b3d6b27167f88386d4a52378443ef2d4a2cef1a48e2bc7a2e3e7"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC989 uses 25 ml of 50% sodium lactate; the two frozen occurrences disagree by ML_PER_L versus G_PER_L for the same source. The stock is distinct from the pure salt and lacks explicit percentage basis and stereochemistry. Preserve the unit conflict rather than averaging or deduplicating amounts.",
+      "applicability": "Applies to exact raw source label '50% Sodium lactate' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC989 uses 25 ml of 50% sodium lactate; the two frozen occurrences disagree by ML_PER_L versus G_PER_L for the same source. The stock is distinct from the pure salt and lacks explicit percentage basis and stereochemistry. Preserve the unit conflict rather than averaging or deduplicating amounts.",
+      "evidence_ids": [
+        "A-CASE-46",
+        "A-RECIPE-46-0",
+        "A-RECIPE-46-1",
+        "A-RETRIEVAL-a-fetch-results-63",
+        "A-RETRIEVAL-a-fetch-json-results-56"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Verify NBRC989 supplied product/stereochemistry and percentage basis; correct the TOGO-derived G_PER_L occurrence from the primary ml quantity before mapping the stock.",
+      "missing_requirement": "Verify NBRC989 supplied product/stereochemistry and percentage basis; correct the TOGO-derived G_PER_L occurrence from the primary ml quantity before mapping the stock.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3",
+      "case_input_sha256": "f71d854cc7fde51519c58b6af0ab4503356aa1ba2b3d358b12b9cc2d4504275a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Modified Hutner's basal salts (see Medium No. 900 )",
+        "source_label": "Modified Hutner's basal salts (see Medium No. 900 )",
+        "raw_source_label": "Modified Hutner's basal salts (see Medium No. 900 )"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d3adee43f8bbff45607128131d09ff6384007ce9008d622e741f2ca3ee230bcf"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM1429 explicitly delegates this stock to JCM900, establishing a recipe link rather than a generic synonym. The linked source has an unresolved molybdate formula. Preserve the reference to900 and use the same chemical-resolution obligation as case38, not a link to JCM631 Hunter salts. Reuse primary_b’s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+      "applicability": "Applies to exact raw source label \"Modified Hutner's basal salts (see Medium No. 900 )\" and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM1429 explicitly delegates this stock to JCM900, establishing a recipe link rather than a generic synonym. The linked source has an unresolved molybdate formula. Preserve the reference to900 and use the same chemical-resolution obligation as case38, not a link to JCM631 Hunter salts. Reuse primary_b’s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+      "evidence_ids": [
+        "A-CASE-47",
+        "A-RECIPE-47-0",
+        "A-RETRIEVAL-a-fetch-results-64"
+      ],
+      "proposal_ids": [
+        "B-PROPOSAL-jcm_900_modified_hutner_basal_salts"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Resolve JCM900’s malformed molybdate component and retain the exact JCM1429→900 stock reference before integration.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+      "shared_proposal_requested": "B proposal JCM900_Modified_Hutner_Basal_Salts"
+    },
+    {
+      "case_id": "CM_NAME:51382ce9a240e1e5b620ae333cc99dd6e6dc061acab67deb2422e462496dd285",
+      "case_input_sha256": "d47020e9c1bc620c90b9189626a8a7304a7f825e62ef43b801d43734c3cafbd2",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Component II",
+        "source_label": "Component II",
+        "raw_source_label": "Component II"
+      },
+      "occurrence_ids": [
+        "CM_OCC:6bfa2454812d8f07ba964a952e36f9758624bbd25351065454b80723ad87e28b"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "ATCC1249 directly specifies ComponentII as K2HPO4 0.5g plus DIwater200ml, adjusted to pH7.5 and autoclaved before joining ComponentsI/III. The frozen200G_PER_L is a flattened volume. Propose this exact source-qualified substock; its ordinal label is not a global phosphate synonym.",
+      "applicability": "Applies to exact raw source label 'Component II' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. ATCC1249 directly specifies ComponentII as K2HPO4 0.5g plus DIwater200ml, adjusted to pH7.5 and autoclaved before joining ComponentsI/III. The frozen200G_PER_L is a flattened volume. Propose this exact source-qualified substock; its ordinal label is not a global phosphate synonym.",
+      "evidence_ids": [
+        "A-CASE-48",
+        "A-RECIPE-48-0",
+        "A-RETRIEVAL-a-fetch-results-65",
+        "A-RETRIEVAL-a-fetch-json-results-57",
+        "A-RETRIEVAL-a-retry-results-0",
+        "A-WEB-11",
+        "A-WEB-12"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-ATCC1249_Component_II"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:52c936ccc84898a50386068b31e8b39c21f588eff9f07309331eae8650b7a7ee",
+      "case_input_sha256": "308b7c092d0bcf599dc8130b06332fa25df64ab150950abf82bbb29362528747",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Salmon sperm DNA (Sigma)",
+        "source_label": "Salmon sperm DNA (Sigma)",
+        "raw_source_label": "Salmon sperm DNA (Sigma)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:dd5e4910e0986dc6f40361883c776c0f6d58964812bdc0616a165b2f07b5180e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2215 explicitly specifies salmon sperm DNA from Sigma. This preserves organism/tissue and supplier scope; neither generic DNA nor the herring-sperm alias in Fish-sperm_Dna establishes equivalent material. The maintained DNA_From_Salmon CAS record also lacks proof it denotes this exact sperm-derived supplier product.",
+      "applicability": "Applies to exact raw source label 'Salmon sperm DNA (Sigma)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2215 explicitly specifies salmon sperm DNA from Sigma. This preserves organism/tissue and supplier scope; neither generic DNA nor the herring-sperm alias in Fish-sperm_Dna establishes equivalent material. The maintained DNA_From_Salmon CAS record also lacks proof it denotes this exact sperm-derived supplier product.",
+      "evidence_ids": [
+        "A-CASE-49",
+        "A-RECIPE-49-0",
+        "A-RETRIEVAL-a-fetch-results-66",
+        "A-RETRIEVAL-a-fetch-json-results-58",
+        "A-RETRIEVAL-a-more-results-4",
+        "A-RETRIEVAL-a-last-results-2",
+        "A-WEB-25",
+        "A-OWNER-DNA_From_Salmon",
+        "A-OWNER-Fish-sperm_Dna"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the Sigma catalogue identifier or original material specification before equating this preparation with an existing salmon DNA owner; retain tissue origin and supplier meanwhile.",
+      "missing_requirement": "Recover the Sigma catalogue identifier or original material specification before equating this preparation with an existing salmon DNA owner; retain tissue origin and supplier meanwhile.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/DNA_From_Salmon.yaml",
+          "sha256": "9862e5c11f9dba72581cd57b26629e0570a4c32ef10f5acbde518c3c8bcc9958"
+        },
+        {
+          "path": "data/ingredients/mapped/Fish-sperm_Dna.yaml",
+          "sha256": "b58a13acec7b840f5b8f13fe70630055cfe14da2d78e07538439ea1aac1b7893"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:53b155c3939ecab07e9e8f79331bff3a2a2311a87ce909c29b34afc3c4579b47",
+      "case_input_sha256": "eaa3c4281cb45a100b0e6311575590ad05b979963da0334409544aefe6a791c9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ground beef (fat free)",
+        "source_label": "Ground beef (fat free)",
+        "raw_source_label": "Ground beef (fat free)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4a21ac7bc7a313ac72a3c7ec73fada77a475c04d88afc399318a4025a7afab5c",
+        "CM_OCC:526468b94021c50a9b8ee70440b8b72191de9b41faa0cbb191a22e58ce77ff98",
+        "CM_OCC:12a30bfa7785d9317a4b2ad88a09fe47196a19a3b53b9c2d06a17863aaaa05de",
+        "CM_OCC:4ba1ce381433c14b174dbc963f8b7a568d6b6110498dbc72f97d4b8c6a2e76b9",
+        "CM_OCC:c6a10747e73c9025c345bacd5c60c0fe3cc79ee609d8555481dbc3335d898a1f",
+        "CM_OCC:63c2928afb7dd41708e2ba9311efb1de1cacb07c741b26a9a5f9792b4775131a",
+        "CM_OCC:81dce73cba8f819bf7aa590c2dc0804211c87fb7df3bf2443fc0b3efc6fb135e",
+        "CM_OCC:6136a1e4814f5b1b2857b8a56cb7a0da5c28c156623cf18163bcfa8b5af31e33",
+        "CM_OCC:b7f9bea12521563348f77cfec2e01349c68e9bfa28b3f67a4fe925e8af80a81b",
+        "CM_OCC:d2df1d011a8a95f27dd96e178f9477e9b2a01c807abf93c84a2acde04e2ff452",
+        "CM_OCC:4e137a1aacd7abed2a1a68695b7aab9e8dfad9d7c796a26bde58679bf6857c9d",
+        "CM_OCC:5d917d74b411c67ef0b5f4706521e4207f161047e4e60f33ddfe7cbfa43a57aa",
+        "CM_OCC:cffebcb0448fb54b3b713a9ad02b1c5be0dfdc0c5ca450f21f5bb040d8588c31",
+        "CM_OCC:101d25dbb8846b17ac23de5b313ab1505d4147515e681e95150c98413ca59d45",
+        "CM_OCC:7a460e51618532f986d9e6c01b675d504601bff4231ee3e3695a8a443dbcd0b3",
+        "CM_OCC:eb5e0427eb53bd803fda06c8383bd534d6868e6634c621218ff2313a8193aa86",
+        "CM_OCC:effeec3dbd42eea9f4ebbafb85ff45fe69e7a55871768634b935f1b671fc777f",
+        "CM_OCC:17f04f0268d4f40e93da33e2d38cb266ec2dab8caa46b5fbb96b321c3c250d27"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The eighteen occurrences retain fat-free ground beef, but come from DSMZ/ATCC/JCM chopped-meat formulations and normalized KOMODO variants. The primary recipes include meat processing and possible tissue substitutions. These heterogeneous tissue preparations must not collapse to beef extract or to one exact processed product from spelling alone.",
+      "applicability": "Applies to exact raw source label 'Ground beef (fat free)' and all 18 frozen occurrence objects, each verified against its complete recipe snapshot hash. The eighteen occurrences retain fat-free ground beef, but come from DSMZ/ATCC/JCM chopped-meat formulations and normalized KOMODO variants. The primary recipes include meat processing and possible tissue substitutions. These heterogeneous tissue preparations must not collapse to beef extract or to one exact processed product from spelling alone.",
+      "evidence_ids": [
+        "A-CASE-50",
+        "A-RECIPE-50-0",
+        "A-RECIPE-50-1",
+        "A-RECIPE-50-2",
+        "A-RECIPE-50-3",
+        "A-RECIPE-50-4",
+        "A-RECIPE-50-5",
+        "A-RECIPE-50-6",
+        "A-RECIPE-50-7",
+        "A-RECIPE-50-8",
+        "A-RECIPE-50-9",
+        "A-RECIPE-50-10",
+        "A-RECIPE-50-11",
+        "A-RECIPE-50-12",
+        "A-RECIPE-50-13",
+        "A-RECIPE-50-14",
+        "A-RECIPE-50-15",
+        "A-RECIPE-50-16",
+        "A-RECIPE-50-17",
+        "A-RETRIEVAL-a-fetch-results-67",
+        "A-RETRIEVAL-a-fetch-results-68",
+        "A-RETRIEVAL-a-fetch-results-69",
+        "A-RETRIEVAL-a-fetch-results-70",
+        "A-RETRIEVAL-a-fetch-json-results-59",
+        "A-RETRIEVAL-a-fetch-json-results-60",
+        "A-RETRIEVAL-a-fetch-json-results-61",
+        "A-RETRIEVAL-a-fetch-json-results-62",
+        "A-RETRIEVAL-a-fetch-json-results-63",
+        "A-RETRIEVAL-a-fetch-json-results-64",
+        "A-RETRIEVAL-a-fetch-json-results-65",
+        "A-RETRIEVAL-a-fetch-json-results-66",
+        "A-RETRIEVAL-a-fetch-json-results-67",
+        "A-RETRIEVAL-a-fetch-json-results-68",
+        "A-RETRIEVAL-a-fetch-json-results-69",
+        "A-RETRIEVAL-a-fetch-json-results-70",
+        "A-RETRIEVAL-a-fetch-json-results-71",
+        "A-RETRIEVAL-a-fetch-json-results-72",
+        "A-RETRIEVAL-a-fetch-json-results-73",
+        "A-OWNER-Ground_Beef"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Compare the original meat preparation and any allowed substitution per occurrence before assigning a single supplied-material identity; retain the three KOMODO-derived concentration values independently.",
+      "missing_requirement": "Compare the original meat preparation and any allowed substitution per occurrence before assigning a single supplied-material identity; retain the three KOMODO-derived concentration values independently.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Ground_Beef.yaml",
+          "sha256": "bd1f04587e0157f4f3e0dd0fa1dc7776880471deb75dc3783ba3be0411b8ba2e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:56b24cc1b0b3bc9ba068aa5bc87819f7507cd486457ef39081ccf60360bc7176",
+      "case_input_sha256": "0eb84de52da72a9f7fc5ed45ed822f0c544bcadf4b25ed1f5cdc3b59c90f5f1d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium citrate·2H2O",
+        "source_label": "Sodium citrate·2H2O",
+        "raw_source_label": "Sodium citrate·2H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:df40b5354450b9332c305c938b0e5ce5899ee0c6f5414f98751e25adfbaae676",
+        "CM_OCC:5d30a8940f6a530b48945591c3d6b8641b85a132751a86b82b76cdc214060c2b"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "JCM1331 titanium-citrate stock and JCM1492 iron stock explicitly use sodium citrate·2H2O. The solid input is sodium citrate dihydrate CHEBI32142, not the resulting titanium/iron solution. Add the exact spelling only; source amount/final-volume discrepancies belong to recipe correction, not identity. This is a documented conventional substance name: independent Sigma W302600 and Thermo S279 specifications explicitly equate sodium citrate dihydrate with trisodium citrate dihydrate, CAS6132-04-3, matching CHEBI32142. This nomenclature evidence supports the name-to-substance interpretation only; it does not assert that JCM bought either supplier product. Bare sodium NTA/malate lacks an equivalently specific hydrate-qualified naming witness in these cases.",
+      "applicability": "Applies to exact raw source label 'Sodium citrate·2H2O' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM1331 titanium-citrate stock and JCM1492 iron stock explicitly use sodium citrate·2H2O. The solid input is sodium citrate dihydrate CHEBI32142, not the resulting titanium/iron solution. Add the exact spelling only; source amount/final-volume discrepancies belong to recipe correction, not identity. This is a documented conventional substance name: independent Sigma W302600 and Thermo S279 specifications explicitly equate sodium citrate dihydrate with trisodium citrate dihydrate, CAS6132-04-3, matching CHEBI32142. This nomenclature evidence supports the name-to-substance interpretation only; it does not assert that JCM bought either supplier product. Bare sodium NTA/malate lacks an equivalently specific hydrate-qualified naming witness in these cases.",
+      "evidence_ids": [
+        "A-CASE-51",
+        "A-RECIPE-51-0",
+        "A-RECIPE-51-1",
+        "A-RETRIEVAL-a-fetch-results-71",
+        "A-RETRIEVAL-a-fetch-results-72",
+        "A-RETRIEVAL-a-fetch-json-results-74",
+        "A-RETRIEVAL-a-fetch-json-results-97",
+        "A-WEB-26",
+        "A-WEB-27",
+        "A-OWNER-Na3-citrate_X_2_H2o"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Na3-citrate_X_2_H2o"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na3-citrate_X_2_H2o.yaml",
+          "sha256": "3c1499ff6499f36840a5e3789a881515ef77b9db4781a38d4b2065b4838f8d10"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:590488b99071f5cbf3833dbb86727ffa3a04fa3240ac12fd216d33a58533206e",
+      "case_input_sha256": "8abfadadd6a04b5251189dd2d69d627c91bff7fc12f01ba48910770dbbf15c4a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Cyanocobalamin (Vitamin B12)",
+        "source_label": "Cyanocobalamin (Vitamin B12)",
+        "raw_source_label": "Cyanocobalamin (Vitamin B12)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2efd55c06ea2685b2e9b231df68cce0f7b136e03ae450c5f78440c7ef85cc96f",
+        "CM_OCC:69b7da5922d2b3f6181eeefaa9f9f609f301706f3fd1ce0f212a9f57c5ceeced"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Both source occurrences explicitly say Cyanocobalamin, with VitaminB12 as a parenthetical gloss. CCAP stock4 and NBRC1550 support this named vitamer; the frozen CHEBI176843 class on one occurrence is broader than the explicit compound. CHEBI17439 is the matching cyanocobalamin identity. Add only this fully qualified alias, not generic VitaminB12.",
+      "applicability": "Applies to exact raw source label 'Cyanocobalamin (Vitamin B12)' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. Both source occurrences explicitly say Cyanocobalamin, with VitaminB12 as a parenthetical gloss. CCAP stock4 and NBRC1550 support this named vitamer; the frozen CHEBI176843 class on one occurrence is broader than the explicit compound. CHEBI17439 is the matching cyanocobalamin identity. Add only this fully qualified alias, not generic VitaminB12.",
+      "evidence_ids": [
+        "A-CASE-52",
+        "A-RECIPE-52-0",
+        "A-RECIPE-52-1",
+        "A-RETRIEVAL-a-fetch-results-73",
+        "A-RETRIEVAL-a-fetch-results-74",
+        "A-RETRIEVAL-a-fetch-json-results-75",
+        "A-RETRIEVAL-a-fetch-json-results-94",
+        "A-OWNER-Cyanocobalamin"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Cyanocobalamin"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Cyanocobalamin.yaml",
+          "sha256": "c5040ab3a4bc376296676ced54da7265cce36b34c573668be6e28592161d260c"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:59686b3b59a0d42a7d77e06bdcd2dcb146290edce3960fa637be7fb50389e6f9",
+      "case_input_sha256": "0f67d1d2b230dad2f7a3fe7d8569687ea93213366fc4b7fb2504612185294920",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium monobasic phosphate",
+        "source_label": "Sodium monobasic phosphate",
+        "raw_source_label": "Sodium monobasic phosphate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:46f3fb34d3d1cc72be6bab1839db4ea40380a22747de4813e8d7d617f5667af5"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The frozen saline basal source says sodium monobasic phosphate, which establishes monosodium dihydrogenphosphate scope without specifying supplied hydration. CHEBI37585 and current Nah2po4 have explicit water-free structure/CAS7558-80-7 and an anhydrous synonym; the owner separately rejects hydrate aliases. The comparative original saline-basal paper repeats4.35g/L but gives no catalogue/hydration. Missing hydration alone is not a universal mapping blocker; here the candidate owner asserts a specific supplied material.",
+      "applicability": "Applies to exact raw source label 'Sodium monobasic phosphate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. The frozen saline basal source says sodium monobasic phosphate, which establishes monosodium dihydrogenphosphate scope without specifying supplied hydration. CHEBI37585 and current Nah2po4 have explicit water-free structure/CAS7558-80-7 and an anhydrous synonym; the owner separately rejects hydrate aliases. The comparative original saline-basal paper repeats4.35g/L but gives no catalogue/hydration. Missing hydration alone is not a universal mapping blocker; here the candidate owner asserts a specific supplied material.",
+      "evidence_ids": [
+        "A-CASE-53",
+        "A-RECIPE-53-0",
+        "A-RETRIEVAL-a-fetch-results-75",
+        "A-RETRIEVAL-a-fetch-json-results-76",
+        "A-RETRIEVAL-a-fetch-json-results-103",
+        "A-RETRIEVAL-a-retry-results-8",
+        "A-RETRIEVAL-a-last-results-4",
+        "A-WEB-13",
+        "A-OWNER-Nah2po4"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Establish whether this source denotes an unspecified salt concept or the water-free material of Nah2po4; recover the exact saline-basal supplier/CAS before assigning the source to this anhydrous-scoped owner. Do not use4.35g as molecular-form evidence.",
+      "missing_requirement": "Establish whether this source denotes an unspecified salt concept or the water-free material of Nah2po4; recover the exact saline-basal supplier/CAS before assigning the source to this anhydrous-scoped owner. Do not use4.35g as molecular-form evidence.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Nah2po4.yaml",
+          "sha256": "2766885d797dd67849b3a8bc503e48d4461c4a6f89eab651baae6ca1fd949de4"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:5ffed7bd758373be61c1ceb590c11a3f08b5d599b296ad95ec9cf4b6097f6a7b",
+      "case_input_sha256": "cc60544bd331b2f8ced0f7c31cbd45dfc6f46826cfa067212634bbb9424f953c",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium fumarate (adjust pH to 7.0)",
+        "source_label": "Sodium fumarate (adjust pH to 7.0)",
+        "raw_source_label": "Sodium fumarate (adjust pH to 7.0)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:da80dd5dc7aec7d9be1ff0156bea9a33bf624e9d0ec22e50cecb7ec1b88f63cf"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM554 prints sodium fumarate with an instruction to adjust pH7.0. The label includes preparation, and the primary gives neither a separate stock volume nor sodium stoichiometry. Treat the instruction as recipe context; no global active alias for the whole prepared string on disodium fumarate.",
+      "applicability": "Applies to exact raw source label 'Sodium fumarate (adjust pH to 7.0)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM554 prints sodium fumarate with an instruction to adjust pH7.0. The label includes preparation, and the primary gives neither a separate stock volume nor sodium stoichiometry. Treat the instruction as recipe context; no global active alias for the whole prepared string on disodium fumarate.",
+      "evidence_ids": [
+        "A-CASE-54",
+        "A-RECIPE-54-0",
+        "A-RETRIEVAL-a-fetch-results-76",
+        "A-RETRIEVAL-a-fetch-json-results-77"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Identify whether the source used supplied mono/disodium fumarate or prepared sodium fumarate by neutralization, and retain the pH adjustment in the recipe owner.",
+      "missing_requirement": "Identify whether the source used supplied mono/disodium fumarate or prepared sodium fumarate by neutralization, and retain the pH adjustment in the recipe owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:617525d03061c42fcdc3c8be2806c4f401e62110bb2a2c2a586d9c836a4f136b",
+      "case_input_sha256": "a0f8af9b30f23cf66e6588a50de170ec7967f6fef689f04267cbab744b50f896",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Nitrilotriacetic acid trisodium salt monohydrate",
+        "source_label": "Nitrilotriacetic acid trisodium salt monohydrate",
+        "raw_source_label": "Nitrilotriacetic acid trisodium salt monohydrate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a4ecff701f2f999c26f6c62a0e9ee8ab5a22b13be20fd474fbc8b2a22d21bbfd",
+        "CM_OCC:429b2e7c1c18b597c8465eefebca951560094fcf0ebda6a6fcad1ed80349ef68",
+        "CM_OCC:d79a512b5b0c6ff0700fd91761057d13d539c77ba71aae2b4a2fb2b50ce573cb",
+        "CM_OCC:8546120a8a6e3f69506ca5652acbb91c96de4a8915307e4e190a1da908bb5edf",
+        "CM_OCC:cdaa3c50436bdfdabdfce95b459a2351fe98c8460b8ce46ffac5d21112c83d4f",
+        "CM_OCC:aa127bfd57a6446fad13a6886ae8424ad9a5e33e7ddf9534edb689105bc8ef77"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM1107 and1355 explicitly specify nitrilotriacetic acid trisodium salt monohydrate; MediaDive1930 corroborates the source product. CHEBI132766 describes the water-free trisodium salt, so this hydrate needs its distinct identity. Share primary_c’s reviewed promotion of existing Na3-NTA_X_H2O; do not mint a duplicate owner.",
+      "applicability": "Applies to exact raw source label 'Nitrilotriacetic acid trisodium salt monohydrate' and all 6 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM1107 and1355 explicitly specify nitrilotriacetic acid trisodium salt monohydrate; MediaDive1930 corroborates the source product. CHEBI132766 describes the water-free trisodium salt, so this hydrate needs its distinct identity. Share primary_c’s reviewed promotion of existing Na3-NTA_X_H2O; do not mint a duplicate owner.",
+      "evidence_ids": [
+        "A-CASE-55",
+        "A-RECIPE-55-0",
+        "A-RECIPE-55-1",
+        "A-RECIPE-55-2",
+        "A-RECIPE-55-3",
+        "A-RECIPE-55-4",
+        "A-RECIPE-55-5",
+        "A-RETRIEVAL-a-fetch-results-77",
+        "A-RETRIEVAL-a-fetch-results-78",
+        "A-RETRIEVAL-a-fetch-results-79",
+        "A-RETRIEVAL-a-fetch-json-results-78",
+        "A-RETRIEVAL-a-fetch-json-results-79",
+        "A-RETRIEVAL-a-fetch-json-results-102",
+        "A-RETRIEVAL-a-fetch-json-results-107",
+        "A-OWNER-Na3-NTA_X_H2O"
+      ],
+      "proposal_ids": [
+        "C-P01"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Na3-NTA_X_H2O.yaml",
+          "sha256": "9a83196f39aaf6cf563af23cabe5336be49445e5aa55d19d19608761055a3992"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+      "shared_proposal_requested": "C-P01"
+    },
+    {
+      "case_id": "CM_NAME:641c8a19812a21141c3294010860cf4e9d7df040fbbd30bdffc0723c8705534b",
+      "case_input_sha256": "4e0345a54d8b6d93776a6c76c552a09e486165bca518dfc1f86b8090be35d43d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "DNA sodium salt (Sigma, D1501)",
+        "source_label": "DNA sodium salt (Sigma, D1501)",
+        "raw_source_label": "DNA sodium salt (Sigma, D1501)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8a333870bbab4ddcee5246e262c3ac6c6e38e0865575fd4e6bbd918314b4da65"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Sigma’s exact D1501 product is calf-thymus DNA sodium salt, TypeI fibrous material. TOGO M2785 names the same catalogue code, establishing supplier/tissue/salt scope. The product is heterogeneous biological DNA and not fish-sperm DNA or generic deoxyribonucleic acid. Propose a source-qualified biological preparation with supplier metadata, no invented whole-material structure.",
+      "applicability": "Applies to exact raw source label 'DNA sodium salt (Sigma, D1501)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. Sigma’s exact D1501 product is calf-thymus DNA sodium salt, TypeI fibrous material. TOGO M2785 names the same catalogue code, establishing supplier/tissue/salt scope. The product is heterogeneous biological DNA and not fish-sperm DNA or generic deoxyribonucleic acid. Propose a source-qualified biological preparation with supplier metadata, no invented whole-material structure.",
+      "evidence_ids": [
+        "A-CASE-56",
+        "A-RECIPE-56-0",
+        "A-RETRIEVAL-a-fetch-results-80",
+        "A-RETRIEVAL-a-fetch-results-92",
+        "A-RETRIEVAL-a-fetch-json-results-80",
+        "A-RETRIEVAL-a-retry-results-10",
+        "A-RETRIEVAL-a-last-results-5",
+        "A-WEB-2"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Sigma_D1501_Calf_Thymus_DNA_Sodium_Salt"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:653334f87dd8872e6c825e44c7ad5d3698d03970db4641c602e6221784f489fc",
+      "case_input_sha256": "3200e3263963e8a3d73a1b72ff98d89e881081e732043be3fbc0d9d0a60e4822",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "DL--sodium Malate",
+        "source_label": "DL--sodium Malate",
+        "raw_source_label": "DL--sodium Malate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:eda6b2598c92d08ca285a81e6c97ffc2950aa6914465db15389c1a1a0f6c857e"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "JCM566’s direct page is unavailable, while the frozen TOGO M570 component explicitly retains DL sodium malate. This racemate cannot be an exact alias on Sodium_Malate CHEBI91261 (S-specific). CHEBI91260 disodium malate is a comparison candidate but the source still lacks sodium stoichiometry.",
+      "applicability": "Applies to exact raw source label 'DL--sodium Malate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM566’s direct page is unavailable, while the frozen TOGO M570 component explicitly retains DL sodium malate. This racemate cannot be an exact alias on Sodium_Malate CHEBI91261 (S-specific). CHEBI91260 disodium malate is a comparison candidate but the source still lacks sodium stoichiometry.",
+      "evidence_ids": [
+        "A-CASE-57",
+        "A-RECIPE-57-0",
+        "A-RETRIEVAL-a-fetch-results-81",
+        "A-RETRIEVAL-a-fetch-json-results-81",
+        "A-RETRIEVAL-a-fetch-json-results-98",
+        "A-RETRIEVAL-a-fetch-json-results-99",
+        "A-OWNER-Sodium_Malate",
+        "A-OWNER-Disodium_Malate"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the M570/JCM566 supplied salt stoichiometry/hydration; preserve DL and do not infer disodium or L identity from existing mixed owner synonyms.",
+      "missing_requirement": "Recover the M570/JCM566 supplied salt stoichiometry/hydration; preserve DL and do not infer disodium or L identity from existing mixed owner synonyms.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Sodium_Malate.yaml",
+          "sha256": "74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9"
+        },
+        {
+          "path": "data/ingredients/mapped/Disodium_Malate.yaml",
+          "sha256": "2934f4206c4921dabc50b0cae9de7a0331fd268a5776a462ea2423071ba4f4eb"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/811",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:6c34dd22fcbcadb47b76381c3ae696c12de6f5d723b51a4e5191d52f7768ad12",
+      "case_input_sha256": "8503eaf25c93baf00df83ae56bafbfa29a74d175afc76d03941546c192bd3253",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NiCI2.6H2O",
+        "source_label": "NiCI2.6H2O",
+        "raw_source_label": "NiCI2.6H2O"
+      },
+      "occurrence_ids": [
+        "CM_OCC:2a89f9081c9876a51e071caf41cccef5f8cc5e89f3b9c8c4490e3b6feabd1220"
+      ],
+      "disposition": "malformed_or_nonchemical_token",
+      "reasoning": "A later successful TOGO M2277 API capture retains NiCI2.6H2O24mg but annotates the component as Nickel chloride hexahydrate. Adjacent MnCI2/CoCI2/ZnCI2 show the same I/l character corruption. Comparative SL12 primary methods also giveNiCl2·6H2O24mg. This supports a bounded source-transcription correction lead, not a universal active alias for the malformed formula.",
+      "applicability": "Applies to exact raw source label 'NiCI2.6H2O' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. A later successful TOGO M2277 API capture retains NiCI2.6H2O24mg but annotates the component as Nickel chloride hexahydrate. Adjacent MnCI2/CoCI2/ZnCI2 show the same I/l character corruption. Comparative SL12 primary methods also giveNiCl2·6H2O24mg. This supports a bounded source-transcription correction lead, not a universal active alias for the malformed formula.",
+      "evidence_ids": [
+        "A-CASE-58",
+        "A-RECIPE-58-0",
+        "A-RETRIEVAL-a-fetch-results-82",
+        "A-RETRIEVAL-a-fetch-json-results-82",
+        "A-RETRIEVAL-a-retry-results-4",
+        "A-RETRIEVAL-a-last-results-3",
+        "A-WEB-11",
+        "A-WEB-15",
+        "A-WEB-19"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Verify the printed original SL12 source behind TOGO2277 before publishing the corrected chemical identity; preserve literalNiCI2.6H2O and correct24mg versus frozen24G_PER_L separately.",
+      "missing_requirement": "Verify the printed original SL12 source behind TOGO2277 before publishing the corrected chemical identity; preserve literalNiCI2.6H2O and correct24mg versus frozen24G_PER_L separately.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:6f19b711a1fb295631b4d004787644a832c737844999ad42131084b946668646",
+      "case_input_sha256": "6d706ba66d0511681bfe2d226c89965b23459b4697b40056a8e004dc39917768",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1.0 M Sodium lactate",
+        "source_label": "1.0 M Sodium lactate",
+        "raw_source_label": "1.0 M Sodium lactate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:20fb703c3996295500712e740ae2331f4452d4553758eca6d3b54f546ab07957"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The source-derived MediaDive J830 recipe explicitly adds20ml of1.0M sodium lactate stock per liter. It identifies JCM as source but flags the medium as inofficial external content; the current direct JCM830 page is unavailable. Together with the exact frozen TOGO866 lineage this supports a nominal source-qualified stock, with no L/DL solute inference or independent validation of the transcription.",
+      "applicability": "Applies to exact raw source label '1.0 M Sodium lactate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. The source-derived MediaDive J830 recipe explicitly adds20ml of1.0M sodium lactate stock per liter. It identifies JCM as source but flags the medium as inofficial external content; the current direct JCM830 page is unavailable. Together with the exact frozen TOGO866 lineage this supports a nominal source-qualified stock, with no L/DL solute inference or independent validation of the transcription.",
+      "evidence_ids": [
+        "A-CASE-59",
+        "A-RECIPE-59-0",
+        "A-RETRIEVAL-a-fetch-results-83",
+        "A-RETRIEVAL-a-fetch-json-results-83",
+        "A-RETRIEVAL-a-retry-results-3",
+        "A-WEB-16",
+        "A-WEB-17"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-JCM830_Sodium_Lactate_1M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:70d65c7b853fd1eadcccbce624a98cbe756836e17e68ea33e83d8758cea4ccda",
+      "case_input_sha256": "2a36d7779c81f82bf06f8ddea86260cd406a7e93ebdfe8dec0cf73db37d0acdf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NaII CO3",
+        "source_label": "NaII CO3",
+        "raw_source_label": "NaII CO3"
+      },
+      "occurrence_ids": [
+        "CM_OCC:674181feebd1e3e1c8b6f17867249d30b8ed3ad8398a1c67f589383fba36a0b7"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The recovered TOGO M2567 primary JSON itself prints NaII CO3 and annotates it as sodium carbonate. This is an internal text/annotation conflict: NaII is not a neutral sodium formula, while replacingII withH versus2 selects different substances. The annotation is a repair lead, not independent printed-source confirmation.",
+      "applicability": "Applies to exact raw source label 'NaII CO3' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. The recovered TOGO M2567 primary JSON itself prints NaII CO3 and annotates it as sodium carbonate. This is an internal text/annotation conflict: NaII is not a neutral sodium formula, while replacingII withH versus2 selects different substances. The annotation is a repair lead, not independent printed-source confirmation.",
+      "evidence_ids": [
+        "A-CASE-60",
+        "A-RECIPE-60-0",
+        "A-RETRIEVAL-a-fetch-results-84",
+        "A-RETRIEVAL-a-fetch-json-results-84",
+        "A-RETRIEVAL-a-retry-results-5",
+        "A-RETRIEVAL-a-more-results-5"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the original YPS artificial-seawater preparation or supplier specification confirming bicarbonate versus carbonate for this exact0.2g input; retain the conflicting source text and annotation.",
+      "missing_requirement": "Recover the original YPS artificial-seawater preparation or supplier specification confirming bicarbonate versus carbonate for this exact0.2g input; retain the conflicting source text and annotation.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:72ccf01c3682df1b53cf0378716b00fb7c13a968ddd1e8bb64930807bf6ad235",
+      "case_input_sha256": "ce4b0a31cb6bd78b680b877bf35f111c394e095cb17542a039a2627ee5542041",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2-(N-Morpholino)ethanesulfonic acid (MES)",
+        "source_label": "2-(N-Morpholino)ethanesulfonic acid (MES)",
+        "raw_source_label": "2-(N-Morpholino)ethanesulfonic acid (MES)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:db48e80b50decc33aacaf4f89c6417348b79fd4e368f77a11a80631d8ee31c2d",
+        "CM_OCC:5900bffb0a7a4f3303ee0fd11326288ce9613c498481eefbd2b1018a34842912"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "DSMZ1094 explicitly lists MES acid in SolutionC alongside separately added NaOH. The component’s acid name matches CHEBI39005; the mixed buffer is not the same entity. Add the exact expanded MES spelling to its existing acid owner while preserving the separate buffer-preparation context.",
+      "applicability": "Applies to exact raw source label '2-(N-Morpholino)ethanesulfonic acid (MES)' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. DSMZ1094 explicitly lists MES acid in SolutionC alongside separately added NaOH. The component’s acid name matches CHEBI39005; the mixed buffer is not the same entity. Add the exact expanded MES spelling to its existing acid owner while preserving the separate buffer-preparation context.",
+      "evidence_ids": [
+        "A-CASE-61",
+        "A-RECIPE-61-0",
+        "A-RECIPE-61-1",
+        "A-RETRIEVAL-a-fetch-results-85",
+        "A-RETRIEVAL-a-fetch-json-results-85",
+        "A-RETRIEVAL-a-fetch-json-results-86",
+        "A-RETRIEVAL-a-fetch-json-results-95",
+        "A-OWNER-Mes_2-_N-morpholino_Ethane_Sulfonic_Acid"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Mes_2-_N-morpholino_Ethane_Sulfonic_Acid"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Mes_2-_N-morpholino_Ethane_Sulfonic_Acid.yaml",
+          "sha256": "74b9b9ad58114bc8b6b1cb6248f12b9857093f0339635bb3c1c4d8e6e3a02f46"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:730b87c6cc902e5760a419f6fdd42cf6d98c178a4ea656c894ea234467f0f7dd",
+      "case_input_sha256": "a64e1a84a08f73eae196f79ad5f92d2ac5d349d83963db026db315b6c624b399",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "1.0 M Sodium acetate (filter--sterilized)",
+        "source_label": "1.0 M Sodium acetate (filter--sterilized)",
+        "raw_source_label": "1.0 M Sodium acetate (filter--sterilized)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f837fa816fdec6961a77c1ba1b22fe2adf9a046a1fa57036677cb08978d1ff9e"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM579 adds 0.2 ml of filter-sterilized1.0 M sodium acetate per10 ml medium. The frozen0.2G_PER_L is a flattened source quantity, not the stock composition. Propose the source-qualified1M reagent and preserve filtration as preparation metadata.",
+      "applicability": "Applies to exact raw source label '1.0 M Sodium acetate (filter--sterilized)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM579 adds 0.2 ml of filter-sterilized1.0 M sodium acetate per10 ml medium. The frozen0.2G_PER_L is a flattened source quantity, not the stock composition. Propose the source-qualified1M reagent and preserve filtration as preparation metadata.",
+      "evidence_ids": [
+        "A-CASE-62",
+        "A-RECIPE-62-0",
+        "A-RETRIEVAL-a-fetch-results-86",
+        "A-RETRIEVAL-a-fetch-json-results-87"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-JCM579_Sodium_Acetate_1M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:74a257fe7d3d0fd70b97dda0d3aa6e3b5eb67af3cb6908d0e61fa6aa9c3843bb",
+      "case_input_sha256": "f82a8faec146355ee5196d7abb05ece7a7fb5f818a5fb46e1d4cc7dfd5081743",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Tetrasodium EDTA",
+        "source_label": "Tetrasodium EDTA",
+        "raw_source_label": "Tetrasodium EDTA"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b1fce7a71aaa836e0e86c6014c1b2bb0e21adbc63e9b9f815549e62cc562cc5e"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Kaminskyj’s primary trace-element table explicitly says Na4EDTA5g, followed by adjustment to100ml. It therefore establishes tetrasodium stoichiometry but not hydration. The existing tetrasodium tetrahydrate owner adds four waters absent from the source; no exact alias to it is justified.",
+      "applicability": "Applies to exact raw source label 'Tetrasodium EDTA' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. Kaminskyj’s primary trace-element table explicitly says Na4EDTA5g, followed by adjustment to100ml. It therefore establishes tetrasodium stoichiometry but not hydration. The existing tetrasodium tetrahydrate owner adds four waters absent from the source; no exact alias to it is justified.",
+      "evidence_ids": [
+        "A-CASE-63",
+        "A-RECIPE-63-0",
+        "A-RETRIEVAL-a-fetch-results-93",
+        "A-RETRIEVAL-a-fetch-json-results-101",
+        "A-OWNER-EDTA_Tetrasodium_Tetrahydrate_Salt"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Identify the Na4EDTA supplied hydrate/CAS for the Kaminskyj stock before selecting anhydrous, dihydrate or tetrahydrate; the50g/L stock calculation alone cannot choose.",
+      "missing_requirement": "Identify the Na4EDTA supplied hydrate/CAS for the Kaminskyj stock before selecting anhydrous, dihydrate or tetrahydrate; the50g/L stock calculation alone cannot choose.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/EDTA_Tetrasodium_Tetrahydrate_Salt.yaml",
+          "sha256": "4857318b3af2d5e3728bff79e7af7e42cb4f2705015e2b2bd09829ed3ab9a6bc"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:786d3bd1b5b9cd3ea112fd60d801086e8402b3f70cc2ace785c4717078eef6df",
+      "case_input_sha256": "6185a9ff83cd4db61f2a8a0d8df115a1c349e7059ceb4d3884f80d0dee461415",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium borate",
+        "source_label": "Sodium borate",
+        "raw_source_label": "Sodium borate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9188c2c43b147787dbc476a22310f6b4f054e6e44971dcfd1e5911b5079b711d",
+        "CM_OCC:6b28ea242dac883a47da4ad1941aa9e1572c32e71b05debd6c98d0d510f01ff6",
+        "CM_OCC:94e018d4c977a28bcc02d844d05fab248dab924fadd3e33c0b09b6e3e5da7d67",
+        "CM_OCC:c78a315609fff5066b2b9ab718ac1b4dfb001928c63cf0bf97b2c87c59987fc1",
+        "CM_OCC:79169753a909381c21a75d98852adb478c3a77ebfce0376b714f2ae7b470f167",
+        "CM_OCC:ff2183c0c9237aaa7ad8258d8f9e9edd70114c4921246043abaa7d802186055f",
+        "CM_OCC:7e8092fef1eebbfa20819c72c133abec8af4fad86a2396298b4d30d47bc248cf",
+        "CM_OCC:a2fb63a57351e33cb0b3a5216f915ba9c45e65ebafe7e34260beecd6c83c3f31"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Eight occurrences span four source families. Fang1989 doi:10.1007/BF00264002 was verified at the publisher; accessible preview cites the Deshpande1980 base but omits its reagent table. Lostroh2010 fullPMC2901722 uses minimal succinate broth by Gerischer/Ornston1995 and separately Davis broth; no sodium-borate formula appears. Park2011 fullMethods doi:10.1186/1752-0509-5-101 supplies5ml trace-metal solution by Lee/Lee1996 without enumerating borate. Song2008 doi:10.1007/s00253-008-1425-2 publisher preview verifies the CDM study but not a borate material. Thus neither identical database labels nor restored database amounts establish a shared borate salt/hydrate.",
+      "applicability": "Applies to exact raw source label 'Sodium borate' and all 8 frozen occurrence objects, each verified against its complete recipe snapshot hash. Eight occurrences span four source families. Fang1989 doi:10.1007/BF00264002 was verified at the publisher; accessible preview cites the Deshpande1980 base but omits its reagent table. Lostroh2010 fullPMC2901722 uses minimal succinate broth by Gerischer/Ornston1995 and separately Davis broth; no sodium-borate formula appears. Park2011 fullMethods doi:10.1186/1752-0509-5-101 supplies5ml trace-metal solution by Lee/Lee1996 without enumerating borate. Song2008 doi:10.1007/s00253-008-1425-2 publisher preview verifies the CDM study but not a borate material. Thus neither identical database labels nor restored database amounts establish a shared borate salt/hydrate.",
+      "evidence_ids": [
+        "A-CASE-64",
+        "A-RECIPE-64-0",
+        "A-RECIPE-64-1",
+        "A-RECIPE-64-2",
+        "A-RECIPE-64-3",
+        "A-RECIPE-64-4",
+        "A-RECIPE-64-5",
+        "A-RECIPE-64-6",
+        "A-RECIPE-64-7",
+        "A-RETRIEVAL-a-fetch-results-94",
+        "A-RETRIEVAL-a-more-results-1",
+        "A-RETRIEVAL-a-more-results-2",
+        "A-RETRIEVAL-a-more-results-7",
+        "A-RETRIEVAL-a-more-results-8",
+        "A-RETRIEVAL-a-more-results-9",
+        "A-WEB-5",
+        "A-WEB-20",
+        "A-WEB-21",
+        "A-WEB-22",
+        "A-WEB-23",
+        "A-WEB-24"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "For MediaDB205/206/207 recover Deshpande1980 reagent table via Fang1989; for32 recover the exact Gerischer/Ornston1995 minimal-broth trace formulation and distinguish Davis broth; for320/391 recover Lee/Lee1996 trace-metal recipe; for288/289 obtain Song2008 fullCDM table or supplier identity. Resolve borate stoichiometry/hydration per family, retaining all existing database-only quantity limits.",
+      "missing_requirement": "For MediaDB205/206/207 recover Deshpande1980 reagent table via Fang1989; for32 recover the exact Gerischer/Ornston1995 minimal-broth trace formulation and distinguish Davis broth; for320/391 recover Lee/Lee1996 trace-metal recipe; for288/289 obtain Song2008 fullCDM table or supplier identity. Resolve borate stoichiometry/hydration per family, retaining all existing database-only quantity limits.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:7ab6f875fa988b59199027485bbd0e9a1e0581c0c728384f66a7b77a79d43710",
+      "case_input_sha256": "7d6eabf2cb49b60e2fa52e078108070917dbd2541b650e4d4264b91f40575896",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Hemin (dissolved separately in 10 mM NaOH)",
+        "source_label": "Hemin (dissolved separately in 10 mM NaOH)",
+        "raw_source_label": "Hemin (dissolved separately in 10 mM NaOH)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:eb3452232d07da676e04394a4fed2dd75a2d15b7b4e95d82e5969233b0cb8cd3"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM537 lists65mg hemin within its cofactor solution and says it is separately dissolved in10mM NaOH. The volume of that initial solvent and final hemin concentration are not given. Neither the entire label nor the cofactor stock is pure hemin; the frozen65G_PER_L also loses the mg unit.",
+      "applicability": "Applies to exact raw source label 'Hemin (dissolved separately in 10 mM NaOH)' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM537 lists65mg hemin within its cofactor solution and says it is separately dissolved in10mM NaOH. The volume of that initial solvent and final hemin concentration are not given. Neither the entire label nor the cofactor stock is pure hemin; the frozen65G_PER_L also loses the mg unit.",
+      "evidence_ids": [
+        "A-CASE-65",
+        "A-RECIPE-65-0",
+        "A-RETRIEVAL-a-fetch-results-87",
+        "A-RETRIEVAL-a-fetch-json-results-88"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Recover the separate hemin-in-NaOH preparation volume and form before defining that stock; correct source65mg versus frozen65G_PER_L without assuming a1L hemin substock.",
+      "missing_requirement": "Recover the separate hemin-in-NaOH preparation volume and form before defining that stock; correct source65mg versus frozen65G_PER_L without assuming a1L hemin substock.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:7d6a3d38f5b280c51d992a47ecb4074b88874aeb5c1ce0d645921ee86cff4a20",
+      "case_input_sha256": "014b5fa5741d470cb3af031f69b30203f17649d92185009862d74603e8645e3b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2 M HCl",
+        "source_label": "2 M HCl",
+        "raw_source_label": "2 M HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:e397f1e80169588feba2d4c238e87ecedd210c5990391d7ae4890ffc6be2bfa8"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "A later successful exact TOGO M3265 API capture explicitly lists2M HCl, conc_unitM, as a variable pH reagent. This supports a nominal source-qualified2M stock. The comparative Steward2022 fullMethods was retrieved separately and states pH adjustment without specifying this titrant; its similarity does not establish provenance or substitute for the actual TOGO assertion.",
+      "applicability": "Applies to exact raw source label '2 M HCl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. A later successful exact TOGO M3265 API capture explicitly lists2M HCl, conc_unitM, as a variable pH reagent. This supports a nominal source-qualified2M stock. The comparative Steward2022 fullMethods was retrieved separately and states pH adjustment without specifying this titrant; its similarity does not establish provenance or substitute for the actual TOGO assertion.",
+      "evidence_ids": [
+        "A-CASE-66",
+        "A-RECIPE-66-0",
+        "A-RETRIEVAL-a-fetch-results-88",
+        "A-RETRIEVAL-a-fetch-json-results-89",
+        "A-RETRIEVAL-a-retry-results-2",
+        "A-RETRIEVAL-a-more-results-3",
+        "A-RETRIEVAL-a-last-results-1",
+        "A-WEB-11",
+        "A-WEB-16",
+        "A-WEB-18",
+        "A-WEB-19",
+        "A-WEB-28"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-TOGO_M3265_Hydrochloric_Acid_2M_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:82c4199757ef5a7127e71b3e8a47ab29307be39ab8c7c47cbfb1d43a1b8a9afc",
+      "case_input_sha256": "0cca093daf52a337e7dc568bf4474e6fc9028f9cc6ac545ba864ddf9ac4f2bad",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "K2HSO4",
+        "source_label": "K2HSO4",
+        "raw_source_label": "K2HSO4"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b0c78a3b31cba27666b729ca3d3785d666d837c239808cd749e6b6a8b4047b12",
+        "CM_OCC:68e1c811b8585ebce597fe74c8fcbee5b4d60b3b959145e74964a71dc3b6d868",
+        "CM_OCC:b1262b45d6e956530ed365d1b7295ed22f3e8b1206097f274d8b0ce72518cf48",
+        "CM_OCC:aa42064c2728e7f3b5254665cc7620bc3f53baabb1ccebdd1c64c69119300951"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "JCM788 itself prints K2HSO4, and the four frozen derivatives preserve it. Ordinary K+ andHSO4− do not neutralize at this2:1 ratio; KHSO4, K2SO4 andK2HPO4 would be different corrections. The use as a buffer does not decide the intended salt.",
+      "applicability": "Applies to exact raw source label 'K2HSO4' and all 4 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM788 itself prints K2HSO4, and the four frozen derivatives preserve it. Ordinary K+ andHSO4− do not neutralize at this2:1 ratio; KHSO4, K2SO4 andK2HPO4 would be different corrections. The use as a buffer does not decide the intended salt.",
+      "evidence_ids": [
+        "A-CASE-67",
+        "A-RECIPE-67-0",
+        "A-RECIPE-67-1",
+        "A-RECIPE-67-2",
+        "A-RECIPE-67-3",
+        "A-RETRIEVAL-a-fetch-results-89",
+        "A-RETRIEVAL-a-fetch-json-results-90",
+        "A-RETRIEVAL-a-fetch-json-results-91"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Obtain JCM788 erratum/original material specification resolving the extra potassium/proton or sulfur/phosphorus error; do not silently select phosphate or sulfate.",
+      "missing_requirement": "Obtain JCM788 erratum/original material specification resolving the extra potassium/proton or sulfur/phosphorus error; do not silently select phosphate or sulfate.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:87e2f09e483873dc5d06ea03900cd8e05b944f7bc38b8b7469bd94443cd94d58",
+      "case_input_sha256": "67b7c93d73cdbc8e76d752a2df14927396b161989c99444e3556e5704e1293ec",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Cobalt ion",
+        "source_label": "Cobalt ion",
+        "raw_source_label": "Cobalt ion"
+      },
+      "occurrence_ids": [
+        "CM_OCC:d2e0a45e57638a13dc241ea6e7a09748d0878e5d684bfee92e7adcb3f100d8fa",
+        "CM_OCC:1326545d2ab4fe6234b9afea359164277a7644fa7ce9f1a436f23e1ed07dcf42"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The two MediaDB TAP records represent cobalt as an ion concentration with CHEBI48828. The Chlamydomonas Resource Center TAP recipe links Hutner trace elements, which explicitly contains CoCl2·6H2O1.61g/L and is added1ml/L; this is compatible with approximately0.0068mM cobalt. That comparative recipe supports a cobalt(II) supplier-salt lead but does not show the exact2009 source used this variant, and an ion inventory is not the whole hexahydrate reagent.",
+      "applicability": "Applies to exact raw source label 'Cobalt ion' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. The two MediaDB TAP records represent cobalt as an ion concentration with CHEBI48828. The Chlamydomonas Resource Center TAP recipe links Hutner trace elements, which explicitly contains CoCl2·6H2O1.61g/L and is added1ml/L; this is compatible with approximately0.0068mM cobalt. That comparative recipe supports a cobalt(II) supplier-salt lead but does not show the exact2009 source used this variant, and an ion inventory is not the whole hexahydrate reagent.",
+      "evidence_ids": [
+        "A-CASE-68",
+        "A-RECIPE-68-0",
+        "A-RECIPE-68-1",
+        "A-RETRIEVAL-a-fetch-results-95",
+        "A-WEB-5",
+        "A-WEB-7",
+        "A-WEB-8"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Verify the exact trace-element recipe used by the2009 MediaDB36/37 study and preserve an explicit ion-to-supplied-salt relationship; do not replace Cobalt ion with cobalt chloride hexahydrate as exact identity.",
+      "missing_requirement": "Verify the exact trace-element recipe used by the2009 MediaDB36/37 study and preserve an explicit ion-to-supplied-salt relationship; do not replace Cobalt ion with cobalt chloride hexahydrate as exact identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    },
+    {
+      "case_id": "CM_NAME:8817e6c7b578abbd08573b9a266123e300e738df373b89d65b16ff5551dff270",
+      "case_input_sha256": "19d50f15be52db8fd2c82ac475fb68bdd35c89d7ffb28bb472aa1c639da8cc8a",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution, 50x",
+        "source_label": "Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution, 50x",
+        "raw_source_label": "Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution, 50x"
+      },
+      "occurrence_ids": [
+        "CM_OCC:7311513c14d7ec723712c94e626ef024a139cc931955ea9d847ab88e679a8299"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "JCM1481 explicitly names Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution50x at20ml. Sigma B5282’s primary product page identifies the same named50x liquid stock and20ml/L use rate. Propose a product-qualified stock identity; it is neither the final1x medium nor an individual mineral.",
+      "applicability": "Applies to exact raw source label 'Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution, 50x' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM1481 explicitly names Sigma-Aldrich Bold Modified Basal Freshwater Nutrient Solution50x at20ml. Sigma B5282’s primary product page identifies the same named50x liquid stock and20ml/L use rate. Propose a product-qualified stock identity; it is neither the final1x medium nor an individual mineral.",
+      "evidence_ids": [
+        "A-CASE-69",
+        "A-RECIPE-69-0",
+        "A-RETRIEVAL-a-fetch-results-90",
+        "A-WEB-2"
+      ],
+      "proposal_ids": [
+        "A-PROPOSAL-Sigma_B5282_Bold_Modified_Basal_50x_Stock"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "reviewer": "/root/integration_reviewer",
+  "reviewed_at": "2026-11-08T05:27:47.618289+00:00",
+  "status": "findings_open",
+  "predecessor": "captures/integration-review-initial.json",
+  "scope": "Cross-part consistency of source-qualified nominal stock proposals; no new source facts or whole-record approvals.",
+  "input_hashes": {
+    "parts/a-decisions.json": "b937bc9f4fc17afdfaa387e8d0f6449eff9a9b67e484f433bed0431d38f4c3ad",
+    "parts/a-evidence.json": "1d6fd546c45bdb29c64217e7089b023257e20c0580c1a08b9ecb931ffec7add9",
+    "parts/b-proposals.json": "eaa1a72854a699422a2106f62154d5c2072c5987f501d805a3570823fad5735a",
+    "parts/c-proposals.json": "5f58344db5d6635f33e75d4798957de43729452f91beb2d8451c9ada14e39154"
+  },
+  "finding_id": "INTEGRATION-03",
+  "severity": "major",
+  "cases": [
+    {
+      "shard_index": 11,
+      "case_id": "CM_NAME:14cc7b6b53f12cfa096edf7f91fc33f9980f761475a0a8ab6fc90bca0dd1eb62",
+      "source_label": "2.5% L-Cysteine . HCl",
+      "current_reason": "Verify the original ATCC stock preparation, percent basis (w/v or w/w), solvent and hydrate status before proposing a quantitatively defined stock.",
+      "current_evidence_ids": [
+        "A-CASE-11",
+        "A-RECIPE-11-0",
+        "A-RETRIEVAL-a-fetch-results-20",
+        "A-RETRIEVAL-a-fetch-json-results-20"
+      ]
+    },
+    {
+      "shard_index": 23,
+      "case_id": "CM_NAME:2a8edeb636238d033f7ba513d719e179b94f6c1db3418583bfb98878cc7ba702",
+      "source_label": "lactic acid",
+      "current_reason": "Recover the percent basis, acid stereochemistry and supplied solution specification for the JCM87 titrant before minting a quantitative stock or selecting a pure solute identity.",
+      "current_evidence_ids": [
+        "A-CASE-23",
+        "A-RECIPE-23-0",
+        "A-RETRIEVAL-a-fetch-results-33",
+        "A-RETRIEVAL-a-fetch-json-results-33",
+        "A-RETRIEVAL-a-fetch-json-results-104"
+      ]
+    },
+    {
+      "shard_index": 45,
+      "case_id": "CM_NAME:4e4275dfe464c955db394634d0b8e86d9ba1a34ba1190816244dcc0e0913a8d8",
+      "source_label": "25% Sodium acetate",
+      "current_reason": "Recover the original ATCC percent-basis and preparation for the 25% sodium acetate stock before a quantitative exact formulation proposal.",
+      "current_evidence_ids": [
+        "A-CASE-45",
+        "A-RECIPE-45-0",
+        "A-RETRIEVAL-a-fetch-results-62",
+        "A-RETRIEVAL-a-fetch-json-results-55",
+        "A-RETRIEVAL-a-retry-results-9",
+        "A-RETRIEVAL-a-last-results-6",
+        "A-WEB-14"
+      ]
+    },
+    {
+      "shard_index": 46,
+      "case_id": "CM_NAME:4f44dff670d36850888b0bc014748c4d547ea57bed9d7c1a3f077179f5f5a084",
+      "source_label": "50% Sodium lactate",
+      "current_reason": "Verify NBRC989 supplied product/stereochemistry and percentage basis; correct the TOGO-derived G_PER_L occurrence from the primary ml quantity before mapping the stock.",
+      "current_evidence_ids": [
+        "A-CASE-46",
+        "A-RECIPE-46-0",
+        "A-RECIPE-46-1",
+        "A-RETRIEVAL-a-fetch-results-63",
+        "A-RETRIEVAL-a-fetch-json-results-56"
+      ]
+    }
+  ],
+  "assessment": "All four primary source contexts specify nominal stock strength. Unspecified percent basis, starting hydrate, stereochemistry or solvent are real limits but do not by themselves prevent a source-qualified local nominal identity with UNKNOWN component-list completeness; B and C already use this bounded representation for comparably incomplete stock formulations. No exact pure-solute identity or globally resolving raw alias is suggested.",
+  "acceptance": "Produce conservative isolated stock proposals with exact source references and preserved unknowns, or identify a materially different source-identity blocker; independently review final payloads and their case backlinks.",
+  "excluded_case_65": "Initial hemin solvent volume and final concentration are not specified; separate initial-stock boundary is less well defined, so no compulsory proposal requested here."
+}

@@ -1,0 +1,45 @@
+identifier: kgmicrobe.ingredient:jcm574_ammonium_chloride_1m_stock
+preferred_term: JCM574 ammonium chloride1M stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm574_ammonium_chloride_1m_stock
+  ontology_label: JCM574 ammonium chloride1M stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent
+  and full preparation are unreported. Raw assigned source label: 1 M NH4Cl. Quantities
+  in notes preserve source preparation and are not final-medium concentrations. No
+  global synonym is added for this context-dependent label.'
+solution_type: OTHER
+components:
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574
+    source_record: JCM574 ammonium chloride1M stock
+    notes: Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent
+      and full preparation are unreported.
+  notes: Source does not establish complete preparation composition; unreported solvent
+    or pH-adjustment constituents remain unknown. No exhaustive list is claimed.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent and
+    full preparation are unreported.
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,136 @@
+identifier: CHEBI:114126
+preferred_term: Na-caproate
+ontology_mapping:
+  ontology_id: CHEBI:114126
+  ontology_label: sodium hexanoate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: Hexanoic acid, sodium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Sodium caproate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Sodium capronate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Sodium n-caproate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium hexanoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: Carbon source'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Sodium n-hexanoate
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:9ec4b1d47ca6a97abba2e7a914883095034b5223888c179bfab7fd7d55b5613a'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 10
+  media_count: 10
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.739825+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:10051-44-2 from CultureBotHT compounds_to_cas.csv (matched: Sodium caproate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:34.104411+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:10051-44-2 from PubChem API (preprocessed) via name preprocessing (Na-caproate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Hexanoic acid, sodium salt, Sodium caproate,
+    Sodium capronate, Sodium n-caproate, sodium hexanoate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: Hexanoic acid, sodium salt, Sodium capronate,
+    Sodium n-caproate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sodium_Caproate.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.006280+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.066015+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H11O2.Na; inchi=InChI=1S/C6H12O2.Na/c1-2-3-4-5-6(7)8;/h2-5H2,1H3,(; smiles=CCCCCC(=O)[O-].[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:16.788062+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.591856+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.803775+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-caproate'' -> ''sodium hexanoate'': synced to canonical CHEBI label (preferred_term
+    ''Na-caproate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519397+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 7/7 -> 10/10 (media_count/total_occurrences), derived from distinct
+    CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired
+    in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Sodium n-hexanoate'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 10051-44-2
+  data_source: PubChem API (preprocessed)
+  retrieval_date: '2026-04-05T23:45:34.104400+00:00'
+  molecular_formula: C6H11O2.Na
+  inchi: InChI=1S/C6H12O2.Na/c1-2-3-4-5-6(7)8;/h2-5H2,1H3,(H,7,8);/q;+1/p-1
+  smiles: CCCCCC(=O)[O-].[Na+]
+kg_microbe_node_id: CHEBI:114126
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

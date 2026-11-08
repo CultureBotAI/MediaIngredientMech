@@ -1,0 +1,77 @@
+identifier: kgmicrobe.ingredient:jcm_900_modified_hutner_basal_salts
+preferred_term: JCM900 modified Hutner basal salts
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_900_modified_hutner_basal_salts
+  ontology_label: JCM900 modified Hutner basal salts
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '29.7'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.335'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: (NH4)6MoO24·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Metals 44 (JCM149)
+  reference_scope: UNMAPPED
+  concentration_value: '50.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '950.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: about7.3
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NaOH or H2SO4
+  reference_scope: UNMAPPED
+  source: Alternative pH readjustment reagents; source does not require both.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=900
+    source_record: JCM900 modified Hutner basal salts
+    notes: DissolveNTA;adjustpH7.0withKOHabout7.3g;addsalts;readjustpH6.8withNaOHorH2SO4. Literal malformed(NH4)6MoO24.4H2O
+      retained (missingMo7 cannot be inferred). JCM149 Metals44 nested mixture remains unexpanded. COMPLETE
+      means source inputs retained, not complete resolved chemistry.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'DissolveNTA;adjustpH7.0withKOHabout7.3g;addsalts;readjustpH6.8withNaOHorH2SO4. Literal malformed(NH4)6MoO24.4H2O
+  retained (missingMo7 cannot be inferred). JCM149 Metals44 nested mixture remains unexpanded. COMPLETE
+  means source inputs retained, not complete resolved chemistry. Raw source labels retained in linked
+  frozen cases: ["Modified Hutner''s basal salts"]. Generic labels are not global resolving synonyms.
+  No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

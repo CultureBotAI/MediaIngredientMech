@@ -1,0 +1,46 @@
+identifier: kgmicrobe.ingredient:jcm_923_tris_base_1m_ph8
+preferred_term: JCM923 Trisbase1M pH8 stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_923_tris_base_1m_ph8
+  ontology_label: JCM923 Trisbase1M pH8 stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=923
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: Tris base
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=923
+    source_record: JCM923 Trisbase1M pH8 stock
+    notes: Nominal source-qualified stock only. JCM923TiNTA recipe7.2ml; JCM924explicitlyreferencesit.
+      pH8 specified; titrant/solvent unreported. The source does not establish a complete constituent
+      list; no omitted solvent or titrant is invented.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Nominal source-qualified stock only. JCM923TiNTA recipe7.2ml; JCM924explicitlyreferencesit. pH8
+  specified; titrant/solvent unreported. The source does not establish a complete constituent list; no
+  omitted solvent or titrant is invented. Raw source labels retained in linked frozen cases: [''1 M Tris
+  base (pH 8)'']. Generic labels are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED
+  gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

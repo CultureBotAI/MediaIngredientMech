@@ -1,0 +1,80 @@
+identifier: cas:9049-37-0
+preferred_term: Polygalacturonic acid sodium salt
+ontology_mapping:
+  ontology_id: CHEBI:62969
+  ontology_label: polygalacturonic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: Imported from CultureBotHT. CAS-RN 9049-37-0 present, but no CHEBI entry exists (checked OAK
+      CHEBI sqlite + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI adds
+      the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Polygalacturonic acid sodium salt'
+synonyms:
+- synonym_text: Sodium pectate
+  synonym_type: EXACT_SYNONYM
+  source: culturebotht
+- synonym_text: autoclaved
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Sodium polygalacturonate
+  synonym_type: RAW_TEXT
+  source: 'all-unmatched-20261107 worker07: CM_NAME:976f2124897eac020469a2e04f8d61ea333ab5b904fb60051dd017a4dd5fc4ea'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:9049-37-0 as primary identifier; no CHEBI entry exists for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.853893+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.832999+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T04:56:12.000981+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:62969 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:52.505361+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=(C6H8O6)n.C12H18O13; inchi=InChI=1S/C18H26O19/c19-1-2(20)10(13(26)27)36-17(6(;
+    smiles=O=C(O)[C@H]1O[C@H](O[C@@H]2[C@H](O)[C@@H](O)[C@@H]
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record
+    did, so a rebuild would have dropped them from KGX: ''autoclaved''. Tokens already present on the
+    kg-microbe ontology node were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_REVIEW_PROPOSED_CORRECTION
+  changes: Add source-verified same-substance alias 'Sodium polygalacturonate'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 9049-37-0
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: (C6H8O6)n.C12H18O13
+  inchi: InChI=1S/C18H26O19/c19-1-2(20)10(13(26)27)36-17(6(1)24)35-9-4(22)7(25)18(37-12(9)15(30)31)34-8-3(21)5(23)16(32)33-11(8)14(28)29/h1-12,16-25,32H,(H,26,27)(H,28,29)(H,30,31)/t1-,2+,3+,4+,5+,6+,7+,8+,9+,10-,11-,12-,16-,17-,18-/m0/s1
+  smiles: O=C(O)[C@H]1O[C@H](O[C@@H]2[C@H](O)[C@@H](O)[C@@H](O[C@@H]3[C@H](O)[C@@H](O)[C@@H](O)O[C@@H]3C(=O)O)O[C@@H]2C(=O)O)[C@H](O)[C@@H](O)[C@H]1O
+ingredient_type: SINGLE_INGREDIENT

@@ -1,0 +1,76 @@
+identifier: kgmicrobe.ingredient:jcm_946_korthof_10x_basal_medium
+preferred_term: JCM946 Korthof 10x basal medium
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: COMPLEX_UNDEFINED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_946_korthof_10x_basal_medium
+  ontology_label: JCM946 Korthof 10x basal medium
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=946
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '7.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '4.4'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Polypeptone peptone (BD-BBL)
+  reference_scope: UNMAPPED
+  concentration_value: '4.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '500.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+  source: 450ml main batch plus50ml separately prepared calcium chloride solution per original JCM946
+    instructions.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=946
+    source_record: JCM946 Korthof 10x basal medium
+    notes: Complete nominal source inputs. Mix ingredients except calcium chloride and autoclave; dissolve
+      calcium chloride in50ml water and filter sterilize, then combine after cooling. The500ml water is
+      the explicit450+50ml sum, not a measured finalvolume. Excludes rabbit serum/final medium dilution.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Complete nominal source inputs. Mix ingredients except calcium chloride and autoclave; dissolve
+  calcium chloride in50ml water and filter sterilize, then combine after cooling. The500ml water is the
+  explicit450+50ml sum, not a measured finalvolume. Excludes rabbit serum/final medium dilution. Raw source
+  labels retained in linked frozen cases: ["10 x Korthof''s basal medium (see below)"]. Generic labels
+  are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

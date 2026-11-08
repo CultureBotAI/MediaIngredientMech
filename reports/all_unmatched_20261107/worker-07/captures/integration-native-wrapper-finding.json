@@ -1,0 +1,125 @@
+{
+  "reviewer": "/root/integration_reviewer",
+  "reviewed_at": "2026-11-08T05:44:29.583886+00:00",
+  "finding_id": "INTEGRATION-04",
+  "severity": "native_review_completeness",
+  "status": "open",
+  "finding": "The native wrapper reports four confirmed resolving-synonym defects and marks the Sodium_Malate assessment unknown, but B-PROPOSAL-Sodium_Malate contains a fifth confirmed defect: five active DL/racemate aliases resolve the S-specific CHEBI:91261 owner. Source sodium stoichiometry remains unresolved independently of this established owner claim conflict.",
+  "native_review_input": {
+    "path": "reviews/structured/20261108T054101Z-worker07-source-owner-comparison/review.yaml",
+    "sha256": "c091e12951db1fef4aef43d6b2d9222a2e9426170d559b8b8e80d227a9df2465"
+  },
+  "proposal": {
+    "proposal_id": "B-PROPOSAL-Sodium_Malate",
+    "case_ids": [
+      "CM_NAME:d90c4f46c2675a41fb58b1fe98cd8b57336fa9793bbaa3ab4cb5e01cab734f2b",
+      "CM_NAME:f40cc6b6217cd935096c368b76efcc22f694bd3f09012dad3cfc4611c91455e2"
+    ],
+    "description": "Reject five DL/racemate aliases from S-specific malate owner; preserve source stoichiometry uncertainty.",
+    "evidence_ids": [
+      "B-SOURCE-115",
+      "B-RECIPE-115-0",
+      "B-PRIMARY-e13b09797ef602",
+      "B-PRIMARY-d4b49ababf2988",
+      "B-PRIMARY-41512330c5b744",
+      "B-PRIMARY-d80a76ca2860af",
+      "B-PRIMARY-c26a1309c3cf8e",
+      "B-OWNER-Sodium_Malate",
+      "B-FAILED-b-retrievals-101",
+      "B-FAILED-b-extra-retrievals-59",
+      "B-FAILED-b-curl-retrievals-59",
+      "B-SOURCE-130",
+      "B-RECIPE-130-0",
+      "B-PRIMARY-1ed1cee7524c97",
+      "B-PRIMARY-a08cdfcaa16074",
+      "B-PRIMARY-b9b466eed380b0",
+      "B-FAILED-b-retrievals-131",
+      "B-FAILED-b-extra-retrievals-79",
+      "B-FAILED-b-curl-retrievals-79"
+    ],
+    "owner_path": "data/ingredients/mapped/Sodium_Malate.yaml",
+    "kind": "edit_existing_owner",
+    "before_sha256": "74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9",
+    "after_capture": {
+      "root": "artifact",
+      "path": "proposed_owners/b-Sodium_Malate.yaml",
+      "sha256": "3245a0ca7bdfd04d1ced60aead1af2e7c615de4eafdfd47e047f12497c3b26e9"
+    },
+    "identity_predicate_consequences": "Preserve distinct form; own-identifier exactMatch. Existing parent mappings retain their direction. New registry-only preparation has no asserted chemical equivalence.",
+    "publication_review_obligation": "Coordinator must apply via guarded writers, withdraw inherited support for every changed owner byte, synchronize native exports, re-review full published payload and preserve all WITHHOLD/REJECTED gates. This proposal is not applied or approved for release.",
+    "cross_shard_conflict": "Coordinator must reconcile all proposals touching this owner from original baseline hashes, especially Calcium_Pantothenate/Cyanocobalamin/Na3-citrate_X_2_H2o and cysteine families. Never adopt another proposed after payload as before.",
+    "limitations": null
+  },
+  "before_sha256": "74c793a6b15bd968d4c07253c171530894bac9e8116e86d3cb0878b5c3562ee9",
+  "synonym_deltas": [
+    {
+      "before": {
+        "synonym_text": "DL-Na-malate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "after": {
+        "synonym_text": "DL-Na-malate",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "kg_microbe"
+      }
+    },
+    {
+      "before": {
+        "synonym_text": "Na-DL-malate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "after": {
+        "synonym_text": "Na-DL-malate",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "kg_microbe"
+      }
+    },
+    {
+      "before": {
+        "synonym_text": "Na2-DL-malate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "after": {
+        "synonym_text": "Na2-DL-malate",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "kg_microbe"
+      }
+    },
+    {
+      "before": {
+        "synonym_text": "Sodium DL-malate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "kg_microbe"
+      },
+      "after": {
+        "synonym_text": "Sodium DL-malate",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "kg_microbe"
+      }
+    },
+    {
+      "before": {
+        "synonym_text": "DL-Sodium malate",
+        "synonym_type": "EXACT_SYNONYM",
+        "source": "merged_from_duplicate_mim_record"
+      },
+      "after": {
+        "synonym_text": "DL-Sodium malate",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "merged_from_duplicate_mim_record"
+      }
+    }
+  ],
+  "independent_primary_review": {
+    "path": "parts/a-review-b-final.json",
+    "sha256": "0f2b8233ce280ec20aefb7fbfbc4841cc16a991a5300052888d7960870442009",
+    "case_indices": [
+      115,
+      130
+    ]
+  },
+  "required_resolution": "Represent the fifth confirmed bounded owner defect in native assessment/finding/action and summary; retain unresolved source stoichiometry and full-owner holds. Revalidate updated native capsule and hash-bound final evidence. Do not alter maintained sources."
+}

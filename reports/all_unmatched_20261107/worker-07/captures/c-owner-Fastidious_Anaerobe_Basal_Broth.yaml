@@ -1,0 +1,48 @@
+identifier: UNMAPPED_0381
+preferred_term: Fastidious Anaerobe Basal Broth
+synonyms:
+- synonym_text: Fastidious Anaerobe Basal Broth
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1079); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.597386+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Broth')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Fastidious_Anaerobe_Basal_Broth-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a named, complex
+    culture medium in broth form, not a single chemical, salt/hydrate, buffer, or
+    chemically defined substance. The current `DEFINED_MEDIUM` type is acceptable
+    if that project value means “complete named medium”; it should not be interpreted
+    as “chemically defined medium,” because the available evidence does not establish
+    a fully specified molecular com No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1079); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ingredient_type: NAMED_MEDIUM

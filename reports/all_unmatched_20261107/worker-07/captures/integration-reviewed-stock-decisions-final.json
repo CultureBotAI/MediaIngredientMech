@@ -1,0 +1,166 @@
+{
+  "decisions": [
+    {
+      "case_id": "CM_NAME:14cc7b6b53f12cfa096edf7f91fc33f9980f761475a0a8ab6fc90bca0dd1eb62",
+      "case_input_sha256": "ce07ae4a8c7013b6387de10764460292787add7012ec2f4913e8f3ba245f1b59",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "2.5% L-Cysteine . HCl",
+        "source_label": "2.5% L-Cysteine . HCl",
+        "raw_source_label": "2.5% L-Cysteine . HCl"
+      },
+      "occurrence_ids": [
+        "CM_OCC:26cc63a12d3e45e0925e076fbb78111e05534ca7d6c868af74d2e37de53d4e25"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2570 adds a 2.5% L-cysteine hydrochloride stock; that percentage-qualified preparation is not the pure CHEBI91247 salt or generic hydrate solution. The flat source has replaced a volume contribution by G_PER_L. The accessible source name does not state the percent basis or hydrate. A bounded nominal stock proposal now preserves the declared source strength without selecting unreported solvent, percent basis or molecular form.",
+      "applicability": "Applies to exact raw source label '2.5% L-Cysteine . HCl' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2570 adds a 2.5% L-cysteine hydrochloride stock; that percentage-qualified preparation is not the pure CHEBI91247 salt or generic hydrate solution. The flat source has replaced a volume contribution by G_PER_L. The accessible source name does not state the percent basis or hydrate. Proposal ROOT-PROPOSAL-NOMINAL-11 applies only to the listed frozen occurrence context(s). TOGO M2570 specifies a 10 mL aliquot of 2.5% L-cysteine hydrochloride stock prepared under nitrogen and autoclaved before addition. Nitrogen is a preparation atmosphere, not an asserted bulk solute. Solvent, percentage basis and reagent hydrate are unreported; L stereochemistry and hydrochloride are explicit. The frozen G_PER_L quantity is preserved as a source normalization conflict, not used as stock composition.",
+      "evidence_ids": [
+        "A-CASE-11",
+        "A-RECIPE-11-0",
+        "A-RETRIEVAL-a-fetch-results-20",
+        "A-RETRIEVAL-a-fetch-json-results-20"
+      ],
+      "proposal_ids": [
+        "ROOT-PROPOSAL-NOMINAL-11"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Verify the original ATCC stock preparation, percent basis (w/v or w/w), solvent and hydrate status before proposing a quantitatively defined stock.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+      "root_integration_delta": {
+        "path": "parts/root-decision-deltas.json",
+        "author_decision_sha256": "8681fb91a30fdc974b697ec9b0d310f6d6860cb545426a1578a4882d6146f576",
+        "review_requirement": "Independent integration reviewer must review this final decision delta and exact new payload; original C review alone does not approve this later root-authored change."
+      }
+    },
+    {
+      "case_id": "CM_NAME:2a8edeb636238d033f7ba513d719e179b94f6c1db3418583bfb98878cc7ba702",
+      "case_input_sha256": "2b49633d249b1602de74763be02b2a48610a63b74179b4d3a155fd269eace130",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "lactic acid",
+        "source_label": "lactic acid",
+        "raw_source_label": "lactic acid"
+      },
+      "occurrence_ids": [
+        "CM_OCC:ee48d4961df38ef5fc7838f1e60c033849c19a5fcca50a5c47f6d3da5506f421"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "JCM87 actually specifies a 20% lactic-acid titrant as one alternative to hydrochloric acid, used to reach pH5.6. The frozen unqualified label omits the stock strength and alternative-use condition. Do not map this whole source occurrence to a pure lactic-acid enantiomer. A bounded nominal stock proposal now preserves the declared source strength without selecting unreported solvent, percent basis or molecular form.",
+      "applicability": "Applies to exact raw source label 'lactic acid' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM87 actually specifies a 20% lactic-acid titrant as one alternative to hydrochloric acid, used to reach pH5.6. The frozen unqualified label omits the stock strength and alternative-use condition. Do not map this whole source occurrence to a pure lactic-acid enantiomer. Proposal ROOT-PROPOSAL-NOMINAL-23 applies only to the listed frozen occurrence context(s). JCM 87 permits 20% lactic acid OR 1 N to 6 N HCl to adjust the final medium to pH 5.6. This proposal denotes only the lactic acid stock alternative. HCl is not a constituent of it, and pH 5.6 is not the stock pH. Percentage basis, solvent and acid stereochemistry are unreported; the amount is determined by the final-medium pH endpoint.",
+      "evidence_ids": [
+        "A-CASE-23",
+        "A-RECIPE-23-0",
+        "A-RETRIEVAL-a-fetch-results-33",
+        "A-RETRIEVAL-a-fetch-json-results-33",
+        "A-RETRIEVAL-a-fetch-json-results-104"
+      ],
+      "proposal_ids": [
+        "ROOT-PROPOSAL-NOMINAL-23"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Recover the percent basis, acid stereochemistry and supplied solution specification for the JCM87 titrant before minting a quantitative stock or selecting a pure solute identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+      "root_integration_delta": {
+        "path": "parts/root-decision-deltas.json",
+        "author_decision_sha256": "87897982bacb052b272e6e8e2c77cdc64a6cccd5616c022fea3dc2ef330e78fd",
+        "review_requirement": "Independent integration reviewer must review this final decision delta and exact new payload; original C review alone does not approve this later root-authored change."
+      }
+    },
+    {
+      "case_id": "CM_NAME:4e4275dfe464c955db394634d0b8e86d9ba1a34ba1190816244dcc0e0913a8d8",
+      "case_input_sha256": "738e0acc360d03952cd10934368c57250ca3810ad90997ccf058cab4ca81ea1d",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "25% Sodium acetate",
+        "source_label": "25% Sodium acetate",
+        "raw_source_label": "25% Sodium acetate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:47a8c48d76db969fa174609364138c9de712e326f4008fda51ed2b9c2d9fc89f"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "TOGO M2653 identifies 25% sodium acetate as a separate stock addition in methanogen medium, not pure sodium acetate. The frozen amount4 is detached from its volume unit. The name alone does not state w/v versus w/w or whether the amount is based on a hydrated starting reagent. A bounded nominal stock proposal now preserves the declared source strength without selecting unreported solvent, percent basis or molecular form.",
+      "applicability": "Applies to exact raw source label '25% Sodium acetate' and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. TOGO M2653 identifies 25% sodium acetate as a separate stock addition in methanogen medium, not pure sodium acetate. The frozen amount4 is detached from its volume unit. The name alone does not state w/v versus w/w or whether the amount is based on a hydrated starting reagent. Proposal ROOT-PROPOSAL-NOMINAL-45 applies only to the listed frozen occurrence context(s). TOGO M2653 specifies a 4 mL aliquot of 25% sodium acetate stock. Percentage basis, solvent and hydrate of the weighed starting material are unreported. The frozen normalized amount 4 with a mass concentration unit is not evidence for a mass fraction or final solute concentration.",
+      "evidence_ids": [
+        "A-CASE-45",
+        "A-RECIPE-45-0",
+        "A-RETRIEVAL-a-fetch-results-62",
+        "A-RETRIEVAL-a-fetch-json-results-55",
+        "A-RETRIEVAL-a-retry-results-9",
+        "A-RETRIEVAL-a-last-results-6",
+        "A-WEB-14"
+      ],
+      "proposal_ids": [
+        "ROOT-PROPOSAL-NOMINAL-45"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Recover the original ATCC percent-basis and preparation for the 25% sodium acetate stock before a quantitative exact formulation proposal.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+      "root_integration_delta": {
+        "path": "parts/root-decision-deltas.json",
+        "author_decision_sha256": "307def3d895a1acb01c377f100ec9a0adf2075bccb432dcf31b33c97dcd24f9e",
+        "review_requirement": "Independent integration reviewer must review this final decision delta and exact new payload; original C review alone does not approve this later root-authored change."
+      }
+    },
+    {
+      "case_id": "CM_NAME:4f44dff670d36850888b0bc014748c4d547ea57bed9d7c1a3f077179f5f5a084",
+      "case_input_sha256": "e557bda0d1aa6a286be2be70ccf5fe3cfd1b97a416f5c9d7e5c60bd19fe04905",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "50% Sodium lactate",
+        "source_label": "50% Sodium lactate",
+        "raw_source_label": "50% Sodium lactate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:8563e34614f473b31191d66007551478faabfff3e3fcf568bd9cf00344c25fa0",
+        "CM_OCC:ffd6d81689f0b3d6b27167f88386d4a52378443ef2d4a2cef1a48e2bc7a2e3e7"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC989 uses 25 ml of 50% sodium lactate; the two frozen occurrences disagree by ML_PER_L versus G_PER_L for the same source. The stock is distinct from the pure salt and lacks explicit percentage basis and stereochemistry. Preserve the unit conflict rather than averaging or deduplicating amounts. A bounded nominal stock proposal now preserves the declared source strength without selecting unreported solvent, percent basis or molecular form.",
+      "applicability": "Applies to exact raw source label '50% Sodium lactate' and all 2 frozen occurrence objects, each verified against its complete recipe snapshot hash. NBRC989 uses 25 ml of 50% sodium lactate; the two frozen occurrences disagree by ML_PER_L versus G_PER_L for the same source. The stock is distinct from the pure salt and lacks explicit percentage basis and stereochemistry. Preserve the unit conflict rather than averaging or deduplicating amounts. Proposal ROOT-PROPOSAL-NOMINAL-46 applies only to the listed frozen occurrence context(s). NBRC 989 specifies 25 mL of 50% sodium lactate stock. The two frozen occurrences have conflicting ML_PER_L and G_PER_L units; both remain in the decision with the primary volume as context. Percentage basis, solvent and sodium lactate stereochemistry are unreported. No L or DL pure-salt identity is selected.",
+      "evidence_ids": [
+        "A-CASE-46",
+        "A-RECIPE-46-0",
+        "A-RECIPE-46-1",
+        "A-RETRIEVAL-a-fetch-results-63",
+        "A-RETRIEVAL-a-fetch-json-results-56"
+      ],
+      "proposal_ids": [
+        "ROOT-PROPOSAL-NOMINAL-46"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Verify NBRC989 supplied product/stereochemistry and percentage basis; correct the TOGO-derived G_PER_L occurrence from the primary ml quantity before fully specifying the stock and any supplied-form identity.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+      "root_integration_delta": {
+        "path": "parts/root-decision-deltas.json",
+        "author_decision_sha256": "8eb3070d6eb021e0cc2a4a59fe6a1084677a1519ad72629e37e236e72ae824f1",
+        "review_requirement": "Independent integration reviewer must review this final decision delta and exact new payload; original C review alone does not approve this later root-authored change."
+      }
+    }
+  ]
+}

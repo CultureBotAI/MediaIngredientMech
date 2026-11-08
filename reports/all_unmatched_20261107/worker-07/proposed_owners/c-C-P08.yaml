@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:mediadive_2154_magnesium_sulfate_heptahydrate_stock
+preferred_term: Magnesium sulfate heptahydrate stock 7.5 g/L (MediaDive 2154)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+synonyms:
+- synonym_text: Mg(SO4)x7H2O (7.5 g/L stock; MediaDive 2154)
+  synonym_type: CATALOG_VARIANT
+  source: Curator-qualified name from mediadive.ingredient:2154; original raw label
+    Mg(SO4)x7H2O preserved in source evidence rather than globally resolving as a
+    stock synonym
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:17:49.956058+00:00'
+  curator: codex_worker07_primary_c
+  action: CREATED
+  changes: Propose nominal source-qualified 7.5 g/L magnesium sulfate heptahydrate
+    stock for MediaDive 2154; solvent remains unreported, so UNKNOWN component-list
+    completeness.
+  new_status: MAPPED
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive_2154_magnesium_sulfate_heptahydrate_stock
+  ontology_label: Magnesium sulfate heptahydrate stock 7.5 g/L (MediaDive 2154)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593a.pdf
+    notes: 'The frozen case176 original_kg_entry.source_record explicitly gives 10
+      mL of 7.5 g/L stock. Current primary DSMZ1592,1593 and1593a independently show
+      the same amount/strength, whereas API2154 alone supplies only solute identity
+      and medium links. Other linked media1673/1677/1678 specify350g/L and1845 a solid-input
+      context, so the proposal is restricted to the frozen7.5g/Lstock context. Solvent
+      and preparation convention are unreported: completeness UNKNOWN, not inferred
+      water. This is not a global alias for every ingredient2154 occurrence. Local
+      registry identity preserves this source-defined formulation; no exact chemical
+      or unverified external medium mapping is asserted.'
+components:
+- component_name: MgSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31795
+  concentration_value: '7.5'
+  concentration_unit: G_PER_L
+  source: Ingredient 2154 explicitly declares 7.5 g/L stock; this is stock concentration,
+    not final-medium concentration.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593a.pdf
+    notes: 'The frozen case176 original_kg_entry.source_record explicitly gives 10
+      mL of 7.5 g/L stock. Current primary DSMZ1592,1593 and1593a independently show
+      the same amount/strength, whereas API2154 alone supplies only solute identity
+      and medium links. Other linked media1673/1677/1678 specify350g/L and1845 a solid-input
+      context, so the proposal is restricted to the frozen7.5g/Lstock context. Solvent
+      and preparation convention are unreported: completeness UNKNOWN, not inferred
+      water. This is not a global alias for every ingredient2154 occurrence.'
+notes: ' The frozen case176 original_kg_entry.source_record explicitly gives 10 mL
+  of 7.5 g/L stock. Current primary DSMZ1592,1593 and1593a independently show the
+  same amount/strength, whereas API2154 alone supplies only solute identity and medium
+  links. Other linked media1673/1677/1678 specify350g/L and1845 a solid-input context,
+  so the proposal is restricted to the frozen7.5g/Lstock context. Solvent and preparation
+  convention are unreported: completeness UNKNOWN, not inferred water. This is not
+  a global alias for every ingredient2154 occurrence.'

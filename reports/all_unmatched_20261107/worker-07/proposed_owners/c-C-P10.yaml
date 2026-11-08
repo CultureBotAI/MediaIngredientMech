@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:jcm1267_ferric_sulfate_10_percent_acid_stock
+preferred_term: Ferric sulfate 10% stock in 0.01 N sulfuric acid (JCM 1267)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:17:49.956058+00:00'
+  curator: codex_worker07_primary_c
+  action: CREATED
+  changes: Propose source-qualified nominal stock from frozen source attributes and
+    matching primary recipe; unresolved preparation details remain explicit.
+  new_status: MAPPED
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1267_ferric_sulfate_10_percent_acid_stock
+  ontology_label: Ferric sulfate 10% stock in 0.01 N sulfuric acid (JCM 1267)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1267
+    notes: Frozen source ingredient2045 adds88.8mL of10% ferric sulfate in0.01N H2SO4.
+      Primary JCM1267 explicitly repeats this prepared-solution row. Preserve unspecified
+      percent basis, starting-salt hydration and solvent details rather than exact
+      identity to CHEBI:53438; nominal stock can be represented with UNKNOWN list
+      completeness and source-qualified identity. Local registry identity preserves
+      this source-defined formulation; no exact chemical or unverified external medium
+      mapping is asserted.
+components:
+- component_name: Fe2(SO4)3
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: PERCENT
+  source: Source states10% without w/v or w/w basis; hydration of the supplied starting
+    salt is unreported.
+- component_name: 0.01 N H2SO4 solution
+  reference_scope: UNMAPPED
+  source: The named acid solution is the stock solvent;0.01N is its stated reagent
+    strength, not an independently calculated final stock acidity.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1267
+    notes: Frozen source ingredient2045 adds88.8mL of10% ferric sulfate in0.01N H2SO4.
+      Primary JCM1267 explicitly repeats this prepared-solution row. Preserve unspecified
+      percent basis, starting-salt hydration and solvent details rather than exact
+      identity to CHEBI:53438; nominal stock can be represented with UNKNOWN list
+      completeness and source-qualified identity.
+  - evidence_type: CURATED_DATASET
+    source: reports/all_unmatched_20261107/worker-07/parts/c-input.json
+    source_record: cases[45].original_kg_entry.source_record; mediadive.ingredient:2045
+    notes: Frozen exact source attributes define the scoped stock case; live ingredient
+      identity API does not contain these preparation amounts. Raw label is preserved
+      here and in the decision, not added as a global stock synonym.
+notes: ' Frozen source ingredient2045 adds88.8mL of10% ferric sulfate in0.01N H2SO4.
+  Primary JCM1267 explicitly repeats this prepared-solution row. Preserve unspecified
+  percent basis, starting-salt hydration and solvent details rather than exact identity
+  to CHEBI:53438; nominal stock can be represented with UNKNOWN list completeness
+  and source-qualified identity.'

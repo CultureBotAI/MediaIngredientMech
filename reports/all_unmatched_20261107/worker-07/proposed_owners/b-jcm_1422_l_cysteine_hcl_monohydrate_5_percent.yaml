@@ -1,0 +1,63 @@
+identifier: kgmicrobe.ingredient:jcm_1422_l_cysteine_hcl_monohydrate_5_percent
+preferred_term: JCM1422 L-cysteine hydrochloride monohydrate5% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1422_l_cysteine_hcl_monohydrate_5_percent
+  ontology_label: JCM1422 L-cysteine hydrochloride monohydrate5% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1422
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: L-Cysteine·HCl·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT_BASIS_UNSPECIFIED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1422
+    source_record: JCM1422 L-cysteine hydrochloride monohydrate5% stock
+    notes: 'Current captured JCM1422 specifies4ml per liter of5% monohydrate stock. The frozen JCM_J1422
+      occurrence instead retains10.0ml/L: this current-versus-frozen dose discrepancy is preserved explicitly,
+      without changing the frozen value or asserting the two recipe versions are identical. Autoclaved
+      and stored under N2; added prior to inoculation. Percentage basis remains unspecified. The component
+      list is UNKNOWN: the source does not specify stock solvent, manufacturing details or additional
+      stock constituents. Preserve concentration on the stock solute; do not reinterpret the dose as final-medium
+      concentration. Applies only to occurrence IDs CM_OCC:69ecd9d6739ab65d7bc929233800c69c207be86ad1a5a1edbabcd3d50cad0135.
+      No cross-source equality or global raw-label alias is asserted.'
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Current captured JCM1422 specifies4ml per liter of5% monohydrate stock. The frozen JCM_J1422 occurrence
+  instead retains10.0ml/L: this current-versus-frozen dose discrepancy is preserved explicitly, without
+  changing the frozen value or asserting the two recipe versions are identical. Autoclaved and stored
+  under N2; added prior to inoculation. Percentage basis remains unspecified. The component list is UNKNOWN:
+  the source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve
+  concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies
+  only to occurrence IDs CM_OCC:69ecd9d6739ab65d7bc929233800c69c207be86ad1a5a1edbabcd3d50cad0135. No cross-source
+  equality or global raw-label alias is asserted. Raw source labels retained in linked frozen cases: [''5%
+  L-Cysteine·HCl·H2O solution'']. Generic labels are not global resolving synonyms. No pre-existing WITHHOLD
+  or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:38:26.919627+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_DOSE_CONTEXT_CORRECTION
+  changes: 'Current captured JCM1422 specifies4ml per liter of5% monohydrate stock. The frozen JCM_J1422
+    occurrence instead retains10.0ml/L: this current-versus-frozen dose discrepancy is preserved explicitly,
+    without changing the frozen value or asserting the two recipe versions are identical.  Independent
+    reviewer A identified the discrepancy; only this proposed payload is corrected.'
+  llm_assisted: true

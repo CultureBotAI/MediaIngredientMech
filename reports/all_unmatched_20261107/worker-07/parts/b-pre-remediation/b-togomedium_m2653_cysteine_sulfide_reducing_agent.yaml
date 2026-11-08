@@ -1,0 +1,58 @@
+identifier: kgmicrobe.ingredient:togomedium_m2653_cysteine_sulfide_reducing_agent
+preferred_term: TogoMedium M2653 cysteine-sulfide reducing agent
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togomedium_m2653_cysteine_sulfide_reducing_agent
+  ontology_label: TogoMedium M2653 cysteine-sulfide reducing agent
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2653
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: 12.5% Na2S stock solution
+  reference_scope: UNMAPPED
+  concentration_value: '40'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '330'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: N NaOH
+  reference_scope: UNMAPPED
+  concentration_value: '30'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: L-Cysteine . HCl
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2653
+    source_record: TogoMedium M2653 cysteine-sulfide reducing agent
+    notes: Exact M2653 mixture underN2 atmosphere. Sodium-sulfide percentbasis and hydrate are unreported;
+      literal NNaOH retained as printed. Does not claim identity with the separateM2707 occurrence, whose
+      original retrieval failed. Gas atmosphere is preparation context, not a quantified dissolved constituent.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Exact M2653 mixture underN2 atmosphere. Sodium-sulfide percentbasis and hydrate are unreported;
+  literal NNaOH retained as printed. Does not claim identity with the separateM2707 occurrence, whose
+  original retrieval failed. Gas atmosphere is preparation context, not a quantified dissolved constituent.
+  Raw source labels retained in linked frozen cases: [''Cysteine-Sulfide Reducing Agent'']. Generic labels
+  are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

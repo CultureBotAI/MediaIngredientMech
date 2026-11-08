@@ -1,0 +1,44 @@
+identifier: kgmicrobe.ingredient:jcm_923_sodium_acetate_20mm
+preferred_term: JCM923 sodiumacetate20mM stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_923_sodium_acetate_20mm
+  ontology_label: JCM923 sodiumacetate20mM stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=923
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MM
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=923
+    source_record: JCM923 sodiumacetate20mM stock
+    notes: Nominal source-qualified stock only. Sterileanaerobicstock;0.05ml per5mlculture; solvent,suppliedhydrate,pHunreported.
+      The source does not establish a complete constituent list; no omitted solvent or titrant is invented.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Nominal source-qualified stock only. Sterileanaerobicstock;0.05ml per5mlculture; solvent,suppliedhydrate,pHunreported.
+  The source does not establish a complete constituent list; no omitted solvent or titrant is invented.
+  Raw source labels retained in linked frozen cases: [''20 mM Sodium acetate'']. Generic labels are not
+  global resolving synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

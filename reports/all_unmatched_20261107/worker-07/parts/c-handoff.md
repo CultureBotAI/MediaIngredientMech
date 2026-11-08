@@ -1,0 +1,13 @@
+C primary handoff — worker07
+
+Reviewed all48 assigned KG cases (shard indices140–187) with complete original records/holds bound by case digests. Final primary artifacts are parts/c-decisions.json, c-evidence.json, c-proposals.json; 165 evidence entries and10 exact proposed owner payloads. All10 pass native strict schema and component-partonomy in parts/c-proposal-validation.json. Maintained ingredients, SSSOM and generated surfaces were not mutated.
+
+Independent reviewer /root/primary_b completed all48 decisions and10 payloads in parts/b-independent-c-review-final.json; six initial findings resolved. Root supplies native owner-review persistence and final structural integration. Shared source cases: A55 → C-P01 NTA monohydrate; A8 subset JCM1267/MediaDive5407 → C-P10 ferric-acid stock; C156 → B-PROPOSAL-jcm_1209_basal_salts_solution. Coordinator must preserve exact bidirectional links and source-specific applicability.
+
+Scientific corrections retained: no global molybdate-typo alias rejection; JCM196 supports only source1678 correction. DSM1560 malformed1416 remains unresolved. CurrentDSM1053 is ferrous sulfate and doesnot corroborate ferric hydrate291; DSM188 supplies actual primary support. NativeNLM alanine-L concept is narrower than genericMeSH heading, preventing an exact synonym-based promotion. Sodium resazurin and ferric sulfate source stocks have separate local identities, not solute equivalence. Mg stock7.5g/L primary1592/1593/1593a is distinguished from350g/L andsolid occurrences linked to same source ingredient.
+
+Proposals C-P01 NTAhydratepromotion; P02 Titriplexacidalias; P03 calcium-capsaicinalias rejection; P04 cysteinesolutionQSY9/instructionrejection; P05 CM0957product; P06 DSM354eggmixture; P07 JCM1079basalpreparation; P08 source2154Mgstock; P09 source1852resazurinstock; P10 JCM1267acidifiedferricstock. Only P03 overlaps B calciumalias proposal; combine baseline-relative disjoint edits and review final owner payload.
+
+I independently reviewed all70 A cases and25 A payloads in captures/c-review-a-final.json, including141 complete recipe snapshot/pointer checks and499 evidence hashes. Five finding families resolved (KOHapproximateamount, completenessenum semantics, citrate nomenclature, four borate sourcefamilies, correctedcarbonateannotation). A8 and55 source linkage reviewed; own C-P10/C-P01 payloads rely on B independentreview to avoid self-approval. Final report binds exact A primary artifact and payload hashes.
+
+Disposition counts: {"broad_parent_relation_only": 4, "existing_identity_or_alias": 13, "malformed_or_nonchemical_token": 1, "stock_product_mixture_context": 15, "supplied_form_correction": 2, "unresolved": 13}

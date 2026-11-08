@@ -1,0 +1,12 @@
+Two source records inspected during the frozen MIM worker07 campaign still carry unrelated ChEBI IDs in live CultureMech `main` (verified through the GitHub contents API).
+
+| Record and locator | Source label | Stored target | Evidence and follow-up |
+| --- | --- | --- | --- |
+| `data/normalized_yaml/algae/pe.yaml`, `ingredients/1` | Disodium hydrogen phosphate dodecahydrate | CHEBI:86416, a phosphatidylcholine | [CCAP PE primary recipe](https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf), salt solution row, explicitly gives Na2HPO4.12H2O, 20 g per 1000 cm3 stock; 1 cm3 stock is added per 1000 cm3 medium. [CHEBI:86416](https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:86416) is a lipid with formula C48H90NO8P. Correct the grounding after exact dodecahydrate verification; preserve stock/final concentration context. |
+| `data/normalized_yaml/bacterial/lowenstein_jensen_medium.yaml`, `ingredients/3` | Magnesium citrate | CHEBI:6637, magnesium dihydroxide | [CHEBI:6637](https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:6637) explicitly describes magnesium hydroxide. The linked [JCM712 primary page](https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=712) specifies commercially available BD220908 slants, without a constituent formula. Recover the exact BD formulation/stoichiometry before selecting a citrate term; do not substitute a guessed hydrated or anhydrous citrate. |
+
+The label/target conflicts are direct observations. No source records or MIM mappings have been edited. The magnesium case remains source-form unresolved in the worker review; the wrong hydroxide target is not evidence for its intended citrate composition. Both source rows currently carry MANUAL/confidence1.0 metadata, so that metadata must not be treated as independent identity evidence.
+
+Acceptance: source-backed corrections through CultureMech's guarded curation path, retained raw labels and identifiers in provenance, proper occurrence-specific stock context, native validation and independent scientific review. Review/fix the maintained YAML before regenerating products. Worker07 evidence and precise source case IDs are being prepared under `reports/all_unmatched_20261107/worker-07/` in MIM; this issue confers no export approval.
+
+Deduplication: all 349 issue bodies returned by the live all-state CultureMech issue inventory were inspected for the exact IDs, label and record tokens; none covers these two findings. The observations were independently rechecked by the root worker after the primary researcher reported them.

@@ -1,0 +1,183 @@
+{
+  "reviewer": "/root, worker07",
+  "reviewed_at": "2026-11-08T05:26:12.543988+00:00",
+  "prior_findings_capture": {
+    "path": "captures/root-c-preliminary-findings.json",
+    "sha256": "6cb142ea16d09b320b27440c04e8a2cc60fe058457f792726dcc46534049c05c"
+  },
+  "status": "resolved_in_isolated_proposals_only",
+  "resolutions": [
+    {
+      "finding_id": "ROOT-C-01",
+      "assessment": "Recovered CM0957 15-constituent manufacturer formulation now has concrete proposed owner C-P05. Typical reconstitution quantities remain distinct from dry mass fractions; no fixed batch composition claimed."
+    },
+    {
+      "finding_id": "ROOT-C-02",
+      "assessment": "Recovered DSM354 fresh egg mixture and JCM1079 basal medium now have concrete proposed owners C-P06/C-P07; animal taxon is not invented, supplement boundary and initial versus final volumes explicit. Lists marked COMPLETE only within declared input scope. C156 links the source-matched B JCM1209 basal proposal, whose independent payload review is A\u2019s responsibility. C176 now proposes only the frozen7.5g/L MgSO4 heptahydrate stock (C-P08), supported by DSM1592/1593/1593a and explicitly excluding other ingredient2154 strengths/solid contexts.",
+      "case_indices": [
+        156,
+        176,
+        178,
+        144
+      ]
+    },
+    {
+      "finding_id": "ROOT-C-03",
+      "assessment": "C-P01 supplied_form is now schema list; native closed-schema and full-catalogue partonomy pass for corrected payload. Form-specific CAS and broad-parent proposal remains source bound, with cross-shard source1482 dependency."
+    }
+  ],
+  "inspected_proposals": [
+    {
+      "proposal_id": "C-P01",
+      "case_ids": [
+        "KG_CASE:47b7f98c62ad014d1cdf0b3c0b0a1646970033968322d292e6c4a6948fde76a8"
+      ],
+      "description": "Promote explicit trisodium nitrilotriacetate monohydrate to its own CAS 18662-53-8 with broader sodium nitrilotriacetate CHEBI:132766 relation, preserving hydrate scope and source history.",
+      "evidence_ids": [
+        "c-e-owner-C-P01",
+        "c-e-web-nta",
+        "c-e-chebi-132766",
+        "c-e-media-1930",
+        "c-e-search-nta-cas"
+      ],
+      "owner_path": "data/ingredients/unmapped/Na3-NTA_X_H2O.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposed_owners/c-C-P01.yaml",
+        "sha256": "d40062b6838628dbfd9dc0f841e15eb60b5774d43fb00fff4b7d47c44e54e40b"
+      },
+      "before_sha256": "9a83196f39aaf6cf563af23cabe5336be49445e5aa55d19d19608761055a3992",
+      "integration_warning": "Exact proposed bytes only. Maintained YAML, aggregate, SSSOM and published payload remain unchanged; native review, source holds and coordinator guarded integration still apply.",
+      "integration_destination": "data/ingredients/mapped/Na3-NTA_X_H2O.yaml",
+      "expected_sssom_predicate": "skos:broadMatch",
+      "registry_row_required": true,
+      "cross_part_case_index": 55
+    },
+    {
+      "proposal_id": "C-P05",
+      "case_ids": [
+        "KG_CASE:c35f85e70ce97bd55f770143509729bfb301a1768aa70f4c5fe37f12fc848e9b"
+      ],
+      "description": "Promote source-identified Oxoid CM0957 to a local product identity with all 15 manufacturer-listed constituents, preserving nominal reconstitution basis and product-adjustment caveat.",
+      "evidence_ids": [
+        "c-e-owner-C-P05",
+        "c-e-cm0957",
+        "c-e-media-1473"
+      ],
+      "owner_path": "data/ingredients/unmapped/Anaerobe_Basal_Broth_CM0957.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposed_owners/c-C-P05.yaml",
+        "sha256": "60a156c2b53b132d4309e03629afc6e149a6af1fb84f58f5fadad3b54c9deb63"
+      },
+      "before_sha256": "f86cb49dbd5b52a0f6481c2b3267030b0a4e4f4c162c2bc50a6fc9b8c8cd9915",
+      "integration_warning": "Exact proposed bytes only. Maintained YAML, aggregate, SSSOM and published payload remain unchanged; native review, source holds and coordinator guarded integration still apply.",
+      "integration_destination": "data/ingredients/mapped/Anaerobe_Basal_Broth_CM0957.yaml",
+      "component_resolution_note": "COMPLETE enumerates the manufacturer typical dry constituents; it does not claim all names have exact ontology identities or a lot-invariant chemical composition."
+    },
+    {
+      "proposal_id": "C-P06",
+      "case_ids": [
+        "KG_CASE:0fd9fd83d7a1c10030a47c4828ffc3282928f9a7bc16eb567a4a696fa5add9d7"
+      ],
+      "description": "Promote the recovered DSMZ 354 fresh egg preparation to a source-qualified local material identity and complete source-constituent assertion; retain species and yolk:white ratio as explicitly unreported.",
+      "evidence_ids": [
+        "c-e-owner-C-P06",
+        "c-e-dsmz-354",
+        "c-e-media-408"
+      ],
+      "owner_path": "data/ingredients/unmapped/Fresh_Egg_Mixture.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposed_owners/c-C-P06.yaml",
+        "sha256": "073099e7207f12318d0e6e9908a52d560ddb6e9455a2f640138053e460491e6f"
+      },
+      "before_sha256": "c72f8064e6b4027a6a9461ea440fa89f375c8664c9c41314f1d4943569c27a57",
+      "integration_warning": "Exact proposed bytes only. Maintained YAML, aggregate, SSSOM and published payload remain unchanged; native review, source holds and coordinator guarded integration still apply.",
+      "integration_destination": "data/ingredients/mapped/Fresh_Egg_Mixture.yaml"
+    },
+    {
+      "proposal_id": "C-P07",
+      "case_ids": [
+        "KG_CASE:b5fe6f2f30ffe4512e90b14ef0b7f557d89f28865fb4bc9dffae123dd178f277"
+      ],
+      "description": "Promote the JCM 1079 basal mineral NaCl preparation with source-bound initial components and pre-completion supplements; preserve literal batch/aliquot basis and exclude final growth-medium additions.",
+      "evidence_ids": [
+        "c-e-owner-C-P07",
+        "c-e-jcm-1079",
+        "c-e-jcm-1081",
+        "c-e-jcm-1082",
+        "c-e-media-1989"
+      ],
+      "owner_path": "data/ingredients/unmapped/Basal_Mineral_NaCl_Medium.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposed_owners/c-C-P07.yaml",
+        "sha256": "f04e5cf8ceb0c514f87917cd69319cc66aba86cffd152f278f8f1c76ff2ab15c"
+      },
+      "before_sha256": "99d0c58008716f47865125fe6ac84ba31f69b8c460250277d3554260183d962c",
+      "integration_warning": "Exact proposed bytes only. Maintained YAML, aggregate, SSSOM and published payload remain unchanged; native review, source holds and coordinator guarded integration still apply.",
+      "integration_destination": "data/ingredients/mapped/Basal_Mineral_NaCl_Medium.yaml"
+    },
+    {
+      "proposal_id": "B-PROPOSAL-jcm_1209_basal_salts_solution",
+      "case_ids": [
+        "CM_NAME:e90cf51e8cba9ef4964d0ddb748cfcf83a1106c9ce93535bf84a46817efef6dc"
+      ],
+      "description": "Propose source-qualified nominal preparation: JCM1209 basal salts solution",
+      "evidence_ids": [
+        "B-SOURCE-122",
+        "B-RECIPE-122-0",
+        "B-PRIMARY-988d4b70947993",
+        "B-PRIMARY-228b5229a4243d",
+        "B-EXTRA-122-7407e0d7fff0"
+      ],
+      "owner_path": "data/ingredients/mapped/jcm_1209_basal_salts_solution.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposed_owners/b-jcm_1209_basal_salts_solution.yaml",
+        "sha256": "a266a6270bea654ecebd51b3d8776705714110951a10cb986bc93eeae1adf6f6"
+      },
+      "identity_predicate_consequences": "Preserve distinct form; own-identifier exactMatch. Existing parent mappings retain their direction. New registry-only preparation has no asserted chemical equivalence.",
+      "publication_review_obligation": "Coordinator must apply via guarded writers, withdraw inherited support for every changed owner byte, synchronize native exports, re-review full published payload and preserve all WITHHOLD/REJECTED gates. This proposal is not applied or approved for release.",
+      "cross_shard_conflict": "Source-qualified formulation; compare other workers and existing generic owners before minting to avoid duplicate identity.",
+      "limitations": "Exact original JCM1209 stock,10ml added in finalrecipe. MnSO4.xH2O hydration and methyleneblue salt/hydrate remain unresolved. Allseven namedsolute inputs and1Lwater are retained without inferred productidentity."
+    },
+    {
+      "proposal_id": "C-P08",
+      "case_ids": [
+        "KG_CASE:ac6686c0d61be7f652dcf0c2a495b463e1adf24fee613329fd02707bd19d759d"
+      ],
+      "description": "Create source-qualified 7.5 g/L magnesium sulfate heptahydrate stock with explicit solute and unknown solvent; distinguish the 10 mL source aliquot from pure-solid identity.",
+      "evidence_ids": [
+        "c-e-frozen",
+        "c-e-media-2154",
+        "c-e-api-2154",
+        "c-e-chebi-31795",
+        "c-e-dsmz-mg-1592",
+        "c-e-dsmz-mg-1593",
+        "c-e-dsmz-mg-1593a"
+      ],
+      "owner_path": "data/ingredients/mapped/Mediadive_2154_Magnesium_Sulfate_Heptahydrate_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "proposed_owners/c-C-P08.yaml",
+        "sha256": "3275f0aaff7ec2d7552166feddded0a1095947086e422f9982bde69af3ee97b4"
+      },
+      "before_sha256": null,
+      "integration_warning": "Scoped raw label must not become a global synonym for the pure solute or every MgSO4 stock. Source-bound consumption only; old solute owner remains unchanged."
+    }
+  ],
+  "separate_skeptical_review": {
+    "path": "parts/b-independent-c-review-final.json",
+    "sha256": "5dac5bf702ef379a2f7bea636f208f28f78483423295322e101d14ef0e9b50c2"
+  },
+  "limits": "Root findings resolved in review artifacts; no maintained source or downstream approval changed."
+}

@@ -1,0 +1,77 @@
+identifier: kgmicrobe.ingredient:dsmz_1144_hutner_basal_salts
+preferred_term: DSMZ1144 Hutner basal salts
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_1144_hutner_basal_salts
+  ontology_label: DSMZ1144 Hutner basal salts
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1144.pdf
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: Nitrilotriacetic acid (NTA)
+  reference_scope: UNMAPPED
+  concentration_value: '10.00'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4 x 7 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '29.70'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2 x 2 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.34'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: (NH4)MoO7O24 x 4 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: FeSO4 x 7 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99.00'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Metals 44 (DSMZ1144)
+  reference_scope: UNMAPPED
+  concentration_value: '50.00'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '950.00'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: KOH
+  reference_scope: UNMAPPED
+  concentration_value: about7.3
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NaOH or H2SO4
+  reference_scope: UNMAPPED
+  source: Alternative pH adjustment reagents; unspecified amounts.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1144.pdf
+    source_record: DSMZ1144 Hutner basal salts
+    notes: Exact DSMZ1144 Hutner preparation:pHNTA7.0withKOH,combinedpH6.8withNaOHorH2SO4. Malformedmolybdate
+      retained. NestedMetals44 per1Lwater:Na-EDTA250mg,ZnSO4.7H2O1095mg,FeSO4.7H2O500mg,MnSO4.H2O154mg,CuSO4.5H2O39.2mg,Co(NO3)2.6H2O24.8mg,Na2B4O7.10H2O17.7mg,andfewdropsconcentratedH2SO4.
+      Na-EDTAidentity unresolved. Doesnot merge JCM900 sourcevariant.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Exact DSMZ1144 Hutner preparation:pHNTA7.0withKOH,combinedpH6.8withNaOHorH2SO4. Malformedmolybdate
+  retained. NestedMetals44 per1Lwater:Na-EDTA250mg,ZnSO4.7H2O1095mg,FeSO4.7H2O500mg,MnSO4.H2O154mg,CuSO4.5H2O39.2mg,Co(NO3)2.6H2O24.8mg,Na2B4O7.10H2O17.7mg,andfewdropsconcentratedH2SO4.
+  Na-EDTAidentity unresolved. Doesnot merge JCM900 sourcevariant. Raw source labels retained in linked
+  frozen cases: [''Hutners basal salts (see below)'']. Generic labels are not global resolving synonyms.
+  No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:21:24.141532+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

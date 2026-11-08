@@ -1,0 +1,67 @@
+identifier: kgmicrobe.ingredient:jcm_431_basal_medium
+preferred_term: JCM431 basal medium
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_431_basal_medium
+  ontology_label: JCM431 basal medium
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.4'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.075'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+    source_record: JCM431 basal medium
+    notes: Exact JCM431 basal subrecipe only. This differs from JCM1013 despite the shared raw label.
+      Retain1L addedwater without normalizing source salt quantities.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Exact JCM431 basal subrecipe only. This differs from JCM1013 despite the shared raw label. Retain1L
+  addedwater without normalizing source salt quantities. Raw source labels retained in linked frozen cases:
+  [''Basal medium (see below)'']. Generic labels are not global resolving synonyms. No pre-existing WITHHOLD
+  or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true

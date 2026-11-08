@@ -1,0 +1,40 @@
+identifier: cas:7783-13-3
+preferred_term: Sodium ammonium hydrogen phosphate tetrahydrate
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:190300
+  ontology_label: inorganic phosphate salt
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/ols4/api/search?q=phosphate%20salt&ontology=chebi&exact=true&rows=50
+    notes: Closest verified returned phosphate-salt class lacking C-H bonds. Form-specific CAS remains
+      primary; no exact identity to the generic parent is claimed. Exact-name searches found no suitable
+      exact term; CAS text search failed500 and is not absence proof.
+chemical_properties:
+  cas_rn: 7783-13-3
+  molecular_formula: H13NNaO8P
+  data_source: https://www.sigmaaldrich.com/US/en/product/sigald/04266
+  retrieval_date: '2026-11-08T05:31:40+00:00'
+synonyms:
+- synonym_text: NaNH4HPO4·4H2O
+  synonym_type: EXACT
+  source: https://www.sigmaaldrich.com/US/en/product/sigald/04266
+- synonym_text: Na(NH4)HPO4·4H2O
+  synonym_type: RAW_TEXT
+  source: https://doi.org/10.1099/00221287-19-3-592
+notes: 'Schaechter1958 Table1 p594 footnote(c) establishes this tetrahydrate in the nine source occurrences
+  bound by proposal occurrence_ids.1.74g/L and50x concentrate are source preparation context; frozen millimolar
+  values are not edited. Generic Sodium ammonium phosphate is deliberately not a resolving synonym: E2,Hassan
+  andTseng source forms remain unresolved. No modern supplier procurement is attributed to the historical
+  paper.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: CREATED_FROM_SOURCE_FORM_EVIDENCE
+  changes: Propose CAS7783-13-3 for exact Na(NH4)HPO4·4H2O source formula; broadMatch to verified inorganic
+    phosphate salt parent; nine source occurrences only. No maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true

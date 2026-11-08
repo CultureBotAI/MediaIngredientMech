@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:jcm_706_l_cysteine_hcl_monohydrate_5_percent
+preferred_term: JCM706 L-cysteine hydrochloride monohydrate5% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_706_l_cysteine_hcl_monohydrate_5_percent
+  ontology_label: JCM706 L-cysteine hydrochloride monohydrate5% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=706
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: L-Cysteine·HCl·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT_BASIS_UNSPECIFIED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=706
+    source_record: JCM706 L-cysteine hydrochloride monohydrate5% stock
+    notes: 'Original JCM706 specifies0.05ml per4.7ml medium of5% monohydrate stock. Concentration5% belongs
+      to added stock; the original dosing denominator is4.7ml of medium before the listed stock additions,
+      not10ml and not an asserted final volume. Frozen double-hyphen typography is preserved in source
+      evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does not specify
+      stock solvent, manufacturing details or additional stock constituents. Preserve concentration on
+      the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence
+      IDs CM_OCC:19be145b14c43da804561fc5eb51df588b9a5b1210a68c25c39e011abc68f397. No cross-source equality
+      or global raw-label alias is asserted.'
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Original JCM706 specifies0.05ml per4.7ml medium of5% monohydrate stock. Concentration5% belongs
+  to added stock; the original dosing denominator is4.7ml of medium before the listed stock additions,
+  not10ml and not an asserted final volume. Frozen double-hyphen typography is preserved in source evidence;
+  percentage basis is unspecified. The component list is UNKNOWN: the source does not specify stock solvent,
+  manufacturing details or additional stock constituents. Preserve concentration on the stock solute;
+  do not reinterpret the dose as final-medium concentration. Applies only to occurrence IDs CM_OCC:19be145b14c43da804561fc5eb51df588b9a5b1210a68c25c39e011abc68f397.
+  No cross-source equality or global raw-label alias is asserted. Raw source labels retained in linked
+  frozen cases: [''5% L--Cysteine・HCl・H2O'']. Generic labels are not global resolving synonyms. No pre-existing
+  WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T05:38:26.919627+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_DOSE_CONTEXT_CORRECTION
+  changes: 0.05ml per4.7ml medium Concentration5% belongs to added stock; the original dosing denominator
+    is4.7ml of medium before the listed stock additions, not10ml and not an asserted final volume. Independent
+    reviewer A identified the discrepancy; only this proposed payload is corrected.
+  llm_assisted: true
