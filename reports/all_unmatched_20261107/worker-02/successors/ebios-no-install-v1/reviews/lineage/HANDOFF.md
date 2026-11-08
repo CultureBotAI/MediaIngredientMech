@@ -1,0 +1,3 @@
+EBIOS no-install lineage review: PASS WITH LIMITATIONS for the exact12 prepublication metadata files. The empty-successor retirement withdraws only the genuine W02 standalone creation; original188 cases,322 CM occurrence IDs,117 proposals/payloads and1830 evidence objects remain exact. All family/source/lot/role/export limits remain.
+
+Current science approval: none. Scientific support remains attributed to the exact W08 organics/vitamins full-candidate receipts. Subsequent published-head retirement proof, coordinator crosswalk and final skeptical assembly remain separate. See review.json, findings.json and the complete verification ledgers.

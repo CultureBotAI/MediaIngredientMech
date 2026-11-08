@@ -1,0 +1,127 @@
+{
+  "evidence": [
+    {
+      "evidence_id": "a-case-23-input",
+      "capture": {
+        "root": "source",
+        "path": "shards/shard-02.json",
+        "sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0"
+      },
+      "kind": "source_snapshot",
+      "locator": "case_id=CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff; complete case object including all original occurrences and inherited constraints",
+      "supports_or_contradicts": "Exact frozen input; source labels, source identifiers, full recipe paths, native occurrence definitions, and inherited holds remain authoritative. The assessment changes no source bytes.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ]
+    },
+    {
+      "evidence_id": "a-case-23-occ-00",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1135.yaml",
+        "sha256": "e917651747b216b30b83013f16e19dac0f881efebf0f54315640a1380a231349"
+      },
+      "kind": "source_snapshot",
+      "locator": "ingredients/1; occurrence_id=CM_OCC:7f25070fec8b7aa9410fdc809bd2f3b41ede732b71315d290211dcc9e6cfce1f; whole recipe and preparation context",
+      "supports_or_contradicts": "Original occurrence 'Ebios (tablets)*'; assessed in its complete frozen recipe, including solution references, preparation notes and source provenance. Formula/stock interpretation is explicitly adjudicated in case 23.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ]
+    },
+    {
+      "evidence_id": "a-primary-primary-12d571f782de53cb",
+      "capture": {
+        "root": "artifact",
+        "path": "a/captures/primary-12d571f782de53cb.html",
+        "sha256": "b08728692d11b1f111b9dff19fa1cbbd0f3f2b929ff5be0dbc4336f56b59eec2"
+      },
+      "kind": "primary_source",
+      "locator": "Complete recipe component table and preparation; original source linked from the frozen occurrences",
+      "supports_or_contradicts": "Provider-declared ingredient spelling, form qualifiers, component/stock scope and preparation context are the evidence being used. Provider chemical annotations are compared against literal formula and external ontology evidence; they are not automatically accepted as exact identities.",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1132",
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ],
+      "accessed_at": "2026-11-08T05:07:01.789092+00:00"
+    },
+    {
+      "evidence_id": "a-primary-supplier-ebios",
+      "capture": {
+        "root": "artifact",
+        "path": "a/captures/supplier-ebios.html",
+        "sha256": "5f6b6f5761f88abb7563a9fb61086cfe15d52010f3cfd9b86ff03045d6442d14"
+      },
+      "kind": "primary_source",
+      "locator": "Product Information; dried yeast and tablet composition/preparation",
+      "supports_or_contradicts": "Current manufacturer describes EBIOS tablets from purified dried brewer yeast. This does not establish identity with historical P2G-associated owner.",
+      "url": "https://www.asahi-gf.co.jp/special/ebios/en/",
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ],
+      "accessed_at": "2026-11-08T05:09:17.266724+00:00"
+    },
+    {
+      "evidence_id": "a-owner-EBIOS",
+      "capture": {
+        "root": "artifact",
+        "path": "a/baseline-owners/EBIOS.yaml",
+        "sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4"
+      },
+      "kind": "local_validation",
+      "locator": "Whole actual baseline owner bytes; identifier,ontology_mapping,chemical_properties,synonyms,history",
+      "supports_or_contradicts": "Actual owner identifier UNMAPPED_0380; preferred term 'EBIOS'. This is a candidate/parent record inspection, not approval of all fields or permission to release its mapping. Primary source and ontology adjudication is case-specific.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ]
+    },
+    {
+      "evidence_id": "a2-case-23-owner-and-occurrence-review",
+      "capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/a/owner-lookups-and-context.json",
+        "sha256": "cc4261a1bdadc0e5f2b8b5a40d18e8d6fae1d616e56e41bab640a29ea5ac809d"
+      },
+      "kind": "native_record_review",
+      "locator": "cases[index=23]; owner_search, verified_prior_evidence, all frozen_occurrences",
+      "supports_or_contradicts": "Gitignore-independent recursive catalog search and exact candidate owner bytes; all 1 frozen whole recipes inspected. Candidate retrieval does not assert identity equivalence.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ]
+    },
+    {
+      "evidence_id": "a2-ols-search-07",
+      "capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/a/captures/ols-search-07.bin",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "ontology",
+      "locator": "Entire exact response; request manifest at continuation-1201-v1/a/retrievals.json",
+      "supports_or_contradicts": "Bounded exact ontology lookup / primary supplier evidence. Zero results do not prove ontology-wide absence.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=Asahi+Ebios+tablets&rows=10&exact=true",
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ],
+      "accessed_at": "2026-11-08T05:54:39.984302+00:00"
+    },
+    {
+      "evidence_id": "a2-case-23-component-owner-validation",
+      "capture": {
+        "root": "artifact",
+        "path": "continuation-1201-v1/a/component-owner-review.json",
+        "sha256": "3cd06ce6dff6c9c0354b38ace57b4765def260f4ceca7566226a6afe72deb3af"
+      },
+      "kind": "local_validation",
+      "locator": "Entries by linked proposal_id; exact current owner bytes and references",
+      "supports_or_contradicts": "Referenced components resolve against non-rejected current owner primary IDs and canonical preferred labels; quantities are included only when explicitly stated as concentrations.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+      ]
+    }
+  ]
+}

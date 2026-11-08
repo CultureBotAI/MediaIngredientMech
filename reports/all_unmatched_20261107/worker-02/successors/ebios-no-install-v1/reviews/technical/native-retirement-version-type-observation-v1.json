@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-08T11:00:47.582433+00:00",
+  "scope": "Nonpublishing exact native read_json plus native statement==expected comparator semantics; not full validate_resolution_crosswalk success",
+  "source_sha256": "6b247656ec34a5280a7b10ba1dea6a67edfc12fa0aab004cbb2ec9575a650753",
+  "source_lines": "crosswalk.py329-337",
+  "observations": [
+    {
+      "value": true,
+      "python_type": "bool",
+      "native_json_decode_then_equality_accepts": true
+    },
+    {
+      "value": 1.0,
+      "python_type": "float",
+      "native_json_decode_then_equality_accepts": true
+    },
+    {
+      "value": "1",
+      "python_type": "str",
+      "native_json_decode_then_equality_accepts": false
+    },
+    {
+      "value": null,
+      "python_type": "NoneType",
+      "native_json_decode_then_equality_accepts": false
+    }
+  ],
+  "actual_statement_present": false,
+  "no_fix": true
+}
