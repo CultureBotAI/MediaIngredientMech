@@ -1,0 +1,212 @@
+identifier: kgmicrobe.ingredient:marine_broth_2216
+preferred_term: Marine broth 2216
+synonyms:
+- synonym_text: Marine broth 2216
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Marine broth 2216 (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth  (MB) 2216  (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth 2216 (BD 279110)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth 2216 (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 19
+  media_count: 19
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.725141+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'broth')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Marine_Broth_2216-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: - **Recommended mapping status:** `UNMAPPED` No
+    ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a
+    plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: PROMOTED_TO_MAPPED
+  changes: 'UNMAPPED_0434 -> kgmicrobe.ingredient:marine_broth_2216 (FALLBACK_REGISTRY).
+    Minted under the #288 named-preparation convention (#260): the broth twin of Marine
+    Agar 2216, already in the corpus as an UNMAPPED record. Minted alongside its agar
+    rather than left unmapped: the two differ only by the gelling agent, and splitting
+    them would be arbitrary. Cross-reference: CultureMech:008094. A CultureMech id
+    cannot be the identifier — MIM''s primary key is an ontology CURIE or a registry
+    mint — so it is carried here as evidence.'
+  llm_assisted: false
+  previous_status: UNMAPPED
+  new_status: MAPPED
+- timestamp: '2026-08-27T03:16:39.517817+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 19/19 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Marine broth 2216 (BD-Difco)'' (x9 CultureMech mentions);
+    ''Marine Broth  (MB) 2216  (Difco)'' (x1 CultureMech mentions); ''Marine Broth
+    2216 (BD 279110)'' (x1 CultureMech mentions); ''Marine Broth 2216 (BD--Difco)''
+    (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added components and component_assertion by transcribing the ATCC Medium
+    2887 Difco Marine Agar 2216 scratch formula with agar omitted for broth.
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Exact Difco2216 source cases identify commercial broth37.4g, with separate
+    receiving supplements. Existing mapped2216 record erroneously treats the ATCC
+    agar-minus-agar scratch recipe as the commercial broth formula. Manufacturer-authored
+    Difco manual distinguishes broth MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4
+    3.24g. Correct commercial product composition and retain source recipe variants
+    as distinct. Isolated proposal only; whole-owner/source/export holds remain and
+    integration requires separate native review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Correction1193: Exact Difco2216 source
+  cases identify commercial broth37.4g, with separate receiving supplements. Existing
+  mapped2216 record erroneously treats the ATCC agar-minus-agar scratch recipe as
+  the commercial broth formula. Manufacturer-authored Difco manual distinguishes broth
+  MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4 3.24g. Correct commercial product
+  composition and retain source recipe variants as distinct. This proposal neither
+  merges generic MarineBroth/DifcoMarineBroth records nor approves their complete
+  use scopes. Cross-shard worker03 proposal b-proposal-marine-aliases edits the same
+  owner and requires coordinator reconciliation against the original before hash.'
+ingredient_type: NAMED_MEDIUM
+components:
+- component_name: Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Ferric citrate
+  reference_scope: UNMAPPED
+  concentration_value: '.1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '19.45'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5.9'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium sulfate
+  reference_scope: UNMAPPED
+  concentration_value: '3.24'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Calcium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '1.8'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.55'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium bicarbonate
+  reference_scope: UNMAPPED
+  concentration_value: '.16'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium bromide
+  reference_scope: UNMAPPED
+  concentration_value: '.08'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Strontium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.034'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Boric acid
+  reference_scope: UNMAPPED
+  concentration_value: '.022'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium silicate
+  reference_scope: UNMAPPED
+  concentration_value: '.004'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium fluoride
+  reference_scope: UNMAPPED
+  concentration_value: '.0024'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Ammonium nitrate
+  reference_scope: UNMAPPED
+  concentration_value: '.0016'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Disodium phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.008'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf
+    notes: Complete manufacturer-listed16constituents of commercial Difco broth2216
+      at37.4g/L standard reconstitution. All parts kept UNMAPPED because printed salt
+      names do not establish the previous specific hydrates/ontology identities. Water
+      is a reconstitution solvent, not a dry-powder constituent. The ATCC agar-minus-agar
+      scratch variant remains a distinct formulation.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:marine_broth_2216
+  ontology_label: Marine broth 2216
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Minted under the #288 named-preparation convention (#260): the broth twin
+      of Marine Agar 2216, already in the corpus as an UNMAPPED record. Minted alongside
+      its agar rather than left unmapped: the two differ only by the gelling agent,
+      and splitting them would be arbitrary. Cross-reference: CultureMech:008094.
+      A CultureMech id cannot be the identifier — MIM''s primary key is an ontology
+      CURIE or a registry mint — so it is carried here as evidence.'
+supplied_form:
+- name: Marine Broth2216
+  form: powder
+  supplier: BD Difco
+  catalog_number: '279110'
+  notes: Catalog identified in manufacturer manual; not a claim that every historical
+    unqualified2216 use selected this package.

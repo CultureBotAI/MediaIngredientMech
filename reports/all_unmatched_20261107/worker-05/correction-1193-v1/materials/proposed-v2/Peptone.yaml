@@ -1,0 +1,104 @@
+identifier: kgmicrobe.ingredient:peptone
+preferred_term: Peptone
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:peptone
+  ontology_label: Peptone
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Primary manufacturer guide defines peptones as protein hydrolysates of
+      varied animal/vegetable starting materials. Existing unqualified Peptone owner
+      has only lexical MICRO mammalian grounding, not source-origin evidence. Own
+      variable-material identity does not assign a particular digest or supplier.
+mapping_status: MAPPED
+curation_history:
+- timestamp: '2026-05-01T19:55:09.679469+00:00'
+  curator: foodon_pass
+  action: AUTO_CREATE_FROM_MICRO
+  changes: created with primary MICRO:0000178
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.686332+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Peptone')
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.747135+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-08T23:23:58.335580+00:00'
+  curator: audit_occurrence_stats
+  action: CORRECTED
+  changes: 'Backfilled missing occurrence_statistics (0/0): ontology-derived record
+    with no tracked media occurrences.'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0718 ''Peptones'' as a RAW_TEXT synonym -- plural of
+    the already-mapped peptone record. No new SSSOM row; MICRO:0000178 is already
+    mapped. Source: kgmicrobe.compound:peptones.'
+  llm_assisted: true
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0835 ''Peptone (0.01 %'' as a RAW_TEXT synonym -- concentration-truncated
+    duplicate of peptone. No new SSSOM row; MICRO:0000178 is already mapped. Source:
+    kgmicrobe.trait:peptone_0_01.'
+  llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.519680+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2251/2255 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:54:48.074406+00:00'
+  curator: worker05/materials_research skeptical remediation1193
+  action: CORRECTED
+  changes: Reconcile existing generic Peptone owner to local protein-digest material
+    identity, removing unsupported exact mammalian MICRO0000178 scope. Keep raw plural
+    provenance, all existing role/count/truncated-alias holds and both MicrobeDecoder
+    source-case holds; no new owner or catalog assignment. Exact isolated guarded
+    proposal only.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: UNDEFINED_MIXTURE
+occurrence_statistics:
+  total_occurrences: 2255
+  media_count: 2251
+  source_occurrences:
+  - source: microbedecoder
+    count: 48
+    source_columns: BacDive_Metabolite_utilization
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+synonyms:
+- synonym_text: Peptones
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: Peptone (0.01 %
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+notes: 'Correction1193: Existing generic Peptone material owner includes unqualified
+  MicrobeDecoder plural peptones; primary protein-digest family is known but mammalian
+  source is not. MICRO0000178 definition restricts to mammalian animal-protein digest,
+  so its old exact identity is replaced with local material identity without adding
+  an unsupported ontology relation. This removes a narrower origin assertion; it does
+  not identify the actual assay supplier or composition, approve PROTEIN_SOURCE, repair
+  the truncated Peptone (0.01 % alias, or release any source/export hold. All current
+  exact-label occurrences and full recipes were inspected as bound context. Preserve
+  raw observations and original organism relations independently.'

@@ -1,0 +1,67 @@
+identifier: UNMAPPED_0414
+preferred_term: L-15 medium
+synonyms:
+- synonym_text: L-15 medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: L-15 (Leibovitz) medium
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1670.pdf
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1504); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named L-15 medium/formulation and left unmapped pending
+    recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/L-15_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommend keep as `UNMAPPED`; no external `skos:exactMatch`
+    yet | High | Normalize primary name/synonym set to "Leibovitz''s L-15 medium"
+    / "Leibovitz L-15" / "L-15 medium" and retain pending recipe-level curation (yao2017animal‐cellculturemedia
+    pages 6-7, yao2017animal‐cellculturemedia pages 4-5) | No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:55:19.722874+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: 'Retain the exact DSMZ1670 L15Leibovitz alias and add source-scope clarification:70ml
+    basal L15 is distinct from10mltryptose broth,20mlFCS and1mlglutamine. Reassessment
+    found real variant ambiguity: manufacturer L15 preparations differ in phenol red
+    and glutamine/GlutaMAX. Source1670 does not specify supplier/catalog or which
+    variant was supplied; external added glutamine does not prove its absence in basal
+    medium. No generic formula is forced onto this owner. Isolated proposal only;
+    whole-owner/source/export holds remain and integration requires separate native
+    review.'
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1504); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Retain the exact DSMZ1670 L15Leibovitz alias and add source-scope
+  clarification:70ml basal L15 is distinct from10mltryptose broth,20mlFCS and1mlglutamine.
+  Reassessment found real variant ambiguity: manufacturer L15 preparations differ
+  in phenol red and glutamine/GlutaMAX. Source1670 does not specify supplier/catalog
+  or which variant was supplied; external added glutamine does not prove its absence
+  in basal medium. No generic formula is forced onto this owner.'
+ingredient_type: NAMED_MEDIUM

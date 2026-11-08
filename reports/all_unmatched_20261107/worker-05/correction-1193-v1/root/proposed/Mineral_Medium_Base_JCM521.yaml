@@ -1,0 +1,70 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:mineral_medium_base_jcm521
+preferred_term: Mineral medium base (JCM521)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mineral_medium_base_jcm521
+  ontology_label: Mineral medium base (JCM521)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521
+    notes: JCM521 basalmineral table has fiveinputs andpH7.2–7.4. Vitamins, pyruvate,
+      bicarbonate, decane and reducingstocks addedsubsequently are outsidebase; genericMineralmedium
+      is not a universal alias. Whole supplied preparation identified independently
+      of component CURIE availability. Existing owner and exact named/numbered ontology
+      searches are captured in successor evidence.
+notes: ' Correction1193: JCM521 basalmineral table has fiveinputs andpH7.2–7.4. Vitamins,
+  pyruvate, bicarbonate, decane and reducingstocks addedsubsequently are outsidebase;
+  genericMineralmedium is not a universal alias. Isolated proposal only. All inherited
+  source-case, owner and export holds remain. Raw generic source labels are qualified
+  to these source occurrences and confer no global resolving synonym or release approval.
+  No optional later supplement or atmosphere is inferred as an ingredient.'
+synonyms:
+- synonym_text: Mineral medium
+  synonym_type: RAW_TEXT
+  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521; source-qualified
+    occurrence only; not universal resolution
+components:
+- component_name: Sea salts (Sigma)
+  reference_scope: UNMAPPED
+  source: 25g
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  source: 0.25g
+- component_name: Na2SO4
+  reference_scope: UNMAPPED
+  source: 3.5g
+- component_name: Resazurin
+  reference_scope: UNMAPPED
+  source: 1mg
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 900ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521
+    source_record: Mineral medium base (JCM521)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. JCM521 basalmineral table
+      has fiveinputs andpH7.2–7.4. Vitamins, pyruvate, bicarbonate, decane and reducingstocks
+      addedsubsequently are outsidebase; genericMineralmedium is not a universal alias.
+curation_history:
+- timestamp: '2026-11-08T05:46:05.889096+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Mineral
+    medium base (JCM521). JCM521 basalmineral table has fiveinputs andpH7.2–7.4. Vitamins,
+    pyruvate, bicarbonate, decane and reducingstocks addedsubsequently are outsidebase;
+    genericMineralmedium is not a universal alias. Isolated proposal; native integration
+    and all inherited holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

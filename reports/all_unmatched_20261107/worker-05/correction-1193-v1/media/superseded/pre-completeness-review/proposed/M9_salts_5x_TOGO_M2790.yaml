@@ -1,0 +1,68 @@
+synonyms:
+- synonym_text: x5 M9 salt (Sigma)
+  synonym_type: RAW_TEXT
+  source: TOGO M2790 source recipe
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-11-08T05:43:55.990619+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: Create source-defined5x M9 stock from explicit original recipe inputs;
+    retain unknown phosphate hydration and separate20ml receiving dose. Isolated proposal
+    only; whole-owner/source/export holds remain and integration requires separate
+    native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+identifier: kgmicrobe.ingredient:m9_salts_5x_togo_m2790
+preferred_term: M9 salts 5x stock (TOGO M2790)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:m9_salts_5x_togo_m2790
+  ontology_label: M9 salts 5x stock (TOGO M2790)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/medium/M2790
+    notes: Original TOGO source defines a five-input stock recipe; registry denotes
+      only that preparation, not an inferred Sigma catalog product or a generic M9
+      salt mix.
+components:
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '15'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Na2HPO4 (hydration unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '33.9'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/medium/M2790
+    source_record: Original archived API preparation paragraph5
+    notes: One-level recipe inputs as written; named UNMAPPED parts preserve unspecified
+      phosphate hydration. Amounts are source-batch inputs and no measured final volume
+      or molarity is asserted.
+notes: The source separately adds20ml of this stock to its parent medium. Preserve
+  stock nesting; frozen20G_PER_L and flattened salts are upstream errors, not prerequisites
+  for curating the defined stock. Original Sigma label is retained without guessing
+  a catalog. No component CURIE, role or arbitrary1x M9 equivalence is asserted.

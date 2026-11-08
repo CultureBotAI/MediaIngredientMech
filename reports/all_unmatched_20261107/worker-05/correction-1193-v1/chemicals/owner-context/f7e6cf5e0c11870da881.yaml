@@ -1,0 +1,106 @@
+id: CultureMech:006886
+name: oxoid_nutrient_broth
+original_name: OXOID NUTRIENT BROTH
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: KOMODO Medium 948
+  term:
+    id: komodo.medium:948
+    label: OXOID NUTRIENT BROTH
+notes: 'Source: KOMODO ModelSEED | ID: 948 | DSMZ Medium: 948 (mediadive.medium:948)
+  | Aerobic: No'
+ingredients:
+- preferred_term: Nutrient broth
+  concentration:
+    value: '13'
+    unit: G_PER_L
+- preferred_term: Lab-Lemco beef extract
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: FOODON:03302088
+    label: Beef extract
+- preferred_term: Yeast extract
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+- preferred_term: Peptone
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  term:
+    id: MICRO:0000178
+    label: Peptone
+- preferred_term: NaCl
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:03.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 948'
+- timestamp: '2026-02-03T11:19:04.770661'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 948
+- timestamp: '2026-03-13T06:19:44.662424Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:006886'
+- timestamp: '2026-03-17T06:30:10.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:02.620291+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "OXOID NUTRIENT BROTH" to "oxoid_nutrient_broth" for
+    consistent matching
+- timestamp: '2026-06-05T07:40:28.102470+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_komodo_score10_exact_terms_batch2.py
+  action: GROUNDED_KOMODO_SCORE10_EXACT_TERMS_BATCH2
+  changes: Grounded exact KOMODO score-10 ingredients
+  source: src/culturemech/data/mediaingredientmech/label_index.csv
+  notes: Applied local mappings for Lab-Lemco beef extract, Peptone, Yeast extract.
+ph_value: 7.2
+kg_microbe_match: mediadive.medium:74
+variant_children:
+- path: data/normalized_yaml/bacterial/medium_948_modified_for_dsm_16823.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:006885
+  name: medium_948_modified_for_dsm_16823
+  notes: Same ingredient and concentration signature; review as possible duplicate
+    source record.
+parent_media:
+  path: data/normalized_yaml/bacterial/oxoid_nutrient_broth.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:002127
+  name: oxoid_nutrient_broth
+  notes: KOMODO record states DSMZ Medium 948 provenance and exactly matches the single
+    same-category DSMZ parent signature.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- Same ingredient and concentration signature; KOMODO record copied from the matching
+  DSMZ medium source.

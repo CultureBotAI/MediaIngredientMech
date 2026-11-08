@@ -1,0 +1,72 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:vfa_mix_jcm1130
+preferred_term: VFA mix (JCM1130)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:vfa_mix_jcm1130
+  ontology_label: VFA mix (JCM1130)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    notes: Five-acid neutralized mixture defined byJCM1130 and inherited byJCM1385;
+      differs fromJCM266 four-acid stock. Preserve batch input volumes without asserting
+      a final concentration or volume. Whole supplied preparation identified independently
+      of component CURIE availability. Existing owner and exact named/numbered ontology
+      searches are captured in successor evidence.
+notes: ' Correction1193: Five-acid neutralized mixture defined byJCM1130 and inherited
+  byJCM1385; differs fromJCM266 four-acid stock. Preserve batch input volumes without
+  asserting a final concentration or volume. Isolated proposal only. All inherited
+  source-case, owner and export holds remain. Raw generic source labels are qualified
+  to these source occurrences and confer no global resolving synonym or release approval.
+  No optional later supplement or atmosphere is inferred as an ingredient. Verbatim
+  source-only labels retained as provenance, excluded from globally resolving aliases:
+  ["VFA mix (see below)"].'
+components:
+- component_name: Acetic acid
+  reference_scope: UNMAPPED
+  source: 17ml
+- component_name: Propionic acid
+  reference_scope: UNMAPPED
+  source: 6ml
+- component_name: n-Valeric acid
+  reference_scope: UNMAPPED
+  source: 1ml
+- component_name: Isovaleric acid
+  reference_scope: UNMAPPED
+  source: 1ml
+- component_name: Isobutyric acid
+  reference_scope: UNMAPPED
+  source: 1ml
+- component_name: NaOH solution (10 N)
+  reference_scope: UNMAPPED
+  source: 26ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    source_record: VFA mix (JCM1130)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. Five-acid neutralized mixture
+      defined byJCM1130 and inherited byJCM1385; differs fromJCM266 four-acid stock.
+      Preserve batch input volumes without asserting a final concentration or volume.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation VFA mix
+    (JCM1130). Five-acid neutralized mixture defined byJCM1130 and inherited byJCM1385;
+    differs fromJCM266 four-acid stock. Preserve batch input volumes without asserting
+    a final concentration or volume. Independent correction: Remove newly added ambiguous
+    global aliases; preserve exact raw labels in source ledger and notes. Isolated
+    proposal only; all source and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

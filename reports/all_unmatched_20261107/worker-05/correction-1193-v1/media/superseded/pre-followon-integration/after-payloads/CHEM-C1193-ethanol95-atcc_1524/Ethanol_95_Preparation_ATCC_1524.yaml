@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:ethanol_95_preparation_atcc_1524
+preferred_term: 95% ethanol preparation (ATCC 1524)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ethanol_95_preparation_atcc_1524
+  ontology_label: 95% ethanol preparation (ATCC 1524)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/3F8B6BDFCC2D44F88C84F6E1FE4DE6A2.ashx
+    notes: Source ATCC1527 explicitly reproduces ATCC1524, whose vitamin K1 stock
+      uses30ml95% ethanol. This corresponds to the assigned TOGO2724 occurrence. Whole
+      source-named solvent preparation is curated independently of incomplete composition.
+      The literal95% has no stated v/v,w/w orother basis; no numerical component concentration,
+      water balance, denaturant status, supplier, lot, whole-stock CAS or molecular
+      formula is inferred. NCIT:C185110 explicitly requires aqueous95% ethanol by
+      volume and is therefore an unapproved candidate, not an exact/close/broad mapping.
+      CHEBI:16236 identifies only the supported ethanol component. Cross-source equivalence
+      is unestablished; source qualification is an identity boundary, not proof of
+      different chemistry. Generic raw95% labels remain in this note and the frozen
+      ledger, not active resolver aliases. All source, unit, role, owner and export
+      holds remain.
+synonyms: []
+notes: Source ATCC1527 explicitly reproduces ATCC1524, whose vitamin K1 stock uses30ml95%
+  ethanol. This corresponds to the assigned TOGO2724 occurrence. Whole source-named
+  solvent preparation is curated independently of incomplete composition. The literal95%
+  has no stated v/v,w/w orother basis; no numerical component concentration, water
+  balance, denaturant status, supplier, lot, whole-stock CAS or molecular formula
+  is inferred. NCIT:C185110 explicitly requires aqueous95% ethanol by volume and is
+  therefore an unapproved candidate, not an exact/close/broad mapping. CHEBI:16236
+  identifies only the supported ethanol component. Cross-source equivalence is unestablished;
+  source qualification is an identity boundary, not proof of different chemistry.
+  Generic raw95% labels remain in this note and the frozen ledger, not active resolver
+  aliases. All source, unit, role, owner and export holds remain.
+components:
+- component_name: Ethanol
+  component_id: CHEBI:16236
+  reference_scope: MIM_CATALOG
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/3F8B6BDFCC2D44F88C84F6E1FE4DE6A2.ashx
+    notes: Source ATCC1527 explicitly reproduces ATCC1524, whose vitamin K1 stock
+      uses30ml95% ethanol. This corresponds to the assigned TOGO2724 occurrence. Named
+      ethanol component only; nominal95% qualifier retained without assuming percentage
+      basis or other constituents.
+  notes: Partial membership only. No percentage-basis conversion, quantitative ethanol
+    concentration, water balance, denaturant identity or complete mixture claim.
+curation_history:
+- timestamp: '2026-11-08T06:09:05.291788+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: CREATED_SOURCE_QUALIFIED_PREPARATION
+  changes: Source ATCC1527 explicitly reproduces ATCC1524, whose vitamin K1 stock
+    uses30ml95% ethanol. This corresponds to the assigned TOGO2724 occurrence. Whole
+    source-named solvent preparation is curated independently of incomplete composition.
+    The literal95% has no stated v/v,w/w orother basis; no numerical component concentration,
+    water balance, denaturant status, supplier, lot, whole-stock CAS or molecular
+    formula is inferred. NCIT:C185110 explicitly requires aqueous95% ethanol by volume
+    and is therefore an unapproved candidate, not an exact/close/broad mapping. CHEBI:16236
+    identifies only the supported ethanol component. Cross-source equivalence is unestablished;
+    source qualification is an identity boundary, not proof of different chemistry.
+    Generic raw95% labels remain in this note and the frozen ledger, not active resolver
+    aliases. All source, unit, role, owner and export holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

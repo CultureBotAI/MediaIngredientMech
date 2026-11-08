@@ -1,0 +1,70 @@
+{
+  "finding_id": "MATERIALS-MEDIA1193-F03",
+  "reviewer": "/root/materials_research",
+  "created_at": "2026-11-08T06:01:08.370303+00:00",
+  "reviewed_inputs": {
+    "decisions.json": "2e23141e6f60d148772fefab6558b1243ab71b0b497bb9f4dd50798f36b146a7",
+    "evidence.json": "ad3523921fa48a5b14c3603d4d1af6a03b768c533ef42147fe6b4e781166619d",
+    "proposals.json": "94843cdf68287e5d0dfe2cb14a259271e39128b739ea904a90c0e95ef8a2b97e"
+  },
+  "status": "open",
+  "severity": "major",
+  "finding": "RCM142 asserts common components across BD-BBL,Oxoid,Merck alternatives but initially binds only first two manufacturer formulas. HistoricalSigma529 amounts copied from currentT9032/28976 candidates need a stronger product bridge than matching29.8g receiving dose. Supply exactcross-product evidence or retain proposedwholeproduct with unsupportedquantities/commonparts removed or appropriately narrowed.",
+  "exact_initial_payloads": [
+    {
+      "proposal": {
+        "proposal_id": "M1193-P-THIOGLYCOLLATE_SIGMA_JCM529",
+        "case_ids": [
+          "CM_NAME:cd6df60b79398f6d62ae1c03f96b421bb43960b268cc7ab94676cbd7d7b631c9"
+        ],
+        "description": "Archived original TOGO M530/M531 identifies historical JCM529 Sigma thioglycollate powder29.8g/L. Current Sigma T9032/28976 provide named product-family constituents, but neither catalog nor numeric formula is proven for the historical product. Curate the named Sigma preparation with PARTIAL named parts and no component quantities; current JCM529 Nothing found is unsuccessful retrieval.",
+        "evidence_ids": [
+          "M1193-SCOPE-93",
+          "M1193-WEB-web-variants-2-93"
+        ],
+        "owner_path": "data/ingredients/mapped/Thioglycollate_Sigma_JCM529.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/media/proposed/Thioglycollate_Sigma_JCM529.yaml",
+          "sha256": "d6d819ed3f324db43ba3b77fee80c275e3239db6be6986badb3fd7d4c04d1f0b"
+        },
+        "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+        "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+        "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+        "replaces_proposal_ids": [],
+        "destination_owner_path": "data/ingredients/mapped/Thioglycollate_Sigma_JCM529.yaml"
+      },
+      "after_yaml": "synonyms: []\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-11-08T05:54:18.111373+00:00'\n  curator: Codex worker05 correction1193 source review\n  action: CREATED\n  changes: Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate\n    powder29.8g/L. Primary Sigma T9032 and28976 sheets support the same seven major\n    constituents and semisolid agar content; resazurin supplied form is not resolved.\n    Create the source-qualified historical Sigma preparation without guessing either\n    catalog, retaining indicator ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound\n    remains an unsuccessful retrieval, not evidence of the recipe. Isolated proposal\n    only; whole-owner/source/export holds remain and integration requires separate\n    native review.\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\nidentifier: kgmicrobe.ingredient:thioglycollate_sigma_jcm529\npreferred_term: Thioglycollate medium powder (Sigma; archived JCM529)\nmapping_status: MAPPED\ningredient_type: NAMED_MEDIUM\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:thioglycollate_sigma_jcm529\n  ontology_label: Thioglycollate medium powder (Sigma; archived JCM529)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/164/311/t9032dat.pdf\n    notes: Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate\n      powder29.8g/L. Primary Sigma T9032 and28976 sheets support the same seven major\n      constituents and semisolid agar content; resazurin supplied form is not resolved.\n      Create the source-qualified historical Sigma preparation without guessing either\n      catalog, retaining indicator ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound\n      remains an unsuccessful retrieval, not evidence of the recipe.\nnotes: 'Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate powder29.8g/L.\n  Primary Sigma T9032 and28976 sheets support the same seven major constituents and\n  semisolid agar content; resazurin supplied form is not resolved. Create the source-qualified\n  historical Sigma preparation without guessing either catalog, retaining indicator\n  ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound remains an unsuccessful\n  retrieval, not evidence of the recipe. Raw source spellings retained in decision\n  ledger and here, without a new globally resolving alias: [{''synonym_text'': ''Thioglycollate\n  medium (Sigma)'', ''synonym_type'': ''RAW_TEXT'', ''source'': ''Thioglycollate medium\n  (Sigma)''}] Independent review correction: Archived original TOGO M530/M531 identifies\n  historical JCM529 Sigma thioglycollate powder29.8g/L. Current Sigma T9032/28976\n  provide named product-family constituents, but neither catalog nor numeric formula\n  is proven for the historical product. Curate the named Sigma preparation with PARTIAL\n  named parts and no component quantities; current JCM529 Nothing found is unsuccessful\n  retrieval.'\nsupplied_form:\n- name: Thioglycollate medium powder (Sigma; archived JCM529)\n  supplier: Sigma-Aldrich\n  notes: Source-qualified product/preparation; exact catalog and unspecified supplied-form\n    details are not invented.\ncomponents:\n- component_name: Casein enzymic hydrolysate\n  reference_scope: UNMAPPED\n- component_name: Yeast extract\n  reference_scope: UNMAPPED\n- component_name: Dextrose\n  reference_scope: UNMAPPED\n- component_name: Sodium chloride\n  reference_scope: UNMAPPED\n- component_name: L-Cystine\n  reference_scope: UNMAPPED\n- component_name: Sodium thioglycollate\n  reference_scope: UNMAPPED\n- component_name: Agar\n  reference_scope: UNMAPPED\n- component_name: Resazurin indicator\n  reference_scope: UNMAPPED\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: PARTIAL\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/164/311/t9032dat.pdf\n    notes: PARTIAL named product-family constituents compared across current Sigma\n      T9032/28976 only. Historical JCM529 catalog, lot and exact component amounts\n      are not established; no numeric formula is assigned to the historical preparation.\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "M1193-P-RCM-142",
+        "case_ids": [
+          "KG_CASE:42fb113d0c36aabad83452c9e802850387083985010f7c9105511c590318faec"
+        ],
+        "description": "DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a choice among manufacturer preparations, not one exact supplier product. Curate eight common named components without brand-specific quantities, preserve supplier choice and separately addedresazurin. The exact product selection is a real scientific gap, not a component-grounding prerequisite.",
+        "evidence_ids": [
+          "M1193-SCOPE-142",
+          "M1193-WEB-web-b5-2-142",
+          "M1193-WEB-web-b4-0-142",
+          "M1193-WEB-web-b8-1-142"
+        ],
+        "owner_path": "data/ingredients/unmapped/Dehydrated_RCM_Medium.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "5cd0b1d7f6121d0824e99573a98093c2c2f30f0578c890a6c75c2fc1217dd096",
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/media/proposed/Dehydrated_RCM_Medium.yaml",
+          "sha256": "2bf697c4f9dbe96b94549288fb49f484425e5715eccb28715847f3114a15857d"
+        },
+        "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+        "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+        "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+        "replaces_proposal_ids": []
+      },
+      "after_yaml": "identifier: UNMAPPED_0372\npreferred_term: dehydrated RCM medium\nsynonyms:\n- synonym_text: dehydrated RCM medium\n  synonym_type: RAW_TEXT\n  source: mim-queue\nmapping_status: UNMAPPED\noccurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\ncuration_history:\n- timestamp: '2026-04-30T18:43:03.698454+00:00'\n  curator: audit_import_ingredients[mim-queue]\n  action: CREATED_AS_UNMAPPED\n  changes: Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN\n    or CHEBI/NCIT match. Curator review needed.\n  new_status: UNMAPPED\n  llm_assisted: false\n- timestamp: '2026-05-11T19:05:00Z'\n  curator: mediaingredientmech-agentic-curation\n  action: CLASSIFIED_UNDEFINED_MIXTURE\n  changes: Classified as a dehydrated RCM medium preparation and left unmapped pending\n    product- or recipe-level curation.\n  previous_status: UNMAPPED\n  new_status: UNMAPPED\n  llm_assisted: true\n- timestamp: '2026-07-05T00:00:00+00:00'\n  curator: cbclaw_media_modeling_114\n  action: RECLASSIFY_INGREDIENT_TYPE\n  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete\n    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'\n  llm_assisted: true\n- timestamp: '2026-08-06T00:00:00+00:00'\n  curator: edison_literature_identity\n  action: ANNOTATED\n  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Dehydrated_RCM_Medium-edison-literature.md\n    (local artifact \u2014 research/ is gitignored, so the findings are quoted here rather\n    than linked). Report verdict: **Recommended interpretation:** \u201cdehydrated RCM\n    medium\u201d denotes the dry preparation of **Reinforced Clostridial Medium (RCM)**,\n    a complete, multi-component microbiological growth medium. It is neither a single\n    chemical nor a salt, hydrate, buffer, or taxonomic entity. Published recipes contain\n    peptone, yeast extract, and beef extract/Lab-Lemco, so the medium is chemically\n    complex and incompletely  No ontology CURIE was proposed. Recorded as provenance\n    only \u2014 no grounding applied from this run. Edison''s recommendations are deliberately\n    conservative, and a plausible identifier promoted by a mechanism that never decided\n    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s\n    to accept or reject.'\n  llm_assisted: true\n- timestamp: '2026-11-08T05:54:18.111373+00:00'\n  curator: Codex worker05 correction1193 source review\n  action: CORRECTED\n  changes: DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a\n    choice among manufacturer preparations, not one exact supplier product. Curate\n    eight common named components without brand-specific quantities, preserve supplier\n    choice and separately addedresazurin. The exact product selection is a real scientific\n    gap, not a component-grounding prerequisite. Isolated proposal only; whole-owner/source/export\n    holds remain and integration requires separate native review.\n  previous_status: UNMAPPED\n  new_status: UNMAPPED\n  llm_assisted: true\n  llm_model: gpt-6\nnotes: 'Imported from mim-queue (source_id=mediadive.ingredient:2126); no CAS-RN or\n  CHEBI/NCIT match. Reviewed on 2026-05-11 as a dehydrated medium preparation pending\n  product- or recipe-level curation. Correction1193: DSMZ634 explicitly allows BD-BBL,Oxoid\n  orMerck RCM, so this source is a choice among manufacturer preparations, not one\n  exact supplier product. Curate eight common named components without brand-specific\n  quantities, preserve supplier choice and separately addedresazurin. The exact product\n  selection is a real scientific gap, not a component-grounding prerequisite.'\ningredient_type: NAMED_MEDIUM\ncomponents:\n- component_name: Peptone\n  reference_scope: UNMAPPED\n- component_name: Yeast extract\n  reference_scope: UNMAPPED\n- component_name: Glucose\n  reference_scope: UNMAPPED\n- component_name: Sodium chloride\n  reference_scope: UNMAPPED\n- component_name: Soluble starch\n  reference_scope: UNMAPPED\n- component_name: Cysteine hydrochloride\n  reference_scope: UNMAPPED\n- component_name: Sodium acetate\n  reference_scope: UNMAPPED\n- component_name: Agar\n  reference_scope: UNMAPPED\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: PARTIAL\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.maplica.com/Manual%20Difco%20P-S.pdf\n    notes: DSMZ634 explicitly allows BD-BBL,Oxoid orMerck RCM, so this source is a\n      choice among manufacturer preparations, not one exact supplier product. Curate\n      eight common named components without brand-specific quantities, preserve supplier\n      choice and separately addedresazurin. The exact product selection is a real\n      scientific gap, not a component-grounding prerequisite.\n"
+    }
+  ]
+}

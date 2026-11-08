@@ -1,0 +1,77 @@
+identifier: kgmicrobe.ingredient:ethanol_95_preparation_atcc_1257
+preferred_term: 95% ethanol preparation (ATCC 1257)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ethanol_95_preparation_atcc_1257
+  ontology_label: 95% ethanol preparation (ATCC 1257)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx
+    notes: Source ATCC1257 uses this95% solvent in both hemin(100ml) and menadione(50ml)
+      receiving stocks. Frozen TOGO2568 merged those amounts into150g/L; that unit/scope
+      corruption is not accepted. Water added separately to the receiving stocks is
+      not the supplied solvent balance. Whole source-named solvent preparation is
+      curated independently of incomplete composition. The literal95% has no stated
+      v/v,w/w orother basis; no numerical component concentration, water balance,
+      denaturant status, supplier, lot, whole-stock CAS or molecular formula is inferred.
+      NCIT:C185110 explicitly requires aqueous95% ethanol by volume and is therefore
+      an unapproved candidate, not an exact/close/broad mapping. CHEBI:16236 identifies
+      only the supported ethanol component. Cross-source equivalence is unestablished;
+      source qualification is an identity boundary, not proof of different chemistry.
+      Generic raw95% labels remain in this note and the frozen ledger, not active
+      resolver aliases. All source, unit, role, owner and export holds remain.
+synonyms: []
+notes: Source ATCC1257 uses this95% solvent in both hemin(100ml) and menadione(50ml)
+  receiving stocks. Frozen TOGO2568 merged those amounts into150g/L; that unit/scope
+  corruption is not accepted. Water added separately to the receiving stocks is not
+  the supplied solvent balance. Whole source-named solvent preparation is curated
+  independently of incomplete composition. The literal95% has no stated v/v,w/w orother
+  basis; no numerical component concentration, water balance, denaturant status, supplier,
+  lot, whole-stock CAS or molecular formula is inferred. NCIT:C185110 explicitly requires
+  aqueous95% ethanol by volume and is therefore an unapproved candidate, not an exact/close/broad
+  mapping. CHEBI:16236 identifies only the supported ethanol component. Cross-source
+  equivalence is unestablished; source qualification is an identity boundary, not
+  proof of different chemistry. Generic raw95% labels remain in this note and the
+  frozen ledger, not active resolver aliases. All source, unit, role, owner and export
+  holds remain.
+components:
+- component_name: Ethanol
+  component_id: CHEBI:16236
+  reference_scope: MIM_CATALOG
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx
+    notes: Source ATCC1257 uses this95% solvent in both hemin(100ml) and menadione(50ml)
+      receiving stocks. Frozen TOGO2568 merged those amounts into150g/L; that unit/scope
+      corruption is not accepted. Water added separately to the receiving stocks is
+      not the supplied solvent balance. Named ethanol component only; nominal95% qualifier
+      retained without assuming percentage basis or other constituents.
+  notes: Partial membership only. No percentage-basis conversion, quantitative ethanol
+    concentration, water balance, denaturant identity or complete mixture claim.
+curation_history:
+- timestamp: '2026-11-08T06:09:05.291788+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: CREATED_SOURCE_QUALIFIED_PREPARATION
+  changes: Source ATCC1257 uses this95% solvent in both hemin(100ml) and menadione(50ml)
+    receiving stocks. Frozen TOGO2568 merged those amounts into150g/L; that unit/scope
+    corruption is not accepted. Water added separately to the receiving stocks is
+    not the supplied solvent balance. Whole source-named solvent preparation is curated
+    independently of incomplete composition. The literal95% has no stated v/v,w/w
+    orother basis; no numerical component concentration, water balance, denaturant
+    status, supplier, lot, whole-stock CAS or molecular formula is inferred. NCIT:C185110
+    explicitly requires aqueous95% ethanol by volume and is therefore an unapproved
+    candidate, not an exact/close/broad mapping. CHEBI:16236 identifies only the supported
+    ethanol component. Cross-source equivalence is unestablished; source qualification
+    is an identity boundary, not proof of different chemistry. Generic raw95% labels
+    remain in this note and the frozen ledger, not active resolver aliases. All source,
+    unit, role, owner and export holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

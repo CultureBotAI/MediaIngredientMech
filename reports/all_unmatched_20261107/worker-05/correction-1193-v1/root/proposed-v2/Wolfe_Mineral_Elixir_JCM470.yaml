@@ -1,0 +1,111 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:wolfe_mineral_elixir_jcm470
+preferred_term: Wolfe mineral elixir (JCM470)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfe_mineral_elixir_jcm470
+  ontology_label: Wolfe mineral elixir (JCM470)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470
+    notes: JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367 and837.
+      Variable MnSO4·xH2O stays a named unresolved component; this does not prevent
+      identifying the whole preparation. Case112 applies only toJCM837 occurrence,
+      not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible
+      quantities/components. Whole supplied preparation identified independently of
+      component CURIE availability. Existing owner and exact named/numbered ontology
+      searches are captured in successor evidence.
+notes: ' Correction1193: JCM470 fourteen-salt acidic stock is explicitly inherited
+  byJCM1367 and837. Variable MnSO4·xH2O stays a named unresolved component; this does
+  not prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence,
+  not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible
+  quantities/components. Isolated proposal only. All inherited source-case, owner
+  and export holds remain. Raw generic source labels are qualified to these source
+  occurrences and confer no global resolving synonym or release approval. No optional
+  later supplement or atmosphere is inferred as an ingredient. Verbatim source-only
+  labels retained as provenance, excluded from globally resolving aliases: ["Wolfe''s
+  mineral elixir (see Medium No. 470 )", "Wolfe''s mineral elixir (see below)", "Wolfe''s
+  mineral elixir"].'
+components:
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 30g
+- component_name: MnSO4·xH2O
+  reference_scope: UNMAPPED
+  source: 5g; x unspecified
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 10g
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  source: 1.8g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 1.8g
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: KAl(SO4)2·12H2O
+  reference_scope: UNMAPPED
+  source: 0.18g
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: (NH4)2Ni(SO4)2·6H2O
+  reference_scope: UNMAPPED
+  source: 2.8g
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1000ml; acidifiedpH1
+- component_name: Dilute sulfuric acid
+  reference_scope: UNMAPPED
+  source: to waterpH1; amount unspecified
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470
+    source_record: Wolfe mineral elixir (JCM470)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. JCM470 fourteen-salt acidic
+      stock is explicitly inherited byJCM1367 and837. Variable MnSO4·xH2O stays a
+      named unresolved component; this does not prevent identifying the whole preparation.
+      Case112 applies only toJCM837 occurrence, not its fourDSMZ792-derived occurrences.
+      Other maintainedWolfe mixes use incompatible quantities/components.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe mineral
+    elixir (JCM470). JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367
+    and837. Variable MnSO4·xH2O stays a named unresolved component; this does not
+    prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence,
+    not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible
+    quantities/components. Independent correction: Remove newly added ambiguous global
+    aliases; preserve exact raw labels in source ledger and notes. Isolated proposal
+    only; all source and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

@@ -1,0 +1,589 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "ROOT-P-fatty-stock",
+      "case_ids": [
+        "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a"
+      ],
+      "description": "Replace erroneous CHEBI fatty-acid class identity with source-defined mixture registry identity; remove inherited single-molecule structure, retain incompatible molecular-class labels as REJECTED_LABEL; preserve existing mixture RAW_TEXT labels without approving them, transcribe source inputs without final-volume inference. Existing WITHHOLD remains.",
+      "evidence_ids": [
+        "ROOT-jcm-266",
+        "ROOT-OWNER-Fatty_Acid_Mixture_See_Medium_No_266",
+        "ROOT-chebi-35366"
+      ],
+      "owner_path": "data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "root/proposed/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+        "sha256": "471a552bc97debca1689e0a8ad3e2303a2651ccf502789ed6bfb9ba86f0890a4"
+      },
+      "identity_consequence": "Local recipe-specific mixture identity",
+      "predicate_consequence": "Remove wrong CHEBI35366 exact row; native builder would emit own local registry exact row, held pending independent integrated review.",
+      "publication_obligations": "Changed owner bytes invalidate inherited support. Coordinator must use native guarded writer, review complete integrated claims, synchronize and validate. Keep all source-specific holds; no whole-record/role approval.",
+      "cross_shard_conflict": "Check all campaign proposals before applying; original frozen before hash must match. thiamine stock differs from shared Thiamine_pyrophosphate owner in workers05/09."
+    },
+    {
+      "proposal_id": "R1193-P-bottom-628",
+      "case_ids": [
+        "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM628). JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate.",
+      "evidence_ids": [
+        "ROOT-jcm-628",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM628.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Bottom_Layer_JCM628.yaml",
+        "sha256": "3794b57cea9dd1338d017a5792c14f7ec8b59e21a523cacca151aa9ba70c7da1"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": [],
+      "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM628). JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+    },
+    {
+      "proposal_id": "R1193-P-bottom-629",
+      "case_ids": [
+        "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM629). JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate.",
+      "evidence_ids": [
+        "ROOT-jcm-629",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM629.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Bottom_Layer_JCM629.yaml",
+        "sha256": "ca77327570d06bd9376858d7c0e7c6d4814839f44cb7c43777f900c16cb01d11"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": [],
+      "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM629). JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+    },
+    {
+      "proposal_id": "R1193-P-dsmz29",
+      "case_ids": [
+        "CM_NAME:2b63628e7e1902e7cdd721bb2aa23012d4dbf4c0e3e51d942c736017c060f901"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Pfennig's medium II (DSMZ29). MICRO0001736 definition-source reproduces the same DSMZ29 staged recipe. Excludes the marine/estuarine alternative and periodic feeding. DSMZ40 adds1%NaCl to this base; that variant is not the base identity.",
+      "evidence_ids": [
+        "ROOT-dsmz-29",
+        "ROOT-dsmz-40",
+        "R1193-micro-1736",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Pfennigs_Medium_II_DSMZ29.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Pfennigs_Medium_II_DSMZ29.yaml",
+        "sha256": "374c2eae16786e856086e206f6017c63346290a6a7408e85b36160af8dee0d80"
+      },
+      "identity_consequence": "Exact numbered ontology identity",
+      "predicate_consequence": "Exact row to exact numbered ontology; no generic ingredient alias release",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-dsmz87",
+      "case_ids": [
+        "CM_NAME:41153f03ccf9592cfed6576e11b8e154da72287ee303c764dfd8faa676389b29"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Chloroflexus medium modified (DSMZ87). MICRO0001830 full definition-source agrees with DSMZ87; numbered87a adds vitaminCA to this base. Listed1050ml water is preserved, not silently normalized to one liter. Whole recipe pH8.2; optional later yeast feeding omitted.",
+      "evidence_ids": [
+        "ROOT-dsmz-87",
+        "ROOT-dsmz-87a",
+        "R1193-micro-1830",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Chloroflexus_Medium_Modified_DSMZ87.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Chloroflexus_Medium_Modified_DSMZ87.yaml",
+        "sha256": "0891728163c81538cc91d4f35caabbc8159216048882941188231dee1269c233"
+      },
+      "identity_consequence": "Exact numbered ontology identity",
+      "predicate_consequence": "Exact row to exact numbered ontology; no generic ingredient alias release",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-mkp",
+      "case_ids": [
+        "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation MKP medium (MediaDive1895 solution6635). Source solution6635 is the MKP base; HS-RFB solution6636 separately combines MKP, human serum and albumin. Do not infer CMRL1066 stock strength from an unrelated product.",
+      "evidence_ids": [
+        "ROOT-md-1895",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/MKP_Medium_MediaDive1895.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/MKP_Medium_MediaDive1895.yaml",
+        "sha256": "7ed67a8b14363c2c1bcb2942e3b4fddec39177f5acdefe641c64232d8f6849bc"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "ROOT-P-thiamine-stock",
+      "case_ids": [
+        "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+        "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+        "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59",
+        "CM_NAME:78f8c48b757890cfb5c0f5856ac1958e394f3700e65d9e81adf7e49e64384a51"
+      ],
+      "description": "Correction1193: promote existing owner Thiamine Solution (see Medium No. 403). JCM403 and NBRC1321 footnote***** both define10mgthiamineHCl in100ml25mMsodiumphosphatebufferpH3.4, filter sterilized. Their exact stock can share the existing owner; receiving doses do not redefine it. Distinct from0.2%TPP and pure thiamine salts. No component identity or whole-owner release is inferred.",
+      "evidence_ids": [
+        "ROOT-jcm-403",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-OWNER-Thiamine_Solution_See_Medium_No_403",
+        "CHEM-CAP-2caf4cd3f91d0ec5"
+      ],
+      "owner_path": "data/ingredients/unmapped/Thiamine_Solution_See_Medium_No_403.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Thiamine_Solution_See_Medium_No_403.yaml",
+        "sha256": "c035c7e391c02c0fce6e112f4e1491878970414cc9bb0757b53dc567b6cf747f"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": [
+        "ROOT-P-thiamine-stock"
+      ],
+      "destination_owner_path": "data/ingredients/mapped/Thiamine_Solution_See_Medium_No_403.yaml",
+      "cross_author_source_case": "chemicalsauthorownsdecision60; thissingleexistingownerproposalbacksitsfootnote after independentrecipecomparison. Compilerdeduplicates exact shared evidence entry."
+    },
+    {
+      "proposal_id": "R1193-P-atcc1256",
+      "case_ids": [
+        "CM_NAME:5d265df4517518ebb8d12aa059a984c29e9df3348b794d6b1023eaa8b0f4ef5f"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Sulfolobus medium (ATCC1256). Exact ATCC1256 base is specified before ATCC1942/JCM161 additions. DSMZ88 is a comparator, not asserted exact: Allen trace stock specifies cobalt sulfate heptahydrate andHCl whereas ATCC1256 listsCoSO4 without hydration. Preserve the source form.",
+      "evidence_ids": [
+        "ROOT-atcc-1256",
+        "ROOT-atcc-old-2668",
+        "R1193-dsmz-88",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Sulfolobus_Medium_ATCC1256.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Sulfolobus_Medium_ATCC1256.yaml",
+        "sha256": "95d6d9509bfb1841da20b3490c8f0f8a791edb06e22d233f7a12551429402494"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-vfa1130",
+      "case_ids": [
+        "CM_NAME:5e992751cd5fb71cd23d43340581fb8ddd38fdf96fddffce2002a4ef1dedbc44"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation VFA mix (JCM1130). Five-acid neutralized mixture defined byJCM1130 and inherited byJCM1385; differs fromJCM266 four-acid stock. Preserve batch input volumes without asserting a final concentration or volume.",
+      "evidence_ids": [
+        "ROOT-jcm-1130",
+        "ROOT-jcm-1385",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/VFA_Mix_JCM1130.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/VFA_Mix_JCM1130.yaml",
+        "sha256": "48c0270cb7e3db1d76f225d22949b449e2290e69dd44fc164f7e0ea97eabe07c"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-dsmz535",
+      "case_ids": [
+        "CM_NAME:9d2b626c17882f81ff3e211f6d1dce3c6d192d2d6f3d69f2f5bc0120421390d6"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Trypticase soy broth agar (DSMZ535). DSMZ535 base combines30gtrypticasesoybroth and15gagar per1000ml water, pH7.3;535a adds5%blood. Existing UNMAPPED0557 TrypticaseSoyAgar originates MediaDive1617 and includes currentJCM27 Nissui40g prepared-product occurrences. No exact product equivalence is proven; retain existing general product and distinct DSMZ535 preparation. Named broth vendor alternatives remain source-defined; no molecular identity assigned.",
+      "evidence_ids": [
+        "ROOT-dsmz-535",
+        "ROOT-dsmz-535a",
+        "R1193-jcm-27",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Trypticase_Soy_Broth_Agar_DSMZ535.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Trypticase_Soy_Broth_Agar_DSMZ535.yaml",
+        "sha256": "67eb3d24df9dbeafa8e9ebb1be1de9ed010ebd759dc37bf7f44364947873f31e"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-wolfe470",
+      "case_ids": [
+        "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+        "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+        "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (JCM470). JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367 and837. Variable MnSO4·xH2O stays a named unresolved component; this does not prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence, not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible quantities/components.",
+      "evidence_ids": [
+        "ROOT-jcm-470",
+        "ROOT-jcm-1367",
+        "ROOT-jcm-837",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_JCM470.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Wolfe_Mineral_Elixir_JCM470.yaml",
+        "sha256": "bb694b952b38b4e6759fa0e154349d416f3c1687dd849a86ea099350e2140f36"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": [],
+      "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (JCM470). JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367 and837. Variable MnSO4·xH2O stays a named unresolved component; this does not prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence, not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible quantities/components. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+    },
+    {
+      "proposal_id": "R1193-P-wolfe1190",
+      "case_ids": [
+        "CM_NAME:b2206bd404d0663bb8b53a5bbeadca3912777e5eaac7fac5735853cf075a5bd8"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Wolfe's modified mineral elixir (ATCC1190). ATCC1190/1191 elixir has NTA/cobalt nitrate, explicitanhydrousCaCl2/alum/selenite andMnSO4monohydrate. Existing CultureBotHT Modified_Wolfes_Minerals has different salts/list; do not overwrite or duplicate its identity.",
+      "evidence_ids": [
+        "ROOT-atcc-1190",
+        "ROOT-atcc-1191",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Wolfes_Modified_Mineral_Elixir_ATCC1190.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Wolfes_Modified_Mineral_Elixir_ATCC1190.yaml",
+        "sha256": "34829a191c23bb59c2c384cf3002394356e27cbd4f9b60bca56834790c63aaf2"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-wolfe221",
+      "case_ids": [
+        "CM_NAME:dcab813086c94d8ff8307cecf995687500ab798e21fdd3568aaf6fa1e352b959"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Wolfe's modified mineral elixir (JCM221). JCM221 NTA/cobalt nitrate preparation preserves its variable manganese hydrate and unspecified calcium/alum/selenite hydration. No exact cross-source equivalence toATCC1190 or existingCultureBotHT stock is asserted; source whole-preparation identity is supported.",
+      "evidence_ids": [
+        "ROOT-jcm-221",
+        "ROOT-atcc-1190",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Wolfes_Modified_Mineral_Elixir_JCM221.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Wolfes_Modified_Mineral_Elixir_JCM221.yaml",
+        "sha256": "e36446b603771c5f321168fc7c96fbffd791a7bdf447f4a5cd5c33544cfa0f58"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-wolfe792",
+      "case_ids": [
+        "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source assertion. No generic Wolfe elixir alias may resolve both formulations globally.",
+      "evidence_ids": [
+        "ROOT-dsmz-792",
+        "ROOT-dsmz-1083",
+        "ROOT-dsmz-792b",
+        "ROOT-dsmz-1092",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+        "sha256": "5d8c32c0b7ddbeb39796039ff776a82e0ea435525a9307d1e955d7c00ebd4f9f"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": [],
+      "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source assertion. No generic Wolfe elixir alias may resolve both formulations globally. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+    },
+    {
+      "proposal_id": "R1193-P-atcc1490",
+      "case_ids": [
+        "CM_NAME:b40e681314d4d8cf5e8a9ecee4683f00eefa5b98eecf3d298c28e7e6ca320b81"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Modified chopped meat broth (ATCC1490). Source-supported broth branch with meat and filtrate retained. Optional20gagar is not included in the broth identity. ATCC1490 referenced as a base by bothTOGO variants; their addedcarbohydrates/rumen orformate/fumarate remainoutsidebase. Source rawATCC1490 medium label is conditional on broth branch; no release until receiving form is confirmed.",
+      "evidence_ids": [
+        "ROOT-atcc-1490",
+        "ROOT-togo-api-M2574",
+        "ROOT-togo-api-M2618",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Modified_Chopped_Meat_Broth_ATCC1490.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Modified_Chopped_Meat_Broth_ATCC1490.yaml",
+        "sha256": "2beb9e9de07e720768a6086c9c1221c868a5ffe0d13ce03403a056eb6f6dff63"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-hs",
+      "case_ids": [
+        "CM_NAME:cfd2009dbbaa79c954caacaa0854daa3dced9f602838983f41830c3a9eb56a80"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation HS medium base (TOGO M2643). TOGO M2643 provides an explicit HS base block;125mMmethanol and40mMacetate are lateradditions. Sourcequalifiedbase does not require a universal HS-name alias or componentCURIEs. Originalpaperlink is retained as provenance, not claimed inspectedfulltext.",
+      "evidence_ids": [
+        "ROOT-togo-api-M2643",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/HS_Medium_Base_TOGO_M2643.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/HS_Medium_Base_TOGO_M2643.yaml",
+        "sha256": "26714c2ad63d40a4a65a3106d32eff9e1c6fe2360ffe429374c96c062f5ff05e"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-m2sgc",
+      "case_ids": [
+        "CM_NAME:d0bb0479aee40433f476c3a75acf0b96288d9f508b1a05a614be6b3dee1fe57f"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation M2SGC broth (TOGO M2789). TOGO source defines modifiedMed2 broth withoutlactate and uses bothM2SGC/M2GSC spellings. Sourcecomment lists amountsper100ml; conflictingwaterblock is preserved ratherthan summedwith30mlrumen. Antibiotics and gas conditions are separate. Whole source-definedpreparation is supported; waterquantity detail remains unresolved.",
+      "evidence_ids": [
+        "ROOT-togo-api-M2789",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/M2SGC_Broth_TOGO_M2789.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/M2SGC_Broth_TOGO_M2789.yaml",
+        "sha256": "d1975e13f69e54c64b377c5af91b715c189f8f7a1392c8a52edd008efc0ce868"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-jcm521",
+      "case_ids": [
+        "CM_NAME:d30e559bdd7d72c71092ab0c7b17de05e06afbcea9039a89b9ee22fee7f337bc"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Mineral medium base (JCM521). JCM521 basalmineral table has fiveinputs andpH7.2–7.4. Vitamins, pyruvate, bicarbonate, decane and reducingstocks addedsubsequently are outsidebase; genericMineralmedium is not a universal alias.",
+      "evidence_ids": [
+        "ROOT-jcm-521",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Mineral_Medium_Base_JCM521.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Mineral_Medium_Base_JCM521.yaml",
+        "sha256": "3e3b1df74089d81128b34c3ad8d932f600948b43e1b627b5b0e2fde04aaa7206"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-nnm",
+      "case_ids": [
+        "CM_NAME:d87b22b5a7c87bc715c392270bfc7b8393245d1c922bbacd7829f0cc126adef1"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Non-Nutrient Medium carrier (MediaDive P4). The exact user-contributedMediaDiveP4 carrier supplies32listedsolid/stockinputs andwaterq.s.1L. P5 explicitly uses thiscarrier; its21stockoccurrences remainseparate. CatalogTiCl3stockdilution andprintedµlversusml are preservedverbatim; no purewater mapping. ExistingCultureMech010434 recipe link is retained as sourcecontext, not a MIMidentifier.",
+      "evidence_ids": [
+        "ROOT-md-P4",
+        "ROOT-md-P5",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Non_Nutrient_Medium_Carrier_MediaDive_P4.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Non_Nutrient_Medium_Carrier_MediaDive_P4.yaml",
+        "sha256": "9fdcb4d49771ec0f184b9c2edb59a2bb930de79977368149949861730ccb5139"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-mediumd",
+      "case_ids": [
+        "CM_NAME:ebbd25a1e14a91510208c5680207b415dbbfbeb146e3037e00a48c6a8c9833c4"
+      ],
+      "description": "Correction1193: propose distinct source-qualified preparation Medium D base (TOGO M2241). TOGO M2241 defines1xMediumD base andseparate10xpreparation/dilution; DHaddsHEPES1.2g/L. Exactbaseamounts come fromTOGO, notNIES20xstock orDSMZ86 enrichedmedium (tryptone/yeast) or roundedcommercialrecipe. Nestedstock chemical grounding and bufferaddition remainseparate fromwholebaseidentity.",
+      "evidence_ids": [
+        "ROOT-togo-api-M2241",
+        "R1193-dsmz-86",
+        "R1193-nies-d-stock",
+        "R1193-owner-preflight",
+        "R1193-current-occurrence-comparison",
+        "R1193-final-owner-preflight"
+      ],
+      "owner_path": "data/ingredients/mapped/Medium_D_Base_TOGO_M2241.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Medium_D_Base_TOGO_M2241.yaml",
+        "sha256": "05b4453211da9bb79b858f32431f57764873e07c9c4405634872f9b797293904"
+      },
+      "identity_consequence": "Source-qualified whole preparation registry identity",
+      "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+      "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+      "replaces_proposal_ids": []
+    },
+    {
+      "proposal_id": "R1193-P-sludge119",
+      "case_ids": [
+        "CM_NAME:7f602708682a62d42a5d5fc0095277fd0052a25f2a6f8dd82b10486deb90b429"
+      ],
+      "description": "DSMZ119 prepares sludgefluid by incubating4gyeastextract in1Lanaerobicdigester sludge at37C24h, centrifuging13000g, thenautoclaving supernatant. Rawassignedlabel explicitly saysmedium119. Currentgenericowneroccurrences includeDSMZ119/TOGO3148 andJCM872 plusTOGO2596; this boundedsourcealias does not assert alluse the119process orquantities.",
+      "evidence_ids": [
+        "ROOT-dsmz-119",
+        "R1193-OWNER-Sludge_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-sludge"
+      ],
+      "owner_path": "data/ingredients/mapped/Sludge_fluid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "45eed06b9f478903bfb4849c19b5656aca154018619b1db3d08152b5212e489c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Sludge_fluid.yaml",
+        "sha256": "a31ecf89c58887e0fb319ea0e7005a32f44b6999acd7fb57fe23ce4e9b6f8191"
+      },
+      "identity_consequence": "Existingprocessedbiologicalfluididentityretained; exactsourcequalifieradded",
+      "predicate_consequence": "Noidentityorpredicatechange; boundedaliasnotwholeownerapproval",
+      "publication_obligations": "Retain allholds; independentlyreviewallotherowneroccurrencesbeforeintegratedrelease."
+    },
+    {
+      "proposal_id": "R1193-P-clarifiedrumen266",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "description": "JCM1423/1424 explicitly use clarifiedrumenfluid fromJCM266, whose process heats120C15min then25000g15min andcollects supernatant. Add the exactsourcequalifiedrawlabel to existingMICRO0000520 owner; do not redefineallclarifiedrumenfluid as thisprotocol or merge it with unprocessedUBERONrumenfluid.",
+      "evidence_ids": [
+        "ROOT-jcm-266",
+        "R1193-OWNER-Clarified_rumen_fluid",
+        "R1193-current-full-owner-contexts",
+        "R1193-current-occurrence-comparison",
+        "R1193-ols-clarified-rumen"
+      ],
+      "owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/root/proposed/Clarified_rumen_fluid.yaml",
+        "sha256": "64c2d1ed867ad56163c410403f52bc357234476b52a7e1030e4c599df34bfa49"
+      },
+      "identity_consequence": "Existingprocessedbiologicalfluididentityretained; exactsourcequalifieradded",
+      "predicate_consequence": "Noidentityorpredicatechange; boundedaliasnotwholeownerapproval",
+      "publication_obligations": "Retain allholds; independentlyreviewallotherowneroccurrencesbeforeintegratedrelease."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+id: CultureMech:004612
+name: diethyl_phosphonate_medium
+original_name: DIETHYL PHOSPHONATE MEDIUM
+category: bacterial
+medium_type: DEFINED
+composition_type: DEFINED
+physical_state: SOLID_AGAR
+ph_value: 7.4
+media_term:
+  preferred_term: KOMODO Medium 239
+  term:
+    id: komodo.medium:239
+    label: DIETHYL PHOSPHONATE MEDIUM
+notes: 'Source: KOMODO ModelSEED | ID: 239 | DSMZ Medium: 239 (mediadive.medium:239)
+  | Aerobic: No'
+ingredients:
+- preferred_term: KCl
+  term:
+    id: CHEBI:32588
+    label: potassium chloride
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:32588
+    label: potassium chloride
+- preferred_term: MgSO4 x 7 H2O
+  term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31795
+    label: magnesium sulfate heptahydrate
+- preferred_term: NH4Cl
+  term:
+    id: CHEBI:31206
+    label: ammonium chloride
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:31206
+    label: ammonium chloride
+- preferred_term: Tris(hydroxymethyl)methylamine
+  term:
+    id: CHEBI:9754
+    label: tris
+  concentration:
+    value: '6'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:9754
+    label: tris
+- preferred_term: p-Hydroxybenzoate
+  term:
+    id: CHEBI:17879
+    label: 4-hydroxybenzoate
+  concentration:
+    value: '0.75'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17879
+    label: 4-hydroxybenzoate
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '12'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Diethyl phosphonate
+  concentration:
+    value: '100'
+    unit: G_PER_L
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:02.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 239'
+- timestamp: '2026-02-03T11:19:03.419332'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 239
+- timestamp: '2026-03-13T06:19:27.676354Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:004612'
+- timestamp: '2026-03-17T06:30:06.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:42.933867+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "DIETHYL PHOSPHONATE MEDIUM" to "diethyl_phosphonate_medium"
+    for consistent matching
+- timestamp: '2026-06-05T07:40:21.848798+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 6 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:46:44.440669+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.
+parent_media:
+  path: data/normalized_yaml/bacterial/diethyl_phosphonate_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:001341
+  name: diethyl_phosphonate_medium
+  notes: KOMODO record explicitly cites DSMZ Medium 239; one unlinked DSMZ parent
+    record exists and the local physical state, pH, ingredient, and concentration
+    signatures match exactly.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- KOMODO record is an exact source duplicate of DSMZ Medium 239; local ingredient
+  and concentration signatures match.

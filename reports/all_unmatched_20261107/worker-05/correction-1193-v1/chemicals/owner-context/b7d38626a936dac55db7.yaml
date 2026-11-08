@@ -1,0 +1,144 @@
+id: CultureMech:001029
+name: 948_oxoid_nutrient_broth_with_additonal_salt
+original_name: 948 (OXOID NUTRIENT BROTH) WITH ADDITONAL SALT
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 7.2
+media_term:
+  preferred_term: DSMZ Medium 1551
+  term:
+    id: mediadive.medium:1551
+    label: 948 (OXOID NUTRIENT BROTH) WITH ADDITONAL SALT
+notes: 'Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1551.pdf'
+ingredients:
+- preferred_term: Nutrient broth (Oxoid)
+  concentration:
+    value: '13'
+    unit: G_PER_L
+  source: DSMZ Medium 1551
+  notes: DSMZ Medium 1551 lists 13 g of the Oxoid nutrient broth product; the recipe
+    also discloses the dehydrated product composition.
+- preferred_term: NaCl
+  concentration:
+    value: '17.5'
+    unit: G_PER_L
+  source: DSMZ Medium 1551
+  notes: DSMZ Medium 1551 lists 17.5 g additional NaCl outside the Oxoid product.
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Distilled water
+  concentration:
+    value: '1000'
+    unit: ML_PER_L
+  source: DSMZ Medium 1551
+  notes: DSMZ Medium 1551 lists 1000 mL distilled water for the final medium.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Lab-Lemco beef extract
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  source: DSMZ Medium 1551 / Oxoid nutrient broth
+  notes: Oxoid nutrient broth contributes 1 g/L Lab-Lemco beef extract.
+  term:
+    id: FOODON:03302088
+    label: beef extract
+- preferred_term: Yeast extract
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  source: DSMZ Medium 1551 / Oxoid nutrient broth
+  notes: Oxoid nutrient broth contributes 2 g/L yeast extract.
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+- preferred_term: Peptone
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  source: DSMZ Medium 1551 / Oxoid nutrient broth
+  notes: Oxoid nutrient broth contributes 5 g/L peptone.
+  term:
+    id: MICRO:0000178
+    label: peptone
+- preferred_term: NaCl
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  source: DSMZ Medium 1551 / Oxoid nutrient broth
+  notes: Oxoid nutrient broth contributes 5 g/L NaCl.
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: Dissolve 13 g Oxoid nutrient broth and 17.5 g NaCl in 1000 mL distilled
+    water.
+- step_number: 2
+  action: ADJUST_PH
+  description: Adjust pH to 7.2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-26T17:53:14.811730Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: DSMZ, ID: 1551'
+- timestamp: '2026-03-13T03:09:16.720066Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 1 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:00.577267Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:001029'
+- timestamp: '2026-03-17T06:30:24.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:12.207822+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "948 (OXOID NUTRIENT BROTH) WITH ADDITONAL SALT" to
+    "948_oxoid_nutrient_broth_with_additonal_salt" for consistent matching
+- timestamp: '2026-06-05T07:40:15.971512+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_dsmz_1551_687_score15.py
+  action: RESOLVED_DSMZ_1551_687_SCORE15
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1551.pdf
+  notes: DSMZ Medium 1551 lists 13 g Nutrient broth (Oxoid), 17.5 g additional NaCl,
+    1000 mL distilled water, and pH 7.2; the Oxoid product composition contributes
+    1 g Lab-Lemco, 2 g yeast extract, 5 g peptone, and 5 g NaCl per liter.
+- timestamp: '2026-09-22T00:03:26.686152+00:00'
+  curator: repair_rejected_peptone_groundings.py
+  action: CORRECTED_REJECTED_PEPTONE_GROUNDING
+  notes: 'CultureMech #484. /ingredients/5/term/id: Peptone FOODON:03302071 -> MICRO:0000178
+    (replace_term). Reviewed identities: https://github.com/CultureBotAI/MediaIngredientMech/tree/24562493919391df4468a4285b7c997960cc8868.
+    Publication resolver: MIM label index 9f09e4fb97fb0e6cbbd6f25baca40b36512adb88.
+    MediaDive source IDs and concentrations preserved.'
+kg_microbe_match: mediadive.medium:74
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1551.pdf

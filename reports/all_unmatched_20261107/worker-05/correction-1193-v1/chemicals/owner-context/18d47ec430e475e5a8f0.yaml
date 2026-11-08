@@ -1,0 +1,76 @@
+id: CultureMech:013078
+preferred_term: Solution E
+term:
+  id: mediadive.solution:401
+  label: Solution E
+composition:
+- preferred_term: Tris-HCl buffer
+  concentration:
+    value: '553.8461538461538'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:285
+    label: Tris-HCl buffer
+  chebi_term:
+    id: CHEBI:9754
+    label: tris
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Na3-NTA x H2O
+  concentration:
+    value: '369.2307692307692'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1482
+    label: Na3-NTA x H2O
+- preferred_term: TiCl3
+  concentration:
+    value: '6.34615'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:1142
+    label: TiCl3
+preparation_notes: 'Sterilize by filtration.
+
+
+  Original volume: 13 mL'
+curation_history:
+- timestamp: '2026-06-14T07:03:53.728571+00:00'
+  curator: kg-fallback-cleanup-v1.0
+  action: Cleaned residual kg_fallback chebi_terms
+  notes: 'Cleaned 2 low-confidence kg_fallback chebi_term(s): 0 re-grounded via OAK, 2 de-grounded (unverifiable id).'
+- timestamp: '2026-03-13T06:20:29.264684Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:013078'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:33.969422'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:18.859772'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:56.836506+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:29.952153+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 1 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial

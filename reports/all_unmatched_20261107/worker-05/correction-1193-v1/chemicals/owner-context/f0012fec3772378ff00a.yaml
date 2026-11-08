@@ -1,0 +1,122 @@
+id: CultureMech:008765
+name: nutrient_broth_no_2
+original_name: Nutrient broth No.2
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_range:
+  min: 7.3
+  max: 7.7
+ingredients:
+- preferred_term: Lab-Lemco powder
+  concentration:
+    value: '10.0'
+    unit: G_PER_L
+  source: TOGO M2170 / NBRC Medium 1559
+  notes: TOGO M2170 and NBRC Medium 1559 list 10.0 g/L Lab-Lemco powder.
+  term:
+    id: FOODON:03302088
+    label: Beef extract
+- preferred_term: Peptone
+  concentration:
+    value: '10.0'
+    unit: G_PER_L
+  source: TOGO M2170 / NBRC Medium 1559
+  notes: TOGO M2170 and NBRC Medium 1559 list 10.0 g/L Peptone.
+  term:
+    id: MICRO:0000178
+    label: Peptone
+- preferred_term: Sodium chloride
+  concentration:
+    value: '5.0'
+    unit: G_PER_L
+  source: TOGO M2170 / NBRC Medium 1559
+  notes: TOGO M2170 and NBRC Medium 1559 list 5.0 g/L Sodium chloride.
+  term:
+    id: CHEBI:26710
+    label: sodium chloride
+  mediaingredientmech_chebi_term:
+    id: CHEBI:26710
+    label: sodium chloride
+- preferred_term: Agar (if needed)
+  concentration:
+    value: '15.0'
+    unit: G_PER_L
+  source: TOGO M2170 / NBRC Medium 1559
+  notes: TOGO M2170 and NBRC Medium 1559 list 15.0 g/L Agar if needed for solid medium.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+  physicochemical_roles:
+  - SOLIDIFYING_AGENT
+- preferred_term: Distilled water
+  concentration:
+    value: '1000.0'
+    unit: ML_PER_L
+  source: TOGO M2170 / NBRC Medium 1559
+  notes: TOGO M2170 and NBRC Medium 1559 list 1 L Distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M2170
+  term:
+    id: TOGO:M2170
+    label: Nutrient broth No.2
+notes: 'TOGO M2170 imports NBRC Medium 1559 Nutrient broth No. 2: 10 g Lab-Lemco powder,
+  10 g peptone, 5 g sodium chloride, 15 g agar if needed, and 1 L distilled water;
+  pH is 7.5 +/- 0.2.'
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Adjust pH to 7.5 +/- 0.2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:59.199998Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M2170'
+- timestamp: '2026-01-28T19:48:38.602575Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:20:00.132790Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008765'
+- timestamp: '2026-03-17T06:30:47.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:18.793423+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Nutrient broth No.2" to "nutrient_broth_no_2" for consistent
+    matching
+- timestamp: '2026-06-05T07:41:40.184759+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-12T00:00:00-07:00'
+  curator: repair_nutrient_broths_score15.py
+  action: RESOLVED_TOGO_M2170_NBRC_1559
+  source: https://togomedium.org/medium/M2170; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1559
+  notes: 'TOGO M2170 imports NBRC Medium 1559 Nutrient broth No. 2: 10 g Lab-Lemco
+    powder, 10 g peptone, 5 g sodium chloride, 15 g agar if needed, and 1 L distilled
+    water; pH is 7.5 +/- 0.2.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+references:
+- reference: https://togomedium.org/medium/M2170
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1559

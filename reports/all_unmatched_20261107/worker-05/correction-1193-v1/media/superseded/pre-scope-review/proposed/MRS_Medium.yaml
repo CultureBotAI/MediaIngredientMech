@@ -1,0 +1,143 @@
+identifier: kgmicrobe.ingredient:mrs_medium_jcm1
+preferred_term: MRS medium (JCM1)
+synonyms:
+- synonym_text: MRS medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: MRS medium (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: MRS medium (Scharlau Chemie)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1626); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:03:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named MRS medium formulation and left unmapped rather than
+    identity-mapping to a single component or generic medium parent.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/MRS_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended ontology decision:** retain the record
+    as `UNMAPPED`. Use the label-only candidate **“de Man–Rogosa–Sharpe medium”**
+    until a stable resource is verified to represent the formulation itself. Do **not**
+    use `skos:exactMatch` to a generic culture-medium parent. With no verified target
+    CURIE, the safest action is **no SSSOM row**. If a project requires non-identity
+    class grounding, a ver No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''MRS medium (Difco)'' (x1 CultureMech mentions); ''MRS medium
+    (Scharlau Chemie)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Original owner1626 explicitly references JCM1, and receivingJCM111 calls
+    this base before pH5.5adjustment. JCM1 gives11one-levelinputs and supports source-defined
+    whole formulation. Existing Difco/Scharlau aliases and neighboring MRS records
+    are retained as unapproved comparison scopes under inherited holds; no exact commercial-product
+    equivalence or merge is claimed. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1626); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named MRS medium formulation pending
+  formulation-specific curation. Correction1193: Original owner1626 explicitly references
+  JCM1, and receivingJCM111 calls this base before pH5.5adjustment. JCM1 gives11one-levelinputs
+  and supports source-defined whole formulation. Existing Difco/Scharlau aliases and
+  neighboring MRS records are retained as unapproved comparison scopes under inherited
+  holds; no exact commercial-product equivalence or merge is claimed.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mrs_medium_jcm1
+  ontology_label: MRS medium (JCM1)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1
+    notes: Original owner1626 explicitly references JCM1, and receivingJCM111 calls
+      this base before pH5.5adjustment. JCM1 gives11one-levelinputs and supports source-defined
+      whole formulation. Existing Difco/Scharlau aliases and neighboring MRS records
+      are retained as unapproved comparison scopes under inherited holds; no exact
+      commercial-product equivalence or merge is claimed.
+components:
+- component_name: Casein peptone tryptic digest
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Beef extract BD-Difco
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Yeast extract BD-Difco
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Tween80
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Diammonium citrate
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MnSO4.xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '.05'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1
+    notes: Source-batch masses as printed, manganese variable hydration retained.
+      Distilled water1L is added as source input; no measured final volume inferred.

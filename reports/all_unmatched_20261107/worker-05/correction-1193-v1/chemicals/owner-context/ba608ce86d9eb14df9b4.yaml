@@ -1,0 +1,88 @@
+id: CultureMech:014151
+preferred_term: Main sol. 257
+term:
+  id: mediadive.solution:523
+  label: Main sol. 257
+composition:
+- preferred_term: Yeast extract
+  concentration:
+    value: '3'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:16
+    label: Yeast extract
+- preferred_term: Peptone
+  concentration:
+    value: '0.6'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:1
+    label: Peptone
+- preferred_term: Tris-HCl buffer
+  concentration:
+    value: '1000'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:285
+    label: Tris-HCl buffer
+  chebi_term:
+    id: CHEBI:9754
+    label: tris
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: "Preparation of double layered agar plates:<p>\r\n<b>Bottom layer:</b>\
+  \ Dissolve 12.0 g Bacto agar in 900 ml distilled water and autoclave. After cooling\
+  \ to 60°C add 100 ml of sterile YP medium (autoclaved at 121°C for 15 min) and pour\
+  \ plates. Dry plates at room temperature for 2 - 3 days .<p>\r\n<b>Top layer:</b>\
+  \ Grow prey bacterium on agar slants using medium 54. Prepare 5 ml aliquots of 0.6%\
+  \ Bacto agar in distilled water and autoclave in test tubes. After cooling to 45°C\
+  \ in a water bath add 0.5 ml sterile YP medium (autoclaved at 121°C for 15 min)\
+  \ and 0.5 ml cell suspension of host organism, mix and pour top layer. For the top\
+  \ layer of one plate use one 24 h old agar slant culture and wash off grown cells\
+  \ in 0.5 ml sterile water.<p>\nInoculate double layer plates the same day when prepared."
+curation_history:
+- timestamp: '2026-03-13T06:20:35.943211Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:014151'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:41.442558'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:15.666133'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:04:03.804989+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:36.978523+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 1 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:49:08.627538+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-06-10T06:56:24.604753+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '1 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial

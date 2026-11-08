@@ -1,0 +1,121 @@
+identifier: kgmicrobe.ingredient:czapek_dox_oxoid_cm0095
+preferred_term: Czapek-Dox liquid medium modified (Oxoid CM0095)
+synonyms:
+- synonym_text: Czapek-Dox liquid medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Czapek-Dox Liquid Medium, Modified (OXOID)
+  synonym_type: CATALOG_VARIANT
+  source: NBRC402/1238; JCM49/219
+- synonym_text: Czapek-Dox liquid medium, modified (Oxoid)
+  synonym_type: CATALOG_VARIANT
+  source: NBRC402/1238; JCM49/219
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1610); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Czapek-Dox liquid medium/formulation and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Czapek-Dox_Liquid_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — **Recommended status:
+    `UNMAPPED`.** Retain `ingredient_type: DEFINED_MEDIUM`. The entity’s scope is
+    sufficiently clear, but neither a stable exact ontology identifier nor a single
+    authoritative recipe has been verified. No ontology CURIE was proposed. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:52:12.254602+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Existing source1610 includes JCM49 modified Oxoid Czapek-Dox33.4g and DSMZ1817
+    CC35g. Manufacturer CM0095 identifies the named Oxoid liquid-medium powder and
+    six-part formulation. The35g receiving dose is not silently changed or treated
+    as proof of a different product; generic CC assignment remains source-scope limited
+    pending its unstated catalog. No duplicate modified-Czapek owner is created. Isolated
+    proposal only; whole-owner/source/export holds remain and integration requires
+    separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1610); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Existing source1610 includes JCM49 modified Oxoid Czapek-Dox33.4g
+  and DSMZ1817 CC35g. Manufacturer CM0095 identifies the named Oxoid liquid-medium
+  powder and six-part formulation. The35g receiving dose is not silently changed or
+  treated as proof of a different product; generic CC assignment remains source-scope
+  limited pending its unstated catalog. No duplicate modified-Czapek owner is created.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:czapek_dox_oxoid_cm0095
+  ontology_label: Czapek-Dox liquid medium modified (Oxoid CM0095)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0095-V2.pdf
+    notes: Existing source1610 includes JCM49 modified Oxoid Czapek-Dox33.4g and DSMZ1817
+      CC35g. Manufacturer CM0095 identifies the named Oxoid liquid-medium powder and
+      six-part formulation. The35g receiving dose is not silently changed or treated
+      as proof of a different product; generic CC assignment remains source-scope
+      limited pending its unstated catalog. No duplicate modified-Czapek owner is
+      created.
+components:
+- component_name: Sodium nitrate
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium glycerophosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Ferrous sulphate
+  reference_scope: UNMAPPED
+  concentration_value: '.01'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium sulphate
+  reference_scope: UNMAPPED
+  concentration_value: '.35'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sucrose
+  reference_scope: UNMAPPED
+  concentration_value: '30'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0095-V2.pdf
+    notes: Manufacturer typical formula at33.4g/L standard reconstitution; supplier
+      source names preserved, unspecified salt hydration and glycerophosphate form
+      remain UNMAPPED.
+supplied_form:
+- name: Czapek-Dox Liquid Medium Modified
+  form: powder
+  supplier: Oxoid
+  catalog_number: CM0095

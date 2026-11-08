@@ -1,0 +1,13 @@
+The frozen maintained `data/ingredients/mapped/Marine_Broth_2216.yaml` gives the commercial broth magnesium chloride 8.8 g/L and sodium sulfate 3.24 g/L. Those are the manufacturer's **agar** entries. The separate **broth** formula specifies magnesium chloride 5.9 g/L and magnesium sulfate 3.24 g/L.
+
+Primary evidence: [manufacturer-authored Difco manual, Marine Agar 2216 / Marine Broth 2216](https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf), second page, distinct formula columns/sections. Its broth directions use 37.4 g powder/L; the agar directions use 55.1 g/L. Removing agar from a scratch agar recipe does not establish the supplied commercial broth formula.
+
+Worker05 correction to #1193 captures the exact manual bytes at `correction-1193-v1/media/captures/direct-15.body`, SHA256 `de2504598b1133074ba2239c045958e9a6564dc1b2a2d8f13ab4bac99233199f`, original access `2026-11-08T05:59:16.335827+00:00`. The source-specific CM and KG cases are retained separately; neither receiving supplements nor a scratch recipe are silently equated to the commercial product.
+
+Proposed follow-up: reconcile the existing owner through isolated proposal `M1193-P-MARINE2216`, preserving history and distinct recipe variants. Original frozen base `e000d66dd26ab053e9b17ce7bf8d3c873c3dde99`; before-owner SHA256 `adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216`; proposed payload SHA256 `b7c5a00a78f1c6120e52ac3d88eb16833be86df317680d593e53f21047418abd`. The correction artifacts will be published on the existing worker05 branch `review/all-unmatched-w05-source-review-20261107` under `reports/all_unmatched_20261107/worker-05/correction-1193-v1/`.
+
+This owner also has worker03 proposal `b-proposal-marine-aliases`; the coordinator must reconcile both exact proposals before applying either. No maintained data, SSSOM, or release selector was changed by this finding. Existing source/owner/export holds remain.
+
+Deduplication: all-state repository searches for Marine and for magnesium + broth found #1196 (worker03 proposal-review workflow tracking), #504/#414 (historical duplicate ownership), and unrelated reports. None in those results covers these commercial broth component quantities/identities. This is a distinct maintained formulation defect; #1193 remains the coordinator's separate worker completeness finding.
+
+Independent confirmation: `/root/materials_research` freshly checked the maintained record and manufacturer manual page352 during its all60-case media skeptical review. It confirmed the two distinct ingredient/quantity errors and the worker03 reconciliation requirement. The final exact review receipt is preserved in the successor evidence bundle.

@@ -1,0 +1,45 @@
+{
+  "finding_id": "MATERIALS-ROOT1193-F02",
+  "reviewer": "/root/materials_research",
+  "created_at": "2026-11-08T05:52:39.916670+00:00",
+  "reviewed_inputs": {
+    "decisions.json": "0a461b89f5d623aa493a7fb4949edfece6d667e232a9fcc1fe492ee4f0ca2c95",
+    "evidence.json": "c490efbf2ce3294b376a9c69fa124b49d02c540e1a988ee5d990af458ad2ea7e",
+    "proposals.json": "d4490c3a6023ce3c57f492272a146b44318e3ad62964a7d12ac74e81c5414c33"
+  },
+  "status": "open",
+  "severity": "blocking",
+  "finding": "MICRO0001830 definition source gives0.015% final sulfide and refers DSMZ27; current DSMZ87 gives0.03% and self-contained3g/100ml stock. Claimed full recipe equality and exact identity need version reconciliation; use distinct local source preparation pending resolution.",
+  "exact_initial_payloads": [
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-dsmz87",
+        "case_ids": [
+          "CM_NAME:41153f03ccf9592cfed6576e11b8e154da72287ee303c764dfd8faa676389b29"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Chloroflexus medium modified (DSMZ87). MICRO0001830 full definition-source agrees with DSMZ87; numbered87a adds vitaminCA to this base. Listed1050ml water is preserved, not silently normalized to one liter. Whole recipe pH8.2; optional later yeast feeding omitted.",
+        "evidence_ids": [
+          "ROOT-dsmz-87",
+          "ROOT-dsmz-87a",
+          "R1193-micro-1830",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Chloroflexus_Medium_Modified_DSMZ87.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Chloroflexus_Medium_Modified_DSMZ87.yaml",
+          "sha256": "0891728163c81538cc91d4f35caabbc8159216048882941188231dee1269c233"
+        },
+        "identity_consequence": "Exact numbered ontology identity",
+        "predicate_consequence": "Exact row to exact numbered ontology; no generic ingredient alias release",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": []
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: MICRO:0001830\npreferred_term: Chloroflexus medium modified (DSMZ87)\nmapping_status: MAPPED\ningredient_type: NAMED_MEDIUM\nontology_mapping:\n  ontology_id: MICRO:0001830\n  ontology_label: DSMZ Medium 87\n  ontology_source: MICRO\n  mapping_quality: EXACT_MATCH\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf\n    notes: MICRO0001830 full definition-source agrees with DSMZ87; numbered87a adds\n      vitaminCA to this base. Listed1050ml water is preserved, not silently normalized\n      to one liter. Whole recipe pH8.2; optional later yeast feeding omitted. Whole\n      supplied preparation identified independently of component CURIE availability.\n      Existing owner and exact named/numbered ontology searches are captured in successor\n      evidence.\nnotes: ' Correction1193: MICRO0001830 full definition-source agrees with DSMZ87; numbered87a\n  adds vitaminCA to this base. Listed1050ml water is preserved, not silently normalized\n  to one liter. Whole recipe pH8.2; optional later yeast feeding omitted. Isolated\n  proposal only. All inherited source-case, owner and export holds remain. Raw generic\n  source labels are qualified to these source occurrences and confer no global resolving\n  synonym or release approval. No optional later supplement or atmosphere is inferred\n  as an ingredient.'\nsynonyms:\n- synonym_text: Medium 87\n  synonym_type: RAW_TEXT\n  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: Yeast extract\n  reference_scope: UNMAPPED\n  source: 1 g\n- component_name: Glycyl-glycine\n  reference_scope: UNMAPPED\n  source: 1 g\n- component_name: Na2HPO4\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 0.1 g\n- component_name: MgSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 0.1 g\n- component_name: KNO3\n  reference_scope: UNMAPPED\n  source: 0.1 g\n- component_name: NaNO3\n  reference_scope: UNMAPPED\n  source: 0.5 g\n- component_name: NaCl\n  reference_scope: UNMAPPED\n  source: 0.1 g\n- component_name: CaCl2\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 0.05 g\n- component_name: Fe(III) citrate solution (0.1 g/100 ml)\n  reference_scope: UNMAPPED\n  source: 5 ml\n- component_name: Trace element solution SL-6\n  reference_scope: UNMAPPED\n  source: 1 ml\n- component_name: Distilled water\n  reference_scope: UNMAPPED\n  source: 1050 ml listed\n- component_name: Neutralized sulfide solution (DSMZ27)\n  reference_scope: UNMAPPED\n  source: 1 ml per90 ml medium after autoclaving\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf\n    source_record: Chloroflexus medium modified (DSMZ87)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. MICRO0001830 full definition-source\n      agrees with DSMZ87; numbered87a adds vitaminCA to this base. Listed1050ml water\n      is preserved, not silently normalized to one liter. Whole recipe pH8.2; optional\n      later yeast feeding omitted.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Chloroflexus\n    medium modified (DSMZ87). MICRO0001830 full definition-source agrees with DSMZ87;\n    numbered87a adds vitaminCA to this base. Listed1050ml water is preserved, not\n    silently normalized to one liter. Whole recipe pH8.2; optional later yeast feeding\n    omitted. Isolated proposal; native integration and all inherited holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    }
+  ]
+}

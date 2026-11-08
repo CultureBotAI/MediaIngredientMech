@@ -1,0 +1,130 @@
+id: CultureMech:006440
+name: capnocytophaga_ii_medium
+original_name: CAPNOCYTOPHAGA II medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_range:
+  min: 7.6
+  max: 7.8
+media_term:
+  preferred_term: KOMODO Medium 779
+  term:
+    id: komodo.medium:779
+    label: CAPNOCYTOPHAGA II medium
+notes: 'Source: KOMODO ModelSEED | ID: 779 | DSMZ Medium: 779 (mediadive.medium:779)
+  | Aerobic: Yes'
+ingredients:
+- preferred_term: Lab-Lemco beef extract
+  concentration:
+    value: '2.4'
+    unit: G_PER_L
+- preferred_term: Proteose peptone no. 3
+  concentration:
+    value: '10'
+    unit: G_PER_L
+- preferred_term: Yeast extract
+  concentration:
+    value: '5'
+    unit: G_PER_L
+- preferred_term: Na2HPO4
+  term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+  concentration:
+    value: '4'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+- preferred_term: Glucose
+  term:
+    id: CHEBI:17234
+    label: glucose
+  concentration:
+    value: '1.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Starch
+  term:
+    id: CHEBI:28017
+    label: starch
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:28017
+    label: starch
+- preferred_term: L-Cysteine HCl x H2O
+  term:
+    id: CHEBI:91248
+    label: L-cysteine hydrochloride hydrate
+  concentration:
+    value: '0.5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:91248
+    label: L-cysteine hydrochloride hydrate
+- preferred_term: Agar
+  term:
+    id: CHEBI:2509
+    label: agar
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  notes: ' (if necessary)'
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Horse blood
+  concentration:
+    value: '50'
+    unit: G_PER_L
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: 2026-01-27T01:15:03.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 779'
+- timestamp: '2026-02-03T11:18:59.082958'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 779
+- timestamp: '2026-03-13T06:19:40.762275Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:006440'
+- timestamp: '2026-03-17T06:29:53.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:58.128609+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "CAPNOCYTOPHAGA II medium" to "capnocytophaga_ii_medium"
+    for consistent matching
+- timestamp: '2026-05-20T06:00:53.771023+00:00'
+  curator: migrate_ph_range.py
+  action: MIGRATED_PH_RANGE
+  notes: 'ph_range ''7.6-7.8'' -> {''min'': 7.6, ''max'': 7.8}'
+- timestamp: '2026-06-05T07:40:26.303456+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 5 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+parent_media:
+  path: data/normalized_yaml/bacterial/capnocytophaga_ii_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:001914
+  name: capnocytophaga_ii_medium
+  notes: KOMODO record states DSMZ Medium 779 provenance and exactly matches the single
+    same-category DSMZ parent signature.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- Same ingredient and concentration signature; KOMODO record copied from the matching
+  DSMZ medium source.

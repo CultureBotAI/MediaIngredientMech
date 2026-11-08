@@ -1,0 +1,64 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:09:54.151574+00:00",
+  "status": "complete",
+  "review_status": "PASS",
+  "open_findings": 0,
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py",
+      "sha256": "5fce1fe989818aee3d99a660edfd2b65e2ead37905e112eaa68ae445b180d820"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_proposals.py",
+      "sha256": "3cf80916f1b0328a592c3bb1e8f73511298cd3b9c87096b7b1cacab3d152d6e9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "fc307fcc539f23bdf5bcda553baccdcdfb16742098788d17d3a60305080ea5ae"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/author_native_review.py",
+      "sha256": "6115b33cc0ca0c8e55a912f0869b236df0188ccfd16a2b327b71736aa4d215c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/owner_dependencies.py",
+      "sha256": "e6d3d1417d7fc24147168141222e14da990ecc6a35f8475f15ccb0100ceb749e"
+    }
+  ],
+  "predecessor_review": {
+    "path": "correction-1193-v1/chemicals/reviews/tooling-independent-review-v2.json",
+    "sha256": "7a9823d3e275b060a8fc95b499bacf189758ced633f79387b4a6e5bc00ef5aac"
+  },
+  "scope": "Narrow addendum for the explicit major-severity proposal ID set. All other AST nodes are identical to the reviewed v2 author helper and the other four helper hashes are unchanged.",
+  "checks": [
+    "Both author scripts parsed; exact AST equality after excluding only MAJOR assignment.",
+    "Every major proposal ID exists in current authored groups.",
+    "Actual proposal descriptions for alias, identifier, concentration/formula and named-medium conflation repairs were read against the explicit set. These open semantic repairs warrant major/P2 follow-up.",
+    "No source approval, finding closure or gate downgrade introduced.",
+    "The nine v2 guard-control results remain applicable because their exact code is unchanged."
+  ],
+  "major_proposal_ids": [
+    "CHEM-C1193-Tris-base-aliases",
+    "CHEM-PROP-tpp-chloride-carryover",
+    "CHEM-PROP-tpp-stock",
+    "M1193-P-COOKED-MEAT",
+    "M1193-P-MALT-BROTH",
+    "M1193-P-MARINE2216",
+    "MATERIALS-C1193-bacto-aliases",
+    "MATERIALS-C1193-peptone-identity",
+    "MATERIALS-C1193-phytone-boundary",
+    "MATERIALS-C1193-polypeptone-boundary",
+    "MATERIALS-C1193-sea-salts",
+    "MATERIALS-C1193-soy-peptone-boundary",
+    "MATERIALS-P-proteose-numbered",
+    "MATERIALS-P-sucrose-salicin",
+    "R1193-P-clarifiedrumen266",
+    "R1193-P-sludge119",
+    "ROOT-P-fatty-stock"
+  ],
+  "limitations": [
+    "Full canonical assembly, native inspect/save/check and final staged artifact review remain separate pending gates.",
+    "No new scientific case disposition is endorsed by this severity-only addendum."
+  ]
+}

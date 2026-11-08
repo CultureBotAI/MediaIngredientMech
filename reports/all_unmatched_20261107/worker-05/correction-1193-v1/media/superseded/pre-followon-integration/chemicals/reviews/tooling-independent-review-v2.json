@@ -1,0 +1,131 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:02:02.858501+00:00",
+  "status": "complete",
+  "review_status": "PASS",
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py",
+      "sha256": "5fce1fe989818aee3d99a660edfd2b65e2ead37905e112eaa68ae445b180d820",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v2-inputs/assemble_outcomes.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_proposals.py",
+      "sha256": "3cf80916f1b0328a592c3bb1e8f73511298cd3b9c87096b7b1cacab3d152d6e9",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v2-inputs/validate_proposals.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "fc307fcc539f23bdf5bcda553baccdcdfb16742098788d17d3a60305080ea5ae",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v2-inputs/prepare_native_review.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/author_native_review.py",
+      "sha256": "ce0105d8a7d5de6480a6d9c756b4c138ac2c36974f9363965d4eb9b2e235c9b2",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v2-inputs/author_native_review.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/owner_dependencies.py",
+      "sha256": "e6d3d1417d7fc24147168141222e14da990ecc6a35f8475f15ccb0100ceb749e",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v2-inputs/owner_dependencies.py"
+    }
+  ],
+  "predecessor_review": {
+    "path": "correction-1193-v1/chemicals/reviews/tooling-independent-review-v1.json",
+    "sha256": "222df9964837d69de29bf147e8026e6aca3f4691bf80b5ac4218ec62930b0888"
+  },
+  "open_findings": 0,
+  "resolved_findings": [
+    {
+      "finding_id": "TOOL-01",
+      "status": "resolved",
+      "resolution": "Full validation payload equality now binds before, destination, case and evidence metadata."
+    },
+    {
+      "finding_id": "TOOL-02",
+      "status": "resolved",
+      "resolution": "Native author requires zero introduced active identifier collisions."
+    },
+    {
+      "finding_id": "TOOL-03",
+      "status": "resolved",
+      "resolution": "Cross-shard matching compares both source and destination paths, case-insensitively, as well as proposed identifiers."
+    },
+    {
+      "finding_id": "TOOL-04",
+      "status": "resolved",
+      "resolution": "Dependency producer asserts a singleton before hash for every owner reference."
+    },
+    {
+      "finding_id": "TOOL-05",
+      "status": "resolved",
+      "resolution": "Owner/destination paths are direct native YAML paths; mapped and unmapped candidate status matches the destination directory; within-batch destination paths cannot collide case-insensitively."
+    },
+    {
+      "finding_id": "TOOL-06",
+      "status": "resolved",
+      "resolution": "Current native target metadata must equal inspected targets, and targets.json is an explicit hashed inspection input."
+    }
+  ],
+  "controls": [
+    {
+      "control": "Stale full proposal validation",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Introduced active identifier collisions",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Native target metadata changed",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Conflicting before hashes",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Non-native owner path",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Non-native destination path",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Destination/status mismatch",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Case-insensitive destination collision",
+      "result": "rejected",
+      "method": "Exact current assert AST executed with isolated adversarial inputs"
+    },
+    {
+      "control": "Promotion destination collision with a different identifier",
+      "result": "detected",
+      "method": "Exact current dependency loop AST executed with isolated adversarial inputs"
+    }
+  ],
+  "additional_verified": [
+    "All five exact scripts parse and compile without execution of their main workflow.",
+    "Promotion destination is carried in native target, finding and action owner_paths while the original owner retains its before guard.",
+    "Immutable materials review status PASS and supported_with_stated_limits case status are accepted only with empty or zero open findings and exact manifest/case coverage.",
+    "Shared case60 root proposal was freshly checked: all four decisions bind the original owner SHA and proposal backlinks; the shared thiamine source evidence entry matches exactly across both groups.",
+    "Current authored groups have 106 unique referenced owner paths with consistent hashes, 121 unique proposal source and destination paths, and unique derived native target IDs. These are pre-assembly observations, not final gate receipts.",
+    "Native input list includes final dependency, assembly, ownership and adversarial control receipts and all five processing helpers."
+  ],
+  "limitations": [
+    "Read-only helper integrity review and isolated execution of nine actual guard/loop AST controls; full canonical assembly, native validation/save/check and end-to-end adversarial controls remain pending.",
+    "No scientific re-review of chemistry, media or root decisions is implied. Materials all61 scientific review is separately recorded.",
+    "Cross-shard snapshot remains limited to explicit other-worker canonical top-level proposal files, with successor-path incompleteness explicitly disclosed. Missing other-worker after files can still yield null identifier; path collisions remain detected but identifier coverage requires actual final manifests.",
+    "The fixed native severity list may classify new substantive repairs as minor. All findings remain open and the bundle verdict needs_curation; this does not clear holds or grant release approval."
+  ]
+}

@@ -1,0 +1,114 @@
+id: CultureMech:012887
+preferred_term: Main sol. J156
+term:
+  id: mediadive.solution:3809
+  label: Main sol. J156
+composition:
+- preferred_term: Trypticase soy agar
+  concentration:
+    value: '40'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:1617
+    label: Trypticase soy agar
+- preferred_term: Horse blood
+  concentration:
+    value: '50'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:724
+    label: Horse blood
+- preferred_term: Distilled water
+  concentration:
+    value: '0.95'
+    unit: L
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/3809
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 3,
+                      "compound": "Distilled water",
+                      "compound_id": 4,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 950,
+                      "unit": "ml",
+                      "g_l": null,
+                      "mmol_l": null,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[2].concentration (Distilled
+      water) in MediaDive solution 3809; locator=$.data.recipe[2] (compound_id=4).
+      Source water addition is 950 ml per prepared batch: 950 / 1000 = 0.95 L. No
+      source preparation step gives a competing make-up instruction. This is a batch
+      dose, not a volume percentage; no final-volume or solvent-density assumption
+      is made. Additional exact excerpt at $.data.volume: "volume": 1000. Retrieved
+      2026-10-07T09:25:19.861150+00:00; response SHA256=c077025a271f5e7b05ded5547805d30b9e80cb1bb3d5713b2feed4e1112aefa1.'
+curation_history:
+- timestamp: '2026-03-13T06:20:28.149080Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:012887'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:32.566826'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:49:57.621667'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:55.599777+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:28.736660+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 1 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:48:03.408022+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '2 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-10-07T09:30:59.704035+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/3809
+  changes: 'composition[2].concentration: {"unit": "PERCENT_V_V", "value": "950"}
+    -> {"unit": "L", "value": "0.95"} (correct)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/3809
+  title: 'MediaDive solution 3809: Main sol. J156'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=c077025a271f5e7b05ded5547805d30b9e80cb1bb3d5713b2feed4e1112aefa1;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

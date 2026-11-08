@@ -1,0 +1,1391 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/media_research",
+  "independent_from": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:14:29.652221+00:00",
+  "reviewed_inputs": {
+    "decisions.json": "54f7347d07294ead3b7637a8cca533b73db5b3a76664b1b1e03f3c5240d2f6c9",
+    "evidence.json": "0e806f486352be1d726a63396d302aca5fdf7810f18fd424a794f2a5d7cdfee0",
+    "proposals.json": "1a19d0b84d7d40b67e2dfe168644c28ac0de6beddaa06bc678c5ac74abf073c2"
+  },
+  "review_basis": {
+    "prior_complete_context_review": {
+      "path": "reviews/media-review-chemicals-v2.json",
+      "sha256": "4bb06b9d970e86dc14149eafb05f5571e707d909272f7c5cc9fbbae8d20d5b2a"
+    },
+    "current_integrity": {
+      "path": "correction-1193-v1/media/reviews/chemicals-integrity-initial.json",
+      "sha256": "a784bac4378fe63c482b3d283a0d36fc361b042814c64785ec11db716e602783"
+    },
+    "direct_source_rechecks": "NBRC1221/1474/1321; JCM1030/411/1061; DSMZ927/802/394/1137/78/104/110/212a/1155/1727; TOGO2576/2577/2313; CCAPUCM/PER/UM; supplierTrisT3253/LP0029; OLS9532/18290/46097/33305/204272 and source-specific comparisons. All25exactafterpayloads parsed/compared and369capturehasheschecked.",
+    "final_integrity": {
+      "path": "correction-1193-v1/media/reviews/chemicals-integrity-final.json",
+      "sha256": "2696ea892486e9f964952caa6e7481331c4d5689e1c752084c3a09e9818a9c35"
+    },
+    "final_delta_check": "All39 other decisions,25 prior proposals and369 prior evidence entries remain structurally identical to independently reviewed initial inputs. Four new exact YAML payloads,14 new evidence captures and all17 occurrence/source-lineage records were rechecked. All383 evidence hashes and29 payloads pass frozen-owner/schema/partonomy checks."
+  },
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:14e2433d6680c7e7fbdb982b142afa631f6ed6bb5aa5cdbecfbf46914f3ce727",
+      "case_input_sha256": "365e3137bc335425a4cd247457ce3aab842560e5545ab35cfab93f9af35875ab",
+      "status": "complete",
+      "assessment": "BD manufacturer215530 is D(+) dextrose anhydrous; the three frozen OADC-related recipe contexts identify the2g reagent separately from the supplement. D-glucose alias is supported without selecting a ring anomer or validating all inherited owner claims. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-006",
+        "CHEM-RECIPE-006-01",
+        "CHEM-RECIPE-006-02",
+        "CHEM-RECIPE-006-03",
+        "CHEM-CAP-54ec413d4dba0fba",
+        "CHEM-CAP-2e36b7f2d05209a0",
+        "CHEM-CAP-d1ffb78c451bbabf",
+        "CHEM-CAP-c119b9ae9342e2b9",
+        "CHEM-WEB-6",
+        "CHEM-OWNER-9642ca4960ad"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-dextrose"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:16f378f5a868f191ba889e5d0a923b8d067c8ddaa9ff7562b0cb7f41e3e60075",
+      "case_input_sha256": "0d33316ccc177c2a0ba582f1d8b742b109d88012afe797a99efb30433d520bfa",
+      "status": "complete",
+      "assessment": "Nacalai product19418-25 specifies iron powder20\u201360mesh and CAS7439-89-6. The exact supplied powder label supports the existing elemental iron identity; mesh size is physical form and does not establish an oxide. Alias proposal is appropriately limited. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-007",
+        "CHEM-RECIPE-007-01",
+        "CHEM-CAP-11d151cb0257d194",
+        "CHEM-CAP-610933dda9a38c76",
+        "CHEM-CAP-a4d58bf3f3b268b6",
+        "CHEM-CAP-725a931dca3bf2f5",
+        "CHEM-CAP-0d24fad2c28ce16b",
+        "CHEM-OWNER-e1938013c4b8"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-iron"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:23daec5a08dc35f1e39edc61f4b96e8852e0363d2f8a4eafb6fbe52731201d44",
+      "case_input_sha256": "abf87da86ceaa94a6d6a22afc8ba00e51a5f3dce392bbb56d04b15bab048934e",
+      "status": "complete",
+      "assessment": "DSMZ1565 prints Na2-tartrate x2H2O, confirming a dihydrate but no stereochemistry. The sodium L-tartrate anhydrous candidate63017 cannot be an exact replacement. Holding pending supplier/stereochemical evidence preserves both distinctions. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-010",
+        "CHEM-RECIPE-010-01",
+        "CHEM-RECIPE-010-02",
+        "CHEM-CAP-fc7901de9c8e8069",
+        "CHEM-CAP-b74c726dd80743b4",
+        "CHEM-C1193-tartrate-dsmz",
+        "CHEM-C1193-ols-search-2",
+        "CHEM-C1193-ols2-sodium-tartrate",
+        "CHEM-C1193-tartrate-download"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:3c36c3997cdd6dd09cac787110299acff8335c8befbd63742b07b04f06a6d83e",
+      "case_input_sha256": "d5cf82c75511e922ee323d10e74610f97b4ef6f20bc0c134abf29b465a6af508",
+      "status": "complete",
+      "assessment": "Original TOGO3211 explicitly identifies NaCOOH within the recipe; sodium formate62965 fits the reagent formula. Separate stock preparation instructions do not make the solute label itself the complete stock. Alias retention is supported without approving concentration conversion. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-024",
+        "CHEM-RECIPE-024-01",
+        "CHEM-CAP-baa7ab015ab6d5a5",
+        "CHEM-CAP-8ec5c3387a865d32",
+        "CHEM-OWNER-0efc6c2a4840"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-formate"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:443c3c0a7735959a80aab57dc88e24ac48ed27061bbf710c3fdfa36f933505c9",
+      "case_input_sha256": "c8713fc32c15adeb807b3172166e06ee395d78e6bb89ef4d63081cb4a9e1be09",
+      "status": "complete",
+      "assessment": "CCAP E27/E31/E31ANT source formulas restore MgSO4\u00b77H2O where the frozen raw label lost characters. The specific heptahydrate owner31795 is supported for this raw-source alias. Recipe stock hierarchy remains independent of identity. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-026",
+        "CHEM-RECIPE-026-01",
+        "CHEM-RECIPE-026-02",
+        "CHEM-RECIPE-026-03",
+        "CHEM-CAP-18d4f57118f39820",
+        "CHEM-CAP-f74b6f207f2c363e",
+        "CHEM-CAP-2dd30154d45162d8",
+        "CHEM-CAP-9c1a97a1e021ef5b",
+        "CHEM-OWNER-93db3b16772e"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-magnesium-heptahydrate"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:47de822ce5be13cb438bd63ab1582facda8ae41a01b9567016f611bfd3d8df7a",
+      "case_input_sha256": "823221f252c56090797ca01985678dd28f034507e1aaa1b3541477a029b2ed63",
+      "status": "complete",
+      "assessment": "Original recipe context denotes elemental sulfur powder; elemental33403 is suitable for the source alias. No particular S8 crystal allotrope, purity or molecular species is asserted by powder or the damaged So spelling. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-027",
+        "CHEM-RECIPE-027-01",
+        "CHEM-CAP-c7ce4af92ddac4f6",
+        "CHEM-CAP-a8df01c7239a8122",
+        "CHEM-CAP-c108c1a21b52d95b",
+        "CHEM-OWNER-959cec825f77"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-sulfur"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+      "case_input_sha256": "3609bf355091abb3388887deed3fbae6391a329338e77d05a32dddfbdcaf8526",
+      "status": "complete",
+      "assessment": "Five NBRC recipes explicitly include one H2O with thiamine-HCl. Neither the unhydrated49105 owner nor the dihydrate132751 is exact evidence for this monohydrate. The source-specific unresolved disposition is required. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-028",
+        "CHEM-RECIPE-028-01",
+        "CHEM-RECIPE-028-02",
+        "CHEM-RECIPE-028-03",
+        "CHEM-RECIPE-028-04",
+        "CHEM-RECIPE-028-05",
+        "CHEM-CAP-704b31668b441561",
+        "CHEM-CAP-f0c1b4928af89872",
+        "CHEM-CAP-a99de49c99e519a4",
+        "CHEM-CAP-1fc151e426d45042",
+        "CHEM-CAP-6b44ed77cac99113",
+        "CHEM-CAP-aa10057ea2c6f012",
+        "CHEM-CAP-7376810b484a47e8",
+        "CHEM-CAP-f55e3a4d1efb7d51",
+        "CHEM-CAP-f28524e690e051c1",
+        "CHEM-CAP-77de000b5fa8d1a6",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-C1193-ols-search-3",
+        "CHEM-C1193-ols2-thiamine"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131",
+      "case_input_sha256": "3bcbf1602bf5552f0a0850853c8c4f607442ed88d28623ff4e0ca4265fb81ddb",
+      "status": "complete",
+      "assessment": "Original TOGO M3161 prints riboflavin in the vitamin stock and uses that stock separately. The raw uppercase-I typo can be retained as an alias of17015; source5mg/L stock and10ml addition do not support frozen5g/L at the medium level. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-030",
+        "CHEM-RECIPE-030-01",
+        "CHEM-CAP-f93edce2e35b29b6",
+        "CHEM-CAP-3f87f8dfda3887b7",
+        "CHEM-OWNER-59776f859c41"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-riboflavin"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:558bcf18c0ac36e3a46e8f443809ddfa33b130fcab3dd70b6573c1354ff677aa",
+      "case_input_sha256": "7f49a3c1ce107cc13e437a0fa9d009725c7baa0d84e76b526e860a73be73e299",
+      "status": "complete",
+      "assessment": "Three original TOGO contexts restore MnCl2\u00b74H2O from the CI OCR spelling. Tetrahydrate86368 is supported; anhydrous or dihydrate substitution would be unsafe. The proposal only adds the source label with audit history. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-038",
+        "CHEM-RECIPE-038-01",
+        "CHEM-RECIPE-038-02",
+        "CHEM-RECIPE-038-03",
+        "CHEM-CAP-178c00787726f6db",
+        "CHEM-CAP-90c71e16ed3e36ea",
+        "CHEM-CAP-b5d7e0a2820706b4",
+        "CHEM-CAP-bfb113a11d7f7c01",
+        "CHEM-OWNER-f57a467dbfb7"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-manganese-tetrahydrate"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:5d0c5ffb37bf378c3409765ce4abd610f79dd528fa54abc2e0b8f52451380a5b",
+      "case_input_sha256": "7f4657aefcd8d3c7a07b5f659cef8ef439c2b584a2862e012b4569fb582c4246",
+      "status": "complete",
+      "assessment": "Ground sulfur powder in original M3129 refers to elemental sulfur rather than a sulfate or an inferred crystal allotrope. The33403 alias is supported within that supplied-material scope. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-042",
+        "CHEM-RECIPE-042-01",
+        "CHEM-CAP-2219370bc9ce67b6",
+        "CHEM-CAP-a8df01c7239a8122",
+        "CHEM-CAP-c108c1a21b52d95b",
+        "CHEM-OWNER-959cec825f77"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-sulfur"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24",
+      "case_input_sha256": "7519989a8a8bb86cc6afb896262359d75a124e640789802b188c61362a3cf410",
+      "status": "complete",
+      "assessment": "P5 stock preparation identifies Niacin(B3) at1g/L with an NNM carrier. Nicotinic acid15940 is supported for the solute; the proposal does not equate the whole buffered stock with a pure molecule or propagate the dose to the receiving medium. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-049",
+        "CHEM-RECIPE-049-01",
+        "CHEM-CAP-86994abdcb080eaa",
+        "CHEM-CAP-c1a2f9ecce7dc984",
+        "CHEM-OWNER-2acc28cf8842"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-niacin"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+      "case_input_sha256": "739005188a7a39f95be15e621098c805b702ea323fa15c50539bd4d0bc0b1e48",
+      "status": "complete",
+      "assessment": "Direct NBRC1221 and1474 pages each name20ml1MHEPES-KOH; pH7.14/9.0 belongs to the receiving medium. Separate source-qualified registries with totalHEPES1M and unspecified potassium species preserve the preparation without falsely selecting stockpH, solvent, neutralization ratio or free-acid identity. No globalrawalias is added.",
+      "evidence_refs": [
+        "CHEM-SRC-053",
+        "CHEM-RECIPE-053-01",
+        "CHEM-RECIPE-053-02",
+        "CHEM-CAP-8d12f0bd070c4ccb",
+        "CHEM-CAP-b4a1db85c19c42e5",
+        "CHEM-CAP-75a5cab55ae32443",
+        "CHEM-CAP-c801a5637573d5ae",
+        "CHEM-CAP-ed175c6ef98639a6",
+        "CHEM-C1193-ols-search-6",
+        "CHEM-C1193-ols3-hep"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-HEPES-1221",
+        "CHEM-C1193-HEPES-1474"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:7800a5bc348d4b7fe25893bb56d1ca4c16dd7ec4cc75e099175122bb4ee84c30",
+      "case_input_sha256": "3868ce650aa43b6e90338a2817bf440ec18945387b7b53430e1b711fd26d6e75",
+      "status": "complete",
+      "assessment": "Direct JCM1030 specifies FeCl3/NaOH precipitation, washing and finally suspension in200mlwater. The new source-qualified preparation has washed precipitate pluswater, with no calculated retained FeCl3/NaOH, finalvolume, phasepurity or solid concentration. Changing the watercomponent label to water adds no unprovided distillation claim.",
+      "evidence_refs": [
+        "CHEM-SRC-059",
+        "CHEM-RECIPE-059-01",
+        "CHEM-CAP-d5b6fd87eabcfeb3",
+        "CHEM-CAP-209b330041a2793e",
+        "CHEM-C1193-ols-search-7",
+        "CHEM-C1193-ols3-fe1030",
+        "CHEM-C1193-OWNER-Distilled_Water"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-iron-suspension-1030"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:78f8c48b757890cfb5c0f5856ac1958e394f3700e65d9e81adf7e49e64384a51",
+      "case_input_sha256": "75ce5084d7c9f906ce39e3d9a323f3fcd74f9d74c71526db799a2fd4e45cf3ae",
+      "status": "complete",
+      "assessment": "Direct NBRC1321 footnote***** specifies10mgthiamineHCl with100ml25mMphosphatebufferpH3.4, consistent with the root-owned JCM403stock proposal. Actual originalowner beforebytes are now bound. This chemical case reuses the root proposal rather than creating a duplicate; root reviewer owns full rootpayload approval.",
+      "evidence_refs": [
+        "CHEM-SRC-060",
+        "CHEM-RECIPE-060-01",
+        "CHEM-CAP-2caf4cd3f91d0ec5",
+        "CHEM-C1193-OWNER-Thiamine_Solution_See_Medium_No_403"
+      ],
+      "proposal_ids": [
+        "ROOT-P-thiamine-stock"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:79509089b17b506a45a709c251375d9aba76e83947e0c7d34b85381f5bd54f93",
+      "case_input_sha256": "a6c1d00ef16cb81cfbaaeb39db414369600e2804bc7d478b7ce6347189f3ee65",
+      "status": "complete",
+      "assessment": "DSMZ524 and623 use Na-meta silicate at different amounts without specifying hydration; all six occurrences remain individually bound. The evidence does not establish nonahydrate or exact anhydrous supplied form, so no broad hydrate alias is admitted. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-061",
+        "CHEM-RECIPE-061-01",
+        "CHEM-RECIPE-061-02",
+        "CHEM-RECIPE-061-03",
+        "CHEM-RECIPE-061-04",
+        "CHEM-RECIPE-061-05",
+        "CHEM-RECIPE-061-06",
+        "CHEM-CAP-cdb07af2d1443706",
+        "CHEM-CAP-c24e6de63aab96bf",
+        "CHEM-CAP-2243db4bba8330fa",
+        "CHEM-CAP-ceb79c1f5748c259",
+        "CHEM-OWNER-7ae736d6a61e",
+        "CHEM-C1193-metasilicate-mesh",
+        "CHEM-C1193-metasilicate-dsmz",
+        "CHEM-C1193-metasilicate-dsmz623",
+        "CHEM-C1193-metasilicate-download"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:8f9dce93200c8b81f5e89be4cc5bd3dab151028152e861296334e30ed961fcc1",
+      "case_input_sha256": "51c508b3197a76257dc6bae4099996f97db05d46f511a3c4a1b6552ac38e04c3",
+      "status": "complete",
+      "assessment": "CCAP TAP restores MgSO4\u00b77H2O in a2g/L stock1 added at50ml. Heptahydrate identity is supported; the stock amount is not a2g/L final-medium dose. The raw OCR alias can be preserved without validating flattening. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-073",
+        "CHEM-RECIPE-073-01",
+        "CHEM-CAP-2462f1349d33dc6f",
+        "CHEM-CAP-9c1a97a1e021ef5b",
+        "CHEM-OWNER-93db3b16772e"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-magnesium-heptahydrate"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:913f1d246e38506d99dccac4dd555f837f6ad4587101f5e4f927273aa347818c",
+      "case_input_sha256": "8db73785174781ca025eb7d0e25fb14b35a1da267c8bc5baeb94936d3a472884",
+      "status": "complete",
+      "assessment": "TOGO M2577 directly specifies0.2%w/vTPPinwater; conversion to2g/L is exact for that explicitly suppliedbasis. NamedUNMAPPEDsolute avoids transferring9532charge/counterion/hydrate uncertainty. The six pure-compound aliases are nonresolving on whole stock; watercomponent is CHEBI15377withoutgradeinference.",
+      "evidence_refs": [
+        "CHEM-SRC-074",
+        "CHEM-RECIPE-074-01",
+        "CHEM-CAP-082d61a7481e4dee",
+        "CHEM-CAP-0ab6383dc32b70b8",
+        "CHEM-CAP-2c7c3f970f800c15",
+        "CHEM-OWNER-ee90f6fa3c70",
+        "CHEM-C1193-OWNER-02_Thiamine_Pyrophosphate"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-tpp-stock"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+      "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec",
+      "status": "complete",
+      "assessment": "Read complete DSMZ927/802/394/1137 andJCM1061 source recipes and SigmaT3253primarysheet. Weighed TrisHCl supports separateCAS1185-53-1salt with asymmetric9754parent;46097is cationonly.1MpH7.5 and0.5MpH8 stocks retain totalTrisandchlorideparts withoutinventedratio. TOGOM2313final50mM doesnotdefinea50mMstock. Six demonstrablywrongbasealiases are rejected; no globalTris-HClalias is created.",
+      "evidence_refs": [
+        "CHEM-SRC-076",
+        "CHEM-RECIPE-076-01",
+        "CHEM-RECIPE-076-02",
+        "CHEM-RECIPE-076-03",
+        "CHEM-RECIPE-076-04",
+        "CHEM-RECIPE-076-05",
+        "CHEM-RECIPE-076-06",
+        "CHEM-RECIPE-076-07",
+        "CHEM-RECIPE-076-08",
+        "CHEM-RECIPE-076-09",
+        "CHEM-RECIPE-076-10",
+        "CHEM-RECIPE-076-11",
+        "CHEM-RECIPE-076-12",
+        "CHEM-RECIPE-076-13",
+        "CHEM-RECIPE-076-14",
+        "CHEM-RECIPE-076-15",
+        "CHEM-RECIPE-076-16",
+        "CHEM-CAP-1da688425060d238",
+        "CHEM-CAP-ca0c0dd760014335",
+        "CHEM-CAP-d38c10241cb6daa0",
+        "CHEM-CAP-b5fc743d359ea6a4",
+        "CHEM-CAP-45911559f6556094",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-d8ba59dcb901ea12",
+        "CHEM-CAP-e5cca8a3bc6f121e",
+        "CHEM-C1193-tris-pis",
+        "CHEM-C1193-tris-hcl-ols",
+        "CHEM-C1193-nta-ols",
+        "CHEM-C1193-ols-search-0",
+        "CHEM-C1193-ols2-tris-cas",
+        "CHEM-C1193-ols3-tris394",
+        "CHEM-C1193-ols3-tris1137",
+        "CHEM-C1193-ols3-tris1061",
+        "CHEM-C1193-OWNER-Tris_Base"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-Tris-base-aliases",
+        "CHEM-C1193-Tris-HCl-salt",
+        "CHEM-C1193-DSMZ_394_1137-Tris",
+        "CHEM-C1193-JCM_1061-Tris"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:966043186eb500b0932551d48b23740188a14c15631e17be7e7b9543f0db357a",
+      "case_input_sha256": "5bd866b795e5b5fea413c04fc011948a764ac987ab6dc53eef45e19df0287d89",
+      "status": "complete",
+      "assessment": "Original M2410 weighs6g Sigma HEPES before NaOH adjustment. This supports the free-acid reagent name alias without identifying the adjusted whole medium as pure HEPES or conflating the separate1M HEPES-KOH stock. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-077",
+        "CHEM-RECIPE-077-01",
+        "CHEM-CAP-c0b20edbf3ff8192",
+        "CHEM-CAP-ed175c6ef98639a6",
+        "CHEM-OWNER-6c405ebbdd8b"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-hepes"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+      "case_input_sha256": "b93139f280c37bdcff6916a76fbb9b45be30cf3e63e463a9d7e6c151310ffe5d",
+      "status": "complete",
+      "assessment": "Direct ATCC1257,1490,1703,1539 and1527 PDF bytes were read:1703 and1539 explicitly reuse1490,1527 reproduces1524, and1257 uses the same named95% solvent separately in hemin and menadione stocks. Three bounded ATCC preparation handles cover the five frozen occurrences; the150g/L flattened sum is not accepted. The final four source-qualified registries identify the named solvent independently of unknown percentage basis, balance or denaturants. Their sole ethanol has-part is PARTIAL without a numerical concentration or assumed water. NCI EVS C185110 explicitly requires aqueous95%v/v and is correctly retained only as a candidate. Pure ethanol16236 is a component, not a whole-preparation identity. The full ignored-inclusive catalog audit found no exact95% preparation owner to duplicate. Exact occurrence routing is disjoint and exhaustive for all17. No global ambiguous95% synonym or invented chemical difference across sources is asserted.",
+      "evidence_refs": [
+        "CHEM-SRC-083",
+        "CHEM-RECIPE-083-01",
+        "CHEM-RECIPE-083-02",
+        "CHEM-RECIPE-083-03",
+        "CHEM-RECIPE-083-04",
+        "CHEM-RECIPE-083-05",
+        "CHEM-CAP-e10390f56f5dbfeb",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-C1193-togo-2574",
+        "CHEM-C1193-togo-2618",
+        "CHEM-C1193-togo-2568",
+        "CHEM-C1193-togo-2724",
+        "CHEM-C1193-ethanol-ols-2",
+        "CHEM-C1193-ethanol-ols-3",
+        "CHEM-C1193-ethanol-atcc-2574",
+        "CHEM-C1193-ethanol-atcc-2576",
+        "CHEM-C1193-ethanol-atcc-2618",
+        "CHEM-C1193-ethanol-atcc-2568",
+        "CHEM-C1193-ethanol-atcc-2724",
+        "CHEM-C1193-ethanol-ncit",
+        "CHEM-C1193-ethanol-ncit-evs",
+        "CHEM-C1193-ETHANOL-OWNER"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-ethanol95-atcc_1490",
+        "CHEM-C1193-ethanol95-atcc_1257",
+        "CHEM-C1193-ethanol95-atcc_1524"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate.",
+      "resolved_findings": [
+        "MEDIA-CHEM-C1193-F01"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:cc487a98c0585c66c5e37b0867572f416e49ff561f252fe823c8025a046426ca",
+      "case_input_sha256": "4efedcf158dea39a55fce3f42cbb6c6482580261b7f23e960b5a9655404e8411",
+      "status": "complete",
+      "assessment": "P5 identifies Thiamine HCl(B1) as a50g/L stock solute; it does not add a hydrate qualifier. The49105 alias is supported at the solute level, with the NNM or water carrier and final-volume instruction kept distinct. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-092",
+        "CHEM-RECIPE-092-01",
+        "CHEM-CAP-86994abdcb080eaa",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-OWNER-c375e99738c7"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-thiamine-hcl"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416",
+      "case_input_sha256": "51c56d3afdafb18de7e9633a7b0b497f482502fd95e61e8e8b4f646d368b5d9c",
+      "status": "complete",
+      "assessment": "Direct CCAPUCM page1 givesTeO2 at both nestedtracelevels. NITE andPubChemidentifyCAS7446-07-3; OLS33305 is a broader telluriummolecularentity. NewCASowner preservesdioxidestoichiometry and rejectsbareTeO as exactalias rather than treatinglegitimatemonoxideformula asuniversaldioxide.30477tellurite and30452atom remainwrong.",
+      "evidence_refs": [
+        "CHEM-SRC-098",
+        "CHEM-RECIPE-098-01",
+        "CHEM-RECIPE-098-02",
+        "CHEM-CAP-2256f29f0929d107",
+        "CHEM-CAP-ea5b78eecca53ac5",
+        "CHEM-C1193-teo-nite",
+        "CHEM-C1193-tellurium-pubchem",
+        "CHEM-C1193-tellurium-parent",
+        "CHEM-C1193-ols-search-1",
+        "CHEM-C1193-ols2-tellurium-cas",
+        "CHEM-C1193-ols2-tellurium"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-tellurium-dioxide"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:dcaebb575fdae4723ccb30779f3d58420ccb21cffe38a0d0ab7386e2b5bbbfaa",
+      "case_input_sha256": "2da46096ef9f6f8341b62fb4f734670bf78065afade5a43c0b308a0046563228",
+      "status": "complete",
+      "assessment": "CDM_LP has Guanine HCl at0.00032mM, but the source does not specify a catalog or hydrate. Sigma51030/CAS635-39-2 is a plausible product comparator only, not proof that this recipe used it. The hydrochloride and hydration identity remain unresolved. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-106",
+        "CHEM-RECIPE-106-01",
+        "CHEM-WEB-106",
+        "CHEM-C1193-ols-search-4",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-TCI-G0170"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+      "case_input_sha256": "59becf6c2d9ffd925ad28c8515705125e5986e629fd9ab182e0c15a14f92d82b",
+      "status": "complete",
+      "assessment": "Direct DSMZ78/110 primary HTML links both vitaminK1 solution125 and vitaminK3 solution5540; full previously captured DSMZ104/212a PDFs explicitly reuse78. One DSMZ78 preparation handle covers the twelve frozen occurrences without duplicate document-specific handles. The final four source-qualified registries identify the named solvent independently of unknown percentage basis, balance or denaturants. Their sole ethanol has-part is PARTIAL without a numerical concentration or assumed water. NCI EVS C185110 explicitly requires aqueous95%v/v and is correctly retained only as a candidate. Pure ethanol16236 is a component, not a whole-preparation identity. The full ignored-inclusive catalog audit found no exact95% preparation owner to duplicate. Exact occurrence routing is disjoint and exhaustive for all17. No global ambiguous95% synonym or invented chemical difference across sources is asserted.",
+      "evidence_refs": [
+        "CHEM-SRC-111",
+        "CHEM-RECIPE-111-01",
+        "CHEM-RECIPE-111-02",
+        "CHEM-RECIPE-111-03",
+        "CHEM-RECIPE-111-04",
+        "CHEM-RECIPE-111-05",
+        "CHEM-RECIPE-111-06",
+        "CHEM-RECIPE-111-07",
+        "CHEM-RECIPE-111-08",
+        "CHEM-RECIPE-111-09",
+        "CHEM-RECIPE-111-10",
+        "CHEM-RECIPE-111-11",
+        "CHEM-CAP-e0c65da722d0c440",
+        "CHEM-CAP-9b35c1d4f58911cf",
+        "CHEM-CAP-5299c9a510c6ec5b",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-C1193-togo-2534",
+        "CHEM-C1193-togo-2535",
+        "CHEM-C1193-togo-2536",
+        "CHEM-C1193-togo-2537",
+        "CHEM-C1193-togo-2585",
+        "CHEM-C1193-togo-2744",
+        "CHEM-C1193-togo-3072",
+        "CHEM-C1193-togo-2522",
+        "CHEM-C1193-togo-2524",
+        "CHEM-C1193-togo-2523",
+        "CHEM-C1193-togo-2525",
+        "CHEM-C1193-ethanol-med110",
+        "CHEM-C1193-ethanol-med78",
+        "CHEM-C1193-ethanol-ols-2",
+        "CHEM-C1193-ethanol-ols-3",
+        "CHEM-C1193-ethanol-ncit",
+        "CHEM-C1193-ethanol-ncit-evs",
+        "CHEM-C1193-ETHANOL-OWNER"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-ethanol95-dsmz_78"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate.",
+      "resolved_findings": [
+        "MEDIA-CHEM-C1193-F01"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:e90a13baa92e9b7a72cdfa611fbaec5f457cd61a12e649cccbe256914aa8cc28",
+      "case_input_sha256": "6944dca858c50dbc1586aee141db6460b2c15515b92985761f67930675693d1a",
+      "status": "complete",
+      "assessment": "Direct OxoidLP0029manufacturer specification identifiesrefinedmeatextractpowder withvariableanalyticalranges. Promotion ofthe existingowner toits productregistry is supported without exactpurifiedmolecule orfixedformula; noLabLemcoBroth/genericbeefextractmerger. Source-namealias and supplierproductidentity agree.",
+      "evidence_refs": [
+        "CHEM-SRC-113",
+        "CHEM-RECIPE-113-01",
+        "CHEM-CAP-f21eb5a7e9960955",
+        "CHEM-OWNER-41851cf2bb37",
+        "CHEM-C1193-lablemco-spec",
+        "CHEM-C1193-lablemco-product",
+        "CHEM-C1193-ols-search-5",
+        "CHEM-C1193-ols3-lablemco",
+        "CHEM-C1193-OWNER-Lab_Lemco_Powder"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-Lab-Lemco"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+      "case_input_sha256": "ff67d450affc1426840c96f3a73b32777864fd9ebb2c6386b63678d2630306fb",
+      "status": "complete",
+      "assessment": "NBRC1507 prints Thiamine-HCl\u00b7H2O with one water in this distinct Unicode label. As with the other mono hydrate case, no evidence supports silently using unhydrated49105 or dihydrate132751. Separate source row preserved. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-117",
+        "CHEM-RECIPE-117-01",
+        "CHEM-CAP-74b89743eed1808f",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-C1193-ols-search-3",
+        "CHEM-C1193-ols2-thiamine",
+        "CHEM-C1193-togo-2152"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:f6924fb99b3405f434e4017340607246890f7dbf1213a9fd6e697362ccc6d8de",
+      "case_input_sha256": "13b282617355eeab118b52dd735a89e29c033d7a62a1b59ca20862c5324553ca",
+      "status": "complete",
+      "assessment": "Direct JCM411 gives washedFeIIIprecipitate, resuspensionin1Ldistilledwater andnominal0.67MFebasis subject toassay. Newstock hasprecipitate pluswater anddoesnotassertpureoxidephase, hydration ormeasuredfinalvolume. Waterlabel precision isconservative; originaldistilledwaterinstruction remainsinprimarycapture.",
+      "evidence_refs": [
+        "CHEM-SRC-121",
+        "CHEM-RECIPE-121-01",
+        "CHEM-CAP-325bb28919ae30b6",
+        "CHEM-C1193-ols-search-7",
+        "CHEM-C1193-ols3-fe411"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-iron-suspension-411"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:f83e2c9a1035fb2cb44369ae7e7f25f020932cebac6f1fb9ce5c1fcb9f4809d4",
+      "case_input_sha256": "8c8901d11f39d1c383269d1f0e4e80e10417de6e4a89e41c719a22a7f88ec72b",
+      "status": "complete",
+      "assessment": "TOGOM2313 originalfullcomment identifies shrimp-shellchitin asanalternativesubstrate. Existingownerpromotion retains shellsource andpreparationidentity; singlechitinhaspart isPARTIALanddoesnotclaimpurepolymer, extractionmethod, polymorph oracetylationdegree. Wholematerialregistrythereforedoesnotneedcompleteconstituentresolution.",
+      "evidence_refs": [
+        "CHEM-SRC-123",
+        "CHEM-RECIPE-123-01",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-39aa3b4fe5e386a5",
+        "CHEM-OWNER-caf7cad18009",
+        "CHEM-C1193-ols-search-8",
+        "CHEM-C1193-ols3-chitin",
+        "CHEM-C1193-OWNER-Chitin",
+        "CHEM-C1193-OWNER-Chitin_From_Shrimp_Shells"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-shrimp-chitin"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+      "case_input_sha256": "651d454a4e1fc51478afb0dcc97c7851022db21c2b168a6cc514f2566413ff34",
+      "status": "complete",
+      "assessment": "Direct DSMZ78/110 primary HTML links both vitaminK1 solution125 and vitaminK3 solution5540; full previously captured DSMZ104/212a PDFs explicitly reuse78. One DSMZ78 preparation handle covers the twelve frozen occurrences without duplicate document-specific handles. The final four source-qualified registries identify the named solvent independently of unknown percentage basis, balance or denaturants. Their sole ethanol has-part is PARTIAL without a numerical concentration or assumed water. NCI EVS C185110 explicitly requires aqueous95%v/v and is correctly retained only as a candidate. Pure ethanol16236 is a component, not a whole-preparation identity. The full ignored-inclusive catalog audit found no exact95% preparation owner to duplicate. Exact occurrence routing is disjoint and exhaustive for all17. No global ambiguous95% synonym or invented chemical difference across sources is asserted.",
+      "evidence_refs": [
+        "CHEM-SRC-124",
+        "CHEM-RECIPE-124-01",
+        "CHEM-CAP-e050890a98d1c10c",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-C1193-ethanol-med110",
+        "CHEM-C1193-ethanol-med78",
+        "CHEM-C1193-ethanol-ols-2",
+        "CHEM-C1193-ethanol-ols-3",
+        "CHEM-C1193-ethanol-ncit",
+        "CHEM-C1193-ethanol-ncit-evs",
+        "CHEM-C1193-ETHANOL-OWNER"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-ethanol95-dsmz_78"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate.",
+      "resolved_findings": [
+        "MEDIA-CHEM-C1193-F01"
+      ]
+    },
+    {
+      "case_id": "KG_CASE:03ab2d92d43227aeb1d5875af5e77aaa1accc7ccddcf2ef921b7d1fe72afdbd1",
+      "case_input_sha256": "4bf682c4992f1e01e34caedfe82ae8d58edc23fc5d7c784452aa3e8fdb976094",
+      "status": "complete",
+      "assessment": "The KG absolute-ethanol row denotes a20ml solvent addition and the existing ethanol owner already has the exact label. Live MediaDive89 instead carries an unrelated oligosaccharide CHEBI64175/CAS1516-08-1 contamination. This does not justify a new owner alias or release of the inherited source hold. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-128",
+        "CHEM-CAP-713173ae3904548b",
+        "CHEM-CAP-1307e4da2336c70b",
+        "CHEM-OWNER-9551295e7ea1"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:30cf3ecee696eec40ba4399812fa530ca996fa2fd61dd00ca9bf0bdc53b3da73",
+      "case_input_sha256": "454de2f0dfbce6f9f2da9abdc998de7f6877bc29dd5dff6358d9e815e7a8f138",
+      "status": "complete",
+      "assessment": "Direct CCAPPER identifiesComplan andHeinzUKaddress; currentUMnamesComplanwithoutmanufacturer. Existingownerpromotion preservesthis source-namednutritionalproductfamily; exactsupplierisrestrictedtoPER/2363. No currentOriginalingredients,flavor orlotformulaare transferred. Sixownerusesremainindividuallybounded; thisiswholeproductcurationwithunresolvedvariantcomposition.",
+      "evidence_refs": [
+        "CHEM-SRC-137",
+        "CHEM-CAP-00ba36ab7a1d895f",
+        "CHEM-OWNER-991ec7740785",
+        "CHEM-C1193-complan-per",
+        "CHEM-C1193-complan-um",
+        "CHEM-C1193-ols3-complan",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-COMPLAN-ORIGINAL"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-Complan"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:39adf1df71cd577ceca03305c9da33b8fa04798d4a996fb204f8bc9acac57a5a",
+      "case_input_sha256": "4564e471824e2da44461e52dc519222375a4e4ea57d8e3f53796ad67ca3fe216",
+      "status": "complete",
+      "assessment": "Primary PubMed11193411 and JGAM paper support reclassification of the ISK1 producer as Staphylococcus warneri and a27-residue mature lantibiotic from a57-residue precursor. The proposed contextual note is supported. CHEBI204272 has an incompatible short-peptide structure/mass; no exact promotion or complete existing-owner approval follows. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-138",
+        "CHEM-CAP-5a950c17f8940801",
+        "CHEM-CAP-c1084ee5b4d5a1d7",
+        "CHEM-CAP-1cb0e6bf2d205d3f",
+        "CHEM-OWNER-03db4ef1acb9"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-bacteriocin-context"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:42f5997700d5a29cc0632e08c3f1e2a319372c1e82ae1896db58f8b046b395f6",
+      "case_input_sha256": "488f8b1d76f415c689127be5998739344721da5d949d22594f2b98c788cc09ff",
+      "status": "complete",
+      "assessment": "MediaDive1423 explicitly carries the dihydrate formula; newly linked DSMZ1565 primary capture confirms it. The1g reagent amount does not determine L stereochemistry or erase hydration. Added primary backlink closes the provenance finding, while exact identity stays unresolved. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-141",
+        "CHEM-CAP-b74c726dd80743b4",
+        "CHEM-TARTRATE-KG-PRIMARY",
+        "CHEM-C1193-tartrate-dsmz",
+        "CHEM-C1193-ols-search-2",
+        "CHEM-C1193-ols2-sodium-tartrate",
+        "CHEM-C1193-tartrate-download"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:601d124a075487ea9b3506342c4456ad94763be8624a0c3d0c6228601bf986f8",
+      "case_input_sha256": "c1054b225585042df2ac9414e633aed9deb76574cd6afcef53db957567c0926c",
+      "status": "complete",
+      "assessment": "KJ appears as50\u00b5l of1mg/ml stock. The KI candidate is chemically plausible, but the captured MediaDive1042 attributes instead describe phencyclidine,C17H25N,CAS77-10-1. This metadata contamination cannot prove stock solute identity or exact current-owner equivalence. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-150",
+        "CHEM-CAP-2be47c9bf376a98c",
+        "CHEM-CAP-a2b1fc00a6ad6e6c",
+        "CHEM-OWNER-57b162c1eb30",
+        "CHEM-C1193-kj-download",
+        "CHEM-C1193-kj-1155",
+        "CHEM-C1193-kj-1727",
+        "CHEM-C1193-kj-media"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:6c0774cbb93fb412e2cb8a6745916b2ffc6351cd6d14c355c12ade2f598cac10",
+      "case_input_sha256": "b8ffa6bb93e8817024d4fb83487545153c6ba5770b2a2ce6e577d33588ca0279",
+      "status": "complete",
+      "assessment": "All114 PYG holds are explicitly represented in the full frozen context inspection. Original Bergey source was unavailable; DSMZ104 is a comparator only. A generic PYG name cannot establish one exact medium or chemical identity across those organism observations, nor demonstrate consumption or growth. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-152",
+        "CHEM-CAP-ee2ec78d487d3a9f",
+        "CHEM-PYG-COMPARATOR",
+        "CHEM-OWNER-edbb2f79997b"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:6e7c8a8c1d6e21e0a3afee848263f27202ece4e07c21ec38c752087cbdd89cdd",
+      "case_input_sha256": "50dd5e0b5aaf367a6ee20f18e886b478d970ec55ed3c7d55c2139b2d3dd2cc99",
+      "status": "complete",
+      "assessment": "OLS9532 is chloride-free thiamine(1+) diphosphate;18290 is its chloride salt. The exact proposed formula,InChI andSMILES now match9532 and13 inherited chloride labels become nonresolving. CAS136-09-4 is preserved as preexisting pending protonation review, not newly validated against9532: the captured9532 term lists136-08-3. The source778 exact target remains WITHHOLD and worker09 reconciliation is required. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-153",
+        "CHEM-CAP-0ab6383dc32b70b8",
+        "CHEM-CAP-2c7c3f970f800c15",
+        "CHEM-CAP-2c3af0a5e6fa857b",
+        "CHEM-OWNER-92372a0a8f9f"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-tpp-chloride-carryover"
+      ],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:8fddccd7e32c351a0fa76c05180120b817299029e956a686081cce5e8c3748dc",
+      "case_input_sha256": "d1db9aface07214c50d0e926dec8cc165cf4fdfde79996561ffd15f0d6f4ee40",
+      "status": "complete",
+      "assessment": "The metatraits EDDS label lacks stereochemical specification. The manufacturer scan separately identifies S,S free acid CAS20846-91-7 and its trisodium salt, which are useful comparators but do not establish this source reagent. A generic EDDS label cannot become exact S,S identity. Full baseline owner bytes establish three distinct existing records: CAS20846-91-7 is the S,S candidate; kgmicrobe.compound:ethylenediamine_n_n_prime_disuccinic_acid is the exact metatraits source handle with mapping_quality PLACEHOLDER and rejected lexical candidates, not resolved molecular stereochemistry; kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid is a separate MicrobeDecoder comma-repair record with FALLBACK_REGISTRY provenance. The two source cases share the first placeholder handle but retain different source assertions. Neither owner merging nor transfer of S,S identity is justified. These additions are comparison provenance only. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-161",
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-5d69893c41896605",
+        "CHEM-CAP-aef06fc1d41bc4c5",
+        "CHEM-OWNER-35b36faf7438",
+        "CHEM-OWNER-d2876bb90669",
+        "CHEM-OWNER-b3e569d827bf",
+        "CHEM-C1193-ols-search-9",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-NIST-EDDS"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:95b790ddb78a997811337834f1d50870430781c963f982ed3257378097b10edb",
+      "case_input_sha256": "5607783459949650b00f73c85878ff9dc0086eaf8a214c84c37399caa24ea5a3",
+      "status": "complete",
+      "assessment": "The KG thiamine-HCl x2H2O label retains two waters and fits the inspected dihydrate132751 candidate at the form level. Existing source holds remain and no new raw alias or export release is proposed; neither the mono hydrate nor buffered stock cases are thereby resolved. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-162",
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-CAP-8302d660a59e8a0f",
+        "CHEM-OWNER-50d3d5c3c8b8",
+        "CHEM-C1193-thiamine-download"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:9fae354066718d7267ba86497352f9703e0d882643a772b6f90ac16c3b22d17c",
+      "case_input_sha256": "70421b4cc1e9adcd501d6186a8ad7cb2f2daf95aad6e564d0fe7d011e64dd62a",
+      "status": "complete",
+      "assessment": "The GTDB glucopyranoside label gives3-O-methyl and alpha-D but omits a defined glycosidic aglycon. A methylglucose comparator such as PubChem96241 does not by itself establish the named glycoside or its exact connectivity/anomer. Hold preserves this ambiguity. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-164",
+        "CHEM-CAP-d80b6753ed36306d",
+        "CHEM-CAP-9a6a183355dccf3a",
+        "CHEM-OWNER-aeaa244c9b34"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:afa56b335b77ddf46c0a79c5006054b0b9812c6869edd8af5e28b16e2168e08c",
+      "case_input_sha256": "3112c4cbfac9121633d5779a3c5886cbbab2b5fc0c6f877c0cb0c1b1353db809",
+      "status": "complete",
+      "assessment": "The Eisencitrat source is1g in a10g/L100ml stock with separate citric acid. MediaDive1401 has unrelated nucleotide-like synonyms and inconsistent iron-citrate identifiers/formulas. Oxidation state, stoichiometry and hydration remain unproven; a mass amount or name translation does not resolve them. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-169",
+        "CHEM-CAP-eafc32f5af450587",
+        "CHEM-CAP-44fd6e04e0c45f90",
+        "CHEM-CAP-b2c90681f754ef21",
+        "CHEM-OWNER-56c34b44b9a3",
+        "CHEM-C1193-eisencitrat-solution"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:b1d73a6c6976e7905cd359d5180c5c7309b083045e06f5ec274866c20954ef9f",
+      "case_input_sha256": "b31000c9a1ddcc270faabc884c2694a653bef0963359420f23032cb14ee2324d",
+      "status": "complete",
+      "assessment": "The independent GTDB EDDS row also has no stereochemical or salt qualifier. Manufacturer S,S free acid/trisodium distinctions cannot be imported into this row. This separate source case remains unresolved despite sharing a label with metatraits. Full baseline owner bytes establish three distinct existing records: CAS20846-91-7 is the S,S candidate; kgmicrobe.compound:ethylenediamine_n_n_prime_disuccinic_acid is the exact metatraits source handle with mapping_quality PLACEHOLDER and rejected lexical candidates, not resolved molecular stereochemistry; kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid is a separate MicrobeDecoder comma-repair record with FALLBACK_REGISTRY provenance. The two source cases share the first placeholder handle but retain different source assertions. Neither owner merging nor transfer of S,S identity is justified. These additions are comparison provenance only. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-170",
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-5d69893c41896605",
+        "CHEM-CAP-aef06fc1d41bc4c5",
+        "CHEM-OWNER-35b36faf7438",
+        "CHEM-OWNER-d2876bb90669",
+        "CHEM-OWNER-b3e569d827bf",
+        "CHEM-C1193-ols-search-9",
+        "CHEM-C1193-DIRECT-WEB8",
+        "CHEM-C1193-DIRECT-NIST-EDDS"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    },
+    {
+      "case_id": "KG_CASE:e677b0709edcd66b4bf0e683b40ffe54d9799827ccbc954fa0c154ce9cf407f5",
+      "case_input_sha256": "141042cb76ee0decc53b63bf16b3c911aa154cae51ad946dde3f67af3b26ef7f",
+      "status": "complete",
+      "assessment": "The metatraits3-O-methyl alpha-D-glucopyranoside row independently lacks an aglycon/structure definition. The same spelling does not license transfer of a glucopyranose comparator identity from GTDB or PubChem; hold and source-specific follow-up are appropriate. Correction1193 reassessment: currentdecision, exactproposeddelta wherepresent, additionalprimarysearches andremainingmaterialidentityfact were checked; no newunsupportedwhole-preparationdeferral was found for thiscase.",
+      "evidence_refs": [
+        "CHEM-SRC-183",
+        "CHEM-CAP-d80b6753ed36306d",
+        "CHEM-CAP-9a6a183355dccf3a",
+        "CHEM-OWNER-aeaa244c9b34"
+      ],
+      "proposal_ids": [],
+      "findings": [],
+      "limit": "Bounded scientific disposition/proposal delta only. No inheritedowner/source/exporthold is released; cross-shardTPPworker09 androotthiaminestock integration remain separate."
+    }
+  ],
+  "reviewed_proposals": [
+    {
+      "proposal_id": "CHEM-PROP-dextrose",
+      "owner_path": "data/ingredients/mapped/D-glucose.yaml",
+      "before_sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/D-glucose.yaml",
+        "sha256": "f78e5b3816d6b9cd364b866b5b93c5ad2f3baf41b2cfad4545ea426e0c356810"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-iron",
+      "owner_path": "data/ingredients/mapped/Iron.yaml",
+      "before_sha256": "791d68106d2f4fd7c5c6e9c4f1814be0df3ed8fb167a3c51591fb76a9024a4ce",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Iron.yaml",
+        "sha256": "18333bf419ada8d09c64001d0f87680aff69ea06d312ef5689c1537847306f97"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-formate",
+      "owner_path": "data/ingredients/mapped/Na-formate.yaml",
+      "before_sha256": "1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Na-formate.yaml",
+        "sha256": "84397941a55a4b6118705cf770e3740198e327515ac699195c435f7226d9f085"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-magnesium-heptahydrate",
+      "owner_path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+      "before_sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Mgso4_X_7_H2o.yaml",
+        "sha256": "c35e72c7508ef849148b264f40fb994cae8a3eeed7588a3dd3e4cf7f667e30b8"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-sulfur",
+      "owner_path": "data/ingredients/mapped/Sulfur.yaml",
+      "before_sha256": "d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Sulfur.yaml",
+        "sha256": "f04b8951353ddf1470fdecb3750f1638373f9786425bd8fea71e9662027fb658"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-riboflavin",
+      "owner_path": "data/ingredients/mapped/Riboflavin.yaml",
+      "before_sha256": "b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Riboflavin.yaml",
+        "sha256": "882e34bd6c8cef9d0e41935c434cdc670980a292285f02b2271e6d49b0b00c45"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-manganese-tetrahydrate",
+      "owner_path": "data/ingredients/mapped/Mncl2_X_4_H2o.yaml",
+      "before_sha256": "ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Mncl2_X_4_H2o.yaml",
+        "sha256": "482a0abf6e09a5f0a4e5f1992da4d0c353c6ce4a49c121f96b429f387277a7bf"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-niacin",
+      "owner_path": "data/ingredients/mapped/Nicotinic_Acid.yaml",
+      "before_sha256": "ee74fdab88983c8dd5554b638d0b97623b9be4b5f389d6458cdf27713ae06b1b",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Nicotinic_Acid.yaml",
+        "sha256": "7210baa3abb6122e9da9b5a19be8a8c2a3a63e251d5c3c3524963c63ae8fc030"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-thiamine-hcl",
+      "owner_path": "data/ingredients/mapped/Thiamine_Hcl.yaml",
+      "before_sha256": "8e7d3802dc19872e85d753b6c7a0e1fb34c552311e69c450e697d9f1e55b2732",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Thiamine_Hcl.yaml",
+        "sha256": "0ad4720854d8ebea5a7d7477dfbc68ca680c66dfc978e4d9f0490669806a4f0f"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-hepes",
+      "owner_path": "data/ingredients/mapped/Hepes.yaml",
+      "before_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Hepes.yaml",
+        "sha256": "f8b81f0310cfd35fe0299a9caedb4b29c78723a47a3b4afa74e0d1f5ba228248"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-bacteriocin-context",
+      "owner_path": "data/ingredients/mapped/Bacteriocin_Isk_1.yaml",
+      "before_sha256": "9b467bb6e713f55299a71657001e1f79844a1900339f56c2a4e95d5273dacabc",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Bacteriocin_Isk_1.yaml",
+        "sha256": "08812a542e619b154db8c9330e6de143024588dbe20207a47dcf41732177a165"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-tpp-chloride-carryover",
+      "owner_path": "data/ingredients/mapped/Thiamine_pyrophosphate.yaml",
+      "before_sha256": "627c0ae9eea1d8845c5165172edeea792c8b32c6d4d4cc00974d1f7ad90704ad",
+      "after_capture": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Thiamine_pyrophosphate.yaml",
+        "sha256": "2ebf00f1efc407a44ee53be99b88548bbf159e2f690adc40b457eb21d1f99471"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-Lab-Lemco",
+      "owner_path": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+      "before_sha256": "60e5db3426ff114ee3e4b7460b0c84fb828dd6910dd0fda404e56e653a3921fb",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Lab_Lemco_Powder.yaml",
+        "sha256": "f9746d44bd54544117690fc9630020c4a3a72f02b23497cb3d553a7e876dad57"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-shrimp-chitin",
+      "owner_path": "data/ingredients/unmapped/Chitin_From_Shrimp_Shells.yaml",
+      "before_sha256": "06104c43c1f5d9f74b2bc6bceca4158cd6916316a2736044795c9b71eb4fdb83",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Chitin_From_Shrimp_Shells.yaml",
+        "sha256": "2933fbe4b96ae21ac8e13b66ee6afb5ff2949218d33601f7d7055eb576dccfaa"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1221",
+      "owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1221.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1221.yaml",
+        "sha256": "05cf4a1b09aff0fd1954ef0ac1aa563844414f4896261eaca48271323d9f8a46"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1474",
+      "owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1474.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1474.yaml",
+        "sha256": "6ba28f7de8b9b6387fb38f44ec01ce9b9626a84bea256ea63b7d0df07b109fad"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-iron-suspension-1030",
+      "owner_path": "data/ingredients/mapped/Iron_Precipitate_Suspension_JCM_1030.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed-v2/Iron_Precipitate_Suspension_JCM_1030.yaml",
+        "sha256": "0c0548218d8e759e0a9649a93370bcfc84e2e13987bfe897b85c74ec5513fc29"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-iron-suspension-411",
+      "owner_path": "data/ingredients/mapped/Iron_Precipitate_Suspension_JCM_411.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed-v2/Iron_Precipitate_Suspension_JCM_411.yaml",
+        "sha256": "1f851b910d9a498206e3c1b88d33b7b9047948a54146ca85137576e910d8b484"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-Tris-base-aliases",
+      "owner_path": "data/ingredients/mapped/Tris_Base.yaml",
+      "before_sha256": "fa6a1261635faa1c4f262fd8bb2943e4cc927ba6864bfb012a94a058afe438f1",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_Base.yaml",
+        "sha256": "34fb9b6d891884fecf057c92a4c2b46b9d3e20ec18575e4fa9669037b7097e96"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+      "owner_path": "data/ingredients/mapped/Tris_Hydrochloride_Salt.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_Hydrochloride_Salt.yaml",
+        "sha256": "945bd8da0c00306c5e0d9ad2c3eaead1fb3af33e89cdc2e3440e729ec5763c58"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+        "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+        "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+        "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+        "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+        "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+        "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+      "owner_path": "data/ingredients/mapped/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "0f8cf263079c547959a4b82831900988b2e07df24eb59c51e62e97fb675733ac"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+        "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+        "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+        "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+        "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+        "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+      "owner_path": "data/ingredients/mapped/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "9009b7dc6651004a025591c4e9376e117d4978bc7049b91e2001352bcf83561b"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+        "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-tellurium-dioxide",
+      "owner_path": "data/ingredients/mapped/Tellurium_Dioxide.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tellurium_Dioxide.yaml",
+        "sha256": "d25ae183c58c8616ecff3fd43dfb4615cb30d4df94e8a17399f09c2de3b20e98"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-PROP-tpp-stock",
+      "owner_path": "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+      "before_sha256": "ab3662e22bd04c2d2a0e04a836d6d09f155b39bc0a00abab6a17d0c68e214c16",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed-v2/02_Thiamine_Pyrophosphate.yaml",
+        "sha256": "548fa37d691ce985f87c2e836843c2052aac7ca13447321f23c9ec26745c17f6"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-Complan",
+      "owner_path": "data/ingredients/unmapped/Complan.yaml",
+      "before_sha256": "4c42c23942d3a06a6d9560c1150bed3a521f5c59be0b4782b3259e6a1bb00023",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Complan.yaml",
+        "sha256": "10894c72e19100bf16d800c36328574393ac97aedced95cc60e2ca4c30364ca9"
+      },
+      "status": "complete",
+      "assessment": "Supported within independently reviewed source/product/formulation and exact delta scope; unchanged after payload from initial correction review.",
+      "applies_to_occurrence_ids": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-atcc_1490",
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1490.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_ATCC_1490.yaml",
+        "sha256": "84691f529ce8d1e146d2dc2c37b1ecc87027e2cf52ccd60007d6908d8bb5fe14"
+      },
+      "status": "complete",
+      "assessment": "Exact source-qualified solvent preparation, PARTIAL ethanol component, no guessed percentage basis/balance/denaturant, verified primary crossreferences and explicit disjoint occurrence applicability.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+        "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+        "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-atcc_1257",
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1257.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_ATCC_1257.yaml",
+        "sha256": "fa52d73955f5d54be470eaa21c1de4ef59eda6b6fe95431d6a37cf9782975365"
+      },
+      "status": "complete",
+      "assessment": "Exact source-qualified solvent preparation, PARTIAL ethanol component, no guessed percentage basis/balance/denaturant, verified primary crossreferences and explicit disjoint occurrence applicability.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-atcc_1524",
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1524.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_ATCC_1524.yaml",
+        "sha256": "3da7ef96a6d1020c39ca9663c045a913acc0b68cc060b674304399fe62f576cc"
+      },
+      "status": "complete",
+      "assessment": "Exact source-qualified solvent preparation, PARTIAL ethanol component, no guessed percentage basis/balance/denaturant, verified primary crossreferences and explicit disjoint occurrence applicability.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_DSMZ_78.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_DSMZ_78.yaml",
+        "sha256": "5718e7de2922144c0e8b8bc519b6fddb637989975d99f0d7737dc4335ac96a9d"
+      },
+      "status": "complete",
+      "assessment": "Exact source-qualified solvent preparation, PARTIAL ethanol component, no guessed percentage basis/balance/denaturant, verified primary crossreferences and explicit disjoint occurrence applicability.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+        "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+        "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+        "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+        "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+        "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+        "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+        "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+        "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+        "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+        "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+        "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+      ]
+    }
+  ],
+  "open_findings": 0,
+  "finding_receipt": {
+    "path": "correction-1193-v1/media/reviews/chemicals-initial/findings.json",
+    "sha256": "1daba7c33e5b433dd3b604edc4f92e0832c9872db4840304dcbac64f5d02f63b"
+  },
+  "status": "complete",
+  "supersedes_review": {
+    "path": "correction-1193-v1/media/reviews/chemicals-review-final.json",
+    "sha256": "45dbd9707056df81908ca934ddf156c2cdf717c937d682d38755a3fe9a459fa4"
+  },
+  "resolved_findings": [
+    {
+      "finding_id": "MEDIA-CHEM-C1193-F01",
+      "status": "resolved",
+      "resolution": "Four bounded guarded proposals replace percentage-basis deferral, preserve uncertain composition, reconcile explicit source reuse and route all17 occurrences.",
+      "initial_receipt": {
+        "path": "correction-1193-v1/media/reviews/chemicals-initial/findings.json",
+        "sha256": "1daba7c33e5b433dd3b604edc4f92e0832c9872db4840304dcbac64f5d02f63b"
+      },
+      "final_reconciliation": {
+        "path": "correction-1193-v1/chemicals/ethanol-preparation-reconciliation.json",
+        "sha256": "52385676d68b3855c7abfffd82ea92c8fe87d8bb47fe524379e403028d9f7c2f"
+      }
+    }
+  ],
+  "routing_addendum": {
+    "path": "correction-1193-v1/media/reviews/chemicals-routing-addendum.json",
+    "sha256": "16fe19a160f412b30cef6155885f2e014729acebf1a6ce8b0e20ac2ff60cd7f1"
+  }
+}

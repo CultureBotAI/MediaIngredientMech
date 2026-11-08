@@ -1,0 +1,54 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:23:20.125286+00:00",
+  "status": "complete",
+  "review_status": "PASS",
+  "open_findings": 0,
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py",
+      "sha256": "ec28a422388c065be9b626c174e1b6baac2933c267283783a6175d74779af2c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_proposals.py",
+      "sha256": "3cf80916f1b0328a592c3bb1e8f73511298cd3b9c87096b7b1cacab3d152d6e9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "ebf2ffcfdf3797ff6d7d5e0c2574bea50599de395364af0e31dec06ee5a566ab"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/author_native_review.py",
+      "sha256": "6115b33cc0ca0c8e55a912f0869b236df0188ccfd16a2b327b71736aa4d215c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/owner_dependencies.py",
+      "sha256": "e6d3d1417d7fc24147168141222e14da990ecc6a35f8475f15ccb0100ceb749e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/test_assembly_controls.py",
+      "sha256": "ad3b33826b9185124d7627f2fe1f071004c911b4b808613da5a3fbfaa15ffe0e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_guarded_payloads.py",
+      "sha256": "bd8088668e8c2e389680747392ea8ce0699586f4969e6119d5e6e1e9f3ab7df3"
+    }
+  ],
+  "predecessor_review": {
+    "path": "correction-1193-v1/chemicals/reviews/tooling-independent-review-v5a.json",
+    "sha256": "4e28a1a25a29b245fed12986b4bcd206657dd2dbccab6dbd0535fc0fe23e5c32"
+  },
+  "scope": "Single native inspection input-path replacement after reference-only integration follow-ons. No scientific case reassessment or proposal content approval is inferred.",
+  "checks": [
+    "Archived prepare helper bytes match the prior v5a reviewed hash.",
+    "Current prepare helper is exactly the prior bytes with one structural-audit-v1.json to structural-audit-v2.json replacement.",
+    "The successor structural audit is an explicit native hashed input, without fallback to the predecessor receipt.",
+    "All six other helper hashes remain identical to v5a and all seven scripts compile.",
+    "Prior guard-control results remain applicable because their exact code is unchanged."
+  ],
+  "limitations": [
+    "Successor canonical assembly and structural-audit-v2 receipt must actually be produced and pass before native inspection.",
+    "Final occurrence audit will be repeated against the reassembled core hashes; the prior routing receipt remains historical.",
+    "No repeat or new approval of unchanged primary research is claimed."
+  ]
+}

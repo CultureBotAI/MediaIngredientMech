@@ -1,0 +1,106 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:wolfe_mineral_elixir_dsmz792
+preferred_term: Wolfe mineral elixir (DSMZ792)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfe_mineral_elixir_dsmz792
+  ontology_label: Wolfe mineral elixir (DSMZ792)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf
+    notes: DSMZ792-defined acidic fourteen-salt preparation applies to fourDSMZ occurrences
+      in case112. Keep distinct from JCM470 variable hydrate source assertion. No
+      generic Wolfe elixir alias may resolve both formulations globally. Whole supplied
+      preparation identified independently of component CURIE availability. Existing
+      owner and exact named/numbered ontology searches are captured in successor evidence.
+notes: ' Correction1193: DSMZ792-defined acidic fourteen-salt preparation applies
+  to fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source
+  assertion. No generic Wolfe elixir alias may resolve both formulations globally.
+  Isolated proposal only. All inherited source-case, owner and export holds remain.
+  Raw generic source labels are qualified to these source occurrences and confer no
+  global resolving synonym or release approval. No optional later supplement or atmosphere
+  is inferred as an ingredient.'
+synonyms:
+- synonym_text: Wolfe's mineral elixir
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf; source-qualified
+    occurrence only; not universal resolution
+components:
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 30g
+- component_name: MnSO4·H2O
+  reference_scope: UNMAPPED
+  source: 5g; DSMZ792 prints multiplication x H2O, monohydrate
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 10g
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  source: 1.8g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 1.8g
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: KAl(SO4)2·12H2O
+  reference_scope: UNMAPPED
+  source: 0.18g
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: (NH4)2Ni(SO4)2·6H2O
+  reference_scope: UNMAPPED
+  source: 2.8g
+- component_name: Na2WO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Na2SeO4
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1000ml; acidifiedpH1
+- component_name: Dilute sulfuric acid
+  reference_scope: UNMAPPED
+  source: to waterpH1; amount unspecified
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf
+    source_record: Wolfe mineral elixir (DSMZ792)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. DSMZ792-defined acidic fourteen-salt
+      preparation applies to fourDSMZ occurrences in case112. Keep distinct from JCM470
+      variable hydrate source assertion. No generic Wolfe elixir alias may resolve
+      both formulations globally.
+curation_history:
+- timestamp: '2026-11-08T05:46:05.889096+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe mineral
+    elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to
+    fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source
+    assertion. No generic Wolfe elixir alias may resolve both formulations globally.
+    Isolated proposal; native integration and all inherited holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

@@ -1,0 +1,103 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:wolfes_modified_mineral_elixir_atcc1190
+preferred_term: Wolfe's modified mineral elixir (ATCC1190)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfes_modified_mineral_elixir_atcc1190
+  ontology_label: Wolfe's modified mineral elixir (ATCC1190)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/1/9/0/atcc-medium-1190.pdf
+    notes: ATCC1190/1191 elixir has NTA/cobalt nitrate, explicitanhydrousCaCl2/alum/selenite
+      andMnSO4monohydrate. Existing CultureBotHT Modified_Wolfes_Minerals has different
+      salts/list; do not overwrite or duplicate its identity. Whole supplied preparation
+      identified independently of component CURIE availability. Existing owner and
+      exact named/numbered ontology searches are captured in successor evidence.
+notes: ' Correction1193: ATCC1190/1191 elixir has NTA/cobalt nitrate, explicitanhydrousCaCl2/alum/selenite
+  andMnSO4monohydrate. Existing CultureBotHT Modified_Wolfes_Minerals has different
+  salts/list; do not overwrite or duplicate its identity. Isolated proposal only.
+  All inherited source-case, owner and export holds remain. Raw generic source labels
+  are qualified to these source occurrences and confer no global resolving synonym
+  or release approval. No optional later supplement or atmosphere is inferred as an
+  ingredient.'
+synonyms:
+- synonym_text: Wolfe's Modified Mineral Elixir
+  synonym_type: RAW_TEXT
+  source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/1/9/0/atcc-medium-1190.pdf;
+    source-qualified occurrence only; not universal resolution
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  source: 1.5g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 3g
+- component_name: MnSO4·H2O
+  reference_scope: UNMAPPED
+  source: 0.5g
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Co(NO3)2·6H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: CaCl2 (anhydrous)
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: AlK(SO4)2 (anhydrous)
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: Na2SeO3 (anhydrous)
+  reference_scope: UNMAPPED
+  source: 0.001g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: to1000ml
+- component_name: KOH solution (2-3 N)
+  reference_scope: UNMAPPED
+  source: pH6.5 adjustment; quantity unspecified
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/1/9/0/atcc-medium-1190.pdf
+    source_record: Wolfe's modified mineral elixir (ATCC1190)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. ATCC1190/1191 elixir has NTA/cobalt
+      nitrate, explicitanhydrousCaCl2/alum/selenite andMnSO4monohydrate. Existing
+      CultureBotHT Modified_Wolfes_Minerals has different salts/list; do not overwrite
+      or duplicate its identity.
+curation_history:
+- timestamp: '2026-11-08T05:46:05.889096+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe''s
+    modified mineral elixir (ATCC1190). ATCC1190/1191 elixir has NTA/cobalt nitrate,
+    explicitanhydrousCaCl2/alum/selenite andMnSO4monohydrate. Existing CultureBotHT
+    Modified_Wolfes_Minerals has different salts/list; do not overwrite or duplicate
+    its identity. Isolated proposal; native integration and all inherited holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

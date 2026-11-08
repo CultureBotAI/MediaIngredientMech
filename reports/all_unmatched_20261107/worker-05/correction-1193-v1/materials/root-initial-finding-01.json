@@ -1,0 +1,256 @@
+{
+  "reviewer": "/root/materials_research",
+  "created_at": "2026-11-08T05:50:38.308485+00:00",
+  "reviewed_inputs": {
+    "decisions.json": "0a461b89f5d623aa493a7fb4949edfece6d667e232a9fcc1fe492ee4f0ca2c95",
+    "evidence.json": "c490efbf2ce3294b376a9c69fa124b49d02c540e1a988ee5d990af458ad2ea7e",
+    "proposals.json": "d4490c3a6023ce3c57f492272a146b44318e3ad62964a7d12ac74e81c5414c33"
+  },
+  "finding_id": "MATERIALS-ROOT1193-F01",
+  "severity": "blocking",
+  "finding": "New source-specific owners add globally resolving RAW_TEXT aliases despite notes claiming source-only scope. Bottom layer and Wolfe mineral elixir actively collide across distinct source formulations; ATCC Medium1490 is not unconditional proof of broth branch. HS medium, Mineral medium and Medium D are similarly underqualified new resolving labels.",
+  "contract": "synonym_policy.py only REJECTED_LABEL is nonresolving; MAPPING_SEMANTICS 3 prohibits false scientific rejection solely for ambiguity.",
+  "required_remediation": "Omit newly asserted ambiguous active aliases, preserve authentic raw text in notes/ledger; retain only aliases whose literal source qualification supports the exact preparation. Explicitly preserve conditional ATCC1490 occurrence status.",
+  "exact_initial_payloads": [
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-bottom-628",
+        "case_ids": [
+          "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM628). JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate.",
+        "evidence_ids": [
+          "ROOT-jcm-628",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM628.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Bottom_Layer_JCM628.yaml",
+          "sha256": "3794b57cea9dd1338d017a5792c14f7ec8b59e21a523cacca151aa9ba70c7da1"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": [],
+        "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM628). JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:bottom_layer_jcm628\npreferred_term: Bottom layer (JCM628)\nmapping_status: MAPPED\ningredient_type: UNDEFINED_MIXTURE\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:bottom_layer_jcm628\n  ontology_label: Bottom layer (JCM628)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628\n    notes: JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe\n      mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628\n      mineral preparation. No shared universal Bottom layer identity; top layer is\n      separate. Whole supplied preparation identified independently of component CURIE\n      availability. Existing owner and exact named/numbered ontology searches are\n      captured in successor evidence.\nnotes: ' Correction1193: JCM628 bottom layer combines 50 ml FeS preparation, 50 ml\n  Modified Wolfe mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces\n  the628 mineral preparation. No shared universal Bottom layer identity; top layer\n  is separate. Isolated proposal only. All inherited source-case, owner and export\n  holds remain. Raw generic source labels are qualified to these source occurrences\n  and confer no global resolving synonym or release approval. No optional later supplement\n  or atmosphere is inferred as an ingredient.'\nsynonyms:\n- synonym_text: Bottom layer\n  synonym_type: RAW_TEXT\n  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: FeS solution (JCM628 washed precipitate preparation)\n  reference_scope: UNMAPPED\n  source: 50 ml; prepared suspension, not neat FeS\n- component_name: Modified Wolfe mineral solution (JCM628)\n  reference_scope: UNMAPPED\n  source: 50 ml\n- component_name: Agarose\n  reference_scope: UNMAPPED\n  source: 1 g\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628\n    source_record: Bottom layer (JCM628)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. JCM628 bottom layer combines\n      50 ml FeS preparation, 50 ml Modified Wolfe mineral solution (JCM628) and 1\n      g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared\n      universal Bottom layer identity; top layer is separate.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Bottom layer\n    (JCM628). JCM628 bottom layer combines 50 ml FeS preparation, 50 ml Modified Wolfe\n    mineral solution (JCM628) and 1 g agarose. JCM629 explicitly replaces the628 mineral\n    preparation. No shared universal Bottom layer identity; top layer is separate.\n    Isolated proposal; native integration and all inherited holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-bottom-629",
+        "case_ids": [
+          "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM629). JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate.",
+        "evidence_ids": [
+          "ROOT-jcm-629",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM629.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Bottom_Layer_JCM629.yaml",
+          "sha256": "ca77327570d06bd9376858d7c0e7c6d4814839f44cb7c43777f900c16cb01d11"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": [],
+        "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Bottom layer (JCM629). JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom layer identity; top layer is separate. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:bottom_layer_jcm629\npreferred_term: Bottom layer (JCM629)\nmapping_status: MAPPED\ningredient_type: UNDEFINED_MIXTURE\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:bottom_layer_jcm629\n  ontology_label: Bottom layer (JCM629)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629\n    notes: JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial saltwater\n      (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral preparation.\n      No shared universal Bottom layer identity; top layer is separate. Whole supplied\n      preparation identified independently of component CURIE availability. Existing\n      owner and exact named/numbered ontology searches are captured in successor evidence.\nnotes: ' Correction1193: JCM629 bottom layer combines 50 ml FeS preparation, 50 ml\n  Artificial saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628\n  mineral preparation. No shared universal Bottom layer identity; top layer is separate.\n  Isolated proposal only. All inherited source-case, owner and export holds remain.\n  Raw generic source labels are qualified to these source occurrences and confer no\n  global resolving synonym or release approval. No optional later supplement or atmosphere\n  is inferred as an ingredient.'\nsynonyms:\n- synonym_text: Bottom layer\n  synonym_type: RAW_TEXT\n  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: FeS solution (JCM628 washed precipitate preparation)\n  reference_scope: UNMAPPED\n  source: 50 ml; prepared suspension, not neat FeS\n- component_name: Artificial saltwater (JCM629)\n  reference_scope: UNMAPPED\n  source: 50 ml\n- component_name: Agarose\n  reference_scope: UNMAPPED\n  source: 1 g\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=629\n    source_record: Bottom layer (JCM629)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. JCM629 bottom layer combines\n      50 ml FeS preparation, 50 ml Artificial saltwater (JCM629) and 1 g agarose.\n      JCM629 explicitly replaces the628 mineral preparation. No shared universal Bottom\n      layer identity; top layer is separate.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Bottom layer\n    (JCM629). JCM629 bottom layer combines 50 ml FeS preparation, 50 ml Artificial\n    saltwater (JCM629) and 1 g agarose. JCM629 explicitly replaces the628 mineral\n    preparation. No shared universal Bottom layer identity; top layer is separate.\n    Isolated proposal; native integration and all inherited holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-wolfe470",
+        "case_ids": [
+          "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+          "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+          "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (JCM470). JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367 and837. Variable MnSO4\u00b7xH2O stays a named unresolved component; this does not prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence, not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible quantities/components.",
+        "evidence_ids": [
+          "ROOT-jcm-470",
+          "ROOT-jcm-1367",
+          "ROOT-jcm-837",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_JCM470.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Wolfe_Mineral_Elixir_JCM470.yaml",
+          "sha256": "bb694b952b38b4e6759fa0e154349d416f3c1687dd849a86ea099350e2140f36"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": [],
+        "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (JCM470). JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367 and837. Variable MnSO4\u00b7xH2O stays a named unresolved component; this does not prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence, not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible quantities/components. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:wolfe_mineral_elixir_jcm470\npreferred_term: Wolfe mineral elixir (JCM470)\nmapping_status: MAPPED\ningredient_type: STOCK_SOLUTION\nsolution_type: OTHER\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:wolfe_mineral_elixir_jcm470\n  ontology_label: Wolfe mineral elixir (JCM470)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470\n    notes: JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367 and837.\n      Variable MnSO4\u00b7xH2O stays a named unresolved component; this does not prevent\n      identifying the whole preparation. Case112 applies only toJCM837 occurrence,\n      not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible\n      quantities/components. Whole supplied preparation identified independently of\n      component CURIE availability. Existing owner and exact named/numbered ontology\n      searches are captured in successor evidence.\nnotes: ' Correction1193: JCM470 fourteen-salt acidic stock is explicitly inherited\n  byJCM1367 and837. Variable MnSO4\u00b7xH2O stays a named unresolved component; this does\n  not prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence,\n  not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible\n  quantities/components. Isolated proposal only. All inherited source-case, owner\n  and export holds remain. Raw generic source labels are qualified to these source\n  occurrences and confer no global resolving synonym or release approval. No optional\n  later supplement or atmosphere is inferred as an ingredient.'\nsynonyms:\n- synonym_text: Wolfe's mineral elixir (see Medium No. 470 )\n  synonym_type: RAW_TEXT\n  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470; source-qualified\n    occurrence only; not universal resolution\n- synonym_text: Wolfe's mineral elixir (see below)\n  synonym_type: RAW_TEXT\n  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470; source-qualified\n    occurrence only; not universal resolution\n- synonym_text: Wolfe's mineral elixir\n  synonym_type: RAW_TEXT\n  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: MgSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 30g\n- component_name: MnSO4\u00b7xH2O\n  reference_scope: UNMAPPED\n  source: 5g; x unspecified\n- component_name: NaCl\n  reference_scope: UNMAPPED\n  source: 10g\n- component_name: FeSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 1g\n- component_name: CoCl2\u00b76H2O\n  reference_scope: UNMAPPED\n  source: 1.8g\n- component_name: CaCl2\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 1g\n- component_name: ZnSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 1.8g\n- component_name: CuSO4\u00b75H2O\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: KAl(SO4)2\u00b712H2O\n  reference_scope: UNMAPPED\n  source: 0.18g\n- component_name: H3BO3\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: Na2MoO4\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: (NH4)2Ni(SO4)2\u00b76H2O\n  reference_scope: UNMAPPED\n  source: 2.8g\n- component_name: Na2WO4\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: Na2SeO4\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: Distilled water\n  reference_scope: UNMAPPED\n  source: 1000ml; acidifiedpH1\n- component_name: Dilute sulfuric acid\n  reference_scope: UNMAPPED\n  source: to waterpH1; amount unspecified\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470\n    source_record: Wolfe mineral elixir (JCM470)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. JCM470 fourteen-salt acidic\n      stock is explicitly inherited byJCM1367 and837. Variable MnSO4\u00b7xH2O stays a\n      named unresolved component; this does not prevent identifying the whole preparation.\n      Case112 applies only toJCM837 occurrence, not its fourDSMZ792-derived occurrences.\n      Other maintainedWolfe mixes use incompatible quantities/components.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe mineral\n    elixir (JCM470). JCM470 fourteen-salt acidic stock is explicitly inherited byJCM1367\n    and837. Variable MnSO4\u00b7xH2O stays a named unresolved component; this does not\n    prevent identifying the whole preparation. Case112 applies only toJCM837 occurrence,\n    not its fourDSMZ792-derived occurrences. Other maintainedWolfe mixes use incompatible\n    quantities/components. Isolated proposal; native integration and all inherited\n    holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-wolfe792",
+        "case_ids": [
+          "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source assertion. No generic Wolfe elixir alias may resolve both formulations globally.",
+        "evidence_ids": [
+          "ROOT-dsmz-792",
+          "ROOT-dsmz-1083",
+          "ROOT-dsmz-792b",
+          "ROOT-dsmz-1092",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+          "sha256": "5d8c32c0b7ddbeb39796039ff776a82e0ea435525a9307d1e955d7c00ebd4f9f"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": [],
+        "occurrence_application_note": "Correction1193: propose distinct source-qualified preparation Wolfe mineral elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source assertion. No generic Wolfe elixir alias may resolve both formulations globally. All originaloccurrenceIDs retained in decisions; source recipe determines subgroup, never bare string."
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:wolfe_mineral_elixir_dsmz792\npreferred_term: Wolfe mineral elixir (DSMZ792)\nmapping_status: MAPPED\ningredient_type: STOCK_SOLUTION\nsolution_type: OTHER\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:wolfe_mineral_elixir_dsmz792\n  ontology_label: Wolfe mineral elixir (DSMZ792)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf\n    notes: DSMZ792-defined acidic fourteen-salt preparation applies to fourDSMZ occurrences\n      in case112. Keep distinct from JCM470 variable hydrate source assertion. No\n      generic Wolfe elixir alias may resolve both formulations globally. Whole supplied\n      preparation identified independently of component CURIE availability. Existing\n      owner and exact named/numbered ontology searches are captured in successor evidence.\nnotes: ' Correction1193: DSMZ792-defined acidic fourteen-salt preparation applies\n  to fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source\n  assertion. No generic Wolfe elixir alias may resolve both formulations globally.\n  Isolated proposal only. All inherited source-case, owner and export holds remain.\n  Raw generic source labels are qualified to these source occurrences and confer no\n  global resolving synonym or release approval. No optional later supplement or atmosphere\n  is inferred as an ingredient.'\nsynonyms:\n- synonym_text: Wolfe's mineral elixir\n  synonym_type: RAW_TEXT\n  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: MgSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 30g\n- component_name: MnSO4\u00b7H2O\n  reference_scope: UNMAPPED\n  source: 5g; DSMZ792 prints multiplication x H2O, monohydrate\n- component_name: NaCl\n  reference_scope: UNMAPPED\n  source: 10g\n- component_name: FeSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 1g\n- component_name: CoCl2\u00b76H2O\n  reference_scope: UNMAPPED\n  source: 1.8g\n- component_name: CaCl2\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 1g\n- component_name: ZnSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 1.8g\n- component_name: CuSO4\u00b75H2O\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: KAl(SO4)2\u00b712H2O\n  reference_scope: UNMAPPED\n  source: 0.18g\n- component_name: H3BO3\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: Na2MoO4\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: (NH4)2Ni(SO4)2\u00b76H2O\n  reference_scope: UNMAPPED\n  source: 2.8g\n- component_name: Na2WO4\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: Na2SeO4\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: Distilled water\n  reference_scope: UNMAPPED\n  source: 1000ml; acidifiedpH1\n- component_name: Dilute sulfuric acid\n  reference_scope: UNMAPPED\n  source: to waterpH1; amount unspecified\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf\n    source_record: Wolfe mineral elixir (DSMZ792)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. DSMZ792-defined acidic fourteen-salt\n      preparation applies to fourDSMZ occurrences in case112. Keep distinct from JCM470\n      variable hydrate source assertion. No generic Wolfe elixir alias may resolve\n      both formulations globally.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe mineral\n    elixir (DSMZ792). DSMZ792-defined acidic fourteen-salt preparation applies to\n    fourDSMZ occurrences in case112. Keep distinct from JCM470 variable hydrate source\n    assertion. No generic Wolfe elixir alias may resolve both formulations globally.\n    Isolated proposal; native integration and all inherited holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-atcc1490",
+        "case_ids": [
+          "CM_NAME:b40e681314d4d8cf5e8a9ecee4683f00eefa5b98eecf3d298c28e7e6ca320b81"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Modified chopped meat broth (ATCC1490). Source-supported broth branch with meat and filtrate retained. Optional20gagar is not included in the broth identity. ATCC1490 referenced as a base by bothTOGO variants; their addedcarbohydrates/rumen orformate/fumarate remainoutsidebase. Source rawATCC1490 medium label is conditional on broth branch; no release until receiving form is confirmed.",
+        "evidence_ids": [
+          "ROOT-atcc-1490",
+          "ROOT-togo-api-M2574",
+          "ROOT-togo-api-M2618",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Modified_Chopped_Meat_Broth_ATCC1490.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Modified_Chopped_Meat_Broth_ATCC1490.yaml",
+          "sha256": "2beb9e9de07e720768a6086c9c1221c868a5ffe0d13ce03403a056eb6f6dff63"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": []
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:modified_chopped_meat_broth_atcc1490\npreferred_term: Modified chopped meat broth (ATCC1490)\nmapping_status: MAPPED\ningredient_type: NAMED_MEDIUM\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:modified_chopped_meat_broth_atcc1490\n  ontology_label: Modified chopped meat broth (ATCC1490)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf\n    notes: Source-supported broth branch with meat and filtrate retained. Optional20gagar\n      is not included in the broth identity. ATCC1490 referenced as a base by bothTOGO\n      variants; their addedcarbohydrates/rumen orformate/fumarate remainoutsidebase.\n      Source rawATCC1490 medium label is conditional on broth branch; no release until\n      receiving form is confirmed. Whole supplied preparation identified independently\n      of component CURIE availability. Existing owner and exact named/numbered ontology\n      searches are captured in successor evidence.\nnotes: ' Correction1193: Source-supported broth branch with meat and filtrate retained.\n  Optional20gagar is not included in the broth identity. ATCC1490 referenced as a\n  base by bothTOGO variants; their addedcarbohydrates/rumen orformate/fumarate remainoutsidebase.\n  Source rawATCC1490 medium label is conditional on broth branch; no release until\n  receiving form is confirmed. Isolated proposal only. All inherited source-case,\n  owner and export holds remain. Raw generic source labels are qualified to these\n  source occurrences and confer no global resolving synonym or release approval. No\n  optional later supplement or atmosphere is inferred as an ingredient.'\nsynonyms:\n- synonym_text: ATCC Medium 1490\n  synonym_type: RAW_TEXT\n  source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf;\n    source-qualified occurrence only; not universal resolution\ncomponents:\n- component_name: ATCC1490 meat filtrate\n  reference_scope: UNMAPPED\n  source: from500gfat-freegroundbeef,1Lwater,25ml1NNaOH; filtered fluidrestoredto1L\n- component_name: ATCC1490 retained meat particles\n  reference_scope: UNMAPPED\n  source: 1partmeatto5partsfluid\n- component_name: Trypticase Peptone (BD211921)\n  reference_scope: UNMAPPED\n  source: 30g perrestored1Lfiltrate\n- component_name: Yeast extract\n  reference_scope: UNMAPPED\n  source: 5g\n- component_name: K2HPO4\n  reference_scope: UNMAPPED\n  source: 5g\n- component_name: Resazurin solution (0.025%)\n  reference_scope: UNMAPPED\n  source: 4ml\n- component_name: L-Cysteine\u00b7HCl\n  reference_scope: UNMAPPED\n  source: 0.5g\n- component_name: Hemin solution (ATCC1490)\n  reference_scope: UNMAPPED\n  source: 10ml\n- component_name: Vitamin K1 solution (ATCC1490)\n  reference_scope: UNMAPPED\n  source: 0.2ml\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf\n    source_record: Modified chopped meat broth (ATCC1490)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. Source-supported broth branch\n      with meat and filtrate retained. Optional20gagar is not included in the broth\n      identity. ATCC1490 referenced as a base by bothTOGO variants; their addedcarbohydrates/rumen\n      orformate/fumarate remainoutsidebase. Source rawATCC1490 medium label is conditional\n      on broth branch; no release until receiving form is confirmed.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Modified\n    chopped meat broth (ATCC1490). Source-supported broth branch with meat and filtrate\n    retained. Optional20gagar is not included in the broth identity. ATCC1490 referenced\n    as a base by bothTOGO variants; their addedcarbohydrates/rumen orformate/fumarate\n    remainoutsidebase. Source rawATCC1490 medium label is conditional on broth branch;\n    no release until receiving form is confirmed. Isolated proposal; native integration\n    and all inherited holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-hs",
+        "case_ids": [
+          "CM_NAME:cfd2009dbbaa79c954caacaa0854daa3dced9f602838983f41830c3a9eb56a80"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation HS medium base (TOGO M2643). TOGO M2643 provides an explicit HS base block;125mMmethanol and40mMacetate are lateradditions. Sourcequalifiedbase does not require a universal HS-name alias or componentCURIEs. Originalpaperlink is retained as provenance, not claimed inspectedfulltext.",
+        "evidence_ids": [
+          "ROOT-togo-api-M2643",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/HS_Medium_Base_TOGO_M2643.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/HS_Medium_Base_TOGO_M2643.yaml",
+          "sha256": "26714c2ad63d40a4a65a3106d32eff9e1c6fe2360ffe429374c96c062f5ff05e"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": []
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:hs_medium_base_togo_m2643\npreferred_term: HS medium base (TOGO M2643)\nmapping_status: MAPPED\ningredient_type: NAMED_MEDIUM\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:hs_medium_base_togo_m2643\n  ontology_label: HS medium base (TOGO M2643)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2643\n    notes: TOGO M2643 provides an explicit HS base block;125mMmethanol and40mMacetate\n      are lateradditions. Sourcequalifiedbase does not require a universal HS-name\n      alias or componentCURIEs. Originalpaperlink is retained as provenance, not claimed\n      inspectedfulltext. Whole supplied preparation identified independently of component\n      CURIE availability. Existing owner and exact named/numbered ontology searches\n      are captured in successor evidence.\nnotes: ' Correction1193: TOGO M2643 provides an explicit HS base block;125mMmethanol\n  and40mMacetate are lateradditions. Sourcequalifiedbase does not require a universal\n  HS-name alias or componentCURIEs. Originalpaperlink is retained as provenance, not\n  claimed inspectedfulltext. Isolated proposal only. All inherited source-case, owner\n  and export holds remain. Raw generic source labels are qualified to these source\n  occurrences and confer no global resolving synonym or release approval. No optional\n  later supplement or atmosphere is inferred as an ingredient.'\nsynonyms:\n- synonym_text: HS medium\n  synonym_type: RAW_TEXT\n  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2643; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: Distilled water\n  reference_scope: UNMAPPED\n  source: 1L\n- component_name: NaCl\n  reference_scope: UNMAPPED\n  source: 0.4M\n- component_name: KH2PO4\n  reference_scope: UNMAPPED\n  source: 5mM\n- component_name: NH4Cl\n  reference_scope: UNMAPPED\n  source: 19mM\n- component_name: Resazurin\n  reference_scope: UNMAPPED\n  source: 4\u00b5M\n- component_name: MgCl2\u00b76H2O\n  reference_scope: UNMAPPED\n  source: 54mM\n- component_name: Na2S\u00b79H2O\n  reference_scope: UNMAPPED\n  source: 0.4mM\n- component_name: KCl\n  reference_scope: UNMAPPED\n  source: 13mM\n- component_name: NaHCO3\n  reference_scope: UNMAPPED\n  source: 45mM\n- component_name: CaCl2\n  reference_scope: UNMAPPED\n  source: 2mM\n- component_name: Cysteine\u00b7HCl\n  reference_scope: UNMAPPED\n  source: 2.8mM\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2643\n    source_record: HS medium base (TOGO M2643)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. TOGO M2643 provides an explicit\n      HS base block;125mMmethanol and40mMacetate are lateradditions. Sourcequalifiedbase\n      does not require a universal HS-name alias or componentCURIEs. Originalpaperlink\n      is retained as provenance, not claimed inspectedfulltext.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation HS medium\n    base (TOGO M2643). TOGO M2643 provides an explicit HS base block;125mMmethanol\n    and40mMacetate are lateradditions. Sourcequalifiedbase does not require a universal\n    HS-name alias or componentCURIEs. Originalpaperlink is retained as provenance,\n    not claimed inspectedfulltext. Isolated proposal; native integration and all inherited\n    holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-jcm521",
+        "case_ids": [
+          "CM_NAME:d30e559bdd7d72c71092ab0c7b17de05e06afbcea9039a89b9ee22fee7f337bc"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Mineral medium base (JCM521). JCM521 basalmineral table has fiveinputs andpH7.2\u20137.4. Vitamins, pyruvate, bicarbonate, decane and reducingstocks addedsubsequently are outsidebase; genericMineralmedium is not a universal alias.",
+        "evidence_ids": [
+          "ROOT-jcm-521",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Mineral_Medium_Base_JCM521.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Mineral_Medium_Base_JCM521.yaml",
+          "sha256": "3e3b1df74089d81128b34c3ad8d932f600948b43e1b627b5b0e2fde04aaa7206"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": []
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:mineral_medium_base_jcm521\npreferred_term: Mineral medium base (JCM521)\nmapping_status: MAPPED\ningredient_type: NAMED_MEDIUM\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:mineral_medium_base_jcm521\n  ontology_label: Mineral medium base (JCM521)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521\n    notes: JCM521 basalmineral table has fiveinputs andpH7.2\u20137.4. Vitamins, pyruvate,\n      bicarbonate, decane and reducingstocks addedsubsequently are outsidebase; genericMineralmedium\n      is not a universal alias. Whole supplied preparation identified independently\n      of component CURIE availability. Existing owner and exact named/numbered ontology\n      searches are captured in successor evidence.\nnotes: ' Correction1193: JCM521 basalmineral table has fiveinputs andpH7.2\u20137.4. Vitamins,\n  pyruvate, bicarbonate, decane and reducingstocks addedsubsequently are outsidebase;\n  genericMineralmedium is not a universal alias. Isolated proposal only. All inherited\n  source-case, owner and export holds remain. Raw generic source labels are qualified\n  to these source occurrences and confer no global resolving synonym or release approval.\n  No optional later supplement or atmosphere is inferred as an ingredient.'\nsynonyms:\n- synonym_text: Mineral medium\n  synonym_type: RAW_TEXT\n  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: Sea salts (Sigma)\n  reference_scope: UNMAPPED\n  source: 25g\n- component_name: NH4Cl\n  reference_scope: UNMAPPED\n  source: 0.25g\n- component_name: Na2SO4\n  reference_scope: UNMAPPED\n  source: 3.5g\n- component_name: Resazurin\n  reference_scope: UNMAPPED\n  source: 1mg\n- component_name: Distilled water\n  reference_scope: UNMAPPED\n  source: 900ml\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521\n    source_record: Mineral medium base (JCM521)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. JCM521 basalmineral table\n      has fiveinputs andpH7.2\u20137.4. Vitamins, pyruvate, bicarbonate, decane and reducingstocks\n      addedsubsequently are outsidebase; genericMineralmedium is not a universal alias.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Mineral\n    medium base (JCM521). JCM521 basalmineral table has fiveinputs andpH7.2\u20137.4. Vitamins,\n    pyruvate, bicarbonate, decane and reducingstocks addedsubsequently are outsidebase;\n    genericMineralmedium is not a universal alias. Isolated proposal; native integration\n    and all inherited holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    },
+    {
+      "proposal": {
+        "proposal_id": "R1193-P-mediumd",
+        "case_ids": [
+          "CM_NAME:ebbd25a1e14a91510208c5680207b415dbbfbeb146e3037e00a48c6a8c9833c4"
+        ],
+        "description": "Correction1193: propose distinct source-qualified preparation Medium D base (TOGO M2241). TOGO M2241 defines1xMediumD base andseparate10xpreparation/dilution; DHaddsHEPES1.2g/L. Exactbaseamounts come fromTOGO, notNIES20xstock orDSMZ86 enrichedmedium (tryptone/yeast) or roundedcommercialrecipe. Nestedstock chemical grounding and bufferaddition remainseparate fromwholebaseidentity.",
+        "evidence_ids": [
+          "ROOT-togo-api-M2241",
+          "R1193-dsmz-86",
+          "R1193-nies-d-stock",
+          "R1193-owner-preflight",
+          "R1193-current-occurrence-comparison",
+          "R1193-final-owner-preflight"
+        ],
+        "owner_path": "data/ingredients/mapped/Medium_D_Base_TOGO_M2241.yaml",
+        "kind": "new_owner",
+        "before_sha256": null,
+        "after_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/root/proposed/Medium_D_Base_TOGO_M2241.yaml",
+          "sha256": "05b4453211da9bb79b858f32431f57764873e07c9c4405634872f9b797293904"
+        },
+        "identity_consequence": "Source-qualified whole preparation registry identity",
+        "predicate_consequence": "Registry exact identity only; no invented generic molecular parent",
+        "publication_obligations": "All inherited holds remain. Review complete integrated payload and aliases natively; synchronize only in coordinator integration. No source-case/owner/export approval.",
+        "replaces_proposal_ids": []
+      },
+      "after_yaml": "occurrence_statistics:\n  total_occurrences: 0\n  media_count: 0\nidentifier: kgmicrobe.ingredient:medium_d_base_togo_m2241\npreferred_term: Medium D base (TOGO M2241)\nmapping_status: MAPPED\ningredient_type: NAMED_MEDIUM\nontology_mapping:\n  ontology_id: kgmicrobe.ingredient:medium_d_base_togo_m2241\n  ontology_label: Medium D base (TOGO M2241)\n  ontology_source: kgmicrobe.ingredient\n  mapping_quality: FALLBACK_REGISTRY\n  evidence:\n  - evidence_type: MANUAL_CURATION\n    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2241\n    notes: TOGO M2241 defines1xMediumD base andseparate10xpreparation/dilution; DHaddsHEPES1.2g/L.\n      Exactbaseamounts come fromTOGO, notNIES20xstock orDSMZ86 enrichedmedium (tryptone/yeast)\n      or roundedcommercialrecipe. Nestedstock chemical grounding and bufferaddition\n      remainseparate fromwholebaseidentity. Whole supplied preparation identified\n      independently of component CURIE availability. Existing owner and exact named/numbered\n      ontology searches are captured in successor evidence.\nnotes: ' Correction1193: TOGO M2241 defines1xMediumD base andseparate10xpreparation/dilution;\n  DHaddsHEPES1.2g/L. Exactbaseamounts come fromTOGO, notNIES20xstock orDSMZ86 enrichedmedium\n  (tryptone/yeast) or roundedcommercialrecipe. Nestedstock chemical grounding and\n  bufferaddition remainseparate fromwholebaseidentity. Isolated proposal only. All\n  inherited source-case, owner and export holds remain. Raw generic source labels\n  are qualified to these source occurrences and confer no global resolving synonym\n  or release approval. No optional later supplement or atmosphere is inferred as an\n  ingredient.'\nsynonyms:\n- synonym_text: Medium D\n  synonym_type: RAW_TEXT\n  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2241; source-qualified\n    occurrence only; not universal resolution\ncomponents:\n- component_name: Distilled water\n  reference_scope: UNMAPPED\n  source: 1000mlsourceblock\n- component_name: MgSO4\u00b77H2O\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: NaCl\n  reference_scope: UNMAPPED\n  source: 0.008g\n- component_name: NaNO3\n  reference_scope: UNMAPPED\n  source: 0.689g\n- component_name: Nitrilotriacetic acid\n  reference_scope: UNMAPPED\n  source: 0.1g\n- component_name: KNO3\n  reference_scope: UNMAPPED\n  source: 0.103g\n- component_name: Na2HPO4\n  reference_scope: UNMAPPED\n  source: 0.111g\n- component_name: CaSO4\u00b72H2O\n  reference_scope: UNMAPPED\n  source: 0.06g\n- component_name: Micronutrient stock solution\n  reference_scope: UNMAPPED\n  source: 0.5ml\n- component_name: FeCl3 stock solution\n  reference_scope: UNMAPPED\n  source: 1ml\n- component_name: NaOH solution (1 M)\n  reference_scope: UNMAPPED\n  source: adjustpH8.2beforesterilization\ncomponent_assertion:\n  method: RECIPE_TRANSCRIPTION\n  completeness: COMPLETE\n  evidence:\n  - evidence_type: RECIPE_SOURCE\n    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2241\n    source_record: Medium D base (TOGO M2241)\n    notes: One-level named inputs relative to cited source. Batch amounts remain source\n      notes; no unsupported final-volume normalization. TOGO M2241 defines1xMediumD\n      base andseparate10xpreparation/dilution; DHaddsHEPES1.2g/L. Exactbaseamounts\n      come fromTOGO, notNIES20xstock orDSMZ86 enrichedmedium (tryptone/yeast) or roundedcommercialrecipe.\n      Nestedstock chemical grounding and bufferaddition remainseparate fromwholebaseidentity.\ncuration_history:\n- timestamp: '2026-11-08T05:46:05.889096+00:00'\n  curator: Codex worker05 /root correction1193\n  action: CREATED\n  changes: 'Correction1193: propose distinct source-qualified preparation Medium D\n    base (TOGO M2241). TOGO M2241 defines1xMediumD base andseparate10xpreparation/dilution;\n    DHaddsHEPES1.2g/L. Exactbaseamounts come fromTOGO, notNIES20xstock orDSMZ86 enrichedmedium\n    (tryptone/yeast) or roundedcommercialrecipe. Nestedstock chemical grounding and\n    bufferaddition remainseparate fromwholebaseidentity. Isolated proposal; native\n    integration and all inherited holds remain.'\n  new_status: MAPPED\n  llm_assisted: true\n  llm_model: gpt-6\n"
+    }
+  ],
+  "status": "open"
+}

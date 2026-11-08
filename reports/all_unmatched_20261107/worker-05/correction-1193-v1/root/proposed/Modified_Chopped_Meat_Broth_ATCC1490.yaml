@@ -1,0 +1,90 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:modified_chopped_meat_broth_atcc1490
+preferred_term: Modified chopped meat broth (ATCC1490)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:modified_chopped_meat_broth_atcc1490
+  ontology_label: Modified chopped meat broth (ATCC1490)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf
+    notes: Source-supported broth branch with meat and filtrate retained. Optional20gagar
+      is not included in the broth identity. ATCC1490 referenced as a base by bothTOGO
+      variants; their addedcarbohydrates/rumen orformate/fumarate remainoutsidebase.
+      Source rawATCC1490 medium label is conditional on broth branch; no release until
+      receiving form is confirmed. Whole supplied preparation identified independently
+      of component CURIE availability. Existing owner and exact named/numbered ontology
+      searches are captured in successor evidence.
+notes: ' Correction1193: Source-supported broth branch with meat and filtrate retained.
+  Optional20gagar is not included in the broth identity. ATCC1490 referenced as a
+  base by bothTOGO variants; their addedcarbohydrates/rumen orformate/fumarate remainoutsidebase.
+  Source rawATCC1490 medium label is conditional on broth branch; no release until
+  receiving form is confirmed. Isolated proposal only. All inherited source-case,
+  owner and export holds remain. Raw generic source labels are qualified to these
+  source occurrences and confer no global resolving synonym or release approval. No
+  optional later supplement or atmosphere is inferred as an ingredient.'
+synonyms:
+- synonym_text: ATCC Medium 1490
+  synonym_type: RAW_TEXT
+  source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf;
+    source-qualified occurrence only; not universal resolution
+components:
+- component_name: ATCC1490 meat filtrate
+  reference_scope: UNMAPPED
+  source: from500gfat-freegroundbeef,1Lwater,25ml1NNaOH; filtered fluidrestoredto1L
+- component_name: ATCC1490 retained meat particles
+  reference_scope: UNMAPPED
+  source: 1partmeatto5partsfluid
+- component_name: Trypticase Peptone (BD211921)
+  reference_scope: UNMAPPED
+  source: 30g perrestored1Lfiltrate
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  source: 5g
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  source: 5g
+- component_name: Resazurin solution (0.025%)
+  reference_scope: UNMAPPED
+  source: 4ml
+- component_name: L-Cysteine·HCl
+  reference_scope: UNMAPPED
+  source: 0.5g
+- component_name: Hemin solution (ATCC1490)
+  reference_scope: UNMAPPED
+  source: 10ml
+- component_name: Vitamin K1 solution (ATCC1490)
+  reference_scope: UNMAPPED
+  source: 0.2ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf
+    source_record: Modified chopped meat broth (ATCC1490)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. Source-supported broth branch
+      with meat and filtrate retained. Optional20gagar is not included in the broth
+      identity. ATCC1490 referenced as a base by bothTOGO variants; their addedcarbohydrates/rumen
+      orformate/fumarate remainoutsidebase. Source rawATCC1490 medium label is conditional
+      on broth branch; no release until receiving form is confirmed.
+curation_history:
+- timestamp: '2026-11-08T05:46:05.889096+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Modified
+    chopped meat broth (ATCC1490). Source-supported broth branch with meat and filtrate
+    retained. Optional20gagar is not included in the broth identity. ATCC1490 referenced
+    as a base by bothTOGO variants; their addedcarbohydrates/rumen orformate/fumarate
+    remainoutsidebase. Source rawATCC1490 medium label is conditional on broth branch;
+    no release until receiving form is confirmed. Isolated proposal; native integration
+    and all inherited holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

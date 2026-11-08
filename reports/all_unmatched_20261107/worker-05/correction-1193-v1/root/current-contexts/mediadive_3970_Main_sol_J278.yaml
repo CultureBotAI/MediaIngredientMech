@@ -1,0 +1,82 @@
+id: CultureMech:013029
+preferred_term: Main sol. J278
+term:
+  id: mediadive.solution:3970
+  label: Main sol. J278
+composition:
+- preferred_term: Trypticase soy agar
+  concentration:
+    value: '38.0952'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:1617
+    label: Trypticase soy agar
+- preferred_term: Defibrinated sheep blood
+  concentration:
+    value: '47.61904761904761'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:1717
+    label: Defibrinated sheep blood
+- preferred_term: Distilled water
+  concentration:
+    value: '952.3809523809523'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: 'After preparing the Trypticase soy agar plate with 5%sheep blood,
+  spreading the subculture on the agar surface and place one NAM disk aseptically.
+  Incubate the agar plate under a H2-CO2-N2 (1:1:8) gas mixture. To prepare the NAM
+  disk, impregnate with 20 ï¿½l filter-sterilized 1.5% NAM (<I>N</I>-acetylmuramic
+  acid, Sigma) aqueous solution to a sterile paper disk (0.64 cm in diameter). Stored
+  the air-dried disk at room temperature.
+
+
+  Original volume: 1050 mL'
+curation_history:
+- timestamp: '2026-03-13T06:20:28.989377Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:013029'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:33.581866'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:09.419616'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:56.533812+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:29.649442+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 1 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:48:14.355703+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial

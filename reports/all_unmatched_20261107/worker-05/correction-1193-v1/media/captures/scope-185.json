@@ -1,0 +1,226 @@
+{
+  "case_indices": [
+    185
+  ],
+  "search_regex": "imdm|iscove",
+  "ignored_files_included": true,
+  "searched_catalog_count": 2956,
+  "candidate_owners": [
+    {
+      "path": "data/ingredients/unmapped/IMDM-Medium.yaml",
+      "sha256": "940777dced0852fbf2da7f9a3b4c8ffa0cb2be41ec16a9977df3c2e21cbba25a",
+      "record": {
+        "identifier": "UNMAPPED_0405",
+        "preferred_term": "IMDM-Medium",
+        "synonyms": [
+          {
+            "synonym_text": "IMDM-Medium",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1069); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T19:20:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_DEFINED_MEDIUM",
+            "changes": "Classified as a named IMDM medium/formulation and left unmapped pending recipe-level curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/IMDM-Medium-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: ## Recommended record updates — ### Decision No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1069); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation.",
+        "ingredient_type": "NAMED_MEDIUM"
+      },
+      "names": [
+        "IMDM-Medium",
+        "UNMAPPED_0405",
+        "IMDM-Medium"
+      ]
+    }
+  ],
+  "all_matching_current_occurrences": [
+    {
+      "recipe_id": "CultureMech:000636",
+      "recipe_label": "cultivation_medium_for_chlamydiae",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/cultivation_medium_for_chlamydiae.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "IMDM-Medium",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1069",
+      "mim_preferred_term": "IMDM-Medium",
+      "mim_matched_label": "IMDM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "891.089109",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"891.089109\"},\"notes\":\"DSMZ Medium 1193 lists 45.0 ml IMDM-Medium in a 50.5 ml L929/HeLa cell-culture medium batch.\",\"preferred_term\":\"IMDM-Medium\",\"source\":\"DSMZ Medium 1193\",\"term\":{\"id\":\"mediadive.compound:1069\",\"label\":\"IMDM-Medium\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:000641",
+      "recipe_label": "vero_b4_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/vero_b4_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "ingredients",
+      "component_index": "0",
+      "preferred_term": "IMDM-Medium",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1069",
+      "mim_preferred_term": "IMDM-Medium",
+      "mim_matched_label": "IMDM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "891.089109",
+      "concentration_unit": "ML_PER_L",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"ML_PER_L\",\"value\":\"891.089109\"},\"notes\":\"DSMZ Medium 1198 lists 45.0 ml IMDM-Medium in a 50.5 ml Vero B4 cell-culture medium batch.\",\"preferred_term\":\"IMDM-Medium\",\"source\":\"DSMZ Medium 1198\",\"term\":{\"id\":\"mediadive.compound:1069\",\"label\":\"IMDM-Medium\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:003345",
+      "recipe_label": "car_bacillus_medium",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/car_bacillus_medium.yaml",
+      "record_class": "MediaRecipe",
+      "component_field": "solutions/0/composition",
+      "component_index": "0",
+      "preferred_term": "Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX)",
+      "label_source": "legacy_name",
+      "resolved_identifier": "",
+      "resolution_source": "not_found",
+      "local_identifier": "",
+      "source_compound_id": "",
+      "mim_preferred_term": "",
+      "mim_matched_label": "",
+      "mim_match_type": "",
+      "mim_mapping_status": "",
+      "mim_ambiguity": "",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "label not found in pinned MIM index and no usable local identity",
+      "concentration_value": "90",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"90\"},\"notes\":\"Life Technologies Cat. No. 31980030. No defensible identity object is present in the reviewed MIM SSSOM.\",\"preferred_term\":\"Iscove's Modified Dulbecco's Medium (IMDM, GlutaMAX)\"}"
+    },
+    {
+      "recipe_id": "CultureMech:011760",
+      "recipe_label": "Main sol. 1193",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_2381_Main_sol_1193.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "IMDM-Medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1069",
+      "mim_preferred_term": "IMDM-Medium",
+      "mim_matched_label": "IMDM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "900.0",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"900.0\"},\"preferred_term\":\"IMDM-Medium\",\"term\":{\"id\":\"mediadive.compound:1069\",\"label\":\"IMDM-Medium\"}}"
+    },
+    {
+      "recipe_id": "CultureMech:011766",
+      "recipe_label": "Main sol. 1198",
+      "recipe_category": "BACTERIAL",
+      "source_path": "bacterial/mediadive_2387_Main_sol_1198.yaml",
+      "record_class": "SolutionRecipe",
+      "component_field": "composition",
+      "component_index": "0",
+      "preferred_term": "IMDM-Medium",
+      "label_source": "preferred_term",
+      "resolved_identifier": "",
+      "resolution_source": "authoritative_unmapped",
+      "local_identifier": "",
+      "source_compound_id": "mediadive.compound:1069",
+      "mim_preferred_term": "IMDM-Medium",
+      "mim_matched_label": "IMDM-Medium",
+      "mim_match_type": "preferred_term",
+      "mim_mapping_status": "UNMAPPED",
+      "mim_ambiguity": "unique",
+      "mim_ontology_id_diagnostic": "",
+      "grounding_reason": "MIM explicitly leaves this label unmapped; local grounding suppressed",
+      "concentration_value": "900.0",
+      "concentration_unit": "PERCENT_V_V",
+      "ingredient_json": "{\"concentration\":{\"unit\":\"PERCENT_V_V\",\"value\":\"900.0\"},\"preferred_term\":\"IMDM-Medium\",\"term\":{\"id\":\"mediadive.compound:1069\",\"label\":\"IMDM-Medium\"}}"
+    }
+  ],
+  "occurrence_input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/output/ingredient_occurrences.tsv",
+    "sha256": "e04bc9c22ee753e8456cd6aa7a972b7e6d3c2f114427c87aad44c09e38be236a"
+  },
+  "recipe_hashes": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/car_bacillus_medium.yaml",
+      "sha256": "e86c1ff90e7fc4355bdd281b65409a90ec6e7c75e089c7071beb252b2f4a0cd8",
+      "frozen_input_manifest_hash": "e86c1ff90e7fc4355bdd281b65409a90ec6e7c75e089c7071beb252b2f4a0cd8",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/cultivation_medium_for_chlamydiae.yaml",
+      "sha256": "febe27974a97ce695b1f295d1084b140d83551acd28f97c9586f30425f774839",
+      "frozen_input_manifest_hash": "febe27974a97ce695b1f295d1084b140d83551acd28f97c9586f30425f774839",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_2381_Main_sol_1193.yaml",
+      "sha256": "fbb043f9dbf8b7c8e9d1266342e94853fcc652e4dc1eef5dd38599feccbbba5f",
+      "frozen_input_manifest_hash": "fbb043f9dbf8b7c8e9d1266342e94853fcc652e4dc1eef5dd38599feccbbba5f",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/mediadive_2387_Main_sol_1198.yaml",
+      "sha256": "59e07c85b3215691729db363883ebae5a2634339645d261627b275ce11f57601",
+      "frozen_input_manifest_hash": "59e07c85b3215691729db363883ebae5a2634339645d261627b275ce11f57601",
+      "matches_frozen": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/vero_b4_medium.yaml",
+      "sha256": "0eb690edff49d2e485044c91bfb3d1877c0c9ff50c0b403223beac57a66b915b",
+      "frozen_input_manifest_hash": "0eb690edff49d2e485044c91bfb3d1877c0c9ff50c0b403223beac57a66b915b",
+      "matches_frozen": true
+    }
+  ]
+}

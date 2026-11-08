@@ -1,0 +1,36 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:17:12.027464+00:00",
+  "status": "needs_revision",
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_guarded_payloads.py",
+      "sha256": "74b1572902156e03d3f677cf1e505c0e841aaec7d5483a116ad9a09f9ceb4beb",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/guarded-replay-v1-inputs/validate_guarded_payloads.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "aecc7bf1cc69fbf87a7fca42b33d0d052f78d247dc77fb0307470fdf144c50fd",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/guarded-replay-v1-inputs/prepare_native_review.py"
+    }
+  ],
+  "open_findings": 1,
+  "findings": [
+    {
+      "finding_id": "TOOL-GUARDED-01",
+      "severity": "moderate",
+      "finding": "Manifest parsed before replay is not the byte object hashed into the final receipt. A concurrent proposal manifest edit during replay can bind old rows to a new hash.",
+      "remediation": "Read manifest bytes once, parse and hash those bytes, and assert current bytes are unchanged before receipt write."
+    }
+  ],
+  "verified": [
+    "Candidate hashes verified before replay.",
+    "Native writer validates schema before writing.",
+    "Destinations derive only from UUID run directory and hashed proposal ID under repository-private .temp.",
+    "Parsed YAML roundtrip equality and original capture unchanged are checked.",
+    "Native prepare now explicitly hashes the replay helper and its receipt."
+  ],
+  "limitations": [
+    "Static read-only review; actual complete replay remains coordinator-owned."
+  ]
+}

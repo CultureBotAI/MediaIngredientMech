@@ -1,0 +1,102 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:00:03.618309+00:00",
+  "status": "needs_revision",
+  "review_scope": "Read-only integrity review of five correction processing helpers. No scientific re-review of other authored groups; no maintained data writes.",
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py",
+      "sha256": "5fce1fe989818aee3d99a660edfd2b65e2ead37905e112eaa68ae445b180d820",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v1-inputs/assemble_outcomes.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_proposals.py",
+      "sha256": "1a8c4deb1dc2ff6e6984ac74aa793a638825f0d33a31c22f9a368649b1704585",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v1-inputs/validate_proposals.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "989a91fd0aec483dac6b7358640528193c769ff7b5229b0ee18389da11e9d6b2",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v1-inputs/prepare_native_review.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/author_native_review.py",
+      "sha256": "26cd7a83b6cb605a34a5057f28ab1eeef494248dabdd770ab611f1a601ef0633",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v1-inputs/author_native_review.py"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/owner_dependencies.py",
+      "sha256": "96fbad2d9a7b297c6ec795da97997bb6b1714bf247b1f830401b4bb45e6f5ae4",
+      "preserved_copy": "correction-1193-v1/chemicals/reviews/tooling-v1-inputs/owner_dependencies.py"
+    }
+  ],
+  "open_findings": 6,
+  "findings": [
+    {
+      "finding_id": "TOOL-01",
+      "severity": "major",
+      "script": "author_native_review.py",
+      "finding": "Validation freshness binds only proposal ID and after hash, not the validated full proposal metadata. A promotion destination change is accepted by the current equality guard.",
+      "remediation": "Require full validation payload equality with current P, or exact canonical proposal manifest hash, before native authoring.",
+      "control": "Pure in-memory comparison of unchanged after bytes with changed destination reproduces accepted stale metadata."
+    },
+    {
+      "finding_id": "TOOL-02",
+      "severity": "major",
+      "script": "author_native_review.py",
+      "finding": "Native author accepts schema and partonomy PASS without checking introduced active identifier collisions. validate_proposals writes those PASS fields even when its final nonzero exit is caused by an identifier collision.",
+      "remediation": "Assert active_identifier_collisions.introduced is empty and bind any overall validation status or successful process receipt.",
+      "control": "Static inspection of producer receipt and exit predicate against consumer assertions."
+    },
+    {
+      "finding_id": "TOOL-03",
+      "severity": "major",
+      "script": "owner_dependencies.py",
+      "finding": "Cross-shard matching ignores destination_owner_path, so an unmapped-to-mapped promotion can collide with another new or edited destination path while using a different identifier and evade matching.",
+      "remediation": "Record source and destination paths on both sides and flag any intersection.",
+      "control": "Pure in-memory old condition misses differing identifiers sharing a promoted destination."
+    },
+    {
+      "finding_id": "TOOL-04",
+      "severity": "moderate",
+      "script": "owner_dependencies.py",
+      "finding": "Owner-reference dictionary comprehension silently takes the last SHA for an owner.",
+      "remediation": "Assert identical SHA across every occurrence before constructing unique refs.",
+      "control": "Static inspection; downstream structural audit may catch inconsistent records, but dependency producer itself must not erase them."
+    },
+    {
+      "finding_id": "TOOL-05",
+      "severity": "moderate",
+      "script": "validate_proposals.py",
+      "finding": "Destination path is not restricted to direct maintained mapped/unmapped YAML locations or checked against candidate mapping status.",
+      "remediation": "Validate owner/destination path grammar and mapped-state directory; preserve before owner path on promotions.",
+      "control": "Static inspection; current payloads not alleged to have invalid destinations."
+    },
+    {
+      "finding_id": "TOOL-06",
+      "severity": "major",
+      "script": "prepare_native_review.py + author_native_review.py",
+      "finding": "The native inspector returns target metadata but does not hash the targets specification automatically. Current authoring reads targets.json without comparing it with inspect.targets, allowing selector/owner metadata to drift after inspection.",
+      "remediation": "Include targets.json as an explicit input and require equality with inspect.targets before authoring.",
+      "control": "Read scripts/record_review.py inspect_source and validate_review; actual target file bytes are correctly hashed, but current target metadata is not."
+    }
+  ],
+  "accepted_behaviors": [
+    "Exact per-group reviewed input hashes, author separation, complete case ID set, frozen case hashes and source identity, bidirectional proposal backlinks and actual old owner bindings are enforced by assembly.",
+    "All 188 cases are reassessed; all 159 predecessor no-proposal cases are counted from predecessor decisions. This check is coverage, not a substitute for scientific reassessment.",
+    "Identical shared evidence is deduplicated only on full object equality; conflicting provenance fails. This covers the shared case60 thiamine source capture.",
+    "Mapped/unmapped maintained file contents are native inspection target inputs and later source hashes are checked. No separate owner-byte freshness hole was found.",
+    "Accepting review_status PASS and case status supported_with_stated_limits with zero or empty open_findings is a legitimate exact-format adaptation of the immutable materials review.",
+    "Proposals remain isolated; native verdict needs_curation and explicit exclusions prevent whole-owner or export approval."
+  ],
+  "additional_recommendations": [
+    "Native promotion targets and actions should explicitly carry destination_owner_path alongside the original before-guarded owner.",
+    "Cross-shard snapshot should mark missing after-capture files as unverified, rather than leaving an unexplained null identifier.",
+    "Severity assignment should reflect newly identified semantic repairs, not only the fixed legacy proposal ID list."
+  ],
+  "limits": [
+    "Static review plus bounded in-memory guard demonstrations; no full adversarial helper execution yet.",
+    "No general exhaustive repository absence claim made. Explicit maintained directory reads and frozen shard paths are used by the helpers.",
+    "Current script snapshots are preserved so later remediation can be reviewed without erasing this finding history."
+  ]
+}

@@ -1,0 +1,150 @@
+identifier: kgmicrobe.ingredient:reinforced_clostridial_medium_difco
+preferred_term: Reinforced clostridial medium (BD Difco)
+synonyms:
+- synonym_text: Reinforced clostridial medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Reinforced clostridial medium (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Reinforced Clostridial medium (Oxoid CM149)
+  synonym_type: REJECTED_LABEL
+  source: 'Correction1193: authentic Oxoid product label excluded from distinct BD-Difco
+    product; raw provenance retained.'
+- synonym_text: Reinforced clostridial medium (Oxoid)
+  synonym_type: REJECTED_LABEL
+  source: 'Correction1193: authentic Oxoid product label excluded from distinct BD-Difco
+    product; raw provenance retained.'
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a reinforced clostridial medium preparation and left unmapped
+    pending product- or recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Reinforced_Clostridial_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** *Reinforced Clostridial
+    Medium* (RCM) is a named, complete microbiological culture-medium formulation
+    supplied as a multicomponent dehydrated product. It is not a single chemical,
+    salt/hydrate, buffer, extract, or taxonomic entity. Peer-reviewed studies explicitly
+    use the expansion “reinforced clostridial medium (RCM)” and describe commercial
+    products from Lab M and No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Reinforced clostridial medium (BD-Difco)'' (x3 CultureMech
+    mentions); ''Reinforced Clostridial medium (Oxoid CM149)'' (x1 CultureMech mentions);
+    ''Reinforced clostridial medium (Oxoid)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate
+    that whole named product with its manufacturer nine-part recipe. The existing
+    Oxoid aliases are excluded from this product identity because manufacturer formulations
+    use different peptone/extract products; retain raw strings as rejected for this
+    selected BD product, not as rejected source facts. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium preparation pending product-
+  or recipe-level curation. Correction1193: Original1769andits three source media
+  explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer
+  nine-part recipe. The existing Oxoid aliases are excluded from this product identity
+  because manufacturer formulations use different peptone/extract products; retain
+  raw strings as rejected for this selected BD product, not as rejected source facts.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:reinforced_clostridial_medium_difco
+  ontology_label: Reinforced clostridial medium (BD Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.maplica.com/Manual%20Difco%20P-S.pdf
+    notes: Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate
+      that whole named product with its manufacturer nine-part recipe. The existing
+      Oxoid aliases are excluded from this product identity because manufacturer formulations
+      use different peptone/extract products; retain raw strings as rejected for this
+      selected BD product, not as rejected source facts.
+components:
+- component_name: Tryptose
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Beef extract
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Dextrose
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Cysteine hydrochloride
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.maplica.com/Manual%20Difco%20P-S.pdf
+    notes: Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate
+      that whole named product with its manufacturer nine-part recipe. The existing
+      Oxoid aliases are excluded from this product identity because manufacturer formulations
+      use different peptone/extract products; retain raw strings as rejected for this
+      selected BD product, not as rejected source facts.

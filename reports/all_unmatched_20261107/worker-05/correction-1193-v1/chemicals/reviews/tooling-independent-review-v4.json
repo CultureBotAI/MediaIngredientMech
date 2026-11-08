@@ -1,0 +1,106 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:10:46.537664+00:00",
+  "status": "complete",
+  "review_status": "PASS",
+  "open_findings": 0,
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py",
+      "sha256": "ec28a422388c065be9b626c174e1b6baac2933c267283783a6175d74779af2c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_proposals.py",
+      "sha256": "3cf80916f1b0328a592c3bb1e8f73511298cd3b9c87096b7b1cacab3d152d6e9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "fc307fcc539f23bdf5bcda553baccdcdfb16742098788d17d3a60305080ea5ae"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/author_native_review.py",
+      "sha256": "6115b33cc0ca0c8e55a912f0869b236df0188ccfd16a2b327b71736aa4d215c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/owner_dependencies.py",
+      "sha256": "e6d3d1417d7fc24147168141222e14da990ecc6a35f8475f15ccb0100ceb749e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/test_assembly_controls.py",
+      "sha256": "ad3b33826b9185124d7627f2fe1f071004c911b4b808613da5a3fbfaa15ffe0e"
+    }
+  ],
+  "predecessor_review": {
+    "path": "correction-1193-v1/chemicals/reviews/tooling-independent-review-v3.json",
+    "sha256": "669fe2a82da22dedcbc34fa126283980cc119d415efdd5fd0608d9ed4a45b9d4"
+  },
+  "scope": "Adapter-only review for equivalent case-keyed and list skeptical review representations, plus corresponding end-to-end control helper source.",
+  "checks": [
+    "Explicit dict normalization preserves the key as case identity and rejects any contradictory embedded ID.",
+    "List input retains duplicate-ID and exact coverage checks; malformed values and pending statuses fail.",
+    "The four other native/dependency/validation helpers are byte-identical to v3.",
+    "Reviewed control helper copies real reviewed inputs into a durable private fixture, restores between mutations, and changes only synthetic reviewer manifests to reach deeper source/backlink guards. It preserves the real source/review artifacts.",
+    "Fourteen full real-fixture controls are encoded, including equivalent list acceptance, duplicate case rejection and inconsistent dict identity rejection. Execution of that full helper remains coordinator-owned."
+  ],
+  "controls": [
+    {
+      "control": "Case-keyed dict without redundant IDs",
+      "expected_acceptance": true,
+      "observed_acceptance": true,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Case-keyed dict with consistent redundant IDs",
+      "expected_acceptance": true,
+      "observed_acceptance": true,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Equivalent explicit list",
+      "expected_acceptance": true,
+      "observed_acceptance": true,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Contradictory dict key and embedded ID",
+      "expected_acceptance": false,
+      "observed_acceptance": false,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Duplicate list case",
+      "expected_acceptance": false,
+      "observed_acceptance": false,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Missing case coverage",
+      "expected_acceptance": false,
+      "observed_acceptance": false,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Malformed scalar case container",
+      "expected_acceptance": false,
+      "observed_acceptance": false,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Pending per-case review",
+      "expected_acceptance": false,
+      "observed_acceptance": false,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    },
+    {
+      "control": "Non-dictionary value",
+      "expected_acceptance": false,
+      "observed_acceptance": false,
+      "method": "Execute exact current normalization and per-case coverage/status AST block with isolated inputs"
+    }
+  ],
+  "limitations": [
+    "Nine normalization controls actually executed in isolation; the full real-fixture test helper has been read but not executed by this reviewer.",
+    "All prior v2 stale-validation, collision, path and native target controls remain applicable; this adapter change does not confer scientific or release approval.",
+    "Final canonical/native and staged-diff verification remains pending."
+  ]
+}

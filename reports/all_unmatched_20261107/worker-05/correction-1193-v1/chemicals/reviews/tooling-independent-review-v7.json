@@ -1,0 +1,59 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:27:58.252101+00:00",
+  "status": "complete",
+  "review_status": "PASS",
+  "open_findings": 0,
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py",
+      "sha256": "ec28a422388c065be9b626c174e1b6baac2933c267283783a6175d74779af2c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_proposals.py",
+      "sha256": "3cf80916f1b0328a592c3bb1e8f73511298cd3b9c87096b7b1cacab3d152d6e9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "2d31763f6cf5511daeb92a46cc9f8eea1d42f9004ca1b4533f0ebdb72f53d420"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/author_native_review.py",
+      "sha256": "6115b33cc0ca0c8e55a912f0869b236df0188ccfd16a2b327b71736aa4d215c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/owner_dependencies.py",
+      "sha256": "e6d3d1417d7fc24147168141222e14da990ecc6a35f8475f15ccb0100ceb749e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/test_assembly_controls.py",
+      "sha256": "ad3b33826b9185124d7627f2fe1f071004c911b4b808613da5a3fbfaa15ffe0e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_guarded_payloads.py",
+      "sha256": "bd8088668e8c2e389680747392ea8ce0699586f4969e6119d5e6e1e9f3ab7df3"
+    }
+  ],
+  "predecessor_review": {
+    "path": "correction-1193-v1/chemicals/reviews/tooling-independent-review-v6.json",
+    "sha256": "abb16296b712f1b825a6b00c2eafb03758df5580fd002906d530fddf53c44c84"
+  },
+  "scope": "Additive native provenance binding of final component-dependency, occurrence-routing and frozen-input receipts.",
+  "checks": [
+    "Archived prepare bytes match the v6 reviewed hash.",
+    "The only added code line appends the three named validation receipt paths to native inspection inputs; all previous lines are identical.",
+    "Each new input is included exactly once with no fallback to predecessor receipts.",
+    "All six other helper hashes are unchanged and all seven current scripts compile.",
+    "Native author later verifies all inspected input hashes, so these coordinator dependency/limitation receipts become part of the content-bound native record."
+  ],
+  "new_native_input_paths": [
+    "validation/component-identity-dependencies.json",
+    "validation/occurrence-routing-independent-review-v2.json",
+    "validation/frozen-input-integrity.json"
+  ],
+  "limitations": [
+    "The three final receipts must actually be generated and assessed before native inspection; this code review does not claim they exist or pass.",
+    "Prior scientific and structural scope limits remain unchanged.",
+    "Final canonical routing/dependency audits are pending reassembly."
+  ]
+}

@@ -1,0 +1,96 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:modified_chopped_meat_agar_base_atcc1490
+preferred_term: Modified chopped meat agar base (ATCC1490 branch in TOGO M2574/M2618)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:modified_chopped_meat_agar_base_atcc1490
+  ontology_label: Modified chopped meat agar base (ATCC1490 branch in TOGO M2574/M2618)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf
+    notes: TOGO M2574 and M2618 both explicitly list 20 g agar in the ATCC1490 base
+      expansion. The current ATCC1490 PDF presents agar as optional. This candidate
+      denotes the agar-containing branch actually asserted by those two TOGO sources,
+      not the broth branch or every medium called ATCC1490. Added carbohydrates/rumen
+      fluid in M2574 and formate/fumarate in M2618 remain outside this common base.
+      Any conflicting frozen physical-state annotation remains an upstream hold.
+notes: TOGO M2574 and M2618 both explicitly list 20 g agar in the ATCC1490 base expansion.
+  The current ATCC1490 PDF presents agar as optional. This candidate denotes the agar-containing
+  branch actually asserted by those two TOGO sources, not the broth branch or every
+  medium called ATCC1490. Added carbohydrates/rumen fluid in M2574 and formate/fumarate
+  in M2618 remain outside this common base. Any conflicting frozen physical-state
+  annotation remains an upstream hold. Verbatim source name "ATCC Medium 1490" remains
+  in source ledger/provenance, not a resolving alias to this branch. All inherited
+  holds remain.
+components:
+- component_name: ATCC1490 meat filtrate
+  reference_scope: UNMAPPED
+  source: from500gfat-freegroundbeef,1Lwater,25ml1NNaOH; filtered fluidrestoredto1L
+- component_name: ATCC1490 retained meat particles
+  reference_scope: UNMAPPED
+  source: 1partmeatto5partsfluid
+- component_name: Trypticase Peptone (BD211921)
+  reference_scope: UNMAPPED
+  source: 30g perrestored1Lfiltrate
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  source: 5g
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  source: 5g
+- component_name: Resazurin solution (0.025%)
+  reference_scope: UNMAPPED
+  source: 4ml
+- component_name: L-Cysteine·HCl
+  reference_scope: UNMAPPED
+  source: 0.5g
+- component_name: Hemin solution (ATCC1490)
+  reference_scope: UNMAPPED
+  source: 10ml
+- component_name: Vitamin K1 solution (ATCC1490)
+  reference_scope: UNMAPPED
+  source: 0.2ml
+- component_name: Agar
+  reference_scope: UNMAPPED
+  source: 20 g per batch; explicitly included by TOGO M2574 and M2618; optional in
+    current ATCC1490 master recipe.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/4/9/0/atcc-medium-1490.pdf
+    source_record: Modified chopped meat agar base (ATCC1490 branch in TOGO M2574/M2618)
+    notes: TOGO M2574 and M2618 both explicitly list 20 g agar in the ATCC1490 base
+      expansion. The current ATCC1490 PDF presents agar as optional. This candidate
+      denotes the agar-containing branch actually asserted by those two TOGO sources,
+      not the broth branch or every medium called ATCC1490. Added carbohydrates/rumen
+      fluid in M2574 and formate/fumarate in M2618 remain outside this common base.
+      Any conflicting frozen physical-state annotation remains an upstream hold. One-level
+      inputs; process intermediates are named rather than incorrectly equating whole
+      medium with ground beef.
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'TOGO M2574 and M2618 both explicitly list 20 g agar in the ATCC1490 base
+    expansion. The current ATCC1490 PDF presents agar as optional. This candidate
+    denotes the agar-containing branch actually asserted by those two TOGO sources,
+    not the broth branch or every medium called ATCC1490. Added carbohydrates/rumen
+    fluid in M2574 and formate/fumarate in M2618 remain outside this common base.
+    Any conflicting frozen physical-state annotation remains an upstream hold. Independent
+    correction: TOGO M2574 and M2618 both explicitly list 20 g agar in the ATCC1490
+    base expansion. The current ATCC1490 PDF presents agar as optional. This candidate
+    denotes the agar-containing branch actually asserted by those two TOGO sources,
+    not the broth branch or every medium called ATCC1490. Added carbohydrates/rumen
+    fluid in M2574 and formate/fumarate in M2618 remain outside this common base.
+    Any conflicting frozen physical-state annotation remains an upstream hold. Isolated
+    proposal only; all source and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

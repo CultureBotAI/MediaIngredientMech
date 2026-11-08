@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "control": "exact independently reviewed successor accepted",
+      "expected_acceptance": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"assembled_at\": \"2026-11-08T06:28:26.225473+00:00\",\n  \"case_count\": 188,\n  \"prior_no_change_count\": 159,\n  \"reassessed_prior_no_change_count\": 159,\n  \"current_no_change_count\": 27,\n  \"current_proposal_case_count\": 161,\n  \"evidence_count\": 1499,\n  \"proposal_count\": 138,\n  \"exact_shared_evidence_ids_deduplicated\": [\n    \"CHEM-CAP-2caf4cd3f91d0ec5\"\n  ],\n  \"review_bindings_sha256\": \"11da657b8cb3576179457e74b022870ab04a0af5f7f923435925658cd05da746\",\n  \"scientific_changes_at_assembly\": \"None; metadata-only review/hold/backlink binding; exact authored fragment digest retained.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "control": "all188 original raw names and nested negative holds preserved",
+      "status": "PASS"
+    },
+    {
+      "control": "stale independently reviewed fragment rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 15, in <module>\n    for f,h in actual.items():assert sha(O/group/f)==h,(group,f,'Stale independent review')\n                                     ^^^^^^^^^^^^^^^^^\nAssertionError: ('root', 'decisions.json', 'Stale independent review')\n"
+    },
+    {
+      "control": "actual open reviewer finding rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 18, in <module>\n    assert unresolved==0 or (isinstance(unresolved,list) and len(unresolved)==0),(group,'Open or uncounted review findings')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('root', 'Open or uncounted review findings')\n"
+    },
+    {
+      "control": "pending individual review rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 30, in <module>\n    assert all(x.get('status') in {'complete','supported_with_stated_limits'} for x in cr),(group,'Case review not complete')\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('root', 'Case review not complete')\n"
+    },
+    {
+      "control": "equivalent explicit review list accepted",
+      "expected_acceptance": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"assembled_at\": \"2026-11-08T06:28:26.486945+00:00\",\n  \"case_count\": 188,\n  \"prior_no_change_count\": 159,\n  \"reassessed_prior_no_change_count\": 159,\n  \"current_no_change_count\": 27,\n  \"current_proposal_case_count\": 161,\n  \"evidence_count\": 1499,\n  \"proposal_count\": 138,\n  \"exact_shared_evidence_ids_deduplicated\": [\n    \"CHEM-CAP-2caf4cd3f91d0ec5\"\n  ],\n  \"review_bindings_sha256\": \"11da657b8cb3576179457e74b022870ab04a0af5f7f923435925658cd05da746\",\n  \"scientific_changes_at_assembly\": \"None; metadata-only review/hold/backlink binding; exact authored fragment digest retained.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "control": "duplicate reviewed case rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 28, in <module>\n    assert len({x['case_id'] for x in cr})==len(cr)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "control": "review dict key and embedded case mismatch rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 22, in <module>\n    assert all(isinstance(v,dict) and v.get('case_id',k)==k for k,v in raw_cr.items()),(group,'Review dict key/embedded case identity mismatch')\n           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('root', 'Review dict key/embedded case identity mismatch')\n"
+    },
+    {
+      "control": "altered source label rejected despite synthetic review hash update",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 34, in <module>\n    assert d['source']=={k:c[k] for k in ['source','source_case_id','source_label','raw_source_label']}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    {
+      "control": "missing individual correction reassessment rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 37, in <module>\n    else:assert rr.get('classification') and rr.get('actual_searches'),(group,d['case_id'],'No individual scientific reassessment')\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('root', 'CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0', 'No individual scientific reassessment')\n"
+    },
+    {
+      "control": "proposal original owner backlink hash mismatch rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 56, in <module>\n    if p['kind']=='edit_existing_owner':assert any(o['path']==p['owner_path'] and o['sha256']==p['before_sha256'] for o in dm[cid]['owner_records']),('Unbound actual owner',p['proposal_id'],cid)\n                                               ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('Unbound actual owner', 'ROOT-P-fatty-stock', 'KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a')\n"
+    },
+    {
+      "control": "multiple final payloads for one owner rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 51, in <module>\n    E=list(em.values());assert len({p['proposal_id'] for p in P})==len(P);assert len({p['owner_path'] for p in P})==len(P),'Multiple final proposals for one owner'\n                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Multiple final proposals for one owner\n"
+    },
+    {
+      "control": "primary author substituted as skeptical reviewer rejected",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py\", line 16, in <module>\n    assert review['reviewer']==rb['reviewer']!=rb['primary_author'],(group,'Reviewer is not author-separated')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('root', 'Reviewer is not author-separated')\n"
+    },
+    {
+      "control": "restored exact reviewed successor accepted",
+      "expected_acceptance": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"assembled_at\": \"2026-11-08T06:28:27.020308+00:00\",\n  \"case_count\": 188,\n  \"prior_no_change_count\": 159,\n  \"reassessed_prior_no_change_count\": 159,\n  \"current_no_change_count\": 27,\n  \"current_proposal_case_count\": 161,\n  \"evidence_count\": 1499,\n  \"proposal_count\": 138,\n  \"exact_shared_evidence_ids_deduplicated\": [\n    \"CHEM-CAP-2caf4cd3f91d0ec5\"\n  ],\n  \"review_bindings_sha256\": \"11da657b8cb3576179457e74b022870ab04a0af5f7f923435925658cd05da746\",\n  \"scientific_changes_at_assembly\": \"None; metadata-only review/hold/backlink binding; exact authored fragment digest retained.\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "assembler_sha256": "ec28a422388c065be9b626c174e1b6baac2933c267283783a6175d74779af2c8",
+  "fixture_path": ".temp/all-unmatched-worker-05/correction-1193-v1/assembly-controls/f627e80c-da1f-4e79-bc0d-9675ecd6788d",
+  "limitations": "Synthetic structural admission controls; no scientific adequacy or release approval inferred."
+}

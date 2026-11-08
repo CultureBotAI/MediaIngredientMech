@@ -1,0 +1,82 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:17:56.596215+00:00",
+  "status": "complete",
+  "review_status": "PASS",
+  "open_findings": 0,
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/assemble_outcomes.py",
+      "sha256": "ec28a422388c065be9b626c174e1b6baac2933c267283783a6175d74779af2c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_proposals.py",
+      "sha256": "3cf80916f1b0328a592c3bb1e8f73511298cd3b9c87096b7b1cacab3d152d6e9"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/prepare_native_review.py",
+      "sha256": "aecc7bf1cc69fbf87a7fca42b33d0d052f78d247dc77fb0307470fdf144c50fd"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/author_native_review.py",
+      "sha256": "6115b33cc0ca0c8e55a912f0869b236df0188ccfd16a2b327b71736aa4d215c8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/owner_dependencies.py",
+      "sha256": "e6d3d1417d7fc24147168141222e14da990ecc6a35f8475f15ccb0100ceb749e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/test_assembly_controls.py",
+      "sha256": "ad3b33826b9185124d7627f2fe1f071004c911b4b808613da5a3fbfaa15ffe0e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/processing/validate_guarded_payloads.py",
+      "sha256": "bd8088668e8c2e389680747392ea8ce0699586f4969e6119d5e6e1e9f3ab7df3"
+    }
+  ],
+  "predecessor_review": {
+    "path": "correction-1193-v1/chemicals/reviews/tooling-independent-review-v4.json",
+    "sha256": "77c65e5e839e5dc9aa9463c407b57b7f9503d0c2ef74a8890b2b3b0163eec723"
+  },
+  "initial_guarded_review": {
+    "path": "correction-1193-v1/chemicals/reviews/guarded-replay-initial-review.json",
+    "sha256": "08baa653bec1aadb59f5bb014374bf2141024f33ad3e72fc6674d34da9de75a0"
+  },
+  "resolved_findings": [
+    {
+      "finding_id": "TOOL-GUARDED-01",
+      "status": "resolved",
+      "resolution": "The single original manifest byte object supplies both parsed proposals and receipt hash. An exact end-of-run byte equality guard rejects mutation before publishing the receipt."
+    }
+  ],
+  "checks": [
+    "Native guarded writer is invoked with explicit IngredientRecord class for every exact candidate.",
+    "Each source after hash is checked before writing; original source hash is checked again after the private replay.",
+    "Destination is formed only within a fresh UUID private run directory from a hashed proposal ID; no maintained destination is used.",
+    "Parsed replay YAML must equal the input record, permitting formatter byte changes without scientific content changes.",
+    "The replay helper and receipt are explicit hashed native inputs.",
+    "The other five v4-bound scripts are byte-identical, including assembler/control helper and severity correction."
+  ],
+  "controls": [
+    {
+      "control": "unchanged manifest accepted",
+      "observed_acceptance": true,
+      "method": "Exact final freshness-assert AST executed with isolated read_bytes stub; no file mutation"
+    },
+    {
+      "control": "concurrent manifest mutation rejected",
+      "observed_acceptance": false,
+      "method": "Exact final freshness-assert AST executed with isolated read_bytes stub; no file mutation"
+    }
+  ],
+  "limitations": [
+    "Static helper/source review plus two executed isolated freshness controls; the complete final candidate replay must actually run before its PASS may be reported.",
+    "This gate tests closed-schema writing and logical roundtrip, not scientific validity, downstream rebuild or publication approval.",
+    "v2/v4 controls remain applicable to their unchanged relevant code. Final canonical/native/staged checks are separate."
+  ],
+  "wording_correction": {
+    "supersedes_receipt": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/reviews/tooling-independent-review-v5.json",
+    "sha256": "005000f624dbcd83dd7503f2b9b7138b576e3e70c7929d7b94ecd22ca2d4db8f",
+    "reason": "The v5 limitation used a stale pre-final count of125. A fresh all-group read found133 authored proposals. Remove the incidental count: actual complete replay receipt will bind its manifest and observed count. No code finding or helper hash changed."
+  }
+}

@@ -1,0 +1,210 @@
+id: CultureMech:012202
+preferred_term: Solution 1
+term:
+  id: mediadive.solution:2955
+  label: Solution 1
+composition:
+- preferred_term: CaCl2 x 2 H2O
+  concentration:
+    value: '0.105263'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:7
+    label: CaCl2 x 2 H2O
+  chebi_term:
+    id: CHEBI:86158
+    label: calcium chloride dihydrate
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/2955
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 1,
+                      "compound": "CaCl2 x 2 H2O",
+                      "compound_id": 7,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 0.1,
+                      "unit": "g",
+                      "g_l": 0.105263,
+                      "mmol_l": 0.716003,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[0].concentration (CaCl2 x
+      2 H2O) in MediaDive solution 2955; locator=$.data.recipe[0] (compound_id=7).
+      Provider explicitly reports g_l=0.105263. Arithmetic check: 0.1 g * 1 g/g /
+      (950 ml / 1000 ml per L) = 0.1052631578947368421052631579 g/L, consistent with
+      the reported value at its precision. Evidence supports the provider-declared
+      concentration within this solution, not a concentration in a receiving medium
+      or an independently measured final volume. Water addition alone is not used
+      to infer a final volume. Additional exact excerpt at $.data.volume: "volume":
+      950. Retrieved 2026-10-07T09:17:08.012459+00:00; response SHA256=807aa93369da07ef374d1f8194a2d666eedb1956d3798100069fba8a5075ee77.'
+- preferred_term: MgCl2 x 6 H2O
+  concentration:
+    value: '0.105263'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:79
+    label: MgCl2 x 6 H2O
+  chebi_term:
+    id: CHEBI:86345
+    label: magnesium dichloride hexahydrate
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/2955
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 2,
+                      "compound": "MgCl2 x 6 H2O",
+                      "compound_id": 79,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 0.1,
+                      "unit": "g",
+                      "g_l": 0.105263,
+                      "mmol_l": 0.517765,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[1].concentration (MgCl2 x
+      6 H2O) in MediaDive solution 2955; locator=$.data.recipe[1] (compound_id=79).
+      Provider explicitly reports g_l=0.105263. Arithmetic check: 0.1 g * 1 g/g /
+      (950 ml / 1000 ml per L) = 0.1052631578947368421052631579 g/L, consistent with
+      the reported value at its precision. Evidence supports the provider-declared
+      concentration within this solution, not a concentration in a receiving medium
+      or an independently measured final volume. Water addition alone is not used
+      to infer a final volume. Additional exact excerpt at $.data.volume: "volume":
+      950. Retrieved 2026-10-07T09:17:08.012459+00:00; response SHA256=807aa93369da07ef374d1f8194a2d666eedb1956d3798100069fba8a5075ee77.'
+- preferred_term: Tris-HCl buffer
+  concentration:
+    value: '52.63157894736842'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:285
+    label: Tris-HCl buffer
+  chebi_term:
+    id: CHEBI:9754
+    label: tris
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Agar
+  concentration:
+    value: '18.9474'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:3
+    label: Agar
+  chebi_term:
+    id: CHEBI:2509
+    label: agar
+    confidence: 0.7
+    match_type: corpus_consensus
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/2955
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 5,
+                      "compound": "Agar",
+                      "compound_id": 3,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 18,
+                      "unit": "g",
+                      "g_l": 18.9474,
+                      "mmol_l": 56.3356,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[3].concentration (Agar) in
+      MediaDive solution 2955; locator=$.data.recipe[4] (compound_id=3). Provider
+      explicitly reports g_l=18.9474. Arithmetic check: 18 g * 1 g/g / (950 ml / 1000
+      ml per L) = 18.94736842105263157894736842 g/L, consistent with the reported
+      value at its precision. Evidence supports the provider-declared concentration
+      within this solution, not a concentration in a receiving medium or an independently
+      measured final volume. Water addition alone is not used to infer a final volume.
+      Additional exact excerpt at $.data.volume: "volume": 950. Retrieved 2026-10-07T09:17:08.012459+00:00;
+      response SHA256=807aa93369da07ef374d1f8194a2d666eedb1956d3798100069fba8a5075ee77.'
+- preferred_term: Distilled water
+  concentration:
+    value: '926.3157894736842'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: 'Adjust pH to 7.5, autoclave at 121°C for 20 min.
+
+
+  Original volume: 950 mL'
+curation_history:
+- timestamp: '2026-03-13T06:20:24.491491Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:012202'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:28.289524'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:01.688972'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:03:51.472488+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:24.657485+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 4 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:56:12.580167+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '1 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+- timestamp: '2026-10-07T09:21:52.094915+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/2955
+  changes: 'composition[0].concentration: {"unit": "G_PER_L", "value": "0.105263"}
+    -> {"unit": "G_PER_L", "value": "0.105263"} (evidence_only); composition[1].concentration:
+    {"unit": "G_PER_L", "value": "0.105263"} -> {"unit": "G_PER_L", "value": "0.105263"}
+    (evidence_only); composition[3].concentration: {"unit": "G_PER_L", "value": "18.9474"}
+    -> {"unit": "G_PER_L", "value": "18.9474"} (evidence_only)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/2955
+  title: 'MediaDive solution 2955: Solution 1'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=807aa93369da07ef374d1f8194a2d666eedb1956d3798100069fba8a5075ee77;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

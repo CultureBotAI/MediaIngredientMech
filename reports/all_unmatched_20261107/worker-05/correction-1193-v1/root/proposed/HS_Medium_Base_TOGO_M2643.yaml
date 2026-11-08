@@ -1,0 +1,92 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:hs_medium_base_togo_m2643
+preferred_term: HS medium base (TOGO M2643)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hs_medium_base_togo_m2643
+  ontology_label: HS medium base (TOGO M2643)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2643
+    notes: TOGO M2643 provides an explicit HS base block;125mMmethanol and40mMacetate
+      are lateradditions. Sourcequalifiedbase does not require a universal HS-name
+      alias or componentCURIEs. Originalpaperlink is retained as provenance, not claimed
+      inspectedfulltext. Whole supplied preparation identified independently of component
+      CURIE availability. Existing owner and exact named/numbered ontology searches
+      are captured in successor evidence.
+notes: ' Correction1193: TOGO M2643 provides an explicit HS base block;125mMmethanol
+  and40mMacetate are lateradditions. Sourcequalifiedbase does not require a universal
+  HS-name alias or componentCURIEs. Originalpaperlink is retained as provenance, not
+  claimed inspectedfulltext. Isolated proposal only. All inherited source-case, owner
+  and export holds remain. Raw generic source labels are qualified to these source
+  occurrences and confer no global resolving synonym or release approval. No optional
+  later supplement or atmosphere is inferred as an ingredient.'
+synonyms:
+- synonym_text: HS medium
+  synonym_type: RAW_TEXT
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2643; source-qualified
+    occurrence only; not universal resolution
+components:
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1L
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 0.4M
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  source: 5mM
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  source: 19mM
+- component_name: Resazurin
+  reference_scope: UNMAPPED
+  source: 4µM
+- component_name: MgCl2·6H2O
+  reference_scope: UNMAPPED
+  source: 54mM
+- component_name: Na2S·9H2O
+  reference_scope: UNMAPPED
+  source: 0.4mM
+- component_name: KCl
+  reference_scope: UNMAPPED
+  source: 13mM
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  source: 45mM
+- component_name: CaCl2
+  reference_scope: UNMAPPED
+  source: 2mM
+- component_name: Cysteine·HCl
+  reference_scope: UNMAPPED
+  source: 2.8mM
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2643
+    source_record: HS medium base (TOGO M2643)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. TOGO M2643 provides an explicit
+      HS base block;125mMmethanol and40mMacetate are lateradditions. Sourcequalifiedbase
+      does not require a universal HS-name alias or componentCURIEs. Originalpaperlink
+      is retained as provenance, not claimed inspectedfulltext.
+curation_history:
+- timestamp: '2026-11-08T05:46:05.889096+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation HS medium
+    base (TOGO M2643). TOGO M2643 provides an explicit HS base block;125mMmethanol
+    and40mMacetate are lateradditions. Sourcequalifiedbase does not require a universal
+    HS-name alias or componentCURIEs. Originalpaperlink is retained as provenance,
+    not claimed inspectedfulltext. Isolated proposal; native integration and all inherited
+    holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

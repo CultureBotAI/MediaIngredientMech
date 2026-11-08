@@ -1,0 +1,94 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: MICRO:0001830
+preferred_term: Chloroflexus medium modified (DSMZ87)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: MICRO:0001830
+  ontology_label: DSMZ Medium 87
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf
+    notes: MICRO0001830 full definition-source agrees with DSMZ87; numbered87a adds
+      vitaminCA to this base. Listed1050ml water is preserved, not silently normalized
+      to one liter. Whole recipe pH8.2; optional later yeast feeding omitted. Whole
+      supplied preparation identified independently of component CURIE availability.
+      Existing owner and exact named/numbered ontology searches are captured in successor
+      evidence.
+notes: ' Correction1193: MICRO0001830 full definition-source agrees with DSMZ87; numbered87a
+  adds vitaminCA to this base. Listed1050ml water is preserved, not silently normalized
+  to one liter. Whole recipe pH8.2; optional later yeast feeding omitted. Isolated
+  proposal only. All inherited source-case, owner and export holds remain. Raw generic
+  source labels are qualified to these source occurrences and confer no global resolving
+  synonym or release approval. No optional later supplement or atmosphere is inferred
+  as an ingredient.'
+synonyms:
+- synonym_text: Medium 87
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf; source-qualified
+    occurrence only; not universal resolution
+components:
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  source: 1 g
+- component_name: Glycyl-glycine
+  reference_scope: UNMAPPED
+  source: 1 g
+- component_name: Na2HPO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: KNO3
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: NaNO3
+  reference_scope: UNMAPPED
+  source: 0.5 g
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 0.1 g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  source: 0.05 g
+- component_name: Fe(III) citrate solution (0.1 g/100 ml)
+  reference_scope: UNMAPPED
+  source: 5 ml
+- component_name: Trace element solution SL-6
+  reference_scope: UNMAPPED
+  source: 1 ml
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1050 ml listed
+- component_name: Neutralized sulfide solution (DSMZ27)
+  reference_scope: UNMAPPED
+  source: 1 ml per90 ml medium after autoclaving
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium87.pdf
+    source_record: Chloroflexus medium modified (DSMZ87)
+    notes: One-level named inputs relative to cited source. Batch amounts remain source
+      notes; no unsupported final-volume normalization. MICRO0001830 full definition-source
+      agrees with DSMZ87; numbered87a adds vitaminCA to this base. Listed1050ml water
+      is preserved, not silently normalized to one liter. Whole recipe pH8.2; optional
+      later yeast feeding omitted.
+curation_history:
+- timestamp: '2026-11-08T05:46:05.889096+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Chloroflexus
+    medium modified (DSMZ87). MICRO0001830 full definition-source agrees with DSMZ87;
+    numbered87a adds vitaminCA to this base. Listed1050ml water is preserved, not
+    silently normalized to one liter. Whole recipe pH8.2; optional later yeast feeding
+    omitted. Isolated proposal; native integration and all inherited holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

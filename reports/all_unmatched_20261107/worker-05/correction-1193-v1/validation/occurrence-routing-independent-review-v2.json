@@ -1,0 +1,4175 @@
+{
+  "reviewer": "/root/chemicals_research",
+  "reviewed_at": "2026-11-08T06:28:26.323749+00:00",
+  "status": "complete",
+  "review_status": "PASS",
+  "open_findings": 0,
+  "predecessor_review": {
+    "path": "validation/integration-v1/occurrence-routing-independent-review.json",
+    "sha256": "d5f64f2618dbddb2a02acd18a64f5801d2a91f47ef2d7aba2271e075cb7a1004"
+  },
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/decisions.json",
+      "sha256": "94563e00bcdf364ea3847a877f1224bbc27e34e894f615006c3ccabe2c9ff42e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/proposals.json",
+      "sha256": "a5639d99bbd1270a713cb72a6169d798b3c62770b7adf79fb701c8c253059f97"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/evidence.json",
+      "sha256": "9065622a1fb2123a85bb881db2ca5fec9502ee464bb37d01f7deff8974c0f4c7"
+    },
+    {
+      "root": "frozen_source",
+      "path": "shards/shard-05.json",
+      "sha256": "457c957af21271b120190093dd311bf4044b82a3ad26b54e2fc5b52083dec1c4"
+    }
+  ],
+  "counts": {
+    "canonical_cases": 188,
+    "canonical_proposals": 138,
+    "canonical_evidence": 1499,
+    "cases_with_proposals": 161,
+    "no_change_cases": 27,
+    "proposals_with_explicit_occurrence_scope": 26,
+    "explicitly_scoped_source_cases": 31,
+    "unique_explicitly_routed_occurrences": 64,
+    "proposals_without_optional_occurrence_scope": 112
+  },
+  "all_case_ids": [
+    "CM_NAME:07a946444896ae1f80219e0daa9df0e2bfc1809923488caefa418472ca60c489",
+    "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+    "CM_NAME:0921ca35dec155c1df5fa66a58af7c3d895dd7b55e3c553997113800ccb0727d",
+    "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+    "CM_NAME:0e8c9455572e2da156423575e89d82fb066abfcaa9e8bd28ec30d8ff86718ae2",
+    "CM_NAME:0fe52708062ae5b7deb6d1b1fbf3b9389f2425e3d2c3ab023455ee22cd6a7ee0",
+    "CM_NAME:14e2433d6680c7e7fbdb982b142afa631f6ed6bb5aa5cdbecfbf46914f3ce727",
+    "CM_NAME:16f378f5a868f191ba889e5d0a923b8d067c8ddaa9ff7562b0cb7f41e3e60075",
+    "CM_NAME:1b16e5ae999e6118bb1c96008e3b5f00670eea865b598e7795dac97e20af78c5",
+    "CM_NAME:22af65783de61746783556d239d97436d8d51f1f11dd117880152915e51e0f39",
+    "CM_NAME:23daec5a08dc35f1e39edc61f4b96e8852e0363d2f8a4eafb6fbe52731201d44",
+    "CM_NAME:2701602263ac243d10081e0843627a646720bf7455077968f495cb41466d217a",
+    "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+    "CM_NAME:2b63628e7e1902e7cdd721bb2aa23012d4dbf4c0e3e51d942c736017c060f901",
+    "CM_NAME:2d8790f8bd59809ee9d56f7f337b57e644ac6ea1dad9daad69c26cdfee56bb7e",
+    "CM_NAME:2dae691480aba0b75571c2a68ac870dbfba28475d4913cafe5ca11a968e37c70",
+    "CM_NAME:30d34c021d1f4fa8a93bf0858408499f9169b9d0d86936243ff6df038503e6a3",
+    "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+    "CM_NAME:335a87f048ecd16a7457dc0f6e336bb859ba0f1492549b5b2b32cb175c050990",
+    "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+    "CM_NAME:3922dd30207b7e9f6eae52095a5eef697923a50484871e8f52aaa5f0722685e5",
+    "CM_NAME:3a71f979a20ccc7a9e900d1b92ba2dbeefc6b76bf95c72aa79079be2cdf048d5",
+    "CM_NAME:3b9d4adc161114f04e0a67038e19bee6895dcd2ad1a4ba1853c30be222480f16",
+    "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+    "CM_NAME:3c36c3997cdd6dd09cac787110299acff8335c8befbd63742b07b04f06a6d83e",
+    "CM_NAME:41153f03ccf9592cfed6576e11b8e154da72287ee303c764dfd8faa676389b29",
+    "CM_NAME:443c3c0a7735959a80aab57dc88e24ac48ed27061bbf710c3fdfa36f933505c9",
+    "CM_NAME:47de822ce5be13cb438bd63ab1582facda8ae41a01b9567016f611bfd3d8df7a",
+    "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+    "CM_NAME:4aa52119d16f365b413c75a67cf738a4848e12bcfa41b6023f69dd0bcb2b5a16",
+    "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131",
+    "CM_NAME:510bfadf6f7d1273b1f196f10c6d3b9b02b1f8afcc0bc806f276186c4cfa08c7",
+    "CM_NAME:515bef06cadb512bd069ba86c5bcb5d3db474cd7b9a1efcdf63fe2aa635d9ec1",
+    "CM_NAME:51b5ea9f7429c70a079d79a469b0a323180d8b37fbedfecbc950e0043f0f3b6f",
+    "CM_NAME:52cf111610399ecffd11f3855338720016f099712bcb4ae483174d0bec0b0e55",
+    "CM_NAME:53b8941a0bf23ff8f030b7e59dfe94479a1855d13805f0ad5cfb7eb6c7d0febc",
+    "CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85",
+    "CM_NAME:5554b29c567716f89fab0e8ff8950a9dd414c642d77619d3e56c60f2dcf1a02b",
+    "CM_NAME:558bcf18c0ac36e3a46e8f443809ddfa33b130fcab3dd70b6573c1354ff677aa",
+    "CM_NAME:56ef77be2591186857f4a92ab254f6b17b61fd68f51aab076ddb272d85541414",
+    "CM_NAME:595d2c9054961a4c3ea21a8eb1bffa3a73c87ebc5fad14bad3efcc21741d91de",
+    "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+    "CM_NAME:5d0c5ffb37bf378c3409765ce4abd610f79dd528fa54abc2e0b8f52451380a5b",
+    "CM_NAME:5d265df4517518ebb8d12aa059a984c29e9df3348b794d6b1023eaa8b0f4ef5f",
+    "CM_NAME:5d3a0f79fece199bbf454762f8f3d61c3d6e9c7de76fe20c94c7fa6db5e70412",
+    "CM_NAME:5e992751cd5fb71cd23d43340581fb8ddd38fdf96fddffce2002a4ef1dedbc44",
+    "CM_NAME:5eb72ef93fbc049ada54a5c189b8954ac6dfb31689df054f7c154201f5003bd8",
+    "CM_NAME:5f576daa278a36df31294364486120ee9d6ccdd45558e12937daa9412a635562",
+    "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+    "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24",
+    "CM_NAME:61bf9d1487f362a7d4680e729a189bc1e7d6285f5d549df92875d0fec8e714f9",
+    "CM_NAME:65ba1fc20606be8ad43f872285efdae017de70014520c2ec7bdd073315cb412c",
+    "CM_NAME:69df45f83b459d7df632fee127865a3305597514761f60dce50b042e0d48b539",
+    "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+    "CM_NAME:6cdd9bfd51f6c25795c83efb97e132430559c262ccf8d78e0307ea1cd2ed36c2",
+    "CM_NAME:6dbce0565dfec19c64478681adfc0eed9b7d5397e8382e522437614b1b25993c",
+    "CM_NAME:6fcf8a3f731c8a825cf5ec4f4bd543b8c48c826a5e178e868a0f840fd23a6195",
+    "CM_NAME:71bcdce17ef8482f9e70b5dea80f2fc94d75fd0011f5ce15675ba7a2b3917e09",
+    "CM_NAME:772c8c4abcd646c80ad4a40a33b20ce2ccd68620316c04c6553bba5bf3bc9f8c",
+    "CM_NAME:7800a5bc348d4b7fe25893bb56d1ca4c16dd7ec4cc75e099175122bb4ee84c30",
+    "CM_NAME:78f8c48b757890cfb5c0f5856ac1958e394f3700e65d9e81adf7e49e64384a51",
+    "CM_NAME:79509089b17b506a45a709c251375d9aba76e83947e0c7d34b85381f5bd54f93",
+    "CM_NAME:7a2f80fe519b283e444d0f8f264cda4df2c3917e0640f7fe00253036d9c2a79c",
+    "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b",
+    "CM_NAME:7f14997cfc5c6be59435b0df3fa162587aaea54f17fcad540bf3ed1be6729ef9",
+    "CM_NAME:7f602708682a62d42a5d5fc0095277fd0052a25f2a6f8dd82b10486deb90b429",
+    "CM_NAME:80b54b0ff5bd090c464e9e458d5ad32a60b5f4c3dd3f2d17415f7cea4724ef55",
+    "CM_NAME:8220bc6b7991e718e70046d1ee0677100ee4e0cac9df4958486094d884400f4d",
+    "CM_NAME:83d692331f82bf58a86e422a797f1ef1eeb9dcc785c1daed3547c09f0b39a4ae",
+    "CM_NAME:84db9e493f1fb3ac898fcfbbd0d0f1b368fac84a0db41896778837900538b280",
+    "CM_NAME:8ba1df295abb60b7fb8cd7e12f80b861e3d2e7634dd64e3bfb7e88df0db0fd08",
+    "CM_NAME:8d411c29b3c72239de67c4f6968dabedb48e94d0e9c7ff45af014bdeb4650acd",
+    "CM_NAME:8f995fe50bd37139925c5662e685400b59890f21de564f5116f6620a427694fd",
+    "CM_NAME:8f9dce93200c8b81f5e89be4cc5bd3dab151028152e861296334e30ed961fcc1",
+    "CM_NAME:913f1d246e38506d99dccac4dd555f837f6ad4587101f5e4f927273aa347818c",
+    "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+    "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+    "CM_NAME:966043186eb500b0932551d48b23740188a14c15631e17be7e7b9543f0db357a",
+    "CM_NAME:9a8dfd348a6e3b76bb82c69e7269c3f8aab337b2cbba6d775f1c566bfe85224d",
+    "CM_NAME:9d2b626c17882f81ff3e211f6d1dce3c6d192d2d6f3d69f2f5bc0120421390d6",
+    "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+    "CM_NAME:a3427dc662d5bd409c30365c1a38dea6f558aca970d0c9f9a64f411e4545853f",
+    "CM_NAME:a4e6b5a23378dfc3ecdd1409ddcfbc0426bc9e0affe497bcafa02aa2288c8966",
+    "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+    "CM_NAME:b2206bd404d0663bb8b53a5bbeadca3912777e5eaac7fac5735853cf075a5bd8",
+    "CM_NAME:b40e681314d4d8cf5e8a9ecee4683f00eefa5b98eecf3d298c28e7e6ca320b81",
+    "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+    "CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b",
+    "CM_NAME:c5d29eb0468e51c071cbac79e63b973e6734c35c32046ff334322288fa29bad2",
+    "CM_NAME:c63f61e75943ad641b1cf3e533812c4eaca371524e6b1bd9ee244a7b8671df55",
+    "CM_NAME:c93fb27cf3615367f9b75ccd2c0930fad5b5824e374a3b64b189d470140f79f3",
+    "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+    "CM_NAME:cc487a98c0585c66c5e37b0867572f416e49ff561f252fe823c8025a046426ca",
+    "CM_NAME:cd6df60b79398f6d62ae1c03f96b421bb43960b268cc7ab94676cbd7d7b631c9",
+    "CM_NAME:cf963f6f6f79492f3c8a12097417fd6d024da1ace5fb7ef02d042712a0060519",
+    "CM_NAME:cfd2009dbbaa79c954caacaa0854daa3dced9f602838983f41830c3a9eb56a80",
+    "CM_NAME:d0bb0479aee40433f476c3a75acf0b96288d9f508b1a05a614be6b3dee1fe57f",
+    "CM_NAME:d1d5f23edf57a7d0b7f89e593f4aeece562e1b088ae6e2bc8ee8e94a64b76fa7",
+    "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416",
+    "CM_NAME:d30e559bdd7d72c71092ab0c7b17de05e06afbcea9039a89b9ee22fee7f337bc",
+    "CM_NAME:d45a33c5923ad1f08755b5637c6c47ee6c329b0b4a2892c859a4027e54126a15",
+    "CM_NAME:d47ee889d9bce5dc52efde7e5cf98dabd62f28e0c64e867f3d5ea9371b4999e2",
+    "CM_NAME:d87b22b5a7c87bc715c392270bfc7b8393245d1c922bbacd7829f0cc126adef1",
+    "CM_NAME:d91cb09543c05accf6eb00e342661258e11988eb84982fa71feba38d2307559b",
+    "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+    "CM_NAME:dcab813086c94d8ff8307cecf995687500ab798e21fdd3568aaf6fa1e352b959",
+    "CM_NAME:dcaebb575fdae4723ccb30779f3d58420ccb21cffe38a0d0ab7386e2b5bbbfaa",
+    "CM_NAME:dd0ef6524313e4b5c6944eacd676b8d53c94d020497f23a4428c324fa02ca6a2",
+    "CM_NAME:dda66fbda6b0618adc53c55de8b33c4c5a2ef4a73ca34571102517a36a8c391e",
+    "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d",
+    "CM_NAME:e1e35ef629179a375d907c6f922da4f5923b3bc5c93d417db78fd87fb4001251",
+    "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+    "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+    "CM_NAME:e90a13baa92e9b7a72cdfa611fbaec5f457cd61a12e649cccbe256914aa8cc28",
+    "CM_NAME:ebbd25a1e14a91510208c5680207b415dbbfbeb146e3037e00a48c6a8c9833c4",
+    "CM_NAME:ebe02b6bca1b79fa51843f6218b6341edda2ecf7b3872c7ac555cdfa9da721a1",
+    "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c",
+    "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+    "CM_NAME:f163ec7f355f01963af1b99f566d50cb82749e167f8cce8916145945ad4a2084",
+    "CM_NAME:f3f0ab76469c51fbe1f3a0f09801b2de12818bab1506ab7a3eb731a2d919d1b6",
+    "CM_NAME:f50ba478dda27e9481509c871585ed5a3aaeec815eaf4c521d1a58e791e928e1",
+    "CM_NAME:f6924fb99b3405f434e4017340607246890f7dbf1213a9fd6e697362ccc6d8de",
+    "CM_NAME:f7bd19bc3733271343171717656ebe0c87f7449fcd8593cb43d2f95f5c03c7ba",
+    "CM_NAME:f83e2c9a1035fb2cb44369ae7e7f25f020932cebac6f1fb9ce5c1fcb9f4809d4",
+    "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+    "CM_NAME:fe4e28b8925680d489da8b18fc4ec7aefb6155e75c979b735f1db54e45636bb5",
+    "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+    "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+    "KG_CASE:03ab2d92d43227aeb1d5875af5e77aaa1accc7ccddcf2ef921b7d1fe72afdbd1",
+    "KG_CASE:043caa07bd41b2bc271589a6a0e88636fbf93384abb84698d86ced34fd01f676",
+    "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8",
+    "KG_CASE:1b608e9278343cf1c5b33844657f0c88e19ad9a88d6e8c76a61e732cfb744e4a",
+    "KG_CASE:1f3c561b85a411dc613e467f6059f58e80155619c163091ef701a937636f3f8b",
+    "KG_CASE:211f0381e01e0a7256eee4cfd4ebcdec047b28ce19a6ae0a38a5efb6efdb0f1a",
+    "KG_CASE:2239b4ba3999c57a54135eb83ba6a39c206ce4bcd28c98c14034cc84ace39a49",
+    "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2",
+    "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+    "KG_CASE:30cf3ecee696eec40ba4399812fa530ca996fa2fd61dd00ca9bf0bdc53b3da73",
+    "KG_CASE:39adf1df71cd577ceca03305c9da33b8fa04798d4a996fb204f8bc9acac57a5a",
+    "KG_CASE:3afa861ef7ff42874af3fd1e7f918863a09111adde1a93ff6bc9ee75f883a276",
+    "KG_CASE:40f83209f10d453b4f37fb93855bf6dd3e6f13c2ba0ec5027e5f86cdf8af854c",
+    "KG_CASE:42f5997700d5a29cc0632e08c3f1e2a319372c1e82ae1896db58f8b046b395f6",
+    "KG_CASE:42fb113d0c36aabad83452c9e802850387083985010f7c9105511c590318faec",
+    "KG_CASE:4cd5132ddea24c4b38893c2047c843d471720cb46570184ea5d51c412b7229bb",
+    "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+    "KG_CASE:54ca63cc2e91387b329d5f0023d70b5fd2cadf6fab30ee79222e16a390497eb4",
+    "KG_CASE:5968c74e5b7e49d545df181d52e2d8773377eed4645705a6db46d6380406b509",
+    "KG_CASE:5dffd624918c11eb7fad87ab791b5b157b4d0a2d7c81bf82fded69bc633e5212",
+    "KG_CASE:5f29b812ee4f443b0cf86304f38c5a61bf280030266081b07026e2cf0d2a8799",
+    "KG_CASE:5fc712f97b842c8c8fff97bb18b30a20f429559f4c01c0ebfbfba4ec1587d50f",
+    "KG_CASE:601d124a075487ea9b3506342c4456ad94763be8624a0c3d0c6228601bf986f8",
+    "KG_CASE:674bdf7fed72ffa201e3b81bc4c3607b8f8c68447cde3895d9e75a0c288fe000",
+    "KG_CASE:6c0774cbb93fb412e2cb8a6745916b2ffc6351cd6d14c355c12ade2f598cac10",
+    "KG_CASE:6e7c8a8c1d6e21e0a3afee848263f27202ece4e07c21ec38c752087cbdd89cdd",
+    "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a",
+    "KG_CASE:73abd3afeae5cc63a2dd900b434faac00c912604cc82da9029031338cb6770c4",
+    "KG_CASE:73aefef0444a89ff8f4d690eeca7ebc9bd2903071f4f6a3b04120090371ce1c8",
+    "KG_CASE:768165c9d23a6e6198695f702108da794085efbfbab3339eb3dab132d34fcda6",
+    "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79",
+    "KG_CASE:8e9c8faab482b293ba04aedba0a814ebc4638e1daa0823c0695c8499209dd2ea",
+    "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c",
+    "KG_CASE:8fddccd7e32c351a0fa76c05180120b817299029e956a686081cce5e8c3748dc",
+    "KG_CASE:95b790ddb78a997811337834f1d50870430781c963f982ed3257378097b10edb",
+    "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6",
+    "KG_CASE:9fae354066718d7267ba86497352f9703e0d882643a772b6f90ac16c3b22d17c",
+    "KG_CASE:a13ece96d512447950fb80c37e02d7e371c66854b2adc9f9d623af3811119032",
+    "KG_CASE:a3797ec0761170bbdda064b554d0cf5275d89af5fe0756b771c973f0cba70a28",
+    "KG_CASE:acc8c9d4233557a238166fb6129f0f714d898a6cb6edb3e3f664faa8906c22a5",
+    "KG_CASE:adbef46986d7d62b3a17fdad4b41f61c32347b3a63d7257a8463e3683dcd3acd",
+    "KG_CASE:afa56b335b77ddf46c0a79c5006054b0b9812c6869edd8af5e28b16e2168e08c",
+    "KG_CASE:b1d73a6c6976e7905cd359d5180c5c7309b083045e06f5ec274866c20954ef9f",
+    "KG_CASE:b58f2778ba8c8905faf5cddf634ff4d5059978baa1b2489af2eb4db7f7e9fef1",
+    "KG_CASE:b8166e7eb0adf0ea5d2b1f6d955b897274855bffa29afac369ba71c767ae402e",
+    "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+    "KG_CASE:bcda824ef7f9d884b0665344feca5297d8a01ac819cfa2e246e1acc386cfa413",
+    "KG_CASE:bf12c276a4114613ceac1a21fce5c8644d2458a194dc5c61117cbf58f270d0fe",
+    "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+    "KG_CASE:c4fec80b8c795f9704dbb2cc99ffcc8f8ec3b01fc54eaa93ba36bafb33ec98ff",
+    "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59",
+    "KG_CASE:d6570078478bd9aba1017633f942def62c09b06a18a5c5fb1620c133b7befac0",
+    "KG_CASE:d6ec49fe7ccdff5833a76643b6b50db8b3a88e37568e9f413bdc80d05ff50532",
+    "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a",
+    "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd",
+    "KG_CASE:e677b0709edcd66b4bf0e683b40ffe54d9799827ccbc954fa0c154ce9cf407f5",
+    "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+    "KG_CASE:ef57adeec965ae741a6b651b6365efcc15003203f2f7e7d478439480faf625aa",
+    "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d",
+    "KG_CASE:f804dc528f900fb04f9b7cfc94f8efc08380b7a476728e855224bf91c05178db"
+  ],
+  "explicit_scope_reviews": [
+    {
+      "proposal_id": "R1193-P-bottom-628",
+      "case_ids": [
+        "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+      ],
+      "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM628.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Bottom_Layer_JCM628.yaml",
+      "after_sha256": "0b217f0558855b8e08c0a72ae85c28b1d3c85f5ed3d983f8fb606a60a199d68c",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "source": "culturemech",
+          "source_case_id": "Bottom layer",
+          "source_label": "Bottom layer",
+          "case_input_sha256": "ed7724fe9de22b1ead260c656ebdca2bfcf625faffb13e887601ed2cbcc0bd53",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111",
+            "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-ROOT"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "occurrence_id": "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111",
+          "recipe_id": "CultureMech:010042",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:010042"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M641"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M641_Freshwater_Iron-Oxidizing_Bacteria_Medium.yaml",
+          "source_file_sha256": "5b1f0284b8e9f7a44d7e22538a7092a3aa7b7d978cdb370c2d36e36bace60a40",
+          "raw_preferred_term": "Bottom layer",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "R1193-P-bottom-629",
+      "case_ids": [
+        "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"
+      ],
+      "owner_path": "data/ingredients/mapped/Bottom_Layer_JCM629.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Bottom_Layer_JCM629.yaml",
+      "after_sha256": "2d55368262d4641fddaa496cc44cbba49e58dc964e6191ddafcb221cdf253fdf",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "source": "culturemech",
+          "source_case_id": "Bottom layer",
+          "source_label": "Bottom layer",
+          "case_input_sha256": "ed7724fe9de22b1ead260c656ebdca2bfcf625faffb13e887601ed2cbcc0bd53",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111",
+            "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-ROOT"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+          "occurrence_id": "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068",
+          "recipe_id": "CultureMech:010043",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:010043"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M642"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M642_Saltwater_Iron-Oxidizing_Bacteria_Medium.yaml",
+          "source_file_sha256": "a2d32d72985e7804531e9c7fb2aecd8201c024ab430d769db2fee0fb7f38b548",
+          "raw_preferred_term": "Bottom layer",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "R1193-P-wolfe470",
+      "case_ids": [
+        "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+        "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+        "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"
+      ],
+      "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_JCM470.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_JCM470.yaml",
+      "after_sha256": "59fdf6607b5ae8add60ff70972c6b2ac143e7fe0d5212b50896cb886315c2069",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152",
+        "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227",
+        "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+          "source": "culturemech",
+          "source_case_id": "Wolfe's mineral elixir (see Medium No. 470 )",
+          "source_label": "Wolfe's mineral elixir (see Medium No. 470 )",
+          "case_input_sha256": "14af63c57936316be767d3d1362db66ffaf9601b6f2b7298b44fc0b2018b6417",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-ROOT"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+          "source": "culturemech",
+          "source_case_id": "Wolfe's mineral elixir (see below)",
+          "source_label": "Wolfe's mineral elixir (see below)",
+          "case_input_sha256": "f991232b0ee5b3c4ca51922d5738cdcda1baded0e6470444d5c137171e796850",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-ROOT"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+          "source": "culturemech",
+          "source_case_id": "Wolfe's mineral elixir",
+          "source_label": "Wolfe's mineral elixir",
+          "case_input_sha256": "fb68ed72ddf203869194e70fedec0c60e7e593b27a29a766662dc30969316175",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+            "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+            "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+            "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465",
+            "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-ROOT"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+          "occurrence_id": "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152",
+          "recipe_id": "CultureMech:015885",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:015885"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "jcm.grmd:1367"
+            }
+          ],
+          "component_path": "ingredients/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1367_MARINE_DESULFOVIBRIO_COMPLEX_MEDIUM.yaml",
+          "source_file_sha256": "48b7264cf0d94985e3e9334334ddbc206ad8964c8ca5efc3af9815424c02957c",
+          "raw_preferred_term": "Wolfe's mineral elixir (see Medium No. 470 )",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+          "occurrence_id": "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227",
+          "recipe_id": "CultureMech:009860",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009860"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M471"
+            }
+          ],
+          "component_path": "ingredients/9",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M471_Vulcanibacillus_Medium.yaml",
+          "source_file_sha256": "616f29cc6173669c868886dd5ac32328f8155213bdc76822b0642c6605034862",
+          "raw_preferred_term": "Wolfe's mineral elixir (see below)",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+          "occurrence_id": "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d",
+          "recipe_id": "CultureMech:013742",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:013742"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:4801"
+            }
+          ],
+          "component_path": "composition/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4801_Main_sol_J837.yaml",
+          "source_file_sha256": "a4747e18766bd4398093a06febbc823292937a23aaf74aea4820a754bb51b81a",
+          "raw_preferred_term": "Wolfe's mineral elixir",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "R1193-P-wolfe792",
+      "case_ids": [
+        "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"
+      ],
+      "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+      "after_sha256": "b8ccaea9515441fbee3edb15d5edf3951f2c4729278a82e3219ae751890e5ea4",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+        "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+        "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+        "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+          "source": "culturemech",
+          "source_case_id": "Wolfe's mineral elixir",
+          "source_label": "Wolfe's mineral elixir",
+          "case_input_sha256": "fb68ed72ddf203869194e70fedec0c60e7e593b27a29a766662dc30969316175",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+            "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+            "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+            "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465",
+            "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+            "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+            "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+            "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-ROOT"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+          "occurrence_id": "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b",
+          "recipe_id": "CultureMech:009224",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009224"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2669"
+            }
+          ],
+          "component_path": "ingredients/13",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2669_Aciduliprofundum_Medium.yaml",
+          "source_file_sha256": "50a1697df32fe2ac62f5fe6c96b5c55e823453c25616e60bc671c13eb307cfa2",
+          "raw_preferred_term": "Wolfe's mineral elixir",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+          "occurrence_id": "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+          "recipe_id": "CultureMech:009238",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009238"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2683"
+            }
+          ],
+          "component_path": "ingredients/11",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2683_Pyrolobus_Fumarii_Medium.yaml",
+          "source_file_sha256": "62792a39759d8222ac2287b2408562caa4b44b56d94ae23fdbf94f21662622c4",
+          "raw_preferred_term": "Wolfe's mineral elixir",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+          "occurrence_id": "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+          "recipe_id": "CultureMech:009594",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009594"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3122"
+            }
+          ],
+          "component_path": "ingredients/13",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3122_Caminibacter_Mediatlanticus_Medium.yaml",
+          "source_file_sha256": "10b5e06aa5069f2fdde9f6d64d182aae17b5dfa48ec2ce57456033eba85ebde5",
+          "raw_preferred_term": "Wolfe's mineral elixir",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+          "occurrence_id": "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465",
+          "recipe_id": "CultureMech:009598",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009598"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3128"
+            }
+          ],
+          "component_path": "ingredients/7",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3128_Thermosulfidibacter_Medium.yaml",
+          "source_file_sha256": "a43ae2b1769bc54f3f9885e6af1b39ad94fbdd304698ac7ab655799f63fd0afa",
+          "raw_preferred_term": "Wolfe's mineral elixir",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1221",
+      "case_ids": [
+        "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"
+      ],
+      "owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1221.yaml",
+      "destination_owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1221.yaml",
+      "after_sha256": "05cf4a1b09aff0fd1954ef0ac1aa563844414f4896261eaca48271323d9f8a46",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+          "source": "culturemech",
+          "source_case_id": "1M HEPES-KOH",
+          "source_label": "1M HEPES-KOH",
+          "case_input_sha256": "739005188a7a39f95be15e621098c805b702ea323fa15c50539bd4d0bc0b1e48",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac",
+            "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+          "occurrence_id": "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac",
+          "recipe_id": "CultureMech:008527",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008527"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1948"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1948_BG11.yaml",
+          "source_file_sha256": "4d88df954891fc50eda102f2cbed95636ce0ca57759db61d679022b341526e39",
+          "raw_preferred_term": "1M HEPES-KOH",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1474",
+      "case_ids": [
+        "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"
+      ],
+      "owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1474.yaml",
+      "destination_owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1474.yaml",
+      "after_sha256": "6ba28f7de8b9b6387fb38f44ec01ce9b9626a84bea256ea63b7d0df07b109fad",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+          "source": "culturemech",
+          "source_case_id": "1M HEPES-KOH",
+          "source_label": "1M HEPES-KOH",
+          "case_input_sha256": "739005188a7a39f95be15e621098c805b702ea323fa15c50539bd4d0bc0b1e48",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac",
+            "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+          "occurrence_id": "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd",
+          "recipe_id": "CultureMech:008730",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008730"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2136"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bg11_ph9_0.yaml",
+          "source_file_sha256": "b3eb8c465cf6ba3dc7c4ad8802930108252ccb9656bca5a04bd0f295b5724c95",
+          "raw_preferred_term": "1M HEPES-KOH",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+      "case_ids": [
+        "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+      ],
+      "owner_path": "data/ingredients/mapped/Tris_Hydrochloride_Salt.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Tris_Hydrochloride_Salt.yaml",
+      "after_sha256": "945bd8da0c00306c5e0d9ad2c3eaead1fb3af33e89cdc2e3440e729ec5763c58",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+        "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+        "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+        "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+        "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+        "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+        "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "source": "culturemech",
+          "source_case_id": "Tris-HCl",
+          "source_label": "Tris-HCl",
+          "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+            "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+            "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+            "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+            "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+            "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+            "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+            "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+            "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+            "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+            "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+            "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+            "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+            "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+            "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8",
+            "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+            "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+            "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+            "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+            "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+            "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+            "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+          "recipe_id": "CultureMech:006845",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:006845"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:927"
+            }
+          ],
+          "component_path": "ingredients/5",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/KOMODO_927_HALORHABDUS_UTAHENSIS_medium.yaml",
+          "source_file_sha256": "0c944e81e40e6333bf1a36fc2ee04efc77f779af9e6629ce65bff666e8b921f7",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+          "recipe_id": "CultureMech:008961",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008961"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2377"
+            }
+          ],
+          "component_path": "ingredients/6",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2377_Halorhabdus_Utahensis_Medium.yaml",
+          "source_file_sha256": "2aca2be22f1fc98537a49a6abdb0cbfb4c8e49b639b0eeee5025d385a92b8478",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+          "recipe_id": "CultureMech:002099",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:002099"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:927"
+            }
+          ],
+          "component_path": "ingredients/5",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/halorhabdus_utahensis_medium.yaml",
+          "source_file_sha256": "962373423523791c55201058f801fdabfde9965de253f190b902719ce473a6f3",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+          "recipe_id": "CultureMech:006519",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:006519"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:802"
+            }
+          ],
+          "component_path": "ingredients/6",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_802_GRACILIBACILLUS_medium.yaml",
+          "source_file_sha256": "bad3fd0fddcb778ebbaaca3ffee23b218b98b80ac9276128551f5163c56849e4",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+          "recipe_id": "CultureMech:001946",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001946"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:802"
+            }
+          ],
+          "component_path": "ingredients/6",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/gracilibacillus_medium.yaml",
+          "source_file_sha256": "d5c7e7048f2ae27413f513d601078c6e57ff0c637e37d7f04b5da37c04fb1946",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+          "recipe_id": "CultureMech:011089",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:011089"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:1632"
+            }
+          ],
+          "component_path": "composition/6",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_1632_Main_sol_802.yaml",
+          "source_file_sha256": "febd486051625e31fdd45243418c2f0bf756eba941abeddd89a3d99bc3ad3957",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+          "recipe_id": "CultureMech:011324",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:011324"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:1909"
+            }
+          ],
+          "component_path": "composition/5",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_1909_Main_sol_927.yaml",
+          "source_file_sha256": "b7ca2917f43feadf8e88145d99d707fcb2c3486e944c76d39e36ff4c2eb78e27",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+      "case_ids": [
+        "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+      ],
+      "owner_path": "data/ingredients/mapped/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+      "after_sha256": "0f8cf263079c547959a4b82831900988b2e07df24eb59c51e62e97fb675733ac",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+        "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+        "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+        "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+        "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+        "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "source": "culturemech",
+          "source_case_id": "Tris-HCl",
+          "source_label": "Tris-HCl",
+          "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+            "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+            "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+            "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+            "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+            "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+            "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+            "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+            "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+            "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+            "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+            "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+            "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+            "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+            "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8",
+            "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+            "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+            "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+            "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+            "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+            "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+          "recipe_id": "CultureMech:003846",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:003846"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:1137"
+            }
+          ],
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_1137_RUBRITALEA_medium.yaml",
+          "source_file_sha256": "5081668520c417c253bdecbad3dc46e01f389dc64e8ef426a5d1a792b1da5709",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+          "recipe_id": "CultureMech:005178",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:005178"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:394"
+            }
+          ],
+          "component_path": "ingredients/2",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_394_CHI_1776_medium.yaml",
+          "source_file_sha256": "c92d061f615c4adf9803b6874236924bc62b0ad1fb8088d85de96b516e260df7",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+          "recipe_id": "CultureMech:001501",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001501"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:394"
+            }
+          ],
+          "component_path": "ingredients/2",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chi_1776_medium.yaml",
+          "source_file_sha256": "6d40f0a92eae66f23d500cac6f4bc43bb4c185d00a752dc41c37b4463f875211",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+          "recipe_id": "CultureMech:011666",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:011666"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:2281"
+            }
+          ],
+          "component_path": "composition/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_2281_Main_sol_1137.yaml",
+          "source_file_sha256": "8ce2a372e877a7a517ea17d0ee8bce8eb1c9ea894f99e4ae567e975c71909488",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+          "recipe_id": "CultureMech:015177",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:015177"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:805"
+            }
+          ],
+          "component_path": "composition/2",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_805_Main_sol_394.yaml",
+          "source_file_sha256": "70a8218bd023971f1507aa606a2610fc45ebe276dd5bdeaf7e76a85567866ce3",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e",
+          "recipe_id": "CultureMech:000573",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000573"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1137"
+            }
+          ],
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/rubritalea_medium.yaml",
+          "source_file_sha256": "004e83bd58f782f3e199c8cccac38933fc44672a96db6315e48ade73d618cb47",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+      "case_ids": [
+        "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+      ],
+      "owner_path": "data/ingredients/mapped/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+      "after_sha256": "9009b7dc6651004a025591c4e9376e117d4978bc7049b91e2001352bcf83561b",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+        "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "source": "culturemech",
+          "source_case_id": "Tris-HCl",
+          "source_label": "Tris-HCl",
+          "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+            "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+            "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+            "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+            "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+            "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+            "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+            "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+            "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+            "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+            "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+            "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+            "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+            "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+            "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8",
+            "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+            "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+          "recipe_id": "CultureMech:002242",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:002242"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:J1061"
+            }
+          ],
+          "component_path": "ingredients/11",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/halobacteria_mh4_2_medium.yaml",
+          "source_file_sha256": "32a5f8522ffa1ad8338d9833eb51c6353fe1fa6be729c9fd67b1c6777d740c00",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+          "occurrence_id": "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+          "recipe_id": "CultureMech:014037",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:014037"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:5126"
+            }
+          ],
+          "component_path": "composition/11",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5126_Main_sol_J1061.yaml",
+          "source_file_sha256": "340713b3204b1503c41e9127f61cef6730f4db737763f64781887749db2ba058",
+          "raw_preferred_term": "Tris-HCl",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-atcc_1490",
+      "case_ids": [
+        "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b"
+      ],
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1490.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1490.yaml",
+      "after_sha256": "84691f529ce8d1e146d2dc2c37b1ecc87027e2cf52ccd60007d6908d8bb5fe14",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+        "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+        "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "source": "culturemech",
+          "source_case_id": "95% Ethanol",
+          "source_label": "95% Ethanol",
+          "case_input_sha256": "b93139f280c37bdcff6916a76fbb9b45be30cf3e63e463a9d7e6c151310ffe5d",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+            "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+            "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3",
+            "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5",
+            "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+            "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+            "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "occurrence_id": "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+          "recipe_id": "CultureMech:009145",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009145"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2576"
+            }
+          ],
+          "component_path": "ingredients/12",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2576_Modified_chopped_meat_medium.yaml",
+          "source_file_sha256": "d7af564a8ed3e0c957f797b74b98d663b6bbf7d55c3545243626553805e2a9e5",
+          "raw_preferred_term": "95% Ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "occurrence_id": "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+          "recipe_id": "CultureMech:009143",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009143"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2574"
+            }
+          ],
+          "component_path": "ingredients/18",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_carbohydrates_with_rumen_fluid.yaml",
+          "source_file_sha256": "fd1be3c67130bb75470278fb252b9120ea4ffec8b7d57d512244014da26ad1d3",
+          "raw_preferred_term": "95% Ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "occurrence_id": "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3",
+          "recipe_id": "CultureMech:009185",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009185"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2618"
+            }
+          ],
+          "component_path": "ingredients/13",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_medium_atcc_1490_with_formate_and_fumarate_atcc_9733.yaml",
+          "source_file_sha256": "17b9f16c92a9a90737db8271f81e9c25bbb77d01cdcd1e13c1cacd33865980cd",
+          "raw_preferred_term": "95% Ethanol",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-atcc_1257",
+      "case_ids": [
+        "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b"
+      ],
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1257.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1257.yaml",
+      "after_sha256": "fa52d73955f5d54be470eaa21c1de4ef59eda6b6fe95431d6a37cf9782975365",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "source": "culturemech",
+          "source_case_id": "95% Ethanol",
+          "source_label": "95% Ethanol",
+          "case_input_sha256": "b93139f280c37bdcff6916a76fbb9b45be30cf3e63e463a9d7e6c151310ffe5d",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+            "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+            "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3",
+            "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5",
+            "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "occurrence_id": "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5",
+          "recipe_id": "CultureMech:009136",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009136"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2568"
+            }
+          ],
+          "component_path": "ingredients/22",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/etsa_medium.yaml",
+          "source_file_sha256": "e0dd7228c9f1befd256aa206da12d6e244b54719e7612a922e9af7ba767ecefe",
+          "raw_preferred_term": "95% Ethanol",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-atcc_1524",
+      "case_ids": [
+        "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b"
+      ],
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1524.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1524.yaml",
+      "after_sha256": "3da7ef96a6d1020c39ca9663c045a913acc0b68cc060b674304399fe62f576cc",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "source": "culturemech",
+          "source_case_id": "95% Ethanol",
+          "source_label": "95% Ethanol",
+          "case_input_sha256": "b93139f280c37bdcff6916a76fbb9b45be30cf3e63e463a9d7e6c151310ffe5d",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6",
+            "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+            "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3",
+            "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5",
+            "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "occurrence_id": "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3",
+          "recipe_id": "CultureMech:009274",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009274"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2724"
+            }
+          ],
+          "component_path": "ingredients/18",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/py_glucose_atcc_medium_1524_with_10_g_glucose_per_liter_of_medium.yaml",
+          "source_file_sha256": "767ea29431d5e9dd71fbcd1f4c8b9012d10551b349b4bb7cd136829eefeb9c66",
+          "raw_preferred_term": "95% Ethanol",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+      "case_ids": [
+        "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+        "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac"
+      ],
+      "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_DSMZ_78.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_DSMZ_78.yaml",
+      "after_sha256": "5718e7de2922144c0e8b8bc519b6fddb637989975d99f0d7737dc4335ac96a9d",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+        "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+        "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+        "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+        "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+        "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+        "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+        "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+        "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+        "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+        "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+        "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "source": "culturemech",
+          "source_case_id": "95% ethanol",
+          "source_label": "95% ethanol",
+          "case_input_sha256": "59becf6c2d9ffd925ad28c8515705125e5986e629fd9ab182e0c15a14f92d82b",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+            "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+            "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+            "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+            "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+            "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+            "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+            "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+            "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+            "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+            "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+            "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+            "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+            "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+            "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+            "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+            "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+            "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+            "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+            "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+            "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+          "source": "culturemech",
+          "source_case_id": "Ethanol (95 %)",
+          "source_label": "Ethanol (95 %)",
+          "case_input_sha256": "651d454a4e1fc51478afb0dcc97c7851022db21c2b168a6cc514f2566413ff34",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-CHEMICALS"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+          "recipe_id": "CultureMech:009104",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009104"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2534"
+            }
+          ],
+          "component_path": "ingredients/14",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2534_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+          "source_file_sha256": "3066892c44506d6577a629596bb7481b06aaf2d73f35fe8d9cb4a837e2d96355",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+          "recipe_id": "CultureMech:009105",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009105"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2535"
+            }
+          ],
+          "component_path": "ingredients/14",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2535_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+          "source_file_sha256": "859cf06dda0735b1b07600314497eff09dd29a2c0a63b1b472d4e2099fbb1391",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+          "recipe_id": "CultureMech:009106",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009106"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2536"
+            }
+          ],
+          "component_path": "ingredients/15",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2536_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+          "source_file_sha256": "049d19b85a1303bfd279ac09d64eb34b9c52adace75184be6c5f63fa7335f463",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+          "recipe_id": "CultureMech:009107",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009107"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2537"
+            }
+          ],
+          "component_path": "ingredients/15",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2537_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+          "source_file_sha256": "c9e7796a0baa8d70f0d4fc2d5c832aa8e22ac81c420eb8a96a5cba3c01732cec",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+          "recipe_id": "CultureMech:009153",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009153"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2585"
+            }
+          ],
+          "component_path": "ingredients/20",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2585_PYG_Medium_modified.yaml",
+          "source_file_sha256": "6272cbf36829a4eb257d319b2ff189d1175ccd1b9589e15b0d82955cd1db46e9",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+          "recipe_id": "CultureMech:009295",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009295"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2744"
+            }
+          ],
+          "component_path": "ingredients/14",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2744_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+          "source_file_sha256": "fc5a7bdc4ca2d4d9b9b0cd266c8313a0eb73ba15306c6b63720fb6df9798a40d",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+          "recipe_id": "CultureMech:009581",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009581"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3072"
+            }
+          ],
+          "component_path": "ingredients/14",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3072_Chopped_Meat_Medium_With_Carbohydrates.yaml",
+          "source_file_sha256": "04e17a2df2cf7495ed38a3e8c564cce3f29f791c2d7ecd560d3e82e1d3251f23",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+          "recipe_id": "CultureMech:009092",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009092"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2522"
+            }
+          ],
+          "component_path": "ingredients/11",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_medium_add_vitamin_k1.yaml",
+          "source_file_sha256": "156f5f5f90a3c959f3a7072fd4c415133160b5e0af370fb9a71baa7460a3a5a8",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+          "recipe_id": "CultureMech:009094",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009094"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2524"
+            }
+          ],
+          "component_path": "ingredients/12",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_medium_add_vitamin_k1_and_agar.yaml",
+          "source_file_sha256": "9c34f303bb32d9a2bf9f168a5200875dfd83957f6813841ed8998d3bd4f8a05a",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+          "recipe_id": "CultureMech:009093",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009093"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2523"
+            }
+          ],
+          "component_path": "ingredients/12",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_medium_add_vitamin_k3.yaml",
+          "source_file_sha256": "d43a7af57c5bd45332d825fe65b15e27f42db3b3f3932b39dfb9682165f6cc4a",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "occurrence_id": "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+          "recipe_id": "CultureMech:009095",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009095"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2525"
+            }
+          ],
+          "component_path": "ingredients/13",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/chopped_meat_medium_add_vitamin_k3_and_agar.yaml",
+          "source_file_sha256": "87ab21be5ce4a3293916f6760347936b850bddf13686c25268519a68bdaf5f03",
+          "raw_preferred_term": "95% ethanol",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+          "occurrence_id": "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078",
+          "recipe_id": "CultureMech:001311",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001311"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:212a"
+            }
+          ],
+          "component_path": "solutions/0/solutions/3/composition/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/treponema_rectale_medium.yaml",
+          "source_file_sha256": "4bd96d463410ac1460470b03c78abde6357b9232e48dbc929bd6ba612eaec213",
+          "raw_preferred_term": "Ethanol (95 %)",
+          "native_scope": "inline_stock"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-R2A-DAIGO",
+      "case_ids": [
+        "CM_NAME:a4e6b5a23378dfc3ecdd1409ddcfbc0426bc9e0affe497bcafa02aa2288c8966",
+        "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+        "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+        "KG_CASE:043caa07bd41b2bc271589a6a0e88636fbf93384abb84698d86ced34fd01f676"
+      ],
+      "owner_path": "data/ingredients/mapped/R2A_Broth_Daigo.yaml",
+      "destination_owner_path": "data/ingredients/mapped/R2A_Broth_Daigo.yaml",
+      "after_sha256": "82a75f1ba268a903d32a8b62b2b8ee918ad6ac2ba7591b084f99a27702bd4dc7",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:53b40cfb45e97c84d52753113921e08be6ff9374485b65dbefd5c4df03515b14",
+        "CM_OCC:42857deccd17174c32042397dc6f833bf8cd1442f061ef058ecebc42c3c0c5cf",
+        "CM_OCC:a38661b028a29f42a4749ebebefa6af4fc93a8513710647e522c6a840d94271b",
+        "CM_OCC:accd0ff1e5afea158a9c8b977e4abb4cf678dd3a9311d6ce865644da3fe49da2"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:a4e6b5a23378dfc3ecdd1409ddcfbc0426bc9e0affe497bcafa02aa2288c8966",
+          "source": "culturemech",
+          "source_case_id": "R2A broth (Daigo)",
+          "source_label": "R2A broth (Daigo)",
+          "case_input_sha256": "1676e3568696119377b7ac5efed237c6990af556f59464a15163409b7b7bbdc0",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:42857deccd17174c32042397dc6f833bf8cd1442f061ef058ecebc42c3c0c5cf"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:42857deccd17174c32042397dc6f833bf8cd1442f061ef058ecebc42c3c0c5cf"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+          "source": "culturemech",
+          "source_case_id": "R2A Broth (DAIGO)",
+          "source_label": "R2A Broth (DAIGO)",
+          "case_input_sha256": "0620433c6fc4171633da51903b427299a4a609edb982a6d2f88a2ae5cf6faa0c",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:a38661b028a29f42a4749ebebefa6af4fc93a8513710647e522c6a840d94271b",
+            "CM_OCC:accd0ff1e5afea158a9c8b977e4abb4cf678dd3a9311d6ce865644da3fe49da2"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:a38661b028a29f42a4749ebebefa6af4fc93a8513710647e522c6a840d94271b",
+            "CM_OCC:accd0ff1e5afea158a9c8b977e4abb4cf678dd3a9311d6ce865644da3fe49da2"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+          "source": "culturemech",
+          "source_case_id": "R2A Broth",
+          "source_label": "R2A Broth",
+          "case_input_sha256": "be1b9a07d0bb241af981ae46bb8aecaff754b663ca6f711e362e69fb8638a745",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:5c56620d5d1851245cc41183a4ef2fb5dd013fa9ecfec2cce7c2ad1c4bcd3d9c",
+            "CM_OCC:53b40cfb45e97c84d52753113921e08be6ff9374485b65dbefd5c4df03515b14",
+            "CM_OCC:d7f8380a4ea602ca6365b686f56dd7a150e71da7394a70462a2bab7d4664d44d"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:53b40cfb45e97c84d52753113921e08be6ff9374485b65dbefd5c4df03515b14"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:043caa07bd41b2bc271589a6a0e88636fbf93384abb84698d86ced34fd01f676",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1402",
+          "source_label": "R2A Broth",
+          "case_input_sha256": "a9f4214abe09dcf2f025a7896973cd85681857f38f4866eb4ebcf2248864e643",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+          "occurrence_id": "CM_OCC:53b40cfb45e97c84d52753113921e08be6ff9374485b65dbefd5c4df03515b14",
+          "recipe_id": "CultureMech:013701",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:013701"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:4754"
+            }
+          ],
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4754_Main_sol_J805.yaml",
+          "source_file_sha256": "683388ceb96249761c3a916880b0808ef2087db68d2356497ddd188f814ff2af",
+          "raw_preferred_term": "R2A Broth",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:a4e6b5a23378dfc3ecdd1409ddcfbc0426bc9e0affe497bcafa02aa2288c8966",
+          "occurrence_id": "CM_OCC:42857deccd17174c32042397dc6f833bf8cd1442f061ef058ecebc42c3c0c5cf",
+          "recipe_id": "CultureMech:010080",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:010080"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M676"
+            }
+          ],
+          "component_path": "ingredients/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M676_Pelagicoccus_Agar.yaml",
+          "source_file_sha256": "31cedf677fbff408e826fff9477832a2deda76b31375cf7c82f5897b55a2fd25",
+          "raw_preferred_term": "R2A broth (Daigo)",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+          "occurrence_id": "CM_OCC:a38661b028a29f42a4749ebebefa6af4fc93a8513710647e522c6a840d94271b",
+          "recipe_id": "CultureMech:008637",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008637"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2047"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/10_marine_r2a_medium.yaml",
+          "source_file_sha256": "0bc3fc638c9a74a7beefdea77059df6e437ada1155293048cb489def7acbb441",
+          "raw_preferred_term": "R2A Broth (DAIGO)",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+          "occurrence_id": "CM_OCC:accd0ff1e5afea158a9c8b977e4abb4cf678dd3a9311d6ce865644da3fe49da2",
+          "recipe_id": "CultureMech:008341",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008341"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1775"
+            }
+          ],
+          "component_path": "ingredients/2",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/1_2_r2a_75_asw.yaml",
+          "source_file_sha256": "f6a9129d6d08961a11e9ed433c1e1cfc4862266015869c927ffc014dbfd65a13",
+          "raw_preferred_term": "R2A Broth (DAIGO)",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-MEM31095",
+      "case_ids": [
+        "CM_NAME:6cdd9bfd51f6c25795c83efb97e132430559c262ccf8d78e0307ea1cd2ed36c2",
+        "KG_CASE:adbef46986d7d62b3a17fdad4b41f61c32347b3a63d7257a8463e3683dcd3acd"
+      ],
+      "owner_path": "data/ingredients/mapped/MEM_Gibco_31095.yaml",
+      "destination_owner_path": "data/ingredients/mapped/MEM_Gibco_31095.yaml",
+      "after_sha256": "1dc2f759ac30696092092814ccacf9fd786504e9392198f61712c13785dd99f7",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:bb029ffba76514a6cc146f223fd8c4e6a20f1712276f90383750c936df0fc86e"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:6cdd9bfd51f6c25795c83efb97e132430559c262ccf8d78e0307ea1cd2ed36c2",
+          "source": "culturemech",
+          "source_case_id": "MEM (1x) Gibco 31095-029",
+          "source_label": "MEM (1x) Gibco 31095-029",
+          "case_input_sha256": "4654495cac652c3d5d857746709be6aff6c827a6d39c4281b3d1f3c3b0339422",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:bb029ffba76514a6cc146f223fd8c4e6a20f1712276f90383750c936df0fc86e"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:bb029ffba76514a6cc146f223fd8c4e6a20f1712276f90383750c936df0fc86e"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:adbef46986d7d62b3a17fdad4b41f61c32347b3a63d7257a8463e3683dcd3acd",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1377",
+          "source_label": "MEM-Medium",
+          "case_input_sha256": "4b91a30891c490f4e0aaff3da6f821d7842ef81c5122f5b9336e0852f900ae97",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:6cdd9bfd51f6c25795c83efb97e132430559c262ccf8d78e0307ea1cd2ed36c2",
+          "occurrence_id": "CM_OCC:bb029ffba76514a6cc146f223fd8c4e6a20f1712276f90383750c936df0fc86e",
+          "recipe_id": "CultureMech:001122",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001122"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1638"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/minimum_essential_medium_mem.yaml",
+          "source_file_sha256": "71a8efd4cefb0a8ba73956136de3e523624fe5c0944e07033df0ebd5123b3233",
+          "raw_preferred_term": "MEM (1x) Gibco 31095-029",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-CZAPEK-CM0095",
+      "case_ids": [
+        "CM_NAME:cf963f6f6f79492f3c8a12097417fd6d024da1ace5fb7ef02d042712a0060519",
+        "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+        "KG_CASE:a3797ec0761170bbdda064b554d0cf5275d89af5fe0756b771c973f0cba70a28"
+      ],
+      "owner_path": "data/ingredients/mapped/Czapek_Dox_Oxoid_CM0095.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Czapek_Dox_Oxoid_CM0095.yaml",
+      "after_sha256": "28d9aee62a90b5e1b664c332248eebd9a5485c2b9511077e15e86f8a91e0c63d",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:34c99a37b369737df6eccd2e1099d01ce21861a663b5c11bc5618be73c590d08",
+        "CM_OCC:b9ed8fd4430c6c81c0fdc2a4e359172b028c8045bf081b357dc027debfa5c982",
+        "CM_OCC:b6287e7e0e03925416f6a885ff82bbc4a5e037ac728997573a54ed5f89384bb6",
+        "CM_OCC:b90e4b34e5b827eb66dd8e29b17fb745c5df5b7ab60067c1550bf424be7f1065"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:cf963f6f6f79492f3c8a12097417fd6d024da1ace5fb7ef02d042712a0060519",
+          "source": "culturemech",
+          "source_case_id": "Czapek-Dox Liquid Medium, Modified (OXOID)",
+          "source_label": "Czapek-Dox Liquid Medium, Modified (OXOID)",
+          "case_input_sha256": "d04ad6b80852ca1e895b948281d3b9016a343eefe080bdd4d7cbb5b7e87749da",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:34c99a37b369737df6eccd2e1099d01ce21861a663b5c11bc5618be73c590d08"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:34c99a37b369737df6eccd2e1099d01ce21861a663b5c11bc5618be73c590d08"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+          "source": "culturemech",
+          "source_case_id": "Czapek-Dox liquid medium, modified (Oxoid)",
+          "source_label": "Czapek-Dox liquid medium, modified (Oxoid)",
+          "case_input_sha256": "d76af1658f95a162cf61a2600ed2acb39fea7c70196127dd89cc5edfd8bb60a2",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:b9ed8fd4430c6c81c0fdc2a4e359172b028c8045bf081b357dc027debfa5c982",
+            "CM_OCC:b6287e7e0e03925416f6a885ff82bbc4a5e037ac728997573a54ed5f89384bb6",
+            "CM_OCC:b90e4b34e5b827eb66dd8e29b17fb745c5df5b7ab60067c1550bf424be7f1065"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:b9ed8fd4430c6c81c0fdc2a4e359172b028c8045bf081b357dc027debfa5c982",
+            "CM_OCC:b6287e7e0e03925416f6a885ff82bbc4a5e037ac728997573a54ed5f89384bb6",
+            "CM_OCC:b90e4b34e5b827eb66dd8e29b17fb745c5df5b7ab60067c1550bf424be7f1065"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:a3797ec0761170bbdda064b554d0cf5275d89af5fe0756b771c973f0cba70a28",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1610",
+          "source_label": "Czapek-Dox liquid medium",
+          "case_input_sha256": "1a7d0f60ed3265447cee673daab1d91d8973155d8a9f7d5ed890b25b6f1b270b",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:cf963f6f6f79492f3c8a12097417fd6d024da1ace5fb7ef02d042712a0060519",
+          "occurrence_id": "CM_OCC:34c99a37b369737df6eccd2e1099d01ce21861a663b5c11bc5618be73c590d08",
+          "recipe_id": "CultureMech:008144",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008144"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1593"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1593_CYC_Agar.yaml",
+          "source_file_sha256": "910841e72207b5326593bd680ba9842c330ef36a2a16eaa34a48710f16cdebc7",
+          "raw_preferred_term": "Czapek-Dox Liquid Medium, Modified (OXOID)",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+          "occurrence_id": "CM_OCC:b9ed8fd4430c6c81c0fdc2a4e359172b028c8045bf081b357dc027debfa5c982",
+          "recipe_id": "CultureMech:008723",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008723"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M212"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M212_CYC_Agar_pH_8.0.yaml",
+          "source_file_sha256": "d04e316cfc357e5f6e9764bc4e73eb0ac900068d8b3b895bf996dc00fa3f1336",
+          "raw_preferred_term": "Czapek-Dox liquid medium, modified (Oxoid)",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+          "occurrence_id": "CM_OCC:b6287e7e0e03925416f6a885ff82bbc4a5e037ac728997573a54ed5f89384bb6",
+          "recipe_id": "CultureMech:009805",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009805"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M41"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M41_CYC_Agar.yaml",
+          "source_file_sha256": "b6ae2f7c869c72d9b6624829f57d1c0ee28e15b55e61582e40407abc7f7fcafb",
+          "raw_preferred_term": "Czapek-Dox liquid medium, modified (Oxoid)",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+          "occurrence_id": "CM_OCC:b90e4b34e5b827eb66dd8e29b17fb745c5df5b7ab60067c1550bf424be7f1065",
+          "recipe_id": "CultureMech:008542",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008542"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1961"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/cyc_medium.yaml",
+          "source_file_sha256": "d50f870e34e9cc4d5a3d34386e116b8f104d017111c67e869ac8cb869849b181",
+          "raw_preferred_term": "Czapek-Dox liquid medium, modified (Oxoid)",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-L15-PREPARATION",
+      "case_ids": [
+        "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+        "KG_CASE:5968c74e5b7e49d545df181d52e2d8773377eed4645705a6db46d6380406b509"
+      ],
+      "owner_path": "data/ingredients/unmapped/L-15_Medium.yaml",
+      "destination_owner_path": "data/ingredients/mapped/L15_Prepared_Medium_DSMZ1670.yaml",
+      "after_sha256": "fa3d436f77dc3541541a5a8e62aeec1e9b344190328df4a706eac3478806faec",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:10120598a258cda77c189a0a840dd309cc48fee6c88966535dff51f0d1b078cc",
+        "CM_OCC:b18cedf9da87e138efea6ba3bfe1afa05bc63feb5dbbf59b1672cd51d5185a57"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+          "source": "culturemech",
+          "source_case_id": "L-15 (Leibovitz) medium",
+          "source_label": "L-15 (Leibovitz) medium",
+          "case_input_sha256": "fad4d38acddd747c01915f1aa0b273bd429f6c3d5ab4a5d22b73460156a198b3",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:10120598a258cda77c189a0a840dd309cc48fee6c88966535dff51f0d1b078cc",
+            "CM_OCC:b18cedf9da87e138efea6ba3bfe1afa05bc63feb5dbbf59b1672cd51d5185a57"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:10120598a258cda77c189a0a840dd309cc48fee6c88966535dff51f0d1b078cc",
+            "CM_OCC:b18cedf9da87e138efea6ba3bfe1afa05bc63feb5dbbf59b1672cd51d5185a57"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:5968c74e5b7e49d545df181d52e2d8773377eed4645705a6db46d6380406b509",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1504",
+          "source_label": "L-15 medium",
+          "case_input_sha256": "d187915b7411010f4226e25211fc30313a609488344b73e6a7875f6e0cd590f5",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+          "occurrence_id": "CM_OCC:10120598a258cda77c189a0a840dd309cc48fee6c88966535dff51f0d1b078cc",
+          "recipe_id": "CultureMech:001155",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001155"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1670"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bme_ctvm2_cell_line_medium_occidentia_massiliensis.yaml",
+          "source_file_sha256": "d06a1999c8260b4b6e8a609e094e51554c04a0752b9c67674ee8d7264b578fd0",
+          "raw_preferred_term": "L-15 (Leibovitz) medium",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+          "occurrence_id": "CM_OCC:b18cedf9da87e138efea6ba3bfe1afa05bc63feb5dbbf59b1672cd51d5185a57",
+          "recipe_id": "CultureMech:012590",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012590"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:3465"
+            }
+          ],
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3465_Main_sol_1670.yaml",
+          "source_file_sha256": "07e8012a527e2db8490eb8b1de649ef79020a7b595e8f1a3518d487f3a671e66",
+          "raw_preferred_term": "L-15 (Leibovitz) medium",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-IMDM-PREPARATION",
+      "case_ids": [
+        "KG_CASE:ef57adeec965ae741a6b651b6365efcc15003203f2f7e7d478439480faf625aa"
+      ],
+      "owner_path": "data/ingredients/unmapped/IMDM-Medium.yaml",
+      "destination_owner_path": "data/ingredients/mapped/IMDM_Prepared_Medium_DSMZ1193_1198.yaml",
+      "after_sha256": "c276bcedc01f5d39b91275087b5272ff9aa2fa373b2b0cb39d342350bec9d485",
+      "applies_to_occurrence_ids": [],
+      "linked_cases": [
+        {
+          "case_id": "KG_CASE:ef57adeec965ae741a6b651b6365efcc15003203f2f7e7d478439480faf625aa",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1069",
+          "source_label": "IMDM-Medium",
+          "case_input_sha256": "9491c8b83fd5630082903b29da8c2f63eb8b94464d72fd6c4af21994b437de11",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [],
+      "empty_scope_reason": "Linked cases have no frozen occurrence rows (KG source cases); this is not an assignment of unseen occurrences."
+    },
+    {
+      "proposal_id": "M1193-P-RPMI_INVITROGEN_M2958",
+      "case_ids": [
+        "CM_NAME:4aa52119d16f365b413c75a67cf738a4848e12bcfa41b6023f69dd0bcb2b5a16"
+      ],
+      "owner_path": "data/ingredients/mapped/RPMI_Invitrogen_Preparation_M2958.yaml",
+      "destination_owner_path": "data/ingredients/mapped/RPMI_Invitrogen_Preparation_M2958.yaml",
+      "after_sha256": "4628bebc79ebe636488f9646fdb37624aff59ba931d8e54f7dec26a847732cc6",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:ee8e4ca58110a7654cefba80a593c40c1dba220cab61078d454cc83ebbcb2c88"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:4aa52119d16f365b413c75a67cf738a4848e12bcfa41b6023f69dd0bcb2b5a16",
+          "source": "culturemech",
+          "source_case_id": "RPMI medium (Invitrogen, Carlsbad, CA)",
+          "source_label": "RPMI medium (Invitrogen, Carlsbad, CA)",
+          "case_input_sha256": "e345828f8bc093ad30186623abe0c760937c4352a6f0cc94bcc0127d6cdafceb",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:ee8e4ca58110a7654cefba80a593c40c1dba220cab61078d454cc83ebbcb2c88"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:ee8e4ca58110a7654cefba80a593c40c1dba220cab61078d454cc83ebbcb2c88"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:4aa52119d16f365b413c75a67cf738a4848e12bcfa41b6023f69dd0bcb2b5a16",
+          "occurrence_id": "CM_OCC:ee8e4ca58110a7654cefba80a593c40c1dba220cab61078d454cc83ebbcb2c88",
+          "recipe_id": "CultureMech:009482",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009482"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2958"
+            }
+          ],
+          "component_path": "ingredients/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/rpmi_medium_supplemented_with_2_fetal_bovine_serum.yaml",
+          "source_file_sha256": "2ee040ed9c0d4e48a26befe48fe73ff69387a1c022e795ea114358d2682374dd",
+          "raw_preferred_term": "RPMI medium (Invitrogen, Carlsbad, CA)",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-M17_SCHARLAU_M2230",
+      "case_ids": [
+        "CM_NAME:83d692331f82bf58a86e422a797f1ef1eeb9dcc785c1daed3547c09f0b39a4ae"
+      ],
+      "owner_path": "data/ingredients/mapped/M17_Scharlau_Preparation_M2230.yaml",
+      "destination_owner_path": "data/ingredients/mapped/M17_Scharlau_Preparation_M2230.yaml",
+      "after_sha256": "b38a456225f56f50180a0ef68e81c4d43bdd0b40e4ec9268400a511db42bde3a",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:beaeba3cc81dfa76ea7fec95f05ca59c38ef37a4fd1c97fe877ffea9c76ac156"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:83d692331f82bf58a86e422a797f1ef1eeb9dcc785c1daed3547c09f0b39a4ae",
+          "source": "culturemech",
+          "source_case_id": "M17 medium (Scharlau)",
+          "source_label": "M17 medium (Scharlau)",
+          "case_input_sha256": "b7c0275ddc14a736e017036e13427554b0704543c2eb7ff889fc936e56101d2a",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:beaeba3cc81dfa76ea7fec95f05ca59c38ef37a4fd1c97fe877ffea9c76ac156"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:beaeba3cc81dfa76ea7fec95f05ca59c38ef37a4fd1c97fe877ffea9c76ac156"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:83d692331f82bf58a86e422a797f1ef1eeb9dcc785c1daed3547c09f0b39a4ae",
+          "occurrence_id": "CM_OCC:beaeba3cc81dfa76ea7fec95f05ca59c38ef37a4fd1c97fe877ffea9c76ac156",
+          "recipe_id": "CultureMech:008819",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008819"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2230"
+            }
+          ],
+          "component_path": "ingredients/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/m17_medium_supplemented_with_20_g_l_of_lactose.yaml",
+          "source_file_sha256": "6fcedef2289b2781370347f2fa9b99c60dad38149a20a282e43c74754731a56f",
+          "raw_preferred_term": "M17 medium (Scharlau)",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-MEM_NISSUI_M2847",
+      "case_ids": [
+        "CM_NAME:9a8dfd348a6e3b76bb82c69e7269c3f8aab337b2cbba6d775f1c566bfe85224d"
+      ],
+      "owner_path": "data/ingredients/mapped/MEM_Nissui_Preparation_M2847.yaml",
+      "destination_owner_path": "data/ingredients/mapped/MEM_Nissui_Preparation_M2847.yaml",
+      "after_sha256": "42659dc2b5703057c68376d64850dcfda068d27c1d181a94f4eb8cde0e01272d",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:e30ca6376a7dfcfbff546915d3c9f55978c2c16f7a00f2a530ddb0043b21ca54"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:9a8dfd348a6e3b76bb82c69e7269c3f8aab337b2cbba6d775f1c566bfe85224d",
+          "source": "culturemech",
+          "source_case_id": "Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)",
+          "source_label": "Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)",
+          "case_input_sha256": "6da4cdfd333d32b5b62a7dad6bd27227006c2f75395d3f7fc7f23f5a8e96fc7a",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:e30ca6376a7dfcfbff546915d3c9f55978c2c16f7a00f2a530ddb0043b21ca54"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:e30ca6376a7dfcfbff546915d3c9f55978c2c16f7a00f2a530ddb0043b21ca54"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:9a8dfd348a6e3b76bb82c69e7269c3f8aab337b2cbba6d775f1c566bfe85224d",
+          "occurrence_id": "CM_OCC:e30ca6376a7dfcfbff546915d3c9f55978c2c16f7a00f2a530ddb0043b21ca54",
+          "recipe_id": "CultureMech:009389",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009389"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2847"
+            }
+          ],
+          "component_path": "ingredients/3",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/eagles_minimum_essential_medium_mem_containing_antibiotics_and_fetal_bovine_serum.yaml",
+          "source_file_sha256": "4be8965c8e38452bb88c559428a31c1dabb943ba60daf205a3d4fd69fabb2185",
+          "raw_preferred_term": "Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-THIOGLYCOLATE_WAKO",
+      "case_ids": [
+        "CM_NAME:7f14997cfc5c6be59435b0df3fa162587aaea54f17fcad540bf3ed1be6729ef9",
+        "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d"
+      ],
+      "owner_path": "data/ingredients/mapped/Thioglycolate_Medium_Wako_Source_Preparation.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Thioglycolate_Medium_Wako_Source_Preparation.yaml",
+      "after_sha256": "11d60064994503f07dcf2c14421f05a87e847f785c0ffd7f94afb2df17c5d7bf",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:ab935af584110133e4cd151979bb4bc4d00c2fb908e4f52515ceb8730ffa54fa",
+        "CM_OCC:57b6ba1bfe1a8161ebd75aa4360a4cdb0684d2b5ec600199b0fed03704e03cb9",
+        "CM_OCC:492894f5983fe6604a441709a49bf5827fcb18b521f73d7befa3a1af55cf48f9"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:7f14997cfc5c6be59435b0df3fa162587aaea54f17fcad540bf3ed1be6729ef9",
+          "source": "culturemech",
+          "source_case_id": "thioglycolate medium (Wako)",
+          "source_label": "thioglycolate medium (Wako)",
+          "case_input_sha256": "66399be08f7aec0c540cf98ccc07183392ab81e7a362131dbf42d913f12855a1",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:ab935af584110133e4cd151979bb4bc4d00c2fb908e4f52515ceb8730ffa54fa"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:ab935af584110133e4cd151979bb4bc4d00c2fb908e4f52515ceb8730ffa54fa"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d",
+          "source": "culturemech",
+          "source_case_id": "Thioglycolate Medium Dehydrated",
+          "source_label": "Thioglycolate Medium Dehydrated",
+          "case_input_sha256": "35d632cbb54b984d80a4a76448e15134776160e17039e9352dd812a54998535a",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:57b6ba1bfe1a8161ebd75aa4360a4cdb0684d2b5ec600199b0fed03704e03cb9",
+            "CM_OCC:492894f5983fe6604a441709a49bf5827fcb18b521f73d7befa3a1af55cf48f9"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:57b6ba1bfe1a8161ebd75aa4360a4cdb0684d2b5ec600199b0fed03704e03cb9",
+            "CM_OCC:492894f5983fe6604a441709a49bf5827fcb18b521f73d7befa3a1af55cf48f9"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:7f14997cfc5c6be59435b0df3fa162587aaea54f17fcad540bf3ed1be6729ef9",
+          "occurrence_id": "CM_OCC:ab935af584110133e4cd151979bb4bc4d00c2fb908e4f52515ceb8730ffa54fa",
+          "recipe_id": "CultureMech:009385",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009385"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2843"
+            }
+          ],
+          "component_path": "ingredients/7",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/potato_solid_medium.yaml",
+          "source_file_sha256": "e0492cd00cc9d2bacdb41bbc500eddc3ba766b5f962c36ce75a1b8e0323875a0",
+          "raw_preferred_term": "thioglycolate medium (Wako)",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d",
+          "occurrence_id": "CM_OCC:57b6ba1bfe1a8161ebd75aa4360a4cdb0684d2b5ec600199b0fed03704e03cb9",
+          "recipe_id": "CultureMech:007981",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007981"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1441"
+            }
+          ],
+          "component_path": "ingredients/4",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1441.yaml",
+          "source_file_sha256": "8cb28c03f83d888de3184025d9440e42805834f034e60f5e784a34e80f8f432f",
+          "raw_preferred_term": "Thioglycolate Medium Dehydrated",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d",
+          "occurrence_id": "CM_OCC:492894f5983fe6604a441709a49bf5827fcb18b521f73d7befa3a1af55cf48f9",
+          "recipe_id": "CultureMech:007982",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007982"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1442"
+            }
+          ],
+          "component_path": "ingredients/4",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1442.yaml",
+          "source_file_sha256": "942c9a1ebc9a926304560b9d4740c0a5f165607498e29a1d7bc01b40a0e8f076",
+          "raw_preferred_term": "Thioglycolate Medium Dehydrated",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-LB_JCM1111",
+      "case_ids": [
+        "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+        "KG_CASE:bcda824ef7f9d884b0665344feca5297d8a01ac819cfa2e246e1acc386cfa413"
+      ],
+      "owner_path": "data/ingredients/mapped/LB_Broth_Powder_JCM1111.yaml",
+      "destination_owner_path": "data/ingredients/mapped/LB_Broth_Powder_JCM1111.yaml",
+      "after_sha256": "a0bc0be89857d48bdde694f8c4f7939dc79bffd37733717c6cb421e210692a48",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:32e0e7905130190bebbc39536b1adeff4c0a4c71eedb95dc6f210f5987b381ad",
+        "CM_OCC:bd976ffbaf4525a35cbac8d2d1c1bd386cab30a0b614bf0cb31449ad45fe5655"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+          "source": "culturemech",
+          "source_case_id": "LB broth powder",
+          "source_label": "LB broth powder",
+          "case_input_sha256": "84e62c738cca96550573af6d26b72d8ba6c0d0c6a650af39a4a3b2f5453924ea",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:32e0e7905130190bebbc39536b1adeff4c0a4c71eedb95dc6f210f5987b381ad",
+            "CM_OCC:bd976ffbaf4525a35cbac8d2d1c1bd386cab30a0b614bf0cb31449ad45fe5655"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:32e0e7905130190bebbc39536b1adeff4c0a4c71eedb95dc6f210f5987b381ad",
+            "CM_OCC:bd976ffbaf4525a35cbac8d2d1c1bd386cab30a0b614bf0cb31449ad45fe5655"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:bcda824ef7f9d884b0665344feca5297d8a01ac819cfa2e246e1acc386cfa413",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1999",
+          "source_label": "LB broth powder",
+          "case_input_sha256": "f4a67f2dc08cbd0c3d90f905044cbd42035a510d9eb33d5d0fdebf30353eb49f",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+          "occurrence_id": "CM_OCC:32e0e7905130190bebbc39536b1adeff4c0a4c71eedb95dc6f210f5987b381ad",
+          "recipe_id": "CultureMech:014111",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:014111"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:5200"
+            }
+          ],
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5200_Main_sol_J1111.yaml",
+          "source_file_sha256": "04dc4760fe3ad621c84fb7bb99675b8966d83aae7fc57f2fcc333f966617d1a0",
+          "raw_preferred_term": "LB broth powder",
+          "native_scope": "root_component"
+        },
+        {
+          "case_id": "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+          "occurrence_id": "CM_OCC:bd976ffbaf4525a35cbac8d2d1c1bd386cab30a0b614bf0cb31449ad45fe5655",
+          "recipe_id": "CultureMech:015381",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:015381"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:J1111"
+            }
+          ],
+          "component_path": "ingredients/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/specialized/anaerobic_alkaline_lb_medium.yaml",
+          "source_file_sha256": "3a72f9e08a705f32a49ab66a1206fc956c3b2cc1a998edf8940c76dd0e1da09c",
+          "raw_preferred_term": "LB broth powder",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-MH-POWDER-DSMZ804",
+      "case_ids": [
+        "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+        "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47"
+      ],
+      "owner_path": "data/ingredients/mapped/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+      "after_sha256": "dee3d9937df0c4978a23663a3c361b5c5c048cf6b8599f4a7aa54c648ba41e33",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+          "source": "culturemech",
+          "source_case_id": "Mueller-Hinton broth",
+          "source_label": "Mueller-Hinton broth",
+          "case_input_sha256": "cebff84900390789f3883a85ede678818e6da621c51e1d7bb2330c50b3a8aae4",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93",
+            "CM_OCC:3220690395131c99a4d85853f747b90224b479748f30fdfbbd2f07243ab1d673"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:748",
+          "source_label": "Mueller-Hinton broth",
+          "case_input_sha256": "d2743c804676b04cc902473447dc56fd98bd20210e9c2c3ce801046411d7b97f",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+          "occurrence_id": "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93",
+          "recipe_id": "CultureMech:011092",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:011092"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:1635"
+            }
+          ],
+          "component_path": "composition/0",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_1635_Main_sol_804.yaml",
+          "source_file_sha256": "cd0cfbccadb716153de688800cd3dcd06c15e03e38c2d00ab7843f0fdc687b2e",
+          "raw_preferred_term": "Mueller-Hinton broth",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-MH-PREPARED-M2937",
+      "case_ids": [
+        "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4"
+      ],
+      "owner_path": "data/ingredients/mapped/Mueller_Hinton_Broth_Preparation_M2937.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Mueller_Hinton_Broth_Preparation_M2937.yaml",
+      "after_sha256": "cbf1d846be034de8744ab0dd3942cf8ed0e98314194103f16953ae97726fae3b",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:3220690395131c99a4d85853f747b90224b479748f30fdfbbd2f07243ab1d673"
+      ],
+      "linked_cases": [
+        {
+          "case_id": "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+          "source": "culturemech",
+          "source_case_id": "Mueller-Hinton broth",
+          "source_label": "Mueller-Hinton broth",
+          "case_input_sha256": "cebff84900390789f3883a85ede678818e6da621c51e1d7bb2330c50b3a8aae4",
+          "all_frozen_occurrence_ids": [
+            "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93",
+            "CM_OCC:3220690395131c99a4d85853f747b90224b479748f30fdfbbd2f07243ab1d673"
+          ],
+          "selected_occurrence_ids": [
+            "CM_OCC:3220690395131c99a4d85853f747b90224b479748f30fdfbbd2f07243ab1d673"
+          ],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [
+        {
+          "case_id": "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+          "occurrence_id": "CM_OCC:3220690395131c99a4d85853f747b90224b479748f30fdfbbd2f07243ab1d673",
+          "recipe_id": "CultureMech:009468",
+          "recipe_source_identifiers": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009468"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2937"
+            }
+          ],
+          "component_path": "ingredients/1",
+          "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mueller_hinton_mh_broth.yaml",
+          "source_file_sha256": "2c47255e967f4e51635731fcc9716a668ca037840b07d59a056efcf74acea78f",
+          "raw_preferred_term": "Mueller-Hinton broth",
+          "native_scope": "root_component"
+        }
+      ],
+      "empty_scope_reason": null
+    },
+    {
+      "proposal_id": "M1193-P-JCM79-PREPARATION",
+      "case_ids": [
+        "KG_CASE:768165c9d23a6e6198695f702108da794085efbfbab3339eb3dab132d34fcda6"
+      ],
+      "owner_path": "data/ingredients/unmapped/Methanol-utilizing_Bacteria_Medium_B.yaml",
+      "destination_owner_path": "data/ingredients/mapped/Methanol_Utilizing_Bacteria_Medium_B_JCM79.yaml",
+      "after_sha256": "87ed2443240f80601aff82a36873691475ed0bc4bfe184fa2b219d2bb305922b",
+      "applies_to_occurrence_ids": [],
+      "linked_cases": [
+        {
+          "case_id": "KG_CASE:768165c9d23a6e6198695f702108da794085efbfbab3339eb3dab132d34fcda6",
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1633",
+          "source_label": "Methanol-utilizing bacteria medium B",
+          "case_input_sha256": "80cae8fc70313951fd3aa87d7423be0d1e8f60a3a695823a9fb2e334ea89fba3",
+          "all_frozen_occurrence_ids": [],
+          "selected_occurrence_ids": [],
+          "independent_review_evidence_ids": [
+            "C1193-INDEPENDENT-MEDIA"
+          ]
+        }
+      ],
+      "selected_occurrences": [],
+      "empty_scope_reason": "Linked cases have no frozen occurrence rows (KG source cases); this is not an assignment of unseen occurrences."
+    }
+  ],
+  "case_occurrence_sets": [
+    {
+      "case_id": "CM_NAME:07fcf84f8823be4211c96ca2ecaa9d16945bf7047426c545755322438d231175",
+      "source_label": "R2A Broth",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:53b40cfb45e97c84d52753113921e08be6ff9374485b65dbefd5c4df03515b14",
+        "CM_OCC:5c56620d5d1851245cc41183a4ef2fb5dd013fa9ecfec2cce7c2ad1c4bcd3d9c",
+        "CM_OCC:d7f8380a4ea602ca6365b686f56dd7a150e71da7394a70462a2bab7d4664d44d"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-R2A-DAIGO",
+          "occurrence_id": "CM_OCC:53b40cfb45e97c84d52753113921e08be6ff9374485b65dbefd5c4df03515b14"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [
+        "CM_OCC:5c56620d5d1851245cc41183a4ef2fb5dd013fa9ecfec2cce7c2ad1c4bcd3d9c",
+        "CM_OCC:d7f8380a4ea602ca6365b686f56dd7a150e71da7394a70462a2bab7d4664d44d"
+      ],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+      "source_label": "Bottom layer",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111",
+        "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "R1193-P-bottom-628",
+          "occurrence_id": "CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111"
+        },
+        {
+          "proposal_id": "R1193-P-bottom-629",
+          "occurrence_id": "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+      "source_label": "Mueller-Hinton broth",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:3220690395131c99a4d85853f747b90224b479748f30fdfbbd2f07243ab1d673",
+        "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-MH-POWDER-DSMZ804",
+          "occurrence_id": "CM_OCC:f52f473be592bc388af22a849700d123e5aa3fbb270232e6c0aab5e1059cfb93"
+        },
+        {
+          "proposal_id": "M1193-P-MH-PREPARED-M2937",
+          "occurrence_id": "CM_OCC:3220690395131c99a4d85853f747b90224b479748f30fdfbbd2f07243ab1d673"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:3bce1dc0218de74906ff1ae9449e6cfed783df22fc5d67e56fb924184852dfc1",
+      "source_label": "L-15 (Leibovitz) medium",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:10120598a258cda77c189a0a840dd309cc48fee6c88966535dff51f0d1b078cc",
+        "CM_OCC:b18cedf9da87e138efea6ba3bfe1afa05bc63feb5dbbf59b1672cd51d5185a57"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-L15-PREPARATION",
+          "occurrence_id": "CM_OCC:10120598a258cda77c189a0a840dd309cc48fee6c88966535dff51f0d1b078cc"
+        },
+        {
+          "proposal_id": "M1193-P-L15-PREPARATION",
+          "occurrence_id": "CM_OCC:b18cedf9da87e138efea6ba3bfe1afa05bc63feb5dbbf59b1672cd51d5185a57"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:4aa52119d16f365b413c75a67cf738a4848e12bcfa41b6023f69dd0bcb2b5a16",
+      "source_label": "RPMI medium (Invitrogen, Carlsbad, CA)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:ee8e4ca58110a7654cefba80a593c40c1dba220cab61078d454cc83ebbcb2c88"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-RPMI_INVITROGEN_M2958",
+          "occurrence_id": "CM_OCC:ee8e4ca58110a7654cefba80a593c40c1dba220cab61078d454cc83ebbcb2c88"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:6086dc700eaca1b49e5689479bb199477718078a6f4bdd8e1b7ddb886c7d8431",
+      "source_label": "LB broth powder",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:32e0e7905130190bebbc39536b1adeff4c0a4c71eedb95dc6f210f5987b381ad",
+        "CM_OCC:bd976ffbaf4525a35cbac8d2d1c1bd386cab30a0b614bf0cb31449ad45fe5655"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-LB_JCM1111",
+          "occurrence_id": "CM_OCC:32e0e7905130190bebbc39536b1adeff4c0a4c71eedb95dc6f210f5987b381ad"
+        },
+        {
+          "proposal_id": "M1193-P-LB_JCM1111",
+          "occurrence_id": "CM_OCC:bd976ffbaf4525a35cbac8d2d1c1bd386cab30a0b614bf0cb31449ad45fe5655"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+      "source_label": "1M HEPES-KOH",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac",
+        "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "CHEM-C1193-HEPES-1221",
+          "occurrence_id": "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"
+        },
+        {
+          "proposal_id": "CHEM-C1193-HEPES-1474",
+          "occurrence_id": "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:6cdd9bfd51f6c25795c83efb97e132430559c262ccf8d78e0307ea1cd2ed36c2",
+      "source_label": "MEM (1x) Gibco 31095-029",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:bb029ffba76514a6cc146f223fd8c4e6a20f1712276f90383750c936df0fc86e"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-MEM31095",
+          "occurrence_id": "CM_OCC:bb029ffba76514a6cc146f223fd8c4e6a20f1712276f90383750c936df0fc86e"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:7f14997cfc5c6be59435b0df3fa162587aaea54f17fcad540bf3ed1be6729ef9",
+      "source_label": "thioglycolate medium (Wako)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:ab935af584110133e4cd151979bb4bc4d00c2fb908e4f52515ceb8730ffa54fa"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-THIOGLYCOLATE_WAKO",
+          "occurrence_id": "CM_OCC:ab935af584110133e4cd151979bb4bc4d00c2fb908e4f52515ceb8730ffa54fa"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:83d692331f82bf58a86e422a797f1ef1eeb9dcc785c1daed3547c09f0b39a4ae",
+      "source_label": "M17 medium (Scharlau)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:beaeba3cc81dfa76ea7fec95f05ca59c38ef37a4fd1c97fe877ffea9c76ac156"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-M17_SCHARLAU_M2230",
+          "occurrence_id": "CM_OCC:beaeba3cc81dfa76ea7fec95f05ca59c38ef37a4fd1c97fe877ffea9c76ac156"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+      "source_label": "Tris-HCl",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+        "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+        "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+        "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f",
+        "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+        "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+        "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+        "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e",
+        "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132",
+        "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+        "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+        "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+        "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1",
+        "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+        "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+        "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "occurrence_id": "CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc"
+        },
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "occurrence_id": "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132"
+        },
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "occurrence_id": "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f"
+        },
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "occurrence_id": "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e"
+        },
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "occurrence_id": "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74"
+        },
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "occurrence_id": "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1"
+        },
+        {
+          "proposal_id": "CHEM-C1193-Tris-HCl-salt",
+          "occurrence_id": "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67"
+        },
+        {
+          "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+          "occurrence_id": "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102"
+        },
+        {
+          "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+          "occurrence_id": "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857"
+        },
+        {
+          "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+          "occurrence_id": "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed"
+        },
+        {
+          "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+          "occurrence_id": "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807"
+        },
+        {
+          "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+          "occurrence_id": "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b"
+        },
+        {
+          "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+          "occurrence_id": "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+        },
+        {
+          "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+          "occurrence_id": "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11"
+        },
+        {
+          "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+          "occurrence_id": "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [
+        "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8"
+      ],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:9a8dfd348a6e3b76bb82c69e7269c3f8aab337b2cbba6d775f1c566bfe85224d",
+      "source_label": "Eagle's  minimum  essential  medium  (MEM) (Nissui  Co.,  Tokyo)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:e30ca6376a7dfcfbff546915d3c9f55978c2c16f7a00f2a530ddb0043b21ca54"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-MEM_NISSUI_M2847",
+          "occurrence_id": "CM_OCC:e30ca6376a7dfcfbff546915d3c9f55978c2c16f7a00f2a530ddb0043b21ca54"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+      "source_label": "Wolfe's mineral elixir (see Medium No. 470 )",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "R1193-P-wolfe470",
+          "occurrence_id": "CM_OCC:43a03f2733f520b800afc20dee421658880381e23d6fd06f731b33437634a152"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:a4e6b5a23378dfc3ecdd1409ddcfbc0426bc9e0affe497bcafa02aa2288c8966",
+      "source_label": "R2A broth (Daigo)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:42857deccd17174c32042397dc6f833bf8cd1442f061ef058ecebc42c3c0c5cf"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-R2A-DAIGO",
+          "occurrence_id": "CM_OCC:42857deccd17174c32042397dc6f833bf8cd1442f061ef058ecebc42c3c0c5cf"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+      "source_label": "95% Ethanol",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3",
+        "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662",
+        "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3",
+        "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5",
+        "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1490",
+          "occurrence_id": "CM_OCC:f4bccc2d7bae62e3e87df53df50203280d729144348287765bc3e982bef04ee6"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1490",
+          "occurrence_id": "CM_OCC:83d0638d8bb7fcff45321034c9c3f52fc5e8af914991877f2be78af785f3e662"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1490",
+          "occurrence_id": "CM_OCC:6b2190c55576546503971735293ef253389668786e8f353fe4d0f9cf4ef311d3"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1257",
+          "occurrence_id": "CM_OCC:c52ec04c79c5107c8537203380f0a03f13fd8c927a893acb883a89a2530e74a5"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-atcc_1524",
+          "occurrence_id": "CM_OCC:b8556f8f55585f77779326dc16a0af7d0fab53055bb3bccb3036da251ce4f4b3"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+      "source_label": "Wolfe's mineral elixir (see below)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "R1193-P-wolfe470",
+          "occurrence_id": "CM_OCC:b9f00d3afdb0f05b4240c7a7b7bc9ae1f64752d78f3565943d64f18c25272227"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:cf963f6f6f79492f3c8a12097417fd6d024da1ace5fb7ef02d042712a0060519",
+      "source_label": "Czapek-Dox Liquid Medium, Modified (OXOID)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:34c99a37b369737df6eccd2e1099d01ce21861a663b5c11bc5618be73c590d08"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-CZAPEK-CM0095",
+          "occurrence_id": "CM_OCC:34c99a37b369737df6eccd2e1099d01ce21861a663b5c11bc5618be73c590d08"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:d9a0c497732b0e0feb130cd7bf184d04f4efac7321d33816f8505b0e59c1b9d6",
+      "source_label": "R2A Broth (DAIGO)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:a38661b028a29f42a4749ebebefa6af4fc93a8513710647e522c6a840d94271b",
+        "CM_OCC:accd0ff1e5afea158a9c8b977e4abb4cf678dd3a9311d6ce865644da3fe49da2"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-R2A-DAIGO",
+          "occurrence_id": "CM_OCC:a38661b028a29f42a4749ebebefa6af4fc93a8513710647e522c6a840d94271b"
+        },
+        {
+          "proposal_id": "M1193-P-R2A-DAIGO",
+          "occurrence_id": "CM_OCC:accd0ff1e5afea158a9c8b977e4abb4cf678dd3a9311d6ce865644da3fe49da2"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:ddb1aeacad8557837f3514f2e1bd70e7802f73002773825915ff519c7d0d6e0d",
+      "source_label": "Thioglycolate Medium Dehydrated",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:492894f5983fe6604a441709a49bf5827fcb18b521f73d7befa3a1af55cf48f9",
+        "CM_OCC:57b6ba1bfe1a8161ebd75aa4360a4cdb0684d2b5ec600199b0fed03704e03cb9"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-THIOGLYCOLATE_WAKO",
+          "occurrence_id": "CM_OCC:57b6ba1bfe1a8161ebd75aa4360a4cdb0684d2b5ec600199b0fed03704e03cb9"
+        },
+        {
+          "proposal_id": "M1193-P-THIOGLYCOLATE_WAKO",
+          "occurrence_id": "CM_OCC:492894f5983fe6604a441709a49bf5827fcb18b521f73d7befa3a1af55cf48f9"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+      "source_label": "95% ethanol",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+        "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+        "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+        "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+        "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+        "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+        "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+        "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+        "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+        "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+        "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53"
+        },
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff",
+      "source_label": "Wolfe's mineral elixir",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6",
+        "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d",
+        "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465",
+        "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0",
+        "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "R1193-P-wolfe470",
+          "occurrence_id": "CM_OCC:a60e0be58125dcee25f400ece435463ec8391c8ba734119a918fa9645f1e603d"
+        },
+        {
+          "proposal_id": "R1193-P-wolfe792",
+          "occurrence_id": "CM_OCC:db7c4df236cbd0c035b025ebbd35470a31a87ddc4545404479aaac6920cdd24b"
+        },
+        {
+          "proposal_id": "R1193-P-wolfe792",
+          "occurrence_id": "CM_OCC:261db2940d4633b0e1b5c00962800f062419476b90d5fe1a9f56019f663ae3a6"
+        },
+        {
+          "proposal_id": "R1193-P-wolfe792",
+          "occurrence_id": "CM_OCC:cc8ac58db16444e007b1f90a12284fcdd09df8e360afbb13e18725029531dec0"
+        },
+        {
+          "proposal_id": "R1193-P-wolfe792",
+          "occurrence_id": "CM_OCC:cbd2198875f921771ef6f1c44d15b1f55924a85eafb05becae9a999f4a626465"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+      "source_label": "Ethanol (95 %)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+          "occurrence_id": "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+      "source_label": "Czapek-Dox liquid medium, modified (Oxoid)",
+      "all_frozen_occurrence_ids": [
+        "CM_OCC:b6287e7e0e03925416f6a885ff82bbc4a5e037ac728997573a54ed5f89384bb6",
+        "CM_OCC:b90e4b34e5b827eb66dd8e29b17fb745c5df5b7ab60067c1550bf424be7f1065",
+        "CM_OCC:b9ed8fd4430c6c81c0fdc2a4e359172b028c8045bf081b357dc027debfa5c982"
+      ],
+      "explicit_proposal_routes": [
+        {
+          "proposal_id": "M1193-P-CZAPEK-CM0095",
+          "occurrence_id": "CM_OCC:b9ed8fd4430c6c81c0fdc2a4e359172b028c8045bf081b357dc027debfa5c982"
+        },
+        {
+          "proposal_id": "M1193-P-CZAPEK-CM0095",
+          "occurrence_id": "CM_OCC:b6287e7e0e03925416f6a885ff82bbc4a5e037ac728997573a54ed5f89384bb6"
+        },
+        {
+          "proposal_id": "M1193-P-CZAPEK-CM0095",
+          "occurrence_id": "CM_OCC:b90e4b34e5b827eb66dd8e29b17fb745c5df5b7ab60067c1550bf424be7f1065"
+        }
+      ],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:043caa07bd41b2bc271589a6a0e88636fbf93384abb84698d86ced34fd01f676",
+      "source_label": "R2A Broth",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+      "source_label": "Mueller-Hinton broth",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:5968c74e5b7e49d545df181d52e2d8773377eed4645705a6db46d6380406b509",
+      "source_label": "L-15 medium",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:768165c9d23a6e6198695f702108da794085efbfbab3339eb3dab132d34fcda6",
+      "source_label": "Methanol-utilizing bacteria medium B",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:a3797ec0761170bbdda064b554d0cf5275d89af5fe0756b771c973f0cba70a28",
+      "source_label": "Czapek-Dox liquid medium",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:adbef46986d7d62b3a17fdad4b41f61c32347b3a63d7257a8463e3683dcd3acd",
+      "source_label": "MEM-Medium",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:bcda824ef7f9d884b0665344feca5297d8a01ac819cfa2e246e1acc386cfa413",
+      "source_label": "LB broth powder",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    },
+    {
+      "case_id": "KG_CASE:ef57adeec965ae741a6b651b6365efcc15003203f2f7e7d478439480faf625aa",
+      "source_label": "IMDM-Medium",
+      "all_frozen_occurrence_ids": [],
+      "explicit_proposal_routes": [],
+      "unselected_frozen_occurrence_ids": [],
+      "interpretation": "Unselected IDs are not automatically authorized for any source-qualified proposal; retain canonical case reasoning and holds. Proposals without this optional field are not implicitly expanded by this audit."
+    }
+  ],
+  "proposals_without_optional_occurrence_scope": [
+    {
+      "proposal_id": "ROOT-P-fatty-stock",
+      "case_ids": [
+        "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "R1193-P-dsmz29",
+      "case_ids": [
+        "CM_NAME:2b63628e7e1902e7cdd721bb2aa23012d4dbf4c0e3e51d942c736017c060f901"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-dsmz87",
+      "case_ids": [
+        "CM_NAME:41153f03ccf9592cfed6576e11b8e154da72287ee303c764dfd8faa676389b29"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-mkp",
+      "case_ids": [
+        "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "ROOT-P-thiamine-stock",
+      "case_ids": [
+        "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+        "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+        "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59",
+        "CM_NAME:78f8c48b757890cfb5c0f5856ac1958e394f3700e65d9e81adf7e49e64384a51"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "R1193-P-atcc1256",
+      "case_ids": [
+        "CM_NAME:5d265df4517518ebb8d12aa059a984c29e9df3348b794d6b1023eaa8b0f4ef5f"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-vfa1130",
+      "case_ids": [
+        "CM_NAME:5e992751cd5fb71cd23d43340581fb8ddd38fdf96fddffce2002a4ef1dedbc44"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-dsmz535",
+      "case_ids": [
+        "CM_NAME:9d2b626c17882f81ff3e211f6d1dce3c6d192d2d6f3d69f2f5bc0120421390d6"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-wolfe1190",
+      "case_ids": [
+        "CM_NAME:b2206bd404d0663bb8b53a5bbeadca3912777e5eaac7fac5735853cf075a5bd8"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-wolfe221",
+      "case_ids": [
+        "CM_NAME:dcab813086c94d8ff8307cecf995687500ab798e21fdd3568aaf6fa1e352b959"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-atcc1490",
+      "case_ids": [
+        "CM_NAME:b40e681314d4d8cf5e8a9ecee4683f00eefa5b98eecf3d298c28e7e6ca320b81"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-hs",
+      "case_ids": [
+        "CM_NAME:cfd2009dbbaa79c954caacaa0854daa3dced9f602838983f41830c3a9eb56a80"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-m2sgc",
+      "case_ids": [
+        "CM_NAME:d0bb0479aee40433f476c3a75acf0b96288d9f508b1a05a614be6b3dee1fe57f"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-jcm521",
+      "case_ids": [
+        "CM_NAME:d30e559bdd7d72c71092ab0c7b17de05e06afbcea9039a89b9ee22fee7f337bc"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-nnm",
+      "case_ids": [
+        "CM_NAME:d87b22b5a7c87bc715c392270bfc7b8393245d1c922bbacd7829f0cc126adef1"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-mediumd",
+      "case_ids": [
+        "CM_NAME:ebbd25a1e14a91510208c5680207b415dbbfbeb146e3037e00a48c6a8c9833c4"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "R1193-P-sludge119",
+      "case_ids": [
+        "CM_NAME:7f602708682a62d42a5d5fc0095277fd0052a25f2a6f8dd82b10486deb90b429"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "R1193-P-clarifiedrumen266",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyglucose",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-casitone",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyg",
+      "case_ids": [
+        "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-bacto-aliases",
+      "case_ids": [
+        "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+        "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d",
+        "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-P-proteose-numbered",
+      "case_ids": [
+        "CM_NAME:84db9e493f1fb3ac898fcfbbd0d0f1b368fac84a0db41896778837900538b280",
+        "KG_CASE:1f3c561b85a411dc613e467f6059f58e80155619c163091ef701a937636f3f8b"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-P-sucrose-salicin",
+      "case_ids": [
+        "KG_CASE:b8166e7eb0adf0ea5d2b1f6d955b897274855bffa29afac369ba71c767ae402e"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Leafy_Soil_TOGO_M230",
+      "case_ids": [
+        "CM_NAME:0fe52708062ae5b7deb6d1b1fbf3b9389f2425e3d2c3ab023455ee22cd6a7ee0"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Liver_Extract_JCM1474",
+      "case_ids": [
+        "CM_NAME:1b16e5ae999e6118bb1c96008e3b5f00670eea865b598e7795dac97e20af78c5"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-wako-meat",
+      "case_ids": [
+        "CM_NAME:22af65783de61746783556d239d97436d8d51f1f11dd117880152915e51e0f39"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-albumin-forms",
+      "case_ids": [
+        "CM_NAME:2701602263ac243d10081e0843627a646720bf7455077968f495cb41466d217a",
+        "CM_NAME:3922dd30207b7e9f6eae52095a5eef697923a50484871e8f52aaa5f0722685e5",
+        "CM_NAME:8ba1df295abb60b7fb8cd7e12f80b861e3d2e7634dd64e3bfb7e88df0db0fd08",
+        "CM_NAME:f163ec7f355f01963af1b99f566d50cb82749e167f8cce8916145945ad4a2084",
+        "CM_NAME:f50ba478dda27e9481509c871585ed5a3aaeec815eaf4c521d1a58e791e928e1"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Pooled_Sterile_Human_Urine",
+      "case_ids": [
+        "CM_NAME:30d34c021d1f4fa8a93bf0858408499f9169b9d0d86936243ff6df038503e6a3"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Oxoid_Peptonised_Milk",
+      "case_ids": [
+        "CM_NAME:335a87f048ecd16a7457dc0f6e336bb859ba0f1492549b5b2b32cb175c050990"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-bd-meat-peptone",
+      "case_ids": [
+        "CM_NAME:3b9d4adc161114f04e0a67038e19bee6895dcd2ad1a4ba1853c30be222480f16"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Chrysalis_Extract_NBRC907",
+      "case_ids": [
+        "CM_NAME:515bef06cadb512bd069ba86c5bcb5d3db474cd7b9a1efcdf63fe2aa635d9ec1"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Gelatin_Peptone",
+      "case_ids": [
+        "CM_NAME:53b8941a0bf23ff8f030b7e59dfe94479a1855d13805f0ad5cfb7eb6c7d0febc"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-whole-fat-milk",
+      "case_ids": [
+        "CM_NAME:56ef77be2591186857f4a92ab254f6b17b61fd68f51aab076ddb272d85541414",
+        "CM_NAME:5eb72ef93fbc049ada54a5c189b8954ac6dfb31689df054f7c154201f5003bd8",
+        "KG_CASE:bf12c276a4114613ceac1a21fce5c8644d2458a194dc5c61117cbf58f270d0fe"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-CrystalSea_Marine_Mix",
+      "case_ids": [
+        "CM_NAME:61bf9d1487f362a7d4680e729a189bc1e7d6285f5d549df92875d0fec8e714f9"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-bacto-panton",
+      "case_ids": [
+        "CM_NAME:65ba1fc20606be8ad43f872285efdae017de70014520c2ec7bdd073315cb412c"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-bacto-bitone",
+      "case_ids": [
+        "CM_NAME:6dbce0565dfec19c64478681adfc0eed9b7d5397e8382e522437614b1b25993c"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-fish-sperm-dna",
+      "case_ids": [
+        "CM_NAME:7a2f80fe519b283e444d0f8f264cda4df2c3917e0640f7fe00253036d9c2a79c"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Sucrose_20_Percent_Stock",
+      "case_ids": [
+        "CM_NAME:80b54b0ff5bd090c464e9e458d5ad32a60b5f4c3dd3f2d17415f7cea4724ef55"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Fish_Meat_Extract",
+      "case_ids": [
+        "CM_NAME:8220bc6b7991e718e70046d1ee0677100ee4e0cac9df4958486094d884400f4d"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Proteose_Peptone_No_3",
+      "case_ids": [
+        "CM_NAME:84db9e493f1fb3ac898fcfbbd0d0f1b368fac84a0db41896778837900538b280",
+        "KG_CASE:1f3c561b85a411dc613e467f6059f58e80155619c163091ef701a937636f3f8b"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Difco_Soytone",
+      "case_ids": [
+        "CM_NAME:8d411c29b3c72239de67c4f6968dabedb48e94d0e9c7ff45af014bdeb4650acd"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Small_Dried_Sardine",
+      "case_ids": [
+        "CM_NAME:a3427dc662d5bd409c30365c1a38dea6f558aca970d0c9f9a64f411e4545853f",
+        "KG_CASE:73aefef0444a89ff8f4d690eeca7ebc9bd2903071f4f6a3b04120090371ce1c8"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Oxoid_Special_Peptone",
+      "case_ids": [
+        "CM_NAME:c63f61e75943ad641b1cf3e533812c4eaca371524e6b1bd9ee244a7b8671df55"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Rice_Extract_NBRC1372",
+      "case_ids": [
+        "CM_NAME:c93fb27cf3615367f9b75ccd2c0930fad5b5824e374a3b64b189d470140f79f3"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-difco-skim-powder",
+      "case_ids": [
+        "CM_NAME:d47ee889d9bce5dc52efde7e5cf98dabd62f28e0c64e867f3d5ea9371b4999e2"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-catalase-source-form",
+      "case_ids": [
+        "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-liver-concentrate",
+      "case_ids": [
+        "CM_NAME:f3f0ab76469c51fbe1f3a0f09801b2de12818bab1506ab7a3eb731a2d919d1b6",
+        "KG_CASE:211f0381e01e0a7256eee4cfd4ebcdec047b28ce19a6ae0a38a5efb6efdb0f1a"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Maize_Extract",
+      "case_ids": [
+        "CM_NAME:f7bd19bc3733271343171717656ebe0c87f7449fcd8593cb43d2f95f5c03c7ba",
+        "KG_CASE:2239b4ba3999c57a54135eb83ba6a39c206ce4bcd28c98c14034cc84ace39a49"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Hipolypepton",
+      "case_ids": [
+        "CM_NAME:51b5ea9f7429c70a079d79a469b0a323180d8b37fbedfecbc950e0043f0f3b6f",
+        "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-polypeptone-boundary",
+      "case_ids": [
+        "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+        "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-phytone-boundary",
+      "case_ids": [
+        "KG_CASE:3afa861ef7ff42874af3fd1e7f918863a09111adde1a93ff6bc9ee75f883a276"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-soy-peptone-boundary",
+      "case_ids": [
+        "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-malt-oxoid",
+      "case_ids": [
+        "KG_CASE:73abd3afeae5cc63a2dd900b434faac00c912604cc82da9029031338cb6770c4"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-tomato-extract",
+      "case_ids": [
+        "KG_CASE:d6ec49fe7ccdff5833a76643b6b50db8b3a88e37568e9f413bdc80d05ff50532"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Merck_Universal_Peptone",
+      "case_ids": [
+        "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-Neopeptone",
+      "case_ids": [
+        "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-sea-salts",
+      "case_ids": [
+        "CM_NAME:595d2c9054961a4c3ea21a8eb1bffa3a73c87ebc5fad14bad3efcc21741d91de",
+        "CM_NAME:d45a33c5923ad1f08755b5637c6c47ee6c329b0b4a2892c859a4027e54126a15",
+        "CM_NAME:fe4e28b8925680d489da8b18fc4ec7aefb6155e75c979b735f1db54e45636bb5",
+        "KG_CASE:40f83209f10d453b4f37fb93855bf6dd3e6f13c2ba0ec5027e5f86cdf8af854c",
+        "KG_CASE:f804dc528f900fb04f9b7cfc94f8efc08380b7a476728e855224bf91c05178db"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-organic-peat",
+      "case_ids": [
+        "CM_NAME:71bcdce17ef8482f9e70b5dea80f2fc94d75fd0011f5ce15675ba7a2b3917e09"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "MATERIALS-C1193-peptone-identity",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-dextrose",
+      "case_ids": [
+        "CM_NAME:14e2433d6680c7e7fbdb982b142afa631f6ed6bb5aa5cdbecfbf46914f3ce727"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-iron",
+      "case_ids": [
+        "CM_NAME:16f378f5a868f191ba889e5d0a923b8d067c8ddaa9ff7562b0cb7f41e3e60075"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-formate",
+      "case_ids": [
+        "CM_NAME:3c36c3997cdd6dd09cac787110299acff8335c8befbd63742b07b04f06a6d83e"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-magnesium-heptahydrate",
+      "case_ids": [
+        "CM_NAME:443c3c0a7735959a80aab57dc88e24ac48ed27061bbf710c3fdfa36f933505c9",
+        "CM_NAME:8f9dce93200c8b81f5e89be4cc5bd3dab151028152e861296334e30ed961fcc1"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-sulfur",
+      "case_ids": [
+        "CM_NAME:47de822ce5be13cb438bd63ab1582facda8ae41a01b9567016f611bfd3d8df7a",
+        "CM_NAME:5d0c5ffb37bf378c3409765ce4abd610f79dd528fa54abc2e0b8f52451380a5b"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-riboflavin",
+      "case_ids": [
+        "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-manganese-tetrahydrate",
+      "case_ids": [
+        "CM_NAME:558bcf18c0ac36e3a46e8f443809ddfa33b130fcab3dd70b6573c1354ff677aa"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-niacin",
+      "case_ids": [
+        "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-thiamine-hcl",
+      "case_ids": [
+        "CM_NAME:cc487a98c0585c66c5e37b0867572f416e49ff561f252fe823c8025a046426ca"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-hepes",
+      "case_ids": [
+        "CM_NAME:966043186eb500b0932551d48b23740188a14c15631e17be7e7b9543f0db357a"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-bacteriocin-context",
+      "case_ids": [
+        "KG_CASE:39adf1df71cd577ceca03305c9da33b8fa04798d4a996fb204f8bc9acac57a5a"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-tpp-chloride-carryover",
+      "case_ids": [
+        "KG_CASE:6e7c8a8c1d6e21e0a3afee848263f27202ece4e07c21ec38c752087cbdd89cdd"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-C1193-Lab-Lemco",
+      "case_ids": [
+        "CM_NAME:e90a13baa92e9b7a72cdfa611fbaec5f457cd61a12e649cccbe256914aa8cc28"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-C1193-shrimp-chitin",
+      "case_ids": [
+        "CM_NAME:f83e2c9a1035fb2cb44369ae7e7f25f020932cebac6f1fb9ce5c1fcb9f4809d4"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-C1193-iron-suspension-1030",
+      "case_ids": [
+        "CM_NAME:7800a5bc348d4b7fe25893bb56d1ca4c16dd7ec4cc75e099175122bb4ee84c30"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "CHEM-C1193-iron-suspension-411",
+      "case_ids": [
+        "CM_NAME:f6924fb99b3405f434e4017340607246890f7dbf1213a9fd6e697362ccc6d8de"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "CHEM-C1193-Tris-base-aliases",
+      "case_ids": [
+        "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-C1193-tellurium-dioxide",
+      "case_ids": [
+        "CM_NAME:d2520b55885554691a496b8a4aa2baa6ff0f1a1018f135591774ec22fdfc8416"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "CHEM-PROP-tpp-stock",
+      "case_ids": [
+        "CM_NAME:913f1d246e38506d99dccac4dd555f837f6ad4587101f5e4f927273aa347818c"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "CHEM-C1193-Complan",
+      "case_ids": [
+        "KG_CASE:30cf3ecee696eec40ba4399812fa530ca996fa2fd61dd00ca9bf0bdc53b3da73"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-G8142",
+      "case_ids": [
+        "KG_CASE:b58f2778ba8c8905faf5cddf634ff4d5059978baa1b2489af2eb4db7f7e9fef1"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-G0210",
+      "case_ids": [
+        "KG_CASE:674bdf7fed72ffa201e3b81bc4c3607b8f8c68447cde3895d9e75a0c288fe000"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-M0221",
+      "case_ids": [
+        "KG_CASE:54ca63cc2e91387b329d5f0023d70b5fd2cadf6fab30ee79222e16a390497eb4"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-JCM181",
+      "case_ids": [
+        "KG_CASE:5fc712f97b842c8c8fff97bb18b30a20f429559f4c01c0ebfbfba4ec1587d50f"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-JCM90",
+      "case_ids": [
+        "KG_CASE:d6570078478bd9aba1017633f942def62c09b06a18a5c5fb1620c133b7befac0"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-M9-5X",
+      "case_ids": [
+        "CM_NAME:dd0ef6524313e4b5c6944eacd676b8d53c94d020497f23a4428c324fa02ca6a2"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-ISP7",
+      "case_ids": [
+        "CM_NAME:3a71f979a20ccc7a9e900d1b92ba2dbeefc6b76bf95c72aa79079be2cdf048d5",
+        "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-API_50_CHBE_MEDIUM",
+      "case_ids": [
+        "CM_NAME:07a946444896ae1f80219e0daa9df0e2bfc1809923488caefa418472ca60c489"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-DAIGO_IMK_MEDIUM",
+      "case_ids": [
+        "CM_NAME:69df45f83b459d7df632fee127865a3305597514761f60dce50b042e0d48b539"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-CMRL_1066_10X_ATCC_20_2207",
+      "case_ids": [
+        "CM_NAME:0921ca35dec155c1df5fa66a58af7c3d895dd7b55e3c553997113800ccb0727d"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-CM0643",
+      "case_ids": [
+        "CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85",
+        "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b",
+        "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-ISP_1_DIFCO",
+      "case_ids": [
+        "CM_NAME:772c8c4abcd646c80ad4a40a33b20ce2ccd68620316c04c6553bba5bf3bc9f8c"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-PENASSAY_BROTH_DIFCO",
+      "case_ids": [
+        "CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b",
+        "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-LEPTOSPIRA_MEDIUM_BASE_EMJH",
+      "case_ids": [
+        "KG_CASE:1b608e9278343cf1c5b33844657f0c88e19ad9a88d6e8c76a61e732cfb744e4a"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-T3285",
+      "case_ids": [
+        "KG_CASE:5f29b812ee4f443b0cf86304f38c5a61bf280030266081b07026e2cf0d2a8799"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-SI_MEDIUM_NIPPON_JOZO_KYOKAI",
+      "case_ids": [
+        "CM_NAME:c5d29eb0468e51c071cbac79e63b973e6734c35c32046ff334322288fa29bad2"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-POLYVITEX_ENRICHMENT",
+      "case_ids": [
+        "CM_NAME:5d3a0f79fece199bbf454762f8f3d61c3d6e9c7de76fe20c94c7fa6db5e70412"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-L15_POWDER_GIBCO_41300039",
+      "case_ids": [
+        "CM_NAME:2d8790f8bd59809ee9d56f7f337b57e644ac6ea1dad9daad69c26cdfee56bb7e"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-LB_BROTH_LENNOX_DIFCO",
+      "case_ids": [
+        "CM_NAME:ebe02b6bca1b79fa51843f6218b6341edda2ecf7b3872c7ac555cdfa9da721a1",
+        "KG_CASE:8e9c8faab482b293ba04aedba0a814ebc4638e1daa0823c0695c8499209dd2ea"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-COOKED-MEAT",
+      "case_ids": [
+        "CM_NAME:6fcf8a3f731c8a825cf5ec4f4bd543b8c48c826a5e178e868a0f840fd23a6195",
+        "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-MALT-BROTH",
+      "case_ids": [
+        "KG_CASE:acc8c9d4233557a238166fb6129f0f714d898a6cb6edb3e3f664faa8906c22a5"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-MARINE2216",
+      "case_ids": [
+        "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+        "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-SCHNEIDER_DROSOPHILA_GIBCO_NBRC400",
+      "case_ids": [
+        "CM_NAME:2dae691480aba0b75571c2a68ac870dbfba28475d4913cafe5ca11a968e37c70"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-CMRL1066_GIBCO_10X_DSMZ1076B",
+      "case_ids": [
+        "CM_NAME:5f576daa278a36df31294364486120ee9d6ccdd45558e12937daa9412a635562"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-THIOGLYCOLLATE_SIGMA_JCM529",
+      "case_ids": [
+        "CM_NAME:cd6df60b79398f6d62ae1c03f96b421bb43960b268cc7ab94676cbd7d7b631c9"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-RCM-182",
+      "case_ids": [
+        "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-RCM-142",
+      "case_ids": [
+        "KG_CASE:42fb113d0c36aabad83452c9e802850387083985010f7c9105511c590318faec"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-JCM1-MRS-GENERIC-SCOPE",
+      "case_ids": [
+        "KG_CASE:a13ece96d512447950fb80c37e02d7e371c66854b2adc9f9d623af3811119032"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-JCM1-MRS",
+      "case_ids": [
+        "KG_CASE:a13ece96d512447950fb80c37e02d7e371c66854b2adc9f9d623af3811119032"
+      ],
+      "kind": "new_owner"
+    },
+    {
+      "proposal_id": "M1193-P-CZAPEK-CM0095-GENERIC-SCOPE",
+      "case_ids": [
+        "CM_NAME:cf963f6f6f79492f3c8a12097417fd6d024da1ace5fb7ef02d042712a0060519",
+        "CM_NAME:fe9890da9f3923ae3915198d3316c16a096d58f9cad72b8ca83c0a4784bb2061",
+        "KG_CASE:a3797ec0761170bbdda064b554d0cf5275d89af5fe0756b771c973f0cba70a28"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-FOLLOWON-MODIFIED_COOKED_MEAT_MEDIUM",
+      "case_ids": [
+        "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a"
+      ],
+      "kind": "edit_existing_owner"
+    },
+    {
+      "proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+      "case_ids": [
+        "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a"
+      ],
+      "kind": "edit_existing_owner"
+    }
+  ],
+  "overlapping_explicit_routes": {},
+  "checks": [
+    "Every canonical case identity, raw source label and frozen case digest matches the assigned shard.",
+    "All188 reassessment and independent-review statuses are complete, with every bidirectional case/proposal backlink preserved.",
+    "Every explicit occurrence list contains unique string IDs within the actual linked frozen source cases.",
+    "Every selected occurrence retains exact recipe ID, original source identifiers, component path and matching full frozen recipe capture hash.",
+    "No occurrence is routed to multiple proposals by these explicit lists.",
+    "Empty explicit lists occur only where linked source cases have no frozen occurrence rows; they do not authorize unseen occurrences.",
+    "Bottom-layer, HEPES, Tris and ATCC ethanol split routes exactly match their documented original source identifiers.",
+    "All canonical inputs remained byte-identical during this audit."
+  ],
+  "limitations": [
+    "This is a canonical integration/routing integrity review, not a new independent scientific review of all proposals. The chemical routing metadata was authored by this reviewer and scientifically reviewed separately by media_research; its exact reviewer evidence is linked in canonical decisions.",
+    "Source-role/export holds and unresolved occurrences remain in force. An applies_to_occurrence_ids field identifies only that subset; a missing field is not interpreted as blanket routing.",
+    "Independent final staged-diff review and native guarded/schema/partonomy/save/check gates are separate artifacts."
+  ]
+}

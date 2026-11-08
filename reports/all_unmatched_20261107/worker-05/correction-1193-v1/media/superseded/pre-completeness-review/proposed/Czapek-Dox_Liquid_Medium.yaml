@@ -1,0 +1,60 @@
+identifier: UNMAPPED_0370
+preferred_term: Czapek-Dox liquid medium
+synonyms:
+- synonym_text: Czapek-Dox liquid medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1610); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Czapek-Dox liquid medium/formulation and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Czapek-Dox_Liquid_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — **Recommended status:
+    `UNMAPPED`.** Retain `ingredient_type: DEFINED_MEDIUM`. The entity’s scope is
+    sufficiently clear, but neither a stable exact ontology identifier nor a single
+    authoritative recipe has been verified. No ontology CURIE was proposed. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:00:37.045833+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Existing generic Czapek-Dox owner includes identified modified Oxoid contexts
+    and DSMZ1817 CC35g without supplier/formula selection. Preserve its UNMAPPED identity
+    and original authentic aliases, with no universal component assertion. The separately
+    proposed CM0095 powder carries the six-part modified Oxoid formula; CC35g remains
+    unassigned. Isolated proposal only; inherited holds remain.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1610); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Existing generic Czapek-Dox owner includes identified
+  modified Oxoid contexts and DSMZ1817 CC35g without supplier/formula selection. Preserve
+  its UNMAPPED identity and original authentic aliases, with no universal component
+  assertion. The separately proposed CM0095 powder carries the six-part modified Oxoid
+  formula; CC35g remains unassigned.'
+ingredient_type: NAMED_MEDIUM
