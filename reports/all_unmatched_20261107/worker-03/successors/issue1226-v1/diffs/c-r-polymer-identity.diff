@@ -1,0 +1,78 @@
+--- reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-identity.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-r-polymer-identity.yaml
+@@ -6,10 +6,10 @@
+   ontology_source: CHEBI
+   mapping_quality: EXACT_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.ebi.ac.uk/chebi/CHEBI:131525
+-    notes: R-specific polymer; Sigma363502 names poly[(R)-3-hydroxybutyric acid], CAS29435-48-1. Do not
+-      use monomer CHEBI20067 or finite PubChem trimer.
++    notes: R-specific polymer; Sigma363502 names poly[(R)-3-hydroxybutyric acid],
++      CAS29435-48-1. Do not use monomer CHEBI20067 or finite PubChem trimer.
+ synonyms:
+ - synonym_text: 3-hydroxybutanoic acid
+   synonym_type: REJECTED_LABEL
+@@ -34,7 +34,8 @@
+ - timestamp: '2026-04-29T06:51:33.117170+00:00'
+   curator: audit_add_remaining_culturebotht
+   action: CREATED_FROM_CAS_FALLBACK
+-  changes: Created with cas:29435-48-1 as primary identifier; no CHEBI entry exists for this compound.
++  changes: Created with cas:29435-48-1 as primary identifier; no CHEBI entry exists
++    for this compound.
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-01T07:35:35.837724+00:00'
+@@ -68,19 +69,32 @@
+ - timestamp: '2026-09-22T20:41:14.285965+00:00'
+   curator: claude
+   action: REJECTED_PARENT_NAME_SYNONYMS
+-  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only REJECTED_LABEL,
+-    because this record is a distinct salt, hydrate or tombstone form and the label index resolved the
+-    parent''s name here (#232): ''3-hydroxybutanoic acid''. Preserved original text and source metadata.
+-    No identity, mapping, role, or remaining-synonym claim was adjudicated.'
++  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
++    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
++    and the label index resolved the parent''s name here (#232): ''3-hydroxybutanoic
++    acid''. Preserved original text and source metadata. No identity, mapping, role,
++    or remaining-synonym claim was adjudicated.'
+   llm_assisted: true
+ - timestamp: '2026-11-08T05:29:01.443067+00:00'
+   curator: all-unmatched-worker-03/chemicals
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: 'Atomically promote cas:29435-48-1 R-specific polymer to CHEBI:131525 and merge UNMAPPED_0494;
+-    replace monomer grounding and finite-trimer chemistry with repeating polymer representation. Preserve
+-    provisional roles without release approval. Source binding: frozen preliminary-v5/shards/shard-03.json
+-    cases[172] case_id=KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef; source=mediadive;
+-    source_case_id=mediadive.ingredient:300; Primary evidence: https://www.sigmaaldrich.com/US/en/product/aldrich/363502'
++  changes: 'Atomically promote cas:29435-48-1 R-specific polymer to CHEBI:131525 and
++    merge UNMAPPED_0494; replace monomer grounding and finite-trimer chemistry with
++    repeating polymer representation. Preserve provisional roles without release approval.
++    Source binding: frozen preliminary-v5/shards/shard-03.json cases[172] case_id=KG_CASE:bb5fbe7c22693f08bf8797fcf5bc9f7a14ea9a3d81b1e096322f07cd7b5eb2ef;
++    source=mediadive; source_case_id=mediadive.ingredient:300; Primary evidence: https://www.sigmaaldrich.com/US/en/product/aldrich/363502'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++- timestamp: '2026-11-08T08:16:40.533219+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-165. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+@@ -100,6 +114,6 @@
+     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+ merged:
+ - UNMAPPED_0494
+-notes: R-specific PHB polymer. The former unqualified preferred label remains provenance only to avoid
+-  collapsing unspecified stereochemistry. Former monomer-parent and finite-trimer chemistry are superseded
+-  by this event.
++notes: R-specific PHB polymer. The former unqualified preferred label remains provenance
++  only to avoid collapsing unspecified stereochemistry. Former monomer-parent and
++  finite-trimer chemistry are superseded by this event.

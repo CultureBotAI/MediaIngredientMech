@@ -1,0 +1,120 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm431_selenite_tungstate_solution.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm431_selenite_tungstate_solution.yaml
+@@ -21,20 +21,20 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+-    notes: JCM431 formulation only;4 direct components retained. Promote the existing source-qualified
+-      UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic selenite-tungstate names
+-      require occurrence routing.
+-notes: JCM431 formulation only;4 direct components retained. Promote the existing source-qualified
+-  UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic selenite-tungstate names require
+-  occurrence routing.
++    notes: JCM431 formulation only;4 direct components retained. Promote the existing
++      source-qualified UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic
++      selenite-tungstate names require occurrence routing.
++notes: JCM431 formulation only;4 direct components retained. Promote the existing
++  source-qualified UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic selenite-tungstate
++  names require occurrence routing.
+ curation_history:
+ - timestamp: '2026-04-30T18:43:03.698454+00:00'
+   curator: audit_import_ingredients[mim-queue]
+   action: CREATED_AS_UNMAPPED
+-  changes: Imported from mim-queue (source_id=mediadive.ingredient:1921); no CAS-RN or CHEBI/NCIT
+-    match. Curator review needed.
++  changes: Imported from mim-queue (source_id=mediadive.ingredient:1921); no CAS-RN
++    or CHEBI/NCIT match. Curator review needed.
+   new_status: UNMAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-01T19:58:06.913047+00:00'
+@@ -45,40 +45,54 @@
+ - timestamp: '2026-05-02T03:12:19.891585+00:00'
+   curator: auto_classify_ingredient_type
+   action: AUTO_CLASSIFY_INGREDIENT_TYPE
+-  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium No')
++  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium
++    No')
+   llm_assisted: false
+ - timestamp: '2026-08-06T00:00:00+00:00'
+   curator: edison_literature_identity
+   action: ANNOTATED
+   changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Selenite-tungstate_Solution_See_Medium_No_431-edison-literature.md
+-    (local artifact — research/ is gitignored, so the findings are quoted here rather than
+-    linked). Report verdict: | Recommendation | No ontology CURIE was proposed. Recorded as
+-    provenance only — no grounding applied from this run. Edison''s recommendations are deliberately
+-    conservative, and a plausible identifier promoted by a mechanism that never decided anything
+-    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
++    (local artifact — research/ is gitignored, so the findings are quoted here rather
++    than linked). Report verdict: | Recommendation | No ontology CURIE was proposed.
++    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
++    are deliberately conservative, and a plausible identifier promoted by a mechanism
++    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
++    is a curator''s to accept or reject.'
+   llm_assisted: true
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: JCM431 formulation only;4 direct components retained. Promote the existing source-qualified
+-    UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic selenite-tungstate names
+-    require occurrence routing.
++  changes: JCM431 formulation only;4 direct components retained. Promote the existing
++    source-qualified UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic
++    selenite-tungstate names require occurrence routing.
+   llm_assisted: true
+   previous_status: UNMAPPED
+   new_status: MAPPED
+ - timestamp: '2026-11-08T05:32:07.353458+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_ALIAS_BOUNDARY_CORRECTION
+-  changes: Retyped the inherited source pointer Selenite-tungstate solution see Medium No.
+-    431 from RAW_TEXT to REJECTED_LABEL while preserving source mim-queue. The pointer lacks
+-    a provider namespace and is not a global identity-bearing name under MAPPING_SEMANTICS
+-    section 3. JCM1081 explicitly hyperlinks JCM431 and MediaDive S4878 uses ingredient 1921
+-    in its source context; occurrence routing and the four-component JCM431 formulation remain
+-    supported. This corrects an alias missed in the initial independent review; no native
+-    hold or full-owner release approval is granted.
++  changes: Retyped the inherited source pointer Selenite-tungstate solution see Medium
++    No. 431 from RAW_TEXT to REJECTED_LABEL while preserving source mim-queue. The
++    pointer lacks a provider namespace and is not a global identity-bearing name under
++    MAPPING_SEMANTICS section 3. JCM1081 explicitly hyperlinks JCM431 and MediaDive
++    S4878 uses ingredient 1921 in its source context; occurrence routing and the four-component
++    JCM431 formulation remain supported. This corrects an alias missed in the initial
++    independent review; no native hold or full-owner release approval is granted.
+   llm_assisted: true
+   previous_status: MAPPED
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.551475+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-173. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ components:
+ - component_name: NaOH
+   reference_scope: UNMAPPED
+@@ -103,11 +117,11 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+     source_record: JCM431 Selenite-tungstate solution
+-    notes: JCM431 formulation only;4 direct components retained. Promote the existing source-qualified
+-      UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic selenite-tungstate names
+-      require occurrence routing.
+-  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+-    units are transcribed without lexical identity promotion.
++    notes: JCM431 formulation only;4 direct components retained. Promote the existing
++      source-qualified UNMAPPED_0519 owner. This is not DSMZ S777 or JCM852; generic
++      selenite-tungstate names require occurrence routing.
++  notes: Component identifiers deliberately remain unresolved; chemical forms and
++    source batch units are transcribed without lexical identity promotion.
+ occurrence_statistics:
+   total_occurrences: 0
+   media_count: 0

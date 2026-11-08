@@ -1,0 +1,68 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm537_sugar_solution_250mm.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm537_sugar_solution_250mm.yaml
+@@ -14,24 +14,38 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=537
+-    notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+-      specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose
+-      per5ml medium separately. Do not route generic Sugar globally, and retain its material
+-      quarantine.
+-notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+-  specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose per5ml
+-  medium separately. Do not route generic Sugar globally, and retain its material quarantine.
++    notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is
++      not separately specified in the source line, so partonomy is PARTIAL. Preserve
++      the0.1ml source dose per5ml medium separately. Do not route generic Sugar globally,
++      and retain its material quarantine.
++notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not
++  separately specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml
++  source dose per5ml medium separately. Do not route generic Sugar globally, and retain
++  its material quarantine.
+ curation_history:
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+-    specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose per5ml
+-    medium separately. Do not route generic Sugar globally, and retain its material quarantine.
++  changes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is
++    not separately specified in the source line, so partonomy is PARTIAL. Preserve
++    the0.1ml source dose per5ml medium separately. Do not route generic Sugar globally,
++    and retain its material quarantine.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.557458+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-176. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ components:
+ - component_name: Xylose
+   reference_scope: UNMAPPED
+@@ -52,9 +66,9 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=537
+     source_record: JCM537 xylose maltose cellobiose stock (250 mM each)
+-    notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is not separately
+-      specified in the source line, so partonomy is PARTIAL. Preserve the0.1ml source dose
+-      per5ml medium separately. Do not route generic Sugar globally, and retain its material
+-      quarantine.
+-  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+-    units are transcribed without lexical identity promotion.
++    notes: JCM537 stock containing250mM each xylose/maltose/cellobiose. Solvent is
++      not separately specified in the source line, so partonomy is PARTIAL. Preserve
++      the0.1ml source dose per5ml medium separately. Do not route generic Sugar globally,
++      and retain its material quarantine.
++  notes: Component identifiers deliberately remain unresolved; chemical forms and
++    source batch units are transcribed without lexical identity promotion.

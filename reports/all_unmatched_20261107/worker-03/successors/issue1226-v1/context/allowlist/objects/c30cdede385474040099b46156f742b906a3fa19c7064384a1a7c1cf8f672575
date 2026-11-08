@@ -1,0 +1,62 @@
+identifier: kgmicrobe.ingredient:dsmz_s777_selenite_tungstate_solution
+preferred_term: DSMZ S777 Selenite-tungstate solution
+synonyms:
+- synonym_text: Selenite-tungstate solution
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:fef0391344c383fe93459d6562a1fd9689c473ab98703b37785de5d40ca7a8df;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_s777_selenite_tungstate_solution
+  ontology_label: DSMZ S777 Selenite-tungstate solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/rest/solution/777
+    notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+      from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine
+      is not lifted.
+notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+  from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine is
+  not lifted.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+    from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine is
+    not lifted.
+  llm_assisted: true
+  new_status: MAPPED
+components:
+- component_name: NaOH
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Na2SeO3 x 5 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Na2WO4 x 2 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '4.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1000'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/777
+    source_record: DSMZ S777 Selenite-tungstate solution
+    notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+      from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine
+      is not lifted.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+    units are transcribed without lexical identity promotion.

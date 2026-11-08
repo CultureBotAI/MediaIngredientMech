@@ -1,0 +1,62 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/dsmz_s777_selenite_tungstate_solution.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz_s777_selenite_tungstate_solution.yaml
+@@ -14,23 +14,35 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://mediadive.dsmz.de/rest/solution/777
+-    notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+-      from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine
+-      is not lifted.
+-notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+-  from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine is
+-  not lifted.
++    notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct
++      amounts from JCM431 and JCM852; not a generic-label alias. Historical citronellol
++      quarantine is not lifted.
++notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct
++  amounts from JCM431 and JCM852; not a generic-label alias. Historical citronellol
++  quarantine is not lifted.
+ curation_history:
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+-    from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine is
+-    not lifted.
++  changes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct
++    amounts from JCM431 and JCM852; not a generic-label alias. Historical citronellol
++    quarantine is not lifted.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.553687+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-174. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ components:
+ - component_name: NaOH
+   reference_scope: UNMAPPED
+@@ -55,8 +67,8 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://mediadive.dsmz.de/rest/solution/777
+     source_record: DSMZ S777 Selenite-tungstate solution
+-    notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct amounts
+-      from JCM431 and JCM852; not a generic-label alias. Historical citronellol quarantine
+-      is not lifted.
+-  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+-    units are transcribed without lexical identity promotion.
++    notes: DSMZ S777 formulation specifically referenced by frozen S446/S453. Distinct
++      amounts from JCM431 and JCM852; not a generic-label alias. Historical citronellol
++      quarantine is not lifted.
++  notes: Component identifiers deliberately remain unresolved; chemical forms and
++    source batch units are transcribed without lexical identity promotion.

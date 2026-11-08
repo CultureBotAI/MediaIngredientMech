@@ -1,0 +1,146 @@
+{
+  "finding_id": "W03-PROV-GUARD-001",
+  "reviewer": "/root/provenance_controls",
+  "created_at": "2026-11-08T08:01:56.623966+00:00",
+  "status": "confirmed_open_private_helper",
+  "severity": "major",
+  "scope": "Private report producer provenance; not a chemistry, primary-source or maintained-corpus defect",
+  "writer_sha256": "d15001850b076f124770cf470904c2044790899299a2ba8d1ac5014ac6e01c90",
+  "writer_capture": "finding-original-provenance_writer_v1.py",
+  "trigger": "Repair.prepare(valid proposal), replace prepared[old_bytes] with arbitrary bytes, then Repair.write(prepared, private technical root, absent destination).",
+  "proposal_id": "b-proposal-chopped-filtrate",
+  "expected_actual_old_payload_sha256": "41f5bf2e29eaececff62057ebe80b66dc91ecd69ac9dd712313893f5ae441fe3",
+  "reported_before_payload_sha256": "25d1d6f4376478a6ec79b45b68c25473cc34876687573a040e3a5c80a61aa533",
+  "incorrect_bridge_receipt": {
+    "proposal_id": "b-proposal-chopped-filtrate",
+    "audit_row_id": "provenance-flag-134",
+    "before_payload_sha256": "25d1d6f4376478a6ec79b45b68c25473cc34876687573a040e3a5c80a61aa533",
+    "after_payload_sha256": "e0d2fb25d5800e04d6b1895e3c34980dc76f72bd14ffde527700868b1156896b",
+    "new_payload_path": ".temp/w03-provenance-successor-v1/technical/finding-reproduction-v1/private-control-output.yaml",
+    "old_object": {
+      "evidence_type": "MANUAL_CURATION",
+      "source": "https://www.atcc.org/~/media/D452A885A4FB4443A9A107F6E539FA37.ashx",
+      "notes": "The primary recipe unambiguously defines this filtered preparation. No exact generic meat or cooked-meat identifier is asserted."
+    },
+    "new_object": {
+      "evidence_type": "LLM_SUGGESTION",
+      "source": "https://www.atcc.org/~/media/D452A885A4FB4443A9A107F6E539FA37.ashx",
+      "notes": "The primary recipe unambiguously defines this filtered preparation. No exact generic meat or cooked-meat identifier is asserted."
+    },
+    "parent_context": {
+      "ontology_id": "kgmicrobe.ingredient:chopped_meat_broth_filtrate_atcc1016",
+      "ontology_label": "Chopped meat broth filtrate (ATCC1016)",
+      "ontology_source": "kgmicrobe.ingredient",
+      "mapping_quality": "FALLBACK_REGISTRY"
+    },
+    "before_history_sha256": "15ea085268aa7f2be5ff0978e6e37e2d40dd9dfa4777f15f80bfc3c3bab7ec97",
+    "appended_history": {
+      "timestamp": "2026-11-08T08:01:56.506631+00:00",
+      "curator": "codex-worker03 /root provenance successor",
+      "action": "CORRECTED_EVIDENCE_PROVENANCE",
+      "changes": "Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226; exact allowlist provenance-flag-134. The original assertion was agent-authored interpretation, not human-supplied evidence. Preserve its source, notes, complete prior history and all scientific fields/holds. Report-only proposal; no identity, role or export reapproval.",
+      "previous_status": "MAPPED",
+      "new_status": "MAPPED",
+      "llm_assisted": true
+    },
+    "scientific_projection_sha256": "a8e74379263f3265e1b09804566a21c40cbab2ff6cc29f7334ca9bb47ccd9b4e",
+    "full_record_unchanged_except_exact_enum_and_history": true,
+    "original_proposal": {
+      "proposal_id": "b-proposal-chopped-filtrate",
+      "kind": "new_owner",
+      "case_ids": [
+        "CM_NAME:03b675ceae9077b66cb6c6351cc231cafd55bb722146608a132a064ff176b89f"
+      ],
+      "description": "Create a source-defined filtered broth identity and retain the frozen850g/L versus primary850mL discrepancy.",
+      "evidence_ids": [
+        "b-case-001",
+        "b-recipe-001-00",
+        "b-attempt-4133d52220",
+        "b-primary-59f8051613",
+        "b-primary-422da52aba",
+        "b-owner-search"
+      ],
+      "owner_path": "data/ingredients/mapped/Chopped_Meat_Broth_Filtrate_ATCC1016.yaml",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "broths/proposed/Chopped_Meat_Broth_Filtrate_ATCC1016.yaml",
+        "sha256": "41f5bf2e29eaececff62057ebe80b66dc91ecd69ac9dd712313893f5ae441fe3"
+      },
+      "publication_obligations": "Proposal only. No YAML/SSSOM application or native release approval. Coordinator must use guarded writes, synchronize maintained surfaces, generate mapping rows, and perform complete proposed-owner native review and current-source export/hold checks. New owners require the unresolved native admission prerequisite in issue1165. Existing downstream holds remain unchanged.",
+      "limitations": "No final chemical composition is asserted: beef andNaOH are extraction inputs. Broad source wording retained as REJECTED_LABEL must remain nonresolving; no whole cooked-meat owner merge.",
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "root-independent-broths"
+        ],
+        "reviewer": "/root/materials",
+        "reviewed_after_sha256": "41f5bf2e29eaececff62057ebe80b66dc91ecd69ac9dd712313893f5ae441fe3"
+      }
+    },
+    "original_authorship_and_reviews": {
+      "added_curation_history": [
+        {
+          "timestamp": "2026-11-08T05:21:23.584872+00:00",
+          "curator": "codex-worker03-broths-source-review",
+          "action": "ANNOTATED",
+          "changes": "Proposed source-defined filtrate identity; preserve optional meat-particle distinction and raw source wording as nonresolving context.",
+          "llm_assisted": true
+        }
+      ],
+      "case_author_and_review_metadata": [
+        {
+          "case_id": "CM_NAME:03b675ceae9077b66cb6c6351cc231cafd55bb722146608a132a064ff176b89f",
+          "primary_attribution": {},
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "root-independent-broths"
+            ],
+            "reviewer": "/root/materials",
+            "primary_author": "/root/broths",
+            "capture_sha256": "3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8"
+          }
+        }
+      ],
+      "authorship_exclusions": [
+        "w03"
+      ],
+      "proposal_ledger": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/proposals.json",
+        "sha256": "605b035aa8623e2696aa6304f7560bde028d5f5be665c9088cc305babb159a42",
+        "proposal_id": "b-proposal-chopped-filtrate"
+      },
+      "decision_ledger": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/decisions.json",
+        "sha256": "39c30f45356d32ac2af1246f6bcb3d5b1883811422b25d475054c7d693865ffa"
+      },
+      "linked_review_reports": [
+        {
+          "id": "root-independent-broths",
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/materials/independent-review-of-broths.json",
+          "sha256": "3846ffd9725a4885003a5977d26cfddbde95e68f55d266c3f08afdc6668204c8",
+          "kind": "independent_review",
+          "locator": "input_hashes; case_reviews (all assigned IDs); proposal_reviews (all exact payloads); retained initial findings, corrections and limitations",
+          "authorship_scope_metadata": {
+            "reviewer": "/root/materials",
+            "independent_of_author": "/root/broths",
+            "limitations": "No independent wet-lab confirmation, role/mechanism approval, full inherited payload clearance, downstream build, native new-owner admission or merge authorization. Source-only cases remain source-only. Unresolved is a reviewed outcome, not completed identity mapping."
+          }
+        }
+      ]
+    },
+    "authentic_before": null
+  },
+  "output_written": true,
+  "output_path": "finding-reproduction-v1/private-control-output.yaml",
+  "output_sha256": "e0d2fb25d5800e04d6b1895e3c34980dc76f72bd14ffde527700868b1156896b",
+  "failure_control": "test_prepared_old_bytes_must_match_actual_current_bytes in test_provenance_writer_v1.py",
+  "control_summary": "23 controls executed;22pass and this one failure; original logs and all fixtures retained",
+  "exact_cause": "write revalidates freshly read current payload and prepared.before_record but does not bind prepared.old_bytes; the return value hashes that unchecked field.",
+  "proposed_bounded_fix": "Before native serialization, require prepared.old_bytes equals the freshly re-read current payload bound to the allowlist. Derive reported before_payload_sha256 from the validated current bytes rather than the mutable prepared copy. Preserve original helper/failed probe, add an immutable successor helper and rerun exact controls plus unchanged full retention proof.",
+  "issue_workflow": "Reported to parent before correction; coordinator handles issue-first tracking and disposition. This reviewer does not mutate GitHub or root helper.",
+  "maintained_or_real_successor_writes": false,
+  "control_fixture_writes": "Only under this assigned technical directory",
+  "scientific_approval": false
+}

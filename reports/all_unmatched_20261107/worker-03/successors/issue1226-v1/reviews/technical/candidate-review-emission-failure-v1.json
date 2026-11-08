@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-08T08:18:34.220078+00:00",
+  "script": "verify_actual_candidates_v1.py",
+  "script_sha256": "6ad1758b1ee70342ef183b78403199c456b874c2c049cbae6869dc5e0a0d2bdd",
+  "exit_code": 1,
+  "stage": "Final report object assembly after all candidate and native assertions passed; no report was written.",
+  "exception": "ValueError: coordinator repair-allowlist.json is not in the subpath of the worker03 worktree; attempted Path.relative_to(R) while serializing artifact locator.",
+  "bounded_emitter_correction": "Use repository-relative locator when in worktree, otherwise preserve absolute coordinator input path. No candidate/input/helper changes and no check assertion removed.",
+  "rerun": "verify_actual_candidates_v2.py"
+}

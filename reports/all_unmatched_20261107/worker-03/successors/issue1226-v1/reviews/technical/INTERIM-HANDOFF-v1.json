@@ -1,0 +1,106 @@
+{
+  "schema_version": "1",
+  "reviewer": "/root/provenance_controls",
+  "review_type": "independent technical and exact-input guard review; scientific_review=false",
+  "at": "2026-11-08T08:05:40.404443+00:00",
+  "status": "FAILED_REQUIRED_CONTROL_PENDING_COORDINATOR_TRACKING_AND_CORRECTION",
+  "current_published_head": "f6bfbf3c185f705484aa106405f813209146c766",
+  "coverage": {
+    "current_cases": 188,
+    "current_proposals": 74,
+    "current_evidence_objects": 863,
+    "allowlisted_objects": 49,
+    "allowlisted_new_owner_proposals": 39,
+    "allowlisted_existing_owner_proposals": 10,
+    "manifest_members": 122,
+    "inherited_manual_objects_preserved": 3,
+    "correct_oxoid_llm_objects_excluded": 2
+  },
+  "controls": {
+    "first_run": {
+      "run": 23,
+      "pass": 22,
+      "fail": 1,
+      "log": "controls-v1.stderr"
+    },
+    "expanded_run": {
+      "run": 36,
+      "pass": 35,
+      "fail": 1,
+      "log": "controls-v2.stderr"
+    },
+    "confirmed_finding": "W03-PROV-GUARD-001",
+    "additional_confirmed_findings": []
+  },
+  "finding_disposition": "Open. Parent reports coordinator issue-first tracking requested; no corrected helper or actual proposal batch has been reviewed. Do not describe this writer as accepted.",
+  "boundaries": [
+    "All writes by this reviewer were within .temp/w03-provenance-successor-v1/technical/.",
+    "No production or maintained input edits, Git mutation, GitHub mutation, network access or external session.",
+    "Private fixture symlinks are deliberate negative controls; their targets remain within fixture directories. Preserve via the descriptor without following them into a publication.",
+    "No source chemistry, identity, role, supported export or whole-owner approval.",
+    "Native serializer is not an atomic hostile-concurrency API; scope is the documented single-author private batch."
+  ],
+  "maintained_check": {
+    "explicit_frozen_baseline_files": 3060,
+    "ignored_inclusive_declared_root_regular_files": 3028,
+    "owner_yaml_paths": 2956,
+    "changed_after_controls": 0,
+    "search_roots": [
+      "data/ingredients",
+      "data/curated",
+      "mappings"
+    ],
+    "absence_scope": "No claim about unrelated private or historical paths."
+  },
+  "artifacts": [
+    {
+      "path": "current-input-verification.json",
+      "sha256": "d22e7efea235baed90c1db6a91dc7efa719ef01aa34a42c8d6c95505f871ee85"
+    },
+    {
+      "path": "maintained-inventory-before.json",
+      "sha256": "8317bb9a58b52c768827acee6ea3418f9658284bac688abc26f6d3ec47ec9c99"
+    },
+    {
+      "path": "test_provenance_writer_v1.py",
+      "sha256": "17353efddcb481e5cc388218c1754abb3961515b7a21e03845f3c3f45428cffd"
+    },
+    {
+      "path": "test_provenance_writer_v2.py",
+      "sha256": "33dea346245794744c55e47540a5c53d97dcc78b94859eec6d9a79ca8323ff41"
+    },
+    {
+      "path": "controls-v1.stderr",
+      "sha256": "a9cb4107a2c9ccbd17bd47f14c8cc882ed94bd9c650cbd9341e52363a325a677"
+    },
+    {
+      "path": "controls-v2.stderr",
+      "sha256": "68d06fb267f1af5a59be039002b41556d8c23ba32f777be50815d06f7882510f"
+    },
+    {
+      "path": "finding-W03-PROV-GUARD-001-v1.json",
+      "sha256": "52fe56a0071259a888429d7addbedbf5af857da5fc627ed0bd0c9035a9f3ad8f"
+    },
+    {
+      "path": "finding-original-provenance_writer_v1.py",
+      "sha256": "d15001850b076f124770cf470904c2044790899299a2ba8d1ac5014ac6e01c90"
+    },
+    {
+      "path": "guard-inspection-followup-v1.json",
+      "sha256": "86dfe8c6ae53ab222c9bb03a2d71e38c1dff6886759e6bab3be247cae7b24044"
+    },
+    {
+      "path": "control-fixture-inventory-v1.json",
+      "sha256": "f7799abee3748a66a6232f8e30aa113a048629ac96022c8eb076418a46518939"
+    },
+    {
+      "path": "reproduce_guard_finding_v1.py",
+      "sha256": "b0c39ac7222c7dcc0bef473958bcfc63469eb06f739b4b98ad522c8b1b2c2fee"
+    },
+    {
+      "path": "followup-emission-failure-v1.txt",
+      "sha256": "197d4a5a508e81249b24737efa06ba55ea97077ec63081d89959f92c18c50429"
+    }
+  ],
+  "next": "Only after coordinator issue tracking: independently review immutable corrected helper, rerun refusal controls without replacing failures, then rebind actual full successor and unchanged maintained inputs."
+}

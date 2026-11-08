@@ -1,0 +1,119 @@
+--- reports/all_unmatched_20261107/worker-03/broths/proposed/Wilkins-Chalgren-Anaerobe-Broth.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-cm0643.yaml
+@@ -15,8 +15,8 @@
+ - timestamp: '2026-04-30T18:43:03.698454+00:00'
+   curator: audit_import_ingredients[mim-queue]
+   action: CREATED_AS_UNMAPPED
+-  changes: Imported from mim-queue (source_id=mediadive.ingredient:2093); no CAS-RN or CHEBI/NCIT match.
+-    Curator review needed.
++  changes: Imported from mim-queue (source_id=mediadive.ingredient:2093); no CAS-RN
++    or CHEBI/NCIT match. Curator review needed.
+   new_status: UNMAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-02T03:12:20.023293+00:00'
+@@ -27,39 +27,54 @@
+ - timestamp: '2026-07-05T00:00:00+00:00'
+   curator: cbclaw_media_modeling_114
+   action: RECLASSIFY_INGREDIENT_TYPE
+-  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth
+-    formulation (a medium), not an ingredient-level mixture.'
++  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
++    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+   llm_assisted: true
+ - timestamp: '2026-08-06T00:00:00+00:00'
+   curator: edison_literature_identity
+   action: ANNOTATED
+   changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Wilkins-Chalgren-Anaerobe-Broth-edison-literature.md
+-    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+-    verdict: | Recommendation | No ontology CURIE was proposed. Recorded as provenance only — no grounding
+-    applied from this run. Edison''s recommendations are deliberately conservative, and a plausible identifier
+-    promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE
+-    above is a curator''s to accept or reject.'
++    (local artifact — research/ is gitignored, so the findings are quoted here rather
++    than linked). Report verdict: | Recommendation | No ontology CURIE was proposed.
++    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
++    are deliberately conservative, and a plausible identifier promoted by a mechanism
++    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
++    is a curator''s to accept or reject.'
+   llm_assisted: true
+ - timestamp: '2026-08-30T06:20:04.233651+00:00'
+   curator: claude_culturemech_alias_backfill
+   action: ADDED_SYNONYMS
+-  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s published label
+-    but were absent from MIM''s label index, so CultureMech could not resolve them: ''Wilkins-Chalgren
+-    Anaerobe Broth (Oxoid CM0643)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
++  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
++    published label but were absent from MIM''s label index, so CultureMech could
++    not resolve them: ''Wilkins-Chalgren Anaerobe Broth (Oxoid CM0643)'' (x1 CultureMech
++    mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+   llm_assisted: false
+ - timestamp: '2026-11-08T05:21:23.584872+00:00'
+   curator: codex-worker03-broths-source-review
+   action: ANNOTATED
+-  changes: Proposed registry promotion of catalogCM0643 owner and literal manufacturercomposition; duplicateowner
+-    reconciliation required beforeapply. Original source2093 isOxoid WilkinsChalgrenbroth; its existingCM0643alias
+-    and source2140 explicitCM643 identify the same catalog family. OfficialCM0643 specification supplies
+-    nine constituents. Themisspelled separateownerWilkins_Chalgrene_Anaerobe_Broth retains independent
++  changes: Proposed registry promotion of catalogCM0643 owner and literal manufacturercomposition;
++    duplicateowner reconciliation required beforeapply. Original source2093 isOxoid
++    WilkinsChalgrenbroth; its existingCM0643alias and source2140 explicitCM643 identify
++    the same catalog family. OfficialCM0643 specification supplies nine constituents.
++    Themisspelled separateownerWilkins_Chalgrene_Anaerobe_Broth retains independent
+     source2140provenance and must be reconciled before integration.
+   llm_assisted: true
+   previous_status: UNMAPPED
+   new_status: MAPPED
+-notes: Imported from mim-queue (source_id=mediadive.ingredient:2093); no CAS-RN or CHEBI/NCIT match. Curator
+-  review needed.
++- timestamp: '2026-11-08T08:16:40.503645+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-150. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++notes: Imported from mim-queue (source_id=mediadive.ingredient:2093); no CAS-RN or
++  CHEBI/NCIT match. Curator review needed.
+ ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:wilkins_chalgren_anaerobe_broth
+@@ -67,12 +82,12 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0643-V2.pdf
+-    notes: Original source2093 isOxoid WilkinsChalgrenbroth; its existingCM0643alias and source2140 explicitCM643
+-      identify the same catalog family. OfficialCM0643 specification supplies nine constituents. Themisspelled
+-      separateownerWilkins_Chalgrene_Anaerobe_Broth retains independent source2140provenance and must
+-      be reconciled before integration.
++    notes: Original source2093 isOxoid WilkinsChalgrenbroth; its existingCM0643alias
++      and source2140 explicitCM643 identify the same catalog family. OfficialCM0643
++      specification supplies nine constituents. Themisspelled separateownerWilkins_Chalgrene_Anaerobe_Broth
++      retains independent source2140provenance and must be reconciled before integration.
+ supplied_form:
+ - name: Wilkins-Chalgren Anaerobe Broth
+   supplier: Oxoid
+@@ -122,9 +137,10 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0643-V2.pdf
+     source_record: OxoidBT-SPEC-0185CM0643 TypicalFormula
+-    notes: Original source2093 isOxoid WilkinsChalgrenbroth; its existingCM0643alias and source2140 explicitCM643
+-      identify the same catalog family. OfficialCM0643 specification supplies nine constituents. Themisspelled
+-      separateownerWilkins_Chalgrene_Anaerobe_Broth retains independent source2140provenance and must
+-      be reconciled before integration.
+-  notes: Literal constituent names, without asserted chemical identifiers. Amounts are per litre of reconstituted
+-    broth; water is preparation solvent, not dry product constituent.
++    notes: Original source2093 isOxoid WilkinsChalgrenbroth; its existingCM0643alias
++      and source2140 explicitCM643 identify the same catalog family. OfficialCM0643
++      specification supplies nine constituents. Themisspelled separateownerWilkins_Chalgrene_Anaerobe_Broth
++      retains independent source2140provenance and must be reconciled before integration.
++  notes: Literal constituent names, without asserted chemical identifiers. Amounts
++    are per litre of reconstituted broth; water is preparation solvent, not dry product
++    constituent.

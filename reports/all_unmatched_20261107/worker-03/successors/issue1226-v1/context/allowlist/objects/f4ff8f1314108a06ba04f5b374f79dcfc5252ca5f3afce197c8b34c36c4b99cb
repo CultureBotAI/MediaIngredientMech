@@ -1,0 +1,36 @@
+identifier: kgmicrobe.ingredient:double_distilled_water
+preferred_term: Double-distilled water
+synonyms:
+- synonym_text: Double-distilled water
+  synonym_type: RAW_TEXT
+  source: MediaDive ingredient1021; explicit double-distilled water material alias. Purified,
+    tap, filtered or anaerobic variants require separate scope assessment.
+- synonym_text: Double distilled water
+  synonym_type: RAW_TEXT
+  source: MediaDive ingredient1021; explicit double-distilled water material alias. Purified,
+    tap, filtered or anaerobic variants require separate scope assessment.
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:15377
+  ontology_label: water
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_15377
+    notes: Molecular water parent only; double-distilled supplied material retains local identity.
+notes: Water preparation grade produced by double distillation, retained distinct from the
+  existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT names the water
+  ingredient and does not assert an exact purity specification. Chemical water is only a broad
+  parent; do not import filtered/anaerobic/tap-water variants.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Water preparation grade produced by double distillation, retained distinct from
+    the existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT names the
+    water ingredient and does not assert an exact purity specification. Chemical water is
+    only a broad parent; do not import filtered/anaerobic/tap-water variants.
+  llm_assisted: true
+  new_status: MAPPED

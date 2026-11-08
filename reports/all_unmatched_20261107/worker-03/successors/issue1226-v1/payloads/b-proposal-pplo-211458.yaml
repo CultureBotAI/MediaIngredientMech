@@ -1,0 +1,52 @@
+preferred_term: BBL Mycoplasma Broth Base (BD211458)
+ingredient_type: NAMED_MEDIUM
+supplied_form:
+- name: BBL Mycoplasma Broth Base (BD211458)
+  supplier: BD BBL
+  catalog_number: '211458'
+  form: dehydrated broth base without crystal violet
+  notes: The no-crystal-violet qualifier is explicit in the catalog-specific ATCC/JCM
+    source recipe.
+notes: Catalog-qualified basal product only; serum, glucose, yeast extract, urea and
+  other supplements added in recipient recipes are not part of this proposed product
+  identity. The broad current PPLO_Broth placeholder carries Difco aliases and PPLO_medium
+  describes a broader family. Coordinator must reconcile their source/alias scope
+  before application. The primary supplier names211458 and255420 separately. OLS MICRO0000094
+  quotes distinct Difco and BBL formulas; it is ontology context, not a retrieved
+  manufacturer specification. No exact cross-product equivalence or composition transcription
+  from that secondary quotation is asserted.
+synonyms:
+- synonym_text: PPLO Broth Base w/o CV (Mycoplasma Broth Base) (BD 211458)
+  synonym_type: CATALOG_VARIANT
+  source: Catalog-specific ATCC/JCM primary recipe in worker03 broth evidence ledger
+identifier: kgmicrobe.ingredient:bbl_mycoplasma_broth_base_bd_211458
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bbl_mycoplasma_broth_base_bd_211458
+  ontology_label: BBL Mycoplasma Broth Base (BD211458)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.bd.com/en-us/products-and-solutions/products/product-page.211458
+    notes: Source and supplier catalog jointly establish a product-specific registry
+      identity. Generic PPLOmedium is not the exact product.
+curation_history:
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed catalog-specific PPLO basal product; preserve no-crystal-violet
+    and BBL/Difco distinction, with generic-owner overlap explicit.
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.479771+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-141. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

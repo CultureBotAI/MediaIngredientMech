@@ -1,0 +1,1188 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "f6bfbf3c185f705484aa106405f813209146c766",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": ".claude/skills/reconcile-review-records/SKILL.md",
+        "sha256": "b8c3e3fdb31e58a49343f20b11c7a1c2a3616f16ef36601ccd072e2693031474",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/build_candidates_v2.py",
+        "sha256": "e7d3972909c33be333c17768dac440e2a4cf407ffdfac573e71229ec543172ca",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/context/issue1246.json",
+        "sha256": "c4472efa272a920b5ebb40ef53cd1ea68cb17ab63616bc030920d6e9fbdff7a4",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/provenance_writer_v2.py",
+        "sha256": "3b15bce56791af306b5db44f44b73d489f5203a23f36f4959084e10a402fc66a",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/review/candidate-payload-retention-v1.json",
+        "sha256": "88d4c3e96802e1c2de81d398045743404229999781f6e5694625116d71f3c1d5",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/review/original-provenance-reconstruction.json",
+        "sha256": "578f7662228e2c895fb0d12524315042cd178137690fb70700493fd5eb00ff77",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/review/unchanged-source-decision-scope-adjudication.json",
+        "sha256": "4d11d5aff16ef8a0221a35339b88c2aed76a38d26d7f5ac95a25a4d4f5ce5535",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/technical/control-retention-proof-v3.json",
+        "sha256": "4ff34be7e1a1b850268751016715ef623e43e5e23d1cd3e9f09f530eff3370fb",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/technical/controls-v3-20261108T081630611863Z.json",
+        "sha256": "6452dc5df458045759ef5093c20fddb4fc1e4f017e581b170053e6672350de10",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/technical/controls-v3.stderr",
+        "sha256": "12384628d84fa8f4e3c8cd2dab552486ea1d7569d3e467fa0ded79808136129e",
+        "role": "context"
+      },
+      {
+        "path": ".temp/w03-provenance-successor-v1/technical/guard-finding-disposition-v2.json",
+        "sha256": "d08c93cd8272f7dfdf7903a972592f0310af0450db5cc3d6bd21fea74fc1e994",
+        "role": "context"
+      },
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "conf/record_review.yaml",
+        "sha256": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-review-profile.md",
+        "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+        "role": "context"
+      },
+      {
+        "path": "docs/record-reviews.md",
+        "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/BBL_Brain_Heart_Infusion_Agar_BD_211065.yaml",
+        "sha256": "641863eec7ae6766a4e7cc51baeda4c2e910637e017b26b0fd526241bb1006d9",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/BBL_Mueller_Hinton_Broth_BD_211443.yaml",
+        "sha256": "9d9c7ad59e41dcc7569700eb3dfcdded3be8e6bfcde0e672c782212d26ab0f2a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/BBL_Mycoplasma_Broth_Base_BD_211458.yaml",
+        "sha256": "9ad32780d2c40fe98a8268a49354b4cd26b1cedaa34b5e20a281684f912a3ba7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Bacto_Heart_Infusion_Broth.yaml",
+        "sha256": "ff61325e7bbc9be95c9e653d0bd62d97c60c2bb124d2fb39bd25515e545813bd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Chopped_Meat_Broth_Filtrate_ATCC1016.yaml",
+        "sha256": "41f5bf2e29eaececff62057ebe80b66dc91ecd69ac9dd712313893f5ae441fe3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Columbia_Broth_BBL_TOGO_M2256.yaml",
+        "sha256": "f551687928299285e6a8b448e36e09aa10b1c607918a04b2d542f192fa6ddbab",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Difco_Nutrient_Broth_NBRC885.yaml",
+        "sha256": "9335446e1fce516a2a6632597ac45a3799fb49ed555acd1004d245e11a713941",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Difco_PPLO_Broth_BD_255420.yaml",
+        "sha256": "6222acaf8b54e9f517186f831bf9a4873dd2ead84a8f86d4cb71b055060ea208",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/GAM_Broth_Mod_Powder.yaml",
+        "sha256": "2af067ddf141a5cab8c44ba826e2717f4e10a6aade820f22c2730af0588e8d17",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/GAM_Broth_Powder.yaml",
+        "sha256": "8083c8ecea986a1603d468b3450e625c7b360f89aa86c4bbfbfa3640d7149cec",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Kyokuto_Nutrient_Broth_Powder_551_02480_7.yaml",
+        "sha256": "edaf5ead93823acd2f5e2351ab570362a803d71542072b2a3c57e3734bcbc99f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Liver_Infusion_Filtrate_NBRC201_202.yaml",
+        "sha256": "9da60ab80d1d410688654bf8c6dd896941af82a76c4a5e0ee07956671b7599cf",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/MEM_Alpha_Modification.yaml",
+        "sha256": "cb786b0cee0e36206e4847656c97422f79f07929f85943dee175e881c4527954",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Marine_Broth_2216.yaml",
+        "sha256": "bd529989e05657d43ff31d900f884346604655d0436c84d851eeee0474187933",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Oxoid_Liver_Broth_CM0077.yaml",
+        "sha256": "c7b73a83900f548df318e3b0ef823c0936fbf185de22a1188c538f1c4a9cf6ce",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/R2A_Broth_DAIGO.yaml",
+        "sha256": "5603b8878ca3460906dcc26b33c29db602661773eb3a598ad293ae7cd525b22f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Standard_I_Broth.yaml",
+        "sha256": "780bf90a4dd27b742b5df94ce2fe2f9324fdedfb1817f20bbb2e4b5e03f2c664",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Veal_Infusion_Broth.yaml",
+        "sha256": "dc59338e1250853b7a84204ee7aa54d4a4146dc2642f1436432097d979aaeb69",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/broths/proposed/Wilkins-Chalgren-Anaerobe-Broth.yaml",
+        "sha256": "1646156e0153d035e585214dd25eaa6275a423bc41920aa34cc68a02992aa4e6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/5-hydroxyectoine.yaml",
+        "sha256": "8e324843d56c47978fa582f48ec432d61d2b27b9b13861d3871aa54f7482730f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/activated-charcoal.yaml",
+        "sha256": "a002c69ae08e1f519f26bbf68ea788aeaab7961f85a19dd3b8810f9cd612ec54",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/ammonium-metavanadate.yaml",
+        "sha256": "b7eaf66cfd0dca7268035d63774b58e557094c0cc6fcebefbd03dd8f80998386",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/ardacin-a-cas.yaml",
+        "sha256": "9543bdf1f61bce2d47e4fb1e2ef4093c55a1af08a589e4adf3685b73f92bb1a7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/butyric-acid.yaml",
+        "sha256": "9cfca18863426d73b8c357c95f4ab928685bb8435d0ab8842ce3c12ffc26652a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/calcium-dihydrate.yaml",
+        "sha256": "7964a10623b311704ab0b077c4ece8b728ec5f7e962ee461fb392dad08c1407c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/cephamycin-parent-chemistry.yaml",
+        "sha256": "705c3fb16a7cf8b593bc48230832bd3e39a9491d294c65ced79961480db2233a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/citric-monohydrate-48gl-stock.yaml",
+        "sha256": "e8e45efb3315f4dfe360c35600890b10729c94af75e2fe04ba8188948eba4dab",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/citric-monohydrate-boundary.yaml",
+        "sha256": "0e8fa07f892b40b7713674373854f3a473285fe7d5c7a246a96bace627f76679",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/cobalt-heptahydrate.yaml",
+        "sha256": "e923ecf9243a53ed1f084953b5cd1c24540dac2c219e3db10685c68635e12f5c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/coenzyme-m.yaml",
+        "sha256": "3d9edcac7300d7e5e19c4e6f099e4ee3fbce65a60a07a54566e06d91bf641f78",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/copper-trihydrate-alias.yaml",
+        "sha256": "58f5e346f53c18d5285ae91ddade0a65d4fe1736eade03b84d9c9b43d1150986",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/dl-methylbutyric.yaml",
+        "sha256": "3703b4c5f4dbb1a4810b44f596c032a710acdbdf3a53164b0e23efdfe4f53910",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/eddha-free-acid.yaml",
+        "sha256": "fb67264f58e93df88b761268d44d9a2286d9dcab6b2eb097ae108afb9eb518a4",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/generic-polymer-alias.yaml",
+        "sha256": "d78d47931757585415d9afa72a2963a88a44eff8bbd511060fafd4846ad6955f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/generic-polymer-tombstone.yaml",
+        "sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/hcl-01n-stock.yaml",
+        "sha256": "0785e2ca88c7004a53f44b2448103ee5bd5c40fbf7b904cf7d5c06927a68060a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/hcl-1n-stock.yaml",
+        "sha256": "c3d3fd83d21aef9935d2d190fb37122cc054d344d838921b9fca3fd112366689",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/hcl-6n-stock.yaml",
+        "sha256": "81e88f1472dfa1a3b62fb5f1ef69b6d36f75210b7aabbcb5cad772bb53f14977",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/hepes-freeacid.yaml",
+        "sha256": "7718cd8c62430e5625d9d5be2bba79b04452f59ce05c873d1e9ab5902f3220f2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/iron-hexahydrate.yaml",
+        "sha256": "1fed3231b6c3b777c4c469d3d4e2b87be02df38e9923424eb8fe71865417fff6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/isobutyrate-alias.yaml",
+        "sha256": "bed52b0ea1a90c9dd0aceca3d44cbf3c2d5b0e1570c636003cb784238133358a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/naoh-01m-stock.yaml",
+        "sha256": "5990de47d76cb30f20322a1b1e9a7faffd6f7f24070dc1feb8cf09b18e106531",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/naoh-10m-stock.yaml",
+        "sha256": "92d443ad157fc751bda13665e0f87492412bc4ae9596a7316b46624370cadd2a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/naoh-1m-stock.yaml",
+        "sha256": "eba7eab0f5b8d26bafda38a4b769158abba5f08d5f206764f40bf7fb6544e07e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/phosphate-dodecahydrate.yaml",
+        "sha256": "6a31d80feef598f83c13c6cff4a64a3b79a667aadad900e005ed6c8357c07ebd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-identity.yaml",
+        "sha256": "93d08c548bd48007edbbf5ae46f5da8d096258a9ebac6704cf0cbe1310375fde",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-tombstone.yaml",
+        "sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/resorcinol.yaml",
+        "sha256": "24bf6700379d8293f122751ea47921874cd13b681cb1e454de60e8464d8d8805",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/selenate-1mm-stock.yaml",
+        "sha256": "1e9575f50f1ed5197b53b0bfcdf7bf1f56571615e4a14ed749f654bd40df6d6d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/silicate-nonahydrate-464gl-stock.yaml",
+        "sha256": "31532487e1bc980ccaad2248f670fbc369e6de97586b94d45df790dda4828437",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/silicate-pentahydrate-212gl-stock.yaml",
+        "sha256": "2a0317669c5f73e6c1be74d2c79871857fa4dc3a0741646003983d885c088ba3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/sulfate-malformed-alias.yaml",
+        "sha256": "7aaabd05f14689648005b5557134ac022227b304e104831469cc1c74e9648ee6",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/vanadate-alias.yaml",
+        "sha256": "d831e09ad4dc57fbbd1ac2342d7c06e86a91c17a08c0b95f2a42cf6d334a2201",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/arabinan_source_alias.yaml",
+        "sha256": "0e474b2fcb1d81b1dfc6b8fe95d9e696ffcd2f1ca3138f383f59db51513bbccd",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/casitone_catalog_alias.yaml",
+        "sha256": "3a374aad6be3f58551a10ffa66acc524aff10b210ac3411e1e738dd340859dac",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/desiccated_ox_bile_label.yaml",
+        "sha256": "a9920ad9e47fcd5a4b43eba2df8d53892ee7bd742bbf14f9172446fb02a4b26c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/double_distilled_water.yaml",
+        "sha256": "f4ff8f1314108a06ba04f5b374f79dcfc5252ca5f3afce197c8b34c36c4b99cb",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/dsmz1245_sugar_stock_s5688.yaml",
+        "sha256": "2fa5a41c601eaabf9e95660ddbb6c443254ff55ad82e6c419c017fce242c2813",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/dsmz_s777_selenite_tungstate_solution.yaml",
+        "sha256": "c30cdede385474040099b46156f742b906a3fa19c7064384a1a7c1cf8f672575",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm1199_phosphates_solution.yaml",
+        "sha256": "bb5b6d5ac4ab4afe68bca6a7dfdec6fb109660769b4db13abf8bbb2f1b52b98b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm1229_1272_solution_a.yaml",
+        "sha256": "4444ffd37611245fff35ea689a8ef858a67896f05b4f284781debe2bd3d918dc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm1231_bg_fpc.yaml",
+        "sha256": "59481075e2a853c4fd35cf05f6db5b3495a76b9b135b3c0fb4713dba92e2fb6a",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm133_salt_solution_i.yaml",
+        "sha256": "f2919fc95a66d3c3d624ade671c23df621e8f3247305ccf8f39cca512f8a8679",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm1404_cellobiose_solution_10pct.yaml",
+        "sha256": "cf8b319a9f991f5d0b786685ce1d4fdeb974d21b3cd9ae2f922ae5d91915e4dc",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm431_selenite_tungstate_solution.yaml",
+        "sha256": "83ffd40a40010e3b5c997565750e523539ebe3bfc9bc5332d42f2f7aef16db1f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm537_sugar_solution_250mm.yaml",
+        "sha256": "98f608dc50b528a9d10b566ae042f4bbbed54c86476649170188271bf1f55c2d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm687_methanol_solution.yaml",
+        "sha256": "2b12bda0e1adcd05f001dbc5e876c27a6ed3e13ab10dd87c21356611965f8e61",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm852_se_w_solution.yaml",
+        "sha256": "1f6b1732e0f5716087d6e844834e0ed48cf8827e7829ec68d5d8e0d049a67756",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/metals44_source_aliases.yaml",
+        "sha256": "9154cd4815df6c7cd368fb77dd4f034edaee7cae4f0c799cb8dcdc0bd70621d9",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/oxoid_lp0027_liver_digest.yaml",
+        "sha256": "34dd3bbb7fcbb012f2cc3003679a5d2e4d63b41c744f9b9ad14272bc03570c47",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/sugar_beet_molasses_identity.yaml",
+        "sha256": "e004bcb82abe9a1844b4e24e1a3d70c58c25c56db7a714b7d73ca9c30dbdf41e",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/togo_m2596_anaerobic_sludge_supernatant.yaml",
+        "sha256": "c587cb27a154cbf73d0f3c67ffbd27ed7cfadf69dfd000930ad5d5ab5fd643ac",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/materials/proposed-owners/tryptic_digest_of_beef_heart.yaml",
+        "sha256": "7a3e93c6c4d9f6bbdbd60de2998ac3d0306f32c4a91bbd0ef3a36990af45f7a3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1224-v1/candidate/reinforced_clostridial_medium_oxoid_cm0149.yaml",
+        "sha256": "1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/context/allowlist/AUTHOR-TASK.md",
+        "sha256": "6c59c57bf48dc8cff5ff13d91190456d0e017e1883b24b4280dd3323ed7d32c3",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/context/allowlist/MANIFEST.json",
+        "sha256": "cfa0bdc8489880ef50676547c9dc912bc1e31b7d139b53eef47a80053b7e6475",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/context/allowlist/repair-allowlist.json",
+        "sha256": "9b8283520ab7f9911f4997d62a85aea798f634bd8e8ed69c60dd77a26cdeec9d",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payload-bridge.json",
+        "sha256": "d3f027e825894f029f0e26ba6f352fe6c6e2ab17aa87bee2caeff714d89e4dce",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd211065.yaml",
+        "sha256": "9cdbdd9664825f9376bc32992ebe635113c3642efc17e3f8a1d8311eceda0860",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd211443.yaml",
+        "sha256": "48d42e4316a6837b3ef67889dbbf29920a6502936123f7902b4414d51d990630",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd238400.yaml",
+        "sha256": "2692a780ec91a7d095c5edcd807a6134f520e09d5819d843690d2265e4c92f18",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-chopped-filtrate.yaml",
+        "sha256": "d1b0ba5989f8f28e4c99712976811f1ade025813a5712fc78bd83ed7a4ceaa73",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-cm0643.yaml",
+        "sha256": "bea581a9e9612b3a346d1208a52659083d28b202823f746cfae1f4d3a5e154da",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-columbia-m2256.yaml",
+        "sha256": "03bc5b35e3c2d8fc79dd356fa68edf8ca133c4ef6329ebadac865895c29186fe",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-daigo-r2a.yaml",
+        "sha256": "702e7e26aa73ea24b188c4fe820f0a95f85012bc331140b6b6952e7cc1209215",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-difco-nutrient.yaml",
+        "sha256": "3e6d42d7f8daeef51a40aac7f5ed1d1ef88e50898ef49a07bc9642304013a17c",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-gam_broth_mod_powder.yaml",
+        "sha256": "fbc7535284e5d3c1086419ff3c0b81381b000ad7a3de65ebc5b618b24f12e2c2",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-gam_broth_powder.yaml",
+        "sha256": "1bb7892f70748469bf9bc5e6399affa070f875da5ba21b24e35424c08c916de4",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-kyokuto-551024807.yaml",
+        "sha256": "741dc3dda8dc21710911d861e9ee8d56c0247086acf275ddd9b2498cf5418a2d",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-liver-filtrate.yaml",
+        "sha256": "1ac6ebfa023b4b04ad6bdbf9a65af68ec580fe97a5d74a2a26b3bd5d828e6b59",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-oxoid-cm0077.yaml",
+        "sha256": "ff7936d0b06de26e1bd3105165f358fc62ea59ff44db79aff131668e49348b30",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-pplo-211458.yaml",
+        "sha256": "4f9753dfc6da30117aadf5e1bc10ccdd2346022ab18d9c02ebe4e730c4cd6d76",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-pplo-255420.yaml",
+        "sha256": "366e7d33f7217b698ded324c49762e94fa3a138f675fa8eafc70201abba281d1",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-standard-i.yaml",
+        "sha256": "f6a40c5e28a052c73f785603d5a9356fee7dbfe1c3c058854748dd0dd011e6ab",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-veal_infusion_broth.yaml",
+        "sha256": "2012841336c778c7a16626f7ba6195f485f50f2cf926a62c5c911c3ce68c4325",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-5-hydroxyectoine.yaml",
+        "sha256": "189a37245cad882a4e75dc219c4b0188ceba72b2f2d47b9a57e78b220a5935d7",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-ammonium-metavanadate.yaml",
+        "sha256": "33a18af336f4b904ccd6546c7648b89cf32d5b540dedda0934b2a1bc6f7d5621",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-ardacin-a-cas.yaml",
+        "sha256": "ec6e62d2de812314c11cda0e845b4c2ab82ae515542cfe76e5fd8e224db7b774",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-citric-monohydrate-48gl-stock.yaml",
+        "sha256": "b2e6087cda4519ef7a58adc509566a85d4ea93f69c36b778db93657fbbfb00e1",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-eddha-free-acid.yaml",
+        "sha256": "ac8c27e28a389c7a9bc041631944dd2b11cd5b34c83835fde4740e977caad60b",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-01n-stock.yaml",
+        "sha256": "91fbc818e2ba0959c11ba6d8c668640c3d768a7e9b88e6149966c8f991cbdb3d",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-1n-stock.yaml",
+        "sha256": "fed352f8d2a87b882d22f957be635ea915d67e17299c23664fad2a1db6a3321b",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-6n-stock.yaml",
+        "sha256": "807dafed5b46b7e17845eb426ab02e91122e1102a53a7291ea7acb9d223f47fa",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-01m-stock.yaml",
+        "sha256": "bcdce1adb23ab1b84ff01543f6e1de7ccf4de33eb4c27ff365aed3a01c813402",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-10m-stock.yaml",
+        "sha256": "4f5fc837d89f052a20ed02c643d31a982979aa997b2877073b91251362d52f82",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-1m-stock.yaml",
+        "sha256": "d6e626e5da55f08710b3fa8c72a04a4091a59fd8e330961358a7498c9a4796ef",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-r-polymer-identity.yaml",
+        "sha256": "ef3db5d9297e6363f3b7ea4668307f9de1ceb320a4de2771d44a7722746ca5e7",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-resorcinol.yaml",
+        "sha256": "72fcec0dae79b7f15c179232f0eb38f7930153de3ee5cc76e0862220e3a7dab4",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-selenate-1mm-stock.yaml",
+        "sha256": "39253ebdb3c684874e88a71ad57179e1f1b7d6b41497a5125dbf5ebd2760e7a6",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-silicate-nonahydrate-464gl-stock.yaml",
+        "sha256": "dba986c1be7e828f887d7ab54736500f00948f893f3ed4f6f5a07214144671a6",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-silicate-pentahydrate-212gl-stock.yaml",
+        "sha256": "8bb4ddb6bc45d6e680dbc67f90beedc36123ce33ec310a6f08814b6282ceb4af",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-double_distilled_water.yaml",
+        "sha256": "29db3b6251f857902788ea665f323e0d9f765fd3ead244fafca78cf99bf880cc",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz1245_sugar_stock_s5688.yaml",
+        "sha256": "8a2822fefe25e6ead0042daa19d50f908854f9b9431a3255d0802c3ddd888174",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz_s777_selenite_tungstate_solution.yaml",
+        "sha256": "6f14fbdad982370cd43c59facc6fd7b1e874208ea1de00b2f2b2898b7ad1f42c",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1199_phosphates_solution.yaml",
+        "sha256": "d2ebf3d2cddcebc86e4c57ccda599ea35c9bbdce6061d6656e44018e25996ce8",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1229_1272_solution_a.yaml",
+        "sha256": "8f09736b7c330159de79fbcf9270def057b0f241270f5ca2d72362e88cc3d7be",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1231_bg_fpc.yaml",
+        "sha256": "35bf26cc3d414615f1be69635c7d0b5f2cae54baaa4d769ae7e00019a7ea0086",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm133_salt_solution_i.yaml",
+        "sha256": "365ac2c8e58af57c2108b7f20111801371e3379ffff94a5bc35af36f73b2bfb4",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1404_cellobiose_solution_10pct.yaml",
+        "sha256": "f0a5f05261f7171c7cbbca16ebfa90b0abe2c79716fd2e69d402bd85d448e150",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm431_selenite_tungstate_solution.yaml",
+        "sha256": "6f00f8ed02e50bf899defdd9e3e19816331ef8c81d807ada2320718c5f3939b3",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm537_sugar_solution_250mm.yaml",
+        "sha256": "2b51641b483aa3169d8ef114f322501cb9e027cff4daa74239f58dbc00ef44b9",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm687_methanol_solution.yaml",
+        "sha256": "9240935daef46ec61f0cc107d6ff790baa687f2d7f2cdb420791bbe48b32680c",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm852_se_w_solution.yaml",
+        "sha256": "6db98a53a6738341011c51aa34b9a9fd32f61157cb2d4e6ad6b68689d3f37cc3",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-oxoid_lp0027_liver_digest.yaml",
+        "sha256": "fd8c40b03771ed5430b576924dd2adedd23c55b567afdee1bc29728caaaa9af7",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-sugar_beet_molasses_identity.yaml",
+        "sha256": "cc810fca6594ee82deb1c09f56eb59f2fcf0263e1c9c05a6fe3e4f48ca7769c0",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-togo_m2596_anaerobic_sludge_supernatant.yaml",
+        "sha256": "34121252f89191dd256fa5a198203a828080f68e53cb0c0fae85756f68114973",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-tryptic_digest_of_beef_heart.yaml",
+        "sha256": "9165427d8e72226f24da90a371ed8bfed6b141abf9fc7f968cf27bc356b057db",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/scientific-field-retention.json",
+        "sha256": "698519e2a4304d3ae428202d847c4d721c2cb6ddeddcecb1e17cfe1c0bab27df",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/validation/native-payloads.json",
+        "sha256": "29663f6e91c25c01c1aa16a910d532d567826cb27166922ada084d664e58227f",
+        "role": "context"
+      },
+      {
+        "path": "schema/record_review.yaml",
+        "sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb",
+        "role": "context"
+      },
+      {
+        "path": "scripts/record_review.py",
+        "sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "b-proposal-chopped-filtrate",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-chopped-filtrate.yaml",
+      "label": "Chopped meat broth filtrate (ATCC1016)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-chopped-filtrate; prospective maintained owner data/ingredients/mapped/Chopped_Meat_Broth_Filtrate_ATCC1016.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-gam_broth_mod_powder",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-gam_broth_mod_powder.yaml",
+      "label": "GAM Broth mod. powder",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-gam_broth_mod_powder; prospective maintained owner data/ingredients/unmapped/GAM_Broth_Mod_Powder.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-veal_infusion_broth",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-veal_infusion_broth.yaml",
+      "label": "Veal infusion broth",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-veal_infusion_broth; prospective maintained owner data/ingredients/unmapped/Veal_Infusion_Broth.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-gam_broth_powder",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-gam_broth_powder.yaml",
+      "label": "GAM Broth powder",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-gam_broth_powder; prospective maintained owner data/ingredients/unmapped/GAM_Broth_Powder.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-bd211065",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd211065.yaml",
+      "label": "BBL Brain Heart Infusion Agar (BD211065)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-bd211065; prospective maintained owner data/ingredients/mapped/BBL_Brain_Heart_Infusion_Agar_BD_211065.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-daigo-r2a",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-daigo-r2a.yaml",
+      "label": "R2A broth DAIGO",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-daigo-r2a; prospective maintained owner data/ingredients/mapped/R2A_Broth_DAIGO.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-pplo-255420",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-pplo-255420.yaml",
+      "label": "Difco PPLO Broth (BD255420)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-pplo-255420; prospective maintained owner data/ingredients/mapped/Difco_PPLO_Broth_BD_255420.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-pplo-211458",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-pplo-211458.yaml",
+      "label": "BBL Mycoplasma Broth Base (BD211458)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-pplo-211458; prospective maintained owner data/ingredients/mapped/BBL_Mycoplasma_Broth_Base_BD_211458.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-kyokuto-551024807",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-kyokuto-551024807.yaml",
+      "label": "Kyokuto Nutrient Broth Powder551-02480-7",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-kyokuto-551024807; prospective maintained owner data/ingredients/mapped/Kyokuto_Nutrient_Broth_Powder_551_02480_7.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-bd211443",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd211443.yaml",
+      "label": "BBL Mueller Hinton Broth(BD211443)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-bd211443; prospective maintained owner data/ingredients/mapped/BBL_Mueller_Hinton_Broth_BD_211443.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-liver-filtrate",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-liver-filtrate.yaml",
+      "label": "Liver infusion filtrate(NBRC201/202)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-liver-filtrate; prospective maintained owner data/ingredients/mapped/Liver_Infusion_Filtrate_NBRC201_202.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-oxoid-cm0077",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-oxoid-cm0077.yaml",
+      "label": "Oxoid Liver Broth(CM0077)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-oxoid-cm0077; prospective maintained owner data/ingredients/mapped/Oxoid_Liver_Broth_CM0077.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-columbia-m2256",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-columbia-m2256.yaml",
+      "label": "Columbia broth BBL formulation(TOGO M2256)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-columbia-m2256; prospective maintained owner data/ingredients/mapped/Columbia_Broth_BBL_TOGO_M2256.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-standard-i",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-standard-i.yaml",
+      "label": "Standard I Broth",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-standard-i; prospective maintained owner data/ingredients/unmapped/Standard_I_Broth.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-bd238400",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd238400.yaml",
+      "label": "Bacto Heart Infusion Broth",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-bd238400; prospective maintained owner data/ingredients/unmapped/Bacto_Heart_Infusion_Broth.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-difco-nutrient",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-difco-nutrient.yaml",
+      "label": "Difco Nutrient Broth powder(NBRC885)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-difco-nutrient; prospective maintained owner data/ingredients/mapped/Difco_Nutrient_Broth_NBRC885.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "b-proposal-cm0643",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-cm0643.yaml",
+      "label": "Wilkins-Chalgren-Anaerobe-Broth",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal b-proposal-cm0643; prospective maintained owner data/ingredients/unmapped/Wilkins-Chalgren-Anaerobe-Broth.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-naoh-1m-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-1m-stock.yaml",
+      "label": "1 M NaOH stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-naoh-1m-stock; prospective maintained owner data/ingredients/mapped/naoh_1m_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-naoh-01m-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-01m-stock.yaml",
+      "label": "0.1 M NaOH stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-naoh-01m-stock; prospective maintained owner data/ingredients/mapped/naoh_01m_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-naoh-10m-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-10m-stock.yaml",
+      "label": "10 M NaOH stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-naoh-10m-stock; prospective maintained owner data/ingredients/mapped/naoh_10m_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-hcl-01n-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-01n-stock.yaml",
+      "label": "0.1 N HCl stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-hcl-01n-stock; prospective maintained owner data/ingredients/mapped/hcl_01n_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-hcl-6n-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-6n-stock.yaml",
+      "label": "6 N HCl stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-hcl-6n-stock; prospective maintained owner data/ingredients/mapped/hcl_6n_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-hcl-1n-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-1n-stock.yaml",
+      "label": "1 N HCl stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-hcl-1n-stock; prospective maintained owner data/ingredients/mapped/hcl_1n_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-selenate-1mm-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-selenate-1mm-stock.yaml",
+      "label": "1 mM Na2SeO4 stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-selenate-1mm-stock; prospective maintained owner data/ingredients/mapped/selenate_1mm_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-silicate-nonahydrate-464gl-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-silicate-nonahydrate-464gl-stock.yaml",
+      "label": "Na2SiO3·9H2O 4.64 g/L stock (TOGO M2231)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-silicate-nonahydrate-464gl-stock; prospective maintained owner data/ingredients/mapped/silicate_nonahydrate_464gl_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-citric-monohydrate-48gl-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-citric-monohydrate-48gl-stock.yaml",
+      "label": "Citric acid monohydrate 4.8 g/L stock (TOGO M2231)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-citric-monohydrate-48gl-stock; prospective maintained owner data/ingredients/mapped/citric_monohydrate_48gl_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-silicate-pentahydrate-212gl-stock",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-silicate-pentahydrate-212gl-stock.yaml",
+      "label": "Na2SiO3·5H2O 21.2 g/L stock (MediaDive2160)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-silicate-pentahydrate-212gl-stock; prospective maintained owner data/ingredients/mapped/silicate_pentahydrate_212gl_stock.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-ammonium-metavanadate",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-ammonium-metavanadate.yaml",
+      "label": "Ammonium metavanadate",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-ammonium-metavanadate; prospective maintained owner data/ingredients/mapped/Ammonium_metavanadate.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-resorcinol",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-resorcinol.yaml",
+      "label": "Resorcinol",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-resorcinol; prospective maintained owner data/ingredients/mapped/Resorcinol.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-5-hydroxyectoine",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-5-hydroxyectoine.yaml",
+      "label": "5-Hydroxyectoine",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-5-hydroxyectoine; prospective maintained owner data/ingredients/mapped/5_Hydroxyectoine.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-eddha-free-acid",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-eddha-free-acid.yaml",
+      "label": "Ethylenediamine-di(o-hydroxyphenyl)acetic acid",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-eddha-free-acid; prospective maintained owner data/ingredients/mapped/Ethylenediamine_di_o_hydroxyphenyl_acetic_Acid.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-r-polymer-identity",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-r-polymer-identity.yaml",
+      "label": "Poly[(R)-3-hydroxybutyrate]",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-r-polymer-identity; prospective maintained owner data/ingredients/mapped/Poly_3-hydroxybutyric_Acid.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "c-ardacin-a-cas",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-ardacin-a-cas.yaml",
+      "label": "Ardacin A",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal c-ardacin-a-cas; prospective maintained owner data/ingredients/mapped/Ardacin_A.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm1404_cellobiose_solution_10pct",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1404_cellobiose_solution_10pct.yaml",
+      "label": "JCM1404 10% cellobiose solution",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm1404_cellobiose_solution_10pct; prospective maintained owner data/ingredients/mapped/jcm1404_cellobiose_solution_10pct.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-togo_m2596_anaerobic_sludge_supernatant",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-togo_m2596_anaerobic_sludge_supernatant.yaml",
+      "label": "TOGO M2596 anaerobic digester sludge supernatant",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-togo_m2596_anaerobic_sludge_supernatant; prospective maintained owner data/ingredients/mapped/togo_m2596_anaerobic_sludge_supernatant.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm133_salt_solution_i",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm133_salt_solution_i.yaml",
+      "label": "JCM133 Salt solution No.1",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm133_salt_solution_i; prospective maintained owner data/ingredients/mapped/jcm133_salt_solution_i.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm1199_phosphates_solution",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1199_phosphates_solution.yaml",
+      "label": "JCM1199 Phosphates solution",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm1199_phosphates_solution; prospective maintained owner data/ingredients/mapped/jcm1199_phosphates_solution.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm1229_1272_solution_a",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1229_1272_solution_a.yaml",
+      "label": "JCM1229 and JCM1272 Solution A",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm1229_1272_solution_a; prospective maintained owner data/ingredients/mapped/jcm1229_1272_solution_a.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm687_methanol_solution",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm687_methanol_solution.yaml",
+      "label": "JCM687 Methanol solution",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm687_methanol_solution; prospective maintained owner data/ingredients/mapped/jcm687_methanol_solution.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm431_selenite_tungstate_solution",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm431_selenite_tungstate_solution.yaml",
+      "label": "JCM431 Selenite-tungstate solution",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm431_selenite_tungstate_solution; prospective maintained owner data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-dsmz_s777_selenite_tungstate_solution",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz_s777_selenite_tungstate_solution.yaml",
+      "label": "DSMZ S777 Selenite-tungstate solution",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-dsmz_s777_selenite_tungstate_solution; prospective maintained owner data/ingredients/mapped/dsmz_s777_selenite_tungstate_solution.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm852_se_w_solution",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm852_se_w_solution.yaml",
+      "label": "JCM852 Se/W solution",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm852_se_w_solution; prospective maintained owner data/ingredients/mapped/jcm852_se_w_solution.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm537_sugar_solution_250mm",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm537_sugar_solution_250mm.yaml",
+      "label": "JCM537 xylose maltose cellobiose stock (250 mM each)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm537_sugar_solution_250mm; prospective maintained owner data/ingredients/mapped/jcm537_sugar_solution_250mm.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-jcm1231_bg_fpc",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1231_bg_fpc.yaml",
+      "label": "JCM1231 BG-FPC stock",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-jcm1231_bg_fpc; prospective maintained owner data/ingredients/mapped/jcm1231_bg_fpc.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-dsmz1245_sugar_stock_s5688",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz1245_sugar_stock_s5688.yaml",
+      "label": "DSMZ1245 Sugar Stock Solution (MediaDive S5688)",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-dsmz1245_sugar_stock_s5688; prospective maintained owner data/ingredients/mapped/dsmz1245_sugar_stock_s5688.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-tryptic_digest_of_beef_heart",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-tryptic_digest_of_beef_heart.yaml",
+      "label": "Tryptic digest of beef heart",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-tryptic_digest_of_beef_heart; prospective maintained owner data/ingredients/mapped/tryptic_digest_of_beef_heart.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-sugar_beet_molasses_identity",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-sugar_beet_molasses_identity.yaml",
+      "label": "Sugar beet molasses",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-sugar_beet_molasses_identity; prospective maintained owner data/ingredients/mapped/Sugar_Beet_Molasses.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-double_distilled_water",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-double_distilled_water.yaml",
+      "label": "Double-distilled water",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-double_distilled_water; prospective maintained owner data/ingredients/mapped/double_distilled_water.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    },
+    {
+      "target_id": "m-oxoid_lp0027_liver_digest",
+      "path": "reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-oxoid_lp0027_liver_digest.yaml",
+      "label": "Oxoid LP0027 neutralised liver digest",
+      "selector": "/ontology_mapping/evidence/0/evidence_type",
+      "record_class": "IngredientRecord",
+      "kind": "source",
+      "ownership_note": "Unapplied report-only proposal m-oxoid_lp0027_liver_digest; prospective maintained owner data/ingredients/mapped/oxoid_lp0027_liver_digest.yaml. Exact metadata correction and complete-value retention only; this review does not approve original worker03 science, owner application, roles or exports."
+    }
+  ]
+}

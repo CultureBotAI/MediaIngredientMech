@@ -1,0 +1,66 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/dsmz1245_sugar_stock_s5688.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz1245_sugar_stock_s5688.yaml
+@@ -14,23 +14,38 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://mediadive.dsmz.de/rest/solution/5688
+-    notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list
+-      is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is
+-      asserted, and supplier clarification remains required for complete quantitative composition.'
+-notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is
+-  PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted,
+-  and supplier clarification remains required for complete quantitative composition.'
++    notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component
++      list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed
++      mass is asserted, and supplier clarification remains required for complete quantitative
++      composition.'
++notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component
++  list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed
++  mass is asserted, and supplier clarification remains required for complete quantitative
++  composition.'
+ curation_history:
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list
+-    is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted,
+-    and supplier clarification remains required for complete quantitative composition.'
++  changes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component
++    list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed
++    mass is asserted, and supplier clarification remains required for complete quantitative
++    composition.'
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.561915+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-178. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ components:
+ - component_name: Glucose
+   reference_scope: UNMAPPED
+@@ -61,8 +76,9 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://mediadive.dsmz.de/rest/solution/5688
+     source_record: DSMZ1245 Sugar Stock Solution (MediaDive S5688)
+-    notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list
+-      is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is
+-      asserted, and supplier clarification remains required for complete quantitative composition.'
+-  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+-    units are transcribed without lexical identity promotion.
++    notes: 'Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component
++      list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed
++      mass is asserted, and supplier clarification remains required for complete quantitative
++      composition.'
++  notes: Component identifiers deliberately remain unresolved; chemical forms and
++    source batch units are transcribed without lexical identity promotion.

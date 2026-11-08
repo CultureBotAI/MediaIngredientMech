@@ -1,0 +1,61 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm687_methanol_solution.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm687_methanol_solution.yaml
+@@ -14,22 +14,35 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=687
+-    notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water; no
+-      final-volume, density or molarity assumption. Resolve only the named S4591/JCM687 source
+-      use.
+-notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water; no final-volume,
+-  density or molarity assumption. Resolve only the named S4591/JCM687 source use.
++    notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
++      no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
++      source use.
++notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
++  no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
++  source use.
+ curation_history:
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water; no
+-    final-volume, density or molarity assumption. Resolve only the named S4591/JCM687 source
+-    use.
++  changes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
++    no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
++    source use.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.547488+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-172. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ components:
+ - component_name: Methanol
+   reference_scope: UNMAPPED
+@@ -46,8 +59,8 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=687
+     source_record: JCM687 Methanol solution
+-    notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water; no
+-      final-volume, density or molarity assumption. Resolve only the named S4591/JCM687 source
+-      use.
+-  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+-    units are transcribed without lexical identity promotion.
++    notes: JCM687 methanol stock. Source lists2.28ml methanol and50ml distilled water;
++      no final-volume, density or molarity assumption. Resolve only the named S4591/JCM687
++      source use.
++  notes: Component identifiers deliberately remain unresolved; chemical forms and
++    source batch units are transcribed without lexical identity promotion.

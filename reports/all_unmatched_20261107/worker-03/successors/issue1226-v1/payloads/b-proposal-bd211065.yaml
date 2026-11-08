@@ -1,0 +1,48 @@
+preferred_term: BBL Brain Heart Infusion Agar (BD211065)
+ingredient_type: NAMED_MEDIUM
+supplied_form:
+- name: BD BBL Brain Heart Infusion Agar500g
+  supplier: BD BBL
+  catalog_number: '211065'
+  form: dehydrated agar medium
+notes: ATCC44 identifies BD211065 at52g/L. Official BD catalog confirms BBL Brain
+  Heart Infusion Agar. This is not heart-only infusion agar. Existing Heart_Infusion_Agar_BD_211065.yaml
+  uses MICRO0000567 and retains real Difco/Eiken heart-only aliases; coordinator must
+  reconcile the false catalog ownership before applying this candidate. No component
+  formula copied from the unavailable BD manual and no alias transfer from the conflicting
+  owner.
+identifier: kgmicrobe.ingredient:bbl_brain_heart_infusion_agar_bd_211065
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bbl_brain_heart_infusion_agar_bd_211065
+  ontology_label: BBL Brain Heart Infusion Agar (BD211065)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.bd.com/en-us/products-and-solutions/products/product-page.211065
+    notes: Catalog-specific mixture identity supported by supplier and ATCC44. MICRO0000567
+      is heart-only and is explicitly rejected as exact identity.
+synonyms:
+- synonym_text: Brain Heart Infusion Agar (BD 211065)
+  synonym_type: CATALOG_VARIANT
+  source: https://www.bd.com/en-us/products-and-solutions/products/product-page.211065
+curation_history:
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed catalog-specific BBL211065 identity with competing-owner block;
+    do not rewrite or remove the old heart-only aliases.
+  llm_assisted: true
+- timestamp: '2026-11-08T08:16:40.473840+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-138. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T08:21:49.970358+00:00",
+  "script": "verify_core.py",
+  "script_sha256": "e938248aac67c11b7a5ac1445e0c3f75f90a7da28338bcc4ba059f6770e65929",
+  "exit_code": 1,
+  "error": "KeyError: 'case_ids' while examining an inherited evidence object. Historical evidence objects may omit per-object case_ids; decisions/proposals carry the references. All original evidence objects remain equal.",
+  "correction": "The next script validates declared case_ids when present. Five newly authored evidence entries still require the exact68-case union; all decision/proposal-to-evidence references stay validated. No input/helper changes."
+}

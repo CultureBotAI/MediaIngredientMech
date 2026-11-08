@@ -1,0 +1,37 @@
+        description: Chemical with hydrate notation (e.g., MgSO4•7H2O)
+      CATALOG_VARIANT:
+        description: Name with catalog/supplier code (e.g., NaCl Fisher S271-500)
+      INCOMPLETE_FORMULA:
+        description: Incomplete chemical formula (e.g., K2HPO instead of K2HPO4)
+      ALTERNATE_FORM:
+        description: Alternative chemical form (salt, ester, etc.)
+
+  EvidenceTypeEnum:
+    permissible_values:
+      DATABASE_MATCH:
+        description: Direct match in ontology database
+      CURATOR_JUDGMENT:
+        description: Expert curator decision
+      LLM_SUGGESTION:
+        description: LLM-generated suggestion
+      LITERATURE:
+        description: Based on literature evidence
+      TEXT_SIMILARITY:
+        description: Based on text similarity metrics
+      CROSS_REFERENCE:
+        description: Cross-reference to other database
+      LEXICAL_MATCH:
+        description: >-
+          Lexical (token-overlap / normalized-name) match against an ontology
+          label or synonym.
+      CAS_RN_CROSS_REFERENCE:
+        description: >-
+          Identity established via CAS Registry Number cross-reference rather
+          than ontology label match.
+      MANUAL_CURATION:
+        description: >-
+          Manually curated evidence supplied by a human reviewer (distinct
+          from CURATOR_JUDGMENT, which records the decision rather than the
+          source of evidence).
+      MANUAL_REVIEW:
+        description: Identity confirmed during a manual review pass.

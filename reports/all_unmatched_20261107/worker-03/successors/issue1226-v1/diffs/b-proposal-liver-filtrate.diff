@@ -1,0 +1,50 @@
+--- reports/all_unmatched_20261107/worker-03/broths/proposed/Liver_Infusion_Filtrate_NBRC201_202.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-liver-filtrate.yaml
+@@ -1,8 +1,9 @@
+ preferred_term: Liver infusion filtrate(NBRC201/202)
+ ingredient_type: UNDEFINED_MIXTURE
+-notes: Preparation-defined liquid liver filtrate in NBRC201/202:25g sliced liver,150mLwater, gentle boiling30minutes,
+-  cloth filtration to remove solids. The species and recovered volume are not specified. Starting liver
+-  mass is not final extract concentration, and no dried-extract equivalence is claimed.
++notes: Preparation-defined liquid liver filtrate in NBRC201/202:25g sliced liver,150mLwater,
++  gentle boiling30minutes, cloth filtration to remove solids. The species and recovered
++  volume are not specified. Starting liver mass is not final extract concentration,
++  and no dried-extract equivalence is claimed.
+ synonyms:
+ - synonym_text: Liver infusion
+   synonym_type: REJECTED_LABEL
+@@ -15,15 +16,28 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=201
+-    notes: Preparation-defined liquid liver filtrate in NBRC201/202:25g sliced liver,150mLwater, gentle
+-      boiling30minutes, cloth filtration to remove solids. The species and recovered volume are not specified.
+-      Starting liver mass is not final extract concentration, and no dried-extract equivalence is claimed.
++    notes: Preparation-defined liquid liver filtrate in NBRC201/202:25g sliced liver,150mLwater,
++      gentle boiling30minutes, cloth filtration to remove solids. The species and
++      recovered volume are not specified. Starting liver mass is not final extract
++      concentration, and no dried-extract equivalence is claimed.
+ curation_history:
+ - timestamp: '2026-11-08T05:21:23.584872+00:00'
+   curator: codex-worker03-broths-source-review
+   action: ANNOTATED
+-  changes: Proposed source-defined liver filtrate; broad Liver infusion wording retained as nonresolving
+-    provenance, not rejected within its source context.
++  changes: Proposed source-defined liver filtrate; broad Liver infusion wording retained
++    as nonresolving provenance, not rejected within its source context.
+   llm_assisted: true
++- timestamp: '2026-11-08T08:16:40.483787+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-144. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

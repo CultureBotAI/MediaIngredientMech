@@ -1,0 +1,81 @@
+--- reports/all_unmatched_20261107/worker-03/chemicals/proposals/ardacin-a-cas.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-ardacin-a-cas.yaml
+@@ -6,22 +6,24 @@
+   ontology_source: CHEBI
+   mapping_quality: NARROW_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: NCATS GSRS UNII572P13F83X; primary Sitrin1985 isolation; ChEBI:24396
+-    notes: A-specific identity is CAS95935-21-0. The molecular factor is a glycopeptide. Generic Ardacin
+-      denotes the complex, so its former NCIT parent is superseded rather than asserted as a factor-to-complex
+-      subclass relation.
++    notes: A-specific identity is CAS95935-21-0. The molecular factor is a glycopeptide.
++      Generic Ardacin denotes the complex, so its former NCIT parent is superseded
++      rather than asserted as a factor-to-complex subclass relation.
+ synonyms:
+ - synonym_text: Aridicin A
+   synonym_type: EXACT_SYNONYM
+   source: 'frozen preliminary-v5/shards/shard-03.json cases[185] case_id=KG_CASE:efd8bd23e7c441839f97108af28986be814d9916d75cfd76686866762a3c9e5c;
+-    source=metatraits; source_case_id=kgmicrobe.compound:ardacin_a; Primary evidence: https://gsrs.ncats.nih.gov/api/v1/substances/572P13F83X?view=full;
+-    Primary evidence: https://pubmed.ncbi.nlm.nih.gov/4019308/; Primary evidence: https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf'
++    source=metatraits; source_case_id=kgmicrobe.compound:ardacin_a; Primary evidence:
++    https://gsrs.ncats.nih.gov/api/v1/substances/572P13F83X?view=full; Primary evidence:
++    https://pubmed.ncbi.nlm.nih.gov/4019308/; Primary evidence: https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf'
+ - synonym_text: AAD-216A
+   synonym_type: EXACT_SYNONYM
+   source: 'frozen preliminary-v5/shards/shard-03.json cases[185] case_id=KG_CASE:efd8bd23e7c441839f97108af28986be814d9916d75cfd76686866762a3c9e5c;
+-    source=metatraits; source_case_id=kgmicrobe.compound:ardacin_a; Primary evidence: https://gsrs.ncats.nih.gov/api/v1/substances/572P13F83X?view=full;
+-    Primary evidence: https://pubmed.ncbi.nlm.nih.gov/4019308/; Primary evidence: https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf'
++    source=metatraits; source_case_id=kgmicrobe.compound:ardacin_a; Primary evidence:
++    https://gsrs.ncats.nih.gov/api/v1/substances/572P13F83X?view=full; Primary evidence:
++    https://pubmed.ncbi.nlm.nih.gov/4019308/; Primary evidence: https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf'
+ mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 0
+@@ -30,9 +32,9 @@
+ - timestamp: '2026-04-26T04:54:19.839959+00:00'
+   curator: audit_curate_unmapped_kgm_antibiotics
+   action: CREATED_FROM_KGM_PLACEHOLDER
+-  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:ardacin_a; OLS search across
+-    CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier kept as kgmicrobe.compound: until upstream
+-    curation finds a CHEBI/NCIT primary.'
++  changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:ardacin_a;
++    OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier
++    kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-01T07:35:32.240770+00:00'
+@@ -53,12 +55,26 @@
+ - timestamp: '2026-11-08T05:29:01.443067+00:00'
+   curator: all-unmatched-worker-03/chemicals
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: 'Promote registry identity to A-specific CAS95935-21-0 from official GSRS; supersede former
+-    NCIT Ardacin complex target with broader molecular class CHEBI:24396 glycopeptide. No factor B/C or
+-    whole-complex synonym added; external source-ID redirect must be coordinated. Source binding: frozen
+-    preliminary-v5/shards/shard-03.json cases[185] case_id=KG_CASE:efd8bd23e7c441839f97108af28986be814d9916d75cfd76686866762a3c9e5c;
+-    source=metatraits; source_case_id=kgmicrobe.compound:ardacin_a; Primary evidence: https://gsrs.ncats.nih.gov/api/v1/substances/572P13F83X?view=full;
+-    Primary evidence: https://pubmed.ncbi.nlm.nih.gov/4019308/; Primary evidence: https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf'
++  changes: 'Promote registry identity to A-specific CAS95935-21-0 from official GSRS;
++    supersede former NCIT Ardacin complex target with broader molecular class CHEBI:24396
++    glycopeptide. No factor B/C or whole-complex synonym added; external source-ID
++    redirect must be coordinated. Source binding: frozen preliminary-v5/shards/shard-03.json
++    cases[185] case_id=KG_CASE:efd8bd23e7c441839f97108af28986be814d9916d75cfd76686866762a3c9e5c;
++    source=metatraits; source_case_id=kgmicrobe.compound:ardacin_a; Primary evidence:
++    https://gsrs.ncats.nih.gov/api/v1/substances/572P13F83X?view=full; Primary evidence:
++    https://pubmed.ncbi.nlm.nih.gov/4019308/; Primary evidence: https://www.jstage.jst.go.jp/article/antibiotics1968/39/5/39_5_652/_pdf'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++- timestamp: '2026-11-08T08:16:40.536886+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-166. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true

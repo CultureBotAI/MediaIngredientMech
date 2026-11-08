@@ -1,0 +1,64 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/double_distilled_water.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-double_distilled_water.yaml
+@@ -3,12 +3,12 @@
+ synonyms:
+ - synonym_text: Double-distilled water
+   synonym_type: RAW_TEXT
+-  source: MediaDive ingredient1021; explicit double-distilled water material alias. Purified,
+-    tap, filtered or anaerobic variants require separate scope assessment.
++  source: MediaDive ingredient1021; explicit double-distilled water material alias.
++    Purified, tap, filtered or anaerobic variants require separate scope assessment.
+ - synonym_text: Double distilled water
+   synonym_type: RAW_TEXT
+-  source: MediaDive ingredient1021; explicit double-distilled water material alias. Purified,
+-    tap, filtered or anaerobic variants require separate scope assessment.
++  source: MediaDive ingredient1021; explicit double-distilled water material alias.
++    Purified, tap, filtered or anaerobic variants require separate scope assessment.
+ mapping_status: MAPPED
+ ingredient_type: SINGLE_INGREDIENT
+ ontology_mapping:
+@@ -17,20 +17,34 @@
+   ontology_source: CHEBI
+   mapping_quality: NARROW_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http://purl.obolibrary.org/obo/CHEBI_15377
+-    notes: Molecular water parent only; double-distilled supplied material retains local identity.
+-notes: Water preparation grade produced by double distillation, retained distinct from the
+-  existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT names the water
+-  ingredient and does not assert an exact purity specification. Chemical water is only a broad
+-  parent; do not import filtered/anaerobic/tap-water variants.
++    notes: Molecular water parent only; double-distilled supplied material retains
++      local identity.
++notes: Water preparation grade produced by double distillation, retained distinct
++  from the existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT
++  names the water ingredient and does not assert an exact purity specification. Chemical
++  water is only a broad parent; do not import filtered/anaerobic/tap-water variants.
+ curation_history:
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: Water preparation grade produced by double distillation, retained distinct from
+-    the existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT names the
+-    water ingredient and does not assert an exact purity specification. Chemical water is
+-    only a broad parent; do not import filtered/anaerobic/tap-water variants.
++  changes: Water preparation grade produced by double distillation, retained distinct
++    from the existing distilled-water owner and its REJECTED_LABEL. SINGLE_INGREDIENT
++    names the water ingredient and does not assert an exact purity specification.
++    Chemical water is only a broad parent; do not import filtered/anaerobic/tap-water
++    variants.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.567701+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-181. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

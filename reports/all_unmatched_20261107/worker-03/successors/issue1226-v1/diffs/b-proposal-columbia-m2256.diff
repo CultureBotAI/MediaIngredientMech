@@ -1,0 +1,75 @@
+--- reports/all_unmatched_20261107/worker-03/broths/proposed/Columbia_Broth_BBL_TOGO_M2256.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-columbia-m2256.yaml
+@@ -1,9 +1,10 @@
+ preferred_term: Columbia broth BBL formulation(TOGO M2256)
+ ingredient_type: NAMED_MEDIUM
+-notes: TOGO M2256 explicitly names BBL Columbia broth and provides its12-component basal subformula. NAD0.01%
+-  andCaCl225mM are parent supplements and excluded here. This record denotes the source-defined basal
+-  formulation, not every product named Columbia broth. The broad raw label Columbia broth is provenance-only.
+-  Source quantities are retained even though their sum35.01g is rounded to35g for the powder dose. Formula
++notes: TOGO M2256 explicitly names BBL Columbia broth and provides its12-component
++  basal subformula. NAD0.01% andCaCl225mM are parent supplements and excluded here.
++  This record denotes the source-defined basal formulation, not every product named
++  Columbia broth. The broad raw label Columbia broth is provenance-only. Source quantities
++  are retained even though their sum35.01g is rounded to35g for the powder dose. Formula
+   version/catalog remains unasserted.
+ supplied_form:
+ - name: Columbia broth BBL formulation(TOGO M2256)
+@@ -21,11 +22,12 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2256
+-    notes: TOGO M2256 explicitly names BBL Columbia broth and provides its12-component basal subformula.
+-      NAD0.01% andCaCl225mM are parent supplements and excluded here. This record denotes the source-defined
+-      basal formulation, not every product named Columbia broth.
++    notes: TOGO M2256 explicitly names BBL Columbia broth and provides its12-component
++      basal subformula. NAD0.01% andCaCl225mM are parent supplements and excluded
++      here. This record denotes the source-defined basal formulation, not every product
++      named Columbia broth.
+ components:
+ - component_name: Yeast Extract
+   reference_scope: UNMAPPED
+@@ -82,17 +84,31 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2256
+     source_record: Columbia broth BBL formulation(TOGO M2256)
+-    notes: TOGO M2256 explicitly names BBL Columbia broth and provides its12-component basal subformula.
+-      NAD0.01% andCaCl225mM are parent supplements and excluded here. This record denotes the source-defined
+-      basal formulation, not every product named Columbia broth.
+-  notes: Literal constituent names, without asserted chemical identifiers. Amounts are per litre of reconstituted
+-    broth; water is preparation solvent, not dry product constituent.
++    notes: TOGO M2256 explicitly names BBL Columbia broth and provides its12-component
++      basal subformula. NAD0.01% andCaCl225mM are parent supplements and excluded
++      here. This record denotes the source-defined basal formulation, not every product
++      named Columbia broth.
++  notes: Literal constituent names, without asserted chemical identifiers. Amounts
++    are per litre of reconstituted broth; water is preparation solvent, not dry product
++    constituent.
+ curation_history:
+ - timestamp: '2026-11-08T05:21:23.584872+00:00'
+   curator: codex-worker03-broths-source-review
+   action: ANNOTATED
+-  changes: Proposed source-specific preparation after primary-source follow-up. TOGO M2256 explicitly
+-    names BBL Columbia broth and provides its12-component basal subformula. NAD0.01% andCaCl225mM are
+-    parent supplements and excluded here. This record denotes the source-defined basal formulation, not
+-    every product named Columbia broth.
++  changes: Proposed source-specific preparation after primary-source follow-up. TOGO
++    M2256 explicitly names BBL Columbia broth and provides its12-component basal subformula.
++    NAD0.01% andCaCl225mM are parent supplements and excluded here. This record denotes
++    the source-defined basal formulation, not every product named Columbia broth.
+   llm_assisted: true
++- timestamp: '2026-11-08T08:16:40.488243+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-146. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

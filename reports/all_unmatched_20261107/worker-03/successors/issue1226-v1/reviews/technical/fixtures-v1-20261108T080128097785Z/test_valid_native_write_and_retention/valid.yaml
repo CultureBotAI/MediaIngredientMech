@@ -1,0 +1,44 @@
+preferred_term: Chopped meat broth filtrate (ATCC1016)
+ingredient_type: UNDEFINED_MIXTURE
+synonyms:
+- synonym_text: Chopped Meat Broth
+  synonym_type: REJECTED_LABEL
+  source: 'ATCC1016: preparation-specific source wording; this broad label is not
+    a global identity alias'
+notes: Preparation-defined filtered beef infusion used in ATCC1016. Source starts
+  with500g fat-free ground beef,1000mL DI water and25mL1NNaOH; boil5minutes, cool,
+  skim fat, cheesecloth-filter, and restore filtrate to1L. Meat particles are retained
+  separately and optional in the completed medium. These starting materials are not
+  asserted as final retained constituents. ATCC1016 adds850mL filtrate; frozen CultureMech850G_PER_L
+  is a unit error. The full recipient medium is not this stock.
+identifier: kgmicrobe.ingredient:chopped_meat_broth_filtrate_atcc1016
+mapping_status: MAPPED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:chopped_meat_broth_filtrate_atcc1016
+  ontology_label: Chopped meat broth filtrate (ATCC1016)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/~/media/D452A885A4FB4443A9A107F6E539FA37.ashx
+    notes: The primary recipe unambiguously defines this filtered preparation. No
+      exact generic meat or cooked-meat identifier is asserted.
+curation_history:
+- timestamp: '2026-11-08T05:21:23.584872+00:00'
+  curator: codex-worker03-broths-source-review
+  action: ANNOTATED
+  changes: Proposed source-defined filtrate identity; preserve optional meat-particle
+    distinction and raw source wording as nonresolving context.
+  llm_assisted: true
+- timestamp: '2026-11-08T08:01:28.262832+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-134. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

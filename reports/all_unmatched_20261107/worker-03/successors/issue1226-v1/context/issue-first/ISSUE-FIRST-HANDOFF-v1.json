@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T08:04:18.947223+00:00",
+  "status": "REPAIR_AWAITING_COORDINATOR_ISSUE_FIRST_TRACKING",
+  "head": "f6bfbf3c185f705484aa106405f813209146c766",
+  "task_hash": "6c59c57bf48dc8cff5ff13d91190456d0e017e1883b24b4280dd3323ed7d32c3",
+  "allowlist_hash": "9b8283520ab7f9911f4997d62a85aea798f634bd8e8ed69c60dd77a26cdeec9d",
+  "verified_inputs": {
+    "cases": 188,
+    "proposals": 74,
+    "current_evidence": 863,
+    "allowlisted_objects": 49,
+    "inherited_manual_excluded": 3,
+    "already_correct_oxoid_entries": 2
+  },
+  "finding": {
+    "id": "W03-PROV-GUARD-001",
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/w03-provenance-successor-v1/technical/finding-W03-PROV-GUARD-001-v1.json",
+    "sha256": "52fe56a0071259a888429d7addbedbf5af857da5fc627ed0bd0c9035a9f3ad8f",
+    "writer_sha256": "d15001850b076f124770cf470904c2044790899299a2ba8d1ac5014ac6e01c90",
+    "controls": "36run,35pass,oneconfirmed uncheckedprepared.old_bytes failure; original23-controlfailurealso preserved",
+    "impact": "Private control fixture generated a false beforehash in its bridge. No genuine metadata successor, maintained file or published artifact was changed.",
+    "proposed_bounded_fix": "Immutable v2 helper: require prepared.old_bytes equals freshly validated source bytes BEFORE serialization; derive before-hash from that validated source. Rerun the exact failure controls and complete retained-field proof."
+  },
+  "real_corrected_payloads_written": 0,
+  "commit_or_push_this_task": false,
+  "active_published_head_unchanged": true,
+  "next_step": "Coordinator files/deduplicates actual finding and supplies tracking reference before helper repair; ordinary publication authorization remains valid after correction, native checks and separate exact final review.",
+  "unaffected_work_completed": [
+    "Independent49full-object,parent,beforeimage,history andauthor reconstruction",
+    "All74publishedpayload and122packetmember rehash",
+    "Native in-memoryprevalidation49postimages",
+    "Case preservation strategy supports all188decisionobjectsbyte-identical",
+    "Meaningful36refusalcontrols and3060maintained/3028ignored-inclusiveinput-preservationchecks"
+  ],
+  "reviewer_scopes": {
+    "provenance_review": "All49provenance/beforebindings andall74currentinputs; newsuccessor notyetreviewed",
+    "provenance_controls": "Privateguardcontrols andmaintainedinventory; foundoneprivatehelper defect"
+  },
+  "limits": "No scientific, role, whole-owner or supported-export approval. Root-owned1245 andcoordinator37candidates untouched."
+}

@@ -1,0 +1,69 @@
+identifier: kgmicrobe.ingredient:jcm1229_1272_solution_a
+preferred_term: JCM1229 and JCM1272 Solution A
+synonyms:
+- synonym_text: Solution A
+  synonym_type: REJECTED_LABEL
+  source: Frozen worker-03 case CM_NAME:80e5c7a588b15ce98b46cc30b94a6fa2d25a940ecc71ba04170bfb85ef58961f;
+    retained provenance only, requires source-context routing.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm1229_1272_solution_a
+  ontology_label: JCM1229 and JCM1272 Solution A
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/solution/5359
+    notes: Identical source-specific Solution A components in MediaDive S5359/S5414.
+      Keep source batch amounts and reject the generic display name as a global resolving
+      synonym.
+notes: Identical source-specific Solution A components in MediaDive S5359/S5414. Keep
+  source batch amounts and reject the generic display name as a global resolving synonym.
+curation_history:
+- timestamp: '2026-11-08T05:20:19.103865+00:00'
+  curator: all-unmatched-worker-03/materials
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Identical source-specific Solution A components in MediaDive S5359/S5414.
+    Keep source batch amounts and reject the generic display name as a global resolving
+    synonym.
+  llm_assisted: true
+  new_status: MAPPED
+- timestamp: '2026-11-08T08:16:40.545757+00:00'
+  curator: codex-worker03 /root provenance successor
+  action: CORRECTED_EVIDENCE_PROVENANCE
+  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
+    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
+    exact allowlist provenance-flag-171. The original assertion was agent-authored
+    interpretation, not human-supplied evidence. Preserve its source, notes, complete
+    prior history and all scientific fields/holds. Report-only proposal; no identity,
+    role or export reapproval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+components:
+- component_name: MgSO4 x 7 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.123'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: CaCl2 x 2 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.015'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/5359
+    source_record: JCM1229 and JCM1272 Solution A
+    notes: Identical source-specific Solution A components in MediaDive S5359/S5414.
+      Keep source batch amounts and reject the generic display name as a global resolving
+      synonym.
+  notes: Component identifiers deliberately remain unresolved; chemical forms and
+    source batch units are transcribed without lexical identity promotion.

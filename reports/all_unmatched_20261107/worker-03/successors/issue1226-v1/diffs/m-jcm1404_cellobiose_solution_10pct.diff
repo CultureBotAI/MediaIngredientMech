@@ -1,0 +1,66 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/jcm1404_cellobiose_solution_10pct.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1404_cellobiose_solution_10pct.yaml
+@@ -14,23 +14,38 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1404
+-    notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+-      Percent basis and solvent are unspecified. Retain the literal percentage in this note;
+-      do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
+-notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+-  Percent basis and solvent are unspecified. Retain the literal percentage in this note; do
+-  not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
++    notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution
++      added at10ml. Percent basis and solvent are unspecified. Retain the literal
++      percentage in this note; do not infer g/L, hydrate, solvent identity or a recipe
++      for preparing the stock.
++notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added
++  at10ml. Percent basis and solvent are unspecified. Retain the literal percentage
++  in this note; do not infer g/L, hydrate, solvent identity or a recipe for preparing
++  the stock.
+ curation_history:
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+-    Percent basis and solvent are unspecified. Retain the literal percentage in this note;
+-    do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
++  changes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution
++    added at10ml. Percent basis and solvent are unspecified. Retain the literal percentage
++    in this note; do not infer g/L, hydrate, solvent identity or a recipe for preparing
++    the stock.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.538666+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-167. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ components:
+ - component_name: Cellobiose
+   reference_scope: UNMAPPED
+@@ -41,8 +56,9 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1404
+     source_record: JCM1404 10% cellobiose solution
+-    notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution added at10ml.
+-      Percent basis and solvent are unspecified. Retain the literal percentage in this note;
+-      do not infer g/L, hydrate, solvent identity or a recipe for preparing the stock.
+-  notes: Component identifiers deliberately remain unresolved; chemical forms and source batch
+-    units are transcribed without lexical identity promotion.
++    notes: JCM1404 explicitly specifies filter-sterilized 10% cellobiose solution
++      added at10ml. Percent basis and solvent are unspecified. Retain the literal
++      percentage in this note; do not infer g/L, hydrate, solvent identity or a recipe
++      for preparing the stock.
++  notes: Component identifiers deliberately remain unresolved; chemical forms and
++    source batch units are transcribed without lexical identity promotion.

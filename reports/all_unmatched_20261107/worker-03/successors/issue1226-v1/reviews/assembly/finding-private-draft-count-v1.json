@@ -1,0 +1,35 @@
+{
+  "finding_id": "W03-ASSEMBLY-DRAFT-COUNT-001",
+  "at": "2026-11-08T08:21:44.066161+00:00",
+  "reviewer": "/root/provenance_assembly",
+  "status": "private_review_draft_count_error_preserved_pending_parent_direction",
+  "location": "review.yaml checks[check_id=independent-core].summary",
+  "incorrect_assertion": "15702 regular tracked files plus1 tracked symlink",
+  "actual_evidence": {
+    "path": "final-core-verification-v1.json",
+    "sha256": "69c5dee18361f8400be96802b9362a0de19e35056a425b8cce99c328906901c2",
+    "original_tracked_blobs_unchanged": 15703,
+    "original_tracked_regular_files": 15701,
+    "original_tracked_symlinks": 2,
+    "symlinks": [
+      {
+        "path": ".agents/skills",
+        "mode": "120000",
+        "git_blob": "454b8427cd757f30dc7fdb9a325d19c399770417",
+        "sha256": "722a918d6dee037f575ef1bf214371f14f77047e71bd75cff39f182b2ba9f6b0",
+        "bytes": 17
+      },
+      {
+        "path": "CLAUDE.md",
+        "mode": "120000",
+        "git_blob": "47dc3e3d863cfb5727b87d785d09abf9743c0a72",
+        "sha256": "a54ff182c7e8acf56acfd6e4b9c3ff41e2c41a31c9b211b2deb9df75d9a478f9",
+        "bytes": 9
+      }
+    ]
+  },
+  "scope": "Private reviewer output only; exact selector, payloads, proof rows and maintained files unaffected. No publication or scientific approval based on this draft.",
+  "proposed_bounded_fix": "Preserve v1 review YAML/Markdown and emitter. Emit linked immutable v2 using exact computed counts rather than hardcoding; validate/render/current-source recheck again.",
+  "original_review_sha256": "cb5276968ec13a85d300555ae439f7861fd839d1ea304a31c8f80c689c51098f",
+  "original_markdown_sha256": "d6f0167a3ec1212932a2905712c3176572c45b10b951e50ec52abca8c1452935"
+}

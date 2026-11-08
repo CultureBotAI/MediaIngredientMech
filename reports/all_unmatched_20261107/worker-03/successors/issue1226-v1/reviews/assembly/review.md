@@ -1,0 +1,649 @@
+# Independent exact W03 #1226/#1246 successor assembly review
+
+- Review: 20261108T082127Z-w03-provenance-successor-assembly-v1
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T08:17:05.084428Z
+- Finished UTC: 2026-11-08T08:21:27.013400Z
+- Reviewer: /root/provenance_assembly (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: false
+
+## Summary
+
+The exact complete selector preserves all188 source-decision bytes, updates49 of74 selected payloads only by one mapping-evidence type plus one truthful appended event each, and retains863 predecessor evidence objects with5 new metadata-review receipts. All25 unchanged payloads, three inherited manual objects, two correct Oxoid objects and authentic new-owner/retirement provenance survive. The v2 private writer binds old bytes before writing. No new confirmed finding in this bounded review; final HANDOFF/manifest/transport and eventual committed/remote bytes require detached verification.
+
+## Scope And Provenance
+
+Four exact report interfaces covering all188 source decisions, all74 payload proposals and868 evidence entries, plus the task-private helper repair. This is metadata/preservation assembly review, not scientific reassessment.
+
+Selection: Entire final issue1226-v1 core at declared hashes; no sampling. Full per-case and per-payload accounting retained in final-core-verification-v1.json.
+Coverage: full; 4 reviewed / 4 in the declared population.
+Source: working_tree at Git base f6bfbf3c185f705484aa106405f813209146c766.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| decisions | reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json | source | All 188 unchanged source decisions |
+| proposals | reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json | source | All 74 selected proposals and exact review bindings |
+| evidence | reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json | source | All 868 evidence entries and exact captures |
+| helper | .temp/w03-provenance-successor-v1/provenance_writer_v2.py | source | Exact immutable private helper-v2 #1246 repair |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Full exact core, capture and baseline preservation | passed | True | decisions, proposals, evidence | 188 cases,74 proposals,868 captures;863 old evidence objects preserved;15702 regular tracked files plus1 tracked symlink and3028 ignored-inclusive maintained files unchanged. |
+| Full payload rollback and exclusion check | passed | True | proposals | 49 enum substitutions plus49 append-only history objects;25 byte-identical; all44 issue-first checkpoint members retained. |
+| Independent exact code and peer-control adjudication | passed | True | helper | All36 original test ASTs unchanged; explicit37th control establishes no native write and no output on before-byte mismatch. Direct code inspection confirms receipt uses validated bytes. |
+
+## Scientific And Domain Assessments
+
+### Historical source-review and holds retained
+
+scope: supported. Targets: decisions.
+
+Every source decision and entire decisions file are byte-identical. The68 cases linking changed payloads lack an old reviewed_after_sha256 claim; their actual source-scoped historical reviews remain valid as history, not new payload approval.
+
+### Narrow correction and authentic review bindings
+
+provenance: supported. Targets: proposals.
+
+All49 changed proposals bind actual new bytes and separate provenance-only review; full old proposal/reviewer objects remain in bridge. Every other field survives full rollback. Three human manual objects and unchanged genuine new-owner Oxoid/nullbefore remain excluded; retired mixed RCM is inactive.
+
+### Complete evidence/accounting transport inputs
+
+consistency: supported. Targets: evidence.
+
+All868 evidence capture bytes resolve under declared roots and match pinned hashes, with863 unchanged predecessor objects and5 distinct new provenance/validation objects. No original source capture is repurposed as new scientific inspection.
+
+### Issue-first private helper repair #1246
+
+provenance: supported. Targets: helper.
+
+Fresh source bytes are validated, compared to prepared.old_bytes before native writing, and used for receipt before hash. Original helper,23/36 failed runs and false receipt fixture remain immutable;37 meaningful peer controls pass.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| core | .temp/w03-provenance-successor-v1/assembly/final-core-verification-v1.json; Entire bounded receipt and its per-target rows | supports | Independent full selector and exact capture verification, all188 case rows, all74 proposal rows and all868 evidence rows; original tracked and ignored-inclusive maintained files preserved. |
+| payloads | .temp/w03-provenance-successor-v1/assembly/payload-scope-verification-v1.json; Entire bounded receipt and its per-target rows | supports | Independent full-value rollback proves exactly49 enum replacements and49 history appends;25 byte-identical payloads and all exclusions preserved. |
+| guard | .temp/w03-provenance-successor-v1/assembly/helper-repair-adjudication-v1.json; Entire bounded receipt and its per-target rows | supports | Direct code review plus original36 test-function AST retention and37-test peer execution supports exact private helper repair. |
+| peer | reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/reviews/provenance/payload-phase-v2/HANDOFF.json; Entire bounded receipt and its per-target rows | supports | Separate provenance reviewer assessed all49 actual corrected payloads with scientific_review=false; this receipt is correctly bound in changed proposal metadata. |
+| technical | reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/reviews/technical/HANDOFF-v1.json; Entire bounded receipt and its per-target rows | supports | Separate technical reviewer checked all74 native schema records and unchanged2996-record partonomy overlay, meaningful negative reference control, guards and original baseline. |
+
+## Limits And Additional Notes
+
+- No scientific identity/form/stock/product/component/quantity/role or supported-export approval is renewed. This metadata review does not claim unread primary papers were inspected.
+- All W03-origin scientific rows are author-related at campaign level; no independent scientific self-approval or final cross-shard merge approval follows.
+- Native schema/partonomy PASS supplies structural evidence only. Exact field equality establishes retention, not truth of inherited chemistry.
+- Native YAML serialization reflows scalars in changed payloads. Retention is semantic object/history-prefix equality for49; exact bytes are retained for25 unaffected payloads.
+- Helper boundary assumes a single-author private task; no atomicity or hostile-concurrency guarantee.
+- Ignored files were included within data/ingredients,data/curated,mappings. No absence claim for historical/private files outside those roots; credentials were not scanned.
+- Native review pair is validated/rendered and virtually parsed under canonical path in the allowed private review directory. Canonical save and repository-wide review scan are not performed because this task permits writes only under this private output directory.
+- Issue1246 repair is supported only for exact helper v2; issue1226 scope is49 W03 entries only. No GitHub issue closure or other workers correction is claimed.
+- Final seal and publication checks remain separate; this review does not assert that candidate bytes are already committed.
+- Preserved reviewer emission error: initial inline checkpoint verification used wrong symlink descriptor key and produced no proof; corrected read-only check was rerun successfully. No source/payload mutation or failed test hidden.
+- The final-core diagnostic review_scope summary key is null where the proposal uses review_scope rather than scope; the actual full independent_review object was read and scientific_review=false explicitly verified. This does not change the selector or review metadata.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T082127Z-w03-provenance-successor-assembly-v1
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: 'Independent exact W03 #1226/#1246 successor assembly review'
+started_at: '2026-11-08T08:17:05.084428Z'
+finished_at: '2026-11-08T08:21:27.013400Z'
+reviewer:
+  identity: /root/provenance_assembly
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process agent with no authorship of the successor,
+    private writer, source proposals or other reviewers receipts. Independently read
+    task, schema, helper diff, actual payloads and exact final core; executed separate
+    full-value/capture/accounting checks. No source science or own-origin approval
+    is granted.
+skill: reconcile-review-records
+completion: completed
+verdict: pass_with_limitations
+native_verdict: EXACT_CORE_AND_PAYLOAD_METADATA_SUCCESSOR_ACCEPTABLE_PENDING_DETACHED_SEAL_VERIFICATION
+scientific_review: false
+summary: The exact complete selector preserves all188 source-decision bytes, updates49
+  of74 selected payloads only by one mapping-evidence type plus one truthful appended
+  event each, and retains863 predecessor evidence objects with5 new metadata-review
+  receipts. All25 unchanged payloads, three inherited manual objects, two correct
+  Oxoid objects and authentic new-owner/retirement provenance survive. The v2 private
+  writer binds old bytes before writing. No new confirmed finding in this bounded
+  review; final HANDOFF/manifest/transport and eventual committed/remote bytes require
+  detached verification.
+source:
+  git_revision: f6bfbf3c185f705484aa106405f813209146c766
+  state: working_tree
+  inputs:
+  - path: .claude/skills/reconcile-review-records/SKILL.md
+    sha256: b8c3e3fdb31e58a49343f20b11c7a1c2a3616f16ef36601ccd072e2693031474
+    role: context
+  - path: .temp/w03-provenance-successor-v1/assembly/final-core-verification-v1.json
+    sha256: 69c5dee18361f8400be96802b9362a0de19e35056a425b8cce99c328906901c2
+    role: context
+  - path: .temp/w03-provenance-successor-v1/assembly/helper-repair-adjudication-v1.json
+    sha256: ddb9ed86ea9a80647a04bcbdf9c02e61b6ece1274655fce575cd88cad78f4ad9
+    role: context
+  - path: .temp/w03-provenance-successor-v1/assembly/payload-scope-verification-v1.json
+    sha256: 1caaf845bb574e176697fdbdcaa81508e7733f38a2c430440ad987682dd634b0
+    role: context
+  - path: .temp/w03-provenance-successor-v1/assembly/preflight-inputs-v1.json
+    sha256: d4302cdbb8c0453f8be94877acd7638476d8f1dd48fec56fabfb622458368adf
+    role: context
+  - path: .temp/w03-provenance-successor-v1/assembly/remote-predecessor-observation-v1.json
+    sha256: c4d2311a523e7e0cb5d3b0a97d32e6c762d7266eb055709ab0563a1222fab678
+    role: context
+  - path: .temp/w03-provenance-successor-v1/provenance_writer_v2.py
+    sha256: 3b15bce56791af306b5db44f44b73d489f5203a23f36f4959084e10a402fc66a
+    role: target
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/broths/proposed/MEM_Alpha_Modification.yaml
+    sha256: cb786b0cee0e36206e4847656c97422f79f07929f85943dee175e881c4527954
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/broths/proposed/Marine_Broth_2216.yaml
+    sha256: bd529989e05657d43ff31d900f884346604655d0436c84d851eeee0474187933
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/activated-charcoal.yaml
+    sha256: a002c69ae08e1f519f26bbf68ea788aeaab7961f85a19dd3b8810f9cd612ec54
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/butyric-acid.yaml
+    sha256: 9cfca18863426d73b8c357c95f4ab928685bb8435d0ab8842ce3c12ffc26652a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/calcium-dihydrate.yaml
+    sha256: 7964a10623b311704ab0b077c4ece8b728ec5f7e962ee461fb392dad08c1407c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/cephamycin-parent-chemistry.yaml
+    sha256: 705c3fb16a7cf8b593bc48230832bd3e39a9491d294c65ced79961480db2233a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/citric-monohydrate-boundary.yaml
+    sha256: 0e8fa07f892b40b7713674373854f3a473285fe7d5c7a246a96bace627f76679
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/cobalt-heptahydrate.yaml
+    sha256: e923ecf9243a53ed1f084953b5cd1c24540dac2c219e3db10685c68635e12f5c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/coenzyme-m.yaml
+    sha256: 3d9edcac7300d7e5e19c4e6f099e4ee3fbce65a60a07a54566e06d91bf641f78
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/copper-trihydrate-alias.yaml
+    sha256: 58f5e346f53c18d5285ae91ddade0a65d4fe1736eade03b84d9c9b43d1150986
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/dl-methylbutyric.yaml
+    sha256: 3703b4c5f4dbb1a4810b44f596c032a710acdbdf3a53164b0e23efdfe4f53910
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/generic-polymer-alias.yaml
+    sha256: d78d47931757585415d9afa72a2963a88a44eff8bbd511060fafd4846ad6955f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/generic-polymer-tombstone.yaml
+    sha256: 5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/hepes-freeacid.yaml
+    sha256: 7718cd8c62430e5625d9d5be2bba79b04452f59ce05c873d1e9ab5902f3220f2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/iron-hexahydrate.yaml
+    sha256: 1fed3231b6c3b777c4c469d3d4e2b87be02df38e9923424eb8fe71865417fff6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/isobutyrate-alias.yaml
+    sha256: bed52b0ea1a90c9dd0aceca3d44cbf3c2d5b0e1570c636003cb784238133358a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/phosphate-dodecahydrate.yaml
+    sha256: 6a31d80feef598f83c13c6cff4a64a3b79a667aadad900e005ed6c8357c07ebd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-tombstone.yaml
+    sha256: 64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/sulfate-malformed-alias.yaml
+    sha256: 7aaabd05f14689648005b5557134ac022227b304e104831469cc1c74e9648ee6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/chemicals/proposals/vanadate-alias.yaml
+    sha256: d831e09ad4dc57fbbd1ac2342d7c06e86a91c17a08c0b95f2a42cf6d334a2201
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/materials/proposed-owners/arabinan_source_alias.yaml
+    sha256: 0e474b2fcb1d81b1dfc6b8fe95d9e696ffcd2f1ca3138f383f59db51513bbccd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/materials/proposed-owners/casitone_catalog_alias.yaml
+    sha256: 3a374aad6be3f58551a10ffa66acc524aff10b210ac3411e1e738dd340859dac
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/materials/proposed-owners/desiccated_ox_bile_label.yaml
+    sha256: a9920ad9e47fcd5a4b43eba2df8d53892ee7bd742bbf14f9172446fb02a4b26c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/materials/proposed-owners/metals44_source_aliases.yaml
+    sha256: 9154cd4815df6c7cd368fb77dd4f034edaee7cae4f0c799cb8dcdc0bd70621d9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1224-v1/candidate/reinforced_clostridial_medium_oxoid_cm0149.yaml
+    sha256: 1ec7554da19d5a6ab2259ee79d178a95511a923e611f4fc176af498248ab76ae
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json
+    sha256: a9984b5afbab4eaecffc8fe73ff4e0b217974626f8cb96fec469980b6a5dd220
+    role: target
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json
+    sha256: 831b318d819c7b7050274c57e5d707bbc37959156f9745b761906adf7c7d6878
+    role: target
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payload-bridge.json
+    sha256: d3f027e825894f029f0e26ba6f352fe6c6e2ab17aa87bee2caeff714d89e4dce
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd211065.yaml
+    sha256: 9cdbdd9664825f9376bc32992ebe635113c3642efc17e3f8a1d8311eceda0860
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd211443.yaml
+    sha256: 48d42e4316a6837b3ef67889dbbf29920a6502936123f7902b4414d51d990630
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd238400.yaml
+    sha256: 2692a780ec91a7d095c5edcd807a6134f520e09d5819d843690d2265e4c92f18
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-chopped-filtrate.yaml
+    sha256: d1b0ba5989f8f28e4c99712976811f1ade025813a5712fc78bd83ed7a4ceaa73
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-cm0643.yaml
+    sha256: bea581a9e9612b3a346d1208a52659083d28b202823f746cfae1f4d3a5e154da
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-columbia-m2256.yaml
+    sha256: 03bc5b35e3c2d8fc79dd356fa68edf8ca133c4ef6329ebadac865895c29186fe
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-daigo-r2a.yaml
+    sha256: 702e7e26aa73ea24b188c4fe820f0a95f85012bc331140b6b6952e7cc1209215
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-difco-nutrient.yaml
+    sha256: 3e6d42d7f8daeef51a40aac7f5ed1d1ef88e50898ef49a07bc9642304013a17c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-gam_broth_mod_powder.yaml
+    sha256: fbc7535284e5d3c1086419ff3c0b81381b000ad7a3de65ebc5b618b24f12e2c2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-gam_broth_powder.yaml
+    sha256: 1bb7892f70748469bf9bc5e6399affa070f875da5ba21b24e35424c08c916de4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-kyokuto-551024807.yaml
+    sha256: 741dc3dda8dc21710911d861e9ee8d56c0247086acf275ddd9b2498cf5418a2d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-liver-filtrate.yaml
+    sha256: 1ac6ebfa023b4b04ad6bdbf9a65af68ec580fe97a5d74a2a26b3bd5d828e6b59
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-oxoid-cm0077.yaml
+    sha256: ff7936d0b06de26e1bd3105165f358fc62ea59ff44db79aff131668e49348b30
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-pplo-211458.yaml
+    sha256: 4f9753dfc6da30117aadf5e1bc10ccdd2346022ab18d9c02ebe4e730c4cd6d76
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-pplo-255420.yaml
+    sha256: 366e7d33f7217b698ded324c49762e94fa3a138f675fa8eafc70201abba281d1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-standard-i.yaml
+    sha256: f6a40c5e28a052c73f785603d5a9356fee7dbfe1c3c058854748dd0dd011e6ab
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-veal_infusion_broth.yaml
+    sha256: 2012841336c778c7a16626f7ba6195f485f50f2cf926a62c5c911c3ce68c4325
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-5-hydroxyectoine.yaml
+    sha256: 189a37245cad882a4e75dc219c4b0188ceba72b2f2d47b9a57e78b220a5935d7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-ammonium-metavanadate.yaml
+    sha256: 33a18af336f4b904ccd6546c7648b89cf32d5b540dedda0934b2a1bc6f7d5621
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-ardacin-a-cas.yaml
+    sha256: ec6e62d2de812314c11cda0e845b4c2ab82ae515542cfe76e5fd8e224db7b774
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-citric-monohydrate-48gl-stock.yaml
+    sha256: b2e6087cda4519ef7a58adc509566a85d4ea93f69c36b778db93657fbbfb00e1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-eddha-free-acid.yaml
+    sha256: ac8c27e28a389c7a9bc041631944dd2b11cd5b34c83835fde4740e977caad60b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-01n-stock.yaml
+    sha256: 91fbc818e2ba0959c11ba6d8c668640c3d768a7e9b88e6149966c8f991cbdb3d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-1n-stock.yaml
+    sha256: fed352f8d2a87b882d22f957be635ea915d67e17299c23664fad2a1db6a3321b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-hcl-6n-stock.yaml
+    sha256: 807dafed5b46b7e17845eb426ab02e91122e1102a53a7291ea7acb9d223f47fa
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-01m-stock.yaml
+    sha256: bcdce1adb23ab1b84ff01543f6e1de7ccf4de33eb4c27ff365aed3a01c813402
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-10m-stock.yaml
+    sha256: 4f5fc837d89f052a20ed02c643d31a982979aa997b2877073b91251362d52f82
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-naoh-1m-stock.yaml
+    sha256: d6e626e5da55f08710b3fa8c72a04a4091a59fd8e330961358a7498c9a4796ef
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-r-polymer-identity.yaml
+    sha256: ef3db5d9297e6363f3b7ea4668307f9de1ceb320a4de2771d44a7722746ca5e7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-resorcinol.yaml
+    sha256: 72fcec0dae79b7f15c179232f0eb38f7930153de3ee5cc76e0862220e3a7dab4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-selenate-1mm-stock.yaml
+    sha256: 39253ebdb3c684874e88a71ad57179e1f1b7d6b41497a5125dbf5ebd2760e7a6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-silicate-nonahydrate-464gl-stock.yaml
+    sha256: dba986c1be7e828f887d7ab54736500f00948f893f3ed4f6f5a07214144671a6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/c-silicate-pentahydrate-212gl-stock.yaml
+    sha256: 8bb4ddb6bc45d6e680dbc67f90beedc36123ce33ec310a6f08814b6282ceb4af
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-double_distilled_water.yaml
+    sha256: 29db3b6251f857902788ea665f323e0d9f765fd3ead244fafca78cf99bf880cc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz1245_sugar_stock_s5688.yaml
+    sha256: 8a2822fefe25e6ead0042daa19d50f908854f9b9431a3255d0802c3ddd888174
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-dsmz_s777_selenite_tungstate_solution.yaml
+    sha256: 6f14fbdad982370cd43c59facc6fd7b1e874208ea1de00b2f2b2898b7ad1f42c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1199_phosphates_solution.yaml
+    sha256: d2ebf3d2cddcebc86e4c57ccda599ea35c9bbdce6061d6656e44018e25996ce8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1229_1272_solution_a.yaml
+    sha256: 8f09736b7c330159de79fbcf9270def057b0f241270f5ca2d72362e88cc3d7be
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1231_bg_fpc.yaml
+    sha256: 35bf26cc3d414615f1be69635c7d0b5f2cae54baaa4d769ae7e00019a7ea0086
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm133_salt_solution_i.yaml
+    sha256: 365ac2c8e58af57c2108b7f20111801371e3379ffff94a5bc35af36f73b2bfb4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm1404_cellobiose_solution_10pct.yaml
+    sha256: f0a5f05261f7171c7cbbca16ebfa90b0abe2c79716fd2e69d402bd85d448e150
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm431_selenite_tungstate_solution.yaml
+    sha256: 6f00f8ed02e50bf899defdd9e3e19816331ef8c81d807ada2320718c5f3939b3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm537_sugar_solution_250mm.yaml
+    sha256: 2b51641b483aa3169d8ef114f322501cb9e027cff4daa74239f58dbc00ef44b9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm687_methanol_solution.yaml
+    sha256: 9240935daef46ec61f0cc107d6ff790baa687f2d7f2cdb420791bbe48b32680c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-jcm852_se_w_solution.yaml
+    sha256: 6db98a53a6738341011c51aa34b9a9fd32f61157cb2d4e6ad6b68689d3f37cc3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-oxoid_lp0027_liver_digest.yaml
+    sha256: fd8c40b03771ed5430b576924dd2adedd23c55b567afdee1bc29728caaaa9af7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-sugar_beet_molasses_identity.yaml
+    sha256: cc810fca6594ee82deb1c09f56eb59f2fcf0263e1c9c05a6fe3e4f48ca7769c0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-togo_m2596_anaerobic_sludge_supernatant.yaml
+    sha256: 34121252f89191dd256fa5a198203a828080f68e53cb0c0fae85756f68114973
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-tryptic_digest_of_beef_heart.yaml
+    sha256: 9165427d8e72226f24da90a371ed8bfed6b141abf9fc7f968cf27bc356b057db
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json
+    sha256: ff72813743d3c11454e4cb4a68d572b96ebf84348f5fd3fde02649244e05983a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/reviews/provenance/payload-phase-v2/HANDOFF.json
+    sha256: ceadbbead1cbe2be9b4320733a8a9c6fbcd1e11449175a1b70eb58f6b6d13f9f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/reviews/provenance/payload-phase-v2/review.yaml
+    sha256: 368077d64f07cb2a590760d95883c8a93af04bc78487c7f1fa1589fdc59c9887
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/reviews/technical/HANDOFF-v1.json
+    sha256: da60cf37b037e33562eb351f2ecbb1695557e31d2fab9d728fd7f1c59ab25c4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/validation/complete-preservation.json
+    sha256: b8968b6d48e8eef0b70f0dc072fe4f5e59419c427f2e1b1f311d00e2972946cb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/validation/native-payloads.json
+    sha256: 29663f6e91c25c01c1aa16a910d532d567826cb27166922ada084d664e58227f
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: Four exact report interfaces covering all188 source decisions, all74
+    payload proposals and868 evidence entries, plus the task-private helper repair.
+    This is metadata/preservation assembly review, not scientific reassessment.
+  selection: Entire final issue1226-v1 core at declared hashes; no sampling. Full
+    per-case and per-payload accounting retained in final-core-verification-v1.json.
+  coverage: full
+  population_size: 4
+  reviewed_target_ids:
+  - decisions
+  - proposals
+  - evidence
+  - helper
+  exclusions:
+  - target: Scientific validity and whole-owner/role/export/coalescence approval
+    reason: All scientific assertions and existing holds are inherited unchanged;
+      this review has no new primary-source science scope.
+  - target: Final HANDOFF/MANIFEST/SHA256SUMS and future commit/remote head
+    reason: Not yet created at this core review; separate immutable seal/publication
+      receipts required.
+targets:
+- target_id: decisions
+  path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/decisions.json
+  label: All 188 unchanged source decisions
+  kind: source
+  ownership_note: Worker03 report-only selector; no maintained owner application or
+    scientific approval.
+- target_id: proposals
+  path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json
+  label: All 74 selected proposals and exact review bindings
+  kind: source
+  ownership_note: Worker03 report-only selector; no maintained owner application or
+    scientific approval.
+- target_id: evidence
+  path: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/evidence.json
+  label: All 868 evidence entries and exact captures
+  kind: source
+  ownership_note: Worker03 report-only selector; no maintained owner application or
+    scientific approval.
+- target_id: helper
+  path: .temp/w03-provenance-successor-v1/provenance_writer_v2.py
+  label: 'Exact immutable private helper-v2 #1246 repair'
+  kind: source
+  ownership_note: Task-private producer only; native campaign operator and maintained
+    code unchanged.
+checks:
+- check_id: independent-core
+  name: Full exact core, capture and baseline preservation
+  status: passed
+  required: true
+  summary: 188 cases,74 proposals,868 captures;863 old evidence objects preserved;15702
+    regular tracked files plus1 tracked symlink and3028 ignored-inclusive maintained
+    files unchanged.
+  target_ids:
+  - decisions
+  - proposals
+  - evidence
+  command: PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-03/env/bin/python
+    .temp/w03-provenance-successor-v1/assembly/verify_final_core_v1.py reports/all_unmatched_20261107/worker-03/successors/issue1226-v1
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - core
+- check_id: independent-payloads
+  name: Full payload rollback and exclusion check
+  status: passed
+  required: true
+  summary: 49 enum substitutions plus49 append-only history objects;25 byte-identical;
+    all44 issue-first checkpoint members retained.
+  target_ids:
+  - proposals
+  command: PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-03/env/bin/python
+    .temp/w03-provenance-successor-v1/assembly/verify_payload_scope_v1.py
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - payloads
+- check_id: guard-review
+  name: Independent exact code and peer-control adjudication
+  status: passed
+  required: true
+  summary: All36 original test ASTs unchanged; explicit37th control establishes no
+    native write and no output on before-byte mismatch. Direct code inspection confirms
+    receipt uses validated bytes.
+  target_ids:
+  - helper
+  evidence_ids:
+  - guard
+  - technical
+  scope_note: No redundant unchanged control execution by this assembly reviewer;
+    actual peer log and full tests inspected.
+evidence:
+- evidence_id: core
+  kind: validation
+  reference: .temp/w03-provenance-successor-v1/assembly/final-core-verification-v1.json
+  locator: Entire bounded receipt and its per-target rows
+  accessed_at: '2026-11-08T08:21:27.013400Z'
+  support: supports
+  summary: Independent full selector and exact capture verification, all188 case rows,
+    all74 proposal rows and all868 evidence rows; original tracked and ignored-inclusive
+    maintained files preserved.
+  snapshot_sha256: 69c5dee18361f8400be96802b9362a0de19e35056a425b8cce99c328906901c2
+- evidence_id: payloads
+  kind: validation
+  reference: .temp/w03-provenance-successor-v1/assembly/payload-scope-verification-v1.json
+  locator: Entire bounded receipt and its per-target rows
+  accessed_at: '2026-11-08T08:21:27.013400Z'
+  support: supports
+  summary: Independent full-value rollback proves exactly49 enum replacements and49
+    history appends;25 byte-identical payloads and all exclusions preserved.
+  snapshot_sha256: 1caaf845bb574e176697fdbdcaa81508e7733f38a2c430440ad987682dd634b0
+- evidence_id: guard
+  kind: validation
+  reference: .temp/w03-provenance-successor-v1/assembly/helper-repair-adjudication-v1.json
+  locator: Entire bounded receipt and its per-target rows
+  accessed_at: '2026-11-08T08:21:27.013400Z'
+  support: supports
+  summary: Direct code review plus original36 test-function AST retention and37-test
+    peer execution supports exact private helper repair.
+  snapshot_sha256: ddb9ed86ea9a80647a04bcbdf9c02e61b6ece1274655fce575cd88cad78f4ad9
+- evidence_id: peer
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/reviews/provenance/payload-phase-v2/HANDOFF.json
+  locator: Entire bounded receipt and its per-target rows
+  accessed_at: '2026-11-08T08:21:27.013400Z'
+  support: supports
+  summary: Separate provenance reviewer assessed all49 actual corrected payloads with
+    scientific_review=false; this receipt is correctly bound in changed proposal metadata.
+  snapshot_sha256: ceadbbead1cbe2be9b4320733a8a9c6fbcd1e11449175a1b70eb58f6b6d13f9f
+- evidence_id: technical
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/reviews/technical/HANDOFF-v1.json
+  locator: Entire bounded receipt and its per-target rows
+  accessed_at: '2026-11-08T08:21:27.013400Z'
+  support: supports
+  summary: Separate technical reviewer checked all74 native schema records and unchanged2996-record
+    partonomy overlay, meaningful negative reference control, guards and original
+    baseline.
+  snapshot_sha256: da60cf37b037e33562eb351f2ecbb1695557e31d2fab9d728fd7f1c59ab25c4b
+assessments:
+- assessment_id: case-scope
+  area: scope
+  topic: Historical source-review and holds retained
+  outcome: supported
+  summary: Every source decision and entire decisions file are byte-identical. The68
+    cases linking changed payloads lack an old reviewed_after_sha256 claim; their
+    actual source-scoped historical reviews remain valid as history, not new payload
+    approval.
+  target_ids:
+  - decisions
+  evidence_ids:
+  - core
+- assessment_id: payload-provenance
+  area: provenance
+  topic: Narrow correction and authentic review bindings
+  outcome: supported
+  summary: All49 changed proposals bind actual new bytes and separate provenance-only
+    review; full old proposal/reviewer objects remain in bridge. Every other field
+    survives full rollback. Three human manual objects and unchanged genuine new-owner
+    Oxoid/nullbefore remain excluded; retired mixed RCM is inactive.
+  target_ids:
+  - proposals
+  evidence_ids:
+  - core
+  - payloads
+  - peer
+  - technical
+- assessment_id: capture-retention
+  area: consistency
+  topic: Complete evidence/accounting transport inputs
+  outcome: supported
+  summary: All868 evidence capture bytes resolve under declared roots and match pinned
+    hashes, with863 unchanged predecessor objects and5 distinct new provenance/validation
+    objects. No original source capture is repurposed as new scientific inspection.
+  target_ids:
+  - evidence
+  evidence_ids:
+  - core
+- assessment_id: private-helper
+  area: provenance
+  topic: 'Issue-first private helper repair #1246'
+  outcome: supported
+  summary: Fresh source bytes are validated, compared to prepared.old_bytes before
+    native writing, and used for receipt before hash. Original helper,23/36 failed
+    runs and false receipt fixture remain immutable;37 meaningful peer controls pass.
+  target_ids:
+  - helper
+  evidence_ids:
+  - guard
+  - technical
+  - payloads
+findings: []
+actions: []
+limitations:
+- No scientific identity/form/stock/product/component/quantity/role or supported-export
+  approval is renewed. This metadata review does not claim unread primary papers were
+  inspected.
+- All W03-origin scientific rows are author-related at campaign level; no independent
+  scientific self-approval or final cross-shard merge approval follows.
+- Native schema/partonomy PASS supplies structural evidence only. Exact field equality
+  establishes retention, not truth of inherited chemistry.
+- Native YAML serialization reflows scalars in changed payloads. Retention is semantic
+  object/history-prefix equality for49; exact bytes are retained for25 unaffected
+  payloads.
+- Helper boundary assumes a single-author private task; no atomicity or hostile-concurrency
+  guarantee.
+- Ignored files were included within data/ingredients,data/curated,mappings. No absence
+  claim for historical/private files outside those roots; credentials were not scanned.
+- Native review pair is validated/rendered and virtually parsed under canonical path
+  in the allowed private review directory. Canonical save and repository-wide review
+  scan are not performed because this task permits writes only under this private
+  output directory.
+- Issue1246 repair is supported only for exact helper v2; issue1226 scope is49 W03
+  entries only. No GitHub issue closure or other workers correction is claimed.
+- Final seal and publication checks remain separate; this review does not assert that
+  candidate bytes are already committed.
+notes:
+- 'Preserved reviewer emission error: initial inline checkpoint verification used
+  wrong symlink descriptor key and produced no proof; corrected read-only check was
+  rerun successfully. No source/payload mutation or failed test hidden.'
+- The final-core diagnostic review_scope summary key is null where the proposal uses
+  review_scope rather than scope; the actual full independent_review object was read
+  and scientific_review=false explicitly verified. This does not change the selector
+  or review metadata.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1226
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1246
+```

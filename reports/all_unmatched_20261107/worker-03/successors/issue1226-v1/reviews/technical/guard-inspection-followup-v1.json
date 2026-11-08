@@ -1,0 +1,24 @@
+{
+  "reviewer": "/root/provenance_controls",
+  "at": "2026-11-08T08:03:46.272426+00:00",
+  "status": "CONTROL_FAILURE_RETAINED_PENDING_COORDINATOR_ISSUE_TRACKING",
+  "guard_controls": {
+    "run": 36,
+    "passed": 35,
+    "failed": [
+      "test_prepared_old_bytes_must_match_actual_current_bytes (__main__.RefusalControls.test_prepared_old_bytes_must_match_actual_current_bytes)"
+    ],
+    "errors": [],
+    "log": "controls-v2.stderr"
+  },
+  "only_confirmed_condition": "W03-PROV-GUARD-001 unchecked prepared.old_bytes permits false beforehash receipt after private write",
+  "additional_confirmed_defects": [],
+  "native_boundary_assessment": "Output checks reject lexical traversal, outside-maintained boundary, existing/case-aliased targets and symlinked destination ancestors. Native guarded serializer remains unchanged. It is not an atomic/hostile-concurrency API, as documented.",
+  "readback": {
+    "maintained_baseline_files": 3060,
+    "changed_baseline_files": [],
+    "ignored_inclusive_root_files": 3028,
+    "inventory_changes": []
+  },
+  "next": "Await coordinator issue-first reference/disposition, then inspect a separately preserved corrected helper and rerun exact controls; no actual source proposal batch yet."
+}

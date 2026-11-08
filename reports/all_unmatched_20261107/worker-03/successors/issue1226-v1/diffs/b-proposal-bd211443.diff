@@ -1,0 +1,59 @@
+--- reports/all_unmatched_20261107/worker-03/broths/proposed/BBL_Mueller_Hinton_Broth_BD_211443.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/b-proposal-bd211443.yaml
+@@ -1,9 +1,10 @@
+ preferred_term: BBL Mueller Hinton Broth(BD211443)
+ ingredient_type: NAMED_MEDIUM
+-notes: TOGO M2583 names BD211443 MuellerHintonBroth and adds100mL rabbitserum separately. Manufacturer-submitted
+-  GUDID identifies211443 as BBL MuellerHintonBroth500g, commercially discontinued in the UnitedStates
+-  in2022. This historical catalog remains a stable source identity; it is not cation-adjusted MuellerHintonII
+-  nor the serum-supplemented final medium.
++notes: TOGO M2583 names BD211443 MuellerHintonBroth and adds100mL rabbitserum separately.
++  Manufacturer-submitted GUDID identifies211443 as BBL MuellerHintonBroth500g, commercially
++  discontinued in the UnitedStates in2022. This historical catalog remains a stable
++  source identity; it is not cation-adjusted MuellerHintonII nor the serum-supplemented
++  final medium.
+ supplied_form:
+ - name: BBL Mueller Hinton Broth(BD211443)
+   supplier: BD BBL
+@@ -21,19 +22,33 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://accessgudid.nlm.nih.gov/devices/00382902114437
+-    notes: TOGO M2583 names BD211443 MuellerHintonBroth and adds100mL rabbitserum separately. Manufacturer-submitted
+-      GUDID identifies211443 as BBL MuellerHintonBroth500g, commercially discontinued in the UnitedStates
+-      in2022. This historical catalog remains a stable source identity; it is not cation-adjusted MuellerHintonII
++    notes: TOGO M2583 names BD211443 MuellerHintonBroth and adds100mL rabbitserum
++      separately. Manufacturer-submitted GUDID identifies211443 as BBL MuellerHintonBroth500g,
++      commercially discontinued in the UnitedStates in2022. This historical catalog
++      remains a stable source identity; it is not cation-adjusted MuellerHintonII
+       nor the serum-supplemented final medium.
+ curation_history:
+ - timestamp: '2026-11-08T05:21:23.584872+00:00'
+   curator: codex-worker03-broths-source-review
+   action: ANNOTATED
+-  changes: Proposed source-specific preparation after primary-source follow-up. TOGO M2583 names BD211443
+-    MuellerHintonBroth and adds100mL rabbitserum separately. Manufacturer-submitted GUDID identifies211443
+-    as BBL MuellerHintonBroth500g, commercially discontinued in the UnitedStates in2022. This historical
+-    catalog remains a stable source identity; it is not cation-adjusted MuellerHintonII nor the serum-supplemented
++  changes: Proposed source-specific preparation after primary-source follow-up. TOGO
++    M2583 names BD211443 MuellerHintonBroth and adds100mL rabbitserum separately.
++    Manufacturer-submitted GUDID identifies211443 as BBL MuellerHintonBroth500g, commercially
++    discontinued in the UnitedStates in2022. This historical catalog remains a stable
++    source identity; it is not cation-adjusted MuellerHintonII nor the serum-supplemented
+     final medium.
+   llm_assisted: true
++- timestamp: '2026-11-08T08:16:40.482531+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-143. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

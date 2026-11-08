@@ -1,0 +1,45 @@
+--- reports/all_unmatched_20261107/worker-03/materials/proposed-owners/tryptic_digest_of_beef_heart.yaml
++++ reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/payloads/m-tryptic_digest_of_beef_heart.yaml
+@@ -15,20 +15,32 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium687.pdf
+-    notes: Animal-tissue digest specified by beef-heart substrate and tryptic digestion in
+-      Columbia formulations. Distinct from heart infusion and whole broth; no exact molecular
+-      constituent or fixed supplier formulation is inferred.
+-notes: Animal-tissue digest specified by beef-heart substrate and tryptic digestion in Columbia
+-  formulations. Distinct from heart infusion and whole broth; no exact molecular constituent
+-  or fixed supplier formulation is inferred.
++    notes: Animal-tissue digest specified by beef-heart substrate and tryptic digestion
++      in Columbia formulations. Distinct from heart infusion and whole broth; no exact
++      molecular constituent or fixed supplier formulation is inferred.
++notes: Animal-tissue digest specified by beef-heart substrate and tryptic digestion
++  in Columbia formulations. Distinct from heart infusion and whole broth; no exact
++  molecular constituent or fixed supplier formulation is inferred.
+ curation_history:
+ - timestamp: '2026-11-08T05:20:19.103865+00:00'
+   curator: all-unmatched-worker-03/materials
+   action: SOURCE_REVIEW_PROPOSAL
+-  changes: Animal-tissue digest specified by beef-heart substrate and tryptic digestion in
+-    Columbia formulations. Distinct from heart infusion and whole broth; no exact molecular
+-    constituent or fixed supplier formulation is inferred.
++  changes: Animal-tissue digest specified by beef-heart substrate and tryptic digestion
++    in Columbia formulations. Distinct from heart infusion and whole broth; no exact
++    molecular constituent or fixed supplier formulation is inferred.
+   llm_assisted: true
+   new_status: MAPPED
++- timestamp: '2026-11-08T08:16:40.563626+00:00'
++  curator: codex-worker03 /root provenance successor
++  action: CORRECTED_EVIDENCE_PROVENANCE
++  changes: Correct only ontology_mapping.evidence[0].evidence_type from MANUAL_CURATION
++    to LLM_SUGGESTION under https://github.com/CultureBotAI/MediaIngredientMech/issues/1226;
++    exact allowlist provenance-flag-179. The original assertion was agent-authored
++    interpretation, not human-supplied evidence. Preserve its source, notes, complete
++    prior history and all scientific fields/holds. Report-only proposal; no identity,
++    role or export reapproval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
