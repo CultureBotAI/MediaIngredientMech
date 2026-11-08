@@ -1,0 +1,82 @@
+{
+  "proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+  "case_ids": [
+    "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+    "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4"
+  ],
+  "description": "Create a source-qualified preparation identity with partial source-supported components. TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used. Successor-v2 metadata adds the exact frozen KG ingredient1685/J209 context to this already represented source stock; the original owner payload is unchanged.",
+  "evidence_ids": [
+    "buffers-case-21",
+    "buffers-primary-2b7e3ee4d3ec3dfb",
+    "buffers-recipe-21-0",
+    "buffers-retrieval-log",
+    "sv1-buffers-context-review",
+    "sv1-buffers-owner-lookup",
+    "sv1-buffers-guarded-validation",
+    "sv1-buffers-proposal-identity-lookup",
+    "sv1-buffers-strict-validation",
+    "kg-md1685",
+    "kg-mdJ209",
+    "sv2-carbonate-md1685-source-bridge",
+    "sv2-carbonate-mdj209-exact-occurrence",
+    "sv2-carbonate-togo-m202-same-source",
+    "sv2-carbonate-frozen-case187",
+    "sv2-carbonate-frozen-m202-context"
+  ],
+  "owner_path": "data/ingredients/mapped/carbonate_co2_nominal4percent_togo_m202.yaml",
+  "kind": "new_owner",
+  "after_capture": {
+    "root": "artifact",
+    "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+    "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+  },
+  "before_sha256": null,
+  "identity_predicate_consequences": "Local kgmicrobe.ingredient preparation identity with FALLBACK_REGISTRY mapping to its own identifier. No whole-to-constituent mapping, CAS, or exact external ontology equivalence. Registry exactMatch row would identify only this source-qualified preparation.",
+  "publication_review_obligations": "Proposal only. Full content-bound publication review, integration conflict checks, maintained-surface synchronization and native export QC remain required after acceptance. No roles or complete owner approval.",
+  "cross_shard_conflicts": "No overlap with the original 36 owner paths. New preparations must be compared against concurrent proposals before integration; similar names alone do not establish same formulation.",
+  "publication_holds": [
+    "The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted.",
+    "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+  ],
+  "independent_review": {
+    "status": "pending",
+    "evidence_ids": []
+  },
+  "applicable_occurrence_ids": [
+    "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+  ],
+  "source_case_applicability": [
+    {
+      "case_id": "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+      "occurrence_ids": [
+        "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+      ],
+      "scope": "Original case21 TOGO M202/CultureMech008618 occurrence retained unchanged. Its original scientific decision is not revised."
+    },
+    {
+      "case_id": "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4",
+      "occurrence_ids": [],
+      "source_id": "mediadive.ingredient:1685",
+      "source_medium_id": "J209",
+      "source_recipe_name": "M98-5",
+      "source_record_locator": "shards/shard-10.json#/cases/187/original_kg_entry/source_record",
+      "source_record_sha256": "ca887e24b2a391c15c322c0a2146a11f3024a796a850f1dde591e438856ed675",
+      "primary_locator": "kg/captures/mdJ209.json#/data/solutions/0/recipe/11",
+      "scope": "Only the exact admitted row linked through ingredient1685.media[0]=J209 and the same JCM209 provenance in TOGO M202; no invented CM_OCC ID or global alias."
+    }
+  ],
+  "metadata_successor": {
+    "finding_id": "C-002",
+    "prior_proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+    "prior_proposal_object_sha256": "adf29205d248249a228731410c26399d9ad590d8572d62b9bee8c8b584432bc9",
+    "prior_proposal_ledger": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/reports/all_unmatched_20261107/worker-10/successor-v1/proposals.json",
+      "sha256": "608ce70c69294f145f0d98efca387676c6c5a636fba4c5be90090df2c31c4e81"
+    },
+    "change_scope": "Case/evidence/applicability metadata only; retain original proposal_id and after_capture; select this metadata once, not as a second owner.",
+    "payload_change_required": false,
+    "case21_scientific_decision_change_required": false,
+    "history_change_required": false,
+    "history_rationale": "No ingredient identity, composition, label, synonym, source assertion inside the owner, or maintained record changes. The historical TOGO-only authoring note remains truthful; the new MediaDive correspondence belongs to this new dated source-association ledger."
+  }
+}

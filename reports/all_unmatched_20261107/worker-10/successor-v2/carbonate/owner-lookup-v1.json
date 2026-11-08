@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-08T07:14:54.131081+00:00",
+  "ignored_files_included": true,
+  "method": "Complete pathlib.rglob data/ingredients/*.yaml filesystem inventory; preferred/ontology/synonym label and exact identifier comparison. Current128 selected proposal payloads also inspected for exact stock identifier.",
+  "catalog_records_scanned": 2956,
+  "query_regex": "(?:na2co3.*co2|carbonate.*(?:co2|carbon dioxide)|m98.?5|m202|jcm.?209)",
+  "exact_stock_identifier": "kgmicrobe.ingredient:carbonate_co2_nominal4percent_togo_m202",
+  "maintained_hits": [
+    {
+      "path": "data/ingredients/mapped/Na2co3.yaml",
+      "sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650",
+      "identifier": "CHEBI:29377",
+      "mapping_status": "MAPPED",
+      "matched_labels": [
+        "Na2CO3-CO2 buffer"
+      ]
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+      "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6",
+      "identifier": "CHEBI:29377",
+      "mapping_status": "MAPPED",
+      "matched_labels": [
+        "Na2CO3-CO2 buffer"
+      ]
+    }
+  ],
+  "maintained_exact_stock_identity_hits": [],
+  "selected_proposal_identity_hits": [
+    {
+      "proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "case_ids": [
+        "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd"
+      ],
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+        "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+      }
+    }
+  ],
+  "conclusion": "Reuse the one existing selected source-qualified proposal. Pure-carbonate owner hits do not denote the source stock; no duplicate owner is minted."
+}

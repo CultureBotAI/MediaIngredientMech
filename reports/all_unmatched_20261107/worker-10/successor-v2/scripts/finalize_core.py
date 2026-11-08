@@ -1,0 +1,30 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib,copy,csv
+R=Path.cwd();A=R/'reports/all_unmatched_20261107/worker-10';S=A/'successor-v2';B=S/'assembly-v1';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();canon=lambda d:hashlib.sha256(json.dumps(d,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest();load=lambda p:json.loads(p.read_text())
+def save(p,d):
+ with p.open('x') as f:json.dump(d,f,indent=2,ensure_ascii=False);f.write('\n')
+review=S/'reviews/skeptic/scientific-review-v1.json';r=load(review);now=datetime.now(timezone.utc).isoformat();D=load(B/'decisions.json');P=load(B/'proposals.json');E=load(B/'evidence.json');old=load(A/'successor-v1/decisions.json')['decisions'];eid='sv2-independent-c001-c002'
+E['evidence'].append({'evidence_id':eid,'kind':'independent_review','capture':{'root':'artifact','path':str(review.relative_to(A)),'sha256':sha(review)},'url':None,'accessed_at':now,'locator':'Complete author-independent skeptical source and whole selected-payload assessment for changedcases143/187 and retainedcase21stock applicability, exact input hashes, all claims and limits','supports_or_contradicts':'Separate /root/preparation_skeptic assessed the complete ISP4 replacement, source-case continuity, carbonate existingstock association and unchanged purecarbonate rejection. Review does not approve maintained application, roles or export. This time is local inspection of the new review, not an original primary retrieval.','case_ids':[D['decisions'][i]['case_id'] for i in [21,143,187]]})
+for i in [143,187]:
+ D['decisions'][i]['independent_review']={'status':'complete','evidence_ids':[eid]}
+ D['decisions'][i]['completion_reassessment']['separate_review']={'path':str(review.relative_to(A)),'sha256':sha(review),'source_science_completed':True,'coordinator_final_new_head_review_pending':True}
+for p in P['proposals']:
+ if p['proposal_id'] in ['sv2-isp4-jcm58-complete-formulation','sv1-buffers-carbonate_co2_nominal4percent_togo_m202']:
+  p['independent_review']={'status':'complete','evidence_ids':[eid]};p['review_status_explanation']='Author-stage pending statements remain in retained artifacts. Exact bounded source/formulation and applicability review is now complete as linked; coordinator independent final-head/whole-owner/role/export acceptance remains pending.'
+for i,d in enumerate(D['decisions']):
+ if i not in [143,187]:assert d==old[i]
+for n,d in [('decisions.json',D),('proposals.json',P),('evidence.json',E)]:save(S/n,d)
+account=load(B/'accounting.json');account['evidence_entries']=len(E['evidence']);account['independent_source_reviews_complete']=188;account['fresh_case_review_indices']=[143,187];account['retained_prior_reviews_attributed']=186;save(S/'accounting.json',account)
+oldps={p['proposal_id']:p for p in load(A/'successor-v1/proposals.json')['proposals']};newps={p['proposal_id']:p for p in P['proposals']}
+assert sum(newps.get(pid)==p for pid,p in oldps.items())==126
+validation=load(S/'validation-draft-v1/validation-receipt.json');draftP=load(B/'proposals.json')['proposals'];assert [(p['proposal_id'],p['after_capture']) for p in P['proposals']]==[(p['proposal_id'],p['after_capture']) for p in draftP]
+finalization={'at':now,'metadata_only_changes_since_reviewed_draft':'Add exact independent review status/pointer to two case decisions and two proposal metadata objects, plus one new independent-review evidence entry. No scientific text, payload, beforeowner, occurrence/source scope, original evidence or other186decision changed.','draft_hashes':{n:sha(B/n) for n in ['decisions.json','evidence.json','proposals.json']},'final_hashes':{n:sha(S/n) for n in ['decisions.json','evidence.json','proposals.json']},'skeptical_review':{'path':str(review.relative_to(A)),'sha256':sha(review)},'same_validated_selected_payloads':128,'native_validation':{'path':'successor-v2/validation-draft-v1/validation-receipt.json','sha256':sha(S/'validation-draft-v1/validation-receipt.json')},'remaining_other186_decisions_exact':True,'old_126_proposal_objects_exact':True,'comparison_exclusions_unchanged':True};save(S/'finalization-binding.json',finalization)
+selection={'at':now,'predecessor_head':'468766d941e35a74eb2de3c95096660987277d9b','authoritative_core':finalization['final_hashes'],'artifact_root':'reports/all_unmatched_20261107/worker-10','source_root':'campaign queue/preliminary-v5','selected_payloads':[{'proposal_id':p['proposal_id'],'owner_path':p['owner_path'],'destination_path':p.get('destination_path',p['owner_path']),'before_sha256':p['before_sha256'],'after_capture':p['after_capture'],'case_ids':p['case_ids']} for p in P['proposals']],'explicitly_superseded_selection':{'proposal_id':'kg-isp4-remove-salt-parent','replacement':'sv2-isp4-jcm58-complete-formulation','original_payload_preserved':oldps['kg-isp4-remove-salt-parent']['after_capture']},'single_stock_selection':'sv1-buffers-carbonate_co2_nominal4percent_togo_m202 selected once with two case backlinks; original payload retained','approval':False};save(S/'selection.json',selection)
+with (S/'case-index.tsv').open('x',newline='') as f:
+ w=csv.writer(f,delimiter='\t');w.writerow(['source_index','case_id','case_input_sha256','decision_sha256','fresh_scientific_change','proposal_ids','independent_review','missing_requirement'])
+ for i,d in enumerate(D['decisions']):w.writerow([i,d['case_id'],d['case_input_sha256'],canon(d),i in [143,187],'|'.join(d['proposal_ids']),d['independent_review']['status'],d.get('missing_requirement') or ''])
+with (S/'proposal-index.tsv').open('x',newline='') as f:
+ w=csv.writer(f,delimiter='\t');w.writerow(['proposal_id','kind','owner_path','destination_path','before_sha256','payload_path','payload_sha256','case_ids'])
+ for p in P['proposals']:w.writerow([p['proposal_id'],p['kind'],p['owner_path'],p.get('destination_path',p['owner_path']),p['before_sha256'] or '',p['after_capture']['path'],p['after_capture']['sha256'],'|'.join(p['case_ids'])])
+print(json.dumps(account,indent=2))

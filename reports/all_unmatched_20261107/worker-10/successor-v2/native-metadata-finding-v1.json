@@ -1,0 +1,32 @@
+{
+  "finding_id": "SV2-NATIVE-OWNER-NOTE-001",
+  "observed_at": "2026-11-08T07:23:48.236189+00:00",
+  "reviewer": "/root/preparation_skeptic",
+  "scope": "83 new_owner ReviewTarget ownership_note fields in native v1, not payloads",
+  "severity": "minor",
+  "status": "reported before metadata fix",
+  "reproduction": "Read native/targets.json: new_owner target notes use Authentic owner with before SHA256 None. These are proposed destinations with no maintained preimage.",
+  "original_saved_pair": {
+    "review_id": "20261108T072255Z-w10-completeness-c001-c002",
+    "files": [
+      {
+        "path": "reviews/structured/20261108T072255Z-w10-completeness-c001-c002/review.yaml",
+        "sha256": "f237544652c4def8c3d594628e6ef85756532e9ca00aec1dd721c129fc4f6c7e"
+      },
+      {
+        "path": "reviews/structured/20261108T072255Z-w10-completeness-c001-c002/review.md",
+        "sha256": "14c2c5a476d59cd376e750b3721f4feb6ddcfc16ebbf66250335854421aceb86"
+      }
+    ],
+    "native_validate_exit": 0,
+    "native_save_exit": 0,
+    "targets": 316,
+    "fresh_source_cases": 2,
+    "retained_case_decisions": 186,
+    "open_findings": 1,
+    "coordinator_published_head_review_pending": true
+  },
+  "bounded_fix": "Preserve first pair and save immutable native-v2 with explicit new proposed destination/no maintained preimage notes, same exact core/payloads and existing-owner continuity. Retain all316targets and prior open overlap finding lineage.",
+  "coordinator_notified": "Root commentary before successor authoring; no GitHub filing claimed",
+  "scientific_change": false
+}

@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-08T07:27:55.078257+00:00",
+  "scope": "Reviewer checker implementation corrections only; no target/core/native bytes modified.",
+  "initial_timestamp_parser": "An initial native-check execution stopped before producing a report because old evidence uses YYYY-MM-DD HH:MM:SS UTC; parser now normalizes that explicitly to UTC without changing timestamp meaning.",
+  "native_v1": "Incorrectly assumed316 total assessments; the successor legitimately adds one83-target metadata assessment. The initial Counter(mapping) comparison also used target objects as counts.",
+  "native_v2": "Corrected multiplicity but retained the Counter(mapping) bug; all other checks passed.",
+  "native_v3": "Uses316 base assessments plus one explicit metadata assessment and Counter(target_ids); all3848 checks pass.",
+  "preserved_reports": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/all-unmatched-worker-10/successor-v2/skeptic/native-verification-v1.json",
+      "sha256": "2741a89e3dd26a22a046e70e63a132821dcb551d17b835b6944bb821d3c88a06"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/all-unmatched-worker-10/successor-v2/skeptic/native-verification-v2.json",
+      "sha256": "8a6ceebc47ad52d85c50a8e4844f431d9f2fb7a9e50eaa12c34b591ef0c53044"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/all-unmatched-worker-10/successor-v2/skeptic/native-verification-v3.json",
+      "sha256": "453b3abb01bfe91fce1f528c9709ba95076a2449fc65a574b7b4c7f4b91c326a"
+    }
+  ],
+  "preserved_scripts": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/all-unmatched-worker-10/successor-v2/skeptic/check_native-initial-multiplicity.py",
+      "sha256": "22329d12714bb425c6e80ef8b9ed8bf4fde82c391569e7de5933fb744d91af6d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/all-unmatched-worker-10/successor-v2/skeptic/check_native-before-counterfix.py",
+      "sha256": "7b24f1d50c575fcadbda053832576ea891248ba0bf4777ed5205921edcf2969f"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/.temp/all-unmatched-worker-10/successor-v2/skeptic/check_native.py",
+      "sha256": "b475dbf793048c16282aba737d42eb9757b816c53c97bc4ca8beee3bb267a869"
+    }
+  ],
+  "core_and_native_input_hashes_identical": true
+}

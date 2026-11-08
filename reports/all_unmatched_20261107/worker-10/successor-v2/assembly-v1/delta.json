@@ -1,0 +1,678 @@
+{
+  "at": "2026-11-08T07:17:22.906348+00:00",
+  "predecessor_head": "468766d941e35a74eb2de3c95096660987277d9b",
+  "case_changes": [
+    {
+      "source_index": 143,
+      "case_id": "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188",
+      "old_decision_sha256": "4da5740745d02e6885acf4648999d40c7becdd2dc9f90b889957b0b8b3b153e3",
+      "new_decision_sha256": "64c571d599a3c63e8caf7e65f6c2d572702243874ac7246cde441e24fa1f7d48",
+      "old_decision": {
+        "case_id": "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188",
+        "case_input_sha256": "495ce2505d9a0dc368a9c5e03a3eabc1f75d4a68925bf6d21cb48d58a786a9c2",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1692",
+          "source_label": "Inorganic salts-starch agar",
+          "raw_source_label": "Inorganic salts-starch agar"
+        },
+        "occurrence_ids": [],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM58 ISP4 includes soluble starch, K2HPO4, MgSO4 heptahydrate, NaCl, ammonium sulfate, CaCO3, trace salts, agar and water. A medium containing organic polymer and many salts is not a narrower inorganic salt or pure agar.",
+        "applicability": "Raw ISP4/seeMedium58 refers to JCM namespace through ingredient1692. Remove unsupported CHEBI24839 parent; retain named medium and raw label pending formulation-specific curation.",
+        "missing_requirement": null,
+        "no_change_reason": null,
+        "issue_refs": [],
+        "evidence_ids": [
+          "kg-frozen-shard",
+          "kg-owners-before",
+          "kg-md1692",
+          "kg-jcm58",
+          "kg-CHEBI_24839"
+        ],
+        "proposal_ids": [
+          "kg-isp4-remove-salt-parent"
+        ],
+        "owner_records": [
+          {
+            "path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+            "sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178"
+          }
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-kg"
+          ]
+        },
+        "source_index": 143,
+        "release_authorization": false,
+        "preserved_hold_scope": {
+          "downstream_holds": [],
+          "inherited_native_mapping_review_not_overridden": true,
+          "rejected_owner_not_revived": true
+        }
+      },
+      "new_decision": {
+        "case_id": "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188",
+        "case_input_sha256": "495ce2505d9a0dc368a9c5e03a3eabc1f75d4a68925bf6d21cb48d58a786a9c2",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1692",
+          "source_label": "Inorganic salts-starch agar",
+          "raw_source_label": "Inorganic salts-starch agar"
+        },
+        "occurrence_ids": [],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM58 primary capture supplies the complete nine-input ISP4 prepared-medium formulation and the four-input nested trace-stock recipe. This successor completes that bounded formulation on authentic UNMAPPED_0123 while preserving the prior1188 invalid-parent-removal event. Named-source completeness does not require invented polymer chemistry, hydration, final yield or an unchecked nested-stock identifier.",
+        "applicability": "Only the exact frozen mediadive.ingredient:1692 source record in case143, with1000ml named medium and ISP4/seeMedium58 pointer. The1000ml occurrence amount is not a recipe yield. JCM58 source batch includes1Lwater input and1mLtrace stock. Allnine immediate inputs are represented; the four trace inputs remain nested provenance. W06candidate548 is a coordinator reconciliation dependency, not silently adopted. Prepared medium is distinct from the separately mentioned commercial premixed powder.",
+        "missing_requirement": "Source-qualified parent formulation is complete. Remaining bounded details: soluble-starch product chemistry, K2HPO4 hydration, unreported final yield, and independent coordinator reconciliation/admission of the matching W06trace-stock candidate before resolving its component identifier. These do not defer the supported parent record.",
+        "no_change_reason": null,
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6718398061"
+        ],
+        "evidence_ids": [
+          "kg-frozen-shard",
+          "kg-owners-before",
+          "kg-md1692",
+          "kg-jcm58",
+          "kg-CHEBI_24839",
+          "sv2-isp4-jcm58",
+          "sv2-isp4-source-case143",
+          "sv2-isp4-before-owner",
+          "sv2-isp4-parent-removal-predecessor",
+          "sv2-isp4-owner-lookup",
+          "sv2-isp4-frozen-candidates",
+          "sv2-isp4-nested-overlap",
+          "sv2-isp4-part-owner-lookup",
+          "sv2-isp4-ontology-attempts",
+          "sv2-isp4-ontology-query-0",
+          "sv2-isp4-ontology-query-1",
+          "sv2-isp4-ontology-query-2",
+          "sv2-isp4-guard",
+          "sv2-isp4-partonomy"
+        ],
+        "proposal_ids": [
+          "sv2-isp4-jcm58-complete-formulation"
+        ],
+        "owner_records": [
+          {
+            "path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+            "sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178"
+          }
+        ],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        },
+        "source_index": 143,
+        "release_authorization": false,
+        "preserved_hold_scope": {
+          "downstream_holds": [],
+          "inherited_native_mapping_review_not_overridden": true,
+          "rejected_owner_not_revived": true
+        },
+        "completion_reassessment": {
+          "finding_id": "C-001",
+          "status": "bounded_source_formulation_proposed",
+          "prior_proposal_id": "kg-isp4-remove-salt-parent",
+          "replacement_proposal_id": "sv2-isp4-jcm58-complete-formulation",
+          "all_original_case_fields_preserved_in_evidence": "sv2-isp4-source-case143",
+          "no_maintained_write": true,
+          "review_authorship": "/root/bio_research authored this source-completion assessment; separate skeptical review pending."
+        }
+      }
+    },
+    {
+      "source_index": 187,
+      "case_id": "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4",
+      "old_decision_sha256": "35aa167f4c5015017798b81632368b50c306c3cab754974bee43edccc548d9bd",
+      "new_decision_sha256": "6cd45cda5b988e8823479966b08227f2e6626deef1b54535b00506e4e377b219",
+      "old_decision": {
+        "case_id": "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4",
+        "case_input_sha256": "4bc991048af287a1e92299b9e9758092dedd80ca2222887dc196095f03d16b63",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1685",
+          "source_label": "Na2CO3-CO2 buffer",
+          "raw_source_label": "Na2CO3-CO2 buffer"
+        },
+        "occurrence_ids": [],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM209 source is100ml of4%Na2CO3-CO2 buffer. CHEBI29377 is sodium carbonate solute; neither percent concentration nor CO2 preparation is represented by pure solute identity. MediaDive annotation of solute formula cannot define the stock.",
+        "applicability": "Reject Na2CO3-CO2 buffer as identity synonym on Na2co3 while retaining source literal. Sodium_Carbonate_Solution owner also needs independent identity correction; exact CO2 loading/preparation remains unresolved.",
+        "missing_requirement": "Original stock preparation and CO2 equilibration specification are needed, followed by separate stock primary identifier and full alias review; do not guess carbonate/bicarbonate composition.",
+        "no_change_reason": null,
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+        ],
+        "evidence_ids": [
+          "kg-frozen-shard",
+          "kg-owners-before",
+          "kg-md1685",
+          "kg-mdJ209",
+          "kg-CHEBI_29377"
+        ],
+        "proposal_ids": [
+          "kg-carbonate-buffer-alias"
+        ],
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Na2co3.yaml",
+            "sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650"
+          },
+          {
+            "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+            "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+          }
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-kg"
+          ]
+        },
+        "source_index": 187,
+        "release_authorization": false,
+        "preserved_hold_scope": {
+          "downstream_holds": [],
+          "inherited_native_mapping_review_not_overridden": true,
+          "rejected_owner_not_revived": true
+        }
+      },
+      "new_decision": {
+        "case_id": "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4",
+        "case_input_sha256": "4bc991048af287a1e92299b9e9758092dedd80ca2222887dc196095f03d16b63",
+        "source": {
+          "source": "mediadive",
+          "source_case_id": "mediadive.ingredient:1685",
+          "source_label": "Na2CO3-CO2 buffer",
+          "raw_source_label": "Na2CO3-CO2 buffer"
+        },
+        "occurrence_ids": [],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "The captured MediaDive ingredient1685 record explicitly lists J209. Its frozen KG source_record exactly matches J209 M98-5 recipe_order12:100ml Na2CO3-CO2 buffer with attribute4%. TOGO M202 declares original_media_id JCM_M209, the same JCM209 source URL and M98-5 name, and the matching100ml nominal4% buffer row. These positive source and occurrence bindings justify associating this KG context with the existing source-qualified stock kgmicrobe.ingredient:carbonate_co2_nominal4percent_togo_m202. No second stock owner or changed stock chemistry is needed. The existing rejection of the buffer label on pure carbonate remains correct; MediaDive solute annotations do not define the whole stock.",
+        "applicability": "Applies only to the frozen mediadive.ingredient:1685 raw recipe row now explicitly traced through ingredient1685.media[0]=J209 to JCM209/M98-5 and TOGO M202. The complete frozen KG case has no CM_OCC IDs, and its helper occurrence count is not a recipe-frequency measurement. Preserve the prior case21 CM_OCC binding unchanged; add this KG source-context backlink in proposal metadata without globally resolving Na2CO3-CO2 buffer or nominal4% strings. No whole-receiving-medium EXACT_FORMULATION relationship, all-occurrence generalization, or carbonate-solute identity follows.",
+        "missing_requirement": "No additional fact is required for this bounded same-source stock association. The4% basis, carrier, carbonate hydration, CO2 dose/equilibration endpoint and full preparation remain unknown; they limit quantitative/composition claims and do not defer the already represented source identity. Sodium_Carbonate_Solution and inherited pure-owner/export claims still require their separate content-bound review.",
+        "no_change_reason": null,
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/114",
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6718398061"
+        ],
+        "evidence_ids": [
+          "kg-frozen-shard",
+          "kg-owners-before",
+          "kg-md1685",
+          "kg-mdJ209",
+          "kg-CHEBI_29377",
+          "buffers-primary-2b7e3ee4d3ec3dfb",
+          "buffers-recipe-21-0",
+          "sv2-carbonate-md1685-source-bridge",
+          "sv2-carbonate-mdj209-exact-occurrence",
+          "sv2-carbonate-togo-m202-same-source",
+          "sv2-carbonate-frozen-case187",
+          "sv2-carbonate-frozen-m202-context"
+        ],
+        "proposal_ids": [
+          "kg-carbonate-buffer-alias",
+          "sv1-buffers-carbonate_co2_nominal4percent_togo_m202"
+        ],
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Na2co3.yaml",
+            "sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650"
+          },
+          {
+            "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+            "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+          }
+        ],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        },
+        "source_index": 187,
+        "release_authorization": false,
+        "preserved_hold_scope": {
+          "downstream_holds": [],
+          "inherited_native_mapping_review_not_overridden": true,
+          "rejected_owner_not_revived": true
+        },
+        "reviewer": "/root/buffers_research",
+        "completion_reassessment": {
+          "finding_id": "C-002",
+          "prior_published_head": "468766d941e35a74eb2de3c95096660987277d9b",
+          "prior_decision_sha256": "35aa167f4c5015017798b81632368b50c306c3cab754974bee43edccc548d9bd",
+          "classification": "existing_source_qualified_stock_explicitly_bound_to_same_source_KG_context",
+          "missing_fact_vs_deferred_work": "The separate stock identity was already curated for case21. Only its case187 association/backlink was missing. Unknown formulation details remain bounded holds, not missing identity curation.",
+          "existing_stock_proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+          "stock_payload_unchanged": {
+            "root": "artifact",
+            "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+            "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+          },
+          "pure_carbonate_alias_rejection_unchanged": {
+            "root": "artifact",
+            "path": "kg/proposed/carbonate-buffer-alias.yaml",
+            "sha256": "b8e08c21022fcbd8b96d492f0365309e23cc52c241ea5ae47af5d37848efa9b8"
+          },
+          "case21_decision_unchanged_sha256": "8f024effda16544a57c8ed5ee551fee48b8f429e70ca16cb6186026972d018f7",
+          "no_new_owner": true,
+          "no_global_alias": true,
+          "embedded_holds_preserved": true,
+          "no_new_http_capture_claim": true,
+          "release_authorization": false
+        }
+      }
+    }
+  ],
+  "unchanged_case_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186
+  ],
+  "unchanged_decision_count": 186,
+  "unchanged_proposal_object_count": 126,
+  "unchanged_payload_count": 127,
+  "proposal_supersession": {
+    "old": {
+      "proposal_id": "kg-isp4-remove-salt-parent",
+      "case_ids": [
+        "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188"
+      ],
+      "description": "Remove chemically invalid inorganic-salt parent from named ISP4 medium; preserve UNMAPPED status and exact raw source name pending distinct formulation curation.",
+      "evidence_ids": [
+        "kg-md1692",
+        "kg-jcm58",
+        "kg-CHEBI_24839",
+        "kg-frozen-shard",
+        "kg-owners-before"
+      ],
+      "owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/isp4-remove-salt-parent.yaml",
+        "sha256": "70c4b138c58230159aa991533c6048a4503761e01853a0a54b7759b96eb76435"
+      },
+      "integration_limit": "Proposed bytes only; native closed-schema/semantic review, owner surface synchronization, SSSOM and release review remain coordinator obligations. No inherited hold is cleared.",
+      "publication_holds": [
+        "All inherited WITHHOLD, REJECTED and source/downstream holds remain; complete owner payload requires content-bound review."
+      ],
+      "other_shard_owner_references": {
+        "shards": [],
+        "meaning": "Lexical/candidate references only; coordinator must inspect actual other-worker proposals before choosing owner bytes. No identity or conflict resolution inferred."
+      }
+    },
+    "new": {
+      "proposal_id": "sv2-isp4-jcm58-complete-formulation",
+      "case_ids": [
+        "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188"
+      ],
+      "description": "Complete the authentic named-medium owner as the bounded prepared JCM58 ISP4 formulation, preserving parent-removal1188 and every history event; retain nine immediate inputs and the unexpanded trace recipe without minting or adopting the conflicting W06stock.",
+      "evidence_ids": [
+        "sv2-isp4-jcm58",
+        "sv2-isp4-source-case143",
+        "sv2-isp4-before-owner",
+        "sv2-isp4-parent-removal-predecessor",
+        "sv2-isp4-owner-lookup",
+        "sv2-isp4-frozen-candidates",
+        "sv2-isp4-nested-overlap",
+        "sv2-isp4-part-owner-lookup",
+        "sv2-isp4-ontology-attempts",
+        "sv2-isp4-ontology-query-0",
+        "sv2-isp4-ontology-query-1",
+        "sv2-isp4-ontology-query-2",
+        "sv2-isp4-guard",
+        "sv2-isp4-partonomy"
+      ],
+      "owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "destination_path": "data/ingredients/mapped/Inorganic_Salts-starch_Agar.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml",
+        "sha256": "5f03a7e991806a9e33b948383a31299b8c371b825da8912a5decca82504ccff2"
+      },
+      "supersedes_proposal_ids": [
+        "kg-isp4-remove-salt-parent"
+      ],
+      "predecessor_proposal": {
+        "proposal_id": "kg-isp4-remove-salt-parent",
+        "after_capture": {
+          "root": "artifact",
+          "path": "kg/proposed/isp4-remove-salt-parent.yaml",
+          "sha256": "70c4b138c58230159aa991533c6048a4503761e01853a0a54b7759b96eb76435"
+        },
+        "preservation": "Exact fullhistory prefix including parent-removal event retained; newpayload remains based on authentic maintained76a430preimage."
+      },
+      "coordinator_dependencies": [
+        {
+          "finding_id": "SV2-ISP4-NESTED-OVERLAP-001",
+          "entry_id": "w06::B-P-NBRC268-trace-salts",
+          "payload_sha256": "1eb6bdc96a251757714586e4e341671d7af182d57651f7ce68c03d2a599821db",
+          "requirement": "Compare exact source/formulation and author provisional state before resolving nested reference; current parent uses UNMAPPED/no component_id and requires no W06admission."
+        }
+      ],
+      "publication_holds": [
+        "Full payload independent content-bound review remains pending.",
+        "All inherited owner, role, source and export holds remain.",
+        "Coordinator must preserve source-scoped routing, use guarded promotion/synchronization and native export gates; no maintained or release surface is changed here."
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    "meaning": "New isolated formulation preserves old owner/history and parent-removal correction; prior proposal and bytes remain immutable historical artifacts."
+  },
+  "metadata_only_stock_binding": {
+    "old": {
+      "proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "case_ids": [
+        "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd"
+      ],
+      "description": "Create a source-qualified preparation identity with partial source-supported components. TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used.",
+      "evidence_ids": [
+        "buffers-case-21",
+        "buffers-primary-2b7e3ee4d3ec3dfb",
+        "buffers-recipe-21-0",
+        "buffers-retrieval-log",
+        "sv1-buffers-context-review",
+        "sv1-buffers-owner-lookup",
+        "sv1-buffers-guarded-validation",
+        "sv1-buffers-proposal-identity-lookup",
+        "sv1-buffers-strict-validation"
+      ],
+      "owner_path": "data/ingredients/mapped/carbonate_co2_nominal4percent_togo_m202.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+        "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+      },
+      "before_sha256": null,
+      "identity_predicate_consequences": "Local kgmicrobe.ingredient preparation identity with FALLBACK_REGISTRY mapping to its own identifier. No whole-to-constituent mapping, CAS, or exact external ontology equivalence. Registry exactMatch row would identify only this source-qualified preparation.",
+      "publication_review_obligations": "Proposal only. Full content-bound publication review, integration conflict checks, maintained-surface synchronization and native export QC remain required after acceptance. No roles or complete owner approval.",
+      "cross_shard_conflicts": "No overlap with the original 36 owner paths. New preparations must be compared against concurrent proposals before integration; similar names alone do not establish same formulation.",
+      "publication_holds": [
+        "The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    },
+    "new": {
+      "proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "case_ids": [
+        "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+        "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4"
+      ],
+      "description": "Create a source-qualified preparation identity with partial source-supported components. TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used. Successor-v2 metadata adds the exact frozen KG ingredient1685/J209 context to this already represented source stock; the original owner payload is unchanged.",
+      "evidence_ids": [
+        "buffers-case-21",
+        "buffers-primary-2b7e3ee4d3ec3dfb",
+        "buffers-recipe-21-0",
+        "buffers-retrieval-log",
+        "sv1-buffers-context-review",
+        "sv1-buffers-owner-lookup",
+        "sv1-buffers-guarded-validation",
+        "sv1-buffers-proposal-identity-lookup",
+        "sv1-buffers-strict-validation",
+        "kg-md1685",
+        "kg-mdJ209",
+        "sv2-carbonate-md1685-source-bridge",
+        "sv2-carbonate-mdj209-exact-occurrence",
+        "sv2-carbonate-togo-m202-same-source",
+        "sv2-carbonate-frozen-case187",
+        "sv2-carbonate-frozen-m202-context"
+      ],
+      "owner_path": "data/ingredients/mapped/carbonate_co2_nominal4percent_togo_m202.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+        "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+      },
+      "before_sha256": null,
+      "identity_predicate_consequences": "Local kgmicrobe.ingredient preparation identity with FALLBACK_REGISTRY mapping to its own identifier. No whole-to-constituent mapping, CAS, or exact external ontology equivalence. Registry exactMatch row would identify only this source-qualified preparation.",
+      "publication_review_obligations": "Proposal only. Full content-bound publication review, integration conflict checks, maintained-surface synchronization and native export QC remain required after acceptance. No roles or complete owner approval.",
+      "cross_shard_conflicts": "No overlap with the original 36 owner paths. New preparations must be compared against concurrent proposals before integration; similar names alone do not establish same formulation.",
+      "publication_holds": [
+        "The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "applicable_occurrence_ids": [
+        "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+      ],
+      "source_case_applicability": [
+        {
+          "case_id": "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+          "occurrence_ids": [
+            "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+          ],
+          "scope": "Original case21 TOGO M202/CultureMech008618 occurrence retained unchanged. Its original scientific decision is not revised."
+        },
+        {
+          "case_id": "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4",
+          "occurrence_ids": [],
+          "source_id": "mediadive.ingredient:1685",
+          "source_medium_id": "J209",
+          "source_recipe_name": "M98-5",
+          "source_record_locator": "shards/shard-10.json#/cases/187/original_kg_entry/source_record",
+          "source_record_sha256": "ca887e24b2a391c15c322c0a2146a11f3024a796a850f1dde591e438856ed675",
+          "primary_locator": "kg/captures/mdJ209.json#/data/solutions/0/recipe/11",
+          "scope": "Only the exact admitted row linked through ingredient1685.media[0]=J209 and the same JCM209 provenance in TOGO M202; no invented CM_OCC ID or global alias."
+        }
+      ],
+      "metadata_successor": {
+        "finding_id": "C-002",
+        "prior_proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+        "prior_proposal_object_sha256": "adf29205d248249a228731410c26399d9ad590d8572d62b9bee8c8b584432bc9",
+        "prior_proposal_ledger": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/reports/all_unmatched_20261107/worker-10/successor-v1/proposals.json",
+          "sha256": "608ce70c69294f145f0d98efca387676c6c5a636fba4c5be90090df2c31c4e81"
+        },
+        "change_scope": "Case/evidence/applicability metadata only; retain original proposal_id and after_capture; select this metadata once, not as a second owner.",
+        "payload_change_required": false,
+        "case21_scientific_decision_change_required": false,
+        "history_change_required": false,
+        "history_rationale": "No ingredient identity, composition, label, synonym, source assertion inside the owner, or maintained record changes. The historical TOGO-only authoring note remains truthful; the new MediaDive correspondence belongs to this new dated source-association ledger."
+      }
+    },
+    "payload_changed": false
+  },
+  "original_evidence_entries_preserved": 1140,
+  "other_inherited_owner_findings": "Unchanged and reserved for root integration; no EDTA or unrelated alias correction."
+}

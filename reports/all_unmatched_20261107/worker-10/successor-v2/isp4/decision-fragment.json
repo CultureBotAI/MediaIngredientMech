@@ -1,0 +1,67 @@
+{
+  "case_id": "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188",
+  "case_input_sha256": "495ce2505d9a0dc368a9c5e03a3eabc1f75d4a68925bf6d21cb48d58a786a9c2",
+  "source": {
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1692",
+    "source_label": "Inorganic salts-starch agar",
+    "raw_source_label": "Inorganic salts-starch agar"
+  },
+  "occurrence_ids": [],
+  "disposition": "stock_product_mixture_context",
+  "reasoning": "JCM58 primary capture supplies the complete nine-input ISP4 prepared-medium formulation and the four-input nested trace-stock recipe. This successor completes that bounded formulation on authentic UNMAPPED_0123 while preserving the prior1188 invalid-parent-removal event. Named-source completeness does not require invented polymer chemistry, hydration, final yield or an unchecked nested-stock identifier.",
+  "applicability": "Only the exact frozen mediadive.ingredient:1692 source record in case143, with1000ml named medium and ISP4/seeMedium58 pointer. The1000ml occurrence amount is not a recipe yield. JCM58 source batch includes1Lwater input and1mLtrace stock. Allnine immediate inputs are represented; the four trace inputs remain nested provenance. W06candidate548 is a coordinator reconciliation dependency, not silently adopted. Prepared medium is distinct from the separately mentioned commercial premixed powder.",
+  "missing_requirement": "Source-qualified parent formulation is complete. Remaining bounded details: soluble-starch product chemistry, K2HPO4 hydration, unreported final yield, and independent coordinator reconciliation/admission of the matching W06trace-stock candidate before resolving its component identifier. These do not defer the supported parent record.",
+  "no_change_reason": null,
+  "issue_refs": [],
+  "evidence_ids": [
+    "kg-frozen-shard",
+    "kg-owners-before",
+    "kg-md1692",
+    "kg-jcm58",
+    "kg-CHEBI_24839",
+    "sv2-isp4-jcm58",
+    "sv2-isp4-source-case143",
+    "sv2-isp4-before-owner",
+    "sv2-isp4-parent-removal-predecessor",
+    "sv2-isp4-owner-lookup",
+    "sv2-isp4-frozen-candidates",
+    "sv2-isp4-nested-overlap",
+    "sv2-isp4-part-owner-lookup",
+    "sv2-isp4-ontology-attempts",
+    "sv2-isp4-ontology-query-0",
+    "sv2-isp4-ontology-query-1",
+    "sv2-isp4-ontology-query-2",
+    "sv2-isp4-guard",
+    "sv2-isp4-partonomy"
+  ],
+  "proposal_ids": [
+    "sv2-isp4-jcm58-complete-formulation"
+  ],
+  "owner_records": [
+    {
+      "path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178"
+    }
+  ],
+  "independent_review": {
+    "status": "pending",
+    "evidence_ids": []
+  },
+  "source_index": 143,
+  "release_authorization": false,
+  "preserved_hold_scope": {
+    "downstream_holds": [],
+    "inherited_native_mapping_review_not_overridden": true,
+    "rejected_owner_not_revived": true
+  },
+  "completion_reassessment": {
+    "finding_id": "C-001",
+    "status": "bounded_source_formulation_proposed",
+    "prior_proposal_id": "kg-isp4-remove-salt-parent",
+    "replacement_proposal_id": "sv2-isp4-jcm58-complete-formulation",
+    "all_original_case_fields_preserved_in_evidence": "sv2-isp4-source-case143",
+    "no_maintained_write": true,
+    "review_authorship": "/root/bio_research authored this source-completion assessment; separate skeptical review pending."
+  }
+}

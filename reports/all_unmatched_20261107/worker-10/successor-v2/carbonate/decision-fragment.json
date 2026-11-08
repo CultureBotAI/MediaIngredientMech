@@ -1,0 +1,83 @@
+{
+  "case_id": "KG_CASE:ff2e407287d101f00419a4b6fe8a3c234acb578216aca80cbfdad577dbe4a9f4",
+  "case_input_sha256": "4bc991048af287a1e92299b9e9758092dedd80ca2222887dc196095f03d16b63",
+  "source": {
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1685",
+    "source_label": "Na2CO3-CO2 buffer",
+    "raw_source_label": "Na2CO3-CO2 buffer"
+  },
+  "occurrence_ids": [],
+  "disposition": "stock_product_mixture_context",
+  "reasoning": "The captured MediaDive ingredient1685 record explicitly lists J209. Its frozen KG source_record exactly matches J209 M98-5 recipe_order12:100ml Na2CO3-CO2 buffer with attribute4%. TOGO M202 declares original_media_id JCM_M209, the same JCM209 source URL and M98-5 name, and the matching100ml nominal4% buffer row. These positive source and occurrence bindings justify associating this KG context with the existing source-qualified stock kgmicrobe.ingredient:carbonate_co2_nominal4percent_togo_m202. No second stock owner or changed stock chemistry is needed. The existing rejection of the buffer label on pure carbonate remains correct; MediaDive solute annotations do not define the whole stock.",
+  "applicability": "Applies only to the frozen mediadive.ingredient:1685 raw recipe row now explicitly traced through ingredient1685.media[0]=J209 to JCM209/M98-5 and TOGO M202. The complete frozen KG case has no CM_OCC IDs, and its helper occurrence count is not a recipe-frequency measurement. Preserve the prior case21 CM_OCC binding unchanged; add this KG source-context backlink in proposal metadata without globally resolving Na2CO3-CO2 buffer or nominal4% strings. No whole-receiving-medium EXACT_FORMULATION relationship, all-occurrence generalization, or carbonate-solute identity follows.",
+  "missing_requirement": "No additional fact is required for this bounded same-source stock association. The4% basis, carrier, carbonate hydration, CO2 dose/equilibration endpoint and full preparation remain unknown; they limit quantitative/composition claims and do not defer the already represented source identity. Sodium_Carbonate_Solution and inherited pure-owner/export claims still require their separate content-bound review.",
+  "no_change_reason": null,
+  "issue_refs": [
+    "https://github.com/CultureBotAI/MediaIngredientMech/issues/114"
+  ],
+  "evidence_ids": [
+    "kg-frozen-shard",
+    "kg-owners-before",
+    "kg-md1685",
+    "kg-mdJ209",
+    "kg-CHEBI_29377",
+    "buffers-primary-2b7e3ee4d3ec3dfb",
+    "buffers-recipe-21-0",
+    "sv2-carbonate-md1685-source-bridge",
+    "sv2-carbonate-mdj209-exact-occurrence",
+    "sv2-carbonate-togo-m202-same-source",
+    "sv2-carbonate-frozen-case187",
+    "sv2-carbonate-frozen-m202-context"
+  ],
+  "proposal_ids": [
+    "kg-carbonate-buffer-alias",
+    "sv1-buffers-carbonate_co2_nominal4percent_togo_m202"
+  ],
+  "owner_records": [
+    {
+      "path": "data/ingredients/mapped/Na2co3.yaml",
+      "sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650"
+    },
+    {
+      "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+      "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+    }
+  ],
+  "independent_review": {
+    "status": "pending",
+    "evidence_ids": []
+  },
+  "source_index": 187,
+  "release_authorization": false,
+  "preserved_hold_scope": {
+    "downstream_holds": [],
+    "inherited_native_mapping_review_not_overridden": true,
+    "rejected_owner_not_revived": true
+  },
+  "reviewer": "/root/buffers_research",
+  "completion_reassessment": {
+    "finding_id": "C-002",
+    "prior_published_head": "468766d941e35a74eb2de3c95096660987277d9b",
+    "prior_decision_sha256": "35aa167f4c5015017798b81632368b50c306c3cab754974bee43edccc548d9bd",
+    "classification": "existing_source_qualified_stock_explicitly_bound_to_same_source_KG_context",
+    "missing_fact_vs_deferred_work": "The separate stock identity was already curated for case21. Only its case187 association/backlink was missing. Unknown formulation details remain bounded holds, not missing identity curation.",
+    "existing_stock_proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+    "stock_payload_unchanged": {
+      "root": "artifact",
+      "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+      "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+    },
+    "pure_carbonate_alias_rejection_unchanged": {
+      "root": "artifact",
+      "path": "kg/proposed/carbonate-buffer-alias.yaml",
+      "sha256": "b8e08c21022fcbd8b96d492f0365309e23cc52c241ea5ae47af5d37848efa9b8"
+    },
+    "case21_decision_unchanged_sha256": "8f024effda16544a57c8ed5ee551fee48b8f429e70ca16cb6186026972d018f7",
+    "no_new_owner": true,
+    "no_global_alias": true,
+    "embedded_holds_preserved": true,
+    "no_new_http_capture_claim": true,
+    "release_authorization": false
+  }
+}

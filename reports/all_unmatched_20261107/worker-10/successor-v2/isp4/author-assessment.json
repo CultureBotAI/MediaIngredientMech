@@ -1,0 +1,216 @@
+{
+  "at": "2026-11-08T07:16:34.547357+00:00",
+  "case_index": 143,
+  "case_id": "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188",
+  "case_input_sha256": "495ce2505d9a0dc368a9c5e03a3eabc1f75d4a68925bf6d21cb48d58a786a9c2",
+  "source_raw_record": {
+    "amount": 1000,
+    "attribute": "ISP-4) (see Medium No. 58",
+    "compound": "Inorganic salts-starch agar",
+    "compound_id": 1692,
+    "optional": 0,
+    "recipe_order": 1,
+    "unit": "ml"
+  },
+  "author": "/root/bio_research",
+  "scope": "C-001 only: authentic named-medium source completion, exact source recipe/partonomy, source-case continuity and nested-stock duplicate screening. No role/export approval.",
+  "authentic_owner": {
+    "path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+    "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+    "original_identifier": "UNMAPPED_0123",
+    "destination_path": "data/ingredients/mapped/Inorganic_Salts-starch_Agar.yaml",
+    "proposed_identifier": "kgmicrobe.ingredient:inorganic_salts_starch_agar"
+  },
+  "source_capture": {
+    "path": "kg/captures/jcm58.html",
+    "sha256": "1aaeb1dd7a38141e4b231f0588d904ea2b46c12d0d939e1bcc1e133fe807084c",
+    "original_accessed_at": "2026-11-08T05:08:38.285342+00:00",
+    "actual_primary_read": "All9first-table and4second-table inputs, defaultmediaautoclave instruction, unadjustedpH, separatepremixedpowderavailabilitycomment."
+  },
+  "source_quantities": [
+    {
+      "component_name": "Soluble starch",
+      "reference_scope": "UNMAPPED",
+      "concentration_value": "10.0",
+      "concentration_unit": "G",
+      "source": "Literal JCM58 input; no botanical origin, processing method or exact polymer/product identity is supplied."
+    },
+    {
+      "component_name": "K2HPO4",
+      "reference_scope": "UNMAPPED",
+      "concentration_value": "1.0",
+      "concentration_unit": "G",
+      "source": "Literal JCM58 formula, hydration unspecified. Do not import NBRC268 anhydrous-base qualifier."
+    },
+    {
+      "component_name": "MgSO4 x 7 H2O",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "1.0",
+      "concentration_unit": "G",
+      "component_id": "CHEBI:31795",
+      "source": "JCM58 prints MgSO4·7H2O; exact heptahydrate retained."
+    },
+    {
+      "component_name": "NaCl",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "1.0",
+      "concentration_unit": "G",
+      "component_id": "CHEBI:26710"
+    },
+    {
+      "component_name": "(NH4)2SO4",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "2.0",
+      "concentration_unit": "G",
+      "component_id": "CHEBI:62946"
+    },
+    {
+      "component_name": "CaCO3",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "2.0",
+      "concentration_unit": "G",
+      "component_id": "CHEBI:3311"
+    },
+    {
+      "component_name": "Trace salts solution (JCM 58)",
+      "reference_scope": "UNMAPPED",
+      "concentration_value": "1.0",
+      "concentration_unit": "ML",
+      "source": "JCM58 second table defines FeSO4·7H2O0.1g, MnCl2·4H2O0.1g, ZnSO4·7H2O0.1g and distilled water100mL. These are nested-stock batch inputs, not additional immediate inputs or normalized final-medium concentrations. Frozen W06 B-P-NBRC268-trace-salts has the matching four-input table; coordinator must compare/admit that exact candidate before resolving this reference. No new nested owner or silent adoption of its identifier."
+    },
+    {
+      "component_name": "Agar",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "20.0",
+      "concentration_unit": "G",
+      "component_id": "CHEBI:2509",
+      "source": "Unspecified agar input; JCM58 mentions commercial premixed ISP Medium4 availability separately, not an exact catalog assignment for this constituent."
+    },
+    {
+      "component_name": "Distilled water",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "1.0",
+      "concentration_unit": "L",
+      "component_id": "CHEBI:15377",
+      "source": "One liter of water is the printed preparation input. No final1L yield or make-up volume is specified."
+    }
+  ],
+  "nested_trace_inputs": [
+    {
+      "input": "FeSO4·7H2O",
+      "amount": "0.1",
+      "unit": "g"
+    },
+    {
+      "input": "MnCl2·4H2O",
+      "amount": "0.1",
+      "unit": "g"
+    },
+    {
+      "input": "ZnSO4·7H2O",
+      "amount": "0.1",
+      "unit": "g"
+    },
+    {
+      "input": "Distilled water",
+      "amount": "100",
+      "unit": "mL"
+    }
+  ],
+  "nested_stock_resolution": "No new stockowner; source-qualified UNMAPPED immediate part with fullnested recipe retained. Exact W06candidate548 overlap reported before authoring and bound in immutable finding.",
+  "owner_search_scope": {
+    "ignored_inclusive": true,
+    "native_records": 2956,
+    "frozen_candidate_payloads": 981,
+    "all_frozen_payload_hashes_verified": true
+  },
+  "ontology_limit": "No exact whole-formulation ontology term established in the available record/capture evidence. Initial OLS requests failed; three followup MICRO queries succeeded with zero documents. Exact query/response/timestamp receipts retained in ontology-followup-v2.json. This is a bounded negative search, not a global absence claim. Registry formulation can be represented without guessing a term.",
+  "identity_limits": [
+    "Soluble starch remains namedUNMAPPED rather than inheriting genericStarchalias chemistry.",
+    "JCMK2HPO4 remains literalUNMAPPED; NBRC268anhydrous qualifier is not copied.",
+    "Genericagar material scope does not assign BD/Difcoproduct or purepolymer structure.",
+    "1Lwater input and100mLtracewater input do not specify finalyield.",
+    "Trace stock remains one immediateinput; no normalized metals are flattened.",
+    "JCMpage121C15min defaults to media; no separate nested-stock sterilization schedule is inferred.",
+    "Existing raw-name synonym and originalzero occurrence counts are preserved; no independent genericcross-source identity/export approval."
+  ],
+  "candidate": {
+    "proposal_id": "sv2-isp4-jcm58-complete-formulation",
+    "case_ids": [
+      "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188"
+    ],
+    "description": "Complete the authentic named-medium owner as the bounded prepared JCM58 ISP4 formulation, preserving parent-removal1188 and every history event; retain nine immediate inputs and the unexpanded trace recipe without minting or adopting the conflicting W06stock.",
+    "evidence_ids": [
+      "sv2-isp4-jcm58",
+      "sv2-isp4-source-case143",
+      "sv2-isp4-before-owner",
+      "sv2-isp4-parent-removal-predecessor",
+      "sv2-isp4-owner-lookup",
+      "sv2-isp4-frozen-candidates",
+      "sv2-isp4-nested-overlap",
+      "sv2-isp4-part-owner-lookup",
+      "sv2-isp4-ontology-attempts",
+      "sv2-isp4-ontology-query-0",
+      "sv2-isp4-ontology-query-1",
+      "sv2-isp4-ontology-query-2",
+      "sv2-isp4-guard",
+      "sv2-isp4-partonomy"
+    ],
+    "owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+    "destination_path": "data/ingredients/mapped/Inorganic_Salts-starch_Agar.yaml",
+    "kind": "edit_existing_owner",
+    "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml",
+      "sha256": "5f03a7e991806a9e33b948383a31299b8c371b825da8912a5decca82504ccff2"
+    },
+    "supersedes_proposal_ids": [
+      "kg-isp4-remove-salt-parent"
+    ],
+    "predecessor_proposal": {
+      "proposal_id": "kg-isp4-remove-salt-parent",
+      "after_capture": {
+        "root": "artifact",
+        "path": "kg/proposed/isp4-remove-salt-parent.yaml",
+        "sha256": "70c4b138c58230159aa991533c6048a4503761e01853a0a54b7759b96eb76435"
+      },
+      "preservation": "Exact fullhistory prefix including parent-removal event retained; newpayload remains based on authentic maintained76a430preimage."
+    },
+    "coordinator_dependencies": [
+      {
+        "finding_id": "SV2-ISP4-NESTED-OVERLAP-001",
+        "entry_id": "w06::B-P-NBRC268-trace-salts",
+        "payload_sha256": "1eb6bdc96a251757714586e4e341671d7af182d57651f7ce68c03d2a599821db",
+        "requirement": "Compare exact source/formulation and author provisional state before resolving nested reference; current parent uses UNMAPPED/no component_id and requires no W06admission."
+      }
+    ],
+    "publication_holds": [
+      "Full payload independent content-bound review remains pending.",
+      "All inherited owner, role, source and export holds remain.",
+      "Coordinator must preserve source-scoped routing, use guarded promotion/synchronization and native export gates; no maintained or release surface is changed here."
+    ],
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    }
+  },
+  "guarded_validation": {
+    "at": "2026-11-08T07:16:34.543873+00:00",
+    "guarded_writer": "mediaingredientmech.validation.write_validated.write_validated_ingredient",
+    "target_class": "IngredientRecord",
+    "errors": 0,
+    "payload_path": "successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml",
+    "payload_sha256": "5f03a7e991806a9e33b948383a31299b8c371b825da8912a5decca82504ccff2",
+    "before_owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+    "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+    "proposed_destination": "data/ingredients/mapped/Inorganic_Salts-starch_Agar.yaml",
+    "prior_payload_sha256": "70c4b138c58230159aa991533c6048a4503761e01853a0a54b7759b96eb76435",
+    "prior_and_baseline_full_history_prefix_preserved": true,
+    "new_evidence_has_no_MANUAL_CURATION": true,
+    "maintained_owner_bytes_unchanged": true
+  },
+  "partonomy_new_violations": [],
+  "no_maintained_or_release_writes": true,
+  "independent_review": "pending"
+}

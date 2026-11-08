@@ -1,0 +1,65 @@
+{
+  "proposals": [
+    {
+      "proposal_id": "sv2-isp4-jcm58-complete-formulation",
+      "case_ids": [
+        "KG_CASE:1a66ac5392acbc9e2ba7fcfa153ea50cd4aea5713448e336626be8779db33188"
+      ],
+      "description": "Complete the authentic named-medium owner as the bounded prepared JCM58 ISP4 formulation, preserving parent-removal1188 and every history event; retain nine immediate inputs and the unexpanded trace recipe without minting or adopting the conflicting W06stock.",
+      "evidence_ids": [
+        "sv2-isp4-jcm58",
+        "sv2-isp4-source-case143",
+        "sv2-isp4-before-owner",
+        "sv2-isp4-parent-removal-predecessor",
+        "sv2-isp4-owner-lookup",
+        "sv2-isp4-frozen-candidates",
+        "sv2-isp4-nested-overlap",
+        "sv2-isp4-part-owner-lookup",
+        "sv2-isp4-ontology-attempts",
+        "sv2-isp4-ontology-query-0",
+        "sv2-isp4-ontology-query-1",
+        "sv2-isp4-ontology-query-2",
+        "sv2-isp4-guard",
+        "sv2-isp4-partonomy"
+      ],
+      "owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "destination_path": "data/ingredients/mapped/Inorganic_Salts-starch_Agar.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml",
+        "sha256": "5f03a7e991806a9e33b948383a31299b8c371b825da8912a5decca82504ccff2"
+      },
+      "supersedes_proposal_ids": [
+        "kg-isp4-remove-salt-parent"
+      ],
+      "predecessor_proposal": {
+        "proposal_id": "kg-isp4-remove-salt-parent",
+        "after_capture": {
+          "root": "artifact",
+          "path": "kg/proposed/isp4-remove-salt-parent.yaml",
+          "sha256": "70c4b138c58230159aa991533c6048a4503761e01853a0a54b7759b96eb76435"
+        },
+        "preservation": "Exact fullhistory prefix including parent-removal event retained; newpayload remains based on authentic maintained76a430preimage."
+      },
+      "coordinator_dependencies": [
+        {
+          "finding_id": "SV2-ISP4-NESTED-OVERLAP-001",
+          "entry_id": "w06::B-P-NBRC268-trace-salts",
+          "payload_sha256": "1eb6bdc96a251757714586e4e341671d7af182d57651f7ce68c03d2a599821db",
+          "requirement": "Compare exact source/formulation and author provisional state before resolving nested reference; current parent uses UNMAPPED/no component_id and requires no W06admission."
+        }
+      ],
+      "publication_holds": [
+        "Full payload independent content-bound review remains pending.",
+        "All inherited owner, role, source and export holds remain.",
+        "Coordinator must preserve source-scoped routing, use guarded promotion/synchronization and native export gates; no maintained or release surface is changed here."
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      }
+    }
+  ]
+}
