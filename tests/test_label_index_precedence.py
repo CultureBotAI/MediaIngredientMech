@@ -285,7 +285,7 @@ def test_ambiguity_is_the_last_column(tmp_path):
     tmp_path.mkdir(parents=True, exist_ok=True)
     out = tmp_path / "label_index.csv"
     mod.export_label_index([_record("CHEBI:1", "X")], out)
-    assert out.read_text().splitlines()[0].split(",")[-1] == "ambiguity"
+    assert out.read_text().splitlines()[0].split(",")[-2:] == ["ambiguity", "mim_id"]
 
 
 def test_dot_notation_formulas_are_not_a_false_conflict(tmp_path):

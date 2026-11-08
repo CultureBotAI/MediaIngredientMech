@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002419; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 599-79-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C18H14N4O5S/c23-16-9-6-13(11-15(16)18(24)25)21-20-12-4-7-14(8-5-12)28(26,27)22-17-3-1-2-10-19-17/h1-11,23H,(H,19,22)(H,24,25)/b21-20+
   smiles: O=C(O)c1cc(/N=N/c2ccc(S(=O)(=O)Nc3ccccn3)cc2)ccc1O
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002419
+legacy_identifiers:
+- MIM:Sulfasalazine
+- CHEBI:9334

@@ -33,6 +33,12 @@ curation_history:
   changes: Promoted UNMAPPED_0147 -> kgmicrobe.ingredient:hans_100x_vitamins "Hans
     100x vitamins" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
     added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001266; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available. Reviewed on 2026-05-11 as a concentrated vitamin stock/pre-mix
   pending component-level recipe curation.
@@ -51,3 +57,7 @@ ontology_mapping:
       is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
       mint with no parent, because a multi-component mix does not narrow to any single
       compound (#288).'
+mim_id: MIM:0001266
+legacy_identifiers:
+- MIM:Hans_100x_Vitamins
+- kgmicrobe.ingredient:hans_100x_vitamins

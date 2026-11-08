@@ -90,6 +90,12 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002578; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 9005-64-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -106,3 +112,7 @@ physicochemical_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Surfactant'
+mim_id: MIM:0002578
+legacy_identifiers:
+- MIM:Tween_20
+- CHEBI:53424

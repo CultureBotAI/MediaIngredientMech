@@ -10,6 +10,10 @@ import subprocess
 from contextlib import contextmanager
 
 import pytest
+
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,7 +26,7 @@ STAMP = "2026-11-01T12:00:00+00:00"
 
 
 @pytest.fixture(scope="module")
-def current():
+def current(pre_mint_schema):
     return w.propose_sources({p: w.frozen(p) for p in w.OWNERS}, timestamp=STAMP)
 
 

@@ -1,0 +1,31 @@
+name: QC — stable MIM identifiers
+
+on:
+  pull_request:
+  merge_group:
+    types: [checks_requested]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  MIM_ID_BASE: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha || github.event.before || (github.event_name == 'workflow_dispatch' && github.sha) || 'INVALID-ID-BASE' }}
+
+jobs:
+  qc:
+    name: qc-stable-ids
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install minimal validator dependencies
+        run: python -m pip install pyyaml
+      - name: Validate inventory and append-only identifier history
+        run: python scripts/validate_stable_ids.py --require-history --base "$MIM_ID_BASE"

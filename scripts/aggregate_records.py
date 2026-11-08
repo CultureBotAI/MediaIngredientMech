@@ -68,15 +68,13 @@ def _order_like(records: list[dict], reference: Path | None) -> list[dict]:
     diff — the exact condition under which 55 curation events went unnoticed in
     #148. Matching the existing order makes the diff proportional to the change.
 
-    Pairs on (identifier, preferred_term), the same key verify_roundtrip uses.
+    Pairs on permanent mim_id when present. Historical records without it use
+    (identifier, preferred_term), the same legacy key verify_roundtrip uses.
     Records absent from the reference keep their relative (filename) order at the
     end, because `sorted` is stable and they all share the same rank.
 
-    Consequence worth knowing: re-identifying a record (the UNMAPPED_NNNN ->
-    CHEBI:x promotion the manage-identifiers skill performs) changes the pairing
-    key, so that record is treated as new and moves to the end. The diff stays
-    proportional and the result still converges; collection order just drifts
-    toward "most recently re-identified last" over time.
+    A name or mapping correction keeps a MIM record in its prior position.
+    Truly new IDs append in their current filename order.
     """
     if reference is None or not reference.exists():
         return records
@@ -88,6 +86,8 @@ def _order_like(records: list[dict], reference: Path | None) -> list[dict]:
         return records
 
     def _key(rec: dict):
+        if isinstance(rec.get("mim_id"), str):
+            return ("mim_id", rec["mim_id"])
         # A record whose identifier is a list/dict would make an unhashable key
         # and take down `just sync-curated` with a bare TypeError, losing this
         # file's per-record diagnostics. Ordering is a presentation concern, so

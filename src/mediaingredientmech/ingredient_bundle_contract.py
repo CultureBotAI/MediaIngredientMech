@@ -33,6 +33,7 @@ CAPABILITIES = frozenset(
         "identifier-annotations-v1",
         "ingredient-occurrences-v1",
         "catalog-products-v1",
+        "identity-projection-v1",
     }
 )
 REQUIRED_CAPABILITIES = frozenset(
@@ -317,11 +318,15 @@ ARTIFACTS = {
 }
 
 
-def _owner_id(owner: str) -> str:
+def _owner_id(owner: str, record: dict | None = None) -> str:
     stem = Path(owner).stem
     safe = re.sub(r"[^A-Za-z0-9_\-.]", lambda m: f"~{ord(m.group(0)):02X}", stem)
     if not owner.startswith("data/ingredients/") or not owner.endswith(".yaml"):
         raise ValueError("Claim owner must be an ingredient record")
+    if record is not None and "mim_id" in record:
+        from mediaingredientmech.stable_ids import validate_id
+
+        return validate_id(record["mim_id"])
     return f"MIM:{safe}"
 
 
@@ -359,6 +364,10 @@ def reviewed_products(review: dict, sources: dict[str, bytes]) -> tuple[dict[str
     decisions use the same verifier and additionally bind the explicit owner path.
     A consumer trusts a pinned bundle/review revision, never a self-issued checksum.
     """
+    if "identity_projection" in review:
+        from mediaingredientmech.identity_projection_bundle import projected_products
+
+        return projected_products(review, sources)
     if type(review.get("schema_version")) is not int or review["schema_version"] != BUNDLE_VERSION:
         raise ValueError("Unsupported companion review version")
     declared: dict[str, str] = {}
@@ -438,10 +447,10 @@ def reviewed_products(review: dict, sources: dict[str, bytes]) -> tuple[dict[str
         if claim_id in seen or claim_id not in indexed or owner not in review["record_inputs"]:
             raise ValueError("Duplicate, unreviewed or unowned companion claim")
         seen.add(claim_id)
-        owner_id = _owner_id(owner)
         record = yaml.safe_load(sources[owner])
         if not isinstance(record, dict) or record.get("mapping_status") != "MAPPED":
             raise ValueError("Claim owner is not a mapped ingredient record")
+        owner_id = _owner_id(owner, record)
         owners[owner_id] = owner
         decision = indexed[claim_id]
         validate_review_decision(
@@ -547,7 +556,9 @@ def reviewed_products(review: dict, sources: dict[str, bytes]) -> tuple[dict[str
             if identifier_owner.startswith("MIM.product:"):
                 if identifier_owner not in product_map or product_map[identifier_owner][
                     "ingredient_id"
-                ] != _owner_id(claim["owner_record"]):
+                ] != _owner_id(
+                    claim["owner_record"], yaml.safe_load(sources[claim["owner_record"]])
+                ):
                     raise ValueError("Registry product claim has the wrong ingredient owner")
             elif identifier_owner not in scoped_owners:
                 raise ValueError("Registry owner lacks a reviewed scoped mapping")
@@ -639,6 +650,8 @@ def validate_bundle(
     if manifest.get("artifacts") != declared:
         raise ValueError("Missing or mismatched explicit bundle artifacts")
     required = set(REQUIRED_CAPABILITIES)
+    if "identity_projection" in review:
+        required.add("identity-projection-v1")
     for key, capability in (
         ("products", "catalog-products-v1"),
         ("occurrences", "ingredient-occurrences-v1"),

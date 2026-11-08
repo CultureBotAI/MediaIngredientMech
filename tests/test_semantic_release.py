@@ -233,8 +233,9 @@ def reviewed_bundle(tmp_path):
     from mediaingredientmech.export.kgx import export_graph
 
     root = tmp_path
-    record = {"identifier": "CHEBI:15377", "preferred_term": "Water", "mapping_status": "MAPPED"}
+    record = {"mim_id": "MIM:0000001", "identifier": "CHEBI:15377", "preferred_term": "Water", "mapping_status": "MAPPED"}
     unknown = {
+        "mim_id": "MIM:0000002",
         "identifier": "UNMAPPED_0001",
         "preferred_term": "Unknown",
         "mapping_status": "UNMAPPED",
@@ -253,7 +254,7 @@ def reviewed_bundle(tmp_path):
             yaml.safe_dump({"ingredients": [value]})
         )
     mapping = {
-        "subject_id": "MIM:water",
+        "subject_id": "MIM:0000001",
         "subject_label": "Water",
         "predicate_id": "skos:exactMatch",
         "object_id": "CHEBI:15377",

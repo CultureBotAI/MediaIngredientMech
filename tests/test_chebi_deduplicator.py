@@ -15,8 +15,9 @@ from mediaingredientmech.curation.chebi_deduplicator import CHEBIDeduplicator
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 
-def _record(name: str, quality: str = "EXACT_MATCH") -> dict[str, Any]:
+def _record(name: str, mim_id: str, quality: str = "EXACT_MATCH") -> dict[str, Any]:
     return {
+        "mim_id": mim_id,
         "identifier": "CHEBI:1234",
         "preferred_term": name,
         "mapping_status": "MAPPED",
@@ -38,7 +39,7 @@ def _record(name: str, quality: str = "EXACT_MATCH") -> dict[str, Any]:
 
 def _deduplicator() -> CHEBIDeduplicator:
     curator = SimpleNamespace(
-        records=[_record("target"), _record("source")],
+        records=[_record("target", "MIM:0000001"), _record("source", "MIM:0000002")],
         curator_name="test-curator",
     )
     return CHEBIDeduplicator(cast("IngredientCurator", curator))
@@ -115,7 +116,7 @@ def test_ineligible_group_is_flagged_even_when_auto_merge_is_enabled(monkeypatch
 
 def test_applied_merge_survives_validated_save(tmp_path) -> None:
     data_path = tmp_path / "ingredients.yaml"
-    data_path.write_text(yaml.safe_dump({"ingredients": [_record("target"), _record("source")]}))
+    data_path.write_text(yaml.safe_dump({"ingredients": [_record("target", "MIM:0000001"), _record("source", "MIM:0000002")]}))
     curator = IngredientCurator(data_path=data_path, curator_name="test-curator")
     curator.load()
 
@@ -160,7 +161,7 @@ def test_script_forwards_explicit_merge_controls(
 
     class FakeCurator:
         def __init__(self, data_path):
-            self.records = [_record("only")]
+            self.records = [_record("only", "MIM:0000001")]
 
         def load(self):
             return self.records

@@ -35,6 +35,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000493; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -47,3 +53,7 @@ ontology_mapping:
     source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0141; matched via 'Bile salts'; stem-substring
 ingredient_type: UNDEFINED_MIXTURE
+mim_id: MIM:0000493
+legacy_identifiers:
+- MIM:Bile_Salts
+- CHEBI:22868

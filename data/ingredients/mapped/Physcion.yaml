@@ -41,6 +41,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002048; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 521-61-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C16H12O5/c1-7-3-9-13(11(17)4-7)16(20)14-10(15(9)19)5-8(21-2)6-12(14)18/h3-6,17-18H,1-2H3
   smiles: COc1cc(O)c2c(c1)C(=O)c1cc(C)cc(O)c1C2=O
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0002048
+legacy_identifiers:
+- MIM:Physcion
+- CHEBI:38167

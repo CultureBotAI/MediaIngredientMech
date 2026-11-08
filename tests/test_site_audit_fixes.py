@@ -29,12 +29,13 @@ def test_catalog_counts_actual_status_across_storage_directories(tmp_path):
         ("unmapped", "c", "AMBIGUOUS"),
         ("unmapped", "d", "UNMAPPED"),
     ]
-    for directory, name, status in rows:
+    for number, (directory, name, status) in enumerate(rows, 1):
         path = sources / directory / (name + ".yaml")
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             yaml.safe_dump(
                 {
+                    "mim_id": f"MIM:{number:07d}",
                     "identifier": "cas:" + name,
                     "preferred_term": name,
                     "mapping_status": status,
@@ -53,7 +54,7 @@ def test_catalog_counts_actual_status_across_storage_directories(tmp_path):
         "UNMAPPED": 1,
     }
     assert all("chebi:63895" in row["searchable"] for row in data["ingredients"])
-    assert {row["record_id"] for row in data["ingredients"]} == {"MIM:a", "MIM:b", "MIM:c", "MIM:d"}
+    assert {row["record_id"] for row in data["ingredients"]} == {f"MIM:{number:07d}" for number in (1, 2, 3, 4)}
 
 
 def test_curated_fields_preserve_roles_context_reference_scope_and_escaping(tmp_path, monkeypatch):

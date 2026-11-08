@@ -40,6 +40,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.stable_id_helpers import current_subject
+
 ROOT = Path(__file__).resolve().parent.parent
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
@@ -54,7 +56,7 @@ def annotation_routes():
     result = set()
     for item in audit["annotations"]:
         assert "cas:" + item["cas_rn"] in item["node_xrefs"]
-        result.add((item["subject_id"], item["object_id"], item["cas_rn"]))
+        result.add((current_subject(item["subject_id"]), item["object_id"], item["cas_rn"]))
     return result
 
 
@@ -135,7 +137,7 @@ def test_verified_annotation_routes_still_match_current_rows(rows, records, anno
 def test_annotation_route_cannot_approve_an_unreviewed_triple(change, annotation_routes):
     """One changed component must lose the narrowly reviewed transport allowance."""
     row = {
-        "subject_id": "MIM:Acriflavine",
+        "subject_id": current_subject("MIM:Acriflavine"),
         "object_id": "NCIT:C76253",
         "predicate_id": "skos:exactMatch",
     }

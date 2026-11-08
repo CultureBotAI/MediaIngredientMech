@@ -43,16 +43,16 @@ class TestImportTransformation:
         base.update(overrides)
         return base
 
-    def _transform_to_ingredient_record(self, cm_ingredient):
+    def _transform_to_ingredient_record(self, cm_ingredient, *, mim_id="MIM:0000001"):
         """Simulate import transformation from CultureMech to MediaIngredientMech format."""
         term = cm_ingredient.get("term", {})
         term_id = term.get("id", "")
         has_mapping = bool(term_id)
 
         record = {
-            # `identifier` is the record's primary-key slot (schema rename
-            # 2026-05-16). For mapped imports it carries the ontology CURIE;
-            # for unmapped it gets an UNMAPPED_NNNN placeholder.
+            # Explicit synthetic allocated identity is separate from mapping.
+            "mim_id": mim_id,
+            # Mapping remains an ontology CURIE or legacy placeholder.
             "identifier": term_id if has_mapping else f"UNMAPPED_{id(cm_ingredient) % 10000:04d}",
             "preferred_term": cm_ingredient["preferred_term"],
             "mapping_status": "MAPPED" if has_mapping else "UNMAPPED",
@@ -138,7 +138,8 @@ class TestImportTransformation:
             self._create_culturemech_ingredient(preferred_term="glucose", term={"id": "CHEBI:17234", "label": "glucose"}),
             self._create_culturemech_ingredient(preferred_term="mystery extract", term={}),
         ]
-        records = [self._transform_to_ingredient_record(cm) for cm in ingredients]
+        records = [self._transform_to_ingredient_record(cm, mim_id=f"MIM:{number:07d}")
+                   for number, cm in enumerate(ingredients, 1)]
         assert len(records) == 3
         mapped = [r for r in records if r["mapping_status"] == "MAPPED"]
         unmapped = [r for r in records if r["mapping_status"] == "UNMAPPED"]

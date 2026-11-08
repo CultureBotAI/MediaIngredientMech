@@ -44,6 +44,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001647; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 5597-50-2
   data_source: CultureBotHT compounds_to_cas.csv
@@ -52,3 +58,7 @@ chemical_properties:
   inchi: InChI=1S/C10H12O3/c1-13-10(12)7-4-8-2-5-9(11)6-3-8/h2-3,5-6,11H,4,7H2,1H3
   smiles: COC(=O)CCc1ccc(O)cc1
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001647
+legacy_identifiers:
+- MIM:Methyl_3-_4-hydroxyphenylpropionate
+- CHEBI:176565

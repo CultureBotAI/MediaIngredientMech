@@ -23,6 +23,8 @@ from pathlib import Path
 
 import pytest
 
+from tests.stable_id_helpers import current_subject
+
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "src"))
@@ -62,7 +64,7 @@ def test_every_published_mim_subject_has_a_matching_record_file(index):
     for term in promoted:
         stem = index.by_preferred_term.get(term)
         assert stem, f"{term} has no per-record file"
-        assert f"MIM:{stem}" in subjects, (
+        assert current_subject(f"MIM:{stem}") in subjects, (
             f"{term}: file is {stem}.yaml but no SSSOM subject MIM:{stem}")
 
 

@@ -72,6 +72,12 @@ curation_history:
     to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0002017; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_beef_extract_yeast_extract);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
@@ -114,3 +120,7 @@ ontology_mapping:
       MIM records via docs/data/label_index.csv. ingredient_type=UNDEFINED_MIXTURE
       because at least one constituent is itself an undefined preparation. No concentrations
       are recorded: the label states none.'
+mim_id: MIM:0002017
+legacy_identifiers:
+- MIM:Peptone_Beef_Extract_Yeast_Extract
+- kgmicrobe.ingredient:peptone_beef_extract_yeast_extract

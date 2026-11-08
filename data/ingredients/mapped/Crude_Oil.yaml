@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0808 -> ENVO:00002984 "petroleum" (SYNONYM_MATCH); mapping_status
     UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000769; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:crude_oil); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -41,3 +47,7 @@ ontology_mapping:
     notes: '''Crude oil'' is a registered synonym of ENVO:00002984 ''petroleum''.
       ENVO is a configured adapter for this repo and the right namespace for an environmental
       substrate rather than a defined chemical (#213).'
+mim_id: MIM:0000769
+legacy_identifiers:
+- MIM:Crude_Oil
+- ENVO:00002984

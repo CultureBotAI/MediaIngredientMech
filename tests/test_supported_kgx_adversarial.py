@@ -95,9 +95,9 @@ def test_rehashed_corruption_cannot_certify_itself(reviewed_subset, attack):
         raw = next(
             node
             for node in rows(root / "full/mim_nodes.tsv", kgx=True)
-            if node["id"] == "MIM:water"
+            if node["id"] == "MIM:0000001"
         )
-        next(node for node in nodes if node["id"] == "MIM:water")["record_json"] = raw[
+        next(node for node in nodes if node["id"] == "MIM:0000001")["record_json"] = raw[
             "record_json"
         ]
         write_rows(output / "mim_nodes.tsv", nodes)

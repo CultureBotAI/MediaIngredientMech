@@ -11,6 +11,11 @@ from pathlib import Path
 import pytest
 import yaml
 
+from tests.pre_mint_schema import pre_mint_schema  # noqa: F401
+
+# Replay dated, checksum-bound sources under their exact pre-mint schema.
+pytestmark = pytest.mark.usefixtures("pre_mint_schema")
+
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("heptahydrate_writer", ROOT / "scripts/promote_heptahydrate_ncit.py")
 writer = importlib.util.module_from_spec(SPEC)
@@ -578,7 +583,7 @@ def test_issue875_committed_surfaces_use_exact_ncit_identity():
     held = [r for r in ledger if r["ingredient_name"] == writer.NAME]
     assert len(held) == 1 and held[0]["mim_id"] == writer.NEW and held[0]["rejected_id"] == writer.PARENT
     _, mappings = writer.table((ROOT / writer.SSSOM).read_bytes())
-    target = [r for r in mappings if r["subject_id"] == writer.SUBJECT]
+    target = [r for r in mappings if r["subject_id"] == record["mim_id"]]
     assert len(target) == 1
     assert (target[0]["predicate_id"], target[0]["object_id"]) == ("skos:exactMatch", writer.NEW)
     assert target[0]["validation_method"] == ""

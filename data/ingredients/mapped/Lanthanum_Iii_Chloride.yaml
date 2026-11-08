@@ -47,6 +47,12 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:231515 (pubchem-xref)
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001505; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 20211-76-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -56,3 +62,7 @@ chemical_properties:
   inchi: InChI=1S/3ClH.La/h3*1H;/q;;;+3/p-3
   pubchem_cid: 64735
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0001505
+legacy_identifiers:
+- MIM:Lanthanum_Iii_Chloride
+- cas:20211-76-1

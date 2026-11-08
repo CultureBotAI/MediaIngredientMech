@@ -206,7 +206,7 @@ def blocked_then_eligible_collection(tmp_path):
         "unmapped_count": 0,
         "ingredients": [
             record(curation_history=[], ingredient_type="STOCK_SOLUTION"),
-            record(curation_history=[]),
+            record(mim_id="MIM:0000002", curation_history=[]),
         ],
     }
     assert not validate_ingredient(collection, target_class="IngredientCollection")

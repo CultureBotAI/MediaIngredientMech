@@ -72,6 +72,7 @@ Start with commands that report the TSV's current state before editing anything.
 python scripts/reconcile_sssom.py
 just qc-sssom
 just curie-validate
+just qc-stable-ids
 python scripts/check_sssom_subject_files.py
 just validate-products
 ```
@@ -83,9 +84,13 @@ Read the generated reports and validator stderr:
 - `just qc-sssom` runs `scripts/validate_sssom_invariants.py` and writes
   rejected rows to `mappings/needs_curator_review.tsv`.
 - `just curie-validate` asserts the published SSSOM uses valid CURIE syntax.
-- `scripts/check_sssom_subject_files.py` reports `MIM:` subjects whose slug no
-  longer resolves to a per-record YAML file. This is reported, not gated, while
-  issue #236 keeps `MIM:` subject semantics undecided.
+- `just qc-stable-ids` checks permanent ID uniqueness, registry membership and
+  active-record coverage. A filename is not the subject identity; review each
+  SSSOM subject against the current corpus and require unambiguous resolution
+  for historical aliases.
+- `scripts/check_sssom_subject_files.py` checks that MIM subjects resolve through
+  the registry/current-corpus lookup. It refuses unknown or ambiguous aliases
+  and invalid registry state; filename matches alone establish no identity.
 - `just validate-products` enforces id-label correspondence across the final
   SSSOM and docs CSV product columns under the canonical-or-synonym policy from
   `conf/id_label_targets.yaml`.
@@ -96,9 +101,9 @@ Check each questionable row against these questions:
 
 - **Subject currency:** is every `subject_label` present as a mapped ingredient
   in `data/curated/mapped_ingredients.yaml`?
-- **Subject slug:** does the `MIM:<slug>` still identify the intended record,
-  even if `scripts/check_sssom_subject_files.py` says the slug no longer
-  matches a file stem?
+- **Subject identity:** does the `MIM:<seven-digit-id>` resolve to the intended
+  current record's required `mim_id`, including any recorded lifecycle
+  replacement? Never derive the subject from a filename or mapping target.
 - **Object identity:** does `object_id` match the record's current
   `ontology_mapping.ontology_id` for the ontology row?
 - **Predicate semantics:** does `mapping_quality` map to the right SSSOM
@@ -110,8 +115,9 @@ Check each questionable row against these questions:
   `# predicate_semantics: skos`? kg-microbe treats its absence as the legacy
   inverted convention and would read every asymmetric row backwards (Rule L).
 - **Registry sibling:** does every `skos:broadMatch` or `skos:narrowMatch` row
-  have a sibling `MIM:<slug> skos:exactMatch
-  kgmicrobe.{ingredient,compound}:<slug_lc>` row for the same subject?
+  have a sibling `MIM:<seven-digit-id> skos:exactMatch
+  kgmicrobe.{ingredient,compound}:<mapping-slug>` row for the same subject?
+  The existing registry mapping target is independent of the numeric MIM ID.
 - **Identity rows:** is a row that maps to the record's own `identifier` always
   an `skos:exactMatch` row, regardless of the ontology mapping quality?
 - **Object source:** does every row name the ontology or registry behind its

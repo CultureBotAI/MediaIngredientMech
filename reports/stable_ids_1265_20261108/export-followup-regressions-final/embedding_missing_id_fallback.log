@@ -1,0 +1,20 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_embedding_collection_refuses_missing_permanent_identity _________
+
+tmp_path = PosixPath('<repo>/.temp/export-followup-export-followup-regressions-final/pytest-embedding_missing_id_fallback/test_embedding_collection_refu0')
+
+    def test_embedding_collection_refuses_missing_permanent_identity(tmp_path):
+        mod = script('embed_records')
+        source = tmp_path / 'mapped/No_id.yaml'
+        source.parent.mkdir()
+        source.write_text(yaml.safe_dump({'identifier': 'CHEBI:1', 'preferred_term': 'No identity',
+                                          'mapping_status': 'MAPPED'}))
+>       with pytest.raises(ValueError, match='positive seven-digit MIM identifier'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_stable_id_exports.py:142: Failed
+=========================== short test summary info ============================
+FAILED ../../../../../../../../dev::test_embedding_collection_refuses_missing_permanent_identity
+1 failed, 12 deselected in 0.17s

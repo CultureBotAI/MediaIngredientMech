@@ -87,6 +87,12 @@ curation_history:
     to 2 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers,
     and concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001250; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_3_methyl_mercaptopropionate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: NAMED_MEDIUM
@@ -131,3 +137,7 @@ ontology_mapping:
       for it. ingredient_type=DEFINED_MEDIUM because every constituent is a defined
       chemical (an unresolved name here means MIM lacks the record, not that the substance
       is undefined). No concentrations are recorded: the label states none.'
+mim_id: MIM:0001250
+legacy_identifiers:
+- MIM:H23-methyl_Mercaptopropionate
+- kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate

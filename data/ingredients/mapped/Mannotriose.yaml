@@ -40,6 +40,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0001604; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 28173-52-6
   data_source: CultureBotHT compounds_to_cas.csv
@@ -54,3 +60,7 @@ nutritional_roles:
       (carbohydrate)'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
       recommended.
+mim_id: MIM:0001604
+legacy_identifiers:
+- MIM:Mannotriose
+- CHEBI:146181

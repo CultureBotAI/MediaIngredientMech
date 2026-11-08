@@ -430,7 +430,7 @@ def main_review(tmp_path, monkeypatch):
     owner = "data/ingredients/mapped/GYPS.yaml"
     role = {"role": "ELECTRON_DONOR", "metabolic_context": "synthetic isolate only",
             "evidence": [{"reference_type": "PEER_REVIEWED_PUBLICATION", "doi": "10.1234/fixture"}]}
-    record = {"identifier": "CHEBI:15377", "preferred_term": "GYPS", "mapping_status": "MAPPED",
+    record = {"mim_id": "MIM:0000001", "identifier": "CHEBI:15377", "preferred_term": "GYPS", "mapping_status": "MAPPED",
               "ontology_mapping": {"ontology_id": "CHEBI:15377", "ontology_label": "water", "ontology_source": "CHEBI", "mapping_quality": "EXACT_MATCH"},
               "ingredient_type": "UNDEFINED_MIXTURE", "cellular_metabolic_roles": [role],
               "nutritional_roles": [{"role": "CARBON_SOURCE", "evidence": role["evidence"]}],
@@ -438,7 +438,7 @@ def main_review(tmp_path, monkeypatch):
               "component_assertion": {"method": "RECIPE_TRANSCRIPTION", "completeness": "PARTIAL", "evidence": [{"evidence_type": "RECIPE_SOURCE", "source": "https://example.test/fixture-recipe"}]},
               "environmental_context": [{"environment_term": "ENVO:00002149", "environment_label": "sea water", "relevance": "NATURAL_SOURCE"}]}
     record_template = record
-    mapping = {"subject_id": "MIM:GYPS", "subject_label": "GYPS", "predicate_id": "skos:exactMatch",
+    mapping = {"subject_id": "MIM:0000001", "subject_label": "GYPS", "predicate_id": "skos:exactMatch",
                "object_id": "CHEBI:15377", "object_label": "water", "other": ""}
 
     def write(path, value):
@@ -463,7 +463,7 @@ def main_review(tmp_path, monkeypatch):
         current_sha = gate.sha(root / owner)
         (root / "data/ingredients/unmapped").mkdir(exist_ok=True)
         (root / "data/curated").mkdir(exist_ok=True)
-        unknown = {"identifier": "UNMAPPED_0001", "preferred_term": "Unknown", "mapping_status": "UNMAPPED"}
+        unknown = {"mim_id": "MIM:0000002", "identifier": "UNMAPPED_0001", "preferred_term": "Unknown", "mapping_status": "UNMAPPED"}
         (root / "data/ingredients/unmapped/Unknown.yaml").write_text(yaml.safe_dump(unknown))
         for group, records in (("mapped", [record]), ("unmapped", [unknown])):
             (root / f"data/curated/{group}_ingredients.yaml").write_text(yaml.safe_dump({"ingredients": records}))

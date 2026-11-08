@@ -1,0 +1,30 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__ test_text_map_projection_refuses_unknown_or_ambiguous_owners[duplicate_id] __
+
+text_map_projection = (<module 'text_map_projection_1265' from '<repo>/...edients/unmapped/Unknown.yaml': {'mim_id': 'MIM:0000001'}}, '<html><script>\nconst MAP_DATA = ', ';\n</script></html>')
+problem = 'duplicate_id'
+
+    @pytest.mark.parametrize('problem', ['unknown_url', 'duplicate_id', 'duplicate_url'])
+    def test_text_map_projection_refuses_unknown_or_ambiguous_owners(text_map_projection, problem):
+        import json
+    
+        mod, html, payload, records, prefix, suffix = text_map_projection
+        if problem == 'unknown_url':
+            payload['points'][0]['url'] = 'records/ingredient/mapped/Not_in_the_corpus.html'
+            html = prefix + json.dumps(payload) + suffix
+            expected, diagnostic = KeyError, 'Not_in_the_corpus'
+        elif problem == 'duplicate_id':
+            records['data/ingredients/unmapped/Unknown.yaml']['mim_id'] = 'MIM:0000001'
+            expected, diagnostic = ValueError, 'Duplicate text-map record'
+        else:
+            records['data/ingredients/mapped/Salt mix.yaml'] = {'mim_id': 'MIM:0000003'}
+            expected, diagnostic = ValueError, 'Ambiguous legacy text-map URL'
+>       with pytest.raises(expected, match=diagnostic):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_stable_id_exports.py:211: Failed
+=========================== short test summary info ============================
+FAILED ../../../../../../../../dev::test_text_map_projection_refuses_unknown_or_ambiguous_owners[duplicate_id]
+1 failed, 12 deselected in 0.05s

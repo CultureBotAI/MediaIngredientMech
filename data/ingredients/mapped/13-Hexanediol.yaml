@@ -39,6 +39,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000032; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 21531-91-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -48,3 +54,7 @@ chemical_properties:
   inchi: InChI=1S/C6H14O2/c1-2-3-6(8)4-5-7/h6-8H,2-5H2,1H3
   pubchem_cid: 210704
 ingredient_type: SINGLE_INGREDIENT
+mim_id: MIM:0000032
+legacy_identifiers:
+- MIM:13-Hexanediol
+- cas:21531-91-9

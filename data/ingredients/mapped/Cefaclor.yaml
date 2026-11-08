@@ -55,6 +55,12 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000621; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 53994-73-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -70,3 +76,7 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+mim_id: MIM:0000621
+legacy_identifiers:
+- MIM:Cefaclor
+- CHEBI:3478

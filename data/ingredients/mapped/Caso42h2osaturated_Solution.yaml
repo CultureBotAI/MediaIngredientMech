@@ -32,6 +32,12 @@ curation_history:
   changes: Promoted UNMAPPED_0102 -> kgmicrobe.ingredient:caso42h2osaturated_solution
     "CaSO4•2H2Osaturated solution" (FALLBACK_REGISTRY); mapping_status UNMAPPED ->
     MAPPED, SSSOM row added.
+- timestamp: '2026-11-08T22:01:42+00:00'
+  curator: codex
+  action: ASSIGNED_MIM_ID
+  changes: '#1265: assigned permanent MIM:0000611; retained mapping identifier and
+    legacy aliases.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 4; reviewed on 2026-05-11 as a saturated calcium
   sulfate dihydrate solution pending component-level recipe curation.'
 ingredient_type: STOCK_SOLUTION
@@ -50,3 +56,7 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+mim_id: MIM:0000611
+legacy_identifiers:
+- MIM:Caso42h2osaturated_Solution
+- kgmicrobe.ingredient:caso42h2osaturated_solution

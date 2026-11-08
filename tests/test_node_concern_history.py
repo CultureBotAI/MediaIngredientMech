@@ -14,8 +14,16 @@ assembler = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(assembler)
 
 
+@pytest.fixture(scope="module", autouse=True)
+def historical_inputs():
+    from tests.pre_mint_state import fixed_base_reads
+    from mediaingredientmech.identity_projection import record_paths
+    with fixed_base_reads(ROOT, record_paths(ROOT, historical=True) + ["mappings/ingredient_mappings.sssom.tsv"]):
+        yield
+
+
 @pytest.fixture(scope="module")
-def native_context():
+def native_context(historical_inputs):
     here = PATH.parent
     return {
         "chain": assembler.verify_mapping_chain(ROOT),
@@ -136,9 +144,10 @@ def test_unproved_historical_qualification_is_rejected(native_context, mutation)
         assembler.qualify_node_correction_concern(**args)
 
 
-def test_current_safeguards_are_added_outside_the_historical_quotation(native_context):
+def test_current_safeguards_are_added_outside_the_historical_quotation(native_context, tmp_path):
     """Exercise native assembly: the qualifier must not erase the existing holds."""
-    result = assembler.assemble()
+    from tests.historical_review_root import assemble_at_baseline
+    result = assemble_at_baseline(tmp_path)
     review = json.loads(result["review.json"])
     evidence = json.loads(result["mapping-evidence.json"])
     decisions = {item["source_position"]: item for item in review["decisions"]}

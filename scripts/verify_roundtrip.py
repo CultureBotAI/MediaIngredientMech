@@ -166,8 +166,21 @@ def verify_round_trip(
             )
             continue
 
-        # Sort by identifier AND preferred_term to handle duplicate identifiers
+        # Permanent record identity remains stable through label/mapping changes.
+        # Legacy-only historical fixtures retain their original composite key.
+        stable_mode = any('mim_id' in record for record in orig_ingredients + agg_ingredients)
+        if stable_mode:
+            from mediaingredientmech.stable_ids import StableIdError, validate_id
+            try:
+                for record in orig_ingredients + agg_ingredients:
+                    validate_id(record.get('mim_id'))
+            except StableIdError as exc:
+                results['errors'].append(f"{category_file}: {exc}")
+                results['data_diffs'] += 1
+                continue
         def _pair_key(record: dict) -> tuple[str, str]:
+            if stable_mode:
+                return (record['mim_id'], '')
             return (record.get('identifier', ''), record.get('preferred_term', ''))
 
         orig_sorted = sorted(orig_ingredients, key=_pair_key)
@@ -189,7 +202,8 @@ def verify_round_trip(
         )
         if duplicate_keys:
             results['errors'].append(
-                f"{category_file}: {len(duplicate_keys)} duplicate (identifier, preferred_term) "
+                f"{category_file}: {len(duplicate_keys)} duplicate "
+                f"{'mim_id' if stable_mode else '(identifier, preferred_term)'} "
                 f"key(s) — records cannot be paired reliably, comparison skipped: "
                 + ", ".join(f"{i}/{t!r}" for i, t in duplicate_keys[:3])
             )

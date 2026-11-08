@@ -25,6 +25,7 @@ mod = load_script("reject_carnitinamide_synonym")
 @pytest.fixture
 def record():
     return {
+        "mim_id": "MIM:0000001",
         "identifier": "kgmicrobe.compound:carnitine_hydrochloride",
         "preferred_term": "Carnitine Hydrochloride", "mapping_status": "MAPPED",
         "ontology_mapping": {

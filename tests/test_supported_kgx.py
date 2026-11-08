@@ -136,7 +136,7 @@ def test_supported_subset_keeps_full_failure_and_backlog(full_failed_review):
         )
     backlog = json.loads((output / "unsupported-backlog.json").read_text())
     assert backlog["assertions"][0]["edge"]["assertion_type"] == "nutritional_roles"
-    raw = next(node for node in backlog["nodes"] if node["id"] == "MIM:water")
+    raw = next(node for node in backlog["nodes"] if node["id"] == "MIM:0000001")
     assert "Unsupported test prediction" in raw["record_json"]
     with tarfile.open(output / "mim-kgx.tar.gz") as archive:
         assert archive.getnames() == ["manifest.json", "mim_nodes.tsv", "mim_edges.tsv"]

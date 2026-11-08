@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from mediaingredientmech.validation.write_validated import validate_ingredient
 
 BASE = {
+    "mim_id": "MIM:0000001",
     "identifier": "MICRO:0000455",
     "preferred_term": "Test trace element solution",
     "mapping_status": "MAPPED",
