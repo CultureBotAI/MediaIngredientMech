@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/antibiotics",
+  "author": "/root/materials",
+  "independence": "Different in-process researcher reviewed materials after author primary review; reviewer did not author materials scientific proposals. No additional external session.",
+  "initial_observation": {
+    "decisions_sha256": "cba58198d5c25b5a857f226bcd74a4489978d033ee70bbf9fd8329a5010fff5d",
+    "evidence_sha256": "776bfca268fd865d123b9cb97c6aee0a111a920271079a02899b285786512fb0",
+    "proposals_sha256": "eeb7b4adda3b263d016d405a3b97e8c6f03b034c1ff780a4dce78552642b91ad",
+    "preservation_limit": "These hashes were recorded while reading the initial files. The author regenerated them before the reviewer copied full bytes. Do not misrepresent these hash-only observations as preserved original snapshots. Subsequent exact input files and all10 after payloads are preserved under round2; author separately preserved MA-SR-02-before bytes. The first finding and author response below are an explicitly reconstructed review ledger from this conversation, not an untouched original file."
+  },
+  "findings": [
+    {
+      "finding_id": "MA-SR-01",
+      "severity": "scientific_revision_required",
+      "proposal_id": "ma-casamino-distinct",
+      "initial_finding": "Ordinary Casamino Acids was proposed as kgmicrobe.ingredient plus broad FOODON parent without evaluating an existing exact ontology term. Official active MeSH C017721 defines acid-hydrolyzed casein. MAPPING_SEMANTICS Step1 must be evaluated before registry fallback.",
+      "independent_evidence": ["nlm-C017721.json", "nlm-C017721.metadata.json", "mesh-C017721.json", "mesh-C017721.metadata.json", "casamino-primary-check.json"],
+      "author_response": "Author independently captured official NLM term and agreed exact material identity supersedes the unnecessarily broad registry proposal. Separate vitamin-assay and tryptone identities remain unchanged.",
+      "resolution": "Changed ordinary owner proposal to identifier mesh:C017721 with exact ontology mapping; source aliases, original history and withheld whole-row obligations retained. CAS65072-00-6 is retained as sourced metadata, not used as exact-form evidence or a demand to mint CAS identity: independent FDA capture shows that CAS spans more than one casein hydrolysate description.",
+      "reviewer_rereview": "Inspected revised proposal and all nine ordinary Casamino decisions; direct NLM scope, exact label and existing separate vitamin-assay owner are coherent.",
+      "status": "resolved"
+    },
+    {
+      "finding_id": "MA-SR-02",
+      "severity": "scientific_revision_required",
+      "proposal_id": "ma-casamino-distinct",
+      "initial_finding": "New REJECTED_LABEL classification for inherited Casamino Acids (0.01 % was justified as preventing stock-to-dry-digest equivalence without claim-specific evidence that the fragment denotes a separately supplied stock. A percent suffix can express final-medium dose. Current owner history explicitly records prior #213 same-ingredient parsing disposition. MAPPING_SEMANTICS requires claim-specific evidence for new rejection.",
+      "author_response": "Author first clarified that text was preserved, then accepted that raw-text preservation and scientifically rejecting identity are different. No recovered primary occurrence proves the concentration fragment false as an ordinary digest name.",
+      "resolution": "Restored original RAW_TEXT synonym and provenance. Added explicit deferred source-specific review and retained whole-row hold. Carbocerate, metadata nonname and vitamin-assay-grade fragment rejections remain separately supported rather than lumped with the concentration fragment.",
+      "reviewer_rereview": "Inspected revised Casamino after YAML, original #213 curation event, new curation event and revised ordinary decisions. The concentration fragment is again RAW_TEXT and source cases remain byte-preserved.",
+      "status": "resolved"
+    }
+  ],
+  "examined_without_finding": [
+    "NBRC_869 frozen filename versus NBRC868 cited source: full frozen recipe explicitly cites868 and its matching formulation, so author use of868 evidence is scoped and not an unacknowledged source substitution.",
+    "CAS65072-00-6 versus exact Casamino identity: FDA official registry describes multiple acid/enzymatic hydrolysate names; shared CAS cannot alone defeat the more precise MeSH material identity.",
+    "Artificial saltwater calcium chloride dihydrate: final component CHEBI86158 matches exact hydrate. Incomplete ontology grounding of named MgCl2hexahydrate does not make the fully disclosed constituent list incomplete.",
+    "Probumin purity: manufacturer capture also describes caprylic-acid stabilization and process/grade; do not infer whole supplied product is a single pure molecular entity from purity percentage alone.",
+    "Tryptone cross-shard Pancreatic digest of casein related-name overlap: publication dependency must remain explicit; no blanket same-substance or held-row approval follows from this source alias review."
+  ]
+}

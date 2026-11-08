@@ -1,0 +1,114 @@
+id: CultureMech:008144
+name: cyc_agar
+original_name: CYC Agar
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 7.2
+ingredients:
+- preferred_term: Czapek-Dox Liquid Medium, Modified (OXOID)
+  concentration:
+    value: '33.4'
+    unit: G_PER_L
+  source: TOGO M1593 / NBRC Medium 402
+  notes: NBRC Medium 402 lists 33.4 g/L Czapek-Dox Liquid Medium, Modified from OXOID;
+    this dehydrated commercial mixture is retained as an opaque complex component.
+- preferred_term: Bacto Yeast Extract (Difco)
+  concentration:
+    value: '2.0'
+    unit: G_PER_L
+  source: TOGO M1593 / NBRC Medium 402
+  notes: TOGO M1593 / NBRC Medium 402 lists 2.0 g/L Bacto Yeast Extract (Difco).
+  term:
+    id: FOODON:03315426
+    label: yeast extract
+- preferred_term: Bacto Vitamin Assay Casamino Acids (Difco)
+  concentration:
+    value: '6.0'
+    unit: G_PER_L
+  source: TOGO M1593 / NBRC Medium 402
+  notes: NBRC Medium 402 lists 6 g/L Bacto Vitamin Assay Casamino Acids from Difco;
+    this amino acid product is retained as an opaque complex component.
+- preferred_term: Agar
+  concentration:
+    value: '16.0'
+    unit: G_PER_L
+  source: TOGO M1593 / NBRC Medium 402
+  notes: TOGO M1593 / NBRC Medium 402 lists 16.0 g/L Agar.
+  term:
+    id: CHEBI:2509
+    label: agar
+  mediaingredientmech_chebi_term:
+    id: CHEBI:2509
+    label: agar
+- preferred_term: Distilled water
+  concentration:
+    value: '1.0'
+    unit: L
+  source: TOGO M1593 / NBRC Medium 402
+  notes: NBRC Medium 402 lists 1 L distilled water.
+  term:
+    id: CHEBI:15377
+    label: water
+  mediaingredientmech_chebi_term:
+    id: CHEBI:15377
+    label: water
+media_term:
+  preferred_term: TOGO Medium M1593
+  term:
+    id: TOGO:M1593
+    label: CYC Agar
+notes: TOGO M1593 imports NBRC Medium 402 as CYC Agar. NBRC 402 lists 33.4 g Czapek-Dox
+  Liquid Medium, Modified from OXOID, 2 g Bacto Yeast Extract from Difco, 6 g Bacto
+  Vitamin Assay Casamino Acids from Difco, 16 g agar, and 1 L distilled water, and
+  states to adjust pH to 7.2.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:57.912097Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: NBRC, ID: M1593'
+- timestamp: '2026-01-28T19:48:20.978699Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- timestamp: '2026-03-13T06:19:53.887500Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008144'
+- timestamp: '2026-03-17T06:30:10.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:12.442695+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "CYC Agar" to "cyc_agar" for consistent matching
+- timestamp: '2026-06-05T07:40:33.445189+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 2 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-09-11T00:00:00-07:00'
+  curator: repair_togo_m1593_score15.py
+  action: RESOLVED_TOGO_M1593_SCORE15
+  source: https://togomedium.org/medium/M1593; https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=402
+  notes: TOGO M1593 imports NBRC Medium 402 as CYC Agar. NBRC 402 lists 33.4 g Czapek-Dox
+    Liquid Medium, Modified from OXOID, 2 g Bacto Yeast Extract from Difco, 6 g Bacto
+    Vitamin Assay Casamino Acids from Difco, 16 g agar, and 1 L distilled water, and
+    states to adjust pH to 7.2. Corrected the imported water g/L artifact, added the
+    NBRC pH value, and marked the NBRC formula as curated.
+preparation_steps:
+- step_number: 1
+  action: ADJUST_PH
+  description: Adjust pH to 7.2.
+data_quality_flags:
+- has_ontology_mappings
+- has_unmapped_ingredients
+- ingredients_curated
+references:
+- reference: https://togomedium.org/medium/M1593
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=402

@@ -1,0 +1,141 @@
+id: CultureMech:007490
+name: '367'
+original_name: '367'
+category: bacterial
+description: 367. NBRC 366.
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: SOLID_AGAR
+ph_value: 5.5
+media_term:
+  preferred_term: NBRC Medium 366
+  term:
+    id: nbrc.medium:366
+    label: NBRC Medium 366
+ingredients:
+- preferred_term: Peptone
+  concentration:
+    value: '10'
+    unit: G_PER_L
+  term:
+    id: MICRO:0000178
+    label: Peptone
+- preferred_term: Meat extract
+  concentration:
+    value: '10'
+    unit: G_PER_L
+- preferred_term: Yeast extract
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+- preferred_term: Glucose
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Tween 80
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  term:
+    id: CHEBI:53426
+    label: polysorbate 80
+- preferred_term: K2HPO4
+  concentration:
+    value: '2'
+    unit: G_PER_L
+  term:
+    id: CHEBI:131527
+    label: dipotassium hydrogen phosphate
+- preferred_term: Sodium acetate
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  term:
+    id: CHEBI:32954
+    label: sodium acetate
+- preferred_term: Diammonium hydrogencitrate
+  concentration:
+    value: '2'
+    unit: G_PER_L
+- preferred_term: MgSO4·7H2O
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+- preferred_term: MnSO4·nH2O
+  concentration:
+    value: '0.05'
+    unit: G_PER_L
+- preferred_term: Distilled water
+  concentration:
+    value: '1'
+    unit: L
+  term:
+    id: CHEBI:15377
+    label: water
+- preferred_term: Agar (if needed)
+  concentration:
+    value: '15'
+    unit: G_PER_L
+  term:
+    id: CHEBI:2509
+    label: Agar
+preparation_steps: []
+curation_history:
+- timestamp: '2026-02-20T00:22:35.953837Z'
+  curator: nbrc-import
+  action: Imported from NBRC
+  notes: 'Source: NBRC, Media No. 366, URL: http://www.nbrc.nite.go.jp/NBRC2/NBRCMediumDetailServlet?NO=366.
+    Imported via ethical web scraping.'
+- timestamp: '2026-03-13T03:09:26.666003Z'
+  curator: data-quality-cleanup-v1.0
+  action: Data quality fixes
+  notes: Merged 12 duplicate ingredient(s)
+- timestamp: '2026-03-13T06:19:49.239630Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:007490'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Peptone10gMeat extract10gYeast
+    extract5gGlucose20gTween 801gK2HPO42gSodium acetate5gDiammonium hydrogencitrate2gMgSO4·7H2O0.2gMnSO4·nH2O0.05gDistilled
+    water1LAgar (if needed)15gpH 5.5'
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-05-16T09:03:06.694710+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-08-19T21:54:22.912825+00:00'
+  curator: recover_nbrc_composition.py
+  action: Recovered composition from source HTML
+  notes: Re-parsed the NBRC medium 366 composition table from the preserved scrape;
+    12 ingredient(s) restored, 0 stock solution(s) nested rather than flattened, 0
+    unparsed solution blob(s) removed (#299).
+- timestamp: '2026-08-20T19:01:16.015082+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 5 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+- timestamp: '2026-09-07T00:00:00-07:00'
+  curator: repair_nbrc_partial_score25.py
+  action: RESOLVED_NBRC_PARTIAL_SCORE25
+  changes: Added source metadata to recovered NBRC score-25 record
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=366
+  notes: Preserved the recovered NBRC Medium 366 composition table.
+notes: 'Source: NBRC Medium 366 | Link: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=366
+
+
+  The NBRC table lists peptone, meat extract, yeast extract, glucose, Tween 80, phosphate,
+  acetate, diammonium hydrogencitrate, magnesium sulfate, manganese sulfate hydrate,
+  optional agar, and final pH 5.5.'
+data_quality_flags:
+- ingredients_curated
+- has_ontology_mappings
+- has_unmapped_ingredients
+references:
+- reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=366

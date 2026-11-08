@@ -1,0 +1,2540 @@
+{
+  "schema_version": 1,
+  "review_status": "complete",
+  "reviewer": "/root/materials",
+  "primary_researcher": "/root/salts",
+  "independent_of_primary_author": true,
+  "completed_at": "2026-11-08T05:28:46.146164+00:00",
+  "scope": "All69 assigned salts source cases and all15 exact owner proposals",
+  "input_hashes": {
+    "assigned-cases.json": "8a9aba21a39b9536865374ab7dc053c74221189346b18def751c0e2a0b934adb",
+    "decisions.json": "a7431c115bc0a737947b9f2b8bfe461d33a10a3ce403dbd6cd4ea4280455bb3b",
+    "evidence.json": "cee06749a25425e667e477e97721d8fe0cae51b4ab709622be337686d746c550",
+    "proposals.json": "dcaf7ae7031466332267c0d3b70594a4947b4e6f8f915e20e0ae5e93cfb8424a"
+  },
+  "initial_input_hashes": {
+    "decisions.json": "e402a51ead0124a9c51275ee55b89d40079876fc0e553c1856d598fd3930ff6d",
+    "evidence.json": "057f168fcb0c9a4fbdbd51d960e226ca1949f503b01e4b3da99215fdb15e6584",
+    "proposals.json": "2db9661ef526a3e623a50c2cf7686a7e7b9f08843afe4eb82cf9b1185df2c262"
+  },
+  "scientific_hash_method": "SHA256 of canonical JSON, sort_keys=True,separators=(comma,colon),ensure_ascii=False,allow_nan=False, excluding only independent_review",
+  "findings": [
+    {
+      "finding_id": "SA-SR-01",
+      "severity": "P2",
+      "case_indices": [
+        14,
+        29,
+        31,
+        65
+      ],
+      "status": "resolved",
+      "problem": "Earlier failed JCM retrievals were described as current recipe unavailability despite recovered exact JCM1118 primary bytes.",
+      "resolution": "Final decisions distinguish successful1118 recovery from still-empty1119/1120 retrievals and identify only remaining hydrate/reagent blockers.",
+      "rereview": "Compared final reasoning and missing_requirement against exact shared JCM1118 HTML and failed-attempt metadata; accepted."
+    },
+    {
+      "finding_id": "SA-SR-02",
+      "severity": "P2",
+      "case_indices": [
+        4,
+        8,
+        14,
+        28,
+        29,
+        31,
+        32,
+        41,
+        42,
+        65
+      ],
+      "status": "resolved",
+      "problem": "Several stock/recipe dose statements converted added water into certified final-volume concentrations.",
+      "resolution": "Final decisions retain original batch mass and water input separately, distinguish provider-declared g_l, and avoid an inferred final-volume assertion. BB explicit per-litre stock and source-declared200g/L remain.",
+      "rereview": "Inspected JCM1304/1118, NBRC1507/278, DSMZ976, CCAP C/MAF6/MDY-V primary tables and final prose; identity proposals unchanged."
+    },
+    {
+      "finding_id": "SA-SR-03",
+      "severity": "P2",
+      "case_indices": [
+        39
+      ],
+      "status": "resolved",
+      "problem": "Successful M2231 JSON already contained stock composition and dose, but decision asked to retrieve them and omitted a justified distinct preparation proposal.",
+      "resolution": "Added source-specific registry stock for calcium chloride dihydrate2.5g/L with explicit source-declared strength, deionized-water component kept UNMAPPED,10mL dose only in recipe context.",
+      "rereview": "Checked exact JSON paragraphs3/15, new after YAML, CHEBI86158 component label, complete constituent list, scope, provenance, history, closed-schema validation and partonomy. No final-water fraction or distilled-grade equivalence is inferred."
+    },
+    {
+      "finding_id": "SA-SR-04",
+      "severity": "P2",
+      "case_indices": [
+        12,
+        20,
+        25
+      ],
+      "status": "resolved",
+      "problem": "Unrelated JCM197/M190 primary evidence was attached to M1901 calcium stock; shared JCM665 frozen-recipe locator cited only one of two reviewed component positions.",
+      "resolution": "Removed unrelated case12 reference; made missing stock carrier precise; shared full-recipe locator now explicitly distinguishes ingredients/10 and ingredients/12.",
+      "rereview": "Verified final case12 evidence IDs against exact TOGO identifiers; inspected shared665 evidence locator and both frozen component positions. Additional ignored-inclusive source-ID scan found no remaining unrelated linkedTOGO ID."
+    }
+  ],
+  "open_findings": [],
+  "case_reviews": [
+    {
+      "case_id": "CM_NAME:004ac4f55986c1785d86b001779e3dcfcc81b0bb9ad6242272e899c412924111",
+      "index": 0,
+      "source_label": "Na3-NTA",
+      "raw_source_label": "Na3-NTA",
+      "case_input_sha256": "9ebb07a96e701fb33af60bf934802d9ad6c3a47e551c30acc5e913ae71800e29",
+      "scientific_payload_sha256": "35607a35919ab7b764ab3e470b06f80b7c40f1551662481702ab5bd2031ce076",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "ChEBI definition explicitly supplies three sodium ions per nitrilotriacetate. The weighed M2562 unqualified salt can use that unqualified identity; it does not select monohydrate or the 0.5 M stock in case63.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-132766",
+        "sa-togo-M2562",
+        "sa-recipe-3dc4c7f1f4ea96",
+        "sa-owner-nitrilotriacetic_acid_trisodium_salt"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-nitrilotriacetic_acid_trisodium_salt"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:57bf9179838364adc99281916236ed0326b9686dbab00d6f4d6bd968ffb2d88d"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:0b702f7e3bfef3e6092fdd40fb55407351b5640bbbf53d6c8ffff71b4ac4bc7b",
+      "index": 1,
+      "source_label": "1M CaCl2",
+      "raw_source_label": "1M CaCl2",
+      "case_input_sha256": "7988d75dca3623d9df0c3871f17e2430c671b1f12f4b309756578e35fb4a07b0",
+      "scientific_payload_sha256": "4c85149f863cf3526047a226fca45d21b94548b20699546c83906b7cd1e61323",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "M2790 primary JSON gives 10 microlitres of 1M CaCl2. Its stock has no separate component/carrier table; main-medium water does not prove stock carrier. Rejecting a dry-salt alias and retaining the preparation boundary is warranted.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-3312",
+        "sa-togo-M2790",
+        "sa-recipe-374c97a949cebe",
+        "sa-owner-cacl2"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:c1b4909d9c9c9b90f9d95d256675471e35c7ae956f574090d5b0f446125b8f68"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:0d80a0eb98381c2b6f4b4518408fc3b7f282acf824ce941695dffbc830f8d274",
+      "index": 2,
+      "source_label": "beta-Glycerol phosphate disodium salt pentahydrate",
+      "raw_source_label": "beta-Glycerol phosphate disodium salt pentahydrate",
+      "case_input_sha256": "136a1ee144cf2edc092fae45a0ab597a4b38bff71b07a09f7e215ea4a19e8c59",
+      "scientific_payload_sha256": "5aec035c511fd22600556579ab6118b6ac6effd7a996686908a115b802aadf8e",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "All four UTEX ES-derived occurrences occupy a nested stock solute position. Manufacturer CAS13408-09-8 and beta/disodium/five-water scope agree; exact CAS identity and asymmetric glycerol2-phosphate parent preserve the corrected positional distinction.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-utex-es",
+        "sa-merck-35675",
+        "sa-chebi-17270",
+        "sa-chebi-132089",
+        "sa-merck-35675-retry",
+        "sa-utex-es-retry",
+        "sa-merck35675-web",
+        "sa-recipe-b7714041bc413b",
+        "sa-recipe-728c009eb4a704",
+        "sa-recipe-9a2e045b69386e",
+        "sa-recipe-6642eee19a4eda",
+        "sa-owner-na2glycerophosphate5h2o"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-na2glycerophosphate5h2o"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:004a6a261ff1153ef8c332f457619762ced73fd65042f95d710d57ef3b906a4c",
+        "CM_OCC:7be3242270e03400289ed4e5a1fc2938295b0cf7027a13f00a254dc7eb05fbcb",
+        "CM_OCC:7adc238df99c6d9ebaed8bc517c0b8be04a04fea72a26f3292e85d8c9e52d308",
+        "CM_OCC:c138d9c4eb6aa0f37bca67706c5fedb3586da8787ac415dfa01283a4073966c2"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:0ebb457daee39ac7ed0501894bfd84d71292f3452c3db184cfd0e29bc9a517f3",
+      "index": 3,
+      "source_label": "NaS2・9H2O",
+      "raw_source_label": "NaS2・9H2O",
+      "case_input_sha256": "61ad9e47cd851308aa87d07738dec44affabfd52d11ec9737184112506bcdabc",
+      "scientific_payload_sha256": "1f7abeef8b53988580433e74c278d4f03d669ad83ba0f104af7ca6f5e601de26",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "JCM197 table and preparation disagree on NaS2 versus Na2S; JCM317 repeats the malformed table token. The 5% solution step is not evidence that every raw token globally identifies Na2S. Source-author reconciliation remains necessary.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-0c1e7fd46063",
+        "sa-recipe-4bbd24e702b8",
+        "sa-recipe-9fc455e18d05b0",
+        "sa-recipe-f47970b10af966",
+        "sa-togo-M190",
+        "sa-togo-M312"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:edd7d9432370e9f76c55ab822a8e8cbbfa0dc6b38c55952e24ad928c7789cdfe",
+        "CM_OCC:25ac7d97c6bff066f920cd2c6f9592e361b583e1295bd329f94891f021daed80"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:11c0f762f4802961c56fb41d854f82d4c846d16d56ef9e7f31ded9e71fd66162",
+      "index": 4,
+      "source_label": "NiCl2-6H2O",
+      "raw_source_label": "NiCl2-6H2O",
+      "case_input_sha256": "1f6a9a258c690a818cd3053e4238b40365056504b8fad01dbaa283530961118f",
+      "scientific_payload_sha256": "02f7957c96a236f90df90d528eaba1b3bc7ac8cd3814e6e163f4c5a395598be7",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "JCM1304 directly establishes NiCl2 hexahydrate and 24mg in the modified trace stock. ChEBI53542 is exact 1:2:6 stoichiometry. Add only the spelling to the live owner, retain the rejected tombstone, and avoid treating added 1L water as proven final stock volume.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-93465b6b7e03",
+        "sa-chebi-53542",
+        "sa-recipe-a3e92d8f5b4a6f",
+        "sa-togo-M1401",
+        "sa-owner-nickel_ii_chloride_hexahydrate",
+        "sa-owner-nicl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-nickel_ii_chloride_hexahydrate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:bf081089f926a9cff5bc328531b3b5ab2d88395a67bce670bc4fceb5f2ab54fd"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:16b7f8d6d0c0a3e6cf83fe51f2687dc2f95d7306e62f7d018dc6a433b756ab4e",
+      "index": 5,
+      "source_label": "β-Na2glycerophosphate· 5H2O",
+      "raw_source_label": "β-Na2glycerophosphate· 5H2O",
+      "case_input_sha256": "897cfa78fe9af8a89866dc0d713dd8785a65930b04ce928558ce62200e350ad4",
+      "scientific_payload_sha256": "4f1638c81170c8bee49b347cc64a289421871a8fb10c0e24b04aad2b7af9da43",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "M2368 explicitly supplies beta, two sodium ions and five waters. Merck35675 is compatible with that form; synonym addition does not resolve generic glycerophosphate cases or infer source catalog when unspecified.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-togo-M2368",
+        "sa-merck-35675",
+        "sa-chebi-17270",
+        "sa-merck-35675-retry",
+        "sa-nies-ma",
+        "sa-merck35675-web",
+        "sa-recipe-bb89b877b84f50",
+        "sa-owner-na2glycerophosphate5h2o"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-na2glycerophosphate5h2o"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:03e2a44651bd9b8fb69d8f2c2ee5f666c3dc2a08a93df9cdd4203b8ce868a113"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:1a2613d2ed9c6a245073acd890d0507d440c3d861ce6c267bd58898f800f4e1c",
+      "index": 6,
+      "source_label": "Tri-ammonium citrate",
+      "raw_source_label": "Tri-ammonium citrate",
+      "case_input_sha256": "4e65f4f23afe2feff9fe3fdfecb2a606a1ebe5e2fc1da86b2ef07b5be621d8ee",
+      "scientific_payload_sha256": "3c1761fb798b97bd3dda9bc8d9c84177ee8b435199f2c8a9a4493f916624c92c",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "The explicit tri-ammonium label agrees with CHEBI63037 three-ammonium definition. No inference is made from this case to bare ammonium-citrate labels.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-togo-M2782",
+        "sa-chebi-63037",
+        "sa-recipe-82766d1d3cd573",
+        "sa-owner-nh43_citrate"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-nh43_citrate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:82f2e4c3a99aae28c33336a96bcf766bda36ed390b04bcaceab076ac794e4771"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:1e2506ecaefa9035df3c799cecc689ed8d0535a050dc8e0a427548a369892e90",
+      "index": 7,
+      "source_label": "CaCl2·2H20",
+      "raw_source_label": "CaCl2·2H20",
+      "case_input_sha256": "da936578f40ba227dd332fcd00f7d3f55e2b29a33f493717f9c61a7da826cf00",
+      "scientific_payload_sha256": "8a5abc0484e43a4723726f60d841ca51f2e416eb570e149cf82319fe64dd27d6",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC966 itself prints terminal H20 with zero, while 10mg is separately a dose fact. Repeated malformed printing is not independent correction evidence. Preserve the token and unit discrepancy without a resolving hydrate alias.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-5822a9e091f7",
+        "sa-togo-M1755",
+        "sa-chebi-86158",
+        "sa-recipe-c93db00b74c9ca",
+        "sa-owner-cacl2_x_2_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:a80c786d3f710ed830e0e02f9c7be32f25e411af402531549620a97a03f22558"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:2dc433b978bd09e7a5b337175547a59fb5bfa281f977b3730b8def8ca4ef6e16",
+      "index": 8,
+      "source_label": "CoCl2-6H2O",
+      "raw_source_label": "CoCl2-6H2O",
+      "case_input_sha256": "6545f42ae8d32ddadc7cf4f309294781e9ce1b2016e5eef496800c1efd3beb25",
+      "scientific_payload_sha256": "6678bf0726038cd9c5434ee32c869c9991fd6f20f4cc9eb6fcac0e823b0dbfc8",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "JCM1304 cobalt six-water spelling and CHEBI53503 agree. Current owner also carries an incompatible water1/7 alias; the narrow new spelling cannot approve that full payload. Stock mass and batch-water basis need precise wording.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-93465b6b7e03",
+        "sa-chebi-53503",
+        "sa-recipe-a3e92d8f5b4a6f",
+        "sa-togo-M1401",
+        "sa-owner-cobalt_chloride_hexahydrate",
+        "sa-owner-cocl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-cobalt_chloride_hexahydrate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:f8f3d702a21b947c7785ccf2efd5901809fcc47a9490e11dd116d15c042787dd"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:33aeeadd45b5ef0bd8a7097c1eae417ed05c3f934b1256934f4c66413534f7b6",
+      "index": 9,
+      "source_label": "PbCl2",
+      "raw_source_label": "PbCl2",
+      "case_input_sha256": "29a447529b0eead6d20424b092c27a5bb097b2dde9540e2d6becc17a5e676537",
+      "scientific_payload_sha256": "ec8d1eae024bbb1a015a58e490228dcaaf05860f076ec83baafd536a35085314",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "PbCl2 is the solute nested under a source-defined lead chloride stock, not the name of the whole solution. CHEBI88212 describes the chemical; stock concentration and addition remain recipe assertions.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-88212",
+        "sa-recipe-72eb9df03ffb19",
+        "sa-owner-lead_ii_chloride"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-lead_ii_chloride"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:45cd869cacc890d555cf49e67707b0ab2cdca620f6f9ef7a6cec730f03397370"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:37f2016e53937478077c0f71f107c670abe38933a51105ff1170559fe7648010",
+      "index": 10,
+      "source_label": "Ammonium tartrate",
+      "raw_source_label": "Ammonium tartrate",
+      "case_input_sha256": "a9091a458f6ecc6ffa1f385c556ffeaf47a98f1d78b1505bb2a63de7eeb65fc7",
+      "scientific_payload_sha256": "64b921a43be3ef5028c77cfc8d8f0d479e338d649586cfcce424584a42a7e2d8",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC887 says ammonium tartrate without ion ratio or stereochemistry. Existing diammonium L-tartrate would over-specify both dimensions; unqualified name similarity does not supply missing facts.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-210d6f521436",
+        "sa-togo-M1682",
+        "sa-chebi-63075",
+        "sa-recipe-ad0de432829f21",
+        "sa-owner-diammonium_tartrate"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:1d08eae583de147049837801fe807a92079154235916069b0fdbdb32a39ea2e4"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:3cbb11d1aeb3f36b22268594f37e9078402bc4ad3e886fbc93f083da408d332f",
+      "index": 11,
+      "source_label": "Ammonium Citrate",
+      "raw_source_label": "Ammonium Citrate",
+      "case_input_sha256": "db381fa3e5a3a9c4933ef2766631db9013e3aa514c52ba63a8063ac814df2855",
+      "scientific_payload_sha256": "cebe7448ffd14bc423785cd3c28a57e8719b1dc4cf38d42e8de86fe9919cf8d8",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "ATCC416 independently lists Ammonium Citrate without di/tri qualification for both broth and agar lineage. Common MRS conventions cannot replace the actual source reagent specification.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-atcc-416",
+        "sa-chebi-63076",
+        "sa-chebi-63037",
+        "sa-recipe-33fb2f99dce2be",
+        "sa-recipe-f7be3059bb89bc",
+        "sa-owner-nh42_citrate",
+        "sa-owner-nh43_citrate"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:ccc40fd66723eb3b4d5b3b6db5481212d3f22b8270595d98c9579cd8b0af37f7",
+        "CM_OCC:a9af610899348aa808071c576f185e763b3eaa00bcaf57eb1f7edf1a212c74cf"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:3e7f4518c07b3583e3929053d27719746832f11478589c7a5a464d0d10d54a1d",
+      "index": 12,
+      "source_label": "CaCl2 (100 mM)",
+      "raw_source_label": "CaCl2 (100 mM)",
+      "case_input_sha256": "0379b82dd2ede2bc896fa1c9c5abdd49b014f357f7fffbe4b6a4bcfc02904fcf",
+      "scientific_payload_sha256": "3273477d6a416a50438de1b1f127df3508685bd6418fcb570563421bde06bfae",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC1160 and M1901 give 20mL of 100mM CaCl2 and an equal-volume gellan mixing step. Neither assigns the stock carrier or starting hydrate. Unrelated JCM197/M190 evidence must not appear as support for M1901.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-070a3a93ee5e",
+        "sa-togo-M1901",
+        "sa-chebi-3312",
+        "sa-recipe-ec0da9d2c945d7",
+        "sa-owner-cacl2"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:f9175415edd6aa033751d8fb2304fbb5dcb539d7f4a0685516e71e2a9be5a3e8"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-04"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:4a86709a44261f62c05fd80520ed7d7d057d0cea20719ae8fc0f41807916b2b6",
+      "index": 13,
+      "source_label": "TiCl2",
+      "raw_source_label": "TiCl2",
+      "case_input_sha256": "a3335a9616b16bb0e345dd7c0b53d5f49967717b00c1925deed4ac73547d0ca0",
+      "scientific_payload_sha256": "d819fe9adef6b5a985389ae11d7454a56f2c70fb37a637ab34c03dfaae956387",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "ATCC1925 labels the stock Titanium(III) citrate but its recipe lists TiCl2. This is an original oxidation-state contradiction; neither common TiCl3 practice nor the title alone safely corrects the reagent.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-ticl2-atcc",
+        "sa-togo-M2692",
+        "sa-recipe-56c31850d0a7ae"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:f1ea679c00c581a5ca950da1333691bd2c9f4549f2fdda7a70d7e0ef368860d1"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:4b524ea6e88ead41d9c6e4014ca2ac6b170cd1ffbca01fdeb04e82ba8c8c18fb",
+      "index": 14,
+      "source_label": "MnCl2 x 6H2O",
+      "raw_source_label": "MnCl2 x 6H2O",
+      "case_input_sha256": "b8b75d144da14ca280d990f9f31fd6239df432e2c8f062f22b9b32544de09285",
+      "scientific_payload_sha256": "dca3d5a2178816b554a703f96ad06f163b1f57e775ab6621a01205cd9e42af43",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "Recovered JCM1118 supplies related metal-mixture lineage evidence but cannot replace the still-missing JCM1120 document. Six-water manganese reagent identity remains unsupported by a tied CAS, despite the recorded formula and 4.55mg batch mass.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-7084e7a0008b",
+        "sa-mediadive-2003",
+        "sa-ols-mn-hexahydrate",
+        "sa-jcm1118-shared",
+        "sa-jcm1119-retry",
+        "sa-jcm1120-retry",
+        "sa-recipe-ec2bfe98ebe33d"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:7bf4d23da9bb9a25d52a45811dc5ed899171c6825cf9564bd45909cd9203a0cb"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-01",
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:4c6fff23a48ccf39cb39a2d9c8469adbb8b285dadc2751a054c93b963a905a21",
+      "index": 15,
+      "source_label": "Na-glycerol phosphate",
+      "raw_source_label": "Na-glycerol phosphate",
+      "case_input_sha256": "841f3b3f3f8c4e321971ae5a1a78678e331fcfa4cc964650470a0958e5e5c117",
+      "scientific_payload_sha256": "7b93aeb32f410ef709bc70ec7386bfd257e7670cce34fc689e4298f63cabc2b6",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "DSMZ608 says Na-glycerol phosphate. Generic NCIT product scope or a usual beta formulation does not select positional isomer, sodium ratio or hydrate for these occurrences.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-86ee5d6b1588",
+        "sa-mediadive-604",
+        "sa-ncit-C120561",
+        "sa-chebi-132089",
+        "sa-recipe-e629642e55f683",
+        "sa-recipe-54cf52a3141b8d",
+        "sa-owner-sodium_glycerophosphate",
+        "sa-owner-sodium_beta-glycerophosphate",
+        "sa-owner-na2glycerophosphate5h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:3336777f428165267eb85cc3de1d4e69c5f03cc80685fca609d16097e33b96a7",
+        "CM_OCC:df1d8c96606a7046102f52e61bc02f57be35373599f4622ea53ba29e64eacbbc"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:4e834342ffd256476ce499957d900c5168dbed13a7a1d330943c1e4385f4af43",
+      "index": 16,
+      "source_label": "Fe(III) ammonium citrate",
+      "raw_source_label": "Fe(III) ammonium citrate",
+      "case_input_sha256": "41205848ef3493bba0bab501914f6af2e0881726a853e4f2576210afbf84a4df",
+      "scientific_payload_sha256": "105d9e9066556fbc879f7fcfd49d143ee95a39c431af619286edee63acc077c9",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC1050/1049 Fe(III) ammonium citrate fits CHEBI31604's explicitly indefinite-composition mixture. The proposed material identity does not pretend to identify red/green grade or a discrete stoichiometric molecule.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-1962216682cc",
+        "sa-recipe-f92e3cf55090",
+        "sa-chebi-31604",
+        "sa-recipe-4d03075e31f542",
+        "sa-recipe-ed72135a7f5480",
+        "sa-recipe-35217cf958929b",
+        "sa-togo-M1818",
+        "sa-togo-M1817",
+        "sa-owner-ferric_ammonium_citrate"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-ferric_ammonium_citrate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:ba09cb547dc1efb0ef24fdcfcdb6680d91477a1de19cd6f18fbe355f75f38560",
+        "CM_OCC:a573de8ab94a603c15d6f9f083dceee540dcc6b1904623ac4867e774362df481",
+        "CM_OCC:281a9a34f33061e14054cfe4b6987b0a58b29aa0bd3003bf75f1c0f5832901f9"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:50c53f0367cee7787a3ae1417367cee69f22c72037c7eea0bb7daab2cf8641f8",
+      "index": 17,
+      "source_label": "Amonium phosphate-dibasic",
+      "raw_source_label": "Amonium phosphate-dibasic",
+      "case_input_sha256": "69f46133a2da0458b3e6fdbd30d70565ae85f6db9cbd74f156994a7958fc41c5",
+      "scientific_payload_sha256": "9a44cf412d98503ff93500ef024fe10446e750f43e42a7f0a73ff868fd7a5a01",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "Dibasic phosphate with ammonium supplies the diammonium hydrogen-phosphate identity despite the spelling error. CHEBI63051 independently confirms the salt ratio; the alias is claim-specific.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-b284157ef4cb",
+        "sa-chebi-63051",
+        "sa-recipe-1207987fcc0f26",
+        "sa-togo-M2088",
+        "sa-owner-nh42hpo4"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-nh42hpo4"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:876b4b81fdef7097ee14fe0ebaa8b94fadc4ef1521309e86c51059e822b842d3"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:5186a837fc13f65b72eb03fa8c0082571b329faffd68f0c1489b87cee5e7eeed",
+      "index": 18,
+      "source_label": "MgCl2 x 6 H2O (200.0 g/l)",
+      "raw_source_label": "MgCl2 x 6 H2O (200.0 g/l)",
+      "case_input_sha256": "9256ce60c69000b31f82e6a0cb09413ad82cd73e333ad4fc3edf973ce1740c50",
+      "scientific_payload_sha256": "f276638dd78a038a7b285da6402395c9bd55c2c8e04f3746c2f4e03dc55f742b",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "DSMZ925 explicitly supplies 200g/L MgCl2 hexahydrate stock and 1mL/L addition. Its stock carrier is not specified in the captured instructions; no whole-stock to dry-hydrate synonym or guessed composition is warranted.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-b243b8aefc2d",
+        "sa-chebi-6636",
+        "sa-recipe-4f9ad47f62c919",
+        "sa-togo-M2459"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:ad09a14af056bf6ec03583c2b7292309dc76f68e56fb07d5460f4c2049e361f7"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:5ad4d015ca55c7f44e6cabd3ba25c775afbc2bb06500f75dd236f16f4364e7e3",
+      "index": 19,
+      "source_label": "Diammonium hydrogencitrate",
+      "raw_source_label": "Diammonium hydrogencitrate",
+      "case_input_sha256": "cb61487bc1f7faa75a3f20ecf15c9206f2c43b013420a4efb13c06a39b345d37",
+      "scientific_payload_sha256": "6103d6f082ee03ff97db15ed6fb89894ee1c1197ed3aa22c898becc94a970e37",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC355/366/820 explicitly name diammonium hydrogencitrate. CHEBI63076 has two deprotonated carboxyl groups and two ammonium ions; separate triammonium cases remain distinct.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-26feba90a898",
+        "sa-recipe-65105976aace",
+        "sa-recipe-25ba45ec76b0",
+        "sa-chebi-63076",
+        "sa-recipe-c2907356863a73",
+        "sa-recipe-6d92be2e3f3eba",
+        "sa-recipe-8595994e450c30",
+        "sa-recipe-8119d63cbe890e",
+        "sa-togo-M1620",
+        "sa-togo-M1564",
+        "sa-owner-nh42_citrate"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-nh42_citrate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:a5432612a2c856717c76d703f3ddc92e5f9cb64dc6d11af06563833d052d1423",
+        "CM_OCC:3a3bf0ac05469df31b90727bd0720b36da4ebf5b92b37fb1874e91eb68b9c35b",
+        "CM_OCC:d6ae7c73a0be270b4c042479a027b91a5ba65f2c7d7593d64e6e192875604f17",
+        "CM_OCC:4b75003d941a49fab5820e07d4af25e7fab12062b5135de6acfd1d6c20ab5941"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:6131e3f66e8c31e81d15dff2eeae38d2eb6686708b248626597107a8762c7a2a",
+      "index": 20,
+      "source_label": "0.4% CaCl2・2H2O",
+      "raw_source_label": "0.4% CaCl2・2H2O",
+      "case_input_sha256": "c1168a1d5c590cd4be2b0788b141edd79d755fce1f6c36782286ece3aa174fd7",
+      "scientific_payload_sha256": "19f8c62279b532be6c8402017f07eac1fa9840b4c8fd3d61ec6900c5539a7d4e",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "The 0.4% calcium chloride dihydrate preparation is not a pure ingredient synonym. JCM665 retrieval is empty in both primary and fresh reviewer attempts; frozen text does not establish percentage basis or stock carrier.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-06c82845cf85",
+        "sa-chebi-86158",
+        "sa-recipe-18c91ad240b3f9",
+        "sa-togo-M683",
+        "sa-owner-cacl2_x_2_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:8631159dd76fc3650012b321855ac5b825c49ea72f918c4a89699f1dcbd08cb3"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-04"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:63d3d4ae7341d502f8b41620560d0a7ec11f16d69ea3e288622c6da08d7ade83",
+      "index": 21,
+      "source_label": "SrCl2・H2O",
+      "raw_source_label": "SrCl2・H2O",
+      "case_input_sha256": "df860fa12ac02bc7104dace7d330a8469533be2bb0661894800155de52c9b648",
+      "scientific_payload_sha256": "cab591054434e6caf6defe9e6b029362964dffd745969c2b91972e94fd357b1f",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "JCM369/508 record strontium chloride monohydrate, and PubChem supports chemical plausibility. The source-linked exact stable identifier is still not established; a general SrCl2 parent cannot become an exact hydrate identity.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-55c33e835e2d",
+        "sa-recipe-24208a22d896",
+        "sa-pubchem-sr-monohydrate",
+        "sa-ols-sr-monohydrate",
+        "sa-recipe-db7d81e66eec5b",
+        "sa-recipe-194e188c7eaac2",
+        "sa-togo-M363",
+        "sa-togo-M509"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:e980f5d22703664ce8024055a4482e7a501e49afb2e400159fec1f45052f2851",
+        "CM_OCC:d3744a460fba69bce5f843e1933fab0a65a9022dbafc45590cec4df69415745e"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:712de2de2b575e9b000356c7112e53e3133cde8fe2751cfdcd8ddcce19929082",
+      "index": 22,
+      "source_label": "Ammonium citrate",
+      "raw_source_label": "Ammonium citrate",
+      "case_input_sha256": "da4535374f0fd665e3b396152a241330d78a5c18c0a3a8b734717c19f2ea6f26",
+      "scientific_payload_sha256": "8205cc5be391e14cd0ceaa7d04fa8fd6559beb5ccf011c83e5af30dde205e4fb",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "The seven bare ammonium-citrate occurrences span separate CDM lineages. None provides a source-specific counterion ratio that permits copying either neighboring diammonium or triammonium decisions across them.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-togo-M2239",
+        "sa-chebi-63076",
+        "sa-chebi-63037",
+        "sa-recipe-4b8c414e2be273",
+        "sa-recipe-6e5a687980d83e",
+        "sa-recipe-9fe45a2738b15c",
+        "sa-recipe-aed8ca1f85dfa1",
+        "sa-recipe-276bd81ddf3611",
+        "sa-recipe-0e631d399dbd47",
+        "sa-recipe-9ca2ad108a36af",
+        "sa-owner-nh42_citrate",
+        "sa-owner-nh43_citrate"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:a29ba50345bb7199588587209076eabf388067603db31d7de6eaf1507dd83a61",
+        "CM_OCC:4007908a30da82c35265e38e849c61e8382a07596008cdb6137338924fb4185a",
+        "CM_OCC:cc32a15c0a1b17fc9322bf766a9258010ad7e45ea999876b220b3fd957112260",
+        "CM_OCC:c785f99afd6952e5b497048eb0244207d94eb3fe7c8d675b9f687592793bff52",
+        "CM_OCC:51c9ba4038730821d24e83a496421ba27831217b4d027cc36175726da494a77c",
+        "CM_OCC:b6d0b5f6e175bd7512e0300051589be1504db0149abcbd7e687b116ad9b6519b",
+        "CM_OCC:896074d14f5e82016acf994c10b3913fcad5dc4a7586d8b4642cb491ea094e9f"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:75d52d9f7d5b45ad6946c61474cb1f4c0e640d76c41680ab8fc544b6ca555b43",
+      "index": 23,
+      "source_label": "MoO",
+      "raw_source_label": "MoO",
+      "case_input_sha256": "7f38d7a1db1ecd1d02e70ec9038a92df27d6826db3e3db9a3c31532687446b6f",
+      "scientific_payload_sha256": "70336696a194483df8b4ef2d99123976f8c059e7cb4a5fb33356dee3eaeeedc4",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "CCAP BB primary PDF clearly prints MoO3 in stock7, then adds 1mL stock per litre final medium. The frozen MoO token lost a subscript and stock boundary; source repair under CultureMech674 is justified, not a global MoO chemical alias.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-0d78f07fa21b",
+        "sa-ccap-bb",
+        "sa-recipe-99f94fdaf3d6d7"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:fb0182bd4a6f07cc7f5618a1892150ebcc0c8c7867435ad8ab1c537b408636cf"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:7d55b59067133c3d1b5d88bb0a92e715068bd4c680ce9c4d8a72f150733c8823",
+      "index": 24,
+      "source_label": "Na-glycerophosphate",
+      "raw_source_label": "Na-glycerophosphate",
+      "case_input_sha256": "296146c997d2d92738a95f42049a4c1bdc587464c4fcbd395bac4393f8ffca93",
+      "scientific_payload_sha256": "2e864a7f421c649bb122d6174488f224995182b194bd373edc043a9cfea42887",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC1183 and DSMZ357 retain generic sodium glycerophosphate. The captured term/product candidates do not establish beta versus alpha, stoichiometry or hydrate for either lineage.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-5939a819cce9",
+        "sa-recipe-19093134ac94",
+        "sa-ncit-C120561",
+        "sa-chebi-132089",
+        "sa-recipe-4709ca10c6bdd4",
+        "sa-recipe-e82ad4a147456a",
+        "sa-recipe-75368455d4cb68",
+        "sa-togo-M2591",
+        "sa-togo-M1919",
+        "sa-owner-sodium_glycerophosphate",
+        "sa-owner-sodium_beta-glycerophosphate",
+        "sa-owner-na2glycerophosphate5h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:4b5c56e92b6f05595341f379eea066cbb8eb9dfc31b120109a87da6acabd9b54",
+        "CM_OCC:1021381c1b351828a34ec2d384e5dab32c62a460e58948111251f00afa80f77b",
+        "CM_OCC:03a676373c77dc0d2132b5beec9d0bda4db7fca671967791cc729338b6d8663d"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:807c4f43db33f78e8fb227f45085a77de5dbe9c1c14a23f4150861b79096b95b",
+      "index": 25,
+      "source_label": "130 mM FeCl2",
+      "raw_source_label": "130 mM FeCl2",
+      "case_input_sha256": "59acc7b114a4c01382b237098b9356b092236964d1825442c53b42eca4795e83",
+      "scientific_payload_sha256": "e5e74008e9ce5038bdc093a702b29c2de084e55b223c3747fb22ea0c8137137b",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "A 130mM FeCl2 preparation does not identify its starting solid hydrate or carrier. Empty JCM665 retrieval leaves those preparation facts unresolved; the molarity is preserved without an anhydrous alias.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-06c82845cf85",
+        "sa-chebi-30812",
+        "sa-recipe-18c91ad240b3f9",
+        "sa-togo-M683"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:0b27e873f48ff8e7d5d218a9ef7df4451d8fd48d256bc98cb6b8d2fccc5ca568"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-04"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:81014f441fc6c9f61a5fc3f1af6aa9bbf513f24ce47f0bd641d9183e0b6f106d",
+      "index": 26,
+      "source_label": "FeCl2·2H2O",
+      "raw_source_label": "FeCl2·2H2O",
+      "case_input_sha256": "206e30257ca0ab5b36b9435ffee08232eb0af63aabeb4b55b4bdb237aa6e4a14",
+      "scientific_payload_sha256": "134b963bd232fe068a871d52b783f930289d121ad06bedb4947c33b75e1fb412",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC1326 explicitly requests FeCl2 dihydrate; OECD identifies its CAS16399-77-2 independently and PubChem has the matching hydrated formula. Exact CAS plus NARROW_MATCH to CHEBI30812 is supported. Bounded live and cached ontology searches are not universal absence proof.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-04a18945016c",
+        "sa-oecd-iron",
+        "sa-pubchem-fe-dihydrate",
+        "sa-ols-fe-dihydrate",
+        "sa-ols-fe-dihydrate-cas",
+        "sa-chebi-30812",
+        "sa-supplier-fe-page",
+        "sa-recipe-78a26182e1b5b2",
+        "sa-togo-M2033"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-iron-ii-chloride-dihydrate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:398eaa1f3a186261b2e76e4004e1a46f0d0afa4a5c595402cb7f9cae72725f52"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:82bec32eb2b673ed06681a63fc9d97056944082cf9d9820a91989fe62f0b49bd",
+      "index": 27,
+      "source_label": "CaCO3 (reagent grade)",
+      "raw_source_label": "CaCO3 (reagent grade)",
+      "case_input_sha256": "d0f7b235308abcd1278fec36e1dd69e7447c6972972891bcff6d231e302805f3",
+      "scientific_payload_sha256": "80e3eb4975b450715587fea30d91f6302648cc743bcadae23f22a45139d9a32a",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "Reagent grade changes a purity specification without choosing a carbonate polymorph or new salt. The CaCO3 source spelling can be retained on CHEBI3311 without claiming unprovided grade percentages.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-ef563061bcd3",
+        "sa-chebi-3311",
+        "sa-recipe-2122768fb21e75",
+        "sa-togo-M1531",
+        "sa-owner-caco3"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-caco3"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:3f24cc3aaa2449c507ad6e521a894f33a48745d53045bb7bc6a30b5d230cd026"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:838860c9ad4afce04ccdb97264977f4b9272cc0bf3f18d278727ee462e1b8014",
+      "index": 28,
+      "source_label": "CuCl2⋅4H2O",
+      "raw_source_label": "CuCl2⋅4H2O",
+      "case_input_sha256": "9ef91cdad8de3839f040081d40c638a9cf2ed5a7529053bb9d4a1dedf9a1d8c3",
+      "scientific_payload_sha256": "d5c53a8197f3aab62a5406a85a65b5aa70c329e7c8f1c4b0c8f2f9b07902323a",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC1507 itself prints CuCl2 tetrahydrate. The unusual hydrate cannot be replaced with common dihydrate merely from plausibility. The stock table's batch mass and water amount must remain distinct from final concentration.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-74b89743eed1",
+        "sa-ols-cu-tetrahydrate",
+        "sa-chebi-49553",
+        "sa-recipe-57d6dac8e517e9",
+        "sa-togo-M2152"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:8601fc19857f53b17580d1c8fe8c95fe105fe0994fd20486fbd204583dcea8d4"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:8a74260086570a129b6c2deed91212baad0827b513e03d538d1d7c1f3a1da434",
+      "index": 29,
+      "source_label": "MnCl2 x 6 H2O",
+      "raw_source_label": "MnCl2 x 6 H2O",
+      "case_input_sha256": "0057e97c602f480d486c98e3377b4cd2866f1047819a110d120e9d748e8b19fc",
+      "scientific_payload_sha256": "3e7d01f029a388ea373fda9e9bc9d9cede6378ed7710ceadc7a933a1f01effc3",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "The four MnCl2 six-water occurrences share JCM1118/1119/1120 ancestry. A recovered1118 document proves the printed stock formula and batch amount, not independent reagent verification for all derivatives. Provider g_l is distinguishable from computed final concentration.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-82ea031bb124",
+        "sa-recipe-5f1a1396d2bc",
+        "sa-recipe-7084e7a0008b",
+        "sa-mediadive-2003",
+        "sa-ols-mn-hexahydrate",
+        "sa-jcm1118-shared",
+        "sa-jcm1119-retry",
+        "sa-jcm1120-retry",
+        "sa-recipe-bc03cda75be48a",
+        "sa-recipe-7871d34644795e",
+        "sa-recipe-c31627b5a2b510",
+        "sa-recipe-67fe9cc15d8776"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:5ff2254aa6a34c3a01ced5e49f48ab02cf6511b06d5318ae5c77032929365be3",
+        "CM_OCC:56b4cb2096598219457ca02e4d0a2ec121b57bcc7f7aed3091519458f65472c2",
+        "CM_OCC:af9f6cc3e095da1fefefb1c648aa08788ae35d5ddc7f971d1f2e641100789a9e",
+        "CM_OCC:475334544c22502879ddceaa2006460796f23eeae8e5ddb9511ef2f46cb0a98c"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-01",
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:93eca46c5d13fcece967587a265c49000dd65448d8b5a2d1feb7711d276265b4",
+      "index": 30,
+      "source_label": "beta-Na2glycerophosphate·5H2O",
+      "raw_source_label": "beta-Na2glycerophosphate·5H2O",
+      "case_input_sha256": "c370899c5639742a1f1ea25c8a1c25f4f6d220b83a0439e4d2b0c950f4c02637",
+      "scientific_payload_sha256": "fe77e8de060a7775aa6fed584a7273118a0a1671b7b2ffa63014682b7898f623",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC966 beta/disodium/pentahydrate identity is explicit despite separate 4mg versus imported g/L defect. Exact CAS13408-09-8 is suitable for the solute spelling; no wrong imported amount enters the owner.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-5822a9e091f7",
+        "sa-merck-35675",
+        "sa-chebi-17270",
+        "sa-merck-35675-retry",
+        "sa-merck35675-web",
+        "sa-recipe-c93db00b74c9ca",
+        "sa-togo-M1755",
+        "sa-owner-na2glycerophosphate5h2o"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-na2glycerophosphate5h2o"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:1558645ee4f716bc3e86e7a5ef4ca58e85478ae7deabddf83a533c3b0db24bbf"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:96e876d0a4cf3c69ad97395b20acd748c363b279d41e0206197606eb98b7b1c3",
+      "index": 31,
+      "source_label": "MnCl2・6H2O",
+      "raw_source_label": "MnCl2・6H2O",
+      "case_input_sha256": "ffdb6e97f1aae5ad0fea1acafe7f8f07a2bd8e8d8f320a622ee37d5d3aa13a5f",
+      "scientific_payload_sha256": "6e245bdb05bb572a75707c6df56ca7fb3d61ae30718ea046d41d9b7f7a7a4e37",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "M1196 is JCM1118 lineage; recovered primary table supplies 4.55mg six-water manganese chloride with1L water. Correct stock/dose hierarchy independently of the still-open exact hydrate reagent verification.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-82ea031bb124",
+        "sa-mediadive-2003",
+        "sa-ols-mn-hexahydrate",
+        "sa-jcm1118-shared",
+        "sa-jcm1119-retry",
+        "sa-jcm1120-retry",
+        "sa-recipe-4b5dc539516ea7",
+        "sa-togo-M1196"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:b08fb52e0a49bfa47fce96d9d48d2b882ea1f7babf29d325db137ef2db9aae86"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-01",
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:a262c8026d2e49e66661614678c8f644aa13f8e7d0ab5b6d90ab578da8cc855d",
+      "index": 32,
+      "source_label": "MgCl2 x 4 H2O",
+      "raw_source_label": "MgCl2 x 4 H2O",
+      "case_input_sha256": "a3c2b32a1eb73f17401af2924b8864bb16d2831d9360a2b81ccc164cf7d93db2",
+      "scientific_payload_sha256": "f2dfac4c41e6883c489a886383de0d61e04a22be081cc26ee94dd7c2ca826663",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "DSMZ976 explicitly prints magnesium chloride tetrahydrate while MediaDive metadata retains anhydrous mass. The contradiction needs reagent evidence; a real hydrate's possible existence alone does not validate the source assignment or water-derived concentration.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-2b1e0672d2fb",
+        "sa-pubchem-mg-tetrahydrate",
+        "sa-mediadive-871",
+        "sa-ols-mg-tetrahydrate",
+        "sa-recipe-4c94e9eca29968",
+        "sa-recipe-4b89ee27087f16",
+        "sa-recipe-2f554e30e13926"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:3a1eea27f60fa812294e26419ccdcf646fb6f4930bae3d9d0444f103e8d1478a",
+        "CM_OCC:c579f2cc2427bb51fd28ea99b44ecc57d3807494d1c2c1d76b64089877299bb9",
+        "CM_OCC:09bbe0eff77f7d596b2d51d554784585d3dfb16d42b1d9ea502e4459d1820cd7"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:a6d79182fedf6107d5a24adb5281644de61a97deb178c04acb1fe800767f8c39",
+      "index": 33,
+      "source_label": "Spermine phosphate",
+      "raw_source_label": "Spermine phosphate",
+      "case_input_sha256": "6d7b3955cbbca7291ef2cfb6da4a3a63739a9f36d5521cb9276c8b22831fb495",
+      "scientific_payload_sha256": "2e3e92cd582373adf71575b0b0400ffefc6ab94d9532b2ed0f9c35e565722e50",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "The cited Chamberlain paper abstract lacks salt stoichiometry; a supplier's spermine diphosphate hexahydrate is only a candidate. No exact product identity follows from the generic phosphate label or reported molarity.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-pubmed-spermine",
+        "sa-spermine-scbt",
+        "sa-spermine-scbt-web",
+        "sa-recipe-48262c9af0348c"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:f17491c491e737672b1f15ac904d1d0e983b670bdbd6537cdd1fbe3aad453777"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:ab9556be29577d30d742defe6231500fdfe424cf471d9335852044be001e2d25",
+      "index": 34,
+      "source_label": "Na2-ß-glycerophosphate x 5 H2O",
+      "raw_source_label": "Na2-ß-glycerophosphate x 5 H2O",
+      "case_input_sha256": "9c96a425cbadf71ffc36f47cf314a0be2d68423cfd4e7e1f3b84fc7f9723bb6c",
+      "scientific_payload_sha256": "c206f1dcd0bd844285e49af3585d5d48bd722cf6bb799e154d5b6144028dfa3b",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "DSMZ122/MediaDive/KOMODO source lineage preserves beta, disodium, pentahydrate and Merck35675. Supplier CAS and molecular form support the shared pentahydrate owner while derivative imports are acknowledged as one lineage.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-99cf18e8cb22",
+        "sa-mediadive-230",
+        "sa-merck-35675",
+        "sa-chebi-17270",
+        "sa-merck-35675-retry",
+        "sa-merck35675-web",
+        "sa-recipe-1af8f9f6a54308",
+        "sa-recipe-a02b0a8b3db33b",
+        "sa-recipe-2f3656c39f1ebd",
+        "sa-recipe-77dba90ba07b0a",
+        "sa-owner-na2glycerophosphate5h2o"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-na2glycerophosphate5h2o"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:507d0e0d7b8dff7956fdc4b6c3bc391ad294b27b690c751dfbe982e698d39cd9",
+        "CM_OCC:c9af55bd3014dba77b7ee1e21d069bb03dbe2196027c0abd35eb099fd917f579",
+        "CM_OCC:b7f1cd643e4598bd38b49eddb010c9edd7c0f82d4d2fce21218153c9b6af1bc0",
+        "CM_OCC:71b2f9e9ebe351d9fd2e3fb41748b3f20c34a45b81b494f5d96bfe1e0b689b97"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:acb8383a6fcc62cffb1b72cb225ef8380eb43c2cdb7c4e3594744cd7447314ce",
+      "index": 35,
+      "source_label": "Ammonium Fe(III) citrate",
+      "raw_source_label": "Ammonium Fe(III) citrate",
+      "case_input_sha256": "5173b77c6f053522347891d2468bc6bb6525b5ded707f49383e1eb95249ec3ec",
+      "scientific_payload_sha256": "98e163db8dd98013476e4cb82bbb4555e9724c5c70fd45becf1114bac8d68dad",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "Ammonium Fe(III) citrate is the same indefinite-composition ferric ammonium citrate material scoped by CHEBI31604. Failed individual JCM pages do not add formulation facts, and no red/green grade or exact molecule is inferred.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-recipe-424e6e3dc840",
+        "sa-recipe-75410edb34dd",
+        "sa-chebi-31604",
+        "sa-recipe-44f2e960bfce02",
+        "sa-recipe-e8eff3c1dc74d7",
+        "sa-recipe-2349c03951a143",
+        "sa-togo-M1107",
+        "sa-togo-M1217",
+        "sa-recipe-f0fa77fefe0d",
+        "sa-togo-M1365",
+        "sa-owner-ferric_ammonium_citrate"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-ferric_ammonium_citrate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:0ee62abebe9953b0edf71a80b9b1572b8a9a534550411b8927b348e27eca0bb7",
+        "CM_OCC:93520226987b8737f18098b84296ebe5bad06a82a4c5634cb60a314ddf6f385d",
+        "CM_OCC:33660fcf85478d0f63892ad8d9d55f54b19c9f8a353b08a546fc08e98f4243fa"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:af3b3568fdab93be4dbbe475f0ec037bed6b757bab6f4490e10698ed8e7b1ecb",
+      "index": 36,
+      "source_label": "MgCl2 (anhydrous)",
+      "raw_source_label": "MgCl2 (anhydrous)",
+      "case_input_sha256": "7e38e81e3eba9c9b378bfdb32764ed8fb8165f0aeb01370129372c5717eb9a01",
+      "scientific_payload_sha256": "e52fc8e0697cba7deb45e7be3a3eb20a3e1aafb3f7029ee3a84e0ab45159fea2",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "All four source names explicitly say anhydrous magnesium chloride. CHEBI6636 formula/scope match; hydrate owners and concentration-bearing labels remain outside this addition.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-6636",
+        "sa-recipe-ae5507c0ce68",
+        "sa-recipe-26b65b3e913a",
+        "sa-recipe-288e3f86069e1e",
+        "sa-recipe-e4db307c2fb812",
+        "sa-recipe-67e01fc2be20e5",
+        "sa-recipe-963f1a3f529325",
+        "sa-togo-M2243",
+        "sa-togo-M2336",
+        "sa-togo-M2608",
+        "sa-togo-M2319",
+        "sa-owner-mgcl2"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-mgcl2"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:df60c2bb4ab4811b0baf683d423807d181a01a91923d4831003bc20486b5c964",
+        "CM_OCC:caf255940c67ffac7bed749b0cd853f89c3ef9f6ce2554ab706b9aa6a59371f8",
+        "CM_OCC:64ec8889cf57e27e89b3caf4731c0dad3b76e22353d719d1149b86b443ab173c",
+        "CM_OCC:92268e979b96a74b3c87189316a53a6bc1b2d343fdfc924a88ac5e4e789d3a1f"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:b27fa65cdc306c1c2a6683ff6bf3099237566a1d8828cbac10d8fce011584aa0",
+      "index": 37,
+      "source_label": "CaCl2 (anhydrous)",
+      "raw_source_label": "CaCl2 (anhydrous)",
+      "case_input_sha256": "e504f9adb818600fed445f40ea49baa6c997e906b7f5917413aeb1925c690fbf",
+      "scientific_payload_sha256": "439cb4f0c9a7f568050b969cb69ec3db5a274760fc938f2f570e507f29a9eb54",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "All five source names explicitly say anhydrous calcium chloride, supporting the added spelling only. Existing malformed hydrate and role-metadata aliases on Cacl2 remain a whole-row publication concern and are not endorsed.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-3312",
+        "sa-recipe-69c7dede331ed9",
+        "sa-recipe-cf74e900022cd6",
+        "sa-recipe-8777f601c7a1d9",
+        "sa-recipe-dd45d080511395",
+        "sa-recipe-2a64491d231814",
+        "sa-togo-M2228",
+        "sa-togo-M3174",
+        "sa-togo-M3136",
+        "sa-togo-M2646",
+        "sa-togo-M2642",
+        "sa-owner-cacl2"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-cacl2"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:5b7a509aa9de920cacae0320f6ab8cdb82172b9be085cb32d58bc88766f98f9a",
+        "CM_OCC:981996f95a65015c630027025f23eda79cac3b497e532cb9b25df9fcbe958ea5",
+        "CM_OCC:8e8488ebbfa5cc7c2f7489aa8086e5867c16dfbac9a2c83627612855d68857ca",
+        "CM_OCC:a92147a736c897b3a2e3d187f319b2ebe29b8e995298646a566904d7aedfb9c1",
+        "CM_OCC:0b169e891b37b0e35b36bfcb651b51ed84f1a6dd79e4d818abe0d5782adeaf5f"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:ba62a33e9b4bee06375c54b95b7a14372083566511cfae1a774478b59c7cd279",
+      "index": 38,
+      "source_label": "β-glycerophosphate-2Na",
+      "raw_source_label": "β-glycerophosphate-2Na",
+      "case_input_sha256": "6d14158b44c525de25ecef39a0d25bc99bf265574233fcd76dd81bd853c88157",
+      "scientific_payload_sha256": "88bd8351554dc3bd92f409150c47b7820d29db6ba946c2e81154a43dcf6145d2",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC1042/1463 explicitly say beta-glycerophosphate-2Na, which matches CHEBI132089's unqualified disodium glycerol2-phosphate. No fifth-water stoichiometry or source physical hydration is inferred from a frequent commercial grade.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-132089",
+        "sa-recipe-5fa72073c6c6",
+        "sa-recipe-88cfae7776e4",
+        "sa-recipe-a2a04243d88075",
+        "sa-recipe-34614659ec75db",
+        "sa-togo-M1812",
+        "sa-togo-M2131",
+        "sa-owner-sodium_beta-glycerophosphate"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-sodium_beta-glycerophosphate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:4107bfc5b16546caf1f524c7eba3975aaacfdbcbf6cb18d9cd2762fd6a82adfc",
+        "CM_OCC:a8fefcb2391afe4b00beddb7f31d6715392922d0a14f96fcd48510c17cf51278"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:c67ff1de8ad274e2e689f9373b5c9baedd4bc5c3b66b05e461be5d8d678a9ed9",
+      "index": 39,
+      "source_label": "CaCl2·2H2O (2.5 g/L)",
+      "raw_source_label": "CaCl2·2H2O (2.5 g/L)",
+      "case_input_sha256": "7d7319115eb64233bd851870a81b4e69dffa34cb55aacba1e8284a41edf72fd5",
+      "scientific_payload_sha256": "d9df6b784417cecc9c276428acaba15b17e09b1338aeb267dfb1b764fa79ce42",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "The successfully captured M2231 JSON already defines a dedicated CaCl2 dihydrate2.5g/L stock table with deionized water and a10mL dose. This supports a source-specific stock proposal, keeping water batch input distinct from any independently certified final volume.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-86158",
+        "sa-recipe-f465bb9cce36cc",
+        "sa-togo-M2231",
+        "sa-owner-cacl2_x_2_h2o",
+        "sa-allen-owner-search",
+        "sa-allen-bounded-ontology-search"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:b4b1017afbca43f00d0a9d3729c308c501ea9921a010bca76032842d9808424d"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-03"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:d4ffd09291040a9dde73e064c08ab89968b757cdca2f257ced13c28e73d30b22",
+      "index": 40,
+      "source_label": "di-Na-ß-glycerophosphate",
+      "raw_source_label": "di-Na-ß-glycerophosphate",
+      "case_input_sha256": "99af03a29e2e5d7412f8224fa2c888d624b90640af8202c9cd1bda9c9050d004",
+      "scientific_payload_sha256": "8c6100b44751cf7d33be4043ed6c129a034e945e334455386e8ca4d083aeae2a",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "DSMZ958 di-Na-beta-glycerophosphate matches the unqualified CHEBI132089 salt definition. It is a solute within the seawater-salts stock; the source does not identify pentahydrate and the stock itself is not the chemical owner.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-chebi-132089",
+        "sa-recipe-3506d0253600",
+        "sa-recipe-48e685b2fe76fb",
+        "sa-togo-M2300",
+        "sa-owner-sodium_beta-glycerophosphate"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-sodium_beta-glycerophosphate"
+      ],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:ba02fba50381d82b05ec1511bd700165dd210bb54fd45d8d3f19aeb5c7fadbb5"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:d920033ebfa2c759c4a418e0bc1c4321ae910ac99e434dc2109a8fe37f40f9b2",
+      "index": 41,
+      "source_label": "ZnCl2 x 6 H2O",
+      "raw_source_label": "ZnCl2 x 6 H2O",
+      "case_input_sha256": "ae60202fffe18131a4a68772e647add29ab63de8efc06aaba96b1f09ff97f55f",
+      "scientific_payload_sha256": "06ac4eb84c3b91d794457a9433202216b23be682d3cfb6f4e41ca6b9860bf139",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "CCAP C/MAF6 explicitly print six-water zinc chloride, but MDY-V prints ZnCl2 without hydrate. Shared imported spelling cannot override those lineage differences. Keep the exact contradictory source labels and stock mass/water basis.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-2351",
+        "sa-chebi-49976",
+        "sa-recipe-4004466c272e",
+        "sa-recipe-cc362088b0d0",
+        "sa-recipe-0db6aaa81bda",
+        "sa-recipe-66288f1e439a",
+        "sa-recipe-5be35385c03067",
+        "sa-recipe-8e9ce4e8bff7da",
+        "sa-recipe-baa3d65bef6b9f",
+        "sa-recipe-e4c7ce8bacdb9d",
+        "sa-recipe-c612e2504da46d",
+        "sa-recipe-722ae4dc30ff1f"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:8ad32011977b604272c00cbadd10988eb601ebf94af655e4553a86ef85e4b140",
+        "CM_OCC:04cfaef822164a30548d54d38e64011496219b7a1f850f55a999d8696ed553e4",
+        "CM_OCC:a3b1e9ac0e1d3970ac11e5353c9124641bd6130aeb9b81e8a3408e2bd7d0c0ed",
+        "CM_OCC:d169433d63e8221a86961291ce888302a0da1bc9131cebb7ba6bb9a04b66fc71",
+        "CM_OCC:bf7d875a28ef824f9e71c55589a5b2ab1a368ab05963caf64820e4c5f051b70d",
+        "CM_OCC:33a0acbf688664b1af83d146dd4961a71d3d9e02f5ce97b44f7625de030b1e9a"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "CM_NAME:dc9c9ff379875169bbcb8b3bd09810883d7154905d37b6ee18f5b4cbd1fb97b1",
+      "index": 42,
+      "source_label": "ZnCl2·2H2O",
+      "raw_source_label": "ZnCl2·2H2O",
+      "case_input_sha256": "e2a6b682169cbc8a5313017cc9e4f81995cbb4935aa9585fc25cd4731c1ce738",
+      "scientific_payload_sha256": "91bb6fd392da94badb217f4899215fcc4ff437053ac7ee3908aae8bf78ecea2a",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "NBRC278 independently prints ZnCl2 dihydrate and0.1mg with1L water. The source typo-versus-unusual-form question remains open, and the frozen0.1G_PER_L is separately wrong. No automatic anhydrous correction is justified.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-ols-zn-dihydrate",
+        "sa-chebi-49976",
+        "sa-recipe-79b97c9e010a",
+        "sa-recipe-4fe6645e8da588",
+        "sa-togo-M1495"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [
+        "CM_OCC:d4eb9eff2a46e742e1bb64a5c65105911f8911e86ad03170e4244941161370ec"
+      ],
+      "original_kg_holds": null,
+      "review_findings": [
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:047c6ac16709ad384bc5cef712feb73aa03bd8ea898ba6249061d9ed1bb4e11c",
+      "index": 43,
+      "source_label": "FeCl2 x 6 H2O",
+      "raw_source_label": "FeCl2 x 6 H2O",
+      "case_input_sha256": "d818a55c3f86359b8a31ae31ab9e1ce546c0aac9f8c4dd1f219aa90d4f3ff4ac",
+      "scientific_payload_sha256": "e5fd6cf112792650381ae88934800487838c017da8035c142a1c3051f3b038e8",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive555 six-water label conflicts with anhydrous CAS/CHEBI/mass. OECD establishes that iron dichloride hexahydrate is possible, not that this mixed metadata identifies it; preserve both exact-registry and parent-row holds.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-555",
+        "sa-chebi-30812",
+        "sa-oecd-iron",
+        "sa-owner-fecl2_x_6_h2o",
+        "sa-owner-fecl2_x_7_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "d4a89ccc23dfba6e9acbe308414dd9ad3298079adfafcd78bfa5e0fb9fe838ae",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "32d196fa700647cb3979fdfd542cf85e6f6c448755623304b6b97ece5b8722cd",
+        "consumed_name_hit_count": 4,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:05098d4fa5cd11f19fceaca7ef41657e43b97efb8f65e1a1981523abb91b6259",
+      "index": 44,
+      "source_label": "NiCl2 x H2O",
+      "raw_source_label": "NiCl2 x H2O",
+      "case_input_sha256": "212f4afeb8a2fc71247de1169324ae4f519cec589d151635e9da96a686293517",
+      "scientific_payload_sha256": "c2a6f406812a5cd5a7060182520e20629db05a6931fdb78ef18fade7af4752e5",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive1892 nickel monohydrate name coexists with anhydrous identifiers and mass. Those conflicting fields cannot be resolved by choosing a common salt or by copying the rejected hexahydrate tombstone.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-1892",
+        "sa-chebi-34887",
+        "sa-owner-nicl2",
+        "sa-owner-nicl2_x_2_h2o",
+        "sa-owner-nicl2_x_5_h2o",
+        "sa-owner-nicl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "404ebb60c43197379be825745e061730d2c87a31ad32e2ce2322c8f6e3350e6a",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:09932bd7abe95bcdf69324e94b9cdc2a2f7ad6f883b74375b11089cc0733f210",
+      "index": 45,
+      "source_label": "NiCl2 x 2 H2O",
+      "raw_source_label": "NiCl2 x 2 H2O",
+      "case_input_sha256": "15f980d959fbeecee6f58a3a4cf4aa39558bf36f17f5a24b02e466d0ea535826",
+      "scientific_payload_sha256": "12c2fb6c4aae9393598f0104a8d270416b40855b6dfcd41cca0195af90dc3a7d",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive981 dihydrate label has anhydrous identifiers. Dihydrate existence is independently plausible and the local registry preserves it, but that is not proof of this source reagent; retain the source-specific conflict.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-981",
+        "sa-chebi-34887",
+        "sa-owner-nicl2",
+        "sa-owner-nicl2_x_2_h2o",
+        "sa-owner-nicl2_x_5_h2o",
+        "sa-owner-nicl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "8cd5d2d1776bb865ca60147b1258d1eeff6eeb66c4c1aaeea94a7a32e806261d",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "3071fcbfc26f7f70d42079bd4ba93df1e3ac7d725f5fa2332c41dcb4b298bf61",
+        "consumed_name_hit_count": 4,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:19a44db1a0ac0c488a9d9a49d393fed1b0022627771a4345324355eb2a1a6bc4",
+      "index": 46,
+      "source_label": "MgCl2 x H2O",
+      "raw_source_label": "MgCl2 x H2O",
+      "case_input_sha256": "8c1f56c6a51f3fdaefa88e58afc01b70ed166bc3a808878ec5cb89be00e66f19",
+      "scientific_payload_sha256": "cb17051e61a9803d9910d72bdcf075c48d141ebeef4339aa32d408bed93dc401",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive912 monohydrate label, CAS22756-14-5, formula and mass agree with CHEBI86355. No new owner is needed. Identity agreement does not erase pre-existing row-level approval obligations.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-912",
+        "sa-chebi-86355",
+        "sa-owner-mgcl2_x_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "b5883a62203ff729968fced24e346e8b0faa13ba08db8a501245be57f2ba8b50",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "7a28234a6a9715f174ac468b0ae40944e8f0b853c53981fd3bf1024a0c513cb1",
+        "consumed_name_hit_count": 2,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:296ff706c39397b120ded30cbf892931966cea1cca4d84b25c47b52c24dc6193",
+      "index": 47,
+      "source_label": "NiCl2 x 5 H2O",
+      "raw_source_label": "NiCl2 x 5 H2O",
+      "case_input_sha256": "8116156b1c7d2199e3f96e0a7213cc44ebb1183fa0341c78dc4685cfbe6fb0d4",
+      "scientific_payload_sha256": "0efbf15ab9f20bdc97bd03ad67a4182fd9315e2c819704423368676035a88ae6",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive2037 five-water nickel name conflicts with anhydrous CAS/CHEBI/mass. Retain the distinct unresolved form and holds rather than declaring it nonexistent or silently mapping to hexahydrate.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-2037",
+        "sa-chebi-34887",
+        "sa-owner-nicl2",
+        "sa-owner-nicl2_x_2_h2o",
+        "sa-owner-nicl2_x_5_h2o",
+        "sa-owner-nicl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "6fffd5418d0463253197d86323f01715ec05090265fd6861589ecd904f230f81",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "1f5755b4f768867d6420c123dfc0259fab9053f84a965606de8c1aadc69eba4d",
+        "consumed_name_hit_count": 4,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:3c48a8089257dee61f916cd9953aacadf9cd3937239a03a3c4410d5c6351f757",
+      "index": 48,
+      "source_label": "MgCl2 x 4 H2O",
+      "raw_source_label": "MgCl2 x 4 H2O",
+      "case_input_sha256": "f3751f719724a2abf20942750dc057039f986bf9169bd88234f60f365e80945f",
+      "scientific_payload_sha256": "15cd11ef8b3f5def64c12f2e33a12ccaf2e8339778ebafd1ae9d5b84e5e2dd71",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive871 tetrahydrate label and anhydrous95.2104 mass disagree, and no exact CAS is supplied. The claimed hydrate must remain separate from anhydrous magnesium chloride pending source-specific confirmation.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-871",
+        "sa-pubchem-mg-tetrahydrate",
+        "sa-chebi-6636"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "638be8e3a44b6535f6f87cdc1faba85b67844fcd041c6c76328611516818e38d",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:4228a1c6b7abaa025d1536c765e72d7abc99a55255ed2365863aa7a9880a02ff",
+      "index": 49,
+      "source_label": "CoCl2 x 2 H2O",
+      "raw_source_label": "CoCl2 x 2 H2O",
+      "case_input_sha256": "ee42f19cb9bba747b928306dad7019d51d7ba260a37b878a9184b7067292eb86",
+      "scientific_payload_sha256": "4cce669867813be9476ed2cd2f7a0492c59b14119ed0c3008d71ac82478b12a6",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive578 cobalt dihydrate label conflicts with anhydrous CAS7646-79-9 and mass129.839. Parent metadata do not identify a hydrated reagent; existing local form and release holds remain scoped.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-578",
+        "sa-chebi-35696",
+        "sa-owner-cocl2_x_2_h2o",
+        "sa-owner-cocl2_x_4_h2o",
+        "sa-owner-cocl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "02615f0708152c896f5ab82624bcb71c27ba5623a103f22a4a96b170bc7f6e5f",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "23ff3cd00da806689072844c59302a1e100ec621831ec4c8a18d34dbb2374024",
+        "consumed_name_hit_count": 4,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:476f4d78d98f3dbdfbef462c921a80f0a791a2d978841b88aa7cf4b16dc826fd",
+      "index": 50,
+      "source_label": "Manganese Sulfate",
+      "raw_source_label": "Manganese Sulfate",
+      "case_input_sha256": "688fb2ef0be9184bf3a44b0a3326753b61cefd5fa5aeabbafe1d8b688ca3d822",
+      "scientific_payload_sha256": "22b484381e40e6e83698eb6a65d7b3c20173f9ebc398e1119ed7842b9be366a0",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "The generic MediaDive939 label is disambiguated by its own monohydrate CAS, CHEBI and mass, not by the existing generic owner alias. This does not authorize global mapping of every manganese sulfate spelling to monohydrate.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-939",
+        "sa-chebi-86364",
+        "sa-owner-mnso4_x_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "0b1e0339370001397708b249d21b2f633cff318e02d8b85d6b41d704d99b2d4c",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "e95a4f4c83a26a2866d658c2dc373a9d8f708bef62e0c5bac7051f82a6df651d",
+        "consumed_name_hit_count": 2,
+        "dispositions": [
+          "SUPPORTED"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:4a2e9c4280f6e484dc1768416f4d4b9c32371cc8cd9c0e87adb2c8b3324c43a6",
+      "index": 51,
+      "source_label": "MnCl2 x 4 H2O",
+      "raw_source_label": "MnCl2 x 4 H2O",
+      "case_input_sha256": "8ab2d15cc111bf48b6eb0452f764099799c9bb137f82ff3713d3407813b26d12",
+      "scientific_payload_sha256": "288de385d3ef1cfe5cfd8c9deeb3b59864599b2e6093bde160a56fdd024e3a57",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive36 tetrahydrate CAS, CHEBI and mass agree. Current owner retains malformed MnCl4 raw labels and a worker02 dependency; recognizing this exact source form does not settle those aliases or release the held full row.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-36",
+        "sa-chebi-86368",
+        "sa-owner-mncl2_x_4_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "e57b5d3aec087ca52c07fddb15e8c7dc6fe174ffbcca9a4c4399dd059e1cab0b",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "e0c69a24691758fdf59533caa51c2faef361a1bdf8bad1dd521baf0e42aae113",
+        "consumed_name_hit_count": 2,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:4d7c7ef17e3749f1d246dba57456564b84a8091914c1fd6ff77ee37f0933ca07",
+      "index": 52,
+      "source_label": "Tryptose-phosphate",
+      "raw_source_label": "Tryptose-phosphate",
+      "case_input_sha256": "7bd2c556bb32e248aa2bb1dbc4682650c16bb7ab5b61edf1824029c46b0b7a07",
+      "scientific_payload_sha256": "33b6a741bc368c17f67248978d42b8683cc22892522787d43cba3da8039f5375",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "Tryptose-phosphate occurrence is a2mL preparation without recipe or product catalog. Pure phosphate or tryptose alone would erase the mixture; source preparation remains a concrete missing fact.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-1165",
+        "sa-fda-tryptose",
+        "sa-owner-tryptose-phosphate"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "df245fb4466c4a74428358839fa2dce94cc5be128cbfba3108166c2a81d85184",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:5bd26afe54ceed1b68ce9e505f2c5b37aaa77991f2638030a505bfd81039eb77",
+      "index": 53,
+      "source_label": "NaSiO3 x 9 H2O",
+      "raw_source_label": "NaSiO3 x 9 H2O",
+      "case_input_sha256": "3669c7b012ef84e951ad1dfab4dda8c949dbe95d96972ed13d0ec310f576f3a5",
+      "scientific_payload_sha256": "2dee9a4e1bcbd6c90d6e8a37e28bd75bad67adde32ee4c72d58a63c56e343745",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive175 has a malformed sodium count but exact CAS13517-24-3 corroborated by supplier/registry evidence for disodium metasilicate nonahydrate. Correct the source-linked identity without promoting NaSiO3 as a universal synonym or merging owners here.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-175",
+        "sa-wako-silicate9",
+        "sa-gsrs-silicate9",
+        "sa-chebi-132108",
+        "sa-owner-na2sio3_x_9_h2o",
+        "sa-owner-nasio3_x_9_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "e1df7d44b5d402d524cf22919cf1fde87872f6ee83ca487ad972680c7612e22c",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:5d0ce252b889447ca5ae13779f4ef660e3ca4c56ed3ad060f7a0df5e050cf3c6",
+      "index": 54,
+      "source_label": "HBO3",
+      "raw_source_label": "HBO3",
+      "case_input_sha256": "61ad1b8aac750cd865ac058a12810c9cd5f24c5b007b20ae155a774292386152",
+      "scientific_payload_sha256": "37e6a018000f12a8fa1acb323000e22d7b389cf84d4f74b9a45cbc1ee0053e13",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive915 HBO3 formula and mass merely repeat the same malformed token. They do not independently establish boric acid H3BO3; retain the raw placeholder and require source correction.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-915",
+        "sa-chebi-33118",
+        "sa-owner-hbo3"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "9884e868e8a1e10cf21f4dda56afaa59844a0dee239de5053e9387a53e9ced3c",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:5ef66b1b22618252e5456a27f17102edebec95fe96e463a02220f7ab2c338654",
+      "index": 55,
+      "source_label": "NaSiO3 x 5 H2O",
+      "raw_source_label": "NaSiO3 x 5 H2O",
+      "case_input_sha256": "e1d7b2095c28d854ab05e84759fd1a03ae58a45f40719dbd6edf05348bc37a6d",
+      "scientific_payload_sha256": "1210e0b8bb245c452f177253ae3724338b26f3b78f06cffcb177938d25f1b22a",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive2420 CAS10213-79-3 supports sodium metasilicate pentahydrate, but the occurrence is1mL of3.73g/L stock. Separate the known reagent form from the still-unspecified stock preparation; no dry-nonahydrate substitution.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-2420",
+        "sa-chebi-60720"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "2cea7e0189cd5fed2c082457e3ef4b5a94e41792a1add76d1c9c40f8741b75ee",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:698cf64944cb92c17cb25ae8ec9b250b036f66f281adac46948ecb64c55663bb",
+      "index": 56,
+      "source_label": "ZnCl2 x 6 H2O",
+      "raw_source_label": "ZnCl2 x 6 H2O",
+      "case_input_sha256": "1e9a1391993a4d773dc57c34962fbed77f190034dab1e116ce3fca50178cc149",
+      "scientific_payload_sha256": "74be3d76f70ba59b43d28aacf2227bca94c3ac86704b0f9d9757968d2eb731b8",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive2351 zinc six-water mass can be generated from the label and supplies no independent CAS. CCAP lineage itself contains conflicting hydrate wording, so a held exact form remains appropriate.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-2351",
+        "sa-chebi-49976"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "e0416528b69174d02a8eb9708b18b36d4a339ef68033c3398ec37623884c4946",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:7778a20f86a0785c78cedc561dc7c1dc46552efa52e29f03abc7ccd22d15fb9e",
+      "index": 57,
+      "source_label": "MgCl2 x 7 H2O",
+      "raw_source_label": "MgCl2 x 7 H2O",
+      "case_input_sha256": "0b240054e3734d0f8855e21482e34401f91d212ce4669ad100832bda59705ad9",
+      "scientific_payload_sha256": "42a9773accf74d96894e1fcd9cab08df2100fd2624048b0fbc26b8046a58a71f",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive632 magnesium seven-water name conflicts with Cl2Mg formula and anhydrous mass. The local registry is a preservation device, not chemical confirmation or a license to use hexahydrate.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-632",
+        "sa-chebi-6636",
+        "sa-owner-mgcl2_x_6_h2o",
+        "sa-owner-mgcl2_x_7_h2o",
+        "sa-owner-mgcl2x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "b4f696ec8813a5b88608c08c27af482f8effecad4f154d1764265bc50433529c",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "08adad711d92d33d26642182a3eda7adfa7ecf02f60b2c63d3fc472b61902eb4",
+        "consumed_name_hit_count": 4,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:79561e6680c4536f764e8b244fb78bcd54b18347dab5104f741b866e7a52dd73",
+      "index": 58,
+      "source_label": "MnCl2 x 2 H2O",
+      "raw_source_label": "MnCl2 x 2 H2O",
+      "case_input_sha256": "d19d3f741293f29b8d2e2ad4d84c603941b17a9ccc123b2d448f36900b83c42d",
+      "scientific_payload_sha256": "113bcf1fa0928b7221104dd45e0a0cd6de8691e1a62060d800b453c3b4e96635",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive63 manganese chloride dihydrate CAS20603-88-7, formula and CHEBI131395 agree. Existing exact owner suffices; source identity does not automatically approve all inherited row payloads.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-63",
+        "sa-chebi-131395",
+        "sa-owner-mncl2_x_2_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "571bd1d662063f7884ae0deb51caf01d5562a71245111d80fd596379eff16b22",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "fa3dcaf3def2334440855cee26b985e46a73797485928454fdc0f99e56cfd373",
+        "consumed_name_hit_count": 2,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:9732bb704373e55707bb613086c396ecca4455bc7d99e05079cf6d8f0254c465",
+      "index": 59,
+      "source_label": "CoCl2 x 6 H2O",
+      "raw_source_label": "CoCl2 x 6 H2O",
+      "case_input_sha256": "d914376a6ab96adf399d8502c21da3932be9b2dc1f3b4f643bd850f0416e55f1",
+      "scientific_payload_sha256": "79201930c90bbfbc23e0fdaf0db83707b573f494eb87fa81c95be7f739985a73",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive38 cobalt hexahydrate label conflicts with anhydrous identifiers. A valid CHEBI53503 term does not repair contradictory source fields; source-specific verification remains necessary.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-38",
+        "sa-chebi-53503",
+        "sa-chebi-35696",
+        "sa-owner-cobalt_chloride_hexahydrate",
+        "sa-owner-cocl2_x_2_h2o",
+        "sa-owner-cocl2_x_4_h2o",
+        "sa-owner-cocl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "ee7d6d9ca63a6a459049da503b502abaa965635a8fa62d424a874b7583dff14a",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "c5e362437c6d99f54789714cf8c47f2bb8823d3162c3067e962f0f9ac91376a9",
+        "consumed_name_hit_count": 2,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:9ddeb17521470c9c17c5a253d1b7f6a433866f718645dfc3f2e3b48c4ef70f70",
+      "index": 60,
+      "source_label": "CuCl2 x 6 H2O",
+      "raw_source_label": "CuCl2 x 6 H2O",
+      "case_input_sha256": "41dde243c326374ede484839118762d892dcced0508d868046c35761ddbbae63",
+      "scientific_payload_sha256": "6e63efef88d9c0c857fa2459e8d628d5751d97d40088483a08eea9053d01372c",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive1056 copper chloride hexahydrate label conflicts with anhydrous CAS7447-39-4/CHEBI49553/mass134.452. Parent metadata and general chemical plausibility cannot select an exact supplied form.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-1056",
+        "sa-chebi-49553",
+        "sa-owner-cucl2",
+        "sa-owner-cucl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "b216b6e7b2298dc77cbce0e7fc8a83596bce6495f96796e568fd185d18f4eb04",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "8cb75020a05fca3f7361413488c04efb658b7dd577cc4a98d0e8fd4dbb0af667",
+        "consumed_name_hit_count": 4,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:a0a4f599c8b3c5da1fc63f4ce96dccf50da2def9458fb7621eebb3891ae7bbbc",
+      "index": 61,
+      "source_label": "CaCl2 x H2O",
+      "raw_source_label": "CaCl2 x H2O",
+      "case_input_sha256": "1976be6e575a169df4461bbc68b497e2f40fdb0eaca0b52ec09e9e31a7414c60",
+      "scientific_payload_sha256": "9b609e77fadc7122061d06e51e87dbdc4b61e749c4ee225580a56a2d2a97ad75",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive356 calcium chloride monohydrate name conflicts with anhydrous CAS10043-52-4 and mass110.983. Do not copy generic calcium chloride or other hydrate identities across this unresolved form.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-356",
+        "sa-chebi-3312",
+        "sa-owner-cacl2",
+        "sa-owner-cacl2_x_7_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "37abcf1fb5bcf83d2ede6e0db13800812ecdcb0cb1623dae525dae1324f37a99",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:bf2b7dbfeb8408eecd00d201503c35afa9eec47205bee90cbe2a197c81ad7150",
+      "index": 62,
+      "source_label": "L-α-Phosphatidylcholine",
+      "raw_source_label": "L-α-Phosphatidylcholine",
+      "case_input_sha256": "cbc4a9c64290330d483b344fddbf76ce3356b379fb7eb400419e26cf87b7509f",
+      "scientific_payload_sha256": "f44e36114b2ba47c4655199cafa27e9ba96ce88a56775bd96c76f25aded53165",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "SigmaP3556 is egg-yolk phosphatidylcholine with variable acyl composition; CHEBI86658 explicitly encodes a single C42H80NO8P molecular structure despite its generic label. Both embedded downstream quarantines correctly defeat an inherited lexical approval.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-2082",
+        "sa-sigma-p3556",
+        "sa-chebi-86658",
+        "sa-sigma-p3556-retry",
+        "sa-sigma-p3556-web",
+        "sa-owner-l-alpha-phosphatidylcholine"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "dd54e5af9c552df1fa0d43f76293fc2218057e4aa390d1e93ae3ee8d5711cb5e",
+        "downstream_holds_sha256": "d663ea11dc477aeef3159d7f2a3297106c8c9988b48126c3708164490f76ae03",
+        "downstream_hold_count": 2,
+        "consumed_name_hits_sha256": "aaf53c8ae8d6585d525e3b1bf06f9bd464de19dcdad1d7c9c3473d20300b0ff0",
+        "consumed_name_hit_count": 2,
+        "dispositions": [
+          "SUPPORTED"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:bfb99789e68e3fbe86a70b16da919940fa2b0b518b1c757a09fd4bd9f70e71e7",
+      "index": 63,
+      "source_label": "Na3-NTA x H2O",
+      "raw_source_label": "Na3-NTA x H2O",
+      "case_input_sha256": "4be5e49d50a5141ed681ad7a4b34c9a0618664ecc6c3030d518f9ddea3942dfa",
+      "scientific_payload_sha256": "e6050cf1ec1ee8f5a6bcc2ae04f25b1d40d97a3183559fa59ec29692189d0bfb",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive1482 supplies a monohydrate CAS but the actual recipe occurrence is4.8mL of0.5M solution. No carrier or recipe is captured, so a reusable stock remains unproven; unqualified trisodium NTA and this hydrated preparation must stay separate.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-1482",
+        "sa-chebi-132766",
+        "sa-owner-na3-nta_x_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "667605cba0f244954d72ba3d195cf1f210ef74e3b5667af131f7c2df474c64da",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:cea1f6b97226d1359f537e3414a6ce68de919e59e7d182ec4e0309299cdc79df",
+      "index": 64,
+      "source_label": "CoCl2 x 4 H2O",
+      "raw_source_label": "CoCl2 x 4 H2O",
+      "case_input_sha256": "925246b6f2c949873ee975ed4cdc8628a1a586ca80ca573dd6053ef157621b04",
+      "scientific_payload_sha256": "a418d8b605f170520e93ecc7302ef0dfde46df162a7df509317c6a6cad062e6b",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive626 cobalt tetrahydrate label conflicts with anhydrous CAS/CHEBI/mass. No exact hydrate conclusion follows from those internally mixed source fields, and registry/parent release holds remain.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-626",
+        "sa-chebi-35696",
+        "sa-owner-cocl2_x_2_h2o",
+        "sa-owner-cocl2_x_4_h2o",
+        "sa-owner-cocl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "cf3db5e4948b700a37c148449ce6fff539071dd21a08d96f11ce808ec03518e9",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "8b528feb6fa273369a0a2d69b2264f76e9f9a8f42799b96af3916de28c21d6ad",
+        "consumed_name_hit_count": 4,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:d1ae10fb33b343e84c036ee949eda29b7304a42ebb49b58e597e256428fa83cc",
+      "index": 65,
+      "source_label": "MnCl2 x 6 H2O",
+      "raw_source_label": "MnCl2 x 6 H2O",
+      "case_input_sha256": "101f159ac8b8530d50c98c686ad7a0ac148e8f466e236480da2e62a2bb8a443f",
+      "scientific_payload_sha256": "40088b0c69b47a93dc2a3470d8e76ac8b99d3dbce753234756ab201ba39c5d7e",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive2003 six-water manganese label lacks CAS/formula/mass, while recovered JCM1118 supplies a4.55mg stock batch with1L water. Shared ancestry is not independent proof of hydration, and provider g_l must remain distinct from inferred concentration.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-2003",
+        "sa-ols-mn-hexahydrate",
+        "sa-jcm1118-shared",
+        "sa-jcm1119-retry",
+        "sa-jcm1120-retry"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "c4ace5a9fab0d0bfeadf5a7d9a743bc7ce0f0c92f40dfd651bf08740454f8a77",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [
+        "SA-SR-01",
+        "SA-SR-02"
+      ],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:ddfa4e9d7b01c1872029368c74bbb5c939227e33bded259e75a7e48b09689441",
+      "index": 66,
+      "source_label": "Na2-ß-glycerophosphate x 5 H2O",
+      "raw_source_label": "Na2-ß-glycerophosphate x 5 H2O",
+      "case_input_sha256": "573dd9a0093ba05431794c1b39a77b5b0da58c903f7f012025f55b5ee989adb5",
+      "scientific_payload_sha256": "20ed728726dfa85b8879e7dafad708d7ac24e440d90912e3ce07fbcd40675616",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive230 names beta/disodium/pentahydrate and explicitly supplies Merck35675. Supplier CAS13408-09-8 and306.11mass support the existing pentahydrate owner, while raw6g and molar conversion remain source quantities.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-230",
+        "sa-merck-35675",
+        "sa-chebi-17270",
+        "sa-merck-35675-retry",
+        "sa-merck35675-web",
+        "sa-owner-na2glycerophosphate5h2o"
+      ],
+      "proposal_ids_reviewed": [
+        "sa-proposal-na2glycerophosphate5h2o"
+      ],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "9a86aa5a7020ab68afadb6d9aea21fa04d8a46733dd3deeef3c1c54d64af86a2",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:e3620d5ad1c5b3a95a5467a08ea999e3c7712f6080e8095ef7409cf27c6b08ee",
+      "index": 67,
+      "source_label": "CuCl2 x H2O",
+      "raw_source_label": "CuCl2 x H2O",
+      "case_input_sha256": "7c2509050061cc45e76b65b12393cd1a0907e7b758b88e46ec5f640f467e5445",
+      "scientific_payload_sha256": "263bf2f6acd4a8e818fb1d1f749c0227e7fce25dd3cc6e157a31b1f791a8a616",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive591 copper monohydrate label conflicts with anhydrous CAS/CHEBI/mass. No assumed common dihydrate or parent exact identity resolves the mismatch; source-linked reagent confirmation is needed.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-591",
+        "sa-chebi-49553",
+        "sa-owner-cucl2",
+        "sa-owner-cucl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "5d0f3d05828dea1b59ab1429325f7f58051cf58021eff6a9939b97c84a0bfda2",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "consumed_name_hit_count": 0,
+        "dispositions": []
+      },
+      "review_findings": [],
+      "release_approval": false
+    },
+    {
+      "case_id": "KG_CASE:f527458e161f77cc363140a6708e6cd18be73f9432b5d565e017b2fac4d84b63",
+      "index": 68,
+      "source_label": "NiCl2 x 6 H2O",
+      "raw_source_label": "NiCl2 x 6 H2O",
+      "case_input_sha256": "99ce8066e233feb35be383c055cf4299d7271a1895a8e1bec6d5685743ea14b2",
+      "scientific_payload_sha256": "22b7521baad4c18b2d92c29d1a9bc6cf8d71083fb8f07436eedb49c979316e59",
+      "review_status": "complete",
+      "reviewer": "/root/materials",
+      "assessment": "scientific_decision_supported_with_stated_limits",
+      "scientific_reasoning": "MediaDive40 nickel hexahydrate label conflicts with anhydrous identifiers and mass. An exact hexahydrate ontology term exists, but existence alone does not adjudicate this source contradiction or release its holds.",
+      "evidence_ids_inspected": [
+        "sa-frozen-shard",
+        "sa-mediadive-40",
+        "sa-chebi-53542",
+        "sa-chebi-34887",
+        "sa-owner-nickel_ii_chloride_hexahydrate",
+        "sa-owner-nicl2",
+        "sa-owner-nicl2_x_2_h2o",
+        "sa-owner-nicl2_x_5_h2o",
+        "sa-owner-nicl2_x_6_h2o"
+      ],
+      "proposal_ids_reviewed": [],
+      "occurrence_ids_reviewed": [],
+      "original_kg_holds": {
+        "source_record_sha256": "8f767c3c2f8d89e3c367dad6b665dcb04625aa1519d37c9985136d1f1d237cf5",
+        "downstream_holds_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "downstream_hold_count": 0,
+        "consumed_name_hits_sha256": "006103dae871b06c2db48c17b809b390499de519c16f76a619c4bc5063189b3e",
+        "consumed_name_hit_count": 2,
+        "dispositions": [
+          "WITHHOLD"
+        ]
+      },
+      "review_findings": [],
+      "release_approval": false
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "sa-proposal-nitrilotriacetic_acid_trisodium_salt",
+      "owner_path": "data/ingredients/mapped/Nitrilotriacetic_Acid_Trisodium_Salt.yaml",
+      "before_sha256": "c68bf8109946d2a5ccd474860657d19663520960f962b9845de82b269940a137",
+      "after_sha256": "b648e40b542c5efcb5b72dd3c7b44f0283cc195e1c2402fd5dca30fa7d12aafe",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-na2glycerophosphate5h2o",
+      "owner_path": "data/ingredients/mapped/Na2glycerophosphate5h2o.yaml",
+      "before_sha256": "4782e7acdfe43c4e4c2373cea600dddb9a9149b694e730b58bfd9b44f08ba603",
+      "after_sha256": "8e3711e885d1a107c21ed026ec237f99d4e3e6e7cb028a0fd2e6b3ae2b56a294",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-nickel_ii_chloride_hexahydrate",
+      "owner_path": "data/ingredients/mapped/Nickel_II_chloride_hexahydrate.yaml",
+      "before_sha256": "3cb45355a45ad8622e58fc69f4b84253866042170493ed0eb4dc7597116a4724",
+      "after_sha256": "5885daf7f0d7449151ab8ff55ce31d28028e832c0ba034ea1af69407097954c6",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-nh43_citrate",
+      "owner_path": "data/ingredients/mapped/Nh43_Citrate.yaml",
+      "before_sha256": "8ed1c0dedfaee58aa528a1c110216c595f218a1b81323b0fea2d6b6f2b37abd9",
+      "after_sha256": "7aae1364731f517f7abf9299d8238b889dafc3baaad821b7c8269e84554f84c8",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-cobalt_chloride_hexahydrate",
+      "owner_path": "data/ingredients/mapped/Cobalt_chloride_hexahydrate.yaml",
+      "before_sha256": "f32ab49c0fa30ca998c07a039503ff4f943b1cb428fb994da6906be8349247dc",
+      "after_sha256": "d7e03647f71898f55d9babf32c8edcfdf50497e45445781df577c2bdb29b9185",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-lead_ii_chloride",
+      "owner_path": "data/ingredients/mapped/Lead_Ii_Chloride.yaml",
+      "before_sha256": "603ab0698bb4b26393e453e91e7c6103ef6be444188ea80c2fe64ceb721944f6",
+      "after_sha256": "5374f93ebb1d2b803ffd154a8ab6ec19cd6251f1d2c6c0b617b633e574b56b0f",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-ferric_ammonium_citrate",
+      "owner_path": "data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml",
+      "before_sha256": "ae646b9c5f3e9c8ec01d939e1b97733259825a14e4a8a03626bc65453035426e",
+      "after_sha256": "9a4b46abac85b4d4d9e6f0d673af0b02d3c7bceb8a67c6dc502d173f91a439eb",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-nh42hpo4",
+      "owner_path": "data/ingredients/mapped/Nh42hpo4.yaml",
+      "before_sha256": "c37e0483f009037bdbe46a6da11fdd48c528a51b1847e824f1bba1a614b77e51",
+      "after_sha256": "041b6452cf853699323fd0dfe23847e7ea85ab592529cb2bcdb1fcee6c53414b",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-nh42_citrate",
+      "owner_path": "data/ingredients/mapped/Nh42_Citrate.yaml",
+      "before_sha256": "d2bbc9a5b4f1ecdcd22d4cd2bdba3de75492c1fad9ebc9bdc179c7327bb295cc",
+      "after_sha256": "c172d7e6522c1432d6e6fc4962325ba63df3ad3d65d98079eb7e0b2a8f161723",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-caco3",
+      "owner_path": "data/ingredients/mapped/Caco3.yaml",
+      "before_sha256": "1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba",
+      "after_sha256": "9270231e88f5c91f7d892e763b74edf93dbbc9588f5b0e5eefcc26703daf6527",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-mgcl2",
+      "owner_path": "data/ingredients/mapped/Mgcl2.yaml",
+      "before_sha256": "789573c4a0219505ff93aa1c57d26e96acf029ac664bb5baab6c6f5f37dc2642",
+      "after_sha256": "e1399b0ba7a8f2f332f0e27eda864fe754a7b0dcc759db354b9aaf2905fac2c0",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-cacl2",
+      "owner_path": "data/ingredients/mapped/Cacl2.yaml",
+      "before_sha256": "c4a8a17cb58d4aaa6949ca81143f684c04a4cea05da4113df6fd746a11bf0031",
+      "after_sha256": "92b6ecd7dc166570dc404d9e08c4eb997622fd336e2d3bd19033be8fb1bc0f78",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-sodium_beta-glycerophosphate",
+      "owner_path": "data/ingredients/mapped/Sodium_Beta-glycerophosphate.yaml",
+      "before_sha256": "50c11e41980f073dd6aead3cb67913fc9bdad066d6d705d373c38b4bbed158bf",
+      "after_sha256": "e686e6404cf524f4752a44477e02d3f580f89fb680f5f88774b96bdc0cad769d",
+      "review_status": "complete",
+      "changed_fields": [
+        "synonyms",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-iron-ii-chloride-dihydrate",
+      "owner_path": "data/ingredients/mapped/Iron_II_Chloride_Dihydrate.yaml",
+      "before_sha256": null,
+      "after_sha256": "c6f8dbcac52988231e388cf866d4c5ea612e7abaa5364b35f450277db74048f7",
+      "review_status": "complete",
+      "changed_fields": [
+        "identifier",
+        "preferred_term",
+        "synonyms",
+        "mapping_status",
+        "ingredient_type",
+        "ontology_mapping",
+        "chemical_properties",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    },
+    {
+      "proposal_id": "sa-proposal-togo_m2231_calcium_chloride_dihydrate_stock",
+      "owner_path": "data/ingredients/mapped/togo_m2231_calcium_chloride_dihydrate_stock.yaml",
+      "before_sha256": null,
+      "after_sha256": "08e6b0d95fe901c148090b81c7fbaa2259154df5ffe2fdbb277fa4706c49ad8c",
+      "review_status": "complete",
+      "changed_fields": [
+        "identifier",
+        "preferred_term",
+        "mapping_status",
+        "ingredient_type",
+        "solution_type",
+        "ontology_mapping",
+        "synonyms",
+        "components",
+        "component_assertion",
+        "notes",
+        "curation_history"
+      ],
+      "closed_schema_errors": [],
+      "identity_and_scope_checked": true,
+      "application_status": "proposal_only; coordinator native and publication gates remain"
+    }
+  ],
+  "limitations": [
+    "Review completion validates source-bound decisions, including justified unresolved cases; it does not declare every source chemical identity resolved.",
+    "No maintained owner, SSSOM row, hold ledger or downstream consumer was changed or released. Complete inherited owner payload concerns remain for coordinator native review.",
+    "Source recoveries are scoped to exact captured versions; related import ancestry is not independent confirmation. Failed requests and bounded ontology searches are not evidence of nonexistence.",
+    "New Allen stock carrier grade remains explicit UNMAPPED Deionizedwater; no invented distilledwater mapping or solvent fraction.",
+    "No paid research, external session, merge or downstream rebuild was performed."
+  ],
+  "validation_capture": {
+    "path": "materials/review-of-salts/validation.json",
+    "sha256": "7db020021dfc20e116c7855433aba94d9d555e5e037fb327d5c823759f12f95e"
+  },
+  "author_activity": "Reviewed primary captured sources, all frozen occurrences/full recipes,41 baseline owners, whole after payloads, independent OAK definitions and bounded exact-term query; made fresh unsuccessful JCM665 retrievals. All primary author edits were requested through findings and independently rechecked.",
+  "native_review_and_release_authorized": false
+}

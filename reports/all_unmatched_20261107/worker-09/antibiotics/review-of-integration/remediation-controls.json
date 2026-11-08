@@ -1,0 +1,87 @@
+{
+  "reviewer": "/root/antibiotics",
+  "checked_at": "2026-11-08T05:28:03.660868+00:00",
+  "method": "Executed extracted current helper validation AST and pure functions with controlled in-memory hash/JSON/YAML mutations. No helper mutation/output code executed, no scientific files changed.",
+  "helper_hashes": {
+    "reports/all_unmatched_20261107/worker-09/tools/attach_independent_reviews.py": "f42f86887bc8145122abac8638c2fa92dc1b6de6d4f513ba4fce00f3d08c7b6f",
+    "reports/all_unmatched_20261107/worker-09/tools/validate_proposal_overlay.py": "3f1845289b61e012e10f06307fb66707ae73bfa6b128daee50963160fc7008c4",
+    ".temp/all-unmatched-worker-09/attach_independent_reviews.py": "f42f86887bc8145122abac8638c2fa92dc1b6de6d4f513ba4fce00f3d08c7b6f"
+  },
+  "checks": [
+    {
+      "name": "unchanged final materials review and all actual evidence",
+      "result": "PASS: accepted unchanged inputs"
+    },
+    {
+      "name": "changed decisions.json",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'decisions.json', 'reviewed file changed or missing binding')"
+    },
+    {
+      "name": "changed evidence.json",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'evidence.json', 'reviewed file changed or missing binding')"
+    },
+    {
+      "name": "changed proposals.json",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'proposals.json', 'reviewed file changed or missing binding')"
+    },
+    {
+      "name": "changed proposal after YAML",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'ma-new-rr_butane_2_3_diol', 'reviewed after payload changed')"
+    },
+    {
+      "name": "changed cited evidence bytes",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'ma-casein', 'reviewed capture changed')"
+    },
+    {
+      "name": "missing proposal review",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'proposal review coverage mismatch')"
+    },
+    {
+      "name": "duplicate case review",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'review coverage mismatch')"
+    },
+    {
+      "name": "individual pending case under complete receipt",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d', 'individual review incomplete')"
+    },
+    {
+      "name": "edited issue refs in assembled decision",
+      "result": "PASS: rejected mutation",
+      "failure": "('materials', 'CM_NAME:018709191a517bad15b284ce380d893e015cc606ab9d0fcad359bcee5e7b061d', 'assembled science changed')"
+    },
+    {
+      "name": "only independent review metadata changed",
+      "result": "PASS: accepted unchanged inputs"
+    },
+    {
+      "name": "edited identifier collides with existing owner",
+      "result": "PASS: collision detected"
+    },
+    {
+      "name": "two new proposals collide with each other",
+      "result": "PASS: collision detected"
+    },
+    {
+      "name": "unchanged historical duplicate",
+      "result": "PASS: not treated as introduced"
+    },
+    {
+      "name": "overwritten original curation event",
+      "result": "PASS: rejected by append-only history guard"
+    },
+    {
+      "name": "introduced unresolved MIM component",
+      "result": "PASS: native partonomy guard rejects"
+    }
+  ],
+  "status": "PASS",
+  "count": 16
+}

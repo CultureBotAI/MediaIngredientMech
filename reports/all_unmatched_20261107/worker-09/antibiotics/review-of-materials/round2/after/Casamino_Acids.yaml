@@ -1,0 +1,228 @@
+identifier: mesh:C017721
+preferred_term: Casamino acids
+ontology_mapping:
+  ontology_id: mesh:C017721
+  ontology_label: casamino acids
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: HISTORICAL; superseded by exact MeSH identity below. Imported from CultureMech
+      pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#263)
+    notes: HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020
+      'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein --
+      an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the
+      same FOODON term as the sibling Casein_Peptone record, which is the same class
+      of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained.
+  - evidence_type: MANUAL_CURATION
+    source: https://id.nlm.nih.gov/mesh/C017721.json
+    notes: Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein
+      whose nitrogen is converted to amino acids or other compounds of relative chemical
+      simplicity. This exact material term is more specific than FOODON03315719 and
+      avoids unnecessary registry fallback. Ordinary acid hydrolysate remains distinct
+      from enzymatic casein peptone and vitamin-assay grade. Historical source statistics
+      are preserved, not recomputed or merged.
+synonyms:
+- synonym_text: ( vitamin assay)
+  synonym_type: REJECTED_LABEL
+  source: CultureMech
+- synonym_text: 'Properties: Undefined component'
+  synonym_type: REJECTED_LABEL
+  source: CultureMech
+- synonym_text: Casamino Acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Casaminoacids
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Casmino Acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Casmino acids
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: carbocerate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Casamino Acids (0.01 %
+  synonym_type: REJECTED_LABEL
+  source: microbedecoder
+- synonym_text: Casamino acids (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD--Difco)
+- synonym_text: Casamino acids (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (Difco)
+- synonym_text: casamino acid (BD Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:casamino acid (BD Difco)
+- synonym_text: Casamino acids (BD Bacto)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD Bacto)
+- synonym_text: Bacto Casamino acids (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Bacto Casamino acids (Difco)
+- synonym_text: Casamino acids (BD BBL)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD BBL)
+- synonym_text: Casamino acids (BD-Difico)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino acids (BD-Difico)
+- synonym_text: Casamino Acids (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Casamino Acids (Difco)
+- synonym_text: Bacto Casamino Acid (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:Bacto Casamino Acid (Difco)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1313
+  media_count: 1247
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.825815+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
+    Casamino acids)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.827802+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
+    Casamino Acids)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.829735+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
+    casamino acids)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Casamino Acid, Casaminoacids,
+    Casmino Acid, Casmino acids, carbocerate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: CASamino acids, Casaminoacids,
+    Casmino Acid, Casmino acids, carbocerate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 4 duplicate MIM record(s) into this one: Casamino_Acid.yaml,
+    Casamino_Acids_2.yaml, Casamino_Acids_3.yaml, Casamino_Acid_2.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:32.632459+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casamino')
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.456070+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C27H53O2; inchi=InChI=1S/C27H54O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-1;
+    smiles=CCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)[O-]
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.136156+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.736872+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: reground_263
+  action: CORRECTED
+  changes: identifier CHEBI:78020 -> FOODON:03315719; ontology term CHEBI:78020 ->
+    FOODON:03315719 (mammalian milk protein (hydrolyzed)). Re-grounded from CHEBI:78020
+    'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an
+    undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same
+    FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate.
+    CAS-RN 65072-00-6 was already correct and is retained. Dropped molecular_formula,
+    inchi, smiles backfilled from the wrong term.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: reground_263
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'restored ingredient_type=UNDEFINED_MIXTURE: it was flipped to SINGLE_INGREDIENT
+    only because heptacosanoate''s structure had been backfilled onto the record (#263)'
+  llm_assisted: true
+- timestamp: '2026-08-06T05:30:11.378447+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0708 ''Casamino Acids (0.01 %'' as a RAW_TEXT synonym
+    -- Parse artifact: a truncated concentration annotation ''(0.01 %'' left on the
+    label. Same ingredient as the Casamino acids record (#213). No new SSSOM row;
+    FOODON:03315719 is already mapped. Source: kgmicrobe.trait:casamino_acids_0_01.'
+  llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.520272+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 57/395 -> 1247/1313 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-02T02:06:17.932149+00:00'
+  curator: Codex
+  action: REMOVED_STALE_KG_MICROBE_NODE_ID
+  changes: 'Removed stale kg_microbe_node_id CHEBI:78020 after the recorded identity
+    correction to FOODON:03315719 (#870). Preserved primary identity, ontology mapping,
+    chemistry, synonyms, roles, counts, status and existing tombstone metadata. Source-only
+    correction: the fixed unified snapshot still contains the documented 21 stale
+    cells in 15 rows; #870 remains open. No mapping, role or release approval. Decision:
+    https://github.com/CultureBotAI/MediaIngredientMech/issues/870#issuecomment-6566860803;
+    evidence: reports/step7a_source_753_870_20261101/source-evidence.json sha256=9d9dc2192eaef73d23ce686f10161468ca1055d781a27fbc197957d4e2917fb3.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T05:19:29.260452+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Propose exact ordinary acid-casein digest identity mesh:C017721 verified
+    in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject
+    inherited carbocerate/metadata/grade-fragment/concentration-fragment aliases and
+    add ordinary supplier spellings. Coordinator must reconcile identifier references
+    and shared-parent closure; no merge or hold release.
+  llm_assisted: true
+  new_status: MAPPED
+chemical_properties:
+  cas_rn: 65072-00-6
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-05T21:48:44.825809+00:00'
+ingredient_type: UNDEFINED_MIXTURE
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/antibiotics",
+  "reviewed_at": "2026-11-08T05:28:58.600573+00:00",
+  "review_status": "complete",
+  "scope": "Read all published worker09 integration helper Python files plus private attach_independent_reviews.py; inspected native component-partonomy implementation. Independently tested exact current187-case accounting, canonical science hashes and isolated failure controls. Scientific primary bundles were not edited.",
+  "input_hashes": {
+    "reports/all_unmatched_20261107/worker-09/tools/assemble_bundle.py": "db119f2341e403d31db858e38846b337d556c9ee17fdb04bda54d02845274ba3",
+    "reports/all_unmatched_20261107/worker-09/tools/attach_independent_reviews.py": "f42f86887bc8145122abac8638c2fa92dc1b6de6d4f513ba4fce00f3d08c7b6f",
+    "reports/all_unmatched_20261107/worker-09/tools/inspect_native_scope.py": "a410c29cf159ce1e20ea616d243ca07f425805c19017158bf643caa8680a73d9",
+    "reports/all_unmatched_20261107/worker-09/tools/test_assemble_bundle.py": "1f74cb44e2838684c729d5ff6d22c9077d4299fa2c011cc153c88585ba4fb8b8",
+    "reports/all_unmatched_20261107/worker-09/tools/validate_proposal_overlay.py": "3f1845289b61e012e10f06307fb66707ae73bfa6b128daee50963160fc7008c4",
+    ".temp/all-unmatched-worker-09/attach_independent_reviews.py": "f42f86887bc8145122abac8638c2fa92dc1b6de6d4f513ba4fce00f3d08c7b6f"
+  },
+  "findings": [
+    {
+      "id": "IH-01",
+      "initial": "Attachment bound decision science hashes only; final proposal/evidence files, cited after/capture bytes and individual complete statuses could change independently without invalidating completion.",
+      "remediation": "Root added reviewer decisions/evidence/proposals input hash bindings with both short and repository-relative key formats, exact proposal review coverage, after and evidence capture hashes, and per-case complete-state checks.",
+      "rereview": "Inspected private/published identical helpers and exercised unchanged material group plus nine failing mutations. Canonical hash excludes exactly independent_review; issue_refs changes fail.",
+      "status": "resolved"
+    },
+    {
+      "id": "IH-02",
+      "initial": "Overlay checked new-owner identifiers against baseline only, missing collisions caused by edited identifiers or two proposed new owners.",
+      "remediation": "Root compares active (identifier,path-pair) collisions in overlay versus baseline.",
+      "rereview": "Controlled edited-existing and new-new collisions detected; unchanged historical duplicate not incorrectly reported as introduced. Current overlay check passes.",
+      "status": "resolved"
+    },
+    {
+      "id": "IH-03",
+      "initial": "check_cases silently collapsed duplicate frozen sourcecase IDs; actual frozen baseline itself was unique.",
+      "remediation": "Root added explicit frozen case-ID uniqueness guard and seventh negative unit control.",
+      "rereview": "Inspected guard, ran seven tests and independently exercised duplicate sourcecase counterexample; now raises ValueError. Actual187 case accounting still passes.",
+      "status": "resolved"
+    }
+  ],
+  "open_blocking_findings": [],
+  "checks": {
+    "actual_source_accounting": {
+      "cases": 187,
+      "decisions": 187,
+      "unique_decisions": 187,
+      "check_cases": "PASS"
+    },
+    "assembly_unit_controls": "7 tests PASS; prior6 plus explicit duplicate frozen source-case rejection",
+    "remediation_controls": {
+      "path": "reports/all_unmatched_20261107/worker-09/antibiotics/review-of-integration/remediation-controls.json",
+      "count": 16,
+      "status": "PASS"
+    },
+    "current_proposal_overlay": {
+      "status": "PASS",
+      "proposal_count": 32,
+      "protected_file_count": 5184,
+      "introduced_partonomy_violations": [],
+      "failures": []
+    },
+    "append_only_history": "Controlled change to original first history event rejected; new event required and llm_assisted checked.",
+    "native_scope_helper": "Source-only cases remain snapshot rows with explicit no-owner notes; context inputs include primary bundles, exact after files, maintained owner paths, mapping semantics/schema/SSSOM/profile. This helper prepares native inspect inputs, not scientific approval.",
+    "duplicate_source_final_control": {
+      "outcome": "rejected",
+      "error": "Frozen source contains duplicate case IDs",
+      "actual187accounting": "PASS"
+    }
+  },
+  "required_final_assembly_checks": [
+    "The protected-input guard detects changed or removed captured files, not additions outside its original manifest; the final git diff and path allowlist must exclude any newly added maintained/generated/protected input.",
+    "Native scope helper relies on preceding exact source accounting; it does not independently detect duplicate decisions or recompute supplied semantic digests. Run it with the validated frozen source and perform final structural/native gates.",
+    "Final assembled diff, all reviewer receipts after salts remediation, and final manifest were intentionally not reviewed in this helper-only task; parent will request that final check."
+  ],
+  "execution_limits": "Executed read-only overlay validator into reviewer artifact paths and extracted validation AST/pure functions with controlled in-memory mutations. Did not execute assembly main, attachment writes or native inspect writer; no scientific primary or maintained input modified.",
+  "supporting_artifact_hashes": {
+    "controls.json": "2265eeb8222fe5b676e913109b6e04b43f9a15b8ecc2191f82da4554ccd05a0f",
+    "remediation-controls.json": "6908a0f8bb9189df73ce1c99e2d752b8b66bff6cbb64f772ef6cff8ffd9149ec",
+    "overlay-validation-final.json": "11d7bab7f813ce9d886dfac6a68880040d8a08e86ee66a11c4414034b913aa64"
+  },
+  "prior_review_receipt_sha256": "a1330f43116be6d39dc4e03fb17106be6bbbc5521d3c1f9de152ade6c431ddaa"
+}

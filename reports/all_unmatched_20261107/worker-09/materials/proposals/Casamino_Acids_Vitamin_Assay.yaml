@@ -1,0 +1,106 @@
+identifier: kgmicrobe.ingredient:casamino_acids_vitamin_assay
+preferred_term: Casamino acids (vitamin assay)
+synonyms:
+- synonym_text: Casamino acids (vit. assay)
+  synonym_type: RAW_TEXT
+  source: culturebotht
+- synonym_text: Casamino acids, vitamin assay (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Casamino acids, vitamin assay (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Bacto Vitamin Assay Casamino Acids (Difco)
+  synonym_type: RAW_TEXT
+  source: culturemech:Bacto Vitamin Assay Casamino Acids (Difco)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.521740+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casamino')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.911027+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary UNMAPPED_0185 → mesh:C017721 (strategy=stem-match)
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.736894+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Casamino acids, vitamin assay (BD-Difco)'' (x5 CultureMech
+    mentions); ''Casamino acids, vitamin assay (Difco)'' (x3 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-23T03:41:22.738468+00:00'
+  curator: claude
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: 'identifier mesh:C017721 -> kgmicrobe.ingredient:casamino_acids_vitamin_assay;
+    ontology mesh:C017721 (''casamino acids'') -> mesh:C017721 (''casamino acids'');
+    mapping_quality LEXICAL_MATCH -> NARROW_MATCH. mesh:C017721 ''casamino acids''
+    is the generic acid-hydrolysed casein (scope note ''acid hydrolyzed casein'');
+    this record is the vitamin-depleted Difco/BD vitamin-assay grade, ordered separately,
+    and MIM holds a separate generic Casamino_Acids record. An exactMatch collapsed
+    a narrower product into its parent. Section 3 step 3: registry identity, broadMatch
+    to the MeSH descriptor. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-11-08T05:24:00.742408+00:00'
+  curator: all-unmatched-worker-09/materials
+  action: PROPOSED_SOURCE_REVIEW_CURATION
+  changes: Add source-bound spelling(s) Bacto Vitamin Assay Casamino Acids (Difco)
+    to the verified live owner; preserve identity and existing release holds.
+  llm_assisted: true
+  new_status: MAPPED
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed.
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: mesh:C017721
+  ontology_label: casamino acids
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: 'SUPERSEDED (#312): Auto-upgraded from UNMAPPED_0185; matched via ''Casamino
+      acids (vitamin assay)''; stem-substring'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier mesh:C017721 -> kgmicrobe.ingredient:casamino_acids_vitamin_assay;
+      ontology mesh:C017721 (''casamino acids'') -> mesh:C017721 (''casamino acids'');
+      mapping_quality LEXICAL_MATCH -> NARROW_MATCH. mesh:C017721 ''casamino acids''
+      is the generic acid-hydrolysed casein (scope note ''acid hydrolyzed casein'');
+      this record is the vitamin-depleted Difco/BD vitamin-assay grade, ordered separately,
+      and MIM holds a separate generic Casamino_Acids record. An exactMatch collapsed
+      a narrower product into its parent. Section 3 step 3: registry identity, broadMatch
+      to the MeSH descriptor.'
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

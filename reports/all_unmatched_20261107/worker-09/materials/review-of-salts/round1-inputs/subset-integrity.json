@@ -1,0 +1,30 @@
+{
+  "scope": "worker09 salts69 subset; not whole-shard contract audit or scientific approval",
+  "validated_at": "2026-11-08T05:19:10.725686+00:00",
+  "status": "PASS",
+  "case_count": 69,
+  "occurrence_count": 86,
+  "evidence_count": 299,
+  "proposal_count": 14,
+  "input_hashes": {
+    "assigned-cases.json": "8a9aba21a39b9536865374ab7dc053c74221189346b18def751c0e2a0b934adb",
+    "decisions.json": "e402a51ead0124a9c51275ee55b89d40079876fc0e553c1856d598fd3930ff6d",
+    "evidence.json": "057f168fcb0c9a4fbdbd51d960e226ca1949f503b01e4b3da99215fdb15e6584",
+    "proposals.json": "2db9661ef526a3e623a50c2cf7686a7e7b9f08843afe4eb82cf9b1185df2c262"
+  },
+  "checks": [
+    "Exact69-case coverage and complete canonical input hashes",
+    "All raw labels and occurrence IDs unchanged",
+    "Every capture exists and matches SHA256; original owner hashes match current frozen baseline",
+    "Decision/proposal/evidence links and backlinks complete",
+    "Each case cites at least one successfully retrieved primary or ontology response",
+    "All independent reviews honestly remain pending"
+  ],
+  "schema_validation": {
+    "command": "python scripts/validate_strict.py reports/all_unmatched_20261107/worker-09/salts/after --workers1 --out .../salts/proposal-schema-errors.tsv",
+    "exit_code": 0,
+    "files": 14,
+    "errors": 0,
+    "report_sha256": "4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b"
+  }
+}

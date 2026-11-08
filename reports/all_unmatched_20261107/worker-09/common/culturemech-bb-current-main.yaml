@@ -1,0 +1,157 @@
+id: CultureMech:000053
+name: bb
+category: algae
+sources:
+- database: CCAP
+  database_id: BB
+  url: https://www.ccap.ac.uk/wp-content/uploads/MR_BB.pdf
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+description: Algae culture medium from CCAP Culture Collection. Suitable for freshwater
+  algae cultivation. Recipe available in PDF format.
+notes: Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_BB.pdf
+light_intensity: Varies by species; typically 50-100 µmol photons m⁻² s⁻¹
+light_cycle: Varies by species; commonly 12:12 or 16:8 light:dark
+temperature_range: 15-30°C depending on species
+applications:
+- Algae cultivation
+- Phytoplankton culture
+- Microalgae research
+curation_history:
+- curator: ccap-import
+  action: Imported from CCAP Culture Collection
+  notes: 'Source ID: BB, PDF URL: https://www.ccap.ac.uk/wp-content/uploads/MR_BB.pdf'
+  timestamp: '2026-01-28T00:00:00+00:00'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-02-03T11:26:43.470884'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-03-13T06:18:53.033790Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000053'
+- timestamp: '2026-03-17T19:45:03.989273+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "BB" to "bb" for consistent matching
+- timestamp: '2026-04-04T12:54:54.842398'
+  curator: batch_process_collection_media
+  action: EXPANDED_INGREDIENTS
+  changes: Replaced placeholder with 6 curated ingredients from CCAP
+  source: CCAP Medium MR_BB.pdf
+- timestamp: '2026-05-16T08:57:02.146418+00:00'
+  curator: migrate_data_quality_flags.py
+  action: MIGRATED_DATA_QUALITY_FLAGS
+  notes: dict(4 keys) -> list(3 entries)
+- timestamp: '2026-05-16T09:02:56.289886+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=2; references.reference_id->reference=2;
+    category->lowercase=1
+- timestamp: '2026-08-17T17:31:48.103716+00:00'
+  curator: repair_subscript_stripped_names.py
+  action: REPAIRED_SUBSCRIPT_STRIPPED_NAME
+  notes: 'Restored digits lost from formula ingredient name(s) by an upstream encoding
+    step (#276): Co(NO ) .6H O -> Co(NO3)2.6H2O. The corrupted original is preserved
+    in each ingredient''s notes.'
+  changes: 1 preferred_term(s) repaired
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_ccap_sources_score10.py
+  action: NORMALIZED_CCAP_SOURCE_SCORE10
+  changes: Normalized CCAP provenance
+  source: CCAP:BB; https://www.ccap.ac.uk/wp-content/uploads/MR_BB.pdf
+  notes: Copied the CCAP source identity from references and the original ccap-import
+    event into the structured sources slot recognized by review scoring.
+references:
+- reference: CCAP:BB
+- reference: https://www.ccap.ac.uk/wp-content/uploads/MR_BB.pdf
+ingredients:
+- preferred_term: ZnSO4 x 7 H2O
+  term:
+    id: CHEBI:32312
+    label: zinc sulfate heptahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.842377'
+    ontology_source: CHEBI
+  concentration:
+    value: '8.82'
+    unit: G_PER_L
+  source: CCAP Medium MR_BB.pdf
+  notes: From CCAP Medium MR_BB.pdf; Curated from CCAP Medium MR_BB.pdf specification
+- preferred_term: MnCl2 x 4 H2O
+  term:
+    id: CHEBI:86368
+    label: manganese(II) chloride tetrahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.842386'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.44'
+    unit: G_PER_L
+  source: CCAP Medium MR_BB.pdf
+  notes: From CCAP Medium MR_BB.pdf; Curated from CCAP Medium MR_BB.pdf specification
+- preferred_term: MoO
+  notes: Ontology mapping not yet available; From CCAP Medium MR_BB.pdf; Curated from
+    CCAP Medium MR_BB.pdf specification
+  concentration:
+    value: '0.71'
+    unit: G_PER_L
+  source: CCAP Medium MR_BB.pdf
+- preferred_term: CuSO4 x 5 H2O
+  term:
+    id: CHEBI:31440
+    label: copper(II) sulfate pentahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.842390'
+    ontology_source: CHEBI
+  concentration:
+    value: '1.57'
+    unit: G_PER_L
+  source: CCAP Medium MR_BB.pdf
+  notes: From CCAP Medium MR_BB.pdf; Curated from CCAP Medium MR_BB.pdf specification
+- preferred_term: Co(NO3)2.6H2O
+  term:
+    id: CHEBI:86214
+    label: cobalt dinitrate hexahydrate
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.842392'
+    ontology_source: CHEBI
+  concentration:
+    value: '0.49'
+    unit: G_PER_L
+  source: CCAP Medium MR_BB.pdf
+  notes: 'From CCAP Medium MR_BB.pdf; Curated from CCAP Medium MR_BB.pdf specification
+    Name repaired (#276): the source string `Co(NO ) .6H O` had lost its subscript
+    digits; restored to `Co(NO3)2.6H2O` — grounded to cobalt dinitrate hexahydrate.'
+- preferred_term: KOH
+  term:
+    id: CHEBI:32035
+    label: potassium hydroxide
+  curation_metadata:
+    mapping_quality: LLM_ASSISTED
+    confidence_score: 1.0
+    curation_date: '2026-04-04T12:54:54.842394'
+    ontology_source: CHEBI
+  concentration:
+    value: '31.0'
+    unit: G_PER_L
+  source: CCAP Medium MR_BB.pdf
+  notes: From CCAP Medium MR_BB.pdf; Curated from CCAP Medium MR_BB.pdf specification
+data_quality_flags:
+- has_ontology_mappings
+- ingredients_curated
+- curation_method:automated_expert_mapping
+original_name: BB

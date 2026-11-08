@@ -1,0 +1,31 @@
+{
+  "author": "/root/materials",
+  "recorded_at": "2026-11-08T05:26:26.398476+00:00",
+  "findings": [
+    {
+      "id": "MA-SR-01",
+      "reviewer": "/root/antibiotics",
+      "problem": "Initial registry plus coarse FOODON identity omitted exact active MeSH C017721 for ordinary acid-hydrolyzed casein.",
+      "remediation": "Verified official NLM JSON and changed proposal identity to mesh:C017721 EXACT_MATCH; retained vitamin-assay and enzymatic-digest boundaries.",
+      "before_bytes_status": "Earliest registry-form bundle was overwritten before reviewer requested its snapshot; no reconstructed bytes are presented as originals.",
+      "before_hashes_observed_by_reviewer": {
+        "decisions": "cba58198d5c25b5a857f226bcd74a4489978d033ee70bbf9fd8329a5010fff5d",
+        "evidence": "776bfca268fd865d123b9cb97c6aee0a111a920271079a02899b285786512fb0",
+        "proposals": "eeb7b4adda3b263d016d405a3b97e8c6f03b034c1ff780a4dce78552642b91ad"
+      }
+    },
+    {
+      "id": "MA-SR-02",
+      "reviewer": "/root/antibiotics",
+      "problem": "Rejecting inherited concentration-fragment label lacked claim-specific source evidence and contradicted prior issue213 source interpretation.",
+      "remediation": "Preserved Casamino Acids(0.01% fragment as RAW_TEXT, acknowledged dose annotation could be final-medium amount rather than stock, retained whole-row review hold.",
+      "before_snapshot": "materials/remediation/ma-sr-02-before"
+    }
+  ],
+  "final_primary_hashes": {
+    "decisions.json": "f7a3a4e9ed0194f53e12dd5e2ed6c6348f494088c411bc121e9c5e9ec99b77f8",
+    "evidence.json": "11c2005ffdcb68ad7301ed45ba42064c24ec2284b2ecb71ad0bc175a18aa6f0c",
+    "proposals.json": "ab8a1e3c47cff341adb349a9ffc1c89bf7e6ab281191a28d2e2288496624fbf8"
+  },
+  "independent_result": "Reviewer reports both findings accepted; authoritative separate review is antibiotics/review-of-materials/review-final.json"
+}

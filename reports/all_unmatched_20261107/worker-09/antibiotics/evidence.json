@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "evidence_id": "ab-frozen-cases",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/assigned-cases.json",
+        "sha256": "da307b8e15c614baf1ee879d34bd1db05211187aa0307bf5ced4e5f807990b39"
+      },
+      "kind": "source_snapshot",
+      "locator": "cases[] complete original_kg_entry for each case_id",
+      "supports_or_contradicts": "Complete frozen graph records, source provider, incident-edge counts, all source names, consumed rows, owner hashes and native WITHHOLD/SUPPORTED obligations. Counts are graph edges, not medium recipe observations.",
+      "url": null
+    },
+    {
+      "evidence_id": "ab-owner-snapshots",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/owner-snapshots.json",
+        "sha256": "983ad10a68d51d84d43ec65e2201d094de25ed1d88b73a9289bfdfb37cc7dd5a"
+      },
+      "kind": "source_snapshot",
+      "locator": "owners[] path, sha256, full payload",
+      "supports_or_contradicts": "All 38 original owner payloads read and byte hashes checked against frozen owners; provenance/history retained without treating automated roles as scientific approval.",
+      "url": null
+    },
+    {
+      "evidence_id": "ab-local-terms",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/local-term-validation.json",
+        "sha256": "e12e6c990449469d32b5de12df7ced9d10ee7a9caae8ac71d016eb75ad685c41"
+      },
+      "kind": "local_validation",
+      "locator": "queries[].results; readonly URI sqlite queries and version metadata",
+      "supports_or_contradicts": "Local term labels, xrefs and deprecation corroborate live ontology responses; available cache provenance is recorded, not assumed current.",
+      "url": null
+    },
+    {
+      "evidence_id": "ab-ols-01",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-5d6c24efc7e0.json",
+        "sha256": "4254dcbe0e2c4584c39bfb69c6e9b914d0aa265a87289144dc41dac813bf4437"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'aburamycin a'; 2 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=aburamycin+a&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:41.349536+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-02",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-3ce11999b3bc.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'achromoviromycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=achromoviromycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:41.349951+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-03",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-b64dc64c207d.json",
+        "sha256": "455ae7dc22635e386e4e5bb39337d6930f1f06facfb25980fecc22c3c161a545"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'actinomycin a'; 76 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=actinomycin+a&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:41.350340+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-04",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-a2881464d36a.json",
+        "sha256": "bff307ea191b496a5dc6da0a6dd6a9a5693c8853bc173f1816e8ac9f5656aba4"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'angustmycin'; 2 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=angustmycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:41.350499+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-05",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-dbb47f9c4263.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'ascosin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=ascosin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:41.969223+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-06",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-c9191f8cce88.json",
+        "sha256": "77cc308e93055a428f79369a696432dbe62d78369fc180fa98d2dc2dc63d8ca9"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'azureomycin'; 2 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=azureomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:42.986428+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-07",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-576a082e9201.json",
+        "sha256": "facef6d9b899bcd694afaa65754aff45a556789c491cda52de65dec449d32995"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'bafilomycin'; 33 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=bafilomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:42.994060+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-08",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-3a1292eedd7d.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'bandamycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=bandamycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:43.507701+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-09",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-6362eede1e8c.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'bis-4-nitrophenyl-phenyl phosphonate'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=bis-4-nitrophenyl-phenyl+phosphonate&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:43.627541+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-10",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-6d9bdbf7a6ec.json",
+        "sha256": "cac1862a7c2e1d8e0bff5e2c8151518e5999d881d486ea4c3c74a438e13abd63"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'bis-4-nitrophenyl-phosphorylcholine'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=bis-4-nitrophenyl-phosphorylcholine&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:43.754100+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-11",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-7d7f03ed2723.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'camphomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=camphomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:44.108439+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-12",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-99c6cb6e5eb4.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'candimycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=candimycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:44.189643+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-13",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-1c1bec6ca55d.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'carcinomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=carcinomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:44.737705+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-14",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-80947a9f5661.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'caryomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=caryomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:45.407893+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-15",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-b69a32653d6a.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'champamycin b'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=champamycin+b&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:45.416430+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-16",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-8f551e54bc1e.json",
+        "sha256": "24363b9aa68a22f33af18f00d19db1f18044bde2b828a47111b17be5d69854f7"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'cinerubin a'; 7 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=cinerubin+a&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:46.003626+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-17",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-b06a916aa46c.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'cladomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=cladomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:46.130465+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-18",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-5d90065d3ce2.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'collinomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=collinomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:46.600415+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-19",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-36e8fed0ed5d.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'danomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=danomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:46.700242+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-20",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-7e67c65c2127.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'danubomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=danubomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:46.721013+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-21",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-a15d08e8d607.json",
+        "sha256": "9c8db72e18691e544f2a71bb17de4c0d44a896351cbc6f1e0d14ff60871ed106"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'destomycin'; 4 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=destomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:47.210838+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-22",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-2e547c695b0f.json",
+        "sha256": "dbcc0c217857b67e797b77c8e471091c1c7e43863a63373cfad8decadce72662"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'durhamycin'; 4 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=durhamycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:47.291174+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-23",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-3615cec6a7c8.json",
+        "sha256": "1e64a2754a992c6c2f4d5f7be594acf95aa898be850cbc80631053d5743490e6"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'eurocidin'; 6 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=eurocidin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:47.319270+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-24",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-a2e75be23184.json",
+        "sha256": "97eae3fa3e9c53e1be777969dfc9e9161a3ca6c713db148d160ef71ce63a91b3"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'flavensomycin'; 1 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=flavensomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:47.853572+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-25",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-fb3af78c8521.json",
+        "sha256": "54e6d2f9fe3721aecc2b8f3571140d445d606fd53d9fa28802b1b3c06ad6f6f6"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'geomycin'; 4 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=geomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:47.914162+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-26",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-a629068e0834.json",
+        "sha256": "ccff341a4cd06291c38708026c80861e0be19960c7429fa0b4e739a77332d0a7"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'glebomycin'; 1 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=glebomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:47.932122+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-27",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-c3621652794f.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'grasseriomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=grasseriomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:48.456446+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-28",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-f2029394270f.json",
+        "sha256": "18577118f9e4447d99233bfa4328fdd94a33890a71520eca41c22ae13fa8c111"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'hitachimycin'; 1 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=hitachimycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:48.530407+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-29",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-ccb690565c9e.json",
+        "sha256": "6d600a078f789b821e5677505e87986d5ae35bc799dfdd018815261379d15e46"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'pactamycin'; 1 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=pactamycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:48.534908+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-30",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-de880bb45425.json",
+        "sha256": "76ee8768bcda22d4eb69dbf9ec3fe5df555e3a102177769bba146f53fb0017c0"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'phoslactomycin'; 13 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=phoslactomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:49.111353+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-31",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-1744f97471e1.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'phyllomycin'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=phyllomycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:49.184401+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-32",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-567d1a130ae7.json",
+        "sha256": "f10e62a790b27a7e9afb33986d520250b2234af671239fdc7f1c70f2a4cd5ca7"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'pluramycin a'; 1 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=pluramycin+a&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:49.425696+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-33",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-edd1a2f3275f.json",
+        "sha256": "67ed7dfe3ffffab44cd0be42b02dc49133b33908b9ff920e8ba777d3ada5f527"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'racemomycin e'; 3 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=racemomycin+e&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:49.617072+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-34",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-1ec0db6b83c3.json",
+        "sha256": "d874c10c65b0302540adb3a4e999e1a5af158db774c6528d752744fd0f0cb632"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'rhodomycin a'; 37 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=rhodomycin+a&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:49.726988+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-35",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-d32e24855b88.json",
+        "sha256": "18b81119408ba602278917733aa78754f372eb1f2948c6639e670948b5a7dc80"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'staphylomycin m1'; 5 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=staphylomycin+m1&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:49.787492+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-36",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-00b28f9c40f8.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'tertiomycin a'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=tertiomycin+a&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:50.017183+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-37",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-9258cd9c30d6.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "unsuccessful_search",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'tertiomycin b'; 0 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=tertiomycin+b&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:50.393035+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-38",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-6fa3c45d41df.json",
+        "sha256": "049665982f54d95afc0256154e149442c7d5c0f9fbc679c4f37147437915bb3a"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'vulgamycin'; 1 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=vulgamycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:50.405236+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-39",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-d88d3c0b804a.json",
+        "sha256": "7cf4e8c2d5b4f3a1d7710466d78bd34255f0722f94a0d8ade9c8fd2479aa582f"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'alpha-rubromycin'; 2 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=alpha-rubromycin&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:51.024528+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-40",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-081c47532f68.json",
+        "sha256": "56ec8b212341ef3b9513ce2054ffff6d0f6fc5be39e06d995da4c53587e2e102"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'chromomycin A2'; 3 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=chromomycin+A2&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:51.202031+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-41",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-739d9e4b38f1.json",
+        "sha256": "21b75b13325c2f6891d00e5a2e1eb36819d37e3d31450d1cfb51d61fffe47521"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'cinerubine A'; 7 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=cinerubine+A&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:51.819304+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-42",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-37b0642e4f63.json",
+        "sha256": "b514943efbbf6a99035646154767f0a0f0fe04828b1157b2bc0c660c701f5213"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'beta-rhodomycin II'; 1 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=beta-rhodomycin+II&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:51.933845+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-43",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-3871cfd2aafb.json",
+        "sha256": "bff307ea191b496a5dc6da0a6dd6a9a5693c8853bc173f1816e8ac9f5656aba4"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'angustmycin A'; 2 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=angustmycin+A&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:52.415187+00:00"
+    },
+    {
+      "evidence_id": "ab-ols-44",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ols-13c32cec8253.json",
+        "sha256": "1cc6623e67920e1a63ee4514e695bf01f3c7e447cdd95eb61f420da2b9021e68"
+      },
+      "kind": "ontology",
+      "locator": "response.numFound and response.docs (first 20 hits)",
+      "supports_or_contradicts": "Live OLS search across CHEBI, NCIT and MeSH for 'angustmycin C'; 2 total hits, at most 20 returned. This bounded search does not prove worldwide or whole-ontology absence; returned siblings and ambiguous scopes are assessed in decisions.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=angustmycin+C&ontology=chebi%2Cncit%2Cmesh&rows=20",
+      "accessed_at": "2026-11-08T05:07:52.881386+00:00"
+    },
+    {
+      "evidence_id": "ab-term-CHEBI-220350",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-CHEBI-220350.json",
+        "sha256": "ababdd16fef52e8e9c7512edeabceb601033dd2d4550aee978d076ac8115f1ed"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for CHEBI:220350; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_220350",
+      "accessed_at": "2026-11-08T05:08:44.812137+00:00"
+    },
+    {
+      "evidence_id": "ab-term-CHEBI-202873",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-CHEBI-202873.json",
+        "sha256": "f87fc757b8a68afca145f77fc5f253407fe01c74f510e531a973ba55edab8cd8"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for CHEBI:202873; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_202873",
+      "accessed_at": "2026-11-08T05:08:44.812512+00:00"
+    },
+    {
+      "evidence_id": "ab-term-CHEBI-8612",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-CHEBI-8612.json",
+        "sha256": "e885f4d2ba686907bfe07a9aff9ae2148372b47fb676153a4fb4816739fc8c76"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for CHEBI:8612; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_8612",
+      "accessed_at": "2026-11-08T05:08:44.812682+00:00"
+    },
+    {
+      "evidence_id": "ab-term-CHEBI-191094",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-CHEBI-191094.json",
+        "sha256": "525eb4ebd22717850fb1da32224d18620ae4d077414f57b53bb403f4604815a7"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for CHEBI:191094; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_191094",
+      "accessed_at": "2026-11-08T05:08:44.812854+00:00"
+    },
+    {
+      "evidence_id": "ab-term-CHEBI-55394",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-CHEBI-55394.json",
+        "sha256": "1f0195bf368f4db17f2b04d905883af9fcf09f6745d34dd1eeb11b0bbde8c5d9"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for CHEBI:55394; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_55394",
+      "accessed_at": "2026-11-08T05:08:45.412572+00:00"
+    },
+    {
+      "evidence_id": "ab-term-CHEBI-91050",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-CHEBI-91050.json",
+        "sha256": "3899a4b4a865493f56186932fad0f427cad9c003b57f8b1ae63069bb8e003740"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for CHEBI:91050; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_91050",
+      "accessed_at": "2026-11-08T05:08:45.419897+00:00"
+    },
+    {
+      "evidence_id": "ab-term-CHEBI-15369",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-CHEBI-15369.json",
+        "sha256": "b5a575e1b94a4afa4b5b94ffb44ca25f2b18b2632565fb98099a84324f0afd71"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for CHEBI:15369; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_15369",
+      "accessed_at": "2026-11-08T05:08:45.633780+00:00"
+    },
+    {
+      "evidence_id": "ab-term-NCIT-C1295",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-NCIT-C1295.json",
+        "sha256": "69ff9f2d0122da7501b1e3a0c5c048fa7d4c14b991ab650bdaf064873cce4a71"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for NCIT:C1295; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FNCIT_C1295",
+      "accessed_at": "2026-11-08T05:08:46.497167+00:00"
+    },
+    {
+      "evidence_id": "ab-term-NCIT-C90636",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-NCIT-C90636.json",
+        "sha256": "e5723f7c539a3248767ef8ffc85d65652348b9fcce39b56eff5fa8f88da26f11"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for NCIT:C90636; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/ncit/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FNCIT_C90636",
+      "accessed_at": "2026-11-08T05:08:46.502696+00:00"
+    },
+    {
+      "evidence_id": "ab-term-mesh-C000481",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-mesh-C000481.json",
+        "sha256": "a4c63e4260b3e30ba41529dcc6ec52f18edf8a4953ed6af4f68347c7a8c33db0"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for mesh:C000481; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?iri=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FC000481",
+      "accessed_at": "2026-11-08T05:08:46.713971+00:00"
+    },
+    {
+      "evidence_id": "ab-term-mesh-C031780",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-mesh-C031780.json",
+        "sha256": "74016e0306c888c3e86dbd17d90139d66b2ea0b50a29ecd178df7a494af18d3e"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for mesh:C031780; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?iri=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FC031780",
+      "accessed_at": "2026-11-08T05:08:47.068175+00:00"
+    },
+    {
+      "evidence_id": "ab-term-mesh-C012306",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-mesh-C012306.json",
+        "sha256": "1b5039c28510362532aa6e35502faebce9d374e82bf86ffc9394d5bffccbbeb2"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for mesh:C012306; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?iri=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FC012306",
+      "accessed_at": "2026-11-08T05:08:47.129927+00:00"
+    },
+    {
+      "evidence_id": "ab-term-mesh-D010118",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-mesh-D010118.json",
+        "sha256": "3dd7ed559a7550bec7c11fcd71a426dad6685dfb9ed40d256762801592a92105"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for mesh:D010118; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?iri=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FD010118",
+      "accessed_at": "2026-11-08T05:08:47.679608+00:00"
+    },
+    {
+      "evidence_id": "ab-term-mesh-C003169",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-mesh-C003169.json",
+        "sha256": "2697166dab71382e6f4c9eba30584b7b4238b1395d28e0b4a420d89f72863b6e"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for mesh:C003169; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?iri=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FC003169",
+      "accessed_at": "2026-11-08T05:08:48.284238+00:00"
+    },
+    {
+      "evidence_id": "ab-term-mesh-C019594",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-mesh-C019594.json",
+        "sha256": "56ab91c2162a9701a2752a84ae3577d9aefc94932e2b7491709239b26d89ae41"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for mesh:C019594; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?iri=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FC019594",
+      "accessed_at": "2026-11-08T05:08:49.339306+00:00"
+    },
+    {
+      "evidence_id": "ab-term-mesh-C004977",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/term-mesh-C004977.json",
+        "sha256": "355a9ec870b020ee17b163aba17a9b9156380f25fa3cbc0cce0d83a470affd99"
+      },
+      "kind": "ontology",
+      "locator": "_embedded.terms[] label, synonyms, annotation, obo_xref, is_obsolete",
+      "supports_or_contradicts": "Actual term payload for mesh:C004977; labels and synonym text alone are not proof of exact chemical equivalence where scope is untyped.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/mesh/terms?iri=http%3A%2F%2Fid.nlm.nih.gov%2Fmesh%2FC004977",
+      "accessed_at": "2026-11-08T05:08:49.341574+00:00"
+    },
+    {
+      "evidence_id": "ab-primary-dsmz",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-04.json",
+        "sha256": "8bc1e79dbe282e30a6e5f86913631bb4d24875316ade1955abb751b693e908ef"
+      },
+      "kind": "primary_source",
+      "locator": "DSMZ PDF pp12-13,49-50; source lines532-555,592-593,2167-2168,2207-2208",
+      "supports_or_contradicts": "DSMZ producer catalogue recognizes Camphomycin, Carcinomycin, Caryomycin, Phyllomycin, Candimycin and distinct Pluramycin A/B. This supports nomenclature and producer association, not pure molecular identity or interchangeability.",
+      "url": "https://www.dsmz.de/fileadmin/user_upload/Collection_allg/Strains_Enzymes.pdf",
+      "accessed_at": "2026-11-08T05:09:09.038Z"
+    },
+    {
+      "evidence_id": "ab-primary-collinomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-04.json",
+        "sha256": "8bc1e79dbe282e30a6e5f86913631bb4d24875316ade1955abb751b693e908ef"
+      },
+      "kind": "primary_source",
+      "locator": "MCE HY-119787 lines4892-4904",
+      "supports_or_contradicts": "Supplier explicitly gives Collinomycin as alpha-Rubromycin synonym with C27H20O12; matches CHEBI:220350 formula. No molecular property enrichment beyond identity proposed.",
+      "url": "https://www.medchemexpress.com/alpha-rubromycin.html",
+      "accessed_at": "2026-11-08T05:09:09.038Z"
+    },
+    {
+      "evidence_id": "ab-primary-aburamycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-02.json",
+        "sha256": "4cdac6582dad75e64d450e20fcca9158c2a912455073dfd014b3828c586e341b"
+      },
+      "kind": "primary_source",
+      "locator": "BioAustralis BIA-C1518 PDF p1 identity/synonyms/formula",
+      "supports_or_contradicts": "Chromomycin A2 is explicitly Aburamycin A, CAS6992-70-7, C59H86O26. Supports CHEBI:202873 and rejects fuzzy Chromomycin A3 candidates.",
+      "url": "https://www.bioaustralis.com/product_pdfs/override/BIA-C1518_product_sheet.pdf",
+      "accessed_at": "2026-11-08T05:08:27.401Z"
+    },
+    {
+      "evidence_id": "ab-primary-cinerubin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-05.json",
+        "sha256": "c1f877cc81500c8348108aa48dd2ca6d9fe8e825adc8622427874796a848c832"
+      },
+      "kind": "primary_source",
+      "locator": "DC76073 lines4-12",
+      "supports_or_contradicts": "Supplier explicitly equates Cinerubin A and Cinerubine A; CAS34044-10-5, formula C42H53NO16. Supports same letter-A MeSH target; not R/B/Y congeners.",
+      "url": "https://www.dcchemicals.com/product_show-cinerubin-a.html?datasheet=datasheet",
+      "accessed_at": "2026-11-08T05:11:25.902Z"
+    },
+    {
+      "evidence_id": "ab-primary-angustmycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-01.json",
+        "sha256": "1f964de6bebcbc414cc98c9790278ffefca8a7281e42e264cf0179259f1238ba"
+      },
+      "kind": "primary_source",
+      "locator": "1960 article abstract lines66-67, DOI10.11554/antibioticsa.13.4_265",
+      "supports_or_contradicts": "Original work distinguishes angustmycin A and C and identifies C with psicofuranine. Contradicts current authorizing A=psicofuranin note.",
+      "url": "https://www.jstage.jst.go.jp/article/antibioticsa/13/4/13_265/_article/-char/en",
+      "accessed_at": "2026-11-08T05:07:52.077Z"
+    },
+    {
+      "evidence_id": "ab-primary-geomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-06.json",
+        "sha256": "b8a7c8243f18bd9e4a016db2b1b079050df19e1a62b8900a32dace3f373aeac6"
+      },
+      "kind": "primary_source",
+      "locator": "Brockmann/Musso1954 abstract lines91-93",
+      "supports_or_contradicts": "Original Geomycin from Streptomyces xanthophaeus is a basic antibiotic mixture separable as A/B/C/D, demonstrating a non-oxytetracycline sense of the bare name. Modern fungal Geomycin A also cannot be substituted by prefix alone.",
+      "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/cber.19540871128",
+      "accessed_at": "2026-11-08T05:11:31.630Z"
+    },
+    {
+      "evidence_id": "ab-primary-bafilomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-12.json",
+        "sha256": "82bb362666bcec9dd880814ec84d878cfa39b4801a88d366fc667511c9124acc"
+      },
+      "kind": "primary_source",
+      "locator": "Original 1984 paper abstract DOI10.7164/antibiotics.37.110",
+      "supports_or_contradicts": "Original isolation distinguishes bafilomycin A1,A2,B1,B2,C1,C2; bare source name does not select A1.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6423597/",
+      "accessed_at": "2026-11-08T05:09:15.423Z"
+    },
+    {
+      "evidence_id": "ab-primary-phoslactomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-12.json",
+        "sha256": "82bb362666bcec9dd880814ec84d878cfa39b4801a88d366fc667511c9124acc"
+      },
+      "kind": "primary_source",
+      "locator": "1989 structure paper abstract DOI10.7164/antibiotics.42.1026",
+      "supports_or_contradicts": "Original work distinguishes phoslactomycins A-F with different substituents, so an unspecified graph label cannot identify one congener.",
+      "url": "https://www.jstage.jst.go.jp/article/antibiotics1968/42/7/42_7_1026/_article",
+      "accessed_at": "2026-11-08T05:09:15.423Z"
+    },
+    {
+      "evidence_id": "ab-primary-azureomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-13.json",
+        "sha256": "74378166fb2a433a6f2e19f49ca8db37d76a012e0d5ebd77f4fb0ef0d4d70a23"
+      },
+      "kind": "primary_source",
+      "locator": "2025 original kineomicin research article, section on clade C and azureomycin",
+      "supports_or_contradicts": "Authors report azureomycin structure unresolved; genomic association does not identify a purified congener. OLS separately retrieves A and B.",
+      "url": "https://pub.uni-bielefeld.de/download/3003025/3003034/s42004-025-01534-x.pdf",
+      "accessed_at": "2026-11-08T05:11:20.217Z"
+    },
+    {
+      "evidence_id": "ab-primary-danomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-03.json",
+        "sha256": "a542cdcb2632e04dc8021ebf8f689dcd8c98d92b562a9ac96bcb9f696c7bc997"
+      },
+      "kind": "primary_source",
+      "locator": "1964 article abstract lines82-84",
+      "supports_or_contradicts": "Original Danomycin is an iron-containing polypeptide related to ferrimycin/albomycin; relatedness does not justify exact mapping to them.",
+      "url": "https://www.jstage.jst.go.jp/article/antibioticsa/17/2/17_39/_article/-char/en",
+      "accessed_at": "2026-11-08T05:08:55.226Z"
+    },
+    {
+      "evidence_id": "ab-primary-danubomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-08.json",
+        "sha256": "8f603ab59e51c15b8b6ee0612fd3a8b6af4c21340c6f94a6c1775cdd2f37004f"
+      },
+      "kind": "primary_source",
+      "locator": "Original patent Danubomycin isolation/fractionation description",
+      "supports_or_contradicts": "Patent distinguishes Danubomycin B components, mixtures and salts; source bare name lacks purification/salt context.",
+      "url": "https://patents.google.com/patent/DE1070781B/en",
+      "accessed_at": "2026-11-08T05:15:02.356Z"
+    },
+    {
+      "evidence_id": "ab-primary-achromoviromycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-03.json",
+        "sha256": "2f6c6a946b04c6797a093a630a415cb1ec936533f3e6697edc727d0a76b48a45"
+      },
+      "kind": "primary_source",
+      "locator": "Original1953 isolation paper conclusion",
+      "supports_or_contradicts": "Names achromoviromycin isolated from Streptomyces achromogenes. Supports the source name, not an unobserved molecular structure or a convenient similarly named drug.",
+      "url": "https://www.jstage.jst.go.jp/article/yoken1952/6/3/6_3_261/_pdf",
+      "accessed_at": "2026-11-08T05:06:24.755Z"
+    },
+    {
+      "evidence_id": "ab-primary-tertiomycin-a",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-01.json",
+        "sha256": "8f6a706c44fcb3b37d6ba71d1a58cb704aeee0b4e7b5b0d5b3a21d4a2bc9af68"
+      },
+      "kind": "primary_source",
+      "locator": "1959 original article bibliographic title",
+      "supports_or_contradicts": "Primary literature specifically names Tertiomycin A from Streptomyces albireticuli. Metadata supports historical name existence; no full structure claim is made.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/13654146/",
+      "accessed_at": "2026-11-08T05:06:03.054Z"
+    },
+    {
+      "evidence_id": "ab-primary-tertiomycin-b",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-03.json",
+        "sha256": "2f6c6a946b04c6797a093a630a415cb1ec936533f3e6697edc727d0a76b48a45"
+      },
+      "kind": "primary_source",
+      "locator": "Umezawa authored antibiotic list with separate Tertiomycin A/B",
+      "supports_or_contradicts": "Separate named Tertiomycin A/B entries support retaining the B designation; this list supplies no structure proving external identity.",
+      "url": "https://doi.org/10.3987/s-1979-01-0083",
+      "accessed_at": "2026-11-08T05:06:24.755Z"
+    },
+    {
+      "evidence_id": "ab-primary-champamycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-03.json",
+        "sha256": "2f6c6a946b04c6797a093a630a415cb1ec936533f3e6697edc727d0a76b48a45"
+      },
+      "kind": "primary_source",
+      "locator": "BCRC12231 production metadata",
+      "supports_or_contradicts": "Culture collection separately lists champamycin A and B; B source qualifier must be retained.",
+      "url": "https://catalog.bcrc.firdi.org.tw/BcrcContent?bid=12231",
+      "accessed_at": "2026-11-08T05:06:24.755Z"
+    },
+    {
+      "evidence_id": "ab-primary-bandamycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-09.json",
+        "sha256": "f0c8962fe4c24a81e15783b617e73740036a7d103db1e1ee3838ca29f16a2109"
+      },
+      "kind": "primary_source",
+      "locator": "DSM40190 production information",
+      "supports_or_contradicts": "Primary culture collection lists Bandamycin A and B; generic Bandamycin does not identify an individual component.",
+      "url": "https://www.dsmz.de/collection/catalogue/details/culture/DSM-40190",
+      "accessed_at": "2026-11-08T05:07:04.393Z"
+    },
+    {
+      "evidence_id": "ab-primary-cladomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-08.json",
+        "sha256": "8f603ab59e51c15b8b6ee0612fd3a8b6af4c21340c6f94a6c1775cdd2f37004f"
+      },
+      "kind": "primary_source",
+      "locator": "DSMZ Strains Producing Special Compounds, Cladomycin entry",
+      "supports_or_contradicts": "Culture collection names Cladomycin as produced by Streptomyces lilacinus DSM40254. Not a structural alias for cladosporin.",
+      "url": "https://www.dsmz.de/fileadmin/user_upload/Collection_allg/Strains_Enzymes.pdf",
+      "accessed_at": "2026-11-08T05:15:02.356Z"
+    },
+    {
+      "evidence_id": "ab-primary-destomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-05.json",
+        "sha256": "7821bf08bde4d7abf7ac04309c6f5cd7ebd406ff34b8136c53fc635e181ab228"
+      },
+      "kind": "primary_source",
+      "locator": "Original1965 isolation and characterization paper",
+      "supports_or_contradicts": "Original paper separates major destomycin A and minor B; bare source label cannot be promoted to A, C or the differently spelled Destomysin/hygromycin target.",
+      "url": "https://www.jstage.jst.go.jp/article/antibioticsa/18/1/18_38/_pdf",
+      "accessed_at": "2026-11-08T05:06:34.105Z"
+    },
+    {
+      "evidence_id": "ab-primary-eurocidin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-08.json",
+        "sha256": "aea1915edf7e2a8073e97c460926f9bcaa4319c668645e352e3bd7d1a025728b"
+      },
+      "kind": "primary_source",
+      "locator": "1970 first page and footnote",
+      "supports_or_contradicts": "Primary work describes original Eurocidin as A/B mixture and distinguishes Candimycin A. Individual newer Eurocidin congeners are not generic identity matches.",
+      "url": "https://www.jstage.jst.go.jp/article/antibiotics1968/23/2/23_2_102/_pdf",
+      "accessed_at": "2026-11-08T05:06:55.319Z"
+    },
+    {
+      "evidence_id": "ab-primary-durhamycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-01.json",
+        "sha256": "1f964de6bebcbc414cc98c9790278ffefca8a7281e42e264cf0179259f1238ba"
+      },
+      "kind": "primary_source",
+      "locator": "1966 original paper abstract",
+      "supports_or_contradicts": "Original Durhamycin is a pentaene antifungal produced by Streptomyces durhamensis. Bare source has no factor/paper linking it to newer Durhamycin A/B ontology hits.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1058409/",
+      "accessed_at": "2026-11-08T05:07:52.077Z"
+    },
+    {
+      "evidence_id": "ab-primary-ascosin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-06.json",
+        "sha256": "e508c2e24b96a8dddd0614573b03c84837dd4eff8a779dd0497ee58514e8a164"
+      },
+      "kind": "primary_source",
+      "locator": "1961 original research abstract",
+      "supports_or_contradicts": "Original research discusses Ascosin from Streptomyces canescus; no source-backed external exact identity follows from related biological mechanism.",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/0006300261904504",
+      "accessed_at": "2026-11-08T05:06:44.032Z"
+    },
+    {
+      "evidence_id": "ab-primary-flavensomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-06.json",
+        "sha256": "b8a7c8243f18bd9e4a016db2b1b079050df19e1a62b8900a32dace3f373aeac6"
+      },
+      "kind": "primary_source",
+      "locator": "1977 abstract line55 DOI10.7164/antibiotics.30.980",
+      "supports_or_contradicts": "Flavensomycinoic acid is only a moiety common to flavensomycin and prasinons; rejects mapping whole Flavensomycin to MeSH flavensomycinoic acid.",
+      "url": "https://www.jstage.jst.go.jp/article/antibiotics1968/30/11/30_11_980/_article",
+      "accessed_at": "2026-11-08T05:11:31.630Z"
+    },
+    {
+      "evidence_id": "ab-primary-grasseriomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-07.json",
+        "sha256": "9f38e825c0c57c0c1645ae5018155552c59d04c8ebd4efeed96fe35e74d3f41e"
+      },
+      "kind": "primary_source",
+      "locator": "1955 original paper bibliographic title",
+      "supports_or_contradicts": "Original literature explicitly names Grasseriomycin in silkworm jaundice-virus work; citation establishes legacy name only, not modern chemical structure.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/13271247/",
+      "accessed_at": "2026-11-08T05:06:48.212Z"
+    },
+    {
+      "evidence_id": "ab-primary-candimycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-08.json",
+        "sha256": "aea1915edf7e2a8073e97c460926f9bcaa4319c668645e352e3bd7d1a025728b"
+      },
+      "kind": "primary_source",
+      "locator": "1977 original paper text/abstract",
+      "supports_or_contradicts": "Candimycin and Candicidin are separately enumerated; lexical similarity does not authorize their merge.",
+      "url": "https://www.jstage.jst.go.jp/article/antibiotics1968/30/2/30_2_158/_article/-char/en",
+      "accessed_at": "2026-11-08T05:06:55.319Z"
+    },
+    {
+      "evidence_id": "ab-primary-bis-assays",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-08.json",
+        "sha256": "aea1915edf7e2a8073e97c460926f9bcaa4319c668645e352e3bd7d1a025728b"
+      },
+      "kind": "primary_source",
+      "locator": "BacDive substrate list with CHEBI crossreferences91050 and55394",
+      "supports_or_contradicts": "Source BacDive carries bis-labelled assay substrates while referring to mono-nitrophenyl ontology structures. This contradiction does not license dropping bis; recover actual substrate specification.",
+      "url": "https://bacdive.dsmz.de/strain/23795",
+      "accessed_at": "2026-11-08T05:06:55.319Z"
+    },
+    {
+      "evidence_id": "ab-primary-racemomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-01.json",
+        "sha256": "8f6a706c44fcb3b37d6ba71d1a58cb704aeee0b4e7b5b0d5b3a21d4a2bc9af68"
+      },
+      "kind": "primary_source",
+      "locator": "MeSH concept section Racemomycin E M0313963",
+      "supports_or_contradicts": "Racemomycin E is explicitly a narrower concept under racemomycin; broad parent scope can be justified while distinct E identity remains local registry. No exact mapping to descriptor.",
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=C019594",
+      "accessed_at": "2026-11-08T05:06:03.054Z"
+    },
+    {
+      "evidence_id": "ab-primary-pactamycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/ontology-01.json",
+        "sha256": "1e7366822a1d1b80643ed22027319b70b83cd5040a160c1ee505f9cecb45fcd5"
+      },
+      "kind": "primary_source",
+      "locator": "MeSH preferred term and pharmacological scope",
+      "supports_or_contradicts": "MeSH D010142 denotes pactamycin; supports existing named identity with no extra aliases.",
+      "url": "https://meshb.nlm.nih.gov/record/ui?ui=D010142",
+      "accessed_at": "2026-11-08T05:07:06.074Z"
+    },
+    {
+      "evidence_id": "ab-primary-glebomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-14.json",
+        "sha256": "11158d3410687047264f6027a6c9e5ce1b3adbeb78275dbff23304bab66d9eff"
+      },
+      "kind": "primary_source",
+      "locator": "1990 original article abstract",
+      "supports_or_contradicts": "Original biosynthetic research explicitly identifies Bluensomycin (glebomycin) and distinguishes its aminocyclitol from streptomycin. Independent chemical support beyond untyped OLS synonym.",
+      "url": "https://journals.asm.org/doi/abs/10.1128/jb.172.10.5844-5851.1990",
+      "accessed_at": "2026-11-08T05:11:47.591Z"
+    },
+    {
+      "evidence_id": "ab-primary-hitachimycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-14.json",
+        "sha256": "11158d3410687047264f6027a6c9e5ce1b3adbeb78275dbff23304bab66d9eff"
+      },
+      "kind": "primary_source",
+      "locator": "1988 original derivative study p614 footnote",
+      "supports_or_contradicts": "Explicitly reports Hitachimycin identified with stubomycin by physicochemical properties despite different production strains; supports exact synonym relation.",
+      "url": "https://www.jstage.jst.go.jp/article/antibiotics1968/41/5/41_5_614/_pdf",
+      "accessed_at": "2026-11-08T05:11:47.591Z"
+    },
+    {
+      "evidence_id": "ab-primary-vulgamycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-07.json",
+        "sha256": "ca96eec657ecf5cc855e16735611cca817c0e05e7f563f84f27650324aeabdd2"
+      },
+      "kind": "primary_source",
+      "locator": "Cayman20592 product identity, synonym, CAS and formula",
+      "supports_or_contradicts": "Enterocin supplier identifies Vulgamycin synonym CAS59678-46-5,C22H20O10. Complements original synthesis article explicitly naming enterocin(vulgamycin); does not refer to peptide bacteriocins also called enterocins.",
+      "url": "https://cdn.caymanchem.com/cdn/insert/20592.pdf",
+      "accessed_at": "2026-11-08T05:11:52.865Z"
+    },
+    {
+      "evidence_id": "ab-primary-actinomycin",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/search-13.json",
+        "sha256": "74378166fb2a433a6f2e19f49ca8db37d76a012e0d5ebd77f4fb0ef0d4d70a23"
+      },
+      "kind": "primary_source",
+      "locator": "Waksman authored monograph, actinomycin nomenclature passage",
+      "supports_or_contradicts": "Historical nomenclature explicitly describes Actinomycin A as a mixture containing I-V; no individual D substitution is justified.",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/The_actinomycetes_%28IA_actinomycetes03waks%29.pdf",
+      "accessed_at": "2026-11-08T05:11:20.217Z"
+    },
+    {
+      "evidence_id": "ab-primary-vulga-synthesis",
+      "capture": {
+        "root": "artifact",
+        "path": "antibiotics/captures/primary-07.json",
+        "sha256": "ca96eec657ecf5cc855e16735611cca817c0e05e7f563f84f27650324aeabdd2"
+      },
+      "kind": "primary_source",
+      "locator": "2019 original synthetic research abstract",
+      "supports_or_contradicts": "Enterocin(vulgamycin) is the same polyketide natural-product identity discussed by structural synthesis researchers.",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.joc.8b02273",
+      "accessed_at": "2026-11-08T05:11:52.865Z"
+    }
+  ]
+}

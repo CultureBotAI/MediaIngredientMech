@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-11-08T05:33:13.832193+00:00",
+  "commands": [
+    {
+      "command": [
+        ".temp/all-unmatched-worker-09/venv/bin/python",
+        "scripts/record_review.py",
+        "validate",
+        ".temp/all-unmatched-worker-09/native-review-final.json"
+      ],
+      "exit_code": 0,
+      "log": "validation/native-validate-final.log"
+    },
+    {
+      "command": [
+        ".temp/all-unmatched-worker-09/venv/bin/python",
+        "scripts/record_review.py",
+        "save",
+        "--content",
+        ".temp/all-unmatched-worker-09/native-review-final.json"
+      ],
+      "exit_code": 0,
+      "log": "validation/native-save-final.log"
+    },
+    {
+      "command": [
+        ".temp/all-unmatched-worker-09/venv/bin/python",
+        "scripts/record_review.py",
+        "check",
+        "--base",
+        "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+        "--require-reviews"
+      ],
+      "exit_code": 0,
+      "log": "validation/native-check-final.log"
+    }
+  ],
+  "scope": "Actual tool-invoked native validation/save/check results; deprecation warning is retained, not suppressed."
+}
