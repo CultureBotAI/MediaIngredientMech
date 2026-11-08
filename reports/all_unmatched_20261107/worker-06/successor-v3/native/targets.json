@@ -1,0 +1,612 @@
+{
+  "targets": [
+    {
+      "target_id": "A-P-D-GLUCOSE",
+      "path": "reports/all_unmatched_20261107/worker-06/research-a/payloads/D-glucose.yaml",
+      "label": "Add threeD-glucose raw spellings to the D-specific owner with separate live/frozen evidence scope.",
+      "kind": "source",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/D-glucose.yaml",
+          "role": "Frozen existing owner; successor remains isolated and uninstalled"
+        }
+      ]
+    },
+    {
+      "target_id": "A-P-MERCK108339",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/payloads/Merck_108339_Sabouraud_2percent_Dextrose_Broth.yaml",
+      "label": "Propose separate Merck108339 dehydrated broth product while preserving generic Sabouraud family owner.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "A-P-JCM1136-548-GLUCOSE-1M",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-c/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+      "label": "Propose shared generic1M glucose stock for JCM548/1136/1406/1412 with explicitly bounded preparation details. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "V2-P-NBRC1308-1356-TRACE",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-root/payloads/nbrc_1308_1356_trace_elements_stock.yaml",
+      "label": "Reconcile the identical NBRC1308/NBRC1356 NTA/selenate/tungstate trace-element formulation as one new nominal stock. Preserve literal source inputs, unknown NaOH and final volume, and occurrence-specific processing. Complete source-input membership is distinguished from unknown quantities; final pH7.0 does not imply another titration.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "B-P-NBRC1257-1321",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/nbrc_1257_1321_trace_element_mixture.yaml",
+      "label": "Propose NBRC 1257/1321 trace element mixture with source-specific constituent assertion and no ambiguous generic-label alias. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "B-P-JCM977-glucose20",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-c/payloads/jcm_977_glucose_20_percent_wv_stock.yaml",
+      "label": "Propose JCM 977 glucose 20% w/v stock with source-specific constituent assertion and no ambiguous generic-label alias. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-NZAMINE-A",
+      "path": "reports/all_unmatched_20261107/worker-06/research-c/after/N-Z-Amine_A.yaml",
+      "label": "Bounded raw-source alias addition with existing identity/status and prior decisions preserved; The primary JCM437 table spells N-Z Amine,type A(Sheffield), resolving the doubled dash in the frozen label while retaining the type-A qualifier. The supplier description confirms N-Z-Amine A is an enzymatic casein digest; this is not pure casein, TypeB or N-Z-Case by lexical similarity. Combined with independently checked B71 raw lowercase variant from six JCM recipes; retains UNMAPPED and does not assert supplier catalogue equivalence. Successor-v3 adds a metadata-only backlink for the seven explicitly Sheffield/typeA receiving contexts of source1608; four unspecified contexts remain excluded. The exact TypeA owner payload is unchanged.",
+      "kind": "source",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/unmapped/N-Z-Amine_A.yaml",
+          "role": "Frozen existing owner; successor remains isolated and uninstalled"
+        }
+      ]
+    },
+    {
+      "target_id": "C-P-JCM187",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/Trace_Element_Solution_See_Medium_No_187.yaml",
+      "label": "Source-bound stock decomposition and numbered aliases; preserve existing identifier and status. The explicit187 reference denotes the seven-salt trace-element stock plus water defined in JCM187. FeCl2 solution is a separate stock in that medium and must not be imported into this constituent list. Existing local identity and its nonexact generic NCIT mapping remain unchanged. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Trace_Element_Solution_See_Medium_No_187.yaml",
+          "role": "Frozen existing owner; successor remains isolated and uninstalled"
+        }
+      ]
+    },
+    {
+      "target_id": "C-P-JCM151",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/Trace_Minerals_See_Medium_No_151.yaml",
+      "label": "Source-bound stock decomposition, numbered aliases and exact formulation registry promotion. The nested chain806→262→265→151 identifies the JCM151 trace-mineral preparation, not the complete Pyrococcus medium. Its NTA/sulfate-salt recipe supports correcting NAMED_MEDIUM to STOCK_SOLUTION and transcribing the minerals, water and KOH adjustment. Variable MnSO4·xH2O remains source text. The complete numbered formulation now uses its own source-defined kgmicrobe.ingredient registry identity; prior UNMAPPED retention was a conservative status choice, not an unresolved identity boundary. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/unmapped/Trace_Minerals_See_Medium_No_151.yaml",
+          "role": "Frozen existing owner; successor remains isolated and uninstalled"
+        }
+      ]
+    },
+    {
+      "target_id": "C-P-JCM284",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+      "label": "Source-bound stock decomposition, numbered aliases and exact formulation registry promotion. JCM1375 explicitly references the trace-vitamin solution of284. The284 table has different vitamin amounts from197 and explicitly DL-calcium pantothenate; the asterisk marks preparation instructions and must not merge vitamin and mineral stocks. The complete numbered formulation now uses its own source-defined kgmicrobe.ingredient registry identity; prior UNMAPPED retention was a conservative status choice, not an unresolved identity boundary. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/unmapped/Trace_Vitamins_Solution_See_Medium_No_284.yaml",
+          "role": "Frozen existing owner; successor remains isolated and uninstalled"
+        }
+      ]
+    },
+    {
+      "target_id": "C-P-JCM197",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/JCM_197_Trace_Vitamins.yaml",
+      "label": "JCM197 defines ten vitamins and water with explicit amounts. This is a recipe-defined stock, not a generic vitamin chemical class. Existing Wolfe/ATCC-labelled stocks are not automatically identical: their phosphate or pantothenate-form differences preclude a lexical merge. A source-specific local identity is proposed. NBRC837 ten-vitamin formulation independently compared and linked only in that source occurrence. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-JCM899",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/JCM_899_Trace_Element_Solution.yaml",
+      "label": "The numbered reference identifies the acidified trace-element formulation in JCM899, not a chemical named Trace Element. Its recipe and receiving-media reference are available; the formulation must remain distinct from JCM187,439 and1079. Dissolve ammonium iron sulfate in25%HCl before diluting with water; add remaining salts in source order. Water995ml and acid5ml are source batch inputs; no molarity or percent basis beyond the source is inferred. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-JCM1079",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/JCM_1079_Trace_Element_Solution.yaml",
+      "label": "JCM1079 defines an EDTA-containing acidic trace-element stock with FeSO4 heptahydrate and other salts, adjusted to pH3.6. The explicit1079 reference prevents identity with187,439 or899 despite similar names. Source requires pH3.6 but does not name a titrant. UNKNOWN completeness preserves that unresolved preparation constituent; do not invent HCl/NaOH or a salt form of EDTA. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-JCM284-MINERALS",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/JCM_284_Trace_Element_Solution.yaml",
+      "label": "This is the trace-element solution of284, not that same medium’s trace-vitamin solution. JCM284 explicitly supplies separate mineral and vitamin tables and a third Se/W stock. NTA is first dissolved in200ml water with KOH to pH6.5, then salts added and volume brought to1.0L; final pH7.0 with KOH. Water1L denotes total source stock volume, not1L plus200ml. Distinct from284vitamin and Se/W solutions. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-JCM1375-1435-825-GLUCOSE10",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-c/payloads/jcm_1375_1435_825_glucose_10_percent_stock.yaml",
+      "label": "Each source specifies separately autoclaved sterile anaerobic 10% glucose stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final volume are unstated. PERCENT deliberately does not assert w/v. The source does not identify the stock solvent. Water is omitted from components; UNKNOWN closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-TOGO2790-GLUCOSE20",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-c/payloads/togo_2790_glucose_20_percent_stock.yaml",
+      "label": "The M9 source narrative supplies 2.5 ml of 20% glucose per 100 ml receiving medium. It does not state the percent basis, glucose form, stock preparation volume or sterilization. The stock solvent is not identified. Water is omitted from components; UNKNOWN closure and PERCENT preserve these limits. This is not automatically equivalent to the explicitly 20% w/v JCM977/1009 preparation, and is not dry glucose. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-JCM1435-YEAST10",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-c/payloads/jcm_1435_oxoid_yeast_extract_10_percent_stock.yaml",
+      "label": "JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid catalogue, lot composition or stock preparation volume. The stock solvent is also unspecified. Water is omitted from components; PERCENT and UNKNOWN closure retain these limits. The whole prepared stock is distinct from dry generic yeast extract and the separately source-defined 1% stock. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-TOGO2568-GLUCOSE10",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-c/payloads/togo_2568_glucose_10_percent_stock.yaml",
+      "label": "The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized solutions after cooling the base to 55 C. The percent basis, glucose form and stock volume are unstated; the stock solvent is not identified. Water is omitted from components and closure remains UNKNOWN. The filter-sterilized fresh preparation is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen mass-style quantity is not approved. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "C-P-JCM1009-GLUCOSE20",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-c/payloads/jcm_1009_anaerobic_glucose_20_percent_wv_stock.yaml",
+      "label": "JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate and stock preparation volume and solvent composition are unstated. Water is omitted from components and closure remains UNKNOWN. JCM977 has the same explicit mass concentration and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified preparation is kept separate. No frozen root-level or mass-style dose is silently approved. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "R-P-JCM243-STOCK",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/R-P-JCM243-STOCK.yaml",
+      "label": "Source-bound NTA trace-element stock of JCM243, referenced by MediaDive ingredient1031 in J1328. Generic Trace minerals owner is not globally equivalent. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "R-P-MODIFIED-VITAMINS",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/R-P-MODIFIED-VITAMINS.yaml",
+      "label": "Add exact JCM1158 Modified trace vitamins components with source stereochemistry and batch quantities. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Modified_Trace_Vitamins.yaml",
+          "role": "Frozen existing owner; successor remains isolated and uninstalled"
+        }
+      ]
+    },
+    {
+      "target_id": "R-P-JCM209-STOCK",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/payloads/R-P-JCM209-STOCK.yaml",
+      "label": "Create source-specific JCM209 six-salt stock; keep generic Salts solution owner and its holds. Successor-v3 corrects only source-local alias admission and qualifying labels under W06-IR-002.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "V3-B-P-EBIOS",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-b/revision-2/payloads/ebios.yaml",
+      "label": "JCM969 explicitly specifies EBIOS dried-yeast tablets from Asahi Food & Healthcare. The frozen MediaDive1953 provenance of existing EBIOS owner also describes dried-yeast tablets, so this is a bounded edit of that owner, not another yeast-extract record. Unknown excipients do not prevent this source-qualified tablet-family identity. The exact product/form label EBIOS* (dried yeast tablets) can resolve to this bounded tablet family after checking its Asahi footnote; bare EBIOS remains rejected.",
+      "kind": "source",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/unmapped/EBIOS.yaml",
+          "role": "Frozen existing owner; successor remains isolated and uninstalled"
+        }
+      ]
+    },
+    {
+      "target_id": "V3-B-P-RM-TRACE-METALS",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-b/revision-2/payloads/rm_trace_metals_togo_m3181.yaml",
+      "label": "The full TOGO M3181 narrative explicitly supplies all seven trace salts, including Na2MoO4·2H2O40mg/L, plus0.25mL concentratedHCl per litre. The parsed table omission is documented and does not block a bounded narrative transcription. This is chemically distinct from NBRC1117 SL7 and JCM187. Parsed-table distilled-water membership is retained without a structural quantity; the printed1L remains in evidence and is not assigned additive or final-volume meaning.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "V3-B-P-OXOID-CDIFF-BHI",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-b/payloads/oxoid_c_difficile_supplement_bhi_togo_m2811.yaml",
+      "label": "TOGO M2811 explicitly assigns the BHI-branch C. difficile supplement to Oxoid and enumerates D-cycloserine plus cefoxitin. That supports a bounded combination-product identity despite missing amounts, supplied chemical forms and historical catalogue number.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "V3-B-P-SHEFFIELD-TYPE-B",
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-b/payloads/sheffield_n_z_amine_type_b.yaml",
+      "label": "TOGO M2815 explicitly names Sheffield Chemical N-Z Amine Type B and describes it as an enzymatic digest of casein. Supplier and grade support a bounded undefined-product identity. Casein is the substrate of hydrolysis, not an asserted intact constituent, and Type A is a different product boundary.",
+      "kind": "source",
+      "ownership_note": "Isolated uninstalled ingredient proposal. Proposed owner paths are intake metadata; only the coordinator may apply maintained changes after separate acceptance."
+    },
+    {
+      "target_id": "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2]",
+      "label": "D--Glucose",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b]",
+      "label": "Trace element solution**",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:1808d5cadb9edfa4a7f735a399831c0478906d6afb6187971378221461bfce41]",
+      "label": "Trace vitamins (see Medium No. 197 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:18c2f8823604399f0eb8a3198119c2a6ef0faeb3855b209984d09f16abd4542c]",
+      "label": "Trace minerals (see Medium No. 151 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77]",
+      "label": "1 M Glucose",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:33b21ff82ba5b019f2f0c530b063b64527a4642643edd4c4271638b27562ecdd]",
+      "label": "SABOURAUD-2% Glucose-Bouillon (Merck 108339)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:5a6a64dd3c8441d7132e42bb195aedac764e54ea5bf512ed61957272a8b62696",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:5a6a64dd3c8441d7132e42bb195aedac764e54ea5bf512ed61957272a8b62696]",
+      "label": "Trace element mixture*",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:660f936f7c6bb76f04a43dbae6c6000b0bcea0dee9909eb04f07db0cf50d01a5",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:660f936f7c6bb76f04a43dbae6c6000b0bcea0dee9909eb04f07db0cf50d01a5]",
+      "label": "Trace vitamins",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190]",
+      "label": "20% (w/v) Glucose",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:6d6ebd68cac4ad55515d9c4606112ed3713710431fa05569bc7bd23849fc67c6",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:6d6ebd68cac4ad55515d9c4606112ed3713710431fa05569bc7bd23849fc67c6]",
+      "label": "Trace vitamins solution (see Medium No.284)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:7513c6aa9fa07a62140c31216b5451cd6a58bd0d439e7e6fb0162efb861723cc",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:7513c6aa9fa07a62140c31216b5451cd6a58bd0d439e7e6fb0162efb861723cc]",
+      "label": "N--Z amine, type A (Sheffield)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:7bf4fa2524fc9dea124eaee113ae2e9123e1801a0da69f6ff4ffcc0f015f96c3",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:7bf4fa2524fc9dea124eaee113ae2e9123e1801a0da69f6ff4ffcc0f015f96c3]",
+      "label": "Trace vitamins* (see Medium No. 197 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:85e975201016d92df32666f4d249c9efbd68de8641d88c73fc0d38b1ade328ab",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:85e975201016d92df32666f4d249c9efbd68de8641d88c73fc0d38b1ade328ab]",
+      "label": "Trace vitamins solution (see Medium No. 284)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:8a88c8344d71c5655cc7a5c984d45d94247e923e213cabfd877eec530a671cfc",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:8a88c8344d71c5655cc7a5c984d45d94247e923e213cabfd877eec530a671cfc]",
+      "label": "Trypticase soy yeast broth",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4]",
+      "label": "EBIOS* (dried yeast tablets)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:947dc2dc2ee1922fcddb0ac1f991c44e28eedcc8bfcf3973d5ec6652cf17c861",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:947dc2dc2ee1922fcddb0ac1f991c44e28eedcc8bfcf3973d5ec6652cf17c861]",
+      "label": "Trace element solution (see Medium No. 899 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:9fce0b1940785bc3f6c86a0738614f3486dfc2a391f2ed8f1692b7144e9226a9",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:9fce0b1940785bc3f6c86a0738614f3486dfc2a391f2ed8f1692b7144e9226a9]",
+      "label": "Trace vitamins***",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:a068b8e304ea67121e10f7c68d6740704e58bb067bf7a3240715296058cf201c",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:a068b8e304ea67121e10f7c68d6740704e58bb067bf7a3240715296058cf201c]",
+      "label": "N--Z Amine, type A (Sheffield)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293]",
+      "label": "Trace element solution (see Medium No. 187 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68]",
+      "label": "Trace minerals (JCM Medium 151)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285]",
+      "label": "Trace vitamins (see Medium No. 197)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396]",
+      "label": "10% Glucose solution",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb]",
+      "label": "1 M Glucose solution",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da]",
+      "label": "1.0 M Glucose solution",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb]",
+      "label": "Trace vitamin (see Medium No. 197 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829]",
+      "label": "Trace metals",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e]",
+      "label": "C. difficile supplement",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:c1d28a428161812cf36eed765cf758fe34859714df23e19978cf4ed58e0d40b2",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:c1d28a428161812cf36eed765cf758fe34859714df23e19978cf4ed58e0d40b2]",
+      "label": "Trace vitamins solution* (see Medium No. 284 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc]",
+      "label": "N-Z Amine, type B (Sheffield)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:d9c0c81fbad77b2409cf51e90a3d284c505b2093dadf44a87f5b8c2c40dcb934",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:d9c0c81fbad77b2409cf51e90a3d284c505b2093dadf44a87f5b8c2c40dcb934]",
+      "label": "20% glucose",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:dafcc305d38e480df087be418af0a7e4fda32dc46baff6af5ef163c47c111785",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:dafcc305d38e480df087be418af0a7e4fda32dc46baff6af5ef163c47c111785]",
+      "label": "Trace element solution (see Medium No. 1079 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230]",
+      "label": "Trace element solution****",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:dfdba82a505c5a0c9998c4becb3e1f74526b4ae9b3e0e96e66a84aa076885938]",
+      "label": "Trace element solution (see Medium No. 439 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:e60c91c3a2002b258c5aefcf8f970639a5c136d594fa21a4ccaadbea2470253f",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:e60c91c3a2002b258c5aefcf8f970639a5c136d594fa21a4ccaadbea2470253f]",
+      "label": "10% Yeast extract (Oxoid) solution",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:ea939d251b767935d74f8a0ac0b828a4a0c3f877e460a9e8c49af0531d30ac88",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:ea939d251b767935d74f8a0ac0b828a4a0c3f877e460a9e8c49af0531d30ac88]",
+      "label": "Trace element solution (see Medium No. 284 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b]",
+      "label": "20% (w/v) Glucose solution",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:f0bc7fb6c6e307f5ba078cb41a7e36f0398990ffaffc763152221fd44f1f61a4",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:f0bc7fb6c6e307f5ba078cb41a7e36f0398990ffaffc763152221fd44f1f61a4]",
+      "label": "10% Glucose",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "CM_NAME:f76ab08b98796bcd6405bdbfa93dc50018d21ca3b2386aac9a37783818d24ba5",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=CM_NAME:f76ab08b98796bcd6405bdbfa93dc50018d21ca3b2386aac9a37783818d24ba5]",
+      "label": "Trace element solution* (see Medium No. 899 )",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:0e5c3f9cb8c1702404c1f093d2e0b378214d4a25e6f5305f15e4d3f5719a2289]",
+      "label": "Trace minerals",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8]",
+      "label": "Trace element solution (see Medium No. 187",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:2c14b566af21f9bfba903a29b55e3479abcf2b2d9670c47a82ed719f2179bf9f]",
+      "label": "Modified trace vitamins",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f]",
+      "label": "Yeast Nitrogen Base",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:5820d4b5853cdecf9b14356ca605ab31f50e76b01adea152eac669d1381c2470]",
+      "label": "Trace vitamins solution (see Medium No. 284)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:76b7ec57f55a2844dca81522cea506fb5fe462bb33e816d65567073dd433cde5",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:76b7ec57f55a2844dca81522cea506fb5fe462bb33e816d65567073dd433cde5]",
+      "label": "N-Z amine",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:b7e7ef6a3edaac9ee973403498a0b44226528023788a3c52d9a076995f7ba3ea]",
+      "label": "Trace vitamins (see Medium No. 197)",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:db31df5749bcd75bd30fe9815913604f7d83d08266afec3125e28a0a472333ee]",
+      "label": "Trace minerals (see Medium No. 151",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:de8c669a31d15af61feae0e812040c7123720bc474d73ae6a78288d1a47b480e]",
+      "label": "SABOURAUD- Glucose-Bouillon",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    },
+    {
+      "target_id": "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308",
+      "path": "reports/all_unmatched_20261107/worker-06/native-inputs/frozen-shard-06.json",
+      "selector": "cases[case_id=KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308]",
+      "label": "Salts solution",
+      "kind": "snapshot_row",
+      "ownership_note": "Frozen source case and all original occurrences; current proposal disposition is bound in successor-v3/decisions.json. Source acceptance and release remain coordinator-owned."
+    }
+  ]
+}

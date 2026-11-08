@@ -1,0 +1,1964 @@
+{
+  "schema_version": 1,
+  "deltas": [
+    {
+      "target_type": "payload",
+      "proposal_id": "B-P-JCM977-glucose20",
+      "finding_id": "W06-IR-004",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-b/proposed-owners/jcm_977_glucose_20_percent_wv_stock.yaml",
+        "sha256": "df904239a9f177fbb3f59375173e304490e1f8d05fcf309bcfcd1004868bf06e"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/payloads/jcm_977_glucose_20_percent_wv_stock.yaml",
+        "sha256": "462fde36c2adc525f0c0bcb070437784d524d909afbe19ffe042c4eb808a6f1c"
+      },
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/component_assertion/evidence",
+          "before": [
+            {
+              "evidence_type": "RECIPE_SOURCE",
+              "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977",
+              "source_record": "JCM 977 glucose 20% w/v stock",
+              "notes": "Verbatim constituent names and source batch quantities; water is a preparation input. Child reference_scope UNMAPPED means no exact child identifier was independently established."
+            }
+          ],
+          "after": [
+            {
+              "evidence_type": "RECIPE_SOURCE",
+              "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977",
+              "source_record": "JCM 977 glucose 20% w/v stock",
+              "notes": "The source explicitly states glucose at 20% (w/v), stock autoclaving and the 100 ml receiving dose. It does not state the solvent of that stock. Only the named glucose component and explicit mass concentration are transcribed; its exact child identity remains UNMAPPED."
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/component_assertion/notes",
+          "before": "A20%w/v aqueousglucose preparation used at100 ml inVNG medium. The solute label does not specifyanomer, chirality or hydrate; these are deliberately not assigned.",
+          "after": "JCM977 adds 100 ml of autoclaved 20% (w/v) glucose stock to 900 ml of cooled VNG base. The source does not identify the stock solvent or preparation volume; basal distilled water belongs to the receiving medium. Water is omitted from components, and closure remains UNKNOWN. The solute label does not specifyanomer, chirality or hydrate; these are deliberately not assigned."
+        },
+        {
+          "op": "replace",
+          "path": "/components",
+          "before": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "20",
+              "concentration_unit": "PERCENT_W_V"
+            },
+            {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "20",
+              "concentration_unit": "PERCENT_W_V"
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/curation_history",
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:16:28.256341+00:00",
+              "curator": "codex_all_unmatched_w06_research_b",
+              "action": "CREATED",
+              "changes": "Create source-defined stock proposal with explicit components and primary recipe evidence; no exact mapping to a solute or generic stock.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:16:28.256341+00:00",
+              "curator": "codex_all_unmatched_w06_research_b",
+              "action": "CREATED",
+              "changes": "Create source-defined stock proposal with explicit components and primary recipe evidence; no exact mapping to a solute or generic stock.",
+              "llm_assisted": true,
+              "new_status": "MAPPED"
+            },
+            {
+              "timestamp": "2026-11-08T06:39:29.038626+00:00",
+              "curator": "codex_all_unmatched_w06_successor_v3_research_c",
+              "action": "CORRECTED",
+              "changes": "W06-IR-004/005: omit untranscribed Water from the stock components; correct solvent provenance in notes while preserving the stated solute concentration, UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated proposal only; no maintained mutation or release approval.",
+              "llm_assisted": true
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/notes",
+          "before": "A20%w/v aqueousglucose preparation used at100 ml inVNG medium. The solute label does not specifyanomer, chirality or hydrate; these are deliberately not assigned. Raw source labels retained without global resolving aliases: [\"20% (w/v) Glucose\"]. Occurrence-specific linkage is required; identical generic words in other recipes do not imply the same formulation.",
+          "after": "JCM977 adds 100 ml of autoclaved 20% (w/v) glucose stock to 900 ml of cooled VNG base. The source does not identify the stock solvent or preparation volume; basal distilled water belongs to the receiving medium. Water is omitted from components, and closure remains UNKNOWN. The solute label does not specifyanomer, chirality or hydrate; these are deliberately not assigned. Raw source labels retained without global resolving aliases: [\"20% (w/v) Glucose\"]. Occurrence-specific linkage is required; identical generic words in other recipes do not imply the same formulation."
+        }
+      ]
+    },
+    {
+      "target_type": "payload",
+      "proposal_id": "A-P-JCM1136-548-GLUCOSE-1M",
+      "finding_id": "W06-IR-005",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-a/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+        "sha256": "3f916beac02d141f498e9cf2179bcbe1ada84f80aa25e09fd407742324ca5673"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+        "sha256": "e6769345389d720a9ce0e92077251192685b30b1aa70dd146b2ded3e285df876"
+      },
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/component_assertion/notes",
+          "before": "Both JCM548 and1136 explicitly add separately autoclaved1MGlucose stock. JCM548 says autoclave and store the non-bicarbonate stocks anaerobically underN2; JCM1136 adds stock aseptically and anaerobically after cooling. Glucose stereochemistry, anomer and starting hydrate are not stated. Water is implied by the aqueous stock context; gas amount and final water volume are unquantified. Whole solution is distinct from D-glucose solute aliases. JCM1406 and1412 independently specify1M glucose stock20ml/L;1406 identifies autoclaved stock additions and1412 explicitly autoclaved storage underN2. Preserve each source preparation statement without inferring unstated storage conditions in1406. Same generic glucose/1M scope and unknown anomer/hydrate apply; no global glucose-solution alias.",
+          "after": "Both JCM548 and1136 explicitly add separately autoclaved1MGlucose stock. JCM548 says autoclave and store the non-bicarbonate stocks anaerobically underN2; JCM1136 adds stock aseptically and anaerobically after cooling. Glucose stereochemistry, anomer and starting hydrate are not stated. The stock solvent composition and preparation volume are unreported. Water is omitted from components; closure remains UNKNOWN. Gas handling is retained as a preparation instruction without asserting a dissolved gas component. Whole solution is distinct from D-glucose solute aliases. JCM1406 and1412 independently specify1M glucose stock20ml/L;1406 identifies autoclaved stock additions and1412 explicitly autoclaved storage underN2. Preserve each source preparation statement without inferring unstated storage conditions in1406. Same generic glucose/1M scope and unknown anomer/hydrate apply; no global glucose-solution alias."
+        },
+        {
+          "op": "replace",
+          "path": "/components",
+          "before": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "1",
+              "concentration_unit": "M"
+            },
+            {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "1",
+              "concentration_unit": "M"
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/curation_history",
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:27:45.953257+00:00",
+              "curator": "all_unmatched_20261107_worker06_research_a",
+              "action": "CORRECTED",
+              "changes": "Proposed source-qualified whole stock with literal components and preparation limits; no maintained data changed.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T05:39:31.366018+00:00",
+              "curator": "all_unmatched_20261107_worker06_research_a",
+              "action": "CORRECTED",
+              "changes": "Extend shared source scope to independently matched JCM1406/1412 generic1M glucose stocks; preserve original stable localidentifier and distinct preparation notes.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:27:45.953257+00:00",
+              "curator": "all_unmatched_20261107_worker06_research_a",
+              "action": "CORRECTED",
+              "changes": "Proposed source-qualified whole stock with literal components and preparation limits; no maintained data changed.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T05:39:31.366018+00:00",
+              "curator": "all_unmatched_20261107_worker06_research_a",
+              "action": "CORRECTED",
+              "changes": "Extend shared source scope to independently matched JCM1406/1412 generic1M glucose stocks; preserve original stable localidentifier and distinct preparation notes.",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T06:39:29.038626+00:00",
+              "curator": "codex_all_unmatched_w06_successor_v3_research_c",
+              "action": "CORRECTED",
+              "changes": "W06-IR-004/005: omit untranscribed Water from the stock components; correct solvent provenance in notes while preserving the stated solute concentration, UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated proposal only; no maintained mutation or release approval.",
+              "llm_assisted": true
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/notes",
+          "before": "Both JCM548 and1136 explicitly add separately autoclaved1MGlucose stock. JCM548 says autoclave and store the non-bicarbonate stocks anaerobically underN2; JCM1136 adds stock aseptically and anaerobically after cooling. Glucose stereochemistry, anomer and starting hydrate are not stated. Water is implied by the aqueous stock context; gas amount and final water volume are unquantified. Whole solution is distinct from D-glucose solute aliases. Raw source label retained for this occurrence only: '1 M Glucose'. Generic wording is not a global resolving alias. JCM1406 and1412 independently specify1M glucose stock20ml/L;1406 identifies autoclaved stock additions and1412 explicitly autoclaved storage underN2. Preserve each source preparation statement without inferring unstated storage conditions in1406. Same generic glucose/1M scope and unknown anomer/hydrate apply; no global glucose-solution alias.",
+          "after": "Both JCM548 and1136 explicitly add separately autoclaved1MGlucose stock. JCM548 says autoclave and store the non-bicarbonate stocks anaerobically underN2; JCM1136 adds stock aseptically and anaerobically after cooling. Glucose stereochemistry, anomer and starting hydrate are not stated. The stock solvent composition and preparation volume are unreported. Water is omitted from components; closure remains UNKNOWN. Gas handling is retained as a preparation instruction without asserting a dissolved gas component. Whole solution is distinct from D-glucose solute aliases. Raw source label retained for this occurrence only: '1 M Glucose'. Generic wording is not a global resolving alias. JCM1406 and1412 independently specify1M glucose stock20ml/L;1406 identifies autoclaved stock additions and1412 explicitly autoclaved storage underN2. Preserve each source preparation statement without inferring unstated storage conditions in1406. Same generic glucose/1M scope and unknown anomer/hydrate apply; no global glucose-solution alias."
+        }
+      ]
+    },
+    {
+      "target_type": "payload",
+      "proposal_id": "C-P-JCM1375-1435-825-GLUCOSE10",
+      "finding_id": "W06-IR-005",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/jcm_1375_1435_825_glucose_10_percent_stock.yaml",
+        "sha256": "6a0f58e38af7fee44c04c5c8d659ddb1d6495674dcd0f004d6fb3922d7dd86e4"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/payloads/jcm_1375_1435_825_glucose_10_percent_stock.yaml",
+        "sha256": "44d2c2980e527e3151ad90aaab4503f5267706771f9af5273e5fc66102632877"
+      },
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/component_assertion/notes",
+          "before": "Each source specifies separately autoclaved sterile anaerobic 10% glucose stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final volume are unstated. PERCENT deliberately does not assert w/v. Water is implied by aqueous stock use, not independently quantified; UNKNOWN closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone.",
+          "after": "Each source specifies separately autoclaved sterile anaerobic 10% glucose stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final volume are unstated. PERCENT deliberately does not assert w/v. The source does not identify the stock solvent. Water is omitted from components; UNKNOWN closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone."
+        },
+        {
+          "op": "replace",
+          "path": "/components",
+          "before": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "10",
+              "concentration_unit": "PERCENT"
+            },
+            {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "10",
+              "concentration_unit": "PERCENT"
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/curation_history",
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed JCM 1375/1435/825 glucose 10% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed JCM 1375/1435/825 glucose 10% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T06:39:29.038626+00:00",
+              "curator": "codex_all_unmatched_w06_successor_v3_research_c",
+              "action": "CORRECTED",
+              "changes": "W06-IR-004/005: omit untranscribed Water from the stock components; correct solvent provenance in notes while preserving the stated solute concentration, UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated proposal only; no maintained mutation or release approval.",
+              "llm_assisted": true
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/notes",
+          "before": "Each source specifies separately autoclaved sterile anaerobic 10% glucose stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final volume are unstated. PERCENT deliberately does not assert w/v. Water is implied by aqueous stock use, not independently quantified; UNKNOWN closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone. Raw labels retained only in this source context: [\"10% Glucose solution\"]. No global resolving alias is asserted.",
+          "after": "Each source specifies separately autoclaved sterile anaerobic 10% glucose stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final volume are unstated. PERCENT deliberately does not assert w/v. The source does not identify the stock solvent. Water is omitted from components; UNKNOWN closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone. Raw labels retained only in this source context: [\"10% Glucose solution\"]. No global resolving alias is asserted."
+        }
+      ]
+    },
+    {
+      "target_type": "payload",
+      "proposal_id": "C-P-TOGO2790-GLUCOSE20",
+      "finding_id": "W06-IR-005",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/togo_2790_glucose_20_percent_stock.yaml",
+        "sha256": "b9e219a8660d13abe331f0e289b8572199acab60fa6f13ca3c8850bfe910d2be"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/payloads/togo_2790_glucose_20_percent_stock.yaml",
+        "sha256": "1f8a42b20568d0f9a3f60e5a17941fec4db90aca3da2f519915f49444ee455d3"
+      },
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/component_assertion/notes",
+          "before": "The M9 source narrative supplies 2.5 ml of 20% glucose per 100 ml receiving medium. It does not state the percent basis, glucose form, stock preparation volume or sterilization. Water is inferred only from aqueous stock context; UNKNOWN closure and PERCENT preserve these limits. This is not automatically equivalent to the explicitly 20% w/v JCM977/1009 preparation, and is not dry glucose.",
+          "after": "The M9 source narrative supplies 2.5 ml of 20% glucose per 100 ml receiving medium. It does not state the percent basis, glucose form, stock preparation volume or sterilization. The stock solvent is not identified. Water is omitted from components; UNKNOWN closure and PERCENT preserve these limits. This is not automatically equivalent to the explicitly 20% w/v JCM977/1009 preparation, and is not dry glucose."
+        },
+        {
+          "op": "replace",
+          "path": "/components",
+          "before": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "20",
+              "concentration_unit": "PERCENT"
+            },
+            {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "20",
+              "concentration_unit": "PERCENT"
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/curation_history",
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed TOGO M2790 glucose 20% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed TOGO M2790 glucose 20% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T06:39:29.038626+00:00",
+              "curator": "codex_all_unmatched_w06_successor_v3_research_c",
+              "action": "CORRECTED",
+              "changes": "W06-IR-004/005: omit untranscribed Water from the stock components; correct solvent provenance in notes while preserving the stated solute concentration, UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated proposal only; no maintained mutation or release approval.",
+              "llm_assisted": true
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/notes",
+          "before": "The M9 source narrative supplies 2.5 ml of 20% glucose per 100 ml receiving medium. It does not state the percent basis, glucose form, stock preparation volume or sterilization. Water is inferred only from aqueous stock context; UNKNOWN closure and PERCENT preserve these limits. This is not automatically equivalent to the explicitly 20% w/v JCM977/1009 preparation, and is not dry glucose. Raw labels retained only in this source context: [\"20% glucose\"]. No global resolving alias is asserted.",
+          "after": "The M9 source narrative supplies 2.5 ml of 20% glucose per 100 ml receiving medium. It does not state the percent basis, glucose form, stock preparation volume or sterilization. The stock solvent is not identified. Water is omitted from components; UNKNOWN closure and PERCENT preserve these limits. This is not automatically equivalent to the explicitly 20% w/v JCM977/1009 preparation, and is not dry glucose. Raw labels retained only in this source context: [\"20% glucose\"]. No global resolving alias is asserted."
+        }
+      ]
+    },
+    {
+      "target_type": "payload",
+      "proposal_id": "C-P-JCM1435-YEAST10",
+      "finding_id": "W06-IR-005",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/jcm_1435_oxoid_yeast_extract_10_percent_stock.yaml",
+        "sha256": "be065e52e02828e3195987d6acd6d7f35b542b4358e73bfc6b82ae206a509593"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/payloads/jcm_1435_oxoid_yeast_extract_10_percent_stock.yaml",
+        "sha256": "571e846b0cb175651f167860ae45fc6118f9f2c8f2e236d534727b57511bb9dc"
+      },
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/component_assertion/notes",
+          "before": "JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid catalogue, lot composition or stock water volume. PERCENT and UNKNOWN closure retain those limits; implied water is unquantified. The whole prepared stock is distinct from dry generic yeast extract and the separately source-defined 1% stock.",
+          "after": "JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid catalogue, lot composition or stock preparation volume. The stock solvent is also unspecified. Water is omitted from components; PERCENT and UNKNOWN closure retain these limits. The whole prepared stock is distinct from dry generic yeast extract and the separately source-defined 1% stock."
+        },
+        {
+          "op": "replace",
+          "path": "/components",
+          "before": [
+            {
+              "component_name": "Yeast extract (Oxoid)",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "10",
+              "concentration_unit": "PERCENT"
+            },
+            {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": [
+            {
+              "component_name": "Yeast extract (Oxoid)",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "10",
+              "concentration_unit": "PERCENT"
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/curation_history",
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed JCM 1435 Oxoid yeast extract 10% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed JCM 1435 Oxoid yeast extract 10% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T06:39:29.038626+00:00",
+              "curator": "codex_all_unmatched_w06_successor_v3_research_c",
+              "action": "CORRECTED",
+              "changes": "W06-IR-004/005: omit untranscribed Water from the stock components; correct solvent provenance in notes while preserving the stated solute concentration, UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated proposal only; no maintained mutation or release approval.",
+              "llm_assisted": true
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/notes",
+          "before": "JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid catalogue, lot composition or stock water volume. PERCENT and UNKNOWN closure retain those limits; implied water is unquantified. The whole prepared stock is distinct from dry generic yeast extract and the separately source-defined 1% stock. Raw labels retained only in this source context: [\"10% Yeast extract (Oxoid) solution\"]. No global resolving alias is asserted.",
+          "after": "JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid catalogue, lot composition or stock preparation volume. The stock solvent is also unspecified. Water is omitted from components; PERCENT and UNKNOWN closure retain these limits. The whole prepared stock is distinct from dry generic yeast extract and the separately source-defined 1% stock. Raw labels retained only in this source context: [\"10% Yeast extract (Oxoid) solution\"]. No global resolving alias is asserted."
+        }
+      ]
+    },
+    {
+      "target_type": "payload",
+      "proposal_id": "C-P-TOGO2568-GLUCOSE10",
+      "finding_id": "W06-IR-005",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/togo_2568_glucose_10_percent_stock.yaml",
+        "sha256": "24ec862593147abf30329cff466f64621a031279a256480ae508d82ad930311b"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/payloads/togo_2568_glucose_10_percent_stock.yaml",
+        "sha256": "da0c958deb690a97912a609edaeea389a9b7b09c0b741ca41a2460b02fa03aa9"
+      },
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/component_assertion/notes",
+          "before": "The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized solutions after cooling the base to 55 C. The percent basis, glucose form and stock volume are unstated; implied aqueous solvent is unquantified and closure remains UNKNOWN. The filter-sterilized fresh preparation is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen mass-style quantity is not approved.",
+          "after": "The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized solutions after cooling the base to 55 C. The percent basis, glucose form and stock volume are unstated; the stock solvent is not identified. Water is omitted from components and closure remains UNKNOWN. The filter-sterilized fresh preparation is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen mass-style quantity is not approved."
+        },
+        {
+          "op": "replace",
+          "path": "/components",
+          "before": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "10",
+              "concentration_unit": "PERCENT"
+            },
+            {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "10",
+              "concentration_unit": "PERCENT"
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/curation_history",
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed TOGO M2568 ETSA glucose 10% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed TOGO M2568 ETSA glucose 10% stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T06:39:29.038626+00:00",
+              "curator": "codex_all_unmatched_w06_successor_v3_research_c",
+              "action": "CORRECTED",
+              "changes": "W06-IR-004/005: omit untranscribed Water from the stock components; correct solvent provenance in notes while preserving the stated solute concentration, UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated proposal only; no maintained mutation or release approval.",
+              "llm_assisted": true
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/notes",
+          "before": "The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized solutions after cooling the base to 55 C. The percent basis, glucose form and stock volume are unstated; implied aqueous solvent is unquantified and closure remains UNKNOWN. The filter-sterilized fresh preparation is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen mass-style quantity is not approved. Raw labels retained only in this source context: [\"10% Glucose\"]. No global resolving alias is asserted.",
+          "after": "The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized solutions after cooling the base to 55 C. The percent basis, glucose form and stock volume are unstated; the stock solvent is not identified. Water is omitted from components and closure remains UNKNOWN. The filter-sterilized fresh preparation is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen mass-style quantity is not approved. Raw labels retained only in this source context: [\"10% Glucose\"]. No global resolving alias is asserted."
+        }
+      ]
+    },
+    {
+      "target_type": "payload",
+      "proposal_id": "C-P-JCM1009-GLUCOSE20",
+      "finding_id": "W06-IR-005",
+      "before_capture": {
+        "root": "artifact",
+        "path": "research-c/after/jcm_1009_anaerobic_glucose_20_percent_wv_stock.yaml",
+        "sha256": "48e417dad9b8ebd33589d6f1d70f555f9324e22be347fb4e163a35ff34b7fd2f"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/payloads/jcm_1009_anaerobic_glucose_20_percent_wv_stock.yaml",
+        "sha256": "aa215b122dd0d7645877cb8f34c1150e40bb63b703eaeed989b77ad7e0d746b2"
+      },
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/component_assertion/notes",
+          "before": "JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate and stock water volume are unstated; water is implied by aqueous stock context and closure remains UNKNOWN. JCM977 has the same explicit mass concentration and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified preparation is kept separate. No frozen root-level or mass-style dose is silently approved.",
+          "after": "JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate and stock preparation volume and solvent composition are unstated. Water is omitted from components and closure remains UNKNOWN. JCM977 has the same explicit mass concentration and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified preparation is kept separate. No frozen root-level or mass-style dose is silently approved."
+        },
+        {
+          "op": "replace",
+          "path": "/components",
+          "before": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "20",
+              "concentration_unit": "PERCENT_W_V"
+            },
+            {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": [
+            {
+              "component_name": "Glucose",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "20",
+              "concentration_unit": "PERCENT_W_V"
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/curation_history",
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed JCM 1009 anaerobic glucose 20% w/v stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:36:49.390055+00:00",
+              "curator": "all-unmatched-20261107-worker06-research-c",
+              "action": "CREATED",
+              "changes": "Proposed JCM 1009 anaerobic glucose 20% w/v stock with source-bound components and retained preparation limits. Isolated proposal; no maintained owner edit or support/release approval.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-11-08T06:39:29.038626+00:00",
+              "curator": "codex_all_unmatched_w06_successor_v3_research_c",
+              "action": "CORRECTED",
+              "changes": "W06-IR-004/005: omit untranscribed Water from the stock components; correct solvent provenance in notes while preserving the stated solute concentration, UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated proposal only; no maintained mutation or release approval.",
+              "llm_assisted": true
+            }
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/notes",
+          "before": "JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate and stock water volume are unstated; water is implied by aqueous stock context and closure remains UNKNOWN. JCM977 has the same explicit mass concentration and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified preparation is kept separate. No frozen root-level or mass-style dose is silently approved. Raw labels retained only in this source context: [\"20% (w/v) Glucose solution\"]. No global resolving alias is asserted.",
+          "after": "JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate and stock preparation volume and solvent composition are unstated. Water is omitted from components and closure remains UNKNOWN. JCM977 has the same explicit mass concentration and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified preparation is kept separate. No frozen root-level or mass-style dose is silently approved. Raw labels retained only in this source context: [\"20% (w/v) Glucose solution\"]. No global resolving alias is asserted."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 15,
+      "case_id": "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+      "before_object_sha256": "aa8c4d8e5e3c8a18deb997fa0629942b5f1deabc288b41e02d23d6691fcc3dbf",
+      "after_object_sha256": "bd99ab0b7d419a79813f3c66f078a531651678c06471dd91c62b96e9f52673e7",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "JCM379,381,429,476,709 and710 all support D-glucose as a constituent. JCM381 references379 with a peptone change. The proposal covers chemical aliases only and does not interpret1MGlucose whole-stock cases or resurrect Glucose_2. Exact frozen scopes: CultureMech:009755:ingredients/5; CultureMech:009757:ingredients/5; CultureMech:009814:ingredients/4; CultureMech:009863:ingredients/4; CultureMech:010141:ingredients/1; CultureMech:010142:ingredients/1",
+          "after": "JCM379,381,429,476,709 and710 all support D-glucose as a constituent. JCM381 references379 with a peptone change. The proposal covers chemical aliases only and does not interpret1MGlucose whole-stock cases or resurrect Glucose_2. Exact frozen scopes: CultureMech:009755:ingredients/5; CultureMech:009757:ingredients/5; CultureMech:009814:ingredients/4; CultureMech:009863:ingredients/4; CultureMech:010141:ingredients/1; CultureMech:010142:ingredients/1 JCM381 is now bound to its successful original response body, with the original retrieval index retained separately; neither retrieval timestamp nor source bytes changed."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "A-E-OWNER-09",
+            "A-E-15-S00",
+            "A-E-15-S01",
+            "A-E-15-S02",
+            "A-E-15-S03",
+            "A-E-15-S04",
+            "A-E-15-S05",
+            "A-E-CAPTURE-052",
+            "A-E-CAPTURE-053",
+            "A-E-CAPTURE-055",
+            "A-E-CAPTURE-056",
+            "A-E-CAPTURE-066",
+            "A-E-CAPTURE-067",
+            "A-E-CAPTURE-120",
+            "A-E-CAPTURE-121",
+            "A-E-CAPTURE-123",
+            "A-E-CAPTURE-124",
+            "A-E-CAPTURE-134",
+            "A-E-CAPTURE-135",
+            "A-E-EXTRA-000"
+          ],
+          "after": [
+            "A-E-OWNER-09",
+            "A-E-15-S00",
+            "A-E-15-S01",
+            "A-E-15-S02",
+            "A-E-15-S03",
+            "A-E-15-S04",
+            "A-E-15-S05",
+            "A-E-CAPTURE-052",
+            "A-E-CAPTURE-053",
+            "A-E-CAPTURE-055",
+            "A-E-CAPTURE-056",
+            "A-E-CAPTURE-066",
+            "A-E-CAPTURE-067",
+            "A-E-CAPTURE-120",
+            "A-E-CAPTURE-121",
+            "A-E-CAPTURE-123",
+            "A-E-CAPTURE-124",
+            "A-E-CAPTURE-134",
+            "A-E-CAPTURE-135",
+            "A-E-EXTRA-000",
+            "C-V3-E-JCM381-INDEX",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-A"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 26,
+      "case_id": "CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77",
+      "before_object_sha256": "664d08c9106bde5261579fe417a5e92e9233e2a377cf472acf154ab83404c135",
+      "after_object_sha256": "b8f305ad45ae102ed30826e1f93efbd3bb2be092037d73a915cfc7540ab042d5",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "Both occurrences are whole-stock additions in the complete primary recipes. They are not the D-specific solute aliases reviewed in cases15/41. Exact frozen scopes: CultureMech:007744:ingredients/11; CultureMech:009944:ingredients/7",
+          "after": "Both occurrences are whole-stock additions in the complete primary recipes. They are not the D-specific solute aliases reviewed in cases15/41. Exact frozen scopes: CultureMech:007744:ingredients/11; CultureMech:009944:ingredients/7 The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "A-E-OWNER-09",
+            "A-E-OWNER-14",
+            "A-E-26-S00",
+            "A-E-26-S01",
+            "A-E-CAPTURE-019",
+            "A-E-CAPTURE-059",
+            "A-E-CAPTURE-100",
+            "A-E-CAPTURE-127",
+            "A-E-NATIVE-OWNER-DEDUP"
+          ],
+          "after": [
+            "A-E-OWNER-09",
+            "A-E-OWNER-14",
+            "A-E-26-S00",
+            "A-E-26-S01",
+            "A-E-CAPTURE-019",
+            "A-E-CAPTURE-059",
+            "A-E-CAPTURE-100",
+            "A-E-CAPTURE-127",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-A"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "JCM1136 and548 separately prepare and add a1MGlucose solution. The source name lacks a D/L or anomer declaration. A1M stock is a preparation distinct from the glucose compound; molarity cannot independently identify stereochemistry or starting hydrate.",
+          "after": "JCM1136 and548 separately prepare and add a1MGlucose solution. The source name lacks a D/L or anomer declaration. A1M stock is a preparation distinct from the glucose compound; molarity cannot independently identify stereochemistry or starting hydrate. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 64,
+      "case_id": "CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190",
+      "before_object_sha256": "d76c370e279bacff73a04c052650aa45a25498ebcd29edf904312a842d72c3db",
+      "after_object_sha256": "e1cc0e8196ea94e7eabf2e18f71df4d49724c8ace12b41a541dcd55e6d639fdb",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "Applies to the sole TOGO1030 VNG occurrence and its separately sterilized glucose solution; final-medium glucose concentration is not substituted for stock identity.",
+          "after": "Applies to the sole TOGO1030 VNG occurrence and its separately sterilized glucose solution; final-medium glucose concentration is not substituted for stock identity. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "B-64-frozen-0",
+            "B-http-4f360397f0c066dd",
+            "B-owner-Glucose"
+          ],
+          "after": [
+            "B-64-frozen-0",
+            "B-http-4f360397f0c066dd",
+            "B-owner-Glucose",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-B"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "JCM977 VNG medium supplies100 ml of20% w/v glucose stock to the basal ingredients. The raw term denotes a200 g/L aqueous glucose stock, not a100 g/L pure glucose ingredient. The recipe says Glucose without an anomer or hydrate; the stock proposal preserves that unspecified solute name instead of assigning alpha-D or monohydrate.",
+          "after": "JCM977 VNG medium supplies100 ml of20% w/v glucose stock to the basal ingredients. The raw term denotes a200 g/L aqueous glucose stock, not a100 g/L pure glucose ingredient. The recipe says Glucose without an anomer or hydrate; the stock proposal preserves that unspecified solute name instead of assigning alpha-D or monohydrate. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 91,
+      "case_id": "CM_NAME:8a88c8344d71c5655cc7a5c984d45d94247e923e213cabfd877eec530a671cfc",
+      "before_object_sha256": "5df47be021d090be3d43762e957455468c9a57385fc2b3e4fed1e348ca2371c6",
+      "after_object_sha256": "53bb62c852506c88d62da0901869ae71b8c34960dfde3d2bd6d07e2795ec90aa",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "B-91-frozen-0",
+            "B-http-ead203864a2e62b5",
+            "B-attempts-extra-manifest.json"
+          ],
+          "after": [
+            "B-91-frozen-0",
+            "B-http-ead203864a2e62b5",
+            "B-attempts-extra-manifest.json",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-B"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "The frozenTOGO2414 recipe names Trypticase soy yeast broth as an entire broth preparation, with its1 L amount flattened to1 G_PER_L. Trypticase, soy digest and yeast material are not established as independent components merely by splitting the name. A whole medium/formulated mixture identity is required.",
+          "after": "The frozen TOGO2414 recipe names Trypticase soy yeast broth as an entire broth preparation at 1000 ML_PER_L, consistent with the captured source amount of 1 L. Trypticase, soy digest and yeast material are not established as independent components merely by splitting the name. A whole medium/formulated mixture identity is required."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 111,
+      "case_id": "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+      "before_object_sha256": "71ae11c52303cafc68938f2b5f5e0881eb0bcdda8ede48566f14b5d9e0dd9d44",
+      "after_object_sha256": "aded6cad61d5fd6099349287a984aa1927f7f385ffe39f392a35b49ef264adf7",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "All40 occurrences explicitly cite197 or carry the same source-labelled MediaDive solution reference. The proposal is limited to the197 vitamin formulation; frozen dose/unit anomalies are not silently approved or used to alter composition.",
+          "after": "All 40 frozen occurrences and their exact source references are retained. The separate successful JCM197 source supports the vitamin formulation. JCM receiving requests 737, 876, 887 and 955 returned Nothing found and are access limitations, not positive recipe evidence. Separately captured MediaDive J737/solution4668, J876/solution4863 and J955/solution4977 responses corroborate their exact receiving references to compound1784 labelled Trace vitamins (see Medium No. 197). No successful JCM887 receiving response is asserted. The per-occurrence ledger distinguishes explicit receiving-source bindings from other frozen solution contexts. Frozen dose/unit anomalies remain held and do not alter stock composition."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-111-SOURCE-1",
+            "C-E-111-SOURCE-2",
+            "C-E-111-SOURCE-3",
+            "C-E-111-SOURCE-4",
+            "C-E-111-SOURCE-5",
+            "C-E-111-SOURCE-6",
+            "C-E-111-SOURCE-7",
+            "C-E-111-SOURCE-8",
+            "C-E-111-SOURCE-9",
+            "C-E-111-SOURCE-10",
+            "C-E-111-SOURCE-11",
+            "C-E-111-SOURCE-12",
+            "C-E-111-SOURCE-13",
+            "C-E-111-SOURCE-14",
+            "C-E-111-SOURCE-15",
+            "C-E-111-SOURCE-16",
+            "C-E-111-SOURCE-17",
+            "C-E-111-SOURCE-18",
+            "C-E-111-SOURCE-19",
+            "C-E-111-SOURCE-20",
+            "C-E-111-SOURCE-21",
+            "C-E-111-SOURCE-22",
+            "C-E-111-SOURCE-23",
+            "C-E-111-SOURCE-24",
+            "C-E-111-SOURCE-25",
+            "C-E-111-SOURCE-26",
+            "C-E-111-SOURCE-27",
+            "C-E-111-SOURCE-28",
+            "C-E-111-SOURCE-29",
+            "C-E-111-SOURCE-30",
+            "C-E-111-SOURCE-31",
+            "C-E-111-SOURCE-32",
+            "C-E-111-SOURCE-33",
+            "C-E-111-SOURCE-34",
+            "C-E-111-SOURCE-35",
+            "C-E-111-SOURCE-36",
+            "C-E-111-SOURCE-37",
+            "C-E-111-SOURCE-38",
+            "C-E-111-SOURCE-39",
+            "C-E-111-SOURCE-40",
+            "C-E-jcm-197",
+            "C-E-ols-stock-search",
+            "C-E-jcm-1066",
+            "C-E-jcm-1081",
+            "C-E-jcm-1082",
+            "C-E-jcm-1092",
+            "C-E-jcm-1115",
+            "C-E-jcm-1313",
+            "C-E-jcm-521",
+            "C-E-jcm-661",
+            "C-E-jcm-670",
+            "C-E-jcm-687",
+            "C-E-jcm-695",
+            "C-E-jcm-737",
+            "C-E-jcm-751",
+            "C-E-jcm-753",
+            "C-E-jcm-784",
+            "C-E-jcm-822",
+            "C-E-jcm-865",
+            "C-E-jcm-876",
+            "C-E-jcm-887",
+            "C-E-jcm-955"
+          ],
+          "after": [
+            "C-E-111-SOURCE-1",
+            "C-E-111-SOURCE-2",
+            "C-E-111-SOURCE-3",
+            "C-E-111-SOURCE-4",
+            "C-E-111-SOURCE-5",
+            "C-E-111-SOURCE-6",
+            "C-E-111-SOURCE-7",
+            "C-E-111-SOURCE-8",
+            "C-E-111-SOURCE-9",
+            "C-E-111-SOURCE-10",
+            "C-E-111-SOURCE-11",
+            "C-E-111-SOURCE-12",
+            "C-E-111-SOURCE-13",
+            "C-E-111-SOURCE-14",
+            "C-E-111-SOURCE-15",
+            "C-E-111-SOURCE-16",
+            "C-E-111-SOURCE-17",
+            "C-E-111-SOURCE-18",
+            "C-E-111-SOURCE-19",
+            "C-E-111-SOURCE-20",
+            "C-E-111-SOURCE-21",
+            "C-E-111-SOURCE-22",
+            "C-E-111-SOURCE-23",
+            "C-E-111-SOURCE-24",
+            "C-E-111-SOURCE-25",
+            "C-E-111-SOURCE-26",
+            "C-E-111-SOURCE-27",
+            "C-E-111-SOURCE-28",
+            "C-E-111-SOURCE-29",
+            "C-E-111-SOURCE-30",
+            "C-E-111-SOURCE-31",
+            "C-E-111-SOURCE-32",
+            "C-E-111-SOURCE-33",
+            "C-E-111-SOURCE-34",
+            "C-E-111-SOURCE-35",
+            "C-E-111-SOURCE-36",
+            "C-E-111-SOURCE-37",
+            "C-E-111-SOURCE-38",
+            "C-E-111-SOURCE-39",
+            "C-E-111-SOURCE-40",
+            "C-E-jcm-197",
+            "C-E-ols-stock-search",
+            "C-E-jcm-1066",
+            "C-E-jcm-1081",
+            "C-E-jcm-1082",
+            "C-E-jcm-1092",
+            "C-E-jcm-1115",
+            "C-E-jcm-1313",
+            "C-E-jcm-521",
+            "C-E-jcm-661",
+            "C-E-jcm-670",
+            "C-E-jcm-687",
+            "C-E-jcm-695",
+            "C-E-jcm-737",
+            "C-E-jcm-751",
+            "C-E-jcm-753",
+            "C-E-jcm-784",
+            "C-E-jcm-822",
+            "C-E-jcm-865",
+            "C-E-jcm-876",
+            "C-E-jcm-887",
+            "C-E-jcm-955",
+            "R-medium-J737",
+            "R-medium-J876",
+            "R-medium-J955",
+            "C-V3-E-RECEIVING-LIMITS",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/missing_requirement",
+          "before": "Integration must withdraw inherited support, check collision with other workers’197 proposals and run native stock-partonomy validation.",
+          "after": "For receiving-medium verification, recover a successful exact JCM887 or MediaDive J887 source response and preserve the provenance distinction for the three independently corroborated MediaDive alternatives. Reconcile each frozen dose/unit separately before source mapping release; this access gap does not invalidate the separately supported JCM197 stock formula."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 113,
+      "case_id": "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+      "before_object_sha256": "7a6427548adb0eb0c31040ebf657b6791d6500c6d90b5d2abceee41328cc42a9",
+      "after_object_sha256": "a17f830dac9023c0d662a29a5a5b884b997ff608eb82fadaff52c0208d4e502e",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "All three occurrences retain the10% stock label. One frozen glucose grounding and mass-style quantity do not override the primary volumetric stock instructions.",
+          "after": "All three occurrences retain the10% stock label. One frozen glucose grounding and mass-style quantity do not override the primary volumetric stock instructions. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-113-SOURCE-1",
+            "C-E-113-SOURCE-2",
+            "C-E-113-SOURCE-3",
+            "C-E-jcm-1375",
+            "C-E-jcm-1435",
+            "C-E-jcm-825"
+          ],
+          "after": [
+            "C-E-113-SOURCE-1",
+            "C-E-113-SOURCE-2",
+            "C-E-113-SOURCE-3",
+            "C-E-jcm-1375",
+            "C-E-jcm-1435",
+            "C-E-jcm-825",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "A10% glucose solution is a stock containing glucose and solvent; it is not exact identity with the glucose molecule. The receiving JCM recipes explicitly dispense the solution. Neither10% alone nor a free glucose CHEBI annotation chooses anomer or hydrate. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal.",
+          "after": "A10% glucose solution is a stock containing glucose and solvent; it is not exact identity with the glucose molecule. The receiving JCM recipes explicitly dispense the solution. Neither10% alone nor a free glucose CHEBI annotation chooses anomer or hydrate. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 114,
+      "case_id": "CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb",
+      "before_object_sha256": "9c453886fa83695552adb0779f9264bbd620ca9da84d0b6eacd0a9223db4847a",
+      "after_object_sha256": "e063a61dcff3533511890384f9f27e14d6eddf72dc902bb1a6a3b2e9dfb18452",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "The one occurrence is a stock addition in the same medium; mapping to bare glucose would erase the1M qualifier. Shared isolated proposal A-P-JCM1136-548-GLUCOSE-1M applies only to the substance/formulation established by this case; it does not approve source-case, owner or export release.",
+          "after": "The one occurrence is a stock addition in the same medium; mapping to bare glucose would erase the1M qualifier. Shared isolated proposal A-P-JCM1136-548-GLUCOSE-1M applies only to the substance/formulation established by this case; it does not approve source-case, owner or export release. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-114-SOURCE-1",
+            "C-E-jcm-1406"
+          ],
+          "after": [
+            "C-E-114-SOURCE-1",
+            "C-E-jcm-1406",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "JCM1406 calls for20ml of1M glucose solution. This fixes a reagent-stock concentration and addition volume, while leaving the glucose supplied solid form unspecified.",
+          "after": "JCM1406 calls for20ml of1M glucose solution. This fixes a reagent-stock concentration and addition volume, while leaving the glucose supplied solid form unspecified. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 115,
+      "case_id": "CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da",
+      "before_object_sha256": "6d8403ab9d726c03945596c9933aac0b098e41a8b144ed5c81fdf028c5beb23e",
+      "after_object_sha256": "c34f4d80a2136c39f4c374d1df95f005608449f7dffccf7a8ea6dbabdb94fa50",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "The one receiving-medium reference supplies the stock context. It can be compared with JCM1406 as a concentration-equivalent stock, with source preparation retained. Shared isolated proposal A-P-JCM1136-548-GLUCOSE-1M applies only to the substance/formulation established by this case; it does not approve source-case, owner or export release.",
+          "after": "The one receiving-medium reference supplies the stock context. It can be compared with JCM1406 as a concentration-equivalent stock, with source preparation retained. Shared isolated proposal A-P-JCM1136-548-GLUCOSE-1M applies only to the substance/formulation established by this case; it does not approve source-case, owner or export release. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-115-SOURCE-1",
+            "C-E-jcm-1412"
+          ],
+          "after": [
+            "C-E-115-SOURCE-1",
+            "C-E-jcm-1412",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "JCM1412 explicitly lists1.0M glucose solution. The trailing decimal is compatible with1M notation but does not convert the solution into a dry chemical or establish a particular glucose crystal form.",
+          "after": "JCM1412 explicitly lists1.0M glucose solution. The trailing decimal is compatible with1M notation but does not convert the solution into a dry chemical or establish a particular glucose crystal form. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 130,
+      "case_id": "CM_NAME:d9c0c81fbad77b2409cf51e90a3d284c505b2093dadf44a87f5b8c2c40dcb934",
+      "before_object_sha256": "3f8f49fa8cb2e648dba23e3fefd17ec35a136752a1f28768362fe1df6ed3a5b7",
+      "after_object_sha256": "3807117c28d883eaa73acaca7424b95402a379a562b45ee77b0195fd2f6fc05e",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "The one occurrence is the exact20%stock in the M9 recipe; source scale100ml is retained rather than assuming a litre recipe.",
+          "after": "The one occurrence is the exact20%stock in the M9 recipe; source scale100ml is retained rather than assuming a litre recipe. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-130-SOURCE-1",
+            "C-E-togo-M2790"
+          ],
+          "after": [
+            "C-E-130-SOURCE-1",
+            "C-E-togo-M2790",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "TOGO2790 states2.5ml of20%glucose per100ml M9medium. This is a concentrated solution used to prepare medium, not2.5g of dry glucose perL. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal.",
+          "after": "TOGO2790 states2.5ml of20%glucose per100ml M9medium. This is a concentrated solution used to prepare medium, not2.5g of dry glucose perL. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 135,
+      "case_id": "CM_NAME:e60c91c3a2002b258c5aefcf8f970639a5c136d594fa21a4ccaadbea2470253f",
+      "before_object_sha256": "32276f450710b814a5095146275570426b8e75ce0a95ee8d3124d4b9936c711d",
+      "after_object_sha256": "141ac3a12fdfb65ed6009f85e6c291984f7bc9d33385ee4b93bf4aa135378c9c",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "The one5ml receiving-medium occurrence is the prepared stock, not the entire generic YeastExtract owner.",
+          "after": "The one5ml receiving-medium occurrence is the prepared stock, not the entire generic YeastExtract owner. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-135-SOURCE-1",
+            "C-E-jcm-1435"
+          ],
+          "after": [
+            "C-E-135-SOURCE-1",
+            "C-E-jcm-1435",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "The label explicitly names a10%solution of Oxoid yeast extract. JCM1435 confirms a volumetric addition, so stripping the percentage and solvent would conflate a stock with its dry complex component. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal.",
+          "after": "The label explicitly names a10%solution of Oxoid yeast extract. JCM1435 confirms a volumetric addition, so stripping the percentage and solvent would conflate a stock with its dry complex component. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 140,
+      "case_id": "CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b",
+      "before_object_sha256": "a2c664c5f6511e6923a77d57afa1e39e8f28db5429c0c3a851e67765d1e78a70",
+      "after_object_sha256": "8b45067c3db501ab46d45b53c5c38ac1ed60fbd6ba07e78b601c4fa94e331944",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "The one nested Sol2 occurrence adds0.1ml for a5ml medium batch; the20%(w/v) qualifier and nesting are essential to the source context.",
+          "after": "The one nested Sol2 occurrence adds0.1ml for a5ml medium batch; the20%(w/v) qualifier and nesting are essential to the source context. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-140-SOURCE-1",
+            "C-E-jcm-1009",
+            "C-E-jcm-197",
+            "C-E-jcm-433"
+          ],
+          "after": [
+            "C-E-140-SOURCE-1",
+            "C-E-jcm-1009",
+            "C-E-jcm-197",
+            "C-E-jcm-433",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "The explicit20%(w/v)glucose solution is a defined concentration stock. It is separate from the vitamin stock also used in JCM1009 and cannot be equated exactly with the glucose molecular entity. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal.",
+          "after": "The explicit20%(w/v)glucose solution is a defined concentration stock. It is separate from the vitamin stock also used in JCM1009 and cannot be equated exactly with the glucose molecular entity. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 141,
+      "case_id": "CM_NAME:f0bc7fb6c6e307f5ba078cb41a7e36f0398990ffaffc763152221fd44f1f61a4",
+      "before_object_sha256": "0c9bce95fec15828e8e49eedcb99d64b8ac89f451731821c4479cb1b993024c0",
+      "after_object_sha256": "bba38b6bb989771faa7e2010f848bd1eacc45d596b2c79fe723e580bc2d10edb",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "The one occurrence is the TOGO2568 prepared reagent. Source volume and percent qualifier are preserved independently of any frozen mass-style normalization.",
+          "after": "The one occurrence is the TOGO2568 prepared reagent. Source volume and percent qualifier are preserved independently of any frozen mass-style normalization. The source-specific stock preparation remains applicable; solvent composition and stock preparation volume are unreported and are not inferred from receiving-medium water or gas handling."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-141-SOURCE-1",
+            "C-E-togo-M2568"
+          ],
+          "after": [
+            "C-E-141-SOURCE-1",
+            "C-E-togo-M2568",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-C"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "The ETSA source explicitly adds10ml of10%Glucose solution. The capitalized label denotes a stock and cannot be used as an alias for pure glucose or conflated with the20%stocks. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal.",
+          "after": "The ETSA source explicitly adds10ml of10%Glucose solution. The capitalized label denotes a stock and cannot be used as an alias for pure glucose or conflated with the20%stocks. A concrete source-qualified stock proposal now records the established constituents and preparation limits; incomplete analytical or source metadata does not prevent the bounded proposal. Successor v3 removes untranscribed Water from the component assertion; only the explicitly named solute and concentration remain as literal transcription."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 152,
+      "case_id": "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8",
+      "before_object_sha256": "49bc7ea358af6aca685fedefc02f7c2b8bf54174a1326fc0cc53d976a768a8d8",
+      "after_object_sha256": "a6908bfd4e36b98379979618158698b1e71be7dea19b0d19904db98b2e5e354a",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/applicability",
+          "before": "Assigned shard index152; source mediadive.ingredient:1886; exact frozen source_record={\"amount\": 1, \"compound\": \"Trace element solution (see Medium No. 187\", \"compound_id\": 1886, \"optional\": 0, \"recipe_order\": 12, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies. Shared isolated proposal C-P-JCM187 applies only to the substance/formulation established by this case; it does not approve source-case, owner or export release.",
+          "after": "Assigned shard index152; source mediadive.ingredient:1886; exact frozen source_record={\"amount\": 1, \"compound\": \"Trace element solution (see Medium No. 187\", \"compound_id\": 1886, \"optional\": 0, \"recipe_order\": 12, \"unit\": \"ml\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies. No JCM collection attribution or C-P-JCM187 backlink is asserted for this KG case. The listed existing owner is an inspected candidate, not an established owner of compound1886."
+        },
+        {
+          "op": "replace",
+          "path": "/disposition",
+          "before": "stock_product_mixture_context",
+          "after": "unresolved"
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "R-frozen-shard",
+            "R-ingredient-1886",
+            "R-jcm-shared-187"
+          ],
+          "after": [
+            "R-frozen-shard",
+            "R-ingredient-1886",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-R"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/missing_requirement",
+          "before": null,
+          "after": "Recover an exact original collection, medium and recipe occurrence that explicitly links MediaDive compound1886 to the JCM187 trace-element formulation, or establishes a different formulation. Keep this KG source applicability unresolved until that bridge is captured."
+        },
+        {
+          "op": "replace",
+          "path": "/no_change_reason",
+          "before": null,
+          "after": "The originating collection/recipe bridge for compound1886 is missing; a numbered label alone cannot select the JCM187 stock."
+        },
+        {
+          "op": "replace",
+          "path": "/proposal_ids",
+          "before": [
+            "C-P-JCM187"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "The truncated raw label names the trace-element recipe of JCM187. That primary recipe establishes a specific multicomponent stock, and the existing registry owner already preserves this formulation-level identity. Missing components can be transcribed without equating the mixture to a trace-element class; the malformed source label remains provenance and existing WITHHOLD is not cleared.",
+          "after": "The raw MediaDive ingredient1886 label contains a truncated pointer to Medium No. 187, but neither its frozen source record nor the captured ingredient response identifies the originating medium or collection. The ingredient response has data.media=[]. JCM187 independently defines a trace-element stock, yet that recipe does not establish that this source-less numbered pointer denotes it. The KG source applicability remains unresolved; the supported CultureMech JCM187 contexts are retained separately."
+        }
+      ]
+    },
+    {
+      "target_type": "decision",
+      "case_index": 161,
+      "case_id": "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f",
+      "before_object_sha256": "5d45e9b2229183446e98fc0da3661e303728462b27e17b87d42c3013f3b50902",
+      "after_object_sha256": "ed2f114a751241d49cbf846b99571543da06c62e0ae8f34fe501ef70132653df",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "R-frozen-shard",
+            "R-ingredient-1507",
+            "R-medium-J240",
+            "R-medium-1682",
+            "R-medium-1837"
+          ],
+          "after": [
+            "R-frozen-shard",
+            "R-ingredient-1507",
+            "R-medium-J240",
+            "R-medium-1682",
+            "R-medium-1837",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/evidence_ids",
+          "before": [
+            "IR-R"
+          ],
+          "after": []
+        },
+        {
+          "op": "replace",
+          "path": "/independent_review/status",
+          "before": "complete",
+          "after": "pending"
+        },
+        {
+          "op": "replace",
+          "path": "/no_change_reason",
+          "before": "Retain the frozen owner/source state for this case: MediaDive1507 is a complex Yeast Nitrogen Base entry used at6.7g in J240 and at other quantities in1682/1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used.",
+          "after": "Retain the frozen owner/source state for this case: MediaDive1507 is a complex Yeast Nitrogen Base entry used at 1 g in J240 and at 6.7 g in each of DSMZ1682 and DSMZ1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used."
+        },
+        {
+          "op": "replace",
+          "path": "/reasoning",
+          "before": "MediaDive1507 is a complex Yeast Nitrogen Base entry used at6.7g in J240 and at other quantities in1682/1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used.",
+          "after": "MediaDive1507 is a complex Yeast Nitrogen Base entry used at 1 g in J240 and at 6.7 g in each of DSMZ1682 and DSMZ1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used."
+        }
+      ]
+    },
+    {
+      "target_type": "evidence",
+      "evidence_id": "A-E-CAPTURE-121",
+      "before_object_sha256": "c86ca6dc04102cff9b60e635c49dfad83f87a4509fd1d62da19b97e73ed499d7",
+      "after_object_sha256": "1f43bf2926a1a4d078b1e054ed06190908e5792a96cc699310f818d34750f57b",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/capture/path",
+          "before": "research-a/capture-index.json",
+          "after": "research-a/captures/1dfff2b87118ec32.raw"
+        },
+        {
+          "op": "replace",
+          "path": "/capture/sha256",
+          "before": "9a13330b6e7b9ecb90d90c1f69a6751c06ac7b8e7ec147aa8e84fd12453d9a57",
+          "after": "9e2e930f606c2c13793df65b7443cb664663e987e9399d4c60a29ea167961aff"
+        },
+        {
+          "op": "replace",
+          "path": "/kind",
+          "before": "unsuccessful_search",
+          "after": "primary_source"
+        },
+        {
+          "op": "replace",
+          "path": "/locator",
+          "before": "JSON entry[121], url, exit_code, stderr; any existing body is not treated as newly retrieved",
+          "after": "Complete JCM381 TRICHOCOCCUS MEDIUM response: instruction to use Medium No. 379 without peptone, including explicit GRMD=379 hyperlink."
+        },
+        {
+          "op": "replace",
+          "path": "/supports_or_contradicts",
+          "before": "Attempted this exact source. A timeout/error/empty recipe/JavaScript shell supplies no recipe or absence proof; frozen evidence remains explicitly separate.",
+          "after": "Successful JCM381 recipe establishes inheritance from JCM379 with peptone omitted. Captured JCM379 explicitly lists D-Glucose 5 g; the peptone-only modification preserves that constituent. This is positive source evidence, not an unsuccessful search."
+        }
+      ]
+    },
+    {
+      "target_type": "evidence",
+      "evidence_id": "C-E-jcm-737",
+      "before_object_sha256": "ec8eb4ab6c04fb00aa023f8f624e9882262391d0d1b73273f3882135ea98d13c",
+      "after_object_sha256": "da05d9350e1dd36d3fe50903e53e6ec665cb846648134601bac35b295acd160e",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/kind",
+          "before": "primary_source",
+          "after": "unsuccessful_search"
+        },
+        {
+          "op": "replace",
+          "path": "/locator",
+          "before": "jcm-737; exact captured source response",
+          "after": "Complete JCM request for medium 737; response body states Nothing found and contains no receiving recipe."
+        },
+        {
+          "op": "replace",
+          "path": "/supports_or_contradicts",
+          "before": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "after": "Access limitation only: this captured response provides no receiving-medium table and is not evidence that the medium or JCM197 stock does not exist. Preserve the frozen occurrences; positive JCM197 formulation evidence is separate."
+        }
+      ]
+    },
+    {
+      "target_type": "evidence",
+      "evidence_id": "C-E-jcm-876",
+      "before_object_sha256": "aed8a1b0842f82861c533f38c61d7c344655375703b58cd8221ec33d85331b2b",
+      "after_object_sha256": "0d74df47cc27febf56e11ebd029b88deb67e22d57365f659714847b6d78d657c",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/kind",
+          "before": "primary_source",
+          "after": "unsuccessful_search"
+        },
+        {
+          "op": "replace",
+          "path": "/locator",
+          "before": "jcm-876; exact captured source response",
+          "after": "Complete JCM request for medium 876; response body states Nothing found and contains no receiving recipe."
+        },
+        {
+          "op": "replace",
+          "path": "/supports_or_contradicts",
+          "before": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "after": "Access limitation only: this captured response provides no receiving-medium table and is not evidence that the medium or JCM197 stock does not exist. Preserve the frozen occurrences; positive JCM197 formulation evidence is separate."
+        }
+      ]
+    },
+    {
+      "target_type": "evidence",
+      "evidence_id": "C-E-jcm-887",
+      "before_object_sha256": "e6e028642ee7cf552b5814e41de1028a06ceed2c0541a58e97d73e676a245a0f",
+      "after_object_sha256": "daa38d90d4de7a57b00d8a7b322ef540c208f53a644c1ba924e3eba1093eb4e9",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/kind",
+          "before": "primary_source",
+          "after": "unsuccessful_search"
+        },
+        {
+          "op": "replace",
+          "path": "/locator",
+          "before": "jcm-887; exact captured source response",
+          "after": "Complete JCM request for medium 887; response body states Nothing found and contains no receiving recipe."
+        },
+        {
+          "op": "replace",
+          "path": "/supports_or_contradicts",
+          "before": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "after": "Access limitation only: this captured response provides no receiving-medium table and is not evidence that the medium or JCM197 stock does not exist. Preserve the frozen occurrences; positive JCM197 formulation evidence is separate."
+        }
+      ]
+    },
+    {
+      "target_type": "evidence",
+      "evidence_id": "C-E-jcm-955",
+      "before_object_sha256": "5a1801a8167cb0c385cfd59a0ce992b86651170e4c1e97ddb219e3bea02289c9",
+      "after_object_sha256": "609dd5cb3667a9c973f027011d25433c5cac8cf829778ce285479e76db946efb",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/kind",
+          "before": "primary_source",
+          "after": "unsuccessful_search"
+        },
+        {
+          "op": "replace",
+          "path": "/locator",
+          "before": "jcm-955; exact captured source response",
+          "after": "Complete JCM request for medium 955; response body states Nothing found and contains no receiving recipe."
+        },
+        {
+          "op": "replace",
+          "path": "/supports_or_contradicts",
+          "before": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "after": "Access limitation only: this captured response provides no receiving-medium table and is not evidence that the medium or JCM197 stock does not exist. Preserve the frozen occurrences; positive JCM197 formulation evidence is separate."
+        }
+      ]
+    },
+    {
+      "target_type": "proposal",
+      "proposal_id": "B-P-JCM977-glucose20",
+      "before_object_sha256": "72c51e4ad5f04c5c359f2a0dff74b49f4f93f87a5096996a730955ec1c3b8b49",
+      "after_object_sha256": "1c9fa00e8911e5d4d2f05197b62d3f81b828685afe07bb66ddeaa224299fc90f",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/after_capture/path",
+          "before": "research-b/proposed-owners/jcm_977_glucose_20_percent_wv_stock.yaml",
+          "after": "successor-v3/research-c/payloads/jcm_977_glucose_20_percent_wv_stock.yaml"
+        },
+        {
+          "op": "replace",
+          "path": "/after_capture/sha256",
+          "before": "df904239a9f177fbb3f59375173e304490e1f8d05fcf309bcfcd1004868bf06e",
+          "after": "462fde36c2adc525f0c0bcb070437784d524d909afbe19ffe042c4eb808a6f1c"
+        },
+        {
+          "op": "replace",
+          "path": "/description",
+          "before": "Propose JCM 977 glucose 20% w/v stock with source-specific constituent assertion and no ambiguous generic-label alias.",
+          "after": "Propose JCM 977 glucose 20% w/v stock with source-specific constituent assertion and no ambiguous generic-label alias. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "B-64-frozen-0",
+            "B-http-4f360397f0c066dd",
+            "B-owner-Glucose"
+          ],
+          "after": [
+            "B-64-frozen-0",
+            "B-http-4f360397f0c066dd",
+            "B-owner-Glucose",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        }
+      ]
+    },
+    {
+      "target_type": "proposal",
+      "proposal_id": "A-P-JCM1136-548-GLUCOSE-1M",
+      "before_object_sha256": "05319829631b510059eb1ec47271fa0a8ffccb3aff00c5886d5ec4658da56573",
+      "after_object_sha256": "14936813da7e827c5d91616ebf730d530093e82d99ead9ff207121b92dc0a99f",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/after_capture/path",
+          "before": "research-a/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+          "after": "successor-v3/research-c/payloads/jcm_1136_548_glucose_1m_stock.yaml"
+        },
+        {
+          "op": "replace",
+          "path": "/after_capture/sha256",
+          "before": "3f916beac02d141f498e9cf2179bcbe1ada84f80aa25e09fd407742324ca5673",
+          "after": "e6769345389d720a9ce0e92077251192685b30b1aa70dd146b2ded3e285df876"
+        },
+        {
+          "op": "replace",
+          "path": "/cross_shard_dependencies",
+          "before": "Coordinator must attach research-c114/115 source case and occurrence backlinks; currentAfragment authorsonly26. Existing localidentifier/filename retained.",
+          "after": "Cases 26, 114 and 115 are already explicitly linked in the authoritative v2 bundle. Preserve their exact occurrence scope and source-specific preparation; no global generic glucose-stock alias."
+        },
+        {
+          "op": "replace",
+          "path": "/description",
+          "before": "Propose shared generic1M glucose stock for JCM548/1136/1406/1412 with explicitly bounded preparation details.",
+          "after": "Propose shared generic1M glucose stock for JCM548/1136/1406/1412 with explicitly bounded preparation details. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "A-E-OWNER-09",
+            "A-E-OWNER-14",
+            "A-E-26-S00",
+            "A-E-26-S01",
+            "A-E-CAPTURE-019",
+            "A-E-CAPTURE-059",
+            "A-E-CAPTURE-100",
+            "A-E-CAPTURE-127",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "A-E-SHARED-C-E-jcm-1406",
+            "A-E-SHARED-C-E-jcm-1412",
+            "C-E-114-SOURCE-1",
+            "C-E-jcm-1406",
+            "C-E-115-SOURCE-1",
+            "C-E-jcm-1412"
+          ],
+          "after": [
+            "A-E-OWNER-09",
+            "A-E-OWNER-14",
+            "A-E-26-S00",
+            "A-E-26-S01",
+            "A-E-CAPTURE-019",
+            "A-E-CAPTURE-059",
+            "A-E-CAPTURE-100",
+            "A-E-CAPTURE-127",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "A-E-SHARED-C-E-jcm-1406",
+            "A-E-SHARED-C-E-jcm-1412",
+            "C-E-114-SOURCE-1",
+            "C-E-jcm-1406",
+            "C-E-115-SOURCE-1",
+            "C-E-jcm-1412",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        }
+      ]
+    },
+    {
+      "target_type": "proposal",
+      "proposal_id": "C-P-JCM1375-1435-825-GLUCOSE10",
+      "before_object_sha256": "26b25ddd963b726c26c2932eaed4c184dda8d7a7bedb7a1775667673140ae81a",
+      "after_object_sha256": "0c1c3a7afa1ad0d2718e5551a49b5c50527ba1ce73fb9687d564fcbff18b99b9",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/after_capture/path",
+          "before": "research-c/after/jcm_1375_1435_825_glucose_10_percent_stock.yaml",
+          "after": "successor-v3/research-c/payloads/jcm_1375_1435_825_glucose_10_percent_stock.yaml"
+        },
+        {
+          "op": "replace",
+          "path": "/after_capture/sha256",
+          "before": "6a0f58e38af7fee44c04c5c8d659ddb1d6495674dcd0f004d6fb3922d7dd86e4",
+          "after": "44d2c2980e527e3151ad90aaab4503f5267706771f9af5273e5fc66102632877"
+        },
+        {
+          "op": "replace",
+          "path": "/description",
+          "before": "Each source specifies separately autoclaved sterile anaerobic 10% glucose stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final volume are unstated. PERCENT deliberately does not assert w/v. Water is implied by aqueous stock use, not independently quantified; UNKNOWN closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone.",
+          "after": "Each source specifies separately autoclaved sterile anaerobic 10% glucose stock: JCM1375 adds 100 ml, JCM1435 adds 5 ml, and JCM825 adds 50 ml to its receiving batch. The percent basis, glucose chirality/anomer/starting hydrate and stock final volume are unstated. PERCENT deliberately does not assert w/v. The source does not identify the stock solvent. Water is omitted from components; UNKNOWN closure remains. Do not merge with filter-sterilized ETSA 10% stock or 20% stocks by label alone. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-113-SOURCE-1",
+            "C-E-113-SOURCE-2",
+            "C-E-113-SOURCE-3",
+            "C-E-jcm-1375",
+            "C-E-jcm-1435",
+            "C-E-jcm-825"
+          ],
+          "after": [
+            "C-E-113-SOURCE-1",
+            "C-E-113-SOURCE-2",
+            "C-E-113-SOURCE-3",
+            "C-E-jcm-1375",
+            "C-E-jcm-1435",
+            "C-E-jcm-825",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        }
+      ]
+    },
+    {
+      "target_type": "proposal",
+      "proposal_id": "C-P-TOGO2790-GLUCOSE20",
+      "before_object_sha256": "c0722fcb4ba5c4a6e510b2deb1f67a573bce465c96707b0873c9fae84bac8857",
+      "after_object_sha256": "4a80593027652a8e3d75031c90e6b1cfd1e6eeed7b2d881bf616d5f0aa7f2875",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/after_capture/path",
+          "before": "research-c/after/togo_2790_glucose_20_percent_stock.yaml",
+          "after": "successor-v3/research-c/payloads/togo_2790_glucose_20_percent_stock.yaml"
+        },
+        {
+          "op": "replace",
+          "path": "/after_capture/sha256",
+          "before": "b9e219a8660d13abe331f0e289b8572199acab60fa6f13ca3c8850bfe910d2be",
+          "after": "1f8a42b20568d0f9a3f60e5a17941fec4db90aca3da2f519915f49444ee455d3"
+        },
+        {
+          "op": "replace",
+          "path": "/description",
+          "before": "The M9 source narrative supplies 2.5 ml of 20% glucose per 100 ml receiving medium. It does not state the percent basis, glucose form, stock preparation volume or sterilization. Water is inferred only from aqueous stock context; UNKNOWN closure and PERCENT preserve these limits. This is not automatically equivalent to the explicitly 20% w/v JCM977/1009 preparation, and is not dry glucose.",
+          "after": "The M9 source narrative supplies 2.5 ml of 20% glucose per 100 ml receiving medium. It does not state the percent basis, glucose form, stock preparation volume or sterilization. The stock solvent is not identified. Water is omitted from components; UNKNOWN closure and PERCENT preserve these limits. This is not automatically equivalent to the explicitly 20% w/v JCM977/1009 preparation, and is not dry glucose. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-130-SOURCE-1",
+            "C-E-togo-M2790"
+          ],
+          "after": [
+            "C-E-130-SOURCE-1",
+            "C-E-togo-M2790",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        }
+      ]
+    },
+    {
+      "target_type": "proposal",
+      "proposal_id": "C-P-JCM1435-YEAST10",
+      "before_object_sha256": "62bbb9c27601e509a9ec26ab39e637b2fec54b78ba092ed23e51a7b15895553a",
+      "after_object_sha256": "51eb19c5c5544463d0b82ea4c65f2a878021a20c7c64a5e406308ed0d040fcf8",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/after_capture/path",
+          "before": "research-c/after/jcm_1435_oxoid_yeast_extract_10_percent_stock.yaml",
+          "after": "successor-v3/research-c/payloads/jcm_1435_oxoid_yeast_extract_10_percent_stock.yaml"
+        },
+        {
+          "op": "replace",
+          "path": "/after_capture/sha256",
+          "before": "be065e52e02828e3195987d6acd6d7f35b542b4358e73bfc6b82ae206a509593",
+          "after": "571e846b0cb175651f167860ae45fc6118f9f2c8f2e236d534727b57511bb9dc"
+        },
+        {
+          "op": "replace",
+          "path": "/description",
+          "before": "JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid catalogue, lot composition or stock water volume. PERCENT and UNKNOWN closure retain those limits; implied water is unquantified. The whole prepared stock is distinct from dry generic yeast extract and the separately source-defined 1% stock.",
+          "after": "JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid catalogue, lot composition or stock preparation volume. The stock solvent is also unspecified. Water is omitted from components; PERCENT and UNKNOWN closure retain these limits. The whole prepared stock is distinct from dry generic yeast extract and the separately source-defined 1% stock. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-135-SOURCE-1",
+            "C-E-jcm-1435"
+          ],
+          "after": [
+            "C-E-135-SOURCE-1",
+            "C-E-jcm-1435",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        }
+      ]
+    },
+    {
+      "target_type": "proposal",
+      "proposal_id": "C-P-TOGO2568-GLUCOSE10",
+      "before_object_sha256": "88809c1a13cba7318d541c68d8110ea096bd4e2f5305b864c84507ebaa2f6099",
+      "after_object_sha256": "c3a9348dea7d8d7622d41553361eb87c60482efdcb5fc63b74b4d2fb0551cd9d",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/after_capture/path",
+          "before": "research-c/after/togo_2568_glucose_10_percent_stock.yaml",
+          "after": "successor-v3/research-c/payloads/togo_2568_glucose_10_percent_stock.yaml"
+        },
+        {
+          "op": "replace",
+          "path": "/after_capture/sha256",
+          "before": "24ec862593147abf30329cff466f64621a031279a256480ae508d82ad930311b",
+          "after": "da0c958deb690a97912a609edaeea389a9b7b09c0b741ca41a2460b02fa03aa9"
+        },
+        {
+          "op": "replace",
+          "path": "/description",
+          "before": "The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized solutions after cooling the base to 55 C. The percent basis, glucose form and stock volume are unstated; implied aqueous solvent is unquantified and closure remains UNKNOWN. The filter-sterilized fresh preparation is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen mass-style quantity is not approved.",
+          "after": "The ETSA source adds 10 ml of 10% glucose among freshly prepared filter-sterilized solutions after cooling the base to 55 C. The percent basis, glucose form and stock volume are unstated; the stock solvent is not identified. Water is omitted from components and closure remains UNKNOWN. The filter-sterilized fresh preparation is retained separately from the autoclaved anaerobic JCM1375/1435/825 stock. Frozen mass-style quantity is not approved. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-141-SOURCE-1",
+            "C-E-togo-M2568"
+          ],
+          "after": [
+            "C-E-141-SOURCE-1",
+            "C-E-togo-M2568",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        }
+      ]
+    },
+    {
+      "target_type": "proposal",
+      "proposal_id": "C-P-JCM1009-GLUCOSE20",
+      "before_object_sha256": "4adddac58dbded7301d7591e280d56bdb638c1b294980fee2ea6ba2ddc5b4bf7",
+      "after_object_sha256": "fb575e446e88a53f5456645e777b2087180484fc921d0fecb424874451a8e6ce",
+      "field_deltas": [
+        {
+          "op": "replace",
+          "path": "/after_capture/path",
+          "before": "research-c/after/jcm_1009_anaerobic_glucose_20_percent_wv_stock.yaml",
+          "after": "successor-v3/research-c/payloads/jcm_1009_anaerobic_glucose_20_percent_wv_stock.yaml"
+        },
+        {
+          "op": "replace",
+          "path": "/after_capture/sha256",
+          "before": "48e417dad9b8ebd33589d6f1d70f555f9324e22be347fb4e163a35ff34b7fd2f",
+          "after": "aa215b122dd0d7645877cb8f34c1150e40bb63b703eaeed989b77ad7e0d746b2"
+        },
+        {
+          "op": "replace",
+          "path": "/description",
+          "before": "JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate and stock water volume are unstated; water is implied by aqueous stock context and closure remains UNKNOWN. JCM977 has the same explicit mass concentration and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified preparation is kept separate. No frozen root-level or mass-style dose is silently approved.",
+          "after": "JCM1009 adds 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from an autoclaved anaerobic stock stored under nitrogen. Glucose stereochemistry, anomer, starting hydrate and stock preparation volume and solvent composition are unstated. Water is omitted from components and closure remains UNKNOWN. JCM977 has the same explicit mass concentration and autoclaving but does not specify anaerobic preparation/storage, so this source-qualified preparation is kept separate. No frozen root-level or mass-style dose is silently approved. Successor v3 omits untranscribed Water; the stated solute concentration and source preparation remain unchanged."
+        },
+        {
+          "op": "replace",
+          "path": "/evidence_ids",
+          "before": [
+            "C-E-140-SOURCE-1",
+            "C-E-jcm-1009",
+            "C-E-jcm-197",
+            "C-E-jcm-433"
+          ],
+          "after": [
+            "C-E-140-SOURCE-1",
+            "C-E-jcm-1009",
+            "C-E-jcm-197",
+            "C-E-jcm-433",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+identifier: kgmicrobe.ingredient:rm_trace_metals_togo_m3181
+preferred_term: RM trace metals stock (TOGO M3181)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:rm_trace_metals_togo_m3181
+  ontology_label: RM trace metals stock (TOGO M3181)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+    notes: TOGO M3181 narrative paragraph2 and trace-metals table paragraph10. Bounded
+      source-defined preparation identity, not an exact identity to an individual
+      constituent or an unqualified generic product.
+solution_type: TRACE_METAL_MIX
+synonyms:
+- synonym_text: Trace metals
+  synonym_type: REJECTED_LABEL
+  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+components:
+- component_name: ZnCl2
+  reference_scope: UNMAPPED
+  concentration_value: '70'
+  concentration_unit: MG_PER_L
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: MG_PER_L
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '60'
+  concentration_unit: MG_PER_L
+- component_name: CoCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: MG_PER_L
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MG_PER_L
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: MG_PER_L
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '40'
+  concentration_unit: MG_PER_L
+- component_name: Concentrated HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: ML_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+    source_record: TOGO M3181 comments paragraph2; components paragraph10
+    notes: The primary narrative paragraph2 lists all seven salt quantities and0.25mL
+      concentratedHCl per litre. Its Na2MoO4·2H2O40mg/L is absent from the parsed
+      paragraph10 table; the narrative is retained explicitly rather than copying
+      that omission. The parsed table separately lists distilledwater1L, but no stock
+      mixing or final-volume procedure is established by the narrative. Solvent input
+      quantity/final stock volume and acid strength remain unresolved; no water constituent
+      or exact HCl concentration is inferred. Quantities encode the reported per-litre
+      basis, not a claim that a batch is made by adding a litre of water. Unknown
+      acid specification and solution closure require UNKNOWN completeness.
+  notes: The primary narrative paragraph2 lists all seven salt quantities and0.25mL
+    concentratedHCl per litre. Its Na2MoO4·2H2O40mg/L is absent from the parsed paragraph10
+    table; the narrative is retained explicitly rather than copying that omission.
+    The parsed table separately lists distilledwater1L, but no stock mixing or final-volume
+    procedure is established by the narrative. Solvent input quantity/final stock
+    volume and acid strength remain unresolved; no water constituent or exact HCl
+    concentration is inferred. Quantities encode the reported per-litre basis, not
+    a claim that a batch is made by adding a litre of water. Unknown acid specification
+    and solution closure require UNKNOWN completeness.
+notes: The primary narrative paragraph2 lists all seven salt quantities and0.25mL
+  concentratedHCl per litre. Its Na2MoO4·2H2O40mg/L is absent from the parsed paragraph10
+  table; the narrative is retained explicitly rather than copying that omission. The
+  parsed table separately lists distilledwater1L, but no stock mixing or final-volume
+  procedure is established by the narrative. Solvent input quantity/final stock volume
+  and acid strength remain unresolved; no water constituent or exact HCl concentration
+  is inferred. Quantities encode the reported per-litre basis, not a claim that a
+  batch is made by adding a litre of water. Unknown acid specification and solution
+  closure require UNKNOWN completeness. Trace metals is a local generic recipe label
+  and does not resolve globally. The receiving medium uses1mL stock per litre; frozen
+  flattened1G_PER_L values are not adopted. Iron citrate belongs to the receiving
+  RM medium, not to this stock. The seven named salts retain exact printed hydration
+  state with UNMAPPED child references; no form identity is guessed. This differs
+  from NBRC1117 SL7, which additionally includes ferrous chloride and a specified
+  stronger HCl input, and from JCM187 with different salt quantities.
+curation_history:
+- timestamp: '2026-11-08T06:40:36.183483+00:00'
+  curator: codex_w06_successor_v3_research_b
+  action: CREATED
+  changes: Create bounded source-specific RM trace-stock proposal from the full primary
+    narrative, retain molybdate despite parsed-table omission, and leave acid strength,
+    solvent/final-volume procedure and component identity groundings unresolved.
+  llm_assisted: true
+  new_status: MAPPED

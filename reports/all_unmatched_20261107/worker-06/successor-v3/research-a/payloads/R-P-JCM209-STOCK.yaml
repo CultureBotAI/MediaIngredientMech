@@ -1,0 +1,83 @@
+identifier: kgmicrobe.ingredient:jcm_209_salts_solution
+preferred_term: JCM 209 salts solution
+ingredient_type: STOCK_SOLUTION
+mapping_status: MAPPED
+synonyms:
+- synonym_text: Salts solution
+  synonym_type: REJECTED_LABEL
+  source: Source-context label only; must not match without the recipe reference
+curation_history:
+- timestamp: '2026-11-08T05:18:21.788601+00:00'
+  curator: all-unmatched-20261107-worker-06
+  action: PROPOSED_SOURCE_DEFINED_STOCK
+  changes: JCM209-specific salts stock preserved by MediaDiveJ209, recipe_order16 stock heading and16-22
+    constituents. Generic Salts solution owner is not globally equivalent. Proposal only; no occurrence/source/export
+    release approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:36:24.206519+00:00'
+  curator: all_unmatched_20261107_worker06_successor_v3_research_a
+  action: CORRECTED
+  changes: 'W06-IR-002 / issue1217: retain the exact non-identifying raw labels and their original sources
+    as REJECTED_LABEL; MediaDiveJ209 explicitly starts a separate Salts solution subsection at recipe_order16,
+    with six salts and100ml water. Generic Salts solution does not identify that stock across recipes,
+    and RELATED_SYNONYM is still resolving. Preserve the JCM209-qualified candidate and unresolved stock-versus-parent
+    pH-step scope. Components, identifiers, mapping predicates and release holds are unchanged. Source
+    definition: https://mediadive.dsmz.de/rest/medium/J209'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: JCM209-specific salts stock preserved by MediaDiveJ209, recipe_order16 stock heading and16-22 constituents.
+  Generic Salts solution owner is not globally equivalent.
+components:
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.78'
+  concentration_unit: g
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.47'
+  concentration_unit: g
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.18'
+  concentration_unit: g
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.2'
+  concentration_unit: g
+- component_name: CaCl2 x 2 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.12'
+  concentration_unit: g
+- component_name: MgSO4 x 7 H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ml
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/medium/J209
+    source_record: data.solutions[0], steps recipe_order16; recipe_order16-22
+    supports: SUPPORT
+    notes: The explicit stock heading partitions the flattened source. Do not use parent1092ml volume
+      to renormalize this100ml stock.
+  notes: Amounts are source batch quantities, not computed medium concentrations. Component identifiers
+    remain unassigned; named has-part constituents are not whole-mixture identity mappings.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_209_salts_solution
+  ontology_label: JCM 209 salts solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: all-unmatched-20261107-worker-06
+    notes: JCM209-specific salts stock preserved by MediaDiveJ209, recipe_order16 stock heading and16-22
+      constituents. Generic Salts solution owner is not globally equivalent. Formulation registry identity;
+      no ontology mapping to any individual component.

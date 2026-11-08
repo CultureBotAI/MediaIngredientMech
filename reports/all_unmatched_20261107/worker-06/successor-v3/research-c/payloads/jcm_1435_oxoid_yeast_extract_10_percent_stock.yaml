@@ -1,0 +1,59 @@
+identifier: kgmicrobe.ingredient:jcm_1435_oxoid_yeast_extract_10_percent_stock
+preferred_term: JCM 1435 Oxoid yeast extract 10% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1435_oxoid_yeast_extract_10_percent_stock
+  ontology_label: JCM 1435 Oxoid yeast extract 10% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435
+    notes: Source-qualified whole preparation identity; no exact identity with a solute
+      or generic chemical class.
+components:
+- component_name: Yeast extract (Oxoid)
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: PERCENT
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435
+    source_record: JCM 1435 Oxoid yeast extract 10% stock
+    supports: SUPPORT
+    notes: Captured primary source inspected in full; literal component names and
+      stated quantities retained. Child identities remain UNMAPPED.
+  notes: JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved
+    sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid
+    catalogue, lot composition or stock preparation volume. The stock solvent is also
+    unspecified. Water is omitted from components; PERCENT and UNKNOWN closure retain
+    these limits. The whole prepared stock is distinct from dry generic yeast extract
+    and the separately source-defined 1% stock.
+notes: 'JCM1435 adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved
+  sterile anaerobic stocks after cooling. The source gives no percent basis, Oxoid
+  catalogue, lot composition or stock preparation volume. The stock solvent is also
+  unspecified. Water is omitted from components; PERCENT and UNKNOWN closure retain
+  these limits. The whole prepared stock is distinct from dry generic yeast extract
+  and the separately source-defined 1% stock. Raw labels retained only in this source
+  context: ["10% Yeast extract (Oxoid) solution"]. No global resolving alias is asserted.'
+curation_history:
+- timestamp: '2026-11-08T05:36:49.390055+00:00'
+  curator: all-unmatched-20261107-worker06-research-c
+  action: CREATED
+  changes: Proposed JCM 1435 Oxoid yeast extract 10% stock with source-bound components
+    and retained preparation limits. Isolated proposal; no maintained owner edit or
+    support/release approval.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:39:29.038626+00:00'
+  curator: codex_all_unmatched_w06_successor_v3_research_c
+  action: CORRECTED
+  changes: 'W06-IR-004/005: omit untranscribed Water from the stock components; correct
+    solvent provenance in notes while preserving the stated solute concentration,
+    UNKNOWN closure, source-specific preparation, identity and unresolved forms. Isolated
+    proposal only; no maintained mutation or release approval.'
+  llm_assisted: true

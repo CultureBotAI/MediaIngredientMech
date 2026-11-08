@@ -1,0 +1,426 @@
+{
+  "authored_at": "2026-11-08T06:39:29.038626+00:00",
+  "author": "Codex /root/research_c",
+  "role": "Author remediation; independent review pending parent root",
+  "finding_groups": [
+    "W06-IR-004",
+    "W06-IR-005",
+    "W06-IR-006",
+    "W06-IR-008",
+    "W06-IR-009",
+    "W06-IR-010",
+    "W06-IR-011"
+  ],
+  "water_payload_analyses": [
+    {
+      "proposal_id": "B-P-JCM977-glucose20",
+      "finding_id": "W06-IR-004",
+      "case_indices": [
+        64
+      ],
+      "reasoning": "The 790 ml distilled-water row is inside the basal recipe. The instruction to add 100 ml of autoclaved 20% (w/v) glucose does not describe its solvent. Removing Water corrects the positive unsupported component while preserving the whole-stock identity, explicit mass concentration and autoclaving. No glucose stereoisomer, anomer, hydrate or stock volume is assigned.",
+      "primary_evidence_ids": [
+        "B-http-4f360397f0c066dd"
+      ],
+      "source_captures": [
+        {
+          "evidence_id": "B-http-4f360397f0c066dd",
+          "capture": {
+            "root": "artifact",
+            "path": "research-b/captures/http-ca0c25894a5aed71c1ac.txt",
+            "sha256": "5c290334836736fe49e5182311308f7748a9602617684442beb223e6c78bb6c5"
+          },
+          "kind": "primary_source",
+          "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+          "supports_or_contradicts": "Primary producer recipe supports only the explicitly described component, stock and preparation context; no neighbouring ingredient establishes this ingredient identity.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977",
+          "case_ids": [
+            "CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190"
+          ],
+          "accessed_at": "2026-11-08T05:07:00.275982+00:00"
+        }
+      ],
+      "result": "Water omitted; RECIPE_TRANSCRIPTION now applies to the explicit solute and concentration only. UNKNOWN closure retained. No proof that water is chemically absent is asserted."
+    },
+    {
+      "proposal_id": "A-P-JCM1136-548-GLUCOSE-1M",
+      "finding_id": "W06-IR-005",
+      "case_indices": [
+        26,
+        114,
+        115
+      ],
+      "reasoning": "The four source recipes explicitly name 1 M glucose stocks and retain different preparation statements. JCM548 and JCM1412 specify N2 storage, while JCM1136 and JCM1406 describe aseptic anaerobic addition without stating glucose-stock storage gas. None of these instructions identifies the stock solvent. The single transcribed Glucose component retains 1 M, with unspecified chirality, anomer and starting hydrate.",
+      "primary_evidence_ids": [
+        "A-E-CAPTURE-100",
+        "A-E-CAPTURE-127",
+        "A-E-SHARED-C-E-jcm-1406",
+        "A-E-SHARED-C-E-jcm-1412",
+        "C-E-jcm-1406",
+        "C-E-jcm-1412"
+      ],
+      "source_captures": [
+        {
+          "evidence_id": "A-E-CAPTURE-100",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "research-a/captures/ba0c7d65fb4e8735.raw",
+            "sha256": "b513465de4fa5ec4abadd90693f1df0f3febea9cde62a828e8079e21dc018c12"
+          },
+          "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+          "supports_or_contradicts": "case26: JCM1136 and548 separately prepare and add a1MGlucose solution. The source name lacks a D/L or anomer declaration. A1M stock is a preparation distinct from the glucose compound; molarity cannot independently identify stereochemistry or starting hydrate.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1136",
+          "case_ids": [
+            "CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77"
+          ],
+          "accessed_at": "2026-11-08T05:06:56.630183+00:00"
+        },
+        {
+          "evidence_id": "A-E-CAPTURE-127",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "research-a/captures/84122ecbb9e908f5.raw",
+            "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+          },
+          "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+          "supports_or_contradicts": "case26: JCM1136 and548 separately prepare and add a1MGlucose solution. The source name lacks a D/L or anomer declaration. A1M stock is a preparation distinct from the glucose compound; molarity cannot independently identify stereochemistry or starting hydrate.",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+          "case_ids": [
+            "CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77"
+          ],
+          "accessed_at": "2026-11-08T05:06:59.679283+00:00"
+        },
+        {
+          "evidence_id": "A-E-SHARED-C-E-jcm-1406",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1406.txt",
+            "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+          },
+          "locator": "jcm-1406; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+          "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+          "case_ids": [
+            "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+            "CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb"
+          ]
+        },
+        {
+          "evidence_id": "A-E-SHARED-C-E-jcm-1412",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1412.txt",
+            "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+          },
+          "locator": "jcm-1412; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+          "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+          "case_ids": [
+            "CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da"
+          ]
+        },
+        {
+          "evidence_id": "C-E-jcm-1406",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1406.txt",
+            "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+          },
+          "locator": "jcm-1406; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+          "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+          "case_ids": [
+            "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+            "CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb"
+          ]
+        },
+        {
+          "evidence_id": "C-E-jcm-1412",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1412.txt",
+            "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+          },
+          "locator": "jcm-1412; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+          "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+          "case_ids": [
+            "CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da"
+          ]
+        }
+      ],
+      "result": "Water omitted; RECIPE_TRANSCRIPTION now applies to the explicit solute and concentration only. UNKNOWN closure retained. No proof that water is chemically absent is asserted."
+    },
+    {
+      "proposal_id": "C-P-JCM1375-1435-825-GLUCOSE10",
+      "finding_id": "W06-IR-005",
+      "case_indices": [
+        113
+      ],
+      "reasoning": "All three JCM receiving recipes name 10% glucose among separately autoclaved sterile anaerobic stocks, with different receiving doses (100, 5 and 50 ml). Their percent basis and solvent composition remain unstated. Removing Water does not change those stated preparation instructions or equate this stock to the freshly filter-sterilized ETSA stock.",
+      "primary_evidence_ids": [
+        "C-E-jcm-1375",
+        "C-E-jcm-1435",
+        "C-E-jcm-825"
+      ],
+      "source_captures": [
+        {
+          "evidence_id": "C-E-jcm-1375",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1375.txt",
+            "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+          },
+          "locator": "jcm-1375; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375",
+          "accessed_at": "2026-11-08T05:07:29.753368+00:00",
+          "case_ids": [
+            "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+            "CM_NAME:c1d28a428161812cf36eed765cf758fe34859714df23e19978cf4ed58e0d40b2",
+            "CM_NAME:ea939d251b767935d74f8a0ac0b828a4a0c3f877e460a9e8c49af0531d30ac88"
+          ]
+        },
+        {
+          "evidence_id": "C-E-jcm-1435",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1435.txt",
+            "sha256": "e9e326a8e33f7556e7c850615df463cc17cc0b0cb39062344b729380f68f11c3"
+          },
+          "locator": "jcm-1435; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435",
+          "accessed_at": "2026-11-08T05:07:31.214510+00:00",
+          "case_ids": [
+            "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+            "CM_NAME:e60c91c3a2002b258c5aefcf8f970639a5c136d594fa21a4ccaadbea2470253f"
+          ]
+        },
+        {
+          "evidence_id": "C-E-jcm-825",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-825.txt",
+            "sha256": "b3f4e74d1545ab08e66e8905680a027edc96bd1d681b74892485b87777f5d5c4"
+          },
+          "locator": "jcm-825; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=825",
+          "accessed_at": "2026-11-08T05:18:44.545929+00:00",
+          "case_ids": [
+            "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396"
+          ]
+        }
+      ],
+      "result": "Water omitted; RECIPE_TRANSCRIPTION now applies to the explicit solute and concentration only. UNKNOWN closure retained. No proof that water is chemically absent is asserted."
+    },
+    {
+      "proposal_id": "C-P-TOGO2790-GLUCOSE20",
+      "finding_id": "W06-IR-005",
+      "case_indices": [
+        130
+      ],
+      "reasoning": "TOGO M2790 paragraph 1 specifies 2.5 ml of 20% glucose per 100 ml receiving medium. Separate water rows belong to the receiving medium, 5x M9 salts and trace-elements preparation. None identifies the solvent of the 20% glucose stock. PERCENT remains unspecified in basis, and the source does not establish its preparation volume, sterilization or molecular form.",
+      "primary_evidence_ids": [
+        "C-E-togo-M2790"
+      ],
+      "source_captures": [
+        {
+          "evidence_id": "C-E-togo-M2790",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/togo-M2790.txt",
+            "sha256": "484ff25c250928b9ff3b98873ff4aa40492e17701226c88be3fe623c0196db2e"
+          },
+          "locator": "togo-M2790; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2790",
+          "accessed_at": "2026-11-08T05:08:00.388116+00:00",
+          "case_ids": [
+            "CM_NAME:d9c0c81fbad77b2409cf51e90a3d284c505b2093dadf44a87f5b8c2c40dcb934"
+          ]
+        }
+      ],
+      "result": "Water omitted; RECIPE_TRANSCRIPTION now applies to the explicit solute and concentration only. UNKNOWN closure retained. No proof that water is chemically absent is asserted."
+    },
+    {
+      "proposal_id": "C-P-JCM1435-YEAST10",
+      "finding_id": "W06-IR-005",
+      "case_indices": [
+        135
+      ],
+      "reasoning": "JCM1435 explicitly adds 5 ml of 10% Yeast extract (Oxoid) solution from separately autoclaved sterile anaerobic stocks after cooling. The branded solute and concentration are supported; neither a solvent formula nor a catalogue/lot formulation is supplied. The Oxoid qualifier remains, with UNKNOWN composition closure.",
+      "primary_evidence_ids": [
+        "C-E-jcm-1435"
+      ],
+      "source_captures": [
+        {
+          "evidence_id": "C-E-jcm-1435",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1435.txt",
+            "sha256": "e9e326a8e33f7556e7c850615df463cc17cc0b0cb39062344b729380f68f11c3"
+          },
+          "locator": "jcm-1435; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435",
+          "accessed_at": "2026-11-08T05:07:31.214510+00:00",
+          "case_ids": [
+            "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+            "CM_NAME:e60c91c3a2002b258c5aefcf8f970639a5c136d594fa21a4ccaadbea2470253f"
+          ]
+        }
+      ],
+      "result": "Water omitted; RECIPE_TRANSCRIPTION now applies to the explicit solute and concentration only. UNKNOWN closure retained. No proof that water is chemically absent is asserted."
+    },
+    {
+      "proposal_id": "C-P-TOGO2568-GLUCOSE10",
+      "finding_id": "W06-IR-005",
+      "case_indices": [
+        141
+      ],
+      "reasoning": "The ETSA source lists 10 ml of 10% glucose among freshly prepared filter-sterilized solutions added after the base cools to 55 C. It explicitly gives solvents for hemin and menadione stocks elsewhere, but gives no corresponding glucose-stock solvent. Those other stocks and the base water cannot supply this missing component claim.",
+      "primary_evidence_ids": [
+        "C-E-togo-M2568"
+      ],
+      "source_captures": [
+        {
+          "evidence_id": "C-E-togo-M2568",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/togo-M2568.txt",
+            "sha256": "a1aa7bdd129aae4edb0022b812a8beeee9ee7d862dab4e84f81f3558ba036a14"
+          },
+          "locator": "togo-M2568; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2568",
+          "accessed_at": "2026-11-08T05:07:59.840576+00:00",
+          "case_ids": [
+            "CM_NAME:f0bc7fb6c6e307f5ba078cb41a7e36f0398990ffaffc763152221fd44f1f61a4"
+          ]
+        }
+      ],
+      "result": "Water omitted; RECIPE_TRANSCRIPTION now applies to the explicit solute and concentration only. UNKNOWN closure retained. No proof that water is chemically absent is asserted."
+    },
+    {
+      "proposal_id": "C-P-JCM1009-GLUCOSE20",
+      "finding_id": "W06-IR-005",
+      "case_indices": [
+        140
+      ],
+      "reasoning": "JCM1009 specifies 0.1 ml of 20% (w/v) glucose per 5 ml receiving medium from autoclaved anaerobic stock stored under N2. This supports the concentration and process boundary, but not a particular solvent component or dissolved nitrogen quantity. Retain its distinct source preparation from JCM977, whose glucose storage atmosphere is unreported.",
+      "primary_evidence_ids": [
+        "C-E-jcm-1009",
+        "C-E-jcm-197",
+        "C-E-jcm-433"
+      ],
+      "source_captures": [
+        {
+          "evidence_id": "C-E-jcm-1009",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-1009.txt",
+            "sha256": "38cba335b0d49ecd28fb5e5457b0678e5e83ef9703349703dfe11d3d39d7b2e2"
+          },
+          "locator": "jcm-1009; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1009",
+          "accessed_at": "2026-11-08T05:07:28.312745+00:00",
+          "case_ids": [
+            "CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b"
+          ]
+        },
+        {
+          "evidence_id": "C-E-jcm-197",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-197.txt",
+            "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+          },
+          "locator": "jcm-197; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+          "accessed_at": "2026-11-08T05:07:31.962895+00:00",
+          "case_ids": [
+            "CM_NAME:9fce0b1940785bc3f6c86a0738614f3486dfc2a391f2ed8f1692b7144e9226a9",
+            "CM_NAME:ac8a6752640024db39f6260fe446cdfb6fa1b0e41b0847b9a79c6a854e766f68",
+            "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285",
+            "CM_NAME:b1e767735233d7eec805e32bab41af6dc308e50408ec5d39d57d0994bed014fb",
+            "CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b"
+          ]
+        },
+        {
+          "evidence_id": "C-E-jcm-433",
+          "capture": {
+            "root": "artifact",
+            "path": "research-c/captures/jcm-433.txt",
+            "sha256": "bd2a35c651cd8b8db154b7025c37fd0bdbcdfc4e7b6e578128ee4500a611333b"
+          },
+          "locator": "jcm-433; exact captured source response",
+          "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=433",
+          "accessed_at": "2026-11-08T05:07:32.713282+00:00",
+          "case_ids": [
+            "CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b"
+          ]
+        }
+      ],
+      "result": "Water omitted; RECIPE_TRANSCRIPTION now applies to the explicit solute and concentration only. UNKNOWN closure retained. No proof that water is chemically absent is asserted."
+    }
+  ],
+  "other_corrections": [
+    {
+      "finding_id": "W06-IR-006",
+      "case_index": 15,
+      "reasoning": "The original retrieval index reports exit 0, 1094 bytes and the actual JCM381 body hash. The body explicitly inherits 379 without peptone; captured379 names D-Glucose5g. Correct evidence kind/capture, retaining original bytes and timestamp."
+    },
+    {
+      "finding_id": "W06-IR-008",
+      "case_index": 111,
+      "reasoning": "All 40 frozen occurrences and their exact source references are retained. The separate successful JCM197 source supports the vitamin formulation. JCM receiving requests 737, 876, 887 and 955 returned Nothing found and are access limitations, not positive recipe evidence. Separately captured MediaDive J737/solution4668, J876/solution4863 and J955/solution4977 responses corroborate their exact receiving references to compound1784 labelled Trace vitamins (see Medium No. 197). No successful JCM887 receiving response is asserted. The per-occurrence ledger distinguishes explicit receiving-source bindings from other frozen solution contexts. Frozen dose/unit anomalies remain held and do not alter stock composition.",
+      "receiving_occurrence_limits": {
+        "root": "artifact",
+        "path": "successor-v3/research-c/receiving-occurrence-limits.json",
+        "sha256": "c0d2f849d16193d62155015d8aae1ad03aca75f2287d2a1e2c4e72a7b91a4c1e"
+      }
+    },
+    {
+      "finding_id": "W06-IR-009",
+      "case_index": 91,
+      "reasoning": "The frozen TOGO2414 recipe names Trypticase soy yeast broth as an entire broth preparation at 1000 ML_PER_L, consistent with the captured source amount of 1 L. Trypticase, soy digest and yeast material are not established as independent components merely by splitting the name. A whole medium/formulated mixture identity is required."
+    },
+    {
+      "finding_id": "W06-IR-010",
+      "case_index": 152,
+      "reasoning": "The raw MediaDive ingredient1886 label contains a truncated pointer to Medium No. 187, but neither its frozen source record nor the captured ingredient response identifies the originating medium or collection. The ingredient response has data.media=[]. JCM187 independently defines a trace-element stock, yet that recipe does not establish that this source-less numbered pointer denotes it. The KG source applicability remains unresolved; the supported CultureMech JCM187 contexts are retained separately.",
+      "absence_boundary": "Exact frozen case and authoritative v2 evidence ledger, plus ignored-file-inclusive search of published capture bodies. No claim that a bridge cannot exist elsewhere."
+    },
+    {
+      "finding_id": "W06-IR-011",
+      "case_index": 161,
+      "reasoning": "MediaDive1507 is a complex Yeast Nitrogen Base entry used at 1 g in J240 and at 6.7 g in each of DSMZ1682 and DSMZ1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used.",
+      "scope": "Only the misattributed J240 quantity is corrected. Frozen generic6.7g source_record remains unchanged and is not relabelled J240."
+    }
+  ],
+  "limits": "No original capture or timestamp changed. These are author judgments using inspected primary captures, not an independent review of own work. No new external retrieval, maintained mutation, downstream rebuild or release approval."
+}

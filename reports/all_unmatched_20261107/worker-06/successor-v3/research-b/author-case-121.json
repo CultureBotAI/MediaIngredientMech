@@ -1,0 +1,143 @@
+{
+  "author": "Codex /root/research_b",
+  "at": "2026-11-08T06:40:36.183483+00:00",
+  "finding_id": "W06-IR-007",
+  "case_index": 121,
+  "case_id": "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e",
+  "case_input_sha256": "dcad23dfcf3ef973a16c4ea17f157d06548a4307bc172dc0b35f573ee697f813",
+  "raw_source_label": "C. difficile supplement",
+  "occurrence_ids": [
+    "CM_OCC:0adee140d3e2899eb406461b04c73e2c83393f4bd3254fd4e7b702b617e76496"
+  ],
+  "full_frozen_occurrences": [
+    {
+      "component_path": "ingredients/10",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/brain_heart_infusion_bhi_broth_containing_c_difficile_supplement_and_0_04_cysteine.yaml",
+      "native_name": "C. difficile supplement",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:0adee140d3e2899eb406461b04c73e2c83393f4bd3254fd4e7b702b617e76496",
+      "raw_component": {
+        "concentration": {
+          "unit": "VARIABLE",
+          "value": "variable"
+        },
+        "preferred_term": "C. difficile supplement"
+      },
+      "raw_preferred_term": "C. difficile supplement",
+      "recipe_id": "CultureMech:009359",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009359"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M2811"
+        }
+      ],
+      "record_shape": "MediaRecipe",
+      "source_file": "data/normalized_yaml/bacterial/brain_heart_infusion_bhi_broth_containing_c_difficile_supplement_and_0_04_cysteine.yaml",
+      "source_file_sha256": "a04f1b5600bdef75d7bfc87472ac7265573010896eb23cce252dc215603e6f53",
+      "source_identifiers": []
+    }
+  ],
+  "previous_decision_sha256_canonical": "04c3c86d59c1c3ed3f83daab4b79c55bc5ff120d1e3587de68bff6b725185d06",
+  "new_decision_sha256_canonical": "e742e521653c88cb8eba99e263951ac7495c6c2813389b65b967b4b6adbadf59",
+  "source_evidence": [
+    {
+      "evidence_id": "C-E-121-SOURCE-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/brain_heart_infusion_bhi_broth_containing_c_difficile_supplement_and_0_04_cysteine.yaml",
+        "sha256": "a04f1b5600bdef75d7bfc87472ac7265573010896eb23cce252dc215603e6f53"
+      },
+      "locator": "Full recipe; occurrence CM_OCC:0adee140d3e2899eb406461b04c73e2c83393f4bd3254fd4e7b702b617e76496 at ingredients/10",
+      "supports_or_contradicts": "Preserves the exact raw ingredient, whole-recipe context, nested solutions, source identifiers, preparation and prior curation provenance used in this decision.",
+      "kind": "source_snapshot",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e"
+      ]
+    },
+    {
+      "evidence_id": "C-E-togo-M2811",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/togo-M2811.txt",
+        "sha256": "fd013831d8af3b6e31b246eb7b6a25ee5c31b33a497ff9795077236e81352818"
+      },
+      "locator": "togo-M2811; exact captured source response",
+      "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+      "kind": "primary_source",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2811",
+      "accessed_at": "2026-11-08T05:08:13.803882+00:00",
+      "case_ids": [
+        "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e"
+      ]
+    },
+    {
+      "evidence_id": "C-E-oxoid-cd-supplement",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/oxoid-cd-supplement.txt",
+        "sha256": "f4d33439fd4612a117e4bda8355acb75730de0675cacf874a3f77cb3e2f81372"
+      },
+      "locator": "oxoid-cd-supplement; exact captured source response",
+      "supports_or_contradicts": "Read with the case-specific reasoning and applicability; a recipe table establishes only its own stock, product labels preserve qualifiers, and ontology records establish only the stated ontology entity.",
+      "kind": "primary_source",
+      "url": "https://www.thermofisher.com/order/catalog/product/SR0096E",
+      "accessed_at": "2026-11-08T05:10:18.381743+00:00",
+      "case_ids": [
+        "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e"
+      ]
+    }
+  ],
+  "proposal": {
+    "proposal_id": "V3-B-P-OXOID-CDIFF-BHI",
+    "case_ids": [
+      "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e"
+    ],
+    "description": "TOGO M2811 explicitly assigns the BHI-branch C. difficile supplement to Oxoid and enumerates D-cycloserine plus cefoxitin. That supports a bounded combination-product identity despite missing amounts, supplied chemical forms and historical catalogue number.",
+    "evidence_ids": [
+      "C-E-121-SOURCE-1",
+      "C-E-togo-M2811",
+      "C-E-oxoid-cd-supplement",
+      "V3-B-AUTHOR-121",
+      "V3-B-DEDUP"
+    ],
+    "owner_path": "data/ingredients/mapped/oxoid_c_difficile_supplement_bhi_togo_m2811.yaml",
+    "kind": "new_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v3/research-b/payloads/oxoid_c_difficile_supplement_bhi_togo_m2811.yaml",
+      "sha256": "56c11c4d2d71d2e462f988ff7a5d2f186c8a29f3d5ec03f6379e96fcee3493f4"
+    },
+    "before_sha256": null,
+    "application_scope": "Only case121 sole BHI occurrence and the Oxoid branch of TOGO M2811; Bioconnections Braziers-agar branch is excluded. No current SR0096E SKU, freeze-dried form, vial yield or antibiotic dose is assigned. Cysteine and BHI are separate receiving-medium ingredients.",
+    "occurrence_scopes_by_case": {
+      "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e": [
+        "CM_OCC:0adee140d3e2899eb406461b04c73e2c83393f4bd3254fd4e7b702b617e76496"
+      ]
+    },
+    "source_holds_preserved": true,
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "author": "Codex /root/research_b",
+    "issue_refs": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217"
+    ]
+  },
+  "scientific_rationale": "TOGO M2811 explicitly assigns the BHI-branch C. difficile supplement to Oxoid and enumerates D-cycloserine plus cefoxitin. That supports a bounded combination-product identity despite missing amounts, supplied chemical forms and historical catalogue number.",
+  "source_application_scope": "Only case121 sole BHI occurrence and the Oxoid branch of TOGO M2811; Bioconnections Braziers-agar branch is excluded. No current SR0096E SKU, freeze-dried form, vial yield or antibiotic dose is assigned. Cysteine and BHI are separate receiving-medium ingredients.",
+  "remaining_limits": "Historical catalogue/lot, excipients, antimicrobial amounts and supplied salt/hydrate forms remain unknown. These limit quantitative/form claims and source/owner release; the source-specific product-family proposal is complete.",
+  "dedup_receipt": {
+    "root": "artifact",
+    "path": "successor-v3/research-b/dedup-receipt.json",
+    "sha256": "7e97d069a66b32ae60d34d3d464c2bafc00d0130b7e3e370bc075768b981bc22"
+  },
+  "primary_bytes_reused_without_new_access_claim": true,
+  "independent_review": "pending separate reviewer",
+  "maintained_write": false
+}

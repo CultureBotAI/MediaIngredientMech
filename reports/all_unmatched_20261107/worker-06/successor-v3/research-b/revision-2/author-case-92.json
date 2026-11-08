@@ -1,0 +1,145 @@
+{
+  "author": "Codex /root/research_b",
+  "at": "2026-11-08T06:43:42.126021+00:00",
+  "finding_id": "W06-IR-007",
+  "case_index": 92,
+  "case_id": "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4",
+  "case_input_sha256": "6b9d858b48c0ab9eb67d002ea15d85c0f7247e3290320814550663748bda6bd6",
+  "raw_source_label": "EBIOS* (dried yeast tablets)",
+  "occurrence_ids": [
+    "CM_OCC:d0c5f6280d318b98f8898d8d249e3db38354daeefe89e5765bc5925277f2e930"
+  ],
+  "full_frozen_occurrences": [
+    {
+      "component_path": "ingredients/3",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1019_EBIOS-Glucose_Agar.yaml",
+      "native_name": "EBIOS* (dried yeast tablets)",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:d0c5f6280d318b98f8898d8d249e3db38354daeefe89e5765bc5925277f2e930",
+      "raw_component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "10"
+        },
+        "notes": "Properties: Undefined component",
+        "preferred_term": "EBIOS* (dried yeast tablets)"
+      },
+      "raw_preferred_term": "EBIOS* (dried yeast tablets)",
+      "recipe_id": "CultureMech:007533",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:007533"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M1019"
+        }
+      ],
+      "record_shape": "MediaRecipe",
+      "source_file": "data/normalized_yaml/bacterial/TOGO_M1019_EBIOS-Glucose_Agar.yaml",
+      "source_file_sha256": "7613eae72336dd8117cc9c54d5a3d04fa02d401f085e6e5d1ab5a911a83bd78c",
+      "source_identifiers": []
+    }
+  ],
+  "previous_decision_sha256_canonical": "ae459be5be8624232c4920df7bdc200df656531fdea49c8e4b74ef62bb95f03a",
+  "new_decision_sha256_canonical": "87bade028a42dc0b411ecdf7e72ccc14aba89e7f0b1fb16b516fddb228dd43e0",
+  "source_evidence": [
+    {
+      "evidence_id": "B-92-frozen-0",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1019_EBIOS-Glucose_Agar.yaml",
+        "sha256": "7613eae72336dd8117cc9c54d5a3d04fa02d401f085e6e5d1ab5a911a83bd78c"
+      },
+      "kind": "source_snapshot",
+      "locator": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1019_EBIOS-Glucose_Agar.yaml; full recipe and nested preparations",
+      "supports_or_contradicts": "The soleTOGO1019 occurrence is tied toJCM969 and itsasterisk manufacturer note; the tablet state remainspart of identity.",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4"
+      ]
+    },
+    {
+      "evidence_id": "B-http-5e176f03a4e0adf0",
+      "capture": {
+        "root": "artifact",
+        "path": "research-b/captures/http-d30816ebde2cd39b1439.txt",
+        "sha256": "e0a5b7970d48f4ec47c071f9f21eb039465e95b58ca05efb3a4ed9a69508a1ca"
+      },
+      "kind": "primary_source",
+      "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+      "supports_or_contradicts": "Primary producer recipe supports only the explicitly described component, stock and preparation context; no neighbouring ingredient establishes this ingredient identity.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=969",
+      "case_ids": [
+        "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4"
+      ],
+      "accessed_at": "2026-11-08T05:07:06.324562+00:00"
+    }
+  ],
+  "proposal": {
+    "proposal_id": "V3-B-P-EBIOS",
+    "case_ids": [
+      "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4"
+    ],
+    "description": "JCM969 explicitly specifies EBIOS dried-yeast tablets from Asahi Food & Healthcare. The frozen MediaDive1953 provenance of existing EBIOS owner also describes dried-yeast tablets, so this is a bounded edit of that owner, not another yeast-extract record. Unknown excipients do not prevent this source-qualified tablet-family identity. The exact product/form label EBIOS* (dried yeast tablets) can resolve to this bounded tablet family after checking its Asahi footnote; bare EBIOS remains rejected.",
+    "evidence_ids": [
+      "B-92-frozen-0",
+      "B-http-5e176f03a4e0adf0",
+      "V3-B-AUTHOR-92",
+      "V3-B-DEDUP"
+    ],
+    "owner_path": "data/ingredients/unmapped/EBIOS.yaml",
+    "kind": "edit_existing_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v3/research-b/revision-2/payloads/ebios.yaml",
+      "sha256": "ffe5615f43b19c87da5f34edc359509634bfb4b03cad8976ee8b282c49c24993"
+    },
+    "before_sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+    "application_scope": "Only case92 and its sole JCM969/TOGO1019 frozen occurrence are attached here;10g is an addition to the receiving agar, not a component proportion. The qualified tablet raw label is retained as RAW_TEXT, without inferring excipients or lot equivalence. No whole generic EBIOS label, P2G, current catalogue formulation or worker02 historical tablet formulation is declared equivalent.",
+    "occurrence_scopes_by_case": {
+      "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4": [
+        "CM_OCC:d0c5f6280d318b98f8898d8d249e3db38354daeefe89e5765bc5925277f2e930"
+      ]
+    },
+    "source_holds_preserved": true,
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "author": "Codex /root/research_b",
+    "issue_refs": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217",
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1221"
+    ],
+    "integration_target_path": "data/ingredients/mapped/EBIOS.yaml",
+    "cross_shard_identity_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1221",
+    "cross_shard_evidence": {
+      "root": "artifact",
+      "path": "successor-v3/research-b/ebios-cross-shard-finding.json",
+      "sha256": "0fa69e99e546e64f0f7577efd9bef50114db34a7c705231c513479079311e9fd"
+    }
+  },
+  "scientific_rationale": "JCM969 explicitly specifies EBIOS dried-yeast tablets from Asahi Food & Healthcare. The frozen MediaDive1953 provenance of existing EBIOS owner also describes dried-yeast tablets, so this is a bounded edit of that owner, not another yeast-extract record. Unknown excipients do not prevent this source-qualified tablet-family identity. The exact product/form label EBIOS* (dried yeast tablets) can resolve to this bounded tablet family after checking its Asahi footnote; bare EBIOS remains rejected.",
+  "source_application_scope": "Only case92 and its sole JCM969/TOGO1019 frozen occurrence are attached here;10g is an addition to the receiving agar, not a component proportion. The qualified tablet raw label is retained as RAW_TEXT, without inferring excipients or lot equivalence. No whole generic EBIOS label, P2G, current catalogue formulation or worker02 historical tablet formulation is declared equivalent.",
+  "remaining_limits": "Tablet excipients, quantitative composition and historical catalogue/lot remain unknown. Worker01 same-owner proposal and worker02 related-tablet proposal require coordinator selection under issue1221. All source/owner-release obligations and downstream holds remain; the bounded payload is complete.",
+  "dedup_receipt": {
+    "root": "artifact",
+    "path": "successor-v3/research-b/dedup-receipt.json",
+    "sha256": "7e97d069a66b32ae60d34d3d464c2bafc00d0130b7e3e370bc075768b981bc22"
+  },
+  "primary_bytes_reused_without_new_access_claim": true,
+  "independent_review": "pending separate reviewer",
+  "maintained_write": false,
+  "reviewer_feedback_resolution": {
+    "reviewer": "Codex /root/research_a",
+    "finding": "Blanket rejection of a qualified product/form label on account of contextual asterisk was unsupported.",
+    "before_payload": {
+      "root": "artifact",
+      "path": "successor-v3/research-b/author-attempt-1/ebios.yaml",
+      "sha256": "00d91e034d52c09c7981377b873ede8aff171a34713ad56eaf58fdb3bcc778de"
+    },
+    "resolution": "Qualified tablet RAW_TEXT accepted; ambiguous bare EBIOS still REJECTED_LABEL. No excipient, lot, yeast-extract or current-formula equivalence inferred."
+  }
+}

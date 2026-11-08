@@ -1,0 +1,35 @@
+{
+  "review_id": "V3-A-B-INITIAL",
+  "reviewer": "Codex /root/research_a",
+  "at": "2026-11-08T06:43:25.788579+00:00",
+  "reviewed_scope": "B four new successor product payloads, source scopes and unchanged TypeA payload plus cases71/102/173",
+  "inputs": [
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-b/payloads/rm_trace_metals_togo_m3181.yaml",
+      "reviewed_sha256": "611ffa608393f5e9e47652cea29e9759a302f88477788ca3e3ef978fdaeacecf",
+      "note": "Author is revising; original bytes must be supplied by author delta receipt before final scientific receipt."
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-06/successor-v3/research-a/review-b/initial-ebios.yaml",
+      "sha256": "00d91e034d52c09c7981377b873ede8aff171a34713ad56eaf58fdb3bcc778de"
+    }
+  ],
+  "findings": [
+    {
+      "id": "V3-A-B-RM-01",
+      "parent_finding": "W06-IR-007",
+      "status": "open",
+      "severity": "minor",
+      "assessment": "The seven narrative salts and0.25mL concentratedHCl per litre are supported. Unknown acid concentration does not itself determine component membership completeness. Parsed TOGO paragraph10 explicitly names distilledwater1L; the payload omits even water membership while citing that table. Preserve water as an unquantified explicitly table-named constituent and preserve printed1L in evidence without choosing additive-water or final-volume semantics. Explain remaining membership/preparation-closure uncertainty independently of acid strength."
+    },
+    {
+      "id": "V3-A-B-EBIOS-01",
+      "parent_finding": "W06-IR-007",
+      "status": "open",
+      "severity": "minor",
+      "assessment": "EBIOS* (dried yeast tablets) is an identifying source product/form label, with the asterisk pointing to the Asahi manufacturer. It is not a generic trace-stock heading. Preserve as RAW_TEXT rather than rejecting because starred. Bare EBIOS remains REJECTED_LABEL due broader brand/P2G ambiguity; historical lot and excipient uncertainty persist."
+    }
+  ],
+  "other_scope": "Oxoid BHI versus Bioconnections agar, TypeB versus TypeA/intact casein, and TypeA seven qualified/four unspecified contexts are source-supported in inspected captures; final receipt will bind exact final bytes and full case outcomes.",
+  "release_approval": false
+}

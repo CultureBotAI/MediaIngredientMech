@@ -1,0 +1,484 @@
+{
+  "schema_version": "1.0",
+  "proposals": [
+    {
+      "proposal_id": "V3-B-P-EBIOS",
+      "case_ids": [
+        "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4"
+      ],
+      "description": "JCM969 explicitly specifies EBIOS dried-yeast tablets from Asahi Food & Healthcare. The frozen MediaDive1953 provenance of existing EBIOS owner also describes dried-yeast tablets, so this is a bounded edit of that owner, not another yeast-extract record. Unknown excipients do not prevent this source-qualified tablet-family identity.",
+      "evidence_ids": [
+        "B-92-frozen-0",
+        "B-http-5e176f03a4e0adf0",
+        "V3-B-AUTHOR-92",
+        "V3-B-DEDUP"
+      ],
+      "owner_path": "data/ingredients/unmapped/EBIOS.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-b/payloads/ebios.yaml",
+        "sha256": "00d91e034d52c09c7981377b873ede8aff171a34713ad56eaf58fdb3bcc778de"
+      },
+      "before_sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+      "application_scope": "Only case92 and its sole JCM969/TOGO1019 frozen occurrence are attached here;10g is an addition to the receiving agar, not a component proportion. No whole generic EBIOS label, P2G, current catalogue formulation or worker02 historical tablet formulation is declared equivalent.",
+      "occurrence_scopes_by_case": {
+        "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4": [
+          "CM_OCC:d0c5f6280d318b98f8898d8d249e3db38354daeefe89e5765bc5925277f2e930"
+        ]
+      },
+      "source_holds_preserved": true,
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root/research_b",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1221"
+      ],
+      "integration_target_path": "data/ingredients/mapped/EBIOS.yaml",
+      "cross_shard_identity_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1221",
+      "cross_shard_evidence": {
+        "root": "artifact",
+        "path": "successor-v3/research-b/ebios-cross-shard-finding.json",
+        "sha256": "0fa69e99e546e64f0f7577efd9bef50114db34a7c705231c513479079311e9fd"
+      }
+    },
+    {
+      "proposal_id": "V3-B-P-RM-TRACE-METALS",
+      "case_ids": [
+        "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829"
+      ],
+      "description": "The full TOGO M3181 narrative explicitly supplies all seven trace salts, including Na2MoO4·2H2O40mg/L, plus0.25mL concentratedHCl per litre. The parsed table omission is documented and does not block a bounded narrative transcription. This is chemically distinct from NBRC1117 SL7 and JCM187. Parsed-table distilled-water membership is retained without a structural quantity; the printed1L remains in evidence and is not assigned additive or final-volume meaning.",
+      "evidence_ids": [
+        "C-E-118-SOURCE-1",
+        "C-E-togo-M3181-reused",
+        "V3-B-AUTHOR-118",
+        "V3-B-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/rm_trace_metals_togo_m3181.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-b/payloads/rm_trace_metals_togo_m3181.yaml",
+        "sha256": "ee60a45313de668fdf341326c6b45c58bf56fc03b733dad6e4d74f9ada899d70"
+      },
+      "before_sha256": null,
+      "application_scope": "Only case118 RM/TOGO M3181 occurrence; retain its raw Trace metals label without global resolution. The source reports1mL stock per litre of receiving medium, while the frozen flattened values remain held. Per-litre constituent basis is retained without inventing stock solvent amount or final-volume preparation.",
+      "occurrence_scopes_by_case": {
+        "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829": [
+          "CM_OCC:98066528784f7e4d7529338389a591de111853a63a3054c42870ecaf5be508f3"
+        ]
+      },
+      "source_holds_preserved": true,
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root/research_b",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217"
+      ]
+    },
+    {
+      "proposal_id": "V3-B-P-OXOID-CDIFF-BHI",
+      "case_ids": [
+        "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e"
+      ],
+      "description": "TOGO M2811 explicitly assigns the BHI-branch C. difficile supplement to Oxoid and enumerates D-cycloserine plus cefoxitin. That supports a bounded combination-product identity despite missing amounts, supplied chemical forms and historical catalogue number.",
+      "evidence_ids": [
+        "C-E-121-SOURCE-1",
+        "C-E-togo-M2811",
+        "C-E-oxoid-cd-supplement",
+        "V3-B-AUTHOR-121",
+        "V3-B-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/oxoid_c_difficile_supplement_bhi_togo_m2811.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-b/payloads/oxoid_c_difficile_supplement_bhi_togo_m2811.yaml",
+        "sha256": "56c11c4d2d71d2e462f988ff7a5d2f186c8a29f3d5ec03f6379e96fcee3493f4"
+      },
+      "before_sha256": null,
+      "application_scope": "Only case121 sole BHI occurrence and the Oxoid branch of TOGO M2811; Bioconnections Braziers-agar branch is excluded. No current SR0096E SKU, freeze-dried form, vial yield or antibiotic dose is assigned. Cysteine and BHI are separate receiving-medium ingredients.",
+      "occurrence_scopes_by_case": {
+        "CM_NAME:bc3dc6a0aa0d5a75501327d847834889ed6694b3e6f4812e7ea466b2a5edb62e": [
+          "CM_OCC:0adee140d3e2899eb406461b04c73e2c83393f4bd3254fd4e7b702b617e76496"
+        ]
+      },
+      "source_holds_preserved": true,
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root/research_b",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217"
+      ]
+    },
+    {
+      "proposal_id": "V3-B-P-SHEFFIELD-TYPE-B",
+      "case_ids": [
+        "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc"
+      ],
+      "description": "TOGO M2815 explicitly names Sheffield Chemical N-Z Amine Type B and describes it as an enzymatic digest of casein. Supplier and grade support a bounded undefined-product identity. Casein is the substrate of hydrolysis, not an asserted intact constituent, and Type A is a different product boundary.",
+      "evidence_ids": [
+        "C-E-125-SOURCE-1",
+        "C-E-togo-M2815",
+        "V3-B-AUTHOR-125",
+        "V3-B-DEDUP"
+      ],
+      "owner_path": "data/ingredients/mapped/sheffield_n_z_amine_type_b.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successor-v3/research-b/payloads/sheffield_n_z_amine_type_b.yaml",
+        "sha256": "a3d42c86d30bd809c4cd0185cd360edeb3c588c5e62ce5135c7aec2e64b52bc6"
+      },
+      "before_sha256": null,
+      "application_scope": "Only case125 sole TOGO M2815 occurrence with the full supplier/type-qualified raw label. Preserve the source1% inclusion wording without assuming percent basis, molecular composition, powder form or catalogue equivalence.",
+      "occurrence_scopes_by_case": {
+        "CM_NAME:caf54f0783c080d3df4229df13aa74bf3c1bf563786bcca5994803f7d0d130cc": [
+          "CM_OCC:dd2ad98d837f681cac5b6917ee7d940bb50ca9f3b6a10ac6b6932ade6dc7d5ca"
+        ]
+      },
+      "source_holds_preserved": true,
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root/research_b",
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217"
+      ]
+    },
+    {
+      "proposal_id": "C-P-NZAMINE-A",
+      "case_ids": [
+        "CM_NAME:a068b8e304ea67121e10f7c68d6740704e58bb067bf7a3240715296058cf201c",
+        "CM_NAME:7513c6aa9fa07a62140c31216b5451cd6a58bd0d439e7e6fb0162efb861723cc",
+        "KG_CASE:76b7ec57f55a2844dca81522cea506fb5fe462bb33e816d65567073dd433cde5"
+      ],
+      "description": "Bounded raw-source alias addition with existing identity/status and prior decisions preserved; The primary JCM437 table spells N-Z Amine,type A(Sheffield), resolving the doubled dash in the frozen label while retaining the type-A qualifier. The supplier description confirms N-Z-Amine A is an enzymatic casein digest; this is not pure casein, TypeB or N-Z-Case by lexical similarity. Combined with independently checked B71 raw lowercase variant from six JCM recipes; retains UNMAPPED and does not assert supplier catalogue equivalence. Successor-v3 adds a metadata-only backlink for the seven explicitly Sheffield/typeA receiving contexts of source1608; four unspecified contexts remain excluded. The exact TypeA owner payload is unchanged.",
+      "evidence_ids": [
+        "C-E-102-SOURCE-1",
+        "C-E-jcm-437",
+        "C-E-nzamine-product",
+        "C-E-OWNER-N-Z-Amine_A",
+        "C-E-NZA71-B-http-847f8e33b73d1d5d",
+        "C-E-NZA71-B-http-02ee12675d5eee5e",
+        "C-E-NZA71-B-http-83faea6462672023",
+        "C-E-NZA71-B-http-b4d113edd05a92bb",
+        "C-E-NZA71-B-http-e6f3d38306ecdabf",
+        "C-E-NZA71-B-http-f25bd8845c0ec805",
+        "C-E-NZA71-REVIEW",
+        "B-71-frozen-0",
+        "B-71-frozen-1",
+        "B-71-frozen-2",
+        "B-71-frozen-3",
+        "B-71-frozen-4",
+        "B-71-frozen-5",
+        "B-http-847f8e33b73d1d5d",
+        "B-http-02ee12675d5eee5e",
+        "B-http-83faea6462672023",
+        "B-http-b4d113edd05a92bb",
+        "B-http-e6f3d38306ecdabf",
+        "B-http-f25bd8845c0ec805",
+        "B-owner-N-Z-Amine_A",
+        "B-owner-N-Z_Amine",
+        "R-frozen-shard",
+        "R-ingredient-1608",
+        "R-medium-1762",
+        "R-medium-J44",
+        "R-medium-J45",
+        "R-medium-J47",
+        "R-medium-J80",
+        "R-medium-J103",
+        "R-medium-J104",
+        "R-medium-J437",
+        "R-medium-548",
+        "R-medium-552",
+        "R-medium-554",
+        "V3-B-AUTHOR-173",
+        "V3-B-DEDUP"
+      ],
+      "owner_path": "data/ingredients/unmapped/N-Z-Amine_A.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "research-c/after/N-Z-Amine_A.yaml",
+        "sha256": "2b41a8b33bfd414a58e426079ca5e22393bf589991209caaa83ea2d4fd4ed077"
+      },
+      "before_sha256": "ce2bff1b6931364260cb5469ae368622a574aeb59bffd1a6be9c5e7499fea078",
+      "integration_obligations": [
+        "Withdraw inherited owner support; preserve all source holds.",
+        "Native formal owner review and independent skeptical review required before application.",
+        "Apply only through guarded writer after cross-shard collision review; no downstream rebuild authorized in worker."
+      ],
+      "pending_coordinator_case_backlinks": [
+        "CM_NAME:7513c6aa9fa07a62140c31216b5451cd6a58bd0d439e7e6fb0162efb861723cc"
+      ],
+      "source_context_scopes_by_case": {
+        "KG_CASE:76b7ec57f55a2844dca81522cea506fb5fe462bb33e816d65567073dd433cde5": {
+          "included": [
+            {
+              "medium": "J44",
+              "evidence_id": "R-medium-J44",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-J44.body",
+                "sha256": "e32c78d31b6f5b6c75d9ced9e47942b1b383e2bc3ec6979c6dbd226bf7e991a5"
+              },
+              "row": {
+                "solution_id": 3666,
+                "row": {
+                  "recipe_order": 3,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "condition": " type A",
+                  "attribute": "Sheffield",
+                  "amount": 2,
+                  "unit": "g",
+                  "g_l": 2,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "J45",
+              "evidence_id": "R-medium-J45",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-J45.body",
+                "sha256": "18a010cc5e471c5e74f57a7656f9605c7b30e87a745e19cc3adf93c3266ecf3a"
+              },
+              "row": {
+                "solution_id": 3667,
+                "row": {
+                  "recipe_order": 3,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "condition": " type A",
+                  "attribute": "Sheffield",
+                  "amount": 2,
+                  "unit": "g",
+                  "g_l": 2,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "J47",
+              "evidence_id": "R-medium-J47",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-J47.body",
+                "sha256": "09e2d1296555fcfa80f1c1d51702b2e1684dcdacc51bffc09e8e034002399b2d"
+              },
+              "row": {
+                "solution_id": 3669,
+                "row": {
+                  "recipe_order": 3,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "condition": " type A",
+                  "attribute": "Sheffield",
+                  "amount": 5,
+                  "unit": "g",
+                  "g_l": 5,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "J80",
+              "evidence_id": "R-medium-J80",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-J80.body",
+                "sha256": "b541c6c2c7b3a095b6b3093dcbe86f3c2cf334b003bd3e56b967c693368bbeb4"
+              },
+              "row": {
+                "solution_id": 3707,
+                "row": {
+                  "recipe_order": 1,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "condition": " type A",
+                  "attribute": "Sheffield",
+                  "amount": 5,
+                  "unit": "g",
+                  "g_l": 4.62963,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "J103",
+              "evidence_id": "R-medium-J103",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-J103.body",
+                "sha256": "c1b0f9e6ca75c70d69fc989633798aa5d217be1a236f739e944cbd90027fd242"
+              },
+              "row": {
+                "solution_id": 3736,
+                "row": {
+                  "recipe_order": 3,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "condition": " type A",
+                  "attribute": "Sheffield",
+                  "amount": 2,
+                  "unit": "g",
+                  "g_l": 2,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "J104",
+              "evidence_id": "R-medium-J104",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-J104.body",
+                "sha256": "84b553523c77e790c16f6382a9b14da4ec3ad27b29cfab7d8d2beedff66e436b"
+              },
+              "row": {
+                "solution_id": 3737,
+                "row": {
+                  "recipe_order": 3,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "condition": " type A",
+                  "attribute": "Sheffield",
+                  "amount": 2,
+                  "unit": "g",
+                  "g_l": 2,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "J437",
+              "evidence_id": "R-medium-J437",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-J437.body",
+                "sha256": "d18a108b4834aa251706aad2d0baaf77c4884e6ad082caca281308c4bdd5278e"
+              },
+              "row": {
+                "solution_id": 4183,
+                "row": {
+                  "recipe_order": 4,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "condition": " type A",
+                  "attribute": "Sheffield",
+                  "amount": 5,
+                  "unit": "g",
+                  "g_l": 5,
+                  "optional": 0
+                }
+              }
+            }
+          ],
+          "excluded": [
+            {
+              "medium": "1762",
+              "evidence_id": "R-medium-1762",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-1762.body",
+                "sha256": "6db19defa7628bcdfb2cc8e5b34f47cfcfac0a1e6bec265547ac9a77bba46957"
+              },
+              "row": {
+                "solution_id": 5499,
+                "row": {
+                  "recipe_order": 3,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "amount": 2,
+                  "unit": "g",
+                  "g_l": 2,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "548",
+              "evidence_id": "R-medium-548",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-548.body",
+                "sha256": "091fb0a6d947e54abcdec442c4281b2c418118586f48161a46539e4b26c32bc1"
+              },
+              "row": {
+                "solution_id": 1210,
+                "row": {
+                  "recipe_order": 3,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "attribute": "enzymatic digest of casein",
+                  "amount": 2,
+                  "unit": "g",
+                  "g_l": 2,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "552",
+              "evidence_id": "R-medium-552",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-552.body",
+                "sha256": "7cc5094a115efb528f159a1f1b41664536354653f09455f41f9e4be7533fc5df"
+              },
+              "row": {
+                "solution_id": 1214,
+                "row": {
+                  "recipe_order": 4,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "amount": 5,
+                  "unit": "g",
+                  "g_l": 5,
+                  "optional": 0
+                }
+              }
+            },
+            {
+              "medium": "554",
+              "evidence_id": "R-medium-554",
+              "capture": {
+                "root": "artifact",
+                "path": "research-root/captures/medium-554.body",
+                "sha256": "0106dcad7316a712a984402535a6007855c6de2950a8afbf291829ce4fddb2ba"
+              },
+              "row": {
+                "solution_id": 1216,
+                "row": {
+                  "recipe_order": 4,
+                  "compound": "N-Z amine",
+                  "compound_id": 1608,
+                  "amount": 5,
+                  "unit": "g",
+                  "g_l": 5,
+                  "optional": 0
+                }
+              }
+            }
+          ]
+        }
+      },
+      "successor_metadata_review": {
+        "status": "pending",
+        "evidence_ids": [],
+        "scope": "New case173 source-context attachment only; prior case71/102 scientific payload review remains historical."
+      }
+    }
+  ]
+}

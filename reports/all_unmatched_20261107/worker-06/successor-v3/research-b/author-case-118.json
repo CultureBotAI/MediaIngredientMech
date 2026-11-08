@@ -1,0 +1,136 @@
+{
+  "author": "Codex /root/research_b",
+  "at": "2026-11-08T06:43:05.687105+00:00",
+  "finding_id": "W06-IR-007",
+  "case_index": 118,
+  "case_id": "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829",
+  "case_input_sha256": "0aadda410f8ed6bb6cbf01887600df5ba64503aa6f434feb114af1d18f8bdbc3",
+  "raw_source_label": "Trace metals",
+  "occurrence_ids": [
+    "CM_OCC:98066528784f7e4d7529338389a591de111853a63a3054c42870ecaf5be508f3"
+  ],
+  "full_frozen_occurrences": [
+    {
+      "component_path": "ingredients/10",
+      "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml",
+      "native_name": "Trace metals",
+      "native_scope": "root_component",
+      "occurrence_id": "CM_OCC:98066528784f7e4d7529338389a591de111853a63a3054c42870ecaf5be508f3",
+      "raw_component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "1"
+        },
+        "preferred_term": "Trace metals"
+      },
+      "raw_preferred_term": "Trace metals",
+      "recipe_id": "CultureMech:009631",
+      "recipe_source_identifiers": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009631"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M3181"
+        }
+      ],
+      "record_shape": "MediaRecipe",
+      "source_file": "data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml",
+      "source_file_sha256": "cd27c306956a5bb27445cdde8916ae9dd5f2b1e9f8463b1b3aeaf5cb479c5d85",
+      "source_identifiers": []
+    }
+  ],
+  "previous_decision_sha256_canonical": "572a3109fd37dcbab078c45f8a84a7a4c96b3822db1dc075169309102dac7ae5",
+  "new_decision_sha256_canonical": "45f15efc2a1e48e00755b50da4ce90f0b93946b24ff6e2c86b9169ae8a437425",
+  "source_evidence": [
+    {
+      "evidence_id": "C-E-118-SOURCE-1",
+      "capture": {
+        "root": "source",
+        "path": "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml",
+        "sha256": "cd27c306956a5bb27445cdde8916ae9dd5f2b1e9f8463b1b3aeaf5cb479c5d85"
+      },
+      "locator": "Full recipe; occurrence CM_OCC:98066528784f7e4d7529338389a591de111853a63a3054c42870ecaf5be508f3 at ingredients/10",
+      "supports_or_contradicts": "Preserves the exact raw ingredient, whole-recipe context, nested solutions, source identifiers, preparation and prior curation provenance used in this decision.",
+      "kind": "source_snapshot",
+      "url": null,
+      "case_ids": [
+        "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829"
+      ]
+    },
+    {
+      "evidence_id": "C-E-togo-M3181-reused",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/togo-M3181-reused.txt",
+        "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f"
+      },
+      "locator": "RM medium Trace metals stock and separate Trace vitamins stock",
+      "supports_or_contradicts": "Supplies the recipe-specific RM stock constituents; does not establish generic stock aliases.",
+      "kind": "primary_source",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181",
+      "accessed_at": "2026-11-08T05:08:17.780352+00:00",
+      "case_ids": [
+        "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829"
+      ]
+    }
+  ],
+  "proposal": {
+    "proposal_id": "V3-B-P-RM-TRACE-METALS",
+    "case_ids": [
+      "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829"
+    ],
+    "description": "The full TOGO M3181 narrative explicitly supplies all seven trace salts, including Na2MoO4·2H2O40mg/L, plus0.25mL concentratedHCl per litre. The parsed table omission is documented and does not block a bounded narrative transcription. This is chemically distinct from NBRC1117 SL7 and JCM187. Parsed-table distilled-water membership is retained without a structural quantity; the printed1L remains in evidence and is not assigned additive or final-volume meaning.",
+    "evidence_ids": [
+      "C-E-118-SOURCE-1",
+      "C-E-togo-M3181-reused",
+      "V3-B-AUTHOR-118",
+      "V3-B-DEDUP"
+    ],
+    "owner_path": "data/ingredients/mapped/rm_trace_metals_togo_m3181.yaml",
+    "kind": "new_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successor-v3/research-b/payloads/rm_trace_metals_togo_m3181.yaml",
+      "sha256": "ee60a45313de668fdf341326c6b45c58bf56fc03b733dad6e4d74f9ada899d70"
+    },
+    "before_sha256": null,
+    "application_scope": "Only case118 RM/TOGO M3181 occurrence; retain its raw Trace metals label without global resolution. The source reports1mL stock per litre of receiving medium, while the frozen flattened values remain held. Per-litre constituent basis is retained without inventing stock solvent amount or final-volume preparation.",
+    "occurrence_scopes_by_case": {
+      "CM_NAME:b56cbd0b748380534f2d72415ca026a0b2566c470a991997afa83454c472e829": [
+        "CM_OCC:98066528784f7e4d7529338389a591de111853a63a3054c42870ecaf5be508f3"
+      ]
+    },
+    "source_holds_preserved": true,
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "author": "Codex /root/research_b",
+    "issue_refs": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217"
+    ]
+  },
+  "scientific_rationale": "The full TOGO M3181 narrative explicitly supplies all seven trace salts, including Na2MoO4·2H2O40mg/L, plus0.25mL concentratedHCl per litre. The parsed table omission is documented and does not block a bounded narrative transcription. This is chemically distinct from NBRC1117 SL7 and JCM187. Parsed-table distilled-water membership is retained without a structural quantity; the printed1L remains in evidence and is not assigned additive or final-volume meaning.",
+  "source_application_scope": "Only case118 RM/TOGO M3181 occurrence; retain its raw Trace metals label without global resolution. The source reports1mL stock per litre of receiving medium, while the frozen flattened values remain held. Per-litre constituent basis is retained without inventing stock solvent amount or final-volume preparation.",
+  "remaining_limits": "Concentrated-HCl strength and stock solvent quantity/final-volume procedure remain unknown. Parsed-table distilled-water membership is retained explicitly, while its printed1L basis and full preparation closure remain unresolved alongside the documented molybdate omission. Child exact identities and source/owner-release obligations remain; no source-specific stock proposal work is deferred.",
+  "dedup_receipt": {
+    "root": "artifact",
+    "path": "successor-v3/research-b/dedup-receipt.json",
+    "sha256": "7e97d069a66b32ae60d34d3d464c2bafc00d0130b7e3e370bc075768b981bc22"
+  },
+  "primary_bytes_reused_without_new_access_claim": true,
+  "independent_review": "pending separate reviewer",
+  "maintained_write": false,
+  "reviewer_feedback_resolution": {
+    "reviewer": "Codex /root/research_a",
+    "finding": "Parsed water membership omitted; acid-strength uncertainty incorrectly used to explain UNKNOWN membership closure.",
+    "before_payload": {
+      "root": "artifact",
+      "path": "successor-v3/research-b/author-attempt-1/rm_trace_metals_togo_m3181.yaml",
+      "sha256": "611ffa608393f5e9e47652cea29e9759a302f88477788ca3e3ef978fdaeacecf"
+    },
+    "resolution": "Unquantified water membership with explicit parsed1L attribution; closure uncertainty now separate from chemical strength and amount uncertainty."
+  }
+}

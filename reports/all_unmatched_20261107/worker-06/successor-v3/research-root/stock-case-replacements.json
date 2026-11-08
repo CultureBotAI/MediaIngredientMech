@@ -1,0 +1,121 @@
+{
+  "replacements": [
+    {
+      "case_index": 19,
+      "decision": {
+        "case_id": "CM_NAME:13cefff78cf8e9a8c3f2814ab5e4406a797d0ab1ccd53fb9ea6c63036fa08e4b",
+        "case_input_sha256": "b7cb6a3fd6f8ced006c34317b734193d0b7b9d24245075b5509fc8035d3a776f",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution**",
+          "source_label": "Trace element solution**",
+          "raw_source_label": "Trace element solution**"
+        },
+        "occurrence_ids": [
+          "CM_OCC:d378f68946820ab704a621452e69c81b6679352a07fe38758e1499eb20e9e841",
+          "CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5",
+          "CM_OCC:e7c13d84e80927c02ae09fb68501cd9d8c84e442061bd42b9a58394e1f8fe03d"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "Complete primary tables distinguish NBRC1020/824 (shared NTA/KOH stock, separate Se/W supplement) from NBRC1308. Independent comparison now shows that NBRC1308 and NBRC1356 have the same13 specified solutes,1L water input, NTA→NaOH pH6.5→minerals and stated finalpH7.0 preparation. Two uninstalled identities are therefore replaced by one reconciled nominal formulation proposal. RecipeIDs, footnotes and metadata differences do not establish another substance.",
+        "applicability": "All three original occurrences remain. Only CultureMech:007471 ingredients/8, source nbrc.medium:1308, occurrence CM_OCC:e689137127cd84bead1063ab24e931745a4a44fb673a953471ea3ab33e3a3df5 uses the reconciled stock (1ml, autoclaved with receiving medium underN2/CO2 80/20). CultureMech:007450 ingredients/8 and CultureMech:007496 ingredients/7 remain exclusively A-P-NBRC1020-824-TRACE. Raw Trace element solution** is occurrence-local. No source file basename is used to infer the NBRC accession.",
+        "evidence_ids": [
+          "A-E-19-S00",
+          "A-E-19-S01",
+          "A-E-19-S02",
+          "A-E-CAPTURE-145",
+          "A-E-CAPTURE-149",
+          "A-E-CAPTURE-157",
+          "A-E-NATIVE-OWNER-DEDUP",
+          "C-E-nbrc-1356",
+          "V2-E-PRIMARY-COMPARISON",
+          "V2-E-EXISTING-OWNER-SEARCH",
+          "V2-E-LINEAGE",
+          "V2-E-SUPPLEMENT",
+          "V2-E-ISSUE1207",
+          "V3-ROOT-001-MEMBERSHIP"
+        ],
+        "proposal_ids": [
+          "V2-P-NBRC1308-1356-TRACE",
+          "A-P-NBRC1020-824-TRACE"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "NaOH quantity, form and concentration remain unspecified; 1 L distilled water is an input, not an asserted final volume. The final pH7.0 statement is a condition and does not establish another titration or additional reagent. Source membership is complete relative to the full cited preparation. Retain source-specific dose/processing, all existing source/owner/export holds, and the distinction between nominal input identity and post-processing chemical endpoints.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1207"
+        ],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        },
+        "prior_decision_binding": {
+          "commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+          "path": "reports/all_unmatched_20261107/worker-06/decisions.json",
+          "decision_sha256": "b2c02fc93c3e13384d67ef586b96e528fa013bb01d8e71f2b506af6b38ef4db1",
+          "prior_independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-A"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case_index": 133,
+      "decision": {
+        "case_id": "CM_NAME:dfa4a8d37ab889934a8f5907c93a8dfbe24898eb5641f6b038c55477dd355230",
+        "case_input_sha256": "1bfe3edee45311f9631abef8af89b11f959b57f98eaee25868ef409384672599",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Trace element solution****",
+          "source_label": "Trace element solution****",
+          "raw_source_label": "Trace element solution****"
+        },
+        "occurrence_ids": [
+          "CM_OCC:2c345cfde3bd9095fd0dad8782a6d904e0bf1ef8beb5c12333b78d7916f8cb03"
+        ],
+        "disposition": "new_distinct_ingredient_proposal",
+        "reasoning": "NBRC1356 has the same complete13-solute/water table and NTA/NaOH preparation as NBRC1308. It does not warrant a distinct whole-stock registry owner merely because its local label has four stars or NaOH metadata/closure were encoded differently. One successor proposal replaces both uninstalled proposals; unknown quantities, water basis and chemical forms remain explicit.",
+        "applicability": "The only occurrence, CultureMech:007474 ingredients/6, nbrc.medium:1356, CM_OCC:2c345cfde3bd9095fd0dad8782a6d904e0bf1ef8beb5c12333b78d7916f8cb03, links to the shared nominal formulation. Its10ml filter-sterile concentrated-stock addition inN2-handled medium stays distinct from1308 processing. Raw Trace element solution**** remains local provenance, not a global synonym. Equality of nominal formulation does not assert identical post-processing endpoints.",
+        "evidence_ids": [
+          "C-E-133-SOURCE-1",
+          "C-E-nbrc-1356",
+          "A-E-CAPTURE-149",
+          "V2-E-PRIMARY-COMPARISON",
+          "V2-E-EXISTING-OWNER-SEARCH",
+          "V2-E-LINEAGE",
+          "V2-E-SUPPLEMENT",
+          "V2-E-ISSUE1207",
+          "V3-ROOT-001-MEMBERSHIP"
+        ],
+        "proposal_ids": [
+          "V2-P-NBRC1308-1356-TRACE"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "NaOH quantity, form and concentration remain unspecified; 1 L distilled water is an input, not an asserted final volume. The final pH7.0 statement is a condition and does not establish another titration or additional reagent. Source membership is complete relative to the full cited preparation. Retain source-specific dose/processing, all existing source/owner/export holds, and the distinction between nominal input identity and post-processing chemical endpoints.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1207"
+        ],
+        "independent_review": {
+          "status": "pending",
+          "evidence_ids": []
+        },
+        "reviewed_source_index": 133,
+        "prior_decision_binding": {
+          "commit": "d5a7613c931d45d057eaca7b5ec15280aca76c9e",
+          "path": "reports/all_unmatched_20261107/worker-06/decisions.json",
+          "decision_sha256": "0713ca5d16599256731b07453e470af7b613e961d7e174c4be553a0bf174529e",
+          "prior_independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-C"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

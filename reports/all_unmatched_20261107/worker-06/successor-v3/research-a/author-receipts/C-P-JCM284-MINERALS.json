@@ -1,0 +1,95 @@
+{
+  "author": "Codex /root/research_a",
+  "at": "2026-11-08T06:36:24.206519+00:00",
+  "finding_id": "W06-IR-002",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217",
+  "proposal_id": "C-P-JCM284-MINERALS",
+  "input_selection": {
+    "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/selection.json",
+    "sha256": "4d716bee7fafb8fe081e1604da305d8ecfd0c05fc3e40bcdf3aa6ba0cd0d157a"
+  },
+  "before_proposed_payload": {
+    "root": "artifact",
+    "path": "research-c/after/JCM_284_Trace_Element_Solution.yaml",
+    "sha256": "ce63147153e11371cfb5545ccb93798c45f0fd141f3224241a842c54f2555ec0"
+  },
+  "after_capture": {
+    "root": "artifact",
+    "path": "successor-v3/research-a/payloads/JCM_284_Trace_Element_Solution.yaml",
+    "sha256": "cd1d51c860fc2db38863b07673169764408a821a6e3836780201a7d87e87ebe5"
+  },
+  "maintained_owner_before_sha256": null,
+  "owner_path": "data/ingredients/mapped/JCM_284_Trace_Element_Solution.yaml",
+  "case_ids": [
+    "CM_NAME:ea939d251b767935d74f8a0ac0b828a4a0c3f877e460a9e8c49af0531d30ac88"
+  ],
+  "scientific_reason": "This is JCM284 minerals, not its vitamins or separate Se/W solution. The providerless number lacks the collection and table identity. Retain the qualified name, initial200ml water within the final1L preparation and unquantified KOH adjustments.",
+  "primary_evidence": [
+    {
+      "evidence_id": "C-E-jcm-284",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-284.txt",
+        "sha256": "6566ba45030bfac8958271e24e81e63f62ee15deecf119495f03f649797f34d7"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=284",
+      "original_accessed_at": "2026-11-08T05:07:32.228337+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "C-E-jcm-1375",
+      "capture": {
+        "root": "artifact",
+        "path": "research-c/captures/jcm-1375.txt",
+        "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+      },
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375",
+      "original_accessed_at": "2026-11-08T05:07:29.753368+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    }
+  ],
+  "alias_changes": [
+    {
+      "proposal_id": "C-P-JCM284-MINERALS",
+      "field": "synonyms/0",
+      "before": {
+        "synonym_text": "Trace element solution (see Medium No. 284 )",
+        "synonym_type": "RAW_TEXT",
+        "source": "JCM284 named stock reference; frozen CultureMech shard06"
+      },
+      "after": {
+        "synonym_text": "Trace element solution (see Medium No. 284 )",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "JCM284 named stock reference; frozen CultureMech shard06"
+      },
+      "source_context_reason": "This is JCM284 minerals, not its vitamins or separate Se/W solution. The providerless number lacks the collection and table identity. Retain the qualified name, initial200ml water within the final1L preparation and unquantified KOH adjustments.",
+      "before_resolves": true,
+      "after_resolves": false
+    }
+  ],
+  "canonical_label_change": {
+    "before_preferred": "JCM 284 trace element solution",
+    "after_preferred": "JCM 284 trace element solution",
+    "before_ontology_label": "JCM 284 trace element solution",
+    "after_ontology_label": "JCM 284 trace element solution",
+    "external_id_label_preserved": true
+  },
+  "unchanged_fields": [
+    "identifier",
+    "mapping_status",
+    "ontology_id",
+    "mapping_quality",
+    "components",
+    "component_assertion",
+    "supplied_form if present",
+    "all raw synonym text and source",
+    "all prior history",
+    "source holds"
+  ],
+  "applicability_limit": "Existing occurrence-scoped formulation support only. No collection is inferred from a bare medium number; C/root separately correct W06-IR-010 and W06-IR-008. Existing unrelated scientific claims are not recertified.",
+  "independent_review": {
+    "status": "pending"
+  },
+  "maintained_write": false,
+  "source_owner_export_approval": false
+}

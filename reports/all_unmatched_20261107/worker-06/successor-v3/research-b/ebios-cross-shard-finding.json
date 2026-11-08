@@ -1,0 +1,520 @@
+{
+  "finding_id": "W06-V3-EBIOS-CROSS-SHARD",
+  "status": "confirmed_competing_owner_selections_pending_coordinator_issue",
+  "observed_at": "2026-11-08T06:36:15.854488+00:00",
+  "observer": "/root/research_b",
+  "scope": "Read-only current local campaign selections and frozen all-source context; no claim about live main or complete historical formula equality. No other-worker file modified.",
+  "maintained_before": {
+    "path": "data/ingredients/unmapped/EBIOS.yaml",
+    "sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+    "actual_record": {
+      "identifier": "UNMAPPED_0380",
+      "preferred_term": "EBIOS",
+      "synonyms": [
+        {
+          "synonym_text": "EBIOS",
+          "synonym_type": "RAW_TEXT",
+          "source": "mim-queue"
+        }
+      ],
+      "mapping_status": "UNMAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-04-30T18:43:03.698454+00:00",
+          "curator": "audit_import_ingredients[mim-queue]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-05-11T07:42:00Z",
+          "curator": "mediaingredientmech-agentic-curation",
+          "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+          "changes": "Classified as a named commercial preparation and left unmapped pending source-backed composition or product-specific ontology curation.",
+          "previous_status": "UNMAPPED",
+          "new_status": "UNMAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/EBIOS-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended mapping status: `UNMAPPED`.** Retain the local named-mixture record. Do not create an SSSOM row at present. A future verified ontology term for **brewer’s yeast extract** could potentially receive `skos:closeMatch` as a product-class mapping, but not `skos:exactMatch` to EBIOS P2G unless that ontology term explicitly denotes this product. A generic yeast-extract term would be a broad No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        }
+      ],
+      "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named commercial preparation pending product-specific composition curation.",
+      "ingredient_type": "UNDEFINED_MIXTURE"
+    }
+  },
+  "competing_proposals": [
+    {
+      "worker": "w01",
+      "ledger_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/proposals.json",
+      "ledger_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+      "proposal": {
+        "proposal_id": "KG26-PROP-172-IDENTITY",
+        "case_ids": [
+          "KG_CASE:626dbdfa8a1835914c632173fe43c6b031a0182467f9d9de83ef05c12c7e2697"
+        ],
+        "description": "JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical research. Current official tablet ingredients are evidence for the present product only; the historical source establishes dried-yeast tablet form but not excipient quantities or unchanged composition across time. Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally resolve P2G or other EBIOS products to this tablet owner.",
+        "evidence_ids": [
+          "KG26-C172",
+          "KG26-K172",
+          "KG26-F172-J969",
+          "KG26-P-0a5c29c490a9417e7455",
+          "KG26-P-d30816ebde2cd39b1439",
+          "KG26-web-supplement-3",
+          "KG26-CONTEXT-LEDGER",
+          "KG26-COMP-completeness-owner-preflight-v1",
+          "KG26-COMP-identity-proposal-guards-v1",
+          "KG26-COMP-NATIVE-IDENTITY-V3",
+          "W01-FINAL-INDEPENDENT-SCIENTIFIC-REVIEW"
+        ],
+        "owner_path": "data/ingredients/unmapped/EBIOS.yaml",
+        "kind": "edit_existing_owner",
+        "before_sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+        "after_capture": {
+          "root": "artifact",
+          "path": "shard/root_substances/kg26/proposals/EBIOS.yaml",
+          "sha256": "ad84636fcfdfa606ce97d7655145ed968b3c0d36e2387b5ccad1850245ffe91b"
+        },
+        "integration_target_path": "data/ingredients/mapped/EBIOS.yaml",
+        "curie_alias_proposal": {
+          "old_id": "UNMAPPED_0380",
+          "new_id": "kgmicrobe.ingredient:ebios"
+        },
+        "identity_predicate_consequence": "Exact registry identity of whole source-defined product/material; no exact generic molecular or medium identity.",
+        "applied": false
+      },
+      "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/EBIOS.yaml",
+      "payload_sha256": "ad84636fcfdfa606ce97d7655145ed968b3c0d36e2387b5ccad1850245ffe91b",
+      "actual_payload": {
+        "identifier": "kgmicrobe.ingredient:ebios",
+        "preferred_term": "EBIOS dried-yeast tablets",
+        "synonyms": [
+          {
+            "synonym_text": "EBIOS",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "EBIOS tablets (Asahi)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/"
+          },
+          {
+            "synonym_text": "EBIOS dried-yeast tablets (Asahi)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T07:42:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a named commercial preparation and left unmapped pending source-backed composition or product-specific ontology curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/EBIOS-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended mapping status: `UNMAPPED`.** Retain the local named-mixture record. Do not create an SSSOM row at present. A future verified ontology term for **brewer’s yeast extract** could potentially receive `skos:closeMatch` as a product-class mapping, but not `skos:exactMatch` to EBIOS P2G unless that ontology term explicitly denotes this product. A generic yeast-extract term would be a broad No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-11-08T04:34:34.027281+00:00",
+            "curator": "worker01_add_media_identity",
+            "action": "PROMOTED_TO_MAPPED",
+            "changes": "Isolated proposal: promote existing source-linked owner UNMAPPED_0380 to kgmicrobe.ingredient:ebios. JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical research. Current official tablet ingredients are evidence for the present product only; the historical source establishes dried-yeast tablet form but not excipient quantities or unchanged composition across time. Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally resolve P2G or other EBIOS products to this tablet owner. Preserve original history and occurrence counts; no maintained data are changed.",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical research. Current official tablet ingredients are evidence for the present product only; the historical source establishes dried-yeast tablet form but not excipient quantities or unchanged composition across time. Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally resolve P2G or other EBIOS products to this tablet owner.",
+        "ingredient_type": "UNDEFINED_MIXTURE",
+        "supplied_form": [
+          {
+            "name": "EBIOS tablets",
+            "supplier": "Asahi Group Foods",
+            "form": "dried-yeast tablets",
+            "notes": "Primary JCM969 tablet footnote. Current product page lists dried yeast plus lactose hydrate, calcium hydrogen phosphate, anhydrous silica and hardened oil; no historical-lot equivalence asserted."
+          }
+        ],
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:ebios",
+          "ontology_label": "EBIOS dried-yeast tablets",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/",
+              "notes": "JCM969 explicitly specifies Asahi EBIOS dried-yeast tablets,10g. This source-linked owner denotes the tablet product, not EBIOS P2G yeast extract discussed in historical research. Current official tablet ingredients are evidence for the present product only; the historical source establishes dried-yeast tablet form but not excipient quantities or unchanged composition across time. Bare EBIOS is retained as a rejected unqualified brand label so it cannot globally resolve P2G or other EBIOS products to this tablet owner."
+            }
+          ]
+        },
+        "components": [
+          {
+            "component_name": "Dried yeast",
+            "reference_scope": "UNMAPPED"
+          }
+        ],
+        "component_assertion": {
+          "method": "CURATED_INTERPRETATION",
+          "completeness": "PARTIAL",
+          "evidence": [
+            {
+              "evidence_type": "SOURCE_LABEL",
+              "source": "https://www.asahi-gf.co.jp/special/ebios/ebiosjyou/product/",
+              "source_record": "EBIOS dried-yeast tablets",
+              "notes": "Named material classes only; no full molecular decomposition or historical quantitative composition asserted."
+            }
+          ],
+          "notes": "Complex biological/polymer preparation. Component identifiers remain unassigned instead of guessing exact ontology entities. Current supplier supports general product class; historical lot variability retained."
+        }
+      }
+    },
+    {
+      "worker": "w02",
+      "ledger_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/integration/assembled-v4/proposals.json",
+      "ledger_sha256": "07bfa3757c6851a845bb0a71465573328c2347dec17e6ddad3cf815ae5001d58",
+      "proposal": {
+        "proposal_id": "a2-proposal-nbrc1132-asahi-ebios-tablets",
+        "case_ids": [
+          "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff"
+        ],
+        "description": "The NBRC1132 source specifies Ebios tablets manufactured by Asahi and distributed by Tanabe. The source binds a tablet product, not generic yeast extract or the unresolved existing MediaDive EBIOS/P2G record. Contemporary Asahi dried-brewer-yeast information does not establish the complete historical tablet formulation or its excipients. No component list, tablet mass or biological potency is invented.",
+        "owner_path": "data/ingredients/mapped/nbrc1132_asahi_ebios_tablets.yaml",
+        "kind": "new_owner",
+        "after_capture": {
+          "root": "artifact",
+          "path": "continuation-1201-v1/a/after/nbrc1132_asahi_ebios_tablets.yaml",
+          "sha256": "3275012aad49e7d7e353507d106a3a26c8b2313fad80e5e587ade3bec857bc3c"
+        },
+        "before_sha256": null,
+        "evidence_ids": [
+          "a-case-23-input",
+          "a-case-23-occ-00",
+          "a-owner-EBIOS",
+          "a-primary-primary-12d571f782de53cb",
+          "a-primary-supplier-ebios",
+          "a2-case-23-component-owner-validation",
+          "a2-case-23-owner-and-occurrence-review",
+          "a2-ols-search-07"
+        ],
+        "publication_authorization": "None. Isolated review proposal only; every inherited source, ingredient and downstream publication hold remains.",
+        "mapping_consequence": "Preserve exact preparation identity and has-part relations. Review native YAML/SSSOM synchronization at integration; no downstream rebuild is authorized.",
+        "inherited_owner_findings": []
+      },
+      "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/reports/all_unmatched_20261107/worker-02/continuation-1201-v1/a/after/nbrc1132_asahi_ebios_tablets.yaml",
+      "payload_sha256": "3275012aad49e7d7e353507d106a3a26c8b2313fad80e5e587ade3bec857bc3c",
+      "actual_payload": {
+        "identifier": "kgmicrobe.ingredient:nbrc1132_asahi_ebios_tablets",
+        "preferred_term": "NBRC 1132 Asahi Ebios tablets",
+        "ingredient_type": "UNDEFINED_MIXTURE",
+        "mapping_status": "MAPPED",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:nbrc1132_asahi_ebios_tablets",
+          "ontology_label": "NBRC 1132 Asahi Ebios tablets",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "CURATOR_JUDGMENT",
+              "source": "https://www.nite.go.jp/nbrc/cultures/cultures/culture/medium/0000001132.html",
+              "notes": "The NBRC1132 source specifies Ebios tablets manufactured by Asahi and distributed by Tanabe. The source binds a tablet product, not generic yeast extract or the unresolved existing MediaDive EBIOS/P2G record. Contemporary Asahi dried-brewer-yeast information does not establish the complete historical tablet formulation or its excipients. No component list, tablet mass or biological potency is invented. No verified exact eligible ontology term or existing whole-preparation owner was established by the bounded source/owner review. This self-registry mapping represents the preparation, not its individual constituents."
+            }
+          ]
+        },
+        "synonyms": [],
+        "notes": "The NBRC1132 source specifies Ebios tablets manufactured by Asahi and distributed by Tanabe. The source binds a tablet product, not generic yeast extract or the unresolved existing MediaDive EBIOS/P2G record. Contemporary Asahi dried-brewer-yeast information does not establish the complete historical tablet formulation or its excipients. No component list, tablet mass or biological potency is invented. Raw source labels and original occurrence IDs remain in the evidence ledger; no recipe-local label is activated as a global synonym. All inherited release holds remain.",
+        "curation_history": [
+          {
+            "timestamp": "2026-11-08T06:05:22.132705+00:00",
+            "curator": "codex_worker02_research_a_continuation1201",
+            "action": "PROPOSED_NEW_INGREDIENT",
+            "changes": "The NBRC1132 source specifies Ebios tablets manufactured by Asahi and distributed by Tanabe. The source binds a tablet product, not generic yeast extract or the unresolved existing MediaDive EBIOS/P2G record. Contemporary Asahi dried-brewer-yeast information does not establish the complete historical tablet formulation or its excipients. No component list, tablet mass or biological potency is invented.",
+            "new_status": "MAPPED",
+            "llm_assisted": true
+          }
+        ]
+      }
+    }
+  ],
+  "frozen_source_continuity": [
+    {
+      "shard_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-01.json",
+      "shard_sha256": "abba82441b807cc6bf476a69de1c19a794dd213991fc2c5f18b4c6797b73c597",
+      "case": {
+        "baseline_outcome": "current_source_placeholder_preserved",
+        "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+        "case_id": "KG_CASE:626dbdfa8a1835914c632173fe43c6b031a0182467f9d9de83ef05c12c7e2697",
+        "original_kg_entry": {
+          "candidate_id": "626dbdfa8a1835914c632173fe43c6b031a0182467f9d9de83ef05c12c7e2697",
+          "category": "biolink:ChemicalEntity",
+          "consumed_name_hits": [],
+          "downstream_holds": [],
+          "name_hits": [
+            {
+              "candidate_field": "source_label",
+              "kind": "preferred_term",
+              "label": "EBIOS",
+              "owner": "data/ingredients/unmapped/EBIOS.yaml",
+              "resolving": true
+            },
+            {
+              "candidate_field": "source_label",
+              "kind": "synonym",
+              "label": "EBIOS",
+              "owner": "data/ingredients/unmapped/EBIOS.yaml",
+              "resolving": true,
+              "synonym": {
+                "source": "mim-queue",
+                "synonym_text": "EBIOS",
+                "synonym_type": "RAW_TEXT"
+              },
+              "synonym_type": "RAW_TEXT"
+            },
+            {
+              "candidate_field": "raw_source_label",
+              "kind": "preferred_term",
+              "label": "EBIOS",
+              "owner": "data/ingredients/unmapped/EBIOS.yaml",
+              "resolving": true
+            },
+            {
+              "candidate_field": "raw_source_label",
+              "kind": "synonym",
+              "label": "EBIOS",
+              "owner": "data/ingredients/unmapped/EBIOS.yaml",
+              "resolving": true,
+              "synonym": {
+                "source": "mim-queue",
+                "synonym_text": "EBIOS",
+                "synonym_type": "RAW_TEXT"
+              },
+              "synonym_type": "RAW_TEXT"
+            }
+          ],
+          "native_identity_target": "",
+          "native_queue_state": "STILL_UNMAPPED",
+          "occurrences": 1,
+          "occurrences_definition": "helper constant; not measured recipe frequency",
+          "owners": [
+            {
+              "identifier": "UNMAPPED_0380",
+              "mapping_status": "UNMAPPED",
+              "native_review_rows": [],
+              "ontology_mapping": null,
+              "path": "data/ingredients/unmapped/EBIOS.yaml",
+              "preferred_term": "EBIOS",
+              "sha256": "130f1d9a20d6e16b9a10939a7251242d290bc8b13eb2a140be697e7b86cf87a4",
+              "subject_id": "MIM:EBIOS"
+            }
+          ],
+          "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+          "raw_source_label": "EBIOS",
+          "resolving_owner_paths": [
+            "data/ingredients/unmapped/EBIOS.yaml"
+          ],
+          "scientific_identity_approved_by_reconciliation": false,
+          "source": "mediadive",
+          "source_columns": "compound",
+          "source_id": "mediadive.ingredient:1953",
+          "source_label": "EBIOS",
+          "source_record": {
+            "amount": 10,
+            "attribute": "dried yeast tablets, *",
+            "compound": "EBIOS",
+            "compound_id": 1953,
+            "g_l": 10,
+            "optional": 0,
+            "recipe_order": 1,
+            "unit": "g"
+          },
+          "triage_flags": [
+            "MATCHED_UNMAPPED_OWNER",
+            "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+          ]
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "EBIOS",
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1953",
+        "source_identity_claimed": false,
+        "source_label": "EBIOS"
+      }
+    },
+    {
+      "shard_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-02.json",
+      "shard_sha256": "993e393b8a50e6061e4a9863bd60b3ab2a48ee584907a97e3066c1cbc03d6db0",
+      "case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:22e6006ce3bb10066c3c593c4736919fa6cd47f8f2d2a5347ffe92535e5237ff",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 1,
+        "occurrences": [
+          {
+            "component_path": "ingredients/1",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_1135.yaml",
+            "native_name": "Ebios (tablets)*",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:7f25070fec8b7aa9410fdc809bd2f3b41ede732b71315d290211dcc9e6cfce1f",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "1"
+              },
+              "notes": "NBRC Medium 1132 lists 1 g Ebios tablets; Ebios tablets were manufactured by Asahi Breweries, Ltd., Tokyo, Japan and distributed by Tanabe Seiyaku Co. Ltd., Osaka, Japan.",
+              "preferred_term": "Ebios (tablets)*",
+              "source": "NBRC Medium 1132"
+            },
+            "raw_preferred_term": "Ebios (tablets)*",
+            "recipe_id": "CultureMech:007458",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:007458"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "nbrc.medium:1132"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/NBRC_1135.yaml",
+            "source_file_sha256": "e917651747b216b30b83013f16e19dac0f881efebf0f54315640a1380a231349",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 2771,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:007458",
+          "ingredient_name": "Ebios (tablets)*",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "1",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "Ebios (tablets)*",
+        "source": "culturemech",
+        "source_case_id": "Ebios (tablets)*",
+        "source_identity_claimed": false,
+        "source_label": "Ebios (tablets)*"
+      }
+    },
+    {
+      "shard_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-06.json",
+      "shard_sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808",
+      "case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:8ac14f506d43efd6db871b8e2b28653fd59a1027d329fcb43df4f24a183aafd4",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 1,
+        "occurrences": [
+          {
+            "component_path": "ingredients/3",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1019_EBIOS-Glucose_Agar.yaml",
+            "native_name": "EBIOS* (dried yeast tablets)",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:d0c5f6280d318b98f8898d8d249e3db38354daeefe89e5765bc5925277f2e930",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "10"
+              },
+              "notes": "Properties: Undefined component",
+              "preferred_term": "EBIOS* (dried yeast tablets)"
+            },
+            "raw_preferred_term": "EBIOS* (dried yeast tablets)",
+            "recipe_id": "CultureMech:007533",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:007533"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M1019"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M1019_EBIOS-Glucose_Agar.yaml",
+            "source_file_sha256": "7613eae72336dd8117cc9c54d5a3d04fa02d401f085e6e5d1ab5a911a83bd78c",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 2810,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:007533",
+          "ingredient_name": "EBIOS* (dried yeast tablets)",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "1",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "EBIOS* (dried yeast tablets)",
+        "source": "culturemech",
+        "source_case_id": "EBIOS* (dried yeast tablets)",
+        "source_identity_claimed": false,
+        "source_label": "EBIOS* (dried yeast tablets)"
+      }
+    }
+  ],
+  "primary_source": {
+    "path": "reports/all_unmatched_20261107/worker-06/research-b/captures/http-d30816ebde2cd39b1439.txt",
+    "sha256": "e0a5b7970d48f4ec47c071f9f21eb039465e95b58ca05efb3a4ed9a69508a1ca",
+    "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=969",
+    "original_accessed_at": "2026-11-08T05:07:06.324562+00:00",
+    "observation": "Complete JCM969 gives EBIOS dried yeast tablets10g and footnote Asahi Food & Healthcare,Tokyo. Shard01 source1953 original record explicitly names dried yeast tablets at10g. Shard06 source TOGOM1019 explicitly points to this same JCM969."
+  },
+  "confirmed_problem": "W01 selects promotion of the existing source1953 EBIOS owner as the Asahi dried-yeast tablet family, while W02 selects a new accession-named Asahi Ebios tablet owner after treating that same existing record as unresolved EBIOS/P2G. The existing record source continuity is tablet-specific; P2G belongs only to inherited research prose. These are competing owner selections requiring a single reviewed boundary decision before integration. Creating a third W06 tablet owner would compound that conflict.",
+  "identity_limits": "NBRC1132 identifies Asahi Breweries/Tanabe distribution whereas JCM969 names Asahi Food & Healthcare. The frozen evidence supports related EBIOS tablet product family but does not establish identical historical excipients or quantitative formula. Neither formulation equality nor a maintained-owner merge is asserted. The coordinator must reconcile proposal identity and source scopes, preserving both original lineages.",
+  "proposed_bounded_response": "After issue filing, W06 can independently propose a source-backed edit of the established EBIOS owner for exact JCM969/tablet scope, with barebrand and starred local raw labels nonresolving. Do not install W01 andW02 as unrelated owners without explicit reconciliation; do not adopt otherworker payloadbytes as scientific authority.",
+  "no_fix_performed": true,
+  "no_issue_mutation_performed_by_research_b": true
+}

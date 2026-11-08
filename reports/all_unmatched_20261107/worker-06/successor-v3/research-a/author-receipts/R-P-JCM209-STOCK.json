@@ -1,0 +1,95 @@
+{
+  "author": "Codex /root/research_a",
+  "at": "2026-11-08T06:36:24.206519+00:00",
+  "finding_id": "W06-IR-002",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217",
+  "proposal_id": "R-P-JCM209-STOCK",
+  "input_selection": {
+    "path": "reports/all_unmatched_20261107/worker-06/successor-v2/final/selection.json",
+    "sha256": "4d716bee7fafb8fe081e1604da305d8ecfd0c05fc3e40bcdf3aa6ba0cd0d157a"
+  },
+  "before_proposed_payload": {
+    "root": "artifact",
+    "path": "research-root/proposed-owners/R-P-JCM209-STOCK.yaml",
+    "sha256": "05e31d8617dcdbe12c6ecea50a221d0060a7947ab27d9c59de9b7602ef888844"
+  },
+  "after_capture": {
+    "root": "artifact",
+    "path": "successor-v3/research-a/payloads/R-P-JCM209-STOCK.yaml",
+    "sha256": "bbc55503cf10a81557006d11594eafd73bcd405675d21861797f2981adbdd183"
+  },
+  "maintained_owner_before_sha256": null,
+  "owner_path": "data/ingredients/mapped/JCM_209_Salts_Solution.yaml",
+  "case_ids": [
+    "KG_CASE:e23f3e7203dc733c6d52ff7cfe3b63f633c467f8f83c19efd22bbbec45613308"
+  ],
+  "scientific_reason": "MediaDiveJ209 explicitly starts a separate Salts solution subsection at recipe_order16, with six salts and100ml water. Generic Salts solution does not identify that stock across recipes, and RELATED_SYNONYM is still resolving. Preserve the JCM209-qualified candidate and unresolved stock-versus-parent pH-step scope.",
+  "primary_evidence": [
+    {
+      "evidence_id": "R-medium-J209",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/medium-J209.body",
+        "sha256": "8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/J209",
+      "original_accessed_at": "2026-11-08T05:09:46.016221+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    },
+    {
+      "evidence_id": "R-ingredient-1684",
+      "capture": {
+        "root": "artifact",
+        "path": "research-root/captures/ingredient-1684.body",
+        "sha256": "8d868ac826c016b1ff0af18a82dc13e511cd1c03c31586b16c50fc012769aaf7"
+      },
+      "url": "https://mediadive.dsmz.de/rest/ingredient/1684",
+      "original_accessed_at": "2026-11-08T05:08:45.707529+00:00",
+      "claim_scope": "Source-local stock/table or explicitly cited receiving chain; not global raw-label identity."
+    }
+  ],
+  "alias_changes": [
+    {
+      "proposal_id": "R-P-JCM209-STOCK",
+      "field": "synonyms/0",
+      "before": {
+        "synonym_text": "Salts solution",
+        "synonym_type": "RELATED_SYNONYM",
+        "source": "Source-context label only; must not match without the recipe reference"
+      },
+      "after": {
+        "synonym_text": "Salts solution",
+        "synonym_type": "REJECTED_LABEL",
+        "source": "Source-context label only; must not match without the recipe reference"
+      },
+      "source_context_reason": "MediaDiveJ209 explicitly starts a separate Salts solution subsection at recipe_order16, with six salts and100ml water. Generic Salts solution does not identify that stock across recipes, and RELATED_SYNONYM is still resolving. Preserve the JCM209-qualified candidate and unresolved stock-versus-parent pH-step scope.",
+      "before_resolves": true,
+      "after_resolves": false
+    }
+  ],
+  "canonical_label_change": {
+    "before_preferred": "JCM 209 salts solution",
+    "after_preferred": "JCM 209 salts solution",
+    "before_ontology_label": "JCM 209 salts solution",
+    "after_ontology_label": "JCM 209 salts solution",
+    "external_id_label_preserved": true
+  },
+  "unchanged_fields": [
+    "identifier",
+    "mapping_status",
+    "ontology_id",
+    "mapping_quality",
+    "components",
+    "component_assertion",
+    "supplied_form if present",
+    "all raw synonym text and source",
+    "all prior history",
+    "source holds"
+  ],
+  "applicability_limit": "Existing occurrence-scoped formulation support only. No collection is inferred from a bare medium number; C/root separately correct W06-IR-010 and W06-IR-008. Existing unrelated scientific claims are not recertified.",
+  "independent_review": {
+    "status": "pending"
+  },
+  "maintained_write": false,
+  "source_owner_export_approval": false
+}

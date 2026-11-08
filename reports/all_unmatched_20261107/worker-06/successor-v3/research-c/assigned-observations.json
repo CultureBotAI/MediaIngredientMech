@@ -1,0 +1,3059 @@
+{
+  "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/w06-published-head-independent-review-v1/findings.json",
+  "source_sha256": "4626520a16f0b5e3729f6ffc630fba623e579742b3361cd68667de9c2598dd27",
+  "finding_groups": [
+    {
+      "finding_id": "W06-IR-004",
+      "title": "JCM977 stock Water is asserted as literal source input",
+      "severity": "major",
+      "status": "open_at_frozen_head",
+      "known_issue": null,
+      "proposal_ids": [
+        "B-P-JCM977-glucose20"
+      ],
+      "direct_source_case_ids": [],
+      "related_case_ids": [
+        "CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190"
+      ],
+      "requires_payload_byte_change_or_identity_reconciliation": true,
+      "proposed_bounded_fix": "Remove Water from literal transcription or explicitly represent and evidence the aqueous-solvent inference using method CURATED_INTERPRETATION and truthful curator/LLM attribution. Preserve unknown solvent detail, stock volume and glucose form; basal790mL water is not stock water.",
+      "normalization_rationale": "This unqualified positive stock-solvent claim is distinct from the acknowledged inferences in W06-IR-005. CURATOR_JUDGMENT is an evidence type, not the component assertion method. No claim that water is chemically false.",
+      "observations": [
+        {
+          "path": "b/findings.json",
+          "sha256": "2fd4548598d12410560fbc293cf03b275ee360c965d2b4e9ebff7487c9aa194a",
+          "selector": "findings[finding_id=B-02]",
+          "observation": {
+            "finding_id": "B-02",
+            "title": "Glucose stock solvent inferred but represented as literal recipe input",
+            "severity": "major",
+            "status": "confirmed_for_coordinator_deduplication_and_bounded_remediation",
+            "case_indices": [
+              64,
+              113,
+              114,
+              115
+            ],
+            "case_ids": [
+              "CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190",
+              "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+              "CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb",
+              "CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da"
+            ],
+            "affected_proposals": [
+              {
+                "proposal_id": "B-P-JCM977-glucose20",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-b/proposed-owners/jcm_977_glucose_20_percent_wv_stock.yaml",
+                  "sha256": "df904239a9f177fbb3f59375173e304490e1f8d05fcf309bcfcd1004868bf06e"
+                }
+              },
+              {
+                "proposal_id": "C-P-JCM1375-1435-825-GLUCOSE10",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-c/after/jcm_1375_1435_825_glucose_10_percent_stock.yaml",
+                  "sha256": "6a0f58e38af7fee44c04c5c8d659ddb1d6495674dcd0f004d6fb3922d7dd86e4"
+                }
+              },
+              {
+                "proposal_id": "A-P-JCM1136-548-GLUCOSE-1M",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-a/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+                  "sha256": "3f916beac02d141f498e9cf2179bcbe1ada84f80aa25e09fd407742324ca5673"
+                }
+              }
+            ],
+            "description": "B977 positively asserts aqueous stock and Water as a verbatim RECIPE_TRANSCRIPTION input, although JCM977 only names 20% w/v glucose; 790 ml distilled water belongs to the basal medium. C10% and A1M prose disclose a water inference but their structured assertion still treats the component set as recipe transcription. UNKNOWN closure does not establish a positive solvent identity.",
+            "bounded_fix": "For B977, remove unsupported Water from literal transcription and preserve solvent as unknown, or separately document a bounded CURATOR_JUDGMENT inference without claiming the primary states it. For C10%/A1M, clarify the mixed inference/transcription provenance rather than silently promoting inferred solvent to source fact. Retain concentration, unknown form and volume, and independent preparation instructions.",
+            "reproduction": "Compare exact payload components, component_assertion and notes with cited JCM raw captures. JCM977 contains no stock preparation entry identifying solvent; do not move basal-water quantity into the stock.",
+            "evidence": [
+              {
+                "evidence_id": "B-64-frozen-0",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1030_VNG_Medium.yaml",
+                  "sha256": "0734126494ec021da422410a676be16a4ec0618cfed4186952e40d27405975a8"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1030_VNG_Medium.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-http-4f360397f0c066dd",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-ca0c25894a5aed71c1ac.txt",
+                  "sha256": "5c290334836736fe49e5182311308f7748a9602617684442beb223e6c78bb6c5"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977",
+                "accessed_at": "2026-11-08T05:07:00.275982+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-owner-Glucose",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/owners/Glucose.yaml",
+                  "sha256": "5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete baseline maintained owner bytes; data/ingredients/mapped/Glucose.yaml",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-113-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1375_MODIFIED_LOW_SALT_MEDIUM_FOR_B11.yaml",
+                  "sha256": "1dc737d7793a2a66722f98824167be98ed4d4b0f928fc482ebd6655ae53f9dc3"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:0e09b526ae9dc63566e877eb45740664b448bce491d0f7cc77619c5175bdba1b at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-113-SOURCE-2",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1435_LIMNOCHORDIA_LN_MEDIUM.yaml",
+                  "sha256": "079a6b87492088ac63da6c2244301c25d8f82a7bcb39120f23f52502353a3c1f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:6ab84cd3163f5e9e295813c2344de82880d27a1090d25c4f1a67de28c600559a at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-113-SOURCE-3",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml",
+                  "sha256": "9b7b93208859471b987bb893bb2d1f164b5358d05a3c901858c7927a9eee730b"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:63b9152546f093fd295f7fb77ea01d9d97f52c79c6f85e0a2e0544e9673b2d33 at composition/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-jcm-1375",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1375.txt",
+                  "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375",
+                "accessed_at": "2026-11-08T05:07:29.753368+00:00",
+                "locator": "jcm-1375; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1435",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1435.txt",
+                  "sha256": "e9e326a8e33f7556e7c850615df463cc17cc0b0cb39062344b729380f68f11c3"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435",
+                "accessed_at": "2026-11-08T05:07:31.214510+00:00",
+                "locator": "jcm-1435; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-825",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-825.txt",
+                  "sha256": "b3f4e74d1545ab08e66e8905680a027edc96bd1d681b74892485b87777f5d5c4"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=825",
+                "accessed_at": "2026-11-08T05:18:44.545929+00:00",
+                "locator": "jcm-825; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-26-S00",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1216_IRD_F1F22_Medium.yaml",
+                  "sha256": "b50c4998d28bd0aab4bcdf022b8a4c731247f0181b18db75b58dd483b3ebd39f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/11; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-26-S01",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M550_Geosporobacter_Subterreneus_Medium.yaml",
+                  "sha256": "7ed5df325dcfe014ca0589ff24b6f9fb366dfff2651edc6b0d312e0ad7359d69"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/7; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-100",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/ba0c7d65fb4e8735.raw",
+                  "sha256": "b513465de4fa5ec4abadd90693f1df0f3febea9cde62a828e8079e21dc018c12"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1136",
+                "accessed_at": "2026-11-08T05:06:56.630183+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-127",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/84122ecbb9e908f5.raw",
+                  "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+                "accessed_at": "2026-11-08T05:06:59.679283+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-NATIVE-OWNER-DEDUP",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/native-owner-dedup.json",
+                  "sha256": "3f7e6162908c6a70c7d61ff7c37372bb3a5d39608ea506285f1c7dcff86f5081"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "All native owner YAML files, proposed exact identifiers/names and source-stock patterns; gitignore-independent traversal",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-09",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/D-glucose.yaml",
+                  "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-14",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/Glucose.yaml",
+                  "sha256": "5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-114-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+                  "sha256": "452fd2bdc3bbf5a330aa90baa94cdc3fd39b8480fca1e6c3fdb5f37ff6782582"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:ee7aad39bc0ced6bd265f34fedebe2584f60e3bdc164f47dc1909da7f98655a2 at ingredients/13",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-115-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1412_MANGROVIBACTERIUM_Z1_71_MEDIUM.yaml",
+                  "sha256": "c27fd4abe5fd8b3c8f596f1177388c5c0f67e12a5ebb24bc318ae314853783e9"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:d0c481a93da1b9413a165d1d9a70a14c386c683103080e9540c6f4dc968d6068 at ingredients/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-26-S00",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1216_IRD_F1F22_Medium.yaml",
+                  "sha256": "b50c4998d28bd0aab4bcdf022b8a4c731247f0181b18db75b58dd483b3ebd39f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/11; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-26-S01",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M550_Geosporobacter_Subterreneus_Medium.yaml",
+                  "sha256": "7ed5df325dcfe014ca0589ff24b6f9fb366dfff2651edc6b0d312e0ad7359d69"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/7; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-100",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/ba0c7d65fb4e8735.raw",
+                  "sha256": "b513465de4fa5ec4abadd90693f1df0f3febea9cde62a828e8079e21dc018c12"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1136",
+                "accessed_at": "2026-11-08T05:06:56.630183+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-127",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/84122ecbb9e908f5.raw",
+                  "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+                "accessed_at": "2026-11-08T05:06:59.679283+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-NATIVE-OWNER-DEDUP",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/native-owner-dedup.json",
+                  "sha256": "3f7e6162908c6a70c7d61ff7c37372bb3a5d39608ea506285f1c7dcff86f5081"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "All native owner YAML files, proposed exact identifiers/names and source-stock patterns; gitignore-independent traversal",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-09",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/D-glucose.yaml",
+                  "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-14",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/Glucose.yaml",
+                  "sha256": "5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-114-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+                  "sha256": "452fd2bdc3bbf5a330aa90baa94cdc3fd39b8480fca1e6c3fdb5f37ff6782582"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:ee7aad39bc0ced6bd265f34fedebe2584f60e3bdc164f47dc1909da7f98655a2 at ingredients/13",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-115-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1412_MANGROVIBACTERIUM_Z1_71_MEDIUM.yaml",
+                  "sha256": "c27fd4abe5fd8b3c8f596f1177388c5c0f67e12a5ebb24bc318ae314853783e9"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:d0c481a93da1b9413a165d1d9a70a14c386c683103080e9540c6f4dc968d6068 at ingredients/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              }
+            ],
+            "whole_owner_or_release_approval": false,
+            "weaker_scope": "C10%/A1M already disclose inference in prose; they require provenance clarification, unlike B977 unqualified verbatim claim. C1009 is outside this assigned full-payload set and is referred to its reviewer.",
+            "duplicate_assessment": "B977 and C1009 have equal component arrays but JCM1009 specifies anaerobic N2 preparation/storage absent from JCM977. Equality of these arrays alone does not establish duplicate prepared-stock identity."
+          }
+        }
+      ],
+      "issue_mutation_performed": false,
+      "successor_disposition": "not_reviewed; coordinator must bind and independently review any successor"
+    },
+    {
+      "finding_id": "W06-IR-005",
+      "title": "Acknowledged Water inferences use literal-transcription assertion method",
+      "severity": "minor",
+      "status": "open_at_frozen_head",
+      "known_issue": null,
+      "proposal_ids": [
+        "A-P-JCM1136-548-GLUCOSE-1M",
+        "C-P-JCM1375-1435-825-GLUCOSE10",
+        "C-P-TOGO2790-GLUCOSE20",
+        "C-P-JCM1435-YEAST10",
+        "C-P-TOGO2568-GLUCOSE10",
+        "C-P-JCM1009-GLUCOSE20"
+      ],
+      "direct_source_case_ids": [],
+      "related_case_ids": [
+        "CM_NAME:2136001663e5a639e841c02a29ef750905191feaf4f2799797d9dee7fcc50e77",
+        "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+        "CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb",
+        "CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da",
+        "CM_NAME:d9c0c81fbad77b2409cf51e90a3d284c505b2093dadf44a87f5b8c2c40dcb934",
+        "CM_NAME:e60c91c3a2002b258c5aefcf8f970639a5c136d594fa21a4ccaadbea2470253f",
+        "CM_NAME:ec59f7a4f3117f2569541fb544089328dd8f35e14500b99b7ee114920fe0201b",
+        "CM_NAME:f0bc7fb6c6e307f5ba078cb41a7e36f0398990ffaffc763152221fd44f1f61a4"
+      ],
+      "requires_payload_byte_change_or_identity_reconciliation": true,
+      "proposed_bounded_fix": "Distinguish source-transcribed solute/concentration from inferred solvent. Use CURATED_INTERPRETATION with precisely attributed inference evidence and LLM provenance if retained, or omit untranscribed Water. MANUAL_CURATION requires actual human-supplied evidence and is not prescribed automatically.",
+      "normalization_rationale": "Normalize A major to minor for the acknowledged inference subset: notes already expose uncertainty; provenance method needs correction without rejecting the literal stock concentration or asserting Water false. B977 remains separately major.",
+      "observations": [
+        {
+          "path": "a/findings.json",
+          "sha256": "70c8d8c491502f337e757b8daca3225f4595ade6e7653ef82b50fdd406238b0d",
+          "selector": "findings[finding_id=A-INFERRED-WATER-METHOD-001]",
+          "observation": {
+            "finding_id": "A-INFERRED-WATER-METHOD-001",
+            "severity": "major",
+            "status": "confirmed_provenance_method_correction",
+            "summary": "JCM548/1136/1406/1412 glucose-stock assertion labels inferred Water as recipe transcription.",
+            "proposals": [
+              {
+                "proposal_id": "A-P-JCM1136-548-GLUCOSE-1M",
+                "owner_path": "data/ingredients/mapped/jcm_1136_548_glucose_1m_stock.yaml",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-a/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+                  "sha256": "3f916beac02d141f498e9cf2179bcbe1ada84f80aa25e09fd407742324ca5673"
+                },
+                "before_sha256": null
+              }
+            ],
+            "evidence": [
+              {
+                "evidence_id": "A-E-CAPTURE-100",
+                "kind": "primary_source",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/ba0c7d65fb4e8735.raw",
+                  "sha256": "b513465de4fa5ec4abadd90693f1df0f3febea9cde62a828e8079e21dc018c12"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1136",
+                "accessed_at": "2026-11-08T05:06:56.630183+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-127",
+                "kind": "primary_source",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/84122ecbb9e908f5.raw",
+                  "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+                "accessed_at": "2026-11-08T05:06:59.679283+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1406",
+                "kind": "primary_source",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1412",
+                "kind": "primary_source",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response"
+              },
+              {
+                "evidence_id": "C-E-jcm-1406",
+                "kind": "primary_source",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response"
+              },
+              {
+                "evidence_id": "C-E-jcm-1412",
+                "kind": "primary_source",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response"
+              }
+            ],
+            "reproduction": "Read components/1 Water (no amount), component_assertion.method RECIPE_TRANSCRIPTION, and both notes stating Water is implied by the aqueous stock context. Primary references name1Mglucose stock but do not explicitly enumerate Water as a component.",
+            "contract": "docs/stock_components.md and ComponentAssertionMethodEnum distinguish literal RECIPE_TRANSCRIPTION from CURATED_INTERPRETATION.",
+            "bounded_fix": "If Water is retained, use CURATED_INTERPRETATION and MANUAL_CURATION evidence documenting the reasonable aqueous-stock inference alongside primary recipe citations. Otherwise omit inferred component and explicitly retain uncertainty. Do not invent volume, grade, stereochemistry or gas amount.",
+            "not_claimed": "This finding does not claim water is chemically false or that a literal1M stock identity must be withheld."
+          }
+        },
+        {
+          "path": "b/findings.json",
+          "sha256": "2fd4548598d12410560fbc293cf03b275ee360c965d2b4e9ebff7487c9aa194a",
+          "selector": "findings[finding_id=B-02]",
+          "observation": {
+            "finding_id": "B-02",
+            "title": "Glucose stock solvent inferred but represented as literal recipe input",
+            "severity": "major",
+            "status": "confirmed_for_coordinator_deduplication_and_bounded_remediation",
+            "case_indices": [
+              64,
+              113,
+              114,
+              115
+            ],
+            "case_ids": [
+              "CM_NAME:6c9b24d61b03fdba5fff525fccb9897b4b2d6a08609f21073725a6dca21c4190",
+              "CM_NAME:b0dbb40068c7df55ea80268d8a7eb11047dcb6bdbafe8ef87b83108ff9fc4396",
+              "CM_NAME:b10d559d455607952549bb309e39973cdc02c07d1ef3d026063e563b070466bb",
+              "CM_NAME:b1bc249327f2cb565dcd74db03e6aed01d837096996c51c73be7a40bd2e0d8da"
+            ],
+            "affected_proposals": [
+              {
+                "proposal_id": "B-P-JCM977-glucose20",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-b/proposed-owners/jcm_977_glucose_20_percent_wv_stock.yaml",
+                  "sha256": "df904239a9f177fbb3f59375173e304490e1f8d05fcf309bcfcd1004868bf06e"
+                }
+              },
+              {
+                "proposal_id": "C-P-JCM1375-1435-825-GLUCOSE10",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-c/after/jcm_1375_1435_825_glucose_10_percent_stock.yaml",
+                  "sha256": "6a0f58e38af7fee44c04c5c8d659ddb1d6495674dcd0f004d6fb3922d7dd86e4"
+                }
+              },
+              {
+                "proposal_id": "A-P-JCM1136-548-GLUCOSE-1M",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-a/payloads/jcm_1136_548_glucose_1m_stock.yaml",
+                  "sha256": "3f916beac02d141f498e9cf2179bcbe1ada84f80aa25e09fd407742324ca5673"
+                }
+              }
+            ],
+            "description": "B977 positively asserts aqueous stock and Water as a verbatim RECIPE_TRANSCRIPTION input, although JCM977 only names 20% w/v glucose; 790 ml distilled water belongs to the basal medium. C10% and A1M prose disclose a water inference but their structured assertion still treats the component set as recipe transcription. UNKNOWN closure does not establish a positive solvent identity.",
+            "bounded_fix": "For B977, remove unsupported Water from literal transcription and preserve solvent as unknown, or separately document a bounded CURATOR_JUDGMENT inference without claiming the primary states it. For C10%/A1M, clarify the mixed inference/transcription provenance rather than silently promoting inferred solvent to source fact. Retain concentration, unknown form and volume, and independent preparation instructions.",
+            "reproduction": "Compare exact payload components, component_assertion and notes with cited JCM raw captures. JCM977 contains no stock preparation entry identifying solvent; do not move basal-water quantity into the stock.",
+            "evidence": [
+              {
+                "evidence_id": "B-64-frozen-0",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1030_VNG_Medium.yaml",
+                  "sha256": "0734126494ec021da422410a676be16a4ec0618cfed4186952e40d27405975a8"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1030_VNG_Medium.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-http-4f360397f0c066dd",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-ca0c25894a5aed71c1ac.txt",
+                  "sha256": "5c290334836736fe49e5182311308f7748a9602617684442beb223e6c78bb6c5"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=977",
+                "accessed_at": "2026-11-08T05:07:00.275982+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-owner-Glucose",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/owners/Glucose.yaml",
+                  "sha256": "5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete baseline maintained owner bytes; data/ingredients/mapped/Glucose.yaml",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-113-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1375_MODIFIED_LOW_SALT_MEDIUM_FOR_B11.yaml",
+                  "sha256": "1dc737d7793a2a66722f98824167be98ed4d4b0f928fc482ebd6655ae53f9dc3"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:0e09b526ae9dc63566e877eb45740664b448bce491d0f7cc77619c5175bdba1b at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-113-SOURCE-2",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1435_LIMNOCHORDIA_LN_MEDIUM.yaml",
+                  "sha256": "079a6b87492088ac63da6c2244301c25d8f82a7bcb39120f23f52502353a3c1f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:6ab84cd3163f5e9e295813c2344de82880d27a1090d25c4f1a67de28c600559a at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-113-SOURCE-3",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml",
+                  "sha256": "9b7b93208859471b987bb893bb2d1f164b5358d05a3c901858c7927a9eee730b"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:63b9152546f093fd295f7fb77ea01d9d97f52c79c6f85e0a2e0544e9673b2d33 at composition/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-jcm-1375",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1375.txt",
+                  "sha256": "659b1f509a803a54fc437e75e8223f7f06cdfbffb342a3049d681d65860d1385"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1375",
+                "accessed_at": "2026-11-08T05:07:29.753368+00:00",
+                "locator": "jcm-1375; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1435",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1435.txt",
+                  "sha256": "e9e326a8e33f7556e7c850615df463cc17cc0b0cb39062344b729380f68f11c3"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435",
+                "accessed_at": "2026-11-08T05:07:31.214510+00:00",
+                "locator": "jcm-1435; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-825",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-825.txt",
+                  "sha256": "b3f4e74d1545ab08e66e8905680a027edc96bd1d681b74892485b87777f5d5c4"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=825",
+                "accessed_at": "2026-11-08T05:18:44.545929+00:00",
+                "locator": "jcm-825; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-26-S00",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1216_IRD_F1F22_Medium.yaml",
+                  "sha256": "b50c4998d28bd0aab4bcdf022b8a4c731247f0181b18db75b58dd483b3ebd39f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/11; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-26-S01",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M550_Geosporobacter_Subterreneus_Medium.yaml",
+                  "sha256": "7ed5df325dcfe014ca0589ff24b6f9fb366dfff2651edc6b0d312e0ad7359d69"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/7; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-100",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/ba0c7d65fb4e8735.raw",
+                  "sha256": "b513465de4fa5ec4abadd90693f1df0f3febea9cde62a828e8079e21dc018c12"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1136",
+                "accessed_at": "2026-11-08T05:06:56.630183+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-127",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/84122ecbb9e908f5.raw",
+                  "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+                "accessed_at": "2026-11-08T05:06:59.679283+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-NATIVE-OWNER-DEDUP",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/native-owner-dedup.json",
+                  "sha256": "3f7e6162908c6a70c7d61ff7c37372bb3a5d39608ea506285f1c7dcff86f5081"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "All native owner YAML files, proposed exact identifiers/names and source-stock patterns; gitignore-independent traversal",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-09",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/D-glucose.yaml",
+                  "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-14",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/Glucose.yaml",
+                  "sha256": "5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-114-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+                  "sha256": "452fd2bdc3bbf5a330aa90baa94cdc3fd39b8480fca1e6c3fdb5f37ff6782582"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:ee7aad39bc0ced6bd265f34fedebe2584f60e3bdc164f47dc1909da7f98655a2 at ingredients/13",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-115-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1412_MANGROVIBACTERIUM_Z1_71_MEDIUM.yaml",
+                  "sha256": "c27fd4abe5fd8b3c8f596f1177388c5c0f67e12a5ebb24bc318ae314853783e9"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:d0c481a93da1b9413a165d1d9a70a14c386c683103080e9540c6f4dc968d6068 at ingredients/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-26-S00",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1216_IRD_F1F22_Medium.yaml",
+                  "sha256": "b50c4998d28bd0aab4bcdf022b8a4c731247f0181b18db75b58dd483b3ebd39f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/11; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-26-S01",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M550_Geosporobacter_Subterreneus_Medium.yaml",
+                  "sha256": "7ed5df325dcfe014ca0589ff24b6f9fb366dfff2651edc6b0d312e0ad7359d69"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/7; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-100",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/ba0c7d65fb4e8735.raw",
+                  "sha256": "b513465de4fa5ec4abadd90693f1df0f3febea9cde62a828e8079e21dc018c12"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1136",
+                "accessed_at": "2026-11-08T05:06:56.630183+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-127",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/84122ecbb9e908f5.raw",
+                  "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+                "accessed_at": "2026-11-08T05:06:59.679283+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-NATIVE-OWNER-DEDUP",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/native-owner-dedup.json",
+                  "sha256": "3f7e6162908c6a70c7d61ff7c37372bb3a5d39608ea506285f1c7dcff86f5081"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "All native owner YAML files, proposed exact identifiers/names and source-stock patterns; gitignore-independent traversal",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-09",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/D-glucose.yaml",
+                  "sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-OWNER-14",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/owners-before/Glucose.yaml",
+                  "sha256": "5a3fea70783e1f7ae2676807615116972b687afcddb3c65ed98b5a8f16ea39cb"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Complete current baseline owner, including identifier, synonyms, notes and curation_history",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-SHARED-C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-114-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+                  "sha256": "452fd2bdc3bbf5a330aa90baa94cdc3fd39b8480fca1e6c3fdb5f37ff6782582"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:ee7aad39bc0ced6bd265f34fedebe2584f60e3bdc164f47dc1909da7f98655a2 at ingredients/13",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-115-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1412_MANGROVIBACTERIUM_Z1_71_MEDIUM.yaml",
+                  "sha256": "c27fd4abe5fd8b3c8f596f1177388c5c0f67e12a5ebb24bc318ae314853783e9"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:d0c481a93da1b9413a165d1d9a70a14c386c683103080e9540c6f4dc968d6068 at ingredients/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-jcm-1406",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1406.txt",
+                  "sha256": "c548f5f7f8f94eaf4f6a8d60472181b79e98056a91afe088398545d889e1bd03"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1406",
+                "accessed_at": "2026-11-08T05:07:30.495608+00:00",
+                "locator": "jcm-1406; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1412",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1412.txt",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:07:30.583263+00:00",
+                "locator": "jcm-1412; exact captured source response",
+                "kind": "primary_source"
+              }
+            ],
+            "whole_owner_or_release_approval": false,
+            "weaker_scope": "C10%/A1M already disclose inference in prose; they require provenance clarification, unlike B977 unqualified verbatim claim. C1009 is outside this assigned full-payload set and is referred to its reviewer.",
+            "duplicate_assessment": "B977 and C1009 have equal component arrays but JCM1009 specifies anaerobic N2 preparation/storage absent from JCM977. Equality of these arrays alone does not establish duplicate prepared-stock identity."
+          }
+        },
+        {
+          "path": "c/findings.json",
+          "sha256": "0d74a5f6c77dcf7602dd106f1844aaee5c554521d64cc5bf070bbc1cbce63232",
+          "selector": "findings[finding_id=C-06]",
+          "observation": {
+            "finding_id": "C-06",
+            "severity": "minor",
+            "title": "Acknowledged Water inference is represented as literal recipe transcription",
+            "proposal_ids": [
+              "C-P-TOGO2790-GLUCOSE20",
+              "C-P-JCM1435-YEAST10",
+              "C-P-TOGO2568-GLUCOSE10",
+              "C-P-JCM1009-GLUCOSE20"
+            ],
+            "evidence": "Each payload notes Water is inferred/implied from aqueous stock context, yet components includesWater under component_assertion.method RECIPE_TRANSCRIPTION and evidence says literal component names. Schema defines RECIPE_TRANSCRIPTION as constituents/quantities transcribed from cited verified recipe.",
+            "reproduction": "Read components[1], component_assertion.method/evidence/notes for each exact selected payload and compare actual source stock description. Source states glucose/yeastextract percent stock, not an explicit stock solvent ingredient.",
+            "bounded_fix": "Represent the solvent inference with CURATED_INTERPRETATION/MANUAL_CURATION and precise rationale/evidence, or omit the untranscribed component pending exact solvent evidence. Keep percent basis/form/finalvolume unknown. This finding does not claim Water is chemicallyfalse or require guessing an alternative solvent.",
+            "disposition": "Open provenance correction; coordinator may group with B reviewer JCM977 finding."
+          }
+        }
+      ],
+      "issue_mutation_performed": false,
+      "successor_disposition": "not_reviewed; coordinator must bind and independently review any successor"
+    },
+    {
+      "finding_id": "W06-IR-006",
+      "title": "Positive JCM381-to379 evidence is misclassified as failed search",
+      "severity": "minor",
+      "status": "open_at_frozen_head",
+      "known_issue": null,
+      "proposal_ids": [],
+      "direct_source_case_ids": [
+        "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2"
+      ],
+      "related_case_ids": [
+        "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2"
+      ],
+      "requires_payload_byte_change_or_identity_reconciliation": false,
+      "proposed_bounded_fix": "Bind A-E-CAPTURE-121 to the successful exact primary381 body with original timestamp/hash, retain381→379 context and index provenance, then refresh evidence bindings. D-glucose identity needs no correction.",
+      "normalization_rationale": "",
+      "observations": [
+        {
+          "path": "a/findings.json",
+          "sha256": "70c8d8c491502f337e757b8daca3225f4595ade6e7653ef82b50fdd406238b0d",
+          "selector": "findings[finding_id=A-EVIDENCE-121-001]",
+          "observation": {
+            "finding_id": "A-EVIDENCE-121-001",
+            "severity": "minor",
+            "status": "confirmed_metadata_correction",
+            "summary": "A successful JCM381 primary body is misclassified as unsuccessful_search and bound only to an index.",
+            "case_id": "CM_NAME:102484d774a696522df51fc7a287ecc10e2ddbcf316c63b9669e3a741d53b7e2",
+            "evidence": {
+              "evidence_id": "A-E-CAPTURE-121",
+              "kind": "unsuccessful_search",
+              "capture": {
+                "root": "artifact",
+                "path": "research-a/capture-index.json",
+                "sha256": "9a13330b6e7b9ecb90d90c1f69a6751c06ac7b8e7ec147aa8e84fd12453d9a57"
+              },
+              "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=381",
+              "accessed_at": "2026-11-08T05:06:59.066137+00:00",
+              "locator": "JSON entry[121], url, exit_code, stderr; any existing body is not treated as newly retrieved"
+            },
+            "successful_capture": {
+              "path": "research-a/captures/1dfff2b87118ec32.raw",
+              "sha256": "9e2e930f606c2c13793df65b7443cb664663e987e9399d4c60a29ea167961aff",
+              "accessed_at": "2026-11-08T05:06:59.066137+00:00"
+            },
+            "reproduction": "Read capture-index entry121: exit0 and1094-byte body. The exact HTML names JCM381 TRICHOCOCCUS MEDIUM and says Use Medium No.379 without peptone, with GRMD379 hyperlink. Captured379 lists D-glucose5g. This is positive source evidence, not absence or failure.",
+            "bounded_fix": "Classify the entry as primary_source, bind original successful body/hash/timestamp, preserve index receipt and explicit381→379 applicability chain, then refresh evidence/review bindings. No chemistry correction is needed."
+          }
+        }
+      ],
+      "issue_mutation_performed": false,
+      "successor_disposition": "not_reviewed; coordinator must bind and independently review any successor"
+    },
+    {
+      "finding_id": "W06-IR-008",
+      "title": "Four failed receiving pages are classified as positive primary evidence",
+      "severity": "minor",
+      "status": "open_at_frozen_head",
+      "known_issue": null,
+      "proposal_ids": [],
+      "direct_source_case_ids": [
+        "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285"
+      ],
+      "related_case_ids": [
+        "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285"
+      ],
+      "requires_payload_byte_change_or_identity_reconciliation": false,
+      "proposed_bounded_fix": "Relabel the four empty responses as unsuccessful_search, preserve original captures/access times, and enumerate receiving occurrences lacking an applicable recovered primary page. Preserve valid197 formulation/support and source-dose holds. Recover exact alternatives only if needed; do not use primary metadata as proof.",
+      "normalization_rationale": "Normalize B major to minor: primary JCM197 formulation remains supported, all40 frozen references are accounted, and no blanket claim of40 successful current primary pages was made. Correct evidence classification and exact occurrence access limits; do not invalidate the supported formulation.",
+      "observations": [
+        {
+          "path": "b/findings.json",
+          "sha256": "2fd4548598d12410560fbc293cf03b275ee360c965d2b4e9ebff7487c9aa194a",
+          "selector": "findings[finding_id=B-04]",
+          "observation": {
+            "finding_id": "B-04",
+            "title": "Failed receiving pages labeled primary_source without explicit per-occurrence limitation",
+            "severity": "major",
+            "status": "confirmed_for_coordinator_deduplication_and_bounded_remediation",
+            "case_indices": [
+              111
+            ],
+            "case_ids": [
+              "CM_NAME:acb48c68f0d794c013c75f9dd8fddc03de086b27308092e37a8457d891ad9285"
+            ],
+            "affected_proposals": [
+              {
+                "proposal_id": "C-P-JCM197",
+                "after_capture": {
+                  "root": "artifact",
+                  "path": "research-c/after/JCM_197_Trace_Vitamins.yaml",
+                  "sha256": "de17dee3c912e05f2ac460ef85d296a8f6d0a20a175de173233a41cb522b8063"
+                }
+              }
+            ],
+            "description": "C-E-jcm-737/876/887/955 each contain Nothing found, but are kind primary_source. All40 frozen197 references are accounted for; this is not a claim of fabricated forty successful primary reads. The positive JCM197 formulation remains supported, while these failed receiving-page contexts require explicit frozen-only limitation and unsuccessful-search classification.",
+            "bounded_fix": "Relabel the four empty responses as unsuccessful_search, preserve original captures/access times, and enumerate receiving occurrences lacking an applicable recovered primary page. Preserve valid197 formulation/support and source-dose holds. Recover exact alternatives only if needed; do not use primary metadata as proof.",
+            "reproduction": "b/failed-receiving-primary-captures.json contains full exact raw response bodies, captures and timestamps. Verify Nothing found in each body and compare evidence.json kind plus case111 missing_requirement.",
+            "evidence": [
+              {
+                "evidence_id": "A-E-21-S00",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1362_METHANOBACTERIUM_VT_MEDIUM.yaml",
+                  "sha256": "7a701feeffeee2d2379cacb428920c88a5d5980c0dd9f557121b661b016dc0a1"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/8; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-21-S01",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1353_GBS_SALTS_MEDIUM_FOR_FERVIDIBACTER.yaml",
+                  "sha256": "e7c09ad9766e6639d558b9cd73b422a1b2cb209f1e431ddfbeefe2de5c4a15f4"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/21; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-21-S02",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1393_PFENNIG_THIOFABA_MEDIUM.yaml",
+                  "sha256": "a9196a6fa68bb4f14cb0107a9a3c192f1125c30ebae3759557a4ef74c9e74190"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/8; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-21-S03",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1395_PFENNIG_THERMODESULFOBIUM_MEDIUM.yaml",
+                  "sha256": "5274e83aea20dbd8310ebbf97e72faa5e56afa2888ab9b949c5949b03997808a"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/9; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-21-S04",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1412_MANGROVIBACTERIUM_Z1_71_MEDIUM.yaml",
+                  "sha256": "c27fd4abe5fd8b3c8f596f1177388c5c0f67e12a5ebb24bc318ae314853783e9"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/7; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-21-S05",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1425_SPOROMUSA_MEDIUM_2.yaml",
+                  "sha256": "9e8b323a7e5f4948f2c2b4e29f6cdbc869a2286320f543cb3ecac1e70fbccfb6"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/15; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-21-S06",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1429_M1H_NAG_ASW.yaml",
+                  "sha256": "c1f7ade67eabe4e754cd3638b25320f78fbfbeecc56629bda0706ae6310a9cbf"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "ingredients/9; entire containing recipe including notes, solutions and references",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-104",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/c464e732b34c9c65.raw",
+                  "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+                "accessed_at": "2026-11-08T05:06:57.211128+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-107",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/ea7a1ace8904d63b.raw",
+                  "sha256": "a42c0ee8511fa98972e1660199908c92b985aef9e59ea92c02bdc7d1911afd97"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1362",
+                "accessed_at": "2026-11-08T05:06:57.450560+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-108",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/8ea25e44d7d80d84.raw",
+                  "sha256": "1349ce249d44773fc831558e9f44c78859e779a3694272bb657b58ddbd28f0a3"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1393",
+                "accessed_at": "2026-11-08T05:06:57.760683+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-109",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/7b5045c83f8418d4.raw",
+                  "sha256": "5e0d34df46e27a1683c925afba580b2d3deb6ae9faa4a37a3d8888e3287e4953"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1395",
+                "accessed_at": "2026-11-08T05:06:57.803220+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-110",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/61f21f8f4b72f5a4.raw",
+                  "sha256": "f1002ba09c4aae94b75f2cc114f4ed6a3efa2c17b4d4f9a90031ccb2390dcf29"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1412",
+                "accessed_at": "2026-11-08T05:06:57.822014+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-111",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/86f962e170f387ed.raw",
+                  "sha256": "9a98023711d497f1681ab28d068e6d8534572870d0b4280a6c61ab68622db543"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1425",
+                "accessed_at": "2026-11-08T05:06:57.884264+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-112",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/b9102e08db4bb16c.raw",
+                  "sha256": "82c83849a34933b3b8965b7d2759e97b0f576302123985ede5145659b941035c"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1429",
+                "accessed_at": "2026-11-08T05:06:57.886549+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "A-E-CAPTURE-116",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/0c1e7fd46063ca00.raw",
+                  "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+                "accessed_at": "2026-11-08T05:06:58.516447+00:00",
+                "locator": "Complete source recipe/product table and preparation; inspect the exact source label and context named in each case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-57-frozen-0",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1066_Clostridium_Swellfunianum_Medium.yaml",
+                  "sha256": "c58a3dbb0e8bb776583bc6dc6de1abac60a0144f0adce881daad8f8bca84cf9a"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1066_Clostridium_Swellfunianum_Medium.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-57-frozen-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml",
+                  "sha256": "cd27c306956a5bb27445cdde8916ae9dd5f2b1e9f8463b1b3aeaf5cb479c5d85"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/anaerobic_butyrate_rhodospirillaceae_medium_rm.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-57-frozen-2",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml",
+                  "sha256": "9b7b93208859471b987bb893bb2d1f164b5358d05a3c901858c7927a9eee730b"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4784_Main_sol_J825.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-57-frozen-3",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4801_Main_sol_J837.yaml",
+                  "sha256": "a4747e18766bd4398093a06febbc823292937a23aaf74aea4820a754bb51b81a"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4801_Main_sol_J837.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-0",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1415_METHANOSARCINA_Z_7115_MEDIUM.yaml",
+                  "sha256": "7cbc01035ef6da98d59bfeed1775c46788445536b9f11f7ad4acb4afce9d3dae"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1415_METHANOSARCINA_Z_7115_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1462_METHANOSARCINA_T3_MEDIUM.yaml",
+                  "sha256": "2d67ae05841cf812cfce191b3c4c83946f17e9b8b33ac963ebe4835d14c74eda"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1462_METHANOSARCINA_T3_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-10",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1444_DESULFOSPOROSINUS_SB140_MEDIUM.yaml",
+                  "sha256": "38d3409e6474bd5753ea220ac343eefdc883d10db2a341646f8d47796a2172b2"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1444_DESULFOSPOROSINUS_SB140_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-11",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1475_DESULFOBACTER_MEDIUM_WITH_HORSE_SERUM.yaml",
+                  "sha256": "d1037d5e514aa54070b4bd7c102896b5e6e43ae915cb44d27fed822c5489a42d"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1475_DESULFOBACTER_MEDIUM_WITH_HORSE_SERUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-2",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1463_METHANOSARCINA_MFA9_MEDIUM.yaml",
+                  "sha256": "9fc395da78cebf841eea50265340779a33ac95dad00f9eb261235fef93828cc7"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1463_METHANOSARCINA_MFA9_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-3",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1341_MODIFIED_PFENNIG_MEDIUM_WITH_ACETATE_AND_FUMARATE.yaml",
+                  "sha256": "0fdc69f53c8a5493163bdc620f30e410741bac37beae54833225c9adf6f0bc00"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1341_MODIFIED_PFENNIG_MEDIUM_WITH_ACETATE_AND_FUMARATE.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-4",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1351_PELOSINUS_BKL1_MEDIUM.yaml",
+                  "sha256": "5408c4c9e7ad98132cd96333531677f30439af05fa6add2855904d2e49983d07"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1351_PELOSINUS_BKL1_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-5",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1365_ACIDIC_LOW_SALT_MINERAL_MEDIUM.yaml",
+                  "sha256": "4cfea8e10c911360e53a4add5f61f94e1c3b64647840aa39cb059797b6d5200e"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1365_ACIDIC_LOW_SALT_MINERAL_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-6",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1388_ACC8_MEDIUM.yaml",
+                  "sha256": "270d28c3fc84051941cdb5aab4397a38af1050e644e727d9dff324265962c212"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1388_ACC8_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-7",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1389_IA91_MEDIUM.yaml",
+                  "sha256": "ba044fd2cbe2db63c99561c786b3a8cd58993e51fc4d397e046447500751f46b"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1389_IA91_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-8",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1404_MINERAL_CARBONATE_MEDIUM_WITH_CELLOBIOSE.yaml",
+                  "sha256": "1b12d08b6b4e28b539bd77702274e9d10bf7ad636bdcc603835259851924dc05"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1404_MINERAL_CARBONATE_MEDIUM_WITH_CELLOBIOSE.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-76-frozen-9",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1435_LIMNOCHORDIA_LN_MEDIUM.yaml",
+                  "sha256": "079a6b87492088ac63da6c2244301c25d8f82a7bcb39120f23f52502353a3c1f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1435_LIMNOCHORDIA_LN_MEDIUM.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-http-08326634790a5b2e",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-75330c22c56820a6783b.txt",
+                  "sha256": "64e432cdcdc137d817e68baeffdc1f86158ded20c789e06b9f598fe104a96bd0"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1475",
+                "accessed_at": "2026-11-08T05:07:03.089401+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-0ba8fc9603681355",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-0c1e7fd46063ca003199.txt",
+                  "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+                "accessed_at": "2026-11-08T05:06:59.275251+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-11747b3469a0ffc1",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-ffb1c352f2f88b71236f.txt",
+                  "sha256": "a09ffb7680b3b04c10d33912e710065f5864021e1d09ad4d23a215439bf5f8ba"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1444",
+                "accessed_at": "2026-11-08T05:07:03.031487+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-1e7884dff9f1c474",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-0efb45efcb3199ce2275.txt",
+                  "sha256": "38cba335b0d49ecd28fb5e5457b0678e5e83ef9703349703dfe11d3d39d7b2e2"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1009",
+                "accessed_at": "2026-11-08T05:06:58.789962+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-2901198d433b3282",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-f897bb6068c71ac69fd7.txt",
+                  "sha256": "fc46c2da2652f972403fcd46d9fb82e0e2e692b09bc49e72f1abc0953112cb46"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1351",
+                "accessed_at": "2026-11-08T05:07:02.520053+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-2fac057678b899db",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/extra-9159eca12ff736f86b87.txt",
+                  "sha256": "61c69f48450ab6c5f9328553ae143b64eeb8b7aab88fa1e966e00a19317cf528"
+                },
+                "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M190",
+                "accessed_at": "2026-11-08T05:08:17.778891+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-324fe922500de083",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/extra-c2afd8f145f3414f4a8e.txt",
+                  "sha256": "a868c8e3697944dbff566b8290d67d3466c3f8cf049eb062bc7ebdc61352957c"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=837",
+                "accessed_at": "2026-11-08T05:08:50.815920+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-32c0b2bc604e3670",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-b7333a072223cb2beb90.txt",
+                  "sha256": "07280677f9b7fda8b67ac25fa7a7f49bd371d263f24c3b695bc47c049a0908c0"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1404",
+                "accessed_at": "2026-11-08T05:07:02.972666+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-365f299742fba7a1",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/extra-b17e0dc8082659daa83c.txt",
+                  "sha256": "b3f4e74d1545ab08e66e8905680a027edc96bd1d681b74892485b87777f5d5c4"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=825",
+                "accessed_at": "2026-11-08T05:08:50.268559+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-3bdc8632ef429b45",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-fbf5cd553c688e297257.txt",
+                  "sha256": "bd2a35c651cd8b8db154b7025c37fd0bdbcdfc4e7b6e578128ee4500a611333b"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=433",
+                "accessed_at": "2026-11-08T05:06:59.237594+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-5199e6aceec4b587",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-32f62de6c53db6ce3af3.txt",
+                  "sha256": "fbfe2b0ff18fc42c48e7e0455193e48bad1e7048cbcea21fa5301cf4849ff30d"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1389",
+                "accessed_at": "2026-11-08T05:07:02.942015+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-8dd308173ad7207c",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-9bbc5a8f944eab92cb6c.txt",
+                  "sha256": "e9e326a8e33f7556e7c850615df463cc17cc0b0cb39062344b729380f68f11c3"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1435",
+                "accessed_at": "2026-11-08T05:06:59.792112+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-8e0426d3fccf995c",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/extra-e4c75475d07a04708c3b.txt",
+                  "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f"
+                },
+                "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181",
+                "accessed_at": "2026-11-08T05:08:17.780352+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-a6a4d58305d04001",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-c8ec70d710c586819763.txt",
+                  "sha256": "f4bcb4b44fad96b072381444e0674a88edb5bba797b2a859fd93035b0e60c365"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1415",
+                "accessed_at": "2026-11-08T05:07:02.348989+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-a7547d464b81ce67",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-c5a269cbb7dd44503829.txt",
+                  "sha256": "23985036b1501ee775fb3528abf2fb2b7a1ea079979a527de2c7cfabfdba72d1"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1463",
+                "accessed_at": "2026-11-08T05:07:02.397821+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-aecdb8723a49919a",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-cbdcd1e86510804a4c9c.txt",
+                  "sha256": "4f05d07dfa779383c7225a96db30f421ac96de3cbd895f3281f26ec59cb91965"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1388",
+                "accessed_at": "2026-11-08T05:07:02.621736+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-b007dfdb295fbce2",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-c51346bafaa787c0d5c1.txt",
+                  "sha256": "8e5347f7670f633e13fc9e04674fcbfae987805dd853c64a591bdb80a8b3eb45"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1365",
+                "accessed_at": "2026-11-08T05:07:02.524427+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-d470743457a18d8c",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/extra-e308301aa2ba3afb251d.txt",
+                  "sha256": "b0e92380fc64ea5b9bd975a00f6cd6318452dea5623139816a6458e27fe3f922"
+                },
+                "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M433",
+                "accessed_at": "2026-11-08T05:08:17.777458+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-f7ffdaa1dff6cbe8",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-8647869714e5f3d813f5.txt",
+                  "sha256": "464993257dfafd7e560fafbdd4a52f0a4b034aa4adbcabda1f0047d515f5ecf0"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1341",
+                "accessed_at": "2026-11-08T05:07:02.475031+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-fdf48b323e1d899f",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/http-179ffffed38cb1bf78dd.txt",
+                  "sha256": "fdc9e5021cc3636eacc8a5595588e124c405dce007121d5b9389e97f6ef01bbc"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1462",
+                "accessed_at": "2026-11-08T05:07:02.352604+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "B-http-ff9c507eb47d5cc5",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/extra-3e648d854c8e0849c628.txt",
+                  "sha256": "d212b24cb6b51aa9dd49c5c39601a201b168d5696b627b677a2d974c460612e1"
+                },
+                "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1066",
+                "accessed_at": "2026-11-08T05:08:17.774102+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-101-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/NBRC_838.yaml",
+                  "sha256": "c646dcbf1f1ff54c189f49bfd2c82f0ab9c1005d2a37ef88468c431a25c90b3c"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:815db1ca655dac57a20f09632c8e1991c8bb3a1e2e05c1ed051a2633444607be at ingredients/9",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/halalkaliarchaeum_medium.yaml",
+                  "sha256": "4bedcc1e9beb8863ea2758bae1886fcf765341ba206e9672b77009cc586b69d6"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:7cf6646cfbd9fcdb467aaa52bdabf71ecb6c65ef13e5919089a339b3fd72cb48 at ingredients/2",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-10",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/fermentative_cellulolytic_anaerobes_medium.yaml",
+                  "sha256": "112ad205deb9067220adba943f7248217e687c73a42b578feb1c845765c24354"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:4270af0e7ce52f98234c7a3480de7cabf94ce2aa1008b062bfa0e2038b10fe33 at ingredients/9",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-11",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/m25y_medium.yaml",
+                  "sha256": "58f84b6a7d3bae0bc85e52b7fc6eb5eecef58a58ea175583f65237374a289f1f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:70d3b3e1b7472f9c478a6d31301e9e70e68c59844e0ed9161a54229650ce57e9 at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-12",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mb_medium_with_methanol.yaml",
+                  "sha256": "f447264e6a4767ded33bdd297ba7dac26b072157ebe60991311c4667799170bb"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:08d3e402f8e05dac2f83c8a19dd6554d931cf029f691726b36e5d86ae540c013 at ingredients/10",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-13",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4314_Mineral_medium.yaml",
+                  "sha256": "326b9fe96821f3dd611a520dd1541e414da7e26dbaf95b423d66df3840c3eadf"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:128c8e577874050168df27461c80a4ed595b5dcb80a5fd47f86d092ffbd78e0a at composition/7",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-14",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4549_Main_sol_J661.yaml",
+                  "sha256": "e6c0fc868ba0aa166ceac971428fc7fab8baa9cb0898fa67b83b7420400bab9a"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:c7da431767e878853d409f5936e2fe1cc9a54871e8d63a3ccf409da93033bc9c at composition/10",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-15",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4560_Main_sol_J670.yaml",
+                  "sha256": "76e05109eccf31bc429e2a24d5f2406ba5a0e75aeff4540243ea0e25f552aa6f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:6d928eb348b4bb10af2e9dd65d0cdf329cb8d5b01c3e33e1a3a0ca1bb301d032 at composition/5",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-16",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4591_Solution_A.yaml",
+                  "sha256": "e7b5069dad091d1c159506233c6c8063f19aa0a7ef6d4647d3ffbc8dc9407ba0"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:6c7ddb3d5798fdd5373b57c58fb0433067a5c0f22b82d2a123bf3822dc45b924 at composition/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-17",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4604_Main_sol_J695.yaml",
+                  "sha256": "c8cff409293b09daefd059827b21a0d781692d13e0b4089f9975f364819b4c8f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:60402e4ecc174fe98354601d5e1c161fbce4f8f907ab8cb59587666bfc9e5836 at composition/10",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-18",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4668_Main_sol_J737.yaml",
+                  "sha256": "ffaa28d7cbe20ffbdfa5211364d1ee971cbcd979f0a9854afa229a69b7dc7b7c"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:53e72e8ea65445ee4a82af6ddb3a9c80b20fb1636798d6ba10c4a15f8c396732 at composition/7",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-19",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4689_Main_sol_J751.yaml",
+                  "sha256": "a4a90d7834f3b15c2ab39c45dae5e93489aa130c835804e15df4cacf88897906"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:ad9c9fa1c9b5f5f40cdfa32ae35cd07a0c3b3dc226e5ac5de59d3929396ad9db at composition/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-2",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/natranaeroarchaeum_medium.yaml",
+                  "sha256": "266b7a6571570d13f4f58304ef95ccf0687edf5227afab78cba228bc879fdcf9"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:992865f5e9bccb64207197828d28160694e977951d21dc044151ac10ac137e12 at ingredients/2",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-20",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4692_Solution_A.yaml",
+                  "sha256": "3316e7f7aeeb1bedc1696c96a5fdd16e2b6873281be7a1cb49f30dcb6f42ea14"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:91d73b0cd4f77d19279dcbcf95ff06b154b4028550705348d01c698711a58835 at composition/13",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-21",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4733_Main_sol_J784.yaml",
+                  "sha256": "232e3a497cbba0ffeb8be4be15e6d3399a545f1354df156947dbde3f77839e14"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:6d00742f09173012d84b75c4428ceeb71dc6312732fc5d7cb11cfffd500fdb5c at composition/13",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-22",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4778_Main_sol_J822.yaml",
+                  "sha256": "1d7f1ddd304afb90427b271e1ee8f23ac7e10ed9c535e2e819ea7fe483dd3bf1"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:ccbc3359b18917894b1ce3809cd4b0a8a667f0ee72a66c59918be16f9ca7f2fc at composition/10",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-23",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4851_Main_sol_J865.yaml",
+                  "sha256": "645b988774ea11eee1b946f26c9c7801beb899e44d1721b38a05b318d6287181"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:5da91329fa5608e438c0b4178bae9d494aa3d93a13604034fdb06b73112b4db4 at composition/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-24",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4863_Main_sol_J876.yaml",
+                  "sha256": "61c1b1d87fa9172766b916df3cc17a7f7601408a97d661abaa3ef6dd631064d0"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:5c85694e6b475d5f122c56a85ca8bccfdff0484550fc9f4f56d7492ba8d44ab1 at composition/10",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-25",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4878_Basal_minerals.yaml",
+                  "sha256": "0c3498798fff516f1e7344326e8ea6c5b53a0796547e6fbd11ffe35c42c8c209"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:23dbd7dc64504eb7358dfc3cbface5fcd95f63188623b2fa01cff2e1df565cba at composition/4",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-26",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_4977_Main_sol_J955.yaml",
+                  "sha256": "85bed95a7a8bbe0135d905acf5f49f0560b9625367d0d0aa0314797a3aa4f3fd"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:e8c02da3b4da62414805631cfda75826cf2bab842a8fbcde9f9bafe4873fefc3 at composition/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-27",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5131_Main_sol_J1066.yaml",
+                  "sha256": "c43eb36be250f1d92e46b925b8b2201aef9759cd1fade693a2f3de915cb76581"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:77398dcfdf49f787aa30520f5e8b072cde8d69dc302e309ee8d5e9f76b18130e at composition/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-28",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5148_Main_sol_J1081.yaml",
+                  "sha256": "36b977bf67c438ccea2ea6bc861b657090d6df6ff5db9a28db624c3f9fba72a4"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:da7d9ef38f8bf33ef3841aca29c357702b58b75c14608973696f670d1b2ad10d at composition/2",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-29",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5150_Main_sol_J1082.yaml",
+                  "sha256": "f80a655b1672c0416533cb838b5733892a1721071cd096a62c89f9fadcc0b684"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:0061ddab59d07b41955e79d358fd5330c21bf077778169b4f26f04366f4716bf at composition/2",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-3",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/natronolimnobius_aht32_medium_a.yaml",
+                  "sha256": "d040ef9a25b7a6209cc8d759ef32d9576b27683f74acee42c71ddddada25c189"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:85b2e4f2a50dedb11b43aa917a11b11123447190ee74a9d24c7ddac92a35f682 at ingredients/4",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-30",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5163_Main_sol_J1092.yaml",
+                  "sha256": "74eb7a2a933ce9dca46a32d2f69acb7c9138e6df7521835122bd3ded4aa3f6aa"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:bdd802e19b639d5d1391c611d9a6f6fc5381ef8b1a4893684ed2b10b84ea9f96 at composition/0",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-31",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5205_Main_sol_J1115.yaml",
+                  "sha256": "a200aa47ffad792b2b25afca5573245621c2a31bd952dae2582a5287982ed7e7"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:849657b0d788529e752b2e529e202f091a851a2ebf4c6cbafddb275385fa7f72 at composition/14",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-32",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5473_Main_sol_J1313.yaml",
+                  "sha256": "069af78f2f66b1ef15b2023ebc5d78bc4301bd85024199bc75e2c65b149954f3"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:4340aa356e41888c26d195779325e6b23931a8d5d35e87336cf80fc946eca755 at composition/10",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-33",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_am5_medium.yaml",
+                  "sha256": "9fc512995270d6ae030217f965b5ff07673bce8befb14e8c820bc1ce473b3e6d"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:f27d0c87f0491b083a50d482a14e9c5e8de3f6f652d9d9389708e423c9111c37 at ingredients/9",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-34",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_am5_medium_2.yaml",
+                  "sha256": "cf6155d44d23af8507efecffbc335874463849951393706d253dfedb922da344"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:37439ae608e0b28888955d4d8e45e858913bdd8027c34c18e9e97b984f89a8b6 at ingredients/9",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-35",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_desulfoglaeba_alkanexedens_medium.yaml",
+                  "sha256": "7e56f6767ef1fe774011f5a06c14e23d50ecf395e8abb17e545d7c72be9c93f8"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:657b0a9690c6226d03dbebd090769fa1fef15693811a1ac3ed8875fbe7b5c049 at ingredients/6",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-36",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_nautilia_lithotrophica_medium.yaml",
+                  "sha256": "081f6d22be970c352a5138f2d73a529b0ac894930cf9feaf2aa38db0d9b0fd76"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:4a47f70d67ff720d4954445f314709fd5b9073b8110b58bea787ac80622795fd at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-37",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/nautilia_abyssi_medium.yaml",
+                  "sha256": "c6ee17bb087c39e9b5eec5cb2062161ca456e7c0cdc727c953f1af44f4781705"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:e66080153b48e098f15b7694893f45d898e379bd4c2510f59b48a32f1f185b52 at ingredients/9",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-38",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/spirochaeta_caldaria_medium.yaml",
+                  "sha256": "47b832985c6ed666796de0981ab214d06bf0264d090ab1ff7a983de392973098"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:acfe6595b77254d420f4a0a559faa5fe510a5e7b5c3cd4579daf46aab1a3ed6d at ingredients/4",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-39",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/thermodesulfobacterium_geofontis_medium.yaml",
+                  "sha256": "6e84a4012ac988dcdbd5d08aacb967414535e3ceaee6ac83dbcf0048983947a5"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:00b266d2fc266381a306013b1f7dc717651b3474a5ec0a42fc5ceb30b90b8a60 at ingredients/10",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-4",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/natronolimnobius_aht32_medium_b.yaml",
+                  "sha256": "bc86e007ba3b846c647fb3a10f2776d0d8f69e7dd210f7eddd6dda78a8e95466"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:f8b05950750b253bcd34aaf4ab7e1faa1aa60ab64c430f4744a5472ec759cf65 at ingredients/0",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-40",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/varunavibrio_medium.yaml",
+                  "sha256": "c56b757a0c5ab448f49b249febce354a0357fa983c7be05c9908bc9db25e8962"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:19dd005e2656e18dfda3597a30d23d5925e198d0cf555e1a11a1202deee08cc3 at ingredients/13",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-5",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J753_DEHALOSPIRILLUM_MEDIUM.yaml",
+                  "sha256": "e15e684ac336a9f0af121a26255448d28b73114a2ece07929ff553abda4b7750"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:c79a5bc17f9f52a1c41620ba744c659969a806f5b1a575abf573fcb6e12fd312 at ingredients/12",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-6",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J784_DESULFOSPOROSINUS_ACIDOPHILUS_MEDIUM.yaml",
+                  "sha256": "0224e5dde9f90f889c3afe81320c02aed5f3548178d7ca02e9f152b8ce505e60"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:be3e54e315007df6316730b8bda43b7a4fd04f32a3297ee4cd81c4f53166e864 at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-7",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J876_DESULFONEMA_MAGNUM_MEDIUM.yaml",
+                  "sha256": "1bcc4d5e377e40294548d5831726f3340174f24789e8ec1fc715ef9939418c78"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:6a7d092e672d882a74e535ad4f04f0952c6757061b94a8391c15c11e36190f30 at ingredients/9",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-8",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/bm_for_syntrophicus_schinkii.yaml",
+                  "sha256": "9a12d2307d769fca8e47aef98da04a46df1ccb333ae17a83cfc3793a9db9e864"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:e892944385fb38cdcf951ccd64d3496ea3511a3a30d2e614c397cb070b34d22d at ingredients/6",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-111-SOURCE-9",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/desulfosporosinus_bsrei1_medium.yaml",
+                  "sha256": "e5847f5c99eb5403d96c8d2bdf651c2468e17bec5829c5762ad8a4cd0bf8a33f"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:d4a90e55f1557b4153099c546cefdb035b85c65b396d129e8bcd6330a9028337 at ingredients/11",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-117-SOURCE-1",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/archaea/JCM_J1456_METHANOCULLEUS_7T_MEDIUM.yaml",
+                  "sha256": "7b47ba45d6b3ea4d4d0024179bd0003b5da8373fa576821f84a9f460ad080fa0"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "Full recipe; occurrence CM_OCC:ab3e28b29d6689943fd20ef058c7f6ac6fde229e95d67ca1e92541a58b390509 at ingredients/8",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "C-E-jcm-1066",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1066.txt",
+                  "sha256": "b2aff7797e30cedba452a56eed7f9a2802e006dbe82f6d1a67bb7efa4ba224ec"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1066",
+                "accessed_at": "2026-11-08T05:07:28.321525+00:00",
+                "locator": "jcm-1066; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1081",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1081.txt",
+                  "sha256": "c3bc594a30e3bd7aabf7ef4a8203c3ae802a4f3d1c2748d00bf666b0dd39e51f"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1081",
+                "accessed_at": "2026-11-08T05:07:28.638208+00:00",
+                "locator": "jcm-1081; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1082",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1082.txt",
+                  "sha256": "fd88e30c99abcf2fe23e6a4c16e2f79ca83e4143c9dd1e869baa0fb8851968fd"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1082",
+                "accessed_at": "2026-11-08T05:07:28.672959+00:00",
+                "locator": "jcm-1082; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1092",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1092.txt",
+                  "sha256": "418c240c1fa59b222cd20e05f28c48375f235238d34c1c233a483dbc049f548f"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1092",
+                "accessed_at": "2026-11-08T05:07:28.678109+00:00",
+                "locator": "jcm-1092; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1115",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1115.txt",
+                  "sha256": "6093ab0418721eccafee1a852533c5ddcbea180adf6da20b152e4bdbca2179b6"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1115",
+                "accessed_at": "2026-11-08T05:07:29.033686+00:00",
+                "locator": "jcm-1115; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1313",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1313.txt",
+                  "sha256": "d257e42ec72449ed2b6746561fae987aa9485ad2ec96fea084c8111f051e757b"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1313",
+                "accessed_at": "2026-11-08T05:07:29.055327+00:00",
+                "locator": "jcm-1313; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-1456",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-1456.txt",
+                  "sha256": "e4b00e471e369b05c05f85b95d60a8042a7e9f8d1871e059b2fdc79e6d1080e6"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1456",
+                "accessed_at": "2026-11-08T05:07:31.267830+00:00",
+                "locator": "jcm-1456; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-197",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-197.txt",
+                  "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+                "accessed_at": "2026-11-08T05:07:31.962895+00:00",
+                "locator": "jcm-197; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-521",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-521.txt",
+                  "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521",
+                "accessed_at": "2026-11-08T05:07:32.970868+00:00",
+                "locator": "jcm-521; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-661",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-661.txt",
+                  "sha256": "bb893df844f042280a7574d4a9db15663e9013d94585f50b2dc1abdf61362f79"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=661",
+                "accessed_at": "2026-11-08T05:07:32.973445+00:00",
+                "locator": "jcm-661; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-670",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-670.txt",
+                  "sha256": "449b16a5fb1916d6fef5ba89893ac198b3b23cd585e363e69904a26d62bc367d"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=670",
+                "accessed_at": "2026-11-08T05:07:32.985534+00:00",
+                "locator": "jcm-670; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-687",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-687.txt",
+                  "sha256": "a7d933e920e5778df2a38a4d5e829c44fb9a6772e7d053a6a35b06370d2074eb"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=687",
+                "accessed_at": "2026-11-08T05:07:33.426311+00:00",
+                "locator": "jcm-687; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-695",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-695.txt",
+                  "sha256": "b4e1597e4c535399f7f013860668d4f473ea703268f35faae8c24cb0ce80ae76"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=695",
+                "accessed_at": "2026-11-08T05:07:33.464764+00:00",
+                "locator": "jcm-695; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-737",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-737.txt",
+                  "sha256": "117bcb3e1384be331651b397fa50e6b10f50ab1ae1b079d6ee2d724361ed7e11"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=737",
+                "accessed_at": "2026-11-08T05:07:33.481408+00:00",
+                "locator": "jcm-737; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-751",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-751.txt",
+                  "sha256": "4ef33d9e70108e257a62d72130223821dc586acde8b72f02f868bdcd156bb77c"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=751",
+                "accessed_at": "2026-11-08T05:07:33.489255+00:00",
+                "locator": "jcm-751; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-753",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-753.txt",
+                  "sha256": "951b851e297e5b1db5efc4475d36f682c16518ee5fb8d9224b20a1d75ffdf972"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=753",
+                "accessed_at": "2026-11-08T05:07:33.493984+00:00",
+                "locator": "jcm-753; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-784",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-784.txt",
+                  "sha256": "1766f0ddbb19328bb2b3550ac0a56314ceba8cc84956063ef312ddf344b84e28"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=784",
+                "accessed_at": "2026-11-08T05:07:33.704009+00:00",
+                "locator": "jcm-784; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-822",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-822.txt",
+                  "sha256": "cb0a97140c09b1895332b6e4278b102c36abe60fdb8bcb2dc71a45eda4663757"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=822",
+                "accessed_at": "2026-11-08T05:07:33.717116+00:00",
+                "locator": "jcm-822; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-865",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-865.txt",
+                  "sha256": "a21cc9b21df4485facf7f0602e77eb13e3cb00502711aae24075c80923de8f1a"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=865",
+                "accessed_at": "2026-11-08T05:07:34.142562+00:00",
+                "locator": "jcm-865; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-876",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-876.txt",
+                  "sha256": "ae9c4c27262c2901e2afb6bde93bdb79c639f1a6bc865a74daf08e8a1bdcfaac"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=876",
+                "accessed_at": "2026-11-08T05:07:34.215777+00:00",
+                "locator": "jcm-876; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-887",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-887.txt",
+                  "sha256": "864cc8128e031bb75d6fc2f5974e1ae464181c88a1c5360590da6cd6ded0f76d"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=887",
+                "accessed_at": "2026-11-08T05:07:34.235182+00:00",
+                "locator": "jcm-887; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-jcm-955",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/jcm-955.txt",
+                  "sha256": "1f8578fa7d60361256dd64a6be5e72d3ead406d77c0bdb0842ad1ca09f63d57e"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=955",
+                "accessed_at": "2026-11-08T05:07:34.427436+00:00",
+                "locator": "jcm-955; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "C-E-nbrc-837",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-c/captures/nbrc-837.txt",
+                  "sha256": "384be1efe21cbc55bdd47b5e8abfc9b58edf050f47724071031b057b95cdfdbc"
+                },
+                "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=837",
+                "accessed_at": "2026-11-08T05:07:37.113945+00:00",
+                "locator": "nbrc-837; exact captured source response",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-frozen-shard",
+                "capture": {
+                  "root": "source",
+                  "path": "shards/shard-06.json",
+                  "sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "cases[145:188]; complete original_kg_entry including all nested holds and original source records",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "R-ingredient-1784",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/ingredient-1784.body",
+                  "sha256": "1c1eecc0b500ca8233566f645f659a563a6ab5c48651293b892abe06394b8f77"
+                },
+                "url": "https://mediadive.dsmz.de/rest/ingredient/1784",
+                "accessed_at": "2026-11-08T05:08:45.165159+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-jcm-shared-197",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-a/captures/0c1e7fd46063ca00.raw",
+                  "sha256": "39580c63dd4a26cd4a98ee1d836b658683fcbff3e0df2adcb4208907cac40532"
+                },
+                "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=197",
+                "accessed_at": "2026-11-08T05:06:58.516447+00:00",
+                "locator": "JCM 197 named trace stock formulation",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J1066",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J1066.body",
+                  "sha256": "2bd65e9dbf482e960031a61076f592c7cffcd434c032f7e19d8923c780f0b646"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J1066",
+                "accessed_at": "2026-11-08T05:09:49.478777+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J1081",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J1081.body",
+                  "sha256": "e7b8d165ee43e665112ebc23498e5f169746bfea4689a8445f4db2cd9ed64515"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J1081",
+                "accessed_at": "2026-11-08T05:09:49.711580+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J1082",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J1082.body",
+                  "sha256": "b3640357d56c398ed4fa85f069ae40e56650cc1ca60e9544a6ad3236c22f6976"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J1082",
+                "accessed_at": "2026-11-08T05:09:49.713975+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J1092",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J1092.body",
+                  "sha256": "39684b635cab54c84bb966757019b962fcfb55d8108d41375eeb01f54e2bd9e4"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J1092",
+                "accessed_at": "2026-11-08T05:09:49.787493+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J1115",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J1115.body",
+                  "sha256": "5a7c50fd0b3b2588e2fa612ec7be61d4aaef71c96d74aa5d54eb22319de75b21"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J1115",
+                "accessed_at": "2026-11-08T05:09:49.956432+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J1313",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J1313.body",
+                  "sha256": "e02c18fc0dc56799e63e296d6c5ed8668bd93c2137a01876ba3893279f4744c9"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J1313",
+                "accessed_at": "2026-11-08T05:09:50.000727+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J661",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J661.body",
+                  "sha256": "1de2a889918d2018d215034b2c9aa97405cee0671029bc338c3b4d04f694721e"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J661",
+                "accessed_at": "2026-11-08T05:09:48.484288+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J670",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J670.body",
+                  "sha256": "ab80df1fbdc76b5a573040eb329037b738f79d2e71ee4d266165c54e33a78a23"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J670",
+                "accessed_at": "2026-11-08T05:09:48.528640+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J695",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J695.body",
+                  "sha256": "e7e4dad45fa748715158fe4106e3fd40470daac4ddcba3d9ba7a566a33b02a86"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J695",
+                "accessed_at": "2026-11-08T05:09:48.674523+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J737",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J737.body",
+                  "sha256": "2e97f1a0c4f29806ff9a9cdd70cb8ef54202130314e94f2405d4ede23c415370"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J737",
+                "accessed_at": "2026-11-08T05:09:48.680679+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J751",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J751.body",
+                  "sha256": "825112bdce2d7c2c38625719785827e593c41063392afa9136f4e0b8dfd892ac"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J751",
+                "accessed_at": "2026-11-08T05:09:48.796489+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J784",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J784.body",
+                  "sha256": "e3c6184286ac52ccab36915fbdb7bc5f9e3bfec604a1413e608d26f4c48faec2"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J784",
+                "accessed_at": "2026-11-08T05:09:48.871365+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J822",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J822.body",
+                  "sha256": "adc798fef8f52606496e6bfaeac813d6cb7ee7ef1a7032ef38593dabe78d360d"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J822",
+                "accessed_at": "2026-11-08T05:09:49.179825+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J837",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J837.body",
+                  "sha256": "85f8859dfd402288f4ed0e876ed59454f8a99b4f391644d12caef8ab7ca4605e"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J837",
+                "accessed_at": "2026-11-08T05:09:49.192310+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J865",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J865.body",
+                  "sha256": "6205db455e345bd8fea24bd94b53521349bb17376d710bb3f24bfc8ed1a52d88"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J865",
+                "accessed_at": "2026-11-08T05:09:49.256615+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J876",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J876.body",
+                  "sha256": "f1f9edaf647042f0c72383df5b08eeed2e9dcdfaed63adbb54eed3223af16684"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J876",
+                "accessed_at": "2026-11-08T05:09:49.399767+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              },
+              {
+                "evidence_id": "R-medium-J955",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-root/captures/medium-J955.body",
+                  "sha256": "864a44f3323df73edb715700a0115ccf39247061d100c4a7247da9f12fedcc3a"
+                },
+                "url": "https://mediadive.dsmz.de/rest/medium/J955",
+                "accessed_at": "2026-11-08T05:09:49.406729+00:00",
+                "locator": "Exact response body; JSON data or article/recipe section named in case applicability",
+                "kind": "primary_source"
+              }
+            ],
+            "whole_owner_or_release_approval": false,
+            "absence_scope": "Complete snapshot evidence index and linked raw bodies were traversed with pathlib (including ignored files). Finding is based on actual failed bodies, not an unbounded claim that no possible alternative exists.",
+            "failed_evidence_ids": [
+              "C-E-jcm-737",
+              "C-E-jcm-876",
+              "C-E-jcm-887",
+              "C-E-jcm-955"
+            ]
+          }
+        }
+      ],
+      "issue_mutation_performed": false,
+      "successor_disposition": "not_reviewed; coordinator must bind and independently review any successor"
+    },
+    {
+      "finding_id": "W06-IR-009",
+      "title": "TSY broth reasoning misstates frozen units",
+      "severity": "minor",
+      "status": "open_at_frozen_head",
+      "known_issue": null,
+      "proposal_ids": [],
+      "direct_source_case_ids": [
+        "CM_NAME:8a88c8344d71c5655cc7a5c984d45d94247e923e213cabfd877eec530a671cfc"
+      ],
+      "related_case_ids": [
+        "CM_NAME:8a88c8344d71c5655cc7a5c984d45d94247e923e213cabfd877eec530a671cfc"
+      ],
+      "requires_payload_byte_change_or_identity_reconciliation": false,
+      "proposed_bounded_fix": "Correct the reasoning to the actual1000 ML_PER_L frozen value; retain the genuine unknown whole-broth formulation and do not infer constituents from its name.",
+      "normalization_rationale": "",
+      "observations": [
+        {
+          "path": "b/findings.json",
+          "sha256": "2fd4548598d12410560fbc293cf03b275ee360c965d2b4e9ebff7487c9aa194a",
+          "selector": "findings[finding_id=B-05]",
+          "observation": {
+            "finding_id": "B-05",
+            "title": "TSY broth decision misstates frozen units",
+            "severity": "minor",
+            "status": "confirmed_for_coordinator_deduplication_and_bounded_remediation",
+            "case_indices": [
+              91
+            ],
+            "case_ids": [
+              "CM_NAME:8a88c8344d71c5655cc7a5c984d45d94247e923e213cabfd877eec530a671cfc"
+            ],
+            "affected_proposals": [],
+            "description": "Decision says the frozen one-litre broth quantity was flattened to 1 G_PER_L. The exact frozen component instead has value1000 and unitML_PER_L. This inaccurate secondary assertion is separable from the valid missing-formulation hold.",
+            "bounded_fix": "Correct the reasoning to the actual1000 ML_PER_L frozen value; retain the genuine unknown whole-broth formulation and do not infer constituents from its name.",
+            "reproduction": "Inspect case91 frozen_case.occurrences[0].raw_component.concentration in b/case-packets.json and compare canonical decisions.json reasoning.",
+            "evidence": [
+              {
+                "evidence_id": "B-91-frozen-0",
+                "capture": {
+                  "root": "source",
+                  "path": "inputs/culturemech/data/normalized_yaml/bacterial/trypticase_soy_yeast_tsy_broth.yaml",
+                  "sha256": "ab4fe2fd6fca2b03898dcc5d30c2d9ebfa8890f3a1a1b95d1bdda7be85c4d1fe"
+                },
+                "url": null,
+                "accessed_at": null,
+                "locator": "inputs/culturemech/data/normalized_yaml/bacterial/trypticase_soy_yeast_tsy_broth.yaml; full recipe and nested preparations",
+                "kind": "source_snapshot"
+              },
+              {
+                "evidence_id": "B-http-ead203864a2e62b5",
+                "capture": {
+                  "root": "artifact",
+                  "path": "research-b/captures/retry-d53fc7bf0fd79a7b77eb.txt",
+                  "sha256": "e4e29bfc2816cd0622e96a2e3040101ee6c62f38c25e718d46981ab7a26a61fa"
+                },
+                "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2414",
+                "accessed_at": "2026-11-08T05:13:45.423744+00:00",
+                "locator": "Complete retrieved recipe document; source sections cited in case reasoning",
+                "kind": "primary_source"
+              }
+            ],
+            "whole_owner_or_release_approval": false
+          }
+        }
+      ],
+      "issue_mutation_performed": false,
+      "successor_disposition": "not_reviewed; coordinator must bind and independently review any successor"
+    },
+    {
+      "finding_id": "W06-IR-010",
+      "title": "MediaDive1886 lacks a source bridge to JCM187",
+      "severity": "major",
+      "status": "open_at_frozen_head",
+      "known_issue": null,
+      "proposal_ids": [
+        "C-P-JCM187"
+      ],
+      "direct_source_case_ids": [
+        "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8"
+      ],
+      "related_case_ids": [
+        "CM_NAME:a860d138427824bb76a1695742bf9d081659b170ffedf03fd257d36ac7207293",
+        "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8"
+      ],
+      "requires_payload_byte_change_or_identity_reconciliation": false,
+      "proposed_bounded_fix": "Hold this KG source applicability unresolved; require an exact original collection/medium/recipe occurrence linking compound1886 toJCM187. Preserve independently supported CultureMech JCM187 contexts and their component evidence; remove or qualify unsupported KG backlink until then.",
+      "normalization_rationale": "Withhold only this KG source applicability until the original collection/recipe bridge is established. The independent CultureMech contexts and JCM187 formulation remain supported; alias corrections are separately W06-IR-002.",
+      "observations": [
+        {
+          "path": "c/findings.json",
+          "sha256": "0d74a5f6c77dcf7602dd106f1844aaee5c554521d64cc5bf070bbc1cbce63232",
+          "selector": "findings[finding_id=C-02]",
+          "observation": {
+            "finding_id": "C-02",
+            "severity": "major",
+            "title": "KG ingredient1886 is assigned JCM187 without a captured collection/occurrence binding",
+            "case_ids": [
+              "KG_CASE:25e2203802ab2ede188429cfe83aa0baac69ab5c0ea55dc2c2616169b4d056d8"
+            ],
+            "proposal_ids": [
+              "C-P-JCM187"
+            ],
+            "evidence_ids": [
+              "R-ingredient-1886",
+              "R-frozen-shard"
+            ],
+            "exact_evidence": {
+              "ingredient_capture_sha256": "ce1d1f23cc5e6a2e7b3161c22f543c959914f3934062c40570ae2136ddbe5105",
+              "ingredient_locator": "data.media=[]; name Trace element solution (see Medium No.187",
+              "frozen_locator": "cases[152].original_kg_entry raw source record; no originating medium/collection",
+              "published_locator": "decisions.json#/decisions/152/reasoning and missing_requirement; comparison decisions148 correctly holds source-less197 pointer"
+            },
+            "reproduction": "Inspect frozen case152, ingredient1886 exact response and its published linked evidence. The JCM187 table proves a stock exists but cannot bind a bare numbered KG pointer. An ignored-file-inclusive rg search of exact-d5 captures for compound_id1886 found no originating recipe response.",
+            "absence_search": {
+              "included_gitignored_files": true,
+              "command": "rg -l --no-ignore --hidden '\"compound_id\"\\s*:\\s*1886' input-snapshot/reports/all_unmatched_20261107/worker-06 --glob *.body --glob *.txt --glob *.raw",
+              "boundary": "Published exact-d5 capture corpus only; no claim that a binding cannot exist elsewhere."
+            },
+            "bounded_fix": "Hold this KG source applicability unresolved; require an exact original collection/medium/recipe occurrence linking compound1886 toJCM187. Preserve independently supported CultureMech JCM187 contexts and their component evidence; remove or qualify unsupported KG backlink until then.",
+            "disposition": "Open; no whole-stock rejection and no new-source inference."
+          }
+        }
+      ],
+      "issue_mutation_performed": false,
+      "successor_disposition": "not_reviewed; coordinator must bind and independently review any successor"
+    },
+    {
+      "finding_id": "W06-IR-011",
+      "title": "YNB J240 quantity is misstated",
+      "severity": "minor",
+      "status": "open_at_frozen_head",
+      "known_issue": null,
+      "proposal_ids": [],
+      "direct_source_case_ids": [
+        "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f"
+      ],
+      "related_case_ids": [
+        "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f"
+      ],
+      "requires_payload_byte_change_or_identity_reconciliation": false,
+      "proposed_bounded_fix": "Correct only J240 occurrence quantity in reasoning/evidence summaries to1g; keep exactSKU/grade unresolved.",
+      "normalization_rationale": "",
+      "observations": [
+        {
+          "path": "c/findings.json",
+          "sha256": "0d74a5f6c77dcf7602dd106f1844aaee5c554521d64cc5bf070bbc1cbce63232",
+          "selector": "findings[finding_id=C-04]",
+          "observation": {
+            "finding_id": "C-04",
+            "severity": "minor",
+            "title": "YNB rationale assigns6.7g toJ240 despite primary1g row",
+            "case_ids": [
+              "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f"
+            ],
+            "evidence_ids": [
+              "R-medium-J240"
+            ],
+            "reproduction": "decisions161.reasoning says6.7g acrossJ240/DSM1682/1837; R-medium-J240 recipe compound_id1507 amount1 unitg. The other two media use6.7g.",
+            "bounded_fix": "Correct only J240 occurrence quantity in reasoning/evidence summaries to1g; keep exactSKU/grade unresolved.",
+            "disposition": "Open correction; source identity hold remains scientifically appropriate."
+          }
+        }
+      ],
+      "issue_mutation_performed": false,
+      "successor_disposition": "not_reviewed; coordinator must bind and independently review any successor"
+    }
+  ]
+}
