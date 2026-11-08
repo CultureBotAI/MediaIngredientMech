@@ -1,0 +1,113 @@
+{
+  "finding_id": "W07-SKEPTIC-LEDGER-PARTIAL-001",
+  "reviewer": "/root/successor1226_1237_skeptic",
+  "observed_at": "2026-11-08T07:38:37.605281+00:00",
+  "status": "new_lead_reported_to_root_for_issue_scope_first; no correction authored",
+  "severity": "minor",
+  "scope": "Historical source ledger versus selected owner assertion; not a new chemical identity finding. No change made.",
+  "evidence": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/decisions.json",
+      "sha256": "7106e1646f83cc1779cd24b6d1185c82afb3d00f0ff1fb2cd4930fe67a76cae8",
+      "case_ids": [
+        "CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2",
+        "CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3"
+      ],
+      "exact_objects": [
+        {
+          "case_id": "CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2",
+          "case_input_sha256": "880de0ef8249fb8cfaa366ec902f1fb0321822ccdcb6ec25f663f460027713af",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Modified Hutner's basal salts (see below)",
+            "source_label": "Modified Hutner's basal salts (see below)",
+            "raw_source_label": "Modified Hutner's basal salts (see below)"
+          },
+          "occurrence_ids": [
+            "CM_OCC:e916da3fdd3df2747a84780cee5d508ea67ed994821b9bf88f150b6cd0a3af30"
+          ],
+          "disposition": "stock_product_mixture_context",
+          "reasoning": "JCM900 recovers Modified Hutner salts with NTA, minerals and Metals44, but the molybdate row is (NH4)6MoO24\u00b74H2O. This nominal recipe must remain separate from JCM631 and the vitamin solution also printed on the page. A safe exact chemical formulation requires resolution of the malformed molybdate component. Reuse primary_b\u2019s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+          "applicability": "Applies to exact raw source label \"Modified Hutner's basal salts (see below)\" and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM900 recovers Modified Hutner salts with NTA, minerals and Metals44, but the molybdate row is (NH4)6MoO24\u00b74H2O. This nominal recipe must remain separate from JCM631 and the vitamin solution also printed on the page. A safe exact chemical formulation requires resolution of the malformed molybdate component. Reuse primary_b\u2019s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+          "evidence_ids": [
+            "A-CASE-38",
+            "A-RECIPE-38-0",
+            "A-RETRIEVAL-a-fetch-results-52",
+            "A-RETRIEVAL-a-fetch-json-results-49",
+            "W07-INDEPENDENT-A",
+            "W07-INDEPENDENT-HUTNER-CONSOLIDATION",
+            "W07-INDEPENDENT-B"
+          ],
+          "proposal_ids": [
+            "W07-COMBINED-JCM900-JCM979-Hutner"
+          ],
+          "no_change_reason": null,
+          "missing_requirement": "Resolve the molybdenum stoichiometry in JCM900\u2019s own recipe; a spelling similarity to another Hutner stock cannot supply the missing atom count.",
+          "owner_records": [],
+          "issue_refs": [],
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "W07-INDEPENDENT-A",
+              "W07-INDEPENDENT-HUTNER-CONSOLIDATION",
+              "W07-INDEPENDENT-B"
+            ],
+            "shared_payload_review_note": "Primary receipt reviews this source case; additional author-bundle receipts independently review the linked shared payload only, within their own declared scope."
+          },
+          "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+          "shared_proposal_requested": "B proposal JCM900_Modified_Hutner_Basal_Salts"
+        },
+        {
+          "case_id": "CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3",
+          "case_input_sha256": "f71d854cc7fde51519c58b6af0ab4503356aa1ba2b3d358b12b9cc2d4504275a",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Modified Hutner's basal salts (see Medium No. 900 )",
+            "source_label": "Modified Hutner's basal salts (see Medium No. 900 )",
+            "raw_source_label": "Modified Hutner's basal salts (see Medium No. 900 )"
+          },
+          "occurrence_ids": [
+            "CM_OCC:d3adee43f8bbff45607128131d09ff6384007ce9008d622e741f2ca3ee230bcf"
+          ],
+          "disposition": "stock_product_mixture_context",
+          "reasoning": "JCM1429 explicitly delegates this stock to JCM900, establishing a recipe link rather than a generic synonym. The linked source has an unresolved molybdate formula. Preserve the reference to900 and use the same chemical-resolution obligation as case38, not a link to JCM631 Hunter salts. Reuse primary_b\u2019s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+          "applicability": "Applies to exact raw source label \"Modified Hutner's basal salts (see Medium No. 900 )\" and all 1 frozen occurrence objects, each verified against its complete recipe snapshot hash. JCM1429 explicitly delegates this stock to JCM900, establishing a recipe link rather than a generic synonym. The linked source has an unresolved molybdate formula. Preserve the reference to900 and use the same chemical-resolution obligation as case38, not a link to JCM631 Hunter salts. Reuse primary_b\u2019s separately proposed JCM900 nominal stock with PARTIAL assertion; shared proposal reconciliation is assigned to root.",
+          "evidence_ids": [
+            "A-CASE-47",
+            "A-RECIPE-47-0",
+            "A-RETRIEVAL-a-fetch-results-64",
+            "W07-INDEPENDENT-A",
+            "W07-INDEPENDENT-HUTNER-CONSOLIDATION",
+            "W07-INDEPENDENT-B"
+          ],
+          "proposal_ids": [
+            "W07-COMBINED-JCM900-JCM979-Hutner"
+          ],
+          "no_change_reason": null,
+          "missing_requirement": "Resolve JCM900\u2019s malformed molybdate component and retain the exact JCM1429\u2192900 stock reference before integration.",
+          "owner_records": [],
+          "issue_refs": [],
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "W07-INDEPENDENT-A",
+              "W07-INDEPENDENT-HUTNER-CONSOLIDATION",
+              "W07-INDEPENDENT-B"
+            ],
+            "shared_payload_review_note": "Primary receipt reviews this source case; additional author-bundle receipts independently review the linked shared payload only, within their own declared scope."
+          },
+          "native_review_scope": "Source occurrence review has no native MIM row and native formal review is not applicable to that source itself. Actual owners listed are comparisons only; root separately performs native owner review. No complete record, inherited role, formula, supplier metadata or release gate is approved by this claim-level assessment.",
+          "shared_proposal_requested": "B proposal JCM900_Modified_Hutner_Basal_Salts"
+        }
+      ]
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/combined-JCM900-JCM979-Hutner.yaml",
+      "sha256": "86111586f96f9e38d02196b814304dd9458cc026bec53bd2240aec4ca351a9bd",
+      "field": "component_assertion.completeness",
+      "value": "COMPLETE"
+    }
+  ],
+  "observation": "Two decisions refer to separately proposed JCM900 stock with PARTIAL assertion while proposal_ids route to the combined entry705 whose current assertion is COMPLETE. No evidence that this exact ledger consistency defect is already independently filed was established by this reviewer.",
+  "recommendation": "Root classify existing issue1237 scope or report for issue first. Preserve historical observations. This does not establish missing source ingredients: the selected nominal input list and unknown chemically exact resolution are separate."
+}

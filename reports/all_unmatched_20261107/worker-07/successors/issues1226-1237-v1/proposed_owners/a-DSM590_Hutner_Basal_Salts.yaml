@@ -1,0 +1,96 @@
+identifier: kgmicrobe.ingredient:dsm590_hutner_basal_salts
+preferred_term: DSM590 Hutner basal salts
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsm590_hutner_basal_salts
+  ontology_label: DSM590 Hutner basal salts
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium590.pdf
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Literal nominal source-batch inputs. Molybdate formula (NH4)6MoO7O24 x4H2O
+  is unresolved and retained UNMAPPED, not silently corrected to heptamolybdate. Source
+  states KOH about7.3g for NTA dissolution; this approximate amount is preserved here
+  rather than encoded as an exact concentration. Later NaOH orH2SO4 adjustment amount
+  is unreported. Source-derived nominal identity only; no chemically complete decomposition.
+  Raw assigned source label: Hutner''s basal salts. Quantities in notes preserve source
+  preparation and are not final-medium concentrations. No global synonym is added
+  for this context-dependent label.'
+solution_type: MINERAL_STOCK
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '29.7'
+  concentration_unit: g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3.335'
+  concentration_unit: g
+- component_name: (NH4)6MoO7O24 x4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: mg
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99'
+  concentration_unit: mg
+- component_name: Metals44
+  reference_scope: UNMAPPED
+  concentration_value: '50'
+  concentration_unit: ml
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '950'
+  concentration_unit: ml
+- component_name: KOH
+  reference_scope: UNMAPPED
+- component_name: NaOH or H2SO4 pH adjustment
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium590.pdf
+    source_record: DSM590 Hutner basal salts
+    notes: Literal nominal source-batch inputs. Molybdate formula (NH4)6MoO7O24 x4H2O
+      is unresolved and retained UNMAPPED, not silently corrected to heptamolybdate.
+      Source states KOH about7.3g for NTA dissolution; this approximate amount is
+      preserved here rather than encoded as an exact concentration. Later NaOH orH2SO4
+      adjustment amount is unreported. Source-derived nominal identity only; no chemically
+      complete decomposition.
+  notes: Complete named source-batch input list at this decomposition level; UNMAPPED
+    references do not imply omitted ingredients. Nested stock composition and chemical
+    ambiguities remain separate.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Literal nominal source-batch inputs. Molybdate formula (NH4)6MoO7O24 x4H2O is
+    unresolved and retained UNMAPPED, not silently corrected to heptamolybdate. Source
+    states KOH about7.3g for NTA dissolution; this approximate amount is preserved
+    here rather than encoded as an exact concentration. Later NaOH orH2SO4 adjustment
+    amount is unreported. Source-derived nominal identity only; no chemically complete
+    decomposition.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.151866+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

@@ -1,0 +1,45 @@
+identifier: kgmicrobe.ingredient:nbrc_981_tris_hcl_01m_ph75
+preferred_term: NBRC981 TrisHCl0.1M pH7.5 buffer
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_981_tris_hcl_01m_ph75
+  ontology_label: NBRC981 TrisHCl0.1M pH7.5 buffer
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1768
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: Tris-HCl buffer
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1768
+    source_record: NBRC981 TrisHCl0.1M pH7.5 buffer
+    notes: Nominal source-qualified stock only. pH7.5; source doesnot provide detailed acidbasecomposition
+      or solvent; notpureTrisHClsalt. The source does not establish a complete constituent list; no omitted
+      solvent or titrant is invented.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Nominal source-qualified stock only. pH7.5; source doesnot provide detailed acidbasecomposition
+  or solvent; notpureTrisHClsalt. The source does not establish a complete constituent list; no omitted
+  solvent or titrant is invented. Raw source labels retained in linked frozen cases: [''0.1 M Tris-HCl
+  (pH 7.5)'']. Generic labels are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED
+  gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true

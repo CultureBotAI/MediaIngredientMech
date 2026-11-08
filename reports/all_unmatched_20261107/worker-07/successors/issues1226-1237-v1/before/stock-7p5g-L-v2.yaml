@@ -1,0 +1,173 @@
+identifier: kgmicrobe.ingredient:mediadive_2154_magnesium_sulfate_heptahydrate_stock
+preferred_term: Magnesium sulfate heptahydrate stock 7.5 g/L (MediaDive 2154)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+synonyms:
+- synonym_text: Mg(SO4)x7H2O (7.5 g/L stock; MediaDive 2154)
+  synonym_type: CATALOG_VARIANT
+  source: Curator-qualified formulation name for the frozen ingredient2154 source_record
+    and DSMZ1592/1593/1593a rows; exact original raw label Mg(SO4) x 7 H2O is preserved
+    in source evidence, not a global resolving stock synonym.
+occurrence_statistics:
+  total_occurrences: 6
+  media_count: 6
+curation_history:
+- timestamp: '2026-11-08T05:17:49.956058+00:00'
+  curator: codex_worker07_primary_c
+  action: CREATED
+  changes: Propose nominal source-qualified 7.5 g/L magnesium sulfate heptahydrate
+    stock for MediaDive 2154; solvent remains unreported, so UNKNOWN component-list
+    completeness.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:06:09.622177+00:00'
+  curator: codex_worker07_root_issue1203
+  action: SOURCE_SCOPE_REFINED
+  changes: 'Append-only successor to unpublished-in-catalogue C-P08: reuse its existing
+    registry identity for six exact CultureMech stock occurrences; correct concentration
+    attribution to recipe rows, retain unknown solvent and preparation, and preserve
+    the original creation event. Proposal only.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T06:06:36.543802+00:00'
+  curator: codex_worker07_root_issue1203
+  action: CORRECTED_PROVENANCE
+  changes: Independent reviewer mg_independent_reviewer identified inherited inaccurate
+    quotation of the raw label spacing; preserve exact Mg(SO4) x 7 H2O in provenance.
+    Qualified formulation synonym unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive_2154_magnesium_sulfate_heptahydrate_stock
+  ontology_label: Magnesium sulfate heptahydrate stock 7.5 g/L (MediaDive 2154)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1592.pdf
+    notes: 'Nominal source-qualified stock: DSMZ1592,1593 and1593a each explicitly
+      list 10 mL of magnesium sulfate heptahydrate stock at7.5 g/L for1000 mL medium.
+      MediaDive solutions5518,5736,6270 corroborate the scoped recipe rows. This extends
+      the already proposed C-P08 identity to six exact CultureMech occurrences, in
+      addition to the frozen KG source_record for ingredient2154. The ingredient2154
+      endpoint identifies the solute and supplies medium links; it does not define
+      a universal stock concentration. Solvent, complete composition and stock preparation/final-volume
+      convention are unreported. Medium make-up water is not evidence for the separately
+      prepared stock solvent. Component-list completeness remains UNKNOWN. No stock-to-solute
+      equivalence, conversion of frozen percent-volume fields, or global raw-label
+      alias is asserted. The six occurrence IDs and frozen raw quantities are retained
+      in the paired source ledger; occurrence statistics count these six distinct
+      frozen recipe records only, not all uses of ingredient2154 or unique biological
+      media.'
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593.pdf
+    notes: 'Nominal source-qualified stock: DSMZ1592,1593 and1593a each explicitly
+      list 10 mL of magnesium sulfate heptahydrate stock at7.5 g/L for1000 mL medium.
+      MediaDive solutions5518,5736,6270 corroborate the scoped recipe rows. This extends
+      the already proposed C-P08 identity to six exact CultureMech occurrences, in
+      addition to the frozen KG source_record for ingredient2154. The ingredient2154
+      endpoint identifies the solute and supplies medium links; it does not define
+      a universal stock concentration. Solvent, complete composition and stock preparation/final-volume
+      convention are unreported. Medium make-up water is not evidence for the separately
+      prepared stock solvent. Component-list completeness remains UNKNOWN. No stock-to-solute
+      equivalence, conversion of frozen percent-volume fields, or global raw-label
+      alias is asserted. The six occurrence IDs and frozen raw quantities are retained
+      in the paired source ledger; occurrence statistics count these six distinct
+      frozen recipe records only, not all uses of ingredient2154 or unique biological
+      media.'
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593a.pdf
+    notes: 'Nominal source-qualified stock: DSMZ1592,1593 and1593a each explicitly
+      list 10 mL of magnesium sulfate heptahydrate stock at7.5 g/L for1000 mL medium.
+      MediaDive solutions5518,5736,6270 corroborate the scoped recipe rows. This extends
+      the already proposed C-P08 identity to six exact CultureMech occurrences, in
+      addition to the frozen KG source_record for ingredient2154. The ingredient2154
+      endpoint identifies the solute and supplies medium links; it does not define
+      a universal stock concentration. Solvent, complete composition and stock preparation/final-volume
+      convention are unreported. Medium make-up water is not evidence for the separately
+      prepared stock solvent. Component-list completeness remains UNKNOWN. No stock-to-solute
+      equivalence, conversion of frozen percent-volume fields, or global raw-label
+      alias is asserted. The six occurrence IDs and frozen raw quantities are retained
+      in the paired source ledger; occurrence statistics count these six distinct
+      frozen recipe records only, not all uses of ingredient2154 or unique biological
+      media.'
+components:
+- component_name: MgSO4 x 7 H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:31795
+  concentration_value: '7.5'
+  concentration_unit: G_PER_L
+  source: Stock concentration explicitly7.5 g/L in DSMZ1592/1593/1593a recipe rows
+    and the frozen KG source_record; not a concentration declared by the ingredient2154
+    identity endpoint and not final-medium concentration.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1592.pdf
+    source_record: 'DSMZ 1592: magnesium sulfate heptahydrate stock row'
+    notes: 'Nominal source-qualified stock: DSMZ1592,1593 and1593a each explicitly
+      list 10 mL of magnesium sulfate heptahydrate stock at7.5 g/L for1000 mL medium.
+      MediaDive solutions5518,5736,6270 corroborate the scoped recipe rows. This extends
+      the already proposed C-P08 identity to six exact CultureMech occurrences, in
+      addition to the frozen KG source_record for ingredient2154. The ingredient2154
+      endpoint identifies the solute and supplies medium links; it does not define
+      a universal stock concentration. Solvent, complete composition and stock preparation/final-volume
+      convention are unreported. Medium make-up water is not evidence for the separately
+      prepared stock solvent. Component-list completeness remains UNKNOWN. No stock-to-solute
+      equivalence, conversion of frozen percent-volume fields, or global raw-label
+      alias is asserted. The six occurrence IDs and frozen raw quantities are retained
+      in the paired source ledger; occurrence statistics count these six distinct
+      frozen recipe records only, not all uses of ingredient2154 or unique biological
+      media.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593.pdf
+    source_record: 'DSMZ 1593: magnesium sulfate heptahydrate stock row'
+    notes: 'Nominal source-qualified stock: DSMZ1592,1593 and1593a each explicitly
+      list 10 mL of magnesium sulfate heptahydrate stock at7.5 g/L for1000 mL medium.
+      MediaDive solutions5518,5736,6270 corroborate the scoped recipe rows. This extends
+      the already proposed C-P08 identity to six exact CultureMech occurrences, in
+      addition to the frozen KG source_record for ingredient2154. The ingredient2154
+      endpoint identifies the solute and supplies medium links; it does not define
+      a universal stock concentration. Solvent, complete composition and stock preparation/final-volume
+      convention are unreported. Medium make-up water is not evidence for the separately
+      prepared stock solvent. Component-list completeness remains UNKNOWN. No stock-to-solute
+      equivalence, conversion of frozen percent-volume fields, or global raw-label
+      alias is asserted. The six occurrence IDs and frozen raw quantities are retained
+      in the paired source ledger; occurrence statistics count these six distinct
+      frozen recipe records only, not all uses of ingredient2154 or unique biological
+      media.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593a.pdf
+    source_record: 'DSMZ 1593a: magnesium sulfate heptahydrate stock row'
+    notes: 'Nominal source-qualified stock: DSMZ1592,1593 and1593a each explicitly
+      list 10 mL of magnesium sulfate heptahydrate stock at7.5 g/L for1000 mL medium.
+      MediaDive solutions5518,5736,6270 corroborate the scoped recipe rows. This extends
+      the already proposed C-P08 identity to six exact CultureMech occurrences, in
+      addition to the frozen KG source_record for ingredient2154. The ingredient2154
+      endpoint identifies the solute and supplies medium links; it does not define
+      a universal stock concentration. Solvent, complete composition and stock preparation/final-volume
+      convention are unreported. Medium make-up water is not evidence for the separately
+      prepared stock solvent. Component-list completeness remains UNKNOWN. No stock-to-solute
+      equivalence, conversion of frozen percent-volume fields, or global raw-label
+      alias is asserted. The six occurrence IDs and frozen raw quantities are retained
+      in the paired source ledger; occurrence statistics count these six distinct
+      frozen recipe records only, not all uses of ingredient2154 or unique biological
+      media.'
+notes: 'Nominal source-qualified stock: DSMZ1592,1593 and1593a each explicitly list
+  10 mL of magnesium sulfate heptahydrate stock at7.5 g/L for1000 mL medium. MediaDive
+  solutions5518,5736,6270 corroborate the scoped recipe rows. This extends the already
+  proposed C-P08 identity to six exact CultureMech occurrences, in addition to the
+  frozen KG source_record for ingredient2154. The ingredient2154 endpoint identifies
+  the solute and supplies medium links; it does not define a universal stock concentration.
+  Solvent, complete composition and stock preparation/final-volume convention are
+  unreported. Medium make-up water is not evidence for the separately prepared stock
+  solvent. Component-list completeness remains UNKNOWN. No stock-to-solute equivalence,
+  conversion of frozen percent-volume fields, or global raw-label alias is asserted.
+  The six occurrence IDs and frozen raw quantities are retained in the paired source
+  ledger; occurrence statistics count these six distinct frozen recipe records only,
+  not all uses of ingredient2154 or unique biological media.'

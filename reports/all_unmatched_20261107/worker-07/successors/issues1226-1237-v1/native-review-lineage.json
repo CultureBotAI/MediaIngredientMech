@@ -1,0 +1,56 @@
+{
+  "attempts": [
+    {
+      "input": {
+        "root": "artifact",
+        "path": "successors/issues1226-1237-v1/native-review-input.yaml",
+        "sha256": "5c465fa77f368d44fc8352a8c5793fe0c632a935d6912376d5e659a454cac3e2"
+      },
+      "validation": {
+        "root": "artifact",
+        "path": "successors/issues1226-1237-v1/validation/native-validate.json",
+        "sha256": "d38c8ccf780e6e7b96f90ecdb9233245a1c70921bb9179ba60071c42a631f7c8"
+      },
+      "exit_code": 1,
+      "result": "failed attempt preserved; never saved as native review"
+    },
+    {
+      "input": {
+        "root": "artifact",
+        "path": "successors/issues1226-1237-v1/native-review-input-v2.yaml",
+        "sha256": "0707adbb2e486b35bba79887b3213a4c4c43d88e754a1f8619eba92b38ed06ad"
+      },
+      "validation": {
+        "root": "artifact",
+        "path": "successors/issues1226-1237-v1/validation/native-validate-v2.json",
+        "sha256": "65aeb4172a952efcb76c5b3c9fdc33acb89834ffe523d64b451893e0906f0e61"
+      },
+      "exit_code": 1,
+      "result": "failed attempt preserved; never saved as native review"
+    },
+    {
+      "input": {
+        "root": "artifact",
+        "path": "successors/issues1226-1237-v1/native-review-input-v3.yaml",
+        "sha256": "15c4dfa6aec0b103bfe8f4772402c873dd21e0e92ad88e6588bbc85e9901580f"
+      },
+      "validation": {
+        "root": "artifact",
+        "path": "successors/issues1226-1237-v1/validation/native-validate-v3.json",
+        "sha256": "a892a18fc9033a1f0bdbf92f15a36f68a12cd61813624847aed3edc875b8a891"
+      },
+      "exit_code": 0,
+      "result": "saved only v3"
+    }
+  ],
+  "author": "/root",
+  "actual_saved_receipt": {
+    "root": "artifact",
+    "path": "successors/issues1226-1237-v1/native-review-receipt.json",
+    "sha256": "93eddb5bcf60434f05c21a5d451ba82b4bb45c5ebdf62aeda491a65c7eba01a8"
+  },
+  "annotation_correction": "The receipt key failed_v1_retained points to the immediate v2 input, as its actual path/hash show. This explicit all-attempt ledger is authoritative for v1/v2/v3 lineage; both failed versions retained. No retrospective timing or invented review.",
+  "v1_error": "Invalid colon-containing native issue_key token.",
+  "v2_error": "Open minor finding lacked proposed coordinator action and acceptance checks.",
+  "v3_correction": "Valid dotted issue key and explicit coordinator issue-first triage/action acceptance checks; no candidate/science change."
+}

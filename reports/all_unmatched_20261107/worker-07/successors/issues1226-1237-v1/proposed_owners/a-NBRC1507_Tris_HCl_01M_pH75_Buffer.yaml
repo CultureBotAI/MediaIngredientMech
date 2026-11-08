@@ -1,0 +1,75 @@
+identifier: kgmicrobe.ingredient:nbrc1507_tris_hcl_01m_ph75_buffer
+preferred_term: NBRC1507 Tris HCl0.1M pH7.5 buffer
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1507_tris_hcl_01m_ph75_buffer
+  ontology_label: NBRC1507 Tris HCl0.1M pH7.5 buffer
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Source specifies0.1M Tris/HCl,pH7.5; nominal total Tris moiety concentration
+  retained, not independent concentrations for acid and conjugate base. Solvent and
+  neutralization ratio unreported. Raw assigned source label: 0.1 M Tris/HCl (pH7.5).
+  Quantities in notes preserve source preparation and are not final-medium concentrations.
+  No global synonym is added for this context-dependent label. Issue1237 W01-PREP-B-001:
+  NBRC1507 names 0.1 M Tris/HCl (pH7.5) as a supplied buffer. It does not enumerate
+  free hydrochloric acid as a separately added component. Retain the named buffer
+  moiety and nominal strength; the complete constituent list, solvent, preparation
+  and neutralization ratio remain unknown. No dry Tris-HCl substitution or neutralization
+  chemistry is inferred.'
+solution_type: BUFFER_SOLUTION
+components:
+- component_name: Tris buffer moiety
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: M
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507
+    source_record: NBRC1507 Tris HCl0.1M pH7.5 buffer
+    notes: Source specifies0.1M Tris/HCl,pH7.5; nominal total Tris moiety concentration
+      retained, not independent concentrations for acid and conjugate base. Solvent
+      and neutralization ratio unreported.
+  notes: 'Source does not establish complete preparation composition; unreported solvent
+    or pH-adjustment constituents remain unknown. No exhaustive list is claimed. Issue1237
+    W01-PREP-B-001: NBRC1507 names 0.1 M Tris/HCl (pH7.5) as a supplied buffer. It
+    does not enumerate free hydrochloric acid as a separately added component. Retain
+    the named buffer moiety and nominal strength; the complete constituent list, solvent,
+    preparation and neutralization ratio remain unknown. No dry Tris-HCl substitution
+    or neutralization chemistry is inferred.'
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Source specifies0.1M Tris/HCl,pH7.5; nominal total Tris moiety concentration retained,
+    not independent concentrations for acid and conjugate base. Solvent and neutralization
+    ratio unreported.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.143365+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Issue1237 W01-PREP-B-001:
+    NBRC1507 names 0.1 M Tris/HCl (pH7.5) as a supplied buffer. It does not enumerate
+    free hydrochloric acid as a separately added component. Retain the named buffer
+    moiety and nominal strength; the complete constituent list, solvent, preparation
+    and neutralization ratio remain unknown. No dry Tris-HCl substitution or neutralization
+    chemistry is inferred. Remove the unsupported separate Hydrochloric acid has-part
+    assertion; preserve UNKNOWN completeness and the first named buffer moiety at
+    0.1 M. Isolated report-only successor; no owner, role, source gate or release
+    approval.'
+  llm_assisted: true

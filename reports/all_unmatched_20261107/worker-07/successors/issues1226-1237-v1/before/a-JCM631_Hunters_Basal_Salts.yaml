@@ -1,0 +1,88 @@
+identifier: kgmicrobe.ingredient:jcm631_hunters_basal_salts
+preferred_term: JCM631 Hunter basal salts
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm631_hunters_basal_salts
+  ontology_label: JCM631 Hunter basal salts
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=631
+    notes: Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3.
+      No exact ontology equivalence to an individual chemical or an unqualified generic
+      stock is asserted.
+notes: 'Source batch is brought to1L atpH6.8. KOH dissolves NTA; amount unreported.
+  Metals44 remains a referenced substock, not decomposed or replaced by a different
+  Hutner formulation. Values g/mg/ml are absolute source-batch inputs. Raw assigned
+  source label: Hunter''s basal salts (see below). Quantities in notes preserve source
+  preparation and are not final-medium concentrations. No global synonym is added
+  for this context-dependent label.'
+solution_type: MINERAL_STOCK
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '14.45'
+  concentration_unit: g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '4.42'
+  concentration_unit: g
+- component_name: (NH4)6Mo7O24·4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '9.25'
+  concentration_unit: mg
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '99'
+  concentration_unit: mg
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '50'
+  concentration_unit: mg
+- component_name: Thiamine·HCl
+  reference_scope: UNMAPPED
+  concentration_value: '25'
+  concentration_unit: mg
+- component_name: Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: mg
+- component_name: Metals44 (JCM149)
+  reference_scope: UNMAPPED
+  concentration_value: '50'
+  concentration_unit: ml
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '950'
+  concentration_unit: ml
+- component_name: KOH
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=631
+    source_record: JCM631 Hunter basal salts
+    notes: Source batch is brought to1L atpH6.8. KOH dissolves NTA; amount unreported.
+      Metals44 remains a referenced substock, not decomposed or replaced by a different
+      Hutner formulation. Values g/mg/ml are absolute source-batch inputs.
+  notes: Complete named source-batch input list at this decomposition level; UNMAPPED
+    references do not imply omitted ingredients. Nested stock composition and chemical
+    ambiguities remain separate.
+curation_history:
+- timestamp: '2026-11-08T05:22:39.515946+00:00'
+  curator: all-unmatched-20261107-worker07-primary_a
+  action: SOURCE_QUALIFIED_PREPARATION_PROPOSED
+  changes: Propose exact source-qualified nominal ingredient and source partonomy.
+    Source batch is brought to1L atpH6.8. KOH dissolves NTA; amount unreported. Metals44
+    remains a referenced substock, not decomposed or replaced by a different Hutner
+    formulation. Values g/mg/ml are absolute source-batch inputs.
+  new_status: MAPPED
+  llm_assisted: true

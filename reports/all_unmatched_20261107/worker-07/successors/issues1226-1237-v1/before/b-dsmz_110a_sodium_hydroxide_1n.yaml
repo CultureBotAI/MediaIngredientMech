@@ -1,0 +1,51 @@
+identifier: kgmicrobe.ingredient:dsmz_110a_sodium_hydroxide_1n
+preferred_term: DSMZ110a sodium hydroxide1N stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_110a_sodium_hydroxide_1n
+  ontology_label: DSMZ110a sodium hydroxide1N stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110a.pdf
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: NaOH
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110a.pdf
+    source_record: DSMZ110a sodium hydroxide1N stock
+    notes: 'Original DSMZ110a specifies25ml of1N NaOH in meat extraction. Water in the meat extraction
+      is a separate recipe input, not proof of stock solvent composition. The component list is UNKNOWN:
+      the source does not specify stock solvent, manufacturing details or additional stock constituents.
+      Preserve concentration on the stock solute; do not reinterpret the dose as final-medium concentration.
+      Applies only to occurrence IDs CM_OCC:a541259d4257ab6d39c502f10f7538f639bb1230dc38d745e3efea925f33d08b.
+      No cross-source equality or global raw-label alias is asserted.'
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Original DSMZ110a specifies25ml of1N NaOH in meat extraction. Water in the meat extraction is
+  a separate recipe input, not proof of stock solvent composition. The component list is UNKNOWN: the
+  source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve
+  concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies
+  only to occurrence IDs CM_OCC:a541259d4257ab6d39c502f10f7538f639bb1230dc38d745e3efea925f33d08b. No cross-source
+  equality or global raw-label alias is asserted. Raw source labels retained in linked frozen cases: [''NaOH
+  1 N'']. Generic labels are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED gate
+  is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true

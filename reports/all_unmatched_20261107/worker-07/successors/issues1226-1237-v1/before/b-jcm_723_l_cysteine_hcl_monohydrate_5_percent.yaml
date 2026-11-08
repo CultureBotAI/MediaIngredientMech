@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:jcm_723_l_cysteine_hcl_monohydrate_5_percent
+preferred_term: JCM723 L-cysteine hydrochloride monohydrate5% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_723_l_cysteine_hcl_monohydrate_5_percent
+  ontology_label: JCM723 L-cysteine hydrochloride monohydrate5% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=723
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: L-Cysteine·HCl·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT_BASIS_UNSPECIFIED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=723
+    source_record: JCM723 L-cysteine hydrochloride monohydrate5% stock
+    notes: 'Original JCM723 specifies5ml per liter of5% monohydrate stock. Autoclaved and stored under
+      N2; aseptically and anaerobically added prior to inoculation. Frozen double-hyphen typography is
+      preserved in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the
+      source does not specify stock solvent, manufacturing details or additional stock constituents. Preserve
+      concentration on the stock solute; do not reinterpret the dose as final-medium concentration. Applies
+      only to occurrence IDs CM_OCC:8cc2fc90db336c7deba9a3a38275bc21e102015f8e8d14958e38b8c348e03699.
+      No cross-source equality or global raw-label alias is asserted.'
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Original JCM723 specifies5ml per liter of5% monohydrate stock. Autoclaved and stored under N2;
+  aseptically and anaerobically added prior to inoculation. Frozen double-hyphen typography is preserved
+  in source evidence; percentage basis is unspecified. The component list is UNKNOWN: the source does
+  not specify stock solvent, manufacturing details or additional stock constituents. Preserve concentration
+  on the stock solute; do not reinterpret the dose as final-medium concentration. Applies only to occurrence
+  IDs CM_OCC:8cc2fc90db336c7deba9a3a38275bc21e102015f8e8d14958e38b8c348e03699. No cross-source equality
+  or global raw-label alias is asserted. Raw source labels retained in linked frozen cases: [''5% L--Cysteine・HCl・H2O''].
+  Generic labels are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true

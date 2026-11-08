@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:dsmz_78_sodium_hydroxide_1n
+preferred_term: DSMZ78 sodium hydroxide1N stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_78_sodium_hydroxide_1n
+  ontology_label: DSMZ78 sodium hydroxide1N stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78.pdf
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock
+      equivalence asserted.
+components:
+- component_name: NaOH
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: N
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78.pdf
+    source_record: DSMZ78 sodium hydroxide1N stock
+    notes: 'Original DSMZ78 specifies25ml of1N NaOH in meat extraction. Water in the
+      meat extraction is a separate recipe input, not proof of stock solvent composition.
+      The component list is UNKNOWN: the source does not specify stock solvent, manufacturing
+      details or additional stock constituents. Preserve concentration on the stock
+      solute; do not reinterpret the dose as final-medium concentration. Applies only
+      to occurrence IDs CM_OCC:b6fee1f20b7b3dfba921e9326dc0298aafc198a6e06cd6096f1b56530b5d10b0,
+      CM_OCC:9f0cd0360b77e2438ccf0a0ee535bd7530d081f9379250cde4c7828c3a7c5fec, CM_OCC:a2042ae706e36e6eedf0063b2eb6e734a6de2bfc29f4f88459441fe44ce3b50f,
+      CM_OCC:6fb574c58924baae04fb8a53144ac544608e9c236164bbb860e12be451ff4954, CM_OCC:4c4706caf10ee4782e3422bbdbb4eaa659f3bf5b9ad675557e40ab59a6d3ccc9.
+      No cross-source equality or global raw-label alias is asserted.'
+  notes: Completeness concerns the source constituent list, not ontology resolution.
+    UNMAPPED parts preserve literal source wording and do not assert an unsupported
+    exact ID.
+notes: 'Original DSMZ78 specifies25ml of1N NaOH in meat extraction. Water in the meat
+  extraction is a separate recipe input, not proof of stock solvent composition. The
+  component list is UNKNOWN: the source does not specify stock solvent, manufacturing
+  details or additional stock constituents. Preserve concentration on the stock solute;
+  do not reinterpret the dose as final-medium concentration. Applies only to occurrence
+  IDs CM_OCC:b6fee1f20b7b3dfba921e9326dc0298aafc198a6e06cd6096f1b56530b5d10b0, CM_OCC:9f0cd0360b77e2438ccf0a0ee535bd7530d081f9379250cde4c7828c3a7c5fec,
+  CM_OCC:a2042ae706e36e6eedf0063b2eb6e734a6de2bfc29f4f88459441fe44ce3b50f, CM_OCC:6fb574c58924baae04fb8a53144ac544608e9c236164bbb860e12be451ff4954,
+  CM_OCC:4c4706caf10ee4782e3422bbdbb4eaa659f3bf5b9ad675557e40ab59a6d3ccc9. No cross-source
+  equality or global raw-label alias is asserted. Raw source labels retained in linked
+  frozen cases: [''NaOH 1 N'']. Generic labels are not global resolving synonyms.
+  No pre-existing WITHHOLD or REJECTED gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and
+    explicit unresolved details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.259264+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

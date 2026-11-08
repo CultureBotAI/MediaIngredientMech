@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:jcm87_lactic_acid_20percent_titrant
+preferred_term: Lactic acid 20% titrant (JCM 87)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm87_lactic_acid_20percent_titrant
+  ontology_label: Lactic acid 20% titrant (JCM 87)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=87
+    notes: Nominal source-qualified preparation registry identity only. No exact pure-solute
+      ontology equivalence is asserted.
+components:
+- component_name: Lactic acid (stereochemistry unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: PERCENT
+  source: Literal stock-strength label; percentage basis unspecified in this source.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=87
+    source_record: Final instruction after the JCM87 ingredient table
+    notes: JCM 87 permits 20% lactic acid OR 1 N to 6 N HCl to adjust the final medium
+      to pH 5.6. This proposal denotes only the lactic acid stock alternative. HCl
+      is not a constituent of it, and pH 5.6 is not the stock pH. Percentage basis,
+      solvent and acid stereochemistry are unreported; the amount is determined by
+      the final-medium pH endpoint. This is a nominal source-qualified preparation,
+      not a fully resolved chemical formulation. PERCENT preserves the unspecified
+      source percent basis; it is not PERCENT_WV or PERCENT_WW. UNKNOWN component-list
+      completeness records the unreported solvent/preparation inputs. No generic raw
+      source label is made a global resolving synonym and no inherited hold is removed.
+notes: JCM 87 permits 20% lactic acid OR 1 N to 6 N HCl to adjust the final medium
+  to pH 5.6. This proposal denotes only the lactic acid stock alternative. HCl is
+  not a constituent of it, and pH 5.6 is not the stock pH. Percentage basis, solvent
+  and acid stereochemistry are unreported; the amount is determined by the final-medium
+  pH endpoint. This is a nominal source-qualified preparation, not a fully resolved
+  chemical formulation. PERCENT preserves the unspecified source percent basis; it
+  is not PERCENT_WV or PERCENT_WW. UNKNOWN component-list completeness records the
+  unreported solvent/preparation inputs. No generic raw source label is made a global
+  resolving synonym and no inherited hold is removed.
+curation_history:
+- timestamp: '2026-11-08T05:29:10.357663+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: SOURCE_QUALIFIED_NOMINAL_STOCK_PROPOSED
+  changes: Address independent integration finding INTEGRATION-03 with an isolated
+    nominal stock proposal while retaining chemical and quantity uncertainty. JCM
+    87 permits 20% lactic acid OR 1 N to 6 N HCl to adjust the final medium to pH
+    5.6. This proposal denotes only the lactic acid stock alternative. HCl is not
+    a constituent of it, and pH 5.6 is not the stock pH. Percentage basis, solvent
+    and acid stereochemistry are unreported; the amount is determined by the final-medium
+    pH endpoint.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:39:32.309528+00:00'
+  curator: all-unmatched-20261107-worker07-root
+  action: CORRECT_ISOLATED_PROPOSAL_EVIDENCE
+  changes: 'Issue1226: Reclassify only ontology_mapping.evidence indices 0 from MANUAL_CURATION
+    to LLM_SUGGESTION. Exact complete objects were rebound to the frozen provenance
+    audit; these entries record documented agent interpretation, not human-supplied
+    evidence. Sources, claim notes and historical entries are retained; ComponentEvidenceTypeEnum
+    and canonical SSSOM ManualMappingCuration are unchanged. Isolated report-only
+    successor; no owner, role, source gate or release approval.'
+  llm_assisted: true

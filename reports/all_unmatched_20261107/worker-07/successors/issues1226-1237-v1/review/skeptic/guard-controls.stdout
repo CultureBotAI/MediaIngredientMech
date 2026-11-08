@@ -1,0 +1,68 @@
+{
+  "reviewer": "/root/successor1226_1237_skeptic",
+  "created_at": "2026-11-08T07:40:59.107672+00:00",
+  "script": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/parts/build-correction.py",
+  "script_sha256": "0f42277366cd494f177f0b309382841d640c4dd2b931bdfc324e6ee03aaa313a",
+  "actual_native_imports": "mediaingredientmech.validation.write_validated.validate_ingredient; production helper unchanged; no output writer invoked by controls",
+  "controls": [
+    {
+      "name": "actual exact current owner and complete evidence object",
+      "result": "PASS_ACCEPTED"
+    },
+    {
+      "name": "stale owner hash",
+      "result": "PASS_REFUSED",
+      "exception": "AssertionError",
+      "message": "stale owner"
+    },
+    {
+      "name": "same source but changed complete assertion",
+      "result": "PASS_REFUSED",
+      "exception": "AssertionError",
+      "message": "stale complete object"
+    },
+    {
+      "name": "changed mapping attachment toward component identity",
+      "result": "PASS_REFUSED",
+      "exception": "AssertionError",
+      "message": "stale mapping attachment"
+    },
+    {
+      "name": "same enum spelling in ComponentEvidence context",
+      "result": "PASS_REFUSED",
+      "exception": "AssertionError",
+      "message": "wrong enum or locator"
+    },
+    {
+      "name": "wrong duplicate ordinal",
+      "result": "PASS_REFUSED",
+      "exception": "AssertionError",
+      "message": "duplicate ambiguity"
+    },
+    {
+      "name": "historical full object excluded",
+      "result": "PASS_REFUSED",
+      "exception": "AssertionError",
+      "message": "inherited evidence excluded"
+    },
+    {
+      "name": "ambiguous added duplicate multiplicity",
+      "result": "PASS_REFUSED",
+      "exception": "AssertionError",
+      "message": "duplicate ambiguity"
+    },
+    {
+      "name": "native closed schema rejects unknown property",
+      "result": "PASS_REFUSED",
+      "errors": "[ValidationResult(type='jsonschema validation', severity=<Severity.ERROR: 'ERROR'>, message=\"Additional properties are not allowed ('invented_property' was unexpected) in /\", instance={'identifier': 'kgmicrobe.ingredient:jcm574_ammonium_chloride_1m_stock', 'preferred_term': 'JCM574 ammonium chloride1M stock', 'mapping_status': 'MAPPED', 'ingredient_type': 'STOCK_SOLUTION', 'ontology_mapping': {'ontology_id': 'kgmicrobe.ingredient:jcm574_ammonium_chloride_1m_stock', 'ontology_label': 'JCM574 ammonium chloride1M stock', 'ontology_source': 'kgmicrobe.ingredient', 'mapping_quality': 'FALLBACK_REGISTRY', 'evidence': [{'evidence_type': 'MANUAL_CURATION', 'source': 'https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574', 'notes': 'Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3. No exact ontology equivalence to an individual chemical or an unqualified generic stock is asserted.'}]}, 'notes': 'Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent and full preparation are unreported. Raw assigned source label: 1 M NH4Cl. Quantities in notes preserve source preparation and are not final-medium concentrations. No global synonym is added for this context-dependent label.', 'solution_type': 'OTHER', 'components': [{'component_name': 'NH4Cl', 'reference_scope': 'UNMAPPED', 'concentration_value': '1', 'concentration_unit': 'M'}], 'component_assertion': {'method': 'RECIPE_TRANSCRIPTION', 'completeness': 'UNKNOWN', 'evidence': [{'evidence_type': 'RECIPE_SOURCE', 'source': 'https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574', 'source_record': 'JCM574 ammonium chloride1M stock', 'notes': 'Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent and full preparation are unreported.'}], 'notes': 'Source does not establish complete preparation composition; unreported solvent or pH-adjustment constituents remain unknown. No exhaustive list is claimed.'}, 'curation_history': [{'timestamp': '2026-11-08T05:22:39.515946+00:00', 'curator': 'all-unmatched-20261107-worker07-primary_a', 'action': 'SOURCE_QUALIFIED_PREPARATION_PROPOSED', 'changes': 'Propose exact source-qualified nominal ingredient and source partonomy. Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent and full preparation are unreported.', 'new_status': 'MAPPED', 'llm_assisted': True}], 'invented_property': 'must fail'}, instance_index=0, instantiates='IngredientRecord', context=[], source=<ValidationError: \"Additional properties are not allowed ('invented_property' was unexpected)\">)]"
+    },
+    {
+      "name": "native schema rejects invalid component enum",
+      "result": "PASS_REFUSED",
+      "errors": "[ValidationResult(type='jsonschema validation', severity=<Severity.ERROR: 'ERROR'>, message=\"'invented' is not one of ['MIM_CATALOG', 'EXTERNAL_TERM', 'UNMAPPED'] in /components/0/reference_scope\", instance={'identifier': 'kgmicrobe.ingredient:jcm574_ammonium_chloride_1m_stock', 'preferred_term': 'JCM574 ammonium chloride1M stock', 'mapping_status': 'MAPPED', 'ingredient_type': 'STOCK_SOLUTION', 'ontology_mapping': {'ontology_id': 'kgmicrobe.ingredient:jcm574_ammonium_chloride_1m_stock', 'ontology_label': 'JCM574 ammonium chloride1M stock', 'ontology_source': 'kgmicrobe.ingredient', 'mapping_quality': 'FALLBACK_REGISTRY', 'evidence': [{'evidence_type': 'MANUAL_CURATION', 'source': 'https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574', 'notes': 'Source-qualified nominal preparation identity under MAPPING_SEMANTICS section3. No exact ontology equivalence to an individual chemical or an unqualified generic stock is asserted.'}]}, 'notes': 'Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent and full preparation are unreported. Raw assigned source label: 1 M NH4Cl. Quantities in notes preserve source preparation and are not final-medium concentrations. No global synonym is added for this context-dependent label.', 'solution_type': 'OTHER', 'components': [{'component_name': 'NH4Cl', 'reference_scope': 'invented', 'concentration_value': '1', 'concentration_unit': 'M'}], 'component_assertion': {'method': 'RECIPE_TRANSCRIPTION', 'completeness': 'UNKNOWN', 'evidence': [{'evidence_type': 'RECIPE_SOURCE', 'source': 'https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574', 'source_record': 'JCM574 ammonium chloride1M stock', 'notes': 'Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent and full preparation are unreported.'}], 'notes': 'Source does not establish complete preparation composition; unreported solvent or pH-adjustment constituents remain unknown. No exhaustive list is claimed.'}, 'curation_history': [{'timestamp': '2026-11-08T05:22:39.515946+00:00', 'curator': 'all-unmatched-20261107-worker07-primary_a', 'action': 'SOURCE_QUALIFIED_PREPARATION_PROPOSED', 'changes': 'Propose exact source-qualified nominal ingredient and source partonomy. Primary JCM574 adds5ml after cooling. Molarity belongs to the stock. Solvent and full preparation are unreported.', 'new_status': 'MAPPED', 'llm_assisted': True}]}, instance_index=0, instantiates='IngredientRecord', context=[], source=<ValidationError: \"'invented' is not one of ['MIM_CATALOG', 'EXTERNAL_TERM', 'UNMAPPED']\">)]"
+    }
+  ],
+  "passed": 10,
+  "failed": 0,
+  "limitations": "Bounded in-memory mutation controls; no hostile concurrency, atomicity or universal guard claims."
+}

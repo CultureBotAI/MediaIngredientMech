@@ -1,0 +1,45 @@
+identifier: kgmicrobe.ingredient:jcm_1479_l_cysteine_hcl_monohydrate_5_percent_ph7
+preferred_term: JCM1479 L-cysteineHClmonohydrate5% pH7 stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1479_l_cysteine_hcl_monohydrate_5_percent_ph7
+  ontology_label: JCM1479 L-cysteineHClmonohydrate5% pH7 stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1479
+    notes: Source-qualified nominal preparation identity; no exact chemical or generic-stock equivalence
+      asserted.
+components:
+- component_name: L-Cysteine·HCl·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: PERCENT_BASIS_UNSPECIFIED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1479
+    source_record: JCM1479 L-cysteineHClmonohydrate5% pH7 stock
+    notes: Nominal source-qualified stock only. pH7.0 and1mladdition explicit; percentagebasis,solvent,pHadjustment
+      reagent unreported. The source does not establish a complete constituent list; no omitted solvent
+      or titrant is invented.
+  notes: Completeness concerns the source constituent list, not ontology resolution. UNMAPPED parts preserve
+    literal source wording and do not assert an unsupported exact ID.
+notes: 'Nominal source-qualified stock only. pH7.0 and1mladdition explicit; percentagebasis,solvent,pHadjustment
+  reagent unreported. The source does not establish a complete constituent list; no omitted solvent or
+  titrant is invented. Raw source labels retained in linked frozen cases: [''5% L-Cysteine·HCl·H2O solution
+  (pH 7.0)'']. Generic labels are not global resolving synonyms. No pre-existing WITHHOLD or REJECTED
+  gate is lifted.'
+curation_history:
+- timestamp: '2026-11-08T05:35:38.261452+00:00'
+  curator: all-unmatched-20261107-worker07-primary_b
+  action: SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Propose exact nominal source preparation with preserved quantities and explicit unresolved
+    details; no maintained record changed.
+  new_status: MAPPED
+  llm_assisted: true
