@@ -1,0 +1,80 @@
+--- original/Catalase.yaml
++++ successor/Catalase.yaml
+@@ -22,10 +22,10 @@
+       ''Catalase'', Rule B1 registry row.'
+ synonyms:
+ - synonym_text: 'Properties: Defined component, Simple component'
+-  synonym_type: RAW_TEXT
++  synonym_type: REJECTED_LABEL
+   source: CultureMech
+ - synonym_text: 'Properties: Simple component, Defined component'
+-  synonym_type: RAW_TEXT
++  synonym_type: REJECTED_LABEL
+   source: CultureMech
+ - synonym_text: Catalase (Sigma C--10)
+   synonym_type: CATALOG_VARIANT
+@@ -88,7 +88,64 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: claude-fable-5-1
++- timestamp: '2026-11-08T05:47:55.825266+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Record the literal historical Sigma C-10 enzyme preparation as a supplied
++    form on the existing Catalase owner. JCM117 directly supplies the catalog spelling
++    and60mg filter-sterilized addition; contemporary C100 evidence is not used to
++    infer historical C-10 species, formulation or equivalence. Exact isolated payload;
++    no maintained write. All prior scientific/publication holds preserved.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Optionally classify the retained Properties metadata tokens as REJECTED_LABEL.
++    Native synonym policy already excludes these texts; this is provenance classification
++    only, with no resolver change, filter change or release blocker. Correct active
++    attribution to the inspected TOGO M109 recipe and preserve the unsuccessful JCM
++    117 capture honestly. Reuse only this bounded conclusion from coordinator TARGET-005;
++    preserve the W05 history prefix and source ownership. The historical event remains
++    unedited as superseded history. Keep literal C--10, the distinct C9322 dependency,
++    the C100 uncertainty and the human NCIT:C61062 exclusion under issue 312. Isolated
++    proposal only; no maintained data or source membership change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: SINGLE_INGREDIENT
+ chemical_properties:
+   cas_rn: 9001-05-2
+   data_source: CAS registry number of catalase, EC 1.11.1.6 (enzyme, no single structure)
++supplied_form:
++- name: Catalase (Sigma C-10)
++  supplier: Sigma
++  catalog_number: C-10
++  notes: TOGO M109 records original_media_id JCM_M117 and literal Catalase (Sigma
++    C--10), 60 mg with separate filtration. The direct JCM 117 response says Nothing
++    found. Historical species and formulation are unverified; contemporary C100 is
++    not assigned. The separately supported C9322 proposal remains in the pending coordinator
++    union and is not imported into W05 case membership.
++notes: 'Record the literal historical Sigma C-10 enzyme preparation as a supplied
++  form on the existing Catalase owner. TOGO M109, carrying original_media_id JCM_M117,
++  supplies literal Catalase (Sigma C--10), 60 mg and filtration; the direct JCM 117
++  capture returns Nothing found; contemporary C100 evidence is not used to infer historical
++  C-10 species, formulation or equivalence. Source-qualified proposal under issue1193.
++  No ingredient roles, assay outcomes, complete-owner support or release admission
++  are approved. Preserve all frozen source and owner holds; component uncertainty
++  is stated separately from whole-material identity.
++
++
++  Final W05 report-only correction: Optionally classify the retained Properties metadata
++  tokens as REJECTED_LABEL. Native synonym policy already excludes these texts; this
++  is provenance classification only, with no resolver change, filter change or release
++  blocker. Correct active attribution to the inspected TOGO M109 recipe and preserve
++  the unsuccessful JCM 117 capture honestly. Reuse only this bounded conclusion from
++  coordinator TARGET-005; preserve the W05 history prefix and source ownership. The
++  historical event remains unedited as superseded history. Keep literal C--10, the
++  distinct C9322 dependency, the C100 uncertainty and the human NCIT:C61062 exclusion
++  under issue 312. All original source, organism, role, owner and export holds remain.
++  Independent review of these exact successor bytes is pending.'

@@ -1,0 +1,159 @@
+identifier: kgmicrobe.ingredient:leptospira_medium_base_emjh
+preferred_term: Leptospira Medium Base EMJH (Difco)
+synonyms:
+- synonym_text: Leptospira Medium Base EMJH
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Leptospira Medium Base EMJH (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:990); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a Leptospira EMJH medium base preparation and left unmapped
+    pending product- or recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Leptospira_Medium_Base_EMJH-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommended record action | No ontology CURIE
+    was proposed. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist
+    to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Leptospira Medium Base EMJH (Difco)'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:50:37.806762+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Source990/DSMZ1113 names Difco EMJH base2.3g separately from100ml enrichment992.
+    Manufacturer279410 base has five named constituents. Its approximate per-liter
+    formula totals2.555g while directions use2.3g in900ml before enrichment; amounts
+    are withheld pending this basis resolution, but product identity and named parts
+    are supported. Isolated proposal only; whole-owner/source/export holds remain
+    and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: 'Retype the documented campaign-agent mapping judgment from human-only
+    MANUAL_CURATION to LLM_SUGGESTION under issue1226; scientific assertion and source
+    unchanged except any separately listed finding. W05-MEDIA-F02: transcribe all
+    five approximate manufacturer basal-per-litre amounts, resolve the rounding-compatible
+    preparation basis, retain the performance footnote and component-form uncertainty;
+    completeness is relative to the cited five-part table. Isolated report-only successor;
+    maintained data and all original source, owner, role, cross-shard and export holds
+    remain unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:990); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium base preparation pending product-
+  or recipe-level curation. Final correction W05-MEDIA-F02: Source 990 / DSMZ 1113
+  identifies Difco EMJH base, separate from 100 ml enrichment. The manufacturer approximate
+  basal formula per litre lists disodium phosphate 1.0 g, monopotassium phosphate
+  0.3 g, sodium chloride 1.0 g, ammonium chloride 0.25 g and thiamine 5.0 mg. The
+  listed total is 2.555 g/L; 2.3 g in 900 ml gives approximately 2.55556 g/L and is
+  consistent with rounded directions, not a conflicting basis. These are approximate
+  manufacturer basal-reconstitution equivalents, not concentrations in dry powder
+  or in the final enriched medium. The table footnote permits adjustment and/or supplementation
+  to meet performance criteria. All five names remain UNMAPPED at component level;
+  no hydrate, thiamine salt, exact lot formula or enrichment composition is inferred.
+  COMPLETE refers only to the five constituents in the cited basal table.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:leptospira_medium_base_emjh
+  ontology_label: Leptospira Medium Base EMJH (Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Leptospira-Medium-Base-EMJH.pdf
+    notes: Source 990 / DSMZ 1113 identifies Difco EMJH base, separate from 100 ml
+      enrichment. The manufacturer approximate basal formula per litre lists disodium
+      phosphate 1.0 g, monopotassium phosphate 0.3 g, sodium chloride 1.0 g, ammonium
+      chloride 0.25 g and thiamine 5.0 mg. The listed total is 2.555 g/L; 2.3 g in
+      900 ml gives approximately 2.55556 g/L and is consistent with rounded directions,
+      not a conflicting basis. These are approximate manufacturer basal-reconstitution
+      equivalents, not concentrations in dry powder or in the final enriched medium.
+      The table footnote permits adjustment and/or supplementation to meet performance
+      criteria. All five names remain UNMAPPED at component level; no hydrate, thiamine
+      salt, exact lot formula or enrichment composition is inferred. COMPLETE refers
+      only to the five constituents in the cited basal table.
+components:
+- component_name: Disodium phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L_AT_STANDARD_BASAL_RECONSTITUTION
+- component_name: Monopotassium phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '0.3'
+  concentration_unit: G_PER_L_AT_STANDARD_BASAL_RECONSTITUTION
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L_AT_STANDARD_BASAL_RECONSTITUTION
+- component_name: Ammonium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: G_PER_L_AT_STANDARD_BASAL_RECONSTITUTION
+- component_name: Thiamine
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L_AT_STANDARD_BASAL_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Leptospira-Medium-Base-EMJH.pdf
+    notes: Source 990 / DSMZ 1113 identifies Difco EMJH base, separate from 100 ml
+      enrichment. The manufacturer approximate basal formula per litre lists disodium
+      phosphate 1.0 g, monopotassium phosphate 0.3 g, sodium chloride 1.0 g, ammonium
+      chloride 0.25 g and thiamine 5.0 mg. The listed total is 2.555 g/L; 2.3 g in
+      900 ml gives approximately 2.55556 g/L and is consistent with rounded directions,
+      not a conflicting basis. These are approximate manufacturer basal-reconstitution
+      equivalents, not concentrations in dry powder or in the final enriched medium.
+      The table footnote permits adjustment and/or supplementation to meet performance
+      criteria. All five names remain UNMAPPED at component level; no hydrate, thiamine
+      salt, exact lot formula or enrichment composition is inferred. COMPLETE refers
+      only to the five constituents in the cited basal table.
+supplied_form:
+- name: Leptospira Medium Base EMJH (Difco)
+  form: powder
+  supplier: BD Difco
+  notes: Original collection specifies manufacturer/product; package catalog is not
+    guessed.

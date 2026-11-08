@@ -1,0 +1,153 @@
+identifier: kgmicrobe.ingredient:methanol_utilizing_bacteria_medium_b_jcm79
+preferred_term: Methanol-utilizing bacteria medium B (JCM79 source recipe)
+synonyms: []
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1633); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T10:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Set ingredient_type=DEFINED_MEDIUM because the label names a medium formulation,
+    not a single chemical ingredient.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Methanol-utilizing_Bacteria_Medium_B-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommendation: retain `UNMAPPED_0443` as `UNMAPPED`
+    and `DEFINED_MEDIUM`.** The label denotes a named culture-medium formulation,
+    not methanol or any other single chemical. However, exact-label and spelling-variant
+    searches did not recover an authoritative recipe or a stable ontology concept
+    specifically representing “Methanol-utilizing bacteria medium B.” Consequently,
+    its composition, provena No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:51.384858+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: 'Promote the existing Methanol-utilizing bacteria mediumB owner as the
+    named JCM79 source recipe, including its explicit alternative:0.4mgthiamineHCl
+    OR0.2gyeast extract. The recipe identity is supported by JCM79; this registry
+    does not assert one realized branch, and the PARTIAL component assertion retains
+    only11invariant inputs. JCM126 explicitly references79 and changespH without selecting
+    the alternative, so branch selection remains a component/formulation limit. Do
+    not infer measuredfinalvolume or copy a distinct DSMZ numberedmedium. Authentic
+    former active aliases are preserved verbatim as source provenance, not rejected:
+    [{"synonym_text": "Methanol-utilizing bacteria medium B", "synonym_type": "RAW_TEXT",
+    "source": "mim-queue"}]. Removing active broad aliases prevents a source-qualified
+    identity from resolving unrelated same-name preparations. Isolated proposal only;
+    whole-owner/source/export holds remain and integration requires separate native
+    review.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Promote the existing Methanol-utilizing bacteria mediumB owner as the named
+  JCM79 source recipe, including its explicit alternative:0.4mgthiamineHCl OR0.2gyeast
+  extract. The recipe identity is supported by JCM79; this registry does not assert
+  one realized branch, and the PARTIAL component assertion retains only11invariant
+  inputs. JCM126 explicitly references79 and changespH without selecting the alternative,
+  so branch selection remains a component/formulation limit. Do not infer measuredfinalvolume
+  or copy a distinct DSMZ numberedmedium. Authentic former active aliases are preserved
+  verbatim as source provenance, not rejected: [{"synonym_text": "Methanol-utilizing
+  bacteria medium B", "synonym_type": "RAW_TEXT", "source": "mim-queue"}]. Removing
+  active broad aliases prevents a source-qualified identity from resolving unrelated
+  same-name preparations.'
+components:
+- component_name: Methanol
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '3.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.4'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '3.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Ferric citrate
+  reference_scope: UNMAPPED
+  concentration_value: '30.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: CaCl2.2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '30.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: MnCl2.4H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: ZnSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: CuSO4.5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=79
+    source_record: JCM79
+    notes: JCM79 offers0.4mg thiamineHCl OR0.2g yeast extract. JCM126 references79
+      and changes pH, without selecting that branch. Transcribe invariant11inputs
+      and preserve the alternative explicitly; do not invent the receiving recipe
+      branch. No measured final volume inferred.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:methanol_utilizing_bacteria_medium_b_jcm79
+  ontology_label: Methanol-utilizing bacteria medium B (JCM79 source recipe)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=79
+    notes: Promote the existing Methanol-utilizing bacteria mediumB owner as the named
+      JCM79 source recipe, including its explicit alternative:0.4mgthiamineHCl OR0.2gyeast
+      extract. The recipe identity is supported by JCM79; this registry does not assert
+      one realized branch, and the PARTIAL component assertion retains only11invariant
+      inputs. JCM126 explicitly references79 and changespH without selecting the alternative,
+      so branch selection remains a component/formulation limit. Do not infer measuredfinalvolume
+      or copy a distinct DSMZ numberedmedium.

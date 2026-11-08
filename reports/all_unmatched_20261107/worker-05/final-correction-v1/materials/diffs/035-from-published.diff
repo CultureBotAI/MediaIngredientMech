@@ -1,0 +1,49 @@
+--- published/Merck_Universal_Peptone.yaml
++++ successor/Merck_Universal_Peptone.yaml
+@@ -21,6 +21,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:merck_universal_peptone
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:merck_universal_peptone
+@@ -28,7 +39,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://mediadive.dsmz.de/rest/ingredient/341
+     notes: Add Merck Universal peptone as a positively identified manufacturer product
+       family, alongside retained rejection of its Bacto Peptone aliases. Merck Universal
+@@ -39,7 +50,7 @@
+   supplier: Merck
+   notes: MediaDive341 explicitly names Merck; exact historical catalog/formulation
+     not given.
+-notes: Add Merck Universal peptone as a positively identified manufacturer product
++notes: 'Add Merck Universal peptone as a positively identified manufacturer product
+   family, alongside retained rejection of its Bacto Peptone aliases. Merck Universal
+   M66 combines casein, meat and soy peptones, but the historical MediaDive341 row
+   lacks a catalog, so noM66 formula or107043 catalog is imposed on that source. Source-qualified
+@@ -48,3 +59,10 @@
+   uncertainty is stated separately from whole-material identity. Occurrence statistics
+   count current exact proposed-label matches in the inspected CultureMech occurrence
+   table; no shared-identifier expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

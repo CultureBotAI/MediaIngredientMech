@@ -1,0 +1,53 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed/Tris_Hydrochloride_Salt.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Tris_Hydrochloride_Salt.yaml
+@@ -6,9 +6,9 @@
+   ontology_id: CHEBI:9754
+   ontology_label: tris
+   ontology_source: CHEBI
+-  mapping_quality: BROAD_MATCH
++  mapping_quality: NARROW_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.sigmaaldrich.cn/deepweb/assets/sigmaaldrich/product/documents/137/329/t3253pis.pdf
+     notes: Tris hydrochloride is the completely neutralized crystalline1:1hydrochloride
+       salt, CAS1185-53-1, C4H11NO3.HCl. DSMZ927/802 use a weighed12g reagent; stock-buffer
+@@ -24,11 +24,16 @@
+ - synonym_text: Tris hydrochloride (crystalline salt)
+   synonym_type: EXACT_SYNONYM
+   source: https://www.sigmaaldrich.cn/deepweb/assets/sigmaaldrich/product/documents/137/329/t3253pis.pdf
+-notes: Tris hydrochloride is the completely neutralized crystalline1:1hydrochloride
++notes: 'Tris hydrochloride is the completely neutralized crystalline1:1hydrochloride
+   salt, CAS1185-53-1, C4H11NO3.HCl. DSMZ927/802 use a weighed12g reagent; stock-buffer
+   occurrences require separate owners. Supplier sheet establishes substance chemistry,
+   not historical supplier/catalog. CHEBI46097 is only the protonated cation and cannot
+-  exactly denote salt. Tris free base9754 is only asymmetric form-of parent.
++  exactly denote salt. Tris free base9754 is only asymmetric form-of parent. Filed
++  #1238: the exact CAS 1185-53-1 salt has the broader tris free-base parent CHEBI:9754.
++  Set NARROW_MATCH so the pinned native builder emits skos:broadMatch for the parent
++  instead of the previous closeMatch. Preserve the exact CAS display and all source/identity
++  holds. The complete native before/after projection is separately recorded; no global
++  grade replacement is implied.'
+ curation_history:
+ - timestamp: '2026-11-08T05:49:52.389819+00:00'
+   curator: Codex worker05 chemical correction1193
+@@ -41,3 +46,19 @@
+   llm_assisted: true
+   llm_model: gpt-6
+   new_status: MAPPED
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. Filed #1238: the exact CAS 1185-53-1
++    salt has the broader tris free-base parent CHEBI:9754. Set NARROW_MATCH so the
++    pinned native builder emits skos:broadMatch for the parent instead of the previous
++    closeMatch. Preserve the exact CAS display and all source/identity holds. The
++    complete native before/after projection is separately recorded; no global grade
++    replacement is implied. Report-only candidate; separate final scientific review
++    and coordinator integration remain required.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6

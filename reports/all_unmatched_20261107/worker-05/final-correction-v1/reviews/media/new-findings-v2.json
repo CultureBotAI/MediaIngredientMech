@@ -1,0 +1,55 @@
+{
+  "predecessor": "new-findings-v1.json",
+  "preserves_previous_findings": true,
+  "additional_findings": [
+    {
+      "finding_id": "W05-FINAL-MEDIA-REVIEW-03",
+      "reviewer": "/root/final_skeptical",
+      "priority": "P3",
+      "category": "source_identifier_caption",
+      "reported_to_root_before_fix": true,
+      "reproduction": [
+        {
+          "path": ".temp/w05-final-correction-v1/media/decisions.json",
+          "sha256": "abbc91c2249c308e6e62bebc1da0f30e6a258769f8aaae697d8629d053d8822e",
+          "json_pointer": "/decisions/48/final_correction_reassessment/assessment",
+          "case_index": 159,
+          "text": "MediaDive2052/ JCM1273 explicitly identifies the Difco Lennox product. Retain the three-part20 g/L standard reconstitution table while preserving the unusual0.1 g receiving dose. Do not route generic LB source1708 to this brand/variant."
+        },
+        {
+          "path": ".temp/w05-final-correction-v1/media/decisions.json",
+          "sha256": "abbc91c2249c308e6e62bebc1da0f30e6a258769f8aaae697d8629d053d8822e",
+          "json_pointer": "/decisions/54/final_correction_reassessment/assessment",
+          "case_index": 174,
+          "text": "Source1708/JCM1111 identifies LB powder at25 g but gives no supplier or NaCl variant. Preserve the source-qualified product and separate Tris/carbonate/sulfide inputs. Its relationship to the positively identified Lennox2052 product remains unresolved; dose alone does not establish difference or equivalence."
+        },
+        {
+          "path": ".temp/w05-final-correction-v1/media/primary-read-ledger.json",
+          "sha256": "e75b807451f991a23977804714467a07801b1baffd5e013cff9541e2c88852a8",
+          "json_pointer": "/cases/48/assessment",
+          "case_index": 159,
+          "text": "MediaDive2052/ JCM1273 explicitly identifies the Difco Lennox product. Retain the three-part20 g/L standard reconstitution table while preserving the unusual0.1 g receiving dose. Do not route generic LB source1708 to this brand/variant."
+        },
+        {
+          "path": ".temp/w05-final-correction-v1/media/primary-read-ledger.json",
+          "sha256": "e75b807451f991a23977804714467a07801b1baffd5e013cff9541e2c88852a8",
+          "json_pointer": "/cases/54/assessment",
+          "case_index": 174,
+          "text": "Source1708/JCM1111 identifies LB powder at25 g but gives no supplier or NaCl variant. Preserve the source-qualified product and separate Tris/carbonate/sulfide inputs. Its relationship to the positively identified Lennox2052 product remains unresolved; dose alone does not establish difference or equivalence."
+        }
+      ],
+      "assessment": "Case174 is explicitly mediadive.ingredient:1999 in the exact source-case object and primary ingredient page, but the newly authored assessment calls it Source1708/JCM1111. Case159 repeats source1708 as the generic LB comparator without a matching source binding in the inspected LB scope. This is report-caption traceability, not an ingredient identity or supplied-form reversal.",
+      "bounded_fix": "Append immutable report metadata correction to identify case174 as mediadive.ingredient:1999. For case159 either bind the intended specific comparator to actual source evidence or retain generic LB wording without unsupported1708. Preserve all old reports, source IDs/bytes/timestamps, 60 cases and45 payloads unchanged.",
+      "source_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-05/media/captures/8accfcb3006f5d17f6.html",
+          "sha256": "8d4826c05e6536bd55e98c7f2642eba20feb02d2f8128f175cf610dbaacb4999"
+        },
+        {
+          "path": ".temp/w05-final-correction-v1/media/complete-source-bindings.json",
+          "sha256": "d5854a4c470c01a4eb7d650d3774b2bb1997cd48ab18d7677b5c44389c7302d4"
+        }
+      ]
+    }
+  ]
+}

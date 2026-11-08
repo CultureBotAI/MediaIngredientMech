@@ -1,0 +1,8 @@
+{
+  "command": "build_finding_register.py --review-bindings .temp/w05-final-correction-v1/control/final-review-bindings.json",
+  "exit_code": 1,
+  "exception": "KeyError: 'finding_id' at line74",
+  "cause": "Assembly finding v2 is an additional_findings envelope. No output register was written.",
+  "failed_script_sha256": "a3af941bdf68d27e2d98ce498d104f9ce30c79cf879aba2e18db8c674273831c",
+  "remedy": "v2 compiler reads the sole exact additional_findings entry; no finding content or validation gate changes."
+}

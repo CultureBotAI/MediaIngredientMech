@@ -1,0 +1,1238 @@
+{
+  "reviewer": "/root/materials_research/chemical_primary_crosscheck",
+  "started_at": "2026-11-08T08:05:02.507514+00:00",
+  "completed_at": "2026-11-08T08:07:35.510665+00:00",
+  "completion": "delegated_source_block_complete",
+  "verdict": "pass_with_limitations_except_two_completeness_questions",
+  "scope": {
+    "lane_case_indices": [
+      1,
+      2,
+      3,
+      6,
+      9,
+      10,
+      11,
+      12,
+      14,
+      17,
+      21,
+      35,
+      43,
+      46,
+      48,
+      50,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      60,
+      61,
+      62,
+      63,
+      64,
+      66
+    ],
+    "case_count": 28,
+    "payload_field_crosschecks": 16,
+    "primary_evidence_count": 48,
+    "independence": "No authorship of chemical primary proposals; subordinate scientific source cross-check for parent final skeptical adjudication."
+  },
+  "inputs": [
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/decisions-v2.json",
+      "sha256": "52c30e13862d68ca30dd40a4f6958d9d4fc76184aab3bfbee4cab9f06ec4167d"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/proposals-v3.json",
+      "sha256": "82d94d695b3a0ea3fd5e86679bf64fe5875433b3747cd96f04a79eb0ca83084b"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/evidence-v1.json",
+      "sha256": "5ff58e13e08481309c3ef0286f0c63bc8589b07be97fbf0b799f2493363b1912"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/evidence-read-ledger-v1.json",
+      "sha256": "4e3230068ce87cd52a198af4d4b3a79e60a9cb1a70507129a35ccf10f08bb567"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": ".claude/skills/review-yaml-category/SKILL.md",
+      "sha256": "154758ee4b3bd401e19c89d488ff648014c5ec4282c6c1b710de5093ce36c101"
+    }
+  ],
+  "case_reviews": [
+    {
+      "lane_index": 1,
+      "case_id": "CM_NAME:14e2433d6680c7e7fbdb982b142afa631f6ed6bb5aa5cdbecfbf46914f3ce727",
+      "decision_object_sha256": "0e5476ac21f4f6cb8f4a7f13dedd2b638dbbeba5b06a21c1a30c2d6e07025aae",
+      "assessment": "BD 215530 is explicitly D(+)-glucose anhydrous on the captured official product page. The bounded catalog alias on D-glucose is supported; no monohydrate, ring-anomer or rejected tombstone revival is justified.",
+      "evidence_ids_actually_read": [
+        "CHEM-WEB-6"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-dextrose"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 2,
+      "case_id": "CM_NAME:16f378f5a868f191ba889e5d0a923b8d067c8ddaa9ff7562b0cb7f41e3e60075",
+      "decision_object_sha256": "bcb56875b98182b138bcfbaaec13d83ccbf3395979de0145d4b76053d3d5031c",
+      "assessment": "JCM 673 names Nacalai iron powder at 20–60 mesh; the captured Nacalai 19418-25 page gives Fe, CAS 7439-89-6 and that particle range. Bulk iron(0) is supported, not an iron atom identity.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-610933dda9a38c76",
+        "CHEM-CAP-0d24fad2c28ce16b"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-iron"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 3,
+      "case_id": "CM_NAME:23daec5a08dc35f1e39edc61f4b96e8852e0363d2f8a4eafb6fbe52731201d44",
+      "decision_object_sha256": "0c8ee8134da161587495e8afad3b88f9c7a6c0151dc0884e6e561e46da64b16e",
+      "assessment": "DSMZ 1565 names disodium tartrate with two waters but no stereochemistry. The inspected CHEBI:63017 term is explicitly L-tartrate and lacks those waters. No exact routing to that term is supported; retain the actual missing stereoisomer fact.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-b74c726dd80743b4",
+        "CHEM-C1193-tartrate-dsmz"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 6,
+      "case_id": "CM_NAME:3c36c3997cdd6dd09cac787110299acff8335c8befbd63742b07b04f06a6d83e",
+      "decision_object_sha256": "0d53b6860f389d3b15124a8eb6f0e0857af58edb3f4666c1cebefd5b0111a4b5",
+      "assessment": "TOGO M3211 preserves NaCOOH both as a component literal and in quoted recipe prose. The component caption identifies sodium formate; the source stock preparation prose does not change the identity of the weighed solute label. Alias support is bounded to this literal, not every stock solution.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-baa7ab015ab6d5a5"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-formate"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 9,
+      "case_id": "CM_NAME:47de822ce5be13cb438bd63ab1582facda8ae41a01b9567016f611bfd3d8df7a",
+      "decision_object_sha256": "90d602a4ca92e3bc4d6e633f7c0f4745e416cd27636c1052e766a432f345ed75",
+      "assessment": "TOGO M2553 explicitly writes So(Sulfur Powder), supplying grams of sulfur powder. Elemental sulfur is supported; neither a sulfur atom nor a specific allotrope follows.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-c7ce4af92ddac4f6",
+        "CHEM-CAP-2219370bc9ce67b6"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-sulfur"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 10,
+      "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+      "decision_object_sha256": "53b4e3edb54002c8d7ed0534fc5518edeb2cf22e0005e6e2eeb0815f173578d1",
+      "assessment": "Five full NBRC recipes explicitly write one water in Thiamine-HCl·H2O. This refutes exact routing to the existing anhydrous or dihydrate owner. Whether a source-qualified local monohydrate identity can now be curated remains a completeness question sent to the parent; lack of CAS alone is not a valid blocker under section 3 step 3.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-f0c1b4928af89872",
+        "CHEM-CAP-1fc151e426d45042",
+        "CHEM-CAP-aa10057ea2c6f012",
+        "CHEM-CAP-f55e3a4d1efb7d51",
+        "CHEM-CAP-77de000b5fa8d1a6",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5"
+      ],
+      "proposal_ids": [],
+      "status": "question_pending_parent_adjudication"
+    },
+    {
+      "lane_index": 11,
+      "case_id": "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131",
+      "decision_object_sha256": "273cec5ce9dd47cc23dd16b96a4313b9b86d1dcb99f3ac1951355b1655c54355",
+      "assessment": "TOGO M3161 preserves RibofIavin and labels the vitamin riboflavin. Separately, DSMZ1157 and NBRC1604 explicitly dose concentration-labelled riboflavin aliquots. Correcting the glyph alias while rejecting those stock labels on the neat molecular owner is supported.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-f93edce2e35b29b6",
+        "FINAL-CHEM-riboflavin-dsmz1157",
+        "FINAL-CHEM-riboflavin-nbrc1604"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-riboflavin"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 12,
+      "case_id": "CM_NAME:558bcf18c0ac36e3a46e8f443809ddfa33b130fcab3dd70b6573c1354ff677aa",
+      "decision_object_sha256": "94174e81e278224c0b1996756bb7e40c35366e635c6434c8682f977cfed03cae",
+      "assessment": "All three TOGO rows M3120, M2367 and M2277 retain MnCI2.4H2O and caption manganese chloride tetrahydrate. The four-water identity is supported and the uppercase-I glyph is a transcription variant, not an iodide compound.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-178c00787726f6db",
+        "CHEM-CAP-90c71e16ed3e36ea",
+        "CHEM-CAP-b5d7e0a2820706b4"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-manganese-tetrahydrate"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 14,
+      "case_id": "CM_NAME:5d0c5ffb37bf378c3409765ce4abd610f79dd528fa54abc2e0b8f52451380a5b",
+      "decision_object_sha256": "74681be7a3e4e7c913e6633232c1a3f7013f79d21dfd8b35cb04a4f26ff997a6",
+      "assessment": "TOGO M3129 names ground sulfur powder in both original recipe prose and the ingredient row. The bounded alias belongs to elemental sulfur without an atom/allotrope assertion.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-2219370bc9ce67b6",
+        "CHEM-CAP-c7ce4af92ddac4f6"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-sulfur"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 17,
+      "case_id": "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24",
+      "decision_object_sha256": "16b0324c6a43be75a316a368e39496286aac4152b4cbd26f45f99f93b5326061",
+      "assessment": "P5 distinguishes the Niacin (B3) solute from its single stock. The captured nicotinic-acid term includes niacin, whereas CHEBI:32544 explicitly denotes its charge-minus-one conjugate base. Rejecting Nicotinate only as a neutral-acid identity alias is supported.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-c1a2f9ecce7dc984",
+        "FINAL-CHEM-nicotinate-chebi32544"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-niacin"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 21,
+      "case_id": "CM_NAME:79509089b17b506a45a709c251375d9aba76e83947e0c7d34b85381f5bd54f93",
+      "decision_object_sha256": "1e3a08d9edf1e006b19fa0cc2fd995955cb2fd35edd67d5c84d7db44c269bbc7",
+      "assessment": "Both DSMZ524 and623 omit hydration/catalog for Na-meta silicate. The missing hydrate is a genuine exact-routing limitation; omission is not evidence of anhydrous material. No assertion that the source reagent differs from every known hydrate is justified.",
+      "evidence_ids_actually_read": [
+        "CHEM-C1193-metasilicate-dsmz",
+        "CHEM-C1193-metasilicate-dsmz623"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 35,
+      "case_id": "CM_NAME:cc487a98c0585c66c5e37b0867572f416e49ff561f252fe823c8025a046426ca",
+      "decision_object_sha256": "077b8d81145e923d85671fe69fb1e4d0b7e81334d23c4d89a7048cd69833572e",
+      "assessment": "P5 distinguishes Thiamine HCl (B1) solute from its stock. The inspected CHEBI49105 nomenclature directly includes thiamine HCl. This does not authorize the explicitly one-water NBRC cases to resolve to the same owner.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-14f6b2b7770adbee"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-thiamine-hcl"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 43,
+      "case_id": "CM_NAME:dcaebb575fdae4723ccb30779f3d58420ccb21cffe38a0d0ab7386e2b5bbbfaa",
+      "decision_object_sha256": "e544bf5c48a88c07c5a5e129c2a84fce9d6191d46a0c78f3c136c613add3f4ee",
+      "assessment": "The official TCI G0170 page supplies guanine hydrochloride formula and CAS but also permits drying loss; it is a comparator without a bridge to the historical CDM/LP reagent. Neither free-base identity nor a particular supplied hydrate is established. Failed historical retrieval is not negative evidence.",
+      "evidence_ids_actually_read": [
+        "CHEM-C1193-DIRECT-TCI-G0170"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 46,
+      "case_id": "CM_NAME:e90a13baa92e9b7a72cdfa611fbaec5f457cd61a12e649cccbe256914aa8cc28",
+      "decision_object_sha256": "515ca3470dfa79a8678771229df170bdae1d4bbae4abc182e9e82aa3b2828338",
+      "assessment": "The full Oxoid LP0029 specification describes a refined meat-extract powder and its physical/chemical limits. This supports promotion of the existing Lab-Lemco powder product handle without a complete molecular recipe or equivalence to Lab-Lemco Broth.",
+      "evidence_ids_actually_read": [
+        "CHEM-C1193-lablemco-spec"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-Lab-Lemco"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 48,
+      "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+      "decision_object_sha256": "1542944bd97b78afbd64ab16809510f442ce95347591311a2031a2cf5af6ddcd",
+      "assessment": "NBRC1507 independently writes Thiamine-HCl·H2O in its vitamin preparation. The positive one-water detail must remain; the same local-monohydrate feasibility question as case10 is referred to the parent.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-74b89743eed1808f",
+        "CHEM-CAP-14f6b2b7770adbee",
+        "CHEM-CAP-ba668efabffad3e5"
+      ],
+      "proposal_ids": [],
+      "status": "question_pending_parent_adjudication"
+    },
+    {
+      "lane_index": 50,
+      "case_id": "CM_NAME:f83e2c9a1035fb2cb44369ae7e7f25f020932cebac6f1fb9ce5c1fcb9f4809d4",
+      "decision_object_sha256": "898ac3ca2c5be457b96b2b31371076f8880f596b14d10fee8738c4106d73d377",
+      "assessment": "TOGO M2313 specifies chitin from shrimp shells as one alternative substrate. The preparation registry and partial chitin component are supported; purity, polymorph and exact processing are not provided. This is not equivalence to pure generic chitin.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-61217b46be42b027"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-shrimp-chitin"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 53,
+      "case_id": "KG_CASE:30cf3ecee696eec40ba4399812fa530ca996fa2fd61dd00ca9bf0bdc53b3da73",
+      "decision_object_sha256": "512669faea45457de46fb792caaf639c905e8314b323a2e09ce86a7317d6dd25",
+      "assessment": "CCAP PER directly identifies Complan supplied by HJ Heinz and UM independently names Complan without a supplier. Preserving the existing product-family handle with a supplier-scoped supplied form is supported; the current Original formula cannot be backfilled as historical composition.",
+      "evidence_ids_actually_read": [
+        "CHEM-C1193-complan-per",
+        "CHEM-C1193-complan-um"
+      ],
+      "proposal_ids": [
+        "CHEM-C1193-Complan"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 54,
+      "case_id": "KG_CASE:39adf1df71cd577ceca03305c9da33b8fa04798d4a996fb204f8bc9acac57a5a",
+      "decision_object_sha256": "98d7aa88b11283678675f25236f2a394b90e4c3a56b59aefe879c03a996dc04d",
+      "assessment": "The primary 2000 abstract and full relevant 2001 taxonomic report identify the former Pediococcus ISK-1 producer as Staphylococcus warneri ISK-1. The previous producer-name separation premise is false. The inspected CHEBI204272 structure/mass does not establish the primary mature 27-residue peptide, so exact promotion remains unsupported.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-5a950c17f8940801",
+        "CHEM-CAP-c1084ee5b4d5a1d7",
+        "CHEM-CAP-1cb0e6bf2d205d3f"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-bacteriocin-context"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 55,
+      "case_id": "KG_CASE:42f5997700d5a29cc0632e08c3f1e2a319372c1e82ae1896db58f8b046b395f6",
+      "decision_object_sha256": "284080f6686aa03cef97b91b74c53c9d16fba4773fe82e7da43bb587c85d7ec9",
+      "assessment": "The original MediaDive1423 row and DSMZ1565 source specify dihydrate but no stereoisomer. They support the same bounded no-exact-L-tartrate conclusion as case3, without inventing a second source identity.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-b74c726dd80743b4",
+        "CHEM-C1193-tartrate-dsmz"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 56,
+      "case_id": "KG_CASE:601d124a075487ea9b3506342c4456ad94763be8624a0c3d0c6228601bf986f8",
+      "decision_object_sha256": "816e3322dbdc422bc2be3ddf070b0f790cd4e9b6bc26bad0e4dbb82d8ae5ccda",
+      "assessment": "DSMZ1155 uses KJ as a 1mg/ml aliquoted stock and DSMZ1727 repeats KJ without spelling its identity. The separate DSMZ792b KI0.01% w/v aliquot positively supports the stock-alias rejection on neat potassium iodide. It does not settle the KJ reagent or solvent.",
+      "evidence_ids_actually_read": [
+        "CHEM-C1193-kj-1155",
+        "CHEM-C1193-kj-1727",
+        "FINAL-CHEM-ki-dsmz792b"
+      ],
+      "proposal_ids": [
+        "FINAL-CHEM-P-ki-stock-alias"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 57,
+      "case_id": "KG_CASE:6c0774cbb93fb412e2cb8a6745916b2ffc6351cd6d14c355c12ade2f598cac10",
+      "decision_object_sha256": "7266ad7f1e9cd5d8d81fc5c252e19431a942c14ebea4d722557dafc6d30c74e4",
+      "assessment": "The frozen PYG record already has a mixture registry owner and 114 source-material holds. DSMZ104 demonstrates a concrete modified PYG and strain variations, not a bridge to the Bergey observations. Keeping their exact formulation unresolved does not require a duplicate owner.",
+      "evidence_ids_actually_read": [
+        "CHEM-PYG-COMPARATOR"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 58,
+      "case_id": "KG_CASE:6e7c8a8c1d6e21e0a3afee848263f27202ece4e07c21ec38c752087cbdd89cdd",
+      "decision_object_sha256": "d34046430bcd70ae77d31750c1e6be782b0cade1f7eb40743ed7258106e4fba6",
+      "assessment": "The inspected CHEBI9532 and18290 records differ by chloride, formula, charge and CAS cross-reference. Removing chloride structural carryover from the9532 candidate is supported. CAS136-09-4 is not the inspected chloride CAS154-87-0; retaining its separate unresolved protonation review is necessary. No release or worker09 resolution is granted.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-0ab6383dc32b70b8",
+        "CHEM-CAP-2c7c3f970f800c15"
+      ],
+      "proposal_ids": [
+        "CHEM-PROP-tpp-chloride-carryover"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 60,
+      "case_id": "KG_CASE:8fddccd7e32c351a0fa76c05180120b817299029e956a686081cce5e8c3748dc",
+      "decision_object_sha256": "556ca14a0087cf1f8932f68071c046cea9a8bf2594b89f0a0418669ffbf6aa98",
+      "assessment": "The scanned manufacturer petition pages1,4,9 explicitly bind CAS20846-91-7 to S,S-EDDS free acid; PubChem497266 is stereospecific. The frozen metatraits node gives no stereochemical or supplier bridge. Source-level exact transfer remains unsupported; the existing owner does not need duplicating.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-aef06fc1d41bc4c5"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 61,
+      "case_id": "KG_CASE:95b790ddb78a997811337834f1d50870430781c963f982ed3257378097b10edb",
+      "decision_object_sha256": "f1e480db3f010cc1fefc74d262437f27cc0839e711ffa76428c07d4616150ff5",
+      "assessment": "MediaDive77 explicitly names the dihydrate and CHEBI132751 preserves it. The direct PubChem response for CAS13465-05-9 contains ClH5O2 and no thiamine skeleton. Withdrawing that CAS without fabricating a replacement is supported; other held claims remain held.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-ba668efabffad3e5",
+        "CHEM-C1193-thiamine-download",
+        "FINAL-CHEM-cas13465-05-9-pubchem"
+      ],
+      "proposal_ids": [
+        "FINAL-CHEM-P-thiamine-dihydrate-cas"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 62,
+      "case_id": "KG_CASE:9fae354066718d7267ba86497352f9703e0d882643a772b6f90ac16c3b22d17c",
+      "decision_object_sha256": "57c5f8ad7d3f02f0dcc67916b360707f82b0373bdacea39398c3dcbfac087940",
+      "assessment": "The GTDB-metatraits literal supplies no chemical structure or product provenance. PubChem96241 leaves its anomeric center unspecified, so it does not establish the exact alpha-labelled source glycoside. Preserve the existing source handle and actual structure gap.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-d80b6753ed36306d"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 63,
+      "case_id": "KG_CASE:afa56b335b77ddf46c0a79c5006054b0b9812c6869edd8af5e28b16e2168e08c",
+      "decision_object_sha256": "c1529adc632aecc052fba65b75a28ce7ccc96f9a1a89444a3c69989854d7ae3d",
+      "assessment": "Solution3183 separates Eisencitrat as a 1g input from citric acid and water; this does not establish iron oxidation, stoichiometry or hydration. Separately TOGOM565 doses5ml Ferric citrate0.1%w/v and supports rejecting that stock label on the neat owner only. Inherited Eisencitrat routing is not newly approved.",
+      "evidence_ids_actually_read": [
+        "CHEM-C1193-eisencitrat-solution",
+        "FINAL-CHEM-ferric-togo565"
+      ],
+      "proposal_ids": [
+        "FINAL-CHEM-P-ferric-stock-alias"
+      ],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 64,
+      "case_id": "KG_CASE:b1d73a6c6976e7905cd359d5180c5c7309b083045e06f5ec274866c20954ef9f",
+      "decision_object_sha256": "112ca02e1563dcd1a0b5835595ef6c175526eb20a45ba15f8549d2caf7a7fc07",
+      "assessment": "The independent GTDB-metatraits EDDS node likewise lacks a stereochemical bridge to manufacturer S,S-EDDS. A lexical hit or historical approval of another owner does not supply that missing assay provenance.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-7c3d1e5eadc03106",
+        "CHEM-CAP-aef06fc1d41bc4c5"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    },
+    {
+      "lane_index": 66,
+      "case_id": "KG_CASE:e677b0709edcd66b4bf0e683b40ffe54d9799827ccbc954fa0c154ce9cf407f5",
+      "decision_object_sha256": "dc4ec5ba4bb5334cc888281c05fed639bd4ad6567827e8c07da165c90e7e2817",
+      "assessment": "The metatraits alpha-glucopyranoside node lacks anomeric structure/aglycon/product provenance. The unspecified-anomer PubChem comparator does not resolve it. Registry retention is supported, with no exact external molecular promotion.",
+      "evidence_ids_actually_read": [
+        "CHEM-CAP-d80b6753ed36306d"
+      ],
+      "proposal_ids": [],
+      "status": "supported_with_stated_limits"
+    }
+  ],
+  "payload_field_reviews": [
+    {
+      "proposal_id": "CHEM-PROP-dextrose",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/D-glucose.yaml",
+        "sha256": "6b0d06f8eb25d9a4d0c934d92fe7f8a658734073eca8b29fabb142342060307b"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-iron",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Iron.yaml",
+        "sha256": "0182d080bd5348bef40c0f66625c02f0c11091f8390ce4f94e608c753b63fec7"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-formate",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Na-formate.yaml",
+        "sha256": "414544e3ce68d9e79d3ec409f2fe9dd7e57baf415c1412fa66afcfcdac704246"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-sulfur",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Sulfur.yaml",
+        "sha256": "bb8ed1cc7f1195f73c86207a707c41a88750ca9ada7d0bdf91cd6aa2e2d41560"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-riboflavin",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Riboflavin.yaml",
+        "sha256": "565e7c831b157d13766afcadbe4a2634472ae7d6b0140b88415cdbf7280155af"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-manganese-tetrahydrate",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Mncl2_X_4_H2o.yaml",
+        "sha256": "92737742a4ef92ff54638fdc96130a2ac0f4cfd1aa6bc9738994689c5bbbf050"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-niacin",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Nicotinic_Acid.yaml",
+        "sha256": "ff24dac24fc94e805f1f8817e0f0404d1ca866fe2e5729f076fbe6e0e4e83864"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-thiamine-hcl",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_Hcl.yaml",
+        "sha256": "3ca6503e6989658b279f1d3fe11e516e8a1e14f426b54dfa2163dae7ab0d6438"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-bacteriocin-context",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Bacteriocin_Isk_1.yaml",
+        "sha256": "08812a542e619b154db8c9330e6de143024588dbe20207a47dcf41732177a165"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-PROP-tpp-chloride-carryover",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Thiamine_pyrophosphate.yaml",
+        "sha256": "2ebf00f1efc407a44ee53be99b88548bbf159e2f690adc40b457eb21d1f99471"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-C1193-Lab-Lemco",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Lab_Lemco_Powder.yaml",
+        "sha256": "68f205c8e9c7f168b968854cba01ff228a66dfcfb33ccc06c6fff7f86e2da531"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-C1193-shrimp-chitin",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Chitin_From_Shrimp_Shells.yaml",
+        "sha256": "7c1b6c27311eae909d27ebe00996dcad80a296162c3c8655c7a5dda0cb994724"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "CHEM-C1193-Complan",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Complan.yaml",
+        "sha256": "0f6ed920e326cde57290521875b686f09069e41465dfbc4c7eea3fa860913563"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-thiamine-dihydrate-cas",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Thiamine-hcl_X_2_H2o.yaml",
+        "sha256": "ab440f15278493fc5b2d43ddfabea2e24eddbb82a592d80e7f4903dc1b9a69ac"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-ki-stock-alias",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Ki.yaml",
+        "sha256": "cd5c871818cdef240a45d23ae282f91cf21af97a951a69400f78c665a7b4a33b"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-ferric-stock-alias",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Fe_Iii_Citrate.yaml",
+        "sha256": "13a0819a9177eac3c4aab92e463039c5b6b50de35429eb755ca68512ee85708e"
+      },
+      "scope": "Relevant identity, synonym, supplied-form, component and rationale fields cross-checked against primary captures; parent retains complete-payload and history review."
+    }
+  ],
+  "read_evidence": [
+    {
+      "evidence_id": "CHEM-C1193-DIRECT-TCI-G0170",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/web-open-8.json",
+        "sha256": "97d92bb411af8920bf4eedcb3d4348a7b1ef5d58b7aaa5626e847709f821a61e"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/web-open-8.json",
+      "actual_sha256": "97d92bb411af8920bf4eedcb3d4348a7b1ef5d58b7aaa5626e847709f821a61e",
+      "url": "https://www.tcichemicals.com/US/en/p/G0170",
+      "original_accessed_at": "2026-11-08 05:48:28 UTC",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-complan-per",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/complan-per.pdf",
+        "sha256": "a89a0ceeb908660ea2448573a3089517f4412d37c6581a0556978eb0e13c9305"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/complan-per.pdf",
+      "actual_sha256": "a89a0ceeb908660ea2448573a3089517f4412d37c6581a0556978eb0e13c9305",
+      "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_PER.pdf",
+      "original_accessed_at": "2026-11-08T05:41:09.617025+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-complan-um",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/complan-um.pdf",
+        "sha256": "79b1726fbdcfac236e75baa4fcef80d7de47cad4bcd9546d4315c6fc45119d41"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/complan-um.pdf",
+      "actual_sha256": "79b1726fbdcfac236e75baa4fcef80d7de47cad4bcd9546d4315c6fc45119d41",
+      "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_UM.pdf",
+      "original_accessed_at": "2026-11-08T05:41:09.618517+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-eisencitrat-solution",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/eisencitrat-solution.body",
+        "sha256": "12e548136d99c220e3de22f27f96c6fcc2e0a9a7a0930e0343b269a786927398"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/eisencitrat-solution.body",
+      "actual_sha256": "12e548136d99c220e3de22f27f96c6fcc2e0a9a7a0930e0343b269a786927398",
+      "url": "https://mediadive.dsmz.de/rest/solution/3183",
+      "original_accessed_at": "2026-11-08T05:38:42.402670+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-kj-1155",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/kj-1155.pdf",
+        "sha256": "c3b96bb3c30d03e215f27b9bd552a418c4fd1edceabfca4ec9dcd9e330508d56"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/kj-1155.pdf",
+      "actual_sha256": "c3b96bb3c30d03e215f27b9bd552a418c4fd1edceabfca4ec9dcd9e330508d56",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1155.pdf",
+      "original_accessed_at": "2026-11-08T05:44:13.433380+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-kj-1727",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/kj-1727.pdf",
+        "sha256": "dda83ace8dfe16749a13874c598039db62bb4bf0ddabd9b5b6de712f68f41f1e"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/kj-1727.pdf",
+      "actual_sha256": "dda83ace8dfe16749a13874c598039db62bb4bf0ddabd9b5b6de712f68f41f1e",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1727.pdf",
+      "original_accessed_at": "2026-11-08T05:44:13.433438+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-lablemco-spec",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/lablemco-spec.pdf",
+        "sha256": "39268ed9881456f9d06eb9990205cb3e48abbe8460049ebf934173ccc9e5a0a9"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/lablemco-spec.pdf",
+      "actual_sha256": "39268ed9881456f9d06eb9990205cb3e48abbe8460049ebf934173ccc9e5a0a9",
+      "url": "https://assets.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-LP0029-V3.pdf",
+      "original_accessed_at": "2026-11-08T05:38:41.726567+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-metasilicate-dsmz",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/metasilicate-dsmz.pdf",
+        "sha256": "3b8b137dca83e2b1062ab30a0661028abb536f62d6083cbc7e67a8ba5d60ca50"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/metasilicate-dsmz.pdf",
+      "actual_sha256": "3b8b137dca83e2b1062ab30a0661028abb536f62d6083cbc7e67a8ba5d60ca50",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium524.pdf",
+      "original_accessed_at": "2026-11-08T05:44:13.487795+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-metasilicate-dsmz623",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/metasilicate-dsmz623.pdf",
+        "sha256": "879c0e191535af4aa16b0662541cfb78558da1677f5d83587ba7e4d6cf29cf2d"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/metasilicate-dsmz623.pdf",
+      "actual_sha256": "879c0e191535af4aa16b0662541cfb78558da1677f5d83587ba7e4d6cf29cf2d",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium623.pdf",
+      "original_accessed_at": "2026-11-08T05:44:14.093867+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-tartrate-dsmz",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/tartrate-dsmz.pdf",
+        "sha256": "121af76278b7fac036dbc1e3ea9808a3d4341c1723eb0f307ff0102f9add89df"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/tartrate-dsmz.pdf",
+      "actual_sha256": "121af76278b7fac036dbc1e3ea9808a3d4341c1723eb0f307ff0102f9add89df",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1565.pdf",
+      "original_accessed_at": "2026-11-08T05:44:13.485455+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-C1193-thiamine-download",
+      "original_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/captures/thiamine-download.body",
+        "sha256": "e339a90cbf4b653967080cabfbbcd73d0c1547a12ca1f58dbf355f387ed04d11"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/captures/thiamine-download.body",
+      "actual_sha256": "e339a90cbf4b653967080cabfbbcd73d0c1547a12ca1f58dbf355f387ed04d11",
+      "url": "https://bacmedia.dsmz.de/download/ingredient/77/json",
+      "original_accessed_at": "2026-11-08T05:45:07.063954+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-0ab6383dc32b70b8",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-0ab6383dc32b70b8.json",
+        "sha256": "0cbc5575bd9b4ac4605c0ac583a83efd4d3cd37e66bd734490468d71bc863417"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-0ab6383dc32b70b8.json",
+      "actual_sha256": "0cbc5575bd9b4ac4605c0ac583a83efd4d3cd37e66bd734490468d71bc863417",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:9532",
+      "original_accessed_at": "2026-11-08T05:09:14.691465+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-0d24fad2c28ce16b",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-0d24fad2c28ce16b.html",
+        "sha256": "26957c54f6c375736a5b88e4775f7e1163b363562efc9aaf34183f5a23a8035f"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-0d24fad2c28ce16b.html",
+      "actual_sha256": "26957c54f6c375736a5b88e4775f7e1163b363562efc9aaf34183f5a23a8035f",
+      "url": "https://www.e-nacalai.jp/ec2/EC-srchdetl.cfm?Dum=1&syohin=1941825&syubetsu=3",
+      "original_accessed_at": "2026-11-08T05:10:01.691923+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-14f6b2b7770adbee",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-14f6b2b7770adbee.json",
+        "sha256": "3dc67a19953827a026f913035e704119a616b398af2c6a4261fead632ced1ec1"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-14f6b2b7770adbee.json",
+      "actual_sha256": "3dc67a19953827a026f913035e704119a616b398af2c6a4261fead632ced1ec1",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:49105",
+      "original_accessed_at": "2026-11-08T05:09:13.306008+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-178c00787726f6db",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-178c00787726f6db.json",
+        "sha256": "a7a9290b295c865ebfe54fc44c8491f5b4691ae71aff24eb9a1235dee8eb135b"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-178c00787726f6db.json",
+      "actual_sha256": "a7a9290b295c865ebfe54fc44c8491f5b4691ae71aff24eb9a1235dee8eb135b",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3120",
+      "original_accessed_at": "2026-11-08T05:07:48.422527+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-1cb0e6bf2d205d3f",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-1cb0e6bf2d205d3f.xml",
+        "sha256": "a8d5e61b3f9f87eabe26043c7fb61409e31d2650f6b4eb9497b797f56ed490a9"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-1cb0e6bf2d205d3f.xml",
+      "actual_sha256": "a8d5e61b3f9f87eabe26043c7fb61409e31d2650f6b4eb9497b797f56ed490a9",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=11193411&retmode=xml",
+      "original_accessed_at": "2026-11-08T05:09:55.462789+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-1fc151e426d45042",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-1fc151e426d45042.html",
+        "sha256": "9bab8639541ec3af6b10a325495f0ade0b519d8eebce8e1d456a900aab655182"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-1fc151e426d45042.html",
+      "actual_sha256": "9bab8639541ec3af6b10a325495f0ade0b519d8eebce8e1d456a900aab655182",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1443",
+      "original_accessed_at": "2026-11-08T05:07:46.833626+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-2219370bc9ce67b6",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-2219370bc9ce67b6.json",
+        "sha256": "ab50973fd6085385067576c2f11d3b1835512b0db0f9cb8451708c485567d181"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-2219370bc9ce67b6.json",
+      "actual_sha256": "ab50973fd6085385067576c2f11d3b1835512b0db0f9cb8451708c485567d181",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3129",
+      "original_accessed_at": "2026-11-08T05:07:50.072742+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-2c7c3f970f800c15",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-2c7c3f970f800c15.json",
+        "sha256": "872e6d31e4abad34faae502ee2ee6b40d3c76c9f5966e2f889d44e90d244d3c5"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-2c7c3f970f800c15.json",
+      "actual_sha256": "872e6d31e4abad34faae502ee2ee6b40d3c76c9f5966e2f889d44e90d244d3c5",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:18290",
+      "original_accessed_at": "2026-11-08T05:09:14.852396+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-5a950c17f8940801",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-5a950c17f8940801.json",
+        "sha256": "28ac41f3fb29d828060ac41ec970396e5da6de4012431d161186972b7d844f13"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-5a950c17f8940801.json",
+      "actual_sha256": "28ac41f3fb29d828060ac41ec970396e5da6de4012431d161186972b7d844f13",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:204272",
+      "original_accessed_at": "2026-11-08T05:09:15.591158+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-610933dda9a38c76",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-610933dda9a38c76.html",
+        "sha256": "b8a49eabdf28b7216efd215cac843a5cf0f74a948e90d151c6303d1ce5533e34"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-610933dda9a38c76.html",
+      "actual_sha256": "b8a49eabdf28b7216efd215cac843a5cf0f74a948e90d151c6303d1ce5533e34",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=673",
+      "original_accessed_at": "2026-11-08T05:07:36.859028+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-61217b46be42b027",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-61217b46be42b027.json",
+        "sha256": "5fa9f5e652ed2f6cfa5cbe63402338d87899e77e0c56a2d42ac1939aca3572b3"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-61217b46be42b027.json",
+      "actual_sha256": "5fa9f5e652ed2f6cfa5cbe63402338d87899e77e0c56a2d42ac1939aca3572b3",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2313",
+      "original_accessed_at": "2026-11-08T05:08:01.882997+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-74b89743eed1808f",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-74b89743eed1808f.html",
+        "sha256": "8e5a72a3575d26a2cca776b196f56d680ff5ca9c207be096da58508ad7a974a0"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-74b89743eed1808f.html",
+      "actual_sha256": "8e5a72a3575d26a2cca776b196f56d680ff5ca9c207be096da58508ad7a974a0",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507",
+      "original_accessed_at": "2026-11-08T05:09:04.470486+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-77de000b5fa8d1a6",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-77de000b5fa8d1a6.html",
+        "sha256": "33778f3cb21ac6275df22b6586e4fa5adeb12921ea31adb413a58b8e3657e239"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-77de000b5fa8d1a6.html",
+      "actual_sha256": "33778f3cb21ac6275df22b6586e4fa5adeb12921ea31adb413a58b8e3657e239",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1447",
+      "original_accessed_at": "2026-11-08T05:07:47.807694+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-7c3d1e5eadc03106",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-7c3d1e5eadc03106.json",
+        "sha256": "f0bb1ba9ee5f414c33eabdb8bfd16fadd249861810776cab4e7719a791e489f3"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-7c3d1e5eadc03106.json",
+      "actual_sha256": "f0bb1ba9ee5f414c33eabdb8bfd16fadd249861810776cab4e7719a791e489f3",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/497266/property/MolecularFormula,InChI,IsomericSMILES/JSON",
+      "original_accessed_at": "2026-11-08T05:09:55.713263+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-90c71e16ed3e36ea",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-90c71e16ed3e36ea.json",
+        "sha256": "6360240c9a3b331dad58ccd8e8f3fe30379b24d439d90a3e45b0997ec1c4ba77"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-90c71e16ed3e36ea.json",
+      "actual_sha256": "6360240c9a3b331dad58ccd8e8f3fe30379b24d439d90a3e45b0997ec1c4ba77",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2367",
+      "original_accessed_at": "2026-11-08T05:07:49.347778+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-aa10057ea2c6f012",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-aa10057ea2c6f012.html",
+        "sha256": "203a7d512a41c329ec25b900b8014439c5435dfb13faa32dff721ffa03fb24dc"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-aa10057ea2c6f012.html",
+      "actual_sha256": "203a7d512a41c329ec25b900b8014439c5435dfb13faa32dff721ffa03fb24dc",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1444",
+      "original_accessed_at": "2026-11-08T05:07:46.991545+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-aef06fc1d41bc4c5",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-aef06fc1d41bc4c5.pdf",
+        "sha256": "e7ae2f8799f97c38dd7c1fb6dd3e87dba60e1dadf91394bb6e46b84d8f389df6"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-aef06fc1d41bc4c5.pdf",
+      "actual_sha256": "e7ae2f8799f97c38dd7c1fb6dd3e87dba60e1dadf91394bb6e46b84d8f389df6",
+      "url": "https://www.ams.usda.gov/sites/default/files/media/Ethylenediaminedisuccinic%20Acid%20Petition.pdf",
+      "original_accessed_at": "2026-11-08T05:10:02.695855+00:00",
+      "scope": "Scanned pages1,2,4,9 visually inspected; all other petition pages excluded."
+    },
+    {
+      "evidence_id": "CHEM-CAP-b5d7e0a2820706b4",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-b5d7e0a2820706b4.json",
+        "sha256": "f655575e993dd27ffda8dd57afcdbce8c941ca22a9061a9b561199901dcdf04f"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-b5d7e0a2820706b4.json",
+      "actual_sha256": "f655575e993dd27ffda8dd57afcdbce8c941ca22a9061a9b561199901dcdf04f",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2277",
+      "original_accessed_at": "2026-11-08T05:07:49.416783+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-b74c726dd80743b4",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-b74c726dd80743b4.json",
+        "sha256": "53f734d1c163f4ce5f3c82b3093d015dbacf5742fbff45d827448e16e7af2831"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-b74c726dd80743b4.json",
+      "actual_sha256": "53f734d1c163f4ce5f3c82b3093d015dbacf5742fbff45d827448e16e7af2831",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:63017",
+      "original_accessed_at": "2026-11-08T05:09:43.654726+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-ba668efabffad3e5",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-ba668efabffad3e5.json",
+        "sha256": "1d5eefc753b4fbbffd69d169aa7ca7be16df737b6c8c0e1833917806ac0607e5"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-ba668efabffad3e5.json",
+      "actual_sha256": "1d5eefc753b4fbbffd69d169aa7ca7be16df737b6c8c0e1833917806ac0607e5",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:132751",
+      "original_accessed_at": "2026-11-08T05:09:13.880955+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-baa7ab015ab6d5a5",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-baa7ab015ab6d5a5.json",
+        "sha256": "faaf9309369005ebc8ca330ab2b2fcda30d59939289b79afc63d314a40081d38"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-baa7ab015ab6d5a5.json",
+      "actual_sha256": "faaf9309369005ebc8ca330ab2b2fcda30d59939289b79afc63d314a40081d38",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3211",
+      "original_accessed_at": "2026-11-08T05:07:36.859174+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-c1084ee5b4d5a1d7",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-c1084ee5b4d5a1d7.pdf",
+        "sha256": "c34183dd30bb82b340946b2936d3760be87164927e0c70363e65a1773ddf5984"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-c1084ee5b4d5a1d7.pdf",
+      "actual_sha256": "c34183dd30bb82b340946b2936d3760be87164927e0c70363e65a1773ddf5984",
+      "url": "https://www.jstage.jst.go.jp/article/jgam/47/3/47_3_143/_pdf",
+      "original_accessed_at": "2026-11-08T05:09:54.842311+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-c1a2f9ecce7dc984",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-c1a2f9ecce7dc984.json",
+        "sha256": "4f2754ef9d387040b82b628dbaac73c96efcc75f077ca4124465382f5cf40541"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-c1a2f9ecce7dc984.json",
+      "actual_sha256": "4f2754ef9d387040b82b628dbaac73c96efcc75f077ca4124465382f5cf40541",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:15940",
+      "original_accessed_at": "2026-11-08T05:09:13.185391+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-c7ce4af92ddac4f6",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-c7ce4af92ddac4f6.json",
+        "sha256": "d993240b2e04220e53b5d8698cc684c5c06940de6f1dbf0b8a4ea62f6f709528"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-c7ce4af92ddac4f6.json",
+      "actual_sha256": "d993240b2e04220e53b5d8698cc684c5c06940de6f1dbf0b8a4ea62f6f709528",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2553",
+      "original_accessed_at": "2026-11-08T05:07:37.958520+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-d80b6753ed36306d",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-d80b6753ed36306d.json",
+        "sha256": "4fb0055a24f4cd8b8db741a6776769812ff5b6de406ba963bfa6da5224a1cb7d"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-d80b6753ed36306d.json",
+      "actual_sha256": "4fb0055a24f4cd8b8db741a6776769812ff5b6de406ba963bfa6da5224a1cb7d",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/96241/property/MolecularFormula,InChI,IsomericSMILES/JSON",
+      "original_accessed_at": "2026-11-08T05:17:16.754413+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-f0c1b4928af89872",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-f0c1b4928af89872.html",
+        "sha256": "0b98d375f1aaf36e27e933d1c1b8cbd95998daf2610c9bcd0642721b089836f3"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-f0c1b4928af89872.html",
+      "actual_sha256": "0b98d375f1aaf36e27e933d1c1b8cbd95998daf2610c9bcd0642721b089836f3",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1550",
+      "original_accessed_at": "2026-11-08T05:07:38.412633+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-f55e3a4d1efb7d51",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-f55e3a4d1efb7d51.html",
+        "sha256": "5e90ac547db061bcfa9c5673198f546cb0616fd64ebcd0ed585b7c4c1a0f3eec"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-f55e3a4d1efb7d51.html",
+      "actual_sha256": "5e90ac547db061bcfa9c5673198f546cb0616fd64ebcd0ed585b7c4c1a0f3eec",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1445",
+      "original_accessed_at": "2026-11-08T05:07:47.582501+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-CAP-f93edce2e35b29b6",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-f93edce2e35b29b6.json",
+        "sha256": "83267778ba2f432ba723e3a107f47ab6f7b967231b8fd550afbce3368450ddc1"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-f93edce2e35b29b6.json",
+      "actual_sha256": "83267778ba2f432ba723e3a107f47ab6f7b967231b8fd550afbce3368450ddc1",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3161",
+      "original_accessed_at": "2026-11-08T05:07:48.213794+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-PYG-COMPARATOR",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-9b35c1d4f58911cf.pdf",
+        "sha256": "18a0801867296cb266afd175fa5785d7d8d9e0081b7e08aee36acf44e7a7e882"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/capture-9b35c1d4f58911cf.pdf",
+      "actual_sha256": "18a0801867296cb266afd175fa5785d7d8d9e0081b7e08aee36acf44e7a7e882",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium104.pdf",
+      "original_accessed_at": "2026-11-08T05:08:38.198824+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "CHEM-WEB-6",
+      "original_capture": {
+        "root": "artifact",
+        "path": "chemicals/web-open-001.json",
+        "sha256": "0e2cb6a2143b61f41e268fbabb4ec903b3f9ca27371154604dbe83f3ad5688a2"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/web-open-001.json",
+      "actual_sha256": "0e2cb6a2143b61f41e268fbabb4ec903b3f9ca27371154604dbe83f3ad5688a2",
+      "url": "https://www.bd.com/en-us/products-and-solutions/products/product-page.215530",
+      "original_accessed_at": "2026-11-08T05:06:36.296Z",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "FINAL-CHEM-cas13465-05-9-pubchem",
+      "original_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/new-captures-v2/cas13465-05-9-pubchem.body",
+        "sha256": "dc9d11834d24bae44f873af6da5a42dcd0e88f3be188d5bb0d789277061949af"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/new-captures-v2/cas13465-05-9-pubchem.body",
+      "actual_sha256": "dc9d11834d24bae44f873af6da5a42dcd0e88f3be188d5bb0d789277061949af",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13465-05-9/property/MolecularFormula,InChI/JSON",
+      "original_accessed_at": "2026-11-08T07:34:38.927009+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "FINAL-CHEM-ferric-togo565",
+      "original_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/new-captures-v3/ferric-togo565.body",
+        "sha256": "b0d4783f97f7c1ec7facd3a813de5ab2b80b5f2bb68ae28572abb59dd5b49985"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/new-captures-v3/ferric-togo565.body",
+      "actual_sha256": "b0d4783f97f7c1ec7facd3a813de5ab2b80b5f2bb68ae28572abb59dd5b49985",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M565",
+      "original_accessed_at": "2026-11-08T07:35:27.132908+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "FINAL-CHEM-ki-dsmz792b",
+      "original_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/new-captures-v2/ki-dsmz792b.body",
+        "sha256": "872911b48dbe9595b26f9fd8ba5a85e6d09d47395cea5a6a9c1748b4eeabc83d"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/new-captures-v2/ki-dsmz792b.body",
+      "actual_sha256": "872911b48dbe9595b26f9fd8ba5a85e6d09d47395cea5a6a9c1748b4eeabc83d",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792b.pdf",
+      "original_accessed_at": "2026-11-08T07:34:38.059082+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "FINAL-CHEM-nicotinate-chebi32544",
+      "original_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/new-captures-v2/nicotinate-chebi32544.body",
+        "sha256": "78d3a65dbb0a68f3bc105a2d61f72677a085858359a041c4465c901dd5ed65c6"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/new-captures-v2/nicotinate-chebi32544.body",
+      "actual_sha256": "78d3a65dbb0a68f3bc105a2d61f72677a085858359a041c4465c901dd5ed65c6",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:32544",
+      "original_accessed_at": "2026-11-08T07:34:38.923957+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "FINAL-CHEM-riboflavin-dsmz1157",
+      "original_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/new-captures-v2/riboflavin-dsmz1157.body",
+        "sha256": "5751821c9e6eeb6cba6e6d6dfcc64e8d5e268f6dfcc16b41e92f60d133e9e212"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/new-captures-v2/riboflavin-dsmz1157.body",
+      "actual_sha256": "5751821c9e6eeb6cba6e6d6dfcc64e8d5e268f6dfcc16b41e92f60d133e9e212",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1157.pdf",
+      "original_accessed_at": "2026-11-08T07:34:38.058737+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "FINAL-CHEM-riboflavin-nbrc1604",
+      "original_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/new-captures-v2/riboflavin-nbrc1604.body",
+        "sha256": "d06d96f2366dc22869283ce082355fbe4ffa236e47974b74e5550b8b12309105"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/new-captures-v2/riboflavin-nbrc1604.body",
+      "actual_sha256": "d06d96f2366dc22869283ce082355fbe4ffa236e47974b74e5550b8b12309105",
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1604",
+      "original_accessed_at": "2026-11-08T07:34:38.058908+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    },
+    {
+      "evidence_id": "ROOT-md-P5",
+      "original_capture": {
+        "root": "artifact",
+        "path": "root/captures/md-P5.body",
+        "sha256": "fe4448ec7332d8e7ec8313b49ffa8e03b0c26ca54522d83fa802a19bbb25f5c7"
+      },
+      "resolved_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/root/captures/md-P5.body",
+      "actual_sha256": "fe4448ec7332d8e7ec8313b49ffa8e03b0c26ca54522d83fa802a19bbb25f5c7",
+      "url": "https://mediadive.dsmz.de/medium/P5",
+      "original_accessed_at": "2026-11-08T05:07:49.282925+00:00",
+      "scope": "Identity/form/recipe context read. Full health/toxicology claims and inherited roles were not reviewed."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "CHEM-CROSSCHECK-Q001",
+      "case_indices": [
+        10,
+        48
+      ],
+      "issue": "Does explicit six-source monohydrate nomenclature permit a source-qualified local identity under section3 step3? Missing CAS alone cannot block it. No exact anhydrous/dihydrate mapping is supported. Parent notified before any correction.",
+      "status": "pending_parent_adjudication"
+    }
+  ],
+  "new_confirmed_payload_findings": [],
+  "limitations": [
+    "No native schema, partonomy or historical source-release gate rerun; parent owns those checks and all57complete-payload review.",
+    "No approval of inherited roles, organism growth, unrestricted generic aliases or whole-owner/export identity.",
+    "The P5 source was read only for the vitamin/stock distinction in this delegated block; parent covers complete recipe.",
+    "Raw source identity/owner fields were inspected; parent covers every full occurrence and hold row.",
+    "Six source read-log entries were accidentally appended by the parent read helper before its side effect was noticed; these belong to this child, not parent actual-read attribution. No input/payload bytes changed."
+  ]
+}

@@ -1,0 +1,92 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/root/proposed/Fatty_Acid_Mixture_See_Medium_No_266.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+@@ -6,11 +6,24 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266
+     notes: JCM266 defines a neutralized multicomponent fatty-acid stock. CHEBI35366
+       is not its whole identity; registry identity preserves this recipe-specific
+       preparation without a part-to-whole parent mapping.
++  - evidence_type: LLM_SUGGESTION
++    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf
++    notes: 'JCM 266 specifies four acids at 0.5 g each, 20 ml water and NaOH adjustment
++      to pH 7.5. DSMZ 119 uses the same generic mixture name for a different 23/27/27/27
++      ml acid input specification with 896 ml water. Therefore the generic labels
++      cannot globally select this JCM 266 stock. Retire these two active resolver
++      aliases without classifying the authentic source strings as chemically false.
++      Preserve their full structured provenance in the alias-disposition ledger and
++      here: [{"synonym_text": "Fatty acid mixture", "synonym_type": "RAW_TEXT", "source":
++      "culturemech:output/ingredient_occurrences.tsv"}, {"synonym_text": "Fatty acid
++      mixture (see below)", "synonym_type": "RAW_TEXT", "source": "culturemech:output/ingredient_occurrences.tsv"}].
++      The original history is unchanged. All WITHHOLD and source/export obligations
++      remain.'
+ synonyms:
+ - synonym_text: Fatty acid
+   synonym_type: REJECTED_LABEL
+@@ -44,12 +57,6 @@
+   synonym_type: REJECTED_LABEL
+   source: 'kg_microbe; worker05 source-bound review: a fatty-acid molecular class
+     label cannot identify the whole JCM266 stock; retained as provenance.'
+-- synonym_text: Fatty acid mixture
+-  synonym_type: RAW_TEXT
+-  source: culturemech:output/ingredient_occurrences.tsv
+-- synonym_text: Fatty acid mixture (see below)
+-  synonym_type: RAW_TEXT
+-  source: culturemech:output/ingredient_occurrences.tsv
+ mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 4
+@@ -122,6 +129,27 @@
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. JCM 266 specifies four acids at
++    0.5 g each, 20 ml water and NaOH adjustment to pH 7.5. DSMZ 119 uses the same
++    generic mixture name for a different 23/27/27/27 ml acid input specification with
++    896 ml water. Therefore the generic labels cannot globally select this JCM 266
++    stock. Retire these two active resolver aliases without classifying the authentic
++    source strings as chemically false. Preserve their full structured provenance
++    in the alias-disposition ledger and here: [{"synonym_text": "Fatty acid mixture",
++    "synonym_type": "RAW_TEXT", "source": "culturemech:output/ingredient_occurrences.tsv"},
++    {"synonym_text": "Fatty acid mixture (see below)", "synonym_type": "RAW_TEXT",
++    "source": "culturemech:output/ingredient_occurrences.tsv"}]. The original history
++    is unchanged. All WITHHOLD and source/export obligations remain. Report-only candidate;
++    separate final scientific review and coordinator integration remain required.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: STOCK_SOLUTION
+ components:
+ - component_name: Valeric acid
+@@ -142,12 +170,16 @@
+ - component_name: Concentrated NaOH solution
+   reference_scope: UNMAPPED
+   source: JCM266 pH-adjustment input, amount unspecified
+-notes: ' JCM266 defines this stock from four acids(0.5g each),20ml water and NaOH
+-  to pH7.5. Batch inputs do not establish a final-volume denominator. Preserve the
+-  inherited mapping WITHHOLD and independently review all source occurrences before
+-  publication; the two generic historical mixture RAW_TEXT aliases are preserved but
+-  unassessed and must not receive publication support from this scoped proposal. No
+-  roles or whole-record approval are implied.'
++notes: 'JCM 266 specifies four acids at 0.5 g each, 20 ml water and NaOH adjustment
++  to pH 7.5. DSMZ 119 uses the same generic mixture name for a different 23/27/27/27
++  ml acid input specification with 896 ml water. Therefore the generic labels cannot
++  globally select this JCM 266 stock. Retire these two active resolver aliases without
++  classifying the authentic source strings as chemically false. Preserve their full
++  structured provenance in the alias-disposition ledger and here: [{"synonym_text":
++  "Fatty acid mixture", "synonym_type": "RAW_TEXT", "source": "culturemech:output/ingredient_occurrences.tsv"},
++  {"synonym_text": "Fatty acid mixture (see below)", "synonym_type": "RAW_TEXT", "source":
++  "culturemech:output/ingredient_occurrences.tsv"}]. The original history is unchanged.
++  All WITHHOLD and source/export obligations remain.'
+ component_assertion:
+   method: RECIPE_TRANSCRIPTION
+   completeness: COMPLETE

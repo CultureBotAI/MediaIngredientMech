@@ -1,0 +1,94 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "report_metadata_author": "/root",
+  "completed_at": "2026-11-08T08:23:08.445126+00:00",
+  "status": "PASS",
+  "scope": "Exact final README, bounded report fixes, source-fact projection and late chemical seal readback. This is report assembly verification, not a new chemical source adjudication.",
+  "selected_readme": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/README.md",
+    "sha256": "7b872c4df9b88821c0ea7780ad4d2806cc37677dc7d567f2a27c0101d4494834"
+  },
+  "generator_lineage": [
+    {
+      "path": ".temp/w05-final-correction-v1/control/final/write_public_readme.py",
+      "sha256": "93548a9f74137d3c8f447cd11e3a3629879e174e0e731fbea4f94a23230cc4f0"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/control/final/write_public_readme_v2.py",
+      "sha256": "5fb76a6f942afc7b0f67bccb7cf60a01ef9f6779ed6b9374117cd9b57d267ab3"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/control/final/write_public_readme_v3.py",
+      "sha256": "88c6a71bdfe2c5fb3e30b92da666d7bfaa007107fb90b78a7228f3bd0c8a7738"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/control/final/write_public_readme_v4.py",
+      "sha256": "af218bfd56c14155aa9bf342eeba60d935f4bfde7a6dcbce92b8bdf99755d2ca"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "W05-FINAL-ASSEMBLY-REVIEW-001",
+      "status": "resolved",
+      "deduplicate_to": "W05-FINAL-SKEPTIC-CHEM-004",
+      "assessment": "The exact final README states eleven flat occurrences plus the DSMZ212a occurrence. The selected two source cases and twelve proposal occurrence routes are unchanged."
+    },
+    {
+      "finding_id": "W05-FINAL-ASSEMBLY-REVIEW-002",
+      "status": "resolved",
+      "deduplicate_to": "W05-CR-F06",
+      "assessment": "The exact final README describes false CAS property/alias and projected other-token withdrawal. Both complete native projections retain one exact CHEBI:132751 row; no nonexistent standalone CAS identity row is claimed."
+    }
+  ],
+  "all_readme_local_links_exist": [
+    "core/",
+    "core/proposal-lineage.json",
+    "finding-register.json",
+    "remaining-source-facts.json",
+    "chemicals/conditional-family-matrix-v1.json",
+    "materials/integration-dependencies.json",
+    "reviews/",
+    "validation/",
+    "../../../../reviews/structured/20261108T082007Z-worker05-final-scientific-correction/review.yaml"
+  ],
+  "remaining_source_fact_projection": {
+    "path": {
+      "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/remaining-source-facts.json",
+      "sha256": "7d42377337f10454aad8ac37f27c10f1cc4306362f9d9b00b3524057c70f5cb7"
+    },
+    "cases": 65,
+    "all_fields_exactly_match_canonical": true
+  },
+  "late_seals": [
+    {
+      "manifest": {
+        "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemical-supplement-v1/FINAL-MANIFEST-v2.json",
+        "sha256": "f51fb09fb43484219aa0841716e4097936d7b5829b5d04bc513a198019bc1915"
+      },
+      "members_verified": 32
+    },
+    {
+      "manifest": {
+        "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/reviews/chemicals/FINAL-MANIFEST-v1.json",
+        "sha256": "8e0555f0ca2fd6b64454870b89f3129c957436d8800cd0306407e55bff5c2c67"
+      },
+      "members_verified": 44
+    }
+  ],
+  "strict_exact_input_binding": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/validation/final-strict/receipt.json",
+    "sha256": "657e4327f1d1fe6f7b73a3777967d5f3d3f17a7c321ded44861c3427401e9c02"
+  },
+  "campaign_audit": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/validation/final-structural-audit.json",
+    "sha256": "de6aa6d064688a94c00d6e9e0d929d49c3f9a5a3d765e151d865e666380b66f7"
+  },
+  "final_finding_register": {
+    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/finding-register.json",
+    "sha256": "5f4a744d1db1eade4ecdab59d0e2262da5d552d9d3cf9187f2f68ecfa1e19f0c"
+  },
+  "limitations": [
+    "Original failed generators and finding reproductions remain unchanged.",
+    "No raw case label, scientific payload, native row, source hold or publication approval was altered by these report corrections."
+  ]
+}

@@ -1,0 +1,46 @@
+--- published/Gelatin_Peptone.yaml
++++ successor/Gelatin_Peptone.yaml
+@@ -19,6 +19,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:gelatin_peptone
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:gelatin_peptone
+@@ -26,12 +37,12 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2894
+     notes: Curate the gelatin-derived peptone explicitly separated from meat and casein
+       peptones in TOGO M2894. This is a gelatin hydrolysate preparation; animal species,
+       enzyme and catalog are not inferred.
+-notes: Curate the gelatin-derived peptone explicitly separated from meat and casein
++notes: 'Curate the gelatin-derived peptone explicitly separated from meat and casein
+   peptones in TOGO M2894. This is a gelatin hydrolysate preparation; animal species,
+   enzyme and catalog are not inferred. Source-qualified proposal under issue1193.
+   No ingredient roles, assay outcomes, complete-owner support or release admission
+@@ -39,3 +50,10 @@
+   is stated separately from whole-material identity. Occurrence statistics count current
+   exact proposed-label matches in the inspected CultureMech occurrence table; no shared-identifier
+   expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

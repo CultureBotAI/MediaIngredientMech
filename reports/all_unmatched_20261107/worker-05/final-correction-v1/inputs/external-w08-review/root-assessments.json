@@ -1,0 +1,109 @@
+{
+  "status": "in_progress",
+  "reviewer": "worker08 /root",
+  "recorded_at": "2026-11-08T06:58:17.293607+00:00",
+  "finding_adjudications": [
+    {
+      "finding_id": "W05-CR-F01",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Both actual NBRC1221/1474 source pages and both entire selected stock payloads were independently read. The source numbers and receiving-medium pH values do not establish distinct1M stock identities. Retain one bounded concrete anchor and an unresolved comparison, or provide an actual material distinction; do not force equivalence.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-001",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Independently inspected selected Soy_Peptone, Phytone and Difco_Soytone active identities/aliases and manufacturer guide page33. Generic soy digest, named product and alternative-label scopes are not interchangeable. The retained exact product aliases contradict the new generic-owner boundary. Ownworker08 overlap remains a coordinator dependency only.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-002",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Read entire relevant selected Fish-Sperm DNA identity/alias/mapping fields and actual CHEBI16991 term definition. Generic DNA and thymus aliases are broader or conflicting with the fish-sperm identity. Source-specific SERVA enrichment does not cure them. Do not rely on the obsolete absent-formula⇒class premise in historical issue322 or reverse the separate herring-source tombstone.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-003",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "nomenclature",
+      "assessment": "The complete selected Peptone synonym list and proposal notes explicitly retain the truncated concentration token. This bounded malformed-label repair does not require knowing the assay supplier, reconstructing a concentration, or clearing any source role hold.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MAT-004",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Read selected Bacto alias list, including existing Fish peptone rejection and retained Fish peptone (Fluka), plus actual manufacturer211677 description of bovine/porcine digest. Retire the unsupported fish-product identity claim without inventing a replacement product or remapping occurrences.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-005",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "nomenclature",
+      "assessment": "Read actual selected Catalase and Soy_Peptone synonym arrays. Properties: ... metadata are not substance names. Preserve literal/source provenance while removing resolving identity behavior; this is separate from ingredient identity or roles.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MAT-006",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P3",
+      "category": "completeness",
+      "assessment": "Read selected20%w/v stock, exact existing sucrose identity and CHEBI17992 definition. An exact sucrose component lookup is feasible, but Section6 explicitly permits named UNMAPPED components. This is optional narrow completeness work (P3), not a schema failure or scientific approval blocker; solvent and final-medium basis remain unknown.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MAT-007",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "provenance",
+      "assessment": "Independently read entire actual JCM117 Nothing found response and complete TOGO M109 recipe, then selected Catalase notes/supplied form. The evidence supports a historical TOGO recipe attributed toJCM117, not an inspected contemporaryJCM117 formulation. Correct attribution without inventing historicalC-10 composition or adopting currentC100.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MEDIA-F01",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "evidence",
+      "assessment": "Read actual manufacturer Marine2page PDF and selected active evidence. The published broth and agar formulas differ in magnesium-chloride amount and magnesium-versus-sodium sulfate as well as agar. Existing ontology_mapping.evidence retains a disproved active premise; preserve it historically and cite the verified commercial broth basis. Related issue1208 remains open and holds remain.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MEDIA-F02",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "quantity",
+      "assessment": "Read entire selected EMJH payload and actual direct-7 PDF301/302. Its explicit approximate per-liter basal table sums2.555g;2.3g/0.9L=2.55556g/L agrees at stated precision. Record source-listed approximate amounts and basis rather than deferring a false conflict. Do not infer final enriched-medium concentrations, lot composition, phosphate hydrate or thiamine salt.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    }
+  ],
+  "skeptical_challenges": [
+    {
+      "topic": "Automated provider CAS for tartrate/metasilicate",
+      "disposition": "not a new missed-lookup finding",
+      "reason": "Full author reassessment already acknowledges those automatic CAS candidates and distinguishes supplier/recipe form evidence. Agent separately re-read and agreed; overbroad summary prose remains a wording limitation."
+    },
+    {
+      "topic": "Known component IDs versus named UNMAPPED parts",
+      "disposition": "MAT006 normalized to optionalP3",
+      "reason": "Native semantics permit named ungrounded parts. Exact sucrose is a feasible typed-link opportunity, not a requirement to force all exact mappings."
+    }
+  ]
+}

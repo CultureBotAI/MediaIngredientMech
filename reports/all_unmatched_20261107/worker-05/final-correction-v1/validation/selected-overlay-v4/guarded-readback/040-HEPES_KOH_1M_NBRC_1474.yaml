@@ -1,0 +1,69 @@
+identifier: kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474
+preferred_term: 1 M HEPES-KOH stock (NBRC 1474)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474
+  ontology_label: 1 M HEPES-KOH stock (NBRC 1474)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474
+    notes: 'NBRC 1221 and NBRC 1474 each name a 1 M HEPES-KOH stock and add 20 ml.
+      The reported pH values 7.14 and 9.0 belong to the receiving media. Stock pH,
+      neutralization ratio and solvent are unreported. These omissions prove neither
+      equality nor difference. The two accessions support the same bounded nominal
+      preparation description; whether one shared nominal owner or a more specific
+      source-supported representation should be installed remains a coordinator decision
+      under #1237. This identifier is retained only as a conditional historical proposal
+      handle, not a selected stable owner. Do not install both candidates as proven
+      distinct substances. Preserve both source and occurrence routes, all component
+      uncertainty and all inherited holds.'
+synonyms: []
+notes: 'NBRC 1221 and NBRC 1474 each name a 1 M HEPES-KOH stock and add 20 ml. The
+  reported pH values 7.14 and 9.0 belong to the receiving media. Stock pH, neutralization
+  ratio and solvent are unreported. These omissions prove neither equality nor difference.
+  The two accessions support the same bounded nominal preparation description; whether
+  one shared nominal owner or a more specific source-supported representation should
+  be installed remains a coordinator decision under #1237. This identifier is retained
+  only as a conditional historical proposal handle, not a selected stable owner. Do
+  not install both candidates as proven distinct substances. Preserve both source
+  and occurrence routes, all component uncertainty and all inherited holds. W05-FINAL-CHEM-NEW-02
+  was reported before correction. Withdraw inferred buffer-moiety and potassium-species
+  material partonomy. The source names only the 1 M HEPES-KOH stock; composition remains
+  unknown. Preserve its nominal strength in the whole-stock description. No solvent,
+  free KOH, neutralization ratio or component molarity is inferred. The original component
+  objects are preserved in the immutable finding and prior payload.'
+solution_type: BUFFER_SOLUTION
+curation_history:
+- timestamp: '2026-11-08T05:49:52.389819+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: CREATED_SOURCE_QUALIFIED_STOCK
+  changes: Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole
+    stock identity is preserved independently of incomplete component grounding. Stock
+    pH, exact neutralization ratio and solvent specification are absent; final-medium
+    pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474
+    stocks separate until equivalence is established.
+  llm_assisted: true
+  llm_model: gpt-6
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Withdraw unsupported inference
+    of distinct preparation identity from accession number or missing qualifiers.
+    Retain exact candidate/source/occurrence lineage for conditional family reconciliation
+    under #1237. W05-FINAL-CHEM-NEW-02 was reported before correction. Withdraw inferred
+    buffer-moiety and potassium-species material partonomy. The source names only
+    the 1 M HEPES-KOH stock; composition remains unknown. Preserve its nominal strength
+    in the whole-stock description. No solvent, free KOH, neutralization ratio or
+    component molarity is inferred. The original component objects are preserved in
+    the immutable finding and prior payload. Report-only candidate; separate final
+    scientific review and coordinator integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

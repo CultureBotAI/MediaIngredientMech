@@ -1,0 +1,81 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/proposed-v2/Thiamine_Solution_See_Medium_No_403.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Thiamine_Solution_See_Medium_No_403.yaml
+@@ -65,16 +65,36 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. Correct current filtration attribution
++    by source: JCM 403 and NBRC 1321 footnote ***** both define 10 mg thiamine HCl
++    in 100 ml of 25 mM sodium phosphate buffer at pH 3.4. NBRC 1321 and JCM 1125 explicitly
++    specify filter sterilization. JCM 403 does not explicitly specify filtration of
++    this stock, and JCM 1468 has an unexplained asterisk that does not independently
++    establish filtration. Preserve the earlier historical event verbatim; this event
++    supersedes its overbroad attribution. Report-only candidate; separate final scientific
++    review and coordinator integration remain required.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1856); no CAS-RN or
+-  CHEBI/NCIT match. Curator review needed. Correction1193: JCM403 and NBRC1321 footnote*****
+-  both define10mgthiamineHCl in100ml25mMsodiumphosphatebufferpH3.4, filter sterilized.
+-  Their exact stock can share the existing owner; receiving doses do not redefine
+-  it. Distinct from0.2%TPP and pure thiamine salts. No component identity or whole-owner
+-  release is inferred. Isolated proposal only. All inherited source-case, owner and
+-  export holds remain. Raw generic source labels are qualified to these source occurrences
+-  and confer no global resolving synonym or release approval. No optional later supplement
+-  or atmosphere is inferred as an ingredient. Verbatim source-only labels retained
+-  as provenance, excluded from globally resolving aliases: ["Thiamine solution*****"].'
++  CHEBI/NCIT match. Curator review needed. Correction1193: JCM 403 and NBRC 1321 footnote
++  ***** both define 10 mg thiamine HCl in 100 ml of 25 mM sodium phosphate buffer
++  at pH 3.4. NBRC 1321 and JCM 1125 explicitly specify filter sterilization. JCM 403
++  does not explicitly specify filtration of this stock, and JCM 1468 has an unexplained
++  asterisk that does not independently establish filtration. Their exact stock can
++  share the existing owner; receiving doses do not redefine it. Distinct from0.2%TPP
++  and pure thiamine salts. No component identity or whole-owner release is inferred.
++  Isolated proposal only. All inherited source-case, owner and export holds remain.
++  Raw generic source labels are qualified to these source occurrences and confer no
++  global resolving synonym or release approval. No optional later supplement or atmosphere
++  is inferred as an ingredient. Verbatim source-only labels retained as provenance,
++  excluded from globally resolving aliases: ["Thiamine solution*****"].'
+ ingredient_type: STOCK_SOLUTION
+ solution_type: OTHER
+ ontology_mapping:
+@@ -83,10 +103,13 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403
+-    notes: JCM403 and NBRC1321 footnote***** both define10mgthiamineHCl in100ml25mMsodiumphosphatebufferpH3.4,
+-      filter sterilized. Their exact stock can share the existing owner; receiving
++    notes: JCM 403 and NBRC 1321 footnote ***** both define 10 mg thiamine HCl in
++      100 ml of 25 mM sodium phosphate buffer at pH 3.4. NBRC 1321 and JCM 1125 explicitly
++      specify filter sterilization. JCM 403 does not explicitly specify filtration
++      of this stock, and JCM 1468 has an unexplained asterisk that does not independently
++      establish filtration. Their exact stock can share the existing owner; receiving
+       doses do not redefine it. Distinct from0.2%TPP and pure thiamine salts. No component
+       identity or whole-owner release is inferred. Whole supplied preparation identified
+       independently of component CURIE availability. Existing owner and exact named/numbered
+@@ -106,8 +129,11 @@
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403
+     source_record: Thiamine Solution (see Medium No. 403)
+     notes: One-level named inputs relative to cited source. Batch amounts remain source
+-      notes; no unsupported final-volume normalization. JCM403 and NBRC1321 footnote*****
+-      both define10mgthiamineHCl in100ml25mMsodiumphosphatebufferpH3.4, filter sterilized.
+-      Their exact stock can share the existing owner; receiving doses do not redefine
+-      it. Distinct from0.2%TPP and pure thiamine salts. No component identity or whole-owner
++      notes; no unsupported final-volume normalization. JCM 403 and NBRC 1321 footnote
++      ***** both define 10 mg thiamine HCl in 100 ml of 25 mM sodium phosphate buffer
++      at pH 3.4. NBRC 1321 and JCM 1125 explicitly specify filter sterilization. JCM
++      403 does not explicitly specify filtration of this stock, and JCM 1468 has an
++      unexplained asterisk that does not independently establish filtration. Their
++      exact stock can share the existing owner; receiving doses do not redefine it.
++      Distinct from0.2%TPP and pure thiamine salts. No component identity or whole-owner
+       release is inferred.

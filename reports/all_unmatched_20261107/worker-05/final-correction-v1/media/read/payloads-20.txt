@@ -1,0 +1,552 @@
+
+### M1193-P-LB_BROTH_LENNOX_DIFCO
+synonyms: []
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:52:12.254602+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+    the deliberately small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder
+    formula and distinguishes Miller and agar products. Source-generic LB Broth is
+    retained in this decision only, not added as a resolving alias to the specific
+    Lennox product. Isolated proposal only; whole-owner/source/export holds remain
+    and integration requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+identifier: kgmicrobe.ingredient:lb_broth_lennox_difco
+preferred_term: LB broth Lennox powder (BD Difco)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:lb_broth_lennox_difco
+  ontology_label: LB broth Lennox powder (BD Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/LB-Lennox-Agar-e-Broth-.pdf
+    notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+      the deliberately small0.1g receiving dose. Manufacturer manual confirms its
+      three-part20g/Lpowder formula and distinguishes Miller and agar products. Source-generic
+      LB Broth is retained in this decision only, not added as a resolving alias to
+      the specific Lennox product.
+supplied_form:
+- name: LB broth Lennox powder (BD Difco)
+  supplier: BD Difco
+  notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+    the deliberately small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder
+    formula and distinguishes Miller and agar products. Source-generic LB Broth is
+    retained in this decision only, not added as a resolving alias to the specific
+    Lennox product.
+components:
+- component_name: Tryptone
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/LB-Lennox-Agar-e-Broth-.pdf
+    notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+      the deliberately small0.1g receiving dose. Manufacturer manual confirms its
+      three-part20g/Lpowder formula and distinguishes Miller and agar products. Source-generic
+      LB Broth is retained in this decision only, not added as a resolving alias to
+      the specific Lennox product.
+notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+  the deliberately small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder
+  formula and distinguishes Miller and agar products. Source-generic LB Broth is retained
+  in this decision only, not added as a resolving alias to the specific Lennox product.
+
+
+### M1193-P-COOKED-MEAT
+identifier: kgmicrobe.ingredient:cooked_meat_medium_oxoid
+preferred_term: Cooked meat medium (Oxoid)
+synonyms:
+- synonym_text: Cooked meat medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Cooked meat medium (Oxoid)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T17:59:59.284679+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0364 → FOODON:03305103 (fuzzy-top)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.512701+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'meat')
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518602+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Cooked meat medium (Oxoid)'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:52:12.254602+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: 'Source1824 and all exact cooked-meat owner uses trace to JCM605 Oxoid
+    commercial growth medium55g, not the food meat(cooked). Replace the incorrect
+    FOODON03305103 whole mapping with a source-product registry identity. Robertson
+    TOGO M2793 is a distinct unspecified prepared-medium context: this repair does
+    not assert it is the same Oxoid product. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Correction1193: Source1824 and all exact
+  cooked-meat owner uses trace to JCM605 Oxoid commercial growth medium55g, not the
+  food meat(cooked). Replace the incorrect FOODON03305103 whole mapping with a source-product
+  registry identity. Robertson TOGO M2793 is a distinct unspecified prepared-medium
+  context: this repair does not assert it is the same Oxoid product. Manufacturer-version
+  differences remain explicit in component assertion. All prior food-mapping history
+  retained for audit.'
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:cooked_meat_medium_oxoid
+  ontology_label: Cooked meat medium (Oxoid)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://assets.fishersci.com/TFS-Assets/MBD/Specification-Sheets/BT-SPEC-0078%20V4.pdf
+    notes: 'Source1824 and all exact cooked-meat owner uses trace to JCM605 Oxoid
+      commercial growth medium55g, not the food meat(cooked). Replace the incorrect
+      FOODON03305103 whole mapping with a source-product registry identity. Robertson
+      TOGO M2793 is a distinct unspecified prepared-medium context: this repair does
+      not assert it is the same Oxoid product.'
+ingredient_type: NAMED_MEDIUM
+components:
+- component_name: Desiccated beef-heart material
+  reference_scope: UNMAPPED
+- component_name: Protein hydrolysate
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://assets.fishersci.com/TFS-Assets/MBD/Specification-Sheets/BT-SPEC-0078%20V4.pdf
+    notes: Current manufacturer CM0081 revision4 lists beef-heart substance,protein
+      hydrolysate,proprietaryblend,sodiumsulphite; older specification instead listsheartmuscle,peptone,LabLemco,NaCl,glucose.
+      The source recipe has no catalog/revision; only common named components are
+      represented and quantities are not imposed.
+supplied_form:
+- name: Cooked meat medium
+  supplier: Oxoid
+  notes: Source names Oxoid, not a specific catalog or product revision; do not silently
+    equate55g source dose with100g/L manufacturer reconstitution.
+
+
+### M1193-P-MALT-BROTH
+identifier: kgmicrobe.ingredient:malt_extract_broth
+preferred_term: Malt extract broth
+synonyms:
+- synonym_text: Malt extract broth
+  synonym_type: RAW_TEXT
+  source: extracted_from_malt_extract_yaml
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 5
+  media_count: 5
+curation_history:
+- timestamp: '2026-04-19T07:53:54.781350+00:00'
+  curator: audit_extract_complex_media_synonyms
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Malt_Extract.yaml — 'Malt extract broth' is a complete media
+    formulation, not a synonym of the base ingredient. Pending curator re-mapping.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.718203+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Malt')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.942915+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0133 → FOODON:03301056 (strategy=stem-match)
+  llm_assisted: false
+- timestamp: '2026-05-05T00:00:00+00:00'
+  curator: ingredient_mapping_review_2026_05_05
+  action: CORRECTED
+  changes: Changed identifier from FOODON:03301056 to kgmicrobe.ingredient:malt_extract_broth
+    and retained FOODON:03301056 only as CLOSE_MATCH. Malt extract broth is a formulation,
+    not identical to malt extract.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519250+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 5/5 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:52:12.254602+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: DSMZ877/1815 uses identify malt extract broth as a manufactured/formulated
+    growth-medium ingredient. Existing whole registry is retained. A broth formulation
+    is not close-equivalent to its malt-extract constituent; remove FOODON03301056
+    closeMatch and replace with registry exact identity, preserving the prior mapping
+    in history. No supplier formula is guessed from15g or5g receiving doses. Isolated
+    proposal only; whole-owner/source/export holds remain and integration requires
+    separate native review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Extracted from over-conflated Malt_Extract.yaml synonyms Malt extract broth
+  is a formulation, not identical to malt extract. Correction1193: DSMZ877/1815 uses
+  identify malt extract broth as a manufactured/formulated growth-medium ingredient.
+  Existing whole registry is retained. A broth formulation is not close-equivalent
+  to its malt-extract constituent; remove FOODON03301056 closeMatch and replace with
+  registry exact identity, preserving the prior mapping in history. No supplier formula
+  is guessed from15g or5g receiving doses.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:malt_extract_broth
+  ontology_label: Malt extract broth
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/ingredients/810
+    notes: DSMZ877/1815 uses identify malt extract broth as a manufactured/formulated
+      growth-medium ingredient. Existing whole registry is retained. A broth formulation
+      is not close-equivalent to its malt-extract constituent; remove FOODON03301056
+      closeMatch and replace with registry exact identity, preserving the prior mapping
+      in history. No supplier formula is guessed from15g or5g receiving doses.
+kg_microbe_node_id: kgmicrobe.ingredient:malt_extract_broth
+
+
+### M1193-P-MARINE2216
+identifier: kgmicrobe.ingredient:marine_broth_2216
+preferred_term: Marine broth 2216
+synonyms:
+- synonym_text: Marine broth 2216
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Marine broth 2216 (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth  (MB) 2216  (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth 2216 (BD 279110)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Marine Broth 2216 (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 19
+  media_count: 19
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.725141+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'broth')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Marine_Broth_2216-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: - **Recommended mapping status:** `UNMAPPED` No
+    ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a
+    plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: PROMOTED_TO_MAPPED
+  changes: 'UNMAPPED_0434 -> kgmicrobe.ingredient:marine_broth_2216 (FALLBACK_REGISTRY).
+    Minted under the #288 named-preparation convention (#260): the broth twin of Marine
+    Agar 2216, already in the corpus as an UNMAPPED record. Minted alongside its agar
+    rather than left unmapped: the two differ only by the gelling agent, and splitting
+    them would be arbitrary. Cross-reference: CultureMech:008094. A CultureMech id
+    cannot be the identifier — MIM''s primary key is an ontology CURIE or a registry
+    mint — so it is carried here as evidence.'
+  llm_assisted: false
+  previous_status: UNMAPPED
+  new_status: MAPPED
+- timestamp: '2026-08-27T03:16:39.517817+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 19/19 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Marine broth 2216 (BD-Difco)'' (x9 CultureMech mentions);
+    ''Marine Broth  (MB) 2216  (Difco)'' (x1 CultureMech mentions); ''Marine Broth
+    2216 (BD 279110)'' (x1 CultureMech mentions); ''Marine Broth 2216 (BD--Difco)''
+    (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added components and component_assertion by transcribing the ATCC Medium
+    2887 Difco Marine Agar 2216 scratch formula with agar omitted for broth.
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Exact Difco2216 source cases identify commercial broth37.4g, with separate
+    receiving supplements. Existing mapped2216 record erroneously treats the ATCC
+    agar-minus-agar scratch recipe as the commercial broth formula. Manufacturer-authored
+    Difco manual distinguishes broth MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4
+    3.24g. Correct commercial product composition and retain source recipe variants
+    as distinct. Isolated proposal only; whole-owner/source/export holds remain and
+    integration requires separate native review.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Correction1193: Exact Difco2216 source
+  cases identify commercial broth37.4g, with separate receiving supplements. Existing
+  mapped2216 record erroneously treats the ATCC agar-minus-agar scratch recipe as
+  the commercial broth formula. Manufacturer-authored Difco manual distinguishes broth
+  MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4 3.24g. Correct commercial product
+  composition and retain source recipe variants as distinct. This proposal neither
+  merges generic MarineBroth/DifcoMarineBroth records nor approves their complete
+  use scopes. Cross-shard worker03 proposal b-proposal-marine-aliases edits the same
+  owner and requires coordinator reconciliation against the original before hash.'
+ingredient_type: NAMED_MEDIUM
+components:
+- component_name: Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Ferric citrate
+  reference_scope: UNMAPPED
+  concentration_value: '.1'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '19.45'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '5.9'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium sulfate
+  reference_scope: UNMAPPED
+  concentration_value: '3.24'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Calcium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '1.8'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.55'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium bicarbonate
+  reference_scope: UNMAPPED
+  concentration_value: '.16'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium bromide
+  reference_scope: UNMAPPED
+  concentration_value: '.08'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Strontium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.034'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Boric acid
+  reference_scope: UNMAPPED
+  concentration_value: '.022'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium silicate
+  reference_scope: UNMAPPED
+  concentration_value: '.004'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium fluoride
+  reference_scope: UNMAPPED
+  concentration_value: '.0024'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Ammonium nitrate
+  reference_scope: UNMAPPED
+  concentration_value: '.0016'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Disodium phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.008'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf
+    notes: Complete manufacturer-listed16constituents of commercial Difco broth2216
+      at37.4g/L standard reconstitution. All parts kept UNMAPPED because printed salt
+      names do not establish the previous specific hydrates/ontology identities. Water
+      is a reconstitution solvent, not a dry-powder constituent. The ATCC agar-minus-agar
+      scratch variant remains a distinct formulation.
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:marine_broth_2216
+  ontology_label: Marine broth 2216
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Minted under the #288 named-preparation convention (#260): the broth twin
+      of Marine Agar 2216, already in the corpus as an UNMAPPED record. Minted alongside
+      its agar rather than left unmapped: the two differ only by the gelling agent,
+      and splitting them would be arbitrary. Cross-reference: CultureMech:008094.
+      A CultureMech id cannot be the identifier — MIM''s primary key is an ontology
+      CURIE or a registry mint — so it is carried here as evidence.'
+supplied_form:
+- name: Marine Broth2216
+  form: powder
+  supplier: BD Difco
+  catalog_number: '279110'
+  notes: Catalog identified in manufacturer manual; not a claim that every historical
+    unqualified2216 use selected this package.
+
+
+### M1193-P-SCHNEIDER_DROSOPHILA_GIBCO_NBRC400
+synonyms:
+- synonym_text: Schneider's Drosophila medium (Invitorogen, Gibco)
+  synonym_type: RAW_TEXT
+  source: Schneider's Drosophila medium (Invitorogen, Gibco)
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:54:18.111373+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: NBRC400 explicitly uses160ml Invitrogen/Gibco Schneider Drosophila medium
+    in M1D before separately added serum. Supplier primary descriptions establish
+    a named multicomponent product, with common organic-acid and trehalose constituents.
+    Exact catalog/lot is unstated; historical11720 versus current21720 quantities
+    are not imposed. Prepared source medium is identifiable without pretending160ml
+    is160g. Isolated proposal only; whole-owner/source/export holds remain and integration
+    requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+identifier: kgmicrobe.ingredient:schneider_drosophila_gibco_nbrc400
+preferred_term: Schneider Drosophila medium (Gibco; NBRC400)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:schneider_drosophila_gibco_nbrc400
+  ontology_label: Schneider Drosophila medium (Gibco; NBRC400)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.thermofisher.com/us/en/home/technical-resources/media-formulation.124.html
+    notes: NBRC400 explicitly uses160ml Invitrogen/Gibco Schneider Drosophila medium
+      in M1D before separately added serum. Supplier primary descriptions establish
+      a named multicomponent product, with common organic-acid and trehalose constituents.
+      Exact catalog/lot is unstated; historical11720 versus current21720 quantities
+      are not imposed. Prepared source medium is identifiable without pretending160ml
+      is160g.
+notes: NBRC400 explicitly uses160ml Invitrogen/Gibco Schneider Drosophila medium in
+  M1D before separately added serum. Supplier primary descriptions establish a named
+  multicomponent product, with common organic-acid and trehalose constituents. Exact
+  catalog/lot is unstated; historical11720 versus current21720 quantities are not
+  imposed. Prepared source medium is identifiable without pretending160ml is160g.
+supplied_form:
+- name: Schneider Drosophila medium (Gibco; NBRC400)
+  supplier: Gibco / Invitrogen
+  notes: Source-qualified product/preparation; exact catalog and unspecified supplied-form
+    details are not invented.
+components:
+- component_name: Malic acid
+  reference_scope: UNMAPPED
+- component_name: Fumaric acid
+  reference_scope: UNMAPPED
+- component_name: alpha-Ketoglutaric acid
+  reference_scope: UNMAPPED
+- component_name: Succinic acid
+  reference_scope: UNMAPPED
+- component_name: Trehalose
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.thermofisher.com/us/en/home/technical-resources/media-formulation.124.html
+    notes: NBRC400 explicitly uses160ml Invitrogen/Gibco Schneider Drosophila medium
+      in M1D before separately added serum. Supplier primary descriptions establish
+      a named multicomponent product, with common organic-acid and trehalose constituents.
+      Exact catalog/lot is unstated; historical11720 versus current21720 quantities
+      are not imposed. Prepared source medium is identifiable without pretending160ml
+      is160g.
+

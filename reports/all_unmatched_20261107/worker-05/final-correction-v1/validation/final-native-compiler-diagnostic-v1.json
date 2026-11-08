@@ -1,0 +1,8 @@
+{
+  "command": "build_native_review.py",
+  "exit_code": 1,
+  "exception": "ReviewError: targets138,161,164,170,183 label blank",
+  "cause": "Five frozen source raw labels are empty; native target display labels require nonblank text. Raw source data unchanged.",
+  "preserved_inputs": "native-review-preparation",
+  "remedy": "Compiler v2 uses exact case_id as native display label only when raw label is empty. Schema/gate/source fields unchanged."
+}

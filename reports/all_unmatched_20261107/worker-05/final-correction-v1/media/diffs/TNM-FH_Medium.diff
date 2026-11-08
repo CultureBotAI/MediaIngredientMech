@@ -1,0 +1,126 @@
+--- correction-1193-v1/media/proposed/TNM-FH_Medium.yaml
++++ final-correction-v1/media/proposed/TNM-FH_Medium.yaml
+@@ -12,15 +12,14 @@
+ - timestamp: '2026-04-30T18:43:03.698454+00:00'
+   curator: audit_import_ingredients[mim-queue]
+   action: CREATED_AS_UNMAPPED
+-  changes: Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN
+-    or CHEBI/NCIT match. Curator review needed.
++  changes: Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN or CHEBI/NCIT match.
++    Curator review needed.
+   new_status: UNMAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-11T19:50:00Z'
+   curator: mediaingredientmech-agentic-curation
+   action: CLASSIFIED_DEFINED_MEDIUM
+-  changes: Classified as a named TNM-FH medium/formulation and left unmapped pending
+-    recipe-level curation.
++  changes: Classified as a named TNM-FH medium/formulation and left unmapped pending recipe-level curation.
+   previous_status: UNMAPPED
+   new_status: UNMAPPED
+   llm_assisted: true
+@@ -28,36 +27,43 @@
+   curator: edison_literature_identity
+   action: ANNOTATED
+   changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TNM-FH_Medium-edison-literature.md
+-    (local artifact — research/ is gitignored, so the findings are quoted here rather
+-    than linked). Report verdict: | Recommendation | Mapping semantics/confidence
+-    | Rationale | No ontology CURIE was proposed. Recorded as provenance only — no
+-    grounding applied from this run. Edison''s recommendations are deliberately conservative,
+-    and a plausible identifier promoted by a mechanism that never decided anything
+-    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+-    or reject.'
++    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
++    verdict: | Recommendation | Mapping semantics/confidence | Rationale | No ontology CURIE was proposed.
++    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations are deliberately
++    conservative, and a plausible identifier promoted by a mechanism that never decided anything is what
++    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+   llm_assisted: true
+ - timestamp: '2026-11-08T05:50:37.806762+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CORRECTED
+-  changes: Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer
+-    T3285 column distinguishes this1x supplemented Grace formulation from powderT1032,
+-    alternative51942C and unsupplementedG8142. The source liquid product now has exact
+-    whole identity despite unresolved interpretation of one manufacturer-listed tyrosine
+-    amount. Isolated proposal only; whole-owner/source/export holds remain and integration
+-    requires separate native review.
++  changes: Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer T3285 column distinguishes
++    this1x supplemented Grace formulation from powderT1032, alternative51942C and unsupplementedG8142.
++    The source liquid product now has exact whole identity despite unresolved interpretation of one manufacturer-listed
++    tyrosine amount. Isolated proposal only; whole-owner/source/export holds remain and integration requires
++    separate native review.
+   previous_status: UNMAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN or
+-  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+-  curation. Correction1193: Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml.
+-  Manufacturer T3285 column distinguishes this1x supplemented Grace formulation from
+-  powderT1032, alternative51942C and unsupplementedG8142. The source liquid product
+-  now has exact whole identity despite unresolved interpretation of one manufacturer-listed
+-  tyrosine amount. Manufacturer PDF tyrosine0.7202g/L is documented but not adopted
+-  numerically pending clarification. Existing300g/L or300% source exports are separate
+-  unit errors, not obstacles to whole-product curation.'
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1413); no CAS-RN or CHEBI/NCIT match.
++  Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation. Correction1193:
++  Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer T3285 column distinguishes
++  this1x supplemented Grace formulation from powderT1032, alternative51942C and unsupplementedG8142. The
++  source liquid product now has exact whole identity despite unresolved interpretation of one manufacturer-listed
++  tyrosine amount. Manufacturer PDF tyrosine0.7202g/L is documented but not adopted numerically pending
++  clarification. Existing300g/L or300% source exports are separate unit errors, not obstacles to whole-product
++  curation.'
+ ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:tnm_fh_sigma_t3285
+@@ -65,20 +71,18 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/195/157/t3285for.pdf
+-    notes: Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer
+-      T3285 column distinguishes this1x supplemented Grace formulation from powderT1032,
+-      alternative51942C and unsupplementedG8142. The source liquid product now has
+-      exact whole identity despite unresolved interpretation of one manufacturer-listed
+-      tyrosine amount.
++    notes: Source1413/DSMZ1556 explicitly names SigmaT3285 liquid300ml. Manufacturer T3285 column distinguishes
++      this1x supplemented Grace formulation from powderT1032, alternative51942C and unsupplementedG8142.
++      The source liquid product now has exact whole identity despite unresolved interpretation of one
++      manufacturer-listed tyrosine amount.
+ supplied_form:
+ - name: TNM-FH insect medium1x
+   form: liquid
+   supplier: Sigma-Aldrich
+   catalog_number: T3285
+-  notes: Sterile-filtered, with L-glutamine and sodium bicarbonate; serum supplementation
+-    is external.
++  notes: Sterile-filtered, with L-glutamine and sodium bicarbonate; serum supplementation is external.
+ components:
+ - component_name: Calcium chloride dihydrate
+   reference_scope: UNMAPPED
+@@ -268,7 +272,7 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/195/157/t3285for.pdf
+-    notes: Manufacturer PDF T3285 middle column. Tyrosine disodium amount is printed0.7202g/L
+-      while adjacent related formulas print approximately0.072; retain named part
+-      without quantity rather than silently correct a possible decimal error. All
+-      other printed nonzero T3285 constituents transcribed; no water amount inferred.
++    notes: Manufacturer PDF T3285 middle column. Tyrosine disodium amount is printed0.7202g/L while adjacent
++      related formulas print approximately0.072; retain named part without quantity rather than silently
++      correct a possible decimal error. All other printed nonzero T3285 constituents transcribed; no water
++      amount inferred.

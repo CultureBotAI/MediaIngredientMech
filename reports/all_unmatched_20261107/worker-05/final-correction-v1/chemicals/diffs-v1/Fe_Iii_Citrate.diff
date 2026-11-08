@@ -1,0 +1,40 @@
+--- data/ingredients/mapped/Fe_Iii_Citrate.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Fe_Iii_Citrate.yaml
+@@ -56,7 +56,7 @@
+   synonym_type: RAW_TEXT
+   source: CultureMech
+ - synonym_text: Ferric citrate (0.1%, w/v)
+-  synonym_type: RAW_TEXT
++  synonym_type: REJECTED_LABEL
+   source: culturemech:output/ingredient_occurrences.tsv
+ - synonym_text: Fe(III)-citrate (19% Fe)
+   synonym_type: RAW_TEXT
+@@ -205,6 +205,19 @@
+     not resolve them: ''Ferric citrate (0.1%, w/v)'' (x11 CultureMech mentions); ''Fe(III)-citrate
+     (19% Fe)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+   llm_assisted: false
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: TOGO M565, linked to JCM 561, explicitly doses 5 ml Ferric citrate (0.1%,
++    w/v). The literal names a supplied stock, not a neat iron(III) citrate molecule.
++    Mark only this stock label REJECTED_LABEL on CHEBI:144421 and preserve its raw
++    text/source/history. This does not settle the separate Eisencitrat oxidation,
++    stoichiometry or hydration uncertainty or approve other inherited labels. Report-only
++    isolated correction; all inherited holds remain.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ chemical_properties:
+   cas_rn: 3522-50-7
+   data_source: OAK/CHEBI xref
+@@ -224,3 +237,8 @@
+       Simple component'
+     curator_note: Widespread use in media formulations (319 occurrences). High confidence
+       based on 'Defined component' property.
++notes: TOGO M565, linked to JCM 561, explicitly doses 5 ml Ferric citrate (0.1%, w/v).
++  The literal names a supplied stock, not a neat iron(III) citrate molecule. Mark
++  only this stock label REJECTED_LABEL on CHEBI:144421 and preserve its raw text/source/history.
++  This does not settle the separate Eisencitrat oxidation, stoichiometry or hydration
++  uncertainty or approve other inherited labels.

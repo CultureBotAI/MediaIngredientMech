@@ -1,0 +1,31 @@
+--- original/Sucrose.yaml
++++ successor/Sucrose.yaml
+@@ -54,8 +54,9 @@
+   synonym_type: EXACT_SYNONYM
+   source: kg_microbe
+ - synonym_text: d-salicin
+-  synonym_type: EXACT_SYNONYM
+-  source: kg_microbe
++  synonym_type: REJECTED_LABEL
++  source: 'kg_microbe; worker05 source review: distinct substance/product; retained
++    as nonresolving provenance.'
+ - synonym_text: sacarosa
+   synonym_type: EXACT_SYNONYM
+   source: kg_microbe
+@@ -153,6 +154,16 @@
+     prior values came from the importer retired in #453, whose media_count counted
+     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+     rows=194137 distinct_recipes=15257]'
++- timestamp: '2026-11-08T05:17:20.168806+00:00'
++  curator: worker05/materials_research (Codex proposal)
++  action: CORRECTED
++  changes: Reject the structurally distinct d-salicin exact synonym on Sucrose, retaining
++    the D-Sucrose tombstone and all unresolved role obligations. Isolated proposal
++    only. Changed bytes withdraw inherited support; no role, whole-owner or export
++    approval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ chemical_properties:
+   cas_rn: 57-50-1
+   data_source: PubChem API

@@ -1,0 +1,45 @@
+--- published/Organic_Peat.yaml
++++ successor/Organic_Peat.yaml
+@@ -50,6 +50,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as peat-derived organic
+   material pending source/composition curation. Correction1193: Primary UTEX Soilwater:
+   Peat Medium explicitly uses0.5tsp Organic Peat separately from1.5tsp Green House
+@@ -60,7 +71,14 @@
+   asserted, and a second generic peat owner is not minted. Natural variability is
+   not a reason to leave the existing known peat material without a registry identity.
+   Preserve every source/native/export hold; no standardized composition, substrate-usage
+-  role or complete owner approval.'
++  role or complete owner approval.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'
+ ingredient_type: UNDEFINED_MIXTURE
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:organic_peat
+@@ -68,7 +86,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://web.biosci.utexas.edu/utex/Media%20PDF/soilwater-peat-medium.pdf
+     notes: Distinct variable natural peat material already represented by existing
+       owner; no precise molecular or environmental-class exact identity inferred.

@@ -1,0 +1,47 @@
+--- published/Maize_Extract.yaml
++++ successor/Maize_Extract.yaml
+@@ -17,6 +17,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:maize_extract
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:maize_extract
+@@ -24,13 +35,13 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium570.pdf
+     notes: Curate maize extract as the biological extraction product in DSMZ570 and
+       MediaDive575. Source independently lists starch and maize extract, so neither
+       starch nor corn steep liquor is asserted as its identity. Tissue fraction, solvent
+       and supplier remain unspecified within this source material scope.
+-notes: Curate maize extract as the biological extraction product in DSMZ570 and MediaDive575.
++notes: 'Curate maize extract as the biological extraction product in DSMZ570 and MediaDive575.
+   Source independently lists starch and maize extract, so neither starch nor corn
+   steep liquor is asserted as its identity. Tissue fraction, solvent and supplier
+   remain unspecified within this source material scope. Source-qualified proposal
+@@ -39,3 +50,10 @@
+   uncertainty is stated separately from whole-material identity. Occurrence statistics
+   count current exact proposed-label matches in the inspected CultureMech occurrence
+   table; no shared-identifier expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

@@ -1,0 +1,238 @@
+--- correction-1193-v1/media/proposed/Murashige_Skoog_Medium.yaml
++++ final-correction-v1/media/proposed/Murashige_Skoog_Medium.yaml
+@@ -12,15 +12,15 @@
+ - timestamp: '2026-04-30T18:43:03.698454+00:00'
+   curator: audit_import_ingredients[mim-queue]
+   action: CREATED_AS_UNMAPPED
+-  changes: Imported from mim-queue (source_id=mediadive.ingredient:2429); no CAS-RN
+-    or CHEBI/NCIT match. Curator review needed.
++  changes: Imported from mim-queue (source_id=mediadive.ingredient:2429); no CAS-RN or CHEBI/NCIT match.
++    Curator review needed.
+   new_status: UNMAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-11T19:35:00Z'
+   curator: mediaingredientmech-agentic-curation
+   action: CLASSIFIED_DEFINED_MEDIUM
+-  changes: Classified as a named Murashige-Skoog medium/formulation and left unmapped
+-    pending recipe-level curation.
++  changes: Classified as a named Murashige-Skoog medium/formulation and left unmapped pending recipe-level
++    curation.
+   previous_status: UNMAPPED
+   new_status: UNMAPPED
+   llm_assisted: true
+@@ -28,36 +28,42 @@
+   curator: edison_literature_identity
+   action: ANNOTATED
+   changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Murashige_Skoog_Medium-edison-literature.md
+-    (local artifact — research/ is gitignored, so the findings are quoted here rather
+-    than linked). Report verdict: **Recommended identity:** a **named, chemically
+-    defined plant-tissue-culture basal medium/formulation**, not a single chemical,
+-    salt, hydrate, buffer, extract, or taxonomic entity. The literature describes
+-    MS as a widely used basal medium and separates its mineral salts from vitamins
+-    and protocol-specific supplements. Therefore, a molecular formula, charge, molecular
+-    mass, and CAS Registry Number  No ontology CURIE was proposed. Recorded as provenance
+-    only — no grounding applied from this run. Edison''s recommendations are deliberately
+-    conservative, and a plausible identifier promoted by a mechanism that never decided
+-    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+-    to accept or reject.'
++    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
++    verdict: **Recommended identity:** a **named, chemically defined plant-tissue-culture basal medium/formulation**,
++    not a single chemical, salt, hydrate, buffer, extract, or taxonomic entity. The literature describes
++    MS as a widely used basal medium and separates its mineral salts from vitamins and protocol-specific
++    supplements. Therefore, a molecular formula, charge, molecular mass, and CAS Registry Number  No ontology
++    CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
++    are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided
++    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+   llm_assisted: true
+ - timestamp: '2026-11-08T05:42:07.408483+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CORRECTED
+-  changes: Promote the existing source-bound M0221 owner and transcribe its manufacturer
+-    formulation with named UNMAPPED parts; preserve adjacent medium boundaries. Isolated
+-    proposal only; whole-owner/source/export holds remain and integration requires
+-    separate native review.
++  changes: Promote the existing source-bound M0221 owner and transcribe its manufacturer formulation with
++    named UNMAPPED parts; preserve adjacent medium boundaries. Isolated proposal only; whole-owner/source/export
++    holds remain and integration requires separate native review.
+   previous_status: UNMAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2429); no CAS-RN or
+-  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+-  curation. Correction1193: Existing owner source mediadive.ingredient:2429 explicitly
+-  names Duchefa M0221. Product page identifies this exact formulation; other basal
+-  salt or vitamin preparations remain comparison candidates, not merged. Manufacturer
+-  M0221 table lists macro/micro salts and no vitamin section. No equivalence to a
+-  vitamin-supplemented MS preparation is claimed.'
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2429); no CAS-RN or CHEBI/NCIT match.
++  Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation. Correction1193:
++  Existing owner source mediadive.ingredient:2429 explicitly names Duchefa M0221. Product page identifies
++  this exact formulation; other basal salt or vitamin preparations remain comparison candidates, not merged.
++  Manufacturer M0221 table lists macro/micro salts and no vitamin section. No equivalence to a vitamin-supplemented
++  MS preparation is claimed.'
+ ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:murashige_skoog_medium
+@@ -65,109 +71,96 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://duchefa-biochemie.com/product/details/number/M0221
+-    notes: Existing owner source mediadive.ingredient:2429 explicitly names Duchefa
+-      M0221. Product page identifies this exact formulation; other basal salt or vitamin
+-      preparations remain comparison candidates, not merged.
++    notes: Existing owner source mediadive.ingredient:2429 explicitly names Duchefa M0221. Product page
++      identifies this exact formulation; other basal salt or vitamin preparations remain comparison candidates,
++      not merged.
+ supplied_form:
+ - name: Murashige and Skoog basal medium (Duchefa M0221)
+   supplier: Duchefa Biochemie
+   catalog_number: M0221
+-  notes: Catalog attribution comes from original MediaDive ingredient row; formulation
+-    from manufacturer product page.
++  notes: Catalog attribution comes from original MediaDive ingredient row; formulation from manufacturer
++    product page.
+ components:
+ - component_name: CoCl2.6H2O
+   reference_scope: UNMAPPED
+   concentration_value: '0.025'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: CuSO4.5H2O
+   reference_scope: UNMAPPED
+   concentration_value: '0.025'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: FeNaEDTA
+   reference_scope: UNMAPPED
+   concentration_value: '36.70'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: H3BO3
+   reference_scope: UNMAPPED
+   concentration_value: '6.20'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: KI
+   reference_scope: UNMAPPED
+   concentration_value: '0.83'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: MnSO4.H2O
+   reference_scope: UNMAPPED
+   concentration_value: '16.90'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: Na2MoO4.2H2O
+   reference_scope: UNMAPPED
+   concentration_value: '0.25'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: ZnSO4.7H2O
+   reference_scope: UNMAPPED
+   concentration_value: '8.60'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: CaCl2
+   reference_scope: UNMAPPED
+   concentration_value: '332.02'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: KH2PO4
+   reference_scope: UNMAPPED
+   concentration_value: '170.00'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: KNO3
+   reference_scope: UNMAPPED
+   concentration_value: '1900.00'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: MgSO4
+   reference_scope: UNMAPPED
+   concentration_value: '180.54'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ - component_name: NH4NO3
+   reference_scope: UNMAPPED
+   concentration_value: '1650.00'
+   concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+-  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+-    fraction of supplied product. Hydration or stereochemistry not written in source
+-    is not inferred.
++  source: Manufacturer formula amount per liter at standard reconstitution; not mass fraction of supplied
++    product. Hydration or stereochemistry not written in source is not inferred.
+ component_assertion:
+   method: RECIPE_TRANSCRIPTION
+   completeness: COMPLETE
+@@ -175,6 +168,5 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://duchefa-biochemie.com/product/details/number/M0221
+     source_record: M0221 Composition table
+-    notes: Complete manufacturer-listed constituents at standard reconstitution; component
+-      grounding remains UNMAPPED. No added sucrose,agar or vitamins beyond the table
+-      are inferred.
++    notes: Complete manufacturer-listed constituents at standard reconstitution; component grounding remains
++      UNMAPPED. No added sucrose,agar or vitamins beyond the table are inferred.

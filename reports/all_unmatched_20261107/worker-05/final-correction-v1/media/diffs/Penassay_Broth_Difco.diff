@@ -1,0 +1,76 @@
+--- correction-1193-v1/media/proposed/Penassay_Broth_Difco.yaml
++++ final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml
+@@ -6,11 +6,21 @@
+ - timestamp: '2026-11-08T05:50:37.806762+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CREATED
+-  changes: DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine.
+-    BD manufacturer manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part
+-    formula. Source spelling Pennassay is preserved as a contextual raw synonym; added
+-    glucose/thymine and assay agars are excluded. Isolated proposal only; whole-owner/source/export
+-    holds remain and integration requires separate native review.
++  changes: DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine. BD manufacturer
++    manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part formula. Source spelling Pennassay
++    is preserved as a contextual raw synonym; added glucose/thymine and assay agars are excluded. Isolated
++    proposal only; whole-owner/source/export holds remain and integration requires separate native review.
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+@@ -24,12 +34,11 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://static.bd.com/assets/product/Documents/Integrated%20Diagnostic%20Solutions%20%28IDS%29/DS_CM_Difco-and-BBL-culture-media-manual_UG_EN.pdf
+-    notes: DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine.
+-      BD manufacturer manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part
+-      formula. Source spelling Pennassay is preserved as a contextual raw synonym;
+-      added glucose/thymine and assay agars are excluded.
++    notes: DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine. BD manufacturer
++      manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part formula. Source spelling Pennassay
++      is preserved as a contextual raw synonym; added glucose/thymine and assay agars are excluded.
+ components:
+ - component_name: Beef extract
+   reference_scope: UNMAPPED
+@@ -65,19 +74,17 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://static.bd.com/assets/product/Documents/Integrated%20Diagnostic%20Solutions%20%28IDS%29/DS_CM_Difco-and-BBL-culture-media-manual_UG_EN.pdf
+-    notes: DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine.
+-      BD manufacturer manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part
+-      formula. Source spelling Pennassay is preserved as a contextual raw synonym;
+-      added glucose/thymine and assay agars are excluded.
+-notes: ' Correction1193: DSMZ542 names Pennassay Broth17.5g and separately adds20g
+-  glucose and thymine. BD manufacturer manual identifies Penassay as Antibiotic Medium3
+-  with17.5g seven-part formula. Source spelling Pennassay is preserved as a contextual
+-  raw synonym; added glucose/thymine and assay agars are excluded. Raw source spellings
+-  retained in decision ledger and here, without a new globally resolving alias: [{''synonym_text'':
+-  ''Pennassay Broth'', ''synonym_type'': ''RAW_TEXT'', ''source'': ''Pennassay Broth''}]'
++    notes: DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine. BD manufacturer
++      manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part formula. Source spelling Pennassay
++      is preserved as a contextual raw synonym; added glucose/thymine and assay agars are excluded.
++notes: ' Correction1193: DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine.
++  BD manufacturer manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part formula. Source
++  spelling Pennassay is preserved as a contextual raw synonym; added glucose/thymine and assay agars are
++  excluded. Raw source spellings retained in decision ledger and here, without a new globally resolving
++  alias: [{''synonym_text'': ''Pennassay Broth'', ''synonym_type'': ''RAW_TEXT'', ''source'': ''Pennassay
++  Broth''}]'
+ supplied_form:
+ - name: Penassay Broth (Difco Antibiotic Medium3)
+   form: powder
+   supplier: BD Difco
+-  notes: Original collection specifies manufacturer/product; package catalog is not
+-    guessed.
++  notes: Original collection specifies manufacturer/product; package catalog is not guessed.

@@ -1,0 +1,240 @@
+{
+  "finding": "CR02 related scope extension, deduplicated to filed #1237; original CR02 targets remain JCM470 and DSMZ792.",
+  "author": "/root/chemicals_research",
+  "left": {
+    "root": "artifact",
+    "path": "correction-1193-v1/root/proposed-v2/Wolfes_Modified_Mineral_Elixir_ATCC1190.yaml",
+    "sha256": "8efc7361c2a14db7279703d3c824b7b43c36afdb8fbfe6ec0972e52d7405eade"
+  },
+  "right": {
+    "root": "artifact",
+    "path": "correction-1193-v1/root/proposed-v2/Wolfes_Modified_Mineral_Elixir_JCM221.yaml",
+    "sha256": "ce7ea091fa3d6d935e7020dea064033aee56cbaee90603adab3e624ccbe7fb77"
+  },
+  "primary_sources": [
+    {
+      "evidence_id": "ROOT-atcc-1190",
+      "capture": {
+        "root": "artifact",
+        "path": "root/captures/atcc-1190.body",
+        "sha256": "f790ccf2a5d52dc24a85813e31176f70e50a9cdd6225cd4fc05b327476a4f854"
+      },
+      "kind": "primary_source",
+      "locator": "Page2 Wolfe Modified Mineral Elixir",
+      "supports_or_contradicts": "NTA/cobalt nitrate stock including explicit anhydrous calcium chloride/alum and manganese monohydrate.",
+      "url": "https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/1/9/0/atcc-medium-1190.pdf",
+      "accessed_at": "2026-11-08T05:07:50.741222+00:00"
+    },
+    {
+      "evidence_id": "ROOT-atcc-1191",
+      "capture": {
+        "root": "artifact",
+        "path": "root/captures/atcc-1191.body",
+        "sha256": "3226509b558f3fa90e1466ed5a9be5d0fc05db2156dcdec37301890246ef00f3"
+      },
+      "kind": "primary_source",
+      "locator": "Page1 inheritance and Page2 mineral elixir",
+      "supports_or_contradicts": "Filter-paper variant inherits1190 elixir.",
+      "url": "https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/1/9/1/atcc-medium-1191.pdf",
+      "accessed_at": "2026-11-08T05:07:50.726278+00:00"
+    },
+    {
+      "evidence_id": "ROOT-jcm-221",
+      "capture": {
+        "root": "artifact",
+        "path": "root/captures-v2/jcm-221.body",
+        "sha256": "5533579f04ee4d1616f32bea3ef298699cacb59cc60f388bd472036e29d3580a"
+      },
+      "kind": "primary_source",
+      "locator": "Wolfe modified mineral elixir table",
+      "supports_or_contradicts": "NTA/cobalt nitrate stock differs from current CultureBotHT owner.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=221",
+      "accessed_at": "2026-11-08T05:08:05.430405+00:00"
+    }
+  ],
+  "input_comparison": [
+    {
+      "index": 0,
+      "ATCC1190": {
+        "component_name": "Nitrilotriacetic acid",
+        "reference_scope": "UNMAPPED",
+        "source": "1.5g"
+      },
+      "JCM221": {
+        "component_name": "Nitrilotriacetic acid",
+        "reference_scope": "UNMAPPED",
+        "source": "1.5g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 1,
+      "ATCC1190": {
+        "component_name": "MgSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "3g"
+      },
+      "JCM221": {
+        "component_name": "MgSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "3g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 2,
+      "ATCC1190": {
+        "component_name": "MnSO4·H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.5g"
+      },
+      "JCM221": {
+        "component_name": "MnSO4·xH2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.5g; x unspecified"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 3,
+      "ATCC1190": {
+        "component_name": "NaCl",
+        "reference_scope": "UNMAPPED",
+        "source": "1g"
+      },
+      "JCM221": {
+        "component_name": "NaCl",
+        "reference_scope": "UNMAPPED",
+        "source": "1g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 4,
+      "ATCC1190": {
+        "component_name": "FeSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "JCM221": {
+        "component_name": "FeSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 5,
+      "ATCC1190": {
+        "component_name": "Co(NO3)2·6H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "JCM221": {
+        "component_name": "Co(NO3)2·6H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 6,
+      "ATCC1190": {
+        "component_name": "CaCl2 (anhydrous)",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "JCM221": {
+        "component_name": "CaCl2",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 7,
+      "ATCC1190": {
+        "component_name": "ZnSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "JCM221": {
+        "component_name": "ZnSO4·7H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.1g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 8,
+      "ATCC1190": {
+        "component_name": "CuSO4·5H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "JCM221": {
+        "component_name": "CuSO4·5H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 9,
+      "ATCC1190": {
+        "component_name": "AlK(SO4)2 (anhydrous)",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "JCM221": {
+        "component_name": "AlK(SO4)2",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 10,
+      "ATCC1190": {
+        "component_name": "H3BO3",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "JCM221": {
+        "component_name": "H3BO3",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 11,
+      "ATCC1190": {
+        "component_name": "Na2MoO4·2H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "JCM221": {
+        "component_name": "Na2MoO4·2H2O",
+        "reference_scope": "UNMAPPED",
+        "source": "0.01g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    },
+    {
+      "index": 12,
+      "ATCC1190": {
+        "component_name": "Na2SeO3 (anhydrous)",
+        "reference_scope": "UNMAPPED",
+        "source": "0.001g"
+      },
+      "JCM221": {
+        "component_name": "Na2SeO3",
+        "reference_scope": "UNMAPPED",
+        "source": "0.001g"
+      },
+      "comparison": "Same named salt/acid and numerical input; hydration qualifiers differ in specificity, not established chemical disjointness."
+    }
+  ],
+  "boundary": "13 matching non-water inputs and amounts. ATCC has monohydrate manganese and explicitly anhydrous CaCl2/alum/selenite; JCM omits or varies these hydrate qualifiers. Differences in specification completeness establish neither equality nor difference. Preserve pH adjustment and final-volume instructions as source-specific provenance; no owner winner is selected."
+}

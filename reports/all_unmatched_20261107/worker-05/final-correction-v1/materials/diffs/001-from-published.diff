@@ -1,0 +1,40 @@
+--- published/Bacto_Peptone.yaml
++++ successor/Bacto_Peptone.yaml
+@@ -110,7 +110,7 @@
+   synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: Fish peptone (Fluka)
+-  synonym_type: CATALOG_VARIANT
++  synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: peptone
+   synonym_type: EXACT_SYNONYM
+@@ -194,6 +194,18 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Reject the Fish peptone (Fluka) identity alias on Bacto Peptone because
++    the inspected Bacto 211677 specification names bovine and porcine protein, whereas
++    the rejected token explicitly names fish. Preserve the exact text, original source
++    and all history; no Fluka catalog or replacement identity is inferred. Isolated
++    proposal only; no maintained data or source membership change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: UNDEFINED_MIXTURE
+ nutritional_roles:
+ - role: PROTEIN_SOURCE
+@@ -202,3 +214,9 @@
+   - reference_type: COMPUTATIONAL_PREDICTION
+     reference_text: Inferred from curated media-role name pattern
+     curator_note: Provisional role from a curated name-pattern rule; review recommended.
++notes: 'Final W05 report-only correction: Reject the Fish peptone (Fluka) identity
++  alias on Bacto Peptone because the inspected Bacto 211677 specification names bovine
++  and porcine protein, whereas the rejected token explicitly names fish. Preserve
++  the exact text, original source and all history; no Fluka catalog or replacement
++  identity is inferred. All original source, organism, role, owner and export holds
++  remain. Independent review of these exact successor bytes is pending.'

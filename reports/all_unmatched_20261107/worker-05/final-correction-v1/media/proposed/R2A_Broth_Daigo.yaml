@@ -1,0 +1,98 @@
+synonyms:
+- synonym_text: R2A broth (Daigo)
+  synonym_type: RAW_TEXT
+  source: R2A broth (Daigo)
+- synonym_text: R2A Broth (DAIGO)
+  synonym_type: RAW_TEXT
+  source: R2A Broth (DAIGO)
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T05:48:47.596191+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: JCM659 and NBRC991/1347 name Daigo R2A broth powder, with deliberate dilution in each receiving
+    medium. Manufacturer395-01681 identifies agar-free R2A broth and its eight constituents; no automatic
+    assignment of generic R2A broth cases1/129 or agar-containing records. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
+    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
+    report-only successor; maintained data and all original source, owner, role, cross-shard and export
+    holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+identifier: kgmicrobe.ingredient:r2a_broth_daigo
+preferred_term: R2A broth powder (Daigo)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:r2a_broth_daigo
+  ontology_label: R2A broth powder (Daigo)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://labchem-wako.fujifilm.com/jp/product/detail/W01N0139-0168.html
+    notes: JCM659 and NBRC991/1347 name Daigo R2A broth powder, with deliberate dilution in each receiving
+      medium. Manufacturer395-01681 identifies agar-free R2A broth and its eight constituents; no automatic
+      assignment of generic R2A broth cases1/129 or agar-containing records.
+supplied_form:
+- name: R2A Broth DAIGO
+  form: powder
+  supplier: FUJIFILM Wako / LABOLOGY
+  catalog_number: 395-01681
+  notes: Manufacturer current product identification; source specifies Daigo broth without package code.
+components:
+- component_name: Peptone
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Casamino acids
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Soluble starch
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Dipotassium hydrogen phosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.3'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium sulfate heptahydrate
+  reference_scope: UNMAPPED
+  concentration_value: '.05'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sodium pyruvate
+  reference_scope: UNMAPPED
+  concentration_value: '.3'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://labchem-wako.fujifilm.com/jp/product/detail/W01N0139-0168.html
+    notes: All eight manufacturer constituents per1L standard reconstitution, not the diluted receiving
+      recipe. Japanese potassium monohydrogen phosphate rendered dipotassium hydrogen phosphate; remaining
+      chemical forms not inferred.
+notes: JCM659 and NBRC991/1347 name Daigo R2A broth powder, with deliberate dilution in each receiving
+  medium. Manufacturer395-01681 identifies agar-free R2A broth and its eight constituents; no automatic
+  assignment of generic R2A broth cases1/129 or agar-containing records.

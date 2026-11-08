@@ -1,0 +1,83 @@
+--- correction-1193-v1/media/proposed/LB_Broth_Lennox_Difco.yaml
++++ final-correction-v1/media/proposed/LB_Broth_Lennox_Difco.yaml
+@@ -6,12 +6,22 @@
+ - timestamp: '2026-11-08T05:52:12.254602+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CREATED
+-  changes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+-    the deliberately small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder
+-    formula and distinguishes Miller and agar products. Source-generic LB Broth is
+-    retained in this decision only, not added as a resolving alias to the specific
+-    Lennox product. Isolated proposal only; whole-owner/source/export holds remain
+-    and integration requires separate native review.
++  changes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite the deliberately
++    small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder formula and distinguishes
++    Miller and agar products. Source-generic LB Broth is retained in this decision only, not added as
++    a resolving alias to the specific Lennox product. Isolated proposal only; whole-owner/source/export
++    holds remain and integration requires separate native review.
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+@@ -25,21 +35,19 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://cdn.media.interlabdist.com.br/uploads/2021/01/LB-Lennox-Agar-e-Broth-.pdf
+-    notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+-      the deliberately small0.1g receiving dose. Manufacturer manual confirms its
+-      three-part20g/Lpowder formula and distinguishes Miller and agar products. Source-generic
+-      LB Broth is retained in this decision only, not added as a resolving alias to
+-      the specific Lennox product.
++    notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite the deliberately
++      small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder formula and distinguishes
++      Miller and agar products. Source-generic LB Broth is retained in this decision only, not added as
++      a resolving alias to the specific Lennox product.
+ supplied_form:
+ - name: LB broth Lennox powder (BD Difco)
+   supplier: BD Difco
+-  notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+-    the deliberately small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder
+-    formula and distinguishes Miller and agar products. Source-generic LB Broth is
+-    retained in this decision only, not added as a resolving alias to the specific
+-    Lennox product.
++  notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite the deliberately small0.1g
++    receiving dose. Manufacturer manual confirms its three-part20g/Lpowder formula and distinguishes Miller
++    and agar products. Source-generic LB Broth is retained in this decision only, not added as a resolving
++    alias to the specific Lennox product.
+ components:
+ - component_name: Tryptone
+   reference_scope: UNMAPPED
+@@ -59,12 +67,11 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://cdn.media.interlabdist.com.br/uploads/2021/01/LB-Lennox-Agar-e-Broth-.pdf
+-    notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+-      the deliberately small0.1g receiving dose. Manufacturer manual confirms its
+-      three-part20g/Lpowder formula and distinguishes Miller and agar products. Source-generic
+-      LB Broth is retained in this decision only, not added as a resolving alias to
+-      the specific Lennox product.
+-notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite
+-  the deliberately small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder
+-  formula and distinguishes Miller and agar products. Source-generic LB Broth is retained
+-  in this decision only, not added as a resolving alias to the specific Lennox product.
++    notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite the deliberately
++      small0.1g receiving dose. Manufacturer manual confirms its three-part20g/Lpowder formula and distinguishes
++      Miller and agar products. Source-generic LB Broth is retained in this decision only, not added as
++      a resolving alias to the specific Lennox product.
++notes: JCM1273 source2052 explicitly identifies BD-Difco Lennox LB broth, despite the deliberately small0.1g
++  receiving dose. Manufacturer manual confirms its three-part20g/Lpowder formula and distinguishes Miller
++  and agar products. Source-generic LB Broth is retained in this decision only, not added as a resolving
++  alias to the specific Lennox product.

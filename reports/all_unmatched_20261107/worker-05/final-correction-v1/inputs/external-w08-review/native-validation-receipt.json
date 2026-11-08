@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-08T07:12:09.675889+00:00",
+  "native_helper_path": "scripts/record_review.py",
+  "native_helper_sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d",
+  "schema_sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb",
+  "inspection_input_count": 304,
+  "target_count": 326,
+  "assessments": 327,
+  "findings": 18,
+  "exact_committed_inputs_verified": true,
+  "state_transition_basis": "Private inspected working files copied byte-for-byte from existing43f7commit; every input independently compared to that commit. Historical source explicitly bound as git_commit before save.",
+  "native_api_calls": [
+    "validate_review",
+    "assert_current_source",
+    "save_review",
+    "read_review",
+    "source_provenance via read_review"
+  ],
+  "negative_controls": {
+    "omitted_case_coverage_rejected": "full coverage requires every population member to be reviewed",
+    "changed_committed_input_rejected": "committed input digest disagrees: MAPPING_SEMANTICS.md"
+  },
+  "saved_yaml": "native-fixture/reviews/structured/20261108T071144Z-worker08-independent-worker05-full188-payload138/review.yaml",
+  "yaml_sha256": "bdde7d4101546e0e43f0752e4587c4d0c3a0fb43f887d82eee2d869edd5c06b0",
+  "saved_markdown": "native-fixture/reviews/structured/20261108T071144Z-worker08-independent-worker05-full188-payload138/review.md",
+  "markdown_sha256": "a0ad452e965114ec0ca93b71f7d9eb5d42ea125a46fe7d2df40685e40ca499af",
+  "logical_roundtrip_equal": true,
+  "limits": "Private native bundle validates this observation only. No full maintained corpus or export gate rerun; no scientific acceptance inferred from schema."
+}

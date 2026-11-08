@@ -1,0 +1,917 @@
+
+### M1193-P-G8142
+identifier: kgmicrobe.ingredient:graces_insect_medium
+preferred_term: Grace's insect medium (Sigma G8142, 1x)
+synonyms:
+- synonym_text: Grace's Insect Medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1382); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Grace's insect medium/formulation and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Graces_Insect_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommendation | No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:39:58.554862+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote existing source1382 Grace owner to source-qualified Sigma G8142
+    1x product and add44 named UNMAPPED components with explicit three-entry formula
+    uncertainty; no duplicate owner or generic Grace equivalence. Isolated proposal
+    only; whole-owner/source/export holds remain and integration requires separate
+    native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1382); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Source MediaDive ingredient1382 and both current CultureMech
+  occurrences derive DSMZ1514, which explicitly specifies Sigma G8142. Existing UNMAPPED0395
+  was imported solely from1382. Promote that existing owner as the1x liquid basal
+  product; no equivalence to G9771 powder, TNM-FH, serum-supplemented DSMZ1514 or
+  its separate storage buffer. Manufacturer versions disagree for phosphate, serine
+  and tyrosine; this does not block product identity. Partial partonomy records named
+  ungrounded components without claiming a complete lot formula. Existing occurrence
+  statistics are preserved; the complete current occurrence scan finds two source
+  representations of DSMZ1514. Frozen900G_PER_L and900PERCENT_V_V conversions and
+  storage-buffer flattening are not endorsed.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:graces_insect_medium
+  ontology_label: Grace's insect medium (Sigma G8142, 1x)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1514.pdf
+    notes: Source MediaDive ingredient1382 and both current CultureMech occurrences
+      derive DSMZ1514, which explicitly specifies Sigma G8142. Existing UNMAPPED0395
+      was imported solely from1382. Promote that existing owner as the1x liquid basal
+      product; no equivalence to G9771 powder, TNM-FH, serum-supplemented DSMZ1514
+      or its separate storage buffer.
+supplied_form:
+- name: Grace's Insect Medium
+  supplier: Sigma-Aldrich
+  catalog_number: G8142
+  form: 1x liquid, sterile-filtered
+  notes: Supplier product page explicitly lists liquid and0.35g/L sodium bicarbonate
+    with0.6g/L L-glutamine. G9771 powder is separate.
+components:
+- component_name: CaCl2 (anhydrous equivalent)
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: MgCl2 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '1.068189'
+  concentration_unit: G_PER_L
+- component_name: MgSO4 (anhydrous)
+  reference_scope: UNMAPPED
+  concentration_value: '1.357858'
+  concentration_unit: G_PER_L
+- component_name: KCl
+  reference_scope: UNMAPPED
+  concentration_value: '2.24'
+  concentration_unit: G_PER_L
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: beta-Alanine
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_L
+- component_name: L-Alanine
+  reference_scope: UNMAPPED
+  concentration_value: '0.225'
+  concentration_unit: G_PER_L
+- component_name: L-Arginine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.7'
+  concentration_unit: G_PER_L
+- component_name: L-Asparagine
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: L-Aspartic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: L-Cystine 2HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: G_PER_L
+- component_name: L-Glutamic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.6'
+  concentration_unit: G_PER_L
+- component_name: L-Glutamine
+  reference_scope: UNMAPPED
+  concentration_value: '0.6'
+  concentration_unit: G_PER_L
+- component_name: Glycine
+  reference_scope: UNMAPPED
+  concentration_value: '0.65'
+  concentration_unit: G_PER_L
+- component_name: L-Histidine
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: G_PER_L
+- component_name: L-Isoleucine
+  reference_scope: UNMAPPED
+  concentration_value: '0.05'
+  concentration_unit: G_PER_L
+- component_name: L-Leucine
+  reference_scope: UNMAPPED
+  concentration_value: '0.075'
+  concentration_unit: G_PER_L
+- component_name: L-Lysine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.625'
+  concentration_unit: G_PER_L
+- component_name: L-Methionine
+  reference_scope: UNMAPPED
+  concentration_value: '0.05'
+  concentration_unit: G_PER_L
+- component_name: L-Phenylalanine
+  reference_scope: UNMAPPED
+  concentration_value: '0.15'
+  concentration_unit: G_PER_L
+- component_name: L-Proline
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: G_PER_L
+- component_name: L-Threonine
+  reference_scope: UNMAPPED
+  concentration_value: '0.175'
+  concentration_unit: G_PER_L
+- component_name: L-Tryptophan
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: L-Valine
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: D-Biotin
+  reference_scope: UNMAPPED
+  concentration_value: '0.00001'
+  concentration_unit: G_PER_L
+- component_name: Choline chloride
+  reference_scope: UNMAPPED
+  concentration_value: '0.0002'
+  concentration_unit: G_PER_L
+- component_name: Folic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: myo-Inositol
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Niacin
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: D-Pantothenic acid hemicalcium
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: p-Aminobenzoic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Pyridoxine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Riboflavin
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Thiamine
+  reference_scope: UNMAPPED
+  concentration_value: '0.00002'
+  concentration_unit: G_PER_L
+- component_name: Dextrose anhydrous
+  reference_scope: UNMAPPED
+  concentration_value: '0.7'
+  concentration_unit: G_PER_L
+- component_name: D-(-)-Fructose
+  reference_scope: UNMAPPED
+  concentration_value: '0.4'
+  concentration_unit: G_PER_L
+- component_name: Fumaric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.055'
+  concentration_unit: G_PER_L
+- component_name: alpha-Ketoglutaric acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.37'
+  concentration_unit: G_PER_L
+- component_name: L-(-)-Malic acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.67'
+  concentration_unit: G_PER_L
+- component_name: Succinic acid free acid
+  reference_scope: UNMAPPED
+  concentration_value: '0.06'
+  concentration_unit: G_PER_L
+- component_name: Sucrose
+  reference_scope: UNMAPPED
+  concentration_value: '26.68'
+  concentration_unit: G_PER_L
+- component_name: Sodium phosphate (form unresolved)
+  reference_scope: UNMAPPED
+  source: Manufacturer2018 formula says NaH2PO4 while earlier manufacturer formula
+    says Na2HPO4(anhydrous), both0.876923g/L. Retain named part without selecting
+    protonation or quantity for an unidentified historical lot.
+- component_name: Serine (stereochemistry and amount unresolved)
+  reference_scope: UNMAPPED
+  source: Manufacturer2018 formula lists L-serine0.550g/L; earlier formula lists DL-serine1.1g/L.
+    No silent substitution or version inference.
+- component_name: L-Tyrosine disodium (amount unresolved)
+  reference_scope: UNMAPPED
+  source: Manufacturer2018 G8142 column prints0.7202g/L versus earlier G8142 formula0.07202g/L.
+    Quantity withheld pending manufacturer correction or lot-specific evidence.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.sigmaaldrich.cn/deepweb/assets/sigmaaldrich/product/documents/172/423/g8142for.pdf
+    source_record: G8142 column,2018 formula
+    notes: Named formulation constituents; quantities are per liter1x product. Parts
+      remain UNMAPPED. Three disputed entries retain uncertainty; no complete historical-lot
+      formula asserted.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.merckmillipore.com/deepweb/assets/sigmaaldrich/marketing/global/documents/174/355/graces_insect_media.pdf
+    source_record: G8142 liquid column
+    notes: Earlier manufacturer formula corroborates liquid product and most amounts
+      but conflicts for phosphate,serine and tyrosine quantities; those conflicts
+      are explicitly preserved.
+
+
+### M1193-P-G0210
+identifier: kgmicrobe.ingredient:gamborg_b5_medium_incl_vitamins
+preferred_term: Gamborg B5 medium including vitamins (Duchefa G0210)
+synonyms:
+- synonym_text: Gamborg B5 Medium incl. Vitamins
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2428); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Gamborg B5 medium/formulation with vitamins and left
+    unmapped pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Gamborg_B5_Medium_Incl_Vitamins-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a named, chemically
+    defined, multicomponent **basal plant cell/tissue-culture medium formulation**,
+    not a single chemical, hydrate, buffer, extract, or taxonomic material. A review
+    identifies Gamborg (B5) alongside MS, LS, and NN as frequently used basic media
+    and traces it to Gamborg, Miller, and Ojima’s 1968 work on soybean-root suspension
+    cells. (i.m.2012planttis No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:42:07.408483+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote the existing source-bound G0210 owner and transcribe its manufacturer
+    formulation with named UNMAPPED parts; preserve adjacent medium boundaries. Isolated
+    proposal only; whole-owner/source/export holds remain and integration requires
+    separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2428); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Existing owner source mediadive.ingredient:2428 explicitly
+  names Duchefa G0210. Product page identifies this exact formulation; other basal
+  salt or vitamin preparations remain comparison candidates, not merged. G0210 explicitly
+  includes its four vitamin/organic components; vitamin-free B5 salts are not an alias.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:gamborg_b5_medium_incl_vitamins
+  ontology_label: Gamborg B5 medium including vitamins (Duchefa G0210)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://duchefa-biochemie.com/product/details/number/G0210
+    notes: Existing owner source mediadive.ingredient:2428 explicitly names Duchefa
+      G0210. Product page identifies this exact formulation; other basal salt or vitamin
+      preparations remain comparison candidates, not merged.
+supplied_form:
+- name: Gamborg B5 medium including vitamins (Duchefa G0210)
+  supplier: Duchefa Biochemie
+  catalog_number: G0210
+  notes: Catalog attribution comes from original MediaDive ingredient row; formulation
+    from manufacturer product page.
+components:
+- component_name: CoCl2.6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: CuSO4.5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: FeNaEDTA
+  reference_scope: UNMAPPED
+  concentration_value: '36.70'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '3.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: KI
+  reference_scope: UNMAPPED
+  concentration_value: '0.75'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: MnSO4.H2O
+  reference_scope: UNMAPPED
+  concentration_value: '10.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: Na2MoO4.2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: ZnSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: CaCl2
+  reference_scope: UNMAPPED
+  concentration_value: '113.23'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: KNO3
+  reference_scope: UNMAPPED
+  concentration_value: '2500.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: MgSO4
+  reference_scope: UNMAPPED
+  concentration_value: '121.56'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: NaH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '130.44'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '134.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: myo-Inositol
+  reference_scope: UNMAPPED
+  concentration_value: '100.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: Nicotinic acid
+  reference_scope: UNMAPPED
+  concentration_value: '1.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: Pyridoxine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '1.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: Thiamine HCl
+  reference_scope: UNMAPPED
+  concentration_value: '10.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://duchefa-biochemie.com/product/details/number/G0210
+    source_record: G0210 Composition table
+    notes: Complete manufacturer-listed constituents at standard reconstitution; component
+      grounding remains UNMAPPED. No added sucrose,agar or vitamins beyond the table
+      are inferred.
+
+
+### M1193-P-M0221
+identifier: kgmicrobe.ingredient:murashige_skoog_medium
+preferred_term: Murashige and Skoog basal medium (Duchefa M0221)
+synonyms:
+- synonym_text: Murashige & Skoog medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2429); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Murashige-Skoog medium/formulation and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Murashige_Skoog_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended identity:** a **named, chemically
+    defined plant-tissue-culture basal medium/formulation**, not a single chemical,
+    salt, hydrate, buffer, extract, or taxonomic entity. The literature describes
+    MS as a widely used basal medium and separates its mineral salts from vitamins
+    and protocol-specific supplements. Therefore, a molecular formula, charge, molecular
+    mass, and CAS Registry Number  No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:42:07.408483+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote the existing source-bound M0221 owner and transcribe its manufacturer
+    formulation with named UNMAPPED parts; preserve adjacent medium boundaries. Isolated
+    proposal only; whole-owner/source/export holds remain and integration requires
+    separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2429); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Existing owner source mediadive.ingredient:2429 explicitly
+  names Duchefa M0221. Product page identifies this exact formulation; other basal
+  salt or vitamin preparations remain comparison candidates, not merged. Manufacturer
+  M0221 table lists macro/micro salts and no vitamin section. No equivalence to a
+  vitamin-supplemented MS preparation is claimed.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:murashige_skoog_medium
+  ontology_label: Murashige and Skoog basal medium (Duchefa M0221)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://duchefa-biochemie.com/product/details/number/M0221
+    notes: Existing owner source mediadive.ingredient:2429 explicitly names Duchefa
+      M0221. Product page identifies this exact formulation; other basal salt or vitamin
+      preparations remain comparison candidates, not merged.
+supplied_form:
+- name: Murashige and Skoog basal medium (Duchefa M0221)
+  supplier: Duchefa Biochemie
+  catalog_number: M0221
+  notes: Catalog attribution comes from original MediaDive ingredient row; formulation
+    from manufacturer product page.
+components:
+- component_name: CoCl2.6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: CuSO4.5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.025'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: FeNaEDTA
+  reference_scope: UNMAPPED
+  concentration_value: '36.70'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '6.20'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: KI
+  reference_scope: UNMAPPED
+  concentration_value: '0.83'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: MnSO4.H2O
+  reference_scope: UNMAPPED
+  concentration_value: '16.90'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: Na2MoO4.2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.25'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: ZnSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '8.60'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: CaCl2
+  reference_scope: UNMAPPED
+  concentration_value: '332.02'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '170.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: KNO3
+  reference_scope: UNMAPPED
+  concentration_value: '1900.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: MgSO4
+  reference_scope: UNMAPPED
+  concentration_value: '180.54'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+- component_name: NH4NO3
+  reference_scope: UNMAPPED
+  concentration_value: '1650.00'
+  concentration_unit: MG_PER_L_AT_STANDARD_RECONSTITUTION
+  source: Manufacturer formula amount per liter at standard reconstitution; not mass
+    fraction of supplied product. Hydration or stereochemistry not written in source
+    is not inferred.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://duchefa-biochemie.com/product/details/number/M0221
+    source_record: M0221 Composition table
+    notes: Complete manufacturer-listed constituents at standard reconstitution; component
+      grounding remains UNMAPPED. No added sucrose,agar or vitamins beyond the table
+      are inferred.
+
+
+### M1193-P-JCM181
+identifier: kgmicrobe.ingredient:horikoshi_i_medium
+preferred_term: Horikoshi-I medium (JCM 181)
+synonyms:
+- synonym_text: Horikoshi-I medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1740); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Horikoshi-I medium/formulation and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Horikoshi-I_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommend retaining as an unmapped named medium/formulation
+    unless mapped to a source-specific recipe entity; avoid unsupported exact ontology
+    mapping and avoid generic parent as exact identity. | No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:42:07.408483+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote source-defined JCM181 preparation and transcribe one-level inputs.
+    JCM181 printed recipe includes agar15g and a separately added100ml10%Na2CO3 stock;
+    do not flatten stock to pure carbonate or substitute the extra NaCl of receiving
+    recipes345,406,409,1028. Amounts are source-batch inputs, not an inferred measured
+    final volume. Isolated proposal only; whole-owner/source/export holds remain and
+    integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1740); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193 source clarification: JCM181 printed recipe includes agar15g
+  and a separately added100ml10%Na2CO3 stock; do not flatten stock to pure carbonate
+  or substitute the extra NaCl of receiving recipes345,406,409,1028. Amounts are source-batch
+  inputs, not an inferred measured final volume.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:horikoshi_i_medium
+  ontology_label: Horikoshi-I medium (JCM 181)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=181
+    notes: All exact current owner occurrences trace to JCM181. JCM181 printed recipe
+      includes agar15g and a separately added100ml10%Na2CO3 stock; do not flatten
+      stock to pure carbonate or substitute the extra NaCl of receiving recipes345,406,409,1028.
+      Amounts are source-batch inputs, not an inferred measured final volume.
+components:
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '10.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Hipolypepton (FUJIFILM Wako)
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '5.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Agar
+  reference_scope: UNMAPPED
+  concentration_value: '15.0'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '900.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Sterile10% Na2CO3 solution
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=181
+    source_record: JCM181
+    notes: JCM181 printed recipe includes agar15g and a separately added100ml10%Na2CO3
+      stock; do not flatten stock to pure carbonate or substitute the extra NaCl of
+      receiving recipes345,406,409,1028. Amounts are source-batch inputs, not an inferred
+      measured final volume.
+
+
+### M1193-P-JCM90
+identifier: kgmicrobe.ingredient:s6_medium
+preferred_term: S6 liquid medium (JCM 90)
+synonyms:
+- synonym_text: S6 medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named S6 medium/formulation and left unmapped pending recipe-level
+    curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/S6_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** “S6 medium” is a
+    **named culture-medium formulation**, not a single chemical, salt/hydrate, buffer
+    molecule, extract, or generic medium-component family. The strongest retrievable
+    lineage is its use as an **S6 liquid medium for *Bacillus subtilis***, with the
+    formulation attributed to Fujita and Freese (1981). A later paper explicitly distinguishes
+    S6 from tryptose  No ontology CURIE was proposed. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:42:07.408483+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Promote source-defined JCM90 preparation and transcribe one-level inputs.
+    JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added nitrate
+    and bicarbonate. Agar15g/L is an optional solid variant and is not a component
+    of this liquid preparation; xH2O and stock percentage remain unspecified. Source-batch
+    amounts do not infer a measured final volume. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193 source clarification: JCM90 printed liquid formula is the
+  S6 base used in JCM91 S8 before added nitrate and bicarbonate. Agar15g/L is an optional
+  solid variant and is not a component of this liquid preparation; xH2O and stock
+  percentage remain unspecified. Source-batch amounts do not infer a measured final
+  volume.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:s6_medium
+  ontology_label: S6 liquid medium (JCM 90)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=90
+    notes: All exact current owner occurrences trace to JCM90. JCM90 printed liquid
+      formula is the S6 base used in JCM91 S8 before added nitrate and bicarbonate.
+      Agar15g/L is an optional solid variant and is not a component of this liquid
+      preparation; xH2O and stock percentage remain unspecified. Source-batch amounts
+      do not infer a measured final volume.
+components:
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.8'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '1.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: FeCl3.6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '30.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: MnSO4.xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '30.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: CaCl2.2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '40.0'
+  concentration_unit: MG_PER_SOURCE_BATCH
+- component_name: 10% Na2S2O3 solution
+  reference_scope: UNMAPPED
+  concentration_value: '100.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '900.0'
+  concentration_unit: ML_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=90
+    source_record: JCM90
+    notes: JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added
+      nitrate and bicarbonate. Agar15g/L is an optional solid variant and is not a
+      component of this liquid preparation; xH2O and stock percentage remain unspecified.
+      Source-batch amounts do not infer a measured final volume.
+

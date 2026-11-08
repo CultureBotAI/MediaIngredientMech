@@ -1,0 +1,49 @@
+--- published/Neopeptone.yaml
++++ successor/Neopeptone.yaml
+@@ -17,6 +17,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to DATABASE_MATCH;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: MICRO:0000177
+ ontology_mapping:
+   ontology_id: MICRO:0000177
+@@ -24,7 +35,7 @@
+   ontology_source: MICRO
+   mapping_quality: EXACT_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: DATABASE_MATCH
+     source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMICRO_0000177
+     notes: Non-obsolete named neopeptone term explicitly cites Bacto Neopeptone manufacturer
+       definition. Whole product, not one component.
+@@ -34,7 +45,7 @@
+   catalog_number: '211681'
+   notes: Current manufacturer supports enzymatic bovine-milk/porcine-protein digest;
+     historical source263 package not specified.
+-notes: Add the distinct Neopeptone ingredient using the existing exact non-obsolete
++notes: 'Add the distinct Neopeptone ingredient using the existing exact non-obsolete
+   MICRO0000177 term, alongside retained rejection of its aliases on Bacto_Peptone.
+   The manufacturer confirms a separate named enzymatic digest product; no species-specific
+   molecular structure or complete peptide composition is asserted. Source-qualified
+@@ -43,3 +54,10 @@
+   uncertainty is stated separately from whole-material identity. Occurrence statistics
+   count current exact proposed-label matches in the inspected CultureMech occurrence
+   table; no shared-identifier expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to DATABASE_MATCH; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

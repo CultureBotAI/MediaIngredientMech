@@ -1,0 +1,7 @@
+Independent chemical review is complete for all 67 assigned chemical/prior-root cases and 58 exact candidate payloads. The selected review is `main-review-v2.json`; `binding-audit-v2.json` and `final-readback-v1.json` bind the current cumulative decisions, proposals, evidence and source conclusions.
+
+The monohydrate completeness finding now has one bounded source-defined material for six NBRC occurrences. No CAS, structure, chloride stoichiometry, supplier or parent relationship was invented. Six initial skeptical findings remain immutable, including two corrected reviewer prose defects and the supplement enum defect. Root metadata amendments and the explicit historical/serialization hash index were rechecked.
+
+The reviewer is `/root/materials_research`, independent of the chemical primary author. The child `/root/materials_research/chemical_primary_crosscheck` checked 28 cases, 16 payload field sets and 48 source captures; its exact receipt and actual scope are retained. The parent read all complete candidate payloads and made the final adjudications. The separate materials lane authored by the parent receives no approval here.
+
+Completion releases no source, export, role, legacy mapping, cross-shard or owner-installation hold. HEPES, Wolfe and nominal ethanol candidates remain conditional family choices. Full integrated native publication and the independent final assembly check belong to the coordinator. No maintained data, Git, GitHub or export write was performed by this reviewer.

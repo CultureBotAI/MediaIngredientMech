@@ -1,0 +1,37 @@
+--- original/Meat_peptone.yaml
++++ successor/Meat_peptone.yaml
+@@ -42,6 +42,18 @@
+     came from the importer retired in #453, whose media_count counted a list truncated
+     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+     rows=194137 distinct_recipes=15257]'
++- timestamp: '2026-11-08T05:47:55.794551+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Preserve Meat peptone (BD Bacto) as a supplier-qualified preparation of
++    the existing meat-peptone owner. The enriched Bacto Peptone label is not promoted
++    to an exact catalog assignment, and Bacto_Peptone remains a separate comparison
++    owner. Exact isolated payload; no maintained write. All prior scientific/publication
++    holds preserved.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: UNDEFINED_MIXTURE
+ occurrence_statistics:
+   total_occurrences: 90
+@@ -53,3 +65,15 @@
+   - reference_type: COMPUTATIONAL_PREDICTION
+     reference_text: Inferred from curated media-role name pattern
+     curator_note: Provisional role from a curated name-pattern rule; review recommended.
++supplied_form:
++- name: Meat peptone (BD Bacto)
++  supplier: BD Bacto
++  notes: Literal TOGO M1331 material/manufacturer qualification; no catalog or tissue
++    species supplied.
++notes: Preserve Meat peptone (BD Bacto) as a supplier-qualified preparation of the
++  existing meat-peptone owner. The enriched Bacto Peptone label is not promoted to
++  an exact catalog assignment, and Bacto_Peptone remains a separate comparison owner.
++  Source-qualified proposal under issue1193. No ingredient roles, assay outcomes,
++  complete-owner support or release admission are approved. Preserve all frozen source
++  and owner holds; component uncertainty is stated separately from whole-material
++  identity.

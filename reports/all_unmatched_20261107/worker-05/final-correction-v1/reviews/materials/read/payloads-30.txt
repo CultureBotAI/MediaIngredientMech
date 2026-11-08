@@ -1,0 +1,560 @@
+
+PROPOSAL W05-FINAL-MAT-031
+{
+ "identifier": "MICRO:0001795",
+ "preferred_term": "Phytone",
+ "ontology_mapping": {
+  "ontology_id": "MICRO:0001795",
+  "ontology_label": "Phytone peptone",
+  "ontology_source": "MICRO",
+  "mapping_quality": "EXACT_MATCH",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0001795",
+    "notes": "Agent interpretation applying the specific nonobsolete Phytone peptone term to the authentic existing Phytone owner and MediaDive 125/362 source scope. The term names the BBL/Difco trademark and cites the manufacturer papaic soybean-meal digest definition. The erroneous Hordeum vulgare parenthetical is excluded; it is not accepted as a barley identity."
+   },
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+    "notes": "Manufacturer product descriptions and listings distinguish Phytone from Phytone UF, Difco Soytone and Bacto Soytone. This supports the bounded product interpretation, not an invariant component formula or product interchangeability."
+   },
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1212#issuecomment-6718503130",
+    "notes": "Reuse of the separately attributed bounded coordinator Phytone identity conclusion and three coupled Soy alias withdrawals. The combined TARGET-017 payload remains pending independent review; no other-worker histories, cases, counts or approval are imported."
+   }
+  ]
+ },
+ "synonyms": [
+  {
+   "synonym_text": "Phytone",
+   "synonym_type": "RAW_TEXT",
+   "source": "mim-queue"
+  },
+  {
+   "synonym_text": "Phytone peptone",
+   "synonym_type": "RAW_TEXT",
+   "source": "MediaDive125; correction1193"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 1089,
+  "media_count": 833
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-04-30T18:43:03.698454+00:00",
+   "curator": "audit_import_ingredients[mim-queue]",
+   "action": "CREATED_AS_UNMAPPED",
+   "changes": "Imported from mim-queue (source_id=mediadive.ingredient:362); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+   "new_status": "UNMAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-11T19:35:00Z",
+   "curator": "mediaingredientmech-agentic-curation",
+   "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+   "changes": "Classified as a plant-derived peptone/protein hydrolysate preparation and left unmapped pending product-level curation.",
+   "previous_status": "UNMAPPED",
+   "new_status": "UNMAPPED",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-07-05T00:00:00+00:00",
+   "curator": "cbclaw_followups_114",
+   "action": "MAPPED",
+   "changes": "Mapped residual peptone variant: identifier UNMAPPED_0488 -> FOODON:03315720 (vegetable protein, hydrolyzed), CLOSE_MATCH, mirroring sibling Soy_Peptone (Phytone = BD papaic soy-meal digest). mapping_status UNMAPPED -> MAPPED.",
+   "previous_status": "UNMAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.520193+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 0/0 -> 833/1089 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.839375+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Reconcile the missed existing Phytone owner. Give it a product-local identity, preserve its separately named Phytone peptone source alias and supplier description. FOODON03315720 is broader hydrolyzed vegetable protein, not this product; no transfer of833 generic/shared-ID recipe memberships is inferred from the old inflated counts. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Use specific MICRO:0001795 Phytone peptone for the authentic Phytone owner, superseding the unnecessary local fallback and the older broad FOODON identity. This reuses the bounded coordinator conclusion while preserving W05 source ownership and all historical events. Couple the correction to the three Phytone-bearing Soy_Peptone alias withdrawals. Exclude the term annotation’s erroneous Hordeum vulgare parenthetical. No count redistribution, whole-union approval, W10 case import or component formula is asserted. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "notes": "Previous published proposal scope, preserved as historical provenance and superseded where corrected below:\nImported from mim-queue (source_id=mediadive.ingredient:362); mapped 2026-07-05 to FOODON:03315720 (vegetable protein, hydrolyzed) as a soy-peptone variant (Phytone = BD papaic soy-meal digest). Reconcile the missed existing Phytone owner. Give it a product-local identity, preserve its separately named Phytone peptone source alias and supplier description. FOODON03315720 is broader hydrolyzed vegetable protein, not this product; no transfer of833 generic/shared-ID recipe memberships is inferred from the old inflated counts. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Use specific MICRO:0001795 Phytone peptone for the authentic Phytone owner, superseding the unnecessary local fallback and the older broad FOODON identity. This reuses the bounded coordinator conclusion while preserving W05 source ownership and all historical events. Couple the correction to the three Phytone-bearing Soy_Peptone alias withdrawals. Exclude the term annotation’s erroneous Hordeum vulgare parenthetical. No count redistribution, whole-union approval, W10 case import or component formula is asserted. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending.",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "supplied_form": [
+  {
+   "name": "Phytone peptone",
+   "supplier": "BD BBL",
+   "notes": "Official supplier technical guide describes enzymatic digest of soybean meal/flour; no precise catalog for source125."
+  }
+ ]
+}
+
+PROPOSAL W05-FINAL-MAT-032
+{
+ "identifier": "kgmicrobe.ingredient:soy_peptone",
+ "preferred_term": "Soy peptone",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:soy_peptone",
+  "ontology_label": "Soy peptone",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://mediadive.dsmz.de/rest/ingredient/75",
+    "notes": "Soy-derived complex digest material; FOODON03315720 includes other vegetable hydrolysates and is not its identity."
+   }
+  ]
+ },
+ "synonyms": [
+  {
+   "synonym_text": "Soy peptone",
+   "synonym_type": "EXACT_SYNONYM",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Soybean peptone",
+   "synonym_type": "EXACT_SYNONYM",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Peptone from soymeal",
+   "synonym_type": "EXACT_SYNONYM",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Phytone peptone",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Phytone peptone (BD-BBL)",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Properties: Undefined component",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "CultureMech"
+  },
+  {
+   "synonym_text": "Soytone",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "kg_microbe"
+  },
+  {
+   "synonym_text": "Bacto Soytone",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "merge_from_CHEBI:8150"
+  },
+  {
+   "synonym_text": "Peptic digest of soybean meal",
+   "synonym_type": "EXACT_SYNONYM",
+   "source": "CultureMech label unresolvable via label_index (#260)"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 1089,
+  "media_count": 833
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-04-18T04:19:36+00:00",
+   "curator": "foodon_promotion_cbclaw",
+   "action": "CREATED",
+   "changes": "Created new mapped entry for soy peptone family with FOODON:03315720 (vegetable protein, hydrolyzed).",
+   "new_status": "MAPPED",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-05-01T07:35:36.398993+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soy')",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:12:18.557853+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soy')",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-24T04:06:03.574164+00:00",
+   "curator": "fix_obsolete_chebi_mappings",
+   "action": "MERGED_FROM_DUPLICATES",
+   "changes": "Absorbed CHEBI:8150 (Bacto Soytone) — obsolete CHEBI term, Difco soy-peptone product. Synonyms unioned, occurrences summed (+47/+47)."
+  },
+  {
+   "timestamp": "2026-06-03T02:06:01.751447+00:00",
+   "curator": "infer_roles_from_name_lists",
+   "action": "ANNOTATED",
+   "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.80)"
+  },
+  {
+   "timestamp": "2026-07-20T00:00:00+00:00",
+   "curator": "migrate_media_roles_to_facets",
+   "action": "ANNOTATED",
+   "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE"
+  },
+  {
+   "timestamp": "2026-08-15T00:00:00+00:00",
+   "curator": "add_culturemech_gap_labels",
+   "action": "ADDED_SYNONYM_FOR_CULTUREMECH_GAP",
+   "changes": "Added 'Peptic digest of soybean meal' as a EXACT_SYNONYM (#260): the USP/compendial descriptor for soy peptone — the same product the record already lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`. Names the manufacturing process rather than a different substance. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: FOODON:03315720 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage.",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.519896+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 47/47 -> 833/1089 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-09-04T00:00:00+00:00",
+   "curator": "mediaingredientmech-agentic-curation",
+   "action": "ANNOTATED",
+   "changes": "Replaced computational nutritional_roles.PROTEIN_SOURCE evidence with a PMID/DOI citation for Soytone as a soybean-meal hydrolysate nitrogen source.",
+   "llm_assisted": true,
+   "llm_model": "gpt-5"
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.843673+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein identifier to a local material identity. Preserve source75 unspecified soy digest and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone or Phytone formula to it. Existing branded alias claims require separate complete-owner reconciliation before export. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Retire five branded or alternative identity aliases on the generic soy-digest owner. The three Phytone-bearing dispositions reuse the bounded coordinator conclusion in issue 1212 comment 6718503130. Separate review of the original kg_microbe Soytone token, Bacto Soytone merge history and manufacturer guide pages 13, 33 and 92 confirms distinct named products and processing; generic soy digest is not their exact product identity. Preserve raw texts, original sources, merge history, occurrence totals, all quarantine holds and the Bacto Soytone tombstone. This does not merge or select the competing W08/W10 owner deltas. Optionally classify the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy already excludes these texts; this is provenance classification only, with no resolver change, filter change or release blocker. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "merged": [
+  "CHEBI:8150"
+ ],
+ "nutritional_roles": [
+  {
+   "role": "PROTEIN_SOURCE",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "reference_text": "Kwon et al. 2000. Production of lactic acid by Lactobacillus rhamnosus with vitamin-supplemented soybean hydrolysate.",
+     "reference_type": "PEER_REVIEWED_PUBLICATION",
+     "doi": "10.1016/s0141-0229(99)00134-9",
+     "pmid": "10689079",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/10689079/",
+     "excerpt": "An enzyme-hydrolysate of soybean meal, Soytone",
+     "curator_note": "Kwon et al. evaluated Soytone as a complex nitrogen source for Lactobacillus rhamnosus lactic acid fermentation, directly supporting soy peptone as a peptide/proteinaceous nutrient source."
+    }
+   ]
+  }
+ ],
+ "notes": "Previous published proposal scope, preserved as historical provenance and superseded where corrected below:\nCorrect generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein identifier to a local material identity. Preserve source75 unspecified soy digest and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone or Phytone formula to it. Existing branded alias claims require separate complete-owner reconciliation before export. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Retire five branded or alternative identity aliases on the generic soy-digest owner. The three Phytone-bearing dispositions reuse the bounded coordinator conclusion in issue 1212 comment 6718503130. Separate review of the original kg_microbe Soytone token, Bacto Soytone merge history and manufacturer guide pages 13, 33 and 92 confirms distinct named products and processing; generic soy digest is not their exact product identity. Preserve raw texts, original sources, merge history, occurrence totals, all quarantine holds and the Bacto Soytone tombstone. This does not merge or select the competing W08/W10 owner deltas. Optionally classify the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy already excludes these texts; this is provenance classification only, with no resolver change, filter change or release blocker. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}
+
+PROPOSAL W05-FINAL-MAT-033
+{
+ "identifier": "kgmicrobe.ingredient:malt_extract_agar_~28oxoid~29",
+ "preferred_term": "Malt extract agar (Oxoid)",
+ "synonyms": [
+  {
+   "synonym_text": "Malt extract agar (Oxoid)",
+   "synonym_type": "RAW_TEXT",
+   "source": "extracted_from_malt_extract_yaml"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 1,
+  "media_count": 1
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-04-19T07:53:54.781350+00:00",
+   "curator": "audit_extract_complex_media_synonyms",
+   "action": "EXTRACTED_COMPLEX_MEDIUM",
+   "changes": "Extracted from Malt_Extract.yaml — 'Malt extract agar (Oxoid)' is a complete media formulation, not a synonym of the base ingredient. Pending curator re-mapping.",
+   "new_status": "UNMAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:12:19.716437+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Malt')",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:18:21.940742+00:00",
+   "curator": "resolve_unmapped_v2",
+   "action": "AUTO_UPGRADE_TO_FOODON",
+   "changes": "primary UNMAPPED_0135 → FOODON:03301056 (strategy=stem-match)",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-05T00:00:00+00:00",
+   "curator": "ingredient_mapping_review_2026_05_05",
+   "action": "CORRECTED",
+   "changes": "Changed identifier from FOODON:03301056 to kgmicrobe.ingredient:malt_extract_agar_~28oxoid~29 and retained FOODON:03301056 only as CLOSE_MATCH. Supplier-specific malt extract agar is a formulation, not identical to malt extract.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.519244+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.847763+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Reconcile the existing supplier-qualified Oxoid Malt Extract Agar owner, retaining its local identity and classifying it as NAMED_MEDIUM. Official manufacturer formulation supports malt extract30g, mycological peptone5g and agar15g per litre of50g/L reconstitution; quantitative entries explicitly describe that reconstitution, not dry-powder concentrations. Remove the unsupported whole-formulation closeMatch to its malt-extract component. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "notes": "Extracted from over-conflated Malt_Extract.yaml synonyms Supplier-specific malt extract agar is a formulation, not identical to malt extract. Reconcile the existing supplier-qualified Oxoid Malt Extract Agar owner, retaining its local identity and classifying it as NAMED_MEDIUM. Official manufacturer formulation supports malt extract30g, mycological peptone5g and agar15g per litre of50g/L reconstitution; quantitative entries explicitly describe that reconstitution, not dry-powder concentrations. Remove the unsupported whole-formulation closeMatch to its malt-extract component. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending.",
+ "ingredient_type": "NAMED_MEDIUM",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:malt_extract_agar_~28oxoid~29",
+  "ontology_label": "Malt extract agar (Oxoid)",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://www.thermofisher.com/order/catalog/product/CM0059B",
+    "notes": "Named whole formulation; no identity or closeMatch to the malt-extract constituent."
+   }
+  ]
+ },
+ "kg_microbe_node_id": "kgmicrobe.ingredient:malt_extract_agar_~28oxoid~29",
+ "supplied_form": [
+  {
+   "name": "Oxoid Malt Extract Agar (dehydrated)",
+   "supplier": "Oxoid",
+   "form": "powder",
+   "notes": "Manufacturer productCM0059B supports dry supplied product; source1712 gives Oxoid and50g dose but no exact package code."
+  }
+ ],
+ "components": [
+  {
+   "component_name": "Malt extract",
+   "reference_scope": "UNMAPPED",
+   "concentration_value": "30.0",
+   "concentration_unit": "G_PER_L"
+  },
+  {
+   "component_name": "Mycological peptone",
+   "reference_scope": "UNMAPPED",
+   "concentration_value": "5.0",
+   "concentration_unit": "G_PER_L"
+  },
+  {
+   "component_name": "Agar",
+   "reference_scope": "UNMAPPED",
+   "concentration_value": "15.0",
+   "concentration_unit": "G_PER_L"
+  }
+ ],
+ "component_assertion": {
+  "method": "RECIPE_TRANSCRIPTION",
+  "completeness": "COMPLETE",
+  "evidence": [
+   {
+    "evidence_type": "RECIPE_SOURCE",
+    "source": "https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-PO0182A-V4.pdf",
+    "notes": "Typical manufacturer formulation per litre after50g dry medium reconstitution. PO0182A is prepared plate presentation; formula corroboratesCM0059 family. Not an assertion that source1712 ordered plates. Water and optional acidification are not parts of the dry product."
+   }
+  ]
+ }
+}
+
+PROPOSAL W05-FINAL-MAT-034
+{
+ "identifier": "kgmicrobe.ingredient:tomato_extract",
+ "preferred_term": "Tomato extract",
+ "synonyms": [
+  {
+   "synonym_text": "Tomato extract",
+   "synonym_type": "RAW_TEXT",
+   "source": "mim-queue"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 0,
+  "media_count": 0
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-04-30T18:43:03.698454+00:00",
+   "curator": "audit_import_ingredients[mim-queue]",
+   "action": "CREATED_AS_UNMAPPED",
+   "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2371); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+   "new_status": "UNMAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:12:19.953852+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Tomato')",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-08-06T00:00:00+00:00",
+   "curator": "edison_literature_identity",
+   "action": "ANNOTATED",
+   "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Tomato_extract-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** a **tomato-derived complex mixture/extract used as a culture-medium supplement**, not a single chemical, salt, hydrate, buffer, or fixed named formulation. The current `ingredient_type: UNDEFINED_MIXTURE` is therefore appropriate. No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.850891+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Promote the existing Tomato_Extract owner to a local complex-material identity based on the actual MediaDive2371/310a source and both current source occurrences. Tomato extract is supplied as200ml input, separate from800ml water, calcium carbonate and agar in the receiving medium. Exact extraction method and concentration remain unknown and are not components of the whole extract. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "previous_status": "UNMAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2371); no CAS-RN or CHEBI/NCIT match. Curator review needed. Promote the existing Tomato_Extract owner to a local complex-material identity based on the actual MediaDive2371/310a source and both current source occurrences. Tomato extract is supplied as200ml input, separate from800ml water, calcium carbonate and agar in the receiving medium. Exact extraction method and concentration remain unknown and are not components of the whole extract. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending.",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:tomato_extract",
+  "ontology_label": "Tomato extract",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://mediadive.dsmz.de/rest/medium/310a",
+    "notes": "Defined tomato-derived extract input; variable composition does not require a molecular grounding or block a local complex-material identity."
+   }
+  ]
+ }
+}
+
+PROPOSAL W05-FINAL-MAT-035
+{
+ "preferred_term": "Universal peptone (Merck)",
+ "mapping_status": "MAPPED",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "synonyms": [
+  {
+   "synonym_text": "Universal peptone",
+   "synonym_type": "RAW_TEXT",
+   "source": "https://mediadive.dsmz.de/rest/ingredient/341"
+  }
+ ],
+ "occurrence_statistics": {
+  "total_occurrences": 4,
+  "media_count": 4
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-11-08T05:47:55.852755+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CREATED",
+   "changes": "Add Merck Universal peptone as a positively identified manufacturer product family, alongside retained rejection of its Bacto Peptone aliases. Merck Universal M66 combines casein, meat and soy peptones, but the historical MediaDive341 row lacks a catalog, so noM66 formula or107043 catalog is imposed on that source. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "identifier": "kgmicrobe.ingredient:merck_universal_peptone",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:merck_universal_peptone",
+  "ontology_label": "Universal peptone (Merck)",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://mediadive.dsmz.de/rest/ingredient/341",
+    "notes": "Add Merck Universal peptone as a positively identified manufacturer product family, alongside retained rejection of its Bacto Peptone aliases. Merck Universal M66 combines casein, meat and soy peptones, but the historical MediaDive341 row lacks a catalog, so noM66 formula or107043 catalog is imposed on that source."
+   }
+  ]
+ },
+ "supplied_form": [
+  {
+   "name": "Universal peptone",
+   "supplier": "Merck",
+   "notes": "MediaDive341 explicitly names Merck; exact historical catalog/formulation not given."
+  }
+ ],
+ "notes": "Add Merck Universal peptone as a positively identified manufacturer product family, alongside retained rejection of its Bacto Peptone aliases. Merck Universal M66 combines casein, meat and soy peptones, but the historical MediaDive341 row lacks a catalog, so noM66 formula or107043 catalog is imposed on that source. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity. Occurrence statistics count current exact proposed-label matches in the inspected CultureMech occurrence table; no shared-identifier expansion or newly invented recipe membership.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}

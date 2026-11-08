@@ -1,0 +1,73 @@
+--- original/Tomato_Extract.yaml
++++ successor/Tomato_Extract.yaml
+@@ -1,10 +1,10 @@
+-identifier: UNMAPPED_0545
++identifier: kgmicrobe.ingredient:tomato_extract
+ preferred_term: Tomato extract
+ synonyms:
+ - synonym_text: Tomato extract
+   synonym_type: RAW_TEXT
+   source: mim-queue
+-mapping_status: UNMAPPED
++mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 0
+   media_count: 0
+@@ -35,6 +35,55 @@
+     that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+     is a curator''s to accept or reject.'
+   llm_assisted: true
+-notes: Imported from mim-queue (source_id=mediadive.ingredient:2371); no CAS-RN or
+-  CHEBI/NCIT match. Curator review needed.
++- timestamp: '2026-11-08T05:47:55.850891+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Promote the existing Tomato_Extract owner to a local complex-material identity
++    based on the actual MediaDive2371/310a source and both current source occurrences.
++    Tomato extract is supplied as200ml input, separate from800ml water, calcium carbonate
++    and agar in the receiving medium. Exact extraction method and concentration remain
++    unknown and are not components of the whole extract. Exact isolated payload; no
++    maintained write. All prior scientific/publication holds preserved.
++  previous_status: UNMAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2371); no CAS-RN or
++  CHEBI/NCIT match. Curator review needed. Promote the existing Tomato_Extract owner
++  to a local complex-material identity based on the actual MediaDive2371/310a source
++  and both current source occurrences. Tomato extract is supplied as200ml input, separate
++  from800ml water, calcium carbonate and agar in the receiving medium. Exact extraction
++  method and concentration remain unknown and are not components of the whole extract.
++  Source-qualified proposal under issue1193. No ingredient roles, assay outcomes,
++  complete-owner support or release admission are approved. Preserve all frozen source
++  and owner holds; component uncertainty is stated separately from whole-material
++  identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'
+ ingredient_type: UNDEFINED_MIXTURE
++ontology_mapping:
++  ontology_id: kgmicrobe.ingredient:tomato_extract
++  ontology_label: Tomato extract
++  ontology_source: kgmicrobe.ingredient
++  mapping_quality: FALLBACK_REGISTRY
++  evidence:
++  - evidence_type: LLM_SUGGESTION
++    source: https://mediadive.dsmz.de/rest/medium/310a
++    notes: Defined tomato-derived extract input; variable composition does not require
++      a molecular grounding or block a local complex-material identity.

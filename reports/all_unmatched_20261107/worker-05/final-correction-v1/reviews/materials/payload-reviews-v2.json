@@ -1,0 +1,2871 @@
+{
+  "reviewer": "Codex GPT-6 /root/media_research",
+  "at": "2026-11-08T07:52:36.241788+00:00",
+  "payload_reviews": [
+    {
+      "proposal_id": "W05-FINAL-MAT-001",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-001",
+        "predecessor_id": "MATERIALS-C1193-bacto-aliases",
+        "case_ids": [
+          "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+          "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d",
+          "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6"
+        ],
+        "owner_path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+        "before_sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed-v2/Bacto_Peptone.yaml",
+          "sha256": "90d4b4f04e9619f91b8a36af0ea737ce6b43cc6b291b5939854f57f94dd56896"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Bacto_Peptone.yaml",
+          "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b"
+        }
+      },
+      "whole_payload_canonical_sha256": "69b333bb45f314ed7641772c414971e4d07c4423265701175bccfe9e80c9a629",
+      "assessment": "Fish peptone (Fluka) cannot identify Bacto Peptone: the inspected Bacto specification names bovine and porcine protein, and MICRO names mammalian peptone. The exact source token is preserved as rejected provenance. The prior Neopeptone, Universal and Oxoid exclusions remain. Inherited generic aliases, shared counts and whole-owner claims remain held.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-f1265bc5398a7f56",
+          "source_index": 284,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-0357ad5e73d4f9f6.txt",
+            "sha256": "ecfed6455cdbdde1d10f6ff236227bb1a0e5b09bc319d0bd4d9a61e0ebc2d9d6"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/211677",
+          "original_accessed_at": "2026-11-08T05:09:36.585660+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-31a954364e3e6346",
+          "source_index": 288,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-246381453c47ddd7.txt",
+            "sha256": "ef45aa186438f91d015280171fde8ccb25740a50cc6f2c6e848de6aad3339b31"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMICRO_0000178",
+          "original_accessed_at": "2026-11-08T05:09:55.276226+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-MERCK-UNIVERSAL",
+          "source_index": 322,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/final-web-capture.json",
+            "sha256": "341dbd72a89e484abdf4b6aa4a3413f0e473cb73631cfe3e6e0b1a517d7c822a"
+          },
+          "url": "https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/135/735/107043en-ms.pdf",
+          "original_accessed_at": "2026-11-08T05:15:26Z",
+          "locator": "Merck107043 Technical Data Sheet, page0 Description lines5–11"
+        },
+        {
+          "evidence_id": "MATERIALS-OLS-NEOPEPTONE-TERM",
+          "source_index": 325,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/ols-neopeptone-term.json",
+            "sha256": "0e3ebc5a1c5d82f5eaa4cb33eb337c7a8a0ab12e131a97ecc9d2f0504b44d9a6"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMICRO_0000177",
+          "original_accessed_at": "2026-11-08T05:10:20.767128+00:00",
+          "locator": "MICRO0000177 preferred label and non-obsolete term"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/synonyms"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-002",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-002",
+        "predecessor_id": "MATERIALS-P-proteose-numbered",
+        "case_ids": [
+          "CM_NAME:84db9e493f1fb3ac898fcfbbd0d0f1b368fac84a0db41896778837900538b280",
+          "KG_CASE:1f3c561b85a411dc613e467f6059f58e80155619c163091ef701a937636f3f8b"
+        ],
+        "owner_path": "data/ingredients/mapped/Proteose_Peptone.yaml",
+        "before_sha256": "c0541faf7f493f617c3f92f8082a1aab6052aa3fa392f802534e201b50ace34e",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "materials/proposed/Proteose_Peptone.yaml",
+          "sha256": "42cba74a4bde864a4deeaa166c9d19d72d4b916d65909bee360a292b2e4b3306"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Proteose_Peptone.yaml",
+          "sha256": "42cba74a4bde864a4deeaa166c9d19d72d4b916d65909bee360a292b2e4b3306"
+        }
+      },
+      "whole_payload_canonical_sha256": "a063bb5e51895832e11bbe79ca815ee7182b98dc4322c36585105f309768c55f",
+      "assessment": "The manufacturer distinguishes numbered Proteose Peptone No. 3 from unnumbered Proteose Peptone. The eight numbered aliases are retained as nonresolving provenance; the existing unnumbered owner is not merged. Other inherited digest and role assertions are outside this bounded correction.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-36ff1efb646dbe4f",
+          "source_index": 283,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-e350679e721cdbe8.txt",
+            "sha256": "fcfec5c1053be6a45d20265324992b49536a3a546c9578e2b6f79d62aae15286"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/211693",
+          "original_accessed_at": "2026-11-08T05:09:35.913345+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-5f835024e55d4d23",
+          "source_index": 289,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-9d441731b9f239bc.txt",
+            "sha256": "b3a39a531c5ab5508a297228d13ba81c99899b041d5292a9d668eded939bfe73"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMICRO_0000180",
+          "original_accessed_at": "2026-11-08T05:09:57.534137+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-003",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-003",
+        "predecessor_id": "MATERIALS-P-sucrose-salicin",
+        "case_ids": [
+          "KG_CASE:b8166e7eb0adf0ea5d2b1f6d955b897274855bffa29afac369ba71c767ae402e"
+        ],
+        "owner_path": "data/ingredients/mapped/Sucrose.yaml",
+        "before_sha256": "36d3205ecc78e87cb9e258f55e7e85c7a6e0daab32ae7a916c674acc327189e1",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "materials/proposed/Sucrose.yaml",
+          "sha256": "90d255cebc818220c9e8a94e28a64bb20e114aa30b8f16818951014c83c9fe10"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Sucrose.yaml",
+          "sha256": "90d255cebc818220c9e8a94e28a64bb20e114aa30b8f16818951014c83c9fe10"
+        }
+      },
+      "whole_payload_canonical_sha256": "239895ab5b724cae93b85f5e50a3332944c7e4f6ce59911ee41c2e8a2da0c150",
+      "assessment": "Sucrose CHEBI:17992 and salicin CHEBI:17814 have different structures. Retiring d-salicin preserves its raw provenance and does not change sucrose identity or the separate D-Sucrose tombstone. This existing exact sucrose identity can support the stock component without approving other owner claims.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-dbb86d8272ad67d6",
+          "source_index": 287,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-260dd7b43c6e9e78.txt",
+            "sha256": "2799989b1bdab72c97895ef42660e3e37cf6e9324fcd50fb7e0c637cf64cee63"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_17992",
+          "original_accessed_at": "2026-11-08T05:09:44.098763+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-8a704bd734bb4195",
+          "source_index": 319,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-55caa1c5f4f8a2df.txt",
+            "sha256": "63b2294c99cbc2e0ce7c59f17781dd9f929cecf94d6c0e12310eae38c3afea0e"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/search?q=salicin&ontology=chebi&exact=true&rows=10",
+          "original_accessed_at": "2026-11-08T05:13:10.645110+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-004",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-004",
+        "predecessor_id": "MATERIALS-C1193-Leafy_Soil_TOGO_M230",
+        "case_ids": [
+          "CM_NAME:0fe52708062ae5b7deb6d1b1fbf3b9389f2425e3d2c3ab023455ee22cd6a7ee0"
+        ],
+        "owner_path": "data/ingredients/mapped/Leafy_Soil_TOGO_M230.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Leafy_Soil_TOGO_M230.yaml",
+          "sha256": "05075ac0395663eaeddc98b49a74d26803e9217028343254da52feb981d19e85"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Leafy_Soil_TOGO_M230.yaml",
+          "sha256": "43ccd63efe278e386fd56a9c6f829bb1e0924637bf13911a27368819f1ba005c"
+        }
+      },
+      "whole_payload_canonical_sha256": "26de68d39ee43b3cb5786bc2c0d8e7d041b0a31bfe303d71251c9ee55485b115",
+      "assessment": "TOGO M230 identifies leafy soil as an input to an equal-volume tap-water extraction, boiled two hours and clarified. The owner denotes starting soil, not the processed aqueous extract. Plant/mineral composition remains unknown and is not needed to preserve that material boundary.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-fdee808656b5b136",
+          "source_index": 193,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-d55ed0b231dcdcbe.txt",
+            "sha256": "dedc0b946551c3f90b5918862099de5873180768cc6f05d99330ea632b6a1d7e"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M230",
+          "original_accessed_at": "2026-11-08T05:07:28.504555+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-005",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-005",
+        "predecessor_id": "MATERIALS-C1193-Liver_Extract_JCM1474",
+        "case_ids": [
+          "CM_NAME:1b16e5ae999e6118bb1c96008e3b5f00670eea865b598e7795dac97e20af78c5"
+        ],
+        "owner_path": "data/ingredients/mapped/Liver_Extract_JCM1474.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed-v2/Liver_Extract_JCM1474.yaml",
+          "sha256": "abfd3fd673a05d43a0f5e324a3929367b769a642d4d7bedb9f95827b25992134"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Liver_Extract_JCM1474.yaml",
+          "sha256": "d9db17bdc6793748b13e6a8e1cebba209867c5f5d1f9fdb722a00ad9f0d487ec"
+        }
+      },
+      "whole_payload_canonical_sha256": "7b1397e4d4c81b51b92c31ad11bfd06d3cf4005ae97af6d29c7f807d07c67d4c",
+      "assessment": "JCM1474 specifies 10 g liver powder in 170 ml water, 50–60 C for one hour, boiling five minutes, pH 7.2 and filtration. The 150 ml medium addition is a dose of the extract. Input masses do not establish retained component quantities after filtration; the payload preserves that distinction.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-ed99592f8f0d0d59",
+          "source_index": 194,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-de109408d7ecdb07.txt",
+            "sha256": "fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474",
+          "original_accessed_at": "2026-11-08T05:07:28.504730+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-006",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-006",
+        "predecessor_id": "MATERIALS-C1193-wako-meat",
+        "case_ids": [
+          "CM_NAME:22af65783de61746783556d239d97436d8d51f1f11dd117880152915e51e0f39"
+        ],
+        "owner_path": "data/ingredients/mapped/Meat_Extract.yaml",
+        "before_sha256": "d5865b8096c2ef24bf18ed5f79f61982f25853d18195f5e141dc9d29bd930537",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Meat_Extract.yaml",
+          "sha256": "66bf656df69b98de0df64d792b9fe011ace62f2303691ed91dfcfe5020a7b673"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Meat_Extract.yaml",
+          "sha256": "66bf656df69b98de0df64d792b9fe011ace62f2303691ed91dfcfe5020a7b673"
+        }
+      },
+      "whole_payload_canonical_sha256": "416cd63906e2a878024cf9e1f3c03eee7e13dee1e7df3e3d1776dc1c0633e5d0",
+      "assessment": "TOGO M2843 supports the literal Wako-qualified meat extract source. The Wako-hosted document is a Biokar product document, so it is only comparative support for an extract class and not proof of a historical Wako catalog, species or identity with MP enrichment. The final payload makes no such catalog assignment.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-2f159c6cd7c6e36c",
+          "source_index": 195,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-fd5409f939b79939.txt",
+            "sha256": "572f3d1a3f4993402d630d4548616ddc5caf9953a529b1f983c695da9fe90175"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2843",
+          "original_accessed_at": "2026-11-08T05:07:28.506677+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-WAKO-MEAT",
+          "source_index": 410,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/wako-meat.pdf",
+            "sha256": "cb758e0589a58f4b3a842779e91e3db376040921649685a75811130950357919"
+          },
+          "url": "https://labchem-wako.fujifilm.com/jp/product_data/docs/03700473_doc02.pdf",
+          "original_accessed_at": "2026-11-08T05:39:04.347904+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-007",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-007",
+        "predecessor_id": "MATERIALS-C1193-albumin-forms",
+        "case_ids": [
+          "CM_NAME:2701602263ac243d10081e0843627a646720bf7455077968f495cb41466d217a",
+          "CM_NAME:3922dd30207b7e9f6eae52095a5eef697923a50484871e8f52aaa5f0722685e5",
+          "CM_NAME:8ba1df295abb60b7fb8cd7e12f80b861e3d2e7634dd64e3bfb7e88df0db0fd08",
+          "CM_NAME:f163ec7f355f01963af1b99f566d50cb82749e167f8cce8916145945ad4a2084",
+          "CM_NAME:f50ba478dda27e9481509c871585ed5a3aaeec815eaf4c521d1a58e791e928e1"
+        ],
+        "owner_path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+        "before_sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+          "sha256": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Bovine_Serum_Albumin.yaml",
+          "sha256": "7b2486ed1f872756849782f36dd946b78c057234e08c90f9bf72e124ab6fa41a"
+        }
+      },
+      "whole_payload_canonical_sha256": "941c8805b2ec366b503752e94b11dde80acd5365ea0fd1c3e718443f5da41cf4",
+      "assessment": "Fraction V is supported only where the assigned recipe actually says it. ADC/OADC input masses are not final-medium concentrations; unnumbered Fraction sources do not prove V. Inherited commercial catalogs and role claims remain unapproved. Source counts are unchanged.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-a08fb341926e1d0a",
+          "source_index": 196,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-ba3ffc303010f844.txt",
+            "sha256": "2101a2efa3d423b6fcdf25342963151d3367f0b1e9b35ea3793e08e3009f5d4f"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2879",
+          "original_accessed_at": "2026-11-08T05:07:28.508424+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-ee722a18f3e26939",
+          "source_index": 197,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-b15d00f81f2ec90d.txt",
+            "sha256": "55d8d62aacd4bbaf10029fe14bac41ede7f1327d13e54862bb48848b6713edc2"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2880",
+          "original_accessed_at": "2026-11-08T05:07:29.136136+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-b5dd8b92f4e4ea2c",
+          "source_index": 200,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-f08497804f472543.txt",
+            "sha256": "6502ae3706efdaa157e3fb3398082d183daf46a1f968d39f51bddbfc7497a40a"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1946",
+          "original_accessed_at": "2026-11-08T05:07:34.962621+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-776733f8ca9ff0a9",
+          "source_index": 242,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-3ab9c4e8e0d2cb33.txt",
+            "sha256": "84717c209dda5e9fc18a4ee5b1456ee655f243d31013b41b0d118ff17d03bdb9"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M194",
+          "original_accessed_at": "2026-11-08T05:08:10.564549+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-4b8a987a15a1852d",
+          "source_index": 253,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-06facadf4d42d935.txt",
+            "sha256": "04b2f3a2ed27accf217143d8435e18ccd9d58450ffb5810d3d335ea96d363f0f"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2407",
+          "original_accessed_at": "2026-11-08T05:08:39.260340+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-ARCHIVE-M2400",
+          "source_index": 355,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/archived-togo-five-records.json",
+            "sha256": "4d106a93d5f4b0afb7da87d52d75fd69e85202d60bfdd68071e6fe51384c4e26"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2400",
+          "original_accessed_at": "2026-01-24T23:51:50Z",
+          "locator": "Archived API record M2400, original array_index=1589"
+        },
+        {
+          "evidence_id": "MATERIALS-ARCHIVE-M2401",
+          "source_index": 356,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/archived-togo-five-records.json",
+            "sha256": "4d106a93d5f4b0afb7da87d52d75fd69e85202d60bfdd68071e6fe51384c4e26"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2401",
+          "original_accessed_at": "2026-01-24T23:51:50Z",
+          "locator": "Archived API record M2401, original array_index=1590"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-008",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-008",
+        "predecessor_id": "MATERIALS-C1193-Pooled_Sterile_Human_Urine",
+        "case_ids": [
+          "CM_NAME:30d34c021d1f4fa8a93bf0858408499f9169b9d0d86936243ff6df038503e6a3"
+        ],
+        "owner_path": "data/ingredients/mapped/Pooled_Sterile_Human_Urine.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed-v2/Pooled_Sterile_Human_Urine.yaml",
+          "sha256": "a6caf01f3c527084076b0ae88e1363689b48dda3303579d5c0b109b8fdabee0a"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Pooled_Sterile_Human_Urine.yaml",
+          "sha256": "5183ad4c51592f334e166d6803f8c14c345780ddec368c8d27a8aac2d691d19e"
+        }
+      },
+      "whole_payload_canonical_sha256": "94f0c94e613f309c3c7f67daf6379ee3bcd96dfa0486d9167bb38bc03edc23e7",
+      "assessment": "TOGO M2920 explicitly supports pooled sterile human urine. Neither pooling nor sterility gives a donor composition or a sterilization method. The proposed source preparation retains these unknowns and does not add unqualified urine as a globally resolving identity.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-111142b9178c5d94",
+          "source_index": 198,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-cd4060ff16744150.txt",
+            "sha256": "32eb1ef77edfce9d79ead8212b9fabc5b9e36e997cbf9e4ea5d38ea81fe3fd54"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2920",
+          "original_accessed_at": "2026-11-08T05:07:29.147647+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-009",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-009",
+        "predecessor_id": "MATERIALS-C1193-Oxoid_Peptonised_Milk",
+        "case_ids": [
+          "CM_NAME:335a87f048ecd16a7457dc0f6e336bb859ba0f1492549b5b2b32cb175c050990"
+        ],
+        "owner_path": "data/ingredients/mapped/Oxoid_Peptonised_Milk.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Oxoid_Peptonised_Milk.yaml",
+          "sha256": "f2fc2d30f56128317ccaa1490ed25d9fc3f57824773ff3fb0929e9455805a561"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Oxoid_Peptonised_Milk.yaml",
+          "sha256": "ab4523d1348db6ff1ccb6f056bb01091753b14cbb52c2e11a5b5a721e9f7b45f"
+        }
+      },
+      "whole_payload_canonical_sha256": "062c3d3d66ad75c1346b386416d42f626845a2b4fc49f2618f51698d8c8bbbf3",
+      "assessment": "The official Oxoid LP0032 description supports a powdered pancreatic digest of skimmed milk. The historical source names the product but no pack size; LP0032J is an orderable comparator, not an imposed historical pack. Skimmed milk is not asserted as an unchanged component after digestion.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-ad966dfbecc9bd77",
+          "source_index": 199,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-6deb6e250118e102.txt",
+            "sha256": "f5e369b03b6e7713c81602c3036ad4002a4073661affba73f49286d9c9897dcd"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1781",
+          "original_accessed_at": "2026-11-08T05:07:34.566569+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-4d7e2a0d4b04b74e",
+          "source_index": 312,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-8d90ea5749f27ee1.txt",
+            "sha256": "70d305921d069e2acce1b646217395d7fc46f9091ed106a619f1336ef73c4c7f"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/LP0032J",
+          "original_accessed_at": "2026-11-08T05:13:09.902458+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-OXOID-PEPTONIZED",
+          "source_index": 406,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/oxoid-peptonized.txt",
+            "sha256": "d070458d2b2cfa6c885cfd236c536c06d64d7bc7d4042c2837f25b9f35c6b0c5"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/LP0032J",
+          "original_accessed_at": "2026-11-08T05:39:04.221522+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-010",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-010",
+        "predecessor_id": "MATERIALS-C1193-bd-meat-peptone",
+        "case_ids": [
+          "CM_NAME:3b9d4adc161114f04e0a67038e19bee6895dcd2ad1a4ba1853c30be222480f16"
+        ],
+        "owner_path": "data/ingredients/mapped/Meat_peptone.yaml",
+        "before_sha256": "7156098dfa9cfb64185d3d9d27d8e3e150ba1440fee24438ac6192726438c966",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Meat_peptone.yaml",
+          "sha256": "6f9c93228a60fcbc6bf9c91475fe9609a2f728469866caeff8b86ae68aebb871"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Meat_peptone.yaml",
+          "sha256": "6f9c93228a60fcbc6bf9c91475fe9609a2f728469866caeff8b86ae68aebb871"
+        }
+      },
+      "whole_payload_canonical_sha256": "ad3a68913ab70fdc69f1341374495ae9a9f81b6e0e188c1d370ebd19259d6bf9",
+      "assessment": "TOGO M1331 supports the source BD/Bacto meat-peptone wording. Its GMO enrichment cannot by itself select an exact manufacturer catalog or prove identity with every generic meat peptone. The supplied-form addition is bounded to the literal source and retains the existing owner holds.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-d443798c810a6ca4",
+          "source_index": 202,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-891f08fd41479b55.txt",
+            "sha256": "ca5ac5fbb5841e8ed9b753b0449fc25d742ec594b11b724c58e862c9e2a3f015"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1331",
+          "original_accessed_at": "2026-11-08T05:07:35.718155+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-011",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-011",
+        "predecessor_id": "MATERIALS-C1193-Chrysalis_Extract_NBRC907",
+        "case_ids": [
+          "CM_NAME:515bef06cadb512bd069ba86c5bcb5d3db474cd7b9a1efcdf63fe2aa635d9ec1"
+        ],
+        "owner_path": "data/ingredients/mapped/Chrysalis_Extract_NBRC907.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Chrysalis_Extract_NBRC907.yaml",
+          "sha256": "4a51ebf8d8345a13e5ed75082a9e9f2fa9104e24e8b47eb1ee320b5740745a89"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Chrysalis_Extract_NBRC907.yaml",
+          "sha256": "1fb58b9e1379f3b1d891ac04e14012a4a4c44b2ffdf068fc733898c2b6d486db"
+        }
+      },
+      "whole_payload_canonical_sha256": "5f1949637dc0a247b31fa03f3c6d03212ccce47a963558b949d914bf4251caca",
+      "assessment": "NBRC907 independently lists chrysalis extract, yeast extract and peptone. A source-defined chrysalis extract is supported, but insect species, extraction conditions and molecular constituents are not disclosed. The payload preserves rather than fills those gaps.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-6aba9afd57f88408",
+          "source_index": 204,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-e0f8f926994925f1.txt",
+            "sha256": "07f64d1e563d543148a2bf84fdf360dc997a79fe1e94e02620cbab0c49cb11c0"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1701",
+          "original_accessed_at": "2026-11-08T05:07:38.225547+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-NBRC907",
+          "source_index": 420,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/nbrc907.txt",
+            "sha256": "46c214d7e9a986053d3c4c1c16dd52fec9b7e4c92b0a0d933129bdd014190e5e"
+          },
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=907",
+          "original_accessed_at": "2026-11-08T05:39:05.467611+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-012",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-012",
+        "predecessor_id": "MATERIALS-C1193-Gelatin_Peptone",
+        "case_ids": [
+          "CM_NAME:53b8941a0bf23ff8f030b7e59dfe94479a1855d13805f0ad5cfb7eb6c7d0febc"
+        ],
+        "owner_path": "data/ingredients/mapped/Gelatin_Peptone.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Gelatin_Peptone.yaml",
+          "sha256": "a45ded441875089930129634d9911d91612d50f077dc175c5c14b5cdf7932ab6"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Gelatin_Peptone.yaml",
+          "sha256": "5398f55a9312b2f8b9364b2926e8c446455210c6cf1ab9770f779d2314727fd0"
+        }
+      },
+      "whole_payload_canonical_sha256": "5bb079bbe37d7aaf64580493c93e34642f8587c831cbfa3e0f29084ce6302cc0",
+      "assessment": "TOGO M2894 lists gelatin peptone separately from meat and casein peptones. The named hydrolysate identity is supported; gelatin animal species, enzyme and catalog are not established. No parent protein or neighboring peptone is used as exact identity.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-9d7f8ec7e879a39c",
+          "source_index": 207,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-3cf23e6a599004fe.txt",
+            "sha256": "e3947368a9ff4c0aac9b665066bc10227759e076421335106431896e825077e2"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2894",
+          "original_accessed_at": "2026-11-08T05:07:45.018377+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-013",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-013",
+        "predecessor_id": "MATERIALS-C1193-whole-fat-milk",
+        "case_ids": [
+          "CM_NAME:56ef77be2591186857f4a92ab254f6b17b61fd68f51aab076ddb272d85541414",
+          "CM_NAME:5eb72ef93fbc049ada54a5c189b8954ac6dfb31689df054f7c154201f5003bd8",
+          "KG_CASE:bf12c276a4114613ceac1a21fce5c8644d2458a194dc5c61117cbf58f270d0fe"
+        ],
+        "owner_path": "data/ingredients/mapped/Cows_Milk.yaml",
+        "before_sha256": "f5061d3f14bacbbba752acdaf7d4b558abcf4a86070759d54c7d61d61d0cfacb",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Cows_Milk.yaml",
+          "sha256": "9f6ab0e8158c4c2a37820d6c15d5bac684c51e0e49bf2d31e952e81dab0f4bdb"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Cows_Milk.yaml",
+          "sha256": "9f6ab0e8158c4c2a37820d6c15d5bac684c51e0e49bf2d31e952e81dab0f4bdb"
+        }
+      },
+      "whole_payload_canonical_sha256": "03641df4cdbb919aebd1858ecffd80727c74a0aca971d3edc28feab04883688e",
+      "assessment": "JCM153 and NBRC1390 specify whole-fat cow milk, including a 10 ml source dose. The whole-fat supplied-form qualifier is confined to those sources and not propagated to every generic cow-milk occurrence or interpreted as g/L. The older lexical grounding and roles remain held.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-514a198f4e1b20e0",
+          "source_index": 208,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-f52823be97301bdc.txt",
+            "sha256": "ee8cc5274371d84b55afc5f47f86fb1bc012969b6945d16413c2c3984a22a1d7"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1715",
+          "original_accessed_at": "2026-11-08T05:07:45.393845+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-fe0b420bc77ecff9",
+          "source_index": 226,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-c078649a14f3c800.txt",
+            "sha256": "5533e1f6183fb1cd762b0177a695cdd6d6d6d3312fe6ac1056bd6b1a77f0e8f5"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=153",
+          "original_accessed_at": "2026-11-08T05:07:51.294963+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-853f01c1a7ceb7f0",
+          "source_index": 305,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-0cce80479f3771a1.txt",
+            "sha256": "d348644cbe71263980103dbcdbac8460240c661cdd87483f0f43f01e644d6341"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/1659",
+          "original_accessed_at": "2026-11-08T05:13:09.355731+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-014",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-014",
+        "predecessor_id": "MATERIALS-C1193-CrystalSea_Marine_Mix",
+        "case_ids": [
+          "CM_NAME:61bf9d1487f362a7d4680e729a189bc1e7d6285f5d549df92875d0fec8e714f9"
+        ],
+        "owner_path": "data/ingredients/mapped/CrystalSea_Marine_Mix.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/CrystalSea_Marine_Mix.yaml",
+          "sha256": "453c3f76cda6f6cc4b98c65307e78f3d3ae71f88a73b7dddb9bab468a7d840af"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/CrystalSea_Marine_Mix.yaml",
+          "sha256": "f5657f5403f14a3e23e9503086eade85f05c36ee5cf32c92b396c8d8c52c319c"
+        }
+      },
+      "whole_payload_canonical_sha256": "7cbcb1a7b133781775c6fc42cb6cf71f01c646ac45d92d9b25882ac94e1523a3",
+      "assessment": "The historical CrystalSea source states the manufacturer product family but not regular versus Bioassay Laboratory. Current regular-product thiosulfate information is comparative, not a historical ingredient assertion. The 3% source dose has no invented percentage basis.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-f1a5d8ddc70f4629",
+          "source_index": 228,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2bc6f1af7d4b0f09.txt",
+            "sha256": "b695e4ddebbf0feb855544bfbc0da75da38e0b67980a0f6ff2ff90b9d08f030a"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2315",
+          "original_accessed_at": "2026-11-08T05:07:51.853575+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-CRYSTALSEA",
+          "source_index": 405,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/crystalsea.txt",
+            "sha256": "17d6128b86e94ce4f8ff82b112b4179ecbb92e6f4c3260ed8148cbd6cc91b081"
+          },
+          "url": "https://meisalt.com/crystal-sea-marinemix/",
+          "original_accessed_at": "2026-11-08T05:39:04.221462+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-015",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-015",
+        "predecessor_id": "MATERIALS-C1193-bacto-panton",
+        "case_ids": [
+          "CM_NAME:65ba1fc20606be8ad43f872285efdae017de70014520c2ec7bdd073315cb412c"
+        ],
+        "owner_path": "data/ingredients/unmapped/Bacto_Panton.yaml",
+        "before_sha256": "d7e24fc0a62e7f08a456cc74453819484e99c11037dd59a494710e52ae70d3a7",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Bacto_Panton.yaml",
+          "sha256": "2b57b73952c7f2786ebcce6eaa953d83ab161484c142ebf3e08f9fd0ecaf28dd"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Bacto_Panton.yaml",
+          "sha256": "2b57b73952c7f2786ebcce6eaa953d83ab161484c142ebf3e08f9fd0ecaf28dd"
+        }
+      },
+      "whole_payload_canonical_sha256": "40b798e26fab400b1cf2f0823b60c26befbb09d6975b9356fad30b7ff62dde8e",
+      "assessment": "DSMZ687 separately names Bacto Panton and Bacto Bitone at 10 g each. The existing Panton placeholder is promoted as the named preparation without spelling normalization to a guessed product. Unknown historical supplier spelling does not authorize collapsing the two separate entries.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-96425d85290b1d9c",
+          "source_index": 229,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-0823e183226d36fd.pdf",
+            "sha256": "bf4e44fb1f8b3bf9f1e5c0f8ee4337f9f68e618a14f8878ff0432eb8fb70579f"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium687.pdf",
+          "original_accessed_at": "2026-11-08T05:07:52.074480+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-MEDIADIVE2134",
+          "source_index": 416,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/mediadive2134.txt",
+            "sha256": "727d6cca0cfc3bf3f9893ac1d556cadac93be80879330c6eec1157303eaae426"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/2134",
+          "original_accessed_at": "2026-11-08T05:39:04.957161+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-016",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-016",
+        "predecessor_id": "MATERIALS-C1193-bacto-bitone",
+        "case_ids": [
+          "CM_NAME:6dbce0565dfec19c64478681adfc0eed9b7d5397e8382e522437614b1b25993c"
+        ],
+        "owner_path": "data/ingredients/unmapped/Bacto_Bitone.yaml",
+        "before_sha256": "844fc438634cac8f34f3159a36089e2d1b2086f4286fa4f8113736e82a730a15",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Bacto_Bitone.yaml",
+          "sha256": "bcb80ed125170861d655c2ced7ae76dfac92d08f89844331f02981b63968ad9e"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Bacto_Bitone.yaml",
+          "sha256": "bcb80ed125170861d655c2ced7ae76dfac92d08f89844331f02981b63968ad9e"
+        }
+      },
+      "whole_payload_canonical_sha256": "6abce9d09315e0d09a0f0dc537df671992ee1d8478f4079a9a72d5c23edcade1",
+      "assessment": "The separate DSMZ687 Bitone line supports reuse of the existing Bitone owner. Neither similar spelling nor the same 10 g dose proves Panton/Bitone equality. The proposed identity retains the source name and unresolved historical product details.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-96425d85290b1d9c",
+          "source_index": 229,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-0823e183226d36fd.pdf",
+            "sha256": "bf4e44fb1f8b3bf9f1e5c0f8ee4337f9f68e618a14f8878ff0432eb8fb70579f"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium687.pdf",
+          "original_accessed_at": "2026-11-08T05:07:52.074480+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-MEDIADIVE2135",
+          "source_index": 417,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/mediadive2135.txt",
+            "sha256": "7a32e5ca4dc3ed58a9d37d8afdd2f2fd27fbc21ad9ffaea148fb347442a5b2f4"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/2135",
+          "original_accessed_at": "2026-11-08T05:39:05.009323+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-017",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-017",
+        "predecessor_id": "MATERIALS-C1193-fish-sperm-dna",
+        "case_ids": [
+          "CM_NAME:7a2f80fe519b283e444d0f8f264cda4df2c3917e0640f7fe00253036d9c2a79c"
+        ],
+        "owner_path": "data/ingredients/mapped/Fish-sperm_Dna.yaml",
+        "before_sha256": "b58a13acec7b840f5b8f13fe70630055cfe14da2d78e07538439ea1aac1b7893",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed-v2/Fish-sperm_Dna.yaml",
+          "sha256": "0f355235eec4e7f909d0a5675291872f899dd69fdd331d7b30b77d4f3ec55aaf"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Fish-sperm_Dna.yaml",
+          "sha256": "0b3a4e655d9620dd605c51f2ecfd89ff29b2e8acab7cd85c1f51fe7e429bf50b"
+        }
+      },
+      "whole_payload_canonical_sha256": "34ab6b7c5197bd2a3c41951db9423ec222ec097c2216ad9d49ebe34ce627861e",
+      "assessment": "All four inspected TOGO recipes specify fish-sperm DNA (SERVA), not generic DNA or thymus nucleic acid. Ten generic/conflicting tissue aliases become nonresolving while their exact sources remain. Species, chain length and counterion remain unknown; the legacy mapping direction and herring-sperm history are not independently approved.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-d9c01418954b4216",
+          "source_index": 232,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-e31c165d8d0476fc.txt",
+            "sha256": "a1b0824156e08611487a7cfd3a508fc153b6912d7569f4dcf212293f04a5ba5e"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2450",
+          "original_accessed_at": "2026-11-08T05:07:54.601466+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-91700f0a7505294f",
+          "source_index": 233,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-e5d86d1e81731272.txt",
+            "sha256": "f83798be11d8f2d5354db768f4e4d3030ae25c0fd9d551154309db6e85f06085"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2451",
+          "original_accessed_at": "2026-11-08T05:07:56.262616+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-d999432c76b4de79",
+          "source_index": 234,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-26710cab63b88419.txt",
+            "sha256": "5229638d1de4a75c8a6b2eb7ba4f53ff4908fa4ffbe7d115f36b4b7dc53b4460"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2452",
+          "original_accessed_at": "2026-11-08T05:07:56.924066+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-4556b713745fd143",
+          "source_index": 235,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-f216ebce75ae745b.txt",
+            "sha256": "156124591ae802f0baf680ef0950e1b88932f56add80d3d359bc3a88e463eaf8"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2453",
+          "original_accessed_at": "2026-11-08T05:07:56.952636+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-bf7d3eb9e6d26ecc",
+          "source_index": 320,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-e86d7aadca25002a.txt",
+            "sha256": "f6c9cb13ae152ed197e62ffc7636970a0619e657da3fcef55c80ccc5dbf4193d"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_16991",
+          "original_accessed_at": "2026-11-08T05:13:10.810517+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/synonyms"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-018",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-018",
+        "predecessor_id": "MATERIALS-C1193-Sucrose_20_Percent_Stock",
+        "case_ids": [
+          "CM_NAME:80b54b0ff5bd090c464e9e458d5ad32a60b5f4c3dd3f2d17415f7cea4724ef55"
+        ],
+        "owner_path": "data/ingredients/mapped/Sucrose_20_Percent_Stock.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Sucrose_20_Percent_Stock.yaml",
+          "sha256": "4cd1c762323c28e995994844e4e7af1bcc00eacd5d54e583f28c0a4a2c4a2384"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Sucrose_20_Percent_Stock.yaml",
+          "sha256": "c139a85542fb8b73d31f6159357e1c80da99c22c64da750abce90f00c23464f6"
+        }
+      },
+      "whole_payload_canonical_sha256": "068ce78f97b8e79a7362cd03d36d0c4e19731dad955da10ffb9ea96aeced7938",
+      "assessment": "JCM1013 explicitly states a 20% w/v sucrose stock and a 10 ml addition. The exact sucrose constituent can reference the extant CHEBI:17992 owner; this optional improvement does not require every component to be grounded. PARTIAL composition and unknown solvent/final receiving volume are retained.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-9615db8acd821f29",
+          "source_index": 236,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-73f0f9de767c897b.txt",
+            "sha256": "b9b385330b7f0698f8ff8df64258015a64b605a711f74ad206e0799fa411e293"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1013",
+          "original_accessed_at": "2026-11-08T05:08:02.102288+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-dbb86d8272ad67d6",
+          "source_index": 287,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-260dd7b43c6e9e78.txt",
+            "sha256": "2799989b1bdab72c97895ef42660e3e37cf6e9324fcd50fb7e0c637cf64cee63"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_17992",
+          "original_accessed_at": "2026-11-08T05:09:44.098763+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/components",
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-019",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-019",
+        "predecessor_id": "MATERIALS-C1193-Fish_Meat_Extract",
+        "case_ids": [
+          "CM_NAME:8220bc6b7991e718e70046d1ee0677100ee4e0cac9df4958486094d884400f4d"
+        ],
+        "owner_path": "data/ingredients/mapped/Fish_Meat_Extract.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Fish_Meat_Extract.yaml",
+          "sha256": "f4e1818f50609606a43812291dd34cd9fab7a166982ba98a96b27560440bc88d"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Fish_Meat_Extract.yaml",
+          "sha256": "fe33df4d304a861092787d992493d076b20a0b4adf241ab576818f09eda03bf0"
+        }
+      },
+      "whole_payload_canonical_sha256": "f50513441b055db458e7fb23b4bd3916f90d669dde62738d9fc0bec131f4634f",
+      "assessment": "JCM177/TOGO M170 explicitly uses fish-meat extract separately from Bacto peptone. A biological extract does not become fish peptone or dried sardine through name similarity. Species, extraction yield and hydrolysis remain unasserted.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-ff1de1eba8a0c6f3",
+          "source_index": 237,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-0e066040a1856526.txt",
+            "sha256": "1af2ee7776d61c610eb321981ef2f4fa4b5d2187c1b6ca12ce13c876de487b51"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1071",
+          "original_accessed_at": "2026-11-08T05:08:02.658609+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-1698a2f97779437c",
+          "source_index": 238,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-e8dd422eb202ba31.txt",
+            "sha256": "8fe25920cef282e25e425827d1cbb1d4454bc9bbfa35b8419464b300c8aee601"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=177",
+          "original_accessed_at": "2026-11-08T05:08:02.695099+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-f273828c9b88f508",
+          "source_index": 239,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-302367ac0fca7013.txt",
+            "sha256": "733d55bee2ef0681bfb86585353351c9131e1688dd2fe356a21c8e6722c9ea15"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M170",
+          "original_accessed_at": "2026-11-08T05:08:03.254524+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-020",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-020",
+        "predecessor_id": "MATERIALS-C1193-Proteose_Peptone_No_3",
+        "case_ids": [
+          "CM_NAME:84db9e493f1fb3ac898fcfbbd0d0f1b368fac84a0db41896778837900538b280",
+          "KG_CASE:1f3c561b85a411dc613e467f6059f58e80155619c163091ef701a937636f3f8b"
+        ],
+        "owner_path": "data/ingredients/mapped/Proteose_Peptone_No_3.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Proteose_Peptone_No_3.yaml",
+          "sha256": "a7d61bbfdfba43cf41a8c6c09d4281b53202f4f6bc329f8c95d30a652c13332c"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Proteose_Peptone_No_3.yaml",
+          "sha256": "4bf6b1dd45953928ed3ffd32a38a9f7155b1dc04f470fd50acb4a2d47a4d4a7a"
+        }
+      },
+      "whole_payload_canonical_sha256": "566e01da95c7aaae903c53f2b766a7d811c2451af06c09d97261851729eeaec3",
+      "assessment": "Manufacturer 211693 and the technical guide distinguish Proteose Peptone No. 3 from No. 2 and unnumbered product. The source-named product is supported, but its variable protein digest has no invented constituent recipe or historical package assignment.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-58def0137c2816b8",
+          "source_index": 240,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-b4d0dabd6088c252.txt",
+            "sha256": "99c025538ee22ca0c4003974fa2694c15a9184b2a132918026fce48c1c5b16b2"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1613",
+          "original_accessed_at": "2026-11-08T05:08:06.304465+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-36ff1efb646dbe4f",
+          "source_index": 283,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-e350679e721cdbe8.txt",
+            "sha256": "fcfec5c1053be6a45d20265324992b49536a3a546c9578e2b6f79d62aae15286"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/211693",
+          "original_accessed_at": "2026-11-08T05:09:35.913345+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-04d16b9e8eb6b55c",
+          "source_index": 293,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-0da860c2354bc227.txt",
+            "sha256": "27e3b22f41f2240b2f5d508c16a37945afff7088db262dbe7100d5bc8b0b739b"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/316",
+          "original_accessed_at": "2026-11-08T05:13:08.311582+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-BD-PROTEOSE3",
+          "source_index": 413,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/bd-proteose3.txt",
+            "sha256": "c10c62d4d1ea5a72de6d2e8e257be646f0311e57e2ff867a0070e4eb65629f73"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/211693",
+          "original_accessed_at": "2026-11-08T05:39:04.803235+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-021",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-021",
+        "predecessor_id": "MATERIALS-C1193-Difco_Soytone",
+        "case_ids": [
+          "CM_NAME:8d411c29b3c72239de67c4f6968dabedb48e94d0e9c7ff45af014bdeb4650acd"
+        ],
+        "owner_path": "data/ingredients/mapped/Difco_Soytone.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Difco_Soytone.yaml",
+          "sha256": "8251a4260d94b11435815d53c814365fd8b9037c41d124b867e913ba25657543"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Difco_Soytone.yaml",
+          "sha256": "82939dd12f1adcf8a5a35b942e975b948967c11956df0a988d6d90ecaa753197"
+        }
+      },
+      "whole_payload_canonical_sha256": "9a7672d24200d0e01e38a6427a7c49612ff79908807cd06606dc33871510737d",
+      "assessment": "The manufacturer describes Difco Soytone and lists 212488/212489 packages. Its processing scope is distinct from the separately described Bacto Soytone and Phytone products; their interchangeability is not established. The existing Bacto Soytone tombstone and cross-worker union holds remain untouched.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-ec3dfde38340adfa",
+          "source_index": 243,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-494221f4fba60895.txt",
+            "sha256": "c413d51736886dfb205a0098057d718ec6eef30b5e51a64f1e157bc79c32f5c4"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1991",
+          "original_accessed_at": "2026-11-08T05:08:10.660107+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-DIFCO-SOYTONE",
+          "source_index": 411,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/difco-soytone.txt",
+            "sha256": "b718bd438f08d64b3dd1fbe262b08c64f9f6fab294f22ce59289f043198493eb"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/212489",
+          "original_accessed_at": "2026-11-08T05:39:04.608867+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-022",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-022",
+        "predecessor_id": "MATERIALS-C1193-Small_Dried_Sardine",
+        "case_ids": [
+          "CM_NAME:a3427dc662d5bd409c30365c1a38dea6f558aca970d0c9f9a64f411e4545853f",
+          "KG_CASE:73aefef0444a89ff8f4d690eeca7ebc9bd2903071f4f6a3b04120090371ce1c8"
+        ],
+        "owner_path": "data/ingredients/mapped/Small_Dried_Sardine.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Small_Dried_Sardine.yaml",
+          "sha256": "ab355effcb99aa1a43f3213c46eb47a01b24893288ee509d10afe7ded292de7d"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Small_Dried_Sardine.yaml",
+          "sha256": "687c8d3e14f64ce9fb993f75e5a9f4069c165d9f9dc2c343de0acae125382b01"
+        }
+      },
+      "whole_payload_canonical_sha256": "b120868021b43254cb9dfe235047bb97b5dfe469f415749c72ec78fa41c1aa27",
+      "assessment": "JCM1054 boils small dried sardines with maize meal in 500 ml water for 20 minutes, filters, and makes the combined preparation to 1 L. The owner denotes the dried fish input, not the filtrate or fish peptone. Exact fish species is not inferred.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-f3771867f17c081f",
+          "source_index": 245,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-b6917219aef4b47a.txt",
+            "sha256": "55fc6bde0e619e101c68b75b40c58a79472230c263f807c4f30c23d96fdf2140"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1054",
+          "original_accessed_at": "2026-11-08T05:08:22.189269+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-9af38226b7ddb07f",
+          "source_index": 246,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-046e73ad477e5bdd.txt",
+            "sha256": "2672e8776e29c70f7d2d13c0151feeca45be0593e678fe06acb5e1aeabbf8c5a"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1121",
+          "original_accessed_at": "2026-11-08T05:08:22.751472+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-a0f6059382918a93",
+          "source_index": 301,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-d7301c4fa972fa91.txt",
+            "sha256": "666a9779865ab4288ef89fd7b2b0ef4a13ff1982b262847a6858646b6fe31712"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/1986",
+          "original_accessed_at": "2026-11-08T05:13:08.841511+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-023",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-023",
+        "predecessor_id": "MATERIALS-C1193-Oxoid_Special_Peptone",
+        "case_ids": [
+          "CM_NAME:c63f61e75943ad641b1cf3e533812c4eaca371524e6b1bd9ee244a7b8671df55"
+        ],
+        "owner_path": "data/ingredients/mapped/Oxoid_Special_Peptone.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Oxoid_Special_Peptone.yaml",
+          "sha256": "75e7e9a2a99e40b64aac96e2b21cfa14128868d1eda187542e7e47eb02706190"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Oxoid_Special_Peptone.yaml",
+          "sha256": "05ed309b3964bd90741bda36f16cb0005f112b5f93737034acb28cd82a4d5dd9"
+        }
+      },
+      "whole_payload_canonical_sha256": "fe7a9d41c7219b87576f66f868a63637a5715d5ad74b7e35639b3ca42e000a7d",
+      "assessment": "TOGO M2224 identifies Oxoid Special Peptone. The official LP0072 description supports a mixed digest product family without historical pack size or blend proportions. Matching the 23 g dose in an unqualified DSMZ715 peptone mixture is insufficient to route that source here.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-f8cc21dad00e767c",
+          "source_index": 247,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-3caa317a5deb7d83.txt",
+            "sha256": "3a2c163a3a247e9a8aca187b9c8993c6a436601cb1860d1c838c6a52874e44cf"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2224",
+          "original_accessed_at": "2026-11-08T05:08:23.044021+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-DSMZ715",
+          "source_index": 328,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/dsmz715.pdf",
+            "sha256": "0f51a73fc11c2b65ca96c1dccf0fd9a81a86184881ad964b0ea52a2e51c0ec0b"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium715.pdf",
+          "original_accessed_at": "2026-11-08T05:13:50.468363+00:00",
+          "locator": "Columbia Agar first ingredient, Special mixture of peptones 23g"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-OXOID-SPECIAL-PEPTONE",
+          "source_index": 409,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/oxoid-special-peptone.txt",
+            "sha256": "6a3e3a30b8a4a0e461f595a4d676251288dbaf94c737673a69b23672788008c9"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/LP0072B",
+          "original_accessed_at": "2026-11-08T05:39:04.221708+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-024",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-024",
+        "predecessor_id": "MATERIALS-C1193-Rice_Extract_NBRC1372",
+        "case_ids": [
+          "CM_NAME:c93fb27cf3615367f9b75ccd2c0930fad5b5824e374a3b64b189d470140f79f3"
+        ],
+        "owner_path": "data/ingredients/mapped/Rice_Extract_NBRC1372.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Rice_Extract_NBRC1372.yaml",
+          "sha256": "a21eeede626f04f3fbf1c7c6d424facd227185208e301ce0be9d1f6ee828ffdf"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Rice_Extract_NBRC1372.yaml",
+          "sha256": "e3e92c48d2efdbc1742c2089db7901d50b1342af6c73f850ee808b07c9ff309c"
+        }
+      },
+      "whole_payload_canonical_sha256": "16c8a98171c92cc30dcdaccac8507dafd5b10235a5c25faa366c28fcb76c413e",
+      "assessment": "NBRC1372 identifies rice extract as one drop. This does not establish a millilitre dose, solvent, extraction yield, tissue or cultivar. The named source preparation is retained without equating it to starch or whole grain.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-21e00696994620b2",
+          "source_index": 248,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-e88adcc78d50ae6c.txt",
+            "sha256": "2f1e8485291c5840cc8abb1a1bba9ccbd6e85b679518cde72e47e69433063ea0"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2065",
+          "original_accessed_at": "2026-11-08T05:08:29.359981+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-NBRC1372",
+          "source_index": 421,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/nbrc1372.txt",
+            "sha256": "b5876ae7ba19c2998a1ae35b928abbc9fcc59a926c4f249f3feddef0783ac2fa"
+          },
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1372",
+          "original_accessed_at": "2026-11-08T05:39:05.480706+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-025",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-025",
+        "predecessor_id": "MATERIALS-C1193-difco-skim-powder",
+        "case_ids": [
+          "CM_NAME:d47ee889d9bce5dc52efde7e5cf98dabd62f28e0c64e867f3d5ea9371b4999e2"
+        ],
+        "owner_path": "data/ingredients/mapped/Skim_milk_powder.yaml",
+        "before_sha256": "c228ed915edc1080c0b949eb5c6e8b60bca43c729af7fb9bb50c8ada7b400fd9",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Skim_milk_powder.yaml",
+          "sha256": "90df2def0ca2f63f3ce24cc6f96f0b3303bfaa6f0a0f8ae0be63d98641a6b5d8"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Skim_milk_powder.yaml",
+          "sha256": "90df2def0ca2f63f3ce24cc6f96f0b3303bfaa6f0a0f8ae0be63d98641a6b5d8"
+        }
+      },
+      "whole_payload_canonical_sha256": "cc534d9971e5463caf613b42da4c9d972584f1e0cb7d34e917689c06440ce09d",
+      "assessment": "DSMZ170 identifies Difco skim milk powder, and the manufacturer powder description corroborates its dehydrated supplied form. The payload does not merge generic skimmed milk, liquid milk or every package with this source.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-eda01afe67137cd2",
+          "source_index": 250,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-16e8d311578ea5c6.pdf",
+            "sha256": "55a07837867006694cbc6b84964a754a2d8185dc54ae9148f6c71ff169574493"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium170.pdf",
+          "original_accessed_at": "2026-11-08T05:08:38.335014+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-DIFCO-SKIM",
+          "source_index": 324,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/skim-milk-primary.json",
+            "sha256": "1b081960847ee23a57a6996d381a578e1f2eb5c03681bd926588e2540ba18ebd"
+          },
+          "url": "https://www.bd.com/en-us/products-and-solutions/products/product-page.232100",
+          "original_accessed_at": "2026-11-08T05:19:29Z",
+          "locator": "Directly opened official BD232100 product page, lines228–229 spray-dried/dehydrated and lines326–334 packaging"
+        }
+      ],
+      "changed_fields": [],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-026",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-026",
+        "predecessor_id": "MATERIALS-C1193-catalase-source-form",
+        "case_ids": [
+          "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c"
+        ],
+        "owner_path": "data/ingredients/mapped/Catalase.yaml",
+        "before_sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Catalase.yaml",
+          "sha256": "86f16abc6c6ebd4ac4d665f079ed95fba3fce04cccd4553cecf7ba488adc8451"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Catalase.yaml",
+          "sha256": "17946025db5cf30528f8e400eb7642b886abccf6f3d5ce8053ebe67ed9532166"
+        }
+      },
+      "whole_payload_canonical_sha256": "f7d86be8f9beb19d30fa0406d112134f1027c9edc41699b81a3398df3907f3bf",
+      "assessment": "The substantive catalase fact comes from TOGO M109, with JCM117 recorded as lineage: literal C--10, 60 mg and filtration. The direct JCM117 capture says Nothing found and cannot support a direct current recipe claim. Current C100 does not establish historical species; the C9322 coordinator proposal remains separate. Historical human NCIT exclusion is preserved.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-5c0a089f5206be3d",
+          "source_index": 252,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-cfc365ae34b58b69.txt",
+            "sha256": "7f5f887f27f11f912b9966aa3071f01a90c29b691c0a2f649bebb5de64c5bb4b"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M109",
+          "original_accessed_at": "2026-11-08T05:08:38.941518+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-JCM117",
+          "source_index": 422,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/jcm117.txt",
+            "sha256": "42b450100240091799fed5f33b18187fc0234e44696217d96c2f7c72e6e831d8"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=117",
+          "original_accessed_at": "2026-11-08T05:39:05.499351+00:00",
+          "locator": "Complete no-result response: Nothing found."
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/supplied_form",
+        "/synonyms"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-027",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-027",
+        "predecessor_id": "MATERIALS-C1193-liver-concentrate",
+        "case_ids": [
+          "CM_NAME:f3f0ab76469c51fbe1f3a0f09801b2de12818bab1506ab7a3eb731a2d919d1b6",
+          "KG_CASE:211f0381e01e0a7256eee4cfd4ebcdec047b28ce19a6ae0a38a5efb6efdb0f1a"
+        ],
+        "owner_path": "data/ingredients/mapped/Liver_Extract_Concentrate.yaml",
+        "before_sha256": "e0caf606f7a4a437843e740b0c982af74d654c21ae0a635a5d9da1d021987597",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Liver_Extract_Concentrate.yaml",
+          "sha256": "ffc1a2d51c4a7fecc659bfd162d8d812317bb8b48f5c3754f625e212b3ee3b7f"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Liver_Extract_Concentrate.yaml",
+          "sha256": "f6ad93ead1591f48e540b413fbcbfec3643c12645729b45f08918be5f36eea62"
+        }
+      },
+      "whole_payload_canonical_sha256": "d9649d0fb7c5ce9878e5a72f643290f316a1aacf37e0451dfd65e754854f8034",
+      "assessment": "The archived source records and JCM20 support NBCo liver concentrate with source-specific 1 g and 0.2 g additions. The generic liver-extract/Raka-Ray medium term is not its exact identity. Concentration factor, species and formulation remain unknown; original occurrence statistics remain intact.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-95e8f7820e7b75b2",
+          "source_index": 254,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-1a12e0f245b2b63e.txt",
+            "sha256": "097a87cf538d6ca79c7bb029ab019853a75a193fb8d9205ee6cc116832302e0e"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=20",
+          "original_accessed_at": "2026-11-08T05:08:57.357510+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-9fce434011163526",
+          "source_index": 316,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-1a12e0f245b2b63e.txt",
+            "sha256": "097a87cf538d6ca79c7bb029ab019853a75a193fb8d9205ee6cc116832302e0e"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=20",
+          "original_accessed_at": "2026-11-08T05:13:10.083182+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-ARCHIVE-M13",
+          "source_index": 353,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/archived-togo-five-records.json",
+            "sha256": "4d106a93d5f4b0afb7da87d52d75fd69e85202d60bfdd68071e6fe51384c4e26"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M13",
+          "original_accessed_at": "2026-01-24T23:51:50Z",
+          "locator": "Archived API record M13, original array_index=352"
+        },
+        {
+          "evidence_id": "MATERIALS-ARCHIVE-M4",
+          "source_index": 354,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/archived-togo-five-records.json",
+            "sha256": "4d106a93d5f4b0afb7da87d52d75fd69e85202d60bfdd68071e6fe51384c4e26"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M4",
+          "original_accessed_at": "2026-01-24T23:51:50Z",
+          "locator": "Archived API record M4, original array_index=750"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-3ffbaf6f34e2efd5",
+          "source_index": 294,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-26ea409ddf555ac9.txt",
+            "sha256": "659e8855a845fe8f10f2157a3ee3d2633eb10e8fcd1903b5e14d9ecc8378ffa6"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/1599",
+          "original_accessed_at": "2026-11-08T05:13:08.313100+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-028",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-028",
+        "predecessor_id": "MATERIALS-C1193-Maize_Extract",
+        "case_ids": [
+          "CM_NAME:f7bd19bc3733271343171717656ebe0c87f7449fcd8593cb43d2f95f5c03c7ba",
+          "KG_CASE:2239b4ba3999c57a54135eb83ba6a39c206ce4bcd28c98c14034cc84ace39a49"
+        ],
+        "owner_path": "data/ingredients/mapped/Maize_Extract.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Maize_Extract.yaml",
+          "sha256": "3388db046c5af93d3e05fd9aa17d40d4609b60bf0aba77ffab03b9575759149f"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Maize_Extract.yaml",
+          "sha256": "5027c5f717211b48130d193d3c29f70c653aebc5feb56a6ed1df4d88f4745986"
+        }
+      },
+      "whole_payload_canonical_sha256": "e8e276438d4a0baa54845896c0ea6037be7f640c995bf7907f426e42d36a2042",
+      "assessment": "DSMZ570 separately lists maize extract and starch. The maize extraction product is a legitimate named material without becoming corn steep liquor or purified starch. Tissue fraction, solvent and supplier remain unresolved rather than guessed.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-6a40a0c5bfb8d5d6",
+          "source_index": 260,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-bd16d8bc66be2efc.pdf",
+            "sha256": "8f7e3baf76fb0c267b36f98810939279e1034157972e2ef9025b7c04fe9e41e4"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium570.pdf",
+          "original_accessed_at": "2026-11-08T05:09:22.725958+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-c592179bd774fb10",
+          "source_index": 295,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-0a24e2ccf8723431.txt",
+            "sha256": "e02275f0eb01ccc6adb5ebeed7f93364422377050c45351eaf62a5c413f5784c"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/575",
+          "original_accessed_at": "2026-11-08T05:13:08.313254+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-029",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-029",
+        "predecessor_id": "MATERIALS-C1193-Hipolypepton",
+        "case_ids": [
+          "CM_NAME:51b5ea9f7429c70a079d79a469b0a323180d8b37fbedfecbc950e0043f0f3b6f",
+          "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9"
+        ],
+        "owner_path": "data/ingredients/mapped/Hipolypepton.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Hipolypepton.yaml",
+          "sha256": "4a79033f0fe6c953f927235bd63002df50ac9f375a4a46615bc05969815b340a"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Hipolypepton.yaml",
+          "sha256": "d406fee5b1cef41ff7d2c02a470264f85a80c8bff6bed56c741fbf530ff63994"
+        }
+      },
+      "whole_payload_canonical_sha256": "cd0e0b6d0b9a2816587539dc948e9e92b8b5f74ab6a33addef4877c11b497dd2",
+      "assessment": "The Wako catalog distinguishes casein-derived unqualified Hipolypepton from soy-derived S/N/NS variants. Nihon product identity is supported at that boundary, without selecting an alternative in the Trypticase-or-Hipolypepton recipe. The raw alternative remains a choice.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-20b8a06bf0d02d5e",
+          "source_index": 205,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-807200dbe6c1099b.txt",
+            "sha256": "1d7edb50409be418a82ac2789d5214cbc2068db5138b96ce0f2a15a65e732307"
+          },
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1424",
+          "original_accessed_at": "2026-11-08T05:07:38.380826+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-65ca8b7cbd9df933",
+          "source_index": 292,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-8cecfceac4c24ade.txt",
+            "sha256": "3bb59834f17512fd7111562b8725feea0e7dad31f13f61c016f35a2eae0f0676"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/2060",
+          "original_accessed_at": "2026-11-08T05:13:08.310161+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-WAKO-HIPOLYPEPTON",
+          "source_index": 404,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/wako-hipolypepton.pdf",
+            "sha256": "2ca0443638e265d07e39cc07f15eb5f55b5750886ad6f80e1302767f53506c9b"
+          },
+          "url": "https://labchem-wako.fujifilm.com/us/catalog/pdf/catalog_0005.pdf",
+          "original_accessed_at": "2026-11-08T05:39:04.221233+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-030",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-030",
+        "predecessor_id": "MATERIALS-C1193-polypeptone-boundary",
+        "case_ids": [
+          "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+          "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c"
+        ],
+        "owner_path": "data/ingredients/mapped/Polypeptone.yaml",
+        "before_sha256": "5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Polypeptone.yaml",
+          "sha256": "e3dbc60f2f2ec6bdbdaed6ea48df9f94d43beea81b213c8f4241661943e6ae55"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Polypeptone.yaml",
+          "sha256": "b04efe7b9251c621fa2d4dbb6cef368c13297e8c4ebd73e53d35778be1af0a55"
+        }
+      },
+      "whole_payload_canonical_sha256": "ceaea2a3ca06f4f5ca3ba9ca572659c677ecfaab249a6180db5e522b69d2a8f6",
+      "assessment": "The existing Polypeptone preparation is preserved with its own registry identity, while Hipolypepton aliases are withdrawn. The BD 50:50 casein/animal-peptone description is a comparison, not proof that unqualified source 442 has that brand or recipe. Inherited Japanese product aliases remain held.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-667bc103a3bacdb2",
+          "source_index": 302,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-9560eeae509e5b03.txt",
+            "sha256": "436c3cac7e4e9aa55d42e644af1b9f17d92eb8138884c17c5509b84b849ff397"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/442",
+          "original_accessed_at": "2026-11-08T05:13:08.858785+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-031",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-031",
+        "predecessor_id": "MATERIALS-C1193-phytone-boundary",
+        "case_ids": [
+          "KG_CASE:3afa861ef7ff42874af3fd1e7f918863a09111adde1a93ff6bc9ee75f883a276"
+        ],
+        "owner_path": "data/ingredients/mapped/Phytone.yaml",
+        "before_sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Phytone.yaml",
+          "sha256": "1bdbafaff5f1f3bf94121482e57fd2834a666bdc9f6e01ccaacee9e2d50be1fa"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Phytone.yaml",
+          "sha256": "1fe100cf0fe8182c4c4a27af2109c88e8c62a4298705817e06d4fb7125bdfb26"
+        }
+      },
+      "whole_payload_canonical_sha256": "0682a51643ec566e1e30016fd6b6db7c64c61b408770febb6bab043c960ba982",
+      "assessment": "MICRO:0001795 is a nonobsolete named Phytone term whose definition cites the manufacturer papaic soybean digest. Its erroneous Hordeum vulgare parenthetical is not adopted. The three new applicability assertions are agent interpretations, correctly typed LLM_SUGGESTION. Bounded coordinator reuse does not import W10 histories, counts or approval of the pending union.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-b9b130ee3238188c",
+          "source_index": 296,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-881b86cb1ed8b3d6.txt",
+            "sha256": "fb51beef4fd69469e3132b04a8878cef48c1dbd9222b2a3d9767ee08d6ffe963"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/125",
+          "original_accessed_at": "2026-11-08T05:13:08.314601+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-MEDIADIVE362",
+          "source_index": 418,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/mediadive362.txt",
+            "sha256": "a574020e8fdb59d0de9ce1056d5f73f6f81f22c1ca7aca4effa5e37bf1f88be7"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/362",
+          "original_accessed_at": "2026-11-08T05:39:05.126640+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        },
+        {
+          "evidence_id": "FINAL-MATERIALS-MICRO1795",
+          "source_index": 438,
+          "capture": {
+            "root": "artifact",
+            "path": "final-correction-v1/materials/captures/micro1795.body",
+            "sha256": "ff0236c316055d8be30791188d28c078a3d49b37f1a6f176de62be0115744302"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0001795",
+          "original_accessed_at": "2026-11-08T06:52:42.102995+00:00",
+          "locator": "Nonobsolete term, definition, definition source and specific trademark"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/identifier",
+        "/notes",
+        "/ontology_mapping/evidence",
+        "/ontology_mapping/mapping_quality",
+        "/ontology_mapping/ontology_id",
+        "/ontology_mapping/ontology_label",
+        "/ontology_mapping/ontology_source"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-032",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-032",
+        "predecessor_id": "MATERIALS-C1193-soy-peptone-boundary",
+        "case_ids": [
+          "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+        ],
+        "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+        "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+          "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Soy_Peptone.yaml",
+          "sha256": "e37e3230f9b4489e715cda9c1785f30ea97305d1d6264045bea75b92312bf236"
+        }
+      },
+      "whole_payload_canonical_sha256": "5a435eab9be36c2b637de5495e70e7f110fd857da611bf0189d9b3387a6ab9af",
+      "assessment": "The generic soy digest remains broader than branded Phytone, Soytone and their alternatives. Five branded/alternative aliases become nonresolving, as does optional Properties metadata. Exact raw strings and history survive, along with the CHEBI:8150 tombstone and original counts; the retained peptic-digest alias is not newly endorsed.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-4425f492734e8c24",
+          "source_index": 306,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-c4e2c1b7329111be.txt",
+            "sha256": "96988f7bda2d96e92ead61edd385a8f50523aaae8f0b0f48e5f1e6f37e341ecd"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/75",
+          "original_accessed_at": "2026-11-08T05:13:09.381691+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-MEDIADIVE75",
+          "source_index": 419,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/mediadive75.txt",
+            "sha256": "96988f7bda2d96e92ead61edd385a8f50523aaae8f0b0f48e5f1e6f37e341ecd"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/75",
+          "original_accessed_at": "2026-11-08T05:39:05.148786+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence",
+        "/synonyms"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-033",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-033",
+        "predecessor_id": "MATERIALS-C1193-malt-oxoid",
+        "case_ids": [
+          "KG_CASE:73abd3afeae5cc63a2dd900b434faac00c912604cc82da9029031338cb6770c4"
+        ],
+        "owner_path": "data/ingredients/mapped/Malt_Extract_Agar_Oxoid.yaml",
+        "before_sha256": "7f82fb491249f3a8a5460218d7a55b50e88519b511cf402b43f2cb6e2cd3e3f5",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Malt_Extract_Agar_Oxoid.yaml",
+          "sha256": "7830ba70978ff9add9e6603dbaaab180ca763b1c7f30b7f70f9a8be9542fb239"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Malt_Extract_Agar_Oxoid.yaml",
+          "sha256": "4911274b9fc6d3eed5ee9298b1e47287daa7045ad2be70574c2e13ba6675b6b0"
+        }
+      },
+      "whole_payload_canonical_sha256": "d77db4057ee48b0094f4308050e7a545932278cc27bd0f620d5c35404029a9c0",
+      "assessment": "The Oxoid CM0059 powdered whole formulation has the stated malt extract, mycological peptone and agar list. The 30/5/15 g per litre values are standard-reconstitution equivalents with the manufacturer performance qualification, not concentrations in dry powder. The 50 g product instruction and separate prepared-plate comparison remain distinct; named UNMAPPED parts are legal.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-21d8df51eeefc9d1",
+          "source_index": 300,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-2f3d49ab7aaa65b1.txt",
+            "sha256": "1f86a3cf2a1383146922693764d9a80bcd359039864bf280cbb8b9862e585c7d"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/1712",
+          "original_accessed_at": "2026-11-08T05:13:08.840233+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-OXOID-MALT",
+          "source_index": 407,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/oxoid-malt.txt",
+            "sha256": "5ffd945b8f38775ff55fb03a18908cfbd41f292ac7f414db5ba5451c5d67f32c"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/CM0059B",
+          "original_accessed_at": "2026-11-08T05:39:04.221598+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-OXOID-MALT-SPEC",
+          "source_index": 408,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/oxoid-malt-spec.pdf",
+            "sha256": "8111997a891a4b5a19f2abf84f4115fd10ee579ceb4518063500795dc1cd8723"
+          },
+          "url": "https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-PO0182A-V4.pdf",
+          "original_accessed_at": "2026-11-08T05:39:04.221651+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-034",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-034",
+        "predecessor_id": "MATERIALS-C1193-tomato-extract",
+        "case_ids": [
+          "KG_CASE:d6ec49fe7ccdff5833a76643b6b50db8b3a88e37568e9f413bdc80d05ff50532"
+        ],
+        "owner_path": "data/ingredients/unmapped/Tomato_Extract.yaml",
+        "before_sha256": "0c800360b7fbba58fe154f7ec778344daf6709d868508b09c30e752271acd554",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Tomato_Extract.yaml",
+          "sha256": "e79c8723716a4ae27ce5f583e9e73dba3950b02846496232c1ce477c6d431813"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Tomato_Extract.yaml",
+          "sha256": "62a61c839bdfd384bf34aad86dc0c887a156b284b6d35cdebc771a145a448c95"
+        }
+      },
+      "whole_payload_canonical_sha256": "4997eb325c354feb0063fbffa95f15bdf414397a1f1da92f3960300d5a53c307",
+      "assessment": "MediaDive310a names 200 ml tomato extract separately from 800 ml water. Reuse of the existing extract owner does not invent a tomato formula or identify the whole medium as its extract. Variable biological composition does not block that material identity.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-fafaa6ff5ff52392",
+          "source_index": 307,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-72283c72883eea92.txt",
+            "sha256": "9b277060235fa97842c9e3696a8731c476e51496fd2041302f45397554a023f1"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/2371",
+          "original_accessed_at": "2026-11-08T05:13:09.386765+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-MEDIADIVE310A",
+          "source_index": 415,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/mediadive310a.txt",
+            "sha256": "432ced4ac6918d867fffb24fe815a085b421937cb2de6cab1add1a00f60d73ba"
+          },
+          "url": "https://mediadive.dsmz.de/rest/medium/310a",
+          "original_accessed_at": "2026-11-08T05:39:04.932883+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-035",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-035",
+        "predecessor_id": "MATERIALS-C1193-Merck_Universal_Peptone",
+        "case_ids": [
+          "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc"
+        ],
+        "owner_path": "data/ingredients/mapped/Merck_Universal_Peptone.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Merck_Universal_Peptone.yaml",
+          "sha256": "12b9f3ae605f75491c7edb0627761c9954a18a76ab9318aca5dadbe784ed6ba3"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Merck_Universal_Peptone.yaml",
+          "sha256": "a3dd778b32cb05718a38a63f58d179ebccce3e871eec6f79cc23ec998a73d616"
+        }
+      },
+      "whole_payload_canonical_sha256": "4aefd4915ea6402c14086d40406ffed2faddca5b6ede38d067dff75b514b88bc",
+      "assessment": "Source 341 explicitly attributes Universal peptone to Merck. M66 is a relevant current comparator, but no source catalog selects 107043 or proves the historical casein/meat/soy blend. The product-family identity and Bacto alias exclusion preserve this distinction.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-eef57c1f7758d62c",
+          "source_index": 308,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-f9eca1d55ac28f20.txt",
+            "sha256": "78273789f56fcd8e31611611859c72b499fa4d0153622dd018f523fc44911d64"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/341",
+          "original_accessed_at": "2026-11-08T05:13:09.388796+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-MERCK-UNIVERSAL",
+          "source_index": 322,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/final-web-capture.json",
+            "sha256": "341dbd72a89e484abdf4b6aa4a3413f0e473cb73631cfe3e6e0b1a517d7c822a"
+          },
+          "url": "https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/135/735/107043en-ms.pdf",
+          "original_accessed_at": "2026-11-08T05:15:26Z",
+          "locator": "Merck107043 Technical Data Sheet, page0 Description lines5–11"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-036",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-036",
+        "predecessor_id": "MATERIALS-C1193-Neopeptone",
+        "case_ids": [
+          "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d"
+        ],
+        "owner_path": "data/ingredients/mapped/Neopeptone.yaml",
+        "before_sha256": null,
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Neopeptone.yaml",
+          "sha256": "2aeb5ee8b780b6dac0616c6ea296f891c08d05fcbbe5d941007e165d34b3bb96"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Neopeptone.yaml",
+          "sha256": "bbbd116dce026b73ba3e565401e9d686afc6315ae7be6eb087cf378942dd9f96"
+        }
+      },
+      "whole_payload_canonical_sha256": "b88bfb71a84e1070422e6819871ce71751500f7e8baf4d71d268bbb8ddefdb8b",
+      "assessment": "The single DATABASE_MATCH assertion is narrowly the nonobsolete named MICRO:0000177 lookup and its Bacto Neopeptone definition. Manufacturer product evidence supports the named family; a historical package is not selected. Broader source-applicability judgments are not mislabeled as human curation.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-e55374c088422d1f",
+          "source_index": 285,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-3a8ba3477164e50e.txt",
+            "sha256": "510918cd38662063340e166e13411a4398ad60d78db55e7a34776eb8997979d1"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/211681",
+          "original_accessed_at": "2026-11-08T05:09:37.277505+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-84f7477a9175ebf3",
+          "source_index": 309,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-70b0835b1d118913.txt",
+            "sha256": "4dabae5d9eb331339f507f377e92533beea96fb5e4c78844242a552f0f2115b0"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/263",
+          "original_accessed_at": "2026-11-08T05:13:09.394821+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-OLS-NEOPEPTONE-TERM",
+          "source_index": 325,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/ols-neopeptone-term.json",
+            "sha256": "0e3ebc5a1c5d82f5eaa4cb33eb337c7a8a0ab12e131a97ecc9d2f0504b44d9a6"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMICRO_0000177",
+          "original_accessed_at": "2026-11-08T05:10:20.767128+00:00",
+          "locator": "MICRO0000177 preferred label and non-obsolete term"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-BD-NEOPEPTONE",
+          "source_index": 412,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/bd-neopeptone.txt",
+            "sha256": "9f3e856dcd84cdfb35ad03086c999af98e0e65219530ce0fdc3aa60355f4515f"
+          },
+          "url": "https://www.thermofisher.com/order/catalog/product/211681",
+          "original_accessed_at": "2026-11-08T05:39:04.802057+00:00",
+          "locator": "Complete capture; case-specific application described in reassessment"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-037",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-037",
+        "predecessor_id": "MATERIALS-C1193-sea-salts",
+        "case_ids": [
+          "CM_NAME:595d2c9054961a4c3ea21a8eb1bffa3a73c87ebc5fad14bad3efcc21741d91de",
+          "CM_NAME:d45a33c5923ad1f08755b5637c6c47ee6c329b0b4a2892c859a4027e54126a15",
+          "CM_NAME:fe4e28b8925680d489da8b18fc4ec7aefb6155e75c979b735f1db54e45636bb5",
+          "KG_CASE:40f83209f10d453b4f37fb93855bf6dd3e6f13c2ba0ec5027e5f86cdf8af854c",
+          "KG_CASE:f804dc528f900fb04f9b7cfc94f8efc08380b7a476728e855224bf91c05178db"
+        ],
+        "owner_path": "data/ingredients/mapped/Sea_Salts.yaml",
+        "before_sha256": "7d10257ca3847166f949d8e179aa068c6ebef128f932769b29ca064b76595c39",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed/Sea_Salts.yaml",
+          "sha256": "acd9c437d072c2312f333dc6c785f9b16240b45102d49756377a87b73d41798c"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Sea_Salts.yaml",
+          "sha256": "b180c2ffd1ea7324702b277c8627cdf7487348f2498b7031caf3f859d42ab2ee"
+        }
+      },
+      "whole_payload_canonical_sha256": "a34140a85fadfd9f449ee8080dedcf188a0cca7628f5c4b3e4b19a25fac2d847",
+      "assessment": "Only the six explicitly Sigma-qualified frozen occurrences in the 129-occurrence generic case are routed by this proposal. Current DSMZ829 does not resolve the unqualified historical KOMODO829 version, and generic sea salt is not thereby Sigma product. The 3000 g/L outlier is preserved as a source issue; no S9883 formula is imposed.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-26aed7de31d17f0f",
+          "source_index": 206,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-1a6324d33a707d29.pdf",
+            "sha256": "73b87bbb602b5d40fa5a442a74b8a227fc26774281d333b7718a15317fd1cb27"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium829.pdf",
+          "original_accessed_at": "2026-11-08T05:07:44.093747+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-fb884ed7d7cbc63b",
+          "source_index": 210,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-a1694b810fbfc4c6.txt",
+            "sha256": "3408e93efa8f807bff66ca3038aafc3c520d3396c6e35dab7f078be0b109ff02"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1047",
+          "original_accessed_at": "2026-11-08T05:07:46.109526+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-8c2242a56a04c84f",
+          "source_index": 211,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-bc59a64dc2a0aa6d.txt",
+            "sha256": "33d3a4430b02fff5107a29fab860e519bf57b0aa8b730d4996a3ccc65f14caa2"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1210",
+          "original_accessed_at": "2026-11-08T05:07:46.667285+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-e80d64074ae1edb5",
+          "source_index": 212,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-0614e157c19a34be.txt",
+            "sha256": "bd3611695a7b0effe68bdc8e18f8b66cd13ab5e4417691593a67a33432ffa73d"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470",
+          "original_accessed_at": "2026-11-08T05:07:47.230640+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-6f9804c78b6d950f",
+          "source_index": 214,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-085cbb2e66835d73.txt",
+            "sha256": "b28331b54771accff48da1b68077398dd7450ee8746eaf1aec1b4ef7a055bd61"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403",
+          "original_accessed_at": "2026-11-08T05:07:48.355855+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-1918e90455b9aa11",
+          "source_index": 215,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-716e8ec415e966f6.txt",
+            "sha256": "60f76d2deaf04cccb84bedd4168be48416a54e6c93119b801b89db61d329b54e"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=963",
+          "original_accessed_at": "2026-11-08T05:07:48.920124+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-5994c762cae0d08f",
+          "source_index": 216,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-84122ecbb9e908f5.txt",
+            "sha256": "8f763cdebae69c6743b54231c281e4b08da295011e66f1a9e6f4ca43ba6eb99f"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=548",
+          "original_accessed_at": "2026-11-08T05:07:49.433574+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-be592e35d43f096d",
+          "source_index": 217,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-66f673719fd1bd57.txt",
+            "sha256": "9a0317e56d22b5f61ca7343cfa5896b62ff51b73b0b2632521ad7780d53befb0"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=449",
+          "original_accessed_at": "2026-11-08T05:07:49.484682+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-3039299b570a2862",
+          "source_index": 218,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-efc59482d5f1002a.txt",
+            "sha256": "ab7631296a07fdcdc03dacb55f3e508d3b6e97ce9f21f06690dbdfc4811b49cb"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=448",
+          "original_accessed_at": "2026-11-08T05:07:49.538388+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-dd42e44be7a3e3d3",
+          "source_index": 219,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-85d6397dff79ee1e.txt",
+            "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521",
+          "original_accessed_at": "2026-11-08T05:07:50.025173+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-e226ddc2dffc641c",
+          "source_index": 220,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-9744c6e14f622d88.txt",
+            "sha256": "0931f4d1fa5e17c2b4a472b1e4c3994b163b75099a0a82a2db0fa70b58f40594"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=958",
+          "original_accessed_at": "2026-11-08T05:07:50.085776+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-6040103197f9c143",
+          "source_index": 221,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-8d882d6cb7f5a935.txt",
+            "sha256": "84b04ef162edf01a6013dd342fd190ad59632eb0a1684d08cf4b9f6b36545aac"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1302",
+          "original_accessed_at": "2026-11-08T05:07:50.130438+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-f29ebc6bc0ff6c05",
+          "source_index": 222,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-84a75e38c41f32c1.txt",
+            "sha256": "2679060d6e412f7df7a92d6622cdb745157e07fb19dd9892ca94fe7f8be1fd0a"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=898",
+          "original_accessed_at": "2026-11-08T05:07:50.610852+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-2efdd5f45b8c8271",
+          "source_index": 223,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-1b857b123f25d1d8.txt",
+            "sha256": "31cd505126dfff91463c0063317a1c2b9ce46ca71b905dcc57551da38b8e883b"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1063",
+          "original_accessed_at": "2026-11-08T05:07:50.705600+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-9c11df34838d4f2b",
+          "source_index": 224,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-5aff7bdf8f8154d2.txt",
+            "sha256": "5dcd821be5bf65741e1cb69c40973eeba5e58fb8fabf99708bdea8cff217a3ac"
+          },
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1141",
+          "original_accessed_at": "2026-11-08T05:07:50.723963+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-58dc20d4a9cc72d2",
+          "source_index": 225,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-1d96b7f91bc7f971.pdf",
+            "sha256": "825651ee6eedacad881fdc2ca5f8cc540b3f01067daca7384d196b089ad38bae"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium829b.pdf",
+          "original_accessed_at": "2026-11-08T05:07:51.182320+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-eb0056012fd31847",
+          "source_index": 249,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-7c7ab1e433369d4e.pdf",
+            "sha256": "54cc91970429ee92c5748a3c12bdf75e0da64fb3bf0a06268a353c1b8acdddf0"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1025.pdf",
+          "original_accessed_at": "2026-11-08T05:08:38.052343+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-311a325bbd171a7c",
+          "source_index": 310,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-04ddef388a3f9f8c.txt",
+            "sha256": "379110b0f0bcf1f255953bef02a61484efd15f5aabd2ef36e43a36e76928fe41"
+          },
+          "url": "https://mediadive.dsmz.de/rest/ingredient/2367",
+          "original_accessed_at": "2026-11-08T05:13:09.872005+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-038",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-038",
+        "predecessor_id": "MATERIALS-C1193-organic-peat",
+        "case_ids": [
+          "CM_NAME:71bcdce17ef8482f9e70b5dea80f2fc94d75fd0011f5ce15675ba7a2b3917e09"
+        ],
+        "owner_path": "data/ingredients/unmapped/Organic_Peat.yaml",
+        "before_sha256": "68896bc8edcf16237b41c40be65874e3f65ec3561137916cffd289eed28c356b",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed-v2/Organic_Peat.yaml",
+          "sha256": "b3fbfc961f188ba7d5f5065101530a0d648067855a64bbf0abe0f4858f8171e9"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Organic_Peat.yaml",
+          "sha256": "4c1edea3d885ff1226176f1bbcefabc81fd0136bdfd0f0ff01853960e2f44217"
+        }
+      },
+      "whole_payload_canonical_sha256": "89dd62bfbd5fa4bb3b96e83591313b13e00d3cca2ce797c394c7510570ec3bc2",
+      "assessment": "The extant UTEX organic-peat input has its own 0.5 tsp addition beside 1.5 tsp greenhouse soil in 200 ml water. It is not identical to the whole steamed soil-water preparation or automatically to the SAG peat-soil input. The existing owner is reused with those boundaries intact.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-59710b62a48c8808",
+          "source_index": 230,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-ae073e9c7f0a0853.pdf",
+            "sha256": "6d7b4d0f2c2e68d631ccdb0a40666a7981407d46f80de6864c3b9ea28c56b3b5"
+          },
+          "url": "https://sagdb.uni-goettingen.de/culture_media/07%20Desmidiacean%20Medium.pdf",
+          "original_accessed_at": "2026-11-08T05:07:52.983487+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-66d3ec90b403520f",
+          "source_index": 314,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/extra-46a9797ad8b5d910.pdf",
+            "sha256": "b06e06941e5bc5a2d26a89796f770c7215523616d3257d927bf9275723797fc4"
+          },
+          "url": "https://sagdb.uni-goettingen.de/culture_media/18%20Dunaliella%20acid%20Medium.pdf",
+          "original_accessed_at": "2026-11-08T05:13:09.924897+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-C1193-UTEX-PEAT-ORIGINAL",
+          "source_index": 434,
+          "capture": {
+            "root": "artifact",
+            "path": "correction-1193-v1/materials/captures/utex-peat-original.pdf",
+            "sha256": "eccd73326293b6b2169fb58a86765fb800359ca2c0ad526537bb78a747a2de84"
+          },
+          "url": "https://web.biosci.utexas.edu/utex/Media%20PDF/soilwater-peat-medium.pdf",
+          "original_accessed_at": "2026-11-08T05:53:56.838170+00:00",
+          "locator": "Original UTEX Soilwater: Peat Medium PDF, component table; successfully retrieved original university-hosted PDF after current shop endpoint429."
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-039",
+      "status": "complete",
+      "verdict": "supported_with_retained_limits",
+      "lineage": {
+        "proposal_id": "W05-FINAL-MAT-039",
+        "predecessor_id": "MATERIALS-C1193-peptone-identity",
+        "case_ids": [
+          "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+        ],
+        "owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "predecessor_capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/materials/proposed-v2/Peptone.yaml",
+          "sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523"
+        },
+        "after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/materials/proposed/Peptone.yaml",
+          "sha256": "61590bc2de78646c368ed1fb21c2c29bbc041d9f248e8a712c578376e776996d"
+        }
+      },
+      "whole_payload_canonical_sha256": "4103748b0653e04ca6542028e27711a4c0feb4c8a455c4d538e5333896c1df69",
+      "assessment": "Generic Peptone has no demonstrated mammalian origin merely from MICRO:0000178 lexical matching. The local generic-material identity is justified; the malformed Peptone (0.01 % token becomes nonresolving with its original MicrobeDecoder provenance. Plural peptones and both assay observations remain. Eighteen historical inbound references still require source-specific review; identifier resolution alone does not validate them.",
+      "primary_evidence": [
+        {
+          "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+          "source_index": 281,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+          },
+          "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+          "original_accessed_at": "2026-11-08T05:09:35.002876+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        },
+        {
+          "evidence_id": "MATERIALS-CAP-31a954364e3e6346",
+          "source_index": 288,
+          "capture": {
+            "root": "artifact",
+            "path": "materials/captures/primary-246381453c47ddd7.txt",
+            "sha256": "ef45aa186438f91d015280171fde8ccb25740a50cc6f2c6e848de6aad3339b31"
+          },
+          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMICRO_0000178",
+          "original_accessed_at": "2026-11-08T05:09:55.276226+00:00",
+          "locator": "Full source body; target ingredient and preparation section identified in case reasoning"
+        }
+      ],
+      "changed_fields": [
+        "/curation_history",
+        "/notes",
+        "/ontology_mapping/evidence",
+        "/synonyms"
+      ],
+      "before_and_predecessor_whole_objects_read": true,
+      "all_fields_reviewed": true,
+      "held_claim_policy": "Unchanged source, role, component-coupling, organism, duplicate-family, owner and export holds are preserved. This is not whole-owner or release approval."
+    }
+  ],
+  "supersedes": {
+    "path": "payload-reviews.json",
+    "sha256": "5424242ea04abc4a6cd8ae637388f6591de1c3186b392daf35b90a83f4b5ca0c",
+    "reason": "Precise per-record archive evidence locators for the same already-read aggregate bytes. No scientific verdict changed."
+  }
+}

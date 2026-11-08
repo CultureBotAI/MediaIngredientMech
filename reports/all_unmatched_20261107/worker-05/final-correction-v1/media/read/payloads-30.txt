@@ -1,0 +1,402 @@
+
+### M1193-P-JCM1-MRS
+identifier: kgmicrobe.ingredient:mrs_medium_jcm1
+preferred_term: MRS medium (JCM1)
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:37.045833+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: Distinct source-qualified preparation, separated from mixed-scope generic
+    owner data/ingredients/unmapped/MRS_Medium.yaml. No generic alias is added. Exact
+    JCM1 recipe used by JCM111, not the Difco or Scharlau commercial products. Isolated
+    proposal only; whole-owner/source/export holds remain and integration requires
+    separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Distinct source-qualified preparation, separated from mixed-scope generic owner
+  data/ingredients/unmapped/MRS_Medium.yaml. No generic alias is added. Exact JCM1
+  recipe used by JCM111, not the Difco or Scharlau commercial products.
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mrs_medium_jcm1
+  ontology_label: MRS medium (JCM1)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1
+    notes: Distinct source-qualified preparation, separated from mixed-scope generic
+      owner data/ingredients/unmapped/MRS_Medium.yaml. No generic alias is added.
+      Exact JCM1 recipe used by JCM111, not the Difco or Scharlau commercial products.
+components:
+- component_name: Casein peptone tryptic digest
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Beef extract BD-Difco
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Yeast extract BD-Difco
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Tween80
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Sodium acetate
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Diammonium citrate
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MgSO4.7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '.2'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: MnSO4.xH2O
+  reference_scope: UNMAPPED
+  concentration_value: '.05'
+  concentration_unit: G_PER_SOURCE_BATCH
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1
+    notes: Source-batch masses as printed, manganese variable hydration retained.
+      Distilled water1L is added as source input; no measured final volume inferred.
+
+
+### M1193-P-CZAPEK-CM0095-GENERIC-SCOPE
+identifier: UNMAPPED_0370
+preferred_term: Czapek-Dox liquid medium
+synonyms:
+- synonym_text: Czapek-Dox liquid medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1610); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named Czapek-Dox liquid medium/formulation and left unmapped
+    pending recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Czapek-Dox_Liquid_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Curation recommendation — **Recommended status:
+    `UNMAPPED`.** Retain `ingredient_type: DEFINED_MEDIUM`. The entity’s scope is
+    sufficiently clear, but neither a stable exact ontology identifier nor a single
+    authoritative recipe has been verified. No ontology CURIE was proposed. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:00:37.045833+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Existing generic Czapek-Dox owner includes identified modified Oxoid contexts
+    and DSMZ1817 CC35g without supplier/formula selection. Preserve its UNMAPPED identity
+    and original authentic aliases, with no universal component assertion. The separately
+    proposed CM0095 powder carries the six-part modified Oxoid formula; CC35g remains
+    unassigned. Isolated proposal only; inherited holds remain.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1610); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+  curation. Correction1193: Existing generic Czapek-Dox owner includes identified
+  modified Oxoid contexts and DSMZ1817 CC35g without supplier/formula selection. Preserve
+  its UNMAPPED identity and original authentic aliases, with no universal component
+  assertion. The separately proposed CM0095 powder carries the six-part modified Oxoid
+  formula; CC35g remains unassigned.'
+ingredient_type: NAMED_MEDIUM
+
+
+### M1193-P-CZAPEK-CM0095
+identifier: kgmicrobe.ingredient:czapek_dox_oxoid_cm0095
+preferred_term: Czapek-Dox liquid medium powder, modified (Oxoid CM0095)
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:37.045833+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CREATED
+  changes: Distinct source-qualified preparation, separated from mixed-scope generic
+    owner data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml. No generic alias
+    is added. Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817
+    CC35g remains unassigned. Isolated proposal only; whole-owner/source/export holds
+    remain and integration requires separate native review.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Distinct source-qualified preparation, separated from mixed-scope generic owner
+  data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml. No generic alias is added.
+  Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817 CC35g remains
+  unassigned.
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:czapek_dox_oxoid_cm0095
+  ontology_label: Czapek-Dox liquid medium powder, modified (Oxoid CM0095)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0095-V2.pdf
+    notes: Distinct source-qualified preparation, separated from mixed-scope generic
+      owner data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml. No generic alias
+      is added. Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817
+      CC35g remains unassigned.
+components:
+- component_name: Sodium nitrate
+  reference_scope: UNMAPPED
+  concentration_value: '2'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium chloride
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Magnesium glycerophosphate
+  reference_scope: UNMAPPED
+  concentration_value: '.5'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Ferrous sulphate
+  reference_scope: UNMAPPED
+  concentration_value: '.01'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Potassium sulphate
+  reference_scope: UNMAPPED
+  concentration_value: '.35'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+- component_name: Sucrose
+  reference_scope: UNMAPPED
+  concentration_value: '30'
+  concentration_unit: G_PER_L_AT_STANDARD_RECONSTITUTION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0095-V2.pdf
+    notes: Manufacturer typical formula at33.4g/L standard reconstitution; supplier
+      source names preserved, unspecified salt hydration and glycerophosphate form
+      remain UNMAPPED.
+supplied_form:
+- name: Czapek-Dox Liquid Medium Modified
+  form: powder
+  supplier: Oxoid
+  catalog_number: CM0095
+
+
+### M1193-P-L15-PREPARATION
+identifier: kgmicrobe.ingredient:l15_prepared_medium_dsmz1670
+preferred_term: L15 prepared basal medium (DSMZ1670)
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1504); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named L-15 medium/formulation and left unmapped pending
+    recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/L-15_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommend keep as `UNMAPPED`; no external `skos:exactMatch`
+    yet | High | Normalize primary name/synonym set to "Leibovitz''s L-15 medium"
+    / "Leibovitz L-15" / "L-15 medium" and retain pending recipe-level curation (yao2017animal‐cellculturemedia
+    pages 6-7, yao2017animal‐cellculturemedia pages 4-5) | No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:51.384858+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: 'Promote the existing source1504 L15 owner as the prepared basal L15 used
+    in DSMZ1670. The complete owner inventory has only the two representations of
+    that source:70mlbasal L15, separately10mltryptose phosphate broth,20mlFCS and1ml200mMglutamine.
+    The primary PDF defines the basal-versus-receiving-medium boundary. Manufacturer,
+    phenol-red and glutamine/GlutaMAX variant remain unknown, so no internal component
+    formula or equivalent commercial catalog is claimed. This does not assign source1941/JCM930/DSMZ1311,
+    which could denote the same or another preparation and lacks a reconciliation
+    fact. Authentic former active aliases are preserved verbatim as source provenance,
+    not rejected: [{"synonym_text": "L-15 medium", "synonym_type": "RAW_TEXT", "source":
+    "mim-queue"}]. Removing active broad aliases prevents a source-qualified identity
+    from resolving unrelated same-name preparations. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Promote the existing source1504 L15 owner as the prepared basal L15 used in
+  DSMZ1670. The complete owner inventory has only the two representations of that
+  source:70mlbasal L15, separately10mltryptose phosphate broth,20mlFCS and1ml200mMglutamine.
+  The primary PDF defines the basal-versus-receiving-medium boundary. Manufacturer,
+  phenol-red and glutamine/GlutaMAX variant remain unknown, so no internal component
+  formula or equivalent commercial catalog is claimed. This does not assign source1941/JCM930/DSMZ1311,
+  which could denote the same or another preparation and lacks a reconciliation fact.
+  Authentic former active aliases are preserved verbatim as source provenance, not
+  rejected: [{"synonym_text": "L-15 medium", "synonym_type": "RAW_TEXT", "source":
+  "mim-queue"}]. Removing active broad aliases prevents a source-qualified identity
+  from resolving unrelated same-name preparations.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:l15_prepared_medium_dsmz1670
+  ontology_label: L15 prepared basal medium (DSMZ1670)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1670.pdf
+    notes: Promote the existing source1504 L15 owner as the prepared basal L15 used
+      in DSMZ1670. The complete owner inventory has only the two representations of
+      that source:70mlbasal L15, separately10mltryptose phosphate broth,20mlFCS and1ml200mMglutamine.
+      The primary PDF defines the basal-versus-receiving-medium boundary. Manufacturer,
+      phenol-red and glutamine/GlutaMAX variant remain unknown, so no internal component
+      formula or equivalent commercial catalog is claimed. This does not assign source1941/JCM930/DSMZ1311,
+      which could denote the same or another preparation and lacks a reconciliation
+      fact.
+
+
+### M1193-P-IMDM-PREPARATION
+identifier: kgmicrobe.ingredient:imdm_prepared_medium_dsmz1193_1198
+preferred_term: IMDM prepared basal medium (DSMZ1193/1198)
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1069); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named IMDM medium/formulation and left unmapped pending
+    recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/IMDM-Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Recommended record updates — ### Decision No
+    ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+    from this run. Edison''s recommendations are deliberately conservative, and a
+    plausible identifier promoted by a mechanism that never decided anything is what
+    #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:16:51.384858+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: 'Promote the existing source1069 IMDM owner for its complete DSMZ1193 and1198
+    scope. Both primary PDFs name45mlprepared IMDM plus5mlFBS and0.5ml100xaminoacids;
+    the two frozen aggregate representations with900PERCENT retain their unit hold.
+    The added100xaminoacid preparation is not specifically identified as glutamine.
+    Supplier, glutamine/GlutaMAX state and internal formula remain unknown; the unrelated
+    CARbacillus LifeTechnologies31980030 product is not transferred. A single source
+    owner is reused without declaring all commercial IMDM variants chemically identical.
+    Authentic former active aliases are preserved verbatim as source provenance, not
+    rejected: [{"synonym_text": "IMDM-Medium", "synonym_type": "RAW_TEXT", "source":
+    "mim-queue"}]. Removing active broad aliases prevents a source-qualified identity
+    from resolving unrelated same-name preparations. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Promote the existing source1069 IMDM owner for its complete DSMZ1193 and1198
+  scope. Both primary PDFs name45mlprepared IMDM plus5mlFBS and0.5ml100xaminoacids;
+  the two frozen aggregate representations with900PERCENT retain their unit hold.
+  The added100xaminoacid preparation is not specifically identified as glutamine.
+  Supplier, glutamine/GlutaMAX state and internal formula remain unknown; the unrelated
+  CARbacillus LifeTechnologies31980030 product is not transferred. A single source
+  owner is reused without declaring all commercial IMDM variants chemically identical.
+  Authentic former active aliases are preserved verbatim as source provenance, not
+  rejected: [{"synonym_text": "IMDM-Medium", "synonym_type": "RAW_TEXT", "source":
+  "mim-queue"}]. Removing active broad aliases prevents a source-qualified identity
+  from resolving unrelated same-name preparations.'
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:imdm_prepared_medium_dsmz1193_1198
+  ontology_label: IMDM prepared basal medium (DSMZ1193/1198)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1193.pdf
+    notes: Promote the existing source1069 IMDM owner for its complete DSMZ1193 and1198
+      scope. Both primary PDFs name45mlprepared IMDM plus5mlFBS and0.5ml100xaminoacids;
+      the two frozen aggregate representations with900PERCENT retain their unit hold.
+      The added100xaminoacid preparation is not specifically identified as glutamine.
+      Supplier, glutamine/GlutaMAX state and internal formula remain unknown; the
+      unrelated CARbacillus LifeTechnologies31980030 product is not transferred. A
+      single source owner is reused without declaring all commercial IMDM variants
+      chemically identical.
+

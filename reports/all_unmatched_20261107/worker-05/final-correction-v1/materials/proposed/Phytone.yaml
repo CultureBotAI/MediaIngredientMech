@@ -1,0 +1,132 @@
+identifier: MICRO:0001795
+preferred_term: Phytone
+ontology_mapping:
+  ontology_id: MICRO:0001795
+  ontology_label: Phytone peptone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0001795
+    notes: Agent interpretation applying the specific nonobsolete Phytone peptone
+      term to the authentic existing Phytone owner and MediaDive 125/362 source scope.
+      The term names the BBL/Difco trademark and cites the manufacturer papaic soybean-meal
+      digest definition. The erroneous Hordeum vulgare parenthetical is excluded;
+      it is not accepted as a barley identity.
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Manufacturer product descriptions and listings distinguish Phytone from
+      Phytone UF, Difco Soytone and Bacto Soytone. This supports the bounded product
+      interpretation, not an invariant component formula or product interchangeability.
+  - evidence_type: LLM_SUGGESTION
+    source: https://github.com/CultureBotAI/MediaIngredientMech/issues/1212#issuecomment-6718503130
+    notes: Reuse of the separately attributed bounded coordinator Phytone identity
+      conclusion and three coupled Soy alias withdrawals. The combined TARGET-017
+      payload remains pending independent review; no other-worker histories, cases,
+      counts or approval are imported.
+synonyms:
+- synonym_text: Phytone
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Phytone peptone
+  synonym_type: RAW_TEXT
+  source: MediaDive125; correction1193
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1089
+  media_count: 833
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:362); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a plant-derived peptone/protein hydrolysate preparation and
+    left unmapped pending product-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: MAPPED
+  changes: 'Mapped residual peptone variant: identifier UNMAPPED_0488 -> FOODON:03315720
+    (vegetable protein, hydrolyzed), CLOSE_MATCH, mirroring sibling Soy_Peptone (Phytone
+    = BD papaic soy-meal digest). mapping_status UNMAPPED -> MAPPED.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.520193+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 833/1089 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:47:55.839375+00:00'
+  curator: worker05/materials_research correction1193 (isolated proposal)
+  action: CORRECTED
+  changes: Reconcile the missed existing Phytone owner. Give it a product-local identity,
+    preserve its separately named Phytone peptone source alias and supplier description.
+    FOODON03315720 is broader hydrolyzed vegetable protein, not this product; no transfer
+    of833 generic/shared-ID recipe memberships is inferred from the old inflated counts.
+    Exact isolated payload; no maintained write. All prior scientific/publication
+    holds preserved.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Use specific MICRO:0001795 Phytone peptone for the authentic
+    Phytone owner, superseding the unnecessary local fallback and the older broad
+    FOODON identity. This reuses the bounded coordinator conclusion while preserving
+    W05 source ownership and all historical events. Couple the correction to the three
+    Phytone-bearing Soy_Peptone alias withdrawals. Exclude the term annotation’s erroneous
+    Hordeum vulgare parenthetical. No count redistribution, whole-union approval,
+    W10 case import or component formula is asserted. Isolated proposal only; no maintained
+    data or source membership change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Previous published proposal scope, preserved as historical provenance and
+  superseded where corrected below:
+
+  Imported from mim-queue (source_id=mediadive.ingredient:362); mapped 2026-07-05
+  to FOODON:03315720 (vegetable protein, hydrolyzed) as a soy-peptone variant (Phytone
+  = BD papaic soy-meal digest). Reconcile the missed existing Phytone owner. Give
+  it a product-local identity, preserve its separately named Phytone peptone source
+  alias and supplier description. FOODON03315720 is broader hydrolyzed vegetable protein,
+  not this product; no transfer of833 generic/shared-ID recipe memberships is inferred
+  from the old inflated counts. Source-qualified proposal under issue1193. No ingredient
+  roles, assay outcomes, complete-owner support or release admission are approved.
+  Preserve all frozen source and owner holds; component uncertainty is stated separately
+  from whole-material identity.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. Use specific MICRO:0001795 Phytone
+  peptone for the authentic Phytone owner, superseding the unnecessary local fallback
+  and the older broad FOODON identity. This reuses the bounded coordinator conclusion
+  while preserving W05 source ownership and all historical events. Couple the correction
+  to the three Phytone-bearing Soy_Peptone alias withdrawals. Exclude the term annotation’s
+  erroneous Hordeum vulgare parenthetical. No count redistribution, whole-union approval,
+  W10 case import or component formula is asserted. All original source, organism,
+  role, owner and export holds remain. Independent review of these exact successor
+  bytes is pending.'
+ingredient_type: UNDEFINED_MIXTURE
+supplied_form:
+- name: Phytone peptone
+  supplier: BD BBL
+  notes: Official supplier technical guide describes enzymatic digest of soybean meal/flour;
+    no precise catalog for source125.

@@ -1,0 +1,41 @@
+{
+  "scope": "Report-local execution diagnostics; all candidate/native gates unchanged. Original failed drafts and receipts are preserved.",
+  "events": [
+    {
+      "step": "initial combined overlay duplicate comparison",
+      "actual_receipt": "validation/intermediate-overlay-v1/native-validation.json",
+      "result": "FAIL in report-local introduced-collision comparison only",
+      "cause": "Compared entire old and new duplicate groups for equality; it treated shrinking historical groups as new collisions. Baseline MICRO:0001363 had3activeowners and FOODON:03315720 had4; corrected candidates reduce them to2each without adding a member.",
+      "bounded_correction": "validate_overlay_v2.py uses set containment to flag introduced members. Original script and failed receipt retained; native partonomy/schema/filename implementations unchanged.",
+      "successor_receipt": "validation/selected-overlay-v4/native-validation.json"
+    },
+    {
+      "step": "chemical publication copy first attempt",
+      "result": "TypeError before copy or selector update",
+      "cause": "Author FINAL-MANIFEST-v1 has selected_files and payloads, not files/members.",
+      "bounded_correction": "Verified all17selectedfiles and57payloadbindings, then independently hashed/copied all587chemical files. Manifest scope is reported accurately.",
+      "receipt": "control/chemical-publication-copy-v1.json",
+      "preserved_draft": "assembly-draft-v3 selected oldchemicalv2 after the shell first subcommand failed; not finalselected."
+    },
+    {
+      "step": "outcome auditor envelope/header",
+      "result": "Native audit rejected missing phase/shard/slot header.",
+      "bounded_correction": "Restored exact frozen original metadata; scientific rows unchanged.",
+      "reproduction": "validation/preserved-draft-failures-v1/missing-envelope-header.stderr"
+    },
+    {
+      "step": "outcome evidence envelope",
+      "result": "Native audit rejected14newentries missing supports_or_contradicts.",
+      "finding_id": "W05-FINAL-ASSEMBLY-001",
+      "bounded_correction": "Immutable exact observation field copies; captures and timestamps untouched.",
+      "reproduction": "validation/preserved-draft-failures-v1/missing-evidence-applicability-field.stderr"
+    },
+    {
+      "step": "outcome disposition enum",
+      "result": "Native audit rejected3custom curation_proposal values.",
+      "finding_id": "W05-FINAL-ASSEMBLY-002",
+      "bounded_correction": "Immutable restoration of originalnativecases dispositions, retaining all3followonlinks and unresolvedfacts.",
+      "reproduction": "validation/preserved-draft-failures-v1/invalid-native-disposition.stderr"
+    }
+  ]
+}

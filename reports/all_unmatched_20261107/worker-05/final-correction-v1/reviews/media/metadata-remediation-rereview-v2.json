@@ -1,0 +1,55 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "metadata_author": "/root",
+  "at": "2026-11-08T07:53:44.695203+00:00",
+  "finding_id": "W05-FINAL-MEDIA-REVIEW-03",
+  "manifest_sha256": "5c70d97cc97b3e84821043435290d0e0a5e9a2c539c189cf2c7bce27a2cc7e9d",
+  "verdict": "resolved_in_exact_immutable_metadata_successor",
+  "differences": [
+    {
+      "path": "decisions.json",
+      "before_sha256": "b7e27932bfd37df081122dc44fed9c42f504f1715f25ef9e0bab0fc8a5ec3aa7",
+      "after_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+      "differences": [
+        [
+          "/decisions/48/final_correction_reassessment/assessment",
+          "MediaDive2052/ JCM1273 explicitly identifies the Difco Lennox product. Retain the three-part20 g/L standard reconstitution table while preserving the unusual0.1 g receiving dose. Do not route generic LB source1708 to this brand/variant.",
+          "MediaDive2052/ JCM1273 explicitly identifies the Difco Lennox product. Retain the three-part20 g/L standard reconstitution table while preserving the unusual0.1 g receiving dose. Do not route supplier-unspecified LB powder mediadive.ingredient:1999 to this brand/variant."
+        ],
+        [
+          "/decisions/54/final_correction_reassessment/assessment",
+          "Source1708/JCM1111 identifies LB powder at25 g but gives no supplier or NaCl variant. Preserve the source-qualified product and separate Tris/carbonate/sulfide inputs. Its relationship to the positively identified Lennox2052 product remains unresolved; dose alone does not establish difference or equivalence.",
+          "mediadive.ingredient:1999/JCM1111 identifies LB powder at25 g but gives no supplier or NaCl variant. Preserve the source-qualified product and separate Tris/carbonate/sulfide inputs. Its relationship to the positively identified Lennox2052 product remains unresolved; dose alone does not establish difference or equivalence."
+        ]
+      ]
+    },
+    {
+      "path": "primary-read-ledger.json",
+      "before_sha256": "f42799311d648cd2a90d394e25d830e343fb1bc05bd2ece845e5e33ee080346c",
+      "after_sha256": "b10f0c726a4d71cc6d5ccd4e5b32edd354bb82d5db77b76d277a499e67346cba",
+      "differences": [
+        [
+          "/cases/48/assessment",
+          "MediaDive2052/ JCM1273 explicitly identifies the Difco Lennox product. Retain the three-part20 g/L standard reconstitution table while preserving the unusual0.1 g receiving dose. Do not route generic LB source1708 to this brand/variant.",
+          "MediaDive2052/ JCM1273 explicitly identifies the Difco Lennox product. Retain the three-part20 g/L standard reconstitution table while preserving the unusual0.1 g receiving dose. Do not route supplier-unspecified LB powder mediadive.ingredient:1999 to this brand/variant."
+        ],
+        [
+          "/cases/54/assessment",
+          "Source1708/JCM1111 identifies LB powder at25 g but gives no supplier or NaCl variant. Preserve the source-qualified product and separate Tris/carbonate/sulfide inputs. Its relationship to the positively identified Lennox2052 product remains unresolved; dose alone does not establish difference or equivalence.",
+          "mediadive.ingredient:1999/JCM1111 identifies LB powder at25 g but gives no supplier or NaCl variant. Preserve the source-qualified product and separate Tris/carbonate/sulfide inputs. Its relationship to the positively identified Lennox2052 product remains unresolved; dose alone does not establish difference or equivalence."
+        ]
+      ]
+    }
+  ],
+  "primary_source": {
+    "path": "reports/all_unmatched_20261107/worker-05/media/captures/8accfcb3006f5d17f6.html",
+    "sha256": "8d4826c05e6536bd55e98c7f2642eba20feb02d2f8128f175cf610dbaacb4999"
+  },
+  "assessment": "The exact ingredient page identifies 1999, and JCM1111 names LB broth powder25g. This is a correction to the case174 source caption and case159 comparator caption only. No supplier or Lennox equivalence follows; their unresolved relationship remains intact.",
+  "retained_v2_findings": [
+    "W05-FINAL-MEDIA-REVIEW-01",
+    "W05-FINAL-MEDIA-REVIEW-02"
+  ],
+  "sealed_media_members_still_exact": true,
+  "payloads_unchanged": true
+}

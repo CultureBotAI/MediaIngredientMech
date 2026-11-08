@@ -1,0 +1,106 @@
+--- original/Polypeptone.yaml
++++ successor/Polypeptone.yaml
+@@ -1,17 +1,15 @@
+-identifier: FOODON:03315306
++identifier: kgmicrobe.ingredient:polypeptone
+ preferred_term: Polypeptone
+ ontology_mapping:
+-  ontology_id: FOODON:03315306
+-  ontology_label: protein hydrolyzates
+-  ontology_source: FOODON
+-  mapping_quality: CLOSE_MATCH
++  ontology_id: kgmicrobe.ingredient:polypeptone
++  ontology_label: Polypeptone
++  ontology_source: kgmicrobe.ingredient
++  mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: CURATOR_JUDGMENT
+-    source: cbclaw_foodon_promotion
+-    notes: Commercial food mixture - FOODON is correct parent ontology. Polypeptone
+-      (BD/Difco) is a blend of casein and meat peptones; Hipolypepton (Nihon seiyaku/Wako)
+-      is a similar Japanese peptone blend of casein + soy. Mapped to FOODON parent
+-      'protein hydrolyzates' since no exact FOODON term exists. CLOSE_MATCH.
++  - evidence_type: LLM_SUGGESTION
++    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
++    notes: Own peptone preparation scope, not exact generic protein-hydrolysate class.
++      Bare source442 supplier remains unverified.
+ synonyms:
+ - synonym_text: Polypeptone
+   synonym_type: EXACT_SYNONYM
+@@ -32,14 +30,18 @@
+   synonym_type: CATALOG_VARIANT
+   source: manual
+ - synonym_text: Hipolypepton
+-  synonym_type: EXACT_SYNONYM
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: manual; Wako catalog unqualified Hipolypepton is casein digest, not demonstrated
++    identical to the casein/animal-tissue blend; retained provenance.
+ - synonym_text: Hipolypepton (Nihon seiyaku)
+-  synonym_type: CATALOG_VARIANT
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: manual; Wako catalog unqualified Hipolypepton is casein digest, not demonstrated
++    identical to the casein/animal-tissue blend; retained provenance.
+ - synonym_text: Hipolypepton*
+-  synonym_type: RAW_TEXT
+-  source: culturemech:output/ingredient_occurrences.tsv
++  synonym_type: REJECTED_LABEL
++  source: culturemech:output/ingredient_occurrences.tsv; Wako catalog unqualified
++    Hipolypepton is casein digest, not demonstrated identical to the casein/animal-tissue
++    blend; retained provenance.
+ - synonym_text: Polypepton (Nihon Seiyaku)
+   synonym_type: RAW_TEXT
+   source: culturemech:output/ingredient_occurrences.tsv
+@@ -93,6 +95,29 @@
+     Seiyaku)'' (x1 CultureMech mentions); ''Polypeptone (BBL)'' (x1 CultureMech mentions).
+     Source: culturemech:output/ingredient_occurrences.tsv.'
+   llm_assisted: false
++- timestamp: '2026-11-08T05:47:55.835634+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Correct the Polypeptone owner whole-identity boundary with its own registry
++    identity and retire the three Hipolypepton resolving aliases using direct manufacturer
++    evidence. Preserve other source labels and all ambiguous Japanese Polypepton and
++    generic source442 provenance; no forced cross-brand equivalence. Exact isolated
++    payload; no maintained write. All prior scientific/publication holds preserved.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: UNDEFINED_MIXTURE
+ nutritional_roles:
+ - role: PROTEIN_SOURCE
+@@ -101,3 +126,21 @@
+   - reference_type: COMPUTATIONAL_PREDICTION
+     reference_text: Inferred from curated media-role name pattern
+     curator_note: Provisional role from a curated name-pattern rule; review recommended.
++notes: 'Current BD Polypeptone is an equal-parts pancreatic-casein/peptic-animal-tissue
++  digest blend. The old claim that Hipolypepton is a casein+soy blend is superseded
++  by Wako manufacturer casein-only starting-material description. This does not assign
++  bare MediaDive442 or Japanese Polypepton labels to BD211910; those product identities
++  remain held. Correct the Polypeptone owner whole-identity boundary with its own
++  registry identity and retire the three Hipolypepton resolving aliases using direct
++  manufacturer evidence. Preserve other source labels and all ambiguous Japanese Polypepton
++  and generic source442 provenance; no forced cross-brand equivalence. Source-qualified
++  proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support
++  or release admission are approved. Preserve all frozen source and owner holds; component
++  uncertainty is stated separately from whole-material identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

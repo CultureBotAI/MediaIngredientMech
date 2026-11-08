@@ -1,0 +1,126 @@
+--- correction-1193-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml
++++ final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml
+@@ -12,60 +12,67 @@
+ - timestamp: '2026-04-30T18:43:03.698454+00:00'
+   curator: audit_import_ingredients[mim-queue]
+   action: CREATED_AS_UNMAPPED
+-  changes: Imported from mim-queue (source_id=mediadive.ingredient:2095); no CAS-RN
+-    or CHEBI/NCIT match. Curator review needed.
++  changes: Imported from mim-queue (source_id=mediadive.ingredient:2095); no CAS-RN or CHEBI/NCIT match.
++    Curator review needed.
+   new_status: UNMAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-11T19:05:00Z'
+   curator: mediaingredientmech-agentic-curation
+   action: CLASSIFIED_UNDEFINED_MIXTURE
+-  changes: Classified as a dehydrated Wilkins-Chalgren medium preparation and left
+-    unmapped pending product- or recipe-level curation.
++  changes: Classified as a dehydrated Wilkins-Chalgren medium preparation and left unmapped pending product-
++    or recipe-level curation.
+   previous_status: UNMAPPED
+   new_status: UNMAPPED
+   llm_assisted: true
+ - timestamp: '2026-07-05T00:00:00+00:00'
+   curator: cbclaw_media_modeling_114
+   action: RECLASSIFY_INGREDIENT_TYPE
+-  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+-    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
++  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete culture-medium/agar/broth
++    formulation (a medium), not an ingredient-level mixture.'
+   llm_assisted: true
+ - timestamp: '2026-08-06T00:00:00+00:00'
+   curator: edison_literature_identity
+   action: ANNOTATED
+   changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Dehydrated_Wilkins-Chalgren_Medium-edison-literature.md
+-    (local artifact — research/ is gitignored, so the findings are quoted here rather
+-    than linked). Report verdict: ## Executive recommendation — Retain **`UNMAPPED`**
+-    and **`ingredient_type: DEFINED_MEDIUM`**. The label denotes a dehydrated preparation
+-    of a named, multicomponent microbiological culture medium—not a single chemical,
+-    salt, hydrate, buffer, or chemically defined molecular entity. No verified CHEBI,
+-    NCIT, MeSH, FOODON, ENVO, or other stable ontology identifier was found that exactly
+-    identifies thi No ontology CURIE was proposed. Recorded as provenance only — no
+-    grounding applied from this run. Edison''s recommendations are deliberately conservative,
+-    and a plausible identifier promoted by a mechanism that never decided anything
+-    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+-    or reject.'
++    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
++    verdict: ## Executive recommendation — Retain **`UNMAPPED`** and **`ingredient_type: DEFINED_MEDIUM`**.
++    The label denotes a dehydrated preparation of a named, multicomponent microbiological culture medium—not
++    a single chemical, salt, hydrate, buffer, or chemically defined molecular entity. No verified CHEBI,
++    NCIT, MeSH, FOODON, ENVO, or other stable ontology identifier was found that exactly identifies thi
++    No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run.
++    Edison''s recommendations are deliberately conservative, and a plausible identifier promoted by a
++    mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
++    to accept or reject.'
+   llm_assisted: true
+ - timestamp: '2026-11-08T05:50:37.806762+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CORRECTED
+-  changes: DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer
+-    confirms the nine-part product. MICRO0002186 definition explicitly denotes liquid
+-    medium after reconstitution, so it is not exact identity for supplied powder;
+-    DSMZ339a also includes separate supplements. Isolated proposal only; whole-owner/source/export
+-    holds remain and integration requires separate native review.
++  changes: DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer confirms the
++    nine-part product. MICRO0002186 definition explicitly denotes liquid medium after reconstitution,
++    so it is not exact identity for supplied powder; DSMZ339a also includes separate supplements. Isolated
++    proposal only; whole-owner/source/export holds remain and integration requires separate native review.
+   previous_status: UNMAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2095); no CAS-RN or
+-  CHEBI/NCIT match. Reviewed on 2026-05-11 as a dehydrated medium preparation pending
+-  product- or recipe-level curation. Correction1193: DSMZ339/339a source rows name
+-  OxoidCM0643 and33g dehydrated powder. Manufacturer confirms the nine-part product.
+-  MICRO0002186 definition explicitly denotes liquid medium after reconstitution, so
+-  it is not exact identity for supplied powder; DSMZ339a also includes separate supplements.
+-  Existing other Wilkins owners contain prepared broth contexts and a CM0643 alias;
+-  no merge or automatic reassignment of these owners is proposed.'
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2095); no CAS-RN or CHEBI/NCIT match.
++  Reviewed on 2026-05-11 as a dehydrated medium preparation pending product- or recipe-level curation.
++  Correction1193: DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer confirms
++  the nine-part product. MICRO0002186 definition explicitly denotes liquid medium after reconstitution,
++  so it is not exact identity for supplied powder; DSMZ339a also includes separate supplements. Existing
++  other Wilkins owners contain prepared broth contexts and a CM0643 alias; no merge or automatic reassignment
++  of these owners is proposed.'
+ ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:wilkins_chalgren_cm0643_powder
+@@ -73,12 +80,11 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://assets.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0643-V2.pdf
+-    notes: DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer
+-      confirms the nine-part product. MICRO0002186 definition explicitly denotes liquid
+-      medium after reconstitution, so it is not exact identity for supplied powder;
+-      DSMZ339a also includes separate supplements.
++    notes: DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer confirms the
++      nine-part product. MICRO0002186 definition explicitly denotes liquid medium after reconstitution,
++      so it is not exact identity for supplied powder; DSMZ339a also includes separate supplements.
+ supplied_form:
+ - name: Wilkins-Chalgren Anaerobe Broth CM0643
+   form: powder
+@@ -127,6 +133,5 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://assets.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0643-V2.pdf
+-    notes: Manufacturer typical powder formula at33g/L standard reconstitution, subject
+-      to performance adjustment; dose of powder and liquid broth are different supplied
+-      forms.
++    notes: Manufacturer typical powder formula at33g/L standard reconstitution, subject to performance
++      adjustment; dose of powder and liquid broth are different supplied forms.

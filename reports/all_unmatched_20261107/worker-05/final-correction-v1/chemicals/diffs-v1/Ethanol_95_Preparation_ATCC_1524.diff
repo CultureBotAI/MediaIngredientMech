@@ -1,0 +1,116 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_ATCC_1524.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Ethanol_95_Preparation_ATCC_1524.yaml
+@@ -9,32 +9,32 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.atcc.org/~/media/3F8B6BDFCC2D44F88C84F6E1FE4DE6A2.ashx
+-    notes: Source ATCC1527 explicitly reproduces ATCC1524, whose vitamin K1 stock
+-      uses30ml95% ethanol. This corresponds to the assigned TOGO2724 occurrence. Whole
+-      source-named solvent preparation is curated independently of incomplete composition.
+-      The literal95% has no stated v/v,w/w orother basis; no numerical component concentration,
+-      water balance, denaturant status, supplier, lot, whole-stock CAS or molecular
+-      formula is inferred. NCIT:C185110 explicitly requires aqueous95% ethanol by
+-      volume and is therefore an unapproved candidate, not an exact/close/broad mapping.
+-      CHEBI:16236 identifies only the supported ethanol component. Cross-source equivalence
+-      is unestablished; source qualification is an identity boundary, not proof of
+-      different chemistry. Generic raw95% labels remain in this note and the frozen
+-      ledger, not active resolver aliases. All source, unit, role, owner and export
+-      holds remain.
++    notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
++      solvent balance, denaturants and historical product specification are unreported.
++      Different source accessions or receiving stocks prove neither equal nor different
++      supplied preparations. A shared bounded nominal representation is a possible
++      coordinator outcome; exact historical formulation equality and a final owner
++      choice remain unresolved under #1237. This identifier is retained only as a
++      conditional historical proposal handle. Do not install all four candidates as
++      proven distinct substances. Retain all 17 precise occurrence routes and the
++      original source lineages. CHEBI:16236 grounds the named ethanol component only;
++      NCIT:C185110 is not approved because it specifically requires aqueous 95% by
++      volume. No numerical component percentage, water balance or whole-stock molecular
++      identity is inferred. All inherited holds remain.'
+ synonyms: []
+-notes: Source ATCC1527 explicitly reproduces ATCC1524, whose vitamin K1 stock uses30ml95%
+-  ethanol. This corresponds to the assigned TOGO2724 occurrence. Whole source-named
+-  solvent preparation is curated independently of incomplete composition. The literal95%
+-  has no stated v/v,w/w orother basis; no numerical component concentration, water
+-  balance, denaturant status, supplier, lot, whole-stock CAS or molecular formula
+-  is inferred. NCIT:C185110 explicitly requires aqueous95% ethanol by volume and is
+-  therefore an unapproved candidate, not an exact/close/broad mapping. CHEBI:16236
+-  identifies only the supported ethanol component. Cross-source equivalence is unestablished;
+-  source qualification is an identity boundary, not proof of different chemistry.
+-  Generic raw95% labels remain in this note and the frozen ledger, not active resolver
+-  aliases. All source, unit, role, owner and export holds remain.
++notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
++  solvent balance, denaturants and historical product specification are unreported.
++  Different source accessions or receiving stocks prove neither equal nor different
++  supplied preparations. A shared bounded nominal representation is a possible coordinator
++  outcome; exact historical formulation equality and a final owner choice remain unresolved
++  under #1237. This identifier is retained only as a conditional historical proposal
++  handle. Do not install all four candidates as proven distinct substances. Retain
++  all 17 precise occurrence routes and the original source lineages. CHEBI:16236 grounds
++  the named ethanol component only; NCIT:C185110 is not approved because it specifically
++  requires aqueous 95% by volume. No numerical component percentage, water balance
++  or whole-stock molecular identity is inferred. All inherited holds remain.'
+ components:
+ - component_name: Ethanol
+   component_id: CHEBI:16236
+@@ -45,12 +45,32 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.atcc.org/~/media/3F8B6BDFCC2D44F88C84F6E1FE4DE6A2.ashx
+-    notes: Source ATCC1527 explicitly reproduces ATCC1524, whose vitamin K1 stock
+-      uses30ml95% ethanol. This corresponds to the assigned TOGO2724 occurrence. Named
+-      ethanol component only; nominal95% qualifier retained without assuming percentage
+-      basis or other constituents.
+-  notes: Partial membership only. No percentage-basis conversion, quantitative ethanol
+-    concentration, water balance, denaturant identity or complete mixture claim.
++    notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
++      solvent balance, denaturants and historical product specification are unreported.
++      Different source accessions or receiving stocks prove neither equal nor different
++      supplied preparations. A shared bounded nominal representation is a possible
++      coordinator outcome; exact historical formulation equality and a final owner
++      choice remain unresolved under #1237. This identifier is retained only as a
++      conditional historical proposal handle. Do not install all four candidates as
++      proven distinct substances. Retain all 17 precise occurrence routes and the
++      original source lineages. CHEBI:16236 grounds the named ethanol component only;
++      NCIT:C185110 is not approved because it specifically requires aqueous 95% by
++      volume. No numerical component percentage, water balance or whole-stock molecular
++      identity is inferred. All inherited holds remain. Component inputs and quantities
++      remain transcribed from this entry’s cited source.'
++  notes: 'The source names a nominal 95% ethanol preparation. The percentage basis,
++    solvent balance, denaturants and historical product specification are unreported.
++    Different source accessions or receiving stocks prove neither equal nor different
++    supplied preparations. A shared bounded nominal representation is a possible coordinator
++    outcome; exact historical formulation equality and a final owner choice remain
++    unresolved under #1237. This identifier is retained only as a conditional historical
++    proposal handle. Do not install all four candidates as proven distinct substances.
++    Retain all 17 precise occurrence routes and the original source lineages. CHEBI:16236
++    grounds the named ethanol component only; NCIT:C185110 is not approved because
++    it specifically requires aqueous 95% by volume. No numerical component percentage,
++    water balance or whole-stock molecular identity is inferred. All inherited holds
++    remain. The transcribed components are source assertions, not evidence of cross-source
++    disjointness.'
+ curation_history:
+ - timestamp: '2026-11-08T06:09:05.291788+00:00'
+   curator: Codex worker05 chemical correction1193
+@@ -69,3 +89,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. Withdraw unsupported inference
++    of distinct preparation identity from accession number or missing qualifiers.
++    Retain exact candidate/source/occurrence lineage for conditional family reconciliation
++    under #1237. Report-only candidate; separate final scientific review and coordinator
++    integration remain required.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6

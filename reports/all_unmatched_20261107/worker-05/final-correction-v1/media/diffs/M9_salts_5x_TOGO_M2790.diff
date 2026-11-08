@@ -1,0 +1,59 @@
+--- correction-1193-v1/media/proposed/M9_salts_5x_TOGO_M2790.yaml
++++ final-correction-v1/media/proposed/M9_salts_5x_TOGO_M2790.yaml
+@@ -9,10 +9,20 @@
+ - timestamp: '2026-11-08T05:43:55.990619+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CREATED
+-  changes: Create source-defined5x M9 stock from explicit original recipe inputs;
+-    retain unknown phosphate hydration and separate20ml receiving dose. Isolated proposal
+-    only; whole-owner/source/export holds remain and integration requires separate
+-    native review.
++  changes: Create source-defined5x M9 stock from explicit original recipe inputs; retain unknown phosphate
++    hydration and separate20ml receiving dose. Isolated proposal only; whole-owner/source/export holds
++    remain and integration requires separate native review.
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+@@ -26,11 +36,10 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://togomedium.org/medium/M2790
+-    notes: Original TOGO source defines a five-input stock recipe; registry denotes
+-      only that preparation, not an inferred Sigma catalog product or a generic M9
+-      salt mix.
++    notes: Original TOGO source defines a five-input stock recipe; registry denotes only that preparation,
++      not an inferred Sigma catalog product or a generic M9 salt mix.
+ components:
+ - component_name: NaCl
+   reference_scope: UNMAPPED
+@@ -59,10 +68,9 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://togomedium.org/medium/M2790
+     source_record: Original archived API preparation paragraph5
+-    notes: One-level recipe inputs as written; named UNMAPPED parts preserve unspecified
+-      phosphate hydration. Amounts are source-batch inputs and no measured final volume
+-      or molarity is asserted.
+-notes: The source separately adds20ml of this stock to its parent medium. Preserve
+-  stock nesting; frozen20G_PER_L and flattened salts are upstream errors, not prerequisites
+-  for curating the defined stock. Original Sigma label is retained without guessing
+-  a catalog. No component CURIE, role or arbitrary1x M9 equivalence is asserted.
++    notes: One-level recipe inputs as written; named UNMAPPED parts preserve unspecified phosphate hydration.
++      Amounts are source-batch inputs and no measured final volume or molarity is asserted.
++notes: The source separately adds20ml of this stock to its parent medium. Preserve stock nesting; frozen20G_PER_L
++  and flattened salts are upstream errors, not prerequisites for curating the defined stock. Original
++  Sigma label is retained without guessing a catalog. No component CURIE, role or arbitrary1x M9 equivalence
++  is asserted.

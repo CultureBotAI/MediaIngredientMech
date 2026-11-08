@@ -1,0 +1,62 @@
+{
+  "finding_id": "W05-FINAL-ASSEMBLY-002",
+  "author": "/root",
+  "recorded_at": "2026-11-08T07:57:13.614169+00:00",
+  "category": "outcome_disposition_enum",
+  "severity": "minor",
+  "reported_to_coordinator_before_fix": true,
+  "source": {
+    "path": ".temp/w05-final-correction-v1/chemicals/decisions-v2.json",
+    "sha256": "52c30e13862d68ca30dd40a4f6958d9d4fc76184aab3bfbee4cab9f06ec4167d"
+  },
+  "actual_native_failure": "audit_worker_outcomes_v1.py: InvalidOutcome: invalid disposition",
+  "affected_cases": [
+    {
+      "case_id": "KG_CASE:601d124a075487ea9b3506342c4456ad94763be8624a0c3d0c6228601bf986f8",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1042",
+        "source_label": "KJ",
+        "raw_source_label": "KJ"
+      },
+      "before": "curation_proposal",
+      "after": "stock_product_mixture_context",
+      "retained_followon_proposal_ids": [
+        "FINAL-CHEM-P-ki-stock-alias"
+      ],
+      "missing_requirement": "OriginalDSMZ1155 retainsKJ1mg/ml50microlitre withoutspellingoutsolute orsolvent. The full primary1727comparison and providersearch do not establish exactreagentidentity. ProviderCAS77-10-1 isphencyclidinecontamination. Minting an undefinedKJstock would merely rename unresolvedidentity; need authoritativeKJexpansion andsolvent."
+    },
+    {
+      "case_id": "KG_CASE:95b790ddb78a997811337834f1d50870430781c963f982ed3257378097b10edb",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:77",
+        "source_label": "Thiamine-HCl x 2 H2O",
+        "raw_source_label": "Thiamine-HCl x 2 H2O"
+      },
+      "before": "curation_proposal",
+      "after": "existing_identity_or_alias",
+      "retained_followon_proposal_ids": [
+        "FINAL-CHEM-P-thiamine-dihydrate-cas"
+      ],
+      "missing_requirement": null
+    },
+    {
+      "case_id": "KG_CASE:afa56b335b77ddf46c0a79c5006054b0b9812c6869edd8af5e28b16e2168e08c",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1401",
+        "source_label": "Eisencitrat",
+        "raw_source_label": "Eisencitrat"
+      },
+      "before": "curation_proposal",
+      "after": "unresolved",
+      "retained_followon_proposal_ids": [
+        "FINAL-CHEM-P-ferric-stock-alias"
+      ],
+      "missing_requirement": "Original3183names1gEisencitrat plus1gcitricacid in100mlwater but omits ironoxidationstate,stoichiometry,hydration andcatalog. This case denotes that inputreagent, not thedefinedwholechelatedstock. A newwhole-stockrecord would not resolve the assignedchemicalnode; existingFe(III)citrateholdsremain."
+    }
+  ],
+  "bounded_fix": "Restore each exact original native disposition. Preserve all proposal links, missing facts, source-specific scientific reasoning and no-change nulls for cases with a bounded follow-on. A follow-on proposal does not resolve the source case.",
+  "no_scientific_decision_or_payload_change": true
+}

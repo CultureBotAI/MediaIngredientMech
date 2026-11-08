@@ -1,0 +1,25 @@
+{
+  "executor": "/root/final_skeptical",
+  "script_author": "/root",
+  "completed_at": "2026-11-08T08:23:08.446558+00:00",
+  "script": {
+    "path": ".temp/w05-final-correction-v1/control/validate_overlay_v2.py",
+    "sha256": "60636823a5f922ec1f454f7f2ce181813e2b2c8ac3df39f942bfc3917527d3e8"
+  },
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .temp/all-unmatched-worker-05/venv/bin/python .temp/w05-final-correction-v1/control/validate_overlay_v2.py --proposals reports/all_unmatched_20261107/worker-05/final-correction-v1/core/proposals.json --out .temp/w05-final-correction-v1/review-assembly/independent-native-replay-v2",
+  "exit_code": 0,
+  "receipt": {
+    "path": ".temp/w05-final-correction-v1/review-assembly/independent-native-replay-v2/native-validation.json",
+    "sha256": "c83d651c55e47f951a68979adc8e7256255c18fb9b3780e97ed511ccf28c50f2"
+  },
+  "status": "PASS",
+  "counts": {
+    "selected_payloads": 142,
+    "baseline_records": 2956,
+    "overlay_records": 3029
+  },
+  "limitations": [
+    "Native structural replay does not authorize applying conditional alternative candidates together.",
+    "Exact public selected payload bytes only; chemical assessment remains separately attributed."
+  ]
+}

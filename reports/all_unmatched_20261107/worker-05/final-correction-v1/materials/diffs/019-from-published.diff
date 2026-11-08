@@ -1,0 +1,47 @@
+--- published/Fish_Meat_Extract.yaml
++++ successor/Fish_Meat_Extract.yaml
+@@ -17,6 +17,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:fish_meat_extract
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:fish_meat_extract
+@@ -24,13 +35,13 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=177
+     notes: Curate the fish-meat extract used in JCM177/TOGO M170 and corresponding
+       MediaDive solution as a distinct complex extract. Fish peptone and small dried
+       sardine are different material types; hydrolysis, species and extraction yield
+       are unspecified.
+-notes: Curate the fish-meat extract used in JCM177/TOGO M170 and corresponding MediaDive
++notes: 'Curate the fish-meat extract used in JCM177/TOGO M170 and corresponding MediaDive
+   solution as a distinct complex extract. Fish peptone and small dried sardine are
+   different material types; hydrolysis, species and extraction yield are unspecified.
+   Source-qualified proposal under issue1193. No ingredient roles, assay outcomes,
+@@ -39,3 +50,10 @@
+   identity. Occurrence statistics count current exact proposed-label matches in the
+   inspected CultureMech occurrence table; no shared-identifier expansion or newly
+   invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

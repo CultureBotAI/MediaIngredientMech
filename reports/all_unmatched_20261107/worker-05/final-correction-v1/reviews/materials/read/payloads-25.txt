@@ -1,0 +1,523 @@
+
+PROPOSAL W05-FINAL-MAT-026
+{
+ "identifier": "cas:9001-05-2",
+ "preferred_term": "Catalase",
+ "ontology_mapping": {
+  "ontology_id": "mesh:D002374",
+  "ontology_label": "Catalase",
+  "ontology_source": "MESH",
+  "mapping_quality": "NARROW_MATCH",
+  "evidence": [
+   {
+    "evidence_type": "DATABASE_MATCH",
+    "source": "CultureMech",
+    "notes": "SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+   },
+   {
+    "evidence_type": "MANUAL_CURATION",
+    "source": "MIM curation (#312); chebi.db",
+    "notes": "identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 ('Catalase') -> mesh:D002374 ('Catalase'); mapping_quality EXACT_MATCH -> NARROW_MATCH. ncit.db defines NCIT:C61062 'Catalase' as 'Catalase (527 aa, ~60 kDa) is encoded by the human CAT gene' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene): the human gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch would substitute that node for the reagent. Follow the protein-reagent siblings Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme's CAS 9001-05-2 (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374 'Catalase', Rule B1 registry row."
+   }
+  ]
+ },
+ "synonyms": [
+  {
+   "synonym_text": "Properties: Defined component, Simple component",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "CultureMech"
+  },
+  {
+   "synonym_text": "Properties: Simple component, Defined component",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "CultureMech"
+  },
+  {
+   "synonym_text": "Catalase (Sigma C--10)",
+   "synonym_type": "CATALOG_VARIANT",
+   "source": "culturemech:output/ingredient_occurrences.tsv"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 34,
+  "media_count": 34
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-03-09T06:54:18.022301+00:00",
+   "curator": "import_from_culturemech",
+   "action": "IMPORTED",
+   "changes": "Initial import from CultureMech pipeline",
+   "new_status": "MAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-01T07:35:32.659756+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:12:13.174638+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-06-10T06:49:42.119337+00:00",
+   "curator": "fix_dead_chebi_ids.py",
+   "action": "CORRECTED",
+   "changes": "identifier CHEBI:3463 -> NCIT:C61062 (Catalase, source NCIT): CHEBI:3463 is absent from current ChEBI (OLS4 404)."
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.518532+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 26/26 -> 34/34 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-08-30T04:48:06.233536+00:00",
+   "curator": "claude_culturemech_alias_backfill",
+   "action": "ADDED_SYNONYMS",
+   "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Catalase (Sigma C--10)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-09-23T00:44:54.489778+00:00",
+   "curator": "claude",
+   "action": "REGROUNDED_IDENTITY",
+   "changes": "identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 ('Catalase') -> mesh:D002374 ('Catalase'); mapping_quality EXACT_MATCH -> NARROW_MATCH. ncit.db defines NCIT:C61062 'Catalase' as 'Catalase (527 aa, ~60 kDa) is encoded by the human CAT gene' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene): the human gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch would substitute that node for the reagent. Follow the protein-reagent siblings Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme's CAS 9001-05-2 (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374 'Catalase', Rule B1 registry row. (#312)",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "claude-fable-5-1"
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.825266+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Record the literal historical Sigma C-10 enzyme preparation as a supplied form on the existing Catalase owner. JCM117 directly supplies the catalog spelling and60mg filter-sterilized addition; contemporary C100 evidence is not used to infer historical C-10 species, formulation or equivalence. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Optionally classify the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy already excludes these texts; this is provenance classification only, with no resolver change, filter change or release blocker. Correct active attribution to the inspected TOGO M109 recipe and preserve the unsuccessful JCM 117 capture honestly. Reuse only this bounded conclusion from coordinator TARGET-005; preserve the W05 history prefix and source ownership. The historical event remains unedited as superseded history. Keep literal C--10, the distinct C9322 dependency, the C100 uncertainty and the human NCIT:C61062 exclusion under issue 312. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "ingredient_type": "SINGLE_INGREDIENT",
+ "chemical_properties": {
+  "cas_rn": "9001-05-2",
+  "data_source": "CAS registry number of catalase, EC 1.11.1.6 (enzyme, no single structure)"
+ },
+ "supplied_form": [
+  {
+   "name": "Catalase (Sigma C-10)",
+   "supplier": "Sigma",
+   "catalog_number": "C-10",
+   "notes": "TOGO M109 records original_media_id JCM_M117 and literal Catalase (Sigma C--10), 60 mg with separate filtration. The direct JCM 117 response says Nothing found. Historical species and formulation are unverified; contemporary C100 is not assigned. The separately supported C9322 proposal remains in the pending coordinator union and is not imported into W05 case membership."
+  }
+ ],
+ "notes": "Record the literal historical Sigma C-10 enzyme preparation as a supplied form on the existing Catalase owner. TOGO M109, carrying original_media_id JCM_M117, supplies literal Catalase (Sigma C--10), 60 mg and filtration; the direct JCM 117 capture returns Nothing found; contemporary C100 evidence is not used to infer historical C-10 species, formulation or equivalence. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Optionally classify the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy already excludes these texts; this is provenance classification only, with no resolver change, filter change or release blocker. Correct active attribution to the inspected TOGO M109 recipe and preserve the unsuccessful JCM 117 capture honestly. Reuse only this bounded conclusion from coordinator TARGET-005; preserve the W05 history prefix and source ownership. The historical event remains unedited as superseded history. Keep literal C--10, the distinct C9322 dependency, the C100 uncertainty and the human NCIT:C61062 exclusion under issue 312. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}
+
+PROPOSAL W05-FINAL-MAT-027
+{
+ "identifier": "kgmicrobe.ingredient:liver_extract_concentrate",
+ "preferred_term": "Liver extract concentrate",
+ "synonyms": [
+  {
+   "synonym_text": "Liver extract concentrate",
+   "synonym_type": "RAW_TEXT",
+   "source": "mim-queue"
+  },
+  {
+   "synonym_text": "Liver extract concentrate (NBCo)",
+   "synonym_type": "RAW_TEXT",
+   "source": "JCM11/JCM20; correction1193"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 10,
+  "media_count": 10
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-04-30T18:43:03.698454+00:00",
+   "curator": "audit_import_ingredients[mim-queue]",
+   "action": "CREATED_AS_UNMAPPED",
+   "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1599); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+   "new_status": "UNMAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:12:19.695683+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'extract')",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:18:21.931395+00:00",
+   "curator": "resolve_unmapped_v2",
+   "action": "AUTO_UPGRADE_TO_MICRO",
+   "changes": "primary UNMAPPED_0431 → MICRO:0001363 (strategy=stem-match)",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-06-03T02:06:01.743996+00:00",
+   "curator": "infer_roles_from_name_lists",
+   "action": "ANNOTATED",
+   "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.80)"
+  },
+  {
+   "timestamp": "2026-07-20T00:00:00+00:00",
+   "curator": "migrate_media_roles_to_facets",
+   "action": "ANNOTATED",
+   "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE"
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.519214+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 0/0 -> 10/10 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.829207+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Give NBCo liver-extract concentrate its own local preparation identity rather than sharing generic MICRO:0001363 with dry extract and infusion. Exact-label current occurrences all belong to JCM11/JCM20 source families; Raka-Ray Liver_Concentrate remains a separate unresolved owner. Record NBCo supplied form without inventing concentration factor or species. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1599); no CAS-RN or CHEBI/NCIT match. Curator review needed. Give NBCo liver-extract concentrate its own local preparation identity rather than sharing generic MICRO:0001363 with dry extract and infusion. Exact-label current occurrences all belong to JCM11/JCM20 source families; Raka-Ray Liver_Concentrate remains a separate unresolved owner. Record NBCo supplied form without inventing concentration factor or species. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending.",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:liver_extract_concentrate",
+  "ontology_label": "Liver extract concentrate",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=20",
+    "notes": "Source-qualified commercial concentrate; generic liver-extract term does not denote exact supplied preparation."
+   }
+  ]
+ },
+ "nutritional_roles": [
+  {
+   "role": "PROTEIN_SOURCE",
+   "confidence": 0.8,
+   "evidence": [
+    {
+     "reference_type": "COMPUTATIONAL_PREDICTION",
+     "reference_text": "Inferred from curated media-role name pattern",
+     "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+    }
+   ]
+  }
+ ],
+ "supplied_form": [
+  {
+   "name": "Liver extract concentrate (NBCo)",
+   "supplier": "NBCo",
+   "notes": "JCM11 and20/MediaDive1599 manufacturer qualifier; no product code or concentration factor available."
+  }
+ ]
+}
+
+PROPOSAL W05-FINAL-MAT-028
+{
+ "preferred_term": "Maize extract",
+ "mapping_status": "MAPPED",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "synonyms": [],
+ "occurrence_statistics": {
+  "total_occurrences": 3,
+  "media_count": 3
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-11-08T05:47:55.831425+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CREATED",
+   "changes": "Curate maize extract as the biological extraction product in DSMZ570 and MediaDive575. Source independently lists starch and maize extract, so neither starch nor corn steep liquor is asserted as its identity. Tissue fraction, solvent and supplier remain unspecified within this source material scope. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "identifier": "kgmicrobe.ingredient:maize_extract",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:maize_extract",
+  "ontology_label": "Maize extract",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium570.pdf",
+    "notes": "Curate maize extract as the biological extraction product in DSMZ570 and MediaDive575. Source independently lists starch and maize extract, so neither starch nor corn steep liquor is asserted as its identity. Tissue fraction, solvent and supplier remain unspecified within this source material scope."
+   }
+  ]
+ },
+ "notes": "Curate maize extract as the biological extraction product in DSMZ570 and MediaDive575. Source independently lists starch and maize extract, so neither starch nor corn steep liquor is asserted as its identity. Tissue fraction, solvent and supplier remain unspecified within this source material scope. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity. Occurrence statistics count current exact proposed-label matches in the inspected CultureMech occurrence table; no shared-identifier expansion or newly invented recipe membership.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}
+
+PROPOSAL W05-FINAL-MAT-029
+{
+ "preferred_term": "Hipolypepton",
+ "mapping_status": "MAPPED",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "synonyms": [],
+ "occurrence_statistics": {
+  "total_occurrences": 7,
+  "media_count": 7
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-11-08T05:47:55.832499+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CREATED",
+   "changes": "Curate unqualified Hipolypepton as the Nihon Pharmaceutical casein enzymatic-digest product distributed by Wako. The manufacturer catalog distinguishes soybean Hipolypepton S/N/NS variants and identifies unqualified Hipolypepton as casein-derived. The recipe alternative to Trypticase remains a choice, not an exact compound-label synonym. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "identifier": "kgmicrobe.ingredient:hipolypepton",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:hipolypepton",
+  "ontology_label": "Hipolypepton",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://labchem-wako.fujifilm.com/us/catalog/pdf/catalog_0005.pdf",
+    "notes": "Curate unqualified Hipolypepton as the Nihon Pharmaceutical casein enzymatic-digest product distributed by Wako. The manufacturer catalog distinguishes soybean Hipolypepton S/N/NS variants and identifies unqualified Hipolypepton as casein-derived. The recipe alternative to Trypticase remains a choice, not an exact compound-label synonym."
+   }
+  ]
+ },
+ "supplied_form": [
+  {
+   "name": "Hipolypepton",
+   "supplier": "Nihon Pharmaceutical; Wako distributor",
+   "catalog_number": "392-02115",
+   "form": "powder",
+   "notes": "Manufacturer catalog identifies casein-derived enzymatically degraded dried purified powder; distinct S/N/NS soy variants excluded."
+  }
+ ],
+ "notes": "Curate unqualified Hipolypepton as the Nihon Pharmaceutical casein enzymatic-digest product distributed by Wako. The manufacturer catalog distinguishes soybean Hipolypepton S/N/NS variants and identifies unqualified Hipolypepton as casein-derived. The recipe alternative to Trypticase remains a choice, not an exact compound-label synonym. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity. Occurrence statistics count current exact proposed-label matches in the inspected CultureMech occurrence table; no shared-identifier expansion or newly invented recipe membership.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}
+
+PROPOSAL W05-FINAL-MAT-030
+{
+ "identifier": "kgmicrobe.ingredient:polypeptone",
+ "preferred_term": "Polypeptone",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:polypeptone",
+  "ontology_label": "Polypeptone",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+    "notes": "Own peptone preparation scope, not exact generic protein-hydrolysate class. Bare source442 supplier remains unverified."
+   }
+  ]
+ },
+ "synonyms": [
+  {
+   "synonym_text": "Polypeptone",
+   "synonym_type": "EXACT_SYNONYM",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Polypepton",
+   "synonym_type": "EXACT_SYNONYM",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "polypeptone",
+   "synonym_type": "EXACT_SYNONYM",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Polypepton (Nihon Pharm. Co.)",
+   "synonym_type": "CATALOG_VARIANT",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Polypeptone peptone (BD-BBL)",
+   "synonym_type": "CATALOG_VARIANT",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Polypeptone Peptone (BD 211910)",
+   "synonym_type": "CATALOG_VARIANT",
+   "source": "manual"
+  },
+  {
+   "synonym_text": "Hipolypepton",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "manual; Wako catalog unqualified Hipolypepton is casein digest, not demonstrated identical to the casein/animal-tissue blend; retained provenance."
+  },
+  {
+   "synonym_text": "Hipolypepton (Nihon seiyaku)",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "manual; Wako catalog unqualified Hipolypepton is casein digest, not demonstrated identical to the casein/animal-tissue blend; retained provenance."
+  },
+  {
+   "synonym_text": "Hipolypepton*",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "culturemech:output/ingredient_occurrences.tsv; Wako catalog unqualified Hipolypepton is casein digest, not demonstrated identical to the casein/animal-tissue blend; retained provenance."
+  },
+  {
+   "synonym_text": "Polypepton (Nihon Seiyaku)",
+   "synonym_type": "RAW_TEXT",
+   "source": "culturemech:output/ingredient_occurrences.tsv"
+  },
+  {
+   "synonym_text": "Polypeptone (BBL)",
+   "synonym_type": "CATALOG_VARIANT",
+   "source": "culturemech:output/ingredient_occurrences.tsv"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 135,
+  "media_count": 135
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-04-18T04:19:36+00:00",
+   "curator": "foodon_promotion_cbclaw",
+   "action": "CREATED",
+   "changes": "Created new mapped entry for polypeptone / hipolypepton blended peptone family with FOODON:03315306 (protein hydrolyzates).",
+   "new_status": "MAPPED",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-05-01T07:35:35.859290+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:12:17.839373+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-06-03T02:06:01.747805+00:00",
+   "curator": "infer_roles_from_name_lists",
+   "action": "ANNOTATED",
+   "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.80)"
+  },
+  {
+   "timestamp": "2026-07-20T00:00:00+00:00",
+   "curator": "migrate_media_roles_to_facets",
+   "action": "ANNOTATED",
+   "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE"
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.519702+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 0/0 -> 135/135 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-08-30T04:48:06.233536+00:00",
+   "curator": "claude_culturemech_alias_backfill",
+   "action": "ADDED_SYNONYMS",
+   "changes": "Added 3 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Hipolypepton*' (x4 CultureMech mentions); 'Polypepton (Nihon Seiyaku)' (x1 CultureMech mentions); 'Polypeptone (BBL)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.835634+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Correct the Polypeptone owner whole-identity boundary with its own registry identity and retire the three Hipolypepton resolving aliases using direct manufacturer evidence. Preserve other source labels and all ambiguous Japanese Polypepton and generic source442 provenance; no forced cross-brand equivalence. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "nutritional_roles": [
+  {
+   "role": "PROTEIN_SOURCE",
+   "confidence": 0.8,
+   "evidence": [
+    {
+     "reference_type": "COMPUTATIONAL_PREDICTION",
+     "reference_text": "Inferred from curated media-role name pattern",
+     "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+    }
+   ]
+  }
+ ],
+ "notes": "Current BD Polypeptone is an equal-parts pancreatic-casein/peptic-animal-tissue digest blend. The old claim that Hipolypepton is a casein+soy blend is superseded by Wako manufacturer casein-only starting-material description. This does not assign bare MediaDive442 or Japanese Polypepton labels to BD211910; those product identities remain held. Correct the Polypeptone owner whole-identity boundary with its own registry identity and retire the three Hipolypepton resolving aliases using direct manufacturer evidence. Preserve other source labels and all ambiguous Japanese Polypepton and generic source442 provenance; no forced cross-brand equivalence. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}

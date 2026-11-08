@@ -1,0 +1,2563 @@
+{
+  "review_head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+  "retained_count": 18,
+  "findings": [
+    {
+      "finding": {
+        "finding_id": "W05-CR-F01",
+        "severity": "P1",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "Two HEPES stock owners assert an unsupported substance distinction",
+        "case_ids": [
+          "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"
+        ],
+        "proposal_ids": [
+          "CHEM-C1193-HEPES-1221",
+          "CHEM-C1193-HEPES-1474"
+        ],
+        "payload_inputs": [
+          {
+            "proposal_id": "CHEM-C1193-HEPES-1221",
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1221.yaml",
+            "sha256": "05cf4a1b09aff0fd1954ef0ac1aa563844414f4896261eaca48271323d9f8a46",
+            "owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1221.yaml",
+            "before_sha256": null
+          },
+          {
+            "proposal_id": "CHEM-C1193-HEPES-1474",
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1474.yaml",
+            "sha256": "6ba28f7de8b9b6387fb38f44ec01ce9b9626a84bea256ea63b7d0df07b109fad",
+            "owner_path": "data/ingredients/mapped/HEPES_KOH_1M_NBRC_1474.yaml",
+            "before_sha256": null
+          }
+        ],
+        "description": "NBRC1221 and NBRC1474 both specify 1 M HEPES-KOH, added as 20 ml. Their 7.14 and 9.0 values describe the receiving media. Neither specifies a different stock solvent, stock pH, neutralization ratio or preparation. Source qualification alone does not establish two distinct ingredients.",
+        "exact_reproduction": "Read both complete NBRC recipe captures and the entire selected HEPES payloads. Compare their component assertions and notes: the known stock input claims are the same, while the only stated difference is receiving-medium context.",
+        "bounded_curation_followup": "Retain one concrete partial preparation anchor and make the other occurrence a conditional comparison, or provide primary evidence of a material/preparation difference before minting the second identity. Do not infer exact equivalence or force a merge.",
+        "lineage_and_holds": "The partial-stock remediation is a valid improvement over a blanket missing-carrier hold. This finding concerns the unsupported second stable identity, not the ability to represent a bounded partial stock.",
+        "source_evidence": [
+          {
+            "evidence_id": "CHEM-CAP-b4a1db85c19c42e5",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-b4a1db85c19c42e5.html",
+              "sha256": "69aed280f9d391fab759d779e640e41400b27cf95332880845ca6510e9c84477"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "accessed_at": "2026-11-08T05:07:58.318464+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c801a5637573d5ae",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c801a5637573d5ae.html",
+              "sha256": "bde58026e8c9d90d970bd78c59331cb069855f7271b86e754dce74df3486a9d3"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "accessed_at": "2026-11-08T05:07:58.920640+00:00"
+          }
+        ],
+        "additional_evidence": [],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F01",
+        "disposition": "retain",
+        "normalized_severity": "major",
+        "native_severity": "P1",
+        "category": "identity",
+        "assessment": "Both actual NBRC1221/1474 source pages and both entire selected stock payloads were independently read. The source numbers and receiving-medium pH values do not establish distinct1M stock identities. Retain one bounded concrete anchor and an unresolved comparison, or provide an actual material distinction; do not force equivalence.",
+        "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-CR-F02",
+        "severity": "P1",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "Wolfe elixir duplication uses unresolved hydration as proof of distinction",
+        "case_ids": [
+          "CM_NAME:a2449c251d0f2d4cd89e92322774679497bee6a002df73f7426fdf1265ec2051",
+          "CM_NAME:b9957e50fabb5d1a6f36c7dbd1397bf8d21a96ee808b34d48a1956f3509db73c",
+          "CM_NAME:e8f6292ec3004c8e4724426e6c383a0303a41888dea8f32db524fe2647fb2cff"
+        ],
+        "proposal_ids": [
+          "R1193-P-wolfe470",
+          "R1193-P-wolfe792"
+        ],
+        "payload_inputs": [
+          {
+            "proposal_id": "R1193-P-wolfe470",
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed-v2/Wolfe_Mineral_Elixir_JCM470.yaml",
+            "sha256": "59fdf6607b5ae8add60ff70972c6b2ac143e7fe0d5212b50896cb886315c2069",
+            "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_JCM470.yaml",
+            "before_sha256": null
+          },
+          {
+            "proposal_id": "R1193-P-wolfe792",
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed-v2/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+            "sha256": "b8ccaea9515441fbee3edb15d5edf3951f2c4729278a82e3219ae751890e5ea4",
+            "owner_path": "data/ingredients/mapped/Wolfe_Mineral_Elixir_DSMZ792.yaml",
+            "before_sha256": null
+          }
+        ],
+        "description": "JCM470 and DSMZ792 enumerate the same fourteen salt amounts, 1 L water and sulfuric-acid adjustment to pH 1. JCM writes MnSO4 x H2O, whereas DSMZ explicitly writes the monohydrate. An unresolved x can equal one and therefore does not establish a different material.",
+        "exact_reproduction": "Compare the full JCM470 and DSMZ792 recipes and both complete component assertions, retaining their input-water basis. ATCC1190/JCM221 are separately assessed and are not included in this finding.",
+        "bounded_curation_followup": "Use one source-anchored candidate with conditional cross-source comparison, or establish an actual preparation/form difference. Preserve the unresolved hydrate and do not assert exact equality.",
+        "lineage_and_holds": "The prior stock-formulation work is retained. This is a scientific identity-boundary correction to the final selected candidates, not a role or publication approval.",
+        "source_evidence": [
+          {
+            "evidence_id": "ROOT-dsmz-792",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures/dsmz-792.body",
+              "sha256": "6b25068d137a63b0ebffca3daa9d617e636a3c947dd17a4719a937dcf7333327"
+            },
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium792.pdf",
+            "locator": "Page2 Wolfe mineral elixir",
+            "accessed_at": "2026-11-08T05:07:48.399244+00:00"
+          },
+          {
+            "evidence_id": "ROOT-jcm-470",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures-v2/jcm-470.body",
+              "sha256": "bd3611695a7b0effe68bdc8e18f8b66cd13ab5e4417691593a67a33432ffa73d"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=470",
+            "locator": "Wolfe mineral elixir table and pH instruction",
+            "accessed_at": "2026-11-08T05:08:04.831284+00:00"
+          }
+        ],
+        "additional_evidence": [],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F02",
+        "disposition": "retain",
+        "category": "identity",
+        "normalized_severity": "major",
+        "native_severity": "P1",
+        "assessment": "Root independently compared both full source recipes and the selected stock payloads. All14salt quantities and pH1 instructions agree; unknown manganese hydration is not positive evidence of a different substance. Retain the unresolved identity comparison without forcing sameness or merging.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-CR-F03",
+        "severity": "P1",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "Four 95% ethanol owners are distinguished only by receiving recipes",
+        "case_ids": [
+          "CM_NAME:acb0ac8a791164d39ae27888d4b07ff7cf5be8da444cc319031477f3f0647f0b",
+          "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+          "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac"
+        ],
+        "proposal_ids": [
+          "CHEM-C1193-ethanol95-atcc_1490",
+          "CHEM-C1193-ethanol95-atcc_1257",
+          "CHEM-C1193-ethanol95-atcc_1524",
+          "CHEM-C1193-ethanol95-dsmz_78"
+        ],
+        "payload_inputs": [
+          {
+            "proposal_id": "CHEM-C1193-ethanol95-atcc_1490",
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_ATCC_1490.yaml",
+            "sha256": "84691f529ce8d1e146d2dc2c37b1ecc87027e2cf52ccd60007d6908d8bb5fe14",
+            "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1490.yaml",
+            "before_sha256": null
+          },
+          {
+            "proposal_id": "CHEM-C1193-ethanol95-atcc_1257",
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_ATCC_1257.yaml",
+            "sha256": "fa52d73955f5d54be470eaa21c1de4ef59eda6b6fe95431d6a37cf9782975365",
+            "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1257.yaml",
+            "before_sha256": null
+          },
+          {
+            "proposal_id": "CHEM-C1193-ethanol95-atcc_1524",
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_ATCC_1524.yaml",
+            "sha256": "3da7ef96a6d1020c39ca9663c045a913acc0b68cc060b674304399fe62f576cc",
+            "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_ATCC_1524.yaml",
+            "before_sha256": null
+          },
+          {
+            "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed-v3/Ethanol_95_Preparation_DSMZ_78.yaml",
+            "sha256": "5718e7de2922144c0e8b8bc519b6fddb637989975d99f0d7737dc4335ac96a9d",
+            "owner_path": "data/ingredients/mapped/Ethanol_95_Preparation_DSMZ_78.yaml",
+            "before_sha256": null
+          }
+        ],
+        "description": "All four selected records assert partial ethanol-only membership and leave percent basis, remaining fraction and denaturants unknown. ATCC1490 and ATCC1524 even use the same vitamin K1 stock recipe. Different uses in vitamin K1, menadione or hemin preparations do not distinguish the ethanol reagent when those receiving ingredients are explicitly outside each owner.",
+        "exact_reproduction": "Read all seventeen frozen occurrences, their TOGO lineage, the direct ATCC and DSMZ recipes, and ethanol-preparation-reconciliation.json. The reconciliation itself says no actual chemical difference is asserted while proposing four preparation handles.",
+        "bounded_curation_followup": "Keep a bounded source anchor with conditional comparisons for the other occurrences, unless primary supplier/preparation evidence establishes distinct ethanol materials. Do not return to an automatic carrier-based hold and do not map unspecified 95% ethanol exactly to NCIT aqueous 95% v/v.",
+        "lineage_and_holds": "Supersedes no historical receipt. The earlier internal finding that requested a bounded preparation remains acknowledged, but its acceptance of four distinct identities is challenged here.",
+        "source_evidence": [
+          {
+            "evidence_id": "CHEM-C1193-ethanol-atcc-2568",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/ethanol-atcc-2568.body",
+              "sha256": "d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58"
+            },
+            "url": "https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx",
+            "locator": "Full primary capture; relevant recipe block or term definition",
+            "accessed_at": "2026-11-08T06:07:05.547217+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-ethanol-atcc-2574",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/ethanol-atcc-2574.body",
+              "sha256": "a25ab9bc785b88e0f08fc3acf77b6665aa59a42d7f73eb0a0476357b033a84e2"
+            },
+            "url": "https://www.atcc.org/~/media/B26B5E3BE9FE40BE8F851888718FC72C.ashx",
+            "locator": "Full primary capture; relevant recipe block or term definition",
+            "accessed_at": "2026-11-08T06:07:04.496763+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-ethanol-atcc-2576",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/ethanol-atcc-2576.body",
+              "sha256": "eaec5c405391eff6be228decaca7dad94e8b674970076b456bffe30c46cb4ca7"
+            },
+            "url": "https://www.atcc.org/~/media/85260BB7A69A4640A5BB1042498807E4.ashx",
+            "locator": "Full primary capture; relevant recipe block or term definition",
+            "accessed_at": "2026-11-08T06:07:05.015626+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-ethanol-atcc-2618",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/ethanol-atcc-2618.body",
+              "sha256": "7169fb3e8e6605d21ffa2196f1fef25d922d1d0e14f53e1fc9b4c4a5a22e2203"
+            },
+            "url": "https://www.atcc.org/~/media/78329ED2D2314D3BB1BC2F3BEAA2ECFB.ashx",
+            "locator": "Full primary capture; relevant recipe block or term definition",
+            "accessed_at": "2026-11-08T06:07:05.370447+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-ethanol-atcc-2724",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/ethanol-atcc-2724.body",
+              "sha256": "e09ca0e06681fad8e9ed14a2dbd0f03777eae864d97d847ea3a772770b596ae7"
+            },
+            "url": "https://www.atcc.org/~/media/3F8B6BDFCC2D44F88C84F6E1FE4DE6A2.ashx",
+            "locator": "Full primary capture; relevant recipe block or term definition",
+            "accessed_at": "2026-11-08T06:07:05.549734+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-ethanol-ncit-evs",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/ethanol-ncit-evs.body",
+              "sha256": "75ede23281559f4d932b37bf5493f4a683cfed6a6056950ddb5558ca605e1787"
+            },
+            "url": "https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C185110?include=full",
+            "locator": "Full primary capture; relevant recipe block or term definition",
+            "accessed_at": "2026-11-08T06:07:33.075040+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-5299c9a510c6ec5b",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-5299c9a510c6ec5b.pdf",
+              "sha256": "4c39b6d8f2e8b62597bca6c6411fac0a850264a2f0410d8e2f83613fe400b4a0"
+            },
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:08:46.601144+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-e050890a98d1c10c",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-e050890a98d1c10c.pdf",
+              "sha256": "efc94c3d15d0a3946a81d30bba6095ccaa6a2163ca130135c24e7db6bc03794e"
+            },
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium212a.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:09:06.474040+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-e0c65da722d0c440",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-e0c65da722d0c440.pdf",
+              "sha256": "023110709bd92ec364277797a69e0910399db2efb7b3bdcc1052418e19a4a6bc"
+            },
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium110.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:08:21.291340+00:00"
+          }
+        ],
+        "additional_evidence": [],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F03",
+        "disposition": "retain",
+        "category": "identity",
+        "normalized_severity": "major",
+        "native_severity": "P1",
+        "assessment": "Root inspected the actual ATCC1490,1257,1527/1524 and DSMZ78 recipe captures and all four selected stock identity/component assertions. Receiving K1/hemin/menadione recipes do not distinguish the95%ethanol reagent when those parts are excluded from its owner. No solvent,percent basis or denaturant is inferred; conditional comparisons retain all17original occurrence links.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-CR-F04",
+        "severity": "P2",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "Generic fatty-acid mixture aliases remain eligible on a recipe-specific stock",
+        "case_ids": [
+          "KG_CASE:6ee7a06c682b4e2dd160191f2801300a821face2209f4ae2828f455fa5ce299a"
+        ],
+        "proposal_ids": [
+          "ROOT-P-fatty-stock"
+        ],
+        "payload_inputs": [
+          {
+            "proposal_id": "ROOT-P-fatty-stock",
+            "root": "artifact",
+            "path": "root/proposed/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+            "sha256": "471a552bc97debca1689e0a8ad3e2303a2651ccf502789ed6bfb9ba86f0890a4",
+            "owner_path": "data/ingredients/mapped/Fatty_Acid_Mixture_See_Medium_No_266.yaml",
+            "before_sha256": "00aa192a2ce2f4acb1b752d3a478ca4e661c8e15e2f0039c9b22b608a10a7e6c"
+          }
+        ],
+        "description": "The selected JCM266 stock retains RAW_TEXT Fatty acid mixture and Fatty acid mixture (see below). JCM266 uses 0.5 g of each of four acids, 20 ml water and NaOH to pH 7.5. DSMZ119 uses 23/27/27/27 ml of four acids and 896 ml water. The generic tokens cannot select the JCM266 preparation globally.",
+        "exact_reproduction": "Inspect synonyms and complete history in the selected fatty-stock owner, compare the full JCM266 and DSMZ119 fatty-acid tables, and read issue1180. No live consumer rebuild was run by this reviewer.",
+        "bounded_curation_followup": "Retain the exact raw text and provenance as non-resolving rejected/source-scoped assertions, or use a source-bound resolver. Keep the recipe-specific identity and supported component transcription.",
+        "lineage_and_holds": "Known issue1180 and prior explicit generic-alias hold. This is an uncompleted bounded owner obligation, not a newly discovered ingredient identity problem.",
+        "source_evidence": [
+          {
+            "evidence_id": "R1193-FLUID-md-161",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/root/captures-fluid/md-161.body",
+              "sha256": "53d710b65b9a45b9d21c2fddd18a86b41de41d18c0a4c2cbd7de44b0a2ef8666"
+            },
+            "url": "https://mediadive.dsmz.de/rest/medium/161",
+            "locator": "Actual source recipe and named fluid preparation; empty JCM pages are unsuccessful searches",
+            "accessed_at": "2026-11-08T05:53:44.530135+00:00"
+          },
+          {
+            "evidence_id": "ROOT-chebi-35366",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures-v4/chebi-35366.body",
+              "sha256": "06bbcd8896531211e4ad4d1d346ad220092bf1ea7c21f1444951a58a4d0381ec"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_35366",
+            "locator": "_embedded.terms[0]: obo_id,label,description,is_obsolete",
+            "accessed_at": "2026-11-08T05:10:59.904030+00:00"
+          },
+          {
+            "evidence_id": "ROOT-dsmz-119",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures/dsmz-119.body",
+              "sha256": "65295918764de4ed5b73ce773ab4057a7183ecf8bfd7fff0d02393d901b41a2a"
+            },
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium119.pdf",
+            "locator": "Page2 Sludge fluid from medium119",
+            "accessed_at": "2026-11-08T05:07:47.304909+00:00"
+          },
+          {
+            "evidence_id": "ROOT-jcm-266",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures-v2/jcm-266.body",
+              "sha256": "0054a5cdd60634511ec40a28bc6743000104c8152118dfc019e987afb8886321"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=266",
+            "locator": "Rumen-fluid preparation and Fatty acid mixture table",
+            "accessed_at": "2026-11-08T05:08:05.477561+00:00"
+          }
+        ],
+        "additional_evidence": [],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F04",
+        "disposition": "retain",
+        "category": "nomenclature",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "assessment": "Root read the complete selected fatty-stock record and actual JCM266/DSMZ119 formulas. Different explicit quantities demonstrate that the bare shared mixture label cannot globally identify the JCM preparation. This is known issue1180 follow-through; preserve the supported stock identity and every hold.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1180",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-CR-F05",
+        "severity": "P2",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "Thiamine stock prose generalizes filtration beyond the source",
+        "case_ids": [
+          "CM_NAME:5b4cdb0bb930e0942c70708315b363ff6d2595fdd0d93b1d08752ae893c8a788",
+          "CM_NAME:78f8c48b757890cfb5c0f5856ac1958e394f3700e65d9e81adf7e49e64384a51",
+          "CM_NAME:925e47e51605e3d7423397596616966a291eb689c6d38ca900b73dcceda47e3a",
+          "KG_CASE:d12fd54fb83b4b0b0e91c74b130ef02db93d3c862a6834f3bdbe0dac0343ce59"
+        ],
+        "proposal_ids": [
+          "ROOT-P-thiamine-stock"
+        ],
+        "payload_inputs": [
+          {
+            "proposal_id": "ROOT-P-thiamine-stock",
+            "root": "artifact",
+            "path": "correction-1193-v1/root/proposed-v2/Thiamine_Solution_See_Medium_No_403.yaml",
+            "sha256": "0f30d3637da1794c7469d917c67c5f3d25ad1495e582c3c690cb6a11fadf95c0",
+            "owner_path": "data/ingredients/unmapped/Thiamine_Solution_See_Medium_No_403.yaml",
+            "before_sha256": "74bb43ed1eab206af3fec38251b617b7afff4d07877b5d2cc9110a0fc94a30d0"
+          }
+        ],
+        "description": "The shared two-input stock formula is supported. JCM403 gives 10 mg thiamine hydrochloride per 100 ml of 25 mM sodium phosphate buffer at pH 3.4, without a filtration instruction. NBRC1321 and JCM1125 explicitly specify filtration; the selected notes/history incorrectly attribute it universally, including JCM403.",
+        "exact_reproduction": "Compare the entire selected stock payload notes and appended history with the full JCM403, JCM1125 and NBRC1321 preparation sections. An unexplained JCM1468 asterisk is not substituted for a documented filtration protocol.",
+        "bounded_curation_followup": "Correct process attribution in notes and append a correction event, preserving the shared input formula and the original historical event. No new owner is required solely from this process wording discrepancy.",
+        "lineage_and_holds": "Previous formula/role corrections remain valid; the error is in a new claim about source processing. All source, role and release holds remain.",
+        "source_evidence": [
+          {
+            "evidence_id": "CHEM-CAP-2caf4cd3f91d0ec5",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2caf4cd3f91d0ec5.html",
+              "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+            },
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "accessed_at": "2026-11-08T05:07:59.519281+00:00"
+          },
+          {
+            "evidence_id": "ROOT-jcm-1125",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures-v4/jcm-1125.body",
+              "sha256": "2dafb864c024358197533e1cb4b6480a6a8fc336d48703afac83b6bac7c9c9dd"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1125",
+            "locator": "Post-autoclave additions: Thiamine solution403 row",
+            "accessed_at": "2026-11-08T05:10:37.394251+00:00"
+          },
+          {
+            "evidence_id": "ROOT-jcm-1468",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures-v2/jcm-1468.body",
+              "sha256": "ee9887987a6103031c35e812c4d0df4e8f0dd8d03c5dfa6adf3fc246f2091c76"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1468",
+            "locator": "Thiamine solution starred403 row",
+            "accessed_at": "2026-11-08T05:08:04.185710+00:00"
+          },
+          {
+            "evidence_id": "ROOT-jcm-403",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "root/captures-v2/jcm-403.body",
+              "sha256": "b28331b54771accff48da1b68077398dd7450ee8746eaf1aec1b4ef7a055bd61"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403",
+            "locator": "Thiamine solution table",
+            "accessed_at": "2026-11-08T05:08:05.448596+00:00"
+          }
+        ],
+        "additional_evidence": [],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F05",
+        "disposition": "retain",
+        "category": "provenance",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "assessment": "Root compared full selected stock text with actual JCM403 and1125 preparation captures; agent independently inspected NBRC1321. The common input formula is supported, but filtration is not documented in JCM403. Correct process attribution with preserved history, without inventing a new stock or rejecting the supported two-input identity.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/718"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-CR-F06",
+        "severity": "P2",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "Known wrong thiamine-dihydrate CAS remains despite a feasible bounded removal",
+        "case_ids": [
+          "KG_CASE:95b790ddb78a997811337834f1d50870430781c963f982ed3257378097b10edb"
+        ],
+        "proposal_ids": [],
+        "payload_inputs": [],
+        "description": "The frozen Thiamine-hcl_X_2_H2o owner retains chemical_properties.cas_rn 13465-05-9. Direct PubChem lookup gives CID21899424, ClH5O2 and an InChI containing HCl plus two waters, not thiamine. CHEBI132751 and the owner formula identify thiamine hydrochloride dihydrate. Missing replacement CAS does not prevent removing the demonstrated false descriptor.",
+        "exact_reproduction": "Inspect the entire frozen owner and history, CHEBI132751 and MediaDive77 identity fields, the complete PubChem response, and the exact retrieval receipt. Current issue268 discussion preserves the campaign hold but does not name this owner as an already completed repair.",
+        "bounded_curation_followup": "Propose removal of the active false CAS with append-only history, preserving identity, correct formula, raw provenance and all holds. Do not invent a replacement CAS. Coordinator must deduplicate against other coordinated owner proposals before applying.",
+        "lineage_and_holds": "Issue268 covers the broader descriptor/campaign problem. This finding is a missed feasible curation step within a held disposition, not permission to edit maintained data and not a claim that an authoritative other-worker repair should be duplicated.",
+        "source_evidence": [
+          {
+            "evidence_id": "CHEM-C1193-thiamine-download",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/thiamine-download.body",
+              "sha256": "e339a90cbf4b653967080cabfbbcd73d0c1547a12ca1f58dbf355f387ed04d11"
+            },
+            "url": "https://bacmedia.dsmz.de/download/ingredient/77/json",
+            "locator": "thiamine-download: HTTP 200; exit 0",
+            "accessed_at": "2026-11-08T05:45:07.063954+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-ba668efabffad3e5",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-ba668efabffad3e5.json",
+              "sha256": "1d5eefc753b4fbbffd69d169aa7ca7be16df737b6c8c0e1833917806ac0607e5"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:132751",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:13.880955+00:00"
+          }
+        ],
+        "additional_evidence": [
+          {
+            "path": ".temp/w05-published-head-independent-review-v1/chemicals_and_root/cas13465-05-9-pubchem-recheck.json",
+            "sha256": "293635130486c4a97160853eb9a39c0882e1bfcb65fdc8252c88f39a7864730b"
+          },
+          {
+            "path": ".temp/w05-published-head-independent-review-v1/chemicals_and_root/cas13465-05-9-pubchem-retrieval.json",
+            "sha256": "61ff814afe89a2cae4a2fdbd5f213f25ed791c9f2c6766e39f472aa6b088681b"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/baseline/data/ingredients/mapped/Thiamine-hcl_X_2_H2o.yaml",
+            "sha256": "482d71b94bd51f56bf1cb9ec5ced824709d7f99e0e849749b124b366864574b3"
+          }
+        ],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F06",
+        "disposition": "retain",
+        "category": "completeness",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "assessment": "Root read the entire frozen thiamine-dihydrate owner and the actual PubChem CAS response. ClH5O2 lacks the thiamine skeleton and contradicts the correctly represented thiamine formula. A replacement CAS is unnecessary for a bounded false-descriptor removal proposal. Issue268 and cross-worker owner coordination remain mandatory; no maintained edit performed.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-CR-F07",
+        "severity": "P2",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "New alias assertions use campaign-only provenance instead of their exact source",
+        "case_ids": [
+          "CM_NAME:14e2433d6680c7e7fbdb982b142afa631f6ed6bb5aa5cdbecfbf46914f3ce727",
+          "CM_NAME:16f378f5a868f191ba889e5d0a923b8d067c8ddaa9ff7562b0cb7f41e3e60075",
+          "CM_NAME:3c36c3997cdd6dd09cac787110299acff8335c8befbd63742b07b04f06a6d83e",
+          "CM_NAME:443c3c0a7735959a80aab57dc88e24ac48ed27061bbf710c3fdfa36f933505c9",
+          "CM_NAME:47de822ce5be13cb438bd63ab1582facda8ae41a01b9567016f611bfd3d8df7a",
+          "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131",
+          "CM_NAME:558bcf18c0ac36e3a46e8f443809ddfa33b130fcab3dd70b6573c1354ff677aa",
+          "CM_NAME:5d0c5ffb37bf378c3409765ce4abd610f79dd528fa54abc2e0b8f52451380a5b",
+          "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24",
+          "CM_NAME:8f9dce93200c8b81f5e89be4cc5bd3dab151028152e861296334e30ed961fcc1",
+          "CM_NAME:913f1d246e38506d99dccac4dd555f837f6ad4587101f5e4f927273aa347818c",
+          "CM_NAME:966043186eb500b0932551d48b23740188a14c15631e17be7e7b9543f0db357a",
+          "CM_NAME:cc487a98c0585c66c5e37b0867572f416e49ff561f252fe823c8025a046426ca"
+        ],
+        "proposal_ids": [
+          "CHEM-PROP-dextrose",
+          "CHEM-PROP-iron",
+          "CHEM-PROP-formate",
+          "CHEM-PROP-magnesium-heptahydrate",
+          "CHEM-PROP-sulfur",
+          "CHEM-PROP-riboflavin",
+          "CHEM-PROP-manganese-tetrahydrate",
+          "CHEM-PROP-niacin",
+          "CHEM-PROP-thiamine-hcl",
+          "CHEM-PROP-hepes",
+          "CHEM-PROP-tpp-stock"
+        ],
+        "payload_inputs": [
+          {
+            "proposal_id": "CHEM-PROP-dextrose",
+            "root": "artifact",
+            "path": "chemicals/proposed/D-glucose.yaml",
+            "sha256": "f78e5b3816d6b9cd364b866b5b93c5ad2f3baf41b2cfad4545ea426e0c356810",
+            "owner_path": "data/ingredients/mapped/D-glucose.yaml",
+            "before_sha256": "dd603850555b5735acd54dcc6f4695a23a0d789b120d77000db239427bad0914"
+          },
+          {
+            "proposal_id": "CHEM-PROP-iron",
+            "root": "artifact",
+            "path": "chemicals/proposed/Iron.yaml",
+            "sha256": "18333bf419ada8d09c64001d0f87680aff69ea06d312ef5689c1537847306f97",
+            "owner_path": "data/ingredients/mapped/Iron.yaml",
+            "before_sha256": "791d68106d2f4fd7c5c6e9c4f1814be0df3ed8fb167a3c51591fb76a9024a4ce"
+          },
+          {
+            "proposal_id": "CHEM-PROP-formate",
+            "root": "artifact",
+            "path": "chemicals/proposed/Na-formate.yaml",
+            "sha256": "84397941a55a4b6118705cf770e3740198e327515ac699195c435f7226d9f085",
+            "owner_path": "data/ingredients/mapped/Na-formate.yaml",
+            "before_sha256": "1f1bb01d1e00770e2c181db6586b8de70ffd53fab5027fe9cad9fca894a985b0"
+          },
+          {
+            "proposal_id": "CHEM-PROP-magnesium-heptahydrate",
+            "root": "artifact",
+            "path": "chemicals/proposed/Mgso4_X_7_H2o.yaml",
+            "sha256": "c35e72c7508ef849148b264f40fb994cae8a3eeed7588a3dd3e4cf7f667e30b8",
+            "owner_path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+            "before_sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2"
+          },
+          {
+            "proposal_id": "CHEM-PROP-sulfur",
+            "root": "artifact",
+            "path": "chemicals/proposed/Sulfur.yaml",
+            "sha256": "f04b8951353ddf1470fdecb3750f1638373f9786425bd8fea71e9662027fb658",
+            "owner_path": "data/ingredients/mapped/Sulfur.yaml",
+            "before_sha256": "d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323"
+          },
+          {
+            "proposal_id": "CHEM-PROP-riboflavin",
+            "root": "artifact",
+            "path": "chemicals/proposed/Riboflavin.yaml",
+            "sha256": "882e34bd6c8cef9d0e41935c434cdc670980a292285f02b2271e6d49b0b00c45",
+            "owner_path": "data/ingredients/mapped/Riboflavin.yaml",
+            "before_sha256": "b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644"
+          },
+          {
+            "proposal_id": "CHEM-PROP-manganese-tetrahydrate",
+            "root": "artifact",
+            "path": "chemicals/proposed/Mncl2_X_4_H2o.yaml",
+            "sha256": "482a0abf6e09a5f0a4e5f1992da4d0c353c6ce4a49c121f96b429f387277a7bf",
+            "owner_path": "data/ingredients/mapped/Mncl2_X_4_H2o.yaml",
+            "before_sha256": "ce248133b8c5721210c39858ac9b659912dd4ab067bd77d6fb95b5fcdf69cf0a"
+          },
+          {
+            "proposal_id": "CHEM-PROP-niacin",
+            "root": "artifact",
+            "path": "chemicals/proposed/Nicotinic_Acid.yaml",
+            "sha256": "7210baa3abb6122e9da9b5a19be8a8c2a3a63e251d5c3c3524963c63ae8fc030",
+            "owner_path": "data/ingredients/mapped/Nicotinic_Acid.yaml",
+            "before_sha256": "ee74fdab88983c8dd5554b638d0b97623b9be4b5f389d6458cdf27713ae06b1b"
+          },
+          {
+            "proposal_id": "CHEM-PROP-thiamine-hcl",
+            "root": "artifact",
+            "path": "chemicals/proposed/Thiamine_Hcl.yaml",
+            "sha256": "0ad4720854d8ebea5a7d7477dfbc68ca680c66dfc978e4d9f0490669806a4f0f",
+            "owner_path": "data/ingredients/mapped/Thiamine_Hcl.yaml",
+            "before_sha256": "8e7d3802dc19872e85d753b6c7a0e1fb34c552311e69c450e697d9f1e55b2732"
+          },
+          {
+            "proposal_id": "CHEM-PROP-hepes",
+            "root": "artifact",
+            "path": "chemicals/proposed/Hepes.yaml",
+            "sha256": "f8b81f0310cfd35fe0299a9caedb4b29c78723a47a3b4afa74e0d1f5ba228248",
+            "owner_path": "data/ingredients/mapped/Hepes.yaml",
+            "before_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320"
+          },
+          {
+            "proposal_id": "CHEM-PROP-tpp-stock",
+            "root": "artifact",
+            "path": "correction-1193-v1/chemicals/proposed-v2/02_Thiamine_Pyrophosphate.yaml",
+            "sha256": "548fa37d691ce985f87c2e836843c2052aac7ca13447321f23c9ec26745c17f6",
+            "owner_path": "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+            "before_sha256": "ab3662e22bd04c2d2a0e04a836d6d09f155b39bc0a00abab6a17d0c68e214c16"
+          }
+        ],
+        "description": "Eleven selected owner proposals add source-supported aliases with source=all_unmatched_20261107_worker05_primary_source_review. This names the review process but omits the recipe/supplier source that supports each assertion, even though the exact primary captures are available.",
+        "exact_reproduction": "Compare the selected payload synonyms against the frozen beforeimages. The attached new_assertions list gives every newly added alias field and its actual source value; inherited aliases are not included in this finding.",
+        "bounded_curation_followup": "Replace only the new assertion source fields with the exact recipe/supplier URL or source identifier and record a provenance correction. Keep the source text and preserve earlier source provenance and history.",
+        "lineage_and_holds": "A bounded assertion-level provenance obligation. The scientific spelling/reagent conclusions may remain; this is not a request for a broad owner rewrite.",
+        "source_evidence": [
+          {
+            "evidence_id": "CHEM-CAP-082d61a7481e4dee",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-082d61a7481e4dee.json",
+              "sha256": "fd3d5697a34d23a7164905f4e2cbf31885e41c8b59320458c5185575d627726e"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2577",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:08:00.745115+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-0d24fad2c28ce16b",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-0d24fad2c28ce16b.html",
+              "sha256": "26957c54f6c375736a5b88e4775f7e1163b363562efc9aaf34183f5a23a8035f"
+            },
+            "url": "https://www.e-nacalai.jp/ec2/EC-srchdetl.cfm?Dum=1&syohin=1941825&syubetsu=3",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "accessed_at": "2026-11-08T05:10:01.691923+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-11d151cb0257d194",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-11d151cb0257d194.json",
+              "sha256": "5ca8321213bc1f7d2136cb3784aa63ad43ad88c7ce1a6b422e275e6a507d9a1b"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M692",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:36.858954+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-14f6b2b7770adbee",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-14f6b2b7770adbee.json",
+              "sha256": "3dc67a19953827a026f913035e704119a616b398af2c6a4261fead632ced1ec1"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:49105",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:13.306008+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-178c00787726f6db",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-178c00787726f6db.json",
+              "sha256": "a7a9290b295c865ebfe54fc44c8491f5b4691ae71aff24eb9a1235dee8eb135b"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3120",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:48.422527+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-18d4f57118f39820",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-18d4f57118f39820.pdf",
+              "sha256": "4041ed9718dd350efd3e10ddc9de6b73011d29e8a982b5a3390cb20d6e3743c6"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_E27.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:07:36.859275+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-2219370bc9ce67b6",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2219370bc9ce67b6.json",
+              "sha256": "ab50973fd6085385067576c2f11d3b1835512b0db0f9cb8451708c485567d181"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3129",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:50.072742+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-2462f1349d33dc6f",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2462f1349d33dc6f.pdf",
+              "sha256": "60320422c445bb559aa060dbb83af930c6a98f955c8f10f6bdddf07cb83ef579"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:08:00.685930+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-2dd30154d45162d8",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2dd30154d45162d8.pdf",
+              "sha256": "c53bb8e87a510723de4e9a13a06a279fd7f94d78dfd5e91ad52704ff454ae2b6"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:07:37.661297+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-2e36b7f2d05209a0",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2e36b7f2d05209a0.json",
+              "sha256": "f22345c993f16a147234d5ddef2d59a0fb5f673b0123c4e754f75daef54ae4e8"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2402",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:36.858734+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-3f87f8dfda3887b7",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-3f87f8dfda3887b7.json",
+              "sha256": "319b65bb16f4e7f1f76e6c5b4aae93fa803bdeeb625404ac2e1d8872755745b6"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17015",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:16.125494+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-54ec413d4dba0fba",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-54ec413d4dba0fba.json",
+              "sha256": "51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2399",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:36.858307+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-610933dda9a38c76",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-610933dda9a38c76.html",
+              "sha256": "b8a49eabdf28b7216efd215cac843a5cf0f74a948e90d151c6303d1ce5533e34"
+            },
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=673",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "accessed_at": "2026-11-08T05:07:36.859028+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-725a931dca3bf2f5",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-725a931dca3bf2f5.json",
+              "sha256": "9315542331d2d51842c785d977d76f12f6acd775fe818c8abbfd6e129a2c823e"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:82664",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:42.964504+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-86994abdcb080eaa",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-86994abdcb080eaa.html",
+              "sha256": "fe4448ec7332d8e7ec8313b49ffa8e03b0c26ca54522d83fa802a19bbb25f5c7"
+            },
+            "url": "https://mediadive.dsmz.de/medium/P5",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "accessed_at": "2026-11-08T05:09:10.613219+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-8ec5c3387a865d32",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-8ec5c3387a865d32.json",
+              "sha256": "cfd1c5de376b9874afbc0c231dfd94f0b4954f4b69c40062783876093e7f0354"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:62965",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:42.964898+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-90c71e16ed3e36ea",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-90c71e16ed3e36ea.json",
+              "sha256": "6360240c9a3b331dad58ccd8e8f3fe30379b24d439d90a3e45b0997ec1c4ba77"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2367",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:49.347778+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-9c1a97a1e021ef5b",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-9c1a97a1e021ef5b.json",
+              "sha256": "ceb0c93d1964844e99454d74730971855710441d92eec74aff5c873c833e324a"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:31795",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:11.648240+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-a4d58bf3f3b268b6",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-a4d58bf3f3b268b6.json",
+              "sha256": "51f2d461cb94f976a3459104b2c2f419a56a386cbf71190689707e3b722b1238"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:18248",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:11.530116+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-a8df01c7239a8122",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-a8df01c7239a8122.json",
+              "sha256": "adaca64249f0fcee454b57ae72e7ef6d612cb3b7f279a67d503e1c02b6fe1ffe"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:26833",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:12.686220+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-b5d7e0a2820706b4",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-b5d7e0a2820706b4.json",
+              "sha256": "f655575e993dd27ffda8dd57afcdbce8c941ca22a9061a9b561199901dcdf04f"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2277",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:49.416783+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-baa7ab015ab6d5a5",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-baa7ab015ab6d5a5.json",
+              "sha256": "faaf9309369005ebc8ca330ab2b2fcda30d59939289b79afc63d314a40081d38"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3211",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:36.859174+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-bfb113a11d7f7c01",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-bfb113a11d7f7c01.json",
+              "sha256": "2d5685a4a03c5d730876514b4a7664fb477f63682a60cc7e13d7776a250f68e3"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:86368",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:42.964852+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c0b20edbf3ff8192",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c0b20edbf3ff8192.json",
+              "sha256": "93db04af9cbb6a6c2f04836a8b1c16e5e19c1bfa9731f25c6417d41d59ce24b4"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2410",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:08:02.600975+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c108c1a21b52d95b",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c108c1a21b52d95b.json",
+              "sha256": "8361875f211755438c841ea3c977e091a76aa8c88f01bdb215f148bf29dfcdbc"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:33403",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:42.964790+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c119b9ae9342e2b9",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c119b9ae9342e2b9.json",
+              "sha256": "04060738e01fe33b9fc8e5bf54807590127ce391eb8a962d1d013002502169b2"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17634",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:10.974685+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c1a2f9ecce7dc984",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c1a2f9ecce7dc984.json",
+              "sha256": "4f2754ef9d387040b82b628dbaac73c96efcc75f077ca4124465382f5cf40541"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:15940",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:13.185391+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c7ce4af92ddac4f6",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c7ce4af92ddac4f6.json",
+              "sha256": "d993240b2e04220e53b5d8698cc684c5c06940de6f1dbf0b8a4ea62f6f709528"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2553",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:37.958520+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-d1ffb78c451bbabf",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-d1ffb78c451bbabf.json",
+              "sha256": "7ecd8500a459870177ffccd14dbfe1b4266942b157b7df16c0a91ebd1ee3e47a"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2404",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:36.858834+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-ed175c6ef98639a6",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-ed175c6ef98639a6.json",
+              "sha256": "611cac1be57a3dcc03308be9cc38d528649ac2b618eeb80b303f008ee1223324"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:42334",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:13.244397+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-f74b6f207f2c363e",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-f74b6f207f2c363e.pdf",
+              "sha256": "dd297963c9e1172157e2e44de933f4afd083bbd5390cb52bb7023f54241a82fc"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:07:37.625396+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-f93edce2e35b29b6",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-f93edce2e35b29b6.json",
+              "sha256": "83267778ba2f432ba723e3a107f47ab6f7b967231b8fd550afbce3368450ddc1"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3161",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:48.213794+00:00"
+          },
+          {
+            "evidence_id": "CHEM-WEB-6",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/web-open-001.json",
+              "sha256": "0e2cb6a2143b61f41e268fbabb4ec903b3f9ca27371154604dbe83f3ad5688a2"
+            },
+            "url": "https://www.bd.com/en-us/products-and-solutions/products/product-page.215530",
+            "locator": "BD215530 product page title D(+)-glucose anhydrous; captured web tool response",
+            "accessed_at": "2026-11-08T05:06:36.296Z"
+          }
+        ],
+        "additional_evidence": [
+          {
+            "proposal_id": "CHEM-PROP-dextrose",
+            "owner_path": "data/ingredients/mapped/D-glucose.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/11",
+                "synonym_text": "Dextrose (BD 215530)",
+                "synonym_type": "CATALOG_VARIANT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-iron",
+            "owner_path": "data/ingredients/mapped/Iron.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/13",
+                "synonym_text": "Iron (powder, 20 - 60 mesh, Nacalai)",
+                "synonym_type": "CATALOG_VARIANT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-formate",
+            "owner_path": "data/ingredients/mapped/Na-formate.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/13",
+                "synonym_text": "NaCOOH",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-magnesium-heptahydrate",
+            "owner_path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/38",
+                "synonym_text": "MgSO .7H 0",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              },
+              {
+                "field": "synonyms/39",
+                "synonym_text": "MgSO 7H O",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-sulfur",
+            "owner_path": "data/ingredients/mapped/Sulfur.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/21",
+                "synonym_text": "So(Sulfur Powder)",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              },
+              {
+                "field": "synonyms/22",
+                "synonym_text": "Ground sulfur powder",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-riboflavin",
+            "owner_path": "data/ingredients/mapped/Riboflavin.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/30",
+                "synonym_text": "RibofIavin",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-manganese-tetrahydrate",
+            "owner_path": "data/ingredients/mapped/Mncl2_X_4_H2o.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/21",
+                "synonym_text": "MnCI2.4H2O",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-niacin",
+            "owner_path": "data/ingredients/mapped/Nicotinic_Acid.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/24",
+                "synonym_text": "Niacin (B3)",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-thiamine-hcl",
+            "owner_path": "data/ingredients/mapped/Thiamine_Hcl.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/26",
+                "synonym_text": "Thiamine HCl (B1)",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-hepes",
+            "owner_path": "data/ingredients/mapped/Hepes.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/13",
+                "synonym_text": "N-2-hydroxyethylpiperazine-N-2-ethanesulfonic acid (HEPES, Sigma Chemical Co., St. Louis, MO)",
+                "synonym_type": "CATALOG_VARIANT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          },
+          {
+            "proposal_id": "CHEM-PROP-tpp-stock",
+            "owner_path": "data/ingredients/mapped/02_Thiamine_Pyrophosphate.yaml",
+            "new_assertions": [
+              {
+                "field": "synonyms/7",
+                "synonym_text": "Thiamine pyrophosphate (0.2% w/v in water)",
+                "synonym_type": "RAW_TEXT",
+                "source": "all_unmatched_20261107_worker05_primary_source_review"
+              }
+            ]
+          }
+        ],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F07",
+        "disposition": "retain",
+        "category": "provenance",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "assessment": "Root inspected all13listed new assertions across11selected owners; they use a campaign string instead of the available actual source. This is bounded assertion provenance work. Root additionally confirmed the NaCOOH applicability caption misnames its source: actual TOGO M3211 is Formate medium. Correct that sentence without changing sodium-formate identity; no extra finding is counted.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold.",
+        "bounded_fix": "Correct only the13new assertion source fields to their exact supporting recipe/supplier source, preserving raw text and history. Also change the NaCOOH decision applicability source name from Methanosarcina siciliae marine medium to actual TOGO M3211 Formate medium. Do not alter its supported sodium-formate conclusion or any neighboring enriched GMO labels."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/268",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/871"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-CR-F08",
+        "severity": "P2",
+        "status": "open",
+        "certainty": "confirmed within the bounded field and source scope; unresolved identity alternatives are not asserted",
+        "title": "Inherited active alias conflicts remain on reviewed owners",
+        "case_ids": [
+          "CM_NAME:443c3c0a7735959a80aab57dc88e24ac48ed27061bbf710c3fdfa36f933505c9",
+          "CM_NAME:4d9616cb9ff5c2c347431d27144109cb2fbc6429edd27010c887dfed8f908131",
+          "CM_NAME:60a7b44d920c31e4c4602984861c2eca1b1d2935578dff6b9ac881019ccf0c24",
+          "CM_NAME:8f9dce93200c8b81f5e89be4cc5bd3dab151028152e861296334e30ed961fcc1",
+          "CM_NAME:966043186eb500b0932551d48b23740188a14c15631e17be7e7b9543f0db357a",
+          "KG_CASE:601d124a075487ea9b3506342c4456ad94763be8624a0c3d0c6228601bf986f8",
+          "KG_CASE:afa56b335b77ddf46c0a79c5006054b0b9812c6869edd8af5e28b16e2168e08c"
+        ],
+        "proposal_ids": [
+          "CHEM-PROP-magnesium-heptahydrate",
+          "CHEM-PROP-riboflavin",
+          "CHEM-PROP-niacin",
+          "CHEM-PROP-hepes"
+        ],
+        "payload_inputs": [
+          {
+            "proposal_id": "CHEM-PROP-magnesium-heptahydrate",
+            "root": "artifact",
+            "path": "chemicals/proposed/Mgso4_X_7_H2o.yaml",
+            "sha256": "c35e72c7508ef849148b264f40fb994cae8a3eeed7588a3dd3e4cf7f667e30b8",
+            "owner_path": "data/ingredients/mapped/Mgso4_X_7_H2o.yaml",
+            "before_sha256": "1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2"
+          },
+          {
+            "proposal_id": "CHEM-PROP-riboflavin",
+            "root": "artifact",
+            "path": "chemicals/proposed/Riboflavin.yaml",
+            "sha256": "882e34bd6c8cef9d0e41935c434cdc670980a292285f02b2271e6d49b0b00c45",
+            "owner_path": "data/ingredients/mapped/Riboflavin.yaml",
+            "before_sha256": "b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644"
+          },
+          {
+            "proposal_id": "CHEM-PROP-niacin",
+            "root": "artifact",
+            "path": "chemicals/proposed/Nicotinic_Acid.yaml",
+            "sha256": "7210baa3abb6122e9da9b5a19be8a8c2a3a63e251d5c3c3524963c63ae8fc030",
+            "owner_path": "data/ingredients/mapped/Nicotinic_Acid.yaml",
+            "before_sha256": "ee74fdab88983c8dd5554b638d0b97623b9be4b5f389d6458cdf27713ae06b1b"
+          },
+          {
+            "proposal_id": "CHEM-PROP-hepes",
+            "root": "artifact",
+            "path": "chemicals/proposed/Hepes.yaml",
+            "sha256": "f8b81f0310cfd35fe0299a9caedb4b29c78723a47a3b4afa74e0d1f5ba228248",
+            "owner_path": "data/ingredients/mapped/Hepes.yaml",
+            "before_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320"
+          }
+        ],
+        "description": "Confirmed literal conflicts: MgSO2, MgSO2·7H2O and MgSO2 x 7 H2O are retained on sulfate heptahydrate; Nicotinate is retained as EXACT on neutral nicotinic acid although ChEBI32544 is its −1 conjugate base. Separately, generic magnesium-sulfate labels omit hydration, and concentration-bearing riboflavin, HEPES, KI and ferric-citrate aliases have unresolved preparation/routing scope. The latter tokens do not by themselves establish a solvent or complete stock formula.",
+        "exact_reproduction": "Read the complete selected owners and frozen KI/Fe_Iii_Citrate owners. Inspect exact alias fields listed below, CHEBI31795 formula and CHEBI15940 neutral structure, and the read-only local release255 CHEBI32544 query. The separate exact concentration-label search included hidden and ignored frozen source files; this did not recover every original alias occurrence.",
+        "bounded_curation_followup": "Retire demonstrably incompatible literal formula/protonation aliases with raw text and provenance preserved. Review generic/hydration/concentration tokens at their actual source scope and retain them as non-resolving if that scope is not established. Do not infer a corrected source chemical, carrier or stock composition. Existing assignment-specific aliases can remain after their provenance correction.",
+        "lineage_and_holds": "Inherited defects and unresolved scope obligations, not new source assertions. Prior hydrate-routing history (#892/#893/#899), published source holds and independent review limitations remain. Whole-owner acceptance cannot follow from a supported spelling addition.",
+        "source_evidence": [
+          {
+            "evidence_id": "CHEM-C1193-eisencitrat-solution",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/eisencitrat-solution.body",
+              "sha256": "12e548136d99c220e3de22f27f96c6fcc2e0a9a7a0930e0343b269a786927398"
+            },
+            "url": "https://mediadive.dsmz.de/rest/solution/3183",
+            "locator": "eisencitrat-solution: HTTP 200; exit 0",
+            "accessed_at": "2026-11-08T05:38:42.402670+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-kj-1155",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/kj-1155.pdf",
+              "sha256": "c3b96bb3c30d03e215f27b9bd552a418c4fd1edceabfca4ec9dcd9e330508d56"
+            },
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1155.pdf",
+            "locator": "kj-1155: HTTP 200; exit 0",
+            "accessed_at": "2026-11-08T05:44:13.433380+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-kj-1727",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/kj-1727.pdf",
+              "sha256": "dda83ace8dfe16749a13874c598039db62bb4bf0ddabd9b5b6de712f68f41f1e"
+            },
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1727.pdf",
+            "locator": "kj-1727: HTTP 200; exit 0",
+            "accessed_at": "2026-11-08T05:44:13.433438+00:00"
+          },
+          {
+            "evidence_id": "CHEM-C1193-kj-download",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/chemicals/captures/kj-download.body",
+              "sha256": "6fe6e0f625815450be1191dc900f29a593d8e011650f0d571769e805e2f23420"
+            },
+            "url": "https://bacmedia.dsmz.de/download/ingredient/1042/json",
+            "locator": "kj-download: HTTP 200; exit 0",
+            "accessed_at": "2026-11-08T05:41:10.367157+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-18d4f57118f39820",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-18d4f57118f39820.pdf",
+              "sha256": "4041ed9718dd350efd3e10ddc9de6b73011d29e8a982b5a3390cb20d6e3743c6"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_E27.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:07:36.859275+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-2462f1349d33dc6f",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2462f1349d33dc6f.pdf",
+              "sha256": "60320422c445bb559aa060dbb83af930c6a98f955c8f10f6bdddf07cb83ef579"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_TAP.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:08:00.685930+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-2be47c9bf376a98c",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2be47c9bf376a98c.json",
+              "sha256": "38ab61bbf3b34136e5eb3e5a1ceee1716708b3ef363cc8b188b1c243a4417199"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:8346",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:15.335927+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-2dd30154d45162d8",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-2dd30154d45162d8.pdf",
+              "sha256": "c53bb8e87a510723de4e9a13a06a279fd7f94d78dfd5e91ad52704ff454ae2b6"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_E31_ANT.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:07:37.661297+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-3f87f8dfda3887b7",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-3f87f8dfda3887b7.json",
+              "sha256": "319b65bb16f4e7f1f76e6c5b4aae93fa803bdeeb625404ac2e1d8872755745b6"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:17015",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:16.125494+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-86994abdcb080eaa",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-86994abdcb080eaa.html",
+              "sha256": "fe4448ec7332d8e7ec8313b49ffa8e03b0c26ca54522d83fa802a19bbb25f5c7"
+            },
+            "url": "https://mediadive.dsmz.de/medium/P5",
+            "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+            "accessed_at": "2026-11-08T05:09:10.613219+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-9c1a97a1e021ef5b",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-9c1a97a1e021ef5b.json",
+              "sha256": "ceb0c93d1964844e99454d74730971855710441d92eec74aff5c873c833e324a"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:31795",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:11.648240+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c0b20edbf3ff8192",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c0b20edbf3ff8192.json",
+              "sha256": "93db04af9cbb6a6c2f04836a8b1c16e5e19c1bfa9731f25c6417d41d59ce24b4"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2410",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:08:02.600975+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-c1a2f9ecce7dc984",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-c1a2f9ecce7dc984.json",
+              "sha256": "4f2754ef9d387040b82b628dbaac73c96efcc75f077ca4124465382f5cf40541"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:15940",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:13.185391+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-eafc32f5af450587",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-eafc32f5af450587.json",
+              "sha256": "d34e73aacd1b469f36160fd49b83e71aecd02efeabc635710a00524d0471fb38"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:144421",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:15.463525+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-ed175c6ef98639a6",
+            "kind": "ontology",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-ed175c6ef98639a6.json",
+              "sha256": "611cac1be57a3dcc03308be9cc38d528649ac2b618eeb80b303f008ee1223324"
+            },
+            "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:42334",
+            "locator": "_embedded.terms[0]: obo_id,label,description,synonyms,annotation formula/InChI/SMILES,CAS",
+            "accessed_at": "2026-11-08T05:09:13.244397+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-f74b6f207f2c363e",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-f74b6f207f2c363e.pdf",
+              "sha256": "dd297963c9e1172157e2e44de933f4afd083bbd5390cb52bb7023f54241a82fc"
+            },
+            "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_E31.pdf",
+            "locator": "complete primary PDF; recipe table and preparation instructions; derived text stored alongside",
+            "accessed_at": "2026-11-08T05:07:37.625396+00:00"
+          },
+          {
+            "evidence_id": "CHEM-CAP-f93edce2e35b29b6",
+            "kind": "primary_source",
+            "capture": {
+              "root": "artifact",
+              "path": "chemicals/capture-f93edce2e35b29b6.json",
+              "sha256": "83267778ba2f432ba723e3a107f47ab6f7b967231b8fd550afbce3368450ddc1"
+            },
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3161",
+            "locator": "components and nested items; complete source preparation annotations",
+            "accessed_at": "2026-11-08T05:07:48.213794+00:00"
+          }
+        ],
+        "additional_evidence": [
+          {
+            "path": ".temp/w05-published-head-independent-review-v1/chemicals_and_root/nicotinate-local-chebi.json",
+            "sha256": "8682767cdf812e17918405ff170664107f3c5d62c8f45eb6dd67a696c29154e0"
+          },
+          {
+            "tokens": {
+              "Mgso4_X_7_H2o.yaml": [
+                "MgSO2",
+                "MgSO2·7H2O",
+                "MgSO2 x 7 H2O",
+                ".MgSO4",
+                "MgSO 4",
+                "magnesium sulphate",
+                "magnesium(II) sulfate",
+                "sulfuric acid magnesium salt",
+                "sulphate of magnesia"
+              ],
+              "Nicotinic_Acid.yaml": [
+                "Nicotinate"
+              ],
+              "Riboflavin.yaml": [
+                "Riboflavin (0.2 mg/ml)",
+                "Riboflavin (0.05 μg/mL)"
+              ],
+              "Hepes.yaml": [
+                "HEPES (10mM)"
+              ],
+              "Ki.yaml": [
+                "KI (0.01% w/v)"
+              ],
+              "Fe_Iii_Citrate.yaml": [
+                "Ferric citrate (0.1%, w/v)"
+              ]
+            }
+          }
+        ],
+        "authorization_boundary": "Read-only finding. No author or maintained payload was changed. Coordinator deduplication and separately reviewed successor proposals are required; no hold or export gate is lifted.",
+        "external_reviewer_scope": "chemicals_and_root"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-CR-F08",
+        "disposition": "retain",
+        "category": "identity",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "assessment": "Root independently read the exact active MgSO2 formula tokens, Nicotinate EXACT alias, riboflavin concentrations and HEPES10mM token, plus actual local ChEBI32544 query capture and owner formulas. Literal formula/protonation conflicts are confirmed. Hydration-omitting and concentration labels require source-specific disposition, not guessed chemical/stock corrections. The finding remains bounded and all original holds persist.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MAT-001",
+        "status": "open",
+        "severity": "P1",
+        "title": "Generic soy owner still asserts branded product and alternative aliases",
+        "case_ids": [
+          "CM_NAME:8d411c29b3c72239de67c4f6968dabedb48e94d0e9c7ff45af014bdeb4650acd",
+          "KG_CASE:3afa861ef7ff42874af3fd1e7f918863a09111adde1a93ff6bc9ee75f883a276",
+          "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+        ],
+        "case_indices": [
+          71,
+          139,
+          176
+        ],
+        "selected_payloads": [
+          {
+            "proposal_id": "MATERIALS-C1193-soy-peptone-boundary",
+            "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+            "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+            "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a",
+            "locator": "entire selected owner; synonyms/notes"
+          },
+          {
+            "proposal_id": "MATERIALS-C1193-phytone-boundary",
+            "owner_path": "data/ingredients/mapped/Phytone.yaml",
+            "before_sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Phytone.yaml",
+            "sha256": "1bdbafaff5f1f3bf94121482e57fd2834a666bdc9f6e01ccaacee9e2d50be1fa",
+            "locator": "entire selected owner; synonyms/notes"
+          },
+          {
+            "proposal_id": "MATERIALS-C1193-Difco_Soytone",
+            "owner_path": "data/ingredients/mapped/Difco_Soytone.yaml",
+            "before_sha256": null,
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Difco_Soytone.yaml",
+            "sha256": "8251a4260d94b11435815d53c814365fd8b9037c41d124b867e913ba25657543",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "observation": "The selected generic Soy_Peptone payload changes primary identity to kgmicrobe.ingredient:soy_peptone but retains EXACT_SYNONYM Phytone peptone and Soytone, CATALOG_VARIANT Phytone peptone (BD-BBL), Bacto Soytone, and the complete Soytone-or-Phytone alternative. The same active batch creates a distinct Difco Soytone owner and assigns Phytone its own identity. The manufacturer guide describes different soy product processing. The generic owner notes expressly postpone branded alias reconciliation. This is an unresolved contradiction in the complete proposed owner, not a claim that the narrow identifier correction caused the inherited aliases.",
+        "bounded_required_followup": "Prepare a successor that preserves the exact unsupported branded/alternative strings, original source and history as nonresolving provenance. Do not infer a forced record merge, catalog equivalence, occurrence reassignment or count redistribution. Treat the active Soya_Pepton/Soya_Peptone family and W08 competing proposal as dependencies requiring separate source-aware reconciliation.",
+        "sources": [
+          {
+            "evidence_id": "MATERIALS-CAP-a1d17581eca50e64",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-2e3878c52379fbef.pdf",
+            "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6",
+            "locator": "PDF page33 soy product descriptions; page13 Bacto vs Difco; page92 distinct catalog lines"
+          },
+          {
+            "evidence_id": "MATERIALS-C1193-DIFCO-SOYTONE",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/captures/difco-soytone.txt",
+            "sha256": "b718bd438f08d64b3dd1fbe262b08c64f9f6fab294f22ce59289f043198493eb",
+            "locator": "product description and catalog numbers"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-fd95ea8d26cdd5fc",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-dd45cbd9e41e72f6.txt",
+            "sha256": "aa063e8b88177611aba640828e84d3982b1b3b1c65b11647d89c9efbf6274c25",
+            "locator": "FOODON03315720 broader hydrolyzed vegetable protein definition"
+          }
+        ],
+        "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+        "external_reviewer_scope": "materials"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MAT-001",
+        "disposition": "retain",
+        "normalized_severity": "major",
+        "native_severity": "P1",
+        "category": "identity",
+        "assessment": "Independently inspected selected Soy_Peptone, Phytone and Difco_Soytone active identities/aliases and manufacturer guide page33. Generic soy digest, named product and alternative-label scopes are not interchangeable. The retained exact product aliases contradict the new generic-owner boundary. Ownworker08 overlap remains a coordinator dependency only.",
+        "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/294"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MAT-002",
+        "status": "open",
+        "severity": "P1",
+        "title": "Fish-sperm DNA owner retains generic and conflicting tissue aliases",
+        "case_ids": [
+          "CM_NAME:7a2f80fe519b283e444d0f8f264cda4df2c3917e0640f7fe00253036d9c2a79c"
+        ],
+        "case_indices": [
+          62
+        ],
+        "selected_payloads": [
+          {
+            "proposal_id": "MATERIALS-C1193-fish-sperm-dna",
+            "owner_path": "data/ingredients/mapped/Fish-sperm_Dna.yaml",
+            "before_sha256": "b58a13acec7b840f5b8f13fe70630055cfe14da2d78e07538439ea1aac1b7893",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed-v2/Fish-sperm_Dna.yaml",
+            "sha256": "0f355235eec4e7f909d0a5675291872f899dd69fdd331d7b30b77d4f3ec55aaf",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "observation": "The complete selected Fish-Sperm DNA owner keeps ten EXACT_SYNONYM entries copied from generic DNA, including DNA, deoxyribonucleic acids and thymus nucleic acid. Its primary identity is the narrower fish-sperm material and its ontology relation to CHEBI16991 is NARROW_MATCH. The four inspected source recipes explicitly name fish-sperm DNA (SERVA), without a species or thymus claim. Supplier-form enrichment preserves this existing unsafe alias scope.",
+        "bounded_required_followup": "Retype unsupported generic or conflicting-tissue identity aliases as nonresolving provenance, preserving strings, sources and history. Retain the source-specific SERVA fact; do not infer species, molecular length or counterion, and do not reverse the herring-sperm tombstone solely from this finding.",
+        "sources": [
+          {
+            "evidence_id": "MATERIALS-CAP-bf7d3eb9e6d26ecc",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/extra-e86d7aadca25002a.txt",
+            "sha256": "f6c9cb13ae152ed197e62ffc7636970a0619e657da3fcef55c80ccc5dbf4193d",
+            "locator": "CHEBI16991 generic DNA definition and synonyms"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-d9c01418954b4216",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-e31c165d8d0476fc.txt",
+            "sha256": "a1b0824156e08611487a7cfd3a508fc153b6912d7569f4dcf212293f04a5ba5e",
+            "locator": "M2450 components[0] fish-sperm DNA and comments"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-91700f0a7505294f",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-e5d86d1e81731272.txt",
+            "sha256": "f83798be11d8f2d5354db768f4e4d3030ae25c0fd9d551154309db6e85f06085",
+            "locator": "M2451 fish-sperm source"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-d999432c76b4de79",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-26710cab63b88419.txt",
+            "sha256": "5229638d1de4a75c8a6b2eb7ba4f53ff4908fa4ffbe7d115f36b4b7dc53b4460",
+            "locator": "M2452 fish-sperm source"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-4556b713745fd143",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-f216ebce75ae745b.txt",
+            "sha256": "156124591ae802f0baf680ef0950e1b88932f56add80d3d359bc3a88e463eaf8",
+            "locator": "M2453 fish-sperm source"
+          }
+        ],
+        "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+        "external_reviewer_scope": "materials"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MAT-002",
+        "disposition": "retain",
+        "normalized_severity": "major",
+        "native_severity": "P1",
+        "category": "identity",
+        "assessment": "Read entire relevant selected Fish-Sperm DNA identity/alias/mapping fields and actual CHEBI16991 term definition. Generic DNA and thymus aliases are broader or conflicting with the fish-sperm identity. Source-specific SERVA enrichment does not cure them. Do not rely on the obsolete absent-formula⇒class premise in historical issue322 or reverse the separate herring-source tombstone.",
+        "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MAT-003",
+        "status": "open",
+        "severity": "P2",
+        "title": "Known truncated concentration token remains on generic Peptone",
+        "case_ids": [
+          "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+        ],
+        "case_indices": [
+          173
+        ],
+        "selected_payloads": [
+          {
+            "proposal_id": "MATERIALS-C1193-peptone-identity",
+            "owner_path": "data/ingredients/mapped/Peptone.yaml",
+            "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed-v2/Peptone.yaml",
+            "sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "observation": "The selected generic Peptone identity correction explicitly declines to repair RAW_TEXT Peptone (0.01 %. The frozen case already identifies this preparation/concentration fragment as a withheld alias concern. Its incomplete concentration-qualified text is not a complete alternative name for the unconcentrated generic material. The unknown assay supplier and mammalian origin do not prevent bounded retirement of this malformed alias.",
+        "bounded_required_followup": "Retain the exact token and source as REJECTED_LABEL provenance with a helper-recorded event. Preserve plural peptones and both MicrobeDecoder organism/source holds; do not reconstruct a 0.01% recipe or infer a missing percent basis.",
+        "sources": [
+          {
+            "path": ".temp/w05-published-head-independent-review-v1/assignments/materials.json",
+            "sha256": "ae5ee08a89325737b0449faa100b90df3603a3987ceff8d530ea9a0098715d91",
+            "locator": "cases[54].original_kg_entry native review and downstream holds; decisions[54]"
+          }
+        ],
+        "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+        "external_reviewer_scope": "materials"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MAT-003",
+        "disposition": "retain",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "category": "nomenclature",
+        "assessment": "The complete selected Peptone synonym list and proposal notes explicitly retain the truncated concentration token. This bounded malformed-label repair does not require knowing the assay supplier, reconstructing a concentration, or clearing any source role hold.",
+        "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/294"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MAT-004",
+        "status": "open",
+        "severity": "P1",
+        "title": "Bacto owner retains a fish-product alias despite the mammalian product boundary",
+        "case_ids": [
+          "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6",
+          "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+          "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d"
+        ],
+        "case_indices": [
+          163,
+          184,
+          186
+        ],
+        "selected_payloads": [
+          {
+            "proposal_id": "MATERIALS-C1193-bacto-aliases",
+            "owner_path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+            "before_sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed-v2/Bacto_Peptone.yaml",
+            "sha256": "90d4b4f04e9619f91b8a36af0ea737ce6b43cc6b291b5939854f57f94dd56896",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "observation": "The final Bacto_Peptone payload preserves CATALOG_VARIANT Fish peptone (Fluka), while the same owner already rejects Fish peptone. The inspected Bacto supplier specification defines bovine/porcine digest, and MICRO0000178 is mammalian protein digest. The fish-specific Fluka label is not supported as an identity of that product. Additional remaining generic meat/mixture aliases require individual assessment, but this finding requires no guessed replacement for them.",
+        "bounded_required_followup": "Retire the literal Fish peptone (Fluka) resolving identity claim as nonresolving provenance while preserving its exact text/source/history. Do not infer a Fluka catalog, redirect counts or treat brand difference alone as chemical distinctness. Other ambiguous aliases require their own evidence; this finding does not decide them.",
+        "sources": [
+          {
+            "evidence_id": "MATERIALS-CAP-f1265bc5398a7f56",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-0357ad5e73d4f9f6.txt",
+            "sha256": "ecfed6455cdbdde1d10f6ff236227bb1a0e5b09bc319d0bd4d9a61e0ebc2d9d6",
+            "locator": "Bacto211677 animal origin bovine and porcine product definition"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-31a954364e3e6346",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-246381453c47ddd7.txt",
+            "sha256": "ef45aa186438f91d015280171fde8ccb25740a50cc6f2c6e848de6aad3339b31",
+            "locator": "MICRO0000178 mammalian enzymatic digest definition"
+          }
+        ],
+        "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+        "external_reviewer_scope": "materials"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MAT-004",
+        "disposition": "retain",
+        "normalized_severity": "major",
+        "native_severity": "P1",
+        "category": "identity",
+        "assessment": "Read selected Bacto alias list, including existing Fish peptone rejection and retained Fish peptone (Fluka), plus actual manufacturer211677 description of bovine/porcine digest. Retire the unsupported fish-product identity claim without inventing a replacement product or remapping occurrences.",
+        "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1176",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/294"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MAT-005",
+        "status": "open",
+        "severity": "P2",
+        "title": "Metadata tokens remain in the Catalase and soy synonym channels",
+        "case_ids": [
+          "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c",
+          "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+        ],
+        "case_indices": [
+          116,
+          176
+        ],
+        "selected_payloads": [
+          {
+            "proposal_id": "MATERIALS-C1193-catalase-source-form",
+            "owner_path": "data/ingredients/mapped/Catalase.yaml",
+            "before_sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Catalase.yaml",
+            "sha256": "86f16abc6c6ebd4ac4d665f079ed95fba3fce04cccd4553cecf7ba488adc8451",
+            "locator": "entire selected owner; synonyms/notes"
+          },
+          {
+            "proposal_id": "MATERIALS-C1193-soy-peptone-boundary",
+            "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+            "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+            "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "observation": "Catalase retains RAW_TEXT Properties: Defined component, Simple component and the reversed phrase. Soy_Peptone retains RAW_TEXT Properties: Undefined component. These describe ingestion metadata rather than an ingredient. This finding concerns the serialized alias channel; no unverified statement about a particular downstream resolver result is made.",
+        "bounded_required_followup": "Retype these exact metadata strings as nonresolving rejected-label provenance, preserving source and history. Keep valid Catalase catalog and soy material assertions separate.",
+        "sources": [
+          {
+            "path": ".temp/w05-published-head-independent-review-v1/assignments/materials.json",
+            "sha256": "ae5ee08a89325737b0449faa100b90df3603a3987ceff8d530ea9a0098715d91",
+            "locator": "selected proposals and original source metadata"
+          }
+        ],
+        "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+        "external_reviewer_scope": "materials"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MAT-005",
+        "disposition": "retain",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "category": "nomenclature",
+        "assessment": "Read actual selected Catalase and Soy_Peptone synonym arrays. Properties: ... metadata are not substance names. Preserve literal/source provenance while removing resolving identity behavior; this is separate from ingredient identity or roles.",
+        "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/294"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MAT-006",
+        "status": "nonblocking_completeness_opportunity",
+        "severity": "P3",
+        "title": "Optional typed sucrose component link is available",
+        "case_ids": [
+          "CM_NAME:80b54b0ff5bd090c464e9e458d5ad32a60b5f4c3dd3f2d17415f7cea4724ef55"
+        ],
+        "case_indices": [
+          66
+        ],
+        "selected_payloads": [
+          {
+            "proposal_id": "MATERIALS-C1193-Sucrose_20_Percent_Stock",
+            "owner_path": "data/ingredients/mapped/Sucrose_20_Percent_Stock.yaml",
+            "before_sha256": null,
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Sucrose_20_Percent_Stock.yaml",
+            "sha256": "4cd1c762323c28e995994844e4e7af1bcc00eacd5d54e583f28c0a4a2c4a2384",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "observation": "The 20% w/v sucrose stock appropriately remains PARTIAL because its solvent is not explicitly supplied. Its sole named constituent is nevertheless reference_scope UNMAPPED with no component_id. The same active review includes the extant Sucrose owner CHEBI17992 and an official sucrose term capture; its d-salicin alias repair does not change sucrose identity. No scientific reason is stated for withholding this known typed component link. Section 6 explicitly permits UNMAPPED named components. This is not a schema failure or a false identity claim; the decision does not explicitly assert that no sucrose owner exists.",
+        "bounded_required_followup": "Optional: consider the available exact Sucrose CHEBI:17992 component link using MIM_CATALOG, preserving the partial 20% w/v stock, unknown solvent and all Sucrose role/export holds. No blanket requirement to ground components and no release blocker is inferred. Agar in malt agar is at most an analogous optional lookup, not a separate established finding.",
+        "sources": [
+          {
+            "evidence_id": "MATERIALS-CAP-9615db8acd821f29",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-73f0f9de767c897b.txt",
+            "sha256": "b9b385330b7f0698f8ff8df64258015a64b605a711f74ad206e0799fa411e293",
+            "locator": "JCM1013 sucrose20%w/v stock and10ml receiving dose"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-dbb86d8272ad67d6",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-260dd7b43c6e9e78.txt",
+            "sha256": "2799989b1bdab72c97895ef42660e3e37cf6e9324fcd50fb7e0c637cf64cee63",
+            "locator": "CHEBI17992 exact sucrose identity"
+          },
+          {
+            "proposal_id": "MATERIALS-P-sucrose-salicin",
+            "owner_path": "data/ingredients/mapped/Sucrose.yaml",
+            "before_sha256": "36d3205ecc78e87cb9e258f55e7e85c7a6e0daab32ae7a916c674acc327189e1",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/proposed/Sucrose.yaml",
+            "sha256": "90d255cebc818220c9e8a94e28a64bb20e114aa30b8f16818951014c83c9fe10",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+        "severity_revision": "P2 preliminary assessment narrowed to P3 after contract reread and coordinator challenge; original provisional finding preserved.",
+        "external_reviewer_scope": "materials"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MAT-006",
+        "disposition": "retain",
+        "normalized_severity": "minor",
+        "native_severity": "P3",
+        "category": "completeness",
+        "assessment": "Read selected20%w/v stock, exact existing sucrose identity and CHEBI17992 definition. An exact sucrose component lookup is feasible, but Section6 explicitly permits named UNMAPPED components. This is optional narrow completeness work (P3), not a schema failure or scientific approval blocker; solvent and final-medium basis remain unknown.",
+        "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MAT-007",
+        "status": "open",
+        "severity": "P2",
+        "title": "Catalase provenance claims a direct JCM source although the captured endpoint is empty",
+        "case_ids": [
+          "CM_NAME:eee28502f1c6b4bec47b31f47a642d32c11383817a96e7c154724733ee13389c"
+        ],
+        "case_indices": [
+          116
+        ],
+        "selected_payloads": [
+          {
+            "proposal_id": "MATERIALS-C1193-catalase-source-form",
+            "owner_path": "data/ingredients/mapped/Catalase.yaml",
+            "before_sha256": "acf35ca83d195941071bd756beaea8560d59b0ab5e9cc5761d36889969590efd",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/proposed/Catalase.yaml",
+            "sha256": "86f16abc6c6ebd4ac4d665f079ed95fba3fce04cccd4553cecf7ba488adc8451",
+            "locator": "entire selected owner; synonyms/notes"
+          }
+        ],
+        "observation": "The selected Catalase notes state JCM117 directly supplies the catalog spelling and60mg addition, and the new source assertion cites that JCM URL. The captured JCM117 response says Nothing found. The substantive historical fact is supported by the inspected TOGO M109 record whose metadata names JCM117, so this is a provenance attribution defect rather than evidence that the Catalase fact is false.",
+        "bounded_required_followup": "Name and cite TOGO M109 as the actually inspected recipe, describe JCM117 as its recorded source lineage, and preserve the current empty JCM response honestly. Do not imply contemporaryC100 establishes historicalC-10 species or product identity.",
+        "sources": [
+          {
+            "evidence_id": "MATERIALS-C1193-JCM117",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/materials/captures/jcm117.txt",
+            "sha256": "42b450100240091799fed5f33b18187fc0234e44696217d96c2f7c72e6e831d8",
+            "locator": "entire no-result page"
+          },
+          {
+            "evidence_id": "MATERIALS-CAP-5c0a089f5206be3d",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/materials/captures/primary-cfc365ae34b58b69.txt",
+            "sha256": "7f5f887f27f11f912b9966aa3071f01a90c29b691c0a2f649bebb5de64c5bb4b",
+            "locator": "M109 entire recipe"
+          }
+        ],
+        "hold_policy": "Existing source, role, scientific and export holds remain. This finding does not approve any unrelated or inherited claim. No author bytes were changed.",
+        "external_reviewer_scope": "materials"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MAT-007",
+        "disposition": "retain",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "category": "provenance",
+        "assessment": "Independently read entire actual JCM117 Nothing found response and complete TOGO M109 recipe, then selected Catalase notes/supplied form. The evidence supports a historical TOGO recipe attributed toJCM117, not an inspected contemporaryJCM117 formulation. Correct attribution without inventing historicalC-10 composition or adopting currentC100.",
+        "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MEDIA-F01",
+        "status": "open",
+        "severity": "P2",
+        "title": "Active Marine Broth mapping evidence retains the superseded agar-equivalence premise",
+        "proposal_ids": [
+          "M1193-P-MARINE2216"
+        ],
+        "case_ids": [
+          "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+          "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c"
+        ],
+        "owner_path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+        "payload": {
+          "root": "artifact",
+          "path": "correction-1193-v1/media/proposed/Marine_Broth_2216.yaml",
+          "sha256": "b7c5a00a78f1c6120e52ac3d88eb16833be86df317680d593e53f21047418abd"
+        },
+        "locator": "ontology_mapping.evidence",
+        "reproduction": {
+          "command": "Read exact selected YAML at payload.path, then compare the cited manufacturer table and directions.",
+          "active_field": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "MIM curation (#260)",
+              "notes": "Minted under the #288 named-preparation convention (#260): the broth twin of Marine Agar 2216, already in the corpus as an UNMAPPED record. Minted alongside its agar rather than left unmapped: the two differ only by the gelling agent, and splitting them would be arbitrary. Cross-reference: CultureMech:008094. A CultureMech id cannot be the identifier — MIM's primary key is an ontology CURIE or a registry mint — so it is carried here as evidence."
+            }
+          ],
+          "arithmetic": null
+        },
+        "assessment": "The selected payload replaces the agar-derived components with the commercial broth formula, but still retains active mapping evidence stating that agar and broth differ only by the gelling agent. The actual manufacturer table has broth magnesium chloride 5.9 g and magnesium sulfate 3.24 g, versus agar magnesium chloride 8.8 g and sodium sulfate 3.24 g. This is not merely old history: the false premise remains inside active ontology_mapping.evidence.",
+        "bounded_fix": "Preserve the old text in curation_history or explicitly marked historical provenance, and replace the active evidence premise with the manufacturer distinction and the exact commercial broth scope. Do not release any source, role or export hold.",
+        "sources": [
+          {
+            "evidence_id": "M1193-DIRECT-15",
+            "url": "https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/captures/direct-15.body",
+              "sha256": "de2504598b1133074ba2239c045958e9a6564dc1b2a2d8f13ab4bac99233199f"
+            },
+            "retrieved_at": null,
+            "locator": "Manufacturer manual page 352, distinct agar and broth formula tables"
+          }
+        ],
+        "scope_limit": "No maintained edits or own W08 science approval; candidate correction does not approve source matching, roles, or export.",
+        "verification": "Independently reproduced against the exact selected payload and actual manufacturer PDF text; coordinator separately confirmed both source comparisons.",
+        "external_reviewer_scope": "media"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MEDIA-F01",
+        "disposition": "retain",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "category": "evidence",
+        "assessment": "Read actual manufacturer Marine2page PDF and selected active evidence. The published broth and agar formulas differ in magnesium-chloride amount and magnesium-versus-sodium sulfate as well as agar. Existing ontology_mapping.evidence retains a disproved active premise; preserve it historically and cite the verified commercial broth basis. Related issue1208 remains open and holds remain.",
+        "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MEDIA-F02",
+        "status": "open",
+        "severity": "P2",
+        "title": "EMJH quantitative curation is deferred by a false basis conflict",
+        "proposal_ids": [
+          "M1193-P-LEPTOSPIRA_MEDIUM_BASE_EMJH"
+        ],
+        "case_ids": [
+          "KG_CASE:1b608e9278343cf1c5b33844657f0c88e19ad9a88d6e8c76a61e732cfb744e4a"
+        ],
+        "owner_path": "data/ingredients/unmapped/Leptospira_Medium_Base_EMJH.yaml",
+        "payload": {
+          "root": "artifact",
+          "path": "correction-1193-v1/media/proposed/Leptospira_Medium_Base_EMJH.yaml",
+          "sha256": "fee5a3a385b7037dbe8a5943ca515c93fe60f42e071d66c6e0f530151727b355"
+        },
+        "locator": "components; component_assertion; notes; case131 reasoning",
+        "reproduction": {
+          "command": "Read exact selected YAML at payload.path, then compare the cited manufacturer table and directions.",
+          "active_field": {
+            "components": [
+              {
+                "component_name": "Disodium phosphate",
+                "reference_scope": "UNMAPPED"
+              },
+              {
+                "component_name": "Monopotassium phosphate",
+                "reference_scope": "UNMAPPED"
+              },
+              {
+                "component_name": "Sodium chloride",
+                "reference_scope": "UNMAPPED"
+              },
+              {
+                "component_name": "Ammonium chloride",
+                "reference_scope": "UNMAPPED"
+              },
+              {
+                "component_name": "Thiamine",
+                "reference_scope": "UNMAPPED"
+              }
+            ],
+            "component_assertion": {
+              "method": "RECIPE_TRANSCRIPTION",
+              "completeness": "PARTIAL",
+              "evidence": [
+                {
+                  "evidence_type": "RECIPE_SOURCE",
+                  "source": "https://cdn.media.interlabdist.com.br/uploads/2021/01/Leptospira-Medium-Base-EMJH.pdf",
+                  "notes": "Source990/DSMZ1113 names Difco EMJH base2.3g separately from100ml enrichment992. Manufacturer279410 base has five named constituents. Its approximate per-liter formula totals2.555g while directions use2.3g in900ml before enrichment; amounts are withheld pending this basis resolution, but product identity and named parts are supported."
+                }
+              ]
+            },
+            "notes": "Imported from mim-queue (source_id=mediadive.ingredient:990); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium base preparation pending product- or recipe-level curation. Correction1193: Source990/DSMZ1113 names Difco EMJH base2.3g separately from100ml enrichment992. Manufacturer279410 base has five named constituents. Its approximate per-liter formula totals2.555g while directions use2.3g in900ml before enrichment; amounts are withheld pending this basis resolution, but product identity and named parts are supported."
+          },
+          "arithmetic": {
+            "sum_g_per_l": 2.5549999999999997,
+            "powder_g_divided_by_water_l": 2.5555555555555554
+          }
+        },
+        "assessment": "The manufacturer lists the approximate basal formula per liter: disodium phosphate 1 g, monopotassium phosphate 0.3 g, sodium chloride 1 g, ammonium chloride 0.25 g and thiamine 5 mg. Its preparation uses 2.3 g in 900 ml before adding 100 ml enrichment. The quantities sum to 2.555 g/L and 2.3/0.9 is 2.55556 g/L, consistent within stated precision. Thus the stated sum-versus-directions discrepancy does not establish a missing basis. All five values are omitted despite an explicit source basis.",
+        "bounded_fix": "Transcribe the supplier-listed approximate quantities with an explicit basal-reconstitution basis, keeping the dry product identity separate from the completed enriched medium. Preserve the performance-adjustment footnote and do not infer exact lot composition, phosphate hydration, thiamine salt or 1 L enriched-medium concentrations. Revise the false unresolved-basis rationale; if any independent residual uncertainty remains, state it precisely.",
+        "sources": [
+          {
+            "evidence_id": "M1193-DIRECT-7",
+            "url": "https://cdn.media.interlabdist.com.br/uploads/2021/01/Leptospira-Medium-Base-EMJH.pdf",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/captures/direct-7.body",
+              "sha256": "1daac1137335e8d0ccc70ccbceca036235602d37499de4bc720a990d94cd3bd0"
+            },
+            "retrieved_at": null,
+            "locator": "Manufacturer manual pages 301–302; page 302 approximate formula per liter and 2.3 g / 900 ml directions"
+          }
+        ],
+        "scope_limit": "No maintained edits or own W08 science approval; candidate correction does not approve source matching, roles, or export.",
+        "verification": "Independently reproduced against the exact selected payload and actual manufacturer PDF text; coordinator separately confirmed both source comparisons.",
+        "external_reviewer_scope": "media"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MEDIA-F02",
+        "disposition": "retain",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "category": "quantity",
+        "assessment": "Read entire selected EMJH payload and actual direct-7 PDF301/302. Its explicit approximate per-liter basal table sums2.555g;2.3g/0.9L=2.55556g/L agrees at stated precision. Record source-listed approximate amounts and basis rather than deferring a false conflict. Do not infer final enriched-medium concentrations, lot composition, phosphate hydrate or thiamine salt.",
+        "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    },
+    {
+      "finding": {
+        "finding_id": "W05-MEDIA-F03",
+        "status": "open",
+        "severity": "P2",
+        "title": "Cooked-meat evidence claim is attached to an unrelated environmental-noise PDF",
+        "case_ids": [
+          "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a"
+        ],
+        "case_input_sha256": "590323eb3fa1cd984565c5eb371fd4cdfe185fdd607ad99ae089928324480a6e",
+        "proposal_ids": [
+          "M1193-P-FOLLOWON-MODIFIED_COOKED_MEAT_MEDIUM",
+          "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES"
+        ],
+        "payloads": [
+          {
+            "proposal_id": "M1193-P-FOLLOWON-MODIFIED_COOKED_MEAT_MEDIUM",
+            "owner_path": "data/ingredients/mapped/Modified_Cooked_Meat_Medium.yaml",
+            "before_sha256": "85ab9042f8e67c7ec43210a485b7a9f872d43fc769dc315887fd5d8c1cdacf97",
+            "after_capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/proposed/Modified_Cooked_Meat_Medium.yaml",
+              "sha256": "01c6b55f350322a9a3ebb79c89c3f12951354e15982b22e437ecf5ee17a506ee"
+            }
+          },
+          {
+            "proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+            "owner_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+            "before_sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+            "after_capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+              "sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99"
+            }
+          }
+        ],
+        "source_evidence_ids": [
+          "M1193-FOLLOWON-153"
+        ],
+        "source_paths": [
+          "correction-1193-v1/media/captures/direct-153.body",
+          "correction-1193-v1/media/evidence.json",
+          "correction-1193-v1/evidence.json"
+        ],
+        "source_bindings": [
+          {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/captures/direct-153.body",
+            "sha256": "6726a59ca71c098f21b9a763f1eeda8de7ee13939dd767ebbd24400de8133af7"
+          }
+        ],
+        "active_evidence_index_bindings": [
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/media/evidence.json",
+            "sha256": "67698b74fb15635f54b0dc2874b1a1e52883bf89b3e08bd0ed428a1c1ae0b3cc",
+            "locator": "evidence[469], M1193-FOLLOWON-153.supports_or_contradicts"
+          },
+          {
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/w05-published-head-independent-review-v1/snapshot/reports/all_unmatched_20261107/worker-05/correction-1193-v1/evidence.json",
+            "sha256": "9065622a1fb2123a85bb881db2ca5fec9502ee464bb37d01f7deff8974c0f4c7",
+            "locator": "evidence[1486], M1193-FOLLOWON-153.supports_or_contradicts"
+          }
+        ],
+        "locator": "M1193-FOLLOWON-153 supports_or_contradicts versus actual PDF pages1–3 title, report control and contents",
+        "reproduction": {
+          "capture_sha256": "6726a59ca71c098f21b9a763f1eeda8de7ee13939dd767ebbd24400de8133af7",
+          "capture_url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b2804c3ac5.pdf",
+          "author_accessed_at": "2026-11-08T06:22:02.502006+00:00",
+          "claimed_content": "USDA1998 chapter14 refers to ModifiedCookedMeatMedium as a named culture preparation; this captured chapter does not provide the underlying formula or link to the imported Bergey label.",
+          "commands": [
+            "sha256sum <capture>",
+            "pdfinfo <capture>",
+            "pdftotext -f 1 -l 3 -layout <capture> -",
+            "pdftotext -layout <capture> -; independently search extracted text case-insensitively for cooked, meat, USDA, and chapter followed by optional whitespace and14"
+          ],
+          "actual_document": "Environmental Noise Monitoring: Compliance Monitoring for IPPC Licence P0126-02; Allergan Pharmaceuticals Ireland, Westport; reportDC1093-01, 21June2012, David Cawley.",
+          "pdf_pages": 124,
+          "extracted_text_sha256": "ac9c594442a1dd25c830f415e0a4a3d74cab47de2fed68308d7a01988bde3f07",
+          "full_extracted_text_term_counts": {
+            "cooked": 0,
+            "meat": 0,
+            "USDA": 0,
+            "chapter_optional_whitespace_14": 0
+          },
+          "extraction_limit": "Four Unknown character collection PDFAUTOCAD-Indentity0 warnings occurred. The title/control/contents pages are readable. Search absence is corroboration, not a claim of perfect extraction of all appendices."
+        },
+        "assessment": "The positive USDA chapter attribution is unsupported by these exact captured bytes. The active bundle links this evidence to both follow-on proposals. A successful download and correct hash do not validate the claimed document identity.",
+        "bounded_fix": "Preserve the original capture and retrieval metadata. In an immutable successor, classify it as an unrelated retrieval and withdraw the USDA1998/chapter14 positive support. Remove its use as positive evidence from the linked proposals, or replace it with an actually retrieved and inspected relevant document with exact provenance. Do not invent a chapter conclusion or silently change the original bytes.",
+        "payload_recommendation_effect": "No reversal of the two narrow YAML recommendations. Both entire selected payloads were re-read: neither embeds the EPA URL or USDA chapter claim. Withdrawal of the unsupported FoodOn meat-component identity remains independently supported by the legacy source boundary, actual FoodOn definition, and actual manufacturer material/whole-medium comparisons. The active evidence assertion still requires correction before treating this source bundle as verified.",
+        "independent_support_retained": [
+          {
+            "evidence_id": "M1193-FOLLOWON-150",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/captures/direct-150.body",
+              "sha256": "a8b80832dffbaa42aec02915eb1398a041d600796da14cb0ed74b765eae3ce19"
+            }
+          },
+          {
+            "evidence_id": "M1193-FOLLOWON-151",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/captures/direct-151.body",
+              "sha256": "3ca3efc02a4a025b34ecb3126924fdb8d6fdfe011ba5a1d543af01a344268354"
+            }
+          },
+          {
+            "evidence_id": "M1193-FOLLOWON-152",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/captures/direct-152.body",
+              "sha256": "0f91921e433a7a3507e9c627373f41d65eea9985c9ebaaabf371e2f6e278009b"
+            }
+          },
+          {
+            "evidence_id": "M1193-FOLLOWON-154",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/captures/direct-154.body",
+              "sha256": "284a7dc881393eae97aaf521c068a163787d4c57326b7111c5a96fafe437d9d0"
+            }
+          },
+          {
+            "evidence_id": "M1193-FOLLOWON-155",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/captures/direct-155.body",
+              "sha256": "331a9e069e2db9f48dae756b62cf5eb33bff6e08f65ae3ce3916b5794132b060"
+            }
+          },
+          {
+            "evidence_id": "M1193-FOLLOWON-LEGACY-microbedecoder_residual_research_decomposition",
+            "capture": {
+              "root": "artifact",
+              "path": "correction-1193-v1/media/followon-cooked-meat/microbedecoder_residual_research_decomposition.tsv",
+              "sha256": "b6a9d5d729ece6eb038e4f8e0d6d5813b3a117284d45a1fc8918b15f24e4fb86"
+            }
+          }
+        ],
+        "lineage": "The prior correction1193 materials review resolved its direct-source-fidelity finding, but that signoff does not validate this incorrectly identified later capture. The original review remains historical; this exact external-review addendum records the newly found provenance defect.",
+        "inherited_holds_preserved": true,
+        "whole_owner_or_export_approval": false,
+        "external_reviewer_scope": "media"
+      },
+      "root_adjudication": {
+        "finding_id": "W05-MEDIA-F03",
+        "disposition": "retain",
+        "category": "provenance",
+        "normalized_severity": "minor",
+        "native_severity": "P2",
+        "assessment": "Root independently read the exact124-page PDF first page and searched its extracted text. It is the2012Allergan environmental-noise report; the USDA1998chapter14 assertion is unsupported. Correct active evidence classification/linkage while preserving exact failed/mismatched capture bytes. The two narrow component-reference withdrawals remain separately supported; no unread chapter is claimed.",
+        "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+      },
+      "candidate_issue_lineage": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/748"
+      ],
+      "github_action": "None. Coordinator owns deduplication/filing and author direction."
+    }
+  ],
+  "nonretained_or_reclassified": [
+    {
+      "finding_id": "W05-CR-F01",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Both actual NBRC1221/1474 source pages and both entire selected stock payloads were independently read. The source numbers and receiving-medium pH values do not establish distinct1M stock identities. Retain one bounded concrete anchor and an unresolved comparison, or provide an actual material distinction; do not force equivalence.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-001",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Independently inspected selected Soy_Peptone, Phytone and Difco_Soytone active identities/aliases and manufacturer guide page33. Generic soy digest, named product and alternative-label scopes are not interchangeable. The retained exact product aliases contradict the new generic-owner boundary. Ownworker08 overlap remains a coordinator dependency only.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-002",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Read entire relevant selected Fish-Sperm DNA identity/alias/mapping fields and actual CHEBI16991 term definition. Generic DNA and thymus aliases are broader or conflicting with the fish-sperm identity. Source-specific SERVA enrichment does not cure them. Do not rely on the obsolete absent-formula⇒class premise in historical issue322 or reverse the separate herring-source tombstone.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-003",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "nomenclature",
+      "assessment": "The complete selected Peptone synonym list and proposal notes explicitly retain the truncated concentration token. This bounded malformed-label repair does not require knowing the assay supplier, reconstructing a concentration, or clearing any source role hold.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MAT-004",
+      "disposition": "retain",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "category": "identity",
+      "assessment": "Read selected Bacto alias list, including existing Fish peptone rejection and retained Fish peptone (Fluka), plus actual manufacturer211677 description of bovine/porcine digest. Retire the unsupported fish-product identity claim without inventing a replacement product or remapping occurrences.",
+      "normalization_reason": "Unsupported identity/alias or distinctness claim affects scientific identity."
+    },
+    {
+      "finding_id": "W05-MAT-005",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "nomenclature",
+      "assessment": "Read actual selected Catalase and Soy_Peptone synonym arrays. Properties: ... metadata are not substance names. Preserve literal/source provenance while removing resolving identity behavior; this is separate from ingredient identity or roles.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MAT-006",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P3",
+      "category": "completeness",
+      "assessment": "Read selected20%w/v stock, exact existing sucrose identity and CHEBI17992 definition. An exact sucrose component lookup is feasible, but Section6 explicitly permits named UNMAPPED components. This is optional narrow completeness work (P3), not a schema failure or scientific approval blocker; solvent and final-medium basis remain unknown.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MAT-007",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "provenance",
+      "assessment": "Independently read entire actual JCM117 Nothing found response and complete TOGO M109 recipe, then selected Catalase notes/supplied form. The evidence supports a historical TOGO recipe attributed toJCM117, not an inspected contemporaryJCM117 formulation. Correct attribution without inventing historicalC-10 composition or adopting currentC100.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MEDIA-F01",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "evidence",
+      "assessment": "Read actual manufacturer Marine2page PDF and selected active evidence. The published broth and agar formulas differ in magnesium-chloride amount and magnesium-versus-sodium sulfate as well as agar. Existing ontology_mapping.evidence retains a disproved active premise; preserve it historically and cite the verified commercial broth basis. Related issue1208 remains open and holds remain.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-MEDIA-F02",
+      "disposition": "retain",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "category": "quantity",
+      "assessment": "Read entire selected EMJH payload and actual direct-7 PDF301/302. Its explicit approximate per-liter basal table sums2.555g;2.3g/0.9L=2.55556g/L agrees at stated precision. Record source-listed approximate amounts and basis rather than deferring a false conflict. Do not infer final enriched-medium concentrations, lot composition, phosphate hydrate or thiamine salt.",
+      "normalization_reason": "Bounded provenance, quantity, malformed-label or optional completeness correction; does not establish a new source identity."
+    },
+    {
+      "finding_id": "W05-CR-F02",
+      "disposition": "retain",
+      "category": "identity",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "assessment": "Root independently compared both full source recipes and the selected stock payloads. All14salt quantities and pH1 instructions agree; unknown manganese hydration is not positive evidence of a different substance. Retain the unresolved identity comparison without forcing sameness or merging.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+    },
+    {
+      "finding_id": "W05-CR-F03",
+      "disposition": "retain",
+      "category": "identity",
+      "normalized_severity": "major",
+      "native_severity": "P1",
+      "assessment": "Root inspected the actual ATCC1490,1257,1527/1524 and DSMZ78 recipe captures and all four selected stock identity/component assertions. Receiving K1/hemin/menadione recipes do not distinguish the95%ethanol reagent when those parts are excluded from its owner. No solvent,percent basis or denaturant is inferred; conditional comparisons retain all17original occurrence links.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+    },
+    {
+      "finding_id": "W05-CR-F04",
+      "disposition": "retain",
+      "category": "nomenclature",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "assessment": "Root read the complete selected fatty-stock record and actual JCM266/DSMZ119 formulas. Different explicit quantities demonstrate that the bare shared mixture label cannot globally identify the JCM preparation. This is known issue1180 follow-through; preserve the supported stock identity and every hold.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+    },
+    {
+      "finding_id": "W05-CR-F05",
+      "disposition": "retain",
+      "category": "provenance",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "assessment": "Root compared full selected stock text with actual JCM403 and1125 preparation captures; agent independently inspected NBRC1321. The common input formula is supported, but filtration is not documented in JCM403. Correct process attribution with preserved history, without inventing a new stock or rejecting the supported two-input identity.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+    },
+    {
+      "finding_id": "W05-CR-F06",
+      "disposition": "retain",
+      "category": "completeness",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "assessment": "Root read the entire frozen thiamine-dihydrate owner and the actual PubChem CAS response. ClH5O2 lacks the thiamine skeleton and contradicts the correctly represented thiamine formula. A replacement CAS is unnecessary for a bounded false-descriptor removal proposal. Issue268 and cross-worker owner coordination remain mandatory; no maintained edit performed.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+    },
+    {
+      "finding_id": "W05-CR-F07",
+      "disposition": "retain",
+      "category": "provenance",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "assessment": "Root inspected all13listed new assertions across11selected owners; they use a campaign string instead of the available actual source. This is bounded assertion provenance work. Root additionally confirmed the NaCOOH applicability caption misnames its source: actual TOGO M3211 is Formate medium. Correct that sentence without changing sodium-formate identity; no extra finding is counted.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold.",
+      "bounded_fix": "Correct only the13new assertion source fields to their exact supporting recipe/supplier source, preserving raw text and history. Also change the NaCOOH decision applicability source name from Methanosarcina siciliae marine medium to actual TOGO M3211 Formate medium. Do not alter its supported sodium-formate conclusion or any neighboring enriched GMO labels."
+    },
+    {
+      "finding_id": "W05-CR-F08",
+      "disposition": "retain",
+      "category": "identity",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "assessment": "Root independently read the exact active MgSO2 formula tokens, Nicotinate EXACT alias, riboflavin concentrations and HEPES10mM token, plus actual local ChEBI32544 query capture and owner formulas. Literal formula/protonation conflicts are confirmed. Hydration-omitting and concentration labels require source-specific disposition, not guessed chemical/stock corrections. The finding remains bounded and all original holds persist.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+    },
+    {
+      "finding_id": "W05-MEDIA-F03",
+      "disposition": "retain",
+      "category": "provenance",
+      "normalized_severity": "minor",
+      "native_severity": "P2",
+      "assessment": "Root independently read the exact124-page PDF first page and searched its extracted text. It is the2012Allergan environmental-noise report; the USDA1998chapter14 assertion is unsupported. Correct active evidence classification/linkage while preserving exact failed/mismatched capture bytes. The two narrow component-reference withdrawals remain separately supported; no unread chapter is claimed.",
+      "normalization_reason": "P1 maps to native major for an unsupported stable identity distinction; P2 maps to minor for bounded retained curation/provenance obligations. Severity does not clear any hold."
+    }
+  ],
+  "scope": "Private bounded external observations; coordinator deduplicates/files/directs fixes. No GitHub mutation."
+}

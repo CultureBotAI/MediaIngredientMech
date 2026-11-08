@@ -1,0 +1,70 @@
+--- correction-1193-v1/media/proposed/MEM_Gibco_31095.yaml
++++ final-correction-v1/media/proposed/MEM_Gibco_31095.yaml
+@@ -9,11 +9,21 @@
+ - timestamp: '2026-11-08T05:48:47.596191+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CREATED
+-  changes: DSMZ1638 explicitly names1x Gibco31095-029. Manufacturer formulation196
+-    directly lists31095029 and31095052; source-specific product identity is established
+-    despite a missing receiving dose. Generic MEM owner1377 includes other supplier
+-    variants and remains a comparison only. Isolated proposal only; whole-owner/source/export
+-    holds remain and integration requires separate native review.
++  changes: DSMZ1638 explicitly names1x Gibco31095-029. Manufacturer formulation196 directly lists31095029
++    and31095052; source-specific product identity is established despite a missing receiving dose. Generic
++    MEM owner1377 includes other supplier variants and remains a comparison only. Isolated proposal only;
++    whole-owner/source/export holds remain and integration requires separate native review.
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+@@ -27,19 +37,18 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.thermofisher.com/us/en/home/technical-resources/media-formulation.196.html
+-    notes: DSMZ1638 explicitly names1x Gibco31095-029. Manufacturer formulation196
+-      directly lists31095029 and31095052; source-specific product identity is established
+-      despite a missing receiving dose. Generic MEM owner1377 includes other supplier
+-      variants and remains a comparison only.
++    notes: DSMZ1638 explicitly names1x Gibco31095-029. Manufacturer formulation196 directly lists31095029
++      and31095052; source-specific product identity is established despite a missing receiving dose. Generic
++      MEM owner1377 includes other supplier variants and remains a comparison only.
+ supplied_form:
+ - name: MEM1x with L-glutamine and phenol red
+   form: liquid
+   supplier: Gibco / Thermo Fisher
+   catalog_number: 31095-029
+-  notes: 'Manufacturer formulation196: Earle salts, no HEPES or sodium pyruvate; bottle
+-    size does not change formulation.'
++  notes: 'Manufacturer formulation196: Earle salts, no HEPES or sodium pyruvate; bottle size does not
++    change formulation.'
+ components:
+ - component_name: L-Arginine hydrochloride
+   reference_scope: UNMAPPED
+@@ -163,9 +172,8 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.thermofisher.com/us/en/home/technical-resources/media-formulation.196.html
+-    notes: Complete manufacturer-listed29solute ingredients of1x liquid formulation.
+-      Water is implicit solvent and no medium dose or component molarity is inferred.
+-notes: DSMZ1638 explicitly names1x Gibco31095-029. Manufacturer formulation196 directly
+-  lists31095029 and31095052; source-specific product identity is established despite
+-  a missing receiving dose. Generic MEM owner1377 includes other supplier variants
+-  and remains a comparison only.
++    notes: Complete manufacturer-listed29solute ingredients of1x liquid formulation. Water is implicit
++      solvent and no medium dose or component molarity is inferred.
++notes: DSMZ1638 explicitly names1x Gibco31095-029. Manufacturer formulation196 directly lists31095029
++  and31095052; source-specific product identity is established despite a missing receiving dose. Generic
++  MEM owner1377 includes other supplier variants and remains a comparison only.

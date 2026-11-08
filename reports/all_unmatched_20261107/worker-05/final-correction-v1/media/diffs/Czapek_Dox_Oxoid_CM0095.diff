@@ -1,0 +1,66 @@
+--- correction-1193-v1/media/proposed/Czapek_Dox_Oxoid_CM0095.yaml
++++ final-correction-v1/media/proposed/Czapek_Dox_Oxoid_CM0095.yaml
+@@ -9,18 +9,27 @@
+ - timestamp: '2026-11-08T06:00:37.045833+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CREATED
+-  changes: Distinct source-qualified preparation, separated from mixed-scope generic
+-    owner data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml. No generic alias
+-    is added. Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817
+-    CC35g remains unassigned. Isolated proposal only; whole-owner/source/export holds
+-    remain and integration requires separate native review.
++  changes: Distinct source-qualified preparation, separated from mixed-scope generic owner data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml.
++    No generic alias is added. Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817 CC35g
++    remains unassigned. Isolated proposal only; whole-owner/source/export holds remain and integration
++    requires separate native review.
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: Distinct source-qualified preparation, separated from mixed-scope generic owner
+-  data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml. No generic alias is added.
+-  Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817 CC35g remains
+-  unassigned.
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: Distinct source-qualified preparation, separated from mixed-scope generic owner data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml.
++  No generic alias is added. Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817 CC35g
++  remains unassigned.
+ ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:czapek_dox_oxoid_cm0095
+@@ -28,11 +37,10 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0095-V2.pdf
+-    notes: Distinct source-qualified preparation, separated from mixed-scope generic
+-      owner data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml. No generic alias
+-      is added. Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817
++    notes: Distinct source-qualified preparation, separated from mixed-scope generic owner data/ingredients/unmapped/Czapek-Dox_Liquid_Medium.yaml.
++      No generic alias is added. Exact modified CM0095 powder for identified Oxoid contexts; DSMZ1817
+       CC35g remains unassigned.
+ components:
+ - component_name: Sodium nitrate
+@@ -65,9 +73,8 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0095-V2.pdf
+-    notes: Manufacturer typical formula at33.4g/L standard reconstitution; supplier
+-      source names preserved, unspecified salt hydration and glycerophosphate form
+-      remain UNMAPPED.
++    notes: Manufacturer typical formula at33.4g/L standard reconstitution; supplier source names preserved,
++      unspecified salt hydration and glycerophosphate form remain UNMAPPED.
+ supplied_form:
+ - name: Czapek-Dox Liquid Medium Modified
+   form: powder

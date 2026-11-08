@@ -1,0 +1,141 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:wolfes_modified_mineral_elixir_jcm221
+preferred_term: Wolfe's modified mineral elixir (JCM221)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfes_modified_mineral_elixir_jcm221
+  ontology_label: Wolfe's modified mineral elixir (JCM221)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=221
+    notes: 'ATCC 1190/1191 and JCM 221 list the same thirteen non-water input names
+      and amounts, including NTA and cobalt nitrate hexahydrate. ATCC explicitly specifies
+      MnSO4 monohydrate and anhydrous calcium chloride, alum and selenite; JCM uses
+      variable manganese hydration and omits those other hydration qualifiers. Omitted
+      qualifiers do not establish anhydrous identity or a different formulation. Preserve
+      the source-specific fields without reconciling them by assumption. The source-qualified
+      identifiers remain conditional historical proposal handles pending #1237; no
+      winning owner, merge or simultaneous installation as distinct substances is
+      approved. Existing Modified_Wolfes_Minerals has a different documented input
+      list and is a separate comparison dependency. All inherited holds remain.'
+notes: 'ATCC 1190/1191 and JCM 221 list the same thirteen non-water input names and
+  amounts, including NTA and cobalt nitrate hexahydrate. ATCC explicitly specifies
+  MnSO4 monohydrate and anhydrous calcium chloride, alum and selenite; JCM uses variable
+  manganese hydration and omits those other hydration qualifiers. Omitted qualifiers
+  do not establish anhydrous identity or a different formulation. Preserve the source-specific
+  fields without reconciling them by assumption. The source-qualified identifiers
+  remain conditional historical proposal handles pending #1237; no winning owner,
+  merge or simultaneous installation as distinct substances is approved. Existing
+  Modified_Wolfes_Minerals has a different documented input list and is a separate
+  comparison dependency. All inherited holds remain. Verbatim source-only labels retained
+  as provenance, excluded from globally resolving aliases: ["Wolfe''s modified mineral
+  elixir (see below)"].'
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  source: 1.5g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 3g
+- component_name: MnSO4·xH2O
+  reference_scope: UNMAPPED
+  source: 0.5g; x unspecified
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: Co(NO3)2·6H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: CaCl2
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.1g
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: AlK(SO4)2
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.01g
+- component_name: Na2SeO3
+  reference_scope: UNMAPPED
+  source: 0.001g
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  source: 1000ml listed
+- component_name: KOH solution
+  reference_scope: UNMAPPED
+  source: pH6.5 adjustment; concentration/quantity unspecified
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=221
+    source_record: Wolfe's modified mineral elixir (JCM221)
+    notes: 'ATCC 1190/1191 and JCM 221 list the same thirteen non-water input names
+      and amounts, including NTA and cobalt nitrate hexahydrate. ATCC explicitly specifies
+      MnSO4 monohydrate and anhydrous calcium chloride, alum and selenite; JCM uses
+      variable manganese hydration and omits those other hydration qualifiers. Omitted
+      qualifiers do not establish anhydrous identity or a different formulation. Preserve
+      the source-specific fields without reconciling them by assumption. The source-qualified
+      identifiers remain conditional historical proposal handles pending #1237; no
+      winning owner, merge or simultaneous installation as distinct substances is
+      approved. Existing Modified_Wolfes_Minerals has a different documented input
+      list and is a separate comparison dependency. All inherited holds remain. Component
+      inputs and quantities remain transcribed from this entry’s cited source.'
+  notes: 'ATCC 1190/1191 and JCM 221 list the same thirteen non-water input names
+    and amounts, including NTA and cobalt nitrate hexahydrate. ATCC explicitly specifies
+    MnSO4 monohydrate and anhydrous calcium chloride, alum and selenite; JCM uses
+    variable manganese hydration and omits those other hydration qualifiers. Omitted
+    qualifiers do not establish anhydrous identity or a different formulation. Preserve
+    the source-specific fields without reconciling them by assumption. The source-qualified
+    identifiers remain conditional historical proposal handles pending #1237; no winning
+    owner, merge or simultaneous installation as distinct substances is approved.
+    Existing Modified_Wolfes_Minerals has a different documented input list and is
+    a separate comparison dependency. All inherited holds remain. The transcribed
+    components are source assertions, not evidence of cross-source disjointness.'
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Wolfe''s
+    modified mineral elixir (JCM221). JCM221 NTA/cobalt nitrate preparation preserves
+    its variable manganese hydrate and unspecified calcium/alum/selenite hydration.
+    No exact cross-source equivalence toATCC1190 or existingCultureBotHT stock is
+    asserted; source whole-preparation identity is supported. Independent correction:
+    Remove newly added ambiguous global aliases; preserve exact raw labels in source
+    ledger and notes. Isolated proposal only; all source and release holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: 'Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Withdraw unsupported inference
+    of distinct preparation identity from accession number or missing qualifiers.
+    Retain exact candidate/source/occurrence lineage for conditional family reconciliation
+    under #1237. Report-only candidate; separate final scientific review and coordinator
+    integration remain required.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

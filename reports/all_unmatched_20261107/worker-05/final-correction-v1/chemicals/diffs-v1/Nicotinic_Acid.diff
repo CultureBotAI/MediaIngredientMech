@@ -1,0 +1,184 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/proposed/Nicotinic_Acid.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Nicotinic_Acid.yaml
+@@ -13,22 +13,26 @@
+     source: PubMed search ('Nicotinic acid')
+     pmid: '41213409'
+     supports: SUPPORT
+-    snippet: Hepatocellular carcinoma (HCC), an incurable malignancy with limited therapeutic options,
+-      exhibits mitochondrial dysfunction upon co-treatment with S-adenosylmethionine (SAM) and nicotinic
+-      acid (NA); however, the underlying mechanisms were undefined.
++    snippet: Hepatocellular carcinoma (HCC), an incurable malignancy with limited
++      therapeutic options, exhibits mitochondrial dysfunction upon co-treatment with
++      S-adenosylmethionine (SAM) and nicotinic acid (NA); however, the underlying
++      mechanisms were undefined.
+     explanation: Auto-proposed; curator should rephrase or remove.
+ synonyms:
+-- synonym_text: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple component'
++- synonym_text: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple
++    component'
+   synonym_type: RAW_TEXT
+   source: CultureMech
+-- synonym_text: 'Role: Vitamin; Properties: Defined component, Simple component, Organic compound'
++- synonym_text: 'Role: Vitamin; Properties: Defined component, Simple component, Organic
++    compound'
+   synonym_type: RAW_TEXT
+   source: CultureMech
+-- synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple component'
++- synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
++    component'
+   synonym_type: RAW_TEXT
+   source: CultureMech
+ - synonym_text: Nicotinate
+-  synonym_type: EXACT
++  synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: Niacin
+   synonym_type: EXACT
+@@ -92,7 +96,7 @@
+   source: kg_microbe
+ - synonym_text: Niacin (B3)
+   synonym_type: RAW_TEXT
+-  source: all_unmatched_20261107_worker05_primary_source_review
++  source: https://mediadive.dsmz.de/medium/P5
+ mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 2222
+@@ -113,19 +117,22 @@
+ - timestamp: '2026-04-05T21:48:45.583138+00:00'
+   curator: fetch_cas_rn_from_culturebot_csv
+   action: ADDED_CAS_RN
+-  changes: 'Added CAS-RN:59-67-6 from CultureBotHT compounds_to_cas.csv (matched: niacin)'
++  changes: 'Added CAS-RN:59-67-6 from CultureBotHT compounds_to_cas.csv (matched:
++    niacin)'
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-04-05T21:48:45.598517+00:00'
+   curator: fetch_cas_rn_from_culturebot_csv
+   action: ADDED_CAS_RN
+-  changes: 'Added CAS-RN:59-67-6 from CultureBotHT compounds_to_cas.csv (matched: Nicotinic acid)'
++  changes: 'Added CAS-RN:59-67-6 from CultureBotHT compounds_to_cas.csv (matched:
++    Nicotinic acid)'
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-04-05T21:48:45.600467+00:00'
+   curator: fetch_cas_rn_from_culturebot_csv
+   action: ADDED_CAS_RN
+-  changes: 'Added CAS-RN:59-67-6 from CultureBotHT compounds_to_cas.csv (matched: Nicotinic Acid)'
++  changes: 'Added CAS-RN:59-67-6 from CultureBotHT compounds_to_cas.csv (matched:
++    Nicotinic Acid)'
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-04-17T12:00:00+00:00'
+@@ -137,23 +144,25 @@
+ - timestamp: '2026-04-18T00:00:00+00:00'
+   curator: cbclaw_kg_microbe_sweep
+   action: ADDED_SYNONYMS
+-  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: 3-Pyridylcarboxylic acid, 3-carboxylpyridine,
+-    3-carboxypyridine, 3-pyridinecarboxylic acid, Niacor, ... (14 more)'
++  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: 3-Pyridylcarboxylic
++    acid, 3-carboxylpyridine, 3-carboxypyridine, 3-pyridinecarboxylic acid, Niacor,
++    ... (14 more)'
+   new_status: MAPPED
+   llm_assisted: true
+ - timestamp: '2026-04-18T00:00:00+00:00'
+   curator: cbclaw_kg_microbe_sweep
+   action: ADDED_SYNONYMS
+-  changes: 'Added 16 synonyms from kg-microbe P4.4 enrichment: 3-Pyridylcarboxylic acid, 3-carboxylpyridine,
+-    3-carboxypyridine, 3-pyridinecarboxylic acid, Niacor, ... (11 more)'
++  changes: 'Added 16 synonyms from kg-microbe P4.4 enrichment: 3-Pyridylcarboxylic
++    acid, 3-carboxylpyridine, 3-carboxypyridine, 3-pyridinecarboxylic acid, Niacor,
++    ... (11 more)'
+   new_status: MAPPED
+   llm_assisted: true
+ - timestamp: '2026-04-19T07:39:23.955331+00:00'
+   curator: audit_mim_merge
+   action: MERGED_FROM_DUPLICATES
+-  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Niacin.yaml, Nicotinic_Acid_2.yaml, Niacin_2.yaml.
+-    Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected by highest
+-    occurrence count with preferred_term readability tie-break.'
++  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Niacin.yaml, Nicotinic_Acid_2.yaml,
++    Niacin_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
++    winner selected by highest occurrence count with preferred_term readability tie-break.'
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-01T07:35:35.561031+00:00'
+@@ -164,7 +173,8 @@
+ - timestamp: '2026-05-01T08:08:31.660554+00:00'
+   curator: auto_classify_ingredient_type
+   action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+-  changes: molecular_formula=C6H5NO2; inchi=InChI=1S/C6H5NO2/c8-6(9)5-2-1-3-7-4-5/h1-4H,(H,8,9; smiles=O=C(O)c1cccnc1
++  changes: molecular_formula=C6H5NO2; inchi=InChI=1S/C6H5NO2/c8-6(9)5-2-1-3-7-4-5/h1-4H,(H,8,9;
++    smiles=O=C(O)c1cccnc1
+   llm_assisted: false
+ - timestamp: '2026-05-01T08:09:48.075494+00:00'
+   curator: auto_classify_ingredient_type
+@@ -183,8 +193,8 @@
+ - timestamp: '2026-06-09T05:23:46.813111+00:00'
+   curator: correct_stale_ontology_labels.py
+   action: CORRECTED
+-  changes: 'ontology_label ''Nicotinic acid'' -> ''nicotinic acid'': synced to canonical CHEBI label (preferred_term
+-    ''Nicotinic acid'' unchanged).'
++  changes: 'ontology_label ''Nicotinic acid'' -> ''nicotinic acid'': synced to canonical
++    CHEBI label (preferred_term ''Nicotinic acid'' unchanged).'
+ - timestamp: '2026-07-20T00:00:00+00:00'
+   curator: migrate_media_roles_to_facets
+   action: ANNOTATED
+@@ -192,17 +202,34 @@
+ - timestamp: '2026-08-27T03:16:39.519625+00:00'
+   curator: refresh_occurrence_statistics
+   action: CORRECTED
+-  changes: 'occurrence_statistics 71/1998 -> 2221/2222 (media_count/total_occurrences), derived from distinct
+-    CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired
+-    in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+-    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
++  changes: 'occurrence_statistics 71/1998 -> 2221/2222 (media_count/total_occurrences),
++    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
++    prior values came from the importer retired in #453, whose media_count counted
++    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
++    rows=194137 distinct_recipes=15257]'
+ - timestamp: '2026-11-08T05:19:27.509502+00:00'
+   curator: Codex worker05 source review proposal
+   action: ANNOTATED
+-  changes: 'Add source-supported ''Niacin (B3)'' as a bounded reagent alias; preserve identity,hydration,counterion,roles,status
+-    and occurrence statistics. Concentration and source-nesting findings remain separate. Evidence bundle:
+-    reports/all_unmatched_20261107/worker-05/chemicals/. Proposal only; inherited source/SSSOM holds remain
+-    and publication requires coordinator integration review.'
++  changes: 'Add source-supported ''Niacin (B3)'' as a bounded reagent alias; preserve
++    identity,hydration,counterion,roles,status and occurrence statistics. Concentration
++    and source-nesting findings remain separate. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/.
++    Proposal only; inherited source/SSSOM holds remain and publication requires coordinator
++    integration review.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Replace campaign-only provenance on the newly proposed source aliases with
++    their exact primary recipe or supplier locators; retain the complete labels, types
++    and historical authorship. CHEBI:32544 defines nicotinate as the carboxylate conjugate
++    base with charge -1 and formula C6H4NO2. This does not exactly identify neutral
++    nicotinic acid CHEBI:15940. Retain the historical manual source and literal but
++    mark the exact-identity alias REJECTED_LABEL on this neutral-acid owner. This
++    does not reject niacin or infer a supplied nicotinate salt. Report-only candidate;
++    separate final scientific review and coordinator integration remain required.
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+@@ -223,6 +250,12 @@
+   - reference_text: CultureMech database (1998 occurrences as 'Vitamin')
+     reference_type: DATABASE_ENTRY
+     url: https://github.com/CultureBotAI/CultureMech
+-    excerpt: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple component'
+-    curator_note: Widespread use in media formulations (1998 occurrences). High confidence based on 'Defined
+-      component' property.
++    excerpt: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple
++      component'
++    curator_note: Widespread use in media formulations (1998 occurrences). High confidence
++      based on 'Defined component' property.
++notes: CHEBI:32544 defines nicotinate as the carboxylate conjugate base with charge
++  -1 and formula C6H4NO2. This does not exactly identify neutral nicotinic acid CHEBI:15940.
++  Retain the historical manual source and literal but mark the exact-identity alias
++  REJECTED_LABEL on this neutral-acid owner. This does not reject niacin or infer
++  a supplied nicotinate salt.

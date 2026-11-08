@@ -1,0 +1,51 @@
+--- original/Bovine_Serum_Albumin.yaml
++++ successor/Bovine_Serum_Albumin.yaml
+@@ -70,6 +70,18 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T05:47:55.788030+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Extend source-specific bovine-albumin preparation provenance on the existing
++    generic BSA owner. Fraction V is recorded only where literal; the unnumbered fraction
++    in M2400/M2401 remains unnumbered. No generic exact synonym, catalog, stock volume
++    or albumin-origin reinterpretation is added. Exact isolated payload; no maintained
++    write. All prior scientific/publication holds preserved.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ chemical_properties:
+   cas_rn: 9048-46-8
+   data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+@@ -96,7 +108,28 @@
+   form: solution
+   notes: Alternative product explicitly named in CultureMech:015191; no concentration
+     or independent product CAS inferred. See reports/sssom_completion_20260921/mapping_review/identity-review-20260924/bsa-recipe-occurrences.json.
++- name: Bovine albumin fraction V
++  notes: Exact source case 11; Fraction V explicitly stated; manufacturer/catalog
++    and final ADC/OADC volume not established.
++- name: Bovine albumin (Fraction V)
++  notes: Exact source case 20; Fraction V explicitly stated; manufacturer/catalog
++    and final ADC/OADC volume not established.
++- name: Bovine albumin, Fraction V
++  notes: Exact source case 70; Fraction V explicitly stated; manufacturer/catalog
++    and final ADC/OADC volume not established.
++- name: Bovine Albumin (Fraction V)
++  notes: Exact source case 118; Fraction V explicitly stated; manufacturer/catalog
++    and final ADC/OADC volume not established.
++- name: Bovine albumin fraction
++  notes: Exact source case 120; fraction number unspecified; do not infer V.
+ notes: Review the generic bovine albumin ingredient at NCIT:C85253. FDA qualifies
+   CAS 9048-46-8 as GENERIC (FAMILY). Retain source Sigma A7030 and other recipe-specific
+   fraction V/products as supplied forms, not exact synonyms. Preserve all seven original
+-  recipe memberships and their preparation qualifiers.
++  recipe memberships and their preparation qualifiers. Extend source-specific bovine-albumin
++  preparation provenance on the existing generic BSA owner. Fraction V is recorded
++  only where literal; the unnumbered fraction in M2400/M2401 remains unnumbered. No
++  generic exact synonym, catalog, stock volume or albumin-origin reinterpretation
++  is added. Source-qualified proposal under issue1193. No ingredient roles, assay
++  outcomes, complete-owner support or release admission are approved. Preserve all
++  frozen source and owner holds; component uncertainty is stated separately from whole-material
++  identity.

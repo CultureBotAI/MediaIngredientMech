@@ -1,0 +1,39 @@
+--- original/Bacto_Bitone.yaml
++++ successor/Bacto_Bitone.yaml
+@@ -4,6 +4,9 @@
+ - synonym_text: Bacto Bitone
+   synonym_type: RAW_TEXT
+   source: mim-queue
++- synonym_text: Bacto Bitone (Peptone)
++  synonym_type: RAW_TEXT
++  source: DSMZ687; correction1193
+ mapping_status: UNMAPPED
+ occurrence_statistics:
+   total_occurrences: 0
+@@ -35,7 +38,25 @@
+     identifier promoted by a mechanism that never decided anything is what #203 and
+     #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+   llm_assisted: true
++- timestamp: '2026-11-08T05:47:55.805428+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Preserve the exact DSMZ687 parenthetic peptone label and separate source
++    line on the existing Bacto_Bitone owner. The old spelling is independently present
++    in DSMZ and MediaDive; historical catalog identity or a proven typographic correction
++    remains missing, so status stays UNMAPPED. Exact isolated payload; no maintained
++    write. All prior scientific/publication holds preserved.
++  previous_status: UNMAPPED
++  new_status: UNMAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: Imported from mim-queue (source_id=mediadive.ingredient:2135); no CAS-RN or
+   CHEBI/NCIT match. Reviewed on 2026-05-11 as a Bacto branded complex nutrient product
+-  pending product-specific composition curation.
++  pending product-specific composition curation. Preserve the exact DSMZ687 parenthetic
++  peptone label and separate source line on the existing Bacto_Bitone owner. The old
++  spelling is independently present in DSMZ and MediaDive; historical catalog identity
++  or a proven typographic correction remains missing, so status stays UNMAPPED. Source-qualified
++  proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support
++  or release admission are approved. Preserve all frozen source and owner holds; component
++  uncertainty is stated separately from whole-material identity.
+ ingredient_type: UNDEFINED_MIXTURE

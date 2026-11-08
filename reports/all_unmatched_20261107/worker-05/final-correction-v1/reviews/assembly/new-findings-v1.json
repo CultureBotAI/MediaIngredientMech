@@ -1,0 +1,52 @@
+{
+  "finding_id": "W05-FINAL-ASSEMBLY-REVIEW-001",
+  "reviewer": "/root/final_skeptical",
+  "at": "2026-11-08T08:18:27.984946+00:00",
+  "status": "reported_to_root_before_fix",
+  "severity": "minor",
+  "deduplication": "Same source-count/unit issue as W05-FINAL-SKEPTIC-CHEM-004; extend that finding to this planned README caption rather than invent another scientific concern.",
+  "scope": "Unpublished final README generator; no canonical payload or identity claim changes.",
+  "source": {
+    "path": ".temp/w05-final-correction-v1/control/final/write_public_readme.py",
+    "sha256": "93548a9f74137d3c8f447cd11e3a3629879e174e0e731fbea4f94a23230cc4f0",
+    "locator": "Reviewer-prose corrections distinguish twelve DSMZ ethanol occurrences from eleven flat cases"
+  },
+  "observed": "The README generator calls eleven flat occurrences eleven flat cases. The selected ethanol scope contains two cases: one with11 flat occurrences and the DSMZ212a case with1 occurrence.",
+  "actual_case_bindings": [
+    {
+      "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "95% ethanol",
+        "source_label": "95% ethanol",
+        "raw_source_label": "95% ethanol"
+      },
+      "occurrence_ids": [
+        "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+        "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+        "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+        "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+        "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+        "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+        "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+        "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+        "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+        "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+        "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"
+      ]
+    },
+    {
+      "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ethanol (95 %)",
+        "source_label": "Ethanol (95 %)",
+        "raw_source_label": "Ethanol (95 %)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+      ]
+    }
+  ],
+  "bounded_fix": "Change eleven flat cases to eleven flat occurrences in the final README prose. Preserve the historical chemical-review v1 and this pre-fix generator hash; do not change counts, case membership, payloads or conditional-family conclusions."
+}

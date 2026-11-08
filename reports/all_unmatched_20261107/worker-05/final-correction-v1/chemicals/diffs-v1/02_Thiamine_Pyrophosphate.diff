@@ -1,0 +1,29 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed-v2/02_Thiamine_Pyrophosphate.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/02_Thiamine_Pyrophosphate.yaml
+@@ -42,7 +42,7 @@
+   source: kg_microbe
+ - synonym_text: Thiamine pyrophosphate (0.2% w/v in water)
+   synonym_type: RAW_TEXT
+-  source: all_unmatched_20261107_worker05_primary_source_review
++  source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2577
+ mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 1
+@@ -158,6 +158,17 @@
+   llm_model: gpt-6
+   new_status: MAPPED
+   previous_status: MAPPED
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Replace campaign-only provenance on the newly proposed source aliases with
++    their exact primary recipe or supplier locators; retain the complete labels, types
++    and historical authorship. Report-only candidate; separate final scientific review
++    and coordinator integration remain required.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: STOCK_SOLUTION
+ nutritional_roles:
+ - role: VITAMIN_SOURCE

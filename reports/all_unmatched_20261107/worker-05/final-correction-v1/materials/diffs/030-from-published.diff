@@ -1,0 +1,49 @@
+--- published/Polypeptone.yaml
++++ successor/Polypeptone.yaml
+@@ -6,7 +6,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+     notes: Own peptone preparation scope, not exact generic protein-hydrolysate class.
+       Bare source442 supplier remains unverified.
+@@ -107,6 +107,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: UNDEFINED_MIXTURE
+ nutritional_roles:
+ - role: PROTEIN_SOURCE
+@@ -115,7 +126,7 @@
+   - reference_type: COMPUTATIONAL_PREDICTION
+     reference_text: Inferred from curated media-role name pattern
+     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+-notes: Current BD Polypeptone is an equal-parts pancreatic-casein/peptic-animal-tissue
++notes: 'Current BD Polypeptone is an equal-parts pancreatic-casein/peptic-animal-tissue
+   digest blend. The old claim that Hipolypepton is a casein+soy blend is superseded
+   by Wako manufacturer casein-only starting-material description. This does not assign
+   bare MediaDive442 or Japanese Polypepton labels to BD211910; those product identities
+@@ -126,3 +137,10 @@
+   proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support
+   or release admission are approved. Preserve all frozen source and owner holds; component
+   uncertainty is stated separately from whole-material identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

@@ -1,0 +1,152 @@
+{
+  "finding_id": "W05-FINAL-SKEPTIC-CHEM-003",
+  "at": "2026-11-08T08:08:08.085458+00:00",
+  "reviewer": "/root/materials_research",
+  "raised_by": "/root/materials_research/chemical_primary_crosscheck",
+  "status": "reported_to_root_before_fix",
+  "severity": "completeness blocker for declaring these two decisions finished",
+  "selected_decisions": {
+    "path": ".temp/w05-final-correction-v1/remediation/chemical-report-v2/decisions-v3.json",
+    "sha256": "0e7fa229d4650efc3ffce31fe60ad5b85e5a2c10c3b22b8a1ffbaa96c37dcbdd"
+  },
+  "cases": [
+    {
+      "lane_index": 10,
+      "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+      "decision_object_sha256": "53b4e3edb54002c8d7ed0534fc5518edeb2cf22e0005e6e2eeb0815f173578d1",
+      "field_pointers": [
+        "no_change_reason",
+        "missing_requirement",
+        "correction_reassessment.scientific_gap"
+      ],
+      "original_values": {
+        "reasoning": "NBRC1550,1443,1444,1445 and1447 explicitly name Thiamine-HCl·H2O in their vitamin preparations. The named monohydrate must not become CHEBI:49105 thiamine hydrochloride or CHEBI:132751 dihydrate as an exact identity. The exact OLS monohydrate query returned zero results, which is bounded search evidence only.",
+        "no_change_reason": "NBRC sources explicitly write oneH2O, while exact salt chloride/protonation stoichiometry and supplierCAS are absent. Repeated primary spelling cannot prove the dihydrate or anhydrous salt; no source-approved exactmonohydrate structure has been established by freeprimary/ontologysearch.",
+        "missing_requirement": "NBRC sources explicitly write oneH2O, while exact salt chloride/protonation stoichiometry and supplierCAS are absent. Repeated primary spelling cannot prove the dihydrate or anhydrous salt; no source-approved exactmonohydrate structure has been established by freeprimary/ontologysearch.",
+        "owner_records": []
+      }
+    },
+    {
+      "lane_index": 48,
+      "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+      "decision_object_sha256": "1542944bd97b78afbd64ab16809510f442ce95347591311a2031a2cf5af6ddcd",
+      "field_pointers": [
+        "no_change_reason",
+        "missing_requirement",
+        "correction_reassessment.scientific_gap"
+      ],
+      "original_values": {
+        "reasoning": "NBRC1507 independently confirms Thiamine-HCl⋅H2O in its vitamin solution. The one-water literal is not equivalent to the existing two-water thiamine-hydrochloride owner.",
+        "no_change_reason": "NBRC1507 independently supplies oneH2O literal, without reagentcatalog or structure. Salt/chloride stoichiometry must be established before an exact form-specific chemical identity; retain distinct monohydrate context.",
+        "missing_requirement": "NBRC1507 independently supplies oneH2O literal, without reagentcatalog or structure. Salt/chloride stoichiometry must be established before an exact form-specific chemical identity; retain distinct monohydrate context.",
+        "owner_records": []
+      }
+    }
+  ],
+  "primary_bindings": [
+    {
+      "evidence_id": "CHEM-CAP-f0c1b4928af89872",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-f0c1b4928af89872.html",
+        "sha256": "0b98d375f1aaf36e27e933d1c1b8cbd95998daf2610c9bcd0642721b089836f3"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1550",
+      "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+      "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+      "case_ids": [
+        "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+      ],
+      "accessed_at": "2026-11-08T05:07:38.412633+00:00"
+    },
+    {
+      "evidence_id": "CHEM-CAP-1fc151e426d45042",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-1fc151e426d45042.html",
+        "sha256": "9bab8639541ec3af6b10a325495f0ade0b519d8eebce8e1d456a900aab655182"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1443",
+      "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+      "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+      "case_ids": [
+        "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+      ],
+      "accessed_at": "2026-11-08T05:07:46.833626+00:00"
+    },
+    {
+      "evidence_id": "CHEM-CAP-aa10057ea2c6f012",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-aa10057ea2c6f012.html",
+        "sha256": "203a7d512a41c329ec25b900b8014439c5435dfb13faa32dff721ffa03fb24dc"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1444",
+      "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+      "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+      "case_ids": [
+        "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+      ],
+      "accessed_at": "2026-11-08T05:07:46.991545+00:00"
+    },
+    {
+      "evidence_id": "CHEM-CAP-f55e3a4d1efb7d51",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-f55e3a4d1efb7d51.html",
+        "sha256": "5e90ac547db061bcfa9c5673198f546cb0616fd64ebcd0ed585b7c4c1a0f3eec"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1445",
+      "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+      "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+      "case_ids": [
+        "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+      ],
+      "accessed_at": "2026-11-08T05:07:47.582501+00:00"
+    },
+    {
+      "evidence_id": "CHEM-CAP-77de000b5fa8d1a6",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-77de000b5fa8d1a6.html",
+        "sha256": "33778f3cb21ac6275df22b6586e4fa5adeb12921ea31adb413a58b8e3657e239"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1447",
+      "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+      "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+      "case_ids": [
+        "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a"
+      ],
+      "accessed_at": "2026-11-08T05:07:47.807694+00:00"
+    },
+    {
+      "evidence_id": "CHEM-CAP-74b89743eed1808f",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "chemicals/capture-74b89743eed1808f.html",
+        "sha256": "8e5a72a3575d26a2cca776b196f56d680ff5ca9c207be096da58508ad7a974a0"
+      },
+      "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507",
+      "locator": "complete retrieved source; specific chemical/form/component fields described in associated per-case applicability",
+      "supports_or_contradicts": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 117. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations.",
+      "case_ids": [
+        "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3"
+      ],
+      "accessed_at": "2026-11-08T05:09:04.470486+00:00"
+    }
+  ],
+  "reproduction": "Six direct NBRC recipes positively print the one-water thiamine-HCl supplied-material label. Both decisions have no proposal and cite missing CAS, exact molecular structure and chloride/protonation stoichiometry, without a documented competing same-form owner or other obstruction to bounded local material curation. These details prevent an exact molecular grounding, but MAPPING_SEMANTICS section3 permits a local source-defined identity without invented CAS or structure. The current rationale conflates those two levels.",
+  "bounded_remedy": "Reassess a bounded source-defined monohydrate material candidate after ignored-inclusive duplicate/owner checks, preserving the six exact occurrences and all original holds. Do not assert formula, CAS, chloride stoichiometry, an exact parent relation, generic thiamine equivalence, or a separate owner per source number. Alternatively identify an actual unresolved material/owner ambiguity that prevents this scoped representation. Preserve originals and obtain independent re-review of exact successor bytes.",
+  "related_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193",
+  "delegated_receipt": {
+    "path": ".temp/w05-final-correction-v1/review-chemicals/source-crosscheck/review-v1.json",
+    "sha256": "a5308688c41554fbd781fcf0063de8fdc64ef4efcc5f2e4221881ab0d71e494e"
+  },
+  "no_payload_changed_by_reviewer": true
+}

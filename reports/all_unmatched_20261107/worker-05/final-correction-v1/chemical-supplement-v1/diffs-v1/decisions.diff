@@ -1,0 +1,370 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/remediation/chemical-report-v2/decisions-v3.json
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemical-supplement-v1/decisions-v1.json
+@@ -1060,9 +1060,9 @@
+       "CM_OCC:7d7cda807fa9cb5685230b5b1e1f1ed0e6340636a9a4fdbd0d843d094093c90a",
+       "CM_OCC:4b6fa456271f78e5b2f2f23b280d935b58cc57a0249fcb0cac625c0328ba25ef"
+     ],
+-    "disposition": "unresolved",
+-    "reasoning": "NBRC1550,1443,1444,1445 and1447 explicitly name Thiamine-HCl·H2O in their vitamin preparations. The named monohydrate must not become CHEBI:49105 thiamine hydrochloride or CHEBI:132751 dihydrate as an exact identity. The exact OLS monohydrate query returned zero results, which is bounded search evidence only.",
+-    "applicability": "All five frozen occurrences retain the single water and source vitamin-stock context. The generic GMO thiamine assignment is insufficient to erase the salt/hydrate qualifier.",
++    "disposition": "curation_proposal",
++    "reasoning": "One local material denotes the Thiamine-HCl monohydrate explicitly named by NBRC 1550, 1443, 1444, 1445, 1447 and 1507. The six positive source names support a shared bounded reagent identity, without separate owners for medium numbers. NBRC is the recipe authority, not a claimed reagent supplier. This does not identify historical reagent lots or erase the hydration qualifier. Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation. The exact source-form evidence supports feasible local curation under section 3. Lack of CAS or molecular structure does not justify retaining a no-change disposition for this bounded material.",
++    "applicability": "The five NBRC 1550/1443/1444/1445/1447 frozen occurrences explicitly name a one-water Thiamine-HCl reagent. Preserve the original literal, occurrence IDs and frozen flattened quantities as source context. Each primary recipe lists 5 mg within its vitamin preparation; this is not a single-solute stock or a claim that the frozen g/L normalization is correct. One shared local material candidate serves both source spelling cases.",
+     "evidence_ids": [
+       "CHEM-SRC-028",
+       "CHEM-RECIPE-028-01",
+@@ -1089,11 +1089,16 @@
+       "CHEM-C1193-WEB-2",
+       "CHEM-C1193-WEB-5",
+       "CHEM-C1193-WEB-6",
+-      "CHEM-C1193-WEB-7"
+-    ],
+-    "proposal_ids": [],
+-    "no_change_reason": "NBRC sources explicitly write oneH2O, while exact salt chloride/protonation stoichiometry and supplierCAS are absent. Repeated primary spelling cannot prove the dihydrate or anhydrous salt; no source-approved exactmonohydrate structure has been established by freeprimary/ontologysearch.",
+-    "missing_requirement": "NBRC sources explicitly write oneH2O, while exact salt chloride/protonation stoichiometry and supplierCAS are absent. Repeated primary spelling cannot prove the dihydrate or anhydrous salt; no source-approved exactmonohydrate structure has been established by freeprimary/ontologysearch.",
++      "CHEM-C1193-WEB-7",
++      "FINAL-CHEM-SUPPLEMENT-OWNER-CHECK",
++      "FINAL-CHEM-SUPPLEMENT-PRIMARY-READ",
++      "FINAL-CHEM-SUPPLEMENT-DISCOVERY"
++    ],
++    "proposal_ids": [
++      "FINAL-CHEM-P-thiamine-hcl-monohydrate"
++    ],
++    "no_change_reason": null,
++    "missing_requirement": null,
+     "owner_records": [],
+     "issue_refs": [
+       "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+@@ -1102,7 +1107,7 @@
+       "status": "pending",
+       "evidence_ids": []
+     },
+-    "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
++    "native_review_applicability": "Coordinator native review must include the new local material candidate, its six exact occurrence routes and this bounded molecular-grounding limit. Existing thiamine owners are comparison records, not proposed mutations.",
+     "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission.",
+     "primary_author": "/root/chemicals_research",
+     "preserved_source_holds": {
+@@ -1113,6 +1118,139 @@
+       "owners": []
+     },
+     "correction_reassessment": {
++      "status": "complete",
++      "trigger": "W05-FINAL-SKEPTIC-CHEM-003: source-defined local material identity is feasible despite incomplete molecular grounding.",
++      "reviewed_at": "2026-11-08T08:14:37.644756+00:00",
++      "primary_author": "/root/chemicals_research",
++      "prior_proposal_ids": [],
++      "outcome": "one shared bounded local monohydrate material proposed",
++      "scientific_gap": "Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation.",
++      "search_evidence_ids": [
++        "CHEM-C1193-REINSPECTION",
++        "CHEM-C1193-ols-search-3",
++        "CHEM-C1193-ols2-thiamine",
++        "CHEM-C1193-WEB-2",
++        "CHEM-C1193-WEB-5",
++        "CHEM-C1193-WEB-6",
++        "CHEM-C1193-WEB-7",
++        "FINAL-CHEM-SUPPLEMENT-OWNER-CHECK",
++        "FINAL-CHEM-SUPPLEMENT-PRIMARY-READ",
++        "FINAL-CHEM-SUPPLEMENT-DISCOVERY"
++      ],
++      "prior_case_sha256": "26a287cafc63a2d4469951dc98a96575eb07165374135ff63730f76efccb2cbb",
++      "preserved_holds": "Original preserved_source_holds, case_input_sha256 and occurrence_ids are unchanged.",
++      "performed_searches": [
++        {
++          "evidence_id": "CHEM-CAP-704b31668b441561",
++          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2167",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-f0c1b4928af89872",
++          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1550",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-a99de49c99e519a4",
++          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2116",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-1fc151e426d45042",
++          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1443",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-6b44ed77cac99113",
++          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2117",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-aa10057ea2c6f012",
++          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1444",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-7376810b484a47e8",
++          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2118",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-f55e3a4d1efb7d51",
++          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1445",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-f28524e690e051c1",
++          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2120",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-77de000b5fa8d1a6",
++          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1447",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-14f6b2b7770adbee",
++          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:49105",
++          "finding": "Live ontology target CHEBI:49105 is labelled thiamine hydrochloride; definition=[\"A hydrochloride obtained by combining thiamine chloride with one molar equivalent of hydrochloric acid.\"]; formula=[\"C12H17N4OS.Cl.HCl\"]. This verifies target meaning, not source-to-target equivalence. Per-case decisions explicitly assess the latter."
++        },
++        {
++          "evidence_id": "CHEM-CAP-ba668efabffad3e5",
++          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:132751",
++          "finding": "Live ontology target CHEBI:132751 is labelled thiamine hydrochloride dihydrate; definition=[\"A hydrate that is the dihydrate form of thiamine hydrochloride.\"]; formula=[\"C12H18N4OS.2Cl.2H2O\"]. This verifies target meaning, not source-to-target equivalence. Per-case decisions explicitly assess the latter."
++        },
++        {
++          "evidence_id": "CHEM-CAP-12d6346a73c5dd24",
++          "url": "https://www.ebi.ac.uk/ols4/api/search?q=thiamine%20hydrochloride%20monohydrate&ontology=chebi&exact=true",
++          "finding": "Bounded exact-name ChEBI OLS query returned zero hits; this does not establish universal term absence. This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28,117. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-C1193-ols-search-3",
++          "url": "https://www.ebi.ac.uk/ols4/api/search?q=thiamine+hydrochloride+monohydrate&ontology=chebi&rows=20",
++          "finding": "Bounded ontology search inspected: no result establishes the exact assigned form/preparation; labels, CAS or numbered-source query retained. This is not an exhaustive ontology-absence claim."
++        },
++        {
++          "evidence_id": "CHEM-C1193-ols2-thiamine",
++          "url": "https://www.ebi.ac.uk/ols4/api/search?q=thiamine+hydrochloride+monohydrate&ontology=chebi&rows=50",
++          "finding": "Bounded ontology search inspected: no result establishes the exact assigned form/preparation; labels, CAS or numbered-source query retained. This is not an exhaustive ontology-absence claim."
++        },
++        {
++          "evidence_id": "FINAL-CHEM-SUPPLEMENT-OWNER-CHECK",
++          "finding": "The complete ten thiamine-related maintained records have cation, hydrochloride, dihydrate, phosphate, generic Vitamin B or stock scopes; none establishes this source-defined one-water material. All 981 frozen selected payloads were parsed and hash-checked, and the 37 coordinator candidate summary was searched recursively. No same-form owner was found. The worktree owner-label search included ignored files. This is a bounded inventory check, not a claim about future unpublished drafts."
++        },
++        {
++          "evidence_id": "FINAL-CHEM-SUPPLEMENT-PRIMARY-READ",
++          "finding": "One local material denotes the Thiamine-HCl monohydrate explicitly named by NBRC 1550, 1443, 1444, 1445, 1447 and 1507. The six positive source names support a shared bounded reagent identity, without separate owners for medium numbers. NBRC is the recipe authority, not a claimed reagent supplier. This does not identify historical reagent lots or erase the hydration qualifier. Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation."
++        },
++        {
++          "evidence_id": "FINAL-CHEM-SUPPLEMENT-DISCOVERY",
++          "finding": "No exact source-specific monohydrate CAS, structure or supplier match was established. Generic PubChem thiamine records, historical descriptions and patent search results do not identify these NBRC reagents; no chemical field is transferred."
++        }
++      ]
++    },
++    "authored_fragment_decision_sha256": "7cec10af05fee5bdd5d7f8ee31658bd460393d4eeba405a894aa2a2c9b3cde9c",
++    "predecessor_decision_sha256": "04d878fd80ba31d179b606bdf36cfd3dffa37c2e75c895d4c64fd7e5afdf72a9",
++    "prior_independent_review": {
++      "status": "complete",
++      "evidence_ids": [
++        "C1193-INDEPENDENT-CHEMICALS"
++      ]
++    },
++    "final_correction_review": {
++      "author": "/root/chemicals_research",
++      "timestamp": "2026-11-08T08:14:37.644756+00:00",
++      "prior_decision_sha256": "26a287cafc63a2d4469951dc98a96575eb07165374135ff63730f76efccb2cbb",
++      "scope": "Bounded supplement for the complete two source cases and one new local material candidate. Original source and hold objects are unchanged; prior other-case review remains unchanged.",
++      "proposal_ids": [
++        "FINAL-CHEM-P-thiamine-hcl-monohydrate"
++      ],
++      "conditional_proposal_ids": [],
++      "whole_owner_approval": false,
++      "finding_id": "W05-FINAL-SKEPTIC-CHEM-003"
++    },
++    "remaining_grounding_uncertainty": "Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation.",
++    "prior_correction_reassessment": {
+       "status": "complete",
+       "trigger": "#1193: reassess authorized curation rather than carrying generic holds forward",
+       "reviewed_at": "2026-11-08T05:49:52.389819+00:00",
+@@ -1210,15 +1348,7 @@
+       ],
+       "author_field": "correction_reassessment"
+     },
+-    "authored_fragment_decision_sha256": "7cec10af05fee5bdd5d7f8ee31658bd460393d4eeba405a894aa2a2c9b3cde9c",
+-    "predecessor_decision_sha256": "04d878fd80ba31d179b606bdf36cfd3dffa37c2e75c895d4c64fd7e5afdf72a9",
+-    "prior_independent_review": {
+-      "status": "complete",
+-      "evidence_ids": [
+-        "C1193-INDEPENDENT-CHEMICALS"
+-      ]
+-    },
+-    "final_correction_review": {
++    "prior_final_correction_review": {
+       "author": "Codex worker05 /root/chemicals_research final report correction",
+       "timestamp": "2026-11-08T07:40:53.320531+00:00",
+       "prior_decision_sha256": "695d1e308a50d1a333dd78e47d6418b459df981d3b7645483e82e10e27a0cbbb",
+@@ -5662,9 +5792,9 @@
+     "occurrence_ids": [
+       "CM_OCC:b5ef25941cd0463e766a67f3b3c1bb336460bc9a91b8978a7a87c74e022ad650"
+     ],
+-    "disposition": "unresolved",
+-    "reasoning": "NBRC1507 independently confirms Thiamine-HCl⋅H2O in its vitamin solution. The one-water literal is not equivalent to the existing two-water thiamine-hydrochloride owner.",
+-    "applicability": "This case has a different dot character and source recipe from case28, but shares the explicit monohydrate boundary. Primary NBRC text,not string similarity,justifies retaining that distinction.",
++    "disposition": "curation_proposal",
++    "reasoning": "One local material denotes the Thiamine-HCl monohydrate explicitly named by NBRC 1550, 1443, 1444, 1445, 1447 and 1507. The six positive source names support a shared bounded reagent identity, without separate owners for medium numbers. NBRC is the recipe authority, not a claimed reagent supplier. This does not identify historical reagent lots or erase the hydration qualifier. Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation. The exact source-form evidence supports feasible local curation under section 3. Lack of CAS or molecular structure does not justify retaining a no-change disposition for this bounded material.",
++    "applicability": "The NBRC 1507 frozen occurrence explicitly name a one-water Thiamine-HCl reagent. Preserve the original literal, occurrence IDs and frozen flattened quantities as source context. Each primary recipe lists 5 mg within its vitamin preparation; this is not a single-solute stock or a claim that the frozen g/L normalization is correct. One shared local material candidate serves both source spelling cases.",
+     "evidence_ids": [
+       "CHEM-SRC-117",
+       "CHEM-RECIPE-117-01",
+@@ -5680,11 +5810,16 @@
+       "CHEM-C1193-WEB-5",
+       "CHEM-C1193-WEB-6",
+       "CHEM-C1193-WEB-7",
+-      "CHEM-C1193-togo-2152"
+-    ],
+-    "proposal_ids": [],
+-    "no_change_reason": "NBRC1507 independently supplies oneH2O literal, without reagentcatalog or structure. Salt/chloride stoichiometry must be established before an exact form-specific chemical identity; retain distinct monohydrate context.",
+-    "missing_requirement": "NBRC1507 independently supplies oneH2O literal, without reagentcatalog or structure. Salt/chloride stoichiometry must be established before an exact form-specific chemical identity; retain distinct monohydrate context.",
++      "CHEM-C1193-togo-2152",
++      "FINAL-CHEM-SUPPLEMENT-OWNER-CHECK",
++      "FINAL-CHEM-SUPPLEMENT-PRIMARY-READ",
++      "FINAL-CHEM-SUPPLEMENT-DISCOVERY"
++    ],
++    "proposal_ids": [
++      "FINAL-CHEM-P-thiamine-hcl-monohydrate"
++    ],
++    "no_change_reason": null,
++    "missing_requirement": null,
+     "owner_records": [],
+     "issue_refs": [
+       "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+@@ -5693,7 +5828,7 @@
+       "status": "pending",
+       "evidence_ids": []
+     },
+-    "native_review_applicability": "Coordinator formal native review applies to identified MIM owner/proposal targets. This case assessment is source-bound and does not invent an owner or establish full-record approval.",
++    "native_review_applicability": "Coordinator native review must include the new local material candidate, its six exact occurrence routes and this bounded molecular-grounding limit. Existing thiamine owners are comparison records, not proposed mutations.",
+     "hold_disposition": "Preserve all frozen downstream holds and source assertion semantics; no release permission.",
+     "primary_author": "/root/chemicals_research",
+     "preserved_source_holds": {
+@@ -5704,6 +5839,105 @@
+       "owners": []
+     },
+     "correction_reassessment": {
++      "status": "complete",
++      "trigger": "W05-FINAL-SKEPTIC-CHEM-003: source-defined local material identity is feasible despite incomplete molecular grounding.",
++      "reviewed_at": "2026-11-08T08:14:37.644756+00:00",
++      "primary_author": "/root/chemicals_research",
++      "prior_proposal_ids": [],
++      "outcome": "one shared bounded local monohydrate material proposed",
++      "scientific_gap": "Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation.",
++      "search_evidence_ids": [
++        "CHEM-C1193-REINSPECTION",
++        "CHEM-C1193-ols-search-3",
++        "CHEM-C1193-ols2-thiamine",
++        "CHEM-C1193-WEB-2",
++        "CHEM-C1193-WEB-5",
++        "CHEM-C1193-WEB-6",
++        "CHEM-C1193-WEB-7",
++        "CHEM-C1193-togo-2152",
++        "FINAL-CHEM-SUPPLEMENT-OWNER-CHECK",
++        "FINAL-CHEM-SUPPLEMENT-PRIMARY-READ",
++        "FINAL-CHEM-SUPPLEMENT-DISCOVERY"
++      ],
++      "prior_case_sha256": "3ae4bb64739633dd0e9f04467646836f31d1079f252850ffa030f2dafea8cab2",
++      "preserved_holds": "Original preserved_source_holds, case_input_sha256 and occurrence_ids are unchanged.",
++      "performed_searches": [
++        {
++          "evidence_id": "CHEM-FAIL-642928fbf158",
++          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2152",
++          "finding": "Bounded unsuccessful retrieval: TimeoutError('The read operation timed out'); no absence or identity inference."
++        },
++        {
++          "evidence_id": "CHEM-CAP-74b89743eed1808f",
++          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1507",
++          "finding": "This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 117. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-CAP-14f6b2b7770adbee",
++          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:49105",
++          "finding": "Live ontology target CHEBI:49105 is labelled thiamine hydrochloride; definition=[\"A hydrochloride obtained by combining thiamine chloride with one molar equivalent of hydrochloric acid.\"]; formula=[\"C12H17N4OS.Cl.HCl\"]. This verifies target meaning, not source-to-target equivalence. Per-case decisions explicitly assess the latter."
++        },
++        {
++          "evidence_id": "CHEM-CAP-ba668efabffad3e5",
++          "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:132751",
++          "finding": "Live ontology target CHEBI:132751 is labelled thiamine hydrochloride dihydrate; definition=[\"A hydrate that is the dihydrate form of thiamine hydrochloride.\"]; formula=[\"C12H18N4OS.2Cl.2H2O\"]. This verifies target meaning, not source-to-target equivalence. Per-case decisions explicitly assess the latter."
++        },
++        {
++          "evidence_id": "CHEM-CAP-12d6346a73c5dd24",
++          "url": "https://www.ebi.ac.uk/ols4/api/search?q=thiamine%20hydrochloride%20monohydrate&ontology=chebi&exact=true",
++          "finding": "Bounded exact-name ChEBI OLS query returned zero hits; this does not establish universal term absence. This inspected primary capture supplies the source-specific recipe, supplied form or supplier information used for cases 28,117. Its applicability and limits are stated separately in each decision; it does not approve unrelated roles, concentration conversions or inherited automatic identifier annotations."
++        },
++        {
++          "evidence_id": "CHEM-C1193-ols-search-3",
++          "url": "https://www.ebi.ac.uk/ols4/api/search?q=thiamine+hydrochloride+monohydrate&ontology=chebi&rows=20",
++          "finding": "Bounded ontology search inspected: no result establishes the exact assigned form/preparation; labels, CAS or numbered-source query retained. This is not an exhaustive ontology-absence claim."
++        },
++        {
++          "evidence_id": "CHEM-C1193-ols2-thiamine",
++          "url": "https://www.ebi.ac.uk/ols4/api/search?q=thiamine+hydrochloride+monohydrate&ontology=chebi&rows=50",
++          "finding": "Bounded ontology search inspected: no result establishes the exact assigned form/preparation; labels, CAS or numbered-source query retained. This is not an exhaustive ontology-absence claim."
++        },
++        {
++          "evidence_id": "CHEM-C1193-togo-2152",
++          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2152",
++          "finding": "Successfully retrieved complete primary TOGO recipe after prior timeout. Literal monohydrate retained forM2152; ethanol pages specify95% solvent in vitamin/hemin additions withoutpercentagebasis ordenaturant specification."
++        },
++        {
++          "evidence_id": "FINAL-CHEM-SUPPLEMENT-OWNER-CHECK",
++          "finding": "The complete ten thiamine-related maintained records have cation, hydrochloride, dihydrate, phosphate, generic Vitamin B or stock scopes; none establishes this source-defined one-water material. All 981 frozen selected payloads were parsed and hash-checked, and the 37 coordinator candidate summary was searched recursively. No same-form owner was found. The worktree owner-label search included ignored files. This is a bounded inventory check, not a claim about future unpublished drafts."
++        },
++        {
++          "evidence_id": "FINAL-CHEM-SUPPLEMENT-PRIMARY-READ",
++          "finding": "One local material denotes the Thiamine-HCl monohydrate explicitly named by NBRC 1550, 1443, 1444, 1445, 1447 and 1507. The six positive source names support a shared bounded reagent identity, without separate owners for medium numbers. NBRC is the recipe authority, not a claimed reagent supplier. This does not identify historical reagent lots or erase the hydration qualifier. Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation."
++        },
++        {
++          "evidence_id": "FINAL-CHEM-SUPPLEMENT-DISCOVERY",
++          "finding": "No exact source-specific monohydrate CAS, structure or supplier match was established. Generic PubChem thiamine records, historical descriptions and patent search results do not identify these NBRC reagents; no chemical field is transferred."
++        }
++      ]
++    },
++    "authored_fragment_decision_sha256": "ece363449c456fab5a1e73e2de8a11fca52be3ec9105503033074413e3b4861b",
++    "predecessor_decision_sha256": "095b92c018ddc452ed343935c1c9b4cf08cd682185817cb4e353813159afb1ee",
++    "prior_independent_review": {
++      "status": "complete",
++      "evidence_ids": [
++        "C1193-INDEPENDENT-CHEMICALS"
++      ]
++    },
++    "final_correction_review": {
++      "author": "/root/chemicals_research",
++      "timestamp": "2026-11-08T08:14:37.644756+00:00",
++      "prior_decision_sha256": "3ae4bb64739633dd0e9f04467646836f31d1079f252850ffa030f2dafea8cab2",
++      "scope": "Bounded supplement for the complete two source cases and one new local material candidate. Original source and hold objects are unchanged; prior other-case review remains unchanged.",
++      "proposal_ids": [
++        "FINAL-CHEM-P-thiamine-hcl-monohydrate"
++      ],
++      "conditional_proposal_ids": [],
++      "whole_owner_approval": false,
++      "finding_id": "W05-FINAL-SKEPTIC-CHEM-003"
++    },
++    "remaining_grounding_uncertainty": "Exact CAS, molecular formula, molecular structure, chloride/protonation stoichiometry and supplier catalog identity remain unverified. These facts constrain exact molecular grounding and a specific parent relationship, not the positive source-defined one-water material representation.",
++    "prior_correction_reassessment": {
+       "status": "complete",
+       "trigger": "#1193: reassess authorized curation rather than carrying generic holds forward",
+       "reviewed_at": "2026-11-08T05:49:52.389819+00:00",
+@@ -5767,15 +6001,7 @@
+       ],
+       "author_field": "correction_reassessment"
+     },
+-    "authored_fragment_decision_sha256": "ece363449c456fab5a1e73e2de8a11fca52be3ec9105503033074413e3b4861b",
+-    "predecessor_decision_sha256": "095b92c018ddc452ed343935c1c9b4cf08cd682185817cb4e353813159afb1ee",
+-    "prior_independent_review": {
+-      "status": "complete",
+-      "evidence_ids": [
+-        "C1193-INDEPENDENT-CHEMICALS"
+-      ]
+-    },
+-    "final_correction_review": {
++    "prior_final_correction_review": {
+       "author": "Codex worker05 /root/chemicals_research final report correction",
+       "timestamp": "2026-11-08T07:40:53.320531+00:00",
+       "prior_decision_sha256": "ddd707fabe712c98935f307925d2a3be0f60e5cd707c97e1546f2d5dd828e061",

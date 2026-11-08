@@ -1,0 +1,96 @@
+--- correction-1193-v1/media/proposed/Thioglycollate_Sigma_JCM529.yaml
++++ final-correction-v1/media/proposed/Thioglycollate_Sigma_JCM529.yaml
+@@ -6,14 +6,23 @@
+ - timestamp: '2026-11-08T05:54:18.111373+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CREATED
+-  changes: Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate
+-    powder29.8g/L. Primary Sigma T9032 and28976 sheets support the same seven major
+-    constituents and semisolid agar content; resazurin supplied form is not resolved.
+-    Create the source-qualified historical Sigma preparation without guessing either
+-    catalog, retaining indicator ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound
+-    remains an unsuccessful retrieval, not evidence of the recipe. Isolated proposal
+-    only; whole-owner/source/export holds remain and integration requires separate
+-    native review.
++  changes: Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate powder29.8g/L. Primary
++    Sigma T9032 and28976 sheets support the same seven major constituents and semisolid agar content;
++    resazurin supplied form is not resolved. Create the source-qualified historical Sigma preparation
++    without guessing either catalog, retaining indicator ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound
++    remains an unsuccessful retrieval, not evidence of the recipe. Isolated proposal only; whole-owner/source/export
++    holds remain and integration requires separate native review.
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+@@ -27,33 +36,29 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/164/311/t9032dat.pdf
+-    notes: Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate
+-      powder29.8g/L. Primary Sigma T9032 and28976 sheets support the same seven major
+-      constituents and semisolid agar content; resazurin supplied form is not resolved.
+-      Create the source-qualified historical Sigma preparation without guessing either
+-      catalog, retaining indicator ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound
++    notes: Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate powder29.8g/L. Primary
++      Sigma T9032 and28976 sheets support the same seven major constituents and semisolid agar content;
++      resazurin supplied form is not resolved. Create the source-qualified historical Sigma preparation
++      without guessing either catalog, retaining indicator ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound
+       remains an unsuccessful retrieval, not evidence of the recipe.
+-notes: 'Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate powder29.8g/L.
+-  Primary Sigma T9032 and28976 sheets support the same seven major constituents and
+-  semisolid agar content; resazurin supplied form is not resolved. Create the source-qualified
+-  historical Sigma preparation without guessing either catalog, retaining indicator
+-  ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound remains an unsuccessful
+-  retrieval, not evidence of the recipe. Raw source spellings retained in decision
+-  ledger and here, without a new globally resolving alias: [{''synonym_text'': ''Thioglycollate
+-  medium (Sigma)'', ''synonym_type'': ''RAW_TEXT'', ''source'': ''Thioglycollate medium
+-  (Sigma)''}] Independent review correction: Archived original TOGO M530/M531 identifies
+-  historical JCM529 Sigma thioglycollate powder29.8g/L. Current Sigma T9032/28976
+-  provide named product-family constituents, but neither catalog nor numeric formula
+-  is proven for the historical product. Curate the named Sigma preparation with PARTIAL
+-  named parts and no component quantities; current JCM529 Nothing found is unsuccessful
+-  retrieval.'
++notes: 'Archived original TOGO M530/M531 preserves JCM529 Sigma thioglycollate powder29.8g/L. Primary
++  Sigma T9032 and28976 sheets support the same seven major constituents and semisolid agar content; resazurin
++  supplied form is not resolved. Create the source-qualified historical Sigma preparation without guessing
++  either catalog, retaining indicator ambiguity as a named UNMAPPED part. CurrentJCM529Nothingfound remains
++  an unsuccessful retrieval, not evidence of the recipe. Raw source spellings retained in decision ledger
++  and here, without a new globally resolving alias: [{''synonym_text'': ''Thioglycollate medium (Sigma)'',
++  ''synonym_type'': ''RAW_TEXT'', ''source'': ''Thioglycollate medium (Sigma)''}] Independent review correction:
++  Archived original TOGO M530/M531 identifies historical JCM529 Sigma thioglycollate powder29.8g/L. Current
++  Sigma T9032/28976 provide named product-family constituents, but neither catalog nor numeric formula
++  is proven for the historical product. Curate the named Sigma preparation with PARTIAL named parts and
++  no component quantities; current JCM529 Nothing found is unsuccessful retrieval.'
+ supplied_form:
+ - name: Thioglycollate medium powder (Sigma; archived JCM529)
+   supplier: Sigma-Aldrich
+-  notes: Source-qualified product/preparation; exact catalog and unspecified supplied-form
+-    details are not invented.
++  notes: Source-qualified product/preparation; exact catalog and unspecified supplied-form details are
++    not invented.
+ components:
+ - component_name: Casein enzymic hydrolysate
+   reference_scope: UNMAPPED
+@@ -77,6 +82,6 @@
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/164/311/t9032dat.pdf
+-    notes: PARTIAL named product-family constituents compared across current Sigma
+-      T9032/28976 only. Historical JCM529 catalog, lot and exact component amounts
+-      are not established; no numeric formula is assigned to the historical preparation.
++    notes: PARTIAL named product-family constituents compared across current Sigma T9032/28976 only. Historical
++      JCM529 catalog, lot and exact component amounts are not established; no numeric formula is assigned
++      to the historical preparation.

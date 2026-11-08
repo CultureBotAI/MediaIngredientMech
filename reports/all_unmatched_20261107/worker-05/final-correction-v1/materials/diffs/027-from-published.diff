@@ -1,0 +1,45 @@
+--- published/Liver_Extract_Concentrate.yaml
++++ successor/Liver_Extract_Concentrate.yaml
+@@ -58,7 +58,18 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: Imported from mim-queue (source_id=mediadive.ingredient:1599); no CAS-RN or
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1599); no CAS-RN or
+   CHEBI/NCIT match. Curator review needed. Give NBCo liver-extract concentrate its
+   own local preparation identity rather than sharing generic MICRO:0001363 with dry
+   extract and infusion. Exact-label current occurrences all belong to JCM11/JCM20
+@@ -67,6 +78,13 @@
+   proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support
+   or release admission are approved. Preserve all frozen source and owner holds; component
+   uncertainty is stated separately from whole-material identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'
+ ingredient_type: UNDEFINED_MIXTURE
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:liver_extract_concentrate
+@@ -74,7 +92,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=20
+     notes: Source-qualified commercial concentrate; generic liver-extract term does
+       not denote exact supplied preparation.

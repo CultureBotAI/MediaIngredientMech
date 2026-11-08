@@ -1,0 +1,29 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed/Complan.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Complan.yaml
+@@ -50,6 +50,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. Report-only candidate; separate
++    final scientific review and coordinator integration remain required.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: Imported from mim-queue (source_id=mediadive.ingredient:2363); no CAS-RN or
+   CHEBI/NCIT match. Reviewed on 2026-05-11 as a named nutritional product/preparation
+   pending product-specific composition curation. Source-named Complan nutritional
+@@ -67,7 +78,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.ccap.ac.uk/wp-content/uploads/MR_PER.pdf
+     notes: Source-named Complan nutritional product family used as a complex medium
+       ingredient. Primary CCAP PER identifies HJ Heinz, Hayes Park, Hayes, Middlesex

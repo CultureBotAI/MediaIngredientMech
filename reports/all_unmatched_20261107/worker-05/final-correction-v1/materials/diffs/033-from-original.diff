@@ -1,0 +1,101 @@
+--- original/Malt_Extract_Agar_Oxoid.yaml
++++ successor/Malt_Extract_Agar_Oxoid.yaml
+@@ -43,17 +43,87 @@
+     came from the importer retired in #453, whose media_count counted a list truncated
+     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+     rows=194137 distinct_recipes=15257]'
+-notes: Extracted from over-conflated Malt_Extract.yaml synonyms Supplier-specific
+-  malt extract agar is a formulation, not identical to malt extract.
+-ingredient_type: UNDEFINED_MIXTURE
++- timestamp: '2026-11-08T05:47:55.847763+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Reconcile the existing supplier-qualified Oxoid Malt Extract Agar owner,
++    retaining its local identity and classifying it as NAMED_MEDIUM. Official manufacturer
++    formulation supports malt extract30g, mycological peptone5g and agar15g per litre
++    of50g/L reconstitution; quantitative entries explicitly describe that reconstitution,
++    not dry-powder concentrations. Remove the unsupported whole-formulation closeMatch
++    to its malt-extract component. Exact isolated payload; no maintained write. All
++    prior scientific/publication holds preserved.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Extracted from over-conflated Malt_Extract.yaml synonyms Supplier-specific
++  malt extract agar is a formulation, not identical to malt extract. Reconcile the
++  existing supplier-qualified Oxoid Malt Extract Agar owner, retaining its local identity
++  and classifying it as NAMED_MEDIUM. Official manufacturer formulation supports malt
++  extract30g, mycological peptone5g and agar15g per litre of50g/L reconstitution;
++  quantitative entries explicitly describe that reconstitution, not dry-powder concentrations.
++  Remove the unsupported whole-formulation closeMatch to its malt-extract component.
++  Source-qualified proposal under issue1193. No ingredient roles, assay outcomes,
++  complete-owner support or release admission are approved. Preserve all frozen source
++  and owner holds; component uncertainty is stated separately from whole-material
++  identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'
++ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+-  ontology_id: FOODON:03301056
+-  ontology_label: malt extract
+-  ontology_source: FOODON
+-  mapping_quality: CLOSE_MATCH
++  ontology_id: kgmicrobe.ingredient:malt_extract_agar_~28oxoid~29
++  ontology_label: Malt extract agar (Oxoid)
++  ontology_source: kgmicrobe.ingredient
++  mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: CURATOR_JUDGMENT
+-    source: ingredient_mapping_review_2026-05-05
+-    notes: Supplier-specific malt extract agar is a formulation, not identical to
+-      malt extract.
++  - evidence_type: LLM_SUGGESTION
++    source: https://www.thermofisher.com/order/catalog/product/CM0059B
++    notes: Named whole formulation; no identity or closeMatch to the malt-extract
++      constituent.
+ kg_microbe_node_id: kgmicrobe.ingredient:malt_extract_agar_~28oxoid~29
++supplied_form:
++- name: Oxoid Malt Extract Agar (dehydrated)
++  supplier: Oxoid
++  form: powder
++  notes: Manufacturer productCM0059B supports dry supplied product; source1712 gives
++    Oxoid and50g dose but no exact package code.
++components:
++- component_name: Malt extract
++  reference_scope: UNMAPPED
++  concentration_value: '30.0'
++  concentration_unit: G_PER_L
++- component_name: Mycological peptone
++  reference_scope: UNMAPPED
++  concentration_value: '5.0'
++  concentration_unit: G_PER_L
++- component_name: Agar
++  reference_scope: UNMAPPED
++  concentration_value: '15.0'
++  concentration_unit: G_PER_L
++component_assertion:
++  method: RECIPE_TRANSCRIPTION
++  completeness: COMPLETE
++  evidence:
++  - evidence_type: RECIPE_SOURCE
++    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-PO0182A-V4.pdf
++    notes: Typical manufacturer formulation per litre after50g dry medium reconstitution.
++      PO0182A is prepared plate presentation; formula corroboratesCM0059 family. Not
++      an assertion that source1712 ordered plates. Water and optional acidification
++      are not parts of the dry product.

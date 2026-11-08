@@ -1,0 +1,119 @@
+--- correction-1193-v1/media/proposed/S6_Medium.yaml
++++ final-correction-v1/media/proposed/S6_Medium.yaml
+@@ -12,15 +12,14 @@
+ - timestamp: '2026-04-30T18:43:03.698454+00:00'
+   curator: audit_import_ingredients[mim-queue]
+   action: CREATED_AS_UNMAPPED
+-  changes: Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN
+-    or CHEBI/NCIT match. Curator review needed.
++  changes: Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or CHEBI/NCIT match.
++    Curator review needed.
+   new_status: UNMAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-11T19:50:00Z'
+   curator: mediaingredientmech-agentic-curation
+   action: CLASSIFIED_DEFINED_MEDIUM
+-  changes: Classified as a named S6 medium/formulation and left unmapped pending recipe-level
+-    curation.
++  changes: Classified as a named S6 medium/formulation and left unmapped pending recipe-level curation.
+   previous_status: UNMAPPED
+   new_status: UNMAPPED
+   llm_assisted: true
+@@ -28,38 +27,44 @@
+   curator: edison_literature_identity
+   action: ANNOTATED
+   changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/S6_Medium-edison-literature.md
+-    (local artifact — research/ is gitignored, so the findings are quoted here rather
+-    than linked). Report verdict: **Recommended interpretation:** “S6 medium” is a
+-    **named culture-medium formulation**, not a single chemical, salt/hydrate, buffer
+-    molecule, extract, or generic medium-component family. The strongest retrievable
+-    lineage is its use as an **S6 liquid medium for *Bacillus subtilis***, with the
+-    formulation attributed to Fujita and Freese (1981). A later paper explicitly distinguishes
+-    S6 from tryptose  No ontology CURIE was proposed. Recorded as provenance only
+-    — no grounding applied from this run. Edison''s recommendations are deliberately
+-    conservative, and a plausible identifier promoted by a mechanism that never decided
+-    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+-    to accept or reject.'
++    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
++    verdict: **Recommended interpretation:** “S6 medium” is a **named culture-medium formulation**, not
++    a single chemical, salt/hydrate, buffer molecule, extract, or generic medium-component family. The
++    strongest retrievable lineage is its use as an **S6 liquid medium for *Bacillus subtilis***, with
++    the formulation attributed to Fujita and Freese (1981). A later paper explicitly distinguishes S6
++    from tryptose  No ontology CURIE was proposed. Recorded as provenance only — no grounding applied
++    from this run. Edison''s recommendations are deliberately conservative, and a plausible identifier
++    promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE
++    above is a curator''s to accept or reject.'
+   llm_assisted: true
+ - timestamp: '2026-11-08T05:42:07.408483+00:00'
+   curator: Codex worker05 correction1193 source review
+   action: CORRECTED
+-  changes: Promote source-defined JCM90 preparation and transcribe one-level inputs.
+-    JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added nitrate
+-    and bicarbonate. Agar15g/L is an optional solid variant and is not a component
+-    of this liquid preparation; xH2O and stock percentage remain unspecified. Source-batch
+-    amounts do not infer a measured final volume. Isolated proposal only; whole-owner/source/export
++  changes: Promote source-defined JCM90 preparation and transcribe one-level inputs. JCM90 printed liquid
++    formula is the S6 base used in JCM91 S8 before added nitrate and bicarbonate. Agar15g/L is an optional
++    solid variant and is not a component of this liquid preparation; xH2O and stock percentage remain
++    unspecified. Source-batch amounts do not infer a measured final volume. Isolated proposal only; whole-owner/source/export
+     holds remain and integration requires separate native review.
+   previous_status: UNMAPPED
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or
+-  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level
+-  curation. Correction1193 source clarification: JCM90 printed liquid formula is the
+-  S6 base used in JCM91 S8 before added nitrate and bicarbonate. Agar15g/L is an optional
+-  solid variant and is not a component of this liquid preparation; xH2O and stock
+-  percentage remain unspecified. Source-batch amounts do not infer a measured final
+-  volume.'
++- timestamp: '2026-11-08T07:39:34.583422+00:00'
++  curator: Codex GPT-6 /root/media_research
++  action: CORRECTED
++  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION
++    under issue1226; scientific assertion and source unchanged except any separately listed finding. Isolated
++    report-only successor; maintained data and all original source, owner, role, cross-shard and export
++    holds remain unchanged.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1622); no CAS-RN or CHEBI/NCIT match.
++  Reviewed on 2026-05-11 as a named medium/formulation pending recipe-level curation. Correction1193 source
++  clarification: JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added nitrate and
++  bicarbonate. Agar15g/L is an optional solid variant and is not a component of this liquid preparation;
++  xH2O and stock percentage remain unspecified. Source-batch amounts do not infer a measured final volume.'
+ ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:s6_medium
+@@ -67,13 +72,12 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=90
+-    notes: All exact current owner occurrences trace to JCM90. JCM90 printed liquid
+-      formula is the S6 base used in JCM91 S8 before added nitrate and bicarbonate.
+-      Agar15g/L is an optional solid variant and is not a component of this liquid
+-      preparation; xH2O and stock percentage remain unspecified. Source-batch amounts
+-      do not infer a measured final volume.
++    notes: All exact current owner occurrences trace to JCM90. JCM90 printed liquid formula is the S6
++      base used in JCM91 S8 before added nitrate and bicarbonate. Agar15g/L is an optional solid variant
++      and is not a component of this liquid preparation; xH2O and stock percentage remain unspecified.
++      Source-batch amounts do not infer a measured final volume.
+ components:
+ - component_name: KH2PO4
+   reference_scope: UNMAPPED
+@@ -118,7 +122,6 @@
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=90
+     source_record: JCM90
+-    notes: JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added
+-      nitrate and bicarbonate. Agar15g/L is an optional solid variant and is not a
+-      component of this liquid preparation; xH2O and stock percentage remain unspecified.
+-      Source-batch amounts do not infer a measured final volume.
++    notes: JCM90 printed liquid formula is the S6 base used in JCM91 S8 before added nitrate and bicarbonate.
++      Agar15g/L is an optional solid variant and is not a component of this liquid preparation; xH2O and
++      stock percentage remain unspecified. Source-batch amounts do not infer a measured final volume.

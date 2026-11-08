@@ -1,0 +1,395 @@
+
+PROPOSAL W05-FINAL-MAT-036
+{
+ "preferred_term": "Neopeptone",
+ "mapping_status": "MAPPED",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "synonyms": [],
+ "occurrence_statistics": {
+  "total_occurrences": 14,
+  "media_count": 14
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-11-08T05:47:55.853996+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CREATED",
+   "changes": "Add the distinct Neopeptone ingredient using the existing exact non-obsolete MICRO0000177 term, alongside retained rejection of its aliases on Bacto_Peptone. The manufacturer confirms a separate named enzymatic digest product; no species-specific molecular structure or complete peptide composition is asserted. Exact isolated payload; no maintained write. All prior scientific/publication holds preserved.",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to DATABASE_MATCH; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "identifier": "MICRO:0000177",
+ "ontology_mapping": {
+  "ontology_id": "MICRO:0000177",
+  "ontology_label": "neopeptone",
+  "ontology_source": "MICRO",
+  "mapping_quality": "EXACT_MATCH",
+  "evidence": [
+   {
+    "evidence_type": "DATABASE_MATCH",
+    "source": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMICRO_0000177",
+    "notes": "Non-obsolete named neopeptone term explicitly cites Bacto Neopeptone manufacturer definition. Whole product, not one component."
+   }
+  ]
+ },
+ "supplied_form": [
+  {
+   "name": "Bacto Neopeptone",
+   "supplier": "Bacto / BD",
+   "catalog_number": "211681",
+   "notes": "Current manufacturer supports enzymatic bovine-milk/porcine-protein digest; historical source263 package not specified."
+  }
+ ],
+ "notes": "Add the distinct Neopeptone ingredient using the existing exact non-obsolete MICRO0000177 term, alongside retained rejection of its aliases on Bacto_Peptone. The manufacturer confirms a separate named enzymatic digest product; no species-specific molecular structure or complete peptide composition is asserted. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity. Occurrence statistics count current exact proposed-label matches in the inspected CultureMech occurrence table; no shared-identifier expansion or newly invented recipe membership.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to DATABASE_MATCH; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}
+
+PROPOSAL W05-FINAL-MAT-037
+{
+ "identifier": "kgmicrobe.ingredient:sea_salts",
+ "preferred_term": "Sea salts",
+ "synonyms": [
+  {
+   "synonym_text": "sea salts (Sigma)",
+   "synonym_type": "RAW_TEXT",
+   "source": "culturebotht"
+  },
+  {
+   "synonym_text": "Sea salts (Sigma-Aldrich)",
+   "synonym_type": "CATALOG_VARIANT",
+   "source": "culturemech:output/ingredient_occurrences.tsv"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 40,
+  "media_count": 40
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-04-29T06:51:33.117170+00:00",
+   "curator": "audit_add_remaining_culturebotht",
+   "action": "CREATED_AS_UNMAPPED",
+   "changes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22 CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen, DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available; curator review needed.",
+   "new_status": "UNMAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T07:06:02.289319+00:00",
+   "curator": "backfill_parent_terms",
+   "action": "BACKFILL_PARENT_NCIT",
+   "changes": "set ontology_mapping parent=NCIT:C75874 (stem-substring)",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-11T08:35:00Z",
+   "curator": "mediaingredientmech-agentic-curation",
+   "action": "REVIEWED_COMMERCIAL_MIXTURE",
+   "changes": "Kept unmapped with contextual NCIT:C75874 Sea Salt parent because the source synonym is supplier-formulated sea salts (Sigma), not a verified exact ontology identity.",
+   "previous_status": "UNMAPPED",
+   "new_status": "UNMAPPED",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-08-06T00:00:00+00:00",
+   "curator": "promote_resolved_unmapped",
+   "action": "PROMOTED_TO_MAPPED",
+   "previous_status": "UNMAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": false,
+   "changes": "Promoted UNMAPPED_0148 -> NCIT:C75874 \"Sea Salt\" (CLOSE_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added."
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.518168+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 22/22 -> 40/40 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-08-30T04:48:06.233536+00:00",
+   "curator": "claude_culturemech_alias_backfill",
+   "action": "ADDED_SYNONYMS",
+   "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Sea salts (Sigma-Aldrich)' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-11-08T05:17:20.168806+00:00",
+   "curator": "worker05/materials_research (Codex proposal)",
+   "action": "CORRECTED",
+   "changes": "Preserve supplier-scoped sea-salts preparation with local primary and FALLBACK_REGISTRY mapping; remove unsupported exact/close NCIT relationship. Historical NCIT candidate remains in notes/history for traceability, without a published relation. Isolated proposal only; retain all holds and require full changed-owner review.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-11-08T05:47:55.856797+00:00",
+   "curator": "worker05/materials_research correction1193 (isolated proposal)",
+   "action": "CORRECTED",
+   "changes": "Retain the earlier supported Sea_Salts local-registry correction and add literal Sigma supplied-form provenance across all explicitly supplier-qualified cases. Do not assign S9883 or a common quantitative formulation to historical source labels; unqualified Sea Salt cases34/40 remain occurrence-specific unresolved routing, not universalSigma matches. Exact isolated payload; no maintained write. Replaces MATERIALS-P-sea-salts-identity. All prior scientific/publication holds preserved.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "notes": "Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22 CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen, DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a commercial sea-salts mixture, retaining NCIT:C75874 only as contextual parent evidence. Source-bound correction: this supplier-qualified preparation has its own local identity. Former NCIT:C75874 CLOSE_MATCH is preserved only in historical provenance and is not asserted as a current mapping; no exact equivalence, Sigma S9883 catalog assignment, formulation or merge with Artificial_Sea_Salt is asserted. Preserve all existing publication holds pending complete owner review. Retain the earlier supported Sea_Salts local-registry correction and add literal Sigma supplied-form provenance across all explicitly supplier-qualified cases. Do not assign S9883 or a common quantitative formulation to historical source labels; unqualified Sea Salt cases34/40 remain occurrence-specific unresolved routing, not universalSigma matches. Source-qualified proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support or release admission are approved. Preserve all frozen source and owner holds; component uncertainty is stated separately from whole-material identity.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending.",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:sea_salts",
+  "ontology_label": "Sea salts",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://mediadive.dsmz.de/rest/ingredient/2367",
+    "notes": "Source carries Sea salts with SIGMA attribute; local identity preserves the supplier-scoped preparation without an exact or close ontology claim. Catalog and formulation remain unspecified; no identity with natural salt or Artificial_Sea_Salt is inferred."
+   }
+  ]
+ },
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "supplied_form": [
+  {
+   "name": "Sigma Sea salts",
+   "supplier": "Sigma",
+   "notes": "DSMZ1025/1092 and MediaDive925/2367, plus the six explicitlySigma-qualified frozen case40 occurrences, nameSigma. Catalog is absent; noS9883 or natural-evaporated-salt identity inferred; other case40 occurrences are not assigned."
+  }
+ ]
+}
+
+PROPOSAL W05-FINAL-MAT-038
+{
+ "identifier": "kgmicrobe.ingredient:organic_peat",
+ "preferred_term": "Organic Peat",
+ "synonyms": [
+  {
+   "synonym_text": "Organic Peat",
+   "synonym_type": "RAW_TEXT",
+   "source": "CultureMech"
+  }
+ ],
+ "mapping_status": "MAPPED",
+ "occurrence_statistics": {
+  "total_occurrences": 1,
+  "media_count": 1
+ },
+ "curation_history": [
+  {
+   "timestamp": "2026-03-09T06:54:18.022301+00:00",
+   "curator": "import_from_culturemech",
+   "action": "IMPORTED",
+   "changes": "Initial import from CultureMech pipeline",
+   "new_status": "UNMAPPED",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-11T18:05:00Z",
+   "curator": "mediaingredientmech-agentic-curation",
+   "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+   "changes": "Classified as peat-derived organic material and left unmapped pending source/composition curation rather than identity mapping to a generic parent.",
+   "previous_status": "UNMAPPED",
+   "new_status": "UNMAPPED",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-08-06T00:00:00+00:00",
+   "curator": "edison_literature_identity",
+   "action": "ANNOTATED",
+   "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Organic_Peat-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** `Organic Peat` is an **ambiguous natural-material mixture**, not a single chemical, salt/hydrate, buffer, or demonstrated standardized formulation. Peat is plant-derived organic material whose botanical inputs, degree of decomposition, elemental composition, and organic functional-group distribution vary. A peat core study, for example, identified inputs including * No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-11-08T05:53:56.979017+00:00",
+   "curator": "worker05/materials_research skeptical remediation1193",
+   "action": "CORRECTED",
+   "changes": "Promote the existing organic-peat raw-material owner to its own local registry identity with direct UTEX preparation-input evidence; retain SAG peat-soil process context without forcing exact input equality or creating another peat owner. Exact isolated proposal. Preserve all prior source and export holds.",
+   "previous_status": "UNMAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "notes": "CultureMech placeholder_id: 1; reviewed on 2026-05-11 as peat-derived organic material pending source/composition curation. Correction1193: Primary UTEX Soilwater: Peat Medium explicitly uses0.5tsp Organic Peat separately from1.5tsp Green House Soil and200mlwater; later steaming prepares the medium and is not a property of the raw peat input. SAG18 independently describes peat soil of medium/not-too-great humus without fertilizers or plant-protection agents for peat extract. These source forms are curated as provenance; an exact SAG Peat soil alias to this owner is not asserted, and a second generic peat owner is not minted. Natural variability is not a reason to leave the existing known peat material without a registry identity. Preserve every source/native/export hold; no standardized composition, substrate-usage role or complete owner approval.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending.",
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:organic_peat",
+  "ontology_label": "Organic Peat",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://web.biosci.utexas.edu/utex/Media%20PDF/soilwater-peat-medium.pdf",
+    "notes": "Distinct variable natural peat material already represented by existing owner; no precise molecular or environmental-class exact identity inferred."
+   }
+  ]
+ },
+ "supplied_form": [
+  {
+   "name": "Organic peat (UTEX raw input)",
+   "notes": "Source material used before preparation of Soilwater: Peat Medium, separate from greenhouse soil; dose0.5teaspoon is source input, not mass or concentration. Botanical type/decomposition not specified."
+  }
+ ]
+}
+
+PROPOSAL W05-FINAL-MAT-039
+{
+ "identifier": "kgmicrobe.ingredient:peptone",
+ "preferred_term": "Peptone",
+ "ontology_mapping": {
+  "ontology_id": "kgmicrobe.ingredient:peptone",
+  "ontology_label": "Peptone",
+  "ontology_source": "kgmicrobe.ingredient",
+  "mapping_quality": "FALLBACK_REGISTRY",
+  "evidence": [
+   {
+    "evidence_type": "LLM_SUGGESTION",
+    "source": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+    "notes": "Primary manufacturer guide defines peptones as protein hydrolysates of varied animal/vegetable starting materials. Existing unqualified Peptone owner has only lexical MICRO mammalian grounding, not source-origin evidence. Own variable-material identity does not assign a particular digest or supplier."
+   }
+  ]
+ },
+ "mapping_status": "MAPPED",
+ "curation_history": [
+  {
+   "timestamp": "2026-05-01T19:55:09.679469+00:00",
+   "curator": "foodon_pass",
+   "action": "AUTO_CREATE_FROM_MICRO",
+   "changes": "created with primary MICRO:0000178",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-05-02T03:12:17.686332+00:00",
+   "curator": "auto_classify_ingredient_type",
+   "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+   "changes": "set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Peptone')",
+   "llm_assisted": false
+  },
+  {
+   "timestamp": "2026-06-03T02:06:01.747135+00:00",
+   "curator": "infer_roles_from_name_lists",
+   "action": "ANNOTATED",
+   "changes": "Added media role: PROTEIN_SOURCE (confidence: 0.80)"
+  },
+  {
+   "timestamp": "2026-06-08T23:23:58.335580+00:00",
+   "curator": "audit_occurrence_stats",
+   "action": "CORRECTED",
+   "changes": "Backfilled missing occurrence_statistics (0/0): ontology-derived record with no tracked media occurrences."
+  },
+  {
+   "timestamp": "2026-07-20T00:00:00+00:00",
+   "curator": "migrate_media_roles_to_facets",
+   "action": "ANNOTATED",
+   "changes": "Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE"
+  },
+  {
+   "timestamp": "2026-08-05T00:01:30.894952+00:00",
+   "curator": "microbedecoder-residual-dispositions",
+   "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+   "changes": "Absorbed UNMAPPED_0718 'Peptones' as a RAW_TEXT synonym -- plural of the already-mapped peptone record. No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.compound:peptones.",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-08-05T00:01:30.894952+00:00",
+   "curator": "microbedecoder-residual-dispositions",
+   "action": "MERGED_FROM_UNMAPPED_DUPLICATE",
+   "changes": "Absorbed UNMAPPED_0835 'Peptone (0.01 %' as a RAW_TEXT synonym -- concentration-truncated duplicate of peptone. No new SSSOM row; MICRO:0000178 is already mapped. Source: kgmicrobe.trait:peptone_0_01.",
+   "llm_assisted": true
+  },
+  {
+   "timestamp": "2026-08-27T03:16:39.519680+00:00",
+   "curator": "refresh_occurrence_statistics",
+   "action": "CORRECTED",
+   "changes": "occurrence_statistics 0/0 -> 2251/2255 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+  },
+  {
+   "timestamp": "2026-11-08T05:54:48.074406+00:00",
+   "curator": "worker05/materials_research skeptical remediation1193",
+   "action": "CORRECTED",
+   "changes": "Reconcile existing generic Peptone owner to local protein-digest material identity, removing unsupported exact mammalian MICRO0000178 scope. Keep raw plural provenance, all existing role/count/truncated-alias holds and both MicrobeDecoder source-case holds; no new owner or catalog assignment. Exact isolated guarded proposal only.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  },
+  {
+   "timestamp": "2026-11-08T07:39:04.974035+00:00",
+   "curator": "Codex /root/materials_research; W05 final report-only correction",
+   "action": "CORRECTED",
+   "changes": "Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Reject only the incomplete concentration token Peptone (0.01 % as an identity name of generic Peptone. Preserve its original microbedecoder provenance and plural Peptones. Do not invent a missing parenthesis, percent basis or preparation. Eighteen retained historical inbound MICRO:0000178 component references and current proposed components remain a source-level integration dependency; no automatic retargeting is authorized. Isolated proposal only; no maintained data or source membership change.",
+   "previous_status": "MAPPED",
+   "new_status": "MAPPED",
+   "llm_assisted": true,
+   "llm_model": "gpt-6"
+  }
+ ],
+ "ingredient_type": "UNDEFINED_MIXTURE",
+ "occurrence_statistics": {
+  "total_occurrences": 2255,
+  "media_count": 2251,
+  "source_occurrences": [
+   {
+    "source": "microbedecoder",
+    "count": 48,
+    "source_columns": "BacDive_Metabolite_utilization"
+   }
+  ]
+ },
+ "nutritional_roles": [
+  {
+   "role": "PROTEIN_SOURCE",
+   "confidence": 0.8,
+   "evidence": [
+    {
+     "reference_type": "COMPUTATIONAL_PREDICTION",
+     "reference_text": "Inferred from curated media-role name pattern",
+     "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+    }
+   ]
+  }
+ ],
+ "synonyms": [
+  {
+   "synonym_text": "Peptones",
+   "synonym_type": "RAW_TEXT",
+   "source": "microbedecoder"
+  },
+  {
+   "synonym_text": "Peptone (0.01 %",
+   "synonym_type": "REJECTED_LABEL",
+   "source": "microbedecoder"
+  }
+ ],
+ "notes": "Previous published proposal scope, preserved as historical provenance and superseded where corrected below:\nCorrection1193: Existing generic Peptone material owner includes unqualified MicrobeDecoder plural peptones; primary protein-digest family is known but mammalian source is not. MICRO0000178 definition restricts to mammalian animal-protein digest, so its old exact identity is replaced with local material identity without adding an unsupported ontology relation. This removes a narrower origin assertion; it does not identify the actual assay supplier or composition, approve PROTEIN_SOURCE, repair the truncated Peptone (0.01 % alias, or release any source/export hold. All current exact-label occurrences and full recipes were inspected as bound context. Preserve raw observations and original organism relations independently.\n\nFinal W05 report-only correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Reject only the incomplete concentration token Peptone (0.01 % as an identity name of generic Peptone. Preserve its original microbedecoder provenance and plural Peptones. Do not invent a missing parenthesis, percent basis or preparation. Eighteen retained historical inbound MICRO:0000178 component references and current proposed components remain a source-level integration dependency; no automatic retargeting is authorized. All original source, organism, role, owner and export holds remain. Independent review of these exact successor bytes is pending."
+}

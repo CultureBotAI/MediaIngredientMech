@@ -1,0 +1,78 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "primary_author": "/root/media_research",
+  "input_manifest_sha256": "1bec047dc4c2da4b2cd039f150d978522a40a6e2b6115b1448a2a3bd676bf0a1",
+  "reported_to_root_before_fix": true,
+  "findings": [
+    {
+      "finding_id": "W05-FINAL-MEDIA-REVIEW-01",
+      "priority": "P2",
+      "category": "unsupported_human_attribution",
+      "prior_parent_lead": true,
+      "reproduction": [
+        {
+          "path": ".temp/w05-final-correction-v1/media/HANDOFF.md",
+          "sha256": "0c62ebb3575525ec76a24b3fb0fd0e15dcb8eec7e6e663ae1fb8d4fc336a4dbd",
+          "line": 5,
+          "text": "W05-MEDIA-F01 replaces Marine Broth's false active agar-equivalence premise while preserving its exact historical human assertion and the already corrected commercial formula. W05-MEDIA-F02 adds the five approximate manufacturer basal-per-litre EMJH amounts with explicit basis and performance footnote; 2.555 versus 2.3/0.9 is compatible rounding. W05-MEDIA-F03 preserves the unrelated EPA noise PDF as a mismatched retrieval and removes all positive links; the two independently supported dependent-component withdrawals are unchanged."
+        },
+        {
+          "path": ".temp/w05-final-correction-v1/media/HANDOFF.md",
+          "sha256": "0c62ebb3575525ec76a24b3fb0fd0e15dcb8eec7e6e663ae1fb8d4fc336a4dbd",
+          "line": 7,
+          "text": "The 39 W02-audited newly agent-authored MappingEvidence entries now use LLM_SUGGESTION. Marine's new correction uses that type as well, with the prior human object retained historically. Two inherited active human mapping assertions and the distinct component-evidence enum remain unchanged. There are 40 changed payloads and 5 byte-identical payloads, with 45 predecessor-to-successor diffs and full ancestry. All 45 isolated YAMLs passed the native closed schema and guarded serialization/readback checks. This is primary author validation, not independent scientific approval."
+        },
+        {
+          "path": ".temp/w05-final-correction-v1/media/finding-dispositions.json",
+          "sha256": "065638c714cda45342b37da6e8ab26780e0c7ed9d0e39e8e7ea92d759243e3ad",
+          "line": 34,
+          "text": "      \"correction\": \"Replace the active assertion that agar and broth differ only by gelling agent. Preserve the complete former human assertion verbatim in withdrawal history and payload ancestry, every preexisting history event and the already corrected sixteen commercial-broth components. New correction is agent-authored LLM_SUGGESTION.\","
+        },
+        {
+          "path": ".temp/w05-final-correction-v1/media/mapping-evidence-typing.json",
+          "sha256": "076dbb873748d2014cc2e9cc1e42323b0023d91da864973d6338b018224d8380",
+          "line": 16649,
+          "text": "  \"additional_marine_f01_replacement\": \"Inherited human assertion is preserved verbatim in old history, new withdrawal history and payload ancestry; its new agent-authored correction is LLM_SUGGESTION.\","
+        }
+      ],
+      "reason": "The inspected historical enum and process history do not authenticate actual human supply. W02 explicitly distinguishes unchanged inheritance from proven human authorship. This concerns report attribution, not automatic retyping of inherited objects.",
+      "bounded_fix": "Append immutable report successor replacing human authorship characterizations with exact historical MANUAL_CURATION object / inherited mapping assertion with unverified original supplier. Keep historical objects and enums unchanged; correct equivalent active report prose wherever present.",
+      "source_bindings": [
+        {
+          "path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+          "sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/inputs/provenance-audit-w02/HANDOFF.md",
+          "sha256": "c1e269ffc8a4762a2d64e4a0681226e15b802d46bee20ee4030fd088fd2d2d5f"
+        }
+      ]
+    },
+    {
+      "finding_id": "W05-FINAL-MEDIA-REVIEW-02",
+      "priority": "P3",
+      "category": "source_locator_precision",
+      "prior_finding": "W05-MEDIA-F02",
+      "reproduction": [
+        {
+          "path": ".temp/w05-final-correction-v1/media/finding-dispositions.json",
+          "sha256": "065638c714cda45342b37da6e8ab26780e0c7ed9d0e39e8e7ea92d759243e3ad",
+          "json_pointer": "/findings/1/source_locator",
+          "value": "Manufacturer printed page301, approximate basal formula per litre and adjustment/supplementation footnote; page302,2.3 g in900 ml followed by separate100 ml enrichment."
+        }
+      ],
+      "reason": "The formula table and adjustment/supplementation footnote occur on printed page302, along with the preparation directions. Printed page301 contains identity/QC and introduction.",
+      "bounded_fix": "In immutable report successor change formula/footnote locator to printed page302; quantities, basis, primary PDF bytes and original capture timestamp remain unchanged.",
+      "source_bindings": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/media/captures/direct-7.body",
+          "sha256": "1daac1137335e8d0ccc70ccbceca036235602d37499de4bc720a990d94cd3bd0"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/media/captures/direct-7.txt",
+          "sha256": "bf3e6ce8deca8653f0e13736eb919f5aa17972c8bdae5e22abf17e7d57406f25"
+        }
+      ]
+    }
+  ]
+}

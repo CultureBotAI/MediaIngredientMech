@@ -1,0 +1,19 @@
+# Report metadata correction only
+
+Author: /root. Independently reported by /root/final_skeptical before correction. This addendum supersedes the identified report prose and locator in the sealed media v1 packet. All 45 payloads, source captures, original timestamps, inherited evidence enums and historical objects remain unchanged. The original packet and scripts remain immutable evidence.
+
+Media final scientific correction successor
+
+Primary author: Codex GPT-6 /root/media_research. Complete scope: all 60 assigned cases and all 45 original full payloads, preserving raw source labels, occurrences, original before hashes and prior captures. No maintained records, Git state, GitHub, generated surfaces or sealed comparison packets were changed.
+
+W05-MEDIA-F01 replaces Marine Broth's false active agar-equivalence premise while preserving its exact historical MANUAL_CURATION assertion (original human/process supplier not established) and the already corrected commercial formula. W05-MEDIA-F02 adds the five approximate manufacturer basal-per-litre EMJH amounts with explicit basis and performance footnote; 2.555 versus 2.3/0.9 is compatible rounding. W05-MEDIA-F03 preserves the unrelated EPA noise PDF as a mismatched retrieval and removes all positive links; the two independently supported dependent-component withdrawals are unchanged.
+
+The 39 W02-audited newly agent-authored MappingEvidence entries now use LLM_SUGGESTION. Marine's new correction uses that type as well, with the prior MANUAL_CURATION object retained historically. Two inherited active MANUAL_CURATION mapping assertions with unverified original supplier and the distinct component-evidence enum remain unchanged. There are 40 changed payloads and 5 byte-identical payloads, with 45 predecessor-to-successor diffs and full ancestry. All 45 isolated YAMLs passed the native closed schema and guarded serialization/readback checks. This is primary author validation, not independent scientific approval.
+
+Files: decisions.json, evidence.json, proposals.json; proposed/ contains every complete final YAML. primary-read-ledger.json supplies case-specific conclusions and limits. complete-source-bindings.json contains all raw cases and frozen recipe/occurrence hashes. payload-ancestry.json, mapping-evidence-typing.json, finding-dispositions.json and diffs/ document every change. validation.json and final-accounting.json state the actual validation scope. Original source bytes and timestamps are reused; no new network access is claimed.
+
+Pending coordinator obligations: obtain authorship-separated exact-byte skeptical review; run the authoritative path-based full overlay with old owners removed; retain source, role and export holds. Issue1237 requires one joint Daigo395-01681 candidate with worker03, preserving eight parts, 3.15 g listed sum versus3.2 g instruction and restricted occurrence routing. CM0643 powder remains separate from worker03's prepared broth. Marine's worker03 same-owner aliases require reconciliation, not blind application. The retained PPLO, source1941 L-15 and unselected generic-product relationships remain explicit scientific reconciliation holds.
+
+Validation-scope correction: historical media validation checked each proposal in isolation. It did not establish combined identifier-substitution closure. No corpus, native curation-review or export gate pass is claimed here; the coordinator final full-substitution gate is authoritative. Historical predecessor correction_reassessment and capture-index metadata remain input history, superseded where stated by the final reassessment and canonical evidence index.
+
+The primary lane is complete and stops here for a separately authored review.

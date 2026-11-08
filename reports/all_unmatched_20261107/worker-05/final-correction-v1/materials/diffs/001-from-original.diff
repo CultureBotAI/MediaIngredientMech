@@ -1,0 +1,128 @@
+--- original/Bacto_Peptone.yaml
++++ successor/Bacto_Peptone.yaml
+@@ -36,8 +36,11 @@
+   synonym_type: CATALOG_VARIANT
+   source: manual
+ - synonym_text: Peptone (Oxoid)
+-  synonym_type: CATALOG_VARIANT
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: 'manual; correction1193: literal Oxoid product provenance does not identify
++    the proprietary BD Bacto Peptone product. Manufacturer product families are distinct;
++    this rejects only the Bacto branded-product identity, not the validity of raw
++    Oxoid ingredient.'
+ - synonym_text: Peptone (BD--Difco)
+   synonym_type: CATALOG_VARIANT
+   source: manual
+@@ -54,8 +57,11 @@
+   synonym_type: CATALOG_VARIANT
+   source: manual
+ - synonym_text: Oxoid peptone
+-  synonym_type: CATALOG_VARIANT
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: 'manual; correction1193: literal Oxoid product provenance does not identify
++    the proprietary BD Bacto Peptone product. Manufacturer product families are distinct;
++    this rejects only the Bacto branded-product identity, not the validity of raw
++    Oxoid ingredient.'
+ - synonym_text: Bacto peptone (BD--Difco)
+   synonym_type: CATALOG_VARIANT
+   source: manual
+@@ -75,23 +81,28 @@
+   synonym_type: EXACT_SYNONYM
+   source: manual
+ - synonym_text: Neopeptone
+-  synonym_type: EXACT_SYNONYM
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: 'manual; worker05 source review: distinct substance/product; retained as
++    nonresolving provenance.'
+ - synonym_text: Neopeptone (BD-Difco)
+-  synonym_type: CATALOG_VARIANT
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: 'manual; worker05 source review: distinct substance/product; retained as
++    nonresolving provenance.'
+ - synonym_text: Neopeptone (Difco Laboratories, Detroit, Ml)
+-  synonym_type: CATALOG_VARIANT
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: 'manual; worker05 source review: distinct substance/product; retained as
++    nonresolving provenance.'
+ - synonym_text: Gelatin peptone
+   synonym_type: RELATED_SYNONYM
+   source: manual
+ - synonym_text: Universal peptone
+-  synonym_type: RELATED_SYNONYM
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: 'manual; worker05 source review: distinct substance/product; retained as
++    nonresolving provenance.'
+ - synonym_text: Universal peptone (Merck)
+-  synonym_type: CATALOG_VARIANT
+-  source: manual
++  synonym_type: REJECTED_LABEL
++  source: 'manual; worker05 source review: distinct substance/product; retained as
++    nonresolving provenance.'
+ - synonym_text: Peptone mixture
+   synonym_type: RELATED_SYNONYM
+   source: manual
+@@ -99,7 +110,7 @@
+   synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: Fish peptone (Fluka)
+-  synonym_type: CATALOG_VARIANT
++  synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: peptone
+   synonym_type: EXACT_SYNONYM
+@@ -162,6 +173,39 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: claude-fable-5-1
++- timestamp: '2026-11-08T05:17:20.168806+00:00'
++  curator: worker05/materials_research (Codex proposal)
++  action: CORRECTED
++  changes: Reject the three Neopeptone and two Universal peptone aliases as identities
++    of Bacto Peptone; retain labels and sources as provenance. Isolated proposal only.
++    Changed bytes withdraw inherited support; no role, whole-owner or export approval.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++- timestamp: '2026-11-08T05:53:56.850912+00:00'
++  curator: worker05/materials_research skeptical remediation1193
++  action: CORRECTED
++  changes: Reject the three Neopeptone and two Universal peptone aliases as identities
++    of Bacto Peptone; retain labels and sources as provenance. Also reject the two
++    Oxoid supplier-product aliases as identities of the proprietary BD Bacto Peptone
++    product; the exact Oxoid digest/catalog remains unresolved and no substitute product
++    is assigned. Exact isolated proposal. Preserve all prior source and export holds.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Reject the Fish peptone (Fluka) identity alias on Bacto Peptone because
++    the inspected Bacto 211677 specification names bovine and porcine protein, whereas
++    the rejected token explicitly names fish. Preserve the exact text, original source
++    and all history; no Fluka catalog or replacement identity is inferred. Isolated
++    proposal only; no maintained data or source membership change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: UNDEFINED_MIXTURE
+ nutritional_roles:
+ - role: PROTEIN_SOURCE
+@@ -170,3 +214,9 @@
+   - reference_type: COMPUTATIONAL_PREDICTION
+     reference_text: Inferred from curated media-role name pattern
+     curator_note: Provisional role from a curated name-pattern rule; review recommended.
++notes: 'Final W05 report-only correction: Reject the Fish peptone (Fluka) identity
++  alias on Bacto Peptone because the inspected Bacto 211677 specification names bovine
++  and porcine protein, whereas the rejected token explicitly names fish. Preserve
++  the exact text, original source and all history; no Fluka catalog or replacement
++  identity is inferred. All original source, organism, role, owner and export holds
++  remain. Independent review of these exact successor bytes is pending.'

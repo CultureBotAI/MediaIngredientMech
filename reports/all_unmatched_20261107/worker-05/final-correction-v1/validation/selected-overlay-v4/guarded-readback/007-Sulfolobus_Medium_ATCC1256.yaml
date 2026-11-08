@@ -1,0 +1,116 @@
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+identifier: kgmicrobe.ingredient:sulfolobus_medium_atcc1256
+preferred_term: Sulfolobus medium (ATCC1256)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sulfolobus_medium_atcc1256
+  ontology_label: Sulfolobus medium (ATCC1256)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/2/5/6/atcc-medium-1256.pdf
+    notes: 'Exact ATCC1256 base is specified before ATCC1942/JCM161 additions. DSMZ88
+      is a comparator, not asserted exact: Allen trace stock specifies cobalt sulfate
+      heptahydrate andHCl whereas ATCC1256 listsCoSO4 without hydration. Preserve
+      the source form. Whole supplied preparation identified independently of component
+      CURIE availability. Existing owner and exact named/numbered ontology searches
+      are captured in successor evidence.'
+notes: ' Correction1193: Exact ATCC1256 base is specified before ATCC1942/JCM161 additions.
+  DSMZ88 is a comparator, not asserted exact: Allen trace stock specifies cobalt sulfate
+  heptahydrate andHCl whereas ATCC1256 listsCoSO4 without hydration. Preserve the
+  source form. Isolated proposal only. All inherited source-case, owner and export
+  holds remain. Raw generic source labels are qualified to these source occurrences
+  and confer no global resolving synonym or release approval. No optional later supplement
+  or atmosphere is inferred as an ingredient.'
+synonyms:
+- synonym_text: ATCC Medium 1256
+  synonym_type: RAW_TEXT
+  source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/2/5/6/atcc-medium-1256.pdf;
+    source-qualified occurrence only; not universal resolution
+components:
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  source: 1.3g
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  source: 0.28g
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.25g
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  source: 0.07g
+- component_name: FeCl3·6H2O
+  reference_scope: UNMAPPED
+  source: 0.02g
+- component_name: MnCl2·4H2O
+  reference_scope: UNMAPPED
+  source: 1.8mg
+- component_name: Na2B4O7·10H2O
+  reference_scope: UNMAPPED
+  source: 4.5mg
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  source: 0.22mg
+- component_name: CuCl2·2H2O
+  reference_scope: UNMAPPED
+  source: 0.05mg
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.03mg
+- component_name: VOSO4·2H2O
+  reference_scope: UNMAPPED
+  source: 0.03mg
+- component_name: CoSO4
+  reference_scope: UNMAPPED
+  source: 0.01mg; hydration not stated
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  source: 1g
+- component_name: DI water
+  reference_scope: UNMAPPED
+  source: 1000ml
+- component_name: H2SO4 solution (10 N)
+  reference_scope: UNMAPPED
+  source: adjust to pH2
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/-/media/product-assets/documents/microbial-media-formulations/1/2/5/6/atcc-medium-1256.pdf
+    source_record: Sulfolobus medium (ATCC1256)
+    notes: 'One-level named inputs relative to cited source. Batch amounts remain
+      source notes; no unsupported final-volume normalization. Exact ATCC1256 base
+      is specified before ATCC1942/JCM161 additions. DSMZ88 is a comparator, not asserted
+      exact: Allen trace stock specifies cobalt sulfate heptahydrate andHCl whereas
+      ATCC1256 listsCoSO4 without hydration. Preserve the source form.'
+curation_history:
+- timestamp: '2026-11-08T05:55:33.429788+00:00'
+  curator: Codex worker05 /root correction1193
+  action: CREATED
+  changes: 'Correction1193: propose distinct source-qualified preparation Sulfolobus
+    medium (ATCC1256). Exact ATCC1256 base is specified before ATCC1942/JCM161 additions.
+    DSMZ88 is a comparator, not asserted exact: Allen trace stock specifies cobalt
+    sulfate heptahydrate andHCl whereas ATCC1256 listsCoSO4 without hydration. Preserve
+    the source form. Independent correction: Confirm retained source-qualified aliases
+    against exact preparation scope. Isolated proposal only; all source and release
+    holds remain.'
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. Report-only candidate; separate
+    final scientific review and coordinator integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

@@ -1,0 +1,11 @@
+The materials primary successor is ready for independent review: 61 cases, 39 complete guarded YAML proposals and 451 evidence records. 53 cases have proposals; eight retain specific product-selection, alternative-input or existing-owner dispositions.
+
+The author is Codex `/root/materials_research` (gpt-6), the materials primary author. This is not independent review. All seven MAT findings have explicit proposed dispositions; MAT005 metadata classification and MAT006 sucrose linking are optional, nonblocking improvements. The 27 mapping-evidence audit objects have claim-specific dispositions: Neopeptone's narrow lookup uses `DATABASE_MATCH`; the agent judgments use `LLM_SUGGESTION`, while inherited human/process and component evidence types remain unchanged.
+
+The fresh source conclusions are in `primary-conclusions.json`, the complete-payload assessments in `payload-primary-assessments.json`, and actual read scopes and hashes in `scientific-read-ledger.json`. `payload-ancestry.json`, `before/`, `predecessor/` and `diffs/` preserve the original guards and history. Nine complete payloads are byte-identical to their published predecessors; the other 30 carry the specified corrections or provenance method updates.
+
+`integration-dependencies.json` preserves the 18 historical Peptone component dependencies and distinguishes the already changed Marine reference. A structurally resolving Bacto target does not prove that any particular source part denotes Bacto. No component references were retargeted. The 37 coordinator unions remain pending independent review; overlapping exact candidates and their origins are separate from W05 case ownership. Only the supported bounded Phytone/Soy and Catalase conclusions are reused.
+
+All 39 YAMLs passed the unchanged native guarded writer. The in-memory published 138-proposal overlay with these 39 replacements passed component partonomy. `validation/integrity-receipt.json` records 1309 integrity checks with no errors and binds the final core bytes. These checks do not approve inherited roles, unresolved source identity, whole owners or downstream release.
+
+No maintained data, exports, gates, code, old reports, Git state or GitHub objects were changed. Independent review of all 61 cases and all 39 entire payloads is the next step. Final file hashes are in `HANDOFF.json` and `MANIFEST.json`.

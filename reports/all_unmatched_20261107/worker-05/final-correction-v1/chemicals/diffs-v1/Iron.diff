@@ -1,0 +1,93 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/proposed/Iron.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Iron.yaml
+@@ -8,8 +8,9 @@
+   evidence:
+   - evidence_type: CURATOR_JUDGMENT
+     source: MIM curation (#631)
+-    notes: CultureMech supplies Iron as a weighable grams-per-liter element, and MIM already curated Iron
+-      powder and Iron metal source labels to ChEBI iron(0), not to the ChEBI iron atom.
++    notes: CultureMech supplies Iron as a weighable grams-per-liter element, and MIM
++      already curated Iron powder and Iron metal source labels to ChEBI iron(0), not
++      to the ChEBI iron atom.
+ synonyms:
+ - synonym_text: 26Fe
+   synonym_type: REJECTED_LABEL
+@@ -52,7 +53,7 @@
+   source: MERGED_FROM_CHEBI:82664
+ - synonym_text: Iron (powder, 20 - 60 mesh, Nacalai)
+   synonym_type: CATALOG_VARIANT
+-  source: all_unmatched_20261107_worker05_primary_source_review
++  source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=673
+ mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 7
+@@ -73,8 +74,8 @@
+ - timestamp: '2026-04-18T00:00:00+00:00'
+   curator: cbclaw_kg_microbe_sweep
+   action: ADDED_SYNONYMS
+-  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 26Fe, Eisen, fer, ferrum, hierro, ... (1
+-    more)'
++  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 26Fe, Eisen, fer, ferrum,
++    hierro, ... (1 more)'
+   new_status: MAPPED
+   llm_assisted: true
+ - timestamp: '2026-05-01T07:35:34.080015+00:00'
+@@ -95,31 +96,45 @@
+ - timestamp: '2026-06-09T05:23:46.778142+00:00'
+   curator: correct_stale_ontology_labels.py
+   action: CORRECTED
+-  changes: 'ontology_label ''Iron'' -> ''iron atom'': synced to canonical CHEBI label (preferred_term
+-    ''Iron'' unchanged).'
++  changes: 'ontology_label ''Iron'' -> ''iron atom'': synced to canonical CHEBI label
++    (preferred_term ''Iron'' unchanged).'
+ - timestamp: '2026-08-27T03:16:39.519019+00:00'
+   curator: refresh_occurrence_statistics
+   action: CORRECTED
+-  changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived from distinct CultureMech
+-    recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453,
+-    whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+-    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
++  changes: 'occurrence_statistics 1/1 -> 2/2 (media_count/total_occurrences), derived
++    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
++    came from the importer retired in #453, whose media_count counted a list truncated
++    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
++    rows=194137 distinct_recipes=15257]'
+ - timestamp: '2026-09-11T23:46:36.251078+00:00'
+   curator: fix_element_atom_overclaims
+   action: MERGED_FROM_MAPPED_RECORD
+-  changes: identifier CHEBI:18248 -> CHEBI:82664; retargeted from ChEBI iron atom to iron(0), absorbed
+-    the Iron powder record, moved 2 atom memberships onto the 5 existing iron(0) memberships, carried
+-    6 iron(0) label(s), and retained 6 atom-only synonym(s) as REJECTED_LABEL (#631).
++  changes: identifier CHEBI:18248 -> CHEBI:82664; retargeted from ChEBI iron atom
++    to iron(0), absorbed the Iron powder record, moved 2 atom memberships onto the
++    5 existing iron(0) memberships, carried 6 iron(0) label(s), and retained 6 atom-only
++    synonym(s) as REJECTED_LABEL (#631).
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-11-08T05:19:27.509502+00:00'
+   curator: Codex worker05 source review proposal
+   action: ANNOTATED
+-  changes: 'Add source-supported ''Iron (powder, 20 - 60 mesh, Nacalai)'' as a bounded reagent alias;
+-    preserve identity,hydration,counterion,roles,status and occurrence statistics. Concentration and source-nesting
+-    findings remain separate. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/. Proposal
+-    only; inherited source/SSSOM holds remain and publication requires coordinator integration review.'
++  changes: 'Add source-supported ''Iron (powder, 20 - 60 mesh, Nacalai)'' as a bounded
++    reagent alias; preserve identity,hydration,counterion,roles,status and occurrence
++    statistics. Concentration and source-nesting findings remain separate. Evidence
++    bundle: reports/all_unmatched_20261107/worker-05/chemicals/. Proposal only; inherited
++    source/SSSOM holds remain and publication requires coordinator integration review.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Replace campaign-only provenance on the newly proposed source aliases with
++    their exact primary recipe or supplier locators; retain the complete labels, types
++    and historical authorship. Report-only candidate; separate final scientific review
++    and coordinator integration remain required.
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true

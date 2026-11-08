@@ -1,0 +1,49 @@
+--- published/Hipolypepton.yaml
++++ successor/Hipolypepton.yaml
+@@ -18,6 +18,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:hipolypepton
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:hipolypepton
+@@ -25,7 +36,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://labchem-wako.fujifilm.com/us/catalog/pdf/catalog_0005.pdf
+     notes: Curate unqualified Hipolypepton as the Nihon Pharmaceutical casein enzymatic-digest
+       product distributed by Wako. The manufacturer catalog distinguishes soybean
+@@ -39,7 +50,7 @@
+   form: powder
+   notes: Manufacturer catalog identifies casein-derived enzymatically degraded dried
+     purified powder; distinct S/N/NS soy variants excluded.
+-notes: Curate unqualified Hipolypepton as the Nihon Pharmaceutical casein enzymatic-digest
++notes: 'Curate unqualified Hipolypepton as the Nihon Pharmaceutical casein enzymatic-digest
+   product distributed by Wako. The manufacturer catalog distinguishes soybean Hipolypepton
+   S/N/NS variants and identifies unqualified Hipolypepton as casein-derived. The recipe
+   alternative to Trypticase remains a choice, not an exact compound-label synonym.
+@@ -49,3 +60,10 @@
+   identity. Occurrence statistics count current exact proposed-label matches in the
+   inspected CultureMech occurrence table; no shared-identifier expansion or newly
+   invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

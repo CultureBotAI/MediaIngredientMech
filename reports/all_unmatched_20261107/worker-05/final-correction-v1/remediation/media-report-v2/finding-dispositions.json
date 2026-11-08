@@ -1,0 +1,163 @@
+{
+  "author": "Codex GPT-6 /root/media_research",
+  "at": "2026-11-08T07:41:06.372749+00:00",
+  "findings": [
+    {
+      "finding_id": "W05-MEDIA-F01",
+      "status": "corrected_in_isolated_successor_pending_independent_review",
+      "filed_before_correction": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1208#issuecomment-6718700948",
+      "case_indices": [
+        17,
+        136
+      ],
+      "payloads": [
+        {
+          "proposal_id": "M1193-P-MARINE2216",
+          "owner_path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+          "before_sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+          "predecessor_after": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/proposed/Marine_Broth_2216.yaml",
+            "sha256": "b7c5a00a78f1c6120e52ac3d88eb16833be86df317680d593e53f21047418abd"
+          },
+          "successor_after": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/Marine_Broth_2216.yaml",
+            "sha256": "0629311e2cd70175064d910a739ce425c05a6eece9fc3493738e06d67101ed63"
+          }
+        }
+      ],
+      "evidence_refs": [
+        "M1193-DIRECT-15"
+      ],
+      "source_locator": "Manufacturer manual printed pages351-352, separately headed agar and broth formula tables.",
+      "correction": "Replace the active assertion that agar and broth differ only by gelling agent. Preserve the complete former MANUAL_CURATION assertion (original human/process supplier not established) verbatim in withdrawal history and payload ancestry, every preexisting history event and the already corrected sixteen commercial-broth components. New correction is agent-authored LLM_SUGGESTION.",
+      "limitations": [
+        "Commercial broth is not the ATCC agar-minus-agar scratch recipe.",
+        "Worker03 same-owner alias proposal still requires coordinator reconciliation against original before bytes.",
+        "No whole-owner, role or release approval is transferred."
+      ]
+    },
+    {
+      "finding_id": "W05-MEDIA-F02",
+      "status": "corrected_in_isolated_successor_pending_independent_review",
+      "filed_before_correction": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718699859",
+      "case_indices": [
+        131
+      ],
+      "payloads": [
+        {
+          "proposal_id": "M1193-P-LEPTOSPIRA_MEDIUM_BASE_EMJH",
+          "owner_path": "data/ingredients/unmapped/Leptospira_Medium_Base_EMJH.yaml",
+          "before_sha256": "a5959d7c2363434932c1fe1bf1d839428ba1a3150d2f73fe0cff3a81d03de358",
+          "predecessor_after": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/proposed/Leptospira_Medium_Base_EMJH.yaml",
+            "sha256": "fee5a3a385b7037dbe8a5943ca515c93fe60f42e071d66c6e0f530151727b355"
+          },
+          "successor_after": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/Leptospira_Medium_Base_EMJH.yaml",
+            "sha256": "32050ee990b2efc971f4ce14048bb68d8ed784383763a547ac2740218dcfc26a"
+          }
+        }
+      ],
+      "evidence_refs": [
+        "M1193-DIRECT-7",
+        "M1193-WEB-web-more-2-131"
+      ],
+      "source_locator": "Manufacturer printed page302, approximate basal formula per litre and adjustment/supplementation footnote; page302,2.3 g in900 ml followed by separate100 ml enrichment.",
+      "calculation": {
+        "listed_g_per_l": 2.5549999999999997,
+        "direction_g_divided_by_l": 2.5555555555555554,
+        "conclusion": "Agreement at the precision of the rounded directions; no contradictory basis."
+      },
+      "correction": "Add all five manufacturer approximate basal amounts with explicit G_PER_L_AT_STANDARD_BASAL_RECONSTITUTION or MG_PER_L_AT_STANDARD_BASAL_RECONSTITUTION units. Mark completeness only relative to that five-part cited table. Replace active false-deferral text; the predecessor assertion and historical event remain preserved.",
+      "limitations": [
+        "No powder concentration or final enriched-medium concentration.",
+        "No phosphate hydrate, thiamine salt, molecular grounding or exact lot composition inferred.",
+        "The manufacturer may adjust or supplement to meet performance criteria.",
+        "Enrichment, reconstitution water and receiving medium remain outside the dry base."
+      ]
+    },
+    {
+      "finding_id": "W05-MEDIA-F03",
+      "status": "corrected_in_isolated_successor_pending_independent_review",
+      "filed_before_correction": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6718699859",
+      "case_indices": [
+        181
+      ],
+      "payloads": [
+        {
+          "proposal_id": "M1193-P-FOLLOWON-MODIFIED_COOKED_MEAT_MEDIUM",
+          "owner_path": "data/ingredients/mapped/Modified_Cooked_Meat_Medium.yaml",
+          "before_sha256": "85ab9042f8e67c7ec43210a485b7a9f872d43fc769dc315887fd5d8c1cdacf97",
+          "predecessor_after": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/proposed/Modified_Cooked_Meat_Medium.yaml",
+            "sha256": "01c6b55f350322a9a3ebb79c89c3f12951354e15982b22e437ecf5ee17a506ee"
+          },
+          "successor_after": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/Modified_Cooked_Meat_Medium.yaml",
+            "sha256": "01c6b55f350322a9a3ebb79c89c3f12951354e15982b22e437ecf5ee17a506ee"
+          }
+        },
+        {
+          "proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+          "owner_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+          "before_sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+          "predecessor_after": {
+            "root": "artifact",
+            "path": "correction-1193-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+            "sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99"
+          },
+          "successor_after": {
+            "root": "artifact",
+            "path": "final-correction-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+            "sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99"
+          }
+        }
+      ],
+      "evidence_refs": [
+        "M1193-FOLLOWON-153",
+        "M1193-FOLLOWON-150",
+        "M1193-FOLLOWON-151",
+        "M1193-FOLLOWON-152",
+        "M1193-FOLLOWON-154",
+        "M1193-FOLLOWON-155"
+      ],
+      "mismatched_capture": {
+        "evidence_id": "M1193-FOLLOWON-153",
+        "kind": "unsuccessful_search",
+        "capture": {
+          "root": "artifact",
+          "path": "correction-1193-v1/media/captures/direct-153.body",
+          "sha256": "6726a59ca71c098f21b9a763f1eeda8de7ee13939dd767ebbd24400de8133af7"
+        },
+        "url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b2804c3ac5.pdf",
+        "locator": "Title and document control pages: Environmental Noise Compliance Monitoring, Allergan Pharmaceuticals Ireland, Westport, IPPC licence P0126-02; report DC1093-01, 21 June 2012, David Cawley.",
+        "supports_or_contradicts": "Mismatched retrieval of an unrelated 124-page environmental noise report. This is not USDA1998 chapter14 and provides no positive microbial-medium or recipe evidence. The exact original body, URL, access timestamp and SHA256 are retained.",
+        "case_ids": [
+          "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a"
+        ],
+        "accessed_at": "2026-11-08T06:22:02.502006+00:00",
+        "positive_scientific_use": false
+      },
+      "correction": "Reclassify the exact unrelated EPA environmental-noise PDF as unsuccessful_search/mismatched retrieval and remove its ID from all active positive decision/proposal evidence links. Preserve original bytes, timestamp, URL, hash and prior faulty metadata in ancestry. Both dependent cooked-meat payloads remain byte-identical because the independently justified withdrawal of unsupported FoodOn grounding survives.",
+      "limitations": [
+        "No USDA1998 or chapter14 content was obtained from this URL.",
+        "FoodOn skeletal cooked-meat definition and commercial mixture comparisons do not establish a historical ingredient product.",
+        "Literal dependent cooked-meat parts remain named UNMAPPED; no automatic Oxoid or EXTERNAL_TERM substitution."
+      ]
+    }
+  ],
+  "typing_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+  "typing_receipt": {
+    "path": "final-correction-v1/media/mapping-evidence-typing.json",
+    "sha256": "076dbb873748d2014cc2e9cc1e42323b0023d91da864973d6338b018224d8380"
+  },
+  "additional_unfiled_scientific_fixes": [],
+  "historical_fields": "The retained correction_reassessment fields in decisions and the complete predecessor capture-index entries are historical input records. final_correction_reassessment and canonical evidence.json govern this successor; they do not reactivate the superseded EMJH deferral or EPA attribution.",
+  "independent_review": "pending"
+}

@@ -1,0 +1,39 @@
+--- original/Cows_Milk.yaml
++++ successor/Cows_Milk.yaml
+@@ -34,8 +34,26 @@
+     came from the importer retired in #453, whose media_count counted a list truncated
+     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+     rows=194137 distinct_recipes=15257]'
++- timestamp: '2026-11-08T05:47:55.799304+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Preserve whole-fat liquid cow milk as supplied-form context of the existing
++    cow-milk owner, keeping the separately held generic Milk and skimmed products
++    distinct. Source quantities are ml; no volume-to-mass conversion or processing
++    claim is added. Exact isolated payload; no maintained write. All prior scientific/publication
++    holds preserved.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: Imported from mim-queue (source_id=mediadive.ingredient:1659); no CAS-RN or
+-  CHEBI/NCIT match. Curator review needed.
++  CHEBI/NCIT match. Curator review needed. Preserve whole-fat liquid cow milk as supplied-form
++  context of the existing cow-milk owner, keeping the separately held generic Milk
++  and skimmed products distinct. Source quantities are ml; no volume-to-mass conversion
++  or processing claim is added. Source-qualified proposal under issue1193. No ingredient
++  roles, assay outcomes, complete-owner support or release admission are approved.
++  Preserve all frozen source and owner holds; component uncertainty is stated separately
++  from whole-material identity.
+ ontology_mapping:
+   ontology_id: FOODON:02020891
+   ontology_label: cow milk
+@@ -46,3 +64,8 @@
+     source: FOODON via OLS search
+     notes: Auto-upgraded from 'UNMAPPED_0368'; match=fuzzy-top
+ ingredient_type: UNDEFINED_MIXTURE
++supplied_form:
++- name: Whole-fat cow's milk
++  form: whole-fat liquid
++  notes: JCM153/TOGO M144, NBRC1390/TOGO M2080 and MediaDive ingredient1659 identify
++    whole-fat milk; pasteurization/homogenization is unspecified.

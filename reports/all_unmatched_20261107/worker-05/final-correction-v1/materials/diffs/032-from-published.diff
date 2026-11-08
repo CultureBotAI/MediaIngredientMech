@@ -1,0 +1,101 @@
+--- published/Soy_Peptone.yaml
++++ successor/Soy_Peptone.yaml
+@@ -6,7 +6,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://mediadive.dsmz.de/rest/ingredient/75
+     notes: Soy-derived complex digest material; FOODON03315720 includes other vegetable
+       hydrolysates and is not its identity.
+@@ -21,22 +21,22 @@
+   synonym_type: EXACT_SYNONYM
+   source: manual
+ - synonym_text: Phytone peptone
+-  synonym_type: EXACT_SYNONYM
++  synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: Phytone peptone (BD-BBL)
+-  synonym_type: CATALOG_VARIANT
++  synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: Soytone (BD-Difco) or Phytone peptone (BD-BBL)
+-  synonym_type: CATALOG_VARIANT
++  synonym_type: REJECTED_LABEL
+   source: manual
+ - synonym_text: 'Properties: Undefined component'
+-  synonym_type: RAW_TEXT
++  synonym_type: REJECTED_LABEL
+   source: CultureMech
+ - synonym_text: Soytone
+-  synonym_type: EXACT_SYNONYM
++  synonym_type: REJECTED_LABEL
+   source: kg_microbe
+ - synonym_text: Bacto Soytone
+-  synonym_type: CATALOG_VARIANT
++  synonym_type: REJECTED_LABEL
+   source: merge_from_CHEBI:8150
+ - synonym_text: Peptic digest of soybean meal
+   synonym_type: EXACT_SYNONYM
+@@ -116,6 +116,27 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Retire five branded or alternative identity aliases on the
++    generic soy-digest owner. The three Phytone-bearing dispositions reuse the bounded
++    coordinator conclusion in issue 1212 comment 6718503130. Separate review of the
++    original kg_microbe Soytone token, Bacto Soytone merge history and manufacturer
++    guide pages 13, 33 and 92 confirms distinct named products and processing; generic
++    soy digest is not their exact product identity. Preserve raw texts, original sources,
++    merge history, occurrence totals, all quarantine holds and the Bacto Soytone tombstone.
++    This does not merge or select the competing W08/W10 owner deltas. Optionally classify
++    the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy
++    already excludes these texts; this is provenance classification only, with no
++    resolver change, filter change or release blocker. Isolated proposal only; no
++    maintained data or source membership change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: UNDEFINED_MIXTURE
+ merged:
+ - CHEBI:8150
+@@ -133,7 +154,10 @@
+     curator_note: Kwon et al. evaluated Soytone as a complex nitrogen source for Lactobacillus
+       rhamnosus lactic acid fermentation, directly supporting soy peptone as a peptide/proteinaceous
+       nutrient source.
+-notes: Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein
++notes: 'Previous published proposal scope, preserved as historical provenance and
++  superseded where corrected below:
++
++  Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein
+   identifier to a local material identity. Preserve source75 unspecified soy digest
+   and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone
+   or Phytone formula to it. Existing branded alias claims require separate complete-owner
+@@ -141,3 +165,20 @@
+   roles, assay outcomes, complete-owner support or release admission are approved.
+   Preserve all frozen source and owner holds; component uncertainty is stated separately
+   from whole-material identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. Retire five branded or alternative
++  identity aliases on the generic soy-digest owner. The three Phytone-bearing dispositions
++  reuse the bounded coordinator conclusion in issue 1212 comment 6718503130. Separate
++  review of the original kg_microbe Soytone token, Bacto Soytone merge history and
++  manufacturer guide pages 13, 33 and 92 confirms distinct named products and processing;
++  generic soy digest is not their exact product identity. Preserve raw texts, original
++  sources, merge history, occurrence totals, all quarantine holds and the Bacto Soytone
++  tombstone. This does not merge or select the competing W08/W10 owner deltas. Optionally
++  classify the retained Properties metadata tokens as REJECTED_LABEL. Native synonym
++  policy already excludes these texts; this is provenance classification only, with
++  no resolver change, filter change or release blocker. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

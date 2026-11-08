@@ -1,0 +1,49 @@
+--- published/Oxoid_Special_Peptone.yaml
++++ successor/Oxoid_Special_Peptone.yaml
+@@ -21,6 +21,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:oxoid_special_peptone
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:oxoid_special_peptone
+@@ -28,7 +39,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.thermofisher.com/order/catalog/product/LP0072B
+     notes: Curate Oxoid Special Peptone as a manufacturer-defined mixture of peptones
+       within the TOGO M2224 Columbia formulation. The manufacturer LP0072 page supports
+@@ -40,7 +51,7 @@
+   supplier: Oxoid / Thermo Scientific
+   catalog_number: LP0072B
+   notes: Orderable current product; source historic packaging not inferred.
+-notes: Curate Oxoid Special Peptone as a manufacturer-defined mixture of peptones
++notes: 'Curate Oxoid Special Peptone as a manufacturer-defined mixture of peptones
+   within the TOGO M2224 Columbia formulation. The manufacturer LP0072 page supports
+   the named product family, but the historical source does not assign a specific package
+   or disclose blend proportions. Do not route the manufacturer-unspecified DSMZ715
+@@ -50,3 +61,10 @@
+   identity. Occurrence statistics count current exact proposed-label matches in the
+   inspected CultureMech occurrence table; no shared-identifier expansion or newly
+   invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

@@ -1,0 +1,42 @@
+--- published/Oxoid_Peptonised_Milk.yaml
++++ successor/Oxoid_Peptonised_Milk.yaml
+@@ -20,6 +20,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:oxoid_peptonised_milk
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:oxoid_peptonised_milk
+@@ -27,7 +38,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.thermofisher.com/order/catalog/product/LP0032J
+     notes: 'Curate the distinct Oxoid peptonised-milk product: a pancreatic digest
+       of skimmed milk, supplied as powder. Official LP0032J is a documented orderable
+@@ -48,4 +59,11 @@
+   are approved. Preserve all frozen source and owner holds; component uncertainty
+   is stated separately from whole-material identity. Occurrence statistics count current
+   exact proposed-label matches in the inspected CultureMech occurrence table; no shared-identifier
+-  expansion or newly invented recipe membership.'
++  expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

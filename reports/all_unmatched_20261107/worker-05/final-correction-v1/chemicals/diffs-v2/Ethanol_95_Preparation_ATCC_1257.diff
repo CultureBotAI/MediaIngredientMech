@@ -1,0 +1,31 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Ethanol_95_Preparation_ATCC_1257.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_ATCC_1257.yaml
+@@ -34,7 +34,13 @@
+   all 17 precise occurrence routes and the original source lineages. CHEBI:16236 grounds
+   the named ethanol component only; NCIT:C185110 is not approved because it specifically
+   requires aqueous 95% by volume. No numerical component percentage, water balance
+-  or whole-stock molecular identity is inferred. All inherited holds remain.'
++  or whole-stock molecular identity is inferred. All inherited holds remain. Source-specific
++  context: ATCC 1257 ETSA, represented by TOGO M2568, lists 100 ml of nominal 95%
++  ethanol in the hemin receiving stock and 50 ml in the menadione receiving stock.
++  The separately added 100 ml and 50 ml water belong to those receiving stocks, not
++  to the unidentified balance of the supplied ethanol. Preserve the one frozen occurrence
++  and its two nested source uses; the flattened 150 g/L value is not a measured ethanol
++  concentration.'
+ components:
+ - component_name: Ethanol
+   component_id: CHEBI:16236
+@@ -105,3 +111,13 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:48:36.679445+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Preserve the exact source-specific receiving-stock inputs and occurrence
++    lineage alongside the conditional family assessment. This adds no percentage-basis,
++    balance, distinctness or winning-owner inference.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6

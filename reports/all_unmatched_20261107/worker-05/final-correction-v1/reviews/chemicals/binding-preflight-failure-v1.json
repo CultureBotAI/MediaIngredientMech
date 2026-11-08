@@ -1,0 +1,13 @@
+{
+  "reviewer": "/root/materials_research",
+  "at": "2026-11-08T08:18:15.230438+00:00",
+  "status": "failed_before_final_review_output",
+  "script": {
+    "path": ".temp/w05-final-correction-v1/review-chemicals/revisions/build_review_v2-before-binding-index.py",
+    "sha256": "432c508f692e0c7f90545ca3856f27b522c5f56230171ec062405eb46032445b"
+  },
+  "failed_assertion": "S.case_reviews[i].decision_object_sha256 == compact canonical hash of selected D[i], i=10",
+  "actual_cause": "The two supplement embedded hashes use default JSON separators. Three inherited source-conclusion hashes still bind pre-enum-repair decisions. Author and root have independently reported these immutable binding limitations and supplied a current uniform 67-case index. No scientific source or payload defect is implied.",
+  "bounded_next_check": "Validate every index current hash directly against selected D, and each embedded hash against its exact stated historical or serialization basis. Keep mandatory final review case hashes uniform and current.",
+  "outputs_written_before_failure": []
+}

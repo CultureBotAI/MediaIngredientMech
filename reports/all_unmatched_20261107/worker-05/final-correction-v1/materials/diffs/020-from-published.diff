@@ -1,0 +1,49 @@
+--- published/Proteose_Peptone_No_3.yaml
++++ successor/Proteose_Peptone_No_3.yaml
+@@ -21,6 +21,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:proteose_peptone_no_3
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:proteose_peptone_no_3
+@@ -28,7 +39,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.thermofisher.com/order/catalog/product/211693
+     notes: Add the positively identified numbered Proteose Peptone No.3 product, alongside
+       the retained rejection of No.3 aliases on unnumbered Proteose_Peptone. Official
+@@ -39,7 +50,7 @@
+   supplier: BD Difco / Bacto
+   catalog_number: '211693'
+   notes: Manufacturer orderable form; source historical pack not specified.
+-notes: Add the positively identified numbered Proteose Peptone No.3 product, alongside
++notes: 'Add the positively identified numbered Proteose Peptone No.3 product, alongside
+   the retained rejection of No.3 aliases on unnumbered Proteose_Peptone. Official
+   manufacturer documentation distinguishes No.3, No.2 and unnumbered preparations.
+   The product is an enzymatic protein digest, not the generic peptone molecule. Source-qualified
+@@ -48,3 +59,10 @@
+   uncertainty is stated separately from whole-material identity. Occurrence statistics
+   count current exact proposed-label matches in the inspected CultureMech occurrence
+   table; no shared-identifier expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

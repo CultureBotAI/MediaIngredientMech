@@ -1,0 +1,36 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v2/Tellurium_Dioxide.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml
+@@ -35,12 +35,13 @@
+   provenance rather than universal dioxide alias. Concentrations at both stock levels
+   remain source-scoped; no downstream export correction is implied. W05-FINAL-CHEM-NEW-01,
+   reported to the coordinator before this isolated fix: exact CAS 7446-07-3 tellurium
+-  dioxide has the broader tellurium molecular entity parent CHEBI:33305. Separate
+-  coordinator issue routing remains pending; the Tris issue does not cover this owner.
+-  Set NARROW_MATCH so the pinned native builder emits skos:broadMatch for the parent
+-  instead of the previous closeMatch. Preserve the exact CAS display and all source/identity
+-  holds. The complete native before/after projection is separately recorded; no global
+-  grade replacement is implied.'
++  dioxide has the broader tellurium molecular entity parent CHEBI:33305. Coordinator
++  issue routing is now filed at https://github.com/CultureBotAI/MediaIngredientMech/issues/1240;
++  the separate Tris issue #1238 does not cover this owner. Set NARROW_MATCH so the
++  pinned native builder emits skos:broadMatch for the parent instead of the previous
++  closeMatch. Preserve the exact CAS display and all source/identity holds. The complete
++  native before/after projection is separately recorded; no global grade replacement
++  is implied.'
+ curation_history:
+ - timestamp: '2026-11-08T05:49:52.389819+00:00'
+   curator: Codex worker05 chemical correction1193
+@@ -72,3 +73,13 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:53:34.674470+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: 'Update current issue-routing note after reading filed #1240. Preserve
++    the original before-fix referral and prior history; no scientific, component,
++    identity or grade change.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6

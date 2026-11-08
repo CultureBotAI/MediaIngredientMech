@@ -1,0 +1,60 @@
+{
+  "predecessor": "new-findings-v1.json",
+  "additional_findings": [
+    {
+      "finding_id": "W05-FINAL-ASSEMBLY-REVIEW-002",
+      "reviewer": "/root/final_skeptical",
+      "at": "2026-11-08T08:18:53.282179+00:00",
+      "status": "reported_to_root_before_fix",
+      "severity": "minor",
+      "deduplication": "Bounded report-interpretation extension of existing thiamine-dihydrate CAS cleanup W05-CR-F06, not a new chemical identity finding.",
+      "scope": "Unpublished final README native-projection description.",
+      "source": {
+        "path": ".temp/w05-final-correction-v1/control/final/write_public_readme.py",
+        "sha256": "93548a9f74137d3c8f447cd11e3a3629879e174e0e731fbea4f94a23230cc4f0",
+        "locator": "remove only the false thiamine-dihydrate CAS row"
+      },
+      "reproduction": {
+        "path": ".temp/w05-final-correction-v1/validation/native-row-replay-v1.json",
+        "sha256": "1693a4dbf3359561762bfad63f6afb89ae2715d1850364e1c9fe137cffa67d2b",
+        "proposal_id": "FINAL-CHEM-P-thiamine-dihydrate-cas",
+        "before_rows": [
+          {
+            "subject_id": "MIM:Thiamine-hcl_X_2_H2o",
+            "subject_label": "Thiamine-HCl x 2 H2O",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "CHEBI:132751",
+            "object_label": "thiamine hydrochloride dihydrate",
+            "object_source": "obo:chebi.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill",
+            "mapping_date": "2026-08-30",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "Thiamine-HCl\u00b72H2O|thiamine chloride hydrochloride dihydrate|thiamine dichloride dihydrate|thiamine(2+) dichloride dihydrate|3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-hydroxyethyl)-4-methyl-1,3-thiazol-3-ium chloride hydrochloride--water (1/2)|3-[(4-azaniumyl-2-methylpyrimidin-5-yl)methyl]-5-(2-hydroxyethyl)-4-methyl-1,3-thiazol-3-ium chloride--water (1/2)|Thiamine\u30fbHCl\u30fb2H2O|Thiamine\u00b7HCl\u00b72H2O|CAS:13465-05-9",
+            "validation_method": ""
+          }
+        ],
+        "after_rows": [
+          {
+            "subject_id": "MIM:Thiamine-hcl_X_2_H2o",
+            "subject_label": "Thiamine-HCl x 2 H2O",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "CHEBI:132751",
+            "object_label": "thiamine hydrochloride dihydrate",
+            "object_source": "obo:chebi.owl",
+            "mapping_justification": "semapv:LexicalMatching",
+            "source": "MIM:CultureMech|MIM:https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/13465-05-9/property/MolecularFormula,InChI/JSON|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "",
+            "other": "Thiamine-HCl\u00b72H2O|thiamine chloride hydrochloride dihydrate|thiamine dichloride dihydrate|thiamine(2+) dichloride dihydrate|3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-hydroxyethyl)-4-methyl-1,3-thiazol-3-ium chloride hydrochloride--water (1/2)|3-[(4-azaniumyl-2-methylpyrimidin-5-yl)methyl]-5-(2-hydroxyethyl)-4-methyl-1,3-thiazol-3-ium chloride--water (1/2)|Thiamine\u30fbHCl\u30fb2H2O|Thiamine\u00b7HCl\u00b72H2O",
+            "validation_method": ""
+          }
+        ]
+      },
+      "observed": "The README says the native projection removes a false CAS row. The actual complete isolated before and after each contain one exact CHEBI:132751 row. The false CAS is removed from the other token payload, with provenance/date changes; it was not a standalone projected CAS identity row.",
+      "bounded_fix": "Describe withdrawal of the false CAS property/alias and its projected other token while retaining the exact CHEBI identity row. Do not claim a removed standalone CAS row or modify any source/payload/projection."
+    }
+  ]
+}

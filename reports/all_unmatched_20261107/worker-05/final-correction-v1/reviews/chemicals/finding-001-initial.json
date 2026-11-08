@@ -1,0 +1,31 @@
+{
+  "finding_id": "W05-FINAL-SKEPTIC-CHEM-001",
+  "recorded_at": "2026-11-08T07:55:19.208505+00:00",
+  "reviewer": "/root/materials_research",
+  "status": "open",
+  "severity": "minor",
+  "scope": "Report scientific conclusion; selected payloads are correct on this point.",
+  "targets": [
+    "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+    "R1193-P-bottom-628",
+    "R1193-P-bottom-629"
+  ],
+  "input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/primary-case-conclusions-v1.json",
+    "sha256": "e85905051cc8614d894b3baeba8ea8646d204722b1f621cb486e93131c67c323",
+    "locator": "case_reviews[0].assessment"
+  },
+  "observed": "The assessment says the preparations are FeS/agarose versus zero-valent iron/agarose. JCM 629 instead explicitly reuses Medium 628 with artificial saltwater replacing Modified Wolfe mineral solution. Both bottom preparations contain the washed FeS preparation.",
+  "evidence": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/read-text/ROOT-jcm-628.txt",
+      "sha256": "7cd452a96e76ee4375fb42f73d882a044ba92fef4d14ff1426193eb70c84076b"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/read-text/ROOT-jcm-629.txt",
+      "sha256": "861f590a9c267933f3879baa1160f52a28deb4283025d2f4aa73f1f6081b967c"
+    }
+  ],
+  "bounded_fix": "Preserve this initial finding and the original report. Issue a successor primary-conclusions file correcting the distinguishing fact to Modified Wolfe mineral solution versus artificial saltwater, with FeS and agarose in both. Do not change either correct selected payload.",
+  "review_limit": "This finding does not yet disposition the remaining cases or payloads."
+}

@@ -1,0 +1,44 @@
+--- published/Sea_Salts.yaml
++++ successor/Sea_Salts.yaml
+@@ -83,6 +83,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22
+   CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,
+   DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available;
+@@ -99,14 +110,21 @@
+   universalSigma matches. Source-qualified proposal under issue1193. No ingredient
+   roles, assay outcomes, complete-owner support or release admission are approved.
+   Preserve all frozen source and owner holds; component uncertainty is stated separately
+-  from whole-material identity.'
++  from whole-material identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:sea_salts
+   ontology_label: Sea salts
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://mediadive.dsmz.de/rest/ingredient/2367
+     notes: Source carries Sea salts with SIGMA attribute; local identity preserves
+       the supplier-scoped preparation without an exact or close ontology claim. Catalog

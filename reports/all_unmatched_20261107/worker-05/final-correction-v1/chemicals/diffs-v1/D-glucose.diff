@@ -1,0 +1,172 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/chemicals/proposed/D-glucose.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/D-glucose.yaml
+@@ -13,23 +13,28 @@
+     source: PubMed search ('D-Glucose')
+     pmid: '33762358'
+     supports: SUPPORT
+-    snippet: Clinical localization of primary tumors and sites of metastasis by PET is based on the enhanced
+-      cellular uptake of 2-deoxy-2-[18F]-fluoro-D-glucose (FDG).
++    snippet: Clinical localization of primary tumors and sites of metastasis by PET
++      is based on the enhanced cellular uptake of 2-deoxy-2-[18F]-fluoro-D-glucose
++      (FDG).
+     explanation: Auto-proposed; curator should rephrase or remove.
+ synonyms:
+ - synonym_text: 'Cross-references: KEGG:glc_D'
+   synonym_type: RAW_TEXT
+   source: CultureMech
+-- synonym_text: 'Role: Carbon source; Properties: Defined component, Organic compound, Simple component'
+-  synonym_type: RAW_TEXT
+-  source: CultureMech
+-- synonym_text: 'Role: Carbon source; Properties: Defined component, Simple component, Organic compound'
+-  synonym_type: RAW_TEXT
+-  source: CultureMech
+-- synonym_text: 'Role: Carbon source; Properties: Organic compound, Defined component, Simple component'
+-  synonym_type: RAW_TEXT
+-  source: CultureMech
+-- synonym_text: 'Role: Carbon source; Properties: Organic compound, Simple component, Defined component'
++- synonym_text: 'Role: Carbon source; Properties: Defined component, Organic compound,
++    Simple component'
++  synonym_type: RAW_TEXT
++  source: CultureMech
++- synonym_text: 'Role: Carbon source; Properties: Defined component, Simple component,
++    Organic compound'
++  synonym_type: RAW_TEXT
++  source: CultureMech
++- synonym_text: 'Role: Carbon source; Properties: Organic compound, Defined component,
++    Simple component'
++  synonym_type: RAW_TEXT
++  source: CultureMech
++- synonym_text: 'Role: Carbon source; Properties: Organic compound, Simple component,
++    Defined component'
+   synonym_type: RAW_TEXT
+   source: CultureMech
+ - synonym_text: D-(+)-glucose
+@@ -52,7 +57,7 @@
+   source: sssom_other_backfill
+ - synonym_text: Dextrose (BD 215530)
+   synonym_type: CATALOG_VARIANT
+-  source: all_unmatched_20261107_worker05_primary_source_review
++  source: https://www.bd.com/en-us/products-and-solutions/products/product-page.215530
+ mapping_status: MAPPED
+ occurrence_statistics:
+   total_occurrences: 1250
+@@ -73,7 +78,8 @@
+ - timestamp: '2026-04-05T23:44:03.918150+00:00'
+   curator: fetch_cas_rn_with_preprocessing
+   action: ADDED_CAS_RN
+-  changes: Added CAS-RN:200-075-1 from PubChem API (preprocessed) via name preprocessing (D(+)-Glucose)
++  changes: Added CAS-RN:200-075-1 from PubChem API (preprocessed) via name preprocessing
++    (D(+)-Glucose)
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-04-09T00:32:50.689620+00:00'
+@@ -91,9 +97,9 @@
+ - timestamp: '2026-04-19T07:39:23.955331+00:00'
+   curator: audit_mim_merge
+   action: MERGED_FROM_DUPLICATES
+-  changes: 'Absorbed 1 duplicate MIM record(s) into this one: D_-glucose.yaml. Synonyms, curation_history,
+-    and occurrence counts were unioned/summed; winner selected by highest occurrence count with preferred_term
+-    readability tie-break.'
++  changes: 'Absorbed 1 duplicate MIM record(s) into this one: D_-glucose.yaml. Synonyms,
++    curation_history, and occurrence counts were unioned/summed; winner selected by
++    highest occurrence count with preferred_term readability tie-break.'
+   new_status: MAPPED
+   llm_assisted: false
+ - timestamp: '2026-05-01T07:35:33.130460+00:00'
+@@ -127,8 +133,8 @@
+ - timestamp: '2026-06-09T05:23:46.751890+00:00'
+   curator: correct_stale_ontology_labels.py
+   action: CORRECTED
+-  changes: 'ontology_label ''D-Glucose'' -> ''D-glucose'': synced to canonical CHEBI label (preferred_term
+-    ''D-Glucose'' unchanged).'
++  changes: 'ontology_label ''D-Glucose'' -> ''D-glucose'': synced to canonical CHEBI
++    label (preferred_term ''D-Glucose'' unchanged).'
+ - timestamp: '2026-07-20T00:00:00+00:00'
+   curator: migrate_media_roles_to_facets
+   action: ANNOTATED
+@@ -137,34 +143,49 @@
+ - timestamp: '2026-08-13T00:00:00+00:00'
+   curator: merge_glucose_family
+   action: MERGED_FROM
+-  changes: Absorbed 'Dextrose' (#320/#334), which sat on CHEBI:4167 ('D-glucopyranose'). Merged because
+-    dextrose is D-glucose; CHEBI:4167 'D-glucopyranose' is the cyclic pyranose form, a ring conformation
+-    the label does not name. Both records carry the same CAS 50-99-7 and the same formula C6H12O6. Four
+-    MIM records for glucose carried the identical CAS and formula while sitting on four different ChEBI
+-    terms, split only by where lexical matching landed. Occurrences 710/100 + 103/50 -> 813/150. Raw label
+-    kept as a RAW_TEXT synonym.
++  changes: Absorbed 'Dextrose' (#320/#334), which sat on CHEBI:4167 ('D-glucopyranose').
++    Merged because dextrose is D-glucose; CHEBI:4167 'D-glucopyranose' is the cyclic
++    pyranose form, a ring conformation the label does not name. Both records carry
++    the same CAS 50-99-7 and the same formula C6H12O6. Four MIM records for glucose
++    carried the identical CAS and formula while sitting on four different ChEBI terms,
++    split only by where lexical matching landed. Occurrences 710/100 + 103/50 -> 813/150.
++    Raw label kept as a RAW_TEXT synonym.
+   llm_assisted: false
+ - timestamp: '2026-08-27T03:16:39.518701+00:00'
+   curator: refresh_occurrence_statistics
+   action: CORRECTED
+-  changes: 'occurrence_statistics 150/813 -> 1211/1250 (media_count/total_occurrences), derived from distinct
+-    CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired
+-    in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv
+-    culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]'
++  changes: 'occurrence_statistics 150/813 -> 1211/1250 (media_count/total_occurrences),
++    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
++    prior values came from the importer retired in #453, whose media_count counted
++    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
++    rows=194137 distinct_recipes=15257]'
+ - timestamp: '2026-09-02T22:41:49.137449+00:00'
+   curator: claude_sssom_surface_form_backfill
+   action: ADDED_SYNONYMS
+-  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record
+-    did, so a rebuild would have dropped them from KGX: ''aldehydo-D-glucose''. Tokens already present
+-    on the kg-microbe ontology node were left out as redundant (#520).'
++  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
++    no curated record did, so a rebuild would have dropped them from KGX: ''aldehydo-D-glucose''.
++    Tokens already present on the kg-microbe ontology node were left out as redundant
++    (#520).'
+   llm_assisted: false
+ - timestamp: '2026-11-08T05:19:27.509502+00:00'
+   curator: Codex worker05 source review proposal
+   action: ANNOTATED
+-  changes: 'Add source-supported ''Dextrose (BD 215530)'' as a bounded reagent alias; preserve identity,hydration,counterion,roles,status
+-    and occurrence statistics. Concentration and source-nesting findings remain separate. Evidence bundle:
+-    reports/all_unmatched_20261107/worker-05/chemicals/. Proposal only; inherited source/SSSOM holds remain
+-    and publication requires coordinator integration review.'
++  changes: 'Add source-supported ''Dextrose (BD 215530)'' as a bounded reagent alias;
++    preserve identity,hydration,counterion,roles,status and occurrence statistics.
++    Concentration and source-nesting findings remain separate. Evidence bundle: reports/all_unmatched_20261107/worker-05/chemicals/.
++    Proposal only; inherited source/SSSOM holds remain and publication requires coordinator
++    integration review.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Replace campaign-only provenance on the newly proposed source aliases with
++    their exact primary recipe or supplier locators; retain the complete labels, types
++    and historical authorship. Report-only candidate; separate final scientific review
++    and coordinator integration remain required.
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
+@@ -182,12 +203,14 @@
+   - reference_text: CultureMech database (710 occurrences as 'Carbon source')
+     reference_type: DATABASE_ENTRY
+     url: https://github.com/CultureBotAI/CultureMech
+-    excerpt: 'Role: Carbon source; Properties: Defined component, Simple component, Organic compound'
+-    curator_note: Widespread use in media formulations (710 occurrences). High confidence based on 'Defined
+-      component' property.
++    excerpt: 'Role: Carbon source; Properties: Defined component, Simple component,
++      Organic compound'
++    curator_note: Widespread use in media formulations (710 occurrences). High confidence
++      based on 'Defined component' property.
+ - role: ENERGY_SOURCE
+   confidence: 0.7
+   evidence:
+   - reference_type: COMPUTATIONAL_PREDICTION
+     reference_text: Canonical energy substrate (catabolised for energy)
+-    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review recommended.
++    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
++      recommended.

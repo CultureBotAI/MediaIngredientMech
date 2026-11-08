@@ -1,0 +1,45 @@
+--- published/Malt_Extract_Agar_Oxoid.yaml
++++ successor/Malt_Extract_Agar_Oxoid.yaml
+@@ -57,7 +57,18 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: Extracted from over-conflated Malt_Extract.yaml synonyms Supplier-specific
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Extracted from over-conflated Malt_Extract.yaml synonyms Supplier-specific
+   malt extract agar is a formulation, not identical to malt extract. Reconcile the
+   existing supplier-qualified Oxoid Malt Extract Agar owner, retaining its local identity
+   and classifying it as NAMED_MEDIUM. Official manufacturer formulation supports malt
+@@ -68,6 +79,13 @@
+   complete-owner support or release admission are approved. Preserve all frozen source
+   and owner holds; component uncertainty is stated separately from whole-material
+   identity.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'
+ ingredient_type: NAMED_MEDIUM
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:malt_extract_agar_~28oxoid~29
+@@ -75,7 +93,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.thermofisher.com/order/catalog/product/CM0059B
+     notes: Named whole formulation; no identity or closeMatch to the malt-extract
+       constituent.

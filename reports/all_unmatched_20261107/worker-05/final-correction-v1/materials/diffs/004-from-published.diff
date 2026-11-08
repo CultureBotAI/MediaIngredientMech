@@ -1,0 +1,47 @@
+--- published/Leafy_Soil_TOGO_M230.yaml
++++ successor/Leafy_Soil_TOGO_M230.yaml
+@@ -20,6 +20,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:leafy_soil_togo_m230
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:leafy_soil_togo_m230
+@@ -27,13 +38,13 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M230
+     notes: Represent the leafy-soil material input used in the TOGO M230 soil-extract
+       preparation. Leafy soil is boiled with an equal volume of tap water then clarified;
+       this owner denotes the starting soil, not the finished extract. Botanical/mineral
+       composition and provenance remain unspecified.
+-notes: Represent the leafy-soil material input used in the TOGO M230 soil-extract
++notes: 'Represent the leafy-soil material input used in the TOGO M230 soil-extract
+   preparation. Leafy soil is boiled with an equal volume of tap water then clarified;
+   this owner denotes the starting soil, not the finished extract. Botanical/mineral
+   composition and provenance remain unspecified. Source-qualified proposal under issue1193.
+@@ -42,3 +53,10 @@
+   is stated separately from whole-material identity. Occurrence statistics count current
+   exact proposed-label matches in the inspected CultureMech occurrence table; no shared-identifier
+   expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

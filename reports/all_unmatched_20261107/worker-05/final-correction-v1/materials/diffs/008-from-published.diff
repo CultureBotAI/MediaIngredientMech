@@ -1,0 +1,42 @@
+--- published/Pooled_Sterile_Human_Urine.yaml
++++ successor/Pooled_Sterile_Human_Urine.yaml
+@@ -27,6 +27,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:pooled_sterile_human_urine
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:pooled_sterile_human_urine
+@@ -34,7 +45,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2920
+     notes: Curate pooled sterile human urine as the source biological preparation
+       in TOGO M2920. Pooling and sterility distinguish the preparation scope; donor
+@@ -49,4 +60,11 @@
+   table; no shared-identifier expansion or newly invented recipe membership. Raw source
+   labels preserved only as source provenance, not active global synonyms: ["Sterile
+   human urine"]. The exact source recipe supplies pooling/preparation context; bare
+-  labels do not.'
++  labels do not.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

@@ -1,0 +1,17 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "metadata_author": "/root",
+  "at": "2026-11-08T07:59:56.218390+00:00",
+  "finding_id": "W05-FINAL-SKEPTIC-CHEM-002",
+  "remediation_manifest_sha256": "ee1fd3b6c74c014668c1d87cea55ac59e2f8735e56cd916b8aa8b5f35f455a1f",
+  "one_changed_field": "/case_reviews/5/assessment",
+  "before": "The MKP salt preparation is traced to the complete JCM source and its exact batch inputs. Preserve the named preparation and its component stages; no name-only generic salt mixture or final-medium concentration is substituted.",
+  "after": "MediaDive medium1895 explicitly identifies DSMZ as its source. Solution6635 is the MKP multicomponent medium base containing CMRL1066, Neopeptone, HEPES, sodium citrate, glucose, sodium pyruvate, N-acetylglucosamine and sodium bicarbonate, followed by pH7.6 adjustment with 5 M NaOH, 0.45 micrometre filtration and making up to1000 ml with distilled water. Solution6636 separately combines this MKP base with heat-inactivated human serum and bovine serum albumin. Preserve these preparation stages and exact input quantities; do not infer CMRL1066 stock strength from an unrelated product.",
+  "primary_capture": {
+    "path": "reports/all_unmatched_20261107/worker-05/root/captures/md-1895.body",
+    "sha256": "2051630656c07a8309ab51a655b09bdd8c13f565dca8199a545ce9a619860390"
+  },
+  "assessment": "Direct inspection of the complete archived MediaDive JSON identifies DSMZ medium1895, MKP solution6635 and the separate serum/BSA receiving solution6636. All eight listed inputs and the pH/filtration/final-make-up steps match the corrected report. No new CMRL stock strength or JCM attribution is introduced. This one-field report correction preserves the earlier FeS carrier correction and all selected payloads.",
+  "status": "supported_exact_report_metadata_correction",
+  "scope": "Bounded report re-review only; full chemical acceptance remains attributed to the disjoint chemical skeptic."
+}

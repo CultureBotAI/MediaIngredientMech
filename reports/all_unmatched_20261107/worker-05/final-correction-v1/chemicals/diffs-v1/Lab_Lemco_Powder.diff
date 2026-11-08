@@ -1,0 +1,29 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed/Lab_Lemco_Powder.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Lab_Lemco_Powder.yaml
+@@ -74,6 +74,17 @@
+   llm_model: gpt-6
+   new_status: MAPPED
+   previous_status: UNMAPPED
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. Report-only candidate; separate
++    final scientific review and coordinator integration remain required.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: 'Imported from mim-queue (source_id=mediadive.ingredient:2136); no CAS-RN or
+   CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complex nutrient powder pending
+   product-specific composition curation. Correction1193: Oxoid Lab-Lemco powder LP0029
+@@ -88,7 +99,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://assets.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-LP0029-V3.pdf
+     notes: Oxoid Lab-Lemco powder LP0029 is a named refined meat-extract product.
+       Primary specification and catalogue corroborate product identity; composition

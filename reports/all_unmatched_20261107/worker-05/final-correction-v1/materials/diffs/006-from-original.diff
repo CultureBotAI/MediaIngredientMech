@@ -1,0 +1,37 @@
+--- original/Meat_Extract.yaml
++++ successor/Meat_Extract.yaml
+@@ -49,6 +49,18 @@
+     prior values came from the importer retired in #453, whose media_count counted
+     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+     rows=194137 distinct_recipes=15257]'
++- timestamp: '2026-11-08T05:47:55.783932+00:00'
++  curator: worker05/materials_research correction1193 (isolated proposal)
++  action: CORRECTED
++  changes: Record the Wako meat-extract source qualification on the generic meat-extract
++    owner without adopting the conflicting MP-Biomedicals beef-extract enrichment.
++    Current Wako-hosted meat-extract documentation describes animal tissue and powder,
++    but its catalog is not assigned to the historical source. Exact isolated payload;
++    no maintained write. All prior scientific/publication holds preserved.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ ingredient_type: UNDEFINED_MIXTURE
+ nutritional_roles:
+ - role: PROTEIN_SOURCE
+@@ -57,3 +69,15 @@
+   - reference_type: COMPUTATIONAL_PREDICTION
+     reference_text: Inferred from curated media-role name pattern
+     curator_note: Provisional role from a curated name-pattern rule; review recommended.
++supplied_form:
++- name: meat extract (Wako Pure Chemical Industries, Osaka, Japan)
++  supplier: Wako Pure Chemical Industries
++  notes: TOGO M2843 literal supplier and material. Percent dose has unspecified basis.
++    No bovine tissue, modern catalog or MP Biomedicals equivalence inferred.
++notes: Record the Wako meat-extract source qualification on the generic meat-extract
++  owner without adopting the conflicting MP-Biomedicals beef-extract enrichment. Current
++  Wako-hosted meat-extract documentation describes animal tissue and powder, but its
++  catalog is not assigned to the historical source. Source-qualified proposal under
++  issue1193. No ingredient roles, assay outcomes, complete-owner support or release
++  admission are approved. Preserve all frozen source and owner holds; component uncertainty
++  is stated separately from whole-material identity.

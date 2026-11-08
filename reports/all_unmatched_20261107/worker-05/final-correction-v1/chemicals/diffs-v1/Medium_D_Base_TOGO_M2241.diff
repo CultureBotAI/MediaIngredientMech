@@ -1,0 +1,26 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/proposed-v2/Medium_D_Base_TOGO_M2241.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Medium_D_Base_TOGO_M2241.yaml
+@@ -11,7 +11,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2241
+     notes: TOGO M2241 defines1xMediumD base andseparate10xpreparation/dilution; DHaddsHEPES1.2g/L.
+       Exactbaseamounts come fromTOGO, notNIES20xstock orDSMZ86 enrichedmedium (tryptone/yeast)
+@@ -89,3 +89,14 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. Report-only candidate; separate
++    final scientific review and coordinator integration remain required.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6

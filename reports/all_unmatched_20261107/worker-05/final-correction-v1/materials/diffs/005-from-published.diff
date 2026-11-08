@@ -1,0 +1,42 @@
+--- published/Liver_Extract_JCM1474.yaml
++++ successor/Liver_Extract_JCM1474.yaml
+@@ -28,6 +28,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:liver_extract_jcm1474
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:liver_extract_jcm1474
+@@ -35,7 +46,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474
+     notes: 'Curate the JCM1474 aqueous liver-extract preparation separately from dry/generic
+       extract and NBCo concentrate: 10 g liver powder in 170 ml water, 50–60 C for
+@@ -54,4 +65,11 @@
+   matches in the inspected CultureMech occurrence table; no shared-identifier expansion
+   or newly invented recipe membership. Raw source labels preserved only as source
+   provenance, not active global synonyms: ["Liver extract (see below)"]. The exact
+-  source recipe supplies pooling/preparation context; bare labels do not.'
++  source recipe supplies pooling/preparation context; bare labels do not.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

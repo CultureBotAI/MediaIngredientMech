@@ -1,0 +1,55 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "metadata_author": "/root",
+  "at": "2026-11-08T07:57:20.891596+00:00",
+  "remediation_manifest_sha256": "d2d3c0a0d87a0fe9747a8ad84a5f3e4b7954e32e64fa5761681c29462b4bdb67",
+  "findings": [
+    "W05-FINAL-ASSEMBLY-001",
+    "W05-FINAL-SKEPTIC-CHEM-001"
+  ],
+  "scope": "Exact report metadata successor, separate from full chemical scientific review.",
+  "evidence_added_fields": {
+    "count": 14,
+    "evidence_ids": [
+      "FINAL-CHEM-BEFORE-Thiamine-hcl_X_2_H2o",
+      "FINAL-CHEM-BEFORE-Ki",
+      "FINAL-CHEM-BEFORE-Fe_Iii_Citrate",
+      "FINAL-CHEM-riboflavin-dsmz1157",
+      "FINAL-CHEM-riboflavin-nbrc1604",
+      "FINAL-CHEM-hepes-dsmz975",
+      "FINAL-CHEM-ki-dsmz792b",
+      "FINAL-CHEM-ferric-citrate-jcm1145",
+      "FINAL-CHEM-nicotinate-chebi32544",
+      "FINAL-CHEM-cas13465-05-9-pubchem",
+      "FINAL-CHEM-mg-togo1597",
+      "FINAL-CHEM-mg-nbrc406",
+      "FINAL-CHEM-ferric-togo565",
+      "FINAL-CHEM-ferric-dsmz1145"
+    ],
+    "all_added_values_exact_existing_observation": true,
+    "all_other_bytes_values_preserved": true
+  },
+  "single_conclusion_delta": [
+    [
+      "/case_reviews/0/assessment",
+      "JCM 628 and 629 explicitly define separate bottom preparations: FeS/agarose versus zero-valent iron/agarose. Their material inputs, rather than the medium numbers, distinguish them. Keep the top-layer components out of each bottom preparation and retain batch inputs without a guessed final concentration.",
+      "JCM628 bottom layer contains 50 ml washed FeS preparation, 50 ml Modified Wolfe mineral solution and 1 g agarose. JCM629 explicitly reuses Medium628 with artificial saltwater replacing Modified Wolfe mineral solution. Both therefore contain the FeS preparation and agarose; the demonstrated distinguishing input is mineral solution versus artificial saltwater. Preserve receiving-layer and top-layer boundaries, processing and exact occurrence routing; neither bottom layer is neat FeS or a zero-valent iron preparation."
+    ]
+  ],
+  "scientific_assessment": "Direct reading of JCM628/629 exact captured text confirms both use washed FeS and agarose; the changed carrier is Modified Wolfe mineral solution versus artificial saltwater. The corrected text accurately preserves the demonstrated distinction and removes the false zero-valent-iron assertion. No payload or chemistry change occurs in this metadata addendum.",
+  "source_bindings": [
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/read-text/ROOT-jcm-628.txt",
+      "sha256": "7cd452a96e76ee4375fb42f73d882a044ba92fef4d14ff1426193eb70c84076b"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/read-text/ROOT-jcm-629.txt",
+      "sha256": "861f590a9c267933f3879baa1160f52a28deb4283025d2f4aa73f1f6081b967c"
+    }
+  ],
+  "status": "supported_report_metadata_remediation",
+  "limitations": [
+    "Complete chemical 67-case/57-payload acceptance remains with /root/materials_research.",
+    "Source/owner/export holds remain."
+  ]
+}

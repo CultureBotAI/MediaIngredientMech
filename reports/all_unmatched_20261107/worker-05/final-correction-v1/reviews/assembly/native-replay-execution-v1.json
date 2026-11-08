@@ -1,0 +1,37 @@
+{
+  "executor": "/root/final_skeptical",
+  "script_author": "/root",
+  "at": "2026-11-08T07:58:20.523780+00:00",
+  "script": {
+    "path": ".temp/w05-final-correction-v1/control/validate_overlay_v2.py",
+    "sha256": "60636823a5f922ec1f454f7f2ce181813e2b2c8ac3df39f942bfc3917527d3e8"
+  },
+  "attempts": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-05/venv/bin/python .temp/w05-final-correction-v1/control/validate_overlay_v2.py --proposals .temp/w05-final-correction-v1/assembly-draft-v7/proposals.json --out .temp/w05-final-correction-v1/review-assembly/independent-native-replay-v1",
+      "exit_code": 1,
+      "error": "ModuleNotFoundError: No module named 'mediaingredientmech'",
+      "interpretation": "Reviewer invocation omitted PYTHONPATH=src; no validator ran and no output directory was created."
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .temp/all-unmatched-worker-05/venv/bin/python .temp/w05-final-correction-v1/control/validate_overlay_v2.py --proposals .temp/w05-final-correction-v1/assembly-draft-v7/proposals.json --out .temp/w05-final-correction-v1/review-assembly/independent-native-replay-v1",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "receipt": {
+    "path": ".temp/w05-final-correction-v1/review-assembly/independent-native-replay-v1/native-validation.json",
+    "sha256": "228c5738ac58dccbbaa79671ff457895df4e0a13afc44b78c8ef429fd93cfc57"
+  },
+  "selected_proposals_sha256": "8c5c7efaa0428b0470435ef815343bdd2de3daa5febb325176d878d7aca71cc3",
+  "counts": {
+    "selected_payloads": 141,
+    "baseline_records": 2956,
+    "overlay_records": 3028
+  },
+  "assessment": "All141 exact selected payloads passed the existing guarded writer and closed schema; the full2956-record baseline path substitution produced3028 records and passed native component partonomy, filename-case and no-introduced-identifier-collision checks. The native receipt retains its root-authored script author field; this separate execution receipt identifies the actual reviewer executor.",
+  "limitations": [
+    "Structural replay is not scientific approval or authorization to apply conditional candidates together.",
+    "No maintained owner, generated export or shared source was changed."
+  ]
+}

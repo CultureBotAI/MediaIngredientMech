@@ -1,0 +1,52 @@
+--- published/Difco_Soytone.yaml
++++ successor/Difco_Soytone.yaml
+@@ -21,6 +21,17 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:39:04.974035+00:00'
++  curator: Codex /root/materials_research; W05 final report-only correction
++  action: CORRECTED
++  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
++    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
++    types are unchanged. Isolated proposal only; no maintained data or source membership
++    change.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ identifier: kgmicrobe.ingredient:difco_soytone
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:difco_soytone
+@@ -28,7 +39,7 @@
+   ontology_source: kgmicrobe.ingredient
+   mapping_quality: FALLBACK_REGISTRY
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.thermofisher.com/order/catalog/product/212489
+     notes: Curate the explicitly named Difco Soytone product separately from Phytone
+       and Bacto Soytone. The manufacturer identifies an enzymatic soy digest; it does
+@@ -40,12 +51,19 @@
+   supplier: Difco / Gibco
+   catalog_number: '212488'
+   notes: Current500g ordering option; no historical pack assignment.
+-notes: Curate the explicitly named Difco Soytone product separately from Phytone and
+-  Bacto Soytone. The manufacturer identifies an enzymatic soy digest; it does not
+-  disclose a complete constituent formula. Retain the existing Bacto_Soytone rejected
++notes: 'Curate the explicitly named Difco Soytone product separately from Phytone
++  and Bacto Soytone. The manufacturer identifies an enzymatic soy digest; it does
++  not disclose a complete constituent formula. Retain the existing Bacto_Soytone rejected
+   tombstone; this new owner denotes the separately named Difco product line. Source-qualified
+   proposal under issue1193. No ingredient roles, assay outcomes, complete-owner support
+   or release admission are approved. Preserve all frozen source and owner holds; component
+   uncertainty is stated separately from whole-material identity. Occurrence statistics
+   count current exact proposed-label matches in the inspected CultureMech occurrence
+   table; no shared-identifier expansion or newly invented recipe membership.
++
++
++  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
++  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
++  evidence and ComponentEvidence types are unchanged. All original source, organism,
++  role, owner and export holds remain. Independent review of these exact successor
++  bytes is pending.'

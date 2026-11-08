@@ -1,0 +1,20 @@
+{
+  "finding_id": "W05-FINAL-SKEPTIC-CHEM-002",
+  "recorded_at": "2026-11-08T07:58:34.535610+00:00",
+  "reviewer": "/root/materials_research",
+  "status": "open",
+  "severity": "minor",
+  "scope": "Report scientific attribution only; the selected MKP payload correctly cites MediaDive 1895.",
+  "input": {
+    "path": ".temp/w05-final-correction-v1/chemicals/primary-case-conclusions-v1.json",
+    "sha256": "e85905051cc8614d894b3baeba8ea8646d204722b1f621cb486e93131c67c323",
+    "locator": "case_reviews[5].assessment"
+  },
+  "observed": "The MKP salt preparation is traced to the complete JCM source and its exact batch inputs. Preserve the named preparation and its component stages; no name-only generic salt mixture or final-medium concentration is substituted.",
+  "evidence": {
+    "path": ".temp/w05-final-correction-v1/chemicals/read-text/ROOT-md-1895.txt",
+    "sha256": "2051630656c07a8309ab51a655b09bdd8c13f565dca8199a545ce9a619860390",
+    "fact": "The primary MediaDive medium record identifies source DSMZ, medium 1895, solution 6635. MKP is a multicomponent medium base including CMRL-1066, Neopeptone, HEPES and glucose; the record is not a JCM source."
+  },
+  "bounded_fix": "Append an attributed correction to the primary-case conclusion identifying MediaDive/DSMZ 1895 and its complete medium base, instead of JCM and salt preparation. Preserve the sealed original report and correct payload."
+}

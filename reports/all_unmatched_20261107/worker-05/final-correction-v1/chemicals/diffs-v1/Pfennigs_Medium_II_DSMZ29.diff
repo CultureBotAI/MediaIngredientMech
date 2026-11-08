@@ -1,0 +1,26 @@
+--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/proposed-v2/Pfennigs_Medium_II_DSMZ29.yaml
++++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-final-correction-v1/chemicals/proposed-v1/Pfennigs_Medium_II_DSMZ29.yaml
+@@ -11,7 +11,7 @@
+   ontology_source: MICRO
+   mapping_quality: EXACT_MATCH
+   evidence:
+-  - evidence_type: MANUAL_CURATION
++  - evidence_type: LLM_SUGGESTION
+     source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf
+     notes: MICRO0001736 definition-source reproduces the same DSMZ29 staged recipe.
+       Excludes the marine/estuarine alternative and periodic feeding. DSMZ40 adds1%NaCl
+@@ -75,3 +75,14 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T07:40:53.320531+00:00'
++  curator: Codex worker05 /root/chemicals_research final report correction
++  action: CORRECTED_REPORT_PROPOSAL
++  changes: Correct only the exact new campaign MappingEvidence entry identified by
++    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
++    evidence and ComponentAssertion evidence types. Report-only candidate; separate
++    final scientific review and coordinator integration remain required.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
