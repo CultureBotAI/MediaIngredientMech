@@ -1,0 +1,928 @@
+{
+  "at": "2026-11-08T08:23:21.740918+00:00",
+  "reviewer": "/root/ledger_native_review",
+  "native_read_review": "PASS",
+  "previous_pair": "reviews/structured/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.yaml",
+  "previous_review_id": "20261108T074315Z-w07-issues1226-1237-private-correction-v3",
+  "previous_finding": {
+    "finding_id": "W07-SKEPTIC-LEDGER-PARTIAL-001",
+    "issue_key": "MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer",
+    "title": "Inherited JCM900 decision prose points to prior PARTIAL draft",
+    "category": "provenance",
+    "severity": "minor",
+    "status": "open",
+    "certainty": "confirmed",
+    "target_ids": [
+      "W07-COMBINED-JCM900-JCM979-Hutner"
+    ],
+    "field_paths": [
+      "decisions[CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2].reasoning",
+      "decisions[CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3].reasoning"
+    ],
+    "evidence_ids": [
+      "lead"
+    ],
+    "description": "Two inherited ledger sentences refer to a separate PARTIAL draft although the selected combined payload has COMPLETE immediate source-list assertion. Preserve exact historical wording and report for coordinator issue-first triage. Current integration hold explicitly prevents it overriding the selected payload. No new chemical or source correction is made.",
+    "ownership_note": "Coordinator controls issue triage and any separate ledger correction."
+  },
+  "target_retention_requirement": [
+    "W07-COMBINED-JCM900-JCM979-Hutner"
+  ],
+  "all113historical_native_input_bindings_still_exact": 113,
+  "input_bindings": [
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "role": "context",
+      "current_sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/a-L-cysteine_Hcl_X_H2o.yaml",
+      "sha256": "13c3402207d981a84de5697bcd2c8a6a99507a4c468863577a2f950f97a6102d",
+      "role": "target",
+      "current_sha256": "13c3402207d981a84de5697bcd2c8a6a99507a4c468863577a2f950f97a6102d",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/a-Mes_2-_N-morpholino_Ethane_Sulfonic_Acid.yaml",
+      "sha256": "6e5df45049de0e795f0e346d7461d2f4c93f0f19a7a019c815419501f739a86b",
+      "role": "target",
+      "current_sha256": "6e5df45049de0e795f0e346d7461d2f4c93f0f19a7a019c815419501f739a86b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/a-Na-l-lactate.yaml",
+      "sha256": "786ea7519910186f3bdf33f9fe42fd78ce9a1004240c84c0809606fd16b252cd",
+      "role": "target",
+      "current_sha256": "786ea7519910186f3bdf33f9fe42fd78ce9a1004240c84c0809606fd16b252cd",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/a-Yeast_Extract.yaml",
+      "sha256": "e7642ed81ab96be451aa4daf176b641a6ddaa598915a84335a083c7343f95050",
+      "role": "target",
+      "current_sha256": "e7642ed81ab96be451aa4daf176b641a6ddaa598915a84335a083c7343f95050",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-2-mercaptoethanesulfonate.yaml",
+      "sha256": "7bcba93847a6f19f010b80f2f5b925137e044b2897d4078b8ba47f55aa3d182d",
+      "role": "target",
+      "current_sha256": "7bcba93847a6f19f010b80f2f5b925137e044b2897d4078b8ba47f55aa3d182d",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Ca-folinate.yaml",
+      "sha256": "bfe2a0e4cc66734eee80fa4cd8940f701c32f6488ec560c2cd69fcfbada9c6c0",
+      "role": "target",
+      "current_sha256": "bfe2a0e4cc66734eee80fa4cd8940f701c32f6488ec560c2cd69fcfbada9c6c0",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-L-cysteine_Hcl.yaml",
+      "sha256": "d5a4ddb35a362ca297cc332ae309441830e5e578b131af4ed9de5a92fefc05ad",
+      "role": "target",
+      "current_sha256": "d5a4ddb35a362ca297cc332ae309441830e5e578b131af4ed9de5a92fefc05ad",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Magnesium_Sulfate.yaml",
+      "sha256": "5539c7a227b1944ab0216ad704640a4d3b5ac06d7e2f58b1485ba17e74b50371",
+      "role": "target",
+      "current_sha256": "5539c7a227b1944ab0216ad704640a4d3b5ac06d7e2f58b1485ba17e74b50371",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Na-acetate.yaml",
+      "sha256": "0df4f51b89e1817e01fe5c862c6378217584e13e6faaeecb5aaf2154ae33adf0",
+      "role": "target",
+      "current_sha256": "0df4f51b89e1817e01fe5c862c6378217584e13e6faaeecb5aaf2154ae33adf0",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Na-caproate.yaml",
+      "sha256": "f391bff33864062c503ba0444118d0c51b4e2458aed568bb2cd9f768b3691211",
+      "role": "target",
+      "current_sha256": "f391bff33864062c503ba0444118d0c51b4e2458aed568bb2cd9f768b3691211",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Na-caseinate.yaml",
+      "sha256": "1f54924806473f60a109c565f89df33a95486c856785d02905f8cf5be9718854",
+      "role": "target",
+      "current_sha256": "1f54924806473f60a109c565f89df33a95486c856785d02905f8cf5be9718854",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Na2hpo4_X_12_H2o.yaml",
+      "sha256": "4c36e0392990aa38539509ebdfebb339f18821b6d5ed6765975d2e2c5425b2f2",
+      "role": "target",
+      "current_sha256": "4c36e0392990aa38539509ebdfebb339f18821b6d5ed6765975d2e2c5425b2f2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Na2hpo4_X_7_H2o.yaml",
+      "sha256": "1d321d86d59f07d1627b5520de8fe80b21f132a3d40dfaecaf638b12649cd08d",
+      "role": "target",
+      "current_sha256": "1d321d86d59f07d1627b5520de8fe80b21f132a3d40dfaecaf638b12649cd08d",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Polygalacturonic_Acid_Sodium_Salt.yaml",
+      "sha256": "6395058bea44e3dcdbba0345d3a426c92191a58c575c0edb7396c647f26bb5f4",
+      "role": "target",
+      "current_sha256": "6395058bea44e3dcdbba0345d3a426c92191a58c575c0edb7396c647f26bb5f4",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Pyridoxamine_Hydrochloride.yaml",
+      "sha256": "a7def142a7df7010e86dd3fbffa7ff9e8261827d0916b1e31ac0643a53b48604",
+      "role": "target",
+      "current_sha256": "a7def142a7df7010e86dd3fbffa7ff9e8261827d0916b1e31ac0643a53b48604",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Sodium_Acetate_Trihydrate.yaml",
+      "sha256": "cf954fe560fc7ec0cec4b0d291e7875bb7bf21162edf71bc166b0ae4a32664e2",
+      "role": "target",
+      "current_sha256": "cf954fe560fc7ec0cec4b0d291e7875bb7bf21162edf71bc166b0ae4a32664e2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Sodium_Dithionite.yaml",
+      "sha256": "8a5db0b778fbf29dd18aa87380cb38b8acbe9111b871e88dea679dddd39cd19b",
+      "role": "target",
+      "current_sha256": "8a5db0b778fbf29dd18aa87380cb38b8acbe9111b871e88dea679dddd39cd19b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Sodium_Malate.yaml",
+      "sha256": "3245a0ca7bdfd04d1ced60aead1af2e7c615de4eafdfd47e047f12497c3b26e9",
+      "role": "target",
+      "current_sha256": "3245a0ca7bdfd04d1ced60aead1af2e7c615de4eafdfd47e047f12497c3b26e9",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Sodium_phosphate_monobasic_monohydrate.yaml",
+      "sha256": "b58cdefabd6bc38c3659b7ed5998bafd969d1dff8b240eb0a704555aa717715b",
+      "role": "target",
+      "current_sha256": "b58cdefabd6bc38c3659b7ed5998bafd969d1dff8b240eb0a704555aa717715b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/b-Sulfur.yaml",
+      "sha256": "2f6c3222dfb6a5b1e372458028565828efedc260a6356bfa6ee17d9ab47c4e26",
+      "role": "target",
+      "current_sha256": "2f6c3222dfb6a5b1e372458028565828efedc260a6356bfa6ee17d9ab47c4e26",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/c-C-P01.yaml",
+      "sha256": "d40062b6838628dbfd9dc0f841e15eb60b5774d43fb00fff4b7d47c44e54e40b",
+      "role": "target",
+      "current_sha256": "d40062b6838628dbfd9dc0f841e15eb60b5774d43fb00fff4b7d47c44e54e40b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/c-C-P04.yaml",
+      "sha256": "0ca4e6c9a4c7d05c99f64adffb1d4ab7c63cb31b618d2b3c74e26288831f16e2",
+      "role": "target",
+      "current_sha256": "0ca4e6c9a4c7d05c99f64adffb1d4ab7c63cb31b618d2b3c74e26288831f16e2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/combined-Calcium_Pantothenate.yaml",
+      "sha256": "775a641206cfd48956828dbb02e86de785e197d7dc07a856c268e4cbf8f0f4fc",
+      "role": "target",
+      "current_sha256": "775a641206cfd48956828dbb02e86de785e197d7dc07a856c268e4cbf8f0f4fc",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/combined-Cyanocobalamin.yaml",
+      "sha256": "80401333108c0f01a60fa74f3149b495dcdb600618590ba68f55bbe01770013d",
+      "role": "target",
+      "current_sha256": "80401333108c0f01a60fa74f3149b495dcdb600618590ba68f55bbe01770013d",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/combined-Na3-citrate_X_2_H2o.yaml",
+      "sha256": "0ea0778b4bed38548c109d15dd3772ab719adde79946a22002c38e36ee6bebf9",
+      "role": "target",
+      "current_sha256": "0ea0778b4bed38548c109d15dd3772ab719adde79946a22002c38e36ee6bebf9",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/proposed_owners/combined-Nitrilotriacetic_Acid.yaml",
+      "sha256": "394760a985f8bbeb32e6fbf4750db4f09f31a802b6f76709df46b65d21cc8a41",
+      "role": "target",
+      "current_sha256": "394760a985f8bbeb32e6fbf4750db4f09f31a802b6f76709df46b65d21cc8a41",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/draft-v1/decisions.json",
+      "sha256": "9d46a51632c4186de8617ee3eea25b766d935139058324b70ccb6d55dde64a54",
+      "role": "context",
+      "current_sha256": "9d46a51632c4186de8617ee3eea25b766d935139058324b70ccb6d55dde64a54",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/draft-v1/evidence.json",
+      "sha256": "7c2c1f414f75a29e460b3ca6e74abaee0d7800570e56b6c59b5d27540f4ddae5",
+      "role": "context",
+      "current_sha256": "7c2c1f414f75a29e460b3ca6e74abaee0d7800570e56b6c59b5d27540f4ddae5",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/draft-v1/proposals.json",
+      "sha256": "f8efb11bfeba86b75d3f4817716f4914cfab870ba31b8ab30c2724415eb4432d",
+      "role": "context",
+      "current_sha256": "f8efb11bfeba86b75d3f4817716f4914cfab870ba31b8ab30c2724415eb4432d",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/mutation-ledger.json",
+      "sha256": "33621fe6e44df23e9c83123013544ee41f0015b03fd2fd44da0db6ed4c902b1f",
+      "role": "context",
+      "current_sha256": "33621fe6e44df23e9c83123013544ee41f0015b03fd2fd44da0db6ed4c902b1f",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-ATCC1249_Component_II.yaml",
+      "sha256": "40c5f1c8351ba37f65cd5168b65df76ec03bbd32fe853a7f9a2587665083a23c",
+      "role": "target",
+      "current_sha256": "40c5f1c8351ba37f65cd5168b65df76ec03bbd32fe853a7f9a2587665083a23c",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-DSM330_Sodium_Hydroxide_1N_Stock.yaml",
+      "sha256": "c3a9db81a6a3bdb5912f8228d442193fb4ac78dd90c8323d28039975d8ec401f",
+      "role": "target",
+      "current_sha256": "c3a9db81a6a3bdb5912f8228d442193fb4ac78dd90c8323d28039975d8ec401f",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-DSM590_Hutner_Basal_Salts.yaml",
+      "sha256": "b84e255fc69133421502a8d302a060086f2b18a8f3adea4592ca9f04f9e82dbd",
+      "role": "target",
+      "current_sha256": "b84e255fc69133421502a8d302a060086f2b18a8f3adea4592ca9f04f9e82dbd",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-DSM600_Artificial_Seawater.yaml",
+      "sha256": "8ecd4c81356c6c707c957054fc11158d9775644f62e1d2b158813677843ca582",
+      "role": "target",
+      "current_sha256": "8ecd4c81356c6c707c957054fc11158d9775644f62e1d2b158813677843ca582",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-JCM1051_L_Cysteine_Hydrochloride_Monohydrate_01M_Stock.yaml",
+      "sha256": "d744b32655c5d6057d948dcaa134745e585eaca2a25a47070a52b3945e9d37b3",
+      "role": "target",
+      "current_sha256": "d744b32655c5d6057d948dcaa134745e585eaca2a25a47070a52b3945e9d37b3",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-JCM574_Ammonium_Chloride_1M_Stock.yaml",
+      "sha256": "7a3f42cfd5323f69aed38f52d983858e56c5a90e81dba27a921377a809f63a1e",
+      "role": "target",
+      "current_sha256": "7a3f42cfd5323f69aed38f52d983858e56c5a90e81dba27a921377a809f63a1e",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-JCM579_Sodium_Acetate_1M_Stock.yaml",
+      "sha256": "b5f2858c4063d10dd52163a38288222b012e51e2003adc57d7a63b98c4e10c4d",
+      "role": "target",
+      "current_sha256": "b5f2858c4063d10dd52163a38288222b012e51e2003adc57d7a63b98c4e10c4d",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-JCM631_Hunters_Basal_Salts.yaml",
+      "sha256": "7d94f0378bfce0a1650bc44fbadafdeba372d6bf5bf783b81d86d699328696c0",
+      "role": "target",
+      "current_sha256": "7d94f0378bfce0a1650bc44fbadafdeba372d6bf5bf783b81d86d699328696c0",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-JCM830_Sodium_Lactate_1M_Stock.yaml",
+      "sha256": "e224e785fb72907c4f39cce0d164ffbfd0eabfeccfdfc93727bd166083e30a7e",
+      "role": "target",
+      "current_sha256": "e224e785fb72907c4f39cce0d164ffbfd0eabfeccfdfc93727bd166083e30a7e",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-NBRC1507_Tris_HCl_01M_pH75_Buffer.yaml",
+      "sha256": "5075afe8b0cfe791905bffccf82899c3c661066f68e522c6934cea85f01a4254",
+      "role": "target",
+      "current_sha256": "5075afe8b0cfe791905bffccf82899c3c661066f68e522c6934cea85f01a4254",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-Sigma_B5282_Bold_Modified_Basal_50x_Stock.yaml",
+      "sha256": "65f464d9eb519868185073f19e7866776f485ab22079671bec3c32748691de7b",
+      "role": "target",
+      "current_sha256": "65f464d9eb519868185073f19e7866776f485ab22079671bec3c32748691de7b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-Sigma_D1501_Calf_Thymus_DNA_Sodium_Salt.yaml",
+      "sha256": "f3a0fa432745f33d3cb00313b89ff4dcdaea2c02edeaaa46e09ee7f1030242c1",
+      "role": "target",
+      "current_sha256": "f3a0fa432745f33d3cb00313b89ff4dcdaea2c02edeaaa46e09ee7f1030242c1",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-TOGO_M2228_Basal_Broth.yaml",
+      "sha256": "1bbef7992c662442e1813ccde7ca13742eebbcf6d57a0601fafa60e49c61e2d3",
+      "role": "target",
+      "current_sha256": "1bbef7992c662442e1813ccde7ca13742eebbcf6d57a0601fafa60e49c61e2d3",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-TOGO_M2554_Pyrococcus_Basal_Preparation.yaml",
+      "sha256": "1d6cd01cc888c122bf636d484a69b6033159e0839ac2342e2a14c2cf43565c65",
+      "role": "target",
+      "current_sha256": "1d6cd01cc888c122bf636d484a69b6033159e0839ac2342e2a14c2cf43565c65",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-TOGO_M2596_Hydrochloric_Acid_1M_Stock.yaml",
+      "sha256": "4ba4db3e4299b53e5868a49b1b8dd2723f9351e3ea2e256857353256f80a4b59",
+      "role": "target",
+      "current_sha256": "4ba4db3e4299b53e5868a49b1b8dd2723f9351e3ea2e256857353256f80a4b59",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-TOGO_M2885_Hydrochloric_Acid_01M_Stock.yaml",
+      "sha256": "9a948e3a589d3543efdeb80187d878b4bdc06239179658341e3aafc7334d2292",
+      "role": "target",
+      "current_sha256": "9a948e3a589d3543efdeb80187d878b4bdc06239179658341e3aafc7334d2292",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-TOGO_M3115_Hydrochloric_Acid_01M_Stock.yaml",
+      "sha256": "39e850ba37445695a98c654745e15b3f5303342d7e1bf59d1a56f9ad31c027a4",
+      "role": "target",
+      "current_sha256": "39e850ba37445695a98c654745e15b3f5303342d7e1bf59d1a56f9ad31c027a4",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/a-TOGO_M3265_Hydrochloric_Acid_2M_Stock.yaml",
+      "sha256": "05a0ca03cbd4767281e5dafcd9447b0306c0240dccae84ed012243c638d58371",
+      "role": "target",
+      "current_sha256": "05a0ca03cbd4767281e5dafcd9447b0306c0240dccae84ed012243c638d58371",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-Sodium_Ammonium_Hydrogen_Phosphate_Tetrahydrate.yaml",
+      "sha256": "9155bd28a21a541ba429f9a75ec9e96f8d3e30e9e272b0040b6f37d0b3b907ce",
+      "role": "target",
+      "current_sha256": "9155bd28a21a541ba429f9a75ec9e96f8d3e30e9e272b0040b6f37d0b3b907ce",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-dsmz_110_sodium_hydroxide_1n.yaml",
+      "sha256": "d5977b1681e9ea92792b6c4a69e6fd4a3bcc4166f258ff76e486f2a4fa32314b",
+      "role": "target",
+      "current_sha256": "d5977b1681e9ea92792b6c4a69e6fd4a3bcc4166f258ff76e486f2a4fa32314b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-dsmz_110a_sodium_hydroxide_1n.yaml",
+      "sha256": "da617400de8c55a3ab7f60d0acdc987f6e12698189894af0fef8dfadd728f60a",
+      "role": "target",
+      "current_sha256": "da617400de8c55a3ab7f60d0acdc987f6e12698189894af0fef8dfadd728f60a",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-dsmz_1144_hutner_basal_salts.yaml",
+      "sha256": "f735d298d3c79389def0c12d3ecaf42fd6a350cb084c4ce643ad0f8862275670",
+      "role": "target",
+      "current_sha256": "f735d298d3c79389def0c12d3ecaf42fd6a350cb084c4ce643ad0f8862275670",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-dsmz_78_sodium_hydroxide_1n.yaml",
+      "sha256": "f5f20d8be502f3a5636305a75c55cfefc03c92c8411f4a6b5797d0f9a4a128f2",
+      "role": "target",
+      "current_sha256": "f5f20d8be502f3a5636305a75c55cfefc03c92c8411f4a6b5797d0f9a4a128f2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1013_basal_medium.yaml",
+      "sha256": "5d2c0085565763bbd5baf32624ce88c22ea8ed52701623c84651483286bb89e2",
+      "role": "target",
+      "current_sha256": "5d2c0085565763bbd5baf32624ce88c22ea8ed52701623c84651483286bb89e2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1188_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "6f31b3e01d077608a368af990aab4e52cbcf775ed68013f68c144fd6086a6c60",
+      "role": "target",
+      "current_sha256": "6f31b3e01d077608a368af990aab4e52cbcf775ed68013f68c144fd6086a6c60",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1209_basal_salts_solution.yaml",
+      "sha256": "47541d3b6cac417e3c5a3856d19607f48fdcaff46f8a016ce13f4e06a35d3239",
+      "role": "target",
+      "current_sha256": "47541d3b6cac417e3c5a3856d19607f48fdcaff46f8a016ce13f4e06a35d3239",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1305_reconstituted_vitox.yaml",
+      "sha256": "3d2e5f9e1b8e84ce47b4a9a62721f86722f05ecea65a01b015b1bbe58faa171e",
+      "role": "target",
+      "current_sha256": "3d2e5f9e1b8e84ce47b4a9a62721f86722f05ecea65a01b015b1bbe58faa171e",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1351_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "73094dd02e2ee398a85644178bfc1d0b13dec6a1a9dfab75aecf85bdd1ddf1bc",
+      "role": "target",
+      "current_sha256": "73094dd02e2ee398a85644178bfc1d0b13dec6a1a9dfab75aecf85bdd1ddf1bc",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1362_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "5f0ed915a2a003bee2a7b51817039278e3ed495d366294d92183afe2e4eb2ab4",
+      "role": "target",
+      "current_sha256": "5f0ed915a2a003bee2a7b51817039278e3ed495d366294d92183afe2e4eb2ab4",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1388_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "648932088251996e89087f467a8ac132561586c12918b859aeebba80db00b675",
+      "role": "target",
+      "current_sha256": "648932088251996e89087f467a8ac132561586c12918b859aeebba80db00b675",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1389_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "3d14f862e5283d91ff8cebf0763c6b56f77ffc1496640a53d68ac15542b399bd",
+      "role": "target",
+      "current_sha256": "3d14f862e5283d91ff8cebf0763c6b56f77ffc1496640a53d68ac15542b399bd",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1412_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "fd47d7a5c686c275f27288d1484ae13d53ac76e8439ac5680615172f9e51fe00",
+      "role": "target",
+      "current_sha256": "fd47d7a5c686c275f27288d1484ae13d53ac76e8439ac5680615172f9e51fe00",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1415_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "86da43892d7130bd097e74608aa2c481edd7e5855422dbe028e272cc3cfde9f0",
+      "role": "target",
+      "current_sha256": "86da43892d7130bd097e74608aa2c481edd7e5855422dbe028e272cc3cfde9f0",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1415_sodium_bicarbonate_8_percent.yaml",
+      "sha256": "9276e68190be36c39e27906134bf4904f5ffbe905718a53d332d838c04971556",
+      "role": "target",
+      "current_sha256": "9276e68190be36c39e27906134bf4904f5ffbe905718a53d332d838c04971556",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1422_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "987297b5c7e26abc55248c659f7f3f2b4bc123b829d59129c6bf9b148279e625",
+      "role": "target",
+      "current_sha256": "987297b5c7e26abc55248c659f7f3f2b4bc123b829d59129c6bf9b148279e625",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1430_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "5c1641f0ad11ec39b05772e15f8c4297db254b2a4810d4dce57ea58994623dc1",
+      "role": "target",
+      "current_sha256": "5c1641f0ad11ec39b05772e15f8c4297db254b2a4810d4dce57ea58994623dc1",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1431_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "236ca445011fc7e3c6afdb0ef8b1b0c3dde4e95feec977982909b6065933f228",
+      "role": "target",
+      "current_sha256": "236ca445011fc7e3c6afdb0ef8b1b0c3dde4e95feec977982909b6065933f228",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1435_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "fd4bcccfc503d320845886965e95a60b82d44001b3b57eb9d6bffab3ae38e81b",
+      "role": "target",
+      "current_sha256": "fd4bcccfc503d320845886965e95a60b82d44001b3b57eb9d6bffab3ae38e81b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1462_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "f764aec1b84d79f72c6c31dbaff46e562bc3b4bfa7338e2cd4353e4bdbfcd7bb",
+      "role": "target",
+      "current_sha256": "f764aec1b84d79f72c6c31dbaff46e562bc3b4bfa7338e2cd4353e4bdbfcd7bb",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1474_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "73d5a087ce96167f6a36cebdcfc1258b0c3a59bf81b2fa354efff72885491f3f",
+      "role": "target",
+      "current_sha256": "73d5a087ce96167f6a36cebdcfc1258b0c3a59bf81b2fa354efff72885491f3f",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_1479_l_cysteine_hcl_monohydrate_5_percent_ph7.yaml",
+      "sha256": "6a85639c063bcde99467bd54f07a7e87098e7dedd73d9a9f2feb07f78b3dfec2",
+      "role": "target",
+      "current_sha256": "6a85639c063bcde99467bd54f07a7e87098e7dedd73d9a9f2feb07f78b3dfec2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_431_basal_medium.yaml",
+      "sha256": "66a9edde9b28276ad336b6603fd196d066a98c7977d44cc50e34b612eef55996",
+      "role": "target",
+      "current_sha256": "66a9edde9b28276ad336b6603fd196d066a98c7977d44cc50e34b612eef55996",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_665_sodium_acetate_2m_ph7.yaml",
+      "sha256": "2c904e0e0773acce49876dd3229ccac55cd853ee2fe0c8c448a308899907b784",
+      "role": "target",
+      "current_sha256": "2c904e0e0773acce49876dd3229ccac55cd853ee2fe0c8c448a308899907b784",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_687_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "15351e2f7f689fc679bef8976cfaf5b28ae8c06fa3338edbbbfbc6246d602e24",
+      "role": "target",
+      "current_sha256": "15351e2f7f689fc679bef8976cfaf5b28ae8c06fa3338edbbbfbc6246d602e24",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_705_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "af804cacebbccfb4f4edb656d3efc9ed1fa22f6aca69a8a3e772edf4ff311321",
+      "role": "target",
+      "current_sha256": "af804cacebbccfb4f4edb656d3efc9ed1fa22f6aca69a8a3e772edf4ff311321",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_706_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "dfb05542a34b594770f3f214c0e849d7c11c2e37d9e61477f032c6dd5b04aaef",
+      "role": "target",
+      "current_sha256": "dfb05542a34b594770f3f214c0e849d7c11c2e37d9e61477f032c6dd5b04aaef",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_723_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "65acab704133ba0f48c04b8f85ddab79d489a61a3abffa994f40f4df2099a675",
+      "role": "target",
+      "current_sha256": "65acab704133ba0f48c04b8f85ddab79d489a61a3abffa994f40f4df2099a675",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_794_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "485b0feb7bdd69aeb8dec7333ee7a548134434c45e05bdbb3ace26e7c2ce85eb",
+      "role": "target",
+      "current_sha256": "485b0feb7bdd69aeb8dec7333ee7a548134434c45e05bdbb3ace26e7c2ce85eb",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_822_l_cysteine_hcl_monohydrate_5_percent.yaml",
+      "sha256": "e8a114043bb45b8705ba2b14cd27e578dce2d66af0e69d8188e9a7512edacedc",
+      "role": "target",
+      "current_sha256": "e8a114043bb45b8705ba2b14cd27e578dce2d66af0e69d8188e9a7512edacedc",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_825_l_cysteine_hcl_monohydrate_3_percent.yaml",
+      "sha256": "dc15f6ef898cdf03c26e3a4c3bb656a71204f7b748c42779a92d58b90288c6de",
+      "role": "target",
+      "current_sha256": "dc15f6ef898cdf03c26e3a4c3bb656a71204f7b748c42779a92d58b90288c6de",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_923_sodium_acetate_20mm.yaml",
+      "sha256": "7650f0ae62db42836fd36774686fc672858fb62c7cbe6b336731b186b6f69b2e",
+      "role": "target",
+      "current_sha256": "7650f0ae62db42836fd36774686fc672858fb62c7cbe6b336731b186b6f69b2e",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_923_tris_base_1m_ph8.yaml",
+      "sha256": "fe696af87060af459af71c70286b15482f42fcdf7591d10da24bac47f9881972",
+      "role": "target",
+      "current_sha256": "fe696af87060af459af71c70286b15482f42fcdf7591d10da24bac47f9881972",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-jcm_946_korthof_10x_basal_medium.yaml",
+      "sha256": "8a196beaeb075f473664464d938961266bce57921592baf89f174887fab34e77",
+      "role": "target",
+      "current_sha256": "8a196beaeb075f473664464d938961266bce57921592baf89f174887fab34e77",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-nbrc_981_tris_hcl_01m_ph75.yaml",
+      "sha256": "bc71c5838af04b61802a9fc8a05396ad931841bd6de1b241dbfffca70e1fa359",
+      "role": "target",
+      "current_sha256": "bc71c5838af04b61802a9fc8a05396ad931841bd6de1b241dbfffca70e1fa359",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m2405_basal_salts_medium.yaml",
+      "sha256": "ab072889d1eef1099e397c7c86e366b98ce755879ceb3b24b9b7450cc85aa838",
+      "role": "target",
+      "current_sha256": "ab072889d1eef1099e397c7c86e366b98ce755879ceb3b24b9b7450cc85aa838",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m2568_l_cysteine_hcl_4_percent.yaml",
+      "sha256": "6806c55d286d9a85869fde52b6b2b2ca08fa210fc336f1d2120b3b77342953f7",
+      "role": "target",
+      "current_sha256": "6806c55d286d9a85869fde52b6b2b2ca08fa210fc336f1d2120b3b77342953f7",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m2568_sodium_fumarate_1_percent.yaml",
+      "sha256": "296b148ac31485fa4e7bfcadc05c8c6f3b84d06868faef741928c898c8e924d2",
+      "role": "target",
+      "current_sha256": "296b148ac31485fa4e7bfcadc05c8c6f3b84d06868faef741928c898c8e924d2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m2568_sodium_lactate_60_percent_syrup.yaml",
+      "sha256": "a4c36f07db2d54d8f8e3aa770d01a3c1117176f1be538ad27cf73be292659e19",
+      "role": "target",
+      "current_sha256": "a4c36f07db2d54d8f8e3aa770d01a3c1117176f1be538ad27cf73be292659e19",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m2653_cysteine_sulfide_reducing_agent.yaml",
+      "sha256": "fbc0dea3442e22519b1337b4e702363c8f5dd09d3540a84a17aa1c402fadd7a7",
+      "role": "target",
+      "current_sha256": "fbc0dea3442e22519b1337b4e702363c8f5dd09d3540a84a17aa1c402fadd7a7",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m2653_sodium_formate_20_percent.yaml",
+      "sha256": "0383e6e08446d0ae336f2e793b01087782a168ea00245f1edfbb28dd9f7fe249",
+      "role": "target",
+      "current_sha256": "0383e6e08446d0ae336f2e793b01087782a168ea00245f1edfbb28dd9f7fe249",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m2809_sodium_citrate_02m.yaml",
+      "sha256": "55d510a2c8cbe763895075b59ab7c727373cc53d68b9538a999b337077110ad5",
+      "role": "target",
+      "current_sha256": "55d510a2c8cbe763895075b59ab7c727373cc53d68b9538a999b337077110ad5",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/b-togomedium_m3118_hcl_3m.yaml",
+      "sha256": "afb57a75575384ac410ca8e8dfd4f5e061b543b7fa6ca730ff473fa3e9f5414b",
+      "role": "target",
+      "current_sha256": "afb57a75575384ac410ca8e8dfd4f5e061b543b7fa6ca730ff473fa3e9f5414b",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/c-C-P05.yaml",
+      "sha256": "f420ee03375de9a0a7d25805266a2a8c239bd92cbf468f7256e065c1c533b0c5",
+      "role": "target",
+      "current_sha256": "f420ee03375de9a0a7d25805266a2a8c239bd92cbf468f7256e065c1c533b0c5",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/c-C-P06.yaml",
+      "sha256": "e7bf25bee7d17806ea5066e785484b6f23eed8f9d06e61b3cd9a1aef8eddc609",
+      "role": "target",
+      "current_sha256": "e7bf25bee7d17806ea5066e785484b6f23eed8f9d06e61b3cd9a1aef8eddc609",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/c-C-P07.yaml",
+      "sha256": "375af0ca5ce7c17d82a9f4a73dd5248b93ce1cb6d218ab6c03ebf71298406ccc",
+      "role": "target",
+      "current_sha256": "375af0ca5ce7c17d82a9f4a73dd5248b93ce1cb6d218ab6c03ebf71298406ccc",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/c-C-P09.yaml",
+      "sha256": "8e6db0499a597d2139ebf5ee7e3a539d8cf6f3b7638ab688a5f6ded6d02bc676",
+      "role": "target",
+      "current_sha256": "8e6db0499a597d2139ebf5ee7e3a539d8cf6f3b7638ab688a5f6ded6d02bc676",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/c-C-P10.yaml",
+      "sha256": "cbd96ca98eaf4b8cecdd53e1396e4051d386e8bfbcbaee55f55edd2cf1cfedd6",
+      "role": "target",
+      "current_sha256": "cbd96ca98eaf4b8cecdd53e1396e4051d386e8bfbcbaee55f55edd2cf1cfedd6",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/combined-JCM900-JCM979-Hutner.yaml",
+      "sha256": "2023fa9724edd613b49401d9aff9cea374f1620eb29de05f29244d5e06d34ce5",
+      "role": "target",
+      "current_sha256": "2023fa9724edd613b49401d9aff9cea374f1620eb29de05f29244d5e06d34ce5",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/root-nominal-11.yaml",
+      "sha256": "90067fa5008e430d3bfa573c0c9feb1453eb2d34f9dfc249d507898c5ea54ccd",
+      "role": "target",
+      "current_sha256": "90067fa5008e430d3bfa573c0c9feb1453eb2d34f9dfc249d507898c5ea54ccd",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/root-nominal-23.yaml",
+      "sha256": "1d64e262ffdb4bb557f40a270779112cb43c1779b9fe5ed0dae707b5096c7f04",
+      "role": "target",
+      "current_sha256": "1d64e262ffdb4bb557f40a270779112cb43c1779b9fe5ed0dae707b5096c7f04",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/root-nominal-45.yaml",
+      "sha256": "18595809d1c98b4291a944f649b685813541e2484f4be0b0b6d65aa5b0368ced",
+      "role": "target",
+      "current_sha256": "18595809d1c98b4291a944f649b685813541e2484f4be0b0b6d65aa5b0368ced",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/root-nominal-46.yaml",
+      "sha256": "89eebef6830337609740997f8632062d911bf3bf4c962e15fa6e61f6ba5581a9",
+      "role": "target",
+      "current_sha256": "89eebef6830337609740997f8632062d911bf3bf4c962e15fa6e61f6ba5581a9",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/stock-350g-L.yaml",
+      "sha256": "6c8b0635a18414c2c4b77831a9a7ddfe65fc8c7548dd73eea1507f56e7de2f99",
+      "role": "target",
+      "current_sha256": "6c8b0635a18414c2c4b77831a9a7ddfe65fc8c7548dd73eea1507f56e7de2f99",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/stock-7p5g-L-v2.yaml",
+      "sha256": "b1a46e427d72477cb58df5215ae363558d0c1f86ea842d415d79de88e71e99bb",
+      "role": "target",
+      "current_sha256": "b1a46e427d72477cb58df5215ae363558d0c1f86ea842d415d79de88e71e99bb",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/retention.json",
+      "sha256": "f00337144c11856480f4638e1b13e586cdf50c58d6fe04fffa73b8b8570243a2",
+      "role": "context",
+      "current_sha256": "f00337144c11856480f4638e1b13e586cdf50c58d6fe04fffa73b8b8570243a2",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/review/science/independent-science-review-v1.json",
+      "sha256": "1d0942d3379f87504e2e2dc8f1aef01c161bbddf20e91513a26a9b43ea1106ba",
+      "role": "context",
+      "current_sha256": "1d0942d3379f87504e2e2dc8f1aef01c161bbddf20e91513a26a9b43ea1106ba",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/review/skeptic/draft-v1-full-diff-review.json",
+      "sha256": "8568065778a36ee74632cc62f0ae15cff134f4649261171b2d57db4fbc1322ca",
+      "role": "context",
+      "current_sha256": "8568065778a36ee74632cc62f0ae15cff134f4649261171b2d57db4fbc1322ca",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/review/skeptic/independent-skeptical-draft-review-v1.json",
+      "sha256": "548505c85ceac14fa6a8058e8f2b5e5c8f3c94cb0d2b3e10eaed4790929c01b6",
+      "role": "context",
+      "current_sha256": "548505c85ceac14fa6a8058e8f2b5e5c8f3c94cb0d2b3e10eaed4790929c01b6",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/review/skeptic/new-lead-ledger-partial-001.json",
+      "sha256": "3d46ce98f3a4f23883ba58d380a9f042161ead073b9ae9d04b81b352cb9e6803",
+      "role": "context",
+      "current_sha256": "3d46ce98f3a4f23883ba58d380a9f042161ead073b9ae9d04b81b352cb9e6803",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/validation/projected-native-v1.json",
+      "sha256": "538e9d2fe4a7cfa8308ac9e33acc417d74ac893dcb58dc54768bd64bf292721c",
+      "role": "context",
+      "current_sha256": "538e9d2fe4a7cfa8308ac9e33acc417d74ac893dcb58dc54768bd64bf292721c",
+      "exact": true
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/validation/strict-draft-v1.json",
+      "sha256": "37fa9923655b80aac99b127d2a675f622822c9f50a666e81e4eb6cd7a43b3fdb",
+      "role": "context",
+      "current_sha256": "37fa9923655b80aac99b127d2a675f622822c9f50a666e81e4eb6cd7a43b3fdb",
+      "exact": true
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+      "role": "context",
+      "current_sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+      "exact": true
+    }
+  ],
+  "ignored_inclusive_finding_search": {
+    "argv": [
+      "rg",
+      "-l",
+      "-uu",
+      "--glob",
+      "review.yaml",
+      "-F",
+      "MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer",
+      "."
+    ],
+    "exit_code": 0,
+    "entries": [
+      {
+        "path": "./reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/native-review/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.yaml",
+        "sha256": "15c4dfa6aec0b103bfe8f4772402c873dd21e0e92ad88e6588bbc85e9901580f",
+        "review_id": "20261108T074315Z-w07-issues1226-1237-private-correction-v3",
+        "findings": [
+          {
+            "finding_id": "W07-SKEPTIC-LEDGER-PARTIAL-001",
+            "issue_key": "MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer",
+            "title": "Inherited JCM900 decision prose points to prior PARTIAL draft",
+            "category": "provenance",
+            "severity": "minor",
+            "status": "open",
+            "certainty": "confirmed",
+            "target_ids": [
+              "W07-COMBINED-JCM900-JCM979-Hutner"
+            ],
+            "field_paths": [
+              "decisions[CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2].reasoning",
+              "decisions[CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3].reasoning"
+            ],
+            "evidence_ids": [
+              "lead"
+            ],
+            "description": "Two inherited ledger sentences refer to a separate PARTIAL draft although the selected combined payload has COMPLETE immediate source-list assertion. Preserve exact historical wording and report for coordinator issue-first triage. Current integration hold explicitly prevents it overriding the selected payload. No new chemical or source correction is made.",
+            "ownership_note": "Coordinator controls issue triage and any separate ledger correction."
+          }
+        ]
+      },
+      {
+        "path": "./.temp/worker07-issue1237-ledger-v1/native/repo/reviews/structured/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.yaml",
+        "sha256": "15c4dfa6aec0b103bfe8f4772402c873dd21e0e92ad88e6588bbc85e9901580f",
+        "review_id": "20261108T074315Z-w07-issues1226-1237-private-correction-v3",
+        "findings": [
+          {
+            "finding_id": "W07-SKEPTIC-LEDGER-PARTIAL-001",
+            "issue_key": "MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer",
+            "title": "Inherited JCM900 decision prose points to prior PARTIAL draft",
+            "category": "provenance",
+            "severity": "minor",
+            "status": "open",
+            "certainty": "confirmed",
+            "target_ids": [
+              "W07-COMBINED-JCM900-JCM979-Hutner"
+            ],
+            "field_paths": [
+              "decisions[CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2].reasoning",
+              "decisions[CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3].reasoning"
+            ],
+            "evidence_ids": [
+              "lead"
+            ],
+            "description": "Two inherited ledger sentences refer to a separate PARTIAL draft although the selected combined payload has COMPLETE immediate source-list assertion. Preserve exact historical wording and report for coordinator issue-first triage. Current integration hold explicitly prevents it overriding the selected payload. No new chemical or source correction is made.",
+            "ownership_note": "Coordinator controls issue triage and any separate ledger correction."
+          }
+        ]
+      },
+      {
+        "path": "./.temp/worker07-issues1226-1237-v1/native-repo/reviews/structured/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.yaml",
+        "sha256": "15c4dfa6aec0b103bfe8f4772402c873dd21e0e92ad88e6588bbc85e9901580f",
+        "review_id": "20261108T074315Z-w07-issues1226-1237-private-correction-v3",
+        "findings": [
+          {
+            "finding_id": "W07-SKEPTIC-LEDGER-PARTIAL-001",
+            "issue_key": "MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer",
+            "title": "Inherited JCM900 decision prose points to prior PARTIAL draft",
+            "category": "provenance",
+            "severity": "minor",
+            "status": "open",
+            "certainty": "confirmed",
+            "target_ids": [
+              "W07-COMBINED-JCM900-JCM979-Hutner"
+            ],
+            "field_paths": [
+              "decisions[CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2].reasoning",
+              "decisions[CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3].reasoning"
+            ],
+            "evidence_ids": [
+              "lead"
+            ],
+            "description": "Two inherited ledger sentences refer to a separate PARTIAL draft although the selected combined payload has COMPLETE immediate source-list assertion. Preserve exact historical wording and report for coordinator issue-first triage. Current integration hold explicitly prevents it overriding the selected payload. No new chemical or source correction is made.",
+            "ownership_note": "Coordinator controls issue triage and any separate ledger correction."
+          }
+        ]
+      }
+    ],
+    "unique_review_ids": [
+      "20261108T074315Z-w07-issues1226-1237-private-correction-v3"
+    ]
+  },
+  "limitations": "read_review validates exact saved YAML/Markdown pair and retained base; this is ledger metadata reconciliation, not a renewed source or owner science review."
+}

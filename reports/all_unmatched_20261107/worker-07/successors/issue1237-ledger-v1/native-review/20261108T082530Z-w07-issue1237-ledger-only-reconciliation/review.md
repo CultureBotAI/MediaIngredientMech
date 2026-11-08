@@ -1,0 +1,465 @@
+# W07 issue1237 active ledger pointer and printed-list completeness reconciliation
+
+- Review: 20261108T082530Z-w07-issue1237-ledger-only-reconciliation
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T08:23:02.640618Z
+- Finished UTC: 2026-11-08T08:25:30.069412Z
+- Reviewer: /root/ledger_native_review (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: false
+
+## Summary
+
+Both specified source decisions now name the selected combined JCM900/JCM979 proposal with COMPLETE printed immediate input-list closure. Four strings changed; all other case fields, all100proposalobjects/payloads and1503evidenceobjects remain exact. Nested chemistry, literal malformed molybdate, DSM590/1144 comparison and coordinator-owned union remain held. This is ledger-only reconciliation, not a renewed source, whole-owner, role or release approval.
+
+## Scope And Provenance
+
+Two exact case-row active text claims and their one unchanged selected combined proposal as comparison context. The affected stable target of the previous finding is preserved.
+
+Selection: Exact user-specified issue1237 comment6719045392 and W07-SKEPTIC-LEDGER-PARTIAL-001 at ee75d464; no other scientific field changes.
+Coverage: full; 3 reviewed / 3 in the declared population.
+Source: working_tree at Git base ee75d464c4a44edfbc57c72c200eeeaf962a7192.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| W07-COMBINED-JCM900-JCM979-Hutner | reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/combined-JCM900-JCM979-Hutner.yaml # Exact isolated candidate SHA256=2023fa9724edd613b49401d9aff9cea374f1620eb29de05f29244d5e06d34ce5 | source | Hutner basal salts (JCM 900 and JCM 979) |
+| CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2 | reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/decisions.json # case_id=CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2; reasoning and applicability only | snapshot_row | JCM900-linked source decision CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2 |
+| CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3 | reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/decisions.json # case_id=CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3; reasoning and applicability only | snapshot_row | JCM900-linked source decision CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native read_review previous pair and historical source bindings | passed | True | W07-COMBINED-JCM900-JCM979-Hutner, CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2, CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3 | Actual native read_review parsed previous exact canonical pair and retained Git base; all113declared historical input bindings still match current files. |
+| Native current input inspection | passed | True | W07-COMBINED-JCM900-JCM979-Hutner, CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2, CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3 | Native inspect bound exact current targets and context before saving; private repository baseee75d464. |
+| Native frozen source-case binding audit | passed | True | W07-COMBINED-JCM900-JCM979-Hutner, CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2, CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3 | All188frozen cases,100proposalobjects and1503evidenceentries retain valid exact bindings. |
+| Independent allowed-field and ledger-text review | passed | True | W07-COMBINED-JCM900-JCM979-Hutner, CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2, CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3 | Different reviewer confirmed exactly four changed strings and preservation of all other fields/payloads/holds. |
+
+## Scientific And Domain Assessments
+
+### Selected combined proposal and list completeness in active reasoning/applicability
+
+consistency: supported. Targets: CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2, CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3.
+
+The four active fields now select W07-COMBINED-JCM900-JCM979-Hutner and distinguish COMPLETE printed list from unresolved molybdate/nested chemical identity. The exact source links and all existing holds remain.
+
+### Unchanged stable target and native finding lineage
+
+provenance: supported. Targets: W07-COMBINED-JCM900-JCM979-Hutner.
+
+The existing selected combined payload bytes and COMPLETE immediate-list claim are unchanged. This keeps the original finding target while resolving only its source-ledger pointer inconsistency; no ingredient science is newly approved.
+
+## Findings
+
+### W07-SKEPTIC-LEDGER-PARTIAL-001: Inherited JCM900 decision prose points to prior PARTIAL draft
+
+minor / resolved / confirmed; issue key: MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer.
+
+The isolated immutable successor corrects only the four active reasoning/applicability text fields. Historical original sentences and all other case fields remain retained exactly; no chemical correction is asserted.
+
+Disposition: The exact successor fields now match the unchanged selected combined payload and its COMPLETE printed immediate-list semantics. Separate exact-diff/ledger review confirms the four-field correction. Resolution is limited to the filed active-text inconsistency at these hashes; it does not close issue1237, renew owner/source science, or resolve molybdate, nested chemistry or export holds.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| predecessor | reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/native-review/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.yaml; Finding W07-SKEPTIC-LEDGER-PARTIAL-001; native key MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer | supports | Exact previous native finding retained; its affected target is preserved. Prior source input hashes and native YAML/Markdown pair checked. |
+| issue-comment | reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/inputs/issue1237-comment-6719045392.json; https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6719045392; full body | supports | Exact filed issue comment distinguishes bounded active-ledger correction from chemical identity or payload changes. |
+| before-after | reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/before-after-accounting.json; exact_string_replacements; all_case_accounting; all_proposal_payload_accounting; exact_retained_ledger_bytes | supports | Complete original and successor case accounting; exactly four active text fields change while all188case identities/occurrences,100proposalobjects/payloads and1503evidenceobjects are retained. |
+| selected-payload | reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/combined-JCM900-JCM979-Hutner.yaml; Full unchanged payload, component_assertion and notes; all9immediateinputs | supports | Selected payload still has COMPLETE immediate printed list; literal malformed molybdate and nested Metals44 chemistry remain unresolved. |
+| independent-diff | reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/review/independent/independent-diff-check-v1.json; Complete exact diff receipt by /root/ledger_partial_independent | supports | Different in-process reviewer independently validates exact allowed-field diff and unchanged ledgers/payloads. |
+| independent-ledger | reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/review/independent/independent-ledger-review-v1.json; Complete bounded ledger-text review by /root/ledger_partial_independent | supports | Separate independent reviewer accepts the corrected ledger wording within unchanged source/chemical holds. |
+| strict-case-binding | reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/validation/strict-case-binding.json; structural_accounting PASS; source/evidence/current-case bindings only, not scientific approval | supports | Native campaign auditor rebinds all188cases,100proposals and1503evidence entries to the frozen shard and exact captures. |
+
+## Limits And Additional Notes
+
+- scientific_review=false: this is metadata/source-ledger reconciliation only; primary chemistry and whole-owner claims were not re-reviewed.
+- The new resolution covers the two active reasoning/applicability fields in each named case only. Historical shared_proposal_requested, integration_hold and predecessor review fields are intentionally byte-identical under the authorized scope and read with the explicit active selector/correction account.
+- No molybdate normalization, nested recipe expansion, source-scope equivalence, DSM590/1144 union, roles, approvals or exports are changed.
+- Native structural checks prove bindings and review shape, not scientific truth. Original saved review has working-tree attestation at ddef735, and new review has working-tree attestation at ee75d464; immutable published predecessor commit remains available.
+- Private native saver is used in a new local staging clone; root publishes exact copied pair under the report successor. No maintained reviews, source checkout, old private packets, GitHub or external service is modified.
+- Commit and publication had not occurred when this native observation was saved; root records exact local/remote publication receipt separately.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T082530Z-w07-issue1237-ledger-only-reconciliation
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: W07 issue1237 active ledger pointer and printed-list completeness reconciliation
+started_at: '2026-11-08T08:23:02.640618Z'
+finished_at: '2026-11-08T08:25:30.069412Z'
+reviewer:
+  identity: /root/ledger_native_review
+  kind: agent
+  independence: self_review
+  independence_basis: Author of this native wrapper and mechanical validation only;
+    did not author the four corrected strings. Independent exact-diff and ledger wording
+    review is separately provided by /root/ledger_partial_independent and hash-bound
+    here. This wrapper is not its own independent acceptance.
+skill: reconcile-review-records
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Resolved only the filed active reasoning/applicability ledger inconsistency;
+  all scientific/source holds retained.
+scientific_review: false
+summary: Both specified source decisions now name the selected combined JCM900/JCM979
+  proposal with COMPLETE printed immediate input-list closure. Four strings changed;
+  all other case fields, all100proposalobjects/payloads and1503evidenceobjects remain
+  exact. Nested chemistry, literal malformed molybdate, DSM590/1144 comparison and
+  coordinator-owned union remain held. This is ledger-only reconciliation, not a renewed
+  source, whole-owner, role or release approval.
+source:
+  git_revision: ee75d464c4a44edfbc57c72c200eeeaf962a7192
+  state: working_tree
+  inputs:
+  - path: .claude/skills/reconcile-review-records/SKILL.md
+    sha256: b8c3e3fdb31e58a49343f20b11c7a1c2a3616f16ef36601ccd072e2693031474
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/SELECTOR.json
+    sha256: 0cf1d7355ee78464cd84a766052aed53f7bc4f5b18e544a89c05641dc161ed4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/before-after-accounting.json
+    sha256: 764ffc767b8b2b759794078d2cb90b3719dae1830eb39411b4d1ab585e6a867e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/decisions.json
+    sha256: 6ca38158ad2d1be9f48ea79d8ce76b4251777eed6f4ba966c9672d124fcddf8c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/evidence.json
+    sha256: dfec2adab5804a659a070d8a13a6f346054692bc986e2a07ef05a2953d40c068
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/inputs/coordinator-HANDOFF.json
+    sha256: 2fcc1d1700b6fa357232a9d252f7f175fcd8db4bd0947e43924ab481f817897d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/inputs/coordinator-inherited-ledger-lead.json
+    sha256: 86cb4771434f057d43b82d2aab3c6682b112d9b055ea7bc374c09a8d79e7b2a3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/inputs/issue1237-comment-6719045392.json
+    sha256: 7a68d9368b3d58eb5e5fef7386274dfc2d6a69496d42f572ef03bba00b6051ee
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/proposals.json
+    sha256: 3ead04526a6a4e51eca4ecc8ced95f76a568048551aff7fc981e589195e2eaf0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/review/independent/independent-diff-check-v1.json
+    sha256: 10887725b97a92b53d71dedb67d69038a47af3bbf070da17a199b52ca1f9c2e7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/review/independent/independent-ledger-review-v1.json
+    sha256: 7d6b7d36ddb43f91d17d0065790b83e96a3623fec85be2e5cb483d8c5072859f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/review/independent/independent-native-source-case-v1.json
+    sha256: 52493825cd5c404dfb09d313925a34a1554d927f55d2af24d316896541f694bf
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/validation/strict-case-binding-command.json
+    sha256: fb01bf55a3ee42346e4c1b3fe36de86ec8c2ec14856208a2b98a092d290df044
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/validation/strict-case-binding.json
+    sha256: 0eedc9a886daf4f65ee21ba9343052a69406b0fab44014c7fe104f7b85d55a21
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/SELECTOR.json
+    sha256: 5d54c81f519e0ff01d0617f830634766c407bc0e5f614393ec33c31fe217993b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/decisions.json
+    sha256: 4808769aac73474bb1945e64c89ce6b24ff3cd30f8bf0e10e896b62ead0c550c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/evidence.json
+    sha256: dfec2adab5804a659a070d8a13a6f346054692bc986e2a07ef05a2953d40c068
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/native-review/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.md
+    sha256: 0c0d6fe109ae51e6d8e860cb9adcf95075b6843ad7fe37e03a84ceab6119c3a9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/native-review/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.yaml
+    sha256: 15c4dfa6aec0b103bfe8f4772402c873dd21e0e92ad88e6588bbc85e9901580f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposals.json
+    sha256: 3ead04526a6a4e51eca4ecc8ced95f76a568048551aff7fc981e589195e2eaf0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/combined-JCM900-JCM979-Hutner.yaml
+    sha256: 2023fa9724edd613b49401d9aff9cea374f1620eb29de05f29244d5e06d34ce5
+    role: target
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+scope:
+  description: Two exact case-row active text claims and their one unchanged selected
+    combined proposal as comparison context. The affected stable target of the previous
+    finding is preserved.
+  selection: Exact user-specified issue1237 comment6719045392 and W07-SKEPTIC-LEDGER-PARTIAL-001
+    at ee75d464; no other scientific field changes.
+  coverage: full
+  population_size: 3
+  reviewed_target_ids:
+  - W07-COMBINED-JCM900-JCM979-Hutner
+  - CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  - CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  exclusions:
+  - target: Other186case objects and all source/payload science
+    reason: Mechanically checked unchanged; no renewed scientific review or approvals.
+  - target: DSM590/1144 coordinator-owned union and all physical/chemical/role/export
+      holds
+    reason: Outside authorized correction and retained unchanged.
+targets:
+- target_id: W07-COMBINED-JCM900-JCM979-Hutner
+  path: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/combined-JCM900-JCM979-Hutner.yaml
+  label: Hutner basal salts (JCM 900 and JCM 979)
+  kind: source
+  record_class: IngredientRecord
+  selector: Exact isolated candidate SHA256=2023fa9724edd613b49401d9aff9cea374f1620eb29de05f29244d5e06d34ce5
+  ownership_note: Unapplied report-only proposal; the unchanged COMPLETE printed immediate-list
+    assertion is comparison context for the two ledger sentences. No owner science,
+    component, role or export approval.
+- target_id: CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/decisions.json
+  label: JCM900-linked source decision CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  kind: snapshot_row
+  selector: case_id=CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2;
+    reasoning and applicability only
+  ownership_note: Report-only source-case ledger owned by W07; user authorized only
+    the four active text fields. Not a maintained ingredient row.
+- target_id: CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  path: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/decisions.json
+  label: JCM900-linked source decision CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  kind: snapshot_row
+  selector: case_id=CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3;
+    reasoning and applicability only
+  ownership_note: Report-only source-case ledger owned by W07; user authorized only
+    the four active text fields. Not a maintained ingredient row.
+checks:
+- check_id: native-predecessor-pair
+  name: Native read_review previous pair and historical source bindings
+  status: passed
+  required: true
+  summary: Actual native read_review parsed previous exact canonical pair and retained
+    Git base; all113declared historical input bindings still match current files.
+  target_ids:
+  - W07-COMBINED-JCM900-JCM979-Hutner
+  - CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  - CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  evidence_ids:
+  - predecessor
+- check_id: native-current-inspect
+  name: Native current input inspection
+  status: passed
+  required: true
+  summary: Native inspect bound exact current targets and context before saving; private
+    repository baseee75d464.
+  target_ids:
+  - W07-COMBINED-JCM900-JCM979-Hutner
+  - CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  - CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  command: scripts/record_review.py --repo-root <private-native-repo> inspect; full
+    argv in validation/native-inspect.json
+  exit_code: 0
+  expected_exit_code: 0
+- check_id: native-source-case
+  name: Native frozen source-case binding audit
+  status: passed
+  required: true
+  summary: All188frozen cases,100proposalobjects and1503evidenceentries retain valid
+    exact bindings.
+  target_ids:
+  - W07-COMBINED-JCM900-JCM979-Hutner
+  - CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  - CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  command: audit_worker_outcomes_v1.py; exact argv in successor validation/strict-case-binding-command.json
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - strict-case-binding
+- check_id: independent-exact-diff
+  name: Independent allowed-field and ledger-text review
+  status: passed
+  required: true
+  summary: Different reviewer confirmed exactly four changed strings and preservation
+    of all other fields/payloads/holds.
+  target_ids:
+  - W07-COMBINED-JCM900-JCM979-Hutner
+  - CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  - CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  evidence_ids:
+  - independent-diff
+  - independent-ledger
+evidence:
+- evidence_id: predecessor
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/native-review/20261108T074315Z-w07-issues1226-1237-private-correction-v3/review.yaml
+  locator: Finding W07-SKEPTIC-LEDGER-PARTIAL-001; native key MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer
+  accessed_at: '2026-11-08T08:25:30.068942Z'
+  support: supports
+  summary: Exact previous native finding retained; its affected target is preserved.
+    Prior source input hashes and native YAML/Markdown pair checked.
+  snapshot_sha256: 15c4dfa6aec0b103bfe8f4772402c873dd21e0e92ad88e6588bbc85e9901580f
+- evidence_id: issue-comment
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/inputs/issue1237-comment-6719045392.json
+  locator: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6719045392;
+    full body
+  accessed_at: '2026-11-08T08:25:30.069050Z'
+  support: supports
+  summary: Exact filed issue comment distinguishes bounded active-ledger correction
+    from chemical identity or payload changes.
+  snapshot_sha256: 7a68d9368b3d58eb5e5fef7386274dfc2d6a69496d42f572ef03bba00b6051ee
+- evidence_id: before-after
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/before-after-accounting.json
+  locator: exact_string_replacements; all_case_accounting; all_proposal_payload_accounting;
+    exact_retained_ledger_bytes
+  accessed_at: '2026-11-08T08:25:30.069084Z'
+  support: supports
+  summary: Complete original and successor case accounting; exactly four active text
+    fields change while all188case identities/occurrences,100proposalobjects/payloads
+    and1503evidenceobjects are retained.
+  snapshot_sha256: 764ffc767b8b2b759794078d2cb90b3719dae1830eb39411b4d1ab585e6a867e
+- evidence_id: selected-payload
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-07/successors/issues1226-1237-v1/proposed_owners/combined-JCM900-JCM979-Hutner.yaml
+  locator: Full unchanged payload, component_assertion and notes; all9immediateinputs
+  accessed_at: '2026-11-08T08:25:30.069191Z'
+  support: supports
+  summary: Selected payload still has COMPLETE immediate printed list; literal malformed
+    molybdate and nested Metals44 chemistry remain unresolved.
+  snapshot_sha256: 2023fa9724edd613b49401d9aff9cea374f1620eb29de05f29244d5e06d34ce5
+- evidence_id: independent-diff
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/review/independent/independent-diff-check-v1.json
+  locator: Complete exact diff receipt by /root/ledger_partial_independent
+  accessed_at: '2026-11-08T08:25:30.069218Z'
+  support: supports
+  summary: Different in-process reviewer independently validates exact allowed-field
+    diff and unchanged ledgers/payloads.
+  snapshot_sha256: 10887725b97a92b53d71dedb67d69038a47af3bbf070da17a199b52ca1f9c2e7
+- evidence_id: independent-ledger
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/review/independent/independent-ledger-review-v1.json
+  locator: Complete bounded ledger-text review by /root/ledger_partial_independent
+  accessed_at: '2026-11-08T08:25:30.069246Z'
+  support: supports
+  summary: Separate independent reviewer accepts the corrected ledger wording within
+    unchanged source/chemical holds.
+  snapshot_sha256: 7d6b7d36ddb43f91d17d0065790b83e96a3623fec85be2e5cb483d8c5072859f
+- evidence_id: strict-case-binding
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1237-ledger-v1/validation/strict-case-binding.json
+  locator: structural_accounting PASS; source/evidence/current-case bindings only,
+    not scientific approval
+  accessed_at: '2026-11-08T08:25:30.069271Z'
+  support: supports
+  summary: Native campaign auditor rebinds all188cases,100proposals and1503evidence
+    entries to the frozen shard and exact captures.
+  snapshot_sha256: 0eedc9a886daf4f65ee21ba9343052a69406b0fab44014c7fe104f7b85d55a21
+assessments:
+- assessment_id: active-case-text
+  area: consistency
+  topic: Selected combined proposal and list completeness in active reasoning/applicability
+  outcome: supported
+  summary: The four active fields now select W07-COMBINED-JCM900-JCM979-Hutner and
+    distinguish COMPLETE printed list from unresolved molybdate/nested chemical identity.
+    The exact source links and all existing holds remain.
+  target_ids:
+  - CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  - CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  evidence_ids:
+  - before-after
+  - selected-payload
+  - independent-diff
+  - independent-ledger
+- assessment_id: selected-payload-context
+  area: provenance
+  topic: Unchanged stable target and native finding lineage
+  outcome: supported
+  summary: The existing selected combined payload bytes and COMPLETE immediate-list
+    claim are unchanged. This keeps the original finding target while resolving only
+    its source-ledger pointer inconsistency; no ingredient science is newly approved.
+  target_ids:
+  - W07-COMBINED-JCM900-JCM979-Hutner
+  evidence_ids:
+  - predecessor
+  - selected-payload
+  - before-after
+  - strict-case-binding
+findings:
+- finding_id: W07-SKEPTIC-LEDGER-PARTIAL-001
+  issue_key: MediaIngredientMech.W07.JCM900-historical-PARTIAL-draft-pointer
+  title: Inherited JCM900 decision prose points to prior PARTIAL draft
+  category: provenance
+  severity: minor
+  status: resolved
+  certainty: confirmed
+  target_ids:
+  - W07-COMBINED-JCM900-JCM979-Hutner
+  - CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2
+  - CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3
+  field_paths:
+  - decisions[CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2].reasoning
+  - decisions[CM_NAME:413f665d954f387d2bf0a3baa2ce2bdfdd043dcc43532d442db0b16ca85a2fe2].applicability
+  - decisions[CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3].reasoning
+  - decisions[CM_NAME:506bbe669107e7f2e69edfd707da8af99be9ec015f6e68c77ee9e9cf9532a5a3].applicability
+  evidence_ids:
+  - predecessor
+  - issue-comment
+  - before-after
+  - independent-diff
+  - independent-ledger
+  - selected-payload
+  description: The isolated immutable successor corrects only the four active reasoning/applicability
+    text fields. Historical original sentences and all other case fields remain retained
+    exactly; no chemical correction is asserted.
+  ownership_note: W07 authored the bounded report-only ledger correction. Coordinator
+    alone controls final acceptance, issue status, owner integration and the separate
+    DSM590/1144 union.
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T074315Z-w07-issues1226-1237-private-correction-v3
+    finding_id: W07-SKEPTIC-LEDGER-PARTIAL-001
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6719045392
+  disposition_reason: The exact successor fields now match the unchanged selected
+    combined payload and its COMPLETE printed immediate-list semantics. Separate exact-diff/ledger
+    review confirms the four-field correction. Resolution is limited to the filed
+    active-text inconsistency at these hashes; it does not close issue1237, renew
+    owner/source science, or resolve molybdate, nested chemistry or export holds.
+actions: []
+limitations:
+- 'scientific_review=false: this is metadata/source-ledger reconciliation only; primary
+  chemistry and whole-owner claims were not re-reviewed.'
+- The new resolution covers the two active reasoning/applicability fields in each
+  named case only. Historical shared_proposal_requested, integration_hold and predecessor
+  review fields are intentionally byte-identical under the authorized scope and read
+  with the explicit active selector/correction account.
+- No molybdate normalization, nested recipe expansion, source-scope equivalence, DSM590/1144
+  union, roles, approvals or exports are changed.
+- Native structural checks prove bindings and review shape, not scientific truth.
+  Original saved review has working-tree attestation at ddef735, and new review has
+  working-tree attestation at ee75d464; immutable published predecessor commit remains
+  available.
+- Private native saver is used in a new local staging clone; root publishes exact
+  copied pair under the report successor. No maintained reviews, source checkout,
+  old private packets, GitHub or external service is modified.
+- Commit and publication had not occurred when this native observation was saved;
+  root records exact local/remote publication receipt separately.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T074315Z-w07-issues1226-1237-private-correction-v3
+  relationship: Append-only bounded resolution of W07-SKEPTIC-LEDGER-PARTIAL-001 only;
+    prior full100targetreview unchanged.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6719045392
+```
