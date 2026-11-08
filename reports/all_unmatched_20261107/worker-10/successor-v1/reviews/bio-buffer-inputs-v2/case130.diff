@@ -1,0 +1,45 @@
+--- 
++++ 
+@@ -15,7 +15,10 @@
+       section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+       1452 uses 100 mL of a 1 M NaHCO3/Na2CO3 buffer at pH 10.0 with 900 mL water
+       and states final 100 mM. The 1 M input stock has a distinct concentration boundary
+-      from the receiving diluted medium and from NBRC 944 paired-100-mM buffer.
++      from the receiving diluted medium and from NBRC 944 paired-100-mM buffer. JCM
++      1452 explicitly directs separate autoclaving of this buffer followed by aseptic
++      addition to the medium. No stock-specific time or temperature is asserted from
++      the page-wide medium default.
+ components:
+ - component_name: NaHCO3
+   reference_scope: UNMAPPED
+@@ -33,6 +36,9 @@
+     notes: JCM 1452 uses 100 mL of a 1 M NaHCO3/Na2CO3 buffer at pH 10.0 with 900
+       mL water and states final 100 mM. The 1 M input stock has a distinct concentration
+       boundary from the receiving diluted medium and from NBRC 944 paired-100-mM buffer.
++      JCM 1452 explicitly directs separate autoclaving of this buffer followed by
++      aseptic addition to the medium. No stock-specific time or temperature is asserted
++      from the page-wide medium default.
+   notes: Mixing ratio, salt hydration, stock solvent and titrant remain unspecified.
+     Source-named parts remain UNMAPPED where supplied form or stock identity is not
+     established. MIM_CATALOG references identify only the supported constituent, not
+@@ -45,7 +51,9 @@
+   Generic source-local labels are not added as globally resolving synonyms. No exact
+   formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+   receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+-  is separate from preparation identity.
++  is separate from preparation identity. JCM 1452 explicitly directs separate autoclaving
++  of this buffer followed by aseptic addition to the medium. No stock-specific time
++  or temperature is asserted from the page-wide medium default.
+ curation_history:
+ - timestamp: '2026-11-08T06:02:48.801189+00:00'
+   curator: all_unmatched_worker10_successor_buffers
+@@ -55,3 +63,9 @@
+     complete-formula, inherited-owner, role or publication approval.
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T06:09:00.717461+00:00'
++  curator: all_unmatched_worker10_successor_buffers
++  action: ANNOTATED
++  changes: 'Independent review correction: retain JCM1452 separate stock autoclaving
++    and aseptic addition explicitly, without inventing a stock sterilization schedule.'
++  llm_assisted: true

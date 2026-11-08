@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:hepes_2m_ph7_jcm556_1200
+preferred_term: 2 M HEPES buffer, pH 7.0 (JCM 556 / 1200)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hepes_2m_ph7_jcm556_1200
+  ontology_label: 2 M HEPES buffer, pH 7.0 (JCM 556 / 1200)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=556
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      556 and JCM 1200 use 5 mL of 2 M HEPES buffer at pH 7.0 in sterilized stock
+      context. The preparation is not the dry HEPES acid owner and is distinct from
+      the UTEX 50 mM pH 7.8 stock.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1200
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      556 and JCM 1200 use 5 mL of 2 M HEPES buffer at pH 7.0 in sterilized stock
+      context. The preparation is not the dry HEPES acid owner and is distinct from
+      the UTEX 50 mM pH 7.8 stock.
+components:
+- component_name: HEPES
+  reference_scope: UNMAPPED
+  source: Source does not specify supplied acid or salt form or pH-adjusting reagent.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=556
+    source_record: 2 M HEPES buffer, pH 7.0 (JCM 556 / 1200)
+    notes: JCM 556 and JCM 1200 use 5 mL of 2 M HEPES buffer at pH 7.0 in sterilized
+      stock context. The preparation is not the dry HEPES acid owner and is distinct
+      from the UTEX 50 mM pH 7.8 stock.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1200
+    source_record: 2 M HEPES buffer, pH 7.0 (JCM 556 / 1200)
+    notes: JCM 556 and JCM 1200 use 5 mL of 2 M HEPES buffer at pH 7.0 in sterilized
+      stock context. The preparation is not the dry HEPES acid owner and is distinct
+      from the UTEX 50 mM pH 7.8 stock.
+  notes: HEPES supplied form, solvent, titrant and titrant amount remain unspecified;
+    no pure-form alias or full composition claim follows. Source-named parts remain
+    UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG
+    references identify only the supported constituent, not approval of that complete
+    owner.
+notes: JCM 556 and JCM 1200 use 5 mL of 2 M HEPES buffer at pH 7.0 in sterilized stock
+  context. The preparation is not the dry HEPES acid owner and is distinct from the
+  UTEX 50 mM pH 7.8 stock. HEPES supplied form, solvent, titrant and titrant amount
+  remain unspecified; no pure-form alias or full composition claim follows. Provenance-only
+  source text '2 M HEPES buffer (pH 7.0)' (case CM_NAME:ff120d19b0c8b8a01c2e0ca8fd970242da364171932d36a9b4d8fdbbacf5e1b0).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true

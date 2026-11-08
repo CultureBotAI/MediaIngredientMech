@@ -1,0 +1,18 @@
+The worker-10 successor source review found two maintained identities whose exact mappings lose a source-supported chemical distinction. The inspected baseline is `e000d66dd26ab053e9b17ce7bf8d3c873c3dde99`; these are isolated proposals, not changes to maintained YAML or a publication approval.
+
+A read-only GitHub `main` check at 2026-11-08T06:11:28.616136+00:00 found the relevant owner bytes identical to this frozen baseline. Exact decoded-body hashes and API captures are retained in `reports/all_unmatched_20261107/worker-10/successor-v1/issues/current-main-owner-check.json`.
+
+| Owner | Baseline assertion | Supported bounded correction |
+| --- | --- | --- |
+| `data/ingredients/mapped/Pipes.yaml` | `CHEBI:39033` exact PIPES grouping identity, although its CAS is 5625-37-6 | Evaluate the exact free-acid owner `CHEBI:44933`, preserving separately prepared PIPES buffers and salt owners. |
+| `data/ingredients/mapped/Dl-aspartic_Acid.yaml` | `CHEBI:22660` exact stereo-unspecified aspartic acid identity for a DL racemate | Preserve the verified racemate as `cas:617-45-8`, with the stereo-unspecified term only as an asymmetric broader mapping; retain racemate names and remove unsupported generic identity/structure claims. |
+
+MediaDive ingredient 867 identifies the PIPES reagent by CAS 5625-37-6, formula C8H18N2O6S2 and mass 302.37; its medium 964 context weighs the reagent. ChEBI44933 and PubChem79723 agree on the specific acid. This evidence is source-specific: it does not identify the supplied form in an unrelated final-10-mM PIPES occurrence or make every PIPES-buffer label an acid synonym. Primary references: [MediaDive867](https://mediadive.dsmz.de/rest/ingredient/867), [medium964](https://mediadive.dsmz.de/rest/medium/964), [ChEBI44933](https://www.ebi.ac.uk/chebi/CHEBI:44933), [PubChem79723](https://pubchem.ncbi.nlm.nih.gov/compound/79723).
+
+The DL-aspartic-acid source is MediaDive1445. TCI A0544 and NIST identify the DL material with CAS617-45-8, while ChEBI22660's definition and structure do not specify the racemic mixture. A CAS cross-reference on a broader ontology term does not by itself make their identity scopes equal. Primary references: [MediaDive1445](https://mediadive.dsmz.de/rest/ingredient/1445), [TCI A0544](https://www.tcichemicals.com/US/en/p/A0544), [NIST617-45-8](https://webbook.nist.gov/cgi/cbook.cgi?ID=617-45-8), [ChEBI22660](https://www.ebi.ac.uk/chebi/CHEBI:22660).
+
+Exact proposal/evidence references are `reports/all_unmatched_20261107/worker-10/successor-v1/kg/{decisions,evidence,proposals}.json`: cases184 and166; proposals `sv1-kg-pipes-free-acid` and `sv1-kg-dl-aspartic-racemate`. The proposal ledger binds actual before-owner and proposed-payload hashes.
+
+This is a concrete child scope of [#718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718). Its [worker01 PIPES comment](https://github.com/CultureBotAI/MediaIngredientMech/issues/718#issuecomment-6717638594) concerns an unresolved final-concentration occurrence; that hold remains. Closed [#114](https://github.com/CultureBotAI/MediaIngredientMech/issues/114) describes historical buffer modelling, and closed [#416](https://github.com/CultureBotAI/MediaIngredientMech/issues/416) describes registry-row generation; neither establishes the exact source reagent identities above.
+
+Integrate only after reconciling current owner bytes and cross-worker proposals under MAPPING_SEMANTICS sections3 and6. Preserve every source/downstream hold and rejected label, withdraw stale content-bound support, synchronize maintained surfaces and validate exact identity, registry rows and exported aliases. These bounded corrections do not approve the entire inherited owner, roles or release.

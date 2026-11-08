@@ -1,0 +1,55 @@
+identifier: CHEBI:73804
+preferred_term: Glycyl L-aspartic Acid
+synonyms:
+- synonym_text: Glycyl L-aspartic Acid
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 17
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_aspartic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0655 -> CHEBI:73804 "Gly-Asp" (SYNONYM_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_aspartic_acid);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:73804
+  ontology_label: Gly-Asp
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Glycyl-L-aspartic acid is the dipeptide Gly-Asp (#213).
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C6H10N2O5
+  smiles: NCC(=O)N[C@@H](CC(=O)O)C(=O)O
+  inchi: InChI=1S/C6H10N2O5/c7-2-4(9)8-3(6(12)13)1-5(10)11/h3H,1-2,7H2,(H,8,9)(H,10,11)(H,12,13)/t3-/m0/s1
+  molecular_weight: 190.155
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:15:04.858941+00:00'

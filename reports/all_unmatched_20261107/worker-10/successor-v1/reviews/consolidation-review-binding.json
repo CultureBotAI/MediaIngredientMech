@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/kg_research",
+  "reviewed_at": "2026-11-08T06:13:32.829119+00:00",
+  "status": "complete",
+  "verdict": "pass",
+  "scope": "Contract-only consolidation check; no new scientific claims or payloads approved. Author fragments remain immutable.",
+  "inputs": {
+    "successor-v1/decisions.json": "8c8f1c43ff423fddfc575004e2ecd391905bc834b74a9c8b7ecf7d25a2efa197",
+    "successor-v1/proposals.json": "608ce70c69294f145f0d98efca387676c6c5a636fba4c5be90090df2c31c4e81",
+    "successor-v1/evidence.json": "2f97555905632b4d3ee28ad068fbdf48b846746eb43a441fa752e8bce277e3d6",
+    "successor-v1/bio/decisions.json": "b71e0477b5f3e408c650d1d74448cf122e8427b285156dd06b69a1dd787cc35f",
+    "successor-v1/bio/proposals.json": "e65387f6ff1aa8846e2535ec6181e41ef5d6ccff76874ea18f5ba92b798c69e4",
+    "successor-v1/kg/proposals.json": "c8a3a418520fffe5993cbe56fa822674cd06e35c24a4521e9d23945d65a2c5a7",
+    "successor-v1/reviews/kg-bio-review-v2.json": "7948f33aa438a466700cec7215278d470c631dd67e595eaa9a8aca4e764f926f",
+    "successor-v1/reviews/root-kg-review-v2.json": "d4480ade838d0a642345c75b2c16706080a94b348d785c6179b642694ae2cab3"
+  },
+  "checks": [
+    {
+      "name": "case19 disposition normalization",
+      "result": "pass",
+      "case_id": "CM_NAME:288760b3ff6def53a64dbd9a766db39c1d0e3075313e2e582d697ebf6d28bf90",
+      "from": "malformed",
+      "to": "malformed_or_nonchemical_token",
+      "interpretation": "Allowed contract token expresses the same malformed imperative provenance. Source/rawlabel, occurrences, scientific reasoning, applicability, holds, evidence and exact serum payload are unchanged."
+    },
+    {
+      "name": "all50 biological fragment consolidation",
+      "result": "pass",
+      "case_count": 50,
+      "allowed_changes": [
+        "Required absent no_change_reason/missing_requirement fields inserted as null",
+        "independent_review changed from pending to complete with existing exact review evidence",
+        "case19 enum spelling normalized"
+      ],
+      "science_fields_equal": true
+    },
+    {
+      "name": "case53 swine proposal backlink",
+      "result": "pass",
+      "case_id": "CM_NAME:69163d6dab73593d0b3e1160b9ff99b7a5551b215e962a1f95928a03922aa995",
+      "proposal_id": "sv1-kg-swine-serum1076b",
+      "final_case_ids": [
+        "KG_CASE:e75ff261366a1a20c02ae2e61199377135a3f67e13a4bace3ac2b27c9f65253a",
+        "CM_NAME:69163d6dab73593d0b3e1160b9ff99b7a5551b215e962a1f95928a03922aa995"
+      ],
+      "exact_payload_sha256": "855514ece2c881918f44112a0f3c52cb855b0e05642cf5af267235a1936a10c7",
+      "interpretation": "Bidirectional case53/proposal link and existing source evidence added. Same reviewed payload and KG181 linkage retained; independent root KG review remains the authority for this reviewer-authored payload."
+    },
+    {
+      "name": "review crosslink integrity",
+      "result": "pass",
+      "evidence_id": "sv1-independent-bio",
+      "capture": {
+        "root": "artifact",
+        "path": "successor-v1/reviews/kg-bio-review-v2.json",
+        "sha256": "7948f33aa438a466700cec7215278d470c631dd67e595eaa9a8aca4e764f926f"
+      }
+    }
+  ],
+  "limitations": [
+    "This check does not alter source-material holds, publication approval, roles, aliases or downstream permissions.",
+    "Global artifact hashes identify the observed consolidation; later unrelated metadata additions require new global file hashes but do not retroactively change the bounded comparisons recorded here."
+  ]
+}

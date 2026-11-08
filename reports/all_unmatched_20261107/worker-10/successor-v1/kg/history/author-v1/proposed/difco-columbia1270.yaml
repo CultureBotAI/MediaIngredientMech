@@ -1,0 +1,74 @@
+identifier: kgmicrobe.ingredient:difco_columbia_blood_agar_base_jcm_1270
+preferred_term: Difco Columbia blood agar base (JCM1270)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:difco_columbia_blood_agar_base_jcm_1270
+  ontology_label: Difco Columbia blood agar base (JCM1270)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1270
+    notes: JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+      adds water and horse blood. Manufacturer manual distinguishes Difco44g/L base
+      from BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the
+      dry Difco input; it does not reuse MICRO536 whose definition transcribes the
+      BBL formulation. Typical constituent names are retained without historical lot
+      or dry-mass-ratio claims.
+synonyms: []
+notes: JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+  adds water and horse blood. Manufacturer manual distinguishes Difco44g/L base from
+  BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the dry Difco
+  input; it does not reuse MICRO536 whose definition transcribes the BBL formulation.
+  Typical constituent names are retained without historical lot or dry-mass-ratio
+  claims.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+    adds water and horse blood. Manufacturer manual distinguishes Difco44g/L base
+    from BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the
+    dry Difco input; it does not reuse MICRO536 whose definition transcribes the BBL
+    formulation. Typical constituent names are retained without historical lot or
+    dry-mass-ratio claims. Proposal only; inherited publication/role/source holds
+    remain.
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: Columbia blood agar base
+  supplier: BD-Difco
+  form: dehydrated culture-medium base
+  notes: JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+    adds water and horse blood. Manufacturer manual distinguishes Difco44g/L base
+    from BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the
+    dry Difco input; it does not reuse MICRO536 whose definition transcribes the BBL
+    formulation. Typical constituent names are retained without historical lot or
+    dry-mass-ratio claims.
+components:
+- component_name: Pancreatic digest of casein
+  reference_scope: UNMAPPED
+- component_name: Proteose Peptone No.3
+  reference_scope: UNMAPPED
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+- component_name: Beef heart infusion
+  reference_scope: UNMAPPED
+- component_name: Corn starch
+  reference_scope: UNMAPPED
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+- component_name: Agar
+  reference_scope: UNMAPPED
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://static.bd.com/assets/product/Documents/Integrated%20Diagnostic%20Solutions%20%28IDS%29/DS_CM_Difco-and-BBL-culture-media-manual_UG_EN.pdf
+    notes: p158 specifically named Difco44g/L base; constituents only, no backdated
+      quantities or yield inferred.

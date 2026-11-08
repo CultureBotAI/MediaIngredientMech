@@ -1,0 +1,3162 @@
+{
+  "schema_version": 1,
+  "worker_slot": 10,
+  "shard_sha256": "9767ffc8100e3cd8cd0c4101cc8e9ebe8d8fda8aaab4c42ba4e11b8c3c5693cc",
+  "phase": "shard",
+  "decisions": [
+    {
+      "case_id": "CM_NAME:16ae07ec5463fcb0ebda8b7573f00d7c002487daedebf704e3b37537c3889535",
+      "case_input_sha256": "99cfcd1ccfd10a8c123945567b8b4ca5a0d4aa35edd9dce44db05eb60b57c6d7",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Distilled water 960.00",
+        "source_label": "Distilled water 960.00",
+        "raw_source_label": "Distilled water 960.00"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5840475b4a500f0f01e1d848f832e6f65bc30f41e1eb8cb047f00c6063ca87cb"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The exact TOGO2547 row separates distilled water from its 960 ml amount. The complete existing Distilled_Water owner is already the intended identity. Owner lookup is complete; making an amount-bearing synonym or stock record would add no distinct substance.",
+      "applicability": "Applies to exact source label 'Distilled water 960.00'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-10",
+        "chem-recipe-10-0",
+        "chem-owner-Distilled_Water",
+        "chem-togo-M2547",
+        "chem-ont-chebi-15377",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The exact TOGO2547 row separates distilled water from its 960 ml amount. The complete existing Distilled_Water owner is already the intended identity. Owner lookup is complete; making an amount-bearing synonym or stock record would add no distinct substance.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Distilled_Water.yaml",
+          "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:5840475b4a500f0f01e1d848f832e6f65bc30f41e1eb8cb047f00c6063ca87cb",
+          "recipe_id": "CultureMech:009116",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "39788c20ae2ca42798b24595abc571d4173b4873b9b1e9dd887b5bab9e31bd55",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009116"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2547"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "960"
+            },
+            "notes": "Role: Solvating media; Properties: Inorganic compound, Defined component, Simple component",
+            "preferred_term": "Distilled water 960.00"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 10,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 10,
+        "classification": "existing_owner_no_payload_needed",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:216ad208c474c73fc5fb9640adcbf82d879fe8d9767d39c9e3906acc9421648d",
+      "case_input_sha256": "b1e4b88e534c7eaa77f733300f263fe5576115012e622cc71536687b078cf588",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na-terephthalate",
+        "source_label": "Na-terephthalate",
+        "raw_source_label": "Na-terephthalate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9a2a71de222063b3dc592c403a087e8c7653ace9c68cd739c5ba8a225aff4ebe",
+        "CM_OCC:c5910eab8c5de37d6359947d31cb6d1630d04902797ab8aa33bae86d715f8f32"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The former decision unnecessarily deferred a source-defined preparation while waiting for a more-specific sodium-salt purchase. NBRC824 explicitly specifies a neutralized, filter-sterilized 0.2 M Na-terephthalate solution. A source-qualified local stock is supported at that nominal preparation scope. The raw chemical table row is not asserted globally equivalent to the whole stock, and no solvent, titrant, sodium stoichiometry, hydrate or final-medium dose is inferred.",
+      "applicability": "Applies to exact source label 'Na-terephthalate'; all 2 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-14",
+        "chem-recipe-14-0",
+        "chem-recipe-14-1",
+        "chem-owner-Terephthalate",
+        "chem-nb-824",
+        "chem-togo-M1624",
+        "chem-ont-ols-sodium-terephthalate",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-ols-na-stock"
+      ],
+      "proposal_ids": [
+        "sv1-chem-proposal-14"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Terephthalate.yaml",
+          "sha256": "93f8d2a41b32f7df38b546aae01e40a999e163f2185284eaf9cb50384225ca69"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:9a2a71de222063b3dc592c403a087e8c7653ace9c68cd739c5ba8a225aff4ebe",
+          "recipe_id": "CultureMech:008179",
+          "component_path": "ingredients/8",
+          "snapshot_sha256": "af25e38777b168589fb484536779a7035357a689428c9f551d2918aa0136ebbe",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008179"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1624"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.42"
+            },
+            "notes": "Role: Carbon source; Properties: Organic compound, Defined component, Simple component",
+            "preferred_term": "Na-terephthalate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:c5910eab8c5de37d6359947d31cb6d1630d04902797ab8aa33bae86d715f8f32",
+          "recipe_id": "CultureMech:007496",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "690f6c8c78635d6c80b1c2027e93019e0ff924a5bf4cc7f757d10fc6f6833f19",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007496"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "nbrc.medium:824"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.42"
+            },
+            "preferred_term": "Na-terephthalate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 14,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 14,
+        "classification": "bounded_preparation_supported",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-ols-na-stock"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:22aba3f3533a12e8eb5d33a38bff52aa2e65637fdd3e92cd5a4f19d5889abc46",
+      "case_input_sha256": "9ba42c3be44987eeb4bd5aa35d40dc5ff2769893c78569165cd306023232f460",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ethylenediamine-tetraacetate-di-Na-salt",
+        "source_label": "Ethylenediamine-tetraacetate-di-Na-salt",
+        "raw_source_label": "Ethylenediamine-tetraacetate-di-Na-salt"
+      },
+      "occurrence_ids": [
+        "CM_OCC:9d6a73779b5820db4ed08ad8e590ee0102d8ea06ed8d4a391c6bb3ebdb944186"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Completed owner lookup finds distinct anhydrous and dihydrate disodium-EDTA owners. TOGO2277 SL12 identifies disodium EDTA but not hydration. A primary Bonn laboratory SL12 (10x) protocol explicitly uses EDTA-Na2 dihydrate, while the source SL12 differs in Mn hydration and preparation; this independently used recipe cannot select the weighed form in the assigned source. This case is the individual solute, not a named stock node; inventing a source-local stock would change the reviewed entity.",
+      "applicability": "Applies to exact source label 'Ethylenediamine-tetraacetate-di-Na-salt'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-15",
+        "chem-recipe-15-0",
+        "chem-owner-Na2-edta",
+        "chem-owner-Na2edta2h2o",
+        "chem-togo-M2277",
+        "chem-ont-chebi-64734",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-bonn-sl12"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Completed owner lookup finds distinct anhydrous and dihydrate disodium-EDTA owners. TOGO2277 SL12 identifies disodium EDTA but not hydration. A primary Bonn laboratory SL12 (10x) protocol explicitly uses EDTA-Na2 dihydrate, while the source SL12 differs in Mn hydration and preparation; this independently used recipe cannot select the weighed form in the assigned source. This case is the individual solute, not a named stock node; inventing a source-local stock would change the reviewed entity.",
+      "missing_requirement": "The hydration of the weighed disodium-EDTA solute in TOGO2277 is not established by that recipe or an identified product; the independently used SL12 protocol is not the same formulation.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na2-edta.yaml",
+          "sha256": "7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4"
+        },
+        {
+          "path": "data/ingredients/mapped/Na2edta2h2o.yaml",
+          "sha256": "9941e9676116dc1b9686f3219372b319ffdc423e28274f700fd3fc16d2ba944d"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:9d6a73779b5820db4ed08ad8e590ee0102d8ea06ed8d4a391c6bb3ebdb944186",
+          "recipe_id": "CultureMech:008863",
+          "component_path": "ingredients/13",
+          "snapshot_sha256": "9264041f69b7653f53d2d1cea7b56d20695331374bab8d4d035ab716636b32ad",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008863"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2277"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "3"
+            },
+            "notes": "Properties: Defined component, Organic compound, Simple component",
+            "preferred_term": "Ethylenediamine-tetraacetate-di-Na-salt"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 15,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 15,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-bonn-sl12"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "The hydration of the weighed disodium-EDTA solute in TOGO2277 is not established by that recipe or an identified product; the independently used SL12 protocol is not the same formulation.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:3296789ebebfeea3f9e15543d6ff9fb0505b90407c8551d43bd8b8832fcbf180",
+      "case_input_sha256": "f0e52ad702fdf823e8b6b83caddbed48d6b6500d2021156820f263dbe5746fbf",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na-aspartate",
+        "source_label": "Na-aspartate",
+        "raw_source_label": "Na-aspartate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:328013e83c88abc908cdab403269fbe1ef26858cfb8bb9c6929b63ec0995f285",
+        "CM_OCC:1af6ba6f30e51d960fc10ebbf1c31515273762469541afefe24d440716bd7013",
+        "CM_OCC:8a750a47b02758499000413fad29d5ab75a21fb725be3a95f6dea2fd6dfbb52a",
+        "CM_OCC:c01d18defae2aa41f6dd7eacbb1c5916d5a71db051f494d146548f46c131d25b",
+        "CM_OCC:811534b96ff24e6dd202503993b26e0647636a54214861a0ee38181284d686bd",
+        "CM_OCC:807477d59df5731a915f0d60a512a3ba0d9238ae0a1b4e1f7df8444bd0288b4f",
+        "CM_OCC:e6e5baaf4b94d09f1d31f42bec3612b6b459dfd845dd710e2c2757ddbd83cfbe",
+        "CM_OCC:830e229690db6f8474ee55d59e17f830e92e8e89521362269497d2ce2866828c",
+        "CM_OCC:5cc34fd5b9ef9cb2572ff2fbe17263e1305a58c770dd0849c36740d5684bf4b9"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "All nine frozen source occurrences remain separately bound. MediaDive compound228 states CAS3792-50-5 but its disodium formula/mass conflict with the primary supplier monosodium L-aspartate specification for that CAS. The supplier product is contrast evidence, not proof of what the DSMZ recipes used. This is an unresolved stoichiometric and form disagreement in an individual chemical input, not missing lookup or downstream units.",
+      "applicability": "Applies to exact source label 'Na-aspartate'; all 9 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-27",
+        "chem-recipe-27-0",
+        "chem-recipe-27-1",
+        "chem-recipe-27-2",
+        "chem-recipe-27-3",
+        "chem-recipe-27-4",
+        "chem-recipe-27-5",
+        "chem-recipe-27-6",
+        "chem-recipe-27-7",
+        "chem-recipe-27-8",
+        "chem-owner-L-Aspartic_Acid_Sodium_Salt_Monohydrate",
+        "chem-owner-Aspartate",
+        "chem-md-228",
+        "chem-more-sodium-aspartate",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-sodium-aspartate-monosodium-failed",
+        "sv1-chem-search4",
+        "sv1-chem-supplier-web-open"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "All nine frozen source occurrences remain separately bound. MediaDive compound228 states CAS3792-50-5 but its disodium formula/mass conflict with the primary supplier monosodium L-aspartate specification for that CAS. The supplier product is contrast evidence, not proof of what the DSMZ recipes used. This is an unresolved stoichiometric and form disagreement in an individual chemical input, not missing lookup or downstream units.",
+      "missing_requirement": "Authoritative source-specific correction selecting the intended mono/disodium salt and its stereochemical/hydration identity; no assumption from the inconsistent MediaDive calculated fields.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml",
+          "sha256": "32d45cfa5c74e9e4724f0b1a17ed30f58d01edb3ce58ea25332b12eb5815bb7e"
+        },
+        {
+          "path": "data/ingredients/mapped/Aspartate.yaml",
+          "sha256": "0fda5bbe5b55faa59692b792882be73020eba0a72b6345301cf836d91627e102"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:328013e83c88abc908cdab403269fbe1ef26858cfb8bb9c6929b63ec0995f285",
+          "recipe_id": "CultureMech:003551",
+          "component_path": "ingredients/6",
+          "snapshot_sha256": "87ee0ea1779dd3044fece6f07a97a53ea05ce36b10be2274bc440d317e91412e",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:003551"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:1037"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for ingredients[6].concentration (Na-aspartate) in MediaDive medium 1037; locator=$.data.solutions[0].recipe[6]. Provider explicitly reports g_l=1; check: 1 g * 1 g/g / (1000 ml / 1000 ml per L) = 1 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:16:20.846094+00:00; response SHA256=f839cbd76c2bca87836a973eaed7fd3706f809e8becabcaa05844987f8539a58. KOMODO accession 1037 is mapped to the same DSMZ accession by https://komodo.modelseed.org/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaList; mapping response SHA256=d8259d98e6dbffdf6961a1ab92bc86f3567d5d96de352bfa079edb2a91e9580a. The mapping supports identity only, not ingredient quantities or variants.",
+                "reference": "https://mediadive.dsmz.de/rest/medium/1037",
+                "snippet": "{\n                        \"recipe_order\": 7,\n                        \"compound\": \"Na-aspartate\",\n                        \"compound_id\": 228,\n                        \"amount\": 1,\n                        \"unit\": \"g\",\n                        \"g_l\": 1,\n                        \"mmol_l\": 5.64748,\n                        \"optional\": 0\n                    }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Na-aspartate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:1af6ba6f30e51d960fc10ebbf1c31515273762469541afefe24d440716bd7013",
+          "recipe_id": "CultureMech:001096",
+          "component_path": "ingredients/3",
+          "snapshot_sha256": "fffd65174f31b1ce85c5fa3f80591021dc0e36ebb24d466f568464936f06e9ad",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001096"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1615"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.35414"
+            },
+            "preferred_term": "Na-aspartate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:8a750a47b02758499000413fad29d5ab75a21fb725be3a95f6dea2fd6dfbb52a",
+          "recipe_id": "CultureMech:003550",
+          "component_path": "ingredients/6",
+          "snapshot_sha256": "66a5f23cf1f23ea2b442391e57a4612ebe92e8355813ac14998b36271642ddfb",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:003550"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:1037.1"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Na-aspartate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:c01d18defae2aa41f6dd7eacbb1c5916d5a71db051f494d146548f46c131d25b",
+          "recipe_id": "CultureMech:011505",
+          "component_path": "composition/6",
+          "snapshot_sha256": "44c6b73c1c7d95826e610e98f66cb121783ad577cf13fb134106cd5ae1678b2d",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:011505"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:2105"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[6].concentration (Na-aspartate) in MediaDive solution 2105; locator=$.data.recipe[6] (compound_id=228). Provider explicitly reports g_l=1. Arithmetic check: 1 g * 1 g/g / (1000 ml / 1000 ml per L) = 1 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:09:02.169487+00:00; response SHA256=0bdf4486e542fb5096ca57a2c3e6c3dc859a24f9535764724e015cec02ebdbcb.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/2105",
+                "snippet": "{\n                \"recipe_order\": 7,\n                \"compound\": \"Na-aspartate\",\n                \"compound_id\": 228,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 1,\n                \"unit\": \"g\",\n                \"g_l\": 1,\n                \"mmol_l\": 5.64748,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Na-aspartate",
+            "term": {
+              "id": "mediadive.compound:228",
+              "label": "Na-aspartate"
+            }
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:811534b96ff24e6dd202503993b26e0647636a54214861a0ee38181284d686bd",
+          "recipe_id": "CultureMech:011591",
+          "component_path": "composition/0",
+          "snapshot_sha256": "fa12921e07b4f0dcaa2ba84ab2b3c221a707196243eeb1651b012b2ab26b63a7",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:011591"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:219"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "10"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[0].concentration (Na-aspartate) in MediaDive solution 219; locator=$.data.recipe[0] (compound_id=228). Provider explicitly reports g_l=10. Arithmetic check: 10 g * 1 g/g / (1000 ml / 1000 ml per L) = 10 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T08:21:25.853152+00:00; response SHA256=dbbe4a9ecde6399eb8c40a5612305cfd3309d864a73f1fb82e11de270cfbe93b.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/219",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"Na-aspartate\",\n                \"compound_id\": 228,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"g\",\n                \"g_l\": 10,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Na-aspartate",
+            "term": {
+              "id": "mediadive.compound:228",
+              "label": "Na-aspartate"
+            }
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:807477d59df5731a915f0d60a512a3ba0d9238ae0a1b4e1f7df8444bd0288b4f",
+          "recipe_id": "CultureMech:012510",
+          "component_path": "composition/3",
+          "snapshot_sha256": "95df5ac99ce7556940210280fbef59e9928282ef07e1709f43ca66be439dddea",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012510"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:3360"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.35414"
+            },
+            "preferred_term": "Na-aspartate",
+            "term": {
+              "id": "mediadive.compound:228",
+              "label": "Na-aspartate"
+            }
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:e6e5baaf4b94d09f1d31f42bec3612b6b459dfd845dd710e2c2757ddbd83cfbe",
+          "recipe_id": "CultureMech:003971",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "8dcc533deb3bb43db2c6b0e05bc9c4aac5e6e330b9079f5918cf513f1e6e67ee",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:003971"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:121"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Na-aspartate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:830e229690db6f8474ee55d59e17f830e92e8e89521362269497d2ce2866828c",
+          "recipe_id": "CultureMech:000678",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "909ab6d0298738cd8a26a3d5c495d88fb921890eb878b14ecfa64558fa87bd04",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000678"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:121"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Na-aspartate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:5cc34fd5b9ef9cb2572ff2fbe17263e1305a58c770dd0849c36740d5684bf4b9",
+          "recipe_id": "CultureMech:000460",
+          "component_path": "ingredients/6",
+          "snapshot_sha256": "e2ba2a1d408a92056cddfd38c09e79c45c8d183c01678071ce42ceb7244ad7e0",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000460"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1037"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for ingredients[6].concentration (Na-aspartate) in MediaDive medium 1037; locator=$.data.solutions[0].recipe[6]. Provider explicitly reports g_l=1; check: 1 g * 1 g/g / (1000 ml / 1000 ml per L) = 1 g/L. This supports the provider-declared main-recipe concentration, not an independently measured final volume, a stock composition, or a downstream assay dilution. Water alone does not establish final volume. Exact source ingredient labels/forms are matched; secondary ontology mappings are not validated by this evidence. Additional exact value at $.data.solutions[0].volume (ml): 1000. Retrieved 2026-10-07T13:16:20.846094+00:00; response SHA256=f839cbd76c2bca87836a973eaed7fd3706f809e8becabcaa05844987f8539a58.",
+                "reference": "https://mediadive.dsmz.de/rest/medium/1037",
+                "snippet": "{\n                        \"recipe_order\": 7,\n                        \"compound\": \"Na-aspartate\",\n                        \"compound_id\": 228,\n                        \"amount\": 1,\n                        \"unit\": \"g\",\n                        \"g_l\": 1,\n                        \"mmol_l\": 5.64748,\n                        \"optional\": 0\n                    }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "Na-aspartate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 27,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 27,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-sodium-aspartate-monosodium-failed",
+          "sv1-chem-search4",
+          "sv1-chem-supplier-web-open"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "Authoritative source-specific correction selecting the intended mono/disodium salt and its stereochemical/hydration identity; no assumption from the inconsistent MediaDive calculated fields.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:34f789398618c3f384aa6e6637e6fd2e13413df3cfdd908aa8e797e9cc09f5a0",
+      "case_input_sha256": "809df82f3bc5f4cbe7f9a4ca80a4cc62a2ecd532dba7c60613f119fc6766569e",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Distilled water 100.00 ml",
+        "source_label": "Distilled water 100.00 ml",
+        "raw_source_label": "Distilled water 100.00 ml"
+      },
+      "occurrence_ids": [
+        "CM_OCC:fc03d6227c85a5354f0205f272387a67f2b4df33980fa26ea27e6f120c6ffe9e"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The 100 ml phrase denotes the water input to the separately named neutralized-sulfide stock in TOGO3119. Complete owner lookup confirms Distilled_Water already owns the substance. Neither a whole-stock equivalence nor an amount-bearing global alias is needed.",
+      "applicability": "Applies to exact source label 'Distilled water 100.00 ml'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-29",
+        "chem-recipe-29-0",
+        "chem-owner-Distilled_Water",
+        "chem-togo-M3119",
+        "chem-ont-chebi-15377",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The 100 ml phrase denotes the water input to the separately named neutralized-sulfide stock in TOGO3119. Complete owner lookup confirms Distilled_Water already owns the substance. Neither a whole-stock equivalence nor an amount-bearing global alias is needed.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Distilled_Water.yaml",
+          "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:fc03d6227c85a5354f0205f272387a67f2b4df33980fa26ea27e6f120c6ffe9e",
+          "recipe_id": "CultureMech:009590",
+          "component_path": "ingredients/30",
+          "snapshot_sha256": "49a34a458f4b7a577f1cdb41bb87752cc625245690a9863e8b5d0422ac4ca007",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009590"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3119"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "100"
+            },
+            "notes": "Role: Solvating media; Properties: Inorganic compound, Defined component, Simple component",
+            "preferred_term": "Distilled water 100.00 ml"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 29,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 29,
+        "classification": "existing_owner_no_payload_needed",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:3ef5ba747f775ad1fc5ff6b7a66665fc9bd27ec3c4f123ea7ea2ff2a1182760b",
+      "case_input_sha256": "b044a978168041c6db03f3088d50bd1515ee0fc0e2133446050cb42de02b8f96",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "sulfitic ore (e.g. pyrite)",
+        "source_label": "sulfitic ore (e.g. pyrite)",
+        "raw_source_label": "sulfitic ore (e.g. pyrite)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:246037dfad3bdd587debc4acd9a88bc5dac6d354a1d8697e2e0630ae32470bdb"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "The KOMODO485 primary table defines an ore-material input and gives pyrite only as an example. Bounded owner lookup finds no owner for the source-described material. A local undefined-mixture proposal preserves that source-level ore category, without asserting an individual specimen, pyrite identity, mineralogy or composition. Missing specimen analysis limits specificity but does not prevent retaining the named source-material scope.",
+      "applicability": "Applies to exact source label 'sulfitic ore (e.g. pyrite)'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-34",
+        "chem-recipe-34-0",
+        "chem-komodo-485-correct",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-ols-ore",
+        "sv1-chem-metallosphaera-paper",
+        "sv1-chem-dsmz-metallosphaera-failed"
+      ],
+      "proposal_ids": [
+        "sv1-chem-proposal-34"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:246037dfad3bdd587debc4acd9a88bc5dac6d354a1d8697e2e0630ae32470bdb",
+          "recipe_id": "CultureMech:005608",
+          "component_path": "ingredients/2",
+          "snapshot_sha256": "f208020feb3b432d2c522c9c9b2c1fa04a2ec683920b3e8fa6efddaae19c1c9a",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:005608"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:485"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "20.00"
+            },
+            "notes": "KOMODO MediaInfo 485 lists 20.00 g/L sulfitic ore, e.g. pyrite.",
+            "preferred_term": "sulfitic ore (e.g. pyrite)",
+            "source": "KOMODO MediaInfo 485"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 34,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 34,
+        "classification": "bounded_material_supported",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-ols-ore",
+          "sv1-chem-metallosphaera-paper",
+          "sv1-chem-dsmz-metallosphaera-failed"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:436773fdcb56801ca7a250c0fa5e40eaa224c298d7fbedeee8bd3fe1df4cdac8",
+      "case_input_sha256": "a012edac0529a6c4a4e8cd2a20a83bc1449ed8adab4029f921795290b5f50ad4",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "NaVO3 . nH2O (meta)",
+        "source_label": "NaVO3 . nH2O (meta)",
+        "raw_source_label": "NaVO3 . nH2O (meta)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:7e261170fa545b0ca1fff18a29c21bfd83f7a9cc546127fb262a4f3529ed893e"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The original ATCC1926 CENS PDF has now been retrieved and explicitly retains NaVO3.nH2O in True Blue Trace Elements. DSMZ748 independently retains nH2O. The primary supplier xhydrate listing gives a one-water formula and CAS20740-98-1, illustrating why a generic hydrate name is not independent proof of the source n value. Existing CHEBI132095 owner is a fixed monohydrate. This individual solute has no separately specified treatment or formulation boundary that would justify a stock proposal.",
+      "applicability": "Applies to exact source label 'NaVO3 . nH2O (meta)'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-37",
+        "chem-recipe-37-0",
+        "chem-owner-Navo3_X_H2o",
+        "chem-togo-M2186",
+        "chem-detail-132095",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-atcc-cens",
+        "sv1-chem-dsmz-cens",
+        "sv1-chem-sodium-metavanadate-xhydrate-failed",
+        "sv1-chem-supplier-web-open"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The original ATCC1926 CENS PDF has now been retrieved and explicitly retains NaVO3.nH2O in True Blue Trace Elements. DSMZ748 independently retains nH2O. The primary supplier xhydrate listing gives a one-water formula and CAS20740-98-1, illustrating why a generic hydrate name is not independent proof of the source n value. Existing CHEBI132095 owner is a fixed monohydrate. This individual solute has no separately specified treatment or formulation boundary that would justify a stock proposal.",
+      "missing_requirement": "Water stoichiometry or a source-specific supplied-material specification for ATCC1926 NaVO3.nH2O; fixed monohydrate cannot replace the variable source notation.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Navo3_X_H2o.yaml",
+          "sha256": "d4d3f05a57d260547b23249d5fb316600c7b5adb56887463394cbe3417dc57e4"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:7e261170fa545b0ca1fff18a29c21bfd83f7a9cc546127fb262a4f3529ed893e",
+          "recipe_id": "CultureMech:008780",
+          "component_path": "ingredients/20",
+          "snapshot_sha256": "af21352b679a9c965745e6992a49a1a398b6b85109f59de848c2c3282a6c6fa5",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008780"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2186"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "5"
+            },
+            "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+            "preferred_term": "NaVO3 . nH2O (meta)"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 37,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 37,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-atcc-cens",
+          "sv1-chem-dsmz-cens",
+          "sv1-chem-sodium-metavanadate-xhydrate-failed",
+          "sv1-chem-supplier-web-open"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "Water stoichiometry or a source-specific supplied-material specification for ATCC1926 NaVO3.nH2O; fixed monohydrate cannot replace the variable source notation.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:542a8904afe994b137c888ff52ff5ed2fcf6d5f15d2d98119aa1ccfe13e7f968",
+      "case_input_sha256": "859199b9f185af21fb111f681c1b86a66c40cdfbb060c193780c8c4ff35a97cb",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Penicillin G** (20,000 U/ml)",
+        "source_label": "Penicillin G** (20,000 U/ml)",
+        "raw_source_label": "Penicillin G** (20,000 U/ml)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:999854ba6fd44745b8037ea3e5920839d4c14126c3316c6aa6d9f8fa9457af56"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "NBRC823 identifies a filter-sterilized Penicillin G stock addition, but its table says20,000U/ml while its own preparation prose says200,000U/ml. This discrepancy blocks either quantitative strength claim; it does not block a source-qualified filtered Penicillin G stock identity with potency explicitly unresolved. Neither the free-acid owner nor a DRON injection/oral product is an exact stock owner. No salt, carrier or dilution is invented.",
+      "applicability": "Applies to exact source label 'Penicillin G** (20,000 U/ml)'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-43",
+        "chem-recipe-43-0",
+        "chem-owner-Penicillin_G",
+        "chem-togo-M1623",
+        "chem-nb-823",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-ols-penicillin-stock"
+      ],
+      "proposal_ids": [
+        "sv1-chem-proposal-43"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Penicillin_G.yaml",
+          "sha256": "2d483390c8bfee6dfc15ecab8d04eff3068aa518fecd2ee3d9eeaa8a0459a63a"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:999854ba6fd44745b8037ea3e5920839d4c14126c3316c6aa6d9f8fa9457af56",
+          "recipe_id": "CultureMech:008178",
+          "component_path": "ingredients/3",
+          "snapshot_sha256": "b967612b24f9eac7abf267ef4bf89d2cc785f9db6502f51f2be9bd0067f32ff5",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008178"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1623"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "5"
+            },
+            "notes": "Role: Antimicrobial agent; Properties: Simple component, Defined component",
+            "preferred_term": "Penicillin G** (20,000 U/ml)"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 43,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 43,
+        "classification": "bounded_preparation_supported",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-ols-penicillin-stock"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:59fc0d6c716f933a3e2a78ca7e7c57ad047d7851ecdc1086899e4063d79444c9",
+      "case_input_sha256": "61c06edfcaaec976b88353f7dcb40ecf1eb79f1b6d4d90d8113d641b4f66eac1",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Na-ampicillin (may be omitted for pure cultures)",
+        "source_label": "Na-ampicillin (may be omitted for pure cultures)",
+        "raw_source_label": "Na-ampicillin (may be omitted for pure cultures)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:5c9ca820ee8c6f227a54be69b45742d1469e6d196f5168917d47bafa49ac5263"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The exact DSMZ1144-derived Na-ampicillin input is already owned by Na-ampicillin/CHEBI34535. The parenthetical grants optional omission in a pure culture; it is not an ingredient name or a new preparation. Complete lookup and source review require no owner change.",
+      "applicability": "Applies to exact source label 'Na-ampicillin (may be omitted for pure cultures)'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-47",
+        "chem-recipe-47-0",
+        "chem-owner-Na-ampicillin",
+        "chem-togo-M2279",
+        "chem-ont-chebi-34535",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The exact DSMZ1144-derived Na-ampicillin input is already owned by Na-ampicillin/CHEBI34535. The parenthetical grants optional omission in a pure culture; it is not an ingredient name or a new preparation. Complete lookup and source review require no owner change.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Na-ampicillin.yaml",
+          "sha256": "def2647ee221c1256dbdd1cc95b2cfc5f05fb13f4fdd4250d471dfe94edc4ec2"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:5c9ca820ee8c6f227a54be69b45742d1469e6d196f5168917d47bafa49ac5263",
+          "recipe_id": "CultureMech:008864",
+          "component_path": "ingredients/4",
+          "snapshot_sha256": "796245aae5855d905f908a3fbf0015445588ada42ad3983dc79785df15df903b",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008864"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2279"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.2"
+            },
+            "notes": "Role: Antimicrobial agent; Properties: Defined component, Simple component",
+            "preferred_term": "Na-ampicillin (may be omitted for pure cultures)"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 47,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 47,
+        "classification": "existing_owner_no_payload_needed",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:68a49efd7f36a21466837a845c25d1b23d37cd0f75a96c520c7d59668038afa5",
+      "case_input_sha256": "afb9bede1b356eed19256d06dbfb0fb35670876e5561a35204fe6a59e43cc567",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Distilled water, make up to",
+        "source_label": "Distilled water, make up to",
+        "raw_source_label": "Distilled water, make up to"
+      },
+      "occurrence_ids": [
+        "CM_OCC:59757ee39c9b50ff6bb88a0de7bb76313342e3b5e8bf2d6e425d9cb29245c611",
+        "CM_OCC:6952ccf5a36ff94dde03541239d21acb0576616953ab03935904fbbaf568f8df",
+        "CM_OCC:c916b57c69a8bc72155a533b09d58a28c73f4f7560e15b495e14a9788390cbbd",
+        "CM_OCC:e08bb01c6e06214e8482c907dd1406ac799aecf4b889f7e526468a0eef8054a1"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The four frozen recipes use a make-up instruction attached to distilled water. Owner lookup establishes the existing water identity; make-up language and source amounts are retained in the occurrence contexts. No scientific identity fact is missing and no distinct stock or global instructional synonym is justified.",
+      "applicability": "Applies to exact source label 'Distilled water, make up to'; all 4 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-52",
+        "chem-recipe-52-0",
+        "chem-recipe-52-1",
+        "chem-recipe-52-2",
+        "chem-recipe-52-3",
+        "chem-owner-Distilled_Water",
+        "chem-nb-256",
+        "chem-togo-M1475",
+        "chem-togo-M1476",
+        "chem-togo-M1566",
+        "chem-ont-chebi-15377",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The four frozen recipes use a make-up instruction attached to distilled water. Owner lookup establishes the existing water identity; make-up language and source amounts are retained in the occurrence contexts. No scientific identity fact is missing and no distinct stock or global instructional synonym is justified.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Distilled_Water.yaml",
+          "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/CultureMech/issues/408"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:59757ee39c9b50ff6bb88a0de7bb76313342e3b5e8bf2d6e425d9cb29245c611",
+          "recipe_id": "CultureMech:007481",
+          "component_path": "ingredients/10",
+          "snapshot_sha256": "f94492b6a320da263df1164aa716dcccabd474dfffa8ca50c5745eed439d48d0",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007481"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "nbrc.medium:256"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "1"
+            },
+            "preferred_term": "Distilled water, make up to"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:6952ccf5a36ff94dde03541239d21acb0576616953ab03935904fbbaf568f8df",
+          "recipe_id": "CultureMech:008018",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "8900479cb3dea94b042c238a5ed87f92057944be9e0627e2a63c0f3c51b3f86e",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008018"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1475"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "notes": "Role: Solvating media; Properties: Defined component, Inorganic compound, Simple component",
+            "preferred_term": "Distilled water, make up to"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:c916b57c69a8bc72155a533b09d58a28c73f4f7560e15b495e14a9788390cbbd",
+          "recipe_id": "CultureMech:008019",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "98362e3eb9bf8e09b525b3cb1d7b3b03fd85d0ef76b95175fabda3f3510460f2",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008019"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1476"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "notes": "Role: Solvating media; Properties: Defined component, Inorganic compound, Simple component",
+            "preferred_term": "Distilled water, make up to"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:e08bb01c6e06214e8482c907dd1406ac799aecf4b889f7e526468a0eef8054a1",
+          "recipe_id": "CultureMech:008114",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "7a3ed4b670ccf543d36daa1f740b2d8dcf822fbe5af09c4fd5320199802cb8bd",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008114"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1566"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "notes": "Role: Solvating media; Properties: Defined component, Inorganic compound, Simple component",
+            "preferred_term": "Distilled water, make up to"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 52,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 52,
+        "classification": "existing_owner_no_payload_needed",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:73826d3d0e5babd70c23cbae4728c433a794602541dda615e014d7ca03be2c58",
+      "case_input_sha256": "703d5b6770b2df4cce09e3517167e443e2f7d37b1d97069a2c2e6c2e3ec3acda",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Nickel(II) ammonium sulfate",
+        "source_label": "Nickel(II) ammonium sulfate",
+        "raw_source_label": "Nickel(II) ammonium sulfate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:4b83e0311932faf6f6b75c9baa4b0b92b8d21ea0dacef94b19a15eff8719c62a"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "Full owner lookup and the primary Huber1986 publisher record/full-text attempt were examined. The accessible publisher abstract does not enumerate the MMS nickel reagent; the PDF request does not supply an inspectable full recipe. MediaDB144 itself gives no hydration. ChEBI86151/86149 distinguish anhydrous versus hexahydrate; both current MIM candidate labels point to86149 and their pre-existing registry concern remains. Molar normalization cannot establish the weighed substance.",
+      "applicability": "Applies to exact source label 'Nickel(II) ammonium sulfate'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-58",
+        "chem-recipe-58-0",
+        "chem-owner-Nh42ni_So42",
+        "chem-owner-Nh42ni_So42_X_6_H2o",
+        "chem-detail-86151",
+        "chem-detail-86149",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-huber-1986",
+        "sv1-chem-huber-1986-pdf"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Full owner lookup and the primary Huber1986 publisher record/full-text attempt were examined. The accessible publisher abstract does not enumerate the MMS nickel reagent; the PDF request does not supply an inspectable full recipe. MediaDB144 itself gives no hydration. ChEBI86151/86149 distinguish anhydrous versus hexahydrate; both current MIM candidate labels point to86149 and their pre-existing registry concern remains. Molar normalization cannot establish the weighed substance.",
+      "missing_requirement": "The MMS original preparation or linked product specification identifying nickel-ammonium-sulfate water content; neither an abstract nor a computed mM value resolves this scientific form distinction.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Nh42ni_So42.yaml",
+          "sha256": "3f2bbdbc092c00cfe0b0d1b82996dc7825db1c13b2f11477ea1da7bd56d3474a"
+        },
+        {
+          "path": "data/ingredients/mapped/Nh42ni_So42_X_6_H2o.yaml",
+          "sha256": "95a9c8fd17541611183de192078aebab13e1d6ebdb9e77808d2800da711a7b47"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1050"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:4b83e0311932faf6f6b75c9baa4b0b92b8d21ea0dacef94b19a15eff8719c62a",
+          "recipe_id": "CultureMech:007034",
+          "component_path": "ingredients/20",
+          "snapshot_sha256": "959c668b944e026bf7abddeeebc23bd1979f3f85426a6b9d55d1415c84c1083d",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007034"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "MEDIADB:144"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "MILLIMOLAR",
+              "value": "0.00697114"
+            },
+            "preferred_term": "Nickel(II) ammonium sulfate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 58,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 58,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-huber-1986",
+          "sv1-chem-huber-1986-pdf"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "The MMS original preparation or linked product specification identifying nickel-ammonium-sulfate water content; neither an abstract nor a computed mM value resolves this scientific form distinction.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:76b83d739e5093150e6a39423b1c46a3b9bc059d099e3863f8e418392fde4ef0",
+      "case_input_sha256": "d522352d7e3d0a85fd0aa2ab09c97d9229511c41ce3ce5a48d5dce18856f28cc",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "α-Ketoglutarate potassium",
+        "source_label": "α-Ketoglutarate potassium",
+        "raw_source_label": "α-Ketoglutarate potassium"
+      },
+      "occurrence_ids": [
+        "CM_OCC:629bee4c5785ce8d899c20d2af3dbdf87a014c7e8dba6a1b42441073f7455878"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "NBRC1357 names potassium alpha-ketoglutarate at1g. The named E-MP96 product is the completed agar, not the reagent specification. Actual supplier/ontology searches distinguish a monopotassium purchase but do not tie it to NBRC1357; they do not establish potassium stoichiometry or hydration in the source. This individual weighed chemical is not a prepared stock whose qualitative boundary can be preserved independently.",
+      "applicability": "Applies to exact source label 'α-Ketoglutarate potassium'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-63",
+        "chem-recipe-63-0",
+        "chem-owner-Alpha-ketoglutaric_Acid",
+        "chem-owner-Na2_Alpha-ketoglutarate",
+        "chem-nb-1357",
+        "chem-more-potassium-2-oxoglutarate",
+        "chem-more-dipotassium-2-oxoglutarate",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-search3",
+        "sv1-chem-search5"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "NBRC1357 names potassium alpha-ketoglutarate at1g. The named E-MP96 product is the completed agar, not the reagent specification. Actual supplier/ontology searches distinguish a monopotassium purchase but do not tie it to NBRC1357; they do not establish potassium stoichiometry or hydration in the source. This individual weighed chemical is not a prepared stock whose qualitative boundary can be preserved independently.",
+      "missing_requirement": "A source-specific mono/dipotassium and hydration specification for the weighed NBRC1357 reagent; no linked product or preparation evidence was recovered.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml",
+          "sha256": "cc852c586e35a3ffa025ce9446da05dc235a6df8a7c0e7c2fa4c4d6ee18d371d"
+        },
+        {
+          "path": "data/ingredients/mapped/Na2_Alpha-ketoglutarate.yaml",
+          "sha256": "0ee10fb6f9aacd8905e6ef3a4fef393e3d294b12f5c593339a78e5797fe8a58d"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:629bee4c5785ce8d899c20d2af3dbdf87a014c7e8dba6a1b42441073f7455878",
+          "recipe_id": "CultureMech:008646",
+          "component_path": "ingredients/5",
+          "snapshot_sha256": "8c67c36d01b4a5ca319c541c13a5e6ea8fdf62e4f894e6c38431ffb4977ec7e2",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008646"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2056"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1.0"
+            },
+            "notes": "NBRC Medium 1357 lists 1 g/L alpha-Ketoglutarate potassium; this row is left ungrounded because ChEBI has no exact term for the potassium salt.",
+            "preferred_term": "α-Ketoglutarate potassium",
+            "source": "TOGO M2056 / NBRC Medium 1357"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 63,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 63,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-search3",
+          "sv1-chem-search5"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "A source-specific mono/dipotassium and hydration specification for the weighed NBRC1357 reagent; no linked product or preparation evidence was recovered.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:8aea3ad842abebc0a9314c3970bb2957500dabb792a3ef180fe5d854874903d6",
+      "case_input_sha256": "9a936642cbd114f664c015542ad0b0923acdfacdaa4ac152323bfb39e5958e88",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Distilled water to",
+        "source_label": "Distilled water to",
+        "raw_source_label": "Distilled water to"
+      },
+      "occurrence_ids": [
+        "CM_OCC:3f372f746958aca1fa16c6a0c7cf422bb75ef4caa0fd4efce422667e0cdfcbaf",
+        "CM_OCC:c8149b21b4bc80c51a4ea9f571befd7b86b6dcdb0a8d509eb18372d77cda4562"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Both TOGO2378/2618 occurrences denote water with a make-up instruction. The full owner search confirms Distilled_Water. No new ingredient, alias carrying to, fixed addition volume or stock identity is warranted.",
+      "applicability": "Applies to exact source label 'Distilled water to'; all 2 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-66",
+        "chem-recipe-66-0",
+        "chem-recipe-66-1",
+        "chem-owner-Distilled_Water",
+        "chem-togo-M2378",
+        "chem-togo-M2618",
+        "chem-ont-chebi-15377",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "Both TOGO2378/2618 occurrences denote water with a make-up instruction. The full owner search confirms Distilled_Water. No new ingredient, alias carrying to, fixed addition volume or stock identity is warranted.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Distilled_Water.yaml",
+          "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:3f372f746958aca1fa16c6a0c7cf422bb75ef4caa0fd4efce422667e0cdfcbaf",
+          "recipe_id": "CultureMech:008962",
+          "component_path": "ingredients/0",
+          "snapshot_sha256": "c137e0bc31c98b6ba70e923628bf0cee9db8c7fffd9416f662ac5f53b858d3f8",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008962"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2378"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "notes": "Role: Solvating media; Properties: Inorganic compound, Defined component, Simple component",
+            "preferred_term": "Distilled water to"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:c8149b21b4bc80c51a4ea9f571befd7b86b6dcdb0a8d509eb18372d77cda4562",
+          "recipe_id": "CultureMech:009185",
+          "component_path": "ingredients/15",
+          "snapshot_sha256": "17b9f16c92a9a90737db8271f81e9c25bbb77d01cdcd1e13c1cacd33865980cd",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009185"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2618"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "100"
+            },
+            "notes": "Role: Solvating media; Properties: Inorganic compound, Defined component, Simple component",
+            "preferred_term": "Distilled water to"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 66,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 66,
+        "classification": "existing_owner_no_payload_needed",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:95046b1b726b92f96f099c9b9db177a9b7a01ab4c2ad73c5fdfc393c56705fe1",
+      "case_input_sha256": "8e355848b1d597b3c80afc5f1cbe93cd587b269f4accb625c8dbd792f3bdfc09",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Methoxyacetate",
+        "source_label": "Methoxyacetate",
+        "raw_source_label": "Methoxyacetate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:40a3dd73592a515d7f5591fda639a552922584672cd6885585e7de8d30bc0f01"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The bare-anion rule was explicitly reconsidered: CHEBI132097 correctly denotes methoxyacetate(-1), and a missing sodium counterion alone would not bar that named moiety. New primary DSMZ194 evidence, however, identifies Na-methoxyacetate for DSM5193, and the official culture catalogue connects DSM5193 to the archived478 KoMAc1 source. The archived version instead pairs unqualified methoxyacetate10mM with0.9g/L, while current sodium wording retains0.90g/L. These distinct source versions cannot be treated as one validated weighed form or exact formulation. The prior withdrawn anion payload remains withdrawn; no guessed historical acid/sodium form or stock strength is introduced.",
+      "applicability": "The source literal and archived preparation are verified for the frozen occurrence; the named methoxyacetate moiety is supported, exact supplied form is withheld.",
+      "evidence_ids": [
+        "chem-case-72",
+        "chem-recipe-72-0",
+        "chem-detail-132097",
+        "chem-detail-132096",
+        "chem-archive-dsmz478",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-dsmz-194",
+        "sv1-chem-komac1-catalog",
+        "sv1-chem-komac1-paper",
+        "sv1-chem-live-132097",
+        "sv1-chem-live-132096"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The bare-anion rule was explicitly reconsidered: CHEBI132097 correctly denotes methoxyacetate(-1), and a missing sodium counterion alone would not bar that named moiety. New primary DSMZ194 evidence, however, identifies Na-methoxyacetate for DSM5193, and the official culture catalogue connects DSM5193 to the archived478 KoMAc1 source. The archived version instead pairs unqualified methoxyacetate10mM with0.9g/L, while current sodium wording retains0.90g/L. These distinct source versions cannot be treated as one validated weighed form or exact formulation. The prior withdrawn anion payload remains withdrawn; no guessed historical acid/sodium form or stock strength is introduced.",
+      "missing_requirement": "Which supplied form the archived DSMZ478 source meant, in view of the specifically linked current sodium-salt instruction and incompatible historical molar/mass basis. A historical preparation/product specification or source correction is needed for an exact archived-case owner.",
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:40a3dd73592a515d7f5591fda639a552922584672cd6885585e7de8d30bc0f01",
+          "recipe_id": "CultureMech:005592",
+          "component_path": "ingredients/18",
+          "snapshot_sha256": "f89363842df9a1cb627013015962a22223ccb9bc1ebabe74b4f60fad7628c765",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:005592"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:478"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.900000"
+            },
+            "mediaingredientmech_chebi_term": {
+              "id": "CHEBI:132097",
+              "label": "methoxyacetate"
+            },
+            "notes": "Archived DSMZ Medium 478 uses 10 mM, or 0.9 g/L, methoxyacetate in place of the propionate from DSMZ Medium 194.",
+            "preferred_term": "Methoxyacetate",
+            "source": "Archived DSMZ Medium 478",
+            "term": {
+              "id": "CHEBI:132097",
+              "label": "methoxyacetate"
+            }
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 72,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 72,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-dsmz-194",
+          "sv1-chem-komac1-catalog",
+          "sv1-chem-komac1-paper",
+          "sv1-chem-live-132097",
+          "sv1-chem-live-132096"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "Which supplied form the archived DSMZ478 source meant, in view of the specifically linked current sodium-salt instruction and incompatible historical molar/mass basis. A historical preparation/product specification or source correction is needed for an exact archived-case owner.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:99df8a469bab9c4a0077745698decb935068f3ca0c18b749870d25b94e7bb10b",
+      "case_input_sha256": "bd3c640cd56965e411de614ae782769a08e83e756e3745923f66a72ae59f34ec",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Propenoate",
+        "source_label": "Propenoate",
+        "raw_source_label": "Propenoate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:b062008b98266b21a4ba81d238e99d231289a721956fd53a4124bd57dd3ae765",
+        "CM_OCC:c08d67c01c07c939c3d2c756bff93d6e28439070d04ee6d560b6900b969de2bf",
+        "CM_OCC:e153673249d1816c56a612009df9aea0a46bdc26a8779a9035d64e261db23e09",
+        "CM_OCC:a98ff6ae7175e5215b157455be59c53eef67de6b429703a588ace863b088cad2"
+      ],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Reinspection of all four MediaDB253-256 complete source recipes and the Hobbs primary publication establishes Junlon PW110 polymer-additive scope; the imported Propenoate label and monomer-based molarity do not establish acrylate. The primary patent identifies the named PW110 trade material as a polyacrylic product; product-specific full composition and neutralization are not supplied. An opaque source-qualified Junlon PW110 preparation owner is now proposed, with no acrylate equivalence, components, invented molecular weight, source dose validation or active Propenoate alias.",
+      "applicability": "Applies to all four frozen HMM occurrences and their exact raw labels. Preserve source names and IDs, but withhold monomer identity and dose-conversion claims; no universal polymer composition or molecular weight inferred.",
+      "evidence_ids": [
+        "chem-case-74",
+        "chem-recipe-74-0",
+        "chem-recipe-74-1",
+        "chem-recipe-74-2",
+        "chem-recipe-74-3",
+        "chem-detail-37080",
+        "chem-junlon-primary",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-junlon-patent",
+        "sv1-chem-ols-junlon"
+      ],
+      "proposal_ids": [
+        "sv1-chem-proposal-74"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:b062008b98266b21a4ba81d238e99d231289a721956fd53a4124bd57dd3ae765",
+          "recipe_id": "CultureMech:007151",
+          "component_path": "ingredients/1",
+          "snapshot_sha256": "353edea4e40114341107e357a85f8a33d8ac42cde012ae6cb5c82b0c46acbc3d",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007151"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "MEDIADB:253"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "MILLIMOLAR",
+              "value": "6.93866"
+            },
+            "notes": "Cross-references: KEGG:acryl",
+            "preferred_term": "Propenoate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:c08d67c01c07c939c3d2c756bff93d6e28439070d04ee6d560b6900b969de2bf",
+          "recipe_id": "CultureMech:007153",
+          "component_path": "ingredients/1",
+          "snapshot_sha256": "81ba29fb954abf3acf85e6391aa380d784335a3970c3d344a23082e8e7ecf9b0",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007153"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "MEDIADB:255"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "MILLIMOLAR",
+              "value": "20.816"
+            },
+            "notes": "Cross-references: KEGG:acryl",
+            "preferred_term": "Propenoate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:e153673249d1816c56a612009df9aea0a46bdc26a8779a9035d64e261db23e09",
+          "recipe_id": "CultureMech:007152",
+          "component_path": "ingredients/1",
+          "snapshot_sha256": "c9dcce28c188d5c88032e2ae3c9791dcea506c3e69dcd75650c7312212d92ac3",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007152"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "MEDIADB:254"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "MILLIMOLAR",
+              "value": "13.8773"
+            },
+            "notes": "Cross-references: KEGG:acryl",
+            "preferred_term": "Propenoate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:a98ff6ae7175e5215b157455be59c53eef67de6b429703a588ace863b088cad2",
+          "recipe_id": "CultureMech:007154",
+          "component_path": "ingredients/1",
+          "snapshot_sha256": "4c21bd2c3aaad462820ed83b01cfaba6758013f065649a700814d6e3a19e2615",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:007154"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "MEDIADB:256"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "MILLIMOLAR",
+              "value": "27.7546"
+            },
+            "notes": "Cross-references: KEGG:acryl",
+            "preferred_term": "Propenoate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 74,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 74,
+        "classification": "bounded_product_supported",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-junlon-patent",
+          "sv1-chem-ols-junlon"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:9a272c464c5c338078eba3863fbd71a9b6d78eee42bf09a860a5e88cf80a82fc",
+      "case_input_sha256": "b1609bc52f1177d58f0c37d393185b8ad3b457a11d033e343322eab8ef27dd28",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "di‐Potassium hydrogen orthophosphate trihydrate",
+        "source_label": "di‐Potassium hydrogen orthophosphate trihydrate",
+        "raw_source_label": "di‐Potassium hydrogen orthophosphate trihydrate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:1912dfe754bfeb76d00c2c9784457deb9ccda694708c10cf4f7766ac5bfb1371"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The exact trihydrate is scientifically established. Complete owner comparison finds a CAS16788-57-1 owner and a local trihydrate owner; the verified CAS record is the more-specific stable identifier already present under section3. Prepare the bounded exact-form alias on that existing CAS owner. This does not merge, rename or recertify either owner; the duplicate-owner conflict and all native withholding obligations remain for coordinator integration.",
+      "applicability": "Applies to exact source label 'di‐Potassium hydrogen orthophosphate trihydrate'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-76",
+        "chem-recipe-76-0",
+        "chem-owner-K2hpo4_X_3_H2o",
+        "chem-owner-Potassium_Phosphate_Dibasic_Trihydrate",
+        "chem-togo-M2237",
+        "chem-ont-chebi-131527",
+        "chem-pc-trihydrate",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [
+        "sv1-chem-proposal-76"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+          "sha256": "fb412a63050b2d599ee3cfab9fcafcaf141b3ac4c8a1febe6a57709831bc90d6"
+        },
+        {
+          "path": "data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml",
+          "sha256": "c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/656",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/808"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:1912dfe754bfeb76d00c2c9784457deb9ccda694708c10cf4f7766ac5bfb1371",
+          "recipe_id": "CultureMech:008825",
+          "component_path": "ingredients/8",
+          "snapshot_sha256": "3b7a45d113c023b8109ac32ad04cb8ab92dc126036d3314ad911b37ce622e239",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008825"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2237"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "85"
+            },
+            "notes": "Role: Buffer; Properties: Defined component, Simple component, Inorganic compound",
+            "preferred_term": "di‐Potassium hydrogen orthophosphate trihydrate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 76,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 76,
+        "classification": "bounded_existing_owner_proposal",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:b23cf96d2bbde9296a557611caf8e84401d833c8025026186d7ff485ec3cf2e0",
+      "case_input_sha256": "64f94250cad796f6bea5e917fce82c833ffceadb5d966e0251797c5c100a19c3",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Potassium Phosphate, dibasic",
+        "source_label": "Potassium Phosphate, dibasic",
+        "raw_source_label": "Potassium Phosphate, dibasic"
+      },
+      "occurrence_ids": [
+        "CM_OCC:f3c34b9a8cffdc2e623fb597f09ad9d82c60b97510ff212bde315519eb558ab0",
+        "CM_OCC:aead4c3d597758a43d4e2a8ae92a2ce57ce4f8f1f33f5b7d376e63bb87f63088",
+        "CM_OCC:1c170c25833aa03d5686a88de08994e4a985c82182cb3b261c8e854598395e34"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The original OTEB supplier formulation and current indexed supplier revisions consistently identify dibasic potassium phosphate without hydration. A fresh historical supplier insert was requested and inspected; current insert URLs failed retrieval and their search captures remain explicitly limited. The anhydrous and trihydrate are distinct individual reagents. No evidence selects one for these3 exact recipe versions, and a complete-medium purchase does not supply the reagent form.",
+      "applicability": "Applies to exact source label 'Potassium Phosphate, dibasic'; all 3 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-90",
+        "chem-recipe-90-0",
+        "chem-recipe-90-1",
+        "chem-recipe-90-2",
+        "chem-owner-K2hpo4",
+        "chem-owner-Potassium_Phosphate_Dibasic_Trihydrate",
+        "chem-ont-chebi-131527",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-oteb-v1",
+        "sv1-chem-oteb-2021-failed",
+        "sv1-chem-oteb-2025-failed",
+        "sv1-chem-chemsearch1"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The original OTEB supplier formulation and current indexed supplier revisions consistently identify dibasic potassium phosphate without hydration. A fresh historical supplier insert was requested and inspected; current insert URLs failed retrieval and their search captures remain explicitly limited. The anhydrous and trihydrate are distinct individual reagents. No evidence selects one for these3 exact recipe versions, and a complete-medium purchase does not supply the reagent form.",
+      "missing_requirement": "Hydration of the potassium dibasic phosphate input in the assigned OTEB/AS603 formulation versions, beyond the supplier term dibasic; no source-linked reagent specification recovered.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/K2hpo4.yaml",
+          "sha256": "7eb41f8daf7f92610ccd692102fb924cb540c32c68c55de02d1e6d72ad4065e1"
+        },
+        {
+          "path": "data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml",
+          "sha256": "c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:f3c34b9a8cffdc2e623fb597f09ad9d82c60b97510ff212bde315519eb558ab0",
+          "recipe_id": "CultureMech:004003",
+          "component_path": "ingredients/25",
+          "snapshot_sha256": "0f31228f716429d29d9e4f3770de742cee38b2c6215bb81c0d271512d1b8353c",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:004003"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:1245"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1.99"
+            },
+            "evidence": [
+              {
+                "explanation": "ingredients[25].preferred_term: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[25]; accessed=2026-10-09T05:34:30.227280+00:00; capture SHA256=38c6893a52fb53607f12fc0df1a20bfa72051f3fc61209eaa7aabed8d0ed8fa6.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[25].concentration: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[25]; accessed=2026-10-09T05:34:30.227280+00:00; capture SHA256=38c6893a52fb53607f12fc0df1a20bfa72051f3fc61209eaa7aabed8d0ed8fa6.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[25].notes: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[25]; accessed=2026-10-09T05:34:30.227280+00:00; capture SHA256=38c6893a52fb53607f12fc0df1a20bfa72051f3fc61209eaa7aabed8d0ed8fa6.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[25].term: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[25]; accessed=2026-10-09T05:34:30.227280+00:00; capture SHA256=38c6893a52fb53607f12fc0df1a20bfa72051f3fc61209eaa7aabed8d0ed8fa6.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[25].mediaingredientmech_chebi_term: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[25]; accessed=2026-10-09T05:34:30.227280+00:00; capture SHA256=38c6893a52fb53607f12fc0df1a20bfa72051f3fc61209eaa7aabed8d0ed8fa6.",
+                "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1245",
+                "snippet": "Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": " (dibasic)\n\nKeep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier.",
+            "preferred_term": "Potassium Phosphate, dibasic"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:aead4c3d597758a43d4e2a8ae92a2ce57ce4f8f1f33f5b7d376e63bb87f63088",
+          "recipe_id": "CultureMech:004002",
+          "component_path": "ingredients/26",
+          "snapshot_sha256": "33a13534ce93d6e8e6e3509c759d518800d331d52c3034e7f786cffd4b63b396",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:004002"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:1245_18691"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1.99"
+            },
+            "evidence": [
+              {
+                "explanation": "ingredients[26].preferred_term: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[26]; accessed=2026-10-09T05:34:32.327300+00:00; capture SHA256=cba7b78efe4cb52105200d3ab4ddf7cede9d9d981e96b10b59a8923f5f56fd06.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[26].concentration: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[26]; accessed=2026-10-09T05:34:32.327300+00:00; capture SHA256=cba7b78efe4cb52105200d3ab4ddf7cede9d9d981e96b10b59a8923f5f56fd06.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[26].notes: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[26]; accessed=2026-10-09T05:34:32.327300+00:00; capture SHA256=cba7b78efe4cb52105200d3ab4ddf7cede9d9d981e96b10b59a8923f5f56fd06.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[26].term: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[26]; accessed=2026-10-09T05:34:32.327300+00:00; capture SHA256=cba7b78efe4cb52105200d3ab4ddf7cede9d9d981e96b10b59a8923f5f56fd06.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01\ningredients[26].mediaingredientmech_chebi_term: Keep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=Metabolites list[26]; accessed=2026-10-09T05:34:32.327300+00:00; capture SHA256=cba7b78efe4cb52105200d3ab4ddf7cede9d9d981e96b10b59a8923f5f56fd06.",
+                "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1245_18691",
+                "snippet": "Potassium Phosphate, dibasic Potassium Phosphate SEED-cpd00009#cpd00205## 1.99 0.01",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": " (dibasic)\n\nKeep the exact displayed Gram Amount and precision under the provider's per-liter heading. It is a provider assertion, not an independent final-volume measurement. Mol Amount and combined SEED rows are not substitutes for this field. Exact per-liter heading: Gram & Mol amounts are per Liter of medium. Dibasic phosphate is not the copied monobasic potassium dihydrogen phosphate annotation. Withdraw that inexact annotation without inventing a replacement identifier.",
+            "preferred_term": "Potassium Phosphate, dibasic"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:1c170c25833aa03d5686a88de08994e4a985c82182cb3b261c8e854598395e34",
+          "recipe_id": "CultureMech:000704",
+          "component_path": "ingredients/3",
+          "snapshot_sha256": "36175e4579c5126baf9eba16d4855347072d30b2a422fc4ade6b24b9ec0eaa07",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000704"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1245"
+            }
+          ],
+          "raw_component": {
+            "evidence": [
+              {
+                "explanation": "ingredients[3].preferred_term: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Original main row 4: 2.0 g per preparation. Mass is retained in notes because the source provides no defensible final-volume denominator for this preparation; the API's g_l is not recertified as an original measured concentration. The copied monobasic or chloride-specific annotation does not establish the source's stated form. Withdraw it without inventing a new identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[3]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic                                                                                                                                                                                                                                                                                                                       2.0 g\ningredients[3].concentration: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Original main row 4: 2.0 g per preparation. Mass is retained in notes because the source provides no defensible final-volume denominator for this preparation; the API's g_l is not recertified as an original measured concentration. The copied monobasic or chloride-specific annotation does not establish the source's stated form. Withdraw it without inventing a new identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[3]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic                                                                                                                                                                                                                                                                                                                       2.0 g\ningredients[3].notes: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Original main row 4: 2.0 g per preparation. Mass is retained in notes because the source provides no defensible final-volume denominator for this preparation; the API's g_l is not recertified as an original measured concentration. The copied monobasic or chloride-specific annotation does not establish the source's stated form. Withdraw it without inventing a new identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[3]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic                                                                                                                                                                                                                                                                                                                       2.0 g\ningredients[3].term: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Original main row 4: 2.0 g per preparation. Mass is retained in notes because the source provides no defensible final-volume denominator for this preparation; the API's g_l is not recertified as an original measured concentration. The copied monobasic or chloride-specific annotation does not establish the source's stated form. Withdraw it without inventing a new identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[3]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2.\n\nAdditional exact excerpt: Potassium Phosphate, dibasic                                                                                                                                                                                                                                                                                                                       2.0 g\ningredients[3].mediaingredientmech_chebi_term: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Original main row 4: 2.0 g per preparation. Mass is retained in notes because the source provides no defensible final-volume denominator for this preparation; the API's g_l is not recertified as an original measured concentration. The copied monobasic or chloride-specific annotation does not establish the source's stated form. Withdraw it without inventing a new identifier. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[3]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2.",
+                "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf",
+                "snippet": "Potassium Phosphate, dibasic                                                                                                                                                                                                                                                                                                                       2.0 g",
+                "supports": "SUPPORT"
+              },
+              {
+                "explanation": "ingredients[3].notes: API recipe row retained as separate provenance. The original recipe's stage, input amounts, label and unresolved denominator determine this representation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.solutions[0].recipe[3]; accessed=2026-10-09T05:34:33.373325+00:00; capture SHA256=2bcf71383b6fe0d25fa345832072429a262e21c3bf65da59edad55a11163c0d7.",
+                "reference": "https://mediadive.dsmz.de/rest/medium/1245",
+                "snippet": "{\n                        \"recipe_order\": 4,\n                        \"compound\": \"Potassium Phosphate\",\n                        \"compound_id\": 928,\n                        \"condition\": \"dibasic\",\n                        \"amount\": 2,\n                        \"unit\": \"g\",\n                        \"g_l\": 2,\n                        \"mmol_l\": 14.6967,\n                        \"optional\": 0\n                    }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": " (dibasic)\n\nOriginal recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Original main row 4: 2.0 g per preparation. Mass is retained in notes because the source provides no defensible final-volume denominator for this preparation; the API's g_l is not recertified as an original measured concentration. The copied monobasic or chloride-specific annotation does not establish the source's stated form. Withdraw it without inventing a new identifier.",
+            "preferred_term": "Potassium Phosphate, dibasic"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 90,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 90,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-oteb-v1",
+          "sv1-chem-oteb-2021-failed",
+          "sv1-chem-oteb-2025-failed",
+          "sv1-chem-chemsearch1"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "Hydration of the potassium dibasic phosphate input in the assigned OTEB/AS603 formulation versions, beyond the supplier term dibasic; no source-linked reagent specification recovered.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:b2feb3448d4e320e52f590651439e901d9ab2e1df8c3b1e2f9af4d82d20d6760",
+      "case_input_sha256": "5f015ed237ee3caaa124d84edde03c2fe8fc5705c15cc8839afb9ddc151129e5",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Potassium dibasic phosphate trihydrate",
+        "source_label": "Potassium dibasic phosphate trihydrate",
+        "raw_source_label": "Potassium dibasic phosphate trihydrate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:21b9a922f6b307f94b32d583c6aa6340c8535fa2651f2a643c59b4c69743c2c3",
+        "CM_OCC:83cfcc52977dff1c4dcef0c38a7350e703e47d4c99861222b0a6f0671797093d"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "Both ATCC-derived sources explicitly identify the trihydrate. The existing CAS16788-57-1 owner is already the most-specific stable identity supported by the captured PubChem structure. A combined alias proposal also handles case76. The older unresolved owner-collision task does not imply missing scientific form evidence and is not a reason to leave this isolated proposal unfinished. Preserve the anhydrous owner rejected trihydrate label and both actual old owner hashes; no merge or publication release.",
+      "applicability": "Applies to exact source label 'Potassium dibasic phosphate trihydrate'; all 2 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-91",
+        "chem-recipe-91-0",
+        "chem-recipe-91-1",
+        "chem-owner-K2hpo4_X_3_H2o",
+        "chem-owner-Potassium_Phosphate_Dibasic_Trihydrate",
+        "chem-togo-M2646",
+        "chem-togo-M2642",
+        "chem-pc-trihydrate",
+        "chem-ont-chebi-131527",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [
+        "sv1-chem-proposal-76"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/K2hpo4_X_3_H2o.yaml",
+          "sha256": "fb412a63050b2d599ee3cfab9fcafcaf141b3ac4c8a1febe6a57709831bc90d6"
+        },
+        {
+          "path": "data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml",
+          "sha256": "c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/656",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/808"
+      ],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:21b9a922f6b307f94b32d583c6aa6340c8535fa2651f2a643c59b4c69743c2c3",
+          "recipe_id": "CultureMech:009202",
+          "component_path": "ingredients/13",
+          "snapshot_sha256": "c2b601a2d4c8ef38227be0a08e1061659b77be277f634bff5c23ac4262984f9f",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009202"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2646"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Role: Buffer; Properties: Inorganic compound, Defined component, Simple component",
+            "preferred_term": "Potassium dibasic phosphate trihydrate"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:83cfcc52977dff1c4dcef0c38a7350e703e47d4c99861222b0a6f0671797093d",
+          "recipe_id": "CultureMech:009199",
+          "component_path": "ingredients/10",
+          "snapshot_sha256": "c79c2238230ea00976eab19216864693d2245fa8746dbcd3187012a2845a0a35",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009199"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2642"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "200"
+            },
+            "notes": "Role: Buffer; Properties: Inorganic compound, Defined component, Simple component",
+            "preferred_term": "Potassium dibasic phosphate trihydrate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 91,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 91,
+        "classification": "bounded_existing_owner_proposal",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:b829112d639c149fb90e12f650a4a007fc9dd4f50ef8cd2d8e29d7428c70a320",
+      "case_input_sha256": "40cd970274fdb4a32aeb3c988ebbdf37074d8a080257e913a6b0a3f8be6e83d9",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "B12",
+        "source_label": "B12",
+        "raw_source_label": "B12"
+      },
+      "occurrence_ids": [
+        "CM_OCC:30def92379e80320ec019b1503fcb1347ab836d3fd43bcfa0307031b557b38de",
+        "CM_OCC:a4bfe1cfd59bc4563c6169e60c23ae22a097907efee0bce18cdc3bf7c19703f3",
+        "CM_OCC:0857def3c1fcf2fb6932e177697bfd313e365325deed81d71991b5f1c74c3988",
+        "CM_OCC:43dbdba97194052661e57d684ccd10f7d6608f5b9263874fe868e032891bd9af",
+        "CM_OCC:a2339e1e466a9149dfa6fd06e4766f285d0c6e019abb164cc38e7233b9e2766d",
+        "CM_OCC:6242411e5cb561d6f43e305d758583eaa34f6914b09f8aa5bcfb13af2244e1c2",
+        "CM_OCC:19d0b6bbb08e3be93388780d62c5aa107358ed6efbd69e7837169ef8a212473d",
+        "CM_OCC:a382c373abc31c86c3aa3ceff2381cd050dcc2bdf8d071b5c8e1b58b4208bb46",
+        "CM_OCC:4824a883f8caa813d14933b16982206a1679565223a8b6712a5b2373e18be265",
+        "CM_OCC:ff2bf4e6480eb5e3a9ac16077879a19c312971dd31247439d9fb15b1ec8472ad",
+        "CM_OCC:afee91b49ac089d1cfdf4dd56281c12b8b18ee4e7eebb4a0f40d3f8a04c09ed8",
+        "CM_OCC:201835f7e3a2d7252d91b68fb65404186164937755c39a03ea7547a5ca097f9c",
+        "CM_OCC:0d72a7385adb9e55c8b6f189e868f8e18f91929c2e41a2807c9df5c7cc0ba8dc",
+        "CM_OCC:42075a842e8c1b49856bbf1aec23565a4a504457aa87b00ec52e5aa538b67d1f",
+        "CM_OCC:64129ee40281ddd10b53d1779d2ce42e8a3caa4346318c666cbce72304b2823b",
+        "CM_OCC:9316faa22cad7ca050e7e69bf180c34908157061bcc2b8b5ace423d2ffcdea0d",
+        "CM_OCC:60a6dcf95066fd29748a12eb95fd70b64454ba8bbd99c4dbd5f784782b8bd92a",
+        "CM_OCC:3e4d84fabeccf4cfe0669c2c9b3e2c583d7eb26ffa4b60f8e7cfed4f5028d44b",
+        "CM_OCC:60b1fa52d61a0be88f1ff71c773bb96cad51231830c39de8b334ee54b0352665",
+        "CM_OCC:66915eea9ff0cd07fe96cf85d54417db66b48923b543fc4770189b2fbfe9b61c"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The complete provider-recipe walk now establishes15 of20 occurrence-specific MediaDive compound1238 links to the existing cyanocobalamin owner, rather than stopping after the four nested solutions. The one KOMODO and four TOGO occurrences do not carry those same compound links, so their generic B12 cannot be automatically transferred to that vitamer. The existing Vitamin_B12 and Cyanocobalamin records already own the generic and specific senses. No owner mutation is needed for these source associations; existing mutual REJECTED_LABEL entries remain intact.",
+      "applicability": "Applies to exact source label 'B12'; all 20 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-95",
+        "chem-recipe-95-0",
+        "chem-recipe-95-1",
+        "chem-recipe-95-2",
+        "chem-recipe-95-3",
+        "chem-recipe-95-4",
+        "chem-recipe-95-5",
+        "chem-recipe-95-6",
+        "chem-recipe-95-7",
+        "chem-recipe-95-8",
+        "chem-recipe-95-9",
+        "chem-recipe-95-10",
+        "chem-recipe-95-11",
+        "chem-recipe-95-12",
+        "chem-recipe-95-13",
+        "chem-recipe-95-14",
+        "chem-recipe-95-15",
+        "chem-recipe-95-16",
+        "chem-recipe-95-17",
+        "chem-recipe-95-18",
+        "chem-recipe-95-19",
+        "chem-owner-Vitamin_B12",
+        "chem-owner-Cyanocobalamin",
+        "chem-ont-chebi-17439",
+        "chem-ont-chebi-176843",
+        "chem-direct-md1238",
+        "chem-md-solution-2814",
+        "chem-md-solution-3031",
+        "chem-md-solution-5705",
+        "chem-md-solution-5761",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-b12-occurrences"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The complete provider-recipe walk now establishes15 of20 occurrence-specific MediaDive compound1238 links to the existing cyanocobalamin owner, rather than stopping after the four nested solutions. The one KOMODO and four TOGO occurrences do not carry those same compound links, so their generic B12 cannot be automatically transferred to that vitamer. The existing Vitamin_B12 and Cyanocobalamin records already own the generic and specific senses. No owner mutation is needed for these source associations; existing mutual REJECTED_LABEL entries remain intact.",
+      "missing_requirement": "For the five explicitly enumerated generic occurrences only: a source-specific vitamer witness. Fifteen explicit provider links are complete and do not await this fact.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Vitamin_B12.yaml",
+          "sha256": "9ee0b669c9ef90950273ea3755e02d960efbfdef7252c13edf180bd70b3fad6c"
+        },
+        {
+          "path": "data/ingredients/mapped/Cyanocobalamin.yaml",
+          "sha256": "c5040ab3a4bc376296676ced54da7265cce36b34c573668be6e28592161d260c"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:30def92379e80320ec019b1503fcb1347ab836d3fd43bcfa0307031b557b38de",
+          "recipe_id": "CultureMech:001265",
+          "component_path": "ingredients/25",
+          "snapshot_sha256": "e54fac658e16e01444b6233d3311f707e9d2df9aeec05e4b9f73c53ca02bb0be",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001265"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1840"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:a4bfe1cfd59bc4563c6169e60c23ae22a097907efee0bce18cdc3bf7c19703f3",
+          "recipe_id": "CultureMech:000945",
+          "component_path": "ingredients/30",
+          "snapshot_sha256": "c09548e189bc13eeb24903a777083f8561042e35ec06b868b0de60fcd9e99700",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000945"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1478"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:0857def3c1fcf2fb6932e177697bfd313e365325deed81d71991b5f1c74c3988",
+          "recipe_id": "CultureMech:006738",
+          "component_path": "ingredients/26",
+          "snapshot_sha256": "7fa9a85ace825270aa990cc07952b75cf0aadc73b056cb830e49b50c7b2a1a29",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:006738"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "komodo.medium:888"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:43dbdba97194052661e57d684ccd10f7d6608f5b9263874fe868e032891bd9af",
+          "recipe_id": "CultureMech:009624",
+          "component_path": "ingredients/12",
+          "snapshot_sha256": "4264a7754d038c9db94c1414fba53cf3975b169eeba287e8ac1a1eafb343b177",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009624"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3167"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "2"
+            },
+            "notes": "Role: Vitamin; Properties: Organic compound, Defined component, Simple component",
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:a2339e1e466a9149dfa6fd06e4766f285d0c6e019abb164cc38e7233b9e2766d",
+          "recipe_id": "CultureMech:001235",
+          "component_path": "ingredients/26",
+          "snapshot_sha256": "2aab2d13564b2e48e4b445e426825dd87e012487d3e8aea9c155ebc888bdf5c7",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001235"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1778a"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:6242411e5cb561d6f43e305d758583eaa34f6914b09f8aa5bcfb13af2244e1c2",
+          "recipe_id": "CultureMech:002048",
+          "component_path": "ingredients/26",
+          "snapshot_sha256": "1e919c0052949740c2d19412aee026e0d74bf3182fdc82990421f2c8c4af78a5",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:002048"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:888"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:19d0b6bbb08e3be93388780d62c5aa107358ed6efbd69e7837169ef8a212473d",
+          "recipe_id": "CultureMech:001096",
+          "component_path": "ingredients/25",
+          "snapshot_sha256": "fffd65174f31b1ce85c5fa3f80591021dc0e36ebb24d466f568464936f06e9ad",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001096"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1615"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:a382c373abc31c86c3aa3ceff2381cd050dcc2bdf8d071b5c8e1b58b4208bb46",
+          "recipe_id": "CultureMech:000931",
+          "component_path": "ingredients/11",
+          "snapshot_sha256": "40a2c1611b6a53b8d33be67b6bf72c062b932cbd4b20fa95d6c69f555e0dbabb",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000931"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1465"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:4824a883f8caa813d14933b16982206a1679565223a8b6712a5b2373e18be265",
+          "recipe_id": "CultureMech:000930",
+          "component_path": "ingredients/26",
+          "snapshot_sha256": "2f0137e0da78e0fa4512effe5314e70ff732be7164e977f9c3cf69beed383845",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000930"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1464"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:ff2bf4e6480eb5e3a9ac16077879a19c312971dd31247439d9fb15b1ec8472ad",
+          "recipe_id": "CultureMech:000959",
+          "component_path": "ingredients/22",
+          "snapshot_sha256": "e2503c5897a5a24e7467148e5b3bc547792377f1d49aaee3281d7f69720434a8",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000959"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1491"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.00125"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:afee91b49ac089d1cfdf4dd56281c12b8b18ee4e7eebb4a0f40d3f8a04c09ed8",
+          "recipe_id": "CultureMech:000946",
+          "component_path": "ingredients/27",
+          "snapshot_sha256": "078b225deb021ea1b4882106ccdc5503c27d262a60e70bc4a1ee1c5796fd0dd5",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000946"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1479"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.00125"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:201835f7e3a2d7252d91b68fb65404186164937755c39a03ea7547a5ca097f9c",
+          "recipe_id": "CultureMech:000846",
+          "component_path": "ingredients/19",
+          "snapshot_sha256": "10b86da2414862740b5df7896c05ff1bb689ea6ca6e1ef88c0b8a6430a3d1225",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:000846"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1386"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.05"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:0d72a7385adb9e55c8b6f189e868f8e18f91929c2e41a2807c9df5c7cc0ba8dc",
+          "recipe_id": "CultureMech:009623",
+          "component_path": "ingredients/12",
+          "snapshot_sha256": "c38fc59cdb1eded1c50f16db9ee95151bedd9af6d549028089944fa61eb2a12d",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009623"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3166"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "2"
+            },
+            "notes": "Role: Vitamin; Properties: Organic compound, Defined component, Simple component",
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:42075a842e8c1b49856bbf1aec23565a4a504457aa87b00ec52e5aa538b67d1f",
+          "recipe_id": "CultureMech:012099",
+          "component_path": "composition/1",
+          "snapshot_sha256": "bed350a9c92c4247e728d32827cea8b88acd0e725c8f6f65ed141eafe779d8b5",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012099"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:2814"
+            }
+          ],
+          "raw_component": {
+            "chebi_term": {
+              "id": "CHEBI:17439",
+              "label": "cyanocob(III)alamin",
+              "match_type": "manual_curated"
+            },
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.05"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[1].concentration (B12) in MediaDive solution 2814; locator=$.data.recipe[1] (compound_id=1238). Provider explicitly reports g_l=0.05. Arithmetic check: 5 mg * 0.001 g/mg / (100 ml / 1000 ml per L) = 0.05 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 100. Retrieved 2026-10-07T09:15:55.780091+00:00; response SHA256=592dabe51bd5f1e3cb3ecc66affcb4b2e964813fc548d9b7d6523b3e483f0156.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/2814",
+                "snippet": "{\n                \"recipe_order\": 2,\n                \"compound\": \"B12\",\n                \"compound_id\": 1238,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 5,\n                \"unit\": \"mg\",\n                \"g_l\": 0.05,\n                \"mmol_l\": 0.0368895,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "B12",
+            "term": {
+              "id": "mediadive.compound:1238",
+              "label": "B12"
+            }
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:64129ee40281ddd10b53d1779d2ce42e8a3caa4346318c666cbce72304b2823b",
+          "recipe_id": "CultureMech:012261",
+          "component_path": "composition/8",
+          "snapshot_sha256": "a1fd266d4c73a2127057919b2970a36576f397208a4bb33aa82511836a3b84bf",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:012261"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:3031"
+            }
+          ],
+          "raw_component": {
+            "chebi_term": {
+              "id": "CHEBI:17439",
+              "label": "cyanocob(III)alamin",
+              "match_type": "manual_curated"
+            },
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.00125"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[8].concentration (B12) in MediaDive solution 3031; locator=$.data.recipe[8] (compound_id=1238). Provider explicitly reports g_l=0.00125. Arithmetic check: 0.5 mg * 0.001 g/mg / (400 ml / 1000 ml per L) = 0.00125 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 400. Retrieved 2026-10-07T09:17:48.545471+00:00; response SHA256=41376d06f410a2cd3af4efb5c03da682c2b08c6583ba9e0f7533b8c660c170bf.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/3031",
+                "snippet": "{\n                \"recipe_order\": 9,\n                \"compound\": \"B12\",\n                \"compound_id\": 1238,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.5,\n                \"unit\": \"mg\",\n                \"g_l\": 0.00125,\n                \"mmol_l\": 0.000922237,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "B12",
+            "term": {
+              "id": "mediadive.compound:1238",
+              "label": "B12"
+            }
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:9316faa22cad7ca050e7e69bf180c34908157061bcc2b8b5ace423d2ffcdea0d",
+          "recipe_id": "CultureMech:014567",
+          "component_path": "composition/2",
+          "snapshot_sha256": "ef3fbadc54ac302cc4fd6f2e60043a7baf8bb6c972f5fcb9236444794fa84c73",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:014567"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:5705"
+            }
+          ],
+          "raw_component": {
+            "chebi_term": {
+              "id": "CHEBI:17439",
+              "label": "cyanocob(III)alamin",
+              "match_type": "manual_curated"
+            },
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[2].concentration (B12) in MediaDive solution 5705; locator=$.data.recipe[2] (compound_id=1238). Provider explicitly reports g_l=0.005. Arithmetic check: 0.5 mg * 0.001 g/mg / (100 ml / 1000 ml per L) = 0.005 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 100. Retrieved 2026-10-07T09:57:32.078924+00:00; response SHA256=3b8e313770a31327c4e375ec974f8d12e4106f0ae4279592a19d2f70765ea6b7.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/5705",
+                "snippet": "{\n                \"recipe_order\": 3,\n                \"compound\": \"B12\",\n                \"compound_id\": 1238,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.5,\n                \"unit\": \"mg\",\n                \"g_l\": 0.005,\n                \"mmol_l\": 0.00368895,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "B12",
+            "term": {
+              "id": "mediadive.compound:1238",
+              "label": "B12"
+            }
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:60a6dcf95066fd29748a12eb95fd70b64454ba8bbd99c4dbd5f784782b8bd92a",
+          "recipe_id": "CultureMech:014617",
+          "component_path": "composition/0",
+          "snapshot_sha256": "7303c278269c6d78cc98283acdb4bec24efe80190d81430a0a3c2701eeab126f",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:014617"
+            },
+            {
+              "path": "/term/id",
+              "value": "mediadive.solution:5761"
+            }
+          ],
+          "raw_component": {
+            "chebi_term": {
+              "id": "CHEBI:17439",
+              "label": "cyanocob(III)alamin",
+              "match_type": "manual_curated"
+            },
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "evidence": [
+              {
+                "explanation": "Concentration evidence for composition[0].concentration (B12) in MediaDive solution 5761; locator=$.data.recipe[0] (compound_id=1238). Provider explicitly reports g_l=0.005. Arithmetic check: 0.5 mg * 0.001 g/mg / (100 ml / 1000 ml per L) = 0.005 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 100. Retrieved 2026-10-07T09:58:07.255221+00:00; response SHA256=95ddd7e889c07690057502f303d45885bc4188c6e42a400ad12628b0e96617e7.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/5761",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"B12\",\n                \"compound_id\": 1238,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.5,\n                \"unit\": \"mg\",\n                \"g_l\": 0.005,\n                \"mmol_l\": 0.00368895,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "preferred_term": "B12",
+            "term": {
+              "id": "mediadive.compound:1238",
+              "label": "B12"
+            }
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:3e4d84fabeccf4cfe0669c2c9b3e2c583d7eb26ffa4b60f8e7cfed4f5028d44b",
+          "recipe_id": "CultureMech:001045",
+          "component_path": "ingredients/10",
+          "snapshot_sha256": "89a107c2a9201f06cdef0cdb730ac6f055d122c28924cdbef42690c16d6a598f",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:001045"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "mediadive.medium:1569"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "0.005"
+            },
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:60b1fa52d61a0be88f1ff71c773bb96cad51231830c39de8b334ee54b0352665",
+          "recipe_id": "CultureMech:009615",
+          "component_path": "ingredients/19",
+          "snapshot_sha256": "f447b41612f5938b2d289fd7eedf8ce338084d57421750f63e4ba5ad1ca88394",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009615"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3152"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "2"
+            },
+            "notes": "Role: Vitamin; Properties: Organic compound, Defined component, Simple component",
+            "preferred_term": "B12"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:66915eea9ff0cd07fe96cf85d54417db66b48923b543fc4770189b2fbfe9b61c",
+          "recipe_id": "CultureMech:009616",
+          "component_path": "ingredients/20",
+          "snapshot_sha256": "718981385c21165281cc1770632478afb52c3d7b8450083a8cdc3e7199e53979",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009616"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M3153"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "2"
+            },
+            "notes": "Role: Vitamin; Properties: Organic compound, Defined component, Simple component",
+            "preferred_term": "B12"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 95,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 95,
+        "classification": "partial_existing_owner_associations",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "For the five explicitly enumerated generic occurrences only: a source-specific vitamer witness. Fifteen explicit provider links are complete and do not await this fact.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:ca0e2d4c54c54effe802a26758b9e1bb9bf6ecba67571e2b81838c7436b1f5e4",
+      "case_input_sha256": "34e9a2b5702a5072c5e3709e8d59d896e766e8dc39cbd3c9327d88825d1f5b1f",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Acetate (final concentration)",
+        "source_label": "Acetate (final concentration)",
+        "raw_source_label": "Acetate (final concentration)"
+      },
+      "occurrence_ids": [
+        "CM_OCC:12686215c911a051164c33746d0522c9a5c837e7b8bd10dcd6fc7001b40e0318"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "TOGO700 names acetate and expressly marks its dose as final concentration. The bare-anion CHEBI30089 owner already exists; neither a salt purchase nor a stock identity is inferred. Owner lookup is complete and the instructional suffix requires no global synonym.",
+      "applicability": "Applies to exact source label 'Acetate (final concentration)'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-108",
+        "chem-recipe-108-0",
+        "chem-owner-Acetate",
+        "chem-togo-M700",
+        "chem-ont-chebi-30089",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "TOGO700 names acetate and expressly marks its dose as final concentration. The bare-anion CHEBI30089 owner already exists; neither a salt purchase nor a stock identity is inferred. Owner lookup is complete and the instructional suffix requires no global synonym.",
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Acetate.yaml",
+          "sha256": "f567fa02e6ff94519c772a1025e329e7d14324599c14d13521f62c9f2d5e4cd4"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:12686215c911a051164c33746d0522c9a5c837e7b8bd10dcd6fc7001b40e0318",
+          "recipe_id": "CultureMech:010108",
+          "component_path": "ingredients/9",
+          "snapshot_sha256": "92198102d94740c92f6c8e00ae5bee53afbe2aab5a532b3a5ddf695297f3eae6",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:010108"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M700"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "MILLIMOLAR",
+              "value": "2"
+            },
+            "notes": "Role: Carbon source; Properties: Defined component, Organic compound, Simple component",
+            "preferred_term": "Acetate (final concentration)"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 108,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 108,
+        "classification": "existing_owner_no_payload_needed",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:ce55622b867580a0ffb9a382e9f5a671378a16a3eec866eefcc6909adf571b67",
+      "case_input_sha256": "2aa4b0f345e4658dd1a387a6d4989fa4c7b1f1d775d6f853dc5c2aaa44e16974",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Ethlyene Diamine Tetraacetate",
+        "source_label": "Ethlyene Diamine Tetraacetate",
+        "raw_source_label": "Ethlyene Diamine Tetraacetate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:af16fb5ad07967fa4e6f16bb592a2bdf545fabc45667fa9e9378aa722bbf4239"
+      ],
+      "disposition": "existing_identity_or_alias",
+      "reasoning": "The original ATCC37 PDF was recovered. Its Heavy Metal Solution prints the misspelled Ethlyene Diamine Tetraacetate and immediately instructs Dissolve EDTA first, explicitly linking the source spelling to EDTA. The existing Edta owner preserves the repository-reviewed free-acid naming convention and separate disodium owners. A bounded spelling-alias proposal is supported without inventing an EDTA salt, charge state, hydrate, stock equivalence or procurement specification.",
+      "applicability": "Applies to exact source label 'Ethlyene Diamine Tetraacetate'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-111",
+        "chem-recipe-111-0",
+        "chem-owner-Edta",
+        "chem-owner-Na2-edta",
+        "chem-togo-M2555",
+        "chem-ont-chebi-4735",
+        "chem-ont-chebi-64734",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-atcc-chromatium"
+      ],
+      "proposal_ids": [
+        "sv1-chem-proposal-111"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Edta.yaml",
+          "sha256": "d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701"
+        },
+        {
+          "path": "data/ingredients/mapped/Na2-edta.yaml",
+          "sha256": "7ac669135e2443456cf3256bb963d53935e7ce48f9d8878a65778162bf02d4c4"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:af16fb5ad07967fa4e6f16bb592a2bdf545fabc45667fa9e9378aa722bbf4239",
+          "recipe_id": "CultureMech:009124",
+          "component_path": "ingredients/13",
+          "snapshot_sha256": "4e7489bcd6a6653a679ad956d5a20fae63bb18f3e62effd6642f447a9c479ad5",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:009124"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M2555"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1.5"
+            },
+            "notes": "Properties: Defined component, Simple component, Organic compound",
+            "preferred_term": "Ethlyene Diamine Tetraacetate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 111,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 111,
+        "classification": "bounded_existing_owner_proposal",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-atcc-chromatium"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": null,
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    },
+    {
+      "case_id": "CM_NAME:dbdf3066e46cc9f7a160942adc5b2ad87df8abb59040227d15155fc7619d934a",
+      "case_input_sha256": "cadedba074a9b31e956b2b51e1ea616bc571193b1aa3daefbcf5024573268058",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Sodium aspartate",
+        "source_label": "Sodium aspartate",
+        "raw_source_label": "Sodium aspartate"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a17a431a8a2edf9bf5dfb8fc995efdaa02dd5ef023fa57aa6554ce2b40d850d2"
+      ],
+      "disposition": "unresolved",
+      "reasoning": "The NBRC1278 primary recipe was searched and reread in full. It independently names Sodium aspartate without stereochemistry, sodium stoichiometry or hydration; the trace-stock KOH adjustment does not identify this separate weighed reagent. Actual primary supplier searches establish multiple distinct purchasable sodium-aspartate forms but none is linked to NBRC1278. Neither MediaDive228 nor its conflicting fields belong to this source.",
+      "applicability": "Applies to exact source label 'Sodium aspartate'; all 1 occurrences are bound below by original ID/path/hash. Identity reasoning does not recertify amounts, roles, growth claims or existing exported payloads.",
+      "evidence_ids": [
+        "chem-case-116",
+        "chem-recipe-116-0",
+        "chem-owner-L-Aspartic_Acid_Sodium_Salt_Monohydrate",
+        "chem-nb-1278",
+        "chem-more-sodium-aspartate",
+        "sv1-chem-owner-lookup",
+        "sv1-chem-context",
+        "sv1-chem-sodium-aspartate-monosodium-failed",
+        "sv1-chem-search3",
+        "sv1-chem-search4",
+        "sv1-chem-supplier-web-open"
+      ],
+      "proposal_ids": [],
+      "no_change_reason": "The NBRC1278 primary recipe was searched and reread in full. It independently names Sodium aspartate without stereochemistry, sodium stoichiometry or hydration; the trace-stock KOH adjustment does not identify this separate weighed reagent. Actual primary supplier searches establish multiple distinct purchasable sodium-aspartate forms but none is linked to NBRC1278. Neither MediaDive228 nor its conflicting fields belong to this source.",
+      "missing_requirement": "NBRC1278 source-specific sodium stoichiometry, stereochemistry and hydration of the individual reagent; an unrelated supplier CAS or source228 cannot select them.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/L-Aspartic_Acid_Sodium_Salt_Monohydrate.yaml",
+          "sha256": "32d45cfa5c74e9e4724f0b1a17ed30f58d01edb3ce58ea25332b12eb5815bb7e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "author": "Codex /root worker10 successor primary chemical reviewer",
+      "occurrence_contexts": [
+        {
+          "occurrence_id": "CM_OCC:a17a431a8a2edf9bf5dfb8fc995efdaa02dd5ef023fa57aa6554ce2b40d850d2",
+          "recipe_id": "CultureMech:008576",
+          "component_path": "ingredients/5",
+          "snapshot_sha256": "1e961c0445b811f30690bc017d8139ae97f62f13bba7afed0fd35fe51c01896e",
+          "source_ids": [
+            {
+              "path": "/id",
+              "value": "CultureMech:008576"
+            },
+            {
+              "path": "/media_term/term/id",
+              "value": "TOGO:M1992"
+            }
+          ],
+          "raw_component": {
+            "concentration": {
+              "unit": "G_PER_L",
+              "value": "1"
+            },
+            "notes": "Role: Nitrogen source; Properties: Organic compound, Defined component, Simple component",
+            "preferred_term": "Sodium aspartate"
+          }
+        }
+      ],
+      "unavailable_primary_capture_keys": [],
+      "publication_status": "No approval. Preserve all existing WITHHOLD/REJECTED and source-material holds; any changed owner withdraws inherited support.",
+      "source_index": 116,
+      "completion_reassessment": {
+        "at": "2026-11-08T05:59:45.044104+00:00",
+        "supersedes_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+        "prior_decision_capture": {
+          "root": "artifact",
+          "path": "decisions.json",
+          "sha256": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c"
+        },
+        "prior_case_index": 116,
+        "classification": "specific_scientific_fact_missing",
+        "owner_lookup_evidence_id": "sv1-chem-owner-lookup",
+        "actual_primary_search_evidence_ids": [
+          "sv1-chem-sodium-aspartate-monosodium-failed",
+          "sv1-chem-search3",
+          "sv1-chem-search4",
+          "sv1-chem-supplier-web-open"
+        ],
+        "bounded_preparation_assessed": true,
+        "more_specific_product_or_quantity_information_separated_from_identity": true,
+        "precise_remaining_scientific_fact": "NBRC1278 source-specific sodium stoichiometry, stereochemistry and hydration of the individual reagent; an unrelated supplier CAS or source228 cannot select them.",
+        "native_holds": "All inherited WITHHOLD/REJECTED source, owner and export dispositions retained. No source quantity, role or whole-record approval."
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Biological successor reassessment, issue 1201
+
+All 50 assigned prior no-proposal cases were reassessed against the original primary captures, their 77 complete frozen occurrence contexts, new ontology/supplier searches, and an ignored-inclusive native owner lookup. The original published `dbaf4629` assessments and payloads remain untouched.
+
+There are 39 authored isolated proposals: 36 new owners and three existing-owner changes (BSA supplied forms, Invitrogen porcine-serum supplied form, and specific Phytone identity). Case 53 also binds the KG-authored DSMZ1076b swine-serum proposal. Cases 9, 67, 77, 79, 82 and 93 retain concrete fraction/alternative/formulation uncertainties after actual searches; they do not defer merely for units, ontology coverage or publication review.
+
+Unknown serum treatment schedules remain source-family-qualified. JCM144 rabbit 56 C/60 min, JCM946 filtered rabbit 56 C/30 min, DSMZ1895 human 56 C/30 min, DSMZ840 bovine 56 C/45 min and other explicit schedules remain distinct. Primary manufacturer guidance is never used to fill a source schedule.
+
+Specific ontology searches found water-lysed sheep blood (MICRO:0002399), species-unspecified defibrinated blood (MICRO:0002115), Phytone peptone (MICRO:0001795) and corn starch (FOODON:00005791). Case41 has occurrence-dependent associations; its whole spelling is not globally assigned to sheep or to the unspecified-sense owner. Phytone's ontology definition has an inconsistent taxon parenthetical, which is not copied; manufacturer evidence supports the named soy product. The corn owner retains a publication conflict with the inherited Corn Starch alias on generic Starch; no old alias is removed here.
+
+Every after payload was written through `write_validated_ingredient`. Strict validation covered 39 after payloads and three exact before owners: 42 files, zero errors. Native component-partonomy validation over the proposed in-memory catalog found zero violations. Structural validity confers no scientific, role or publication approval.
+
+`lookup-*.json` records the exact search labels, all native candidate hashes, resolving-synonym policy and label-index search. `retrievals.json`, `term-retrievals.json` and `parent-retrievals.json` retain actual requests, failures, timestamps and capture hashes. Original evidence IDs are reused without changing their bytes. `integrity-check.json` verifies all references and proposed/before hashes.
+
+Independent skeptical review is recorded separately under `successor-v1/reviews`; the coordinator binds the final reviewed hashes. The original successor draft is preserved in `review-inputs-v1/`. Review corrections align source-family URLs, retain JCM144 filtration, narrow the M2287 attribution, withdraw the unsupported FoodOn tomato-juice parent, and add manufacturer-supported partial M4655 components. Case18 remains the BSA constituent inside an already represented stock, not the complete stock. No maintained data, aggregate, SSSOM, generated output, GitHub issue, commit or push was changed by this subagent. Root owns integration and the final campaign handoff.

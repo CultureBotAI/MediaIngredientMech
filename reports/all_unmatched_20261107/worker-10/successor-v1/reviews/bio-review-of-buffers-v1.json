@@ -1,0 +1,953 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/bio_research",
+  "author": "/root/buffers_research",
+  "reviewed_at": "2026-11-08T06:11:25.514120+00:00",
+  "status": "accepted_with_publication_holds",
+  "review_scope": "All34assigned successor decisions,122fullfrozen recipe snapshots and exactcomponenttargets,28exactpayloads,231referencedcaptures, nativeownerrefs/hashes, sourcequalification/stock-vs-component/molarity/pH/process boundaries. Independent primarysource reading uses exactexistingcapturedbytes; no newHTTP claim.",
+  "independence": "Reviewer authored biological partition only and did not edit buffers artifacts. Immutableinitial andfinalcopies preserved.",
+  "input_core_hashes": {
+    "decisions.json": "193cf2a01b315b339761f56121084a68307feb02b501ad97c757db4156d54428",
+    "evidence.json": "ee58182142ca929a924e873ba49997f8697b4add4c979f49fad852cc2f19a19c",
+    "proposals.json": "27d9015431e0a5b4952543100d35cf9476034f00fddd8bfe5c6109bb2c48fb65"
+  },
+  "case_count": 34,
+  "proposal_count": 28,
+  "occurrence_count": 122,
+  "evidence_hash_count": 231,
+  "native_owner_hashes_rechecked": 73,
+  "native_search_included_ignored": true,
+  "findings": [
+    {
+      "finding_id": "sv1-bio-buffers-130-process",
+      "source_index": 130,
+      "proposal_id": "sv1-buffers-carbonate_1m_ph10_jcm1452",
+      "evidence_id": "buffers-primary-947e5eff24deb387",
+      "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1452",
+      "finding": "Known separate autoclaving and aseptic addition omitted from source preparation notes.",
+      "required_remedy": "Retain source process, without inventing the schedule.",
+      "status": "resolved",
+      "resolution": "Author retained separateautoclaving andasepticaddition inexact revised case130andpayload; reviewer rereadprimary anddiff, no scheduleinference.",
+      "original_payload_sha256": "07fdf4aa073f358b6519cbae2cbb0003a686b7fcb9041284bb263c7f65764c5e",
+      "revised_payload_sha256": "4b1e36b7645dbd126466df94c9ed505a7ff1e944feb020c66546746e394917ea"
+    }
+  ],
+  "open_findings": [],
+  "case_reviews": [
+    {
+      "source_index": 0,
+      "case_id": "CM_NAME:01dd93e5cf4b30e8b25b7c4321d92baee3e00ecb16efc03b2b691e1c469214f8",
+      "occurrence_ids": [
+        "CM_OCC:9c9da291ccdec2b874624459795e34c17556257b277e23e935b30d54b119f670",
+        "CM_OCC:f03d68a215394b4c05d7cc8e5a6e3294be69f44acdb0c0236588919cdd6f04ed",
+        "CM_OCC:595aa02c7e383777c090f21f5195a9519685c9bf19f92de86f12db997e043e06"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "All three frozen targets are the 0.1 M stock constituent. DSMZ833 Solution B and JCM753 specify pH7.5 and anaerobic sterilized stock; no salt ratio or receiving-volume-to-mass inference.",
+      "retained_limits": [
+        "Potassium phosphate salt species, ratio, solvent and titrant are not specified. They limit reconstruction and equivalence to other stocks, not the stated source preparation identity.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 1,
+      "case_id": "CM_NAME:027eefccc7351f91151328ec29620bc936e045332508e1a1f953bc75e5471af6",
+      "occurrence_ids": [
+        "CM_OCC:f5b1318224eefbc80be099061d03969fbe12235aad421e19b12f4a891513ed7e",
+        "CM_OCC:50013a2c3458b1e518a661b64d1c5ffde0365f3c8cfea83f25acd7b092f8c7e2"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM995/M1049 and JCM900 liquid use 0.1M Tris-HCl pH7.5; agar pH8.5 is explicitly excluded. Shared specification does not certify common titration history.",
+      "retained_limits": [
+        "Do not apply this pH 7.5 record to the pH 8.5 agar preparation in JCM 900.",
+        "Solvent, titrant, reagent form and preparation ratio are not given. The pH 8.5 agar alternative needs a separate occurrence-specific choice; source-to-occurrence applicability here is limited to pH 7.5.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 7,
+      "case_id": "CM_NAME:0a185d93e165ad3aaa6a1ff9dc08fb8010d4663c3691673b2e7da472771352f1",
+      "occurrence_ids": [
+        "CM_OCC:c4f8de49343aa7e20513ff027ec486681a1139dc9196ddbec51935d010da5fc2"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-phosphate_1m_ph6_8_jcm149"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM149 Standard mineral base explicitly contains40mL 1M Na2HPO4/KH2PO4 pH6.8; medium salts are outside stock. Two named salts remain unresolved supplied forms.",
+      "retained_limits": [
+        "The two-salt ratio, hydration of Na2HPO4, solvent and titrant are not stated.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 8,
+      "case_id": "CM_NAME:10ae9613291d16a03d5e59cad87fe836d9885ac4917422a5244a7833493f4b4f",
+      "occurrence_ids": [
+        "CM_OCC:f3f541cf25125ce703d137e29a4f3d42fd24644c16c32d7f42085a7f34cc9e72"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-potassium_phosphate_10mm_ph7_2_jcm1100"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM1100 Vitamin A uses100mL 10mM potassium phosphate pH7.2. Vitamins and receivingCTM KOH titration are correctly excluded.",
+      "retained_limits": [
+        "Phosphate salt species, ratio, solvent identity and buffer titrant remain unspecified.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 11,
+      "case_id": "CM_NAME:1756d7568bc5fccde680b5e66c0cd507c9f01316038ae2a1cda4d137ffb0202d",
+      "occurrence_ids": [
+        "CM_OCC:ee03cef5ecaec4b759a35b9def1db39d5e1c8d9ad7372bd952e7ccce1e6b8b2e"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM194 MMYS-II SolutionII is500mL20mM potassium phosphate pH7.8, separately autoclaved; finalmedium7.7-7.8 is distinct.",
+      "retained_limits": [
+        "Exact phosphate salts, ratio, solvent and titrant are absent; concentration/pH and source use nevertheless establish the preparation boundary.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 16,
+      "case_id": "CM_NAME:232f2cc81a44bcae4debd4d5f2b0a8a8f26346774a73f840e1bf872a31cdd9ff",
+      "occurrence_ids": [
+        "CM_OCC:e02d61978801bd592a17dd8090eaddc5366fd316ae2320c3d201f82c35c85d96"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "NBRC372 same named MMYS-II SolutionII prints500mL20mM andpH7.8; supports paired source specification without a guessed phosphate ratio.",
+      "retained_limits": [
+        "Exact phosphate salts, ratio, solvent and titrant are absent; concentration/pH and source use nevertheless establish the preparation boundary.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 21,
+      "case_id": "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+      "occurrence_ids": [
+        "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-carbonate_co2_nominal4percent_togo_m202"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "TOGOM202 names4% Na2CO3-CO2 stock100mL; finalmediumpH6.7-6.8 is not stockpH. Unsuccessful JCM209 is not used as recipe evidence.",
+      "retained_limits": [
+        "The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 24,
+      "case_id": "CM_NAME:30d535bf6e7b33c8e1f49d1271b5232d9cf24cbc7e96a022cebe18b0734a4789",
+      "occurrence_ids": [
+        "CM_OCC:cbcc276ecce07d9de5237808f63ef5864962c266f90109c21fe23d19e10e3651",
+        "CM_OCC:110916ad324a26009de29da0d3e24ab5ee92f9fbf3b436c4e3ca96e0bb2856e6"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM1036 SolutionB andJCM296 SolutionA contain2mL0.5M sodiumphosphate pH7.3 but differentvitamin/ironstocks. Payload merges only buffer specification.",
+      "retained_limits": [
+        "Salt hydrations, ratio, solvent and titrant are not specified. The source cross-reference is needed to interpret case 107, and does not assert the two complete receiving solutions are identical.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 48,
+      "case_id": "CM_NAME:5a7b862b150c97f5af04c60734dc9c5c76b2724fe04f4c93dc16bb084ae7cb1f",
+      "occurrence_ids": [
+        "CM_OCC:3c53b355454a715715edbb7371589f12bd06cbf7f9030c0d6c82bff5fe987d50"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-reducing_agent_100x_togo_m3163"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "M3163 primary explicitly has100x reducingstock underN2, NaOH0.9g,cysteineHCl4g,Na2S60weight% literal2.17g/L per100mL. Conflict and unknownforms retained, not corrected.",
+      "retained_limits": [
+        "Do not certify or normalize Na2S quantity; retain the 2.17 g/L versus per-100-mL context conflict.",
+        "The sulfide quantity/batch inconsistency and supplied-form details prevent quantitative reconstruction, but not a source-qualified stock identity.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 49,
+      "case_id": "CM_NAME:5fe9c425c5b961fd152aeb859617db55f9daa8addbd938da2fd142aef3a8bf95",
+      "occurrence_ids": [
+        "CM_OCC:93bced76f98dddd83a2dacb75696e8da84810a255dac1d1ca8f1c6cf55334957"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-carbonate_paired100mm_ph10_nbrc944"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "NBRC944 prints paired100mM NaHCO3/100mMNa2CO3 pH10 usedas1L. No inferred200mM total or equivalence toJCM1452 1Mstock.",
+      "retained_limits": [
+        "Slash notation does not establish stock mixing volumes, total carbonate concentration, solvent or titrant.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 55,
+      "case_id": "CM_NAME:6b90aad5835c3226489c1d9e25193c7daa32737b11a64fac1938830bb76b542a",
+      "occurrence_ids": [
+        "CM_OCC:69ba6381fb53b1e8f7daa17369b00a74af6f351bdd603ba7aae9a7c791e967d0"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-penicillin_g_100000u_ml_nbrc400"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "NBRC400/M1591 specifiesPenG100000U/mL2.5mL sterileaddition; no sodiumsalt or massactivityconversion inferred.",
+      "retained_limits": [
+        "Salt, solvent, formulation excipients and preparation details are unspecified; these do not erase the explicit potency-stock boundary.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 56,
+      "case_id": "CM_NAME:6ce3c037c190869f8f71aaca3bb3d151685e43e6ff8ea749636befc6223f42bd",
+      "occurrence_ids": [
+        "CM_OCC:4bdb47ec3d40143602286ce7a32cba3b90e4175f795251f6f174b592943aed3a",
+        "CM_OCC:4736319b8877c1424d45939dc9f44b4791dfc4d16ad06fa46a44d1d865fef763"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM979 andJCM995 source0.1MTris-HCl pH7.5 confirmed. Frozen50g/L and50mL/L preserved as separate upstreamunit issue.",
+      "retained_limits": [
+        "Do not apply this pH 7.5 record to the pH 8.5 agar preparation in JCM 900.",
+        "Solvent, titrant, reagent form and preparation ratio are not given. The pH 8.5 agar alternative needs a separate occurrence-specific choice; source-to-occurrence applicability here is limited to pH 7.5.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 60,
+      "case_id": "CM_NAME:7483eaa7f39a065d133f8474f96eb831330dc913e50eab9adaf0a81a5e983f12",
+      "occurrence_ids": [
+        "CM_OCC:788702190bd2a369860b747313382804d45722577221fa4f5121b66d55e70a69",
+        "CM_OCC:15225b3e5439e39fe5b5fcba5596b90d533359161d890405125dea83fde18fbe",
+        "CM_OCC:f230cba112e612e9fe753e2bd9bd69056f6940c0ffe6a6cb1dd078758f5c0809",
+        "CM_OCC:4dcd5d9576f5f57736aed2232abbad879f5ed5b30f7b80d88e6065782282e5af",
+        "CM_OCC:c4645f6907b2b74a8f4a0d322dc5717e18e6b2254a66e749f62c5ea471c951a3",
+        "CM_OCC:8ed4fdf734ab8d36688d329b6c5e333f02fa3c5957a5b6d00fbf0fed3295cfb4",
+        "CM_OCC:5038c49f07ff474dff42519cf8a1063e712c232c0c2817871e77f204f7a9a7bc",
+        "CM_OCC:fd172d621c8a45f53117743824283b540a833dbafa3f64b63320fe6792b426ae",
+        "CM_OCC:d959a1ac29404f8dbacf63032c0f09d75183858ea522ebfaced611c80557a3a7",
+        "CM_OCC:342e8e8a661d9e323fa3ce9d5ba970212e6e18afe5f59eb4520f48806a33c571",
+        "CM_OCC:dd24bd75fbfce419535031f144047813917c0454ea4e756995942269c599bdfa",
+        "CM_OCC:a43962738c49d266ded7ab12454b26593e900a12dd7a7d4903337dbe707e0e8f",
+        "CM_OCC:ed0209151bd649f33bc688edc5c8673c0acb24b665ac4da2cd9e8dba831d40c4",
+        "CM_OCC:fe909df5f1d1586b3dc33b48491c9c67834de35500a219d29d4f2682c3ba50a6",
+        "CM_OCC:0ef8169caa7c9c97df92837a6794b0e21dc5eeb34539cd512c54e6de2523b554",
+        "CM_OCC:7dade2d6ff549acbcb94b2a6a5035a469e53e0e37fc53b729607804441d449ba",
+        "CM_OCC:343cf0c3a3537e74d770841045f32309afbdf1023855554a1907152969168a99",
+        "CM_OCC:d41a4721e3956043748df50da976122efcb3cd3a0419a83429eb7c9e4bac5d0c",
+        "CM_OCC:2cd31c917d4c4c875f4735b9794beacb26aca5ea8b96db4928c11ed5b85397d2",
+        "CM_OCC:230f39d6e0f9d069f21dfec13582934b34fa5893e89e38b06312730e7c906da8",
+        "CM_OCC:2ed9c80e53ad76689279de10f3e2bf59fe15b080cda717436bc51faf654588e8",
+        "CM_OCC:afa6c8c4162d0faf43c59348f3e60ff925b6c2d132556c32c6eb43987dfa8a68",
+        "CM_OCC:5b50596379eea98dc680aa24401007678974a254f5e0d53799d4ce96019edca5",
+        "CM_OCC:273074d9f46e42c45723bfc75947164a2e1eedd227c13fac474be8c0b4a3a144",
+        "CM_OCC:5a068b59d0fcae2284f96d7111fb3bd5e0058fb1af5cc559fcb6764fc476b13d",
+        "CM_OCC:3581df16b1ba570665d2ebe9cc41a31b66829f46815799c927ad0bf3bd8fea74",
+        "CM_OCC:5e4e2dee366f7066896cb0a8305c91c41a007220f0f70f42608f36b64e519069",
+        "CM_OCC:424ba7b7d78e00e4a33ef5133e137715a5b9ce34245fbe03f0c4252f404114e4",
+        "CM_OCC:b46e34ada7722d6ca119ea90cf0338ac01501d874891df870c2de6c907868f68",
+        "CM_OCC:243ff22273b929f276251fc42b2b5faf51c1a69950638507f1c7807c11b01d05",
+        "CM_OCC:cb28a5a6a95ee9d7ed341745aab62a7964a5e30994743acb9a565d449f393a27",
+        "CM_OCC:2c18f891ce65a5c9bf1cfe54fb70e433107a6b63e74b543227512f2888312993",
+        "CM_OCC:d565585bc51ca7f0332fd5d14218a81e7bc5d5e374c2356c3fab98da8344c96c",
+        "CM_OCC:9f6ab6dd6ac4faec7c7258a3fb940e7efc1b85f0ac93622efcec6e73e45fff22",
+        "CM_OCC:3b352202a92b9b68027dd75a7d224086240daf1dc32cb9c3d6d9ebbc8a0447f3",
+        "CM_OCC:2e219f5dad100a13ba5ba0f815d91dc4c69d1f0e704b0a31ecba65284b11a5a7",
+        "CM_OCC:eb2af63f6448a1260fd54b102705fb08f09f8a42184dc43933c8ba4e47b1fb9b",
+        "CM_OCC:bc48f21c2cd4b5a471c2f51fa90b9db538d123b57721daa72250f000c9dd2229",
+        "CM_OCC:2ddce348c93aaaeb84460f9fae679cc14ce0241b03e54cfaacb673ff956a7e29",
+        "CM_OCC:0a55b292c352a355141f0e2680539ba39e7d5151abf4ee9e6eceb855726b9dba",
+        "CM_OCC:48557e27d37be3bc325d653fb5943ad5530dec08ebccf7ae519ec3c77fb4e496",
+        "CM_OCC:80c9d34c0f7e4596d97d2137893aabd3ddb9e46fe2252956a0895e755e904f80",
+        "CM_OCC:c1e9c36db4244891198a54dee1497b96a56e115ecb436e79a17f3c48a3f59c3d",
+        "CM_OCC:ff47715dabd1a085461d42aa15c5f01de45a9880c476c96c5ea5e18cee7a4ba9",
+        "CM_OCC:a8b6abd55a558622d42a7b8abdcf74af4b7366d728e3d40f80ef3831d75afb8a",
+        "CM_OCC:3694ca9c36b3d0840cf81ca57d343ab1f21d9d9a83839ad526142e621dcb7f34",
+        "CM_OCC:85df8aad5d0862bb74dd07c49ad38252ca4b945cbc45f8ebfd25f9ea5616a4dc",
+        "CM_OCC:a9711be9483b01c11cb3b7b658f0e62c53de92749f24ec4c87cf8f7a96906bf2",
+        "CM_OCC:299ab4fafea6373c6dac80730fad4367036f6603112502e5066c14472c55878a",
+        "CM_OCC:8a966fa538f5a60aecfd7a57e3c1c1db3e14f9dc61be43f8c88f5df2d3df5114",
+        "CM_OCC:383cbd1949fe4cf019a2f40cb441a6167ef2ff34277f7cfec7ee10bf9a091ac7",
+        "CM_OCC:5ac960dfa8720503c572f2f684a87420ddf3279b7883809cf2d60d2de10d6613",
+        "CM_OCC:46b61e4422e6d6a66a8349f98c663725de7c03e2c22650166401e8d367dd1d1d",
+        "CM_OCC:1793078c7e809a73635d68c4152201e3f796222b8df9269b4ce05836394b4f4c",
+        "CM_OCC:6e1ebac1a88773d9771fdaead25274390d2d9f112e1a8b2063afa93f31bda414",
+        "CM_OCC:8c9d6cdbca6446e8c690ffdce39f82a95b52c5448c810b3c2d276136115e43f9",
+        "CM_OCC:7ca35b96ac8558da19df818138382043c62d1c64c749d4ddcfa28aa36d16c2a8",
+        "CM_OCC:f95df108fe19e1881f1ba4ef6391ec880e44612a59767884332e015a0440deb8",
+        "CM_OCC:b5f968a8c42337a61a4e2c81938432204d95336b6cf5b5deeab2291205bf01d7",
+        "CM_OCC:993b4b4b879216c3e1f92874264b1567ced1f6545cb26437047d259494b2833e",
+        "CM_OCC:4ff10be122c2398c50918ba12616994230a4ea8bb4a1ed5a56f6cf179f8a0d11",
+        "CM_OCC:749fec76c8679f6d1ac527992d1b64d0c5cf42d4c536c778bbab3b111b8c2a55",
+        "CM_OCC:4d1ce10136eddf10fa5baf4bebb3af00944e25f56ab8e35c22f80cf863e4b01d",
+        "CM_OCC:3061ec032d92ce59331f874e2d4893278123196b12d2c0dd51017b8ad4857ffe",
+        "CM_OCC:3ed7d0e4cbeedc4dc03f1861a8d3a88b90c40758659ccf8564bfb88d737adc58",
+        "CM_OCC:478ac6ef6887c00b52728b2675d96ec5de2552f898145907bb26cc19a3c98b30",
+        "CM_OCC:8d07bb869b930710e6ad732f772038bb88e929921337807a92200b881eceff0e",
+        "CM_OCC:6921f3cd5d5abcf06a42792b1449f4399617f825b81a9c5b750eee0c137e80c7"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-hepes_50mm_ph7_8_utex"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "All68frozen snapshots parsed and exacttarget checked. UTEXthreevitamin sources instruct prepare50mMHEPES,pH7.8beforevitamin; H3375manufacturer supportsHEPESacid part. Waterexplicit; titrantunknown. Vitaminfiltration excluded frombufferprocess.",
+      "retained_limits": [
+        "The pH-adjusting reagent and its amount are unspecified. The source recipe supports HEPES and distilled water parts, but does not establish a complete final-species composition.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 62,
+      "case_id": "CM_NAME:7515e27a95e6262c56a3b2489af7b22e0413d7911c7ce0302ccc88b17bfaf6c4",
+      "occurrence_ids": [
+        "CM_OCC:345ab6e9588e9409fb8ebcb93a2406fdaf2452053071bc8f6a7123e0e8343f7e"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM753 direct0.1MpotassiumphosphatepH7.5 anaerobicautoclavedstock confirmscase0sourcefamily, while10mLaddition remainsreceivingquantity.",
+      "retained_limits": [
+        "Potassium phosphate salt species, ratio, solvent and titrant are not specified. They limit reconstruction and equivalence to other stocks, not the stated source preparation identity.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 65,
+      "case_id": "CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d",
+      "occurrence_ids": [
+        "CM_OCC:a9a9cba2d7fee305379ca1951a6a9c16542a85009957d70c52bc1ff8d2e64046",
+        "CM_OCC:238b33c03ed3a21162867efa7bc1b87cb9a1a4814a3d08712c6238b06cfd90cd",
+        "CM_OCC:ff1996a4eebebfb7024d98194e96c34c80f85d9ee52119cf18b505e716f9ae50",
+        "CM_OCC:0862ab4cbb5a833a1bcafea8bbeaebf0805a4bbd315598ab57cea61265948e32",
+        "CM_OCC:cc7ac5abc8e19325fbb8f49abcd6258103594091bbdcfc82448a24bfc0fd92f5",
+        "CM_OCC:6f7b290e09c1b00f8a53a8ddb40fdc6399ef0e05babd05618a6e688919fadc80",
+        "CM_OCC:46f5fbcb21d14fec3498797dbd720bdbdc08907d84253213a2dfa272c91ce5a5"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "All7occurrences checked. NBRC1195/1196 51.3microlitre differsNBRC1200 51.3mL; TOGO2186/2708/3181 use3/1.5/0.25mL. Qualitative concentratedHCl accepted onlyundefinedsource-reagent category, no strength/solvent/productequivalence.",
+      "retained_limits": [
+        "The NBRC 1200 mL versus NBRC 1195/1196 microlitre difference remains a receiving-recipe conflict; no automatic dose repair.",
+        "Qualitative concentrated reagent identity is not a numerical-strength or common-product equivalence claim.",
+        "No percentage, molarity, aqueous solvent, supplier, grade, excipients or exact equivalence between source lots is established. This bounded qualitative preparation supports source association only; quantitative stock reconstruction and equivalence to a specified acid product remain unapproved.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 75,
+      "case_id": "CM_NAME:9a0bcb1be7b9fb2ddc124ee4cccd91d41c2b78bb63f6f4db3e3f52276a1daeb5",
+      "occurrence_ids": [
+        "CM_OCC:774b3ef6f97b5c71a4f76339ea2e7b676f4c24268bbcbffeb90e870b9be3a25e"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-phosphate_1m_ph7_2_pbbm_togo_m2760"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "TOGOM2760 prints10mL1MKH2PO4+10mL1MNa2HPO4, nominal1MpH7.2. Inputstocks remain components; no forcedmerge witholdJCM822 withoutpHlink.",
+      "retained_limits": [
+        "Input-stock solvent, salt hydration and pH adjustment details are absent. The cited primary paper full text was not obtained, but the captured primary TOGO formulation establishes the bounded preparation.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 80,
+      "case_id": "CM_NAME:a18f98ca48aca47e78ff9cbc03d48e4bff39eef21b2fee380c09b74eaf865230",
+      "occurrence_ids": [
+        "CM_OCC:caf04745c1e4aaad7023d28ea9e57f7d5efe0eaf740d3d3d475d723b29371ec5"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-tris_hcl_0_2m_ph7_5_dsmz273"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "DSMZ273 source250mL0.2MTris-HClpH7.5 with750mLseawater. Stock distinctfrom0.1M and receivingseawatermedium.",
+      "retained_limits": [
+        "Solvent, titrant and exact Tris reagent form are not specified.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 81,
+      "case_id": "CM_NAME:a1b254a2a6ee3f53d1db2da3427921398d434cdd53e48f831f00aa9b6129ba95",
+      "occurrence_ids": [
+        "CM_OCC:1e63b207287c31a6fc6ad5fc914572eee327ba9d90bf6826c7051dd8c6afbdc3",
+        "CM_OCC:79ab2e19b1be370c99d043777e823e4be995ebff2e4ebacd2a703e42daf79c2a",
+        "CM_OCC:504b81aaa1be4f13d3f4a79ae2673bc704e86c0984dd0838b4d7258a4eff118a",
+        "CM_OCC:3ab9342e83c8018eb2a325325750f4d1b442b27a568713efd105f6f1b5c542f7"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "FourJCMsources915/918/1430/1431 eachprint1.8mL0.5MpotassiumphosphatepH7.0 sterilizedstock. Latermediumacid/baseadjustment is not stockformula.",
+      "retained_limits": [
+        "Salt species, ratio, stock solvent and titrant remain unspecified; the explicit source stock specification is still distinguishable from the 0.25 M and 0.1 M preparations.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 87,
+      "case_id": "CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f",
+      "occurrence_ids": [
+        "CM_OCC:8b301b8884da9722a128723d3f1b41c1f1b807a3d57ecd3453c1690c98733ac1"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-hcl_nominal35percent_togo_m3216"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "M3216 traceelementrecipe10mL35%HCl supportsnominalreagent; no basis/density/aqueoussolventinference fromwaterinreceivingstock.",
+      "retained_limits": [
+        "Percent basis, solvent identity and supplied grade are unknown; no w/w, w/v, molarity or density is inferred.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 94,
+      "case_id": "CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd",
+      "occurrence_ids": [
+        "CM_OCC:6fcf99e4a0da721b6a132c6acb830d53f661801ecc5f9c3496f4f3bcf49a0215"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-hcl_nominal32percent_jcm770"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM770 traceelementstock1mL32%HCl; sourcepercent preservedwithoutassumingw/w or choosingchemicalHClidentity forwholepreparation.",
+      "retained_limits": [
+        "Percent basis, solvent and supplied grade are unknown; no w/w, w/v, density or molarity is asserted.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 100,
+      "case_id": "CM_NAME:c1a3cbf4a57f849ef6ee12c0edd0a634e2509c41650558959d6cdfb631f18dc9",
+      "occurrence_ids": [
+        "CM_OCC:700aa270224cf039dc505adeede7317e744cfac07aa0232604b370f9d82f781a"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "DSMZ600 supports0.1MTris-HClpH7.5 with50mLinput; HutnerNTA neutralization appliesseparatestock, excludedfrombuffer.",
+      "retained_limits": [
+        "Do not apply this pH 7.5 record to the pH 8.5 agar preparation in JCM 900.",
+        "Solvent, titrant, reagent form and preparation ratio are not given. The pH 8.5 agar alternative needs a separate occurrence-specific choice; source-to-occurrence applicability here is limited to pH 7.5.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 101,
+      "case_id": "CM_NAME:c3670da453732681e6eba32d3fdf0d4ea5e4c7afbabf8aa46ee2f2e863dccdd2",
+      "occurrence_ids": [
+        "CM_OCC:182962d97a4f35550e71983757d3d7e06aa1b17726eec2b338a6a95ed290f2e2"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-tpp_vfa_solution_jcm144"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM144/TOGO135 TPP/VFA explicitly1.5mL0.2%TPP+1mLVFA+8.4mLwater,filtersterilized.10.9mLsum not normalizedto10mL; VFAstockheldasnamedinput, no defectiveTPPowner equivalence.",
+      "retained_limits": [
+        "TPP stock percent basis and chemical form remain unknown. The part list is deliberately partial at preparation/speciation level, and no exact identity link to the defective existing 0.2% TPP owner is asserted.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 102,
+      "case_id": "CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd",
+      "occurrence_ids": [
+        "CM_OCC:38989dc728f37eae111d076594dd5dec3dcbf2af729e8bc41a6047a69e134b75",
+        "CM_OCC:836abf2fb49317a625bb625da256797566f1510199001b08d95e44d88d5c6043"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-hcl_nominal25percent_jcm431_899"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM431/899 both25%HCl acidreagent, respectively12.5/5mLintrace preparations. Differentdosage notdifferentdeclaredstrength; percentbasisunknown.",
+      "retained_limits": [
+        "Percent basis, solvent and supplied grade remain unknown. Different receiving-stock addition volumes are not evidence of different acid concentrations.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 107,
+      "case_id": "CM_NAME:c913149f291090dbd1a988198e9564ece146c9a85eca72b3def86a0bb333e673",
+      "occurrence_ids": [
+        "CM_OCC:540b7a813ee19064c45de035968aabf788210cb1f63e159450a0f9c3ffa3f25b",
+        "CM_OCC:e96b91e185c10b669388f91ad23757ecfdcf8318a89263979f56f3b7de84db05"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "Frozen nestedSolutionB targets verified. M1101 crossreferencesM1100/JCM1036 whichdirectlyspecifies0.5MsodiumphosphatepH7.3. No vitamin/ironwhole-mixture merge.",
+      "retained_limits": [
+        "Salt hydrations, ratio, solvent and titrant are not specified. The source cross-reference is needed to interpret case 107, and does not assert the two complete receiving solutions are identical.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 112,
+      "case_id": "CM_NAME:ced1adce1e3db79484e82ca60266f7aa51b1992c9a311172dca3fbac280b7981",
+      "occurrence_ids": [
+        "CM_OCC:2e528fc040a37d0f96a4da06a4075e42660bf2bf74633d66bbefb6dac85f79ea"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-resazurin_2g_l_togo_m3155"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "M3155 PETC-MES specifically0.5mLof2g/Lresazurinstock; suppliedacidvsNa saltand solventunspecified; stocknotpurechemical.",
+      "retained_limits": [
+        "Resazurin supplied form, solvent, stock preparation and sterilization are not stated. These bound component resolution rather than erase the explicit 2 g/L stock.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 114,
+      "case_id": "CM_NAME:d219f28b63c5dc11a89719386012001ac1d379480663e81ec70de592b52cf5e7",
+      "occurrence_ids": [
+        "CM_OCC:c3a20a01401bb29e1797bc0c49b613fcb77c8fdd10e5bca0c94784302866ff5c"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-potassium_phosphate_0_25m_ph7_jcm1205"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM1205 source5.6mL0.25MpotassiumphosphatepH7.0 anaerobicsterilizedstock; distinctconcentrationboundary despiteunknownsaltratio.",
+      "retained_limits": [
+        "Phosphate salt species, ratio, solvent and titrant are unknown.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 115,
+      "case_id": "CM_NAME:d93f46c2300415c7ab93a2928153794062e60f6f63132b610c81fac7ac190337",
+      "occurrence_ids": [
+        "CM_OCC:5ddd237841cd89df24af751bd2228ef6147da51d1cbac3bdfa658b52581458e6"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-flucloxacillin_nominal100mg_ml_togo_m2927"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "M2927 flucloxstock100mg+1mLdistilledwater nominal100mg/mL,25microlitreaddition. No finalvolumecorrection or sodiumsaltinference.",
+      "retained_limits": [
+        "Supplied salt/hydrate, final volume after dissolution and sterilization are unspecified; no molar concentration or sodium-salt identity is asserted.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 119,
+      "case_id": "CM_NAME:e247c1c5cd79b6fb7ff18406a6b8d73ea248d7fb661876f2be9fb34e11909380",
+      "occurrence_ids": [
+        "CM_OCC:c9b6ae2e5cc01850ca44b241acb983631e7099d40970084aeb00dca5f10aca39"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-azlocillin_nominal100mg_ml_togo_m2927"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "M2927 separateazlocstock100mg+1mLwater nominal100mg/mL; preserveantibioticidentity and salt/hydrateuncertainty.",
+      "retained_limits": [
+        "Supplied salt/hydrate, final volume after dissolution and sterilization are unspecified.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 123,
+      "case_id": "CM_NAME:e533c74f6a51e498259ba29feb1d8c7490c669ab2068ea2f317152ffe577b15f",
+      "occurrence_ids": [
+        "CM_OCC:179d3dc8280137728b092ade8c30177e0476d61f74e9fdaccca6c5d2972b3617"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-phosphate_nominal1m_ph7_2_jcm556"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM556 explicitly28+78mL1Minputstocks whileclaiming100mL. Payloadretains106vs100conflict,nominal1MpH7.2 andpartialparts; doesnotrepairto72mL.",
+      "retained_limits": [
+        "Do not correct 78 to 72 mL, normalize the component concentrations, or certify the 100 mL final batch.",
+        "No merge with JCM 822 or TOGO M2760 based on phosphate family or nominal concentration.",
+        "The 28+78 mL versus 100 mL conflict, input-stock solvent/hydration and pH-adjustment details remain unresolved. This prevents normalized quantities and equivalence to another formulation, not recognition of the named source preparation.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 124,
+      "case_id": "CM_NAME:e665b825fbda7fa942884bbe313e925d87d37d27dfb29d2c32ed270eb2d70131",
+      "occurrence_ids": [
+        "CM_OCC:107bad1714763ae5565752ac63abeb0ec3168db5bd4423ffb6ce231233520d2d"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-bicarbonate_basal_medium_togo_m2185"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "M2185 primary listsBBM4salts plusvitamin/mineralstocks/water. Nitrateandvariableacetateareoutsidebasalmedium. Partialstockparts supportedwithoutclaimingBrucefulltextretrieved.",
+      "retained_limits": [
+        "Some salt supplied forms, full quantitative stock reconstruction and final-volume interpretation remain unresolved. Partial source-supported decomposition is sufficient to identify this named basal preparation.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 125,
+      "case_id": "CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0",
+      "occurrence_ids": [
+        "CM_OCC:51b1ee8e8f86684d1dd12b5c1b09d01a4af34cfd0f6e088cd88a5de66a862840"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "NBRC1116 concentratedHCl0.3mL per100mLchelatedironstock supportsqualitativereagent sharedcategoryonly; no inferredacidstrengthfrom ironstockrecipe.",
+      "retained_limits": [
+        "The NBRC 1200 mL versus NBRC 1195/1196 microlitre difference remains a receiving-recipe conflict; no automatic dose repair.",
+        "Qualitative concentrated reagent identity is not a numerical-strength or common-product equivalence claim.",
+        "No percentage, molarity, aqueous solvent, supplier, grade, excipients or exact equivalence between source lots is established. This bounded qualitative preparation supports source association only; quantitative stock reconstruction and equivalence to a specified acid product remain unapproved.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 126,
+      "case_id": "CM_NAME:e88d9dba7b6c89f143d72d69e57c72390ec19461c2bb1456f248e761559e41cd",
+      "occurrence_ids": [
+        "CM_OCC:bbfd66f438bf915118c20aac0ab29fa70d74bfc8c8835a17da3cac1ce47f8bf0",
+        "CM_OCC:31b59ca8a4036400359b17a70dc58930d7ea33719cfbfe56075c52336d1923af",
+        "CM_OCC:80e8ae7028814b1f332cde1a5cca190d087e39c60fb39cc531e3eda1c90047d9",
+        "CM_OCC:ead0bccae529f4f6b5b09cfdc567136cb70f0630743d15efc8c69de9d128a12c"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-artificial_seawater_spelling"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "DSMZ601/NBRC1183 marineaquariumsalt artificialseawater matchesexistinggenericMICRO1715 definition inexactpinnedOWL. Onlyspellingaliasadded; inheritednavigationaliases andproductformula notapproved.",
+      "retained_limits": [
+        "Inherited navigation aliases Artificial seawater (see below) and Artificial seawater (see Medium No. 736 ) are outside this bounded alias approval and require source-specific review before complete-owner publication.",
+        "Specific aquarium product, batch formula and strength remain unknown; they are not prerequisites for this spelling-only association to the existing explicitly generic ontology sense.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 130,
+      "case_id": "CM_NAME:f1b0ce9481ab30567b063060b381e0e1ea5e61d0b72e3feba04d8798c5427f4f",
+      "occurrence_ids": [
+        "CM_OCC:eef02fd2fd681a19ce643af3647158c9eccf5599a9b2eda07117c016c3c8aac5"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-carbonate_1m_ph10_jcm1452"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM1452 explicitly1Mstock100mL+900mLwater, final100mM. Reviewfoundseparateautoclaving omitted; revisedpayloadnowretainsseparateautoclaving andasepticadditionwithoutassigningunprovenschedule.",
+      "retained_limits": [
+        "Mixing ratio, salt hydration, stock solvent and titrant remain unspecified.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    },
+    {
+      "source_index": 135,
+      "case_id": "CM_NAME:ff120d19b0c8b8a01c2e0ca8fd970242da364171932d36a9b4d8fdbbacf5e1b0",
+      "occurrence_ids": [
+        "CM_OCC:d7362723e27c2bc568a58ebd95e63329482eca660b454dfe7c0aa95dfce448a8",
+        "CM_OCC:a7463d673fa8fe272664ec7410ca01d6e56729833bc6bd5ca7adea83dd653f8a",
+        "CM_OCC:c0220dcd34e9981fbb5e79eea42245c274fe0592ecace708dc6160273bbbba37"
+      ],
+      "proposal_ids": [
+        "sv1-buffers-hepes_2m_ph7_jcm556_1200"
+      ],
+      "conclusion": "accepted_for_bounded_source_identity_proposal",
+      "source_comparison": "JCM556/1200 2MHEPESpH7.0 5mLsterilizedstock; distinctfromUTEX50mMpH7.8 anddryHEPESacid. Unknowntitrant/solvent retained.",
+      "retained_limits": [
+        "HEPES supplied form, solvent, titrant and titrant amount remain unspecified; no pure-form alias or full composition claim follows.",
+        "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+      ]
+    }
+  ],
+  "proposal_reviews": [
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753",
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753.yaml",
+      "payload_sha256": "42bef9368d89abeca83fea2b8a5e195b0c538eae8d462289229906f369ef46a0",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "owner_path": "data/ingredients/mapped/tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600.yaml",
+      "payload_sha256": "d776c8d050ec93ea15484f33f44413aa50fbee861352c65b54368d6f2c49d64d",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-phosphate_1m_ph6_8_jcm149",
+      "owner_path": "data/ingredients/mapped/phosphate_1m_ph6_8_jcm149.yaml",
+      "payload_sha256": "5a2641e9451501ead980ab775e20e35b11b731c168b43666f2535c9f4aa50439",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_10mm_ph7_2_jcm1100",
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_10mm_ph7_2_jcm1100.yaml",
+      "payload_sha256": "59c2541dbf2a740038fa959e2d0b8745ed45cc8c40520a75e529c0d6e83bfe26",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii",
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_20mm_ph7_8_mmys_ii.yaml",
+      "payload_sha256": "495e2c0964a7c4e8e57cc98056bffb825696fce439a3f74101325f1ca9f20f7f",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "owner_path": "data/ingredients/mapped/carbonate_co2_nominal4percent_togo_m202.yaml",
+      "payload_sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "owner_path": "data/ingredients/mapped/sodium_phosphate_0_5m_ph7_3_jcm296_1036.yaml",
+      "payload_sha256": "a5b4836ffaa02e8044a4532b008abab5ba712d5abc94deef1fd29168cd6302a8",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-reducing_agent_100x_togo_m3163",
+      "owner_path": "data/ingredients/mapped/reducing_agent_100x_togo_m3163.yaml",
+      "payload_sha256": "0dafb44f71922dfaec7b65b509c35874bef5ef22c289c063061d08c3542f8008",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-carbonate_paired100mm_ph10_nbrc944",
+      "owner_path": "data/ingredients/mapped/carbonate_paired100mm_ph10_nbrc944.yaml",
+      "payload_sha256": "5df53b546c4811bd6721af9511093edcc38f5e32b1f9cc725703391d2872e03a",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-penicillin_g_100000u_ml_nbrc400",
+      "owner_path": "data/ingredients/mapped/penicillin_g_100000u_ml_nbrc400.yaml",
+      "payload_sha256": "682172242680a42220d131ac95cdfc6c6f7107f091a943962ede7d0cde8b5dbf",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "owner_path": "data/ingredients/mapped/hepes_50mm_ph7_8_utex.yaml",
+      "payload_sha256": "0c06947d5f71028fbf5fd29416795606c7b9a484ba6f951f40ab62f32a64a6bf",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "owner_path": "data/ingredients/mapped/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+      "payload_sha256": "13d12bb1aa3f5079fe4c49fd539e42d99eda2d9f121c6d57308cb76f3c1ce934",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-phosphate_1m_ph7_2_pbbm_togo_m2760",
+      "owner_path": "data/ingredients/mapped/phosphate_1m_ph7_2_pbbm_togo_m2760.yaml",
+      "payload_sha256": "092dc9e4f5e24d02ade620ba3346988b7d4466501a779a2a11867512b99f7a61",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-tris_hcl_0_2m_ph7_5_dsmz273",
+      "owner_path": "data/ingredients/mapped/tris_hcl_0_2m_ph7_5_dsmz273.yaml",
+      "payload_sha256": "4869ff4179da2858a61d5ed331a497f01c7b45c86884a40407a6a3f62651e703",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431.yaml",
+      "payload_sha256": "07a2dbe08a8647b0eb54a0b401e8fd5b42171e31dca63b95328d5cc9f99b8367",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-hcl_nominal35percent_togo_m3216",
+      "owner_path": "data/ingredients/mapped/hcl_nominal35percent_togo_m3216.yaml",
+      "payload_sha256": "e7feec90fa5d94bc8a3003be08b94de71b9119a528787eb68784b3c5413ab55c",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-hcl_nominal32percent_jcm770",
+      "owner_path": "data/ingredients/mapped/hcl_nominal32percent_jcm770.yaml",
+      "payload_sha256": "4ca8faefe79f29c649c1e1b82468314bd454abd0abd41d732fe09b7b54ce17eb",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-tpp_vfa_solution_jcm144",
+      "owner_path": "data/ingredients/mapped/tpp_vfa_solution_jcm144.yaml",
+      "payload_sha256": "ff4bbadcc9db112f25e17408d81099c952efb7f6e97d850d6eae6ae9d6e60767",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-hcl_nominal25percent_jcm431_899",
+      "owner_path": "data/ingredients/mapped/hcl_nominal25percent_jcm431_899.yaml",
+      "payload_sha256": "74e1276709349d844cc7c883b3d3554f8e8fce876d8798ef930f3e955c40b02c",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-resazurin_2g_l_togo_m3155",
+      "owner_path": "data/ingredients/mapped/resazurin_2g_l_togo_m3155.yaml",
+      "payload_sha256": "e2781cea04dc48e262f30ac72058fab04bd1da460ce13ef607ffc9a9709c787e",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_0_25m_ph7_jcm1205",
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_0_25m_ph7_jcm1205.yaml",
+      "payload_sha256": "4b2065d0891bcaedb9591cecc733455a36444618688e569e677934360a54bf84",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-flucloxacillin_nominal100mg_ml_togo_m2927",
+      "owner_path": "data/ingredients/mapped/flucloxacillin_nominal100mg_ml_togo_m2927.yaml",
+      "payload_sha256": "e2dc1bb0de8574c9bbd0f49794892805c20a1d239f513c5d4bd108b29de57cb5",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-azlocillin_nominal100mg_ml_togo_m2927",
+      "owner_path": "data/ingredients/mapped/azlocillin_nominal100mg_ml_togo_m2927.yaml",
+      "payload_sha256": "5ebcb077cae388804aa96e3c31cf917cf7ebb88fe6b15db59e5ebaa14abe594c",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-phosphate_nominal1m_ph7_2_jcm556",
+      "owner_path": "data/ingredients/mapped/phosphate_nominal1m_ph7_2_jcm556.yaml",
+      "payload_sha256": "b28096d7a64a0eb31504f0e94bcf471d443f82ee6bfc5447b31d4fbba975a6f9",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-bicarbonate_basal_medium_togo_m2185",
+      "owner_path": "data/ingredients/mapped/bicarbonate_basal_medium_togo_m2185.yaml",
+      "payload_sha256": "c9c672ee3879acae0298a9669f43c56cf0dce7d5c8b64381754da79374dcb3ff",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-artificial_seawater_spelling",
+      "owner_path": "data/ingredients/mapped/Artificial_seawater.yaml",
+      "payload_sha256": "c388843c7a50364f5336669e0ef372a14cf504c19f8e772044512513b27d0eeb",
+      "before_sha256": "9efeac859a634d9d5daf17c7da4e058b51ce7538b0b802fa6ac2b7f6f602e708",
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": null,
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-carbonate_1m_ph10_jcm1452",
+      "owner_path": "data/ingredients/mapped/carbonate_1m_ph10_jcm1452.yaml",
+      "payload_sha256": "4b1e36b7645dbd126466df94c9ed505a7ff1e944feb020c66546746e394917ea",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    },
+    {
+      "proposal_id": "sv1-buffers-hepes_2m_ph7_jcm556_1200",
+      "owner_path": "data/ingredients/mapped/hepes_2m_ph7_jcm556_1200.yaml",
+      "payload_sha256": "b38e551d92f7de86480681375adca8e8f88ddbb49da47725a30509135122f3fc",
+      "before_sha256": null,
+      "conclusion": "accepted_for_bounded_source_identity_proposal_only",
+      "component_assertion": "PARTIAL",
+      "new_alias_scope": "Onlycase126spacingvariant globallyresolving; allnewpreparationgenericrawlabels retainedinnonesolvingnotes."
+    }
+  ],
+  "validation": {
+    "initial_independent_guarded_and_strict": {
+      "files": 28,
+      "errors": 0,
+      "log": "successor-v1/reviews/bio-buffer-inputs-v1/strict-validation.log"
+    },
+    "final_independent_integrity": "successor-v1/reviews/bio-buffer-inputs-v2/independent-integrity.json",
+    "final_partonomy_violations": [],
+    "hash_failures": [],
+    "final_revised_payload_strict": "Authorcase130guarded/strict1passed; independent28finalstrictlog adjacentreport."
+  },
+  "publication_holds": [
+    "No maintained data writes, sync, downstream rebuild, SSSOM or export approval.",
+    "Crosssource grouped records denote stated stock/reagent specification only, not common supplier, lot, exact titration or unprinted solvent.",
+    "Allsource quantities and fullfrozen holds remain; unitnormalization separate, includingconcentratedHCl51.3mLvs51.3microlitre.",
+    "Registry-only mappings are not chemicalidentity equivalences. PARTIALpartonomy is not fullformula.",
+    "Artificial seawater inherited navigation aliases and allnative ownerroles remain unapproved."
+  ]
+}

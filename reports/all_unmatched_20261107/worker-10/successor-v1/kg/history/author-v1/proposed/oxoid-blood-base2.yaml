@@ -1,0 +1,99 @@
+identifier: MICRO:0002390
+preferred_term: Blood agar No 2
+synonyms:
+- synonym_text: Blood agar No 2
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2111); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a blood agar medium/base preparation and left unmapped pending
+    product- or recipe-level curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Blood_Agar_No_2-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **named, product/recipe-level
+    culture-medium base**, not a single chemical, salt, hydrate, buffer, or chemically
+    defined substance. The strongest retrieved identification is **Oxoid Blood Agar
+    Base, catalogue CM0271**. A peer-reviewed method explicitly describes “Blood Agar
+    Base CM0271 from Oxoid, Basingstoke, UK” and completes it with **5% (v/v) defibrinated
+    hors No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: Promote the actual OxoidNo2 base owner to product-specific MICRO2390 and
+    preserve its separation from subsequently blood-supplemented DSMZ420. Proposal
+    only; inherited publication/role/source holds remain.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2111); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a blood agar medium/base preparation
+  pending product- or recipe-level curation.
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: MICRO:0002390
+  ontology_label: Oxoid Blood Agar Base No. 2
+  ontology_source: MICRO
+  mapping_quality: MANUAL_CURATION
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMicrO.owl%2FMICRO_0002390
+    notes: MICRO2390 defines the specifically named Oxoid No2 base as the five-component
+      culture medium. DSMZ420 explicitly uses that base before separate horse blood
+      addition. Canonical term is returned at the MicrO.owl/MICRO_0002390 IRI; the
+      naive standard IRI404 is preserved as failed lookup. No historical lot-specific
+      formula is asserted.
+supplied_form:
+- name: Oxoid Blood Agar Base No.2
+  supplier: Oxoid
+  form: prepared base before horse-blood supplementation
+  notes: DSMZ420 names this product and autoclaves/cools it before adding40mL/L sterilehorseblood.
+    Product-specific ontology denotes the base; it is not complete bloodagar.
+components:
+- component_name: Proteose peptone
+  reference_scope: UNMAPPED
+- component_name: Liver digest
+  reference_scope: UNMAPPED
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+- component_name: Sodium chloride
+  reference_scope: UNMAPPED
+- component_name: Agar
+  reference_scope: UNMAPPED
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0271-V5.pdf
+    notes: Five supplier-defined base constituents, without backdating current typical
+      masses, preparation water amount or blood supplement to the historical source.

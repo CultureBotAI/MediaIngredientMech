@@ -1,0 +1,107 @@
+identifier: cas:16788-57-1
+preferred_term: Potassium phosphate dibasic trihydrate
+ontology_mapping:
+  ontology_id: mesh:C013216
+  ontology_label: potassium phosphate
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN 16788-57-1 present, but no CHEBI entry
+      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 6 CultureBot
+      media; samples: MME noCarbon, MTM noNitrogen noCarbon, MME noNitrogen noCarbon….
+      Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Potassium phosphate
+      dibasic trihydrate'
+synonyms:
+- synonym_text: di‐Potassium hydrogen orthophosphate trihydrate
+  synonym_type: RAW_TEXT
+  source: CultureMech source-case CM_NAME:9a272c464c5c338078eba3863fbd71a9b6d78eee42bf09a860a5e88cf80a82fc
+- synonym_text: Potassium dibasic phosphate trihydrate
+  synonym_type: RAW_TEXT
+  source: CultureMech source-case CM_NAME:b2feb3448d4e320e52f590651439e901d9ab2e1df8c3b1e2f9af4d82d20d6760
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_FROM_CAS_FALLBACK
+  changes: Created with cas:16788-57-1 as primary identifier; no CHEBI entry exists
+    for this compound.
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:35.883221+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T02:54:42.182141+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=H7K2O7P; smiles=O.O.O.OP(=O)([O-])[O-].[K+].[K+]; inchi=InChI=1S/2K.H3O4P.3H2O/c;;1-5(2,3)4;;;/h;;(H3,1,2,
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.870090+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:57:22.541228+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_MESH
+  changes: set ontology_mapping parent=mesh:C013216 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248167+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-27T03:16:39.519739+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 6/6 -> 3/3 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:59:53.057839+00:00'
+  curator: all_unmatched_worker10_successor_source_review
+  action: ADDED_SYNONYMS
+  changes: The exact trihydrate is scientifically established. Complete owner comparison
+    finds a CAS16788-57-1 owner and a local trihydrate owner; the verified CAS record
+    is the more-specific stable identifier already present under section3. Prepare
+    the bounded exact-form alias on that existing CAS owner. This does not merge,
+    rename or recertify either owner; the duplicate-owner conflict and all native
+    withholding obligations remain for coordinator integration. Both ATCC-derived
+    sources explicitly identify the trihydrate. The existing CAS16788-57-1 owner is
+    already the most-specific stable identity supported by the captured PubChem structure.
+    A combined alias proposal also handles case76. The older unresolved owner-collision
+    task does not imply missing scientific form evidence and is not a reason to leave
+    this isolated proposal unfinished. Preserve the anhydrous owner rejected trihydrate
+    label and both actual old owner hashes; no merge or publication release. Isolated
+    proposal only; no owner, mapping-output or role release.
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 16788-57-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: H7K2O7P
+  smiles: O.O.O.OP(=O)([O-])[O-].[K+].[K+]
+  inchi: InChI=1S/2K.H3O4P.3H2O/c;;1-5(2,3)4;;;/h;;(H3,1,2,3,4);3*1H2/q2*+1;;;;/p-2
+  pubchem_cid: 16217523
+ingredient_type: SINGLE_INGREDIENT
+physicochemical_roles:
+- role: BUFFER
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

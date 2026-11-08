@@ -1,0 +1,64 @@
+identifier: kgmicrobe.ingredient:carbonate_co2_nominal4percent_togo_m202
+preferred_term: Nominal 4% Na2CO3-CO2 buffer (TOGO M202)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:carbonate_co2_nominal4percent_togo_m202
+  ontology_label: Nominal 4% Na2CO3-CO2 buffer (TOGO M202)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M202
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. TOGO
+      M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2
+      preparation can be represented without inventing a CO2 saturation protocol.
+      The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval
+      was unsuccessful; the captured TOGO recipe is the evidence used.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  source: Source label names this carbonate constituent; percent basis and salt hydration
+    unspecified.
+- component_name: CO2
+  reference_scope: UNMAPPED
+  source: Source label names the carbonate/CO2 system; no gas dose or equilibration
+    endpoint asserted.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M202
+    source_record: Nominal 4% Na2CO3-CO2 buffer (TOGO M202)
+    notes: TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2
+      preparation can be represented without inventing a CO2 saturation protocol.
+      The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval
+      was unsuccessful; the captured TOGO recipe is the evidence used.
+  notes: The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions
+    are unknown. No numeric component concentration or exact equivalence to another
+    carbonate stock is asserted. Source-named parts remain UNMAPPED where supplied
+    form or stock identity is not established. MIM_CATALOG references identify only
+    the supported constituent, not approval of that complete owner.
+notes: TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2
+  preparation can be represented without inventing a CO2 saturation protocol. The
+  final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was
+  unsuccessful; the captured TOGO recipe is the evidence used. The 4% basis, solvent,
+  carbonate hydration and CO2 equilibration conditions are unknown. No numeric component
+  concentration or exact equivalence to another carbonate stock is asserted. Provenance-only
+  source text '4% Na2CO3--CO2 buffer' (case CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,59 @@
+identifier: kgmicrobe.ingredient:sodium_phosphate_buffer_10mm_ph7_1_jcm_391
+preferred_term: Sodium phosphate buffer 10mM pH7.1 (JCM391 vitamin stock)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sodium_phosphate_buffer_10mm_ph7_1_jcm_391
+  ontology_label: Sodium phosphate buffer 10mM pH7.1 (JCM391 vitamin stock)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=391
+    notes: JCM391 specifies100mL sodium phosphate buffer10mM,pH7.1 as the solvent/preparation
+      medium for its vitamin stock. This case matches that printed source literal;
+      the same ingredient ID also covers25mM,pH3.4 thiamine stock, which remains separate.
+      No salt ratio, hydrate, titrant, solvent chemical identity or hidden water amount
+      is inferred.
+synonyms: []
+notes: JCM391 specifies100mL sodium phosphate buffer10mM,pH7.1 as the solvent/preparation
+  medium for its vitamin stock. This case matches that printed source literal; the
+  same ingredient ID also covers25mM,pH3.4 thiamine stock, which remains separate.
+  No salt ratio, hydrate, titrant, solvent chemical identity or hidden water amount
+  is inferred.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM391 specifies100mL sodium phosphate buffer10mM,pH7.1 as the solvent/preparation
+    medium for its vitamin stock. This case matches that printed source literal; the
+    same ingredient ID also covers25mM,pH3.4 thiamine stock, which remains separate.
+    No salt ratio, hydrate, titrant, solvent chemical identity or hidden water amount
+    is inferred. Proposal only; inherited publication/role/source holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: BUFFER_SOLUTION
+supplied_form:
+- name: Sodium phosphate buffer 10mM pH7.1 (JCM391 vitamin stock)
+  form: prepared buffer
+  notes: JCM391 specifies100mL sodium phosphate buffer10mM,pH7.1 as the solvent/preparation
+    medium for its vitamin stock. This case matches that printed source literal; the
+    same ingredient ID also covers25mM,pH3.4 thiamine stock, which remains separate.
+    No salt ratio, hydrate, titrant, solvent chemical identity or hidden water amount
+    is inferred.
+components:
+- component_name: Sodium phosphate (salt forms unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: M
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=391
+    notes: Source nominal total phosphate concentration only; component salt species/ratio
+      and remaining preparation constituents are not stated.

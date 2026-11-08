@@ -1,0 +1,60 @@
+identifier: CHEBI:213208
+preferred_term: Vancoresmycin
+ontology_mapping:
+  ontology_id: CHEBI:213208
+  ontology_label: Vancoresmycin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder
+    notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:vancoresmycin; '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:vancoresmycin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:08:34.142678+00:00'
+  curator: microbedecoder-import-review
+  action: FLAGGED_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW
+  notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW
+    so the mapping does not reach the published SSSOM before a review-ingredients
+    pass. See reports/microbedecoder_auto_mapped_review.tsv.
+  llm_assisted: true
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: review-ingredients
+  action: REVIEWED_AND_PROMOTED
+  changes: mapping_status PENDING_REVIEW -> MAPPED
+  previous_status: PENDING_REVIEW
+  new_status: MAPPED
+  notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C71H126N2O21
+  smiles: C/C(=CC(O)C(O)CC(O)CC(O[C@@H]1O[C@H](C)[C@@H](O)[C@H](N)[C@@H]1O)C(C)CCC(O)CC(O)CCC(C)C(O)C(C)C(O)C(C)C)C(=O)C(C)/C=C(C)C(O)C(C)C(O)CCCC(O)C(C)C(O)C(C)CCC(O)CC(O)C/C=C(C)C(O)=C1C(=O)/C(=C/C(C)C)N(C)C1=O
+  inchi: InChI=1S/C71H126N2O21/c1-35(2)28-53-68(90)59(70(92)73(53)16)66(88)40(8)23-27-51(77)32-49(75)25-21-38(6)63(85)44(12)54(79)18-17-19-55(80)45(13)65(87)42(10)29-41(9)62(84)43(11)30-56(81)57(82)33-52(78)34-58(94-71-69(91)60(72)67(89)47(15)93-71)37(5)20-24-48(74)31-50(76)26-22-39(7)64(86)46(14)61(83)36(3)4/h23,28-30,35-39,41,44-52,54-58,60-61,63-65,67,69,71,74-83,85-89,91H,17-22,24-27,31-34,72H2,1-16H3/b40-23+,42-29+,43-30+,53-28-,66-59?/t37?,38?,39?,41?,44?,45?,46?,47-,48?,49?,50?,51?,52?,54?,55?,56?,57?,58?,60+,61?,63?,64?,65?,67-,69+,71+/m1/s1
+  molecular_weight: 1343.782
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-08-13T04:30:55.828559+00:00'

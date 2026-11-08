@@ -1,0 +1,92 @@
+identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
+preferred_term: Ethylenediamine-N,N'-disuccinic acid (EDDS)
+synonyms:
+- synonym_text: Ethylenediamine-N
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: N'-disuccinic Acid (EDDS)
+  synonym_type: RAW_TEXT
+  source: comma-split fragment (#308/#313)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ethylenediamine_n);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_residual_triage
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Parse fragment: truncated at the N-substituent, so the compound is not
+    identifiable. Probably related to the ''N''-disuccinic Acid (EDDS)'' fragment
+    in the same batch -- the two look like halves of one split label. Searched CHEBI,
+    NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation,
+    plus exact queries across all of live OLS4.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Ethylenediamine-N-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** an **incomplete/truncated
+    chemical name**, not a resolvable single chemical, salt, hydrate, mixture, buffer,
+    extract, or commercial formulation. No ontology CURIE was proposed. Recorded as
+    provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: REPAIRED_COMMA_SPLIT_LABEL
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'preferred_term ''Ethylenediamine-N'' -> "Ethylenediamine-N,N''-disuccinic
+    acid (EDDS)"; UNMAPPED_0812 -> kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid.
+    Absorbed the partner fragment "N''-disuccinic Acid (EDDS)". Repaired a comma-split
+    label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic Acid (EDDS)` are the
+    two halves of `ethylenediamine-N,N''-disuccinic acid` split at its only comma
+    — the surviving `(EDDS)` on the second fragment confirms the reading. ChEBI has
+    no term for EDDS (searched the local build and live at OLS4), so MAPPING_SEMANTICS
+    §3 step 3 applies and the rejoined record takes a registry mint. The ingest strips
+    commas from every chemical label, so a name containing one arrives as separate
+    fragment records — the same mechanism that produced the `D` record resolved in
+    #346.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ethylenediamine_n);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
+  ontology_label: Ethylenediamine-N,N'-disuccinic acid (EDDS)
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#308/#313)
+    notes: 'Repaired a comma-split label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic
+      Acid (EDDS)` are the two halves of `ethylenediamine-N,N''-disuccinic acid` split
+      at its only comma — the surviving `(EDDS)` on the second fragment confirms the
+      reading. ChEBI has no term for EDDS (searched the local build and live at OLS4),
+      so MAPPING_SEMANTICS §3 step 3 applies and the rejoined record takes a registry
+      mint. The ingest strips commas from every chemical label, so a name containing
+      one arrives as separate fragment records — the same mechanism that produced
+      the `D` record resolved in #346.'

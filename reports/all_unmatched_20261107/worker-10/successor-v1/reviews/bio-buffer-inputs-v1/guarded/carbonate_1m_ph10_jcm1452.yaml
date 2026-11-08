@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:carbonate_1m_ph10_jcm1452
+preferred_term: 1 M NaHCO3 / Na2CO3 buffer, pH 10.0 (JCM 1452)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:carbonate_1m_ph10_jcm1452
+  ontology_label: 1 M NaHCO3 / Na2CO3 buffer, pH 10.0 (JCM 1452)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1452
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      1452 uses 100 mL of a 1 M NaHCO3/Na2CO3 buffer at pH 10.0 with 900 mL water
+      and states final 100 mM. The 1 M input stock has a distinct concentration boundary
+      from the receiving diluted medium and from NBRC 944 paired-100-mM buffer.
+components:
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  source: Ratio unspecified.
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  source: Ratio and hydration unspecified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1452
+    source_record: 1 M NaHCO3 / Na2CO3 buffer, pH 10.0 (JCM 1452)
+    notes: JCM 1452 uses 100 mL of a 1 M NaHCO3/Na2CO3 buffer at pH 10.0 with 900
+      mL water and states final 100 mM. The 1 M input stock has a distinct concentration
+      boundary from the receiving diluted medium and from NBRC 944 paired-100-mM buffer.
+  notes: Mixing ratio, salt hydration, stock solvent and titrant remain unspecified.
+    Source-named parts remain UNMAPPED where supplied form or stock identity is not
+    established. MIM_CATALOG references identify only the supported constituent, not
+    approval of that complete owner.
+notes: JCM 1452 uses 100 mL of a 1 M NaHCO3/Na2CO3 buffer at pH 10.0 with 900 mL water
+  and states final 100 mM. The 1 M input stock has a distinct concentration boundary
+  from the receiving diluted medium and from NBRC 944 paired-100-mM buffer. Mixing
+  ratio, salt hydration, stock solvent and titrant remain unspecified. Provenance-only
+  source text '1 M NaHCO3/Na2CO3 buffer (pH 10.0)' (case CM_NAME:f1b0ce9481ab30567b063060b381e0e1ea5e61d0b72e3feba04d8798c5427f4f).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true

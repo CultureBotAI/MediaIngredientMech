@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-08T06:16:22.853923+00:00",
+  "full_shard_accounting": "PASS",
+  "cases": 188,
+  "occurrences": 304,
+  "evidence_entries": 1140,
+  "proposals": 128,
+  "new_successor_proposals": 92,
+  "strict": {
+    "before_owner_count": 273,
+    "payload_count": 128,
+    "exit_code": 0,
+    "receipt": "native/strict-command.json",
+    "log": "native/strict-validation.log"
+  },
+  "guarded_private_copies": {
+    "count": 128,
+    "receipt": "native/guarded-validation.json"
+  },
+  "partonomy": {
+    "method": "Native validate_component_partonomy on full baseline plus all isolated replacements/additions in memory; no maintained writes",
+    "records": 3039,
+    "proposal_count": 128,
+    "violations": [],
+    "release_approval": false
+  },
+  "native_review": {
+    "id": "20261108T061348Z-w10-completeness-successor-review",
+    "targets": 316,
+    "completion": "completed",
+    "verdict": "needs_curation",
+    "validate_exit_code": 0,
+    "save_exit_code": 0,
+    "append_only_check_exit_code": 0,
+    "append_only_base": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+    "valid_reviews": 1021,
+    "coverage": "declared_scopes_only",
+    "log": "native/review-check.log"
+  },
+  "predecessor": {
+    "at": "2026-11-08T06:09:54.015822+00:00",
+    "head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+    "prior_manifest_sha256": "df6db4cf36bc728b5349c9565ed4417804e3c8aa32a114af765f1c558a594590",
+    "verified_prior_manifest_entries": 856,
+    "all_old_capture_hashes_match": true,
+    "maintained_path_diff_against_frozen_base": "",
+    "maintained_paths_checked": [
+      "data",
+      "mappings",
+      "UNIFIED_INGREDIENT_MAPPING.tsv",
+      "docs/data",
+      "conf",
+      "src",
+      "schema",
+      "scripts",
+      "justfile",
+      "MAPPING_SEMANTICS.md"
+    ],
+    "new_files_only_under_successor_root": true,
+    "prior_native_review_yaml_sha256": "b64857a030e638e01f938cfc4e04849f20bb1eec30e2ecdc1a1dfed1407b9844",
+    "prior_native_review_md_sha256": "d5406d15bbe23f7504bad980c8fc290ef06a410a829f0655ab30a82d13947899",
+    "qualification": "Append-only successor; original rejections, successful issue receipts and scientific reviews remain byte-identical. No reset/amend/forcepush."
+  },
+  "prohibited_operations": "No maintained edits, source sync, downstream rebuild, PR, merge, cleanup, paidresearch or additionalexternalsession.",
+  "scientific_or_release_approval_established_by_validation": false,
+  "core_hashes": {
+    "decisions.json": "8c8f1c43ff423fddfc575004e2ecd391905bc834b74a9c8b7ecf7d25a2efa197",
+    "evidence.json": "2f97555905632b4d3ee28ad068fbdf48b846746eb43a441fa752e8bce277e3d6",
+    "proposals.json": "608ce70c69294f145f0d98efca387676c6c5a636fba4c5be90090df2c31c4e81"
+  }
+}

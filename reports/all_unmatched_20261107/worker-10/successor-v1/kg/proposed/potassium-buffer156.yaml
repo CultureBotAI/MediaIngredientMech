@@ -1,0 +1,58 @@
+identifier: kgmicrobe.ingredient:potassium_phosphate_buffer_1m_ph7_1_dsmz_156
+preferred_term: Potassium phosphate buffer 1M pH7.1 (DSMZ156)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:potassium_phosphate_buffer_1m_ph7_1_dsmz_156
+  ontology_label: Potassium phosphate buffer 1M pH7.1 (DSMZ156)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium156.pdf
+    notes: DSMZ156 explicitly calls for5mL of potassium phosphate buffer1M,pH7.1.
+      Represent that source-defined prepared stock without treating component CAS7778-77-0
+      as whole-stock identity. Salt ratios, hydration, solvent grade and titrant are
+      not supplied; retain those composition/reproducibility limits rather than inventing
+      a recipe.
+synonyms: []
+notes: DSMZ156 explicitly calls for5mL of potassium phosphate buffer1M,pH7.1. Represent
+  that source-defined prepared stock without treating component CAS7778-77-0 as whole-stock
+  identity. Salt ratios, hydration, solvent grade and titrant are not supplied; retain
+  those composition/reproducibility limits rather than inventing a recipe.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: DSMZ156 explicitly calls for5mL of potassium phosphate buffer1M,pH7.1.
+    Represent that source-defined prepared stock without treating component CAS7778-77-0
+    as whole-stock identity. Salt ratios, hydration, solvent grade and titrant are
+    not supplied; retain those composition/reproducibility limits rather than inventing
+    a recipe. Proposal only; inherited publication/role/source holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: BUFFER_SOLUTION
+supplied_form:
+- name: Potassium phosphate buffer 1M pH7.1 (DSMZ156)
+  form: prepared buffer
+  notes: DSMZ156 explicitly calls for5mL of potassium phosphate buffer1M,pH7.1. Represent
+    that source-defined prepared stock without treating component CAS7778-77-0 as
+    whole-stock identity. Salt ratios, hydration, solvent grade and titrant are not
+    supplied; retain those composition/reproducibility limits rather than inventing
+    a recipe.
+components:
+- component_name: Potassium phosphate (salt forms unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium156.pdf
+    notes: Source nominal total phosphate concentration only; component salt species/ratio
+      and remaining preparation constituents are not stated.

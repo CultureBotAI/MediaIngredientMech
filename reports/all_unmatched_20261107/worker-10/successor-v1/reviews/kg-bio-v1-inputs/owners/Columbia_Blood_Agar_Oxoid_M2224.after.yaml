@@ -1,0 +1,73 @@
+identifier: kgmicrobe.ingredient:columbia_blood_agar_oxoid_m2224
+preferred_term: Columbia blood agar base, Oxoid formulation (TOGO M2224)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:columbia_blood_agar_oxoid_m2224
+  ontology_label: Columbia blood agar base, Oxoid formulation (TOGO M2224)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2224
+    notes: TOGO M2224 gives39g Oxoid dry product and an explicit four-part list:23g
+      special peptone,5g sodium chloride,1g starch,10g agar. Preserve the dry base
+      and exact printed batch-input masses without equating it to BBL42.5g or Difco44g
+      Columbia formulations or assigning an unstatedOxoid code. No exact supported
+      ontology/CAS identity established in the recorded bounded lookup; source-qualified
+      preparation registry identity only.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.588274+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: TOGO M2224 gives39g Oxoid dry product and an explicit four-part list:23g
+    special peptone,5g sodium chloride,1g starch,10g agar. Preserve the dry base and
+    exact printed batch-input masses without equating it to BBL42.5g or Difco44g Columbia
+    formulations or assigning an unstatedOxoid code. Isolated successor proposal only;
+    original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: Columbia blood agar
+  supplier: Oxoid
+  form: dehydrated base
+  notes: Source M2224; printed component masses sum to39g; no blood appears in this
+    dry-product component block.
+components:
+- component_name: Special peptone
+  reference_scope: UNMAPPED
+  source: 23g in printed39g dry base; product/substrate unspecified
+- component_name: NaCl
+  reference_scope: MIM_CATALOG
+  source: 5g in printed39g dry base
+  component_id: CHEBI:26710
+- component_name: Starch
+  reference_scope: MIM_CATALOG
+  source: 1g in printed39g dry base; botanical source unspecified
+  component_id: CHEBI:28017
+- component_name: Agar
+  reference_scope: MIM_CATALOG
+  source: 10g in printed39g dry base
+  component_id: CHEBI:2509
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2224
+    source_record: Columbia blood agar base, Oxoid formulation (TOGO M2224)
+    notes: TOGO M2224 gives39g Oxoid dry product and an explicit four-part list:23g
+      special peptone,5g sodium chloride,1g starch,10g agar. Preserve the dry base
+      and exact printed batch-input masses without equating it to BBL42.5g or Difco44g
+      Columbia formulations or assigning an unstatedOxoid code.
+  notes: Completeness is relative to the printed source input list. No inferred molecular
+    decomposition, material transformations or full receiving-medium formulation.
+notes: 'TOGO M2224 gives39g Oxoid dry product and an explicit four-part list:23g special
+  peptone,5g sodium chloride,1g starch,10g agar. Preserve the dry base and exact printed
+  batch-input masses without equating it to BBL42.5g or Difco44g Columbia formulations
+  or assigning an unstatedOxoid code. Source labels retained as nonresolving provenance:
+  [{"case_id": "CM_NAME:e22107808e7251a71abcb6e8df04d6250b68958ad8ec2da64fccfebf147f2d7c",
+  "raw_label": "Columbia blood agar (Oxoid)"}]. No global generic alias, supplier
+  equivalence, role approval or complete publication approval is conferred. Receiving-medium
+  dose and unit repairs remain separate. Existing native holds and rejected labels
+  are preserved.'

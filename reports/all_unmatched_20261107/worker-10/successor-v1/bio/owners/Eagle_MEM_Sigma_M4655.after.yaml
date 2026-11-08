@@ -1,0 +1,77 @@
+identifier: kgmicrobe.ingredient:eagle_mem_sigma_m4655
+preferred_term: Minimum Essential Medium Eagle, Sigma M4655
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:eagle_mem_sigma_m4655
+  ontology_label: Minimum Essential Medium Eagle, Sigma M4655
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/rest/medium/1850
+    notes: DSMZ1850 explicitly names SigmaM4655. Manufacturer specification confirms
+      a liquid sterile-filtered MEM with Earle salts, L-glutamine and sodium bicarbonate.
+      This identified commercial product can be represented without a complete formula;
+      separately added NEAA, glutamine, pyruvate and serum are not imported into its
+      composition. No exact supported ontology/CAS identity established in the recorded
+      bounded lookup; source-qualified preparation registry identity only.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.578540+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: DSMZ1850 explicitly names SigmaM4655. Manufacturer specification confirms
+    a liquid sterile-filtered MEM with Earle salts, L-glutamine and sodium bicarbonate.
+    This identified commercial product can be represented without a complete formula;
+    separately added NEAA, glutamine, pyruvate and serum are not imported into its
+    composition. Isolated successor proposal only; original published review bytes
+    preserved.
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: Minimum Essential Medium Eagle
+  supplier: Sigma-Aldrich
+  catalog_number: M4655
+  form: liquid, sterile-filtered
+  notes: Exact source catalog plus manufacturer specification; no historic lot or
+    full formula inference.
+notes: 'DSMZ1850 explicitly names SigmaM4655. Manufacturer specification confirms
+  a liquid sterile-filtered MEM with Earle salts, L-glutamine and sodium bicarbonate.
+  This identified commercial product can be represented without a complete formula;
+  separately added NEAA, glutamine, pyruvate and serum are not imported into its composition.
+  Source labels retained as nonresolving provenance: [{"case_id": "CM_NAME:b15a02e27a7a7895c140a182a9db613ed08f45a857c1d3bfb77f6c7d2bca6c10",
+  "raw_label": "Eagle''s MEM"}]. No global generic alias, supplier equivalence, role
+  approval or complete publication approval is conferred. Receiving-medium dose and
+  unit repairs remain separate. Existing native holds and rejected labels are preserved.
+  Manufacturer exact M4655 specification supports partial named inputs Earle salts,
+  L-glutamine and sodium bicarbonate, and reports a glucose QC test. Retain those
+  parts without full formulation, amounts, glucose stereochemistry, inferred solvent,
+  or separately added cell-culture supplements.'
+components:
+- component_name: Earle salts
+  reference_scope: UNMAPPED
+  source: Exact M4655 manufacturer label; full salt mixture formula not established.
+- component_name: L-glutamine
+  component_id: CHEBI:18050
+  reference_scope: MIM_CATALOG
+  source: Exact M4655 manufacturer label; quantity not asserted.
+- component_name: Sodium bicarbonate
+  component_id: CHEBI:32139
+  reference_scope: MIM_CATALOG
+  source: Exact M4655 manufacturer label; quantity not asserted.
+- component_name: Glucose
+  reference_scope: UNMAPPED
+  source: Exact M4655 manufacturer specification glucose QC test establishes presence;
+    no stereochemical choice or formula quantity inferred.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.sigmaaldrich.com/TR/en/specification-sheet/SIGMA/M4655
+    source_record: Sigma M4655
+    notes: Product name and specification table, captured source lines49and84.
+  notes: Manufacturer exact M4655 specification supports partial named inputs Earle
+    salts, L-glutamine and sodium bicarbonate, and reports a glucose QC test. Retain
+    those parts without full formulation, amounts, glucose stereochemistry, inferred
+    solvent, or separately added cell-culture supplements.

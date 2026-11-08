@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/bio_research",
+  "reviewed_at": "2026-11-08T06:17:56.589567+00:00",
+  "status": "passed_bounded_metadata_review",
+  "scope": "Independent consolidation, provenance, file-diff, receipt and content-binding audit. This is not another scientific review of all188cases and does not approve integration, roles or exports. Reviewer authoredbio50 and independently reviewedbuffers34; separate scientific reports remain authoritative for scientific adequacy.",
+  "input_core_hashes": {
+    "decisions.json": "8c8f1c43ff423fddfc575004e2ecd391905bc834b74a9c8b7ecf7d25a2efa197",
+    "evidence.json": "2f97555905632b4d3ee28ad068fbdf48b846746eb43a441fa752e8bce277e3d6",
+    "proposals.json": "608ce70c69294f145f0d98efca387676c6c5a636fba4c5be90090df2c31c4e81"
+  },
+  "handoff_sha256": "e6c6625a2e4670e190c3180917a2f74f3489254e0dce5a8e6701221761ce6543",
+  "native_review_pair": {
+    "yaml": "reviews/structured/20261108T061348Z-w10-completeness-successor-review/review.yaml",
+    "yaml_sha256": "98467c673e70f92892165263c1f8f7636c64a258b222f3fb4c0acaa4c89d69e4",
+    "markdown": "reviews/structured/20261108T061348Z-w10-completeness-successor-review/review.md",
+    "markdown_sha256": "6f46f34518c9680af31b0f46a57fa1b312a663f9ffadf3cf8869731876c25daa"
+  },
+  "checks": {
+    "case_identity_fields_preserved": {
+      "passed": true,
+      "details": {
+        "cases": 188,
+        "occurrence_references": 304
+      }
+    },
+    "fresh_and_historical_scope": {
+      "passed": true,
+      "details": {
+        "fresh_partition_counts": {
+          "bio": 50,
+          "buffers": 34,
+          "chemicals": 22,
+          "kg": 38
+        },
+        "historical_exact_decisions": 44
+      }
+    },
+    "original_proposals_exact": {
+      "passed": true,
+      "details": {
+        "original_count": 36,
+        "new_count": 92
+      }
+    },
+    "original_evidence_entries_exact": {
+      "passed": true,
+      "details": {
+        "original_evidence_count": 873,
+        "new_evidence_count": 267
+      }
+    },
+    "all_evidence_capture_hashes": {
+      "passed": true,
+      "details": {
+        "count": 1140,
+        "mismatches": []
+      }
+    },
+    "payloads_before_hashes_and_backlinks": {
+      "passed": true,
+      "details": {
+        "count": 128,
+        "new_owners": 83,
+        "existing_owner_edits": 45,
+        "failures": []
+      }
+    },
+    "author_and_independent_review_bindings": {
+      "passed": true,
+      "details": {
+        "fresh_cases": 144,
+        "partitions": 4,
+        "documented_consolidation_differences": [
+          {
+            "partition": "bio",
+            "source_index": 19,
+            "changed_fields": [
+              "disposition",
+              "independent_review"
+            ]
+          },
+          {
+            "proposal_id": "sv1-kg-swine-serum1076b",
+            "changed_fields": [
+              "case_ids",
+              "cross_partition_binding",
+              "evidence_ids"
+            ]
+          }
+        ]
+      }
+    },
+    "predecessor_856_manifest": {
+      "passed": true,
+      "details": {
+        "manifest_sha256": "df6db4cf36bc728b5349c9565ed4417804e3c8aa32a114af765f1c558a594590",
+        "entries": 856,
+        "mismatches": []
+      }
+    },
+    "append_only_diff_and_no_maintained_writes": {
+      "passed": true,
+      "details": {
+        "predecessor_paths_changed": [],
+        "maintained_paths_changed": [],
+        "staged_paths": 1011,
+        "outside_allowed_roots": [],
+        "non_added_statuses": [],
+        "ignored_inclusive_note": "Snapshot/capture/hash enumeration uses pathlib/direct paths, independent of gitignore. Git diff checks tracked/staged content, not a claim about disposable ignored private files."
+      }
+    },
+    "native_scope_and_content_binding": {
+      "passed": true,
+      "details": {
+        "targets": 316,
+        "source_inputs": 139,
+        "input_mismatches": [],
+        "target_mismatches": [],
+        "verdict": "needs_curation",
+        "limitations": [
+          "Completed denotes this exact bounded sourcecase/proposal review. It does not clear native source/owner/export gates or approve any record application.",
+          "144 successor cases freshly assessed; the44 other cases and36 originalpayloads retain their previous exact reviews without a false new-research claim.",
+          "Prior published head and prior native review remain unchanged. This additional scope does not supersede or close prior whole-owner findings.",
+          "Species, treatment, supplier, preparation, form and source-occurrence distinctions remain explicit; quantitative conflicts do not erase supported preparation identity.",
+          "Primary capture bytes and original retrieval timestamps are retained; failed or abstract-only requests never become full-recipe evidence.",
+          "Source-only cases are exact frozen snapshotrow targets; no fake maintained owner was created."
+        ]
+      }
+    },
+    "indexes_and_accounting": {
+      "passed": true,
+      "details": {
+        "computed": {
+          "cases": 188,
+          "fresh_reassessments": 144,
+          "unchanged_prior_cases": 44,
+          "evidence": 1140,
+          "proposals": 128,
+          "new_successor_proposals": 92,
+          "proposed_cases": 151,
+          "no_proposal_cases": 37,
+          "occurrences": 304
+        },
+        "index_mismatches": []
+      }
+    },
+    "native_and_structural_validation_receipts": {
+      "passed": true,
+      "details": {
+        "strict_files": 401,
+        "guarded_private_copies": 128,
+        "partonomy_records": 3039,
+        "native_retained_reviews": 1021,
+        "coverage": "declared_scopes_only",
+        "scientific_or_release_approval_from_validation": false
+      }
+    },
+    "issue_readbacks_and_permission_history": {
+      "passed": true,
+      "details": {
+        "new_issue_numbers": [
+          1211,
+          1212,
+          1213
+        ],
+        "body_readback_mismatches": [],
+        "original_rejection_preserved": true,
+        "subsequent_mannan_success_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1187",
+        "authorization_attribution": "Coordinator verified pre-existing user authorization and exact payload scope; ordinary automatic review permitted retry. No fresh user approval. This audit checks preserved receipts, not an independent new claim about private tool-review internals."
+      }
+    },
+    "handoff_core_hash_claims": {
+      "passed": true,
+      "details": {
+        "handoff_sha256": "e6c6625a2e4670e190c3180917a2f74f3489254e0dce5a8e6701221761ce6543",
+        "core_hashes": {
+          "decisions.json": "8c8f1c43ff423fddfc575004e2ecd391905bc834b74a9c8b7ecf7d25a2efa197",
+          "evidence.json": "2f97555905632b4d3ee28ad068fbdf48b846746eb43a441fa752e8bce277e3d6",
+          "proposals.json": "608ce70c69294f145f0d98efca387676c6c5a636fba4c5be90090df2c31c4e81"
+        }
+      }
+    }
+  },
+  "open_findings": [],
+  "pending_final_packaging": [
+    "Successor SHA256SUMS was not yet frozen when this review began; coordinator must include this review and finalnativepair in the final manifest.",
+    "Ordinary commit/push and remote-head receipt remain coordinator actions; this audit does not claim they have happened."
+  ],
+  "no_root_artifacts_edited": true
+}

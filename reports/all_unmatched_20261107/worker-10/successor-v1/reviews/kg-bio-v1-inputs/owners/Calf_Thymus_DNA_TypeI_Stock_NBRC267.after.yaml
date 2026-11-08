@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:calf_thymus_dna_typei_stock_nbrc267
+preferred_term: Calf thymus DNA, Sigma Type I, 0.2% w/v stock (NBRC 267)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:calf_thymus_dna_typei_stock_nbrc267
+  ontology_label: Calf thymus DNA, Sigma Type I, 0.2% w/v stock (NBRC 267)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1485
+    notes: NBRC267/TOGO M1485 explicitly specifies a0.2%w/v calf-thymus DNA stock,
+      SigmaTypeI, added by12mL. The source-defined stock can be represented with partial
+      named-input provenance; solvent, counterion and historical catalog remain unasserted.
+      CurrentD1501 supports a candidateTypeI product only and is not silently assigned.
+      No exact supported ontology/CAS identity established in the recorded bounded
+      lookup; source-qualified preparation registry identity only.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.592212+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: NBRC267/TOGO M1485 explicitly specifies a0.2%w/v calf-thymus DNA stock,
+    SigmaTypeI, added by12mL. The source-defined stock can be represented with partial
+    named-input provenance; solvent, counterion and historical catalog remain unasserted.
+    CurrentD1501 supports a candidateTypeI product only and is not silently assigned.
+    Isolated successor proposal only; original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: COMPLEX_UNDEFINED
+components:
+- component_name: Calf thymus DNA (Sigma Type I; salt unspecified)
+  reference_scope: UNMAPPED
+  source: Primary stock0.2%w/v; solvent not stated; do not assume currentD1501 sodium
+    salt or buffer.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1485
+    source_record: Calf thymus DNA, Sigma Type I, 0.2% w/v stock (NBRC 267)
+    notes: NBRC267/TOGO M1485 explicitly specifies a0.2%w/v calf-thymus DNA stock,
+      SigmaTypeI, added by12mL. The source-defined stock can be represented with partial
+      named-input provenance; solvent, counterion and historical catalog remain unasserted.
+      CurrentD1501 supports a candidateTypeI product only and is not silently assigned.
+  notes: Completeness is relative to the printed source input list. No inferred molecular
+    decomposition, material transformations or full receiving-medium formulation.
+notes: 'NBRC267/TOGO M1485 explicitly specifies a0.2%w/v calf-thymus DNA stock, SigmaTypeI,
+  added by12mL. The source-defined stock can be represented with partial named-input
+  provenance; solvent, counterion and historical catalog remain unasserted. CurrentD1501
+  supports a candidateTypeI product only and is not silently assigned. Source labels
+  retained as nonresolving provenance: [{"case_id": "CM_NAME:f71daaea08cabb263f55a1794361554118304b16ae16afee24fdd2dc823010d5",
+  "raw_label": "calf thymus DNA (Sigma, Type I)"}]. No global generic alias, supplier
+  equivalence, role approval or complete publication approval is conferred. Receiving-medium
+  dose and unit repairs remain separate. Existing native holds and rejected labels
+  are preserved.'

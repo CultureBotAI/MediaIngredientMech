@@ -1,0 +1,293 @@
+{
+  "finding_id": "W10-COMPLETENESS-001",
+  "severity": "medium",
+  "status": "confirmed_source-review_completion_gap",
+  "head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+  "reviewer": "/root/step7d_science_c",
+  "title": "Treated-serum cases defer bounded preparation curation after primary evidence establishes species and heat schedule",
+  "core_sha256": {
+    "decisions.json": "b2a6cd8f9c03a9968e835412e424332839b0068c2ca1f74e812bd7d77256465c",
+    "evidence.json": "4a5bc1c3983fc862ecd64ea15b81176dea373f8114a3aed37a61b949390ea1df",
+    "proposals.json": "4911f785a6ef5d877120801216a57270f6c3bb3c742d2dcfa431fe80b20d9280"
+  },
+  "cases": [
+    {
+      "decision": {
+        "case_id": "CM_NAME:09f2616c0419d3c5e41510de6e72d5049bc9e6d4972f1585f4eeeef22f3aa82f",
+        "case_input_sha256": "8054629590937edbb3f32c551e74635ca64977ca2288d4eb64ec343131f2804f",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "human serum, heat-inactivated",
+          "source_label": "human serum, heat-inactivated",
+          "raw_source_label": "human serum, heat-inactivated"
+        },
+        "occurrence_ids": [
+          "CM_OCC:1dcaf80b2813cd18f584343a0c97c53792a99453e892492ce4a6a8be89893ccc"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "MediaDive 1895 identifies heat-inactivated human serum as a distinct input alongside MKP medium and bovine serum albumin. The species is human, and heat treatment is explicit; bovine, horse, and generic untreated serum are not interchangeable owners. The primary MediaDive recipe attribute specifies 56\u00b0C for 30 min. Donor population and supplier are not specified.",
+        "applicability": "Reviewed this exact case 'human serum, heat-inactivated', its 1 frozen occurrence(s), and each enclosing recipe at the listed component/stock path. Primary evidence is attached only for the source recipes, definitions and processing contrasts relevant to this case. Retain the human heat-inactivated preparation with its exact occurrence; supplier/donor pooling are needed for a more specific product identity.",
+        "evidence_ids": [
+          "bio-case-6",
+          "bio-primary-9aa40d26d5e160c0",
+          "bio-snapshot-6-0"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No MIM owner mutation is justified by this bounded source review. Retain the human heat-inactivated preparation with its exact occurrence; supplier/donor pooling are needed for a more specific product identity.",
+        "missing_requirement": "Retain the human heat-inactivated preparation with its exact occurrence; supplier/donor pooling are needed for a more specific product identity.",
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-bio"
+          ]
+        },
+        "review_authorship": "Codex in-process /root/bio_research; primary assessment, separate skeptical review pending",
+        "publication_approval": false,
+        "existing_holds_preserved": true,
+        "source_index": 6
+      },
+      "primary_evidence": [
+        {
+          "evidence_id": "bio-primary-9aa40d26d5e160c0",
+          "capture": {
+            "root": "artifact",
+            "path": "bio/captures/9aa40d26d5e160c0",
+            "sha256": "2051630656c07a8309ab51a655b09bdd8c13f565dca8199a545ce9a619860390"
+          },
+          "kind": "primary_source",
+          "url": "https://mediadive.dsmz.de/rest/medium/1895",
+          "accessed_at": "2026-11-08T05:06:55.278315+00:00",
+          "locator": "Complete primary recipe: component tables and preparation comments; exact case labels and source recipe IDs identify applicability.",
+          "supports_or_contradicts": "Supports the named source material, preparation, stock/component boundary and original amount/unit in the per-case assessment; does not independently approve MIM ownership or published payload.",
+          "case_ids": [
+            "CM_NAME:09f2616c0419d3c5e41510de6e72d5049bc9e6d4972f1585f4eeeef22f3aa82f"
+          ]
+        }
+      ]
+    },
+    {
+      "decision": {
+        "case_id": "CM_NAME:316417d34678ed79ad9434e3e19f8b26ae08331f64fcd37f7e8d94fb3db5a212",
+        "case_input_sha256": "5d950c64e1c720ec00b64247cbef604807e765f690a899e16ba6e9736580b09d",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Rabbit serum heat--inactivated at 56C for 1 hr",
+          "source_label": "Rabbit serum heat--inactivated at 56C for 1 hr",
+          "raw_source_label": "Rabbit serum heat--inactivated at 56C for 1 hr"
+        },
+        "occurrence_ids": [
+          "CM_OCC:6229336edab4995d4d12e7db9e8c4666b57c17dbbfafe212406a57e71984cffc"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "TOGO M135 gives 2 ml rabbit serum heat-inactivated at 56 C for 1 hour, added in the post-autoclave/filter-sterilized supplement stage. The one-hour treatment must not be collapsed into the separate 30-minute rabbit-serum case. The frozen 2 G_PER_L entry is a volume-to-mass projection unsupported by this recipe.",
+        "applicability": "Reviewed this exact case 'Rabbit serum heat--inactivated at 56C for 1 hr', its 1 frozen occurrence(s), and each enclosing recipe at the listed component/stock path. Primary evidence is attached only for the source recipes, definitions and processing contrasts relevant to this case. Retain rabbit species, 56 C/1 hour and post-autoclave stage; correct source units upstream after establishing the full batch denominator.",
+        "evidence_ids": [
+          "bio-case-25",
+          "bio-primary-d282bb942d513790",
+          "bio-primary-e8590f04c1945824",
+          "bio-snapshot-25-0"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No MIM owner mutation is justified by this bounded source review. Retain rabbit species, 56 C/1 hour and post-autoclave stage; correct source units upstream after establishing the full batch denominator.",
+        "missing_requirement": "Retain rabbit species, 56 C/1 hour and post-autoclave stage; correct source units upstream after establishing the full batch denominator.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-bio"
+          ]
+        },
+        "review_authorship": "Codex in-process /root/bio_research; primary assessment, separate skeptical review pending",
+        "publication_approval": false,
+        "existing_holds_preserved": true,
+        "source_index": 25
+      },
+      "primary_evidence": [
+        {
+          "evidence_id": "bio-primary-d282bb942d513790",
+          "capture": {
+            "root": "artifact",
+            "path": "bio/captures/d282bb942d513790",
+            "sha256": "739c6331ab94d6a06234660832c41f932f2a33926296eef994d5b3baa741e75e"
+          },
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144",
+          "accessed_at": "2026-11-08T05:06:56.506570+00:00",
+          "locator": "Complete primary recipe: component tables and preparation comments; exact case labels and source recipe IDs identify applicability.",
+          "supports_or_contradicts": "Supports the named source material, preparation, stock/component boundary and original amount/unit in the per-case assessment; does not independently approve MIM ownership or published payload.",
+          "case_ids": [
+            "CM_NAME:316417d34678ed79ad9434e3e19f8b26ae08331f64fcd37f7e8d94fb3db5a212"
+          ]
+        },
+        {
+          "evidence_id": "bio-primary-e8590f04c1945824",
+          "capture": {
+            "root": "artifact",
+            "path": "bio/captures/e8590f04c1945824",
+            "sha256": "22f64cfd7e8ebfb5261f842f7fa5b3f4b94967ce762047262700b74221ee953a"
+          },
+          "kind": "primary_source",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M135",
+          "accessed_at": "2026-11-08T05:06:56.585823+00:00",
+          "locator": "Complete primary recipe: component tables and preparation comments; exact case labels and source recipe IDs identify applicability.",
+          "supports_or_contradicts": "Supports the named source material, preparation, stock/component boundary and original amount/unit in the per-case assessment; does not independently approve MIM ownership or published payload.",
+          "case_ids": [
+            "CM_NAME:316417d34678ed79ad9434e3e19f8b26ae08331f64fcd37f7e8d94fb3db5a212"
+          ]
+        }
+      ]
+    },
+    {
+      "decision": {
+        "case_id": "CM_NAME:476112c47845e5420e3f8087392a3bfa6b9a925db47ed21f7ed933eb1d699c2f",
+        "case_input_sha256": "b6aba874a836b92f4fc048955aea788daebe6d806986eada0f7568ec83a8a42f",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Rabbit serum heat--inactivated at 56&#8451; for 30 min",
+          "source_label": "Rabbit serum heat--inactivated at 56&#8451; for 30 min",
+          "raw_source_label": "Rabbit serum heat--inactivated at 56&#8451; for 30 min"
+        },
+        "occurrence_ids": [
+          "CM_OCC:cdc24b2fa1dc86849bb185f51cd8df53fe18fadffa8eb9bd049986282c9050bd"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "TOGO M993/JCM946 specifies 50 ml rabbit serum heat-inactivated at 56 C for 30 min and filter-sterilized ahead of addition to cooled water/Korthof basal medium. The HTML degree entity is a text encoding artifact; the 30-minute treatment is substantive and differs from the one-hour rabbit preparation.",
+        "applicability": "Reviewed this exact case 'Rabbit serum heat--inactivated at 56&#8451; for 30 min', its 1 frozen occurrence(s), and each enclosing recipe at the listed component/stock path. Primary evidence is attached only for the source recipes, definitions and processing contrasts relevant to this case. Retain rabbit species and 56 C/30 min; upstream source-unit repair is required where the frozen record converted ml to G_PER_L.",
+        "evidence_ids": [
+          "bio-case-40",
+          "bio-primary-0c67e2f8052b64f7",
+          "bio-primary-c0ddfe1f0c0eb505",
+          "bio-snapshot-40-0"
+        ],
+        "proposal_ids": [],
+        "no_change_reason": "No MIM owner mutation is justified by this bounded source review. Retain rabbit species and 56 C/30 min; upstream source-unit repair is required where the frozen record converted ml to G_PER_L.",
+        "missing_requirement": "Retain rabbit species and 56 C/30 min; upstream source-unit repair is required where the frozen record converted ml to G_PER_L.",
+        "owner_records": [],
+        "issue_refs": [
+          "https://github.com/CultureBotAI/CultureMech/issues/408"
+        ],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-bio"
+          ]
+        },
+        "review_authorship": "Codex in-process /root/bio_research; primary assessment, separate skeptical review pending",
+        "publication_approval": false,
+        "existing_holds_preserved": true,
+        "source_index": 40
+      },
+      "primary_evidence": [
+        {
+          "evidence_id": "bio-primary-0c67e2f8052b64f7",
+          "capture": {
+            "root": "artifact",
+            "path": "bio/captures/0c67e2f8052b64f7",
+            "sha256": "1586adcacae597bc74e271cd2d2ec572e0579b9a26399a6956d91b1e006d8564"
+          },
+          "kind": "primary_source",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=946",
+          "accessed_at": "2026-11-08T05:06:58.416646+00:00",
+          "locator": "Complete primary recipe: component tables and preparation comments; exact case labels and source recipe IDs identify applicability.",
+          "supports_or_contradicts": "Supports the named source material, preparation, stock/component boundary and original amount/unit in the per-case assessment; does not independently approve MIM ownership or published payload.",
+          "case_ids": [
+            "CM_NAME:476112c47845e5420e3f8087392a3bfa6b9a925db47ed21f7ed933eb1d699c2f"
+          ]
+        },
+        {
+          "evidence_id": "bio-primary-c0ddfe1f0c0eb505",
+          "capture": {
+            "root": "artifact",
+            "path": "bio/captures/c0ddfe1f0c0eb505",
+            "sha256": "2397de1dc770bdc2d8b9224bb73d533db62d47e901cd713daaace34a70d826d4"
+          },
+          "kind": "primary_source",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M993",
+          "accessed_at": "2026-11-08T05:06:58.482999+00:00",
+          "locator": "Complete primary recipe: component tables and preparation comments; exact case labels and source recipe IDs identify applicability.",
+          "supports_or_contradicts": "Supports the named source material, preparation, stock/component boundary and original amount/unit in the per-case assessment; does not independently approve MIM ownership or published payload.",
+          "case_ids": [
+            "CM_NAME:476112c47845e5420e3f8087392a3bfa6b9a925db47ed21f7ed933eb1d699c2f"
+          ]
+        }
+      ]
+    }
+  ],
+  "existing_independent_case_assessments": [
+    {
+      "case_id": "CM_NAME:09f2616c0419d3c5e41510de6e72d5049bc9e6d4972f1585f4eeeef22f3aa82f",
+      "case_input_sha256": "8054629590937edbb3f32c551e74635ca64977ca2288d4eb64ec343131f2804f",
+      "reviewed_decision_sha256": "3dc7e4f90ec75f798f5957b8e7b307a9137b58c1e14549915067e5fa33b5a6fc",
+      "occurrence_count": 1,
+      "occurrence_ids": [
+        "CM_OCC:1dcaf80b2813cd18f584343a0c97c53792a99453e892492ce4a6a8be89893ccc"
+      ],
+      "status": "accepted_source_scope_with_existing_holds",
+      "assessment": "MediaDive1895 explicitly specifies56C30min. Author corrected the initially missed schedule; donor/supplier scope remains open without discarding known treatment.",
+      "checked_evidence_ids": [
+        "bio-case-6",
+        "bio-primary-9aa40d26d5e160c0",
+        "bio-snapshot-6-0"
+      ],
+      "proposal_ids": [],
+      "open_findings": []
+    },
+    {
+      "case_id": "CM_NAME:316417d34678ed79ad9434e3e19f8b26ae08331f64fcd37f7e8d94fb3db5a212",
+      "case_input_sha256": "5d950c64e1c720ec00b64247cbef604807e765f690a899e16ba6e9736580b09d",
+      "reviewed_decision_sha256": "acb141b70884e9f1bdde4ef0b765171281c8e30f87e42dac26e847e296ade0c6",
+      "occurrence_count": 1,
+      "occurrence_ids": [
+        "CM_OCC:6229336edab4995d4d12e7db9e8c4666b57c17dbbfafe212406a57e71984cffc"
+      ],
+      "status": "accepted_source_scope_with_existing_holds",
+      "assessment": "JCM144/M135 prescribe rabbit serum56C1hour as a post-autoclave filtered addition. It is not the30minute case and source ml is not grams.",
+      "checked_evidence_ids": [
+        "bio-case-25",
+        "bio-primary-d282bb942d513790",
+        "bio-primary-e8590f04c1945824",
+        "bio-snapshot-25-0"
+      ],
+      "proposal_ids": [],
+      "open_findings": []
+    },
+    {
+      "case_id": "CM_NAME:476112c47845e5420e3f8087392a3bfa6b9a925db47ed21f7ed933eb1d699c2f",
+      "case_input_sha256": "b6aba874a836b92f4fc048955aea788daebe6d806986eada0f7568ec83a8a42f",
+      "reviewed_decision_sha256": "01e95f5b0880a647c69dfcb0a9cbe0be5f6719778c14840a3c0e41a43ea244ab",
+      "occurrence_count": 1,
+      "occurrence_ids": [
+        "CM_OCC:cdc24b2fa1dc86849bb185f51cd8df53fe18fadffa8eb9bd049986282c9050bd"
+      ],
+      "status": "accepted_source_scope_with_existing_holds",
+      "assessment": "JCM946/M993 explicitly provide56C30min and50ml filtered rabbit serum. HTML degree entity is cosmetic while treatment duration is material.",
+      "checked_evidence_ids": [
+        "bio-case-40",
+        "bio-primary-0c67e2f8052b64f7",
+        "bio-primary-c0ddfe1f0c0eb505",
+        "bio-snapshot-40-0"
+      ],
+      "proposal_ids": [],
+      "open_findings": []
+    }
+  ],
+  "verified_primary_claims": {
+    "6": "MediaDive1895 recipe has solution6640 human serum, heat-inactivated, attribute56C;30min,100ml.",
+    "25": "JCM144 and TOGOM135 explicitly name rabbit serum heat-inactivated56C1hr,2ml.",
+    "40": "JCM946 and TOGOM993 explicitly name rabbit serum56C30min,50ml; JCM text says filter-sterilized ahead of addition."
+  },
+  "why_defect": "Cases declare complete with no proposal and empty owner_records. Case6 defers for supplier/donor detail needed only for a MORE specific product. Cases25/40 defer for receiving-medium quantity normalization. None explains a missing scientific fact preventing a source-qualified preparation or supported supplied-form proposal. Such lookup and bounded curation are within the campaign assignment; not all requested scientific work is complete merely because a generic-parent alias would be unsafe.",
+  "remedy": "Reassess all no-proposal cases; complete exact owner lookup and evidence-supported bounded proposals, or document the particular unresolved scientific fact and searches preventing them. Keep processing differences and source membership, no guessed supplier/product equivalence, component quantities, global aliases or release approval. Preserve historical assessments and independently review successor payloads.",
+  "not_asserted": [
+    "No automatic identity/owner minting decision",
+    "No equivalence of human/rabbit serums or30/60minute treatments",
+    "No approval of existing owner aliases, roles or export",
+    "No mandate to repair CultureMech quantities in MIM"
+  ],
+  "scope_limit": "All144 no-proposal requirements read; actual primary capture verification for these3 examples only. Broader per-case scientific reassessment and operator work remain separate."
+}

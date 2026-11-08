@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:potassium_phosphate_10mm_ph7_2_jcm1100
+preferred_term: 10 mM potassium phosphate buffer, pH 7.2 (JCM 1100)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:potassium_phosphate_10mm_ph7_2_jcm1100
+  ontology_label: 10 mM potassium phosphate buffer, pH 7.2 (JCM 1100)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1100
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      1100 uses 100 mL of 10 mM potassium phosphate buffer, pH 7.2, as the solvent
+      stock for vitamin solution A (1000x). The vitamins belong to the receiving vitamin
+      mixture and are not constituents of this buffer record. The 2 M KOH instruction
+      elsewhere adjusts the medium and is not a buffer preparation instruction.
+components:
+- component_name: Potassium phosphate
+  reference_scope: UNMAPPED
+  source: Salt species unspecified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1100
+    source_record: 10 mM potassium phosphate buffer, pH 7.2 (JCM 1100)
+    notes: JCM 1100 uses 100 mL of 10 mM potassium phosphate buffer, pH 7.2, as the
+      solvent stock for vitamin solution A (1000x). The vitamins belong to the receiving
+      vitamin mixture and are not constituents of this buffer record. The 2 M KOH
+      instruction elsewhere adjusts the medium and is not a buffer preparation instruction.
+  notes: Phosphate salt species, ratio, solvent identity and buffer titrant remain
+    unspecified. Source-named parts remain UNMAPPED where supplied form or stock identity
+    is not established. MIM_CATALOG references identify only the supported constituent,
+    not approval of that complete owner.
+notes: JCM 1100 uses 100 mL of 10 mM potassium phosphate buffer, pH 7.2, as the solvent
+  stock for vitamin solution A (1000x). The vitamins belong to the receiving vitamin
+  mixture and are not constituents of this buffer record. The 2 M KOH instruction
+  elsewhere adjusts the medium and is not a buffer preparation instruction. Phosphate
+  salt species, ratio, solvent identity and buffer titrant remain unspecified. Provenance-only
+  source text '10 mM Potassium phosphate buffer (pH 7.2)' (case CM_NAME:10ae9613291d16a03d5e59cad87fe836d9885ac4917422a5244a7833493f4b4f).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,1858 @@
+[
+  {
+    "case_index": 3,
+    "occurrence_id": "CM_OCC:83078deb091a91fec423b528418f2d2b71db015580bd9f7aa920ff1a471ee3c9",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M154_PPLO-Glucose_Broth.yaml",
+    "sha256": "0d338bbb4c7bc2b51a3b227dc59a74ab8ec6bad1f6506b9b8a2ed0e5d8f8e38e",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Sterile horse serum",
+      "concentration": {
+        "value": "200.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M154 / JCM Medium 163",
+      "notes": "TOGO M154 / JCM Medium 163 lists 200 ml sterile horse serum; this serum is retained as an opaque complex component."
+    },
+    "recipe_notes": "TOGO M154 imports JCM Medium 163 as PPLO-Glucose Broth. TOGO lists 5 ml 0.4% Phenol red solution, 100 ml 25% Solution of fresh baker's yeast extract (Gibco 360-8180), 700 ml distilled water, 200 ml sterile horse serum, 5 g glucose, 21 g PPLO broth from BD-Difco, and Penicillin; the pH is adjusted to 7.6. MediaDive J163 mirrors the retired JCM recipe and records the Penicillin amount as 1,000,000 U. The current JCM URL for Medium 163 no longer exposes the recipe.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M154"
+      },
+      {
+        "reference": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=163"
+      },
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/J163"
+      }
+    ]
+  },
+  {
+    "case_index": 4,
+    "occurrence_id": "CM_OCC:d61206c03ac99718857d4e3819eea26285eeed0a21cdad164a8882d7d8fcfca6",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bsk_ii_medium.yaml",
+    "sha256": "fbc31cce26edd871b7d4f5a74cf1621f9ce1041b35eb0f0a0e17388298e96f05",
+    "component_path": "ingredients/4",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "bovine serum albumin, FractionV (Miles Laboratories, Elkhart, IN, No.81-003)",
+      "notes": "Source batch input: 50 g. No final-medium volume is specified after gelatin and serum; do not reinterpret batch mass as g/L.",
+      "evidence": [
+        {
+          "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2410",
+          "supports": "SUPPORT",
+          "snippet": "{\n          \"component_name\": \"bovine serum albumin, FractionV (Miles Laboratories, Elkhart, IN, No.81-003)\",\n          \"volume\": 50,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\",\n          \"gmo_id\": \"GMO_001520\",\n          \"label\": \"Bovine serum albumin\",\n          \"properties\": [\n            {\n              \"id\": \"GMO_000047\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000047\",\n              \"label\": \"Undefined component\"\n            }\n          ],\n          \"roles\": [\n            {\n              \"id\": \"GMO_000042\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000042\",\n              \"label\": \"Nutrient source\"\n            }\n          ]\n        }",
+          "explanation": "ingredients[4].concentration: Source batch input: 50 g. No final-medium volume is specified after gelatin and serum; do not reinterpret batch mass as g/L. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=components[0].items[4]; accessed=2026-10-08T22:21:55.422296+00:00; capture SHA256=93db04af9cbb6a6c2f04836a8b1c16e5e19c1bfa9731f25c6417d41d59ce24b4.\n\nAdditional exact excerpt: {\n          \"component_name\": \"bovine serum albumin, FractionV (Miles Laboratories, Elkhart, IN, No.81-003)\",\n          \"volume\": 50,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\",\n          \"gmo_id\": \"GMO_001520\",\n          \"label\": \"Bovine serum albumin\",\n          \"properties\": [\n            {\n              \"id\": \"GMO_000047\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000047\",\n              \"label\": \"Undefined component\"\n            }\n          ],\n          \"roles\": [\n            {\n              \"id\": \"GMO_000042\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000042\",\n              \"label\": \"Nutrient source\"\n            }\n          ]\n        }\ningredients[4].notes: Source batch input: 50 g. No final-medium volume is specified after gelatin and serum; do not reinterpret batch mass as g/L. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=components[0].items[4]; accessed=2026-10-08T22:21:55.422296+00:00; capture SHA256=93db04af9cbb6a6c2f04836a8b1c16e5e19c1bfa9731f25c6417d41d59ce24b4."
+        }
+      ]
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2410\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nThe false LB constituent expansion is withdrawn in favor of this source's bovine serum albumin input. Existing unrelated chemical annotations are preserved, not recertified. This repair does not assert equivalence with other BSK formulations or add organism-growth evidence.\n\n9. Incubate at 34-37\u00b0C\n\n*Hamilton, Montana, is at an altitude of 1,200m. At lower elevations the containiers may need to be filled to a higher level.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2410",
+        "title": "BSK II Medium",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-08; capture_sha256=93db04af9cbb6a6c2f04836a8b1c16e5e19c1bfa9731f25c6417d41d59ce24b4. Authors and publication year are not supplied; copyright year is not publication year. Source-specific formulation evidence, not growth evidence."
+      }
+    ]
+  },
+  {
+    "case_index": 5,
+    "occurrence_id": "CM_OCC:4abc5ab9f474af2bf3012f9faf0bf182ec7fc557d59920e405022367c50e8d92",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/ytp_2_medium.yaml",
+    "sha256": "9760b46d3b85213ce5251e51855aa37b8b69ce58cc846eb75be3575ba71eff61",
+    "component_path": "ingredients/8",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Clarified tomato juice",
+      "concentration": {
+        "value": "2",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Growth factor; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2271",
+    "recipe_references": null
+  },
+  {
+    "case_index": 6,
+    "occurrence_id": "CM_OCC:1dcaf80b2813cd18f584343a0c97c53792a99453e892492ce4a6a8be89893ccc",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/hs_rfb_borrelia_miyamotoi_medium.yaml",
+    "sha256": "feec59febb90e554e75d16a1825febcf83b225772ce485a5585bc2466d74f06f",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "human serum, heat-inactivated",
+      "concentration": {
+        "value": "485.437",
+        "unit": "ML_PER_L"
+      }
+    },
+    "recipe_notes": "Source: MediaDive | Link: https://mediadive.dsmz.de/rest/medium/1895",
+    "recipe_references": [
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/1895"
+      }
+    ]
+  },
+  {
+    "case_index": 9,
+    "occurrence_id": "CM_OCC:a45105c2d7750625e073dc2327a8354f2757f79e7399aad7822ce1f22e67142b",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M284_Modified_BHI.yaml",
+    "sha256": "441187e864d5bf52bd718b9178a20da52fe649f3b7b0891471ac29f645fb76d9",
+    "component_path": "ingredients/7",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "sterile defibrinated horse serum",
+      "notes": "Role: Nutrient source; Properties: Undefined component",
+      "concentration": {
+        "value": "variable",
+        "unit": "VARIABLE"
+      }
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M284\nOriginal source: JCM - JCM_M290\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=290\n\nCommercial Product: Brain Heart Infusion\nSupplier: Difco/BD\nCatalog: 237500\nSource: https://microbenotes.com/brain-heart-infusion-bhi-agar/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 17,
+    "occurrence_id": "CM_OCC:8a6ff4862a10b0db3bce0ca10a42fa396a8132d22e11fcbb29dc7b9238f4aec8",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mitsuhashi_maramorosch_m_m_medium.yaml",
+    "sha256": "2f2c4e1dce171a2698312300893e404b0b37020e227871a42801afe20241d6cf",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "heat-inactivated fetal bovine serum",
+      "notes": "Role: Nutrient source; Properties: Undefined component\n\nSource serum supplement is 5%, with no w/v, v/v or w/w basis. Withdraw the unsupported PERCENT_W_V value; preserve heat-inactivated fetal bovine serum and the unspecified percentage as text.",
+      "evidence": [
+        {
+          "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2287",
+          "supports": "SUPPORT",
+          "snippet": "{\n          \"component_name\": \"heat-inactivated fetal bovine serum\",\n          \"volume\": 5,\n          \"unit\": \"%\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001397\",\n          \"gmo_id\": \"GMO_001397\",\n          \"label\": \"Fetal bovine serum, heat-inactivated\",\n          \"properties\": [\n            {\n              \"id\": \"GMO_000047\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000047\",\n              \"label\": \"Undefined component\"\n            }\n          ],\n          \"roles\": [\n            {\n              \"id\": \"GMO_000042\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000042\",\n              \"label\": \"Nutrient source\"\n            }\n          ]\n        }",
+          "explanation": "ingredients[0].concentration: Source serum supplement is 5%, with no w/v, v/v or w/w basis. Withdraw the unsupported PERCENT_W_V value; preserve heat-inactivated fetal bovine serum and the unspecified percentage as text. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[0].items[9]; accessed=2026-10-08T23:33:48.345723+00:00; capture SHA256=092c9df0b4705f01f5861559ae0c405ea07cd55eb428512258ed5847c8dcbd24.\n\nAdditional exact excerpt: {\n          \"component_name\": \"heat-inactivated fetal bovine serum\",\n          \"volume\": 5,\n          \"unit\": \"%\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001397\",\n          \"gmo_id\": \"GMO_001397\",\n          \"label\": \"Fetal bovine serum, heat-inactivated\",\n          \"properties\": [\n            {\n              \"id\": \"GMO_000047\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000047\",\n              \"label\": \"Undefined component\"\n            }\n          ],\n          \"roles\": [\n            {\n              \"id\": \"GMO_000042\",\n              \"uri\": \"http://purl.jp/bio/10/gmo/GMO_000042\",\n              \"label\": \"Nutrient source\"\n            }\n          ]\n        }\ningredients[0].notes: Source serum supplement is 5%, with no w/v, v/v or w/w basis. Withdraw the unsupported PERCENT_W_V value; preserve heat-inactivated fetal bovine serum and the unspecified percentage as text. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[0].items[9]; accessed=2026-10-08T23:33:48.345723+00:00; capture SHA256=092c9df0b4705f01f5861559ae0c405ea07cd55eb428512258ed5847c8dcbd24.\n\nAdditional exact excerpt: {\n      \"paragraph_index\": 1,\n      \"comment\": \"Pure Sodalis cultures were maintained in vitro at 25\u00b0C in Mitsuhashi-Maramorosch (M&M) medium (1 mM CaCl2, 0.2 mM MgCl2, 2.7 mM KCl, 120 mM NaCl, 1.4 mM NaHCO3, 1.3 mM NaH2PO4, 22 mM D (+) glucose, 6.5 g/L lactalbumin hydrolysate, and 5.0 g/L yeast extract) supplemented with 5% heat-inactivated fetal bovine serum (Beard et al. 1993).\"\n    }\ningredients[0].notes: The source's prose confirms the basal recipe followed by serum supplementation. Its parenthetical literature citation is not a verified DOI and is not promoted to independent article evidence. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=comments[0]; accessed=2026-10-08T23:33:48.345723+00:00; capture SHA256=092c9df0b4705f01f5861559ae0c405ea07cd55eb428512258ed5847c8dcbd24."
+        }
+      ]
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2287\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nThe false LB constituent expansion is withdrawn. Each source's actual hydrolysate and preparation scope is retained. Existing unrelated chemical annotations and history are preserved, not recertified; no taxa-media growth association is added.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2287",
+        "title": "Mitsuhashi-Maramorosch (M&M) medium",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-08; accession=M2287; capture_sha256=092c9df0b4705f01f5861559ae0c405ea07cd55eb428512258ed5847c8dcbd24. Authors and publication year are not supplied. Copyright/access years are not publication years. This source supports formulation, not newly curated organism growth."
+      }
+    ]
+  },
+  {
+    "case_index": 18,
+    "occurrence_id": "CM_OCC:3ecbc2734aefb72796e8c0ee270437dc74cd1d9411d379a818e117731f4b3588",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M213_SC_Medium.yaml",
+    "sha256": "785b1c476d7a576af8d7252c617920ada8a7e5a0a2a5d57bfdd4ab31c8c209f8",
+    "component_path": "solutions/2/composition/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Bovine serum albumin, fraction V",
+      "notes": "Source preparation label: 20% Bovine serum albumin, fraction V. Percentage basis is unspecified; no numeric stock strength, stock-batch mass or final-medium concentration is asserted. The enclosing descriptor holds the batch volume.",
+      "evidence": [
+        {
+          "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M213",
+          "supports": "SUPPORT",
+          "snippet": "{\n          \"component_name\": \"20% Bovine serum albumin, fraction V\",\n          \"volume\": 10,\n          \"unit\": \"ml\",\n          \"conc_value\": 20,\n          \"conc_unit\": \"%\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+          "explanation": "solutions[2].composition[0].notes: Source preparation label: 20% Bovine serum albumin, fraction V. Percentage basis is unspecified; no numeric stock strength, stock-batch mass or final-medium concentration is asserted. The enclosing descriptor holds the batch volume. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=components[0].items[2]; accessed=2026-10-08T21:23:12.306666+00:00; capture SHA256=2b8145922d0cf518b5c39214eb4309fef864015a786391373e09a013d698c97c."
+        },
+        {
+          "reference": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=220",
+          "supports": "SUPPORT",
+          "snippet": "20% Bovine serum albumin, fraction V 10.0 ml",
+          "explanation": "solutions[2].composition[0].notes: Original recipe corroborates this exact batch input and material. Water input does not establish final-medium volume. No final-medium volume, percentage basis, density or chemical grounding is inferred. Locator=original recipe text; accessed=2026-10-08T20:55:15.169447+00:00; capture SHA256=1769837f02e8fbc89f06a76ffe989d7bc5957ce332af2d027246a5971007b24a."
+        }
+      ]
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M213\nOriginal source: JCM - JCM_M220\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=220\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nThe exact recipe specifies albumin, not LB broth. Remove only the three reviewed LB supplier nodes and restore albumin at its source-defined preparation stage. Genuine yeast extract and unrelated annotations are preserved.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M213",
+        "title": "SC Medium",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-08; capture_sha256=2b8145922d0cf518b5c39214eb4309fef864015a786391373e09a013d698c97c. Authors and publication year not supplied. Batch inputs and stock strengths are scoped separately; chemical groundings and growth claims are not recertified."
+      },
+      {
+        "reference": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=220",
+        "title": "Medium data",
+        "notes": "source_type=culture_collection_page; discovery_mode=existing_record_reference; accessed_on=2026-10-08; capture_sha256=1769837f02e8fbc89f06a76ffe989d7bc5957ce332af2d027246a5971007b24a. Authors and publication year not supplied. Batch inputs and stock strengths are scoped separately; chemical groundings and growth claims are not recertified."
+      }
+    ]
+  },
+  {
+    "case_index": 19,
+    "occurrence_id": "CM_OCC:d951ff216076073dec07ce3949a9169bde1faa92f89af710d60beaf50872b07d",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/algae/CCAP_MC II .yaml",
+    "sha256": "ce5a52e607ab31783308a39eded7b863e74f0c8f268a5377c1afedfe49e8aad3",
+    "component_path": "ingredients/2",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Aseptically add the foetal calf serum to a final concentration of",
+      "notes": "Ontology mapping not yet available; From CCAP Medium MR_MCII.pdf; Curated from CCAP Medium MR_MCII.pdf specification",
+      "concentration": {
+        "value": "10",
+        "unit": "PERCENT_W_V"
+      },
+      "source": "CCAP Medium MR_MCII.pdf"
+    },
+    "recipe_notes": "Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_MCII.pdf",
+    "recipe_references": [
+      {
+        "reference": "CCAP:MCII"
+      },
+      {
+        "reference": "https://www.ccap.ac.uk/wp-content/uploads/MR_MCII.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 19,
+    "occurrence_id": "CM_OCC:74a18476f61c1745f31aba138ddf5b760db3f38510b5a90f713fef2b41e75661",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/algae/mc_ii.yaml",
+    "sha256": "2e7580688d5062e4470c029df6b804078f0e3357a99081bb1d964ee0e680a599",
+    "component_path": "ingredients/2",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Aseptically add the foetal calf serum to a final concentration of",
+      "notes": "Ontology mapping not yet available; From CCAP Medium MR_MCII.pdf; Curated from CCAP Medium MR_MCII.pdf specification",
+      "concentration": {
+        "value": "10",
+        "unit": "PERCENT_W_V"
+      },
+      "source": "CCAP Medium MR_MCII.pdf"
+    },
+    "recipe_notes": "Full recipe available at https://www.ccap.ac.uk/wp-content/uploads/MR_MCII.pdf",
+    "recipe_references": [
+      {
+        "reference": "CCAP:MCII"
+      },
+      {
+        "reference": "https://www.ccap.ac.uk/wp-content/uploads/MR_MCII.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 20,
+    "occurrence_id": "CM_OCC:0e55247ebf54ce7353921d0a300b5dcb64ccadaed62c55adad1320cb2956c286",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1474_Blood_Agar.yaml",
+    "sha256": "669a52ef5999b01fed5781541c131631d6db0c0e479b2d1776bb4eaf2ce7258f",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Bacto Blood Agar Base (Difco)",
+      "concentration": {
+        "value": "40.0",
+        "unit": "G_PER_L"
+      },
+      "source": "TOGO M1474 / NBRC Medium 254",
+      "notes": "NBRC Medium 254 lists 40 g Bacto Blood Agar Base (Difco) in 1 L distilled water; this commercial agar base is not reducible to one ChEBI molecule."
+    },
+    "recipe_notes": "TOGO M1474 imports NBRC Medium 254. NBRC 254 lists 40 g Bacto Blood Agar Base (Difco) in 1 L distilled water, sterilized by autoclaving, cooled to 45-50 C, and supplemented with 50 ml sterile defibrillated blood. The source does not state pH or incubation conditions.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M1474"
+      },
+      {
+        "reference": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=254"
+      }
+    ]
+  },
+  {
+    "case_index": 22,
+    "occurrence_id": "CM_OCC:63a31312f29540b63e85b0a5b4397841f768c5057c8170fb652b420f9e1bccaf",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_646_RABBIT_BLOOD_AGAR.yaml",
+    "sha256": "0543ad3c22f2d895bd8324f97a74933111674f07c3a533792eaad7dc2a7aa4bf",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Blood Agar Base from Difco 0045",
+      "concentration": {
+        "value": "40.0",
+        "unit": "G_PER_L"
+      },
+      "source": "DSMZ Medium 646",
+      "notes": "DSMZ Medium 646 directs preparation of Difco 0045 Blood Agar Base at 40.0 g/L.",
+      "culturemech_term": {
+        "id": "CultureMech:006515",
+        "label": "Blood Agar Base from Difco 0045"
+      }
+    },
+    "recipe_notes": "KOMODO Medium 646 states DSMZ Medium 646 provenance; DSMZ Medium 646 prepares Blood Agar Base from Difco 0045 at 40.0 g/L, sterilizes and cools it to 45 C, and aseptically adds 5% sterile defibrinated rabbit blood.",
+    "recipe_references": [
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium646.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 22,
+    "occurrence_id": "CM_OCC:79245d701815599957da9e0a2b0779d433e6123c91c73ba1dc69ad56123ce39d",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/rabbit_blood_agar.yaml",
+    "sha256": "5e10ab42d2af58d19c8d8564ab3dc688ba84a885070dacd565c3e78e63814b3b",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Blood Agar Base from Difco 0045",
+      "concentration": {
+        "value": "40.0",
+        "unit": "G_PER_L"
+      },
+      "source": "DSMZ Medium 646",
+      "notes": "DSMZ Medium 646 directs preparation of Difco 0045 Blood Agar Base at 40.0 g/L.",
+      "culturemech_term": {
+        "id": "CultureMech:006515",
+        "label": "Blood Agar Base from Difco 0045"
+      }
+    },
+    "recipe_notes": "DSMZ Medium 646 prepares Blood Agar Base from Difco 0045 at 40.0 g/L, sterilizes and cools it to 45 C, and aseptically adds 5% sterile defibrinated rabbit blood.",
+    "recipe_references": [
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium646.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 25,
+    "occurrence_id": "CM_OCC:6229336edab4995d4d12e7db9e8c4666b57c17dbbfafe212406a57e71984cffc",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M135_Modified_NOS_Medium.yaml",
+    "sha256": "91db2299c5939106f818bc3f93be621c9c54a1fe925a3b33eadc097d283ef219",
+    "component_path": "ingredients/11",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Rabbit serum heat--inactivated at 56C for 1 hr",
+      "concentration": {
+        "value": "2",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M135\nOriginal source: JCM - JCM_M144\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=144\n\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 26,
+    "occurrence_id": "CM_OCC:ccd3f44449aea84ed6abd9a95fdf2798a33fb329a0c8bf611a7e2e0a468cad75",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_439_CASMAN-MEDIUM.yaml",
+    "sha256": "82f492761b35804283da6833858e2b7ca1575e4d96c7ef39143ca945e0319de6",
+    "component_path": "ingredients/2",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Water-lysed sheep blood",
+      "concentration": {
+        "value": "0.15",
+        "unit": "PERCENT_V_V"
+      },
+      "source": "DSMZ Medium 439",
+      "notes": "DSMZ Medium 439 supplements Casman-Agar-Base with 0.15% water-lysed sheep blood."
+    },
+    "recipe_notes": "KOMODO Medium 439 states DSMZ Medium 439 provenance; DSMZ Medium 439 lists Casman-Agar-Base (Difco) supplemented with 5% sheep blood and 0.15% water-lysed sheep blood.",
+    "recipe_references": [
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium439.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 26,
+    "occurrence_id": "CM_OCC:0fc1d1001cfc206bb035e429c49d709217e4af31dd8fba10ee13696f515f4480",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/casman_medium.yaml",
+    "sha256": "bdd66a7f3d93301b8d7366266ab699ac90a6f9ea9ec397c0899132ee707d1d14",
+    "component_path": "ingredients/2",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Water-lysed sheep blood",
+      "concentration": {
+        "value": "0.15",
+        "unit": "PERCENT_V_V"
+      },
+      "source": "DSMZ Medium 439",
+      "notes": "DSMZ Medium 439 supplements Casman-Agar-Base with 0.15% water-lysed sheep blood."
+    },
+    "recipe_notes": "DSMZ Medium 439 lists Casman-Agar-Base (Difco) supplemented with 5% sheep blood and 0.15% water-lysed sheep blood.",
+    "recipe_references": [
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium439.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 28,
+    "occurrence_id": "CM_OCC:e68dfedbf4603f9e7363b01aa1f3aa2d29cfe7dd8fd4f4a881061e009c7bf2a4",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/algae/mc.yaml",
+    "sha256": "130ffe6c71f41a82f3e62724522fc22f3363ff89f11c07dc3267d286fe0dbad3",
+    "component_path": "ingredients/7",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Sterile foetal calf serum (Gamma-Irradiated, cat. no. 10109-155)",
+      "concentration": {
+        "value": "100",
+        "unit": "ML_PER_L"
+      },
+      "source": "CCAP Medium MR_MC.pdf",
+      "notes": "CCAP adds 5 x 20 ml sterile foetal calf serum after sterilization."
+    },
+    "recipe_notes": "CCAP MC lists casein digest, Na2HPO4.7H2O, KH2PO4, Oxoid yeast extract, D-glucose, and Oxoid liver digest in 900 ml deionised water; after pH adjustment to 6.9 and 10 psi pressure cooking, it adds sterile foetal calf serum to a final concentration of 10% and stores the medium at 4 C.",
+    "recipe_references": [
+      {
+        "reference": "CCAP:MC"
+      },
+      {
+        "reference": "https://www.ccap.ac.uk/wp-content/uploads/MR_MC.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 30,
+    "occurrence_id": "CM_OCC:ab2c18ce52978bd14e121784a9d7874282731d09afb86139096fc496a1b32529",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/togo_medium_m1468.yaml",
+    "sha256": "0ebb884fd8d60990b8b60f7965cd725dfb3cdaa3acaa3f3e74e4f81805343e65",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Active horse serum",
+      "concentration": {
+        "value": "200",
+        "unit": "ML_PER_L"
+      },
+      "source": "NBRC Medium 246",
+      "notes": "NBRC Medium 246 lists 200 ml/L Active horse serum sterilized by filtration."
+    },
+    "recipe_notes": "TOGO M1468 imports NBRC Medium 246, which lists 21 g/L Bacto PPLO Broth (Difco), 200 ml/L Active horse serum, 100 ml/L Fresh baker's yeast extract (25% solution), and 700 ml/L Distilled water. The 25% yeast extract is prepared by boiling 250 g dried baker's yeast suspended in 1 L distilled water for 30 min, removing yeast cells by centrifugation, and sterilizing by filtration.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M1468"
+      },
+      {
+        "reference": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=246"
+      }
+    ]
+  },
+  {
+    "case_index": 32,
+    "occurrence_id": "CM_OCC:c1b55129c424c39ec22be1fb9967635d39e2836155a9fb46d4c93a736c0191ba",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/brain_heart_infusion_agar_amended_with_5_v_v_laked_horse_blood.yaml",
+    "sha256": "0632f2e2c411d9ef34a502d40d4c1f0e818dc1dd9bea0e62847565bad4091b28",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "laked horse blood (Hema Resource & Supply, Aurora, OR)",
+      "concentration": {
+        "value": "5",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2932\n\nCommercial Product: Brain Heart Infusion\nSupplier: Difco/BD\nCatalog: 237500\nSource: https://microbenotes.com/brain-heart-infusion-bhi-agar/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 33,
+    "occurrence_id": "CM_OCC:718dd38ebe997a916e5a4ca423d64bfcf75b79cdea243e3fdbb5a32883742ef7",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/madctw_medium.yaml",
+    "sha256": "2db027199cd9cbe83f79148d0c588eccf08a5f080d04c24af1c5a358a4920553",
+    "component_path": "solutions/1/composition/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Bovine Serum Albumin, Frac V",
+      "notes": "Source amount: 5 g; scope: ADC Enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+      "evidence": [
+        {
+          "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2403",
+          "supports": "SUPPORT",
+          "snippet": "{\n          \"component_name\": \"Bovine Serum Albumin, Frac V\",\n          \"volume\": 5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+          "explanation": "solutions[1].composition[1].concentration: Source amount: 5 g; scope: ADC Enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[2].items[1]; accessed=2026-10-09T00:07:44.407453+00:00; capture SHA256=6a7fd648a1fe15e468873b23c03df794a126da0bd466b99f16e583751be2d6a6.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine Serum Albumin, Frac V\",\n          \"volume\": 5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[1].composition[1].notes: Source amount: 5 g; scope: ADC Enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[2].items[1]; accessed=2026-10-09T00:07:44.407453+00:00; capture SHA256=6a7fd648a1fe15e468873b23c03df794a126da0bd466b99f16e583751be2d6a6."
+        }
+      ]
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2403\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nFalse LB constituent expansion is withdrawn. Source-specific amounts and preparation boundaries supersede flattened concentrations. Existing chemical annotations and earlier history are preserved, not recertified; no organism-growth association is added.\n\nSource preparation context (main preparation): Middlebrook 7H9 medium (Difco) containing 10% (v/v) albumin\u2010dextrose\u2010catalase (ADC, Difco) enrichment, 0.2% glycerol and 0.05% Tween 80 (MADCTw)",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2403",
+        "title": "MADCTw medium",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-09; accession=M2403; capture_sha256=6a7fd648a1fe15e468873b23c03df794a126da0bd466b99f16e583751be2d6a6. Authors and publication year are not supplied; access/copyright years are not publication years. Formulation evidence, not newly curated growth evidence."
+      }
+    ]
+  },
+  {
+    "case_index": 33,
+    "occurrence_id": "CM_OCC:c242138c93a8a057d4350d8658d7ed138111c13dd86c4b6fe806a27acf9edede",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h9_broth_w_adc_enrichment.yaml",
+    "sha256": "f377b5c3e0905027e1d4a64a9affd510df5d784cccc5341bdb3622673d6930cf",
+    "component_path": "solutions/1/composition/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Bovine Serum Albumin, Frac V",
+      "notes": "Source amount: 5 g; scope: ADC Enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+      "evidence": [
+        {
+          "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2397",
+          "supports": "SUPPORT",
+          "snippet": "{\n          \"component_name\": \"Bovine Serum Albumin, Frac V\",\n          \"volume\": 5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"",
+          "explanation": "solutions[1].composition[1].concentration: Source amount: 5 g; scope: ADC Enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[1]; accessed=2026-10-09T00:07:50.944436+00:00; capture SHA256=d1bbfa9d673e2a10b2f1ddaf1f9196dbb8e64f4ee0f85f635786a36ddd95a8d8.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Bovine Serum Albumin, Frac V\",\n          \"volume\": 5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nsolutions[1].composition[1].notes: Source amount: 5 g; scope: ADC Enrichment stock preparation. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[1]; accessed=2026-10-09T00:07:50.944436+00:00; capture SHA256=d1bbfa9d673e2a10b2f1ddaf1f9196dbb8e64f4ee0f85f635786a36ddd95a8d8."
+        }
+      ]
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2397\nOriginal URL: https://www.atcc.org/~/media/014FA24571954E679A363A23BE388F00.ashx\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nFalse LB constituent expansion is withdrawn. Source-specific amounts and preparation boundaries supersede flattened concentrations. Existing chemical annotations and earlier history are preserved, not recertified; no organism-growth association is added.\n\nSource preparation context (main preparation): Add 4.7 grams of dehydrated Middlebrook 7H9 medium to 900 mL of water containing 2.0 mL of glycerol.\n\nSource preparation context (main preparation): Mix well and autoclave at 121\u00baC. Cool to 50-55\u00baC.\n\nSource preparation context (main preparation): Aseptically add filter sterilized ADC Enrichment.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2397",
+        "title": "Middlebrook 7H9 Broth w/ADC Enrichment",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-09; accession=M2397; capture_sha256=d1bbfa9d673e2a10b2f1ddaf1f9196dbb8e64f4ee0f85f635786a36ddd95a8d8. Authors and publication year are not supplied; access/copyright years are not publication years. Formulation evidence, not newly curated growth evidence."
+      }
+    ]
+  },
+  {
+    "case_index": 35,
+    "occurrence_id": "CM_OCC:70f68d669bbf4f0fcd9a236818e1804c2457eb4669b886f08b7a6b5ff56ab256",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/oteb_medium.yaml",
+    "sha256": "36175e4579c5126baf9eba16d4855347072d30b2a422fc4ade6b24b9ec0eaa07",
+    "component_path": "ingredients/14",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Calf Serum, inactivated",
+      "concentration": {
+        "value": "0.1",
+        "unit": "L"
+      },
+      "notes": " (inactivated)\n\nOriginal recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Retain the original label and expose the API fetal-bovine-serum disagreement. Original main row 16: 100.0 ml per preparation.\n\nIdentity conflict: the original says inactivated calf serum; the API says Fetal bovine serum. This record retains the original label without asserting biological interchangeability.",
+      "evidence": [
+        {
+          "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf",
+          "supports": "SUPPORT",
+          "snippet": "Calf Serum, inactivated                                                                                                                                                                                                                                                                                                                                                                   100.0 ml",
+          "explanation": "ingredients[14].preferred_term: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Retain the original label and expose the API fetal-bovine-serum disagreement. Original main row 16: 100.0 ml per preparation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[15]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2.\n\nAdditional exact excerpt: Calf Serum, inactivated                                                                                                                                                                                                                                                                                                                                                                   100.0 ml\ningredients[14].concentration: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Retain the original label and expose the API fetal-bovine-serum disagreement. Original main row 16: 100.0 ml per preparation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[15]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2.\n\nAdditional exact excerpt: Calf Serum, inactivated                                                                                                                                                                                                                                                                                                                                                                   100.0 ml\ningredients[14].notes: Original recipe input only. No inferred denominator, density, percentage basis, salt form, or receiving-medium dilution. Preserve repeated source rows separately. Retain the original label and expose the API fetal-bovine-serum disagreement. Original main row 16: 100.0 ml per preparation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=main[15]; accessed=2026-10-09T05:34:29.231696+00:00; capture SHA256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2."
+        },
+        {
+          "reference": "https://mediadive.dsmz.de/rest/medium/1245",
+          "supports": "SUPPORT",
+          "snippet": "{\n                        \"recipe_order\": 16,\n                        \"compound\": \"Fetal bovine serum\",\n                        \"compound_id\": 954,\n                        \"condition\": \"inactivated\",\n                        \"amount\": 100,\n                        \"unit\": \"ml\",\n                        \"optional\": 0\n                    }",
+          "explanation": "ingredients[14].notes: API recipe row retained as separate provenance. The original recipe's stage, input amounts, label and unresolved denominator determine this representation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.solutions[0].recipe[15]; accessed=2026-10-09T05:34:33.373325+00:00; capture SHA256=2bcf71383b6fe0d25fa345832072429a262e21c3bf65da59edad55a11163c0d7.\n\nAdditional exact excerpt: {\n                        \"recipe_order\": 16,\n                        \"compound\": \"Fetal bovine serum\",\n                        \"compound_id\": 954,\n                        \"condition\": \"inactivated\",\n                        \"amount\": 100,\n                        \"unit\": \"ml\",\n                        \"optional\": 0\n                    }\ningredients[14].notes: Original calf serum and API fetal bovine serum are different labels; preserve the conflict explicitly. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.solutions[0].recipe[15]; accessed=2026-10-09T05:34:33.373325+00:00; capture SHA256=2bcf71383b6fe0d25fa345832072429a262e21c3bf65da59edad55a11163c0d7."
+        }
+      ]
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf\n\nSuperseded historical provenance, not a current formulation claim:\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nPreserve source descriptive/preparation text without falsely encoding every paragraph as an instruction: OTEB-medium is available from Anaerobe Systems (http://www.anaerobesystems.com)\nThe following text was taken from the above page: \r\n\r\n- ORAL TREPONEME ENRICHMENT BROTH (OTEB)\r\n\r\n- Products: AS-603 Oral Treponeme Enrichment Broth (OTEB) 10 tubes / pkg\nIntended Use: OTEB is an enriched medium for the isolation, cultivation and maintenance of Treponemes found as part of the oral flora.\nOTEB is a complex peptone-yeast extract medium containing volatile fatty acids and serum for a source of long chain fatty acids. Volatile fatty acids and serum are necessary nutrients for recovery of Treponemes from the oral flora. Inoculation of the medium can be done using a gassing cannula or inside an anaerobic chamber. This medium is prepared, stored and dispensed under oxygen-free conditions to prevent the formation of oxidized products prior to use.\nFinal pH 7.0 +/- 0.2 at 25 degrees C.\nFinal volume 7.0 ml +/- 0.7.\n\nThe original states final pH 7.0 +/- 0.2 at 25 C: the range 6.8-7.2 remains, while 25 C is a measurement condition. The printed final volume 7.0 +/- 0.7 ml is retained, but cannot establish this formula's batch denominator. The API declares 1000 ml although listed liquid inputs sum to 1003.1 ml. No final-medium g/L or density conversion is inferred.\n\nComplete source tables were inspected. Reconstructed ingredient/stock nodes retain source-specific amounts and uncertainties; historical flattened amounts, false supplier-tagged LB ingredients and unsupported interpretations are archived in append-only history. Existing unrelated metadata and prior evidence remain preserved, not recertified.",
+    "recipe_references": [
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf",
+        "title": "1245. OTEB-MEDIUM",
+        "notes": "source_type=culture_collection_page; discovery_mode=cross_reference; accessed_on=2026-10-09; capture_sha256=8f86c38d0e1c5a8c4b47c062c98ad78892a7d30b6fcf89d42b4b0c9a392e87e2. Individual authors and publication year not supplied; copyright/access year is not publication year. Source-scoped recipe evidence, not organism growth evidence."
+      },
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/1245",
+        "title": "OTEB-MEDIUM",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-09; capture_sha256=2bcf71383b6fe0d25fa345832072429a262e21c3bf65da59edad55a11163c0d7. Individual authors and publication year not supplied; copyright/access year is not publication year. Source-scoped recipe evidence, not organism growth evidence."
+      },
+      {
+        "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1245",
+        "title": "KOMODO - the Known Media Database",
+        "notes": "source_type=web_page; discovery_mode=cross_reference; accessed_on=2026-10-09; capture_sha256=38c6893a52fb53607f12fc0df1a20bfa72051f3fc61209eaa7aabed8d0ed8fa6. Individual authors and publication year not supplied; copyright/access year is not publication year. Source-scoped recipe evidence, not organism growth evidence."
+      }
+    ]
+  },
+  {
+    "case_index": 36,
+    "occurrence_id": "CM_OCC:468f59799c3483336a12bb2f3667e26cd8a69835787aa3a674285f5c20f33ee8",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2366_BSK-Medium.yaml",
+    "sha256": "4a9be7a5fae3fc883204700360fcc8b9e73bfd2bf1602590739039db877670ba",
+    "component_path": "solutions/3/composition/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Rabbit serum, inactivated(GIBCO 037-06120M)",
+      "concentration": {
+        "value": "1000",
+        "unit": "ML_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2366\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium403.pdf",
+    "recipe_references": null
+  },
+  {
+    "case_index": 38,
+    "occurrence_id": "CM_OCC:a570830be078ed647c1ff56edaeeee681238a707b4f638497269cc7fdb4fc3fb",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/tryptose_blood_agar_base_containing_glucose_l_tryptophan_and_casein_hydrolyzate_acid.yaml",
+    "sha256": "6c3a677c0fe8cbd3c392337c1797063f9c60a05d9391c084c83f64db5bcb605a",
+    "component_path": "ingredients/3",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "tryptose blood agar base (Difco)",
+      "concentration": {
+        "value": "variable",
+        "unit": "VARIABLE"
+      }
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2487",
+    "recipe_references": null
+  },
+  {
+    "case_index": 39,
+    "occurrence_id": "CM_OCC:b27d1406d68c93f06651107fe3c7179b4fc7c557af5ac45dc7f7f37316f234f9",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/modified_hayflick_broth_medium_containing_20_fetal_bovine_serum.yaml",
+    "sha256": "dcc36eef24984b3f6aeb1be6b045289902c1e24d09df983fe1cb3fe44432295f",
+    "component_path": "ingredients/4",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (Flow), heat-inactivated",
+      "concentration": {
+        "value": "200.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2888",
+      "notes": "TOGO M2888 lists 200 ml/L heat-inactivated fetal bovine serum from Flow; MIM resolves fetal bovine serum to NCIT:C113696, but NCIT is not an allowed ingredient prefix in the CultureMech schema, so this serum remains intentionally unmapped."
+    },
+    "recipe_notes": "TOGO M2888 records Modified Hayflick broth medium containing 20% fetal bovine serum as 4 ml/L 0.5% phenol red, 1 L distilled water, 5 g/L D-glucose, 100 ml/L Liquid yeast extract (Flow), 200 ml/L heat-inactivated fetal bovine serum from Flow, 21 g/L PPLO broth base without crystal violet from Difco, 5 x 10^5 U/L Penicillin G, pH 7.8, and growth at 37 C.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2888"
+      }
+    ]
+  },
+  {
+    "case_index": 40,
+    "occurrence_id": "CM_OCC:cdc24b2fa1dc86849bb185f51cd8df53fe18fadffa8eb9bd049986282c9050bd",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M993_Korthof_s_Medium.yaml",
+    "sha256": "b9c3c61223f256cccc98fa577c12172c612154356841df6a3b9f74c918b42414",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Rabbit serum heat--inactivated at 56&#8451; for 30 min",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M993\nOriginal source: JCM - JCM_M946\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=946",
+    "recipe_references": null
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:88876a59e7cb48111407237c04891c795fdfd951dbaaba030cebf44352adce47",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_240_CORYNEBACTERIUM_medium_WITH_BLOOD.yaml",
+    "sha256": "3755000529e620bd661c10c4cf1c70fbee1e51bd6f2d56d041c1c52976402627",
+    "component_path": "ingredients/5",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: KOMODO ModelSEED | ID: 240 | DSMZ Medium: 240 (mediadive.medium:240) | Aerobic: No",
+    "recipe_references": [
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/240",
+        "title": "MediaDive medium 240: CORYNEBACTERIUM MEDIUM WITH BLOOD",
+        "notes": "source_type=dataset; discovery_mode=cross_reference; source_organization=DSMZ; accessed_on=2026-10-07; locator=$.data.solutions[0]; response_sha256=73cfff4fa0268937cd9e0c50c3cf06e4a0507f0bf426e37314358caeee5bd37a; original_recipe=https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium240.pdf; individual authors and publication year not supplied. Provider-declared main-recipe amounts only. Discovered through the verified KOMODO original-recipe mapping."
+      },
+      {
+        "reference": "https://komodo.modelseed.org/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaList",
+        "title": "KOMODO media list: original-recipe mappings",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; source_organization=KOMODO; accessed_on=2026-10-07; response_sha256=d8259d98e6dbffdf6961a1ab92bc86f3567d5d96de352bfa079edb2a91e9580a; individual authors and publication year not supplied. Identity mapping only, not concentration evidence."
+      }
+    ]
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:9a7fe013222d84e5abb816fc5d717d16aa81bf2732a425e8a81f1934f449a4da",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/columbia_agar_with_5_sheep_blood.yaml",
+    "sha256": "d0aedeba249c6c01187c7afcceed0f22b8116770a7c4f40ad1ec3d184c283ded",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1331.pdf",
+    "recipe_references": null
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:31f9ad2be344645b1ae232e7cea4b3cfb57f5552f2806b6f36ad5a2cb64c93e1",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/corynebacterium_medium_with_blood.yaml",
+    "sha256": "f1d1a93798920f48bb14051db016f403513a7d837cd4404833b6843507ed0494",
+    "component_path": "ingredients/5",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium240.pdf",
+    "recipe_references": [
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/240",
+        "title": "MediaDive medium 240: CORYNEBACTERIUM MEDIUM WITH BLOOD",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; source_organization=DSMZ; accessed_on=2026-10-07; locator=$.data.solutions[0]; response_sha256=73cfff4fa0268937cd9e0c50c3cf06e4a0507f0bf426e37314358caeee5bd37a; original_recipe=https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium240.pdf; individual authors and publication year not supplied. Provider-declared main-recipe amounts only."
+      }
+    ]
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:5de41c24aad0b8e6188b45126ac0da2405b7a8b8182b807b6cab631d830823a1",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/heart_infusion_blood_agar.yaml",
+    "sha256": "3dae52b1234f6be5673885bafb46d6d7c0f290b69a2dce51c097c4573d43bead",
+    "component_path": "ingredients/2",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "75",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1609.pdf",
+    "recipe_references": null
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:6a306890cfc351376e153906816a841549ad5eeef0bf0ca77b13c2c65c2b04ae",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3351_Main_sol_1609.yaml",
+    "sha256": "059607c456dcfc4ef8b12a4c235744c688fbb42b7b7c80d62966bc2e26e4144c",
+    "component_path": "composition/3",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "75",
+        "unit": "G_PER_L"
+      },
+      "term": {
+        "id": "mediadive.compound:1177",
+        "label": "Defibrinated Blood"
+      }
+    },
+    "recipe_notes": null,
+    "recipe_references": [
+      {
+        "reference": "https://mediadive.dsmz.de/rest/solution/3351",
+        "title": "MediaDive solution 3351: Main sol. 1609",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07; source_organization=DSMZ; locator=$.data; response_sha256=d78c796ebaecde823e6195b79356f21753db062c75b196616a93450870e1e2ab; individual authors and publication year not supplied. Provider-declared solution amounts, not receiving-medium concentrations."
+      }
+    ]
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:ccc4e2ae19c65ad96603ce5c63e08a3c7ba511a5e30eaf371044ac8aeabb8c02",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5588_Main_sol_240.yaml",
+    "sha256": "06d7b4626d35a10b96bb9c2ab08347562e0d1bec83f941834464815b76a5fdcf",
+    "component_path": "composition/6",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      },
+      "term": {
+        "id": "mediadive.compound:1177",
+        "label": "Defibrinated Blood"
+      }
+    },
+    "recipe_notes": null,
+    "recipe_references": [
+      {
+        "reference": "https://mediadive.dsmz.de/rest/solution/5588",
+        "title": "MediaDive solution 5588: Main sol. 240",
+        "notes": "source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07; source_organization=DSMZ; locator=$.data; response_sha256=7d28d1fae96d1525c419b0f0c4b05fcd80927732ee57fba19cfe1211886710f1; individual authors and publication year not supplied. Provider-declared solution amounts, not receiving-medium concentrations."
+      }
+    ]
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:d831ca499a4d985d47b17be30f4c905ed23207061cfcca1ad9db0ef515a4a644",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5646_Main_sol_687.yaml",
+    "sha256": "241cd6e1738a4ea50480005870333e428b9ae5df1f7e3eada757a4fabe8cf529",
+    "component_path": "composition/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      },
+      "term": {
+        "id": "mediadive.compound:1177",
+        "label": "Defibrinated Blood"
+      }
+    },
+    "recipe_notes": null,
+    "recipe_references": null
+  },
+  {
+    "case_index": 41,
+    "occurrence_id": "CM_OCC:d0d59073d71fa124f5f640859c04449fbb7cbb5e5d28e229a79b525094b351d3",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_5693_Main_sol_1331.yaml",
+    "sha256": "d1e518e297ca6e3e4402639686679dfb9b48a02c2b829ce039c395d8c6817ea9",
+    "component_path": "composition/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Defibrinated Blood",
+      "concentration": {
+        "value": "50",
+        "unit": "PERCENT_V_V"
+      },
+      "term": {
+        "id": "mediadive.compound:1177",
+        "label": "Defibrinated Blood"
+      }
+    },
+    "recipe_notes": null,
+    "recipe_references": null
+  },
+  {
+    "case_index": 42,
+    "occurrence_id": "CM_OCC:b44485640c7c02c9220382d30799380c6c6a5eaf4e201f7d60d79083d0be5f71",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_1021_SODALIS_GLOSSINIDIUS_medium.yaml",
+    "sha256": "e26a9ef01a8fe3130730db9ca330b9c97494cfbada9bbec5866c17a1dd6ebc28",
+    "component_path": "ingredients/11",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "new borne calf serum",
+      "notes": "The table's generic Gram/Mol columns show 200.00 and 0.20 for serum; these do not establish density or a chemically meaningful molarity. No numeric concentration is adopted. The linked recipe supplies a 4:1 base/serum preparation ratio.",
+      "evidence": [
+        {
+          "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1021",
+          "supports": "SUPPORT",
+          "snippet": "new borne calf serum new borne calf serum rich-serum# 200.00 0.20",
+          "explanation": "ingredients[11].concentration: The table's generic Gram/Mol columns show 200.00 and 0.20 for serum; these do not establish density or a chemically meaningful molarity. No numeric concentration is adopted. The linked recipe supplies a 4:1 base/serum preparation ratio. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=rows.new borne calf serum; accessed=2026-10-08T23:33:48.903979+00:00; capture SHA256=e4a9e272f0b17354335496c754134b228d36dcba6f41b2288e83e584be6cbd16.\n\nAdditional exact excerpt: new borne calf serum new borne calf serum rich-serum# 200.00 0.20\ningredients[11].notes: The table's generic Gram/Mol columns show 200.00 and 0.20 for serum; these do not establish density or a chemically meaningful molarity. No numeric concentration is adopted. The linked recipe supplies a 4:1 base/serum preparation ratio. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=rows.new borne calf serum; accessed=2026-10-08T23:33:48.903979+00:00; capture SHA256=e4a9e272f0b17354335496c754134b228d36dcba6f41b2288e83e584be6cbd16.\n\nAdditional exact excerpt: Gram & Mol amounts are per Liter of medium.\ningredients[11].notes: The explicit table header establishes the per-liter basis for dry-ingredient mass amounts, not a valid serum mass/molar conversion. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=original recipe table/text; accessed=2026-10-08T23:33:48.903979+00:00; capture SHA256=e4a9e272f0b17354335496c754134b228d36dcba6f41b2288e83e584be6cbd16."
+        },
+        {
+          "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1021.pdf",
+          "supports": "SUPPORT",
+          "snippet": "Sterilize solution A and B separately at 121\uf0b0C for 20 min. Cool to 50\uf0b0C, then combine. To\n4 parts of the above, add 1 part sterile foetal or new borne calf serum. Liquid medium\nshould be filter sterilized instead of autoclaved.",
+          "explanation": "ingredients[11].notes: The KOMODO Instructions link identifies this preparation protocol. Retain its serum ratio as text; no density is assumed. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=original recipe table/text; accessed=2026-10-08T23:33:46.995198+00:00; capture SHA256=1326bfc6d79f8ed3ad765909aa48d3e4efbb378516ada4a4087710860d8b7cc8."
+        }
+      ]
+    },
+    "recipe_notes": "Source: KOMODO ModelSEED | ID: 1021 | DSMZ Medium: 1021 (mediadive.medium:1021) | Aerobic: No\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nThe false LB constituent expansion is withdrawn. Each source's actual hydrolysate and preparation scope is retained. Existing unrelated chemical annotations and history are preserved, not recertified; no taxa-media growth association is added.\n\nRetain the pH reported by this database page; it is not newly interpreted as a measured finished-medium pH. The original protocol locates the adjustment in Solution A.",
+    "recipe_references": [
+      {
+        "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1021",
+        "title": "KOMODO - the Known Media Database",
+        "notes": "source_type=dataset; discovery_mode=catalog_page; accessed_on=2026-10-08; accession=K1021; capture_sha256=e4a9e272f0b17354335496c754134b228d36dcba6f41b2288e83e584be6cbd16. Authors and publication year are not supplied. Copyright/access years are not publication years. This source supports formulation, not newly curated organism growth."
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1021.pdf",
+        "title": "1021. SODALIS GLOSSINIDIUS MEDIUM",
+        "notes": "source_type=culture_collection_page; discovery_mode=cross_reference; accessed_on=2026-10-08; accession=DSMZ1021; capture_sha256=1326bfc6d79f8ed3ad765909aa48d3e4efbb378516ada4a4087710860d8b7cc8. Authors and publication year are not supplied. Copyright/access years are not publication years. This source supports formulation, not newly curated organism growth."
+      },
+      {
+        "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1021_16929",
+        "title": "KOMODO - the Known Media Database",
+        "notes": "source_type=dataset; discovery_mode=catalog_page; accessed_on=2026-10-08; accession=K1021_16929; capture_sha256=2446cf829f82e9aa7720dcbce9cd38805324f329277d7d25a908b41e2d98492b. Authors and publication year are not supplied. Copyright/access years are not publication years. This source supports formulation, not newly curated organism growth."
+      }
+    ]
+  },
+  {
+    "case_index": 42,
+    "occurrence_id": "CM_OCC:d7bc4b0eb327f813c1e45e5261af734ffc50a3e01a4299e80b58c61e45ea817d",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/medium_1021_modified_for_dsm_16929.yaml",
+    "sha256": "502a85a5c5678cdd36283dceba01b3eca4699373969f7dbd2d332d9aa77da7c0",
+    "component_path": "ingredients/11",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "new borne calf serum",
+      "notes": "The table's generic Gram/Mol columns show 200.00 and 0.20 for serum; these do not establish density or a chemically meaningful molarity. No numeric concentration is adopted. The linked recipe supplies a 4:1 base/serum preparation ratio.",
+      "evidence": [
+        {
+          "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1021_16929",
+          "supports": "SUPPORT",
+          "snippet": "new borne calf serum new borne calf serum rich-serum# 200.00 0.20",
+          "explanation": "ingredients[11].concentration: The table's generic Gram/Mol columns show 200.00 and 0.20 for serum; these do not establish density or a chemically meaningful molarity. No numeric concentration is adopted. The linked recipe supplies a 4:1 base/serum preparation ratio. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=rows.new borne calf serum; accessed=2026-10-08T23:33:49.297981+00:00; capture SHA256=2446cf829f82e9aa7720dcbce9cd38805324f329277d7d25a908b41e2d98492b.\n\nAdditional exact excerpt: new borne calf serum new borne calf serum rich-serum# 200.00 0.20\ningredients[11].notes: The table's generic Gram/Mol columns show 200.00 and 0.20 for serum; these do not establish density or a chemically meaningful molarity. No numeric concentration is adopted. The linked recipe supplies a 4:1 base/serum preparation ratio. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=rows.new borne calf serum; accessed=2026-10-08T23:33:49.297981+00:00; capture SHA256=2446cf829f82e9aa7720dcbce9cd38805324f329277d7d25a908b41e2d98492b.\n\nAdditional exact excerpt: Gram & Mol amounts are per Liter of medium.\ningredients[11].notes: The explicit table header establishes the per-liter basis for dry-ingredient mass amounts, not a valid serum mass/molar conversion. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=original recipe table/text; accessed=2026-10-08T23:33:49.297981+00:00; capture SHA256=2446cf829f82e9aa7720dcbce9cd38805324f329277d7d25a908b41e2d98492b."
+        },
+        {
+          "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1021.pdf",
+          "supports": "SUPPORT",
+          "snippet": "Sterilize solution A and B separately at 121\uf0b0C for 20 min. Cool to 50\uf0b0C, then combine. To\n4 parts of the above, add 1 part sterile foetal or new borne calf serum. Liquid medium\nshould be filter sterilized instead of autoclaved.",
+          "explanation": "ingredients[11].notes: The KOMODO Instructions link identifies this preparation protocol. Retain its serum ratio as text; no density is assumed. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=original recipe table/text; accessed=2026-10-08T23:33:46.995198+00:00; capture SHA256=1326bfc6d79f8ed3ad765909aa48d3e4efbb378516ada4a4087710860d8b7cc8."
+        }
+      ]
+    },
+    "recipe_notes": "Source: KOMODO ModelSEED | ID: 1021_16929 | DSMZ Medium: 1021 (mediadive.medium:1021) | Aerobic: No\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nThe false LB constituent expansion is withdrawn. Each source's actual hydrolysate and preparation scope is retained. Existing unrelated chemical annotations and history are preserved, not recertified; no taxa-media growth association is added.\n\nWithdraw the copied pH 8.0 assertion: this variant's own page has no pH value. The linked protocol's Solution A adjustment is not a final variant pH measurement.",
+    "recipe_references": [
+      {
+        "reference": "https://komodo.modelseed.org/komodo/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=1021_16929",
+        "title": "KOMODO - the Known Media Database",
+        "notes": "source_type=dataset; discovery_mode=catalog_page; accessed_on=2026-10-08; accession=K1021_16929; capture_sha256=2446cf829f82e9aa7720dcbce9cd38805324f329277d7d25a908b41e2d98492b. Authors and publication year are not supplied. Copyright/access years are not publication years. This source supports formulation, not newly curated organism growth."
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1021.pdf",
+        "title": "1021. SODALIS GLOSSINIDIUS MEDIUM",
+        "notes": "source_type=culture_collection_page; discovery_mode=cross_reference; accessed_on=2026-10-08; accession=DSMZ1021; capture_sha256=1326bfc6d79f8ed3ad765909aa48d3e4efbb378516ada4a4087710860d8b7cc8. Authors and publication year are not supplied. Copyright/access years are not publication years. This source supports formulation, not newly curated organism growth."
+      }
+    ]
+  },
+  {
+    "case_index": 44,
+    "occurrence_id": "CM_OCC:40ac166a2c1d36a666e270dcefce2a12f95d8cb037c9ede3946b5cb41285b8a3",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/brain_heart_infusion_agar_upplemented_with_10_calf_blood_and_antibiotics.yaml",
+    "sha256": "65c5b93a39ab047aa4a148c910b9bdda9f573cd18a8298971e6526752a3fcc1c",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "calf blood",
+      "concentration": {
+        "value": "10",
+        "unit": "PERCENT_W_V"
+      },
+      "notes": "Role: Nutrient source"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2854",
+    "recipe_references": null
+  },
+  {
+    "case_index": 53,
+    "occurrence_id": "CM_OCC:92620717c4a8aa2b7f5df2468e314ad71b6e623724a49eff0340a0352e081a44",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2450_SP4-Z_Medium.yaml",
+    "sha256": "e066c99495a7fdf3e67d18f0ace001c31437ef348eca60c22e7f8346d211309d",
+    "component_path": "ingredients/7",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Swine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2450 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated swine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2450 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using glucose as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This liquid branch uses 130 ml distilled water per 200 ml.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2450"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 53,
+    "occurrence_id": "CM_OCC:9aa977a18f25d47b31dbabc45107a086f568ab362084709818341bd23eb3cdc6",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2451_SP4-Z_Medium.yaml",
+    "sha256": "7b5b9592ae2da3b252280b8cc7615fc4482ce73fc71a0165645e43da3a5368c2",
+    "component_path": "ingredients/7",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Swine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2451 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated swine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2451 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using arginine as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This liquid branch uses 130 ml distilled water per 200 ml.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2451"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 53,
+    "occurrence_id": "CM_OCC:4343f27221a6d83afde441344ed0a9133b8843b0a974c9a641e012c097413791",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2452_SP4-Z_Medium.yaml",
+    "sha256": "3b671fe502b8b8749b7825f42de479fd0a05e5e75acb018e733f091f8f8d19e2",
+    "component_path": "ingredients/8",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Swine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2452 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated swine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2452 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using glucose as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This agar-plate branch uses 126 ml distilled water per 200 ml, adds 2 g agar, and is held at 55 degrees C before supplements are added.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2452"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 53,
+    "occurrence_id": "CM_OCC:4e1cd9c889da11e6e8438e70d42d75e74ef6296d858ab807ecc6a0690e4127b9",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2453_SP4-Z_Medium.yaml",
+    "sha256": "f5d36baa49716a57e5f77499cf1cfeed001a4f5f116985ee8d4e04b2e487fbe2",
+    "component_path": "ingredients/8",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Swine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2453 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated swine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2453 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using arginine as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This agar-plate branch uses 126 ml distilled water per 200 ml, adds 2 g agar, and is held at 55 degrees C before supplements are added.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2453"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 54,
+    "occurrence_id": "CM_OCC:471b31c2cfe8b03f69ee537e78263ebccd561f58292483d7059385ea046b4850",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2366_BSK-Medium.yaml",
+    "sha256": "4a9be7a5fae3fc883204700360fcc8b9e73bfd2bf1602590739039db877670ba",
+    "component_path": "solutions/2/composition/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "bovine serum albumine, fract. V (important: Sigma No A9647)",
+      "concentration": {
+        "value": "350",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2366\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium403.pdf",
+    "recipe_references": null
+  },
+  {
+    "case_index": 61,
+    "occurrence_id": "CM_OCC:3e0aadbaa0ae7dcab5f79c9dc44a1a9d50008e0954cb574f6cd01592cc92b275",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2773_Serpulina_Murdochii_Medium.yaml",
+    "sha256": "8fcf1b996d58e72c6a3e8ed7d05291843f44709f43400425c174e85068c1ff48",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "sterile bovine serum (heat inactivated at 56\u00b0C for 45 min)",
+      "concentration": {
+        "value": "0.35",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2773\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf\n\nCommercial Product: Tryptic Soy Broth (TSB) / Tryptic Soy Agar (TSA)\nSupplier: Multiple suppliers (BD, Sigma, Neogen)\nCatalog: Multiple (22092 Sigma, 211825 BD)\nSource: https://en.wikipedia.org/wiki/Tryptic_soy_broth\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 61,
+    "occurrence_id": "CM_OCC:ebcb0a1ca478f236b716efe52a3a4dfd35866071331b5b29dd284baddba7f5eb",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2774_Serpulina_Murdochii_Medium.yaml",
+    "sha256": "99067cbb7992a5a69db0a4efe0a4cc1cc4b22be829e467e10598e7ecfc045613",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "sterile bovine serum (heat inactivated at 56\u00b0C for 45 min)",
+      "concentration": {
+        "value": "0.7",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2774\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf\n\nCommercial Product: Tryptic Soy Broth (TSB) / Tryptic Soy Agar (TSA)\nSupplier: Multiple suppliers (BD, Sigma, Neogen)\nCatalog: Multiple (22092 Sigma, 211825 BD)\nSource: https://en.wikipedia.org/wiki/Tryptic_soy_broth\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 67,
+    "occurrence_id": "CM_OCC:de1959b7226684601bf35410b6f8c93fdb1f8711dc0677c9689979117e25c720",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/KOMODO_78b_medium_FOR_TREPONEMA_PARVUM.yaml",
+    "sha256": "b584710b56ae445c247abeccb6640906c83b5903a20b31856a0048ea54898a63",
+    "component_path": "ingredients/10",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal or newborn calf serum",
+      "source": "KOMODO Medium 78b",
+      "notes": "KOMODO Medium 78b lists 9.76 g/L Fetal or newborn calf serum in the final-component table.",
+      "concentration": {
+        "value": "9.76",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: KOMODO ModelSEED | ID: 78b | DSMZ Medium: 78b (mediadive.medium:78b) | Aerobic: Yes",
+    "recipe_references": [
+      {
+        "reference": "https://komodo.modelseed.org/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=78b"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78b.pdf"
+      },
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/78b"
+      }
+    ]
+  },
+  {
+    "case_index": 67,
+    "occurrence_id": "CM_OCC:471a3a3d18117446e8250ca5fdadd405d0b2e3b6b5604f51da686e01bbe7334b",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/for_dsm_16260.yaml",
+    "sha256": "115f66073d67ca05f95270c33fafd95941044355502b2f6bf617a27053976870",
+    "component_path": "ingredients/12",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal or newborn calf serum",
+      "source": "KOMODO Medium 78b.1",
+      "notes": "KOMODO Medium 78b.1 lists 9.57 g/L Fetal or newborn calf serum in the final-component table.",
+      "concentration": {
+        "value": "9.57",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: KOMODO ModelSEED | ID: 78b.1 | DSMZ Medium: 78b (mediadive.medium:78b) | Aerobic: Yes",
+    "recipe_references": [
+      {
+        "reference": "https://komodo.modelseed.org/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=78b.1"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78b.pdf"
+      },
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/78b"
+      }
+    ]
+  },
+  {
+    "case_index": 67,
+    "occurrence_id": "CM_OCC:982caa14d5e6408b388c81edf3ad2d11b125c064da07721be4538153b8dbd209",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/for_dsm_16369.yaml",
+    "sha256": "72c392c94bf95bacef1258e0d6713a45c466d9076d2f130acabb732b6b5b5400",
+    "component_path": "ingredients/7",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal or newborn calf serum",
+      "source": "KOMODO Medium 78b.2",
+      "notes": "KOMODO Medium 78b.2 lists 9.66 g/L Fetal or newborn calf serum in the final-component table.",
+      "concentration": {
+        "value": "9.66",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: KOMODO ModelSEED | ID: 78b.2 | DSMZ Medium: 78b (mediadive.medium:78b) | Aerobic: Yes",
+    "recipe_references": [
+      {
+        "reference": "https://komodo.modelseed.org/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=78b.2"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium78b.pdf"
+      },
+      {
+        "reference": "https://mediadive.dsmz.de/rest/medium/78b"
+      }
+    ]
+  },
+  {
+    "case_index": 68,
+    "occurrence_id": "CM_OCC:cafa3d4f5b16616a3903f7a936e2e12e7cda91b9538e80b4f8dac3e665c4221e",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/sazae_ygs.yaml",
+    "sha256": "f3466959e3517055b50c126584e757581e7a2d749fdef0c7daac840f16391a62",
+    "component_path": "ingredients/2",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Turban shell (sazae) meat cut",
+      "concentration": {
+        "value": "75.0",
+        "unit": "G_PER_L"
+      },
+      "source": "TOGO M1886 / NBRC Medium 1130",
+      "notes": "TOGO M1886 / NBRC Medium 1130 lists 75.0 g/L Turban shell (sazae) meat cut; this animal tissue is retained as an opaque component."
+    },
+    "recipe_notes": "TOGO M1886 / NBRC Medium 1130 lists Sazae YGS with 10.0 g/L Yeast extract, 1.0 L Seawater at 3% salinity, 75.0 g/L Turban shell (sazae) meat cut, 30.0 g/L Glucose, and 12.0 g/L Agar. Seawater and turban-shell meat are retained as opaque sourced components.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M1886"
+      },
+      {
+        "reference": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1130"
+      }
+    ]
+  },
+  {
+    "case_index": 69,
+    "occurrence_id": "CM_OCC:c9865bb7d0ac6a8ca72dfb816a1a18958c2cda37d6d33c820b7a6a498ea3b09d",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/trypticase_peptone_yeast_broth.yaml",
+    "sha256": "212e2baa8cabfee64465c0b871b6376a2c20388ec32dcd7837af7fdc7dada23e",
+    "component_path": "ingredients/8",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "phytone (BBL)",
+      "concentration": {
+        "value": "0.3",
+        "unit": "G_PER_L"
+      },
+      "notes": "Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2989",
+    "recipe_references": null
+  },
+  {
+    "case_index": 73,
+    "occurrence_id": "CM_OCC:6440c80f1f3d3a3d7dd3417110b22cf92e3ccf1ead7fc38c3ab07505b4594d9a",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/spiroplasma_medium.yaml",
+    "sha256": "5a7160dc1f0437d6f75441bbc022ac3917bf7c40d357e6d543932ef57c85bc8d",
+    "component_path": "solutions/3/composition/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Bakers\u2019 yeast (live, pressed, starch-free)",
+      "concentration": {
+        "value": "250.0",
+        "unit": "G_PER_L"
+      },
+      "source": "TOGO M2578",
+      "notes": "TOGO M2578 identifies Yeast Extract Solution as containing 250.0 g/L Bakers\u2019 yeast (live, pressed, starch-free)."
+    },
+    "recipe_notes": "TOGO M2578 defines Spiroplasma Medium with a basal medium containing 500 ml DI Water, 15 g optional Agar, 10 g Tryptone, and 11 g PPLO Broth without crystal violet. Its additive solution supplies 170 ml heat-inactivated fetal bovine serum, 20 ml 0.1% Phenol red solution, 100 ml 2% TC Yeastolate, 200 ml DI Water, 5 g Glucose, 50 ml Mycoplasma Growth Supplement made from 98 g CMRL-1066 in 1.0 L water, and 35 ml Yeast Extract Solution made from 250 g baker's yeast in 1.0 L water. The basal medium is adjusted to pH 7.3-7.4, autoclaved at 121 C for 15 minutes, combined with the filter-sterilized additive solution, and readjusted if needed to pH 7.35 +/- 0.1.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2578"
+      }
+    ]
+  },
+  {
+    "case_index": 77,
+    "occurrence_id": "CM_OCC:f2c452a0be7560dd478f96cb9e8b00989ba2492bd3f100e0ee845d6daf18deb7",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/columbia_blood_agar_containing_10_bovine_blood.yaml",
+    "sha256": "049c492537165e145a5fbbbe6d1a93e13d2a3f760f824f64af4233913e362491",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Columbia blood agar (Difco Laboratories, Detroit, Mich.)",
+      "concentration": {
+        "value": "1000",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2973",
+      "notes": "TOGO M2973 lists one liter of Columbia blood agar from Difco Laboratories."
+    },
+    "recipe_notes": "TOGO M2973 records Columbia blood agar containing 10% bovine blood.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2973"
+      }
+    ]
+  },
+  {
+    "case_index": 78,
+    "occurrence_id": "CM_OCC:32bac2b7c9950a8b366b52d5056ccb619dc0f5aa5b4537b672ada52b797f992f",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/modified_1_5_sws_casein_starch_medium.yaml",
+    "sha256": "816b12294fccdaf69eb23c38d61e830b06cc79bd6ca7fcd5fc7d5446c5d53b26",
+    "component_path": "ingredients/12",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Starch from corn (SIGMA)",
+      "concentration": {
+        "value": "2",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Carbon source; Properties: Organic compound, Defined component, Complex component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M1812\nOriginal source: NBRC - NBRC_M1042\nOriginal URL: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1042",
+    "recipe_references": null
+  },
+  {
+    "case_index": 79,
+    "occurrence_id": "CM_OCC:81b76fd0976f57695c636589f43cc98b11660c344f6379a0952a189c83b40056",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/basal_salts_medium.yaml",
+    "sha256": "caff240045d6453eaeaa273e718559a49f220e6c7214b58d07e862475c803aad",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "distilled or deionized water",
+      "concentration": {
+        "value": "1",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Solvating media; Properties: Defined component, Inorganic compound, Simple component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2877",
+    "recipe_references": null
+  },
+  {
+    "case_index": 82,
+    "occurrence_id": "CM_OCC:4a7e433405550ad0bb685f07ba56cffaa65e2cc2a8ae6a22b8ad6830eb980af4",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/sheep_blood_agar.yaml",
+    "sha256": "43c2a1e1f96bf829b1ef31b672bd578eeea45e716ac16bb21ec20cf3d6ae64ca",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "sheep blood agar",
+      "concentration": {
+        "value": "variable",
+        "unit": "VARIABLE"
+      },
+      "source": "TOGO M2510",
+      "notes": "TOGO M2510 names sheep blood agar but does not state an amount."
+    },
+    "recipe_notes": "TOGO M2510 records overnight growth on sheep blood agar at 37 C in 5% CO2; the source does not disclose the sheep blood agar formulation.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2510"
+      }
+    ]
+  },
+  {
+    "case_index": 83,
+    "occurrence_id": "CM_OCC:0e26c99afe2316e12d2b4771b00920cb0f2e1edc9a7580b9b7e70a8d05677e6a",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1305_HELICOBACTER_MEDIUM.yaml",
+    "sha256": "15569836a459025c57f32f1f3d40fcb50a4ae95460285b6bb610584dad434d44",
+    "component_path": "ingredients/3",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (Biowest; heat inactivated)",
+      "concentration": {
+        "value": "200",
+        "unit": "ML_PER_L"
+      },
+      "source": "JCM Medium 1305",
+      "notes": "JCM Medium 1305 aseptically adds 20.0 ml heat-inactivated fetal bovine serum from Biowest; this row is normalized 10x to one liter."
+    },
+    "recipe_notes": "Source: JCM | Link: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1305",
+    "recipe_references": [
+      {
+        "reference": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1305"
+      }
+    ]
+  },
+  {
+    "case_index": 83,
+    "occurrence_id": "CM_OCC:920663825b612501c0e45c3242650350ed3d0c33d3da079c71f7cab17131913b",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M1402_Helicobacter_Medium.yaml",
+    "sha256": "6e467731118fea325f8a4ce5f1cc47ffa2a10f8dd2a509d78c4869734130c1ad",
+    "component_path": "ingredients/3",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (Biowest; heat inactivated)",
+      "concentration": {
+        "value": "200",
+        "unit": "ML_PER_L"
+      },
+      "source": "JCM Medium 1305",
+      "notes": "JCM Medium 1305 aseptically adds 20.0 ml heat-inactivated fetal bovine serum from Biowest; this row is normalized 10x to one liter."
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M1402\nOriginal source: JCM - JCM_M1305\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1305",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M1402"
+      },
+      {
+        "reference": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1305"
+      }
+    ]
+  },
+  {
+    "case_index": 89,
+    "occurrence_id": "CM_OCC:5c19d56c805cf26ad4dc8f6b769b34cc11a511ff46bcee477a4d1b2ceed5f37e",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/cultivation_medium_for_sf1ep_cells_for_treponema_pallidum.yaml",
+    "sha256": "b4d50521d6d0259511dfad22aec0549b8b24441c94f168f6e10b0950fbe2b87b",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Eagle's MEM",
+      "concentration": {
+        "value": "884.956",
+        "unit": "ML_PER_L"
+      },
+      "source": "DSMZ Medium 1850",
+      "notes": "DSMZ Medium 1850 lists 500 ml Eagle's MEM (Sigma M4655) in a 565 ml Sf1Ep medium batch.",
+      "supplier_catalog": {
+        "supplier_name": "Sigma",
+        "catalog_number": "M4655"
+      }
+    },
+    "recipe_notes": "DSMZ Medium 1850 records a Sf1Ep cottontail rabbit epithelial cell medium prepared from Eagle's MEM, MEM Non-Essential Amino Acids, L-glutamine, sodium pyruvate, and heat-inactivated fetal bovine serum, then filter-sterilized and stored at 4 C.",
+    "recipe_references": [
+      {
+        "reference": "doi: 10.1002/cpz1.44"
+      },
+      {
+        "reference": "https://mediadive.dsmz.de/medium/1850"
+      }
+    ]
+  },
+  {
+    "case_index": 93,
+    "occurrence_id": "CM_OCC:fe8835da6cf255c9b18df06389c746e964415a9ab9fee363e1294a9f95586dd3",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/blood_agar_medium.yaml",
+    "sha256": "51c32a8a6569f29c775ad959a169ad706957d5a2af2ab42412dea7529a239549",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Blood agar medium",
+      "concentration": {
+        "value": "1000",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2276",
+      "notes": "TOGO M2276 lists one liter of Blood agar medium as an opaque blood agar plate."
+    },
+    "recipe_notes": "TOGO M2276 records one liter of Blood agar medium as an opaque ready-to-use blood agar plate.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2276"
+      }
+    ]
+  },
+  {
+    "case_index": 97,
+    "occurrence_id": "CM_OCC:e08827afcd07604483548ff495d8efb3cd859eeb4ac9289c1c201dae3e24f7ef",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2488_YTP-2_medium.yaml",
+    "sha256": "498f197ae65521e9f64154211fa5540ca3498b313794e994135f4f277309795f",
+    "component_path": "ingredients/8",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "clarified tomato juice",
+      "concentration": {
+        "value": "2",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Growth factor; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2488",
+    "recipe_references": null
+  },
+  {
+    "case_index": 97,
+    "occurrence_id": "CM_OCC:765bc2663f5aa9dc0f298a8f8d8fd6d4c1332d8163ed5d9d17327feb9d680bf2",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/ytp_2_media.yaml",
+    "sha256": "ab0d7a5ccc9acc802e824348902f6757c545e3c337adcbbe9db588769250618a",
+    "component_path": "ingredients/8",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "clarified tomato juice",
+      "concentration": {
+        "value": "2",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Growth factor; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2430",
+    "recipe_references": null
+  },
+  {
+    "case_index": 98,
+    "occurrence_id": "CM_OCC:ac2d57de6cd4d431944286110f92595089bed5cb98c7a5fab9754c1005e54106",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2764_BHI_w_heat-inactivated_Fetal_Bovine_Serum_and_Glucose.yaml",
+    "sha256": "5840e03733454a10f1cfbbc6c32285e9f078908959ad85501ec837e04d49124d",
+    "component_path": "ingredients/10",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Heat inactivated fetal bovine serum",
+      "concentration": {
+        "value": "100",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2764\nOriginal URL: https://www.atcc.org/~/media/6961826D153043B3A8D59D0D37CEF5C8.ashx\n\nCommercial Product: Brain Heart Infusion\nSupplier: Difco/BD\nCatalog: 237500\nSource: https://microbenotes.com/brain-heart-infusion-bhi-agar/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 98,
+    "occurrence_id": "CM_OCC:697d300772a0715bc7005709e97926e42471c39c2a13066b7d08d538a3c479b5",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/bhi_w_heat_inactivated_fetal_bovine_serum_and_glucose.yaml",
+    "sha256": "28d9983e10a384f8297818f1be3e77b1098ac1f52fb9b1ae4a6418dbd2b36446",
+    "component_path": "ingredients/10",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Heat inactivated fetal bovine serum",
+      "concentration": {
+        "value": "100",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2622\nOriginal URL: https://www.atcc.org/~/media/6961826D153043B3A8D59D0D37CEF5C8.ashx\n\nCommercial Product: Brain Heart Infusion\nSupplier: Difco/BD\nCatalog: 237500\nSource: https://microbenotes.com/brain-heart-infusion-bhi-agar/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 103,
+    "occurrence_id": "CM_OCC:28eac58d71b66e54c4158b08fdf9b617726981a5e174170f45164c6422d59145",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/modified_pleuropneumonia_like_organism_pplo_medium.yaml",
+    "sha256": "64209901baf0449ac393ef5832db36752a159d175a769e2e8d8c640769334ba9",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Inactivated horse serum (Hyclone)",
+      "concentration": {
+        "value": "20.0",
+        "unit": "PERCENT_V_V"
+      },
+      "source": "TOGO M2887",
+      "notes": "TOGO M2887 lists 20% Inactivated horse serum from Hyclone; this serum product is retained as an opaque component."
+    },
+    "recipe_notes": "TOGO M2887 reports that Mycoplasma was cultured in modified pleuropneumonia-like organism medium supplemented with 20% inactivated horse serum from Hyclone, 10% yeast extract, thallium acetate at 0.125 mg/ml, and penicillin at 200 IU/ml.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2887"
+      }
+    ]
+  },
+  {
+    "case_index": 104,
+    "occurrence_id": "CM_OCC:e05b9ba18a1f74740590bae55cc58a84e38dda7f69de8cb2bcbf35d4b5a91b95",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/km2_cell_free_medium.yaml",
+    "sha256": "8d6882bfe52f9bcbbfa24ebf326757b0c4e12f2e4cac4e0c73d3a597ece8b295",
+    "component_path": "ingredients/8",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Pig serum (Invitrogen)",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2927\n\nCommercial Product: Brain Heart Infusion\nSupplier: Difco/BD\nCatalog: 237500\nSource: https://microbenotes.com/brain-heart-infusion-bhi-agar/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.",
+    "recipe_references": null
+  },
+  {
+    "case_index": 105,
+    "occurrence_id": "CM_OCC:be864794c66faf443847e9beaa96371540a6a541308ec7540a290806cf81ede9",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2467_HI_Plus_Medium_w_YE_3.yaml",
+    "sha256": "740d03e000d3e58a0788edbd02ba8b8859da31df253cdef842c456ecd007fe92",
+    "component_path": "ingredients/3",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Horse serum (heat-inactivated)",
+      "concentration": {
+        "value": "200.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "ATCC Medium 243",
+      "notes": "ATCC Medium 243 adds 200.0 mL heat-inactivated horse serum after the base medium cools to 55 C."
+    },
+    "recipe_notes": "TOGO M2467 cites ATCC Medium 243; ATCC Medium 243 defines HI Plus Medium w/ YE #3 as Heart Infusion Broth base supplemented with heat-inactivated horse serum and Yeast Extract #3.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2467"
+      },
+      {
+        "reference": "https://www.atcc.org/~/media/98B9A2419DDE432EBF35ED01CD98A88E.ashx"
+      }
+    ]
+  },
+  {
+    "case_index": 105,
+    "occurrence_id": "CM_OCC:a448d206a5c11451cc17edc8b5f7f4770ded7640973aad3cccb555569177ebb2",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/hi_plus_medium_w_ye_3.yaml",
+    "sha256": "79a266aca25538361624dd01a8fda1bdc52dd62f1cc9d6b3b81fe6da23285bf8",
+    "component_path": "ingredients/3",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Horse serum (heat-inactivated)",
+      "concentration": {
+        "value": "200.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "ATCC Medium 243",
+      "notes": "ATCC Medium 243 adds 200.0 mL heat-inactivated horse serum after the base medium cools to 55 C."
+    },
+    "recipe_notes": "TOGO M2177 cites ATCC Medium 243; ATCC Medium 243 defines HI Plus Medium w/ YE #3 as Heart Infusion Broth base supplemented with heat-inactivated horse serum and Yeast Extract #3.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2177"
+      },
+      {
+        "reference": "https://www.atcc.org/~/media/98B9A2419DDE432EBF35ED01CD98A88E.ashx"
+      }
+    ]
+  },
+  {
+    "case_index": 109,
+    "occurrence_id": "CM_OCC:39cdeef5246a1a106059be16b4e818a4f96b36c0b1050526bb862ed37363f862",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2450_SP4-Z_Medium.yaml",
+    "sha256": "e066c99495a7fdf3e67d18f0ace001c31437ef348eca60c22e7f8346d211309d",
+    "component_path": "ingredients/5",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2450 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated fetal bovine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2450 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using glucose as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This liquid branch uses 130 ml distilled water per 200 ml.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2450"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 109,
+    "occurrence_id": "CM_OCC:9fd58aea12723829d5ad6adfa4d595418708e22980115c305cb003f0bd239eb4",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2451_SP4-Z_Medium.yaml",
+    "sha256": "7b5b9592ae2da3b252280b8cc7615fc4482ce73fc71a0165645e43da3a5368c2",
+    "component_path": "ingredients/5",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2451 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated fetal bovine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2451 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using arginine as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This liquid branch uses 130 ml distilled water per 200 ml.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2451"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 109,
+    "occurrence_id": "CM_OCC:e464ab3487eebc4af14c3636ac292f5531745231941f59e32b1eba6e2afd41fa",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2452_SP4-Z_Medium.yaml",
+    "sha256": "3b671fe502b8b8749b7825f42de479fd0a05e5e75acb018e733f091f8f8d19e2",
+    "component_path": "ingredients/6",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2452 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated fetal bovine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2452 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using glucose as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This agar-plate branch uses 126 ml distilled water per 200 ml, adds 2 g agar, and is held at 55 degrees C before supplements are added.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2452"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 109,
+    "occurrence_id": "CM_OCC:d57aad9618fa1fd22027c61ca2d647883cfee36ca3c1dcebf57e28c4309716b0",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2453_SP4-Z_Medium.yaml",
+    "sha256": "f5d36baa49716a57e5f77499cf1cfeed001a4f5f116985ee8d4e04b2e487fbe2",
+    "component_path": "ingredients/6",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (heat-inactivated)",
+      "concentration": {
+        "value": "85.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2453 / DSMZ Medium 1076b",
+      "notes": "DSMZ Medium 1076b lists 17 ml heat-inactivated fetal bovine serum per 200 ml; normalized to 85.0 ml/L and retained without an ontology grounding."
+    },
+    "recipe_notes": "TOGO M2453 / DSMZ Medium 1076b records the DSMZ Medium 1076b SP4-Z branch using arginine as its energy source. DSMZ Medium 1076b is a 200 ml formula that replaces yeast extract from normal SP4 with fish-sperm DNA, adjusts pH to 7.4, autoclaves at 121 degrees C for 15 minutes, aseptically adds CMRL-1066, autoclaved Yeastolate, heat-inactivated fetal bovine serum, and heat-inactivated swine serum, and then adds either glucose or arginine HCl; the two energy sources should not be combined. This agar-plate branch uses 126 ml distilled water per 200 ml, adds 2 g agar, and is held at 55 degrees C before supplements are added.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2453"
+      },
+      {
+        "reference": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf"
+      }
+    ]
+  },
+  {
+    "case_index": 109,
+    "occurrence_id": "CM_OCC:516b06abb7a1ff43865531ab10fc505a16597ee73a36aebfadacedd0367d870f",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/m1d_medium.yaml",
+    "sha256": "6b0a69b8bcff7f68386bb3d35aa1458de0177fb36facf7071ad65ecb2694343e",
+    "component_path": "ingredients/5",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (heat-inactivated)",
+      "concentration": {
+        "value": "50",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M1591\nOriginal source: NBRC - NBRC_M400\nOriginal URL: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=400",
+    "recipe_references": null
+  },
+  {
+    "case_index": 109,
+    "occurrence_id": "CM_OCC:dbf4dd5af4921d5dd1386bf0f37c43a46f50e5c478dc37f276666f67103855c5",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/spiroplasma_medium.yaml",
+    "sha256": "5a7160dc1f0437d6f75441bbc022ac3917bf7c40d357e6d543932ef57c85bc8d",
+    "component_path": "ingredients/4",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (heat-inactivated)",
+      "concentration": {
+        "value": "170.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2578",
+      "notes": "TOGO M2578 lists 170 ml/L heat-inactivated fetal bovine serum; this serum is retained as an opaque complex component.",
+      "term": {
+        "id": "mediadive.compound:954",
+        "label": "Fetal bovine serum"
+      }
+    },
+    "recipe_notes": "TOGO M2578 defines Spiroplasma Medium with a basal medium containing 500 ml DI Water, 15 g optional Agar, 10 g Tryptone, and 11 g PPLO Broth without crystal violet. Its additive solution supplies 170 ml heat-inactivated fetal bovine serum, 20 ml 0.1% Phenol red solution, 100 ml 2% TC Yeastolate, 200 ml DI Water, 5 g Glucose, 50 ml Mycoplasma Growth Supplement made from 98 g CMRL-1066 in 1.0 L water, and 35 ml Yeast Extract Solution made from 250 g baker's yeast in 1.0 L water. The basal medium is adjusted to pH 7.3-7.4, autoclaved at 121 C for 15 minutes, combined with the filter-sterilized additive solution, and readjusted if needed to pH 7.35 +/- 0.1.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2578"
+      }
+    ]
+  },
+  {
+    "case_index": 110,
+    "occurrence_id": "CM_OCC:f11ea6111be9910f4176554e2780641b8e7fc92cfebcad04c4474be749425de3",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/cultivation_medium_for_sf1ep_cells_for_treponema_pallidum.yaml",
+    "sha256": "b4d50521d6d0259511dfad22aec0549b8b24441c94f168f6e10b0950fbe2b87b",
+    "component_path": "ingredients/4",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum, heat inactivated",
+      "concentration": {
+        "value": "88.4956",
+        "unit": "ML_PER_L"
+      },
+      "source": "DSMZ Medium 1850",
+      "notes": "DSMZ Medium 1850 lists 50 ml heat-inactivated fetal bovine serum in a 565 ml Sf1Ep medium batch."
+    },
+    "recipe_notes": "DSMZ Medium 1850 records a Sf1Ep cottontail rabbit epithelial cell medium prepared from Eagle's MEM, MEM Non-Essential Amino Acids, L-glutamine, sodium pyruvate, and heat-inactivated fetal bovine serum, then filter-sterilized and stored at 4 C.",
+    "recipe_references": [
+      {
+        "reference": "doi: 10.1002/cpz1.44"
+      },
+      {
+        "reference": "https://mediadive.dsmz.de/medium/1850"
+      }
+    ]
+  },
+  {
+    "case_index": 118,
+    "occurrence_id": "CM_OCC:e2fb4570a3e235bfd97966377da50f3e57abc01ce145571443f38c190c76b934",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/columbia_blood_agar_oxoid.yaml",
+    "sha256": "2db87e5a52686a3592ac32eafdd18b2a9ddb64f849469d73f06f9483ad23e0a8",
+    "component_path": "ingredients/1",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Columbia blood agar (Oxoid)",
+      "concentration": {
+        "value": "39",
+        "unit": "G_PER_L"
+      }
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M2224",
+    "recipe_references": null
+  },
+  {
+    "case_index": 129,
+    "occurrence_id": "CM_OCC:d9f8e01bfa615dc77d25766fa89daa4e4d04dd169a43994fe9e0fe40b3f63f06",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/sp_4_medium.yaml",
+    "sha256": "fe7adfd6fbf8863d174a832f0602a7be6ae820442801b17c5d73dd873f260e7c",
+    "component_path": "ingredients/5",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Fetal bovine serum (heated 56\u00b0C- I hour)",
+      "concentration": {
+        "value": "170.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M2964",
+      "notes": "TOGO M2964 lists 170 ml/L fetal bovine serum heated at 56 C for 1 hour.",
+      "term": {
+        "id": "mediadive.compound:954",
+        "label": "Fetal bovine serum"
+      }
+    },
+    "recipe_notes": "TOGO M2964 defines SP-4 medium with 560 ml De-ionized water, 5 g Glucose, 10 g Bacto Tryptone, 5.3 g Bacto Peptone, 3.5 g Mycoplasma Broth Base, 170 ml heat-treated Fetal bovine serum, 20 ml 0.1% Phenol red, 100 ml 2% Difco Yeastolate, 10 ml Penicillin G at 100000 units/ml, optional 5 ml Polymyxin B at 100000 units/ml, 35 ml Fresh yeast extract at 25%, 50 ml 1:50 Thallium acetate, and 50 ml CMRL 1066 tissue culture supplement. The TOGO comments direct adjusting to pH 7.5-7.6, sterilizing at 121 C for 15 minutes, and record a final pH of 7.4-7.5.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2964"
+      }
+    ]
+  },
+  {
+    "case_index": 131,
+    "occurrence_id": "CM_OCC:784b022da170da75ebf2f5b23b5d2fe1f34ac81ccab8e063a6fc0c62fa09081d",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M937_Modified_BSK_Medium.yaml",
+    "sha256": "bdf4eebf07d22ecde191a4a359433415bab7b4b2612315b8dc8798ad0638811c",
+    "component_path": "ingredients/7",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Rabbit serum sterile non--hemolyzed young (Pel--Freez code No. 31125)",
+      "concentration": {
+        "value": "40",
+        "unit": "G_PER_L"
+      },
+      "notes": "Role: Nutrient source; Properties: Undefined component"
+    },
+    "recipe_notes": "Source: https://togomedium.org/medium/M937\nOriginal source: JCM - JCM_M896\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=896",
+    "recipe_references": null
+  },
+  {
+    "case_index": 132,
+    "occurrence_id": "CM_OCC:42366638c78ef4bc9317e6cba3f1ba393cf8c5ed9329c005154a58eeb88b1bf5",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/modified_hayflick_medium.yaml",
+    "sha256": "dabc9e8a8adbbf4526e178af3f8fed3181e97bcb3e28d847a3950c35c3ded5f2",
+    "component_path": "ingredients/3",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "calf thymus DNA (Sigma, Type I)",
+      "concentration": {
+        "value": "12.0",
+        "unit": "ML_PER_L"
+      },
+      "source": "TOGO M1485 / NBRC Medium 267",
+      "notes": "TOGO M1485 / NBRC Medium 267 lists 12 ml/L calf thymus DNA from Sigma Type I as a 0.2% w/v stock; this source-qualified DNA product remains intentionally unmapped."
+    },
+    "recipe_notes": "TOGO M1485 imports NBRC Medium 267 as Modified Hayflick Medium. NBRC 267 lists 25 g Bacto Heart Infusion Broth, 700 ml distilled water, 15 g Bacto Agar if needed, pH 7.8, autoclaving at 121 C for 20 min, and aseptic addition of 200 ml heat-inactivated horse serum, 100 ml fresh yeast extract, 12 ml calf thymus DNA, 10 ml thallium acetate, and 25 ml Penicillin G.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M1485"
+      },
+      {
+        "reference": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=267"
+      }
+    ]
+  },
+  {
+    "case_index": 134,
+    "occurrence_id": "CM_OCC:71402743ab0021c9d1eadaced47469662e3ce0bafbdbf406f19325bb48943282",
+    "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/tryptose_blood_agar_base.yaml",
+    "sha256": "cb9e5c4f96491c7bab49d13b1c66d136f1209c05c664d5fc10bad9f593a36454",
+    "component_path": "ingredients/0",
+    "raw_component_verified": true,
+    "target": {
+      "preferred_term": "Tryptose blood agar base (Difco Laboratories, Detroit, MI)",
+      "concentration": {
+        "value": "variable",
+        "unit": "VARIABLE"
+      },
+      "source": "TOGO M2512",
+      "notes": "TOGO M2512 names Tryptose blood agar base from Difco Laboratories without stating an amount."
+    },
+    "recipe_notes": "TOGO M2512 records Tryptose blood agar base from Difco Laboratories without a disclosed amount or internal formulation.",
+    "recipe_references": [
+      {
+        "reference": "https://togomedium.org/medium/M2512"
+      }
+    ]
+  }
+]

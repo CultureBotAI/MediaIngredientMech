@@ -1,0 +1,32 @@
+identifier: kgmicrobe.ingredient:komodo_485_ore_material
+preferred_term: KOMODO485 ore material (pyrite given as example)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:komodo_485_ore_material
+  ontology_label: KOMODO485 ore material (pyrite given as example)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://komodo.modelseed.org/servlet/KomodoTomcatServerSideUtilitiesModelSeed?MediaInfo=485
+    notes: The KOMODO485 primary table defines an ore-material input and gives pyrite
+      only as an example. Bounded owner lookup finds no owner for the source-described
+      material. A local undefined-mixture proposal preserves that source-level ore
+      category, without asserting an individual specimen, pyrite identity, mineralogy
+      or composition. Missing specimen analysis limits specificity but does not prevent
+      retaining the named source-material scope.
+synonyms: []
+curation_history:
+- timestamp: '2026-11-08T05:59:53.051467+00:00'
+  curator: all_unmatched_worker10_successor_source_review
+  action: CREATED_FROM_SOURCE_REVIEW
+  changes: The KOMODO485 primary table defines an ore-material input and gives pyrite
+    only as an example. Bounded owner lookup finds no owner for the source-described
+    material. A local undefined-mixture proposal preserves that source-level ore category,
+    without asserting an individual specimen, pyrite identity, mineralogy or composition.
+    Missing specimen analysis limits specificity but does not prevent retaining the
+    named source-material scope. Isolated proposal only; no owner, mapping-output
+    or role release.
+  new_status: MAPPED
+  llm_assisted: true

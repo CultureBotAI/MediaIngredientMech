@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/kg_research",
+  "reviewed_at": "2026-11-08T06:10:00.503473+00:00",
+  "initial_review": {
+    "path": "successor-v1/reviews/kg-bio-review-v1.json",
+    "sha256": "bfb0e805e92d8f2ff158d20e72c1215411e70606d5634e3964b129b95e181c49"
+  },
+  "findings": [
+    {
+      "finding_id": "m4655-known-components",
+      "case_indices": [
+        89
+      ],
+      "proposal_ids": [
+        "sv1-bio-eagle_mem_sigma_m4655"
+      ],
+      "severity": "major",
+      "status": "open_in_initial_bytes",
+      "after_sha256": "6672ae4618553ac914fb74951d8df0c9afbede780c1922a959855bf65ff5217a",
+      "description": "Manufacturer specification explicitly states Earle salts, L-glutamine and sodium bicarbonate; NAMED_MEDIUM payload omits all partonomy despite known inputs. Add bounded PARTIAL constituent assertion without invented fullformula, quantities or receiving-medium supplements."
+    },
+    {
+      "finding_id": "newowner-null-before",
+      "severity": "minor",
+      "status": "open_in_initial_metadata",
+      "description": "OUTCOME-CONTRACT-v1 requires explicit null before_sha256 for new_owner; author newownerentries omit field. Addnull without payloadchanges."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "successor-v1/bio/supplier-web-capture.json",
+      "sha256": "8433618b1933d43a617074fe6e8c41d2e15114ff775bc22a787d6553187b32d5",
+      "locator": "M4655 specification lines47-55; product name directly lists three material inputs"
+    }
+  ]
+}
