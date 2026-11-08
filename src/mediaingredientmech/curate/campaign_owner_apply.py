@@ -8,8 +8,9 @@ Inherited surviving collision pairs can receive same-path edits only with their
 identifiers, preferred names and statuses preserved (#1251). Reviewed owners can
 leave a family, but no new colliding pair inherits the old family exception.
 Existing REJECTED owners can receive substantive same-path, same-key maintenance
-while remaining REJECTED (#1252). Neither exception approves identity, a merge,
-reactivation or demotion; other status/path and provenance guards still apply.
+while remaining REJECTED (#1252). An existing UNMAPPED owner may also be rejected
+at its unchanged unmapped path with its keys preserved. Neither route approves
+identity, a merge, reactivation or demotion; other provenance guards still apply.
 """
 
 from __future__ import annotations
@@ -755,15 +756,24 @@ def _validate_records(root, operations, payloads, before_bytes):
         history = data.get("curation_history")
         if not isinstance(history, list) or not history:
             raise ValueError("Missing curation history")
-        # #1252: inherited tombstones may be maintained, never revived or
-        # recreated through this exception. Other category rules stay intact.
+        # #1252: maintain existing tombstones or reject an existing unmapped
+        # owner in place. Neither route permits revival or a new tombstone.
         if "REJECTED" in (old.get("mapping_status"), data.get("mapping_status")):
+            rejected_maintenance = (
+                old.get("mapping_status") == data.get("mapping_status") == "REJECTED"
+            )
+            unmapped_rejection = (
+                old.get("mapping_status") == "UNMAPPED"
+                and data.get("mapping_status") == "REJECTED"
+                and source is not None
+                and source.startswith("data/ingredients/unmapped/")
+            )
             require(
                 entry["kind"] == "edit"
                 and source == entry["source_record"]
-                and old.get("mapping_status") == data.get("mapping_status") == "REJECTED"
+                and (rejected_maintenance or unmapped_rejection)
                 and retained_keys,
-                "Rejected owner requires same-path, same-key rejected maintenance",
+                "Rejected owner requires same-path, same-key maintenance or unmapped rejection",
             )
         else:
             require(
