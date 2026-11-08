@@ -1,0 +1,382 @@
+{
+  "reviewer": "/root/mg_independent_reviewer",
+  "at": "2026-11-08T06:06:55.398630+00:00",
+  "scope": "All17 occurrence outcomes authored by /root/mg_occurrence_author, different agent than reviewer; pure identity, stockstrength, primaryapplicability, rawcontext preservation and source-specific missingrequirements.",
+  "reviewed_files": {
+    "successors/issue1203-v1/research/occurrence-assessment.json": "18cf4d0ad93060c4b8ea60bbc6d5998d1bd1581f6dadeac4ea8cd628c119f707",
+    "successors/issue1203-v1/research/occurrence-evidence.json": "a6034af4e02f8639f77f46c5c98ac41554e66ff6481a2dbc867f6fe8c977c1a9",
+    "successors/issue1203-v1/review/independent-primary-inspection.json": "5f50e1678cf2e0875aefeaf136adebe87175bef7777800e13f84f9e625c216ae"
+  },
+  "result": "PASS_WITH_EXPLICIT_LIMITATIONS",
+  "occurrence_reviews": [
+    {
+      "occurrence_id": "CM_OCC:219923d53223227230c96a3b5fda3bc9c3cfcda47beb7b418f17384c9d397280",
+      "recipe_id": "CultureMech:001268",
+      "source_file_sha256": "bfa1c669716a399910be35aad97182931a325af1717567b1c96870deb22851a2",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "existing_identity_or_alias",
+      "stock_concentration": null,
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "mixedbasalstock denominator",
+          "requirement": "Obtain explicit finalvolume of the20x basal saltstock; DSMZ1845 does notstate it and MediaDive6448 volume=null. Do not infer1L from g_l7,20x,50mL use, or the frozen7G_PER_L.",
+          "blocks": "7g/L stock orfinal-medium dose assertion, not CHEBI31795 component identity."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Resolve only this source-bound solute occurrence; do not make sharedrawlabel globally resolve all17 to pureheptahydrate.",
+        "CultureMech001268 flattened the basalstock constituent into root ingredients/2. Restore source hierarchy/retain nested component qualification before asserting it is a direct main-medium ingredient; no new evidence is needed to establish that hierarchy."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:6fc5787afd250e78cdd26437d060d9debbf746d3cc3b1dddc9e174cdf51229b7",
+      "recipe_id": "CultureMech:001070",
+      "source_file_sha256": "b152994707a3f86d5641e702b5f0a70e4b0579e95f47bc0982a98feb71b5a17d",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "7.5",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal7.5g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:fb516432f04f96ca8efae26efe7bbac411b5ca81636af58aac5e2e11ba4c650f",
+      "recipe_id": "CultureMech:001157",
+      "source_file_sha256": "1fb8d3c1711803ee759785d2f9e857c322ce483d84a90bc81c3765d1009570dc",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "350",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal350g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:2bd290d52fb3149932cfb9010e6fc8a1b1528e26daf6fb4ff66309f6a03fda07",
+      "recipe_id": "CultureMech:001159",
+      "source_file_sha256": "764d7af422f58d7c25397ea75c055e2d540613929694b28269fa2639d16503f2",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "350",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal350g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        },
+        {
+          "scope": "dose and final-medium concentration",
+          "requirement": "Obtain authoritative clarification for DSMZ1677/MediaDive5781 on the3.3 addition unit and corresponding final-medium amount; current PDF/API disagree. Do not select a unit by analogy to a related medium or treat frozen3.3G_PER_L as correction.",
+          "blocks": "Dose/final-medium conversion and sourcequantity release; does not block explicitly declared350g/L nominalstock identity."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:ccc700b133d7483e49cb2b6abf2c82e8ef963bf99f28ea4ffb3a94c42e10e602",
+      "recipe_id": "CultureMech:001160",
+      "source_file_sha256": "838c9425309980c821761741f788f3cf26e39de53df5ca65737eb3048b319ff0",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "350",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal350g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        },
+        {
+          "scope": "dose and final-medium concentration",
+          "requirement": "Obtain authoritative clarification for DSMZ1678/MediaDive5782 on the3.3 addition unit and corresponding final-medium amount; current PDF/API disagree. Do not select a unit by analogy to a related medium or treat frozen3.3G_PER_L as correction.",
+          "blocks": "Dose/final-medium conversion and sourcequantity release; does not block explicitly declared350g/L nominalstock identity."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:2a537d3d72d451917f44568b34fe219fee07b4b1dac860f7be16236da971e3ea",
+      "recipe_id": "CultureMech:001069",
+      "source_file_sha256": "59858007820708629fb72a049597ae051bdb373d9e9daa4043197bfd10b0be4b",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "7.5",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal7.5g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:e51ea868b989d12263a6741017c20e27aa1ae76b3558c8fec3a140354de12c54",
+      "recipe_id": "CultureMech:001071",
+      "source_file_sha256": "8d7eeb63b91c405d9e74828d287edc076b5052e2e14cd041d4b9c1732f2a80e1",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "7.5",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal7.5g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:2fb7cba7d646c028fa1f129b6a1b2e44ce67a6f3c28669f6eccfd5e35a0d11c0",
+      "recipe_id": "CultureMech:001251",
+      "source_file_sha256": "7f514a2ab77bb1cff46782e1d46752e4f6f68cfe00b624bef5e7cb789c96bece",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "existing_identity_or_alias",
+      "stock_concentration": null,
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [],
+      "accepted_integration_requirements": [
+        "Resolve only this source-bound solute occurrence; do not make sharedrawlabel globally resolve all17 to pureheptahydrate.",
+        "Correct the flattened MediaRecipe quantity in its owning source workflow using0.1g/500mL; preserve frozenbytes and do notedit CultureMech here."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:a812f74f81e028189c368f2cb3951d60f1eb5cb3a784276b536bce38cc58921b",
+      "recipe_id": "CultureMech:014409",
+      "source_file_sha256": "1850102550c6f2d54c76d4e2feb8c892513c62aee66b118f789632692523d108",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "7.5",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal7.5g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:11fd2260245a23eba5d4e3bccc7ac4d0a71a7e103e30e935e7b353d9f2bc1a5d",
+      "recipe_id": "CultureMech:014591",
+      "source_file_sha256": "7932ee4c0b173707412201810f39d265d3c0ea1ffedf62c7f71576a6d2688c3d",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "7.5",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal7.5g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:26b228c84c1d3e6c47ce5c4826270581e5d482d717a242bb34d22d8084ae2d4f",
+      "recipe_id": "CultureMech:014626",
+      "source_file_sha256": "e63f8f5ff3b832d755b344d4ec416d6fc49cebb1c9d442265fb90826abd3fe72",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "350",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal350g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:76fdfcb6545c5b5a8a1ec75e1fa04c196c383db83f0d5f65a048d0e61760668b",
+      "recipe_id": "CultureMech:014628",
+      "source_file_sha256": "f031bcf3431e212420eafcb9847c8ba5e81337f446b5eebb409ce7e013010a9b",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "350",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal350g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        },
+        {
+          "scope": "dose and final-medium concentration",
+          "requirement": "Obtain authoritative clarification for DSMZ1677/MediaDive5781 on the3.3 addition unit and corresponding final-medium amount; current PDF/API disagree. Do not select a unit by analogy to a related medium or treat frozen3.3G_PER_L as correction.",
+          "blocks": "Dose/final-medium conversion and sourcequantity release; does not block explicitly declared350g/L nominalstock identity."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:600524a38bfc36747e4d4fd5d409c6a5545fb7f9bf085af87e93713f74c08b6d",
+      "recipe_id": "CultureMech:014629",
+      "source_file_sha256": "9a90e5398ef683ffffa04befe43ffcde2db3d882620ebb32fa50198371f4d65c",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "350",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal350g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        },
+        {
+          "scope": "dose and final-medium concentration",
+          "requirement": "Obtain authoritative clarification for DSMZ1678/MediaDive5782 on the3.3 addition unit and corresponding final-medium amount; current PDF/API disagree. Do not select a unit by analogy to a related medium or treat frozen3.3G_PER_L as correction.",
+          "blocks": "Dose/final-medium conversion and sourcequantity release; does not block explicitly declared350g/L nominalstock identity."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:00afa8c2690ff3e5d0a6df0c0e7806f07d5a3d93acb298e6f30cec8fb5897478",
+      "recipe_id": "CultureMech:014959",
+      "source_file_sha256": "7832d8298987e1bfc8d104df60a9617d3a1abc6369ca25977b59e4da025b2be7",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "stock_product_mixture_context",
+      "stock_concentration": {
+        "value": "7.5",
+        "unit": "G_PER_L"
+      },
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "stock solvent and preparation",
+          "requirement": "For the nominal7.5g/L MgSO4\u00b77H2O stock, obtain an explicit source statement of solvent identity/amount and preparation convention before asserting complete composition or identical fully specified preparation. The cited instructions to make up the final medium with water do not specify stock solvent.",
+          "blocks": "Complete component-list or full preparation equivalence; does not block isolated source-qualified nominalstock payload with completeness UNKNOWN."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Use exact occurrence/source-qualified stock mapping; do not apply global rawlabel-to-pure-solute alias, genericingredient2154 identity, orstockcomponent identity as stockwhole identity."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:0269a5201c2d7e995ad466bb1fb1aeb5ef4efdeb54aae9ddfe2a05729c836b31",
+      "recipe_id": "CultureMech:014988",
+      "source_file_sha256": "4be0518d8025a56cb3f5a974e66bf19e45e0810f723a83d094b6fbbef06a3d20",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "existing_identity_or_alias",
+      "stock_concentration": null,
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [],
+      "accepted_integration_requirements": [
+        "Resolve only this source-bound solute occurrence; do not make sharedrawlabel globally resolve all17 to pureheptahydrate."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:02730bf821e2c96dfcd720311ede402de03d84fbe8bcbc52df53ad14d9843104",
+      "recipe_id": "CultureMech:015035",
+      "source_file_sha256": "5582f9e3777e76cd41a5f03525a41199a436cd216196d2af386a17145150b88c",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "existing_identity_or_alias",
+      "stock_concentration": null,
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [
+        {
+          "scope": "mixedbasalstock denominator",
+          "requirement": "Obtain explicit finalvolume of the20x basal saltstock; DSMZ1845 does notstate it and MediaDive6448 volume=null. Do not infer1L from g_l7,20x,50mL use, or the frozen7G_PER_L.",
+          "blocks": "7g/L stock orfinal-medium dose assertion, not CHEBI31795 component identity."
+        }
+      ],
+      "accepted_integration_requirements": [
+        "Resolve only this source-bound solute occurrence; do not make sharedrawlabel globally resolve all17 to pureheptahydrate."
+      ]
+    },
+    {
+      "occurrence_id": "CM_OCC:38a38ad21d5f5672f236ebe844932a62732ecfbc1838a9069fb0e9ddce842fe7",
+      "recipe_id": "CultureMech:015915",
+      "source_file_sha256": "12cf9eb7c7a64cdf6c66a1868d155a0f10fb4f5de0cb7b0faf3bb354fdd6514c",
+      "outcome": "accepted_at_declared_scope",
+      "disposition": "existing_identity_or_alias",
+      "stock_concentration": null,
+      "independent_primary_check": "Read exact source contexts and primary captures independently before author review; see independent-primary-inspection.json and fresh MediaDive solution payloads.",
+      "accepted_missing_evidence_holds": [],
+      "accepted_integration_requirements": [
+        "Resolve only this source-bound solute occurrence; do not make sharedrawlabel globally resolve all17 to pureheptahydrate."
+      ]
+    }
+  ],
+  "blocking_findings": [],
+  "limitations": [
+    "No final successor ledger/payload/native/diff acceptance yet.",
+    "All stock solvent/preparation holds retained; no purity, roles, globalalias, doserelease or whole-owner approval.",
+    "1677 and1678 primary doseconflicts remain. 1845 mixedstockvolume unknown;1818 derivativequantity and1845 flattenedhierarchy require sourceintegration."
+  ]
+}

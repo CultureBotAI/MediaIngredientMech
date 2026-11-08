@@ -1,0 +1,371 @@
+schema_version: 1.0.0
+review_id: 20261108T060949Z-worker07-issue1203-stock-scope
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Worker07 issue1203: pure heptahydrate owner versus source-qualified stock inputs'
+started_at: '2026-11-08T06:03:57.992384Z'
+finished_at: '2026-11-08T06:09:49.834202Z'
+reviewer:
+  identity: /root, worker07 issue1203 successor
+  kind: agent
+  independence: self_review
+  independence_basis: Root authors this bounded wrapper and exact stock payloads. Different-author /root/mg_independent_reviewer
+    independently assessed all17 source outcomes, KG linkage and payloads in the linked receipt; this
+    wrapper is not itself independent whole-owner approval.
+skill: .claude/skills/review-ingredients/SKILL.md
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: The actual maintained owner remains correctly identified as CHEBI:31795. Withdraw the predecessor
+  global RAW_TEXT proposal because12 of17 CM occurrences denote supplied stocks. Six7.5g/L cases reuse
+  C-P08 and six350g/L cases have a distinct isolated stock proposal; five retain source-qualified solute
+  identity. This observation approves only the bounded identity contrast, not complete owner claims, source
+  dose conversions or release.
+source:
+  git_revision: be2f4c36d3d4ed79aabe29401c555ae3fd65d7b0
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+    sha256: 1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2
+    role: target
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-ontology-CHEBI-31795.json
+    sha256: ceb0c93d1964844e99454d74730971855710441d92eec74aff5c873c833e324a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-213f5f6538243744.json
+    sha256: cff96821e213448e69d1507dea48b5c0d7b07ccd022c21898d50f2b775454c6b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-502d5507b1cc3215.pdf
+    sha256: 549c3cd6016f472813aeff1d8edf142d0b5c98a9d20ba60bfb8e4223660e01ca
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-7d6ddc8a5204351c.pdf
+    sha256: 6177935603ac96763fb97d7cda981e336aa28b102e02eb590402763d547d0e24
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-7f21ef8af26b38ef.json
+    sha256: 92fb63653ceda2bc87aa6971ecfbd247b4eaebd754c90f32b40d5b7046919683
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-901a1845922ea889.json
+    sha256: fbd81b2dc271866d9dcbdc71228de399cbf145126e93c70115d8f408a96a22a3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-b9c294b9a3900880.pdf
+    sha256: ab7b7ccdd10fb9c6c8b8d54021201836b1afb1767957ca092ede03aa8de175bf
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-dcce13695b8d5024.pdf
+    sha256: 1436440684f4b661f9ea93bbb0d1d49d86bda7829a3af35683a07f6ab096ae5e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/b-primary-f8beb35ec43b7b61.pdf
+    sha256: 3f8270ac01b2bb7ee5665f2376ba30903fd356890d3f915df8ad579f77b3d557
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/c-dsmz-mg-1593a.pdf
+    sha256: 275dc654a06030c3a46ac48e4debeb45f195458ee268ec68f94bc0acecbab6ac
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/captures/c-dsmz-mg-1845.pdf
+    sha256: 7eff0ce381a167aba24cb517de53fb1773da29bf7490c836f4a5e5cafca68fb4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/logs/native-validation-v1.json
+    sha256: 4ce00d53348b33c5b490387998bf34be4971513703dd83de653a63d52a34ef32
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/occurrence-dispositions.json
+    sha256: 9a8ca55bdc427367d48af72006fcc18e50a3ca1b6ffea9f1890a95bc4a10fefe
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/parts/native-input-decisions.json
+    sha256: 9e7af78af343a54e77f939b86f27cf58533df704edb8679ebac310d62f5179b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/parts/native-input-evidence.json
+    sha256: bac48c212da1d8e53140c82e599a148f55c956d635612855a1c297203a497ff4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/parts/native-input-proposals.json
+    sha256: 9ac4fb31e9116535336ba5d68953cdf1338098c531638107bcce31b74f1c3f1d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/proposed_owners/stock-350g-L.yaml
+    sha256: f7d02d05e9bce86234b614ccac5bb92b90be55c2a58e36d80095e5182988dddc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/proposed_owners/stock-7p5g-L-v2.yaml
+    sha256: 59bf31b3ba1002bf5800512b742c25609b3067d6cf2ef515f1c9d418d4364d49
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/research/dedup-review.json
+    sha256: 936333d6dc263713934bd18ee5e13f1a5f9ee4146ae76fb948693239acf8ecd3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/research/mediadive-solution-5518-v2.json
+    sha256: 81be16b34066cdd846ba93fee09051e74887d4ed5c63bf9744a2b94e872fbbda
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/research/mediadive-solution-5736-v2.json
+    sha256: b828aafcf271d474a22ab80d29a78417b5c27c9c6b7ac4dd7dc51751972f3a6a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/research/mediadive-solution-5775-v2.json
+    sha256: 1de9ebbac03f7dd2718820f9a7ce0958dec59d2d780b35ed8fb6b37275116233
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/research/mediadive-solution-5781-v2.json
+    sha256: b6ae84e2cbd82ce3e00cdc96a2971085129190a33cd1fd107ff29b95743ba5c4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/research/mediadive-solution-5782-v2.json
+    sha256: c2807ac2da16193ae703bb6b27a22aae1d30a47685e8170cbccdc5d6eb539aa6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/research/mediadive-solution-6448-v2.json
+    sha256: 49411d4e7b08a253efca1547bcc1ac271a5151f556e40161f21e0124a3ef781b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/review/independent-science-review-v1.json
+    sha256: 2a63024848a0913edf879688d1b63e733145f32988f5c717f1c99f30ca33d7b8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/structural-audit-v1.json
+    sha256: 4b37dd975f83be64e7c5377611a5a1cd70205f85b5481d9cbf20aa18df287663
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: One actual pure heptahydrate owner compared to the17 affected CM source occurrences and
+    shared KG stock context.
+  selection: Exact existing owner referenced by the affected frozen CM case and C-P08 KG case. Read owner
+    bytes and source evidence; no sampled or invented targets.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+  exclusions:
+  - target: New stock proposals and source-only recipes as maintained owners
+    reason: They are isolated proposals/source observations, fully assessed under the campaign outcome
+      contract; they do not yet exist in the catalogue.
+  - target: Other76 owners and five open findings in prior77-owner native review
+    reason: This is an additional bounded observation, not a replacement or closure of those targets/findings.
+  - target: Roles, unrelated synonyms/properties and publication support
+    reason: Outside this source identity contrast; existing native holds remain effective.
+targets:
+- target_id: data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+  path: data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+  selector: identifier=CHEBI:31795; identity and proposed source-alias relation only
+  label: MgSO4 x 7 H2O
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+    role: Maintained pure heptahydrate owner; no edit in this successor.
+checks:
+- check_id: closed-schema-partonomy-binding
+  name: Native closed schema, partonomy and strict occurrence binding
+  status: passed
+  required: true
+  summary: Existing pure owner and100 isolated proposals validate; exact17 source rows/route controls
+    pass; maintained baseline unchanged.
+  target_ids:
+  - data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+  command: .temp/all-unmatched-worker-07/venv/bin/python reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/parts/validate-successor.py
+    --output logs/native-validation-v1.json
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - schema-partonomy
+- check_id: whole-shard-accounting
+  name: Strict campaign binding
+  status: passed
+  required: true
+  summary: 188cases retained with valid exact source digests and capture/payload bindings.
+  target_ids:
+  - data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+  command: .temp/all-unmatched-worker-07/venv/bin/python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py
+    --shard /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-07.json
+    --decisions reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/decisions.json --evidence
+    reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/evidence.json --proposals reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/proposals.json
+    --artifact-root reports/all_unmatched_20261107/worker-07 --source-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5
+    --mim-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree
+    --output reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/structural-audit-v1.json
+  exit_code: 0
+  expected_exit_code: 0
+  evidence_ids:
+  - structure
+- check_id: downstream-export-gates
+  name: Maintained integration and export checks
+  status: not_applicable
+  required: false
+  summary: User confines worker to isolated artifacts; coordinator alone applies and rebuilds. No exports
+    were changed.
+  target_ids:
+  - data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+evidence:
+- evidence_id: owner
+  kind: record_content
+  reference: data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+  locator: identifier, ontology_mapping, synonyms; comparison only
+  accessed_at: '2026-11-08T06:09:49.834202Z'
+  support: supports
+  summary: Maintained pure magnesium sulfate heptahydrate identity CHEBI:31795 remains correct and byte-unchanged.
+    Unrelated owner claims and existing WITHHOLD support are not approved.
+  snapshot_sha256: 1dfcf9c3e7b7f2280a4aaa009f18ec68f2ae7e92e59fae4ea80fe0ef92540ad2
+- evidence_id: outcomes
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/parts/native-input-decisions.json
+  locator: Affected CM17-occurrence case and shared KG C-P08 case
+  accessed_at: '2026-11-08T06:09:49.834202Z'
+  support: supports
+  summary: Six7.5g/L stock, six350g/L stock and five solute components are explicitly partitioned. Native
+    WITHHOLD row1888 is retained; stock material is not its component.
+  snapshot_sha256: 9e7af78af343a54e77f939b86f27cf58533df704edb8679ebac310d62f5179b7
+- evidence_id: proposals
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/parts/native-input-proposals.json
+  locator: C-P08-ISSUE1203-V1 and W07-MG350-ISSUE1203-V1; withdrawn B alias absent
+  accessed_at: '2026-11-08T06:09:49.834202Z'
+  support: supports
+  summary: Same7.5g/L registry reused, distinct350g/L stock proposed. No pure-owner edit, global unqualified
+    alias or whole/component SKOS relation.
+  snapshot_sha256: 9ac4fb31e9116535336ba5d68953cdf1338098c531638107bcce31b74f1c3f1d
+- evidence_id: independent
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/review/independent-science-review-v1.json
+  locator: All17 exact source outcomes, KG linkage and two final payloads
+  accessed_at: '2026-11-08T06:09:49.834202Z'
+  support: supports
+  summary: Different-author skeptical review of source context, exact captured primary evidence, dose/preparation
+    holds, duplicate search and exact payload bytes.
+  snapshot_sha256: 2a63024848a0913edf879688d1b63e733145f32988f5c717f1c99f30ca33d7b8
+- evidence_id: occurrences
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/occurrence-dispositions.json
+  locator: All17 explicit source-binding rows
+  accessed_at: '2026-11-08T06:09:49.834202Z'
+  support: supports
+  summary: Precise dose conflicts1677/1678 and missing1845 stock denominator remain held.1818 normalization
+    and1845 hierarchy are settled source integration corrections.
+  snapshot_sha256: 9a8ca55bdc427367d48af72006fcc18e50a3ca1b6ffea9f1890a95bc4a10fefe
+- evidence_id: MG1203-DSMZ-1592
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1592.pdf
+  locator: page1 firsttable, Mg(SO4)x7H2O row; Volume[ml/l]10 and Stock Solutions[g/l]7.5; capture captures/b-primary-b9c294b9a3900880.pdf
+  accessed_at: '2026-11-08T05:07:24.811003Z'
+  support: supports
+  summary: DSMZ1592 supplies7.5g/L heptahydrate stock,10mL/L; finalmedium dilutionwater does not establish
+    stocksolvent.
+  snapshot_sha256: ab7b7ccdd10fb9c6c8b8d54021201836b1afb1767957ca092ede03aa8de175bf
+- evidence_id: MG1203-DSMZ-1673
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1673.pdf
+  locator: page1 firsttable, Mg(SO4)x7H2O(350g/l stock solution)10.00ml/l; capture captures/b-primary-502d5507b1cc3215.pdf
+  accessed_at: '2026-11-08T05:07:23.911520Z'
+  support: supports
+  summary: DSMZ1673 defines350g/L heptahydrate stock addition10mL/L. Frozen3.5G_PER_L is solute equivalent,
+    not a pure-solid supplied form.
+  snapshot_sha256: 549c3cd6016f472813aeff1d8edf142d0b5c98a9d20ba60bfb8e4223660e01ca
+- evidence_id: MG1203-DSMZ-1677
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1677.pdf
+  locator: page1 firsttable, Mg(SO4)x7H2O(350g/l stock solution)3.30g; capture captures/b-primary-dcce13695b8d5024.pdf
+  accessed_at: '2026-11-08T05:07:24.519631Z'
+  support: supports
+  summary: DSMZ1677 explicitly identifies350g/L stock but gives3.30g; freshAPI5781 instead gives3.3ml
+    and g_l3.3. Keep dose conflict open without changing settled nominalstock identity.
+  snapshot_sha256: 1436440684f4b661f9ea93bbb0d1d49d86bda7829a3af35683a07f6ab096ae5e
+- evidence_id: MG1203-DSMZ-1678
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1678.pdf
+  locator: 'page1 firsttable, Mg(SO4)x7H2O row: Volume[ml/l]3.3, Stock Solutions[g/l]350; capture captures/b-primary-7d6ddc8a5204351c.pdf'
+  accessed_at: '2026-11-08T05:07:24.641689Z'
+  support: supports
+  summary: DSMZ1678 defines350g/L stock at3.3mL/L; freshAPI5782 says3.3g/l. Both supportstock strength,
+    but conflicting dose units remainheld.
+  snapshot_sha256: 6177935603ac96763fb97d7cda981e336aa28b102e02eb590402763d547d0e24
+- evidence_id: MG1203-DSMZ-1845
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1845.pdf
+  locator: 'page1 Basal salt stock solution(20x): Mg(SO4)x7H2O7.00g; primarymainmedium lists50mL of mixed20xstock;
+    capture captures/c-dsmz-mg-1845.pdf'
+  accessed_at: '2026-11-08T05:21:36.203557Z'
+  support: supports
+  summary: The7g entry is pureheptahydrate constituent of mixedbasal stock, not a single-solutestock.
+    Substock volume is not stated inPDF; API6448 volume=null. Do notinfer7g/L or finalmedium7g/L.
+  snapshot_sha256: 7eff0ce381a167aba24cb517de53fb1773da29bf7490c836f4a5e5cafca68fb4
+- evidence_id: MG1203-CHEBI-31795
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:31795
+  locator: _embedded.terms[obo_id=CHEBI:31795]:label,description,formula,CAS10034-99-8,is_obsolete=false;
+    capture captures/b-ontology-CHEBI-31795.json
+  accessed_at: '2026-11-08T05:08:55.615488Z'
+  support: supports
+  summary: CHEBI31795 denotes magnesium sulfate heptahydrate; supports component identity only, not stockwhole
+    equivalence or dose.
+  snapshot_sha256: ceb0c93d1964844e99454d74730971855710441d92eec74aff5c873c833e324a
+- evidence_id: schema-partonomy
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/logs/native-validation-v1.json
+  locator: status, proposal_results, groups, negative_controls, maintained_drift
+  accessed_at: '2026-11-08T06:09:49.834202Z'
+  support: supports
+  summary: Strict source binding and native closed schema/whole-catalogue partonomy pass; deterministic
+    checks do not establish scientific approval.
+  snapshot_sha256: 4ce00d53348b33c5b490387998bf34be4971513703dd83de653a63d52a34ef32
+- evidence_id: structure
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/structural-audit-v1.json
+  locator: Whole-shard accounting, capture hashes and case/proposal backlinks
+  accessed_at: '2026-11-08T06:09:49.834202Z'
+  support: supports
+  summary: All188 frozen cases remain accounted; independent statuses at this earlier checkpoint were
+    pending for the two changed decisions, now separately reviewed.
+  snapshot_sha256: 4b37dd975f83be64e7c5377611a5a1cd70205f85b5481d9cbf20aa18df287663
+assessments:
+- assessment_id: identity-scope
+  area: identity
+  topic: Heptahydrate solute versus supplied stock and mixed-stock component
+  outcome: supported
+  summary: CHEBI:31795 remains the solute identity. The exact occurrence partition and two stock registry
+    identities preserve whole/part and concentration boundaries; the global alias proposal is withdrawn.
+  target_ids:
+  - data/ingredients/mapped/Mgso4_X_7_H2o.yaml
+  evidence_ids:
+  - owner
+  - outcomes
+  - proposals
+  - independent
+  - occurrences
+  - MG1203-DSMZ-1592
+  - MG1203-DSMZ-1673
+  - MG1203-DSMZ-1677
+  - MG1203-DSMZ-1678
+  - MG1203-DSMZ-1845
+  - MG1203-CHEBI-31795
+  details: Stock solvent/preparation remains unreported and completeness UNKNOWN.1677/1678 primary dose
+    units conflict;1845 mixedstock volume is missing. These precise holds remain independent of settled
+    nominal stock identity.1818 corrected normalization and1845 restored recipe hierarchy are source integration
+    requirements with evidence already available.
+  dimensions:
+  - name: claim_scope
+    value: solute identity/source-material contrast only
+    definition: No full owner, role, source quantity, complete stock composition or publication approval.
+    evidence_ids:
+    - owner
+    - independent
+findings: []
+actions: []
+limitations:
+- Issue1203 integration is not performed or closed by this review. Current maintained owner has no new
+  alias; predecessor proposed alias is withdrawn only in successor proposals.
+- No global bare-label alias can represent the mixed17-occurrence source meaning; coordinator must consume
+  exact occurrence-qualified material routes.
+- Stock preparation completeness,1677/1678 dose conflicts and1845 denominator remain held as specified
+  per occurrence.
+- The five open findings and all other owners in the earlier77-owner native review remain untouched. This
+  narrower observation does not supersede their scope or statuses.
+- Existing owner native WITHHOLD row1888 remains a separate obligation; no inherited support transfers
+  to stock proposals.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T054535Z-worker07-source-owner-comparison
+  relationship: Additional one-owner observation corrects the source-stock applicability conclusion for
+    Mgso4_X_7_H2o only; retains prior76 other targets and all five open findings without superseding them.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1203
+- reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/HANDOFF.md
+- reports/all_unmatched_20261107/worker-07/successors/issue1203-v1/supersession.json
+tags:
+- worker07
+- issue1203
+- stock-scope
+- bounded-owner-comparison

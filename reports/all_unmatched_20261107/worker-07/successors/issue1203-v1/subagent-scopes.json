@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "purpose": "Actual in-process subagent scopes for issue1203 successor; these are not additional external worker sessions.",
+  "agents": [
+    {
+      "identity": "/root/mg_occurrence_author",
+      "role": "primary_author",
+      "scope": "All17 frozen CM occurrences, primary-source pursuit and precise disposition/hold evidence.",
+      "artifacts": [
+        "research/occurrence-assessment.json",
+        "research/occurrence-evidence.json"
+      ],
+      "independent_of_own_outcomes": false
+    },
+    {
+      "identity": "/root/mg_stock_dedup",
+      "role": "primary_dedup_research",
+      "scope": "Ignored-inclusive maintained catalogue and all10available campaignreport roots; exact stockcandidate snapshots, sameform comparison and before-mint search.",
+      "artifacts": [
+        "research/dedup-review.json"
+      ],
+      "independent_final_review": false
+    },
+    {
+      "identity": "/root",
+      "role": "payload_and_ledger_author",
+      "scope": "Two stockpayloads,17exact occurrence routes,CM/KG successoroutcomes,withdrawn globalalias,native wrapper,validation,handoff.",
+      "independent_of_own_outcomes": false
+    },
+    {
+      "identity": "/root/mg_independent_reviewer",
+      "role": "independent_skeptical_reviewer",
+      "scope": "All17frozenoccurrences and exactprimarycaptures,sharedKGstockcase,2exactchangedpayloads,withdrawnBalias,dedup/supersession,then nativewrapper/finaldiff. Authored none of these outcomes/payloads.",
+      "artifacts": [
+        "review/independent-primary-inspection.json",
+        "review/independent-occurrence-review-v1.json"
+      ],
+      "independence_basis": "Different in-process subagent from each primary author and root payload/ledger author; separately opens frozen records and primarybytes."
+    }
+  ]
+}

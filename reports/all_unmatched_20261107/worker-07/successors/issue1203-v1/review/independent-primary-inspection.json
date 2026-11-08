@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/mg_independent_reviewer",
+  "author_scope": "Review findings only; did not author occurrence outcomes, stock payloads, successor ledgers or native wrapper",
+  "reviewed_at": "2026-11-08T06:05:22.544278+00:00",
+  "stage": "independent_primary_inspection_before_final_payloads",
+  "case_id": "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e",
+  "case_digest": "3791b521274568139e3266c152a44da79d1cd8e4543eae55cc8ba0f31296a1de",
+  "occurrences": [
+    {
+      "index": 0,
+      "occurrence_id": "CM_OCC:219923d53223227230c96a3b5fda3bc9c3cfcda47beb7b418f17384c9d397280",
+      "recipe_id": "CultureMech:001268",
+      "source_file": "data/normalized_yaml/archaea/nitrososphaera_gargensis_medium.yaml",
+      "source_file_sha256": "bfa1c669716a399910be35aad97182931a325af1717567b1c96870deb22851a2",
+      "component_path": "ingredients/2",
+      "raw_component_verified": true,
+      "independent_expected_scope": "solute_component_1845",
+      "primary_refs": [
+        {
+          "evidence_id": "c-e-dsmz-mg-1845",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/c-dsmz-mg-1845.pdf",
+            "sha256": "7eff0ce381a167aba24cb517de53fb1773da29bf7490c836f4a5e5cafca68fb4"
+          },
+          "kind": "primary_source",
+          "locator": "Named ingredient/product or recipe row and associated formulation/identity context",
+          "supports_or_contradicts": "CAS 10034-99-8 and the seven-water solute label agree with CHEBI:31795. However the source row is 10 mL of a 7.5 g/L stock; exact reuse of the pure magnesium sulfate heptahydrate owner would erase preparation and concentration.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1845.pdf",
+          "accessed_at": "2026-11-08T05:21:36.203557+00:00",
+          "case_ids": [
+            "KG_CASE:ac6686c0d61be7f652dcf0c2a495b463e1adf24fee613329fd02707bd19d759d"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1845 Basal salt stock solution (20x), not the whole medium, lists7.00g heptahydrate. A multi-salt stock component remains CHEBI31795; it is neither a7g/L monocomponent stock nor directly7g/L final medium. Recipe hierarchy/finaldose not approved."
+    },
+    {
+      "index": 1,
+      "occurrence_id": "CM_OCC:6fc5787afd250e78cdd26437d060d9debbf746d3cc3b1dddc9e174cdf51229b7",
+      "recipe_id": "CultureMech:001070",
+      "source_file": "data/normalized_yaml/bacterial/DSMZ_1593_Cyanobacteria_Medium_BG11.yaml",
+      "source_file_sha256": "b152994707a3f86d5641e702b5f0a70e4b0579e95f47bc0982a98feb71b5a17d",
+      "component_path": "ingredients/1",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_7_5_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-98494b9ac6eef3",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-f8beb35ec43b7b61.pdf",
+            "sha256": "3f8270ac01b2bb7ee5665f2376ba30903fd356890d3f915df8ad579f77b3d557"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593.pdf",
+          "accessed_at": "2026-11-08T05:07:23.884333+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1593 firsttable explicitly pairs10ml/L with7.5g/L stock. Frozen10G_PER_L or10PERCENT_V_V is not a source conversion."
+    },
+    {
+      "index": 2,
+      "occurrence_id": "CM_OCC:fb516432f04f96ca8efae26efe7bbac411b5ca81636af58aac5e2e11ba4c650f",
+      "recipe_id": "CultureMech:001157",
+      "source_file": "data/normalized_yaml/bacterial/cyanobacteria_medium_asn_3.yaml",
+      "source_file_sha256": "1fb8d3c1711803ee759785d2f9e857c322ce483d84a90bc81c3765d1009570dc",
+      "component_path": "ingredients/3",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_350_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-e262ab0ef62350",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-502d5507b1cc3215.pdf",
+            "sha256": "549c3cd6016f472813aeff1d8edf142d0b5c98a9d20ba60bfb8e4223660e01ca"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1673.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1673.pdf",
+          "accessed_at": "2026-11-08T05:07:23.911520+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1673 firsttable explicitly says350g/L stock and10ml/L aliquot; frozen3.5G_PER_L is solute-equivalent numerical output and cannot identify the supplied stock as pure solid."
+    },
+    {
+      "index": 3,
+      "occurrence_id": "CM_OCC:2bd290d52fb3149932cfb9010e6fc8a1b1528e26daf6fb4ff66309f6a03fda07",
+      "recipe_id": "CultureMech:001159",
+      "source_file": "data/normalized_yaml/bacterial/cyanobacteria_medium_ba.yaml",
+      "source_file_sha256": "764d7af422f58d7c25397ea75c055e2d540613929694b28269fa2639d16503f2",
+      "component_path": "ingredients/3",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_350_g_l_dose_conflict",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-1aa7db880c7436",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-dcce13695b8d5024.pdf",
+            "sha256": "1436440684f4b661f9ea93bbb0d1d49d86bda7829a3af35683a07f6ab096ae5e"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1677.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1677.pdf",
+          "accessed_at": "2026-11-08T05:07:24.519631+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1677 explicitly identifies350g/L stock but printed3.30g dose conflicts with a volumetric stock interpretation. Stockstrength is settled; source clarification needed before choosing mass, volume or finalsolute dose."
+    },
+    {
+      "index": 4,
+      "occurrence_id": "CM_OCC:ccc700b133d7483e49cb2b6abf2c82e8ef963bf99f28ea4ffb3a94c42e10e602",
+      "recipe_id": "CultureMech:001160",
+      "source_file": "data/normalized_yaml/bacterial/cyanobacteria_medium_ba_50_b_n_2.yaml",
+      "source_file_sha256": "838c9425309980c821761741f788f3cf26e39de53df5ca65737eb3048b319ff0",
+      "component_path": "ingredients/3",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_350_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-00ba5fa7f7d433",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-7d6ddc8a5204351c.pdf",
+            "sha256": "6177935603ac96763fb97d7cda981e336aa28b102e02eb590402763d547d0e24"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1678.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1678.pdf",
+          "accessed_at": "2026-11-08T05:07:24.641689+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1678 firsttable explicitly pairs3.3ml/L with350g/L stock. Do not treat frozen3.3G_PER_L as authoritative conversion."
+    },
+    {
+      "index": 5,
+      "occurrence_id": "CM_OCC:2a537d3d72d451917f44568b34fe219fee07b4b1dac860f7be16236da971e3ea",
+      "recipe_id": "CultureMech:001069",
+      "source_file": "data/normalized_yaml/bacterial/cyanobacteria_medium_bg11.yaml",
+      "source_file_sha256": "59858007820708629fb72a049597ae051bdb373d9e9daa4043197bfd10b0be4b",
+      "component_path": "ingredients/0",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_7_5_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-2710c77f8ca289",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-b9c294b9a3900880.pdf",
+            "sha256": "ab7b7ccdd10fb9c6c8b8d54021201836b1afb1767957ca092ede03aa8de175bf"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1592.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1592.pdf",
+          "accessed_at": "2026-11-08T05:07:24.811003+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1592 firsttable explicitly pairs10ml/L with7.5g/L stock. Frozen10G_PER_L or10PERCENT_V_V is not a source conversion."
+    },
+    {
+      "index": 6,
+      "occurrence_id": "CM_OCC:e51ea868b989d12263a6741017c20e27aa1ae76b3558c8fec3a140354de12c54",
+      "recipe_id": "CultureMech:001071",
+      "source_file": "data/normalized_yaml/bacterial/cyanobacteria_medium_bg11_tes_buffered.yaml",
+      "source_file_sha256": "8d7eeb63b91c405d9e74828d287edc076b5052e2e14cd041d4b9c1732f2a80e1",
+      "component_path": "ingredients/2",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_7_5_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "c-e-dsmz-mg-1593a",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/c-dsmz-mg-1593a.pdf",
+            "sha256": "275dc654a06030c3a46ac48e4debeb45f195458ee268ec68f94bc0acecbab6ac"
+          },
+          "kind": "primary_source",
+          "locator": "Named ingredient/product or recipe row and associated formulation/identity context",
+          "supports_or_contradicts": "CAS 10034-99-8 and the seven-water solute label agree with CHEBI:31795. However the source row is 10 mL of a 7.5 g/L stock; exact reuse of the pure magnesium sulfate heptahydrate owner would erase preparation and concentration.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593a.pdf",
+          "accessed_at": "2026-11-08T05:21:35.035780+00:00",
+          "case_ids": [
+            "KG_CASE:ac6686c0d61be7f652dcf0c2a495b463e1adf24fee613329fd02707bd19d759d"
+          ]
+        },
+        {
+          "evidence_id": "B-PRIMARY-7a4fe57da02e52",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-213f5f6538243744.json",
+            "sha256": "cff96821e213448e69d1507dea48b5c0d7b07ccd022c21898d50f2b775454c6b"
+          },
+          "locator": "Exact captured response for https://mediadive.dsmz.de/rest/solution/6270",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://mediadive.dsmz.de/rest/solution/6270",
+          "accessed_at": "2026-11-08T05:07:25.338165+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1593a firsttable and API6270 recipe[2] explicitly identify10ml of7.5g/L stock. Wholemedium make-up water is not proof of stocksolvent."
+    },
+    {
+      "index": 7,
+      "occurrence_id": "CM_OCC:2fb7cba7d646c028fa1f129b6a1b2e44ce67a6f3c28669f6eccfd5e35a0d11c0",
+      "recipe_id": "CultureMech:001251",
+      "source_file": "data/normalized_yaml/bacterial/low_carbon_agar_lca.yaml",
+      "source_file_sha256": "7f514a2ab77bb1cff46782e1d46752e4f6f68cfe00b624bef5e7cb789c96bece",
+      "component_path": "ingredients/2",
+      "raw_component_verified": true,
+      "independent_expected_scope": "solute_component_1818",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-f918a5c4f70e27",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-7f21ef8af26b38ef.json",
+            "sha256": "92fb63653ceda2bc87aa6971ecfbd247b4eaebd754c90f32b40d5b7046919683"
+          },
+          "locator": "Exact captured response for https://mediadive.dsmz.de/rest/solution/6328",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://mediadive.dsmz.de/rest/solution/6328",
+          "accessed_at": "2026-11-08T05:07:25.397615+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "API6328 recipe[2] says0.1g heptahydrate, volume500ml; no stockqualifier. FrozenMediaRecipe0.1G_PER_L differs fromSolutionRecipe0.2G_PER_L; identitypass does not approve both doses."
+    },
+    {
+      "index": 8,
+      "occurrence_id": "CM_OCC:a812f74f81e028189c368f2cb3951d60f1eb5cb3a784276b536bce38cc58921b",
+      "recipe_id": "CultureMech:014409",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_5518_Main_sol_1592.yaml",
+      "source_file_sha256": "1850102550c6f2d54c76d4e2feb8c892513c62aee66b118f789632692523d108",
+      "component_path": "composition/0",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_7_5_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-2710c77f8ca289",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-b9c294b9a3900880.pdf",
+            "sha256": "ab7b7ccdd10fb9c6c8b8d54021201836b1afb1767957ca092ede03aa8de175bf"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1592.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1592.pdf",
+          "accessed_at": "2026-11-08T05:07:24.811003+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1592 firsttable explicitly pairs10ml/L with7.5g/L stock. Frozen10G_PER_L or10PERCENT_V_V is not a source conversion."
+    },
+    {
+      "index": 9,
+      "occurrence_id": "CM_OCC:11fd2260245a23eba5d4e3bccc7ac4d0a71a7e103e30e935e7b353d9f2bc1a5d",
+      "recipe_id": "CultureMech:014591",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_5736_Main_sol_1593.yaml",
+      "source_file_sha256": "7932ee4c0b173707412201810f39d265d3c0ea1ffedf62c7f71576a6d2688c3d",
+      "component_path": "composition/1",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_7_5_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-98494b9ac6eef3",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-f8beb35ec43b7b61.pdf",
+            "sha256": "3f8270ac01b2bb7ee5665f2376ba30903fd356890d3f915df8ad579f77b3d557"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593.pdf",
+          "accessed_at": "2026-11-08T05:07:23.884333+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1593 firsttable explicitly pairs10ml/L with7.5g/L stock. Frozen10G_PER_L or10PERCENT_V_V is not a source conversion."
+    },
+    {
+      "index": 10,
+      "occurrence_id": "CM_OCC:26b228c84c1d3e6c47ce5c4826270581e5d482d717a242bb34d22d8084ae2d4f",
+      "recipe_id": "CultureMech:014626",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_5775_Main_sol_1673.yaml",
+      "source_file_sha256": "e63f8f5ff3b832d755b344d4ec416d6fc49cebb1c9d442265fb90826abd3fe72",
+      "component_path": "composition/3",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_350_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-e262ab0ef62350",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-502d5507b1cc3215.pdf",
+            "sha256": "549c3cd6016f472813aeff1d8edf142d0b5c98a9d20ba60bfb8e4223660e01ca"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1673.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1673.pdf",
+          "accessed_at": "2026-11-08T05:07:23.911520+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1673 firsttable explicitly says350g/L stock and10ml/L aliquot; frozen3.5G_PER_L is solute-equivalent numerical output and cannot identify the supplied stock as pure solid."
+    },
+    {
+      "index": 11,
+      "occurrence_id": "CM_OCC:76fdfcb6545c5b5a8a1ec75e1fa04c196c383db83f0d5f65a048d0e61760668b",
+      "recipe_id": "CultureMech:014628",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_5781_Main_sol_1677.yaml",
+      "source_file_sha256": "f031bcf3431e212420eafcb9847c8ba5e81337f446b5eebb409ce7e013010a9b",
+      "component_path": "composition/3",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_350_g_l_dose_conflict",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-1aa7db880c7436",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-dcce13695b8d5024.pdf",
+            "sha256": "1436440684f4b661f9ea93bbb0d1d49d86bda7829a3af35683a07f6ab096ae5e"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1677.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1677.pdf",
+          "accessed_at": "2026-11-08T05:07:24.519631+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1677 explicitly identifies350g/L stock but printed3.30g dose conflicts with a volumetric stock interpretation. Stockstrength is settled; source clarification needed before choosing mass, volume or finalsolute dose."
+    },
+    {
+      "index": 12,
+      "occurrence_id": "CM_OCC:600524a38bfc36747e4d4fd5d409c6a5545fb7f9bf085af87e93713f74c08b6d",
+      "recipe_id": "CultureMech:014629",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_5782_Main_sol_1678.yaml",
+      "source_file_sha256": "9a90e5398ef683ffffa04befe43ffcde2db3d882620ebb32fa50198371f4d65c",
+      "component_path": "composition/3",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_350_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-00ba5fa7f7d433",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-7d6ddc8a5204351c.pdf",
+            "sha256": "6177935603ac96763fb97d7cda981e336aa28b102e02eb590402763d547d0e24"
+          },
+          "locator": "Exact captured response for https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1678.pdf",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1678.pdf",
+          "accessed_at": "2026-11-08T05:07:24.641689+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1678 firsttable explicitly pairs3.3ml/L with350g/L stock. Do not treat frozen3.3G_PER_L as authoritative conversion."
+    },
+    {
+      "index": 13,
+      "occurrence_id": "CM_OCC:00afa8c2690ff3e5d0a6df0c0e7806f07d5a3d93acb298e6f30cec8fb5897478",
+      "recipe_id": "CultureMech:014959",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_6270_Main_sol_1593a.yaml",
+      "source_file_sha256": "7832d8298987e1bfc8d104df60a9617d3a1abc6369ca25977b59e4da025b2be7",
+      "component_path": "composition/2",
+      "raw_component_verified": true,
+      "independent_expected_scope": "stock_7_5_g_l",
+      "primary_refs": [
+        {
+          "evidence_id": "c-e-dsmz-mg-1593a",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/c-dsmz-mg-1593a.pdf",
+            "sha256": "275dc654a06030c3a46ac48e4debeb45f195458ee268ec68f94bc0acecbab6ac"
+          },
+          "kind": "primary_source",
+          "locator": "Named ingredient/product or recipe row and associated formulation/identity context",
+          "supports_or_contradicts": "CAS 10034-99-8 and the seven-water solute label agree with CHEBI:31795. However the source row is 10 mL of a 7.5 g/L stock; exact reuse of the pure magnesium sulfate heptahydrate owner would erase preparation and concentration.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1593a.pdf",
+          "accessed_at": "2026-11-08T05:21:35.035780+00:00",
+          "case_ids": [
+            "KG_CASE:ac6686c0d61be7f652dcf0c2a495b463e1adf24fee613329fd02707bd19d759d"
+          ]
+        },
+        {
+          "evidence_id": "B-PRIMARY-7a4fe57da02e52",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-213f5f6538243744.json",
+            "sha256": "cff96821e213448e69d1507dea48b5c0d7b07ccd022c21898d50f2b775454c6b"
+          },
+          "locator": "Exact captured response for https://mediadive.dsmz.de/rest/solution/6270",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://mediadive.dsmz.de/rest/solution/6270",
+          "accessed_at": "2026-11-08T05:07:25.338165+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1593a firsttable and API6270 recipe[2] explicitly identify10ml of7.5g/L stock. Wholemedium make-up water is not proof of stocksolvent."
+    },
+    {
+      "index": 14,
+      "occurrence_id": "CM_OCC:0269a5201c2d7e995ad466bb1fb1aeb5ef4efdeb54aae9ddfe2a05729c836b31",
+      "recipe_id": "CultureMech:014988",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_6328_Main_sol_1818.yaml",
+      "source_file_sha256": "4be0518d8025a56cb3f5a974e66bf19e45e0810f723a83d094b6fbbef06a3d20",
+      "component_path": "composition/2",
+      "raw_component_verified": true,
+      "independent_expected_scope": "solute_component_1818",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-f918a5c4f70e27",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-7f21ef8af26b38ef.json",
+            "sha256": "92fb63653ceda2bc87aa6971ecfbd247b4eaebd754c90f32b40d5b7046919683"
+          },
+          "locator": "Exact captured response for https://mediadive.dsmz.de/rest/solution/6328",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://mediadive.dsmz.de/rest/solution/6328",
+          "accessed_at": "2026-11-08T05:07:25.397615+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "API6328 recipe[2] says0.1g heptahydrate, volume500ml; no stockqualifier. FrozenMediaRecipe0.1G_PER_L differs fromSolutionRecipe0.2G_PER_L; identitypass does not approve both doses."
+    },
+    {
+      "index": 15,
+      "occurrence_id": "CM_OCC:02730bf821e2c96dfcd720311ede402de03d84fbe8bcbc52df53ad14d9843104",
+      "recipe_id": "CultureMech:015035",
+      "source_file": "data/normalized_yaml/bacterial/mediadive_6448_Basal_salt_stock_solution_20x.yaml",
+      "source_file_sha256": "5582f9e3777e76cd41a5f03525a41199a436cd216196d2af386a17145150b88c",
+      "component_path": "composition/2",
+      "raw_component_verified": true,
+      "independent_expected_scope": "solute_component_1845",
+      "primary_refs": [
+        {
+          "evidence_id": "c-e-dsmz-mg-1845",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/c-dsmz-mg-1845.pdf",
+            "sha256": "7eff0ce381a167aba24cb517de53fb1773da29bf7490c836f4a5e5cafca68fb4"
+          },
+          "kind": "primary_source",
+          "locator": "Named ingredient/product or recipe row and associated formulation/identity context",
+          "supports_or_contradicts": "CAS 10034-99-8 and the seven-water solute label agree with CHEBI:31795. However the source row is 10 mL of a 7.5 g/L stock; exact reuse of the pure magnesium sulfate heptahydrate owner would erase preparation and concentration.",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1845.pdf",
+          "accessed_at": "2026-11-08T05:21:36.203557+00:00",
+          "case_ids": [
+            "KG_CASE:ac6686c0d61be7f652dcf0c2a495b463e1adf24fee613329fd02707bd19d759d"
+          ]
+        }
+      ],
+      "assessment": "DSMZ1845 Basal salt stock solution (20x), not the whole medium, lists7.00g heptahydrate. A multi-salt stock component remains CHEBI31795; it is neither a7g/L monocomponent stock nor directly7g/L final medium. Recipe hierarchy/finaldose not approved."
+    },
+    {
+      "index": 16,
+      "occurrence_id": "CM_OCC:38a38ad21d5f5672f236ebe844932a62732ecfbc1838a9069fb0e9ddce842fe7",
+      "recipe_id": "CultureMech:015915",
+      "source_file": "data/normalized_yaml/bacterial/starch_casein_nitrate_agar.yaml",
+      "source_file_sha256": "12cf9eb7c7a64cdf6c66a1868d155a0f10fb4f5de0cb7b0faf3bb354fdd6514c",
+      "component_path": "ingredients/5",
+      "raw_component_verified": true,
+      "independent_expected_scope": "solute_component_1897",
+      "primary_refs": [
+        {
+          "evidence_id": "B-PRIMARY-ebb460e3dfe0df",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "captures/b-primary-901a1845922ea889.json",
+            "sha256": "fbd81b2dc271866d9dcbdc71228de399cbf145126e93c70115d8f408a96a22a3"
+          },
+          "locator": "Exact captured response for https://mediadive.dsmz.de/rest/medium/1897",
+          "supports_or_contradicts": "Source-specific ingredient text, formulation or identity fields; applicability is bounded by each case assessment.",
+          "url": "https://mediadive.dsmz.de/rest/medium/1897",
+          "accessed_at": "2026-11-08T05:07:25.496093+00:00",
+          "case_ids": [
+            "CM_NAME:9dd78dd62f6762ad602b4126b067042b0cc68ba65bd212f9a10b07ec20b33e8e"
+          ]
+        }
+      ],
+      "assessment": "API1897 solutions[0].recipe[5] lists0.05g heptahydrate involume1000; no stockqualifier. Pure component identity supported."
+    }
+  ],
+  "conclusions": [
+    "Six7.5g/L stocks; six350g/L stocks; five pure heptahydrate component occurrences, each scoped separately.",
+    "CHEBI31795 verified from exact OLS capture; formula7H2O.Mg.O4S andCAS10034-99-8 support heptahydrate component identity only.",
+    "No stocksolvent/preparation is established merely by wholemedium make-up water.",
+    "Withdraw globalRAW_TEXT alias proposal; scoped occurrence identities must not be represented as broad globalname closure."
+  ],
+  "findings_for_author": [
+    {
+      "id": "R1203-1",
+      "severity": "minor",
+      "target": "old C-P08 components[0].source",
+      "detail": "The ingredient2154 endpoint does not declare7.5g/L; cite exact primary recipe/frozenKGsource_record instead."
+    },
+    {
+      "id": "R1203-2",
+      "severity": "major_if_omitted",
+      "target": "occurrences0,15",
+      "detail": "Keep basalstock component hierarchy separate from wholemedium and avoid approving7g/Lfinaldose."
+    },
+    {
+      "id": "R1203-3",
+      "severity": "major_if_omitted",
+      "target": "occurrences7,14",
+      "detail": "Preserve1818 massbatch0.1g/500mL versus frozen0.1G_PER_L inconsistency."
+    }
+  ],
+  "final_payload_and_branch_review": "pending; this is not a final acceptance"
+}
