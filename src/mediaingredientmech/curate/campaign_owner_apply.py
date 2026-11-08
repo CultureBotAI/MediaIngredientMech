@@ -3,6 +3,13 @@
 This module proves file transitions, not scientific approval. The three allowed
 operations are edit, create and explicit unmapped-to-mapped promotion. A batch
 is recoverable, not atomically rolled back. Mapping publication is separate.
+
+Inherited surviving collision pairs can receive same-path edits only with their
+identifiers, preferred names and statuses preserved (#1251). Reviewed owners can
+leave a family, but no new colliding pair inherits the old family exception.
+Existing REJECTED owners can receive substantive same-path, same-key maintenance
+while remaining REJECTED (#1252). Neither exception approves identity, a merge,
+reactivation or demotion; other status/path and provenance guards still apply.
 """
 
 from __future__ import annotations
@@ -20,6 +27,7 @@ import tempfile
 import types
 import uuid
 from dataclasses import dataclass, field
+from itertools import combinations
 from pathlib import Path, PurePosixPath
 from typing import TYPE_CHECKING, Any
 
@@ -693,16 +701,51 @@ def _load(
 
 
 def _validate_records(root, operations, payloads, before_bytes):
-    identifiers: dict[Any, set[str]] = {}
-    terms: dict[Any, set[str]] = {}
-    for path, raw in before_bytes.items():
-        data = record(raw)
-        identifiers.setdefault(data.get("identifier"), set()).add(path)
-        terms.setdefault(str(data.get("preferred_term", "")).casefold(), set()).add(path)
-    removed = {e["before_source_record"] for e in operations if e["kind"] != "create"}
-    new_identifiers, new_terms = {}, {}
+    before = {path: record(raw) for path, raw in before_bytes.items()}
+    after = dict(before)
+    for entry in operations:
+        if entry["before_source_record"] is not None:
+            del after[entry["before_source_record"]]
+        after[entry["source_record"]] = record(payloads[entry["operation_id"]])
+
+    def collision_pairs(records):
+        indexes: dict[tuple[str, Any], set[str]] = {}
+        for path, data in records.items():
+            for key_kind, value in (
+                ("identifier", data.get("identifier")),
+                ("preferred name", str(data.get("preferred_term", "")).casefold()),
+            ):
+                indexes.setdefault((key_kind, value), set()).add(path)
+        return {
+            (*key, left, right)
+            for key, paths in indexes.items()
+            for left, right in combinations(sorted(paths), 2)
+        }
+
+    # #1251: compare the complete catalogue, not selected-owner uniqueness.
+    # No new member, replacement, key change or relocation inherits a pair.
+    # Owners leaving a family may follow the ordinary reviewed identity route.
+    prior_pairs, final_pairs = collision_pairs(before), collision_pairs(after)
+    require(
+        final_pairs <= prior_pairs,
+        "Final proposed owners introduce a new collision pair",
+    )
+    family_paths = {path for _, _, left, right in final_pairs for path in (left, right)}
     for entry in operations:
         data = record(payloads[entry["operation_id"]])
+        source = entry["before_source_record"]
+        old = before[source] if source is not None else {}
+        retained_keys = data.get("identifier") == old.get("identifier") and data.get(
+            "preferred_term"
+        ) == old.get("preferred_term")
+        if source in family_paths:
+            require(
+                entry["kind"] == "edit"
+                and source == entry["source_record"]
+                and retained_keys
+                and data.get("mapping_status") == old.get("mapping_status"),
+                "Inherited collision family requires unchanged paths, keys and statuses",
+            )
         errors = validate_ingredient(
             data,
             target_class="IngredientRecord",
@@ -712,14 +755,23 @@ def _validate_records(root, operations, payloads, before_bytes):
         history = data.get("curation_history")
         if not isinstance(history, list) or not history:
             raise ValueError("Missing curation history")
-        require(
-            (data.get("mapping_status") == "MAPPED")
-            == entry["source_record"].startswith("data/ingredients/mapped/"),
-            "Owner category differs from mapping status",
-        )
-        source = entry["before_source_record"]
+        # #1252: inherited tombstones may be maintained, never revived or
+        # recreated through this exception. Other category rules stay intact.
+        if "REJECTED" in (old.get("mapping_status"), data.get("mapping_status")):
+            require(
+                entry["kind"] == "edit"
+                and source == entry["source_record"]
+                and old.get("mapping_status") == data.get("mapping_status") == "REJECTED"
+                and retained_keys,
+                "Rejected owner requires same-path, same-key rejected maintenance",
+            )
+        else:
+            require(
+                (data.get("mapping_status") == "MAPPED")
+                == entry["source_record"].startswith("data/ingredients/mapped/"),
+                "Owner category differs from mapping status",
+            )
         if source is not None:
-            old = record(before_bytes[source])
             prior = old.get("curation_history", [])
             require(
                 history[: len(prior)] == prior and len(history) > len(prior),
@@ -736,28 +788,6 @@ def _validate_records(root, operations, payloads, before_bytes):
                     and data.get("mapping_status") == "MAPPED",
                     "Wrong promotion lineage",
                 )
-        identifier, term = data.get("identifier"), str(data.get("preferred_term", "")).casefold()
-        require(
-            identifier not in new_identifiers and term not in new_terms,
-            "Final proposed owners collide",
-        )
-        for index, key, label in (
-            (identifiers, identifier, "identity"),
-            (terms, term, "preferred name"),
-        ):
-            outsiders = index.get(key, set()) - removed
-            # Existing unchanged identity/name families are not silently repaired.
-            old = record(before_bytes[source]) if source else {}
-            old_key = (
-                old.get("identifier")
-                if label == "identity"
-                else str(old.get("preferred_term", "")).casefold()
-            )
-            require(not outsiders or key == old_key, f"New {label} collides with an existing owner")
-        new_identifiers[identifier], new_terms[term] = (
-            entry["source_record"],
-            entry["source_record"],
-        )
 
 
 def prepare(root: Path, plan_path: Path, acceptance_path: Path) -> Prepared:

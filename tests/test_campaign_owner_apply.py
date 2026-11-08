@@ -990,3 +990,268 @@ def test_1195_private_capture_leaves_unchanged_public_dependency_untouched():
     assert owner.FrozenFile is not publication_guard.FrozenFile
     assert bound._campaign_executed_source.content == Path(publication_guard.__file__).read_bytes()
     bound._campaign_executed_source.verify()
+
+
+def inherited_family_case(root, *, rejected=False, name_family=False, family=True, third=False):
+    """#1251/#1252: published fixture origins with authentic inherited families."""
+    plan = setup(root)
+    first = ingredient("CHEBI:1", "Existing", "REJECTED" if rejected else "MAPPED")
+    second = ingredient(
+        "CHEBI:99" if name_family or not family else "CHEBI:1",
+        "EXISTING" if name_family else "Untouched",
+    )
+    render(root, EDIT, first)
+    render(root, UNTOUCHED, second)
+    if third:
+        render(
+            root,
+            "data/ingredients/mapped/Family_Third.yaml",
+            ingredient(
+                "CHEBI:98" if name_family else "CHEBI:1", "eXiStInG" if name_family else "Third"
+            ),
+        )
+    before = owner.hashes(owner.inventory(root))
+    put(root, "before.json", {"schema_version": 1, "owners": before})
+    proposals = json.loads((root / "intake/proposals.json").read_bytes())
+    for index, (path, data) in enumerate(((EDIT, first), (UNTOUCHED, second))):
+        changed = copy.deepcopy(data)
+        changed["notes"] = "Reviewed fixture correction; inherited identity is not approved."
+        changed["curation_history"].append(event("ANNOTATED", data["mapping_status"]))
+        capture = f"intake/payload-{index}.yaml"
+        render(root, capture, changed)
+        proposals["proposals"][index].update(
+            kind="edit_existing_owner",
+            owner_path=path,
+            before_sha256=before[path],
+            after_capture={"root": "artifact", **ref(root, capture)},
+        )
+        plan["records"][index].update(
+            kind="edit",
+            before_source_record=path,
+            source_record=path,
+            before_yaml_sha256=before[path],
+            after_capture=ref(root, capture),
+        )
+    put(root, "intake/proposals.json", proposals)
+    # Publish actual fixture Git objects; plans/acceptance remain untracked as in setup.
+    run_git(root, "add", "data/ingredients", "before.json", "intake")
+    run_git(
+        root,
+        "-c",
+        "user.email=fixture@example.invalid",
+        "-c",
+        "user.name=Fixture",
+        "commit",
+        "-qm",
+        "#1251 #1252 inherited-family fixture",
+    )
+    head = run_git(root, "rev-parse", "HEAD")
+    plan["baseline_commit"] = head
+    plan["intake_heads"] = {"worker-01": head}
+    plan["before_inventory"] = ref(root, "before.json")
+    for binding in plan["bindings"]:
+        binding.update(ref(root, binding["path"]))
+        if binding["published_head"] is not None:
+            binding["published_head"] = head
+    for entry in plan["records"]:
+        for origin in entry["origins"]:
+            origin["head_sha"] = head
+    repin(root, plan)
+    return plan
+
+
+def final_fixture_delta(root, plan, index, changes):
+    """Keep published source bytes immutable; accept a separate composed fixture."""
+    entry = plan["records"][index]
+    data = owner.record((root / entry["after_capture"]["path"]).read_bytes())
+    data.update(changes)
+    path = f"final-boundary-{index}.yaml"
+    render(root, path, data)
+    entry["after_capture"] = ref(root, path)
+    repin(root, plan)
+
+
+@pytest.mark.parametrize("rejected,name_family", [(False, False), (True, False), (False, True)])
+@pytest.mark.parametrize("selected", ["one", "both", "reverse"])
+def test_1251_1252_inherited_family_real_application_and_completed_replay(
+    tmp_path, rejected, name_family, selected
+):
+    plan = inherited_family_case(tmp_path, rejected=rejected, name_family=name_family)
+    plan["records"] = plan["records"][: 1 if selected == "one" else 2]
+    if selected == "reverse":
+        plan["records"].reverse()
+    repin(tmp_path, plan)
+    ready = prepare(tmp_path)
+    before = {p: owner.record(f.content) for p, f in ready.before.items()}
+    result = owner.apply(ready, tmp_path / "receipt", enabled=True)
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert result["state"] == "complete"
+    assert proof["after_inventory"] == ready.after_inventory
+    assert proof["completed_operations"] == [r["operation_id"] for r in plan["records"]]
+    for path in (EDIT, UNTOUCHED):
+        after = owner.record((tmp_path / path).read_bytes())
+        for field in ("identifier", "preferred_term", "mapping_status"):
+            assert after[field] == before[path][field]
+        assert (
+            after["curation_history"][: len(before[path]["curation_history"])]
+            == before[path]["curation_history"]
+        )
+    assert (tmp_path / OLD).read_bytes() == ready.before[OLD].content
+    assert not (tmp_path / MOVED).exists()
+
+
+@pytest.mark.parametrize(
+    "fault",
+    [
+        "identifier",
+        "name",
+        "case_only_name",
+        "status",
+        "activate",
+        "new_member",
+        "same_count_swap",
+        "promotion_collision",
+        "stale_origin",
+        "relocate",
+    ],
+)
+def test_1251_1252_family_changes_refused_before_any_write(tmp_path, fault):
+    plan = inherited_family_case(tmp_path, rejected=fault == "activate")
+    if fault in {"identifier", "name", "case_only_name", "status", "activate"}:
+        delta = {
+            "identifier": {"identifier": "CHEBI:3"},
+            "name": {"preferred_term": "Changed"},
+            "case_only_name": {"preferred_term": "existing"},
+            "status": {"mapping_status": "AMBIGUOUS"},
+            "activate": {"mapping_status": "MAPPED"},
+        }[fault]
+        final_fixture_delta(tmp_path, plan, 0, delta)
+        if fault == "identifier":
+            # Both move to a new shared key: this is not a collision reduction.
+            final_fixture_delta(tmp_path, plan, 1, delta)
+    elif fault == "new_member":
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "same_count_swap":
+        final_fixture_delta(tmp_path, plan, 0, {"identifier": "CHEBI:3"})
+        final_fixture_delta(tmp_path, plan, 2, {"identifier": "CHEBI:1"})
+    elif fault == "promotion_collision":
+        final_fixture_delta(tmp_path, plan, 2, {"preferred_term": "EXISTING"})
+    elif fault == "stale_origin":
+        plan["records"][0]["origins"][0]["head_sha"] = "0" * 40
+    else:
+        plan["records"][0]["source_record"] = "data/ingredients/mapped/Renamed.yaml"
+    repin(tmp_path, plan)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("fault", ["create_rejected", "create_family_member"])
+def test_1251_1252_new_owner_does_not_inherit_exception(case, fault):
+    root, plan = case
+    delta = (
+        {"mapping_status": "REJECTED"} if fault == "create_rejected" else {"identifier": "CHEBI:1"}
+    )
+    final_fixture_delta(root, plan, 1, delta)
+    if fault == "create_rejected":
+        # Previously the category biconditional alone admitted this unmapped tombstone.
+        plan["records"][1]["source_record"] = "data/ingredients/unmapped/New.yaml"
+        repin(root, plan)
+    before = owner.hashes(owner.inventory(root))
+    with pytest.raises(ValueError):
+        prepare(root)
+    assert owner.hashes(owner.inventory(root)) == before
+    assert not (root / "receipt").exists()
+
+
+@pytest.mark.parametrize("fault", ["activation", "identity", "name"])
+def test_1252_completed_replay_rejects_changed_tombstone(tmp_path, fault):
+    plan = inherited_family_case(tmp_path, rejected=True)
+    plan["records"] = plan["records"][:1]
+    repin(tmp_path, plan)
+    owner.apply(prepare(tmp_path), tmp_path / "receipt", enabled=True)
+    data = owner.record((tmp_path / EDIT).read_bytes())
+    data.update(
+        {
+            "activation": {"mapping_status": "MAPPED"},
+            "identity": {"identifier": "CHEBI:3"},
+            "name": {"preferred_term": "Changed"},
+        }[fault]
+    )
+    render(tmp_path, EDIT, data)
+    with pytest.raises(ValueError):
+        owner.verify_completed(
+            tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+        )
+
+
+def test_1252_unique_tombstone_real_application_and_completed_replay(tmp_path):
+    plan = inherited_family_case(tmp_path, rejected=True, family=False)
+    plan["records"] = plan["records"][:1]
+    repin(tmp_path, plan)
+    ready = prepare(tmp_path)
+    owner.apply(ready, tmp_path / "receipt", enabled=True)
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert owner.record((tmp_path / EDIT).read_bytes())["mapping_status"] == "REJECTED"
+    assert proof["records"][0]["before_yaml_sha256"] == owner.digest(ready.before[EDIT].content)
+    assert proof["after_inventory"] == ready.after_inventory
+
+
+@pytest.mark.parametrize(
+    "delta",
+    [
+        {"mapping_status": "MAPPED"},
+        {"mapping_status": "UNMAPPED"},
+        {"identifier": "CHEBI:3"},
+        {"preferred_term": "existing"},
+    ],
+)
+def test_1252_unique_tombstone_activation_and_key_changes_refused(tmp_path, delta):
+    plan = inherited_family_case(tmp_path, rejected=True, family=False)
+    plan["records"] = plan["records"][:1]
+    final_fixture_delta(tmp_path, plan, 0, delta)
+    before = owner.hashes(owner.inventory(tmp_path))
+    with pytest.raises(ValueError, match="Rejected owner requires"):
+        prepare(tmp_path)
+    assert owner.hashes(owner.inventory(tmp_path)) == before
+    assert not (tmp_path / "receipt").exists()
+
+
+@pytest.mark.parametrize("name_family", [False, True])
+@pytest.mark.parametrize("third", [False, True])
+def test_1251_reviewed_family_reduction_preserves_surviving_pairs(tmp_path, name_family, third):
+    """#1251 comment6720714388: reduction is not a new-family exemption."""
+    plan = inherited_family_case(tmp_path, name_family=name_family, third=third)
+    plan["records"] = plan["records"][:2]
+    delta = (
+        {"preferred_term": "Reviewed distinct name"} if name_family else {"identifier": "CHEBI:3"}
+    )
+    final_fixture_delta(tmp_path, plan, 0, delta)
+    ready = prepare(tmp_path)
+    untouched_third = (
+        (tmp_path / "data/ingredients/mapped/Family_Third.yaml").read_bytes() if third else None
+    )
+    owner.apply(ready, tmp_path / "receipt", enabled=True)
+    proof = owner.verify_completed(
+        tmp_path, tmp_path / "plan.json", tmp_path / "receipt/application.json"
+    )
+    assert proof["after_inventory"] == ready.after_inventory
+    assert all(
+        owner.record((tmp_path / EDIT).read_bytes())[key] == value for key, value in delta.items()
+    )
+    if third:
+        assert (
+            tmp_path / "data/ingredients/mapped/Family_Third.yaml"
+        ).read_bytes() == untouched_third
+        sibling = owner.record((tmp_path / UNTOUCHED).read_bytes())
+        original = owner.record(ready.before[UNTOUCHED].content)
+        assert all(
+            sibling[key] == original[key]
+            for key in ("identifier", "preferred_term", "mapping_status")
+        )
