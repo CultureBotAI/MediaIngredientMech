@@ -1,0 +1,1833 @@
+{
+  "schema_version": "1.0",
+  "proposals": [
+    {
+      "proposal_id": "FRV1-BIO-P-filtered_seawater",
+      "case_ids": [
+        "CM_NAME:12fab181fb7a8d829e375acb04a7267dabc69b22aa48ee624c3c417aee9e473d",
+        "CM_NAME:7ce67d784e648c4b596c43e62c319bf29cdf19710f09454cde8be8612d650b98"
+      ],
+      "description": "Retain two supported filtration aliases and make two inherited insufficiently scoped aliases nonresolving, after actual source reconstruction. Final-review qualification of the historical #260 dilution rationale: the original CCAP PE footnote explicitly says to filter natural seawater, reduce it to 95% using glass distilled water, and autoclave. That prepared input is then dosed at 950 cm3; the prior dilution is not inferred from the receiving-medium dose. The literal 95%-strength label is retained as REJECTED_LABEL on this bare filtered-seawater owner, without inventing the percentage basis, final volume, component ratio or a new preparation owner. The unqualified Natural seawater alias is also nonresolving: its recovered JCM1377 contexts state natural seawater without filtration. Supported Filtered natural seawater and Natural seawater (filtrated) aliases remain. Earlier #260 mapping evidence and histories are preserved as historical rationale, superseded only on these alias applicability points by this source-backed qualification. The two assigned filtered cases are not reinterpreted as the 95% preparation. Sources: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf ; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1377 .",
+      "evidence_ids": [
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-FAILED-retrievals-5",
+        "BIO-FAILED-retrievals-70",
+        "BIO-FAILED-retrievals-72",
+        "BIO-FAILED-retrievals-73",
+        "BIO-FAILED-retrievals-74",
+        "BIO-OWNER-Filtered_Seawater",
+        "BIO-PRIMARY-0c1e7fd46063ca00",
+        "BIO-PRIMARY-0d8880a8bce366da",
+        "BIO-PRIMARY-171a1240b2e16508",
+        "BIO-PRIMARY-2c8500ee6101e866",
+        "BIO-PRIMARY-3d890e248ce5aa41",
+        "BIO-PRIMARY-c9440f55c5fd86de",
+        "BIO-PRIMARY-cfa9107ea335833e",
+        "BIO-PRIMARY-e985257a8f05541b",
+        "BIO-PRIMARY-supp-e985257a8f05541b",
+        "BIO-RECIPE-039298d806a3c37f",
+        "BIO-RECIPE-10def676385acac7",
+        "BIO-RECIPE-47bbd520021f151e",
+        "BIO-RECIPE-575bba2696be8cbe",
+        "BIO-RECIPE-9a4a25c9d4ae9b23",
+        "BIO-RECIPE-bd6a9550f0465707",
+        "BIO-RECIPE-c44ec99e4326848e",
+        "BIO-RECIPE-cee9321f0230d004",
+        "BIO-RECIPE-cfbb705908544cf0",
+        "BIO-RECIPE-d2b5e82be908c19a",
+        "BIO-RECIPE-e282ba50c75c82f9",
+        "BIO-SOURCE-11",
+        "BIO-SOURCE-69",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT",
+        "FRV1-BIO-network-ccap-pe.pdf",
+        "FRV1-BIO-network-jcm1377.html",
+        "FRV1-BIO-current-occurrence-lookup.json"
+      ],
+      "owner_path": "data/ingredients/mapped/Filtered_Seawater.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "5256325a957d3055e060f04a7fa4d658e3d31f4a5d6cedd182e9b1ffe9d0841f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Filtered_Seawater.yaml",
+        "sha256": "c3dd3c12d7930af5871e2f348178ae067c3cb1759e39c855d3a8312556336226"
+      },
+      "identity_consequences": "No identifier, ontology target or predicate change; new synonyms retain filtration and natural-water scope. Synthetic salt alternatives and recipe dilutions are not new aliases.",
+      "publication_review_obligations": "Withdraw inherited support for changed owner bytes. Reassess complete current mapping payload and existing Natural seawater synonym before publication; no hold removed.",
+      "cross_shard_conflict": "Existing owner may be referenced by other shard cases; coordinator must reconcile on original baseline hash without adopting other proposed bytes.",
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-filtered-seawater-aliases"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/Filtered_Seawater.yaml",
+        "sha256": "662ce1bb0dec3d644b66f65447410303dbbd9cf3060935196716856b6f440831"
+      },
+      "predecessor_proposal_sha256": "9c862527ee79c23182a91851a816c6af45a0a8621765cb9bd8c9e0ec0a9b940a",
+      "final_review_scope": "Final-review qualification of the historical #260 dilution rationale: the original CCAP PE footnote explicitly says to filter natural seawater, reduce it to 95% using glass distilled water, and autoclave. That prepared input is then dosed at 950 cm3; the prior dilution is not inferred from the receiving-medium dose. The literal 95%-strength label is retained as REJECTED_LABEL on this bare filtered-seawater owner, without inventing the percentage basis, final volume, component ratio or a new preparation owner. The unqualified Natural seawater alias is also nonresolving: its recovered JCM1377 contexts state natural seawater without filtration. Supported Filtered natural seawater and Natural seawater (filtrated) aliases remain. Earlier #260 mapping evidence and histories are preserved as historical rationale, superseded only on these alias applicability points by this source-backed qualification. The two assigned filtered cases are not reinterpreted as the 95% preparation. Sources: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf ; https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1377 .",
+      "finding_ids": [
+        "W04-BIO-HOLD-01"
+      ],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-jcm_492_modified_mj_synthetic_seawater",
+      "case_ids": [
+        "CM_NAME:40c0c894c4b6bbb50dbaf8a3ffd4617c5eba2537f88f2397b17fd86fc07b840b"
+      ],
+      "description": "Create source-qualified stock owner JCM 492 Modified MJ synthetic seawater from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+        "sha256": "aebd000aacf7dd3d7e32d712735c7c12b04ff80a6d6910dd85f8db2ab7977320"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=492",
+      "source_locator": "Modified MJ synthetic seawater table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-294a2f71fde4efbe",
+        "BIO-PRIMARY-6b74fe99558a128c",
+        "BIO-RECIPE-63e3c7aa3b66f9c0",
+        "BIO-SOURCE-39",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-jcm_492_modified_mj_synthetic_seawater"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_492_Modified_MJ_Synthetic_Seawater.yaml",
+        "sha256": "ddd35feefd2df9b1f2a3d721f5b3d89926988efc6e7210a1269e243d324d8f16"
+      },
+      "predecessor_proposal_sha256": "88e2c258aab855f7f8b33632238f97618cca211226e1c7e2958f6f4078213637",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-dsmz_611_synthetic_seawater_mix",
+      "case_ids": [
+        "CM_NAME:489879a7e87e7a699d78827333788bb166ae73b2c834ca7cd4ef439a2d7b3b80"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 611 Synthetic seawater mix from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+        "sha256": "c81591d32aeeaf04c4fbe49a40f3856e96a3dfed484efc2e03a32fd58f71449e"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium611.pdf",
+      "source_locator": "Page1 Synthetic seawater mix table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-0c282238beb9b54a",
+        "BIO-PRIMARY-f93c582c16f11798",
+        "BIO-RECIPE-5769ce12f5239e85",
+        "BIO-SOURCE-41",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-dsmz_611_synthetic_seawater_mix"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_611_Synthetic_Seawater_Mix.yaml",
+        "sha256": "fde3eda1565395d85eb7f90094978e7b367c7710a737c784e741f993adce2633"
+      },
+      "predecessor_proposal_sha256": "5e39614d4bca34c1e6d6fb761828c28f5ad4a58113e63887326ae286761c1728",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-jcm_512_dl_minerals",
+      "case_ids": [
+        "CM_NAME:5053010207e6a25275b07ded5e00096c9743b06a65917aa299596a07d7822ec0"
+      ],
+      "description": "Create source-qualified stock owner JCM 512 DL minerals from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_512_DL_Minerals.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/JCM_512_DL_Minerals.yaml",
+        "sha256": "ab1dc9e8336fafe2005808180cfd42420b095a447c100a57410221910fdffd69"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=512",
+      "source_locator": "DL minerals (refrigerated) table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-OWNER-Sulfur-free_DL_Minerals",
+        "BIO-PRIMARY-1c28eda81cff76c7",
+        "BIO-PRIMARY-7e29fc85a844d1a0",
+        "BIO-RECIPE-f8ed0e149c2204e2",
+        "BIO-SOURCE-44",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-jcm_512_dl_minerals"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_512_DL_Minerals.yaml",
+        "sha256": "245391b1c557bdb7673657098583d269e767905646e9fdbe9ac82e4af53a77b7"
+      },
+      "predecessor_proposal_sha256": "bc74d33bea2ee8c0d3c08a451053b20db621a3e066ecf19baf09da97671c8dbd",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-dsmz_946a_synthetic_seawater_2x",
+      "case_ids": [
+        "CM_NAME:55e03ac3f1e2010248ef84417fc0b47e6d82d7345a3e19d88c5688451d2456c1"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 946a Synthetic seawater (2 x conc.) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+        "sha256": "be34b3e51c0ce2ae91f0bea1a154a8178cc1dc7e63c7b6a1c8dde3e440840861"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium946a.pdf",
+      "source_locator": "Page2 Synthetic seawater (2 x conc.) (from medium795)",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-251d30ed6e239c8a",
+        "BIO-PRIMARY-f21af9734c76ece4",
+        "BIO-RECIPE-dea10ee1e675adcb",
+        "BIO-SOURCE-49",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-dsmz_946a_synthetic_seawater_2x"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_946a_Synthetic_Seawater_2x.yaml",
+        "sha256": "344e7b970587916303854ebb1743726652155ce17d44688194fbd2e15883cfad"
+      },
+      "predecessor_proposal_sha256": "44e2d7e2ec8f86ac33d1757c8132f05dbec1117e47e735635ef182adab7bd5cc",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-jcm_651_artificial_seawater_05x",
+      "case_ids": [
+        "CM_NAME:d2d3612b39dbe00f78cfb34452b2a457722c69f111f1ba1966f865b3b2bec892"
+      ],
+      "description": "Create source-qualified stock owner JCM 651 Artificial seawater (0.5 x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_651_Artificial_Seawater_05x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/JCM_651_Artificial_Seawater_05x.yaml",
+        "sha256": "c2d4e365f71a182d567ce4136cdc14c4e30a21744b604d0b052ee364210ca087"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=651",
+      "source_locator": "0.5 x Artificial seawater table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-retrievals-113",
+        "BIO-PRIMARY-ea90e577fff6331e",
+        "BIO-RECIPE-78aa92c14f524afa",
+        "BIO-SOURCE-108",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-jcm_651_artificial_seawater_05x"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_651_Artificial_Seawater_05x.yaml",
+        "sha256": "0adde845da6ee89a25d28a821e889727dd5136c6ae3015c4e6eb17781dc9095a"
+      },
+      "predecessor_proposal_sha256": "7f886e08472a8c69440337fe85c9e9fcd6730abdf87fec7de014bc86c1843e16",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-jcm_910_artificial_seawater_1x",
+      "case_ids": [
+        "CM_NAME:8cb304e452d84e6d4ec5cbc5d75323b0ed6db6ff52c7782ab6489972a0af6c16"
+      ],
+      "description": "Create source-qualified stock owner JCM 910 Artificial seawater (1.0 x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_910_Artificial_Seawater_1x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/JCM_910_Artificial_Seawater_1x.yaml",
+        "sha256": "d6d0ec251584b36f5dd5e451e5fd8d7b086391f9b07faed7256d9cead8aa897f"
+      },
+      "primary_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=910",
+      "source_locator": "Instruction replacing JCM651 0.5x artificial seawater with 1.0x",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-retrievals-83",
+        "BIO-PRIMARY-ba94778d8e851661",
+        "BIO-RECIPE-c111f454e691870e",
+        "BIO-SOURCE-81",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-jcm_910_artificial_seawater_1x"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_910_Artificial_Seawater_1x.yaml",
+        "sha256": "4557113d7ff49fdd8722ba409e1d5e1016d44b5f51f528a644c0048d9eeaa107"
+      },
+      "predecessor_proposal_sha256": "d9239dfeb0d580a40820d2bda38e9249fe7d7bac9ae5cfa2581a15b942c43815",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226). Correct only the first component evidence note to disclose the existing doubling calculation; component quantities, method, second note and source history unchanged.",
+      "finding_ids": [
+        "W04-BIO-OBS-01"
+      ],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-dsmz_1009_artificial_seawater",
+      "case_ids": [
+        "CM_NAME:db13060723b46cd5621e5d34b182346c99697edb81b0b10951cfb2236d12b093"
+      ],
+      "description": "Create source-qualified stock owner DSMZ 1009 Artificial seawater (32 g sea salt per litre water) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/DSMZ_1009_Artificial_Seawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/DSMZ_1009_Artificial_Seawater.yaml",
+        "sha256": "8c577e4502e7c17e1f5884f927beeb34710d89ccbb9e2668df8d2ed962716b36"
+      },
+      "primary_url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1009.pdf",
+      "source_locator": "Artificial seawater footnote",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-PRIMARY-1bd0d036a214812b",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-RECIPE-15d053e487c597ff",
+        "BIO-RECIPE-3c64593e6a95dc23",
+        "BIO-SOURCE-115",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-dsmz_1009_artificial_seawater"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_1009_Artificial_Seawater.yaml",
+        "sha256": "85d9eff24c54bad5e6daa013fd28496d81c3429ef0b65f625070df37de0b34d3"
+      },
+      "predecessor_proposal_sha256": "f93f6bcc1a1f4c6d378cbe954c74a9efa85189f552a02e5e66b4458c4ed496ec",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-jcm_1269_artificial_seawater_4x",
+      "case_ids": [
+        "CM_NAME:8f55a2cf22d316d1e69ee4141a16291e5deeb1cf7f396c08b5fd3eac6924cd78"
+      ],
+      "description": "Create source-qualified stock owner JCM 1269 Artificial seawater (4x) from the primary recipe; preserve unresolved component identities and source batch quantities.",
+      "owner_path": "data/ingredients/mapped/JCM_1269_Artificial_Seawater_4x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/JCM_1269_Artificial_Seawater_4x.yaml",
+        "sha256": "3c7a2a61a2bc6d449a4a677ccfbbc417ecb33c53f5efe06e95921058fd399458"
+      },
+      "primary_url": "https://bacmedia.dsmz.de/pdf/J1269",
+      "source_locator": "Artificial seawater (4x) table",
+      "identity_consequences": "Own FALLBACK_REGISTRY identity only. No molecular or generic seawater equivalence; no asymmetric parent claim. Generic source labels are contextual notes only, with no resolving aliases.",
+      "publication_review_obligations": "New complete owner payload requires native review, review of source formulation boundaries, guarded integration, synchronized exports and coordinator release disposition. No inherited support or hold clearance.",
+      "cross_shard_conflict": "Coordinator must check any other source-qualified stock or raw-name proposals against original baseline; generic identical labels do not prove identical formulation.",
+      "evidence_ids": [
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-CHECK-stock-guarded-validation.log",
+        "BIO-FAILED-final-retrievals-reconstructed-v2-3",
+        "BIO-FAILED-retrievals-86",
+        "BIO-PRIMARY-f0fa77fefe0df7a2",
+        "BIO-PRIMARY-final-135b07b3c8e2778e",
+        "BIO-PRIMARY-final-b23a1a331ed0ed06",
+        "BIO-RECEIPT-RECOVERY-v2",
+        "BIO-RECIPE-3920d6fe2ac2df93",
+        "BIO-SOURCE-85",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-jcm_1269_artificial_seawater_4x"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/JCM_1269_Artificial_Seawater_4x.yaml",
+        "sha256": "71008fd600cde88d17a6315c0147b00ca48890df2cb53ce643c794853640899c"
+      },
+      "predecessor_proposal_sha256": "ea4d2a2d2ca11b49ab44ab8d6d300a4cde8a3965898355e17a5635ae1b4fbff4",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-dsmz_781_horse_dung_extract",
+      "case_ids": [
+        "CM_NAME:82ed92170a6907ff3bba19b261fc010ac343554ae8299ca5dbb3c6a4632be2d2",
+        "KG_CASE:50a3e82d96fde8b0ff490cdc2f0a77956358274265d79ba97d23a983c4978534"
+      ],
+      "description": "Create the protocol-qualified horse-dung aqueous extract explicitly defined in DSMZ781; keep extraction inputs distinct from measured filtrate composition.",
+      "owner_path": "data/ingredients/mapped/DSMZ_781_Horse_Dung_Extract.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/DSMZ_781_Horse_Dung_Extract.yaml",
+        "sha256": "ad04e6472f6220d5b4f6bb85dc1163e62ec302198c5a159dc4ad0f2bb6016839"
+      },
+      "identity_consequences": "Own fallback registry identity only; no equivalence to animal manure or dry cow manure. No guessed components, concentration or sterilization property.",
+      "publication_review_obligations": "Native review and full source-scoped alias assessment required for the new payload before guarded integration. Existing source-unit defects remain separately tracked.",
+      "cross_shard_conflict": "Coordinator must reconcile any other dung/extract proposal on source protocol, not raw label alone.",
+      "evidence_ids": [
+        "BIO-CHECK-material-guarded-validation.log",
+        "BIO-CHECK-native-stock-duplicate-search.txt",
+        "BIO-CHECK-proposal-baseline-check.json",
+        "BIO-PRIMARY-0de3fb431dbb0e36",
+        "BIO-PRIMARY-6686a0a4b7979389",
+        "BIO-PRIMARY-b4d2ad90228abe4e",
+        "BIO-RECIPE-126d5309cd25b389",
+        "BIO-RECIPE-56091d3148f18c35",
+        "BIO-RECIPE-fb6b41b73d777cb6",
+        "BIO-SOURCE-153",
+        "BIO-SOURCE-75",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "supersedes_proposal_ids": [
+        "BIO-PROPOSAL-dsmz_781_horse_dung_extract"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "proposals/biological/DSMZ_781_Horse_Dung_Extract.yaml",
+        "sha256": "5799874520bfb23194cac5dae89f04b2a02ad13c4b4a6d9480a159e35f3795b8"
+      },
+      "predecessor_proposal_sha256": "9f3b88324abdd931b9875d8db09b5c55b7a711e8a1483dfef86811e66b0e6906",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-biomarisseawater",
+      "case_ids": [
+        "CM_NAME:1294670f0c2c69561bb4eaa5b88d7af47f6fb366fddabf3d85d87a80039c7dbc"
+      ],
+      "description": "DSMZ 1752 names Biomaris Seawater as the liquid base. The separately supplied salt replacement is an alternative and is not the bottled product formula. This record retains the branded seawater material without asserted lot, constituents, salinity or treatment. No equivalent owner exists among baseline sea-water classes or published seawater stocks.",
+      "evidence_ids": [
+        "BIO-PRIMARY-0546b8d8d0d63d94",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-RECIPE-0d7d28f886d7ae41",
+        "BIO-SOURCE-9",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/BiomarisSeawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/BiomarisSeawater.yaml",
+        "sha256": "b4b9213f76a629655c9f9ba4f4c966fceeda96451cebf6662bce9630cd9625c0"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-biomaris_seawater"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/BiomarisSeawater.yaml",
+        "sha256": "a509bdc052b9bd9259bace8fc73725f703b9e3f97ee901a3365f67d6f98ef93b"
+      },
+      "predecessor_proposal_sha256": "c47470b0e8d8a7daa892b6a3b0d896bab9f8b868c9967e94f989bc987e882706",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-potatotubertissue",
+      "case_ids": [
+        "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+        "KG_CASE:35db9f746182b82fe17caff755d6f482e5a96d363b704024a2d224a275450042"
+      ],
+      "description": "Potato material supplied as tuber tissue in the linked recipes. The material input is distinct from liquid potato infusion or extract after boiling and filtration. Case 16 occurrences carrying peeled-and-cut notes are additionally bound to the more specific peeled/cut material proposal. Starting potato masses are process input amounts, not measured retained solids in a filtrate. FOODON 03315354 names a potato tuber; FOODON 00002796 covers whole/piece derivatives, but no exact claim erases a recipe-specific preparation.",
+      "evidence_ids": [
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-PRIMARY-0ea6fd19f202b125",
+        "BIO-PRIMARY-162149c53dd4716e",
+        "BIO-PRIMARY-22f2ffbfd6038070",
+        "BIO-PRIMARY-3004b400342ca41f",
+        "BIO-PRIMARY-32b6b8c0723b62dc",
+        "BIO-PRIMARY-51a5b28e2230859e",
+        "BIO-PRIMARY-54629584c78c5150",
+        "BIO-PRIMARY-5ba20480c58b78ae",
+        "BIO-PRIMARY-631de48df2290cfe",
+        "BIO-PRIMARY-6436a591d238e20c",
+        "BIO-PRIMARY-65e3c1b359b463d2",
+        "BIO-PRIMARY-7108dcfd11dff4fc",
+        "BIO-PRIMARY-7983823db8e51016",
+        "BIO-PRIMARY-7e37272bd37843cf",
+        "BIO-PRIMARY-98c9a9adb396cf06",
+        "BIO-PRIMARY-a0a747fa6a5a1413",
+        "BIO-PRIMARY-a647bc6ff813a426",
+        "BIO-PRIMARY-b0b8e635b723c032",
+        "BIO-PRIMARY-b5d12ef741b45198",
+        "BIO-PRIMARY-b68e5ba28d4d6f14",
+        "BIO-PRIMARY-df7689832fc3b3d9",
+        "BIO-PRIMARY-e0839172d4fbe8cd",
+        "BIO-PRIMARY-eb2bfb19854f68f9",
+        "BIO-PRIMARY-ebb161e3b7829c00",
+        "BIO-PRIMARY-f2106391ecf7be31",
+        "BIO-PRIMARY-fdb69b9dfdc0f2ec",
+        "BIO-PRIMARY-final-3eb0af3d9839158d",
+        "BIO-PRIMARY-followup-b319a88a6e26e608",
+        "BIO-PRIMARY-followup-f7e2f2b37dcc70fc",
+        "BIO-PRIMARY-supp-a98ecda936855826",
+        "BIO-RECIPE-033610236f35fb47",
+        "BIO-RECIPE-112bba2ac43f1fdf",
+        "BIO-RECIPE-22a1a2cea3fb246b",
+        "BIO-RECIPE-252fab49c53d1d94",
+        "BIO-RECIPE-273ad96659065d06",
+        "BIO-RECIPE-2fe309e8fc0d4c37",
+        "BIO-RECIPE-37585d179428fad6",
+        "BIO-RECIPE-405719c0de819c4f",
+        "BIO-RECIPE-427fa7602cb9d155",
+        "BIO-RECIPE-52bfa712c16c8c0a",
+        "BIO-RECIPE-592feb62523942b6",
+        "BIO-RECIPE-5b857fb92502874b",
+        "BIO-RECIPE-6631a8cb4999517e",
+        "BIO-RECIPE-73fc2a808392c752",
+        "BIO-RECIPE-7893e91cf91c9aea",
+        "BIO-RECIPE-8cb28c03f83d888d",
+        "BIO-RECIPE-942c9a1ebc9a9263",
+        "BIO-RECIPE-9977b34c496135f4",
+        "BIO-RECIPE-b1c84a9510ede7dc",
+        "BIO-RECIPE-bb6bae4779ab4555",
+        "BIO-RECIPE-c75e77ddd665521b",
+        "BIO-RECIPE-d8082e88ecf99569",
+        "BIO-RECIPE-e20a0c8e4d0ffe05",
+        "BIO-RECIPE-e322d3cdf8fd10ae",
+        "BIO-RECIPE-ea045122155d9ffc",
+        "BIO-RECIPE-eebb66198653fbef",
+        "BIO-RECIPE-f3376b4bdf60b96b",
+        "BIO-RECIPE-fd043a5f3e7d4a2c",
+        "BIO-SOURCE-144",
+        "BIO-SOURCE-16",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/PotatoTuberTissue.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/PotatoTuberTissue.yaml",
+        "sha256": "1dddac191064e9070b400f3d72c02cd64dc10d2affc32c5aa5198e99cdb06021"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-potato_tuber_tissue"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/PotatoTuberTissue.yaml",
+        "sha256": "181da4297af99e1bac42ab4a43cc9f3cb5b604646734fd16384f374f27893623"
+      },
+      "predecessor_proposal_sha256": "22b14cd184d53bd0c2de4193d42adfcf7f8be6de1093445f36ee415de3583d1c",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-peeledcutpotato",
+      "case_ids": [
+        "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+        "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3"
+      ],
+      "description": "JCM 30/54/55/116 and the explicitly qualified frozen rows supply peeled, cut potato as a preparation input. Cut does not specify a dice size, so the existing Diced Potato owner is not an exact substitute. JCM 30 boils 200 g in 1 L for 20 min then sieves; JCM 54/55 combine potato and carrot and filter through cheesecloth. Those outputs remain distinct; the record describes the peeled/cut tissue before extraction.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-105",
+        "BIO-FAILED-retrievals-106",
+        "BIO-FAILED-retrievals-107",
+        "BIO-FAILED-retrievals-108",
+        "BIO-FAILED-retrievals-109",
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-OWNER-Diced_Potato",
+        "BIO-PRIMARY-0ea6fd19f202b125",
+        "BIO-PRIMARY-162149c53dd4716e",
+        "BIO-PRIMARY-22f2ffbfd6038070",
+        "BIO-PRIMARY-32b6b8c0723b62dc",
+        "BIO-PRIMARY-449524fb4c9c6251",
+        "BIO-PRIMARY-51a5b28e2230859e",
+        "BIO-PRIMARY-54629584c78c5150",
+        "BIO-PRIMARY-5ba20480c58b78ae",
+        "BIO-PRIMARY-631de48df2290cfe",
+        "BIO-PRIMARY-6436a591d238e20c",
+        "BIO-PRIMARY-65e3c1b359b463d2",
+        "BIO-PRIMARY-7108dcfd11dff4fc",
+        "BIO-PRIMARY-7983823db8e51016",
+        "BIO-PRIMARY-7e37272bd37843cf",
+        "BIO-PRIMARY-8954f01912db0be1",
+        "BIO-PRIMARY-98c9a9adb396cf06",
+        "BIO-PRIMARY-a0a747fa6a5a1413",
+        "BIO-PRIMARY-a647bc6ff813a426",
+        "BIO-PRIMARY-b0b8e635b723c032",
+        "BIO-PRIMARY-b5d12ef741b45198",
+        "BIO-PRIMARY-b68e5ba28d4d6f14",
+        "BIO-PRIMARY-df7689832fc3b3d9",
+        "BIO-PRIMARY-e0839172d4fbe8cd",
+        "BIO-PRIMARY-eb2bfb19854f68f9",
+        "BIO-PRIMARY-ebb161e3b7829c00",
+        "BIO-PRIMARY-f2106391ecf7be31",
+        "BIO-PRIMARY-fdb69b9dfdc0f2ec",
+        "BIO-PRIMARY-final-3eb0af3d9839158d",
+        "BIO-PRIMARY-followup-b319a88a6e26e608",
+        "BIO-PRIMARY-followup-f7e2f2b37dcc70fc",
+        "BIO-PRIMARY-supp-a98ecda936855826",
+        "BIO-RECIPE-033610236f35fb47",
+        "BIO-RECIPE-112bba2ac43f1fdf",
+        "BIO-RECIPE-18c640c42e0260e6",
+        "BIO-RECIPE-22a1a2cea3fb246b",
+        "BIO-RECIPE-252fab49c53d1d94",
+        "BIO-RECIPE-273ad96659065d06",
+        "BIO-RECIPE-2fe309e8fc0d4c37",
+        "BIO-RECIPE-37585d179428fad6",
+        "BIO-RECIPE-405719c0de819c4f",
+        "BIO-RECIPE-427fa7602cb9d155",
+        "BIO-RECIPE-433533891f3173b2",
+        "BIO-RECIPE-52bfa712c16c8c0a",
+        "BIO-RECIPE-592feb62523942b6",
+        "BIO-RECIPE-5b857fb92502874b",
+        "BIO-RECIPE-6631a8cb4999517e",
+        "BIO-RECIPE-6901994f4e5cd19b",
+        "BIO-RECIPE-73fc2a808392c752",
+        "BIO-RECIPE-7893e91cf91c9aea",
+        "BIO-RECIPE-8cb28c03f83d888d",
+        "BIO-RECIPE-9205ac25c9f8169a",
+        "BIO-RECIPE-942c9a1ebc9a9263",
+        "BIO-RECIPE-9977b34c496135f4",
+        "BIO-RECIPE-9b7cbf12b51a197a",
+        "BIO-RECIPE-b1c84a9510ede7dc",
+        "BIO-RECIPE-bb6bae4779ab4555",
+        "BIO-RECIPE-c75e77ddd665521b",
+        "BIO-RECIPE-d8082e88ecf99569",
+        "BIO-RECIPE-e20a0c8e4d0ffe05",
+        "BIO-RECIPE-e322d3cdf8fd10ae",
+        "BIO-RECIPE-ea045122155d9ffc",
+        "BIO-RECIPE-ebde6718d570d362",
+        "BIO-RECIPE-eebb66198653fbef",
+        "BIO-RECIPE-f1d60c9f8cc725b5",
+        "BIO-RECIPE-f3376b4bdf60b96b",
+        "BIO-RECIPE-fd043a5f3e7d4a2c",
+        "BIO-SOURCE-104",
+        "BIO-SOURCE-16",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/PeeledCutPotato.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/PeeledCutPotato.yaml",
+        "sha256": "5d99c4d1ec9ec08934f1e75184ae7de0a2971054dcb3c70a7ccc38e8020f042d"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-peeled_cut_potato"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/PeeledCutPotato.yaml",
+        "sha256": "aa84307324e2e8e00c480b43380d0aed1478ac683baf6cac9268756e1c11bc2c"
+      },
+      "predecessor_proposal_sha256": "0cce27abcdafac9b683fd0e78c43069e0658bbccd34b822a7a33f23cfc584926",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-m2231sterileair",
+      "case_ids": [
+        "CM_NAME:1d7876464ccd01b8445b3066163c8e90151d32f026abb334da0137c8d4ad2d53"
+      ],
+      "description": "TOGO M2231 describes cultures bubbled with 5% CO2-containing sterile air. This record denotes the sterile air carrier input, not CO2 alone, liquid-medium volume, or the aeration operation. The supplied gas is used with CO2; no invented N2/O2 percentages or sterility process are asserted. The 5% figure is preserved as source context and is not converted to an unstated molar/volume basis.",
+      "evidence_ids": [
+        "BIO-PRIMARY-c6b92a666534f07e",
+        "BIO-RECIPE-af65045e3fe660fc",
+        "BIO-SOURCE-20",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/M2231SterileAir.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/M2231SterileAir.yaml",
+        "sha256": "eb3d6c32a4750beb8a1655c41928a8baefc5943f55ec28e9b70a2c69e69bfbbf"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-m2231_sterile_air"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/M2231SterileAir.yaml",
+        "sha256": "1cd8e5894004f60bbe7810a775fad4c2f51fb2a9d0b90fe4ab383c56e75d5eb0"
+      },
+      "predecessor_proposal_sha256": "96f7eab75c496199fe536d589a79810074c49c2977a4ee3cc7acf4162b49796e",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrc355acidwhey",
+      "case_ids": [
+        "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e"
+      ],
+      "description": "NBRC 355 directs adding HCl to warmed milk to coagulate it, centrifuging, and using the supernatant as cheese whey. The source-defined output can be represented without a quantified yield. Starting milk and HCl are processing inputs; precipitated milk proteins are removed, and their masses or final retained fractions are not asserted as has-part components. Applies only to CultureMech 015901/nbrc.medium 355 in case 23.",
+      "evidence_ids": [
+        "BIO-PRIMARY-25ba45ec76b0732f",
+        "BIO-PRIMARY-6b5732094d157979",
+        "BIO-PRIMARY-e920b6bc762ac96d",
+        "BIO-PRIMARY-ec50dc05b1397db6",
+        "BIO-RECIPE-23ae2446f49c1991",
+        "BIO-RECIPE-5baafc735e67fe67",
+        "BIO-RECIPE-5c95f257d3f97d1a",
+        "BIO-RECIPE-76afd492ec1d77cd",
+        "BIO-RECIPE-9ff238405c60b17b",
+        "BIO-RECIPE-e399952cad0326b6",
+        "BIO-RECIPE-eb000d8f0d95ebc7",
+        "BIO-SOURCE-23",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Nbrc355AcidWhey.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Nbrc355AcidWhey.yaml",
+        "sha256": "5ee09185fa8e245679907b584fb12abc87b274bff793cfc9a650fd55a45cb36d"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc355_acid_whey"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc355AcidWhey.yaml",
+        "sha256": "cb64ed2609e9093501a93933d933e490c3cd9a037246ea304893c3984740d5fb"
+      },
+      "predecessor_proposal_sha256": "ae2a8f4c1011f141218a4f7b1564f58d4ee412c97bab77189f6269c98e42d26d",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-cheesewheyunspecified",
+      "case_ids": [
+        "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e"
+      ],
+      "description": "DSMZ 775 and JCM 162 name cheese whey as the liquid substrate without the NBRC 355 acid-coagulation preparation. This is the source-stated cheese-whey material class, with unspecified production process and composition, not purified lactose, whole milk or a 1 g/L chemical. The six non-NBRC 355 occurrences are covered; primary 1 L/1000 ml quantities and malformed frozen G_PER_L or PERCENT_V_V values remain distinct evidence.",
+      "evidence_ids": [
+        "BIO-PRIMARY-25ba45ec76b0732f",
+        "BIO-PRIMARY-6b5732094d157979",
+        "BIO-PRIMARY-e920b6bc762ac96d",
+        "BIO-PRIMARY-ec50dc05b1397db6",
+        "BIO-RECIPE-23ae2446f49c1991",
+        "BIO-RECIPE-5baafc735e67fe67",
+        "BIO-RECIPE-5c95f257d3f97d1a",
+        "BIO-RECIPE-76afd492ec1d77cd",
+        "BIO-RECIPE-9ff238405c60b17b",
+        "BIO-RECIPE-e399952cad0326b6",
+        "BIO-RECIPE-eb000d8f0d95ebc7",
+        "BIO-SOURCE-23",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/CheeseWheyUnspecified.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/CheeseWheyUnspecified.yaml",
+        "sha256": "aacb8ee6ecd87b63622cac6f7b7ea59a6fd5e0fd7d7c08210b0611db95db75d1"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-cheese_whey_unspecified"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/CheeseWheyUnspecified.yaml",
+        "sha256": "441847304afeb9e1a840c8d1d964da94ed232c8d8f6045b912e8ef121f474722"
+      },
+      "predecessor_proposal_sha256": "0fa0e152cd757a288c4cf022e2b3324007dc1eb7bf1a1f0f513c7cc2414141f6",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrc985sterilizednaturalseawater",
+      "case_ids": [
+        "CM_NAME:2c0ad60cd1d5e336efad8134d670a773fd6b6badd55535e195513d9684fdbd4e"
+      ],
+      "description": "NBRC 985 explicitly identifies sterilized natural seawater in the Porphyra cultivation context. The preparation boundary is retained without equating it to untreated natural seawater, pasteurized water or synthetic salt medium. No sterilization method or receiving dose is inferred.",
+      "evidence_ids": [
+        "BIO-PRIMARY-75e7596abfb984d7",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-PRIMARY-e18d93bb1807daaa",
+        "BIO-RECIPE-101ff52857780fb4",
+        "BIO-SOURCE-26",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Nbrc985SterilizedNaturalSeawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Nbrc985SterilizedNaturalSeawater.yaml",
+        "sha256": "7520784c8de02b8624a778eaaff9b0dd27734f5d3dcf837fd734f3b45b2cdf10"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc985_sterilized_natural_seawater"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc985SterilizedNaturalSeawater.yaml",
+        "sha256": "7d59996a466d51b58ee44ff5831eae1c652424bd3a225e3d2e5b152f7a0f3f7f"
+      },
+      "predecessor_proposal_sha256": "f3da4b92c11365c0af776700b81042bbd013a6ae06252abe5e40e3dca0e9d3eb",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrc15treatedv8supernatant",
+      "case_ids": [
+        "CM_NAME:2f91fab8feab468a33e48d01e2f0a1363b9ad70816766c69a1e8d68c0ed6f8d5"
+      ],
+      "description": "Stir approximately 300 ml V-8 juice with 3 g CaCO3 for 2 h, then centrifuge and retain the supernatant. NBRC 15 uses 200 ml of that output with 800 ml 2% seawater and 15 g agar. CaCO3 and initial juice volumes are processing inputs, not proven retained output components or concentrations. Final medium pH7.0 belongs to the receiving agar, not an independently measured stock pH. This preparation differs from whole V8 Juice/V8 Canned Vegetable Juice owners.",
+      "evidence_ids": [
+        "BIO-PRIMARY-38c2e843ce8ce0ce",
+        "BIO-PRIMARY-66a7c00567ef40ce",
+        "BIO-RECIPE-60f7a75bc09f7893",
+        "BIO-SOURCE-29",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Nbrc15TreatedV8Supernatant.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Nbrc15TreatedV8Supernatant.yaml",
+        "sha256": "7049f212eb2386c7a9928e95f5dd30b44e8cecf6a2b06a5ca6cb701396cb59ce"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc15_treated_v8_supernatant"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc15TreatedV8Supernatant.yaml",
+        "sha256": "3688823115f75eb35da366bf313eb60a4385238c1495fbe155b0933c3aefa24d"
+      },
+      "predecessor_proposal_sha256": "43292d213dedb54bf16b799e536fa32bc747bc33737518bd46655e87280620c9",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrccornmealextract",
+      "case_ids": [
+        "CM_NAME:38666aff12cec7bb7f72483d2b45d6ce9ddb62662e3a0158b722eea40ac54231"
+      ],
+      "description": "NBRC 16/17/24/1114 and their TOGO counterparts identify cornmeal extract, usually 2 g per source recipe. It is a biological extract ingredient; the existing Corn Meal material and complete Corn Meal Agar are not the extract. No extraction solvent, brand or chemical composition is supplied. This bounded source-stated extract class has no asserted processing yield or global cornmeal alias.",
+      "evidence_ids": [
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-PRIMARY-14a085460c78bcd7",
+        "BIO-PRIMARY-153907851fc9152b",
+        "BIO-PRIMARY-206c11a558aeb436",
+        "BIO-PRIMARY-57fd0b500bb90328",
+        "BIO-PRIMARY-ba61e1d8a837d141",
+        "BIO-PRIMARY-d8ce6a68b57ea28b",
+        "BIO-PRIMARY-f3bb538d43df431a",
+        "BIO-PRIMARY-f62c43bcba40d58b",
+        "BIO-RECIPE-8570ee9c0fbd5216",
+        "BIO-RECIPE-af2c308ab5e0401c",
+        "BIO-RECIPE-af6ecec836ce0e7b",
+        "BIO-RECIPE-bd57d1172b2bbc56",
+        "BIO-SOURCE-33",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/NbrcCornmealExtract.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/NbrcCornmealExtract.yaml",
+        "sha256": "790c4d8dd7219a146ea321a14f6e5603257e7dd84ae6b6140bbe2b71e67f1cb8"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc_cornmeal_extract"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/NbrcCornmealExtract.yaml",
+        "sha256": "0643ffda959ce62f624369c035714eda7f4830ac1c6a7a0bb20ea1c9c1b673d9"
+      },
+      "predecessor_proposal_sha256": "48eecb7047fd4c9898bcb1efae27df4fef93ad7bddabb470276ae44c644269b1",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-maltedwheatmeal",
+      "case_ids": [
+        "CM_NAME:50c942891a7aa5079f3e2a4e4f80d0dd95a429442305da6a277b8a3a4c1e10ec",
+        "KG_CASE:eaff5e3b4276fa082fa466bed84a3794817312e1bdf1c7c44891f0fa61385956"
+      ],
+      "description": "JCM 730 names 2 g malted wheat meal as an input in rye-bran extract preparation with 40 g rye bran,0.8 g trypsin and 1 L water incubated 50 C24 h, centrifuged 500xg 15 min and filtered. MediaDiveingredient 1881 and all three CultureMech occurrences refer to that input. Malted wheat meal is distinct from whole wheat grains, malt extract, wheat arabinoxylan and the resulting rye-bran extract. FOODON wheat malt is a candidate broader material; additional coarse-ground/unheated qualifiers are not inferred.",
+      "evidence_ids": [
+        "BIO-PRIMARY-826adbe18fc49cf1",
+        "BIO-PRIMARY-final-4b35815fc03de04d",
+        "BIO-PRIMARY-followup-27e3c547f5370eb0",
+        "BIO-PRIMARY-followup-f3f49fe6ad0948a4",
+        "BIO-PRIMARY-supp-ab082efe127ab014",
+        "BIO-RECIPE-71978e36319852c0",
+        "BIO-RECIPE-a224a14151166e96",
+        "BIO-RECIPE-fa9491b68703e000",
+        "BIO-SOURCE-185",
+        "BIO-SOURCE-45",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/MaltedWheatMeal.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/MaltedWheatMeal.yaml",
+        "sha256": "7ae53a37c9360c9c78bf1990aede068b902fc737bddeecc5488063ebc9a1181e"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-malted_wheat_meal"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/MaltedWheatMeal.yaml",
+        "sha256": "e17968db689f076cf2e18fe7c5e5f33c14c95c8ee9055375fc38d3299f57fbe4"
+      },
+      "predecessor_proposal_sha256": "3b962f908a24d8865c69631e790dcdaafcfc14460f4cbb341bb700fc10c103a3",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-m3127mjsyntheticseawater",
+      "case_ids": [
+        "CM_NAME:5e4533b3047d69506ed98b18c2f892328d120856391cb7651eaeedf755163d45"
+      ],
+      "description": "M3127 specifies 1 L MJ synthetic seawater, with separate modifications to make MMJ/MMJS. The source points to Sako 1996 and Takai 1999; newly captured author papers give MJ lineage and a 2012 formulation, but exact version continuity to the M3127 preparation is not proven. Preserve the named base as an opaque source-qualified stock. It is distinct from the published JCM 492 Modified MJ owner; neither later formula nor MMJ additions are silently installed as MJ constituents.",
+      "evidence_ids": [
+        "BIO-PRIMARY-0c9770f214af2822",
+        "BIO-RECIPE-4f56ed45ac07f381",
+        "BIO-SOURCE-52",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "I1201-BIO-mj-izumi2012-v2",
+        "I1201-BIO-mj-takai2005-v2",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/M3127MjSyntheticSeawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/M3127MjSyntheticSeawater.yaml",
+        "sha256": "95d86bff29df1c716eb7debba21744e9b2533b8a7de90701e423dcbc2a9275e1"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-m3127_mj_synthetic_seawater"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/M3127MjSyntheticSeawater.yaml",
+        "sha256": "fcf44fd32461fdd13b84b33eed72aee991591f78cdbde06433389d0ea104e7a1"
+      },
+      "predecessor_proposal_sha256": "2d2600672951ccbe2dc1bd52b8582683ec923bc52f4faf02eab10fe31c9d38a6",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-oatspeltxylan",
+      "case_ids": [
+        "CM_NAME:753bcab85e83964ea4e5be8e4871538e56e0a77f4febb66a97eaef9380ac985d"
+      ],
+      "description": "M2313 names xylan from oat spelts as an alternative carbon-substrate input. This is a botanical xylan preparation distinct from larchwood and beechwood products. CHEBI 37166 is the generic xylose-residue polymer class; no purity or molecular equivalence of the complete botanical preparation is proven. Use a registry identity without invented CAS, purity or has-part constituents.",
+      "evidence_ids": [
+        "BIO-FAILED-supplementary-retrievals-2",
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-PRIMARY-61217b46be42b027",
+        "BIO-PRIMARY-final-f0c7a86710dc60bb",
+        "BIO-RECIPE-a1c2ef58d6c02968",
+        "BIO-SOURCE-66",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/OatSpeltXylan.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/OatSpeltXylan.yaml",
+        "sha256": "e108cc49f59cf8186abf6d02fd73d405ebf92b402a8b9235394583af2e5adb75"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-oat_spelt_xylan"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/OatSpeltXylan.yaml",
+        "sha256": "bc3ac91a194dd48f65e62305538655fb9d7d9076bac71f081e566ff9ce426d51"
+      },
+      "predecessor_proposal_sha256": "51be795674e4c50618995a7b6169fbd8b64dc4911659f6d4cd6442a349903e39",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrc1130seawater3pct",
+      "case_ids": [
+        "CM_NAME:7d5d4441f9c0415988aae5f1acdae84a52f877532b63e5c3b1f9454145249194"
+      ],
+      "description": "TOGO M1886/NBRC 1130 specifies 1 L seawater at 3% salinity. Preserve that concentration qualifier and source provenance. It does not specify 3% sodium chloride, a molecular formula, or an artificial seawater brand. The distinct salinity-qualified material is not reduced to bare seawater.",
+      "evidence_ids": [
+        "BIO-FAILED-final-retrievals-reconstructed-v2-11",
+        "BIO-FAILED-retrievals-75",
+        "BIO-FAILED-retrievals-76",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-PRIMARY-final-44e31009fef6996e",
+        "BIO-RECEIPT-RECOVERY-v2",
+        "BIO-RECIPE-f3466959e3517055",
+        "BIO-SOURCE-70",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Nbrc1130Seawater3pct.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Nbrc1130Seawater3pct.yaml",
+        "sha256": "ce5d032fde4f0fae8e0d52d3bb7d7030dde7bdf3998d74a0aaf86fd0f9fa9be7"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc1130_seawater_3pct"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc1130Seawater3pct.yaml",
+        "sha256": "2e4d282443eec26b1ed2dc2e85a5c30b0c794a287a314a06c7c16c73ce0a5b3f"
+      },
+      "predecessor_proposal_sha256": "35be3a19e393b422b7d8d94bd337d090c6068967b7683a734f47091920433abc",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-oatmeal",
+      "case_ids": [
+        "CM_NAME:7dfb37f670a3ce56ccf2973d1cc0b97701308fccaf46a3ad0a50557aef2d7a93",
+        "CM_NAME:d140b21c45870943670801d0fd90736b653a2ef801731f9dcdf9e44d45ddeb61",
+        "KG_CASE:894c463415090fbd01eeb48c6ea2a0ed5e76fa2c1820094a016c1f1048a6e6cc"
+      ],
+      "description": "Final-review identity correction (#1232): the active exact NCIT:C29298 claim is withdrawn because its colloidal whole-oat fine-powder definition is not established by generic food oatmeal or merely powdered Quaker inputs. The existing food-oatmeal owner is represented by kgmicrobe.ingredient:oatmeal, with NARROW_MATCH to FOODON:00001189 oat food product (a food product made from oats). This is an asymmetric broader food-material grounding, not exact identity with all oat foods and not a new brand or colloidal-grade owner. The prior identifier and exact mapping remain in immutable before bytes and the historical events below; earlier notes describing the retained NCIT hold are historical and superseded by this correction. All30 matching historical normalized recipe contexts at CultureMech15a4da5c08 were inspected in addition to the prior current-source lineage; their oatmeal inputs do not establish colloidal manufacture. The absent untracked18-member table is not claimed reconstructed; occurrence counts remain unchanged pending reconciliation. Powdered Quaker supplied-form facts remain source-specific; generic MediaDive471 oatmeal is not declared powdered. Whole-owner integration/export approval, unresolved occurrence membership and source-specific holds remain.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-111",
+        "BIO-FAILED-retrievals-78",
+        "BIO-OWNER-Oatmeal",
+        "BIO-PRIMARY-3decc23cfde472e5",
+        "BIO-PRIMARY-caab5f56ad740852",
+        "BIO-PRIMARY-ce222a987d4a5a05",
+        "BIO-PRIMARY-e1adda7567ff336b",
+        "BIO-PRIMARY-final-c6b8156aecb9961c",
+        "BIO-PRIMARY-final-ec4737dfce782133",
+        "BIO-PRIMARY-followup-1efe1a15d3e2ea76",
+        "BIO-PRIMARY-followup-61f3ff18e6d53970",
+        "BIO-PRIMARY-followup-7f3246424ed30e01",
+        "BIO-PRIMARY-supp-3decc23cfde472e5",
+        "BIO-RECIPE-2b437c4275354176",
+        "BIO-RECIPE-e6432bf09192929d",
+        "BIO-SOURCE-106",
+        "BIO-SOURCE-165",
+        "BIO-SOURCE-72",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-OAT-RECIPE-0184d0c75d1becb0e5ee",
+        "I1201-BIO-OAT-RECIPE-040d57757e7fd61b473e",
+        "I1201-BIO-OAT-RECIPE-04c2c6e9543b668e87a7",
+        "I1201-BIO-OAT-RECIPE-0d364d81e874fcab790e",
+        "I1201-BIO-OAT-RECIPE-16864655b62c43eff065",
+        "I1201-BIO-OAT-RECIPE-1a21575704e92840cfac",
+        "I1201-BIO-OAT-RECIPE-1d807ce9e17e68ed6d4c",
+        "I1201-BIO-OAT-RECIPE-206fd317ec1410543744",
+        "I1201-BIO-OAT-RECIPE-33f769d3d5caf4d5d3a6",
+        "I1201-BIO-OAT-RECIPE-34763951ca4e94811181",
+        "I1201-BIO-OAT-RECIPE-47ec7c02a73293491072",
+        "I1201-BIO-OAT-RECIPE-4983d05a8c60848737d7",
+        "I1201-BIO-OAT-RECIPE-4d2c72d5dcbfe2d4a100",
+        "I1201-BIO-OAT-RECIPE-64ef52a26cb4c4a0356f",
+        "I1201-BIO-OAT-RECIPE-6eeb782fd9dd3f68ea69",
+        "I1201-BIO-OAT-RECIPE-7243fa3aef825332349b",
+        "I1201-BIO-OAT-RECIPE-7a73d8863be702de5d9c",
+        "I1201-BIO-OAT-RECIPE-85c86b54abf309ae8f66",
+        "I1201-BIO-OAT-RECIPE-865e2c734dec0def6ae8",
+        "I1201-BIO-OAT-RECIPE-8b2301f60aefca5f58d5",
+        "I1201-BIO-OAT-RECIPE-8eacadf27eedd1a0c973",
+        "I1201-BIO-OAT-RECIPE-9ce738355de9fcf77a10",
+        "I1201-BIO-OAT-RECIPE-a7d46fcb54d4b00bceae",
+        "I1201-BIO-OAT-RECIPE-ac7010e6a02f232cfc8d",
+        "I1201-BIO-OAT-RECIPE-b78b518b2878797517e3",
+        "I1201-BIO-OAT-RECIPE-bb1c4055ad95406e2af8",
+        "I1201-BIO-OAT-RECIPE-bc4d194a3d09ca025183",
+        "I1201-BIO-OAT-RECIPE-be354f946390a9654bc2",
+        "I1201-BIO-OAT-RECIPE-bf29adf60efe96c0d326",
+        "I1201-BIO-OAT-RECIPE-c63f0e800cb216b7d0ac",
+        "I1201-BIO-OAT-RECIPE-c6c2175ea4e989809f4b",
+        "I1201-BIO-OAT-RECIPE-cc589daa634847b9928f",
+        "I1201-BIO-OAT-RECIPE-cd1eeff9de5c43114043",
+        "I1201-BIO-OAT-RECIPE-cf9f04459cf651ab81b5",
+        "I1201-BIO-OAT-RECIPE-d45c9e32cf319bc28233",
+        "I1201-BIO-OAT-RECIPE-da85f8e695153c4438b0",
+        "I1201-BIO-OAT-RECIPE-db00dbc4d8686a42bc12",
+        "I1201-BIO-OAT-RECIPE-dfd046f850b17cdd13ce",
+        "I1201-BIO-OAT-RECIPE-f107921be93081176706",
+        "I1201-BIO-OAT-RECIPE-f457bce94130f5e757ca",
+        "I1201-BIO-OAT-RECIPE-f4b7bf1f10432b1e6ac9",
+        "I1201-BIO-REUSED-BINDINGS",
+        "I1201-BIO-oatmeal-owner-historical-reconstruction",
+        "I1201-BIO-oatmeal-owner-lineage",
+        "FRV1-BIO-PROVENANCE-AUDIT",
+        "FRV1-BIO-foodon-00001189.json",
+        "FRV1-BIO-foodon-oatmeal-search.json",
+        "FRV1-BIO-foodon-oat-search.json",
+        "FRV1-BIO-oatmeal-historical-tree-scope.json",
+        "FRV1-BIO-duplicate-lookup.json",
+        "FRV1-BIO-OAT-HIST-0",
+        "FRV1-BIO-OAT-HIST-1",
+        "FRV1-BIO-OAT-HIST-2",
+        "FRV1-BIO-OAT-HIST-3",
+        "FRV1-BIO-OAT-HIST-4",
+        "FRV1-BIO-OAT-HIST-5",
+        "FRV1-BIO-OAT-HIST-6",
+        "FRV1-BIO-OAT-HIST-7",
+        "FRV1-BIO-OAT-HIST-8",
+        "FRV1-BIO-OAT-HIST-9",
+        "FRV1-BIO-OAT-HIST-10",
+        "FRV1-BIO-OAT-HIST-11",
+        "FRV1-BIO-OAT-HIST-12",
+        "FRV1-BIO-OAT-HIST-13",
+        "FRV1-BIO-OAT-HIST-14",
+        "FRV1-BIO-OAT-HIST-15",
+        "FRV1-BIO-OAT-HIST-16",
+        "FRV1-BIO-OAT-HIST-17",
+        "FRV1-BIO-OAT-HIST-18",
+        "FRV1-BIO-OAT-HIST-19",
+        "FRV1-BIO-OAT-HIST-20",
+        "FRV1-BIO-OAT-HIST-21",
+        "FRV1-BIO-OAT-HIST-22",
+        "FRV1-BIO-OAT-HIST-23",
+        "FRV1-BIO-OAT-HIST-24",
+        "FRV1-BIO-OAT-HIST-25",
+        "FRV1-BIO-OAT-HIST-26",
+        "FRV1-BIO-OAT-HIST-27",
+        "FRV1-BIO-OAT-HIST-28",
+        "FRV1-BIO-OAT-HIST-29"
+      ],
+      "owner_path": "data/ingredients/mapped/Oatmeal.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "c1af211a9887f825f958c80ef5d147330b898f754fa0390eade836530d9b57b6",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Oatmeal.yaml",
+        "sha256": "20c6e5dbb7e78dd6a84e4e2d8c8918237c40686100d8ff5a6cffca3668608924"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-oatmeal_supplied_form"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Oatmeal.yaml",
+        "sha256": "5e257436da0a05799c4ee4abd6ae7f59a6610382934909be2073181ff8942fcc"
+      },
+      "predecessor_proposal_sha256": "41313011a32d2edc9ef0b265caf9496311132caa173745da1994c0f8b236d4a7",
+      "final_review_scope": "Final-review identity correction (#1232): the active exact NCIT:C29298 claim is withdrawn because its colloidal whole-oat fine-powder definition is not established by generic food oatmeal or merely powdered Quaker inputs. The existing food-oatmeal owner is represented by kgmicrobe.ingredient:oatmeal, with NARROW_MATCH to FOODON:00001189 oat food product (a food product made from oats). This is an asymmetric broader food-material grounding, not exact identity with all oat foods and not a new brand or colloidal-grade owner. The prior identifier and exact mapping remain in immutable before bytes and the historical events below; earlier notes describing the retained NCIT hold are historical and superseded by this correction. All30 matching historical normalized recipe contexts at CultureMech15a4da5c08 were inspected in addition to the prior current-source lineage; their oatmeal inputs do not establish colloidal manufacture. The absent untracked18-member table is not claimed reconstructed; occurrence counts remain unchanged pending reconciliation. Powdered Quaker supplied-form facts remain source-specific; generic MediaDive471 oatmeal is not declared powdered. Whole-owner integration/export approval, unresolved occurrence membership and source-specific holds remain. Superseded active mapping object: {\"ontology_id\":\"NCIT:C29298\",\"ontology_label\":\"Oatmeal Powder\",\"ontology_source\":\"NCIT\",\"mapping_quality\":\"EXACT_MATCH\",\"evidence\":[{\"evidence_type\":\"DATABASE_MATCH\",\"source\":\"OAK/OLS exact audit\",\"notes\":\"OLS audit matched the imported surface form Oatmeal to NCIT:C29298 Oatmeal Powder through exact synonym OATMEAL.\"}]}",
+      "finding_ids": [
+        "W04-BIO-HOLD-03"
+      ],
+      "independent_review_status": "pending",
+      "identity_consequences": "Replace unsupported exact NCIT colloidal grounding with distinct generic food-oatmeal registry identity and asymmetric FOODON:00001189 parent. No exact ancestor equivalence, new brand owner or forced powder grade."
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrc1429seawater175pct",
+      "case_ids": [
+        "CM_NAME:89321b813b6c0c7c50048f0e14ef4eb8a992fe16f56df959e58c246933824914"
+      ],
+      "description": "NBRC 1429 names 1 L seawater with 1.75% salinity. Retain the qualifier as written. Neither a 1:1 dilution of 3.5% water, a NaCl solution nor a particular natural/artificial origin is specified.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-81",
+        "BIO-PRIMARY-18b9aa5076e22438",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-RECIPE-c061b4014c9e1ae5",
+        "BIO-SOURCE-79",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Nbrc1429Seawater175pct.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Nbrc1429Seawater175pct.yaml",
+        "sha256": "5ea26b7757ee7b6caaaefbb952e50e7c67958e4f851b17f3dfba36838ed94ae0"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc1429_seawater_175pct"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc1429Seawater175pct.yaml",
+        "sha256": "d622d78702f8024aba8ec7dca9f93dc66af5fa26893eca5fba68043e88d0b1e1"
+      },
+      "predecessor_proposal_sha256": "dd040d9a007d108eb2dfdf2c52c6359c8377e9fd22730a447db99075e718a494",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-jcm1216artificialseawater01x",
+      "case_ids": [
+        "CM_NAME:8e2d3134d23bb909a8d7ee5f1ae8d7055d1cbb6e25d1c68e48345c5ef5bf7e61"
+      ],
+      "description": "JCM 1216 BSW3 Agar specifies 0.1x artificial seawater as the liquid base. The retrieved complete recipe does not give the 1x formula or a product identifier. This is a source-qualified dilution-state stock, kept distinct from published JCM 6510.5x, JCM 9101x and JCM 12694x stocks. No assumed 1x composition is copied from those other media.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-84",
+        "BIO-PRIMARY-final-3863750c4c47b631",
+        "BIO-PRIMARY-followup-523a508ef87c00e9",
+        "BIO-RECIPE-f1d4f6127490173c",
+        "BIO-SOURCE-83",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Jcm1216ArtificialSeawater01x.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Jcm1216ArtificialSeawater01x.yaml",
+        "sha256": "27706e882c63538a98c82b80402111a786b2b40c4afced1a5dfc525a06bb3e92"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-jcm1216_artificial_seawater_01x"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Jcm1216ArtificialSeawater01x.yaml",
+        "sha256": "227335e425995406a3e50df0ea4fe1a897a429756bd16acdee59057059a37104"
+      },
+      "predecessor_proposal_sha256": "700a0b46937d3d7ca218ca3790da06b5fbe08ea6e10d14254c5dce62ad3e988c",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrc14cornfishfeed",
+      "case_ids": [
+        "CM_NAME:9cdcd91e9b083104e78abc4972de96c9ca95c5c61907fa682e84f1396de483e2"
+      ],
+      "description": "NBRC 14 identifies a corn and fish meal mixture sold as bird feed.20 g is boiled in approximately 1 L water for 1 h, filtered, and the liquid restored to 1 L before agar addition. This record denotes the feed input, not its aqueous extract. Named corn and fish meal components are recorded as a partial qualitative enumeration with no ratios. Neither commercial feed brand nor exact formulation is inferred.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-88",
+        "BIO-PRIMARY-4ff053ad0494b87a",
+        "BIO-RECIPE-ee07dd927e7c0d12",
+        "BIO-SOURCE-91",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Nbrc14CornFishFeed.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Nbrc14CornFishFeed.yaml",
+        "sha256": "79315b6ac450f38e4ec8366910d45600e2351ac51c231b3a85f7b543504e7266"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc14_corn_fish_feed"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc14CornFishFeed.yaml",
+        "sha256": "2d7e5844b610d90cb3f4b8c230c4d1e31bca62be2196c1709ce70f4d9b0860df"
+      },
+      "predecessor_proposal_sha256": "5bfcb8fc0554346975e91f66dfb407014c3ed13643c06e3bd11e4ad1895ee831",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-charcoalfilterednaturalseawater",
+      "case_ids": [
+        "CM_NAME:a0d695261033288e50c0267f36e77c152c712ecbffe11df3c855702d3e29fab7",
+        "KG_CASE:845a0d62a201d4df375fea240de6d744c2b12034b2412ab03e4c2ed28ace67c8"
+      ],
+      "description": "DSMZ 1008 specifies charcoal-filtered natural seawater 800 ml with 200 ml distilled water; MediaDiveingredient 2142 and both source cases point to this preparation. Charcoal filtration is a retained process boundary. The existing Distilled Water rejected label remains rejected, and generic filtered/natural seawater is not exact identity. Biomaris is a separately allowed substitute, not proof of identical composition. The 800 ml dose is not converted from faulty frozen mass/percentage units.",
+      "evidence_ids": [
+        "BIO-OWNER-Distilled_Water",
+        "BIO-PRIMARY-921c5dd80edebce7",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-PRIMARY-cc5bc3036dd2a919",
+        "BIO-RECIPE-0274f9fc4a3c2621",
+        "BIO-RECIPE-075ce5ca65557b02",
+        "BIO-RECIPE-5fe2f1cc3fb79c89",
+        "BIO-RECIPE-87bf8d58c45a1c25",
+        "BIO-RECIPE-96a4aa68cdbe8ef8",
+        "BIO-SOURCE-163",
+        "BIO-SOURCE-93",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/CharcoalFilteredNaturalSeawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/CharcoalFilteredNaturalSeawater.yaml",
+        "sha256": "377092b0f906e0a142742442d1f6f29ce8f738e02ff8e8c326d330cf16357d95"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-charcoal_filtered_natural_seawater"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/CharcoalFilteredNaturalSeawater.yaml",
+        "sha256": "cebfd332c0923bd65104ba0cf9b254a8588ba4d91e99114fae88ea528d5acb81"
+      },
+      "predecessor_proposal_sha256": "c71250d885552aca3a435d20deeda977c1ff4e14f743ecefd6d5f326a3f1e46a",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-agedseawater",
+      "case_ids": [
+        "CM_NAME:bccdb1c7e50d5905132fdcfd239d05168fadb733fb2528ee2f61236b7fb19ba7"
+      ],
+      "description": "NBRC 1347 and JCM 995 identify aged seawater as a liquid input. JCM 995 uses 700 ml with other separately listed stock additions; NBRC 1347 specifies 1 L. JCM 900/149 references belong to Hutner stock context, not an aging protocol. No aging time, sterilization, filtration or salinity is guessed. This class is distinct from source-disjunctive filtered-aged-water OR DaigoSP choices in 38/116.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-91",
+        "BIO-FAILED-retrievals-93",
+        "BIO-FAILED-retrievals-96",
+        "BIO-FAILED-retrievals-97",
+        "BIO-FAILED-retrievals-98",
+        "BIO-PRIMARY-9c2e840069cb8057",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-PRIMARY-cb3de946b9eb429a",
+        "BIO-PRIMARY-d78eaec3d48cf38b",
+        "BIO-PRIMARY-f62038097bba8b2a",
+        "BIO-RECIPE-0bc3fc638c9a74a7",
+        "BIO-RECIPE-6b36dddf6465e371",
+        "BIO-RECIPE-b6e3ff4281a9113d",
+        "BIO-SOURCE-100",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/AgedSeawater.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/AgedSeawater.yaml",
+        "sha256": "295c25bd1e4a9c768443c5c8377af8349a209e5ee3856e2151eeffa9f4c1bf93"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-aged_seawater"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/AgedSeawater.yaml",
+        "sha256": "aecb7afe4f7dcbb96c2602ba36798db9c6e3254b5bcfc49c998b42dbe51e735c"
+      },
+      "predecessor_proposal_sha256": "6fc4de4d9d3a9b1548de642b7fdb34d690ac48716141b351ad30159982efbd92",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrcseawater2pct",
+      "case_ids": [
+        "CM_NAME:c620d59d339544911d9ef1d91ec0c42082357cb9b2a16d6b846ef03bef9eabf4",
+        "CM_NAME:cf8eb082e78343a20fc73874fc008615ddaf86181f3bb4b1cf97cbae431269bf"
+      ],
+      "description": "NBRC 15/16/22/24/1071 source inputs retain a 2% salinity qualifier. Cases 101/105 support only a common salinity-qualified material class; neither absence of stated origin nor equal salinity proves shared chemical composition or a shared preparation. This isolated class proposal makes no resolved source-to-owner binding and no selection of natural versus artificial preparation. No pure NaCl concentration or artificial formula is inferred. Case 22 explicitly offers alternative preparations and retains its branch-choice hold.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-100",
+        "BIO-FAILED-retrievals-102",
+        "BIO-PRIMARY-14a085460c78bcd7",
+        "BIO-PRIMARY-153907851fc9152b",
+        "BIO-PRIMARY-38c2e843ce8ce0ce",
+        "BIO-PRIMARY-57fd0b500bb90328",
+        "BIO-PRIMARY-66a7c00567ef40ce",
+        "BIO-PRIMARY-9fdbdae75fef5c8f",
+        "BIO-PRIMARY-ba61e1d8a837d141",
+        "BIO-PRIMARY-cbc9726243bb957a",
+        "BIO-PRIMARY-ce28351bae6fbb1c",
+        "BIO-RECIPE-60f7a75bc09f7893",
+        "BIO-RECIPE-8570ee9c0fbd5216",
+        "BIO-RECIPE-b2bc5502f74c9024",
+        "BIO-RECIPE-bd57d1172b2bbc56",
+        "BIO-RECIPE-fefed3dc25751565",
+        "BIO-SOURCE-101",
+        "BIO-SOURCE-105",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/NbrcSeawater2pct.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/NbrcSeawater2pct.yaml",
+        "sha256": "69bf82cabee02a555ff7e334b4fc9e67e558def556107716eb5f2ff265c28f09"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc_seawater_2pct"
+      ],
+      "identity_scope": "Bounded salinity-qualified source material class only; no resolved source-to-owner identity bindings and no cross-source chemical equivalence.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/NbrcSeawater2pct.yaml",
+        "sha256": "013e48d94f412882566b8b5c947561f7260b024496d5deae76ce69a582ad8290"
+      },
+      "predecessor_proposal_sha256": "2f613bc26313d9b4b8d5f22edd10b86fb5b97941de89f25857286afceb966c09",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-nbrc984porphyrathalli",
+      "case_ids": [
+        "CM_NAME:fbecfbbe5fc5b9d5d86f8e21b91546474adec5b79dac224d85b628ba2028e99d"
+      ],
+      "description": "NBRC 984 describes thalli of Porphyra yezoensis cultivated in IMK medium with seawater. This is a source-qualified cultivated biological material, not a pure polysaccharide, taxon alone, or the entire IMK formula. Cultivation context is preserved in its identity; no harvested dry mass, sterilization or residual growth-medium composition is invented.",
+      "evidence_ids": [
+        "BIO-FAILED-retrievals-119",
+        "BIO-PRIMARY-3ded91650cda7615",
+        "BIO-RECIPE-b0c6a677a3184fa9",
+        "BIO-SOURCE-129",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/mapped/Nbrc984PorphyraThalli.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Nbrc984PorphyraThalli.yaml",
+        "sha256": "1e11e7d05a522da6ce8771498eabf7cb921994646bb7e6471f69844e035c3a41"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-nbrc984_porphyra_thalli"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Nbrc984PorphyraThalli.yaml",
+        "sha256": "b1e64a02e6ac546b92da353298c4c4b84a3607a5b3524d81fbb6ec6dd396b5c6"
+      },
+      "predecessor_proposal_sha256": "ec908b5f02f2db3485a502d632458e890b0b49bc66d9d1785ba9484c910e1b6f",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-larchwood_xylan",
+      "case_ids": [
+        "KG_CASE:101fde13dc01ee8994c4a468c46a5bf6087a07212c90ed9ea6b61d64c35be555"
+      ],
+      "description": "JCM 99 names larchwood xylan (Sigma) as a material input; MediaDiveingredient 1624 identifies the existing owner. Promote this original owner to a botanical-preparation registry identity, retaining prior history including#294. The prior CHEBI parent was removed for misattributed provenance; newly reviewed CHEBI 37166 still defines a generic xylan polymer, not an exact complete preparation. No exact chemical parent, CAS or purity is needed for this bounded promotion.",
+      "evidence_ids": [
+        "BIO-FAILED-supplementary-retrievals-2",
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-OWNER-Larchwood_Xylan",
+        "BIO-PRIMARY-cf84fda249084c27",
+        "BIO-PRIMARY-final-eda26d9467911cbf",
+        "BIO-PRIMARY-final-f0c7a86710dc60bb",
+        "BIO-PRIMARY-followup-186d6e3e5796e7f7",
+        "BIO-SOURCE-136",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/unmapped/Larchwood_Xylan.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "9957aca70b657f9186c16fda9786ace9ce2cc8c40440ef67a33613129ef4d08f",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Larchwood_Xylan.yaml",
+        "sha256": "d10bc7f5c77ea39d5e147c046a08bbebcd1f6f83fbae2494b642d22ee338f893"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-larchwood_xylan"
+      ],
+      "integration_target_path": "data/ingredients/mapped/Larchwood_Xylan.yaml",
+      "integration_action": "Promote original owner and move its path; never retain a duplicate unmapped copy.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Larchwood_Xylan.yaml",
+        "sha256": "d5103afd6a74d287589e26e2393b75716cf323562a01d5f62793ced6a28550a6"
+      },
+      "predecessor_proposal_sha256": "a71338d1b4f0bc2f001fb4708ff89553757764764d2959a03efb231a0616967b",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-diced_potato",
+      "case_ids": [
+        "KG_CASE:344b2f993dd8a53adb2775542e4ef102e914c5ea57e1f7ab29e769a19e584cff"
+      ],
+      "description": "MediaDiveingredient 728 and DSMZ 789 identify diced potato as an input:20 g potato is boiled in 1 L water 30 min, filtered and restored to 1 L. Promote the existing physical-form material owner, not the filtrate. The inherited historical report quotation claiming 200 g/L is preserved as historical prose but explicitly not adopted as current primary evidence. No universal 20 g/L concentration belongs on the tissue owner.",
+      "evidence_ids": [
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-OWNER-Diced_Potato",
+        "BIO-PRIMARY-63728ab8ca58ea7a",
+        "BIO-PRIMARY-final-3eb0af3d9839158d",
+        "BIO-PRIMARY-final-6ccfe678c82999b3",
+        "BIO-PRIMARY-followup-15d9bf241071280e",
+        "BIO-PRIMARY-followup-b319a88a6e26e608",
+        "BIO-PRIMARY-followup-f7e2f2b37dcc70fc",
+        "BIO-SOURCE-143",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/unmapped/Diced_Potato.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "c38b36195742f1c8b8d67217eea454eadbea720de03885c4ed2a1462c2378dd0",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Diced_Potato.yaml",
+        "sha256": "8b7e1ee7d55105779190a3099fa26d984e335810ddffcfb1571d0477effb4a1d"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-diced_potato"
+      ],
+      "integration_target_path": "data/ingredients/mapped/Diced_Potato.yaml",
+      "integration_action": "Promote original owner and move its path; never retain a duplicate unmapped copy.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Diced_Potato.yaml",
+        "sha256": "e626249329e561825332de636581571ebc36292c094110dacb4783818737cdc4"
+      },
+      "predecessor_proposal_sha256": "c71a17fd662ba29a3a806b7631fa66a8960fc3bee7dbebfcec0821f0c3a5d761",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    },
+    {
+      "proposal_id": "FRV1-BIO-P-bovine_horn_meal",
+      "case_ids": [
+        "KG_CASE:36a48ecb91b47f50e9d56e5b516ab2003a798c964a853d72144536d78e95f0cc"
+      ],
+      "description": "MediaDiveingredient 481 and DSMZ 440 identify bovine horn meal 10 g as a material input. Promote the existing owner to a registry identity for processed bovine-horn meal. It is not purified keratin, horn-and-hoof mixed meal or skim milk separately present in the source. No unsupported processing temperature, protein percentage or exact food ontology subtype is asserted.",
+      "evidence_ids": [
+        "BIO-ISSUE-294",
+        "BIO-ISSUE-294-comments",
+        "BIO-OWNER-Bovine_Horn_Meal",
+        "BIO-PRIMARY-5787d195b16eed43",
+        "BIO-PRIMARY-final-025af517b138d785",
+        "BIO-PRIMARY-final-2acaa5ddd492c411",
+        "BIO-PRIMARY-followup-c7d59a00e44efae3",
+        "BIO-PRIMARY-followup-c93dda127cb4b5dc",
+        "BIO-SOURCE-146",
+        "BIO-SOURCE-BODY-UNCHANGED-v2",
+        "I1201-BIO-CATALOG",
+        "I1201-BIO-REUSED-BINDINGS",
+        "FRV1-BIO-PROVENANCE-AUDIT"
+      ],
+      "owner_path": "data/ingredients/unmapped/Bovine_Horn_Meal.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "df1212952b80ccbdd7696669279d339448ea57251c85bd71fce8126ec14425b8",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/biological/Bovine_Horn_Meal.yaml",
+        "sha256": "67aadb2742520a8b3140c4ca47fd5188a79dadbba614c0fe5a0adc392ba9ec64"
+      },
+      "publication_obligations": [
+        "Retain all inherited source-specific holds and do not infer complete-owner publication approval.",
+        "Coordinator must compare original baseline beforehash and all other worker proposals; synchronize maintained surfaces only during separately guarded integration.",
+        "No new generic source-local resolving aliases are authorized."
+      ],
+      "cross_shard_owner_conflict": "Check exact beforehash and active proposal owner registry; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "I1201-BIO-P-bovine_horn_meal"
+      ],
+      "integration_target_path": "data/ingredients/mapped/Bovine_Horn_Meal.yaml",
+      "integration_action": "Promote original owner and move its path; never retain a duplicate unmapped copy.",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/proposals/biological/Bovine_Horn_Meal.yaml",
+        "sha256": "1657320313ea8fc8d332f4b689e9b91173d0c53a8d6149eced3a0dc6bba5f2ac"
+      },
+      "predecessor_proposal_sha256": "ee3e123cda00b50348c4cf17d798df0c626e3d5452d15dafc964d6b7498aaf71",
+      "final_review_scope": "Correct newly agent-authored ontology_mapping.evidence[0].evidence_type from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged (#1226).",
+      "finding_ids": [],
+      "independent_review_status": "pending"
+    }
+  ]
+}

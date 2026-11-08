@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-08T08:29:44.621101+00:00",
+  "review_id": "20261108T082728Z-worker04-final-review-correction-successor",
+  "native_input_content": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/native-review-content.json",
+    "sha256": "903ff99d57066c685f2eed8492c0735f4128005691567e29bed3f481097bae28"
+  },
+  "saved_pair": [
+    {
+      "path": "reviews/structured/20261108T082728Z-worker04-final-review-correction-successor/review.md",
+      "sha256": "e84ce9e393b6144019b3a83e1e32d6ec8eb6fd21ab50abd46d63e89b37ff80a5"
+    },
+    {
+      "path": "reviews/structured/20261108T082728Z-worker04-final-review-correction-successor/review.yaml",
+      "sha256": "582716c76b2c209bfdfc7968033296e26345fac8f8071dc5ca56fd3685cbd7dc"
+    }
+  ],
+  "checks": [
+    {
+      "name": "native_validate_failed_time_id",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "validate",
+        "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/native-review-content-draft-time-id.json"
+      ],
+      "exit_code": 1,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/native-validate-v1.log",
+      "sha256": "3c7e67c4c4c88de1a166d7eeee24a05e6b27068c39c47270c8e0d3517ac53414"
+    },
+    {
+      "name": "native_validate",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "validate",
+        "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/native-review-content.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/native-validate-v2.log",
+      "sha256": "a2de3cfc86a84a8f32a77d77b93af9d202785ae219a3398bd82f540f4ccf7f26"
+    },
+    {
+      "name": "native_save",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "save",
+        "--content",
+        "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/native-review-content.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/native-save.log",
+      "sha256": "66b28c892c5d71d3c1b3a40b733c1ee233704ccac46252a71f51bdb13393094f"
+    },
+    {
+      "name": "native_full_check",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "check",
+        "--base",
+        "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/native-check-base.log",
+      "sha256": "692113cdc62df3dec186c237fbff7dee8ccdf5c07421667dc23398aa79a040bb"
+    }
+  ],
+  "full_check_valid_reviews": 1022,
+  "source_bound_input_count": 1067,
+  "target_count": 307,
+  "original_native_finding_count": 23,
+  "native_status_scope": "21 resolved candidate claims;2 residual native concerns open. All source/role/member/whole-owner/export holds remain regardless of candidate disposition.",
+  "prior_private_peer": "Original peer native pair is an exact preserved private report, not falsely represented as a previously canonical saved pair. Schema/render/provenance and893 original source input hashes separately checked by assembly reviewer.",
+  "source_verification_scope": "Native working-tree input attestation at bound source HEAD plus exact external frozen source hashes checked by structural auditor. Final committed-head byte equivalence and independent science attestations are required before push.",
+  "science_or_whole_owner_export_approval": false
+}

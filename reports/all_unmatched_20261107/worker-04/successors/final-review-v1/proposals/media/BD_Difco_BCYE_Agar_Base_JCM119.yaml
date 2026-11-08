@@ -1,0 +1,58 @@
+identifier: kgmicrobe.ingredient:bd_difco_bcye_agar_base_jcm119
+preferred_term: BCYE agar basal product (BD-Difco, JCM119)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_difco_bcye_agar_base_jcm119
+  ontology_label: BCYE agar basal product (BD-Difco, JCM119)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=119
+    notes: MediaDive ingredient1629 usage resolves to JCM119. The primary JCM recipe
+      adds37g BD-Difco BCYE agar and, separately,100ml Legionella agar enrichment
+      and900ml distilled water. This binds the named BD-Difco dry basal product and
+      excludes the separate enrichment; internal formula/catalog remain unasserted.
+      It is distinct from ready Eiken alpha plates, Oxoid CYE base/supplement system
+      and generic finished BCYE owner. A failed manufacturer insert retrieval does
+      not invalidate the exact primary recipe product boundary.
+notes: MediaDive ingredient1629 usage resolves to JCM119. The primary JCM recipe adds37g
+  BD-Difco BCYE agar and, separately,100ml Legionella agar enrichment and900ml distilled
+  water. This binds the named BD-Difco dry basal product and excludes the separate
+  enrichment; internal formula/catalog remain unasserted. It is distinct from ready
+  Eiken alpha plates, Oxoid CYE base/supplement system and generic finished BCYE owner.
+  A failed manufacturer insert retrieval does not invalidate the exact primary recipe
+  product boundary. Raw source labels and optional/use instructions are retained in
+  source-case evidence, not installed as global resolving aliases. Existing source/owner/export
+  holds remain; no maintained or release approval.
+curation_history:
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CREATED
+  changes: MediaDive ingredient1629 usage resolves to JCM119. The primary JCM recipe
+    adds37g BD-Difco BCYE agar and, separately,100ml Legionella agar enrichment and900ml
+    distilled water. This binds the named BD-Difco dry basal product and excludes
+    the separate enrichment; internal formula/catalog remain unasserted. It is distinct
+    from ready Eiken alpha plates, Oxoid CYE base/supplement system and generic finished
+    BCYE owner. A failed manufacturer insert retrieval does not invalidate the exact
+    primary recipe product boundary. Isolated successor proposal only; published artifacts
+    and maintained data unchanged.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.613741+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+supplied_form:
+- name: BCYE agar (BD-Difco)
+  supplier: BD-Difco
+  form: dry basal medium before separate Legionella enrichment
+  notes: Primary JCM119 uses37g. Catalog and ingredient formula unknown; no equivalence
+    to BBL212327 or Difco218301 inferred.

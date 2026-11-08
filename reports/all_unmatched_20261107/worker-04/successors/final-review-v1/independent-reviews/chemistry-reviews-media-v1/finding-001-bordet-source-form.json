@@ -1,0 +1,50 @@
+{
+  "finding_id": "W04-FREV-MEDIA-IND-001",
+  "reviewer": "/root/correction_chemistry",
+  "author_reviewed": "/root/media",
+  "status": "needs_curation",
+  "severity": "major",
+  "scope": "source-case binding, not rejection of the independently verified dry product context",
+  "case_index": 98,
+  "case_id": "CM_NAME:bb8a315e678638012404f7ef5005c2d01da2d73d03820aa2c23838557f39e9df",
+  "case_input_sha256": "c9357b517d0b0a33059ee041d0f19bd0b933859cc1353db8eb082065eb613fb6",
+  "candidate": "candidates/assembly-v2",
+  "decision_sha256_canonical_json": "0218f81aee3eab4aa6394ddffac77e9159cef72c12e55a8d3854390e01eaff9b",
+  "proposal_id": "FREV-MEDIA-P-media-product-difco_bordet_gengou_agar_base",
+  "payload": {
+    "root": "artifact",
+    "path": "successors/final-review-v1/proposals/media/Difco_Bordet_Gengou_Agar_Base.yaml",
+    "sha256": "c5f20ca48461606999f265c5a58118369978178711b119bd031c99ad27de6dbb"
+  },
+  "fields": [
+    "decision.disposition",
+    "decision.reasoning",
+    "decision.missing_requirement",
+    "proposal.case_scope_limits",
+    "supplied_form"
+  ],
+  "observation": "The exact source occurrence is 1 L Bordet Gengou agar (Difco) before separate 15% defibrinated horse blood. The selected owner is explicitly dehydrated base. The dry product manufacturer identity does not establish identity with the prepared source material. The current decision presents an exact source-bound new owner without the supplied-form qualification that Marine case178 and prepared-base case173 use.",
+  "primary_capture": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/independent-reviews/chemistry-reviews-media-v1/M2851-primary.json",
+    "sha256": "42b667b09bd42adf83f7065a544cc1288eab2c41ad62f2e4f6757870ccfbf923",
+    "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2851",
+    "retrieved_at_from_capture_mtime": "2026-11-08T07:58:18.596875+00:00",
+    "actual_read": "Complete JSON meta/components/comments; 1360 exact bytes captured read-only by curl."
+  },
+  "exact_reproduction": [
+    "Read candidate case_id and selected full owner: supplied_form is dehydrated agar base.",
+    "Read frozen occurrence CM_OCC:fe9c1bb1538edad86c4c3326b0159c5883bf92f4cb5b57c029d220e1a71a8132: ingredient is volume 1 L.",
+    "Read M2851 primary components: Bordet Gengou agar (Difco), volume1 unitL; read comments: agar plus15%defibrinated horse blood(TCS Biologicals).",
+    "Compare dry manufacturer248200 evidence: product existence is supported, prepared-source equivalence is not."
+  ],
+  "proposed_bounded_fix": "Retain the manufacturer-supported dry product only as product context, explicitly withhold exact source-material binding until preparation or comparison to an existing prepared owner is evidenced. If the source/DSMZ438 comparison independently establishes the same prepared material, reuse the existing prepared owner with original case links; otherwise preserve the precise source preparation hold. Do not infer a duplicate preparation, recipe concentration, solvent quantity, or source-global alias.",
+  "preserved_holds": [
+    "whole-owner",
+    "role",
+    "source-specific",
+    "export",
+    "cross-shard reconciliation"
+  ],
+  "deduplication": "Root was informed before any fix. This is a newly identified case98 prepared-versus-dry binding, distinct from MEDIA07 case173 M2850 label variation; shared mechanism should be retained in existing correction lineage. No GitHub mutation by reviewer.",
+  "author_edits_by_reviewer": false
+}

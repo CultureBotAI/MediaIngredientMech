@@ -1,0 +1,31 @@
+{
+  "finding_id": "FINAL-BIO-CHEM-01",
+  "status": "open",
+  "severity": "P2",
+  "target_proposal_id": "FINAL-CHEM-P-actinomycetin-mixture-type",
+  "target_capture": "successors/final-review-v1/proposals/chemistry/Actinomycetin.final-review-v1.after.yaml",
+  "target_sha256": "ec8493c3bab17c5677a1e3ff1bb4d11a0009edd0d3b3cc4ccb924e9468a743a0",
+  "field": "/ontology_mapping/evidence/1/source",
+  "observed": "Welsch1947, Bacteriological Reviews11:99–148, original pp101–102",
+  "assessment": "The currently cited article identity conflates two publications. Actual supporting two-page primary article is Welsch M. Actinomycetin. Journal of Bacteriology 53(1):101–102 (1947), PMID16561239, PMC518278. Both scanned pages visually reread: p101 expressly calls actinomycetin a crude culture filtrate and one or more antibiotic agents; p102 continues the explanation. UNDEFINED_MIXTURE conclusion remains supported; incorrect journal/volume/page citation must be corrected.",
+  "evidence": [
+    {
+      "path": "captures/chemistry/actinomycetin-primary.html",
+      "sha256": "4acf85edc0a28fecfd630fe2cbfccb4e83b25f1f86c00c9c07c3d5beac012893",
+      "actual_read": "complete visible bibliographic HTML"
+    },
+    {
+      "path": "captures/chemistry/actinomycetin-primary-page1.png",
+      "sha256": "adb2418fd31705f9cf81823975cf636cea517195233c10da7d75c302fb38c860",
+      "actual_read": "complete page visually inspected"
+    },
+    {
+      "path": "captures/chemistry/actinomycetin-primary-page2.png",
+      "sha256": "035e082f858b76c3886ff338da0be1b7efe51478e143846672cffc39c0603d23",
+      "actual_read": "complete page visually inspected"
+    }
+  ],
+  "bounded_fix": "Create append-only named exact successor changing current evidence source to authentic Welsch Actinomycetin citation and PMC URL, append curation history, preserve sealed earlier payload/history and both case backlinks. No change to mixture identity, placeholder grounding, roles or export holds.",
+  "acceptance_check": "Exact delta is current citation plus appended history; original p101/p102 and metadata match PMID16561239/PMC518278; both source cases174/184 retain links.",
+  "whole_owner_approval": false
+}

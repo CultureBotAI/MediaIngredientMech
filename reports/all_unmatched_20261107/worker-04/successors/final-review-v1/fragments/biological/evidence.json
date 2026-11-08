@@ -1,0 +1,750 @@
+{
+  "schema_version": "1.0",
+  "evidence": [
+    {
+      "evidence_id": "FRV1-BIO-PROVENANCE-AUDIT",
+      "kind": "local_validation",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/proposal-scope-and-provenance-audit.json",
+        "sha256": "c9a29cb4a2d5f259d9f264ca2e5d5d7b1641c359e073545e4895460717fe773b"
+      },
+      "locator": "$.scope[*]",
+      "supports_or_contradicts": "All 37 prior biological payloads compared with authentic baseline bytes. Only 32 newly authored human-only mapping evidence classifications are changed; inherited human evidence and ComponentEvidenceTypeEnum are preserved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-bacmedia-J117.pdf",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/bacmedia-J117.pdf",
+        "sha256": "de6eb220d7e2b47839d97bcba6d3494d99fc7b1db18f5f57eedd1a1f26bb397d"
+      },
+      "locator": "Full JCM117 PDF, entire recipe and preparation.",
+      "supports_or_contradicts": "JCM117 names Catalase (Sigma C-10),60mg with R agar1000mL and separate filter sterilization. Historical catalog alias is not rejected merely because C9322 differs. No supplier formulation or activity equivalence is inferred.",
+      "url": "https://bacmedia.dsmz.de/pdf/J117",
+      "accessed_at": "2026-11-08T07:45:21.240081+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-catalase-c10-product.html.receipt.json",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/catalase-c10-product.html.receipt.json",
+        "sha256": "a2c7de3a11a7e3823e77c5b07852aac2a85d45d38783de151582251f9144ce25"
+      },
+      "locator": "Complete actual request receipt",
+      "supports_or_contradicts": "Actual request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>. No absent substance, product or source is inferred.",
+      "url": "https://www.sigmaaldrich.com/US/en/product/sigma/c10",
+      "accessed_at": "2026-11-08T07:42:26.244871+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-ccap-pe.pdf.receipt.json",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/ccap-pe.pdf.receipt.json",
+        "sha256": "ede79bf1fbf76c105974cd3abfa45262cd60916e2ee91229e927c1fcc4a38aaf"
+      },
+      "locator": "Complete actual request receipt",
+      "supports_or_contradicts": "Actual request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>. No absent substance, product or source is inferred.",
+      "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf",
+      "accessed_at": "2026-11-08T07:42:26.243953+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-foodon-00001189.json",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/foodon-00001189.json",
+        "sha256": "6d9a6a762467c280c458502a26d8bd141589b7601fc54c8e25094a8734c84469"
+      },
+      "locator": "Complete active FOODON term object, label and definition.",
+      "supports_or_contradicts": "FOODON:00001189 oat food product means a food product made from oats. It is a broader parent for food oatmeal, not an exact powder, colloidal-grade, instant, cooked or brand identity.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:00001189",
+      "accessed_at": "2026-11-08T07:45:20.637453+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-foodon-oat-search.json",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/foodon-oat-search.json",
+        "sha256": "d80f752ed0811c5368b13d01ff7fc98c996534c610df0a03ac6f74337916b0ae"
+      },
+      "locator": "All returned results of the recorded bounded oat-food-product query.",
+      "supports_or_contradicts": "Supports selecting a broad oat-food parent rather than transferring a more specific preparation identity.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=oat%20food%20product&ontology=foodon&rows=30",
+      "accessed_at": "2026-11-08T07:44:04.898067+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-foodon-oatmeal-search.json",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/foodon-oatmeal-search.json",
+        "sha256": "18c97e1223751306389027521f2277b840de5297aec788b9387b3e701ede8c2f"
+      },
+      "locator": "All returned results of the recorded bounded oatmeal query.",
+      "supports_or_contradicts": "Specific cooked, instant and processed oat terms do not establish an exact generic oatmeal identity. Search is bounded and not exhaustive ontology absence.",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=oatmeal&ontology=foodon&rows=30",
+      "accessed_at": "2026-11-08T07:44:04.729510+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-jcm117.html.receipt.json",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/jcm117.html.receipt.json",
+        "sha256": "bba83148e6d4fc7fc62d188e84fc62e94c0456c2a4658120addafe96d04e1d62"
+      },
+      "locator": "Complete actual request receipt",
+      "supports_or_contradicts": "Actual request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>. No absent substance, product or source is inferred.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=117",
+      "accessed_at": "2026-11-08T07:42:26.244637+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-jcm1377.html.receipt.json",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/jcm1377.html.receipt.json",
+        "sha256": "3ffed3a065059e475b973fdd95d437fbe243e2f80027df1f0ab9f4ac13a89cae"
+      },
+      "locator": "Complete actual request receipt",
+      "supports_or_contradicts": "Actual request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>. No absent substance, product or source is inferred.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1377",
+      "accessed_at": "2026-11-08T07:42:26.244363+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-network-catalase-c10-product.html.receipt.json",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/network-catalase-c10-product.html.receipt.json",
+        "sha256": "e98ea27c662a2a02cb3a4838498e10867f82db9e8ba2fe414092a34e32f8d85d"
+      },
+      "locator": "Complete actual request receipt",
+      "supports_or_contradicts": "Actual request failed: The read operation timed out. No absent substance, product or source is inferred.",
+      "url": "https://www.sigmaaldrich.com/US/en/product/sigma/c10",
+      "accessed_at": "2026-11-08T07:43:19.771458+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-network-ccap-pe.pdf",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/network-ccap-pe.pdf",
+        "sha256": "a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233"
+      },
+      "locator": "Full single-page recipe, including starred seawater footnote and soil extraction protocol.",
+      "supports_or_contradicts": "CCAP explicitly filters natural seawater, reduces it to 95% with glass distilled water, and autoclaves that input before separately dosing 950 cm3 into PE. Percentage basis and a measured final input volume are not invented.",
+      "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf",
+      "accessed_at": "2026-11-08T07:42:40.611351+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-network-jcm117.html",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/network-jcm117.html",
+        "sha256": "42b450100240091799fed5f33b18187fc0234e44696217d96c2f7c72e6e831d8"
+      },
+      "locator": "Entire response contains Nothing found.",
+      "supports_or_contradicts": "HTTP200 is an unavailable recipe response, not primary recipe evidence or proof that historical C-10 does not exist.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=117",
+      "accessed_at": "2026-11-08T07:42:40.320812+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-network-jcm1377.html",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/network-jcm1377.html",
+        "sha256": "f8e0bfc7738881415fd9f948e0825386c7425cdd7cf25f1783ab37fcb8bbf7ca"
+      },
+      "locator": "Full JCM1377 formulation and preparation.",
+      "supports_or_contradicts": "The two recovered unqualified Natural seawater occurrences refer to JCM1377. The recipe states 1 L natural seawater without asserting filtration; this source cannot justify a global bare-natural-water alias for filtered seawater.",
+      "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1377",
+      "accessed_at": "2026-11-08T07:42:40.323030+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-oecd-c10.pdf.receipt.json",
+      "kind": "unsuccessful_search",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oecd-c10.pdf.receipt.json",
+        "sha256": "d25087bcfd606d9a0872702a4f1c9836148b393f385616557d27b4fa00aaeddc"
+      },
+      "locator": "Complete actual request receipt",
+      "supports_or_contradicts": "Actual request failed: HTTP Error 403: Forbidden. No absent substance, product or source is inferred.",
+      "url": "https://one.oecd.org/document/ENV/JM/MONO(2013)11/en/pdf",
+      "accessed_at": "2026-11-08T07:44:04.119618+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-togo-M109.json",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/togo-M109.json",
+        "sha256": "7f5f887f27f11f912b9966aa3071f01a90c29b691c0a2f649bebb5de64c5bb4b"
+      },
+      "locator": "Full returned recipe and reagent labels.",
+      "supports_or_contradicts": "TOGO M109 preserves Catalase (Sigma C--10),60mg and separate filter sterilization. Its GMO annotation names bovine-liver C-10, but this is not an independent supplier specification or proof of equivalence to C9322.",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M109",
+      "accessed_at": "2026-11-08T07:45:20.738772+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-current-occurrence-lookup.json",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/current-occurrence-lookup.json",
+        "sha256": "eadbc6de762016c5fbae96cfdc48e1165603d409d7b6b23e84a1ad2d6b418834"
+      },
+      "locator": "Full recorded lookup and exact scoped result bindings",
+      "supports_or_contradicts": "Exact recovered CultureMech source occurrences for the inherited 95%-strength and unqualified natural-seawater labels, plus C--10 labels; current table does not establish historical supplier composition.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-oatmeal-historical-tree-scope.json",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-tree-scope.json",
+        "sha256": "25c53e0a52c0b1d4b9f062a9e70d9ca9daa44898e4e73b59bc0eb3337722435e"
+      },
+      "locator": "Full recorded lookup and exact scoped result bindings",
+      "supports_or_contradicts": "Complete tracked-tree oatmeal text selection at statistics provenance revision15a4da5c08:30 matching normalized YAML files. Scientific recipe contexts were read; this is not reconstruction of the absent untracked18-member occurrence table.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-duplicate-lookup.json",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/duplicate-lookup.json",
+        "sha256": "aa0114d4fcf0ec77c0889fc7e93bbd46736d27d100cc09b733a664cc01646210"
+      },
+      "locator": "Full recorded lookup and exact scoped result bindings",
+      "supports_or_contradicts": "Recorded ignored-inclusive baseline/label-index and published proposal searches; no duplicate proposed kgmicrobe.ingredient:oatmeal identity in that bounded scope.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-0",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--JCM_J148_OATMEAL_AGAR.yaml",
+        "sha256": "aa21326fc661f33719f359acd425054ce4ace8f23eec887d3367f21bf60ae124"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/JCM_J148_OATMEAL_AGAR.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-1",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--KOMODO_425_OATMEAL_AGAR.yaml",
+        "sha256": "98f00e67ca58629b6c8949502001e89235a4964ae1879e7dfaf08a10d6bc6194"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/KOMODO_425_OATMEAL_AGAR.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-2",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--TOGO_M1288_Weak_Oatmeal_Agar.yaml",
+        "sha256": "cf336bb809569abdbfb766d6f5a02b4fcc200ddc2786b34dfe5ae54b4a2f9894"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/TOGO_M1288_Weak_Oatmeal_Agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-3",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--TOGO_M139_Oatmeal_Agar.yaml",
+        "sha256": "a08d4e85d674b54806a8c5641dd38f8e3d3aa4c44fcc21a37818804b0387014e"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/TOGO_M139_Oatmeal_Agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-4",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--TOGO_M1413_Oatmeal_Agar.yaml",
+        "sha256": "ba277e7e642b83f06f0405db89af470f2122d163853452328da2ebd541ea525d"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/TOGO_M1413_Oatmeal_Agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-5",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--TOGO_M394_Acidic_Oatmeal_Agar_pH_5.0.yaml",
+        "sha256": "ab3f352e7d583ec1830ae28515b9b35a783d67dd0ce49e13e2ceabefe239ee25"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/TOGO_M394_Acidic_Oatmeal_Agar_pH_5.0.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-6",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--TOGO_M42_Oatmeal_Agar_ISP-3.yaml",
+        "sha256": "8f69a5bbe1ae0f8fb9e78fcee0e4bc57cabc8942374181325b81e79760aa7ffb"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/TOGO_M42_Oatmeal_Agar_ISP-3.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-7",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--TOGO_M44_Oatmeal-Nitrate_Agar.yaml",
+        "sha256": "2b437c42753541767cada574db05e5bae785070357ad97e907ffa1281cdc6fcf"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/TOGO_M44_Oatmeal-Nitrate_Agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-8",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--TOGO_M709_Oatmeal_Agar_pH_6.0.yaml",
+        "sha256": "fedc3d7cf1b11063699519c3cd9db189e13a1843ca7cca0075ae953221521617"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/TOGO_M709_Oatmeal_Agar_pH_6.0.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-9",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--acidic_oatmeal_agar_ph_5_0.yaml",
+        "sha256": "4f39ebcb4f2ddf7c57e2a89fed15bcb0e5d6cb508d277691c77b16787bdc992c"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/acidic_oatmeal_agar_ph_5_0.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-10",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--mediadive_1308_Main_sol_609.yaml",
+        "sha256": "1669b49c3252a84538c41fb325559cbff7cfedfe09b60cbd1c0749781c80c8ae"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/mediadive_1308_Main_sol_609.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-11",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--mediadive_3672_Main_sol_J50.yaml",
+        "sha256": "72f616b96746b392d44c90787c3afe217ca02a338e80166a5a77be7a50cadaba"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/mediadive_3672_Main_sol_J50.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-12",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--mediadive_3674_Main_sol_J51.yaml",
+        "sha256": "a66f29e15e4846e0d7cde6b566612eae3208ea11292274932cc5b3f531fd7d99"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/mediadive_3674_Main_sol_J51.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-13",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--mediadive_3675_Main_sol_J52.yaml",
+        "sha256": "440b718be94ffc9b53c1170ed906116db3005ce38be9a5db76ddc675ba7b3952"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/mediadive_3675_Main_sol_J52.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-14",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--mediadive_3796_Main_sol_J148.yaml",
+        "sha256": "e18310880379dde298abd3cbb2b2b2da81591ddfddead5abe08d0ac5881f3625"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/mediadive_3796_Main_sol_J148.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-15",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--mediadive_5321_Main_sol_J1202.yaml",
+        "sha256": "0c5a2a664710e826f6c964c0b7504fbd9f28baed536bab3a2bdf1a0523ddfb29"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/mediadive_5321_Main_sol_J1202.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-16",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--mediadive_855_Main_sol_425.yaml",
+        "sha256": "528b5ad14202a5d5d5afcbb1db41b7507c4f71ee5086ff3a00c1573c410b9563"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/mediadive_855_Main_sol_425.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-17",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oa_y_agar.yaml",
+        "sha256": "5f4fe06fa5e57fb24ebb4ad3b203eba992d695f29618e63068c4cf17be4e4918"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oa_y_agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-18",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar.yaml",
+        "sha256": "ee5341f4fb13b052581677e5a420fc785b7fff2d78da1d696b0dc19fa51faf08"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-19",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar_a_isp_3.yaml",
+        "sha256": "87312240ba02b25505003b85162df2a320811f3b81887e8bf5aa785f27a34b60"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar_a_isp_3.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-20",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar_b.yaml",
+        "sha256": "e6432bf09192929d755663ba6ec3b755870fbff584f1581ad459385dff2a1cad"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar_b.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-21",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar_isp_3.yaml",
+        "sha256": "0ac3b9216a11058900c679d58f26355a1d82e4af8465cde2225b2e0fe0a35f7e"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar_isp_3.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-22",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar_isp_3_with_0_1_yeast_extract.yaml",
+        "sha256": "64fe4466a6a8ace7c2cc0d83023a5295a2f4dd249e68b23a53f1af87b30c7754"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar_isp_3_with_0_1_yeast_extract.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-23",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar_isp_medium_no_3.yaml",
+        "sha256": "9a320658fe6c5160b92296a3c292eb4992552d45e96ad13c5759d80553b1f1c3"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar_isp_medium_no_3.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-24",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar_isp_medium_no_3_ph_5_5.yaml",
+        "sha256": "90a6dc448014482bd6b845e52333f30d3cb6e8ff59b1ae2e73522ac65de4d7b3"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar_isp_medium_no_3_ph_5_5.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-25",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_agar_ph_6_0.yaml",
+        "sha256": "7549725937010ba488e581cab1812f1ab71f2ddb83b3f776ba14cc924fa8670b"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_agar_ph_6_0.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-26",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--oatmeal_nitrate_agar.yaml",
+        "sha256": "ce49f97853643ce5d2e39b6cdf4064a2e563c767c9bffe3b51f071ee3a4a1741"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/oatmeal_nitrate_agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-27",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--togo_medium_m1465.yaml",
+        "sha256": "983ca296816301c4838cf3e554e4bc7e91e4ea64bc436f3e24340406277650ec"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/togo_medium_m1465.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-28",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/bacterial--weak_oatmeal_agar.yaml",
+        "sha256": "f5de4f4318fae836757023b861930ba99b58eed4c6e39ca340ac59b2b2e37c0e"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/bacterial/weak_oatmeal_agar.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-OAT-HIST-29",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/oatmeal-historical-all/fungal--oatmeal_agar_isp_3_with_0_1_yeast_extract.yaml",
+        "sha256": "b4b4dc828c5b2b87dad48dceb12ba9f06dc2a75b39983b804892e07dbdd392f4"
+      },
+      "locator": "All scientific recipe fields, ingredients, notes and nested preparations; 15a4da5c08:data/normalized_yaml/fungal/oatmeal_agar_isp_3_with_0_1_yeast_extract.yaml",
+      "supports_or_contradicts": "Historical recipe context distinguishes oatmeal inputs from finished oatmeal agar/wrappers. No fine colloidal processing was supplied in the inspected oatmeal input descriptions. Full unrelated curation histories were not reapproved.",
+      "url": null
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-1506",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-1681.body",
+        "sha256": "1f3e007b882f1453e1e143a82048d68879526759d8da14b248a068a1452ca456"
+      },
+      "locator": "/data/solutions/0/recipe/8; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/1681",
+      "accessed_at": "2026-11-05T06:24:32.694159+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-1606",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-129.body",
+        "sha256": "5d1f36a91fce216d63d1d3447509fd753a402f48fad4a8b0e5d34db9415f31f1"
+      },
+      "locator": "/data/solutions/1/recipe/1; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/129",
+      "accessed_at": "2026-11-05T06:23:32.828632+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-1624",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-J99.body",
+        "sha256": "563c1003b6f6e8457f78bedfc015dea1ad27e9496aa7f9e3b6c7cd41c6d67bb8"
+      },
+      "locator": "/data/solutions/0/recipe/0; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J99",
+      "accessed_at": "2026-11-05T06:24:40.385742+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-1707",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-J248.body",
+        "sha256": "bdf91eb57abbd3b0da0303ca1e5819d9fc356b36fb573f22f6cffaa4d612d345"
+      },
+      "locator": "/data/solutions/0/recipe/0; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J248",
+      "accessed_at": "2026-11-05T06:24:45.627989+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-1881",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-J730.body",
+        "sha256": "368813c99612a8e761f069266e042e0f9a8deceaafb1849dfab315f772ba8ddb"
+      },
+      "locator": "/data/solutions/1/recipe/1; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/J730",
+      "accessed_at": "2026-11-05T06:25:02.813315+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-2142",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-1008.body",
+        "sha256": "f59f9cb740fdbec792302abd03230d8e84c040ad73b593196aaa1aa1ecbe7d1d"
+      },
+      "locator": "/data/solutions/0/recipe/5; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/1008",
+      "accessed_at": "2026-11-05T06:24:07.600493+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-270",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-155.body",
+        "sha256": "6aeb035c71e72ffbac19ad3efb40d1768b6b61f5507376af8c5eae5ab7eb2a28"
+      },
+      "locator": "/data/solutions/0/recipe/8; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/155",
+      "accessed_at": "2026-11-05T06:23:33.944934+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-471",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-425.body",
+        "sha256": "806e9ad048857ac0c17457c07503c83f1ed58b0264f31f2d896c4e9ccb9d1b9a"
+      },
+      "locator": "/data/solutions/0/recipe/1; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/425",
+      "accessed_at": "2026-11-05T06:23:43.781573+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-481",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-440.body",
+        "sha256": "47d169998d5583193b0fa23bc2a38f08e0f2bbf40d14a1899548f66ae4bcddb9"
+      },
+      "locator": "/data/solutions/0/recipe/1; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/440",
+      "accessed_at": "2026-11-05T06:23:44.495820+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-725",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-781.body",
+        "sha256": "a9c00d2ef1c7709934dd1eb95818e52b54162b769705d580109c8261171fc839"
+      },
+      "locator": "/data/solutions/0/recipe/0; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/781",
+      "accessed_at": "2026-11-05T06:23:58.123937+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-W04-BIO-LINEAGE-728",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/original-medium-789.body",
+        "sha256": "c13a184a7d1a2363e1d660b4fec799345e3e31182176b6a259240b2c7bfa2823"
+      },
+      "locator": "/data/solutions/1/recipe/0; entire /data medium, solutions, recipe and preparation context read",
+      "supports_or_contradicts": "Actual original admitted row and entire original recipe body were read. The first-wins full extraction replay is attributed to the independent peer, not represented as rerun by this author.",
+      "url": "https://mediadive.dsmz.de/rest/medium/789",
+      "accessed_at": "2026-11-05T06:23:58.455023+00:00"
+    },
+    {
+      "evidence_id": "FRV1-BIO-PEER-REPLAY",
+      "kind": "local_validation",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/biological/peer-lineage/replay-validation.json",
+        "sha256": "6b6b47556f2ca8c888b06eacbec0c071a22b79b1718bf8073b4fb9a59a002f19"
+      },
+      "locator": "Complete retained peer receipt; script and source-associations retained alongside it",
+      "supports_or_contradicts": "Peer first-wins source replay is preserved with actual author scope. This author independently read all11 selected original source rows and full recipe contexts, but did not rerun the3344-medium extraction.",
+      "url": null
+    }
+  ]
+}

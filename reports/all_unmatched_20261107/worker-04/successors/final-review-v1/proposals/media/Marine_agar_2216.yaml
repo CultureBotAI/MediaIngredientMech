@@ -1,0 +1,227 @@
+identifier: kgmicrobe.ingredient:marine_agar_2216
+preferred_term: Marine agar 2216
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:marine_agar_2216
+  ontology_label: Marine agar 2216
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Minted under the #288 named-preparation convention (#260): Difco/BD Marine
+      Agar 2216, ZoBell''s seawater formulation. MICRO has `ZoBell marine agar` (MICRO:0000112)
+      and `216L marine agar` (MICRO:0000064), but neither is verified to be the 2216
+      formulation and grounding to a maybe-equivalent named medium is how wrong identities
+      enter. No ChEBI/FOODON term covers a compounded medium either, so §3 step 3
+      mints it under the #288 convention, as `Trace element solution see Medium No.
+      187` already is. Cross-reference: CultureMech:007629. A CultureMech id cannot
+      be the identifier — MIM''s primary key is an ontology CURIE or a registry mint
+      — so it is carried here as evidence.'
+synonyms:
+- synonym_text: Marine agar 2216 (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Difco Marine Agar 2216
+  synonym_type: RAW_TEXT
+  source: culturemech frozen worker04 case CM_NAME:1bedbb83f7d2f35469602799aa3855874af7da28ffbba104908f35f401db188d
+- synonym_text: Marine agar 2216 (Difco 0979)
+  synonym_type: RAW_TEXT
+  source: culturemech frozen worker04 case CM_NAME:38b4b887f1822648b77aef789e9debbd671a7832b4644f61595958298a694c4e
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 32
+  media_count: 32
+curation_history:
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: CREATED_FROM_CULTUREMECH_GAP
+  changes: 'kgmicrobe.ingredient:marine_agar_2216 -> kgmicrobe.ingredient:marine_agar_2216
+    (FALLBACK_REGISTRY). Minted under the #288 named-preparation convention (#260):
+    Difco/BD Marine Agar 2216, ZoBell''s seawater formulation. MICRO has `ZoBell marine
+    agar` (MICRO:0000112) and `216L marine agar` (MICRO:0000064), but neither is verified
+    to be the 2216 formulation and grounding to a maybe-equivalent named medium is
+    how wrong identities enter. No ChEBI/FOODON term covers a compounded medium either,
+    so §3 step 3 mints it under the #288 convention, as `Trace element solution see
+    Medium No. 187` already is. Cross-reference: CultureMech:007629. A CultureMech
+    id cannot be the identifier — MIM''s primary key is an ontology CURIE or a registry
+    mint — so it is carried here as evidence.'
+  llm_assisted: false
+  new_status: MAPPED
+- timestamp: '2026-08-27T03:16:39.518115+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 32/32 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Marine agar 2216 (BD-Difco)'' (x6 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added components and component_assertion by transcribing the ATCC Medium
+    2887 Difco Marine Agar 2216 scratch formula.
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-11-08T05:18:48.447621+00:00'
+  curator: worker04_media_source_review_proposal
+  action: ADDED_SYNONYMS
+  changes: Add the complete source labels ['Difco Marine Agar 2216', 'Marine agar
+    2216 (Difco 0979)']. Identity/formulation boundary verified only as described
+    in the media evidence; existing unrelated payload is not newly approved. Isolated
+    proposal only; no maintained owner was changed and no publication hold is released.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.274386+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: This owner retains its original Difco/BD Marine Agar2216 dry-product denotation,
+    supported by its creation history and the separately dosed powder in TOGO M2265.
+    ATCC2887 lists a scratch preparation with17 dry ingredients and1000mL distilled
+    water, whereas its separate product route uses55.1g BD212185 Marine Agar with1000mL
+    water. The dry entries below retain the literal scratch-formula batch masses as
+    source-qualified composition evidence; they are not a manufacturer lot analysis
+    or a claim that the two routes have identical mass closure. Their sum is55.2520g,
+    not the printed55.1g product dose. Both values are preserved without adjustment
+    or an invented explanation (W04-CORRECTION-SOURCE-001; issue1233). Water remains
+    explicit preparation context here, not a constituent of the dry product. Magnesium
+    Chloride is printed without hydration; the previous CHEBI:86345 hexahydrate assertion
+    is withdrawn and its source name/8.8g retained unresolved. Other inherited conventional
+    salt identities are retained; no universal supplied-form purity claim is added.
+    Historical events are preserved verbatim; this event qualifies/retracts conflicting
+    earlier inferences where explicitly described above.
+  llm_assisted: true
+ingredient_type: UNDEFINED_MIXTURE
+components:
+- component_name: Peptone
+  component_id: MICRO:0000178
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Yeast Extract
+  component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Ferric Citrate
+  component_id: CHEBI:144421
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Sodium Chloride
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '19.45'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Magnesium Chloride
+  reference_scope: UNMAPPED
+  concentration_value: '8.8'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+  source: ATCC2887 literal Magnesium Chloride8.8g; hydrate not specified. Withdraw
+    inherited hexahydrate grounding; do not substitute anhydrous form.
+- component_name: Sodium Sulfate
+  component_id: CHEBI:32149
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.24'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Calcium Chloride
+  component_id: CHEBI:3312
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.8'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Potassium Chloride
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.55'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Sodium Bicarbonate
+  component_id: CHEBI:32139
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.16'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Potassium Bromide
+  component_id: CHEBI:32030
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.08'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Strontium Chloride
+  component_id: CHEBI:36383
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.034'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Boric Acid
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.022'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Sodium Silicate
+  component_id: CHEBI:60720
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.004'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Sodium Fluoride
+  component_id: CHEBI:28741
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0024'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Ammonium Nitrate
+  component_id: CHEBI:63038
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0016'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Disodium Phosphate
+  component_id: CHEBI:34683
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.008'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+- component_name: Agar
+  component_id: CHEBI:2509
+  reference_scope: MIM_CATALOG
+  concentration_value: '15.0'
+  concentration_unit: G_PER_SOURCE_SCRATCH_FORMULA_BATCH
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx
+    source_record: ATCC Medium 2887 Marine Agar/Broth 2216
+    notes: This owner retains its original Difco/BD Marine Agar2216 dry-product denotation,
+      supported by its creation history and the separately dosed powder in TOGO M2265.
+      ATCC2887 lists a scratch preparation with17 dry ingredients and1000mL distilled
+      water, whereas its separate product route uses55.1g BD212185 Marine Agar with1000mL
+      water. The dry entries below retain the literal scratch-formula batch masses
+      as source-qualified composition evidence; they are not a manufacturer lot analysis
+      or a claim that the two routes have identical mass closure. Their sum is55.2520g,
+      not the printed55.1g product dose. Both values are preserved without adjustment
+      or an invented explanation (W04-CORRECTION-SOURCE-001; issue1233). Water remains
+      explicit preparation context here, not a constituent of the dry product. Magnesium
+      Chloride is printed without hydration; the previous CHEBI:86345 hexahydrate
+      assertion is withdrawn and its source name/8.8g retained unresolved. Other inherited
+      conventional salt identities are retained; no universal supplied-form purity
+      claim is added.
+  notes: 'All17 printed dry rows are transcribed, but exact commercial-product composition
+    correspondence is partial/qualified: source uses a separate scratch route and
+    has the55.2520g-versus55.1g discrepancy. Water1000mL remains a preparation input,
+    not part of dry powder. Neither quantity is adjusted.'
+notes: This owner retains its original Difco/BD Marine Agar2216 dry-product denotation,
+  supported by its creation history and the separately dosed powder in TOGO M2265.
+  ATCC2887 lists a scratch preparation with17 dry ingredients and1000mL distilled
+  water, whereas its separate product route uses55.1g BD212185 Marine Agar with1000mL
+  water. The dry entries below retain the literal scratch-formula batch masses as
+  source-qualified composition evidence; they are not a manufacturer lot analysis
+  or a claim that the two routes have identical mass closure. Their sum is55.2520g,
+  not the printed55.1g product dose. Both values are preserved without adjustment
+  or an invented explanation (W04-CORRECTION-SOURCE-001; issue1233). Water remains
+  explicit preparation context here, not a constituent of the dry product. Magnesium
+  Chloride is printed without hydration; the previous CHEBI:86345 hexahydrate assertion
+  is withdrawn and its source name/8.8g retained unresolved. Other inherited conventional
+  salt identities are retained; no universal supplied-form purity claim is added.
+  Existing whole-owner, role, source-specific and export holds remain; this isolated
+  proposal does not approve maintained data or releases.

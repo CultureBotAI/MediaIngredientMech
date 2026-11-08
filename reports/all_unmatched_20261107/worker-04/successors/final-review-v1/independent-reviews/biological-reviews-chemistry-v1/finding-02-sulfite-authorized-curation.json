@@ -1,0 +1,56 @@
+{
+  "finding_id": "FINAL-BIO-CHEM-02",
+  "status": "open",
+  "severity": "P2",
+  "case_index": 159,
+  "case_id": "KG_CASE:7759590971e07054c21b5f3dc10a13389af09a43a121efae6e0fbc340b300525",
+  "decision_sha256": "410f30e0c9ad54a4192e48ef8b14b62f4ede5890419f730d4f5aa26581747dc2",
+  "target_owner": "data/ingredients/mapped/Na2so3_X_5_H2o.yaml",
+  "fields": [
+    "identifier",
+    "ontology_mapping",
+    "kg_microbe_node_id",
+    "chemical_properties.inchi",
+    "chemical_properties.smiles"
+  ],
+  "assessment": "DSMZ1353 original trace-element recipe explicitly states Na2SO3 x5 H2O0.01g with500ml water. Existing owner already identifies the five-water material through its label/formula and rejects anhydrous labels, but retains CHEBI86477 identity/SYNONYM_MATCH, anhydrous KG node and water-free structures. The captured #896 requests the native distinct-identity/NARROW_MATCH correction. #344 body/comments do not identify this sulfite and do not supply contradictory primary recipe facts. Case159 current reasoning invokes the three explicitly authorized CH10 proposals; authorization scope is not a missing scientific fact. Feasible bounded correction of this existing owner was deferred.",
+  "bounded_fix": "After ignored-inclusive existing-owner/identifier and cross-shard searches, prepare isolated correction of existing five-water owner under current §3: supported distinct local identity/asymmetric sodium-sulfite parent; remove or qualify incompatible anhydrous active structural/KG assertions and synonym identity if needed, append history preserving authentic before. Do not invent CAS, crystal-phase validation, new duplicate, measured mass, or globally reassign all26 occurrences.",
+  "retained_obligations": [
+    "All26 historical occurrences require separate scope reconciliation; this source batch is not blanket provenance for them.",
+    "No maintained data/SSSOM/export change or whole-owner approval.",
+    "#344 broader form-family and #896 integration obligations remain visible; no general hydrate rule is invented."
+  ],
+  "evidence": [
+    {
+      "path": "captures/chemistry/owners/Na2so3_X_5_H2o.yaml",
+      "sha256": "ac0d2946bafe59cc61795937c3d9077020a99ff978e6eb49538dd7b91a6d0940",
+      "actual_read": "full owner/all issue bodies and comments/full two-column recipe text respectively"
+    },
+    {
+      "path": "captures/issues/issue-344.json",
+      "sha256": "0ad95bc198da30c88535a2386cb0a2f77d8ffa5a4d0661a9b5f7e8651396960d",
+      "actual_read": "full owner/all issue bodies and comments/full two-column recipe text respectively"
+    },
+    {
+      "path": "captures/issues/issue-344-comments.json",
+      "sha256": "f2ed7d6ed07aacce39f2ac44fc02eb136957924cdcb29c6e22747cb59e89549c",
+      "actual_read": "full owner/all issue bodies and comments/full two-column recipe text respectively"
+    },
+    {
+      "path": "captures/issues/issue-896.json",
+      "sha256": "cb7f4e37156d8a3abd33dbd6070edd896620eb47b75be5920abe87d7c78621d3",
+      "actual_read": "full owner/all issue bodies and comments/full two-column recipe text respectively"
+    },
+    {
+      "path": "captures/issues/issue-896-comments.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "actual_read": "full owner/all issue bodies and comments/full two-column recipe text respectively"
+    },
+    {
+      "path": "successors/final-review-v1/captures/chemistry/matrix-primary/d161df9bdd772bcc-dsmz1353.pdf",
+      "sha256": "d161df9bdd772bccec2ff13b37a9b7a33d30e3ebb56b465701dafc95630e2a67",
+      "actual_read": "full owner/all issue bodies and comments/full two-column recipe text respectively"
+    }
+  ],
+  "acceptance_check": "Exact existing-owner successor with authentic before hash, all old histories preserved, literal five waters, verified parent without exact collapse, precise26-occurrence/source association holds and exact case159 binding."
+}

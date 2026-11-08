@@ -1,0 +1,269 @@
+{
+  "finding_id": "FRV1-IR-MEDIA-BIO-001",
+  "severity": "P2",
+  "status": "open",
+  "category": "integration_occurrence_binding",
+  "title": "Current occurrence partitions still point to superseded biological proposals",
+  "finding": "The active decisions replace case-level proposal_ids but retain 42 occurrence-level proposal_id values pointing to superseded I1201 records. Without an explicit current dereference, the case and occurrence binding layers disagree. This affects potato tissue versus peeled/cut tissue and NBRC355 acid whey versus unspecified whey, which must remain occurrence specific.",
+  "targets": [
+    {
+      "index": 16,
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "case_input_sha256": "443e26a5176bb5da168ace48177eb1a44c8d790e94d4892276ed602badbaed0b",
+      "decision_sha256": "5f32af960a6fb44eaf64a2ced39908c4a6485fc9b21524694f5194402bf86a89",
+      "current_proposal_ids": [
+        "FRV1-BIO-P-potatotubertissue",
+        "FRV1-BIO-P-peeledcutpotato"
+      ],
+      "field": "successor_occurrence_applicability",
+      "pointers": [
+        {
+          "occurrence_id": "CM_OCC:8e9525233bb7d9c8616616d5b9b3caec83f979894fdf8f72d7c0f9ab2feab6c0",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:26ffc1b62981254eade3e73ed1d42edbeb1b6fe236599adcc73c3fd991d2d80a",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:28ff6820b0d387aa52e5612cef17ea67bfa1ebc5f6659deae611f0869c81f6c2",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:6406cc558686fa27a66e5662535196aa4564abe3bdd0d32f8cc2a6a0b1ad27b3",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:08eec3b8ae4b392b3ca22353c714b8a66bd5e2246ec06fccb84b6fc3a5e7c3e2",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:683402b3d16bc50bfda37945a045a5b0fe50dc3cded65094d3f3f8ed180ac283",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:d59d20792661cfe899bbebe86c117ee3e135196b1b7b27040c4d006c6ba69aec",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:ed76dff352e05227311e8c18d431c798321773a144a9b958bc3b6a59ffb40948",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:6a9934d69026a5cf61209116b3e16841e5b6d04ac995d45430d62cc6a09dce7f",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:a4981d1c979d0f1bff3fdfb626892870f9b75f231c5eeec0aa5e12c819702565",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:9c258da181482fc144b8454f85408ff395c9e78ed8fca9c9de147af5d7916393",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:d49d715ef6a5fc521f0434d16e2489a012fc599068efe88c977a73db0a8a3c2d",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:3a04e58fef7e6a8247b28adf49b0c2bf53842450d56349732339e1283d92e348",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:61c9db4f3bf9c18e7edf9c7e8d0f8e1f81b0b2feec7b30d07a4a3cef87089f6e",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:d4d04d303fec92d2b27f7a729a56f979ece483f07a3f8969d180ebcfc692ba09",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:e62c913f3df7c860bb544b0d976adb260f3d821c9f21215c4cea9c8c359241d3",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:25b296be73c020c5b9e6a800ec2bc68ce9669c4be8d8b648d2f667ec24bb1d68",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:6a002e62221e7ffecb9ff2ec698c239e0ec3bfc7bfb2788b65e7240aabdca890",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:d66b07aaf55725688458f59318ca5c1bab1ae56a8890eb5292bbcf158e32ae5a",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:9a0ad051bd860fa27fa3240bf13f8f565454ae096b66db5c4ed7d30220c74545",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:0e015c82a6f6f01ac01b63f1cb906450e097135cd00db32b6201352418921764",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:c5b3103e46ce7c5f72edb02831f9dca49bbdcabb943c49f64a821743c5b27753",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:f188f90cef20eff2f38a63aeeca5a03107988413455e204a5d0294e8916eb7f2",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:bcc0dae04722c8f7272934854dd18219ebc0dcac8df4652a3f01a5eb94fd862c",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:0516c67daf38f8a5aadf0f38438dd1100b22a3c65713c1a43cd39da0343c6b1c",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:cf286088dfbceeb92c079c4416e1a0975d187453601265c8061e28e8b8a949b5",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:13bac35184a3236a1fe27a9e6f578e1ed9797198f5b648a5252827111a2ffee4",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:0481e9842624521b4a8dadf19e1b9ea67478424c1d2f077fdec4443b43eade73",
+          "proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "case_input_sha256": "8783c0dc7d0e42cb973cef3b44e2142517f3c84edb2ab178ca4b6b2603e0da9b",
+      "decision_sha256": "48323991dbe6d0670102c5c77a77e255085deb76a1b5c40158285bed9606ac8c",
+      "current_proposal_ids": [
+        "FRV1-BIO-P-nbrc355acidwhey",
+        "FRV1-BIO-P-cheesewheyunspecified"
+      ],
+      "field": "successor_occurrence_applicability",
+      "pointers": [
+        {
+          "occurrence_id": "CM_OCC:3bc563f679d4d35b925dd5c64470d02be74274a2a524c2f054db58b14c11231f",
+          "proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+          "scope": "source-defined liquid output/material, not starting milk or an inferred lactose solution"
+        },
+        {
+          "occurrence_id": "CM_OCC:125dbef2a5103d9e8f343bf86db652a2dd96f30f10b9bf5aa46ffdd8f0c1a2db",
+          "proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+          "scope": "source-defined liquid output/material, not starting milk or an inferred lactose solution"
+        },
+        {
+          "occurrence_id": "CM_OCC:1b772a009eeccdd8b834d2b78c37a21b571373587708a176c33e7c0678e7f255",
+          "proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+          "scope": "source-defined liquid output/material, not starting milk or an inferred lactose solution"
+        },
+        {
+          "occurrence_id": "CM_OCC:a6c638c0f68656082d301fee43a501e6808e318dad1b1d2a6bc17b1e79afd75f",
+          "proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+          "scope": "source-defined liquid output/material, not starting milk or an inferred lactose solution"
+        },
+        {
+          "occurrence_id": "CM_OCC:9f5e2ec586b60fa521352bc373fc9df461f8fd7242a255c96309eab9fd4a1699",
+          "proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+          "scope": "source-defined liquid output/material, not starting milk or an inferred lactose solution"
+        },
+        {
+          "occurrence_id": "CM_OCC:0bad3d97b95abbcdc887b4363f318b14a598aaea45ff6e41b3479cafec5418fe",
+          "proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+          "scope": "source-defined liquid output/material, not starting milk or an inferred lactose solution"
+        },
+        {
+          "occurrence_id": "CM_OCC:a30aacf3c5d2a7e501200f337ec67ad076c99fc4c84288361262e97070d73729",
+          "proposal_id": "I1201-BIO-P-nbrc355_acid_whey",
+          "scope": "source-defined liquid output/material, not starting milk or an inferred lactose solution"
+        }
+      ]
+    },
+    {
+      "index": 104,
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "case_input_sha256": "7dab69c3585d5c4f6af2a652e663c69b7cae49e57c188f25582b3e2cbef4b6c8",
+      "decision_sha256": "9e9c912cdeb6244312012bdf4ad1aaa7e91d74aefba730f4b98638680a6ad51b",
+      "current_proposal_ids": [
+        "FRV1-BIO-P-peeledcutpotato"
+      ],
+      "field": "successor_occurrence_applicability",
+      "pointers": [
+        {
+          "occurrence_id": "CM_OCC:19ea72e1d7539eab0d8dbeaebd09e832d37eb8420f0e6e92e3f105d1f23688fd",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:04d7102ba32efea8338f4e1db32815b51708262c7ce639aa9d710aa60e1874a7",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:3752b05e7aea15df96789aa24d1647686da5991fd6e1696565c7cda61b88b8a4",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:ce71f3eac1ceea65e3c68a684c9e46f3acf30b3d579342d38de7c4725c829d33",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:df65f248e095f10beb1bdcd4e6d92fd9ac64a4aef85ecccf0cb63eddb9e0a41e",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:11541b80209b6969f837d5f8c8205e1ff885bd8828e11f28f609e83fc2987478",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        },
+        {
+          "occurrence_id": "CM_OCC:5a39c0f63188ee11f435d4fdafcc2a84774896cb76897d4cfa07806f396f07e1",
+          "proposal_id": "I1201-BIO-P-peeled_cut_potato",
+          "scope": "plant-tissue preparation input only; no claim of retained solids or exact liquid extract identity"
+        }
+      ]
+    }
+  ],
+  "reproduction": "Read final-review-v1/fragments/biological/decisions.json, select cases16,23,104, compare each successor_occurrence_applicability[].proposal_id with decision.proposal_ids and proposal-ledger active_proposal_id. All42 retain old IDs.",
+  "bounded_fix": "Preserve the original occurrence partition as explicitly predecessor history; add or remap the current occurrence field through the exact proposal replacement ledger, preserving every occurrence ID, partition and scope text. No new tissue/extract equivalence or whey-production equivalence.",
+  "acceptance_checks": [
+    "Exactly28+7+7 current occurrence links use their selected active successors.",
+    "Original42 old links remain immutable or explicitly historical.",
+    "No occurrence changes material partition or preparation scope.",
+    "Re-review amended current case bindings against sealed source contexts and ledger."
+  ],
+  "lineage": "New successor binding defect, independent of the seven original biology scientific findings and #1226 provenance correction.",
+  "source_science": "JCM30/54/55/116 and NBRC355 primary captures inspected; they support the retained distinction, not a repartition.",
+  "created_at": "2026-11-08T07:59:53.552615+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "authentic_path": "mappings/duplicate_identifier_baseline.tsv",
+  "before_sha256": "723f613de746bf44b38e19be9786cd1ee7fb719256fbc6195b8b1e20477d5720",
+  "proposed_capture": {
+    "root": "artifact",
+    "path": "successors/final-review-v1/proposals/root-corrections-v1/duplicate_identifier_baseline.proposed.tsv",
+    "sha256": "cfe620af0c6a06c0d5d3be8ae0384d043d8894c59819f933a4ef74cc0a8a922c"
+  },
+  "removed_row": "CHEBI:86477\tmapped\t2\tc051eb6ed6e9\tHYDRATE_FAMILY_UNREVIEWED\tfalse\t1\tNa2SO3 | Na2SO3 x 5 H2O",
+  "reason": "The existing hydrate now has its own local identity, so CHEBI86477 has one remaining owner and no duplicated family. Native checker code and all other baseline rows unchanged. This is a report-only proposed data-ledger retirement explicitly required by#896, not an applied baseline or rule change.",
+  "required_validation": "Run unchanged native checker against frozen baseline and record expected failure; separately verify this exact one-row prospective baseline in isolated fixture.",
+  "approval": "Independent review pending; canonical baseline and integrated-owner/export approval withheld."
+}

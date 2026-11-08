@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "findings": [
+    {
+      "finding_id": "FRV1-IR-MEDIA-BIO-001",
+      "severity": "P2",
+      "family": "integration_occurrence_binding",
+      "case_indices": [
+        16,
+        23,
+        104
+      ],
+      "case_ids": [
+        "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+        "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+        "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3"
+      ],
+      "target": "successor_occurrence_applicability[].proposal_id",
+      "original_finding_capture": {
+        "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/independent-reviews/media-reviews-biological-v1/early-finding-occurrence-bindings-v1.json",
+        "sha256": "62ec2e3218b5eafddba509d2378f1d69fafbefb5a1eac8f9bb390636b9e2453e"
+      },
+      "disposition": "candidate_addressed_in_assembly_v3",
+      "reproduction": "Compare all42 nested proposal_ids with active selected proposal ledger; v2 names superseded I1201 IDs while case-level proposal_ids name FRV1. Read assembly-v3-binding-rereview.json for exact42 pointers.",
+      "bounded_fix": "Replace only each old ID with its selected successor via closed ledger; preserve old maps separately; preserve every occurrence field and scientific partition.",
+      "acceptance_checks": "All42 mappings verified, oldmapsretained, all37 biological payloads unchanged, all51case activeproposalclosureverified. OnlyadditionaldifferenceisROOT-FIX-E-prerecorded-findings evidenceID onthreecases.",
+      "re_review": {
+        "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/independent-reviews/media-reviews-biological-v1/assembly-v3-binding-rereview.json",
+        "sha256": "04f447993239d7db5998fbf37db1a9928fe6ad19576f75c9b7e180a79de7fc06"
+      }
+    }
+  ],
+  "new_unresolved_scientific_findings": [],
+  "whole_owner_or_export_approval": false
+}

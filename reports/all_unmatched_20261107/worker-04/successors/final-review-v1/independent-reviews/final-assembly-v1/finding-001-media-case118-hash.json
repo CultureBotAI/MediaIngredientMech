@@ -1,0 +1,39 @@
+{
+  "finding_id": "W04-FINAL-ASSEMBLY-001",
+  "issue_key": "w04-final-assembly-media-case118-decision-digest",
+  "reporter": "/root/assembly_review",
+  "recorded_at": "2026-11-08T08:18:55.822324+00:00",
+  "severity": "minor",
+  "status": "open",
+  "category": "review_provenance",
+  "target": "CM_NAME:e7eaa1050c08bb29a7dee84290a9316338aecd0b896e1e2b1047bb4dde8c9194",
+  "case_index": 118,
+  "affected_path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/independent-reviews/chemistry-reviews-media-v1/successor-assembly-v3/case-assessments.json",
+  "affected_field": "case_index=118/decision_sha256_canonical",
+  "claimed_sha256": "29b8962cdc9d6b873042cdc7b6b1cfa4514eb4c4cb5eb02a95eb3b95f11640b1",
+  "actual_sha256": "e5f14a7495086c97d8c99f95099d76ce720fe49a5463fdf6078c015e239bdbc0",
+  "reproduction": "Parse both assembly-v3/decisions.json and sealed selected-inputs.json; choose exact case_id above; serialize with json.dumps(ensure_ascii=False,sort_keys=True,separators=(comma,colon)); SHA256 UTF8bytes. Both objects are equal and produce actualhash; sealed assessment declares differenthash. Other113 currentlysealedmedia+biocases and80payloads match.",
+  "scientific_impact": "No differing case content or source/payload claim found: sealedselected-inputs case equals currentexactcase. This is an exactassessmentbinding defect, not a scientific rejection or new corpus issue.",
+  "bounded_fix": "Preserve all sealed originals; media reviewer publishes immutable addendum binding exactold assessment file/pointer, corrected canonicalhash, currentcasebytes and targeted source/payload reread confirmation. Root incorporates addendum in finalreviewpacket. No authorpayload,maintaineddata,gate or GitHub edit needed.",
+  "acceptance": "Independently recalculate correctedhash; verify unchanged source,case_id andproposal; preserve oldsealedmanifest and record addendum precedence.",
+  "input_files": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/independent-reviews/chemistry-reviews-media-v1/successor-assembly-v3/case-assessments.json",
+      "sha256": "b70999dad208d7d89907c976b5a13610ad178c0f535029e6c9e8010657dbd944"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/independent-reviews/chemistry-reviews-media-v1/successor-assembly-v3/selected-inputs.json",
+      "sha256": "5053106f0550ea2f42cc597fbb999784863799afde53a0778f031e9b26a37491"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/independent-reviews/chemistry-reviews-media-v1/successor-assembly-v3/FINAL-MANIFEST.json",
+      "sha256": "b860f5a58c009b3190b22de9ba2b4a5a0c5f333789fb03de632bfc6917be20b8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/candidates/assembly-v3/decisions.json",
+      "sha256": "21db5c9f30ce943a696c80452c9daf0d107cafbf4296b50af9378f0b849e7bd4"
+    }
+  ],
+  "search_scope": "Positive exactbinding comparison; no absenceclaim. Files enumerated directly independentofgitignore.",
+  "related_nonfinding": "The first two-ring manifest helper accidentally selected older A/HANDOFF.md for a relative basename. That was our helper-path error and is separately corrected; it is not an authorfinding."
+}

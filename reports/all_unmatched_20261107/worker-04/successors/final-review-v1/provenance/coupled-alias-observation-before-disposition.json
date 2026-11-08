@@ -1,0 +1,67 @@
+{
+  "observation_id": "W04-CORRECTION-ALIAS-OBS-001",
+  "recorded_at": "2026-11-08T07:46:50.880213+00:00",
+  "reporter": "/root/correction_chemistry; root independent history/authority inspection",
+  "status": "unconfirmed_scope_concern; categorical_wrong_identity_claim_withdrawn",
+  "owner_path": "data/ingredients/mapped/Na2wo4_X_2_H2o.yaml",
+  "authentic_before_sha256": "b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9",
+  "fields": [
+    {
+      "pointer": "/synonyms/20",
+      "value": {
+        "synonym_text": "Sodium tungstate(VI)",
+        "synonym_type": "RAW_TEXT",
+        "source": "sssom_other_backfill"
+      }
+    },
+    {
+      "pointer": "/synonyms/21",
+      "value": {
+        "synonym_text": "Sodium tungsten oxide",
+        "synonym_type": "RAW_TEXT",
+        "source": "sssom_other_backfill"
+      }
+    },
+    {
+      "pointer": "/synonyms/22",
+      "value": {
+        "synonym_text": "Sodium wolframate",
+        "synonym_type": "RAW_TEXT",
+        "source": "sssom_other_backfill"
+      }
+    },
+    {
+      "pointer": "/synonyms/23",
+      "value": {
+        "synonym_text": "Tungstic acid, disodium salt",
+        "synonym_type": "RAW_TEXT",
+        "source": "sssom_other_backfill"
+      }
+    },
+    {
+      "pointer": "/synonyms/24",
+      "value": {
+        "synonym_text": "sodium tetraoxotungstate(VI)",
+        "synonym_type": "RAW_TEXT",
+        "source": "sssom_other_backfill"
+      }
+    }
+  ],
+  "authority_capture": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/captures/chemistry/matrix-primary/834ebac8b6cad593-ols-CHEBI-63940.json",
+    "sha256": "834ebac8b6cad593048a30e9701557856778064bbee7107e08d0f3b93e090f6f",
+    "read_scope": "Exact CHEBI63940 term definition, formula, CAS and all synonym scopes read; related synonyms are not automatically exact material assertions."
+  },
+  "history": {
+    "timestamp": "2026-09-02T22:41:49.137449+00:00",
+    "curator": "claude_sssom_surface_form_backfill",
+    "action": "ADDED_SYNONYMS",
+    "changes": "Recovered 6 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Na2WO2.2H2O'; 'Sodium tungstate(VI)'; 'Sodium tungsten oxide'; 'Sodium wolframate'; 'Tungstic acid, disodium salt'; 'sodium tetraoxotungstate(VI)'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+    "llm_assisted": false
+  },
+  "assessment": "The five names were mechanically recovered from SSSOM other and occur as related names on the water-free ChEBI63940 term. This demonstrates an inherited scope question, but does not alone disprove a commercial-hydrate convention or source-specific bridge. No new universal printed-hydration requirement follows.",
+  "bounded_disposition": "Keep these five additional fields unchanged unless claim-specific independent source evidence establishes a correction; preserve observation and whole-owner/export limitations. Required matrix exact-field corrections continue separately.",
+  "issue_context": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1229",
+  "github_mutation": false,
+  "new_gate": false
+}

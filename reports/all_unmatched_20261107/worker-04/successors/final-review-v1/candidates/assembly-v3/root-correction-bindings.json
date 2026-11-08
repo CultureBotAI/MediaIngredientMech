@@ -1,0 +1,390 @@
+{
+  "author": "/root",
+  "recorded_findings_sha256": "750913d892e0e1b366799b4c539afdf05b00d07564d84a203aca6983f0d71fcd",
+  "supersedes_candidate": "assembly-v2",
+  "payload_replacements": [
+    {
+      "old_proposal_id": "FINAL-CHEM-P-actinomycetin-mixture-type",
+      "new_proposal_id": "ROOT-FIX-P-actinomycetin-citation-v1",
+      "old_after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Actinomycetin.final-review-v1.after.yaml",
+        "sha256": "ec8493c3bab17c5677a1e3ff1bb4d11a0009edd0d3b3cc4ccb924e9468a743a0"
+      },
+      "new_after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/root-corrections-v1/Actinomycetin.after.yaml",
+        "sha256": "f2238e142a3cd59010d00bb016c464ca9699b34b8fc4397ecd122367b2b74219"
+      },
+      "summary": "Correct the active Welsch citation to the actual inspected Journal of Bacteriology article, PMC518278 pp101–102; the earlier Bacteriological Reviews11:99–148 citation named a different article. Preserve the supported crude-filtrate/complex-mixture interpretation and all prior events."
+    },
+    {
+      "old_proposal_id": "FREV-MEDIA-P-media-product-difco_bordet_gengou_agar_base",
+      "new_proposal_id": "ROOT-FIX-P-difco-bordet-gengou-context-v1",
+      "old_after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/media/Difco_Bordet_Gengou_Agar_Base.yaml",
+        "sha256": "c5f20ca48461606999f265c5a58118369978178711b119bd031c99ad27de6dbb"
+      },
+      "new_after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/root-corrections-v1/Difco_Bordet_Gengou_Base.after.yaml",
+        "sha256": "9172a7075e50b493c8a5d950054064c21ea53d74a3b3fa93972992e911b30601"
+      },
+      "summary": "TOGO M2851 uses1L prepared Difco Bordet-Gengou basal agar before a separate15% defibrinated horse-blood addition. BD248200 corroborates the named dehydrated product; it does not identify that litre as dry powder or establish the historical preparation recipe. This dry-product candidate is product context only for M2851. Exact preparation equivalence to DSMZ438 is unresolved because M2851 provides no basal formula, stock concentration or original-source bridge. No procurement state, dilution quantity, new global alias or source-to-owner exact identity is inferred."
+    },
+    {
+      "old_proposal_id": "FREV-MEDIA-P-I1201-MEDIA-P-dsmz_438_difco_bordet_gengou_prepared_base",
+      "new_proposal_id": "ROOT-FIX-P-bordet-preparation-context-v1",
+      "old_after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/media/DSMZ_438_Difco_Bordet_Gengou_Prepared_Base.yaml",
+        "sha256": "5b22a2398ac058cbf18f22891ec3f8db7ec9555fa2a8c3822b78f76aae1bc3c7"
+      },
+      "new_after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/root-corrections-v1/DSMZ438_Bordet_Prepared.after.yaml",
+        "sha256": "a3df42e5d49088f56894681bf641f966d615426efc9278e81d801bcfb7a89962"
+      },
+      "summary": "Additional comparison context: TOGO M2851 names1L prepared Difco Bordet-Gengou basal agar before15% TCS horse blood. It has no original-source URL or basal formulation. The brand and material description are compatible with DSMZ438, but identical preparation is not established. This documents M2851 prepared-basal usage without a new duplicate owner, an exact source association, a global alias, a recipe-equivalence reference or an invented water component; the DSMZ438 owner identity remains specifically qualified."
+    }
+  ],
+  "additional_proposal": {
+    "proposal_id": "ROOT-FIX-P-sodium-sulfite-pentahydrate-v1",
+    "case_ids": [
+      "KG_CASE:7759590971e07054c21b5f3dc10a13389af09a43a121efae6e0fbc340b300525"
+    ],
+    "description": "DSMZ1353 explicitly states Na2SO3 x5H2O0.01g in its500mL trace-element recipe. Preserve this source-stated five-water substance with its own registry identity and asymmetric sodium-sulfite parent under MAPPING_SEMANTICS§3; this is formal source transcription, not measured crystal-phase, commercial purity or supplier characterization. Exact current ChEBI query returned no hydrate term; PubChem19790054 has matching formal composition but the inspected synonym response supplies no CAS. No new CAS or molecular mass is asserted. The existing26 occurrence statistics and all original histories are preserved; those26 occurrences, the inherited unqualified disodium-sulfite alias and downstream source/SSSOM selectors require their own scoped review. This proposal neither reassigns them nor clears their holds.",
+    "evidence_ids": [
+      "FINAL-CHEM-E-dsmz1353-pdf",
+      "w04-chem-ols-CHEBI-86477-json",
+      "w04-chem-owner-Na2so3_X_5_H2o",
+      "w04-chem-issue-896",
+      "w04-chem-issue-896-comments",
+      "ROOT-FIX-E-sulfite-owner-lookup",
+      "ROOT-FIX-E-prerecorded-findings",
+      "ROOT-FIX-E-ols-sodium-sulfite-pentahydrate-search",
+      "ROOT-FIX-E-ols-sodium-sulfite-search",
+      "ROOT-FIX-E-pubchem-19790054-record",
+      "ROOT-FIX-E-pubchem-19790054-synonyms",
+      "ROOT-FIX-E-pubchem-sodium-sulfite-pentahydrate"
+    ],
+    "owner_path": "data/ingredients/mapped/Na2so3_X_5_H2o.yaml",
+    "kind": "edit_existing_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successors/final-review-v1/proposals/root-corrections-v1/Na2so3_X_5_H2o.after.yaml",
+      "sha256": "5c0a8dcec4aef1ade2f2c2b54e2e2a56fd3e4abaffad6f80e94fab730ede8eb8"
+    },
+    "before_sha256": "ac0d2946bafe59cc61795937c3d9077020a99ff978e6eb49538dd7b91a6d0940",
+    "publication_obligations": [
+      "Independent complete proposed payload review; all26 historical occurrences and inherited alias scopes remain held.",
+      "Coordinator must reconcile cross-shard/source selectors and native duplicate-identifier baseline retirement; canonical inputs remain unchanged.",
+      "Any later integration must emit registry identity, asymmetric parent and RuleB1 registry rows and preserve existing supported/withheld/source/role/export holds."
+    ],
+    "cross_shard_owner_conflict": "Existing W02 before-owner capture shares authentic bytes; no W02 acceptance or winner inferred."
+  },
+  "occurrence_binding_changes": [
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:8e9525233bb7d9c8616616d5b9b3caec83f979894fdf8f72d7c0f9ab2feab6c0",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:26ffc1b62981254eade3e73ed1d42edbeb1b6fe236599adcc73c3fd991d2d80a",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:28ff6820b0d387aa52e5612cef17ea67bfa1ebc5f6659deae611f0869c81f6c2",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:6406cc558686fa27a66e5662535196aa4564abe3bdd0d32f8cc2a6a0b1ad27b3",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:08eec3b8ae4b392b3ca22353c714b8a66bd5e2246ec06fccb84b6fc3a5e7c3e2",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:683402b3d16bc50bfda37945a045a5b0fe50dc3cded65094d3f3f8ed180ac283",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:d59d20792661cfe899bbebe86c117ee3e135196b1b7b27040c4d006c6ba69aec",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:ed76dff352e05227311e8c18d431c798321773a144a9b958bc3b6a59ffb40948",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:6a9934d69026a5cf61209116b3e16841e5b6d04ac995d45430d62cc6a09dce7f",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:a4981d1c979d0f1bff3fdfb626892870f9b75f231c5eeec0aa5e12c819702565",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:9c258da181482fc144b8454f85408ff395c9e78ed8fca9c9de147af5d7916393",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:d49d715ef6a5fc521f0434d16e2489a012fc599068efe88c977a73db0a8a3c2d",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:3a04e58fef7e6a8247b28adf49b0c2bf53842450d56349732339e1283d92e348",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:61c9db4f3bf9c18e7edf9c7e8d0f8e1f81b0b2feec7b30d07a4a3cef87089f6e",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:d4d04d303fec92d2b27f7a729a56f979ece483f07a3f8969d180ebcfc692ba09",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:e62c913f3df7c860bb544b0d976adb260f3d821c9f21215c4cea9c8c359241d3",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:25b296be73c020c5b9e6a800ec2bc68ce9669c4be8d8b648d2f667ec24bb1d68",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:6a002e62221e7ffecb9ff2ec698c239e0ec3bfc7bfb2788b65e7240aabdca890",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:d66b07aaf55725688458f59318ca5c1bab1ae56a8890eb5292bbcf158e32ae5a",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:9a0ad051bd860fa27fa3240bf13f8f565454ae096b66db5c4ed7d30220c74545",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:0e015c82a6f6f01ac01b63f1cb906450e097135cd00db32b6201352418921764",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:c5b3103e46ce7c5f72edb02831f9dca49bbdcabb943c49f64a821743c5b27753",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:f188f90cef20eff2f38a63aeeca5a03107988413455e204a5d0294e8916eb7f2",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:bcc0dae04722c8f7272934854dd18219ebc0dcac8df4652a3f01a5eb94fd862c",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:0516c67daf38f8a5aadf0f38438dd1100b22a3c65713c1a43cd39da0343c6b1c",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:cf286088dfbceeb92c079c4416e1a0975d187453601265c8061e28e8b8a949b5",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:13bac35184a3236a1fe27a9e6f578e1ed9797198f5b648a5252827111a2ffee4",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "occurrence_id": "CM_OCC:0481e9842624521b4a8dadf19e1b9ea67478424c1d2f077fdec4443b43eade73",
+      "old_proposal_id": "I1201-BIO-P-potato_tuber_tissue",
+      "selected_proposal_id": "FRV1-BIO-P-potatotubertissue"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "occurrence_id": "CM_OCC:3bc563f679d4d35b925dd5c64470d02be74274a2a524c2f054db58b14c11231f",
+      "old_proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+      "selected_proposal_id": "FRV1-BIO-P-cheesewheyunspecified"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "occurrence_id": "CM_OCC:125dbef2a5103d9e8f343bf86db652a2dd96f30f10b9bf5aa46ffdd8f0c1a2db",
+      "old_proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+      "selected_proposal_id": "FRV1-BIO-P-cheesewheyunspecified"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "occurrence_id": "CM_OCC:1b772a009eeccdd8b834d2b78c37a21b571373587708a176c33e7c0678e7f255",
+      "old_proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+      "selected_proposal_id": "FRV1-BIO-P-cheesewheyunspecified"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "occurrence_id": "CM_OCC:a6c638c0f68656082d301fee43a501e6808e318dad1b1d2a6bc17b1e79afd75f",
+      "old_proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+      "selected_proposal_id": "FRV1-BIO-P-cheesewheyunspecified"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "occurrence_id": "CM_OCC:9f5e2ec586b60fa521352bc373fc9df461f8fd7242a255c96309eab9fd4a1699",
+      "old_proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+      "selected_proposal_id": "FRV1-BIO-P-cheesewheyunspecified"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "occurrence_id": "CM_OCC:0bad3d97b95abbcdc887b4363f318b14a598aaea45ff6e41b3479cafec5418fe",
+      "old_proposal_id": "I1201-BIO-P-cheese_whey_unspecified",
+      "selected_proposal_id": "FRV1-BIO-P-cheesewheyunspecified"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "occurrence_id": "CM_OCC:a30aacf3c5d2a7e501200f337ec67ad076c99fc4c84288361262e97070d73729",
+      "old_proposal_id": "I1201-BIO-P-nbrc355_acid_whey",
+      "selected_proposal_id": "FRV1-BIO-P-nbrc355acidwhey"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "occurrence_id": "CM_OCC:19ea72e1d7539eab0d8dbeaebd09e832d37eb8420f0e6e92e3f105d1f23688fd",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "occurrence_id": "CM_OCC:04d7102ba32efea8338f4e1db32815b51708262c7ce639aa9d710aa60e1874a7",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "occurrence_id": "CM_OCC:3752b05e7aea15df96789aa24d1647686da5991fd6e1696565c7cda61b88b8a4",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "occurrence_id": "CM_OCC:ce71f3eac1ceea65e3c68a684c9e46f3acf30b3d579342d38de7c4725c829d33",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "occurrence_id": "CM_OCC:df65f248e095f10beb1bdcd4e6d92fd9ac64a4aef85ecccf0cb63eddb9e0a41e",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "occurrence_id": "CM_OCC:11541b80209b6969f837d5f8c8205e1ff885bd8828e11f28f609e83fc2987478",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "occurrence_id": "CM_OCC:5a39c0f63188ee11f435d4fdafcc2a84774896cb76897d4cfa07806f396f07e1",
+      "old_proposal_id": "I1201-BIO-P-peeled_cut_potato",
+      "selected_proposal_id": "FRV1-BIO-P-peeledcutpotato"
+    }
+  ],
+  "case_bindings": [
+    {
+      "case_id": "CM_NAME:19bd9d8b81f35d2998fa19cfa7f3d5cffc97cbd62a5dd10715512d4b334ef784",
+      "prior_decision_sha256": "e2ba7a285c43bd8d0e994741788eb34ea18857376c20b4facc1cd3b225ae482c",
+      "new_decision_sha256": "191758c0660ac7bf8ef77eab7cde93746a5ea13b6f80ba9c6474eb1428b86675"
+    },
+    {
+      "case_id": "CM_NAME:2040d96ce41e1abe0c011e3202ba2e93c901027f2d4a8da503063ba03e31952e",
+      "prior_decision_sha256": "f89d0d1dbde0b4fc32e1a68a76f63ca793231d1294c553e3d40fa2f8c311da5c",
+      "new_decision_sha256": "70a08b406cde3bad8e312d9493d26170491e33c71ecab09adf29916c7638c368"
+    },
+    {
+      "case_id": "CM_NAME:bb8a315e678638012404f7ef5005c2d01da2d73d03820aa2c23838557f39e9df",
+      "prior_decision_sha256": "0218f81aee3eab4aa6394ddffac77e9159cef72c12e55a8d3854390e01eaff9b",
+      "new_decision_sha256": "6925ac9c9fb19783922731d1e6ce39ec6f6205819a826f5333a22e298c395256"
+    },
+    {
+      "case_id": "CM_NAME:ce1b3c09c9ab7c66440df905186d3ecc2c84e339017b309fdb11eb2701bb08a3",
+      "prior_decision_sha256": "011d088ca3bd360679f25e5eede3cea9380f749cda4cfad3a6739b3f17b7cf01",
+      "new_decision_sha256": "e2fb863aefb144d1139c935a2be0f5091389086359e89f7ff125c4fd19b38d15"
+    },
+    {
+      "case_id": "CM_NAME:d549b316bb338403523ec8262144e4fdac6ab8f92c348d232e14b2f14ad456b9",
+      "prior_decision_sha256": "b9a2339c9ea0e8929b05784b2fce6dce7e09ca3185a9383580347b57f1499f07",
+      "new_decision_sha256": "c65ebef20a25bd4150e9404a377f93dfdb5f6a41d7d021cdea57d54037114967"
+    },
+    {
+      "case_id": "KG_CASE:7759590971e07054c21b5f3dc10a13389af09a43a121efae6e0fbc340b300525",
+      "prior_decision_sha256": "410f30e0c9ad54a4192e48ef8b14b62f4ede5890419f730d4f5aa26581747dc2",
+      "new_decision_sha256": "8bd20dc8626923e77cdabb7f570f3cfddb47d314aabe4c520182e841980afd6b"
+    },
+    {
+      "case_id": "KG_CASE:b5c99b57b57a7930758c8a1afba953eb4ca34d8f4ec92c48fb7e8d25aeb87fb6",
+      "prior_decision_sha256": "f1e7d4ba2916d9e1d05ee17dfaf18904aface72bf1c8ee59da851233309aa37b",
+      "new_decision_sha256": "27702943556a77e77504e1a970f62aef5dcdbd4e9dde5e8a838a380b87796c5b"
+    },
+    {
+      "case_id": "KG_CASE:c31774c1e88d11983f1d8fa850645fc376c9eb1fbb570ade1e3e245866ef5ae6",
+      "prior_decision_sha256": "82079dac2a99c5d711b9a8244c8be71ac20eeffa784209cb3bd61fa957e679af",
+      "new_decision_sha256": "b72a3addf8f930a060e61fe6e4e6183c51b4e35115fcf0fbe37b703ea0be56c1"
+    },
+    {
+      "case_id": "KG_CASE:e6bd5460b2e7ff7d003fc1fda39880da9a69bbbd4c3b9fe30b140d4e8f98f0f7",
+      "prior_decision_sha256": "b126dae0d0b73f656786dce01d8186df07ef3c1a1adab342055011c58519ac0a",
+      "new_decision_sha256": "032ef40249f52ed2c3b31a3e516ef79c5dafc70bc71950dc940e7160b43bad65"
+    }
+  ],
+  "scientific_review": "pending separate exact-payload/case re-review",
+  "whole_owner_or_export_approval": false
+}

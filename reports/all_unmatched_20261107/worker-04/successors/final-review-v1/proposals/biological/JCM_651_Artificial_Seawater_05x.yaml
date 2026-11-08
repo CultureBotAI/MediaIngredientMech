@@ -1,0 +1,79 @@
+identifier: kgmicrobe.ingredient:jcm_651_artificial_seawater_05x
+preferred_term: JCM 651 Artificial seawater (0.5 x)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_651_artificial_seawater_05x
+  ontology_label: JCM 651 Artificial seawater (0.5 x)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=651
+    notes: Source-qualified multi-component stock identity. No molecular term or generic
+      seawater identity is asserted. Proposed fallback registry identity pending coordinator
+      integration and full content-bound review.
+components:
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '15.0'
+  concentration_unit: g per source batch
+- component_name: KCl
+  reference_scope: UNMAPPED
+  concentration_value: '0.35'
+  concentration_unit: g per source batch
+- component_name: MgCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5.4'
+  concentration_unit: g per source batch
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2.7'
+  concentration_unit: g per source batch
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: g per source batch
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L per source batch
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=651
+    source_record: 0.5 x Artificial seawater table
+    notes: All top-level source stock components transcribed. Nested stock identity
+      and unspecified forms remain source-stated; no chemical identity is guessed.
+  notes: Amounts retain the source batch basis, including the stated water amount,
+    rather than claiming a measured final volume or finished-medium concentrations.
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+notes: 'Isolated worker04 proposal. The complete stock is distinct from its components,
+  natural seawater, and finished medium. CultureMech raw unit discrepancies remain
+  in the campaign source cases and require separate upstream repair. Component reference_scope
+  UNMAPPED deliberately preserves source-stated chemical forms without asserting current
+  MIM equivalence. Raw source labels are retained here as contextual provenance only,
+  without resolving aliases: [''0.5 x Artificial seawater (see below)''].'
+curation_history:
+- timestamp: '2026-11-08T05:26:00.860201+00:00'
+  curator: codex_worker04_biological
+  action: CREATED_SOURCE_QUALIFIED_STOCK_PROPOSAL
+  changes: Proposed exact source-qualified stock from 0.5 x Artificial seawater table;
+    preserved original source label, component forms and batch quantities. No maintained
+    data or release status was changed.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:50:07.995381+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,93 @@
+identifier: kgmicrobe.ingredient:diced_potato
+preferred_term: Diced potato
+synonyms:
+- synonym_text: Diced potato
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:728); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a plant tissue substrate/preparation and left unmapped pending
+    source-backed composition or food/material ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Diced_potato-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** “Diced potato” is
+    a **heterogeneous plant-tuber tissue preparation defined partly by physical form**,
+    not a single chemical, salt/hydrate, purified ingredient, buffer, or standardized
+    commercial formulation. The direct culture-medium source lists it at **200 g/L**,
+    alongside dextrose 20 g/L and agar 15 g/L, at pH 4.5; the medium was autoclaved
+    at 121 °C for 15 minut No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T06:04:27.788130+00:00'
+  curator: codex_worker04_biological_issue1201
+  action: PROPOSED_SOURCE_BOUND_CURATION
+  changes: MediaDiveingredient 728 and DSMZ 789 identify diced potato as an input:20
+    g potato is boiled in 1 L water 30 min, filtered and restored to 1 L. Promote
+    the existing physical-form material owner, not the filtrate. The inherited historical
+    report quotation claiming 200 g/L is preserved as historical prose but explicitly
+    not adopted as current primary evidence. No universal 20 g/L concentration belongs
+    on the tissue owner.
+  new_status: MAPPED
+  llm_assisted: true
+  previous_status: UNMAPPED
+- timestamp: '2026-11-08T07:50:08.112605+00:00'
+  curator: codex_worker04_biological_final_review
+  action: CORRECTED_SOURCE_SCOPE_AND_PROVENANCE
+  changes: Correct newly agent-authored ontology_mapping.evidence[0].evidence_type
+    from human-only MANUAL_CURATION to LLM_SUGGESTION; source text and rationale unchanged
+    (#1226).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:728); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a plant tissue substrate/preparation
+  pending source-backed composition curation.
+
+
+  #1201 isolated proposal: MediaDiveingredient 728 and DSMZ 789 identify diced potato
+  as an input:20 g potato is boiled in 1 L water 30 min, filtered and restored to
+  1 L. Promote the existing physical-form material owner, not the filtrate. The inherited
+  historical report quotation claiming 200 g/L is preserved as historical prose but
+  explicitly not adopted as current primary evidence. No universal 20 g/L concentration
+  belongs on the tissue owner. Dice dimensions and extraction yield are absent; they
+  do not block the identified diced-tissue class. Raw source spellings are retained
+  in case evidence and this source scope; no new globally resolving source-local alias
+  is added. Full-owner publication approval and all source-specific holds remain pending.'
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:diced_potato
+  ontology_label: Diced potato
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://bacmedia.dsmz.de/pdf/789; https://mediadive.dsmz.de/finder/Diced+potato///;
+      https://mediadive.dsmz.de/ingredients/728
+    notes: MediaDiveingredient 728 and DSMZ 789 identify diced potato as an input:20
+      g potato is boiled in 1 L water 30 min, filtered and restored to 1 L. Promote
+      the existing physical-form material owner, not the filtrate. The inherited historical
+      report quotation claiming 200 g/L is preserved as historical prose but explicitly
+      not adopted as current primary evidence. No universal 20 g/L concentration belongs
+      on the tissue owner.

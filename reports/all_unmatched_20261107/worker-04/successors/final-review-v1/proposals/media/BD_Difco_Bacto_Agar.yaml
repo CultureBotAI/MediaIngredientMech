@@ -1,0 +1,63 @@
+identifier: kgmicrobe.ingredient:bd_difco_bacto_agar
+preferred_term: Bacto agar (BD-Difco)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bd_difco_bacto_agar
+  ontology_label: Bacto agar (BD-Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.bdbiosciences.com/en-ca/products/reagents/dehydrated-culture-media/agars/agar-bottle-100g.214050?tab=product_details
+    notes: JCM905/906 and the source M460-derived record explicitly identify BD-Difco
+      Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product
+      identity as distinct from Noble214220. The owner represents the unwashed Bacto
+      grade; washed P1 occurrence of case84 and unspecified agar-agar case57 remain
+      excluded.
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+notes: 'JCM905/906 and the source M460-derived record explicitly identify BD-Difco
+  Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product
+  identity as distinct from Noble214220. The owner represents the unwashed Bacto grade;
+  washed P1 occurrence of case84 and unspecified agar-agar case57 remain excluded.
+  Raw source labels remain in campaign case evidence; no unqualified global alias
+  is added. This isolated proposal does not clear inherited owner publication holds.
+  Successor case84 is occurrence-resolved: CCAP EA, DSMZ958 and PYE Top agar use unwashed
+  Bacto grade and may bind this owner. MediaDiveP1 HaHa explicitly washes the agar
+  three times and binds a separate processed preparation. Unqualified case57 Difco
+  agar-agar and conflicting case121 remain excluded. No raw Bacto agar alias is installed
+  globally.'
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: JCM905/906 and the source M460-derived record explicitly identify BD-Difco
+    Bacto agar as the solidifier grade. Manufacturer214050 confirms the Bacto product
+    identity as distinct from Noble214220. The owner represents the unwashed Bacto
+    grade; mixed washed/unwashed case84 and unspecified agar-agar case57 remain excluded.
+    Isolated proposal; no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T05:58:44.641143+00:00'
+  curator: worker04_media_issue1201_source_review_proposal
+  action: CORRECTED
+  changes: 'Successor case84 is occurrence-resolved: CCAP EA, DSMZ958 and PYE Top
+    agar use unwashed Bacto grade and may bind this owner. MediaDiveP1 HaHa explicitly
+    washes the agar three times and binds a separate processed preparation. Unqualified
+    case57 Difco agar-agar and conflicting case121 remain excluded. No raw Bacto agar
+    alias is installed globally. Isolated successor proposal only; published artifacts
+    and maintained data unchanged.'
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.554862+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+supplied_form:
+- name: Bacto agar (BD-Difco)
+  supplier: BD Difco
+  form: Bacto-grade agar

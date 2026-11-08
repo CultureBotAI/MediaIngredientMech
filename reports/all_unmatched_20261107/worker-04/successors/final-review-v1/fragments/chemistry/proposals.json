@@ -1,0 +1,1616 @@
+{
+  "schema_version": "1.0",
+  "author": "/root/correction_chemistry",
+  "proposals": [
+    {
+      "proposal_id": "FINAL-CHEM-P-trisodium-edta",
+      "case_ids": [
+        "CM_NAME:02591f4a5364db919b1a8890e8f6800a87eea943fff102ed0405d0de9b069fa5"
+      ],
+      "description": "The three frozen occurrences explicitly specify three sodium ions. Live CHEBI:63125 defines the trisodium salt, distinct from disodium CHEBI:64734/64758. The owner is correctly trisodium but its active 'EDTA di sodium salt' synonym is chemically wrong. Add the explicit 3Na spelling and retain the wrong disodium string only as rejected provenance; no interpretation of case125 is imported here. Original NBRC387/900/391 all corroborate3Na-EDTA; NBRC387 specifies200mg in a vitamin stock, not the frozen200g/L flattened component. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-1",
+        "w04-chem-recipe-d61418d71add6115f0d5",
+        "w04-chem-nbrc-387-html",
+        "w04-chem-failed-togo-1579-json",
+        "w04-chem-recipe-e15623f3d657cd3df301",
+        "w04-chem-nbrc-900-html",
+        "w04-chem-failed-togo-1694-json",
+        "w04-chem-recipe-ef59535c8e26aa7d09e1",
+        "w04-chem-nbrc-391-html",
+        "w04-chem-failed-togo-1583-json",
+        "w04-chem-ols-CHEBI-63125-json",
+        "w04-chem-ols-CHEBI-64734-json",
+        "w04-chem-ols-CHEBI-64758-json",
+        "w04-chem-owner-Na3-edta"
+      ],
+      "owner_path": "data/ingredients/mapped/Na3-edta.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Na3-edta.final-review-v1.after.yaml",
+        "sha256": "a80ea52ffc03c3b0715456437ed1c921b2e05b8a7e947b77a4147ed4e68c5f81"
+      },
+      "before_sha256": "ea8dbade6d6bfd0bbb478bd146a1266dbb2742c7d022a3de16904465ea73238a",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-trisodium-edta"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-polysorbate80-alias",
+      "case_ids": [
+        "CM_NAME:053be99fda23ac3dde845cbe31b24635ad5d8a01f30a9a682a50095249afdabc"
+      ],
+      "description": "Polyoxyethylene sorbitan mono-oleate explicitly identified as Tween80 is polysorbate80 CHEBI:53426. The polyoxyethylene qualifier distinguishes it from sorbitan monooleate; this is a safe source alias to the existing Tween80 owner, not to Span80. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-07: The retained InChI and SMILES exactly reproduce ChEBI:53426 representative annotations. ChEBI also defines a polymer with w+x+y+z=20 and supplies a variable polymer formula. These strings are representative database structures, not a measurement that commercial Tween80 is a single discrete C32H60O10 species; the existing variable formula and supported polyoxyethylene/Tween80 source alias are retained.",
+      "evidence_ids": [
+        "w04-chem-case-5",
+        "w04-chem-recipe-bbb1666a29557a4be146",
+        "w04-chem-failed-togo-2833-json",
+        "w04-chem-recipe-e80758210d7d3c28abc4",
+        "w04-chem-failed-togo-2238-json",
+        "w04-chem-recipe-c8582241d578ca5aa927",
+        "w04-chem-failed-togo-2950-json",
+        "w04-chem-ols-CHEBI-53426-json",
+        "w04-chem-owner-Tween_80",
+        "w04-chem-issue-761",
+        "w04-chem-issue-761-comments",
+        "FINAL-CHEM-E-ols-CHEBI-53426-json"
+      ],
+      "owner_path": "data/ingredients/mapped/Tween_80.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Tween_80.final-review-v1.after.yaml",
+        "sha256": "6d4a4ba382a937de2ce93368ade3526ca8a614c215dd89c49d65e702ac89a9d2"
+      },
+      "before_sha256": "b2c418f2dd142b9270329af6d46a71939a1223eb3384c59dd05eb5f13868ae24",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-polysorbate80-alias"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-water-spelling",
+      "case_ids": [
+        "CM_NAME:168c30f0e3785001c6a528a4c9291068148d8b7db73a4fd4b5206023fd48705a"
+      ],
+      "description": "Destilled water is an orthographic variant of distilled water in the complete recipe, with no saline or solution qualifier. CHEBI:15377 and the current Distilled_Water chemistry support a narrow spelling alias. Other aliases on that shared owner are outside this spelling decision and do not gain approval. Final-review correction: #1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-14",
+        "w04-chem-recipe-35be554f72b358b5a822",
+        "w04-chem-failed-togo-2775-json",
+        "w04-chem-ols-CHEBI-15377-json",
+        "w04-chem-owner-Distilled_Water"
+      ],
+      "owner_path": "data/ingredients/mapped/Distilled_Water.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Distilled_Water.final-review-v1.after.yaml",
+        "sha256": "358440814e6a9311439d0198b7a56c91aa09e1712c3a7079fdc776705663c3e9"
+      },
+      "before_sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-water-spelling"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-glycerol-anhydrous",
+      "case_ids": [
+        "CM_NAME:16e47b149124530b03a4bb6bcf96902c7b547202bd073cb5c88bf13b54f12b1a",
+        "KG_CASE:9865fbfd5c379c393bf499adaeaef906b2c0d84973a1fbd058209181ca1feb4d"
+      ],
+      "description": "The explicit anhydrous glycerol reagent is the neutral molecule CHEBI:17754, not a distinct crystalline hydrate. The owner already carries the unparenthesized qualifier. Preserve the exact parenthesized raw label as an alias without inferring purity, grade or concentration beyond the source. The raw Glycerol(anhydrous) reagent and processed label agree with neutral glycerol17754 and its source2178 metadata. This is the same substance as the existing glycerol owner, with an explicit water-exclusion qualifier; it is not a new hydrate or a solution concentration. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-15",
+        "w04-chem-recipe-be4f7ef93eeaeb4186f4",
+        "w04-chem-recipe-f2fcb9bd3f659405b0d7",
+        "w04-chem-mediadive-solution-5857-json",
+        "w04-chem-ols-CHEBI-17754-json",
+        "w04-chem-mediadive-ingredient-2178-html",
+        "w04-chem-owner-Glycerol",
+        "w04-chem-case-167",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Glycerol.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Glycerol.final-review-v1.after.yaml",
+        "sha256": "5e6b7fe6d144379c191fbf39d71c5b0ca8816e542d27bb62cc63986eae8686e6"
+      },
+      "before_sha256": "c70babb47ba9f6da0b803dd52ae1ba9a094e7ed19c66f30b5568ff6a57e5809a",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-glycerol-anhydrous"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-d-biotin-spellings",
+      "case_ids": [
+        "CM_NAME:21aeddfd4e35d925d9fb2aa0433ed0cc7adf48af721383c2e69fd1ce912d4e54",
+        "CM_NAME:85a1b12108a8b80ea7c22164861f692f51f6a787faddde39f2e94cb21be447ae"
+      ],
+      "description": "D--Biotin preserves the D stereochemical designation despite duplicated dashes. Live CHEBI:15956 contains the corresponding D-biotin identity and structure. The punctuation variant can be attached to the existing biotin owner without asserting a stock identity. D(+)--Biotin preserves the D-(+) optical designation; CHEBI:15956 includes D-(+)-biotin and the matching stereostructure. Double dashes are a formatting variant and can be preserved as an alias without broadening to racemic biotin. Final-review correction: #1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-06: synonyms[22] 'Biotin (1 μg/μL)': reject_resolving_identity_preserve_text_and_source. NBRC1604 uses10µl of1µg/µl biotin stock; the concentration belongs to the aliquoted preparation, not the pure biotin owner.",
+      "evidence_ids": [
+        "w04-chem-case-24",
+        "w04-chem-recipe-2c4d8bd6ac5527e2efce",
+        "w04-chem-jcm-558-html",
+        "w04-chem-failed-togo-562-json",
+        "w04-chem-recipe-9b67031acc7f2ab1f229",
+        "w04-chem-jcm-239-html",
+        "w04-chem-failed-togo-231-json",
+        "w04-chem-ols-CHEBI-15956-json",
+        "w04-chem-owner-Biotin",
+        "w04-chem-case-78",
+        "w04-chem-recipe-ce51e547a3128da31db7",
+        "w04-chem-jcm-537-html",
+        "w04-chem-failed-togo-539-json",
+        "w04-chem-recipe-799aacd7e0eb4ba12d21",
+        "w04-chem-jcm-699-html",
+        "w04-chem-failed-togo-720-json",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "owner_path": "data/ingredients/mapped/Biotin.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Biotin.final-review-v1.after.yaml",
+        "sha256": "16ac043c5ec14442ecb00feabfe14e1409de47d25c29cbb288fd0368e799f82c"
+      },
+      "before_sha256": "26056efadc5e57f081cde6e4ce0c2e25c03530c6d564ef0df25da3bcacb59c30",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-d-biotin-spellings"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-nacetyl-d-monomer",
+      "case_ids": [
+        "CM_NAME:3aac2db9a46d8f5721c59e7e69a8d1cdc5866103fcaf734860d9d3f701bb6fca",
+        "CM_NAME:3cc15a7cad37c950fde61af07431feec1fb05e8ef3547b3b48db60d887976d1d"
+      ],
+      "description": "The D-configured N-acetylglucosamine monomer is explicit despite doubled dashes. CHEBI:506227 defines the free monosaccharide; CHEBI:8006 is a peptidoglycan residue/polymer context and is not the ingredient. TOGO M194 is provider-backed; its historical JCM201 endpoint absence does not justify swapping in LB-medium context. JCM1429 lists N-acetyl-D-glucosamine as a free ingredient. The frozen CHEBI:8006 annotation conflicts with this monomer and its formula; the existing CHEBI:506227 owner is correct. Add the exact spaced N -Acetyl spelling and flag the upstream term independently of the alias. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-35",
+        "w04-chem-recipe-7c69961a498dfc2ca583",
+        "w04-chem-jcm-201-html",
+        "w04-chem-failed-togo-194-json",
+        "w04-chem-ols-CHEBI-506227-json",
+        "w04-chem-ols-CHEBI-8006-json",
+        "w04-chem-owner-N-acetyl-d-glucosamine",
+        "w04-chem-case-37",
+        "w04-chem-recipe-c1f7ade67eabe4e754cd",
+        "w04-chem-jcm-1429-html"
+      ],
+      "owner_path": "data/ingredients/mapped/N-acetyl-d-glucosamine.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/N-acetyl-d-glucosamine.final-review-v1.after.yaml",
+        "sha256": "b6d5060c3cabd885e8a10618e631b72fda650b5287fcfac1a90d8cdcd5461de0"
+      },
+      "before_sha256": "2e327aaa86d1cb081b72e506dae1bd7f21b937573c60fb9a41dd5828a8bed7cb",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-nacetyl-d-monomer"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-glutamate-monohydrate",
+      "case_ids": [
+        "CM_NAME:6443039e386c491c89767d2bd3172cd009e6f1c8e3ece54320206ab6ac211fe3",
+        "KG_CASE:8b8132641194a6ac99b475e8b178ac9d95b032a1e2497e6b888f1ff010331615",
+        "CM_NAME:53f06327d6d3e2cf7a611d01814399f6ee2ea8308a800d86c58915c2731f16db"
+      ],
+      "description": "NBRC1625 explicitly specifies L-glutamic acid monosodium salt monohydrate; CHEBI:232425 provides its one-water formula, InChI and SMILES. Preserve that supported structure repair and explicit L alias. DSMZ1454 and JCM904 name sodium glutamate monohydrate; their conventional association follows MAPPING_SEMANTICS §3, rather than independent supplier proof from automatically matched CAS or mass. Neither name-level source association certifies a purchased batch’s enantiomeric purity or crystal phase. CH-05 rejects the two water-free systematic aliases while preserving their exact text/source. All source-specific, role and whole-owner/export holds remain. #1226 corrects the newly agent-authored mapping assertion to LLM_SUGGESTION while preserving inherited objects and actual history.",
+      "evidence_ids": [
+        "w04-chem-case-58",
+        "w04-chem-recipe-3055e98dc1e521bd17d4",
+        "w04-chem-nbrc-1625-html",
+        "w04-chem-togo-3058-json",
+        "w04-chem-ols-CHEBI-232425-json",
+        "w04-chem-owner-Sodium_Glutamate_Monohydrate",
+        "w04-chem-issue-655",
+        "w04-chem-issue-655-comments",
+        "w04-chem-case-166",
+        "w04-chem-ols-CHEBI-64220-json",
+        "w04-chem-mediadive-ingredient-1291-html",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "FINAL-CHEM-E-dsmz78c-pdf",
+        "FINAL-CHEM-E-dsmz59-pdf",
+        "FINAL-CHEM-E-dsmz1454-pdf",
+        "FINAL-CHEM-E-jcm-904-html",
+        "FINAL-CHEM-E-nbrc-1625-html",
+        "FINAL-CHEM-E-ols-CHEBI-115156-json",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-64220-json",
+        "FINAL-CHEM-E-mediadive-ingredient-143-html",
+        "FINAL-CHEM-E-mediadive-ingredient-104-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1291-html",
+        "FINAL-CHEM-E-mediadive-ingredient-839-html",
+        "FINAL-CHEM-E-new-dsmz34-pdf",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches"
+      ],
+      "owner_path": "data/ingredients/mapped/Sodium_Glutamate_Monohydrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Sodium_Glutamate_Monohydrate.final-review-v1.after.yaml",
+        "sha256": "0e6247e281d5bf77bef621f03a80295cf92eada983026aaa02a2c7a01413129b"
+      },
+      "before_sha256": "1ba808e191b435067a404c3e1f7bdbb6371feba7d26b44a82e72bd66456004ca",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-glutamate-monohydrate"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-folate-b9",
+      "case_ids": [
+        "CM_NAME:8322cd3f33f8a5bb35b786bc7d42e2091f8ac1cd77f1da6fee7533b81e605a5a"
+      ],
+      "description": "Folic acid with vitaminB9 is an explicit single solute even where nested in a vitamin stock. CHEBI:27470 identifies folic acid and supports the B9 label. Add the qualified alias to the existing owner while retaining the original nested occurrence context. Final-review correction: #1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-01: synonyms[7] 'Folinic acid (citrovorum)': reject_resolving_identity_preserve_text_and_source. Folinic acid is5-formyltetrahydrofolic acid15640 with distinct formula from folic acid27470; JCM537 lists folinic and folic components separately. CH-06: synonyms[23] 'Folic acid (5 μg/μL)': reject_resolving_identity_preserve_text_and_source. NBRC1604 uses10µl of5µg/µl folic-acid stock; this is an aliquoted preparation, not the neat folic-acid identity.",
+      "evidence_ids": [
+        "w04-chem-case-76",
+        "w04-chem-recipe-cb5a972f2d1da8e1c0f8",
+        "w04-chem-ols-CHEBI-27470-json",
+        "w04-chem-owner-Folic_Acid",
+        "FINAL-CHEM-E-ols-CHEBI-27470-json",
+        "FINAL-CHEM-E-ols-CHEBI-15640-json",
+        "FINAL-CHEM-E-jcm-537-html",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "owner_path": "data/ingredients/mapped/Folic_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Folic_Acid.final-review-v1.after.yaml",
+        "sha256": "879a86e88e88454cf1a40ed3ecce7d26e0dacef5be4528c4a2c5f2591dc03c8a"
+      },
+      "before_sha256": "df85938271ec8f32a6d756f5213ba9661c9a7530822f333d2e02493b9f92e615",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-folate-b9"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-ferric-ammonium-citrate",
+      "case_ids": [
+        "CM_NAME:83637b465eeb4e8f0203f455ed0e87a88f2463531cf5f294bf72466f46483953"
+      ],
+      "description": "Fe(III)NH4-Citrate denotes ferric ammonium citrate. CHEBI:31604 describes this material as an indefinite-composition ferric ammonium citrate mixture, so the existing owner is suitable without inventing a fixed molecular stoichiometry. The explicit FeIII and ammonium qualifiers are retained. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. COI-FAC: preserve exact own scientific delta and all union/whole-owner holds; update outside-review state without applying another shard’s union.",
+      "evidence_ids": [
+        "w04-chem-case-77",
+        "w04-chem-recipe-600b7655a50032427e08",
+        "w04-chem-failed-togo-3209-json",
+        "w04-chem-recipe-52aef727781152da6ac0",
+        "w04-chem-failed-togo-3208-json",
+        "w04-chem-ols-CHEBI-31604-json",
+        "w04-chem-owner-Ferric_Ammonium_Citrate"
+      ],
+      "owner_path": "data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Ferric_Ammonium_Citrate.final-review-v1.after.yaml",
+        "sha256": "0ffadb41562f1baedb86136939efaf34a626805f6ce3eb8847bb72a994c95835"
+      },
+      "before_sha256": "ae646b9c5f3e9c8ec01d939e1b97733259825a14e4a8a03626bc65453035426e",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-ferric-ammonium-citrate"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-ferric-edta",
+      "case_ids": [
+        "CM_NAME:a6f38120b9c4d04154e2d9fca451708a85c00e121152783d86f6c47a7eab1c3f"
+      ],
+      "description": "EDTA・Fe(III) names the ferric EDTA coordination entity CHEBI:30729. The three frozen sources specify the complex without a sodium counterion; a sodium feredetate identity78292 would add an unsupported constituent. The existing ferric-EDTA owner can retain the exact typographic alias. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-06: synonyms[11] 'Fe(III)-EDTA (0.66% [wt/vol] in water)': reject_resolving_identity_preserve_text_and_source. TOGO2251 explicitly defines0.66g Fe(III)-EDTA in100ml water and adds10ml of that stock; formulation is distinct from the isolated coordination entity.",
+      "evidence_ids": [
+        "w04-chem-case-94",
+        "w04-chem-recipe-fcf9a203c7ee9c636a94",
+        "w04-chem-jcm-246-html",
+        "w04-chem-failed-togo-238-json",
+        "w04-chem-recipe-e68c62bea1f376623654",
+        "w04-chem-jcm-815-html",
+        "w04-chem-failed-togo-850-json",
+        "w04-chem-recipe-1a7fa50addc94c155450",
+        "w04-chem-jcm-886-html",
+        "w04-chem-failed-togo-927-json",
+        "w04-chem-ols-CHEBI-30729-json",
+        "w04-chem-ols-CHEBI-78292-json",
+        "w04-chem-owner-Fe_Iii-edta",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "owner_path": "data/ingredients/mapped/Fe_Iii-edta.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Fe_Iii-edta.final-review-v1.after.yaml",
+        "sha256": "e18aa557f6a91f04015f48c3762e3b6df7f99186b3cf98db611aacaae28a1832"
+      },
+      "before_sha256": "583095cb1c81bca99e71bd4be2d6d2c876b1ff8923b77820107e6968d10078a2",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-ferric-edta"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-retinol",
+      "case_ids": [
+        "CM_NAME:2f584565c4ff185bd8b19a6907d8222b4d0651298f5e195f154b529abac98d6e"
+      ],
+      "description": "The frozen MediaDB component is retinol without geometrical qualifiers. CHEBI:50211 deliberately leaves the geometry of its four double bonds unspecified, matching that level of source specificity. A new retinol owner can use this class; all-trans-retinol, retinyl esters and vitamin-A mixtures must not be substituted. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-28",
+        "w04-chem-recipe-880d388577afcbf670bc",
+        "w04-chem-ols-CHEBI-50211-json"
+      ],
+      "owner_path": "data/ingredients/mapped/Retinol.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Retinol.final-review-v1.after.yaml",
+        "sha256": "e3fff69b9c30f284ad5f6258b469b6e75f94b4cf826786185deacb4ce83d2dd3"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-retinol"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-barium-carbonate",
+      "case_ids": [
+        "CM_NAME:42e3e3b30b625d5fd11aff35fd8788ab676d585ec68a4fd8437ae142d8e6045e"
+      ],
+      "description": "BaCO3 is the explicit barium carbonate component in the P4 recipe's nested stock. CHEBI:190439 identifies BaCO3, CAS513-77-9. The ingredient identity can be represented separately from the user-supplied stock; this does not endorse the stock's aqueous solubility or filtration instructions. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-40",
+        "w04-chem-recipe-f751bf318cda4d4053f6",
+        "w04-chem-mediadive-P4-html",
+        "w04-chem-ols-CHEBI-190439-json"
+      ],
+      "owner_path": "data/ingredients/mapped/Barium_Carbonate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Barium_Carbonate.final-review-v1.after.yaml",
+        "sha256": "b810fe7b9cad5b8c4846e5d507073bd9725e182725916ad2f28514cf49c75a20"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-barium-carbonate"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-bis-tris-propane",
+      "case_ids": [
+        "CM_NAME:cae0c1c4f4ea239dce3e46c1ff4dfe0b9fd9e50f394ffc57a480111e83661db4"
+      ],
+      "description": "Bis Tris Propane in NBRC1050/1049 is the propane-linked buffer CHEBI:40947. The existing Bis-tris owner denotes a different single-center buffer and cannot absorb the propane qualifier. All three frozen occurrences retain2.25g/L and the same explicit buffer identity. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-103",
+        "w04-chem-recipe-57df5bf30acedb61e837",
+        "w04-chem-nbrc-1050-html",
+        "w04-chem-recipe-986008bf01b22a16329a",
+        "w04-chem-failed-togo-1818-json",
+        "w04-chem-recipe-32f6cd9ceb9d74ef376b",
+        "w04-chem-nbrc-1049-html",
+        "w04-chem-failed-togo-1817-json",
+        "w04-chem-ols-CHEBI-40947-json",
+        "w04-chem-owner-Bis-tris"
+      ],
+      "owner_path": "data/ingredients/mapped/Bis_Tris_Propane.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Bis_Tris_Propane.final-review-v1.after.yaml",
+        "sha256": "f2c4c1f35287f00e4eb81df333ea56bd427fbb5796479449dc66724d4a6d8fc1"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-bis-tris-propane"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-2-oxoglutarate",
+      "case_ids": [
+        "CM_NAME:fb48edc526c860e30f643c29615e9fadc306e6a8c588c536b74829ccc5fa1f75"
+      ],
+      "description": "The label2-Oxoglutarate names an anion, and live CHEBI:16810 defines the dianion from both carboxyl-group deprotonations. Under the repository's bare-anion protonation rule, this is the appropriate neutral-medium species; it is not exact identity to alpha-ketoglutaric acid30915. The14.6g stock amount may derive from weighed acid, so that supplied-form and stock context remains separate and unresolved. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-128",
+        "w04-chem-recipe-1a6894b1a0f1182db7e8",
+        "w04-chem-jcm-1100-html",
+        "w04-chem-failed-togo-1173-json",
+        "w04-chem-recipe-501240c9425617e9e530",
+        "w04-chem-recipe-d79e65b5ee4197c8cb71",
+        "w04-chem-recipe-9062e96a77d866b75895",
+        "w04-chem-mediadive-solution-5181-json",
+        "w04-chem-ols-CHEBI-16810-json",
+        "w04-chem-ols-CHEBI-30915-json",
+        "w04-chem-mediadive-ingredient-1992-html"
+      ],
+      "owner_path": "data/ingredients/mapped/2-Oxoglutarate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/2-Oxoglutarate.final-review-v1.after.yaml",
+        "sha256": "d3c5a0c61489ae1437a6d09f05e9497d16e940c0618a26af26d08b70e887abaa"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-2-oxoglutarate"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-putrescine-dihydrochloride",
+      "case_ids": [
+        "KG_CASE:1b6a580d68b62f221688a2e601f74135dd37692f23623c1a89f08262b4efd3bd"
+      ],
+      "description": "Putrescine2HCl, CAS333-93-7 and C4H12N2.2ClH identify the dihydrochloride, not free putrescine. CHEBI:201718 now denotes this exact salt; the existing CAS-primary owner still treats it as a broad parent. Promote the owner to the exact ontology salt while retaining CAS, rejecting the free-base alias and preserving history. Final-review correction: #1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-137",
+        "w04-chem-ols-CHEBI-201718-json",
+        "w04-chem-mediadive-ingredient-1352-html",
+        "w04-chem-owner-Putrescine_Dihydrochloride",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Putrescine_Dihydrochloride.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Putrescine_Dihydrochloride.final-review-v1.after.yaml",
+        "sha256": "1e08024cbba06fb811047a101dc7db28bb9e4bc65207f2aa7656bbdd4f203435"
+      },
+      "before_sha256": "d0afce92c76850d141b4d0aeadc377a217efa26487a5e9966ff2e03298d7c491",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-putrescine-dihydrochloride"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-orthomolybdate-alias",
+      "case_ids": [
+        "KG_CASE:2b3d618b22b4ea8fe5e1e90bbe262449f99b21b7fbf96288f9427d7e75640c4f"
+      ],
+      "description": "The raw source(NH4)6Mo7O24 x4H2O, ingredient120 CAS12054-85-2 and mass1235.86 identify hexaammonium heptamolybdate tetrahydrate86244. Diammonium orthomolybdate91249 has one Mo and two ammoniums and is not its parent. The current wrong owner already rejects the tetrahydrate strings but still resolves the anhydrous heptamolybdate formula; reject that residual polyanion alias and link the source to the existing correct tetrahydrate owner. OLS86244's prose says heptahydrate in error; its name/formula/mass and source CAS all specify four waters. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-140",
+        "w04-chem-ols-CHEBI-86244-json",
+        "w04-chem-ols-CHEBI-91249-json",
+        "w04-chem-mediadive-ingredient-120-html",
+        "w04-chem-ccap-MR_TAP-pdf",
+        "w04-chem-owner-Diammonium_molybdate",
+        "w04-chem-owner-Ammonium_Molybdate_Tetrahydrate",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-issue-312",
+        "w04-chem-issue-312-comments"
+      ],
+      "owner_path": "data/ingredients/mapped/Diammonium_molybdate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Diammonium_molybdate.final-review-v1.after.yaml",
+        "sha256": "23cd6a3bbfea5a72ddae29bc59ae34dff59252a5a211b478977d1ec4a49f847c"
+      },
+      "before_sha256": "04f56b6dd9464f2c7fcb63db2a055d507d9a4498224847ad841a78306a35e1a7",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-orthomolybdate-alias"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-heptamolybdate-tetrahydrate",
+      "case_ids": [
+        "KG_CASE:2b3d618b22b4ea8fe5e1e90bbe262449f99b21b7fbf96288f9427d7e75640c4f"
+      ],
+      "description": "The raw source(NH4)6Mo7O24 x4H2O, ingredient120 CAS12054-85-2 and mass1235.86 identify hexaammonium heptamolybdate tetrahydrate86244. Diammonium orthomolybdate91249 has one Mo and two ammoniums and is not its parent. The current wrong owner already rejects the tetrahydrate strings but still resolves the anhydrous heptamolybdate formula; reject that residual polyanion alias and link the source to the existing correct tetrahydrate owner. OLS86244's prose says heptahydrate in error; its name/formula/mass and source CAS all specify four waters. Final-review correction: #1226: evidence[4] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-05: individually assess seven listed malformed molybdate aliases; preserve demonstrated TOGO M412/JCM414 damaged-label RAW_TEXT and reject unresolved/incompatible formula tokens. Original text/source and history retained. CH-05: synonyms[1] '(NH4)6Mo7O4': reject_resolving_identity_preserve_text_and_source. The literal formula has only O4 and omits hydrate water; no exact original-source correction for this whole global token was established. CH-05: synonyms[3] '(NH4)6MoO24·4H2O': reject_resolving_identity_preserve_text_and_source. TOGO1032/941 and original JCM979/900 repeat the missing-Mo-count formula; the source does not independently restore seven molybdenums. CH-05: synonyms[4] '(NH4)6MoO7O24': reject_resolving_identity_preserve_text_and_source. The repeated-O malformed formula omits hydrate water; neither charge-balanced heptamolybdate nor four-water identity is literally established. CH-05: synonyms[5] '(NH4)6MoO7O24 x 4 H2O': reject_resolving_identity_preserve_text_and_source. TOGO2346 links DSMZ600, whose Hutner salts explicitly reference DSMZ590; original DSMZ590 repeats the malformed MoO7O24 formula. This chain does not correct its oxygen/molybdenum notation. CH-05: synonyms[7] '(NH4)MoO7O24': reject_resolving_identity_preserve_text_and_source. This literal token omits five ammoniums, has repeated oxygen notation and no hydrate water; its complete four-water identity is not established. CH-05: synonyms[8] '(NH4)MoO7O24 x 4 H2O': reject_resolving_identity_preserve_text_and_source. Original DSMZ1144 repeats the malformed one-ammonium/repeated-O formula; a neighboring Hutner recipe is not a source correction. CH-05: synonyms[6] '(NH4)Mo7O24·4H2O': retain_proven_damaged_source_RAW_TEXT_with_occurrence_scope. Exact TOGO M412 source metadata links JCM414. TOGO drops the ammonium subscript6 at the0.5g trace-stock component; original JCM414 prints (NH4)6Mo7O24·4H2O. Retain this existing RAW_TEXT under the documented damaged-label carve-out, not as a new exact formula or blanket correction of other occurrences. M944 also links original JCM903 with the correct six-ammonium formula. M1196 links JCM1118, which itself repeats the missing-six formula; that occurrence remains unresolved and is not released by these two verified typo bridges.",
+      "evidence_ids": [
+        "w04-chem-case-140",
+        "w04-chem-ols-CHEBI-86244-json",
+        "w04-chem-ols-CHEBI-91249-json",
+        "w04-chem-mediadive-ingredient-120-html",
+        "w04-chem-ccap-MR_TAP-pdf",
+        "w04-chem-owner-Diammonium_molybdate",
+        "w04-chem-owner-Ammonium_Molybdate_Tetrahydrate",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-issue-312",
+        "w04-chem-issue-312-comments",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches"
+      ],
+      "owner_path": "data/ingredients/mapped/Ammonium_Molybdate_Tetrahydrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Ammonium_Molybdate_Tetrahydrate.final-review-v1.after.yaml",
+        "sha256": "568fbc5245978479798aa3e2c931829eb8748f6273ef5039554db59e572b4160"
+      },
+      "before_sha256": "8aa0782e111cd434c6337345cfe51234abda0233d56857fd7a34c75a5636bf15",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-heptamolybdate-tetrahydrate"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-taps-salt-alias",
+      "case_ids": [
+        "KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255"
+      ],
+      "description": "Original DSMZ1344 names Taps17.4g atpH8.3. Manufacturer T5130/108320 nomenclature independently establishes conventional TAPS as the free buffer CAS29915-38-6/CHEBI:191055, while this owner is the separate CAS91000-53-2 sodium salt. Preserve rejection of unqualified TAPS on the salt owner and propose a separate free-buffer owner. This does not assert a specific Sigma purchase or infer salt identity from pH. Automatic peptide metadata on MediaDive1188 is unrelated; all publication and provisional-role holds remain. #1226 corrects the newly agent-authored mapping assertion to LLM_SUGGESTION while preserving inherited objects and actual history.",
+      "evidence_ids": [
+        "w04-chem-case-152",
+        "w04-chem-ols-CHEBI-191055-json",
+        "w04-chem-mediadive-ingredient-1188-html",
+        "w04-chem-dsmz-1344-pdf",
+        "w04-chem-owner-TAPS_Sodium_Salt",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "FINAL-CHEM-E-dsmz1344-pdf",
+        "FINAL-CHEM-E-taps-sigma-web-response-json",
+        "FINAL-CHEM-E-mediadive-ingredient-1188-html",
+        "FINAL-CHEM-E-new-ols-chebi-191055-json",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-owner-searches"
+      ],
+      "owner_path": "data/ingredients/mapped/TAPS_Sodium_Salt.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/TAPS_Sodium_Salt.final-review-v1.after.yaml",
+        "sha256": "1425cf823b98d7cde1d7efee16cc26fefb8e974602dfa3f64bbb95279736777c"
+      },
+      "before_sha256": "8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-taps-salt-alias"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-tungstate-malformed-alias",
+      "case_ids": [
+        "KG_CASE:9f198597ee346fe7fa3800c5f8b41421f7be6b58ec864e341c57eaf0a5298010"
+      ],
+      "description": "Exact source1743 provenance binds JCM371 recipe6; original JCM371 prints Na2WO4·2H2O0.1mg, supporting correction of the flattened oxygen count for this occurrence. Preserve Na2WO2 variants as rejected provenance as directed. The distinct NaWO4·2H2O token is also printed malformed by JCM215 and lacks a verified sodium-count correction. The explicitly aliquoted0.1%w/v preparation and exact water-free Disodium tetraoxotungstate token are rejected on this pure hydrate owner. Five additional generic backfill names remain unchanged as an unconfirmed scope concern pending claim-specific convention review; no blanket water-free-name policy is applied. All other source and owner/export holds remain. #1226 corrects the newly agent-authored mapping assertion to LLM_SUGGESTION while preserving inherited objects and actual history.",
+      "evidence_ids": [
+        "w04-chem-case-168",
+        "w04-chem-ols-CHEBI-63939-json",
+        "w04-chem-ols-CHEBI-63940-json",
+        "w04-chem-mediadive-ingredient-1743-html",
+        "w04-chem-owner-Na2wo4_X_2_H2o",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "FINAL-CHEM-E-jcm371-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1743-html",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "owner_path": "data/ingredients/mapped/Na2wo4_X_2_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Na2wo4_X_2_H2o.final-review-v1.after.yaml",
+        "sha256": "22f3f2e551d5c53ab7c2a09d7d26c4d8c4e3db7610ccda679e9a32cdbba3f2da"
+      },
+      "before_sha256": "b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-tungstate-malformed-alias"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-monosodium-glutamate-alias",
+      "case_ids": [
+        "KG_CASE:42e69ed549b10bc3e563a0c61ab9e63db6b8c663965806e1dfebe69dd5d53f33",
+        "KG_CASE:a5cb822b735b8b3e9e2e93abcb590f83b5d5274f4bc8590fb08f459c92efbe47"
+      ],
+      "description": "Original DSMZ34 prints Na-glutamate; association with generic monosodium glutamate64220 is conventional name-level interpretation, not independent procurement proof from automatic MediaDive839 CAS/mass. Do not infer L stereochemistry or hydration. The distinct source415 prints Na2-glutamate, so the existing rejection of that two-sodium alias remains; automatic one-sodium metadata does not normalize the conflict. All source-specific and owner/export holds remain. #1226 corrects the newly agent-authored mapping assertion to LLM_SUGGESTION while preserving inherited objects and actual history.",
+      "evidence_ids": [
+        "w04-chem-case-149",
+        "w04-chem-ols-CHEBI-64220-json",
+        "w04-chem-ols-CHEBI-232425-json",
+        "w04-chem-mediadive-ingredient-839-html",
+        "w04-chem-owner-Na_Glutamate",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-issue-655",
+        "w04-chem-issue-655-comments",
+        "w04-chem-case-171",
+        "w04-chem-mediadive-ingredient-415-html",
+        "FINAL-CHEM-E-dsmz78c-pdf",
+        "FINAL-CHEM-E-dsmz59-pdf",
+        "FINAL-CHEM-E-dsmz1454-pdf",
+        "FINAL-CHEM-E-jcm-904-html",
+        "FINAL-CHEM-E-nbrc-1625-html",
+        "FINAL-CHEM-E-ols-CHEBI-115156-json",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-64220-json",
+        "FINAL-CHEM-E-mediadive-ingredient-143-html",
+        "FINAL-CHEM-E-mediadive-ingredient-104-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1291-html",
+        "FINAL-CHEM-E-mediadive-ingredient-839-html",
+        "FINAL-CHEM-E-new-dsmz34-pdf",
+        "FINAL-CHEM-E-original-source-lineage"
+      ],
+      "owner_path": "data/ingredients/mapped/Na_Glutamate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Na_Glutamate.final-review-v1.after.yaml",
+        "sha256": "50049cd4d47ab7c5e7aa4d9c90e7683857b814e575c8ff6fbcbd46eedd96907c"
+      },
+      "before_sha256": "72b5545a5d6c93ba6eb3556542ee0d5df2daa37aa816785e3a8d29c45750ce89",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-monosodium-glutamate-alias"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-thiosulfate-malformed-alias",
+      "case_ids": [
+        "KG_CASE:df8eb2f44fbf35cdd009127d8e42a583a63c8bf8ca647e721846fdac964c0c67"
+      ],
+      "description": "Na2S2SO3 contains three sulfur atoms as written, whereas thiosulfate132112 is Na2S2O3. Ingredient1492 has no corroborating registry data. The thiosulfate owner must not resolve this malformed string; preserve it as rejected source provenance until a source correction exists. Final-review correction: #1226: evidence[2] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-05: synonyms[9] 'NaS2O3': reject_resolving_identity_preserve_text_and_source. Original DSMZ1003 prints NaS2O3 itself; no independent correction restores a second sodium, so the exact one-sodium formula must not globally resolve to disodium thiosulfate.",
+      "evidence_ids": [
+        "w04-chem-case-182",
+        "w04-chem-ols-CHEBI-132112-json",
+        "w04-chem-mediadive-ingredient-1492-html",
+        "w04-chem-owner-Na2s2o3",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches"
+      ],
+      "owner_path": "data/ingredients/mapped/Na2s2o3.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Na2s2o3.final-review-v1.after.yaml",
+        "sha256": "ae7a6b253f8809845cbba072414009151307a668cf2f0dd76b5ac8898492a74a"
+      },
+      "before_sha256": "8721a533a7671b464ce2c9104f12e273da24ce3f1566d0b33df6b59ba2e44146",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-thiosulfate-malformed-alias"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-nbrc989-biotin-ethanol",
+      "case_ids": [
+        "CM_NAME:6e94272892c45c0c7df2b54e7723c0d5591101dfd237b3e2a3c139007f7358ad"
+      ],
+      "description": "NBRC989 explicitly defines the asterisked biotin stock as5mg biotin in100ml ethanol, added2ml to TYL medium. This is an ethanol stock, not pure biotin and not an unspecified aqueous vitamin mixture. The frozen NBRC990 filename and its NBRC989 owner distinction are preserved. Complete stock composition is sufficient for a distinct NBRC989 formulation proposal:5mg biotin and100ml ethanol per source batch. Existing Biotin_Vitamin_Solution is an unspecified18-occurrence stock owner with no component assertion, so it cannot be asserted equivalent to this exactly defined ethanol stock; no global unspecified stock alias is released. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-61",
+        "w04-chem-recipe-9fa52b66687c6fe07751",
+        "w04-chem-nbrc-989-html",
+        "w04-chem-ols-CHEBI-15956-json",
+        "w04-chem-owner-Biotin_Vitamin_Solution",
+        "w04-chem-biotin-stock-comparator",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_989_Biotin_Ethanol_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/NBRC_989_Biotin_Ethanol_Stock.final-review-v1.after.yaml",
+        "sha256": "9211a86280c40c6ee94569e48a2aedcba8b12fbf6fdf0db75c3e660b725bb339"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-nbrc989-biotin-ethanol"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-togo2809-carbonate8percent",
+      "case_ids": [
+        "CM_NAME:5f00f7259e7dc162fd15228c3b4c4fb86c2699bb8eab422306849a3a37d67eb8"
+      ],
+      "description": "TOGO2809 places8%(wt/vol) Na2CO3 within the titanium-citrate preparation. It is an80g/L carbonate solution, with100ml addition in that preparation; the frozen100g/L is not the stock concentration. CHEBI:29377 identifies only its solute, and other carbonate stock concentrations are different formulations. Propose a source-qualified8%w/v carbonate stock with a PARTIAL component assertion for the known Na2CO3 solute at80g/L; solvent is not independently specified and is not invented. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-55",
+        "w04-chem-recipe-af629e1b04957e39db52",
+        "w04-chem-togo-2809-json",
+        "w04-chem-ols-CHEBI-29377-json",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_2809_Sodium_Carbonate_8_Percent.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/TOGO_2809_Sodium_Carbonate_8_Percent.final-review-v1.after.yaml",
+        "sha256": "76188a484bba0e89751621d570d9e187a7fcdfa14bc6784e91fd78646cf16ea8"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-togo2809-carbonate8percent"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-togo2809-titanium-citrate",
+      "case_ids": [
+        "CM_NAME:d5c2ddbc1084d1ed44abdf16a9b3813a68ee1e3463aa7c54b0943c95cff5eb8a"
+      ],
+      "description": "TOGO2809 defines titanium citrate in the LS4D preparation using precursor and carbonate solution steps. The raw titanium-citrate label therefore names a prepared reducing stock, not a pure titanium citrate with known fixed composition; the frozen5g/L cannot substitute for stock addition volume. The complete original TOGO preparation defines500ml0.2M sodium-citrate solution,37.5ml20%w/v TiCl3 solution and100ml8%w/v Na2CO3 under nitrogen. A source-qualified formulation can preserve those batch additions without claiming measured final volume, chemical speciation or an exact pure compound. Existing UNMAPPED_0618 is a distinct generic communitymech source, not proof of the LS4D formulation. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-112",
+        "w04-chem-recipe-af629e1b04957e39db52",
+        "w04-chem-togo-2809-json",
+        "w04-chem-owner-Titanium_Iii_Citrate",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_2809_Titanium_Citrate_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/TOGO_2809_Titanium_Citrate_Stock.final-review-v1.after.yaml",
+        "sha256": "eb1537a7f2dc532abe29b6bf330321264c5ecaa3cd1d54a62b1e638fc943f2cc"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-togo2809-titanium-citrate"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-togo2262-hepes-naoh",
+      "case_ids": [
+        "CM_NAME:7bf2647954128b435654cf3b536599dcc4ceb5252513e3a14d4fd36dd73de091"
+      ],
+      "description": "TOGO2262 explicitly defines the HEPES-NaOH stock:119.15g HEPES in250ml water, adjustpH7.5,bring final volume to500ml,1M. Its medium occurrence is1mM, not the stock concentration. Propose a source-qualified1M pH7.5 buffer with PARTIAL assertion: HEPES238.3g/L,NaOH present by title with unquantified titration, water solvent without invented water volume. CHEBI42334 identifies solute only, not the buffer. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-68",
+        "w04-chem-recipe-d999969421b96869ea83",
+        "w04-chem-togo-2262-json",
+        "w04-chem-ols-CHEBI-42334-json",
+        "w04-chem-owner-Hepes",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_2262_HEPES_NaOH_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/TOGO_2262_HEPES_NaOH_Stock.final-review-v1.after.yaml",
+        "sha256": "10f658a7efc760f302fdabdb337b03661682e806e49b60d5e8e6a2ddb4a494df"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-togo2262-hepes-naoh"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-togo1146-crotonate-stock",
+      "case_ids": [
+        "CM_NAME:04489c180637c0f451e1a7c6b4acd561ee2dc6cdb2727149e7e299d4bb0d76e9"
+      ],
+      "description": "TOGO M1146/M1147 specify a 0.5 M crotonic-acid stock at pH7, added as20ml. This is a neutralized solution, not the pure trans acid CHEBI:41131; the frozen20g/L is not reliable stock-to-medium arithmetic. Preserve concentration, pH and addition context. A source-qualified PARTIAL stock proposal preserves0.5M solute andpH7 without guessing the neutralizing reagent or solvent; no pure-crotonic-acid synonym is emitted. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-3",
+        "w04-chem-recipe-403d86cc591979de3a82",
+        "w04-chem-jcm-1077-html",
+        "w04-chem-togo-1146-json",
+        "w04-chem-recipe-a39801f1764aceadf05b",
+        "w04-chem-jcm-1078-html",
+        "w04-chem-togo-1147-json",
+        "w04-chem-ols-CHEBI-41131-json",
+        "w04-chem-owner-Crotonic_Acid",
+        "w04-chem-stock-duplicate-search"
+      ],
+      "owner_path": "data/ingredients/mapped/TOGO_1146_1147_Crotonic_Acid_Stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/TOGO_1146_1147_Crotonic_Acid_Stock.final-review-v1.after.yaml",
+        "sha256": "03005b3590f291311abfd3ec12771aa85e2cb2339bab67c4595e24da8d9f0599"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Coordinator validates schema and partonomy with proposal overlay.",
+        "Generic source spellings are nonresolving provenance; no global source matching release.",
+        "No source concentration/unit repair or maintained data edit is performed here."
+      ],
+      "cross_shard_owner_conflict": "Compare source formulation and intended slug against other worker proposals before integration.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-togo1146-crotonate-stock"
+      ]
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-jcm_401_quinic_acid_5mm_stock",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-jcm_401_quinic_acid_5mm_stock"
+      ],
+      "case_ids": [
+        "CM_NAME:12ed67f2b438c1ffd831a0bfc424611ed2d86a91726eb96bd99e334cd2c93516"
+      ],
+      "description": "The recovered JCM401 PDF explicitly supplies 5 mM quinic acid as a stock addition. Its receiving-medium 13 ml/1 ml water inconsistency does not prevent a source-qualified partial stock record. No solvent, stereochemistry or final-medium concentration is invented. Stock solvent and optical form remain unspecified; receiving-medium volume inconsistency remains an independent source correction. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-10",
+        "w04-chem-recipe-05aeb4d692e108150ff6",
+        "w04-chem-jcm-401-html",
+        "w04-chem-failed-togo-397-json",
+        "w04-chem-ols-CHEBI-26493-json",
+        "w04-chem-owner-Quinic_Acid",
+        "w04-chem-reviewer-primary-2",
+        "I1201-CHEM-lookup-10"
+      ],
+      "owner_path": "data/ingredients/mapped/JCM_401_quinic_acid_5_mM_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/JCM_401_quinic_acid_5_mM_stock.final-review-v1.after.yaml",
+        "sha256": "8da3a46fd1fc36aad0f9191197483b419aa55ffd7270947290741f87a1021330"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-dsmz_878_fe_citrate_001m_stock",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-dsmz_878_fe_citrate_001m_stock"
+      ],
+      "case_ids": [
+        "CM_NAME:2f9b863db4816cb017936f692755c146ed2e76bf0159982f712f5c6d3a680b36"
+      ],
+      "description": "DSMZ878 defines the reagent as 0.01 M Fe citrate stock and adds 0.5 ml. The flattened g/L discrepancy belongs to the receiving-medium transcription. A partial source-qualified stock can retain 0.01 M literally while leaving iron valence, citrate ratio and solvent ungrounded. Stock solute oxidation state/ligand ratio and solvent remain unspecified; no mass conversion or molecular exact identity is authorized. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-30",
+        "w04-chem-recipe-e673fc8544d46c4a8404",
+        "w04-chem-dsmz-878-pdf",
+        "w04-chem-failed-togo-2333-json",
+        "w04-chem-recipe-3e54025bd1074ce36bb3",
+        "w04-chem-failed-togo-2338-json",
+        "w04-chem-ols-CHEBI-144421-json",
+        "I1201-CHEM-lookup-30"
+      ],
+      "owner_path": "data/ingredients/mapped/DSMZ_878_Fe_citrate_0.01_M_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/DSMZ_878_Fe_citrate_0.01_M_stock.final-review-v1.after.yaml",
+        "sha256": "ea75df023584d5441282b1ce3bc73c300ceca92cf5680e064bb6435e75ab6051"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-nbrc_1378_fenaedta_stock",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-nbrc_1378_fenaedta_stock"
+      ],
+      "case_ids": [
+        "CM_NAME:e9028a2d32d5e5d73c3e04a93753d15d925104fb9042b4935de44031ef3c6e2a"
+      ],
+      "description": "Full NBRC1378 separately defines FeNaEDTA solution as578mg/L and annotates1.5mM, then adds5ml to medium. Proposed partial stock retains the directly stated mass concentration. The mass/molarity pair must not be used to infer monohydrate; source solute form and the frozen578g/L transcription remain separate unresolved issues. Source ferric-sodium-EDTA hydration and the578mg/L versus1.5mM relationship remain unverified; no molarity conversion or pure-solute exact mapping. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-120",
+        "w04-chem-recipe-efc1bdc1e2e839ac9b49",
+        "w04-chem-nbrc-1378-html",
+        "w04-chem-togo-3037-json",
+        "w04-chem-ols-CHEBI-78292-json",
+        "w04-chem-ols-CHEBI-30729-json",
+        "I1201-CHEM-lookup-120"
+      ],
+      "owner_path": "data/ingredients/mapped/NBRC_1378_FeNaEDTA_stock.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/NBRC_1378_FeNaEDTA_stock.final-review-v1.after.yaml",
+        "sha256": "d56388f11e9cd69157c0b17b838f9fbd1dd205d32f0c39d2465b8de515163c25"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-trisodium-citrate-pentahydrate",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-trisodium-citrate-pentahydrate"
+      ],
+      "case_ids": [
+        "CM_NAME:316c14d7210e09731f9d01ae186f1ff064edb484a704082de68777ae64b71b70",
+        "KG_CASE:3a9df6a72a9d3baaa08a8132b3a8fac314b8e691af805429aa70fdb79b2d871b"
+      ],
+      "description": "Original DSMZ906 and ingredient825 preserve five waters. Independent ILO/WHO ICSC1220 explicitly identifies trisodium citrate pentahydrate, CAS6858-44-2 and C6H5Na3O7.5H2O. FAO/JECFA instead says pentahemihydrate and is not corroboration of the five-water identity. Bounded OLS exact-form search has no hit. A distinct CAS owner anchored by ICSC with asymmetric parent mapping completes the work; anhydrous, dihydrate and pentahemihydrate forms remain distinct. Source identity is CAS6858-44-2; the nearest parent CHEBI53258 is not the hydrate identity. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-31",
+        "w04-chem-recipe-d8caf22969918891d90b",
+        "w04-chem-recipe-a95dfc780adfa88ef803",
+        "w04-chem-dsmz-906-pdf",
+        "w04-chem-recipe-ecca5eeced5e1d2a11f7",
+        "w04-chem-mediadive-solution-1860-json",
+        "w04-chem-ols-CHEBI-53258-json",
+        "w04-chem-mediadive-ingredient-825-html",
+        "w04-chem-ols-search-7-json",
+        "w04-chem-issue-344",
+        "w04-chem-issue-344-comments",
+        "w04-chem-case-148",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "I1201-CHEM-lookup-31",
+        "I1201-CHEM-lookup-148",
+        "I1201-CHEM-icsc-citrate-pentahydrate-html-retrievals",
+        "I1201-CHEM-jecfa-citrate-pdf-retrievals",
+        "I1201-CHEM-ols-citrate-pentahydrate-json-retrievals"
+      ],
+      "owner_path": "data/ingredients/mapped/Trisodium_Citrate_Pentahydrate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Trisodium_Citrate_Pentahydrate.final-review-v1.after.yaml",
+        "sha256": "ee6feba9afdbba0a15d1011f228c5279b6f052cf966a59fe8eac672408f5e592"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-sodium-tungstate-monohydrate",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-sodium-tungstate-monohydrate"
+      ],
+      "case_ids": [
+        "CM_NAME:69610197c3c03bcc755b8da43f2aad06f674265bcd9e566b8756388aa5ead29e"
+      ],
+      "description": "NBRC392,931 and809 explicitly specify Na2WO4·H2O across four frozen occurrences. No competing formula appears in those source recipes. Absence of an exact ontology/CAS and prevalence of dihydrate are not evidence to discard the stated one-water form. Propose its own registry identity with sodium-tungstate parent; report source-stated hydration without claiming a characterized crystal phase. No supplierCAS or crystal-phase measurement is inferred. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-10 qualification: retain this distinct source-stated local hydrate identity and exact formal water count under §3. No measured crystal phase, supplier purity, new CAS or molecular mass is asserted. This does not release the separate source1201/#344/#896 owner conflict.",
+      "evidence_ids": [
+        "w04-chem-case-59",
+        "w04-chem-recipe-7619928cb70a900ae0ce",
+        "w04-chem-nbrc-392-html",
+        "w04-chem-failed-togo-1584-json",
+        "w04-chem-recipe-f50660a5721557fe52a3",
+        "w04-chem-recipe-13d42bd740e3973211c9",
+        "w04-chem-nbrc-931-html",
+        "w04-chem-failed-togo-1722-json",
+        "w04-chem-recipe-e8b14464ca2d74412c43",
+        "w04-chem-nbrc-809-html",
+        "w04-chem-failed-togo-1609-json",
+        "w04-chem-ols-CHEBI-63939-json",
+        "w04-chem-ols-CHEBI-63940-json",
+        "w04-chem-ols-search-5-json",
+        "w04-chem-issue-344",
+        "w04-chem-issue-344-comments",
+        "I1201-CHEM-lookup-59",
+        "FINAL-CHEM-E-nbrc-392-html",
+        "FINAL-CHEM-E-nbrc-809-html",
+        "FINAL-CHEM-E-nbrc-931-html",
+        "FINAL-CHEM-E-nbrc-943-html",
+        "FINAL-CHEM-E-dsmz-661-pdf",
+        "FINAL-CHEM-E-dsmz1353-pdf",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-53258-json",
+        "FINAL-CHEM-E-ols-hydrate-35505-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdateanion-search-json",
+        "FINAL-CHEM-E-new-ols-ammoniummolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-chebi-47704-json",
+        "FINAL-CHEM-E-original-source-lineage"
+      ],
+      "owner_path": "data/ingredients/mapped/Sodium_Tungstate_Monohydrate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Sodium_Tungstate_Monohydrate.final-review-v1.after.yaml",
+        "sha256": "209f7c092dbe19a65019f93fc51dead15e5dc562b52685136db0ee68b2b82f3c"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-trisodium-citrate-trihydrate",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-trisodium-citrate-trihydrate"
+      ],
+      "case_ids": [
+        "CM_NAME:6bc2df3375d39e69fe19ebf3a2e5dbbd6c01b37385fd94948ba538452a3342cf",
+        "KG_CASE:43c6eab73a9c47cd14f36303d4593c0f2c1d8e98ed075e0407a6e2a47c88b25c"
+      ],
+      "description": "Ignored-inclusive search located existing UNMAPPED0852 Trisodium_Citrate_X_3_H2o, split under #882/#1021 specifically to prevent anhydrous/dihydrate collapse. DSMZ661 explicitly states three waters and five frozen occurrences preserve it. PubChem18421636 structurally represents that formula, but depositor-derived metadata is not supplier proof; attempted RSC primary PDFs failed. Promote the existing distinct form to a registry identity with an asymmetric trisodium-citrate parent, retaining its history and explicit three-water aliases. No new duplicate owner. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-10 qualification: retain this distinct source-stated local hydrate identity and exact formal water count under §3. No measured crystal phase, supplier purity, new CAS or molecular mass is asserted. This does not release the separate source1201/#344/#896 owner conflict.",
+      "evidence_ids": [
+        "w04-chem-case-60",
+        "w04-chem-recipe-05098f29a48c39a9b9a5",
+        "w04-chem-recipe-1f9af7815242cc633ec9",
+        "w04-chem-dsmz-661-pdf",
+        "w04-chem-recipe-edd8f58bb3923c4db4ff",
+        "w04-chem-mediadive-solution-1393-json",
+        "w04-chem-recipe-52066a185b673f935ceb",
+        "w04-chem-recipe-fa60c008537a237e686d",
+        "w04-chem-ols-CHEBI-53258-json",
+        "w04-chem-mediadive-ingredient-650-html",
+        "w04-chem-ols-search-8-json",
+        "w04-chem-issue-344",
+        "w04-chem-issue-344-comments",
+        "w04-chem-case-150",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "I1201-CHEM-lookup-60",
+        "I1201-CHEM-lookup-150",
+        "I1201-CHEM-pubchem-citrate-trihydrate-json-retrievals",
+        "I1201-CHEM-ols-citrate-trihydrate-json-retrievals",
+        "I1201-CHEM-owner-Trisodium_Citrate_X_3_H2o",
+        "FINAL-CHEM-E-nbrc-392-html",
+        "FINAL-CHEM-E-nbrc-809-html",
+        "FINAL-CHEM-E-nbrc-931-html",
+        "FINAL-CHEM-E-nbrc-943-html",
+        "FINAL-CHEM-E-dsmz-661-pdf",
+        "FINAL-CHEM-E-dsmz1353-pdf",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-53258-json",
+        "FINAL-CHEM-E-ols-hydrate-35505-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdateanion-search-json",
+        "FINAL-CHEM-E-new-ols-ammoniummolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-chebi-47704-json",
+        "FINAL-CHEM-E-original-source-lineage"
+      ],
+      "owner_path": "data/ingredients/unmapped/Trisodium_Citrate_X_3_H2o.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Trisodium_Citrate_X_3_H2o.final-review-v1.after.yaml",
+        "sha256": "861e73c6501f9fbbb01640bee27069c3dcc4f7a313c376dd802eb4537498dc73"
+      },
+      "before_sha256": "1bd94f0ca085cb4be39f87fadea062b3efdcae0f908fe0dff47a8ba95b40b456",
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins.",
+      "destination_owner_path": "data/ingredients/mapped/Trisodium_Citrate_X_3_H2o.yaml"
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-hexaammonium-heptamolybdate-dihydrate",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-hexaammonium-heptamolybdate-dihydrate"
+      ],
+      "case_ids": [
+        "CM_NAME:e8f98fbe1c304badcd5b7621660e950efd9f52c583433334a256fc8020e5e206"
+      ],
+      "description": "NBRC943 explicitly specifies (NH4)6Mo7O24·2H2O9.25mg in modified Hutner solution. Formula is chemically coherent and no competing primary recipe formula was found. Exact tetrahydrate term86244 is not an identity match; its own prose says heptahydrate despite four-water formula, so formula/structure take precedence. Preserve a distinct source-stated two-water registry identity without replacing its waters. No exact ontology term or CAS is asserted; registry identity preserves the stated formula. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. CH-10 qualification: retain this distinct source-stated local hydrate identity and exact formal water count under §3. No measured crystal phase, supplier purity, new CAS or molecular mass is asserted. This does not release the separate source1201/#344/#896 owner conflict. Bounded live heptamolybdate and ammonium-molybdate searches found tetrahydrate86244 and orthomolybdate91249, neither a parent identity for this dihydrate. General ammonium-salt47704 and hydrate35505 are broad, non-equivalent class anchors; no closer heptamolybdate parent was established in those searches. Retain the verified hydrate35505 asymmetric class mapping rather than substitute the chemically wrong orthomolybdate or invent an exact term. Parent specificity is a recorded limitation, not a physical-phase gate.",
+      "evidence_ids": [
+        "w04-chem-case-119",
+        "w04-chem-recipe-cba4c8aeea2cca70f9e4",
+        "w04-chem-nbrc-943-html",
+        "w04-chem-ols-CHEBI-86244-json",
+        "w04-chem-ols-CHEBI-91249-json",
+        "w04-chem-ols-search-4-json",
+        "w04-chem-issue-344",
+        "w04-chem-issue-344-comments",
+        "I1201-CHEM-lookup-119",
+        "I1201-CHEM-ols-hydrate-35505-json-retrievals-parent",
+        "I1201-CHEM-ols-hexaammonium-heptamolybdate-json-retrievals-final",
+        "FINAL-CHEM-E-nbrc-392-html",
+        "FINAL-CHEM-E-nbrc-809-html",
+        "FINAL-CHEM-E-nbrc-931-html",
+        "FINAL-CHEM-E-nbrc-943-html",
+        "FINAL-CHEM-E-dsmz-661-pdf",
+        "FINAL-CHEM-E-dsmz1353-pdf",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-53258-json",
+        "FINAL-CHEM-E-ols-hydrate-35505-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdateanion-search-json",
+        "FINAL-CHEM-E-new-ols-ammoniummolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-chebi-47704-json",
+        "FINAL-CHEM-E-original-source-lineage"
+      ],
+      "owner_path": "data/ingredients/mapped/Hexaammonium_Heptamolybdate_Dihydrate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Hexaammonium_Heptamolybdate_Dihydrate.final-review-v1.after.yaml",
+        "sha256": "6df66b5856c1982d18b2ed0872049158c324bbae2a0bdc628e53eec22f9cf5c6"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-magnesium-hydrogen-citrate",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-magnesium-hydrogen-citrate"
+      ],
+      "case_ids": [
+        "KG_CASE:6fd10b406feae9b043de0cb1b917ea47ac39dd6157b4170e26daab2fd5600a20"
+      ],
+      "description": "Completed actual five-occurrence trace rather than deferring it. Historical/current occurrence outputs and six full local recipes show five exact Mg-citrate rows from DSMZ354/solution694/compound404, including two variants and KOMODO; sixth broader Magnesium citrate row is independently BD220908 with an erroneous hydroxide localID and is excluded. Original DSMZ354 merely says Mg-citrate. Compound404 CAS144-23-0, formula and g/mmol agreement support a source-metadata interpretation of1:1 magnesium hydrogen citrate, but are correlated enrichment rather than independent procurement proof. Prepare distinct CHEBI131389 owner without global Mg-citrate alias; do not reverse #320 or assign all five historical occurrences to it automatically. A source reagent/CAS independent of MediaDive automatic enrichment is still needed before releasing the source404→1:1 claim or reassigning historical occurrences. Existing3:2 owner remains held and unchanged. Final-review correction: #1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-157",
+        "w04-chem-ols-CHEBI-131389-json",
+        "w04-chem-ols-CHEBI-131391-json",
+        "w04-chem-mediadive-ingredient-404-html",
+        "w04-chem-owner-Mg-citrate",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-issue-320",
+        "w04-chem-issue-320-comments",
+        "I1201-CHEM-lookup-157",
+        "I1201-CHEM-mg-trace",
+        "I1201-CHEM-dsmz354-pdf-retrievals"
+      ],
+      "owner_path": "data/ingredients/mapped/Magnesium_Hydrogen_Citrate.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Magnesium_Hydrogen_Citrate.final-review-v1.after.yaml",
+        "sha256": "23129e5d0077b6898884f1ad9c3aab55fb804eeb8101ec59cdce390bad43a282"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-actinomycetin-mixture-type",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-actinomycetin-mixture-type"
+      ],
+      "case_ids": [
+        "KG_CASE:c31774c1e88d11983f1d8fa850645fc376c9eb1fbb570ade1e3e245866ef5ae6",
+        "KG_CASE:e6bd5460b2e7ff7d003fc1fda39880da9a69bbbd4c3b9fe30b140d4e8f98f0f7"
+      ],
+      "description": "The inspected Welsch1947 original pages identify actinomycetin as crude culture filtrate potentially containing multiple active agents. This is sufficient to repair the existing placeholder owner from auto-classified SINGLE_INGREDIENT to UNDEFINED_MIXTURE now. It is not sufficient to promote a molecular identifier or assert one exact product formulation; both independent source cases remain attached. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval.",
+      "evidence_ids": [
+        "w04-chem-case-174",
+        "w04-chem-actinomycetin-primary-html",
+        "w04-chem-actinomycetin-enzymes-html",
+        "w04-chem-ols-search-14-json",
+        "w04-chem-actinomycetin-primary-page1-png",
+        "w04-chem-actinomycetin-primary-page2-png",
+        "w04-chem-actinomycetin-primary-pdf",
+        "w04-chem-owner-Actinomycetin",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "w04-chem-case-184",
+        "I1201-CHEM-lookup-174",
+        "I1201-CHEM-lookup-184",
+        "I1201-CHEM-owner-Actinomycetin"
+      ],
+      "owner_path": "data/ingredients/mapped/Actinomycetin.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Actinomycetin.final-review-v1.after.yaml",
+        "sha256": "ec8493c3bab17c5677a1e3ff1bb4d11a0009edd0d3b3cc4ccb924e9468a743a0"
+      },
+      "before_sha256": "14d21151cb1ee21bcd0c0acc5090b5a41c6034ec8c21c046b2ff0b3214f08d7d",
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-ketoglutamate-acid-alias-rejection",
+      "supersedes_proposal_ids": [
+        "I1201-CHEM-P-ketoglutamate-acid-alias-rejection"
+      ],
+      "case_ids": [
+        "KG_CASE:a5572a040ef9f9d939294b09b2eaf3c34700d51ea42a5f458ec93b4e99025619"
+      ],
+      "description": "Re-read the complete acid owner history: June16 research-based merge treated alpha-ketoglutamate as alpha-ketoglutarate and then equated it with the acid. Even if typo correction is accepted, CHEBI16810 defines the dianion whereas30915 is the acid; the history is not source2384 procurement proof. Propose changing the ambiguous global alias to rejected provenance while retaining the historical merge event and all role data. Final-review correction: CH-06: synonyms[6] 'alpha-ketoglutaric acid (100 mM).': reject_resolving_identity_preserve_text_and_source. TOGO2388 lists0.1ml of100mM alpha-ketoglutaric acid; the label specifies an aliquoted stock. Solvent is unstated and not invented; keep separate from pure30915.",
+      "evidence_ids": [
+        "w04-chem-case-170",
+        "w04-chem-ols-CHEBI-30915-json",
+        "w04-chem-ols-CHEBI-16810-json",
+        "w04-chem-mediadive-ingredient-2384-html",
+        "w04-chem-owner-Alpha-ketoglutaric_Acid",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "I1201-CHEM-lookup-170",
+        "I1201-CHEM-owner-Alpha-ketoglutaric_Acid",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "owner_path": "data/ingredients/mapped/Alpha-ketoglutaric_Acid.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Alpha-ketoglutaric_Acid.final-review-v1.after.yaml",
+        "sha256": "700b8bdec2b94ac5ab2fed3df4b82a0d888a30c5d731eb13c9f64f535cbec769"
+      },
+      "before_sha256": "cc852c586e35a3ffa025ce9446da05dc235a6df8a7c0e7c2fa4c4d6ee18d371d",
+      "publication_obligations": [
+        "Preserve all inherited source and publication holds.",
+        "Withdraw inherited complete-payload support; require independent review of these exact bytes.",
+        "Synchronize owner/aggregate/SSSOM only during separately guarded coordinator integration.",
+        "For asymmetric mappings emit skos:broadMatch, never identity or subclass; emit mandatory registry rows under Section 2/Rule B1.",
+        "Do not resolve rejected raw labels globally or infer recipe doses from stock concentrations."
+      ],
+      "cross_shard_owner_conflict": "Coordinator compares original e000 owner hashes and all published/successor proposals; no last-writer-wins."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-ardacin-b-factor",
+      "case_ids": [
+        "KG_CASE:50d0de269a2e55b7187caeb239d2e01a0ab7b42438853727b94e1d05700e6a5b"
+      ],
+      "description": "Primary Sitrin et al.1985 isolated aridicins A/B/C separately by preparative HPLC and characterized B (Table1 empirical formula C82H84N8O30Cl4). Chung et al.1986 printed652 explicitly states aridicin was renamed ardacin, and Figure1 distinguishes the B factor. The existing kgmicrobe.compound:ardacin_b owner can therefore represent this distinct factor with an asymmetric glycopeptide-class parent CHEBI:24396. This is not an exact or broader relation to generic NCIT:C169786 or CHEBI:753252 ardacin complex; those terms lack an independently inspected factor-B definition. No supplier, pure preparation, CAS or reconstructed stereostructure is invented. The exact relationship of the generic Ardacin ontology concepts to factor B and any supplied commercial preparation/purity remain unverified. These do not prevent a bounded distinct-factor representation.",
+      "evidence_ids": [
+        "FINAL-CHEM-E-aridicin-1985-pdf",
+        "FINAL-CHEM-E-ardacin-1986-pdf",
+        "FINAL-CHEM-E-ols-NCIT-C169786-json",
+        "FINAL-CHEM-E-new-ols-ardacin-search-json",
+        "FINAL-CHEM-E-new-ols-aridicin-search-json",
+        "FINAL-CHEM-E-new-ols-chebi-753252-json",
+        "FINAL-CHEM-E-new-ols-chebi-24396-json",
+        "FINAL-CHEM-E-new-ols-glycopeptide-exact-search-json",
+        "FINAL-CHEM-E-owner-searches"
+      ],
+      "owner_path": "data/ingredients/mapped/Ardacin_B.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Ardacin_B.final-review-v1.after.yaml",
+        "sha256": "cc9b48959a9dec7252e08053d816c29b1b2a8200f958139f8dbabb6dc8714852"
+      },
+      "before_sha256": "b6417a8183d93a7a6e7eda5b8a840b59712ee1127466455a3e23bfb4c1846ccd",
+      "publication_obligations": [
+        "Preserve all inherited source, scientific, role and supported/withheld holds.",
+        "Independent full-payload scientific review, guarded integration and cross-shard reconciliation required.",
+        "No production owner, SSSOM, registry row or export has been changed or approved."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare all source-qualified identities and actual before/after bytes; no last-writer-wins or final cross-shard approval."
+    },
+    {
+      "proposal_id": "FINAL-CHEM-P-taps-free-buffer",
+      "case_ids": [
+        "KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255"
+      ],
+      "description": "Exact provenance binds MediaDive1188 to DSMZ1344 Taps 17.4 g. The original recipe and manufacturer T5130/108320 nomenclature establish the conventional TAPS buffer name, N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid (CHEBI:191055, CAS29915-38-6). Represent that free-buffer identity separately from CAS91000-53-2 sodium salt and from the automatically matched Tyr-Arg-Phe-Sar peptide. No Sigma purchase, lot assay or sodium salt is inferred from pH8.3. The existing sodium-salt alias rejection remains valid. Specific supplier/catalogue/lot and measured supplied purity are unknown; these are not prerequisites for the conventional free-buffer identity proposal. Source metadata repair and whole-owner/export acceptance remain held.",
+      "evidence_ids": [
+        "FINAL-CHEM-E-dsmz1344-pdf",
+        "FINAL-CHEM-E-taps-sigma-web-response-json",
+        "FINAL-CHEM-E-mediadive-ingredient-1188-html",
+        "FINAL-CHEM-E-new-ols-chebi-191055-json",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-owner-searches"
+      ],
+      "owner_path": "data/ingredients/mapped/TAPS.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/TAPS.final-review-v1.after.yaml",
+        "sha256": "71d3f690bfd1beb204eaf7cc67c84a036db8bc3a40e0911b759841b6b7689eec"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source, scientific, role and supported/withheld holds.",
+        "Independent full-payload scientific review, guarded integration and cross-shard reconciliation required.",
+        "No production owner, SSSOM, registry row or export has been changed or approved."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare all source-qualified identities and actual before/after bytes; no last-writer-wins or final cross-shard approval."
+    }
+  ]
+}

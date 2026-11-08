@@ -1,0 +1,53 @@
+{
+  "reviewer": "/root/polypeptone_science",
+  "clarified_at": "2026-11-08T07:13:35.926633+00:00",
+  "review_scope": "Exact distinction between inherited mapping/source-owner export hold and independent field-level role evidence assessment.",
+  "ledger": {
+    "path": "reports/sssom_completion_20260921/mapping-evidence.json",
+    "sha256": "d597a2e45e02ab46c6d6373ef1ebed41fd469359de0e200ea76cf25a9164e91c",
+    "locator": "/entries/2318",
+    "published_unchanged_at": "ddef7355bf7814bd3b1a23b9d61327bea3ac75fe"
+  },
+  "ledger_scope": "Completed mapping-only disposition review; WITHHOLD preserves a review obligation and does not assert that every withheld triple is false. No role/component approval.",
+  "status": "WITHHOLD",
+  "assertion_kind": "mapping / source-owner supported-export equivalence",
+  "exact_entry": {
+    "row_sha256": "10dc3a3c691231148f7fe66896aa8cebddc024ec738b145d9346492e7a28a5d3",
+    "owner_record": "data/ingredients/mapped/Polypeptone.yaml",
+    "owner_record_sha256": "5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa",
+    "disposition": "WITHHOLD",
+    "review_reason": "The source grounding grade is CLOSE_MATCH; identity with its own identifier does not substantiate an exact ontology equivalence. A source-scoped exact-relation review is required. Current row requires resolution of this record-specific mapping/identity/alias/evidence concern: The FOODON parent grounding erases the Polypeptone product-family identity and PROTEIN_SOURCE is provisional.",
+    "basis": {
+      "baseline_position": 2326,
+      "previous_decision": {
+        "assertion_id": "MIM.review:3e4d042fd45743446c374960f402cdc77c4ea9b9b34dae4b4f6ffebba6ff3717",
+        "source_record": "mappings/ingredient_mappings.sssom.tsv",
+        "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+        "assertion_type": "mapping",
+        "source_position": "2326",
+        "assertion_sha256": "10dc3a3c691231148f7fe66896aa8cebddc024ec738b145d9346492e7a28a5d3",
+        "resolution_status": "OPEN",
+        "review_reason": "No current positive scientific disposition; unresolved evidence or record findings remain.",
+        "review_evidence": ""
+      },
+      "historical_record_review": "reports/yaml_record_review/Polypeptone.md",
+      "scoped_review": {
+        "file": "mapping_review/concern_cohorts.json",
+        "position": 2326
+      },
+      "policy": "Do not infer exact scientific equivalence from primary-identifier equality (#730)."
+    }
+  },
+  "source_position_qualification": "2318 is the key in this mapping-evidence ledger; its historical basis has baseline_position2326 and previous_decision.source_position2326. These are not asserted to be identical line numbers or a role assertion ID.",
+  "role_claim": {
+    "owner_path": "data/ingredients/mapped/Polypeptone.yaml",
+    "owner_sha256": "5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa",
+    "locator": "/nutritional_roles/0",
+    "role": "PROTEIN_SOURCE",
+    "confidence": 0.8,
+    "evidence_type": "COMPUTATIONAL_PREDICTION",
+    "assessment": "This review does not approve the role: its field-specific evidence is only provisional name-pattern inference. That independent scientific limitation is not derived automatically from mapping ledger2318 and is not a claim that2318 is a role-specific disposition."
+  },
+  "preserved_status": "Mapping/source-owner WITHHOLD remains unchanged. No separate role-assertion ledger status is asserted or altered by this clarification.",
+  "metadata_revision_scope": "Prior review/trace/report bytes preserved. V3 makes explicit the distinction previously compressed into with-row2318 wording; no candidate, finding or source outcome changes."
+}

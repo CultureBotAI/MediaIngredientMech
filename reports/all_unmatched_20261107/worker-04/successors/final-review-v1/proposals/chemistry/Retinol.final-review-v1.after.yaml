@@ -1,0 +1,49 @@
+identifier: CHEBI:50211
+preferred_term: retinol
+ontology_mapping:
+  ontology_id: CHEBI:50211
+  ontology_label: retinol
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: all_unmatched_20261107 worker04 primary proposal retinol
+    notes: The frozen MediaDB component is retinol without geometrical qualifiers.
+      CHEBI:50211 deliberately leaves the geometry of its four double bonds unspecified,
+      matching that level of source specificity. A new retinol owner can use this
+      class; all-trans-retinol, retinyl esters and vitamin-A mixtures must not be
+      substituted. Evidence and exact frozen scope are recorded in reports/all_unmatched_20261107/worker-04/fragments/chemistry-decisions.json.
+      This proposed delta does not approve complete owner/export payload or remove
+      inherited holds.
+synonyms:
+- synonym_text: Retinol
+  synonym_type: EXACT_SYNONYM
+  source: all_unmatched_20261107_worker04_source_review
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:25:31.859636+00:00'
+  curator: codex_worker04_chemistry
+  action: CREATED
+  changes: 'Isolated source-review proposal retinol: new exact ingredient identity;
+    added aliases [''Retinol'']; rejected provenance labels [] Subject to independent
+    skeptical review and guarded coordinator integration; inherited full-payload support
+    must not transfer.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: '#1226: evidence[0] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship,
+    not scientific approval. Isolated report-only successor; original sealed evidence/history
+    retained. No role, owner/export approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  molecular_formula: C20H30O
+  inchi: InChI=1S/C20H30O/c1-16(8-6-9-17(2)13-15-21)11-12-19-18(3)10-7-14-20(19,4)5/h6,8-9,11-13,21H,7,10,14-15H2,1-5H3
+  smiles: CC(C=CC1=C(C)CCCC1(C)C)=CC=CC(C)=CCO
+  molecular_weight: 286.459
+  data_source: ChEBI via OLS4; exact captured primary ontology
+  retrieval_date: '2026-11-08T05:10:09.552916+00:00'

@@ -1,0 +1,182 @@
+identifier: CHEBI:30915
+preferred_term: alpha-ketoglutaric acid
+ontology_mapping:
+  ontology_id: CHEBI:30915
+  ontology_label: 2-oxoglutaric acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+synonyms:
+- synonym_text: 2-Ketoglutaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-oxoglutaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-oxopentanedioic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Oxoglutaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: a-Ketoglutaric acid
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: alpha-ketoglutamate
+  synonym_type: REJECTED_LABEL
+  source: merge_from_UNMAPPED_0323
+- synonym_text: alpha-ketoglutaric acid (100 mM).
+  synonym_type: REJECTED_LABEL
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 7
+  media_count: 7
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:03.383757+00:00'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:328-50-7 from PubChem API via name lookup (alpha-ketoglutaric
+    acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: 2-Ketoglutaric acid,
+    2-oxoglutaric acid, 2-oxopentanedioic acid, Oxoglutaric acid'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.142183+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.967740+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H6O5; inchi=InChI=1S/C5H6O5/c6-3(5(9)10)1-2-4(7)8/h1-2H2,(H,7,;
+    smiles=O=C(O)CCC(=O)C(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.423555+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-11T04:08:29Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record A-Ketoglutaric_Acid.yaml (UNMAPPED_0266);
+    local mapped CHEBI:30915 record represents alpha-ketoglutaric acid and the unmapped
+    surface form is the alpha/a notation variant used in CultureBotHT.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: merge_duplicate_unmapped
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate UNMAPPED_0323 "alpha-ketoglutamate". Edison deep research
+    (9 citations) resolved it as a misspelling of alpha-ketoglutarate = 2-oxoglutarate
+    — the SAME compound as this CHEBI:30915 record, not a distinct ingredient. Promotion
+    was refused by promote_resolved_unmapped.py (PK collision on CHEBI:30915), so
+    merged the surface form here as a synonym instead.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-06-03T03:22:14.581179+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-04T05:38:59.200426+00:00'
+  curator: infer_energy_source
+  action: ANNOTATED
+  changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.722952+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''alpha-ketoglutaric acid'' -> ''2-oxoglutaric acid'':
+    synced to canonical CHEBI label (preferred_term ''alpha-ketoglutaric acid'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-27T03:16:39.518339+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 7/7 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''alpha-ketoglutaric acid (100 mM).'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T06:05:48.524451+00:00'
+  curator: codex_worker04_chemistry_issue1201
+  action: CORRECTED
+  changes: 'Re-read the complete acid owner history: June16 research-based merge treated
+    alpha-ketoglutamate as alpha-ketoglutarate and then equated it with the acid.
+    Even if typo correction is accepted, CHEBI16810 defines the dianion whereas30915
+    is the acid; the history is not source2384 procurement proof. Propose changing
+    the ambiguous global alias to rejected provenance while retaining the historical
+    merge event and all role data. Isolated successor proposal only; no maintained
+    surfaces, roles, source bytes or publication holds changed.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CORRECTED
+  changes: 'CH-06: synonyms[6] ''alpha-ketoglutaric acid (100 mM).'': reject_resolving_identity_preserve_text_and_source.
+    TOGO2388 lists0.1ml of100mM alpha-ketoglutaric acid; the label specifies an aliquoted
+    stock. Solvent is unstated and not invented; keep separate from pure30915. Isolated
+    report-only successor; original sealed evidence/history retained. No role, owner/export
+    approval or inherited source hold released.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 328-50-7
+  data_source: PubChem API
+  retrieval_date: '2026-04-05T19:51:03.383729+00:00'
+  molecular_formula: C5H6O5
+  inchi: InChI=1S/C5H6O5/c6-3(5(9)10)1-2-4(7)8/h1-2H2,(H,7,8)(H,9,10)
+  smiles: O=C(O)CCC(=O)C(=O)O
+ingredient_type: SINGLE_INGREDIENT
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- role: ENERGY_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Canonical energy substrate (catabolised for energy)
+    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+      recommended.
+notes: 'Successor review: source2384 does not establish that alpha-ketoglutamate denotes
+  the acid; prior typo interpretation is historical, not proof of protonation/salt
+  identity. Preserve exact original alias/source as rejected provenance.
+
+
+  CH-06: The100mM source alias is a0.1ml stock addition in TOGO2388, not the pure-acid
+  identity. Preserve the exact raw string/source as rejected provenance. The distinct
+  ambiguous alpha-ketoglutamate2384 hold and prior history remain unchanged.'

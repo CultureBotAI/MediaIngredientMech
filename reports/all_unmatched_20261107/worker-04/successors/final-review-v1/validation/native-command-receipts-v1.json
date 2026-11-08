@@ -1,0 +1,134 @@
+{
+  "at": "2026-11-08T07:56:03.520812+00:00",
+  "selected_proposals_sha256": "79470d9e6ff14fd2717c1529179859db0e3ed45a782ca6153bfccf4a3a0d3db4",
+  "fixture_receipt_sha256": "817d8ac981514317dcdaf38f31f3882927eea7104185db41bb3daa22e933a2f3",
+  "checks": [
+    {
+      "name": "guarded_writer_and_filename",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        ".temp/all-unmatched-worker-04/final-review-v1/prepare_native_fixture.py",
+        "native-fixture-v1",
+        "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/candidates/assembly-v2"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/fixture-v1.log",
+      "log_sha256": "82eed78414048948df1b3315e07980992e2fb66205ca995d5f949747a30c173b"
+    },
+    {
+      "name": "closed_schema",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_strict.py",
+        ".temp/all-unmatched-worker-04/final-review-v1/native-fixture-v1/selected",
+        "--workers",
+        "2",
+        "--out",
+        "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/proposal-schema-v1.tsv"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/proposal-schema-v1.log",
+      "log_sha256": "c2dd3e370236b3ec2dcf58873b75839b1240f7eb96bc9e7dda28ad85a55d1fd1"
+    },
+    {
+      "name": "partonomy",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_component_partonomy.py",
+        "--curated-dir",
+        ".temp/all-unmatched-worker-04/final-review-v1/native-fixture-v1/overlay/data/curated"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/partonomy-v1.log",
+      "log_sha256": "10ff2db5208962d4a03b821e71222a751207e502c956a0564e3801e240a9ccdf"
+    },
+    {
+      "name": "identifier_baseline",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        ".temp/all-unmatched-worker-04/final-review-v1/native-fixture-v1/overlay/scripts/audit_duplicate_identifiers.py",
+        "--check"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/duplicate-identifiers-v1.log",
+      "log_sha256": "3e50483c7860dc3e425f464da1471d2408e7f7162a4e71c98531667a5b5a9071"
+    },
+    {
+      "name": "ontology_labels_and_alias_ownership",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        ".temp/all-unmatched-worker-04/final-review-v1/check_labels_aliases.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/labels-alias-ownership-v1.log",
+      "log_sha256": "fc662028de072041ea7dc3ad42f72f3e03d54363968e433245fcd9a2f2ab4c41"
+    }
+  ],
+  "native_inputs": [
+    {
+      "path": "scripts/validate_strict.py",
+      "sha256": "5eb9890461eb077f3d6d11546ee5162d09dc32cc171f1ba8689d4b6840664a3a"
+    },
+    {
+      "path": "scripts/validate_component_partonomy.py",
+      "sha256": "5a39cc6e2a26cddf0af8affdcb9efa856b07f5af24cda83bb369b9581ca757c9"
+    },
+    {
+      "path": "scripts/audit_duplicate_identifiers.py",
+      "sha256": "5f527c8b32df644c32b40e948a9d824c1adacc19086b296f66732bcb52160462"
+    },
+    {
+      "path": "scripts/check_record_filename_case.py",
+      "sha256": "74a19871127372e2680e8776c37b867bb3b82f9b334fd1f8926d996ca205d658"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/component_partonomy.py",
+      "sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696"
+    },
+    {
+      "path": "src/mediaingredientmech/synonym_policy.py",
+      "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+    },
+    {
+      "path": "mappings/duplicate_identifier_baseline.tsv",
+      "sha256": "723f613de746bf44b38e19be9786cd1ee7fb719256fbc6195b8b1e20477d5720"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    }
+  ],
+  "private_helpers": [
+    {
+      "path": ".temp/all-unmatched-worker-04/final-review-v1/prepare_native_fixture.py",
+      "sha256": "952da92e1afc41f6bf829467aafd4e1f050e9c58c91627d5c97fe011d71d4db3",
+      "published_code": false
+    },
+    {
+      "path": ".temp/all-unmatched-worker-04/final-review-v1/check_labels_aliases.py",
+      "sha256": "cfc9737a92274bfae34eaffba2bef385641795db56abecdd408713ae0f5a4241",
+      "published_code": false
+    },
+    {
+      "path": ".temp/all-unmatched-worker-04/final-review-v1/assemble_candidate.py",
+      "sha256": "b8e0cf043a33998329dd034f42a5de34f7ebe892cff668ce9d7dbee033e9e883",
+      "published_code": false
+    }
+  ],
+  "result": "PASS",
+  "scientific_or_owner_export_approval": false
+}

@@ -1,0 +1,192 @@
+{
+  "at": "2026-11-08T08:06:05.940295+00:00",
+  "selected_proposals_sha256": "6632e1e5993e3ae3120ee0c312d3d455c0322c3cd9c8a832d7fc3559308e176d",
+  "fixture_receipt_sha256": "31ec8ba375890e72c1eeb71e60c4b78fbc6367518ac564da4c17fc62330747c1",
+  "checks": [
+    {
+      "name": "guarded_writer_and_filename",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        ".temp/all-unmatched-worker-04/final-review-v1/prepare_native_fixture.py",
+        "native-fixture-v2",
+        "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/candidates/assembly-v3"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/fixture-v2.log",
+      "log_sha256": "435ff3ff876bc3e30cda1ca39010e68015c8d185c8ce2111faf9d40e48e9998b"
+    },
+    {
+      "name": "closed_schema",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_strict.py",
+        ".temp/all-unmatched-worker-04/final-review-v1/native-fixture-v2/selected",
+        "--workers",
+        "2",
+        "--out",
+        "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/proposal-schema-v2.tsv"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/proposal-schema-v2.log",
+      "log_sha256": "55fba39c9cd150697784b8ad51055bfbbfc117ccdc77a59777db9ec957f5319c"
+    },
+    {
+      "name": "partonomy",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_component_partonomy.py",
+        "--curated-dir",
+        ".temp/all-unmatched-worker-04/final-review-v1/native-fixture-v2/overlay/data/curated"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/partonomy-v2.log",
+      "log_sha256": "10ff2db5208962d4a03b821e71222a751207e502c956a0564e3801e240a9ccdf"
+    },
+    {
+      "name": "identifier_baseline",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        ".temp/all-unmatched-worker-04/final-review-v1/native-fixture-v2/overlay/scripts/audit_duplicate_identifiers.py",
+        "--check"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 2,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/duplicate-identifiers-frozen-baseline-v2.log",
+      "log_sha256": "fd4ca14681a258ba8e2c83be696a4657f42cf63f77a9665defbd5a39efc8db6a",
+      "result": "FAIL on exactly retired CHEBI86477 duplicate group; frozen baseline remains unchanged. See separately reviewed companion proposal, not a waiver."
+    },
+    {
+      "name": "ontology_labels_and_alias_ownership",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        ".temp/all-unmatched-worker-04/final-review-v1/check_labels_aliases_v2.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/labels-alias-ownership-v2.log",
+      "log_sha256": "4484c353ed9c5400f628583c16a90df7d9b9c159cdd4ed5b069f8c0cf38b7243"
+    },
+    {
+      "name": "identifier_proposed_data_ledger",
+      "command": [
+        ".temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        ".temp/all-unmatched-worker-04/final-review-v1/native-identifier-companion-v1/scripts/audit_duplicate_identifiers.py",
+        "--check"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/duplicate-identifiers-proposed-baseline-v1.log",
+      "log_sha256": "ec58c9c6da899f553c271097153653106cbcaa7c2c38cc8e9e5dbd59776d1f89",
+      "scope": "Unchanged native checker and exact prospective catalog with explicit report-only one-row data-baseline retirement. Canonical baseline remains unchanged."
+    },
+    {
+      "name": "full_final_structural_accounting",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/scripts/audit_worker_outcomes_v1.py",
+        "--shard",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/queue/preliminary-v5/shards/shard-04.json",
+        "--decisions",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/decisions.json",
+        "--evidence",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/evidence.json",
+        "--proposals",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/proposals.json",
+        "--artifact-root",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04",
+        "--source-root",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/queue/preliminary-v5",
+        "--mim-root",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree",
+        "--output",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/structural-audit-final.json"
+      ],
+      "exit_code": 2,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/structural-final.log",
+      "log_sha256": "8801a47ae7288b5bce51a91f9c2b43079bbc015adb7c8d5983d562f1f679c394",
+      "result": "Exact final188 source cases and119 proposals, all independent-review statuses complete; scientific approval not inferred."
+    }
+  ],
+  "native_inputs": [
+    {
+      "path": "scripts/validate_strict.py",
+      "sha256": "5eb9890461eb077f3d6d11546ee5162d09dc32cc171f1ba8689d4b6840664a3a"
+    },
+    {
+      "path": "scripts/validate_component_partonomy.py",
+      "sha256": "5a39cc6e2a26cddf0af8affdcb9efa856b07f5af24cda83bb369b9581ca757c9"
+    },
+    {
+      "path": "scripts/audit_duplicate_identifiers.py",
+      "sha256": "5f527c8b32df644c32b40e948a9d824c1adacc19086b296f66732bcb52160462"
+    },
+    {
+      "path": "scripts/check_record_filename_case.py",
+      "sha256": "74a19871127372e2680e8776c37b867bb3b82f9b334fd1f8926d996ca205d658"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9"
+    },
+    {
+      "path": "src/mediaingredientmech/validation/component_partonomy.py",
+      "sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696"
+    },
+    {
+      "path": "src/mediaingredientmech/synonym_policy.py",
+      "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+    },
+    {
+      "path": "mappings/duplicate_identifier_baseline.tsv",
+      "sha256": "723f613de746bf44b38e19be9786cd1ee7fb719256fbc6195b8b1e20477d5720"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    }
+  ],
+  "private_helpers": [
+    {
+      "path": ".temp/all-unmatched-worker-04/final-review-v1/prepare_native_fixture.py",
+      "sha256": "952da92e1afc41f6bf829467aafd4e1f050e9c58c91627d5c97fe011d71d4db3",
+      "published_code": false
+    },
+    {
+      "path": ".temp/all-unmatched-worker-04/final-review-v1/check_labels_aliases_v2.py",
+      "sha256": "ccab3294de81a56c2a494f2e8042776251b6c6aec7462454d20ce56aa6714ff8",
+      "published_code": false
+    },
+    {
+      "path": ".temp/all-unmatched-worker-04/final-review-v1/root_corrections_v1.py",
+      "sha256": "211543a33a665957876b2e853775600a17272b2f9f0ad6875ca6a75fc3017a6d",
+      "published_code": false
+    }
+  ],
+  "result": "PASS schema/writer/partonomy/filename/labels and explicit prospective duplicate ledger; frozen duplicate baseline FAIL retained pending integration refresh.",
+  "scientific_or_owner_export_approval": false,
+  "final_core": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/decisions.json",
+      "sha256": "ddcc02ea2f4d34374fff78977eb495d94dcf49a6c797a2ee972a9ff575e7467a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/proposals.json",
+      "sha256": "6632e1e5993e3ae3120ee0c312d3d455c0322c3cd9c8a832d7fc3559308e176d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/evidence.json",
+      "sha256": "93472013093d0df914d92f965c32187340d3668ea8e78ab879872512fbbe39a9"
+    }
+  ],
+  "unchanged_payload_validation": "All119 final selected payload bytes and proposals index are identical to assembly-v3. Reuse exact native119-payload receipts rather than repeat expensive unchanged validation."
+}

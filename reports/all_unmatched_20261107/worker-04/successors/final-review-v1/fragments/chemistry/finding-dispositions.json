@@ -1,0 +1,1069 @@
+{
+  "author": "/root/correction_chemistry",
+  "findings": [
+    {
+      "finding_id": "CH-01",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "9073cba60494bb226574d6a877b219e4771ab716e7c198acc712f9d8aafc787f",
+      "actionable_matrix_row_sha256": "5eecba5e9061ca49330226d3eecfd667b1bb075d8cbeb7cdeb75927f3bc9997a",
+      "coordinator_disposition": "confirmed_inherited_owner_defect",
+      "required_action": "Retain the supported B9 source alias; retype Folinic acid (citrovorum) as rejected provenance with its original source and append a bounded history event. Do not redirect generic folinic products or salts without their own identity review.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1228",
+      "author": "/root/correction_chemistry",
+      "status": "corrected_pending_independent_review",
+      "assessment": "Folic owner keeps B9 alias; Folinic acid(citrovorum) becomes rejected provenance. Separate ontology structures and JCM537 support the distinction. No salt/product redirect.",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:8322cd3f33f8a5bb35b786bc7d42e2091f8ac1cd77f1da6fee7533b81e605a5a",
+          "case_input_sha256": "cd42eb697ed381ef5642ee8d358ddd2ddbbc6e261762ec0531dfced4a1925d8a",
+          "decision_sha256": "9517e194dc3207bfc88948ea4a90aa34abba53126e565577d621d6de53673305",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Folic acid (B9)",
+            "source_label": "Folic acid (B9)",
+            "raw_source_label": "Folic acid (B9)"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-folate-b9"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-folate-b9",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Folic_Acid.final-review-v1.after.yaml",
+            "sha256": "879a86e88e88454cf1a40ed3ecce7d26e0dacef5be4528c4a2c5f2591dc03c8a"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-ols-CHEBI-27470-json",
+        "FINAL-CHEM-E-ols-CHEBI-15640-json",
+        "FINAL-CHEM-E-jcm-537-html",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-02",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "024a1ec1c7bf54ad9c09c17f2d7836e50d206d77c099660c48764aaaf9fe58ac",
+      "actionable_matrix_row_sha256": "50c0a0a9d6e82953f04ea6fa9ab783766965f34a3d59abef8ae481986e63e38d",
+      "coordinator_disposition": "confirmed_source_decision_correction",
+      "required_action": "Reassess source676 against original DSMZ95 SL11 Na2EDTA·2H2O and existing CHEBI:64758, preserving source recipe and stock context. Source890 establishes two waters but not sodium count; retain that precise uncertainty. Do not use automatically matched CAS or derived mmol as independent procurement evidence.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author": "/root/correction_chemistry",
+      "status": "completed_with_source890_hold",
+      "assessment": "Source676 exact original DSMZ95 confirms disodium EDTA dihydrate and active64758 owner already retains its exact spelling; no duplicate owner/payload. Source890 original996 establishes two waters but not sodium count. Automatic anhydrous CAS and mmol do not decide either.",
+      "case_bindings": [
+        {
+          "case_id": "KG_CASE:a3db108d4896b8e21b46fa49f2cc383d77f57b197c888796270e780acd861b9d",
+          "case_input_sha256": "b65f82f3f729a1f8e6e8b68b9af65df004d98f4ac56aa04935189fd358a9b78c",
+          "decision_sha256": "a64d2bb2b8eb520928323c0849c270b69ea7749b11048f2caca33845d7fcd8fa",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:676",
+            "source_label": "Na2-EDTA x 2 H2O",
+            "raw_source_label": "Na2-EDTA x 2 H2O"
+          },
+          "proposal_ids": []
+        },
+        {
+          "case_id": "KG_CASE:c6fc9b62fcebcd2d7d82379c397658dd2a57a6f4dc498350463716880b426fcd",
+          "case_input_sha256": "21b0c6e6c6ab7f3e9e5a0494331cdae36c68f34afd869a8fda1494328883f8e9",
+          "decision_sha256": "db2d4d7482a0b27343232ca117eb2238de361dca59b63eeda0bc89f0e0572349",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:890",
+            "source_label": "Na-EDTA x 2 H2O",
+            "raw_source_label": "Na-EDTA x 2 H2O"
+          },
+          "proposal_ids": []
+        }
+      ],
+      "selected_proposals": [],
+      "evidence_ids": [
+        "FINAL-CHEM-E-dsmz95-pdf",
+        "FINAL-CHEM-E-dsmz996-pdf",
+        "FINAL-CHEM-E-ols-CHEBI-64758-json",
+        "FINAL-CHEM-E-mediadive-ingredient-676-html",
+        "FINAL-CHEM-E-mediadive-ingredient-890-html",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-owner-searches"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-03",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "f1541f13b8bd5a8ec6df300d4255d2c5df827cdd03852ff259bfd12e97315a8c",
+      "actionable_matrix_row_sha256": "e089f7cadf69e4edee7295c60b919c952d435ccdd2d595341b12dc23c80b1852",
+      "coordinator_disposition": "confirmed_source_decision_correction",
+      "required_action": "Bind only source1743 to original JCM371 Na2WO4·2H2O and correct its flattened oxygen-count interpretation. Preserve malformed text as rejected provenance; no global formula typo policy or other-owner hold release.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author": "/root/correction_chemistry",
+      "status": "corrected_pending_independent_review",
+      "assessment": "Only source1743 is rebound to exact original JCM371 four-oxygen dihydrate. Malformed labels remain rejected provenance; the distinct JCM215 one-sodium formula is not normalized.",
+      "case_bindings": [
+        {
+          "case_id": "KG_CASE:9f198597ee346fe7fa3800c5f8b41421f7be6b58ec864e341c57eaf0a5298010",
+          "case_input_sha256": "ba37320afacc1a31bdb7ec1218472c9e28ee6b715a3ca073b673b10e5eae1be9",
+          "decision_sha256": "5f68c60661cde7467269b4d0c6931868c0c52009965384c3981ba9a5444bf59d",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1743",
+            "source_label": "Na2WO2 x 2 H2O",
+            "raw_source_label": "Na2WO2 x 2 H2O"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-tungstate-malformed-alias"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-tungstate-malformed-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Na2wo4_X_2_H2o.final-review-v1.after.yaml",
+            "sha256": "22f3f2e551d5c53ab7c2a09d7d26c4d8c4e3db7610ccda679e9a32cdbba3f2da"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-jcm371-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1743-html",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-04",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "c478584f03e6b7d749c9c52c1c4f0eaeee670429d3d2c3199d6963ea3300b8b0",
+      "actionable_matrix_row_sha256": "5691baf8e8db9745596f1204f4d5fbe630e28c5e4a069f22580f51b37b2ada61",
+      "coordinator_disposition": "qualified_evidence_method_correction",
+      "required_action": "Correct the automatic-CAS/formula-as-independent-proof reasoning for sources143/104/1291. Preserve conventional name-level associations separately from independently established supplied form. Do not impose a universal printed sodium-count or L requirement: §3 explicitly uses Sodium glutamate monohydrate→CHEBI:232425 and ChEBI:115156 lists Sodium fumarate. (NH4)citrate alone does not choose triammonium over other salts. Existing owner repairs supported by explicit L/monosodium sources remain valid.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author": "/root/correction_chemistry",
+      "status": "qualified_and_corrected_pending_independent_review",
+      "assessment": "Separate ordinary name-level sodium-fumarate/sodium-glutamate associations from independent supplied-form facts. Preserve explicit NBRC1625 repair and §3 monohydrate convention; restore case47 association with honest procurement limits. Withdraw source104 triammonium conclusion; its sodium/ammonium stoichiometry cannot come from automatic metadata.",
+      "case_bindings": [
+        {
+          "case_id": "KG_CASE:0a1be1a397b9ab5bda2be5e2c733a901d331820717469f582a66814bef37143b",
+          "case_input_sha256": "f094b5394565f0418ccbb2c41b5688ed46e000b340ad8e8d7cc245de56cd3075",
+          "decision_sha256": "256c7b9c60c8743dbca91a3261f3b9f72782821c5b37429513be58d799bb82be",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:143",
+            "source_label": "Na-fumarate",
+            "raw_source_label": "Na-fumarate"
+          },
+          "proposal_ids": []
+        },
+        {
+          "case_id": "KG_CASE:3a8c08fd1691dcf56c1e0a9edd8ab77d50fe1527fb086c14b6af20c5c80205be",
+          "case_input_sha256": "0258d65a56f247488bdea0bb1c4e0463982b6a6edf60f7c9053544997bd8f251",
+          "decision_sha256": "aa11ff0e4ce84bbece0deec0abb371110ec395fb456a98a7002a2121332b391a",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:104",
+            "source_label": "NH4 citrate",
+            "raw_source_label": "(NH4) citrate"
+          },
+          "proposal_ids": []
+        },
+        {
+          "case_id": "KG_CASE:8b8132641194a6ac99b475e8b178ac9d95b032a1e2497e6b888f1ff010331615",
+          "case_input_sha256": "e0fc920b656064a26a99f30e5bcf73f4fb766e6ec2a07dba13a3a70d6e6e8b2b",
+          "decision_sha256": "1cbfe7870d698c7ca3943a12f2b0bfd4e8b2b458c0a5014dcde7dc754df7463b",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1291",
+            "source_label": "Sodium glutamate monohydrate",
+            "raw_source_label": "Sodium glutamate monohydrate"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-glutamate-monohydrate"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:53f06327d6d3e2cf7a611d01814399f6ee2ea8308a800d86c58915c2731f16db",
+          "case_input_sha256": "8ec1d9a9561e1c31065074f46d7ade534a608fea05128a142760e0237c4afbcf",
+          "decision_sha256": "eb47831c8ff2e4e63619a80b1d4912b7fac0ac05b2e538e0022d3be6057a59a7",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Sodium glutamate・H2O",
+            "source_label": "Sodium glutamate・H2O",
+            "raw_source_label": "Sodium glutamate・H2O"
+          },
+          "proposal_ids": []
+        },
+        {
+          "case_id": "CM_NAME:6443039e386c491c89767d2bd3172cd009e6f1c8e3ece54320206ab6ac211fe3",
+          "case_input_sha256": "fd6ec207b48e10751140f436c898abb213785d5442dbd3165644ba850af4abbe",
+          "decision_sha256": "67731d6aea62759bd409f661f53dae7e6b429948ebccc2d2d4de8cee3de21dd1",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "L-glutamic acid monosodium salt monohydrate",
+            "source_label": "L-glutamic acid monosodium salt monohydrate",
+            "raw_source_label": "L-glutamic acid monosodium salt monohydrate"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-glutamate-monohydrate"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:42e69ed549b10bc3e563a0c61ab9e63db6b8c663965806e1dfebe69dd5d53f33",
+          "case_input_sha256": "d979cf748d8445fbce0aaf1df47d5925f69489ec0aec0192540b8355587fd9b3",
+          "decision_sha256": "c1761765b27b67e8fc8f1c5445cfd78339e937fcd01b356d1e0e35b7398c998b",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:839",
+            "source_label": "Na glutamate",
+            "raw_source_label": "Na glutamate"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-monosodium-glutamate-alias"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-glutamate-monohydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Sodium_Glutamate_Monohydrate.final-review-v1.after.yaml",
+            "sha256": "0e6247e281d5bf77bef621f03a80295cf92eada983026aaa02a2c7a01413129b"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-monosodium-glutamate-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Na_Glutamate.final-review-v1.after.yaml",
+            "sha256": "50049cd4d47ab7c5e7aa4d9c90e7683857b814e575c8ff6fbcbd46eedd96907c"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-dsmz78c-pdf",
+        "FINAL-CHEM-E-dsmz59-pdf",
+        "FINAL-CHEM-E-dsmz1454-pdf",
+        "FINAL-CHEM-E-jcm-904-html",
+        "FINAL-CHEM-E-nbrc-1625-html",
+        "FINAL-CHEM-E-ols-CHEBI-115156-json",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-64220-json",
+        "FINAL-CHEM-E-mediadive-ingredient-143-html",
+        "FINAL-CHEM-E-mediadive-ingredient-104-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1291-html",
+        "FINAL-CHEM-E-mediadive-ingredient-839-html",
+        "FINAL-CHEM-E-new-dsmz34-pdf",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-05",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "61520abfacb6dc6daac7540f7865f0b285cbb6c9c3e37efad8fc95ed380cfc54",
+      "actionable_matrix_row_sha256": "9d3e01117c9b015f68494a5d35ffcabd1168b4f3c37f5670af4a5668f3c88fcb",
+      "coordinator_disposition": "confirmed_inherited_alias_evidence_gap",
+      "required_action": "Review each exact listed resolving alias separately against its original source and existing history. Retain proven damaged source text only under the documented native policy; reject chemically incompatible or unproved identity-bearing aliases while preserving text/history. Do not delete all malformed strings or conflate water-free names with hydrated identity by typography.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1229",
+      "author": "/root/correction_chemistry",
+      "status": "per_alias_corrected_with_damaged_label_exception",
+      "assessment": "Twelve exact listed alias entries individually assessed. Eleven are rejected with text/source preserved. Existing (NH4)Mo7O24·4H2O RAW_TEXT stays under the documented damaged-label carve-out: linked original JCM414 and903 restore the dropped six in TOGO412/944. Original JCM1118 repeats the malformed formula, so M1196 remains unresolved; no blanket formula repair. Five additional generic tungsten names stay unchanged and unapproved under root observation001.",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:36283ab235c477a872a79581f536b6ada4720f3ebc22cb6284c35ed2becc38f3",
+          "case_input_sha256": "87310d912e6f85178a47655591271b4438c3a8d0f19d3a4f73c2c61824f14b5f",
+          "decision_sha256": "a10ca742f134a314c70aecd9cd03aef7b6ad3c23372798256c8de3428b324a12",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "(NH4)6Mo7O4·4H2O",
+            "source_label": "(NH4)6Mo7O4·4H2O",
+            "raw_source_label": "(NH4)6Mo7O4·4H2O"
+          },
+          "proposal_ids": []
+        },
+        {
+          "case_id": "CM_NAME:5e684d4a435505aaee07d6fe2677d5220bec51f3ec45a33ae423eb2534e44568",
+          "case_input_sha256": "a69d800cd6a26108ebf50d54c362e5e38dccf52bdaaf999290f57295d49dc38e",
+          "decision_sha256": "678e516c379f265714b05b54f585cb91ffdebc0af170a491ea92c9d28f601afc",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "(NH4)6(MO7)24",
+            "source_label": "(NH4)6(MO7)24",
+            "raw_source_label": "(NH4)6(MO7)24"
+          },
+          "proposal_ids": []
+        },
+        {
+          "case_id": "CM_NAME:6443039e386c491c89767d2bd3172cd009e6f1c8e3ece54320206ab6ac211fe3",
+          "case_input_sha256": "fd6ec207b48e10751140f436c898abb213785d5442dbd3165644ba850af4abbe",
+          "decision_sha256": "67731d6aea62759bd409f661f53dae7e6b429948ebccc2d2d4de8cee3de21dd1",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "L-glutamic acid monosodium salt monohydrate",
+            "source_label": "L-glutamic acid monosodium salt monohydrate",
+            "raw_source_label": "L-glutamic acid monosodium salt monohydrate"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-glutamate-monohydrate"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:c84b1d67a64e5d329934586343c23473103b24b35101842d6574c0730e62c7ab",
+          "case_input_sha256": "bed1842cc1f6c527c3b324d18fbe76dc2b6142d3cb50f19886165cbab8ac4fcb",
+          "decision_sha256": "ec09e62af8de8c32628d0146df79bdd5f63dc33818b89544b4b58c901d52a659",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "(NH4)6Mo7O7・4H2O",
+            "source_label": "(NH4)6Mo7O7・4H2O",
+            "raw_source_label": "(NH4)6Mo7O7・4H2O"
+          },
+          "proposal_ids": []
+        },
+        {
+          "case_id": "KG_CASE:2b3d618b22b4ea8fe5e1e90bbe262449f99b21b7fbf96288f9427d7e75640c4f",
+          "case_input_sha256": "701a36d9a2451650168454e31c24867018484b17556a205f576514e2bd1ed3c8",
+          "decision_sha256": "4fe8cc9fc53dd0972143df9af759f6c5408f40e1ea8708193bc4c71cdd916459",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:120",
+            "source_label": "NH46Mo7O24 x 4 H2O",
+            "raw_source_label": "(NH4)6Mo7O24 x 4 H2O"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-orthomolybdate-alias",
+            "w04-chem-proposal-heptamolybdate-tetrahydrate"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:9f198597ee346fe7fa3800c5f8b41421f7be6b58ec864e341c57eaf0a5298010",
+          "case_input_sha256": "ba37320afacc1a31bdb7ec1218472c9e28ee6b715a3ca073b673b10e5eae1be9",
+          "decision_sha256": "5f68c60661cde7467269b4d0c6931868c0c52009965384c3981ba9a5444bf59d",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1743",
+            "source_label": "Na2WO2 x 2 H2O",
+            "raw_source_label": "Na2WO2 x 2 H2O"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-tungstate-malformed-alias"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:df8eb2f44fbf35cdd009127d8e42a583a63c8bf8ca647e721846fdac964c0c67",
+          "case_input_sha256": "5f4ee7d1200083e9272a4db33f703888f541a4268d33a9fe58b21e55871f4924",
+          "decision_sha256": "544e50fe2f5903fa377fa5835af3a9cfb0b7e7c0950215299041a125dfc443e0",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1492",
+            "source_label": "Na2S2SO3",
+            "raw_source_label": "Na2S2SO3"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-thiosulfate-malformed-alias"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-glutamate-monohydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Sodium_Glutamate_Monohydrate.final-review-v1.after.yaml",
+            "sha256": "0e6247e281d5bf77bef621f03a80295cf92eada983026aaa02a2c7a01413129b"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-orthomolybdate-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Diammonium_molybdate.final-review-v1.after.yaml",
+            "sha256": "23cd6a3bbfea5a72ddae29bc59ae34dff59252a5a211b478977d1ec4a49f847c"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-heptamolybdate-tetrahydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Ammonium_Molybdate_Tetrahydrate.final-review-v1.after.yaml",
+            "sha256": "568fbc5245978479798aa3e2c931829eb8748f6273ef5039554db59e572b4160"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-tungstate-malformed-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Na2wo4_X_2_H2o.final-review-v1.after.yaml",
+            "sha256": "22f3f2e551d5c53ab7c2a09d7d26c4d8c4e3db7610ccda679e9a32cdbba3f2da"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-thiosulfate-malformed-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Na2s2o3.final-review-v1.after.yaml",
+            "sha256": "ae7a6b253f8809845cbba072414009151307a668cf2f0dd76b5ac8898492a74a"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-dsmz78c-pdf",
+        "FINAL-CHEM-E-dsmz59-pdf",
+        "FINAL-CHEM-E-dsmz1454-pdf",
+        "FINAL-CHEM-E-jcm-904-html",
+        "FINAL-CHEM-E-nbrc-1625-html",
+        "FINAL-CHEM-E-ols-CHEBI-115156-json",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-64220-json",
+        "FINAL-CHEM-E-mediadive-ingredient-143-html",
+        "FINAL-CHEM-E-mediadive-ingredient-104-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1291-html",
+        "FINAL-CHEM-E-mediadive-ingredient-839-html",
+        "FINAL-CHEM-E-new-dsmz34-pdf",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches",
+        "FINAL-CHEM-E-jcm371-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1743-html",
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-06",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "b1d146e65e5a1609472165ad42f40e4aaa9972791ebfad1aff47b7d535fdc3d1",
+      "actionable_matrix_row_sha256": "5c598719af18264bce7a2e973894668ffe4b387b030e7ee66b5dfd94f434f893",
+      "coordinator_disposition": "confirmed_inherited_preparation_scope_gap",
+      "required_action": "Keep explicit aqueous FeIII-EDTA formulation separate from pure solute identity. For the other four concentration-qualified strings recover stock-versus-dose occurrence context before a resolving disposition. Preserve raw text and supported new aliases; do not blanket reject every concentration-qualified ingredient name.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1230",
+      "author": "/root/correction_chemistry",
+      "status": "five_stock_contexts_recovered_and_corrected",
+      "assessment": "All five concentration-qualified strings have actual aliquoted-stock context: NBRC1604 biotin/folic, TOGO2251 FeIII-EDTA aqueous stock, DSMZ511/540/561 tungsten stock and TOGO2388 alpha-ketoglutaric-acid stock. All five are rejected on pure owners with original strings/sources retained. No solvent or quantity is invented and receiving dose is not stock concentration.",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:21aeddfd4e35d925d9fb2aa0433ed0cc7adf48af721383c2e69fd1ce912d4e54",
+          "case_input_sha256": "9e6a8334479b43524415b599dde628f2d8b476744462b699f5368cc3f2d46fd4",
+          "decision_sha256": "d53c083b3f4d82195a7d46337193d61b06651a4e5f30ae13e3f02379589387c4",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "D--Biotin",
+            "source_label": "D--Biotin",
+            "raw_source_label": "D--Biotin"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-d-biotin-spellings"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:6443039e386c491c89767d2bd3172cd009e6f1c8e3ece54320206ab6ac211fe3",
+          "case_input_sha256": "fd6ec207b48e10751140f436c898abb213785d5442dbd3165644ba850af4abbe",
+          "decision_sha256": "67731d6aea62759bd409f661f53dae7e6b429948ebccc2d2d4de8cee3de21dd1",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "L-glutamic acid monosodium salt monohydrate",
+            "source_label": "L-glutamic acid monosodium salt monohydrate",
+            "raw_source_label": "L-glutamic acid monosodium salt monohydrate"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-glutamate-monohydrate"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:8322cd3f33f8a5bb35b786bc7d42e2091f8ac1cd77f1da6fee7533b81e605a5a",
+          "case_input_sha256": "cd42eb697ed381ef5642ee8d358ddd2ddbbc6e261762ec0531dfced4a1925d8a",
+          "decision_sha256": "9517e194dc3207bfc88948ea4a90aa34abba53126e565577d621d6de53673305",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Folic acid (B9)",
+            "source_label": "Folic acid (B9)",
+            "raw_source_label": "Folic acid (B9)"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-folate-b9"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:85a1b12108a8b80ea7c22164861f692f51f6a787faddde39f2e94cb21be447ae",
+          "case_input_sha256": "1bcb55945ab260068a7f132899c2dbbc93d5df5b0c9477edc07b460ebaa3184a",
+          "decision_sha256": "66d6bd0e2d457a7104179fa383d4e04c40d6a2b77d6ffafbffb64f1ec31a0ca3",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "D(+)--Biotin",
+            "source_label": "D(+)--Biotin",
+            "raw_source_label": "D(+)--Biotin"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-d-biotin-spellings"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:a6f38120b9c4d04154e2d9fca451708a85c00e121152783d86f6c47a7eab1c3f",
+          "case_input_sha256": "80fa2cc8e142e0614010b1abd17a6e72bea6558c8908bc6b468327fa14e1d010",
+          "decision_sha256": "febaf31c734eee7b00d93433d4fd1dbf6c048ca2d650b2077d879b6bea420344",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "EDTA・Fe(III)",
+            "source_label": "EDTA・Fe(III)",
+            "raw_source_label": "EDTA・Fe(III)"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-ferric-edta"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:9f198597ee346fe7fa3800c5f8b41421f7be6b58ec864e341c57eaf0a5298010",
+          "case_input_sha256": "ba37320afacc1a31bdb7ec1218472c9e28ee6b715a3ca073b673b10e5eae1be9",
+          "decision_sha256": "5f68c60661cde7467269b4d0c6931868c0c52009965384c3981ba9a5444bf59d",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1743",
+            "source_label": "Na2WO2 x 2 H2O",
+            "raw_source_label": "Na2WO2 x 2 H2O"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-tungstate-malformed-alias"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:a5572a040ef9f9d939294b09b2eaf3c34700d51ea42a5f458ec93b4e99025619",
+          "case_input_sha256": "c08dd9f2eb5c8381cf9fc3a596832e6d8373ae844b53d3e2035b10600a5fe08a",
+          "decision_sha256": "010c76e309d35c5d4f4eaa5d45552b201b28fac47fe7a4f0694e2fba4e48df7f",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:2384",
+            "source_label": "alpha-ketoglutamate",
+            "raw_source_label": "alpha-ketoglutamate"
+          },
+          "proposal_ids": [
+            "I1201-CHEM-P-ketoglutamate-acid-alias-rejection"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-d-biotin-spellings",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Biotin.final-review-v1.after.yaml",
+            "sha256": "16ac043c5ec14442ecb00feabfe14e1409de47d25c29cbb288fd0368e799f82c"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-glutamate-monohydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Sodium_Glutamate_Monohydrate.final-review-v1.after.yaml",
+            "sha256": "0e6247e281d5bf77bef621f03a80295cf92eada983026aaa02a2c7a01413129b"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-folate-b9",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Folic_Acid.final-review-v1.after.yaml",
+            "sha256": "879a86e88e88454cf1a40ed3ecce7d26e0dacef5be4528c4a2c5f2591dc03c8a"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-ferric-edta",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Fe_Iii-edta.final-review-v1.after.yaml",
+            "sha256": "e18aa557f6a91f04015f48c3762e3b6df7f99186b3cf98db611aacaae28a1832"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-tungstate-malformed-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Na2wo4_X_2_H2o.final-review-v1.after.yaml",
+            "sha256": "22f3f2e551d5c53ab7c2a09d7d26c4d8c4e3db7610ccda679e9a32cdbba3f2da"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-ketoglutamate-acid-alias-rejection",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Alpha-ketoglutaric_Acid.final-review-v1.after.yaml",
+            "sha256": "700b8bdec2b94ac5ab2fed3df4b82a0d888a30c5d731eb13c9f64f535cbec769"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-new-nbrc1604-html",
+        "FINAL-CHEM-E-new-togo3052-json",
+        "FINAL-CHEM-E-new-togo2251-json",
+        "FINAL-CHEM-E-new-togo2388-json",
+        "FINAL-CHEM-E-new-dsmz511-pdf",
+        "FINAL-CHEM-E-new-dsmz540-pdf",
+        "FINAL-CHEM-E-new-dsmz561-pdf",
+        "FINAL-CHEM-E-dsmz78c-pdf",
+        "FINAL-CHEM-E-dsmz59-pdf",
+        "FINAL-CHEM-E-dsmz1454-pdf",
+        "FINAL-CHEM-E-jcm-904-html",
+        "FINAL-CHEM-E-nbrc-1625-html",
+        "FINAL-CHEM-E-ols-CHEBI-115156-json",
+        "FINAL-CHEM-E-ols-CHEBI-232425-json",
+        "FINAL-CHEM-E-ols-CHEBI-64220-json",
+        "FINAL-CHEM-E-mediadive-ingredient-143-html",
+        "FINAL-CHEM-E-mediadive-ingredient-104-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1291-html",
+        "FINAL-CHEM-E-mediadive-ingredient-839-html",
+        "FINAL-CHEM-E-new-dsmz34-pdf",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-ols-CHEBI-86244-json",
+        "FINAL-CHEM-E-ols-CHEBI-63939-json",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-132112-json",
+        "FINAL-CHEM-E-new-ols-chebi-64243-json",
+        "FINAL-CHEM-E-new-jcm215-html",
+        "FINAL-CHEM-E-new-dsmz1003-pdf",
+        "FINAL-CHEM-E-new-togo1032-json",
+        "FINAL-CHEM-E-new-togo941-json",
+        "FINAL-CHEM-E-new-togo2346-json",
+        "FINAL-CHEM-E-new-togo412-json",
+        "FINAL-CHEM-E-new-togo2279-json",
+        "FINAL-CHEM-E-new-jcm979-html",
+        "FINAL-CHEM-E-new-jcm900-html",
+        "FINAL-CHEM-E-new-jcm414-html",
+        "FINAL-CHEM-E-new-dsmz600-pdf",
+        "FINAL-CHEM-E-new-dsmz1144-pdf",
+        "FINAL-CHEM-E-new-dsmz590-pdf",
+        "FINAL-CHEM-E-new-togo944-json",
+        "FINAL-CHEM-E-new-togo1196-json",
+        "FINAL-CHEM-E-new-jcm903-html",
+        "FINAL-CHEM-E-new-jcm1118-html",
+        "FINAL-CHEM-E-alias-searches",
+        "FINAL-CHEM-E-ols-CHEBI-27470-json",
+        "FINAL-CHEM-E-ols-CHEBI-15640-json",
+        "FINAL-CHEM-E-jcm-537-html",
+        "FINAL-CHEM-E-jcm371-html",
+        "FINAL-CHEM-E-mediadive-ingredient-1743-html"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-07",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "18f265d0dfd501f620fdf1962e70699b27ea00d90822b6179c03ac20a84ea00a",
+      "actionable_matrix_row_sha256": "f2144d751ddbdb1e9f20118bd4fc11b05c55e9b45fee975877300ea0990313a7",
+      "coordinator_disposition": "qualified_inherited_representation_concern",
+      "required_action": "Do not treat the new polysorbate80 spelling as wrong. The retained fixed InChI and SMILES exactly match ChEBI:53426 representative annotations, alongside its variable polymer formula and 20-unit definition. Preserve the source and explicitly qualify representative structure versus measured polymer material; do not invent a replacement structure or assert a pure discrete molecule.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author": "/root/correction_chemistry",
+      "status": "representative_structure_qualification_added",
+      "assessment": "The exact ChEBI53426 InChI/SMILES and variable formula remain. Explicitly distinguish representative database structures from a measured discrete commercial molecule; supported polysorbate alias remains.",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:053be99fda23ac3dde845cbe31b24635ad5d8a01f30a9a682a50095249afdabc",
+          "case_input_sha256": "8b427e186d4b071643de0b9c2a9eea71e21d4f29197bb88a463c8c4dfaca5a24",
+          "decision_sha256": "527cc90ccdeabbfb226cd50d5d4001f984d545c10d8af7b7dc5599a42074569f",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "polyoxyethylene sorbitan mono-oleate (Tween 80)",
+            "source_label": "polyoxyethylene sorbitan mono-oleate (Tween 80)",
+            "raw_source_label": "polyoxyethylene sorbitan mono-oleate (Tween 80)"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-polysorbate80-alias"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-polysorbate80-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Tween_80.final-review-v1.after.yaml",
+            "sha256": "6d4a4ba382a937de2ce93368ade3526ca8a614c215dd89c49d65e702ac89a9d2"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-ols-CHEBI-53426-json"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-08",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "1e595fa95ef8324da5dd52a4a5f0e071bb73ae49ad8e5a169c1ec8a16c973194",
+      "actionable_matrix_row_sha256": "d30b773e0ce009c599d59dbf991cbeb55bcdf90beef93f92f03f7bc850a34d50",
+      "coordinator_disposition": "confirmed_source_completion",
+      "required_action": "Revise the ArdacinB missing-identity premise using primary isolation and the documented aridicin→ardacin rename. Prepare bounded component-specific representation after duplicate/identifier review; retain uncertainty about the relation to generic NCIT:C169786 complex and any supplier or pure-form claims.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author": "/root/correction_chemistry",
+      "status": "existing_factor_owner_curated_pending_independent_review",
+      "assessment": "1985 isolation/table and1986 Figure1/renaming footnote were inspected, including visual table/figure checks. Existing Ardacin_B registry owner receives factor-B formula and asymmetric glycopeptide parent; no duplicate, generic-complex equivalence, supplier purity, invented CAS or reconstructed structure.",
+      "case_bindings": [
+        {
+          "case_id": "KG_CASE:50d0de269a2e55b7187caeb239d2e01a0ab7b42438853727b94e1d05700e6a5b",
+          "case_input_sha256": "bdcca7ae399a3f5fdafe32e25d7ccfefcd718b6501515cca1001302cc219ca79",
+          "decision_sha256": "5e93dabec377fcbddf3a3759e269cc51452f4ed7f15029c5310ff11238b2ae38",
+          "source": {
+            "source": "metatraits",
+            "source_case_id": "kgmicrobe.compound:ardacin_b",
+            "source_label": "ardacin B",
+            "raw_source_label": ""
+          },
+          "proposal_ids": []
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-ardacin-b-factor",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Ardacin_B.final-review-v1.after.yaml",
+            "sha256": "cc9b48959a9dec7252e08053d816c29b1b2a8200f958139f8dbabb6dc8714852"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-aridicin-1985-pdf",
+        "FINAL-CHEM-E-ardacin-1986-pdf",
+        "FINAL-CHEM-E-ols-NCIT-C169786-json",
+        "FINAL-CHEM-E-new-ols-ardacin-search-json",
+        "FINAL-CHEM-E-new-ols-aridicin-search-json",
+        "FINAL-CHEM-E-new-ols-chebi-753252-json",
+        "FINAL-CHEM-E-new-ols-chebi-24396-json",
+        "FINAL-CHEM-E-new-ols-glycopeptide-exact-search-json",
+        "FINAL-CHEM-E-owner-searches"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-09",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "73e2a369cea792b11b0c80fa983e98321d03a92575da92882855cc85334754e6",
+      "actionable_matrix_row_sha256": "4888ae53002e2391db64dd5d6478df5f4e5cbb07b84ec4483a409777796df8b9",
+      "coordinator_disposition": "confirmed_source_completion",
+      "required_action": "Use recovered DSMZ1344 provenance and manufacturer conventional TAPS free-buffer name to reassess the source association. Preserve the valid separate sodium-salt alias cleanup; no claim of specific Sigma purchase or sodium salt based on pH alone.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author": "/root/correction_chemistry",
+      "status": "free_buffer_candidate_created_pending_independent_review",
+      "assessment": "Original DSMZ1344 source binding plus independent manufacturer conventional name and exact191055 term support free TAPS owner candidate. Preserve sodium-salt cleanup. Local ignored-inclusive lookup and root’s bounded cross-shard lookup found no existing free-TAPS primary candidate. No source purchase, salt-from-pH or assay inference.",
+      "case_bindings": [
+        {
+          "case_id": "KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255",
+          "case_input_sha256": "fc7fc4808f74284cacce1aa24e6a7c2664178821206668cbcf325a51024a7a47",
+          "decision_sha256": "589eaf105821901254af5777f5ef7146dd3ea24b73111a79dad2ecead12012d7",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1188",
+            "source_label": "Taps",
+            "raw_source_label": "Taps"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-taps-salt-alias"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-taps-salt-alias",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/TAPS_Sodium_Salt.final-review-v1.after.yaml",
+            "sha256": "1425cf823b98d7cde1d7efee16cc26fefb8e974602dfa3f64bbb95279736777c"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-taps-free-buffer",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/TAPS.final-review-v1.after.yaml",
+            "sha256": "71d3f690bfd1beb204eaf7cc67c84a036db8bc3a40e0911b759841b6b7689eec"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-dsmz1344-pdf",
+        "FINAL-CHEM-E-taps-sigma-web-response-json",
+        "FINAL-CHEM-E-mediadive-ingredient-1188-html",
+        "FINAL-CHEM-E-new-ols-chebi-191055-json",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-owner-searches"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "CH-10",
+      "original_review_identity": "20261108T070033Z-w04-successor-science-v1",
+      "original_finding_sha256": "48b2ce8d83006bc0567fbf5d9bff3109bb3c285637277b859474fcd6bd656002",
+      "actionable_matrix_row_sha256": "b9168085d364869aeb2c271abb50884391a79ca5303f8af41caabbba81f6773e",
+      "coordinator_disposition": "peer_blanket_hydrate_withdrawal_not_adopted",
+      "required_action": "The three exact source-stated local identities are not rejected solely for lack of supplier or crystallographic characterization. §3 step3 permits distinct registry identity when exact ontology/CAS is unavailable. Keep the explicit formal-transcription/unknown-phase caveats, actual water counts, no invented CAS/mass and asymmetric parent. Preserve #344 unresolved conflicts in its own records; retain the actual trisodium-citrate preimage/history/promotion. Verify nearest available parent as an ordinary mapping obligation, especially the generic hydrate anchor, without inventing a universal new gate.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+      "author": "/root/correction_chemistry",
+      "status": "three_source_stated_identities_preserved_with_explicit_limits",
+      "assessment": "Retain monohydrate tungstate, trihydrate citrate and dihydrate heptamolybdate local identities, formal formulae, authentic trihydrate preimage/history and asymmetric parents. Search exact heptamolybdate/ammonium-molybdate terms; wrong-water86244 and wrong-stoichiometry91249 are excluded, no closer appropriate parent established, generic35505 anchor remains qualified. Source1201 original1353 explicitly gives five waters, but existing CHEBI86477 owner combines hydrated label/formula with anhydrous structure; source/owner conflict under#896/#344 is retained separately by exact coordinator qualification. This is an unresolved owner reconciliation, not missing crystallography or impossibility of local representation.",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:69610197c3c03bcc755b8da43f2aad06f674265bcd9e566b8756388aa5ead29e",
+          "case_input_sha256": "9a181191c8e444183c88a273b6a6d42c9179f113def22a56ea0937fecd7a3a7a",
+          "decision_sha256": "aafd934d3dc0e9e71c31ef4713340d911395e7224e261127b7a81391c0368dc3",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Na2WO4·H2O",
+            "source_label": "Na2WO4·H2O",
+            "raw_source_label": "Na2WO4·H2O"
+          },
+          "proposal_ids": [
+            "I1201-CHEM-P-sodium-tungstate-monohydrate"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:6bc2df3375d39e69fe19ebf3a2e5dbbd6c01b37385fd94948ba538452a3342cf",
+          "case_input_sha256": "0a1f2cfd8a9c41a1e7e4794fc394c88d47603b3123d0f0b87b7eff3d060703a8",
+          "decision_sha256": "9c7b9bd0db5c14a8a4f612f7ae856b49f9fba898c2217a72fd06ae4b28b29795",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Na3-citrate x 3 H2O",
+            "source_label": "Na3-citrate x 3 H2O",
+            "raw_source_label": "Na3-citrate x 3 H2O"
+          },
+          "proposal_ids": [
+            "I1201-CHEM-P-trisodium-citrate-trihydrate"
+          ]
+        },
+        {
+          "case_id": "CM_NAME:e8f98fbe1c304badcd5b7621660e950efd9f52c583433334a256fc8020e5e206",
+          "case_input_sha256": "d158e2177f9d89c9c55044b0ed716df1a0f348ca662c29edce7b7c6c27f1f3ed",
+          "decision_sha256": "6d12677b338e1787b42a8c1669ed1093ce343793d29507a6b6edc4cb6fbc6fdf",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "(NH4)6Mo7O24·2H2O",
+            "source_label": "(NH4)6Mo7O24·2H2O",
+            "raw_source_label": "(NH4)6Mo7O24·2H2O"
+          },
+          "proposal_ids": [
+            "I1201-CHEM-P-hexaammonium-heptamolybdate-dihydrate"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:43c6eab73a9c47cd14f36303d4593c0f2c1d8e98ed075e0407a6e2a47c88b25c",
+          "case_input_sha256": "01233be8f895aaba1859d0b0e87fcde62a2cf09b22fbf163e973ddced6a0558d",
+          "decision_sha256": "4bf2ce58f22a00995b0d2d9650b2a1f1aec57a96f45f3c56c7b97448f20c2f42",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:650",
+            "source_label": "Na3-citrate x 3 H2O",
+            "raw_source_label": "Na3-citrate x 3 H2O"
+          },
+          "proposal_ids": [
+            "I1201-CHEM-P-trisodium-citrate-trihydrate"
+          ]
+        },
+        {
+          "case_id": "KG_CASE:7759590971e07054c21b5f3dc10a13389af09a43a121efae6e0fbc340b300525",
+          "case_input_sha256": "625eec68e49788694f40fcee188d278c0aba2874d3784a806c5e4c78d807e100",
+          "decision_sha256": "f2870d0309cbeebe2f413ca257d2d6891bc53878339a3420ba6dbbfca238dc3e",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1201",
+            "source_label": "Na2SO3 x 5 H2O",
+            "raw_source_label": "Na2SO3 x 5 H2O"
+          },
+          "proposal_ids": []
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-sodium-tungstate-monohydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Sodium_Tungstate_Monohydrate.final-review-v1.after.yaml",
+            "sha256": "209f7c092dbe19a65019f93fc51dead15e5dc562b52685136db0ee68b2b82f3c"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-trisodium-citrate-trihydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Trisodium_Citrate_X_3_H2o.final-review-v1.after.yaml",
+            "sha256": "861e73c6501f9fbbb01640bee27069c3dcc4f7a313c376dd802eb4537498dc73"
+          }
+        },
+        {
+          "proposal_id": "FINAL-CHEM-P-hexaammonium-heptamolybdate-dihydrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Hexaammonium_Heptamolybdate_Dihydrate.final-review-v1.after.yaml",
+            "sha256": "6df66b5856c1982d18b2ed0872049158c324bbae2a0bdc628e53eec22f9cf5c6"
+          }
+        }
+      ],
+      "evidence_ids": [
+        "FINAL-CHEM-E-nbrc-392-html",
+        "FINAL-CHEM-E-nbrc-809-html",
+        "FINAL-CHEM-E-nbrc-931-html",
+        "FINAL-CHEM-E-nbrc-943-html",
+        "FINAL-CHEM-E-dsmz-661-pdf",
+        "FINAL-CHEM-E-dsmz1353-pdf",
+        "FINAL-CHEM-E-ols-CHEBI-63940-json",
+        "FINAL-CHEM-E-ols-CHEBI-53258-json",
+        "FINAL-CHEM-E-ols-hydrate-35505-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-heptamolybdateanion-search-json",
+        "FINAL-CHEM-E-new-ols-ammoniummolybdate-search-json",
+        "FINAL-CHEM-E-new-ols-chebi-47704-json",
+        "FINAL-CHEM-E-original-source-lineage"
+      ],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    },
+    {
+      "finding_id": "COI-FAC",
+      "original_review_identity": "peer-observation-only",
+      "original_finding_sha256": "7233f39371f837e5ea6a04bac342abef204ecf179284085fdeb335074ea4b2b1",
+      "actionable_matrix_row_sha256": "f025376527fd57c56d4a808e0905e653badf9db934af517ee554d6dbdc857b22",
+      "coordinator_disposition": "outside_peer_referral_pending",
+      "required_action": "Preserve FAC facts and both exact proposals; final coalesced acceptance must come from outside the W09 authorship session. Root has assigned independent W07 review; this matrix does not substitute its pending result.",
+      "issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+      "author": "/root/correction_chemistry",
+      "status": "outside_reviewed_needs_curation_union_unapproved",
+      "assessment": "Coordinator outside-W09 triage manifest f2a1bdb104e7765279fe6c21faba377d041da871bc494aafba1e55aa8eaebd77 confirms FAC-F01 needs curation and FAC-F02 is optional nonresolving metadata. Own W04 candidate remains distinct from W09 and combined TARGET009. Do not import or approve the combined payload; only own newly authored #1226 assertion type is corrected here.",
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:83637b465eeb4e8f0203f455ed0e87a88f2463531cf5f294bf72466f46483953",
+          "case_input_sha256": "2f30f8b09acfab3845f40bf40143c9488d610bb563a3757ccb18e6d5d50e9caf",
+          "decision_sha256": "bd33e50cdbbd52cb90da7971f44d15dfba4e8a64267dc0cf7b44dd8d20e8ae17",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Fe(III)NH4-Citrate",
+            "source_label": "Fe(III)NH4-Citrate",
+            "raw_source_label": "Fe(III)NH4-Citrate"
+          },
+          "proposal_ids": [
+            "w04-chem-proposal-ferric-ammonium-citrate"
+          ]
+        }
+      ],
+      "selected_proposals": [
+        {
+          "proposal_id": "FINAL-CHEM-P-ferric-ammonium-citrate",
+          "after_capture": {
+            "root": "artifact",
+            "path": "successors/final-review-v1/proposals/chemistry/Ferric_Ammonium_Citrate.final-review-v1.after.yaml",
+            "sha256": "0ffadb41562f1baedb86136939efaf34a626805f6ce3eb8847bb72a994c95835"
+          }
+        }
+      ],
+      "evidence_ids": [],
+      "whole_owner_or_export_approval": false,
+      "independent_review": "pending; authorship-separated reviewer assigned by root"
+    }
+  ],
+  "new_coupled_observation": {
+    "id": "W04-CORRECTION-ALIAS-OBS-001",
+    "root_path": "successors/final-review-v1/provenance/coupled-alias-observation-before-disposition.json",
+    "disposition": "unconfirmed scope concern; categorical claim withdrawn; five extra generic tungsten aliases unchanged",
+    "no_new_github_mutation": true
+  }
+}

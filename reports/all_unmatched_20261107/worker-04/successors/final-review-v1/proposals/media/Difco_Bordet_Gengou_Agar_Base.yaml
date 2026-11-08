@@ -1,0 +1,49 @@
+identifier: kgmicrobe.ingredient:difco_bordet_gengou_agar_base
+preferred_term: Bordet-Gengou agar base (Difco)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:difco_bordet_gengou_agar_base
+  ontology_label: Bordet-Gengou agar base (Difco)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.bd.com/en-us/products-and-solutions/products/product-page.248200
+    notes: The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood
+      separately; manufacturer248200 identifies the named base product. This source-bound
+      opaque base is not the finished blood agar and does not restore the existing
+      generic owner malformed MICRO accession. Current package number is corroboration,
+      not inferred historical procurement.
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+notes: The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood separately;
+  manufacturer248200 identifies the named base product. This source-bound opaque base
+  is not the finished blood agar and does not restore the existing generic owner malformed
+  MICRO accession. Current package number is corroboration, not inferred historical
+  procurement. Raw source labels remain in campaign case evidence; no unqualified
+  global alias is added. This isolated proposal does not clear inherited owner publication
+  holds.
+curation_history:
+- timestamp: '2026-11-08T05:32:29.548252+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: The M2851 source names Difco Bordet-Gengou agar and adds15% horse blood
+    separately; manufacturer248200 identifies the named base product. This source-bound
+    opaque base is not the finished blood agar and does not restore the existing generic
+    owner malformed MICRO accession. Current package number is corroboration, not
+    inferred historical procurement. Isolated proposal; no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T07:47:37.502713+00:00'
+  curator: worker04_media_final_review_correction_proposal
+  action: CORRECTED
+  changes: Correct only newly authored mapping-evidence method from a human-only type
+    to LLM_SUGGESTION after authentic before-owner and authorship comparison; scientific
+    content and inherited evidence are unchanged. Historical events are preserved
+    verbatim; this event qualifies/retracts conflicting earlier inferences where explicitly
+    described above. Under issue1226, reclassify new mapping evidence at /ontology_mapping/evidence/0
+    as LLM_SUGGESTION; preserve source citations, historical evidence, and distinct
+    ComponentEvidenceTypeEnum semantics.
+  llm_assisted: true
+supplied_form:
+- name: Bordet-Gengou agar base (Difco)
+  supplier: BD Difco
+  form: dehydrated Bordet-Gengou agar base

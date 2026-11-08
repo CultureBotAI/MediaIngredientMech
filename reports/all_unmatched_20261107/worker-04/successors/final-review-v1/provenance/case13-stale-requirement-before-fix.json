@@ -1,0 +1,228 @@
+{
+  "finding_id": "W04-FINAL-ASSESSMENT-001",
+  "recorded_by": "/root",
+  "scope": "Source assessment wording only; no payload/owner/role/export change.",
+  "before": {
+    "case_id": "CM_NAME:14f3f71363de0ff1417e7f30e15a714310119719a0086c96310c84c5b05468be",
+    "case_input_sha256": "cbc20b7e6841f7cb19ae2a8c38f0e60d3ad309ded8f7813c004ccc84cd156883",
+    "source": {
+      "source": "culturemech",
+      "source_case_id": "Fe(III)dicitrate",
+      "source_label": "Fe(III)dicitrate",
+      "raw_source_label": "Fe(III)dicitrate"
+    },
+    "occurrence_ids": [
+      "CM_OCC:39900d9aad5fd8f761c027ee919799809654abb594caf52e62a8e7eb3dce3cb9",
+      "CM_OCC:30c24431819100e1dc23ae876024e908c45be1c20c5d71a831335e1fd7394758",
+      "CM_OCC:fdcf1d574c0b58aab5613d7d81833a5e4cfa7184367869e27d3f74d5331d15b7",
+      "CM_OCC:d1d2d6f0771d47e307f15d90a26bd1ce161cf7bc280f7c3cf2fde8ed310c478d",
+      "CM_OCC:cfc749431bbdca05b3a01c419dd2e1772366de1e065452163cd92c247a86521f",
+      "CM_OCC:3b9f12c332311a93067fa7bcb8d63ed24a9d6b0db9fe77290513dc3ab0186680",
+      "CM_OCC:38332d5b416420ac60e355d13084105633a0e56fab9c71751a8d66dadf2d030d",
+      "CM_OCC:1f0b431219c3c37a6ed60af3a5b043f1994e64d25d0d50e0a4e4dfe0b049315f",
+      "CM_OCC:1a829d3a77715091fab5bd2462b273620e18e95e9fa40609c1c4a745e059c020",
+      "CM_OCC:6112f37a3bea256c90bf69dc9725cab99439d81addd66a1d790cce8d40ebac29",
+      "CM_OCC:997f34ae643d552f0af7f6e3ddd89356df7b8db273431b92cd2b8e36c5148364",
+      "CM_OCC:f3e7c37c5246c36e6588c25877b070a01bce71f92b2606614550c47c28b39586",
+      "CM_OCC:ec0abe5c970d27c884321ae6d9c2771e44bf27cc6e8033aa70f42a6d970bfd21"
+    ],
+    "disposition": "unresolved",
+    "reasoning": "Fe(III)dicitrate names a two-citrate coordination species, whereas ferric citrate CHEBI:144421 contains one citrate; CHEBI:4991 is iron(3+) dicitrate(3-). The MediaDB mnemonic KEGG:fe3dcit is not a verified KEGG compound accession. Diverse recipe occurrences and literature leads do not identify counterions or prove that a dicitrate reagent was weighed. Direct inspection of Lovley1988 p1473 specifies Fe(III)-citrate20mM, without dicitrate or supplier form. This corroborates a ferric-citrate material but does not establish the2:1 ligand species asserted by the shared MediaDB mnemonic; other source papers have distinct contexts.",
+    "applicability": "Applies only to frozen case CM_NAME:14f3f71363de0ff1417e7f30e15a714310119719a0086c96310c84c5b05468be, source culturemech, identifier Fe(III)dicitrate; every listed recipe context and exact raw/processed label remains bound by case_input_sha256. Matching lexical labels do not extend source identity to unrelated cases. All inherited downstream and complete-payload publication holds remain in force.",
+    "evidence_ids": [
+      "w04-chem-case-13",
+      "w04-chem-recipe-b253ab9e1b377e16750a",
+      "w04-chem-lovley1988-pmc-html",
+      "w04-chem-recipe-a7d73d7ac7c2712ba878",
+      "w04-chem-recipe-dbe7f11faa0387d4a7fd",
+      "w04-chem-recipe-f4365cfefdb95ba384ce",
+      "w04-chem-recipe-9ffabaee5c3ce77be017",
+      "w04-chem-recipe-fe7cf4de4ae81305d23f",
+      "w04-chem-recipe-6fefb75d7e06640ac2a0",
+      "w04-chem-recipe-2b92765837f872be8217",
+      "w04-chem-recipe-c9196162b05fa2ea9672",
+      "w04-chem-recipe-df77735db98f37391ce0",
+      "w04-chem-recipe-7be8daab79ca5ed08a2e",
+      "w04-chem-recipe-05919ff79216a90b39a2",
+      "w04-chem-recipe-b2a0dfafcab5e72bc79b",
+      "w04-chem-ols-CHEBI-4991-json",
+      "w04-chem-ols-CHEBI-144421-json",
+      "w04-chem-lovley1988-pmc-page2-png",
+      "w04-chem-pubmed-fe-dicitrate-xml"
+    ],
+    "proposal_ids": [],
+    "no_change_reason": "Recover the original methods for each frozen MediaDB occurrence and establish whether this is a modeled dicitrate complex, prepared stock, or ferric-citrate reagent; do not collapse two-citrate and one-citrate substances.",
+    "missing_requirement": "Recover the original methods for each frozen MediaDB occurrence and establish whether this is a modeled dicitrate complex, prepared stock, or ferric-citrate reagent; do not collapse two-citrate and one-citrate substances.",
+    "owner_records": [],
+    "issue_refs": [],
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    },
+    "source_contexts_inspected": [
+      {
+        "occurrence_id": "CM_OCC:39900d9aad5fd8f761c027ee919799809654abb594caf52e62a8e7eb3dce3cb9",
+        "recipe_id": "CultureMech:007319",
+        "component_path": "ingredients/11",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/MEDIADB_418_Defined_freshwater_medium_CoSO4.yaml",
+          "sha256": "b253ab9e1b377e16750a1fa75215b59e983394fcfa53c9d21f1512d49142fe8d"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:30c24431819100e1dc23ae876024e908c45be1c20c5d71a831335e1fd7394758",
+        "recipe_id": "CultureMech:007322",
+        "component_path": "ingredients/10",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/MEDIADB_420_Defined_freshwater_medium_CoSO4.yaml",
+          "sha256": "a7d73d7ac7c2712ba87819c134c34f0b5218b6489562cda9ebb11c4c3e17458b"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:fdcf1d574c0b58aab5613d7d81833a5e4cfa7184367869e27d3f74d5331d15b7",
+        "recipe_id": "CultureMech:007349",
+        "component_path": "ingredients/9",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/MEDIADB_445_Defined_freshwater_medium_CoCl2.yaml",
+          "sha256": "dbe7f11faa0387d4a7fd11b10271fdd3191175fdc5692c9f839280209c345240"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:d1d2d6f0771d47e307f15d90a26bd1ce161cf7bc280f7c3cf2fde8ed310c478d",
+        "recipe_id": "CultureMech:007353",
+        "component_path": "ingredients/10",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/MEDIADB_449_Defined_freshwater_medium_CoCl2.yaml",
+          "sha256": "f4365cfefdb95ba384ce0341e04fd15d09adedbbda55f49224d78ef0e724221a"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:cfc749431bbdca05b3a01c419dd2e1772366de1e065452163cd92c247a86521f",
+        "recipe_id": "CultureMech:007289",
+        "component_path": "ingredients/7",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/bg11_0_015_mm_iron_shcolnick_2006.yaml",
+          "sha256": "9ffabaee5c3ce77be017bcd148325e4056c0d49f3c7b9283d8ef8932cb4ca293"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:3b9f12c332311a93067fa7bcb8d63ed24a9d6b0db9fe77290513dc3ab0186680",
+        "recipe_id": "CultureMech:007294",
+        "component_path": "ingredients/4",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/defined_freshwater_medium_cocl2.yaml",
+          "sha256": "fe7cf4de4ae81305d23ffca99c3bf93eef5208baa0a89591d2fdf9616bed5f9e"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:38332d5b416420ac60e355d13084105633a0e56fab9c71751a8d66dadf2d030d",
+        "recipe_id": "CultureMech:007293",
+        "component_path": "ingredients/3",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/defined_freshwater_medium_coso4.yaml",
+          "sha256": "6fefb75d7e06640ac2a0c2b1cbe1992ecba41ecd32b5fa7f22013cc0614898cc"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:1f0b431219c3c37a6ed60af3a5b043f1994e64d25d0d50e0a4e4dfe0b049315f",
+        "recipe_id": "CultureMech:007177",
+        "component_path": "ingredients/2",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/ecoli_bl21_medium_park_et_al.yaml",
+          "sha256": "2b92765837f872be8217fe649049d530328e4a3682651e9b6a8b9ee8da05d2e1"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:1a829d3a77715091fab5bd2462b273620e18e95e9fa40609c1c4a745e059c020",
+        "recipe_id": "CultureMech:007301",
+        "component_path": "ingredients/8",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/fwafc.yaml",
+          "sha256": "c9196162b05fa2ea9672ebada9c469c16426c71e2ff4698af5db90ba9dc920ab"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:6112f37a3bea256c90bf69dc9725cab99439d81addd66a1d790cce8d40ebac29",
+        "recipe_id": "CultureMech:007221",
+        "component_path": "ingredients/15",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/labarre_modified_bg11.yaml",
+          "sha256": "df77735db98f37391ce0023f8c632a9b43fc1a7464266c61fa59b844fc17c9a5"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:997f34ae643d552f0af7f6e3ddd89356df7b8db273431b92cd2b8e36c5148364",
+        "recipe_id": "CultureMech:007290",
+        "component_path": "ingredients/2",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/modified_labarre_medium_56_mm_glucose.yaml",
+          "sha256": "7be8daab79ca5ed08a2ead7de866d6d3de7f6c38b353edf60bbdf67297e914d9"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:f3e7c37c5246c36e6588c25877b070a01bce71f92b2606614550c47c28b39586",
+        "recipe_id": "CultureMech:007291",
+        "component_path": "ingredients/0",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/supplemented_bg11_glucose.yaml",
+          "sha256": "05919ff79216a90b39a237a7621b90a41951033b910060316c625c1313d2028c"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      },
+      {
+        "occurrence_id": "CM_OCC:ec0abe5c970d27c884321ae6d9c2771e44bf27cc6e8033aa70f42a6d970bfd21",
+        "recipe_id": "CultureMech:007292",
+        "component_path": "ingredients/4",
+        "snapshot": {
+          "root": "source",
+          "path": "inputs/culturemech/data/normalized_yaml/bacterial/supplemented_bg11_mutant.yaml",
+          "sha256": "b2a0dfafcab5e72bc79b43f1c2e880af0fb077e4f6b21b8505500f4e83f9c329"
+        },
+        "scope": "entire recipe bytes and parsed nested recipe; original units and qualifiers retained"
+      }
+    ],
+    "inherited_source_record": null,
+    "inherited_occurrence_definition": null,
+    "inherited_downstream_holds": [],
+    "publication_disposition": "PRESERVE_ALL_INHERITED_HOLDS; PROPOSALS_REQUIRE_NEW_COMPLETE_PAYLOAD_REVIEW",
+    "publication_scope": "Source-case disposition and proposed delta only; all frozen source-specific holds persist; no maintained owner/export approval.",
+    "predecessor_independent_review": {
+      "status": "complete",
+      "evidence_ids": [
+        "independent-chemistry-final"
+      ]
+    },
+    "current_review_scope": "Full case and complete selected payload review assigned by provenance/full-review-partitions-v1.json. Prior sealed reviews are preserved; pending here does not invalidate them."
+  },
+  "before_canonical_sha256": "29707d3f15ceb9382540f069d82f88983e576402d1f0caf64a470eb78905593a",
+  "new_review": {
+    "root": "artifact",
+    "path": "successors/final-review-v1/independent-reviews/biological-reviews-chemistry-v1/case-assessments-v3.json",
+    "sha256": "3cad5536986ab375582d093d516c5be49189349a894e5070173c613cdb67417f"
+  },
+  "reproduction": "Compare the original missing_requirement with the exact case13 supplementary methods inspection and access receipts. The earlier blanket recover-original-methods requirement is now stale.",
+  "bounded_fix": "State actual inspected methods and route-specific access limits; retain the per-occurrence source-to-model ligand/counterion/BG11-lineage identity hold."
+}
