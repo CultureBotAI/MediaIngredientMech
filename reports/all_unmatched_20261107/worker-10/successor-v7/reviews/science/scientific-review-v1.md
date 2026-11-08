@@ -1,0 +1,11 @@
+The four exact v7 candidate records pass independent scientific review within their declared source scope. The unchanged W10 Oxoid record was also read in full as an authentic source origin. No maintained application, final Oxoid combination, whole-owner, role, export, or future published-head approval is granted.
+
+The genuine UNMAPPED_0118 dependency preserves generic identity and all five original events, retains both vendor labels as REJECTED_LABEL, and transfers only the supported BD-Difco vendor label to the existing Difco dry-base candidate. Three current Difco routes are source-supported; four 1 L prepared Oxoid contexts stay held. W04 source300 keeps its variable dose/catalogue; W10 source921 keeps39g without a historical catalogue assertion. The coordinator still must compose and review one combined Oxoid candidate.
+
+Tris941 and HEPES955 now use UNKNOWN because their primary recipes neither establish a full stock formula nor explicitly identify omitted constituents. Their complete payloads retain every other scientific field and append one truthful event. Difco retains its seven-name nominal2009 COMPLETE/CURATED_INTERPRETATION scope, separate blood/water and unresolved lot/performance details.
+
+One minor metadata finding was reported before correction: cases80/135 retained old PARTIAL wording without an explicit historical/current distinction. Author-core-v3 adds that clarification and preserves the old objects and all payloads exactly. The immutable finding and independently verified correction are bound in the JSON report. No new open finding remains in this bounded review.
+
+Independent verification passed975 candidate checks and42 prerequisite source checks. It retains188 assigned cases/304occurrences,128 selected proposals comprising127 original IDs plus the genuine dependency,124 unchanged old payloads,184 unchanged case objects and1218 unchanged evidence objects. These mechanical totals do not renew science for unaffected records.
+
+Reviewer: worker10:/root/preparation_skeptic, an AI separate from root candidate authorship. Prior W10 preparation and Difco successor review participation is explicitly disclosed. Genuine manufacturer PDF tables, primary recipe bodies and complete source contexts were reread; no fresh network research was required. Final native assembly/publication remains a separate review stage.

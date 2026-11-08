@@ -1,0 +1,154 @@
+identifier: kgmicrobe.ingredient:columbia_blood_agar_base_oxoid_39g_formulation
+preferred_term: Columbia blood agar base (Oxoid 39 g formulation)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:columbia_blood_agar_base_oxoid_39g_formulation
+  ontology_label: Columbia blood agar base (Oxoid 39 g formulation)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0331-V6.pdf
+    notes: Agent-authored reconciliation of the exact captured source formulation
+      under MAPPING_SEMANTICS section 3; see https://github.com/CultureBotAI/MediaIngredientMech/issues/1237.
+      This proposes a local whole-preparation identity, not an exact chemical or component
+      identity, human confirmation, role approval or release approval.
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2224
+    notes: Agent-authored reconciliation of the exact captured source formulation
+      under MAPPING_SEMANTICS section 3; see https://github.com/CultureBotAI/MediaIngredientMech/issues/1237.
+      This proposes a local whole-preparation identity, not an exact chemical or component
+      identity, human confirmation, role approval or release approval.
+components:
+- component_name: Special peptone
+  reference_scope: UNMAPPED
+  concentration_value: '23'
+  concentration_unit: G_PER_39_G_NOMINAL_DRY_FORMULA
+  source: Undisclosed complex peptone product; not assigned to generic peptone or
+    a guessed substrate.
+- component_name: Starch
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:28017
+  concentration_value: '1'
+  concentration_unit: G_PER_39_G_NOMINAL_DRY_FORMULA
+  source: TOGO names starch; current CM0331 specification calls it soluble starch.
+    No botanical source inferred.
+- component_name: Sodium chloride
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26710
+  concentration_value: '5'
+  concentration_unit: G_PER_39_G_NOMINAL_DRY_FORMULA
+- component_name: Agar
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:2509
+  concentration_value: '10'
+  concentration_unit: G_PER_39_G_NOMINAL_DRY_FORMULA
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0331-V6.pdf
+    source_record: CM0331 product specification, page 1
+    notes: 'Typical four-constituent formula: special peptone 23 g, soluble starch
+      1 g, sodium chloride 5 g, agar 10 g per standard reconstitution. Manufacturer
+      states adjustment as needed for performance. Add 39 g powder to 1 L water; blood
+      is a later enrichment, not part of this dry base.'
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2224
+    source_record: paragraph 3, Columbia blood agar (Oxoid)
+    notes: The named Oxoid 39 g dry-base subsection contains the same four named constituents
+      and nominal amounts, with source pH 7.3 ± 0.2. This source does not print a
+      CM0331 catalog code.
+  notes: Complete immediate ingredient list relative to the cited source tables; unresolved
+    component identities and source-specific quantities remain explicit. No analytical
+    speciation, receiving-medium identity, role, or publication approval is asserted.
+notes: 'BLOCKED PRIVATE PROTOTYPE: not an application-ready create. The existing UNMAPPED_0118
+  Columbia_Blood_Agar_Base owner contains authentic generic, Oxoid CM331 and BD-Difco
+  lineage; its history and occurrences cannot be repurposed to this Oxoid-only identity.
+  A genuine reviewed published source-owner partition and coupling are required before
+  installation. The prototype unites only the supported nominal dry Oxoid formulation
+  from CM0331 and TOGO M2224; it does not backfill CM0331 as the historical M2224
+  purchase code, assert exact lot composition, or equate BBL42.5 g/Difco44 g alternatives.
+  The four-part list is COMPLETE relative to the typical published formula, not a
+  claim of chemical specification of peptone or every moisture/lot constituent. No
+  water or blood is a dry-base component. The original source labels remain in case
+  provenance. No whole maintained owner history is copied into this genuinely new
+  proposed source-specific owner. Original published proposal files and their full
+  source cases, occurrences, evidence and historical assertions are immutable in family-reconciliations-v1.
+  Historical proposal events below describe original isolated proposals, not maintained
+  applications. Their former identity/quantity choices are superseded only by this
+  explicitly documented private reconciliation. No current owner or corpus count is
+  modified. Evidence qualification for W06-FF-002: the Difco 44 g / BBL 42.5 g contrast
+  is supported here by the original indexed BD manual extraction (sha256 9d330adf2da453b5e03f506b7f37fcca3f39dfb0f36cee6b6357914cefaaa1fb),
+  including its constituent tables and preparation directions. The direct PDF request
+  failed; no complete PDF or page-image retrieval is claimed. This contrast does not
+  select the historical supplier of the mixed maintained owner or remove its partition
+  hold. The complete frozen M2224 recipe (sha256 2db87e5a52686a3592ac32eafdd18b2a9ddb64f849469d73f06f9483ad23e0a8)
+  is now explicitly bound to origin921 and its occurrence.'
+curation_history:
+- timestamp: '2026-11-08T05:28:06.867869+00:00'
+  curator: worker04_media_source_review_proposal
+  action: CREATED
+  changes: Oxoid CM0331 is a dehydrated Columbia blood agar base, before added blood
+    or selective supplement. Its nominal four-input formula differs from the BBL formula
+    in MICRO:0000536, so no exact mapping to the generic owner is asserted. Isolated
+    proposal; no maintained data mutation.
+  llm_assisted: true
+- timestamp: '2026-11-08T06:01:21.588274+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: TOGO M2224 gives39g Oxoid dry product and an explicit four-part list:23g
+    special peptone,5g sodium chloride,1g starch,10g agar. Preserve the dry base and
+    exact printed batch-input masses without equating it to BBL42.5g or Difco44g Columbia
+    formulations or assigning an unstatedOxoid code. Isolated successor proposal only;
+    original published review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:36:10.029860+00:00'
+  curator: codex_campaign_family_reconciliation
+  action: RECONCILED_PRIVATE_PROPOSAL
+  changes: 'For https://github.com/CultureBotAI/MediaIngredientMech/issues/1237, reconcile
+    the published origin proposals [300, 921] using the full captured primary formulation
+    and source-case comparison. Preserve both original event histories verbatim; new
+    mapping evidence is LLM_SUGGESTION under #1226. This is a private candidate only,
+    with no fabricated maintained predecessor, scientific approval, component-owner
+    approval, role approval or release approval.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.910744+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:09:14.877815+00:00'
+  curator: Codex /root/step7d_science_c
+  action: REFRESHED_PRIVATE_PROPOSAL_EVIDENCE
+  changes: For https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6719045619,
+    retain current published origin provenance histories and bounded evidence packaging.
+    All original events remain exact. This appends an author observation, not maintained
+    application, independent scientific approval, release approval or a new chemical/component
+    identity. Bind full M2224 and original indexed BD evidence with explicit direct-PDF
+    limits; Columbia remains blocked.
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: Columbia Blood Agar Base
+  supplier: Oxoid / Thermo Fisher Scientific
+  catalog_number: CM0331
+  form: dehydrated powder
+  notes: Current captured CM0331 specification; catalog assignment is limited to the
+    catalog-qualified source/product.
+- name: Columbia blood agar (Oxoid)
+  supplier: Oxoid
+  form: dehydrated base
+  notes: TOGO M2224 supplies the nominal 39 g four-part formula but no catalog number.
+    The shared formulation does not invent a historical catalog code.

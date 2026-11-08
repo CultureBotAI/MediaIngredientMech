@@ -1,0 +1,68 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v7/inputs/Columbia_Blood_Agar_Base.before.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v7/proposed/sv7-dependent-columbia-unmapped0118-partition.yaml
+@@ -5,10 +5,10 @@
+   synonym_type: RAW_TEXT
+   source: extracted_from_agar_yaml
+ - synonym_text: Columbia blood agar base (Oxoid CM331)
+-  synonym_type: CATALOG_VARIANT
++  synonym_type: REJECTED_LABEL
+   source: culturemech:output/ingredient_occurrences.tsv
+ - synonym_text: Columbia blood agar base (BD-Difco)
+-  synonym_type: CATALOG_VARIANT
++  synonym_type: REJECTED_LABEL
+   source: culturemech:output/ingredient_occurrences.tsv
+ mapping_status: UNMAPPED
+ occurrence_statistics:
+@@ -56,6 +56,50 @@
+     not resolve them: ''Columbia blood agar base (Oxoid CM331)'' (x4 CultureMech mentions);
+     ''Columbia blood agar base (BD-Difco)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+   llm_assisted: false
+-notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as
+-  a blood agar base preparation, not agar identity.
++- timestamp: '2026-11-08T10:18:13.082864+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_SOURCE_SCOPE_PROPOSAL
++  changes: 'Source continuity partition under CENTRAL-21 / BIO-F06/BIO-F07: retain
++    this authentic generic UNMAPPED_0118 owner, its original history, generic RAW_TEXT
++    label and stored occurrence statistics. The retained source strings ''Columbia
++    blood agar base (Oxoid CM331)'' and ''Columbia blood agar base (BD-Difco)'' are
++    REJECTED_LABEL only on this mixed residual: their previous global resolving ownership
++    is withdrawn, not their product existence. The BD-Difco vendor string is supported
++    for the separate Difco JCM1270 dry-base proposal by the direct JCM1270 recipe,
++    manufacturer BD2009 nominal formula and two vendor-qualified 44 g source contexts.
++    The generic J1270/compound2046 row is routeable only in that exact source context;
++    compound2046 is not globally identified. Four later CM331 rows specify 1 L prepared
++    base before blood and retain exact preparation/quantity holds; this label is not
++    a global alias for dry Oxoid powder. Oxoid source300 retains variable / VARIABLE
++    and printed CM0331 context; source921 M2224 retains 39 g without a historical
++    catalogue assertion. This generic owner receives no vendor formula, supplier,
++    ontology, components, role or guessed preparation. One nominal Oxoid family candidate
++    still requires coordinator composition with both authentic source origins. Exact
++    coupled dependency and source-routing bindings are in successor-v7; no source
++    record or maintained owner is applied by this proposal. Filed before correction:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720201502
++    Isolated LLM-assisted proposal only; no maintained application, human-review claim,
++    role or export approval.'
++  previous_status: UNMAPPED
++  new_status: UNMAPPED
++  llm_assisted: true
++notes: 'Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as
++  a blood agar base preparation, not agar identity. Source continuity partition under
++  CENTRAL-21 / BIO-F06/BIO-F07: retain this authentic generic UNMAPPED_0118 owner,
++  its original history, generic RAW_TEXT label and stored occurrence statistics. The
++  retained source strings ''Columbia blood agar base (Oxoid CM331)'' and ''Columbia
++  blood agar base (BD-Difco)'' are REJECTED_LABEL only on this mixed residual: their
++  previous global resolving ownership is withdrawn, not their product existence. The
++  BD-Difco vendor string is supported for the separate Difco JCM1270 dry-base proposal
++  by the direct JCM1270 recipe, manufacturer BD2009 nominal formula and two vendor-qualified
++  44 g source contexts. The generic J1270/compound2046 row is routeable only in that
++  exact source context; compound2046 is not globally identified. Four later CM331
++  rows specify 1 L prepared base before blood and retain exact preparation/quantity
++  holds; this label is not a global alias for dry Oxoid powder. Oxoid source300 retains
++  variable / VARIABLE and printed CM0331 context; source921 M2224 retains 39 g without
++  a historical catalogue assertion. This generic owner receives no vendor formula,
++  supplier, ontology, components, role or guessed preparation. One nominal Oxoid family
++  candidate still requires coordinator composition with both authentic source origins.
++  Exact coupled dependency and source-routing bindings are in successor-v7; no source
++  record or maintained owner is applied by this proposal.'
+ ingredient_type: NAMED_MEDIUM

@@ -1,0 +1,66 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-difco-columbia1270.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v7/proposed/sv3-hm-difco-columbia1270.yaml
+@@ -33,7 +33,10 @@
+       inputs). The older mirrored manual has different heart wording and BBL proportions
+       and is retained as separate version context. The old search wrapper and failed
+       official/mirror requests remain historical leads, not primary manual evidence.
+-synonyms: []
++synonyms:
++- synonym_text: Columbia blood agar base (BD-Difco)
++  synonym_type: CATALOG_VARIANT
++  source: culturemech:output/ingredient_occurrences.tsv
+ notes: 'JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+   adds water and sheep blood. Manufacturer manual distinguishes Difco44g/L base from
+   BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the dry Difco
+@@ -57,7 +60,20 @@
+   version context. The old search wrapper and failed official/mirror requests remain
+   historical leads, not primary manual evidence. Mixed existing Columbia_Blood_Agar_Base
+   owner continuity remains a separate coordinator obligation; this does not authorize
+-  an independent new-owner installation.'
++  an independent new-owner installation. CENTRAL-21 bounded source routing: the exact
++  vendor-qualified label ''Columbia blood agar base (BD-Difco)'' is retained here
++  as CATALOG_VARIANT with its original CultureMech alias-source provenance, supported
++  by direct JCM1270 and the dated manufacturer BD2009 dry-product table. Two 44 g
++  vendor-qualified contexts and the positively linked generic J1270/compound2046 context
++  support only this nominal dry-base route. The generic Columbia label and providercompound2046
++  are not global aliases or identities. Seven nominal immediate ingredients, quantities,
++  method/completeness scope, actual-lot uncertainty and all blood/water/receiving-recipe
++  discrepancies are unchanged. Installation must be coupled to the authentic existing
++  UNMAPPED_0118 partition proposal sv7-dependent-columbia-unmapped0118-partition from
++  maintained before 29ed63a00d3f4f7a1652beee549526d625eef231f29b40691bd128d2f7608324
++  to proposed after 0bbcb8bd4d35c877569958065243479c868d92b77c741435101add857c2eceaa.
++  These are dependency bytes, not this new vendor destination''s maintained preimage.
++  Whole-owner, role and export approval remains separate.'
+ occurrence_statistics:
+   total_occurrences: 0
+   media_count: 0
+@@ -115,6 +131,29 @@
+     and source-case scope, and every remaining overlap/partition/role/export hold.
+     This is an LLM-assisted source-relative assertion correction, not human scientific
+     review, a new owner decision or release approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++- timestamp: '2026-11-08T10:18:13.205103+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_SOURCE_SCOPE_PROPOSAL
++  changes: 'CENTRAL-21 bounded source routing: the exact vendor-qualified label ''Columbia
++    blood agar base (BD-Difco)'' is retained here as CATALOG_VARIANT with its original
++    CultureMech alias-source provenance, supported by direct JCM1270 and the dated
++    manufacturer BD2009 dry-product table. Two 44 g vendor-qualified contexts and
++    the positively linked generic J1270/compound2046 context support only this nominal
++    dry-base route. The generic Columbia label and providercompound2046 are not global
++    aliases or identities. Seven nominal immediate ingredients, quantities, method/completeness
++    scope, actual-lot uncertainty and all blood/water/receiving-recipe discrepancies
++    are unchanged. Installation must be coupled to the authentic existing UNMAPPED_0118
++    partition proposal sv7-dependent-columbia-unmapped0118-partition from maintained
++    before 29ed63a00d3f4f7a1652beee549526d625eef231f29b40691bd128d2f7608324 to proposed
++    after 0bbcb8bd4d35c877569958065243479c868d92b77c741435101add857c2eceaa. These
++    are dependency bytes, not this new vendor destination''s maintained preimage.
++    Whole-owner, role and export approval remains separate. Filed before correction:
++    https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720201502
++    Isolated LLM-assisted proposal only; no maintained application, human-review claim,
++    role or export approval.'
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true

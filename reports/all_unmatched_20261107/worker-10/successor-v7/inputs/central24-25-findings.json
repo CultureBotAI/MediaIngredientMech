@@ -1,0 +1,70 @@
+[
+  {
+    "finding_id": "CENTRAL24-COMPLETENESS-001",
+    "issue_key": "MIM-central24-nominal-completeness-enum",
+    "category": "representation",
+    "severity": "minor",
+    "status": "open",
+    "certainty": "confirmed",
+    "title": "Do not convert unspecified stock completeness to PARTIAL",
+    "description": "The author decision common_publication_conditions[5] instructs PARTIAL for shared incomplete stocks, but the native enum requires explicit source evidence of omitted constituents. Named-stock evidence that does not settle completeness supports UNKNOWN. This also appears in frozen control941 (0.2MTris) and955 (2MHEPES). The root already clarified UNKNOWN for forthcoming simple-stock candidates; this report preserves the original recommendation and control bytes rather than claim they are repaired. This is a metadata representation correction, not a reason to discard the supported nominal scopes. Other recipe-based controls280/938 need source-specific completeness adjudication, not mechanical retyping.",
+    "target_ids": [
+      "origin-449",
+      "origin-450",
+      "origin-460",
+      "origin-461",
+      "origin-462",
+      "origin-463",
+      "origin-617",
+      "origin-630",
+      "origin-619",
+      "origin-664",
+      "origin-929",
+      "origin-622",
+      "origin-671",
+      "origin-672",
+      "origin-673",
+      "origin-553",
+      "origin-585",
+      "origin-669",
+      "origin-674",
+      "origin-675",
+      "origin-676",
+      "origin-677",
+      "origin-678",
+      "origin-679",
+      "origin-680",
+      "origin-681",
+      "origin-682",
+      "origin-683",
+      "origin-684",
+      "origin-685",
+      "origin-686",
+      "origin-687",
+      "origin-688",
+      "origin-689",
+      "origin-690",
+      "origin-691",
+      "origin-692",
+      "origin-941",
+      "origin-955"
+    ],
+    "field_paths": [
+      "decisions.common_publication_conditions[5]",
+      "component_assertion.completeness"
+    ],
+    "evidence_ids": [
+      "schema",
+      "author-decisions",
+      "primary-all",
+      "original-records"
+    ],
+    "rule_id": "ComponentCompletenessEnum",
+    "native_severity": "P3",
+    "normalization_reason": "The nominal identities are supported and nothing is installed; metadata must be corrected before eventual publication. No gate is waived.",
+    "ownership_note": "Coordinator composition guidance and the named frozen worker proposal controls; no maintained record changes in this review.",
+    "external_issues": [
+      "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237"
+    ]
+  }
+]

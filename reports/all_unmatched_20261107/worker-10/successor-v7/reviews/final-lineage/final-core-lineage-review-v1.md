@@ -1,0 +1,9 @@
+Final metadata and retention review passes for selector `cb5c0eef5787728757aa0d7e2d2e56adc3a634af95d83b7ff23b81bacf11b38e`.
+
+All 188 cases, 304 assigned occurrences and 128 proposals match the reviewed author-v3 membership. All 128 payload bytes remain unchanged from that review, including the four bounded candidates; 124 original payloads remain exact to c66. All 1,224 author-v3 evidence objects are preserved, with five review/final-routing entries added. All 1,218 original c66 evidence entries remain exact.
+
+The active dependency markers bind the actual scientific, lineage and technical reviews. Historical author-pending values remain historical. Both buffer cases preserve the old completion-reassessment text while explicitly selecting UNKNOWN. The seven contextual rows retain three supported Difco dry routes and four held prepared Oxoid routes; none becomes an assigned case or occurrence. The W04 origin and coordinator prototype remain external dependencies. One combined Oxoid candidate still requires coordinator composition and review before installation.
+
+This is a metadata and retention review by worker10:/root/bio_research, independent of the root successor assembly. I authored earlier W10 biological/Oxoid and BD-manual source work, so this report does not claim independent approval of that original science. Fresh science belongs to the separate scientific reviewer. No maintained application, role/export approval or future-head approval is granted.
+
+One failed verifier attempt omitted an expected nested dependency marker during normalization. The script and failure log remain; the corrected checker verifies that marker explicitly and passes. No target finding was identified. Only this new final-lineage directory was written; the earlier lineage packet remains unchanged.

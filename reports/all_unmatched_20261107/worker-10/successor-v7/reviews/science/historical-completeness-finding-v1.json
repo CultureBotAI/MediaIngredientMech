@@ -1,0 +1,69 @@
+{
+  "finding_id": "W10-SV7-SKEPTIC-HISTORICAL-COMPLETENESS-001",
+  "reported_at": "2026-11-08T10:19:57.953453+00:00",
+  "reviewer": "worker10:/root/preparation_skeptic (AI)",
+  "severity": "minor",
+  "status": "reported_before_fix",
+  "scope": "Two successor decision metadata objects only; no payload/chemistry/source change. Continuation within already filed CENTRAL24-COMPLETENESS-001 correction.",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720201281",
+  "input": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/reports/all_unmatched_20261107/worker-10/successor-v7/author-core-v2/decisions.json",
+    "sha256": "b3b494e3cde041b1406615edc377e2303b1b352734ee861d64cd74e18bf847b4"
+  },
+  "reproduction": [
+    {
+      "case_index": 80,
+      "case_id": "CM_NAME:a18f98ca48aca47e78ff9cbc03d48e4bff39eef21b2fee380c09b74eaf865230",
+      "full_decision_sha256": "203ff9cf993c61bc146cc7990d8a2b350cec80ffba79122bb46df8226f88e1bc",
+      "field": "/decisions/80/completion_reassessment/quantitative_or_publication_holds/1",
+      "full_value": "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations.",
+      "historical_object_sha256": "05bdb6e3b267949e259f01a7e6b4c8b9d15d1725822a204968615ac19138ac0d",
+      "current_marker": {
+        "predecessor_head": "c66d6d3665368fe1ae8986fb7c16340a103582c1",
+        "author": "Codex worker10 /root",
+        "issues": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720201281"
+        ],
+        "prior_independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "sv1-independent-buffers"
+          ]
+        },
+        "scope": "Bounded Columbia continuity/routing and two named-stock completeness corrections only. Prior scientific and release holds remain; exact full successor bytes require separate independent review.",
+        "review_state": "pending",
+        "original_source_membership_retained": true,
+        "whole_owner_role_export_approval": false
+      }
+    },
+    {
+      "case_index": 135,
+      "case_id": "CM_NAME:ff120d19b0c8b8a01c2e0ca8fd970242da364171932d36a9b4d8fdbbacf5e1b0",
+      "full_decision_sha256": "3889625f5bb4124b3f0ddd4ec5d38ccb217f440bbd094e0ec86783c1664e8b7b",
+      "field": "/decisions/135/completion_reassessment/quantitative_or_publication_holds/1",
+      "full_value": "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations.",
+      "historical_object_sha256": "8af4949b6a5fc5f25bd5394fee3a27ca98d123867c5cafd5b709662b71c5c303",
+      "current_marker": {
+        "predecessor_head": "c66d6d3665368fe1ae8986fb7c16340a103582c1",
+        "author": "Codex worker10 /root",
+        "issues": [
+          "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720201281"
+        ],
+        "prior_independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "sv1-independent-buffers"
+          ]
+        },
+        "scope": "Bounded Columbia continuity/routing and two named-stock completeness corrections only. Prior scientific and release holds remain; exact full successor bytes require separate independent review.",
+        "review_state": "pending",
+        "original_source_membership_retained": true,
+        "whole_owner_role_export_approval": false
+      }
+    }
+  ],
+  "description": "The original completion_reassessment object retains PARTIAL wording, while the selected successor payload now uses UNKNOWN. Existing source_successor_v7 states a broad correction scope without explicitly identifying the earlier enum wording as historical. The prohibition against treating incomplete knowledge as a full formula remains valid; only historical/current attribution needs clarification.",
+  "bounded_fix": "Preserve each complete original completion_reassessment object exactly. Append to source_successor_v7 a claim-specific clarification that the former PARTIAL wording is historical, active component_assertion.completeness is UNKNOWN, and all stock/quantity/source/role/export holds remain. Publish an immutable author-core-v3 plus exact delta proof; change no payload.",
+  "candidate_payload_finding": false,
+  "global_finding_closure": false
+}

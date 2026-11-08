@@ -1,0 +1,31 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-buffers-hepes_2m_ph7_jcm556_1200.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v7/proposed/sv1-buffers-hepes_2m_ph7_jcm556_1200.yaml
+@@ -29,7 +29,7 @@
+   source: Source does not specify supplied acid or salt form or pH-adjusting reagent.
+ component_assertion:
+   method: LABEL_ENUMERATION
+-  completeness: PARTIAL
++  completeness: UNKNOWN
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=556
+@@ -78,3 +78,19 @@
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T10:18:13.221840+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_SOURCE_SCOPE_PROPOSAL
++  changes: 'CENTRAL24-COMPLETENESS-001: change only component_assertion.completeness
++    from PARTIAL to UNKNOWN. The cited source names the stock but does not establish
++    complete constituents or explicitly state that additional constituents are omitted.
++    Preserve the one literal UNMAPPED named part, all chemistry, nominal strength
++    and pH, component evidence/method, source/occurrence associations, quantities,
++    solvent/titrant/form uncertainties and original history. Receiving-medium ingredients
++    are not stock formulation evidence. This does not change controls280/938 or named-input
++    Wolfe/Hutner lists. Filed before correction: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720201281
++    Isolated LLM-assisted proposal only; no maintained application, human-review claim,
++    role or export approval.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

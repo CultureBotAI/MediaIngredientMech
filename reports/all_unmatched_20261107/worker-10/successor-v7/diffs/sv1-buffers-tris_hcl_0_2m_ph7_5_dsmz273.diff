@@ -1,0 +1,31 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-buffers-tris_hcl_0_2m_ph7_5_dsmz273.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v7/proposed/sv1-buffers-tris_hcl_0_2m_ph7_5_dsmz273.yaml
+@@ -22,7 +22,7 @@
+   source: Source buffer system, not an assertion of dry reagent form or titrant.
+ component_assertion:
+   method: LABEL_ENUMERATION
+-  completeness: PARTIAL
++  completeness: UNKNOWN
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium273.pdf
+@@ -65,3 +65,19 @@
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T10:18:13.216241+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_SOURCE_SCOPE_PROPOSAL
++  changes: 'CENTRAL24-COMPLETENESS-001: change only component_assertion.completeness
++    from PARTIAL to UNKNOWN. The cited source names the stock but does not establish
++    complete constituents or explicitly state that additional constituents are omitted.
++    Preserve the one literal UNMAPPED named part, all chemistry, nominal strength
++    and pH, component evidence/method, source/occurrence associations, quantities,
++    solvent/titrant/form uncertainties and original history. Receiving-medium ingredients
++    are not stock formulation evidence. This does not change controls280/938 or named-input
++    Wolfe/Hutner lists. Filed before correction: https://github.com/CultureBotAI/MediaIngredientMech/issues/1237#issuecomment-6720201281
++    Isolated LLM-assisted proposal only; no maintained application, human-review claim,
++    role or export approval.'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
