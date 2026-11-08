@@ -1,0 +1,609 @@
+# Five W10 component assertions: distinguish nominal source closure from unknown reagent recipe
+
+- Review: 20261108T082623Z-w10-residual-component-assertion-triage
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T08:23:51.180267Z
+- Finished UTC: 2026-11-08T08:26:23.686393Z
+- Reviewer: OpenAI Codex /root/step7d_science_c (independent)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Two existing finding groups are confirmed with a split closure recommendation:4HCl UNKNOWN; Difco CURATED_INTERPRETATION and COMPLETE for its explicit nominal2009 immediate constituent list. No candidate written or broader approval.
+
+## Scope And Provenance
+
+Exact5 published payloads and13 cited primary bodies; only component-assertion method/closure and necessary scope explanation.
+
+Selection: Every target of the two named W09 residual findings; no other127-proposal review repeated.
+Coverage: full; 5 reviewed / 5 in the declared population.
+Source: git_commit at Git base c9a96da71a1977014680e5a92e600dfc7e3874db.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| sv3-hm-difco-columbia1270 | reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml # $ complete published proposal; component_assertion scope only | snapshot_row | Difco Columbia blood agar base (JCM1270) |
+| sv3-hm-concentrated_hcl_nbrc_togo_source_reagent | reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml # $ complete published proposal; component_assertion scope only | snapshot_row | Concentrated HCl reagent (NBRC / TOGO source descriptions) |
+| sv3-hm-hcl_nominal25percent_jcm431_899 | reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml # $ complete published proposal; component_assertion scope only | snapshot_row | Nominal 25% HCl reagent (JCM 431 / 899) |
+| sv3-hm-hcl_nominal32percent_jcm770 | reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml # $ complete published proposal; component_assertion scope only | snapshot_row | Nominal 32% HCl reagent (JCM 770) |
+| sv3-hm-hcl_nominal35percent_togo_m3216 | reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml # $ complete published proposal; component_assertion scope only | snapshot_row | Nominal 35% HCl reagent (TOGO M3216) |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native current full-payload shape validation | passed | True | sv3-hm-difco-columbia1270, sv3-hm-concentrated_hcl_nbrc_togo_source_reagent, sv3-hm-hcl_nominal25percent_jcm431_899, sv3-hm-hcl_nominal32percent_jcm770, sv3-hm-hcl_nominal35percent_togo_m3216 | All5 current payloads pass native schema; this does not establish assertion meaning. |
+| Source-relative full context and actual PDF table inspection | passed | True | sv3-hm-difco-columbia1270, sv3-hm-concentrated_hcl_nbrc_togo_source_reagent, sv3-hm-hcl_nominal25percent_jcm431_899, sv3-hm-hcl_nominal32percent_jcm770, sv3-hm-hcl_nominal35percent_togo_m3216 | Exact13 source bodies; actual BD2009 PDF page170 raster inspected; JCM/NBRC/TOGO receiving versus ingredient boundaries retained. |
+| Full suite and127-proposal review | skipped | False | sv3-hm-difco-columbia1270, sv3-hm-concentrated_hcl_nbrc_togo_source_reagent, sv3-hm-hcl_nominal25percent_jcm431_899, sv3-hm-hcl_nominal32percent_jcm770, sv3-hm-hcl_nominal35percent_togo_m3216 | Not required for bounded read-only triage; no implementation changes. |
+
+## Scientific And Domain Assessments
+
+### Source-relative method and closure
+
+completeness: concern. Targets: sv3-hm-difco-columbia1270.
+
+The cited nominal2009 formula supplies all7 immediate names. Its current PARTIAL and label-enumeration claims should be corrected without expanding to actual historical-lot closure.
+
+### Source-relative method and closure
+
+completeness: concern. Targets: sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.
+
+Source names and doses HCl but does not establish the reagent full list or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing water or a percentage basis.
+
+### Source-relative method and closure
+
+completeness: concern. Targets: sv3-hm-hcl_nominal25percent_jcm431_899.
+
+Source names and doses HCl but does not establish the reagent full list or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing water or a percentage basis.
+
+### Source-relative method and closure
+
+completeness: concern. Targets: sv3-hm-hcl_nominal32percent_jcm770.
+
+Source names and doses HCl but does not establish the reagent full list or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing water or a percentage basis.
+
+### Source-relative method and closure
+
+completeness: concern. Targets: sv3-hm-hcl_nominal35percent_togo_m3216.
+
+Source names and doses HCl but does not establish the reagent full list or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing water or a percentage basis.
+
+## Findings
+
+### DIFCO-METHOD: Difco current derivation is not label enumeration
+
+minor / open / confirmed; issue key: w10-difco-jcm1270-component-method.
+
+Seven immediate constituents are derived by interpreting the cited manufacturer formula for the named product. Current names-only method should be CURATED_INTERPRETATION; no exact quantity transcription is introduced.
+
+### CLOSURE-SCOPE: PARTIAL assertions need source-relative correction with separate Difco outcome
+
+minor / open / confirmed; issue key: w10-five-source-inputs-completeness-unknown.
+
+Four HCl source contexts do not establish closure or explicit omitted constituents: UNKNOWN. Difco current assertion explicitly names the nominal2009 seven-input formula, whose immediate list is complete: COMPLETE with exact nominal-source scope, preserving historical-lot/adjustment uncertainty. Original blanket five-target UNKNOWN recommendation is qualified; all five original targets are assessed.
+
+## Recommended Actions And Acceptance Checks
+
+### BOUNDED
+
+Coordinator posts scoped findings; author creates immutable five-target successor with exact differing method/closure decisions and history, independently re-reviewed.
+
+- Exact fields/recommendations in TRIAGE-v2.json and AUTHOR-TASK-v2.md; preserve all parts/IDs/amounts/occurrences/negative holds/history.
+- Native full schema and selected-overlay partonomy; independent primary-source review of resulting current bytes.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| TRIAGE | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/TRIAGE-v2.json | supports | Exact5-payload claim-by-claim source-relative method/completeness adjudication, retained source/routing/identity limits. |
+| P1 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:23.448655+00:00; present time is local inspection, not fresh network retrieval. |
+| P2 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1200; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71 | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:23.934477+00:00; present time is local inspection, not fresh network retrieval. |
+| P3 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1195; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:24.472469+00:00; present time is local inspection, not fresh network retrieval. |
+| P4 | https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:25.915354+00:00; present time is local inspection, not fresh network retrieval. |
+| P5 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=770; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:26.017310+00:00; present time is local inspection, not fresh network retrieval. |
+| P6 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50 | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:27.346307+00:00; present time is local inspection, not fresh network retrieval. |
+| P7 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638 | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:27.974437+00:00; present time is local inspection, not fresh network retrieval. |
+| P8 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1116; Complete official source record; named ingredient/stock table, nested formulation and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:07:33.932562+00:00; present time is local inspection, not fresh network retrieval. |
+| P9 | https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2708; Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181); frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28 | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:19:06.952451+00:00; present time is local inspection, not fresh network retrieval. |
+| P10 | https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181; Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181); frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:19:06.952695+00:00; present time is local inspection, not fresh network retrieval. |
+| P11 | https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2186; Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181); frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5 | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:08:24.795803+00:00; present time is local inspection, not fresh network retrieval. |
+| P12 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1270; Complete captured response; inspected fields/recipe steps/concepts noted per case; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3 | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T05:54:01.074503+00:00; present time is local inspection, not fresh network retrieval. |
+| P13 | https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf; Manufacturer-authored2009 second edition hosted by NMSU; title/copyright and complete Columbia sectionpp155–159 inspected; p158 table visually checked against PDFpage170. Difco,BBL,EH formulas and powder doses distinct.; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7 | supports | Exact source context independently read. Original retrieval time remains 2026-11-08T06:55:09.048187+00:00; present time is local inspection, not fresh network retrieval. |
+
+## Limits And Additional Notes
+
+- No full scientific, role, publication or source installation approval.
+- No candidate/worker/maintained/Git/GitHub/session mutations.
+- Selected manifest members and full primary source bodies are rehashed; this does not repeat the full11084-member W09 seal audit.
+- Existing calf/carbonate fixes are parent-owned and excluded.
+- Prior attempt to inspect machine findings assumed every row had exact_reproduction; harmless read-only KeyError. Defensive extraction retained only exact scoped bindings.
+- No native fixed-path save into worker maintained reviews; task permits this private validated/rendered pair only.
+- Original five-target closure finding is qualified, not erased or closed. All other W09 findings and own-authored coordinator combined candidates are excluded.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T082623Z-w10-residual-component-assertion-triage
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Five W10 component assertions: distinguish nominal source closure from unknown
+  reagent recipe'
+started_at: '2026-11-08T08:23:51.180267Z'
+finished_at: '2026-11-08T08:26:23.686393Z'
+reviewer:
+  identity: OpenAI Codex /root/step7d_science_c
+  kind: agent
+  independence: independent
+  independence_basis: Authored none of these W10 source proposals or W09 findings.
+    Separate authored nominal Columbia reconciliation is excluded; this task decides
+    current W10 assertion method/source-relative closure only.
+skill: .claude/skills/reconcile-review-records/SKILL.md
+completion: completed
+verdict: needs_curation
+scientific_review: true
+summary: Two existing finding groups are confirmed with a split closure recommendation:4HCl
+  UNKNOWN; Difco CURATED_INTERPRETATION and COMPLETE for its explicit nominal2009
+  immediate constituent list. No candidate written or broader approval.
+source:
+  git_revision: c9a96da71a1977014680e5a92e600dfc7e3874db
+  state: git_commit
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: docs/stock_components.md
+    sha256: 62a8a5393db91e943f6f3903bd624a00e3567f6f0a2ca2391742e97dc0c19d49
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html
+    sha256: c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html
+    sha256: 1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html
+    sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html
+    sha256: 2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html
+    sha256: 30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html
+    sha256: 7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json
+    sha256: 97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html
+    sha256: afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json
+    sha256: ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json
+    sha256: 71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json
+    sha256: d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml
+    sha256: ca674da3144e40e09c43e001d5a15e3ee3c911ff1cda19b2bbf674564b43245e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml
+    sha256: b9b6d6679fdafd46c3400f9fec807ad71b17494adcce181d0fb464a0ea08f18c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml
+    sha256: 6b15570540ba19364f82042d6181dbea68d098282d6fa9d5616e348539cf4c1d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml
+    sha256: ed2406640e1c8af8909d7ee2e6f74154f058404054531d52310e4d7665a82d53
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body
+    sha256: e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin
+    sha256: 6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml
+    sha256: fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13
+    role: target
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+targets:
+- target_id: sv3-hm-difco-columbia1270
+  path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml
+  kind: snapshot_row
+  label: Difco Columbia blood agar base (JCM1270)
+  selector: $ complete published proposal; component_assertion scope only
+  ownership_note: Unapplied W10 report-only proposal. Coordinator files/author corrects;
+    no candidate writes by reviewer.
+- target_id: sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml
+  kind: snapshot_row
+  label: Concentrated HCl reagent (NBRC / TOGO source descriptions)
+  selector: $ complete published proposal; component_assertion scope only
+  ownership_note: Unapplied W10 report-only proposal. Coordinator files/author corrects;
+    no candidate writes by reviewer.
+- target_id: sv3-hm-hcl_nominal25percent_jcm431_899
+  path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml
+  kind: snapshot_row
+  label: Nominal 25% HCl reagent (JCM 431 / 899)
+  selector: $ complete published proposal; component_assertion scope only
+  ownership_note: Unapplied W10 report-only proposal. Coordinator files/author corrects;
+    no candidate writes by reviewer.
+- target_id: sv3-hm-hcl_nominal32percent_jcm770
+  path: reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml
+  kind: snapshot_row
+  label: Nominal 32% HCl reagent (JCM 770)
+  selector: $ complete published proposal; component_assertion scope only
+  ownership_note: Unapplied W10 report-only proposal. Coordinator files/author corrects;
+    no candidate writes by reviewer.
+- target_id: sv3-hm-hcl_nominal35percent_togo_m3216
+  path: reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml
+  kind: snapshot_row
+  label: Nominal 35% HCl reagent (TOGO M3216)
+  selector: $ complete published proposal; component_assertion scope only
+  ownership_note: Unapplied W10 report-only proposal. Coordinator files/author corrects;
+    no candidate writes by reviewer.
+scope:
+  description: Exact5 published payloads and13 cited primary bodies; only component-assertion
+    method/closure and necessary scope explanation.
+  selection: Every target of the two named W09 residual findings; no other127-proposal
+    review repeated.
+  coverage: full
+  population_size: 5
+  reviewed_target_ids:
+  - sv3-hm-difco-columbia1270
+  - sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - sv3-hm-hcl_nominal25percent_jcm431_899
+  - sv3-hm-hcl_nominal32percent_jcm770
+  - sv3-hm-hcl_nominal35percent_togo_m3216
+checks:
+- check_id: STRICT
+  name: Native current full-payload shape validation
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/assemble_triage_v2.py
+    using native validate_ingredient
+  status: passed
+  exit_code: 0
+  required: true
+  summary: All5 current payloads pass native schema; this does not establish assertion
+    meaning.
+  target_ids:
+  - sv3-hm-difco-columbia1270
+  - sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - sv3-hm-hcl_nominal25percent_jcm431_899
+  - sv3-hm-hcl_nominal32percent_jcm770
+  - sv3-hm-hcl_nominal35percent_togo_m3216
+  evidence_ids:
+  - TRIAGE
+- check_id: PRIMARY
+  name: Source-relative full context and actual PDF table inspection
+  status: passed
+  required: true
+  summary: Exact13 source bodies; actual BD2009 PDF page170 raster inspected; JCM/NBRC/TOGO
+    receiving versus ingredient boundaries retained.
+  target_ids:
+  - sv3-hm-difco-columbia1270
+  - sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - sv3-hm-hcl_nominal25percent_jcm431_899
+  - sv3-hm-hcl_nominal32percent_jcm770
+  - sv3-hm-hcl_nominal35percent_togo_m3216
+  evidence_ids:
+  - TRIAGE
+- check_id: FULL
+  name: Full suite and127-proposal review
+  status: skipped
+  required: false
+  summary: Not required for bounded read-only triage; no implementation changes.
+  target_ids:
+  - sv3-hm-difco-columbia1270
+  - sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - sv3-hm-hcl_nominal25percent_jcm431_899
+  - sv3-hm-hcl_nominal32percent_jcm770
+  - sv3-hm-hcl_nominal35percent_togo_m3216
+evidence:
+- evidence_id: TRIAGE
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/TRIAGE-v2.json
+  snapshot_sha256: fcbb46e63cabc15e4d74fcf0a44cf86d6cb43edee5e634e16aa83ac7b3c3e05b
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact5-payload claim-by-claim source-relative method/completeness adjudication,
+    retained source/routing/identity limits.
+- evidence_id: P1
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196
+  snapshot_sha256: c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:23.448655+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P2
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1200
+  snapshot_sha256: 7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:23.934477+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P3
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1195
+  snapshot_sha256: afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:24.472469+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P4
+  kind: primary_source
+  reference: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216
+  snapshot_sha256: 97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:25.915354+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P5
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=770
+  snapshot_sha256: 30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:26.017310+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P6
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+  snapshot_sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:27.346307+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P7
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899
+  snapshot_sha256: 2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:27.974437+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P8
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1116
+  snapshot_sha256: 1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a
+  locator: Complete official source record; named ingredient/stock table, nested formulation
+    and preparation comments; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:07:33.932562+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P9
+  kind: primary_source
+  reference: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2708
+  snapshot_sha256: ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28
+  locator: Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708)
+    or Trace metals (M3181); frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:19:06.952451+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P10
+  kind: primary_source
+  reference: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181
+  snapshot_sha256: 71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f
+  locator: Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708)
+    or Trace metals (M3181); frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:19:06.952695+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P11
+  kind: primary_source
+  reference: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2186
+  snapshot_sha256: d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5
+  locator: Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708)
+    or Trace metals (M3181); frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:08:24.795803+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P12
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1270
+  snapshot_sha256: 6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3
+  locator: Complete captured response; inspected fields/recipe steps/concepts noted
+    per case; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T05:54:01.074503+00:00; present time is local inspection, not fresh
+    network retrieval.
+- evidence_id: P13
+  kind: primary_source
+  reference: https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf
+  snapshot_sha256: e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7
+  locator: Manufacturer-authored2009 second edition hosted by NMSU; title/copyright
+    and complete Columbia sectionpp155–159 inspected; p158 table visually checked
+    against PDFpage170. Difco,BBL,EH formulas and powder doses distinct.; frozen /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w10-family-residual-triage-v1/blobs/e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7
+  accessed_at: '2026-11-08T08:26:23.686393Z'
+  support: supports
+  summary: Exact source context independently read. Original retrieval time remains
+    2026-11-08T06:55:09.048187+00:00; present time is local inspection, not fresh
+    network retrieval.
+assessments:
+- assessment_id: A1
+  area: completeness
+  topic: Source-relative method and closure
+  outcome: concern
+  target_ids:
+  - sv3-hm-difco-columbia1270
+  evidence_ids:
+  - TRIAGE
+  summary: The cited nominal2009 formula supplies all7 immediate names. Its current
+    PARTIAL and label-enumeration claims should be corrected without expanding to
+    actual historical-lot closure.
+- assessment_id: A2
+  area: completeness
+  topic: Source-relative method and closure
+  outcome: concern
+  target_ids:
+  - sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  evidence_ids:
+  - TRIAGE
+  summary: Source names and doses HCl but does not establish the reagent full list
+    or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing
+    water or a percentage basis.
+- assessment_id: A3
+  area: completeness
+  topic: Source-relative method and closure
+  outcome: concern
+  target_ids:
+  - sv3-hm-hcl_nominal25percent_jcm431_899
+  evidence_ids:
+  - TRIAGE
+  summary: Source names and doses HCl but does not establish the reagent full list
+    or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing
+    water or a percentage basis.
+- assessment_id: A4
+  area: completeness
+  topic: Source-relative method and closure
+  outcome: concern
+  target_ids:
+  - sv3-hm-hcl_nominal32percent_jcm770
+  evidence_ids:
+  - TRIAGE
+  summary: Source names and doses HCl but does not establish the reagent full list
+    or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing
+    water or a percentage basis.
+- assessment_id: A5
+  area: completeness
+  topic: Source-relative method and closure
+  outcome: concern
+  target_ids:
+  - sv3-hm-hcl_nominal35percent_togo_m3216
+  evidence_ids:
+  - TRIAGE
+  summary: Source names and doses HCl but does not establish the reagent full list
+    or explicitly omitted constituents. UNKNOWN preserves that boundary without inventing
+    water or a percentage basis.
+findings:
+- finding_id: DIFCO-METHOD
+  issue_key: w10-difco-jcm1270-component-method
+  category: provenance
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: Difco current derivation is not label enumeration
+  description: Seven immediate constituents are derived by interpreting the cited
+    manufacturer formula for the named product. Current names-only method should be
+    CURATED_INTERPRETATION; no exact quantity transcription is introduced.
+  target_ids:
+  - sv3-hm-difco-columbia1270
+  field_paths:
+  - component_assertion.method
+  evidence_ids:
+  - TRIAGE
+  ownership_note: W10 proposal author after coordinator issue comment
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T081753Z-w09-w10-family-successor-independent-evidence-v3
+    finding_id: W09-W10-SKEPTIC-DIFCO-COMPONENT-METHOD
+- finding_id: CLOSURE-SCOPE
+  issue_key: w10-five-source-inputs-completeness-unknown
+  category: completeness
+  severity: minor
+  status: open
+  certainty: confirmed
+  title: PARTIAL assertions need source-relative correction with separate Difco outcome
+  description: 'Four HCl source contexts do not establish closure or explicit omitted
+    constituents: UNKNOWN. Difco current assertion explicitly names the nominal2009
+    seven-input formula, whose immediate list is complete: COMPLETE with exact nominal-source
+    scope, preserving historical-lot/adjustment uncertainty. Original blanket five-target
+    UNKNOWN recommendation is qualified; all five original targets are assessed.'
+  target_ids:
+  - sv3-hm-difco-columbia1270
+  - sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - sv3-hm-hcl_nominal25percent_jcm431_899
+  - sv3-hm-hcl_nominal32percent_jcm770
+  - sv3-hm-hcl_nominal35percent_togo_m3216
+  field_paths:
+  - component_assertion.completeness
+  - component_assertion.notes
+  evidence_ids:
+  - TRIAGE
+  ownership_note: W10 proposal author after coordinator issue comment
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T081753Z-w09-w10-family-successor-independent-evidence-v3
+    finding_id: W09-W10-SKEPTIC-COMPONENT-CLOSURE
+actions:
+- action_id: BOUNDED
+  description: Coordinator posts scoped findings; author creates immutable five-target
+    successor with exact differing method/closure decisions and history, independently
+    re-reviewed.
+  finding_ids:
+  - DIFCO-METHOD
+  - CLOSURE-SCOPE
+  target_ids:
+  - sv3-hm-difco-columbia1270
+  - sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - sv3-hm-hcl_nominal25percent_jcm431_899
+  - sv3-hm-hcl_nominal32percent_jcm770
+  - sv3-hm-hcl_nominal35percent_togo_m3216
+  ownership_note: W10 source proposal author; no edits by this reviewer
+  acceptance_checks:
+  - Exact fields/recommendations in TRIAGE-v2.json and AUTHOR-TASK-v2.md; preserve
+    all parts/IDs/amounts/occurrences/negative holds/history.
+  - Native full schema and selected-overlay partonomy; independent primary-source
+    review of resulting current bytes.
+limitations:
+- No full scientific, role, publication or source installation approval.
+- No candidate/worker/maintained/Git/GitHub/session mutations.
+- Selected manifest members and full primary source bodies are rehashed; this does
+  not repeat the full11084-member W09 seal audit.
+- Existing calf/carbonate fixes are parent-owned and excluded.
+- Prior attempt to inspect machine findings assumed every row had exact_reproduction;
+  harmless read-only KeyError. Defensive extraction retained only exact scoped bindings.
+- No native fixed-path save into worker maintained reviews; task permits this private
+  validated/rendered pair only.
+- Original five-target closure finding is qualified, not erased or closed. All other
+  W09 findings and own-authored coordinator combined candidates are excluded.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T081753Z-w09-w10-family-successor-independent-evidence-v3
+  relationship: qualifies two scoped existing findings; original report retained
+```

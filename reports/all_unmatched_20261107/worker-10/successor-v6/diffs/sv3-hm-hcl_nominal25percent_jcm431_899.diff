@@ -1,0 +1,52 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml
+@@ -42,7 +42,7 @@
+   source: 25% as printed; percentage basis and solvent unspecified.
+ component_assertion:
+   method: LABEL_ENUMERATION
+-  completeness: PARTIAL
++  completeness: UNKNOWN
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+@@ -56,7 +56,7 @@
+     notes: JCM 431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively
+       12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent
+       boundary is represented without equating the two complete trace-element mixtures.
+-  notes: Percent basis, solvent and supplied grade remain unknown. Different receiving-stock
++  notes: 'Percent basis, solvent and supplied grade remain unknown. Different receiving-stock
+     addition volumes are not evidence of different acid concentrations. Source-named
+     parts remain UNMAPPED where supplied form or stock identity is not established.
+     MIM_CATALOG references identify only the supported constituent, not approval of
+@@ -69,7 +69,10 @@
+     be assessed; they are not established here. Before co-installing overlapping candidates,
+     the coordinator must choose an explicit common bounded partial-material scope
+     preserving every source context, or obtain comparable preparation/product evidence.
+-    No owner merge or arbitrary winner is selected.
++    No owner merge or arbitrary winner is selected. Component-list completeness is
++    UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the
++    complete acid-reagent formulation or explicitly identify omitted constituents.
++    Separately listed receiving-stock water is not evidence of the acid reagent carrier.'
+ notes: 'JCM 431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively
+   12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent boundary
+   is represented without equating the two complete trace-element mixtures. Percent
+@@ -121,3 +124,19 @@
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T08:46:08.696668+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION
++  changes: 'Issue #1201, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component
++    assertion fields component_assertion.completeness, component_assertion.notes.
++    Component-list completeness is UNKNOWN: the cited receiving recipes name and dose
++    HCl but do not establish the complete acid-reagent formulation or explicitly identify
++    omitted constituents. Separately listed receiving-stock water is not evidence
++    of the acid reagent carrier. Preserved all component objects, names, identities,
++    quantities, sources, original history, supplied-form and source-case scope, and
++    every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative
++    assertion correction, not human scientific review, a new owner decision or release
++    approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

@@ -1,0 +1,60 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml
+@@ -37,7 +37,7 @@
+   source: 35% as printed; percentage basis and solvent are not specified.
+ component_assertion:
+   method: LABEL_ENUMERATION
+-  completeness: PARTIAL
++  completeness: UNKNOWN
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216
+@@ -47,11 +47,11 @@
+       25% and 32% preparations is unresolved because comparable percentage and material
+       specifications are absent. The trace-element mixture and its water are not treated
+       as the acid reagent recipe.
+-  notes: Percent basis, solvent identity and supplied grade are unknown; no w/w, w/v,
+-    molarity or density is inferred. Source-named parts remain UNMAPPED where supplied
+-    form or stock identity is not established. MIM_CATALOG references identify only
+-    the supported constituent, not approval of that complete owner. Literal 25%, 32%
+-    and 35% are retained as source specifications, not normalized comparable fractions.
++  notes: 'Percent basis, solvent identity and supplied grade are unknown; no w/w,
++    w/v, molarity or density is inferred. Source-named parts remain UNMAPPED where
++    supplied form or stock identity is not established. MIM_CATALOG references identify
++    only the supported constituent, not approval of that complete owner. Literal 25%,
++    32% and 35% are retained as source specifications, not normalized comparable fractions.
+     The cited sources do not state a common percentage basis, carrier, grade or assay
+     tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO
+     M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label
+@@ -60,7 +60,10 @@
+     here. Before co-installing overlapping candidates, the coordinator must choose
+     an explicit common bounded partial-material scope preserving every source context,
+     or obtain comparable preparation/product evidence. No owner merge or arbitrary
+-    winner is selected.
++    winner is selected. Component-list completeness is UNKNOWN: the cited receiving
++    recipes name and dose HCl but do not establish the complete acid-reagent formulation
++    or explicitly identify omitted constituents. Separately listed receiving-stock
++    water is not evidence of the acid reagent carrier.'
+ notes: 'TOGO M3216 uses 10 mL of 35% HCl in its trace-element stock. This source-specified
+   acid reagent is not equated to pure dry/gaseous HCl. Its relation to nominal 25%
+   and 32% preparations is unresolved because comparable percentage and material specifications
+@@ -101,3 +104,19 @@
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T08:46:08.713242+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION
++  changes: 'Issue #1201, W09-W10-SKEPTIC-COMPONENT-CLOSURE: corrected only the component
++    assertion fields component_assertion.completeness, component_assertion.notes.
++    Component-list completeness is UNKNOWN: the cited receiving recipes name and dose
++    HCl but do not establish the complete acid-reagent formulation or explicitly identify
++    omitted constituents. Separately listed receiving-stock water is not evidence
++    of the acid reagent carrier. Preserved all component objects, names, identities,
++    quantities, sources, original history, supplied-form and source-case scope, and
++    every remaining overlap/partition/role/export hold. This is an LLM-assisted source-relative
++    assertion correction, not human scientific review, a new owner decision or release
++    approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

@@ -1,0 +1,859 @@
+# W10 qualified HCl and nominal Difco component-assertion corrections
+
+- Review: 20261108T085159Z-w10-qualified-component-assertions-successor
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T08:44:15.054393Z
+- Finished UTC: 2026-11-08T08:51:59.325853Z
+- Reviewer: Codex worker10 /root author/assembler; /root/preparation_skeptic independent source/assertion reviewer; /root/buffers_research retention reviewer (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Four HCl assertions use UNKNOWN while retaining LABEL_ENUMERATION and one literal UNMAPPED HCl part. Difco uses CURATED_INTERPRETATION and COMPLETE only for all seven immediate ingredient names in the nominal2009 manufacturer formula. Actual lot, adjustment, quantitative, source overlap, mixed-owner, role and export limits remain.
+
+## Scope And Provenance
+
+Five exact source-relative component assertion corrections and six dependent source cases.
+
+Selection: Exactly the five payloads qualified by issue1201 comment6719268125, bound by the immutable triage and current S5 selection.
+Coverage: full; 11 reviewed / 11 in the declared population.
+Source: working_tree at Git base 3e190a0f6c5a978ca8ed7e3bc7b6a2d66935548b.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| PROPOSAL:sv3-hm-difco-columbia1270 | reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-difco-columbia1270.yaml | source | Difco Columbia blood agar base (JCM1270) |
+| PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent | reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml | source | Concentrated HCl reagent (NBRC / TOGO source descriptions) |
+| PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899 | reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml | source | Nominal 25% HCl reagent (JCM 431 / 899) |
+| PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770 | reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml | source | Nominal 32% HCl reagent (JCM 770) |
+| PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216 | reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml | source | Nominal 35% HCl reagent (TOGO M3216) |
+| CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d | reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json # $.decisions[65] | snapshot_row | Concentrated HCl |
+| CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f | reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json # $.decisions[87] | snapshot_row | 35% HCl |
+| CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd | reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json # $.decisions[94] | snapshot_row | 32% HCl |
+| CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd | reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json # $.decisions[102] | snapshot_row | 25% HCl |
+| CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0 | reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json # $.decisions[125] | snapshot_row | HCl (concentrated) |
+| KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905 | reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json # $.decisions[178] | snapshot_row | Columbia blood agar base |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Five guarded schema checks and complete partonomy overlays | passed | True | PROPOSAL:sv3-hm-difco-columbia1270, PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent, PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899, PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770, PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216, CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d, CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f, CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd, CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd, CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0, KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905 | All five closed-schema payloads roundtrip byte-exact; both3037record overlays pass partonomy; identities, component objects and native alias projections unchanged. |
+| Complete case/proposal/occurrence and history retention | passed | True | PROPOSAL:sv3-hm-difco-columbia1270, PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent, PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899, PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770, PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216, CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d, CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f, CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd, CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd, CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0, KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905 | 127proposal IDs,188cases,304occurrences retained;122otherpayloads and182othercompletecaseobjects exact. |
+| Maintained application and release | not_applicable | False | PROPOSAL:sv3-hm-difco-columbia1270, PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent, PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899, PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770, PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216, CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d, CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f, CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd, CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd, CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0, KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905 | Isolated proposal/report successor; no maintained application, owner merge or release. |
+
+## Scientific And Domain Assessments
+
+### Source-relative component method and list completeness
+
+evidence: supported. Targets: PROPOSAL:sv3-hm-difco-columbia1270.
+
+CURATED_INTERPRETATION covers the seven immediate ingredient names in the nominal Difco Columbia Blood Agar Base formula published in the BD Difco &amp; BBL Manual, second edition (2009), printed page 158 / PDF page 170. COMPLETE applies only to that nominal constituent-name list: all seven listed immediate ingredients are represented. This is not a complete molecular composition, an exact historical JCM1270 lot formulation, or a quantitative recipe transcription. The manufacturer performance-adjustment/supplementation footnote and unknown actual JCM lot remain explicit limitations. Component quantities and dry-mass ratios are not asserted. Blood and reconstitution water are not dry-base components. Existing mixed-owner partition and owner/role/export holds remain.
+
+{"changed_existing_fields": ["component_assertion.method", "component_assertion.completeness", "component_assertion.notes"], "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml", "sha256": "b9b6d6679fdafd46c3400f9fec807ad71b17494adcce181d0fb464a0ea08f18c"}, "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-difco-columbia1270.yaml", "sha256": "e35684c8a476aeb0fd9048a3fefa0ffa3522147c6c7c00b85e6f42534ff9e871"}, "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact": true, "new_history_events": 1, "whole_owner_or_release_approval": false}
+
+### Source-relative component method and list completeness
+
+evidence: supported. Targets: PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.
+
+Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier.
+
+{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"], "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml", "sha256": "ca674da3144e40e09c43e001d5a15e3ee3c911ff1cda19b2bbf674564b43245e"}, "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml", "sha256": "6330cf4d79ef4809ff27b6efd6b5577dfff8e40cb4d82319c843651596d7c8f1"}, "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact": true, "new_history_events": 1, "whole_owner_or_release_approval": false}
+
+### Source-relative component method and list completeness
+
+evidence: supported. Targets: PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899.
+
+Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier.
+
+{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"], "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml", "sha256": "6b15570540ba19364f82042d6181dbea68d098282d6fa9d5616e348539cf4c1d"}, "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml", "sha256": "0cff593a94e9e563e08db52d9af3f2e87a0f43f0c086b7c09debaaf594e07aa6"}, "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact": true, "new_history_events": 1, "whole_owner_or_release_approval": false}
+
+### Source-relative component method and list completeness
+
+evidence: supported. Targets: PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770.
+
+Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier.
+
+{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"], "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml", "sha256": "ed2406640e1c8af8909d7ee2e6f74154f058404054531d52310e4d7665a82d53"}, "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml", "sha256": "f36656a1a3e2d979ae59c787cbe27bd70c967699c9fa95bcaa5a0a3ee6db8155"}, "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact": true, "new_history_events": 1, "whole_owner_or_release_approval": false}
+
+### Source-relative component method and list completeness
+
+evidence: supported. Targets: PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216.
+
+Component-list completeness is UNKNOWN: the cited receiving recipes name and dose HCl but do not establish the complete acid-reagent formulation or explicitly identify omitted constituents. Separately listed receiving-stock water is not evidence of the acid reagent carrier.
+
+{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"], "before_capture": {"root": "artifact", "path": "successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml", "sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13"}, "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml", "sha256": "c8034c07ddd1d103ec871f3cdd0bfae1b8e26a1d1d7fe8cc49d2c9a0a084bc17"}, "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact": true, "new_history_events": 1, "whole_owner_or_release_approval": false}
+
+### Exact source-case and current assertion dependencies
+
+consistency: supported. Targets: CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d.
+
+Original source, occurrence IDs, disposition, owner hashes, applicability and proposal IDs remain. Current assertion dependency points to the exact corrected payload. Explicitly historical HCl completion reassessments remain unchanged and are not treated as current PARTIAL assertions; case178 corrects its active nominal-list explanation.
+
+{"case_id": "CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d", "occurrence_ids": ["CM_OCC:a9a9cba2d7fee305379ca1951a6a9c16542a85009957d70c52bc1ff8d2e64046", "CM_OCC:238b33c03ed3a21162867efa7bc1b87cb9a1a4814a3d08712c6238b06cfd90cd", "CM_OCC:ff1996a4eebebfb7024d98194e96c34c80f85d9ee52119cf18b505e716f9ae50", "CM_OCC:0862ab4cbb5a833a1bcafea8bbeaebf0805a4bbd315598ab57cea61265948e32", "CM_OCC:cc7ac5abc8e19325fbb8f49abcd6258103594091bbdcfc82448a24bfc0fd92f5", "CM_OCC:6f7b290e09c1b00f8a53a8ddb40fdc6399ef0e05babd05618a6e688919fadc80", "CM_OCC:46f5fbcb21d14fec3498797dbd720bdbdc08907d84253213a2dfa272c91ce5a5"], "proposal_ids": ["sv3-hm-concentrated_hcl_nbrc_togo_source_reagent"], "fresh_whole_owner_or_source_acceptance": false}
+
+### Exact source-case and current assertion dependencies
+
+consistency: supported. Targets: CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f.
+
+Original source, occurrence IDs, disposition, owner hashes, applicability and proposal IDs remain. Current assertion dependency points to the exact corrected payload. Explicitly historical HCl completion reassessments remain unchanged and are not treated as current PARTIAL assertions; case178 corrects its active nominal-list explanation.
+
+{"case_id": "CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f", "occurrence_ids": ["CM_OCC:8b301b8884da9722a128723d3f1b41c1f1b807a3d57ecd3453c1690c98733ac1"], "proposal_ids": ["sv3-hm-hcl_nominal35percent_togo_m3216"], "fresh_whole_owner_or_source_acceptance": false}
+
+### Exact source-case and current assertion dependencies
+
+consistency: supported. Targets: CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd.
+
+Original source, occurrence IDs, disposition, owner hashes, applicability and proposal IDs remain. Current assertion dependency points to the exact corrected payload. Explicitly historical HCl completion reassessments remain unchanged and are not treated as current PARTIAL assertions; case178 corrects its active nominal-list explanation.
+
+{"case_id": "CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd", "occurrence_ids": ["CM_OCC:6fcf99e4a0da721b6a132c6acb830d53f661801ecc5f9c3496f4f3bcf49a0215"], "proposal_ids": ["sv3-hm-hcl_nominal32percent_jcm770"], "fresh_whole_owner_or_source_acceptance": false}
+
+### Exact source-case and current assertion dependencies
+
+consistency: supported. Targets: CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd.
+
+Original source, occurrence IDs, disposition, owner hashes, applicability and proposal IDs remain. Current assertion dependency points to the exact corrected payload. Explicitly historical HCl completion reassessments remain unchanged and are not treated as current PARTIAL assertions; case178 corrects its active nominal-list explanation.
+
+{"case_id": "CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd", "occurrence_ids": ["CM_OCC:38989dc728f37eae111d076594dd5dec3dcbf2af729e8bc41a6047a69e134b75", "CM_OCC:836abf2fb49317a625bb625da256797566f1510199001b08d95e44d88d5c6043"], "proposal_ids": ["sv3-hm-hcl_nominal25percent_jcm431_899"], "fresh_whole_owner_or_source_acceptance": false}
+
+### Exact source-case and current assertion dependencies
+
+consistency: supported. Targets: CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0.
+
+Original source, occurrence IDs, disposition, owner hashes, applicability and proposal IDs remain. Current assertion dependency points to the exact corrected payload. Explicitly historical HCl completion reassessments remain unchanged and are not treated as current PARTIAL assertions; case178 corrects its active nominal-list explanation.
+
+{"case_id": "CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0", "occurrence_ids": ["CM_OCC:51b1ee8e8f86684d1dd12b5c1b09d01a4af34cfd0f6e088cd88a5de66a862840"], "proposal_ids": ["sv3-hm-concentrated_hcl_nbrc_togo_source_reagent"], "fresh_whole_owner_or_source_acceptance": false}
+
+### Exact source-case and current assertion dependencies
+
+consistency: supported. Targets: KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905.
+
+Original source, occurrence IDs, disposition, owner hashes, applicability and proposal IDs remain. Current assertion dependency points to the exact corrected payload. Explicitly historical HCl completion reassessments remain unchanged and are not treated as current PARTIAL assertions; case178 corrects its active nominal-list explanation.
+
+{"case_id": "KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905", "occurrence_ids": [], "proposal_ids": ["sv3-hm-difco-columbia1270"], "fresh_whole_owner_or_source_acceptance": false}
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| SOURCE | reports/all_unmatched_20261107/worker-10/successor-v6/source-assessment.json; Complete exact artifact | supports | All thirteen exact primary bodies, genuine BD table/footnote and original timestamps support the qualified HCl/Difco source-relative assertions. |
+| SCIENCE | reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/scientific-review-v1.json; Complete exact artifact | supports | Separate author-independent exact five-payload method/completeness review; actual prior involvement disclosed. |
+| RETENTION | reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/author-core-retention-review-v1.json; Complete exact artifact | supports | Full cohort and exact component/history/source retention; original HCl author provides metadata review only. |
+| NATIVE | reports/all_unmatched_20261107/worker-10/successor-v6/validation/narrow-native.json; Complete exact artifact | supports | Five closed-schema guarded byte roundtrips, complete partonomy overlays and identical component/identity/alias projections. |
+| BRIDGE | reports/all_unmatched_20261107/worker-10/successor-v6/combined-c9-bridge.json; Complete exact artifact | supports | Exact current and cumulative source/proposal accounting; prior carbonate and calf corrections retained without blanket review transfer. |
+| ISSUE | reports/all_unmatched_20261107/worker-10/successor-v6/issue-linked-correction.json; Complete exact artifact | supports | Both original W09 finding IDs and the independent qualified split remain, without rewriting historical findings or GitHub closure. |
+
+## Limits And Additional Notes
+
+- Fresh scientific review is limited to source-relative component method/completeness and their exact explanations. It does not approve whole-owner identity, historical lots, roles or export.
+- COMPLETE applies solely to the nominal2009 seven immediate ingredient-name list. It does not establish the actual JCM lot, all molecular species, dry-mass fractions or quantitative part amounts. Performance adjustment and mixed-owner partition remain held.
+- Receiving-stock water is not acid-reagent carrier evidence; all HCl literal strengths, unknown basis/carrier/form and cross-source overlap limits remain.
+- Both W09 finding IDs and the qualified split remain. Original blanket five-target UNKNOWN is not adopted. No historical native finding or GitHub issue is closed by this candidate review.
+- started_at is the earliest recorded S6 preflight milestone, not a recovered full reading start. Exact earlier reading start is unknown; finished_at is actual native assembly completion. Independent reviewer times belong to their own frozen reports.
+- Original source retrieval times and original histories remain; no fresh primary HTTP retrieval is claimed.
+- Historical HCl completion reassessments retain former PARTIAL text as historical evidence; active successor scope states UNKNOWN explicitly.
+- Prior carbonate/calf seals and separate W09 review scopes remain exact and are not blanket-transferred. Coordinator owns published-head assessment, owner integration and export.
+- No maintained/shared source/output, other worker, code gate/workflow, paid provider, merge or external session mutation.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T085159Z-w10-qualified-component-assertions-successor
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: W10 qualified HCl and nominal Difco component-assertion corrections
+started_at: '2026-11-08T08:44:15.054393Z'
+reviewer:
+  identity: Codex worker10 /root author/assembler; /root/preparation_skeptic independent
+    source/assertion reviewer; /root/buffers_research retention reviewer
+  kind: agent
+  independence: self_review
+  independence_basis: Root authored this correction and native wrapper. Preparation_skeptic
+    did not author these candidates; actual prior review involvement is disclosed
+    in its exact report. Buffers_research authored the original four S1 HCl proposals
+    and reviews retention/metadata only, not independent HCl science.
+skill: .claude/skills/curate-yaml-record/SKILL.md
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: Four HCl assertions use UNKNOWN while retaining LABEL_ENUMERATION and one
+  literal UNMAPPED HCl part. Difco uses CURATED_INTERPRETATION and COMPLETE only for
+  all seven immediate ingredient names in the nominal2009 manufacturer formula. Actual
+  lot, adjustment, quantitative, source overlap, mixed-owner, role and export limits
+  remain.
+source:
+  git_revision: 3e190a0f6c5a978ca8ed7e3bc7b6a2d66935548b
+  state: working_tree
+  inputs:
+  - path: .claude/skills/curate-yaml-record/SKILL.md
+    sha256: 4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html
+    sha256: c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html
+    sha256: 1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html
+    sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html
+    sha256: 2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html
+    sha256: 30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html
+    sha256: 7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json
+    sha256: 97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html
+    sha256: afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json
+    sha256: ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json
+    sha256: 71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json
+    sha256: d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body
+    sha256: e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin
+    sha256: 6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v4/HANDOFF-v2.json
+    sha256: 70cf5f88db141fa3e8f4b863ef90e1f42c7fa8206463318a83b5a28e314383ae
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v5/HANDOFF.json
+    sha256: d5272a9fff4ad360bc098c1e8dc761a22c7b0be5c0d732a2580b831e275e5141
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v5/complete-bridge.json
+    sha256: e03918c1fe026ecbdb5b02ab1defad76c5bca12e0e1b12450ef0a1a4ec8367d5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v5/final-core/decisions.json
+    sha256: 583fe6c6e4bef0ee56ea2f6acc2bcc1344199dc5afdedf5a8879ab8cfe66c273
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v5/final-core/proposals.json
+    sha256: 2d07262b44edde7954c39df0d83e2a7e42d2d19de2dc458157cc49f9dd6070dc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v5/selection.json
+    sha256: 8493a4ed71f7bcc6d4e8fe78f769a62616f5683754b92e26be6bca27950a1985
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/accounting.json
+    sha256: 3427985b342eb1d41ac88b4cbb10b9330c2f47cd9b1b055da3512654c14e7539
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/author-freeze.json
+    sha256: c8e44ee61f052751f7c77205d3ca52b33ae98c7f85cc04fb814f0cbd1280955b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/combined-c9-bridge.json
+    sha256: d7c2436540e92033129eecc41d00637e32fee96a0679c07a442a393a16185e98
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/complete-bridge.json
+    sha256: 265d7c5caee08455c5f25569f1f650b7a9c1c7383ab4b0c759144b007b1f3c06
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json
+    sha256: 972005514af853c538b69131603eec167a8d7b3021c2a07382d148312535cbaf
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/evidence.json
+    sha256: 39d4fb9debf62d1d8d26d2e8e207812a4a79458ed87ae8e2b482b6bc9064dd80
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/proposals.json
+    sha256: 5881bd3361b824f5c3f77b92300513af8e5614355318e875693da0c4c9a7f43b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/finalization-binding.json
+    sha256: 2e882df4456a4da75d09a42fa0f967d92e0f635625aac993e61918491171311c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/inputs/bd2009-p158.png
+    sha256: 42afefdd5572bce7aa8791df7b37154196dd72ec20f32af467774da62955fe3a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/inputs/issue1201-filed-finding.json
+    sha256: dacabf396ae9703671b524bca6ab85e7c41323f486f4e67ab5ef7322b052d0fb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/inputs/triage-AUTHOR-TASK-v2.md
+    sha256: 60b9d5493fbf1d90449449d2e9a1d304b9f83cf4dcb855510d1f6a7473f86ad6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/inputs/triage-HANDOFF.json
+    sha256: 0e9eb39e24a259ecdfd1ad0c405b6aac7a38dcb3aca99f72d557452a5c57ce88
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/inputs/triage-MANIFEST.json
+    sha256: 271b343e5c7a9174286c1706e5438b858d931f28c8abc6021fc5bff682631989
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/inputs/triage-TRIAGE-v2.json
+    sha256: fcbb46e63cabc15e4d74fcf0a44cf86d6cb43edee5e634e16aa83ac7b3c3e05b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/issue-linked-correction.json
+    sha256: 6d6cd3fc8c4b54ce5f422242cece898c8d2c70331afafa4861cd2393b560f0d8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/payload-change-proof.json
+    sha256: 3df28f1e71574d519da875f6eda2de6ee354a59da1af8b4728d8977ddd72912d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/preflight.json
+    sha256: 467b57fd3245d9e2b34b5a9adecdaa22dd8557fc05a819f4d3bd45e04003d313
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml
+    sha256: 6330cf4d79ef4809ff27b6efd6b5577dfff8e40cb4d82319c843651596d7c8f1
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-difco-columbia1270.yaml
+    sha256: e35684c8a476aeb0fd9048a3fefa0ffa3522147c6c7c00b85e6f42534ff9e871
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml
+    sha256: 0cff593a94e9e563e08db52d9af3f2e87a0f43f0c086b7c09debaaf594e07aa6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml
+    sha256: f36656a1a3e2d979ae59c787cbe27bd70c967699c9fa95bcaa5a0a3ee6db8155
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml
+    sha256: c8034c07ddd1d103ec871f3cdd0bfae1b8e26a1d1d7fe8cc49d2c9a0a084bc17
+    role: target
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/author-core-retention-review-v1.json
+    sha256: ab6aa8a6aedc1041fee54575c9e7ee29b55ae0f5442e28723b2547ff283c9d6e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/scientific-review-v1.json
+    sha256: 9f1c8ed7af03810e51441f423f5054fe02bf3daac4f19cfba5b5488bce2ee582
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/selection.json
+    sha256: 1f4578cb3fff69ebfe840bd5a5a0b0068086bc23e2f7c86969ebb0c03448b75c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/source-assessment.json
+    sha256: c2e910fcb164396882f99f175a68dc231d7f1551d14cf1460f077d843bfde280
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/structural-audit.json
+    sha256: 31b1810db5b81b99f8a1f0f3f0d6dda465bb8bf63b1ea8352a5aa4918e14c2f7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/validation/command.json
+    sha256: e1316a45f16b6583670d5c3bed63943873135be8e6194df70232275a679252db
+    role: context
+  - path: reports/all_unmatched_20261107/worker-10/successor-v6/validation/narrow-native.json
+    sha256: 656e0bf65bcbecdccdf9e711aa5cf58e3a320e134fcb682699ad3034f4b71172
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: Five exact source-relative component assertion corrections and six
+    dependent source cases.
+  selection: Exactly the five payloads qualified by issue1201 comment6719268125, bound
+    by the immutable triage and current S5 selection.
+  coverage: full
+  population_size: 11
+  reviewed_target_ids:
+  - PROPOSAL:sv3-hm-difco-columbia1270
+  - PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899
+  - PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770
+  - PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216
+  - CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d
+  - CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f
+  - CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd
+  - CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd
+  - CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0
+  - KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905
+  exclusions:
+  - target: Owner identity, all molecular composition, actual historical lot, quantitative
+      recipe, aliases, roles or release approval
+    reason: Only assertion method/completeness/necessary explanation and history change;
+      component objects and all other record fields remain.
+  - target: Renewed science of retained122payloads or prior carbonate/calf corrections
+    reason: Complete retention and exact prior scope only; no blanket approval transfer.
+targets:
+- target_id: PROPOSAL:sv3-hm-difco-columbia1270
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-difco-columbia1270.yaml
+  label: Difco Columbia blood agar base (JCM1270)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Unapplied existing selected proposal. Only source-relative component
+    assertion fields and appended history change; all components, identities and quantities
+    retained.
+- target_id: PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml
+  label: Concentrated HCl reagent (NBRC / TOGO source descriptions)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Unapplied existing selected proposal. Only source-relative component
+    assertion fields and appended history change; all components, identities and quantities
+    retained.
+- target_id: PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml
+  label: Nominal 25% HCl reagent (JCM 431 / 899)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Unapplied existing selected proposal. Only source-relative component
+    assertion fields and appended history change; all components, identities and quantities
+    retained.
+- target_id: PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml
+  label: Nominal 32% HCl reagent (JCM 770)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Unapplied existing selected proposal. Only source-relative component
+    assertion fields and appended history change; all components, identities and quantities
+    retained.
+- target_id: PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml
+  label: Nominal 35% HCl reagent (TOGO M3216)
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Unapplied existing selected proposal. Only source-relative component
+    assertion fields and appended history change; all components, identities and quantities
+    retained.
+- target_id: CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json
+  selector: $.decisions[65]
+  label: Concentrated HCl
+  kind: snapshot_row
+  ownership_note: Same exact source, occurrence and owner preimages. Current assertion-dependent
+    report metadata only; historical completion reassessments retain their original-time
+    meaning.
+- target_id: CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json
+  selector: $.decisions[87]
+  label: 35% HCl
+  kind: snapshot_row
+  ownership_note: Same exact source, occurrence and owner preimages. Current assertion-dependent
+    report metadata only; historical completion reassessments retain their original-time
+    meaning.
+- target_id: CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json
+  selector: $.decisions[94]
+  label: 32% HCl
+  kind: snapshot_row
+  ownership_note: Same exact source, occurrence and owner preimages. Current assertion-dependent
+    report metadata only; historical completion reassessments retain their original-time
+    meaning.
+- target_id: CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json
+  selector: $.decisions[102]
+  label: 25% HCl
+  kind: snapshot_row
+  ownership_note: Same exact source, occurrence and owner preimages. Current assertion-dependent
+    report metadata only; historical completion reassessments retain their original-time
+    meaning.
+- target_id: CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json
+  selector: $.decisions[125]
+  label: HCl (concentrated)
+  kind: snapshot_row
+  ownership_note: Same exact source, occurrence and owner preimages. Current assertion-dependent
+    report metadata only; historical completion reassessments retain their original-time
+    meaning.
+- target_id: KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905
+  path: reports/all_unmatched_20261107/worker-10/successor-v6/final-core/decisions.json
+  selector: $.decisions[178]
+  label: Columbia blood agar base
+  kind: snapshot_row
+  ownership_note: Same exact source, occurrence and owner preimages. Current assertion-dependent
+    report metadata only; historical completion reassessments retain their original-time
+    meaning.
+checks:
+- check_id: NATIVE-NARROW
+  name: Five guarded schema checks and complete partonomy overlays
+  status: passed
+  required: true
+  summary: All five closed-schema payloads roundtrip byte-exact; both3037record overlays
+    pass partonomy; identities, component objects and native alias projections unchanged.
+  command: PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .temp/all-unmatched-worker-10/venv/bin/python
+    reports/all_unmatched_20261107/worker-10/successor-v6/scripts/validate_narrow.py
+  exit_code: 0
+  target_ids:
+  - PROPOSAL:sv3-hm-difco-columbia1270
+  - PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899
+  - PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770
+  - PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216
+  - CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d
+  - CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f
+  - CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd
+  - CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd
+  - CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0
+  - KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905
+  evidence_ids:
+  - NATIVE
+- check_id: EXACT-RETENTION
+  name: Complete case/proposal/occurrence and history retention
+  status: passed
+  required: true
+  summary: 127proposal IDs,188cases,304occurrences retained;122otherpayloads and182othercompletecaseobjects
+    exact.
+  target_ids:
+  - PROPOSAL:sv3-hm-difco-columbia1270
+  - PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899
+  - PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770
+  - PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216
+  - CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d
+  - CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f
+  - CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd
+  - CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd
+  - CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0
+  - KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905
+  evidence_ids:
+  - RETENTION
+  - BRIDGE
+- check_id: NO-APPLICATION
+  name: Maintained application and release
+  status: not_applicable
+  required: false
+  summary: Isolated proposal/report successor; no maintained application, owner merge
+    or release.
+  target_ids:
+  - PROPOSAL:sv3-hm-difco-columbia1270
+  - PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  - PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899
+  - PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770
+  - PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216
+  - CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d
+  - CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f
+  - CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd
+  - CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd
+  - CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0
+  - KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905
+evidence:
+- evidence_id: SOURCE
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-10/successor-v6/source-assessment.json
+  accessed_at: '2026-11-08T08:51:59.325167Z'
+  support: supports
+  locator: Complete exact artifact
+  snapshot_sha256: c2e910fcb164396882f99f175a68dc231d7f1551d14cf1460f077d843bfde280
+  summary: All thirteen exact primary bodies, genuine BD table/footnote and original
+    timestamps support the qualified HCl/Difco source-relative assertions.
+- evidence_id: SCIENCE
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-10/successor-v6/reviews/skeptic/scientific-review-v1.json
+  accessed_at: '2026-11-08T08:51:59.325266Z'
+  support: supports
+  locator: Complete exact artifact
+  snapshot_sha256: 9f1c8ed7af03810e51441f423f5054fe02bf3daac4f19cfba5b5488bce2ee582
+  summary: Separate author-independent exact five-payload method/completeness review;
+    actual prior involvement disclosed.
+- evidence_id: RETENTION
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-10/successor-v6/reviews/retention/author-core-retention-review-v1.json
+  accessed_at: '2026-11-08T08:51:59.325337Z'
+  support: supports
+  locator: Complete exact artifact
+  snapshot_sha256: ab6aa8a6aedc1041fee54575c9e7ee29b55ae0f5442e28723b2547ff283c9d6e
+  summary: Full cohort and exact component/history/source retention; original HCl
+    author provides metadata review only.
+- evidence_id: NATIVE
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-10/successor-v6/validation/narrow-native.json
+  accessed_at: '2026-11-08T08:51:59.325381Z'
+  support: supports
+  locator: Complete exact artifact
+  snapshot_sha256: 656e0bf65bcbecdccdf9e711aa5cf58e3a320e134fcb682699ad3034f4b71172
+  summary: Five closed-schema guarded byte roundtrips, complete partonomy overlays
+    and identical component/identity/alias projections.
+- evidence_id: BRIDGE
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-10/successor-v6/combined-c9-bridge.json
+  accessed_at: '2026-11-08T08:51:59.325416Z'
+  support: supports
+  locator: Complete exact artifact
+  snapshot_sha256: d7c2436540e92033129eecc41d00637e32fee96a0679c07a442a393a16185e98
+  summary: Exact current and cumulative source/proposal accounting; prior carbonate
+    and calf corrections retained without blanket review transfer.
+- evidence_id: ISSUE
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-10/successor-v6/issue-linked-correction.json
+  accessed_at: '2026-11-08T08:51:59.325554Z'
+  support: supports
+  locator: Complete exact artifact
+  snapshot_sha256: 6d6cd3fc8c4b54ce5f422242cece898c8d2c70331afafa4861cd2393b560f0d8
+  summary: Both original W09 finding IDs and the independent qualified split remain,
+    without rewriting historical findings or GitHub closure.
+assessments:
+- assessment_id: ASSERTION-1
+  area: evidence
+  topic: Source-relative component method and list completeness
+  outcome: supported
+  summary: 'CURATED_INTERPRETATION covers the seven immediate ingredient names in
+    the nominal Difco Columbia Blood Agar Base formula published in the BD Difco &
+    BBL Manual, second edition (2009), printed page 158 / PDF page 170. COMPLETE applies
+    only to that nominal constituent-name list: all seven listed immediate ingredients
+    are represented. This is not a complete molecular composition, an exact historical
+    JCM1270 lot formulation, or a quantitative recipe transcription. The manufacturer
+    performance-adjustment/supplementation footnote and unknown actual JCM lot remain
+    explicit limitations. Component quantities and dry-mass ratios are not asserted.
+    Blood and reconstitution water are not dry-base components. Existing mixed-owner
+    partition and owner/role/export holds remain.'
+  target_ids:
+  - PROPOSAL:sv3-hm-difco-columbia1270
+  evidence_ids:
+  - SOURCE
+  - SCIENCE
+  - NATIVE
+  - ISSUE
+  details: '{"changed_existing_fields": ["component_assertion.method", "component_assertion.completeness",
+    "component_assertion.notes"], "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml",
+    "sha256": "b9b6d6679fdafd46c3400f9fec807ad71b17494adcce181d0fb464a0ea08f18c"},
+    "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-difco-columbia1270.yaml",
+    "sha256": "e35684c8a476aeb0fd9048a3fefa0ffa3522147c6c7c00b85e6f42534ff9e871"},
+    "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact":
+    true, "new_history_events": 1, "whole_owner_or_release_approval": false}'
+- assessment_id: ASSERTION-2
+  area: evidence
+  topic: Source-relative component method and list completeness
+  outcome: supported
+  summary: 'Component-list completeness is UNKNOWN: the cited receiving recipes name
+    and dose HCl but do not establish the complete acid-reagent formulation or explicitly
+    identify omitted constituents. Separately listed receiving-stock water is not
+    evidence of the acid reagent carrier.'
+  target_ids:
+  - PROPOSAL:sv3-hm-concentrated_hcl_nbrc_togo_source_reagent
+  evidence_ids:
+  - SOURCE
+  - SCIENCE
+  - NATIVE
+  - ISSUE
+  details: '{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"],
+    "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml",
+    "sha256": "ca674da3144e40e09c43e001d5a15e3ee3c911ff1cda19b2bbf674564b43245e"},
+    "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml",
+    "sha256": "6330cf4d79ef4809ff27b6efd6b5577dfff8e40cb4d82319c843651596d7c8f1"},
+    "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact":
+    true, "new_history_events": 1, "whole_owner_or_release_approval": false}'
+- assessment_id: ASSERTION-3
+  area: evidence
+  topic: Source-relative component method and list completeness
+  outcome: supported
+  summary: 'Component-list completeness is UNKNOWN: the cited receiving recipes name
+    and dose HCl but do not establish the complete acid-reagent formulation or explicitly
+    identify omitted constituents. Separately listed receiving-stock water is not
+    evidence of the acid reagent carrier.'
+  target_ids:
+  - PROPOSAL:sv3-hm-hcl_nominal25percent_jcm431_899
+  evidence_ids:
+  - SOURCE
+  - SCIENCE
+  - NATIVE
+  - ISSUE
+  details: '{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"],
+    "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml",
+    "sha256": "6b15570540ba19364f82042d6181dbea68d098282d6fa9d5616e348539cf4c1d"},
+    "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml",
+    "sha256": "0cff593a94e9e563e08db52d9af3f2e87a0f43f0c086b7c09debaaf594e07aa6"},
+    "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact":
+    true, "new_history_events": 1, "whole_owner_or_release_approval": false}'
+- assessment_id: ASSERTION-4
+  area: evidence
+  topic: Source-relative component method and list completeness
+  outcome: supported
+  summary: 'Component-list completeness is UNKNOWN: the cited receiving recipes name
+    and dose HCl but do not establish the complete acid-reagent formulation or explicitly
+    identify omitted constituents. Separately listed receiving-stock water is not
+    evidence of the acid reagent carrier.'
+  target_ids:
+  - PROPOSAL:sv3-hm-hcl_nominal32percent_jcm770
+  evidence_ids:
+  - SOURCE
+  - SCIENCE
+  - NATIVE
+  - ISSUE
+  details: '{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"],
+    "before_capture": {"root": "artifact", "path": "successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml",
+    "sha256": "ed2406640e1c8af8909d7ee2e6f74154f058404054531d52310e4d7665a82d53"},
+    "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml",
+    "sha256": "f36656a1a3e2d979ae59c787cbe27bd70c967699c9fa95bcaa5a0a3ee6db8155"},
+    "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact":
+    true, "new_history_events": 1, "whole_owner_or_release_approval": false}'
+- assessment_id: ASSERTION-5
+  area: evidence
+  topic: Source-relative component method and list completeness
+  outcome: supported
+  summary: 'Component-list completeness is UNKNOWN: the cited receiving recipes name
+    and dose HCl but do not establish the complete acid-reagent formulation or explicitly
+    identify omitted constituents. Separately listed receiving-stock water is not
+    evidence of the acid reagent carrier.'
+  target_ids:
+  - PROPOSAL:sv3-hm-hcl_nominal35percent_togo_m3216
+  evidence_ids:
+  - SOURCE
+  - SCIENCE
+  - NATIVE
+  - ISSUE
+  details: '{"changed_existing_fields": ["component_assertion.completeness", "component_assertion.notes"],
+    "before_capture": {"root": "artifact", "path": "successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml",
+    "sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13"},
+    "after_capture": {"root": "artifact", "path": "successor-v6/proposed/sv3-hm-hcl_nominal35percent_togo_m3216.yaml",
+    "sha256": "c8034c07ddd1d103ec871f3cdd0bfae1b8e26a1d1d7fe8cc49d2c9a0a084bc17"},
+    "all_component_objects_and_quantities_unchanged": true, "original_history_prefix_exact":
+    true, "new_history_events": 1, "whole_owner_or_release_approval": false}'
+- assessment_id: CASE-65
+  area: consistency
+  topic: Exact source-case and current assertion dependencies
+  outcome: supported
+  summary: Original source, occurrence IDs, disposition, owner hashes, applicability
+    and proposal IDs remain. Current assertion dependency points to the exact corrected
+    payload. Explicitly historical HCl completion reassessments remain unchanged and
+    are not treated as current PARTIAL assertions; case178 corrects its active nominal-list
+    explanation.
+  target_ids:
+  - CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d
+  evidence_ids:
+  - RETENTION
+  - BRIDGE
+  - SCIENCE
+  details: '{"case_id": "CM_NAME:82be7c653a294d954b7450332f68aa4f791bda0f604cb12bb923f0826094900d",
+    "occurrence_ids": ["CM_OCC:a9a9cba2d7fee305379ca1951a6a9c16542a85009957d70c52bc1ff8d2e64046",
+    "CM_OCC:238b33c03ed3a21162867efa7bc1b87cb9a1a4814a3d08712c6238b06cfd90cd", "CM_OCC:ff1996a4eebebfb7024d98194e96c34c80f85d9ee52119cf18b505e716f9ae50",
+    "CM_OCC:0862ab4cbb5a833a1bcafea8bbeaebf0805a4bbd315598ab57cea61265948e32", "CM_OCC:cc7ac5abc8e19325fbb8f49abcd6258103594091bbdcfc82448a24bfc0fd92f5",
+    "CM_OCC:6f7b290e09c1b00f8a53a8ddb40fdc6399ef0e05babd05618a6e688919fadc80", "CM_OCC:46f5fbcb21d14fec3498797dbd720bdbdc08907d84253213a2dfa272c91ce5a5"],
+    "proposal_ids": ["sv3-hm-concentrated_hcl_nbrc_togo_source_reagent"], "fresh_whole_owner_or_source_acceptance":
+    false}'
+- assessment_id: CASE-87
+  area: consistency
+  topic: Exact source-case and current assertion dependencies
+  outcome: supported
+  summary: Original source, occurrence IDs, disposition, owner hashes, applicability
+    and proposal IDs remain. Current assertion dependency points to the exact corrected
+    payload. Explicitly historical HCl completion reassessments remain unchanged and
+    are not treated as current PARTIAL assertions; case178 corrects its active nominal-list
+    explanation.
+  target_ids:
+  - CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f
+  evidence_ids:
+  - RETENTION
+  - BRIDGE
+  - SCIENCE
+  details: '{"case_id": "CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f",
+    "occurrence_ids": ["CM_OCC:8b301b8884da9722a128723d3f1b41c1f1b807a3d57ecd3453c1690c98733ac1"],
+    "proposal_ids": ["sv3-hm-hcl_nominal35percent_togo_m3216"], "fresh_whole_owner_or_source_acceptance":
+    false}'
+- assessment_id: CASE-94
+  area: consistency
+  topic: Exact source-case and current assertion dependencies
+  outcome: supported
+  summary: Original source, occurrence IDs, disposition, owner hashes, applicability
+    and proposal IDs remain. Current assertion dependency points to the exact corrected
+    payload. Explicitly historical HCl completion reassessments remain unchanged and
+    are not treated as current PARTIAL assertions; case178 corrects its active nominal-list
+    explanation.
+  target_ids:
+  - CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd
+  evidence_ids:
+  - RETENTION
+  - BRIDGE
+  - SCIENCE
+  details: '{"case_id": "CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd",
+    "occurrence_ids": ["CM_OCC:6fcf99e4a0da721b6a132c6acb830d53f661801ecc5f9c3496f4f3bcf49a0215"],
+    "proposal_ids": ["sv3-hm-hcl_nominal32percent_jcm770"], "fresh_whole_owner_or_source_acceptance":
+    false}'
+- assessment_id: CASE-102
+  area: consistency
+  topic: Exact source-case and current assertion dependencies
+  outcome: supported
+  summary: Original source, occurrence IDs, disposition, owner hashes, applicability
+    and proposal IDs remain. Current assertion dependency points to the exact corrected
+    payload. Explicitly historical HCl completion reassessments remain unchanged and
+    are not treated as current PARTIAL assertions; case178 corrects its active nominal-list
+    explanation.
+  target_ids:
+  - CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd
+  evidence_ids:
+  - RETENTION
+  - BRIDGE
+  - SCIENCE
+  details: '{"case_id": "CM_NAME:c3ddeff7b336f92db8d0d6b348637136e4ccf4b13ff3ced40c14fd5ced0a23cd",
+    "occurrence_ids": ["CM_OCC:38989dc728f37eae111d076594dd5dec3dcbf2af729e8bc41a6047a69e134b75",
+    "CM_OCC:836abf2fb49317a625bb625da256797566f1510199001b08d95e44d88d5c6043"], "proposal_ids":
+    ["sv3-hm-hcl_nominal25percent_jcm431_899"], "fresh_whole_owner_or_source_acceptance":
+    false}'
+- assessment_id: CASE-125
+  area: consistency
+  topic: Exact source-case and current assertion dependencies
+  outcome: supported
+  summary: Original source, occurrence IDs, disposition, owner hashes, applicability
+    and proposal IDs remain. Current assertion dependency points to the exact corrected
+    payload. Explicitly historical HCl completion reassessments remain unchanged and
+    are not treated as current PARTIAL assertions; case178 corrects its active nominal-list
+    explanation.
+  target_ids:
+  - CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0
+  evidence_ids:
+  - RETENTION
+  - BRIDGE
+  - SCIENCE
+  details: '{"case_id": "CM_NAME:e6eb89a93f41af1d311a47119f45d55b184d8241d1536ef0c5b61deb79ec36d0",
+    "occurrence_ids": ["CM_OCC:51b1ee8e8f86684d1dd12b5c1b09d01a4af34cfd0f6e088cd88a5de66a862840"],
+    "proposal_ids": ["sv3-hm-concentrated_hcl_nbrc_togo_source_reagent"], "fresh_whole_owner_or_source_acceptance":
+    false}'
+- assessment_id: CASE-178
+  area: consistency
+  topic: Exact source-case and current assertion dependencies
+  outcome: supported
+  summary: Original source, occurrence IDs, disposition, owner hashes, applicability
+    and proposal IDs remain. Current assertion dependency points to the exact corrected
+    payload. Explicitly historical HCl completion reassessments remain unchanged and
+    are not treated as current PARTIAL assertions; case178 corrects its active nominal-list
+    explanation.
+  target_ids:
+  - KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905
+  evidence_ids:
+  - RETENTION
+  - BRIDGE
+  - SCIENCE
+  details: '{"case_id": "KG_CASE:d46699260f46a04bc704500d3c6d4e42c066e851c05cec51d6e4d25a1a899905",
+    "occurrence_ids": [], "proposal_ids": ["sv3-hm-difco-columbia1270"], "fresh_whole_owner_or_source_acceptance":
+    false}'
+findings: []
+actions: []
+limitations:
+- Fresh scientific review is limited to source-relative component method/completeness
+  and their exact explanations. It does not approve whole-owner identity, historical
+  lots, roles or export.
+- COMPLETE applies solely to the nominal2009 seven immediate ingredient-name list.
+  It does not establish the actual JCM lot, all molecular species, dry-mass fractions
+  or quantitative part amounts. Performance adjustment and mixed-owner partition remain
+  held.
+- Receiving-stock water is not acid-reagent carrier evidence; all HCl literal strengths,
+  unknown basis/carrier/form and cross-source overlap limits remain.
+- Both W09 finding IDs and the qualified split remain. Original blanket five-target
+  UNKNOWN is not adopted. No historical native finding or GitHub issue is closed by
+  this candidate review.
+- started_at is the earliest recorded S6 preflight milestone, not a recovered full
+  reading start. Exact earlier reading start is unknown; finished_at is actual native
+  assembly completion. Independent reviewer times belong to their own frozen reports.
+- Original source retrieval times and original histories remain; no fresh primary
+  HTTP retrieval is claimed.
+- Historical HCl completion reassessments retain former PARTIAL text as historical
+  evidence; active successor scope states UNKNOWN explicitly.
+- Prior carbonate/calf seals and separate W09 review scopes remain exact and are not
+  blanket-transferred. Coordinator owns published-head assessment, owner integration
+  and export.
+- No maintained/shared source/output, other worker, code gate/workflow, paid provider,
+  merge or external session mutation.
+finished_at: '2026-11-08T08:51:59.325853Z'
+```

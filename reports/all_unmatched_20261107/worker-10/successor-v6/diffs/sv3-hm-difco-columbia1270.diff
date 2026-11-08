@@ -1,0 +1,60 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v6/proposed/sv3-hm-difco-columbia1270.yaml
+@@ -96,6 +96,28 @@
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T08:46:08.560117+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_SOURCE_RELATIVE_COMPONENT_ASSERTION
++  changes: 'Issue #1201, W09-W10-SKEPTIC-DIFCO-COMPONENT-METHOD, W09-W10-SKEPTIC-COMPONENT-CLOSURE:
++    corrected only the component assertion fields component_assertion.method, component_assertion.completeness,
++    component_assertion.notes. CURATED_INTERPRETATION covers the seven immediate ingredient
++    names in the nominal Difco Columbia Blood Agar Base formula published in the BD
++    Difco & BBL Manual, second edition (2009), printed page 158 / PDF page 170. COMPLETE
++    applies only to that nominal constituent-name list: all seven listed immediate
++    ingredients are represented. This is not a complete molecular composition, an
++    exact historical JCM1270 lot formulation, or a quantitative recipe transcription.
++    The manufacturer performance-adjustment/supplementation footnote and unknown actual
++    JCM lot remain explicit limitations. Component quantities and dry-mass ratios
++    are not asserted. Blood and reconstitution water are not dry-base components.
++    Existing mixed-owner partition and owner/role/export holds remain. Preserved all
++    component objects, names, identities, quantities, sources, original history, supplied-form
++    and source-case scope, and every remaining overlap/partition/role/export hold.
++    This is an LLM-assisted source-relative assertion correction, not human scientific
++    review, a new owner decision or release approval. Filed qualified triage: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719268125'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
+ supplied_form:
+ - name: Columbia blood agar base
+   supplier: BD-Difco
+@@ -138,8 +160,8 @@
+   reference_scope: MIM_CATALOG
+   component_id: CHEBI:2509
+ component_assertion:
+-  method: LABEL_ENUMERATION
+-  completeness: PARTIAL
++  method: CURATED_INTERPRETATION
++  completeness: COMPLETE
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf
+@@ -159,7 +181,13 @@
+       inputs). The older mirrored manual has different heart wording and BBL proportions
+       and is retained as separate version context. The old search wrapper and failed
+       official/mirror requests remain historical leads, not primary manual evidence.
+-  notes: 'Seven named constituents only, scoped to the nominal 2009 Difco manufacturer
+-    formulation. PARTIAL is retained for the source-qualified JCM1270 input: exact
+-    historical lot and any performance-related adjustments are unverified. No blood
+-    or reconstitution water is a dry-base component.'
++  notes: 'CURATED_INTERPRETATION covers the seven immediate ingredient names in the
++    nominal Difco Columbia Blood Agar Base formula published in the BD Difco & BBL
++    Manual, second edition (2009), printed page 158 / PDF page 170. COMPLETE applies
++    only to that nominal constituent-name list: all seven listed immediate ingredients
++    are represented. This is not a complete molecular composition, an exact historical
++    JCM1270 lot formulation, or a quantitative recipe transcription. The manufacturer
++    performance-adjustment/supplementation footnote and unknown actual JCM lot remain
++    explicit limitations. Component quantities and dry-mass ratios are not asserted.
++    Blood and reconstitution water are not dry-base components. Existing mixed-owner
++    partition and owner/role/export holds remain.'

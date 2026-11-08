@@ -1,0 +1,590 @@
+{
+  "scope": "Bounded triage of two W09 finding groups against five W10 complete payloads at exact published c9a96da; not a re-audit of127 or a review of coordinator-authored combined Columbia bytes.",
+  "head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+  "reviewer": "OpenAI Codex /root/step7d_science_c",
+  "independence": "Authored none of these W10 source proposals or W09 findings. Separate authored nominal Columbia reconciliation is excluded; this task decides current W10 assertion method/source-relative closure only.",
+  "at": "2026-11-08T08:26:23.686393Z",
+  "original_findings": [
+    {
+      "finding_id": "W09-W10-SKEPTIC-DIFCO-COMPONENT-METHOD",
+      "disposition": "confirmed_method_correction",
+      "issue_route": "#1201 source-assertion semantic correction; root deduplicates/posts before fix"
+    },
+    {
+      "finding_id": "W09-W10-SKEPTIC-COMPONENT-CLOSURE",
+      "disposition": "confirmed_PARTIAL_semantic_defect_but_split_fix",
+      "hcl": "Four current assertions UNKNOWN. Receiving recipes give acid labels/doses, not acid formulation closure or explicitly omitted constituent list.",
+      "difco": "Recommend COMPLETE for the already expressly declared nominal2009 seven-input source-list scope, not automatic UNKNOWN. The original blanket five-target UNKNOWN recommendation is overbroad.",
+      "alternative": "UNKNOWN is defensible only if the author instead explicitly chooses an actual historical JCM-lot constituent assertion whose closure is not established. That is not the present declared nominal2009 list scope.",
+      "issue_route": "#1201; keep original findingID and qualification, no new duplicate defect"
+    }
+  ],
+  "contract": {
+    "MAPPING_SEMANTICS": "§6 one-level has-parts; completeness relative to cited evidence, not identity or complete culture recipe",
+    "ComponentMethodEnum": "LABEL_ENUMERATION means parts explicitly in a source label; CURATED_INTERPRETATION fits the present names-only manufacturer-formula interpretation; RECIPE_TRANSCRIPTION requires deliberately transcribed constituents and quantities.",
+    "ComponentCompletenessEnum": "COMPLETE source explicitly establishes listed constituents; PARTIAL source explicitly indicates omitted additional constituents; UNKNOWN source does not settle list completeness."
+  },
+  "difco_evidence_conclusion": {
+    "primary": "Genuine BD Difco & BBL Manual SecondEdition2009 printed158/PDF170, SHAe5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7; fullpage visually inspected via exact localPDF raster.",
+    "table": [
+      "Pancreatic digest of casein10g",
+      "Proteose PeptoneNo3 5g",
+      "Yeast extract5g",
+      "Beef heart infusion from500g 3g",
+      "Corn starch1g",
+      "Sodium chloride5g",
+      "Agar15g"
+    ],
+    "direction": "44g dry product per1L purified water; subsequent blood addition is separate. JCM1270 names44g BD-Difco base and separately50ml sheep blood/950ml water.",
+    "nominal_closure": "The formula table gives the complete nominal immediate ingredient set. It is not a selective example list; all7 names are represented. No quantitative parts are introduced by this recommendation.",
+    "footnote": "Adjustment/supplementation as required limits actual batch identity/composition; it does not itself prove parts omitted from the stated nominal seven-input formula. Preserve the variability qualification and actual historical JCM-lot unknown.",
+    "quantitative_gap": "Unspecified ratios in current components or unresolved term IDs do not make constituent-name closure PARTIAL. The schema separates method, parts, quantities, completeness and grounding.",
+    "not_approved": "No conversion to exact dry mass fractions, exact historical lot composition, BBL/EH identity, new global aliases or maintained mixed-Columbia ownership partition."
+  },
+  "rows": [
+    {
+      "proposal_id": "sv3-hm-difco-columbia1270",
+      "payload_sha256": "b9b6d6679fdafd46c3400f9fec807ad71b17494adcce181d0fb464a0ea08f18c",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-difco-columbia1270.yaml",
+      "current_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf",
+            "source_record": "BD Difco & BBL Manual, Second Edition (2009), Columbia Agars, printed page158 / PDF page170",
+            "notes": "Recovered manufacturer-authored BD Difco & BBL Manual, second edition 2009, printed p158 (PDF page170), hosted by NMSU. Original capture 2026-11-08T06:55:09.048187+00:00, SHA256 e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7. The approximate per-liter Difco table lists pancreatic digest of casein10g, Proteose Peptone No.3 5g, yeast extract5g, beef heart infusion from500g 3g, corn starch1g, sodium chloride5g and agar15g; the footnote allows adjustment/supplementation to meet performance criteria. It directs suspension of44g powder in1L purified water. Those are manufacturer preparation/formula statements, not dry-product mass fractions, final yield, or an identified historical JCM lot. The same page separately gives BBL42.5g (including13.5g agar, meat peptic digest and heart pancreatic digest) and DifcoEH39g (including12g agar and different nutrient inputs). The older mirrored manual has different heart wording and BBL proportions and is retained as separate version context. The old search wrapper and failed official/mirror requests remain historical leads, not primary manual evidence."
+          }
+        ],
+        "notes": "Seven named constituents only, scoped to the nominal 2009 Difco manufacturer formulation. PARTIAL is retained for the source-qualified JCM1270 input: exact historical lot and any performance-related adjustments are unverified. No blood or reconstitution water is a dry-base component."
+      },
+      "components": [
+        {
+          "component_name": "Pancreatic digest of casein",
+          "reference_scope": "UNMAPPED"
+        },
+        {
+          "component_name": "Proteose Peptone No.3",
+          "reference_scope": "UNMAPPED"
+        },
+        {
+          "component_name": "Yeast extract",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "FOODON:03315426"
+        },
+        {
+          "component_name": "Beef heart infusion",
+          "reference_scope": "UNMAPPED"
+        },
+        {
+          "component_name": "Corn starch",
+          "reference_scope": "UNMAPPED"
+        },
+        {
+          "component_name": "Sodium chloride",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:26710"
+        },
+        {
+          "component_name": "Agar",
+          "reference_scope": "MIM_CATALOG",
+          "component_id": "CHEBI:2509"
+        }
+      ],
+      "recommendation": {
+        "method": "CURATED_INTERPRETATION",
+        "completeness": "COMPLETE"
+      },
+      "scope": "All seven immediate constituent names in the nominal2009 Difco manufacturer formula, not every molecular species or historical JCM lot.",
+      "preserve": "Every original component/reference/quantity/identity/supplied-form/case/source/negative hold/history object; append only truthful correction history.",
+      "primary_evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin",
+          "sha256": "6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3",
+          "snapshot": "blobs/6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "sv3-hm-sv1-kg-jcm-1270",
+            "kind": "primary_source",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1270",
+            "original_accessed_at": "2026-11-08T05:54:01.074503+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin",
+              "sha256": "6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin",
+            "sha256": "6114dc359e93d2634433847bc1dd7a373866ee08b508e200e8e9b1827afa72c3",
+            "locator": "Complete captured response; inspected fields/recipe steps/concepts noted per case",
+            "supports_or_contradicts": "Source-specific evidence; applicability and limits are explicitly assessed in the linked successor case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/sv1-kg-jcm-1270.bin"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body",
+          "sha256": "e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7",
+          "snapshot": "blobs/e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "sv3-hm-bio-new-bd-second-edition-nmsu",
+            "kind": "primary_source",
+            "url": "https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf",
+            "original_accessed_at": "2026-11-08T06:55:09.048187+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body",
+              "sha256": "e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body",
+            "sha256": "e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7",
+            "locator": "Manufacturer-authored2009 second edition hosted by NMSU; title/copyright and complete Columbia sectionpp155–159 inspected; p158 table visually checked against PDFpage170. Difco,BBL,EH formulas and powder doses distinct.",
+            "supports_or_contradicts": "Actual 2009 second-edition PDF supports only its nominal printed formulation; older edition is version context and HTTP404 bodies are failed attempts. No historical lot equivalence."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/captures/bd-second-edition-nmsu.body"
+        }
+      ]
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "payload_sha256": "ca674da3144e40e09c43e001d5a15e3ee3c911ff1cda19b2bbf674564b43245e",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-concentrated_hcl_nbrc_togo_source_reagent.yaml",
+      "current_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1116",
+            "source_record": "Concentrated HCl reagent (NBRC / TOGO source descriptions)",
+            "notes": "NBRC 1116, 1195, 1196 and 1200 and TOGO M2186, M2708 and M3181 explicitly use volume-dosed concentrated HCl reagent. This record denotes the qualitative source-described acid preparation, with variable or unspecified strength, not pure gaseous HCl or a certified commercial formulation. It preserves the source reagent boundary at UNDEFINED_MIXTURE granularity. NBRC 1200 prints 51.3 mL where NBRC 1195/1196 print 51.3 microlitres; these receiving-stock quantities remain unresolved and are not used to derive acid strength."
+          },
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1195",
+            "source_record": "Concentrated HCl reagent (NBRC / TOGO source descriptions)",
+            "notes": "NBRC 1116, 1195, 1196 and 1200 and TOGO M2186, M2708 and M3181 explicitly use volume-dosed concentrated HCl reagent. This record denotes the qualitative source-described acid preparation, with variable or unspecified strength, not pure gaseous HCl or a certified commercial formulation. It preserves the source reagent boundary at UNDEFINED_MIXTURE granularity. NBRC 1200 prints 51.3 mL where NBRC 1195/1196 print 51.3 microlitres; these receiving-stock quantities remain unresolved and are not used to derive acid strength."
+          },
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196",
+            "source_record": "Concentrated HCl reagent (NBRC / TOGO source descriptions)",
+            "notes": "NBRC 1116, 1195, 1196 and 1200 and TOGO M2186, M2708 and M3181 explicitly use volume-dosed concentrated HCl reagent. This record denotes the qualitative source-described acid preparation, with variable or unspecified strength, not pure gaseous HCl or a certified commercial formulation. It preserves the source reagent boundary at UNDEFINED_MIXTURE granularity. NBRC 1200 prints 51.3 mL where NBRC 1195/1196 print 51.3 microlitres; these receiving-stock quantities remain unresolved and are not used to derive acid strength."
+          },
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1200",
+            "source_record": "Concentrated HCl reagent (NBRC / TOGO source descriptions)",
+            "notes": "NBRC 1116, 1195, 1196 and 1200 and TOGO M2186, M2708 and M3181 explicitly use volume-dosed concentrated HCl reagent. This record denotes the qualitative source-described acid preparation, with variable or unspecified strength, not pure gaseous HCl or a certified commercial formulation. It preserves the source reagent boundary at UNDEFINED_MIXTURE granularity. NBRC 1200 prints 51.3 mL where NBRC 1195/1196 print 51.3 microlitres; these receiving-stock quantities remain unresolved and are not used to derive acid strength."
+          },
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2186",
+            "source_record": "Concentrated HCl reagent (NBRC / TOGO source descriptions)",
+            "notes": "NBRC 1116, 1195, 1196 and 1200 and TOGO M2186, M2708 and M3181 explicitly use volume-dosed concentrated HCl reagent. This record denotes the qualitative source-described acid preparation, with variable or unspecified strength, not pure gaseous HCl or a certified commercial formulation. It preserves the source reagent boundary at UNDEFINED_MIXTURE granularity. NBRC 1200 prints 51.3 mL where NBRC 1195/1196 print 51.3 microlitres; these receiving-stock quantities remain unresolved and are not used to derive acid strength."
+          },
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2708",
+            "source_record": "Concentrated HCl reagent (NBRC / TOGO source descriptions)",
+            "notes": "NBRC 1116, 1195, 1196 and 1200 and TOGO M2186, M2708 and M3181 explicitly use volume-dosed concentrated HCl reagent. This record denotes the qualitative source-described acid preparation, with variable or unspecified strength, not pure gaseous HCl or a certified commercial formulation. It preserves the source reagent boundary at UNDEFINED_MIXTURE granularity. NBRC 1200 prints 51.3 mL where NBRC 1195/1196 print 51.3 microlitres; these receiving-stock quantities remain unresolved and are not used to derive acid strength."
+          },
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181",
+            "source_record": "Concentrated HCl reagent (NBRC / TOGO source descriptions)",
+            "notes": "NBRC 1116, 1195, 1196 and 1200 and TOGO M2186, M2708 and M3181 explicitly use volume-dosed concentrated HCl reagent. This record denotes the qualitative source-described acid preparation, with variable or unspecified strength, not pure gaseous HCl or a certified commercial formulation. It preserves the source reagent boundary at UNDEFINED_MIXTURE granularity. NBRC 1200 prints 51.3 mL where NBRC 1195/1196 print 51.3 microlitres; these receiving-stock quantities remain unresolved and are not used to derive acid strength."
+          }
+        ],
+        "notes": "No percentage, molarity, aqueous solvent, supplier, grade, excipients or exact equivalence between source lots is established. This bounded qualitative preparation supports source association only; quantitative stock reconstruction and equivalence to a specified acid product remain unapproved. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected."
+      },
+      "components": [
+        {
+          "component_name": "HCl",
+          "reference_scope": "UNMAPPED",
+          "source": "Qualitative concentrated reagent label; neither solvent identity nor numerical concentration is asserted."
+        }
+      ],
+      "recommendation": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN"
+      },
+      "scope": "Source-named HCl reagent constituent only; supplied percentage/carrier/complete formulation is unspecified.",
+      "preserve": "Every original component/reference/quantity/identity/supplied-form/case/source/negative hold/history object; append only truthful correction history.",
+      "primary_evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html",
+          "sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df",
+          "snapshot": "blobs/c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-03edca67ae96a682",
+            "kind": "primary_source",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1196",
+            "original_accessed_at": "2026-11-08T05:07:23.448655+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/03edca67ae96a682b0a2.html",
+              "sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html",
+            "sha256": "c9735043c3a4a84b048702349db6eef46190f8d7dbad242007906ec2e9a2c6df",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/03edca67ae96a682b0a2.html"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html",
+          "sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71",
+          "snapshot": "blobs/7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-ba7a82033a7b9478",
+            "kind": "primary_source",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1200",
+            "original_accessed_at": "2026-11-08T05:07:23.934477+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/ba7a82033a7b94780277.html",
+              "sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html",
+            "sha256": "7472a0a5605235fb7937248d32f4a6eadb2865bde3e23ca866f223ef47028b71",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/ba7a82033a7b94780277.html"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html",
+          "sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b",
+          "snapshot": "blobs/afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-f41f350dc810b643",
+            "kind": "primary_source",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1195",
+            "original_accessed_at": "2026-11-08T05:07:24.472469+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/f41f350dc810b64364ff.html",
+              "sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html",
+            "sha256": "afa778a9246d6d82f82c26cfa5cf6c01bc552932282a8bc76c22dfdc73d2d43b",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/f41f350dc810b64364ff.html"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html",
+          "sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a",
+          "snapshot": "blobs/1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-76e91583349d0f75",
+            "kind": "primary_source",
+            "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1116",
+            "original_accessed_at": "2026-11-08T05:07:33.932562+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/76e91583349d0f75f784.html",
+              "sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html",
+            "sha256": "1137719d22b520c3bc74f9d1498c841ab4a2f3a490cdef81f841429c149fe81a",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/76e91583349d0f75f784.html"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json",
+          "sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28",
+          "snapshot": "blobs/ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-final-M2708",
+            "kind": "primary_source",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2708",
+            "original_accessed_at": "2026-11-08T05:19:06.952451+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/final-M2708.json",
+              "sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json",
+            "sha256": "ba241efccbbcc28b35af70a428e1bcf9e31e025953419ec38e568b5395a1db28",
+            "locator": "Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181)",
+            "supports_or_contradicts": "M2186 prints3mL HCl in chelated-iron stock; M2708 prints1.5mL in its chelated-iron stock; M3181 prints0.25mL/L in trace metals. None specifies acid strength; not direct final-medium HCl mass."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/final-M2708.json"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json",
+          "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f",
+          "snapshot": "blobs/71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-final-M3181",
+            "kind": "primary_source",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3181",
+            "original_accessed_at": "2026-11-08T05:19:06.952695+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/final-M3181.json",
+              "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json",
+            "sha256": "71939c80e304e075960531f345c9393739a9cf96eb6c5667035be38db052543f",
+            "locator": "Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181)",
+            "supports_or_contradicts": "M2186 prints3mL HCl in chelated-iron stock; M2708 prints1.5mL in its chelated-iron stock; M3181 prints0.25mL/L in trace metals. None specifies acid strength; not direct final-medium HCl mass."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/final-M3181.json"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json",
+          "sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5",
+          "snapshot": "blobs/d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-final-M2186",
+            "kind": "primary_source",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2186",
+            "original_accessed_at": "2026-11-08T05:08:24.795803+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/reused-worker10-M2186.json",
+              "sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json",
+            "sha256": "d25a4005bb73ba59f250069267a20fbc09410c9333edbd0d1d276118087d66b5",
+            "locator": "Complete source; concentrated HCl row inside Chelated Iron Solution (M2186/M2708) or Trace metals (M3181)",
+            "supports_or_contradicts": "M2186 prints3mL HCl in chelated-iron stock; M2708 prints1.5mL in its chelated-iron stock; M3181 prints0.25mL/L in trace metals. None specifies acid strength; not direct final-medium HCl mass."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/reused-worker10-M2186.json"
+        }
+      ]
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "payload_sha256": "6b15570540ba19364f82042d6181dbea68d098282d6fa9d5616e348539cf4c1d",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal25percent_jcm431_899.yaml",
+      "current_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431",
+            "source_record": "Nominal 25% HCl reagent (JCM 431 / 899)",
+            "notes": "JCM 431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively 12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent boundary is represented without equating the two complete trace-element mixtures."
+          },
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899",
+            "source_record": "Nominal 25% HCl reagent (JCM 431 / 899)",
+            "notes": "JCM 431 and JCM 899 use nominal 25% HCl in trace-element preparation, respectively 12.5 mL and 5 mL per printed receiving stock. The common nominal acid-reagent boundary is represented without equating the two complete trace-element mixtures."
+          }
+        ],
+        "notes": "Percent basis, solvent and supplied grade remain unknown. Different receiving-stock addition volumes are not evidence of different acid concentrations. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected."
+      },
+      "components": [
+        {
+          "component_name": "HCl",
+          "reference_scope": "UNMAPPED",
+          "source": "25% as printed; percentage basis and solvent unspecified."
+        }
+      ],
+      "recommendation": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN"
+      },
+      "scope": "Source-named HCl reagent constituent only; supplied percentage/carrier/complete formulation is unspecified.",
+      "preserve": "Every original component/reference/quantity/identity/supplied-form/case/source/negative hold/history object; append only truthful correction history.",
+      "primary_evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html",
+          "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+          "snapshot": "blobs/cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-a7277ddb9aa30cb4",
+            "kind": "primary_source",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431",
+            "original_accessed_at": "2026-11-08T05:07:27.346307+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/a7277ddb9aa30cb4aef1.html",
+              "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html",
+            "sha256": "cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/a7277ddb9aa30cb4aef1.html"
+        },
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html",
+          "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638",
+          "snapshot": "blobs/2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-a95d21757d9f5e59",
+            "kind": "primary_source",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=899",
+            "original_accessed_at": "2026-11-08T05:07:27.974437+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/a95d21757d9f5e59edeb.html",
+              "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html",
+            "sha256": "2c585e16c7ae77a0e3254221bf86749e42b6c974198fa0bf913a06a21b1f0638",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/a95d21757d9f5e59edeb.html"
+        }
+      ]
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal32percent_jcm770",
+      "payload_sha256": "ed2406640e1c8af8909d7ee2e6f74154f058404054531d52310e4d7665a82d53",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv3-hm-hcl_nominal32percent_jcm770.yaml",
+      "current_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=770",
+            "source_record": "Nominal 32% HCl reagent (JCM 770)",
+            "notes": "JCM 770 trace-element solution uses 1 mL of 32% HCl. The acid reagent has a nominal source strength and is not identical to its receiving aqueous trace-element mixture or the pure HCl owner."
+          }
+        ],
+        "notes": "Percent basis, solvent and supplied grade are unknown; no w/w, w/v, density or molarity is asserted. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected."
+      },
+      "components": [
+        {
+          "component_name": "HCl",
+          "reference_scope": "UNMAPPED",
+          "source": "32% as printed; percentage basis and solvent are not specified."
+        }
+      ],
+      "recommendation": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN"
+      },
+      "scope": "Source-named HCl reagent constituent only; supplied percentage/carrier/complete formulation is unspecified.",
+      "preserve": "Every original component/reference/quantity/identity/supplied-form/case/source/negative hold/history object; append only truthful correction history.",
+      "primary_evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html",
+          "sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b",
+          "snapshot": "blobs/30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-b756bb7cb9a632e8",
+            "kind": "primary_source",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=770",
+            "original_accessed_at": "2026-11-08T05:07:26.017310+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/b756bb7cb9a632e8fdf9.html",
+              "sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html",
+            "sha256": "30b7ffc4f3b8edc8ae441bf48bae9edf178ed236e78c02a65bfa42c0ef40179b",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/b756bb7cb9a632e8fdf9.html"
+        }
+      ]
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal35percent_togo_m3216",
+      "payload_sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13",
+      "repository_path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml",
+      "current_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216",
+            "source_record": "Nominal 35% HCl reagent (TOGO M3216)",
+            "notes": "TOGO M3216 uses 10 mL of 35% HCl in its trace-element stock. This source-specified acid reagent is not equated to pure dry/gaseous HCl. Its relation to nominal 25% and 32% preparations is unresolved because comparable percentage and material specifications are absent. The trace-element mixture and its water are not treated as the acid reagent recipe."
+          }
+        ],
+        "notes": "Percent basis, solvent identity and supplied grade are unknown; no w/w, w/v, molarity or density is inferred. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner. Literal 25%, 32% and 35% are retained as source specifications, not normalized comparable fractions. The cited sources do not state a common percentage basis, carrier, grade or assay tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label does not exclude a numerical percentage. If comparable definitions and assay ranges were established, a real strength difference could be assessed; they are not established here. Before co-installing overlapping candidates, the coordinator must choose an explicit common bounded partial-material scope preserving every source context, or obtain comparable preparation/product evidence. No owner merge or arbitrary winner is selected."
+      },
+      "components": [
+        {
+          "component_name": "HCl",
+          "reference_scope": "UNMAPPED",
+          "source": "35% as printed; percentage basis and solvent are not specified."
+        }
+      ],
+      "recommendation": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "UNKNOWN"
+      },
+      "scope": "Source-named HCl reagent constituent only; supplied percentage/carrier/complete formulation is unspecified.",
+      "preserve": "Every original component/reference/quantity/identity/supplied-form/case/source/negative hold/history object; append only truthful correction history.",
+      "primary_evidence": [
+        {
+          "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w10-family-successor-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json",
+          "sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc",
+          "snapshot": "blobs/97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc",
+          "kind": "primary_source",
+          "source_metadata": {
+            "evidence_id": "buffers-primary-ded69954ea792c68",
+            "kind": "primary_source",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216",
+            "original_accessed_at": "2026-11-08T05:07:25.915354+00:00",
+            "original_capture": {
+              "root": "artifact",
+              "path": "buffers/captures/ded69954ea792c688922.json",
+              "sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc"
+            },
+            "local_path": "snapshot/current/reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json",
+            "sha256": "97fa763aacbcdced94f9d16eaf588db2f469d4b98205ede4b368b9780d0324cc",
+            "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+            "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case."
+          },
+          "committed_head": "c9a96da71a1977014680e5a92e600dfc7e3874db",
+          "repository_path": "reports/all_unmatched_20261107/worker-10/buffers/captures/ded69954ea792c688922.json"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No full scientific, role, publication or source installation approval.",
+    "No candidate/worker/maintained/Git/GitHub/session mutations.",
+    "Selected manifest members and full primary source bodies are rehashed; this does not repeat the full11084-member W09 seal audit.",
+    "Existing calf/carbonate fixes are parent-owned and excluded.",
+    "Prior attempt to inspect machine findings assumed every row had exact_reproduction; harmless read-only KeyError. Defensive extraction retained only exact scoped bindings."
+  ],
+  "own_author_union_exclusions": [
+    "C/integration/family-reconciliations-v1",
+    "C/integration/family-reconciliations-v2",
+    "Any maintained mixed Columbia_Blood_Agar_Base partition decision"
+  ]
+}
