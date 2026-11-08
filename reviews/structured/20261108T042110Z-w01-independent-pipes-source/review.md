@@ -1,0 +1,294 @@
+# Independent worker01 source correspondence: Pipes
+
+- Review: 20261108T042110Z-w01-independent-pipes-source
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:21:10.496239Z
+- Finished UTC: 2026-11-08T04:21:10.841290Z
+- Reviewer: /root/skeptical_review (independent)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Bounded source-to-owner assessment only. Only broad PIPES relation supported; exact supplied form remains unresolved.
+
+## Scope And Provenance
+
+Source identity and preparation boundary for allocation case118; complete owner read, no whole-record or release approval.
+
+Selection: Exact current owner path named by one assigned case
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| CHEBI:39033 | data/ingredients/mapped/Pipes.yaml | maintained | Pipes |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Independent strict closed-schema validation | passed | True | CHEBI:39033 | 2paths,0errors; only this target counted here. |
+| Independent source/ontology/supplied-form assessment | failed | True | CHEBI:39033 | Exact supplied form not established; class relation only |
+| Corpus export, roles and release checks | not_applicable | False | CHEBI:39033 | No maintained data edits or release claim; full corpus validators are outside this source-only scope. |
+
+## Scientific And Domain Assessments
+
+### Supplied reagent and preparation scope
+
+identity: concern. Targets: CHEBI:39033.
+
+Source states final10mM PIPES; grouping ontology and name-derived CAS do not prove exact neutral/salt reagent. Broad-parent disposition appropriate.
+
+## Findings
+
+### PIPES-form-scope-independent: Exact supplied PIPES identity remains unestablished
+
+major / open / provisional; issue key: mim-pipes-grouping-term-supplied-form.
+
+Current owner exact-maps CAS5625-37-6 to grouping CHEBI39033, while inspected OLS term has neither structure nor CAS and has children. TOGO supplies final PIPES concentration, not reagent salt/form. Broad class relation is warranted; exact source correspondence is not.
+
+## Recommended Actions And Acceptance Checks
+
+### resolve-pipes-form
+
+Recover original PIPES reagent/form, compare most-specific ontology children and inspect full future changed payload before exact source mapping.
+
+- Authoritative source-bound supplied form agrees with ontology structure/CAS.
+- Native validation and independent re-review of any future changed payload; existing holds remain.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| record | data/ingredients/mapped/Pipes.yaml; Complete maintained YAML, including mapping, synonyms, history, properties and roles | context_only | Entire owner inspected; chemical correspondence reviewed separately from unreviewed role/release claims. |
+| source | reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/TOGO-M2567.json; components paragraph1 PIPES item and comments paragraph4 | supports | Final-medium10mM PIPES atpH6.8, no supplied form specified |
+| ontology | reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/CHEBI-39033.json; _embedded.terms[0], complete annotations and synonyms | partial | Grouping term with children and no CAS/formula/structure; no exact supplied form follows |
+| strict | reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-buffers-validation.json; actual independent command and exact output hash | supports | Two explicit paths, zero strict errors; schema only. |
+
+## Limits And Additional Notes
+
+- This review does not approve whole-record roles, aliases outside the exact source case, SSSOM publication, or any inherited held claim.
+- No records or maintained surfaces were changed.
+- Live OLS bodies captured by author were independently read; supplier verification used primary page text returned by web tool with cached crawl, not a live HTTP-body claim.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T042110Z-w01-independent-pipes-source
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: 'Independent worker01 source correspondence: Pipes'
+started_at: '2026-11-08T04:21:10.496239Z'
+finished_at: '2026-11-08T04:21:10.841290Z'
+reviewer:
+  identity: /root/skeptical_review
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process reviewer; did not author source decisions
+    or owner proposals. Read all owner bytes and cited source/ontology; independent
+    supplier check for Tricine.
+skill: review-yaml-record
+completion: completed
+verdict: needs_curation
+scientific_review: true
+summary: Bounded source-to-owner assessment only. Only broad PIPES relation supported;
+  exact supplied form remains unresolved.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Pipes.yaml
+    sha256: b1c03abbda78f24f8a0c533d6e25e4e067da3f54558fc53295348b244b66d28a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/CHEBI-39033.json
+    sha256: 4209365b4df4a8a75c070d0fd7eaa29d040363a25998a7966cb7ef04b173411c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/TOGO-M2567.json
+    sha256: c9a50e065c57cb4a13ed2ef29ad01f58a3cffd829971253e44d2e0f44d4a4731
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/decisions.fragment.json
+    sha256: cc8447c5a84d853f9cde250f8843d7d598f0c8f1551dfce5ec1ec0daaf4670fe
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-buffers-validation.json
+    sha256: 315760c22ddeca0b7d7cc45c57bfeff244fd07c676ab9988798cbe07cf5a3ee2
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+targets:
+- target_id: CHEBI:39033
+  path: data/ingredients/mapped/Pipes.yaml
+  label: Pipes
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pipes.yaml
+    role: Maintained ingredient; aggregate/SSSOM synchronization required at separately
+      authorized curation
+scope:
+  description: Source identity and preparation boundary for allocation case118; complete
+    owner read, no whole-record or release approval.
+  selection: Exact current owner path named by one assigned case
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - CHEBI:39033
+  exclusions:
+  - target: Role evidence, all historical release holds, corpus SSSOM/export payload
+    reason: Not part of source correspondence; no existing obligation is retired.
+checks:
+- check_id: schema
+  name: Independent strict closed-schema validation
+  status: passed
+  required: true
+  summary: 2paths,0errors; only this target counted here.
+  target_ids:
+  - CHEBI:39033
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python3.13 scripts/validate_strict.py
+    data/ingredients/mapped/Tricine.yaml data/ingredients/mapped/Pipes.yaml --out
+    .temp/all-unmatched-worker-01/shard/review/native-independent-buffers-strict.tsv
+    --workers 1
+  exit_code: 0
+  evidence_ids:
+  - strict
+- check_id: source-identity
+  name: Independent source/ontology/supplied-form assessment
+  status: failed
+  required: true
+  summary: Exact supplied form not established; class relation only
+  target_ids:
+  - CHEBI:39033
+  evidence_ids:
+  - record
+  - source
+  - ontology
+- check_id: corpus
+  name: Corpus export, roles and release checks
+  status: not_applicable
+  required: false
+  summary: No maintained data edits or release claim; full corpus validators are outside
+    this source-only scope.
+  target_ids:
+  - CHEBI:39033
+evidence:
+- evidence_id: record
+  kind: record_content
+  reference: data/ingredients/mapped/Pipes.yaml
+  locator: Complete maintained YAML, including mapping, synonyms, history, properties
+    and roles
+  accessed_at: '2026-11-08T04:21:10.841290Z'
+  support: context_only
+  summary: Entire owner inspected; chemical correspondence reviewed separately from
+    unreviewed role/release claims.
+  snapshot_sha256: b1c03abbda78f24f8a0c533d6e25e4e067da3f54558fc53295348b244b66d28a
+- evidence_id: source
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/TOGO-M2567.json
+  locator: components paragraph1 PIPES item and comments paragraph4
+  accessed_at: '2026-11-08T04:21:10.841290Z'
+  support: supports
+  summary: Final-medium10mM PIPES atpH6.8, no supplied form specified
+  snapshot_sha256: c9a50e065c57cb4a13ed2ef29ad01f58a3cffd829971253e44d2e0f44d4a4731
+- evidence_id: ontology
+  kind: authority
+  reference: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/CHEBI-39033.json
+  locator: _embedded.terms[0], complete annotations and synonyms
+  accessed_at: '2026-11-08T04:21:10.841290Z'
+  support: partial
+  summary: Grouping term with children and no CAS/formula/structure; no exact supplied
+    form follows
+  snapshot_sha256: 4209365b4df4a8a75c070d0fd7eaa29d040363a25998a7966cb7ef04b173411c
+- evidence_id: strict
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-buffers-validation.json
+  locator: actual independent command and exact output hash
+  accessed_at: '2026-11-08T04:21:10.841290Z'
+  support: supports
+  summary: Two explicit paths, zero strict errors; schema only.
+  snapshot_sha256: 315760c22ddeca0b7d7cc45c57bfeff244fd07c676ab9988798cbe07cf5a3ee2
+assessments:
+- assessment_id: identity
+  area: identity
+  topic: Supplied reagent and preparation scope
+  outcome: concern
+  summary: Source states final10mM PIPES; grouping ontology and name-derived CAS do
+    not prove exact neutral/salt reagent. Broad-parent disposition appropriate.
+  target_ids:
+  - CHEBI:39033
+  evidence_ids:
+  - record
+  - source
+  - ontology
+findings:
+- finding_id: PIPES-form-scope-independent
+  issue_key: mim-pipes-grouping-term-supplied-form
+  category: grounding
+  severity: major
+  status: open
+  certainty: provisional
+  title: Exact supplied PIPES identity remains unestablished
+  description: Current owner exact-maps CAS5625-37-6 to grouping CHEBI39033, while
+    inspected OLS term has neither structure nor CAS and has children. TOGO supplies
+    final PIPES concentration, not reagent salt/form. Broad class relation is warranted;
+    exact source correspondence is not.
+  target_ids:
+  - CHEBI:39033
+  field_paths:
+  - identifier
+  - ontology_mapping
+  - chemical_properties.cas_rn
+  evidence_ids:
+  - record
+  - source
+  - ontology
+  rule_id: MAPPING_SEMANTICS most-specific supplied identity
+  native_severity: P2
+  normalization_reason: Material unsupported exact supplied-form claim if this candidate
+    were approved.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pipes.yaml
+    role: Maintained ingredient; aggregate/SSSOM synchronization required at separately
+      authorized curation
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T041341Z-worker01-pipes-source-scope
+    finding_id: PIPES-form-scope
+actions:
+- action_id: resolve-pipes-form
+  description: Recover original PIPES reagent/form, compare most-specific ontology
+    children and inspect full future changed payload before exact source mapping.
+  finding_ids:
+  - PIPES-form-scope-independent
+  target_ids:
+  - CHEBI:39033
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Pipes.yaml
+    role: Maintained ingredient; aggregate/SSSOM synchronization required at separately
+      authorized curation
+  acceptance_checks:
+  - Authoritative source-bound supplied form agrees with ontology structure/CAS.
+  - Native validation and independent re-review of any future changed payload; existing
+    holds remain.
+limitations:
+- This review does not approve whole-record roles, aliases outside the exact source
+  case, SSSOM publication, or any inherited held claim.
+- No records or maintained surfaces were changed.
+- Live OLS bodies captured by author were independently read; supplier verification
+  used primary page text returned by web tool with cached crawl, not a live HTTP-body
+  claim.
+```

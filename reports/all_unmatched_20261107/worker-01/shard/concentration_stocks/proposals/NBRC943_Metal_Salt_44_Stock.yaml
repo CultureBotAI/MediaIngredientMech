@@ -1,0 +1,95 @@
+identifier: kgmicrobe.ingredient:nbrc943_metal_salt_44_stock
+preferred_term: NBRC943 Metal salt solution44
+synonyms:
+- synonym_text: Metal salt solution 44
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc943_metal_salt_44_stock
+  ontology_label: NBRC943 Metal salt solution44
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    notes: NBRC943*** explicitly lists100mLwater plus a fewdropsconcentratedH2SO4.
+      Official MICRO0000456 gives corresponding amountsper1Lwater, not100mL; current
+      source-linked Metallsalt44 ingredient615occurrences referenceDSMZ590, whose
+      admitted complete formulation isalso1L. This is a distinct10fold moreconcentrated
+      preparation, not an alias or merge of those candidates. Preserve Na-EDTA saltstoichiometry
+      unspecified.
+components:
+- component_name: Na-EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '250'
+  concentration_unit: MG_PER_100_ML_PREPARATION_WATER
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1095'
+  concentration_unit: MG_PER_100_ML_PREPARATION_WATER
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_100_ML_PREPARATION_WATER
+- component_name: MnSO4·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '154'
+  concentration_unit: MG_PER_100_ML_PREPARATION_WATER
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '39.2'
+  concentration_unit: MG_PER_100_ML_PREPARATION_WATER
+- component_name: Co(NO3)2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24.8'
+  concentration_unit: MG_PER_100_ML_PREPARATION_WATER
+- component_name: Na2B4O7·10H2O
+  reference_scope: UNMAPPED
+  concentration_value: '17.7'
+  concentration_unit: MG_PER_100_ML_PREPARATION_WATER
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ML_PREPARATION_WATER
+- component_name: Concentrated sulfuric acid
+  reference_scope: UNMAPPED
+  source: A fewdrops; strength and actual volume unspecified. Included as preparation
+    input withoutinventedquantity.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    source_record: NBRC943 Metal salt solution44
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: NBRC943*** explicitly lists100mLwater plus a fewdropsconcentratedH2SO4. Official
+  MICRO0000456 gives corresponding amountsper1Lwater, not100mL; current source-linked
+  Metallsalt44 ingredient615occurrences referenceDSMZ590, whose admitted complete
+  formulation isalso1L. This is a distinct10fold moreconcentrated preparation, not
+  an alias or merge of those candidates. Preserve Na-EDTA saltstoichiometry unspecified.
+  Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech;
+  no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+curation_history:
+- timestamp: '2026-11-08T04:40:36.180712+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. NBRC943*** explicitly lists100mLwater
+    plus a fewdropsconcentratedH2SO4. Official MICRO0000456 gives corresponding amountsper1Lwater,
+    not100mL; current source-linked Metallsalt44 ingredient615occurrences referenceDSMZ590,
+    whose admitted complete formulation isalso1L. This is a distinct10fold moreconcentrated
+    preparation, not an alias or merge of those candidates. Preserve Na-EDTA saltstoichiometry
+    unspecified. No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true

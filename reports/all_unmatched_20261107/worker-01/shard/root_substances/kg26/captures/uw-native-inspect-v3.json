@@ -1,0 +1,129 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "58d67db32a86a359869819624568d625e7051358",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/UW_Concentrated_Base.yaml",
+        "sha256": "e676b9237eadf613f04db4121c47cf5b273cf3e8322c1f01e367b9eb5d83b427",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/UW_Concentrated_Base_No_Mo.yaml",
+        "sha256": "daa15aae2de103e20e4916c105333d51581a8da24616ef312ba0b6a98d05fb0c",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/UW_Concentrated_Base_No_Sulfur.yaml",
+        "sha256": "ab68055139180f35162d25ad6f43160fbad7e09838d653419b10967c3558a28f",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-ols-38888-v1.json",
+        "sha256": "6933410e4ae1d55f63500c3a537f617d0f910fe2e2a8af5be5c21e2ee0825bf2",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/borate175-structure-web-v1.json",
+        "sha256": "e23bf55ef6dcc3b75354d692f0c4d8c2aceacd920cdaa1a0b56a2c98e118fae7",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/uw-dependency-guard-regression-v2.json",
+        "sha256": "21d8857e72edc622af2127f2ddba5863d22dfaae6d6894ece12016dc1d9c6184",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/uw-mixes-primary-v1.json",
+        "sha256": "c54f58de3f30c9bcd24fb37ea81f428950e92b9dd83820f21d8c366570cdcc84",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/uw-native-strict-v2.tsv",
+        "sha256": "4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Na2b4o7_X_10_H2o.yaml",
+        "sha256": "b93a00e61c3a9ecc88328c44897808c0dd93d89f45ffb1c3e79f8ba1b5d8d69b",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base-borax-dependency-v2.yaml",
+        "sha256": "d22e71c61fb0689c284ce6af932d3eb328dbbbc16f32b1577e05027d2d931f36",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base_No_Mo-borax-dependency-v2.yaml",
+        "sha256": "08f0d1e4f9d344a4263cd1e461d94cbbeedd59f671b0cd2fcbe23c93b6738003",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base_No_Sulfur-borax-dependency-v2.yaml",
+        "sha256": "eb6b843602bc3c0b45daa9c85fa26e8d979f30ec764c81141b438e2f85dc05b8",
+        "role": "target"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/validation/component_partonomy.py",
+        "sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "kgmicrobe.ingredient:uw_concentrated_base",
+      "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base-borax-dependency-v2.yaml",
+      "label": "UW concentrated base",
+      "kind": "source",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/UW_Concentrated_Base.yaml",
+          "role": "maintained owner; proposal not applied"
+        }
+      ]
+    },
+    {
+      "target_id": "kgmicrobe.ingredient:uw_concentrated_base_no_mo",
+      "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base_No_Mo-borax-dependency-v2.yaml",
+      "label": "UW concentrated base no Mo",
+      "kind": "source",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/UW_Concentrated_Base_No_Mo.yaml",
+          "role": "maintained owner; proposal not applied"
+        }
+      ]
+    },
+    {
+      "target_id": "kgmicrobe.ingredient:uw_concentrated_base_no_sulfur",
+      "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base_No_Sulfur-borax-dependency-v2.yaml",
+      "label": "UW concentrated base no sulfur",
+      "kind": "source",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/UW_Concentrated_Base_No_Sulfur.yaml",
+          "role": "maintained owner; proposal not applied"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3685 @@
+# Defined source-stock registry proposals: complete per-formulation author review
+
+- Review: 20261108T043720Z-w01-defined-stock-proposals
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:37:20Z
+- Finished UTC: 2026-11-08T04:37:20Z
+- Reviewer: Codex /root/primary_context (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+All32 isolated source-specific stock payloads are reviewed individually against complete primary recipe evidence and exact selected occurrences. Registry identities preserve whole preparations; component forms, denominator differences, nested stock dependency and unresolved quantitative branches remain explicit. This is no blanket approval of referenced component-owner records or release.
+
+## Scope And Provenance
+
+All claims in32 explicitly listed isolated source-stock proposed records; source-specific identity and partonomy, not all corpus stocks.
+
+Selection: Completeness followup to exact44 named-stock cases; only source-defined formulations with sufficiently specified preparation identity are proposed, plus one nested Metal44 auxiliary.
+Coverage: full; 32 reviewed / 32 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| JCM_1474_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml | source | JCM 1474 Solution A |
+| NBRC_1257_Bicarbonate_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml | source | NBRC 1257 bicarbonate solution |
+| JCM_915_Modified_Wolfe_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml | source | JCM 915 modified Wolfe mineral solution |
+| CCAP_PE_Salt_Solution_Stock | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml | source | CCAP PE salt solution stock |
+| JCM_628_Modified_Wolfe_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml | source | JCM 628 modified Wolfe solution |
+| JCM_265_Wolfe_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml | source | JCM 265 Wolfe mineral solution |
+| JCM_1353_Mineral_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml | source | JCM 1353 mineral solution A |
+| NBRC_1020_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml | source | NBRC 1020 Se/W solution |
+| JCM_1130_Mineral_Solution_II | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml | source | JCM 1130 mineral solution II |
+| JCM_187_FeCl2_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml | source | JCM 187 FeCl2 solution |
+| NBRC_323_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_323_Solution_A.yaml | source | NBRC 323 Solution A |
+| NBRC_971_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_A.yaml | source | NBRC 971 Solution A |
+| NBRC_989_K_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_K_Solution.yaml | source | NBRC 989 K solution |
+| JCM_1353_Mineral_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml | source | JCM 1353 mineral solution B |
+| JCM_317_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_317_Se_W_Solution.yaml | source | JCM 317 Se/W solution |
+| NBRC_1257_Sulfide_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml | source | NBRC 1257 sulfide solution |
+| NBRC_943_Metal_Salt_44 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml | source | NBRC 943 Metal salt 44 |
+| NBRC_943_Modified_Hutner_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml | source | NBRC 943 modified Hutner solution |
+| NBRC_1339_Phenanthrene_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml | source | NBRC 1339 phenanthrene solution |
+| MediaDive_3774_VFA_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml | source | MediaDive 3774 VFA solution |
+| NBRC_989_M_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_M_Solution.yaml | source | NBRC 989 M solution |
+| MediaDive_607_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml | source | MediaDive 607 mineral solution |
+| DSMZ_161_Modified_Wolin_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml | source | DSMZ 161 modified Wolin mineral solution |
+| NBRC_989_C_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_C_Solution.yaml | source | NBRC 989 C solution |
+| NBRC_1339_10xM9_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml | source | NBRC 1339 10xM9 solution |
+| JCM_852_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_852_Se_W_Solution.yaml | source | JCM 852 Se/W solution |
+| JCM_521_Reducing_Agent_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml | source | JCM 521 reducing agent solution |
+| JCM_1130_Mineral_Solution_I | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml | source | JCM 1130 mineral solution I |
+| JCM_1474_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_B.yaml | source | JCM 1474 Solution B |
+| JCM_1365_Selenite_Tungustate_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml | source | JCM 1365 selenite-tungustate solution |
+| NBRC_971_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_B.yaml | source | NBRC 971 Solution B |
+| NBRC_1020_824_Resazurin_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml | source | NBRC 1020/824 resazurin solution |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native exact-input provenance | passed | True | JCM_1474_Solution_A, NBRC_1257_Bicarbonate_Solution, JCM_915_Modified_Wolfe_Mineral_Solution, CCAP_PE_Salt_Solution_Stock, JCM_628_Modified_Wolfe_Solution, JCM_265_Wolfe_Mineral_Solution, JCM_1353_Mineral_Solution_A, NBRC_1020_Se_W_Solution, JCM_1130_Mineral_Solution_II, JCM_187_FeCl2_Solution, NBRC_323_Solution_A, NBRC_971_Solution_A, NBRC_989_K_Solution, JCM_1353_Mineral_Solution_B, JCM_317_Se_W_Solution, NBRC_1257_Sulfide_Solution, NBRC_943_Metal_Salt_44, NBRC_943_Modified_Hutner_Solution, NBRC_1339_Phenanthrene_Solution, MediaDive_3774_VFA_Solution, NBRC_989_M_Solution, MediaDive_607_Mineral_Solution, DSMZ_161_Modified_Wolin_Mineral_Solution, NBRC_989_C_Solution, NBRC_1339_10xM9_Solution, JCM_852_Se_W_Solution, JCM_521_Reducing_Agent_Solution, JCM_1130_Mineral_Solution_I, JCM_1474_Solution_B, JCM_1365_Selenite_Tungustate_Solution, NBRC_971_Solution_B, NBRC_1020_824_Resazurin_Solution | Native inspection binds all32 exact payloads, complete source captures, per-target applicability, component-owner and official-term evidence, mapping rules and schema. |
+| Guarded schema, native strict schema and relational partonomy | passed | True | JCM_1474_Solution_A, NBRC_1257_Bicarbonate_Solution, JCM_915_Modified_Wolfe_Mineral_Solution, CCAP_PE_Salt_Solution_Stock, JCM_628_Modified_Wolfe_Solution, JCM_265_Wolfe_Mineral_Solution, JCM_1353_Mineral_Solution_A, NBRC_1020_Se_W_Solution, JCM_1130_Mineral_Solution_II, JCM_187_FeCl2_Solution, NBRC_323_Solution_A, NBRC_971_Solution_A, NBRC_989_K_Solution, JCM_1353_Mineral_Solution_B, JCM_317_Se_W_Solution, NBRC_1257_Sulfide_Solution, NBRC_943_Metal_Salt_44, NBRC_943_Modified_Hutner_Solution, NBRC_1339_Phenanthrene_Solution, MediaDive_3774_VFA_Solution, NBRC_989_M_Solution, MediaDive_607_Mineral_Solution, DSMZ_161_Modified_Wolin_Mineral_Solution, NBRC_989_C_Solution, NBRC_1339_10xM9_Solution, JCM_852_Se_W_Solution, JCM_521_Reducing_Agent_Solution, JCM_1130_Mineral_Solution_I, JCM_1474_Solution_B, JCM_1365_Selenite_Tungustate_Solution, NBRC_971_Solution_B, NBRC_1020_824_Resazurin_Solution | All32 proposed payloads pass; zero proposed-parent partonomy violations including nested auxiliary dependency. |
+| Complete source formula and quantity review | passed | True | JCM_1474_Solution_A, NBRC_1257_Bicarbonate_Solution, JCM_915_Modified_Wolfe_Mineral_Solution, CCAP_PE_Salt_Solution_Stock, JCM_628_Modified_Wolfe_Solution, JCM_265_Wolfe_Mineral_Solution, JCM_1353_Mineral_Solution_A, NBRC_1020_Se_W_Solution, JCM_1130_Mineral_Solution_II, JCM_187_FeCl2_Solution, NBRC_323_Solution_A, NBRC_971_Solution_A, NBRC_989_K_Solution, JCM_1353_Mineral_Solution_B, JCM_317_Se_W_Solution, NBRC_1257_Sulfide_Solution, NBRC_943_Metal_Salt_44, NBRC_943_Modified_Hutner_Solution, NBRC_1339_Phenanthrene_Solution, MediaDive_3774_VFA_Solution, NBRC_989_M_Solution, MediaDive_607_Mineral_Solution, DSMZ_161_Modified_Wolin_Mineral_Solution, NBRC_989_C_Solution, NBRC_1339_10xM9_Solution, JCM_852_Se_W_Solution, JCM_521_Reducing_Agent_Solution, JCM_1130_Mineral_Solution_I, JCM_1474_Solution_B, JCM_1365_Selenite_Tungustate_Solution, NBRC_971_Solution_B, NBRC_1020_824_Resazurin_Solution | Each formulation individually transcribed and assessed; source batch denominators retained, JCM915 modifications and JCM265 additions distinguished, reference hydration preserved, variable titrants not quantified. |
+| Maintained synchronization and export gates | not_applicable | False | JCM_1474_Solution_A, NBRC_1257_Bicarbonate_Solution, JCM_915_Modified_Wolfe_Mineral_Solution, CCAP_PE_Salt_Solution_Stock, JCM_628_Modified_Wolfe_Solution, JCM_265_Wolfe_Mineral_Solution, JCM_1353_Mineral_Solution_A, NBRC_1020_Se_W_Solution, JCM_1130_Mineral_Solution_II, JCM_187_FeCl2_Solution, NBRC_323_Solution_A, NBRC_971_Solution_A, NBRC_989_K_Solution, JCM_1353_Mineral_Solution_B, JCM_317_Se_W_Solution, NBRC_1257_Sulfide_Solution, NBRC_943_Metal_Salt_44, NBRC_943_Modified_Hutner_Solution, NBRC_1339_Phenanthrene_Solution, MediaDive_3774_VFA_Solution, NBRC_989_M_Solution, MediaDive_607_Mineral_Solution, DSMZ_161_Modified_Wolin_Mineral_Solution, NBRC_989_C_Solution, NBRC_1339_10xM9_Solution, JCM_852_Se_W_Solution, JCM_521_Reducing_Agent_Solution, JCM_1130_Mineral_Solution_I, JCM_1474_Solution_B, JCM_1365_Selenite_Tungustate_Solution, NBRC_971_Solution_B, NBRC_1020_824_Resazurin_Solution | No maintained edit; integration must generate own-identifier exactMatch rows and synchronize exact approved bytes. This work is not missing scientific stock identity evidence. |
+
+## Scientific And Domain Assessments
+
+### JCM 1474 Solution A exact source formulation
+
+identity: supported. Targets: JCM_1474_Solution_A.
+
+Original batch: 10 g of each salt and 100 mL distilled water. Values use the nominal printed water-volume basis; source adds 10 mL to receiving medium. No equivalence to unrelated Solution A formulations. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_1474_Solution_A.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 1257 bicarbonate solution exact source formulation
+
+identity: supported. Targets: NBRC_1257_Bicarbonate_Solution.
+
+Original batch: NaHCO3 8.4 g and water 100 mL, saturated with CO2 and autoclaved under CO2. Source calls it 1.0 M. CO2 amount is variable saturation, not a guessed numerical amount. Frozen nested 8.4 G_PER_L is a denominator error, not inherited here. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_1257_Bicarbonate_Solution.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 915 modified Wolfe mineral solution exact source formulation
+
+identity: supported. Targets: JCM_915_Modified_Wolfe_Mineral_Solution.
+
+JCM 915 modifies JCM151 trace minerals to final Na2MoO4·2H2O 0.4 g/L, CuSO4·5H2O 0.02 g/L and adds NiCl2·6H2O 0.01 g/L. Retain MnSO4·xH2O and unqualified AlK(SO4)2 as printed; no hydration guessed. KOH titration at pH6.5 then7 has no fixed amount. Distinct from EDTA-based Wolfe stocks and current Modified Wolfes Minerals. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_915_Modified_Wolfe_Mineral_Solution.
+
+Reviewed all 15 printed component assertions and 3 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### CCAP PE salt solution stock exact source formulation
+
+identity: supported. Targets: CCAP_PE_Salt_Solution_Stock.
+
+Source batch is 1000 cm3 water with 200 g nitrate and 20 g disodium phosphate dodecahydrate. Preserve explicit hydrate; no use of erroneous frozen phosphatidylcholine term. Receiving stock and separately flattened salt rows must not be double-counted. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: CCAP_PE_Salt_Solution_Stock.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 628 modified Wolfe solution exact source formulation
+
+identity: supported. Targets: JCM_628_Modified_Wolfe_Solution.
+
+Defined four-salt mineral base from JCM628; JCM1347 references this stock. It is distinct from trace-metal Wolfe stocks in JCM915/265 and existing MIM candidates. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_628_Modified_Wolfe_Solution.
+
+Reviewed all 5 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 265 Wolfe mineral solution exact source formulation
+
+identity: supported. Targets: JCM_265_Wolfe_Mineral_Solution.
+
+JCM265 adds three printed salts to JCM151 trace minerals. Preserve unresolved x hydration in MnSO4 and unqualified AlK(SO4)2; unquantified KOH pH adjustment retained. All three source occurrences explicitly reference265; no global Wolfe-name equivalence. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_265_Wolfe_Mineral_Solution.
+
+Reviewed all 17 printed component assertions and 3 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 1353 mineral solution A exact source formulation
+
+identity: supported. Targets: JCM_1353_Mineral_Solution_A.
+
+Printed JCM1353 stock with pH6.5 adjustment using HCl. Titrant amount is unquantified. EDTA salt/protonation form is not silently supplied. Explicit1353 references and local see-below label resolve to same source stock. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_1353_Mineral_Solution_A.
+
+Reviewed all 11 printed component assertions and 2 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 1020 Se/W solution exact source formulation
+
+identity: supported. Targets: NBRC_1020_Se_W_Solution.
+
+Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed unhydrated formulas are retained. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_1020_Se_W_Solution.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 1130 mineral solution II exact source formulation
+
+identity: supported. Targets: JCM_1130_Mineral_Solution_II.
+
+JCM1385 inherits1130 with mannitol addition to receiving medium; stock composition is unchanged. Distinct from DSMZ436 Mineral2. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_1130_Mineral_Solution_II.
+
+Reviewed all 6 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 187 FeCl2 solution exact source formulation
+
+identity: supported. Targets: JCM_187_FeCl2_Solution.
+
+Source nominal batch: 10 mL 25% HCl (7.7 M), 1.5 g FeCl2·4H2O and 990 mL water. Acid is a prepared component, not neat HCl. All eleven receiving occurrences explicitly reference JCM187; doses differ and remain occurrence-bound. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_187_FeCl2_Solution.
+
+Reviewed all 3 printed component assertions and 11 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 323 Solution A exact source formulation
+
+identity: supported. Targets: NBRC_323_Solution_A.
+
+Printed original batch: yeast extract1g, ammonium sulfate0.2g, magnesium sulfate heptahydrate0.5g, calcium chloride dihydrate0.25g, KH2PO4 0.6g and water500mL. pH3–4; no adjustment reagent specified. Formula defines a source stock with undefined yeast-extract component; it is distinct from NBRC971 Solution A. Raw generic alias is only resolvable with source context. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_323_Solution_A.
+
+Reviewed all 6 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 971 Solution A exact source formulation
+
+identity: supported. Targets: NBRC_971_Solution_A.
+
+Printed two-component source stock. Ferric ammonium citrate composition remains the named source reagent; no molecular formula guessed. Distinct from NBRC323 Solution A. Raw generic alias is only resolvable with source context. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_971_Solution_A.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 989 K solution exact source formulation
+
+identity: supported. Targets: NBRC_989_K_Solution.
+
+Three salts, 90 g each per printed1L. Receiving dose is10mL (independently corrected and verified); K is local stock name, not an elemental ingredient. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_989_K_Solution.
+
+Reviewed all 4 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 1353 mineral solution B exact source formulation
+
+identity: supported. Targets: JCM_1353_Mineral_Solution_B.
+
+Exact W/Ni/V stock; source receiving dose2mL, filter sterilized. No implied hydration for printed VOSO4 and no substitution of generic nickel salt. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_1353_Mineral_Solution_B.
+
+Reviewed all 4 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 317 Se/W solution exact source formulation
+
+identity: supported. Targets: JCM_317_Se_W_Solution.
+
+Exact source stock distinct from NBRC1020 unhydrated tungstate, JCM852 lower amounts/hydrated selenite, and JCM431 alkaline formula. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_317_Se_W_Solution.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 1257 sulfide solution exact source formulation
+
+identity: supported. Targets: NBRC_1257_Sulfide_Solution.
+
+Source batch: Na2S·9H2O12g and water50mL, designated1.0M, filter sterilized and stored underN2. 240g/L is explicit12g/0.05L nominal recipe-basis conversion; frozen12G_PER_L is rejected. Receiving dose1.5mL. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_1257_Sulfide_Solution.
+
+Reviewed all 2 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 943 Metal salt 44 exact source formulation
+
+identity: supported. Targets: NBRC_943_Metal_Salt_44.
+
+Nested source preparation: NaEDTA250mg, ZnSO4·7H2O1095mg, FeSO4·7H2O0.5g, MnSO4·H2O154mg, CuSO4·5H2O39.2mg, Co(NO3)2·6H2O24.8mg, Na2B4O7·10H2O17.7mg per100mL plus drops concentratedH2SO4. NaEDTA exact salt form and acid drops remain unquantified; no chemical grounding asserted. Auxiliary proposal solely supports case116 nested component. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_943_Metal_Salt_44.
+
+Reviewed all 9 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 943 modified Hutner solution exact source formulation
+
+identity: supported. Targets: NBRC_943_Modified_Hutner_Solution.
+
+Source total preparation1L includes50mL Metal salt44, which is separately proposed with its entire printed composition. NTA neutralized using7.3gKOH to pH6.6–6.8. Solvent amount is not forced to1L in addition to the50mL nested stock. Printed molybdate dihydrate retained without substituting tetrahydrate. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_943_Modified_Hutner_Solution.
+
+Reviewed all 8 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 1339 phenanthrene solution exact source formulation
+
+identity: supported. Targets: NBRC_1339_Phenanthrene_Solution.
+
+Source specifies250mM phenanthrene in DMSO, filtered through DMSO-safe filter;10mL used. Solvent is explicit but its precise volume fraction is not given. Whole solution is distinct from neat phenanthrene. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_1339_Phenanthrene_Solution.
+
+Reviewed all 2 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### MediaDive 3774 VFA solution exact source formulation
+
+identity: supported. Targets: MediaDive_3774_VFA_Solution.
+
+Source seven liquid input amounts sum31mL; units retain original batch amounts without assuming additive final volume or introducing solvent. No neat-acid purity or grade inferred. LiveJCM1029 is unavailable; exact MediaDive3774 body supplies this source-defined formula. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: MediaDive_3774_VFA_Solution.
+
+Reviewed all 7 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 989 M solution exact source formulation
+
+identity: supported. Targets: NBRC_989_M_Solution.
+
+Both specified hydrates4g each per1L; receiving dose2.5mL. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_989_M_Solution.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### MediaDive 607 mineral solution exact source formulation
+
+identity: supported. Targets: MediaDive_607_Mineral_Solution.
+
+Exact source solution607 is used in both J1029/main5080 and DSMZ330/main606,38mL each. Source accession and full formula establish identity. Frozen receiving recipe cites CultureMech:014792; standalone target composition was not included in frozen inputs and must not be declared EXACT_FORMULATION solely from that pointer. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: MediaDive_607_Mineral_Solution.
+
+Reviewed all 6 printed component assertions and 2 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### DSMZ 161 modified Wolin mineral solution exact source formulation
+
+identity: supported. Targets: DSMZ_161_Modified_Wolin_Mineral_Solution.
+
+DSMZ161 inherited mineral solution from141, with full recipe printed. Retain explicit hydrated forms; KOH pH6.5 then7 is unquantified. Distinct from inspected MIM Wolfe formulations in chelator, salts and amounts. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: DSMZ_161_Modified_Wolin_Mineral_Solution.
+
+Reviewed all 17 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 989 C solution exact source formulation
+
+identity: supported. Targets: NBRC_989_C_Solution.
+
+Exact10.6g dihydrate per1L water, receiving2.5mL; whole stock is distinct from neat calcium chloride. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_989_C_Solution.
+
+Reviewed all 2 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 1339 10xM9 solution exact source formulation
+
+identity: supported. Targets: NBRC_1339_10xM9_Solution.
+
+NBRC1339 and TOGOM2041 explicitly same source stock; preserve four printed salts and1L basis. No hydrate supplied for Na2HPO4.100mL added; complete receiving medium includes separate phenanthrene/DMSO and is not identical to this stock. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_1339_10xM9_Solution.
+
+Reviewed all 5 printed component assertions and 2 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 852 Se/W solution exact source formulation
+
+identity: supported. Targets: JCM_852_Se_W_Solution.
+
+Current JCM1188 directly references852; frozen narrative invokes1187 inheritance. Preserve that narrative conflict while the explicit852 stock identity agrees. Both hydrated forms and amounts distinguish this source stock. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_852_Se_W_Solution.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 521 reducing agent solution exact source formulation
+
+identity: supported. Targets: JCM_521_Reducing_Agent_Solution.
+
+Exact two-reductant source stock; autoclaved/stored underN2. Retain L stereochemistry, hydrochloride and monohydrate; no broad reducing-agent class as identity. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_521_Reducing_Agent_Solution.
+
+Reviewed all 3 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 1130 mineral solution I exact source formulation
+
+identity: supported. Targets: JCM_1130_Mineral_Solution_I.
+
+JCM1385 inherits1130stock with mannitol change only to receiving medium.3g per1L,150mL receiving dose; distinct from DSMZ4360.6%stock. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_1130_Mineral_Solution_I.
+
+Reviewed all 2 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 1474 Solution B exact source formulation
+
+identity: supported. Targets: JCM_1474_Solution_B.
+
+Original batch4g MgSO4·7H2O,0.2g each NaCl/FeSO4·7H2O/MnSO4·xH2O and100mL water. Nominal basis conversion explicit. Variable manganese hydrate remains literal and ungrounded. Named source formulation is resolved without selecting a specific hydrate. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_1474_Solution_B.
+
+Reviewed all 5 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### JCM 1365 selenite-tungustate solution exact source formulation
+
+identity: supported. Targets: JCM_1365_Selenite_Tungustate_Solution.
+
+Source misspelling retained. Compared withJCM431, selenium/tungsten salts are10times whileNaOH is unchanged; it is not a uniform10times stock and not equivalent to431. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: JCM_1365_Selenite_Tungustate_Solution.
+
+Reviewed all 4 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 971 Solution B exact source formulation
+
+identity: supported. Targets: NBRC_971_Solution_B.
+
+Applies only to NBRC971 occurrence. NBRC323 SolutionB has glucose and optionalagar and is a separate preparation branch, not this sucrose stock. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_971_Solution_B.
+
+Reviewed all 2 printed component assertions and 1 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+### NBRC 1020/824 resazurin solution exact source formulation
+
+identity: supported. Targets: NBRC_1020_824_Resazurin_Solution.
+
+Both primary sources explicitly specify resazurin1g plus1Lwater. Source-defined stock identity is resolved; exact free-compound versus sodium-salt reagent is not supplied and remains ungrounded. No alias to a neat-resazurin or sodium-salt owner is asserted. The whole source preparation has a stable registry identity; explicitly ungrounded component fields do not make its named recipe identity unknown.
+
+### All proposed claims and original occurrence applicability
+
+completeness: supported. Targets: NBRC_1020_824_Resazurin_Solution.
+
+Reviewed all 2 printed component assertions and 2 selected source occurrences, raw aliases, stock classification, registry mapping, notes and truthful proposal history. Unquantified titrants and literal unresolved component forms remain UNMAPPED rather than guessed. Nominal source-basis concentrations are explicit. Generic names remain source-local; no unsupported whole-medium CultureMech equivalence or biological role asserted.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| primary-jcm-1474 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-1257 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-915 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=915; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-151 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-ccap-PE | https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-628 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-265 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-1353 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-1020 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-1130 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-187 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=187; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-323 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=323; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-971 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=971; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-989 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-317 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-943 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-1339 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-togo-M2041 | https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2041; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-mediadive-solution-3774 | https://mediadive.dsmz.de/rest/solution/3774; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-mediadive-solution-607 | https://mediadive.dsmz.de/rest/solution/607; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-dsmz-330 | https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-dsmz-161 | https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-mediadive-solution-241 | https://mediadive.dsmz.de/rest/solution/241; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-852 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-521 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-jcm-1365 | https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1365; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| primary-nbrc-824 | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824; Complete source recipe; exact stock subsection and preparation instructions | supports | Primary named stock ingredient forms, printed amounts, nominal batch basis and source-local preparation instructions. Applicability is limited to exact per-target specification and occurrence bindings. |
+| applicability | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/applicability.json; Complete artifact and exact referenced captures | supports | Complete32 source-specific specifications and exact original selected occurrences; selection excludes NBRC824 unknown-volume row and NBRC323 optional-agar branch from quantitative stock mapping. |
+| validation | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/validation.json; Complete artifact and exact referenced captures | supports | All32 payloads passed guarded writer, strict schema and proposed-parent partonomy checks in complete current catalog plus auxiliary proposedMetal44. |
+| search | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/search.json; Complete artifact and exact referenced captures | supports | Ignored-inclusive direct maintained corpus search for exact source-qualified preferred/synonym/identifier matches found no candidate. Prior raw-label/contextual candidate search separately compares known Wolfe formulations; bounded exact OLS queries all returned zero. |
+| candidates | reports/all_unmatched_20261107/worker-01/shard/named_stocks/candidate-search.json; Complete artifact and exact referenced captures | supports | All44 raw-name searches and full contextual candidates. Known MIM Wolfe formulations differ in chelator, forms or amounts; no synonym union from shared stock name. |
+| terms | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json; Complete artifact and exact referenced captures | supports | Independent official OLS exact-ID captures support only quartet identities NaOH, hydrated selenite, hydrated tungstate and water. Current component-owner payloads hashed; no approval of their unrelated claims. |
+| owners | reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json; Complete artifact and exact referenced captures | supports | Complete current five component owners, including two existing selenium records sharing an identifier, retained for identity-reference scope only. |
+| ontology-JCM_1474_Solution_A | https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20A&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_1474_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_1257_Bicarbonate_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20bicarbonate%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_1257_Bicarbonate_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_915_Modified_Wolfe_Mineral_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%20915%20modified%20Wolfe%20mineral%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_915_Modified_Wolfe_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-CCAP_PE_Salt_Solution_Stock | https://www.ebi.ac.uk/ols4/api/search?q=CCAP%20PE%20salt%20solution%20stock&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-CCAP_PE_Salt_Solution_Stock | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_628_Modified_Wolfe_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%20628%20modified%20Wolfe%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_628_Modified_Wolfe_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_265_Wolfe_Mineral_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%20265%20Wolfe%20mineral%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_265_Wolfe_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_1353_Mineral_Solution_A | https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20A&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_1353_Mineral_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_1020_Se_W_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%20Se%2FW%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_1020_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_1130_Mineral_Solution_II | https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20II&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_1130_Mineral_Solution_II | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_187_FeCl2_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%20187%20FeCl2%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_187_FeCl2_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_323_Solution_A | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20323%20Solution%20A&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_323_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_323_Solution_A.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_971_Solution_A | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20A&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_971_Solution_A | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_A.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_989_K_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20K%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_989_K_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_K_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_1353_Mineral_Solution_B | https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20B&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_1353_Mineral_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_317_Se_W_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%20317%20Se%2FW%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_317_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_317_Se_W_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_1257_Sulfide_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20sulfide%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_1257_Sulfide_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_943_Metal_Salt_44 | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20Metal%20salt%2044&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_943_Metal_Salt_44 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_943_Modified_Hutner_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20modified%20Hutner%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_943_Modified_Hutner_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_1339_Phenanthrene_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%20phenanthrene%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_1339_Phenanthrene_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-MediaDive_3774_VFA_Solution | https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%203774%20VFA%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-MediaDive_3774_VFA_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_989_M_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20M%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_989_M_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_M_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-MediaDive_607_Mineral_Solution | https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%20607%20mineral%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-MediaDive_607_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-DSMZ_161_Modified_Wolin_Mineral_Solution | https://www.ebi.ac.uk/ols4/api/search?q=DSMZ%20161%20modified%20Wolin%20mineral%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-DSMZ_161_Modified_Wolin_Mineral_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_989_C_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20C%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_989_C_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_C_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_1339_10xM9_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%2010xM9%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_1339_10xM9_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_852_Se_W_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%20852%20Se%2FW%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_852_Se_W_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_852_Se_W_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_521_Reducing_Agent_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%20521%20reducing%20agent%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_521_Reducing_Agent_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_1130_Mineral_Solution_I | https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20I&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_1130_Mineral_Solution_I | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_1474_Solution_B | https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20B&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_1474_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_B.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-JCM_1365_Selenite_Tungustate_Solution | https://www.ebi.ac.uk/ols4/api/search?q=JCM%201365%20selenite-tungustate%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-JCM_1365_Selenite_Tungustate_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_971_Solution_B | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20B&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_971_Solution_B | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_B.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+| ontology-NBRC_1020_824_Resazurin_Solution | https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%2F824%20resazurin%20solution&amp;exact=true&amp;rows=100; response.numFound=0 for exact source-qualified stock name | supports | Bounded exact OLS lookup; not exhaustive absence across every ontology or synonym. Source-qualified formulation identity remains primary evidence. |
+| payload-NBRC_1020_824_Resazurin_Solution | reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml; Entire exact proposed IngredientRecord | supports | Source-specific registry identifier, raw source aliases with local provenance, complete constituent enumeration, supported quantity basis and limitations; no invented counts or roles. |
+
+## Limits And Additional Notes
+
+- Author self-review; independent review remains separate.
+- Registry identity is bounded to each exact named source formulation, including source-defined variable reagents. UNMAPPED constituent scope makes no unsupported chemical identifier claim.
+- Raw generic labels require source context; NBRC323 versus971 Solution A are distinct proposed identities.
+- Only NBRC1020 part of case86 and NBRC971 part of case157 are assigned proposed quantitative identities; remaining occurrences retain concrete gaps.
+- No source ingredient receiving dose is reinterpreted as stock concentration.
+- No full approval of existing component-owner records, roles, biological claims, or supported release.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T043720Z-w01-defined-stock-proposals
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Defined source-stock registry proposals: complete per-formulation author review'
+started_at: '2026-11-08T04:37:20Z'
+finished_at: '2026-11-08T04:37:20Z'
+reviewer:
+  identity: Codex /root/primary_context
+  kind: agent
+  independence: self_review
+  independence_basis: Author traced sources and drafted each proposal; separate agent
+    must independently review exact proposed bytes and cases.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: All32 isolated source-specific stock payloads are reviewed individually against
+  complete primary recipe evidence and exact selected occurrences. Registry identities
+  preserve whole preparations; component forms, denominator differences, nested stock
+  dependency and unresolved quantitative branches remain explicit. This is no blanket
+  approval of referenced component-owner records or release.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: .claude/skills/add-media/SKILL.md
+    sha256: c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Distilled_Water.yaml
+    sha256: 458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56
+    role: context
+  - path: data/ingredients/mapped/Na2seo35h2o.yaml
+    sha256: 889d9d25040aba6b22659bbb6ef5cd372966b448997258423ce5aa8b1864966b
+    role: context
+  - path: data/ingredients/mapped/Na2seo3_X_5_H2o.yaml
+    sha256: 1b808f46bbf0b43885b37fbd0a3e46ce00c363d18d934110c4ff5d36bddcb911
+    role: context
+  - path: data/ingredients/mapped/Na2wo4_X_2_H2o.yaml
+    sha256: b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9
+    role: context
+  - path: data/ingredients/mapped/Naoh.yaml
+    sha256: b4e7ab0b7cec49f16abef564ec6361f8cc5b4952a4679eff34bd4157ed33bc31
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/candidate-search.json
+    sha256: be3d800d79e5d78937846eb8e5eb38bbe6bd2360401791aa38a81d83c79a997b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/ccap-PE.pdf
+    sha256: a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-161.pdf
+    sha256: 0f4ea6194efcb146abe36366dd72ce890643e9cfe39bc947a9df7281959478e0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-330.pdf
+    sha256: 8229d2b6a229d3448df71516a755965110bf57fb93c5190de4cbebe741847e29
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1130.html
+    sha256: dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1353.html
+    sha256: cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1365.html
+    sha256: 8e5347f7670f633e13fc9e04674fcbfae987805dd853c64a591bdb80a8b3eb45
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1474.html
+    sha256: fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-151.html
+    sha256: 6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-187.html
+    sha256: e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-265.html
+    sha256: 9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-317.html
+    sha256: fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-521.html
+    sha256: a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-628.html
+    sha256: 9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-852.html
+    sha256: 6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-915.html
+    sha256: a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-241.json
+    sha256: 50cc42c209f550b7abc4a5f48b455553516220b6ef9613f481941f9e15f0b25d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-3774.json
+    sha256: 74510f4009af302d60b1f15565a82f4ab166e0553b9e17744d584c12a1ccd4b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-607.json
+    sha256: d1b947d90e8193e9626b323eb32fa1c82bdcf2fb2c1486e064d6c1994d83fa11
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1020.html
+    sha256: 6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+    sha256: 3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1339.html
+    sha256: a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-323.html
+    sha256: 5a82a281b6f01560f93d530a0a694c32d165bcd0f2b6156506d7c1141e061382
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-824.html
+    sha256: 0317a82ebb8fff38df7bb305fc69a392c2f45d4e63969a0a6714616fa9676c2e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-943.html
+    sha256: 271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-971.html
+    sha256: 6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-989.html
+    sha256: 527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2041.json
+    sha256: 4a3626595a76449ca9bf73fcd3119ab4c985d8b0e5e7fe8d3e2bfb0e3569fd90
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/applicability.json
+    sha256: 692cccda77cdbe8f39baf1abf80b84d5259aee1eae028aa97e12450ba51186a2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/CCAP_PE_Salt_Solution_Stock.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_I.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_II.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_B.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1365_Selenite_Tungustate_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_B.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_187_FeCl2_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_265_Wolfe_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_317_Se_W_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_521_Reducing_Agent_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_628_Modified_Wolfe_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_852_Se_W_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_3774_VFA_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_607_Mineral_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_824_Resazurin_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_Se_W_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Bicarbonate_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Sulfide_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_10xM9_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_Phenanthrene_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_323_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Metal_Salt_44.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Modified_Hutner_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_A.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_B.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_C_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_K_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_M_Solution.ols.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml
+    sha256: 85efca4816551571534c0112fd8ea70edc867e0961bb9d83c896fa2586a10919
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+    sha256: c4883a3f5e02cd837ee8c99fc9138f82d2ad9941943c2977bdc6cab0acb406fe
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml
+    sha256: b07fde256a692290585e4e9e1a599a183169ce6b05042ee2385affd2bc0aafa9
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml
+    sha256: 365dbe14ec365d2d8987cff143dae15d10a3e1aa35b764d276360a3c0f5eab01
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml
+    sha256: aef67bb65754d17d30728598c10bf81460effbc7d9fcb123203a66bff93e59ba
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml
+    sha256: c5d329a8d87532c65f6d3e962d95b0b62512696ba6560e65cad6aed14671caa2
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml
+    sha256: 88e368198166e242c72401d620d7bc381b1db0f6afc3e539fb0f5391c8a289a1
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml
+    sha256: 070f11e282e6bde44c155ad3043c344b5f82df6809e8d3db76105d5494a658f6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_B.yaml
+    sha256: baf8eeb9b415749681ec66e5cd1b05a124a8aec8c5fc6a384f742a9ffefd6949
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml
+    sha256: c011573a720fa312202cc1db271b5eb36f40d3bbd422b1854d6c5b076723c82e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml
+    sha256: 0bc15ad609fb39f33c9f1b7ad5dbac5fa06b9684390734957a6f1258852aaeec
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_317_Se_W_Solution.yaml
+    sha256: 04ba647c6ccc5a160ecfa4fee0433d20a2d6e2fce09e51ac598a2c27cb6e4d37
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml
+    sha256: 44092c4d5203001b76e9839a92fb855d32983e5dc7d959fd8e07c088f731824f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml
+    sha256: e85b1d6e1b3925405cfba5edce4a191e9692e6ae5a00e043aa64336c8d7d8365
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_852_Se_W_Solution.yaml
+    sha256: f8b59772d07337aef1cdff2fa7df453d024d9bd12932d4f3cfeebe8988c8983c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+    sha256: 9be21e0e62c06b4e4ffce7ed7a67d0c8c142ad3883289e7a3e9dbc7b0237414a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml
+    sha256: 20d9e794f9786d16188211a9bf9a7c2bb3e150d9e63eca194d65907103b245ad
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml
+    sha256: 835b1b41a6377070fe9267e13b8e0813ecea56714ec360a998d3deb11b058d17
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml
+    sha256: 34dc5f26d7369080768f32e08fab2b4850cb93e641590cc9a1a1b102a1c0d3cf
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml
+    sha256: 2f1ac6a1bcf12e6f0dd6010d44bc8fd9a32dc189a890ace25fa55557706595af
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml
+    sha256: 27b310f704f90db0ec0c081d73d0eb762ef66ce6a5ca37aa8bcb304e0be4e1b8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml
+    sha256: d4fbaffcfa77390358456d30b6a8e78aeaa1a18b3513f039c285029baffc8922
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml
+    sha256: 0746c92c69d9e2a8242d1fd106b67bb8a6aefc7648a92fc2e5aaf964af595dde
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml
+    sha256: 5b40b69031ff9b73f4a259f979d86f283cca9584890dce9c5d865824a653db06
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_323_Solution_A.yaml
+    sha256: 52ddbceee46b2f27732571109c399a9415b3389d5594d734f270cdec950efe8f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml
+    sha256: 05b5ca36872439f8bf24e0fe077f5fe175d4880d96d881d924744a1b5a006aaf
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml
+    sha256: a52153cbd1962c292f5dcebd92d36e02fcc08232a5342e84ce663d7ccb04eeca
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_A.yaml
+    sha256: 6282cfcc8a31398ee542c833563665c24bdf898b2b2ceddf6cd3e32ce4303e60
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_B.yaml
+    sha256: 8bfb09ad4e6c7d0d19da72cc116bec2d920586a3107b50100fa8a46a8dac38bf
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_C_Solution.yaml
+    sha256: f960a7fc1de689f346aa1955fb1e2d5d7728f7efcc2de6104e38599942ad28e8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_K_Solution.yaml
+    sha256: 0436902d616dc92e98d05f149ccd156b032f1e0b62b81f9ebcf81dcdb6740bf6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_M_Solution.yaml
+    sha256: 45183d618f04b39f1d00553dfd63f7719c096b66529cefcfe7fae8923dbc76fa
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/search.json
+    sha256: 0836d08b7e28c21effe07cf1fcd58f85eec7cbd32e30d1480e6dbc9c3ef3135c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/validation.json
+    sha256: d6468421af8a17b718749b5f61e9f2031c530ab061a0e07740efd91fa04da10f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/reviewed-v1-snapshot/decisions.json
+    sha256: 7efffea69637db2311f42f69fa0c73ff156653f3f2f1c8124fd5875b4e58128f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-131361.json
+    sha256: 643fefa89a2c0afeb2a00a0dd6149dbbf86cc4824369c58bde1c6ea6d4316d10
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+    sha256: de9102073c3761a24130636f90e898445dce83eb118592609a618bf61149ff4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-32145.json
+    sha256: 2373bbcef187826c692b5378554daa4d799085002aa8616ff418e067655027b7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-63939.json
+    sha256: 987144fa0342502834f116860a4b4f71696f62c18e7b701301667c15e588562a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/ols-exact-stock.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+    sha256: 73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+    sha256: ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: All claims in32 explicitly listed isolated source-stock proposed records;
+    source-specific identity and partonomy, not all corpus stocks.
+  selection: Completeness followup to exact44 named-stock cases; only source-defined
+    formulations with sufficiently specified preparation identity are proposed, plus
+    one nested Metal44 auxiliary.
+  coverage: full
+  population_size: 32
+  reviewed_target_ids:
+  - JCM_1474_Solution_A
+  - NBRC_1257_Bicarbonate_Solution
+  - JCM_915_Modified_Wolfe_Mineral_Solution
+  - CCAP_PE_Salt_Solution_Stock
+  - JCM_628_Modified_Wolfe_Solution
+  - JCM_265_Wolfe_Mineral_Solution
+  - JCM_1353_Mineral_Solution_A
+  - NBRC_1020_Se_W_Solution
+  - JCM_1130_Mineral_Solution_II
+  - JCM_187_FeCl2_Solution
+  - NBRC_323_Solution_A
+  - NBRC_971_Solution_A
+  - NBRC_989_K_Solution
+  - JCM_1353_Mineral_Solution_B
+  - JCM_317_Se_W_Solution
+  - NBRC_1257_Sulfide_Solution
+  - NBRC_943_Metal_Salt_44
+  - NBRC_943_Modified_Hutner_Solution
+  - NBRC_1339_Phenanthrene_Solution
+  - MediaDive_3774_VFA_Solution
+  - NBRC_989_M_Solution
+  - MediaDive_607_Mineral_Solution
+  - DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NBRC_989_C_Solution
+  - NBRC_1339_10xM9_Solution
+  - JCM_852_Se_W_Solution
+  - JCM_521_Reducing_Agent_Solution
+  - JCM_1130_Mineral_Solution_I
+  - JCM_1474_Solution_B
+  - JCM_1365_Selenite_Tungustate_Solution
+  - NBRC_971_Solution_B
+  - NBRC_1020_824_Resazurin_Solution
+  exclusions:
+  - target: Source cases with missing stock strength, missing percent basis or unresolved
+      invalid formula
+    reason: Explicit per-case unresolved requirements retained in final decisions;
+      no quantitative identity guessed.
+  - target: Other claims in five existing component-owner records
+    reason: Only exact quartet constituent identity and reference scope used; unrelated
+      aliases, roles and mechanisms remain unapproved.
+  - target: Source-wide or supported-release approval
+    reason: Isolated proposals only; no native release assertion or maintained edit.
+targets:
+- target_id: JCM_1474_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml
+  label: JCM 1474 Solution A
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_1474_Solution_A.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_1257_Bicarbonate_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml
+  label: NBRC 1257 bicarbonate solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_1257_Bicarbonate_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_915_Modified_Wolfe_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+  label: JCM 915 modified Wolfe mineral solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: CCAP_PE_Salt_Solution_Stock
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml
+  label: CCAP PE salt solution stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/CCAP_PE_Salt_Solution_Stock.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_628_Modified_Wolfe_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml
+  label: JCM 628 modified Wolfe solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_628_Modified_Wolfe_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_265_Wolfe_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml
+  label: JCM 265 Wolfe mineral solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_265_Wolfe_Mineral_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_1353_Mineral_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml
+  label: JCM 1353 mineral solution A
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_1353_Mineral_Solution_A.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_1020_Se_W_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml
+  label: NBRC 1020 Se/W solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_1020_Se_W_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_1130_Mineral_Solution_II
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml
+  label: JCM 1130 mineral solution II
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_1130_Mineral_Solution_II.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_187_FeCl2_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml
+  label: JCM 187 FeCl2 solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_187_FeCl2_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_323_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_323_Solution_A.yaml
+  label: NBRC 323 Solution A
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_323_Solution_A.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_971_Solution_A
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_A.yaml
+  label: NBRC 971 Solution A
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_971_Solution_A.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_989_K_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_K_Solution.yaml
+  label: NBRC 989 K solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_989_K_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_1353_Mineral_Solution_B
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml
+  label: JCM 1353 mineral solution B
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_1353_Mineral_Solution_B.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_317_Se_W_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_317_Se_W_Solution.yaml
+  label: JCM 317 Se/W solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_317_Se_W_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_1257_Sulfide_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml
+  label: NBRC 1257 sulfide solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_1257_Sulfide_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_943_Metal_Salt_44
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml
+  label: NBRC 943 Metal salt 44
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_943_Metal_Salt_44.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_943_Modified_Hutner_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml
+  label: NBRC 943 modified Hutner solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_943_Modified_Hutner_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_1339_Phenanthrene_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml
+  label: NBRC 1339 phenanthrene solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_1339_Phenanthrene_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: MediaDive_3774_VFA_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml
+  label: MediaDive 3774 VFA solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/MediaDive_3774_VFA_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_989_M_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_M_Solution.yaml
+  label: NBRC 989 M solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_989_M_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: MediaDive_607_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml
+  label: MediaDive 607 mineral solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/MediaDive_607_Mineral_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: DSMZ_161_Modified_Wolin_Mineral_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+  label: DSMZ 161 modified Wolin mineral solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_989_C_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_C_Solution.yaml
+  label: NBRC 989 C solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_989_C_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_1339_10xM9_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml
+  label: NBRC 1339 10xM9 solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_1339_10xM9_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_852_Se_W_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_852_Se_W_Solution.yaml
+  label: JCM 852 Se/W solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_852_Se_W_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_521_Reducing_Agent_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml
+  label: JCM 521 reducing agent solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_521_Reducing_Agent_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_1130_Mineral_Solution_I
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml
+  label: JCM 1130 mineral solution I
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_1130_Mineral_Solution_I.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_1474_Solution_B
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_B.yaml
+  label: JCM 1474 Solution B
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_1474_Solution_B.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: JCM_1365_Selenite_Tungustate_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml
+  label: JCM 1365 selenite-tungustate solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/JCM_1365_Selenite_Tungustate_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_971_Solution_B
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_B.yaml
+  label: NBRC 971 Solution B
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_971_Solution_B.yaml
+    and matching aggregate entry; no existing owner is invented.
+- target_id: NBRC_1020_824_Resazurin_Solution
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml
+  label: NBRC 1020/824 resazurin solution
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Isolated proposed bytes only. Intended future owner data/ingredients/mapped/NBRC_1020_824_Resazurin_Solution.yaml
+    and matching aggregate entry; no existing owner is invented.
+checks:
+- check_id: inspect
+  name: Native exact-input provenance
+  status: passed
+  required: true
+  summary: Native inspection binds all32 exact payloads, complete source captures,
+    per-target applicability, component-owner and official-term evidence, mapping
+    rules and schema.
+  target_ids:
+  - JCM_1474_Solution_A
+  - NBRC_1257_Bicarbonate_Solution
+  - JCM_915_Modified_Wolfe_Mineral_Solution
+  - CCAP_PE_Salt_Solution_Stock
+  - JCM_628_Modified_Wolfe_Solution
+  - JCM_265_Wolfe_Mineral_Solution
+  - JCM_1353_Mineral_Solution_A
+  - NBRC_1020_Se_W_Solution
+  - JCM_1130_Mineral_Solution_II
+  - JCM_187_FeCl2_Solution
+  - NBRC_323_Solution_A
+  - NBRC_971_Solution_A
+  - NBRC_989_K_Solution
+  - JCM_1353_Mineral_Solution_B
+  - JCM_317_Se_W_Solution
+  - NBRC_1257_Sulfide_Solution
+  - NBRC_943_Metal_Salt_44
+  - NBRC_943_Modified_Hutner_Solution
+  - NBRC_1339_Phenanthrene_Solution
+  - MediaDive_3774_VFA_Solution
+  - NBRC_989_M_Solution
+  - MediaDive_607_Mineral_Solution
+  - DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NBRC_989_C_Solution
+  - NBRC_1339_10xM9_Solution
+  - JCM_852_Se_W_Solution
+  - JCM_521_Reducing_Agent_Solution
+  - JCM_1130_Mineral_Solution_I
+  - JCM_1474_Solution_B
+  - JCM_1365_Selenite_Tungustate_Solution
+  - NBRC_971_Solution_B
+  - NBRC_1020_824_Resazurin_Solution
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python scripts/record_review.py
+    inspect --targets .temp/all-unmatched-worker-01/shard/named_stocks/family-targets.yaml
+    --input MAPPING_SEMANTICS.md --input .claude/skills/add-media/SKILL.md --input
+    src/mediaingredientmech/schema/mediaingredientmech.yaml --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/applicability.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/search.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/validation.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/strict.tsv
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/candidate-search.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/reviewed-v1-snapshot/decisions.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_A.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1474.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Bicarbonate_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-915.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-151.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/CCAP_PE_Salt_Solution_Stock.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/ccap-PE.pdf
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_628_Modified_Wolfe_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-628.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_265_Wolfe_Mineral_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-265.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_A.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1353.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_Se_W_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1020.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_II.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1130.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_187_FeCl2_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-187.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_323_Solution_A.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_323_Solution_A.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-323.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_A.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_A.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-971.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_K_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_K_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-989.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_B.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_317_Se_W_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_317_Se_W_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-317.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Sulfide_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Metal_Salt_44.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-943.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Modified_Hutner_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_Phenanthrene_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1339.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/togo-M2041.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_3774_VFA_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-3774.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_M_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_M_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_607_Mineral_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-607.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-330.pdf
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/dsmz-161.pdf
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-solution-241.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_C_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_C_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_10xM9_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_852_Se_W_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_852_Se_W_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-852.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_521_Reducing_Agent_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-521.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_I.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_B.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_B.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1365_Selenite_Tungustate_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-1365.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_B.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_B.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_824_Resazurin_Solution.ols.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-824.html
+    --input data/ingredients/mapped/Distilled_Water.yaml --input data/ingredients/mapped/Na2seo35h2o.yaml
+    --input data/ingredients/mapped/Naoh.yaml --input data/ingredients/mapped/Na2wo4_X_2_H2o.yaml
+    --input data/ingredients/mapped/Na2seo3_X_5_H2o.yaml --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-32145.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-131361.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-63939.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/chebi-15377.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/captures/ols-exact-stock.json
+  exit_code: 0
+  evidence_ids:
+  - applicability
+- check_id: guarded-strict-partonomy
+  name: Guarded schema, native strict schema and relational partonomy
+  status: passed
+  required: true
+  summary: All32 proposed payloads pass; zero proposed-parent partonomy violations
+    including nested auxiliary dependency.
+  target_ids:
+  - JCM_1474_Solution_A
+  - NBRC_1257_Bicarbonate_Solution
+  - JCM_915_Modified_Wolfe_Mineral_Solution
+  - CCAP_PE_Salt_Solution_Stock
+  - JCM_628_Modified_Wolfe_Solution
+  - JCM_265_Wolfe_Mineral_Solution
+  - JCM_1353_Mineral_Solution_A
+  - NBRC_1020_Se_W_Solution
+  - JCM_1130_Mineral_Solution_II
+  - JCM_187_FeCl2_Solution
+  - NBRC_323_Solution_A
+  - NBRC_971_Solution_A
+  - NBRC_989_K_Solution
+  - JCM_1353_Mineral_Solution_B
+  - JCM_317_Se_W_Solution
+  - NBRC_1257_Sulfide_Solution
+  - NBRC_943_Metal_Salt_44
+  - NBRC_943_Modified_Hutner_Solution
+  - NBRC_1339_Phenanthrene_Solution
+  - MediaDive_3774_VFA_Solution
+  - NBRC_989_M_Solution
+  - MediaDive_607_Mineral_Solution
+  - DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NBRC_989_C_Solution
+  - NBRC_1339_10xM9_Solution
+  - JCM_852_Se_W_Solution
+  - JCM_521_Reducing_Agent_Solution
+  - JCM_1130_Mineral_Solution_I
+  - JCM_1474_Solution_B
+  - JCM_1365_Selenite_Tungustate_Solution
+  - NBRC_971_Solution_B
+  - NBRC_1020_824_Resazurin_Solution
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python .temp/all-unmatched-worker-01/shard/named_stocks/build_stock_family.py
+  exit_code: 0
+  evidence_ids:
+  - validation
+- check_id: source-formulas
+  name: Complete source formula and quantity review
+  status: passed
+  required: true
+  summary: Each formulation individually transcribed and assessed; source batch denominators
+    retained, JCM915 modifications and JCM265 additions distinguished, reference hydration
+    preserved, variable titrants not quantified.
+  target_ids:
+  - JCM_1474_Solution_A
+  - NBRC_1257_Bicarbonate_Solution
+  - JCM_915_Modified_Wolfe_Mineral_Solution
+  - CCAP_PE_Salt_Solution_Stock
+  - JCM_628_Modified_Wolfe_Solution
+  - JCM_265_Wolfe_Mineral_Solution
+  - JCM_1353_Mineral_Solution_A
+  - NBRC_1020_Se_W_Solution
+  - JCM_1130_Mineral_Solution_II
+  - JCM_187_FeCl2_Solution
+  - NBRC_323_Solution_A
+  - NBRC_971_Solution_A
+  - NBRC_989_K_Solution
+  - JCM_1353_Mineral_Solution_B
+  - JCM_317_Se_W_Solution
+  - NBRC_1257_Sulfide_Solution
+  - NBRC_943_Metal_Salt_44
+  - NBRC_943_Modified_Hutner_Solution
+  - NBRC_1339_Phenanthrene_Solution
+  - MediaDive_3774_VFA_Solution
+  - NBRC_989_M_Solution
+  - MediaDive_607_Mineral_Solution
+  - DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NBRC_989_C_Solution
+  - NBRC_1339_10xM9_Solution
+  - JCM_852_Se_W_Solution
+  - JCM_521_Reducing_Agent_Solution
+  - JCM_1130_Mineral_Solution_I
+  - JCM_1474_Solution_B
+  - JCM_1365_Selenite_Tungustate_Solution
+  - NBRC_971_Solution_B
+  - NBRC_1020_824_Resazurin_Solution
+  evidence_ids:
+  - applicability
+- check_id: integration
+  name: Maintained synchronization and export gates
+  status: not_applicable
+  required: false
+  summary: No maintained edit; integration must generate own-identifier exactMatch
+    rows and synchronize exact approved bytes. This work is not missing scientific
+    stock identity evidence.
+  target_ids:
+  - JCM_1474_Solution_A
+  - NBRC_1257_Bicarbonate_Solution
+  - JCM_915_Modified_Wolfe_Mineral_Solution
+  - CCAP_PE_Salt_Solution_Stock
+  - JCM_628_Modified_Wolfe_Solution
+  - JCM_265_Wolfe_Mineral_Solution
+  - JCM_1353_Mineral_Solution_A
+  - NBRC_1020_Se_W_Solution
+  - JCM_1130_Mineral_Solution_II
+  - JCM_187_FeCl2_Solution
+  - NBRC_323_Solution_A
+  - NBRC_971_Solution_A
+  - NBRC_989_K_Solution
+  - JCM_1353_Mineral_Solution_B
+  - JCM_317_Se_W_Solution
+  - NBRC_1257_Sulfide_Solution
+  - NBRC_943_Metal_Salt_44
+  - NBRC_943_Modified_Hutner_Solution
+  - NBRC_1339_Phenanthrene_Solution
+  - MediaDive_3774_VFA_Solution
+  - NBRC_989_M_Solution
+  - MediaDive_607_Mineral_Solution
+  - DSMZ_161_Modified_Wolin_Mineral_Solution
+  - NBRC_989_C_Solution
+  - NBRC_1339_10xM9_Solution
+  - JCM_852_Se_W_Solution
+  - JCM_521_Reducing_Agent_Solution
+  - JCM_1130_Mineral_Solution_I
+  - JCM_1474_Solution_B
+  - JCM_1365_Selenite_Tungustate_Solution
+  - NBRC_971_Solution_B
+  - NBRC_1020_824_Resazurin_Solution
+evidence:
+- evidence_id: primary-jcm-1474
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:04.491083Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108
+- evidence_id: primary-nbrc-1257
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:02.860735Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06
+- evidence_id: primary-jcm-915
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=915
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:18.316405Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82
+- evidence_id: primary-jcm-151
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:10.429119Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7
+- evidence_id: primary-ccap-PE
+  kind: primary_source
+  reference: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:05.516292Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233
+- evidence_id: primary-jcm-628
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:18.624268Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f
+- evidence_id: primary-jcm-265
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:19.340903Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c
+- evidence_id: primary-jcm-1353
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:07.872529Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1
+- evidence_id: primary-nbrc-1020
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:09.103311Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c
+- evidence_id: primary-jcm-1130
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:07:14.964723Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed
+- evidence_id: primary-jcm-187
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=187
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:19.388882Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804
+- evidence_id: primary-nbrc-323
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=323
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:13.708202Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 5a82a281b6f01560f93d530a0a694c32d165bcd0f2b6156506d7c1141e061382
+- evidence_id: primary-nbrc-971
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=971
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:13.951104Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311
+- evidence_id: primary-nbrc-989
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:14.528919Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88
+- evidence_id: primary-jcm-317
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:19.558521Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e
+- evidence_id: primary-nbrc-943
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:15.551337Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593
+- evidence_id: primary-nbrc-1339
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:15.611297Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837
+- evidence_id: primary-togo-M2041
+  kind: primary_source
+  reference: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2041
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:23.133701Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 4a3626595a76449ca9bf73fcd3119ab4c985d8b0e5e7fe8d3e2bfb0e3569fd90
+- evidence_id: primary-mediadive-solution-3774
+  kind: primary_source
+  reference: https://mediadive.dsmz.de/rest/solution/3774
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:07:14.964960Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 74510f4009af302d60b1f15565a82f4ab166e0553b9e17744d584c12a1ccd4b7
+- evidence_id: primary-mediadive-solution-607
+  kind: primary_source
+  reference: https://mediadive.dsmz.de/rest/solution/607
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:21.877295Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: d1b947d90e8193e9626b323eb32fa1c82bdcf2fb2c1486e064d6c1994d83fa11
+- evidence_id: primary-dsmz-330
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:07:15.523212Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 8229d2b6a229d3448df71516a755965110bf57fb93c5190de4cbebe741847e29
+- evidence_id: primary-dsmz-161
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:07:16.173447Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 0f4ea6194efcb146abe36366dd72ce890643e9cfe39bc947a9df7281959478e0
+- evidence_id: primary-mediadive-solution-241
+  kind: primary_source
+  reference: https://mediadive.dsmz.de/rest/solution/241
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:21.875062Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 50cc42c209f550b7abc4a5f48b455553516220b6ef9613f481941f9e15f0b25d
+- evidence_id: primary-jcm-852
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:20.119641Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458
+- evidence_id: primary-jcm-521
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:20.118438Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff
+- evidence_id: primary-jcm-1365
+  kind: primary_source
+  reference: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1365
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:12.391120Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 8e5347f7670f633e13fc9e04674fcbfae987805dd853c64a591bdb80a8b3eb45
+- evidence_id: primary-nbrc-824
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824
+  locator: Complete source recipe; exact stock subsection and preparation instructions
+  accessed_at: '2026-11-08T04:06:09.103563Z'
+  support: supports
+  summary: Primary named stock ingredient forms, printed amounts, nominal batch basis
+    and source-local preparation instructions. Applicability is limited to exact per-target
+    specification and occurrence bindings.
+  snapshot_sha256: 0317a82ebb8fff38df7bb305fc69a392c2f45d4e63969a0a6714616fa9676c2e
+- evidence_id: applicability
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/applicability.json
+  locator: Complete artifact and exact referenced captures
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Complete32 source-specific specifications and exact original selected occurrences;
+    selection excludes NBRC824 unknown-volume row and NBRC323 optional-agar branch
+    from quantitative stock mapping.
+  snapshot_sha256: 692cccda77cdbe8f39baf1abf80b84d5259aee1eae028aa97e12450ba51186a2
+- evidence_id: validation
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/validation.json
+  locator: Complete artifact and exact referenced captures
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: All32 payloads passed guarded writer, strict schema and proposed-parent
+    partonomy checks in complete current catalog plus auxiliary proposedMetal44.
+  snapshot_sha256: d6468421af8a17b718749b5f61e9f2031c530ab061a0e07740efd91fa04da10f
+- evidence_id: search
+  kind: search
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/search.json
+  locator: Complete artifact and exact referenced captures
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Ignored-inclusive direct maintained corpus search for exact source-qualified
+    preferred/synonym/identifier matches found no candidate. Prior raw-label/contextual
+    candidate search separately compares known Wolfe formulations; bounded exact OLS
+    queries all returned zero.
+  snapshot_sha256: 0836d08b7e28c21effe07cf1fcd58f85eec7cbd32e30d1480e6dbc9c3ef3135c
+  search_scope: Direct filesystem enumeration data/ingredients/*/*.yaml includes ignored
+    files; exact preferred/synonym/identifier search and documented contextual candidates
+    only. No exhaustive absence claim beyond this corpus/query scope.
+- evidence_id: candidates
+  kind: search
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/candidate-search.json
+  locator: Complete artifact and exact referenced captures
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: All44 raw-name searches and full contextual candidates. Known MIM Wolfe
+    formulations differ in chelator, forms or amounts; no synonym union from shared
+    stock name.
+  snapshot_sha256: be3d800d79e5d78937846eb8e5eb38bbe6bd2360401791aa38a81d83c79a997b
+  search_scope: Direct filesystem enumeration data/ingredients/*/*.yaml includes ignored
+    files; exact preferred/synonym/identifier search and documented contextual candidates
+    only. No exhaustive absence claim beyond this corpus/query scope.
+- evidence_id: terms
+  kind: authority
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/fetch-receipt.json
+  locator: Complete artifact and exact referenced captures
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Independent official OLS exact-ID captures support only quartet identities
+    NaOH, hydrated selenite, hydrated tungstate and water. Current component-owner
+    payloads hashed; no approval of their unrelated claims.
+  snapshot_sha256: ac35d6499af7db3cadb0e1d3ea6c570dc38b4aefc2c08cd2acd537f586c45dd1
+- evidence_id: owners
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/component-owners.json
+  locator: Complete artifact and exact referenced captures
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Complete current five component owners, including two existing selenium
+    records sharing an identifier, retained for identity-reference scope only.
+  snapshot_sha256: 73645595b4fe6a3fe16fa078672153913cf0b26480f8a63eebcfb7a48b4b0b7c
+- evidence_id: ontology-JCM_1474_Solution_A
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20A&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:15.372171Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_1474_Solution_A
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 070f11e282e6bde44c155ad3043c344b5f82df6809e8d3db76105d5494a658f6
+- evidence_id: ontology-NBRC_1257_Bicarbonate_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20bicarbonate%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:15.372420Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_1257_Bicarbonate_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 27b310f704f90db0ec0c081d73d0eb762ef66ce6a5ca37aa8bcb304e0be4e1b8
+- evidence_id: ontology-JCM_915_Modified_Wolfe_Mineral_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%20915%20modified%20Wolfe%20mineral%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:15.372487Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_915_Modified_Wolfe_Mineral_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_915_Modified_Wolfe_Mineral_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 9be21e0e62c06b4e4ffce7ed7a67d0c8c142ad3883289e7a3e9dbc7b0237414a
+- evidence_id: ontology-CCAP_PE_Salt_Solution_Stock
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=CCAP%20PE%20salt%20solution%20stock&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:15.980687Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-CCAP_PE_Salt_Solution_Stock
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 85efca4816551571534c0112fd8ea70edc867e0961bb9d83c896fa2586a10919
+- evidence_id: ontology-JCM_628_Modified_Wolfe_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%20628%20modified%20Wolfe%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:15.991829Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_628_Modified_Wolfe_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_628_Modified_Wolfe_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: e85b1d6e1b3925405cfba5edce4a191e9692e6ae5a00e043aa64336c8d7d8365
+- evidence_id: ontology-JCM_265_Wolfe_Mineral_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%20265%20Wolfe%20mineral%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:15.996244Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_265_Wolfe_Mineral_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 0bc15ad609fb39f33c9f1b7ad5dbac5fa06b9684390734957a6f1258852aaeec
+- evidence_id: ontology-JCM_1353_Mineral_Solution_A
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20A&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:16.588962Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_1353_Mineral_Solution_A
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_A.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: aef67bb65754d17d30728598c10bf81460effbc7d9fcb123203a66bff93e59ba
+- evidence_id: ontology-NBRC_1020_Se_W_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%20Se%2FW%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:16.591016Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_1020_Se_W_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_Se_W_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 2f1ac6a1bcf12e6f0dd6010d44bc8fd9a32dc189a890ace25fa55557706595af
+- evidence_id: ontology-JCM_1130_Mineral_Solution_II
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20II&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:16.609327Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_1130_Mineral_Solution_II
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_II.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 365dbe14ec365d2d8987cff143dae15d10a3e1aa35b764d276360a3c0f5eab01
+- evidence_id: ontology-JCM_187_FeCl2_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%20187%20FeCl2%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:17.197588Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_187_FeCl2_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_187_FeCl2_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: c011573a720fa312202cc1db271b5eb36f40d3bbd422b1854d6c5b076723c82e
+- evidence_id: ontology-NBRC_323_Solution_A
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20323%20Solution%20A&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:17.213650Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_323_Solution_A
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_323_Solution_A.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 52ddbceee46b2f27732571109c399a9415b3389d5594d734f270cdec950efe8f
+- evidence_id: ontology-NBRC_971_Solution_A
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20A&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:17.237875Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_971_Solution_A
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_A.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 6282cfcc8a31398ee542c833563665c24bdf898b2b2ceddf6cd3e32ce4303e60
+- evidence_id: ontology-NBRC_989_K_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20K%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:17.859202Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_989_K_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_K_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 0436902d616dc92e98d05f149ccd156b032f1e0b62b81f9ebcf81dcdb6740bf6
+- evidence_id: ontology-JCM_1353_Mineral_Solution_B
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20B&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:17.876867Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_1353_Mineral_Solution_B
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1353_Mineral_Solution_B.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: c5d329a8d87532c65f6d3e962d95b0b62512696ba6560e65cad6aed14671caa2
+- evidence_id: ontology-JCM_317_Se_W_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%20317%20Se%2FW%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:17.880604Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_317_Se_W_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_317_Se_W_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 04ba647c6ccc5a160ecfa4fee0433d20a2d6e2fce09e51ac598a2c27cb6e4d37
+- evidence_id: ontology-NBRC_1257_Sulfide_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20sulfide%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:18.468421Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_1257_Sulfide_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: d4fbaffcfa77390358456d30b6a8e78aeaa1a18b3513f039c285029baffc8922
+- evidence_id: ontology-NBRC_943_Metal_Salt_44
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20Metal%20salt%2044&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:18.476275Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_943_Metal_Salt_44
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 05b5ca36872439f8bf24e0fe077f5fe175d4880d96d881d924744a1b5a006aaf
+- evidence_id: ontology-NBRC_943_Modified_Hutner_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20modified%20Hutner%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:18.479703Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_943_Modified_Hutner_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Modified_Hutner_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: a52153cbd1962c292f5dcebd92d36e02fcc08232a5342e84ce663d7ccb04eeca
+- evidence_id: ontology-NBRC_1339_Phenanthrene_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%20phenanthrene%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:19.089977Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_1339_Phenanthrene_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 5b40b69031ff9b73f4a259f979d86f283cca9584890dce9c5d865824a653db06
+- evidence_id: ontology-MediaDive_3774_VFA_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%203774%20VFA%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:19.093725Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-MediaDive_3774_VFA_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_3774_VFA_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 20d9e794f9786d16188211a9bf9a7c2bb3e150d9e63eca194d65907103b245ad
+- evidence_id: ontology-NBRC_989_M_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20M%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:19.106751Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_989_M_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_M_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 45183d618f04b39f1d00553dfd63f7719c096b66529cefcfe7fae8923dbc76fa
+- evidence_id: ontology-MediaDive_607_Mineral_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%20607%20mineral%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:19.704732Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-MediaDive_607_Mineral_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/MediaDive_607_Mineral_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 835b1b41a6377070fe9267e13b8e0813ecea56714ec360a998d3deb11b058d17
+- evidence_id: ontology-DSMZ_161_Modified_Wolin_Mineral_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=DSMZ%20161%20modified%20Wolin%20mineral%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:19.709671Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-DSMZ_161_Modified_Wolin_Mineral_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/DSMZ_161_Modified_Wolin_Mineral_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: c4883a3f5e02cd837ee8c99fc9138f82d2ad9941943c2977bdc6cab0acb406fe
+- evidence_id: ontology-NBRC_989_C_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20C%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:19.720338Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_989_C_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_989_C_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: f960a7fc1de689f346aa1955fb1e2d5d7728f7efcc2de6104e38599942ad28e8
+- evidence_id: ontology-NBRC_1339_10xM9_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%2010xM9%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:20.344452Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_1339_10xM9_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_10xM9_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 0746c92c69d9e2a8242d1fd106b67bb8a6aefc7648a92fc2e5aaf964af595dde
+- evidence_id: ontology-JCM_852_Se_W_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%20852%20Se%2FW%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:20.347980Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_852_Se_W_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_852_Se_W_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: f8b59772d07337aef1cdff2fa7df453d024d9bd12932d4f3cfeebe8988c8983c
+- evidence_id: ontology-JCM_521_Reducing_Agent_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%20521%20reducing%20agent%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:20.351611Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_521_Reducing_Agent_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_521_Reducing_Agent_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 44092c4d5203001b76e9839a92fb855d32983e5dc7d959fd8e07c088f731824f
+- evidence_id: ontology-JCM_1130_Mineral_Solution_I
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20I&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:20.948516Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_1130_Mineral_Solution_I
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1130_Mineral_Solution_I.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: b07fde256a692290585e4e9e1a599a183169ce6b05042ee2385affd2bc0aafa9
+- evidence_id: ontology-JCM_1474_Solution_B
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20B&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:20.982051Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_1474_Solution_B
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_B.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: baf8eeb9b415749681ec66e5cd1b05a124a8aec8c5fc6a384f742a9ffefd6949
+- evidence_id: ontology-JCM_1365_Selenite_Tungustate_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=JCM%201365%20selenite-tungustate%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:20.999855Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-JCM_1365_Selenite_Tungustate_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1365_Selenite_Tungustate_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 88e368198166e242c72401d620d7bc381b1db0f6afc3e539fb0f5391c8a289a1
+- evidence_id: ontology-NBRC_971_Solution_B
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20B&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:21.546258Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_971_Solution_B
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_971_Solution_B.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 8bfb09ad4e6c7d0d19da72cc116bec2d920586a3107b50100fa8a46a8dac38bf
+- evidence_id: ontology-NBRC_1020_824_Resazurin_Solution
+  kind: search
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%2F824%20resazurin%20solution&exact=true&rows=100
+  locator: response.numFound=0 for exact source-qualified stock name
+  accessed_at: '2026-11-08T04:34:21.574139Z'
+  support: supports
+  summary: Bounded exact OLS lookup; not exhaustive absence across every ontology
+    or synonym. Source-qualified formulation identity remains primary evidence.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+  search_scope: One exact named source-stock query to OLS, rows100; full response
+    captured.
+- evidence_id: payload-NBRC_1020_824_Resazurin_Solution
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1020_824_Resazurin_Solution.yaml
+  locator: Entire exact proposed IngredientRecord
+  accessed_at: '2026-11-08T04:37:20Z'
+  support: supports
+  summary: Source-specific registry identifier, raw source aliases with local provenance,
+    complete constituent enumeration, supported quantity basis and limitations; no
+    invented counts or roles.
+  snapshot_sha256: 34dc5f26d7369080768f32e08fab2b4850cb93e641590cc9a1a1b102a1c0d3cf
+assessments:
+- assessment_id: identity-JCM_1474_Solution_A
+  area: identity
+  topic: JCM 1474 Solution A exact source formulation
+  outcome: supported
+  summary: 'Original batch: 10 g of each salt and 100 mL distilled water. Values use
+    the nominal printed water-volume basis; source adds 10 mL to receiving medium.
+    No equivalence to unrelated Solution A formulations. The whole source preparation
+    has a stable registry identity; explicitly ungrounded component fields do not
+    make its named recipe identity unknown.'
+  target_ids:
+  - JCM_1474_Solution_A
+  evidence_ids:
+  - primary-jcm-1474
+  - applicability
+  - payload-JCM_1474_Solution_A
+  - ontology-JCM_1474_Solution_A
+  - candidates
+- assessment_id: claims-JCM_1474_Solution_A
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_1474_Solution_A
+  evidence_ids:
+  - primary-jcm-1474
+  - payload-JCM_1474_Solution_A
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_1257_Bicarbonate_Solution
+  area: identity
+  topic: NBRC 1257 bicarbonate solution exact source formulation
+  outcome: supported
+  summary: 'Original batch: NaHCO3 8.4 g and water 100 mL, saturated with CO2 and
+    autoclaved under CO2. Source calls it 1.0 M. CO2 amount is variable saturation,
+    not a guessed numerical amount. Frozen nested 8.4 G_PER_L is a denominator error,
+    not inherited here. The whole source preparation has a stable registry identity;
+    explicitly ungrounded component fields do not make its named recipe identity unknown.'
+  target_ids:
+  - NBRC_1257_Bicarbonate_Solution
+  evidence_ids:
+  - primary-nbrc-1257
+  - applicability
+  - payload-NBRC_1257_Bicarbonate_Solution
+  - ontology-NBRC_1257_Bicarbonate_Solution
+  - candidates
+- assessment_id: claims-NBRC_1257_Bicarbonate_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_1257_Bicarbonate_Solution
+  evidence_ids:
+  - primary-nbrc-1257
+  - payload-NBRC_1257_Bicarbonate_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_915_Modified_Wolfe_Mineral_Solution
+  area: identity
+  topic: JCM 915 modified Wolfe mineral solution exact source formulation
+  outcome: supported
+  summary: JCM 915 modifies JCM151 trace minerals to final Na2MoO4·2H2O 0.4 g/L, CuSO4·5H2O
+    0.02 g/L and adds NiCl2·6H2O 0.01 g/L. Retain MnSO4·xH2O and unqualified AlK(SO4)2
+    as printed; no hydration guessed. KOH titration at pH6.5 then7 has no fixed amount.
+    Distinct from EDTA-based Wolfe stocks and current Modified Wolfes Minerals. The
+    whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_915_Modified_Wolfe_Mineral_Solution
+  evidence_ids:
+  - primary-jcm-915
+  - primary-jcm-151
+  - applicability
+  - payload-JCM_915_Modified_Wolfe_Mineral_Solution
+  - ontology-JCM_915_Modified_Wolfe_Mineral_Solution
+  - candidates
+- assessment_id: claims-JCM_915_Modified_Wolfe_Mineral_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 15 printed component assertions and 3 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_915_Modified_Wolfe_Mineral_Solution
+  evidence_ids:
+  - primary-jcm-915
+  - primary-jcm-151
+  - payload-JCM_915_Modified_Wolfe_Mineral_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-CCAP_PE_Salt_Solution_Stock
+  area: identity
+  topic: CCAP PE salt solution stock exact source formulation
+  outcome: supported
+  summary: Source batch is 1000 cm3 water with 200 g nitrate and 20 g disodium phosphate
+    dodecahydrate. Preserve explicit hydrate; no use of erroneous frozen phosphatidylcholine
+    term. Receiving stock and separately flattened salt rows must not be double-counted.
+    The whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  evidence_ids:
+  - primary-ccap-PE
+  - applicability
+  - payload-CCAP_PE_Salt_Solution_Stock
+  - ontology-CCAP_PE_Salt_Solution_Stock
+  - candidates
+- assessment_id: claims-CCAP_PE_Salt_Solution_Stock
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - CCAP_PE_Salt_Solution_Stock
+  evidence_ids:
+  - primary-ccap-PE
+  - payload-CCAP_PE_Salt_Solution_Stock
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_628_Modified_Wolfe_Solution
+  area: identity
+  topic: JCM 628 modified Wolfe solution exact source formulation
+  outcome: supported
+  summary: Defined four-salt mineral base from JCM628; JCM1347 references this stock.
+    It is distinct from trace-metal Wolfe stocks in JCM915/265 and existing MIM candidates.
+    The whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_628_Modified_Wolfe_Solution
+  evidence_ids:
+  - primary-jcm-628
+  - applicability
+  - payload-JCM_628_Modified_Wolfe_Solution
+  - ontology-JCM_628_Modified_Wolfe_Solution
+  - candidates
+- assessment_id: claims-JCM_628_Modified_Wolfe_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 5 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_628_Modified_Wolfe_Solution
+  evidence_ids:
+  - primary-jcm-628
+  - payload-JCM_628_Modified_Wolfe_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_265_Wolfe_Mineral_Solution
+  area: identity
+  topic: JCM 265 Wolfe mineral solution exact source formulation
+  outcome: supported
+  summary: JCM265 adds three printed salts to JCM151 trace minerals. Preserve unresolved
+    x hydration in MnSO4 and unqualified AlK(SO4)2; unquantified KOH pH adjustment
+    retained. All three source occurrences explicitly reference265; no global Wolfe-name
+    equivalence. The whole source preparation has a stable registry identity; explicitly
+    ungrounded component fields do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_265_Wolfe_Mineral_Solution
+  evidence_ids:
+  - primary-jcm-265
+  - primary-jcm-151
+  - applicability
+  - payload-JCM_265_Wolfe_Mineral_Solution
+  - ontology-JCM_265_Wolfe_Mineral_Solution
+  - candidates
+- assessment_id: claims-JCM_265_Wolfe_Mineral_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 17 printed component assertions and 3 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_265_Wolfe_Mineral_Solution
+  evidence_ids:
+  - primary-jcm-265
+  - primary-jcm-151
+  - payload-JCM_265_Wolfe_Mineral_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_1353_Mineral_Solution_A
+  area: identity
+  topic: JCM 1353 mineral solution A exact source formulation
+  outcome: supported
+  summary: Printed JCM1353 stock with pH6.5 adjustment using HCl. Titrant amount is
+    unquantified. EDTA salt/protonation form is not silently supplied. Explicit1353
+    references and local see-below label resolve to same source stock. The whole source
+    preparation has a stable registry identity; explicitly ungrounded component fields
+    do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_1353_Mineral_Solution_A
+  evidence_ids:
+  - primary-jcm-1353
+  - applicability
+  - payload-JCM_1353_Mineral_Solution_A
+  - ontology-JCM_1353_Mineral_Solution_A
+  - candidates
+- assessment_id: claims-JCM_1353_Mineral_Solution_A
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 11 printed component assertions and 2 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_1353_Mineral_Solution_A
+  evidence_ids:
+  - primary-jcm-1353
+  - payload-JCM_1353_Mineral_Solution_A
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_1020_Se_W_Solution
+  area: identity
+  topic: NBRC 1020 Se/W solution exact source formulation
+  outcome: supported
+  summary: Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts
+    but no water/preparation denominator; its occurrence is not mapped to this quantified
+    stock. Printed unhydrated formulas are retained. The whole source preparation
+    has a stable registry identity; explicitly ungrounded component fields do not
+    make its named recipe identity unknown.
+  target_ids:
+  - NBRC_1020_Se_W_Solution
+  evidence_ids:
+  - primary-nbrc-1020
+  - applicability
+  - payload-NBRC_1020_Se_W_Solution
+  - ontology-NBRC_1020_Se_W_Solution
+  - candidates
+- assessment_id: claims-NBRC_1020_Se_W_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_1020_Se_W_Solution
+  evidence_ids:
+  - primary-nbrc-1020
+  - payload-NBRC_1020_Se_W_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_1130_Mineral_Solution_II
+  area: identity
+  topic: JCM 1130 mineral solution II exact source formulation
+  outcome: supported
+  summary: JCM1385 inherits1130 with mannitol addition to receiving medium; stock
+    composition is unchanged. Distinct from DSMZ436 Mineral2. The whole source preparation
+    has a stable registry identity; explicitly ungrounded component fields do not
+    make its named recipe identity unknown.
+  target_ids:
+  - JCM_1130_Mineral_Solution_II
+  evidence_ids:
+  - primary-jcm-1130
+  - applicability
+  - payload-JCM_1130_Mineral_Solution_II
+  - ontology-JCM_1130_Mineral_Solution_II
+  - candidates
+- assessment_id: claims-JCM_1130_Mineral_Solution_II
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 6 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_1130_Mineral_Solution_II
+  evidence_ids:
+  - primary-jcm-1130
+  - payload-JCM_1130_Mineral_Solution_II
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_187_FeCl2_Solution
+  area: identity
+  topic: JCM 187 FeCl2 solution exact source formulation
+  outcome: supported
+  summary: 'Source nominal batch: 10 mL 25% HCl (7.7 M), 1.5 g FeCl2·4H2O and 990
+    mL water. Acid is a prepared component, not neat HCl. All eleven receiving occurrences
+    explicitly reference JCM187; doses differ and remain occurrence-bound. The whole
+    source preparation has a stable registry identity; explicitly ungrounded component
+    fields do not make its named recipe identity unknown.'
+  target_ids:
+  - JCM_187_FeCl2_Solution
+  evidence_ids:
+  - primary-jcm-187
+  - applicability
+  - payload-JCM_187_FeCl2_Solution
+  - ontology-JCM_187_FeCl2_Solution
+  - candidates
+- assessment_id: claims-JCM_187_FeCl2_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 11 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_187_FeCl2_Solution
+  evidence_ids:
+  - primary-jcm-187
+  - payload-JCM_187_FeCl2_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_323_Solution_A
+  area: identity
+  topic: NBRC 323 Solution A exact source formulation
+  outcome: supported
+  summary: 'Printed original batch: yeast extract1g, ammonium sulfate0.2g, magnesium
+    sulfate heptahydrate0.5g, calcium chloride dihydrate0.25g, KH2PO4 0.6g and water500mL.
+    pH3–4; no adjustment reagent specified. Formula defines a source stock with undefined
+    yeast-extract component; it is distinct from NBRC971 Solution A. Raw generic alias
+    is only resolvable with source context. The whole source preparation has a stable
+    registry identity; explicitly ungrounded component fields do not make its named
+    recipe identity unknown.'
+  target_ids:
+  - NBRC_323_Solution_A
+  evidence_ids:
+  - primary-nbrc-323
+  - applicability
+  - payload-NBRC_323_Solution_A
+  - ontology-NBRC_323_Solution_A
+  - candidates
+- assessment_id: claims-NBRC_323_Solution_A
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 6 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_323_Solution_A
+  evidence_ids:
+  - primary-nbrc-323
+  - payload-NBRC_323_Solution_A
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_971_Solution_A
+  area: identity
+  topic: NBRC 971 Solution A exact source formulation
+  outcome: supported
+  summary: Printed two-component source stock. Ferric ammonium citrate composition
+    remains the named source reagent; no molecular formula guessed. Distinct from
+    NBRC323 Solution A. Raw generic alias is only resolvable with source context.
+    The whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - NBRC_971_Solution_A
+  evidence_ids:
+  - primary-nbrc-971
+  - applicability
+  - payload-NBRC_971_Solution_A
+  - ontology-NBRC_971_Solution_A
+  - candidates
+- assessment_id: claims-NBRC_971_Solution_A
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_971_Solution_A
+  evidence_ids:
+  - primary-nbrc-971
+  - payload-NBRC_971_Solution_A
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_989_K_Solution
+  area: identity
+  topic: NBRC 989 K solution exact source formulation
+  outcome: supported
+  summary: Three salts, 90 g each per printed1L. Receiving dose is10mL (independently
+    corrected and verified); K is local stock name, not an elemental ingredient. The
+    whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - NBRC_989_K_Solution
+  evidence_ids:
+  - primary-nbrc-989
+  - applicability
+  - payload-NBRC_989_K_Solution
+  - ontology-NBRC_989_K_Solution
+  - candidates
+- assessment_id: claims-NBRC_989_K_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 4 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_989_K_Solution
+  evidence_ids:
+  - primary-nbrc-989
+  - payload-NBRC_989_K_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_1353_Mineral_Solution_B
+  area: identity
+  topic: JCM 1353 mineral solution B exact source formulation
+  outcome: supported
+  summary: Exact W/Ni/V stock; source receiving dose2mL, filter sterilized. No implied
+    hydration for printed VOSO4 and no substitution of generic nickel salt. The whole
+    source preparation has a stable registry identity; explicitly ungrounded component
+    fields do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_1353_Mineral_Solution_B
+  evidence_ids:
+  - primary-jcm-1353
+  - applicability
+  - payload-JCM_1353_Mineral_Solution_B
+  - ontology-JCM_1353_Mineral_Solution_B
+  - candidates
+- assessment_id: claims-JCM_1353_Mineral_Solution_B
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 4 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_1353_Mineral_Solution_B
+  evidence_ids:
+  - primary-jcm-1353
+  - payload-JCM_1353_Mineral_Solution_B
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_317_Se_W_Solution
+  area: identity
+  topic: JCM 317 Se/W solution exact source formulation
+  outcome: supported
+  summary: Exact source stock distinct from NBRC1020 unhydrated tungstate, JCM852
+    lower amounts/hydrated selenite, and JCM431 alkaline formula. The whole source
+    preparation has a stable registry identity; explicitly ungrounded component fields
+    do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_317_Se_W_Solution
+  evidence_ids:
+  - primary-jcm-317
+  - applicability
+  - payload-JCM_317_Se_W_Solution
+  - ontology-JCM_317_Se_W_Solution
+  - candidates
+- assessment_id: claims-JCM_317_Se_W_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_317_Se_W_Solution
+  evidence_ids:
+  - primary-jcm-317
+  - payload-JCM_317_Se_W_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_1257_Sulfide_Solution
+  area: identity
+  topic: NBRC 1257 sulfide solution exact source formulation
+  outcome: supported
+  summary: 'Source batch: Na2S·9H2O12g and water50mL, designated1.0M, filter sterilized
+    and stored underN2. 240g/L is explicit12g/0.05L nominal recipe-basis conversion;
+    frozen12G_PER_L is rejected. Receiving dose1.5mL. The whole source preparation
+    has a stable registry identity; explicitly ungrounded component fields do not
+    make its named recipe identity unknown.'
+  target_ids:
+  - NBRC_1257_Sulfide_Solution
+  evidence_ids:
+  - primary-nbrc-1257
+  - applicability
+  - payload-NBRC_1257_Sulfide_Solution
+  - ontology-NBRC_1257_Sulfide_Solution
+  - candidates
+- assessment_id: claims-NBRC_1257_Sulfide_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 2 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_1257_Sulfide_Solution
+  evidence_ids:
+  - primary-nbrc-1257
+  - payload-NBRC_1257_Sulfide_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_943_Metal_Salt_44
+  area: identity
+  topic: NBRC 943 Metal salt 44 exact source formulation
+  outcome: supported
+  summary: 'Nested source preparation: NaEDTA250mg, ZnSO4·7H2O1095mg, FeSO4·7H2O0.5g,
+    MnSO4·H2O154mg, CuSO4·5H2O39.2mg, Co(NO3)2·6H2O24.8mg, Na2B4O7·10H2O17.7mg per100mL
+    plus drops concentratedH2SO4. NaEDTA exact salt form and acid drops remain unquantified;
+    no chemical grounding asserted. Auxiliary proposal solely supports case116 nested
+    component. The whole source preparation has a stable registry identity; explicitly
+    ungrounded component fields do not make its named recipe identity unknown.'
+  target_ids:
+  - NBRC_943_Metal_Salt_44
+  evidence_ids:
+  - primary-nbrc-943
+  - applicability
+  - payload-NBRC_943_Metal_Salt_44
+  - ontology-NBRC_943_Metal_Salt_44
+  - candidates
+- assessment_id: claims-NBRC_943_Metal_Salt_44
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 9 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_943_Metal_Salt_44
+  evidence_ids:
+  - primary-nbrc-943
+  - payload-NBRC_943_Metal_Salt_44
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_943_Modified_Hutner_Solution
+  area: identity
+  topic: NBRC 943 modified Hutner solution exact source formulation
+  outcome: supported
+  summary: Source total preparation1L includes50mL Metal salt44, which is separately
+    proposed with its entire printed composition. NTA neutralized using7.3gKOH to
+    pH6.6–6.8. Solvent amount is not forced to1L in addition to the50mL nested stock.
+    Printed molybdate dihydrate retained without substituting tetrahydrate. The whole
+    source preparation has a stable registry identity; explicitly ungrounded component
+    fields do not make its named recipe identity unknown.
+  target_ids:
+  - NBRC_943_Modified_Hutner_Solution
+  evidence_ids:
+  - primary-nbrc-943
+  - applicability
+  - payload-NBRC_943_Modified_Hutner_Solution
+  - ontology-NBRC_943_Modified_Hutner_Solution
+  - candidates
+- assessment_id: claims-NBRC_943_Modified_Hutner_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 8 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_943_Modified_Hutner_Solution
+  evidence_ids:
+  - primary-nbrc-943
+  - payload-NBRC_943_Modified_Hutner_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_1339_Phenanthrene_Solution
+  area: identity
+  topic: NBRC 1339 phenanthrene solution exact source formulation
+  outcome: supported
+  summary: Source specifies250mM phenanthrene in DMSO, filtered through DMSO-safe
+    filter;10mL used. Solvent is explicit but its precise volume fraction is not given.
+    Whole solution is distinct from neat phenanthrene. The whole source preparation
+    has a stable registry identity; explicitly ungrounded component fields do not
+    make its named recipe identity unknown.
+  target_ids:
+  - NBRC_1339_Phenanthrene_Solution
+  evidence_ids:
+  - primary-nbrc-1339
+  - primary-togo-M2041
+  - applicability
+  - payload-NBRC_1339_Phenanthrene_Solution
+  - ontology-NBRC_1339_Phenanthrene_Solution
+  - candidates
+- assessment_id: claims-NBRC_1339_Phenanthrene_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 2 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_1339_Phenanthrene_Solution
+  evidence_ids:
+  - primary-nbrc-1339
+  - primary-togo-M2041
+  - payload-NBRC_1339_Phenanthrene_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-MediaDive_3774_VFA_Solution
+  area: identity
+  topic: MediaDive 3774 VFA solution exact source formulation
+  outcome: supported
+  summary: Source seven liquid input amounts sum31mL; units retain original batch
+    amounts without assuming additive final volume or introducing solvent. No neat-acid
+    purity or grade inferred. LiveJCM1029 is unavailable; exact MediaDive3774 body
+    supplies this source-defined formula. The whole source preparation has a stable
+    registry identity; explicitly ungrounded component fields do not make its named
+    recipe identity unknown.
+  target_ids:
+  - MediaDive_3774_VFA_Solution
+  evidence_ids:
+  - primary-mediadive-solution-3774
+  - applicability
+  - payload-MediaDive_3774_VFA_Solution
+  - ontology-MediaDive_3774_VFA_Solution
+  - candidates
+- assessment_id: claims-MediaDive_3774_VFA_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 7 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - MediaDive_3774_VFA_Solution
+  evidence_ids:
+  - primary-mediadive-solution-3774
+  - payload-MediaDive_3774_VFA_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_989_M_Solution
+  area: identity
+  topic: NBRC 989 M solution exact source formulation
+  outcome: supported
+  summary: Both specified hydrates4g each per1L; receiving dose2.5mL. The whole source
+    preparation has a stable registry identity; explicitly ungrounded component fields
+    do not make its named recipe identity unknown.
+  target_ids:
+  - NBRC_989_M_Solution
+  evidence_ids:
+  - primary-nbrc-989
+  - applicability
+  - payload-NBRC_989_M_Solution
+  - ontology-NBRC_989_M_Solution
+  - candidates
+- assessment_id: claims-NBRC_989_M_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_989_M_Solution
+  evidence_ids:
+  - primary-nbrc-989
+  - payload-NBRC_989_M_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-MediaDive_607_Mineral_Solution
+  area: identity
+  topic: MediaDive 607 mineral solution exact source formulation
+  outcome: supported
+  summary: Exact source solution607 is used in both J1029/main5080 and DSMZ330/main606,38mL
+    each. Source accession and full formula establish identity. Frozen receiving recipe
+    cites CultureMech:014792; standalone target composition was not included in frozen
+    inputs and must not be declared EXACT_FORMULATION solely from that pointer. The
+    whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - MediaDive_607_Mineral_Solution
+  evidence_ids:
+  - primary-mediadive-solution-607
+  - primary-dsmz-330
+  - applicability
+  - payload-MediaDive_607_Mineral_Solution
+  - ontology-MediaDive_607_Mineral_Solution
+  - candidates
+- assessment_id: claims-MediaDive_607_Mineral_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 6 printed component assertions and 2 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - MediaDive_607_Mineral_Solution
+  evidence_ids:
+  - primary-mediadive-solution-607
+  - primary-dsmz-330
+  - payload-MediaDive_607_Mineral_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-DSMZ_161_Modified_Wolin_Mineral_Solution
+  area: identity
+  topic: DSMZ 161 modified Wolin mineral solution exact source formulation
+  outcome: supported
+  summary: DSMZ161 inherited mineral solution from141, with full recipe printed. Retain
+    explicit hydrated forms; KOH pH6.5 then7 is unquantified. Distinct from inspected
+    MIM Wolfe formulations in chelator, salts and amounts. The whole source preparation
+    has a stable registry identity; explicitly ungrounded component fields do not
+    make its named recipe identity unknown.
+  target_ids:
+  - DSMZ_161_Modified_Wolin_Mineral_Solution
+  evidence_ids:
+  - primary-dsmz-161
+  - primary-mediadive-solution-241
+  - applicability
+  - payload-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - ontology-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - candidates
+- assessment_id: claims-DSMZ_161_Modified_Wolin_Mineral_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 17 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - DSMZ_161_Modified_Wolin_Mineral_Solution
+  evidence_ids:
+  - primary-dsmz-161
+  - primary-mediadive-solution-241
+  - payload-DSMZ_161_Modified_Wolin_Mineral_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_989_C_Solution
+  area: identity
+  topic: NBRC 989 C solution exact source formulation
+  outcome: supported
+  summary: Exact10.6g dihydrate per1L water, receiving2.5mL; whole stock is distinct
+    from neat calcium chloride. The whole source preparation has a stable registry
+    identity; explicitly ungrounded component fields do not make its named recipe
+    identity unknown.
+  target_ids:
+  - NBRC_989_C_Solution
+  evidence_ids:
+  - primary-nbrc-989
+  - applicability
+  - payload-NBRC_989_C_Solution
+  - ontology-NBRC_989_C_Solution
+  - candidates
+- assessment_id: claims-NBRC_989_C_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 2 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_989_C_Solution
+  evidence_ids:
+  - primary-nbrc-989
+  - payload-NBRC_989_C_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_1339_10xM9_Solution
+  area: identity
+  topic: NBRC 1339 10xM9 solution exact source formulation
+  outcome: supported
+  summary: NBRC1339 and TOGOM2041 explicitly same source stock; preserve four printed
+    salts and1L basis. No hydrate supplied for Na2HPO4.100mL added; complete receiving
+    medium includes separate phenanthrene/DMSO and is not identical to this stock.
+    The whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - NBRC_1339_10xM9_Solution
+  evidence_ids:
+  - primary-nbrc-1339
+  - primary-togo-M2041
+  - applicability
+  - payload-NBRC_1339_10xM9_Solution
+  - ontology-NBRC_1339_10xM9_Solution
+  - candidates
+- assessment_id: claims-NBRC_1339_10xM9_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 5 printed component assertions and 2 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_1339_10xM9_Solution
+  evidence_ids:
+  - primary-nbrc-1339
+  - primary-togo-M2041
+  - payload-NBRC_1339_10xM9_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_852_Se_W_Solution
+  area: identity
+  topic: JCM 852 Se/W solution exact source formulation
+  outcome: supported
+  summary: Current JCM1188 directly references852; frozen narrative invokes1187 inheritance.
+    Preserve that narrative conflict while the explicit852 stock identity agrees.
+    Both hydrated forms and amounts distinguish this source stock. The whole source
+    preparation has a stable registry identity; explicitly ungrounded component fields
+    do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_852_Se_W_Solution
+  evidence_ids:
+  - primary-jcm-852
+  - applicability
+  - payload-JCM_852_Se_W_Solution
+  - ontology-JCM_852_Se_W_Solution
+  - candidates
+- assessment_id: claims-JCM_852_Se_W_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_852_Se_W_Solution
+  evidence_ids:
+  - primary-jcm-852
+  - payload-JCM_852_Se_W_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_521_Reducing_Agent_Solution
+  area: identity
+  topic: JCM 521 reducing agent solution exact source formulation
+  outcome: supported
+  summary: Exact two-reductant source stock; autoclaved/stored underN2. Retain L stereochemistry,
+    hydrochloride and monohydrate; no broad reducing-agent class as identity. The
+    whole source preparation has a stable registry identity; explicitly ungrounded
+    component fields do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_521_Reducing_Agent_Solution
+  evidence_ids:
+  - primary-jcm-521
+  - applicability
+  - payload-JCM_521_Reducing_Agent_Solution
+  - ontology-JCM_521_Reducing_Agent_Solution
+  - candidates
+- assessment_id: claims-JCM_521_Reducing_Agent_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 3 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_521_Reducing_Agent_Solution
+  evidence_ids:
+  - primary-jcm-521
+  - payload-JCM_521_Reducing_Agent_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_1130_Mineral_Solution_I
+  area: identity
+  topic: JCM 1130 mineral solution I exact source formulation
+  outcome: supported
+  summary: JCM1385 inherits1130stock with mannitol change only to receiving medium.3g
+    per1L,150mL receiving dose; distinct from DSMZ4360.6%stock. The whole source preparation
+    has a stable registry identity; explicitly ungrounded component fields do not
+    make its named recipe identity unknown.
+  target_ids:
+  - JCM_1130_Mineral_Solution_I
+  evidence_ids:
+  - primary-jcm-1130
+  - applicability
+  - payload-JCM_1130_Mineral_Solution_I
+  - ontology-JCM_1130_Mineral_Solution_I
+  - candidates
+- assessment_id: claims-JCM_1130_Mineral_Solution_I
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 2 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_1130_Mineral_Solution_I
+  evidence_ids:
+  - primary-jcm-1130
+  - payload-JCM_1130_Mineral_Solution_I
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_1474_Solution_B
+  area: identity
+  topic: JCM 1474 Solution B exact source formulation
+  outcome: supported
+  summary: Original batch4g MgSO4·7H2O,0.2g each NaCl/FeSO4·7H2O/MnSO4·xH2O and100mL
+    water. Nominal basis conversion explicit. Variable manganese hydrate remains literal
+    and ungrounded. Named source formulation is resolved without selecting a specific
+    hydrate. The whole source preparation has a stable registry identity; explicitly
+    ungrounded component fields do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_1474_Solution_B
+  evidence_ids:
+  - primary-jcm-1474
+  - applicability
+  - payload-JCM_1474_Solution_B
+  - ontology-JCM_1474_Solution_B
+  - candidates
+- assessment_id: claims-JCM_1474_Solution_B
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 5 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_1474_Solution_B
+  evidence_ids:
+  - primary-jcm-1474
+  - payload-JCM_1474_Solution_B
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-JCM_1365_Selenite_Tungustate_Solution
+  area: identity
+  topic: JCM 1365 selenite-tungustate solution exact source formulation
+  outcome: supported
+  summary: Source misspelling retained. Compared withJCM431, selenium/tungsten salts
+    are10times whileNaOH is unchanged; it is not a uniform10times stock and not equivalent
+    to431. The whole source preparation has a stable registry identity; explicitly
+    ungrounded component fields do not make its named recipe identity unknown.
+  target_ids:
+  - JCM_1365_Selenite_Tungustate_Solution
+  evidence_ids:
+  - primary-jcm-1365
+  - applicability
+  - payload-JCM_1365_Selenite_Tungustate_Solution
+  - ontology-JCM_1365_Selenite_Tungustate_Solution
+  - candidates
+- assessment_id: claims-JCM_1365_Selenite_Tungustate_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 4 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - JCM_1365_Selenite_Tungustate_Solution
+  evidence_ids:
+  - primary-jcm-1365
+  - payload-JCM_1365_Selenite_Tungustate_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_971_Solution_B
+  area: identity
+  topic: NBRC 971 Solution B exact source formulation
+  outcome: supported
+  summary: Applies only to NBRC971 occurrence. NBRC323 SolutionB has glucose and optionalagar
+    and is a separate preparation branch, not this sucrose stock. The whole source
+    preparation has a stable registry identity; explicitly ungrounded component fields
+    do not make its named recipe identity unknown.
+  target_ids:
+  - NBRC_971_Solution_B
+  evidence_ids:
+  - primary-nbrc-971
+  - applicability
+  - payload-NBRC_971_Solution_B
+  - ontology-NBRC_971_Solution_B
+  - candidates
+- assessment_id: claims-NBRC_971_Solution_B
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 2 printed component assertions and 1 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_971_Solution_B
+  evidence_ids:
+  - primary-nbrc-971
+  - payload-NBRC_971_Solution_B
+  - applicability
+  - validation
+  - terms
+  - owners
+- assessment_id: identity-NBRC_1020_824_Resazurin_Solution
+  area: identity
+  topic: NBRC 1020/824 resazurin solution exact source formulation
+  outcome: supported
+  summary: Both primary sources explicitly specify resazurin1g plus1Lwater. Source-defined
+    stock identity is resolved; exact free-compound versus sodium-salt reagent is
+    not supplied and remains ungrounded. No alias to a neat-resazurin or sodium-salt
+    owner is asserted. The whole source preparation has a stable registry identity;
+    explicitly ungrounded component fields do not make its named recipe identity unknown.
+  target_ids:
+  - NBRC_1020_824_Resazurin_Solution
+  evidence_ids:
+  - primary-nbrc-1020
+  - primary-nbrc-824
+  - applicability
+  - payload-NBRC_1020_824_Resazurin_Solution
+  - ontology-NBRC_1020_824_Resazurin_Solution
+  - candidates
+- assessment_id: claims-NBRC_1020_824_Resazurin_Solution
+  area: completeness
+  topic: All proposed claims and original occurrence applicability
+  outcome: supported
+  summary: Reviewed all 2 printed component assertions and 2 selected source occurrences,
+    raw aliases, stock classification, registry mapping, notes and truthful proposal
+    history. Unquantified titrants and literal unresolved component forms remain UNMAPPED
+    rather than guessed. Nominal source-basis concentrations are explicit. Generic
+    names remain source-local; no unsupported whole-medium CultureMech equivalence
+    or biological role asserted.
+  target_ids:
+  - NBRC_1020_824_Resazurin_Solution
+  evidence_ids:
+  - primary-nbrc-1020
+  - primary-nbrc-824
+  - payload-NBRC_1020_824_Resazurin_Solution
+  - applicability
+  - validation
+  - terms
+  - owners
+findings: []
+actions: []
+limitations:
+- Author self-review; independent review remains separate.
+- Registry identity is bounded to each exact named source formulation, including source-defined
+  variable reagents. UNMAPPED constituent scope makes no unsupported chemical identifier
+  claim.
+- Raw generic labels require source context; NBRC323 versus971 Solution A are distinct
+  proposed identities.
+- Only NBRC1020 part of case86 and NBRC971 part of case157 are assigned proposed quantitative
+  identities; remaining occurrences retain concrete gaps.
+- No source ingredient receiving dose is reinterpreted as stock concentration.
+- No full approval of existing component-owner records, roles, biological claims,
+  or supported release.
+tags:
+- worker01
+- named-stocks
+- completeness-followup
+- isolated-proposals
+```

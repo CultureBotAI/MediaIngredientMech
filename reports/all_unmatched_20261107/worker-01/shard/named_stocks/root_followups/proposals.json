@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "NSF-PROP-LI2B4O7-CAS",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ],
+      "description": "Minimal new-owner proposal for exact source Li2B4O7 asCAS12007-60-2 with NARROW_MATCH toverifiedCHEBI190479 inorganic lithiumsalt. Rawformula retained, no supplier/lot, roles/mechanism orreleaseclaims. MandatoryCASidentity,asymmetricparent andkgmicrobe.compoundregistrySSSOMrows required at integration.",
+      "evidence_ids": [
+        "NSF-dsmz-1493",
+        "NSF-mediadive-3061",
+        "NSF-pubchem-9815330-view",
+        "NSF-sigma-webview",
+        "NSF-chebi-190479",
+        "NSF-chebi-38910",
+        "NSF-chebi-38889",
+        "NSF-chebi-search-cas",
+        "NSF-chebi-search-dilithium",
+        "NSF-chebi-search-formula",
+        "NSF-chebi-search-tetraborate",
+        "NSF-mim-identity-search",
+        "NSF-Li2b4o7-strict",
+        "NSF-SHARED-CID-15764247",
+        "NSF-SHARED-CID-9815330",
+        "NSF-SHARED-CID-21895667",
+        "NSF-SHARED-CID-90478374",
+        "NSF-SHARED-CID-CAS12007-60-2",
+        "NSF-SHARED-CACHE-ASSESSMENT",
+        "NSF-SHARED-CACHE-MANIFEST",
+        "NSF-NATIVE-AUTHOR"
+      ],
+      "owner_path": "data/ingredients/mapped/Li2b4o7.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "Li2b4o7-after.yaml",
+        "sha256": "3d40fcdd8dcbc524538b8c2986bb3aec389bd12cf1f0392c8f63eccc9173b0e3"
+      },
+      "before_sha256": null,
+      "integration_obligations": [
+        {
+          "subject": "MIM:Li2b4o7",
+          "predicate": "skos:exactMatch",
+          "object": "cas:12007-60-2",
+          "purpose": "exactCASidentity"
+        },
+        {
+          "subject": "MIM:Li2b4o7",
+          "predicate": "skos:broadMatch",
+          "object": "CHEBI:190479",
+          "purpose": "broaderinorganiclithiumsalt; neveridentity"
+        },
+        {
+          "subject": "MIM:Li2b4o7",
+          "predicate": "skos:exactMatch",
+          "object": "kgmicrobe.compound:li2b4o7",
+          "purpose": "RuleB1mandatoryregistryrow"
+        }
+      ],
+      "native_independent_review": "Separate reviewer is assessing exact payload and the subsequent shared-CID-cache material-scope addendum; no independent pass claimed here.",
+      "native_author_review": {
+        "review_id": "20261108T042849Z-w01-lithium-tetraborate-proposal",
+        "yaml": "reviews/structured/20261108T042849Z-w01-lithium-tetraborate-proposal/review.yaml",
+        "markdown": "reviews/structured/20261108T042849Z-w01-lithium-tetraborate-proposal/review.md"
+      },
+      "bulk_material_scope": "CAS12007-60-2 lithium tetraborate as named bulk material; no pubchem_cid/InChI/SMILES or source supplier/grade/lot/structure assignment."
+    }
+  ]
+}

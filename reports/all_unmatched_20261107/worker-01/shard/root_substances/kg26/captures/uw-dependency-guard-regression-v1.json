@@ -1,0 +1,77 @@
+{
+  "at": "2026-11-08T05:01:10.416306Z",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1168",
+  "baseline_count": 2956,
+  "validator": "src/mediaingredientmech/validation/component_partonomy.py",
+  "validator_sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+  "scope": "Full catalog, every emitted violation, no proposed-record filtering; parent separately checks all campaign proposals.",
+  "guards": [
+    {
+      "owner_path": "data/ingredients/mapped/UW_Concentrated_Base.yaml",
+      "before_sha256": "e676b9237eadf613f04db4121c47cf5b273cf3e8322c1f01e367b9eb5d83b427",
+      "after_path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base-borax-dependency-v1.yaml",
+      "after_sha256": "5534afa935760aa7d9366ef4e8e9bc3348f68a1c5d1b975edf9e653d94420e5e",
+      "component_index": 10,
+      "sheet_row": 1612,
+      "actual_changes": [
+        "components/10/component_id: CHEBI:131366 -> CHEBI:38888",
+        "Two appended component assertion evidence entries",
+        "One appended curation history event"
+      ],
+      "restoring_exact_changes_equals_before": true,
+      "maintained_bytes_unchanged": true
+    },
+    {
+      "owner_path": "data/ingredients/mapped/UW_Concentrated_Base_No_Mo.yaml",
+      "before_sha256": "daa15aae2de103e20e4916c105333d51581a8da24616ef312ba0b6a98d05fb0c",
+      "after_path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base_No_Mo-borax-dependency-v1.yaml",
+      "after_sha256": "88fcf7c51b15c31d80d38817a07012f3a52f29ef3a18fc98c46d4c3d36e9dadc",
+      "component_index": 9,
+      "sheet_row": 1627,
+      "actual_changes": [
+        "components/9/component_id: CHEBI:131366 -> CHEBI:38888",
+        "Two appended component assertion evidence entries",
+        "One appended curation history event"
+      ],
+      "restoring_exact_changes_equals_before": true,
+      "maintained_bytes_unchanged": true
+    },
+    {
+      "owner_path": "data/ingredients/mapped/UW_Concentrated_Base_No_Sulfur.yaml",
+      "before_sha256": "ab68055139180f35162d25ad6f43160fbad7e09838d653419b10967c3558a28f",
+      "after_path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/UW_Concentrated_Base_No_Sulfur-borax-dependency-v1.yaml",
+      "after_sha256": "c2538de50a572b2e787b34349d5b5bc3602c2685525aa00edf8c8a453453903c",
+      "component_index": 10,
+      "sheet_row": 1643,
+      "actual_changes": [
+        "components/10/component_id: CHEBI:131366 -> CHEBI:38888",
+        "Two appended component assertion evidence entries",
+        "One appended curation history event"
+      ],
+      "restoring_exact_changes_equals_before": true,
+      "maintained_bytes_unchanged": true
+    }
+  ],
+  "scenarios": {
+    "baseline": [],
+    "borax_alone": [
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_sulfur",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_mo",
+        "message": "component 10 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      }
+    ],
+    "borax_and_three_dependencies": []
+  },
+  "result": "PASS"
+}

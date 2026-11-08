@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-08T04:33:14.585135+00:00",
+  "reviewer": "/root/skeptical_review",
+  "command": [
+    ".temp/all-unmatched-worker-01/shard-venv/bin/python3.13",
+    "scripts/validate_strict.py",
+    "data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml",
+    "reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-after.yaml",
+    "--out",
+    "reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-431-v2-strict.tsv",
+    "--workers",
+    "1"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "Validating 2 files with 1 workers; schema=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml\n\n=== validate-strict summary ===\n  files scanned:      2\n  files with ERROR:   0\n  total ERROR rows:   0\n  TSV:                reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-431-v2-strict.tsv\n",
+  "before_sha256": "ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549",
+  "after_sha256": "878341ab51136f29be60c6a7635ce03a64796e63a88f10f208e57dde8408e806",
+  "guarded_comparisons": [
+    "All original history intact plus one event",
+    "All original statistics and preferred label retained",
+    "Original synonym retained plus four source aliases",
+    "Exactly four components matching primary nominal recipe",
+    "No existing primary identifier collision in filesystem rglob including ignored paths"
+  ],
+  "partonomy_scope": "All maintained YAML records plus proposed parent; zero violations for proposed parent only. This is not whole-catalog validation.",
+  "partonomy_proposal_violations": [],
+  "alias_scope": "Four exact source labels, eleven occurrences; no cross-shard completion claim",
+  "science": "JCM431 and NBRC1257/1321 exact four input amounts/forms support composition-defined stock; process workflows remain source specific. Integration/sync/SSSOM tasks are not missing scientific identity evidence."
+}

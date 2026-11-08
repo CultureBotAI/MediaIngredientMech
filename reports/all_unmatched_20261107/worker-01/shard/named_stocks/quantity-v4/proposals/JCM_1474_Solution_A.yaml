@@ -1,0 +1,86 @@
+identifier: kgmicrobe.ingredient:jcm_1474_solution_a
+preferred_term: JCM 1474 Solution A
+synonyms:
+- synonym_text: Solution A (see below)
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1474;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1474_solution_a
+  ontology_label: JCM 1474 Solution A
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_PREPARATION_WITH_100_ML_WATER
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_PREPARATION_WITH_100_ML_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '100'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474
+    source_record: JCM 1474 Solution A; complete named stock table and preparation
+      notes
+    notes: 'Original batch: 10 g of each salt and 100 mL distilled water. source adds
+      10 mL to receiving medium. No equivalence to unrelated Solution A formulations.
+      Literal source batch contains100mL added distilled water; solute masses retain
+      the original unscaled values. No final solution volume or final g/L concentration
+      is inferred.'
+  notes: 'Literal source batch contains100mL added distilled water; solute masses
+    retain the original unscaled values. No final solution volume or final g/L concentration
+    is inferred. Source-local raw labels are REJECTED_LABEL: they are preserved for
+    provenance and occurrence-specific decisions but native resolution must not expose
+    them as global synonyms. The source-qualified preferred term denotes this exact
+    preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+    are asserted. Any UNMAPPED part retains its literal source identity; component
+    grounding is separate from established whole-stock recipe identity.'
+notes: 'Original batch: 10 g of each salt and 100 mL distilled water. source adds
+  10 mL to receiving medium. No equivalence to unrelated Solution A formulations.
+  Literal source batch contains100mL added distilled water; solute masses retain the
+  original unscaled values. No final solution volume or final g/L concentration is
+  inferred. Source-local raw labels are REJECTED_LABEL: they are preserved for provenance
+  and occurrence-specific decisions but native resolution must not expose them as
+  global synonyms. The source-qualified preferred term denotes this exact preparation.
+  No unsupported roles, mechanisms, vendor, grade or release approval are asserted.
+  Any UNMAPPED part retains its literal source identity; component grounding is separate
+  from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.692748+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 6. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.428214+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal source batch
+    contains100mL added distilled water; solute masses retain the original unscaled
+    values. No final solution volume or final g/L concentration is inferred.'
+  new_status: MAPPED
+  llm_assisted: true

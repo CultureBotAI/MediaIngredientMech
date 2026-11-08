@@ -1,0 +1,26 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "861",
+    "--repo",
+    "CultureBotAI/MediaIngredientMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:55:46.634980+00:00",
+  "completed_at": "2026-11-08T04:55:46.992377+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "## Finding\n\nAdversarial self-review of the all-record reconciliation on branch `codex/reconcile-review-records-skill`, initial commit `0cc2b4e3`.\n\nThe 17 `exported-context-tokens` findings infer `status: open`, `certainty: confirmed`, and a major defect from a token containing a recipe cross-reference or unbalanced concentration parentheses and appearing somewhere in an old report. This proves the token is still exported, not that its source scope makes it an invalid resolving label.\n\nConcrete example: `data/ingredients/mapped/Riboflavin.yaml` retains `Riboflavin (see below)` as a CultureMech `RAW_TEXT` source label. The original report recommends removal, but current mapping semantics preserve genuine raw source names; neither the source recipe nor a contradictory identity was reassessed in this run. A blanket mechanical check cannot choose between preserving a source-specific name and rejecting an instruction fragment.\n\nThis is a review-certainty defect, separate from existing ingredient curation (#718) and upstream synonym cleanup (#587). It is not evidence that every token is valid, nor permission to remove labels. Other allegations, such as the trace-mineral labels attached to 4-vinylphenol, still need their own scoped identity adjudication.\n\n## Acceptance\n\n- Preserve all 13 original saved review pairs byte-for-byte.\n- Append evidence-backed, explicitly provisional/deferred successors for all 17 heuristic-only token observations, retaining exact issue keys, predecessor identities, and affected targets.\n- Add skill guidance separating candidate detection from claim-level adjudication.\n- Expose corrected current-head counts without misrepresenting historical snapshot counts as current.\n- Validate saved pairs and explicitly audit predecessor identity, target retention, and competing heads; do not claim schema validation alone checks lineage.\n",
+    "closedAt": "2026-10-11T04:13:24Z",
+    "comments": [],
+    "number": 861,
+    "state": "CLOSED",
+    "title": "Reconciliation overstates certainty of recipe-token synonym findings",
+    "updatedAt": "2026-10-11T04:13:24Z",
+    "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/861"
+  }
+}

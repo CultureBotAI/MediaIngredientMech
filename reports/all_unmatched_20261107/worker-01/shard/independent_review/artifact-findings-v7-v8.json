@@ -1,0 +1,48 @@
+{
+  "reviewed_at": "2026-11-08T04:39:27.987454+00:00",
+  "reviewer": "/root/skeptical_review",
+  "findings": [
+    {
+      "finding_id": "IR-SHARD-ARTIFACT-7",
+      "case_index": 40,
+      "severity": "minor",
+      "status": "resolved_in_current_author_fragment",
+      "description": "Reasoning asserted aqueous solvent while source leaves solvent unestablished and missing_requirement correctly preserves that uncertainty.",
+      "observed_draft": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/author-draft-v3/decisions.fragment.json",
+        "sha256": "de303a575a8dfb70e3b0d7a8f2ee6a855de28c60988b6606d582c1d23dcea9fb",
+        "reasoning": "TOGO M2388 explicitly places0.2mL1MNH4Cl in a per-liter bicarbonate-buffered synthetic crenarchaeota medium. The stock strength and dose are separate; frozen0.2G_PER_L is unsupported. A1M aqueous stock cannot be exact identity with dry ammonium chloride or the14%w/v stock in case22."
+      },
+      "rereview": {
+        "reasoning": "TOGO M2388 explicitly places0.2mL1MNH4Cl in a per-liter bicarbonate-buffered synthetic crenarchaeota medium. The stock strength and dose are separate; frozen0.2G_PER_L is unsupported. A 1 M stock cannot be exact identity with dry ammonium chloride or the14%w/v stock in case22.",
+        "missing_requirement": "The source identifies NH4Cl and 1 M but does not identify the solvent or full preparation. Obtain that specific preparation evidence before claiming one complete supplied stock identity; concentration alone does not license an aqueous solvent assertion. Correct the independently established source dose as documented.",
+        "result": "Unsupported aqueous adjective removed. Stock strength and dose preserved; no solvent inference."
+      }
+    },
+    {
+      "finding_id": "IR-SHARD-ARTIFACT-8",
+      "case_index": 3,
+      "severity": "major",
+      "status": "open_pending_corrected_proposal_rereview",
+      "description": "Proposed resolving exact alias collapses the source19g dry7H10base onto an owner mapped to NCIT finished enriched growth medium. Source separately adds glycerol andOADC; NCIT alternative definition includes those additions. Lexical ontology synonym alone does not establish formulation identity.",
+      "observed_proposal": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/003-after.yaml",
+        "sha256": "f70cf2a10033cf34e4022dfeea487d4f37cde7fb4e3f6e65eab79a16d2210465"
+      },
+      "evidence": [
+        {
+          "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7d1e82338525669dc162.json",
+          "sha256": "612103c21249778efbca1f866fc4e6e88a09db1c17fabc8a1fe0c5cbcab78006",
+          "locator": "/_embedded/terms/0/description and annotation/ALT_DEFINITION"
+        },
+        {
+          "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54ec413d4dba0fba9bef.json",
+          "sha256": "51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c",
+          "locator": "components[0] dry Middlebrook7H10 19g and separate OADC100mL/glycerol5mL"
+        }
+      ],
+      "required_correction": "Define and review source dry-base identity separately; do not grant exact complete-medium equivalence. Preserve draft and rationale history."
+    }
+  ],
+  "scope": "Artifact findings in proposed payloads only; no maintained edits or issue closure."
+}

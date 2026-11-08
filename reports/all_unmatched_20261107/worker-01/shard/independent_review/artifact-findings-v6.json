@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T04:23:14.757495+00:00",
+  "reviewer": "/root/skeptical_review",
+  "findings": [
+    {
+      "finding_id": "IR-SHARD-ARTIFACT-6",
+      "severity": "minor",
+      "status": "open",
+      "category": "incorrect-source-quantity",
+      "allocation_index": 112,
+      "affected_case_ids": [
+        "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21"
+      ],
+      "field_path": "reasoning",
+      "observed_in_decision_fragment_sha256": "a185a9cf077c37d9ec2bf23ef08cbbcc0814e50f480e6034c990e143df2cd0b8",
+      "observed_text": "the medium uses1 ml",
+      "counterevidence": {
+        "frozen_component": {
+          "concentration": {
+            "unit": "ML_PER_L",
+            "value": "1.5"
+          },
+          "preferred_term": "Sulfide solution****"
+        },
+        "primary_capture": "named_stocks/captures/nbrc-1257.html",
+        "primary_sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06",
+        "locator": "Receiving medium table Sulfide solution****1.5ml"
+      },
+      "description": "Primary NBRC1257 stock addition is1.5mL, not1mL. Stock identity/disposition unaffected, but exact-dose claim is incorrect.",
+      "requested_correction": "Correct primary dose to1.5mL and retain exact frozen binding.",
+      "re_review_required": true
+    }
+  ]
+}

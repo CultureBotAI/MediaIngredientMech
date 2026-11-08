@@ -1,0 +1,281 @@
+{
+  "i": 62,
+  "name": "Sulfur (powdered)",
+  "source": "culturemech",
+  "source_id": "Sulfur (powdered)",
+  "record": null,
+  "owners": [],
+  "holds": [],
+  "downstream_holds": [],
+  "candidate_hits": [
+    [
+      "data/ingredients/mapped/Sulfur.yaml",
+      "CHEBI:33403",
+      [
+        "Sulfur, powdered"
+      ]
+    ]
+  ],
+  "occurrences": [
+    {
+      "id": "CM_OCC:93fbfd5a233c4ed36bea9f541638d580f0d1564173811783502fa5d7aa6f582d",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/archaea/TOGO_M2614_Ignicoccus_Medium.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009181"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M2614"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "5"
+        },
+        "notes": "Role: Mineral source; Properties: Simple component, Inorganic compound, Defined component",
+        "preferred_term": "Sulfur (powdered)"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "original_name",
+        "category",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "ingredients",
+        "media_term",
+        "notes",
+        "applications",
+        "curation_history",
+        "solutions"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:009181",
+        "name": "ignicoccus_medium",
+        "original_name": "Ignicoccus Medium",
+        "category": "archaea",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "media_term": {
+          "preferred_term": "TOGO Medium M2614",
+          "term": {
+            "id": "TOGO:M2614",
+            "label": "Ignicoccus Medium"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M2614\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium897.pdf"
+      }
+    },
+    {
+      "id": "CM_OCC:2fc5cdce873d931c3d33c70f830ffb4fd63497fa9deed3604fc075d2966f5eb2",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/archaea/ignicoccus_medium_for_dsm_18386.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009166"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M2599"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "5"
+        },
+        "notes": "Role: Mineral source; Properties: Simple component, Inorganic compound, Defined component",
+        "preferred_term": "Sulfur (powdered)"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "original_name",
+        "category",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "ingredients",
+        "media_term",
+        "notes",
+        "applications",
+        "curation_history",
+        "solutions",
+        "organism_culture_type",
+        "target_organisms",
+        "variants"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:009166",
+        "name": "ignicoccus_medium_for_dsm_18386",
+        "original_name": "Ignicoccus Medium (for DSM 18386)",
+        "category": "archaea",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "media_term": {
+          "preferred_term": "TOGO Medium M2599",
+          "term": {
+            "id": "TOGO:M2599",
+            "label": "Ignicoccus Medium (for DSM 18386)"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M2599\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium897.pdf",
+        "organism_culture_type": "isolate",
+        "variants": [
+          {
+            "name": "half_sme_s0_ignicoccus",
+            "relationship": "DERIVED_FROM",
+            "description": "Half-strength SME (synthetic seawater) medium supplemented with elemental sulfur and reduced with Na2S, used by Koschnitzki 2017 for all Ignicoccus representatives. Recognizable variant of the parent Ignicoccus medium.",
+            "modifications": [
+              "Half-strength SME synthetic-seawater base",
+              "Add elemental sulfur (S0) as electron acceptor",
+              "Reduce with Na2S",
+              "Additional/trace components vs parent: explicit NaHCO3, SrCl2.6H2O, KI",
+              "H2/CO2 (80:20) headspace, ~1.5 bar; pH 5.5-6.0; 90C"
+            ],
+            "purpose": "Routine cultivation of Ignicoccus representatives (I. hospitalis DSM 18386T, I. islandicus DSM 13165T, I. pacificus DSM 13166T) under sulfur-reducing chemolithoautotrophic conditions.",
+            "evidence": [
+              {
+                "reference": "doi:10.5283/epub.34741",
+                "supports": "SUPPORT",
+                "explanation": "Koschnitzki 2017 prints the formulation and strain list.",
+                "snippet": "½ SME+S0 medium for all Ignicoccus representatives (Paper et al., 2007) Substance Amount Concentration SME 500 ml ½ x KH2PO4 0.5 g 3.7 mM (NH4)2SO4 0.25 g 1.9 mM NaHCO3 0.16 g 1.9 mM Resazurin (0.1 %) 1 ml 0.0001 % Na2S x 7-9 H2O 0.5 g 2.1 mM ddH2O ad 1000 ml"
+              }
+            ]
+          },
+          {
+            "name": "half_sme_ignicoccus_plus_0_1pct_yeast_extract",
+            "relationship": "SUPPLEMENTED_VARIANT",
+            "description": "Mixotrophic version of 1/2 SME-Ignicoccus medium with 0.1% (w/v) yeast extract added, used by Mayer 2012 to compare autotrophic vs mixotrophic growth of I. hospitalis DSM 18386.",
+            "modifications": [
+              "Add yeast extract to 0.1% (w/v)"
+            ],
+            "purpose": "Mixotrophic growth / physiology comparison vs the autotrophic baseline.",
+            "evidence": [
+              {
+                "reference": "doi:10.1128/JB.06130-11",
+                "supports": "SUPPORT",
+                "explanation": "Mayer et al. 2012 describes the yeast-extract supplementation explicitly.",
+                "snippet": "Comparison of autotrophic growth with mixotrophic growth where 0.1% yeast extract was added to the normal culture medium of I. hospitalis DSM 18386."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "CM_OCC:d7d43aaab1b984b14079bbdeb629e6aa90cde25c6a1b0252f96db016192c71c3",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3128_Thermosulfidibacter_Medium.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009598"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M3128"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "3"
+        },
+        "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+        "preferred_term": "Sulfur (powdered)"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "original_name",
+        "category",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "ingredients",
+        "media_term",
+        "notes",
+        "applications",
+        "curation_history",
+        "solutions"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:009598",
+        "name": "thermosulfidibacter_medium",
+        "original_name": "Thermosulfidibacter Medium",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "media_term": {
+          "preferred_term": "TOGO Medium M3128",
+          "term": {
+            "id": "TOGO:M3128",
+            "label": "Thermosulfidibacter Medium"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M3128\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1092.pdf"
+      }
+    },
+    {
+      "id": "CM_OCC:f2cb164d4ea7acd5eb5947a90ac88e5a2f2e45bda06751368f3365110088389c",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M3132_Hippea_Medium.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009603"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M3132"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "10"
+        },
+        "notes": "Role: Mineral source; Properties: Inorganic compound, Defined component, Simple component",
+        "preferred_term": "Sulfur (powdered)"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "original_name",
+        "category",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "ingredients",
+        "media_term",
+        "notes",
+        "applications",
+        "curation_history",
+        "solutions"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:009603",
+        "name": "hippea_medium",
+        "original_name": "Hippea Medium",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "media_term": {
+          "preferred_term": "TOGO Medium M3132",
+          "term": {
+            "id": "TOGO:M3132",
+            "label": "Hippea Medium"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M3132\nOriginal URL: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium854.pdf"
+      }
+    }
+  ]
+}

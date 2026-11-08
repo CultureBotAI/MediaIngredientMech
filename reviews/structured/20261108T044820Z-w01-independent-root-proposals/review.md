@@ -1,0 +1,3648 @@
+# Independent review of18 isolated root owner proposals and2 scoped chemical-owner candidates
+
+- Review: 20261108T044820Z-w01-independent-root-proposals
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:48:20.884026Z
+- Finished UTC: 2026-11-08T04:48:20.884026Z
+- Reviewer: /root/skeptical_review (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Exact reviewed18 isolated payloads and2 scoped identity correspondences supported. IR8 dry-base/enriched-medium error and root share of IR9 context-only alias error corrected in current payloads.1164 pH-qualified tomato parent relation produces broadMatch and exact registry identity. Existing whole-record/release holds remain; this review does not approve integration, all188 ledger, historical unrelated claims or cross-shard duplicates.
+
+## Scope And Provenance
+
+All18 exact root proposals plus unchanged33cobalt and37TiCl3 owner correspondence. Entire target files read, conclusions limited to source identity and changed payload fields.
+
+Selection: Explicit worker01rootproposalmanifest and two actual identified maintained chemical-owner candidates.
+Coverage: full; 20 reviewed / 20 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| RS-003-BASE-IDENTITY | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/003-base-after-scope-v4.yaml | source | ATCC 173 Middlebrook 7H10 agar base |
+| RS-005-ALIAS | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-after.yaml | source | Tween 80 |
+| RS-009-ALIAS | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-after.yaml | source | Na2SeO3 |
+| RS-043-NEW | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/043-after.yaml | source | benzene-1,2,4-triol |
+| RS-050-ALIAS | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-after.yaml | source | MnSO4 x 4 H2O |
+| RS-062-ALIAS | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-after.yaml | source | Sulfur |
+| RS-063-ALIAS | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-after.yaml | source | Oleic acid |
+| NSF-PROP-LI2B4O7-CAS | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml | source | Li2B4O7 |
+| RS-COMPLETE-JCM574_MDS_SALT_WATER | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after-scope-v3.yaml | source | JCM 574 MDS salt water |
+| RS-COMPLETE-FILTERED_TOMATO_JUICE | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice-after.yaml | source | filtered tomato juice |
+| RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after-v2.yaml | source | filtered tomato juice adjusted to pH 7.0 |
+| RS-COMPLETE-CORN_STEEP_LIQUOR | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Corn_Steep_Liquor-after.yaml | source | corn steep liquor |
+| RS-COMPLETE-EZMIX_N_Z_AMINE_A | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-EZMix_N_Z_Amine_A-after.yaml | source | EZMix N-Z-Amine A |
+| RS-COMPLETE-ATCC929_PHENOL_RED_STOCK | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after-scope-v3.yaml | source | ATCC 929 alkaline phenol red stock |
+| RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Oxoid_SR0117_Preston_Campylobacter_Supplement-after.yaml | source | Oxoid SR0117 Preston Campylobacter selective supplement |
+| RS-074-NEW | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/074-after.yaml | source | diarsenic trioxide |
+| RS-035-PRODUCT | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after-scope-v3.yaml | source | Ward's Cerophyll cereal grass leaves |
+| RS-114-PRODUCT | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/114-after.yaml | source | Union Carbide SAG-471 antifoam |
+| RS-CANDIDATE-33 | data/ingredients/mapped/Co_No32_X_6_H2o.yaml | maintained | Co(NO3)2 x 6 H2O |
+| RS-CANDIDATE-37 | data/ingredients/mapped/TitaniumIII_Chloride.yaml | maintained | TitaniumIII chloride |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Independent native strict closed-schema validation | passed | True | RS-003-BASE-IDENTITY, RS-005-ALIAS, RS-009-ALIAS, RS-043-NEW, RS-050-ALIAS, RS-062-ALIAS, RS-063-ALIAS, NSF-PROP-LI2B4O7-CAS, RS-COMPLETE-JCM574_MDS_SALT_WATER, RS-COMPLETE-FILTERED_TOMATO_JUICE, RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7, RS-COMPLETE-CORN_STEEP_LIQUOR, RS-COMPLETE-EZMIX_N_Z_AMINE_A, RS-COMPLETE-ATCC929_PHENOL_RED_STOCK, RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT, RS-074-NEW, RS-035-PRODUCT, RS-114-PRODUCT, RS-CANDIDATE-33, RS-CANDIDATE-37 | 25 exact target/before paths; zero errors. |
+| Independent pinned native producer and synonym-policy projection | passed | True | RS-003-BASE-IDENTITY, RS-005-ALIAS, RS-009-ALIAS, RS-043-NEW, RS-050-ALIAS, RS-062-ALIAS, RS-063-ALIAS, NSF-PROP-LI2B4O7-CAS, RS-COMPLETE-JCM574_MDS_SALT_WATER, RS-COMPLETE-FILTERED_TOMATO_JUICE, RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7, RS-COMPLETE-CORN_STEEP_LIQUOR, RS-COMPLETE-EZMIX_N_Z_AMINE_A, RS-COMPLETE-ATCC929_PHENOL_RED_STOCK, RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT, RS-074-NEW, RS-035-PRODUCT, RS-114-PRODUCT, RS-CANDIDATE-33, RS-CANDIDATE-37 | 18 actual payloads:16 exact ontology identities; Li andpH7broader parent; each primary ownidentity exact. Rejectedlabels absentfromother. Old1164negativecontrol emitswrongclose as expected. Catalog2956filesystem search includesignored; no competingactiveprimaryID; partonomyzero actual violations. |
+| Independent primary-source identity and exact payload assessment | passed | True | RS-003-BASE-IDENTITY, RS-005-ALIAS, RS-009-ALIAS, RS-043-NEW, RS-050-ALIAS, RS-062-ALIAS, RS-063-ALIAS, NSF-PROP-LI2B4O7-CAS, RS-COMPLETE-JCM574_MDS_SALT_WATER, RS-COMPLETE-FILTERED_TOMATO_JUICE, RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7, RS-COMPLETE-CORN_STEEP_LIQUOR, RS-COMPLETE-EZMIX_N_Z_AMINE_A, RS-COMPLETE-ATCC929_PHENOL_RED_STOCK, RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT, RS-074-NEW, RS-035-PRODUCT, RS-114-PRODUCT, RS-CANDIDATE-33, RS-CANDIDATE-37 | Each target has separate positive evidence-linked assessment; hydration, product, stock, source dosage and unknown lot boundaries retained. |
+| Maintained synchronization and full release checks | not_applicable | False | RS-003-BASE-IDENTITY, RS-005-ALIAS, RS-009-ALIAS, RS-043-NEW, RS-050-ALIAS, RS-062-ALIAS, RS-063-ALIAS, NSF-PROP-LI2B4O7-CAS, RS-COMPLETE-JCM574_MDS_SALT_WATER, RS-COMPLETE-FILTERED_TOMATO_JUICE, RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7, RS-COMPLETE-CORN_STEEP_LIQUOR, RS-COMPLETE-EZMIX_N_Z_AMINE_A, RS-COMPLETE-ATCC929_PHENOL_RED_STOCK, RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT, RS-074-NEW, RS-035-PRODUCT, RS-114-PRODUCT, RS-CANDIDATE-33, RS-CANDIDATE-37 | No maintained bytes changed; isolated proposal approval only, coordinator integration not performed. |
+
+## Scientific And Domain Assessments
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-003-BASE-IDENTITY.
+
+ATCC173/TOGO2399 distinguish19g drybase from glycerol/OADC/water. Source-qualified registry solves IR8 without exact NCIT enriched-medium identity. Actual unqualified Middlebrook7H10 is REJECTED_LABEL, resolving IR9 for this target. Formula/manufacturer remain unspecified, not guessed.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-005-ALIAS.
+
+LiteralTween80(R) source denotes commercial polysorbate80 material; proposed source alias preserves whole surfactant mixture boundary. No idealized single-molecule equivalence, pure-grade assertion or unrelated inherited roles approved.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-009-ALIAS.
+
+Explicit anhydrous Na2SeO3 source qualifier matches existing sodiumselenite identity; hydrate terms remain separate. Alias does not substitute selenate or selenitepentahydrate.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-043-NEW.
+
+Archived originalDSMZ7992mM1,2,4-trihydroxybenzene supports positional identity CHEBI16971. Minimal owner avoids unrelated recipe/mechanism/grade properties.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-050-ALIAS.
+
+Manganous sulfate tetrahydrate source and official86358 four-water Mn(II)sulfate match; no monohydrate/genericform collapse.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-062-ALIAS.
+
+Originalpowdered elemental sulfur inputs and official33403 support bounded alias without S8/allotrope assignment. Existing rejected atomic/polymer labels remain rejected; inherited roles/corpusrelease not certified.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-063-ALIAS.
+
+ExplicitSigmaO1008 source and current officialcisoleic/CAS11280 support catalogvariant/current supplied form. Current≥99%GC is not backdated to source lots. Preexisting broad FA18:1/octadec9enoic aliases are not newly certified.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: NSF-PROP-LI2B4O7-CAS.
+
+Minimal bulkLi2B4O7/CAS12007602 matches sourceformula and primarySigma222534 nominalbulk identity. Broader190479 is asymmetric only. Two shared PubChem B4Li2O7 records differ connectivity; neither is selected. No CID/InChI/SMILES or actuallot/hydrationassay inference.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-COMPLETE-JCM574_MDS_SALT_WATER.
+
+Complete7inputJCM574 stock preserved. Four exact salts,5mL1MCaCl2 solution,variable1MTrisbase pH7.5 and waterq.s.to1L are distinct components. Specific solution/titrant identities stay literal UNMAPPED. Rawcontextalias nonresolving; stockidentity not one salt.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-COMPLETE-FILTERED_TOMATO_JUICE.
+
+Source filteredtomatojuice matches MICRO0000556 definition maceration/filtration. No namedcultivar, pHadjustment or compositionfixed claims inferred.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7.
+
+TOGOM4explicitfilteredtomato pH7 input differsfinalmedium pH6. Distinctregistry with broaderMICRO0000556 correct; nativeNARROW emitsbroadMatch plusidentityrow. Unknown titrant retained. JCM11unavailable capture not primary corroboration.1164 corrected for exact current payload.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-COMPLETE-CORN_STEEP_LIQUOR.
+
+Liquidcornsteep source is variable biological material, separately retained from powder; no vendor/dryingspecification/formula inferred.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-COMPLETE-EZMIX_N_Z_AMINE_A.
+
+ExactC4464supplier EZMix enzymaticcaseinhydrolysate product identity supported; not intactcasein/acidHyCase. Fullcitedarticle unavailable remains explicit, not claimed inspected.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-COMPLETE-ATCC929_PHENOL_RED_STOCK.
+
+OriginalATCC9290.5gdye+1mL6NNaOH+99mLDIwater preserved as liquid-inputpreparation basis, no exactfinalvolume/speciation assumption. Sourcequalifiedstock differsFlowproduct; genericlabel nonresolving.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT.
+
+SourceSR0117code and currentofficialSR0117EPrestonproductfamily support namedformulationidentity, withouthistoricaldose/formularevision. SourceSkirrowmediumtitle does not overrideproductcode or merge wholemedium.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-074-NEW.
+
+Official30621 definitionAs:O2:3 and As2O3 synonym support empiricaloxide despite molecularAs4O6 depiction. Minimalowner no mass/structure/polymorph imported; CCAPalkalinearsenitepreparation remains separate.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-035-PRODUCT.
+
+OriginalCCAP Wardscerealgrassleafinput supports sourcequalifiedcomplexmaterial; not finishedinfusion or unqualifiedexistingCerophyll withoutsameproductproof. Rawunqualifiedlabel nonresolving.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-114-PRODUCT.
+
+HistoricalUnionCarbideSAG471explicitproductname supports sourcequalifiedundefinedmixture withoutfixedformula. ModernMomentivefamilysheet not exacthistoricalcomposition/PDMS/dose proof.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-CANDIDATE-33.
+
+Official86214 cobalt(II)nitratehexahydrate corresponds restoredprimary formula, not malformedrawaliasorwronglipidxref. Currentowner identitycandidateonly; unrelatedownerclaimsnot approved.
+
+### Source-specific identity, preparation boundary, exact proposed payload and native output
+
+identity: supported. Targets: RS-CANDIDATE-37.
+
+CAS7705079 owner is Ti(III)chloride starting-solute candidate. OriginalJCM1331solid0.75g andDSMZ8635mL15%Merckstock differ; no single supplied-form or titanium-citrateidentityapproval.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| e000 | MAPPING_SEMANTICS.md; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e001 | data/ingredients/mapped/Co_No32_X_6_H2o.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e002 | data/ingredients/mapped/Mnso4_X_4_H2o.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e003 | data/ingredients/mapped/Na2seo3.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e004 | data/ingredients/mapped/Oleic_Acid.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e005 | data/ingredients/mapped/Sulfur.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e006 | data/ingredients/mapped/TitaniumIII_Chloride.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e007 | data/ingredients/mapped/Tween_80.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e008 | reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v9.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e009 | reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-findings-v7-v8.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e010 | reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-final-validation-v2.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e011 | reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-projection-v3.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e012 | reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-stable-validation-v1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e013 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e014 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-strict.tsv; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e015 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-190479.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e016 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38889.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e017 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38910.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e018 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-cas.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e019 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-dilithium.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e020 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-formula.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e021 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-tetraborate.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e022 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/dsmz-1493.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e023 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/mediadive-3061.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e024 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/pubchem-9815330-view.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e025 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/sigma-222534-webview.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e026 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/lithium-cache-assessment.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e027 | reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/mim-identity-search.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e028 | reports/all_unmatched_20261107/worker-01/shard/root_substances/arsenic-identity-search-v1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e029 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-004.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e030 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-005.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e031 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-007.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e032 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-008.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e033 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-009.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e034 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-010.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e035 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-024.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e036 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-031.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e037 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-033.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e038 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-035.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e039 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-036.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e040 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-037.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e041 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-043.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e042 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-050.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e043 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-051.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e044 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-062.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e045 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-063.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e046 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-074.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e047 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-114.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e048 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/05e97630494a557b3474.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e049 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0b27b502f81db0d8a2b9.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e050 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0f3ec1b841e9c2210927.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e051 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0fa04ea958683ed02a33.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e052 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/164e5c2285bff6b4c4c0.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e053 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1a63a3e61dd4514d5557.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e054 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1f4b1d0fae7ba48d721a.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e055 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1fcfebe80e1e270a1c55.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e056 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2256f29f0929d1070cfc.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e057 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/28bd87bf6dd10ce24830.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e058 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2bc8ca7b151c2828f66f.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e059 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2e36b7f2d05209a0c5b9.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e060 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2fd5545c8096f20cc507.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e061 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/30e4a8b45cce0e024dc0.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e062 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/320c8d630ec4ba9b29ff.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e063 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/323a7d3f8a5caf0345c9.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e064 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3373b7f7273f75e1ee01.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e065 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/39a99c132d65921d6874.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e066 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3f96777ba1c4322fe731.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e067 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3fcd652e9c95749efc31.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e068 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/4307921ad0ead3929076.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e069 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/53666f2f2910add2defe.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e070 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54bf73629d2dda2dc93e.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e071 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54ec413d4dba0fba9bef.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e072 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/56c781a699a994f40a81.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e073 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/57ab25b707e030374d53.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e074 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/5dada06913515377f52a.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e075 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6001c3316db86a3bba50.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e076 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/62605427b41f2fbcc934.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e077 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/62ed4f2b38bd1f7b00c1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e078 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6434f00f3eb520184dc8.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e079 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/643c1cf159ac5c3d0216.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e080 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/65105976aacee3e547e1.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e081 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/69701d85897c096f706f.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e082 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/69b783b5d254adae443f.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e083 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6aedaf1a5c00a7e8645c.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e084 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6c67e246efaeec6b3b2a.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e085 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6dc1d5bcbb35321ae77d.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e086 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6e90118c18942cfb1e35.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e087 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/72a0e2c4eb2e07d69125.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e088 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/74e35c1720d8af2a001f.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e089 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/754b42b09d03fa0c9df0.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e090 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7c123c44d3b556f9ca15.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e091 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7e09be7d5fa93150635a.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e092 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/807d3cd225259ae390af.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e093 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/823fef2b5f14fb9d0372.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e094 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/87a6ad12996fa25e81cd.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e095 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8827fef4367bb179adc8.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e096 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/890225ce506d2f3b0969.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e097 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8b42d7dd41b46727e94c.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e098 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8bd381b5c79f2155d63a.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e099 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8dfa6a7436608ecf37eb.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e100 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8e6d89b09f3ec6258088.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e101 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/920dabb63f8e2a5603ae.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e102 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/93af3661bf330bacec27.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e103 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/955b9bae08416c27750f.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e104 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9f44f1a292e0b9815b12.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e105 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9f5a166bae02ffb3b498.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e106 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a16643fddb8b91a9d74d.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e107 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a23a39da20b4fcf6f7b1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e108 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a58435a060cec0c59ce7.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e109 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a5c2779e6ff5f03b5a47.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e110 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/abd12ada3ac6df5eea15.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e111 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ad6cdcec26f64b3ff09e.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e112 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b8aa55a60f527be120b7.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e113 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b98772426e9db9e378a4.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e114 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/be74b076aa9399cea332.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e115 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c0cead532fc41d32947d.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e116 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c239d4cc6d405ec29a35.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e117 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c36559e9f6ebb54ad2f3.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e118 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c3ead3918eebd2b207e2.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e119 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c9e62e732fcc698d7af6.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e120 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cb2e78dd78232e81797f.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e121 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cba0795e55c70ec54d3f.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e122 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cc603fec73e918489cda.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e123 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d1ffb78c451bbabfb5e1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e124 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d219bf2bd1f7bbea780c.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e125 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d30b866572589a24b2d1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e126 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d55424fe7b8239a76c56.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e127 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d6df1bb06ff02f698b02.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e128 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d71d2c4c69f3dc3a28ec.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e129 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d750934e49c5d7a27aca.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e130 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d885b030727e7eb8577c.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e131 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/deebd746cac5c27a7efc.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e132 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e24466123dc7455046b5.pdf; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e133 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ed5243472212a7fbccf2.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e134 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ee7a1a6eed70ad9ea70e.metadata.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e135 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f5ebe3426a641f5a3649.html; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e136 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f94e94beb37525c8c287.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e137 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f9d1136431c96b45724d.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e138 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/fb482c8a164d4a2881c4.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e139 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-carob-two-products-v1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e140 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-24-alternate.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e141 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-24.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e142 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-63-alternate.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e143 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e144 | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-2.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e145 | reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-component-owner-dependencies-v1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e146 | reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-owner-search-v1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e147 | reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-proposal-validation-v1.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e148 | reports/all_unmatched_20261107/worker-01/shard/root_substances/final-corrections-v5.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e149 | reports/all_unmatched_20261107/worker-01/shard/root_substances/product-completeness-search-v2.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e150 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/003-base-after-scope-v4.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e151 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e152 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-before.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e153 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e154 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-before.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e155 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/033-before.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e156 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after-scope-v3.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e157 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e158 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/037-before.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e159 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/043-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e160 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e161 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-before.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e162 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e163 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-before.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e164 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e165 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-before.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | supports | Inspected source supports only the exact bounded scientific claims described in the linked target assessment; not unrelated owner claims. |
+| e166 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/074-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e167 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/114-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e168 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after-scope-v3.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e169 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e170 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Corn_Steep_Liquor-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e171 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-EZMix_N_Z_Amine_A-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e172 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e173 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after-v2.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e174 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e175 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after-scope-v3.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e176 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e177 | reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Oxoid_SR0117_Preston_Campylobacter_Supplement-after.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e178 | reports/all_unmatched_20261107/worker-01/shard/root_substances/source-alias-scope-corrections-v6.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | partial | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e179 | reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cas-12007-60-2-cids.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e180 | reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-15764247-properties.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e181 | reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-21895667-properties.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e182 | reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-90478374-properties.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e183 | reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-9815330-properties.json; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e184 | src/mediaingredientmech/schema/mediaingredientmech.yaml; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e185 | src/mediaingredientmech/sssom_grading.py; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+| e186 | src/mediaingredientmech/synonym_policy.py; Complete captured input; claim-specific source/payload scope described in per-target assessment | context_only | Hashed primary/database/owner/validation input used for scoped assessment; not blanket support for unrelated claims. |
+
+## Limits And Additional Notes
+
+- A passing isolated proposal does not certify unchanged inherited owner aliases/roles/evidence, or clear prior native release holds.
+- Exact source occurrences must be bound at integration; rejected local labels intentionally do not resolve globally.
+- Pinned producer exercised with empty ancillary dictionaries, so complete publication ownership/residual/label and full data gates remain coordinator obligations.
+- Author ledgers may still acquire evidence/review links. This immutable review binds exact payloads and captured sources only, not future metadata.
+- Registry product identities preserve supported named preparations while unspecified historical lot/composition remains unknown.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T044820Z-w01-independent-root-proposals
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Independent review of18 isolated root owner proposals and2 scoped chemical-owner
+  candidates
+started_at: '2026-11-08T04:48:20.884026Z'
+finished_at: '2026-11-08T04:48:20.884026Z'
+reviewer:
+  identity: /root/skeptical_review
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process reviewer; authored no proposal or source
+    decision. Read entire exact before/after payloads and source evidence, independently
+    ran native strict, source form/quantity checks, identifier search, partonomy and
+    pinned producer projection.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: Exact reviewed18 isolated payloads and2 scoped identity correspondences supported.
+  IR8 dry-base/enriched-medium error and root share of IR9 context-only alias error
+  corrected in current payloads.1164 pH-qualified tomato parent relation produces
+  broadMatch and exact registry identity. Existing whole-record/release holds remain;
+  this review does not approve integration, all188 ledger, historical unrelated claims
+  or cross-shard duplicates.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    sha256: 8e7f1d2eacb03c665af878935add83bc686d9bd7dd1b3cd601b29a21af37caa4
+    role: target
+  - path: data/ingredients/mapped/Mnso4_X_4_H2o.yaml
+    sha256: 40b92206d8497223f03cc179bb650f8234b65e7c52cd52ec44cae873821c9248
+    role: context
+  - path: data/ingredients/mapped/Na2seo3.yaml
+    sha256: de098711130ca209fe06ee2a3239125f2aabb60c554830f93b2b24b72cc12cab
+    role: context
+  - path: data/ingredients/mapped/Oleic_Acid.yaml
+    sha256: 4ca1c5f8724d60fa691ce325ebcafb632b7782b5f05f19441f098aec93c5ea84
+    role: context
+  - path: data/ingredients/mapped/Sulfur.yaml
+    sha256: d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323
+    role: context
+  - path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+    sha256: 8b77127d8befda706ede22e5f25d6b37b67adaaa88f1a90d6e943361a5241892
+    role: target
+  - path: data/ingredients/mapped/Tween_80.yaml
+    sha256: b2c418f2dd142b9270329af6d46a71939a1223eb3384c59dd05eb5f13868ae24
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v9.json
+    sha256: 60b37798e70dc7eb0873c144f1babd2a5074bc1e192a3e7dc59106ee3138b6d2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-findings-v7-v8.json
+    sha256: 1a79ed5d9fc7e87fe6738e6208a0dc3d5a74ecf463a1c00ef9e6f5b46f91bec3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-final-validation-v2.json
+    sha256: 0e28c84c109832b35c7c89beff2b45d9c40e53a2707bddd59f6c40a2fb8d9752
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-projection-v3.json
+    sha256: 2efc787c5f535d80c28f4baad6a3ec54cfb01eeeba4ca94a170c2d151816ed9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-stable-validation-v1.json
+    sha256: 4f6126cf205d636d5a3ac3cd756ac17934217955a612cc5bbe13a4c2cce11428
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+    sha256: 3d40fcdd8dcbc524538b8c2986bb3aec389bd12cf1f0392c8f63eccc9173b0e3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-190479.json
+    sha256: 9e175a600a0b93d72c3c76e4f109ab5a7e005ec74b10bcbb72905516af0c6c92
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38889.json
+    sha256: 82eceea571d2e571f9978b9c06de234e6b3e2316eaf2a1e7b78027eb6565d141
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38910.json
+    sha256: ca0f3f77144e6015c6aab1b62beb046594cf5ed03335d790d9b87580dba08f50
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-cas.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-dilithium.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-formula.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-tetraborate.json
+    sha256: 92f00f5ff70940e21276ac30215f24fa4dc45c0260f0b274d6b63186d51020a1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/dsmz-1493.pdf
+    sha256: b3923aeed926fe8176633eb27c32c0ff91db802a90a485c0b86ff23c2ea23da7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/mediadive-3061.json
+    sha256: 65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/pubchem-9815330-view.json
+    sha256: 5f2684e328dcda4dcb8b90d367d70d829087ef6719b8527501f9f462cd42d09e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/sigma-222534-webview.json
+    sha256: 3dfbae414a7a673ede33daa5d8daa5399d07aa4eefcbb49c2a7a98044f6eb323
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/lithium-cache-assessment.json
+    sha256: d5ff81101f37f9156600004a4491857ab5671be1bba034c62cb259c93e032a41
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/mim-identity-search.json
+    sha256: 621ebf0fa867d64c255b8c0b9c97b039d0374d1777b8016b7b1e8b93bac8b228
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/arsenic-identity-search-v1.json
+    sha256: bbebc97a2f34ae85e1c005c15fd43378f73949ded72fb01c37dba31b3ed5519a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-004.json
+    sha256: 450790c59b5569396b8c9da739bcecad54025dae7e66a8f278163c93f344d982
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-005.json
+    sha256: 2ced9975c1207372d6fb6a414875db20529a7a52fef930f15adbd2443bde7893
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-007.json
+    sha256: f2beac2ec18b1f0408c245134444faf55ba95c3b93d59ba0dd5615b87c6367f6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-008.json
+    sha256: 08338ae0447ef171b24e8ea66e6e4325a4cca15470a24696bbf9e6b44f90a08b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-009.json
+    sha256: 0b405e7ea3ebbeb5564131a44772b93cc9230a1d8c904d68a3af6826c6e0db37
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-010.json
+    sha256: bacb09850f075cee1b9b96e6735a25135793b09004c520dde0694657d421fc42
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-024.json
+    sha256: 1ca93741cce6b23b3e9b752dfe0a1bc2561fdb93ce1270ad7fd6af51474834ad
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-031.json
+    sha256: a0ca4b0f0a70b0b46555f14eb7a14249ce66d677e5a92873db7d73cc924006f2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-033.json
+    sha256: c4ed6c3dd6dde77b8f22532ca993eb40c73cc7c64ef10360d1ea4f2e20437a62
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-035.json
+    sha256: f5f951081cc06f92ac658b23aa99c07763e62e482a22232d1264a07adee10892
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-036.json
+    sha256: 96517c2b5b76a6b836147848783ffb7efd5f7e327b94651ae0ec23b9c72aa9cb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-037.json
+    sha256: de2313bc6e8fb43629faf69a84644e95071a5282f372957580523621944faa4f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-043.json
+    sha256: 4dd253ee3dd1557d1eada72077a776195df232a68c5ff48c8e2ffe6fd7114684
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-050.json
+    sha256: 00d6b8d6ff92c8b269915a6359807b8e929508e62c3c3db8f441cd64dae7b377
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-051.json
+    sha256: 537eca6c1e8e0828b28051b81057f1f3dea1bbb89ce3b85fb6cad6e79d3d2494
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-062.json
+    sha256: bbfabf671298b9cc2769cab1409c0ca62d3f13502588b6c2dc742930a9fa9549
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-063.json
+    sha256: 0af002442e83e175565e76de7855b75fe5ce9d22811bf97cf10383ec498108a1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-074.json
+    sha256: fc84d23a1bad27ed11aea8bafd8740318b80e82537134a80dceae047a0147bae
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-114.json
+    sha256: d675588c45616959261294d158b8d6581af28c2917d70fcb2233bcf1ff7fefe1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/05e97630494a557b3474.pdf
+    sha256: f89eb04b8dbd78e28c68c214767e65c3f0cd128e68e10d13913001703e0990b0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0b27b502f81db0d8a2b9.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0f3ec1b841e9c2210927.json
+    sha256: 8c6755c186caefceb46b1e1dc095127d6899da5ee0cb8d71e5416c4a6160d60a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0fa04ea958683ed02a33.json
+    sha256: 38983ef0bcc1cd1adcef1e05796780b7d6bda38664f3cf451bd5e0eeb9ed6a58
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/164e5c2285bff6b4c4c0.json
+    sha256: ae56e3fff57333b53505bc84e0127985c077b6f1d4bf540201d0000c67f075c5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1a63a3e61dd4514d5557.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1f4b1d0fae7ba48d721a.json
+    sha256: a5dafd1d45bbf4845fe843074991908078703d1b45d5c88158ae3061552bdc28
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1fcfebe80e1e270a1c55.json
+    sha256: 14fbbe148c8aab6e9d9901fcfa945e9d3f0031c93b1c7b89a8195a2308383b6e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2256f29f0929d1070cfc.pdf
+    sha256: 29ffa5707345821ccd91e72e7e633652e5364ed04283b42a63b683f09c0006a9
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/28bd87bf6dd10ce24830.metadata.json
+    sha256: d6cbbc30ae40f9bb959fb6c847444bf48573672ee5231e27d4de1f1ef3521056
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2bc8ca7b151c2828f66f.json
+    sha256: a9058c9940056c7faec1e130fa4080c12013216a5e4e4749f1ed6c8f8892020c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2e36b7f2d05209a0c5b9.json
+    sha256: f22345c993f16a147234d5ddef2d59a0fb5f673b0123c4e754f75daef54ae4e8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2fd5545c8096f20cc507.json
+    sha256: d4007b2224f62b0c364b474f7a901200ba8f28c4524f8b247ee156252116861e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/30e4a8b45cce0e024dc0.json
+    sha256: aa9a3e5bc7983d83e96d566dd06ee9dcb719239013f2d35b1556b2fbed79cb87
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/320c8d630ec4ba9b29ff.json
+    sha256: 63fb5ec5232f0ab1d6bf43306b54a0d89ea8a6d7d0cc43a531e94202ef29fffd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/323a7d3f8a5caf0345c9.json
+    sha256: 401a4ab3ead1ff38526d124da9f8165fd25366b2d022ba3c3064bd78904f7d52
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3373b7f7273f75e1ee01.json
+    sha256: 290aa1e117d7455ba2210fa14fa5bdbe9c280c79ca1bfe3e71e12552537d0bc7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/39a99c132d65921d6874.json
+    sha256: 94daca6414e5c84e4c18ae73aeeb07190af3009e003601472cfb85210a7d5338
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3f96777ba1c4322fe731.html
+    sha256: 88c24fe02dab47e47affb32d329539b0dd071fca0f86aae8e99a5dd0057a764e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3fcd652e9c95749efc31.json
+    sha256: e1c8ccf3ceaf88582921b4abe209346ec6c6660e479126307a7ecdfc2eda039c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/4307921ad0ead3929076.pdf
+    sha256: 79104af2ecd5fe9a438501e56246f77c5c22e37f5e568f49dc5686783a1fd367
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/53666f2f2910add2defe.pdf
+    sha256: 3226509b558f3fa90e1466ed5a9be5d0fc05db2156dcdec37301890246ef00f3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54bf73629d2dda2dc93e.json
+    sha256: 0b63a3c1cd4ea1f266e9e33c59896ae1e166fba1664e9a55eecb0a9173ecd227
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54ec413d4dba0fba9bef.json
+    sha256: 51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/56c781a699a994f40a81.html
+    sha256: 4777955bd9807b6d24d2ce3e84d66e35bcc0f6a8b76b4c13bf3b812876dd52c1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/57ab25b707e030374d53.pdf
+    sha256: f31cd1fa0ce64034424194c33c3ce4e69024961dac052f6152da58070b7f99a3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/5dada06913515377f52a.pdf
+    sha256: 8b4c6b813b38b7d11e631a1fddde2001a24b44b00e30b2a3821be48b8d3dfbc0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6001c3316db86a3bba50.json
+    sha256: c0b27acd87af2560abb59c72ab343237836547f790914283621765bf96be86d5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/62605427b41f2fbcc934.metadata.json
+    sha256: 61416a814ba3d5df1c693d3285ea94c86701c879cdb169409399de48c01aca26
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/62ed4f2b38bd1f7b00c1.json
+    sha256: 7c61d46843f5475ecd61249de912494e47f5cecb86071366c38d44dbc5bcd3a5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6434f00f3eb520184dc8.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/643c1cf159ac5c3d0216.json
+    sha256: 58e9b3cca5a37f933e4a215eb23c8d28e88a22f1f3bc8781e2d7ff7e44a5be83
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/65105976aacee3e547e1.html
+    sha256: 913525a84ae3ab187be25a0474db2d2b996c20b361442f9e8dc1bc7eef3afa8c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/69701d85897c096f706f.html
+    sha256: db0b0229a297b2d1686f691ab11eb91389c2e673a577dec6e1ddfd4ae76a77f8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/69b783b5d254adae443f.html
+    sha256: 044e7eb0f437defa5514c115c1723c36eee5deb4dbe50b982a973204de59f174
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6aedaf1a5c00a7e8645c.pdf
+    sha256: 5e851cb786fde70289f907e0096c6fddeadf0557ee5f4b22f169c5eb3a3a0107
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6c67e246efaeec6b3b2a.json
+    sha256: aa8d65ab7a800a4965f97e54e2a9c7bf68a90ab8767e0b6e85faa78e34f2d9c7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6dc1d5bcbb35321ae77d.metadata.json
+    sha256: 76537ea8f91cf4e59a7999122076976c81e7f70f82f22f604065434654d23eaf
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6e90118c18942cfb1e35.json
+    sha256: 327b369da79eb70b97e137249e5487b271ecf1e2e1f2d7f5e78c9a83290ff8eb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/72a0e2c4eb2e07d69125.pdf
+    sha256: 7fdbb6320838d44e26a3f0787bd2ab411442e12b7cf2fd506c4e6013eec059dd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/74e35c1720d8af2a001f.json
+    sha256: 31b42fd8b9807e2bc066d45de7d57dfde531abc7a5091389cbd028828c4762fe
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/754b42b09d03fa0c9df0.html
+    sha256: 270cf140118aebbcfb1e1ebde157804a80cec846a613ad3aa5e7f08f340ad0c2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7c123c44d3b556f9ca15.json
+    sha256: 1b101f2be3f12a6b88b284df90b3369c5b359d83517fefe582bcb42c0ae904e6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7e09be7d5fa93150635a.pdf
+    sha256: 5b6b345e18a3d06fe44df8edddf45581297e62b7abcf86223ba9412cf25e4e4d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/807d3cd225259ae390af.metadata.json
+    sha256: 6258e1a54ca6d764d226be5e51dcddacc3b0274f1c988b47a1f8f481d8e51a89
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/823fef2b5f14fb9d0372.json
+    sha256: e89e0ae1c84f7cf8495910277e279eeed239d2c2f12d2b674024b489b174399a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/87a6ad12996fa25e81cd.json
+    sha256: a9a9477b7344b6d514764a1c72707b1b9b142e1f13c2f770e34d4798aa4a3011
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8827fef4367bb179adc8.json
+    sha256: 2000d6d05dbe1c793f30e0a31603dc769ecd64087cec7f9af1672c6a5785f0b8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/890225ce506d2f3b0969.json
+    sha256: cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8b42d7dd41b46727e94c.pdf
+    sha256: 68264077ad1c5a4a030a9badcee4480eb1f849a1c7306efd6beff2043b4ddee6
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8bd381b5c79f2155d63a.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8dfa6a7436608ecf37eb.json
+    sha256: 9b88d3d66f04717cd2b27390ec1de36a47502591e23373f83c260ed1fab8154e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8e6d89b09f3ec6258088.pdf
+    sha256: 55deda68aec18ea2bb5b2f63a5a7fe82d322be1ad63cb3a2db136f01704d747c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/920dabb63f8e2a5603ae.json
+    sha256: 6deda9b5e5d18f0c886cc93fd0b433b29cd2623d8632a7893d5a7ff49bde6bba
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/93af3661bf330bacec27.json
+    sha256: 8134b00b6f68bc35f95e0f537682a78576ee9a7b062b6df74d8161f6286c0dd7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/955b9bae08416c27750f.json
+    sha256: c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9f44f1a292e0b9815b12.json
+    sha256: becc862b31f14cb85b14d9b1a2abd6da16a9fd6020ae8c2953c613622f558142
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9f5a166bae02ffb3b498.html
+    sha256: 3273313753052f0a064777925152bb066dd42bfc6dc22ea8885dfaaf68255d58
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a16643fddb8b91a9d74d.json
+    sha256: 5f9314de8d667b76299e52177e11017388a4febef14a5755f4cc46767bcc2b9d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a23a39da20b4fcf6f7b1.json
+    sha256: 06e5a35eb6b9bef3760f195add9d7032a4d30add2a3d8eef8741b6873f95fff5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a58435a060cec0c59ce7.json
+    sha256: d21246b724ff145deedaab628a7cd11b3bb1685f8c3220e8a1f04dc2dfdd8837
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a5c2779e6ff5f03b5a47.html
+    sha256: dfd62d9c5a7d2970ade70a0b4c7597c1252692d381c8cd452fd12548d1250596
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/abd12ada3ac6df5eea15.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ad6cdcec26f64b3ff09e.json
+    sha256: 52d07584dd911b3ed738f4b5b321c64cd53cf94aeb64954f514f90f08684b369
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b8aa55a60f527be120b7.json
+    sha256: 7c89e6618d5cc6980c09cc4b1ab7d6184e1655b816ff487ffcfe1c72f94a2b1e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b98772426e9db9e378a4.json
+    sha256: d0ee6bf62bf376ee6e50df5f16974f3adb62a14ff78dfdb4de76feb4b6360ad8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/be74b076aa9399cea332.json
+    sha256: 872fc6c0fba97925c8e97370a68f597e71274f0acaa7d43866ab89ed87b4b741
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c0cead532fc41d32947d.pdf
+    sha256: 368832cbc4e18bd60f20411c313a1efb242e1de395e8eead13beb6540596cbbc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c239d4cc6d405ec29a35.json
+    sha256: 8c1a7cca1709413947be407a959aa2872d0db27d4b970c358773bf22441c2513
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c36559e9f6ebb54ad2f3.json
+    sha256: 807c96cb31d7b2faebd5667df44cc727071a7ebf1e1fe07c34b603dfbabdc69f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c3ead3918eebd2b207e2.json
+    sha256: 04e665d2908a5f57005b98a9b72cec932ec18d3aeed197daad463843dda78832
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c9e62e732fcc698d7af6.metadata.json
+    sha256: a71840b5dcdd081763860098c5dc980bfde88a65d9ef68a690d63e56a5a4b329
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cb2e78dd78232e81797f.metadata.json
+    sha256: 0f0e81d8db9b0b8c3c7e5767d29074dc35a2f9655f67e66c69eaf01ac623a5d4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cba0795e55c70ec54d3f.metadata.json
+    sha256: 4be7fa036976c021c52b2957b34c3a630fe094dcbd053e0474d92de14f5540f4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cc603fec73e918489cda.pdf
+    sha256: 62024a8aafa1b0d67fb808671ec66834ec38719d6c70fa2100eb5497febf2d0c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d1ffb78c451bbabfb5e1.json
+    sha256: 7ecd8500a459870177ffccd14dbfe1b4266942b157b7df16c0a91ebd1ee3e47a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d219bf2bd1f7bbea780c.json
+    sha256: eb3367e337413efe23b86892649741c0e68aa18b1fd7bb8f55f2db2f174ae1dc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d30b866572589a24b2d1.json
+    sha256: 58862eb1571732a5950afe41a71cb405940f4bbd83d2a0fc38ab2ca0a2c2c786
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d55424fe7b8239a76c56.json
+    sha256: 2135254ddf18a4d4e33a2ad797725aab282211ffcffc71dcc574521a03175305
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d6df1bb06ff02f698b02.html
+    sha256: a79853038be8e5376a9a3ecd00518b481be377d1b1860012ef8c48875768e0bb
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d71d2c4c69f3dc3a28ec.json
+    sha256: 6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d750934e49c5d7a27aca.html
+    sha256: c94fcb12b856675574dd0b1766493de62e18406b29e208285c340a72edfffb63
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d885b030727e7eb8577c.metadata.json
+    sha256: f7baf32df3fff1e1602d04c76d7ed349014b58a786200601005c4ec64ead3150
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/deebd746cac5c27a7efc.json
+    sha256: bc5fadad0ff3e765c7e8e5ba2b6dc6a2b0605482ec6d447229caa7e4103c0894
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e24466123dc7455046b5.pdf
+    sha256: a295f871d91df15e1f418090bcd9d08ac5d647daf5d29599d633f4555b369092
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ed5243472212a7fbccf2.json
+    sha256: 19b0210d26ef3eadd322357fc12fcb412ee57f436e4efff05eb71ebf2d318f03
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ee7a1a6eed70ad9ea70e.metadata.json
+    sha256: 3754e408976d0968e3be6576dea4be3907f371b4502638e34506cd3bf55dcf4d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f5ebe3426a641f5a3649.html
+    sha256: a2ab30826c548f49ebf75213cd102499cdb7926728d0d3885d30f12666970a9a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f94e94beb37525c8c287.json
+    sha256: 096a85fbca260b4f036a96bc249f0082d11bec8c2a9747526f420704d6326dee
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f9d1136431c96b45724d.json
+    sha256: 03c17e8a56e59b6f741dc70f93427c0f2c79e97357ae73b5b2a0da9dbf9eb2e2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/fb482c8a164d4a2881c4.json
+    sha256: f1bf67a3e384a22558666a071aebef0d80a6d4fa1293463fd99e0cc48fbc97a0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-carob-two-products-v1.json
+    sha256: 2870942cb02895ed68940f017e3f27c8ad95a4ff159bdcf27ac1ae4d22b1f82d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-24-alternate.json
+    sha256: 9667a2314f2882bedd882dda390afc31357221e7c76e45ea9b2c42752942b9e4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-24.json
+    sha256: eab3776e57c8cc73640e1fa3736866a260ebf7cc0d8d79ccf5ea2830478a9dcd
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-63-alternate.json
+    sha256: c650fdb3bb7b8656159e5273152c60e1ebe5e98be3e316bec2cbc49523819916
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-1.json
+    sha256: aeebf81f8e55f906989a835ceba1781ac62a8838e6b0b772f2feda9e901e88d8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-2.json
+    sha256: a7b02d65c2ce520ea528f70cf9bab6a2ca2d2a82b84ca7c0fa47ba9bb0663489
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-component-owner-dependencies-v1.json
+    sha256: 0ee51abd2af5f0b201b4c9431e702842fe8bb8b54f5ade98d1b537cd05c74344
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-owner-search-v1.json
+    sha256: a56b2f954a165943b27e22adea95b5c7eae572b02e5c7eb41d20c7329e118062
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-proposal-validation-v1.json
+    sha256: ed978c60229571691451f4b8952cb2ae77d7ece95d65a802fd408c3a55a9af86
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/final-corrections-v5.json
+    sha256: 19ddcb8e33d8a51877d1cf3545f4e600fb16c6e496997c8aa38ccad55a148471
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/product-completeness-search-v2.json
+    sha256: 437b21a871e4aba54fb9ef999cef9affb980efb605c3cabd207014aad6f4ef37
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/003-base-after-scope-v4.yaml
+    sha256: 8cfc0958c5c609622efafc8bc6feeba140108e20dee0f9e34e01c3e4f226be7c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-after.yaml
+    sha256: 1050d40c2efcad9b1e103218e6759dd28becb400a980ef4015f6fed1d5158043
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-before.yaml
+    sha256: b2c418f2dd142b9270329af6d46a71939a1223eb3384c59dd05eb5f13868ae24
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-after.yaml
+    sha256: 72881247e6866d384b23e34c169d2a08a612117ebf0316be706038a7301684ed
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-before.yaml
+    sha256: de098711130ca209fe06ee2a3239125f2aabb60c554830f93b2b24b72cc12cab
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/033-before.yaml
+    sha256: 8e7f1d2eacb03c665af878935add83bc686d9bd7dd1b3cd601b29a21af37caa4
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after-scope-v3.yaml
+    sha256: 2d80c2c2be528a8a9e4046bebd51f361bdacb736aef4450e490754c13e235074
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after.yaml
+    sha256: 85d8b3bf5fc8ec2e0047fb5912f504760405638bd86323b9a8ce0d86bb51e1d1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/037-before.yaml
+    sha256: 8b77127d8befda706ede22e5f25d6b37b67adaaa88f1a90d6e943361a5241892
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/043-after.yaml
+    sha256: f67d6fad0709566e69aca6a0ee8dfb0efdbcd3b8b72ca6dcb96bfe611d9b2cf4
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-after.yaml
+    sha256: 4e3670d46983671fbd80ef7d1e53aea1aedfae03fb71d1fe40410c358fcd90f1
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-before.yaml
+    sha256: 40b92206d8497223f03cc179bb650f8234b65e7c52cd52ec44cae873821c9248
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-after.yaml
+    sha256: 49c099fad3aa92d273a5796b0104bb7ec049ce817670b7cfa0603e5ed2fa9df8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-before.yaml
+    sha256: d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-after.yaml
+    sha256: 2cfb484f60c62bd956b8248bae0bc82c361e09b3f031411d62e741e0ca125d54
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-before.yaml
+    sha256: 4ca1c5f8724d60fa691ce325ebcafb632b7782b5f05f19441f098aec93c5ea84
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/074-after.yaml
+    sha256: c3747c2aa492d68487eb79dedbe2f34ff03829856354cf9b547341c8b84c3cc6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/114-after.yaml
+    sha256: 712278825c5dc670fe52f059db67fe35386d6964403b46435fe8ec874d365fba
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after-scope-v3.yaml
+    sha256: 53bb748e07c2639e213b658431831f87b57444c63ecf1b0208f2a789d7d826e3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after.yaml
+    sha256: 81bdfbf248ea207af17c71119a5d29d290feba57c0afc6204e38470c1697df3f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Corn_Steep_Liquor-after.yaml
+    sha256: 90613251f1b47835fc1a494b7f6ad120b3d476dc0b7e7847532a3ec06b41fb1d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-EZMix_N_Z_Amine_A-after.yaml
+    sha256: 91475d4922503c528609176410e810ecdcdaa1157683a732937a2b9925db4cb9
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice-after.yaml
+    sha256: e1b64fd99b2dbda151501b1a4127bb37ba46f14d3c21ab4ec39682053a8459cd
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after-v2.yaml
+    sha256: 48ba807a289277d7a2875a6d598f32b435163ffba0bf21284d26b82d59c3abaa
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after.yaml
+    sha256: 5eee7fc3592ed6737079ca272b43cbc06e815ea8276dc0ed3ec370b793887e56
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after-scope-v3.yaml
+    sha256: e0d86c0f679e73c2890688268b3de14cb36a38b1b84d5679bcfb844517626f0c
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after.yaml
+    sha256: 04270329686f45dc7e7721ee2884e430adb5743437a8ec49aea0720067792317
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Oxoid_SR0117_Preston_Campylobacter_Supplement-after.yaml
+    sha256: 1aa5ed6b9b0b53504f4098e0cafbe6d7c052e210cc52c58269fa43d781899dbb
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/source-alias-scope-corrections-v6.json
+    sha256: 90ccefcf9eb563cb7dfc69f1ee3cfc1701a84482fe7d410fe8f4d9610680d2dc
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cas-12007-60-2-cids.json
+    sha256: d526c676d5eca5cc614d1361d5348acf047eaf4ec28b02c8cb4227528c6cad84
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-15764247-properties.json
+    sha256: 64c461c4b1c2e06b83eccf397d5c024ce22fe45a3ddb30cbc86041c8bfe3d956
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-21895667-properties.json
+    sha256: 43d06ca160f395c7164452be3a68047bb0bfccf65d497178fd706c1eb584963f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-90478374-properties.json
+    sha256: 55378a7478e80c01cd43adeb8a41aa18a830e21258dbbc6afa04331508f91364
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-9815330-properties.json
+    sha256: e4ccccaea4b54bc3176a88518a18369aba2d08a8206608aba499fe9c800fe5a8
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/sssom_grading.py
+    sha256: 20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c
+    role: context
+  - path: src/mediaingredientmech/synonym_policy.py
+    sha256: f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069
+    role: context
+targets:
+- target_id: RS-003-BASE-IDENTITY
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/003-base-after-scope-v4.yaml
+  label: ATCC 173 Middlebrook 7H10 agar base
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/ATCC_173_Middlebrook_7H10_Agar_Base.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-005-ALIAS
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-after.yaml
+  label: Tween 80
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tween_80.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-009-ALIAS
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-after.yaml
+  label: Na2SeO3
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Na2seo3.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-043-NEW
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/043-after.yaml
+  label: benzene-1,2,4-triol
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Benzene_1_2_4_triol.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-050-ALIAS
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-after.yaml
+  label: MnSO4 x 4 H2O
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mnso4_X_4_H2o.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-062-ALIAS
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-after.yaml
+  label: Sulfur
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Sulfur.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-063-ALIAS
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-after.yaml
+  label: Oleic acid
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Oleic_Acid.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: NSF-PROP-LI2B4O7-CAS
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+  label: Li2B4O7
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Li2b4o7.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-COMPLETE-JCM574_MDS_SALT_WATER
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after-scope-v3.yaml
+  label: JCM 574 MDS salt water
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/JCM574_MDS_Salt_Water.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-COMPLETE-FILTERED_TOMATO_JUICE
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice-after.yaml
+  label: filtered tomato juice
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Filtered_Tomato_Juice.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after-v2.yaml
+  label: filtered tomato juice adjusted to pH 7.0
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Filtered_Tomato_Juice_PH7.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-COMPLETE-CORN_STEEP_LIQUOR
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Corn_Steep_Liquor-after.yaml
+  label: corn steep liquor
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Corn_Steep_Liquor.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-COMPLETE-EZMIX_N_Z_AMINE_A
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-EZMix_N_Z_Amine_A-after.yaml
+  label: EZMix N-Z-Amine A
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/EZMix_N_Z_Amine_A.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-COMPLETE-ATCC929_PHENOL_RED_STOCK
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after-scope-v3.yaml
+  label: ATCC 929 alkaline phenol red stock
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/ATCC929_Phenol_Red_Stock.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Oxoid_SR0117_Preston_Campylobacter_Supplement-after.yaml
+  label: Oxoid SR0117 Preston Campylobacter selective supplement
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Oxoid_SR0117_Preston_Campylobacter_Supplement.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-074-NEW
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/074-after.yaml
+  label: diarsenic trioxide
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Diarsenic_Trioxide.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-035-PRODUCT
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after-scope-v3.yaml
+  label: Ward's Cerophyll cereal grass leaves
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Wards_Cerophyll_Cereal_Grass_Leaves.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-114-PRODUCT
+  path: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/114-after.yaml
+  label: Union Carbide SAG-471 antifoam
+  kind: source
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Union_Carbide_SAG_471.yaml
+    role: Intended maintained owner at separate coordinator integration; isolated
+      reviewed proposal only
+- target_id: RS-CANDIDATE-33
+  path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+  label: Co(NO3)2 x 6 H2O
+  kind: maintained
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+    role: Unchanged maintained identity candidate; no full-record support
+- target_id: RS-CANDIDATE-37
+  path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+  label: TitaniumIII chloride
+  kind: maintained
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+    role: Unchanged maintained identity candidate; no full-record support
+scope:
+  description: All18 exact root proposals plus unchanged33cobalt and37TiCl3 owner
+    correspondence. Entire target files read, conclusions limited to source identity
+    and changed payload fields.
+  selection: Explicit worker01rootproposalmanifest and two actual identified maintained
+    chemical-owner candidates.
+  coverage: full
+  population_size: 20
+  reviewed_target_ids:
+  - RS-003-BASE-IDENTITY
+  - RS-005-ALIAS
+  - RS-009-ALIAS
+  - RS-043-NEW
+  - RS-050-ALIAS
+  - RS-062-ALIAS
+  - RS-063-ALIAS
+  - NSF-PROP-LI2B4O7-CAS
+  - RS-COMPLETE-JCM574_MDS_SALT_WATER
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7
+  - RS-COMPLETE-CORN_STEEP_LIQUOR
+  - RS-COMPLETE-EZMIX_N_Z_AMINE_A
+  - RS-COMPLETE-ATCC929_PHENOL_RED_STOCK
+  - RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT
+  - RS-074-NEW
+  - RS-035-PRODUCT
+  - RS-114-PRODUCT
+  - RS-CANDIDATE-33
+  - RS-CANDIDATE-37
+  exclusions:
+  - target: Unchanged inherited roles, general biological claims, full owner publication
+      and merged source ledger
+    reason: Read for context but not independently re-established by the source correspondence;
+      all source/native holds retained.
+  - target: Other lanes and cross-shard registry deduplication
+    reason: Separately reviewed; this batch does not claim full campaign approval.
+checks:
+- check_id: strict
+  name: Independent native strict closed-schema validation
+  status: passed
+  required: true
+  summary: 25 exact target/before paths; zero errors.
+  target_ids:
+  - RS-003-BASE-IDENTITY
+  - RS-005-ALIAS
+  - RS-009-ALIAS
+  - RS-043-NEW
+  - RS-050-ALIAS
+  - RS-062-ALIAS
+  - RS-063-ALIAS
+  - NSF-PROP-LI2B4O7-CAS
+  - RS-COMPLETE-JCM574_MDS_SALT_WATER
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7
+  - RS-COMPLETE-CORN_STEEP_LIQUOR
+  - RS-COMPLETE-EZMIX_N_Z_AMINE_A
+  - RS-COMPLETE-ATCC929_PHENOL_RED_STOCK
+  - RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT
+  - RS-074-NEW
+  - RS-035-PRODUCT
+  - RS-114-PRODUCT
+  - RS-CANDIDATE-33
+  - RS-CANDIDATE-37
+  command: See native-independent-root-final-validation-v2.json for exact argument
+    vector
+  exit_code: 0
+  evidence_ids:
+  - e010
+- check_id: projection
+  name: Independent pinned native producer and synonym-policy projection
+  status: passed
+  required: true
+  summary: 18 actual payloads:16 exact ontology identities; Li andpH7broader parent;
+    each primary ownidentity exact. Rejectedlabels absentfromother. Old1164negativecontrol
+    emitswrongclose as expected. Catalog2956filesystem search includesignored; no
+    competingactiveprimaryID; partonomyzero actual violations.
+  target_ids:
+  - RS-003-BASE-IDENTITY
+  - RS-005-ALIAS
+  - RS-009-ALIAS
+  - RS-043-NEW
+  - RS-050-ALIAS
+  - RS-062-ALIAS
+  - RS-063-ALIAS
+  - NSF-PROP-LI2B4O7-CAS
+  - RS-COMPLETE-JCM574_MDS_SALT_WATER
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7
+  - RS-COMPLETE-CORN_STEEP_LIQUOR
+  - RS-COMPLETE-EZMIX_N_Z_AMINE_A
+  - RS-COMPLETE-ATCC929_PHENOL_RED_STOCK
+  - RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT
+  - RS-074-NEW
+  - RS-035-PRODUCT
+  - RS-114-PRODUCT
+  - RS-CANDIDATE-33
+  - RS-CANDIDATE-37
+  command: PYTHONPATH=src .temp/all-unmatched-worker-01/shard-venv/bin/python3.13
+    .temp/all-unmatched-worker-01/shard/review/root-native-projection-v3.py
+  exit_code: 0
+  evidence_ids:
+  - e011
+- check_id: science
+  name: Independent primary-source identity and exact payload assessment
+  status: passed
+  required: true
+  summary: Each target has separate positive evidence-linked assessment; hydration,
+    product, stock, source dosage and unknown lot boundaries retained.
+  target_ids:
+  - RS-003-BASE-IDENTITY
+  - RS-005-ALIAS
+  - RS-009-ALIAS
+  - RS-043-NEW
+  - RS-050-ALIAS
+  - RS-062-ALIAS
+  - RS-063-ALIAS
+  - NSF-PROP-LI2B4O7-CAS
+  - RS-COMPLETE-JCM574_MDS_SALT_WATER
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7
+  - RS-COMPLETE-CORN_STEEP_LIQUOR
+  - RS-COMPLETE-EZMIX_N_Z_AMINE_A
+  - RS-COMPLETE-ATCC929_PHENOL_RED_STOCK
+  - RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT
+  - RS-074-NEW
+  - RS-035-PRODUCT
+  - RS-114-PRODUCT
+  - RS-CANDIDATE-33
+  - RS-CANDIDATE-37
+- check_id: release
+  name: Maintained synchronization and full release checks
+  status: not_applicable
+  required: false
+  summary: No maintained bytes changed; isolated proposal approval only, coordinator
+    integration not performed.
+  target_ids:
+  - RS-003-BASE-IDENTITY
+  - RS-005-ALIAS
+  - RS-009-ALIAS
+  - RS-043-NEW
+  - RS-050-ALIAS
+  - RS-062-ALIAS
+  - RS-063-ALIAS
+  - NSF-PROP-LI2B4O7-CAS
+  - RS-COMPLETE-JCM574_MDS_SALT_WATER
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7
+  - RS-COMPLETE-CORN_STEEP_LIQUOR
+  - RS-COMPLETE-EZMIX_N_Z_AMINE_A
+  - RS-COMPLETE-ATCC929_PHENOL_RED_STOCK
+  - RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT
+  - RS-074-NEW
+  - RS-035-PRODUCT
+  - RS-114-PRODUCT
+  - RS-CANDIDATE-33
+  - RS-CANDIDATE-37
+evidence:
+- evidence_id: e000
+  reference: MAPPING_SEMANTICS.md
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+- evidence_id: e001
+  reference: data/ingredients/mapped/Co_No32_X_6_H2o.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 8e7f1d2eacb03c665af878935add83bc686d9bd7dd1b3cd601b29a21af37caa4
+- evidence_id: e002
+  reference: data/ingredients/mapped/Mnso4_X_4_H2o.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 40b92206d8497223f03cc179bb650f8234b65e7c52cd52ec44cae873821c9248
+- evidence_id: e003
+  reference: data/ingredients/mapped/Na2seo3.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: de098711130ca209fe06ee2a3239125f2aabb60c554830f93b2b24b72cc12cab
+- evidence_id: e004
+  reference: data/ingredients/mapped/Oleic_Acid.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 4ca1c5f8724d60fa691ce325ebcafb632b7782b5f05f19441f098aec93c5ea84
+- evidence_id: e005
+  reference: data/ingredients/mapped/Sulfur.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323
+- evidence_id: e006
+  reference: data/ingredients/mapped/TitaniumIII_Chloride.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 8b77127d8befda706ede22e5f25d6b37b67adaaa88f1a90d6e943361a5241892
+- evidence_id: e007
+  reference: data/ingredients/mapped/Tween_80.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: b2c418f2dd142b9270329af6d46a71939a1223eb3384c59dd05eb5f13868ae24
+- evidence_id: e008
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-finding-v9.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 60b37798e70dc7eb0873c144f1babd2a5074bc1e192a3e7dc59106ee3138b6d2
+- evidence_id: e009
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/artifact-findings-v7-v8.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 1a79ed5d9fc7e87fe6738e6208a0dc3d5a74ecf463a1c00ef9e6f5b46f91bec3
+- evidence_id: e010
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-final-validation-v2.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 0e28c84c109832b35c7c89beff2b45d9c40e53a2707bddd59f6c40a2fb8d9752
+- evidence_id: e011
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-projection-v3.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 2efc787c5f535d80c28f4baad6a3ec54cfb01eeeba4ca94a170c2d151816ed9b
+- evidence_id: e012
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-root-stable-validation-v1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 4f6126cf205d636d5a3ac3cd756ac17934217955a612cc5bbe13a4c2cce11428
+- evidence_id: e013
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 3d40fcdd8dcbc524538b8c2986bb3aec389bd12cf1f0392c8f63eccc9173b0e3
+- evidence_id: e014
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-strict.tsv
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+- evidence_id: e015
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-190479.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 9e175a600a0b93d72c3c76e4f109ab5a7e005ec74b10bcbb72905516af0c6c92
+- evidence_id: e016
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38889.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 82eceea571d2e571f9978b9c06de234e6b3e2316eaf2a1e7b78027eb6565d141
+- evidence_id: e017
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38910.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: ca0f3f77144e6015c6aab1b62beb046594cf5ed03335d790d9b87580dba08f50
+- evidence_id: e018
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-cas.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e019
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-dilithium.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e020
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-formula.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e021
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-tetraborate.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 92f00f5ff70940e21276ac30215f24fa4dc45c0260f0b274d6b63186d51020a1
+- evidence_id: e022
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/dsmz-1493.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: b3923aeed926fe8176633eb27c32c0ff91db802a90a485c0b86ff23c2ea23da7
+- evidence_id: e023
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/mediadive-3061.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67
+- evidence_id: e024
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/pubchem-9815330-view.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 5f2684e328dcda4dcb8b90d367d70d829087ef6719b8527501f9f462cd42d09e
+- evidence_id: e025
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/sigma-222534-webview.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 3dfbae414a7a673ede33daa5d8daa5399d07aa4eefcbb49c2a7a98044f6eb323
+- evidence_id: e026
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/lithium-cache-assessment.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: d5ff81101f37f9156600004a4491857ab5671be1bba034c62cb259c93e032a41
+- evidence_id: e027
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/mim-identity-search.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 621ebf0fa867d64c255b8c0b9c97b039d0374d1777b8016b7b1e8b93bac8b228
+- evidence_id: e028
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/arsenic-identity-search-v1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: bbebc97a2f34ae85e1c005c15fd43378f73949ded72fb01c37dba31b3ed5519a
+- evidence_id: e029
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-004.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 450790c59b5569396b8c9da739bcecad54025dae7e66a8f278163c93f344d982
+- evidence_id: e030
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-005.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 2ced9975c1207372d6fb6a414875db20529a7a52fef930f15adbd2443bde7893
+- evidence_id: e031
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-007.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: f2beac2ec18b1f0408c245134444faf55ba95c3b93d59ba0dd5615b87c6367f6
+- evidence_id: e032
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-008.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 08338ae0447ef171b24e8ea66e6e4325a4cca15470a24696bbf9e6b44f90a08b
+- evidence_id: e033
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-009.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 0b405e7ea3ebbeb5564131a44772b93cc9230a1d8c904d68a3af6826c6e0db37
+- evidence_id: e034
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-010.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: bacb09850f075cee1b9b96e6735a25135793b09004c520dde0694657d421fc42
+- evidence_id: e035
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-024.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 1ca93741cce6b23b3e9b752dfe0a1bc2561fdb93ce1270ad7fd6af51474834ad
+- evidence_id: e036
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-031.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: a0ca4b0f0a70b0b46555f14eb7a14249ce66d677e5a92873db7d73cc924006f2
+- evidence_id: e037
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-033.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: c4ed6c3dd6dde77b8f22532ca993eb40c73cc7c64ef10360d1ea4f2e20437a62
+- evidence_id: e038
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-035.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: f5f951081cc06f92ac658b23aa99c07763e62e482a22232d1264a07adee10892
+- evidence_id: e039
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-036.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 96517c2b5b76a6b836147848783ffb7efd5f7e327b94651ae0ec23b9c72aa9cb
+- evidence_id: e040
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-037.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: de2313bc6e8fb43629faf69a84644e95071a5282f372957580523621944faa4f
+- evidence_id: e041
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-043.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 4dd253ee3dd1557d1eada72077a776195df232a68c5ff48c8e2ffe6fd7114684
+- evidence_id: e042
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-050.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 00d6b8d6ff92c8b269915a6359807b8e929508e62c3c3db8f441cd64dae7b377
+- evidence_id: e043
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-051.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 537eca6c1e8e0828b28051b81057f1f3dea1bbb89ce3b85fb6cad6e79d3d2494
+- evidence_id: e044
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-062.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: bbfabf671298b9cc2769cab1409c0ca62d3f13502588b6c2dc742930a9fa9549
+- evidence_id: e045
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-063.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 0af002442e83e175565e76de7855b75fe5ce9d22811bf97cf10383ec498108a1
+- evidence_id: e046
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-074.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: fc84d23a1bad27ed11aea8bafd8740318b80e82537134a80dceae047a0147bae
+- evidence_id: e047
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-114.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: d675588c45616959261294d158b8d6581af28c2917d70fcb2233bcf1ff7fefe1
+- evidence_id: e048
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/05e97630494a557b3474.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: f89eb04b8dbd78e28c68c214767e65c3f0cd128e68e10d13913001703e0990b0
+- evidence_id: e049
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0b27b502f81db0d8a2b9.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e050
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0f3ec1b841e9c2210927.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8c6755c186caefceb46b1e1dc095127d6899da5ee0cb8d71e5416c4a6160d60a
+- evidence_id: e051
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/0fa04ea958683ed02a33.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 38983ef0bcc1cd1adcef1e05796780b7d6bda38664f3cf451bd5e0eeb9ed6a58
+- evidence_id: e052
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/164e5c2285bff6b4c4c0.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: ae56e3fff57333b53505bc84e0127985c077b6f1d4bf540201d0000c67f075c5
+- evidence_id: e053
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1a63a3e61dd4514d5557.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e054
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1f4b1d0fae7ba48d721a.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: a5dafd1d45bbf4845fe843074991908078703d1b45d5c88158ae3061552bdc28
+- evidence_id: e055
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/1fcfebe80e1e270a1c55.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 14fbbe148c8aab6e9d9901fcfa945e9d3f0031c93b1c7b89a8195a2308383b6e
+- evidence_id: e056
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2256f29f0929d1070cfc.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 29ffa5707345821ccd91e72e7e633652e5364ed04283b42a63b683f09c0006a9
+- evidence_id: e057
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/28bd87bf6dd10ce24830.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: d6cbbc30ae40f9bb959fb6c847444bf48573672ee5231e27d4de1f1ef3521056
+- evidence_id: e058
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2bc8ca7b151c2828f66f.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: a9058c9940056c7faec1e130fa4080c12013216a5e4e4749f1ed6c8f8892020c
+- evidence_id: e059
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2e36b7f2d05209a0c5b9.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: f22345c993f16a147234d5ddef2d59a0fb5f673b0123c4e754f75daef54ae4e8
+- evidence_id: e060
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/2fd5545c8096f20cc507.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: d4007b2224f62b0c364b474f7a901200ba8f28c4524f8b247ee156252116861e
+- evidence_id: e061
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/30e4a8b45cce0e024dc0.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: aa9a3e5bc7983d83e96d566dd06ee9dcb719239013f2d35b1556b2fbed79cb87
+- evidence_id: e062
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/320c8d630ec4ba9b29ff.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 63fb5ec5232f0ab1d6bf43306b54a0d89ea8a6d7d0cc43a531e94202ef29fffd
+- evidence_id: e063
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/323a7d3f8a5caf0345c9.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 401a4ab3ead1ff38526d124da9f8165fd25366b2d022ba3c3064bd78904f7d52
+- evidence_id: e064
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3373b7f7273f75e1ee01.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 290aa1e117d7455ba2210fa14fa5bdbe9c280c79ca1bfe3e71e12552537d0bc7
+- evidence_id: e065
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/39a99c132d65921d6874.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 94daca6414e5c84e4c18ae73aeeb07190af3009e003601472cfb85210a7d5338
+- evidence_id: e066
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3f96777ba1c4322fe731.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 88c24fe02dab47e47affb32d329539b0dd071fca0f86aae8e99a5dd0057a764e
+- evidence_id: e067
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/3fcd652e9c95749efc31.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: e1c8ccf3ceaf88582921b4abe209346ec6c6660e479126307a7ecdfc2eda039c
+- evidence_id: e068
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/4307921ad0ead3929076.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 79104af2ecd5fe9a438501e56246f77c5c22e37f5e568f49dc5686783a1fd367
+- evidence_id: e069
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/53666f2f2910add2defe.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 3226509b558f3fa90e1466ed5a9be5d0fc05db2156dcdec37301890246ef00f3
+- evidence_id: e070
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54bf73629d2dda2dc93e.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 0b63a3c1cd4ea1f266e9e33c59896ae1e166fba1664e9a55eecb0a9173ecd227
+- evidence_id: e071
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/54ec413d4dba0fba9bef.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c
+- evidence_id: e072
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/56c781a699a994f40a81.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 4777955bd9807b6d24d2ce3e84d66e35bcc0f6a8b76b4c13bf3b812876dd52c1
+- evidence_id: e073
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/57ab25b707e030374d53.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: f31cd1fa0ce64034424194c33c3ce4e69024961dac052f6152da58070b7f99a3
+- evidence_id: e074
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/5dada06913515377f52a.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8b4c6b813b38b7d11e631a1fddde2001a24b44b00e30b2a3821be48b8d3dfbc0
+- evidence_id: e075
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6001c3316db86a3bba50.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: c0b27acd87af2560abb59c72ab343237836547f790914283621765bf96be86d5
+- evidence_id: e076
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/62605427b41f2fbcc934.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 61416a814ba3d5df1c693d3285ea94c86701c879cdb169409399de48c01aca26
+- evidence_id: e077
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/62ed4f2b38bd1f7b00c1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 7c61d46843f5475ecd61249de912494e47f5cecb86071366c38d44dbc5bcd3a5
+- evidence_id: e078
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6434f00f3eb520184dc8.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e079
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/643c1cf159ac5c3d0216.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 58e9b3cca5a37f933e4a215eb23c8d28e88a22f1f3bc8781e2d7ff7e44a5be83
+- evidence_id: e080
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/65105976aacee3e547e1.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 913525a84ae3ab187be25a0474db2d2b996c20b361442f9e8dc1bc7eef3afa8c
+- evidence_id: e081
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/69701d85897c096f706f.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: db0b0229a297b2d1686f691ab11eb91389c2e673a577dec6e1ddfd4ae76a77f8
+- evidence_id: e082
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/69b783b5d254adae443f.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 044e7eb0f437defa5514c115c1723c36eee5deb4dbe50b982a973204de59f174
+- evidence_id: e083
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6aedaf1a5c00a7e8645c.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 5e851cb786fde70289f907e0096c6fddeadf0557ee5f4b22f169c5eb3a3a0107
+- evidence_id: e084
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6c67e246efaeec6b3b2a.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: aa8d65ab7a800a4965f97e54e2a9c7bf68a90ab8767e0b6e85faa78e34f2d9c7
+- evidence_id: e085
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6dc1d5bcbb35321ae77d.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 76537ea8f91cf4e59a7999122076976c81e7f70f82f22f604065434654d23eaf
+- evidence_id: e086
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/6e90118c18942cfb1e35.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 327b369da79eb70b97e137249e5487b271ecf1e2e1f2d7f5e78c9a83290ff8eb
+- evidence_id: e087
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/72a0e2c4eb2e07d69125.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 7fdbb6320838d44e26a3f0787bd2ab411442e12b7cf2fd506c4e6013eec059dd
+- evidence_id: e088
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/74e35c1720d8af2a001f.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 31b42fd8b9807e2bc066d45de7d57dfde531abc7a5091389cbd028828c4762fe
+- evidence_id: e089
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/754b42b09d03fa0c9df0.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 270cf140118aebbcfb1e1ebde157804a80cec846a613ad3aa5e7f08f340ad0c2
+- evidence_id: e090
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7c123c44d3b556f9ca15.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 1b101f2be3f12a6b88b284df90b3369c5b359d83517fefe582bcb42c0ae904e6
+- evidence_id: e091
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/7e09be7d5fa93150635a.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 5b6b345e18a3d06fe44df8edddf45581297e62b7abcf86223ba9412cf25e4e4d
+- evidence_id: e092
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/807d3cd225259ae390af.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 6258e1a54ca6d764d226be5e51dcddacc3b0274f1c988b47a1f8f481d8e51a89
+- evidence_id: e093
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/823fef2b5f14fb9d0372.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: e89e0ae1c84f7cf8495910277e279eeed239d2c2f12d2b674024b489b174399a
+- evidence_id: e094
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/87a6ad12996fa25e81cd.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: a9a9477b7344b6d514764a1c72707b1b9b142e1f13c2f770e34d4798aa4a3011
+- evidence_id: e095
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8827fef4367bb179adc8.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 2000d6d05dbe1c793f30e0a31603dc769ecd64087cec7f9af1672c6a5785f0b8
+- evidence_id: e096
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/890225ce506d2f3b0969.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: cfe139a3d47509ccb833883995d6890abf9e584e396ceccd5e6c1b77846f7872
+- evidence_id: e097
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8b42d7dd41b46727e94c.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 68264077ad1c5a4a030a9badcee4480eb1f849a1c7306efd6beff2043b4ddee6
+- evidence_id: e098
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8bd381b5c79f2155d63a.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e099
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8dfa6a7436608ecf37eb.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 9b88d3d66f04717cd2b27390ec1de36a47502591e23373f83c260ed1fab8154e
+- evidence_id: e100
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8e6d89b09f3ec6258088.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 55deda68aec18ea2bb5b2f63a5a7fe82d322be1ad63cb3a2db136f01704d747c
+- evidence_id: e101
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/920dabb63f8e2a5603ae.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 6deda9b5e5d18f0c886cc93fd0b433b29cd2623d8632a7893d5a7ff49bde6bba
+- evidence_id: e102
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/93af3661bf330bacec27.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8134b00b6f68bc35f95e0f537682a78576ee9a7b062b6df74d8161f6286c0dd7
+- evidence_id: e103
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/955b9bae08416c27750f.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: c0ed4832d86e8ee5a55ed2e0e78e3e4ae53177087a72e0e98bd241ab0d1a4faa
+- evidence_id: e104
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9f44f1a292e0b9815b12.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: becc862b31f14cb85b14d9b1a2abd6da16a9fd6020ae8c2953c613622f558142
+- evidence_id: e105
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/9f5a166bae02ffb3b498.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 3273313753052f0a064777925152bb066dd42bfc6dc22ea8885dfaaf68255d58
+- evidence_id: e106
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a16643fddb8b91a9d74d.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 5f9314de8d667b76299e52177e11017388a4febef14a5755f4cc46767bcc2b9d
+- evidence_id: e107
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a23a39da20b4fcf6f7b1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 06e5a35eb6b9bef3760f195add9d7032a4d30add2a3d8eef8741b6873f95fff5
+- evidence_id: e108
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a58435a060cec0c59ce7.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: d21246b724ff145deedaab628a7cd11b3bb1685f8c3220e8a1f04dc2dfdd8837
+- evidence_id: e109
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/a5c2779e6ff5f03b5a47.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: dfd62d9c5a7d2970ade70a0b4c7597c1252692d381c8cd452fd12548d1250596
+- evidence_id: e110
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/abd12ada3ac6df5eea15.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: e111
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ad6cdcec26f64b3ff09e.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 52d07584dd911b3ed738f4b5b321c64cd53cf94aeb64954f514f90f08684b369
+- evidence_id: e112
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b8aa55a60f527be120b7.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 7c89e6618d5cc6980c09cc4b1ab7d6184e1655b816ff487ffcfe1c72f94a2b1e
+- evidence_id: e113
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/b98772426e9db9e378a4.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: d0ee6bf62bf376ee6e50df5f16974f3adb62a14ff78dfdb4de76feb4b6360ad8
+- evidence_id: e114
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/be74b076aa9399cea332.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 872fc6c0fba97925c8e97370a68f597e71274f0acaa7d43866ab89ed87b4b741
+- evidence_id: e115
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c0cead532fc41d32947d.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 368832cbc4e18bd60f20411c313a1efb242e1de395e8eead13beb6540596cbbc
+- evidence_id: e116
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c239d4cc6d405ec29a35.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8c1a7cca1709413947be407a959aa2872d0db27d4b970c358773bf22441c2513
+- evidence_id: e117
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c36559e9f6ebb54ad2f3.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 807c96cb31d7b2faebd5667df44cc727071a7ebf1e1fe07c34b603dfbabdc69f
+- evidence_id: e118
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c3ead3918eebd2b207e2.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 04e665d2908a5f57005b98a9b72cec932ec18d3aeed197daad463843dda78832
+- evidence_id: e119
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/c9e62e732fcc698d7af6.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: a71840b5dcdd081763860098c5dc980bfde88a65d9ef68a690d63e56a5a4b329
+- evidence_id: e120
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cb2e78dd78232e81797f.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 0f0e81d8db9b0b8c3c7e5767d29074dc35a2f9655f67e66c69eaf01ac623a5d4
+- evidence_id: e121
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cba0795e55c70ec54d3f.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 4be7fa036976c021c52b2957b34c3a630fe094dcbd053e0474d92de14f5540f4
+- evidence_id: e122
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/cc603fec73e918489cda.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 62024a8aafa1b0d67fb808671ec66834ec38719d6c70fa2100eb5497febf2d0c
+- evidence_id: e123
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d1ffb78c451bbabfb5e1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 7ecd8500a459870177ffccd14dbfe1b4266942b157b7df16c0a91ebd1ee3e47a
+- evidence_id: e124
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d219bf2bd1f7bbea780c.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: eb3367e337413efe23b86892649741c0e68aa18b1fd7bb8f55f2db2f174ae1dc
+- evidence_id: e125
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d30b866572589a24b2d1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 58862eb1571732a5950afe41a71cb405940f4bbd83d2a0fc38ab2ca0a2c2c786
+- evidence_id: e126
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d55424fe7b8239a76c56.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 2135254ddf18a4d4e33a2ad797725aab282211ffcffc71dcc574521a03175305
+- evidence_id: e127
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d6df1bb06ff02f698b02.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: a79853038be8e5376a9a3ecd00518b481be377d1b1860012ef8c48875768e0bb
+- evidence_id: e128
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d71d2c4c69f3dc3a28ec.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 6f00ccc01a6244e30ae5df933caef8fdc1d297a4887eccf74a87fa94cb20dc88
+- evidence_id: e129
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d750934e49c5d7a27aca.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: c94fcb12b856675574dd0b1766493de62e18406b29e208285c340a72edfffb63
+- evidence_id: e130
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/d885b030727e7eb8577c.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: f7baf32df3fff1e1602d04c76d7ed349014b58a786200601005c4ec64ead3150
+- evidence_id: e131
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/deebd746cac5c27a7efc.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: bc5fadad0ff3e765c7e8e5ba2b6dc6a2b0605482ec6d447229caa7e4103c0894
+- evidence_id: e132
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/e24466123dc7455046b5.pdf
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: a295f871d91df15e1f418090bcd9d08ac5d647daf5d29599d633f4555b369092
+- evidence_id: e133
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ed5243472212a7fbccf2.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 19b0210d26ef3eadd322357fc12fcb412ee57f436e4efff05eb71ebf2d318f03
+- evidence_id: e134
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/ee7a1a6eed70ad9ea70e.metadata.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 3754e408976d0968e3be6576dea4be3907f371b4502638e34506cd3bf55dcf4d
+- evidence_id: e135
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f5ebe3426a641f5a3649.html
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: a2ab30826c548f49ebf75213cd102499cdb7926728d0d3885d30f12666970a9a
+- evidence_id: e136
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f94e94beb37525c8c287.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 096a85fbca260b4f036a96bc249f0082d11bec8c2a9747526f420704d6326dee
+- evidence_id: e137
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/f9d1136431c96b45724d.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 03c17e8a56e59b6f741dc70f93427c0f2c79e97357ae73b5b2a0da9dbf9eb2e2
+- evidence_id: e138
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/fb482c8a164d4a2881c4.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: f1bf67a3e384a22558666a071aebef0d80a6d4fa1293463fd99e0cc48fbc97a0
+- evidence_id: e139
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-carob-two-products-v1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 2870942cb02895ed68940f017e3f27c8ad95a4ff159bdcf27ac1ae4d22b1f82d
+- evidence_id: e140
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-24-alternate.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 9667a2314f2882bedd882dda390afc31357221e7c76e45ea9b2c42752942b9e4
+- evidence_id: e141
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-24.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: eab3776e57c8cc73640e1fa3736866a260ebf7cc0d8d79ccf5ea2830478a9dcd
+- evidence_id: e142
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-case-63-alternate.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: c650fdb3bb7b8656159e5273152c60e1ebe5e98be3e316bec2cbc49523819916
+- evidence_id: e143
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: aeebf81f8e55f906989a835ceba1781ac62a8838e6b0b772f2feda9e901e88d8
+- evidence_id: e144
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/web-supplier-2.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: a7b02d65c2ce520ea528f70cf9bab6a2ca2d2a82b84ca7c0fa47ba9bb0663489
+- evidence_id: e145
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-component-owner-dependencies-v1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 0ee51abd2af5f0b201b4c9431e702842fe8bb8b54f5ade98d1b537cd05c74344
+- evidence_id: e146
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-owner-search-v1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: a56b2f954a165943b27e22adea95b5c7eae572b02e5c7eb41d20c7329e118062
+- evidence_id: e147
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/completeness-proposal-validation-v1.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: ed978c60229571691451f4b8952cb2ae77d7ece95d65a802fd408c3a55a9af86
+- evidence_id: e148
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/final-corrections-v5.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 19ddcb8e33d8a51877d1cf3545f4e600fb16c6e496997c8aa38ccad55a148471
+- evidence_id: e149
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/product-completeness-search-v2.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 437b21a871e4aba54fb9ef999cef9affb980efb605c3cabd207014aad6f4ef37
+- evidence_id: e150
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/003-base-after-scope-v4.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 8cfc0958c5c609622efafc8bc6feeba140108e20dee0f9e34e01c3e4f226be7c
+- evidence_id: e151
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 1050d40c2efcad9b1e103218e6759dd28becb400a980ef4015f6fed1d5158043
+- evidence_id: e152
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/005-before.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: b2c418f2dd142b9270329af6d46a71939a1223eb3384c59dd05eb5f13868ae24
+- evidence_id: e153
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 72881247e6866d384b23e34c169d2a08a612117ebf0316be706038a7301684ed
+- evidence_id: e154
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/009-before.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: de098711130ca209fe06ee2a3239125f2aabb60c554830f93b2b24b72cc12cab
+- evidence_id: e155
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/033-before.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8e7f1d2eacb03c665af878935add83bc686d9bd7dd1b3cd601b29a21af37caa4
+- evidence_id: e156
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after-scope-v3.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 2d80c2c2be528a8a9e4046bebd51f361bdacb736aef4450e490754c13e235074
+- evidence_id: e157
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/035-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 85d8b3bf5fc8ec2e0047fb5912f504760405638bd86323b9a8ce0d86bb51e1d1
+- evidence_id: e158
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/037-before.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 8b77127d8befda706ede22e5f25d6b37b67adaaa88f1a90d6e943361a5241892
+- evidence_id: e159
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/043-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: f67d6fad0709566e69aca6a0ee8dfb0efdbcd3b8b72ca6dcb96bfe611d9b2cf4
+- evidence_id: e160
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 4e3670d46983671fbd80ef7d1e53aea1aedfae03fb71d1fe40410c358fcd90f1
+- evidence_id: e161
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/050-before.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 40b92206d8497223f03cc179bb650f8234b65e7c52cd52ec44cae873821c9248
+- evidence_id: e162
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 49c099fad3aa92d273a5796b0104bb7ec049ce817670b7cfa0603e5ed2fa9df8
+- evidence_id: e163
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/062-before.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: d3c21491d0fb541e814c941c6aa1541368cd2f51bbca5b30c6d6fe8ef45a2323
+- evidence_id: e164
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 2cfb484f60c62bd956b8248bae0bc82c361e09b3f031411d62e741e0ca125d54
+- evidence_id: e165
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/063-before.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: supports
+  summary: Inspected source supports only the exact bounded scientific claims described
+    in the linked target assessment; not unrelated owner claims.
+  snapshot_sha256: 4ca1c5f8724d60fa691ce325ebcafb632b7782b5f05f19441f098aec93c5ea84
+- evidence_id: e166
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/074-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: c3747c2aa492d68487eb79dedbe2f34ff03829856354cf9b547341c8b84c3cc6
+- evidence_id: e167
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/114-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 712278825c5dc670fe52f059db67fe35386d6964403b46435fe8ec874d365fba
+- evidence_id: e168
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after-scope-v3.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 53bb748e07c2639e213b658431831f87b57444c63ecf1b0208f2a789d7d826e3
+- evidence_id: e169
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-ATCC929_Phenol_Red_Stock-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 81bdfbf248ea207af17c71119a5d29d290feba57c0afc6204e38470c1697df3f
+- evidence_id: e170
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Corn_Steep_Liquor-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 90613251f1b47835fc1a494b7f6ad120b3d476dc0b7e7847532a3ec06b41fb1d
+- evidence_id: e171
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-EZMix_N_Z_Amine_A-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 91475d4922503c528609176410e810ecdcdaa1157683a732937a2b9925db4cb9
+- evidence_id: e172
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: e1b64fd99b2dbda151501b1a4127bb37ba46f14d3c21ab4ec39682053a8459cd
+- evidence_id: e173
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after-v2.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 48ba807a289277d7a2875a6d598f32b435163ffba0bf21284d26b82d59c3abaa
+- evidence_id: e174
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 5eee7fc3592ed6737079ca272b43cbc06e815ea8276dc0ed3ec370b793887e56
+- evidence_id: e175
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after-scope-v3.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: e0d86c0f679e73c2890688268b3de14cb36a38b1b84d5679bcfb844517626f0c
+- evidence_id: e176
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-JCM574_MDS_Salt_Water-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 04270329686f45dc7e7721ee2884e430adb5743437a8ec49aea0720067792317
+- evidence_id: e177
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/proposed_owners/completeness-Oxoid_SR0117_Preston_Campylobacter_Supplement-after.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 1aa5ed6b9b0b53504f4098e0cafbe6d7c052e210cc52c58269fa43d781899dbb
+- evidence_id: e178
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/source-alias-scope-corrections-v6.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: partial
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 90ccefcf9eb563cb7dfc69f1ee3cfc1701a84482fe7d410fe8f4d9610680d2dc
+- evidence_id: e179
+  reference: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cas-12007-60-2-cids.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: d526c676d5eca5cc614d1361d5348acf047eaf4ec28b02c8cb4227528c6cad84
+- evidence_id: e180
+  reference: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-15764247-properties.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 64c461c4b1c2e06b83eccf397d5c024ce22fe45a3ddb30cbc86041c8bfe3d956
+- evidence_id: e181
+  reference: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-21895667-properties.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 43d06ca160f395c7164452be3a68047bb0bfccf65d497178fd706c1eb584963f
+- evidence_id: e182
+  reference: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-90478374-properties.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 55378a7478e80c01cd43adeb8a41aa18a830e21258dbbc6afa04331508f91364
+- evidence_id: e183
+  reference: reports/all_unmatched_20261107/worker-01/shard/shared_reference_cache/lithium-tetraborate-leads-v1/captures/cid-9815330-properties.json
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: e4ccccaea4b54bc3176a88518a18369aba2d08a8206608aba499fe9c800fe5a8
+- evidence_id: e184
+  reference: src/mediaingredientmech/schema/mediaingredientmech.yaml
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+- evidence_id: e185
+  reference: src/mediaingredientmech/sssom_grading.py
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: 20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c
+- evidence_id: e186
+  reference: src/mediaingredientmech/synonym_policy.py
+  kind: record_content
+  locator: Complete captured input; claim-specific source/payload scope described
+    in per-target assessment
+  accessed_at: '2026-11-08T04:48:20.884026Z'
+  support: context_only
+  summary: Hashed primary/database/owner/validation input used for scoped assessment;
+    not blanket support for unrelated claims.
+  snapshot_sha256: f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069
+assessments:
+- assessment_id: rs-003-base-identity
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-003-BASE-IDENTITY
+  evidence_ids:
+  - e150
+  - e010
+  - e011
+  - e071
+  - e083
+  - e148
+  - e178
+  summary: ATCC173/TOGO2399 distinguish19g drybase from glycerol/OADC/water. Source-qualified
+    registry solves IR8 without exact NCIT enriched-medium identity. Actual unqualified
+    Middlebrook7H10 is REJECTED_LABEL, resolving IR9 for this target. Formula/manufacturer
+    remain unspecified, not guessed.
+- assessment_id: rs-005-alias
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-005-ALIAS
+  evidence_ids:
+  - e151
+  - e010
+  - e011
+  - e030
+  - e108
+  - e065
+  - e081
+  - e121
+  - e152
+  summary: LiteralTween80(R) source denotes commercial polysorbate80 material; proposed
+    source alias preserves whole surfactant mixture boundary. No idealized single-molecule
+    equivalence, pure-grade assertion or unrelated inherited roles approved.
+- assessment_id: rs-009-alias
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-009-ALIAS
+  evidence_ids:
+  - e153
+  - e010
+  - e011
+  - e033
+  - e084
+  - e086
+  - e111
+  - e077
+  - e069
+  - e087
+  - e048
+  - e096
+  - e109
+  - e154
+  summary: Explicit anhydrous Na2SeO3 source qualifier matches existing sodiumselenite
+    identity; hydrate terms remain separate. Alias does not substitute selenate or
+    selenitepentahydrate.
+- assessment_id: rs-043-new
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-043-NEW
+  evidence_ids:
+  - e159
+  - e010
+  - e011
+  - e041
+  - e100
+  - e120
+  - e137
+  summary: Archived originalDSMZ7992mM1,2,4-trihydroxybenzene supports positional
+    identity CHEBI16971. Minimal owner avoids unrelated recipe/mechanism/grade properties.
+- assessment_id: rs-050-alias
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-050-ALIAS
+  evidence_ids:
+  - e160
+  - e010
+  - e011
+  - e042
+  - e116
+  - e138
+  - e161
+  summary: Manganous sulfate tetrahydrate source and official86358 four-water Mn(II)sulfate
+    match; no monohydrate/genericform collapse.
+- assessment_id: rs-062-alias
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-062-ALIAS
+  evidence_ids:
+  - e162
+  - e010
+  - e011
+  - e044
+  - e136
+  - e063
+  - e133
+  - e102
+  - e074
+  - e132
+  - e097
+  - e117
+  - e163
+  summary: Originalpowdered elemental sulfur inputs and official33403 support bounded
+    alias without S8/allotrope assignment. Existing rejected atomic/polymer labels
+    remain rejected; inherited roles/corpusrelease not certified.
+- assessment_id: rs-063-alias
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-063-ALIAS
+  evidence_ids:
+  - e164
+  - e010
+  - e011
+  - e045
+  - e071
+  - e059
+  - e123
+  - e091
+  - e083
+  - e093
+  - e134
+  - e076
+  - e057
+  - e130
+  - e143
+  - e142
+  - e165
+  summary: ExplicitSigmaO1008 source and current officialcisoleic/CAS11280 support
+    catalogvariant/current supplied form. Current≥99%GC is not backdated to source
+    lots. Preexisting broad FA18:1/octadec9enoic aliases are not newly certified.
+- assessment_id: nsf-prop-li2b4o7-cas
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - NSF-PROP-LI2B4O7-CAS
+  evidence_ids:
+  - e013
+  - e010
+  - e011
+  - e014
+  - e015
+  - e016
+  - e017
+  - e018
+  - e019
+  - e020
+  - e021
+  - e022
+  - e023
+  - e024
+  - e025
+  - e026
+  - e027
+  summary: Minimal bulkLi2B4O7/CAS12007602 matches sourceformula and primarySigma222534
+    nominalbulk identity. Broader190479 is asymmetric only. Two shared PubChem B4Li2O7
+    records differ connectivity; neither is selected. No CID/InChI/SMILES or actuallot/hydrationassay
+    inference.
+- assessment_id: rs-complete-jcm574-mds-salt-water
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-COMPLETE-JCM574_MDS_SALT_WATER
+  evidence_ids:
+  - e175
+  - e010
+  - e011
+  - e029
+  - e090
+  - e094
+  - e052
+  - e070
+  - e125
+  - e053
+  - e129
+  - e146
+  - e147
+  - e145
+  - e178
+  summary: Complete7inputJCM574 stock preserved. Four exact salts,5mL1MCaCl2 solution,variable1MTrisbase
+    pH7.5 and waterq.s.to1L are distinct components. Specific solution/titrant identities
+    stay literal UNMAPPED. Rawcontextalias nonresolving; stockidentity not one salt.
+- assessment_id: rs-complete-filtered-tomato-juice
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE
+  evidence_ids:
+  - e172
+  - e010
+  - e011
+  - e031
+  - e099
+  - e067
+  - e124
+  - e101
+  - e107
+  - e104
+  - e105
+  - e135
+  - e080
+  - e039
+  - e064
+  - e089
+  - e146
+  - e147
+  summary: Source filteredtomatojuice matches MICRO0000556 definition maceration/filtration.
+    No namedcultivar, pHadjustment or compositionfixed claims inferred.
+- assessment_id: rs-complete-filtered-tomato-juice-ph7
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-COMPLETE-FILTERED_TOMATO_JUICE_PH7
+  evidence_ids:
+  - e173
+  - e010
+  - e011
+  - e032
+  - e050
+  - e101
+  - e107
+  - e098
+  - e072
+  - e146
+  - e147
+  - e148
+  summary: TOGOM4explicitfilteredtomato pH7 input differsfinalmedium pH6. Distinctregistry
+    with broaderMICRO0000556 correct; nativeNARROW emitsbroadMatch plusidentityrow.
+    Unknown titrant retained. JCM11unavailable capture not primary corroboration.1164
+    corrected for exact current payload.
+- assessment_id: rs-complete-corn-steep-liquor
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-COMPLETE-CORN_STEEP_LIQUOR
+  evidence_ids:
+  - e170
+  - e010
+  - e011
+  - e034
+  - e128
+  - e103
+  - e062
+  - e060
+  - e051
+  - e066
+  - e146
+  - e147
+  summary: Liquidcornsteep source is variable biological material, separately retained
+    from powder; no vendor/dryingspecification/formula inferred.
+- assessment_id: rs-complete-ezmix-n-z-amine-a
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-COMPLETE-EZMIX_N_Z_AMINE_A
+  evidence_ids:
+  - e171
+  - e010
+  - e011
+  - e035
+  - e085
+  - e113
+  - e119
+  - e110
+  - e092
+  - e144
+  - e141
+  - e140
+  - e146
+  - e147
+  summary: ExactC4464supplier EZMix enzymaticcaseinhydrolysate product identity supported;
+    not intactcasein/acidHyCase. Fullcitedarticle unavailable remains explicit, not
+    claimed inspected.
+- assessment_id: rs-complete-atcc929-phenol-red-stock
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-COMPLETE-ATCC929_PHENOL_RED_STOCK
+  evidence_ids:
+  - e168
+  - e010
+  - e011
+  - e036
+  - e126
+  - e122
+  - e061
+  - e078
+  - e146
+  - e147
+  - e145
+  - e178
+  summary: OriginalATCC9290.5gdye+1mL6NNaOH+99mLDIwater preserved as liquid-inputpreparation
+    basis, no exactfinalvolume/speciation assumption. Sourcequalifiedstock differsFlowproduct;
+    genericlabel nonresolving.
+- assessment_id: rs-complete-oxoid-sr0117-preston-campylobacter-supplement
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-COMPLETE-OXOID_SR0117_PRESTON_CAMPYLOBACTER_SUPPLEMENT
+  evidence_ids:
+  - e177
+  - e010
+  - e011
+  - e043
+  - e079
+  - e049
+  - e127
+  - e146
+  - e147
+  summary: SourceSR0117code and currentofficialSR0117EPrestonproductfamily support
+    namedformulationidentity, withouthistoricaldose/formularevision. SourceSkirrowmediumtitle
+    does not overrideproductcode or merge wholemedium.
+- assessment_id: rs-074-new
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-074-NEW
+  evidence_ids:
+  - e166
+  - e010
+  - e011
+  - e046
+  - e056
+  - e112
+  - e054
+  - e095
+  - e106
+  - e028
+  summary: Official30621 definitionAs:O2:3 and As2O3 synonym support empiricaloxide
+    despite molecularAs4O6 depiction. Minimalowner no mass/structure/polymorph imported;
+    CCAPalkalinearsenitepreparation remains separate.
+- assessment_id: rs-035-product
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-035-PRODUCT
+  evidence_ids:
+  - e156
+  - e010
+  - e011
+  - e038
+  - e075
+  - e115
+  - e149
+  - e178
+  summary: OriginalCCAP Wardscerealgrassleafinput supports sourcequalifiedcomplexmaterial;
+    not finishedinfusion or unqualifiedexistingCerophyll withoutsameproductproof.
+    Rawunqualifiedlabel nonresolving.
+- assessment_id: rs-114-product
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-114-PRODUCT
+  evidence_ids:
+  - e167
+  - e010
+  - e011
+  - e047
+  - e131
+  - e073
+  - e149
+  summary: HistoricalUnionCarbideSAG471explicitproductname supports sourcequalifiedundefinedmixture
+    withoutfixedformula. ModernMomentivefamilysheet not exacthistoricalcomposition/PDMS/dose
+    proof.
+- assessment_id: rs-candidate-33
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-CANDIDATE-33
+  evidence_ids:
+  - e001
+  - e010
+  - e011
+  - e037
+  - e068
+  - e055
+  - e088
+  - e155
+  summary: Official86214 cobalt(II)nitratehexahydrate corresponds restoredprimary
+    formula, not malformedrawaliasorwronglipidxref. Currentowner identitycandidateonly;
+    unrelatedownerclaimsnot approved.
+- assessment_id: rs-candidate-37
+  area: identity
+  topic: Source-specific identity, preparation boundary, exact proposed payload and
+    native output
+  outcome: supported
+  target_ids:
+  - RS-CANDIDATE-37
+  evidence_ids:
+  - e006
+  - e010
+  - e011
+  - e040
+  - e114
+  - e058
+  - e118
+  - e082
+  - e158
+  summary: CAS7705079 owner is Ti(III)chloride starting-solute candidate. OriginalJCM1331solid0.75g
+    andDSMZ8635mL15%Merckstock differ; no single supplied-form or titanium-citrateidentityapproval.
+findings: []
+actions: []
+limitations:
+- A passing isolated proposal does not certify unchanged inherited owner aliases/roles/evidence,
+  or clear prior native release holds.
+- Exact source occurrences must be bound at integration; rejected local labels intentionally
+  do not resolve globally.
+- Pinned producer exercised with empty ancillary dictionaries, so complete publication
+  ownership/residual/label and full data gates remain coordinator obligations.
+- Author ledgers may still acquire evidence/review links. This immutable review binds
+  exact payloads and captured sources only, not future metadata.
+- Registry product identities preserve supported named preparations while unspecified
+  historical lot/composition remains unknown.
+related_reviews: []
+```

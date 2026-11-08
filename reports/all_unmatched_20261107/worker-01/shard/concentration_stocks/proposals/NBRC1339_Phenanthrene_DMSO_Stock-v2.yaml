@@ -1,0 +1,82 @@
+identifier: kgmicrobe.ingredient:nbrc1339_phenanthrene_dmso_stock
+preferred_term: NBRC1339 phenanthrene stock,250mM in DMSO
+synonyms:
+- synonym_text: Phenanthrene solution (250 mM) in dimethyl sulfoxide (DMSO)****
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+- synonym_text: Phenanthrene solution
+  synonym_type: REJECTED_LABEL
+  source: Frozen named-stock occurrence CM_OCC:c702c5f731e09048e68ad39d335c03c8e9ab2add1d71c9da0ad89d5f21207a32;
+    source-qualified binding only, no global alias resolution.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1339_phenanthrene_dmso_stock
+  ontology_label: NBRC1339 phenanthrene stock,250mM in DMSO
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    notes: Source defines250mM phenanthrene in DMSO and filtration with DMSO-safe
+      filters. Preserve10mL receivingdose after coolingto65C in CultureMech; this
+      is not neatphenanthrene or an aqueousstock.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    notes: NBRC1339 and its TOGO M2041 recipe refer to the same 250 mM phenanthrene
+      in DMSO stock, filtered with DMSO-safe filters. The unqualified Phenanthrene
+      solution label requires this occurrence context.
+components:
+- component_name: Phenanthrene
+  reference_scope: UNMAPPED
+  concentration_value: '250'
+  concentration_unit: MILLIMOLAR
+- component_name: Dimethyl sulfoxide
+  reference_scope: UNMAPPED
+  source: Explicit solvent; no invented solvent mass or volume beyond the concentration-defined
+    stock.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    source_record: NBRC1339 phenanthrene stock,250mM in DMSO
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'Source defines250mM phenanthrene in DMSO and filtration with DMSO-safe filters.
+  Preserve10mL receivingdose after coolingto65C in CultureMech; this is not neatphenanthrene
+  or an aqueousstock. Source occurrence IDs and receiving doses remain in the campaign
+  ledger/CultureMech; no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+  Cross-lane deduplication: NBRC1339 and its TOGO M2041 recipe refer to the same 250
+  mM phenanthrene in DMSO stock, filtered with DMSO-safe filters. The unqualified
+  Phenanthrene solution label requires this occurrence context.'
+curation_history:
+- timestamp: '2026-11-08T04:40:36.177370+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. Source defines250mM phenanthrene
+    in DMSO and filtration with DMSO-safe filters. Preserve10mL receivingdose after
+    coolingto65C in CultureMech; this is not neatphenanthrene or an aqueousstock.
+    No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:48:20.549840+00:00'
+  curator: worker01_add_media_source_stock
+  action: CORRECTED
+  changes: Consolidate exact cross-lane proposal identity and preserve source-specific
+    labels as REJECTED_LABEL. NBRC1339 and its TOGO M2041 recipe refer to the same
+    250 mM phenanthrene in DMSO stock, filtered with DMSO-safe filters. The unqualified
+    Phenanthrene solution label requires this occurrence context. Earlier draft payloads/reviews
+    remain immutable; no maintained records are changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

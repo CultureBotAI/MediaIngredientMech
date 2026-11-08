@@ -1,0 +1,135 @@
+identifier: kgmicrobe.ingredient:jcm_265_wolfe_mineral_solution
+preferred_term: JCM 265 Wolfe mineral solution
+synonyms:
+- synonym_text: Wolfe's mineral solution (see Medium No. 265 )
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1362,
+    jcm.grmd:1412, jcm.grmd:1429; retained source-local label, excluded from global
+    resolution (IR-SHARD-ARTIFACT-9)'
+- synonym_text: Wolfe’s mineral solution (see Medium No. 265 )
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1362,
+    jcm.grmd:1412, jcm.grmd:1429; retained source-local label, excluded from global
+    resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_265_wolfe_mineral_solution
+  ontology_label: JCM 265 Wolfe mineral solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Trace minerals (JCM151)
+  reference_scope: UNMAPPED
+  concentration_value: '1.0'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_JCM151_STOCK
+- component_name: Na2SeO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.001'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_JCM151_STOCK
+- component_name: Na2WO4·2H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:63939
+  concentration_value: '0.01'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_JCM151_STOCK
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265
+    source_record: JCM 265 Wolfe mineral solution; complete named stock table and
+      preparation notes
+    notes: JCM265 adds three printed salts to JCM151 trace minerals. Preserve unresolved
+      x hydration in MnSO4 and unqualified AlK(SO4)2; unquantified KOH pH adjustment
+      retained. All three source occurrences explicitly reference265; no global Wolfe-name
+      equivalence. JCM265 explicitly adds0.02g NiCl2·6H2O,0.001g Na2SeO3 and0.01g
+      Na2WO4·2H2O to1.0L of prepared JCM151 trace minerals. The nested stock is an
+      aliquot; its complete source batch made with1L added water is not flattened
+      into the aliquot. JCM151 literal formula and competing existing owners are retained
+      in primary evidence and ownership-conflict artifact. Component identity is established
+      as this source stock; catalog ownership is not guessed.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151
+    source_record: JCM 265 Wolfe mineral solution; complete named stock table and
+      preparation notes
+    notes: JCM265 adds three printed salts to JCM151 trace minerals. Preserve unresolved
+      x hydration in MnSO4 and unqualified AlK(SO4)2; unquantified KOH pH adjustment
+      retained. All three source occurrences explicitly reference265; no global Wolfe-name
+      equivalence. JCM265 explicitly adds0.02g NiCl2·6H2O,0.001g Na2SeO3 and0.01g
+      Na2WO4·2H2O to1.0L of prepared JCM151 trace minerals. The nested stock is an
+      aliquot; its complete source batch made with1L added water is not flattened
+      into the aliquot. JCM151 literal formula and competing existing owners are retained
+      in primary evidence and ownership-conflict artifact. Component identity is established
+      as this source stock; catalog ownership is not guessed.
+  notes: 'JCM265 explicitly adds0.02g NiCl2·6H2O,0.001g Na2SeO3 and0.01g Na2WO4·2H2O
+    to1.0L of prepared JCM151 trace minerals. The nested stock is an aliquot; its
+    complete source batch made with1L added water is not flattened into the aliquot.
+    JCM151 literal formula and competing existing owners are retained in primary evidence
+    and ownership-conflict artifact. Component identity is established as this source
+    stock; catalog ownership is not guessed. Source-local raw labels are REJECTED_LABEL:
+    they are preserved for provenance and occurrence-specific decisions but native
+    resolution must not expose them as global synonyms. The source-qualified preferred
+    term denotes this exact preparation. No unsupported roles, mechanisms, vendor,
+    grade or release approval are asserted. Any UNMAPPED part retains its literal
+    source identity; component grounding is separate from established whole-stock
+    recipe identity. JCM151 trace minerals contains NTA1.5g, MgSO4·7H2O3g, MnSO4·xH2O0.5g,
+    NaCl1g, FeSO4·7H2O0.1g, CoSO4·7H2O0.1g, CaCl2·2H2O0.1g, ZnSO4·7H2O0.1g, CuSO4·5H2O0.01g,
+    AlK(SO4)2 0.01g, H3BO3 0.01g, Na2MoO4·2H2O0.01g and1L added distilled water; KOH
+    pH6.5 then7.0 remains unquantified.'
+notes: 'JCM265 adds three printed salts to JCM151 trace minerals. Preserve unresolved
+  x hydration in MnSO4 and unqualified AlK(SO4)2; unquantified KOH pH adjustment retained.
+  All three source occurrences explicitly reference265; no global Wolfe-name equivalence.
+  JCM265 explicitly adds0.02g NiCl2·6H2O,0.001g Na2SeO3 and0.01g Na2WO4·2H2O to1.0L
+  of prepared JCM151 trace minerals. The nested stock is an aliquot; its complete
+  source batch made with1L added water is not flattened into the aliquot. JCM151 literal
+  formula and competing existing owners are retained in primary evidence and ownership-conflict
+  artifact. Component identity is established as this source stock; catalog ownership
+  is not guessed. Source-local raw labels are REJECTED_LABEL: they are preserved for
+  provenance and occurrence-specific decisions but native resolution must not expose
+  them as global synonyms. The source-qualified preferred term denotes this exact
+  preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+  are asserted. Any UNMAPPED part retains its literal source identity; component grounding
+  is separate from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.794128+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 68, case 72. No maintained owner created. Component grounding
+    limitations retained; all original case/occurrence objects remain in applicability
+    artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.543307+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. JCM265 explicitly
+    adds0.02g NiCl2·6H2O,0.001g Na2SeO3 and0.01g Na2WO4·2H2O to1.0L of prepared JCM151
+    trace minerals. The nested stock is an aliquot; its complete source batch made
+    with1L added water is not flattened into the aliquot. JCM151 literal formula and
+    competing existing owners are retained in primary evidence and ownership-conflict
+    artifact. Component identity is established as this source stock; catalog ownership
+    is not guessed.'
+  new_status: MAPPED
+  llm_assisted: true

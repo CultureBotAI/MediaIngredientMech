@@ -1,0 +1,73 @@
+{
+  "i": 3,
+  "name": "Middlebrook 7H10",
+  "source": "culturemech",
+  "source_id": "Middlebrook 7H10",
+  "record": null,
+  "owners": [],
+  "holds": [],
+  "downstream_holds": [],
+  "candidate_hits": [],
+  "occurrences": [
+    {
+      "id": "CM_OCC:ef889dff6a41219f259ef3b8e62b4ea139ec553c5094c55424ab84f909ab8454",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/middlebrook_7h10_with_oadc.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:008980"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M2399"
+        }
+      ],
+      "component": {
+        "notes": "Properties: Defined component, Complex component\n\nSource amount: 19 g; scope: main preparation input. This table does not give an explicit final-volume denominator. Preserve the exact mass here; no g/L conversion is asserted. The schema has no mass-only concentration unit.",
+        "preferred_term": "Middlebrook 7H10"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "original_name",
+        "category",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "ingredients",
+        "media_term",
+        "notes",
+        "applications",
+        "curation_history",
+        "solutions",
+        "evidence",
+        "references"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:008980",
+        "name": "middlebrook_7h10_with_oadc",
+        "original_name": "Middlebrook 7H10 with OADC",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "SOLID_AGAR",
+        "media_term": {
+          "preferred_term": "TOGO Medium M2399",
+          "term": {
+            "id": "TOGO:M2399",
+            "label": "Middlebrook 7H10 with OADC"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M2399\nOriginal URL: https://www.atcc.org/~/media/E44FDED36A7940E3B4078EA6A49B7199.ashx\n\nSuperseded historical provenance (not a current formulation claim):\nCommercial Product: LB Medium (Luria-Bertani, Miller formulation)\nSupplier: Multiple suppliers (Difco, Sigma, etc.)\nCatalog: Multiple (L3522 Sigma, 244520 BD)\nSource: https://www.laboratorynotes.com/preparation-of-luria-bertani-lb-miller-broth/\nAccessed: 2026-03-28\n\nConstituent composition researched from product specification.\n\nFalse LB constituent expansion is withdrawn. Source-specific amounts and preparation boundaries supersede flattened concentrations. Existing chemical annotations and earlier history are preserved, not recertified; no organism-growth association is added.\n\nSource preparation context (main preparation): Add and mix all components except for OADC. Bring to a boil to dissolve agar and autoclave at 121ºC. Cool to 50-55ºC and aseptically OADC.",
+        "evidence": [
+          {
+            "reference": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2399",
+            "supports": "SUPPORT",
+            "snippet": "{\n          \"component_name\": \"Dubos Oleic Albumin Complex (OADC)\",\n          \"volume\": 100,\n          \"unit\": \"ml\"",
+            "explanation": "solutions[0].concentration: Source amount: 100 ml; scope: main preparation input. Volume-only input/dose, not a final-volume marker; 100 ml = 0.1 L. Inline enrichment composition is separate from its dose and from finished-medium concentrations. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[0].items[3]; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Dubos Oleic Albumin Complex (OADC)\",\n          \"volume\": 100,\n          \"unit\": \"ml\"\nsolutions[0].notes: Source amount: 100 ml; scope: main preparation input. Volume-only input/dose, not a final-volume marker; 100 ml = 0.1 L. Inline enrichment composition is separate from its dose and from finished-medium concentrations. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[0].items[3]; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Dubos Oleic Albumin Complex (OADC)\",\n          \"volume\": 100,\n          \"unit\": \"ml\"\nsolutions[0].name: Source amount: 100 ml; scope: main preparation input. Volume-only input/dose, not a final-volume marker; 100 ml = 0.1 L. Inline enrichment composition is separate from its dose and from finished-medium concentrations. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[0].items[3]; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: \"Add and mix all components except for OADC. Bring to a boil to dissolve agar and autoclave at 121ºC. Cool to 50-55ºC and aseptically OADC.\"\nnotes: Source preparation context (main preparation): Add and mix all components except for OADC. Bring to a boil to dissolve agar and autoclave at 121ºC. Cool to 50-55ºC and aseptically OADC. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=comments[0].comment; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: \"OADC is available from BD (237510).\"\nsolutions[0].notes: Source preparation context (Dubos Oleic Albumin Complex (OADC)): OADC is available from BD (237510). No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=comments[2].comment; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: \"Add and mix all components except for OADC. Bring to a boil to dissolve agar and autoclave at 121ºC. Cool to 50-55ºC and aseptically OADC.\"\nphysical_state: The 7H10 preparation explicitly dissolves agar; the former liquid classification is withdrawn. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=comments[0].comment; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Albumin Fraction V Bovine (Sigma A9647)\",\n          \"volume\": 5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nnotes: Restore the source's albumin entry and remove this falsely substituted LB constituent and concentration; the complete source formulation contains no LB preparation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[2]; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Albumin Fraction V Bovine (Sigma A9647)\",\n          \"volume\": 5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nnotes: Restore the source's albumin entry and remove this falsely substituted LB constituent and concentration; the complete source formulation contains no LB preparation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[2]; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c.\n\nAdditional exact excerpt: {\n          \"component_name\": \"Albumin Fraction V Bovine (Sigma A9647)\",\n          \"volume\": 5,\n          \"unit\": \"g\",\n          \"gmo\": \"http://purl.jp/bio/10/gmo/GMO_001520\"\nnotes: Restore the source's albumin entry and remove this falsely substituted LB constituent and concentration; the complete source formulation contains no LB preparation. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=components[1].items[2]; accessed=2026-10-09T00:07:49.507618+00:00; capture SHA256=51febd6f80057efffff29e74c40c37a2897da88d8a7b4cfd786ddc5d5cb88f4c."
+          }
+        ]
+      }
+    }
+  ]
+}

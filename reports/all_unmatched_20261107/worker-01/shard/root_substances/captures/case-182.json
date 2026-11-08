@@ -1,0 +1,200 @@
+{
+  "index": 182,
+  "case": {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:c1e078dcdd1377e10ee58da0f62e6071692e7329e4b904d7bf18e79afc2f2926",
+    "original_kg_entry": {
+      "candidate_id": "c1e078dcdd1377e10ee58da0f62e6071692e7329e4b904d7bf18e79afc2f2926",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [],
+      "downstream_holds": [],
+      "name_hits": [
+        {
+          "candidate_field": "source_label",
+          "kind": "preferred_term",
+          "label": "Lab Lemco powder",
+          "owner": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "source_label",
+          "kind": "synonym",
+          "label": "Lab Lemco powder",
+          "owner": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "Lab Lemco powder",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "preferred_term",
+          "label": "Lab Lemco powder",
+          "owner": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "synonym",
+          "label": "Lab Lemco powder",
+          "owner": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "Lab Lemco powder",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        }
+      ],
+      "native_identity_target": "",
+      "native_queue_state": "STILL_UNMAPPED",
+      "occurrences": 1,
+      "occurrences_definition": "helper constant; not measured recipe frequency",
+      "owners": [
+        {
+          "identifier": "UNMAPPED_0419",
+          "mapping_status": "UNMAPPED",
+          "native_review_rows": [],
+          "ontology_mapping": null,
+          "path": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+          "preferred_term": "Lab Lemco powder",
+          "sha256": "60e5db3426ff114ee3e4b7460b0c84fb828dd6910dd0fda404e56e653a3921fb",
+          "subject_id": "MIM:Lab_Lemco_Powder"
+        }
+      ],
+      "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+      "raw_source_label": "Lab Lemco powder",
+      "resolving_owner_paths": [
+        "data/ingredients/unmapped/Lab_Lemco_Powder.yaml"
+      ],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "mediadive",
+      "source_columns": "compound",
+      "source_id": "mediadive.ingredient:2136",
+      "source_label": "Lab Lemco powder",
+      "source_record": {
+        "amount": 5,
+        "attribute": "Oxoid",
+        "compound": "Lab Lemco powder",
+        "compound_id": 2136,
+        "g_l": 4.98504,
+        "optional": 0,
+        "recipe_order": 11,
+        "unit": "g"
+      },
+      "triage_flags": [
+        "MATCHED_UNMAPPED_OWNER",
+        "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "Lab Lemco powder",
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:2136",
+    "source_identity_claimed": false,
+    "source_label": "Lab Lemco powder"
+  },
+  "occurrence_contexts": [],
+  "current_queue_owners": [
+    {
+      "path": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+      "sha256": "60e5db3426ff114ee3e4b7460b0c84fb828dd6910dd0fda404e56e653a3921fb",
+      "record": {
+        "identifier": "UNMAPPED_0419",
+        "preferred_term": "Lab Lemco powder",
+        "synonyms": [
+          {
+            "synonym_text": "Lab Lemco powder",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Lab-Lemco powder",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Lab--Lemco powder (Oxoid)",
+            "synonym_type": "CATALOG_VARIANT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "`Lab-Lemco’ powder",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "‘Lab-Lemco’ powder",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:2136); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T07:42:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a named complex nutrient powder and left unmapped pending source-backed composition or product-specific ontology curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Lab_Lemco_powder-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended classification:** named, supplier-associated **complex meat-derived nutrient extract/powder** used as a microbiological-media component. It is **not** a single chemical, salt, hydrate, buffer, or complete culture medium. No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 4 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Lab-Lemco powder' (x5 CultureMech mentions); 'Lab--Lemco powder (Oxoid)' (x4 CultureMech mentions); '`Lab-Lemco’ powder' (x2 CultureMech mentions); '‘Lab-Lemco’ powder' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2136); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complex nutrient powder pending product-specific composition curation.",
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    }
+  ],
+  "lexical_candidates_not_identity": [
+    {
+      "path": "data/ingredients/unmapped/Lab_Lemco_Powder.yaml",
+      "sha256": "60e5db3426ff114ee3e4b7460b0c84fb828dd6910dd0fda404e56e653a3921fb",
+      "matched_labels": [
+        "Lab Lemco powder",
+        "Lab Lemco powder",
+        "Lab-Lemco powder",
+        "`Lab-Lemco’ powder",
+        "‘Lab-Lemco’ powder"
+      ],
+      "preferred_term": "Lab Lemco powder",
+      "identifier": "UNMAPPED_0419",
+      "status": "UNMAPPED",
+      "mapping": null,
+      "notes": "Imported from mim-queue (source_id=mediadive.ingredient:2136); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complex nutrient powder pending product-specific composition curation.",
+      "supplied_form": null
+    }
+  ],
+  "search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob (includes ignored files), exact casefold and alnum-normalized labels only; not a claim of absence under other names"
+}

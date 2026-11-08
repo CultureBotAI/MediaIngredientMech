@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact_root": "reports/all_unmatched_20261107/worker-01",
+  "proposals": [
+    {
+      "proposal_id": "KG26-PROP-163-NONNAMES",
+      "case_ids": [
+        "KG_CASE:20b59c3993908f9f8807d4f06c83fad1a17da4125d23600e0d5264b00ab64262"
+      ],
+      "description": "Optional explicit provenance typing only: retype the two bare parentheticals as REJECTED_LABEL while preserving text/source. Current native text policy already excludes both, so this changes no present label-index or SSSOM eligibility. Exactly two synonym_type fields and one appended history event change; stock identity and mapping holds remain unchanged.",
+      "evidence_ids": [
+        "KG26-C163",
+        "KG26-K163",
+        "KG26-F163-J451",
+        "KG26-NATIVE-163",
+        "KG26-GUARD-163",
+        "KG26-STRICT-163"
+      ],
+      "owner_path": "data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "shard/root_substances/kg26/proposals/84_GL_NaHCO3_Solution.yaml",
+        "sha256": "2c3bf046048b8ce6158d78df6e35c0e5cd58a9e323f99cf4beb401bf8d7c4d43"
+      },
+      "before_sha256": "1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509",
+      "integration_requirements": "Coordinator applies only after final independent review, guarded record write, surface synchronization and all applicable data/SSSOM/roundtrip/coverage checks; no write is authorized by this artifact alone."
+    }
+  ]
+}

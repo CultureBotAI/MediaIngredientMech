@@ -1,0 +1,71 @@
+identifier: kgmicrobe.ingredient:ccap_pe_salt_solution_stock
+preferred_term: CCAP PE salt solution stock
+synonyms:
+- synonym_text: Salt solution stock
+  synonym_type: RAW_TEXT
+  source: 'CultureMech frozen 20261107; source-local occurrence only: CultureMech:000110'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ccap_pe_salt_solution_stock
+  ontology_label: CCAP PE salt solution stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: NaNO3
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: G_PER_L
+- component_name: Na2HPO4·12H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf
+    source_record: CCAP PE salt solution stock; complete named stock table and preparation
+      notes
+    notes: Source batch is 1000 cm3 water with 200 g nitrate and 20 g disodium phosphate
+      dodecahydrate. Preserve explicit hydrate; no use of erroneous frozen phosphatidylcholine
+      term. Receiving stock and separately flattened salt rows must not be double-counted.
+  notes: Complete printed constituent enumeration, including unquantified titrants/solvent
+    where stated. Quantities use the explicitly described nominal preparation basis;
+    not a measurement of final volume or post-dissolution species. UNMAPPED constituent
+    scope preserves literal source identity without guessing a chemical or hydration-specific
+    catalog owner. Known quartet constituent identities use independently verified
+    official ontology/MIM references; this does not approve unrelated claims on those
+    component owners.
+notes: 'Source batch is 1000 cm3 water with 200 g nitrate and 20 g disodium phosphate
+  dodecahydrate. Preserve explicit hydrate; no use of erroneous frozen phosphatidylcholine
+  term. Receiving stock and separately flattened salt rows must not be double-counted.
+  Raw generic names retain source-specific provenance and must not be resolved globally
+  without original recipe context. The registry record describes this source formulation
+  only. No roles, mechanism, vendor/grade or supported-release approval asserted.
+  No invented occurrence statistics: these scoped input rows are not a corpus census.
+  Selected CultureMech recipes are receiving media, not exact standalone stock formulations;
+  typed whole-recipe equivalence would be false unless separately verified.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.787538+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 45. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true

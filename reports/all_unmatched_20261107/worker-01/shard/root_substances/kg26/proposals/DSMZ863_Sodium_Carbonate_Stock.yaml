@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+preferred_term: DSMZ863 sodium carbonate stock
+synonyms:
+- synonym_text: Sodium carbonate solution
+  synonym_type: REJECTED_LABEL
+  source: mediadive.ingredient:797; DSMZ863
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved
+  sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified
+  stock has its own registry identity. Existing CHEBI29377 stock-labelled owner has1751
+  historical membership and mixed dry/buffer aliases; this proposal neither repurposes
+  that owner nor moves its counts/aliases. Raw Sodium carbonate solution requires
+  this exact occurrence context and is retained as non-resolving source text on the
+  new owner.
+curation_history:
+- timestamp: '2026-11-08T04:34:34.039179+00:00'
+  curator: worker01_add_media_identity
+  action: CREATED
+  changes: Isolated source-bound owner proposal. Original DSMZ863 specifies106g Na2CO3
+    dissolved in1L degassed water, autoclaved sealed underCO2 and supplied at24mL
+    to the receiving medium. This preparation-qualified stock has its own registry
+    identity. Existing CHEBI29377 stock-labelled owner has1751 historical membership
+    and mixed dry/buffer aliases; this proposal neither repurposes that owner nor
+    moves its counts/aliases. Raw Sodium carbonate solution requires this exact occurrence
+    context and is retained as non-resolving source text on the new owner.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz863_sodium_carbonate_stock
+  ontology_label: DSMZ863 sodium carbonate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf
+    notes: Original DSMZ863 specifies106g Na2CO3 dissolved in1L degassed water, autoclaved
+      sealed underCO2 and supplied at24mL to the receiving medium. This preparation-qualified
+      stock has its own registry identity. Existing CHEBI29377 stock-labelled owner
+      has1751 historical membership and mixed dry/buffer aliases; this proposal neither
+      repurposes that owner nor moves its counts/aliases. Raw Sodium carbonate solution
+      requires this exact occurrence context and is retained as non-resolving source
+      text on the new owner.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '106'
+  concentration_unit: G_PER_L_PREPARATION_WATER
+- component_name: Degassed water
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: L_PREPARATION_WATER
+- component_name: Carbon dioxide
+  reference_scope: UNMAPPED
+  source: Autoclaved in sealed vessel underCO2; gas amount unspecified.
+component_assertion:
+  method: CURATED_INTERPRETATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf
+    source_record: Sodium carbonate solution
+    notes: All specified preparation inputs including CO2 atmosphere retained; no
+      dissolved CO2 amount/speciation or final-volume change invented.

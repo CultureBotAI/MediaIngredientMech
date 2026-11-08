@@ -1,0 +1,16 @@
+Worker 01 continuation reproduced a hydration-accounting conflict in **CHEBI:131366** and **CHEBI:86222**, and recovered a structurally supported representation for the weighed borax reagent.
+
+| Entity or source | Formula and consequence |
+| --- | --- |
+| MediaDive ingredient 196 and original weighed-reagent contexts | Conventional sodium tetraborate decahydrate, `Na2B4O7·10H2O`, total `Na2B4H20O17`. DSMZ 770 separately uses 1.8 mL of a 0.1% w/v stock and remains outside neat-reagent equivalence. |
+| Official CHEBI:131366 and CHEBI:86222 | Their decahydrate naming accompanies `10H2O.H4B4O9.2Na`, mass 417.401. This expands to `Na2B4H24O19`, two H2O more than conventional borax decahydrate. |
+| Official CHEBI:38888 | Structural sodium tetraborate octahydrate, `8H2O.H4B4O9.2Na`, mass 381.371. Its bulk total is `Na2B4H20O17`, the same total as conventional decahydrate. |
+| Primary crystallography | Gainsford et al. explicitly identify conventional borax decahydrate with `Na2[B4O5(OH)4]·8H2O`, relative mass 381.38. This explains why structural octahydrate and conventional decahydrate denote the same bulk supplied reagent here. |
+
+The proposed MIM correction changes the source-linked `Na2b4o7_X_10_H2o.yaml` owner to CHEBI:38888 and corrects its corresponding properties while retaining conventional decahydrate labels and historical provenance. It does **not** redirect the ontology entities 131366 or 86222 globally, approve the whole MediaDive196 identifier across stock contexts, or substitute an anhydrous salt. The original ontology defect still needs upstream correction even though a justified local owner proposal is now available.
+
+Primary sources: [original IUCr crystal study](https://journals.iucr.org/e/issues/2008/05/00/wm2174/wm2174.pdf), [official Sigma S9640 specification](https://www.sigmaaldrich.com/US/en/product/sigald/s9640), and exact official OLS records for [38888](https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:38888), [131366](https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:131366) and [86222](https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:86222).
+
+Exact capture hashes, original retrieval times, all source contexts and current proposal bytes are bound in [case 175 decision](https://github.com/CultureBotAI/MediaIngredientMech/blob/review/all-unmatched-w01-source-review-20261107/reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/decisions.fragment.json) and [KG26-PROP-175 identity proposal](https://github.com/CultureBotAI/MediaIngredientMech/blob/review/all-unmatched-w01-source-review-20261107/reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals.fragment.json). The native author successor and separate independent review retain their own scopes. This comment tracks the ontology defect and local proposal; it is not an ontology submission, maintained-data edit or release approval. [MIM #718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) retains unrelated whole-owner and publication obligations.
+
+<!-- mim-review-round: all-unmatched-20261107-worker01-continuation; mim-fingerprints: w01-continuation-mediaingredientmech-318 -->

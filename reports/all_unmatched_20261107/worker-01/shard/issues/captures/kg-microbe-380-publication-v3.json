@@ -1,0 +1,42 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "380",
+    "--repo",
+    "Knowledge-Graph-Hub/kg-microbe",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T05:05:20.081719+00:00",
+  "completed_at": "2026-11-08T05:05:20.456063+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "case: sulfate reduction\n\nedges:\n\ntaxon -reduces-> sulfate (CHEBI)\n\nMadin et al data row:\n\n138903,138903,\"amend-shock\",\"Archaeoglobus lithotrophicus\",\"Archaeoglobus lithotrophicus\",\"Archaeoglobus\",\"Archaeoglobaceae\",\"Archaeoglobales\",\"Archaeoglobi\",\"Euryarchaeota\",\"Archaea\",NA,NA,\"sulfate_reduction\",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,14\n\nNCBITaxon:138903 -[METPO:reduces](https://w3id.org/metpo/2000017)-> sulfate (CHEBI)",
+    "closedAt": "2026-10-16T01:53:22Z",
+    "comments": [
+      {
+        "id": "IC_kwDOEqLYd88AAAABceuBPg",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Closing as a duplicate of #5.\n\nThat issue asks to map the same Madin `pathways` column, and its 2025-12-13 comment proposes this split of each value into a METPO relation plus a chemical.\n- The column is ingested (`kg_microbe/transform_utils/madin_etal/madin_etal.py:513-633` at 1acb8b61f): METPO synonym first, then a GO match from NER, otherwise a `kgmicrobe.pathway:<value>` placeholder linked by `METPO:2000103` capable of.\n- The edge asked for here is not emitted yet. In the 2026-10-13 build, `madin_etal`'s only edges from NCBITaxon:138903 are `METPO:2000103` to `kgmicrobe.pathway:sulfate_reduction` and `kgmicrobe.pathway:thiosulfate_reduction`, and it emits no `METPO:2000017` reduces or `METPO:2000016` oxidizes edge at all.\n\nThis row's worked example, and a silent drop found while checking it (values in mixed rows that reach no edge), are carried over to #5 with an acceptance check.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+        "createdAt": "2026-10-16T01:52:14Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/380#issuecomment-6206226750",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 380,
+    "state": "CLOSED",
+    "title": "ingest pathways data from Madin",
+    "updatedAt": "2026-10-16T01:53:22Z",
+    "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/380"
+  }
+}

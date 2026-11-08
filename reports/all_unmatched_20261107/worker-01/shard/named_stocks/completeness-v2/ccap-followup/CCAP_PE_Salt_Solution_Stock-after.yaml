@@ -1,0 +1,87 @@
+identifier: kgmicrobe.ingredient:ccap_pe_salt_solution_stock
+preferred_term: CCAP PE salt solution stock
+synonyms:
+- synonym_text: Salt solution stock
+  synonym_type: RAW_TEXT
+  source: 'CultureMech frozen 20261107; source-local occurrence only: CultureMech:000110'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:ccap_pe_salt_solution_stock
+  ontology_label: CCAP PE salt solution stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: NaNO3
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: G_PER_L
+- component_name: Na2HPO4·12H2O
+  reference_scope: UNMAPPED
+  concentration_value: '20'
+  concentration_unit: G_PER_L
+- component_name: water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  source: CCAP Culture Media Information Sheet page2 STOCK SOLUTIONS specifies deionized
+    water. Chemical identity only; no distilled/deionized processing equivalence.
+    Quantity sufficient for nominal1000cm3 stock; exact solvent volume not printed.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf
+    source_record: CCAP PE salt solution stock; complete named stock table and preparation
+      notes
+    notes: PE stock table gives NaNO3 200g and Na2HPO4·12H2O20g per1000cm3 stock;
+      no solvent row is printed. Do not convert that header into1L distilledwater
+      input. Receiving stock row is1cm3; separately flattened salt rows must not be
+      double-counted.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.ccap.ac.uk/wp-content/uploads/KB_CCAPCultureMediaFactsheet.pdf
+    source_record: Page2 STOCK SOLUTIONS, first preparation instruction
+    notes: Authoritative CCAP general stock instructions explicitly specify deionized
+      water. Applied to PE salt stock, which gives no different solvent; this is a
+      documented source-policy inference, not a claim the PE PDF prints water. Exact
+      solvent volume is unquantified; salts are specified per1000cm3 stock.
+  notes: Complete solute enumeration from specific PE recipe plus water identity grounded
+    through authoritative CCAP general stock preparation instructions. Fixed1L distilledwater
+    claim from earlier draft withdrawn. Solvent quantity is unspecified (sufficient
+    for stock-volume basis), rather than numerically invented. Water reference does
+    not approve unrelated claims on the current Distilled_Water owner.
+notes: 'Specific CCAP PE salt stock: NaNO3 200g and Na2HPO4·12H2O20g per1000cm3 stock.
+  PE recipe does not print a solvent row. CCAP general Culture Media Information Sheet
+  page2 states stocks are made with deionized water; applying this explicit organization-level
+  stock convention supplies solvent identity as an inference. No fixed1L water amount
+  or distilled-water preparation is asserted. Whole-stock identity is source-specific,
+  not an alias of either salt. Receiving stock and separate flattened salt rows must
+  not be double-counted. RAW_TEXT label remains source-local. No roles, mechanisms,
+  vendor/grade, corpus statistics or supported-release approval asserted.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.787538+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 45. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:42:00.824696+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_REVISED
+  changes: New isolated successor to earlier32-proposal batch CCAP payload; original
+    draft/review retained unchanged. Removed unsupported distilledwater1L assertion
+    after full-source recheck. Added authoritative CCAP general stock-solvent instruction
+    (deionizedwater) with explicit inference and no fixed solvent amount. No maintained
+    edits.
+  new_status: MAPPED
+  llm_assisted: true

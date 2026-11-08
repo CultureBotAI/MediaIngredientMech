@@ -1,0 +1,713 @@
+                                                                                                                                              ORIGINAL RESEARCH
+                                                                                                                                          published: 14 February 2017
+                                                                                                                                       doi: 10.3389/fmicb.2017.00220
+
+
+
+
+                                             Characterization of Potential
+                                             Polysaccharide Utilization Systems in
+                                             the Marine Bacteroidetes Gramella
+                                             Flava JLT2011 Using a Multi-Omics
+                                             Approach
+                                             Kai Tang *, Yingfan Lin, Yu Han and Nianzhi Jiao *
+                                             State Key Laboratory for Marine Environmental Science, Institute of Marine Microbes and Ecospheres, Xiamen University,
+                                             Xiamen, China
+
+
+                                             Members of phylum Bacteroidetes are distributed across diverse marine niches and
+                                             Flavobacteria is often the predominant bacterial class decomposing algae-derived
+                                             polysaccharides. Here, we report the complete genome of Gramella flava JLT2011
+                                             (Flavobacteria) isolated from surface water of the southeastern Pacific. A remarkable
+                                             genomic feature is that the number of glycoside hydrolase (GH) genes in the genome
+                        Edited by:
+                                             of G. flava JLT2011 is more than 2-fold higher than that of other Gramella species.
+                   Rex Malmstrom,
+    DOE Joint Genome Institute, USA          The functional profiles of the GHs suggest extensive variation in Gramella species.
+                        Reviewed by:         Growth experiments revealed that G. flava JLT2011 has the ability to utilize a wide
+                         Zongze Shao,        range of polysaccharides for growth such as xylan and homogalacturonan in pectin.
+  State Oceanic Administration, China
+                   Thomas Schweder,
+                                             Nearly half of all GH genes were located on the multi-gene polysaccharide utilization
+    University of Greifswald, Germany        loci (PUL) or PUL-like systems in G. flava JLT2011. This species was also found to
+                         Fiona Cuskin,
+                                             harbor the two xylan PULs and a pectin PUL, respectively. Gene expression data
+             Newcastle University, UK
+                                             indicated that more GHs and sugar-specific outer-membrane susC-susD systems
+                   *Correspondence:
+                              Kai Tang       were found in the presence of xylan than in the presence of pectin, suggesting a
+                  tangkai@xmu.edu.cn         different strategy for heteropolymeric xylan and homoglacturonan utilization. Multi-omics
+                           Nianzhi Jiao
+                      jiao@xmu.edu.cn
+                                             data (transcriptomics, proteomics, and metabolomics) indicated that xylan PULs
+                                             and pectin PUL are respectively involved in the catabolism of their corresponding
+                    Specialty section:       polysaccharides. This work presents a comparison of polysaccharide decomposition
+          This article was submitted to
+                  Aquatic Microbiology,
+                                             within a genus and expands current knowledge on the diversity and function of PULs
+                a section of the journal     in marine Bacteroidetes, thereby deepening our understanding of their ecological role in
+              Frontiers in Microbiology      polysaccharide remineralization in the marine system.
+          Received: 19 August 2016
+         Accepted: 31 January 2017           Keywords: glycoside hydrolases, polysaccharide utilization loci, Bacteroidetes, genome, microarray, proteomics,
+        Published: 14 February 2017          marine bacteria
+
+                             Citation:
+      Tang K, Lin Y, Han Y and Jiao N
+  (2017) Characterization of Potential
+                                             INTRODUCTION
+ Polysaccharide Utilization Systems in
+   the Marine Bacteroidetes Gramella
+                                             Members of the Bacteroidetes, formerly known as the Cytophaga-Flavobacteria-Bacteroides phylum,
+  Flava JLT2011 Using a Multi-Omics          are diverse and widely distributed in marine ecosystems (Glöckner et al., 1999; Kirchman, 2002;
+   Approach. Front. Microbiol. 8:220.        Alonso et al., 2007). Many have gliding motility as well as the capacity to degrade polymeric
+      doi: 10.3389/fmicb.2017.00220          substances, possibly enabling them to grow on organic aggregates or algal cells using polymeric
+
+
+Frontiers in Microbiology | www.frontiersin.org                                    1                                             February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+substances as carbon and energy sources (Bauer et al., 2006;              a variety of marine habitats, including coastal regions (G.
+McBride et al., 2009; Qin et al., 2010; Mann et al., 2013). These         forsetii KT0803) (Bauer et al., 2006), open oceans (G. flava
+bacteria use their wide array of peptidases and carbohydrate-             JLT2011) (Liu et al., 2014), marine sediments (G. portivictoriae
+active enzymes (CAZymes), including glycoside hydrolases                  DSM23547) (Lau et al., 2005), and in phytoplankton- or
+(GHs), carbohydrate esterases (CEs), polysaccharide lyases                animal-associated domains (sea urchin-associated G. echinicola
+(PLs), and glycoside transferases (GTs) to efficiently degrade            DSM19838; Nedashkovskaya et al., 2005). Several more genomes
+polymers such as proteins and polysaccharides (Bauer et al.,              of Gramella have subsequently been sequenced (Panschin et al.,
+2006; Fernández-Gómez et al., 2013). Several GH genes in the              2016), and it is now theoretically possible to compare the
+genomes of Bacteroidetes are organized in distinct polysaccharide         CAZyme features of these closely related bacterial species at the
+utilization loci (PUL), often along with PL and CE genes, and             genome level.
+regulatory elements (Martens et al., 2011; Kabisch et al., 2014).            Here, we present the complete genome of G. flava JLT2011,
+These are also likely to be clustered with transporter systems            in which we find more GHs than in G. forsetii, G. portivictoriae,
+that are involved in the binding and uptake of oligosaccharides,          and G. echinicola. This species also contains a xylan PUL and
+including susD-like oligosaccharide-binding proteins and susC-            mannan PUL that are absent in the other species. Although
+like TonB-dependent receptors (porins that mediate transport of           G. flava JLT2011 lacks an alginate PUL, it was found to
+starch oligosaccharides from the surface of the outer membrane            harbor a pectin PUL. These species exhibited differences in the
+to the periplasm for subsequent degradation; Anderson and                 spectrum of polysaccharides that an organism can potentially
+Salyers, 1989a,b; Shipman et al., 2000). Despite the fact that PULs       degrade. Using a combination of transcriptomics, proteomics,
+can be predicted based on their genomic context (Terrapon et al.,         and metabolomics, the catabolic pathway models for xylan and
+2015), recent studies have focused on the experimental validation         pectin in G. flava JLT2011 are proposed. This study expands
+of PULs in this group because PULs are integral to the digestion          current knowledge on the diversity and function of PULs in
+of complex carbohydrates. For example, a xyloglucan PUL,                  marine Bacteroidetes.
+xylan PULs, and a mannan PUL were identified in Bacteroidetes
+ovatus (Larsbrink et al., 2014; Rogowski et al., 2015) and in B.          MATERIALS AND METHODS
+thetaiotaomicron (Cuskin et al., 2015), respectively.
+    Phytoplankton contribute approximately 50% of the global              Gene Sequencing and Bioinformatics
+primary production (Boyce et al., 2010) and bacteria can                  Analysis
+consume a substantial fraction of primary production as                   Whole genome sequencing of G. flava JLT2011 was performed
+dissolved organic carbon (DOC) that is released by algal                  using a hybrid approach, combining Illumina short read data
+cells (Buchan et al., 2014). Polysaccharides constitute a large           with PacBio long read data (Koren et al., 2012). The genome
+percentage of phytoplankton biomass, particulate organic matter,          sequences were de novo assembled by the HGAP2 program
+and DOC in the ocean (Benner et al., 1992; Engel et al., 2004). The       in the SMRT analysis server (v2.3). Illumina pair end reads
+quantity of CAZymes in phylum Bacteroidetes increases in the              were mapped to the assembled contigs to improve the accuracy
+presence of phytoplankton blooms (Teeling et al., 2012). Among            of genome sequences. The final assembled genomes were
+the members of marine Bacteroidetes that are associated with              automatically annotated and analyzed via the IMG/ER platform
+phytoplankton blooms, a high proportion is represented by class           (http://img.jgi.doe.gov). The comparison and visualization of
+Flavobacteria (Alonso et al., 2007; Teeling et al., 2012). These          multiple genomes was conducted using BRIG (Alikhan et al.,
+are the predominant bacteria that utilize phytoplankton-derived           2011), and multiple-genome alignment was performed using
+transparent exopolymer particles in the surface coastal waters            Mauve (Darling et al., 2009). The amino acid sequences were
+(Taylor et al., 2014). Polysaccharides are constituents of marine         then submitted to the CAZyme Annotation Toolkit (Park et al.,
+algae such as alginate and laminarin in brown algae, xylan in             2010; Lombard et al., 2014; http://mothra.ornl.gov/cgi-bin/cat/
+green algae and red algae, and pectin in diatoms (Kröger and              cat.cgi) for sequence-based annotation, with an E-value of 1e-40,
+Poulsen, 2008; De Jesus Raposo et al., 2014; Based et al., 2015).         as well as Pfam-based annotation with an e-value of 0.00001. The
+These algae are significant contributors to primary production in         results were then further manually checked. Peptidase genes were
+the marine environment (Nelson et al., 1995).                             annotated using the MEROPS peptidases database (Rawlings
+    The breakdown of algal polysaccharides by Bacteroidetes is            and Barrett, 1999). The candidates were manually examined in
+central to marine carbon cycling (Cottrell and Kirchman, 2000);           terms of similarity (E-value cutoff 1e-10) to MEROPS proteins
+however, the mechanisms underlying the action of complex                  and the presence of all catalytic sites. The cluster sequences at
+polysaccharides such as xylan and pectin remain unclear.                  the gene cluster level in NCBI GenBank were detected using a
+Gramella forsetii KT0803, which belongs to class Flavobacteria,           MultiGeneBlast (V. 1.1.14) (Medema et al., 2013) architecture
+is the first marine Bacteroidetes that was sequenced and analyzed         search with predicted PULs in Gramella species genomes as
+and was found to contain a substantial number of CAZymes                  queries. The combination of a pairwise based method and
+and peptidases, as well as a predicted preference for polymeric           phylogeny-based methods to identify orthologous genes. The
+carbon sources (Bauer et al., 2006). The presence of a starch             predicted orthologous genes were firstly identified using OMA
+PUL, laminarin PUL, and alginate PUL in G. forsetii KT0803                (V. 1.0.6) (Roth et al., 2009). The genes were finally identified
+has been further resolved by functional proteomics analysis               as orthologs when at least two of their phylogenetic trees were
+(Kabisch et al., 2014). Members of genus Gramella occur in                reconciled with the species trees. The phylogenetic trees of the
+
+
+Frontiers in Microbiology | www.frontiersin.org                       2                                         February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                 Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+candidate orthologous genes were reconstructed with MEGA                   dissolved in a hybridization buffer (2X GEx Hyb Buffer (HI-
+(V. 6.0) (Tamura et al., 2013), using maximum likelihood,                  RPM), 25% formamide), and hybridized overnight at 45◦ C.
+neighbor joining distance and maximum parsimony algorithms,                Following hybridization, the product was washed in 0.2% SDS
+and implementing a JTT plus a gamma distribution with four                 and 2 × SSC liquid for approximately 5 min at 42◦ C. Following
+categories. The concatenated conserved eight single-copy genes             this, the product was washed in a 0.2 × SSC for 5 min at room
+in the phylum Bacteroidetes were used for the reconstruction               temperature. The 60-mer oligonucleotide probes were designed
+of the maximum likelihood species tree using the RAxML                     by CapitalBio with online software Earray (https://earray.chem.
+program (V. 7.4.2) (Stamatakis, 2006), implementing a GTR plus             agilent.com/earray/), according to the whole genomic sequence
+GAMMA model and performing 1000 rapid bootstrap replicates.                of G. flava JLT2011. Custom microarrays (8 × 15 K) with
+   The complete genome sequence of G. flava JLT2011 has been               the designed oligonucleotide probes were purchased from
+deposited in GenBank under the accession numbers CP016359                  Agilent Technologies (Santa Clara, U.S.A.). The gene chips
+and deposited in the Joint Genome Institute IMG/ER website                 were scanned using an Agilent G2565CA Microarray Scanner
+(http://img.jgi.doe.gov) under the genome ID 2576861820.                   (Agilent Technologies). Images from the Agilent arrays were
+                                                                           processed using Agilent Feature (Agilent Technologies). Signal
+Growth Experiments                                                         values normalized by using the method of percentile shift after
+All chemicals were purchased from Sigma Chemical Co. (St.                  raw data were input into the GeneSpring GX software (Agilent
+Louis, MO, U.S.A.), unless otherwise stated. Both G. flava                 Technologies). Differentially expressed gene analysis was carried
+JLT2011 and G. forsetii KT0803 were cultured on minimal media              out using GeneSpring GX software and p-values were calculated.
+[2.3% (w/v) sea salts, 0.05% (w/v) yeast extract, 0.05% NH4 Cl             Microarray data details are available at the National Center for
+(w/v) and 50 mM Tris-HCl, pH 7.8], with a final concentration of           Biotechnology Information (GEO series GSE90082).
+0.2% of one of the following carbon sources: D-glucose, D-xylose,
+D-galacturonic acid, L-arabinose, L-rhamnose, D-mannose,                   Proteomics Analysis
+D-galactose, N-acetyl-D-glucosamine, D-trehalose, xylan (oat               Cells at the exponential growth phase were centrifuged (6,600 ×
+spelts), pectin (apple), pectin (citrus peel), galatcomannan               g at 4◦ C for 10 min) and extracellular proteins in the supernatant
+(Ceratonia siliqua), mannan (Saccharomyces cerevisiae), arabinan           were precipitated at 4◦ C using 10% trichloroacetic acid. To
+(sugar beet), arabinogalactan (larch), laminarin (brown algae),            extract the intracellular protein fractions, cells were then washed
+alginate (brown algae). and chitin (shrimp shells). Cultures using         with 10 mM Tris-HCl pH 8.0, and lysed in SDT-lysis buffer
+only minimal media were treated as controls. Bacteria were                 (4% SDS, 100 mM DTT, 100 mM Tris-HCl pH 8.0) using a
+grown using a mechanical shaker (XMTE-8112, Sukun, China)                  1:10 sample to buffer ratio for 5 min at 95◦ C, followed by SDS-
+at 180 rpm and 28◦ C for 7 days. Cell density was determined by            PAGE analysis. Extracellular and intracellular protein fractions
+optical density measured at 600 nm (OD600 ) during cultivation.            were then stored at −80◦ C for further protein analysis. Protein
+Cell suspensions at the exponential growth phase were pelleted by          in-solution digestion was performed according to the FASP
+centrifugation (14,000 g, 4◦ C, 20 min) for further analysis. Pectin       procedure (Wiśniewski et al., 2009). Proteomics analysis was
+methylesterase activity was measured as previously described               performed on a Q Exactive mass spectrometer coupled to an
+(Tans-kersten et al., 1998).                                               Easy nLC (Thermo Fisher Scientific, U.S.A.). The instrument was
+                                                                           run with the peptide recognition mode enabled. The MS/MS
+Microarray Analysis                                                        spectra were identified using the MASCOT engine (Matrix
+Total RNA of cells at the exponential growth phase was isolated            Science, London, UK; V. 2.2) against G. flava JLT2011 genomes.
+using the Ambion RiboPure-Bacteria Kit (Ambion Waltham,                    For protein identification, the following options were used:
+USA) according to the manufacturer’s instructions. Total RNA               peptide mass tolerance = 20 ppm, MS/MS tolerance = 0.1 Da,
+was polyadenylated using the poly(A) Tailing ATP kit (Thermo               enzyme = trypsin, max missed cleavage = 2, fixed modification:
+Fisher Scientific, U.S.A), and then was converted to cDNA using            carbamidomethyl (C), and variable modification: oxidation (M).
+the T7-oligo (dT) primer and CbcScript enzymes (Capitalbio,                All of the reported data were based on 99% confidence for protein
+Beijing, China) for first strand synthesis of cDNA. Using an               identification as determined by false discovery rate (FDR) ≤1%.
+RNase H chain, short segments of RNA were cut to obtain
+single stranded DNA. Using the first cDNA strand as a template,
+the second strand cDNA was then synthesized and the primer
+                                                                           Identification and Quantification of
+digested using the T7 Enzyme Mix. The double-stranded cDNA                 Metabolites in G. flava JLT2011 by
+was then transcribed into cRNA followed by purification using a            GC-TOF/MS
+Clean-up Kit (MN, Düren, Germany). Then, 5 µg of cRNA along                Cells at the exponential growth phase were collected by
+with CbcScript II enzyme (Capitalbio), using Random Primers,               centrifugation (6,600 × g at 4◦ C for 10 min). Subsequently, re-
+was used for reverse transcription. The reverse transcription              suspended cells were washed twice with artificial sea water at
+product was purified by using a PCR NucleoSpinExtract II                   4◦ C. The samples were then quenched with 5 ml 80% methanol,
+Kit (MN). This reversely transcribed product was then labeled              followed by vortex-mixing and centrifugation at 10,000 × g for
+using the KLENOW enzyme. The labeled PCR product was                       20 min at −20◦ C. Afterwards, 800 µl of each sample and 800
+purified using the NucleoSpinExtract II Kit (MN) and Cy3-                  µl of methanol solution were combined in 2 ml EP tubes and
+dCTP (GE Healthcare, Marlborough, U.S.A.). Labeled DNA was                 mixed. Samples were then centrifuged at 12,000 rpm for 15 min
+
+
+Frontiers in Microbiology | www.frontiersin.org                        3                                         February 2017 | Volume 8 | Article 220
+Tang et al.                                                                              Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+at 4◦ C to obtain the supernatant. The above steps were repeated        (Table S2). G. flava JLT2011 contained genes encoding 18
+three times. Following this, 0.4 ml of methanol:chloroform (V           susCDs.
+methanol: V chloroform = 3:1) was added, and samples were                   Despite the fact that G. flava JLT2011 and G. forsetii KT0803
+vortex mixed for 10 s. A ball mill was then used to homogenize          share a large amount of homologous regions, the high number
+the samples for 5 min at 55 Hz followed by sonication for 5             of translocations and inversions between chromosomes indicates
+min, and then centrifugation for 10 min at 4◦ C. Subsequently,          that extensive genome rearrangements, gene gains, or gene losses
+the supernatant (approximately 0.4 ml) was transferred to a new         have occurred (Figure S1). BLAST analysis showed that 628
+2 ml GC/MS glass vial. We then placed 10 µl of each sample              genes in the G. flava JLT2011 genome were non-homologous
+into a new 2 ml GC/MS glass vial to use as a mixed sample for           to those in the other Gramella bacteria genomes (>30% amino
+quality control. The extracts were dried in a vacuum concentrator       acid identity; Figure 1A). A total of 1,091 orthologous genes
+at 30◦ C for approximately 1.5 h, after which 60 µl of 20 mg/ml         were found among the genomes of Gramella species, in which
+methoxymethyl amine salt (dissolved in pyridine) was added to           only 19 GHs were determined to be orthologous (Figure 1B).
+the dried metabolites. The samples were then mixed and sealed,          Both G. flava JLT2011 and G. forsetii KT0803 shared 32 GHs
+and incubated at 37◦ C overnight in an oven. Finally, 80 ml BSTFA       homologs. However, a total of 52 genes belonging to 23 GH
+reagent (containing 1% TMCS) was added into the mixture and             superfamilies in G. flava JLT2011 were not detected in the
+reacted at 70◦ C for an hour.                                           other three Gramella species. The optimal BLASTP hits of
+    Metabolites extracted from the quenched G. flava JLT2011            approximately two-thirds of the GHs of G. flava JLT2011 were
+cells were then examined by gas chromatography-mass                     aligned with non-Gramella bacterial species, of which most were
+spectrometry (GC-MS) using an Agilent Technologies 7890 gas             homologous to those of bacteria from class Flavobacteria of
+chromatograph system coupled to a Pegasus HT time-of-flight             phylum Bacteroidetes such as Zunongwangia profunda SM-A87
+(TOF) mass spectrometer (LECO Coporation, U.S.A.). The                  (Table S3, Figure S2). The four GH genes in G. flava JLT2011
+system utilized a DB-5MS capillary column coated with 5%                that encode alpha-glucosidase, chitinase, and beta-galactosidase
+diphenyl cross-linked with 95% dimethyl polysiloxane (30 m              shared the highest similarities with those of bacteria from class
+× 250 µm inner diameter, 0.25 µm film thickness; J&W                    Bacteroides (Table S3). The top hit for genes encoding endo-
+Scientific, Folsom, CA, U.S.A.). A 1 µL aliquot of the analyte          1,4-beta-mannosidas was determined to belong to bacteria from
+was injected in splitless mode. Helium was used as the carrier          class Cytophagia (Table S3). Furthermore, a gene encoding beta-
+gas, the front inlet purge flow was 3 mL min−1 and the gas              galactosidase in G. flava JLT2011 was best matched to the non-
+flow rate through the column was 20 mL min−1 . The initial              Bacteroidetes bacterium Verrucomicrobiae (Table S3).
+temperature was kept at 50◦ C for 1 min, rose to 330◦ C at a
+rate of 20◦ C min−1 , and then maintained for 1 min at 330◦ C.
+The injection, transfer line and ion source temperatures were           Comparative Analysis of GHs and
+330, 280, and 250◦ C, respectively. The energy was −70 eV               Peptidases in Marine Microbes
+in electron impact mode. The mass spectrometry data were                The GH and peptidase genes were found to be distributed
+acquired in full-scan mode with the m/z range of 30–600 at              across a variety of divergent bacterial groups, including
+a rate of 20 spectra per second after a solvent delay of 366 s.         Proteobacteria, Bacteroidetes, Cyanobacteria, Actinobacteira,
+The Chroma TOF4.3X software (LECO) and LECO-Fiehn Rtx5                  Fimicutes, Planctomycetes, and Thermotogae (Tables S2, S5). The
+database were used for raw peaks extraction, data baselines             numbers of GHs and peptidases in the marine Bacteroidetes
+filtering and calibration, peak alignment, deconvolution                ranged from 13 to 135 per genome (median: 46) and from 76
+analysis, peak identification and integration of the peak               to131 (median: 98), respectively (Tables S2, S4). The median
+area.                                                                   frequency of GHs and peptidases in the marine members of
+                                                                        phylum Bacteroidetes was 12 GHs per Mbp and 24 peptidases
+RESULTS AND DISCUSSION                                                  per Mbp, accounting for 1.4 and 2.6% of the total open
+                                                                        reading frames, respectively. This was higher than that of
+GHs in the Genome of G. flava JLT2011                                   the other taxa that contained more than three genomes
+The genome of G. flava JLT2011 contains a single circular               (Table S2).
+chromosome of 4,007,868 base pairs (bp) in size and a GC                   The GH functional profile in phylum Bacteroidetes was
+content of 42.1%, which both are larger than that of the three          distinguishable from most of the other marine bacteria
+Gramella species from distinct habitats (Table S1). The genome          (Figure 2A). The G. flava JLT2011 genome appears to have
+contains 184 genes encoding CAZymes, which is significantly             a high frequency of GHs (>20 genes per Mbp), which is
+higher than that of other Gramella species (G. forsetii KT0803,         similar to other Bacteroidetes, including Z. profunda SM-
+118; G. echinicola DSM19838, 108; G. portivictoriae DSM23547,           A87 from deep-sea sediments (Qin et al., 2010), Echinicola
+119; Table S2). It also harbors 96 genes that encode GHs that           vietnamensis DSM17526 from a lagoon of Nha Trang Bay, South
+represent 34 CAZyme superfamilies (Table S3), compared to               China Sea (Nedashkovskaya et al., 2007), and Leeuwenhoekiella
+G. forsetii KT0803 that has 42 GHs genes that were assigned             blandensis MED217 from the open ocean (Pinhassi et al., 2006;
+to 20 superfamilies (Table S2). G. portivictoriae DSM23547 and          Figure 2A). Moreover, Echinicola pacifica DSM19836 contained
+G. echinicola DSM19838 contained only 42 and 36 GHs genes               four times as many GHs as that in G. echinicola DSM19838,
+that were assigned to 19 and 16 superfamilies, respectively             both of which have been found in sea urchins (Nedashkovskaya
+
+
+Frontiers in Microbiology | www.frontiersin.org                     4                                         February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                                Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+
+ FIGURE 1 | Multiple genome comparison of Gramella species. (A) A composite genome comparison figure was generated using BRIG after performing a
+ BLASTn analysis of G. flava JLT2011 as the reference genome. Each genome mapping to the reference is represented as a colored ring, with a solid color
+ representing >60% sequence identity. The innermost rings show GC content (black) and GC skew (purple/green) in G. flava JLT2011. The remaining rings indicate
+ genome regions of G. echinicola (brown), G. portivictoriae DSM23547 (light blue), G. forsetii KT0803 (green), and G. flava JLT2011 (orange). The predicted PULs and
+ PUL-like system gene clusters in G. flava JLT2011 are labeled on the outermost ring with dark blue arcs. The unique PULs in G. flava JLT2011 are also illustrated as
+ red boxes and labeled with asterisks. The PUL gene cluster information is provided in Figure 3, Figures S3–S5. (B) Venn diagram of the intersections of orthologous
+ genes in four genomes, where each rectangle with round corners represents one of the four genomes.
+
+
+
+
+et al., 2005, 2006; Table S2). These results indicate that                            environment (Figure 2A; Hutcheson et al., 2011; Martinez-
+bacteria containing abundant GHs could be found across                                Garcia et al., 2012).
+diverse environments. Several non-Bacteroidetes species also                             The functional profiles of GHs in G. flava JLT2011 were
+harbored abundant GHs, including Verrucomicrobiae bacterium                           significantly distinguishable from those of the other three
+DG1235 and Saccharophagus degradans 2–40, which are efficient                         Gramella species (Figure 2A). Furthermore, G. flava contained
+degraders of numerous complex polysaccharides in the marine                           more GHs that were associated with xylan hydrolysis (GH10,
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                                   5                                              February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                           Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+                                                                                     Xylan and Pectin PULs in the Genome of
+                                                                                     G. flava JLT2011
+                                                                                     The PUL and PUL-like systems are variously distributed in the
+                                                                                     four Gramella strains (Figure 1A). Nearly half of all GHs and
+                                                                                     all susC-susD systems were distributed in PULs and PUL-like
+                                                                                     systems in G. flava JLT2011 (Figure 3, Figures S3–S5). G. flava
+                                                                                     JLT2011 can utilize xylan and its corresponding monosaccharide
+                                                                                     D-xylose, whereas G. forsetii KT0803 could not (Figure S6).
+                                                                                     G. flava JLT2011 was found to contain two xylan PULs that
+                                                                                     were absent in G. forsetii KT0803 (Figure 3). Two xylan PULs
+                                                                                     in G. flava JLT2011 were distinct from those in Bacteroidetes
+                                                                                     ovatus (Rogowski et al., 2015). However, the major xylanolytic
+                                                                                     enzymes were found in the xylan PULs of G. flava JLT2011,
+                                                                                     including genes that encode xynA-encoding xylanases (GH5 and
+                                                                                     GH10) and xynB-encoding beta-xylosidase (GH43) (Rogowski
+                                                                                     et al., 2015; Figure 3). Two xylan PULs both contained genes
+                                                                                     that encode a susC-susD system. Genes encoding acetyl xylan
+                                                                                     esterase (xylU), xylulokinase (xylB), xylose isomerase (xylA),
+                                                                                     and xylose transporters (xylE) were located downstream of a
+                                                                                     PUL and are probably involved in xylose utilization (Figure 3).
+                                                                                     Xylans are heteropolymers consisting principally of xylose and
+                                                                                     a small amount of arabinose, as well as traces of glucuronic
+                                                                                     acid, galactose, rhamnose, galacturonic acid, and other residues
+                                                                                     (Bastawde, 1992). The GHs that are potentially involved in the
+                                                                                     neutral sugars that are linked to the xylan main chain were found
+                                                                                     in two xylan PULs, which include alpha-N-arabinofurnosidases
+                                                                                     (abfA-II and arb43, GH43) and alpha-glucuronidases (aguA,
+                                                                                     GH67) (Rogowski et al., 2015; Figure 3).
+                                                                                         Both G. flava JLT2011 and G. forsetii KT0803 can utilize pectin
+                                                                                     (from apple and citrus, respectively), and their corresponding
+                                                                                     monosaccharide, D-galacturonic acid (Figure S6, Table S5). G.
+ FIGURE 2 | Nonmetric multidimensional scaling analysis based on
+                                                                                     flava JLT2011 contained a PUL that was predicted to encode for
+ Bray-Curtis similarity matrix was calculated from the frequency of
+ each GH (A) and peptidase (B) in marine bacteria. A total of 249 marine             enzymes that are involved in the degradation of pectin, including
+ bacteria genomes were included in the analysis and their GHs and peptidases         two pectate lyases (pelL and pelA), two pectin methylesterases
+ of each protein superfamily were standardized by the genome size (see details       (pemA), and two polygalacturonases (pelL) (Figure 3). These
+ on Tables S2, S4). The bacterial lineages are highlighted in colors.                enzymes cleave pectin into small oligogalacturonates. The
+ 1. Echinicola vietnamensis DSM17526; 2. Echinicola pacifica DSM19836; 3.
+ Zunongwangia profunda SM-A78; 4. Leeuwenhoekiella blandensis MED217;
+                                                                                     PUL contained other genes that are involved in the catabolism
+ 5. Pedobacter sp. BAL39; 6. Leeuwenhoekiella sp. Hel_I_48;                          of pectin such as genes encoding rhamnogalacturonides
+ 7. Verrucomicrobiae bacterium DG1235; 8. Saccharophagus degradans 2-40.             degradation proteins (rhiN, GH88), two rhamnogalacturonan
+                                                                                     acetylesterases, a susC-susD system, and a predicted transporter
+                                                                                     system for rhamnogalacturonide (RhiABC), and a set of genes
+GH30, GH67, and GH115 CAZyme superfamilies) than the other                           associated with hexuronate metabolism (Figure 3). A similar
+three Gramella species (Table S3). Mannan hydrolyzing GHs                            PUL was identified in G. echinicola DSM19838 (Figure 3).
+(GH26, GH76, GH92, and GH125) were only found in G. flava                            Alishewanella (Jung and Park, 2013) and Alteromonas species
+JLT2011 (Table S3). Pectin hydrolyzing GHs were identified in                        within Gammaproteobacteria contained the majority of genes
+G. flava JLT2011 and G. echinicola DSM19838 (GH28, GH88,                             in a pectin PUL found in G. flava JLT2011. On the other
+and GH105) (Table S3). While G. forsetii KT0803 contained                            hand, G. forsetii KT0803 lacked a pectin PUL, although it
+seven genes that encode PLs, including alginate lyase, only                          harbored a gene that encodes a pectin degradation protein, as
+two predicted pectin lyases were present in G. flava JLT2011                         well as other genes (including MFS, kdgK, and kdgF) located
+(Table S2). Differences in CAZyme distribution among the four                        downstream of the alginate PUL locus that were possibly
+Gramella species suggest variations in the genomic potential                         involved in pectin degradation (Figure S3; Bauer et al., 2006).
+for polysaccharide degradation. In contrast, their peptidase                         However, the exact enzymatic mechanism of pectin for G.
+profiles exhibited little variation (Figure 2B). Notably, G. flava                   forsetii KT0803 need further experiments. Pectin methylesterase
+JLT2011 contained 97 peptidases that were distributed across                         activity, which is responsible for the removal of methyl-esters
+39 superfamilies, whereas G. forsetii KT0803 comprised 102                           from moderately methylated apple pectin, was observed when
+peptidases that represented 42 superfamilies (Table S4).                             G. flava cells were grown on apple pectin (Figure S7). In
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                                  6                                         February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                              Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+
+ FIGURE 3 | Genetic organization of the two xylanolytic and one pectinolytic operons of G. flava JLT2011. The range of Genbank accession numbers of
+ sequences of the gene cluster in the genome is shown in a bracket. The functions of the proteins are color-coded: blue, CAZymes; green, membrane proteins
+ involved in binding/transport; purple, other enzymes; orange, putative regulation factor; gray, unknown function. Homologous genes are connected by colored bars
+ between two PULs. The CAZymes superfamily classification is listed on a gene. xylan PUL1&2: xynA, Endo-1,4-beta-xylanase; xynB, Beta-xylosidase; abfA-II,
+ Alpha-L-arabinofuranosidase; lacZ, Beta-galactosidase; arb43, Alpha-N-arabinofuranosidase; bglX, Beta-glucosidase; aguA, Alpha-glucuronidase; xylu, Acetyl xylan
+ esterase; xylA, Xylose isomerase; xylB, Xylulose kinase; susC, TonB-dependent receptor; susD, Carbohydrate-binding protein; xylE, Xylose transporter; lacI, LacI
+ family transcriptional regulator; pectin PUL: pemA, Pectinesterase; pelL, Endopolygalacturonase; PL9, Pectate lyase; pelA, Pectate lyase; rhiN,
+ Rhamnogalacturonides degradation protein; uxuB, D-mannonate oxidoreductase; kduI, 4-deoxy-L-threo-5-hexosulose-uronate ketol-isomerase; kduD,
+ 2-deoxy-D-gluconate 3-dehydrogenase; uxaC, Uronate isomerase; kdgK, 2-dehydro-3-deoxygluconate kinase; eda, 2-dehydro-3-deoxyphosphogluconate aldolase;
+ uxaB, Altronate oxidoreductase; uxaA, Altronate hydrolase; rga, Rhamnogalacturonan acetylesterase; susC, TonB-dependent receptor; susD, carbohydrate-binding
+ protein; RhiABC, Predicted rhamnogalacturonide-specific TRAP-type transporter; exuR, Hexuronate utilization operon transcriptional repressor.
+
+
+
+
+contrast, no pectin methylesterase activity on citrus pectin                        The alternative enzymatic route for rhamnogalacturonan
+was detected in G. flava JLT2011 because citrus pectin has                          degradation includes rhamnogalacturonan lyase (PL4 or PL11)
+a very low capability for methyl esterification. Furthermore,                       and rhamnogalacturonan hydrolase (GH88 and GH105) (Ochiai
+the absence of the pemA gene in G. forsetii KT0803 did not                          et al., 2007). G. flava JL2011 contained five rhamnogalacturonan
+appear to completely prevent it from utilizing apple pectin for                     hydrolases but lacked rhamnogalacturonan lyase. These results
+growth.                                                                             suggest that a PUL-like system in G. flava JLT2011 does
+   Apple and citrus pectins are mainly composed of D-                               not appear to function in rhamnogalacturonan hydrolysis.
+galacturonic acid-forming homogalacturonans. The backbone                           Both G. flava JLT2011 and G. forsetii KT0803 could only
+of apple pectin also contains a small amount of α-1,2-rhamnose                      utilize the homogalacturonan in apple pectin due to the lack
+that alternates with α-1,4-D-galacturonate (ramnogalacturonan;                      of rhamnogalacturonan hydrolyase or rhamnogalacturonan
+Wu and Mort, 2014). Other sugars, including galactose,                              lyase.
+rhamnose, glucose, arabinose, xylose, and mannose, were                                 Both G. flava JLT2011 and G. forsetii KT0803 harbored
+also detected in apple pectin (Wu and Mort, 2014). G. flava                         other PULs (Figures S3–S5); therefore, these are capable of
+JLT2011 is capable of utilizing L-rhamnose as a carbon source                       utilizing trehalose, laminarin, starch, arabinan, arabinogalactan,
+for growth (Figure S6) due to the presence of complete L-                           galactomannan, and their corresponding monosaccharides
+rhamnose utilization genes (rha) in the genome (Figure S5).                         (D-glucose, D-galactose, D-galacturonic acid, and L-arabinose;
+These genes were clustered with pectin lyase and GHs to                             Figure S6, Table S5). These polysaccharides and corresponding
+form a predicted PUL-like system for rhamnogalacturonan                             monosaccharides have frequently been found in various
+utilization (Figure S5). Polygalacturonases act on the                              marine algae that function in storage, or act as a cell wall
+homoglacturonan chains of the smooth region of pectin,                              constituent or as extracellular polysaccharides (Kröger and
+whereas rhamnogalacturonases digest the rhamnogalacturonan                          Poulsen, 2008; De Jesus Raposo et al., 2014; Based et al., 2015).
+chain of the hair region of pectin (Ochiai et al., 2007).                           Potential PUL identification and carbon utilization experiments
+Phylogenetic analysis indicated that four genes encoding                            revealed that Gramella species can degrade a wide range of
+polygalacturonases in G. flava JL2011 functionally belonged to                      algal polysaccharides, thus indicating a strong specialization
+the endopoylygalacturonase or exo-polygalacturonase family,                         toward an “opportunitrophic” lifestyle in the marine
+but were distinct from rhamnogalacturonases (Figure 4).                             environment.
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                                 7                                             February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                             Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+
+ FIGURE 4 | Phylogenetic tree based on polygalacturonase amino acid sequence comparisons constructed using the maximum-likelihood method in
+ MEGA6. The pehX and pelL genes in G. flava JLT2011 are marked by asterisks and IMG/ER accession numbers are given in the bracket. The classes of
+ polygalacturonase are listed on the right. The Genebank accession number for each reference sequence is given in the bracket. Bootstrap percentages are shown on
+ each branch (1,000 replications). The scale bar indicates 20% sequence divergence.
+
+
+
+
+Reconstruction of Xylan and Pectin                                                  pectin treatment conditions, respectively (fold change >2 or
+Catabolic Pathways Based on                                                         < 0.5; p < 0.05) (Tables S6, S7). In the presence of xylan,
+                                                                                    some genes in two PULs for xylan showed increased transcript
+Transcriptomics, Proteomics, and
+                                                                                    levels compared to glucose, and the induction levels varied
+Metabolomics Data                                                                   between 2.3 and 89.6 when relative to that in glucose, including
+Global gene expression patterns for G. flava JLT2011 at the                         the xylan main chain degradation genes (xynA and xynB),
+exponential growth phase in the presence of glucose, xylan,                         whereas the side chain sugar degradation genes (arb43, abfA-
+and pectin were assayed using microarrays (Figure 5). Overall,                      II, and aguA), and xylose metabolism genes (xylU, xylA, xylB,
+compared to the glucose treatment condition, a total of 1,234                       and xylE) were also up-regulated (Figure 5A). Two susC-
+and 951 genes were differentially expressed under xylan and                         susD systems in xylan PULs were up-regulated, in which
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                                 8                                            February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                                Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+
+                                                                                        FIGURE 6 | Functional analysis of the proteome of G. flava JLT2011
+                                                                                        grown on xylan, pectin, and glucose. (A) Hits of identified proteins
+                                                                                        associated with carbohydrate metabolism classified by cluster of orthologous
+                                                                                        groups (COG), gene ontology (GO) and Kyoto encyclopedia of genes and
+                                                                                        genomes (KO), respectively. (B) Venn diagram of counts of the detected
+                                                                                        CAZymes and susC-susD systems under different treatments with xylan,
+                                                                                        pectin and glucose. GH, glycoside hydrolase; CE, carbohydrate esterase.
+
+
+
+
+ FIGURE 5 | Volcano plot comparison of the gene expression between                     suggesting that these are not involved in pectin degradation.
+ xylan and glucose (A) and pectin and glucose (B). The x axis indicates the            The transcripts of genes in a rhamnogalacturonan PUL-
+ differential expression profiles, plotting the fold-induction ratios in a log-2
+                                                                                       like system did not significantly change in the presence of
+ scale. The y axis indicates the statistical significance of the difference in
+ expression (p-value from a t-test) in a log10 scale. Genes within the xylan and
+                                                                                       pectin, thus supporting the notion that G. flava JLT2011
+ pectin PULs are shown in colors (fold change > 2, or <0.5; p < 0.05). (A)             does not utilize heteropolymeric rhamnogalacturonans in apple
+ xynA, Endo-1,4-beta-xylanase; xynB, Beta-xylosidase; abfA-II,                         pectin.
+ Alpha-L-arabinofuranosidase; arb43, Alpha-N-arabinofuranosidase; aguA,                   LC-MS/MS analysis identified a total of 1,778, 1,638,
+ Alpha-glucuronidase; xylu, Acetyl xylan esterase; xylA, Xylose isomerase; xylB,
+                                                                                       and 1,429 proteins at the exponential growth phase in the
+ Xylulose kinase; susC, TonB-dependent receptor; susD, carbohydrate-binding
+ protein; xylE, Xylose transporter. (B) pemA, Pectinesterase; pelL,                    presence of xylan, pectin, and glucose, respectively (Table S8).
+ Endopolygalacturonase; uxaC, Uronate isomerase; kdgK,                                 A total of 1,190 proteins were detected among all samples,
+ 2-dehydro-3-deoxygluconate kinase; eda,                                               representing 33.7% of the protein-coding genes in G. flava.
+ 2-dehydro-3-deoxyphosphogluconate aldolase; uxaB, Altronate                           JLT2011. A higher number of proteins were associated with
+ oxidoreductase; uxaA, Altronate hydrolase; susC, TonB-dependent receptor;
+ susD, carbohydrate-binding protein.
+                                                                                       carbohydrate metabolism in cells cultured with xylan or
+                                                                                       pectin compared to those cultured with glucose (Figure 6A).
+                                                                                       The xylan degradation enzymes (XynA and XynB) and the
+                                                                                       endopolygalacturonases (PelL) were detected in the presence
+induction levels were up to 35.5 and 89.6 for susC and                                 of xylan and pectin, respectively, which coincided with the
+susD (Table S6), respectively, thereby suggesting that these are                       results of microarray analysis. However, the SusC-susD system
+involved in the uptake of oligomeric xylan. In the presence                            and RhiABC transporter in the pectin PUL were not detected,
+of pectin, the transcription of endopolygalacturonase (pelL)                           indicating that these were not involved in the transport of
+and hexuronate metabolism (kdgK, uxaA, uxaB, uxaC, and                                 pectin degradation products. However, the GntP transporter was
+eda) in the pectin PUL were significantly enhanced compared                            detected (Table S8) and is reported to have a high specificity
+to glucose (Figure 5B). However, a transcription of susC-                              for importing D-galacturonate (Suvorova et al., 2011). All
+susD system in the pectin PUL was not significantly up-                                Gramella species have the complete glycolysis and uncompleted
+regulated, and the transcripts of RhiABC genes were also                               Entner–Duodoroff and pentose phosphate pathways due to
+significantly down-regulated compared to glucose (Table S7),                           the presence of a gene that encodes glucose-6-phosphaste
+
+
+Frontiers in Microbiology | www.frontiersin.org                                    9                                             February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                                            Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+TABLE 1 | Relative fold-change in selected metabolites in G. flava JLT2011 grown in different conditions (t-test, p < 0.05).
+
+Metabolite                        Similaritya            R.T.b           Mass             log2 fold change (xylan/glucose)c                 log2 fold change (pectin/glucose)c
+
+Xylose                               925.89              15.07            103                               2.89                                                0.94
+D-galacturonic acid                  752.50              17.96            160                               0.87                                                1.42
+Glucose                              963.25              17.57            160                             −0.64                                               −2.68
+Glucose-6-phosphate                  726.53              21.47             73                             −0.01                                               −2.40
+Fructose-6-phosphate                 541.29              21.35            315                               0.38                                              −2.80
+Pyruvic acid                         484.29               8.84            174                               0.32                                              −1.43
+Citric acid                          826.63              16.77            273                             −0.03                                               −1.50
+Succinic acid                        948.70              10.78            147                               0.17                                              −0.90
+Fumaric acid                         927.40              11.28            245                               1.20                                              −0.78
+
+a Similarity, the LECO/Fiehn Metabolomics Library was used to identify the compounds. It generates a similarity value for the compound identification accuracy. When the similarity is
+
+>700, the process of metabolite identification is reliable. When the similarity is between 200 and 700, the putative compound name is annotated. When the similarity is <200, the library
+will use only “analyte” for the compound name.
+b R.T., retention time of gas chromatography.
+c Fold-change values using the ratios of the mean of standardized peak intensities between two groups of samples.
+
+
+
+
+  FIGURE 7 | Reconstructed pathways of xylan and pectin utilization in G. flava JLT2011 based on multi-omics data. All labeled genes were expressed at the
+  proteomic level. Xylan utilization pathway: XynA, Endo-1,4-beta-xylanase; XynB, Beta-xylosidase; AbfA-II, Alpha-L-arabinofuranosidase; Arb43,
+  Alpha-N-arabinofuranosidase; AguA, Alpha-glucuronidase; SusC, TonB-dependent receptor; SusD, Carbohydrate-binding protein; Xylu, Acetyl xylan esterase; XylE,
+  Xylose transporter; XylA, Xylose isomerase; XylB, Xylulose kinase. Pectin utilization pathway: PemA, Pectinesterase; PelL, Pectate lyase; PehX,
+  Exo-poly-alpha-D-galacturonosidase; UxaC, Uronate isomerase; UxaB, Altronate oxidoreductase; UxaA, Altronate hydrolase; GntP, Gluconate transporter; KdgK,
+  2-dehydro-3-deoxygluconate kinase; Eda, 2-dehydro-3-deoxyphosphogluconate aldolase. Pentose phosphate pathway: Rpe, Ribulose-phosphate 3-epimerase;
+  RpiB, Ribose 5-phosphate isomerase B; Tkt, Transketolase; Tal, Transaldolase. Glycolysis: PpgK, Polyphosphate glucokinase; Pgi, Glucose-6-phosphate isomerase;
+  PfkA, 6-phosphofructokinase; TtpiA, Triosephosphate isomerase; FbaA, Fructose-bisphosphate aldolase class II; FbaB, Fructose-bisphosphate aldolase class I; Gap,
+  NAD-dependent glyceraldehyde-3-phosphate dehydrogenase; Pgk, Phosphoglycerate kinase; GpmI, 2,3-bisphosphoglycerate-independent phosphoglycerate
+  mutase; Eno, Enolase; Pyk, Pyruvate kinase.
+
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                                            10                                                  February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                  Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+(P)-1-dehydrogenase. However, transketolase and transaldolase               The enzymes XynB and Xylu convert xylan oligosaccharides
+were detected in the proteomic samples (Table S8), which                    into xylose, which then enter the cell and move into the
+could convert xylose-5P into fructose-6P and glyceraldehyde-3P,             cytoplasm through the mediation of XylE (Figure 7). The
+which subsequently enter the glycolysis cycle. Gliding motility-            enzymes XylA and XylB yield the final product, xylose-5P,
+related proteins, which possibly play a role in the digestion of            which is then directed into the pentose phosphate pathway
+biopolymers, were detected in the presence of xylan and pectin              (Figure 7). The enzymes Arb43, AbfA-II, and AguA might be
+(Table S8).                                                                 involved in hydrolysis of the side chain of xylan (Figure 7).
+    Comparative analysis of the transcriptomics and proteomics              The homogalacturonan in pectin is degraded into D-galacturonic
+data shows a good consistency for the PUL genes at the                      acid via the demethylating enzyme PemA, and PelL is used in
+transcription level. All significantly up-regulated gene transcripts        pectin hydrolysis in G. flava JLT2011 (Figure 7). D-galacturonic
+of xylan PULs and pectin PULs were detected at the protein                  acid is further utilized by the consequent actions of five
+level of the bacterial exponential growth phase (Table S8).                 hexuronate metabolism enzymes (UxaC, UxaB, UxaA, KdgK,
+Compared to glucose, a total of 25 GH and seven susC-susD                   and Eda), converting D-galacturonic acid into pyruvate and
+system transcripts were up-regulated in the presence of xylan               D-glyceraldehyde-3-phosphate, which subsequently enter the
+(Table S6), whereas only six GHs and a susC-susD system were                glycolytic pathway (Figure 7). Further biochemical analysis of
+up-regulated in the presence of pectin (Table S7). A total of               the proteins involved in xylan and pectin utilization is necessary
+48, 24, and 13 GHs at the protein level were detected in the                to fully understand the systems and validate the proposed
+presence of xylan, pectin, and glucose, respectively (Figure 6B;            pathway.
+Table S8). In addition, a total of 29 GH and eight SusC-SusD                   In summary, this study has shown that the members
+system proteins were only detected in the presence of xylan                 of Gramella spp. have different potentials in hydrolyzing
+(Figure 6B). In contrast, only three SusC-SusD systems were                 polysaccharides based on their differences in GHs
+detected in the presence of pectin and glucose (Figure 6B).                 and PUL genes. Genes encoding GHs and PULs in
+Compared to glucose, the up-regulated transcript of xynA and its            G. flava JLT2011 could function in the degradation
+adjacent susC-susD system, xynB, were found in non-xylan PUL                of polysaccharides; however, these have distinct gene
+(Figure 5A), which possibly accelerates the degradation of the              expression patterns in response to xylan and pectin,
+main chain of xylan. Moreover, other up-regulated transcripts of            respectively. Our multi-omics studies have allowed us to
+GHs, including beta-galactosidase and alpha-glucosidase, allows             functionally characterize GHs and PULs in a bacterial model
+sufficient hydrolysis of various sugar residues of xylan (Table S6).        that belongs phylum Bacteroidetes, thereby facilitating
+These up-regulated transcripts in the presence of xylan are also            in better understanding their ecological role in algal
+detected at the protein level (Table S8). These results suggest that        polysaccharide decomposition in relation to marine carbon
+G. flava JLT2011 exhibited contrasting gene expression patterns             cycling.
+on GHs and susC-susD systems in response to heteropolymeric
+xylan and homopolymeric pectin utilization, respectively. It was
+noted that some GH genes were shown differentially expressed
+                                                                            AUTHOR CONTRIBUTIONS
+revealed by transcriptomics in barely, while their corresponding            KT and NJ conceived and designed the experiments; KT,
+proteins were not detected in the proteomic data possibly                   YL, and YH carried out the experiments and analyzed
+due to reasons such as gene expression and the limitation of                the data. All of the authors assisted in writing the
+techniques.                                                                 manuscript, discussed the results and commented on the
+    GC-MS analysis of bacterial metabolites showed that the                 manuscript.
+highest concentration of xylose was observed in xylan-grown
+cells, whereas the highest concentration of D-galacturonic
+acid was detected in pectin-grown cells (Table 1). These are                FUNDING
+degradation products from xylan and pectin, respectively.
+The metabolites of pectin-grown cells that are involved in                  This work was supported by the National Natural Science
+glycolysis (glucose-6-phosphate and fructose-6-phosphate) and               Foundation of China project (41276131), the National
+the citric acid cycle cycle (citric acid, succinic acid, and                Key Research and Development Program of China
+fumaric acid) were down-regulated compared to that in the                   (2016YFA0601100 & 2013CB955700), the National Program
+glucose-grown and xylan-grown cells (Table 1), indicating                   on Global Change and Air-Sea Interaction (GASI-03-01-
+an decrease in the rate of glycolysis and the citric acid                   02-05), the Natural Science Foundation of Fujian Province
+cycle.                                                                      (2014J01164).
+    The integrated multi-omics data of this study reveal that PULs
+play a vital role in catabolic xylan and pectin pathways and                SUPPLEMENTARY MATERIAL
+we hereby propose a xylan and pectin utilization pathway as
+follows. The enzyme XynA hydrolyzes the main chain of xylan                 The Supplementary Material for this article can be found
+into oligomeric polymers that are subsequently transported into             online at: http://journal.frontiersin.org/article/10.3389/fmicb.
+cells by the SusC-SusD system of G. flava JLT2011 (Figure 7).               2017.00220/full#supplementary-material
+
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                        11                                         February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                                        Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+REFERENCES                                                                                   Kirchman, D. L. (2002). The ecology of Cytophaga-Flavobacteria
+                                                                                                in aquatic environments. FEMS Microbiol. Ecol. 39, 91–100.
+Alikhan, N.-F., Petty, N. K., Ben Zakour, N. L., and Beatson, S. A. (2011). BLAST               doi: 10.1016/S0168-6496(01)00206-9
+   Ring Image Generator (BRIG): simple prokaryote genome comparisons. BMC                    Koren, S., Schatz, M. C., Walenz, B. P., Martin, J., Howard, J. T., Ganapathy, G.,
+   Genomics 12:402. doi: 10.1186/1471-2164-12-402                                               et al. (2012). Hybrid error correction and de novo assembly of single-molecule
+Alonso, C., Warnecke, F., Amann, R., and Pernthaler, J. (2007). High local and                  sequencing reads. Nat. Biotechnol. 30, 693–700. doi: 10.1038/nbt.2280
+   global diversity of Flavobacteria in marine plankton. Environ. Microbiol. 9,              Kröger, N., and Poulsen, N. (2008). Diatoms-from cell wall
+   1253–1266. doi: 10.1111/j.1462-2920.2007.01244.x                                             biogenesis to nanotechnology. Annu. Rev. Genet. 42, 83–107.
+Anderson, K. L., and Salyers, A. A. (1989a). Biochemical evidence that starch                   doi: 10.1146/annurev.genet.41.110306.130109
+   breakdown by Bacteroides thetaiotaomicron involves outer membrane starch-                 Larsbrink, J., Rogers, T. E., Hemsworth, G. R., McKee, L. S., Tauzin, A. S., Spadiut,
+   binding sites and periplasmic starch-degrading enzymes. J. Bacteriol. 171,                   O., et al. (2014). A discrete genetic locus confers xyloglucan metabolism in
+   3192–3198.                                                                                   select human gut Bacteroidetes. Nature 506, 498–502. doi: 10.1038/nature
+Anderson, K. L., and Salyers, A. A. (1989b). Genetic evidence                                   12907
+   that outer membrane binding of starch is required for starch                              Lau, S. C. K., Tsoi, M. M. Y., Li, X., Plakhotnikova, I., Dobretsov, S., Wong, P.-
+   utilization by Bacteroides thetaiotaomicron. J. Bacteriol. 171,                              K., et al. (2005). Gramella portivictoriae sp. nov., a novel member of the family
+   3199–3204.                                                                                   Flavobacteriaceae isolated from marine sediment. Int. J. Syst. Evol. Microbiol.
+Based, F., Synytsya, A., Kim, W. J., and Park, Y. (2015). “Cell wall polysaccharides            55, 2497–2500. doi: 10.1099/ijs.0.63824-0
+   of marine algae,” in Springer Handbook of Marine Biotechnology, ed S. K. Kim              Liu, K., Li, S., Jiao, N., and Tang, K. (2014). Gramella flava sp. nov., a member of
+   (New York, NY: Springer Dordrecht Heidelberg), 543–590.                                      the family Flavobacteriaceae isolated from seawater. Int. J. Syst. Evol. Microbiol.
+Bastawde, K. B. (1992). Xylan structure,microbial xylanases, and their mode                     64, 165–168. doi: 10.1099/ijs.0.051987-0
+   of action. World J. Microbiol. Biotechnol. 8, 353–368. doi: 10.1007/BF011                 Lombard, V., Golaconda Ramulu, H., Drula, E., Coutinho, P. M., and Henrissat,
+   98746                                                                                        B. (2014). The carbohydrate-active enzymes database (CAZy) in 2013. Nucleic
+Bauer, M., Kube, M., Teeling, H., Richter, M., Lombardot, T., Allers, E., et al.                Acids Res. 42, 490–495. doi: 10.1093/nar/gkt1178
+   (2006). Whole genome analysis of the marine Bacteroidetes ‘Gramella forsetii’             Mann, A. J., Hahnke, R. L., Huang, S., Werner, J., Xing, P., Barbeyron, T.,
+   reveals adaptations to degradation of polymeric organic matter. Environ.                     et al. (2013). The genome of the alga-associated marine flavobacterium
+   Microbiol. 8, 2201–2213. doi: 10.1111/j.1462-2920.2006.01152.x                               Formosa agariphila KMM 3901T reveals a broad potential for degradation
+Benner, R., Pakulski, J., McCarthy, M., Hedges, J., and Hatcher, P. (1992). Bulk                of algal polysaccharides. Appl. Environ. Microbiol. 79, 6813–6822.
+   chemical characteristics of dissolved organic matter in the ocean. Science 255,              doi: 10.1128/AEM.01937-13
+   1561–1564.                                                                                Martens, E. C., Lowe, E. C., Chiang, H., Pudlo, N. A., Wu, M., McNulty,
+Boyce, D. G., Lewis, M. R., and Worm, B. (2010). Global phytoplankton decline                   N. P., et al. (2011). Recognition and degradation of plant cell wall
+   over the past century. Nature 466, 591–596. doi: 10.1038/nature09268                         polysaccharides by two human gut symbionts. PLoS Biol. 9:e1001221.
+Buchan, A., Lecleir, G. R., Gulvik, C. A., and González, J. M. (2014). Master                   doi: 10.1371/journal.pbio.1001221
+   recyclers: features and functions of bacteria associated with phytoplankton               Martinez-Garcia, M., Brazel, D. M., Swan, B. K., Arnosti, C., Chain, P. S.
+   blooms. Nat. Rev. Mircobiol. 12, 686–698. doi: 10.1038/nrmicro3326                           G., Reitenga, K. G., et al. (2012). Capturing single cell genomes of active
+Cottrell, M. T., and Kirchman, D. L. (2000). Natural assemblages of marine                      polysaccharide degraders: an unexpected contribution of Verrucomicrobia.
+   proteobacteria and members of the Cytophaga-Flavobacter cluster consuming                    PLoS ONE 7:e35314. doi: 10.1371/journal.pone.0035314
+   low- and high-molecular-weight dissolved organic matter. Appl. Environ.                   McBride, M. J., Xie, G., Martens, E. C., Lapidus, A., Henrissat, B., Rhodes, R. G.,
+   Microbiol. 66, 1692–1697. doi: 10.1128/AEM.66.4.1692-1697.2000                               et al. (2009). Novel features of the polysaccharide-digesting gliding bacterium
+Cuskin, F., Lowe, E. C., Temple, M. J., Zhu, Y., Cameron, E. A., Pudlo, N. A., et al.           Flavobacterium johnsoniae as revealed by genome sequence analysis. Appl.
+   (2015). Human gut Bacteroidetes can utilize yeast mannan through a selfish                   Environ. Microbiol. 75, 6864–6875. doi: 10.1128/AEM.01495-09
+   mechanism. Nature 517, 165–169. doi: 10.1038/nature13995                                  Medema, M. H., Takano, E., and Breitling, R. (2013). Detecting sequence homology
+Darling, A. C. E., Mau, B., Blattner, F. R., and Perna, N. T. (2009). Mauve: multiple           at the gene cluster level with multigeneblast. Mol. Biol. Evol. 30, 1218–1223.
+   alignment of conserved genomic sequence with rearrangements. Genome Res.                     doi: 10.1093/molbev/mst025
+   14, 1394–1403. doi: 10.1101/gr.2289704                                                    Nedashkovskaya, O. I., Kim, S. B., Hoste, B., Shin, D. S., Beleneva, I. A.,
+De Jesus Raposo, M. F., de Morais, A. M. M. B., and de Morais, R. M. S. C. (2014).              Vancanneyt, M., et al. (2007). Echinicola vietnamensis sp. nov., a member of
+   “Bioactivity and Applications of polysaccharides from marine microalgae,” in                 the phylum Bacteroidetes isolated from seawater. Int. J. Syst. Evol. Microbiol. 57,
+   Polysaccharides, eds J. M. Merillon and K. G. Ramawat (Porto: Springer),                     761–763. doi: 10.1099/ijs.0.64546-0
+   1683–1727.                                                                                Nedashkovskaya, O. I., Kim, S. B., Lysenko, A. M., Frolova, G. M., Mikhailov,
+Engel, A., Thoms, S., Riebesell, U., Rochelle-Newall, E., and Zondervan, I. (2004).             V. V., Bae, K. S., et al. (2005). Gramella echinicola gen. nov., sp. nov., a
+   Polysaccharide aggregation as a potential sink of marine dissolved organic                   novel halophilic bacterium of the family Flavobacteriaceae isolated from the
+   carbon. Nature 428, 929–932. doi: 10.1038/nature02453                                        sea urchin Strongylocentrotus intermedius. Int. J. Syst. Evol. Microbiol. 55,
+Fernández-Gómez, B., Richter, M., Schüler, M., Pinhassi, J., Acinas, S. G., González,           391–394. doi: 10.1099/ijs.0.63314-0
+   J. M., et al. (2013). Ecology of marine Bacteroidetes: a comparative genomics             Nedashkovskaya, O. I., Kim, S. B., Vancanneyt, M., Lysenko, A. M., Shin, D.
+   approach. ISME J. 7, 1026–1037. doi: 10.1038/ismej.2012.169                                  S., Park, M. S., et al. (2006). Echinicola pacifica gen. nov., sp. nov., a novel
+Glöckner, F. O., Fuchs, B. M., Fuchs, B. M., Glo, F. O., and Amann, R. (1999).                  flexibacterium isolated from the sea urchin Strongylocentrotus intermedius.
+   Bacterioplankton compositions of lakes and oceans : a first comparison based                 Int. J. Syst. Evol. Microbiol. 56, 953–958. doi: 10.1099/ijs.0.64156-0
+   on fluorescence in situ hybridization. Appl. Environ. Microbiol. 65, 3721–3726.           Nelson, D. M., Treguer, P., Brzezinski, M. A., Leynaert, A., and Queguiner, B.
+Hutcheson, S. W., Zhang, H., and Suvorov, M. (2011). Carbohydrase systems of                    (1995). Production and dissolution of biogenic silica in the ocean: revised
+   Saccharophagus degradans degrading marine complex polysaccharides. Mar.                      global estimates, comparision with regional data and relationship to biogenic
+   Drugs 9, 645–665. doi: 10.3390/md9040645                                                     sedimentation. Global Biogeochem. Cycles 9, 359–372.
+Jung, J., and Park, W. (2013). Comparative genomic and transcriptomic analyses               Ochiai, A., Itoh, T., Kawamata, A., Hashimoto, W., and Murata, K. (2007).
+   reveal habitat differentiation and different transcriptional responses during                Plant cell wall degradation by saprophytic Bacillus subtilis strains: gene
+   pectin metabolism in Alishewanella species. Appl. Environ. Microbiol. 79,                    clusters responsible for rhamnogalacturonan depolymerization. Appl. Environ.
+   6351–6361. doi: 10.1128/AEM.02350-13                                                         Microbiol. 73, 3803–3813. doi: 10.1128/AEM.00147-07
+Kabisch, A., Otto, A., König, S., Becher, D., Albrecht, D., Schüler, M., et al.              Panschin, I., Huang, S., Meier-Kolthoff, J. P., Tindall, B. J., Rohde, M., Verbarg,
+   (2014). Functional characterization of polysaccharide utilization loci in the                S., et al. (2016). Comparing polysaccharide decomposition between the
+   marine Bacteroidetes ‘Gramella forsetii’ KT0803. ISME J. 8, 1492–1502.                       type strains Gramella echinicola KMM 6050T (DSM 19838T ) and Gramella
+   doi: 10.1038/ismej.2014.4                                                                    portivictoriae UST040801-001T (DSM 23547T ), and emended description of
+
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                                         12                                                February 2017 | Volume 8 | Article 220
+Tang et al.                                                                                                        Polysaccharides Utilization Systems in Marine Bacteroidetes
+
+
+
+   Gramella echinicola Nedashkovskaya et al. 2005 emend. Shahina et. Stand.                  Tamura, K., Stecher, G., Peterson, D., Filipski, A., and Kumar, S. (2013). MEGA6:
+   Genomic Sci. 11:37. doi: 10.1186/s40793-016-0163-9                                           molecular evolutionary genetics analysis version 6.0. Mol. Biol. Evol. 30,
+Park, B. H., Karpinets, T. V., Syed, M. H., Leuze, M. R., and Uberbacher, E.                    2725–2729. doi: 10.1093/molbev/mst197
+   C. (2010). CAZymes Analysis Toolkit (cat): web service for searching and                  Tans-kersten, J., Guan, Y., and Allen, C. (1998). Ralstonia solanacearum pectin
+   analyzing carbohydrate-active enzymes in a newly sequenced organism using                    methylesterase is required for growth on methylated pectin but not for bacterial
+   CAZy database. Glycobiology 20, 1574–1584. doi: 10.1093/glycob/cwq106                        wilt virulence. Appl. Environ. Microbiol. 64, 4918–4923.
+Pinhassi, J., Bowman, J. P., Nedashkovskaya, O. I., Lekunberri, I., Gomez-                   Taylor, J. D., Cottingham, S. D., Billinge, J., and Cunliffe, M. (2014). Seasonal
+   Consarnau, L., and Pedrós-Alió, C. (2006). Leeuwenhoekiella blandensis sp.                   microbial community dynamics correlate with phytoplankton-derived
+   nov., a genome-sequenced marine member of the family Flavobacteriaceae. Int.                 polysaccharides in surface coastal waters. ISME J. 8, 245–248.
+   J. Syst. Evol. Microbiol. 56, 1489–1493. doi: 10.1099/ijs.0.64232-0                          doi: 10.1038/ismej.2013.178
+Qin, Q. L., Zhang, X. Y., Wang, X. M., Liu, G. M., Chen, X. L., Xie, B.                      Teeling, H., Fuchs, B. M., Becher, D., Klockow, C., Gardebrecht, A., Bennke, C.
+   B., et al. (2010). The complete genome of Zunongwangia profunda SM-                          M., et al. (2012). Substrate-controlled succession of marine bacterioplankton
+   A87 reveals its adaptation to the deep-sea environment and ecological                        populations induced by a phytoplankton bloom. Science 336, 608–611.
+   role in sedimentary organic nitrogen degradation. BMC Genomics 11:247.                       doi: 10.1126/science.1218344
+   doi: 10.1186/1471-2164-11-247                                                             Terrapon, N., Lombard, V., Gilbert, H. J., and Henrissat, B. (2015). Automatic
+Rawlings, N. D., and Barrett, A. J. (1999). MEROPS: the peptidase database. Nucleic             prediction of polysaccharide utilization loci in Bacteroidetes species.
+   Acids Res. 27, 325–331. doi: 10.1093/nar/27.1.325                                            Bioinformatics 31, 647–655. doi: 10.1093/bioinformatics/btu716
+Rogowski, A., Briggs, J. A., Mortimer, J. C., Tryfona, T., Terrapon, N., Lowe, E.            Wiśniewski, J. R., Zougman, A., Nagaraj, N., and Mann, M. (2009). Universal
+   C., et al. (2015). Glycan complexity dictates microbial resource allocation in the           sample preparation method for proteome analysis. Nat. Methods 6, 359–362.
+   large intestine. Nat. Commun. 6:7481. doi: 10.1038/ncomms8481                                doi: 10.1038/nmeth.1322
+Roth, A. C., Gonnet, G. H., and Dessimoz, C. (2009). Algorithm of                            Wu, X., and Mort, A. (2014). Structure of a rhamnogalacturonan fragment
+   OMA for large-scale orthology inference. BMC Bioinformatics 10:220.                          from apple pectin : implications for pectin architecture. J. Carbohyd. Chem.
+   doi: 10.1186/1471-2105-10-220                                                                2014:e347381. doi: 10.1155/2014/347381
+Shipman, J. A., Berleman, J. E., and Salyers, A. A. (2000). Characterization
+   of four outer membrane proteins involved in binding starch to the                         Conflict of Interest Statement: The authors declare that the research was
+   cell surface of Bacteroides thetaiotaomicron. J. Bacteriol. 182, 5365–5372.               conducted in the absence of any commercial or financial relationships that could
+   doi: 10.1128/JB.182.19.5365-5372.2000                                                     be construed as a potential conflict of interest.
+Stamatakis, A. (2006). RAxML-VI-HPC: maximum likelihood-based phylogenetic
+   analyses with thousands of taxa and mixed models. Bioinformatics 22,                      Copyright © 2017 Tang, Lin, Han and Jiao. This is an open-access article distributed
+   2688–2690. doi: 10.1093/bioinformatics/btl446                                             under the terms of the Creative Commons Attribution License (CC BY). The use,
+Suvorova, I. A., Tutukina, M. N., Ravcheev, D. A., Rodionov, D. A., Ozoline, O.              distribution or reproduction in other forums is permitted, provided the original
+   N., and Gelfand, M. S. (2011). Comparative genomic analysis of the hexuronate             author(s) or licensor are credited and that the original publication in this journal
+   metabolism genes and their regulation in gammaproteobacteria. J. Bacteriol.               is cited, in accordance with accepted academic practice. No use, distribution or
+   193, 3956–3963. doi: 10.1128/JB.00277-11                                                  reproduction is permitted which does not comply with these terms.
+
+
+
+
+Frontiers in Microbiology | www.frontiersin.org                                         13                                               February 2017 | Volume 8 | Article 220
+

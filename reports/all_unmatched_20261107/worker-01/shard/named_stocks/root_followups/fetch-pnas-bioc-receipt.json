@@ -1,0 +1,34 @@
+{
+  "researcher": "/root/primary_context",
+  "fetches": [
+    {
+      "file": "captures/pnas-BioC.xml",
+      "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC6744853/unicode",
+      "accessed_at": "2026-11-08T04:24:51.174159+00:00",
+      "finished_at": "2026-11-08T04:24:51.351695+00:00",
+      "command": [
+        "curl",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-time",
+        "40",
+        "--retry",
+        "2",
+        "--output",
+        "reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/pnas-BioC.xml",
+        "--dump-header",
+        ".temp/all-unmatched-worker-01/shard/named_stocks/headers/pnas-BioC.xml.headers",
+        "--write-out",
+        "%{http_code}\n%{url_effective}\n",
+        "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC6744853/unicode"
+      ],
+      "exit_code": 0,
+      "http": "200\nhttps://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC6744853/unicode",
+      "stderr": "",
+      "sha256": "478f38e0765ee9c406831bb2fc27e8019ac5227c20c6b28ca0de582d8449354a",
+      "header_sha256": "afbe49363be97e8a2ec70998c2f8fffe79b6e97e59be60bc069d2c7fc4e91136",
+      "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+    }
+  ]
+}

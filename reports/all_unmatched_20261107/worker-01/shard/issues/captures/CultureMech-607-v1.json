@@ -1,0 +1,42 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "607",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:11.326997+00:00",
+  "completed_at": "2026-11-08T04:18:11.762380+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "> **Corrected 2026-10-14.** The first version overstated the gap; see the note in #609. This issue covers the same inline copies as #606, with corrected counts.\n\n## Problem\n\nSome media carry an inline copy of a stock solution and point it at a standalone solution record, through `term.id` or `culturemech_term`. In 17 media the copy and the record disagree, in one of two ways. Found while reviewing #605 at 96c5b0a (data identical to `main` 41d4d39).\n\n### 1. The copy lists components the record lacks (12 media, 27 components)\n\nThese components are emitted nowhere (#609). One is only a label variant.\n\n| Medium | Nearest reference → record | Components the record lacks |\n|---|---|---|\n| CultureMech:000295 `archaea/methanogenium_medium.yaml` | Trace minerals, nested in Wolfe's mineral solution → CultureMech:012882 | KOH solution |\n| CultureMech:002510 `archaea/JCM_J151_PYROCOCCUS_MEDIUM.yaml` | Trace minerals → CultureMech:012882 | KOH solution |\n| CultureMech:002619 `bacterial/jcm_medium_no_261.yaml` | Trace minerals → CultureMech:012882 | KOH solution |\n| CultureMech:002559 `bacterial/jcm_medium_no_197.yaml` | Trace mineral solution → CultureMech:012936 | KOH solution |\n| CultureMech:002970 `bacterial/modified_thermus_medium_with_3_nacl.yaml` | Castenholz basal salt solution → CultureMech:013022 | FeCl3 x 6 H2O solution (0.03%), Nitsch's trace elements |\n| CultureMech:010034 `bacterial/TOGO_M634_Modified_Thermus_Medium_With_3_NaCl.yaml` | Castenholz basal salt solution → CultureMech:013022 | FeCl3 x 6 H2O solution (0.03%), Nitsch's trace elements |\n| CultureMech:010035 `bacterial/TOGO_M635_Modified_Thermus_Medium_With_3_NaCl.yaml` | Castenholz basal salt solution → CultureMech:013022 | FeCl3 x 6 H2O solution (0.03%), Nitsch's trace elements |\n| CultureMech:003169 `bacterial/koko_medium.yaml` | Trace element solution SL-4 → CultureMech:013111 | CoCl2 x 6 H2O, CuCl2 x 2 H2O, H3BO3, MnCl2 x 4 H2O, Na2MoO4 x 2 H2O, NiCl2 x 6 H2O, ZnSO4 x 7 H2O |\n| CultureMech:010277 `bacterial/TOGO_M860_KOKO_Medium.yaml` | Trace element solution SL-4 → CultureMech:013111 | CoCl2 x 6 H2O, CuCl2 x 2 H2O, H3BO3, MnCl2 x 4 H2O, Na2MoO4 x 2 H2O, NiCl2 x 6 H2O, ZnSO4 x 7 H2O |\n| CultureMech:006689 `bacterial/for_dsm_12341.yaml` | Solution C (`mediadive.solution:1776`) → CultureMech:011213 (Na-DL-lactate) | Na-acetate |\n| CultureMech:006691 `bacterial/for_dsm_12344.yaml` | Solution C (`mediadive.solution:1776`) → CultureMech:011213 (Na-DL-lactate) | Na-propionate |\n| CultureMech:009693 `bacterial/alkaline_diluted_ams_medium.yaml` | Iron stock solution → CultureMech:013711 | EDTA x Fe(III) (label variant of the record's Fe(III)-EDTA) |\n\n### 2. The copy nests stocks the record does not link (8 media, 15 nested stocks)\n\n- Wolfe's mineral solution (CultureMech:013012) nests Trace minerals (CultureMech:012882) in `archaea/methanogenium_medium.yaml`.\n- Solution A (CultureMech:011207 and CultureMech:011211) nests Trace element solution SL-10 (CultureMech:014713) and Selenite-tungstate solution (CultureMech:015156) in 7 media.\n- None of these standalone records has `solutions`.\n\nThe nested stocks' components are counted once on their own records. But following references from the medium cannot reach them, as in the KGX graph (#608).\n\n## Questions to settle\n\n1. For each record, which version is right: the inline copy or the standalone record?\n   - Should Wolfe's mineral solution and Solution A link their nested stocks?\n   - Are the SL-4, KOH solution and Castenholz entries missing from the records, or added in the copies?\n   - Solution C (`mediadive.solution:1776`) is Na-DL-lactate in the record, but Na-acetate and Na-propionate in two copies. Either the reference is wrong, or one solution id is reused for per-medium variants.\n2. Should validation fail when an inline copy under a reference differs from its record?\n",
+    "closedAt": "2026-10-14T19:24:05Z",
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABcCW9NQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Duplicate of #606. The corrected counts are posted there.",
+        "createdAt": "2026-10-14T19:24:03Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/607#issuecomment-6176488757",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 607,
+    "state": "CLOSED",
+    "title": "Inline stock copies under solution references disagree with their standalone records in 17 media",
+    "updatedAt": "2026-10-14T19:24:05Z",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/607"
+  }
+}

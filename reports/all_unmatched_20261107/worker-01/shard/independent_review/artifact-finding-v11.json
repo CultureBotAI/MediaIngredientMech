@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-08T04:50:21.064806+00:00",
+  "reviewer": "/root/skeptical_review",
+  "finding_id": "IR-SHARD-ARTIFACT-11",
+  "severity": "major",
+  "status": "open_pending_successor_review",
+  "origin": "Consolidated preparation-quantity correction group requested by coordinator/root. Root first identified named added-water normalization; primary author independently identified unsupported CCAP solvent; independent reviewer reproduced current payload/source mismatch and identified same pattern in KG170. This receipt does not misattribute all discoveries to independent reviewer.",
+  "description": "Recipe added-water amounts were represented as final-solution concentrations. Nominal-basis prose does not change the native meaning of G_PER_L/L_PER_L. Related nested-stock and solvent overstatements cross the same preparation-boundary.",
+  "observed_payloads": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_1474_Solution_A.yaml",
+      "sha256": "070f11e282e6bde44c155ad3043c344b5f82df6809e8d3db76105d5494a658f6"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml",
+      "sha256": "27b310f704f90db0ec0c081d73d0eb762ef66ce6a5ca37aa8bcb304e0be4e1b8"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/JCM_265_Wolfe_Mineral_Solution.yaml",
+      "sha256": "0bc15ad609fb39f33c9f1b7ad5dbac5fa06b9684390734957a6f1258852aaeec"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/CCAP_PE_Salt_Solution_Stock.yaml",
+      "sha256": "85efca4816551571534c0112fd8ea70edc867e0961bb9d83c896fa2586a10919"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/stock431-v2/proposal-after.yaml",
+      "sha256": "878341ab51136f29be60c6a7635ce03a64796e63a88f10f208e57dde8408e806"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/Mineral_Solution_See_Medium_No_976.yaml",
+      "sha256": "260884ab08b4549d0df33512d48c546143d8218d398700f980d8066761dce816"
+    }
+  ],
+  "subfindings": [
+    {
+      "scope": "JCM1474A / NBRC1257 bicarbonate and other added-water stock recipes",
+      "observed": "10g eachphosphate+100mLwater stored100G_PER_L/1L_PER_L;8.4gNaHCO3+100mLwater stored84G_PER_L/1L_PER_L. These are added-water recipes, not measured final volumes.",
+      "required": "Preserve literalbatch amounts or explicit preparation-water units; keep actual final-volume/concentration statements distinct."
+    },
+    {
+      "scope": "JCM265 inherited JCM151 trace mineral stock",
+      "observed": "One full JCM151 input batch was flattened into a1L aliquot of its prepared stock without evidence that added-water1L yields exactly1L finishedstock.",
+      "required": "Preserve source-defined nested1L stock aliquot and exact underlying recipe separately; do not invent component-owner reference."
+    },
+    {
+      "scope": "CCAPPE stock case45",
+      "observed": "SpecificPE source gives salts per1000cm3stock but no water row; originalproposal invented1Ldistilledwater.",
+      "required": "Use inspected authoritative generalCCAPstock instructions for deionizedwater as explicitinference, omit fixed solvent quantity, retain actual stockbasis."
+    },
+    {
+      "scope": "JCM431 / KG170JCM976",
+      "observed": "Printed1Lwater+salts/titrant rendered G_PER_L/MG_PER_L and1L_PER_L despite unmeasuredfinalvolume.",
+      "required": "Preserve addedwaterbasis, unresolvedvariabletitrant and sourceworkflow distinctions."
+    }
+  ],
+  "native_review_self_correction": "Earlier independent431v2 pass accepted nominal concentration wording; that quantitative conclusion is superseded by this finding. Original review remains immutable and exact corrected successor requires re-review.",
+  "scope_note": "Only proposed artifact bytes affected. All maintained ingredient files and canary remain unchanged."
+}

@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-08T04:54:56.144463+00:00",
+  "pattern": "mediadive\\.ingredient:(572|2389)|10543|1667|DSMZ.?589|distilled or tap|mim-fingerprint|IR-SHARD-ARTIFACT-(10|11)",
+  "ignored_files_included": true,
+  "explicit_files_read": true,
+  "results": [
+    {
+      "path": ".temp/all-unmatched-worker-01/shard/mim-issues-live.json",
+      "sha256": "4579a8950f0b6ab1a8c53dcd4c02c8269679f74b42362567c67803d43c825c30",
+      "items_searched": 620,
+      "matches": []
+    },
+    {
+      "path": ".temp/all-unmatched-worker-01/shard/culturemech-issues-live.json",
+      "sha256": "02f2b1593d84def93793c81ac55ebc76ac368774d9a7ac10a10714e3c25d88d0",
+      "items_searched": 349,
+      "matches": [
+        {
+          "number": 665,
+          "url": "https://github.com/CultureBotAI/CultureMech/issues/665",
+          "title": "NLDM Carnitine Hydrochloride is grounded to CHEBI:91318 ((R)-oleoylcarnitine hydrochloride) despite CAS 461-05-2",
+          "matched_fragments": [
+            "t CAS and MW are DL-carnitine hydrochloride (PubChem CID 5970, C7H16ClNO3, 197.66; NCIT:C216679 \"DL-Carnitine Hydrochloride\"). The mapping came from `ols_exact (confidence: 0.92)`.\n\n**Where:** 2"
+          ],
+          "full_body": "Found during decision support for MediaIngredientMech #1004 (carnitine hydrochloride identity).\n\n**What happens:** the NLDM \"Carnitine Hydrochloride\" ingredient is grounded to `CHEBI:91318`, **(R)-oleoylcarnitine hydrochloride**, a long-chain acylcarnitine. But its own notes say `CAS: 461-05-2; MW: 197.66; From NLDM_metabolites`. That CAS and MW are DL-carnitine hydrochloride (PubChem CID 5970, C7H16ClNO3, 197.66; NCIT:C216679 \"DL-Carnitine Hydrochloride\"). The mapping came from `ols_exact (confidence: 0.92)`.\n\n**Where:** 22 files reference `CHEBI:91318`, including `data/merge_yaml/merged/NLDM_defined.yaml` (around line 785), `NLDM_defined_pH5.yaml`, `NLDM_defined_pH8.yaml`, `NLDM_defined_no_P.yaml`, and `src/culturemech/data/chebi/structure_index.csv`. Checked with `gh search code`, so generated or ignored copies may not be included.\n\n**Suggested fix:** reground the NLDM carnitine hydrochloride ingredient using its CAS 461-05-2 to the carnitine hydrochloride identity MediaIngredientMech settles in #1004. Until then, use carnitine (CHEBI:17126) as the parent, not an acylcarnitine. Then add a guard against OLS label matches that contradict the recorded CAS or MW.\n"
+        }
+      ]
+    }
+  ]
+}

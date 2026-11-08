@@ -1,0 +1,129 @@
+identifier: kgmicrobe.ingredient:mediadive_607_mineral_solution
+preferred_term: MediaDive 607 mineral solution
+synonyms:
+- synonym_text: Mineral solution
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: CultureMech:013996,
+    CultureMech:014786; retained source-local label, excluded from global resolution
+    (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mediadive_607_mineral_solution
+  ontology_label: MediaDive 607 mineral solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/rest/solution/607
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '6'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '12'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: (NH4)2SO4
+  reference_scope: UNMAPPED
+  concentration_value: '6'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1.6'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '2.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1000'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/607
+    source_record: MediaDive 607 mineral solution; complete named stock table and
+      preparation notes
+    notes: Exact source solution607 is used in both J1029/main5080 and DSMZ330/main606,38mL
+      each. Source accession and full formula establish identity. Frozen receiving
+      recipe cites CultureMech:014792; standalone target composition was not included
+      in frozen inputs and must not be declared EXACT_FORMULATION solely from that
+      pointer. Literal printed masses and added distilled-water volume per source
+      preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L
+      added water, not a final1L solution or final concentration.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf
+    source_record: MediaDive 607 mineral solution; complete named stock table and
+      preparation notes
+    notes: Exact source solution607 is used in both J1029/main5080 and DSMZ330/main606,38mL
+      each. Source accession and full formula establish identity. Frozen receiving
+      recipe cites CultureMech:014792; standalone target composition was not included
+      in frozen inputs and must not be declared EXACT_FORMULATION solely from that
+      pointer. Literal printed masses and added distilled-water volume per source
+      preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L
+      added water, not a final1L solution or final concentration.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity.'
+notes: 'Exact source solution607 is used in both J1029/main5080 and DSMZ330/main606,38mL
+  each. Source accession and full formula establish identity. Frozen receiving recipe
+  cites CultureMech:014792; standalone target composition was not included in frozen
+  inputs and must not be declared EXACT_FORMULATION solely from that pointer. Literal
+  printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+  describes a recipe batch containing1L added water, not a final1L solution or final
+  concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for
+  provenance and occurrence-specific decisions but native resolution must not expose
+  them as global synonyms. The source-qualified preferred term denotes this exact
+  preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+  are asserted. Any UNMAPPED part retains its literal source identity; component grounding
+  is separate from established whole-stock recipe identity.'
+culturemech_reference:
+  medium_id: CultureMech:014792
+  relationship: CANDIDATE_UNVERIFIED
+  evidence: Both frozen receiving MediaDive607 ingredient rows link this stock ID
+    and primary solution607/DSMZ330 agree on five salts and quantities. The standalone
+    CultureMech014792 payload is absent from the frozen input recipes (ignored-inclusive
+    queue search); exact formulation comparison is not claimed.
+curation_history:
+- timestamp: '2026-11-08T04:36:11.846882+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 125. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.590402+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true

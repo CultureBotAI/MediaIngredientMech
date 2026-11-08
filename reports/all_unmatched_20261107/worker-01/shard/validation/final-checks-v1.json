@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-08T05:11:16.610318+00:00",
+  "decisions_sha256": "c952d422965d656639bd40fc7b0ac2945b7b239e81a7a64f3404dde3f78ebed6",
+  "proposals_sha256": "29f50258a487cf90c769e19bf5944be49c3c32fea0195f6bb1c8e53deafa4daa",
+  "strict_reuse_payloads_identical_to_reviewed_snapshot": true,
+  "checks": [
+    {
+      "path": "structural-final-v4.json",
+      "sha256": "e60477337c928048cdd82da440f969e35934d91d0e2ff02e556631dbc06e3774",
+      "summary": "PASS:188exact source cases and complete review references"
+    },
+    {
+      "path": "validation/native-generated-predicates-final-v4.json",
+      "sha256": "83c0535540b4207932e9a103d157dad8faaa39cf07c6c81bbfaffe414e5ed2bf",
+      "summary": "PASS:76 exact proposed payloads /83 isolated rows, #1164 negative control and exact registry/predicate/alias checks"
+    },
+    {
+      "path": "validation/full-catalog-partonomy-final-v4.json",
+      "sha256": "2dafea0961fc7b2f337ed60f1fece7815546dfd756630ae3362a1f0e4063f91d",
+      "summary": "PASS:zero complete-overlay violations; three induced orphans withoutUWdependencies"
+    },
+    {
+      "path": "validation/combined-proposals-corrected-v3.json",
+      "sha256": "44269f3c6f3d4fc772184d42b747792ead4d7f80a98fc896ab5ac9cf2b8205d3",
+      "summary": "PASS:native strict76/0; exact payload/owner metadata identical to reviewed scientific snapshot"
+    },
+    {
+      "path": "validation/atmosphere-partonomy-regression-v2.json",
+      "sha256": "1a8ce85df185f78e2e89e797f3861065b2c73b9bce55c6dd386e876bd3d37a22",
+      "summary": "PASS:three exact gas removals, other components/history unchanged, saturation kept"
+    },
+    {
+      "path": "validation/negative-controls-v1.json",
+      "sha256": "056c3ed81dab7a7cfcce86d72ee8f7a332ac34820b70156a0c1628a53a3a63f3",
+      "summary": "PASS:four actual structural negative controls rejected"
+    },
+    {
+      "path": "independent_review/independent-native-review-check-final-v1.json",
+      "sha256": "d969b159ea2137ed2f6e7d02793a9bc366f133e15ca55c16bf324416c49b030b",
+      "summary": "PASS:1048 retained native bundles valid, declared scopes only"
+    },
+    {
+      "path": "validation/preservation-final-v2.json",
+      "sha256": "775cc6712cf2476d217be0c3b1b76f88f9cfaefcecd4cdd3f54706b1f3e3f458",
+      "summary": "PASS:14405Gitregular+2symlinktargets+197canary unchanged"
+    },
+    {
+      "path": "validation/staged-scope-and-whitespace-v3.json",
+      "sha256": "7be55312a05664de6d28fc01d260dc9538df31ea8b809b913370ac0d93986b9c",
+      "summary": "PASS:authorized staged scope and authored whitespace; whole raw-capture whitespace check exit2 retained"
+    }
+  ],
+  "not_run": [
+    "Maintained data synchronization/regeneration and full data QC",
+    "Canonical SSSOM/unified publication or selector updates",
+    "Downstream graph rebuild"
+  ],
+  "scope": "Evidence-only worker branch. No omitted check is reported as a pass. Whole-source scientific review is independently recorded, distinct from structural validation."
+}

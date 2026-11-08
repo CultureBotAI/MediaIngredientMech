@@ -1,0 +1,26 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "752",
+    "--repo",
+    "CultureBotAI/MediaIngredientMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:10.160431+00:00",
+  "completed_at": "2026-11-08T04:18:10.577554+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Downstream [kg-microbe #1123](https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1123) identifies 17 explicitly MIM-derived fallback claims whose matching MIM rows occur only in the withheld release. This is a bounded follow-up to #718.\n\nNine release decisions still describe produces/process phrases as currently exported after #703 removed them from the delivered rows: Kijanimicin, Nocamycin, Monazomycin, Alanosine, Angustmycin, Rubradirin, Ferroverdin, Miharamycin A, Stallimycin. Compare each exact `mapping-dispositions.tsv` reason with `withheld_mappings.sssom.tsv` in `mim-sssom-2026-09-21`. Several reasons also cite provisional roles, which need separation from mapping-only decisions.\n\nPreserve and review substantive concerns:\n\n- Hydrogen gas still exports `H2_CO2` and `H2_methanol` as identity aliases.\n- Angustmycin has the existing A/C ambiguity in #741.\n- Rubradirin maps to Rubradirin B without adequate scope evidence.\n- Rhodomycin A, Pluramycin A and Racemomycin E have broader MeSH targets.\n- Abyssomicin D, Butyricin 7423, Etamycin and beta-Lipomycin require their specific evidence/alias concerns resolved.\n\nAcceptance: preserve historical decisions, add current row/owner-bound mapping-specific dispositions with reproducible evidence, update misleading present-tense explanations, and explicitly decide all 17 claims. Cleanup, a matching label, or WITHHOLD alone does not approve a complete row. Keep role approval separate. Reproduce both partitions and native validation; publish changed approvals only in a newly reviewed bundle. Published assets remain immutable.\n\nDownstream must independently review its narrower trait-to-chemical assertions and runtime routes.\n",
+    "closedAt": "2026-09-25T05:48:17Z",
+    "comments": [],
+    "number": 752,
+    "state": "CLOSED",
+    "title": "Re-review the 17 kg-microbe fallback blockers and refresh nine stale withholding reasons",
+    "updatedAt": "2026-09-25T05:48:17Z",
+    "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/752"
+  }
+}

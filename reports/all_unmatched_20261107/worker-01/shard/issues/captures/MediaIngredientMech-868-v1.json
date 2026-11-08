@@ -1,0 +1,26 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "868",
+    "--repo",
+    "CultureBotAI/MediaIngredientMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:10.545958+00:00",
+  "completed_at": "2026-11-08T04:18:10.888778+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Found reviewing #863.\n\nSince culturebotai-claw#571, the unified builder publishes MIM's label-index answer ahead of a recipe's own `term.id`. Where MIM's ruling is wrong, the snapshot is now wrong in the same way. The reviewer rebuilt main's MIM inputs with the same claw (a5d56296) and CultureMech (0e409dd9): that build differs from #863's snapshot only in the rows #863 changes on purpose. So every rebuild with the pinned producer publishes these rows. Their causes are in MIM records.\n\nFor most of these rows `culturemech_term_id` is now blank as well. claw's `_published_ids` withholds a same-prefix recipe id that disagrees with MIM, so the recipe's own id no longer appears anywhere in the row.\n\nValues below are from the snapshot #863 publishes. Labels were checked against the local ChEBI build.\n\n**Right on main, wrong now**\n\n| Labels (occurrences) | main `chebi_id` | now `chebi_id` / `mim_id` | Source record | Fix tracked in |\n|---|---|---|---|---|\n| `MgSO .7H O` (17) | CHEBI:31795 | CHEBI:32599 / CHEBI:32599 | `Magnesium_Sulfate.yaml` (synonym on the anhydrous record) | #811 |\n| `DL-Na-malate` (3), `DL-Sodium malate` (2), `Na malate` (4), `Na-DL-malate` (4), `Na-malate` (6), `Na2-DL-malate` (6), `Sodium DL-malate` (11), `Sodium malate` (14) | CHEBI:91260 | CHEBI:91261 / CHEBI:91261 | `Sodium_Malate.yaml` ((S)-malate identity, DL synonyms) | #811 |\n| `Na2SiO3` (8) | CHEBI:60720 | CHEBI:132108 / CHEBI:132108 | `Na2sio3_X_9_H2o.yaml` (anhydrous name on the nonahydrate) | #811 |\n| `Magnesium Chloride` (5) | CHEBI:6636 | CHEBI:86345 / CHEBI:86345 | `Magnesium_Chloride.yaml` (identity is the hexahydrate) | #811 |\n| `DL-Tryptophan` (4) | CHEBI:27897 | CHEBI:57912 / CHEBI:57912 | `Dl-tryptophan.yaml` (identity is L-tryptophan zwitterion) | #811 |\n| `H3BO2` (3) | CHEBI:33118 | CHEBI:38267 / CHEBI:38267 | `H3bo2.yaml` (boronic acid; label likely means boric acid) | #811 |\n\n**Wrong on main, wrong differently now**\n\n| Labels (occurrences) | main `chebi_id` | now `chebi_id` / `mim_id` | Source record | Fix tracked in |\n|---|---|---|---|---|\n| `MgSO4 x H2O` (6), `MgSO4 . H2O` (1) | CHEBI:32599 | CHEBI:31795 / CHEBI:31795 | REJECTED tombstone `Mgso47h2o.yaml` | #811 |\n| `NiCl2 x H2O` (3), `NiCl2・H2O` (1) | CHEBI:34887 | CHEBI:53542 / CHEBI:53542 | tombstone `Nicl2_X_6_H2o.yaml` | #811 |\n| `NaH2PO4 x H2O` (22), `NaH2PO4・H2O` (1), `NaH2PO4·H2O` (1) | CHEBI:37585 | (none) / kgmicrobe.compound:nah2po4_x_2_h2o | `Nah2po4_X_2_H2o.yaml` (monohydrate spellings on the dihydrate) | #758 |\n| `Potassium phosphate` (2) | CHEBI:131527 | CHEBI:63036 / CHEBI:63036 | `Kh2po4.yaml` | #811 |\n| `MnSO4・xH2O` (61) | CHEBI:86360 | CHEBI:86364 / CHEBI:86364 | tombstone `Mnso4_X_1_H2o.yaml` (variable hydrate pinned to the monohydrate) | #811 |\n\n**Generic class whose row CAS names a specific compound (untracked before this issue)**\n\n| Labels (occurrences) | main `chebi_id` | now `chebi_id` / `mim_id` | Source record | Fix tracked in |\n|---|---|---|---|---|\n| `MES` (80) | CHEBI:39005 | CHEBI:39010 / CHEBI:39010 | `Mes.yaml`: identity CHEBI:39010 (structureless class), CAS 4432-31-9 is the free acid CHEBI:39005 | this issue |\n| `Inositol` (24) | CHEBI:17268 | CHEBI:24848 / CHEBI:24848 | `Inositol.yaml`: identity CHEBI:24848 inositol, CAS 87-89-8 is myo-inositol CHEBI:17268 | this issue |\n| `Vitamin B12` (2155), `vitamin B12` (27) | (none) | CHEBI:176843 / CHEBI:176843 | `Vitamin_B12.yaml`: identity CHEBI:176843 (vitamer class), CAS 68-19-9 is cyanocobalamin | this issue |\n\n**What to do**\n- **#811 and #758 rows:** fix the source records listed in the table, retyping wrong-form synonyms to `REJECTED_LABEL` or correcting the identity, then rebuild the snapshot. The rejection ledger cannot fix these rows, because it cannot reject MIM's own identity.\n- **The three class rows (MES, Inositol, Vitamin B12):** decide whether each record denotes the specific compound its CAS names (MES free acid CHEBI:39005, myo-inositol CHEBI:17268, cyanocobalamin), or whether the CAS should be withdrawn from a class-level identity. Vitamin B12 alone accounts for 2,182 recipe occurrences.\n\nPublishing these rows in #863 was an explicit decision. The #863 review counted 27 rows (3,227 occurrences) that the same rebuild moves from an anhydrous term to the correct hydrate term. It also stops 20 hydrate rows (241 occurrences) from publishing their anhydrous parent, relative to main.\n",
+    "closedAt": null,
+    "comments": [],
+    "number": 868,
+    "state": "OPEN",
+    "title": "Unified mapping now publishes MIM's wrong label-index identities for 26 labels (claw#571 rebuild in #863)",
+    "updatedAt": "2026-10-12T03:39:32Z",
+    "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/868"
+  }
+}

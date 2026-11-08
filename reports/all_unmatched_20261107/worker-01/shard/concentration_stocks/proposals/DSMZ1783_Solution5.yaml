@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:dsmz1783_solution5
+preferred_term: DSMZ1783 Solution5 Bacto peptone stock
+synonyms:
+- synonym_text: Solution 5
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://mediadive.dsmz.de/pdf/1783; unqualified/cross-reference
+    spelling is retained for provenance only and requires the bound source occurrence
+    to resolve.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: COMPLEX_UNDEFINED
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz1783_solution5
+  ontology_label: DSMZ1783 Solution5 Bacto peptone stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/pdf/1783
+    notes: SourceexplicitBD-Difcopeptone10gwith100mLwater,autoclaved121C20min. Receivingdose0.5mLentersfreshmixedsolution.
+      Sourcealternativewithoutpeptoneandincreasedaminoacidsisadifferentmediumbranch,notanalternativecompositionofthisstock.
+components:
+- component_name: Bacto peptone (BD-Difco)
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_100_ML_PREPARATION_WATER
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ML_PREPARATION_WATER
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/pdf/1783
+    source_record: DSMZ1783 Solution5 Bacto peptone stock
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: SourceexplicitBD-Difcopeptone10gwith100mLwater,autoclaved121C20min. Receivingdose0.5mLentersfreshmixedsolution.
+  Sourcealternativewithoutpeptoneandincreasedaminoacidsisadifferentmediumbranch,notanalternativecompositionofthisstock.
+  Source occurrence IDs and receiving doses remain in the campaign ledger/CultureMech;
+  no complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+curation_history:
+- timestamp: '2026-11-08T04:40:36.195612+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. SourceexplicitBD-Difcopeptone10gwith100mLwater,autoclaved121C20min.
+    Receivingdose0.5mLentersfreshmixedsolution. Sourcealternativewithoutpeptoneandincreasedaminoacidsisadifferentmediumbranch,notanalternativecompositionofthisstock.
+    No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true

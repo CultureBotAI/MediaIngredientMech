@@ -1,0 +1,61 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "58d67db32a86a359869819624568d625e7051358",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Pipes.yaml",
+        "sha256": "b1c03abbda78f24f8a0c533d6e25e4e067da3f54558fc53295348b244b66d28a",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-two-strict-command.json",
+        "sha256": "cf60ba4d3404e1fac41b2e54c718e5993c55b2a98f1783e816bbb154f07ba7af",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/CHEBI-39033.json",
+        "sha256": "4209365b4df4a8a75c070d0fd7eaa29d040363a25998a7966cb7ef04b173411c",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/TOGO-M2567.json",
+        "sha256": "c9a50e065c57cb4a13ed2ef29ad01f58a3cffd829971253e44d2e0f44d4a4731",
+        "role": "context"
+      },
+      {
+        "path": "reports/semantic_review_20260921/resolution/finding-dispositions.tsv",
+        "sha256": "c56c4d4d7332181e239798804ba80a6f49cfc7ed81d835c29312f25a963b64cf",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "CHEBI:39033",
+      "path": "data/ingredients/mapped/Pipes.yaml",
+      "label": "PIPES",
+      "kind": "maintained",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Pipes.yaml",
+          "role": "maintained ingredient; aggregate must be synchronized only at authorized integration"
+        }
+      ]
+    }
+  ]
+}

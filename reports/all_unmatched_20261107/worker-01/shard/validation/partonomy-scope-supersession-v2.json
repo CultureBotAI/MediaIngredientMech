@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-08T05:00:26.421108+00:00",
+  "tracking_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1168",
+  "historical_receipt": {
+    "path": "validation/combined-proposals-content-final-v1.json",
+    "sha256": "e84384f598db04c9ae96b9e901932e92dd0067a5f3366f0141653daba6ad89fa",
+    "proposed_parent_violations": [],
+    "incorrectly_labelled_unrelated_baseline_count": 3
+  },
+  "independent_native_reproduction": {
+    "path": "validation/full-catalog-partonomy-before-dependencies-v2.json",
+    "sha256": "17cc27d4c1af6847b3de75f95b6bc0322c67d03412a845cf92b1c7fc290562f4",
+    "baseline_violations": [],
+    "new_dependency_violations": [
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_sulfur",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base",
+        "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      },
+      {
+        "code": "UNRESOLVED_MIM_REFERENCE",
+        "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_mo",
+        "message": "component 10 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+      }
+    ]
+  },
+  "disposition": "The old scoped PASS remains a truthful check of proposed parents only, but its baseline attribution was wrong and it does not establish full-catalog integrity. Require the new unfiltered native overlay regression after source-reviewed dependencies. Old helper, inputs, result and reviews remain immutable.",
+  "corrective_action": "Use exact before-owner paths for replacement and inspect every resulting catalog record; do not key replacement by after identifier or filter errors to new parent IDs.",
+  "final_status": "awaiting dependency proposals and independent re-review"
+}

@@ -1,0 +1,77 @@
+{
+  "at": "2026-11-08T04:50:39.928257+00:00",
+  "reviewer": "/root/skeptical_review",
+  "finding_id": "IR-SHARD-ARTIFACT-10",
+  "severity": "major",
+  "status": "open_pending_final_active_ledger_deduplication",
+  "description": "Four chemically equivalent source preparations received two proposed registry owners from separate author lanes. One distinct stock must retain one active proposedidentity; sourcecontext differsfromwholeparentstock applicability.",
+  "pairs": [
+    {
+      "retired_duplicate_named_payload": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1339_Phenanthrene_Solution.yaml",
+        "sha256": "5b40b69031ff9b73f4a259f979d86f283cca9584890dce9c5d865824a653db06"
+      },
+      "canonical_successor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1339_Phenanthrene_DMSO_Stock-v2.yaml",
+        "sha256": "3cb65a45ac4b2ba9a0a8e3b4a4d42b864bcf206ce2973f6aa4a7bfb2a9eeb750"
+      },
+      "independent_source_comparison": "Exact same NBRC1339 stock:250mMphenanthrene/DMSO,filtersterilized; namedTOGOM2041 binding same original.",
+      "status": "canonical_successor_scientifically_supported; finalactiveledger/backlinks stillpending"
+    },
+    {
+      "retired_duplicate_named_payload": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_943_Metal_Salt_44.yaml",
+        "sha256": "05b5ca36872439f8bf24e0fe077f5fe175d4880d96d881d924744a1b5a006aaf"
+      },
+      "canonical_successor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC943_Metal_Salt_44_Stock-v2.yaml",
+        "sha256": "1aeb662cada6871acd1c7f7fd4f92d626e8c61e7f1a5cfd5a8ceaffae7a47459"
+      },
+      "independent_source_comparison": "Same NBRC943100mLwater+7solutes+unquantifiedH2SO4; nested50mL ingredient of Hutner is auxiliary only, not wholeparentidentity.",
+      "status": "canonical_successor_scientifically_supported; finalactiveledger/backlinks stillpending"
+    },
+    {
+      "retired_duplicate_named_payload": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Bicarbonate_Solution.yaml",
+        "sha256": "27b310f704f90db0ec0c081d73d0eb762ef66ce6a5ca37aa8bcb304e0be4e1b8"
+      },
+      "canonical_successor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml",
+        "sha256": "61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c"
+      },
+      "independent_source_comparison": "Bothprimary1257/1321 print8.4gNaHCO3+100mLwater,CO2saturation,sealedCO2autoclaving. Exactpreparation equivalence, not guessedfinal100mL.",
+      "status": "canonical_successor_scientifically_supported; finalactiveledger/backlinks stillpending"
+    },
+    {
+      "retired_duplicate_named_payload": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/proposals/NBRC_1257_Sulfide_Solution.yaml",
+        "sha256": "d4fbaffcfa77390358456d30b6a8e78aeaa1a18b3513f039c285029baffc8922"
+      },
+      "canonical_successor": {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml",
+        "sha256": "12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5"
+      },
+      "independent_source_comparison": "1257 prints12g+50mLwater,1321 prints24g+100mLwater; same scaledprecursor ratio andfiltration/N2storage, notidenticalbatchsize ormeasuredfinalmolarity.",
+      "status": "canonical_successor_scientifically_supported; finalactiveledger/backlinks stillpending"
+    }
+  ],
+  "primary_sources": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html",
+      "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1321.html",
+      "sha256": "471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1339.html",
+      "sha256": "a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-943.html",
+      "sha256": "271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593"
+    }
+  ],
+  "required_correction": "Keep exact canonical CS successor, consolidate case and occurrence backlinks, point Hutner component to sharedMetal44 withoutmappingwholeHutnertoMetal44; remove duplicate activeproposal IDs while preserving oldcaptured drafts. Verify finalidentifier uniqueness, proposed-parent references and complete casecoverage."
+}

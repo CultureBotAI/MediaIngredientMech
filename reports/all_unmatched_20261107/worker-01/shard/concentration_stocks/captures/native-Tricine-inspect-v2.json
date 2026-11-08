@@ -1,0 +1,61 @@
+{
+  "status": "inspection_only",
+  "repository": "CultureBotAI/MediaIngredientMech",
+  "source": {
+    "git_revision": "58d67db32a86a359869819624568d625e7051358",
+    "state": "working_tree",
+    "inputs": [
+      {
+        "path": "MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+        "role": "context"
+      },
+      {
+        "path": "data/ingredients/mapped/Tricine.yaml",
+        "sha256": "a437294e8d72a87d9e0312005d7c1426fc95cd4af5a885f7724910a26d8c0187",
+        "role": "target"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-two-strict-command.json",
+        "sha256": "cf60ba4d3404e1fac41b2e54c718e5993c55b2a98f1783e816bbb154f07ba7af",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/CHEBI-39063.json",
+        "sha256": "050fe68dd8da2a978ecdbc057a1f8593051f2a67fec104d9a765d16ca20a6db8",
+        "role": "context"
+      },
+      {
+        "path": "reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/supplemental-web-response.json",
+        "sha256": "5486f068be17341f1551c55dc9aab68709cff71f4cc8c7608bdad4dae26cd8f4",
+        "role": "context"
+      },
+      {
+        "path": "reports/semantic_review_20260921/resolution/finding-dispositions.tsv",
+        "sha256": "c56c4d4d7332181e239798804ba80a6f49cfc7ed81d835c29312f25a963b64cf",
+        "role": "context"
+      },
+      {
+        "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+        "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+        "role": "context"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "CHEBI:39063",
+      "path": "data/ingredients/mapped/Tricine.yaml",
+      "label": "Tricine",
+      "kind": "maintained",
+      "record_class": "IngredientRecord",
+      "owner_paths": [
+        {
+          "repository": "CultureBotAI/MediaIngredientMech",
+          "path": "data/ingredients/mapped/Tricine.yaml",
+          "role": "maintained ingredient; aggregate must be synchronized only at authorized integration"
+        }
+      ]
+    }
+  ]
+}

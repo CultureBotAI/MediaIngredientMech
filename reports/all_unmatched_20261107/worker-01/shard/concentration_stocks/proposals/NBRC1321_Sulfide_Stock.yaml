@@ -1,0 +1,63 @@
+identifier: kgmicrobe.ingredient:nbrc1321_sulfide_stock
+preferred_term: NBRC1321 sulfide stock from sodium sulfide nonahydrate
+synonyms:
+- synonym_text: Sulfide solution (1.0 M)*******
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1321_sulfide_stock
+  ontology_label: NBRC1321 sulfide stock from sodium sulfide nonahydrate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+    notes: Footnote*******states24gNa2S·9H2O and100mLdistilledwater,filtersterilizedandstoredunderN2;
+      sourcecallsit1M. Preservewateraddedbasisandnominalmolaritywithoutasserting24gperfinal100mL.
+      Receivingdoseis1.5mL; different5%andneutralizedsulfidestocksremainseparate.
+components:
+- component_name: Na2S·9H2O
+  reference_scope: UNMAPPED
+  concentration_value: '24'
+  concentration_unit: G_PER_100_ML_PREPARATION_WATER
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ML_PREPARATION_WATER
+- component_name: Nitrogen
+  reference_scope: UNMAPPED
+  source: Stored underN2afterfiltersterilization; gasamountunspecified.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+    source_record: NBRC1321 sulfide stock from sodium sulfide nonahydrate
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: Footnote*******states24gNa2S·9H2O and100mLdistilledwater,filtersterilizedandstoredunderN2;
+  sourcecallsit1M. Preservewateraddedbasisandnominalmolaritywithoutasserting24gperfinal100mL.
+  Receivingdoseis1.5mL; different5%andneutralizedsulfidestocksremainseparate. Source
+  occurrence IDs and receiving doses remain in the campaign ledger/CultureMech; no
+  complete medium is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+curation_history:
+- timestamp: '2026-11-08T04:40:36.187879+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. Footnote*******states24gNa2S·9H2O
+    and100mLdistilledwater,filtersterilizedandstoredunderN2; sourcecallsit1M. Preservewateraddedbasisandnominalmolaritywithoutasserting24gperfinal100mL.
+    Receivingdoseis1.5mL; different5%andneutralizedsulfidestocksremainseparate. No
+    maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true

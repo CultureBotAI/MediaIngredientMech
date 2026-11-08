@@ -1,0 +1,289 @@
+# Worker01 optional bicarbonate non-name typing proposal
+
+- Review: 20261108T042245Z-w01-bicarbonate-nonname-proposal-author
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:22:45.633726Z
+- Finished UTC: 2026-11-08T04:22:45.634082Z
+- Reviewer: /root/issue_context (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+The two bare fragments are not identity-bearing names. Native policy already excludes them; optional explicit REJECTED_LABEL typing is source-supported but changes no current resolution/export eligibility. Entire stock owner and held publication payload are not approved.
+
+## Scope And Provenance
+
+Full current owner and exact proposed payload read, with substantive judgment limited to the two non-name types and unchanged identity guards.
+
+Selection: KG26 allocation case163, exact current stock owner and artifact-only proposal
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| kgmicrobe.ingredient:84_gl_nahco3_solution | data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml | maintained | 84 g/L NaHCO3 solution |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Source applicability and non-name distinction | passed | True | kgmicrobe.ingredient:84_gl_nahco3_solution | Raw stock concentration and CO2 preparation support non-name classification; no identity redirect. |
+| Actual native resolving behavior before and after | passed | True | kgmicrobe.ingredient:84_gl_nahco3_solution | Both false in both versions; no behavior-change claim. |
+| Guarded structural diff and native validated writer | passed | True | kgmicrobe.ingredient:84_gl_nahco3_solution | Two type fields plus history only; maintained original bytes unchanged. |
+| Strict original/proposed schema validation | passed | True | kgmicrobe.ingredient:84_gl_nahco3_solution | 2 files,0 errors |
+| Whole-owner publication approval | not_applicable | False | kgmicrobe.ingredient:84_gl_nahco3_solution | No approval is claimed; both prior consumed rows remain withheld. |
+
+## Scientific And Domain Assessments
+
+### Optional explicit provenance typing
+
+identity: supported. Targets: kgmicrobe.ingredient:84_gl_nahco3_solution.
+
+Bare parenthetical concentration/instruction fragments are not stock identity labels; original text/source retained.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| owner | data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml; Complete current stock IngredientRecord | context_only | Current source-linked stock with two bare RAW_TEXT fragments; full stock/component and publication approval excluded. |
+| proposal | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/84_GL_NaHCO3_Solution.yaml; Entire proposed owner bytes | supports | Only two synonym types and appended event change; exact byte hash bound. |
+| source | https://mediadive.dsmz.de/rest/medium/J451; Full J451 medium; main solution row9, attributes and preparation steps | supports | 84 g/L stock,30ml dose,autoclaved underCO2; bare5% fragment is not the stated concentration. |
+| guard | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/proposal-guard-and-policy.json; Exact before/after structural equality and native synonym-policy result | supports | Both fragments resolve false before and after. Optional provenance typing only; no active resolver or export leak is repaired. |
+| strict | reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/proposal-before-after-strict-command.json; Explicit original/proposal two-path closed-schema validation | supports | Both files pass strict schema. Native validated writer produced proposal only. |
+| holds | reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-163.json; original_kg_entry.consumed_name_hits, both full WITHHOLD row payloads | context_only | Complete prior held mapping obligations preserved; non-name typing does not release either row. |
+
+## Limits And Additional Notes
+
+- Self-review does not satisfy the separate independent campaign review.
+- Current bare-parenthetical filter already excludes both labels; optional typing has no present resolver/export impact.
+- JCM451 live page is unavailable; actual source is the admitted MediaDive primary response with its original retrieval timestamp.
+- Remaining inherited stock/components and publication holds are preserved.
+- No maintained owner, aggregate, mapping, generated export or release selector was edited.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T042245Z-w01-bicarbonate-nonname-proposal-author
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Worker01 optional bicarbonate non-name typing proposal
+started_at: '2026-11-08T04:22:45.633726Z'
+finished_at: '2026-11-08T04:22:45.634082Z'
+reviewer:
+  identity: /root/issue_context
+  kind: agent
+  independence: self_review
+  independence_basis: Proposal author; separate skeptical reviewer required before
+    integration.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: The two bare fragments are not identity-bearing names. Native policy already
+  excludes them; optional explicit REJECTED_LABEL typing is source-supported but changes
+  no current resolution/export eligibility. Entire stock owner and held publication
+  payload are not approved.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+    sha256: 1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-163.json
+    sha256: b81ffb766b5a1e4a73964289476ca3d9443d9f84f93deadbdb00158182b22f2e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/frozen-medium-J451.json
+    sha256: 7e4712df36431b233a73fd33c2800fb361518bb369aeab7df227f254d2981c9a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/proposal-before-after-strict-command.json
+    sha256: c5c236e5321e7e8eb7e18871bfd41cb35626dd70957af972aef2d7b9b0d7a04d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/proposal-guard-and-policy.json
+    sha256: 6fb7546102a7e2dd3519b6130e40a6dd0826af1d7a9ebd85f5cabc89cb36c2f3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/84_GL_NaHCO3_Solution.yaml
+    sha256: 2c3bf046048b8ce6158d78df6e35c0e5cd58a9e323f99cf4beb401bf8d7c4d43
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/synonym_policy.py
+    sha256: f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069
+    role: context
+targets:
+- target_id: kgmicrobe.ingredient:84_gl_nahco3_solution
+  path: data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+  label: 84 g/L NaHCO3 solution
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+    role: maintained stock owner; artifact proposal is not applied
+scope:
+  description: Full current owner and exact proposed payload read, with substantive
+    judgment limited to the two non-name types and unchanged identity guards.
+  selection: KG26 allocation case163, exact current stock owner and artifact-only
+    proposal
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - kgmicrobe.ingredient:84_gl_nahco3_solution
+  exclusions:
+  - target: Complete stock formulation/components, all other aliases/roles, complete
+      SSSOM payload release
+    reason: Optional non-name typing proposal neither evaluates nor resolves inherited
+      whole-owner obligations.
+checks:
+- check_id: source-names
+  name: Source applicability and non-name distinction
+  status: passed
+  required: true
+  summary: Raw stock concentration and CO2 preparation support non-name classification;
+    no identity redirect.
+  target_ids:
+  - kgmicrobe.ingredient:84_gl_nahco3_solution
+  evidence_ids:
+  - owner
+  - source
+  - proposal
+- check_id: policy
+  name: Actual native resolving behavior before and after
+  status: passed
+  required: true
+  summary: Both false in both versions; no behavior-change claim.
+  target_ids:
+  - kgmicrobe.ingredient:84_gl_nahco3_solution
+  evidence_ids:
+  - guard
+- check_id: guarded-writer
+  name: Guarded structural diff and native validated writer
+  status: passed
+  required: true
+  summary: Two type fields plus history only; maintained original bytes unchanged.
+  target_ids:
+  - kgmicrobe.ingredient:84_gl_nahco3_solution
+  evidence_ids:
+  - guard
+  - proposal
+- check_id: strict
+  name: Strict original/proposed schema validation
+  status: passed
+  required: true
+  summary: 2 files,0 errors
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python scripts/validate_strict.py
+    data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/84_GL_NaHCO3_Solution.yaml
+    --out reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/proposal-before-after-strict.tsv
+    --workers 1
+  exit_code: 0
+  target_ids:
+  - kgmicrobe.ingredient:84_gl_nahco3_solution
+  evidence_ids:
+  - strict
+- check_id: release
+  name: Whole-owner publication approval
+  status: not_applicable
+  required: false
+  summary: No approval is claimed; both prior consumed rows remain withheld.
+  target_ids:
+  - kgmicrobe.ingredient:84_gl_nahco3_solution
+  evidence_ids:
+  - holds
+evidence:
+- evidence_id: owner
+  kind: record_content
+  reference: data/ingredients/mapped/84_GL_NaHCO3_Solution.yaml
+  locator: Complete current stock IngredientRecord
+  accessed_at: '2026-11-08T04:22:45.633726Z'
+  support: context_only
+  summary: Current source-linked stock with two bare RAW_TEXT fragments; full stock/component
+    and publication approval excluded.
+  snapshot_sha256: 1a8f4136f2de11105febf3112e5ca27fd95fcf9266ca1bb2283210267f70a509
+- evidence_id: proposal
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/84_GL_NaHCO3_Solution.yaml
+  locator: Entire proposed owner bytes
+  accessed_at: '2026-11-08T04:22:45.633726Z'
+  support: supports
+  summary: Only two synonym types and appended event change; exact byte hash bound.
+  snapshot_sha256: 2c3bf046048b8ce6158d78df6e35c0e5cd58a9e323f99cf4beb401bf8d7c4d43
+- evidence_id: source
+  kind: primary_source
+  reference: https://mediadive.dsmz.de/rest/medium/J451
+  locator: Full J451 medium; main solution row9, attributes and preparation steps
+  accessed_at: '2026-11-05T06:24:52.790050Z'
+  support: supports
+  summary: 84 g/L stock,30ml dose,autoclaved underCO2; bare5% fragment is not the
+    stated concentration.
+  snapshot_sha256: 7e4712df36431b233a73fd33c2800fb361518bb369aeab7df227f254d2981c9a
+- evidence_id: guard
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/proposal-guard-and-policy.json
+  locator: Exact before/after structural equality and native synonym-policy result
+  accessed_at: '2026-11-08T04:22:45.633726Z'
+  support: supports
+  summary: Both fragments resolve false before and after. Optional provenance typing
+    only; no active resolver or export leak is repaired.
+  snapshot_sha256: 6fb7546102a7e2dd3519b6130e40a6dd0826af1d7a9ebd85f5cabc89cb36c2f3
+- evidence_id: strict
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/proposal-before-after-strict-command.json
+  locator: Explicit original/proposal two-path closed-schema validation
+  accessed_at: '2026-11-08T04:22:45.633726Z'
+  support: supports
+  summary: Both files pass strict schema. Native validated writer produced proposal
+    only.
+  snapshot_sha256: c5c236e5321e7e8eb7e18871bfd41cb35626dd70957af972aef2d7b9b0d7a04d
+- evidence_id: holds
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/case-163.json
+  locator: original_kg_entry.consumed_name_hits, both full WITHHOLD row payloads
+  accessed_at: '2026-11-08T04:22:45.633726Z'
+  support: context_only
+  summary: Complete prior held mapping obligations preserved; non-name typing does
+    not release either row.
+  snapshot_sha256: b81ffb766b5a1e4a73964289476ca3d9443d9f84f93deadbdb00158182b22f2e
+assessments:
+- assessment_id: non-names
+  area: identity
+  topic: Optional explicit provenance typing
+  outcome: supported
+  summary: Bare parenthetical concentration/instruction fragments are not stock identity
+    labels; original text/source retained.
+  target_ids:
+  - kgmicrobe.ingredient:84_gl_nahco3_solution
+  evidence_ids:
+  - source
+  - proposal
+  - guard
+findings: []
+actions: []
+limitations:
+- Self-review does not satisfy the separate independent campaign review.
+- Current bare-parenthetical filter already excludes both labels; optional typing
+  has no present resolver/export impact.
+- JCM451 live page is unavailable; actual source is the admitted MediaDive primary
+  response with its original retrieval timestamp.
+- Remaining inherited stock/components and publication holds are preserved.
+- No maintained owner, aggregate, mapping, generated export or release selector was
+  edited.
+```

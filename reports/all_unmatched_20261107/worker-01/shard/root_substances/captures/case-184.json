@@ -1,0 +1,169 @@
+{
+  "index": 184,
+  "case": {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:dba1d37d71432e54fec3187f4386736aade2b7d9d9a529e47e1dcc0d6bbd1180",
+    "original_kg_entry": {
+      "candidate_id": "dba1d37d71432e54fec3187f4386736aade2b7d9d9a529e47e1dcc0d6bbd1180",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [],
+      "downstream_holds": [],
+      "name_hits": [
+        {
+          "candidate_field": "source_label",
+          "kind": "preferred_term",
+          "label": "Na-tetrathionate",
+          "owner": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "source_label",
+          "kind": "synonym",
+          "label": "Na-tetrathionate",
+          "owner": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "Na-tetrathionate",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "preferred_term",
+          "label": "Na-tetrathionate",
+          "owner": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "synonym",
+          "label": "Na-tetrathionate",
+          "owner": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "Na-tetrathionate",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        }
+      ],
+      "native_identity_target": "",
+      "native_queue_state": "STILL_UNMAPPED",
+      "occurrences": 1,
+      "occurrences_definition": "helper constant; not measured recipe frequency",
+      "owners": [
+        {
+          "identifier": "UNMAPPED_0463",
+          "mapping_status": "UNMAPPED",
+          "native_review_rows": [],
+          "ontology_mapping": null,
+          "path": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+          "preferred_term": "Na-tetrathionate",
+          "sha256": "0f62edf35ed515ead1f4ef678558f7a6e344bb479e48d530033fcf4a67ab4193",
+          "subject_id": "MIM:Na-tetrathionate"
+        }
+      ],
+      "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+      "raw_source_label": "Na-tetrathionate",
+      "resolving_owner_paths": [
+        "data/ingredients/unmapped/Na-tetrathionate.yaml"
+      ],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "mediadive",
+      "source_columns": "compound",
+      "source_id": "mediadive.ingredient:868",
+      "source_label": "Na-tetrathionate",
+      "source_record": {
+        "amount": 0.1,
+        "compound": "Na-tetrathionate",
+        "compound_id": 868,
+        "g_l": 0.1,
+        "optional": 0,
+        "recipe_order": 7,
+        "unit": "g"
+      },
+      "triage_flags": [
+        "MATCHED_UNMAPPED_OWNER",
+        "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "Na-tetrathionate",
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:868",
+    "source_identity_claimed": false,
+    "source_label": "Na-tetrathionate"
+  },
+  "occurrence_contexts": [],
+  "current_queue_owners": [
+    {
+      "path": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+      "sha256": "0f62edf35ed515ead1f4ef678558f7a6e344bb479e48d530033fcf4a67ab4193",
+      "record": {
+        "identifier": "UNMAPPED_0463",
+        "preferred_term": "Na-tetrathionate",
+        "synonyms": [
+          {
+            "synonym_text": "Na-tetrathionate",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:868); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T09:31:08Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "REVIEWED_SALT_AMBIGUITY",
+            "changes": "Classified as a single tetrathionate salt surface form and left unmapped because local exact evidence supports potassium tetrathionate, not sodium tetrathionate.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Na-tetrathionate-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: ## Recommended record updates — ### Status and mapping No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:868); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to potassium tetrathionate.",
+        "ingredient_type": "SINGLE_INGREDIENT"
+      }
+    }
+  ],
+  "lexical_candidates_not_identity": [
+    {
+      "path": "data/ingredients/unmapped/Na-tetrathionate.yaml",
+      "sha256": "0f62edf35ed515ead1f4ef678558f7a6e344bb479e48d530033fcf4a67ab4193",
+      "matched_labels": [
+        "Na-tetrathionate",
+        "Na-tetrathionate"
+      ],
+      "preferred_term": "Na-tetrathionate",
+      "identifier": "UNMAPPED_0463",
+      "status": "UNMAPPED",
+      "mapping": null,
+      "notes": "Imported from mim-queue (source_id=mediadive.ingredient:868); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to potassium tetrathionate.",
+      "supplied_form": null
+    }
+  ],
+  "search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob (includes ignored files), exact casefold and alnum-normalized labels only; not a claim of absence under other names"
+}

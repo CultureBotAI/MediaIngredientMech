@@ -1,0 +1,95 @@
+identifier: kgmicrobe.ingredient:nbrc1321_co2_bicarbonate_stock
+preferred_term: NBRC1321 CO2-saturated bicarbonate stock
+synonyms:
+- synonym_text: Bicarbonate solution (1.0 M)***
+  synonym_type: REJECTED_LABEL
+  source: Exact source-context label from https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321;
+    unqualified/cross-reference spelling is retained for provenance only and requires
+    the bound source occurrence to resolve.
+- synonym_text: Bicarbonate solution***
+  synonym_type: REJECTED_LABEL
+  source: Frozen named-stock occurrence CM_OCC:bb36dd78feb59dc8f43713d4b08366f1eb2bd65b5dde132fbefa1936b83a6f78;
+    source-qualified binding only, no global alias resolution.
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc1321_co2_bicarbonate_stock
+  ontology_label: NBRC1321 CO2-saturated bicarbonate stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+    notes: This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation
+      andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL.
+      Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish
+      identical finalvolume or priorCO2saturation. A distinct source-defined operational
+      identity preserves these facts rather than silentlymergingbyrounded1Mmolarity.
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257
+    notes: NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100 mL distilled water,
+      CO2 saturation and autoclaving in tightly sealed CO2-filled bottles. The source
+      qualification and complete preparation establish the same stock; neither source
+      states make-up to a final 100 mL.
+components:
+- component_name: NaHCO3
+  reference_scope: UNMAPPED
+  concentration_value: '8.4'
+  concentration_unit: G_PER_100_ML_PREPARATION_WATER
+- component_name: Distilled water
+  reference_scope: UNMAPPED
+  concentration_value: '100'
+  concentration_unit: ML_PREPARATION_WATER
+- component_name: Carbon dioxide
+  reference_scope: UNMAPPED
+  source: Saturatewater/solutionwithCO2,sealunderCO2,thenautoclave; dissolvedgasamountnotquantified.
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+    source_record: NBRC1321 CO2-saturated bicarbonate stock
+    notes: Complete source-listedpreparationinputs; unspecifiedquantitiesandunderlyingcomplexcomponentstoichiometryremainexplicit.
+      Seeoriginalrecipeforprocedure.
+  notes: Complete operational precursor list, not complete molecularspeciation. UNMAPPED
+    component references preserve exactsourcelabels ratherthanclaimunverifiednativeowners.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+notes: 'This exact source preparation uses8.4gNaHCO3 with100mLwater,CO2saturation
+  andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL.
+  Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish identical
+  finalvolume or priorCO2saturation. A distinct source-defined operational identity
+  preserves these facts rather than silentlymergingbyrounded1Mmolarity. Source occurrence
+  IDs and receiving doses remain in the campaign ledger/CultureMech; no complete medium
+  is asserted as thisstock. New0/0statsmeanmembershipnotyetrefreshed,notobservedabsence.
+  Cross-lane deduplication: NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus 100
+  mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled
+  bottles. The source qualification and complete preparation establish the same stock;
+  neither source states make-up to a final 100 mL.'
+curation_history:
+- timestamp: '2026-11-08T04:40:36.186093+00:00'
+  curator: worker01_add_media_source_stock
+  action: CREATED
+  changes: Isolatedsource-qualifiedstockproposal. This exact source preparation uses8.4gNaHCO3
+    with100mLwater,CO2saturation andsealedautoclaving. The original amount iswateradded,notanexplicitmake-uptofinal100mL.
+    Generic84g/Lstock owner and its J451autoclavedunderCO2context do not establish
+    identical finalvolume or priorCO2saturation. A distinct source-defined operational
+    identity preserves these facts rather than silentlymergingbyrounded1Mmolarity.
+    No maintaineddatawrites; rawcontextlabelsdo notbecomeglobalaliases.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:48:20.664175+00:00'
+  curator: worker01_add_media_source_stock
+  action: CORRECTED
+  changes: Consolidate exact cross-lane proposal identity and preserve source-specific
+    labels as REJECTED_LABEL. NBRC1257 and NBRC1321 both specify 8.4 g NaHCO3 plus
+    100 mL distilled water, CO2 saturation and autoclaving in tightly sealed CO2-filled
+    bottles. The source qualification and complete preparation establish the same
+    stock; neither source states make-up to a final 100 mL. Earlier draft payloads/reviews
+    remain immutable; no maintained records are changed.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

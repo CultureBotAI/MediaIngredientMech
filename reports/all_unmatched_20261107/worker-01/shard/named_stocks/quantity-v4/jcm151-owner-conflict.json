@@ -1,0 +1,295 @@
+{
+  "checked_at": "2026-11-08T04:50:12.413223+00:00",
+  "search": "rg --no-ignore --hidden -n -i jcm[ _-]*151.*trace|trace.*mineral.*151|jcm_151_trace_minerals data/ingredients docs/data/label_index.csv mappings/ingredient_mappings.sssom.tsv; ignored files included. Complete candidate records read.",
+  "candidates": [
+    {
+      "path": "data/ingredients/unmapped/Trace_Minerals_See_Medium_No_151.yaml",
+      "sha256": "a46036fd9903d5178d4898e4ba6b3d120496ed570613fbd81a78b100eb619b18",
+      "record": {
+        "identifier": "UNMAPPED_0553",
+        "preferred_term": "Trace minerals see Medium No. 151",
+        "synonyms": [
+          {
+            "synonym_text": "Trace minerals see Medium No. 151",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Trace minerals (see Medium No. 151",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1883); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T19:58:06.643480+00:00",
+            "curator": "auto_classify_stock_solution",
+            "action": "CLASSIFY_AS_STOCK_SOLUTION",
+            "changes": "name pattern 'see Medium No.' indicates pre-mixed defined solution",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:19.969885+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium No')",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Trace_Minerals_See_Medium_No_151-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** “Trace minerals see Medium No. 151” is not a single chemical, salt, hydrate, extract, or generic mineral ingredient. It is an **elliptical cross-reference to a trace-mineral preparation defined elsewhere in a numbered culture-medium recipe**. Numbered culture media can contain an explicit “trace minerals” component, supporting classification as a formulation compone No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-30T06:20:04.233651+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 1 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Trace minerals (see Medium No. 151' (x3 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1883); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ingredient_type": "NAMED_MEDIUM"
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/Trace_Mineral_Solution.yaml",
+      "sha256": "03837875ebc88c1ab82387c244b383de83a01bc77f4fd60cd75fbbecdcd31f81",
+      "record": {
+        "identifier": "kgmicrobe.ingredient:trace_mineral_solution",
+        "preferred_term": "Trace mineral solution",
+        "synonyms": [
+          {
+            "synonym_text": "Trace mineral solution",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          },
+          {
+            "synonym_text": "Trace mineral solution (see Medium No. 151 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Trace mineral solution (see Medium No. 852 )",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Trace mineral solution (see Medium No.852)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Trace mineral solution (see below)",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          },
+          {
+            "synonym_text": "Trace mineral solution**",
+            "synonym_type": "RAW_TEXT",
+            "source": "culturemech:output/ingredient_occurrences.tsv"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 2,
+          "media_count": 2
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:19.966568+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'mineral solution')",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "issue_288_stock_solutions",
+            "action": "PROMOTED_TO_MAPPED",
+            "previous_status": "UNMAPPED",
+            "new_status": "MAPPED",
+            "llm_assisted": true,
+            "changes": "Promoted UNMAPPED_0551 -> kgmicrobe.ingredient:trace_mineral_solution (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288)."
+          },
+          {
+            "timestamp": "2026-08-27T03:16:39.520310+00:00",
+            "curator": "refresh_occurrence_statistics",
+            "action": "CORRECTED",
+            "changes": "occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+          },
+          {
+            "timestamp": "2026-08-30T04:48:06.233536+00:00",
+            "curator": "claude_culturemech_alias_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Added 5 CultureMech recipe surface form(s) that folded onto this record's published label but were absent from MIM's label index, so CultureMech could not resolve them: 'Trace mineral solution (see Medium No. 151 )' (x2 CultureMech mentions); 'Trace mineral solution (see Medium No. 852 )' (x1 CultureMech mentions); 'Trace mineral solution (see Medium No.852)' (x1 CultureMech mentions); 'Trace mineral solution (see below)' (x1 CultureMech mentions); 'Trace mineral solution**' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.",
+            "llm_assisted": false
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+        "ingredient_type": "STOCK_SOLUTION",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:trace_mineral_solution",
+          "ontology_label": "Trace mineral solution",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "MIM curation (#288)",
+              "notes": "A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint with no parent, because a multi-component mix does not narrow to any single compound (#288)."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "data/ingredients/mapped/4-vinylphenol.yaml",
+      "sha256": "8d4c406e24cbb343fb17cd6345b6628caf2e27ca07510c73c8ff2376a815c0f9",
+      "record": {
+        "identifier": "CHEBI:1883",
+        "preferred_term": "4-vinylphenol",
+        "ontology_mapping": {
+          "ontology_id": "CHEBI:1883",
+          "ontology_label": "4-hydroxystyrene",
+          "ontology_source": "CHEBI",
+          "mapping_quality": "CAS_RN_LOOKUP",
+          "evidence": [
+            {
+              "evidence_type": "DATABASE_MATCH",
+              "source": "CultureBotHT",
+              "notes": "Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+            }
+          ]
+        },
+        "synonyms": [
+          {
+            "synonym_text": "4-ethenylphenol",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "chebi_synonym_review"
+          },
+          {
+            "synonym_text": "Trace minerals (see Medium No.151",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          },
+          {
+            "synonym_text": "Trace minerals(see Medium No.151)",
+            "synonym_type": "RAW_TEXT",
+            "source": "sssom_other_backfill"
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-29T06:34:31.158938+00:00",
+            "curator": "audit_cas_chebi_followup",
+            "action": "CREATED_FROM_CAS_LOOKUP",
+            "changes": "Created from CultureBotHT CAS-RN=2628-17-3; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). ",
+            "new_status": "MAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T07:35:31.933265+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-01T08:08:27.759520+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "changes": "molecular_formula=C8H8O; inchi=InChI=1S/C8H8O/c1-2-7-3-5-8(9)6-4-7/h2-6,9H,1H2; smiles=C=Cc1ccc(O)cc1",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-02T03:12:12.131604+00:00",
+            "curator": "auto_classify_ingredient_type",
+            "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-10T00:00:00+00:00",
+            "curator": "regrade_synonym_matches",
+            "action": "REGRADED_EXACT_TO_SYNONYM",
+            "changes": "mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label does not equal the term's primary label '4-hydroxystyrene'; it matches the ChEBI synonym '4-vinylphenol' on CHEBI:1883. The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-08-24T00:00:00+00:00",
+            "curator": "regrade_synonym_matches",
+            "action": "REGRADED_TO_CAS_RN_LOOKUP",
+            "changes": "mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created by an explicit CAS-to-ChEBI lookup and its current CAS RN 2628-17-3 uniquely resolves by ChEBI xref to CHEBI:1883 '4-hydroxystyrene'. CAS_RN_LOOKUP records the method that established this mapping; a lexical grade would discard that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under Rule D (#438), independently of mapping quality.",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-02T17:40:44.716277+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Trace minerals (see Medium No.151'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-09-02T22:41:49.137449+00:00",
+            "curator": "claude_sssom_surface_form_backfill",
+            "action": "ADDED_SYNONYMS",
+            "changes": "Recovered 1 surface form(s) that the published SSSOM `other` carried but no curated record did, so a rebuild would have dropped them from KGX: 'Trace minerals(see Medium No.151)'. Tokens already present on the kg-microbe ontology node were left out as redundant (#520).",
+            "llm_assisted": false
+          }
+        ],
+        "chemical_properties": {
+          "cas_rn": "2628-17-3",
+          "data_source": "CultureBotHT compounds_to_cas.csv",
+          "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+          "molecular_formula": "C8H8O",
+          "inchi": "InChI=1S/C8H8O/c1-2-7-3-5-8(9)6-4-7/h2-6,9H,1H2",
+          "smiles": "C=Cc1ccc(O)cc1"
+        },
+        "ingredient_type": "SINGLE_INGREDIENT"
+      }
+    }
+  ],
+  "assessment": "UNMAPPED_0553 names Medium151 and imports MediaDive1883, whose original source occurrence is not independently traced in this44-case allocation. The generic registry owner imports MediaDive897 and includes both151 and852 plus context-free aliases without a source formula. The4-vinylphenol owner contains151 stock aliases that cannot denote the chemical. These are competing ownership/provenance assertions, not lack of JCM151 formulation identity. Do not mint a duplicate or bind an aliquot by bare name. JCM265 preserves the exact source stock name,1L aliquot and full primary151 formula evidence as an UNMAPPED part pending precise ownership reconciliation.",
+  "primary_captures": [
+    {
+      "root": "artifact",
+      "path": "captures/jcm-151.html",
+      "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7"
+    },
+    {
+      "root": "artifact",
+      "path": "captures/jcm-265.html",
+      "sha256": "9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c"
+    }
+  ],
+  "scientific_identity": "JCM151 trace minerals has a fully printed preparation: twelve named solutes,1L added distilled water, and unquantified KOH pH adjustment. JCM265 explicitly takes1L of that prepared stock, not an entire batch made with1L water."
+}

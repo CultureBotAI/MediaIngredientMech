@@ -1,0 +1,354 @@
+schema_version: 1.0.0
+review_id: 20261108T042849Z-w01-lithium-tetraborate-proposal
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Lithium tetraborate exact CAS and asymmetric parent proposal
+started_at: '2026-11-08T04:28:49Z'
+finished_at: '2026-11-08T04:28:49Z'
+reviewer:
+  identity: Codex /root/primary_context
+  kind: agent
+  independence: self_review
+  independence_basis: Author researched primary evidence and wrote proposal; separate
+    reviewer will independently assess exact bytes.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: The exact isolated Li2B4O7 proposal is supported as CAS 12007-60-2 with a
+  verified broader inorganic lithium salt parent. No existing-owner or whole-corpus
+  release approval is implied.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+    sha256: 3d40fcdd8dcbc524538b8c2986bb3aec389bd12cf1f0392c8f63eccc9173b0e3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-190479.json
+    sha256: 9e175a600a0b93d72c3c76e4f109ab5a7e005ec74b10bcbb72905516af0c6c92
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38889.json
+    sha256: 82eceea571d2e571f9978b9c06de234e6b3e2316eaf2a1e7b78027eb6565d141
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38910.json
+    sha256: ca0f3f77144e6015c6aab1b62beb046594cf5ed03335d790d9b87580dba08f50
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-cas.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-dilithium.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-formula.json
+    sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-tetraborate.json
+    sha256: 92f00f5ff70940e21276ac30215f24fa4dc45c0260f0b274d6b63186d51020a1
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/dsmz-1493.pdf
+    sha256: b3923aeed926fe8176633eb27c32c0ff91db802a90a485c0b86ff23c2ea23da7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/mediadive-3061.json
+    sha256: 65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/pubchem-9815330-view.json
+    sha256: 5f2684e328dcda4dcb8b90d367d70d829087ef6719b8527501f9f462cd42d09e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/sigma-222534-webview.json
+    sha256: 3dfbae414a7a673ede33daa5d8daa5399d07aa4eefcbb49c2a7a98044f6eb323
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/mim-identity-search.json
+    sha256: 621ebf0fa867d64c255b8c0b9c97b039d0374d1777b8016b7b1e8b93bac8b228
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/recommendations.json
+    sha256: b00f828dbf523b2b9968b515c0aa7b1b3f4356212a1bbab0d92d127b183bde85
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: All assertions in one isolated new-owner proposal and exact two frozen
+    source occurrences.
+  selection: Root-delegated case 159; full proposed payload.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+  exclusions:
+  - target: Maintained integration and supported export
+    reason: No maintained owner exists yet; this proposal review is not a release
+      ledger.
+targets:
+- target_id: proposal-li2b4o7-cas-12007-60-2
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+  label: Li2B4O7 / CAS 12007-60-2 isolated new-owner proposal
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Exact proposed bytes only; no maintained owner exists. Intended
+    future owner data/ingredients/mapped/Li2b4o7.yaml and corresponding data/curated/mapped_ingredients.yaml
+    entry require coordinator integration.
+checks:
+- check_id: inspect
+  name: Native input provenance inspection
+  status: passed
+  required: true
+  summary: Exact proposal, primary recipe, chemical identity sources, official parent
+    and rejected terms, bounded absence searches, semantics and schema captured.
+  target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python scripts/record_review.py
+    inspect --targets .temp/all-unmatched-worker-01/shard/named_stocks/lithium-targets.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/pubchem-9815330-view.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-190479.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38889.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-38910.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-dilithium.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-formula.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-cas.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/chebi-search-tetraborate.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/dsmz-1493.pdf
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/mediadive-3061.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/captures/sigma-222534-webview.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/mim-identity-search.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-strict.tsv
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/recommendations.json
+    --input MAPPING_SEMANTICS.md --input src/mediaingredientmech/schema/mediaingredientmech.yaml
+  exit_code: 0
+  evidence_ids:
+  - exact-proposal
+- check_id: strict
+  name: Guarded write and strict schema
+  status: passed
+  required: true
+  summary: Guarded writer accepted exact proposed payload; native strict schema scanned
+    one file with zero errors.
+  target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python scripts/validate_strict.py
+    reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+    --out reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-strict.tsv
+    --workers 1
+  exit_code: 0
+  evidence_ids:
+  - NSF-Li2b4o7-strict
+- check_id: official-parent
+  name: Official ontology identity and parent inspection
+  status: passed
+  required: true
+  summary: Read official OLS term JSON and searches. CHEBI:190479 is active inorganic
+    lithium salt; CHEBI:38910 and CHEBI:38889 do not denote Li2B4O7. Exact-term search
+    is bounded and documented.
+  target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+  evidence_ids:
+  - NSF-chebi-190479
+  - NSF-chebi-38910
+  - NSF-chebi-38889
+- check_id: integration
+  name: Maintained integration and export checks
+  status: not_applicable
+  required: false
+  summary: No maintained edits; synchronization and three specified SSSOM rows are
+    integration work, not an unresolved source identity requirement.
+  target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+evidence:
+- evidence_id: NSF-pubchem-9815330-view
+  kind: primary_source
+  reference: https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/9815330/JSON
+  locator: Record.Section Names and Identifiers / Molecular Formula andCAS; Reference1,4,6,7,10
+  accessed_at: '2026-11-08T04:18:41.689116Z'
+  support: supports
+  summary: Formula B4Li2O7 and CAS12007-60-2 annotations include ECHA234-514-3 and
+    governmental source records. PubChem reference links are not automatically accepted
+    as exactontologygrounding.
+  snapshot_sha256: 5f2684e328dcda4dcb8b90d367d70d829087ef6719b8527501f9f462cd42d09e
+- evidence_id: NSF-chebi-190479
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_190479
+  locator: _embedded.terms[0] label,description,is_obsolete
+  accessed_at: '2026-11-08T04:21:30.585924Z'
+  support: supports
+  summary: Verified broader class inorganic lithium salt, defined as lithium salt
+    lacking C-Hbonds. Supports asymmetric broader mapping only.
+  snapshot_sha256: 9e175a600a0b93d72c3c76e4f109ab5a7e005ec74b10bcbb72905516af0c6c92
+- evidence_id: NSF-chebi-38889
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_38889
+  locator: _embedded.terms[0] label,formula,charge
+  accessed_at: '2026-11-08T04:21:31.198377Z'
+  support: supports
+  summary: Tetraborate(2-) isH4B4O9 with-2charge; not the anhydrousB4O7(2-) component.
+    Not selected as exactparent/componentidentity.
+  snapshot_sha256: 82eceea571d2e571f9978b9c06de234e6b3e2316eaf2a1e7b78027eb6565d141
+- evidence_id: NSF-chebi-38910
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_38910
+  locator: _embedded.terms[0] label,formula,CAS,charge,is_obsolete
+  accessed_at: '2026-11-08T04:20:08.680953Z'
+  support: supports
+  summary: 'Wrongcandidate: active trilithiumborate,BO3.3Li,CAS1303-94-2; not Li2B4O7/CAS12007-60-2.'
+  snapshot_sha256: ca0f3f77144e6015c6aab1b62beb046594cf5ed03335d790d9b87580dba08f50
+- evidence_id: NSF-chebi-search-dilithium
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=dilithium%20tetraborate&ontology=chebi&rows=50
+  locator: Exact URL query and response.numFound/docs
+  accessed_at: '2026-11-08T04:20:09.321139Z'
+  support: supports
+  summary: Bounded official ChEBI name/CAS/formula/parent search, with exactquery
+    retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives
+    to be inspected. Not a claim of absence across allontologies.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: NSF-chebi-search-formula
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=Li2B4O7&ontology=chebi&rows=50
+  locator: Exact URL query and response.numFound/docs
+  accessed_at: '2026-11-08T04:20:09.926110Z'
+  support: supports
+  summary: Bounded official ChEBI name/CAS/formula/parent search, with exactquery
+    retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives
+    to be inspected. Not a claim of absence across allontologies.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: NSF-chebi-search-cas
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=12007-60-2&ontology=chebi&rows=50
+  locator: Exact URL query and response.numFound/docs
+  accessed_at: '2026-11-08T04:20:10.526224Z'
+  support: supports
+  summary: Bounded official ChEBI name/CAS/formula/parent search, with exactquery
+    retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives
+    to be inspected. Not a claim of absence across allontologies.
+  snapshot_sha256: 8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2
+- evidence_id: NSF-chebi-search-tetraborate
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/search?q=lithium%20tetraborate&ontology=chebi&rows=50
+  locator: Exact URL query and response.numFound/docs
+  accessed_at: '2026-11-08T04:18:00.340462Z'
+  support: supports
+  summary: Bounded official ChEBI name/CAS/formula/parent search, with exactquery
+    retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives
+    to be inspected. Not a claim of absence across allontologies.
+  snapshot_sha256: 92f00f5ff70940e21276ac30215f24fa4dc45c0260f0b274d6b63186d51020a1
+- evidence_id: NSF-dsmz-1493
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1493.pdf
+  locator: Page1 mainrecipe Li2B4O7 0.01g; water1000ml; explicit hydrates in otherrows
+  accessed_at: '2026-11-08T04:17:24.564704Z'
+  support: supports
+  summary: Primary recipe supports exact bare formula Li2B4O7, distinct from Li3BO3
+    and hydrated lithium tetraborates. No supplier/grade/lot stated.
+  snapshot_sha256: b3923aeed926fe8176633eb27c32c0ff91db802a90a485c0b86ff23c2ea23da7
+- evidence_id: NSF-mediadive-3061
+  kind: primary_source
+  reference: https://mediadive.dsmz.de/rest/solution/3061
+  locator: data.recipe[6],compound_id1323,Li2B4O7 amount0.01g,g_l0.01
+  accessed_at: '2026-11-08T04:17:26.430849Z'
+  support: supports
+  summary: Exact source accession and formula agree with DSMZ1493 and two frozenCMoccurrences.
+  snapshot_sha256: 65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67
+- evidence_id: NSF-sigma-webview
+  kind: primary_source
+  reference: https://www.sigmaaldrich.com/GB/en/product/sigald/222534
+  locator: 'web.run parsed primary product page lines91–103 and182–191: formulaLi2B4O7,CAS12007-60-2,mass169.12,InChI;
+    fulltoolresponse retained'
+  accessed_at: '2026-11-08T04:19:19Z'
+  support: supports
+  summary: Primary manufacturer corroborates exactchemical identity independently
+    of the proposedbroaderontologyterm. Does not establish that DSMZ used Sigma222534
+    or anyparticular grade/lot. Capture is parsedpage text, notrawHTTPHTML.
+  snapshot_sha256: 3dfbae414a7a673ede33daa5d8daa5399d07aa4eefcbb49c2a7a98044f6eb323
+- evidence_id: NSF-mim-identity-search
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/mim-identity-search.json
+  locator: Entire receipt/TSV
+  accessed_at: '2026-11-08T04:28:49Z'
+  support: supports
+  summary: Ignored-inclusive maintainedrecords/index search found no exactCAS/formula/name
+    owner; proposedownerpath absent.
+  snapshot_sha256: 621ebf0fa867d64c255b8c0b9c97b039d0374d1777b8016b7b1e8b93bac8b228
+- evidence_id: NSF-Li2b4o7-strict
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-strict.tsv
+  locator: Entire receipt/TSV
+  accessed_at: '2026-11-08T04:28:49Z'
+  support: supports
+  summary: Native strict schema:1file,0ERRORrows; guardedwriter also passed. Structuralvalidation
+    is not releaseapproval.
+  snapshot_sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+- evidence_id: exact-proposal
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups/Li2b4o7-after.yaml
+  locator: Complete isolated proposed IngredientRecord
+  accessed_at: '2026-11-08T04:28:49Z'
+  support: supports
+  summary: CAS primary identity, broader inorganic lithium salt mapping, raw formula
+    and exact name aliases; no roles or mechanisms. All fields reviewed. Proposed
+    mapped status is grounding, not release approval.
+  snapshot_sha256: 3d40fcdd8dcbc524538b8c2986bb3aec389bd12cf1f0392c8f63eccc9173b0e3
+assessments:
+- assessment_id: identity
+  area: identity
+  topic: Source chemical identity
+  outcome: supported
+  summary: DSMZ 1493 and MediaDive solution 3061 specify Li2B4O7. Formula and primary
+    supplier/PubChem CAS evidence establish lithium tetraborate CAS 12007-60-2, separately
+    from hydrated forms. Supplier evidence does not identify the DSMZ supplier or
+    lot.
+  target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+  evidence_ids:
+  - NSF-dsmz-1493
+  - NSF-mediadive-3061
+  - NSF-pubchem-9815330-view
+  - NSF-sigma-webview
+- assessment_id: grounding
+  area: grounding
+  topic: Exact identity with asymmetric parent
+  outcome: supported
+  summary: No exact target was found by the bounded official ChEBI name, formula and
+    CAS queries. The closest verified lithium-salt branch parent is CHEBI:190479.
+    NARROW_MATCH correctly denotes proposed Li2B4O7 narrower than the parent, requiring
+    skos:broadMatch plus independent CAS and kgmicrobe.compound registry identity
+    rows.
+  target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+  evidence_ids:
+  - NSF-chebi-190479
+  - NSF-chebi-search-cas
+  - NSF-chebi-search-dilithium
+  - NSF-chebi-search-formula
+  - NSF-chebi-search-tetraborate
+- assessment_id: payload
+  area: completeness
+  topic: Complete proposed claim inventory
+  outcome: supported
+  summary: 'All proposed fields are supported within identity and grounding scope:
+    raw source formula, two exact chemical names, CAS/formula, parent evidence, source
+    limitations and truthful isolated-proposal history. No existing owner, inherited
+    finding, roles, components or biological mechanism is asserted.'
+  target_ids:
+  - proposal-li2b4o7-cas-12007-60-2
+  evidence_ids:
+  - exact-proposal
+  - NSF-mim-identity-search
+  - NSF-Li2b4o7-strict
+findings: []
+actions: []
+limitations:
+- Self-review; independent review remains separate.
+- Bounded current ChEBI searches do not assert absence across every ontology.
+- Broader parent is not exact identity; CAS identity and mandatory registry rows must
+  be generated at integration.
+- No supplier, lot, purity, roles, mechanism or whole-record supported release claim.
+tags:
+- worker01
+- proposal
+- lithium-tetraborate

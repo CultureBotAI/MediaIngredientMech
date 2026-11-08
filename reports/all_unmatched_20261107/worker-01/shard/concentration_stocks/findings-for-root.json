@@ -1,0 +1,101 @@
+{
+  "at": "2026-11-08T04:14:42.928761+00:00",
+  "findings": [
+    {
+      "finding_id": "CS-CM-WATER-L-AS-ML",
+      "scope": "CultureMech source normalization",
+      "description": "Several frozen JCM records encode source1.0L distilled water as value1.0 ML_PER_L. This can concentrate apparent formulation1000-fold; source-unit preservation is required.",
+      "examples": [
+        "JCM_J1468_FRESHWATER_R2A_MEDIUM.yaml",
+        "JCM_J1419_HALOTHIOBACILLUS_LS2_MEDIUM.yaml",
+        "JCM_J1365_ACIDIC_LOW_SALT_MINERAL_MEDIUM.yaml",
+        "JCM_J1354_RFODOSPIRILLACEAE_MEDIUM_MODIFIED.yaml",
+        "JCM_J1430_SEMI_SOLID_HETEROTROPHIC_GROWTH_MEDIUM_FOR_ALPHAPROTEOBACTERIA.yaml",
+        "JCM_J1431_SEMI_SOLID_AUTOTROPHIC_GROWTH_MEDIUM_FOR_GAMMAPROTEOBACTERIA.yaml"
+      ],
+      "evidence_ids": [
+        "CS-P-JCM-1468",
+        "CS-P-JCM-1419",
+        "CS-P-JCM-1365",
+        "CS-P-JCM-1354",
+        "CS-P-JCM-1430",
+        "CS-P-JCM-1431"
+      ]
+    },
+    {
+      "finding_id": "CS-CM-J1422-CONFLICT",
+      "scope": "CultureMech recipe provenance/quantities",
+      "description": "Frozen JCM1422 procedure says940mL startingwater,50mL bicarbonate andSL10/1303 trace context; current JCM1422 has955mL water,30mL bicarbonate andWolfe265. Preserve both evidence versions; re-curate against exact source version, do not silently overwrite.",
+      "evidence_ids": [
+        "CS-P-JCM-1422"
+      ]
+    },
+    {
+      "finding_id": "CS-CM-1188-NARRATIVE",
+      "scope": "CultureMech recipe procedure",
+      "description": "Frozen marine_chloroflexi_medium.yaml saysUse1187 pluspyruvate; currentJCM1188 provides explicit complete salts/stock recipe. Reconcile provenance and retain source quantities rather than treating inherited recipe text as verified.",
+      "evidence_ids": [
+        "CS-P-JCM-1188"
+      ]
+    },
+    {
+      "finding_id": "CS-SOURCE-1783-UNIT",
+      "scope": "DSMZ primary recipe",
+      "description": "Solution2 K2HPO4 amount15.30 lacks a unit inAPI andPDF. Authoritative source correction needed; no inferredg assignment.",
+      "evidence_ids": [
+        "CS-P-MediaDive-1783",
+        "CS-P-DSMZ1783-PDF-WEB"
+      ]
+    },
+    {
+      "finding_id": "CS-SOURCE-1419-DUPLICATE-M",
+      "scope": "JCM primary recipe",
+      "description": "0.1 M M FeCl2 duplicateunit is present inprimarypage; source correction needed before concentration normalization.",
+      "evidence_ids": [
+        "CS-P-JCM-1419"
+      ]
+    },
+    {
+      "finding_id": "CS-MIM-PIPES-FORM",
+      "scope": "MIM candidate identity",
+      "description": "Pipes.yaml attachesCAS5625-37-6 to groupingCHEBI39033; currentprimaryterm haschildren and noformula/CAS. Exactnewsource mapping needs most-specific suppliedform investigation; nativeboundedreview saved.",
+      "evidence_ids": [
+        "CS-ONTOLOGY-39033",
+        "CS-NATIVE-Pipes"
+      ]
+    },
+    {
+      "finding_id": "CS-MIM-STOCK-CANDIDATE-CONFLICT",
+      "scope": "MIM stock candidate identities",
+      "description": "Source-qualified Modified A5 and NBRC943 Metals44 cannot be assigned from existing lexical candidates without exact formulation comparison. The 84 g/L NaHCO3 owner retains two bare RAW_TEXT fragments, including a 5% w/v qualifier, but native synonym_policy already excludes both parentheticals. These fragments are provenance-typing context, not an active resolver/export defect; closed MIM #606/#610 discuss them. No maintained edit or hold removal.",
+      "evidence_ids": [
+        "CS-CURRENT-STOCK-CANDIDATES"
+      ]
+    },
+    {
+      "finding_id": "CS-IR-JCM956-EVIDENCE-KIND",
+      "scope": "campaign artifact metadata",
+      "description": "Independentreview identified unavailableJCM956 response was erroneously classifiedprimarysource. Corrected tounsuccessful_search with availability-only locator/support; fallbackMDSformulation explicitlybound toJCM574.",
+      "evidence_ids": [
+        "CS-P-JCM-956"
+      ]
+    },
+    {
+      "finding_id": "CS-IR-105-UNIT-STATEMENT",
+      "scope": "campaign authored reasoning",
+      "description": "Independent review caught an invented frozen ML_PER_L-like conflict. Corrected case105 to state exact frozen unit MILLIMOLAR,value10 agrees with primary JCM68110mM; counterion/hydrate uncertainty and broad-parent disposition retained.",
+      "evidence_ids": [
+        "CS-P-JCM-681"
+      ]
+    },
+    {
+      "finding_id": "CS-IR-47-ANNOTATION-SCOPE",
+      "scope": "campaign source interpretation",
+      "description": "Independent review identified a conflicting TOGO annotation on neutralized Na2S\u00b79H2O preparation (Disodio persulfide nonahydrate). Case47 explicitly treats the annotation as non-authoritative/conflicting and relies on NBRC361 acid-neutralization procedure; no stock identity inferred from that annotation.",
+      "evidence_ids": [
+        "CS-P-TOGO-M1560",
+        "CS-P-NBRC-361"
+      ]
+    }
+  ]
+}

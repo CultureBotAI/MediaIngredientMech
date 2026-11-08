@@ -1,0 +1,84 @@
+identifier: kgmicrobe.ingredient:jcm_1130_mineral_solution_i
+preferred_term: JCM 1130 mineral solution I
+synonyms:
+- synonym_text: Mineral solution I (see below)
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: jcm.grmd:1385;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1130_mineral_solution_i
+  ontology_label: JCM 1130 mineral solution I
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: K2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130
+    source_record: JCM 1130 mineral solution I; complete named stock table and preparation
+      notes
+    notes: JCM1385 inherits1130stock with mannitol change only to receiving medium.3g
+      per1L,150mL receiving dose; distinct from DSMZ4360.6%stock. Literal printed
+      masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+      describes a recipe batch containing1L added water, not a final1L solution or
+      final concentration.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity.'
+notes: 'JCM1385 inherits1130stock with mannitol change only to receiving medium.3g
+  per1L,150mL receiving dose; distinct from DSMZ4360.6%stock. Literal printed masses
+  and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+  describes a recipe batch containing1L added water, not a final1L solution or final
+  concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for
+  provenance and occurrence-specific decisions but native resolution must not expose
+  them as global synonyms. The source-qualified preferred term denotes this exact
+  preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+  are asserted. Any UNMAPPED part retains its literal source identity; component grounding
+  is separate from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.867092+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 153. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.613340+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true

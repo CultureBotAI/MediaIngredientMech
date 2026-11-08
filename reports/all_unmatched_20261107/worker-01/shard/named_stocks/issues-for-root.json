@@ -1,0 +1,80 @@
+{
+  "status": "dedup_candidates_only",
+  "github_mutations_performed": false,
+  "issues": [
+    {
+      "key": "namedstock-unmapped0519-classification",
+      "scope": "MIM current owner; isolated proposal only",
+      "case_ids": [
+        "CM_NAME:02783a861c0e56af08c3200c5b0d7e38abe217083d6b11fdb2c1a3bfcf623d93",
+        "CM_NAME:e02348fe0ebd141d90ae6def5fe66edd1bfc8e6bdb615f57bdae64f069362e79",
+        "CM_NAME:e8c97b4daa00f2d94ddf163af75ac2c44dc57f5bfa688d5d03ee70271a22c632"
+      ],
+      "existing_issue_lead": "https://github.com/CultureBotAI/MediaIngredientMech/issues/718",
+      "finding": "Current NAMED_MEDIUM classification conflicts with source-defined JCM431 mineral stock; source1921 binding supports bounded stock classification and3 exact aliases. Existing identity/decomposition hold remains.",
+      "evidence_ids": [
+        "NS-P-jcm-431",
+        "NS-P-FROZEN-J887",
+        "NS-NATIVE-431"
+      ],
+      "action": "Deduplicate against718; use new native finding and exact proposed bytes, do not close inherited hold."
+    },
+    {
+      "key": "culturemech-nbrc-stock-preparation-denominator",
+      "scope": "Frozen CultureMech source; current main not checked by this subagent",
+      "case_ids": [
+        "CM_NAME:12c0890640486c42dc11c8e69089ce7cfbef521eb43cb871c0439648e569145a",
+        "CM_NAME:be368168b57e971cdc61eddd9141eab98fe34872c9b6414789acef3b1e6d6d21"
+      ],
+      "finding": "NBRC1257 frozen nested stock storesNaHCO3 8.4G_PER_L andNa2S·9H2O12G_PER_L, while primary specifies8.4g/100ml and12g/50ml. Existing stock water rows retain100ml/50ml asML_PER_L, confirming denominator loss.",
+      "paths": [
+        "data/normalized_yaml/bacterial/NBRC_1261.yaml:solutions/2/composition/0",
+        "data/normalized_yaml/bacterial/NBRC_1261.yaml:solutions/3/composition/0"
+      ],
+      "evidence_ids": [
+        "NS-P-nbrc-1257"
+      ],
+      "action": "Coordinator verify live CultureMech then deduplicate generator/quantity issue; correct stock preparation basis rather than transplanting to final medium concentration."
+    },
+    {
+      "key": "jcm1462-ni-se-w-tungsten-formula",
+      "scope": "Current primary JCM1462 and inherited1463/1464 stock contexts",
+      "case_ids": [
+        "CM_NAME:7bc664cbabb281bd51fcb16652c3064974d945d061e71868ff36938df910860e",
+        "CM_NAME:bce51914ee5965612e483cd84704037995ac8a4304e79b3d7aa86da1a87ba3dc"
+      ],
+      "finding": "JCM1462 printsNa2WO2·2H2O0.4mg per1L; this is not silently equivalent to sodium tungstate dihydrateNa2WO4·2H2O.",
+      "evidence_ids": [
+        "NS-P-jcm-1462",
+        "NS-P-jcm-1463",
+        "NS-P-jcm-1464"
+      ],
+      "action": "Preserve literal source and request authoritative correction/reagent identity before component grounding. No source contact is authorized by this research task."
+    },
+    {
+      "key": "dsmz436-mineral2-calcium-hydrate-percent",
+      "scope": "Current DSMZ436 PDF and MediaDive884",
+      "case_ids": [
+        "CM_NAME:d72ff1fc29cff806413e76bafe360d439ec34f76d239e497d53b082136aaa261"
+      ],
+      "finding": "Both primaryPDF andAPI printCaCl2·7H2O0.16% and other salts aspercent withoutbasis; not solely a MediaDive transcription problem.",
+      "evidence_ids": [
+        "NS-P-dsmz-436",
+        "NS-P-mediadive-solution-884"
+      ],
+      "action": "Obtain source clarification of hydrate andpercentbasis; preserve exactstock884/CultureMech015244 instead of substitutingdihydrate."
+    },
+    {
+      "key": "culturemech-ccap-pe-phosphate-grounding",
+      "scope": "Frozen full recipe, contextual finding outside stock row itself; current main not checked",
+      "case_ids": [
+        "CM_NAME:46d06ba22f6dd3330e7b5448c99057dcc8e05b896ef630a8e2befd6300b48a07"
+      ],
+      "finding": "pe.yaml ingredients/1 preferred_term isDisodium hydrogen phosphate dodecahydrate but termCHEBI86416 label is1-eicosanoyl-2-[(11Z,14Z,17Z)-eicosatrienoyl]-sn-glycero-3-phosphocholine. CCAPstock specifiesNa2HPO4·12H2O. This internal label/identity conflict must not be inherited into expandedstock components.",
+      "evidence_ids": [
+        "NS-P-ccap-PE"
+      ],
+      "action": "Coordinator verify current CultureMech record/ontology anddeduplicate grounding issue; preserve stock-versus-expanded-component distinction to preventdoublecounting."
+    }
+  ]
+}

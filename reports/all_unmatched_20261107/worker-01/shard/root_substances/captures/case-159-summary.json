@@ -1,0 +1,333 @@
+{
+  "i": 159,
+  "name": "Li2B4O7",
+  "source": "culturemech",
+  "source_id": "Li2B4O7",
+  "record": null,
+  "owners": [],
+  "holds": [],
+  "downstream_holds": [],
+  "candidate_hits": [],
+  "occurrences": [
+    {
+      "id": "CM_OCC:627df4b3b23ade6a74616071cd3a5443ddf0641928e1e9808fc47db84567b7ca",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/mediadive_3061_Main_sol_1493.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:012285"
+        },
+        {
+          "path": "/term/id",
+          "value": "mediadive.solution:3061"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "0.01"
+        },
+        "preferred_term": "Li2B4O7",
+        "term": {
+          "id": "mediadive.compound:1323",
+          "label": "Li2B4O7"
+        }
+      },
+      "recipe_keys": [
+        "id",
+        "preferred_term",
+        "term",
+        "composition",
+        "preparation_notes",
+        "curation_history",
+        "ingredients",
+        "data_quality_flags",
+        "category",
+        "references"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:012285",
+        "preferred_term": "Main sol. 1493",
+        "term": {
+          "id": "mediadive.solution:3061",
+          "label": "Main sol. 1493"
+        },
+        "composition": [
+          {
+            "preferred_term": "NaHCO3",
+            "concentration": {
+              "value": "0.5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:55",
+              "label": "NaHCO3"
+            },
+            "chebi_term": {
+              "id": "CHEBI:32139",
+              "label": "sodium hydrogencarbonate",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": \"NaHCO3\",\n                \"compound_id\": 55,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.5,\n                \"unit\": \"g\",\n                \"g_l\": 0.5,\n                \"mmol_l\": 5.95188,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[0].concentration (NaHCO3) in MediaDive solution 3061; locator=$.data.recipe[0] (compound_id=55). Provider explicitly reports g_l=0.5. Arithmetic check: 0.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67."
+              }
+            ]
+          },
+          {
+            "preferred_term": "NaCl",
+            "concentration": {
+              "value": "0.5",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:43",
+              "label": "NaCl"
+            },
+            "chebi_term": {
+              "id": "CHEBI:26710",
+              "label": "sodium chloride",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 2,\n                \"compound\": \"NaCl\",\n                \"compound_id\": 43,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.5,\n                \"unit\": \"g\",\n                \"g_l\": 0.5,\n                \"mmol_l\": 8.55578,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[1].concentration (NaCl) in MediaDive solution 3061; locator=$.data.recipe[1] (compound_id=43). Provider explicitly reports g_l=0.5. Arithmetic check: 0.5 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.5 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67."
+              }
+            ]
+          },
+          {
+            "preferred_term": "KH2PO4",
+            "concentration": {
+              "value": "0.4",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:11",
+              "label": "KH2PO4"
+            },
+            "chebi_term": {
+              "id": "CHEBI:63036",
+              "label": "potassium dihydrogen phosphate",
+              "confidence": 0.7,
+              "match_type": "corpus_consensus"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 3,\n                \"compound\": \"KH2PO4\",\n                \"compound_id\": 11,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.4,\n                \"unit\": \"g\",\n                \"g_l\": 0.4,\n                \"mmol_l\": 2.93934,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[2].concentration (KH2PO4) in MediaDive solution 3061; locator=$.data.recipe[2] (compound_id=11). Provider explicitly reports g_l=0.4. Arithmetic check: 0.4 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.4 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67."
+              }
+            ]
+          },
+          {
+            "preferred_term": "(NH4)2SO4",
+            "concentration": {
+              "value": "0.2",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:27",
+              "label": "(NH4)2SO4"
+            },
+            "chebi_term": {
+              "id": "CHEBI:62946",
+              "label": "ammonium sulfate",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 4,\n                \"compound\": \"(NH4)2SO4\",\n                \"compound_id\": 27,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.2,\n                \"unit\": \"g\",\n                \"g_l\": 0.2,\n                \"mmol_l\": 1.51355,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[3].concentration ((NH4)2SO4) in MediaDive solution 3061; locator=$.data.recipe[3] (compound_id=27). Provider explicitly reports g_l=0.2. Arithmetic check: 0.2 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.2 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67."
+              }
+            ]
+          },
+          {
+            "preferred_term": "MgSO4 x 6 H2O",
+            "concentration": {
+              "value": "0.1",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:679",
+              "label": "MgSO4 x 6 H2O"
+            },
+            "chebi_term": {
+              "id": "CHEBI:32599",
+              "label": "magnesium sulfate",
+              "confidence": 0.7,
+              "match_type": "corpus_consensus"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 5,\n                \"compound\": \"MgSO4 x 6 H2O\",\n                \"compound_id\": 679,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.1,\n                \"unit\": \"g\",\n                \"g_l\": 0.1,\n                \"mmol_l\": 0.830779,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[4].concentration (MgSO4 x 6 H2O) in MediaDive solution 3061; locator=$.data.recipe[4] (compound_id=679). Provider explicitly reports g_l=0.1. Arithmetic check: 0.1 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.1 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67."
+              }
+            ]
+          },
+          {
+            "preferred_term": "CaCl2",
+            "concentration": {
+              "value": "0.01",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:81",
+              "label": "CaCl2"
+            },
+            "chebi_term": {
+              "id": "CHEBI:3312",
+              "label": "calcium dichloride",
+              "confidence": 1.0,
+              "match_type": "exact_match"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 6,\n                \"compound\": \"CaCl2\",\n                \"compound_id\": 81,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.01,\n                \"unit\": \"g\",\n                \"g_l\": 0.01,\n                \"mmol_l\": 0.0901063,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[5].concentration (CaCl2) in MediaDive solution 3061; locator=$.data.recipe[5] (compound_id=81). Provider explicitly reports g_l=0.01. Arithmetic check: 0.01 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.01 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Li2B4O7",
+            "concentration": {
+              "value": "0.01",
+              "unit": "G_PER_L"
+            },
+            "term": {
+              "id": "mediadive.compound:1323",
+              "label": "Li2B4O7"
+            },
+            "evidence": [
+              {
+                "reference": "https://mediadive.dsmz.de/rest/solution/3061",
+                "supports": "SUPPORT",
+                "snippet": "{\n                \"recipe_order\": 7,\n                \"compound\": \"Li2B4O7\",\n                \"compound_id\": 1323,\n                \"solution\": null,\n                \"solution_id\": null,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 0.01,\n                \"unit\": \"g\",\n                \"g_l\": 0.01,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "explanation": "Concentration evidence for composition[6].concentration (Li2B4O7) in MediaDive solution 3061; locator=$.data.recipe[6] (compound_id=1323). Provider explicitly reports g_l=0.01. Arithmetic check: 0.01 g * 1 g/g / (1000 ml / 1000 ml per L) = 0.01 g/L, consistent with the reported value at its precision. Evidence supports the provider-declared concentration within this solution, not a concentration in a receiving medium or an independently measured final volume. Water addition alone is not used to infer a final volume. Additional exact excerpt at $.data.volume: \"volume\": 1000. Retrieved 2026-10-07T09:18:04.952715+00:00; response SHA256=65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67."
+              }
+            ]
+          },
+          {
+            "preferred_term": "Distilled water",
+            "concentration": {
+              "value": "1000",
+              "unit": "PERCENT_V_V"
+            },
+            "term": {
+              "id": "mediadive.compound:4",
+              "label": "Distilled water"
+            },
+            "chebi_term": {
+              "id": "CHEBI:15377",
+              "label": "water",
+              "confidence": 0.7,
+              "match_type": "corpus_consensus"
+            }
+          }
+        ],
+        "preparation_notes": "Do not adjust the pH.\nFor plates add 8g/l Gelrite or 15g Phytagel and 1g/L MgCl. A carbon source is not required because the organism degrades the polysaccharides in Gelrite or Phytagel\nFor liquid medium use 0.8-2.0g/l Gelrite as carbon source (the medium remains liquid). Alternatively mannose (1g/l) may be used instead of Gelrite in liquid medium. Do not add mannose to solid media, which will inhibit growth.",
+        "data_quality_flags": [
+          "incomplete_composition"
+        ],
+        "category": "bacterial"
+      }
+    },
+    {
+      "id": "CM_OCC:2c87b939d2b4f67d2d329af9c7c61f7e5f14891d60bb2cd4b15e6d77511b9dc1",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/verrucomicrobia_medium.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:000961"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "mediadive.medium:1493"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "0.01"
+        },
+        "preferred_term": "Li2B4O7"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "original_name",
+        "category",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "ph_value",
+        "media_term",
+        "notes",
+        "ingredients",
+        "preparation_steps",
+        "applications",
+        "curation_history"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:000961",
+        "name": "verrucomicrobia_medium",
+        "original_name": "VERRUCOMICROBIA MEDIUM",
+        "category": "bacterial",
+        "medium_type": "DEFINED",
+        "composition_type": "DEFINED",
+        "physical_state": "LIQUID",
+        "ph_value": 7.0,
+        "media_term": {
+          "preferred_term": "DSMZ Medium 1493",
+          "term": {
+            "id": "mediadive.medium:1493",
+            "label": "VERRUCOMICROBIA MEDIUM"
+          }
+        },
+        "notes": "Source: DSMZ | Link: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1493.pdf",
+        "preparation_steps": [
+          {
+            "step_number": 1,
+            "action": "MIX",
+            "description": "Do not adjust the pH."
+          },
+          {
+            "step_number": 2,
+            "action": "MIX",
+            "description": "For plates add 8g/l Gelrite or 15g Phytagel and 1g/L MgCl. A carbon source is not required because the organism degrades the polysaccharides in Gelrite or Phytagel"
+          },
+          {
+            "step_number": 3,
+            "action": "MIX",
+            "description": "For liquid medium use 0.8-2.0g/l Gelrite as carbon source (the medium remains liquid). Alternatively mannose (1g/l) may be used instead of Gelrite in liquid medium. Do not add mannose to solid media, which will inhibit growth."
+          },
+          {
+            "step_number": 4,
+            "action": "ADJUST_PH",
+            "description": "First dissolve nitrilotriacetic acid and adjust pH to 6.5 with KOH, then add minerals."
+          },
+          {
+            "step_number": 5,
+            "action": "MIX",
+            "description": "Final pH 7.0 (with KOH)."
+          }
+        ]
+      }
+    }
+  ]
+}

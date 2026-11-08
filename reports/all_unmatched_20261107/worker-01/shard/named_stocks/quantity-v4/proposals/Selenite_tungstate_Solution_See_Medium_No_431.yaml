@@ -1,0 +1,170 @@
+identifier: kgmicrobe.ingredient:selenite_tungstate_solution_see_medium_no_431
+preferred_term: JCM 431 selenite-tungstate solution
+synonyms:
+- synonym_text: Selenite-tungstate solution see Medium No. 431
+  synonym_type: REJECTED_LABEL
+  source: mim-queue; retained source-local label, excluded from global resolution
+    (IR-SHARD-ARTIFACT-9)
+- synonym_text: Selenite-tungstate solution**
+  synonym_type: REJECTED_LABEL
+  source: CultureMech frozen 20261107; nbrc.medium:1257, nbrc.medium:1321; retained
+    source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)
+- synonym_text: Selenite tungstate solution (see Medium No. 431 )
+  synonym_type: REJECTED_LABEL
+  source: CultureMech frozen 20261107; jcm.grmd:1400, jcm.grmd:1468; retained source-local
+    label, excluded from global resolution (IR-SHARD-ARTIFACT-9)
+- synonym_text: Selenite-tungstate solution* (see Medium No. 431 )
+  synonym_type: REJECTED_LABEL
+  source: CultureMech frozen 20261107; jcm.grmd:1364; retained source-local label,
+    excluded from global resolution (IR-SHARD-ARTIFACT-9)
+- synonym_text: Selenite-tungstate solution (see Medium No. 431 )
+  synonym_type: REJECTED_LABEL
+  source: CultureMech frozen 20261107; jcm.grmd:1363, jcm.grmd:1388, jcm.grmd:1389,
+    jcm.grmd:1406, jcm.grmd:1423, jcm.grmd:1424; retained source-local label, excluded
+    from global resolution (IR-SHARD-ARTIFACT-9)
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1921); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T19:58:06.913047+00:00'
+  curator: auto_classify_stock_solution
+  action: CLASSIFY_AS_STOCK_SOLUTION
+  changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.891585+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=DEFINED_MEDIUM (name matches medium pattern 'Medium
+    No')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Selenite-tungstate_Solution_See_Medium_No_431-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommendation | No ontology CURIE was proposed.
+    Recorded as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T04:30:55.136673+00:00'
+  curator: worker01_named_stock_curation
+  action: PROMOTION_PROPOSED
+  changes: Isolated v2 proposal only; no maintained edits. Proposes UNMAPPED_0519
+    to kgmicrobe.ingredient:selenite_tungstate_solution_see_medium_no_431, STOCK_SOLUTION/MINERAL_STOCK,
+    four exact source aliases and complete primary-recipe partonomy with verified
+    constituent identities. Supersedes bounded v1 proposal while preserving its immutable
+    bytes and review. All original source labels/history/counts retained. No automatic
+    retirement of inherited release holds.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.630821+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration. Source-qualified preferred/mapping label replaces bare numbered
+    pointer; all prior names remain nonresolving provenance.'
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'Imported from mim-queue(source_id=mediadive.ingredient:1921); original import/source/history/statistics
+  are preserved. Primary JCM431 and original MediaDive1921 provenance establish the
+  complete stock identity. NBRC1257/1321 match all four printed preparation constituents
+  and amounts; processing details remain source-specific. The preferred/mapping label
+  is now explicitly JCM-qualified; all old raw labels, including bare numbered pointers,
+  are preserved as REJECTED_LABEL and do not resolve globally. Eleven selected CultureMech
+  records are receiving media, not this standalone stock. Historical issue718 identity/decomposition
+  claims are answered by this source evidence; release, unrelated roles and component-owner
+  claims are not implicitly approved. The missing historical full Edison report remains
+  an unavailable artifact, and its old history entry is retained as provenance. Literal
+  printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+  describes a recipe batch containing1L added water, not a final1L solution or final
+  concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for
+  provenance and occurrence-specific decisions but native resolution must not expose
+  them as global synonyms. The source-qualified preferred term denotes this exact
+  preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+  are asserted. Any UNMAPPED part retains its literal source identity; component grounding
+  is separate from established whole-stock recipe identity.'
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:selenite_tungstate_solution_see_medium_no_431
+  ontology_label: JCM 431 selenite-tungstate solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+    notes: 'Exact named source formulation: NaOH 0.4 g, Na2SeO3·5H2O 6 mg, Na2WO4·2H2O
+      8 mg and distilled water 1 L. Imported MediaDive 1921 is bound through the frozen
+      original JCM887 stock reference. No exact stock term was found in the bounded
+      OLS exact-name search. Registry identity under MAPPING_SEMANTICS section 3 and
+      add-media; no whole-mixture equivalence to any component.'
+components:
+- component_name: NaOH
+  component_id: CHEBI:32145
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.4'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2SeO3·5H2O
+  component_id: CHEBI:131361
+  reference_scope: MIM_CATALOG
+  concentration_value: '6'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2WO4·2H2O
+  component_id: CHEBI:63939
+  reference_scope: MIM_CATALOG
+  concentration_value: '8'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=431
+    source_record: JCM 431, Selenite-tungstate solution table, all four rows
+    notes: Primary source printed recipe:0.4g NaOH,6mg Na2SeO3·5H2O,8mg Na2WO4·2H2O
+      and1L added distilled water. Source batch quantities do not assert final-volume
+      concentrations. NBRC matching formula supports source-scoped applicability;
+      processing remains source-specific.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257
+    source_record: NBRC 1257 **Selenite-tungstate solution
+    notes: Primary source printed recipe:0.4g NaOH,6mg Na2SeO3·5H2O,8mg Na2WO4·2H2O
+      and1L added distilled water. Source batch quantities do not assert final-volume
+      concentrations. NBRC matching formula supports source-scoped applicability;
+      processing remains source-specific.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+    source_record: NBRC 1321 **Selenite-tungstate solution
+    notes: Primary source printed recipe:0.4g NaOH,6mg Na2SeO3·5H2O,8mg Na2WO4·2H2O
+      and1L added distilled water. Source batch quantities do not assert final-volume
+      concentrations. NBRC matching formula supports source-scoped applicability;
+      processing remains source-specific.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity.'

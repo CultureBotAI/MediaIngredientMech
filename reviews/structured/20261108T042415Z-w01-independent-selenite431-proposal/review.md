@@ -1,0 +1,400 @@
+# Independent review of JCM431 stock classification and3source aliases
+
+- Review: 20261108T042415Z-w01-independent-selenite431-proposal
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:24:15.268079Z
+- Finished UTC: 2026-11-08T04:24:15.268079Z
+- Reviewer: /root/skeptical_review (independent)
+- Completion: partial
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Bounded proposal scientifically acceptable for classification and three explicitly431-qualified aliases. Complete owner remains held pendingcomponent/registry grounding; no release approval.
+
+## Scope And Provenance
+
+Complete before/after bytes assessed for exact proposed delta; full scientific grounding and publication scope remains excluded.
+
+Selection: Imported MediaDive1921 context identifies actual UNMAPPED0519 owner for CM cases1,137,144.
+Coverage: partial; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| record-df44e1ccc45aea36 | data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml | maintained | Selenite-tungstate solution see Medium No.431 |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Independent closed-schema before/after validation | passed | True | record-df44e1ccc45aea36 | Both exact paths checked with native strict validator; exit0. |
+| Independent stock, alias and exactdelta assessment | passed | True | record-df44e1ccc45aea36 | Source reference and completecomposition support bounded classification/aliases; beforebytes unchanged. |
+| Ontology validation applicability | not_applicable | False | record-df44e1ccc45aea36 | No ontology or groundedcomponents added; unknownstock remainsUNMAPPED. |
+| Wholeowner export/release approval | not_applicable | False | record-df44e1ccc45aea36 | Proposalonly; no maintainedsurface edits or releaseclaim. |
+
+## Scientific And Domain Assessments
+
+### JCM431 stock and exact qualified aliases
+
+identity: supported. Targets: record-df44e1ccc45aea36.
+
+Frozen1921→JCM887→explicit431 reference and primary431 composition establish same stock. Proposal preserves raw3labels,stock-specific boundary andpriorcontent; no genericSe/W or1365alias.
+
+### Unfinished registry/decomposition and release scope
+
+completeness: concern. Targets: record-df44e1ccc45aea36.
+
+Sourcecompositionnotes do not constitute formalgrounded component assertions or registryidentity. Historicalhold is preserved and current owner remains needs_curation.
+
+## Findings
+
+### retained-stock-grounding-hold: Full stock registry/component grounding remains outside bounded alias proposal
+
+major / deferred / provisional; issue key: mim-reconciliation-unresolved-identity-df44e1ccc45aea36.
+
+Exact source stock and three qualified aliases are established, but proposed payload intentionally retainsUNMAPPED and has no grounded component assertions or exact stock registry identity. Partial classification/alias acceptance does not retire the existing whole-owner hold.
+
+Disposition: Retain previous deferred scope; no component/registry promotion or release claim in this proposal.
+
+## Recommended Actions And Acceptance Checks
+
+### complete-grounding
+
+At separately authorized integration, complete source-qualified stock representation and componentgrounding, synchronize surfaces and re-review full changedpayload before release.
+
+- Exact component identity/form/evidence agree with JCM431 and preserve source preparation basis.
+- Native validation and full independent review of integratedowner; all inherited holds explicitly reconciled.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| owner | data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml; Entire original YAML | supports | Owner import history explicitly names MediaDive1921; current NAMED_MEDIUM classification conflicts with inspected stock recipe. |
+| proposal | reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-after.yaml; Entire isolated after payload, compared field by field to before | supports | Only3exact source-qualified raw aliases, stock classification, bounded notes and appended history; UNMAPPED/status/identifier/prior content preserved. |
+| source | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html; Complete JCM431 formulation; Selenite-tungstate solution subtable | supports | NaOH0.4g,selenitepentahydrate6mg,tungstatedihydrate8mg,water1L; stock distinct from alternate Se/W formulations. |
+| trace | reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json; data.solutions id4878 recipe_order7 | supports | Frozen source row1921 explicitlyJCM431 inJCM887context; independently verified full export hits in separate receipt. |
+| scan | reports/all_unmatched_20261107/worker-01/shard/independent_review/independent-1921-context-check.json; Complete source scan and hash matching | supports | Independent exact-ID fullscan verifies one unique row represented in media and solutions exports, not shardcompletion claim. |
+| aliases | reports/all_unmatched_20261107/worker-01/shard/named_stocks/source-cases.json; Exact allocation cases1,137,144 and9receiving occurrences | supports | All exactlabels explicitly point toJCM431; dose andsterilization remain occurrence-specific. |
+| strict | reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-431-validation.json; Actual separate independent strict validator invocation | supports | Before/after schema validation only; does not prove substance identity. |
+| hold | reviews/structured/20261017T083000Z-selenite-tungstate-solution-see-medium-no-431/review.yaml; Complete prior review; deferred rec-f-unmapped-df44e1ccc45aea36 | context_only | Historical decomposition/grounding hold retained; new bounded proposal does not resolve whole-owner identity. |
+
+## Limits And Additional Notes
+
+- Scientific acceptance applies only to isolated after SHA d2bd79161802e94b3836850da94a7fbdffb439f13e51fa797395587bf8412929 and explicitclassification/aliasdelta.
+- No maintainedfile edits, mappingstatus promotion, registry minting, componentassertions or release approval occurred.
+- Historical current-source acquisition dates remain unchanged; frozenNovember5response not relabelledlive.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T042415Z-w01-independent-selenite431-proposal
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Independent review of JCM431 stock classification and3source aliases
+started_at: '2026-11-08T04:24:15.268079Z'
+finished_at: '2026-11-08T04:24:15.268079Z'
+reviewer:
+  identity: /root/skeptical_review
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process skeptical reviewer, not author. Read full
+    before/after owner, all9receiving occurrences, source431 andfrozen1921 context;
+    reran exact frozen source scans and strict validator independently.
+skill: review-yaml-record
+completion: partial
+verdict: needs_curation
+scientific_review: true
+summary: Bounded proposal scientifically acceptable for classification and three explicitly431-qualified
+  aliases. Complete owner remains held pendingcomponent/registry grounding; no release
+  approval.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/independent-1921-context-check.json
+    sha256: 8cc3ffadde72bd7a13a44d90b5f45edf2cc68fec6a52c8961e56bae77e0b3409
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-431-validation.json
+    sha256: d4dd85a6f85c6d05770c0faad211f89287244ae558c1d80a3cfa01e6c397e23f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json
+    sha256: 652471bf29f2bfa6e62b7acd4ccc83a7848b15be7ea8f69f4b2e09798c6d5f3d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html
+    sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/mediadive-ingredient-1921.json
+    sha256: 67cab181805873501a43f2c22e00ad507a1d34b7a7ac9726ecb51f5243fd4197
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/frozen-1921-context.json
+    sha256: 5d3a08620ca3c55f349ba024978ee098004393533a0fc3fe29f874ff069e2184
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-after.yaml
+    sha256: d2bd79161802e94b3836850da94a7fbdffb439f13e51fa797395587bf8412929
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-before.yaml
+    sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/source-cases.json
+    sha256: de59110524e81e73734fd32a9957c9fb447e3cf1fe7c7c781ba3e10046b57157
+    role: context
+  - path: reviews/structured/20261017T083000Z-selenite-tungstate-solution-see-medium-no-431/review.yaml
+    sha256: bc994c5c4c37a86250ed79af8035a0a9c8f1bf0c578947f07ac1a1234aac685e
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+targets:
+- target_id: record-df44e1ccc45aea36
+  path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+  label: Selenite-tungstate solution see Medium No.431
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: Maintained IngredientRecord; exact target for proposed future classification/aliases
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Matching ingredients entry identifierUNMAPPED_0519
+scope:
+  description: Complete before/after bytes assessed for exact proposed delta; full
+    scientific grounding and publication scope remains excluded.
+  selection: Imported MediaDive1921 context identifies actual UNMAPPED0519 owner for
+    CM cases1,137,144.
+  coverage: partial
+  population_size: 1
+  reviewed_target_ids:
+  - record-df44e1ccc45aea36
+  exclusions:
+  - target: Whole-owner component/registry identity and release readiness
+    reason: No formal grounded components/registry identity proposed; inherited hold
+      remains.
+  - target: Worker03KG1921case
+    reason: Read as source evidence only; no out-of-shard decision or completion claimed.
+checks:
+- check_id: strict
+  name: Independent closed-schema before/after validation
+  status: passed
+  required: true
+  summary: Both exact paths checked with native strict validator; exit0.
+  target_ids:
+  - record-df44e1ccc45aea36
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python3.13 scripts/validate_strict.py
+    data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-after.yaml
+    --out reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-431-strict.tsv
+    --workers 1
+  exit_code: 0
+  evidence_ids:
+  - strict
+- check_id: identity-delta
+  name: Independent stock, alias and exactdelta assessment
+  status: passed
+  required: true
+  summary: Source reference and completecomposition support bounded classification/aliases;
+    beforebytes unchanged.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - owner
+  - proposal
+  - source
+  - trace
+  - scan
+  - aliases
+- check_id: ontology
+  name: Ontology validation applicability
+  status: not_applicable
+  required: false
+  summary: No ontology or groundedcomponents added; unknownstock remainsUNMAPPED.
+  target_ids:
+  - record-df44e1ccc45aea36
+- check_id: release
+  name: Wholeowner export/release approval
+  status: not_applicable
+  required: false
+  summary: Proposalonly; no maintainedsurface edits or releaseclaim.
+  target_ids:
+  - record-df44e1ccc45aea36
+evidence:
+- evidence_id: owner
+  kind: record_content
+  reference: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+  locator: Entire original YAML
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: supports
+  summary: Owner import history explicitly names MediaDive1921; current NAMED_MEDIUM
+    classification conflicts with inspected stock recipe.
+  snapshot_sha256: ad02ea5d31f05ad4f5a71af9718cab059c17a983d01fb0aa101d6b61b8a94549
+- evidence_id: proposal
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/proposal-after.yaml
+  locator: Entire isolated after payload, compared field by field to before
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: supports
+  summary: Only3exact source-qualified raw aliases, stock classification, bounded
+    notes and appended history; UNMAPPED/status/identifier/prior content preserved.
+  snapshot_sha256: d2bd79161802e94b3836850da94a7fbdffb439f13e51fa797395587bf8412929
+- evidence_id: source
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/jcm-431.html
+  locator: Complete JCM431 formulation; Selenite-tungstate solution subtable
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: supports
+  summary: NaOH0.4g,selenitepentahydrate6mg,tungstatedihydrate8mg,water1L; stock distinct
+    from alternate Se/W formulations.
+  snapshot_sha256: cf3d25eefdeb8835ce27a453e2afa44b0f6a3f1644beb36fa84937ca7c904c50
+- evidence_id: trace
+  kind: primary_source
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/frozen-medium-J887.json
+  locator: data.solutions id4878 recipe_order7
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: supports
+  summary: Frozen source row1921 explicitlyJCM431 inJCM887context; independently verified
+    full export hits in separate receipt.
+  snapshot_sha256: 652471bf29f2bfa6e62b7acd4ccc83a7848b15be7ea8f69f4b2e09798c6d5f3d
+- evidence_id: scan
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/independent-1921-context-check.json
+  locator: Complete source scan and hash matching
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: supports
+  summary: Independent exact-ID fullscan verifies one unique row represented in media
+    and solutions exports, not shardcompletion claim.
+  snapshot_sha256: 8cc3ffadde72bd7a13a44d90b5f45edf2cc68fec6a52c8961e56bae77e0b3409
+- evidence_id: aliases
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-01/shard/named_stocks/source-cases.json
+  locator: Exact allocation cases1,137,144 and9receiving occurrences
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: supports
+  summary: All exactlabels explicitly point toJCM431; dose andsterilization remain
+    occurrence-specific.
+  snapshot_sha256: de59110524e81e73734fd32a9957c9fb447e3cf1fe7c7c781ba3e10046b57157
+- evidence_id: strict
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/independent_review/native-independent-431-validation.json
+  locator: Actual separate independent strict validator invocation
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: supports
+  summary: Before/after schema validation only; does not prove substance identity.
+  snapshot_sha256: d4dd85a6f85c6d05770c0faad211f89287244ae558c1d80a3cfa01e6c397e23f
+- evidence_id: hold
+  kind: prior_review
+  reference: reviews/structured/20261017T083000Z-selenite-tungstate-solution-see-medium-no-431/review.yaml
+  locator: Complete prior review; deferred rec-f-unmapped-df44e1ccc45aea36
+  accessed_at: '2026-11-08T04:24:15.268079Z'
+  support: context_only
+  summary: Historical decomposition/grounding hold retained; new bounded proposal
+    does not resolve whole-owner identity.
+  snapshot_sha256: bc994c5c4c37a86250ed79af8035a0a9c8f1bf0c578947f07ac1a1234aac685e
+assessments:
+- assessment_id: bounded-delta
+  area: identity
+  topic: JCM431 stock and exact qualified aliases
+  outcome: supported
+  summary: Frozen1921→JCM887→explicit431 reference and primary431 composition establish
+    same stock. Proposal preserves raw3labels,stock-specific boundary andpriorcontent;
+    no genericSe/W or1365alias.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - owner
+  - proposal
+  - source
+  - trace
+  - scan
+  - aliases
+- assessment_id: hold-scope
+  area: completeness
+  topic: Unfinished registry/decomposition and release scope
+  outcome: concern
+  summary: Sourcecompositionnotes do not constitute formalgrounded component assertions
+    or registryidentity. Historicalhold is preserved and current owner remains needs_curation.
+  target_ids:
+  - record-df44e1ccc45aea36
+  evidence_ids:
+  - proposal
+  - hold
+findings:
+- finding_id: retained-stock-grounding-hold
+  issue_key: mim-reconciliation-unresolved-identity-df44e1ccc45aea36
+  category: identity
+  severity: major
+  status: deferred
+  certainty: provisional
+  title: Full stock registry/component grounding remains outside bounded alias proposal
+  description: Exact source stock and three qualified aliases are established, but
+    proposed payload intentionally retainsUNMAPPED and has no grounded component assertions
+    or exact stock registry identity. Partial classification/alias acceptance does
+    not retire the existing whole-owner hold.
+  target_ids:
+  - record-df44e1ccc45aea36
+  field_paths:
+  - mapping_status
+  - components
+  - identifier
+  evidence_ids:
+  - owner
+  - proposal
+  - source
+  - hold
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: Maintained IngredientRecord; exact target for proposed future classification/aliases
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Matching ingredients entry identifierUNMAPPED_0519
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261017T083000Z-selenite-tungstate-solution-see-medium-no-431
+    finding_id: rec-f-unmapped-df44e1ccc45aea36
+  disposition_reason: Retain previous deferred scope; no component/registry promotion
+    or release claim in this proposal.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/718
+actions:
+- action_id: complete-grounding
+  description: At separately authorized integration, complete source-qualified stock
+    representation and componentgrounding, synchronize surfaces and re-review full
+    changedpayload before release.
+  finding_ids:
+  - retained-stock-grounding-hold
+  target_ids:
+  - record-df44e1ccc45aea36
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Selenite-tungstate_Solution_See_Medium_No_431.yaml
+    role: Maintained IngredientRecord; exact target for proposed future classification/aliases
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/curated/unmapped_ingredients.yaml
+    role: Matching ingredients entry identifierUNMAPPED_0519
+  acceptance_checks:
+  - Exact component identity/form/evidence agree with JCM431 and preserve source preparation
+    basis.
+  - Native validation and full independent review of integratedowner; all inherited
+    holds explicitly reconciled.
+limitations:
+- Scientific acceptance applies only to isolated after SHA d2bd79161802e94b3836850da94a7fbdffb439f13e51fa797395587bf8412929
+  and explicitclassification/aliasdelta.
+- No maintainedfile edits, mappingstatus promotion, registry minting, componentassertions
+  or release approval occurred.
+- Historical current-source acquisition dates remain unchanged; frozenNovember5response
+  not relabelledlive.
+```

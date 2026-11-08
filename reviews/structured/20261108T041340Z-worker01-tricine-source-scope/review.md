@@ -1,0 +1,241 @@
+# Worker01 source applicability for Tricine
+
+- Review: 20261108T041340Z-worker01-tricine-source-scope
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T04:12:52.954999Z
+- Finished UTC: 2026-11-08T04:13:40.471030Z
+- Reviewer: /root/issue_context (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Bounded source identity and preparation-qualifier review only. Tricine reagent correspondence is supported; no alias edit or release approval.
+
+## Scope And Provenance
+
+One existing candidate reviewed for its assigned frozen-source applicability; complete owner read, roles and publication eligibility excluded.
+
+Selection: Concentration allocation case95
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| CHEBI:39063 | data/ingredients/mapped/Tricine.yaml | maintained | Tricine |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native strict closed-schema check | passed | True | CHEBI:39063 | Two explicit maintained paths; exit0; no errors. |
+| Primary source and ontology identity/form comparison | passed | True | CHEBI:39063 | Supplied reagent and recipe qualifier distinguished; ontology compared with current record. |
+| Whole-record release and corpus export checks | not_applicable | False | CHEBI:39063 | No maintained data edits or publication support are issued by this bounded review. |
+
+## Scientific And Domain Assessments
+
+### Reagent versus prepared stock and final concentration
+
+identity: supported. Targets: CHEBI:39063.
+
+pH8 is a recipe instruction for weighed Tricine; CHEBI39063 and CAS agree.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| record | data/ingredients/mapped/Tricine.yaml; Complete current IngredientRecord; identifier, chemical_properties, mapping and all provenance/history/roles inspected | context_only | Existing candidate is a maintained record; source correspondence does not approve role evidence or published payload. |
+| source | https://utex.org/products/das-vitamin-cocktail; UTEX directions and Tricine table | supports | Weighed Tricine0.9g/100mL followed by adjusting combined preparation topH8. |
+| ontology | https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:39063; _embedded.terms[0], label, annotations, synonyms, is_obsolete and has_children | supports | CHEBI39063 is nonobsolete, has Tricine synonym, formulaC6H13NO5 and CAS5704-04-1. |
+| strict | reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-two-strict-command.json; Exact two-path command; exit0;2files0ERROR | supports | Native strict closed-schema validator passed both current records; no scientific conclusion follows. |
+| holds | reports/semantic_review_20260921/resolution/finding-dispositions.tsv; Tricine rows SEM:03e6b59c36007b80eda7 and SEM:45145f975f47c92be184; complete retained ledger used only to preserve historical holds | context_only | Historical provisional-role obligations remain open; this source identity scope does not retire any existing issue or hold. |
+
+## Limits And Additional Notes
+
+- This self-review does not satisfy independent campaign review.
+- No global synonym is added; preparation/final-concentration qualifiers remain source-local.
+- Full role evidence, all historical findings, corpus exports and release selectors were not reassessed; no inherited hold is removed.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T041340Z-worker01-tricine-source-scope
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Worker01 source applicability for Tricine
+started_at: '2026-11-08T04:12:52.954999Z'
+finished_at: '2026-11-08T04:13:40.471030Z'
+reviewer:
+  identity: /root/issue_context
+  kind: agent
+  independence: self_review
+  independence_basis: Primary case author; separate skeptical campaign reviewer is
+    required and not represented by this native record observation.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: Bounded source identity and preparation-qualifier review only. Tricine reagent
+  correspondence is supported; no alias edit or release approval.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Tricine.yaml
+    sha256: a437294e8d72a87d9e0312005d7c1426fc95cd4af5a885f7724910a26d8c0187
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-two-strict-command.json
+    sha256: cf60ba4d3404e1fac41b2e54c718e5993c55b2a98f1783e816bbb154f07ba7af
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/CHEBI-39063.json
+    sha256: 050fe68dd8da2a978ecdbc057a1f8593051f2a67fec104d9a765d16ca20a6db8
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/supplemental-web-response.json
+    sha256: 5486f068be17341f1551c55dc9aab68709cff71f4cc8c7608bdad4dae26cd8f4
+    role: context
+  - path: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+    sha256: c56c4d4d7332181e239798804ba80a6f49cfc7ed81d835c29312f25a963b64cf
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+targets:
+- target_id: CHEBI:39063
+  path: data/ingredients/mapped/Tricine.yaml
+  label: Tricine
+  kind: maintained
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tricine.yaml
+    role: maintained ingredient; aggregate must be synchronized only at authorized
+      integration
+scope:
+  description: One existing candidate reviewed for its assigned frozen-source applicability;
+    complete owner read, roles and publication eligibility excluded.
+  selection: Concentration allocation case95
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - CHEBI:39063
+  exclusions:
+  - target: Role/evidence quality and final SSSOM publication payload
+    reason: Outside this source-identity assessment; all existing holds retained.
+checks:
+- check_id: strict
+  name: Native strict closed-schema check
+  status: passed
+  required: true
+  summary: Two explicit maintained paths; exit0; no errors.
+  target_ids:
+  - CHEBI:39063
+  command: .temp/all-unmatched-worker-01/shard-venv/bin/python scripts/validate_strict.py
+    data/ingredients/mapped/Tricine.yaml data/ingredients/mapped/Pipes.yaml --out
+    reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-two-strict.tsv
+    --workers 1
+  exit_code: 0
+  evidence_ids:
+  - strict
+- check_id: identity
+  name: Primary source and ontology identity/form comparison
+  status: passed
+  required: true
+  summary: Supplied reagent and recipe qualifier distinguished; ontology compared
+    with current record.
+  target_ids:
+  - CHEBI:39063
+  evidence_ids:
+  - record
+  - source
+  - ontology
+- check_id: publication
+  name: Whole-record release and corpus export checks
+  status: not_applicable
+  required: false
+  summary: No maintained data edits or publication support are issued by this bounded
+    review.
+  target_ids:
+  - CHEBI:39063
+evidence:
+- evidence_id: record
+  kind: record_content
+  reference: data/ingredients/mapped/Tricine.yaml
+  locator: Complete current IngredientRecord; identifier, chemical_properties, mapping
+    and all provenance/history/roles inspected
+  accessed_at: '2026-11-08T04:13:40.471030Z'
+  support: context_only
+  summary: Existing candidate is a maintained record; source correspondence does not
+    approve role evidence or published payload.
+  snapshot_sha256: a437294e8d72a87d9e0312005d7c1426fc95cd4af5a885f7724910a26d8c0187
+- evidence_id: source
+  kind: primary_source
+  reference: https://utex.org/products/das-vitamin-cocktail
+  locator: UTEX directions and Tricine table
+  accessed_at: '2026-11-08T04:08:49.024Z'
+  support: supports
+  summary: Weighed Tricine0.9g/100mL followed by adjusting combined preparation topH8.
+  snapshot_sha256: 5486f068be17341f1551c55dc9aab68709cff71f4cc8c7608bdad4dae26cd8f4
+- evidence_id: ontology
+  kind: authority
+  reference: https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:39063
+  locator: _embedded.terms[0], label, annotations, synonyms, is_obsolete and has_children
+  accessed_at: '2026-11-08T04:09:57.726548Z'
+  support: supports
+  summary: CHEBI39063 is nonobsolete, has Tricine synonym, formulaC6H13NO5 and CAS5704-04-1.
+  snapshot_sha256: 050fe68dd8da2a978ecdbc057a1f8593051f2a67fec104d9a765d16ca20a6db8
+- evidence_id: strict
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-two-strict-command.json
+  locator: Exact two-path command; exit0;2files0ERROR
+  accessed_at: '2026-11-08T04:12:54.016883Z'
+  support: supports
+  summary: Native strict closed-schema validator passed both current records; no scientific
+    conclusion follows.
+  snapshot_sha256: cf60ba4d3404e1fac41b2e54c718e5993c55b2a98f1783e816bbb154f07ba7af
+- evidence_id: holds
+  kind: prior_review
+  reference: reports/semantic_review_20260921/resolution/finding-dispositions.tsv
+  locator: Tricine rows SEM:03e6b59c36007b80eda7 and SEM:45145f975f47c92be184; complete
+    retained ledger used only to preserve historical holds
+  accessed_at: '2026-11-08T04:13:40.471030Z'
+  support: context_only
+  summary: Historical provisional-role obligations remain open; this source identity
+    scope does not retire any existing issue or hold.
+  snapshot_sha256: c56c4d4d7332181e239798804ba80a6f49cfc7ed81d835c29312f25a963b64cf
+assessments:
+- assessment_id: source-form
+  area: identity
+  topic: Reagent versus prepared stock and final concentration
+  outcome: supported
+  summary: pH8 is a recipe instruction for weighed Tricine; CHEBI39063 and CAS agree.
+  target_ids:
+  - CHEBI:39063
+  evidence_ids:
+  - record
+  - source
+  - ontology
+findings: []
+actions: []
+limitations:
+- This self-review does not satisfy independent campaign review.
+- No global synonym is added; preparation/final-concentration qualifiers remain source-local.
+- Full role evidence, all historical findings, corpus exports and release selectors
+  were not reassessed; no inherited hold is removed.
+```

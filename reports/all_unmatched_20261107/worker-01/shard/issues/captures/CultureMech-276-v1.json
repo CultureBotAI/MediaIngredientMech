@@ -1,0 +1,42 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "276",
+    "--repo",
+    "CultureBotAI/CultureMech",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:18:11.619052+00:00",
+  "completed_at": "2026-11-08T04:18:12.069657+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Found while working the #260 direction from the MIM side. MediaIngredientMech needs records for the 44 CultureMech ingredient names it lacks, so I verified CultureMech's `term.id` for each before adopting it. **They should not be adopted as-is.**\n\n## 1. One grounding names an unrelated compound\n\n    Sodium sulfide  ->  CHEBI:85357\n\n`CHEBI:85357` is **`3-[(1E,4R)-4-hydroxycyclohex-2-en-1-ylidene]pyruvic acid`**, formula `C9H10O4` — an organic acid. Sodium sulfide is `Na2S`:\n\n    CHEBI:76208  sodium sulfide (anhydrous)   2Na.S\n    CHEBI:76209  sodium sulfide nonahydrate   9H2O.2Na.S\n\nThis is the same shape as the `Cysteine-HCl` → `CHEBI:52891` (a fluorescent quencher dye) error I flagged on #272. Two independent instances suggests a systematic cause rather than two typos — worth finding whatever produced both.\n\n**The cheap detector**: compare the ChEBI *label* of each assigned id against the ingredient name and flag any pair sharing no token. It is how `KF` → `Lys-Phe` was caught in MIM.\n\n## 2. Stereochemistry silently dropped\n\n    DL-Tyrosine    ->  CHEBI:17895  L-tyrosine\n    DL-threonine   ->  CHEBI:16857  L-threonine\n\nA racemate is not its L-enantiomer. `CHEBI:18186 tyrosine` is stereo-unspecified and closer; ChEBI has no `DL-threonine` term, so that one may need a registry mint rather than a wrong answer.\n\n## 3. Labels have lost their subscripts\n\nEight ingredient names are unreadable as chemistry because the digits are gone:\n\n| stored label | almost certainly |\n|---|---|\n| `H BO` | H₃BO₃ boric acid |\n| `ZnCl .6H O` | ZnCl₂·6H₂O |\n| `Co(NO ) .6H O` | Co(NO₃)₂·6H₂O |\n| `LiCl.H O` | LiCl·H₂O |\n| `As O` | As₂O₃ |\n| `Na WO .2H O` | Na₂WO₄·2H₂O |\n| `TeO` | TeO₂ |\n| `MgSO .7H2O` | MgSO₄·7H₂O |\n\nNote `MgSO .7H2O` keeps the `2` in `H2O` but loses the `4` — so this is not a uniform strip. It looks like subscript characters (₂₃₄) were dropped while ASCII digits survived, which points at an encoding step rather than a parser.\n\nRelated typos in the same set, possibly the same origin: `MgSO2·7H2O` (should be SO₄), `NaMoO4·2H2O` ×4 spellings (should be Na₂MoO₄), `Na2Se3 x 5 H2O`, `Na2SeO·5H2O`, `NaSeO3·5H2O`, `Ferric ammmonium citrate`, `Distiled water`.\n\n## Why this matters for #260\n\nUnder the agreed direction MIM is the source of truth, so these names need MIM records. But **MIM must not inherit these groundings** — importing them would move the defects rather than fix them, and MIM has no way to tell a good CultureMech id from a bad one without checking each.\n\nSo the 44 split roughly:\n\n* ~8 subscript-stripped labels — should be **repaired here**, not recreated in MIM\n* ~10 typos and notation variants — likewise\n* ~13 genuinely new ingredients MIM should hold, but grounded independently\n* the rest are notation variants of substances MIM already has, which become synonyms rather than records\n\nRepairing (1)–(3) here is the higher-value half, because it fixes the source rather than propagating it.",
+    "closedAt": "2026-08-17T20:15:00Z",
+    "comments": [
+      {
+        "id": "IC_kwDORCzsts8AAAABPRTPZw",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "All three items done.\n\n**Item 1** (wrong compound) — #280. `Sodium sulfide`→CHEBI:85357 fixed, plus four more the systematic detector found that nobody had spotted: `Manganese sulfate monohydrate`→**ninhydrin**, `Na WO .2H O`→**a peptide**, and two organics. 95 rows.\n\n**Item 2** (stereochemistry) — #282, and smaller than this issue implied: only `DL-Tyrosine` and `DL-threonine` named a single enantiomer. `DL-methionine`→*methionine*, `DL-Malic acid`→*malic acid* and the rest are stereo-unspecified and were already correct.\n\n**Item 3** (subscripts) — #282. 51 names restored across both corpora, each listed explicitly and corroborated by its grounded term. `Na VO` deliberately left alone: Na₃VO₄ vs NaVO₃ is not determinable from the corpus.\n\nTwo things this issue asked for that are **not** resolved, tracked separately:\n\n- **#279** — `Na2SeO4`→sodium *sulfate* and `Na2SiO3`→sodium *sulfite*, the same Se/Si→S collapse as `H2SeO3`. Unfixable: ChEBI has no term for either correct compound. Three instances of one substitution suggests a shared upstream cause, and whatever produced them likely produced others that landed on a *plausible* compound and are therefore invisible.\n- **The encoding bug itself.** `MgSO .7H2O` keeps the `2` in `H2O` but loses the `4` — subscript characters dropped, ASCII digits survived. #282 repaired the damage but not the cause, so it will keep producing these.\n\nOn the #260 question this issue opened with: the 44 names are now safe to adopt on the grounding front, with #279's two excepted.",
+        "createdAt": "2026-08-17T20:14:59Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/CultureBotAI/CultureMech/issues/276#issuecomment-5319741287",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 276,
+    "state": "CLOSED",
+    "title": "Ingredient groundings include a wrong compound, dropped stereochemistry, and subscript-stripped labels",
+    "updatedAt": "2026-08-17T20:15:00Z",
+    "url": "https://github.com/CultureBotAI/CultureMech/issues/276"
+  }
+}

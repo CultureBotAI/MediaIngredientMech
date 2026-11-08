@@ -1,0 +1,121 @@
+identifier: kgmicrobe.ingredient:nbrc_1339_10xm9_solution
+preferred_term: NBRC 1339 10xM9 solution
+synonyms:
+- synonym_text: 10xM9 solution
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: TOGO:M2041,
+    nbrc.medium:1339; retained source-local label, excluded from global resolution
+    (IR-SHARD-ARTIFACT-9)'
+- synonym_text: 10xM9 solution**
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: TOGO:M2041,
+    nbrc.medium:1339; retained source-local label, excluded from global resolution
+    (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_1339_10xm9_solution
+  ontology_label: NBRC 1339 10xM9 solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2041
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: KH2PO4
+  reference_scope: UNMAPPED
+  concentration_value: '30'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2HPO4
+  reference_scope: UNMAPPED
+  concentration_value: '60'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: NH4Cl
+  reference_scope: UNMAPPED
+  concentration_value: '10'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1'
+  concentration_unit: L_PER_SOURCE_PREPARATION
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339
+    source_record: NBRC 1339 10xM9 solution; complete named stock table and preparation
+      notes
+    notes: NBRC1339 and TOGOM2041 explicitly same source stock; preserve four printed
+      salts and1L basis. No hydrate supplied for Na2HPO4.100mL added; complete receiving
+      medium includes separate phenanthrene/DMSO and is not identical to this stock.
+      Literal printed masses and added distilled-water volume per source preparation.
+      G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+      water, not a final1L solution or final concentration.
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2041
+    source_record: NBRC 1339 10xM9 solution; complete named stock table and preparation
+      notes
+    notes: NBRC1339 and TOGOM2041 explicitly same source stock; preserve four printed
+      salts and1L basis. No hydrate supplied for Na2HPO4.100mL added; complete receiving
+      medium includes separate phenanthrene/DMSO and is not identical to this stock.
+      Literal printed masses and added distilled-water volume per source preparation.
+      G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+      water, not a final1L solution or final concentration.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity.'
+notes: 'NBRC1339 and TOGOM2041 explicitly same source stock; preserve four printed
+  salts and1L basis. No hydrate supplied for Na2HPO4.100mL added; complete receiving
+  medium includes separate phenanthrene/DMSO and is not identical to this stock. Literal
+  printed masses and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+  describes a recipe batch containing1L added water, not a final1L solution or final
+  concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for
+  provenance and occurrence-specific decisions but native resolution must not expose
+  them as global synonyms. The source-qualified preferred term denotes this exact
+  preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+  are asserted. Any UNMAPPED part retains its literal source identity; component grounding
+  is separate from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.857744+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 136, case 147. No maintained owner created. Component grounding
+    limitations retained; all original case/occurrence objects remain in applicability
+    artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.603460+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true

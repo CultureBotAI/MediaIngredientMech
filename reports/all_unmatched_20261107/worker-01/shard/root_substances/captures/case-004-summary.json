@@ -1,0 +1,78 @@
+{
+  "i": 4,
+  "name": "MDS salt water (see below)",
+  "source": "culturemech",
+  "source_id": "MDS salt water (see below)",
+  "record": null,
+  "owners": [],
+  "holds": [],
+  "downstream_holds": [],
+  "candidate_hits": [],
+  "occurrences": [
+    {
+      "id": "CM_OCC:0be7375cffa78458b9bb24e567bf4b42745df8b6860f1cbfdfcd09b1aa444bec",
+      "snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M578_DB_Characterization_Medium_NO._2.yaml",
+      "source_ids": [
+        {
+          "path": "/id",
+          "value": "CultureMech:009974"
+        },
+        {
+          "path": "/media_term/term/id",
+          "value": "TOGO:M578"
+        }
+      ],
+      "component": {
+        "concentration": {
+          "unit": "G_PER_L",
+          "value": "833"
+        },
+        "preferred_term": "MDS salt water (see below)"
+      },
+      "recipe_keys": [
+        "id",
+        "name",
+        "original_name",
+        "category",
+        "medium_type",
+        "composition_type",
+        "physical_state",
+        "ingredients",
+        "media_term",
+        "notes",
+        "applications",
+        "curation_history",
+        "high_metal",
+        "solutions",
+        "variant_children"
+      ],
+      "recipe_metadata": {
+        "id": "CultureMech:009974",
+        "name": "db_characterization_medium_no_2",
+        "original_name": "DB Characterization Medium NO. 2",
+        "category": "bacterial",
+        "medium_type": "COMPLEX",
+        "composition_type": "UNDEFINED",
+        "physical_state": "LIQUID",
+        "media_term": {
+          "preferred_term": "TOGO Medium M578",
+          "term": {
+            "id": "TOGO:M578",
+            "label": "DB Characterization Medium NO. 2"
+          }
+        },
+        "notes": "Source: https://togomedium.org/medium/M578\nOriginal source: JCM - JCM_M574\nOriginal URL: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=574",
+        "high_metal": true,
+        "variant_children": [
+          {
+            "path": "data/normalized_yaml/bacterial/TOGO_M1125_DB_Characterization_Medium_NO.2_With_1_Sea_Salts.yaml",
+            "relationship": "SUPPLEMENTED_VARIANT",
+            "id": "CultureMech:007646",
+            "name": "db_characterization_medium_no_2_with_1_sea_salts",
+            "notes": "Supplements JCM Medium 574 with 10 g/L sea salts (Sigma)."
+          }
+        ]
+      }
+    }
+  ]
+}

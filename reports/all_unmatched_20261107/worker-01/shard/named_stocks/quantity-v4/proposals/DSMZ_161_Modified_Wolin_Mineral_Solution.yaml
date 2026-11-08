@@ -1,0 +1,162 @@
+identifier: kgmicrobe.ingredient:dsmz_161_modified_wolin_mineral_solution
+preferred_term: DSMZ 161 modified Wolin mineral solution
+synonyms:
+- synonym_text: Modified Wolin's mineral solution
+  synonym_type: REJECTED_LABEL
+  source: 'CultureMech frozen 20261107; source-local occurrence only: CultureMech:012076;
+    retained source-local label, excluded from global resolution (IR-SHARD-ARTIFACT-9)'
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_161_modified_wolin_mineral_solution
+  ontology_label: DSMZ 161 modified Wolin mineral solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+  - evidence_type: MANUAL_CURATION
+    source: https://mediadive.dsmz.de/rest/solution/241
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Nitrilotriacetic acid
+  reference_scope: UNMAPPED
+  concentration_value: '1.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: MgSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '3'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: MnSO4·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.5'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: NaCl
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: CoSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.18'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: CaCl2·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.1'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.18'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: AlK(SO4)2·12H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.02'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: H3BO3
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2MoO4·2H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: NiCl2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '0.03'
+  concentration_unit: G_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2SeO3·5H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:131361
+  concentration_value: '0.3'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Na2WO4·2H2O
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:63939
+  concentration_value: '0.4'
+  concentration_unit: MG_PER_PREPARATION_WITH_1_L_WATER
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1000'
+  concentration_unit: ML_PER_SOURCE_PREPARATION
+- component_name: KOH solution
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf
+    source_record: DSMZ 161 modified Wolin mineral solution; complete named stock
+      table and preparation notes
+    notes: DSMZ161 inherited mineral solution from141, with full recipe printed. Retain
+      explicit hydrated forms; KOH pH6.5 then7 is unquantified. Distinct from inspected
+      MIM Wolfe formulations in chelator, salts and amounts. Literal printed masses
+      and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+      describes a recipe batch containing1L added water, not a final1L solution or
+      final concentration.
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/rest/solution/241
+    source_record: DSMZ 161 modified Wolin mineral solution; complete named stock
+      table and preparation notes
+    notes: DSMZ161 inherited mineral solution from141, with full recipe printed. Retain
+      explicit hydrated forms; KOH pH6.5 then7 is unquantified. Distinct from inspected
+      MIM Wolfe formulations in chelator, salts and amounts. Literal printed masses
+      and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+      describes a recipe batch containing1L added water, not a final1L solution or
+      final concentration.
+  notes: 'Literal printed masses and added distilled-water volume per source preparation.
+    G/MG_PER_PREPARATION_WITH_1_L_WATER describes a recipe batch containing1L added
+    water, not a final1L solution or final concentration. Source-local raw labels
+    are REJECTED_LABEL: they are preserved for provenance and occurrence-specific
+    decisions but native resolution must not expose them as global synonyms. The source-qualified
+    preferred term denotes this exact preparation. No unsupported roles, mechanisms,
+    vendor, grade or release approval are asserted. Any UNMAPPED part retains its
+    literal source identity; component grounding is separate from established whole-stock
+    recipe identity.'
+notes: 'DSMZ161 inherited mineral solution from141, with full recipe printed. Retain
+  explicit hydrated forms; KOH pH6.5 then7 is unquantified. Distinct from inspected
+  MIM Wolfe formulations in chelator, salts and amounts. Literal printed masses and
+  added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+  describes a recipe batch containing1L added water, not a final1L solution or final
+  concentration. Source-local raw labels are REJECTED_LABEL: they are preserved for
+  provenance and occurrence-specific decisions but native resolution must not expose
+  them as global synonyms. The source-qualified preferred term denotes this exact
+  preparation. No unsupported roles, mechanisms, vendor, grade or release approval
+  are asserted. Any UNMAPPED part retains its literal source identity; component grounding
+  is separate from established whole-stock recipe identity.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.850610+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 130. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T04:50:12.595552+00:00'
+  curator: worker01_named_stock_source_curation
+  action: PROPOSAL_CORRECTED
+  changes: 'Isolated successor: preserve literal source preparation quantities without
+    added-water/final-volume conflation; exclude source-local labels from native global
+    resolution. Prior exact proposal bytes and reviews retained. Literal printed masses
+    and added distilled-water volume per source preparation. G/MG_PER_PREPARATION_WITH_1_L_WATER
+    describes a recipe batch containing1L added water, not a final1L solution or final
+    concentration.'
+  new_status: MAPPED
+  llm_assisted: true

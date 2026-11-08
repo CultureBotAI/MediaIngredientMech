@@ -1,0 +1,170 @@
+{
+  "index": 166,
+  "case": {
+    "baseline_outcome": "current_source_placeholder_preserved",
+    "campaign_requirement": "complete_review_or_explicit_source_scope_disposition",
+    "case_id": "KG_CASE:37abe47bcbcb40f37dee4d9deecf14cac221506e37b16edcc716b5ed68e8a570",
+    "original_kg_entry": {
+      "candidate_id": "37abe47bcbcb40f37dee4d9deecf14cac221506e37b16edcc716b5ed68e8a570",
+      "category": "biolink:ChemicalEntity",
+      "consumed_name_hits": [],
+      "downstream_holds": [],
+      "name_hits": [
+        {
+          "candidate_field": "source_label",
+          "kind": "preferred_term",
+          "label": "Sigmacell alpha Type 50",
+          "owner": "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "source_label",
+          "kind": "synonym",
+          "label": "Sigmacell alpha Type 50",
+          "owner": "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "Sigmacell alpha Type 50",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "preferred_term",
+          "label": "Sigmacell alpha Type 50",
+          "owner": "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml",
+          "resolving": true
+        },
+        {
+          "candidate_field": "raw_source_label",
+          "kind": "synonym",
+          "label": "Sigmacell alpha Type 50",
+          "owner": "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml",
+          "resolving": true,
+          "synonym": {
+            "source": "mim-queue",
+            "synonym_text": "Sigmacell alpha Type 50",
+            "synonym_type": "RAW_TEXT"
+          },
+          "synonym_type": "RAW_TEXT"
+        }
+      ],
+      "native_identity_target": "",
+      "native_queue_state": "STILL_UNMAPPED",
+      "occurrences": 1,
+      "occurrences_definition": "helper constant; not measured recipe frequency",
+      "owners": [
+        {
+          "identifier": "UNMAPPED_0520",
+          "mapping_status": "UNMAPPED",
+          "native_review_rows": [],
+          "ontology_mapping": null,
+          "path": "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml",
+          "preferred_term": "Sigmacell alpha Type 50",
+          "sha256": "628c06aea5f0041e8c57febeaaf8a80fc90a08940bc6dbb2b822032f721696e5",
+          "subject_id": "MIM:Sigmacell_Alpha_Type_50"
+        }
+      ],
+      "raw_label_provenance": "admitted generation compounds.json by exact compound_id",
+      "raw_source_label": "Sigmacell alpha Type 50",
+      "resolving_owner_paths": [
+        "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml"
+      ],
+      "scientific_identity_approved_by_reconciliation": false,
+      "source": "mediadive",
+      "source_columns": "compound",
+      "source_id": "mediadive.ingredient:1281",
+      "source_label": "Sigmacell alpha Type 50",
+      "source_record": {
+        "amount": 5,
+        "attribute": "Sigma S5504",
+        "compound": "Sigmacell alpha Type 50",
+        "compound_id": 1281,
+        "g_l": 5,
+        "optional": 0,
+        "recipe_order": 7,
+        "unit": "g"
+      },
+      "triage_flags": [
+        "MATCHED_UNMAPPED_OWNER",
+        "MIM_NAME_NOT_IN_CONSUMED_SUPPORTED_EXPORT"
+      ]
+    },
+    "prior_dependency": "PR1158 candidate baseline, not merged",
+    "raw_source_label": "Sigmacell alpha Type 50",
+    "source": "mediadive",
+    "source_case_id": "mediadive.ingredient:1281",
+    "source_identity_claimed": false,
+    "source_label": "Sigmacell alpha Type 50"
+  },
+  "occurrence_contexts": [],
+  "current_queue_owners": [
+    {
+      "path": "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml",
+      "sha256": "628c06aea5f0041e8c57febeaaf8a80fc90a08940bc6dbb2b822032f721696e5",
+      "record": {
+        "identifier": "UNMAPPED_0520",
+        "preferred_term": "Sigmacell alpha Type 50",
+        "synonyms": [
+          {
+            "synonym_text": "Sigmacell alpha Type 50",
+            "synonym_type": "RAW_TEXT",
+            "source": "mim-queue"
+          }
+        ],
+        "mapping_status": "UNMAPPED",
+        "occurrence_statistics": {
+          "total_occurrences": 0,
+          "media_count": 0
+        },
+        "curation_history": [
+          {
+            "timestamp": "2026-04-30T18:43:03.698454+00:00",
+            "curator": "audit_import_ingredients[mim-queue]",
+            "action": "CREATED_AS_UNMAPPED",
+            "changes": "Imported from mim-queue (source_id=mediadive.ingredient:1281); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+            "new_status": "UNMAPPED",
+            "llm_assisted": false
+          },
+          {
+            "timestamp": "2026-05-11T08:03:00Z",
+            "curator": "mediaingredientmech-agentic-curation",
+            "action": "CLASSIFIED_UNDEFINED_MIXTURE",
+            "changes": "Classified as a named cellulose material/preparation and left unmapped pending grade, source, and exact ontology curation.",
+            "previous_status": "UNMAPPED",
+            "new_status": "UNMAPPED",
+            "llm_assisted": true
+          },
+          {
+            "timestamp": "2026-08-06T00:00:00+00:00",
+            "curator": "edison_literature_identity",
+            "action": "ANNOTATED",
+            "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Sigmacell_alpha_Type_50-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** a **supplier-defined particulate cellulose grade/preparation**, not a discrete small molecule, salt, hydrate, buffer, extract, or fixed multicomponent formulation. The evidence-supported identity is **Sigmacell cellulose Type 50**, manufactured by Sigma/Sigma-Aldrich and associated with catalog **S5504** (legacy typography **S-5504**). “Type 50” denotes a nominal ** CURIEs discussed: CHEBI:62967, MESH:D002482. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+            "llm_assisted": true
+          }
+        ],
+        "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1281); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named cellulose material/preparation pending grade and source curation.",
+        "ingredient_type": "UNDEFINED_MIXTURE"
+      }
+    }
+  ],
+  "lexical_candidates_not_identity": [
+    {
+      "path": "data/ingredients/unmapped/Sigmacell_Alpha_Type_50.yaml",
+      "sha256": "628c06aea5f0041e8c57febeaaf8a80fc90a08940bc6dbb2b822032f721696e5",
+      "matched_labels": [
+        "Sigmacell alpha Type 50",
+        "Sigmacell alpha Type 50"
+      ],
+      "preferred_term": "Sigmacell alpha Type 50",
+      "identifier": "UNMAPPED_0520",
+      "status": "UNMAPPED",
+      "mapping": null,
+      "notes": "Imported from mim-queue (source_id=mediadive.ingredient:1281); no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named cellulose material/preparation pending grade and source curation.",
+      "supplied_form": null
+    }
+  ],
+  "search_scope": "All data/ingredients/**/*.yaml via pathlib.rglob (includes ignored files), exact casefold and alnum-normalized labels only; not a claim of absence under other names"
+}

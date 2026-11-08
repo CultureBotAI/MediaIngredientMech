@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:nbrc_943_metal_salt_44
+preferred_term: NBRC 943 Metal salt 44
+synonyms:
+- synonym_text: Metal salt solution 44
+  synonym_type: RAW_TEXT
+  source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943; nested
+    source preparation used by modified Hutner solution
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nbrc_943_metal_salt_44
+  ontology_label: NBRC 943 Metal salt 44
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    notes: Exact source-defined stock formulation under MAPPING_SEMANTICS section3
+      and add-media. Bounded exact source-qualified stock-name OLS lookup found no
+      exact ontology term. Registry identity denotes the whole preparation; no exact
+      mapping to any component or broad parent is asserted.
+components:
+- component_name: Na-EDTA
+  reference_scope: UNMAPPED
+  concentration_value: '2500'
+  concentration_unit: MG_PER_L
+- component_name: ZnSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '10950'
+  concentration_unit: MG_PER_L
+- component_name: FeSO4·7H2O
+  reference_scope: UNMAPPED
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: MnSO4·H2O
+  reference_scope: UNMAPPED
+  concentration_value: '1540'
+  concentration_unit: MG_PER_L
+- component_name: CuSO4·5H2O
+  reference_scope: UNMAPPED
+  concentration_value: '392'
+  concentration_unit: MG_PER_L
+- component_name: Co(NO3)2·6H2O
+  reference_scope: UNMAPPED
+  concentration_value: '248'
+  concentration_unit: MG_PER_L
+- component_name: Na2B4O7·10H2O
+  reference_scope: UNMAPPED
+  concentration_value: '177'
+  concentration_unit: MG_PER_L
+- component_name: Distilled water
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:15377
+  concentration_value: '1'
+  concentration_unit: L_PER_L
+- component_name: Concentrated H2SO4
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943
+    source_record: NBRC 943 Metal salt 44; complete named stock table and preparation
+      notes
+    notes: 'Nested source preparation: NaEDTA250mg, ZnSO4·7H2O1095mg, FeSO4·7H2O0.5g,
+      MnSO4·H2O154mg, CuSO4·5H2O39.2mg, Co(NO3)2·6H2O24.8mg, Na2B4O7·10H2O17.7mg per100mL
+      plus drops concentratedH2SO4. NaEDTA exact salt form and acid drops remain unquantified;
+      no chemical grounding asserted. Auxiliary proposal solely supports case116 nested
+      component.'
+  notes: Complete printed constituent enumeration, including unquantified titrants/solvent
+    where stated. Quantities use the explicitly described nominal preparation basis;
+    not a measurement of final volume or post-dissolution species. UNMAPPED constituent
+    scope preserves literal source identity without guessing a chemical or hydration-specific
+    catalog owner. Known quartet constituent identities use independently verified
+    official ontology/MIM references; this does not approve unrelated claims on those
+    component owners.
+notes: 'Nested source preparation: NaEDTA250mg, ZnSO4·7H2O1095mg, FeSO4·7H2O0.5g,
+  MnSO4·H2O154mg, CuSO4·5H2O39.2mg, Co(NO3)2·6H2O24.8mg, Na2B4O7·10H2O17.7mg per100mL
+  plus drops concentratedH2SO4. NaEDTA exact salt form and acid drops remain unquantified;
+  no chemical grounding asserted. Auxiliary proposal solely supports case116 nested
+  component. Raw generic names retain source-specific provenance and must not be resolved
+  globally without original recipe context. The registry record describes this source
+  formulation only. No roles, mechanism, vendor/grade or supported-release approval
+  asserted. No invented occurrence statistics: these scoped input rows are not a corpus
+  census. Selected CultureMech recipes are receiving media, not exact standalone stock
+  formulations; typed whole-recipe equivalence would be false unless separately verified.'
+curation_history:
+- timestamp: '2026-11-08T04:36:11.830350+00:00'
+  curator: worker01_named_stock_source_curation
+  action: CREATED_AS_PROPOSAL
+  changes: Isolated proposal only; exact source stock formula and constituent enumeration
+    reviewed for case 116. No maintained owner created. Component grounding limitations
+    retained; all original case/occurrence objects remain in applicability artifact.
+  new_status: MAPPED
+  llm_assisted: true

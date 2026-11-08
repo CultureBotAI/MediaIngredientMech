@@ -1,0 +1,3580 @@
+{
+  "checked_at": "2026-11-08T04:36:07.644319+00:00",
+  "scope": "32 explicit source-specific draft payloads; per-proposal formula/source/occurrence applicability, not blanket owner approval.",
+  "proposals": [
+    {
+      "proposal_id": "NSC-PROP-JCM_1474_Solution_A",
+      "source_specification": {
+        "slug": "JCM_1474_Solution_A",
+        "cases": [
+          6
+        ],
+        "label": "JCM 1474 Solution A",
+        "source": "jcm-1474",
+        "parts": [
+          [
+            "K2HPO4",
+            "100",
+            "G_PER_L"
+          ],
+          [
+            "KH2PO4",
+            "100",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Original batch: 10 g of each salt and 100 mL distilled water. Values use the nominal printed water-volume basis; source adds 10 mL to receiving medium. No equivalence to unrelated Solution A formulations.",
+        "solution_type": "BUFFER_SOLUTION",
+        "basis": "100 mL original batch",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:81be19d70b9c0370762b7ebbc4ab408e4241a7913ce2538dd1b385fd62d9a43e",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1474_BL_BROTH_WITH_2_NaCl.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:015890",
+          "recipe_primary_identifier": "jcm.grmd:1474",
+          "raw_preferred_term": "Solution A (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Solution A (see below)"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1474.html",
+          "sha256": "fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474",
+          "accessed_at": "2026-11-08T04:06:04.491083+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_1474_Solution_A.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20A&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:15.372171+00:00",
+        "finished_at": "2026-11-08T04:34:15.980210+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_A.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_1474_Solution_A.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20A&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20A&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a347ba55fd86c258fd09577b95c0157152bc847deef40b7f72dc3e67dce0bfb2",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_1474_solution_a"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_1257_Bicarbonate_Solution",
+      "source_specification": {
+        "slug": "NBRC_1257_Bicarbonate_Solution",
+        "cases": [
+          11
+        ],
+        "label": "NBRC 1257 bicarbonate solution",
+        "source": "nbrc-1257",
+        "parts": [
+          [
+            "NaHCO3",
+            "84",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ],
+          [
+            "CO2",
+            null,
+            null
+          ]
+        ],
+        "notes": "Original batch: NaHCO3 8.4 g and water 100 mL, saturated with CO2 and autoclaved under CO2. Source calls it 1.0 M. CO2 amount is variable saturation, not a guessed numerical amount. Frozen nested 8.4 G_PER_L is a denominator error, not inherited here.",
+        "solution_type": "BUFFER_SOLUTION",
+        "basis": "100 mL original batch",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:bb36dd78feb59dc8f43713d4b08366f1eb2bd65b5dde132fbefa1936b83a6f78",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1261.yaml",
+          "component_path": "ingredients/12",
+          "recipe_id": "CultureMech:007467",
+          "recipe_primary_identifier": "nbrc.medium:1257",
+          "raw_preferred_term": "Bicarbonate solution***",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "30"
+            },
+            "preferred_term": "Bicarbonate solution***"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1257.html",
+          "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+          "accessed_at": "2026-11-08T04:06:02.860735+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_1257_Bicarbonate_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20bicarbonate%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:15.372420+00:00",
+        "finished_at": "2026-11-08T04:34:15.991513+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Bicarbonate_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_1257_Bicarbonate_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20bicarbonate%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20bicarbonate%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a347ba55fd86c258fd09577b95c0157152bc847deef40b7f72dc3e67dce0bfb2",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_1257_bicarbonate_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_915_Modified_Wolfe_Mineral_Solution",
+      "source_specification": {
+        "slug": "JCM_915_Modified_Wolfe_Mineral_Solution",
+        "cases": [
+          15
+        ],
+        "label": "JCM 915 modified Wolfe mineral solution",
+        "source": "jcm-915 jcm-151",
+        "parts": [
+          [
+            "Nitrilotriacetic acid",
+            "1.5",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "3",
+            "G_PER_L"
+          ],
+          [
+            "MnSO4·xH2O",
+            "0.5",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "1",
+            "G_PER_L"
+          ],
+          [
+            "FeSO4·7H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "CoSO4·7H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "ZnSO4·7H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "CuSO4·5H2O",
+            "0.02",
+            "G_PER_L"
+          ],
+          [
+            "AlK(SO4)2",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "H3BO3",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "Na2MoO4·2H2O",
+            "0.4",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ],
+          [
+            "KOH solution",
+            null,
+            null
+          ],
+          [
+            "NiCl2·6H2O",
+            "0.01",
+            "G_PER_L"
+          ]
+        ],
+        "notes": "JCM 915 modifies JCM151 trace minerals to final Na2MoO4·2H2O 0.4 g/L, CuSO4·5H2O 0.02 g/L and adds NiCl2·6H2O 0.01 g/L. Retain MnSO4·xH2O and unqualified AlK(SO4)2 as printed; no hydration guessed. KOH titration at pH6.5 then7 has no fixed amount. Distinct from EDTA-based Wolfe stocks and current Modified Wolfes Minerals.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:670302245438d869b1fd4a1da1011392d1b9ed8650ee8cf26a399f2ca5c1fd12",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1430_SEMI_SOLID_HETEROTROPHIC_GROWTH_MEDIUM_FOR_ALPHAPROTEOBACTERIA.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015865",
+          "recipe_primary_identifier": "jcm.grmd:1430",
+          "raw_preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:1700d62c5c8b845692348da2d865f8cb4aec17499d2cd8fc8bfd732939c2f87e",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1431_SEMI_SOLID_AUTOTROPHIC_GROWTH_MEDIUM_FOR_GAMMAPROTEOBACTERIA.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015866",
+          "recipe_primary_identifier": "jcm.grmd:1431",
+          "raw_preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:98423b596147651ffa0d21122fd37f8aaeadda5809dfdc7bd0cd0e9dcbc5eff6",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1479_SOLIDESULFOVIBRIO_MEDIUM.yaml",
+          "component_path": "ingredients/3",
+          "recipe_id": "CultureMech:015877",
+          "recipe_primary_identifier": "jcm.grmd:1479",
+          "raw_preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "4.0"
+            },
+            "preferred_term": "Modified Wolfe’s mineral solution (see Medium No. 915 )"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-915.html",
+          "sha256": "a9527cd4ab3c60d334bf3f80a424d3007596ed45fb4da31e37debb239bc5cc82",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=915",
+          "accessed_at": "2026-11-08T04:06:18.316405+00:00"
+        },
+        {
+          "path": "captures/jcm-151.html",
+          "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151",
+          "accessed_at": "2026-11-08T04:06:10.429119+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20915%20modified%20Wolfe%20mineral%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:15.372487+00:00",
+        "finished_at": "2026-11-08T04:34:15.995947+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_915_Modified_Wolfe_Mineral_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20915%20modified%20Wolfe%20mineral%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%20915%20modified%20Wolfe%20mineral%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a347ba55fd86c258fd09577b95c0157152bc847deef40b7f72dc3e67dce0bfb2",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_915_modified_wolfe_mineral_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-CCAP_PE_Salt_Solution_Stock",
+      "source_specification": {
+        "slug": "CCAP_PE_Salt_Solution_Stock",
+        "cases": [
+          45
+        ],
+        "label": "CCAP PE salt solution stock",
+        "source": "ccap-PE",
+        "parts": [
+          [
+            "NaNO3",
+            "200",
+            "G_PER_L"
+          ],
+          [
+            "Na2HPO4·12H2O",
+            "20",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Source batch is 1000 cm3 water with 200 g nitrate and 20 g disodium phosphate dodecahydrate. Preserve explicit hydrate; no use of erroneous frozen phosphatidylcholine term. Receiving stock and separately flattened salt rows must not be double-counted.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:341a89a7a9bb453306c131aa4218a68052f339ca6ab999bc68ee2e5967b4ef61",
+          "source_file": "data/normalized_yaml/algae/pe.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:000110",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Salt solution stock",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "notes": "Contains NaNO3 and Na2HPO4·12H2O (see above for individual concentrations)",
+            "preferred_term": "Salt solution stock",
+            "source": "CCAP PE medium PDF"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/ccap-PE.pdf",
+          "sha256": "a859c78fedc7480fa974d4be999058b25ad05c5c952dcc06e413a2acaf672233",
+          "url": "https://www.ccap.ac.uk/wp-content/uploads/MR_PE.pdf",
+          "accessed_at": "2026-11-08T04:06:05.516292+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/CCAP_PE_Salt_Solution_Stock.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=CCAP%20PE%20salt%20solution%20stock&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:15.980687+00:00",
+        "finished_at": "2026-11-08T04:34:16.609129+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/CCAP_PE_Salt_Solution_Stock.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/CCAP_PE_Salt_Solution_Stock.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=CCAP%20PE%20salt%20solution%20stock&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=CCAP%20PE%20salt%20solution%20stock&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "d5d11d148c1585db93c7a2f15350e69e7a68cc40aca985d6594d0a151a3eb5a3",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:ccap_pe_salt_solution_stock"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_628_Modified_Wolfe_Solution",
+      "source_specification": {
+        "slug": "JCM_628_Modified_Wolfe_Solution",
+        "cases": [
+          48
+        ],
+        "label": "JCM 628 modified Wolfe solution",
+        "source": "jcm-628",
+        "parts": [
+          [
+            "NH4Cl",
+            "1",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "0.2",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "KH2PO4",
+            "0.05",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Defined four-salt mineral base from JCM628; JCM1347 references this stock. It is distinct from trace-metal Wolfe stocks in JCM915/265 and existing MIM candidates.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:3c3e6d910d7f748bfb3a8ae67029f484367e2f97bb21ce700522c3c0adefeb6a",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1347_FRESHWATER_THIOSULFATE_OXIDIZING_BACTERIA_MEDIUM.yaml",
+          "component_path": "ingredients/0",
+          "recipe_id": "CultureMech:015883",
+          "recipe_primary_identifier": "jcm.grmd:1347",
+          "raw_preferred_term": "Modified Wolfe's solution (see Medium No. 628 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1000"
+            },
+            "preferred_term": "Modified Wolfe's solution (see Medium No. 628 )"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-628.html",
+          "sha256": "9e05b3f24d557c38a58a6d85a21bd0e39178de942acb619ccfd038e5c628943f",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=628",
+          "accessed_at": "2026-11-08T04:06:18.624268+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_628_Modified_Wolfe_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20628%20modified%20Wolfe%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:15.991829+00:00",
+        "finished_at": "2026-11-08T04:34:16.588738+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_628_Modified_Wolfe_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_628_Modified_Wolfe_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20628%20modified%20Wolfe%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%20628%20modified%20Wolfe%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "d5d11d148c1585db93c7a2f15350e69e7a68cc40aca985d6594d0a151a3eb5a3",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_628_modified_wolfe_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_265_Wolfe_Mineral_Solution",
+      "source_specification": {
+        "slug": "JCM_265_Wolfe_Mineral_Solution",
+        "cases": [
+          68,
+          72
+        ],
+        "label": "JCM 265 Wolfe mineral solution",
+        "source": "jcm-265 jcm-151",
+        "parts": [
+          [
+            "Nitrilotriacetic acid",
+            "1.5",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "3",
+            "G_PER_L"
+          ],
+          [
+            "MnSO4·xH2O",
+            "0.5",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "1",
+            "G_PER_L"
+          ],
+          [
+            "FeSO4·7H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "CoSO4·7H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "ZnSO4·7H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "CuSO4·5H2O",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "AlK(SO4)2",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "H3BO3",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "Na2MoO4·2H2O",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ],
+          [
+            "KOH solution",
+            null,
+            null
+          ],
+          [
+            "NiCl2·6H2O",
+            "0.02",
+            "G_PER_L"
+          ],
+          [
+            "Na2SeO3",
+            "0.001",
+            "G_PER_L"
+          ],
+          [
+            "Na2WO4·2H2O",
+            "0.01",
+            "G_PER_L"
+          ]
+        ],
+        "notes": "JCM265 adds three printed salts to JCM151 trace minerals. Preserve unresolved x hydration in MnSO4 and unqualified AlK(SO4)2; unquantified KOH pH adjustment retained. All three source occurrences explicitly reference265; no global Wolfe-name equivalence.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:4ee112055c63d96ff7bbd13a0ab8b84dc1d606d98157dc210826786df4447eee",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1362_METHANOBACTERIUM_VT_MEDIUM.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015840",
+          "recipe_primary_identifier": "jcm.grmd:1362",
+          "raw_preferred_term": "Wolfe's mineral solution (see Medium No. 265 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Wolfe's mineral solution (see Medium No. 265 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:f7cd85abdd7e23df632cf64233319afcd3f88d70ab19d99039cc403896db0971",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1429_M1H_NAG_ASW.yaml",
+          "component_path": "ingredients/3",
+          "recipe_id": "CultureMech:015864",
+          "recipe_primary_identifier": "jcm.grmd:1429",
+          "raw_preferred_term": "Wolfe's mineral solution (see Medium No. 265 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Wolfe's mineral solution (see Medium No. 265 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:f7acdaabc503b83fe9b6f0400bd4ea192834fda841c174a6089a720552d19359",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1412_MANGROVIBACTERIUM_Z1_71_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015857",
+          "recipe_primary_identifier": "jcm.grmd:1412",
+          "raw_preferred_term": "Wolfe’s mineral solution (see Medium No. 265 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Wolfe’s mineral solution (see Medium No. 265 )"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-265.html",
+          "sha256": "9465c696422389217bdf0c83463a9eca53b8009837e82ac8492bf98aa292826c",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=265",
+          "accessed_at": "2026-11-08T04:06:19.340903+00:00"
+        },
+        {
+          "path": "captures/jcm-151.html",
+          "sha256": "6cfac0ff9954839eabcdf17884480ce9ea76646da8cbfac0ca0d92ac393584d7",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=151",
+          "accessed_at": "2026-11-08T04:06:10.429119+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_265_Wolfe_Mineral_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20265%20Wolfe%20mineral%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:15.996244+00:00",
+        "finished_at": "2026-11-08T04:34:16.590790+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_265_Wolfe_Mineral_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_265_Wolfe_Mineral_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20265%20Wolfe%20mineral%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%20265%20Wolfe%20mineral%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "d5d11d148c1585db93c7a2f15350e69e7a68cc40aca985d6594d0a151a3eb5a3",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_265_wolfe_mineral_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_1353_Mineral_Solution_A",
+      "source_specification": {
+        "slug": "JCM_1353_Mineral_Solution_A",
+        "cases": [
+          69,
+          70
+        ],
+        "label": "JCM 1353 mineral solution A",
+        "source": "jcm-1353",
+        "parts": [
+          [
+            "EDTA",
+            "2.5",
+            "G_PER_L"
+          ],
+          [
+            "KOH",
+            "2.2",
+            "G_PER_L"
+          ],
+          [
+            "FeSO4·7H2O",
+            "1.1",
+            "G_PER_L"
+          ],
+          [
+            "MnCl2·4H2O",
+            "98.4",
+            "MG_PER_L"
+          ],
+          [
+            "ZnSO4·7H2O",
+            "28.8",
+            "MG_PER_L"
+          ],
+          [
+            "CoCl2·6H2O",
+            "23.8",
+            "MG_PER_L"
+          ],
+          [
+            "CuCl2·2H2O",
+            "17.2",
+            "MG_PER_L"
+          ],
+          [
+            "Na2MoO4·2H2O",
+            "24.2",
+            "MG_PER_L"
+          ],
+          [
+            "H3BO3",
+            "31",
+            "MG_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ],
+          [
+            "HCl",
+            null,
+            null
+          ]
+        ],
+        "notes": "Printed JCM1353 stock with pH6.5 adjustment using HCl. Titrant amount is unquantified. EDTA salt/protonation form is not silently supplied. Explicit1353 references and local see-below label resolve to same source stock.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:30af904ac9115f5e7e76442d7b7540d95719f0f7dd78e87c6aec91799b586968",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1366_GBS_SALTS_MEDIUM_FOR_HYDROGENOBACTER.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015844",
+          "recipe_primary_identifier": "jcm.grmd:1366",
+          "raw_preferred_term": "Mineral solution A (see Medium No. 1353 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Mineral solution A (see Medium No. 1353 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:7527106ffb8fef5a7d99781ae6599e4794b30f6d760057f8fc5743e171e58b0b",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1353_GBS_SALTS_MEDIUM_FOR_FERVIDIBACTER.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015836",
+          "recipe_primary_identifier": "jcm.grmd:1353",
+          "raw_preferred_term": "Mineral solution A (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Mineral solution A (see below)"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1353.html",
+          "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+          "accessed_at": "2026-11-08T04:06:07.872529+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_1353_Mineral_Solution_A.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20A&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:16.588962+00:00",
+        "finished_at": "2026-11-08T04:34:17.213270+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_A.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_1353_Mineral_Solution_A.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20A&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20A&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "264110d47b39507ece609fe1b6bcdfbfe20bad12a60b56b3f671de5680b39e97",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_1353_mineral_solution_a"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_1020_Se_W_Solution",
+      "source_specification": {
+        "slug": "NBRC_1020_Se_W_Solution",
+        "cases": [
+          86
+        ],
+        "label": "NBRC 1020 Se/W solution",
+        "source": "nbrc-1020",
+        "parts": [
+          [
+            "Na2SeO3",
+            "4",
+            "MG_PER_L"
+          ],
+          [
+            "Na2WO4",
+            "4",
+            "MG_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Applies only to NBRC1020 occurrence. NBRC824 has matching two salt amounts but no water/preparation denominator; its occurrence is not mapped to this quantified stock. Printed unhydrated formulas are retained.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": [
+          "nbrc.medium:1020"
+        ]
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:3ca02a4ab3591954534121c836fd35a19da58990c45852d0ea309e271afca84d",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1021.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:007450",
+          "recipe_primary_identifier": "nbrc.medium:1020",
+          "raw_preferred_term": "Se/W solution***",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Se/W solution***"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1020.html",
+          "sha256": "6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+          "accessed_at": "2026-11-08T04:06:09.103311+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_1020_Se_W_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%20Se%2FW%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:16.591016+00:00",
+        "finished_at": "2026-11-08T04:34:17.196981+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_Se_W_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_1020_Se_W_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%20Se%2FW%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%20Se%2FW%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "264110d47b39507ece609fe1b6bcdfbfe20bad12a60b56b3f671de5680b39e97",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_1020_se_w_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_1130_Mineral_Solution_II",
+      "source_specification": {
+        "slug": "JCM_1130_Mineral_Solution_II",
+        "cases": [
+          89
+        ],
+        "label": "JCM 1130 mineral solution II",
+        "source": "jcm-1130",
+        "parts": [
+          [
+            "KH2PO4",
+            "3",
+            "G_PER_L"
+          ],
+          [
+            "(NH4)2SO4",
+            "6",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "6",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "0.6",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "0.6",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "JCM1385 inherits1130 with mannitol addition to receiving medium; stock composition is unchanged. Distinct from DSMZ436 Mineral2.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:11cfe34f6ef1484d9fb916e8d91c931e72869713919de378b2e852cc32e13eb9",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1385_YCFA_MEDIUM_WITH_MANNITOL.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015879",
+          "recipe_primary_identifier": "jcm.grmd:1385",
+          "raw_preferred_term": "Mineral solution II (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "150.0"
+            },
+            "preferred_term": "Mineral solution II (see below)"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1130.html",
+          "sha256": "dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T04:07:14.964723+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_1130_Mineral_Solution_II.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20II&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:16.609327+00:00",
+        "finished_at": "2026-11-08T04:34:17.237491+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_II.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_1130_Mineral_Solution_II.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20II&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20II&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "264110d47b39507ece609fe1b6bcdfbfe20bad12a60b56b3f671de5680b39e97",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_1130_mineral_solution_ii"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_187_FeCl2_Solution",
+      "source_specification": {
+        "slug": "JCM_187_FeCl2_Solution",
+        "cases": [
+          93
+        ],
+        "label": "JCM 187 FeCl2 solution",
+        "source": "jcm-187",
+        "parts": [
+          [
+            "HCl solution (25%, 7.7 M)",
+            "10",
+            "ML_PER_L"
+          ],
+          [
+            "FeCl2·4H2O",
+            "1.5",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "990",
+            "ML_PER_L"
+          ]
+        ],
+        "notes": "Source nominal batch: 10 mL 25% HCl (7.7 M), 1.5 g FeCl2·4H2O and 990 mL water. Acid is a prepared component, not neat HCl. All eleven receiving occurrences explicitly reference JCM187; doses differ and remain occurrence-bound.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:124553bbaf10bdfa0409722563f775419ec66c959ed158988e9e34bfa433c5f6",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1423_METHANOBREVIBACTER_CURVATUS_MEDIUM.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:015860",
+          "recipe_primary_identifier": "jcm.grmd:1423",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:3e3910a02e42dae7950e598345e292d89e1a09df2036705327f774448bd10380",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1424_METHANOBREVIBACTER_CUTICULARIS_MEDIUM.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015861",
+          "recipe_primary_identifier": "jcm.grmd:1424",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:ddbf83b73a5646536580dd26d6c8d12abf14996a5366b30be1ea4108c25d71d6",
+          "source_file": "data/normalized_yaml/archaea/JCM_J1456_METHANOCULLEUS_7T_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015888",
+          "recipe_primary_identifier": "jcm.grmd:1456",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:2572fae1dacb0d2fc1e6fae983d1fb15e0001455a7ca056e8ae341c15fa65f55",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1351_PELOSINUS_BKL1_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015835",
+          "recipe_primary_identifier": "jcm.grmd:1351",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:43f5cfc92909cba466fd96fab90bb2183102ec9f3cc07ee1653d51237f60e767",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1365_ACIDIC_LOW_SALT_MINERAL_MEDIUM.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:015843",
+          "recipe_primary_identifier": "jcm.grmd:1365",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:bfdb66c032b22801991af8e031db351f6425adf75d09739ec5ce97bb1057a632",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1388_ACC8_MEDIUM.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:015848",
+          "recipe_primary_identifier": "jcm.grmd:1388",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:10836cdae77af72f8e7310b816d353778d44fd680cf3e22539c7a179ad101c9c",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1389_IA91_MEDIUM.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:015849",
+          "recipe_primary_identifier": "jcm.grmd:1389",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:d0783d494064c7eca46b0ae27d9cb2fd73885ec6d6a964a67ef48396276abfdb",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1406_TEPIDIBACTER_8C15B_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015856",
+          "recipe_primary_identifier": "jcm.grmd:1406",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:bf6bf50fa7165e19ecfd52a54b79fdd7beacc9f3164e84b2963557b4de9b3885",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1425_SPOROMUSA_MEDIUM_2.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:015862",
+          "recipe_primary_identifier": "jcm.grmd:1425",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:69bed99565b34f35c8561896ff955fda30edeb4f32173a5bb2d3265a4fb1b17f",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1468_FRESHWATER_R2A_MEDIUM.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015874",
+          "recipe_primary_identifier": "jcm.grmd:1468",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:5b2b97d7f38eca85f296139009431fbfcb42382ce11cd53b2df73dba7d5c2bbe",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1475_DESULFOBACTER_MEDIUM_WITH_HORSE_SERUM.yaml",
+          "component_path": "ingredients/8",
+          "recipe_id": "CultureMech:015875",
+          "recipe_primary_identifier": "jcm.grmd:1475",
+          "raw_preferred_term": "FeCl2 solution (see Medium No. 187 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "FeCl2 solution (see Medium No. 187 )"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-187.html",
+          "sha256": "e01f3a9740644bb7c30a64c901083747c0a05ff1c6bc123f63de8632ecfce804",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=187",
+          "accessed_at": "2026-11-08T04:06:19.388882+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_187_FeCl2_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20187%20FeCl2%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:17.197588+00:00",
+        "finished_at": "2026-11-08T04:34:17.876476+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_187_FeCl2_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_187_FeCl2_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20187%20FeCl2%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%20187%20FeCl2%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "264110d47b39507ece609fe1b6bcdfbfe20bad12a60b56b3f671de5680b39e97",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_187_fecl2_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_323_Solution_A",
+      "source_specification": {
+        "slug": "NBRC_323_Solution_A",
+        "cases": [
+          99
+        ],
+        "label": "NBRC 323 Solution A",
+        "source": "nbrc-323",
+        "parts": [
+          [
+            "Yeast extract",
+            "2",
+            "G_PER_L"
+          ],
+          [
+            "(NH4)2SO4",
+            "0.4",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "1",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "0.5",
+            "G_PER_L"
+          ],
+          [
+            "KH2PO4",
+            "1.2",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Printed original batch: yeast extract1g, ammonium sulfate0.2g, magnesium sulfate heptahydrate0.5g, calcium chloride dihydrate0.25g, KH2PO4 0.6g and water500mL. pH3–4; no adjustment reagent specified. Formula defines a source stock with undefined yeast-extract component; it is distinct from NBRC971 Solution A. Raw generic alias is only resolvable with source context.",
+        "solution_type": "COMPLEX_UNDEFINED",
+        "basis": "500 mL original batch",
+        "selection": [
+          "nbrc.medium:323"
+        ]
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:ecd3fdc51b1cdac2ce440c7f0c20006a7db715921aa98c09dcd5470785bd112e",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_324.yaml",
+          "component_path": "ingredients/0",
+          "recipe_id": "CultureMech:007487",
+          "recipe_primary_identifier": "nbrc.medium:323",
+          "raw_preferred_term": "Solution A*",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "500"
+            },
+            "preferred_term": "Solution A*"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-323.html",
+          "sha256": "5a82a281b6f01560f93d530a0a694c32d165bcd0f2b6156506d7c1141e061382",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=323",
+          "accessed_at": "2026-11-08T04:06:13.708202+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_323_Solution_A.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20323%20Solution%20A&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:17.213650+00:00",
+        "finished_at": "2026-11-08T04:34:17.858632+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_323_Solution_A.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_323_Solution_A.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20323%20Solution%20A&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20323%20Solution%20A&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "264110d47b39507ece609fe1b6bcdfbfe20bad12a60b56b3f671de5680b39e97",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_323_solution_a"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_971_Solution_A",
+      "source_specification": {
+        "slug": "NBRC_971_Solution_A",
+        "cases": [
+          99
+        ],
+        "label": "NBRC 971 Solution A",
+        "source": "nbrc-971",
+        "parts": [
+          [
+            "Ferric ammonium citrate",
+            "5",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2",
+            "0.5",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Printed two-component source stock. Ferric ammonium citrate composition remains the named source reagent; no molecular formula guessed. Distinct from NBRC323 Solution A. Raw generic alias is only resolvable with source context.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": [
+          "nbrc.medium:971"
+        ]
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:225eb2811c6b0af5bdc6e8966423a4486870b89b634452b157f91b4c53e24366",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_972.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:007509",
+          "recipe_primary_identifier": "nbrc.medium:971",
+          "raw_preferred_term": "Solution A*",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Solution A*"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-971.html",
+          "sha256": "6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=971",
+          "accessed_at": "2026-11-08T04:06:13.951104+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_971_Solution_A.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20A&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:17.237875+00:00",
+        "finished_at": "2026-11-08T04:34:17.880330+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_A.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_971_Solution_A.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20A&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20A&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "264110d47b39507ece609fe1b6bcdfbfe20bad12a60b56b3f671de5680b39e97",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_971_solution_a"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_989_K_Solution",
+      "source_specification": {
+        "slug": "NBRC_989_K_Solution",
+        "cases": [
+          103
+        ],
+        "label": "NBRC 989 K solution",
+        "source": "nbrc-989",
+        "parts": [
+          [
+            "KH2PO4",
+            "90",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "90",
+            "G_PER_L"
+          ],
+          [
+            "(NH4)2SO4",
+            "90",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Three salts, 90 g each per printed1L. Receiving dose is10mL (independently corrected and verified); K is local stock name, not an elemental ingredient.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:be4cc2879c8d9bf53d335b2ab97f286e96fdfa9f78b6822867680ef1d0fd7648",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_990.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:007510",
+          "recipe_primary_identifier": "nbrc.medium:989",
+          "raw_preferred_term": "K solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "K solution**"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-989.html",
+          "sha256": "527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989",
+          "accessed_at": "2026-11-08T04:06:14.528919+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_989_K_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20K%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:17.859202+00:00",
+        "finished_at": "2026-11-08T04:34:18.467911+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_K_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_989_K_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20K%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20K%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "42a942f0ae546fbcd59bbdbb5d237b3eba590202ca9a3dcbbe0bccd1f0a82d78",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_989_k_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_1353_Mineral_Solution_B",
+      "source_specification": {
+        "slug": "JCM_1353_Mineral_Solution_B",
+        "cases": [
+          104
+        ],
+        "label": "JCM 1353 mineral solution B",
+        "source": "jcm-1353",
+        "parts": [
+          [
+            "Na2WO4·2H2O",
+            "1.65",
+            "G_PER_L"
+          ],
+          [
+            "Ni(NH4)2(SO4)2·6H2O",
+            "19.8",
+            "MG_PER_L"
+          ],
+          [
+            "VOSO4",
+            "0.82",
+            "MG_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Exact W/Ni/V stock; source receiving dose2mL, filter sterilized. No implied hydration for printed VOSO4 and no substitution of generic nickel salt.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:a49e96fe706791edde69a00c61f7ff23e9baaa5aa82ebb800fdf6a6a577c016a",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1353_GBS_SALTS_MEDIUM_FOR_FERVIDIBACTER.yaml",
+          "component_path": "ingredients/11",
+          "recipe_id": "CultureMech:015836",
+          "recipe_primary_identifier": "jcm.grmd:1353",
+          "raw_preferred_term": "Mineral solution B* (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.0"
+            },
+            "preferred_term": "Mineral solution B* (see below)"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1353.html",
+          "sha256": "cc764f2d97570416040c1317f745f6ce37caa8bef289ab1b745f225a555b1bd1",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1353",
+          "accessed_at": "2026-11-08T04:06:07.872529+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_1353_Mineral_Solution_B.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20B&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:17.876867+00:00",
+        "finished_at": "2026-11-08T04:34:18.479369+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1353_Mineral_Solution_B.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_1353_Mineral_Solution_B.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20B&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%201353%20mineral%20solution%20B&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "42a942f0ae546fbcd59bbdbb5d237b3eba590202ca9a3dcbbe0bccd1f0a82d78",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_1353_mineral_solution_b"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_317_Se_W_Solution",
+      "source_specification": {
+        "slug": "JCM_317_Se_W_Solution",
+        "cases": [
+          110
+        ],
+        "label": "JCM 317 Se/W solution",
+        "source": "jcm-317",
+        "parts": [
+          [
+            "Na2SeO3",
+            "4",
+            "MG_PER_L"
+          ],
+          [
+            "Na2WO4·2H2O",
+            "4",
+            "MG_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Exact source stock distinct from NBRC1020 unhydrated tungstate, JCM852 lower amounts/hydrated selenite, and JCM431 alkaline formula.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:9300dd8c6e6f187114f06672f3a5ea0fb228d6137791214da2e2f1da656d5946",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1425_SPOROMUSA_MEDIUM_2.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015862",
+          "recipe_primary_identifier": "jcm.grmd:1425",
+          "raw_preferred_term": "Se/W solution (see Medium No. 317 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Se/W solution (see Medium No. 317 )"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-317.html",
+          "sha256": "fc01b236c8584bdfd647d572cf2cea9e3aa8b22012222effefa0862ba232176e",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=317",
+          "accessed_at": "2026-11-08T04:06:19.558521+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_317_Se_W_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20317%20Se%2FW%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:17.880604+00:00",
+        "finished_at": "2026-11-08T04:34:18.475985+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_317_Se_W_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_317_Se_W_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20317%20Se%2FW%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%20317%20Se%2FW%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "42a942f0ae546fbcd59bbdbb5d237b3eba590202ca9a3dcbbe0bccd1f0a82d78",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_317_se_w_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_1257_Sulfide_Solution",
+      "source_specification": {
+        "slug": "NBRC_1257_Sulfide_Solution",
+        "cases": [
+          112
+        ],
+        "label": "NBRC 1257 sulfide solution",
+        "source": "nbrc-1257",
+        "parts": [
+          [
+            "Na2S·9H2O",
+            "240",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Source batch: Na2S·9H2O12g and water50mL, designated1.0M, filter sterilized and stored underN2. 240g/L is explicit12g/0.05L nominal recipe-basis conversion; frozen12G_PER_L is rejected. Receiving dose1.5mL.",
+        "solution_type": "OTHER",
+        "basis": "50 mL original batch",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:5363a3ab2202806c37b285d87d656a7172751c8fe3242e5823133ce37f65d297",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1261.yaml",
+          "component_path": "ingredients/13",
+          "recipe_id": "CultureMech:007467",
+          "recipe_primary_identifier": "nbrc.medium:1257",
+          "raw_preferred_term": "Sulfide solution****",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.5"
+            },
+            "preferred_term": "Sulfide solution****"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1257.html",
+          "sha256": "3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1257",
+          "accessed_at": "2026-11-08T04:06:02.860735+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_1257_Sulfide_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20sulfide%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:18.468421+00:00",
+        "finished_at": "2026-11-08T04:34:19.106362+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1257_Sulfide_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_1257_Sulfide_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20sulfide%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%201257%20sulfide%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "c28db218797f69ebd5cbb0468c1e20a9fc643f21e576f27d5622357bf9e0968d",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_1257_sulfide_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_943_Metal_Salt_44",
+      "source_specification": {
+        "slug": "NBRC_943_Metal_Salt_44",
+        "cases": [
+          116
+        ],
+        "label": "NBRC 943 Metal salt 44",
+        "source": "nbrc-943",
+        "parts": [
+          [
+            "NaEDTA",
+            "2500",
+            "MG_PER_L"
+          ],
+          [
+            "ZnSO4·7H2O",
+            "10950",
+            "MG_PER_L"
+          ],
+          [
+            "FeSO4·7H2O",
+            "5",
+            "G_PER_L"
+          ],
+          [
+            "MnSO4·H2O",
+            "1540",
+            "MG_PER_L"
+          ],
+          [
+            "CuSO4·5H2O",
+            "392",
+            "MG_PER_L"
+          ],
+          [
+            "Co(NO3)2·6H2O",
+            "248",
+            "MG_PER_L"
+          ],
+          [
+            "Na2B4O7·10H2O",
+            "177",
+            "MG_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ],
+          [
+            "Concentrated H2SO4",
+            null,
+            null
+          ]
+        ],
+        "notes": "Nested source preparation: NaEDTA250mg, ZnSO4·7H2O1095mg, FeSO4·7H2O0.5g, MnSO4·H2O154mg, CuSO4·5H2O39.2mg, Co(NO3)2·6H2O24.8mg, Na2B4O7·10H2O17.7mg per100mL plus drops concentratedH2SO4. NaEDTA exact salt form and acid drops remain unquantified; no chemical grounding asserted. Auxiliary proposal solely supports case116 nested component.",
+        "solution_type": "TRACE_METAL_MIX",
+        "basis": "100 mL original batch",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:02784a9f5cb0881cbc040fcb983cebd1119c19d9370c04ffece28ac2e10048c7",
+          "source_file": "data/normalized_yaml/bacterial/modified_prosthecomicrobium_and_ancalomicrobium_medium_nbrc_943.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:015904",
+          "recipe_primary_identifier": "nbrc.medium:943",
+          "raw_preferred_term": "Modified Hutner's solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "20"
+            },
+            "preferred_term": "Modified Hutner's solution"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-943.html",
+          "sha256": "271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943",
+          "accessed_at": "2026-11-08T04:06:15.551337+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_943_Metal_Salt_44.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20Metal%20salt%2044&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:18.476275+00:00",
+        "finished_at": "2026-11-08T04:34:19.092710+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Metal_Salt_44.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_943_Metal_Salt_44.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20Metal%20salt%2044&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20Metal%20salt%2044&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "c28db218797f69ebd5cbb0468c1e20a9fc643f21e576f27d5622357bf9e0968d",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_943_metal_salt_44"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_943_Modified_Hutner_Solution",
+      "source_specification": {
+        "slug": "NBRC_943_Modified_Hutner_Solution",
+        "cases": [
+          116
+        ],
+        "label": "NBRC 943 modified Hutner solution",
+        "source": "nbrc-943",
+        "parts": [
+          [
+            "Nitrilotriacetic acid",
+            "10",
+            "G_PER_L"
+          ],
+          [
+            "KOH",
+            "7.3",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "29.7",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "3.34",
+            "G_PER_L"
+          ],
+          [
+            "(NH4)6Mo7O24·2H2O",
+            "9.25",
+            "MG_PER_L"
+          ],
+          [
+            "FeSO4·7H2O",
+            "99",
+            "MG_PER_L"
+          ],
+          [
+            "NBRC 943 Metal salt 44",
+            "50",
+            "ML_PER_L"
+          ],
+          [
+            "Distilled water",
+            null,
+            null
+          ]
+        ],
+        "notes": "Source total preparation1L includes50mL Metal salt44, which is separately proposed with its entire printed composition. NTA neutralized using7.3gKOH to pH6.6–6.8. Solvent amount is not forced to1L in addition to the50mL nested stock. Printed molybdate dihydrate retained without substituting tetrahydrate.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:02784a9f5cb0881cbc040fcb983cebd1119c19d9370c04ffece28ac2e10048c7",
+          "source_file": "data/normalized_yaml/bacterial/modified_prosthecomicrobium_and_ancalomicrobium_medium_nbrc_943.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:015904",
+          "recipe_primary_identifier": "nbrc.medium:943",
+          "raw_preferred_term": "Modified Hutner's solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "20"
+            },
+            "preferred_term": "Modified Hutner's solution"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-943.html",
+          "sha256": "271e322a496f3a76d1ec152769f402c153177ceb5581246d77b3d93b9ef4c593",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=943",
+          "accessed_at": "2026-11-08T04:06:15.551337+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_943_Modified_Hutner_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20modified%20Hutner%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:18.479703+00:00",
+        "finished_at": "2026-11-08T04:34:19.089309+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_943_Modified_Hutner_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_943_Modified_Hutner_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20modified%20Hutner%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20943%20modified%20Hutner%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "c28db218797f69ebd5cbb0468c1e20a9fc643f21e576f27d5622357bf9e0968d",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_943_modified_hutner_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_1339_Phenanthrene_Solution",
+      "source_specification": {
+        "slug": "NBRC_1339_Phenanthrene_Solution",
+        "cases": [
+          119
+        ],
+        "label": "NBRC 1339 phenanthrene solution",
+        "source": "nbrc-1339 togo-M2041",
+        "parts": [
+          [
+            "Phenanthrene",
+            "250",
+            "MM"
+          ],
+          [
+            "DMSO",
+            null,
+            null
+          ]
+        ],
+        "notes": "Source specifies250mM phenanthrene in DMSO, filtered through DMSO-safe filter;10mL used. Solvent is explicit but its precise volume fraction is not given. Whole solution is distinct from neat phenanthrene.",
+        "solution_type": "CARBON_SOURCE_MIX",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:c702c5f731e09048e68ad39d335c03c8e9ab2add1d71c9da0ad89d5f21207a32",
+          "source_file": "data/normalized_yaml/bacterial/m9_phenanthrene.yaml",
+          "component_path": "ingredients/4",
+          "recipe_id": "CultureMech:008631",
+          "recipe_primary_identifier": "TOGO:M2041",
+          "raw_preferred_term": "Phenanthrene solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "notes": "TOGO M2041 / NBRC Medium 1339 adds 10 ml/L 250 mM phenanthrene solution in DMSO.",
+            "preferred_term": "Phenanthrene solution",
+            "source": "TOGO M2041 / NBRC Medium 1339"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1339.html",
+          "sha256": "a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339",
+          "accessed_at": "2026-11-08T04:06:15.611297+00:00"
+        },
+        {
+          "path": "captures/togo-M2041.json",
+          "sha256": "4a3626595a76449ca9bf73fcd3119ab4c985d8b0e5e7fe8d3e2bfb0e3569fd90",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2041",
+          "accessed_at": "2026-11-08T04:06:23.133701+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_1339_Phenanthrene_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%20phenanthrene%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:19.089977+00:00",
+        "finished_at": "2026-11-08T04:34:19.709248+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_Phenanthrene_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_1339_Phenanthrene_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%20phenanthrene%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%20phenanthrene%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "c28db218797f69ebd5cbb0468c1e20a9fc643f21e576f27d5622357bf9e0968d",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_1339_phenanthrene_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-MediaDive_3774_VFA_Solution",
+      "source_specification": {
+        "slug": "MediaDive_3774_VFA_Solution",
+        "cases": [
+          121
+        ],
+        "label": "MediaDive 3774 VFA solution",
+        "source": "mediadive-solution-3774",
+        "parts": [
+          [
+            "Acetic acid",
+            "17",
+            "ML_PER_31_ML_BATCH"
+          ],
+          [
+            "Propionic acid",
+            "6",
+            "ML_PER_31_ML_BATCH"
+          ],
+          [
+            "n-Butyric acid",
+            "4",
+            "ML_PER_31_ML_BATCH"
+          ],
+          [
+            "iso-Butyric acid",
+            "1",
+            "ML_PER_31_ML_BATCH"
+          ],
+          [
+            "n-Valeric acid",
+            "1",
+            "ML_PER_31_ML_BATCH"
+          ],
+          [
+            "iso-Valeric acid",
+            "1",
+            "ML_PER_31_ML_BATCH"
+          ],
+          [
+            "DL-alpha-Methylbutyric acid",
+            "1",
+            "ML_PER_31_ML_BATCH"
+          ]
+        ],
+        "notes": "Source seven liquid input amounts sum31mL; units retain original batch amounts without assuming additive final volume or introducing solvent. No neat-acid purity or grade inferred. LiveJCM1029 is unavailable; exact MediaDive3774 body supplies this source-defined formula.",
+        "solution_type": "CARBON_SOURCE_MIX",
+        "basis": "31 mL summed source inputs",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:93b24c03f4fa39be67fb89beeaa996f86f45f9afbb6519040162514ee1e8f67d",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_5080_Main_sol_J1029.yaml",
+          "component_path": "composition/15",
+          "recipe_id": "CultureMech:013996",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "VFA solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.0031"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:012851",
+              "label": "VFA solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[15].preferred_term: Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].concentration: Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].notes: Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].culturemech_term: The exact source solution_id identifies this batch stock input; no universal working concentration is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[4]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/5080",
+                "snippet": "{\n                \"recipe_order\": 5,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"VFA solution\",\n                \"solution_id\": 3774,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 3.1,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source input only; not final volume or volume percentage Source input: 3.1 ml; stage=Main sol. J1029.",
+            "preferred_term": "VFA solution"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/mediadive-solution-3774.json",
+          "sha256": "74510f4009af302d60b1f15565a82f4ab166e0553b9e17744d584c12a1ccd4b7",
+          "url": "https://mediadive.dsmz.de/rest/solution/3774",
+          "accessed_at": "2026-11-08T04:07:14.964960+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/MediaDive_3774_VFA_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%203774%20VFA%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:19.093725+00:00",
+        "finished_at": "2026-11-08T04:34:19.704161+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_3774_VFA_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/MediaDive_3774_VFA_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%203774%20VFA%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=MediaDive%203774%20VFA%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "c28db218797f69ebd5cbb0468c1e20a9fc643f21e576f27d5622357bf9e0968d",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:mediadive_3774_vfa_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_989_M_Solution",
+      "source_specification": {
+        "slug": "NBRC_989_M_Solution",
+        "cases": [
+          123
+        ],
+        "label": "NBRC 989 M solution",
+        "source": "nbrc-989",
+        "parts": [
+          [
+            "MnCl2·4H2O",
+            "4",
+            "G_PER_L"
+          ],
+          [
+            "CoCl2·6H2O",
+            "4",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Both specified hydrates4g each per1L; receiving dose2.5mL.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:e1e15c5fa0953a4d3f461e26efc9450641985a5527753d9deef5de042636c901",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_990.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:007510",
+          "recipe_primary_identifier": "nbrc.medium:989",
+          "raw_preferred_term": "M solution***",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.5"
+            },
+            "preferred_term": "M solution***"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-989.html",
+          "sha256": "527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989",
+          "accessed_at": "2026-11-08T04:06:14.528919+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_989_M_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20M%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:19.106751+00:00",
+        "finished_at": "2026-11-08T04:34:19.719927+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_M_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_989_M_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20M%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20M%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "c28db218797f69ebd5cbb0468c1e20a9fc643f21e576f27d5622357bf9e0968d",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_989_m_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-MediaDive_607_Mineral_Solution",
+      "source_specification": {
+        "slug": "MediaDive_607_Mineral_Solution",
+        "cases": [
+          125
+        ],
+        "label": "MediaDive 607 mineral solution",
+        "source": "mediadive-solution-607 dsmz-330",
+        "parts": [
+          [
+            "KH2PO4",
+            "6",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "12",
+            "G_PER_L"
+          ],
+          [
+            "(NH4)2SO4",
+            "6",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "1.6",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "2.5",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Exact source solution607 is used in both J1029/main5080 and DSMZ330/main606,38mL each. Source accession and full formula establish identity. Frozen receiving recipe cites CultureMech:014792; standalone target composition was not included in frozen inputs and must not be declared EXACT_FORMULATION solely from that pointer.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:fb18aa5bf9a30306483cddc3295f50e4b7d405175b9e90acbb40c776fb2ad1f0",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_5080_Main_sol_J1029.yaml",
+          "component_path": "composition/14",
+          "recipe_id": "CultureMech:013996",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Mineral solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.038"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:014792",
+              "label": "Mineral solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[14].preferred_term: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[14].concentration: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[14].notes: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[14].culturemech_term: The exact source solution_id identifies this batch stock input; no universal working concentration is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:00.248452+00:00; capture SHA256=b8a0f08e057efda1f253a86741a7e5bc2c2fb24cd221c1899d63d22fa2b449cf.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/5080",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. J1029.",
+            "preferred_term": "Mineral solution"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:545ccab5a04fadc650c1f74da517a494378212b58c09962b3d90495ea561bd1b",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_606_Main_sol_330.yaml",
+          "component_path": "composition/13",
+          "recipe_id": "CultureMech:014786",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Mineral solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.038"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:014792",
+              "label": "Mineral solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[13].preferred_term: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[13].concentration: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[13].notes: Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[13].culturemech_term: The exact source solution_id identifies this batch stock input; no universal working concentration is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[0]; accessed=2026-10-09T08:03:01.038735+00:00; capture SHA256=da3e7014a8780c745fa84084250f5cc004f867e7f472261dbca783613bc4d804.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/606",
+                "snippet": "{\n                \"recipe_order\": 1,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Mineral solution\",\n                \"solution_id\": 607,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 38,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Source input only; not final volume or volume percentage Source input: 38 ml; stage=Main sol. 330.",
+            "preferred_term": "Mineral solution"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/mediadive-solution-607.json",
+          "sha256": "d1b947d90e8193e9626b323eb32fa1c82bdcf2fb2c1486e064d6c1994d83fa11",
+          "url": "https://mediadive.dsmz.de/rest/solution/607",
+          "accessed_at": "2026-11-08T04:06:21.877295+00:00"
+        },
+        {
+          "path": "captures/dsmz-330.pdf",
+          "sha256": "8229d2b6a229d3448df71516a755965110bf57fb93c5190de4cbebe741847e29",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium330.pdf",
+          "accessed_at": "2026-11-08T04:07:15.523212+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/MediaDive_607_Mineral_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%20607%20mineral%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:19.704732+00:00",
+        "finished_at": "2026-11-08T04:34:20.347246+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/MediaDive_607_Mineral_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/MediaDive_607_Mineral_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=MediaDive%20607%20mineral%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=MediaDive%20607%20mineral%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a80b58351a62323c7290a94199048e6c6a6c5e5bd62984c36be93463d3e8b49e",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:mediadive_607_mineral_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-DSMZ_161_Modified_Wolin_Mineral_Solution",
+      "source_specification": {
+        "slug": "DSMZ_161_Modified_Wolin_Mineral_Solution",
+        "cases": [
+          130
+        ],
+        "label": "DSMZ 161 modified Wolin mineral solution",
+        "source": "dsmz-161 mediadive-solution-241",
+        "parts": [
+          [
+            "Nitrilotriacetic acid",
+            "1.5",
+            "G_PER_L"
+          ],
+          [
+            "MgSO4·7H2O",
+            "3",
+            "G_PER_L"
+          ],
+          [
+            "MnSO4·H2O",
+            "0.5",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "1",
+            "G_PER_L"
+          ],
+          [
+            "FeSO4·7H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "CoSO4·7H2O",
+            "0.18",
+            "G_PER_L"
+          ],
+          [
+            "CaCl2·2H2O",
+            "0.1",
+            "G_PER_L"
+          ],
+          [
+            "ZnSO4·7H2O",
+            "0.18",
+            "G_PER_L"
+          ],
+          [
+            "CuSO4·5H2O",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "AlK(SO4)2·12H2O",
+            "0.02",
+            "G_PER_L"
+          ],
+          [
+            "H3BO3",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "Na2MoO4·2H2O",
+            "0.01",
+            "G_PER_L"
+          ],
+          [
+            "NiCl2·6H2O",
+            "0.03",
+            "G_PER_L"
+          ],
+          [
+            "Na2SeO3·5H2O",
+            "0.3",
+            "MG_PER_L"
+          ],
+          [
+            "Na2WO4·2H2O",
+            "0.4",
+            "MG_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ],
+          [
+            "KOH solution",
+            null,
+            null
+          ]
+        ],
+        "notes": "DSMZ161 inherited mineral solution from141, with full recipe printed. Retain explicit hydrated forms; KOH pH6.5 then7 is unquantified. Distinct from inspected MIM Wolfe formulations in chelator, salts and amounts.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:9f4cd90a4a384e022636c9463d79a2dfc41d1eeded63508fc26c8288c1ff610a",
+          "source_file": "data/normalized_yaml/bacterial/mediadive_277_Main_sol_161.yaml",
+          "component_path": "composition/15",
+          "recipe_id": "CultureMech:012076",
+          "recipe_primary_identifier": null,
+          "raw_preferred_term": "Modified Wolin's mineral solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "L",
+              "value": "0.01"
+            },
+            "culturemech_term": {
+              "id": "CultureMech:011798",
+              "label": "Modified Wolin's mineral solution"
+            },
+            "evidence": [
+              {
+                "explanation": "composition[15].preferred_term: Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].concentration: Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].notes: Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.\n\nAdditional exact excerpt: {\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }\ncomposition[15].culturemech_term: Exact upstream stock accession maps to this existing normalized record; no universal working dose is inferred. No unstated density, final volume, percent basis or chemical identifier is inferred. Locator=data.recipe[7]; accessed=2026-10-09T09:25:33.424350+00:00; capture SHA256=f83e1562576e293e692b3d41757f5d7cef722b95c14c8262c42ffc7ee772ec5d.",
+                "reference": "https://mediadive.dsmz.de/rest/solution/277",
+                "snippet": "{\n                \"recipe_order\": 8,\n                \"compound\": null,\n                \"compound_id\": null,\n                \"solution\": \"Modified Wolin's mineral solution\",\n                \"solution_id\": 241,\n                \"condition\": null,\n                \"attribute\": null,\n                \"amount\": 10,\n                \"unit\": \"ml\",\n                \"g_l\": null,\n                \"mmol_l\": null,\n                \"optional\": 0\n            }",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Exact liquid input per preparation, not a percentage, mass, measured final volume or universal working dose Source input: 10 ml; stage=Main sol. 161.",
+            "preferred_term": "Modified Wolin's mineral solution"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/dsmz-161.pdf",
+          "sha256": "0f4ea6194efcb146abe36366dd72ce890643e9cfe39bc947a9df7281959478e0",
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium161.pdf",
+          "accessed_at": "2026-11-08T04:07:16.173447+00:00"
+        },
+        {
+          "path": "captures/mediadive-solution-241.json",
+          "sha256": "50cc42c209f550b7abc4a5f48b455553516220b6ef9613f481941f9e15f0b25d",
+          "url": "https://mediadive.dsmz.de/rest/solution/241",
+          "accessed_at": "2026-11-08T04:06:21.875062+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=DSMZ%20161%20modified%20Wolin%20mineral%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:19.709671+00:00",
+        "finished_at": "2026-11-08T04:34:20.350987+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/DSMZ_161_Modified_Wolin_Mineral_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=DSMZ%20161%20modified%20Wolin%20mineral%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=DSMZ%20161%20modified%20Wolin%20mineral%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a80b58351a62323c7290a94199048e6c6a6c5e5bd62984c36be93463d3e8b49e",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:dsmz_161_modified_wolin_mineral_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_989_C_Solution",
+      "source_specification": {
+        "slug": "NBRC_989_C_Solution",
+        "cases": [
+          134
+        ],
+        "label": "NBRC 989 C solution",
+        "source": "nbrc-989",
+        "parts": [
+          [
+            "CaCl2·2H2O",
+            "10.6",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Exact10.6g dihydrate per1L water, receiving2.5mL; whole stock is distinct from neat calcium chloride.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:39ddc9a4c3d5d176785ad451d64295a083a2a0253e571f80f26bf55753c664bd",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_990.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:007510",
+          "recipe_primary_identifier": "nbrc.medium:989",
+          "raw_preferred_term": "C solution****",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "2.5"
+            },
+            "preferred_term": "C solution****"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-989.html",
+          "sha256": "527af6ccfee57cf91298a5b74989993e9afd1642b200ba2d9c01b656509dbc88",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=989",
+          "accessed_at": "2026-11-08T04:06:14.528919+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_989_C_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20C%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:19.720338+00:00",
+        "finished_at": "2026-11-08T04:34:20.343848+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_989_C_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_989_C_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20C%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20989%20C%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a80b58351a62323c7290a94199048e6c6a6c5e5bd62984c36be93463d3e8b49e",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_989_c_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_1339_10xM9_Solution",
+      "source_specification": {
+        "slug": "NBRC_1339_10xM9_Solution",
+        "cases": [
+          136,
+          147
+        ],
+        "label": "NBRC 1339 10xM9 solution",
+        "source": "nbrc-1339 togo-M2041",
+        "parts": [
+          [
+            "KH2PO4",
+            "30",
+            "G_PER_L"
+          ],
+          [
+            "Na2HPO4",
+            "60",
+            "G_PER_L"
+          ],
+          [
+            "NH4Cl",
+            "10",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "5",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "NBRC1339 and TOGOM2041 explicitly same source stock; preserve four printed salts and1L basis. No hydrate supplied for Na2HPO4.100mL added; complete receiving medium includes separate phenanthrene/DMSO and is not identical to this stock.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:55bc40e374e068a016abbf00c84a61de0ce542e493f446a6cd6f90313aa14653",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1340.yaml",
+          "component_path": "ingredients/1",
+          "recipe_id": "CultureMech:007473",
+          "recipe_primary_identifier": "nbrc.medium:1339",
+          "raw_preferred_term": "10xM9 solution**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "100"
+            },
+            "preferred_term": "10xM9 solution**"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:637c7fd8ab80598936cba00dabc89442102436ce2aef8c37d224274ca950aa30",
+          "source_file": "data/normalized_yaml/bacterial/m9_phenanthrene.yaml",
+          "component_path": "ingredients/1",
+          "recipe_id": "CultureMech:008631",
+          "recipe_primary_identifier": "TOGO:M2041",
+          "raw_preferred_term": "10xM9 solution",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "100"
+            },
+            "notes": "TOGO M2041 / NBRC Medium 1339 adds 100 ml/L separately autoclaved 10xM9 solution.",
+            "preferred_term": "10xM9 solution",
+            "source": "TOGO M2041 / NBRC Medium 1339"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1339.html",
+          "sha256": "a731a4c601ae5def7009b9d6600c516810d08a122976fd28a62720ffab122837",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1339",
+          "accessed_at": "2026-11-08T04:06:15.611297+00:00"
+        },
+        {
+          "path": "captures/togo-M2041.json",
+          "sha256": "4a3626595a76449ca9bf73fcd3119ab4c985d8b0e5e7fe8d3e2bfb0e3569fd90",
+          "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2041",
+          "accessed_at": "2026-11-08T04:06:23.133701+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_1339_10xM9_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%2010xM9%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:20.344452+00:00",
+        "finished_at": "2026-11-08T04:34:20.981876+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1339_10xM9_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_1339_10xM9_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%2010xM9%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%201339%2010xM9%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a80b58351a62323c7290a94199048e6c6a6c5e5bd62984c36be93463d3e8b49e",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_1339_10xm9_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_852_Se_W_Solution",
+      "source_specification": {
+        "slug": "JCM_852_Se_W_Solution",
+        "cases": [
+          138
+        ],
+        "label": "JCM 852 Se/W solution",
+        "source": "jcm-852",
+        "parts": [
+          [
+            "Na2SeO3·5H2O",
+            "1.7",
+            "MG_PER_L"
+          ],
+          [
+            "Na2WO4·2H2O",
+            "3.3",
+            "MG_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Current JCM1188 directly references852; frozen narrative invokes1187 inheritance. Preserve that narrative conflict while the explicit852 stock identity agrees. Both hydrated forms and amounts distinguish this source stock.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:348cc0754aa8c96d8a01e0f6d47a5398794931493800d73ea6c7f9ebdeeebce6",
+          "source_file": "data/normalized_yaml/specialized/marine_chloroflexi_medium.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:015391",
+          "recipe_primary_identifier": "mediadive.medium:J1188",
+          "raw_preferred_term": "Se/W solution (Medium No.852)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "notes": "Ontology mapping not yet available; From JCM Medium 1188; Curated from JCM Medium 1188 specification",
+            "preferred_term": "Se/W solution (Medium No.852)",
+            "source": "JCM Medium 1188"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-852.html",
+          "sha256": "6f4b6434c0e66a7ece7e600856c047f38df0f47f24350eee0d9cf7617304c458",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=852",
+          "accessed_at": "2026-11-08T04:06:20.119641+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_852_Se_W_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20852%20Se%2FW%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:20.347980+00:00",
+        "finished_at": "2026-11-08T04:34:20.948319+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_852_Se_W_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_852_Se_W_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20852%20Se%2FW%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%20852%20Se%2FW%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a80b58351a62323c7290a94199048e6c6a6c5e5bd62984c36be93463d3e8b49e",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_852_se_w_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_521_Reducing_Agent_Solution",
+      "source_specification": {
+        "slug": "JCM_521_Reducing_Agent_Solution",
+        "cases": [
+          148
+        ],
+        "label": "JCM 521 reducing agent solution",
+        "source": "jcm-521",
+        "parts": [
+          [
+            "Na2S·9H2O",
+            "12.5",
+            "G_PER_L"
+          ],
+          [
+            "L-Cysteine hydrochloride monohydrate",
+            "12.5",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Exact two-reductant source stock; autoclaved/stored underN2. Retain L stereochemistry, hydrochloride and monohydrate; no broad reducing-agent class as identity.",
+        "solution_type": "OTHER",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:4769b8a65ed083501588c3dabd9d5b6b57a52be8a703727f72caf0517d8fee49",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1344_SEA_WATER_MEDIUM_WITH_ACETATE.yaml",
+          "component_path": "ingredients/13",
+          "recipe_id": "CultureMech:015834",
+          "recipe_primary_identifier": "jcm.grmd:1344",
+          "raw_preferred_term": "Reducing agent solution (see Medium No. 521 )",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10.0"
+            },
+            "preferred_term": "Reducing agent solution (see Medium No. 521 )"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-521.html",
+          "sha256": "a228e626ea85cfaac376b86bf7dfeab9c0600d45f6fab084c45e6cab5d54b2ff",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=521",
+          "accessed_at": "2026-11-08T04:06:20.118438+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_521_Reducing_Agent_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20521%20reducing%20agent%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:20.351611+00:00",
+        "finished_at": "2026-11-08T04:34:20.999692+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_521_Reducing_Agent_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_521_Reducing_Agent_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%20521%20reducing%20agent%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%20521%20reducing%20agent%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "a80b58351a62323c7290a94199048e6c6a6c5e5bd62984c36be93463d3e8b49e",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_521_reducing_agent_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_1130_Mineral_Solution_I",
+      "source_specification": {
+        "slug": "JCM_1130_Mineral_Solution_I",
+        "cases": [
+          153
+        ],
+        "label": "JCM 1130 mineral solution I",
+        "source": "jcm-1130",
+        "parts": [
+          [
+            "K2HPO4",
+            "3",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "JCM1385 inherits1130stock with mannitol change only to receiving medium.3g per1L,150mL receiving dose; distinct from DSMZ4360.6%stock.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:1cd1d2c11bfa08156a0f9cd256693bbe167a3891b4568d94026320e2a3506167",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1385_YCFA_MEDIUM_WITH_MANNITOL.yaml",
+          "component_path": "ingredients/7",
+          "recipe_id": "CultureMech:015879",
+          "recipe_primary_identifier": "jcm.grmd:1385",
+          "raw_preferred_term": "Mineral solution I (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "150.0"
+            },
+            "preferred_term": "Mineral solution I (see below)"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1130.html",
+          "sha256": "dba23999cbe1c428c245c3e696c9e30d4fd7e8f535d73e61aa004bbbd5688aed",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1130",
+          "accessed_at": "2026-11-08T04:07:14.964723+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_1130_Mineral_Solution_I.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20I&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:20.948516+00:00",
+        "finished_at": "2026-11-08T04:34:21.546072+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1130_Mineral_Solution_I.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_1130_Mineral_Solution_I.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20I&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%201130%20mineral%20solution%20I&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "d921fe98701cf1bb408d83341c1dd2f41ad32e10dcc70a087809ea66c72dff6a",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_1130_mineral_solution_i"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_1474_Solution_B",
+      "source_specification": {
+        "slug": "JCM_1474_Solution_B",
+        "cases": [
+          154
+        ],
+        "label": "JCM 1474 Solution B",
+        "source": "jcm-1474",
+        "parts": [
+          [
+            "MgSO4·7H2O",
+            "40",
+            "G_PER_L"
+          ],
+          [
+            "NaCl",
+            "2",
+            "G_PER_L"
+          ],
+          [
+            "FeSO4·7H2O",
+            "2",
+            "G_PER_L"
+          ],
+          [
+            "MnSO4·xH2O",
+            "2",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Original batch4g MgSO4·7H2O,0.2g each NaCl/FeSO4·7H2O/MnSO4·xH2O and100mL water. Nominal basis conversion explicit. Variable manganese hydrate remains literal and ungrounded. Named source formulation is resolved without selecting a specific hydrate.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "100 mL original batch",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:953ae55aaaa9e5cb1988f163bf320a1aba947fac29a163d5d3b8a91cdfb27681",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1474_BL_BROTH_WITH_2_NaCl.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:015890",
+          "recipe_primary_identifier": "jcm.grmd:1474",
+          "raw_preferred_term": "Solution B (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "5.0"
+            },
+            "preferred_term": "Solution B (see below)"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1474.html",
+          "sha256": "fa4226a3ae2e83f035d9302f256da6acb398dbe1e5c8f247035ed376a92b4108",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1474",
+          "accessed_at": "2026-11-08T04:06:04.491083+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_1474_Solution_B.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20B&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:20.982051+00:00",
+        "finished_at": "2026-11-08T04:34:21.573983+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1474_Solution_B.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_1474_Solution_B.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20B&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%201474%20Solution%20B&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "d921fe98701cf1bb408d83341c1dd2f41ad32e10dcc70a087809ea66c72dff6a",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_1474_solution_b"
+    },
+    {
+      "proposal_id": "NSC-PROP-JCM_1365_Selenite_Tungustate_Solution",
+      "source_specification": {
+        "slug": "JCM_1365_Selenite_Tungustate_Solution",
+        "cases": [
+          156
+        ],
+        "label": "JCM 1365 selenite-tungustate solution",
+        "source": "jcm-1365",
+        "parts": [
+          [
+            "NaOH",
+            "0.4",
+            "G_PER_L"
+          ],
+          [
+            "Na2SeO3·5H2O",
+            "0.06",
+            "G_PER_L"
+          ],
+          [
+            "Na2WO4·2H2O",
+            "0.08",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Source misspelling retained. Compared withJCM431, selenium/tungsten salts are10times whileNaOH is unchanged; it is not a uniform10times stock and not equivalent to431.",
+        "solution_type": "MINERAL_STOCK",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:c089795a742d817b51a61095d9d4302bdf2f0f10b80b0f3cc975057ff55c0730",
+          "source_file": "data/normalized_yaml/bacterial/JCM_J1365_ACIDIC_LOW_SALT_MINERAL_MEDIUM.yaml",
+          "component_path": "ingredients/6",
+          "recipe_id": "CultureMech:015843",
+          "recipe_primary_identifier": "jcm.grmd:1365",
+          "raw_preferred_term": "Selenite-tungustate solution (see below)",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1.0"
+            },
+            "preferred_term": "Selenite-tungustate solution (see below)"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/jcm-1365.html",
+          "sha256": "8e5347f7670f633e13fc9e04674fcbfae987805dd853c64a591bdb80a8b3eb45",
+          "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1365",
+          "accessed_at": "2026-11-08T04:06:12.391120+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/JCM_1365_Selenite_Tungustate_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201365%20selenite-tungustate%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:20.999855+00:00",
+        "finished_at": "2026-11-08T04:34:21.599328+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/JCM_1365_Selenite_Tungustate_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/JCM_1365_Selenite_Tungustate_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=JCM%201365%20selenite-tungustate%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=JCM%201365%20selenite-tungustate%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "d921fe98701cf1bb408d83341c1dd2f41ad32e10dcc70a087809ea66c72dff6a",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:jcm_1365_selenite_tungustate_solution"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_971_Solution_B",
+      "source_specification": {
+        "slug": "NBRC_971_Solution_B",
+        "cases": [
+          157
+        ],
+        "label": "NBRC 971 Solution B",
+        "source": "nbrc-971",
+        "parts": [
+          [
+            "Sucrose",
+            "100",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Applies only to NBRC971 occurrence. NBRC323 SolutionB has glucose and optionalagar and is a separate preparation branch, not this sucrose stock.",
+        "solution_type": "CARBON_SOURCE_MIX",
+        "basis": "1 L",
+        "selection": [
+          "nbrc.medium:971"
+        ]
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:5ec27118513df6c7ba79f9f546346a8cb2c74f96380f7f94e9d6a27d94b1ce6b",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_972.yaml",
+          "component_path": "ingredients/5",
+          "recipe_id": "CultureMech:007509",
+          "recipe_primary_identifier": "nbrc.medium:971",
+          "raw_preferred_term": "Solution B**",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "10"
+            },
+            "preferred_term": "Solution B**"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-971.html",
+          "sha256": "6f03000b6dac9c0d71300865ac5c0beeb9f4d95312d384f3ae7a12eafcaa4311",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=971",
+          "accessed_at": "2026-11-08T04:06:13.951104+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_971_Solution_B.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20B&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:21.546258+00:00",
+        "finished_at": "2026-11-08T04:34:22.155140+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_971_Solution_B.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_971_Solution_B.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20B&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%20971%20Solution%20B&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "b8d328517e6da07447c4bfd2bff63437c940725a7ae9740e04912704e6c8e2e2",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_971_solution_b"
+    },
+    {
+      "proposal_id": "NSC-PROP-NBRC_1020_824_Resazurin_Solution",
+      "source_specification": {
+        "slug": "NBRC_1020_824_Resazurin_Solution",
+        "cases": [
+          160
+        ],
+        "label": "NBRC 1020/824 resazurin solution",
+        "source": "nbrc-1020 nbrc-824",
+        "parts": [
+          [
+            "Resazurin",
+            "1",
+            "G_PER_L"
+          ],
+          [
+            "Distilled water",
+            "1",
+            "L_PER_L"
+          ]
+        ],
+        "notes": "Both primary sources explicitly specify resazurin1g plus1Lwater. Source-defined stock identity is resolved; exact free-compound versus sodium-salt reagent is not supplied and remains ungrounded. No alias to a neat-resazurin or sodium-salt owner is asserted.",
+        "solution_type": "OTHER",
+        "basis": "1 L",
+        "selection": null
+      },
+      "selected_occurrences": [
+        {
+          "occurrence_id": "CM_OCC:9c45cd800810cdb0be8abb18b3e53c93285af0918a54753f7b4966bdeb65f184",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_1021.yaml",
+          "component_path": "ingredients/10",
+          "recipe_id": "CultureMech:007450",
+          "recipe_primary_identifier": "nbrc.medium:1020",
+          "raw_preferred_term": "Resazurin solution****",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Resazurin solution****"
+          }
+        },
+        {
+          "occurrence_id": "CM_OCC:f9e38c69c875172c1446d6fa4d7996cf360818e5e3118b6bc0f5133b7edeb5a5",
+          "source_file": "data/normalized_yaml/bacterial/NBRC_825.yaml",
+          "component_path": "ingredients/9",
+          "recipe_id": "CultureMech:007496",
+          "recipe_primary_identifier": "nbrc.medium:824",
+          "raw_preferred_term": "Resazurin solution****",
+          "raw_component": {
+            "concentration": {
+              "unit": "ML_PER_L",
+              "value": "1"
+            },
+            "preferred_term": "Resazurin solution****"
+          }
+        }
+      ],
+      "source_captures": [
+        {
+          "path": "captures/nbrc-1020.html",
+          "sha256": "6b1d7b346a5f5de9dfd758198e56ef05ad43d8c68361e2ba72c9fbfae9876b7c",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1020",
+          "accessed_at": "2026-11-08T04:06:09.103311+00:00"
+        },
+        {
+          "path": "captures/nbrc-824.html",
+          "sha256": "0317a82ebb8fff38df7bb305fc69a392c2f45d4e63969a0a6714616fa9676c2e",
+          "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=824",
+          "accessed_at": "2026-11-08T04:06:09.103563+00:00"
+        }
+      ],
+      "catalog_hits": [],
+      "ontology_exact_query": {
+        "file": "captures/NBRC_1020_824_Resazurin_Solution.ols.json",
+        "url": "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%2F824%20resazurin%20solution&exact=true&rows=100",
+        "accessed_at": "2026-11-08T04:34:21.574139+00:00",
+        "finished_at": "2026-11-08T04:34:22.159940+00:00",
+        "command": [
+          "curl",
+          "--silent",
+          "--show-error",
+          "--location",
+          "--max-time",
+          "40",
+          "--retry",
+          "2",
+          "--output",
+          "reports/all_unmatched_20261107/worker-01/shard/named_stocks/completeness-v2/captures/NBRC_1020_824_Resazurin_Solution.ols.json",
+          "--dump-header",
+          ".temp/all-unmatched-worker-01/shard/named_stocks/headers/NBRC_1020_824_Resazurin_Solution.ols.json.headers",
+          "--write-out",
+          "%{http_code}\n%{url_effective}\n",
+          "https://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%2F824%20resazurin%20solution&exact=true&rows=100"
+        ],
+        "exit_code": 0,
+        "http": "200\nhttps://www.ebi.ac.uk/ols4/api/search?q=NBRC%201020%2F824%20resazurin%20solution&exact=true&rows=100",
+        "stderr": "",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+        "header_sha256": "b8d328517e6da07447c4bfd2bff63437c940725a7ae9740e04912704e6c8e2e2",
+        "headers_note": "Raw headers private; may contain anonymous session cookies. Body bytes captured without alteration."
+      },
+      "native_parent_identity": "kgmicrobe.ingredient:nbrc_1020_824_resazurin_solution"
+    }
+  ]
+}

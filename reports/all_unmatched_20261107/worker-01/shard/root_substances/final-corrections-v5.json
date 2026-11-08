@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-08T04:44:02.163027+00:00",
+  "corrections": [
+    {
+      "finding": "W01-SCIENCE-002",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1164",
+      "old_path": "shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after.yaml",
+      "old_sha256": "5eee7fc3592ed6737079ca272b43cbc06e815ea8276dc0ed3ec370b793887e56",
+      "new_path": "shard/root_substances/proposed_owners/completeness-Filtered_Tomato_Juice_PH7-after-v2.yaml",
+      "new_sha256": "48ba807a289277d7a2875a6d598f32b435163ffba0bf21284d26b82d59c3abaa",
+      "correction": "BROAD_MATCH to NARROW_MATCH plus curation event; identity and all other scientific claims preserved."
+    },
+    {
+      "finding": "IR-SHARD-ARTIFACT-8",
+      "tracking_issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1159",
+      "retired_proposal": {
+        "proposal_id": "RS-003-ALIAS",
+        "kind": "edit_existing_owner",
+        "case_ids": [
+          "CM_NAME:08d251ec4a5b90d263733eceaab18067c678bfb3555def42a6ed4244679e8d32"
+        ],
+        "description": "Add exact source alias 'Middlebrook 7H10' only; unchanged primary identity/status. Existing claims remain unapproved by this narrow proposal.",
+        "owner_path": "data/ingredients/mapped/Middlebrook_7H10_Agar.yaml",
+        "before_sha256": "8d216d089026948aa2a1a6ee4439b8aab525b09f9c0fe8de53e7403dbc4540c0",
+        "after_capture": {
+          "root": "artifact",
+          "path": "proposed_owners/003-after.yaml",
+          "sha256": "f70cf2a10033cf34e4022dfeea487d4f37cde7fb4e3f6e65eab79a16d2210465"
+        },
+        "evidence_ids": [
+          "RS-003-FROZEN",
+          "RS-003-PRIMARY-000",
+          "RS-003-PRIMARY-001",
+          "RS-003-PRIMARY-002",
+          "RS-003-PRIMARY-003",
+          "RS-003-OWNER"
+        ],
+        "identity_predicate_consequence": "No identity/grounding/predicate change; an exact resolving alias is added.",
+        "publication_obligations": "Withdraw inherited support from changed owner bytes; coordinator reviews complete published payload and native companion selectors before release. No role or complete-record support is granted.",
+        "cross_shard_conflict": "Coordinator must reconcile all proposals for this exact owner path against the same frozen before hash.",
+        "applied": false
+      },
+      "replacement_proposal_id": "RS-003-BASE-IDENTITY",
+      "replacement_sha256": "e423fd59b2309869878293770699a70b24f362cd1ac09c5bfed4642fddb57bf2",
+      "ignore_inclusive_exact_new_owner_search": [],
+      "no_maintained_change": true
+    }
+  ],
+  "preserved_prior_drafts": "shard/root_substances/author-draft-v4-before-final-corrections",
+  "case142_gap_refinement": "Recover the Sigma catalog/product or an equivalent primary specification identifying whether the Ceratonia reagent was gum or the purified galactomannan fraction; manufacturer alone does not disambiguate G0753 from48230. Do not select CAS, purity, exact ontology identity or a product registry from the generic plant-qualified label."
+}

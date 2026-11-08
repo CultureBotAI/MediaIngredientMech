@@ -1,0 +1,42 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "572",
+    "--repo",
+    "Knowledge-Graph-Hub/kg-microbe",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T05:05:20.109710+00:00",
+  "completed_at": "2026-11-08T05:05:20.543498+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "The `metpo-proposal` skill (`.claude/skills/metpo-proposal/SKILL.md`) lists, under acceptable `definition_source` (IAO:0000119) forms:\n\n> Reused PATO/GO definition → the source CURIE itself → `PATO:0000052`\n\n`definition_source` means \"where the definition text came from\" (PMID, DOI, BacDive, ISBN). A reused ontology term is a **cross-ontology mapping**, not provenance. Emitting those CURIEs into `definition_source` conflates the two: no exact/close/narrow distinction, no mapping justification or confidence, and invisible to SSSOM tooling. This is the same conflation tracked in berkeleybop/metpo#344 (124 such rows already in the METPO sheet).\n\nProposal: when a proposed term reuses or aligns to an existing ontology class, emit it as a mapping annotation with an IRI (`skos:exactMatch` / `skos:closeMatch` / `skos:narrowMatch`, or `oboInOwl:hasDbXref`) in a dedicated column, and reserve `definition_source` for real citations. Update the SKILL guidance and `scripts/extract_metpo_proposals.py` accordingly.\n\nCross-repo cleanup hub: berkeleybop/metpo#344.\n\n🤖 Generated with Claude Code\n",
+    "closedAt": null,
+    "comments": [
+      {
+        "id": "IC_kwDOEqLYd88AAAABcfrhzQ",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Narrowing this to what remains (triage of 2026-10-15).\n\nDone:\n- `scripts/extract_metpo_proposals.py:906,919` at 1acb8b61f already routes reused ontology CURIEs such as `PATO:0000052` to `xrefs` (`A oboInOwl:hasDbXref SPLIT=|` at `:1911`, `:1949`), and `definition_source` falls back only to `'TODO:add_citation'` (`:1922`, `:1961`).\n- In the tracked templates `mappings/metpo_proposal_classes_robot.tsv` and `mappings/metpo_proposal_properties_robot.tsv`, the `definition_source` column holds only `DOI:`, `PMID:` or `TODO:add_citation` values (0 ontology CURIEs).\n\nRemaining:\n- `.claude/skills/metpo-proposal/SKILL.md:184` still lists `| Reused PATO/GO definition | the source CURIE itself | PATO:0000052 |` under `definition_source (IAO:0000119)`. Update that table row to route reused ontology CURIEs to `xrefs` (`oboInOwl:hasDbXref`) or a `skos:exactMatch`/`skos:closeMatch` mapping column, keeping `definition_source` for literature/URL citations. (Upstream METPO migration to SSSOM is tracked in `berkeleybop/metpo#344`; filling `TODO:add_citation` rows is #750.)\n\nAcceptance:\n- `grep -n 'Reused PATO/GO definition' .claude/skills/metpo-proposal/SKILL.md` either returns nothing or points to `xrefs`/mappings rather than `definition_source`, and `awk -F'\\t' 'NR>2{print $4}' mappings/metpo_proposal_*_robot.tsv` still contains no ontology CURIE.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+        "createdAt": "2026-10-16T03:14:16Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/572#issuecomment-6207234509",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 572,
+    "state": "OPEN",
+    "title": "metpo-proposal: route reused-ontology CURIEs to mappings, not definition_source",
+    "updatedAt": "2026-10-16T03:14:16Z",
+    "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/572"
+  }
+}

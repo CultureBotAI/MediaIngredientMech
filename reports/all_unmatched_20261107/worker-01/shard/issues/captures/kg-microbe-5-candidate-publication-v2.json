@@ -1,0 +1,162 @@
+{
+  "command": [
+    "gh",
+    "issue",
+    "view",
+    "5",
+    "--repo",
+    "Knowledge-Graph-Hub/kg-microbe",
+    "--json",
+    "number,title,state,url,body,comments,updatedAt,closedAt"
+  ],
+  "accessed_at": "2026-11-08T04:54:44.579135+00:00",
+  "completed_at": "2026-11-08T04:54:45.037170+00:00",
+  "exit_code": 0,
+  "stderr": "",
+  "response": {
+    "body": "Split from #2. \r\n\r\n1       trithionate_oxidation\r\n1       carbonmonoxide_oxidation\r\n1       tetrathionate_oxidation, iron_reduction\r\n1       pyrrhotite_oxidation\r\n1       galena_oxidation\r\n1       thiocyanate_oxidation\r\n1       carbonylsulfide_oxidation\r\n...\r\n182     sulfur_reduction\r\n186     thiosulfate_reduction\r\n353     aerobic_chemo_heterotrophy\r\n366     fermentation\r\n371     denitrification\r\n400     nitrite_reduction\r\n983     NA\r\n1420    nitrate_reduction\r\n\r\nThese should all map to GO\r\n",
+    "closedAt": null,
+    "comments": [
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc4NDYyNzgxMw==",
+        "author": {
+          "login": "cmungall"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "To work on this ticket, make PRs on pathways.sssom.tsv  in schemas/",
+        "createdAt": "2021-02-24T00:15:04Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-784627813",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc4NTI3Nzk2Nw==",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Transferring earlier discussions here:\r\n- Original ideas was to use GO terms for NER mapping. Per Harshad this ran into two issues: 1) underscores delimiters in trait table, and 2) some different wording for pathways which included context of metabolism mode (eg aerobic).\r\n-  1. is trivial but 2. may require some manual curation. We may also need to compose terms from say ECOCORE metabolism mode together with GO function.\r\n- In the future we could infer some links between carbon growth substrates, metabolism mode, and pathways but may be more useful in the context of linking with KG-Pathways.",
+        "createdAt": "2021-02-24T18:22:37Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-785277967",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc4NTMzMTQ1Ng==",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Placeholder for ongoing work, edit as needed.\r\n\r\nMerge NER results into SSOM mapping file is a next step.\r\n\r\nThen update KG build workflow to load mappings from SSOM file instead of hard-coded in ingest script.",
+        "createdAt": "2021-02-24T19:52:30Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-785331456",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc4Njg3MzQxMw==",
+        "author": {
+          "login": "cmungall"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Let's start with\r\n\r\n - [x] automated mapping to GO. I did this using rdfmatch, but runner may give additional hints\r\n - [ ] automated mapping to KEGG pathways. @hrshdhgd is working on this\r\n\r\nonce this is done, we will assess the situation. If KEGG has higher coverage than GO, this is useful information I can take back to GO and figure out why GO has poorer coverage here\r\n\r\nIf neither gives us the coverage we need we need to look a bit deeper. Is this a matter of insufficient precomposed terms in the ontology? Is there a systematic thing we can address, e.g. by adding synonyms for GO? ",
+        "createdAt": "2021-02-26T20:20:26Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-786873413",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "MDEyOklzc3VlQ29tbWVudDc4OTEzOTUwOQ==",
+        "author": {
+          "login": "hrshdhgd"
+        },
+        "authorAssociation": "CONTRIBUTOR",
+        "body": "I did a quick OGER run through the KEGG Pathways with GO as dictionary ([output file](https://drive.google.com/file/d/1PCqmH8v0E3M5nzMq51JX_ex7UYXMEY43/view?usp=sharing)).\r\n\r\nTotal number of KEGG pathways: 542\r\nTotal number of KEGG pathways tagged by GO: 352\r\nTotal Number of pathways in KEGG absent in GO: 190\r\n\r\n",
+        "createdAt": "2021-03-02T19:02:30Z",
+        "includesCreatedEdit": true,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-789139509",
+        "viewerDidAuthor": false
+      },
+      {
+        "id": "IC_kwDOEqLYd87Ze0aK",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "acknowledging this is still relevant!\n\nhowever, these pathways are unlinked from annotations -- they could be confirmed through annotations for that ncbitaxon.",
+        "createdAt": "2025-12-13T01:56:29Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-3648734858",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "IC_kwDOEqLYd87Ze0wh",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "@turbomam with METPO we can support specific metabolic relations to any ontologized chemical. It may be just a matter of splitting these strings and mapping the chemical and relation:\n\n1 trithionate_oxidation\n1 carbonmonoxide_oxidation\n1 tetrathionate_oxidation, iron_reduction\n1 pyrrhotite_oxidation\n1 galena_oxidation\n1 thiocyanate_oxidation\n1 carbonylsulfide_oxidation",
+        "createdAt": "2025-12-13T01:58:01Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-3648736289",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "IC_kwDOEqLYd88AAAABceiHow",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Carried over from #4, which is being closed as completed, and from #305, #380 and #382, which are being closed as duplicates of this issue:\n\n1. **Mixed rows drop values silently** (found while checking #380). `kg_microbe/transform_utils/madin_etal/madin_etal.py:565-567` and `:605-612` at 1acb8b61f fall back per row, not per value. Once any non-METPO value in a row has a GO match from NER, only the NER matches are written (only the exact ones, when any exist), and the row's other values get no edge and no log. Compared with the raw table, 46 (taxon, pathway) pairs over 42 taxa are missing from the 2026-10-13 `madin_etal` output, and `EDTA_degradation` is never emitted. Example: NCBITaxon:1122954's gold row lists `sulfate_reduction, sulfur_reduction, thiosulfate_reduction, xylan_degradation`, and only `GO:0045493` (xylan) is emitted. Fix: fall back per value. Acceptance: after a `madin_etal` rerun, NCBITaxon:1122954 has its three reduction edges and no raw (taxon, pathway) pair is missing.\n2. **Variant placeholder IDs** (#305). `madin_etal.py:570` builds the fallback ID from the raw string, so the 2026-10-13 build has 3 pairs that differ only by case (`denitrification` 112 edges / `Denitrification` 15, `pah_degradation` 15 / `PAH_degradation` 15, `selenate_reduction` 2 / `Selenate_reduction` 4) and 1 pair that differs by a separator (`carbon_monoxide_oxidation` 6 / `carbonmonoxide_oxidation` 3). Folding case alone would leave the last pair split.\n3. **Worked example** (#380; #382 holds the same row as a MongoDB document). Madin row tax_id 138903, Archaeoglobus lithotrophicus, data_source amend-shock, ref_id 14, `pathways` sulfate_reduction, should give NCBITaxon:138903 `METPO:2000017` reduces CHEBI:16189 sulfate. The 2026-10-13 build gives `METPO:2000103` capable of `kgmicrobe.pathway:sulfate_reduction` instead. `METPO:2000017` reduces and `METPO:2000016` oxidizes are live at METPO 2026-06-12, and `madin_etal` emits neither yet.\n4. **The same fallback for `cell_shape`** (#4). All 19 Madin `cell_shape` values map to METPO today, but `madin_etal.py:793-808` would still mint a `cell_shape:<value>` node, with no warning, for any new unmapped value, and the table is fetched from the rolling `master` URL at `download.yaml:206`.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+        "createdAt": "2026-10-16T01:36:34Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-6206031779",
+        "viewerDidAuthor": true
+      },
+      {
+        "id": "IC_kwDOEqLYd88AAAABcfAzHw",
+        "author": {
+          "login": "realmarcin"
+        },
+        "authorAssociation": "MEMBER",
+        "body": "Narrowing this to what remains (triage of 2026-10-15).\n\nDone:\n- Of the 103 distinct strings in the pathways column, 15 map to METPO through the 'madin synonym or field' column of the pinned METPO template (fermentation, methanogenesis, autotrophy, ...; madin_etal.py:280 and :527 at 1acb8b61f) and 14 map to GO through the NER output (nitrogen_fixation, xylan_degradation, ...; :564-627). Unmatched values become `kgmicrobe.pathway:<string>` placeholders typed under GO:0008152 (:569-604).\n- In the 2026-10-13 build this column's METPO:2000103 edges go 1,326 to 14 GO terms and 4,401 to 73 placeholders (nitrate_reduction 2,075, sulfate_reduction 195, sulfur_reduction 178, ...).\n- The 2021 instruction to edit schemas/pathways.sssom.tsv no longer applies: that file (f4a42a657) was deleted with schemas/ in 8ee4e8773.\n\nRemaining:\n1. Mixed rows lose values silently. madin_etal.py:564-627 falls back per row, not per value: once any non-METPO value in a row has a GO NER hit, only the NER matches are written (only the exact ones when any exist) and the row's other values are dropped with no log. Replaying that branch over data/raw/madin_etal.csv reproduces the build's 4,401 placeholder pairs exactly and finds 46 (taxon, pathway) pairs over 42 taxa missing from the 2026-10-13 output; EDTA_degradation (tax_id 266779) is never emitted. Fix: fall back per value, before the freeze in docs/NEXT_TASKS.md so the rebuild picks it up.\n2. Fold the variant ids minted at madin_etal.py:570: Denitrification/denitrification, PAH_degradation/pah_degradation and Selenate_reduction/selenate_reduction differ by case, carbon_monoxide_oxidation/carbonmonoxide_oxidation by separator.\n3. Map the 73 placeholders to METPO or GO, or split `<chemical>_<process>` strings into a METPO relation plus a CHEBI object as the 2025-12-13 comment proposes (worked example from #380 in the carry-over comment above). mappings/canonical/pathway_mappings.tsv already maps 'denitrification pathway' to GO:0019333 for metatraits, but Madin does not read it. Missing METPO synonyms or classes go to berkeleybop/metpo and arrive with a new METPO_VERSION.\n4. The cell_shape fallback in the carry-over comment above (the same mint-on-miss pattern at madin_etal.py:793-808).\n\nNot included: the unticked 2021 KEGG checkbox. KEGG is commented out of merge.yaml (:278-284 at 1acb8b61f), so KEGG targets would be undeclared stubs in the merged graph.\n\nAcceptance: a unit test with a mixed row (one GO-matched value plus unmatched ones) gets an edge for every value. After a madin_etal rerun, the check in the carry-over comment above passes, NCBITaxon:266779 has its EDTA_degradation edge, no two kgmicrobe.pathway ids differ only by case or separator, and the METPO:2000103 edges to kgmicrobe.pathway objects fall from 4,401 to a reviewed residue.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n",
+        "createdAt": "2026-10-16T02:16:09Z",
+        "includesCreatedEdit": false,
+        "isMinimized": false,
+        "minimizedReason": "",
+        "reactionGroups": [],
+        "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5#issuecomment-6206534431",
+        "viewerDidAuthor": true
+      }
+    ],
+    "number": 5,
+    "state": "OPEN",
+    "title": "map pathways column in big trait table",
+    "updatedAt": "2026-10-16T02:16:09Z",
+    "url": "https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/5"
+  }
+}

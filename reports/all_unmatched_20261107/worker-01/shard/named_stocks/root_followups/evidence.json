@@ -1,0 +1,707 @@
+{
+  "schema_version": 1,
+  "artifact_root": "reports/all_unmatched_20261107/worker-01/shard/named_stocks/root_followups",
+  "evidence": [
+    {
+      "evidence_id": "NSF-chebi-search-lithiumsalt",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-lithiumsalt.json",
+        "sha256": "d65ccbde847d6864fcacf601d568bd2df9915050d8068638ac3d00a937fa486a"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=lithium%20salt&ontology=chebi&rows=100",
+      "accessed_at": "2026-11-08T04:21:05.385176+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-boratesalt",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-boratesalt.json",
+        "sha256": "b7a6a854729fae6a97d776d2a5ba4c8f583d943c4ecdb29addd0804f90ac2547"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=borate%20salt&ontology=chebi&rows=100",
+      "accessed_at": "2026-11-08T04:21:06.348367+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-tetraborate-parent",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-tetraborate-parent.json",
+        "sha256": "d5b59443a9202c59588f0988d9c0c45712e7f1276667a3e4b58be90179fc9043"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=tetraborate&ontology=chebi&rows=100",
+      "accessed_at": "2026-11-08T04:21:07.578633+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-frolov-thesis",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/frolov-thesis.pdf",
+        "sha256": "cc99ff5b5e61844c60531d295bd3e722941f67739c9863ebcc74f640f6d09bd7"
+      },
+      "kind": "primary_source",
+      "url": "https://www.fbras.ru/wp-content/uploads/2017/04/DISSERTATSIYA-Frolov-dlya-vyiveshivaniya-na-sai--teFITS.pdf",
+      "accessed_at": "2026-11-08T04:18:39.050514+00:00",
+      "locator": "Printed page52/PDFindex51 section2.2.3 traceelementtable; page53 dosing; page74 onward T.acidiphilum study",
+      "supports_or_contradicts": "Primary author-institution thesis independently prints Na2SeO4 (no hydrate)94mg/L;1mlstock per1L medium. This conflicts with TOGO hydrate notation and supports selenate wording. Same study family, not proof that thesis is the exact PNAS-cited article version. FullPDF read with p52visualcheck.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-pnas-1904225116",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-research-receipt.json",
+        "sha256": "6341b148c90a1b29aedb5cd1d9a23457e510d6b4feb796af955e5f96812fabfe"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://www.pnas.org/content/pnas/116/37/18638.full.pdf",
+      "accessed_at": "2026-11-08T04:18:40.923811+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-research-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-ijsem-crossref",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/ijsem-crossref.json",
+        "sha256": "ba767bd785f8ad720f8398e9b26f73f6d5df2f8fa43d2c27143e4b10ba570ae5"
+      },
+      "kind": "primary_source",
+      "url": "https://api.crossref.org/works/10.1099/ijsem.0.001745",
+      "accessed_at": "2026-11-08T04:18:41.006388+00:00",
+      "locator": "message DOI,title,authors,publication and publisher fulltextlink",
+      "supports_or_contradicts": "Bibliographic identification of Frolov2017 T.acidiphilum species paper DOI10.1099/ijsem.0.001745. Fulltextattempts failed; do not treat this metadata as formula evidence.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-fda-lithiumborate",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-research-receipt.json",
+        "sha256": "6341b148c90a1b29aedb5cd1d9a23457e510d6b4feb796af955e5f96812fabfe"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://precision.fda.gov/ginas/app/ui/substances/G5N01T5TYY",
+      "accessed_at": "2026-11-08T04:18:41.290946+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-research-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-pubchem-9815330-view",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/pubchem-9815330-view.json",
+        "sha256": "5f2684e328dcda4dcb8b90d367d70d829087ef6719b8527501f9f462cd42d09e"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/9815330/JSON",
+      "accessed_at": "2026-11-08T04:18:41.689116+00:00",
+      "locator": "Record.Section Names and Identifiers / Molecular Formula andCAS; Reference1,4,6,7,10",
+      "supports_or_contradicts": "Formula B4Li2O7 and CAS12007-60-2 annotations include ECHA234-514-3 and governmental source records. PubChem reference links are not automatically accepted as exactontologygrounding.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-190479-children",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-190479-children.json",
+        "sha256": "0e5d44ff473f2a85c2214f8b3f03e8d8dba6fac5378dd022933c3e74e60927bd"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCHEBI_190479/children?size=100",
+      "accessed_at": "2026-11-08T04:22:16.331312+00:00",
+      "locator": "page.totalElements=0",
+      "supports_or_contradicts": "Official direct inorganic-lithium-salt childrenquery returned0. Searchscope bounded; absence does not mean allontologies lack exactterm.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-ijsem-001745-crossref-link",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-publisher-receipt.json",
+        "sha256": "62f6f76cd190c15d7398c9a43b859d99d0dc5220500bcdb11a3ee1f2cf6159f2"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/ijsem.0.001745?crawler=true",
+      "accessed_at": "2026-11-08T04:19:07.824614+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-publisher-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-38908",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-38908.json",
+        "sha256": "4949dbb34395e4424cf6da252372a5894b711152811d018f512ed90083c2ef50"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_38908",
+      "accessed_at": "2026-11-08T04:21:29.990783+00:00",
+      "locator": "_embedded.terms[0] label,is_obsolete",
+      "supports_or_contradicts": "Boratesalts is another broader chemicalclass; not exactidentity. Primary proposal uses more specific verified lithium-saltbranch rather than inferring a hydrous tetraborate structure.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-190479",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-190479.json",
+        "sha256": "9e175a600a0b93d72c3c76e4f109ab5a7e005ec74b10bcbb72905516af0c6c92"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_190479",
+      "accessed_at": "2026-11-08T04:21:30.585924+00:00",
+      "locator": "_embedded.terms[0] label,description,is_obsolete",
+      "supports_or_contradicts": "Verified broader class inorganic lithium salt, defined as lithium salt lacking C-Hbonds. Supports asymmetric broader mapping only.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-38889",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-38889.json",
+        "sha256": "82eceea571d2e571f9978b9c06de234e6b3e2316eaf2a1e7b78027eb6565d141"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_38889",
+      "accessed_at": "2026-11-08T04:21:31.198377+00:00",
+      "locator": "_embedded.terms[0] label,formula,charge",
+      "supports_or_contradicts": "Tetraborate(2-) isH4B4O9 with-2charge; not the anhydrousB4O7(2-) component. Not selected as exactparent/componentidentity.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-tetraboric-acid",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-tetraboric-acid.json",
+        "sha256": "0664026d71be05b3cc7a7608047f9f7852ea90f4ec0a0e23d5631ba9a0c65eab"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=tetraboric%20acid&ontology=chebi&rows=100",
+      "accessed_at": "2026-11-08T04:21:31.840333+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-pyroboric-acid",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-pyroboric-acid.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=pyroboric%20acid&ontology=chebi&rows=100",
+      "accessed_at": "2026-11-08T04:21:32.897379+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-tetraborate-salt",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-tetraborate-salt.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=tetraborate%20salt&ontology=chebi&rows=100",
+      "accessed_at": "2026-11-08T04:21:33.965051+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-38908-children",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-38908-children.json",
+        "sha256": "f0943eb7a75c37fde5950f2d4f82f2d07ba439c5f985155b405697f11b6894bb"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCHEBI_38908/children?size=100",
+      "accessed_at": "2026-11-08T04:21:34.593262+00:00",
+      "locator": "_embedded.terms and page",
+      "supports_or_contradicts": "Directchildren trisodiumborate,trilithiumborate,tripotassiumborate,sodiummetaborate; none exactLi2B4O7. Boundedbranchsearch only.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-pnas-BioC-valid",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-pnas-bioc-corrected-receipt.json",
+        "sha256": "21ca84a0a6485ecdb6b39f117ec865b5d93cf4d74d27ee3899f7fa65361376e0"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_XML/PMC6744853/UNICODE",
+      "accessed_at": "2026-11-08T04:25:04.172124+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-pnas-bioc-corrected-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-38910",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-38910.json",
+        "sha256": "ca0f3f77144e6015c6aab1b62beb046594cf5ed03335d790d9b87580dba08f50"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_38910",
+      "accessed_at": "2026-11-08T04:20:08.680953+00:00",
+      "locator": "_embedded.terms[0] label,formula,CAS,charge,is_obsolete",
+      "supports_or_contradicts": "Wrongcandidate: active trilithiumborate,BO3.3Li,CAS1303-94-2; not Li2B4O7/CAS12007-60-2.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-dilithium",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-dilithium.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=dilithium%20tetraborate&ontology=chebi&rows=50",
+      "accessed_at": "2026-11-08T04:20:09.321139+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-formula",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-formula.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=Li2B4O7&ontology=chebi&rows=50",
+      "accessed_at": "2026-11-08T04:20:09.926110+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-cas",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-cas.json",
+        "sha256": "8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=12007-60-2&ontology=chebi&rows=50",
+      "accessed_at": "2026-11-08T04:20:10.526224+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-pnas-BioC",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-pnas-bioc-receipt.json",
+        "sha256": "48e52cf5374098e273e3f2d39a1e134444fabfd0fb8c48da02066ee6beb6be1a"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC6744853/unicode",
+      "accessed_at": "2026-11-08T04:24:51.174159+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-pnas-bioc-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-ijsem-001745-full",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-extra-receipt.json",
+        "sha256": "817d590160c790cdb5ecd08d5e2ec468b077c0bd5d2074f642bb17fdbf5ba51f"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://www.microbiologyresearch.org/deliver/fulltext/ijsem/67/5/1482.html?itemId=/content/journal/ijsem/10.1099/ijsem.0.001745&mimeType=html&fmt=ahah",
+      "accessed_at": "2026-11-08T04:17:59.648177+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-extra-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-cas-12007-60-2",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-receipt.json",
+        "sha256": "02ec314aa277dbfba07c6b70537b09d865bfbc930d6ae355a39045e83e767d85"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://commonchemistry.cas.org/detail?cas_rn=12007-60-2",
+      "accessed_at": "2026-11-08T04:17:31.599687+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-sigma-222534",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-extra-receipt.json",
+        "sha256": "817d590160c790cdb5ecd08d5e2ec468b077c0bd5d2074f642bb17fdbf5ba51f"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://www.sigmaaldrich.com/GB/en/product/sigald/222534",
+      "accessed_at": "2026-11-08T04:17:59.827609+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-extra-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-pubchem-15764247-properties",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/pubchem-15764247-properties.json",
+        "sha256": "bad3124d37f7eb1ff7b8fd9ced94c983d26f6b10aa0a7f7d7c5a5d65aaf5aab0"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15764247/property/MolecularFormula,IUPACName,InChI/JSON",
+      "accessed_at": "2026-11-08T04:17:59.911592+00:00",
+      "locator": "PropertyTable.Properties[0] MolecularFormula,IUPACName,InChI",
+      "supports_or_contradicts": "Second PubChem structural representation is dilithium B4Li2O7 with no water; do not conflate cyclic/linear depiction choice with a suppliedhydrate claim.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-chebi-search-tetraborate",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/chebi-search-tetraborate.json",
+        "sha256": "92f00f5ff70940e21276ac30215f24fa4dc45c0260f0b274d6b63186d51020a1"
+      },
+      "kind": "ontology",
+      "url": "https://www.ebi.ac.uk/ols4/api/search?q=lithium%20tetraborate&ontology=chebi&rows=50",
+      "accessed_at": "2026-11-08T04:18:00.340462+00:00",
+      "locator": "Exact URL query and response.numFound/docs",
+      "supports_or_contradicts": "Bounded official ChEBI name/CAS/formula/parent search, with exactquery retained. ExactLi2B4O7 searches return0; broadernames return contextual alternatives to be inspected. Not a claim of absence across allontologies.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-togo-M3118",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/togo-M3118.json",
+        "sha256": "6629d5ccd0d7b876b8f74de07735bed9e8b82cd70d7dd12176a425b221c8b242"
+      },
+      "kind": "primary_source",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3118",
+      "accessed_at": "2026-11-08T04:17:23.732785+00:00",
+      "locator": "meta; comments paragraph1; components[1] Trace element solution,Na2SeO4×5H2O94mg,water1000ml; components[0]1mlstock",
+      "supports_or_contradicts": "Source literally preserves pentahydrate selenate and94mg stock amount; not94g/L finalmedium.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-dsmz-1493",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/dsmz-1493.pdf",
+        "sha256": "b3923aeed926fe8176633eb27c32c0ff91db802a90a485c0b86ff23c2ea23da7"
+      },
+      "kind": "primary_source",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1493.pdf",
+      "accessed_at": "2026-11-08T04:17:24.564704+00:00",
+      "locator": "Page1 mainrecipe Li2B4O7 0.01g; water1000ml; explicit hydrates in otherrows",
+      "supports_or_contradicts": "Primary recipe supports exact bare formula Li2B4O7, distinct from Li3BO3 and hydrated lithium tetraborates. No supplier/grade/lot stated.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-mediadive-3061",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/mediadive-3061.json",
+        "sha256": "65b631615ee4afff8143dde50aa06fd36a2da2301ae4d192c8a0f0e6b2aa9b67"
+      },
+      "kind": "primary_source",
+      "url": "https://mediadive.dsmz.de/rest/solution/3061",
+      "accessed_at": "2026-11-08T04:17:26.430849+00:00",
+      "locator": "data.recipe[6],compound_id1323,Li2B4O7 amount0.01g,g_l0.01",
+      "supports_or_contradicts": "Exact source accession and formula agree with DSMZ1493 and two frozenCMoccurrences.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-PMC6744853",
+      "capture": {
+        "root": "artifact",
+        "path": "fetch-receipt.json",
+        "sha256": "02ec314aa277dbfba07c6b70537b09d865bfbc930d6ae355a39045e83e767d85"
+      },
+      "kind": "unsuccessful_search",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6744853/fullTextXML",
+      "accessed_at": "2026-11-08T04:17:26.976256+00:00",
+      "locator": "Fetch status/body and exact URL in fetch-receipt.json",
+      "supports_or_contradicts": "Access did not provide usable primary scientific content (HTTPerror,emptyJSshell,no readablelines or NCBI Noresult). Never used as positive formula/identity evidence.",
+      "case_ids": [
+        "CM_NAME:1540e10689647dcfe81e7ec77f2387c85d1274a0b2233cb1610f20c44ea5f936"
+      ]
+    },
+    {
+      "evidence_id": "NSF-pubchem-9815330",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/pubchem-9815330.json",
+        "sha256": "15087015709e0e3eb19e5effab482426c93678be778c4a06ff45530cf6940f7e"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9815330/JSON",
+      "accessed_at": "2026-11-08T04:17:31.199510+00:00",
+      "locator": "PC_Compounds[0] CID9815330, formula/structureproperties",
+      "supports_or_contradicts": "Official PubChem compound body represents B4Li2O7; exactidentity candidate is corroborated independently of rejectedChEBIcrossrefs.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-sigma-webview",
+      "capture": {
+        "root": "artifact",
+        "path": "captures/sigma-222534-webview.json",
+        "sha256": "3dfbae414a7a673ede33daa5d8daa5399d07aa4eefcbb49c2a7a98044f6eb323"
+      },
+      "kind": "primary_source",
+      "url": "https://www.sigmaaldrich.com/GB/en/product/sigald/222534",
+      "accessed_at": "2026-11-08T04:19:19Z",
+      "locator": "web.run parsed primary product page lines91–103 and182–191: formulaLi2B4O7,CAS12007-60-2,mass169.12,InChI; fulltoolresponse retained",
+      "supports_or_contradicts": "Primary manufacturer corroborates exactchemical identity independently of the proposedbroaderontologyterm. Does not establish that DSMZ used Sigma222534 or anyparticular grade/lot. Capture is parsedpage text, notrawHTTPHTML.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-mim-identity-search",
+      "capture": {
+        "root": "artifact",
+        "path": "mim-identity-search.json",
+        "sha256": "621ebf0fa867d64c255b8c0b9c97b039d0374d1777b8016b7b1e8b93bac8b228"
+      },
+      "kind": "local_validation",
+      "url": null,
+      "locator": "Entire receipt/TSV",
+      "supports_or_contradicts": "Ignored-inclusive maintainedrecords/index search found no exactCAS/formula/name owner; proposedownerpath absent.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-Li2b4o7-strict",
+      "capture": {
+        "root": "artifact",
+        "path": "Li2b4o7-strict.tsv",
+        "sha256": "4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b"
+      },
+      "kind": "local_validation",
+      "url": null,
+      "locator": "Entire receipt/TSV",
+      "supports_or_contradicts": "Native strict schema:1file,0ERRORrows; guardedwriter also passed. Structuralvalidation is not releaseapproval.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-SHARED-CID-15764247",
+      "capture": {
+        "root": "artifact",
+        "path": "shared-lithium-leads/captures/cid-15764247-properties.json",
+        "sha256": "64c461c4b1c2e06b83eccf397d5c024ce22fe45a3ddb30cbc86041c8bfe3d956"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15764247/property/MolecularFormula,InChI,InChIKey,IUPACName/JSON",
+      "accessed_at": "2026-11-08T04:29:25.128347+00:00",
+      "locator": "PropertyTable.Properties complete returned descriptor records, or IdentifierList.CID for exactCAS-name query",
+      "supports_or_contradicts": "Alternative official PubChem record retained. Same formula does not equate distinct InChI/connectivity; noCID is selected for the source. Wrong-stoichiometry and explicitpentahydrate alternatives remain separate. CAS-name lookup is not independent CAS Registry certification.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-SHARED-CID-9815330",
+      "capture": {
+        "root": "artifact",
+        "path": "shared-lithium-leads/captures/cid-9815330-properties.json",
+        "sha256": "e4ccccaea4b54bc3176a88518a18369aba2d08a8206608aba499fe9c800fe5a8"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/9815330/property/MolecularFormula,InChI,InChIKey,IUPACName/JSON",
+      "accessed_at": "2026-11-08T04:29:25.692068+00:00",
+      "locator": "PropertyTable.Properties complete returned descriptor records, or IdentifierList.CID for exactCAS-name query",
+      "supports_or_contradicts": "Alternative official PubChem record retained. Same formula does not equate distinct InChI/connectivity; noCID is selected for the source. Wrong-stoichiometry and explicitpentahydrate alternatives remain separate. CAS-name lookup is not independent CAS Registry certification.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-SHARED-CID-21895667",
+      "capture": {
+        "root": "artifact",
+        "path": "shared-lithium-leads/captures/cid-21895667-properties.json",
+        "sha256": "43d06ca160f395c7164452be3a68047bb0bfccf65d497178fd706c1eb584963f"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/21895667/property/MolecularFormula,InChI,InChIKey,IUPACName/JSON",
+      "accessed_at": "2026-11-08T04:29:26.249482+00:00",
+      "locator": "PropertyTable.Properties complete returned descriptor records, or IdentifierList.CID for exactCAS-name query",
+      "supports_or_contradicts": "Alternative official PubChem record retained. Same formula does not equate distinct InChI/connectivity; noCID is selected for the source. Wrong-stoichiometry and explicitpentahydrate alternatives remain separate. CAS-name lookup is not independent CAS Registry certification.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-SHARED-CID-90478374",
+      "capture": {
+        "root": "artifact",
+        "path": "shared-lithium-leads/captures/cid-90478374-properties.json",
+        "sha256": "55378a7478e80c01cd43adeb8a41aa18a830e21258dbbc6afa04331508f91364"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/90478374/property/MolecularFormula,InChI,InChIKey,IUPACName/JSON",
+      "accessed_at": "2026-11-08T04:29:26.975886+00:00",
+      "locator": "PropertyTable.Properties complete returned descriptor records, or IdentifierList.CID for exactCAS-name query",
+      "supports_or_contradicts": "Alternative official PubChem record retained. Same formula does not equate distinct InChI/connectivity; noCID is selected for the source. Wrong-stoichiometry and explicitpentahydrate alternatives remain separate. CAS-name lookup is not independent CAS Registry certification.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-SHARED-CID-CAS12007-60-2",
+      "capture": {
+        "root": "artifact",
+        "path": "shared-lithium-leads/captures/cas-12007-60-2-cids.json",
+        "sha256": "d526c676d5eca5cc614d1361d5348acf047eaf4ec28b02c8cb4227528c6cad84"
+      },
+      "kind": "primary_source",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/12007-60-2/cids/JSON",
+      "accessed_at": "2026-11-08T04:29:27.564189+00:00",
+      "locator": "PropertyTable.Properties complete returned descriptor records, or IdentifierList.CID for exactCAS-name query",
+      "supports_or_contradicts": "Alternative official PubChem record retained. Same formula does not equate distinct InChI/connectivity; noCID is selected for the source. Wrong-stoichiometry and explicitpentahydrate alternatives remain separate. CAS-name lookup is not independent CAS Registry certification.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-SHARED-CACHE-ASSESSMENT",
+      "capture": {
+        "root": "artifact",
+        "path": "lithium-cache-assessment.json",
+        "sha256": "d5ff81101f37f9156600004a4491857ab5671be1bba034c62cb259c93e032a41"
+      },
+      "kind": "local_validation",
+      "url": null,
+      "accessed_at": "2026-11-08T04:39:05.969482+00:00",
+      "locator": "Complete cache manifest or source-specific bulk material versus structural representation assessment",
+      "supports_or_contradicts": "All22 original manifest entries verified. Proposal remains bulk lithium tetraborate CAS material scope, based on primary supplier name/formula/CAS and source formula as a stated curation inference; no source vendor/lot/structure proof. Exact proposal contains noCID/InChI/SMILES.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-SHARED-CACHE-MANIFEST",
+      "capture": {
+        "root": "artifact",
+        "path": "shared-lithium-leads/MANIFEST.json",
+        "sha256": "8c612964b0b295e0f3492fba88bd115e26fd20242b74c303a98399d084b44e25"
+      },
+      "kind": "source_snapshot",
+      "url": null,
+      "accessed_at": "2026-11-08T04:39:05.969482+00:00",
+      "locator": "Complete cache manifest or source-specific bulk material versus structural representation assessment",
+      "supports_or_contradicts": "All22 original manifest entries verified. Proposal remains bulk lithium tetraborate CAS material scope, based on primary supplier name/formula/CAS and source formula as a stated curation inference; no source vendor/lot/structure proof. Exact proposal contains noCID/InChI/SMILES.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    },
+    {
+      "evidence_id": "NSF-NATIVE-AUTHOR",
+      "capture": {
+        "root": "artifact",
+        "path": "native-review/review.yaml",
+        "sha256": "943a60355e4e3254861ee235e16de16a2f13908c3992adefcdc98fc645860c90"
+      },
+      "kind": "native_record_review",
+      "url": null,
+      "locator": "Complete native author self-review and exact proposal input hashes",
+      "supports_or_contradicts": "Saved native author review supports minimal CAS identity and asymmetric parent proposal within declared scope. Shared newCID-cache assessment is a subsequent addendum, not falsely attributed to original earlierreview. Independent review remains separate.",
+      "case_ids": [
+        "CM_NAME:feaadf9d3b6ed6487f4bc361dcdf9a39d7a4756737bb30c7412182ec966ec065"
+      ]
+    }
+  ]
+}

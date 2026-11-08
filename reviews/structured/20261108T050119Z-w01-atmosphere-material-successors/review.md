@@ -1,0 +1,589 @@
+# Stock partonomy successors: preserve atmosphere as procedure, not material component
+
+- Review: 20261108T050119Z-w01-atmosphere-material-successors
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T05:01:19Z
+- Finished UTC: 2026-11-08T05:01:19Z
+- Reviewer: Codex /root/primary_context (self_review)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: true
+
+## Summary
+
+Threeisolatedsuccessors remove N2 fromNBRC361/1321materialcomponents andCO2fromDSMZ863materialcomponents. Fullprimaryinstructions establishautoclave/storageatmospheres, whichremaininprocedureevidence. ExplicitCO2saturationofseparatebicarbonatestockremainsintact. Allothermaterialrows,identifiers,rawlabelquarantine andhistoryarepreserved.
+
+## Scope And Provenance
+
+Allfields of3exactisolatedsuccessors, narrowatmosphere-materialcorrection and preservedsourceidentity/applicability.
+
+Selection: MIM1167exact3proposals;1166canonicalpairaccountingverifiedwithoutsharedfragmentedits.
+Coverage: full; 3 reviewed / 3 in the declared population.
+Source: working_tree at Git base 58d67db32a86a359869819624568d625e7051358.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| NBRC361_Neutralized_Sulfide_Stock | reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml | source | NBRC361 neutralized sulfide stock |
+| NBRC1321_Sulfide_Stock | reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml | source | NBRC1321 sulfide stock from sodium sulfide nonahydrate |
+| DSMZ863_Sodium_Carbonate_Stock | reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml | source | DSMZ863 sodium carbonate stock |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Native exact-input provenance | passed | True | NBRC361_Neutralized_Sulfide_Stock, NBRC1321_Sulfide_Stock, DSMZ863_Sodium_Carbonate_Stock | Current3successorpayloads,immutablebeforebytes,fullprimarysources,coordinatorfinding,issuecapturesandcontractboundbynativeinspection. |
+| Guarded/strict schema and proposed partonomy | passed | True | NBRC361_Neutralized_Sulfide_Stock, NBRC1321_Sulfide_Stock, DSMZ863_Sodium_Carbonate_Stock | 3guardedwriterpasses,3strictpasses,zeroproposed-parentpartonomyviolations. Allothermaterialrows unchanged. |
+| Direct material-source applicability | passed | True | NBRC361_Neutralized_Sulfide_Stock, NBRC1321_Sulfide_Stock, DSMZ863_Sodium_Carbonate_Stock | RereadcompleteNBRC361/1321andDSMZ863; sourcegasconditionsareprocedural. BicarbonateCO2saturationisasource-explicitpositivecontrast. |
+
+## Scientific And Domain Assessments
+
+### Material has-part versus preparation atmosphere
+
+scope: supported. Targets: NBRC361_Neutralized_Sulfide_Stock.
+
+NBRC361 neutralized sulfide:1.5g Na2S·9H2O plus100mL distilled water; sterile2N H2SO4 is added dropwise to approximatelypH7.3 after cooling. Autoclaving at121°C for15minutes underN2 in a sealed vessel is a preparation condition, not a specified nitrogen material constituent. Allremainingmaterialcomponentrowsmatchtheprevioussource-transcriptionexactly. Removingproceduralgasdoesnotreducecompletenessrelativetotheactualmaterialinputs.
+
+### Source-defined whole-stock identity and unchanged applicability
+
+identity: supported. Targets: NBRC361_Neutralized_Sulfide_Stock.
+
+Registryidentifier,preferredterm,ontology_mapping,rawnonresolvinglabels,literalbatchquantities,originalhistoryandcasebindingsremainunchanged. Correctiondoesnotassertfinaldissolvedspecies,changecomponentgrounding,mergeotherstocks orapproveunrelatedowner/releaseclaims.
+
+### Material has-part versus preparation atmosphere
+
+scope: supported. Targets: NBRC1321_Sulfide_Stock.
+
+NBRC1321 sulfide:24g Na2S·9H2O plus100mL distilled water, filtered then stored underN2. NBRC1257 equivalent scaled preparation is12g plus50mL water with the same handling. N2 is a storage atmosphere; no dissolved-gas material claim is established. Source nominal1M and literal added-water quantities remain separate. Allremainingmaterialcomponentrowsmatchtheprevioussource-transcriptionexactly. Removingproceduralgasdoesnotreducecompletenessrelativetotheactualmaterialinputs.
+
+### Source-defined whole-stock identity and unchanged applicability
+
+identity: supported. Targets: NBRC1321_Sulfide_Stock.
+
+Registryidentifier,preferredterm,ontology_mapping,rawnonresolvinglabels,literalbatchquantities,originalhistoryandcasebindingsremainunchanged. Correctiondoesnotassertfinaldissolvedspecies,changecomponentgrounding,mergeotherstocks orapproveunrelatedowner/releaseclaims.
+
+### Material has-part versus preparation atmosphere
+
+scope: supported. Targets: DSMZ863_Sodium_Carbonate_Stock.
+
+DSMZ863 carbonate:106g Na2CO3 dissolved in1L degassed water, autoclaved in sealed serum bottles underCO2. This describes the autoclaving atmosphere, without stating CO2 saturation or addition to the liquid. The material ingredient enumeration contains Na2CO3 and degassed water; no numerical final concentration, dissolved gas amount or final speciation is inferred. Allremainingmaterialcomponentrowsmatchtheprevioussource-transcriptionexactly. Removingproceduralgasdoesnotreducecompletenessrelativetotheactualmaterialinputs.
+
+### Source-defined whole-stock identity and unchanged applicability
+
+identity: supported. Targets: DSMZ863_Sodium_Carbonate_Stock.
+
+Registryidentifier,preferredterm,ontology_mapping,rawnonresolvinglabels,literalbatchquantities,originalhistoryandcasebindingsremainunchanged. Correctiondoesnotassertfinaldissolvedspecies,changecomponentgrounding,mergeotherstocks orapproveunrelatedowner/releaseclaims.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| remediation | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/remediation.json; Complete exact artifact | supports | All3exactpayloads guard/strict/partonomy-valid. Exact removedgasrows and every unchanged materialcomponent/identity/synonym/historyfield verified;1166canonicalcrosssourcepairs and explicitbicarbonatepositive distinction checked. |
+| coordinator | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/coordinator-finding-004.json; Complete exact artifact | supports | Independentcoordinator finding W01-V2-ATMOSPHERE-PARTONOMY binds3observedpayloads and primarysource evidence. Thisauthor independently reread all3complete source documents. |
+| issue1167 | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1167.json; Complete exact artifact | supports | Liveassignedissue1167 defines requiredmaterialhas-part correction; no maintainedchanges or blanketreleaseapproval. |
+| issue1166 | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1166.json; Complete exact artifact | supports | Cross-sourceNBRC1257/1321duplication is already reconciled toonecanonicalownerperstock in assembledledger. Neutralizedsulfide/5%sulfide/generic84gLstock remain distinct. |
+| strict | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/strict.tsv; Complete exact artifact | supports | Nativeclosed-schema validation for3exactsuccessorpayloads. |
+| carbonate-owner | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/data/ingredients/mapped/Sodium_Carbonate_Solution.yaml; Complete exact artifact | supports | ActualexistingCHEBI29377owner is contextonly; alloriginalclaims and1751historicalmembership untouched. Thisreview concernsseparateDSMZ863stockpayload, notapprovalofentiregenericowner. |
+| new-NBRC361_Neutralized_Sulfide_Stock | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml; Complete exact artifact | supports | Exactsuccessorpayload; unsupportedatmospheregascomponent removed, conditionsretainedinnotes/evidence, sourceidentityandallmaterialinputrowsunchanged. |
+| old-NBRC361_Neutralized_Sulfide_Stock | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC361_Neutralized_Sulfide_Stock.yaml; Complete exact artifact | supports | Immutablepreviouspayload containingunsupportedgascomponent; retainedasobservedhistoricaldraft, supersededonlybythisexactsuccessor. |
+| primary-NBRC361_Neutralized_Sulfide_Stock | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=361; Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution paragraph | supports | NBRC361 neutralized sulfide:1.5g Na2S·9H2O plus100mL distilled water; sterile2N H2SO4 is added dropwise to approximatelypH7.3 after cooling. Autoclaving at121°C for15minutes underN2 in a sealed vessel is a preparation condition, not a specified nitrogen material constituent. |
+| new-NBRC1321_Sulfide_Stock | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml; Complete exact artifact | supports | Exactsuccessorpayload; unsupportedatmospheregascomponent removed, conditionsretainedinnotes/evidence, sourceidentityandallmaterialinputrowsunchanged. |
+| old-NBRC1321_Sulfide_Stock | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml; Complete exact artifact | supports | Immutablepreviouspayload containingunsupportedgascomponent; retainedasobservedhistoricaldraft, supersededonlybythisexactsuccessor. |
+| primary-NBRC1321_Sulfide_Stock | https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321; Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution paragraph | supports | NBRC1321 sulfide:24g Na2S·9H2O plus100mL distilled water, filtered then stored underN2. NBRC1257 equivalent scaled preparation is12g plus50mL water with the same handling. N2 is a storage atmosphere; no dissolved-gas material claim is established. Source nominal1M and literal added-water quantities remain separate. |
+| new-DSMZ863_Sodium_Carbonate_Stock | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml; Complete exact artifact | supports | Exactsuccessorpayload; unsupportedatmospheregascomponent removed, conditionsretainedinnotes/evidence, sourceidentityandallmaterialinputrowsunchanged. |
+| old-DSMZ863_Sodium_Carbonate_Stock | /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml; Complete exact artifact | supports | Immutablepreviouspayload containingunsupportedgascomponent; retainedasobservedhistoricaldraft, supersededonlybythisexactsuccessor. |
+| primary-DSMZ863_Sodium_Carbonate_Stock | https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf; Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution paragraph | supports | DSMZ863 carbonate:106g Na2CO3 dissolved in1L degassed water, autoclaved in sealed serum bottles underCO2. This describes the autoclaving atmosphere, without stating CO2 saturation or addition to the liquid. The material ingredient enumeration contains Na2CO3 and degassed water; no numerical final concentration, dissolved gas amount or final speciation is inferred. |
+
+## Limits And Additional Notes
+
+- Authoredsuccessors; independentrereviewmustassessexactpayloads.
+- No unsupportedgascomponent,gasamount,finalvolumeorfinalspeciationclaimremains.
+- No sharedCS/KGfragmentseditedbythisauthor; exactpatchesaredeliveredtothesinglefragmentwriter.
+- No maintaineddata,Githubposting,issueclosureorholdrelease.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T050119Z-w01-atmosphere-material-successors
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: 'Stock partonomy successors: preserve atmosphere as procedure, not material
+  component'
+started_at: '2026-11-08T05:01:19Z'
+finished_at: '2026-11-08T05:01:19Z'
+reviewer:
+  identity: Codex /root/primary_context
+  kind: agent
+  independence: self_review
+  independence_basis: Author of these3successor payloads; independentcoordinatorfinding
+    and separateworkerreviewer remain distinct evidence.
+skill: review-yaml-record
+completion: completed
+verdict: pass_with_limitations
+scientific_review: true
+summary: Threeisolatedsuccessors remove N2 fromNBRC361/1321materialcomponents andCO2fromDSMZ863materialcomponents.
+  Fullprimaryinstructions establishautoclave/storageatmospheres, whichremaininprocedureevidence.
+  ExplicitCO2saturationofseparatebicarbonatestockremainsintact. Allothermaterialrows,identifiers,rawlabelquarantine
+  andhistoryarepreserved.
+source:
+  git_revision: 58d67db32a86a359869819624568d625e7051358
+  state: working_tree
+  inputs:
+  - path: .claude/skills/add-media/SKILL.md
+    sha256: c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Sodium_Carbonate_Solution.yaml
+    sha256: 537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-stock-author-review-v3.yaml
+    sha256: 7c3a93d4ab07022e2530b41848d324720dada4831687b9633aa344aafdb83e8f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/NBRC-1321.html
+    sha256: 471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/NBRC-361.html
+    sha256: 0de83dadbbc223d877c7fb48401f12329e4ae07b520a1bf548437debbc3d9b6a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml
+    sha256: 61c0a226a8a99d96b43657f6e00075e901ce051a698b01bd99f6ab6f1d88717c
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml
+    sha256: 12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC361_Neutralized_Sulfide_Stock.yaml
+    sha256: 943d43b7e7018bcb23d184b89825f25abd98a938f8b981b10fdd4f3e09f47b8a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/coordinator-finding-004.json
+    sha256: 34b1123989cef7421dc05cf926f2001c18d0fac12a43463da83eabba8dc48d71
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1166.json
+    sha256: 23cdc0705dd4db829b3cbc73ec1d3e63521b3eb7a31b78a1f49794bc7fdee79e
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1167.json
+    sha256: 6d75281ac41dfedf3e4f4e8744f4695f1ecbe81b09ffa295c4715fa687046335
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml
+    sha256: becc99cf874aa7f4dc528c9ab9653ba8151d186825940e336c3344e94e3e6b9b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml
+    sha256: 2bf8bedbb48db7d1196df4f978f1015ae08ee0c5be49598556d04c273f1a6455
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml
+    sha256: 62d320a5f1bda3dcda7dc5d9cf05ffe95e7cfefb2d87d782c8791b757fe1e57e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/remediation.json
+    sha256: 49f3a475493be88133b1b0860f8532aeae912bb807437fe79051bb0d3e5e074f
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/strict.tsv
+    sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+    sha256: 3ed45aeb1e2bbcb57b21ae44d4dbee9be2ba8c260b77df5642f198c7cc30ad06
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8f78720d273001286b58.pdf
+    sha256: 312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/native-identity-author-review-v3.yaml
+    sha256: dd67c68be5d269c059c42d3041af855b27aa1f971afff36f6555e75acb0d54e3
+    role: context
+  - path: reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml
+    sha256: 9d3619e9eee30553bd509f082fc99c3576252a8af9c473e3ab583135bc193baa
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: Allfields of3exactisolatedsuccessors, narrowatmosphere-materialcorrection
+    and preservedsourceidentity/applicability.
+  selection: MIM1167exact3proposals;1166canonicalpairaccountingverifiedwithoutsharedfragmentedits.
+  coverage: full
+  population_size: 3
+  reviewed_target_ids:
+  - NBRC361_Neutralized_Sulfide_Stock
+  - NBRC1321_Sulfide_Stock
+  - DSMZ863_Sodium_Carbonate_Stock
+  exclusions:
+  - target: UnrelatedexistingSodium_Carbonate_Solutionownerclaimsandpublicationholds
+    reason: Contextcandidateonly; separateDSMZ863proposal doesnotrepurposeorapproveallhistoricalclaims.
+  - target: Finaldissolvedspeciationorgasconcentration
+    reason: Notestablishedbyprimaryinstructions; noassertionintroduced.
+  - target: Maintainedintegration/release
+    reason: Proposalsonly; independentreviewandcoordinatorintegrationremainseparate.
+targets:
+- target_id: NBRC361_Neutralized_Sulfide_Stock
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml
+  label: NBRC361 neutralized sulfide stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Exactisolatednew-ownerproposal intendedfordata/ingredients/mapped/NBRC361_Neutralized_Sulfide_Stock.yaml.
+    No maintainedowner created or modified.
+- target_id: NBRC1321_Sulfide_Stock
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml
+  label: NBRC1321 sulfide stock from sodium sulfide nonahydrate
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Exactisolatednew-ownerproposal intendedfordata/ingredients/mapped/NBRC1321_Sulfide_Stock.yaml.
+    No maintainedowner created or modified.
+- target_id: DSMZ863_Sodium_Carbonate_Stock
+  path: reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml
+  label: DSMZ863 sodium carbonate stock
+  kind: source
+  record_class: IngredientRecord
+  ownership_note: Exactisolatednew-ownerproposal intendedfordata/ingredients/mapped/DSMZ863_Sodium_Carbonate_Stock.yaml.
+    No maintainedowner created or modified.
+checks:
+- check_id: native-inspection
+  name: Native exact-input provenance
+  status: passed
+  required: true
+  summary: Current3successorpayloads,immutablebeforebytes,fullprimarysources,coordinatorfinding,issuecapturesandcontractboundbynativeinspection.
+  target_ids:
+  - NBRC361_Neutralized_Sulfide_Stock
+  - NBRC1321_Sulfide_Stock
+  - DSMZ863_Sodium_Carbonate_Stock
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/all-unmatched-worker-01/shard-venv/bin/python
+    scripts/record_review.py inspect --targets /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/all-unmatched-worker-01/shard/named_stocks/atmosphere1167-targets.yaml
+    --input MAPPING_SEMANTICS.md --input .claude/skills/add-media/SKILL.md --input
+    docs/record-reviews.md --input src/mediaingredientmech/schema/mediaingredientmech.yaml
+    --input data/ingredients/mapped/Sodium_Carbonate_Solution.yaml --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/remediation.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/coordinator-finding-004.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1167.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1166.json
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/strict.tsv
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC361_Neutralized_Sulfide_Stock.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/NBRC-361.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/primary/NBRC-1321.html
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/root_substances/captures/primary/8f78720d273001286b58.pdf
+    --input reports/all_unmatched_20261107/worker-01/shard/named_stocks/captures/nbrc-1257.html
+    --input reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_CO2_Bicarbonate_Stock-v2.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/captures/native-stock-author-review-v3.yaml
+    --input reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/captures/native-identity-author-review-v3.yaml
+  exit_code: 0
+  evidence_ids:
+  - remediation
+- check_id: schema-partonomy
+  name: Guarded/strict schema and proposed partonomy
+  status: passed
+  required: true
+  summary: 3guardedwriterpasses,3strictpasses,zeroproposed-parentpartonomyviolations.
+    Allothermaterialrows unchanged.
+  target_ids:
+  - NBRC361_Neutralized_Sulfide_Stock
+  - NBRC1321_Sulfide_Stock
+  - DSMZ863_Sodium_Carbonate_Stock
+  evidence_ids:
+  - remediation
+  - strict
+- check_id: primary-material
+  name: Direct material-source applicability
+  status: passed
+  required: true
+  summary: RereadcompleteNBRC361/1321andDSMZ863; sourcegasconditionsareprocedural.
+    BicarbonateCO2saturationisasource-explicitpositivecontrast.
+  target_ids:
+  - NBRC361_Neutralized_Sulfide_Stock
+  - NBRC1321_Sulfide_Stock
+  - DSMZ863_Sodium_Carbonate_Stock
+  evidence_ids:
+  - remediation
+  - coordinator
+  - issue1167
+evidence:
+- evidence_id: remediation
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/remediation.json
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: All3exactpayloads guard/strict/partonomy-valid. Exact removedgasrows and
+    every unchanged materialcomponent/identity/synonym/historyfield verified;1166canonicalcrosssourcepairs
+    and explicitbicarbonatepositive distinction checked.
+  snapshot_sha256: 49f3a475493be88133b1b0860f8532aeae912bb807437fe79051bb0d3e5e074f
+- evidence_id: coordinator
+  kind: prior_review
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/coordinator-finding-004.json
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Independentcoordinator finding W01-V2-ATMOSPHERE-PARTONOMY binds3observedpayloads
+    and primarysource evidence. Thisauthor independently reread all3complete source
+    documents.
+  snapshot_sha256: 34b1123989cef7421dc05cf926f2001c18d0fac12a43463da83eabba8dc48d71
+- evidence_id: issue1167
+  kind: prior_review
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1167.json
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Liveassignedissue1167 defines requiredmaterialhas-part correction; no maintainedchanges
+    or blanketreleaseapproval.
+  snapshot_sha256: 6d75281ac41dfedf3e4f4e8744f4695f1ecbe81b09ffa295c4715fa687046335
+- evidence_id: issue1166
+  kind: prior_review
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/captures/issue-1166.json
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Cross-sourceNBRC1257/1321duplication is already reconciled toonecanonicalownerperstock
+    in assembledledger. Neutralizedsulfide/5%sulfide/generic84gLstock remain distinct.
+  snapshot_sha256: 23cdc0705dd4db829b3cbc73ec1d3e63521b3eb7a31b78a1f49794bc7fdee79e
+- evidence_id: strict
+  kind: validation
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/strict.tsv
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Nativeclosed-schema validation for3exactsuccessorpayloads.
+  snapshot_sha256: 4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b
+- evidence_id: carbonate-owner
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/data/ingredients/mapped/Sodium_Carbonate_Solution.yaml
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: ActualexistingCHEBI29377owner is contextonly; alloriginalclaims and1751historicalmembership
+    untouched. Thisreview concernsseparateDSMZ863stockpayload, notapprovalofentiregenericowner.
+  snapshot_sha256: 537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6
+- evidence_id: new-NBRC361_Neutralized_Sulfide_Stock
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC361_Neutralized_Sulfide_Stock-atmosphere-v1.yaml
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Exactsuccessorpayload; unsupportedatmospheregascomponent removed, conditionsretainedinnotes/evidence,
+    sourceidentityandallmaterialinputrowsunchanged.
+  snapshot_sha256: 62d320a5f1bda3dcda7dc5d9cf05ffe95e7cfefb2d87d782c8791b757fe1e57e
+- evidence_id: old-NBRC361_Neutralized_Sulfide_Stock
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC361_Neutralized_Sulfide_Stock.yaml
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Immutablepreviouspayload containingunsupportedgascomponent; retainedasobservedhistoricaldraft,
+    supersededonlybythisexactsuccessor.
+  snapshot_sha256: 943d43b7e7018bcb23d184b89825f25abd98a938f8b981b10fdd4f3e09f47b8a
+- evidence_id: primary-NBRC361_Neutralized_Sulfide_Stock
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=361
+  locator: Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution
+    paragraph
+  accessed_at: '2026-11-08T04:06:28.980188Z'
+  support: supports
+  summary: NBRC361 neutralized sulfide:1.5g Na2S·9H2O plus100mL distilled water; sterile2N
+    H2SO4 is added dropwise to approximatelypH7.3 after cooling. Autoclaving at121°C
+    for15minutes underN2 in a sealed vessel is a preparation condition, not a specified
+    nitrogen material constituent.
+  snapshot_sha256: 0de83dadbbc223d877c7fb48401f12329e4ae07b520a1bf548437debbc3d9b6a
+- evidence_id: new-NBRC1321_Sulfide_Stock
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/NBRC1321_Sulfide_Stock-atmosphere-v1.yaml
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Exactsuccessorpayload; unsupportedatmospheregascomponent removed, conditionsretainedinnotes/evidence,
+    sourceidentityandallmaterialinputrowsunchanged.
+  snapshot_sha256: 2bf8bedbb48db7d1196df4f978f1015ae08ee0c5be49598556d04c273f1a6455
+- evidence_id: old-NBRC1321_Sulfide_Stock
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/concentration_stocks/proposals/NBRC1321_Sulfide_Stock-v2.yaml
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Immutablepreviouspayload containingunsupportedgascomponent; retainedasobservedhistoricaldraft,
+    supersededonlybythisexactsuccessor.
+  snapshot_sha256: 12727f7681a0b1499956b870ead3a8bdb07d6b0c8dfdb1a6265f1c1ac35736a5
+- evidence_id: primary-NBRC1321_Sulfide_Stock
+  kind: primary_source
+  reference: https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1321
+  locator: Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution
+    paragraph
+  accessed_at: '2026-11-08T04:06:28.356376Z'
+  support: supports
+  summary: NBRC1321 sulfide:24g Na2S·9H2O plus100mL distilled water, filtered then
+    stored underN2. NBRC1257 equivalent scaled preparation is12g plus50mL water with
+    the same handling. N2 is a storage atmosphere; no dissolved-gas material claim
+    is established. Source nominal1M and literal added-water quantities remain separate.
+  snapshot_sha256: 471a2ea8c7daff318ea0b79a4b7508d5be43f5b823d728d957bdeef3c3ad6e4b
+- evidence_id: new-DSMZ863_Sodium_Carbonate_Stock
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/named_stocks/atmosphere1167/proposals/DSMZ863_Sodium_Carbonate_Stock-atmosphere-v1.yaml
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Exactsuccessorpayload; unsupportedatmospheregascomponent removed, conditionsretainedinnotes/evidence,
+    sourceidentityandallmaterialinputrowsunchanged.
+  snapshot_sha256: becc99cf874aa7f4dc528c9ab9653ba8151d186825940e336c3344e94e3e6b9b
+- evidence_id: old-DSMZ863_Sodium_Carbonate_Stock
+  kind: record_content
+  reference: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/reports/all_unmatched_20261107/worker-01/shard/root_substances/kg26/proposals/DSMZ863_Sodium_Carbonate_Stock.yaml
+  locator: Complete exact artifact
+  accessed_at: '2026-11-08T05:01:19Z'
+  support: supports
+  summary: Immutablepreviouspayload containingunsupportedgascomponent; retainedasobservedhistoricaldraft,
+    supersededonlybythisexactsuccessor.
+  snapshot_sha256: 9d3619e9eee30553bd509f082fc99c3576252a8af9c473e3ab583135bc193baa
+- evidence_id: primary-DSMZ863_Sodium_Carbonate_Stock
+  kind: primary_source
+  reference: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium863.pdf
+  locator: Complete primary recipe; exact named sulfide stock subsection orDSMZ863p2Na2CO3solution
+    paragraph
+  accessed_at: '2026-11-08T04:09:21.594634Z'
+  support: supports
+  summary: DSMZ863 carbonate:106g Na2CO3 dissolved in1L degassed water, autoclaved
+    in sealed serum bottles underCO2. This describes the autoclaving atmosphere, without
+    stating CO2 saturation or addition to the liquid. The material ingredient enumeration
+    contains Na2CO3 and degassed water; no numerical final concentration, dissolved
+    gas amount or final speciation is inferred.
+  snapshot_sha256: 312943d47b12f79129cb83caef527078a0a4e5279ac1f6ad7922b0057dfa8912
+assessments:
+- assessment_id: material-NBRC361_Neutralized_Sulfide_Stock
+  area: scope
+  topic: Material has-part versus preparation atmosphere
+  outcome: supported
+  summary: NBRC361 neutralized sulfide:1.5g Na2S·9H2O plus100mL distilled water; sterile2N
+    H2SO4 is added dropwise to approximatelypH7.3 after cooling. Autoclaving at121°C
+    for15minutes underN2 in a sealed vessel is a preparation condition, not a specified
+    nitrogen material constituent. Allremainingmaterialcomponentrowsmatchtheprevioussource-transcriptionexactly.
+    Removingproceduralgasdoesnotreducecompletenessrelativetotheactualmaterialinputs.
+  target_ids:
+  - NBRC361_Neutralized_Sulfide_Stock
+  evidence_ids:
+  - new-NBRC361_Neutralized_Sulfide_Stock
+  - old-NBRC361_Neutralized_Sulfide_Stock
+  - primary-NBRC361_Neutralized_Sulfide_Stock
+  - remediation
+  - coordinator
+  - issue1167
+- assessment_id: identity-NBRC361_Neutralized_Sulfide_Stock
+  area: identity
+  topic: Source-defined whole-stock identity and unchanged applicability
+  outcome: supported
+  summary: Registryidentifier,preferredterm,ontology_mapping,rawnonresolvinglabels,literalbatchquantities,originalhistoryandcasebindingsremainunchanged.
+    Correctiondoesnotassertfinaldissolvedspecies,changecomponentgrounding,mergeotherstocks
+    orapproveunrelatedowner/releaseclaims.
+  target_ids:
+  - NBRC361_Neutralized_Sulfide_Stock
+  evidence_ids:
+  - new-NBRC361_Neutralized_Sulfide_Stock
+  - old-NBRC361_Neutralized_Sulfide_Stock
+  - primary-NBRC361_Neutralized_Sulfide_Stock
+  - remediation
+  - coordinator
+  - issue1167
+  - issue1166
+- assessment_id: material-NBRC1321_Sulfide_Stock
+  area: scope
+  topic: Material has-part versus preparation atmosphere
+  outcome: supported
+  summary: NBRC1321 sulfide:24g Na2S·9H2O plus100mL distilled water, filtered then
+    stored underN2. NBRC1257 equivalent scaled preparation is12g plus50mL water with
+    the same handling. N2 is a storage atmosphere; no dissolved-gas material claim
+    is established. Source nominal1M and literal added-water quantities remain separate.
+    Allremainingmaterialcomponentrowsmatchtheprevioussource-transcriptionexactly.
+    Removingproceduralgasdoesnotreducecompletenessrelativetotheactualmaterialinputs.
+  target_ids:
+  - NBRC1321_Sulfide_Stock
+  evidence_ids:
+  - new-NBRC1321_Sulfide_Stock
+  - old-NBRC1321_Sulfide_Stock
+  - primary-NBRC1321_Sulfide_Stock
+  - remediation
+  - coordinator
+  - issue1167
+- assessment_id: identity-NBRC1321_Sulfide_Stock
+  area: identity
+  topic: Source-defined whole-stock identity and unchanged applicability
+  outcome: supported
+  summary: Registryidentifier,preferredterm,ontology_mapping,rawnonresolvinglabels,literalbatchquantities,originalhistoryandcasebindingsremainunchanged.
+    Correctiondoesnotassertfinaldissolvedspecies,changecomponentgrounding,mergeotherstocks
+    orapproveunrelatedowner/releaseclaims.
+  target_ids:
+  - NBRC1321_Sulfide_Stock
+  evidence_ids:
+  - new-NBRC1321_Sulfide_Stock
+  - old-NBRC1321_Sulfide_Stock
+  - primary-NBRC1321_Sulfide_Stock
+  - remediation
+  - coordinator
+  - issue1167
+  - issue1166
+- assessment_id: material-DSMZ863_Sodium_Carbonate_Stock
+  area: scope
+  topic: Material has-part versus preparation atmosphere
+  outcome: supported
+  summary: DSMZ863 carbonate:106g Na2CO3 dissolved in1L degassed water, autoclaved
+    in sealed serum bottles underCO2. This describes the autoclaving atmosphere, without
+    stating CO2 saturation or addition to the liquid. The material ingredient enumeration
+    contains Na2CO3 and degassed water; no numerical final concentration, dissolved
+    gas amount or final speciation is inferred. Allremainingmaterialcomponentrowsmatchtheprevioussource-transcriptionexactly.
+    Removingproceduralgasdoesnotreducecompletenessrelativetotheactualmaterialinputs.
+  target_ids:
+  - DSMZ863_Sodium_Carbonate_Stock
+  evidence_ids:
+  - new-DSMZ863_Sodium_Carbonate_Stock
+  - old-DSMZ863_Sodium_Carbonate_Stock
+  - primary-DSMZ863_Sodium_Carbonate_Stock
+  - remediation
+  - coordinator
+  - issue1167
+- assessment_id: identity-DSMZ863_Sodium_Carbonate_Stock
+  area: identity
+  topic: Source-defined whole-stock identity and unchanged applicability
+  outcome: supported
+  summary: Registryidentifier,preferredterm,ontology_mapping,rawnonresolvinglabels,literalbatchquantities,originalhistoryandcasebindingsremainunchanged.
+    Correctiondoesnotassertfinaldissolvedspecies,changecomponentgrounding,mergeotherstocks
+    orapproveunrelatedowner/releaseclaims.
+  target_ids:
+  - DSMZ863_Sodium_Carbonate_Stock
+  evidence_ids:
+  - new-DSMZ863_Sodium_Carbonate_Stock
+  - old-DSMZ863_Sodium_Carbonate_Stock
+  - primary-DSMZ863_Sodium_Carbonate_Stock
+  - remediation
+  - coordinator
+  - issue1167
+  - issue1166
+findings: []
+actions: []
+limitations:
+- Authoredsuccessors; independentrereviewmustassessexactpayloads.
+- No unsupportedgascomponent,gasamount,finalvolumeorfinalspeciationclaimremains.
+- No sharedCS/KGfragmentseditedbythisauthor; exactpatchesaredeliveredtothesinglefragmentwriter.
+- No maintaineddata,Githubposting,issueclosureorholdrelease.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T045214Z-w01-source-stock-proposals-author-v3
+  relationship: Boundedsuccessorfor2CSstockpayloads; priorreviewandbytesretained.
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T044753Z-w01-kg-identity-proposals-author-v3
+  relationship: BoundedsuccessorforKG186materialgasclaim; priorreviewandbytesretained.
+tags:
+- worker01
+- '1167'
+- atmosphere
+- material-partonomy
+- isolated-successors
+```
