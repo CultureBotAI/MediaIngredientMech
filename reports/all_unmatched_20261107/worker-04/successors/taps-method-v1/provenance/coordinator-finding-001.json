@@ -1,0 +1,129 @@
+{
+  "finding_id": "W04-FINAL-001",
+  "issue_key": "w04-taps-mapping-quality-ontology-synonym-method",
+  "severity": "P3",
+  "normalized_severity": "minor",
+  "status": "open",
+  "certainty": "confirmed",
+  "reviewer": "/root/next23_context",
+  "head": "030ba5a8965bc193955c7c14d125eb098fc56036",
+  "publication_status": "local committed; remote still548e7 at recorded observation",
+  "proposal": {
+    "proposal_id": "FINAL-CHEM-P-taps-free-buffer",
+    "case_ids": [
+      "KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255"
+    ],
+    "description": "Exact provenance binds MediaDive1188 to DSMZ1344 Taps 17.4 g. The original recipe and manufacturer T5130/108320 nomenclature establish the conventional TAPS buffer name, N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid (CHEBI:191055, CAS29915-38-6). Represent that free-buffer identity separately from CAS91000-53-2 sodium salt and from the automatically matched Tyr-Arg-Phe-Sar peptide. No Sigma purchase, lot assay or sodium salt is inferred from pH8.3. The existing sodium-salt alias rejection remains valid. Specific supplier/catalogue/lot and measured supplied purity are unknown; these are not prerequisites for the conventional free-buffer identity proposal. Source metadata repair and whole-owner/export acceptance remain held.",
+    "evidence_ids": [
+      "FINAL-CHEM-E-dsmz1344-pdf",
+      "FINAL-CHEM-E-taps-sigma-web-response-json",
+      "FINAL-CHEM-E-mediadive-ingredient-1188-html",
+      "FINAL-CHEM-E-new-ols-chebi-191055-json",
+      "FINAL-CHEM-E-original-source-lineage",
+      "FINAL-CHEM-E-owner-searches"
+    ],
+    "owner_path": "data/ingredients/mapped/TAPS.yaml",
+    "kind": "new_owner",
+    "after_capture": {
+      "root": "artifact",
+      "path": "successors/final-review-v1/proposals/chemistry/TAPS.final-review-v1.after.yaml",
+      "sha256": "71d3f690bfd1beb204eaf7cc67c84a036db8bc3a40e0911b759841b6b7689eec"
+    },
+    "before_sha256": null,
+    "publication_obligations": [
+      "Preserve all inherited source, scientific, role and supported/withheld holds.",
+      "Independent full-payload scientific review, guarded integration and cross-shard reconciliation required.",
+      "No production owner, SSSOM, registry row or export has been changed or approved."
+    ],
+    "cross_shard_owner_conflict": "Coordinator must compare all source-qualified identities and actual before/after bytes; no last-writer-wins or final cross-shard approval."
+  },
+  "field": "ontology_mapping.mapping_quality",
+  "actual": "SYNONYM_MATCH",
+  "rule": "MAPPING_SEMANTICS.md §0: a resolution through a unique ontology synonym is SYNONYM_MATCH; explicit CAS lookup must preserve its actual method.",
+  "evidence": [
+    {
+      "evidence_id": "FINAL-CHEM-E-dsmz1344-pdf",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/chemistry/matrix-primary/cd74df7a761b8e03-dsmz1344.pdf",
+        "sha256": "cd74df7a761b8e037eda83c442cce5e21100076d3563d50339f1a420305d8357"
+      },
+      "locator": "Page1 Taps17.4g and pH8.3 recipe context, first-wins medium1344",
+      "supports_or_contradicts": "Applicability is limited by the individual finding/alias/source assessment; capture reuse does not confer source, role, whole-owner or export approval.",
+      "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1344.pdf",
+      "accessed_at": "2026-11-08T06:54:31.423494+00:00"
+    },
+    {
+      "evidence_id": "FINAL-CHEM-E-taps-sigma-web-response-json",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/chemistry/matrix-primary/58e8ae5d246e1dee-taps-sigma-web-response.json",
+        "sha256": "58e8ae5d246e1dee51b3d0a89cb037d8bf7b457229a6213fd6457f4f00b956cb"
+      },
+      "locator": "Manufacturer TAPS name, systematic free-acid name and CAS29915-38-6; no claim that DSMZ used this product grade.",
+      "supports_or_contradicts": "Applicability is limited by the individual finding/alias/source assessment; capture reuse does not confer source, role, whole-owner or export approval.",
+      "url": "https://www.sigmaaldrich.com/US/en/product/sigma/t5130",
+      "accessed_at": "2026-11-08T06:55:13.318306+00:00"
+    },
+    {
+      "evidence_id": "FINAL-CHEM-E-mediadive-ingredient-1188-html",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/chemistry/matrix-primary/49a53585b5689943-mediadive-ingredient-1188.html",
+        "sha256": "49a53585b56899432759d746d60ff299b16cb4ed9779287c495f8b9ba0edefc2"
+      },
+      "locator": "Full response; retrieval receipt source-retrieval-receipts.json row 13",
+      "supports_or_contradicts": "Applicability is limited by the individual finding/alias/source assessment; capture reuse does not confer source, role, whole-owner or export approval.",
+      "url": "https://mediadive.dsmz.de/ingredients/1188",
+      "accessed_at": "2026-11-08T05:08:02.971277+00:00"
+    },
+    {
+      "evidence_id": "FINAL-CHEM-E-new-ols-chebi-191055-json",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/chemistry/new-primary/ols-chebi-191055.json",
+        "sha256": "b5624cf52d70bcd5596b396d7a21977bc9c1e00848f924ea180c246989146cb5"
+      },
+      "locator": "Exact response bytes; actual inspected scientific fields/pages and limitations in actual-read-register.",
+      "supports_or_contradicts": "Claim-specific primary source or ontology evidence; no transfer to unrelated occurrences, products, salts or hydrates.",
+      "url": "https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:191055",
+      "accessed_at": "2026-11-08T07:44:57.074147+00:00"
+    },
+    {
+      "evidence_id": "FINAL-CHEM-E-original-source-lineage",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/chemistry/source-lineage/verified-bindings.json",
+        "sha256": "cea6e932c04da32ad2ee609980979458f740fca0fdd508367d8fd040bc55d718"
+      },
+      "locator": "All ten bound original response bodies, events and exact JSON pointers independently hash/row checked.",
+      "supports_or_contradicts": "Original source provenance is separate from automatically matched chemistry; no amount-only matching or global alias policy.",
+      "url": null
+    },
+    {
+      "evidence_id": "FINAL-CHEM-E-owner-searches",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/captures/chemistry/source-searches/owner-searches.json",
+        "sha256": "ffeea2a486ddaf135886205106606ac04aa7f0fb38b85c49eb9b3075df3943ac"
+      },
+      "locator": "Ignored-inclusive local owner/proposal identifier and synonym lookup.",
+      "supports_or_contradicts": "No free-TAPS primary owner found in this bounded local search; existing Ardacin_B and active EDTA owner located; cross-shard coordination remains separate.",
+      "url": null
+    }
+  ],
+  "observation": "The complete selected OLS CHEBI191055 response contains its systematic primary label and only a long systematic synonym (one exact, one related); neither synonym list nor primary label contains TAPS. The Sigma T5130/108320 primary pages establish TAPS as the common manufacturer name for that systematic chemical and CAS29915-38-6. That supports the substantive free-buffer identity but does not establish an ontology-synonym lookup. The current proposal therefore overstates its recorded grounding method.",
+  "recommended_action": "Preserve the supported free-buffer identity, salt/peptide distinctions, source1188 and all holds. In a bounded successor record the actual evidenced resolution method. CAS_RN_LOOKUP is appropriate only if a unique CAS-to-ontology lookup is explicitly verified and recorded; do not mechanically choose it, relabel as human curation, or alter the target to satisfy a grade. Append honest history and obtain exact-byte independent re-review.",
+  "not_claimed": [
+    "No unsupported-identity finding",
+    "No request to change identity predicate",
+    "No owner/application/export approval"
+  ],
+  "dedup": "Root should deduplicate against1201/1226 and related method findings before author correction."
+}

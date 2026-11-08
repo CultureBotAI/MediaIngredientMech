@@ -1,0 +1,369 @@
+{
+  "reviewer": "/root/assembly_review",
+  "created_at": "2026-11-08T08:59:23.669141+00:00",
+  "source_head": "dd3683f3167cb3d294417ee4cd5555dcd8fb7798",
+  "status": "preflight_complete_successor_pending",
+  "reported_finding": {
+    "finding_id": "W04-FINAL-001",
+    "issue_key": "w04-taps-mapping-quality-ontology-synonym-method",
+    "sha256": "1aa492960493d42f295b50ddf09d12ffcfe0f57157be906ea350e0172ddd5a57",
+    "issue_comment": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719419310",
+    "independent_concurrence": "Confirmed on full selected payload and complete bound OLS response: ontology TAPS synonym is absent. Manufacturer common-name/systematic-name/CAS evidence supports the retained free-buffer identity but cannot establish the claimed ontology-synonym route. This is the already-filed method finding, not a duplicate new finding."
+  },
+  "predecessor_selection": {
+    "case": {
+      "case_id": "KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255",
+      "case_input_sha256": "fc7fc4808f74284cacce1aa24e6a7c2664178821206668cbcf325a51024a7a47",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1188",
+        "source_label": "Taps",
+        "raw_source_label": "Taps"
+      },
+      "occurrence_ids": [],
+      "disposition": "new_distinct_ingredient_proposal",
+      "reasoning": "Exact provenance binds MediaDive1188 to DSMZ1344 Taps 17.4 g. The original recipe and manufacturer T5130/108320 nomenclature establish the conventional TAPS buffer name, N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid (CHEBI:191055, CAS29915-38-6). Represent that free-buffer identity separately from CAS91000-53-2 sodium salt and from the automatically matched Tyr-Arg-Phe-Sar peptide. No Sigma purchase, lot assay or sodium salt is inferred from pH8.3. The existing sodium-salt alias rejection remains valid.",
+      "applicability": "Applies only to frozen case KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255, source mediadive, identifier mediadive.ingredient:1188; every listed recipe context and exact raw/processed label remains bound by case_input_sha256. KG helper/graph occurrence definition is retained verbatim and is not asserted to be recipe frequency. Matching lexical labels do not extend source identity to unrelated cases. All inherited downstream and complete-payload publication holds remain in force.",
+      "evidence_ids": [
+        "w04-chem-case-152",
+        "w04-chem-ols-CHEBI-191055-json",
+        "w04-chem-mediadive-ingredient-1188-html",
+        "w04-chem-dsmz-1344-pdf",
+        "w04-chem-owner-TAPS_Sodium_Salt",
+        "w04-chem-issue-1157",
+        "w04-chem-issue-1157-comments",
+        "FINAL-CHEM-E-dsmz1344-pdf",
+        "FINAL-CHEM-E-taps-sigma-web-response-json",
+        "FINAL-CHEM-E-mediadive-ingredient-1188-html",
+        "FINAL-CHEM-E-new-ols-chebi-191055-json",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-owner-searches",
+        "FINAL-INDEPENDENT-CHEMISTRY"
+      ],
+      "proposal_ids": [
+        "FINAL-CHEM-P-taps-salt-alias",
+        "FINAL-CHEM-P-taps-free-buffer"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Specific supplier/catalogue/lot and measured supplied purity are unknown; these are not prerequisites for the conventional free-buffer identity proposal. Source metadata repair and whole-owner/export acceptance remain held.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/TAPS_Sodium_Salt.yaml",
+          "sha256": "8f9e70c3f7d5c78d740187ab86dbc001a1b8fbbdf11898f79546f7bf5f23fda6"
+        }
+      ],
+      "issue_refs": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1157",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226"
+      ],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-INDEPENDENT-CHEMISTRY"
+        ],
+        "reviewer": "/root/biological",
+        "scope": "Complete exact case and linked whole payloads; source-specific scientific limits remain. The final assembly reviewer separately checks consolidation and case13 narrowing."
+      },
+      "source_contexts_inspected": [],
+      "inherited_source_record": {
+        "amount": 17.4,
+        "compound": "Taps",
+        "compound_id": 1188,
+        "g_l": 17.4,
+        "optional": 0,
+        "recipe_order": 1,
+        "unit": "g"
+      },
+      "inherited_occurrence_definition": "helper constant; not measured recipe frequency",
+      "inherited_downstream_holds": [],
+      "publication_disposition": "PRESERVE_ALL_INHERITED_HOLDS; PROPOSALS_REQUIRE_NEW_COMPLETE_PAYLOAD_REVIEW",
+      "publication_scope": "Bounded source-case/proposal correction only. Old sealed reviews are preserved but do not approve new bytes; scientific roles, complete owners and exports remain separately held.",
+      "predecessor_assessment": {
+        "source_head": "548e7bdd0ce2a68b3ae0df6ad7a6150a4e5c9bb9",
+        "decision_sha256": "589eaf105821901254af5777f5ef7146dd3ea24b73111a79dad2ecead12012d7",
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "independent-chemistry-final"
+          ]
+        },
+        "review_is_preserved_not_transferred": true
+      },
+      "primary_review_author": "/root/correction_chemistry",
+      "predecessor_independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "independent-chemistry-final"
+        ]
+      },
+      "current_review_scope": "Completed disjoint full-case and whole-payload review; immutable predecessor seals, exact candidate rebindings and separate assembly review are retained. Completion does not lift any scientific, source, role, supported/withheld, whole-owner or export hold."
+    },
+    "case_canonical_sha256": "25bc8cad6841f8f82b2413fe72b64c3bf1044e02f34c138e11b900245c5ce26e",
+    "proposal": {
+      "proposal_id": "FINAL-CHEM-P-taps-free-buffer",
+      "case_ids": [
+        "KG_CASE:478d4e098d41324da22374f87af0fd96de6eaacb62b8ac48a75b5526860de255"
+      ],
+      "description": "Exact provenance binds MediaDive1188 to DSMZ1344 Taps 17.4 g. The original recipe and manufacturer T5130/108320 nomenclature establish the conventional TAPS buffer name, N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid (CHEBI:191055, CAS29915-38-6). Represent that free-buffer identity separately from CAS91000-53-2 sodium salt and from the automatically matched Tyr-Arg-Phe-Sar peptide. No Sigma purchase, lot assay or sodium salt is inferred from pH8.3. The existing sodium-salt alias rejection remains valid. Specific supplier/catalogue/lot and measured supplied purity are unknown; these are not prerequisites for the conventional free-buffer identity proposal. Source metadata repair and whole-owner/export acceptance remain held.",
+      "evidence_ids": [
+        "FINAL-CHEM-E-dsmz1344-pdf",
+        "FINAL-CHEM-E-taps-sigma-web-response-json",
+        "FINAL-CHEM-E-mediadive-ingredient-1188-html",
+        "FINAL-CHEM-E-new-ols-chebi-191055-json",
+        "FINAL-CHEM-E-original-source-lineage",
+        "FINAL-CHEM-E-owner-searches"
+      ],
+      "owner_path": "data/ingredients/mapped/TAPS.yaml",
+      "kind": "new_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/TAPS.final-review-v1.after.yaml",
+        "sha256": "71d3f690bfd1beb204eaf7cc67c84a036db8bc3a40e0911b759841b6b7689eec"
+      },
+      "before_sha256": null,
+      "publication_obligations": [
+        "Preserve all inherited source, scientific, role and supported/withheld holds.",
+        "Independent full-payload scientific review, guarded integration and cross-shard reconciliation required.",
+        "No production owner, SSSOM, registry row or export has been changed or approved."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare all source-qualified identities and actual before/after bytes; no last-writer-wins or final cross-shard approval."
+    },
+    "proposal_canonical_sha256": "6c93d976fc649b3ba9c9b0afc373e9d7ee5c1b4e80b7378fdbaf5970abbe8e9a",
+    "selected_fac_proposal": {
+      "proposal_id": "I1239-P-ferric-ammonium-citrate",
+      "case_ids": [
+        "CM_NAME:83637b465eeb4e8f0203f455ed0e87a88f2463531cf5f294bf72466f46483953"
+      ],
+      "description": "Bounded #1239 source-origin successor: FerriSeltz becomes REJECTED_LABEL with original literal/source retained and PMDA-specific provenance/history. Generic FAC identity, W04 source alias, both occurrences and all other fields/holds remain; coordinator rebuilds the union. Fe(III)NH4-Citrate denotes ferric ammonium citrate. CHEBI:31604 describes this material as an indefinite-composition ferric ammonium citrate mixture, so the existing owner is suitable without inventing a fixed molecular stoichiometry. The explicit FeIII and ammonium qualifiers are retained. Final-review correction: #1226: evidence[1] MANUAL_CURATION→LLM_SUGGESTION; actual LLM authorship, not scientific approval. COI-FAC: preserve exact own scientific delta and all union/whole-owner holds; update outside-review state without applying another shard’s union.",
+      "evidence_ids": [
+        "w04-chem-case-77",
+        "w04-chem-recipe-600b7655a50032427e08",
+        "w04-chem-failed-togo-3209-json",
+        "w04-chem-recipe-52aef727781152da6ac0",
+        "w04-chem-failed-togo-3208-json",
+        "w04-chem-ols-CHEBI-31604-json",
+        "w04-chem-owner-Ferric_Ammonium_Citrate",
+        "I1239-PMDA-PRIMARY",
+        "I1239-PMDA-TABLE",
+        "I1239-PRERECORDED-FINDING",
+        "I1239-FILED-ISSUE",
+        "I1239-1226-COMMENT"
+      ],
+      "owner_path": "data/ingredients/mapped/Ferric_Ammonium_Citrate.yaml",
+      "kind": "edit_existing_owner",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1239-v1/proposals/Ferric_Ammonium_Citrate.issue-1239.after.yaml",
+        "sha256": "90b583b2603fb0d42edb9d15d2342659f4894195bd4389348b6e4f2bedb61762"
+      },
+      "before_sha256": "ae646b9c5f3e9c8ec01d939e1b97733259825a14e4a8a03626bc65453035426e",
+      "publication_obligations": [
+        "Withdraw inherited complete-payload support for changed owner.",
+        "Regenerate synchronized YAML/SSSOM only during guarded coordinator integration.",
+        "Review all published aliases, registry rows and asymmetric relationships against final owner bytes.",
+        "Retain all source-bound holds pending independent/native complete-payload approval."
+      ],
+      "cross_shard_owner_conflict": "Coordinator must compare this original before hash against all worker proposals; never apply last-writer-wins.",
+      "supersedes_proposal_ids": [
+        "w04-chem-proposal-ferric-ammonium-citrate"
+      ],
+      "supersedes_proposal_id": "FINAL-CHEM-P-ferric-ammonium-citrate",
+      "supersedes_after_capture": {
+        "root": "artifact",
+        "path": "successors/final-review-v1/proposals/chemistry/Ferric_Ammonium_Citrate.final-review-v1.after.yaml",
+        "sha256": "0ffadb41562f1baedb86136939efaf34a626805f6ce3eb8847bb72a994c95835"
+      }
+    },
+    "cases": 188,
+    "payloads": 119,
+    "additional_proposal_ids": [
+      "FINAL-CHEM-P-ardacin-b-factor",
+      "FINAL-CHEM-P-taps-free-buffer",
+      "FREV-MEDIA-P-corn-meal-agar-context",
+      "ROOT-FIX-P-sodium-sulfite-pentahydrate-v1"
+    ]
+  },
+  "ontology_fields": {
+    "label": "N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid",
+    "all_synonyms": [
+      {
+        "name": "3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]propane-1-sulonic acid",
+        "scope": "hasExactSynonym",
+        "type": "IUPAC NAME",
+        "xrefs": [
+          {
+            "database": null,
+            "id": "SUBMITTER",
+            "description": null,
+            "url": null
+          }
+        ]
+      },
+      {
+        "name": "3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]propane-1-sulonic acid",
+        "scope": "hasRelatedSynonym",
+        "type": "IUPAC NAME",
+        "xrefs": [
+          {
+            "database": null,
+            "id": "submitter",
+            "description": null,
+            "url": null
+          }
+        ]
+      }
+    ],
+    "all_xrefs": [
+      "cas:29915-38-6",
+      "chemspider:108495",
+      "pdb-ccd:T3A"
+    ],
+    "has_TAPS_lexical_synonym": false,
+    "recorded_method": "SYNONYM_MATCH"
+  },
+  "current_root_lookup": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/exact-cas-lookup-v1.json",
+    "sha256": "999deb83410e8f5e5d46416fc1c79ba5a39dc49816e45655f55ca3ff8c087a10",
+    "reported_database": {
+      "path": "/Users/marcin/.data/oaklib/chebi.db",
+      "sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f",
+      "bytes": 4137340928,
+      "mtime_ns": 1791961401274785795,
+      "metadata": [
+        [
+          "obo:chebi.owl",
+          "owl:versionIRI",
+          "obo:chebi/255/chebi.owl",
+          null
+        ],
+        [
+          "obo:chebi.owl",
+          "owl:versionInfo",
+          null,
+          "255"
+        ]
+      ]
+    },
+    "subject_set": {
+      "cas:29915-38-6": [
+        "CHEBI:191055"
+      ]
+    },
+    "scope": "Complete receipt and nativecas_subjects SQL read. FullCHEBI exact case-insensitive CASxref query has no first-hit/target-only filter and reports unique191055 for29915-38-6; fulltargetstatements agree withOLS. Reviewer did not rehash4GBdatabase or repeat query here; separate full-payload scientist assesses actual lookup independently. No new web retrieval claimed."
+  },
+  "native_controls": {
+    "existing_tests_receipt": {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/assembly-review/native-method-control-receipt-v2.json",
+      "sha256": "4e1ee901ca15d78eaab75217149af69ffa83bdaaba2ede21ac70da28afdff730"
+    },
+    "result": "11passed",
+    "failed_v1": "Preserved absent-pytest-cov invocation; same11tests passed using invocation-only addopts override and no cache. No code/config/dependency/gate changes.",
+    "remaining_controls": [
+      "Actual native CLAW direct row before/exactsuccessor; ownidentifier stays skos:exactMatch despite methodgrade; inspect derivedconfidence/provenance differences.",
+      "NativeRuleD with exactprivateproposedowner and injectedwrongpredicate negativecontrol; sourcealiases, saltaliasrejection andFACrejection stayunchanged.",
+      "Exact guardedwriter/schema and fullcatalogfixture/partonomy receipts; reuse byteidentical118payload validations.",
+      "Complete188case119payload accounting, all1433prior evidence,115original ledger/four additional IDs and119predecessor closure; retain actualreview identities and scientific holds."
+    ]
+  },
+  "bounded_successor_requirements": [
+    "KeepCHEBI191055, freebufferCAS/formula/structure, source1188 row17.4g, salt/peptide distinction, aliases andholds.",
+    "CAS_RN_LOOKUP only on explicitnewuniqueCAS lookup with truthful LLMauthorship; target-onlyxref/CASfield is insufficient.",
+    "Append truthful current reassessment history/evidence; preserve originalcreation event and originalcapturebytes/timestamps. Do not fabricate historicalCREATED_FROM_CAS_LOOKUP to satisfy regrader implementation.",
+    "RemapTAPSfreebuffer in115ledger additional_proposal_ids, currentcase152 and119predecessor ledger; separateTAPSsalt payload stays exact.",
+    "RetainFAC#1239 correctedpayload/final_lineage/openmaintainedunionfinding,187othercases118otherpayloads,23native+3observations andW02seals."
+  ],
+  "new_independent_findings": [],
+  "actual_read_scope": "FullpredecessorTAPS payload andcase, fullOLSrecord, complete captured manufacturerT5130/108320response, coordinatorfinding/livecomment/user task, nativecontracts andmethods/tests; rootuniqueCASreceipt andfulltermstatements. Exact source-origin contexts preserved; no freshfullshard scientific review.",
+  "input_bindings": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w04-final-source-successor-independent-v1/finding-001-taps-grounding-method.json",
+      "sha256": "1aa492960493d42f295b50ddf09d12ffcfe0f57157be906ea350e0172ddd5a57"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/user-task.md",
+      "sha256": "b44f94da526d2c1e32c0eccefa10c72679f24cc23b0f8d9b3b458c3d587830cd"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/live/comment-6719419310.json",
+      "sha256": "9e5f9785a25bc86785dde621957f05d60ad125b47634f771da4f3d63e57f276e"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/exact-cas-lookup-v1.json",
+      "sha256": "999deb83410e8f5e5d46416fc1c79ba5a39dc49816e45655f55ca3ff8c087a10"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/proposals/chemistry/TAPS.final-review-v1.after.yaml",
+      "sha256": "71d3f690bfd1beb204eaf7cc67c84a036db8bc3a40e0911b759841b6b7689eec"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/captures/chemistry/new-primary/ols-chebi-191055.json",
+      "sha256": "b5624cf52d70bcd5596b396d7a21977bc9c1e00848f924ea180c246989146cb5"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/final-review-v1/captures/chemistry/matrix-primary/58e8ae5d246e1dee-taps-sigma-web-response.json",
+      "sha256": "58e8ae5d246e1dee51b3d0a89cb037d8bf7b457229a6213fd6457f4f00b956cb"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/scripts/regrade_synonym_matches.py",
+      "sha256": "b1bef7b09305f3c8ca89e89c3d5dbc3d0710bf9a45442105b7ee3fc84ed98fcd"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/scripts/validate_sssom_invariants.py",
+      "sha256": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/src/mediaingredientmech/sssom_grading.py",
+      "sha256": "20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.claude/skills/review-yaml-record/SKILL.md",
+      "sha256": "4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/docs/record-review-profile.md",
+      "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/MANIFEST.json",
+      "sha256": "76d69c37f84208f7bdcccb621b3c95900b311b737e3ff4369a7bbfd5aec80790"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/receipt.json",
+      "sha256": "7391656d375db00b0451a873c32acb99ae897efb2006ed6b2348d3a238916831"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/decisions.json",
+      "sha256": "eb3ef8dc0f05ae11efbfaf476a603be021fb0a4279f480f898d411fc5d2796e1"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/proposals.json",
+      "sha256": "7c507aa37b0936b628ac2a057eb1067d7a8c12837f4d57c309eebb4461d70ce3"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/evidence.json",
+      "sha256": "d09155083ed46d9357d7e4976b3e0c77e9b8e5994d351c0812cf54ea978a30a7"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/old-proposal-ledger.json",
+      "sha256": "9800b60089c1066cc0ee3005adff2baf79272e6a213322a9aaa6f91299ee0af6"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/final-finding-lineage-v1.json",
+      "sha256": "d1e4eb1f57c41d20e0da3b1a11f4efd4e833edc06c2a33e6237901b631a6178e"
+    }
+  ],
+  "whole_owner_or_export_approval": false
+}

@@ -1,0 +1,107 @@
+identifier: CHEBI:191055
+preferred_term: TAPS
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:191055
+  ontology_label: N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: DSMZ1344; Sigma-Aldrich T5130 and Merck108320 nomenclature; CHEBI:191055
+      OLS4
+    notes: Exact provenance binds MediaDive1188 to DSMZ1344 Taps 17.4 g. The original
+      recipe and manufacturer T5130/108320 nomenclature establish the conventional
+      TAPS buffer name, N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid
+      (CHEBI:191055, CAS29915-38-6). Represent that free-buffer identity separately
+      from CAS91000-53-2 sodium salt and from the automatically matched Tyr-Arg-Phe-Sar
+      peptide. No Sigma purchase, lot assay or sodium salt is inferred from pH8.3.
+      The existing sodium-salt alias rejection remains valid. Specific supplier/catalogue/lot
+      and measured supplied purity are unknown; these are not prerequisites for the
+      conventional free-buffer identity proposal. Source metadata repair and whole-owner/export
+      acceptance remain held.
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: ChEBI semsql release255 exact native CAS xref lookup; https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:191055
+    cas_rn: 29915-38-6
+    notes: 'Current reassessment for W04-FINAL-001 / #1201 comment6719419310: the
+      bound OLS4 response b5624cf52d70bcd5596b396d7a21977bc9c1e00848f924ea180c246989146cb5
+      has no TAPS ontology synonym. Supplier T5130/108320 evidence58e8ae5d246e1dee51b3d0a89cb037d8bf7b457229a6213fd6457f4f00b956cb
+      supports the TAPS common-name/systematic-name/CAS bridge. An explicit read-only
+      exact CAS-to-ontology query was executed on 2026-11-08T08:57:18.956984+00:00
+      using unchanged scripts/regrade_synonym_matches.py:cas_subjects over the entire
+      CHEBI semsql release255 xref population (database SHA256 26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f).
+      CAS29915-38-6 returned exactly {CHEBI:191055}; exact result/full target statements:
+      reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/exact-cas-lookup-v1.json
+      SHA256 999deb83410e8f5e5d46416fc1c79ba5a39dc49816e45655f55ca3ff8c087a10. CAS_RN_LOOKUP
+      records this new current resolution, not an invented original CAS-creation event.
+      The supplier systematic name, structure and CAS corroborate the unchanged free-buffer
+      identity; no sodium salt, peptide, purchased grade or human curation is inferred.
+      All source1188, supported/withheld, role, whole-owner, integration and export
+      holds remain.'
+synonyms:
+- synonym_text: Taps
+  synonym_type: RAW_TEXT
+  source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1344.pdf
+- synonym_text: N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: CHEBI:191055
+chemical_properties:
+  cas_rn: 29915-38-6
+  molecular_formula: C7H17NO6S
+  inchi: InChI=1S/C7H17NO6S/c9-4-7(5-10,6-11)8-2-1-3-15(12,13)14/h8-11H,1-6H2,(H,12,13,14)
+  smiles: O=S(=O)(O)CCCNC(CO)(CO)CO
+  data_source: CHEBI:191055 exact captured OLS4 term; manufacturer nomenclature confirms
+    TAPS common name, not source purchase.
+  retrieval_date: '2026-11-08T07:44:57.074147+00:00'
+notes: Exact provenance binds MediaDive1188 to DSMZ1344 Taps 17.4 g. The original
+  recipe and manufacturer T5130/108320 nomenclature establish the conventional TAPS
+  buffer name, N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid (CHEBI:191055,
+  CAS29915-38-6). Represent that free-buffer identity separately from CAS91000-53-2
+  sodium salt and from the automatically matched Tyr-Arg-Phe-Sar peptide. No Sigma
+  purchase, lot assay or sodium salt is inferred from pH8.3. The existing sodium-salt
+  alias rejection remains valid. Specific supplier/catalogue/lot and measured supplied
+  purity are unknown; these are not prerequisites for the conventional free-buffer
+  identity proposal. Source metadata repair and whole-owner/export acceptance remain
+  held. No role assignment or measured supplier assay is added.
+curation_history:
+- timestamp: '2026-11-08T07:51:45.814122+00:00'
+  curator: /root/correction_chemistry
+  action: CREATED
+  changes: Exact provenance binds MediaDive1188 to DSMZ1344 Taps 17.4 g. The original
+    recipe and manufacturer T5130/108320 nomenclature establish the conventional TAPS
+    buffer name, N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid (CHEBI:191055,
+    CAS29915-38-6). Represent that free-buffer identity separately from CAS91000-53-2
+    sodium salt and from the automatically matched Tyr-Arg-Phe-Sar peptide. No Sigma
+    purchase, lot assay or sodium salt is inferred from pH8.3. The existing sodium-salt
+    alias rejection remains valid. Specific supplier/catalogue/lot and measured supplied
+    purity are unknown; these are not prerequisites for the conventional free-buffer
+    identity proposal. Source metadata repair and whole-owner/export acceptance remain
+    held. Isolated report-only proposal; no source, role, whole-owner or export acceptance.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T08:59:41.075896+00:00'
+  curator: codex_worker04/root
+  action: REASSESSED_MAPPING_METHOD
+  changes: 'Report-only successor: ontology_mapping.mapping_quality SYNONYM_MATCH
+    -> CAS_RN_LOOKUP and append one CAS_RN_CROSS_REFERENCE evidence row with the actual
+    verified lookup. Current reassessment for W04-FINAL-001 / #1201 comment6719419310:
+    the bound OLS4 response b5624cf52d70bcd5596b396d7a21977bc9c1e00848f924ea180c246989146cb5
+    has no TAPS ontology synonym. Supplier T5130/108320 evidence58e8ae5d246e1dee51b3d0a89cb037d8bf7b457229a6213fd6457f4f00b956cb
+    supports the TAPS common-name/systematic-name/CAS bridge. An explicit read-only
+    exact CAS-to-ontology query was executed on 2026-11-08T08:57:18.956984+00:00 using
+    unchanged scripts/regrade_synonym_matches.py:cas_subjects over the entire CHEBI
+    semsql release255 xref population (database SHA256 26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f).
+    CAS29915-38-6 returned exactly {CHEBI:191055}; exact result/full target statements:
+    reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/exact-cas-lookup-v1.json
+    SHA256 999deb83410e8f5e5d46416fc1c79ba5a39dc49816e45655f55ca3ff8c087a10. CAS_RN_LOOKUP
+    records this new current resolution, not an invented original CAS-creation event.
+    The supplier systematic name, structure and CAS corroborate the unchanged free-buffer
+    identity; no sodium salt, peptide, purchased grade or human curation is inferred.
+    All source1188, supported/withheld, role, whole-owner, integration and export
+    holds remain. Original creation event, existing LLM_SUGGESTION evidence, identity/label/CAS/chemical
+    properties, source aliases, notes, sodium-salt rejection and all other payload
+    fields remain unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

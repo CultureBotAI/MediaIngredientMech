@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-11-08T09:00:56.128043+00:00",
+  "payload_sha256": "39b39c95acc1e4fbff28d45863d6177195ce567fedf6f41b6a1c36a116856680",
+  "checks": [
+    {
+      "name": "closed_schema",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_strict.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/taps-method-v1/native-fixture/selected",
+        "--workers",
+        "1",
+        "--out",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/proposal-schema.tsv"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/closed_schema.log",
+      "sha256": "d0e08a316755dc4f825573cd98c194d04f1796ce1623479048b894032f9fce94"
+    },
+    {
+      "name": "full_overlay_partonomy",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/validate_component_partonomy.py",
+        "--curated-dir",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/taps-method-v1/native-fixture/overlay/data/curated"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/full_overlay_partonomy.log",
+      "sha256": "10ff2db5208962d4a03b821e71222a751207e502c956a0564e3801e240a9ccdf"
+    }
+  ],
+  "writer_and_fixture": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/guarded-writer-and-fixture.json",
+    "sha256": "1c5319ecdf89e8fc429139412a5af0fb52d738ce8451004fca987ca36881f5ba"
+  },
+  "unchanged118payload_validation": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/final-review-v1/validation/final-command-receipts.json",
+      "sha256": "e203043fe73fdb8f3e840f0d80517a46f85ee0c5245b47da507028db5aa314b2"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/issue-1239-v1/validation/native-validation-receipt.json",
+      "sha256": "0e1820b287a6473634c6ac5f3318bcd49cd7c637e2803f57920c5b3fe21ca0a3"
+    }
+  ],
+  "reuse_reason": "117unchangedpayloads retain fullfinal-review checks; FACretains exactissue1239 currentchecks; changedTAPS schema/writer and full3029record partonomy rerun here. No repeated expensive unchanged identifier audit.",
+  "identifier_baseline": "Identity/term/status/path/ontology target/parent mapping and partonomy unchanged. Preserve prior frozen duplicate-baseline exit2 on retiredCHEBI86477 and separate proposed one-row ledgerPASS; canonical baseline/gates unchanged.",
+  "scientific_or_export_approval": false
+}

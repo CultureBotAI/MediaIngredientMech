@@ -1,0 +1,9 @@
+The TAPS method supplement is ready for the authorized report-only ordinary commit, followed by independent review of the committed bytes. No unresolved scientific or assembly defect was found. This is not whole-owner, role, source-global, cross-shard integration, or export approval.
+
+Use `FINAL-SELECTOR-v3.json` in the parent bundle. The exact changed TAPS payload is SHA256 `39b39c95acc1e4fbff28d45863d6177195ce567fedf6f41b6a1c36a116856680`;188cases/119selectedpayloads remain closed, with187/118 exact retentions and1438capturebindings. Root authored the correction; `/root/biological` independently reviewed the full changed payload/source and reproduced CAS uniqueness; `/root/assembly_review` independently verified assembly, provenance, native controls and all predecessor bytes. See `FINAL-ASSESSMENT.json` for actual read scopes and retained holds.
+
+The11 native tests, actual pinnedCLAW/RuleD controls, exact new native pair, full1024-review declared-scope check, closed schema and3029-record overlay partonomy evidence pass their stated scopes. The frozen CHEBI86477 duplicate-baseline exit2 remains explicit; the separate proposed ledgerPASS is not a waiver. Failed invocation, metadata and native timestamp drafts remain preserved.
+
+Only W04-FINAL-001 is resolved in this exact proposal. FAC maintained/union, Columbia, prior23nativefindings/3observations and allsource/role/owner/export holds remain. All16841priortracked Gitblobs,764finalreviewmanifestfiles,99FACmanifestfiles and2399W02sealedentries were independently rechecked unchanged. No Git/GitHub/corpus/code/schema/gate mutation was made by this reviewer.
+
+Assembly outputs are sealed by `ASSEMBLY-MANIFEST.json` and `FINAL-RECEIPT.json`. Later committed-head attestation must be saved separately in the authorized private publication directory; do not edit this sealed review.

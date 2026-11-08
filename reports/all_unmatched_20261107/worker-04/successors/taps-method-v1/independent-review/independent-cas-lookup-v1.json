@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "/root/biological",
+  "status": "complete",
+  "created_at": "2026-11-08T08:58:33.481135+00:00",
+  "started_at": "2026-11-08T08:58:29.595474+00:00",
+  "kind": "independent read-only reproduction of new exact CAS lookup",
+  "preliminary_assessment_preserved": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/independent-review/preliminary-assessment-v1.json",
+    "sha256": "cfb393c6e69473accbb7f7a968cc86a88055417c7ecce2220666359f4a7354f9"
+  },
+  "author_lookup": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/exact-cas-lookup-v1.json",
+    "sha256": "999deb83410e8f5e5d46416fc1c79ba5a39dc49816e45655f55ca3ff8c087a10"
+  },
+  "database": {
+    "path": "/Users/marcin/.data/oaklib/chebi.db",
+    "sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f",
+    "bytes": 4137340928,
+    "mtime_ns": 1791961401274785795,
+    "metadata": [
+      [
+        "obo:chebi.owl",
+        "owl:versionIRI",
+        "obo:chebi/255/chebi.owl",
+        null
+      ],
+      [
+        "obo:chebi.owl",
+        "owl:versionInfo",
+        null,
+        "255"
+      ]
+    ]
+  },
+  "native_function": {
+    "path": "scripts/regrade_synonym_matches.py",
+    "sha256": "b1bef7b09305f3c8ca89e89c3d5dbc3d0710bf9a45442105b7ee3fc84ed98fcd",
+    "function": "cas_subjects"
+  },
+  "reproduction": "Read and extracted only the exact unchanged cas_subjects function with Python AST, avoiding script-main/import cache writes; invoked on sqlite3 URI mode=ro with PRAGMA query_only=ON. Independently queried all exact cas xref rows without a target subject filter; no first-hit selection. Full database SHA256 streamed and matched, full returned term statements and release metadata independently queried and matched. Database size/mtime unchanged.",
+  "subjects": {
+    "cas:29915-38-6": [
+      "CHEBI:191055"
+    ]
+  },
+  "exact_xref_rows": [
+    [
+      "CHEBI:191055",
+      "oio:hasDbXref",
+      "cas:29915-38-6"
+    ]
+  ],
+  "complete_returned_term_statements": [
+    [
+      "CHEBI:191055",
+      "chemrof:charge",
+      null,
+      "0"
+    ],
+    [
+      "CHEBI:191055",
+      "chemrof:generalized_empirical_formula",
+      null,
+      "C7H17NO6S"
+    ],
+    [
+      "CHEBI:191055",
+      "chemrof:inchi_key_string",
+      null,
+      "YNLCVAQJIKOXER-UHFFFAOYSA-N"
+    ],
+    [
+      "CHEBI:191055",
+      "chemrof:inchi_string",
+      null,
+      "InChI=1S/C7H17NO6S/c9-4-7(5-10,6-11)8-2-1-3-15(12,13)14/h8-11H,1-6H2,(H,12,13,14)"
+    ],
+    [
+      "CHEBI:191055",
+      "chemrof:mass",
+      null,
+      "243.281"
+    ],
+    [
+      "CHEBI:191055",
+      "chemrof:monoisotopic_mass",
+      null,
+      "243.07766"
+    ],
+    [
+      "CHEBI:191055",
+      "chemrof:smiles_string",
+      null,
+      "O=S(=O)(O)CCCNC(CO)(CO)CO"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:hasDbXref",
+      null,
+      "cas:29915-38-6"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:hasDbXref",
+      null,
+      "chemspider:108495"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:hasDbXref",
+      null,
+      "pdb-ccd:T3A"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:hasExactSynonym",
+      null,
+      "3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]propane-1-sulonic acid"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:hasOBONamespace",
+      null,
+      "chebi_ontology"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:hasRelatedSynonym",
+      null,
+      "3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]propane-1-sulonic acid"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:id",
+      null,
+      "CHEBI:191055"
+    ],
+    [
+      "CHEBI:191055",
+      "oio:inSubset",
+      "obo:chebi/2_STAR",
+      null
+    ],
+    [
+      "CHEBI:191055",
+      "rdf:type",
+      "owl:Class",
+      null
+    ],
+    [
+      "CHEBI:191055",
+      "rdfs:label",
+      null,
+      "N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid"
+    ],
+    [
+      "CHEBI:191055",
+      "rdfs:subClassOf",
+      "CHEBI:33551",
+      null
+    ]
+  ],
+  "metadata": [
+    [
+      "obo:chebi.owl",
+      "owl:versionIRI",
+      "obo:chebi/255/chebi.owl",
+      null
+    ],
+    [
+      "obo:chebi.owl",
+      "owl:versionInfo",
+      null,
+      "255"
+    ]
+  ],
+  "database_unchanged_stat": true,
+  "assessment": "The newly performed and now independently reproduced exact CAS lookup establishes a unique CHEBI subject CHEBI:191055 for CAS29915-38-6 in the entire hash-bound release255 snapshot. Combined with independently read manufacturer TAPS nomenclature/structure and original DSMZ source lineage, CAS_RN_LOOKUP is now defensible as the successor’s current re-resolution method. It was not the historical creation method; the original CREATED event must remain unchanged and the new correction must name this newly performed lookup.",
+  "contrast_with_preliminary": "Earlier preliminary assessment correctly treated CAS_RN_LOOKUP as conditional because that actual lookup had not yet been inspected/performed by this reviewer. This additive receipt records new evidence and independently reproduces it; it does not rewrite the preliminary assessment.",
+  "no_unbounded_absence_claim": "No exact CAS xref returned for sodium salt91000-53-2 or peptide90549-86-3 in this database snapshot. This does not establish absence of these chemicals or absence of ontology terms under other identifiers.",
+  "permitted_method": "CAS_RN_LOOKUP",
+  "retained_requirements": [
+    "Retain CHEBI:191055, TAPS name, exact source1188/17.4g provenance, salt/peptide distinctions and no supplier-grade/source purchase inference.",
+    "Retain LLM_SUGGESTION and truthful llm_assisted history; no expert/human verification claim.",
+    "Append current correction history and evidence explaining actual query, complete returned set, database version/hash and limits.",
+    "Preserve prior source/role/whole-owner/export holds; no broader identity approval."
+  ],
+  "author_execution_receipt_observation": "The root helper’s overall exit1 is retained as a post-query copy-path error. Actual query output is independently reproduced successfully here; the recorded result was not retrospectively relabelled as an overall exit0.",
+  "task_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/user-task.md",
+      "sha256": "b44f94da526d2c1e32c0eccefa10c72679f24cc23b0f8d9b3b458c3d587830cd"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/live/comment-6719419310.json",
+      "sha256": "9e5f9785a25bc86785dde621957f05d60ad125b47634f771da4f3d63e57f276e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/provenance/lookup-command-receipt.json",
+      "sha256": "3c0cf547cfff3a4fdde60636132f055003a0e609edf9b2bb5affee7d960ef4c0"
+    }
+  ],
+  "next_step": "Await exact successor for independent complete-payload review; no successor accepted by this lookup-only receipt.",
+  "whole_owner_or_export_approval": false
+}

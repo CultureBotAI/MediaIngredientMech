@@ -1,0 +1,73 @@
+{
+  "reviewer": "/root/assembly_review",
+  "started_at": "2026-11-08T08:57:34.716540+00:00",
+  "finished_at": "2026-11-08T08:57:35.160617+00:00",
+  "source_head": "dd3683f3167cb3d294417ee4cd5555dcd8fb7798",
+  "command": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/taps-method-v1/assembly/pytest-native-method-controls-v1",
+    "tests/test_regrade_synonym_matches.py::test_explicit_matching_cas_provenance_takes_priority_over_lexical_grade",
+    "tests/test_regrade_synonym_matches.py::test_prior_synonym_regrade_is_repaired_when_mapping_was_created_by_cas",
+    "tests/test_regrade_synonym_matches.py::test_cas_presence_without_creation_provenance_does_not_override_synonym",
+    "tests/test_regrade_synonym_matches.py::test_cas_xref_conflict_is_reported_and_not_used_as_provenance",
+    "tests/test_regrade_synonym_matches.py::test_cas_xref_conflict_cannot_fall_through_to_synonym_grade",
+    "tests/test_regrade_synonym_matches.py::test_cas_shared_by_multiple_chebi_terms_is_left_for_review",
+    "tests/test_regrade_synonym_matches.py::test_cas_provenance_does_not_override_preparation_identity_conflict",
+    "tests/test_regrade_synonym_matches.py::test_cas_provenance_does_not_override_hydrate_identity_conflict",
+    "tests/test_regrade_synonym_matches.py::test_synonym_shared_by_another_chebi_term_is_not_auto_regraded",
+    "tests/test_sssom_identity_row_predicate.py::test_rule_d_fires_on_a_synthetic_violation",
+    "tests/test_sssom_identity_row_predicate.py::test_rule_d_ignores_a_row_pointing_at_a_different_term"
+  ],
+  "exit_code": 4,
+  "log": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/assembly-review/native-method-controls-v1.log",
+  "log_sha256": "d83065a2137b5eccbcbeeec78059052a7b5721a169fb43ca6d5300f9be3baec8",
+  "selected_existing_tests": [
+    "tests/test_regrade_synonym_matches.py::test_explicit_matching_cas_provenance_takes_priority_over_lexical_grade",
+    "tests/test_regrade_synonym_matches.py::test_prior_synonym_regrade_is_repaired_when_mapping_was_created_by_cas",
+    "tests/test_regrade_synonym_matches.py::test_cas_presence_without_creation_provenance_does_not_override_synonym",
+    "tests/test_regrade_synonym_matches.py::test_cas_xref_conflict_is_reported_and_not_used_as_provenance",
+    "tests/test_regrade_synonym_matches.py::test_cas_xref_conflict_cannot_fall_through_to_synonym_grade",
+    "tests/test_regrade_synonym_matches.py::test_cas_shared_by_multiple_chebi_terms_is_left_for_review",
+    "tests/test_regrade_synonym_matches.py::test_cas_provenance_does_not_override_preparation_identity_conflict",
+    "tests/test_regrade_synonym_matches.py::test_cas_provenance_does_not_override_hydrate_identity_conflict",
+    "tests/test_regrade_synonym_matches.py::test_synonym_shared_by_another_chebi_term_is_not_auto_regraded",
+    "tests/test_sssom_identity_row_predicate.py::test_rule_d_fires_on_a_synthetic_violation",
+    "tests/test_sssom_identity_row_predicate.py::test_rule_d_ignores_a_row_pointing_at_a_different_term"
+  ],
+  "input_bindings": [
+    {
+      "path": "tests/test_regrade_synonym_matches.py",
+      "sha256": "985e0434d4f894cf3f5281b0f7a91c6e2133a960107f65312f393c755797f413"
+    },
+    {
+      "path": "scripts/regrade_synonym_matches.py",
+      "sha256": "b1bef7b09305f3c8ca89e89c3d5dbc3d0710bf9a45442105b7ee3fc84ed98fcd"
+    },
+    {
+      "path": "tests/test_sssom_identity_row_predicate.py",
+      "sha256": "46a11383cd1303fd081ebbfaedbe9f21ffb4b899ae1e98385f87c2ed37a99856"
+    },
+    {
+      "path": "scripts/validate_sssom_invariants.py",
+      "sha256": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": "src/mediaingredientmech/sssom_grading.py",
+      "sha256": "20990cc1285000213201b3b0b2419c6251f450c3ffb175c235f53314ccc3d11c"
+    }
+  ],
+  "interpretation": "Native existing deterministic controls exercise explicit CAS provenance, uniqueness, conflicting xrefs, preparation/hydrate boundaries, and own-identifier predicate negative control. They are not actual TAPS CAS lookup evidence, do not modify the corpus, and do not establish scientific identity or export approval.",
+  "native_regrader_limit": "Historical regrader plan recognizes CREATED_FROM_CAS_LOOKUP only; do not invent that prior action for this newly reassessed mapping. Actual current unique CAS lookup and truthful new history/evidence remain required.",
+  "whole_owner_or_export_approval": false
+}

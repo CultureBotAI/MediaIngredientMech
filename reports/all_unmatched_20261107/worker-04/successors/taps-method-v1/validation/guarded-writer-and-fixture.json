@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-11-08T09:00:50.181164+00:00",
+  "status": "PASS",
+  "payload_sha256": "39b39c95acc1e4fbff28d45863d6177195ce567fedf6f41b6a1c36a116856680",
+  "roundtrip_sha256": "39b39c95acc1e4fbff28d45863d6177195ce567fedf6f41b6a1c36a116856680",
+  "semantic_roundtrip": true,
+  "negative_control": {
+    "mutation": "Invalid mapping_quality enum in private memory only",
+    "result": "Rejected by unchanged guarded closed-schema writer; no file created",
+    "actual_error": "validation failed: 1 error(s) for /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/taps-method-v1/native-fixture/invalid-quality-must-not-exist.yaml\n  - 'UNVERIFIED_AUTOMATIC_CAS_GRADE' is not one of ['EXACT_MATCH', 'SYNONYM_MATCH', 'CLOSE_MATCH', 'MANUAL_CURATION', 'LLM_ASSISTED', 'PROVISIONAL', 'NARROW_MATCH', 'BROAD_MATCH', 'LEXICAL_MATCH', 'CAS_RN"
+  },
+  "catalog_records": 3029,
+  "changed_catalog_file": "data/ingredients/mapped/TAPS.yaml",
+  "all_other_catalog_payloads_unchanged": true,
+  "fac_payload_sha256": "90b583b2603fb0d42edb9d15d2342659f4894195bd4389348b6e4f2bedb61762",
+  "identity_alias_chemistry_source_partonomy_fields_unchanged": true,
+  "native_filename_checks": {
+    "drift": [],
+    "collisions": [],
+    "failure_reasons": []
+  },
+  "inputs": [
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9"
+    },
+    {
+      "path": "src/mediaingredientmech/curate/curation_event.py",
+      "sha256": "22dc7ed373e356045c472b0bfa61c7e4915bd9aabc34fac108e21789b01acc34"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": "scripts/check_record_filename_case.py",
+      "sha256": "74a19871127372e2680e8776c37b867bb3b82f9b334fd1f8926d996ca205d658"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "scope": "Native review validation/save and one full review check for this method successor; scientific acceptance remains separately scoped.",
+  "checks": [
+    {
+      "name": "validate-v2",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "validate",
+        "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/native-review-content-v2.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/native-validate-v2.log",
+      "sha256": "9cb58ebb2f7364cf1f9099155a4edc053a18a9e379e33e31981b32bf8fbcbd1c"
+    },
+    {
+      "name": "save-v2",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "save",
+        "--content",
+        "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/native-review-content-v2.json"
+      ],
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/native-save-v2.log",
+      "sha256": "53378c98ee27ccd97e632a042dca79b2804bc0e12096604a2b056cb49d555fae"
+    },
+    {
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/all-unmatched-worker-04/venv/bin/python",
+        "-B",
+        "scripts/record_review.py",
+        "check",
+        "--base",
+        "dd3683f3167cb3d294417ee4cd5555dcd8fb7798",
+        "--require-reviews"
+      ],
+      "started_at": "2026-11-08T09:05:11.276126+00:00",
+      "finished_at": "2026-11-08T09:06:59.413446+00:00",
+      "exit_code": 0,
+      "log": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/native-full-check.log",
+      "log_sha256": "cda0150bffd02fac29899e8c65f90809b3bd1e6a208cbee3543f9c58c5e4212f"
+    }
+  ],
+  "native_pair": [
+    {
+      "path": "reviews/structured/20261108T090454Z-worker04-taps-method-successor/review.yaml",
+      "sha256": "4b5ac2053877b9a11d21ff3324850a7136aeab26cf3f9a9f047d2934abd132d2"
+    },
+    {
+      "path": "reviews/structured/20261108T090454Z-worker04-taps-method-successor/review.md",
+      "sha256": "4a7bfd088f841136a844f26447b0597fd8b99dce5dd4f5e7c92320c7ea9176d2"
+    }
+  ],
+  "preserved_timestamp_failure": {
+    "path": "reports/all_unmatched_20261107/worker-04/successors/taps-method-v1/validation/native-timestamp-normalization.json",
+    "sha256": "1f2f1287499ca5a619c17006480dc63197f111aa662be9bb4c08db546be40aa9"
+  },
+  "whole_owner_or_export_approval": false
+}

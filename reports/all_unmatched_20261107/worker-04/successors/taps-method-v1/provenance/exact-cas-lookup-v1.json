@@ -1,0 +1,165 @@
+{
+  "started_at": "2026-11-08T08:57:18.956984+00:00",
+  "completed_at": "2026-11-08T08:57:22.091600+00:00",
+  "method": "Read-only exact CAS xref lookup over the entire existing native CHEBI semsql statements table, using unchanged scripts/regrade_synonym_matches.py:cas_subjects. No product or case identity inferred from CAS alone.",
+  "database": {
+    "path": "/Users/marcin/.data/oaklib/chebi.db",
+    "sha256": "26ad4890cdcf6ee357760d815dfee8f5ba81e0873e62cb379369b04205722b0f",
+    "bytes": 4137340928,
+    "mtime_ns": 1791961401274785795,
+    "metadata": [
+      [
+        "obo:chebi.owl",
+        "owl:versionIRI",
+        "obo:chebi/255/chebi.owl",
+        null
+      ],
+      [
+        "obo:chebi.owl",
+        "owl:versionInfo",
+        null,
+        "255"
+      ]
+    ]
+  },
+  "native_function": {
+    "path": "scripts/regrade_synonym_matches.py",
+    "sha256": "b1bef7b09305f3c8ca89e89c3d5dbc3d0710bf9a45442105b7ee3fc84ed98fcd",
+    "function": "cas_subjects"
+  },
+  "requested_cas_rns": [
+    "29915-38-6",
+    "91000-53-2",
+    "90549-86-3"
+  ],
+  "subjects": {
+    "cas:29915-38-6": [
+      "CHEBI:191055"
+    ]
+  },
+  "exact_xref_rows": [
+    [
+      "CHEBI:191055",
+      "oio:hasDbXref",
+      "cas:29915-38-6"
+    ]
+  ],
+  "complete_returned_term_statements": {
+    "CHEBI:191055": [
+      [
+        "CHEBI:191055",
+        "chemrof:charge",
+        null,
+        "0"
+      ],
+      [
+        "CHEBI:191055",
+        "chemrof:generalized_empirical_formula",
+        null,
+        "C7H17NO6S"
+      ],
+      [
+        "CHEBI:191055",
+        "chemrof:inchi_key_string",
+        null,
+        "YNLCVAQJIKOXER-UHFFFAOYSA-N"
+      ],
+      [
+        "CHEBI:191055",
+        "chemrof:inchi_string",
+        null,
+        "InChI=1S/C7H17NO6S/c9-4-7(5-10,6-11)8-2-1-3-15(12,13)14/h8-11H,1-6H2,(H,12,13,14)"
+      ],
+      [
+        "CHEBI:191055",
+        "chemrof:mass",
+        null,
+        "243.281"
+      ],
+      [
+        "CHEBI:191055",
+        "chemrof:monoisotopic_mass",
+        null,
+        "243.07766"
+      ],
+      [
+        "CHEBI:191055",
+        "chemrof:smiles_string",
+        null,
+        "O=S(=O)(O)CCCNC(CO)(CO)CO"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:hasDbXref",
+        null,
+        "cas:29915-38-6"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:hasDbXref",
+        null,
+        "chemspider:108495"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:hasDbXref",
+        null,
+        "pdb-ccd:T3A"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:hasExactSynonym",
+        null,
+        "3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]propane-1-sulonic acid"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:hasOBONamespace",
+        null,
+        "chebi_ontology"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:hasRelatedSynonym",
+        null,
+        "3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]propane-1-sulonic acid"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:id",
+        null,
+        "CHEBI:191055"
+      ],
+      [
+        "CHEBI:191055",
+        "oio:inSubset",
+        "obo:chebi/2_STAR",
+        null
+      ],
+      [
+        "CHEBI:191055",
+        "rdf:type",
+        "owl:Class",
+        null
+      ],
+      [
+        "CHEBI:191055",
+        "rdfs:label",
+        null,
+        "N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid"
+      ],
+      [
+        "CHEBI:191055",
+        "rdfs:subClassOf",
+        "CHEBI:33551",
+        null
+      ]
+    ]
+  },
+  "lookup_scope": "All CHEBI subjects with exact case-insensitive cas:<RN> xref value in this hash-bound database; includes shared xrefs, no first-hit selection or target-only filtering.",
+  "reproduction": "sqlite3.connect(db.as_uri()+'?mode=ro',uri=True); regrade_synonym_matches.cas_subjects(cur,['29915-38-6','91000-53-2','90549-86-3'])",
+  "limitations": [
+    "Snapshot-specific ontology lookup; current primary OLS target remains separately bound.",
+    "Does not approve source-global identity, roles, owner integration or export."
+  ]
+}
