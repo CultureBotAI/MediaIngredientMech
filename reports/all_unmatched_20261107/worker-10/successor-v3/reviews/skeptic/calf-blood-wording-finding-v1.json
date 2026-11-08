@@ -1,0 +1,61 @@
+{
+  "recorded_at": "2026-11-08T07:52:12.663572+00:00",
+  "finding_id": "W10-SV3-SKEPTIC-CALF-BLOOD-WORDING",
+  "reviewer": "Codex /root/preparation_skeptic (AI; not payload author)",
+  "status": "open_unfixed_followup_outside_authorized_scientific_change_scope",
+  "severity": "minor_explanation_error",
+  "proposal_id": "sv1-bio-calf_blood_togo_m2854",
+  "case_index": 44,
+  "case_ids": [
+    "CM_NAME:556fc068943d632ce6e95108d337291521fc471fbc26165d3437068246f4e258"
+  ],
+  "original_selected_payload": {
+    "root": "artifact",
+    "path": "successor-v1/bio/owners/Calf_Blood_TOGO_M2854.after.yaml",
+    "sha256": "f3f970a2373a7309b0a2c028debe30254d25fb66fc873859a14d10e4f7977f3e"
+  },
+  "final_selected_payload": {
+    "root": "artifact",
+    "path": "successor-v3/enum/proposed/sv1-bio-calf_blood_togo_m2854.yaml",
+    "sha256": "62f0dc3300c488be2fb9d52f2c65e8e6826715d81177cf8e4ce48af422ed7338"
+  },
+  "original_full_field_values": {
+    "ontology_mapping.evidence[0].notes": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details. Broader material parent only; distinct local preparation identity remains.",
+    "notes": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details. Source labels retained as nonresolving provenance: [{\"case_id\": \"CM_NAME:556fc068943d632ce6e95108d337291521fc471fbc26165d3437068246f4e258\", \"raw_label\": \"calf blood\"}]. No global generic alias, supplier equivalence, role approval or complete publication approval is conferred. Receiving-medium dose and unit repairs remain separate. Existing native holds and rejected labels are preserved.",
+    "curation_history[0].changes": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details. Isolated successor proposal only; original published review bytes preserved."
+  },
+  "final_full_field_values": {
+    "ontology_mapping.evidence[0].notes": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details. Broader material parent only; distinct local preparation identity remains.",
+    "notes": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details. Source labels retained as nonresolving provenance: [{\"case_id\": \"CM_NAME:556fc068943d632ce6e95108d337291521fc471fbc26165d3437068246f4e258\", \"raw_label\": \"calf blood\"}]. No global generic alias, supplier equivalence, role approval or complete publication approval is conferred. Receiving-medium dose and unit repairs remain separate. Existing native holds and rejected labels are preserved.",
+    "curation_history[0].changes": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details. Isolated successor proposal only; original published review bytes preserved."
+  },
+  "proposal_description_before": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details.",
+  "proposal_description_final": "TOGO M2854 explicitly identifies calf whole blood. Calf age class distinguishes it from serum; no defibrination, lysis, supplier or percentage basis is inferred. The known material scope can be represented despite those unspecified processing details.",
+  "source": {
+    "evidence_id": "bio-primary-aff5f4b09e39e12c",
+    "capture": {
+      "root": "artifact",
+      "path": "bio/captures/aff5f4b09e39e12c",
+      "sha256": "12f6464a1dcc66a32160e85433034cfd067ea5e930f3ae6d12ce2c60d6af2770"
+    },
+    "kind": "primary_source",
+    "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2854",
+    "accessed_at": "2026-11-08T05:06:59.705873+00:00",
+    "locator": "Complete primary recipe: component tables and preparation comments; exact case labels and source recipe IDs identify applicability.",
+    "supports_or_contradicts": "Supports the named source material, preparation, stock/component boundary and original amount/unit in the per-case assessment; does not independently approve MIM ownership or published payload.",
+    "case_ids": [
+      "CM_NAME:556fc068943d632ce6e95108d337291521fc471fbc26165d3437068246f4e258"
+    ]
+  },
+  "source_locator": "components[0].items[1] and comments[0]",
+  "source_positive_fact": "Actual TOGO M2854 response names calf blood at literal 10%, separately from the brain-heart infusion agar and antibiotics. It does not state defibrination, lysis or percentage basis. The word whole is an interpretation of the blood material, not a literal source qualifier.",
+  "finding": "Calf age class distinguishes it from serum conflates developmental age with material fraction. Serum can also be calf-derived. The supported boundary is blood versus serum, while calf states the developmental origin. The local blood identity and broader blood mapping are not invalidated by this wording error.",
+  "bounded_proposed_fix": "In a separately authorized source successor, change current explanatory notes and proposal/case reasoning to: The source names calf blood, a blood material rather than serum; calf specifies developmental origin. Preserve unknown processing and percentage basis. Append a corrective history event; preserve the original historical event unchanged. Do not infer a product, defibrination, lysis or broader alias.",
+  "current_action": "No scientific text changed. Only audited MappingEvidence type and appended provenance history changed under issue1226. Parent notified coordinator before any proposed fix; this report does not claim issue filing.",
+  "deduplication": {
+    "issue1226": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226; evidence-method typing scope, not resolution of this scientific wording",
+    "issue1237": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1237; related serum boundary context, not an exact claim that this calf-blood wording was already fixed",
+    "exact_tracker_status": "No exact duplicate established in the supplied complete issue bodies/comments; coordinator must deduplicate any filing against then-current state."
+  },
+  "release_approval": false
+}

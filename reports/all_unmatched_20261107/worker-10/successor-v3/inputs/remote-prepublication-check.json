@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-11-08T07:51:58.513842+00:00",
+  "command": "git ls-remote --exit-code origin refs/heads/review/all-unmatched-w10-source-review-20261107",
+  "destination": "https://github.com/CultureBotAI/MediaIngredientMech.git",
+  "attempts": [
+    {
+      "sandbox": "default",
+      "exit_code": 128,
+      "stderr": "fatal: unable to access 'https://github.com/CultureBotAI/MediaIngredientMech.git/': Could not resolve host: github.com\n",
+      "tool_chunk": "128de9",
+      "meaning": "Network-resolution restriction; not an automatic approval rejection."
+    },
+    {
+      "sandbox": "require_escalated",
+      "exit_code": 0,
+      "stdout": "808ff934f9cdec7ad8fdc8cdcaa583f1ae068d5e\trefs/heads/review/all-unmatched-w10-source-review-20261107\n",
+      "tool_chunk": "6d75fc",
+      "meaning": "Read-only branch check passed through ordinary automatic approval review."
+    }
+  ],
+  "predecessor_matches": true,
+  "mutation": false
+}

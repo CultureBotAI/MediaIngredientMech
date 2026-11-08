@@ -1,0 +1,138 @@
+{
+  "report_id": "worker10-enum-writer-independent-v2",
+  "reviewer": "/root/bio_research",
+  "completed_at": "2026-11-08T07:47:36.345421+00:00",
+  "actual_review_start_exact": null,
+  "timing_note": "Actual reading and comparison preceded the timestamped in-memory audit. Exact review start is not recovered; function-check timestamps measure script execution only.",
+  "supersedes_review": {
+    "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/implementation-review-v1.json",
+    "sha256": "85ceb6f8b690c49101e88d75d36194292c165a65315ee52e13829a4860321a89",
+    "original_preserved": true
+  },
+  "verdict": "accepted_for_exact_reviewed_report_only_inputs_with_bounded_limitations",
+  "scope": "Independent implementation/provenance review of the private root helper and its exact frozen inputs. No main() execution, positive payload write, fresh source-science approval, role/export approval or new repository gate.",
+  "independence": "Reviewer did not author enum_successor.py, root provenance audit or root scientific assembly. Reviewer authored the five HCl/manual successor payloads, and previously authored some original biological proposals and performed earlier partition reviews; no scientific self-review is claimed. HCl/manual correspondence is checked here as a provenance/data binding only. The separate preparation_skeptic retains whole-scope scientific review.",
+  "reviewed_helper": {
+    "path": ".temp/all-unmatched-worker-10/successor-v3/enum_successor.py",
+    "sha256": "62ad7f3f485e12454b60c55e8a2c859f530fdfd5b236c6af637fd6021ec35623"
+  },
+  "original_helper_preservation": {
+    "path": ".temp/all-unmatched-worker-10/successor-v3/attempts/enum_successor-pre-review.py",
+    "sha256": "018fe12d755a90cd9db58f25ba76030e22343268d2a3723847408602a960a63d",
+    "matches_independent_v1_snapshot": true
+  },
+  "reviewed_inputs": [
+    {
+      "original_path": ".temp/all-unmatched-worker-10/successor-v3/enum_successor.py",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/00-enum_successor.py",
+      "sha256": "62ad7f3f485e12454b60c55e8a2c859f530fdfd5b236c6af637fd6021ec35623"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/negative-controls-preflight-v2.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/01-negative-controls-preflight-v2.json",
+      "sha256": "ba96c867636c5ed9fb5895769b1467fd9f0286cbde97b645320579c54cb88344"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/w10-current-rebind-v1.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/02-w10-current-rebind-v1.json",
+      "sha256": "264aaf9059d8dca82964d83730ebd062bd4491fefcf85d342500b8ab16cc2f62"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/science-v1/proposals.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/03-proposals.json",
+      "sha256": "86a103a78639e9ef86582b1b642dc69d188b00f49e05e13b8e9db67222bc28ae"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/science-v1/retirement-bridge.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/04-retirement-bridge.json",
+      "sha256": "cd3270dd6680270c80ddef8c8c8204f30d342f47d1df079e0740524cec3c8eca"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/serums/mapping-claim-correspondence.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/05-mapping-claim-correspondence.json",
+      "sha256": "421174824bac1dc108d662bf2f20126caec471c3d95c053a9c32087333eb20cd"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/mapping-claim-correspondence.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/06-mapping-claim-correspondence.json",
+      "sha256": "184e6fe59c0adac570215ec6f841e97e945ee2e8c408d7f8c0f64b591190f81a"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v2/proposals.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/07-proposals.json",
+      "sha256": "aad2c9556d6133e7176d79cfe159ce43c9ed7a41287d16e8b31ca9256d049d49"
+    }
+  ],
+  "findings": [
+    {
+      "id": "ENUM-WRITER-001",
+      "status": "resolved_in_reviewed_successor",
+      "resolution": "The original absent-claim same-index inference is removed. explicit_successor requires exactly one matching old proposal ID, new proposal ID and complete before claim in source-author correspondence, then verifies the complete after claim at its explicit successor index and LLM_SUGGESTION. All nine actual revised claims pass exact before/after correspondence; wrong IDs, ambiguous correspondence and changed full successor fail. A synthetic shifted successor index succeeds only with the explicit corresponding index. Selected and predecessor payload hashes are verified; the independent audit additionally verified every HCl correspondence old/new payload locator/hash against the selected proposals and bytes."
+    },
+    {
+      "id": "ENUM-WRITER-002",
+      "status": "resolved_in_reviewed_successor",
+      "resolution": "owner_preimage authenticates actual maintained bytes against before_sha256, rejects symlink/missing/stale existing owners, and refuses a claimed new owner when its destination already exists. Each selected row is tied to its original proposal capture, owner path and before hash; original capture SHA and original owner SHA are checked. The authentic owner function is used again for the final MANUAL exclusion pass. All actual bindings match and the stale-owner control refuses."
+    }
+  ],
+  "open_findings": [],
+  "verified": {
+    "counts": {
+      "original_proposals": 128,
+      "selected_proposals": 127,
+      "original_allowlisted_claims": 123,
+      "claim_dispositions": {
+        "retyped_exact_surviving_agent_claim": 113,
+        "superseded_by_source_reassessed_agent_claim": 9,
+        "historical_candidate_retired_from_active_selection": 1
+      },
+      "payloads_with_in_memory_retypes": 92,
+      "in_memory_retyped_claims": 113,
+      "historical_exclusions": 2
+    },
+    "supplied_negative_controls_reproduced": 9,
+    "additional_correspondence_refusal_controls": 4,
+    "explicit_shifted_index_positive_control": true,
+    "all_123_full_claim_hashes_and_original_context_bindings_verified": true,
+    "all_127_selected_payload_hashes_and_owner_preimages_verified": true,
+    "retirement_bridge_all_128_full_proposal_hashes_and_case_backlinks_verified": true,
+    "all_113_in_memory_retypes_change_only_selected_mapping_enum": true,
+    "native_history_append_control": "Native event function called only in memory on the 92 changed records; each prior history list remains an exact prefix, and restoring original enum values/removing the one test event restores the full original record.",
+    "component_and_other_contexts": "ComponentEvidence context is explicitly refused; rollback equality preserves every component, amount, note, identity field and prior history field before the one appended metadata event.",
+    "path_scope": "Static guard resolves destinations under successor-v3/enum/proposed, refuses outside paths, root itself and existing/symlink destinations. The two executable path refusal controls both stop before any positive write. No maintained destination or source payload is written.",
+    "historical_exclusions": [
+      {
+        "proposal_id": "bio-proposal-Defibrinated_sheep_blood",
+        "full_claim_sha256": "b69d1c627d7748c059452a2adf92d62088e614c3c0c11be84190069d32b6dcd5",
+        "exact_in_authentic_before_and_selected": true,
+        "authorship_certified_human": false
+      },
+      {
+        "proposal_id": "kg-metals44-recipe",
+        "full_claim_sha256": "16186e323144626521244658adb67ff7ee7e065aa0041f3a0df5fd15ad28b058",
+        "exact_in_authentic_before_and_selected": true,
+        "authorship_certified_human": false
+      }
+    ],
+    "historical_control_name": "historical-human-object is only a synthetic inherited-object refusal control. Neither that name nor retention of the two historical MANUAL_CURATION objects proves human authorship. The helper history text expressly says authorship is not recertified.",
+    "all_reviewed_inputs_unchanged_at_check_finish": true
+  },
+  "receipts": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/function-checks-v2.json",
+      "sha256": "5d6d507d4cc0f3245730d17d9fab4c8613cc6e6783a87c33588de74ecdbadfeb"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/check-v2.py",
+      "sha256": "f4403921103741acac96f2251be7b697891c93d337fd9927ce1aba70c0c25596"
+    }
+  ],
+  "limitations": [
+    "Acceptance is limited to the exact helper/input hashes reviewed here, not a generic adversarial-input or repository-wide migration guarantee.",
+    "Source-author correspondence is loaded and its observed hash recorded by the helper; the helper does not independently verify an external immutable correspondence manifest. Independent current-input checks bind the full objects and actual selected payloads.",
+    "main() and positive guarded writes were not executed. Final generated artifacts, native schema/partonomy receipts and full scientific review remain the coordinator and separate final skeptic scope.",
+    "Within-root overwrite and symlink checks are read from the implementation; the supplied historical-destination control is rejected at the outside-root check and therefore is not an executable test of within-root overwrite protection.",
+    "No claim of race-proof filesystem security; ordinary exact workspace paths and input hashes were inspected."
+  ],
+  "mutations": "Only new independent snapshots, check script and reports under successor-v3/reviews/enum-writer. No helper/payload/source/maintained/Git/GitHub changes."
+}

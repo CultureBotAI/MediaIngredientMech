@@ -1,0 +1,95 @@
+id: CultureMech:008829
+name: medium_containing_pplo_broth_calf_serum_glucose_penicillin_g_and_tris_hc1
+original_name: Medium containing PPLO broth, calf serum, glucose, penicillin G, and
+  Tris-HC1
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ingredients:
+- preferred_term: Tris-HC1 (pH 7.6)
+  concentration:
+    value: '50'
+    unit: MILLIMOLAR
+  notes: 'Role: Buffer; Properties: Complex component, Defined component, Solution'
+- preferred_term: Glucose
+  concentration:
+    value: '0.2'
+    unit: G_PER_L
+  notes: 'Role: Carbon source; Properties: Defined component, Simple component, Organic
+    compound'
+  term:
+    id: CHEBI:17234
+    label: glucose
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+- preferred_term: Calf serum (Gibco)
+  concentration:
+    value: '1'
+    unit: G_PER_L
+  notes: 'Role: Nutrient source; Properties: Undefined component'
+- preferred_term: PPLO broth (Difco)
+  concentration:
+    value: '2.2'
+    unit: G_PER_L
+  notes: 'Properties: Undefined component, Complex component'
+- preferred_term: Penicillin G
+  notes: 'Role: Antimicrobial agent; Properties: Defined component, Simple component'
+  concentration:
+    value: variable
+    unit: VARIABLE
+  term:
+    id: CHEBI:51765
+    label: benzylpenicillin sodium
+media_term:
+  preferred_term: TOGO Medium M2240
+  term:
+    id: TOGO:M2240
+    label: Medium containing PPLO broth, calf serum, glucose, penicillin G, and Tris-HC1
+notes: 'Source: https://togomedium.org/medium/M2240'
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-01-27T06:35:56.209724Z'
+  curator: togo-import
+  action: Imported from TOGO Medium
+  notes: 'Source: TOGO, ID: M2240'
+- timestamp: '2026-01-28T19:48:35.266748Z'
+  curator: chebi-enrichment
+  action: Added CHEBI ontology terms to ingredients
+  notes: Enriched using MicrobeMediaParam and MediaDive chemical mappings
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: 'Added default concentration for ingredient: Penicillin G'
+  timestamp: '2026-02-03T00:00:00+00:00'
+- timestamp: '2026-03-13T06:20:00.600079Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:008829'
+- timestamp: '2026-03-17T06:30:40.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:46:19.276966+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "Medium containing PPLO broth, calf serum, glucose,
+    penicillin G, and Tris-HC1" to "medium_containing_pplo_broth_calf_serum_glucose_penicillin_g_and_tris_hc1"
+    for consistent matching
+- timestamp: '2026-05-16T09:04:19.771861+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-05T07:41:28.757194+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 1 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-08-20T19:02:49.918353+00:00'
+  curator: apply_mim_groundings.py
+  action: Adopted MIM published grounding
+  notes: Grounded 1 ingredient(s) from MIM's ingredient_mappings.sssom.tsv (2026-08-18),
+    exactMatch only, where this record carried no CHEBI term (#308).
+kg_microbe_match: mediadive.medium:21

@@ -1,0 +1,68 @@
+identifier: kgmicrobe.ingredient:resazurin_2g_l_togo_m3155
+preferred_term: Resazurin stock, 2 g/L (PETC-MES; TOGO M3155)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:resazurin_2g_l_togo_m3155
+  ontology_label: Resazurin stock, 2 g/L (PETC-MES; TOGO M3155)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3155
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. TOGO
+      M3155 PETC-MES adds 0.5 mL of a 2 g/L resazurin preparation per litre of medium.
+      The mass-concentration stock is distinct from either dry resazurin acid or sodium
+      salt; no salt choice or molarity is inferred.
+components:
+- component_name: Resazurin
+  reference_scope: UNMAPPED
+  source: Source names resazurin without specifying acid or sodium salt.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3155
+    source_record: Resazurin stock, 2 g/L (PETC-MES; TOGO M3155)
+    notes: TOGO M3155 PETC-MES adds 0.5 mL of a 2 g/L resazurin preparation per litre
+      of medium. The mass-concentration stock is distinct from either dry resazurin
+      acid or sodium salt; no salt choice or molarity is inferred.
+  notes: Resazurin supplied form, solvent, stock preparation and sterilization are
+    not stated. These bound component resolution rather than erase the explicit 2
+    g/L stock. Source-named parts remain UNMAPPED where supplied form or stock identity
+    is not established. MIM_CATALOG references identify only the supported constituent,
+    not approval of that complete owner.
+notes: TOGO M3155 PETC-MES adds 0.5 mL of a 2 g/L resazurin preparation per litre
+  of medium. The mass-concentration stock is distinct from either dry resazurin acid
+  or sodium salt; no salt choice or molarity is inferred. Resazurin supplied form,
+  solvent, stock preparation and sterilization are not stated. These bound component
+  resolution rather than erase the explicit 2 g/L stock. Provenance-only source text
+  '2 g/L Resazurin' (case CM_NAME:ced1adce1e3db79484e82ca60266f7aa51b1992c9a311172dca3fbac280b7981).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.059825+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

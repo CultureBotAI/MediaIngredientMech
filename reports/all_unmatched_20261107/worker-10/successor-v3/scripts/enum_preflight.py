@@ -1,0 +1,25 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib,yaml,collections,re
+R=Path.cwd();C=R.parents[2];A=R/'reports/all_unmatched_20261107/worker-10';B=A/'successor-v2';S=A/'successor-v3';N=S/'enum';N.mkdir(exist_ok=True);sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();canon=lambda d:hashlib.sha256(json.dumps(d,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode()).hexdigest();load=lambda p:json.loads(p.read_text())
+def save(p,d):
+ with p.open('x') as f:json.dump(d,f,indent=2,ensure_ascii=False);f.write('\n')
+whole=load(S/'inputs/enum-audit-provenance__entry-provenance-ledger-v1.json');rows=[x for x in whole['rows'] if x['worker']==10];suggest=[x for x in load(S/'inputs/enum-audit-provenance__native-type-suggestions-v1.json')['rows'] if x.get('worker')==10 or x.get('entry_id','').startswith('w10::')];props=load(B/'proposals.json')['proposals'];byid={p['proposal_id']:p for p in props};matches=[];historical=[];missing=[]
+for row in rows:
+ p=byid.get(row['proposal_id']);assert p,row['proposal_id'];cur=A/p['after_capture']['path'];assert sha(cur)==p['after_capture']['sha256'];assert sha(Path(row['payload_path']))==row['payload_sha256'];assert sha(cur)==row['payload_sha256'];rec=yaml.safe_load(cur.read_text());old=yaml.safe_load(Path(row['baseline_path']).read_text()) if row['baseline_path'] else None
+ if old is not None:assert sha(Path(row['baseline_path']))==row['baseline_sha256'];assert sha(R/p['owner_path'])==p['before_sha256']==row['baseline_sha256']
+ assert canon(row['full_value'])==row['full_value_sha256'];idx=int(re.fullmatch(r'ontology_mapping.evidence\[(\d+)\]',row['field']).group(1));assert rec['ontology_mapping']['evidence'][idx]==row['full_value'];assert row['full_value'] not in ((old or {}).get('ontology_mapping') or {}).get('evidence',[])
+ assert row['classification']=='new_agent_record' and row['suggested_native_type']=='LLM_SUGGESTION';assert row['author_evidence']['added_curation_history'];assert all(e in rec.get('curation_history',[]) for e in row['author_evidence']['added_curation_history']);assert row['author_evidence']['case_author_and_review_metadata']
+ matches.append({'audit_row_id':row['audit_row_id'],'proposal_id':p['proposal_id'],'current_capture':p['after_capture'],'before_sha256':p['before_sha256'],'owner_path':p['owner_path'],'field':row['field'],'complete_claim_sha256':row['full_value_sha256'],'full_value':row['full_value'],'classification':row['classification'],'type_recommendation':row['suggested_native_type'],'reason':row['rationale'],'claim_basis':row['claim_specific_type_basis'],'author_events':row['author_evidence']['added_curation_history'],'actual_author_review_scopes':row['author_evidence']['case_author_and_review_metadata'],'linked_original_review_reports':row['author_evidence']['linked_review_reports'],'selected_case_ids':p['case_ids'],'selected_proposal_sha256':canon(p)})
+for p in props:
+ rec=yaml.safe_load((A/p['after_capture']['path']).read_text());old=yaml.safe_load((R/p['owner_path']).read_text()) if p['before_sha256'] else {};be=((old or {}).get('ontology_mapping') or {}).get('evidence',[])
+ for idx,e in enumerate((rec.get('ontology_mapping') or {}).get('evidence',[])):
+  if e.get('evidence_type')=='MANUAL_CURATION':
+   known=[x for x in rows if x['proposal_id']==p['proposal_id'] and x['field']==f'ontology_mapping.evidence[{idx}]' and x['full_value']==e]
+   if not known:
+    item={'proposal_id':p['proposal_id'],'field':f'ontology_mapping.evidence[{idx}]','full_value':e,'complete_claim_sha256':canon(e),'retained_in_before':e in be}
+    (historical if e in be else missing).append(item)
+assert not missing,missing
+save(N/'w10-original-audit-rows.json',{'source_ledger_sha256':sha(S/'inputs/enum-audit-provenance__entry-provenance-ledger-v1.json'),'rows':rows})
+save(N/'w10-current-rebind-v1.json',{'at':datetime.now(timezone.utc).isoformat(),'base_head':'808ff934f9cdec7ad8fdc8cdcaa583f1ae068d5e','scope':'Exact claim-specific provenance rebind only; no scientific identity review or writer yet','row_count':len(rows),'proposals':len({r['proposal_id'] for r in rows}),'current_payloads_exact_to_frozen':True,'rows':matches,'unchanged_historical_manual_excluded':historical,'unclassified_new_manual_entries':missing,'two_case_payload_effects':{'isp4':'No audited MANUAL_CURATION claim; payload5f03... must remain exact.','carbonate_case187':'Existing selected sv1-buffers-carbonate_co2_nominal4percent_togo_m202 has one audited new MANUAL_CURATION claim; prospective1226 correction may change only evidence_type+truthfulappendonlyhistory while preserving source science, bothcasebacklinks and all holds.'},'shared_joint_composition':'Phosphate873/940 and Columbia921 remain coordinator-owned. Metadata corrections do not choose/apply a shared owner; final integration must explicitly rebind their candidates.'})
+print(json.dumps({'audit_rows':len(rows),'proposals':len({r['proposal_id'] for r in rows}),'historical_excluded':len(historical),'unclassified':len(missing)},indent=2))

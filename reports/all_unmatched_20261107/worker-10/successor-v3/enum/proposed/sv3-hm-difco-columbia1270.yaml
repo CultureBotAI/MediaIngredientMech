@@ -1,0 +1,165 @@
+identifier: kgmicrobe.ingredient:difco_columbia_blood_agar_base_jcm_1270
+preferred_term: Difco Columbia blood agar base (JCM1270)
+mapping_status: MAPPED
+ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:difco_columbia_blood_agar_base_jcm_1270
+  ontology_label: Difco Columbia blood agar base (JCM1270)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1270
+    notes: JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+      adds water and sheep blood. Manufacturer manual distinguishes Difco44g/L base
+      from BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the
+      dry Difco input; it does not reuse MICRO536 whose definition transcribes the
+      BBL formulation. Typical constituent names are retained without historical lot
+      or dry-mass-ratio claims.
+  - evidence_type: LLM_SUGGESTION
+    source: https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf
+    notes: LLM-assisted source comparison and registry-scope assessment; no human
+      manual-curation claim. Recovered manufacturer-authored BD Difco & BBL Manual,
+      second edition 2009, printed p158 (PDF page170), hosted by NMSU. Original capture
+      2026-11-08T06:55:09.048187+00:00, SHA256 e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7.
+      The approximate per-liter Difco table lists pancreatic digest of casein10g,
+      Proteose Peptone No.3 5g, yeast extract5g, beef heart infusion from500g 3g,
+      corn starch1g, sodium chloride5g and agar15g; the footnote allows adjustment/supplementation
+      to meet performance criteria. It directs suspension of44g powder in1L purified
+      water. Those are manufacturer preparation/formula statements, not dry-product
+      mass fractions, final yield, or an identified historical JCM lot. The same page
+      separately gives BBL42.5g (including13.5g agar, meat peptic digest and heart
+      pancreatic digest) and DifcoEH39g (including12g agar and different nutrient
+      inputs). The older mirrored manual has different heart wording and BBL proportions
+      and is retained as separate version context. The old search wrapper and failed
+      official/mirror requests remain historical leads, not primary manual evidence.
+synonyms: []
+notes: 'JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+  adds water and sheep blood. Manufacturer manual distinguishes Difco44g/L base from
+  BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the dry Difco
+  input; it does not reuse MICRO536 whose definition transcribes the BBL formulation.
+  Typical constituent names are retained without historical lot or dry-mass-ratio
+  claims. Direct JCM1270 specifies sheep blood, including70C for15minutes after addition;
+  MediaDiveJ1270 incorrectly says horse blood. This source discrepancy is retained
+  and does not alter the44g dry-base identity. No blood is a component of this base.
+  Successor-v3 evidence repair: Recovered manufacturer-authored BD Difco & BBL Manual,
+  second edition 2009, printed p158 (PDF page170), hosted by NMSU. Original capture
+  2026-11-08T06:55:09.048187+00:00, SHA256 e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7.
+  The approximate per-liter Difco table lists pancreatic digest of casein10g, Proteose
+  Peptone No.3 5g, yeast extract5g, beef heart infusion from500g 3g, corn starch1g,
+  sodium chloride5g and agar15g; the footnote allows adjustment/supplementation to
+  meet performance criteria. It directs suspension of44g powder in1L purified water.
+  Those are manufacturer preparation/formula statements, not dry-product mass fractions,
+  final yield, or an identified historical JCM lot. The same page separately gives
+  BBL42.5g (including13.5g agar, meat peptic digest and heart pancreatic digest) and
+  DifcoEH39g (including12g agar and different nutrient inputs). The older mirrored
+  manual has different heart wording and BBL proportions and is retained as separate
+  version context. The old search wrapper and failed official/mirror requests remain
+  historical leads, not primary manual evidence. Mixed existing Columbia_Blood_Agar_Base
+  owner continuity remains a separate coordinator obligation; this does not authorize
+  an independent new-owner installation.'
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+    adds water and sheep blood. Manufacturer manual distinguishes Difco44g/L base
+    from BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the
+    dry Difco input; it does not reuse MICRO536 whose definition transcribes the BBL
+    formulation. Typical constituent names are retained without historical lot or
+    dry-mass-ratio claims. Proposal only; inherited publication/role/source holds
+    remain.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:38:17.664834+00:00'
+  curator: codex_worker10_successor_v3_bio_research
+  action: CORRECTED
+  changes: Replace search-wrapper-as-primary evidential support with exact recovered
+    BD2009 manual PDF and page158 provenance under BIO-F07; retain original wrappers,
+    older edition and failed URLs historically. Components, source-qualified identity
+    and original history retained; no historical lot or release approval.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.255429+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+supplied_form:
+- name: Columbia blood agar base
+  supplier: BD-Difco
+  form: dehydrated culture-medium base
+  notes: JCM1270 explicitly weighs44g BD-Difco Columbia blood agar base, then separately
+    adds water and sheep blood. Manufacturer manual distinguishes Difco44g/L base
+    from BBL42.5g/L and EH39g/L variants. This source-qualified owner denotes the
+    dry Difco input; it does not reuse MICRO536 whose definition transcribes the BBL
+    formulation. Typical constituent names are retained without historical lot or
+    dry-mass-ratio claims. Recovered manufacturer-authored BD Difco & BBL Manual,
+    second edition 2009, printed p158 (PDF page170), hosted by NMSU. Original capture
+    2026-11-08T06:55:09.048187+00:00, SHA256 e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7.
+    The approximate per-liter Difco table lists pancreatic digest of casein10g, Proteose
+    Peptone No.3 5g, yeast extract5g, beef heart infusion from500g 3g, corn starch1g,
+    sodium chloride5g and agar15g; the footnote allows adjustment/supplementation
+    to meet performance criteria. It directs suspension of44g powder in1L purified
+    water. Those are manufacturer preparation/formula statements, not dry-product
+    mass fractions, final yield, or an identified historical JCM lot. The same page
+    separately gives BBL42.5g (including13.5g agar, meat peptic digest and heart pancreatic
+    digest) and DifcoEH39g (including12g agar and different nutrient inputs). The
+    older mirrored manual has different heart wording and BBL proportions and is retained
+    as separate version context. The old search wrapper and failed official/mirror
+    requests remain historical leads, not primary manual evidence.
+components:
+- component_name: Pancreatic digest of casein
+  reference_scope: UNMAPPED
+- component_name: Proteose Peptone No.3
+  reference_scope: UNMAPPED
+- component_name: Yeast extract
+  reference_scope: MIM_CATALOG
+  component_id: FOODON:03315426
+- component_name: Beef heart infusion
+  reference_scope: UNMAPPED
+- component_name: Corn starch
+  reference_scope: UNMAPPED
+- component_name: Sodium chloride
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:26710
+- component_name: Agar
+  reference_scope: MIM_CATALOG
+  component_id: CHEBI:2509
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://fsl.nmsu.edu/documents/difcobblmanual_2nded_lowres.pdf
+    source_record: BD Difco & BBL Manual, Second Edition (2009), Columbia Agars, printed
+      page158 / PDF page170
+    notes: Recovered manufacturer-authored BD Difco & BBL Manual, second edition 2009,
+      printed p158 (PDF page170), hosted by NMSU. Original capture 2026-11-08T06:55:09.048187+00:00,
+      SHA256 e5e836a75f13283d477467b20ffc0d332531e0f3a0effb5d64a7147a6985c0b7. The
+      approximate per-liter Difco table lists pancreatic digest of casein10g, Proteose
+      Peptone No.3 5g, yeast extract5g, beef heart infusion from500g 3g, corn starch1g,
+      sodium chloride5g and agar15g; the footnote allows adjustment/supplementation
+      to meet performance criteria. It directs suspension of44g powder in1L purified
+      water. Those are manufacturer preparation/formula statements, not dry-product
+      mass fractions, final yield, or an identified historical JCM lot. The same page
+      separately gives BBL42.5g (including13.5g agar, meat peptic digest and heart
+      pancreatic digest) and DifcoEH39g (including12g agar and different nutrient
+      inputs). The older mirrored manual has different heart wording and BBL proportions
+      and is retained as separate version context. The old search wrapper and failed
+      official/mirror requests remain historical leads, not primary manual evidence.
+  notes: 'Seven named constituents only, scoped to the nominal 2009 Difco manufacturer
+    formulation. PARTIAL is retained for the source-qualified JCM1270 input: exact
+    historical lot and any performance-related adjustments are unverified. No blood
+    or reconstitution water is a dry-base component.'

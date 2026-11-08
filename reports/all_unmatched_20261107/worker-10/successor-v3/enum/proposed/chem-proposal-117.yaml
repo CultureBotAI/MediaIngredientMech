@@ -1,0 +1,44 @@
+identifier: CHEBI:29069
+preferred_term: Phthalic acid
+ontology_mapping:
+  ontology_id: CHEBI:29069
+  ontology_label: phthalic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M385; https://www.ebi.ac.uk/chebi/backend/api/public/compound/29069/
+    notes: Both occurrences derive from JCM390 and explicitly name ortho-phthalic
+      acid in SolutionB, replacing sodium pyruvate. ChEBI29069 defines adjacent ortho
+      carboxyl groups, so the doubled hyphen is orthographic. The phthalate anion
+      and terephthalic acid are excluded; the proposed owner is the free ortho acid.
+synonyms:
+- synonym_text: o--phthalic acid
+  synonym_type: RAW_TEXT
+  source: CultureMech frozen case CM_NAME:e1c610460a1ca06fc91e51f6f394f2f6a2fff3b9f90396a55a93782a789c0521
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+curation_history:
+- timestamp: '2026-11-08T05:17:10.503056+00:00'
+  curator: all_unmatched_worker10_source_review
+  action: CREATED_FROM_SOURCE_REVIEW
+  changes: Both occurrences derive from JCM390 and explicitly name ortho-phthalic
+    acid in SolutionB, replacing sodium pyruvate. ChEBI29069 defines adjacent ortho
+    carboxyl groups, so the doubled hyphen is orthographic. The phthalate anion and
+    terephthalic acid are excluded; the proposed owner is the free ortho acid. Proposed
+    only; integration requires content-bound full-payload mapping review.
+  llm_assisted: true
+  llm_model: Codex
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:45:24.676147+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

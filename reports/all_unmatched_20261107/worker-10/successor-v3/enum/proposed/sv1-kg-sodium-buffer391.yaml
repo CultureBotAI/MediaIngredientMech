@@ -1,0 +1,76 @@
+identifier: kgmicrobe.ingredient:sodium_phosphate_buffer_10mm_ph7_1_jcm_391
+preferred_term: Sodium phosphate buffer 10mM pH7.1 (JCM391 vitamin stock)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:sodium_phosphate_buffer_10mm_ph7_1_jcm_391
+  ontology_label: Sodium phosphate buffer 10mM pH7.1 (JCM391 vitamin stock)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403
+    notes: JCM391 explicitly crossreferences the vitamin solution in JCM403. Direct
+      JCM403 lists100mL sodium phosphate buffer10mM,pH7.1 in that solution; its separate
+      thiamine solution uses25mM,pH3.4. MediaDiveJ391 expands the same crossreference,
+      so it is derivative corroboration. This source-qualified stock preserves printed
+      concentration/pH without inferring salt ratios, hydrate forms, titrant, solvent
+      chemical identity or hidden water amounts.
+synonyms: []
+notes: JCM391 explicitly crossreferences the vitamin solution in JCM403. Direct JCM403
+  lists100mL sodium phosphate buffer10mM,pH7.1 in that solution; its separate thiamine
+  solution uses25mM,pH3.4. MediaDiveJ391 expands the same crossreference, so it is
+  derivative corroboration. This source-qualified stock preserves printed concentration/pH
+  without inferring salt ratios, hydrate forms, titrant, solvent chemical identity
+  or hidden water amounts.
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-11-08T06:00:00.110970+00:00'
+  curator: worker10_successor_kg_source_review
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: JCM391 explicitly crossreferences the vitamin solution in JCM403. Direct
+    JCM403 lists100mL sodium phosphate buffer10mM,pH7.1 in that solution; its separate
+    thiamine solution uses25mM,pH3.4. MediaDiveJ391 expands the same crossreference,
+    so it is derivative corroboration. This source-qualified stock preserves printed
+    concentration/pH without inferring salt ratios, hydrate forms, titrant, solvent
+    chemical identity or hidden water amounts. Proposal only; inherited publication/role/source
+    holds remain.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.202559+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: BUFFER_SOLUTION
+supplied_form:
+- name: Sodium phosphate buffer 10mM pH7.1 (JCM391 vitamin stock)
+  form: prepared buffer
+  notes: JCM391 explicitly crossreferences the vitamin solution in JCM403. Direct
+    JCM403 lists100mL sodium phosphate buffer10mM,pH7.1 in that solution; its separate
+    thiamine solution uses25mM,pH3.4. MediaDiveJ391 expands the same crossreference,
+    so it is derivative corroboration. This source-qualified stock preserves printed
+    concentration/pH without inferring salt ratios, hydrate forms, titrant, solvent
+    chemical identity or hidden water amounts.
+components:
+- component_name: Sodium phosphate (salt forms unspecified)
+  reference_scope: UNMAPPED
+  concentration_value: '0.01'
+  concentration_unit: M
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=403
+    notes: 'JCM403 vitamin table, explicitly referenced by JCM391: nominal10mM sodium
+      phosphate. Exact salt species/ratio and remaining constituents not stated.'

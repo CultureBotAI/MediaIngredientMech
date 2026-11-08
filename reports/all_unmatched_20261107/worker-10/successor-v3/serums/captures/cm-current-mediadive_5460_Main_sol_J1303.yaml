@@ -1,0 +1,220 @@
+id: CultureMech:014364
+preferred_term: Main sol. J1303
+term:
+  id: mediadive.solution:5460
+  label: Main sol. J1303
+composition:
+- preferred_term: PPLO broth
+  concentration:
+    value: '10.5'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:953
+    label: PPLO broth
+- preferred_term: Phenol red
+  concentration:
+    value: '1000.0'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:119
+    label: Phenol red
+  chebi_term:
+    id: CHEBI:31991
+    label: phenol red
+    confidence: 1.0
+    match_type: exact_match
+- preferred_term: Hipolypepton
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:2060
+    label: Hipolypepton
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/5460
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 3,
+                      "compound": "Hipolypepton",
+                      "compound_id": 2060,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 1,
+                      "unit": "g",
+                      "g_l": 5,
+                      "mmol_l": null,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[2].concentration (Hipolypepton)
+      in MediaDive solution 5460; locator=$.data.recipe[2] (compound_id=2060). Provider
+      explicitly reports g_l=5. Arithmetic check: 1 g * 1 g/g / (200 ml / 1000 ml
+      per L) = 5 g/L, consistent with the reported value at its precision. Evidence
+      supports the provider-declared concentration within this solution, not a concentration
+      in a receiving medium or an independently measured final volume. Water addition
+      alone is not used to infer a final volume. Additional exact excerpt at $.data.volume:
+      "volume": 200. Retrieved 2026-10-07T09:55:11.384150+00:00; response SHA256=a17997165d25184deabf89ff9bf474d5d1e51c172fdbb72a360bbcd7be819ffa.'
+- preferred_term: Distilled water
+  concentration:
+    value: '425.0'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+- preferred_term: Bovine calf serum
+  concentration:
+    value: '25.0'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:2061
+    label: Bovine calf serum
+- preferred_term: Urea
+  concentration:
+    value: '50.0'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:339
+    label: Urea
+  chebi_term:
+    id: CHEBI:16199
+    label: urea
+    confidence: 0.9
+    match_type: corpus_consensus
+- preferred_term: Urea
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:339
+    label: Urea
+  chebi_term:
+    id: CHEBI:16199
+    label: urea
+    confidence: 0.9
+    match_type: corpus_consensus
+- preferred_term: Yeast extract
+  concentration:
+    value: '20'
+    unit: G_PER_L
+  term:
+    id: mediadive.compound:16
+    label: Yeast extract
+  evidence:
+  - reference: https://mediadive.dsmz.de/rest/solution/5460
+    supports: SUPPORT
+    snippet: |-
+      {
+                      "recipe_order": 8,
+                      "compound": "Yeast extract",
+                      "compound_id": 16,
+                      "solution": null,
+                      "solution_id": null,
+                      "condition": null,
+                      "attribute": null,
+                      "amount": 4,
+                      "unit": "g",
+                      "g_l": 20,
+                      "mmol_l": null,
+                      "optional": 0
+                  }
+    explanation: 'Concentration evidence for composition[7].concentration (Yeast extract)
+      in MediaDive solution 5460; locator=$.data.recipe[7] (compound_id=16). Provider
+      explicitly reports g_l=20. Arithmetic check: 4 g * 1 g/g / (200 ml / 1000 ml
+      per L) = 2E+1 g/L, consistent with the reported value at its precision. Evidence
+      supports the provider-declared concentration within this solution, not a concentration
+      in a receiving medium or an independently measured final volume. Water addition
+      alone is not used to infer a final volume. Additional exact excerpt at $.data.volume:
+      "volume": 200. Retrieved 2026-10-07T09:55:11.384150+00:00; response SHA256=a17997165d25184deabf89ff9bf474d5d1e51c172fdbb72a360bbcd7be819ffa.'
+- preferred_term: Distilled water
+  concentration:
+    value: '500.0'
+    unit: PERCENT_V_V
+  term:
+    id: mediadive.compound:4
+    label: Distilled water
+  chebi_term:
+    id: CHEBI:15377
+    label: water
+    confidence: 0.7
+    match_type: corpus_consensus
+preparation_notes: "Mix components, adjust pH to 6.0-6.2. After autoclaving and then\
+  \ cooling to 50-55C, aseptically add the following solutions (filter-sterilized).\
+  \ \n<i>1% Phenol red solution:</i>\nDissolve 1.0 g phenol red first in 10-20 ml\
+  \ of 0.1 N NaOH. Then adjust volume to 100 ml. After filter-sterilizing, store at\
+  \ 4C.\n<i>1% Urea - 4% yeast extract solution:</i> \nMix components, sterilize by\
+  \ filtration through a 0.22 ï¿½m filter and store at 4C.\nDispense the medium into\
+  \ sterilized plastic tubes (e.g., 5 ml medium in 15 ml of plastic tubes) and add\
+  \ 100-200 ï¿½l of culture solution. Incubate the cultures at 37C for 1-3 days. When\
+  \ the color of the medium turns from yellow to orange or red, subculture into the\
+  \ new medium. After color change, the strain can be stored at 4C for 1-2 weeks.\n\
+  \nOriginal volume: 200 mL"
+curation_history:
+- timestamp: '2026-03-13T06:20:37.326741Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:014364'
+- curator: schema-defaulter-v1.0
+  action: Applied schema defaults and normalizations
+  notes: Added placeholder ingredients for missing composition
+  timestamp: '2026-03-14T00:00:00+00:00'
+- timestamp: '2026-03-14T21:09:43.039662'
+  curator: quality-tagger-v1.0
+  action: Added data quality flag
+  notes: Marked as incomplete_composition due to placeholder ingredients
+- timestamp: '2026-04-04T17:50:19.119779'
+  curator: categorize_unknown_media
+  action: CATEGORIZED
+  changes: 'Set category to ''bacterial'' (was: MISSING)'
+  notes: 'Automated categorization (confidence: 0.30). No clear match, defaulting
+    to bacterial'
+- timestamp: '2026-05-16T09:04:05.258719+00:00'
+  curator: migrate_legacy_fields.py
+  action: MIGRATED_LEGACY_FIELDS
+  notes: curation_history.date->timestamp=1
+- timestamp: '2026-06-10T06:38:38.439545+00:00'
+  curator: kg-fallback-consensus-v1.0
+  action: Replaced low-confidence kg_fallback chebi_term with corpus consensus
+  notes: Re-grounded 4 chebi_term(s) to the unanimous reliable CHEBI for the ingredient
+    label seen elsewhere in the corpus (G25 Phase 1, zero external lookups).
+- timestamp: '2026-06-10T06:49:22.435873+00:00'
+  curator: kg-fallback-oak-ols-v1.0
+  action: Resolved/de-grounded low-confidence chebi_term via OAK+OLS (G25 Phase 2)
+  notes: '1 chebi_term(s): OAK sqlite:obo:chebi + OLS4 exact agreement, corpus-majority
+    disambiguation, or mixture de-ground.'
+- timestamp: '2026-06-10T06:56:26.132832+00:00'
+  curator: kg-fallback-llm-curation-v1.0
+  action: LLM-curated low-confidence chebi_term (G25 Phase 3)
+  notes: '2 chebi_term(s): curator-named compound resolved via OAK+OLS, or de-grounded
+    as a mixture, or confirmed correct.'
+- timestamp: '2026-10-07T09:59:54.456952+00:00'
+  curator: codex
+  action: CURATED_SOLUTION_CONCENTRATION_SOURCE_EVIDENCE
+  notes: Source review decision captured at plan timestamp. Exact source IDs, labels,
+    snippets, and arithmetic checked. Unsupported rows retained; no receiving-medium
+    concentration inferred.
+  source: https://mediadive.dsmz.de/rest/solution/5460
+  changes: 'composition[2].concentration: {"unit": "G_PER_L", "value": "5"} -> {"unit":
+    "G_PER_L", "value": "5"} (evidence_only); composition[7].concentration: {"unit":
+    "G_PER_L", "value": "20"} -> {"unit": "G_PER_L", "value": "20"} (evidence_only)'
+ingredients:
+- preferred_term: See source for composition
+  concentration:
+    value: variable
+    unit: VARIABLE
+data_quality_flags:
+- incomplete_composition
+category: bacterial
+references:
+- reference: https://mediadive.dsmz.de/rest/solution/5460
+  title: 'MediaDive solution 5460: Main sol. J1303'
+  notes: source_type=dataset; discovery_mode=existing_record_reference; accessed_on=2026-10-07;
+    source_organization=DSMZ; locator=$.data; response_sha256=a17997165d25184deabf89ff9bf474d5d1e51c172fdbb72a360bbcd7be819ffa;
+    individual authors and publication year not supplied. Provider-declared solution
+    amounts, not receiving-medium concentrations.

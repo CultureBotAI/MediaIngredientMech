@@ -1,0 +1,3923 @@
+{
+  "audit_execution_started_at": "2026-11-08T07:47:08.488078+00:00",
+  "audit_execution_finished_at": "2026-11-08T07:47:09.404872+00:00",
+  "script_sha256": "62ad7f3f485e12454b60c55e8a2c859f530fdfd5b236c6af637fd6021ec35623",
+  "review_check_script_sha256": "f4403921103741acac96f2251be7b697891c93d337fd9927ce1aba70c0c25596",
+  "input_receipt": [
+    {
+      "original_path": ".temp/all-unmatched-worker-10/successor-v3/enum_successor.py",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/00-enum_successor.py",
+      "sha256": "62ad7f3f485e12454b60c55e8a2c859f530fdfd5b236c6af637fd6021ec35623"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/negative-controls-preflight-v2.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/01-negative-controls-preflight-v2.json",
+      "sha256": "ba96c867636c5ed9fb5895769b1467fd9f0286cbde97b645320579c54cb88344"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/w10-current-rebind-v1.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/02-w10-current-rebind-v1.json",
+      "sha256": "264aaf9059d8dca82964d83730ebd062bd4491fefcf85d342500b8ab16cc2f62"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/science-v1/proposals.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/03-proposals.json",
+      "sha256": "86a103a78639e9ef86582b1b642dc69d188b00f49e05e13b8e9db67222bc28ae"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/science-v1/retirement-bridge.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/04-retirement-bridge.json",
+      "sha256": "cd3270dd6680270c80ddef8c8c8204f30d342f47d1df079e0740524cec3c8eca"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/serums/mapping-claim-correspondence.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/05-mapping-claim-correspondence.json",
+      "sha256": "421174824bac1dc108d662bf2f20126caec471c3d95c053a9c32087333eb20cd"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v3/hcl-manual/mapping-claim-correspondence.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/06-mapping-claim-correspondence.json",
+      "sha256": "184e6fe59c0adac570215ec6f841e97e945ee2e8c408d7f8c0f64b591190f81a"
+    },
+    {
+      "original_path": "reports/all_unmatched_20261107/worker-10/successor-v2/proposals.json",
+      "snapshot_path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v2/07-proposals.json",
+      "sha256": "aad2c9556d6133e7176d79cfe159ce43c9ed7a41287d16e8b31ca9256d049d49"
+    }
+  ],
+  "scope": "Read-only source/input inspection plus in-memory function execution only. main() and positive writer never called.",
+  "supplied_refusal_controls": [
+    {
+      "control": "stale-payload",
+      "refused": true,
+      "reason": "stale payload"
+    },
+    {
+      "control": "historical-human-object",
+      "refused": true,
+      "reason": "historical object"
+    },
+    {
+      "control": "component-enum",
+      "refused": true,
+      "reason": "not MappingEvidence"
+    },
+    {
+      "control": "mismatched-complete-value",
+      "refused": true,
+      "reason": "claim hash mismatch"
+    },
+    {
+      "control": "duplicate-claim-ambiguity",
+      "refused": true,
+      "reason": "absent or ambiguous complete claim"
+    },
+    {
+      "control": "stale-authentic-owner",
+      "refused": true,
+      "reason": "stale authentic owner preimage"
+    },
+    {
+      "control": "unrelated-llm-claim-at-same-index",
+      "refused": true,
+      "reason": "missing or ambiguous explicit complete-claim correspondence"
+    },
+    {
+      "control": "outside-path",
+      "refused": true,
+      "reason": "outside report-only destination"
+    },
+    {
+      "control": "historical-destination",
+      "refused": true,
+      "reason": "outside report-only destination"
+    }
+  ],
+  "additional_refusal_controls": [
+    {
+      "control": "wrong-original-proposal",
+      "refused": true,
+      "reason": "missing or ambiguous explicit complete-claim correspondence"
+    },
+    {
+      "control": "wrong-successor-proposal",
+      "refused": true,
+      "reason": "missing or ambiguous explicit complete-claim correspondence"
+    },
+    {
+      "control": "ambiguous-correspondence",
+      "refused": true,
+      "reason": "missing or ambiguous explicit complete-claim correspondence"
+    },
+    {
+      "control": "different-full-successor",
+      "refused": true,
+      "reason": "explicit successor claim differs"
+    }
+  ],
+  "explicit_shifted_index_control_passed": true,
+  "source_full_payload_correspondence_checks": [
+    {
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "new_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "before_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "13d12bb1aa3f5079fe4c49fd539e42d99eda2d9f121c6d57308cb76f3c1ce934"
+      },
+      "after_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "exact_binding": true
+    },
+    {
+      "old_proposal_id": "sv1-buffers-hcl_nominal35percent_togo_m3216",
+      "new_proposal_id": "sv3-hm-hcl_nominal35percent_togo_m3216",
+      "before_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "e7feec90fa5d94bc8a3003be08b94de71b9119a528787eb68784b3c5413ab55c"
+      },
+      "after_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13"
+      },
+      "exact_binding": true
+    },
+    {
+      "old_proposal_id": "sv1-buffers-hcl_nominal32percent_jcm770",
+      "new_proposal_id": "sv3-hm-hcl_nominal32percent_jcm770",
+      "before_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hcl_nominal32percent_jcm770.yaml",
+        "sha256": "4ca8faefe79f29c649c1e1b82468314bd454abd0abd41d732fe09b7b54ce17eb"
+      },
+      "after_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal32percent_jcm770.yaml",
+        "sha256": "957f0e05a7316fa6027687b871ca20b124dbbb8f19ee5a29ac0782355c6434f9"
+      },
+      "exact_binding": true
+    },
+    {
+      "old_proposal_id": "sv1-buffers-hcl_nominal25percent_jcm431_899",
+      "new_proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "before_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "74e1276709349d844cc7c883b3d3554f8e8fce876d8798ef930f3e955c40b02c"
+      },
+      "after_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "400cc3d6dbd24f5bd132ad6cc21dec350ae0404c1e6187e8315563544f2aecff"
+      },
+      "exact_binding": true
+    },
+    {
+      "old_proposal_id": "sv1-kg-difco-columbia1270",
+      "new_proposal_id": "sv3-hm-difco-columbia1270",
+      "before_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/difco-columbia1270.yaml",
+        "sha256": "07b3aa3689dbee44e18c5c4d416ebee0ba5920a5eb044cd7901cda9d7f8ab0e7"
+      },
+      "after_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/difco-columbia1270.yaml",
+        "sha256": "191dd72b5abeea912b3127158358f1524ec298002244bcf9a268a1acfd352af2"
+      },
+      "exact_binding": true
+    }
+  ],
+  "counts": {
+    "original_proposals": 128,
+    "selected_proposals": 127,
+    "original_allowlisted_claims": 123,
+    "claim_dispositions": {
+      "retyped_exact_surviving_agent_claim": 113,
+      "superseded_by_source_reassessed_agent_claim": 9,
+      "historical_candidate_retired_from_active_selection": 1
+    },
+    "payloads_with_in_memory_retypes": 92,
+    "in_memory_retyped_claims": 113,
+    "historical_exclusions": 2
+  },
+  "rows": [
+    {
+      "audit_row_id": "provenance-flag-575",
+      "old_proposal_id": "chem-proposal-46",
+      "selected_proposal_id": "chem-proposal-46",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "acf910a2a4fb07ff26c2e2cad626b99965fd34940261842edb213882b5e4db3d",
+      "selected_full_claim_sha256": "168164a70b825a1866ac577105905ad75feb6dff07b4f2230cef1c9c0949c307",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Deferoxamine_mesylate.yaml",
+        "sha256": "d1561d9b34a236df67ce6cc3392a025e79514ee17565ad0928b45f6376b968c5"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-576",
+      "old_proposal_id": "chem-proposal-88",
+      "selected_proposal_id": "chem-proposal-88",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "596ba34a418e8e5bb1b305b107cd933f5e7e818485f87da59131a5bba6a3482b",
+      "selected_full_claim_sha256": "caef7ced544fb2e466e5b7083e2cd42ab7f30bd54191c62ed033eb7e5c76712c",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Selenium_dioxide.yaml",
+        "sha256": "b6e9492e6e12e21600ec2b4841209ecc5d6df8dce67baa23b6ff43805d49909d"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-577",
+      "old_proposal_id": "chem-proposal-99",
+      "selected_proposal_id": "chem-proposal-99",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "68d6ac4543092ce7960f963f987eb395310998d08c50251b5006135b3040cd93",
+      "selected_full_claim_sha256": "c2610b4eefe4360c8a983cf1dbaca1cd00f32124c1004299ddd33f470ce98376",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/17beta-Estradiol.yaml",
+        "sha256": "2362f7198a15b561a9060059d368cabe94b3e26102e1e98bc4542ac4f3defe7d"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-578",
+      "old_proposal_id": "chem-proposal-117",
+      "selected_proposal_id": "chem-proposal-117",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "084f35e552b2f001d451a1c4558fe69d0de5722520ca7cb8808e602b6b07594c",
+      "selected_full_claim_sha256": "137d4c406a8ff4882ba84ef430301c087040b5e23b95f9aee6727f9f7bba92ce",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Phthalic_acid.yaml",
+        "sha256": "e5c32109ee06203393fdb28fb19004fb673bcf7c23f6908ff486a447b9e1d764"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-579",
+      "old_proposal_id": "buffers-phosphate-m3225",
+      "selected_proposal_id": "buffers-phosphate-m3225",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "8520924adf4046ddffa48d6de185e57eb0c5d9187d214bb3cf3feebcc46a439e",
+      "selected_full_claim_sha256": "5cfd9512eef94cd3e72d3b06d6d6d88d3c45183a34c644c01fde72a0e3945644",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_TOGO_M3225.yaml",
+        "sha256": "79f688c60912f8c413e037028fc68a3faa0a7f06be5f657ceda7e1f21ccaddc5"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-580",
+      "old_proposal_id": "buffers-phosphate-jcm1142",
+      "selected_proposal_id": "buffers-phosphate-jcm1142",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "1249be95bbe1233ddc827472b930aee67bb2d7787b20e8159c8c1fabd7520c0f",
+      "selected_full_claim_sha256": "58bbe773fd421d71e3a54d94e632bea4793769637132652f68cc23a11e7317fb",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_JCM_1142_1143.yaml",
+        "sha256": "e12f0e155792415828c729e2796949b86bbd2b04c5d1cadf2d3abdb55b13ae9a"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-581",
+      "old_proposal_id": "buffers-kp-nbrc857",
+      "selected_proposal_id": "buffers-kp-nbrc857",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "f6be51cfc44df7ff1672250e695302b9b60852ee0b9b363f4c660635f7dfddec",
+      "selected_full_claim_sha256": "5725b20106e19b7372f3a892022ed5381c86c306704c733d5a321454e7eca9fe",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/KP_Buffer_NBRC_857_936.yaml",
+        "sha256": "7cf2506752f7e05fe2a1302755c4f748cdcb6c8be43311d3510912cc61728566"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-582",
+      "old_proposal_id": "buffers-phosphate-jcm822",
+      "selected_proposal_id": "buffers-phosphate-jcm822",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "321a2e9bab00a8392cdddf963a5769936b3396fedc1c2337c3d7da683635c717",
+      "selected_full_claim_sha256": "33e763af10ca4f14307f2b19b1281a6424f57e1a9e60b2b29ebea03f5176a5e8",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_JCM_822.yaml",
+        "sha256": "c2f559cedecb1270bce19cc07dac43ed19ed2f8efb53efc2efeb903204c73f8c"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-583",
+      "old_proposal_id": "buffers-riboflavin-jcm462",
+      "selected_proposal_id": "buffers-riboflavin-jcm462",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "5d70ce5840c203587d5e4e4355a99b0a4cd741ba867fd73f1fddaa26a821f1cd",
+      "selected_full_claim_sha256": "a68b0879d7dd4b27c13c1f5992fdee0422fd8f6d14a7027dee145d889502060a",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Riboflavin_Solution_See_Medium_No_462.yaml",
+        "sha256": "ffed69e850b8974fcdd0996cad28759c706fcc0d0aa309efcd8a6c6db3cc442a"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-584",
+      "old_proposal_id": "buffers-antifoam-wako",
+      "selected_proposal_id": "buffers-antifoam-wako",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "f71adb33c755ae670c6441a1fb832b38f2d579704c7b80f46f985295266e3e9a",
+      "selected_full_claim_sha256": "ecb22fdae16a5258cfcc251c58a4de6ffd689417813ccca9988286b7d64ed37a",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Antifoam_SI_Wako.yaml",
+        "sha256": "0a5f0b3b3c581aa152adbc41d6b76da92348f245981c7faddf6fa2c0b48c61e8"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-585",
+      "old_proposal_id": "bio-proposal-Mannan_From_Saccharomyces_Cerevisiae",
+      "selected_proposal_id": "bio-proposal-Mannan_From_Saccharomyces_Cerevisiae",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 2,
+      "original_full_claim_sha256": "705a52f2c5ae807b099fd2fa722f74592bf93783467eaff83ee87c8d5847627b",
+      "selected_full_claim_sha256": "7be2a9f95e31f99e71ad5c3482805f798cb2ec0eefd6e1bbf36639ee0aa0d2f2",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "bio/owners/Mannan_From_Saccharomyces_Cerevisiae.after.yaml",
+        "sha256": "3b54626f2e1a3f32a1b0ebc96e4f0261ec1a859db56524d28ef44fcaf71303e8"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-586",
+      "old_proposal_id": "kg-glyoxylate-label",
+      "selected_proposal_id": "kg-glyoxylate-label",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "895b3fde2dca8dafd7ac6a944e66a77bb7913f4319da090fc202f121ddcd9378",
+      "selected_full_claim_sha256": "6d6fb9ac79d5fca08fb9813d94be7e8f7999cea475c94e227bca86ce675d1db6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "kg/proposed/glyoxylate-label.yaml",
+        "sha256": "33eff8fa0f121579f1c42bc3cef6ac49abae0ac5415b647dca299b10cd811349"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-587",
+      "old_proposal_id": "kg-levorin-concept-scope",
+      "selected_proposal_id": "kg-levorin-concept-scope",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 2,
+      "original_full_claim_sha256": "7a30736b32054af39f247a2a23a5b00897ad42592b3a36644690c2d611beaaad",
+      "selected_full_claim_sha256": "efc8d483808a2173298689392eb707841ea0b82ab41b41ac8504c8f395b2595c",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "kg/proposed/levorin-concept-scope.yaml",
+        "sha256": "7490a66ecda86d31016fc8096b10a5b20f5da32803e3bdc19af55bc31da27079"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-588",
+      "old_proposal_id": "kg-ristocetin-b-parent-chemistry",
+      "selected_proposal_id": "kg-ristocetin-b-parent-chemistry",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "ab60ccd7dbbd3dfeab9598de183ba17c25358ef520b49d5ba3af0ba4324f662e",
+      "selected_full_claim_sha256": "61fbfe2b181aaae30f172a210478448e7b66a05923e7575301740bb7f4d0c8ad",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "kg/proposed/ristocetin-b-parent-chemistry.yaml",
+        "sha256": "31f6897af214e673e8a859c1c2c14bd60e119a3a8c4373ae2266a3197ab4c3de"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-589",
+      "old_proposal_id": "kg-halomicin-complex",
+      "selected_proposal_id": "kg-halomicin-complex",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "0753b7d96039d9e08589cd212244b9cccaf358ef1c4f1be62aafca82913c63ef",
+      "selected_full_claim_sha256": "e0a2dbf93af1a48bb1806f7ef5f40329376013cbeb8d0cac46bf2b78f6df35ae",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "kg/proposed/halomicin-complex.yaml",
+        "sha256": "61cc2355010ce9a7bea6d2e5534cbaad49ab443147a217346d9f37c3df4db09c"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-590",
+      "old_proposal_id": "sv1-bio-sterile_horse_serum_togo_m154",
+      "selected_proposal_id": "sv1-bio-sterile_horse_serum_togo_m154",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "2359d397c20ff99dff7a7a4e30c50f3d69517a46b954d3304aac06fead98aefe",
+      "selected_full_claim_sha256": "9c9ffb805ffc8c906b6f1b51dd30e6038ac0e4fddf0062957d221d0cc1626814",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Sterile_Horse_Serum_TOGO_M154.after.yaml",
+        "sha256": "b38676f9a042815b19a792f1061d2660bb524e68d4853219cb969edc192b428b"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-591",
+      "old_proposal_id": "sv1-bio-clarified_tomato_juice_ytp2",
+      "selected_proposal_id": "sv1-bio-clarified_tomato_juice_ytp2",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "0a6190fb84d15de9be3ce7b3f6b4c3878bdd68452a8a3418c80f809136de67e9",
+      "selected_full_claim_sha256": "d12f3fa29d2c6132fb7bb110b01e735fb3015739075e73c4491199788e4f4e5a",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Clarified_Tomato_Juice_YTP2.after.yaml",
+        "sha256": "d0df39685fb79acb5dc9221e709b84ae75110d0b32c656294305e564b0e6a4b9"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-592",
+      "old_proposal_id": "sv1-bio-human_serum_56c_30min_dsmz1895",
+      "selected_proposal_id": "sv1-bio-human_serum_56c_30min_dsmz1895",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "1849d4ec0a1a7115bd2709b16f5662b5ec2bd15a7f20631e265eb445d268a0b6",
+      "selected_full_claim_sha256": "b4c4cbad2d00f498c9073a99c51d4b5611fcb400f441254fe385c40fdd379320",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Human_Serum_56C_30min_DSMZ1895.after.yaml",
+        "sha256": "547ffcee8740737dd2ae27e83d62161f0d70bd7cc8f7f77b280fa89ec8dfe402"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-593",
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_togo_m2287",
+      "selected_proposal_id": "sv1-bio-heat_inactivated_fbs_togo_m2287",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "da4b3c64c14bd23c11a972bc4b77060650001a1aec07c51837322f46bc7db69d",
+      "selected_full_claim_sha256": "1ddfed9288b54324e3fd908178669478a1844821cab0f20ed07f7927bd4b43d0",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_TOGO_M2287.after.yaml",
+        "sha256": "1976ed1c22935445c7d824a503d3a92c7979d61f6475678502c7931ef7ecfc62"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-594",
+      "old_proposal_id": "sv1-bio-gamma_irradiated_fetal_calf_serum_10109_155",
+      "selected_proposal_id": "sv3-serums-gamma_irradiated_fetal_calf_serum_10109_155",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "e578d890d282bc588a9b5f8b208958186db8bd610c414580488e9c5d4b36877b",
+      "selected_full_claim_sha256": "eae860272d055bef4d60547a6c67ff91386fe3467daf47c7582ad56149ff9ee6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Gamma_Irradiated_Fetal_Calf_Serum_10109_155.yaml",
+        "sha256": "72a6162cb0923f0643a161d4d01605ca60427946bd453b5f8dfc9fba73e683ec"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-595",
+      "old_proposal_id": "sv1-bio-bacto_blood_agar_base_difco_nbrc254",
+      "selected_proposal_id": "sv1-bio-bacto_blood_agar_base_difco_nbrc254",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "c3947dda2c7f510eef0f43860cca1c036910f5a84de553365692dfc49abe58bf",
+      "selected_full_claim_sha256": "deb4b8f8f95f72d3e88eb4663c972c8b7fa2daf70225d09079f0c732070e008b",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Bacto_Blood_Agar_Base_Difco_NBRC254.after.yaml",
+        "sha256": "bbb8ec72d5705563a90f0d5659832bf3d489b5253e30e3935b8e0acd911e51b9"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-596",
+      "old_proposal_id": "sv1-bio-blood_agar_base_difco0045",
+      "selected_proposal_id": "sv1-bio-blood_agar_base_difco0045",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "8e36dcdcba3a5aefc57c43bea608666cdcfc20db83dbc8c9d4845cf05de9d2ad",
+      "selected_full_claim_sha256": "22e30c7e12bb568ca0f83ab6cc0ae17bb5ad1480c9663c86872907a4f6b7662a",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Blood_Agar_Base_Difco0045.after.yaml",
+        "sha256": "d8450c706dd4445dc7f0e92fa44441df302655e0d6518c2f7bfe0ca805757e37"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-597",
+      "old_proposal_id": "sv1-bio-rabbit_serum_56c_60min_jcm144",
+      "selected_proposal_id": "sv1-bio-rabbit_serum_56c_60min_jcm144",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "1d22c13c0c18f9ec40dc6edd79758e599a3ea3725e7c3298484b7e50bbb982ce",
+      "selected_full_claim_sha256": "0b465f62b3f925f30e1ff7698c0b7d65015ed8c31350fe56ab92df49e8a44a12",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Rabbit_Serum_56C_60min_JCM144.after.yaml",
+        "sha256": "370cc34db71b703a94962227891fbb479f28190b15c6c2c21e8b17ec1f87dbd3"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-598",
+      "old_proposal_id": "sv1-bio-water_lysed_sheep_blood",
+      "selected_proposal_id": "sv1-bio-water_lysed_sheep_blood",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "120eece0be3c26a2ead63564dd4b628fcd8af49a23819853261fdabcbab0cd63",
+      "selected_full_claim_sha256": "b5cb3de431c9250205b0a063f3af426fff2cb809fb6a892ea4a3a82a9aa78a68",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Water_Lysed_Sheep_Blood.after.yaml",
+        "sha256": "9c966befa657f56593abb1a2bea0a5ed04b8baadbd3bebf52735cc7aa9a0d723"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-599",
+      "old_proposal_id": "sv1-bio-active_filtered_horse_serum_nbrc246",
+      "selected_proposal_id": "sv1-bio-active_filtered_horse_serum_nbrc246",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "548a87a751d64b3b50ed79710ff1a165156b35de7d6b484668ac46fad8cfa7f1",
+      "selected_full_claim_sha256": "c315fbae2e412ab0368286a425a440930a190ad2d262fc9fdecaf5b18e983387",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Active_Filtered_Horse_Serum_NBRC246.after.yaml",
+        "sha256": "6e9cdd49a86f2669d3d5d090d40e3f94e06c7c05bfabf451606d65b6738c55cf"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-600",
+      "old_proposal_id": "sv1-bio-laked_horse_blood_hema_m2932",
+      "selected_proposal_id": "sv1-bio-laked_horse_blood_hema_m2932",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "257a57c4c97aa43b16c4101a4b4d40b17b9a540f3bf8ac052ab96cd4feab17bc",
+      "selected_full_claim_sha256": "b60ec9df4c5ab1a8160560f0939c93b7afe58e98e9c6291f0c467d2872567ac9",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Laked_Horse_Blood_Hema_M2932.after.yaml",
+        "sha256": "5df0b20005b2be2338eb46184084cd4434bfb500d2896ad7aaa651b7d60c5957"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-601",
+      "old_proposal_id": "sv1-bio-inactivated_calf_serum_dsmz1245",
+      "selected_proposal_id": "sv1-bio-inactivated_calf_serum_dsmz1245",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "a3228a4089cd81fd6152d6d8a8201b98258caec2b00caaf5b88d8b1a0b8389cf",
+      "selected_full_claim_sha256": "16f4dc0f5761fae884aef31992d4c052eb5371183f35bef859ec904e72a11c8a",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Inactivated_Calf_Serum_DSMZ1245.after.yaml",
+        "sha256": "4a35a0921de3f004bd3d269c23145a7649403bc2b26b870f2d643e37d51017f6"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-602",
+      "old_proposal_id": "sv1-bio-inactivated_rabbit_serum_gibco03706120m",
+      "selected_proposal_id": "sv1-bio-inactivated_rabbit_serum_gibco03706120m",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "23982cff26d3cbc5e3a119fd6b9086eb2e5c3a4fe7bd9eb9b679adcae9d2d5b8",
+      "selected_full_claim_sha256": "cf87336d74f76f44fbd4e05fbefb6ec2578fae7a449014a7fb7b5fb05a182bad",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Inactivated_Rabbit_Serum_Gibco03706120M.after.yaml",
+        "sha256": "940870c217f83e2f4e2558231959372aad804685b8f0ec959a039cbe398213eb"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-603",
+      "old_proposal_id": "sv1-bio-tryptose_blood_agar_base_difco",
+      "selected_proposal_id": "sv1-bio-tryptose_blood_agar_base_difco",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "1404c60a1ac18d5f2e30a06d3433a364fd435ae06c89e9920469050e9116e5ee",
+      "selected_full_claim_sha256": "3b2856cf03ee07ff1df16b373165fee62957abee78d2b42ed98d5e50eaf5ca46",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Tryptose_Blood_Agar_Base_Difco.after.yaml",
+        "sha256": "6e23aa75eba18ba90c402ad8d19a87b0296e0b1b9e9c5463d89aa4f6d8504c24"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-604",
+      "old_proposal_id": "sv1-bio-fbs_flow_56c_30min_m2888",
+      "selected_proposal_id": "sv1-bio-fbs_flow_56c_30min_m2888",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "fa5a1fc7dd3d9cbac18c5f37d1d0055a0ce757c64992a197cc42aeb447fdf95e",
+      "selected_full_claim_sha256": "6a8fd88a236e51cc37a904fb177f89d5d0042e8313a3a90bb43f637a7d91f4f9",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/FBS_Flow_56C_30min_M2888.after.yaml",
+        "sha256": "a166ec4fcf22a591e44a676ba7b9acadcc3cb81787fdbf58472489ba87df306e"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-605",
+      "old_proposal_id": "sv1-bio-filtered_rabbit_serum_56c_30min_jcm946",
+      "selected_proposal_id": "sv3-serums-filtered_rabbit_serum_56c_30min_jcm946",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "ff2fc207ff9e225f6f65655fa0592898cfde368310356df493fb777843a6ab81",
+      "selected_full_claim_sha256": "5b391ab49f27e6ff59628bcbf139b23c2e692f0832e10c4aaec864b067891b99",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Filtered_Rabbit_Serum_56C_30min_JCM946.yaml",
+        "sha256": "1cfc9d45c772ddc462a36e983909ec470c57505dcd55a64bf7813b94ba74487b"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-606",
+      "old_proposal_id": "sv1-bio-defibrinated_blood_species_unspecified",
+      "selected_proposal_id": "sv1-bio-defibrinated_blood_species_unspecified",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "5064812aad231c1a657f30dd9c906bbb6b88a344ab39beece52c81e982577345",
+      "selected_full_claim_sha256": "c9530668bd92b6d05307b46c2df052a755240a10eca40fd3e896ab66623f8802",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Defibrinated_Blood_Species_Unspecified.after.yaml",
+        "sha256": "0de1b6d9f7b86c446c4233a4011b685aa72e6ce98a794dae755bbcca25e692c1"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-607",
+      "old_proposal_id": "sv1-bio-newborn_calf_serum_komodo1021",
+      "selected_proposal_id": "sv3-serums-newborn_calf_serum_komodo1021",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "c2bbc63f6658fe9dbb20da19c3c5512ae65afcd2ab996e273b0e310eece33238",
+      "selected_full_claim_sha256": "e4052e4b2f28932dc2db3a28aac102e0587e3d12c7dc37f564b7ce4574a6bd6d",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Newborn_Calf_Serum_KOMODO1021.yaml",
+        "sha256": "261fb77b8d85a8a9b7e188feda888da1f77461aeae9c3965836d058294d06d4a"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-608",
+      "old_proposal_id": "sv1-bio-calf_blood_togo_m2854",
+      "selected_proposal_id": "sv1-bio-calf_blood_togo_m2854",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "471773cbc8c43676855517c86650e3b9c5b2aea67447ee97955b63ccdfeab8b8",
+      "selected_full_claim_sha256": "e6a8605a0323c3008118ab966d95eb62886db2c4300145eaa53d5c027d5e7cef",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Calf_Blood_TOGO_M2854.after.yaml",
+        "sha256": "f3f970a2373a7309b0a2c028debe30254d25fb66fc873859a14d10e4f7977f3e"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-609",
+      "old_proposal_id": "sv1-bio-sterile_bovine_serum_56c_45min_dsmz840",
+      "selected_proposal_id": "sv3-serums-sterile_bovine_serum_56c_45min_dsmz840",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "7efbacd4578fe624d9f549db60e18cc4448d64c23103bf6880cf44fc18e564f4",
+      "selected_full_claim_sha256": "3f7c0d5a249d5b51151465d5407cdad86f21ba7871c77c3e24ec2588789e2890",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Sterile_Bovine_Serum_56C_45min_DSMZ840.yaml",
+        "sha256": "81ca70ca1759627991f865a51d95996198757085aab00f29a70f97a380156514"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-610",
+      "old_proposal_id": "sv1-bio-sazae_meat_pieces_nbrc1130",
+      "selected_proposal_id": "sv1-bio-sazae_meat_pieces_nbrc1130",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "2326d4a8ac7a6c8c1aeb5dc0053c8267e6e98522d05c73df437eb45fcc536d95",
+      "selected_full_claim_sha256": "cd43d6ffda723c69f67dc8c2bd78f3d1666cc694dd34c044da0ee6da998ee810",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Sazae_Meat_Pieces_NBRC1130.after.yaml",
+        "sha256": "a6f6294134a1e8917af89595a61768a79ba1a3d3e9db8cab1a25f6d28fd4fbfb"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-611",
+      "old_proposal_id": "sv1-bio-live_pressed_starch_free_bakers_yeast_m2578",
+      "selected_proposal_id": "sv1-bio-live_pressed_starch_free_bakers_yeast_m2578",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "f4cb387410c5e85d2c76e0dd7b2fc10cc665993fe2e25296e9644f8b50ba1b30",
+      "selected_full_claim_sha256": "085344d461414e781904ff44d9e10cb0e233b2d82dfebadd776e00bd09773c87",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Live_Pressed_Starch_Free_Bakers_Yeast_M2578.after.yaml",
+        "sha256": "fdf5d1e176611b95e1282b50b165874629e50eb560d698a68b0b59a2efd15e8f"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-612",
+      "old_proposal_id": "sv1-bio-corn_starch",
+      "selected_proposal_id": "sv1-bio-corn_starch",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "bce255f2184f41a09b3a889e18cfb9cf2e49429c4806b875f3d8312ff059b9e8",
+      "selected_full_claim_sha256": "434b319fba27d36689461bc9278ec454f344b2e469cfd0ef5ee044a5aa0af859",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Corn_Starch.after.yaml",
+        "sha256": "017dd4ddd8152fb91cc345e47cb1577c5ddf72034d8a5c5970c32406692ceed9"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-613",
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_biowest_jcm1305",
+      "selected_proposal_id": "sv1-bio-heat_inactivated_fbs_biowest_jcm1305",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "1d70ba030883dfff3f785b2d3fca20bcfe5219d8fe89769ac6fa6ac8cb2dab1d",
+      "selected_full_claim_sha256": "5f2a26457f40869dd6356d95ffbe9ad9d5490042c935740bb276fa851a7050d1",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_Biowest_JCM1305.after.yaml",
+        "sha256": "74fccf9a53594b0c7a02e730a8de1d9cc900e55bee16df1299f4d2188f7399a2"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-614",
+      "old_proposal_id": "sv1-bio-eagle_mem_sigma_m4655",
+      "selected_proposal_id": "sv1-bio-eagle_mem_sigma_m4655",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "3a0eee208707eb48b69c936e9c10cc81a71f5fea4ce7d6bcf1f5ac9a0fac8d8c",
+      "selected_full_claim_sha256": "32a8b6cf47806304bdc59f8740b523af654e95aa061345ed40ee82b1d39add27",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Eagle_MEM_Sigma_M4655.after.yaml",
+        "sha256": "ea6f051451fd5c89a901437894051933bbee895234bc9a48a928849ab790c3fe"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-615",
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_atcc1827",
+      "selected_proposal_id": "sv3-serums-heat_inactivated_fbs_atcc1827",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "2d6f8c9f77408aaeb8b84e89aff36517e4b5cef532efcd3ee47de80770406a90",
+      "selected_full_claim_sha256": "34b1fa65039edaafe8c9d1c3ff59238b33d92437dd8c855577163dc9aa652ebf",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Heat_Inactivated_FBS_ATCC1827.yaml",
+        "sha256": "3e2529463a709c8ff8af00f488b0830710cdee9384e2ff1e95ff257e0afd1493"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-616",
+      "old_proposal_id": "sv1-bio-inactivated_horse_serum_hyclone_m2887",
+      "selected_proposal_id": "sv1-bio-inactivated_horse_serum_hyclone_m2887",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "06e7b094b416481e6c12592e712eeb2ba3086cb73175c2cf703db520958e55ca",
+      "selected_full_claim_sha256": "a8c461b2fc83be7f75d492c2c49bc4f7bc6443742860da28b52710cef39bf5d5",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Inactivated_Horse_Serum_Hyclone_M2887.after.yaml",
+        "sha256": "9809e9302fbcecb428493070ee1f7b62542273961d2bc5eb8d1e0acb385c63a8"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-617",
+      "old_proposal_id": "sv1-bio-horse_serum_56c_30min_atcc243",
+      "selected_proposal_id": "sv3-serums-horse_serum_56c_30min_atcc243",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "575d8844311fbb95f5429e546e261bedce01dde56fbb0c729e441f5e97d79e5c",
+      "selected_full_claim_sha256": "d9014cdb22a999b909b6d08ac000b0c3d8a898227ae1b1b004d69fc93b7cf6b6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Horse_Serum_56C_30min_ATCC243.yaml",
+        "sha256": "13e462c6a7b04485831fe8de93f940365d41f65da18c6268ab97d012d193ebe4"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-618",
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_dsmz1076b",
+      "selected_proposal_id": "sv1-bio-heat_inactivated_fbs_dsmz1076b",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "ba8c67e2d0f3ee651431fadb12782f61789cd86e1a4ba30816ba4adff1440346",
+      "selected_full_claim_sha256": "c00b141863fdca711f1dd7e8700c397783b02debe534b542c6e9c52d1975b7d1",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_DSMZ1076b.after.yaml",
+        "sha256": "59abaa6d8c0f25a0fac5cdb626f52292379c47f6b2d642289409f8400b3096fd"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-619",
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_nbrc400",
+      "selected_proposal_id": "sv1-bio-heat_inactivated_fbs_nbrc400",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "e18b4d580df3ef9a04b0ee0fd5068bde8379edb9efcc453d3d9f067da098ee87",
+      "selected_full_claim_sha256": "b537cfda0d894147b2e207f00f7d031283baaa1e85f0803dc6c7d92535fb93f6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_NBRC400.after.yaml",
+        "sha256": "37378180f0469a92110accb7e47abfe4ab6b1c166d853b39ab6cf92e296e59fc"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-620",
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_spiroplasma_m2578",
+      "selected_proposal_id": "sv3-serums-heat_inactivated_fbs_spiroplasma_m2578",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "c3d82b36238084cb59f326a3d40b3b01cf426fd5e2a86f3ef509fdeb13d8e246",
+      "selected_full_claim_sha256": "95df953828514e01f813b0dba6dce8247acf8c85898011beaaf29cd191d3a289",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Heat_Inactivated_FBS_Spiroplasma_M2578.yaml",
+        "sha256": "6d6526ad6b353a30d77af0f41fc4cdf759d231589bb58401eaa712010e28f573"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-621",
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_dsmz1850",
+      "selected_proposal_id": "sv1-bio-heat_inactivated_fbs_dsmz1850",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "578de9eb8afaaf2696e169e27d03a46e4cc920e853031c25fd7d1d1a6ef89ca3",
+      "selected_full_claim_sha256": "9239dad6bab25ea6cafc8a1473b33d2567afb67d9874ec9c9d9c33ee0491ee81",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_DSMZ1850.after.yaml",
+        "sha256": "58032e7d52637984aa1fb72d6025788900be027ef3570983c708d897356460af"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-622",
+      "old_proposal_id": "sv1-bio-columbia_blood_agar_oxoid_m2224",
+      "selected_proposal_id": "sv1-bio-columbia_blood_agar_oxoid_m2224",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "9bd88c546be7e0ccd302d21371a2c07cc56ac0afc6dadda5ec0c6d24b96c0d20",
+      "selected_full_claim_sha256": "7867f581e71dee3d147dca013cba94785268eba92d101f0cec7679a661e688c2",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Columbia_Blood_Agar_Oxoid_M2224.after.yaml",
+        "sha256": "814a2a4b8c196b50f0d14b6280f79c6ee3cdcb9372a15469fb8fa58d96fdf639"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-623",
+      "old_proposal_id": "sv1-bio-fetal_bovine_serum_56c_60min_m2964",
+      "selected_proposal_id": "sv3-serums-fetal_bovine_serum_56c_60min_m2964",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "48dfe31b4afaa9d49eec05f0cd11b1d2018462770ac074b9c144f9febc3f5a67",
+      "selected_full_claim_sha256": "791142cf8ca107f794ea1d01238cf9569488fae5bbfdde42911e37b44dacc244",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Fetal_Bovine_Serum_56C_60min_M2964.yaml",
+        "sha256": "7fdf949667d63ca31d08abf915140052e2258f84159000d081d48fb49d843fb7"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-624",
+      "old_proposal_id": "sv1-bio-rabbit_serum_pelfreez31125",
+      "selected_proposal_id": "sv1-bio-rabbit_serum_pelfreez31125",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "7b7888dd04c1e01fb174065dbe0f0b04dcaa935c94c1202850fab31c31652180",
+      "selected_full_claim_sha256": "a024323fd1836402ee945e4e74e31f9b32c3803248be9b51029c35fdb6b7e4b2",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Rabbit_Serum_PelFreez31125.after.yaml",
+        "sha256": "c61e60ad3685ebe469fe9e562ed53262d461ba08504bf9a485ad082cb31fcb64"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-625",
+      "old_proposal_id": "sv1-bio-calf_thymus_dna_typei_stock_nbrc267",
+      "selected_proposal_id": "sv1-bio-calf_thymus_dna_typei_stock_nbrc267",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "7fbd5ebf521087a50b37965df47148256fd44106bbfb5688afdf3d804868dba6",
+      "selected_full_claim_sha256": "86a5eb39379720ad6d34169f73303c12346c21229955d9ed455c98a82ce063f9",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Calf_Thymus_DNA_TypeI_Stock_NBRC267.after.yaml",
+        "sha256": "e9c0dc5f914fe01e3ea67bd89332cff37c1e5f05d63093ad59e1237891ce5fd5"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-626",
+      "old_proposal_id": "sv1-bio-phytone_specific_identity",
+      "selected_proposal_id": "sv1-bio-phytone_specific_identity",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "39403a6260555ddf6a781dca42fc03289181074d8d5f3be183ab50aae1996b59",
+      "selected_full_claim_sha256": "ce06fe7d0f10e502abc4aeab5e5766ab4a6b016361933011153d909d778216b7",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Phytone.after.yaml",
+        "sha256": "b71ac567bd7a2fda344ea3b4726b7aaf38cb55d2141e78eec922a9e67f7c8f53"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-627",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "a1bcfc9d3f468d370c40af6e9364fec707d3321ec99ca0a063d0906f73682543",
+      "selected_full_claim_sha256": "adb32ce9140ac34945ac96f302f227dead113c20c70be1db78bbc8d7c8a69398",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753.yaml",
+        "sha256": "42bef9368d89abeca83fea2b8a5e195b0c538eae8d462289229906f369ef46a0"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-628",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "f245c615a50bb3c546bd0d33421b9e1e81ed243ebeac98cdded3227d0854dec2",
+      "selected_full_claim_sha256": "b49bee20e16bf4a270925e1319d3741ce471c05cf183db5dbba764102a56dc49",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753.yaml",
+        "sha256": "42bef9368d89abeca83fea2b8a5e195b0c538eae8d462289229906f369ef46a0"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-629",
+      "old_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "selected_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "c695e2e8b20a5840d82a2355587c5243c82601bbe2910199849b09122d053fe1",
+      "selected_full_claim_sha256": "dd37eb43b737dd3c9b6ec9f87dab42ea1471152ab9897aa6b460d6e2d4b5cea6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600.yaml",
+        "sha256": "d776c8d050ec93ea15484f33f44413aa50fbee861352c65b54368d6f2c49d64d"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-630",
+      "old_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "selected_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "5ed76856d33c89a0c05b38bc4ef9e0829b1878da29a5e825d3f6e00385616484",
+      "selected_full_claim_sha256": "f958a659fcad7fc3eddcdc2cf9eeb69dedcafd7c5e5a6ecc07ff18fc1ba7107d",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600.yaml",
+        "sha256": "d776c8d050ec93ea15484f33f44413aa50fbee861352c65b54368d6f2c49d64d"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-631",
+      "old_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "selected_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 2,
+      "original_full_claim_sha256": "34af3aa365f9f244138995b9b02c23cf17c8e80b11918a22faffbe31d1a61511",
+      "selected_full_claim_sha256": "7a12d74cbce60b691aecbb4ef40193720bb8881c5edbe584cd0f510c4fc908b3",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600.yaml",
+        "sha256": "d776c8d050ec93ea15484f33f44413aa50fbee861352c65b54368d6f2c49d64d"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-632",
+      "old_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "selected_proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 3,
+      "original_full_claim_sha256": "fba50ad4a3313aa99f773843a91b7b7acb0bee92321006447efca1e7f9b001f0",
+      "selected_full_claim_sha256": "924c3ccf4a08f08a18d32e9812aa5b0e367ecc95185452a7eec0ca0462b7609c",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600.yaml",
+        "sha256": "d776c8d050ec93ea15484f33f44413aa50fbee861352c65b54368d6f2c49d64d"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-633",
+      "old_proposal_id": "sv1-buffers-phosphate_1m_ph6_8_jcm149",
+      "selected_proposal_id": "sv1-buffers-phosphate_1m_ph6_8_jcm149",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "3f46f160e53a700e40f7bc3ac6f102166186b03f6407070632798b180121e8dd",
+      "selected_full_claim_sha256": "009490c298bc46fac56b4558d24fbb9945219ac103c3bf7b3c4b5fbabb27ad9d",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/phosphate_1m_ph6_8_jcm149.yaml",
+        "sha256": "5a2641e9451501ead980ab775e20e35b11b731c168b43666f2535c9f4aa50439"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-634",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_10mm_ph7_2_jcm1100",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_10mm_ph7_2_jcm1100",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "513f6fa07afefe2362efe739e01d6d737d2d45dbb794f2bb2f8ddba8548d61c6",
+      "selected_full_claim_sha256": "ec30fa610846961abe5a34211fb55d8c63d667949770b314007449ae506d8578",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_10mm_ph7_2_jcm1100.yaml",
+        "sha256": "59c2541dbf2a740038fa959e2d0b8745ed45cc8c40520a75e529c0d6e83bfe26"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-635",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "2a00e755dd24febf3780d944c864e4b06a8d25a4c60406bf16c8c1f52b20466a",
+      "selected_full_claim_sha256": "5b1aae0d6564035c3a32383575e777810f82920a8ecb3c6ff8ccff08e8d451b6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_20mm_ph7_8_mmys_ii.yaml",
+        "sha256": "495e2c0964a7c4e8e57cc98056bffb825696fce439a3f74101325f1ca9f20f7f"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-636",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "366778938433ef2aa508e5b1beba378dc2c05d23fc1e9fcc36c91d8158c4e0e2",
+      "selected_full_claim_sha256": "44a48b4d206d33ab77eeb5778609349b14032e08e7a9a3eea6ca0fdf62cdf28e",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_20mm_ph7_8_mmys_ii.yaml",
+        "sha256": "495e2c0964a7c4e8e57cc98056bffb825696fce439a3f74101325f1ca9f20f7f"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-637",
+      "old_proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "selected_proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "ecdee85d7d47b3614301dacbf10a715e00dfc8ca7605acae65d61a6cf661e7b7",
+      "selected_full_claim_sha256": "9ee305756e557ca7844661dadb15d6a0ddeb96207faa176165674fc55425cb6f",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+        "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-638",
+      "old_proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "selected_proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "3cd81e2c995f6c1d7583c5268858facde0169bf308fb72b34287c9fa54a313e2",
+      "selected_full_claim_sha256": "743c798455632a210f5eaac74ea787f0405dfbbce3f02e7a26b1e9b50204c109",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/sodium_phosphate_0_5m_ph7_3_jcm296_1036.yaml",
+        "sha256": "a5b4836ffaa02e8044a4532b008abab5ba712d5abc94deef1fd29168cd6302a8"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-639",
+      "old_proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "selected_proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "88b3a28d16367928bf9843222fb6d5f6ad5b04a2ccc6fabe9f79a4c6e1b19236",
+      "selected_full_claim_sha256": "1be7cc08693091e29781f9ac73fe81a7f655ab6ab57e163f64233f5daa0842ae",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/sodium_phosphate_0_5m_ph7_3_jcm296_1036.yaml",
+        "sha256": "a5b4836ffaa02e8044a4532b008abab5ba712d5abc94deef1fd29168cd6302a8"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-640",
+      "old_proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "selected_proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 2,
+      "original_full_claim_sha256": "89b3b91b8f9b51b8a80913e4dd9a81301895cba2adc97d7f18202d98c7097b14",
+      "selected_full_claim_sha256": "93448ce718c9e923fd686ba5b8c9d21de01da9bdf5ddb18530ea3b544328d1c4",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/sodium_phosphate_0_5m_ph7_3_jcm296_1036.yaml",
+        "sha256": "a5b4836ffaa02e8044a4532b008abab5ba712d5abc94deef1fd29168cd6302a8"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-641",
+      "old_proposal_id": "sv1-buffers-reducing_agent_100x_togo_m3163",
+      "selected_proposal_id": "sv1-buffers-reducing_agent_100x_togo_m3163",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "0dfe3b37cab8944240e29dc6cfad3a351825ae7be788227da8dbe4fb7d6ce11f",
+      "selected_full_claim_sha256": "7108f07cc65093287f0407ed27bb2847fd4113bb6fd9daf902c5cd2f77adfc0d",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/reducing_agent_100x_togo_m3163.yaml",
+        "sha256": "0dafb44f71922dfaec7b65b509c35874bef5ef22c289c063061d08c3542f8008"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-642",
+      "old_proposal_id": "sv1-buffers-carbonate_paired100mm_ph10_nbrc944",
+      "selected_proposal_id": "sv1-buffers-carbonate_paired100mm_ph10_nbrc944",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "17e60118916f5fe884a5c9f70ec6997bbbf1af4a19f04d99a1083dcf8fa4bbc4",
+      "selected_full_claim_sha256": "4e2756de657db5d96a8e38f1a561967cd01ec8391112b9ddc397eeb865a78307",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_paired100mm_ph10_nbrc944.yaml",
+        "sha256": "5df53b546c4811bd6721af9511093edcc38f5e32b1f9cc725703391d2872e03a"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-643",
+      "old_proposal_id": "sv1-buffers-penicillin_g_100000u_ml_nbrc400",
+      "selected_proposal_id": "sv1-buffers-penicillin_g_100000u_ml_nbrc400",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "793ddec44e69e8aaef71b0884d4edef586899524c0fc553065f1a824361960ca",
+      "selected_full_claim_sha256": "24a214cd8c1f95c731fdcc35a404f3fe78a4db2eed8270217b4f6e8c56a38a05",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/penicillin_g_100000u_ml_nbrc400.yaml",
+        "sha256": "682172242680a42220d131ac95cdfc6c6f7107f091a943962ede7d0cde8b5dbf"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-644",
+      "old_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "selected_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "8ef7853242de0650d8cd05066c12290ba5d24ce90e93a6697d22e131b5b9098c",
+      "selected_full_claim_sha256": "84ea4e9159cf0b8f9d0ecb18f48ae97e89a6c52935000cd783d7f0427c8c4131",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_50mm_ph7_8_utex.yaml",
+        "sha256": "0c06947d5f71028fbf5fd29416795606c7b9a484ba6f951f40ab62f32a64a6bf"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-645",
+      "old_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "selected_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "e0676bbe72118a309b3bf508e6db4caa73507315b74b3b2a3aaad88700121a3f",
+      "selected_full_claim_sha256": "85751a20f024eaf4e837f8d0c2ad8b30b71f9eb828ede2da72490baf7bd1d123",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_50mm_ph7_8_utex.yaml",
+        "sha256": "0c06947d5f71028fbf5fd29416795606c7b9a484ba6f951f40ab62f32a64a6bf"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-646",
+      "old_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "selected_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 2,
+      "original_full_claim_sha256": "8bdbcee9b9208f67a82f16dad467491f205c0034da9f98ee8ca955495e667f1c",
+      "selected_full_claim_sha256": "d1ea1f50343deb6d3518c017d954bf8e86d54818cd057396e99df353b7ffb19d",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_50mm_ph7_8_utex.yaml",
+        "sha256": "0c06947d5f71028fbf5fd29416795606c7b9a484ba6f951f40ab62f32a64a6bf"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-647",
+      "old_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "selected_proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 3,
+      "original_full_claim_sha256": "6bd8ae1f21ef922fa0563977bba172e879c325055d5e0446bd948fe74f7f3e33",
+      "selected_full_claim_sha256": "868425c1a564c6ead6ba224fbdac33127db7564c8470f663bbac19d86a5f8f07",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_50mm_ph7_8_utex.yaml",
+        "sha256": "0c06947d5f71028fbf5fd29416795606c7b9a484ba6f951f40ab62f32a64a6bf"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-648",
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "selected_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "cf594266a9dc34e157a267ee253941216e200b324d2976504a3332802a03ac75",
+      "selected_full_claim_sha256": "cbb527baf259d0d8b2eb9bea30de8830a1c4bb47981c2004c252157760406bc6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-649",
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "selected_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "12b4508c6a100cbde89eb86f1de630551d6ea7ec3acdbe1decdabb26f680999d",
+      "selected_full_claim_sha256": "a093022dc52ca119a6bf24680ae14b0437e0eb9d80a7ee82940915ac4ec77ddb",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-650",
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "selected_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 2,
+      "original_full_claim_sha256": "d4f9d871ca2d3417f9e28ffdf83ef59813220b90b3458f1a1d65be1d26186a32",
+      "selected_full_claim_sha256": "14ece9e0f0da82e6ff0bfcc94a334243c5946c9912465f7985a5e975567fecf2",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-651",
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "selected_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 3,
+      "original_full_claim_sha256": "7e160799a9b32d5e517b0376342b5977c59d74a58204a305139e4681daea6afe",
+      "selected_full_claim_sha256": "840e6c5022bf534aeb405dcdc4d9246217ef0636106f6edf4c07fec9c7935e29",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-652",
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "selected_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 4,
+      "original_full_claim_sha256": "c16218ceeed151f50c94467debb6d7f5dc39ea4c0e2367c9993ce7f922c7ce26",
+      "selected_full_claim_sha256": "42a40a3993f1ca9070d6dbb94daedd9aea84f9d8ee8b8e37c82dcadbb75c682e",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-653",
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "selected_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 5,
+      "original_full_claim_sha256": "f91027408304289232972294f84bb58ec65fc1bafde1b7cb5867ad164d76c349",
+      "selected_full_claim_sha256": "4c826002e493e86347cc0d14126cebb2368f078c39cb0902467a2cecbc237e45",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-654",
+      "old_proposal_id": "sv1-buffers-concentrated_hcl_nbrc_togo_source_reagent",
+      "selected_proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 6,
+      "original_full_claim_sha256": "28893ba2238f6e2ae776eeef62da7833e6632e951e1290c5701acd16c38ad9d1",
+      "selected_full_claim_sha256": "13491a0b279d608e3f100e80bef6ecb947ca71731cab233d31d5498b7b4a1197",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-655",
+      "old_proposal_id": "sv1-buffers-phosphate_1m_ph7_2_pbbm_togo_m2760",
+      "selected_proposal_id": "sv1-buffers-phosphate_1m_ph7_2_pbbm_togo_m2760",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "63656f3f3288cfdc5adfce9e67a7c9b2d4208ac9a405a7cbdb81ac6061847a7f",
+      "selected_full_claim_sha256": "65871f8ee69402805f21dc2ab7ce4c62fd373403a8df4a32962f52b88845652e",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/phosphate_1m_ph7_2_pbbm_togo_m2760.yaml",
+        "sha256": "092dc9e4f5e24d02ade620ba3346988b7d4466501a779a2a11867512b99f7a61"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-656",
+      "old_proposal_id": "sv1-buffers-tris_hcl_0_2m_ph7_5_dsmz273",
+      "selected_proposal_id": "sv1-buffers-tris_hcl_0_2m_ph7_5_dsmz273",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "d747dfe724356e7a5ffac1d6f1a57ee157e2cbcae40082e2bb8fddc3eab12cc1",
+      "selected_full_claim_sha256": "aebe232b20fdcdfae1684b667187812cdf1ec5b97cee7033a9de27790c7d7dcb",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tris_hcl_0_2m_ph7_5_dsmz273.yaml",
+        "sha256": "4869ff4179da2858a61d5ed331a497f01c7b45c86884a40407a6a3f62651e703"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-657",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "b6422f0f257d45ccc8ecf85dc7e0047bbe5faaa70b7cf402ebe86c33a5c74093",
+      "selected_full_claim_sha256": "62d68a79ebec0020508f0c548db13fc6dda017ad20865a3b1e4be37784b01d52",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431.yaml",
+        "sha256": "07a2dbe08a8647b0eb54a0b401e8fd5b42171e31dca63b95328d5cc9f99b8367"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-658",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "d8909bc5b9eed2c2039ce6c38c69a179c03cc077ba3b401bb9be73a876275dce",
+      "selected_full_claim_sha256": "8aae0954f12f8a618855e04ba722a1ac47ffea94cbeefbe1fedb1d03aed321a9",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431.yaml",
+        "sha256": "07a2dbe08a8647b0eb54a0b401e8fd5b42171e31dca63b95328d5cc9f99b8367"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-659",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 2,
+      "original_full_claim_sha256": "f34604f67d0b6c91f893d23dd5685c335bd5da7963937841308e5f81ccc339aa",
+      "selected_full_claim_sha256": "ff04b244a866570eb205ee475f1249bdd9c7f2b9bcf9186640831a4d9b31765a",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431.yaml",
+        "sha256": "07a2dbe08a8647b0eb54a0b401e8fd5b42171e31dca63b95328d5cc9f99b8367"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-660",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 3,
+      "original_full_claim_sha256": "6b19fd036e867a21bf60df02a82a8bca08e7203fe4cc59ff598df061ce41cacf",
+      "selected_full_claim_sha256": "b5b4f0c121fd52907fa15786b96addd4cf54281ccf72dc3177e09cb5945bdff2",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431.yaml",
+        "sha256": "07a2dbe08a8647b0eb54a0b401e8fd5b42171e31dca63b95328d5cc9f99b8367"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-661",
+      "old_proposal_id": "sv1-buffers-hcl_nominal35percent_togo_m3216",
+      "selected_proposal_id": "sv3-hm-hcl_nominal35percent_togo_m3216",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "9d1759babb3e232442d5e963fe6d94778912b53bdcb84cd1f7b0bbbfd3e01920",
+      "selected_full_claim_sha256": "38da2d157d3c2a1352c1e0a114c29f55c747d5f6d3e2f26c397c8dd6355a0207",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-662",
+      "old_proposal_id": "sv1-buffers-hcl_nominal32percent_jcm770",
+      "selected_proposal_id": "sv3-hm-hcl_nominal32percent_jcm770",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "2cac41b40fafecf3932ceb3cc2d03d67827e1e5b18d57db06b2782a4568417f1",
+      "selected_full_claim_sha256": "a15c9d88bc61d85b5e1bce3b7367fc253a2b48d1206ce2ce9fe99071055b5c15",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal32percent_jcm770.yaml",
+        "sha256": "957f0e05a7316fa6027687b871ca20b124dbbb8f19ee5a29ac0782355c6434f9"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-663",
+      "old_proposal_id": "sv1-buffers-tpp_vfa_solution_jcm144",
+      "selected_proposal_id": "sv1-buffers-tpp_vfa_solution_jcm144",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "066f1906f7ca7336c55edcb5a124d1fabfb965f0064788ca1fc4ad1f45109c4e",
+      "selected_full_claim_sha256": "527bdd2d24ca2b6a0c572b50daf7d4282dd6b21b7a5b201e72d3923d9ffbd442",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tpp_vfa_solution_jcm144.yaml",
+        "sha256": "ff4bbadcc9db112f25e17408d81099c952efb7f6e97d850d6eae6ae9d6e60767"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-664",
+      "old_proposal_id": "sv1-buffers-hcl_nominal25percent_jcm431_899",
+      "selected_proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "0e3139aca1aff25605a72977c34ea476b957fe31e25a48b1aa79797d826190b9",
+      "selected_full_claim_sha256": "167636407984defe0b3cd90d2b92d5e2196bcd990970a3b9011a0aab18ea794c",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "400cc3d6dbd24f5bd132ad6cc21dec350ae0404c1e6187e8315563544f2aecff"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-665",
+      "old_proposal_id": "sv1-buffers-hcl_nominal25percent_jcm431_899",
+      "selected_proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "fac0887dd2f7d6667c7d99aa12435f2c336e1130ad39eba1381ed2e0b26bf1d0",
+      "selected_full_claim_sha256": "e44723eed8cba54c024ab4648d177ae14171caafe479616c619acc72bb56aba0",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "400cc3d6dbd24f5bd132ad6cc21dec350ae0404c1e6187e8315563544f2aecff"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-666",
+      "old_proposal_id": "sv1-buffers-resazurin_2g_l_togo_m3155",
+      "selected_proposal_id": "sv1-buffers-resazurin_2g_l_togo_m3155",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "b06805bc6197944e1254b76a80e1ceaece255efebc72ac25ed186e5a19cf2ca3",
+      "selected_full_claim_sha256": "f9bf9762f2ea01050647c795e06d95f6a57f4694d5e8ea1cb625cfb499ab3a5b",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/resazurin_2g_l_togo_m3155.yaml",
+        "sha256": "e2781cea04dc48e262f30ac72058fab04bd1da460ce13ef607ffc9a9709c787e"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-667",
+      "old_proposal_id": "sv1-buffers-potassium_phosphate_0_25m_ph7_jcm1205",
+      "selected_proposal_id": "sv1-buffers-potassium_phosphate_0_25m_ph7_jcm1205",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "578ef318403bf17438b942eba5a9b03ed08b8adff752188ecba24f6a3bf65acc",
+      "selected_full_claim_sha256": "9a3fa3cc6d823dac61eeec92837c283d0f7c9af9bb4ee4ce9c385cdab6daaf66",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_25m_ph7_jcm1205.yaml",
+        "sha256": "4b2065d0891bcaedb9591cecc733455a36444618688e569e677934360a54bf84"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-668",
+      "old_proposal_id": "sv1-buffers-flucloxacillin_nominal100mg_ml_togo_m2927",
+      "selected_proposal_id": "sv1-buffers-flucloxacillin_nominal100mg_ml_togo_m2927",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "fa0acc88fb7228d4ab03669decf3356bae538cb760ce2bebe37b54fed85b8977",
+      "selected_full_claim_sha256": "e8b0ac658b1103805d85ab3e11eae50f6bad6714b4ea98cd93ec5771eaa4c68a",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/flucloxacillin_nominal100mg_ml_togo_m2927.yaml",
+        "sha256": "e2dc1bb0de8574c9bbd0f49794892805c20a1d239f513c5d4bd108b29de57cb5"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-669",
+      "old_proposal_id": "sv1-buffers-azlocillin_nominal100mg_ml_togo_m2927",
+      "selected_proposal_id": "sv1-buffers-azlocillin_nominal100mg_ml_togo_m2927",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "36b06c496ddb19bee288d0073761cb13835f9969b5438a36927920062d2b1c09",
+      "selected_full_claim_sha256": "aa9d3bf58645010cad11af98309a1a8f77c2a28085e78a49d59c72addfa411ed",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/azlocillin_nominal100mg_ml_togo_m2927.yaml",
+        "sha256": "5ebcb077cae388804aa96e3c31cf917cf7ebb88fe6b15db59e5ebaa14abe594c"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-670",
+      "old_proposal_id": "sv1-buffers-phosphate_nominal1m_ph7_2_jcm556",
+      "selected_proposal_id": "sv1-buffers-phosphate_nominal1m_ph7_2_jcm556",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "d7707e39f2fea40a857cb647ee425a6d22f6870483fcb60d5d400dddcf2a3216",
+      "selected_full_claim_sha256": "c0ce9c089088913fcb9bd97c8f4984d7325c55ac4089b2bc0817748a22ceefb7",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/phosphate_nominal1m_ph7_2_jcm556.yaml",
+        "sha256": "b28096d7a64a0eb31504f0e94bcf471d443f82ee6bfc5447b31d4fbba975a6f9"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-671",
+      "old_proposal_id": "sv1-buffers-bicarbonate_basal_medium_togo_m2185",
+      "selected_proposal_id": "sv1-buffers-bicarbonate_basal_medium_togo_m2185",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "e0b1092b5c0e2e79c985a24d0a11e601667e3a9c72f5e509a1e3c988f6dc86ab",
+      "selected_full_claim_sha256": "1a8025d40154275dc23e6701467acf52f532c9c5abe7a849fb1012ebd20df5a9",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/bicarbonate_basal_medium_togo_m2185.yaml",
+        "sha256": "c9c672ee3879acae0298a9669f43c56cf0dce7d5c8b64381754da79374dcb3ff"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-672",
+      "old_proposal_id": "sv1-buffers-artificial_seawater_spelling",
+      "selected_proposal_id": "sv1-buffers-artificial_seawater_spelling",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "ee5d5de708b3122f173ef60146d7c9007ab95a65bfa9cd118430bb90aa88b829",
+      "selected_full_claim_sha256": "ea1894864f5bb263f57b78580bdf61be0361735e0cb519b58be1a6177c8d8280",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/Artificial_seawater.yaml",
+        "sha256": "c388843c7a50364f5336669e0ef372a14cf504c19f8e772044512513b27d0eeb"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-673",
+      "old_proposal_id": "sv1-buffers-carbonate_1m_ph10_jcm1452",
+      "selected_proposal_id": "sv1-buffers-carbonate_1m_ph10_jcm1452",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "1acf9e83c2417deab47b064a8d224bf4e60706fe2ed70465604be193ca277d2a",
+      "selected_full_claim_sha256": "0a5a5c5d4baf43bcd6c622d21d4705ee3f576a17935aa58014f9fa3756d6e9ef",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_1m_ph10_jcm1452.yaml",
+        "sha256": "4b1e36b7645dbd126466df94c9ed505a7ff1e944feb020c66546746e394917ea"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-674",
+      "old_proposal_id": "sv1-buffers-hepes_2m_ph7_jcm556_1200",
+      "selected_proposal_id": "sv1-buffers-hepes_2m_ph7_jcm556_1200",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "7af1dfca05efb71d2acebd821d6e9da71ed7646f5dc3957fabaa567e25758ecd",
+      "selected_full_claim_sha256": "3c15d4adb8edfba6085a3d0c37285270b0d9a10af8febc652c30864ca561ae23",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_2m_ph7_jcm556_1200.yaml",
+        "sha256": "b38e551d92f7de86480681375adca8e8f88ddbb49da47725a30509135122f3fc"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-675",
+      "old_proposal_id": "sv1-buffers-hepes_2m_ph7_jcm556_1200",
+      "selected_proposal_id": "sv1-buffers-hepes_2m_ph7_jcm556_1200",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "f59851b5f6e18f9b5586cfd936a4d023a43b70eb699dd9d6137ce23adb2586a7",
+      "selected_full_claim_sha256": "61ad029e63487b52c490840638c9730dacc5b2d9041252bf830e7a373dfd6da6",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_2m_ph7_jcm556_1200.yaml",
+        "sha256": "b38e551d92f7de86480681375adca8e8f88ddbb49da47725a30509135122f3fc"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-676",
+      "old_proposal_id": "sv1-chem-proposal-14",
+      "selected_proposal_id": "sv1-chem-proposal-14",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "254dfa77ac75f455dd9892951a6f870bcf52785417348491e2092b8c96f27363",
+      "selected_full_claim_sha256": "24c4768b74b4fd891e06c1aee3c9e26adf3f33ef10c7f337becedd755d556ce7",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Nbrc_824_neutralized_0_2_m_na_terephthalate_stock.yaml",
+        "sha256": "fd3a1d755a3bf7809b5c380c5e59a181dce731559f44b16b4372dc652872953d"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-677",
+      "old_proposal_id": "sv1-chem-proposal-34",
+      "selected_proposal_id": "sv1-chem-proposal-34",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "a0ab68bfc8f58ed2db4b00415ada375de867839a84de4efcb77fc79495a844ee",
+      "selected_full_claim_sha256": "ca7519e49465d413ef16a7640bc156e2571a0a935d0cc3919087b187410766ad",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Komodo_485_ore_material.yaml",
+        "sha256": "4776da8ad6468f8f99b1c4308c151a366f1100997afbd958e53f3dfeb70c6382"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-678",
+      "old_proposal_id": "sv1-chem-proposal-43",
+      "selected_proposal_id": "sv1-chem-proposal-43",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "1d4532ad8e3dd32ab8f061766b2673273c22035030ac01e33b83bf3b3f1d8af7",
+      "selected_full_claim_sha256": "1ade5c775407185c6ddcb80352795529cce5b7762e5acc772c3729c49e966783",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Nbrc_823_filtered_penicillin_g_stock.yaml",
+        "sha256": "89ce57c1bdaa66f191ca4cef9415bb4c55f20b4bc062c89d5fcd53f12ae50302"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-679",
+      "old_proposal_id": "sv1-chem-proposal-74",
+      "selected_proposal_id": "sv1-chem-proposal-74",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "31aa6c6cea22f476c0d35896ab3e27b4767c747e16be0af0e69062f783c2fc90",
+      "selected_full_claim_sha256": "d6cdbec58502a10a9bad9b881846c50b737ce8dfbb457ade02ef4abec873d966",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Junlon_pw110_hobbs_source.yaml",
+        "sha256": "9364b428d64df9048357f93d5e02dea3d3be1dabbcbb4bab4ceea916fa809233"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-680",
+      "old_proposal_id": "sv1-kg-abyssomicin-g",
+      "selected_proposal_id": "sv1-kg-abyssomicin-g",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "bfc714e07c78ec71fe94aad70b7471d35d546e6de719c3fe4126821a42c16927",
+      "selected_full_claim_sha256": "90b2ba42f163dbe34f17fa35cb1f4e6bb2cae56eec25f6c5586bfb1983f5d986",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/abyssomicin-g.yaml",
+        "sha256": "7bfeb5813501a3890b5d2f794fa579e6c9d30b774279bcf2d787a0b5ac705a25"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-681",
+      "old_proposal_id": "sv1-kg-abyssomicin-h",
+      "selected_proposal_id": "sv1-kg-abyssomicin-h",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "40010932c8fae42678509c6922081f66f8947c165c7b21abc78b1818c6d72da5",
+      "selected_full_claim_sha256": "432375afa4a30c1c511c2a3cdb9e8c477b68d389b04296b92e9700ec8f7fc5e2",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/abyssomicin-h.yaml",
+        "sha256": "bead724b2f400d1fcd7e8b9410584cd88b678f6d9558ff2d65e747580784e47a"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-682",
+      "old_proposal_id": "sv1-kg-abyssomicin-b",
+      "selected_proposal_id": "sv1-kg-abyssomicin-b",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "a392b40decf8f4de097cb4d585d6ed25dbfdbef4cbffde68e4d1154cef63fd6c",
+      "selected_full_claim_sha256": "883038d38c863f4bd027a96050bad4e341cce25a4fa890f5a5ba91b3c2e150b9",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/abyssomicin-b.yaml",
+        "sha256": "fe906219d7b1cb375f4d3470947279581fec7a3a9418d3c39081ea337bf675f3"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-683",
+      "old_proposal_id": "sv1-kg-hortesin",
+      "selected_proposal_id": "sv1-kg-hortesin",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "8397120d1b4c1f806321a7cdde5fb5bd029c13111d9e4945467d3890d0bffe32",
+      "selected_full_claim_sha256": "97fa8483cc40545ea8bf42674392cbf8fc3f5c42c1bde53de22c13f76cc91b88",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/hortesin.yaml",
+        "sha256": "c628b4cadd071148985ecbaf1d23eac072ab7419387b9ee05630415124d7ef21"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-684",
+      "old_proposal_id": "sv1-kg-alboverticillin",
+      "selected_proposal_id": "sv1-kg-alboverticillin",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "4309c2755dcb6f2e3fec6242a3a624ca40e09501734229a70988b66794260198",
+      "selected_full_claim_sha256": "124c8cc86648222d7906151af38ddd8b11ea7652b4fe8d27858bd838fa480c5c",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/alboverticillin.yaml",
+        "sha256": "5a9b759e7e463b1b8a36ae7e1f89d5e5bb15714bd8501cc11281c2d5574e03a4"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-685",
+      "old_proposal_id": "sv1-kg-aminostyryl",
+      "selected_proposal_id": "sv1-kg-aminostyryl",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "bf7f57228af2d1d2daf5b4ec4266d50d15a2320aea23b9ae20b2246b9a65ca75",
+      "selected_full_claim_sha256": "78e943349823340d1eefb39569d674802ed09f6e0297964fd69693ef1328be4f",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/aminostyryl.yaml",
+        "sha256": "4634ab2ef59c8ad93d179f7c52cc50d834ee8b77a6bc7880382706b583d19789"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-686",
+      "old_proposal_id": "sv1-kg-indochrome-mixture",
+      "selected_proposal_id": "sv1-kg-indochrome-mixture",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "e193f9617644cb4dd57583e2fa2d156023867b6d56f0c24965748e45a278193a",
+      "selected_full_claim_sha256": "aa634590015e35e60d955c8f10cb8fd2a4a86466904a43b19a7fce28514c4fa7",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/indochrome-mixture.yaml",
+        "sha256": "9b82015147dd14edfdd0ab44be9a922ad0343aed1cdd1d353893bbd5309dd75f"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-687",
+      "old_proposal_id": "sv1-kg-cerophyll",
+      "selected_proposal_id": "sv1-kg-cerophyll",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "0621c0cc7403d1414afecae4d614e12e8e51cb30dd0f48b90fcc44dc81fdaf1e",
+      "selected_full_claim_sha256": "2cd332616ff531a934a59c9df4bc49c1dae78a8efcad8c53bfe1000c60944620",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/cerophyll.yaml",
+        "sha256": "9694550eb70a3a36e53ac6360fa6c5ba86e235d64f51f7f4cf9b2c7d26597d72"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-689",
+      "old_proposal_id": "sv1-kg-swine-serum1076b",
+      "selected_proposal_id": "sv3-serums-swine-serum1076b",
+      "disposition": "superseded_by_source_reassessed_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "c3ce38cc8a24a7ea221371ccee1bf4681c61bd1149f34731222c8a4fdd6221da",
+      "selected_full_claim_sha256": "6cd1ca5413dbe35c00fc1ee67ef2e353d65dd7c51ee8b035523faf9c80b7fdc8",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Swine_Serum.yaml",
+        "sha256": "1da5b5eb0b3d123403e6b384178ff7abe9ed6f8c960a38db12279d39f1d3a9c0"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-690",
+      "old_proposal_id": "sv1-kg-potassium-buffer156",
+      "selected_proposal_id": "sv1-kg-potassium-buffer156",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "ae8af2f86a14269a578cb5f8883c893a410bf9521f5b1b06c78c0e2c3ee98fe0",
+      "selected_full_claim_sha256": "7c486ea48647355077eb70f222e13e161403f7b40515eea33df41d08c6c8a4bb",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/potassium-buffer156.yaml",
+        "sha256": "3653ed5a9a117ea6b3ca571a726d2ea2e064d718c78f2dd74ac850612608f7ee"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-691",
+      "old_proposal_id": "sv1-kg-sodium-buffer391",
+      "selected_proposal_id": "sv1-kg-sodium-buffer391",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "75b13cb85bfcf07a8ce552d7937ba3ecd6bbd48174286f25beab00bd19dbefb1",
+      "selected_full_claim_sha256": "f14550bfe0d614c3e0b917a2558830d2aed3846c44d56354930ff4ad1650a9de",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/sodium-buffer391.yaml",
+        "sha256": "13e1844a789f55841eade1dfa847603eacf21e2b7de61c2ba10b43fbfe0b2dbf"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-692",
+      "old_proposal_id": "sv1-kg-dl-aspartic-racemate",
+      "selected_proposal_id": "sv1-kg-dl-aspartic-racemate",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "de2441e5f3db4dd4b1bc08e91c4a260849622f2d2b77ad5ce4197f9a5aad635a",
+      "selected_full_claim_sha256": "f72ae1c18d1c6d5239170052bdebcce011c454fb4ddbe919c79bab1e4f1a86d8",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/dl-aspartic-racemate.yaml",
+        "sha256": "0d699d3269a05decd7341407344890e1068ba97b05f685db50429b3ee9e69d90"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-693",
+      "old_proposal_id": "sv1-kg-pipes-free-acid",
+      "selected_proposal_id": "sv1-kg-pipes-free-acid",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 1,
+      "original_full_claim_sha256": "7abc191e92bb26aeabae87b055076f86ab383364b49c34bae2071546a6ff25a9",
+      "selected_full_claim_sha256": "0f1e5d7392a6bc16ad850b98dab5ae64786255502d2d899b2ef3ed672c4ba036",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/pipes-free-acid.yaml",
+        "sha256": "959bba0e195f41e2af8d30bdfbf26859e36d42fef7c0c7fefbfed89000fa00e4"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-694",
+      "old_proposal_id": "sv1-kg-rice-starch",
+      "selected_proposal_id": "sv1-kg-rice-starch",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "a3d09fb156c12bddc19c06f60603d415c5b4d35ea0af79908711af4471402894",
+      "selected_full_claim_sha256": "d891ecc4390edbe9118d935dd5e44083e5450ffe9d5365042bb27d70987cb797",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/rice-starch.yaml",
+        "sha256": "1c277bcb51de317fedf99e1e03e69c7bef1799affad4a9d9e17b4bcd727003e8"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-695",
+      "old_proposal_id": "sv1-kg-difco0045-prepared646",
+      "selected_proposal_id": "sv1-kg-difco0045-prepared646",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "ff1b6ace7adc8d258e05e862b8e02cdc9243956509fb68095a9754794d3af920",
+      "selected_full_claim_sha256": "0cbee37eb0c1424b544a29bda72a1693b6488eb76929ab966fe2dd85422f7521",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/difco0045-prepared646.yaml",
+        "sha256": "cc55e902bbac79d81d843b29d0ac8a4d2945909ceb89cf0f41aed61cac7aade2"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-696",
+      "old_proposal_id": "sv1-kg-oxoid-blood-base2",
+      "selected_proposal_id": "sv1-kg-oxoid-blood-base2",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "e067a56c1d6f5314030daf7f864e52beb1ea72453135718c09e4ac46f24e08c8",
+      "selected_full_claim_sha256": "e9a0e774cb29017f9af3032d0fbae7bc133ffc941b9c7d7e56bee06fc2eb8b94",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/oxoid-blood-base2.yaml",
+        "sha256": "2bf2335618ba782944c0eb4234db51f8bc6db3f180c3d0accd87a2af26398fd0"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-697",
+      "old_proposal_id": "sv1-kg-difco-columbia1270",
+      "selected_proposal_id": "sv3-hm-difco-columbia1270",
+      "disposition": "retyped_exact_surviving_agent_claim",
+      "index": 0,
+      "original_full_claim_sha256": "36aa3c126c2ca8687616aa046468a61a29017f8cf217ca5056ca4eb232c240b3",
+      "selected_full_claim_sha256": "e6f5451c7345ce0c7afe3cad088bbc18a7f8cfe46360c4a0673f8d5748d63e01",
+      "selected_payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/difco-columbia1270.yaml",
+        "sha256": "191dd72b5abeea912b3127158358f1524ec298002244bcf9a268a1acfd352af2"
+      },
+      "all_context_hashes_verified": true
+    },
+    {
+      "audit_row_id": "provenance-flag-688",
+      "old_proposal_id": "sv1-kg-calf-serum1303",
+      "selected_proposal_id": null,
+      "disposition": "historical_candidate_retired_from_active_selection",
+      "original_full_claim_sha256": "106252b22a1ba327dba8920c12444f69746e01d3b43036500491dd378933ae2b"
+    }
+  ],
+  "payload_checks": [
+    {
+      "proposal_id": "chem-proposal-12",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Activated_Charcoal.yaml",
+        "sha256": "c86c3a119210131d2419880607f43378db2d8fafbf4811fce7ed380782b6106f"
+      },
+      "before_sha256": "ca02e4a2c8b1306a219debcce95ff45b56b73a7f4347349c9a4bff160810594f",
+      "owner_path": "data/ingredients/mapped/Activated_Charcoal.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-13",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Mes_2-_N-morpholino_Ethane_Sulfonic_Acid.yaml",
+        "sha256": "4adeedffc3ec87accb397962dacb43ab33e4c7b0bb9a255e9b5a430a09aa8834"
+      },
+      "before_sha256": "74b9b9ad58114bc8b6b1cb6248f12b9857093f0339635bb3c1c4d8e6e3a02f46",
+      "owner_path": "data/ingredients/mapped/Mes_2-_N-morpholino_Ethane_Sulfonic_Acid.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-23",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Carbon_dioxide_gas.yaml",
+        "sha256": "8aad02dbcf10c1dd21ffaf50dee1a8611b7837f09f8886e8013a3bcd7fea2bd2"
+      },
+      "before_sha256": "d39e65eaa0bf672e2a7e7ef8474dc36cfcc610a8f023fffa9b13ac628bf0bd0f",
+      "owner_path": "data/ingredients/mapped/Carbon_dioxide_gas.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-46",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Deferoxamine_mesylate.yaml",
+        "sha256": "d1561d9b34a236df67ce6cc3392a025e79514ee17565ad0928b45f6376b968c5"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Deferoxamine_mesylate.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-59",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Riboflavin.yaml",
+        "sha256": "1de39e6a94234f66f63f23982174918a78bee86dc6d13b697cbb65f02b0ee296"
+      },
+      "before_sha256": "b79fe5e134e627e7c95d6190e54c52b04f9d81a61ad381cb136b986430d80644",
+      "owner_path": "data/ingredients/mapped/Riboflavin.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-70",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Srcl2_X_6_H2o.yaml",
+        "sha256": "9ba88842927a92e52b65a93423607b021d47901ab0ac5248394d4f5366fb6aef"
+      },
+      "before_sha256": "2a0c4904c8905c7d5fad50026359115047f4132963cdbf77758399649085cd91",
+      "owner_path": "data/ingredients/mapped/Srcl2_X_6_H2o.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-71",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Pyridoxine.yaml",
+        "sha256": "d2f36ed0c64353c2c2b24a94b4927f645cfd3fafa64d584a322233c2d2ba7808"
+      },
+      "before_sha256": "49fdccccd2f7e20ea18baeb37688aab3a0e97876e06fc8d5f0fe7bb35508ccb8",
+      "owner_path": "data/ingredients/mapped/Pyridoxine.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-85",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Na2wo4_X_2_H2o.yaml",
+        "sha256": "0171a951977bda32923c673fed37555ac8f0c1f0862e4f449cce27613c70175f"
+      },
+      "before_sha256": "b66951aba30cde0c3efe3b5ae2080a8d3445aebdffbd04b748e554f28358ffa9",
+      "owner_path": "data/ingredients/mapped/Na2wo4_X_2_H2o.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-86",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Pyridoxal_Hydrochloride.yaml",
+        "sha256": "def9c748540b40c32071450fb03433a67978eb82ba0e4389e63834dbdd9dba5e"
+      },
+      "before_sha256": "c1650476ac9b84e061cc836ecc99b7e380625b95afd2c70b643bfb575512df27",
+      "owner_path": "data/ingredients/mapped/Pyridoxal_Hydrochloride.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-88",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Selenium_dioxide.yaml",
+        "sha256": "b6e9492e6e12e21600ec2b4841209ecc5d6df8dce67baa23b6ff43805d49909d"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Selenium_dioxide.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-99",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/17beta-Estradiol.yaml",
+        "sha256": "2362f7198a15b561a9060059d368cabe94b3e26102e1e98bc4542ac4f3defe7d"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/17beta-Estradiol.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-106",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/2-mercaptoethanesulfonate.yaml",
+        "sha256": "8efa1eea9fd92cfca0aef5f58c049aa82583c5ca80da3143709509576b86747c"
+      },
+      "before_sha256": "e8f3c1d4d2fa4db30af58424d9f800054d41d1bf7d0531d0a53dad443f276bae",
+      "owner_path": "data/ingredients/mapped/2-mercaptoethanesulfonate.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-113",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Voso4_X_5_H2o.yaml",
+        "sha256": "7b38dec9fd6f28a46639ef4dd0f14d7c2bcd4db6c5bfca1f33f9dfe76fcbeef4"
+      },
+      "before_sha256": "2903645ba0ba6c7c0455dc876db9b88bb355d72e0f8a818e269fdfb39800b192",
+      "owner_path": "data/ingredients/mapped/Voso4_X_5_H2o.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-117",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Phthalic_acid.yaml",
+        "sha256": "e5c32109ee06203393fdb28fb19004fb673bcf7c23f6908ff486a447b9e1d764"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Phthalic_acid.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "chem-proposal-120",
+      "payload": {
+        "root": "artifact",
+        "path": "chemicals/proposed/Kh2po4.yaml",
+        "sha256": "e068da4c45c29cf2c2caa7bf8e035e7dc3ca8d7f67afb4089af27ddc00a1e889"
+      },
+      "before_sha256": "e721979cb20e8dcac144900643442d9d9e1f01e4d69b2073de8266120419f1c4",
+      "owner_path": "data/ingredients/mapped/Kh2po4.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-aces-aliases",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+        "sha256": "e2f6e61eb8c1ebace26f66b815b859010dc833f407e4049253349db843290edd"
+      },
+      "before_sha256": "b3cc5464f6b134d56515742839e1680ad3adbbc9cc0d43e1821fd388a1a06d41",
+      "owner_path": "data/ingredients/mapped/N-_2-acetamido-2-aminoethanesulfonic_Acid.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-hepes-acid-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Hepes.yaml",
+        "sha256": "94839addc0148ff58983e980db87181058d0322230d78e5e8acca57e9b771bb2"
+      },
+      "before_sha256": "7d92365f64808ffb589155a60d8ba407ca6025c3dfda5aea396ac0c724ad4320",
+      "owner_path": "data/ingredients/mapped/Hepes.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-phosphate-m3225",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_TOGO_M3225.yaml",
+        "sha256": "79f688c60912f8c413e037028fc68a3faa0a7f06be5f657ceda7e1f21ccaddc5"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Phosphate_Buffer_TOGO_M3225.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-phosphate-jcm1142",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_JCM_1142_1143.yaml",
+        "sha256": "e12f0e155792415828c729e2796949b86bbd2b04c5d1cadf2d3abdb55b13ae9a"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Phosphate_Buffer_JCM_1142_1143.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-kp-nbrc857",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/KP_Buffer_NBRC_857_936.yaml",
+        "sha256": "7cf2506752f7e05fe2a1302755c4f748cdcb6c8be43311d3510912cc61728566"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/KP_Buffer_NBRC_857_936.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-phosphate-jcm822",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Phosphate_Buffer_JCM_822.yaml",
+        "sha256": "c2f559cedecb1270bce19cc07dac43ed19ed2f8efb53efc2efeb903204c73f8c"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Phosphate_Buffer_JCM_822.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-riboflavin-jcm462",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Riboflavin_Solution_See_Medium_No_462.yaml",
+        "sha256": "ffed69e850b8974fcdd0996cad28759c706fcc0d0aa309efcd8a6c6db3cc442a"
+      },
+      "before_sha256": "91ab27a3dde263a063cb2dd4d599d610f60960e959283dd94797a18557ffef2b",
+      "owner_path": "data/ingredients/unmapped/Riboflavin_Solution_See_Medium_No_462.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "buffers-antifoam-wako",
+      "payload": {
+        "root": "artifact",
+        "path": "buffers/proposed_owners/Antifoam_SI_Wako.yaml",
+        "sha256": "0a5f0b3b3c581aa152adbc41d6b76da92348f245981c7faddf6fa2c0b48c61e8"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Antifoam_SI_Wako.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "bio-proposal-Defibrinated_sheep_blood",
+      "payload": {
+        "root": "artifact",
+        "path": "bio/owners/Defibrinated_sheep_blood.after.yaml",
+        "sha256": "80b050e8e3fa80f880790bf0734e2f6207409358b4fc7cd293c4af77a9aaae3c"
+      },
+      "before_sha256": "ee71b3eb16d3f3c6227560c7672de07ba042ce31224e43ffc646f0c456aeeb0f",
+      "owner_path": "data/ingredients/mapped/Defibrinated_sheep_blood.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "bio-proposal-Fetal_Bovine_Serum",
+      "payload": {
+        "root": "artifact",
+        "path": "bio/owners/Fetal_Bovine_Serum.after.yaml",
+        "sha256": "c56120450432864974dacc4b70e5361a91d7dba3aee424d656d5843d81cf3a53"
+      },
+      "before_sha256": "adb576c3fda65e0329bdab829eb8a14e07ea1bdcb75a2fa7078dcff49c29b73f",
+      "owner_path": "data/ingredients/mapped/Fetal_Bovine_Serum.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "bio-proposal-Barley_Grains",
+      "payload": {
+        "root": "artifact",
+        "path": "bio/owners/Barley_Grains.after.yaml",
+        "sha256": "938d835dbcd435a5ad769c2f58cd866a59114d4e1cfc1a073f5e8754fa75618b"
+      },
+      "before_sha256": "1a954879e6f48dfdd8d079fef24cf5737fdac6b757c9925df7b5e41e99994721",
+      "owner_path": "data/ingredients/unmapped/Barley_Grains.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "bio-proposal-Mannan_From_Saccharomyces_Cerevisiae",
+      "payload": {
+        "root": "artifact",
+        "path": "bio/owners/Mannan_From_Saccharomyces_Cerevisiae.after.yaml",
+        "sha256": "3b54626f2e1a3f32a1b0ebc96e4f0261ec1a859db56524d28ef44fcaf71303e8"
+      },
+      "before_sha256": "d207aa565406598234d8b79a8de8e92643e65d029caf513a1f760d72f3b3ad7f",
+      "owner_path": "data/ingredients/mapped/Mannan_From_Saccharomyces_Cerevisiae.yaml",
+      "changed_indices": [
+        2
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-glyoxylate-label",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/glyoxylate-label.yaml",
+        "sha256": "33eff8fa0f121579f1c42bc3cef6ac49abae0ac5415b647dca299b10cd811349"
+      },
+      "before_sha256": "4f40039bb78bdf2657e2bbbbf6a1c6f8ca6d31a1fd56f3101f795cc9e3c4ebc8",
+      "owner_path": "data/ingredients/mapped/Na2-glyoxalate.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-levorin-concept-scope",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/levorin-concept-scope.yaml",
+        "sha256": "7490a66ecda86d31016fc8096b10a5b20f5da32803e3bdc19af55bc31da27079"
+      },
+      "before_sha256": "77cccb8ad35797ec34744abe85b0125c5783466a832ec52b7a3442e51cd441a4",
+      "owner_path": "data/ingredients/mapped/Levorin.yaml",
+      "changed_indices": [
+        2
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv2-isp4-jcm58-complete-formulation",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v2/isp4/proposed/Inorganic_Salts-starch_Agar.yaml",
+        "sha256": "5f03a7e991806a9e33b948383a31299b8c371b825da8912a5decca82504ccff2"
+      },
+      "before_sha256": "76a430265f543685167823888f68629d2cbfc652f6faced54387692517118178",
+      "owner_path": "data/ingredients/unmapped/Inorganic_Salts-starch_Agar.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-ristocetin-b-parent-chemistry",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/ristocetin-b-parent-chemistry.yaml",
+        "sha256": "31f6897af214e673e8a859c1c2c14bd60e119a3a8c4373ae2266a3197ab4c3de"
+      },
+      "before_sha256": "9630cba6e27f198278c5aa247dfc10bef5de0a07ea34991777913de887b1e1e6",
+      "owner_path": "data/ingredients/mapped/Ristocetin_B.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-vanadate-variable-hydrate",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/vanadate-variable-hydrate.yaml",
+        "sha256": "74df07af5a618ea4f2bc0402fb6566b1a7777c1ff8befa8612ca4a1d9c881e7a"
+      },
+      "before_sha256": "d4d3f05a57d260547b23249d5fb316600c7b5adb56887463394cbe3417dc57e4",
+      "owner_path": "data/ingredients/mapped/Navo3_X_H2o.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-halomicin-complex",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/halomicin-complex.yaml",
+        "sha256": "61cc2355010ce9a7bea6d2e5534cbaad49ab443147a217346d9f37c3df4db09c"
+      },
+      "before_sha256": "8c0bad7398d8e43ee0812117f6d368303dc8c6a0ff5a2f098b976b565bf5ac5e",
+      "owner_path": "data/ingredients/mapped/Halomicin.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-aqds-dianion-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/aqds-dianion-alias.yaml",
+        "sha256": "58adfba88aa6819f3af7877287f27afc0fda277f0032d4d851aeb551cccc5007"
+      },
+      "before_sha256": "0d70097612d9e5c0c4855bb8d86dc22fbbfc754f09a553819f5f1fcb5fa0eb29",
+      "owner_path": "data/ingredients/mapped/AQDS.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-metals44-recipe",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/metals44-recipe.yaml",
+        "sha256": "afb9ed5238a85b72782ea29351c5ef77ccb537c7e4f070cb637b1cbae0138bb4"
+      },
+      "before_sha256": "f407b239b589ad35764c99509dd8c289f7691a26adc87cebd26a6201488ef3cf",
+      "owner_path": "data/ingredients/mapped/Metall_Salt_Sol_44.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "kg-carbonate-buffer-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "kg/proposed/carbonate-buffer-alias.yaml",
+        "sha256": "b8e08c21022fcbd8b96d492f0365309e23cc52c241ea5ae47af5d37848efa9b8"
+      },
+      "before_sha256": "e6526a84af20b9b9d0c0c52ef2d53fb354508adc13b648190dcd753be8ff7650",
+      "owner_path": "data/ingredients/mapped/Na2co3.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-sterile_horse_serum_togo_m154",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Sterile_Horse_Serum_TOGO_M154.after.yaml",
+        "sha256": "b38676f9a042815b19a792f1061d2660bb524e68d4853219cb969edc192b428b"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Sterile_Horse_Serum_TOGO_M154.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-clarified_tomato_juice_ytp2",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Clarified_Tomato_Juice_YTP2.after.yaml",
+        "sha256": "d0df39685fb79acb5dc9221e709b84ae75110d0b32c656294305e564b0e6a4b9"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Clarified_Tomato_Juice_YTP2.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-human_serum_56c_30min_dsmz1895",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Human_Serum_56C_30min_DSMZ1895.after.yaml",
+        "sha256": "547ffcee8740737dd2ae27e83d62161f0d70bd7cc8f7f77b280fa89ec8dfe402"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Human_Serum_56C_30min_DSMZ1895.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-heat_inactivated_fbs_togo_m2287",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_TOGO_M2287.after.yaml",
+        "sha256": "1976ed1c22935445c7d824a503d3a92c7979d61f6475678502c7931ef7ecfc62"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Heat_Inactivated_FBS_TOGO_M2287.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-gamma_irradiated_fetal_calf_serum_10109_155",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Gamma_Irradiated_Fetal_Calf_Serum_10109_155.yaml",
+        "sha256": "72a6162cb0923f0643a161d4d01605ca60427946bd453b5f8dfc9fba73e683ec"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Gamma_Irradiated_Fetal_Calf_Serum_10109_155.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-bacto_blood_agar_base_difco_nbrc254",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Bacto_Blood_Agar_Base_Difco_NBRC254.after.yaml",
+        "sha256": "bbb8ec72d5705563a90f0d5659832bf3d489b5253e30e3935b8e0acd911e51b9"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Bacto_Blood_Agar_Base_Difco_NBRC254.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-blood_agar_base_difco0045",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Blood_Agar_Base_Difco0045.after.yaml",
+        "sha256": "d8450c706dd4445dc7f0e92fa44441df302655e0d6518c2f7bfe0ca805757e37"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Blood_Agar_Base_Difco0045.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-rabbit_serum_56c_60min_jcm144",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Rabbit_Serum_56C_60min_JCM144.after.yaml",
+        "sha256": "370cc34db71b703a94962227891fbb479f28190b15c6c2c21e8b17ec1f87dbd3"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Rabbit_Serum_56C_60min_JCM144.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-water_lysed_sheep_blood",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Water_Lysed_Sheep_Blood.after.yaml",
+        "sha256": "9c966befa657f56593abb1a2bea0a5ed04b8baadbd3bebf52735cc7aa9a0d723"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Water_Lysed_Sheep_Blood.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-active_filtered_horse_serum_nbrc246",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Active_Filtered_Horse_Serum_NBRC246.after.yaml",
+        "sha256": "6e9cdd49a86f2669d3d5d090d40e3f94e06c7c05bfabf451606d65b6738c55cf"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Active_Filtered_Horse_Serum_NBRC246.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-laked_horse_blood_hema_m2932",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Laked_Horse_Blood_Hema_M2932.after.yaml",
+        "sha256": "5df0b20005b2be2338eb46184084cd4434bfb500d2896ad7aaa651b7d60c5957"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Laked_Horse_Blood_Hema_M2932.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-inactivated_calf_serum_dsmz1245",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Inactivated_Calf_Serum_DSMZ1245.after.yaml",
+        "sha256": "4a35a0921de3f004bd3d269c23145a7649403bc2b26b870f2d643e37d51017f6"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Inactivated_Calf_Serum_DSMZ1245.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-inactivated_rabbit_serum_gibco03706120m",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Inactivated_Rabbit_Serum_Gibco03706120M.after.yaml",
+        "sha256": "940870c217f83e2f4e2558231959372aad804685b8f0ec959a039cbe398213eb"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Inactivated_Rabbit_Serum_Gibco03706120M.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-tryptose_blood_agar_base_difco",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Tryptose_Blood_Agar_Base_Difco.after.yaml",
+        "sha256": "6e23aa75eba18ba90c402ad8d19a87b0296e0b1b9e9c5463d89aa4f6d8504c24"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Tryptose_Blood_Agar_Base_Difco.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-fbs_flow_56c_30min_m2888",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/FBS_Flow_56C_30min_M2888.after.yaml",
+        "sha256": "a166ec4fcf22a591e44a676ba7b9acadcc3cb81787fdbf58472489ba87df306e"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/FBS_Flow_56C_30min_M2888.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-filtered_rabbit_serum_56c_30min_jcm946",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Filtered_Rabbit_Serum_56C_30min_JCM946.yaml",
+        "sha256": "1cfc9d45c772ddc462a36e983909ec470c57505dcd55a64bf7813b94ba74487b"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Filtered_Rabbit_Serum_56C_30min_JCM946.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-defibrinated_blood_species_unspecified",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Defibrinated_Blood_Species_Unspecified.after.yaml",
+        "sha256": "0de1b6d9f7b86c446c4233a4011b685aa72e6ce98a794dae755bbcca25e692c1"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Defibrinated_Blood_Species_Unspecified.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-newborn_calf_serum_komodo1021",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Newborn_Calf_Serum_KOMODO1021.yaml",
+        "sha256": "261fb77b8d85a8a9b7e188feda888da1f77461aeae9c3965836d058294d06d4a"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Newborn_Calf_Serum_KOMODO1021.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-calf_blood_togo_m2854",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Calf_Blood_TOGO_M2854.after.yaml",
+        "sha256": "f3f970a2373a7309b0a2c028debe30254d25fb66fc873859a14d10e4f7977f3e"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Calf_Blood_TOGO_M2854.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-sterile_bovine_serum_56c_45min_dsmz840",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Sterile_Bovine_Serum_56C_45min_DSMZ840.yaml",
+        "sha256": "81ca70ca1759627991f865a51d95996198757085aab00f29a70f97a380156514"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Sterile_Bovine_Serum_56C_45min_DSMZ840.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-sazae_meat_pieces_nbrc1130",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Sazae_Meat_Pieces_NBRC1130.after.yaml",
+        "sha256": "a6f6294134a1e8917af89595a61768a79ba1a3d3e9db8cab1a25f6d28fd4fbfb"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Sazae_Meat_Pieces_NBRC1130.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-live_pressed_starch_free_bakers_yeast_m2578",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Live_Pressed_Starch_Free_Bakers_Yeast_M2578.after.yaml",
+        "sha256": "fdf5d1e176611b95e1282b50b165874629e50eb560d698a68b0b59a2efd15e8f"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Live_Pressed_Starch_Free_Bakers_Yeast_M2578.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-corn_starch",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Corn_Starch.after.yaml",
+        "sha256": "017dd4ddd8152fb91cc345e47cb1577c5ddf72034d8a5c5970c32406692ceed9"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Corn_Starch.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-heat_inactivated_fbs_biowest_jcm1305",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_Biowest_JCM1305.after.yaml",
+        "sha256": "74fccf9a53594b0c7a02e730a8de1d9cc900e55bee16df1299f4d2188f7399a2"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Heat_Inactivated_FBS_Biowest_JCM1305.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-eagle_mem_sigma_m4655",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Eagle_MEM_Sigma_M4655.after.yaml",
+        "sha256": "ea6f051451fd5c89a901437894051933bbee895234bc9a48a928849ab790c3fe"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Eagle_MEM_Sigma_M4655.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-heat_inactivated_fbs_atcc1827",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Heat_Inactivated_FBS_ATCC1827.yaml",
+        "sha256": "3e2529463a709c8ff8af00f488b0830710cdee9384e2ff1e95ff257e0afd1493"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Heat_Inactivated_FBS_ATCC1827.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-inactivated_horse_serum_hyclone_m2887",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Inactivated_Horse_Serum_Hyclone_M2887.after.yaml",
+        "sha256": "9809e9302fbcecb428493070ee1f7b62542273961d2bc5eb8d1e0acb385c63a8"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Inactivated_Horse_Serum_Hyclone_M2887.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-horse_serum_56c_30min_atcc243",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Horse_Serum_56C_30min_ATCC243.yaml",
+        "sha256": "13e462c6a7b04485831fe8de93f940365d41f65da18c6268ab97d012d193ebe4"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Horse_Serum_56C_30min_ATCC243.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-heat_inactivated_fbs_dsmz1076b",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_DSMZ1076b.after.yaml",
+        "sha256": "59abaa6d8c0f25a0fac5cdb626f52292379c47f6b2d642289409f8400b3096fd"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Heat_Inactivated_FBS_DSMZ1076b.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-heat_inactivated_fbs_nbrc400",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_NBRC400.after.yaml",
+        "sha256": "37378180f0469a92110accb7e47abfe4ab6b1c166d853b39ab6cf92e296e59fc"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Heat_Inactivated_FBS_NBRC400.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-heat_inactivated_fbs_spiroplasma_m2578",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Heat_Inactivated_FBS_Spiroplasma_M2578.yaml",
+        "sha256": "6d6526ad6b353a30d77af0f41fc4cdf759d231589bb58401eaa712010e28f573"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Heat_Inactivated_FBS_Spiroplasma_M2578.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-heat_inactivated_fbs_dsmz1850",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Heat_Inactivated_FBS_DSMZ1850.after.yaml",
+        "sha256": "58032e7d52637984aa1fb72d6025788900be027ef3570983c708d897356460af"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Heat_Inactivated_FBS_DSMZ1850.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-columbia_blood_agar_oxoid_m2224",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Columbia_Blood_Agar_Oxoid_M2224.after.yaml",
+        "sha256": "814a2a4b8c196b50f0d14b6280f79c6ee3cdcb9372a15469fb8fa58d96fdf639"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Columbia_Blood_Agar_Oxoid_M2224.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-fetal_bovine_serum_56c_60min_m2964",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Fetal_Bovine_Serum_56C_60min_M2964.yaml",
+        "sha256": "7fdf949667d63ca31d08abf915140052e2258f84159000d081d48fb49d843fb7"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Fetal_Bovine_Serum_56C_60min_M2964.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-rabbit_serum_pelfreez31125",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Rabbit_Serum_PelFreez31125.after.yaml",
+        "sha256": "c61e60ad3685ebe469fe9e562ed53262d461ba08504bf9a485ad082cb31fcb64"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Rabbit_Serum_PelFreez31125.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-calf_thymus_dna_typei_stock_nbrc267",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Calf_Thymus_DNA_TypeI_Stock_NBRC267.after.yaml",
+        "sha256": "e9c0dc5f914fe01e3ea67bd89332cff37c1e5f05d63093ad59e1237891ce5fd5"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Calf_Thymus_DNA_TypeI_Stock_NBRC267.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-bsa_source_supplied_forms",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Bovine_Serum_Albumin.after.yaml",
+        "sha256": "871c9533ee9978b784e46c889c42b5763502bc35ce6ab0fde228e069781ab75f"
+      },
+      "before_sha256": "43ceecb07d1bfa49f863a4c9d2618c79f8ab93385a8752ea88f07a6924b0f094",
+      "owner_path": "data/ingredients/mapped/Bovine_Serum_Albumin.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-porcine_serum_invitrogen_form",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Porcine_Serum.after.yaml",
+        "sha256": "c41c3ac86c60036ede65609c341ef44887aa3531815b58706e088f5718311eb3"
+      },
+      "before_sha256": "55db34244beed3a4065dba84ff2c4dba1d41c4434948bbf85834b86cc2f3b131",
+      "owner_path": "data/ingredients/mapped/Porcine_Serum.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-bio-phytone_specific_identity",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/bio/owners/Phytone.after.yaml",
+        "sha256": "b71ac567bd7a2fda344ea3b4726b7aaf38cb55d2141e78eec922a9e67f7c8f53"
+      },
+      "before_sha256": "785d55067681c80dc7be4cf566d81f18389aa031f484badf379618993075b29b",
+      "owner_path": "data/ingredients/mapped/Phytone.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753.yaml",
+        "sha256": "42bef9368d89abeca83fea2b8a5e195b0c538eae8d462289229906f369ef46a0"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_0_1m_ph7_5_dsmz833_jcm753.yaml",
+      "changed_indices": [
+        0,
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600.yaml",
+        "sha256": "d776c8d050ec93ea15484f33f44413aa50fbee861352c65b54368d6f2c49d64d"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/tris_hcl_0_1m_ph7_5_jcm900_979_995_dsmz600.yaml",
+      "changed_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-phosphate_1m_ph6_8_jcm149",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/phosphate_1m_ph6_8_jcm149.yaml",
+        "sha256": "5a2641e9451501ead980ab775e20e35b11b731c168b43666f2535c9f4aa50439"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/phosphate_1m_ph6_8_jcm149.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_10mm_ph7_2_jcm1100",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_10mm_ph7_2_jcm1100.yaml",
+        "sha256": "59c2541dbf2a740038fa959e2d0b8745ed45cc8c40520a75e529c0d6e83bfe26"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_10mm_ph7_2_jcm1100.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_20mm_ph7_8_mmys_ii",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_20mm_ph7_8_mmys_ii.yaml",
+        "sha256": "495e2c0964a7c4e8e57cc98056bffb825696fce439a3f74101325f1ca9f20f7f"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_20mm_ph7_8_mmys_ii.yaml",
+      "changed_indices": [
+        0,
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-carbonate_co2_nominal4percent_togo_m202",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_co2_nominal4percent_togo_m202.yaml",
+        "sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/carbonate_co2_nominal4percent_togo_m202.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-sodium_phosphate_0_5m_ph7_3_jcm296_1036",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/sodium_phosphate_0_5m_ph7_3_jcm296_1036.yaml",
+        "sha256": "a5b4836ffaa02e8044a4532b008abab5ba712d5abc94deef1fd29168cd6302a8"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/sodium_phosphate_0_5m_ph7_3_jcm296_1036.yaml",
+      "changed_indices": [
+        0,
+        1,
+        2
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-reducing_agent_100x_togo_m3163",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/reducing_agent_100x_togo_m3163.yaml",
+        "sha256": "0dafb44f71922dfaec7b65b509c35874bef5ef22c289c063061d08c3542f8008"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/reducing_agent_100x_togo_m3163.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-carbonate_paired100mm_ph10_nbrc944",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_paired100mm_ph10_nbrc944.yaml",
+        "sha256": "5df53b546c4811bd6721af9511093edcc38f5e32b1f9cc725703391d2872e03a"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/carbonate_paired100mm_ph10_nbrc944.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-penicillin_g_100000u_ml_nbrc400",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/penicillin_g_100000u_ml_nbrc400.yaml",
+        "sha256": "682172242680a42220d131ac95cdfc6c6f7107f091a943962ede7d0cde8b5dbf"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/penicillin_g_100000u_ml_nbrc400.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-hepes_50mm_ph7_8_utex",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_50mm_ph7_8_utex.yaml",
+        "sha256": "0c06947d5f71028fbf5fd29416795606c7b9a484ba6f951f40ab62f32a64a6bf"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/hepes_50mm_ph7_8_utex.yaml",
+      "changed_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-hm-concentrated_hcl_nbrc_togo_source_reagent",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+        "sha256": "22b575997f04098f9d2df8f92f376bf9295fa0ab7ae1fdde29fe0475074f0ada"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/concentrated_hcl_nbrc_togo_source_reagent.yaml",
+      "changed_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-phosphate_1m_ph7_2_pbbm_togo_m2760",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/phosphate_1m_ph7_2_pbbm_togo_m2760.yaml",
+        "sha256": "092dc9e4f5e24d02ade620ba3346988b7d4466501a779a2a11867512b99f7a61"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/phosphate_1m_ph7_2_pbbm_togo_m2760.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-tris_hcl_0_2m_ph7_5_dsmz273",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tris_hcl_0_2m_ph7_5_dsmz273.yaml",
+        "sha256": "4869ff4179da2858a61d5ed331a497f01c7b45c86884a40407a6a3f62651e703"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/tris_hcl_0_2m_ph7_5_dsmz273.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431.yaml",
+        "sha256": "07a2dbe08a8647b0eb54a0b401e8fd5b42171e31dca63b95328d5cc9f99b8367"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_0_5m_ph7_jcm915_918_1430_1431.yaml",
+      "changed_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal35percent_togo_m3216",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal35percent_togo_m3216.yaml",
+        "sha256": "fa6017bae4f0d27f7637d7c42698bb12d2c5da62fe8441101111be0bf1bd6a13"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/hcl_nominal35percent_togo_m3216.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal32percent_jcm770",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal32percent_jcm770.yaml",
+        "sha256": "957f0e05a7316fa6027687b871ca20b124dbbb8f19ee5a29ac0782355c6434f9"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/hcl_nominal32percent_jcm770.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-tpp_vfa_solution_jcm144",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/tpp_vfa_solution_jcm144.yaml",
+        "sha256": "ff4bbadcc9db112f25e17408d81099c952efb7f6e97d850d6eae6ae9d6e60767"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/tpp_vfa_solution_jcm144.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-hm-hcl_nominal25percent_jcm431_899",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/hcl_nominal25percent_jcm431_899.yaml",
+        "sha256": "400cc3d6dbd24f5bd132ad6cc21dec350ae0404c1e6187e8315563544f2aecff"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/hcl_nominal25percent_jcm431_899.yaml",
+      "changed_indices": [
+        0,
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-resazurin_2g_l_togo_m3155",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/resazurin_2g_l_togo_m3155.yaml",
+        "sha256": "e2781cea04dc48e262f30ac72058fab04bd1da460ce13ef607ffc9a9709c787e"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/resazurin_2g_l_togo_m3155.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-potassium_phosphate_0_25m_ph7_jcm1205",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/potassium_phosphate_0_25m_ph7_jcm1205.yaml",
+        "sha256": "4b2065d0891bcaedb9591cecc733455a36444618688e569e677934360a54bf84"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/potassium_phosphate_0_25m_ph7_jcm1205.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-flucloxacillin_nominal100mg_ml_togo_m2927",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/flucloxacillin_nominal100mg_ml_togo_m2927.yaml",
+        "sha256": "e2dc1bb0de8574c9bbd0f49794892805c20a1d239f513c5d4bd108b29de57cb5"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/flucloxacillin_nominal100mg_ml_togo_m2927.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-azlocillin_nominal100mg_ml_togo_m2927",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/azlocillin_nominal100mg_ml_togo_m2927.yaml",
+        "sha256": "5ebcb077cae388804aa96e3c31cf917cf7ebb88fe6b15db59e5ebaa14abe594c"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/azlocillin_nominal100mg_ml_togo_m2927.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-phosphate_nominal1m_ph7_2_jcm556",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/phosphate_nominal1m_ph7_2_jcm556.yaml",
+        "sha256": "b28096d7a64a0eb31504f0e94bcf471d443f82ee6bfc5447b31d4fbba975a6f9"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/phosphate_nominal1m_ph7_2_jcm556.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-bicarbonate_basal_medium_togo_m2185",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/bicarbonate_basal_medium_togo_m2185.yaml",
+        "sha256": "c9c672ee3879acae0298a9669f43c56cf0dce7d5c8b64381754da79374dcb3ff"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/bicarbonate_basal_medium_togo_m2185.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-artificial_seawater_spelling",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/Artificial_seawater.yaml",
+        "sha256": "c388843c7a50364f5336669e0ef372a14cf504c19f8e772044512513b27d0eeb"
+      },
+      "before_sha256": "9efeac859a634d9d5daf17c7da4e058b51ce7538b0b802fa6ac2b7f6f602e708",
+      "owner_path": "data/ingredients/mapped/Artificial_seawater.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-carbonate_1m_ph10_jcm1452",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/carbonate_1m_ph10_jcm1452.yaml",
+        "sha256": "4b1e36b7645dbd126466df94c9ed505a7ff1e944feb020c66546746e394917ea"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/carbonate_1m_ph10_jcm1452.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-buffers-hepes_2m_ph7_jcm556_1200",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/buffers/proposed_owners/hepes_2m_ph7_jcm556_1200.yaml",
+        "sha256": "b38e551d92f7de86480681375adca8e8f88ddbb49da47725a30509135122f3fc"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/hepes_2m_ph7_jcm556_1200.yaml",
+      "changed_indices": [
+        0,
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-chem-proposal-14",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Nbrc_824_neutralized_0_2_m_na_terephthalate_stock.yaml",
+        "sha256": "fd3a1d755a3bf7809b5c380c5e59a181dce731559f44b16b4372dc652872953d"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Nbrc_824_neutralized_0_2_m_na_terephthalate_stock.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-chem-proposal-34",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Komodo_485_ore_material.yaml",
+        "sha256": "4776da8ad6468f8f99b1c4308c151a366f1100997afbd958e53f3dfeb70c6382"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Komodo_485_ore_material.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-chem-proposal-43",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Nbrc_823_filtered_penicillin_g_stock.yaml",
+        "sha256": "89ce57c1bdaa66f191ca4cef9415bb4c55f20b4bc062c89d5fcd53f12ae50302"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Nbrc_823_filtered_penicillin_g_stock.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-chem-proposal-74",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Junlon_pw110_hobbs_source.yaml",
+        "sha256": "9364b428d64df9048357f93d5e02dea3d3be1dabbcbb4bab4ceea916fa809233"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Junlon_pw110_hobbs_source.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-chem-proposal-76",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Potassium_Phosphate_Dibasic_Trihydrate.yaml",
+        "sha256": "c81ba3636476a620b325ed3a471bba464c500b50cab952486ee8143143dd4255"
+      },
+      "before_sha256": "c4fb96e92fd3ccbe4aa107fea350c8444633f992cf4758b5f21a6f86c804bc14",
+      "owner_path": "data/ingredients/mapped/Potassium_Phosphate_Dibasic_Trihydrate.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-chem-proposal-111",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/chemicals/proposed/Edta.yaml",
+        "sha256": "5b004640db57b4731312e1de56b4a5937fc3cc5864bbd3b77d66dbbc2c2e9c75"
+      },
+      "before_sha256": "d766e18a220253f5bfa78e734be9b3a7df8b72ad8a7718ac8602a385e3929701",
+      "owner_path": "data/ingredients/mapped/Edta.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-abyssomicin-g",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/abyssomicin-g.yaml",
+        "sha256": "7bfeb5813501a3890b5d2f794fa579e6c9d30b774279bcf2d787a0b5ac705a25"
+      },
+      "before_sha256": "2fa726b15b881eb658b52e9dc948a7f7d8da8576561d6d4901e167395f46ad17",
+      "owner_path": "data/ingredients/mapped/Abyssomicin_G.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-abyssomicin-h",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/abyssomicin-h.yaml",
+        "sha256": "bead724b2f400d1fcd7e8b9410584cd88b678f6d9558ff2d65e747580784e47a"
+      },
+      "before_sha256": "06abd4f73cfcd093312622a2d40c84e6f7f5121381559b57f7682de478726c8d",
+      "owner_path": "data/ingredients/mapped/Abyssomicin_H.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-abyssomicin-b",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/abyssomicin-b.yaml",
+        "sha256": "fe906219d7b1cb375f4d3470947279581fec7a3a9418d3c39081ea337bf675f3"
+      },
+      "before_sha256": "efe32f4e766299de8dfb6b2ded78214ca6c97186a7bead132e1fdf37400cf46f",
+      "owner_path": "data/ingredients/mapped/Abyssomicin_B.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-hortesin",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/hortesin.yaml",
+        "sha256": "c628b4cadd071148985ecbaf1d23eac072ab7419387b9ee05630415124d7ef21"
+      },
+      "before_sha256": "e5bcc8c7ece864d85398790ba2e4df9b0d1a94448d0676dc118d6cb1e9f5009e",
+      "owner_path": "data/ingredients/mapped/Hortesin.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-alboverticillin",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/alboverticillin.yaml",
+        "sha256": "5a9b759e7e463b1b8a36ae7e1f89d5e5bb15714bd8501cc11281c2d5574e03a4"
+      },
+      "before_sha256": "bfdc3f61820466a9c73e46ce9f538574c59722266433dc6458cf6dfce77176d7",
+      "owner_path": "data/ingredients/mapped/Alboverticillin.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-aminostyryl",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/aminostyryl.yaml",
+        "sha256": "4634ab2ef59c8ad93d179f7c52cc50d834ee8b77a6bc7880382706b583d19789"
+      },
+      "before_sha256": "a0d51849ecc2d492b133f4e1e80c1e9c44ab695357d80829f94aa744ea77de7c",
+      "owner_path": "data/ingredients/mapped/E_4_Aminostyryl_Acetate.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-indochrome-mixture",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/indochrome-mixture.yaml",
+        "sha256": "9b82015147dd14edfdd0ab44be9a922ad0343aed1cdd1d353893bbd5309dd75f"
+      },
+      "before_sha256": "0c92e8e9a2036ebff9af78ee5b37475c04b09911b34ec9e076878290cca2551c",
+      "owner_path": "data/ingredients/mapped/Indochrome.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-cerophyll",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/cerophyll.yaml",
+        "sha256": "9694550eb70a3a36e53ac6360fa6c5ba86e235d64f51f7f4cf9b2c7d26597d72"
+      },
+      "before_sha256": "005c5ca4840a0580f0e5b7e3dcfcccb8a90e4ff2a93ab9bb147131d7cf25a94b",
+      "owner_path": "data/ingredients/unmapped/Cerophyll.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-serums-swine-serum1076b",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/serums/proposed_owners/Swine_Serum.yaml",
+        "sha256": "1da5b5eb0b3d123403e6b384178ff7abe9ed6f8c960a38db12279d39f1d3a9c0"
+      },
+      "before_sha256": "856b3f7388b406ffb2b0095a9faa5fb9942b78b41bdb0c5124ba3171a90df981",
+      "owner_path": "data/ingredients/unmapped/Swine_Serum.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-potassium-buffer156",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/potassium-buffer156.yaml",
+        "sha256": "3653ed5a9a117ea6b3ca571a726d2ea2e064d718c78f2dd74ac850612608f7ee"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Potassium_Phosphate_Buffer_1M_PH7_1_DSMZ_156.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-sodium-buffer391",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/sodium-buffer391.yaml",
+        "sha256": "13e1844a789f55841eade1dfa847603eacf21e2b7de61c2ba10b43fbfe0b2dbf"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Sodium_Phosphate_Buffer_10mM_PH7_1_JCM_391.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-dl-aspartic-racemate",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/dl-aspartic-racemate.yaml",
+        "sha256": "0d699d3269a05decd7341407344890e1068ba97b05f685db50429b3ee9e69d90"
+      },
+      "before_sha256": "85fd87594581ff3d8cf8b20b1bdad67adcd3cf2dc3624890da002c2c9894a034",
+      "owner_path": "data/ingredients/mapped/Dl-aspartic_Acid.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-pipes-free-acid",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/pipes-free-acid.yaml",
+        "sha256": "959bba0e195f41e2af8d30bdfbf26859e36d42fef7c0c7fefbfed89000fa00e4"
+      },
+      "before_sha256": "b1c03abbda78f24f8a0c533d6e25e4e067da3f54558fc53295348b244b66d28a",
+      "owner_path": "data/ingredients/mapped/Pipes.yaml",
+      "changed_indices": [
+        1
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-starch-rice-alias",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/starch-rice-alias.yaml",
+        "sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d"
+      },
+      "before_sha256": "e379199c1864e376ff86fb6dfd64773b049a72651810134bcc7d7f0d0055397b",
+      "owner_path": "data/ingredients/mapped/Starch.yaml",
+      "changed_indices": [],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-rice-starch",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/rice-starch.yaml",
+        "sha256": "1c277bcb51de317fedf99e1e03e69c7bef1799affad4a9d9e17b4bcd727003e8"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Rice_Starch.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-difco0045-prepared646",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/difco0045-prepared646.yaml",
+        "sha256": "cc55e902bbac79d81d843b29d0ac8a4d2945909ceb89cf0f41aed61cac7aade2"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Prepared_Difco_0045_Blood_Agar_Base_DSMZ_646.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv1-kg-oxoid-blood-base2",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v1/kg/proposed/oxoid-blood-base2.yaml",
+        "sha256": "2bf2335618ba782944c0eb4234db51f8bc6db3f180c3d0accd87a2af26398fd0"
+      },
+      "before_sha256": "a1e85787c11199da3a3fba0d891857eeeac9f8a5ee1db0ad025af9f5ad7f0980",
+      "owner_path": "data/ingredients/unmapped/Blood_Agar_No_2.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    },
+    {
+      "proposal_id": "sv3-hm-difco-columbia1270",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v3/hcl-manual/proposed/difco-columbia1270.yaml",
+        "sha256": "191dd72b5abeea912b3127158358f1524ec298002244bcf9a268a1acfd352af2"
+      },
+      "before_sha256": null,
+      "owner_path": "data/ingredients/mapped/Difco_Columbia_Blood_Agar_Base_JCM_1270.yaml",
+      "changed_indices": [
+        0
+      ],
+      "all_non_enum_fields_exact_before_history_append": true,
+      "history_prefix_exact": true
+    }
+  ],
+  "historical_exclusions": [
+    {
+      "proposal_id": "bio-proposal-Defibrinated_sheep_blood",
+      "full_claim_sha256": "b69d1c627d7748c059452a2adf92d62088e614c3c0c11be84190069d32b6dcd5",
+      "exact_in_authentic_before_and_selected": true,
+      "authorship_certified_human": false
+    },
+    {
+      "proposal_id": "kg-metals44-recipe",
+      "full_claim_sha256": "16186e323144626521244658adb67ff7ee7e065aa0041f3a0df5fd15ad28b058",
+      "exact_in_authentic_before_and_selected": true,
+      "authorship_certified_human": false
+    }
+  ],
+  "unchanged_inputs_at_finish": true,
+  "helper_main_executed": false,
+  "payload_writes": 0
+}

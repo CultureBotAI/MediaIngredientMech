@@ -1,0 +1,24 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,copy,hashlib,collections
+R=Path.cwd();A=R/'reports/all_unmatched_20261107/worker-10';B=A/'successor-v2';S=A/'successor-v3';O=S/'assembly-v1';O.mkdir(exist_ok=True)
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();canon=lambda x:hashlib.sha256(json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest();load=lambda p:json.loads(p.read_text())
+def save(p,d):
+ with p.open('x') as f:json.dump(d,f,indent=2,ensure_ascii=False);f.write('\n')
+D=load(S/'science-v1/decisions.json');P=load(S/'enum/proposals-fragment.json');E=load(S/'science-v1/evidence.json');delta=load(S/'science-v1/delta.json');oldP=load(B/'proposals.json')['proposals'];oldD=load(B/'decisions.json')['decisions'];selected=P['proposals'];caseids=[d['case_id'] for d in D['decisions']]
+changed={x['proposal_id'] for x in load(S/'enum/metadata-change-proof.json')['changed_payloads']};affected=sorted({cid for p in selected if p['proposal_id'] in changed for cid in p['case_ids']})
+for key,name,scope in [('sv3-provenance-claim-dispositions','claim-dispositions.json','Complete claim-specific frozen audit to selected successor correspondence; exact surviving claims retyped, source-corrected replacements explicit, retired calf candidate not relabeled, historical human/ComponentEvidenceTypeEnum objects excluded.'),('sv3-provenance-change-proof','metadata-change-proof.json','Exact per-payload rollback equality proves only allowlisted MappingEvidence enum values and one appended history event changed at this stage.'),('sv3-provenance-negative-controls','negative-controls.json','Stale payload, human historical claim, component context, mismatched fullvalue, duplicate ambiguity and out-of-scope destination all refused. Native writer safety test, not scientific approval.')]:
+ f=S/'enum'/name;E['evidence'].append({'evidence_id':key,'kind':'local_validation','capture':{'root':'artifact','path':str(f.relative_to(A)),'sha256':sha(f)},'url':None,'accessed_at':datetime.now(timezone.utc).isoformat(),'locator':'Complete immutable JSON; exact full claim and input hashes','supports_or_contradicts':scope,'case_ids':affected})
+for p in selected:
+ if p['proposal_id'] in changed:
+  p['evidence_ids']=list(dict.fromkeys(p['evidence_ids']+['sv3-provenance-claim-dispositions','sv3-provenance-change-proof','sv3-provenance-negative-controls']));p['prior_independent_review']=copy.deepcopy(p.get('independent_review'));p['independent_review']={'status':'pending','evidence_ids':[]};p['review_status_explanation']='Awaiting complete final payload provenance review; original scientific assessment remains attributed, except separately declared #1237 scientific corrections. Enum change confers no whole-owner scientific/role/export approval.'
+assert len(set(caseids))==len(caseids)==188
+assert sum(len(d['occurrence_ids']) for d in D['decisions'])==sum(len(d['occurrence_ids']) for d in oldD)
+assert [d['case_input_sha256'] for d in D['decisions']]==[d['case_input_sha256'] for d in oldD]
+for i in [143,187,21]:assert D['decisions'][i]==oldD[i]
+oldby={p['proposal_id']:p for p in oldP};ps={p['proposal_id']:p for p in selected}
+assert ps['sv2-isp4-jcm58-complete-formulation']==oldby['sv2-isp4-jcm58-complete-formulation']
+assert ps['kg-carbonate-buffer-alias']==oldby['kg-carbonate-buffer-alias']
+account={'case_count':len(caseids),'source_occurrence_count':sum(len(d['occurrence_ids']) for d in D['decisions']),'fresh_scientific_case_indices':delta['changed_scientific_indices'],'fresh_scientific_case_count':len(delta['changed_scientific_indices']),'retained_exact_decision_count':sum(d==oldD[i] for i,d in enumerate(D['decisions'])),'selected_proposal_count':len(selected),'previous_proposal_count':len(oldP),'source_corrected_payload_count':len(load(S/'hcl-manual/proposals-fragment.json')['proposals'])+len(load(S/'serums/proposals-fragment.json')['proposals']),'metadata_pass_changed_payload_count':len(changed),'selected_payloads_changed_vs_predecessor':sum(p['after_capture'] not in [x['after_capture'] for x in oldP] for p in selected),'exact_retained_payloads':sum(p['after_capture'] in [x['after_capture'] for x in oldP] for p in selected),'proposal_kinds':dict(collections.Counter(p['kind'] for p in selected)),'cases_with_proposals':sum(bool(d['proposal_ids']) for d in D['decisions']),'cases_without_proposals':sum(not d['proposal_ids'] for d in D['decisions']),'evidence_count':len(E['evidence']),'current_owner_preimages':len({o['path'] for d in D['decisions'] for o in d['owner_records']}),'authoritative_selection_count_is_derived':True,'approval':False}
+for name,x in [('decisions.json',D),('proposals.json',P),('evidence.json',E),('accounting.json',account)]:save(O/name,x)
+print(json.dumps(account,indent=2))

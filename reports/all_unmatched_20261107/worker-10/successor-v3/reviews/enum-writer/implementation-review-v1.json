@@ -1,0 +1,135 @@
+{
+  "report_id": "worker10-enum-writer-independent-v1",
+  "reviewer": "/root/bio_research",
+  "completed_at": "2026-11-08T07:45:07.530505+00:00",
+  "actual_review_start_exact": null,
+  "timing_note": "Full helper/allowlist/control reading began before the executable check. No script runtime is represented as the whole review interval.",
+  "verdict": "changes_required_before_helper_execution",
+  "actual_scope": "Independent implementation/provenance review of the private report-only root enum helper and actual123claim allowlist, not a new repository gate or source-science approval.",
+  "independence": "Did not author enum_successor.py or original123-row provenance audit. Previously authored HCl/manual scientific successor; this review does not independently approve that science. Separate preparation_skeptic retains whole-scope science review.",
+  "reviewed_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v1/w10-original-audit-rows.json",
+      "sha256": "6dc9c01687cd92edf01453f6a086d3f9c9e92c9f74581a4a04df2e497159ed98"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v1/enum_successor.py",
+      "sha256": "018fe12d755a90cd9db58f25ba76030e22343268d2a3723847408602a960a63d"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v1/w10-current-rebind-v1.json",
+      "sha256": "264aaf9059d8dca82964d83730ebd062bd4491fefcf85d342500b8ab16cc2f62"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/inputs-v1/negative-controls-preflight.json",
+      "sha256": "a9f662c47922d33f848e92fc1f79c5b6786f2b8d5d6fbd10a38b78534d8a9280"
+    }
+  ],
+  "findings": [
+    {
+      "id": "ENUM-WRITER-001",
+      "status": "open_in_reviewed_bytes; root independently identified and is correcting",
+      "severity": "must_fix_before_execution",
+      "location": "main else branch for absent original MappingEvidence claim",
+      "observation": "A changed payload and any LLM_SUGGESTION at the prior evidence index currently suffice to classify an absent claim as scientifically reassessed. There is no loaded full-before/full-after claim correspondence or selected-payload binding check. An unrelated or shifted claim could be attributed as its replacement.",
+      "reproduction": "Read frozen helper lines in branch beginning if matches/else: idx is parsed from the original field and successor=es[idx]. Only changed capture, index range, LLM_SUGGESTION and absence from historical preimage are asserted.",
+      "bounded_fix": "Load and validate the exact source-author original\u2192successor complete-claim correspondence, original/new payload hashes, explicit source index if supplied, and selected proposal retirement bridge. Find the unique exact successor claim by its full value; reject absent, ambiguous, stale or wrong-context correspondence. Do not infer replacement by same slot.",
+      "scientific_effect": "No science re-evaluation required; this protects attribution of already reviewed corrected claims."
+    },
+    {
+      "id": "ENUM-WRITER-002",
+      "status": "open_in_reviewed_bytes",
+      "severity": "must_fix_before_execution",
+      "location": "main authentic-before reads before mutation and final MANUAL exclusion check",
+      "observation": "p.before_sha256 controls whether an owner is read but the actual maintained owner bytes are never compared with that digest. The historical-exclusion comparison can therefore consume a stale owner. The helper also does not enforce each row current_capture/owner/before hash against its original selected proposal despite those bindings being available.",
+      "reproduction": "Both owner reads use yaml.safe_load(R/p.owner_path) if p.before_sha256 else{}. Current123row input audit confirms hashes happen to match now, but helper has no stale-owner refusal path.",
+      "bounded_fix": "Verify the maintained preimage SHA before parsing/using it, bind row capture/path/preimage to its exact original selected proposal, and recheck or preserve the authenticated baseline through final readback. Add a negative stale-owner/context control.",
+      "current_state": "Independent checks found no actual stale owner or row-context mismatch in all123 current rows; this is a missing fail-closed check before execution."
+    }
+  ],
+  "verified_behavior": {
+    "supplied_negative_controls_reproduced": [
+      {
+        "control": "stale-payload",
+        "refused": true,
+        "reason": "stale payload"
+      },
+      {
+        "control": "historical-human-object",
+        "refused": true,
+        "reason": "historical object"
+      },
+      {
+        "control": "component-enum",
+        "refused": true,
+        "reason": "not MappingEvidence"
+      },
+      {
+        "control": "mismatched-complete-value",
+        "refused": true,
+        "reason": "claim hash mismatch"
+      },
+      {
+        "control": "duplicate-claim-ambiguity",
+        "refused": true,
+        "reason": "absent or ambiguous complete claim"
+      },
+      {
+        "control": "outside-path",
+        "refused": true,
+        "reason": "outside report-only destination"
+      },
+      {
+        "control": "historical-destination",
+        "refused": true,
+        "reason": "outside report-only destination"
+      }
+    ],
+    "all123_row_context_and_original_audit_bindings_match": true,
+    "all123_current_payload_and_before_hashes_match": true,
+    "all123_in_memory_exact_claim_retypes_only_enum": true,
+    "component_context_refusal": true,
+    "ambiguous_duplicate_claim_refusal": true,
+    "historical_full_object_refusal": true,
+    "outside_report_path_refusal": true,
+    "old_history_and_other_fields": "Static rollback comparison covers all fields before one native appended event; positive in-memory checks showed no other changes. Actual artifact outputs have not been generated/reviewed.",
+    "existing_destination_protection": "Static dest.exists/dest.is_symlink before guarded write; negative historical destination is refused at the outside-path check, so that particular control does not exercise the within-root overwrite check.",
+    "historical_exclusions": [
+      {
+        "proposal_id": "bio-proposal-Defibrinated_sheep_blood",
+        "full_claim_hash": "b69d1c627d7748c059452a2adf92d62088e614c3c0c11be84190069d32b6dcd5",
+        "matches_declared": true,
+        "exact_in_baseline": true,
+        "exact_in_proposal": true,
+        "authorship_certification": "None. Exact inheritance is not proof of human authorship."
+      },
+      {
+        "proposal_id": "kg-metals44-recipe",
+        "full_claim_hash": "16186e323144626521244658adb67ff7ee7e065aa0041f3a0df5fd15ad28b058",
+        "matches_declared": true,
+        "exact_in_baseline": true,
+        "exact_in_proposal": true,
+        "authorship_certification": "None. Exact inheritance is not proof of human authorship."
+      }
+    ],
+    "historical_human_control_name": "This is a synthetic inherited-object control. Neither that name nor the two retained MANUAL objects certifies actual human authorship. Root history wording explicitly says authorship not recertified.",
+    "new_enum_scope": "Only ontology_mapping.evidence[i].evidence_type; ComponentEvidenceTypeEnum and other contexts are excluded."
+  },
+  "receipts": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/input-receipt-v1.json",
+      "sha256": "ccbeaf3aaa2e11b624e53018508d4a3e3ed7c37da15eaff9b29b19b017c44005"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v3/reviews/enum-writer/function-checks-v1.json",
+      "sha256": "d3b0ca8b5fa31d7a83f97bdddbc849f39c419c96e827378df2d97a29adbfb561"
+    }
+  ],
+  "limitations": [
+    "main() was not executed and no candidate payloads were written; independent checks called only refusal controls and authorized_change on deepcopies.",
+    "Revised scientific-claim replacement branch requires successor re-review after correction.",
+    "No broad repository gate, maintained-data mutation, scientific equivalence assertion, role/export acceptance or inherited approval.",
+    "Report-only output root/path containment is inspected under the actual worktree setup; no claim of adversarial filesystem race resistance."
+  ],
+  "mutations": "Only new review snapshots/receipts/report under successor-v3/reviews/enum-writer; no helper, payload, other review, Git or GitHub mutation."
+}

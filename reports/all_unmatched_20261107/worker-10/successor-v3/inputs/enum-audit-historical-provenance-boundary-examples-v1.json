@@ -1,0 +1,158 @@
+{
+  "at": "2026-11-08T07:11:59.006640+00:00",
+  "reviewer": "/root",
+  "scope": "Three exact provenance counterexamples; no chemical/source-case approval and no assertion that historical human identity is independently authenticated.",
+  "examples": [
+    {
+      "entry_id": "w10::chem-proposal-23",
+      "head": "468766d941e35a74eb2de3c95096660987277d9b",
+      "owner_path": "data/ingredients/mapped/Carbon_dioxide_gas.yaml",
+      "before_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/baseline/data/ingredients/mapped/Carbon_dioxide_gas.yaml",
+      "before_sha256": "d39e65eaa0bf672e2a7e7ef8474dc36cfcc610a8f023fffa9b13ac628bf0bd0f",
+      "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w10/reports/all_unmatched_20261107/worker-10/chemicals/proposed/Carbon_dioxide_gas.yaml",
+      "payload_sha256": "8aad02dbcf10c1dd21ffaf50dee1a8611b7837f09f8886e8013a3bcd7fea2bd2",
+      "before_mapping_evidence": [
+        {
+          "evidence_type": "CURATOR_JUDGMENT",
+          "source": "manual curation",
+          "notes": "Gaseous CO2 used for bicarbonate buffering / headspace in anaerobic media; carbon dioxide CHEBI:16526"
+        }
+      ],
+      "after_mapping_evidence": [
+        {
+          "evidence_type": "CURATOR_JUDGMENT",
+          "source": "manual curation",
+          "notes": "Gaseous CO2 used for bicarbonate buffering / headspace in anaerobic media; carbon dioxide CHEBI:16526"
+        }
+      ],
+      "historical_reviewer_related_events": [
+        {
+          "timestamp": "2026-04-16T00:00:00+00:00",
+          "curator": "manual",
+          "action": "CREATED",
+          "changes": "Created MIM record for gaseous CO2 (carbon dioxide)",
+          "new_status": "MAPPED",
+          "llm_assisted": false
+        }
+      ],
+      "new_history_events": [
+        {
+          "timestamp": "2026-11-08T05:17:10.503056+00:00",
+          "curator": "all_unmatched_worker10_source_review",
+          "action": "ADDED_SYNONYMS",
+          "changes": "TOGO M2679 identifies CO2 gas as a gas input. ChEBI16526 explicitly describes gaseous carbon dioxide under normal conditions. The doubled space changes spelling only; no carbonate salt, dissolved stock concentration or gas-mixture fraction is inferred. Proposed only; integration requires content-bound full-payload mapping review.",
+          "llm_assisted": true,
+          "llm_model": "Codex",
+          "new_status": "MAPPED"
+        }
+      ],
+      "interpretation": "Retained CURATOR_JUDGMENT source manual curation plus explicit historical manual creation is not a new MANUAL_CURATION mapping evidence entry. A new agent-assisted synonym event must not relabel this old evidence or imply no historical human contribution."
+    },
+    {
+      "entry_id": "w09::ab-proposal-angustmycin",
+      "head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+      "owner_path": "data/ingredients/mapped/Angustmycin.yaml",
+      "before_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/baseline/data/ingredients/mapped/Angustmycin.yaml",
+      "before_sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0",
+      "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/antibiotics/after/Angustmycin.yaml",
+      "payload_sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f",
+      "before_mapping_evidence": [
+        {
+          "evidence_type": "CURATOR_CONFIRMED_SYNONYM",
+          "source": "kgmicrobe.compound:angustmycin",
+          "notes": "angustmycin A is a historical/trade name for the antibiotic psicofuranin \u2014 same molecule (curator-confirmed synonym)."
+        }
+      ],
+      "after_mapping_evidence": [],
+      "historical_reviewer_related_events": [
+        {
+          "timestamp": "2026-04-19T08:07:47.438922+00:00",
+          "curator": "user_approved_curator_synonym",
+          "action": "CURATOR_CONFIRMED_CHEBI",
+          "changes": "angustmycin A is a historical/trade name for the antibiotic psicofuranin \u2014 same molecule (curator-confirmed synonym).",
+          "new_status": "MAPPED",
+          "llm_assisted": false
+        }
+      ],
+      "new_history_events": [
+        {
+          "timestamp": "2026-11-08T05:16:00.872078+00:00",
+          "curator": "codex_worker09_antibiotics_primary",
+          "action": "PROPOSED_MAPPING_CORRECTION",
+          "changes": "Propose curator-selected Step5 AMBIGUOUS disposition for bare Angustmycin; no mapping row. Withdraw false A=C evidence and C-derived chemistry from active assertion fields, preserve all history/raw synonym provenance. Proposal only; original mapping evidence preserved in before capture. No role, whole-record, hold-removal or downstream approval.",
+          "previous_status": "MAPPED",
+          "new_status": "AMBIGUOUS",
+          "llm_assisted": true
+        }
+      ],
+      "interpretation": "Historical user_approved_curator_synonym is retained while new proposal changes active mapping disposition. Human source scope and scientific correctness are separate; this provenance audit does not decide the old or new chemical identity."
+    },
+    {
+      "entry_id": "w09::ma-casamino-distinct",
+      "head": "77d6beaea5793a0a763957b99e8141ff12b216d2",
+      "owner_path": "data/ingredients/mapped/Casamino_Acids.yaml",
+      "before_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/baseline/data/ingredients/mapped/Casamino_Acids.yaml",
+      "before_sha256": "1aa97fc00f9cd3611cd8e6c036a31af9035f79d0b9a47b4d7a14a2d84c89e2a7",
+      "payload_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w09/reports/all_unmatched_20261107/worker-09/materials/proposals/Casamino_Acids.yaml",
+      "payload_sha256": "66e70b490105953e4767731b9bd4343e5be464ae90907361e368839d15820ea5",
+      "before_mapping_evidence": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "CultureMech",
+          "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+        },
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "MIM curation (#263)",
+          "notes": "Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained."
+        }
+      ],
+      "after_mapping_evidence": [
+        {
+          "evidence_type": "DATABASE_MATCH",
+          "source": "CultureMech",
+          "notes": "HISTORICAL; superseded by exact MeSH identity below. Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+        },
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "MIM curation (#263)",
+          "notes": "HISTORICAL; superseded by exact MeSH identity below. Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained."
+        },
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "https://id.nlm.nih.gov/mesh/C017721.json",
+          "notes": "Active MeSH C017721 is casamino acids, defined as acid hydrolyzed casein whose nitrogen is converted to amino acids or other compounds of relative chemical simplicity. This exact material term is more specific than FOODON03315719 and avoids unnecessary registry fallback. Ordinary acid hydrolysate remains distinct from enzymatic casein peptone and vitamin-assay grade. Historical source statistics are preserved, not recomputed or merged."
+        }
+      ],
+      "historical_reviewer_related_events": [
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "reground_263",
+          "action": "CORRECTED",
+          "changes": "identifier CHEBI:78020 -> FOODON:03315719; ontology term CHEBI:78020 -> FOODON:03315719 (mammalian milk protein (hydrolyzed)). Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained. Dropped molecular_formula, inchi, smiles backfilled from the wrong term.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "reground_263",
+          "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+          "changes": "restored ingredient_type=UNDEFINED_MIXTURE: it was flipped to SINGLE_INGREDIENT only because heptacosanoate's structure had been backfilled onto the record (#263)",
+          "llm_assisted": true
+        }
+      ],
+      "new_history_events": [
+        {
+          "timestamp": "2026-11-08T05:24:00.742408+00:00",
+          "curator": "all-unmatched-worker-09/materials",
+          "action": "PROPOSED_SOURCE_REVIEW_CURATION",
+          "changes": "Propose exact ordinary acid-casein digest identity mesh:C017721 verified in official NLM entry, preserve separate vitamin-assay/tryptone substances, reject inherited carbocerate/metadata/grade-fragment aliases; preserve the historical concentration-fragment RAW_TEXT label under#213 pending claim-specific source review and add ordinary supplier spellings. Coordinator must reconcile identifier references and shared-parent closure; no merge or hold release.",
+          "llm_assisted": true,
+          "new_status": "MAPPED"
+        }
+      ],
+      "interpretation": "Modified historical human-typed row requires separating the new agent note from the source of older evidence. llm_assisted historical flag and GitHub issue existence do not establish or exclude human supply."
+    }
+  ],
+  "input_history_policy": "Complete historical events are preserved; absence of named human is not automated proof of absence."
+}

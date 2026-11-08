@@ -1,0 +1,114 @@
+{
+  "at": "2026-11-08T07:09:52.238210+00:00",
+  "author": "/root",
+  "schema_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/src/mediaingredientmech/schema/mediaingredientmech.yaml",
+  "schema_sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+  "mapping_evidence_attribute": {
+    "range": "EvidenceTypeEnum",
+    "required": true,
+    "description": "Type of evidence"
+  },
+  "component_evidence_attribute": {
+    "range": "ComponentEvidenceTypeEnum",
+    "required": true,
+    "description": "Kind of source that supports the constituent list."
+  },
+  "mapping_values": {
+    "DATABASE_MATCH": {
+      "description": "Direct match in ontology database"
+    },
+    "CURATOR_JUDGMENT": {
+      "description": "Expert curator decision"
+    },
+    "LLM_SUGGESTION": {
+      "description": "LLM-generated suggestion"
+    },
+    "LITERATURE": {
+      "description": "Based on literature evidence"
+    },
+    "TEXT_SIMILARITY": {
+      "description": "Based on text similarity metrics"
+    },
+    "CROSS_REFERENCE": {
+      "description": "Cross-reference to other database"
+    },
+    "LEXICAL_MATCH": {
+      "description": "Lexical (token-overlap / normalized-name) match against an ontology label or synonym."
+    },
+    "CAS_RN_CROSS_REFERENCE": {
+      "description": "Identity established via CAS Registry Number cross-reference rather than ontology label match."
+    },
+    "MANUAL_CURATION": {
+      "description": "Manually curated evidence supplied by a human reviewer (distinct from CURATOR_JUDGMENT, which records the decision rather than the source of evidence)."
+    },
+    "MANUAL_REVIEW": {
+      "description": "Identity confirmed during a manual review pass."
+    },
+    "CURATOR_CONFIRMED_SYNONYM": {
+      "description": "Curator confirmed a synonym match found by tooling."
+    }
+  },
+  "component_values": {
+    "SOURCE_LABEL": {
+      "description": "The upstream label explicitly enumerates the constituents."
+    },
+    "CURATED_DATASET": {
+      "description": "A reviewed structured curation table supplies the constituents."
+    },
+    "MANUAL_CURATION": {
+      "description": "A curator established the constituent list and recorded the rationale."
+    },
+    "RECIPE_SOURCE": {
+      "description": "A cited medium or stock-solution recipe supplies the constituents."
+    },
+    "PUBLICATION": {
+      "description": "A publication supplies or directly supports the constituent list."
+    }
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "condition": "Exact new/modified mapping evidence expresses documented agent-authored mapping, registry, source-scope or synonym judgment, even when supported by primary citations.",
+      "proposal": "LLM_SUGGESTION",
+      "reason": "Represents the recorded agent contribution without asserting human evidence supply. It is a provenance type, not a statement that underlying primary data are fabricated."
+    },
+    {
+      "id": "R2",
+      "condition": "Exact full entry is confined to a directly verified ontology database fact/match; the original captured term proves the claim at its actual scope.",
+      "proposal": "DATABASE_MATCH",
+      "reason": "Require exact capture hash and term/field locator for this entire entry; a URL or ontology-named source is insufficient."
+    },
+    {
+      "id": "R3",
+      "condition": "Exact full entry records an explicit cross-reference supplied by another database with matching substance/form/scope.",
+      "proposal": "CROSS_REFERENCE",
+      "reason": "Do not promote an agent-inferred source-to-owner identity or a recipe association to an explicit database cross-reference."
+    },
+    {
+      "id": "R4",
+      "condition": "Human reviewer actually supplied the particular evidence, with attributable inspected record of that contribution.",
+      "proposal": "retain MANUAL_CURATION",
+      "reason": "LLM assistance elsewhere does not negate a real human contribution. A human-authored publication or human-operated service alone is not evidence of human supply of this MIM claim."
+    },
+    {
+      "id": "R5",
+      "condition": "Full entry unchanged under duplicate-aware predecessor comparison.",
+      "proposal": "retain; exclude from new-entry repair",
+      "reason": "Inheritance is not a new agent assertion; historical provenance truth remains unassessed unless separately established."
+    },
+    {
+      "id": "R6",
+      "condition": "Historical source evidence is modified/reframed by an agent, but exact original human/agent source attribution remains unclear.",
+      "proposal": null,
+      "reason": "Classify ambiguous_needs_review; retain exact old/new values and separate original evidence from new contextual note. No forced retype."
+    },
+    {
+      "id": "R7",
+      "condition": "ComponentEvidenceTypeEnum MANUAL_CURATION, EvidenceSourceEnum, mapping_quality, history, other similarly spelled enum.",
+      "proposal": "out of this mapping-evidence replacement scope",
+      "reason": "Definitions differ; infer neither defect nor replacement from spelling."
+    }
+  ],
+  "scientific_approval": false,
+  "candidate_writer": false
+}

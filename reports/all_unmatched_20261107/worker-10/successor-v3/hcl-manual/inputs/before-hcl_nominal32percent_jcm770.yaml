@@ -1,0 +1,53 @@
+identifier: kgmicrobe.ingredient:hcl_nominal32percent_jcm770
+preferred_term: Nominal 32% HCl reagent (JCM 770)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hcl_nominal32percent_jcm770
+  ontology_label: Nominal 32% HCl reagent (JCM 770)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=770
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. JCM
+      770 trace-element solution uses 1 mL of 32% HCl. The acid reagent has a nominal
+      source strength and is not identical to its receiving aqueous trace-element
+      mixture or the pure HCl owner.
+components:
+- component_name: HCl
+  reference_scope: UNMAPPED
+  source: 32% as printed; percentage basis and solvent are not specified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=770
+    source_record: Nominal 32% HCl reagent (JCM 770)
+    notes: JCM 770 trace-element solution uses 1 mL of 32% HCl. The acid reagent has
+      a nominal source strength and is not identical to its receiving aqueous trace-element
+      mixture or the pure HCl owner.
+  notes: Percent basis, solvent and supplied grade are unknown; no w/w, w/v, density
+    or molarity is asserted. Source-named parts remain UNMAPPED where supplied form
+    or stock identity is not established. MIM_CATALOG references identify only the
+    supported constituent, not approval of that complete owner.
+notes: JCM 770 trace-element solution uses 1 mL of 32% HCl. The acid reagent has a
+  nominal source strength and is not identical to its receiving aqueous trace-element
+  mixture or the pure HCl owner. Percent basis, solvent and supplied grade are unknown;
+  no w/w, w/v, density or molarity is asserted. Provenance-only source text '32% HCl'
+  (case CM_NAME:b6fdf3373824195f51ca142c3e7459872f805b5098d5185108cca2789d4ca1cd).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true

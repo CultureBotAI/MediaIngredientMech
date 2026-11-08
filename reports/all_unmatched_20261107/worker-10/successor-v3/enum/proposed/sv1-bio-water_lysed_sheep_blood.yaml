@@ -1,0 +1,51 @@
+identifier: MICRO:0002399
+preferred_term: Water-lysed sheep blood
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0002399
+  ontology_label: water-lysed sheep blood
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://mediadive.dsmz.de/rest/medium/439
+    notes: DSMZ439 explicitly names water-lysed sheep blood. MICRO:0002399 defines
+      the same lysed ovine blood preparation; native ignored-inclusive lookup finds
+      no existing owner for this exact term. No defibrination, dilution or complete
+      cell composition is inferred.
+curation_history:
+- timestamp: '2026-11-08T06:01:21.558491+00:00'
+  curator: all_unmatched_worker_10_successor_bio
+  action: CREATED
+  changes: DSMZ439 explicitly names water-lysed sheep blood. MICRO:0002399 defines
+    the same lysed ovine blood preparation; native ignored-inclusive lookup finds
+    no existing owner for this exact term. No defibrination, dilution or complete
+    cell composition is inferred. Isolated successor proposal only; original published
+    review bytes preserved.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:24.835513+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+synonyms:
+- synonym_text: Water-lysed sheep blood
+  synonym_type: RAW_TEXT
+  source: https://mediadive.dsmz.de/rest/medium/439; https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium439.pdf
+notes: 'DSMZ439 explicitly names water-lysed sheep blood. MICRO:0002399 defines the
+  same lysed ovine blood preparation; native ignored-inclusive lookup finds no existing
+  owner for this exact term. No defibrination, dilution or complete cell composition
+  is inferred. Source labels retained as nonresolving provenance: [{"case_id": "CM_NAME:322e6c8e9225e4ba15e5aadc17b08560f992fbb45d63841917e94a879154a9db",
+  "raw_label": "Water-lysed sheep blood"}]. No global generic alias, supplier equivalence,
+  role approval or complete publication approval is conferred. Receiving-medium dose
+  and unit repairs remain separate. Existing native holds and rejected labels are
+  preserved.'

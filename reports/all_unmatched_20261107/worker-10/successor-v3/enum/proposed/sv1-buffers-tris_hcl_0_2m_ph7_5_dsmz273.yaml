@@ -1,0 +1,67 @@
+identifier: kgmicrobe.ingredient:tris_hcl_0_2m_ph7_5_dsmz273
+preferred_term: 0.2 M Tris-HCl buffer, pH 7.5 (DSMZ 273)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:tris_hcl_0_2m_ph7_5_dsmz273
+  ontology_label: 0.2 M Tris-HCl buffer, pH 7.5 (DSMZ 273)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium273.pdf
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. DSMZ
+      273 adds 250 mL of 0.2 M Tris-HCl buffer at pH 7.5 to 750 mL seawater and other
+      medium ingredients. This separately named stock differs from the 0.1 M Tris-HCl
+      preparations; seawater and medium atmosphere are outside its component list.
+components:
+- component_name: Tris-HCl
+  reference_scope: UNMAPPED
+  source: Source buffer system, not an assertion of dry reagent form or titrant.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium273.pdf
+    source_record: 0.2 M Tris-HCl buffer, pH 7.5 (DSMZ 273)
+    notes: DSMZ 273 adds 250 mL of 0.2 M Tris-HCl buffer at pH 7.5 to 750 mL seawater
+      and other medium ingredients. This separately named stock differs from the 0.1
+      M Tris-HCl preparations; seawater and medium atmosphere are outside its component
+      list.
+  notes: Solvent, titrant and exact Tris reagent form are not specified. Source-named
+    parts remain UNMAPPED where supplied form or stock identity is not established.
+    MIM_CATALOG references identify only the supported constituent, not approval of
+    that complete owner.
+notes: DSMZ 273 adds 250 mL of 0.2 M Tris-HCl buffer at pH 7.5 to 750 mL seawater
+  and other medium ingredients. This separately named stock differs from the 0.1 M
+  Tris-HCl preparations; seawater and medium atmosphere are outside its component
+  list. Solvent, titrant and exact Tris reagent form are not specified. Provenance-only
+  source text 'Tris-HCl-buffer (0.2 M; pH 7.5)' (case CM_NAME:a18f98ca48aca47e78ff9cbc03d48e4bff39eef21b2fee380c09b74eaf865230).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity.
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:45:25.025892+00:00'
+  curator: Codex worker10 /root claim-specific provenance correction
+  action: CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE
+  changes: 'Issue #1226: retype only the independently audited new agent-authored
+    MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION.
+    Exact sources, notes, quantities, scientific conclusions, unchanged historical
+    MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects,
+    prior history and all source/role/export holds remain unchanged. This is provenance
+    correction, not renewed scientific or release approval.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

@@ -1,0 +1,103 @@
+identifier: kgmicrobe.ingredient:hcl_nominal35percent_togo_m3216
+preferred_term: Nominal 35% HCl reagent (TOGO M3216)
+mapping_status: MAPPED
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:hcl_nominal35percent_togo_m3216
+  ontology_label: Nominal 35% HCl reagent (TOGO M3216)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216
+    notes: Source-described preparation boundary retained under MAPPING_SEMANTICS
+      section 3. No exact chemical or complete-formula equivalence is asserted. TOGO
+      M3216 uses 10 mL of 35% HCl in its trace-element stock. This source-specified
+      acid reagent is not equated to pure dry/gaseous HCl. Its relation to nominal
+      25% and 32% preparations is unresolved because comparable percentage and material
+      specifications are absent. The trace-element mixture and its water are not treated
+      as the acid reagent recipe.
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2305
+    notes: LLM-assisted bounded comparison under issue1237, independently checked
+      against exact source captures. Literal 25%, 32% and 35% are retained as source
+      specifications, not normalized comparable fractions. The cited sources do not
+      state a common percentage basis, carrier, grade or assay tolerance; the exact
+      same-or-distinct preparation relation is unresolved. TOGO M2305/M2746 explicitly
+      calls its 25% input concentrated, so that qualitative label does not exclude
+      a numerical percentage. If comparable definitions and assay ranges were established,
+      a real strength difference could be assessed; they are not established here.
+      Before co-installing overlapping candidates, the coordinator must choose an
+      explicit common bounded partial-material scope preserving every source context,
+      or obtain comparable preparation/product evidence. No owner merge or arbitrary
+      winner is selected.
+components:
+- component_name: HCl
+  reference_scope: UNMAPPED
+  source: 35% as printed; percentage basis and solvent are not specified.
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M3216
+    source_record: Nominal 35% HCl reagent (TOGO M3216)
+    notes: TOGO M3216 uses 10 mL of 35% HCl in its trace-element stock. This source-specified
+      acid reagent is not equated to pure dry/gaseous HCl. Its relation to nominal
+      25% and 32% preparations is unresolved because comparable percentage and material
+      specifications are absent. The trace-element mixture and its water are not treated
+      as the acid reagent recipe.
+  notes: Percent basis, solvent identity and supplied grade are unknown; no w/w, w/v,
+    molarity or density is inferred. Source-named parts remain UNMAPPED where supplied
+    form or stock identity is not established. MIM_CATALOG references identify only
+    the supported constituent, not approval of that complete owner. Literal 25%, 32%
+    and 35% are retained as source specifications, not normalized comparable fractions.
+    The cited sources do not state a common percentage basis, carrier, grade or assay
+    tolerance; the exact same-or-distinct preparation relation is unresolved. TOGO
+    M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative label
+    does not exclude a numerical percentage. If comparable definitions and assay ranges
+    were established, a real strength difference could be assessed; they are not established
+    here. Before co-installing overlapping candidates, the coordinator must choose
+    an explicit common bounded partial-material scope preserving every source context,
+    or obtain comparable preparation/product evidence. No owner merge or arbitrary
+    winner is selected.
+notes: 'TOGO M3216 uses 10 mL of 35% HCl in its trace-element stock. This source-specified
+  acid reagent is not equated to pure dry/gaseous HCl. Its relation to nominal 25%
+  and 32% preparations is unresolved because comparable percentage and material specifications
+  are absent. The trace-element mixture and its water are not treated as the acid
+  reagent recipe. Percent basis, solvent identity and supplied grade are unknown;
+  no w/w, w/v, molarity or density is inferred. Provenance-only source text ''35%
+  HCl'' (case CM_NAME:b0a06f2886df7a0f2baee1be683af229bb04dce808108c85680adce9fafdaa0f).
+  Generic source-local labels are not added as globally resolving synonyms. No exact
+  formulation link to a receiving CultureMech medium is asserted. Source-snapshot
+  receiving amounts and embedded holds are preserved; stock-to-medium unit repair
+  is separate from preparation identity. Successor-v3 relation correction: Literal
+  25%, 32% and 35% are retained as source specifications, not normalized comparable
+  fractions. The cited sources do not state a common percentage basis, carrier, grade
+  or assay tolerance; the exact same-or-distinct preparation relation is unresolved.
+  TOGO M2305/M2746 explicitly calls its 25% input concentrated, so that qualitative
+  label does not exclude a numerical percentage. If comparable definitions and assay
+  ranges were established, a real strength difference could be assessed; they are
+  not established here. Before co-installing overlapping candidates, the coordinator
+  must choose an explicit common bounded partial-material scope preserving every source
+  context, or obtain comparable preparation/product evidence. No owner merge or arbitrary
+  winner is selected.'
+curation_history:
+- timestamp: '2026-11-08T06:02:48.801189+00:00'
+  curator: all_unmatched_worker10_successor_buffers
+  action: CREATED
+  changes: Created isolated source-qualified preparation proposal with partial source-proven
+    components. Explicit unknowns and receiving-recipe conflicts are retained; no
+    complete-formula, inherited-owner, role or publication approval.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-11-08T07:38:17.652561+00:00'
+  curator: codex_worker10_successor_v3_bio_research
+  action: CORRECTED
+  changes: Correct unsupported cross-strength disjointness and record conditional
+    relations among nominal-percent and qualitative HCl preparations under CHEM-COMP-004.
+    Preserve all literal specifications, source routes, component assertions, quantities
+    and original history; no consolidation or release.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true

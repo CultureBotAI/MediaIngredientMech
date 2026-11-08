@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-08T07:53:21.003204Z",
+  "old_review_input": {
+    "path": "reports/all_unmatched_20261107/worker-10/successor-v3/native/review-input.yaml",
+    "sha256": "8ff48d79da4a2164633ba8acd7ef3730db1221f26bee886896fb54d28d1906b1"
+  },
+  "old_failed_validation": {
+    "path": "reports/all_unmatched_20261107/worker-10/successor-v3/native/validate-command.json",
+    "sha256": "d517caa64ad1d458e399b6ac10f4a3fce4b908912f649c1453f6e029dbca2c34"
+  },
+  "new_review_input": {
+    "path": "reports/all_unmatched_20261107/worker-10/successor-v3/native-v2/review-input.yaml",
+    "sha256": "9893c4d05d45b6972a73fc3ea9807f2e9479d2009c3c5c27f7ae23edd1daa0a9"
+  },
+  "changed_fields": [
+    "review_id",
+    "finished_at",
+    "findings[hcl-conditional-reconciliation].ownership_note",
+    "actions[resolve-hcl-conditional-reconciliation].ownership_note"
+  ],
+  "all_other_content_equal": true,
+  "scientific_payload_changes": false,
+  "reason": "Native validation requires explicit ownership limit for a cross-proposal finding/action without maintained owner paths. Recorded before fixing; failed wrapper and original error remain immutable."
+}

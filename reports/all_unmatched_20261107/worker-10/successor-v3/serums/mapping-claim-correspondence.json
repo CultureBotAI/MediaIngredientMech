@@ -1,0 +1,205 @@
+{
+  "claims": [
+    {
+      "old_proposal_id": "sv1-bio-gamma_irradiated_fetal_calf_serum_10109_155",
+      "new_proposal_id": "sv3-serums-gamma_irradiated_fetal_calf_serum_10109_155",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.ccap.ac.uk/wp-content/uploads/MR_MC.pdf",
+        "notes": "CCAP MC and MCII explicitly identify the sterile gamma-irradiated fetal-calf serum product 10109-155 and identify Invitrogen as supplier. This product is distinct from heat-treated FBS. The truncated imperative in case19 remains malformed provenance, never an alias. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "e578d890d282bc588a9b5f8b208958186db8bd610c414580488e9c5d4b36877b",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.ccap.ac.uk/wp-content/uploads/MR_MC.pdf",
+        "notes": "CCAP MC and MCII explicitly identify the sterile gamma-irradiated fetal-calf serum product 10109-155 and identify Invitrogen as supplier. Heat-treatment status of the historical10109-155 product is not specified. Gamma irradiation does not exclude heat treatment; compatibility with another preparation remains unresolved without a product/process bridge. The truncated imperative in case19 remains malformed provenance, never an alias. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "eae860272d055bef4d60547a6c67ff91386fe3467daf47c7582ad56149ff9ee6",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F04"
+    },
+    {
+      "old_proposal_id": "sv1-bio-filtered_rabbit_serum_56c_30min_jcm946",
+      "new_proposal_id": "sv3-serums-filtered_rabbit_serum_56c_30min_jcm946",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=946",
+        "notes": "JCM946/TOGO M993 explicitly specify rabbit serum heated56C30min and prior filter sterilization. Both treatments remain in the bounded preparation; no60minute equivalence and no need to repair the receiving-medium volume before proposing identity. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "ff2fc207ff9e225f6f65655fa0592898cfde368310356df493fb777843a6ab81",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=946",
+        "notes": "JCM946/TOGO M993 explicitly specify rabbit serum heated56C30min and filter sterilization before addition to the cooled base. The relative order of heating and filtration is not stated. Both treatments remain in the bounded preparation; no60minute equivalence and no need to repair the receiving-medium volume before proposing identity. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "5b391ab49f27e6ff59628bcbf139b23c2e692f0832e10c4aaec864b067891b99",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F05"
+    },
+    {
+      "old_proposal_id": "sv1-bio-newborn_calf_serum_komodo1021",
+      "new_proposal_id": "sv3-serums-newborn_calf_serum_komodo1021",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1021.pdf",
+        "notes": "KOMODO1021 and its variant explicitly select newborn calf serum; linked DSMZ1021 permits fetal OR newborn, without overriding the selected newborn row. CCONT0000051 is a label candidate in an imported ontology outside native OntologySourceEnum; preserve a local source-qualified newborn identity with broader calf-serum parent. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "c2bbc63f6658fe9dbb20da19c3c5512ae65afcd2ab996e273b0e310eece33238",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1021.pdf",
+        "notes": "KOMODO1021 and its variant explicitly select newborn calf serum; linked DSMZ1021 requires sterile fetal OR newborn serum, without overriding the selected newborn row. Sterility is retained for this selected newborn preparation; no particular sterilization method or heat schedule is inferred. CCONT0000051 is a label candidate in an imported ontology outside native OntologySourceEnum; preserve a local source-qualified newborn identity with broader calf-serum parent. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "e4052e4b2f28932dc2db3a28aac102e0587e3d12c7dc37f564b7ce4574a6bd6d",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F05"
+    },
+    {
+      "old_proposal_id": "sv1-bio-sterile_bovine_serum_56c_45min_dsmz840",
+      "new_proposal_id": "sv3-serums-sterile_bovine_serum_56c_45min_dsmz840",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf",
+        "notes": "DSMZ840 and its tube/bottle variants explicitly require sterile bovine serum heated56C45min. The age remains unspecified; this is not fetal serum. Different receiving doses do not split or block the same source-defined preparation. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "7efbacd4578fe624d9f549db60e18cc4448d64c23103bf6880cf44fc18e564f4",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium840.pdf",
+        "notes": "DSMZ840 and its tube/bottle variants explicitly require sterile bovine serum heated56C45min. Developmental age remains unspecified and therefore does not exclude fetal serum. The explicit56C45min protocol differs from explicit56C30min and56C60min protocols; an unstated schedule does not establish a difference. Different receiving doses do not split or block the same source-defined preparation. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "3f7c0d5a249d5b51151465d5407cdad86f21ba7871c77c3e24ec2588789e2890",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F04"
+    },
+    {
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_atcc1827",
+      "new_proposal_id": "sv3-serums-heat_inactivated_fbs_atcc1827",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.atcc.org/~/media/6961826D153043B3A8D59D0D37CEF5C8.ashx",
+        "notes": "Both TOGO M2764/M2622 reproduce the same ATCC1827 source requiring heat-inactivated fetal-bovine serum. They therefore share this bounded source preparation. Treatment schedule is unstated and remains distinct from separately documented30/60minute products. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "2d6f8c9f77408aaeb8b84e89aff36517e4b5cef532efcd3ee47de80770406a90",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.atcc.org/~/media/6961826D153043B3A8D59D0D37CEF5C8.ashx",
+        "notes": "Both TOGO M2764/M2622 reproduce the same ATCC1827 source requiring heat-inactivated fetal-bovine serum. They therefore share this bounded source preparation. Treatment schedule is unstated; the relationship to preparations with explicit30/45/60minute schedules remains unresolved. Absence of a schedule proves neither equality nor difference. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "34b1fa65039edaafe8c9d1c3ff59238b33d92437dd8c855577163dc9aa652ebf",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F04"
+    },
+    {
+      "old_proposal_id": "sv1-bio-horse_serum_56c_30min_atcc243",
+      "new_proposal_id": "sv3-serums-horse_serum_56c_30min_atcc243",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.atcc.org/~/media/98B9A2419DDE432EBF35ED01CD98A88E.ashx",
+        "notes": "ATCC243 explicitly instructs heating equine serum56C30min. TOGO M2467/M2177 are source variants of that same instruction. This treatment-specific preparation is distinct from active/filter-only equine serum and from unknown-schedule products. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "575d8844311fbb95f5429e546e261bedce01dde56fbb0c729e441f5e97d79e5c",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.atcc.org/~/media/98B9A2419DDE432EBF35ED01CD98A88E.ashx",
+        "notes": "ATCC243 explicitly instructs heating equine serum56C30min. TOGO M2467/M2177 are source variants of that same instruction. The explicit heat-inactivated state is retained and differs from an explicitly active state. Filtration alone and missing heat schedules do not establish non-heat treatment or a different preparation; those relationships remain unresolved. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "d9014cdb22a999b909b6d08ac000b0c3d8a898227ae1b1b004d69fc93b7cf6b6",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F04"
+    },
+    {
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_spiroplasma_m2578",
+      "new_proposal_id": "sv3-serums-heat_inactivated_fbs_spiroplasma_m2578",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2578",
+        "notes": "TOGO M2578 names heat-inactivated fetal-bovine serum and explicitly permits newborn serum as an alternative. This owner represents only the fetal option, not the alternative or an assumed heating schedule. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "c3d82b36238084cb59f326a3d40b3b01cf426fd5e2a86f3ef509fdeb13d8e246",
+      "after_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2578",
+        "notes": "TOGO M2578 names heat-inactivated fetal-bovine serum and explicitly permits newborn serum as an alternative. This owner represents only the fetal option, not the alternative or an assumed heating schedule. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "c3d82b36238084cb59f326a3d40b3b01cf426fd5e2a86f3ef509fdeb13d8e246",
+      "correspondence": "unchanged original claim; later root audited enum pass allowed",
+      "same_source_semantics_only": "BIO-F08"
+    },
+    {
+      "old_proposal_id": "sv1-bio-heat_inactivated_fbs_spiroplasma_m2578",
+      "new_proposal_id": "sv3-serums-heat_inactivated_fbs_spiroplasma_m2578",
+      "pointer": "/ontology_mapping/evidence/1",
+      "before_claim": null,
+      "before_claim_sha256": null,
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.atcc.org/~/media/D078A95CAFED4ADE877F47632F4E2EB5.ashx",
+        "notes": "Source-version boundary: this candidate applies only to the fetal option in frozen TOGO M2578 (original primary capture2026-11-08T05:07:01.392375+00:00, SHA256338404e0a53706393f5e37a882b4c66001800a343ab21515fdc28691b6e0f684). That version permits newborn calf serum instead and does not specify a heat schedule. The same linked ATCC0988 URL captured2026-11-08T06:50:20.343881+00:00 (SHA2560233e1b2ca08c89365c67ce6e8e01f2a0d9fa3e20a45c91dc95363feb3c10c9a) explicitly says reformulated as MD2611, names ATCC30-2020, and instructs55C for1hour plus15minutes warmup. Its additive solution is filter sterilized. These current positive facts are not backfilled into the older TOGO material; applying this owner to the current version requires a reviewed version/product/protocol bridge. The frozen transcription is not declared false. This is version provenance, not exact ontology identity."
+      },
+      "after_claim_sha256": "14025001841fbad58479ca7e3682896151389d6fde4e6f8dbd6fcc9c041bd3ce",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F08"
+    },
+    {
+      "old_proposal_id": "sv1-bio-fetal_bovine_serum_56c_60min_m2964",
+      "new_proposal_id": "sv3-serums-fetal_bovine_serum_56c_60min_m2964",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2964",
+        "notes": "TOGO M2964 explicitly specifies fetal-bovine serum heated56C for1hour. The raw capitalI hour token is retained in provenance; the one-hour process remains distinct from30minute and unknown-schedule FBS. Broader material parent only; distinct local preparation identity remains."
+      },
+      "before_claim_sha256": "48dfe31b4afaa9d49eec05f0cd11b1d2018462770ac074b9c144f9febc3f5a67",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2964",
+        "notes": "TOGO M2964 explicitly specifies fetal-bovine serum heated56C for1hour. The raw capitalI hour token is retained in provenance; the explicit56C60minute process differs from explicit56C30minute and56C45minute processes. Preparations with unstated heat schedules may overlap; their exact relationship remains unresolved. Broader material parent only; distinct local preparation identity remains."
+      },
+      "after_claim_sha256": "791142cf8ca107f794ea1d01238cf9569488fae5bbfdde42911e37b44dacc244",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F04"
+    },
+    {
+      "old_proposal_id": "sv1-kg-calf-serum1303",
+      "new_proposal_id": null,
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1303",
+        "notes": "JCM1303 explicitly specifies heat-inactivated bovine calf serum among filter-sterilized additions. Temperature, duration, supplier and pooling are not stated. This source-qualified material preserves calf origin and heat-treatment status without claiming equivalence to fetal serum or another heating schedule."
+      },
+      "before_claim_sha256": "106252b22a1ba327dba8920c12444f69746e01d3b43036500491dd378933ae2b",
+      "after_claim": null,
+      "after_claim_sha256": null,
+      "correspondence": "Claim and original bytes preserved historically; parallel proposal retired from active selection, no replacement MappingEvidence authored."
+    },
+    {
+      "old_proposal_id": "sv1-kg-swine-serum1076b",
+      "new_proposal_id": "sv3-serums-swine-serum1076b",
+      "pointer": "/ontology_mapping/evidence/0",
+      "before_claim": {
+        "evidence_type": "MANUAL_CURATION",
+        "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf",
+        "notes": "DSMZ1076b explicitly specifies heat-inactivated swine serum separately from fetal bovine serum. Preserve this source-qualified treated material. The17mL is a receiving-medium dose, not a concentration or process specification. Heat-treatment temperature/time and supplier are not stated and are not invented."
+      },
+      "before_claim_sha256": "c3ce38cc8a24a7ea221371ccee1bf4681c61bd1149f34731222c8a4fdd6221da",
+      "after_claim": {
+        "evidence_type": "LLM_SUGGESTION",
+        "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1076b.pdf",
+        "notes": "Reconcile the authentic MediaDive ingredient960 lineage through existing Swine_Serum/UNMAPPED_0536. MediaDive lists1076b, and DSMZ1076b names heat-inactivated swine serum17ml separately from fetal bovine serum. The17ml is a receiving-medium dose, not a stock concentration. Heating temperature/time and supplier remain unstated. All original owner history is preserved. The separate Porcine_Serum/MD967 record is not declared untreated, merged or repurposed; the relationship of its unspecified processing to this preparation remains unresolved."
+      },
+      "after_claim_sha256": "6cd1ca5413dbe35c00fc1ee67ef2e353d65dd7c51ee8b035523faf9c80b7fdc8",
+      "correspondence": "revised/new LLM-assisted claim; LLM_SUGGESTION",
+      "same_source_semantics_only": "BIO-F02"
+    }
+  ],
+  "policy": "No global enum replacement; newly authored/revised MappingEvidence is LLM_SUGGESTION. All historical events remain verbatim. Original M2578 mapping claim is unchanged for root claim-specific enum correction."
+}

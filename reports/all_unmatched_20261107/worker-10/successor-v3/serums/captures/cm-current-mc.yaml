@@ -1,0 +1,123 @@
+id: CultureMech:000359
+name: mc
+original_name: MC
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+ph_value: 6.9
+media_term:
+  preferred_term: CCAP Medium C49
+  term:
+    id: mediadive.medium:C49
+    label: MC
+notes: 'Source: CCAP | Link: https://www.ccap.ac.uk/wp-content/uploads/MR_MC.pdf'
+ingredients:
+- preferred_term: Casein
+  concentration:
+    value: '11.1111'
+    unit: G_PER_L
+  term:
+    id: FOODON:03420180
+    label: Casein
+- preferred_term: Na2HPO4 x 7 H2O
+  term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+  concentration:
+    value: '2.77778'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:34683
+    label: disodium hydrogenphosphate
+- preferred_term: KH2PO4
+  term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+  concentration:
+    value: '0.888889'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:63036
+    label: potassium dihydrogen phosphate
+- preferred_term: Yeast extract
+  concentration:
+    value: '5.55556'
+    unit: G_PER_L
+  term:
+    id: FOODON:03315426
+    label: Yeast extract
+- preferred_term: D-Glucose
+  term:
+    id: CHEBI:17634
+    label: D-glucose
+  concentration:
+    value: '2.77778'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17634
+    label: D-glucose
+- preferred_term: Liver digest
+  concentration:
+    value: '2.77778'
+    unit: G_PER_L
+- preferred_term: Calf serum
+  concentration:
+    value: '20'
+    unit: G_PER_L
+preparation_steps:
+- step_number: 1
+  action: MIX
+  description: 'To be added later:'
+- step_number: 2
+  action: POUR_PLATES
+  description: "Add  the  first six  constituents  in the  order  shown to 900 ml\
+    \ of  deionised  water, \r\nallowing  each to dissolve  completely  before  adding\
+    \ the  next.  Adjust to pH 6.9. \r\nDispense into 5 x 180 ml aliquots and sterilise\
+    \ by pressure cooking at 10 psi for 15\r\nminutes."
+- step_number: 3
+  action: MIX
+  description: Aseptically add the foetal calf serum to a final concentration of 10%.
+- step_number: 4
+  action: HEAT
+  description: Store at 4°C.
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-06-14T05:58:58.561437+00:00'
+  curator: idnf-grounding-fix-v1.0
+  action: Fixed ID_NOT_FOUND term groundings
+  notes: Absent/obsolete CHEBI term ids fixed - 0 re-grounded to the correct CHEBI,
+    1 de-grounded (mixture or unverifiable).
+- timestamp: '2026-01-26T17:53:19.644606Z'
+  curator: mediadive-import
+  action: Imported from MediaDive
+  notes: 'Source: CCAP, ID: C49'
+- timestamp: '2026-03-13T06:18:54.739432Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:000359'
+- timestamp: '2026-03-17T06:30:33.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:05.743010+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "MC" to "mc" for consistent matching
+- timestamp: '2026-06-05T07:41:13.390796+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 3 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+- timestamp: '2026-06-10T07:47:01.057943+00:00'
+  curator: primary-term-label-canonicalization-v1.0
+  action: Canonicalized primary term label to OBO canonical (OAK)
+  notes: 1 primary term(s); ingredient name resolved by OAK sqlite:obo:chebi.
+- timestamp: '2026-09-13T00:00:00-07:00'
+  curator: repair_mixed_score10_exact_terms_batch8.py
+  action: GROUNDED_MIXED_SCORE10_EXACT_TERMS_BATCH8
+  changes: Grounded exact score-10 ingredients
+  source: src/culturemech/data/mediaingredientmech/label_index.csv
+  notes: Applied local mappings for Casein, Yeast extract.
