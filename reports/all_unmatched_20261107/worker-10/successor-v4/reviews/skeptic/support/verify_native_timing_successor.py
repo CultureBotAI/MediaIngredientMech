@@ -1,0 +1,45 @@
+from pathlib import Path
+import datetime,hashlib,importlib.util,json,subprocess,sys
+sys.dont_write_bytecode=True
+R=Path.cwd();A=R/'reports/all_unmatched_20261107/worker-10';S=A/'successor-v4';P=R/'.temp/all-unmatched-worker-10/successor-v4/skeptic'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+load=lambda p:json.loads(p.read_bytes())
+bind=lambda p:{'path':str(p.relative_to(R)),'sha256':sha(p)}
+start=datetime.datetime.now(datetime.timezone.utc).isoformat();checks=[]
+def ck(n,x):checks.append({'check':n,'pass':bool(x)})
+spec=importlib.util.spec_from_file_location('native_review_readonly',R/'scripts/record_review.py');mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+oldpair=load(S/'native/saved-pair.json');pair=load(S/'native-v2/saved-pair.json');corr=load(S/'native-v2/timing-correction.json');finding=load(S/'reviews/retention/native-timing-finding-v1.json')
+old=mod.load_document((R/oldpair['files'][0]['path']).read_text());new=mod.load_document((R/pair['files'][0]['path']).read_text())
+for b in oldpair['files']+pair['files']:ck('exact saved pair '+b['path'],sha(R/b['path'])==b['sha256'])
+ck('exact predecessor scientific review and final v2 report',sha(S/'reviews/skeptic/scientific-review-v1.json')=='fcae3c77d942d2aeb29134d50e5c554f0ca452aed49f1908d623af5336feb98a' and sha(S/'reviews/skeptic/final-assembly-review-v2.json')=='4816da1f2d212fec691ec5d8c0af28e3817e02baccbc1c75372205f27ac1e788')
+ck('original handoff exact',sha(S/'HANDOFF.json')=='25dbe1fafe0a3919c080fe259e07dc837157400b490bf1378f04dbbe8f9d81e8')
+ck('timing finding original bytes exact',sha(S/'reviews/retention/native-timing-finding-v1.json')=='8d77a8b60e928622d837b8afe53dae8afed53e90433d148f24bdd6b9a54d9b6d')
+ck('only expected native metadata keys changed',{k for k in set(old)|set(new) if old.get(k)!=new.get(k)}=={'review_id','title','started_at','finished_at','summary','source','evidence','limitations'})
+ck('complete assessments targets checks scope and attribution retained',all(new[k]==old[k] for k in ['reviewer','skill','completion','verdict','scientific_review','scope','targets','checks','assessments','findings','actions']))
+ck('all old evidence objects exact prefix',new['evidence'][:len(old['evidence'])]==old['evidence'] and [e['evidence_id'] for e in new['evidence'][len(old['evidence']):]]==['TIMING-FINDING','TIMING-CORRECTION'])
+ck('all old source bindings exact retained',all(i in new['source']['inputs'] for i in old['source']['inputs']) and new['source']['git_revision']==old['source']['git_revision'] and new['source']['state']==old['source']['state'])
+ck('exactly seven new context inputs',len(new['source']['inputs'])-len(old['source']['inputs'])==7)
+for b in new['source']['inputs']:ck('current source input '+b['path'],sha(R/b['path'])==b['sha256'])
+for e in new['evidence']:ck('native evidence exact '+e['evidence_id'],sha(R/e['reference'])==e['snapshot_sha256'])
+ck('all earlier limitations exact prefix',new['limitations'][:len(old['limitations'])]==old['limitations'])
+ck('earliest recorded root milestone matches actual source assessment',new['started_at'].replace('Z','+00:00')==load(S/'source-assessment.json')['at']==corr['successor_started_at'])
+ck('unknown earlier reading start explicitly preserved',all(t in ' '.join(new['limitations']) for t in ['not a recovered beginning','exact start remains unknown','not the scientific review duration','do not establish an unknown full review interval']))
+ck('original generation timestamps exactly attributed',corr['original_timestamp_meaning']['started_at']==old['started_at'] and corr['original_timestamp_meaning']['finished_at']==old['finished_at'] and 'wrapper construction' in corr['original_timestamp_meaning']['meaning'])
+science=load(S/'reviews/skeptic/scientific-review-v1.json');ret=load(S/'reviews/retention/author-core-retention-review-v1.json')
+ck('independent science completion recorded accurately',corr['independent_science']['reviewed_at']==science['reviewed_at'] and 'Not recorded' in corr['independent_science']['exact_review_start'])
+ck('independent retention completion and unknown start exact',corr['independent_retention']['completed_at']==ret['completed_at'] and corr['independent_retention']['actual_review_start_exact']==ret['actual_review_start_exact']==None)
+dt=lambda x:datetime.datetime.fromisoformat(x.replace('Z','+00:00'))
+validate=load(S/'native-v2/validate-command.json');save=load(S/'native-v2/save-command.json')
+ck('new observation finish falls after correction and before validation/save',dt(corr['recorded_at'])<dt(new['finished_at'])<=dt(validate['started_at'])<=dt(save['started_at']))
+ck('actual native validate/save succeeded',validate['exit_code']==save['exit_code']==0)
+try:mod.validate_review(new);mod.assert_current_source(R,new);err=None
+except Exception as e:err=repr(e)
+ck('independent new native validate/current source',err is None)
+ck('independent new native Markdown parity',mod.render_markdown(new)==(R/pair['files'][1]['path']).read_text())
+ck('original finding remains an observation not rewritten or closed',finding['status']=='confirmed_at_original_saved_bytes' and new['findings']==old['findings']==[] and corr['github_or_historical_finding_mutation'] is False)
+previous=load(S/'reviews/skeptic/final-assembly-review-v2.json')
+for b in previous['exact_reviewed_inputs']:ck('previously reviewed input still exact '+b['path'],sha(R/b['path'])==b['sha256'])
+ck('source HEAD still predecessor',subprocess.check_output(['git','rev-parse','HEAD'],cwd=R).decode().strip()=='c9a96da71a1977014680e5a92e600dfc7e3874db')
+out={'started_at':start,'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS' if all(c['pass'] for c in checks) else 'FAIL','check_count':len(checks),'checks':checks,'failures':[c for c in checks if not c['pass']],'native_source_inputs':len(new['source']['inputs']),'native_evidence':len(new['evidence']),'native_targets':len(new['targets']),'inputs':[bind(S/n) for n in ['native/saved-pair.json','native-v2/saved-pair.json','native-v2/timing-correction.json','reviews/retention/native-timing-finding-v1.json','reviews/skeptic/final-assembly-review-v2.json']]+[bind(R/b['path']) for b in pair['files']],'native_error':err,'scope':'Timing metadata successor only; no rerun or renewal of source science. Original reviewer failure to flag timing attribution is disclosed in the subsequent final-assembly-v3 report.'}
+with (P/'native-timing-successor-check-v1.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'status':out['status'],'checks':out['check_count'],'failures':out['failures'],'receipt':bind(P/'native-timing-successor-check-v1.json')}))

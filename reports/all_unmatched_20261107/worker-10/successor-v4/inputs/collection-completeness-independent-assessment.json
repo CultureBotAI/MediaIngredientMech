@@ -1,0 +1,178 @@
+{
+  "reviewer": "/root/step7d_independent_review",
+  "observed_at": "2026-11-08T08:06:46.887430+00:00",
+  "original_finding_ids": [
+    "W10-SV2-INHERITED-COMPLETENESS-001",
+    "SCI-CARBONATE-COMPLETENESS-001"
+  ],
+  "native_issue_key": "w10-carbonate-co2-m202-component-completeness-source-unknown",
+  "original_payload_sha256": "e293fdab2a29a678e663d2ca958c2f4babf7bc609ab040bfffd5fbc7232bb68c",
+  "current_observed_payload_sha256": "fa07901e230c7cc707ddacb6f5ff70def989c7d1ecfa40118ef2497136e0e1ce",
+  "field": "component_assertion.completeness",
+  "before": "PARTIAL",
+  "recommended": "UNKNOWN",
+  "confirmation": "Complete M202 capture gives the named buffer and receiving dose, not a closed stock list or an explicitly omitted stock constituent. Its other water and salts tables belong to receiving/nested sections, not inferred stock carrier. Exact schema therefore supports UNKNOWN. Label-enumerated Na2CO3/CO2 and all strength/solvent/hydrate/endpoint/pH unknowns remain unchanged.",
+  "source_meta": {
+    "gm": "http://togomedium.org/medium/M202",
+    "name": "M98-5",
+    "original_media_id": "JCM_M209",
+    "src_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=209",
+    "ph": "6.7-6.8"
+  },
+  "source_sections": [
+    {
+      "subcomponent_name": "main solution 1",
+      "items": [
+        {
+          "component_name": "0.05% Resazurin solution",
+          "volume": 0.5,
+          "unit": "ml",
+          "conc_value": 0.05,
+          "conc_unit": "%"
+        },
+        {
+          "component_name": "1% Hemin solution",
+          "volume": 1,
+          "unit": "ml",
+          "conc_value": 1,
+          "conc_unit": "%"
+        },
+        {
+          "component_name": "25% L--Ascorbic acid solution",
+          "volume": 1,
+          "unit": "ml",
+          "conc_value": 25,
+          "conc_unit": "%"
+        },
+        {
+          "component_name": "4% Na2CO3--CO2 buffer",
+          "volume": 100,
+          "unit": "ml",
+          "conc_value": 4,
+          "conc_unit": "%"
+        },
+        {
+          "component_name": "5% L--Cysteine・HCl・H2O solution",
+          "volume": 10,
+          "unit": "ml",
+          "conc_value": 5,
+          "conc_unit": "%"
+        },
+        {
+          "component_name": "Distilled water",
+          "volume": 430,
+          "unit": "ml"
+        },
+        {
+          "component_name": "Glycerol",
+          "volume": 0.3,
+          "unit": "g"
+        },
+        {
+          "component_name": "Cellobiose",
+          "volume": 0.5,
+          "unit": "g"
+        },
+        {
+          "component_name": "Maltose",
+          "volume": 0.3,
+          "unit": "g"
+        },
+        {
+          "component_name": "Rumen fluid",
+          "volume": 400,
+          "unit": "ml"
+        },
+        {
+          "component_name": "Glucose",
+          "volume": 0.3,
+          "unit": "g"
+        },
+        {
+          "component_name": "Bacto agar (BD-Difco)",
+          "volume": 20,
+          "unit": "g"
+        },
+        {
+          "component_name": "Yeast extract (BD-Difco)",
+          "volume": 0.5,
+          "unit": "g"
+        },
+        {
+          "component_name": "Trypticase peptone (BD-BBL)",
+          "volume": 2,
+          "unit": "g"
+        },
+        {
+          "component_name": "Salts solution (see below)",
+          "volume": 50,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "subcomponent_name": "Salts solution",
+      "items": [
+        {
+          "component_name": "Distilled water",
+          "volume": 100,
+          "unit": "ml"
+        },
+        {
+          "component_name": "MgSO4・7H2O",
+          "volume": 0.25,
+          "unit": "g"
+        },
+        {
+          "component_name": "NaCl",
+          "volume": 1.18,
+          "unit": "g"
+        },
+        {
+          "component_name": "CaCl2・2H2O",
+          "volume": 0.12,
+          "unit": "g"
+        },
+        {
+          "component_name": "KH2PO4",
+          "volume": 0.47,
+          "unit": "g"
+        },
+        {
+          "component_name": "K2HPO4",
+          "volume": 0.78,
+          "unit": "g"
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "volume": 1.2,
+          "unit": "g"
+        }
+      ]
+    }
+  ],
+  "source_comments": [
+    {
+      "paragraph_index": 3,
+      "comment": "Adjust pH to 6.7--6.8."
+    }
+  ],
+  "schema_sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+  "schema_enum": {
+    "description": "Completeness of a component decomposition relative to its cited source.",
+    "permissible_values": {
+      "COMPLETE": {
+        "description": "The source explicitly establishes that the listed constituents are complete."
+      },
+      "PARTIAL": {
+        "description": "The source explicitly indicates that additional constituents are omitted."
+      },
+      "UNKNOWN": {
+        "description": "The source does not establish whether the list is complete."
+      }
+    }
+  },
+  "source_delta_c002_supported": true,
+  "whole_owner_or_release_approval": false,
+  "issue_recommendation": "Append exact target to C002 follow-up in existing1201 after root dedup;1227 documents same enum rule for a different worker-specific target set. Existing1226 remains the provenance tracker, not a duplicate finding."
+}

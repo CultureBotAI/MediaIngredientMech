@@ -1,0 +1,103 @@
+{
+  "case_id": "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+  "case_input_sha256": "d93c3e9449958e0834ae3df292dbbff10b287ec57cde8b07510433d9241d6fda",
+  "source": {
+    "source": "culturemech",
+    "source_case_id": "4% Na2CO3--CO2 buffer",
+    "source_label": "4% Na2CO3--CO2 buffer",
+    "raw_source_label": "4% Na2CO3--CO2 buffer"
+  },
+  "occurrence_ids": [
+    "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+  ],
+  "disposition": "new_distinct_ingredient_proposal",
+  "reasoning": "TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used. The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted.",
+  "applicability": "All 1 full frozen occurrence snapshots and linked captured primary contexts were independently reread for case 21. TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used. This association is source-bound; raw generic labels remain nonresolving provenance unless explicitly the spelling-only seawater alias.",
+  "evidence_ids": [
+    "buffers-case-21",
+    "buffers-primary-2b7e3ee4d3ec3dfb",
+    "buffers-recipe-21-0",
+    "buffers-retrieval-log",
+    "sv1-buffers-context-review",
+    "sv1-buffers-owner-lookup",
+    "sv1-buffers-guarded-validation",
+    "sv1-buffers-proposal-identity-lookup",
+    "sv1-buffers-strict-validation"
+  ],
+  "proposal_ids": [
+    "sv1-buffers-carbonate_co2_nominal4percent_togo_m202"
+  ],
+  "no_change_reason": null,
+  "missing_requirement": null,
+  "owner_records": [],
+  "issue_refs": [],
+  "independent_review": {
+    "status": "complete",
+    "evidence_ids": [
+      "sv1-independent-buffers"
+    ]
+  },
+  "reviewer": "/root/buffers_research",
+  "scope_limit": "Source identity, material boundary and proposal only; no whole-record roles/mechanism or release approval.",
+  "source_index": 21,
+  "completion_reassessment": {
+    "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201",
+    "source_index": 21,
+    "prior_published_head": "dbaf4629f3b93d3bd8a78028e243abfe90c7a922",
+    "prior_decision_sha256": "bdfd90ab66d6f5043b4a257a823405658bf81f421619ecfd681a9c12cefa6d66",
+    "prior_disposition": "stock_product_mixture_context",
+    "prior_missing_requirement": "Recover JCM209 archived preparation or an equivalent primary source specifying4% basis, CO2 equilibration and stock volume; no whole-stock-to-carbonate mapping.",
+    "classification": "supported_identity_curation_completed_as_isolated_proposal",
+    "missing_fact_vs_deferred_work": "The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted. These are explicit representation limits, not prerequisites for the proposed bounded identity.",
+    "owner_lookup_evidence": "sv1-buffers-owner-lookup",
+    "full_context_evidence": "sv1-buffers-context-review",
+    "actual_lookup": {
+      "source_index": 21,
+      "case_id": "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd",
+      "query": "4% Na2CO3--CO2 buffer",
+      "group": "carbonate",
+      "exact_normalized_hits": [],
+      "label_index_exact_hits": [],
+      "group_candidates": [
+        {
+          "path": "data/ingredients/unmapped/Poly_Hexamethylene_Carbonate.yaml",
+          "sha256": "aac1480938a33402271232fef7c9b1b730ea643f1c855fff936b38fe1acda402",
+          "identifier": "UNMAPPED_0492",
+          "preferred_term": "Poly hexamethylene carbonate",
+          "mapping_status": "UNMAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Monohydrate.yaml",
+          "sha256": "a12cfc43edb55da16e7113d32795148bd04eec8d6936fdab1452c8430f7ae2ba",
+          "identifier": "NCIT:C80911",
+          "preferred_term": "sodium carbonate monohydrate",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Bicarbonate.yaml",
+          "sha256": "2e1fec2760d8d0f721557f1492a78d7cc61b6589a662ad223617803facf41388",
+          "identifier": "CHEBI:17544",
+          "preferred_term": "Bicarbonate",
+          "mapping_status": "MAPPED"
+        },
+        {
+          "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+          "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6",
+          "identifier": "CHEBI:29377",
+          "preferred_term": "Sodium carbonate solution",
+          "mapping_status": "MAPPED"
+        }
+      ]
+    },
+    "preserved_frozen_occurrence_ids": [
+      "CM_OCC:1a4f48378161d07689e0608f2b32bd5d0df61a6517ff0d1de1c30fa8b0a5d434"
+    ],
+    "embedded_holds_preserved": true,
+    "quantitative_or_publication_holds": [
+      "The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted.",
+      "Do not infer a complete formula from PARTIAL components or convert receiving-medium stock additions into mass concentrations."
+    ],
+    "source_association_only": true,
+    "no_new_http_capture_claim": true
+  }
+}

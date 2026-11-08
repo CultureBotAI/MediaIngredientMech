@@ -1,0 +1,35 @@
+from pathlib import Path
+import datetime,hashlib,json,subprocess
+import yaml
+R=Path.cwd();A=R/'reports/all_unmatched_20261107/worker-10';S=A/'successor-v4';Q=R.parents[2]/'preflight/w10-two-case-review-collection-v1';O=R/'.temp/all-unmatched-worker-10/successor-v4/skeptic'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+canon=lambda x:sha(json.dumps(x,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode())
+checks=[]
+def ck(n,x):checks.append({'check':n,'pass':bool(x)})
+def gitblob(p):return subprocess.check_output(['git','show','c9a96da71a1977014680e5a92e600dfc7e3874db:'+str(p.relative_to(R))],cwd=R)
+m=json.loads((Q/'MANIFEST.json').read_bytes())
+ck('collection108members',len(m['files'])==108)
+for r in m['files']:ck('collection member '+r['path'],sha((Q/r['path']).read_bytes())==r['sha256'])
+ck('author addendum pin',sha((Q/'AUTHOR-ADDENDUM.md').read_bytes())=='6567b84b7b2f5fb3b5bd0a07db502175ddbfbc8044d5db385d300c13096b9b41')
+payload=A/'successor-v3/enum/proposed/sv1-buffers-carbonate_co2_nominal4percent_togo_m202.yaml'
+raw=payload.read_bytes();before=yaml.safe_load(raw)
+ck('selected latest authentic predecessor',raw==gitblob(payload) and sha(raw)=='fa07901e230c7cc707ddacb6f5ff70def989c7d1ecfa40118ef2497136e0e1ce')
+source_specs=[('TOGO M202','buffers/captures/2b7e3ee4d3ec3dfb08be.json','b15d8c064d864879ab647581702a30715855452fcbdd2b7ea71ece8c1203530a','2026-11-08T05:07:18.501207+00:00'),('MediaDive ingredient1685','kg/captures/md1685.json','b66beb4b658ae2a1fc81b0e76e147ee2d68557371f4c02ebea9788f1bf8eb4c0','2026-11-08T05:07:55.119827+00:00'),('MediaDive J209','kg/captures/mdJ209.json','8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050','2026-11-08T05:10:34.917710+00:00')]
+sources=[]
+for name,path,digest,at in source_specs:
+ p=A/path;b=p.read_bytes();ck('original capture exact '+name,sha(b)==digest and b==gitblob(p) and (Q/'source-captures'/digest).read_bytes()==b)
+ sources.append({'name':name,'path':str(p.relative_to(R)),'sha256':digest,'original_accessed_at':at,'entire_captured_object_read':True,'new_retrieval':False,'full_record':json.loads(b)})
+t=sources[0]['full_record'];ingredient=sources[1]['full_record'];md=sources[2]['full_record']
+ck('positive original source link',ingredient['data']['media']==['J209'] and md['data']['medium']['id']=='J209' and t['meta']['original_media_id']=='JCM_M209' and t['meta']['src_url']==md['data']['medium']['link'])
+ck('buffer is main recipe item not separate stock formulation',len(t['components'])==2 and t['components'][0]['subcomponent_name']=='main solution 1' and t['components'][1]['subcomponent_name']=='Salts solution' and t['components'][0]['items'][3]['component_name']=='4% Na2CO3--CO2 buffer')
+ck('receiving dose exact100ml',t['components'][0]['items'][3]['volume']==100 and t['components'][0]['items'][3]['unit']=='ml' and md['data']['solutions'][0]['recipe'][11]['amount']==100 and md['data']['solutions'][0]['recipe'][11]['unit']=='ml')
+ck('water explicitly separate receiving and salts sections',t['components'][0]['items'][5]['component_name']=='Distilled water' and t['components'][0]['items'][5]['volume']==430 and t['components'][1]['items'][0]['component_name']=='Distilled water' and t['components'][1]['items'][0]['volume']==100)
+schema=yaml.safe_load((R/'src/mediaingredientmech/schema/mediaingredientmech.yaml').read_bytes());enum=schema['enums']['ComponentCompletenessEnum']
+ck('exact native completeness distinction',enum['permissible_values']['PARTIAL']['description']=='The source explicitly indicates that additional constituents are omitted.' and enum['permissible_values']['UNKNOWN']['description']=='The source does not establish whether the list is complete.')
+ck('current limited parts and method',before['component_assertion']['completeness']=='PARTIAL' and before['component_assertion']['method']=='LABEL_ENUMERATION' and [c['component_name'] for c in before['components']]==['Na2CO3','CO2'] and all(c['reference_scope']=='UNMAPPED' for c in before['components']) and before['ontology_mapping']['evidence'][0]['evidence_type']=='LLM_SUGGESTION')
+comment=json.loads((S/'inputs/issue1201-filed-finding.json').read_bytes())[0]
+ck('exact filed issue lineage',comment['id']==6719089745 and comment['html_url']=='https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719089745' and all(x in comment['body'] for x in ['W10-SV2-INHERITED-COMPLETENESS-001','SCI-CARBONATE-COMPLETENESS-001','fa07901e230c7cc707ddacb6f5ff70def989c7d1ecfa40118ef2497136e0e1ce']))
+assert all(x['pass'] for x in checks)
+out={'recorded_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'Codex /root/preparation_skeptic in W10 (AI)','phase':'initial primary source and exact predecessor inspection before successor review','prior_involvement':'I reviewed prior W10 C002 source association and successor-v3 provenance retention, but did not author this payload. Those prior reviews did not detect this inherited completeness enum defect. This is a fresh claim-specific reassessment, author-independent but not independent of all prior W10 review involvement.','predecessor':{'path':str(payload.relative_to(R)),'sha256':sha(raw),'full_record':before},'source_bindings':sources,'native_enum':enum,'native_enum_path':'src/mediaingredientmech/schema/mediaingredientmech.yaml#ComponentCompletenessEnum','source_conclusion':'UNKNOWN is supported: the complete captured TOGO source supplies the named preparation and receiving dose but neither establishes a closed buffer list nor explicitly identifies omitted buffer constituents. The separately listed main water and salts stock must not be imported as buffer carrier evidence. MediaDive J209 offers the same attributed recipe and a flattened salts representation, not an independent printed buffer formula.','source_association':'The positive ingredient1685→J209/M98-5→JCM209 and TOGO M202/JCM_M209 chain remains intact. Completeness correction does not reject that source association or require another stock owner.','retained_unknowns':['percentage basis','solvent/carrier','carbonate hydration/supplied form','CO2 dose and equilibration endpoint','stock pH','stock final volume'],'original_findings':[{'finding_id':'W10-SV2-INHERITED-COMPLETENESS-001','severity':'minor','native_issue_key':'w10-carbonate-co2-m202-component-completeness-source-unknown'},{'finding_id':'SCI-CARBONATE-COMPLETENESS-001','severity':'major_for_complete_owner_acceptance','native_issue_key':'w10-carbonate-co2-m202-component-completeness-source-unknown'}],'checks':checks,'check_count':len(checks),'failures':[],'scope_limit':'Only this completeness conclusion is newly adjudicated; surrounding material, source and preparation claims remain within their established limits. No whole-owner, role or export approval. Candidate acceptance awaits final exact bytes.'}
+with (O/'initial-source-review-v1.json').open('x') as f:json.dump(out,f,indent=2,ensure_ascii=False);f.write('\n')
+print(json.dumps({'checks':len(checks),'status':'PASS','sha256':sha((O/'initial-source-review-v1.json').read_bytes())}))

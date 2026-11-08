@@ -1,0 +1,52 @@
+{
+  "finding_id": "SV4-NATIVE-TIMING-001",
+  "coordinator_label": "META-TIMING",
+  "reviewer": "/root/bio_research",
+  "recorded_at": "2026-11-08T08:25:28.993060+00:00",
+  "status": "confirmed_at_original_saved_bytes",
+  "severity": "minor_provenance",
+  "original_pair": {
+    "review_id": "20261108T082153Z-w10-carbonate-completeness-successor",
+    "targets": 3,
+    "scientific_scope": "Only component completeness",
+    "files": [
+      {
+        "path": "reviews/structured/20261108T082153Z-w10-carbonate-completeness-successor/review.yaml",
+        "sha256": "f4b47ec24dcef4b231fc31a3f93d8fde22920214058c97de78947bc88434398e"
+      },
+      {
+        "path": "reviews/structured/20261108T082153Z-w10-carbonate-completeness-successor/review.md",
+        "sha256": "1096c2361d5c4899caa63dc4a335489b88c52b3ecc6558850322cd0d4ae76ea6"
+      }
+    ],
+    "canonical_native_saver_run": true,
+    "owner_role_export_approval": false
+  },
+  "original_handoff": {
+    "path": "successor-v4/HANDOFF.json",
+    "sha256": "25dbe1fafe0a3919c080fe259e07dc837157400b490bf1378f04dbbe8f9d81e8"
+  },
+  "full_initial_review": {
+    "path": "successor-v4/reviews/retention/native-handoff-review-v1.json",
+    "sha256": "eb7de1e0ff7341f5862d695598a74cde4f83498d6964a9555717120ba142ff15"
+  },
+  "field_paths": [
+    "started_at",
+    "finished_at",
+    "limitations"
+  ],
+  "observation": "The native scientific-review wrapper records an interval of0.000603seconds without labelling it as wrapper construction rather than the actual earlier root/source and independent-review activity. save_native_review.py sets started_at to access=now() after inspect and finished_at to the immediately following construction timestamp.",
+  "evidence": {
+    "native_yaml_sha256": "f4b47ec24dcef4b231fc31a3f93d8fde22920214058c97de78947bc88434398e",
+    "started_at": "2026-11-08T08:21:53.960684Z",
+    "finished_at": "2026-11-08T08:21:53.961287Z",
+    "script_path": "successor-v4/scripts/save_native_review.py",
+    "script_sha256": "d612d5e04f9a9a82731b43c7eb7767a4f9637fea9bddff72782afa5d1b4a99d3",
+    "script_locator": "lines23,28-29; started_at=access and finished_at=now()"
+  },
+  "minimal_fix": "Preserve the saved native pair. Append an explicit timing-provenance clarification or successor with honest actual review/assembly milestone attribution; exact unknown start remains unknown, with no invented retrospective interval. Candidate/core/science need not change.",
+  "acceptable_timing_attribution": "A recorded root source-assessment timestamp may be described as the earliest recorded root assessment milestone, with exact earlier reading start explicitly unknown. The new finish must be actual new assembly completion. Attribute independent source/retention reviews to their own reports, scopes and times. Label original wrapper timestamps as generation timing. Preserve old canonical pair, old handoff and finding; use a new native observation/handoff selection.",
+  "candidate_core_scientific_changes_required": false,
+  "github_mutation_requested": false,
+  "scientific_effect": "None; metadata timing and attribution only."
+}

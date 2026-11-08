@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-08T08:21:33.014315+00:00",
+  "status": "REPORT_METADATA_CORRECTION",
+  "failed_attempt": "structural-command-v2.json",
+  "cause": "Three newly authored evidence-kind labels were outside the frozen campaign report contract; validator rejected them.",
+  "changes": [
+    {
+      "evidence_id": "sv4-carbonate-completeness-source",
+      "before_kind": "source_assessment",
+      "after_kind": "local_validation"
+    },
+    {
+      "evidence_id": "sv4-carbonate-completeness-diff",
+      "before_kind": "curation_proof",
+      "after_kind": "local_validation"
+    },
+    {
+      "evidence_id": "sv4-carbonate-filed-finding",
+      "before_kind": "issue_finding",
+      "after_kind": "source_snapshot"
+    }
+  ],
+  "scientific_captures_and_payloads_unchanged": true,
+  "all_other_evidence_fields_equal": true,
+  "final_core": {
+    "decisions.json": {
+      "path": "successor-v4/final-core/decisions.json",
+      "sha256": "ba6d7b56fa0c1381fb96bab0ce6efc3dc9a937ace0516756456af706d2e1171b"
+    },
+    "evidence.json": {
+      "path": "successor-v4/final-core/evidence.json",
+      "sha256": "580b7131b9e67799d53a4735c858e926684c416dbcbd1543bfdf3c48e414cdb9"
+    },
+    "proposals.json": {
+      "path": "successor-v4/final-core/proposals.json",
+      "sha256": "dfb7f2f423ca8dd52e6f2095eb09560e6f97a10c5a0e9370d175f0255de035a3"
+    }
+  },
+  "authoritative_selection": {
+    "path": "successor-v4/selection-v2.json",
+    "sha256": "78ac5f83a9fbee5aafd7e6dffda67b7ab2f5bd78c7cf0d0c72a9b04af037a957"
+  },
+  "preservation": "Previous root-level assembled core, author core, failed scripts and validator logs remain immutable. No maintained gate or schema changed."
+}

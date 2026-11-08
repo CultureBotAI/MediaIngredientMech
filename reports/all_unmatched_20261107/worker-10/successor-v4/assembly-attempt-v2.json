@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T08:20:53.663493+00:00",
+  "tool_chunk": "02d230",
+  "command": "finalize_core-v2.py with repository-relative report argument",
+  "exit_code": 1,
+  "cause": "Private assembly helper checked resolved containment but retained a relative Path when constructing an artifact-relative capture. No final core was written.",
+  "correction": "Append-only v3 resolves the report argument before relative-path construction. Exact source/review hashes and checks unchanged; no payload or gate change."
+}

@@ -1,0 +1,30 @@
+--- reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-buffers-carbonate_co2_nominal4percent_togo_m202.yaml
++++ reports/all_unmatched_20261107/worker-10/successor-v4/proposed/carbonate_co2_nominal4percent_togo_m202.yaml
+@@ -28,7 +28,7 @@
+     endpoint asserted.
+ component_assertion:
+   method: LABEL_ENUMERATION
+-  completeness: PARTIAL
++  completeness: UNKNOWN
+   evidence:
+   - evidence_type: RECIPE_SOURCE
+     source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M202
+@@ -74,3 +74,18 @@
+   previous_status: MAPPED
+   new_status: MAPPED
+   llm_assisted: true
++- timestamp: '2026-11-08T08:15:57.825458+00:00'
++  curator: Codex worker10 /root
++  action: CORRECTED_COMPONENT_COMPLETENESS
++  changes: 'Issue #1201, W10-SV2-INHERITED-COMPLETENESS-001 / SCI-CARBONATE-COMPLETENESS-001:
++    changed only component_assertion.completeness from PARTIAL to UNKNOWN. The complete
++    captured TOGO M202 recipe names the stock and its receiving amount but does not
++    establish stock-list closure or explicitly omitted stock constituents. Preserved
++    LABEL_ENUMERATION, both source-named UNMAPPED parts, LLM_SUGGESTION mapping evidence,
++    original sources and history, and the exact case21/187 source association. Solvent,
++    percentage basis, carbonate hydration, CO2 dose/endpoint, stock pH, supplied form
++    and final volume remain unknown; no water or composition is inferred. No identity,
++    role, whole-owner or export approval change. Filed finding: https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719089745'
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true

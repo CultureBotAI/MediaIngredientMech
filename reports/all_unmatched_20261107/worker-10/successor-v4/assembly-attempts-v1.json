@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-08T08:20:43.060560+00:00",
+  "failures": [
+    {
+      "command": "finalize_core.py",
+      "tool_chunk": "f16f30",
+      "exit_code": 1,
+      "cause": "Root private assembly helper expected generic PASS/pass_with_limitations rather than the independent report actual PASS_BOUNDED_CORRECTION. No core was written."
+    },
+    {
+      "command": "structural audit initial attempt",
+      "tool_chunk": "537db5",
+      "exit_code": 1,
+      "cause": "Root launched dependent audit after failed assembly; the requested final core did not yet exist. Original stdout/stderr/command retained."
+    }
+  ],
+  "correction": "Append-only finalize_core-v2 explicitly checks exact independently read report hash, PASS_BOUNDED_CORRECTION, author independence and empty new findings. Retention verdict remains exact. After successful assembly rerun structural audit separately. No payload, science, native gate or original review changed."
+}

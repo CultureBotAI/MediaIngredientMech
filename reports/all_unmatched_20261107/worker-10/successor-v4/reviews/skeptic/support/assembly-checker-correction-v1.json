@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-08T08:24:13.280947+00:00",
+  "failed_script": "verify_final_assembly.py",
+  "failed_script_sha256": "1bae0e822caf26e529e6a039be5acabba9cae01c0d24b21ae63b4cf029471789",
+  "tool_chunk": "55f668",
+  "exit_code": 1,
+  "exception": "KeyError: 'destination_path'",
+  "cause": "Independent checker incorrectly required a derived selection destination_path as a raw proposal key. Finalization intentionally defaults missing destination_path to owner_path.",
+  "correction": "Append-only verify_final_assembly_v2.py checks that exact derivation and all other fields unchanged. No source, candidate, native or prior report bytes changed.",
+  "scientific_finding": false
+}

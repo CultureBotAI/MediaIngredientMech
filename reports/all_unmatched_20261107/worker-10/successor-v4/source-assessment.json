@@ -1,0 +1,713 @@
+{
+  "at": "2026-11-08T08:15:57.825458+00:00",
+  "author": "Codex worker10 /root",
+  "scope": "Only component list completeness under native enum; source association retained",
+  "finding_ids": [
+    "W10-SV2-INHERITED-COMPLETENESS-001",
+    "SCI-CARBONATE-COMPLETENESS-001"
+  ],
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1201#issuecomment-6719089745",
+  "primary_captures_with_original_timestamps": [
+    {
+      "evidence_id": "buffers-primary-2b7e3ee4d3ec3dfb",
+      "capture": {
+        "root": "artifact",
+        "path": "buffers/captures/2b7e3ee4d3ec3dfb08be.json",
+        "sha256": "b15d8c064d864879ab647581702a30715855452fcbdd2b7ea71ece8c1203530a"
+      },
+      "kind": "primary_source",
+      "locator": "Complete official source record; named ingredient/stock table, nested formulation and preparation comments",
+      "supports_or_contradicts": "Source-owned formulation and amount context for the listed cases; exact applicability is stated per case.",
+      "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M202",
+      "case_ids": [
+        "CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd"
+      ],
+      "accessed_at": "2026-11-08T05:07:18.501207+00:00"
+    },
+    {
+      "evidence_id": "kg-mdJ209",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "kg/captures/mdJ209.json",
+        "sha256": "8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050"
+      },
+      "url": "https://mediadive.dsmz.de/rest/medium/J209",
+      "accessed_at": "2026-11-08T05:10:34.917710+00:00",
+      "locator": "data.solutions/recipe and preparation steps",
+      "supports_or_contradicts": "Complete official recipe context distinguishes source substance, stock solution, commercial base and finished medium."
+    },
+    {
+      "evidence_id": "kg-md1685",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "kg/captures/md1685.json",
+        "sha256": "b66beb4b658ae2a1fc81b0e76e147ee2d68557371f4c02ebea9788f1bf8eb4c0"
+      },
+      "url": "https://mediadive.dsmz.de/rest/ingredient/1685",
+      "accessed_at": "2026-11-08T05:07:55.119827+00:00",
+      "locator": "data: ingredient identifier, name, CAS/formula/mass/complex flag and associated media when supplied",
+      "supports_or_contradicts": "Official ingredient entry corroborates source-specific identity or context; a component CHEBI/CAS annotation does not turn a preparation into that component."
+    }
+  ],
+  "fresh_http_primary_retrieval": false,
+  "full_source_sections": [
+    {
+      "paragraph_index": 1,
+      "subcomponent_name": "main solution 1",
+      "items": [
+        {
+          "component_name": "0.05% Resazurin solution",
+          "volume": 0.5,
+          "unit": "ml",
+          "conc_value": 0.05,
+          "conc_unit": "%",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001403",
+          "gmo_id": "GMO_001403",
+          "label": "Resazurin solution",
+          "properties": [
+            {
+              "id": "GMO_000051",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+              "label": "Solution"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000055",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000055",
+              "label": "pH dependent redox indicator"
+            }
+          ]
+        },
+        {
+          "component_name": "1% Hemin solution",
+          "volume": 1,
+          "unit": "ml",
+          "conc_value": 1,
+          "conc_unit": "%",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001449",
+          "gmo_id": "GMO_001449",
+          "label": "Hemin solution",
+          "properties": [
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            },
+            {
+              "id": "GMO_000051",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+              "label": "Solution"
+            },
+            {
+              "id": "GMO_000041",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+              "label": "Organic compound"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000067",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000067",
+              "label": "Growth factor"
+            }
+          ]
+        },
+        {
+          "component_name": "25% L--Ascorbic acid solution",
+          "volume": 1,
+          "unit": "ml",
+          "conc_value": 25,
+          "conc_unit": "%",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001500",
+          "gmo_id": "GMO_001500",
+          "label": "Ascorbic acid solution",
+          "properties": [
+            {
+              "id": "GMO_000041",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+              "label": "Organic compound"
+            },
+            {
+              "id": "GMO_000051",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+              "label": "Solution"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000045",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000045",
+              "label": "Vitamin"
+            }
+          ]
+        },
+        {
+          "component_name": "4% Na2CO3--CO2 buffer",
+          "volume": 100,
+          "unit": "ml",
+          "conc_value": 4,
+          "conc_unit": "%",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001503",
+          "gmo_id": "GMO_001503",
+          "label": "Sodium carbonate-Carbon dioxide buffer",
+          "properties": [
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            },
+            {
+              "id": "GMO_000051",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+              "label": "Solution"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000038",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000038",
+              "label": "Buffer"
+            }
+          ]
+        },
+        {
+          "component_name": "5% L--Cysteine・HCl・H2O solution",
+          "volume": 10,
+          "unit": "ml",
+          "conc_value": 5,
+          "conc_unit": "%",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001496",
+          "gmo_id": "GMO_001496",
+          "label": "L-Cysteine hydrochloride monohydrate solution",
+          "properties": [
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            },
+            {
+              "id": "GMO_000041",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+              "label": "Organic compound"
+            },
+            {
+              "id": "GMO_000051",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+              "label": "Solution"
+            }
+          ],
+          "roles": []
+        },
+        {
+          "component_name": "Distilled water",
+          "volume": 430,
+          "unit": "ml",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001001",
+          "gmo_id": "GMO_001001",
+          "label": "Distilled water",
+          "properties": [
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000044",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000044",
+              "label": "Solvating media"
+            }
+          ]
+        },
+        {
+          "component_name": "Glycerol",
+          "volume": 0.3,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001083",
+          "gmo_id": "GMO_001083",
+          "label": "Glycerol",
+          "properties": [
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000041",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+              "label": "Organic compound"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000063",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+              "label": "Carbon source"
+            }
+          ]
+        },
+        {
+          "component_name": "Cellobiose",
+          "volume": 0.5,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001137",
+          "gmo_id": "GMO_001137",
+          "label": "Cellobiose",
+          "properties": [
+            {
+              "id": "GMO_000041",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+              "label": "Organic compound"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000063",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+              "label": "Carbon source"
+            }
+          ]
+        },
+        {
+          "component_name": "Maltose",
+          "volume": 0.3,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001195",
+          "gmo_id": "GMO_001195",
+          "label": "Maltose",
+          "properties": [
+            {
+              "id": "GMO_000041",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+              "label": "Organic compound"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000063",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+              "label": "Carbon source"
+            }
+          ]
+        },
+        {
+          "component_name": "Rumen fluid",
+          "volume": 400,
+          "unit": "ml",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001727",
+          "gmo_id": "GMO_001727",
+          "label": "Rumen fluid",
+          "properties": [
+            {
+              "id": "GMO_000047",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+              "label": "Undefined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000042",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+              "label": "Nutrient source"
+            }
+          ]
+        },
+        {
+          "component_name": "Glucose",
+          "volume": 0.3,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001815",
+          "gmo_id": "GMO_001815",
+          "label": "Glucose",
+          "properties": [
+            {
+              "id": "GMO_000041",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+              "label": "Organic compound"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000063",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+              "label": "Carbon source"
+            }
+          ]
+        },
+        {
+          "component_name": "Bacto agar (BD-Difco)",
+          "volume": 20,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001130",
+          "gmo_id": "GMO_001130",
+          "label": "Bacto &trade; Agar",
+          "properties": [],
+          "roles": [
+            {
+              "id": "GMO_000048",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000048",
+              "label": "Solidifying component"
+            }
+          ]
+        },
+        {
+          "component_name": "Yeast extract (BD-Difco)",
+          "volume": 0.5,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001018",
+          "gmo_id": "GMO_001018",
+          "label": "Bacto &trade; Yeast extract",
+          "properties": [
+            {
+              "id": "GMO_000047",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+              "label": "Undefined component"
+            }
+          ],
+          "roles": []
+        },
+        {
+          "component_name": "Trypticase peptone (BD-BBL)",
+          "volume": 2,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001097",
+          "gmo_id": "GMO_001097",
+          "label": "BBL &trade; Trypticase peptone",
+          "properties": [
+            {
+              "id": "GMO_000047",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+              "label": "Undefined component"
+            }
+          ],
+          "roles": []
+        },
+        {
+          "component_name": "Salts solution (see below)",
+          "volume": 50,
+          "unit": "ml",
+          "reference_media_id": "M202",
+          "properties": [],
+          "roles": []
+        }
+      ]
+    },
+    {
+      "paragraph_index": 2,
+      "subcomponent_name": "Salts solution",
+      "items": [
+        {
+          "component_name": "Distilled water",
+          "volume": 100,
+          "unit": "ml",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001001",
+          "gmo_id": "GMO_001001",
+          "label": "Distilled water",
+          "properties": [
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000044",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000044",
+              "label": "Solvating media"
+            }
+          ]
+        },
+        {
+          "component_name": "MgSO4・7H2O",
+          "volume": 0.25,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001002",
+          "gmo_id": "GMO_001002",
+          "label": "Magnesium sulfate heptahydrate",
+          "properties": [
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000078",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000078",
+              "label": "Mineral source"
+            }
+          ]
+        },
+        {
+          "component_name": "NaCl",
+          "volume": 1.18,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001004",
+          "gmo_id": "GMO_001004",
+          "label": "Sodium chloride",
+          "properties": [
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000078",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000078",
+              "label": "Mineral source"
+            }
+          ]
+        },
+        {
+          "component_name": "CaCl2・2H2O",
+          "volume": 0.12,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001005",
+          "gmo_id": "GMO_001005",
+          "label": "Calcium chloride dihydrate",
+          "properties": [
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000078",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000078",
+              "label": "Mineral source"
+            }
+          ]
+        },
+        {
+          "component_name": "KH2PO4",
+          "volume": 0.47,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001006",
+          "gmo_id": "GMO_001006",
+          "label": "Potassium phosphate monobasic",
+          "properties": [
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000038",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000038",
+              "label": "Buffer"
+            }
+          ]
+        },
+        {
+          "component_name": "K2HPO4",
+          "volume": 0.78,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001009",
+          "gmo_id": "GMO_001009",
+          "label": "Potassium phosphate dibasic",
+          "properties": [
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            },
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000038",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000038",
+              "label": "Buffer"
+            }
+          ]
+        },
+        {
+          "component_name": "(NH4)2SO4",
+          "volume": 1.2,
+          "unit": "g",
+          "gmo": "http://purl.jp/bio/10/gmo/GMO_001030",
+          "gmo_id": "GMO_001030",
+          "label": "Ammonium sulfate",
+          "properties": [
+            {
+              "id": "GMO_000049",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+              "label": "Simple component"
+            },
+            {
+              "id": "GMO_000040",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+              "label": "Inorganic compound"
+            },
+            {
+              "id": "GMO_000046",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+              "label": "Defined component"
+            }
+          ],
+          "roles": [
+            {
+              "id": "GMO_000062",
+              "uri": "http://purl.jp/bio/10/gmo/GMO_000062",
+              "label": "Nitrogen source"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "full_source_comments": [
+    {
+      "paragraph_index": 3,
+      "comment": "Adjust pH to 6.7--6.8."
+    }
+  ],
+  "source_meta": {
+    "gm": "http://togomedium.org/medium/M202",
+    "name": "M98-5",
+    "original_media_id": "JCM_M209",
+    "src_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=209",
+    "ph": "6.7-6.8"
+  },
+  "md_buffer_row": {
+    "recipe_order": 12,
+    "compound": "Na2CO3-CO2 buffer",
+    "compound_id": 1685,
+    "attribute": "4%",
+    "amount": 100,
+    "unit": "ml",
+    "optional": 0
+  },
+  "assessment": "Complete M202 has receiving-medium and separate salts tables, but neither a closed buffer stock list nor an explicitly omitted stock constituent. Unknown carrier/basis/form is not evidence that an additional constituent is explicitly omitted. UNKNOWN is the supported completeness value. No medium water, nested salts, pH or total volume is assigned to this stock.",
+  "schema_binding": {
+    "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+    "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+  },
+  "scope_and_holds": "Two named parts and source association remain supported within prior scope; no whole-owner/source-case/role/export approval is transferred."
+}

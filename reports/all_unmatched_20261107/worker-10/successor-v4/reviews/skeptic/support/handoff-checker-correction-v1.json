@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-08T08:25:52.634898+00:00",
+  "reviewer": "Codex /root/preparation_skeptic (AI)",
+  "failed_report_sha256": "87450cec747e308bbbb4b365f5b73fd629d45fbca57ad3fecc67d592e9420691",
+  "failed_markdown_sha256": "2f96bd4ecf93ff2649eb63d77caa6131b25265a9c47ea1dc35f6e799c3a0e665",
+  "tool_chunk": "31b23e",
+  "cause": "Reviewer checker required empty stderr and misclassified the sole topClass deprecation warning as failure, despite actual exit0 and1025 valid declared scopes. V1 Markdown also used unconditional pass wording inconsistent with that checker result.",
+  "actual_stderr": "topClass is deprecated - use top_class\n",
+  "actual_native_exit_code": 0,
+  "correction": "Preserve v1 report/checker; v2 admits only empty stderr or this exact known deprecation line, checks exit/status independently, and issues the corrected explicit successor. No source/payload/core/native/evidence changes.",
+  "scientific_finding": false
+}

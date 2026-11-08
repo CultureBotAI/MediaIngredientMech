@@ -1,0 +1,1539 @@
+{
+  "recorded_at": "2026-11-08T08:15:41.951493+00:00",
+  "reviewer": "Codex /root/preparation_skeptic in W10 (AI)",
+  "phase": "initial primary source and exact predecessor inspection before successor review",
+  "prior_involvement": "I reviewed prior W10 C002 source association and successor-v3 provenance retention, but did not author this payload. Those prior reviews did not detect this inherited completeness enum defect. This is a fresh claim-specific reassessment, author-independent but not independent of all prior W10 review involvement.",
+  "predecessor": {
+    "path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-buffers-carbonate_co2_nominal4percent_togo_m202.yaml",
+    "sha256": "fa07901e230c7cc707ddacb6f5ff70def989c7d1ecfa40118ef2497136e0e1ce",
+    "full_record": {
+      "identifier": "kgmicrobe.ingredient:carbonate_co2_nominal4percent_togo_m202",
+      "preferred_term": "Nominal 4% Na2CO3-CO2 buffer (TOGO M202)",
+      "mapping_status": "MAPPED",
+      "ingredient_type": "STOCK_SOLUTION",
+      "solution_type": "BUFFER_SOLUTION",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:carbonate_co2_nominal4percent_togo_m202",
+        "ontology_label": "Nominal 4% Na2CO3-CO2 buffer (TOGO M202)",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "LLM_SUGGESTION",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M202",
+            "notes": "Source-described preparation boundary retained under MAPPING_SEMANTICS section 3. No exact chemical or complete-formula equivalence is asserted. TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used."
+          }
+        ]
+      },
+      "components": [
+        {
+          "component_name": "Na2CO3",
+          "reference_scope": "UNMAPPED",
+          "source": "Source label names this carbonate constituent; percent basis and salt hydration unspecified."
+        },
+        {
+          "component_name": "CO2",
+          "reference_scope": "UNMAPPED",
+          "source": "Source label names the carbonate/CO2 system; no gas dose or equilibration endpoint asserted."
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M202",
+            "source_record": "Nominal 4% Na2CO3-CO2 buffer (TOGO M202)",
+            "notes": "TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used."
+          }
+        ],
+        "notes": "The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted. Source-named parts remain UNMAPPED where supplied form or stock identity is not established. MIM_CATALOG references identify only the supported constituent, not approval of that complete owner."
+      },
+      "notes": "TOGO M202 names 100 mL of 4% Na2CO3-CO2 buffer. The source-defined carbonate/CO2 preparation can be represented without inventing a CO2 saturation protocol. The final medium pH 6.7-6.8 is not assigned to the stock. Direct JCM 209 retrieval was unsuccessful; the captured TOGO recipe is the evidence used. The 4% basis, solvent, carbonate hydration and CO2 equilibration conditions are unknown. No numeric component concentration or exact equivalence to another carbonate stock is asserted. Provenance-only source text '4% Na2CO3--CO2 buffer' (case CM_NAME:2c3094e51892954b1d4570d5e90e6a5625c91413fae75f4efe3cc642461069fd). Generic source-local labels are not added as globally resolving synonyms. No exact formulation link to a receiving CultureMech medium is asserted. Source-snapshot receiving amounts and embedded holds are preserved; stock-to-medium unit repair is separate from preparation identity.",
+      "curation_history": [
+        {
+          "timestamp": "2026-11-08T06:02:48.801189+00:00",
+          "curator": "all_unmatched_worker10_successor_buffers",
+          "action": "CREATED",
+          "changes": "Created isolated source-qualified preparation proposal with partial source-proven components. Explicit unknowns and receiving-recipe conflicts are retained; no complete-formula, inherited-owner, role or publication approval.",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-11-08T07:45:24.970453+00:00",
+          "curator": "Codex worker10 /root claim-specific provenance correction",
+          "action": "CORRECTED_AGENT_MAPPING_EVIDENCE_PROVENANCE",
+          "changes": "Issue #1226: retype only the independently audited new agent-authored MappingEvidence judgments at indices 0 from human-only MANUAL_CURATION to LLM_SUGGESTION. Exact sources, notes, quantities, scientific conclusions, unchanged historical MappingEvidence (authorship not recertified), ComponentEvidenceTypeEnum objects, prior history and all source/role/export holds remain unchanged. This is provenance correction, not renewed scientific or release approval.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true
+        }
+      ]
+    }
+  },
+  "source_bindings": [
+    {
+      "name": "TOGO M202",
+      "path": "reports/all_unmatched_20261107/worker-10/buffers/captures/2b7e3ee4d3ec3dfb08be.json",
+      "sha256": "b15d8c064d864879ab647581702a30715855452fcbdd2b7ea71ece8c1203530a",
+      "original_accessed_at": "2026-11-08T05:07:18.501207+00:00",
+      "entire_captured_object_read": true,
+      "new_retrieval": false,
+      "full_record": {
+        "meta": {
+          "gm": "http://togomedium.org/medium/M202",
+          "name": "M98-5",
+          "original_media_id": "JCM_M209",
+          "src_url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=209",
+          "ph": "6.7-6.8"
+        },
+        "components": [
+          {
+            "paragraph_index": 1,
+            "subcomponent_name": "main solution 1",
+            "items": [
+              {
+                "component_name": "0.05% Resazurin solution",
+                "volume": 0.5,
+                "unit": "ml",
+                "conc_value": 0.05,
+                "conc_unit": "%",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001403",
+                "gmo_id": "GMO_001403",
+                "label": "Resazurin solution",
+                "properties": [
+                  {
+                    "id": "GMO_000051",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+                    "label": "Solution"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000055",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000055",
+                    "label": "pH dependent redox indicator"
+                  }
+                ]
+              },
+              {
+                "component_name": "1% Hemin solution",
+                "volume": 1,
+                "unit": "ml",
+                "conc_value": 1,
+                "conc_unit": "%",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001449",
+                "gmo_id": "GMO_001449",
+                "label": "Hemin solution",
+                "properties": [
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  },
+                  {
+                    "id": "GMO_000051",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+                    "label": "Solution"
+                  },
+                  {
+                    "id": "GMO_000041",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+                    "label": "Organic compound"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000067",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000067",
+                    "label": "Growth factor"
+                  }
+                ]
+              },
+              {
+                "component_name": "25% L--Ascorbic acid solution",
+                "volume": 1,
+                "unit": "ml",
+                "conc_value": 25,
+                "conc_unit": "%",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001500",
+                "gmo_id": "GMO_001500",
+                "label": "Ascorbic acid solution",
+                "properties": [
+                  {
+                    "id": "GMO_000041",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+                    "label": "Organic compound"
+                  },
+                  {
+                    "id": "GMO_000051",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+                    "label": "Solution"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000045",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000045",
+                    "label": "Vitamin"
+                  }
+                ]
+              },
+              {
+                "component_name": "4% Na2CO3--CO2 buffer",
+                "volume": 100,
+                "unit": "ml",
+                "conc_value": 4,
+                "conc_unit": "%",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001503",
+                "gmo_id": "GMO_001503",
+                "label": "Sodium carbonate-Carbon dioxide buffer",
+                "properties": [
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  },
+                  {
+                    "id": "GMO_000051",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+                    "label": "Solution"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000038",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000038",
+                    "label": "Buffer"
+                  }
+                ]
+              },
+              {
+                "component_name": "5% L--Cysteine・HCl・H2O solution",
+                "volume": 10,
+                "unit": "ml",
+                "conc_value": 5,
+                "conc_unit": "%",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001496",
+                "gmo_id": "GMO_001496",
+                "label": "L-Cysteine hydrochloride monohydrate solution",
+                "properties": [
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  },
+                  {
+                    "id": "GMO_000041",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+                    "label": "Organic compound"
+                  },
+                  {
+                    "id": "GMO_000051",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000051",
+                    "label": "Solution"
+                  }
+                ],
+                "roles": []
+              },
+              {
+                "component_name": "Distilled water",
+                "volume": 430,
+                "unit": "ml",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001001",
+                "gmo_id": "GMO_001001",
+                "label": "Distilled water",
+                "properties": [
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000044",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000044",
+                    "label": "Solvating media"
+                  }
+                ]
+              },
+              {
+                "component_name": "Glycerol",
+                "volume": 0.3,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001083",
+                "gmo_id": "GMO_001083",
+                "label": "Glycerol",
+                "properties": [
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000041",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+                    "label": "Organic compound"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000063",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+                    "label": "Carbon source"
+                  }
+                ]
+              },
+              {
+                "component_name": "Cellobiose",
+                "volume": 0.5,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001137",
+                "gmo_id": "GMO_001137",
+                "label": "Cellobiose",
+                "properties": [
+                  {
+                    "id": "GMO_000041",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+                    "label": "Organic compound"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000063",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+                    "label": "Carbon source"
+                  }
+                ]
+              },
+              {
+                "component_name": "Maltose",
+                "volume": 0.3,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001195",
+                "gmo_id": "GMO_001195",
+                "label": "Maltose",
+                "properties": [
+                  {
+                    "id": "GMO_000041",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+                    "label": "Organic compound"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000063",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+                    "label": "Carbon source"
+                  }
+                ]
+              },
+              {
+                "component_name": "Rumen fluid",
+                "volume": 400,
+                "unit": "ml",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001727",
+                "gmo_id": "GMO_001727",
+                "label": "Rumen fluid",
+                "properties": [
+                  {
+                    "id": "GMO_000047",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+                    "label": "Undefined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000042",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000042",
+                    "label": "Nutrient source"
+                  }
+                ]
+              },
+              {
+                "component_name": "Glucose",
+                "volume": 0.3,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001815",
+                "gmo_id": "GMO_001815",
+                "label": "Glucose",
+                "properties": [
+                  {
+                    "id": "GMO_000041",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000041",
+                    "label": "Organic compound"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000063",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000063",
+                    "label": "Carbon source"
+                  }
+                ]
+              },
+              {
+                "component_name": "Bacto agar (BD-Difco)",
+                "volume": 20,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001130",
+                "gmo_id": "GMO_001130",
+                "label": "Bacto &trade; Agar",
+                "properties": [],
+                "roles": [
+                  {
+                    "id": "GMO_000048",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000048",
+                    "label": "Solidifying component"
+                  }
+                ]
+              },
+              {
+                "component_name": "Yeast extract (BD-Difco)",
+                "volume": 0.5,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001018",
+                "gmo_id": "GMO_001018",
+                "label": "Bacto &trade; Yeast extract",
+                "properties": [
+                  {
+                    "id": "GMO_000047",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+                    "label": "Undefined component"
+                  }
+                ],
+                "roles": []
+              },
+              {
+                "component_name": "Trypticase peptone (BD-BBL)",
+                "volume": 2,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001097",
+                "gmo_id": "GMO_001097",
+                "label": "BBL &trade; Trypticase peptone",
+                "properties": [
+                  {
+                    "id": "GMO_000047",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000047",
+                    "label": "Undefined component"
+                  }
+                ],
+                "roles": []
+              },
+              {
+                "component_name": "Salts solution (see below)",
+                "volume": 50,
+                "unit": "ml",
+                "reference_media_id": "M202",
+                "properties": [],
+                "roles": []
+              }
+            ]
+          },
+          {
+            "paragraph_index": 2,
+            "subcomponent_name": "Salts solution",
+            "items": [
+              {
+                "component_name": "Distilled water",
+                "volume": 100,
+                "unit": "ml",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001001",
+                "gmo_id": "GMO_001001",
+                "label": "Distilled water",
+                "properties": [
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000044",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000044",
+                    "label": "Solvating media"
+                  }
+                ]
+              },
+              {
+                "component_name": "MgSO4・7H2O",
+                "volume": 0.25,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001002",
+                "gmo_id": "GMO_001002",
+                "label": "Magnesium sulfate heptahydrate",
+                "properties": [
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000078",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000078",
+                    "label": "Mineral source"
+                  }
+                ]
+              },
+              {
+                "component_name": "NaCl",
+                "volume": 1.18,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001004",
+                "gmo_id": "GMO_001004",
+                "label": "Sodium chloride",
+                "properties": [
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000078",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000078",
+                    "label": "Mineral source"
+                  }
+                ]
+              },
+              {
+                "component_name": "CaCl2・2H2O",
+                "volume": 0.12,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001005",
+                "gmo_id": "GMO_001005",
+                "label": "Calcium chloride dihydrate",
+                "properties": [
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000078",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000078",
+                    "label": "Mineral source"
+                  }
+                ]
+              },
+              {
+                "component_name": "KH2PO4",
+                "volume": 0.47,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001006",
+                "gmo_id": "GMO_001006",
+                "label": "Potassium phosphate monobasic",
+                "properties": [
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000038",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000038",
+                    "label": "Buffer"
+                  }
+                ]
+              },
+              {
+                "component_name": "K2HPO4",
+                "volume": 0.78,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001009",
+                "gmo_id": "GMO_001009",
+                "label": "Potassium phosphate dibasic",
+                "properties": [
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  },
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000038",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000038",
+                    "label": "Buffer"
+                  }
+                ]
+              },
+              {
+                "component_name": "(NH4)2SO4",
+                "volume": 1.2,
+                "unit": "g",
+                "gmo": "http://purl.jp/bio/10/gmo/GMO_001030",
+                "gmo_id": "GMO_001030",
+                "label": "Ammonium sulfate",
+                "properties": [
+                  {
+                    "id": "GMO_000049",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000049",
+                    "label": "Simple component"
+                  },
+                  {
+                    "id": "GMO_000040",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000040",
+                    "label": "Inorganic compound"
+                  },
+                  {
+                    "id": "GMO_000046",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000046",
+                    "label": "Defined component"
+                  }
+                ],
+                "roles": [
+                  {
+                    "id": "GMO_000062",
+                    "uri": "http://purl.jp/bio/10/gmo/GMO_000062",
+                    "label": "Nitrogen source"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "comments": [
+          {
+            "paragraph_index": 3,
+            "comment": "Adjust pH to 6.7--6.8."
+          }
+        ]
+      }
+    },
+    {
+      "name": "MediaDive ingredient1685",
+      "path": "reports/all_unmatched_20261107/worker-10/kg/captures/md1685.json",
+      "sha256": "b66beb4b658ae2a1fc81b0e76e147ee2d68557371f4c02ebea9788f1bf8eb4c0",
+      "original_accessed_at": "2026-11-08T05:07:55.119827+00:00",
+      "entire_captured_object_read": true,
+      "new_retrieval": false,
+      "full_record": {
+        "status": 200,
+        "count": 16,
+        "data": {
+          "id": 1685,
+          "name": "Na2CO3-CO2 buffer",
+          "ChEBI": 29377,
+          "CAS-RN": null,
+          "KEGG-Compound": null,
+          "BRENDA-Ligand": null,
+          "MetaCyc": null,
+          "PubChem": null,
+          "ZVG": null,
+          "complex_compound": 0,
+          "mass": 105.988,
+          "formula": "CNa2O3",
+          "density": null,
+          "synonyms": [
+            "Na2CO3-CO2 buffer"
+          ],
+          "roles": [],
+          "media": [
+            "J209"
+          ]
+        }
+      }
+    },
+    {
+      "name": "MediaDive J209",
+      "path": "reports/all_unmatched_20261107/worker-10/kg/captures/mdJ209.json",
+      "sha256": "8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050",
+      "original_accessed_at": "2026-11-08T05:10:34.917710+00:00",
+      "entire_captured_object_read": true,
+      "new_retrieval": false,
+      "full_record": {
+        "status": 200,
+        "count": 1,
+        "data": {
+          "medium": {
+            "id": "J209",
+            "name": "M98-5",
+            "complex_medium": "yes",
+            "min_pH": 6.8,
+            "max_pH": 6.8,
+            "source": "JCM",
+            "link": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=209"
+          },
+          "solutions": [
+            {
+              "id": 3875,
+              "name": "Main sol. J209",
+              "volume": 1092,
+              "recipe": [
+                {
+                  "recipe_order": 1,
+                  "compound": "Rumen fluid",
+                  "compound_id": 145,
+                  "amount": 400,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 2,
+                  "compound": "Trypticase peptone",
+                  "compound_id": 124,
+                  "attribute": "BD-BBL",
+                  "amount": 2,
+                  "unit": "g",
+                  "g_l": 1.8315,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 3,
+                  "compound": "Yeast extract",
+                  "compound_id": 16,
+                  "attribute": "BD-Difco",
+                  "amount": 0.5,
+                  "unit": "g",
+                  "g_l": 0.457875,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 4,
+                  "compound": "Glucose",
+                  "compound_id": 5,
+                  "amount": 0.3,
+                  "unit": "g",
+                  "g_l": 0.274725,
+                  "mmol_l": 1.5249,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 5,
+                  "compound": "Cellobiose",
+                  "compound_id": 214,
+                  "amount": 0.5,
+                  "unit": "g",
+                  "g_l": 0.457875,
+                  "mmol_l": 1.33764,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 6,
+                  "compound": "Maltose",
+                  "compound_id": 171,
+                  "amount": 0.3,
+                  "unit": "g",
+                  "g_l": 0.274725,
+                  "mmol_l": 0.802586,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 7,
+                  "compound": "Glycerol",
+                  "compound_id": 72,
+                  "amount": 0.3,
+                  "unit": "g",
+                  "g_l": 0.274725,
+                  "mmol_l": 2.98323,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 8,
+                  "compound": "Salts solution",
+                  "compound_id": 1684,
+                  "attribute": "see below",
+                  "amount": 50,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 9,
+                  "compound": "Agar",
+                  "compound_id": 3,
+                  "attribute": "BD-Difco, Bacto ",
+                  "amount": 20,
+                  "unit": "g",
+                  "g_l": 18.315,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 10,
+                  "compound": "Hemin",
+                  "compound_id": 704,
+                  "attribute": "1%",
+                  "amount": 1,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 11,
+                  "compound": "Resazurin",
+                  "compound_id": 25,
+                  "attribute": "0.05%",
+                  "amount": 0.5,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 12,
+                  "compound": "Na2CO3-CO2 buffer",
+                  "compound_id": 1685,
+                  "attribute": "4%",
+                  "amount": 100,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 13,
+                  "compound": "L-Ascorbic acid",
+                  "compound_id": 701,
+                  "attribute": "25%",
+                  "amount": 1,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 14,
+                  "compound": "L-Cysteine HCl x H2O",
+                  "compound_id": 770,
+                  "attribute": "5%",
+                  "amount": 10,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 15,
+                  "compound": "Distilled water",
+                  "compound_id": 4,
+                  "amount": 430,
+                  "unit": "ml",
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 16,
+                  "compound": "K2HPO4",
+                  "compound_id": 10,
+                  "amount": 0.78,
+                  "unit": "g",
+                  "g_l": 0.714286,
+                  "mmol_l": 4.10094,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 17,
+                  "compound": "KH2PO4",
+                  "compound_id": 11,
+                  "amount": 0.47,
+                  "unit": "g",
+                  "g_l": 0.430403,
+                  "mmol_l": 3.16273,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 18,
+                  "compound": "NaCl",
+                  "compound_id": 43,
+                  "amount": 1.18,
+                  "unit": "g",
+                  "g_l": 1.08059,
+                  "mmol_l": 18.4905,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 19,
+                  "compound": "(NH4)2SO4",
+                  "compound_id": 27,
+                  "amount": 1.2,
+                  "unit": "g",
+                  "g_l": 1.0989,
+                  "mmol_l": 8.31619,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 20,
+                  "compound": "CaCl2 x 2 H2O",
+                  "compound_id": 7,
+                  "amount": 0.12,
+                  "unit": "g",
+                  "g_l": 0.10989,
+                  "mmol_l": 0.747476,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 21,
+                  "compound": "MgSO4 x 7 H2O",
+                  "compound_id": 8,
+                  "amount": 0.25,
+                  "unit": "g",
+                  "g_l": 0.228938,
+                  "mmol_l": 0.928844,
+                  "optional": 0
+                },
+                {
+                  "recipe_order": 22,
+                  "compound": "Distilled water",
+                  "compound_id": 4,
+                  "amount": 100,
+                  "unit": "ml",
+                  "optional": 0
+                }
+              ],
+              "steps": [
+                {
+                  "recipe_order": 16,
+                  "step": "<I>Salts solution</I> "
+                },
+                {
+                  "step": "Adjust pH to 6.7-6.8."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "native_enum": {
+    "description": "Completeness of a component decomposition relative to its cited source.",
+    "permissible_values": {
+      "COMPLETE": {
+        "description": "The source explicitly establishes that the listed constituents are complete."
+      },
+      "PARTIAL": {
+        "description": "The source explicitly indicates that additional constituents are omitted."
+      },
+      "UNKNOWN": {
+        "description": "The source does not establish whether the list is complete."
+      }
+    }
+  },
+  "native_enum_path": "src/mediaingredientmech/schema/mediaingredientmech.yaml#ComponentCompletenessEnum",
+  "source_conclusion": "UNKNOWN is supported: the complete captured TOGO source supplies the named preparation and receiving dose but neither establishes a closed buffer list nor explicitly identifies omitted buffer constituents. The separately listed main water and salts stock must not be imported as buffer carrier evidence. MediaDive J209 offers the same attributed recipe and a flattened salts representation, not an independent printed buffer formula.",
+  "source_association": "The positive ingredient1685→J209/M98-5→JCM209 and TOGO M202/JCM_M209 chain remains intact. Completeness correction does not reject that source association or require another stock owner.",
+  "retained_unknowns": [
+    "percentage basis",
+    "solvent/carrier",
+    "carbonate hydration/supplied form",
+    "CO2 dose and equilibration endpoint",
+    "stock pH",
+    "stock final volume"
+  ],
+  "original_findings": [
+    {
+      "finding_id": "W10-SV2-INHERITED-COMPLETENESS-001",
+      "severity": "minor",
+      "native_issue_key": "w10-carbonate-co2-m202-component-completeness-source-unknown"
+    },
+    {
+      "finding_id": "SCI-CARBONATE-COMPLETENESS-001",
+      "severity": "major_for_complete_owner_acceptance",
+      "native_issue_key": "w10-carbonate-co2-m202-component-completeness-source-unknown"
+    }
+  ],
+  "checks": [
+    {
+      "check": "collection108members",
+      "pass": true
+    },
+    {
+      "check": "collection member ASSESSMENT.md",
+      "pass": true
+    },
+    {
+      "check": "collection member AUTHOR-ADDENDUM.md",
+      "pass": true
+    },
+    {
+      "check": "collection member HANDOFF.json",
+      "pass": true
+    },
+    {
+      "check": "collection member capture_live.py",
+      "pass": true
+    },
+    {
+      "check": "collection member collector-execution-note.json",
+      "pass": true
+    },
+    {
+      "check": "collection member comment-1201.md",
+      "pass": true
+    },
+    {
+      "check": "collection member completeness-independent-assessment.json",
+      "pass": true
+    },
+    {
+      "check": "collection member current-carbonate-stock.yaml",
+      "pass": true
+    },
+    {
+      "check": "collection member current-head-observation.json",
+      "pass": true
+    },
+    {
+      "check": "collection member finding-dispositions.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/current_observation/decisions.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/current_observation/evidence.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/current_observation/proposals.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/old/decisions.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/old/evidence.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/old/proposals.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/reviewed/decisions.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/reviewed/evidence.json",
+      "pass": true
+    },
+    {
+      "check": "collection member git-core/reviewed/proposals.json",
+      "pass": true
+    },
+    {
+      "check": "collection member independent-verification.json",
+      "pass": true
+    },
+    {
+      "check": "collection member kg-carbonate-buffer-alias.yaml",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1189-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1189.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1189.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1201-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1201.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1201.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1225-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1225.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1225.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1226-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1226.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1226.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1227-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1227.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1227.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1237-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1237.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/comments-1237.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1189-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1189.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1189.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1201-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1201.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1201.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1225-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1225.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1225.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1226-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1226.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1226.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1227-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1227.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1227.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1237-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1237.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/issue-1237.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/search-completeness-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/search-completeness.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/search-completeness.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member live/w10-ref-receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/w10-ref.json",
+      "pass": true
+    },
+    {
+      "check": "collection member live/w10-ref.stderr",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/HANDOFF.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/REPORT.md",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/SHA256SUMS",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/baseline-integrity.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/baseline-w07/REVIEW.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/baseline-w07/SHA256SUMS",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/contract-head-bindings.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/git-delta-surface-check.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/inheritance-caseproofs.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/inherited-holds.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/machine-findings-before-fix.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/native-pair-validation.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/preservation-final.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/review.md",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/review.yaml",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/science/case-proof.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/science/changed-fields-proof.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/science/component-reference-assessments.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/science/science-review.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/science/source-assessments.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/skeptic/baseline-inheritance-review-v1.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/skeptic/final-assembly-review.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/skeptic/final-handoff-review.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/skeptic/inherited-stock-findings-v1.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/skeptic/science-skeptic-v1.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/technical/accounting-run-v1/summary.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/technical/native-run-v1/receipt.json",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/technical/pytest-controls-v1.xml",
+      "pass": true
+    },
+    {
+      "check": "collection member peer/technical/technical-review.json",
+      "pass": true
+    },
+    {
+      "check": "collection member schema-at-reviewed-head.yaml",
+      "pass": true
+    },
+    {
+      "check": "collection member seal_collection.py",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/1aaeb1dd7a38141e4b231f0588d904ea2b46c12d0d939e1bcc1e133fe807084c",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/844925a36ee53bbf95393db9f41377a53804d62fb2d648656fe681cc65f49bee",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/8cf7de1602dc64f83a8f9297acc3e5324e62d7fe0d7e975eb835506bf41a4050",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/8d33fdeb26a2d16294a3c5f4a7f444578bb462aa6036d45a15e9bfadfe47fbd2",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/b15d8c064d864879ab647581702a30715855452fcbdd2b7ea71ece8c1203530a",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/b66beb4b658ae2a1fc81b0e76e147ee2d68557371f4c02ebea9788f1bf8eb4c0",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/d23450073506aceb1914cefb11836a0096ff7d5cdcaa6f1837ea8b292440eec0",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/d762286083196442ea72280ad6e8cbdfd43d355fe40a80cee5562a57bf1ae3a3",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/f533fa2b664658ce2a6bd198f1ef53a50d410bb0a39765eb1dce7f053fe7277a",
+      "pass": true
+    },
+    {
+      "check": "collection member source-captures/f821d5989e1ae2e12e5ede3299173316922e7097c99982c5a18b4c630fee86c0",
+      "pass": true
+    },
+    {
+      "check": "collection member sv1-buffers-carbonate_co2_nominal4percent_togo_m202.yaml",
+      "pass": true
+    },
+    {
+      "check": "collection member sv2-isp4-jcm58-complete-formulation.yaml",
+      "pass": true
+    },
+    {
+      "check": "collection member verify_collect.py",
+      "pass": true
+    },
+    {
+      "check": "author addendum pin",
+      "pass": true
+    },
+    {
+      "check": "selected latest authentic predecessor",
+      "pass": true
+    },
+    {
+      "check": "original capture exact TOGO M202",
+      "pass": true
+    },
+    {
+      "check": "original capture exact MediaDive ingredient1685",
+      "pass": true
+    },
+    {
+      "check": "original capture exact MediaDive J209",
+      "pass": true
+    },
+    {
+      "check": "positive original source link",
+      "pass": true
+    },
+    {
+      "check": "buffer is main recipe item not separate stock formulation",
+      "pass": true
+    },
+    {
+      "check": "receiving dose exact100ml",
+      "pass": true
+    },
+    {
+      "check": "water explicitly separate receiving and salts sections",
+      "pass": true
+    },
+    {
+      "check": "exact native completeness distinction",
+      "pass": true
+    },
+    {
+      "check": "current limited parts and method",
+      "pass": true
+    },
+    {
+      "check": "exact filed issue lineage",
+      "pass": true
+    }
+  ],
+  "check_count": 121,
+  "failures": [],
+  "scope_limit": "Only this completeness conclusion is newly adjudicated; surrounding material, source and preparation claims remain within their established limits. No whole-owner, role or export approval. Candidate acceptance awaits final exact bytes."
+}

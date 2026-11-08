@@ -1,0 +1,108 @@
+{
+  "reviewer": "/root/bio_research",
+  "checked_at": "2026-11-08T08:28:03.657020+00:00",
+  "audit_execution_started_at": "2026-11-08T08:28:02.964950+00:00",
+  "actual_review_start_exact": null,
+  "scope": "Native timing successor metadata only; no source science, candidate or core change.",
+  "scientific_review": false,
+  "status": "PASS_TIMING_CLARIFICATION",
+  "finding_disposition": {
+    "finding_id": "SV4-NATIVE-TIMING-001",
+    "status": "resolved_in_append_only_native_v2_observation",
+    "resolution": "The original0.000603second timestamps are explicitly identified as wrapper-generation timing. New started_at is a documented root assessment milestone, with exact earlier start unknown; finish is actual new assembly completion. Independent reviewers retain their own scopes and timing. Original pair/handoff/finding are preserved."
+  },
+  "old_pair": {
+    "review_id": "20261108T082153Z-w10-carbonate-completeness-successor",
+    "targets": 3,
+    "scientific_scope": "Only component completeness",
+    "files": [
+      {
+        "path": "reviews/structured/20261108T082153Z-w10-carbonate-completeness-successor/review.yaml",
+        "sha256": "f4b47ec24dcef4b231fc31a3f93d8fde22920214058c97de78947bc88434398e"
+      },
+      {
+        "path": "reviews/structured/20261108T082153Z-w10-carbonate-completeness-successor/review.md",
+        "sha256": "1096c2361d5c4899caa63dc4a335489b88c52b3ecc6558850322cd0d4ae76ea6"
+      }
+    ],
+    "canonical_native_saver_run": true,
+    "owner_role_export_approval": false
+  },
+  "new_pair": {
+    "review_id": "20261108T082711Z-w10-carbonate-completeness-successor-v2",
+    "targets": 3,
+    "scientific_scope": "Only component completeness, unchanged from first pair; timing attribution clarified",
+    "files": [
+      {
+        "path": "reviews/structured/20261108T082711Z-w10-carbonate-completeness-successor-v2/review.yaml",
+        "sha256": "ad5a5e0ea0b2045f3e01291405016efc8595085d084c3f94cb2f007d9d032e22"
+      },
+      {
+        "path": "reviews/structured/20261108T082711Z-w10-carbonate-completeness-successor-v2/review.md",
+        "sha256": "bd8550ca649a5b9ed6b1e02c4d2895660d5d23120319001c52fa437c3cd72261"
+      }
+    ],
+    "canonical_native_saver_run": true,
+    "owner_role_export_approval": false,
+    "supersedes_timing_attribution_only": "20261108T082153Z-w10-carbonate-completeness-successor",
+    "timing_correction": {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v4/native-v2/timing-correction.json",
+      "sha256": "9ed80ac89201a5d991f70a133591fbf5440be8685bfb4cece608e471d4fc6aa1"
+    }
+  },
+  "timing_correction": {
+    "path": "successor-v4/native-v2/timing-correction.json",
+    "sha256": "9ed80ac89201a5d991f70a133591fbf5440be8685bfb4cece608e471d4fc6aa1"
+  },
+  "checks": {
+    "all44current_source_input_hashes_verified": true,
+    "original37inputs_preserved": true,
+    "native_canonical_read_and_schema_semantics": true,
+    "markdown_render_byte_parity": true,
+    "same_exact3targets_checks_assessments_science_scope": true,
+    "all_old_evidence_and_limits_preserved": true,
+    "candidate_and3final_core_hashes_unchanged": true,
+    "old_pair_handoff_and_finding_preserved": true
+  },
+  "additional_inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v4/HANDOFF.json",
+      "sha256": "25dbe1fafe0a3919c080fe259e07dc837157400b490bf1378f04dbbe8f9d81e8",
+      "role": "context"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v4/native-v2/timing-correction.json",
+      "sha256": "9ed80ac89201a5d991f70a133591fbf5440be8685bfb4cece608e471d4fc6aa1",
+      "role": "context"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v4/reviews/retention/native-handoff-review-v1.json",
+      "sha256": "eb7de1e0ff7341f5862d695598a74cde4f83498d6964a9555717120ba142ff15",
+      "role": "context"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v4/reviews/retention/native-timing-finding-v1.json",
+      "sha256": "8d77a8b60e928622d837b8afe53dae8afed53e90433d148f24bdd6b9a54d9b6d",
+      "role": "context"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-10/successor-v4/reviews/skeptic/final-assembly-review-v2.json",
+      "sha256": "4816da1f2d212fec691ec5d8c0af28e3817e02baccbc1c75372205f27ac1e788",
+      "role": "context"
+    },
+    {
+      "path": "reviews/structured/20261108T082153Z-w10-carbonate-completeness-successor/review.md",
+      "sha256": "1096c2361d5c4899caa63dc4a335489b88c52b3ecc6558850322cd0d4ae76ea6",
+      "role": "context"
+    },
+    {
+      "path": "reviews/structured/20261108T082153Z-w10-carbonate-completeness-successor/review.yaml",
+      "sha256": "f4b47ec24dcef4b231fc31a3f93d8fde22920214058c97de78947bc88434398e",
+      "role": "context"
+    }
+  ],
+  "limitations": [
+    "Full native review suite is root scope and still running at this observation. HANDOFF-v2 requires a subsequent read before the final combined receipt.",
+    "Timing correction is metadata provenance, not renewed chemistry, source-case, role or export approval."
+  ]
+}

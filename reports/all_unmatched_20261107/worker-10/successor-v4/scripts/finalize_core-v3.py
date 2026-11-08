@@ -1,0 +1,45 @@
+"""Append exact review bindings and exhaustive successor bridges without changing payloads."""
+from pathlib import Path
+import copy,datetime,hashlib,json,sys
+R=Path.cwd();A=R/'reports/all_unmatched_20261107/worker-10';S=A/'successor-v4';B=A/'successor-v3';C=S/'author-core';PID='sv1-buffers-carbonate_co2_nominal4percent_togo_m202'
+load=lambda p:json.loads(p.read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();canon=lambda x:hashlib.sha256(json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()).hexdigest();at=datetime.datetime.now(datetime.timezone.utc).isoformat()
+def save(path,value):
+ with path.open('x') as f:json.dump(value,f,indent=2,ensure_ascii=False);f.write('\n')
+science=Path(sys.argv[1]).resolve();retention=S/'reviews/retention/author-core-retention-review-v1.json'
+assert science.resolve().is_relative_to((S/'reviews').resolve())
+for path in [science,retention]:
+ d=load(path)
+ if path==science:
+  assert sha(path)=='fcae3c77d942d2aeb29134d50e5c554f0ca452aed49f1908d623af5336feb98a'
+  assert d['status']=='PASS_BOUNDED_CORRECTION' and d['author_independent'] is True
+  assert not d['new_unexpected_findings']
+ else:
+  assert d['verdict']=='pass_with_limitations' and not d.get('findings',[])
+Ds=load(C/'decisions.json');Ps=load(C/'proposals.json');Es=load(C/'evidence.json');priorD=load(B/'decisions.json')['decisions'];priorP=load(B/'proposals.json')['proposals'];target=next(x for x in Ps['proposals'] if x['proposal_id']==PID);assert sha(A/target['after_capture']['path'])=='135788bfd2a511671a90ff9b912092df789c9209995f88d11b4aa6134eca0625'
+review_specs=[('sv4-independent-completeness',science,'independent_review','Fresh independent exact-payload source-completeness review only; prior chemistry/source/role/export conclusions are not renewed.'),('sv4-independent-retention',retention,'independent_review','All127proposal/188case/304occurrence retention checked; explicit metadata differences only, no scientific renewal.'),('sv4-native-narrow-validation',S/'validation/narrow-native.json','local_validation','One-record closed schema/guarded roundtrip plus full in-memory partonomy, identifier and alias projection checks; no export approval.')]
+for eid,path,kind,summary in review_specs:Es['evidence'].append({'evidence_id':eid,'kind':kind,'capture':{'root':'artifact','path':str(path.relative_to(A)),'sha256':sha(path)},'url':None,'accessed_at':at,'locator':'Complete exact report; local inspection, not new primary retrieval','supports_or_contradicts':summary,'case_ids':target['case_ids']})
+ids=[x[0] for x in review_specs]
+for row in [target,Ds['decisions'][21],Ds['decisions'][187]]:
+ row['independent_review']={'status':'complete','evidence_ids':ids[:2]};row['evidence_ids']+=ids;row['completeness_successor']['review_state']='complete_for_exact_bounded_completeness_correction';row['completeness_successor']['independent_review_bindings']=[{'path':str(p.relative_to(A)),'sha256':sha(p)} for p in [science,retention]]
+target['review_status_explanation']='Exact successor independently reviewed for the completeness field, complete payload retention and source-case metadata. Prior source judgments retain their actual historical attribution. Separate W09 review of c9a changes and coordinator whole-owner/source/role/export acceptance are not transferred by this bounded bridge.'
+for n,d in [('decisions.json',Ds),('proposals.json',Ps),('evidence.json',Es)]:save(S/n,d)
+casebridge=[]
+for i,(old,new) in enumerate(zip(priorD,Ds['decisions'])):
+ for k in ['case_id','case_input_sha256','source','occurrence_ids','disposition','reasoning','applicability','missing_requirement','proposal_ids','owner_records']:assert old.get(k)==new.get(k),(i,k)
+ assert i in [21,187] or old==new
+ casebridge.append({'source_index':i,'case_id':new['case_id'],'before_full_object_sha256':canon(old),'after_full_object_sha256':canon(new),'exact_complete_object':old==new,'source_outcome_identity_occurrence_owner_hashes_exact':True,'occurrence_ids':new['occurrence_ids'],'proposal_ids':new['proposal_ids'],'change_scope':'Completeness-dependent hold/review/evidence binding only' if i in [21,187] else 'Exact retained complete decision; no scientific renewal'})
+propbridge=[];prior_by={p['proposal_id']:p for p in priorP}
+for p in Ps['proposals']:
+ old=prior_by[p['proposal_id']];assert old['case_ids']==p['case_ids'] and old['before_sha256']==p['before_sha256'] and old['owner_path']==p['owner_path'];assert sha(A/p['after_capture']['path'])==p['after_capture']['sha256'];changed=p['proposal_id']==PID
+ if not changed:assert p==old and p['after_capture']==old['after_capture']
+ propbridge.append({'proposal_id':p['proposal_id'],'disposition':'selected_completeness_successor' if changed else 'exact_retained_selection','before_proposal_sha256':canon(old),'after_proposal_sha256':canon(p),'old_capture':old['after_capture'],'selected_capture':p['after_capture'],'owner_path':p['owner_path'],'before_owner_sha256':p['before_sha256'],'case_ids':p['case_ids'],'payload_byte_exact':not changed,'whole_owner_approval':False})
+assert len(propbridge)==127 and len(casebridge)==188 and len(set(x['proposal_id'] for x in propbridge))==127
+occ=[x for d in Ds['decisions'] for x in d['occurrence_ids']];assert len(occ)==len(set(occ))==304
+save(S/'complete-bridge.json',{'at':at,'predecessor_head':'c9a96da71a1977014680e5a92e600dfc7e3874db','all_cases':casebridge,'all_proposals':propbridge,'earlier_retirement_bridge':{'path':'successor-v3/retirement-bridge.json','sha256':sha(B/'retirement-bridge.json')},'current_proposals_retired':[],'scope':'Exact current selection bridge only; all earlier proposals/reviews remain historical and are not blanket reapproved.'})
+save(S/'accounting.json',{'cases':188,'unique_occurrences':304,'proposal_ids':127,'changed_payloads':1,'byte_identical_other_payloads':126,'byte_identical_other_proposal_objects':126,'affected_case_metadata_indices':[21,187],'unchanged_complete_decision_objects':186,'source_outcomes_changed':0,'prior_evidence_objects_exact':1200,'evidence_objects':len(Es['evidence']),'no_fixed_forced_count':True})
+selection=load(B/'selection.json');selection['at']=at;selection['predecessor_head']='c9a96da71a1977014680e5a92e600dfc7e3874db';selection['authoritative_core']={n:{'path':str((S/n).relative_to(A)),'sha256':sha(S/n)} for n in ['decisions.json','evidence.json','proposals.json']};selection['selected_payloads']=[{'proposal_id':p['proposal_id'],'owner_path':p['owner_path'],'destination_path':p.get('destination_path',p['owner_path']),'before_sha256':p['before_sha256'],'after_capture':p['after_capture'],'case_ids':p['case_ids']} for p in Ps['proposals']];selection['complete_retirement_bridge']={'path':'successor-v4/complete-bridge.json','sha256':sha(S/'complete-bridge.json')};selection['bounded_completeness_successor']={'proposal_id':PID,'after_capture':target['after_capture'],'no_blanket_c9a_review_transfer':True};selection['approval']=False
+selection['prior_selection_context']={'path':'successor-v3/selection.json','sha256':sha(B/'selection.json'),'historical_two_case_successor_statement':selection['two_case_successor']}
+selection['two_case_successor']='Case143/ISP4 and pure-carbonate rejection remain exact. Case21/187 source science and occurrence bindings remain unchanged; only current completeness-dependent hold/review metadata changes. The same carbonate stock now additionally changes PARTIAL to UNKNOWN and appends one history event, retaining the prior1226 typing correction.'
+save(S/'selection.json',selection)
+save(S/'finalization-binding.json',{'at':at,'author_freeze_sha256':sha(S/'author-freeze.json'),'payload_unchanged_after_author_freeze':True,'author_core':{n:sha(C/n) for n in ['decisions.json','evidence.json','proposals.json']},'final_core':{n:sha(S/n) for n in ['decisions.json','evidence.json','proposals.json']},'finalization_scope':'Only new exact independent review/validation evidence and pointers/status, plus precise scoped reviewer explanation; no further payload or source interpretation change.','current_payload':target['after_capture'],'scientific_scope':'Completeness only; existing source/owner/role/export holds remain.'})
+print(json.dumps(load(S/'accounting.json'),indent=2))

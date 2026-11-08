@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py", line 406, in <module>
+    main()
+    ~~~~^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py", line 376, in main
+    result = audit(
+        args.shard,
+    ...<6 lines>...
+        mim_root=args.mim_root,
+    )
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py", line 118, in audit
+    Path(p).resolve(strict=True)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py", line 670, in resolve
+    return self.with_segments(os.path.realpath(self, strict=strict))
+                              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 445, in realpath
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w10/worktree/reports/all_unmatched_20261107/worker-10/successor-v4/decisions.json'
