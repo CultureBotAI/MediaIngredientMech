@@ -1,0 +1,46 @@
+import json,hashlib,datetime
+from pathlib import Path
+P=Path(__file__).resolve().parents[1]
+R=P.parents[1]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+result=json.loads((P/'root-probes/staged-index-results.json').read_text())
+rows=result['results']
+assert rows[0]['apply']=='complete' and rows[3]['apply']=='REFUSED' and not rows[3]['receipt_exists']
+for r in rows[1:3]:
+ assert r['apply']=='complete' and r['verify_completed']=='complete'
+ assert r['before_apply']['baseline_worktree_paths']==[]
+ assert r['before_apply']['baseline_index_paths']==['MAPPING_SEMANTICS.md']
+ assert r['staged_contract_sha256']!=r['working_contract_sha256']==r['original_contract_sha256']
+paths=['provenance/probe_staged_index.py','root-probes/staged-index-results.json','technical/index-readback.json', 'frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py']
+f={
+ 'finding_id':'W08-21061-SRC-001','native_predecessor_finding_id':'W08-16C-CODE-002',
+ 'issue_key':'campaign-owner-apply-late-baseline-freshness',
+ 'related_issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1256',
+ 'severity':'major','status':'open','certainty':'confirmed',
+ 'reviewed_head':result['reviewed_head'],'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'title':'Unrelated staged index changes can evade all live source scope checks when working bytes are restored',
+ 'description':'The new live guard compares the working tree with the accepted commit using git diff --name-only -z <baseline> --. It never inspects the cached index delta. A real unrelated staged change to MAPPING_SEMANTICS.md with working bytes restored to the original passes prepare, apply, and verify_completed and emits a complete non-recovery receipt. This works when staged before prepare and after prepare. HEAD and working contract bytes remain exact, but the index contains a different contract outside the allowed owner paths.',
+ 'locators':['src/mediaingredientmech/curate/campaign_owner_apply.py:957-979 (_check_mutation_git_state)', 'src/mediaingredientmech/curate/campaign_owner_apply.py:_recheck and apply final receipt'],
+ 'reproduction':[
+  'Create the genuine private demotion fixture with the frozen21061 test helper; preserve real baseline and accepted review tuple.',
+  'Modify tracked MAPPING_SEMANTICS.md, run git add -- MAPPING_SEMANTICS.md, then write its original bytes back without modifying the index.',
+  'Confirm git diff --name-only -z <baseline> -- is empty, while git diff --cached --name-only -z <baseline> -- lists MAPPING_SEMANTICS.md and status is MM.',
+  'Call actual prepare/apply/verify_completed with untouched native functions. Both initial and late variants report complete and retire the source owner.',
+  'Compare clean positive and ordinary staged working-byte drift negative: positive completes; ordinary drift refuses before any source write or receipt.'
+ ],
+ 'executed_command':f'{R}/.temp/all-unmatched-worker-08/venv/bin/python -I -B {P}/provenance/probe_staged_index.py',
+ 'actual_cases':[{'mode':r['mode'],'baseline':r['accepted_baseline'],'receipt_sha256':r['receipt_sha256'], 'index_sha256':r['staged_contract_sha256'],'working_sha256':r['working_contract_sha256']} for r in rows[1:3]],
+ 'minimal_fix_scope':'Retain exact baseline HEAD and literal NUL path handling, and independently include cached/index changes in the live tracked-scope check. Explicitly define allowed operation-path staged semantics rather than assuming working bytes prove the index. Run the combined checks at the same prewrite, transition, and final live boundaries. Do not extend current-HEAD checks to historical completed verification or weaken payload/content/proof checks.',
+ 'required_tests':[
+  'Initial and post-prepare staged index-only unrelated drift must refuse before own writes and receipt creation.',
+  'Midflight index-only drift at actual transition/final live boundaries must fail with honest recovery evidence.',
+  'Unicode/newline literal paths, explicit reviewed demotion, positive clean apply, and later historical exact-content commits remain supported.',
+  'Both staged and unstaged unrelated tracked changes remain refused; negative controls keep original all23 #1255 inputs and all prior assertion coverage.'
+ ],
+ 'lineage':'Partial correction of prior W08-16C-CODE-002 (#1256): actual late HEAD and ordinary working-file drift controls now refuse, but the requested staged unrelated scope is not fully enforced. Original findings, failed attempts and severities are retained. This is a file-ready residual for coordinator deduplication, not a new issue filed by reviewer.',
+ 'independent_confirmation':{'reviewer':'worker08:/root/inorganics','path':'technical/index-readback.json','scope':'Read actual saved index/worktree Git objects and receipt bytes; ran actual verify_completed on the three complete fixtures without reapplying.'},
+ 'input_hashes':{p:sha(P/p) for p in paths},
+ 'native_functions_mocked':False,'fix_applied':False,'scientific_or_application_approval':False
+}
+with (P/'FINDING-W08-21061-SRC-001.json').open('x') as out:json.dump(f,out,indent=2);out.write('\n')
+print(sha(P/'FINDING-W08-21061-SRC-001.json'))

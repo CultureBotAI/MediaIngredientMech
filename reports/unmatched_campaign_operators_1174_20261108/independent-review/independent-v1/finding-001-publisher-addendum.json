@@ -1,0 +1,24 @@
+{
+  "finding_id": "IR-CAMPAIGN-OPERATORS-1",
+  "kind": "additional_affected_operator",
+  "source": "src/mediaingredientmech/campaign_publication.py",
+  "source_sha256": "f7350ba3487e12cf4ecd4abd85e6fb3663fe0eb454fcd1483602072eeba29274",
+  "function": "prepare(completed=True)/validate",
+  "finding": "The publisher validates its owner proof at the start, then native generation and receipt/policy reconstruction run before returning. Final capture.verify checks captured files/producer callbacks but does not repeat owner membership proof. A deterministic late unmapped-owner addition during generation makes validate return verified although actual inventory differs.",
+  "scope": "Isolated author fixture mocks owner proof and generation explicitly; native row/policy/receipt/filesystem boundaries remain real. Positive passes. This establishes outer validation order, not a full native-generation exploit.",
+  "required_fix": "Final outer owner-proof/current inventory verification is required in addition to fixing source verify_completed itself.",
+  "artifacts": [
+    {
+      "path": "probe_publisher_inventory_v1.py",
+      "sha256": "72057ff932a1e999e0dd23fbefbfa78a7c6d12764267939e09b141c42f4cd47e"
+    },
+    {
+      "path": "publisher-inventory-probe-v1.json",
+      "sha256": "e1825551de860f11959d3cabae99cd4176b285980913e9c9be78e8e164a458ae"
+    },
+    {
+      "path": "publisher-inventory-probe-v1.log",
+      "sha256": "e1825551de860f11959d3cabae99cd4176b285980913e9c9be78e8e164a458ae"
+    }
+  ]
+}

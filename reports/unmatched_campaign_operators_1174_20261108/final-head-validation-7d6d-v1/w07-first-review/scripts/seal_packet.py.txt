@@ -1,0 +1,22 @@
+from pathlib import Path
+import datetime, hashlib, json
+
+O=Path(__file__).resolve().parents[1]
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assembly=O/'review/skeptical/ASSEMBLY-REVIEW-v1.json'
+assert assembly.is_file()
+pair=json.loads((O/'native-pair.json').read_text())
+for row in pair.values():assert sha(O/row['path'])==row['sha256']
+assert not (O/'MANIFEST.json').exists()
+assert not (O/'SEAL.json').exists()
+files=[]
+for p in sorted(O.rglob('*')):
+    if p.is_file():
+        assert not p.is_symlink(),p
+        files.append(dict(path=str(p.relative_to(O)),sha256=sha(p),bytes=p.stat().st_size))
+manifest=dict(sealed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),algorithm='SHA256',scope='Immutable independent whole-operator technical review at7d6; no scientific or application/export approval. Complete native pair, exact input captures, all failed probes and final skeptical assembly.',member_count=len(files),total_bytes=sum(r['bytes'] for r in files),files=files,excluded=['MANIFEST.json','SEAL.json'])
+with (O/'MANIFEST.json').open('x') as f:json.dump(manifest,f,indent=2);f.write('\n')
+for r in files:assert sha(O/r['path'])==r['sha256'],r
+seal=dict(sealed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),manifest_sha256=sha(O/'MANIFEST.json'),member_count=len(files),handoff_sha256=sha(O/'HANDOFF.json'),selector_sha256=sha(O/'SELECTOR.json'),native_pair=pair,final_skeptical_assembly_sha256=sha(assembly),reviewed_head='7d6d44ea132e04709f81ebd9e1577643745110ad',scientific_review=False,approval='NONE',operator_outcome='supported within stated technical limits; no new operator defect',native_overall_verdict='needs_curation solely for optional private-helper target',remaining='Root full-suite completion and actual application/transition acceptance remain outside this bounded review. Root issue receipt required before helper code correction.')
+with (O/'SEAL.json').open('x') as f:json.dump(seal,f,indent=2);f.write('\n')
+print(json.dumps(seal,indent=2))

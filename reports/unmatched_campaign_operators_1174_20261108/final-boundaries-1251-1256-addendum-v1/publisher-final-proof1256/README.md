@@ -1,0 +1,11 @@
+# Publisher final live-check closure (#1256 residual)
+
+Author-only correction to W08-21061-PUB-001, filed before edits at issue1256 comment6721304487. The original actual source/native-generator counterexample is retained: a real commit after the final real source proof returned an incorrect complete result and nonempty receipts. No positive proof was stubbed.
+
+The three application files are listed in RESULTS.json. A shared live HEAD helper preserves the initial captured check and also closes complete preparation, dry-run output preflight, and every complete live publication recheck after the actual source proof and all remaining output/native checks. Historical standalone validation remains valid after later commits; tracked uncommitted derived synchronization is allowed. No schema, receipt, mapping, policy, threshold, pin or gate changes.
+
+164 publisher/integration cases passed, zero skips, including20 actual source→pinned native generator→publisher cases. All68 old test/helper functions are AST-identical. Seven new cases cover the complete first/second post-log source-proof and output-proof boundaries, real tracked derived synchronization plus historical validation/current-owner-drift refusal, and two late preflight boundaries. Both success-shaped receipts are cleared on the reproduced late failure while authentic recovery beforeimages remain; no rollback claim is made.
+
+All new real-generator cases use explicit immutable Claw76c and task-private OPENCLAW_WORKSPACE. The previous actual27-receipt/held-row test remains unchanged and executed. Final20 native command/log, source-receipt and post-control manifest snapshots are retained; deliberate negative manifest mutations are labeled. Fixture trees and generated coverage bulk are excluded. Static checks passed, including a fresh-cache final-dependency Mypy run.
+
+The source-index correction is separately authored by next23_context; its exact frozen source and tests executed here are bound as context only. This packet does not apply or independently approve either author's code. I/K/J were not modified. The interrupted21061full run is not a whole-suite pass; future combined code needs independent review and full frozen-head validation.

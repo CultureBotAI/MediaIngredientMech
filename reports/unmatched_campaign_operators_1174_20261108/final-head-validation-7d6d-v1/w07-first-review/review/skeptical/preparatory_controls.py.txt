@@ -1,0 +1,81 @@
+"""Read-only exact native boundary controls; no source or publication transaction."""
+from pathlib import Path
+import copy,datetime,hashlib,json,os,sys,traceback
+
+W=Path(__file__).resolve().parents[4];C=W.parents[2]
+O=Path(__file__).resolve().parent;R=C/'integration/campaign-suppressions1259-v1/runtime/repo'
+S=W/'.temp/four-suppression-policy-independent-v1'
+assert sys.dont_write_bytecode
+sys.path.insert(0,str(R/'src'))
+from mediaingredientmech import campaign_publication as p
+from mediaingredientmech.curate import campaign_owner_apply as source
+
+sha=lambda b:hashlib.sha256(b).hexdigest()
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+assert sha((R/'src/mediaingredientmech/campaign_publication.py').read_bytes())=='1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24'
+assert sha((R/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes())=='c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52'
+v=p._BOUND_NATIVE['campaign_native_record_review'];schema=p.LOADED_PRODUCERS[p.REVIEW_SCHEMA].content
+pair=json.loads((S/'native-pair.json').read_text());raw=(S/pair['review']['path']).read_bytes();md=(S/pair['markdown']['path']).read_bytes()
+assert sha(raw)==p.SUPPRESSION_REVIEW_SHA
+review=v.load_document(raw)
+values={r['path']:(S/'native-fixture'/r['path']).read_bytes() for r in review['source']['inputs']}
+assert all(sha(values[r['path']])==r['sha256'] for r in review['source']['inputs'])
+
+class MemoryCapture:
+    """Explicit unit adapter delivers real captured bytes; no filesystem/alias coverage claimed."""
+    def __init__(self,blob):self.blob=blob;self.root=O;self.review_refs=set()
+    def ref(self,ref):
+        b=self.blob[ref['path']]
+        assert sha(b)==ref['sha256'],'synthetic adapter input digest differs'
+        return b
+    def read(self,path,expected):
+        assert path==p.REVIEW_SCHEMA and sha(schema)==expected
+        return schema
+
+def case(doc,*,bad_markdown=False,omit_input=False):
+    data=v._dump_document(doc).encode();render=v.render_markdown(doc,p.LOADED_PRODUCERS[p.REVIEW_SCHEMA].path).encode()
+    if bad_markdown:render+=b'not native rendering\n'
+    blobs={'review.yaml':data,'review.md':render};inputs={}
+    for i,r in enumerate(doc['source']['inputs']):
+        path='inputs/'+str(i);blobs[path]=values[r['path']];inputs[r['path']]={'path':path,'sha256':r['sha256']}
+    if omit_input:inputs.pop(next(iter(inputs)))
+    config={'yaml':{'path':'review.yaml','sha256':sha(data)},'markdown':{'path':'review.md','sha256':sha(render)},'inputs':inputs}
+    return p._review_bundle(MemoryCapture(blobs),config)
+
+results=[]
+def run(name,fn,rejected=False):
+    try:
+        value=fn();out={'name':name,'expected_refusal':rejected,'accepted':True,'error':None}
+    except Exception as e:
+        out={'name':name,'expected_refusal':rejected,'accepted':False,'error':type(e).__name__+': '+str(e)}
+    out['passed']=out['accepted']!=rejected;results.append(out)
+    assert out['passed'],out
+
+run('authentic_complete_original_review',lambda:case(copy.deepcopy(review)))
+for verdict in ['blocked','needs_curation']:
+    doc=copy.deepcopy(review);doc['verdict']=verdict
+    run('nonpassing_'+verdict,lambda doc=doc:case(doc),True)
+doc=copy.deepcopy(review);doc['verdict']='needs_curation';doc['checks'][0]['required']=True;doc['checks'][0]['status']='failed'
+run('completed_nonpassing_failed_required',lambda:case(doc),True)
+doc=copy.deepcopy(review);doc['reviewer']['independence']='self_review'
+run('self_review_refused',lambda:case(doc),True)
+run('native_markdown_mismatch',lambda:case(copy.deepcopy(review),bad_markdown=True),True)
+run('declared_input_omitted',lambda:case(copy.deepcopy(review),omit_input=True),True)
+old=(S/'inputs/historical/mappings/suppressed_aliases.tsv').read_bytes()
+rows,physical=p._suppression_table(old);assert len(rows)==34
+run('historical_sidecar34_physical_rows',lambda:p._suppression_table(old))
+run('duplicate_historical_pair_refused',lambda:p._suppression_table(old+physical[0]),True)
+run('unterminated_sidecar_refused',lambda:p._suppression_table(old.rstrip(b'\n')),True)
+local_a={'subject_id':'MIM:Case','object_id':'kgmicrobe.ingredient:Case'}
+local_b={'subject_id':'MIM:Case','object_id':'kgmicrobe.ingredient:case'}
+assert p.slot(local_a)!=p.slot(local_b)
+changes,positions=p._align_rows([local_a],[local_b]);assert [x['kind'] for x in changes]==['removed','added'] and positions==[None]
+results.append({'name':'local_full_object_and_case_distinction','passed':True,'changes':changes,'positions':positions})
+run('genuine_duplicate_local_slot_refused',lambda:p._align_rows([local_a,local_a],[local_a]),True)
+good=b'100644 '+b'a'*40+b' 0\tdata/ingredients/unmapped/Poly-\xc3\x9f-hydroxybutyric_Acid.yaml\0'
+assert list(source._index_entries(good))==['data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml']
+run('invalid_stage_index_entry',lambda:source._index_entries(good.replace(b' 0\t',b' 4\t')),True)
+run('unterminated_index_entry',lambda:source._index_entries(good[:-1]),True)
+out={'reviewer':'/root/operator_final_skeptic','at':now(),'scope':'Exact native review parser/render/consumer gates, physical sidecar parsing, full local identity slots, logical literal index parser. In-memory Capture adapter supplies real frozen119inputs; no filesystem/source application/Claw generation/publication transaction or independence authentication is claimed.','scientific_review':False,'runtime':sys.version,'python':sys.executable,'original_review_sha256':sha(raw),'original_input_count':len(values),'publisher_sha256':sha((R/'src/mediaingredientmech/campaign_publication.py').read_bytes()),'source_operator_sha256':sha((R/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes()),'results':results,'native_modules':[{'name':name,'path':str(f.path),'sha256':sha(f.content)} for name,f in p.LOADED_PRODUCERS.items()],'all_pass':all(x['passed'] for x in results),'private_Code_fixes':False,'Git_writes':False}
+(O/'preparatory-controls-result.json').write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
+print(json.dumps({'controls':len(results),'passed':out['all_pass'],'original_inputs':len(values)}))

@@ -1,0 +1,241 @@
+"""Select actual sealed #1259 evidence; no archive copying or approval."""
+from collections import Counter
+from datetime import datetime, timezone
+import copy
+import hashlib
+import json
+import os
+from pathlib import Path
+import stat
+import subprocess
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+K = C / "integration/release-worktree"
+P = D.with_name("pr1205-evidence-final-selection-v2")
+B = C / "integration/campaign-suppressions1259-v1"
+R = C / "preflight/campaign-suppressions1259-independent-v1"
+ARCH = "reports/unmatched_campaign_operators_1174_20261108/final-operator-evidence-provisional-v3"
+
+
+def read(path):
+    path = Path(path)
+    assert stat.S_ISREG(path.lstat().st_mode), path
+    assert not any(p.is_symlink() for p in path.parents), path
+    return path.read_bytes()
+
+
+def sha(path):
+    return hashlib.sha256(read(path)).hexdigest()
+
+
+def load(path):
+    return json.loads(read(path))
+
+
+def put(name, value):
+    with (D / name).open("x") as stream:
+        json.dump(value, stream, indent=2, ensure_ascii=False)
+        stream.write("\n")
+
+
+assert sha(P / "SELECTION.json") == "40b900ec95d849543f955e81d2ff7c043dfd09d469c1a9b7cc232aee8b55e85e"
+assert sha(P / "HANDOFF.json") == "f349ce23506500ec79c11ffef3c72a65f677bdd3c0437851609a0a79d1b55868"
+for item in load(P / "MANIFEST.json")["files"]:
+    assert sha(P / item["path"]) == item["sha256"]
+assert sha(B / "HANDOFF.json") == "0b9ed5258a3a9c6e4bffe7a2759ebd2e3cccd170e01bab52654740d45f0c28da"
+assert sha(R / "HANDOFF.json") == "bcbbe5d25157f0c7bf913560bfa53df243564b6631a6a93313351ce2e095feb2"
+selection = load(P / "SELECTION.json")
+entries = selection["entries"]
+prior_entries = copy.deepcopy(entries)
+known = {}
+for entry in entries:
+    assert sha(entry["original_path"]) == entry["sha256"]
+    kind = entry["disposition"]
+    if kind in {"reference_exact_committed_blob", "reuse_committed_archive"}:
+        target = {"disposition": kind, "target": entry["target"]}
+    elif kind == "reuse_existing_copied_archive":
+        target = {key: entry[key] for key in ("disposition", "archive_path", "verified_copy_receipt", "copy_receipt_sha256")}
+    else:
+        target = {"disposition": "reuse_selected_new_archive_bytes", "archive_path": entry["archive_path"]}
+    known.setdefault(entry["sha256"], target)
+
+packets = load(P / "PACKETS.json")
+omissions = load(P / "OMISSIONS.json")
+verified_manifests = []
+
+
+def add(label, root, path, role, status, expected=None, manifest=None, upstream=None):
+    path, root = Path(path), Path(root)
+    raw = read(path)
+    digest = hashlib.sha256(raw).hexdigest()
+    assert expected is None or digest == expected, path
+    if upstream:
+        assert sha(upstream) == digest, upstream
+    rel = path.relative_to(root).as_posix()
+    st = path.lstat()
+    entry = {
+        "packet": label, "packet_root": str(root), "original_path": str(path),
+        "packet_relative_path": rel, "sha256": digest, "bytes": len(raw),
+        "inode": st.st_ino, "link_count": st.st_nlink,
+        "evidence_role": role, "packet_status": status,
+        "selection_reason": "Actual sealed operator/fixture/runner evidence; preserves negative history and exact scope; no full-run or application approval",
+    }
+    if manifest:
+        entry["original_manifest_sha256"] = manifest
+    if upstream:
+        entry["upstream_origin_path"] = str(upstream)
+        entry["upstream_exact_bytes_rechecked"] = True
+    if digest in known:
+        entry.update(known[digest])
+    else:
+        target = f"{ARCH}/{label}/{rel}" + (".txt" if path.suffix == ".py" else "")
+        entry.update(disposition="copy_exact_bytes_when_authorized", archive_path=target)
+        known[digest] = {"disposition": "reuse_selected_new_archive_bytes", "archive_path": target}
+    entries.append(entry)
+
+
+def package(label, root, manifest_sha, role, status, outer=None, outer_sha=None):
+    root = Path(root)
+    manifest = root / "MANIFEST.json"
+    assert sha(manifest) == manifest_sha
+    doc = load(manifest)
+    members = doc["files"]
+    assert len({x["path"] for x in members}) == len(members)
+    for item in members:
+        path = root / item["path"]
+        assert len(read(path)) == item["bytes"]
+        add(label, root, path, role, status, item["sha256"], manifest_sha, item.get("original_path"))
+    add(label, root, manifest, role + "_original_complete_manifest", status, manifest_sha)
+    if outer:
+        add(label + "-outer", Path(outer).parent, outer, role + "_original_scope_handoff", status, outer_sha)
+    verified_manifests.append({"path": str(manifest), "sha256": manifest_sha, "members": len(members)})
+    packets.append({"packet": label, "root": str(root), "role": role, "status": status, "manifest": str(manifest), "manifest_sha256": manifest_sha, "members": len(members), "complete_declared_portable_members_selected_or_exactly_deduplicated": True, "full_runtime_fixture_claim": False})
+    omissions.append({"packet": label, "policy": "Every declared portable member and complete original manifest is retained or hash-deduplicated. Runtime Git repos, full corpora, caches, environments, credentials and TUI/session data are excluded. Original complete manifests describe original packets, not a complete relocated execution tree.", "original_omission_policy": doc.get("omission_policy", doc.get("scope"))})
+
+
+author_status = "AUTHOR_PRIVATE_FIXTURE_REMEDIATION; original combined11FAIL619PASS0skip, corrected13PASS; no all-pass combined or committed-head validation"
+package("suppression1259-author-final", B / "portable-final", "dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093", "author_B_operator_and_explicit_synthetic_authority_fixture_evidence", author_status, B / "HANDOFF.json", "0b9ed5258a3a9c6e4bffe7a2759ebd2e3cccd170e01bab52654740d45f0c28da")
+add("suppression1259-author-locators", B, B / "LOCATOR-ADDENDUM-v1.json", "author_B_issue_first_append_only_locator_and_base_clarification", "Original metadata defects preserved; corrected target bytes unchanged; no approval upgrade", "7d32e7e25b628c948211dee91cd30c3b8faa2471f49735aed2bfb4d97f409d3d")
+add("suppression1259-author-locators", B, B / "implementation-v2.patch", "author_B_exact_four_file_patch", author_status, "4ac02fc1e9028ace1f71f6830b088a65ca922b3d3b35f51cfb620726706824c2")
+review_status = "DISTINCT_PRIVATE_TECHNICAL_PASS; exact final product/tests and13affected cases; committed-head full validation/external review pending"
+package("suppression1259-independent-final", R / "portable-final", "1f40046e745ab9181aecb04357bb36704a6fa4e6e9142e5f542f28ad4d5be786", "independent_C_complete_private_implementation_and_fixed_test_review", review_status, R / "HANDOFF.json", "bcbbe5d25157f0c7bf913560bfa53df243564b6631a6a93313351ce2e095feb2")
+for version, expected, status in [
+    (1, "95d9112fee229c51371de715edbe13532b25c69947f712c8c666a9d9ca16cd3e", "TWO_CONFIRMED_PREPARATION_DEFECTS; actual native fixture skip and parser NameError; no QC/full run"),
+    (2, "f5c93552ebc34d2d681af0e867ebea761dbae71680ae5338e95bcebb1fa604fb", "BOUNDED_RUNNER_CORRECTION_PASS; historical test pins, superseded only by explicit v3 bridge; no full run"),
+]:
+    root = C / f"preflight/final-suppression-validation-runner-independent-v{version}"
+    package(f"runner-independent-v{version}", root, expected, "independent_C_runner_preparation_review", status, root / "HANDOFF.json")
+runner3 = C / "preflight/final-suppression-validation-runner-independent-v3"
+package("runner-final-test-pin-bridge", runner3 / "portable", "cd0ad867fadea3341ca17b784d3aa2b79e8f4a7c3fc17bd615d3542cbc168ecf", "independent_C_exact_two_test_pin_and_inventory_bridge", "EXACT_TEST_PIN_BRIDGE_PASS_NOT_FULL_RUN", runner3 / "HANDOFF.json", "0dc50cf00be2d4bb8e744f4d049af1559131a6b5b62b612631139960e0dd37c8")
+runner = C / "preflight/final-suppression-validation-preparation-v3"
+for name, expected in [
+    ("PREPARATION.json", "58b009d7dfcf52f4f7fd6ddb5074e370b463483fd9cbaf3ac52bf677e67f306b"),
+    ("validate_frozen_head.py", "0959ef080c4ca65b4c527e03a9670480d193d4e1f35f221cb535751c808ec336"),
+    ("expected-inputs.json", "2eec493a7972623c165fbed07a5c49df3eeee18b82d4452cc09f7c2223c314eb"),
+    ("fixture-input-inventory.json", "d1ca173c3770310c2ccb600a5a58150062a7b828479cbe436a260aed245c0fc4"),
+]:
+    add("root-runner-v3", runner, runner / name, "root_author_runner_and_final_input_pins", "PREPARED_NOT_EXECUTED; independent bridge selected separately", expected)
+
+# Select only the relevant filed rows; companion/source-case issues in the same
+# root batch are outside this operator archive.
+def issue(label, directory, number):
+    root = C / "preflight" / directory
+    suffix = f"{number:02}"
+    receipt = root / f"publication-{suffix}.json"
+    doc = load(receipt)
+    assert doc["body_verified"] is True and doc["returncode"] == 0
+    body = root / doc["row"]["body_file"]
+    assert sha(body) == doc["row"]["body_sha256"]
+    assert sha(root / f"readback-{suffix}.json") == doc["readback_sha256"]
+    for path in [receipt, body, root / f"readback-{suffix}.json", root / f"transport-{suffix}.stdout", root / f"transport-{suffix}.stderr"]:
+        add(label, root, path, "root_issue_first_exact_GET_readback", "Actual filed finding/clarification, not approval")
+
+
+issue("filed-existing-fixture-dependency", "native-fixture-and-preparation-findings-publication-v1", 0)
+issue("filed-new-partial-fixture", "partial-native-fixture-finding-publication-v1", 0)
+issue("filed-partial-fixture-chronology", "partial-native-fixture-finding-publication-v1", 1)
+issue("filed-runner-preparation-defects", "private-preparation-findings-publication-v1", 0)
+issue("filed-author-locator-defects", "final-packet-locator-findings-publication-v1", 0)
+issue("filed-capability", "four-suppression-capability-publication-v1", 0)
+issue("filed-ancillary-prefix-scope", "suppression1259-ancillary-prefix-scope-publication-v1", 0)
+
+locator = load(B / "LOCATOR-ADDENDUM-v1.json")
+locator_checks = []
+def refs(value):
+    if isinstance(value, dict):
+        if "absolute_path" in value and "sha256" in value:
+            assert sha(value["absolute_path"]) == value["sha256"]
+            locator_checks.append(value)
+        for child in value.values():
+            refs(child)
+    elif isinstance(value, list):
+        for child in value:
+            refs(child)
+refs(locator)
+assert entries[:len(prior_entries)] == prior_entries
+copied_count = 0
+for prior in selection["predecessor_selections"]:
+    assert sha(prior["selection"]) == prior["sha256"]
+    assert sha(prior["copy_receipt"]) == prior["copy_receipt_sha256"]
+    for item in load(prior["copy_receipt"])["copied"]:
+        assert sha(K / item["path"]) == item["sha256"]
+        copied_count += 1
+assert copied_count == 1077
+targets = {}
+for entry in entries:
+    if entry["disposition"] == "copy_exact_bytes_when_authorized":
+        assert entry["archive_path"] not in targets
+        targets[entry["archive_path"]] = entry["sha256"]
+git_seen = set()
+for entry in entries:
+    assert sha(entry["original_path"]) == entry["sha256"]
+    kind = entry["disposition"]
+    if kind in {"reference_exact_committed_blob", "reuse_committed_archive"}:
+        target = entry["target"]
+        key = target["commit"], target["path"]
+        if key not in git_seen:
+            raw = subprocess.check_output(["git", "-C", str(K), "show", target["commit"] + ":" + target["path"]], env={**os.environ, "GIT_OPTIONAL_LOCKS": "0"})
+            assert hashlib.sha256(raw).hexdigest() == entry["sha256"]
+            git_seen.add(key)
+    elif kind == "reuse_existing_copied_archive":
+        assert sha(K / entry["archive_path"]) == entry["sha256"]
+    else:
+        assert targets[entry["archive_path"]] == entry["sha256"]
+        assert not (K / entry["archive_path"]).exists()
+        if entry["original_path"].endswith(".py"):
+            assert entry["archive_path"].endswith(".py.txt")
+observed_head = subprocess.check_output(["git", "-C", str(K), "rev-parse", "HEAD"], env={**os.environ, "GIT_OPTIONAL_LOCKS": "0"}).decode().strip()
+selection.update(
+    status="PROVISIONAL_PRIVATE_OPERATOR_AND_RUNNER_EVIDENCE_COMPLETE_FINAL_HEAD_VALIDATION_NOT_INCLUDED",
+    captured_at_utc=datetime.now(timezone.utc).isoformat(), archive_base=ARCH,
+    observed_K_head_at_selection=observed_head,
+    archive_paths_note="Full union preserves v1/v2 proposed paths; only new immutable originals use v3 paths. This task copies no archive files.",
+    immediate_predecessor={"path": str(P / "SELECTION.json"), "sha256": sha(P / "SELECTION.json"), "handoff_sha256": sha(P / "HANDOFF.json")},
+    scope="Operator/private fixture/runner evidence only. Actual future934source plan, scientific claim changes,18-comment proposal, source application and publication acceptance are excluded.",
+)
+put("SELECTION.json", selection)
+put("PACKETS.json", packets)
+omissions.append({"packet": "root_issue_batches", "policy": "Select only actual operator-related body/receipt/readback/transport rows. Unrelated companion/source-case findings in those same root batches are not copied or claimed reviewed."})
+put("OMISSIONS.json", omissions)
+required = load(P / "REQUIRED-FINAL-INPUTS.json")
+required.update(as_of_utc=datetime.now(timezone.utc).isoformat(), provisional_selection_sha256=sha(D / "SELECTION.json"))
+required["required"][0].update(status="ACTUAL_SEALED_PRIVATE_AUTHOR_PACKET_INCLUDED; committed-head full validation remains separate", required_hash=sha(B / "HANDOFF.json"))
+required["required"][1].update(status="ACTUAL_DISTINCT_PRIVATE_TECHNICAL_AND_FIXED_TEST_REVIEW_INCLUDED; final external maintained-head review remains separate", required_hash=sha(R / "HANDOFF.json"), completion_rule="Actual private implementation/test review, not a claimed final maintained-head native review pair or full validation.")
+for row in required["required"][2:]:
+    row["required_hash"] = None
+    row["observed_path"] = None
+    row["status"] = "NOT_INCLUDED_PENDING_ACTUAL_LATER_ADDITIVE_SELECTION"
+required["actual_final_test_pin_bridge"] = {"path": str(runner3 / "HANDOFF.json"), "sha256": sha(runner3 / "HANDOFF.json"), "full_run": False}
+required["rules"].append("Never convert the original11failed619passed combined run plus13affected passes into one clean combined/full-suite result.")
+put("REQUIRED-FINAL-INPUTS.json", required)
+failures = load(P / "FAILURES-AND-INCOMPLETE.json")
+failures["suppression1259_final_private"] = {"author_handoff": str(B / "HANDOFF.json"), "author_sha256": sha(B / "HANDOFF.json"), "original_combined": load(B / "HANDOFF.json")["original_combined"], "affected_fixture_rerun": load(B / "HANDOFF.json")["affected_fixture_rerun"], "distinct_review": {"path": str(R / "HANDOFF.json"), "sha256": sha(R / "HANDOFF.json")}, "original_verdict_finding": "Preserved in v2 and author/C packets; current exact private consumer review passed with limits.", "original_fixture_findings": "Both filed before corrections; original reproduction, source/test bytes and corrected13case proof retained.", "outer_locator_defects": "Original outer0b9 and inner958d retained; additive7d32 explicit bases/targets verified, no alias or rewrite.", "full_validation": "NOT_INCLUDED; no all-pass combined claim"}
+failures["runner_preparation"] = {"original": "Two actual preparation defects including skipped native fixture and NameError; not a failed QC/full run", "v2": "Bounded correction controls passed at historical test pins", "v3": "Exact final two-test/inventory bridge independently verified; full run not executed by this archive task"}
+put("FAILURES-AND-INCOMPLETE.json", failures)
+new = [e for e in entries if e["disposition"] == "copy_exact_bytes_when_authorized"]
+added = entries[len(prior_entries):]
+summary = {"status": selection["status"], "original_references": len(entries), "by_disposition": dict(Counter(e["disposition"] for e in entries)), "new_member_files": len(new), "new_member_bytes": sum(e["bytes"] for e in new), "v3_added_references": len(added), "v3_added_copy_files": sum(e["disposition"] == "copy_exact_bytes_when_authorized" for e in added), "v3_added_copy_bytes": sum(e["bytes"] for e in added if e["disposition"] == "copy_exact_bytes_when_authorized"), "prior1077actualcopiedfiles_verified": True, "prior691entries_unchanged": len(prior_entries) == 691, "all_originals_rechecked": True, "observed_K_HEAD": observed_head, "copy_or_application_performed": False, "pending_final_commit_QC_suite_external_head_review": True}
+put("SUMMARY.json", summary)
+put("verification.json", {"status": "PASS_ARCHIVE_METADATA_INTEGRITY_ONLY", "manifests": verified_manifests, "all_selected_originals_rehashed": len(entries), "original_1077_copies_rehashed": copied_count, "all_dedup_targets_resolve": True, "locator_addendum_absolute_refs_verified": len(locator_checks), "all_upstream_declared_origin_bytes_rechecked": True, "no_code_or_science_review_by_archivist": True, "selection_sha256": sha(D / "SELECTION.json")})
+print(json.dumps(summary, indent=2))

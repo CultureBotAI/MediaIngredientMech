@@ -1,0 +1,76 @@
+"""Closed v2-to-v3 union and explicit portable-manifest shapes; read-only."""
+import json
+from pathlib import Path
+from collections import Counter
+from guards_snapshot import require, destination, copy_index, manifest_members, relative
+
+OLD_SHA = "40b900ec95d849543f955e81d2ff7c043dfd09d469c1a9b7cc232aee8b55e85e"
+BASES = ["reports/unmatched_campaign_operators_1174_20261108/final-operator-evidence-provisional-v" + str(i) for i in (1, 2, 3)]
+
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+
+
+def union_delta(old, new):
+    require(old["archive_base"] == BASES[1] and new["archive_base"] == BASES[2], "union base differs")
+    require(len(old["entries"]) == 691 and len(new["entries"]) == 1016, "union count differs")
+    require(canonical(new["entries"][:691]) == canonical(old["entries"]), "old entries changed, reordered, or changed JSON types")
+    require(new["immediate_predecessor"]["sha256"] == OLD_SHA, "predecessor pin differs")
+    require(len({r["original_path"] for r in new["entries"]}) == 1016, "duplicate original path")
+    delta = new["entries"][691:]
+    require(dict(Counter(r["disposition"] for r in delta)) == {
+        "copy_exact_bytes_when_authorized": 217, "reuse_selected_new_archive_bytes": 84,
+        "reuse_committed_archive": 18, "reference_exact_committed_blob": 6}, "delta disposition differs")
+    copies = [r for r in delta if r["disposition"] == "copy_exact_bytes_when_authorized"]
+    require(sum(r["bytes"] for r in copies) == 10948146, "delta byte count differs")
+    require(all(r["archive_path"].startswith(BASES[2] + "/") for r in copies), "delta copy base differs")
+    return delta
+
+
+def union_copies(old, new, root):
+    delta = union_delta(old, new)
+    copied = {}
+    for base, expected in zip(BASES[:2], [407, 31]):
+        selected = [r for r in old["entries"] if r["disposition"] == "copy_exact_bytes_when_authorized" and r["archive_path"].startswith(base + "/")]
+        require(len(selected) == expected, "retained copy partition differs")
+        copied.update(copy_index(selected, base, root))
+    require(len(copied) == 438, "retained copy union differs")
+    added = copy_index(delta, BASES[2], root)
+    require(len(added) == 217 and not set(copied) & set(added), "added copy partition differs")
+    return {**copied, **added}
+
+
+def union_destination(path, old_paths, root):
+    if path in old_paths:
+        base = next((b for b in BASES[:2] if path.startswith(b + "/")), None)
+        require(base is not None, "retained path has false base")
+    else:
+        base = BASES[2]
+    return destination(base, path, root)
+
+
+def manifest_coverage(packet, manifest, entries, omission):
+    path = packet.get("portable_manifest", packet.get("manifest"))
+    count = packet.get("manifest_members", packet.get("members"))
+    members = manifest_members(manifest)
+    require(len(members) == count and len({r["path"] for r in members}) == count, "manifest member count differs")
+    require(omission["packet"] == packet["packet"], "omission packet differs")
+    if "original_omission_policy" in omission:
+        require(omission["original_omission_policy"] == manifest.get("omission_policy", manifest.get("scope")), "original omission policy differs")
+    else:
+        require(omission.get("original_manifest_exclusions", []) == manifest.get("excluded", []), "original exclusion mapping differs")
+    bypath = {r["original_path"]: r for r in entries}
+    result = []
+    for member in members:
+        original = str(Path(path).parent / str(relative(member["path"])))
+        require(original in bypath, "manifest member omitted")
+        row = bypath[original]
+        require(member["sha256"] == row["sha256"], "manifest member hash differs")
+        size_keys = [k for k in ("bytes", "size") if k in member]
+        for key in size_keys:
+            require(type(member[key]) is int and member[key] == row["bytes"], "manifest member declared size differs")
+        result.append({"manifest": path, "member": member["path"], "original_path": original,
+                       "sha256": member["sha256"], "declared_size_keys": size_keys,
+                       "disposition": row["disposition"], "status": "PASS"})
+    return result

@@ -1,0 +1,47 @@
+{
+  "static": {
+    "black": {
+      "exit_code": 0,
+      "log_sha256": "45a468fa6205768496f23f1716ebb7575e9b723449d2099b88bf2afef60b721f"
+    },
+    "ruff": {
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "mypy": {
+      "exit_code": 0,
+      "log_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+    }
+  },
+  "files": {
+    "src/mediaingredientmech/campaign_publication.py": {
+      "before": "5abfc833c8b52ab1d83a13cf1cdfb67b8c325afc354d015b1e09e42e6ed0a60c",
+      "after": "25f61c126362511b23ef4a5ebd69d955811c4898a019183f370b1104fb1c1cb9"
+    },
+    "tests/test_campaign_publication.py": {
+      "before": "7536ff9250c44bcceeb57e5a01162decc496b019e4695b23a6000558b2b1c47c",
+      "after": "5a70d94a8778f0d3653dea8f7840646587b4a1e6b0e498ba9b5662b8761eed52"
+    },
+    "tests/test_campaign_demotion_integration.py": {
+      "before": "86673b32d4cc581b8dc639813afec6c971c0a38ec174c9d6ab8ea68545b425da",
+      "after": "060a891c10bf6d057f719e4c8ad9bc77ab1188225476316405a55ff4e2dc8e03"
+    }
+  },
+  "old_assertions": {
+    "tests/test_campaign_publication.py": {
+      "all_old_functions_ast_exact": true,
+      "old_function_count": 57,
+      "new_functions": [
+        "test_1256_live_preparation_closes_head_after_all_checks"
+      ]
+    },
+    "tests/test_campaign_demotion_integration.py": {
+      "all_old_functions_ast_exact": true,
+      "old_function_count": 11,
+      "new_functions": [
+        "test_real_1256_full_final_recheck_closes_head_after_proofs",
+        "test_real_1256_tracked_derived_sync_and_historical_proof_remain_valid"
+      ]
+    }
+  }
+}

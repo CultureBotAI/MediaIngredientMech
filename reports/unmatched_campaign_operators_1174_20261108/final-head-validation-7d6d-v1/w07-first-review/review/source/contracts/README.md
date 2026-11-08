@@ -1,0 +1,23 @@
+# Campaign owner application handoff
+
+Frozen source-only operator for issue #1174, with repairs for #1194, #1195, #1197 and #1198. No campaign record has been applied, no scientific decision is granted, and no existing gate or test was changed. Root owns publication and commits. The final scientific intake and complete 1,879-case campaign accounting remain separate prerequisites; this operator preserves the supplied full case ledger while applying only its explicitly accepted owner operations.
+
+`interface.json` contains every closed key set and producer path. All repository references are canonical relative paths with SHA256. Plan and acceptance are separate immutable JSON objects. Acceptance binds the exact plan, baseline, worker heads, every artifact binding, final owner payloads and independent-review artifacts. Published proposals and their original payloads are checked against exact Git head bytes. Coalescence or later payload changes need final reconciled payload acceptance; no original scientific approval transfers.
+
+The owner plan has explicit `edit`, `create` and `promote` operations. Edits preserve the history prefix and append a substantive event; history-only/no-op application is refused. Creates require null preimages and exclusive absent destinations. Promotions carry the authentic unmapped old path, real before digest and backup, plus the mapped destination and native `shape: promotion`. Existing native links on the old path or destination stop a promotion. Existing edits must connect to the latest native owner-chain endpoint. No historical path migration is invented.
+
+`before_inventory` and `after_inventory` references contain `{schema_version: 1, owners: {path: sha256}}` over every direct native ingredient YAML, including ignored files. Nested backups are not active owners. `protected_inputs` references `{schema_version: 1, files: {path: sha256}}` and must include every native checkpoint input. A plan used by the separate canonical/policy publisher also protects the policy manifest, suppressed aliases and Rule K baseline. The archived checkpoint permits later canonical publication without pretending changed current code/reviews are historical inputs.
+
+Example invocation from the integration checkout:
+
+```sh
+python scripts/apply_unmatched_campaign_owners.py --root "$PWD" --plan reports/campaign/owner-plan.json --acceptance reports/campaign/owner-acceptance.json --receipt-dir reports/campaign/owner-application
+```
+
+Dry run is the default. A separately authorized real invocation adds `--apply`. The receipt directory must be new and its parent already present. Every log, backup and native/protected snapshot is reserved before the first owner mutation. Native schema validation and writing prepare every selected payload; existing updates use the native publication guard and new owners use exclusive installation. Promotion retirement refuses an occupied recovery destination atomically on Darwin/Linux and fails closed if that primitive is unavailable. A batch is recoverable, not transactional: any detected late failure retains a failed receipt, backups and partial writes for explicit recovery; no competitor is deleted or automatically rolled back.
+
+The completed verifier replays the accepted archived native checkpoint, reconstructs complete before/after inventories, checks source and destination lineage, verifies every immutable proof/code file and re-enumerates owner and snapshot membership at its final boundary. It returns `plan_sha256`, `receipt_sha256`, complete inventories, every source record link and immutable input hashes. The publisher must call this verifier at its boundaries, not trust a saved success object.
+
+Checks: 77 focused tests passed on Python 3.13; Ruff, Black and Mypy passed. The 12 test warnings are existing third-party Pydantic deprecations. The suite includes real mixed native edits/creates/promotions, source-only changes, unchanged and explicitly bridged native history, stale import/dependency/inode/alias refusals, complete-case retention, unknown schema fields, destination races, late snapshot/owner additions and removals, canonical successor verification and honest partial failure. No full repository suite, actual intake or release validation is claimed. Independent re-review is pending.
+
+`checks/` and `snapshot/` are exact copies of this final check/code endpoint. Earlier failed development runs remain unmodified in the sibling implementation directory; original independent counterexamples remain under `campaign-operators-independent-v1`. The prior design packet was not rewritten.

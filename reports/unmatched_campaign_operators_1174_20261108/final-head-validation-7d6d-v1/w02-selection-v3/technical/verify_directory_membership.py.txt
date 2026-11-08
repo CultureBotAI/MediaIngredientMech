@@ -1,0 +1,32 @@
+"""Check directory membership as well as regular-file membership; no writes."""
+from pathlib import Path
+import json
+import os
+from verify_addendum_v3 import K, P4, read, no_alias, require, inventory, exact_members
+
+
+def directories(root, files):
+    expected = set()
+    for relative_file in files:
+        parent = Path(relative_file).parent
+        while str(parent) != ".":
+            expected.add(str(parent))
+            parent = parent.parent
+    actual = set()
+    for top, dirs, _ in os.walk(root, followlinks=False):
+        for name in dirs:
+            path = Path(top) / name
+            no_alias(path)
+            actual.add(str(path.relative_to(root)))
+    require(actual == expected, "directory membership differs")
+    return sorted(actual)
+
+
+if __name__ == "__main__":
+    selection = read(P4 / "proposal-v4/SELECTION.json")
+    root = K / selection["archive_base"]
+    actual_files = inventory(root, root)
+    dirs = directories(root, actual_files)
+    print(json.dumps({"status": "PASS", "root": str(root), "files": len(actual_files),
+                      "directories": dirs, "extra_empty_directories": 0,
+                      "ignored_files_included": True}, indent=2))

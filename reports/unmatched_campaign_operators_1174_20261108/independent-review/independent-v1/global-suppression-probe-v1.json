@@ -1,0 +1,34 @@
+{
+  "publisher_dry_run": "dry_run",
+  "selected_owners": [
+    "data/ingredients/mapped/A.yaml",
+    "data/ingredients/mapped/B.yaml",
+    "data/ingredients/unmapped/C.yaml",
+    "data/ingredients/mapped/P.yaml"
+  ],
+  "native_suppression": "subject_id\ttoken_key\ttoken\towner_subject_ids\tdisposition\tinput_surfaces\tsource_refs\tevidence_refs\nMIM:Unrelated\tb\tB\t\"[\"\"MIM:B\"\"]\"\tSUPPRESS\t\"[\"\"prior_sssom\"\"]\"\t\"[\"\"fixture-prior-row\"\"]\"\t\"[\"\"fixture-primary\"\"]\"\n",
+  "native_candidate_rule_k_rejects": [],
+  "projected_canonical_rule_k_rejects": [
+    [
+      2,
+      {
+        "subject_id": "MIM:Unrelated",
+        "subject_label": "Unrelated",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:9",
+        "object_label": "Unrelated",
+        "object_source": "CHEBI",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "historic",
+        "mapping_date": "2026-10-01",
+        "confidence": "0.9",
+        "comment": "retained",
+        "other": "B",
+        "validation_method": "old stamp"
+      },
+      "Rule K: `other` publishes a name another record owns: [\"'B' (owned by MIM:B)\"]. kg-microbe merges `other` into the synonym set, so both records would answer to it. Rebuild the SSSOM in claw after fixing the record's synonyms, or add the pair to mappings/other_cross_record_baseline.tsv with a disposition (#669)."
+    ]
+  ],
+  "canonical_not_written": true,
+  "scope": "Native owned-name policy and actual MIM Rule K evaluator; publisher owner proof/native generation are explicit synthetic fixture boundaries. No data publication or maintained writes."
+}

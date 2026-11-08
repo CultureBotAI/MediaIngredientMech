@@ -1,0 +1,11 @@
+# Captured-index authority successor: independent review plan
+
+The preceding private review, sources, native probes and failing receipts remain immutable under sibling index-coherence1256-private-independent-v1. Root filed that exact finding under issue1256 comment6721556759 before successor authoring. This directory is reserved for a distinct exact-byte re-review, not a source fix or final-head acceptance.
+
+The review will bind the author's actual frozen source/test hashes before execution. Replay the original four actual-native cases, changing only the frozen runtime/output paths and expected source hash: clean installed staging; invalid snapshot left visible; invalid unrelated blob hidden only during middle reads; invalid owner blob hidden only during middle reads. Native functions and returned values must remain unmodified. The two identical invalid observed tuples must be refused, with honest failed recovery evidence; no mutation after the final observation is needed by these probes.
+
+Static review will establish that the actual captured stage/path/mode/blob entries, not a later mutable index lookup, determine what is validated. Compare changed-entry scope to the actual accepted baseline; use captured object IDs for immutable blob reads. Retain strict literal NUL paths, conflict-stage refusal, regular-file/mode checks, exact installed accepted before/after bytes, truthful retirement and complete input checks. Reuse the preserved tests and actual receipts, adding only meaningful independent probes for uncovered concerns rather than rerunning a full suite.
+
+Positive boundaries remain: stat-cache-only index refresh does not change logical tuples; valid staging between separate validation calls is permitted; historical completed verification after a legitimate later commit remains valid. No unconditional current-index or HEAD requirement belongs in that historical verifier.
+
+This is a bounded observation contract. It cannot promise protection against arbitrary index or filesystem changes after the last observation. The question is whether the final observed tuple itself was actually validated. Scientific payloads, maintained repositories, native gates and final external W08 review are outside this private author's mutation scope.

@@ -1,0 +1,70 @@
+def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+    tmp_path, dependency, stale_pin
+):
+    package = tmp_path / "private-package"
+    shutil.copytree(
+        ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+    )
+    for name in (
+        "scripts/apply_unmatched_campaign_owners.py",
+        "scripts/validate_sssom_invariants.py",
+        "MAPPING_SEMANTICS.md",
+        "uv.lock",
+        "tests/test_campaign_publication.py",
+        c.MAKER,
+    ):
+        put(package, name, (ROOT / name).read_bytes())
+    probe = put(
+        tmp_path,
+        "preloaded-publisher.py",
+        b"""import hashlib, importlib, importlib.util, json, sys
+from pathlib import Path
+import pytest
+package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+public = importlib.import_module(name)
+path = Path(public.__file__)
+old = path.read_bytes()
+marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+path.write_bytes(old + marker)
+from mediaingredientmech import campaign_publication as c
+bound = c._BOUND_NATIVE[name]
+spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+fixture = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(fixture)
+workspace.mkdir()
+case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+if stale:
+    relative = 'src/' + name.replace('.', '/') + '.py'
+    (case['root']/relative).write_bytes(old)
+    case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+    fixture.save(case)
+before = (case['root']/c.SOURCE).read_bytes()
+try:
+    result = c.publish(case['root'], case['path'], case['out'])
+    outcome = {'accepted': True, 'status': result['status']}
+except ValueError as error:
+    outcome = {'accepted': False, 'error': str(error)}
+outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+print(json.dumps(outcome))
+""",
+    )
+    run = subprocess.run(
+        [
+            os.sys.executable,
+            str(probe),
+            str(package),
+            str(tmp_path / "workspace"),
+            dependency,
+            str(stale_pin),
+        ],
+        env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    result = json.loads(run.stdout)
+    assert result["accepted"] is not stale_pin
+    assert result["public_unchanged"] and result["private_executed"] and result["executed_bytes"]
+    assert result["source_unchanged"] and result["no_publication_outputs"]
+    if stale_pin:
+        assert "loaded publication producer differs" in result["error"]

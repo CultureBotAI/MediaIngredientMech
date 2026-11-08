@@ -1,0 +1,87 @@
+"""Additional exact-native real-path controls; all repositories are fixtures."""
+from pathlib import Path
+import copy, datetime, hashlib, importlib.util, json, os, sys, traceback
+T=Path(__file__).resolve().parent;F=T.parent/'frozen-head';Q=T/'runtime-fixtures/additional'
+Q.mkdir(parents=True,exist_ok=True)
+from mediaingredientmech.curate import campaign_owner_apply as owner
+spec=importlib.util.spec_from_file_location('frozen_fixture',F/'tests/test_campaign_owner_apply.py')
+fx=importlib.util.module_from_spec(spec);spec.loader.exec_module(fx)
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def save(path,obj):
+    with path.open('x') as s:json.dump(obj,s,indent=2,ensure_ascii=False);s.write('\n')
+def repo(name):
+    p=Q/name;p.mkdir();return p
+def binding(root):
+    return {'root':str(root),'fixture_head':fx.run_git(root,'rev-parse','HEAD'),'plan_sha256':sha((root/'plan.json').read_bytes()),'acceptance_sha256':sha((root/'acceptance.json').read_bytes()),'before_inventory_sha256':sha((root/'before.json').read_bytes())}
+results=[]
+def refused(root,reason,stage='prepare',receipt=None):
+    before=owner.hashes(owner.inventory(root));sssom=(root/fx.CANONICAL).read_bytes()
+    try:
+        if stage=='prepare':fx.prepare(root)
+        else:owner.verify_completed(root,root/'plan.json',receipt)
+    except ValueError as e:
+        message=str(e);assert reason in message,(root,message,reason)
+    else:raise AssertionError('Expected refusal '+str(root))
+    assert owner.hashes(owner.inventory(root))==before
+    assert (root/fx.CANONICAL).read_bytes()==sssom
+    if stage=='prepare':assert not (root/'receipt').exists()
+    results.append({'id':root.name,'stage':stage,'expected':'refusal','actual':'refused','message':message,'owner_inventory_unchanged':True,'canonical_unchanged':True,**binding(root)})
+
+# Direct actual prepare/apply/completed replay with an unchanged path and keys.
+root=repo('ascii-rejection-positive');plan=fx.unmapped_rejection_case(root)
+before=owner.hashes(owner.inventory(root));ready=fx.prepare(root)
+assert owner.hashes(owner.inventory(root))==before
+applied=owner.apply(ready,root/'receipt',enabled=True)
+proof=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json')
+assert applied['state']=='complete' and proof['after_inventory']==ready.after_inventory
+assert proof['records'][0]['before_source_record']==fx.OLD==proof['records'][0]['source_record']
+assert (root/fx.CANONICAL).read_bytes()==fx.SSSOM
+save(T/'ascii-positive-native-proof.json',proof)
+results.append({'id':root.name,'stage':'prepare/apply/verify_completed','expected':'complete','actual':applied['state'],'unchanged_other_owners':all(owner.hashes(owner.inventory(root))[p]==h for p,h in before.items() if p!=fx.OLD),'canonical_unchanged':True,'receipt_sha256':sha((root/'receipt/application.json').read_bytes()),**binding(root)})
+
+# Forged completed-operation list is rejected even with genuine complete owners.
+tampered=copy.deepcopy(applied);tampered['completed_operations']=[]
+fx.put(root,'receipt/forged.json',tampered)
+refused(root,'Incomplete operation accounting','verify_completed',root/'receipt/forged.json')
+
+# MAPPED->REJECTED is not made legal by the restored UNMAPPED rejection route.
+root=repo('mapped-to-rejected');plan=fx.setup(root);plan['records']=plan['records'][:1]
+fx.final_fixture_delta(root,plan,0,{'mapping_status':'REJECTED'})
+refused(root,'Rejected owner requires')
+
+# Case-only name change is still an exact-key change, not collision equivalence.
+root=repo('case-only-name-change');plan=fx.unmapped_rejection_case(root)
+fx.final_fixture_delta(root,plan,0,{'preferred_term':'STOCK OLD'})
+refused(root,'Rejected owner requires')
+
+# A history-only existing tombstone update still has no substantive work.
+root=repo('rejected-history-only');plan=fx.inherited_family_case(root,rejected=True,family=False)
+plan['records']=plan['records'][:1];entry=plan['records'][0]
+data=owner.record((root/entry['after_capture']['path']).read_bytes());del data['notes']
+fx.render(root,'history-only.yaml',data);entry['after_capture']=fx.ref(root,'history-only.yaml');fx.repin(root,plan)
+refused(root,'History-only/no-op application refused')
+
+# An unchanged payload (no appended event and no material change) is refused.
+root=repo('rejected-noop');plan=fx.inherited_family_case(root,rejected=True,family=False)
+plan['records']=plan['records'][:1];entry=plan['records'][0]
+fx.put(root,'no-op.yaml',(root/fx.EDIT).read_bytes());entry['after_capture']=fx.ref(root,'no-op.yaml');fx.repin(root,plan)
+refused(root,'History prefix was altered or not extended')
+
+# Build a genuine AMBIGUOUS beforeimage and exact fixture-published origin.
+root=repo('ambiguous-to-rejected');plan=fx.unmapped_rejection_case(root)
+old=owner.record((root/fx.OLD).read_bytes());old['mapping_status']='AMBIGUOUS';old['curation_history'][0]['new_status']='AMBIGUOUS'
+fx.render(root,fx.OLD,old)
+after=copy.deepcopy(old);after['mapping_status']='REJECTED';after['notes']='Mechanical fixture only, no source review.'
+evt=fx.event('ANNOTATED','REJECTED');evt['previous_status']='AMBIGUOUS';after['curation_history'].append(evt)
+fx.render(root,'intake/payload-2.yaml',after)
+before=owner.hashes(owner.inventory(root));fx.put(root,'before.json',{'schema_version':1,'owners':before})
+proposals=json.loads((root/'intake/proposals.json').read_bytes());proposals['proposals'][2].update(before_sha256=before[fx.OLD],after_capture={'root':'artifact',**fx.ref(root,'intake/payload-2.yaml')});fx.put(root,'intake/proposals.json',proposals)
+fx.run_git(root,'add','data/ingredients','intake','before.json');fx.run_git(root,'-c','user.email=fixture@example.invalid','-c','user.name=Fixture','commit','-qm','Ambiguous original fixture only')
+head=fx.run_git(root,'rev-parse','HEAD');plan['baseline_commit']=head;plan['intake_heads']={'worker-01':head};plan['before_inventory']=fx.ref(root,'before.json');plan['records'][0]['before_yaml_sha256']=before[fx.OLD];plan['records'][0]['origins'][0]['head_sha']=head
+for b in plan['bindings']:
+    b.update(fx.ref(root,b['path']))
+    if b['published_head'] is not None:b['published_head']=head
+fx.repin(root,plan);refused(root,'Rejected owner requires')
+
+save(T/'additional-path-controls.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'/root/assembly_review','head':'9a1a4a35498a1bee0fc8b68653d1fc152cfff81b','native_operator_sha256':sha(Path(owner.__file__).read_bytes()),'frozen_helper_sha256':sha((F/'tests/test_campaign_owner_apply.py').read_bytes()),'count':len(results),'results':results,'all_expected':True,'scope':'Actual native prepare/apply/verify_completed from exact9a1 in private Git fixtures. Mechanical fixture acceptances are not campaign/source/candidate/scientific approvals. Unicode failure is separately reproduced by skeptical reviewer; this ASCII success does not override it.'})
+print(json.dumps({'all_expected':True,'count':len(results),'results':results},indent=2))

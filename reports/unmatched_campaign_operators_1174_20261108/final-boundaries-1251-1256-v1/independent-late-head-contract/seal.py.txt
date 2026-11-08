@@ -1,0 +1,95 @@
+import datetime
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import subprocess
+
+D = Path(__file__).resolve().parent
+C = D.parents[1]
+W = C / 'workers/w08/worktree/.temp/combined-16c-independent-v1'
+F = W / 'frozen/repo'
+K = C / 'integration/release-worktree'
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def write(path, value):
+    with path.open('x') as stream:
+        json.dump(value, stream, indent=2, ensure_ascii=False)
+        stream.write('\n')
+
+
+copies = []
+sources = [W / 'root-probes/late-head-results-v2.json',
+           W / 'provenance/probe_late_head.py', W / 'provenance/probe_late_head_readback_v2.py']
+results = json.loads((D / 'results.json').read_bytes())
+sources += [F / name for name in results['producer_pins']]
+for index, source in enumerate(sources):
+    destination = D / 'frozen-inputs' / f'{index:02d}-{source.name}'
+    destination.parent.mkdir(exist_ok=True)
+    with destination.open('xb') as stream:
+        stream.write(source.read_bytes())
+    assert sha(source) == sha(destination)
+    copies.append({'source': str(source), 'copy': str(destination.relative_to(D)), 'sha256': sha(source)})
+write(D / 'frozen-input-index.json', copies)
+
+proofs = []
+for result in results['results']:
+    root = Path(result['fixture'])
+    paths = [root / 'plan.json', root / 'acceptance.json']
+    if result['scope'].startswith('actual_source'):
+        paths += [root / 'receipt/application.json']
+    else:
+        paths += [root / 'source-receipt/application.json',
+                  root / 'reports/fixture/publication-plan.json',
+                  root / 'reports/publication/publication.json']
+        paths += sorted((root / 'mappings/receipts').glob('*.json'))
+    for path in paths:
+        if not path.exists():
+            continue
+        target = D / 'proof-readbacks' / root.name / path.relative_to(root)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open('xb') as stream:
+            stream.write(path.read_bytes())
+        assert sha(target) == sha(path)
+        proofs.append({'original': str(path), 'copy': str(target.relative_to(D)), 'sha256': sha(path)})
+    state = subprocess.check_output(['git', 'log', '-3', '--format=%H %P %s'], cwd=root).decode()
+    target = D / 'proof-readbacks' / root.name / 'git-history.txt'
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with target.open('x') as stream:
+        stream.write(state)
+write(D / 'proof-readback-index.json', proofs)
+write(D / 'execution-receipt.json', {
+    'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    'command': 'PYTHONDONTWRITEBYTECODE=1 GIT_OPTIONAL_LOCKS=0 .temp/kgm-unmapped-20261107/env/bin/python .temp/all-unmatched-20261107/preflight/late-head-transaction-independent-v1/probe-v2.py',
+    'exit_code': 0, 'source_cases': 7, 'publisher_interface_cases': 5,
+    'results_sha256': sha(D / 'results.json'), 'log_sha256': sha(D / 'run-v2.log'),
+    'initial_invocation': {'exit_code': 1, 'log': 'run.log',
+                           'reason': 'Explicit head guard refused newly advanced K/7a990 before fixture creation; successor used exact frozen16c Git-verified files.'},
+    'production_mutations': False,
+})
+write(D / 'HANDOFF.json', {
+    'schema_version': 1, 'author': '/root/step7d_science_c', 'issue': 1256,
+    'reviewed_commit': results['reviewed_head'],
+    'source_sha256': results['producer_pins']['src/mediaingredientmech/curate/campaign_owner_apply.py'],
+    'publisher_sha256': results['producer_pins']['src/mediaingredientmech/campaign_publication.py'],
+    'assessment': {'path': 'ASSESSMENT.md', 'sha256': sha(D / 'ASSESSMENT.md')},
+    'results': {'path': 'results.json', 'sha256': sha(D / 'results.json')},
+    'draft_comment': {'path': 'issue1256-publisher-addendum-DRAFT.md', 'sha256': sha(D / 'issue1256-publisher-addendum-DRAFT.md')},
+    'conclusion': 'Confirmed source mutation-time baseline gap and publisher interface counterpart; preserve later-commit historical verification.',
+    'readiness': 'Recommendation and before-fix evidence only; no repair, whole-head approval or application authorization.',
+    'limitations': results['limitations'],
+    'private_fixture_trees': 'Retained under fixtures; excluded from portable evidence manifest to avoid copying Git/runtime trees. Exact selected plans, acceptances, receipts and Git histories are copied in proof-readbacks.',
+})
+members = []
+for path in sorted(D.rglob('*')):
+    if not path.is_file() or path.is_relative_to(D / 'fixtures') or path.name == 'MANIFEST.json':
+        continue
+    members.append({'path': str(path.relative_to(D)), 'sha256': sha(path), 'bytes': path.stat().st_size})
+write(D / 'MANIFEST.json', {'schema_version': 1, 'files': members})
+print(json.dumps({'handoff': sha(D / 'HANDOFF.json'), 'manifest': sha(D / 'MANIFEST.json'),
+                  'results': sha(D / 'results.json'), 'assessment': sha(D / 'ASSESSMENT.md'),
+                  'members': len(members)}, indent=2))

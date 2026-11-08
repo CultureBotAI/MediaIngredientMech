@@ -1,0 +1,103 @@
+from pathlib import Path
+import datetime, hashlib, json
+M=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech');C=M/'.temp/all-unmatched-20261107'
+D=C/'preflight/campaign-suppressions1259-independent-v1'; A=C/'integration/campaign-suppressions1259-v1'; R=A/'runtime/repo'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def ref(p):return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+def save(p,obj):
+ with p.open('x') as f:json.dump(obj,f,indent=2);f.write('\n')
+# Validate the actual correction locators, retaining both original handoffs verbatim.
+add=json.loads((A/'LOCATOR-ADDENDUM-v1.json').read_text()); refs=[]
+def walk(v):
+ if isinstance(v,dict):
+  if 'absolute_path' in v and 'sha256' in v:
+   p=Path(v['absolute_path']);assert sha(p)==v['sha256'];refs.append(ref(p))
+  for x in v.values():walk(x)
+ elif isinstance(v,list):
+  for x in v:walk(x)
+walk(add)
+save(D/'LOCATOR-READBACK.json',{'addendum':ref(A/'LOCATOR-ADDENDUM-v1.json'),'actual_refs_checked':refs,'old_handoff_unchanged':sha(A/'HANDOFF.json')=='0b9ed5258a3a9c6e4bffe7a2759ebd2e3cccd170e01bab52654740d45f0c28da','scope':'Explicit bases only; no content/validation upgrade.'})
+files=json.loads((D/'test-correction-review-v1/RESULT.json').read_text())['after']
+assert all(sha(R/p)==h for p,h in files.items())
+manifest=json.loads((A/'portable-final/MANIFEST.json').read_text())
+assert len(manifest['files'])==191
+for item in manifest['files']:
+ p=A/'portable-final'/item['path'];assert sha(p)==item['sha256'] and p.stat().st_size==item['size']
+assessment={
+ 'status':'PRIVATE_TECHNICAL_PASS_WITH_VALIDATION_PENDING',
+ 'issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1259',
+ 'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'reviewer':'/root/step7d_science_c',
+ 'independence':'Reviewer did not author the publisher/operator. This is code/transport review, not an independent scientific vote on coordinator owner payloads the reviewer previously authored.',
+ 'reviewed_files':files,
+ 'author_handoff':ref(A/'HANDOFF.json'),
+ 'actual_author_portable_manifest':ref(A/'portable-final/MANIFEST.json'),
+ 'author_manifest_members_rehashed':191,
+ 'locator_addendum':ref(A/'LOCATOR-ADDENDUM-v1.json'),
+ 'new_unresolved_implementation_findings':0,
+ 'finding_dispositions':[
+  {'finding':'Original consumer admitted completed blocked/needs_curation reviews with failed required checks','issue_comment':'6721929601','disposition':'FIXED at exact1108. Original failures preserved; independent positive and both native-consumer negatives rerun.'},
+  {'finding':'Old cached-dependency fixture omitted newly loaded native review script/schema','issue_comment':'6722193253','disposition':'FIXED by copying exactly two real inputs; ten parameter cases/assertions retained.'},
+  {'finding':'New partial-reviewed-targets fixture raised before expected publisher boundary','issue_comment':'6722200668','disposition':'FIXED by asserting the actual native ReviewError for this one parameter. Other two remain publisher-refusal cases.'},
+  {'finding':'Outer author handoff retained predecessor patch/manifest relative locators','issue_comment':'6722242457','disposition':'ADDENDUM_VERIFIED. Actual source/portable bases and exact targets are explicit; both original handoffs and all191 members unchanged.'}
+ ],
+ 'implementation_coverage':[
+  'Closed v1/v2 plan transport; duplicate-key/type/ref confinement and captured producer execution remain enforced. Original v1 receipt alignment, row projection, Rule K and historical validation functions retain their ASTs.',
+  'Original fixed W07 native review and all119 declared input bytes are consumed without source-path rewriting. Original four conditional decisions, all eight complete owner roles, six actual operations and one genuine create absence are compared; two credited owners remain unchanged.',
+  'Actual-generation transition independently derives source plan/receipt, complete native generation/canonical/diagnostic bytes, beforeimages, full mapped inventory, four current native events, complete native owner credits and literal original-root/relative-path/field joins. Current transition must equal the separately reviewed bytes.',
+  'Both reviews require completed native documents, passing verdicts and all required checks passed; actual review binds full four-target coverage and supported assessments with no relevant open/deferred finding. Artifact/content checks do not authenticate reviewer identity or assignment; root must verify independence.',
+  'Original34 physical sidecar lines are preserved and only four selected native lines appended to38. Baseline unchanged. Original27 exact receipt pins are required within the fully replayed actual prefix, including every legitimate already-completed native suffix.',
+  'Three-target publication retains backups/reservations/captured-input checks, native owner-chain/receipt reconstruction and full Rule K. Failed attempts clear success/native receipts while preserving recovery evidence. Live checks do not promise global atomicity against arbitrary mutation after observation.',
+  'Historical verification allows later commits with the publication still latest and current content matching; no promise to validate a now-unbound recovery directory.',
+  'Exact two-file test correction preserves all old assertions/decorators and reverses byte-for-byte to original files. Root runner-v3 changes only the two test pins/sizes and derived inventory digest.'
+ ],
+ 'independent_executions':[
+  {'scope':'Isolated native original-review/input/owner/event consumer; synthetic source/generation declarations, no prepare or apply','cases':3,'result':'positive38 plus blocked/needs_curation refused','receipt':ref(D/'frozen-review-v1/fixed-verdict-receipt.json')},
+  {'scope':'Actual native source/generation/publication private fixtures, no source/generator/replay replacement','cases':4,'result':'PASS. Genuine prefix28→29,34→38; later-commit historical positive; tamper and late input/generation faults refused with cleared success receipts','receipt':ref(D/'frozen-review-v1/extra-native-receipt.json')},
+  {'scope':'Exactly ten original cached-dependency plus three review-scope cases after fixture-only repair','cases':13,'result':'13 passed,0 skipped,12 warnings; actual exit0','receipt':ref(D/'test-correction-review-v1/RESULT.json')}
+ ],
+ 'author_evidence':{
+  'original_combined':{'receipt':ref(A/'checks/combined-final-v1/run.json'),'log':ref(A/'checks/combined-final-v1/run.log'),'result':'11 failed,619 passed,0 skipped. Preserved failed run; not restated as a green combined run.'},
+  'affected_rerun':{'receipt':ref(A/'checks/fixture-corrections-affected-v1/run.json'),'result':'13 passed,0 skipped; independently repeated.'},
+  'supplemental':{'result':ref(A/'supplemental-native-controls-v1/result.json'),'scope':'Isolated consumer/native ownership controls: two unrelated synthetic owners retain both credits; fixed four selected events unchanged. Duplicate selection and hardlinked input refuse. Not an extra selected scientific credit or full publication positive.'}
+ },
+ 'remaining_preconditions':[
+  'Root ordinary code commit and exact maintained-head independent review; final complete QC/full suite with all20 original and10 new external-input native cases required, no skipped integration accepted.',
+  'Final runner must bind exact reviewed source/tests, actual runtime roots and real input snapshots; runner-v3 pin bridge is verified but no full run claimed.',
+  'Real ancillary transaction if selected, followed by actual source completion/generation and distinct exact actual-transition scientific review/root selection. No future receipt, hash or acceptance is supplied by these fixtures.',
+  'Whole owner, mapping-row, quantity, role,20-owner/51-claim companion, graph and export admission remain separate. Existing original W07 holds remain unchanged.',
+  'Adapter-v2 prior test metadata pin needs an explicitly authorized additive bridge if used with the repaired test files; unchanged production logic does not rewrite its seal.'
+ ],
+ 'actual_campaign_application_or_acceptance':False
+}
+save(D/'ASSESSMENT.json',assessment)
+text='''The exact private publisher implementation passes this bounded independent technical review. No unresolved implementation defect was found after the filed review-verdict correction. This supports proceeding to root-controlled ordinary code publication and final committed-head validation; it is not campaign application or scientific admission.\n\nThe review binds publisher1108dd82 and sourcec4452c59, with final publication tests9c0da0b7, suppression tests01cd4b67 and real integration testsfaf71c2b. All191 author portable members were rehashed. The outer handoff locator carryover is corrected by an immutable explicit-base addendum, preserving original documents.\n\nIndependent execution comprised three focused native review-consumer controls, four additional real native source/generation/publication controls, and the thirteen affected fixture cases. The genuine sequential positive preserves the original27 receipt prefix, replays a real prior28th transaction, then publishes the six-owner suppression transaction as29 with sidecar34→38. Late sidecar, original-review input and generation faults refuse and clear success receipts. Later-commit historical verification remains valid; current-content tampering refuses. The focused verdict fixtures do not claim full prepare/application coverage.\n\nThe original broad author run remains eleven failures and619 passes, with no skips. Those failures arose from two filed fixture setup defects. Their exact narrow correction preserves every prior assertion and parameter decorator; both author and independent affected runs pass all13 cases. There is no single all-pass combined result claimed. Final committed-head full QC/suite remains mandatory, including all20 original and10 new external-input native cases.\n\nThe code requires fixed original scientific evidence and a distinct exact actual-generation review with full input and target coverage. Review metadata cannot establish reviewer assignment or independence: root must authenticate that workflow. The four selected events retain their singleton credits; the separate unrelated multi-credit native control does not invent a ninth reviewed owner. Baseline and34 historical sidecar rows remain fixed, complete native receipt suffixes are replayed, and row/owner/role/quantity/companion approvals remain outside this review.\n\nNo maintained source, I/J/K checkout, worker session, GitHub state or application receipt was changed by this review. Private synthetic review/activation fixtures do not authorize the real campaign. Existing packets and failed attempts remain immutable.\n'''
+with (D/'ASSESSMENT.md').open('x') as f:f.write(text)
+# Portable evidence is explicitly bounded: source/probes/receipts, never private fixture trees.
+selection=[]
+def add(src,rel):selection.append((src,rel))
+for n in ['ASSESSMENT.json','ASSESSMENT.md','LOCATOR-READBACK.json','ADVERSARIAL-CHECKLIST.md','NATIVE-API-READBACK.json','sequential-prefix-design-note-v1.json','probe_fixed_review_verdict.py','run_frozen_probes.py','test_additional_suppressions.py','seal_final_review.py']:
+ add(D/n,n+('.txt' if n.endswith('.py') else ''))
+for n in ['AST-DELTA.json','SCOPE-FIXTURE-ASSESSMENT-v1.json','SOURCE-FREEZE-v1.json','extra-native-receipt.json','extra-native.stdout','extra-native.stderr','fixed-verdict-receipt.json','fixed-verdict.stdout','fixed-verdict.stderr','independent-native-results.json']:
+ add(D/'frozen-review-v1'/n,'independent/'+n)
+add(D/'fixed-verdict-v1/RESULT.json','independent/fixed-verdict-RESULT.json')
+add(D/'draft-verdict-v1/HANDOFF.json','prior-finding/HANDOFF.json')
+add(D/'draft-verdict-v1/portable/MANIFEST.json','prior-finding/MANIFEST.json')
+for n in ['RESULT.json','PRESERVATION.json','AUTHOR-MANIFEST-READBACK.json','run.py','verify.py','stdout.log','stderr.log']:
+ add(D/'test-correction-review-v1'/n,'test-correction/'+n+('.txt' if n.endswith('.py') else ''))
+for n in ['HANDOFF.json','LOCATOR-ADDENDUM-v1.json','SOURCE-FREEZE-v2.json','IMPLEMENTATION-NOTES-v2.md','fixture-correction-v1/test-only.diff','fixture-correction-v1/preservation.json','checks/combined-final-v1/run.json','checks/combined-final-v1/run.log','checks/fixture-corrections-affected-v1/run.json','checks/fixture-corrections-affected-v1/run.log','supplemental-native-controls-v1/result.json','supplemental_controls.py']:
+ add(A/n,'author/'+n+('.txt' if n.endswith('.py') else ''))
+add(A/'portable-final/MANIFEST.json','author/portable-final-MANIFEST.json')
+for name in ['src/mediaingredientmech/campaign_publication.py','src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_publication.py','tests/test_campaign_suppressions.py','tests/test_campaign_suppression_integration.py']:
+ add(R/name,'reviewed-source/'+name+'.txt')
+for name in ['HANDOFF.json','RESULT.json','portable/MANIFEST.json']:
+ add(C/'preflight/final-suppression-validation-runner-independent-v3'/name,'runner-v3/'+name)
+P=D/'portable-final';P.mkdir(); copied=[]
+for src,relative in selection:
+ dst=P/relative;dst.parent.mkdir(parents=True,exist_ok=True);raw=src.read_bytes()
+ with dst.open('xb') as f:f.write(raw)
+ copied.append({'path':relative,'sha256':sha(dst),'bytes':len(raw),'original_path':str(src)})
+save(P/'MANIFEST.json',{'schema_version':1,'files':copied,'omission_policy':'Bounded independent assessment/probe/source/receipt selection. Private fixture trees and original bulk scientific captures excluded, preserved at their exact recorded paths. This is not a complete archive of the191-member author packet or original W07 review.'})
+handoff={'status':assessment['status'],'assessment':ref(D/'ASSESSMENT.json'),'manifest':ref(P/'MANIFEST.json'),'portable_members':len(copied),'portable_bytes':sum(r['bytes'] for r in copied),'publisher_sha256':files['src/mediaingredientmech/campaign_publication.py'],'final_publication_tests_sha256':files['tests/test_campaign_publication.py'],'final_suppression_tests_sha256':files['tests/test_campaign_suppressions.py'],'author_handoff':ref(A/'HANDOFF.json'),'author_locator_addendum':ref(A/'LOCATOR-ADDENDUM-v1.json'),'new_unresolved_implementation_findings':0,'full_committed_head_validation':'PENDING','actual_campaign_acceptance':False}
+save(D/'HANDOFF.json',handoff)
+print(json.dumps({'handoff_sha256':sha(D/'HANDOFF.json'),**handoff},indent=2))

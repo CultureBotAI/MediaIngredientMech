@@ -1,0 +1,27 @@
+{
+  "finding_id": "IR-CAMPAIGN-OPERATORS-2",
+  "severity": "major",
+  "state": "confirmed_in_provisional_snapshot",
+  "title": "Campaign owner producer pins verify current file bytes without binding the imported implementation",
+  "source": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+  "source_sha256": "74a448602d8d512a1b12037d88d0eba0a9ac9e1ea55c89e6bd3051afb23f0a99",
+  "function": "_load producer verification",
+  "cause": "package_root producer bytes are read at preparation time and compared with root bytes. There is no import-time byte snapshot. A long-lived process imported from version A can accept a plan pinning newly changed version B when both compared paths now contain B, while executing A.",
+  "reproduction": "Load frozen source74a44860 from a private package copy; append a deterministic comment to that private on-disk module after import; author the private fixture and producer bindings from the changed file0cb706d2. prepare and dry-run apply accept, although the known executing import source hash differs from the pinned producer hash. No owner application is needed.",
+  "required_fix": "Bind loaded operator and relevant imported dependency bytes at import time, compare all accepted producer pins to that actual loaded snapshot and original file identities at preparation and late boundaries; test stale import and unchanged positives. Keep fixtures private and preserve original failing evidence.",
+  "artifacts": [
+    {
+      "path": "probe_loaded_code_v1.py",
+      "sha256": "b0941a51cc8169d904bf52872b5221115f6ffb0cd151c7eca405e3e9281f90d6"
+    },
+    {
+      "path": "loaded-code-probe-v1.json",
+      "sha256": "30e6a03adcb0a4c7acd048d4b75a61b7ca5664b8954b65330dbc6290169508a2"
+    },
+    {
+      "path": "loaded-code-probe-v1.log",
+      "sha256": "30e6a03adcb0a4c7acd048d4b75a61b7ca5664b8954b65330dbc6290169508a2"
+    }
+  ],
+  "limitations": "No claim of actual scientific data corruption; demonstrated false provenance acceptance. No maintained files or author files were modified."
+}

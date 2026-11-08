@@ -1,0 +1,33 @@
+from pathlib import Path
+import ast,difflib,hashlib,json,subprocess,tarfile
+D=Path(__file__).resolve().parent;P=D/'portable';M=D.parents[3]
+names=['src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py'];report={};patch=[]
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+for name in names:
+ old=(D/'before'/name).read_bytes();new=(P/name).read_bytes()
+ a=ast.parse(old);b=ast.parse(new);A={x.name:ast.dump(x) for x in a.body if isinstance(x,(ast.FunctionDef,ast.ClassDef))};B={x.name:ast.dump(x) for x in b.body if isinstance(x,(ast.FunctionDef,ast.ClassDef))}
+ report[name]={'before_sha256':sha(old),'after_sha256':sha(new),'changed_definitions':[k for k in A if B.get(k)!=A[k]],'new_definitions':[k for k in B if k not in A],'original_exact_prefix':new.startswith(old)}
+ patch.extend(difflib.unified_diff(old.decode().splitlines(keepends=True),new.decode().splitlines(keepends=True),fromfile='a/'+name,tofile='b/'+name))
+assert report[names[0]]['changed_definitions']==['_check_mutation_git_state']
+assert report[names[1]]['changed_definitions']==[] and report[names[1]]['original_exact_prefix']
+report['historical_verify_completed_ast_unchanged']=True
+unchanged=[]
+with tarfile.open(D/'baseline21061-v2.tar') as tf:
+ for info in tf:
+  if not info.isfile():continue
+  path=P/info.name;old=tf.extractfile(info).read()
+  if info.name not in names:assert path.read_bytes()==old,info.name;unchanged.append({'path':info.name,'sha256':sha(old)})
+report['other_archive_members_unchanged']=unchanged
+for label,folder in [('I','worktree'),('J','curation-worktree'),('K','release-worktree')]:
+ root=M/'.temp/all-unmatched-20261107/integration'/folder
+ report[label]={'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root).decode().strip(),'source_sha256':sha((root/names[0]).read_bytes()),'test_sha256':sha((root/names[1]).read_bytes()),'tracked_status':subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=root).decode()}
+raw=''.join(patch).encode();(D/'source-index1256.patch').write_bytes(raw)
+check=D/'runtime/patch-check-v1';check.mkdir()
+for name in names:
+ target=check/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((D/'before'/name).read_bytes())
+commands=[]
+for flags in [['--check'],[]]:
+ command=['git','apply',*flags,str(D/'source-index1256.patch')];result=subprocess.run(command,cwd=check,stdout=subprocess.PIPE,stderr=subprocess.PIPE);commands.append({'command':command,'exit_code':result.returncode,'stdout':result.stdout.decode(),'stderr':result.stderr.decode()});assert result.returncode==0
+for name in names:assert (check/name).read_bytes()==(P/name).read_bytes()
+report['patch']={'sha256':sha(raw),'bytes':len(raw),'two_file_replay_exact':True,'commands':commands}
+(D/'preservation-proof-v2.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='other_archive_members_unchanged'},indent=2))

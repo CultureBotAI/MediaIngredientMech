@@ -1,0 +1,29 @@
+{
+  "finding_id": "IR-CAMPAIGN-OPERATORS-1",
+  "severity": "major",
+  "state": "confirmed_in_provisional_snapshot",
+  "issue_to_file_by_root": true,
+  "title": "Campaign completed-source proof accepts a late extra owner outside its reported inventory",
+  "source": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+  "source_sha256": "74a448602d8d512a1b12037d88d0eba0a9ac9e1ea55c89e6bd3051afb23f0a99",
+  "function": "verify_completed",
+  "cause": "The verifier enumerates the direct owner inventory once before _validate_records and checkpoint replay, then verifies only already-captured file identities/bytes. No final set-membership check detects a new direct YAML added during intervening work.",
+  "reproduction": "Native private mixed edit/create/promotion application completes. The probe then wraps _validate_records to add unmapped/Unexpected_late.yaml after current=inventory(root), before checkpoint/native validation and final FrozenFile checks. verify_completed returns state complete and four-owner after_inventory while the actual direct inventory contains five owners. Unmodified positive returns complete with matching four-owner inventory.",
+  "impact": "An independently checked completed source proof can report exact current owner scope after that scope has changed. The publication path relies on this verifier and must also recheck its own captured membership at its final return. This report does not claim a particular production write exploit or scientific identity error.",
+  "required_fix": "Retain and re-enumerate complete owner membership at final verification, with native location/byte guards for all members; similarly recheck historical snapshot and applicable absence memberships after intervening validation. Add deterministic late addition and alias controls plus unchanged positive; preserve the captured failure.",
+  "artifacts": [
+    {
+      "path": "probe_completed_inventory_v1.py",
+      "sha256": "42b565843e64c9da1a0712acec053f3c038d7c7d45ed2b6ccfb597bb4c4df4d5"
+    },
+    {
+      "path": "completed-inventory-probe-v1.json",
+      "sha256": "783a5bd8416493e27bf2d66295eb1af98f55a1a520becf7b9669c60865abd9d4"
+    },
+    {
+      "path": "completed-inventory-probe-v1.log",
+      "sha256": "783a5bd8416493e27bf2d66295eb1af98f55a1a520becf7b9669c60865abd9d4"
+    }
+  ],
+  "limitations": "Provisional code snapshot while authors finish fixtures; no author or maintained file was edited, no actual campaign data was applied. Final current-byte fix and re-review required."
+}

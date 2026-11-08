@@ -1,0 +1,29 @@
+"""Read-only exact campaign record-stage replay for #1251/#1252."""
+from pathlib import Path
+import copy, hashlib, json
+import yaml
+from mediaingredientmech.curate import campaign_owner_apply as owner
+D=Path(__file__).resolve().parent;C=D.parents[1];I=C/'integration/worktree';N=C/'integration/final-native-intake-v1'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+registry=N/'candidate-action-registry.json';actions=json.loads(registry.read_text())['actions']
+def target(name):return next(a for a in actions if a['destination_path'].endswith('/'+name+'.yaml'))
+names=['Nh42ni_So42','Nh42ni_So42_X_6_H2o','Niso4_X_6_H2o','Bacto_Soytone','Na2s2o4','Sodium_Dithionite','Trypticase_Soy_Broth','Angustmycin']
+selected={name:target(name) for name in names};before={p:f.content for p,f in owner.inventory(I).items()};pins={p:sha(b) for p,b in before.items()};results=[]
+def run(label,names,mutant=False):
+ operations=[];payloads={};facts=[]
+ for name in names:
+  a=selected[name];p=Path(a['candidate_payload']['path']);raw=p.read_bytes();assert sha(raw)==a['candidate_payload']['sha256'];src=a['before_source_record'];assert sha(before[src])==a['before_yaml_sha256']
+  if mutant:
+   data=owner.record(raw);assert data['mapping_status']=='REJECTED';data['mapping_status']='MAPPED';raw=yaml.safe_dump(data,sort_keys=False,allow_unicode=True).encode()
+  operations.append({'operation_id':name,'kind':a['native_kind'],'before_source_record':src,'source_record':a['destination_path']});payloads[name]=raw
+  facts.append({'name':name,'before_path':src,'before_sha256':sha(before[src]),'candidate':a['candidate_payload'],'executed_sha256':sha(raw),'transparent_in_memory_mutant':mutant})
+ try:owner._validate_records(I,operations,payloads,before);outcome={'accepted':True}
+ except ValueError as e:outcome={'accepted':False,'error':str(e)}
+ results.append({'probe':label,'facts':facts,**outcome})
+run('nickel-first-alone',names[:1]);run('nickel-second-alone',names[1:2]);run('nickel-pair',names[:2]);run('nickel-pair-reversed',list(reversed(names[:2])))
+for name in names[2:5]:run(name+'-maintenance',[name]);run(name+'-revival-refused',[name],True)
+run('dithionite-live-and-rejected',names[4:6]);run('all-six-maintenance',names[:6]);run('TSB-still-refused',[names[6]]);run('Angustmycin-same-path-still-refused',[names[7]])
+assert all(r['accepted'] == (not any(t in r['probe'] for t in ['refused'])) for r in results)
+assert owner.hashes(owner.inventory(I))==pins
+result={'scope':'actual full-catalogue record-stage checks; no source application, scientific approval or full-plan assertion','catalogue_count':len(before),'source_operator_sha256':sha((I/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes()),'registry_sha256':sha(registry.read_bytes()),'results':results,'all_original_owner_bytes_preserved':True}
+(D/'actual-replay-v2.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'probes':len(results),'catalogue':len(before),'all_expected':True}))

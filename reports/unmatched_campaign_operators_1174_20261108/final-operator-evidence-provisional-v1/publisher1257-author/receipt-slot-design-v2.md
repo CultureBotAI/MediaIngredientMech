@@ -1,0 +1,18 @@
+# Proposed #1257 native receipt alignment correction
+
+The sealed next-boundary proof is `receipt-slot-addendum-v1/HANDOFF.json` (198d0362f34907a2ef06f071857e446da53a0ee09a6c23a2441dbeb23d738a62). A slot-only draft passes23 new focused cases but fails the actual complete-publication positive in unchanged `make_receipt.align`. The exact conditional3,756-row row set independently reproduces the same refusal. No adapter has been implemented yet.
+
+Use an explicit maintained helper in `campaign_publication.py`, tentatively `_align_rows(before, after)`. Its algorithm is the existing pinned native alignment algorithm: enumerate both row sets into unique keys; build complete before-position→after-position/null map; emit full changed/removed/added entries; apply the same deterministic `(after_position or0,before_position or0)` sort. The only semantic difference is the reviewed current `slot` function's full object ID for local registry rows. CAS and ontology matching remain as before. Thus a local object change is an explicit removal+addition, never an implicit pairing or provenance transfer.
+
+`_receipt` continues to load and hash-check the historical maker, and uses its unchanged `rows_of` parser. It calls the new explicit helper instead of the historical `align`. Do **not** modify, monkeypatch or override `maker.slot`, its global namespace, code object or historical source/hash. No change to any prior receipt or its existing alignment. Current publisher source is already an executed, hashed producer in the closed plan, so the new algorithm's bytes are independently bound. Complete native `_validate_receipt`, `_owner_chains`, `walk_mapping_changes`, all source proofs and publication/recovery checks remain unchanged.
+
+Proposed tests before final code freeze:
+
+1. Keep every existing test function/assertion and the old test file as an exact prefix. The new full-publication positive must pass with genuine native receipt replay; original failed draft/log stays preserved.
+2. Compare the new helper's complete `changes` and `position_map` with unchanged historical maker output across every adjacent actual receipt state0→1 through26→27. A fresh scan found no same-namespace local-object retarget in those27 transitions, so exact equivalence is expected; prove it, do not rewrite past receipts if a mismatch appears.
+3. Four captured registry groups plus case-only and Unicode IDs stay distinct. Genuine duplicate subject/object/predicate variants, duplicated/missing/misowned/out-of-scope positions, and illegal provenance preservation still refuse.
+4. Direct local retarget yields exactly one removed and one added row, with old position→null and no old identity comment transferred. Ontology/CAS-only ordinary updates preserve historical behavior.
+5. Actual native3,750-row diagnostic projects the full selected1,037rows plus2,719 unchanged old physical rows; all unselected native drift remains untouched. Then the new helper aligns the complete3,756-row result without namespace collapse, complete replay reconstructs it, and all27 old receipt bytes remain exact. This pure mechanical diagnostic creates no actual campaign receipt or acceptance.
+6. Keep all20 real source→pinned-generator→publisher integrations, including authentic27-prefix/demotion/held lineage. New slot changes must not alter suppression, live HEAD/index, source membership or historical-validation semantics.
+
+The code fix remains bounded to the publisher and focused tests in a private copy. The four new suppression requirements stay refused until their separate genuine review and guarded implementation exist. No generator or scientific identity change is proposed.

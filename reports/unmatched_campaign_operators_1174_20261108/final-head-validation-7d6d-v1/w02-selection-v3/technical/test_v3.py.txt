@@ -1,0 +1,77 @@
+"""Focused metadata integrity controls; no archived or operator code execution."""
+from copy import deepcopy
+from pathlib import Path
+import pytest
+from v3_guards import union_delta, union_copies, union_destination, manifest_coverage, BASES
+from verify_v3 import P, P2, read, reused_target
+
+
+def pair():
+    return deepcopy(read(P2 / "SELECTION.json")), deepcopy(read(P / "SELECTION.json"))
+
+
+@pytest.mark.parametrize("mutation", [None, "missing_old", "missing_delta", "reordered_old", "changed_old",
+                                     "bool_scalar", "float_scalar", "old_base", "new_base", "predecessor",
+                                     "delta_bytes", "delta_kind", "old_rebase", "delta_base", "duplicate_original"])
+def test_union(mutation):
+    old, new = pair()
+    if mutation == "missing_old": new["entries"].pop(0)
+    elif mutation == "missing_delta": new["entries"].pop()
+    elif mutation == "reordered_old": new["entries"][0], new["entries"][1] = new["entries"][1], new["entries"][0]
+    elif mutation == "changed_old": new["entries"][0]["packet_status"] += " false approval"
+    elif mutation == "bool_scalar": new["entries"][0]["link_count"] = True
+    elif mutation == "float_scalar": new["entries"][0]["link_count"] = 1.0
+    elif mutation == "old_base": old["archive_base"] = BASES[0]
+    elif mutation == "new_base": new["archive_base"] = BASES[1]
+    elif mutation == "predecessor": new["immediate_predecessor"]["sha256"] = "0" * 64
+    elif mutation == "delta_bytes": next(r for r in new["entries"][691:] if r["disposition"] == "copy_exact_bytes_when_authorized")["bytes"] += 1
+    elif mutation == "delta_kind": new["entries"][691]["disposition"] = "unknown"
+    elif mutation == "old_rebase": new["entries"][0]["archive_path"] = new["entries"][0]["archive_path"].replace(BASES[0], BASES[2])
+    elif mutation == "delta_base": next(r for r in new["entries"][691:] if r["disposition"] == "copy_exact_bytes_when_authorized")["archive_path"] = BASES[1] + "/wrong.txt"
+    elif mutation == "duplicate_original": new["entries"][-1]["original_path"] = new["entries"][0]["original_path"]
+    if mutation is None: assert len(union_delta(old, new)) == 325
+    else:
+        with pytest.raises(ValueError): union_delta(old, new)
+
+
+def test_three_bases_and_exclusive_paths(tmp_path):
+    old, new = pair(); copies = union_copies(old, new, tmp_path)
+    old_paths = {r["archive_path"] for r in old["entries"] if r["disposition"] == "copy_exact_bytes_when_authorized"}
+    assert len(old_paths) == 438 and len(copies) == 655
+    assert [sum(p.startswith(b + "/") for p in copies) for b in BASES] == [407, 31, 217]
+    for path in copies: assert union_destination(path, old_paths, tmp_path) == path
+    occupied = tmp_path / next(iter(copies)); occupied.parent.mkdir(parents=True); occupied.write_bytes(b"already exists")
+    with pytest.raises(ValueError): union_copies(old, new, tmp_path)
+
+
+@pytest.mark.parametrize("mutation", [None, "path", "hash", "size"])
+def test_new_delta_dedup(tmp_path, mutation):
+    old, new = pair(); copies = union_copies(old, new, tmp_path)
+    row = next(r for r in new["entries"][691:] if r["disposition"] == "reuse_selected_new_archive_bytes")
+    if mutation == "path": row["archive_path"] += ".missing"
+    elif mutation == "hash": row["sha256"] = "0" * 64
+    elif mutation == "size": row["bytes"] += 1
+    if mutation is None: assert reused_target(row, copies)["sha256"] == row["sha256"]
+    else:
+        with pytest.raises(ValueError): reused_target(row, copies)
+
+
+@pytest.mark.parametrize("packet_index", [8, 9])
+@pytest.mark.parametrize("mutation", [None, "missing_member", "hash", "declared_size", "float_size", "policy", "traversal"])
+def test_explicit_manifest_shapes(packet_index, mutation):
+    packet = read(P / "PACKETS.json")[packet_index]
+    manifest = deepcopy(read(Path(packet["manifest"])))
+    entries = deepcopy(read(P / "SELECTION.json")["entries"])
+    omission = deepcopy(next(r for r in read(P / "OMISSIONS.json") if r["packet"] == packet["packet"]))
+    member = manifest["files"][0]
+    original = str(Path(packet["manifest"]).parent / member["path"])
+    size_key = "size" if packet_index == 8 else "bytes"
+    if mutation == "missing_member": entries = [r for r in entries if r["original_path"] != original]
+    elif mutation == "hash": next(r for r in entries if r["original_path"] == original)["sha256"] = "0" * 64
+    elif mutation == "declared_size": member[size_key] += 1
+    elif mutation == "float_size": member[size_key] = float(member[size_key])
+    elif mutation == "policy": omission["original_omission_policy"] = "invented full runtime claim"
+    elif mutation == "traversal": member["path"] = "../outside"
+    if mutation is None: assert len(manifest_coverage(packet, manifest, entries, omission)) == packet["members"]
+    else:
+        with pytest.raises(ValueError): manifest_coverage(packet, manifest, entries, omission)

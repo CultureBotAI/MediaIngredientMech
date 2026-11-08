@@ -1,0 +1,23 @@
+from pathlib import Path
+import ast, datetime, hashlib, json, os, subprocess, time
+M=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech')
+C=M/'.temp/all-unmatched-20261107'
+D=C/'preflight/campaign-suppressions1259-independent-v1/test-correction-review-v1'
+A=C/'integration/campaign-suppressions1259-v1'
+R=A/'runtime/repo'
+author=json.loads((A/'checks/fixture-corrections-affected-v1/run.json').read_text())
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+before={k:sha(R/k) for k in author['after']}
+assert before==author['after']
+env=os.environ.copy();env.update(author['environment'])
+env['OPENCLAW_WORKSPACE']=str(D/'openclaw')
+env['GIT_OPTIONAL_LOCKS']='0'
+cmd=author['argv'][:-2]+['--basetemp',str(D/'fixtures'),'-p','no:cacheprovider']
+t=time.monotonic();start=datetime.datetime.now(datetime.timezone.utc).isoformat()
+with (D/'stdout.log').open('xb') as out,(D/'stderr.log').open('xb') as err:
+ p=subprocess.run(cmd,cwd=R,env=env,stdout=out,stderr=err,timeout=180)
+after={k:sha(R/k) for k in before}
+result={'started_at':start,'ended_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':cmd,'cwd':str(R),'exit_code':p.returncode,'elapsed_seconds':time.monotonic()-t,'before':before,'after':after,'environment':{k:env[k] for k in author['environment']},'stdout_sha256':sha(D/'stdout.log'),'stderr_sha256':sha(D/'stderr.log'),'source_unchanged':before==after,'scope':'Independent rerun of exactly 10 cached-dependency and 3 review-scope cases; no whole combined suite.'}
+(D/'RESULT.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2));print((D/'stdout.log').read_text()[-3000:])
+assert p.returncode==0 and before==after

@@ -1,0 +1,49 @@
+"""Post-filing independent review of exact numbered-pair helper delta only."""
+from pathlib import Path
+from datetime import datetime,timezone
+import ast,difflib,hashlib,importlib.util,json,sys
+W=Path.cwd();C=W.parents[2];O=W/'.temp/pr1205-final-archive-subset-independent-v3';N=O/'native';S=O/'skeptic'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();load=lambda p:json.loads(p.read_text())
+receipt=C/'preflight/w02-v3-checker-findings-publication-v1/receipt.json';body=receipt.parent/'body.md';rootget=O/'checker-filing-readback.json'
+assert sha(receipt)=='b14bd6455fc130adcbb1aef3460f3a4ca949f1ba514ca906df76796e0e523a9f'
+assert sha(body)=='cb6443f68fd3d794f77ab24a7e367a1db8654356a97adbab105d606790850711'
+assert sha(rootget)=='1e7bfc5d93be6312dd9e309d75b6107d17dc7c9b6c381844ac91e715f696fb5d'
+filed=load(receipt);assert filed['readback_verified'] and filed['numbered_pair_successor_before_filing'] is True
+assert datetime.now(timezone.utc)>datetime.fromisoformat(filed['at'])
+a=S/'read_delta_v1.py';b=S/'read_delta_v2.py'
+assert sha(a)=='450e4142898e21181c64dc7a8af541665f460f6e35b4058e3547d22a10dae14b'
+assert sha(b)=='3626ddbadad8fce36217c794c35453831a807464f08e2cec8d07eb3924733d68'
+old="    mdpath=p.with_suffix('.md');md=read(mdpath)"
+new="    numbered_pairs = {'13-review.yaml':'14-review.md','17-review.yaml':'18-review.md','21-review.yaml':'22-review.md'}\n    mdpath=p.with_name(numbered_pairs[p.name]) if p.name in numbered_pairs else p.with_suffix('.md')\n    md=read(mdpath)"
+assert a.read_text().count(old)==1 and a.read_text().replace(old,new)==b.read_text()
+assign=[x for x in ast.walk(ast.parse(b.read_text())) if isinstance(x,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='numbered_pairs' for t in x.targets)]
+assert len(assign)==1;pairmap=ast.literal_eval(assign[0].value)
+selected=load(N/'inputs/proposal/SELECTION.json');delta=selected['entries'][691:];byoriginal={r['original_path']:r for r in selected['entries']}
+spec=importlib.util.spec_from_file_location('numbered_pair_native_check',W/'scripts/record_review.py');m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+pairs=[]
+for r in delta:
+ p=Path(r['original_path'])
+ if p.suffix!='.yaml':continue
+ raw=p.read_bytes();assert sha(p)==r['sha256'];d=m.load_document(raw)
+ if 'review_id' not in d:continue
+ mdpath=p.with_name(pairmap[p.name]) if p.name in pairmap else p.with_suffix('.md')
+ assert str(mdpath) in byoriginal and sha(mdpath)==byoriginal[str(mdpath)]['sha256']
+ md=mdpath.read_bytes();m.validate_review(d);assert m.render_markdown(d).encode()==md
+ locator='reviews/structured/'+d['review_id']+'/review.yaml';assert m.parse_review_bundle(locator,raw,md)==d
+ pairs.append({'yaml':str(p),'yaml_sha256':sha(p),'markdown':str(mdpath),'markdown_sha256':sha(mdpath),'review_id':d['review_id'],'numbered_explicit_map':p.name in pairmap,'positive_validate_render_parse':True,'current_source_or_fresh_science_approval':False})
+assert len(pairs)==6 and sum(r['numbered_explicit_map'] for r in pairs)==3
+negative=[]
+for p in pairs:
+ other=next(q for q in pairs if q['markdown_sha256']!=p['markdown_sha256'])
+ try:m.parse_review_bundle('reviews/structured/'+p['review_id']+'/review.yaml',Path(p['yaml']).read_bytes(),Path(other['markdown']).read_bytes())
+ except m.ReviewError as e:negative.append({'yaml_sha256':p['yaml_sha256'],'mismatched_actual_markdown_sha256':other['markdown_sha256'],'refused':True,'error':str(e)})
+ else:raise AssertionError('accepted actual mismatched pair')
+inputs=[]
+for p in [receipt,body,rootget,a,b,S/'finding-numbered-pair-helper-v1.json',S/'readback-attempt-v1.json',S/'delta-readback-v1.json',W/'scripts/record_review.py',N/'inputs/proposal/SELECTION.json']:
+ inputs.append({'path':str(p),'sha256':sha(p)})
+for p,name in [(receipt,'receipt.json'),(body,'body.md'),(rootget,'root-readback.json')]:
+ q=N/'inputs/checker-filing'/name;q.parent.mkdir(parents=True,exist_ok=True)
+ with q.open('xb') as f:f.write(p.read_bytes())
+out={'at':datetime.now(timezone.utc).isoformat(),'reviewer':'worker02 /root/research_c','status':'PASS_BOUNDED_POST_FILING_HELPER_REVIEW','scope':'Exact D helper v1-to-v2 delta and actual6selected historical pairs; no whole helper/operator/scientific or current-source approval.','independent_of_helper_author':True,'scientific_review':False,'filing_receipt':{'path':str(receipt),'sha256':sha(receipt)},'actual_filing_url':filed['url'],'pre_filing_D_successor_chronology_preserved':True,'no_retroactive_issue_first_claim':True,'helper_diff':''.join(difflib.unified_diff(a.read_text().splitlines(True),b.read_text().splitlines(True),fromfile=str(a),tofile=str(b))),'only_change':'Explicit three numbered YAML/Markdown basename pairs; ordinary suffix fallback and all other source/hash/native assertions byte-exact.','positive_actual_pairs':pairs,'mismatched_actual_pair_controls':negative,'prior_six_generic_native_controls':'Separate sealed reuse proof; these six actual pair mismatches are bounded new helper re-review, not rerun of previous generic native mutation suite.','input_hash_manifest':inputs,'original_helper_or_candidate_writes':False}
+with (N/'numbered-pair-fix-review-v1.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'positive_pairs':len(pairs),'numbered':3,'actual_mismatch_refusals':len(negative),'sha256':sha(N/'numbered-pair-fix-review-v1.json')}))

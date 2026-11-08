@@ -1,0 +1,176 @@
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import stat
+import subprocess
+
+R = Path.cwd()
+P = R / '.temp/combined-16c-independent-v1'
+
+def read(path):
+    return json.loads(path.read_text())
+
+def sha(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+def ref(name):
+    path = P / name
+    assert path.is_file() and not path.is_symlink()
+    return {'path': str(path), 'sha256': sha(path)}
+
+def save(path, document):
+    with path.open('x') as stream:
+        json.dump(document, stream, indent=2, ensure_ascii=False)
+        stream.write('\n')
+
+native = read(P / 'native-validation.json')
+preserved = read(P / 'exit-verification.json')
+entry = read(P / 'entry.json')
+assembly = read(P / 'final-assembly/review.json')
+assert native['review_verdict'] == 'needs_curation'
+assert preserved['status'] == 'PASS'
+assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == entry['roots']['own']['head']
+assert subprocess.check_output(['git', 'status', '--porcelain'], text=True) == ''
+for role in ['yaml', 'markdown']:
+    assert sha(R / native[role]['path']) == native[role]['sha256']
+
+handoff = {
+    'schema_version': 1,
+    'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    'task': 'Final independent adversarial code review of exact pushed PR1205 head16c',
+    'reviewer': 'worker08:/root',
+    'reviewed_head': '16c39b63bc95d3e7978ddccc6280b0d57954f4a5',
+    'parent': '9a1a4a35498a1bee0fc8b68653d1fc152cfff81b',
+    'historical_context_head': 'eac469f1d94f06bab0714fff891abf64b8ebdbe9',
+    'CLAW_head': '76c1ebeea3fc7f80bf1abe044688f298f390cfac',
+    'own_source_head_unchanged': entry['roots']['own']['head'],
+    'completion': 'completed',
+    'verdict': 'needs_curation',
+    'open_major_findings': [
+        {'finding_id': 'REJECTION-CODE-001', 'routing': 'Existing filed issue1255',
+         'description': 'Ordinary quoted/newline Git paths cause legitimate Unicode/control-character owner application to fail after intended mutation.'},
+        {'finding_id': 'W08-16C-CODE-002', 'routing': 'New independent file-ready finding; coordinator owns deduplication/filing before fix.',
+         'description': 'After prepare, HEAD/dirty baseline is not retained. A later unrelated commit can disappear from the final comparison against moving HEAD and yield a complete receipt; uncommitted unrelated drift is detected only after mutation.'},
+    ],
+    'new_findings_filed_on_GitHub_by_reviewer': False,
+    'findings': ref('FINDINGS.json'),
+    'new_finding_before_fix': ref('FINDING-W08-16C-CODE-002.json'),
+    'assessment': ref('ASSESSMENT.md'),
+    'scope_conclusion': 'The explicit demotion tuple, true original/preimage, same-basename MAPPED-to-AMBIGUOUS route, retirement/completed proof, all-subject-slot deletion and both-path chain refusal are supported within the tested scope. No separate publisher delta defect was confirmed. These observations do not waive the two inherited source-application defects, which block code acceptance at16c.',
+    'tests': {
+        'distinct_passed': 337, 'source': 197, 'publication': 131, 'real_integration': 9,
+        'initial_run': '328 passed,9 integration lock failures,0 skipped; exact failed output retained.',
+        'integration_retry': 'Only9 rerun in new private fixtures with supported absolute OPENCLAW_WORKSPACE;9 passed,0 skipped. Same frozen tests and real pinned source/generator/publication/receipt paths.',
+        'summary': ref('focused-summary.json'),
+        'original_run': ref('focused/result.json'),
+        'retry': ref('focused-integration-v2/result.json'),
+        'retry_runtime_and_context': ref('focused-integration-v2/command.json'),
+        'additional_source_controls': 19, 'additional_publisher_stage_probes': 31,
+        'root_baseline_scenarios': 5,
+        'scope': 'Private mechanical fixtures only; no maintained source application or full campaign acceptance. Boundary fault injection is explicit; successful source/generator/receipt gates are not mocked.',
+    },
+    'assertion_preservation': {'old_source_functions': 55, 'old_source_assertions': 101,
+                               'old_publisher_functions': 44, 'old_publisher_assertions': 80,
+                               'prior_d691_to_9a1_functions': 51, 'prior_assertions': 85,
+                               'old_test_prefixes_retained': True},
+    'actual_history_integration': {'receipt_prefix_unchanged': 27, 'new_private_receipt_sequence': 28,
+                                   'held_checkpoint': 431, 'held_before_position': 436,
+                                   'held_after_position': 435, 'held_owner_and_payload_preserved': True,
+                                   'readback': ref('lineage/actual-integration-v2-readback.json'),
+                                   'full_semantic_release_approval': False},
+    'optional_CI_coverage': 'Without CLAW_ROOT integration tests skip; without CAMPAIGN_HISTORY_ROOT the historical hold case skips. Actual retry used both with zero skips. Read-only external roots need a native private lock workspace supplied by the caller.',
+    'archive': ref('frozen/ARCHIVE.json'),
+    'exact_tar_sha256': read(P / 'frozen/ARCHIVE.json')['archive_sha256'],
+    'committed_inputs': ref('committed-source-bindings.json'),
+    'input_ref_index': ref('input-ref-index.json'),
+    'native_review_pair': native,
+    'independent_reviewers': {
+        'technical': {'identity': 'worker08:/root/inorganics', 'receipt': ref('technical/review.json')},
+        'skeptical': {'identity': 'worker08:/root/organics', 'receipt': ref('skeptic/review.json')},
+        'lineage': {'identity': 'worker08:/root/vitamins', 'receipt': ref('lineage/review.json')},
+        'final_assembly': {'identity': 'worker08:/root/vitamins', 'receipt': ref('final-assembly/review.json'),
+                           'successor_handoff': ref('final-assembly/HANDOFF-v2.json')},
+    },
+    'prior_finding_native_pairs': ref('prior-finding-lineage.json'),
+    'preservation': ref('exit-verification.json'),
+    'remote_observation': {'entry_head': preserved['remote_head_entry'],
+                           'exit_head': preserved['remote_head_exit'],
+                           'later_successor_read_or_approved': False,
+                           'scope_note': 'PR head advanced to7a990e36 during review; clean I stayed16c. This report assesses only16c and does not infer a future fix.'},
+    'honest_harness_limits': [
+        'Initial full remote JSON captures failed network; empty capture retained; authorized read-only escalation succeeded. No GitHub mutation.',
+        'Initial integration run reached the real CLAW lock manager but default shared lock guard write was sandbox-refused. Retry uses native private lock workspace, not a lock bypass.',
+        'Root first late-head harness failed on fifth missing.gitignore assumption. Earlier four actual receipts retained/read back; successor completed fifth with staged unrelated file.',
+        'Initial native pair reader used a nested directory as Git root and refused historical path provenance. Exact pair unchanged; read-only explicit GIT_DIR/GIT_WORK_TREE context verifies all27 committed blobs through native helper.',
+        'First final preservation required remote equality and reported real remote movement. Successor records the later observation without substituting code.',
+        'Root -I ignored PYTHONDONTWRITEBYTECODE and29 private bytecode cache files were added beside extracted sources. All14,723 original Git files and exact tar remain unchanged; caches are inventoried and retained. Later verification uses -I -B.',
+    ],
+    'limits': [
+        'Code review only; no Angust candidate science, whole-plan acceptance, owner, mapping, role or export approval.',
+        'No future1255 or baseline fix is inspected or approved. Root owns issue routing, fixes and exact-successor review.',
+        'The historical933 proof remains record-stage evidence only. No full campaign prepare/application or KG rebuild occurred.',
+        'All source scientific holds, archived semantic FAIL and earlier sealed design/source/review artifacts remain unchanged.',
+    ],
+    'maintained_or_shared_mutations': False,
+    'existing_Git_or_GitHub_mutations': False,
+    'new_external_sessions_or_paid_providers': False,
+    'next_state': 'Idle after seal; available for collection.',
+}
+save(P / 'HANDOFF.json', handoff)
+markdown = '''# Independent exact16c code review
+
+Verdict: **needs_curation**. Complete review of PR1205 head `16c39b63bc95d3e7978ddccc6280b0d57954f4a5` retains two major findings:
+
+- Existing `REJECTION-CODE-001` / #1255: quoted Git path parsing rejects legitimate Unicode/control-character owner changes after mutation.
+- New `W08-16C-CODE-002`: live application does not retain the accepted HEAD/clean baseline after prepare. A later unrelated committed change can be hidden by comparing against moving HEAD and still produce a complete receipt.
+
+The explicit demotion implementation and publisher removal paths are supported within tested scope, but the combined head is not accepted. The file-ready new finding was disclosed before any fix. No code was corrected here.
+
+337 distinct focused cases passed across two runs: 197 source +131 publication initially, then all9 real integration cases with zero skips. The initial9 native lock failures remain. Native private workspace configuration fixed only that harness context. Additional independent controls comprise19 source,31 publisher-stage and5 root baseline scenarios. Actual27-receipt preservation and held431→436→435 lineage were checked.
+
+The native structured review binds27 committed16c inputs,23 private evidence inputs and5 targets. Exact prior W04 finding pairs and all historical severities remain. See `native-validation.json` for the bounded native reader context and exact pair hashes.
+
+Entry PRhead was16c; exit PRhead was `7a990e36b0e08d1deff943fe58bdc40d24d3834f`. The successor was not reviewed. I stayed16c, J stayedeac, CLAW stayed76c and W08 stayedae1. Exact Git tar and all14,723 original extracted files remain unchanged;29 added private bytecode caches are retained and inventoried. Prior sealed design/source/review packets were preserved.
+
+Root owns deduplication, issue filing, corrections and successor acceptance. No maintained application, source-science, whole-owner, mapping, role or export approval. Ready for collection.
+'''
+with (P / 'HANDOFF.md').open('x') as f:
+    f.write(markdown)
+
+members, links, hardlinks = [], [], []
+for parent, dirs, files in os.walk(P, followlinks=False):
+    for name in dirs + files:
+        path = Path(parent) / name
+        info = path.lstat()
+        relative = str(path.relative_to(P))
+        if stat.S_ISLNK(info.st_mode):
+            links.append({'path': relative, 'literal_target': os.readlink(path)})
+        elif stat.S_ISREG(info.st_mode) and relative not in {'MANIFEST.json', 'SEAL.json'}:
+            members.append({'path': relative, 'sha256': sha(path), 'size': info.st_size})
+            if info.st_nlink > 1:
+                hardlinks.append({'path': relative, 'device': info.st_dev, 'inode': info.st_ino,
+                                  'link_count': info.st_nlink})
+manifest = {'schema_version': 1, 'members': sorted(members, key=lambda x: x['path']),
+            'literal_symlinks_not_followed': sorted(links, key=lambda x: x['path']),
+            'private_fixture_hardlinks': sorted(hardlinks, key=lambda x: x['path']),
+            'self_and_seal_excluded': True,
+            'scope': 'Complete new private packet, including ignored/hidden Git fixtures, exact archive, retained failures and private caches. Symlinks inventoried literally, never followed.'}
+save(P / 'MANIFEST.json', manifest)
+seal = {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'status': 'SEALED',
+        'reviewed_head': handoff['reviewed_head'], 'verdict': 'needs_curation',
+        'handoff': ref('HANDOFF.json'), 'markdown_handoff': ref('HANDOFF.md'),
+        'manifest': ref('MANIFEST.json'), 'findings': ref('FINDINGS.json'),
+        'new_finding': ref('FINDING-W08-16C-CODE-002.json'),
+        'native_yaml': native['yaml'], 'native_markdown': native['markdown'],
+        'members': len(members), 'literal_symlinks_not_followed': len(links),
+        'hardlink_fixture_paths': len(hardlinks), 'source_or_application_approval': False}
+save(P / 'SEAL.json', seal)
+for row in members:
+    assert sha(P / row['path']) == row['sha256']
+for row in links:
+    assert (P / row['path']).is_symlink()
+    assert os.readlink(P / row['path']) == row['literal_target']
+print(json.dumps({**seal, 'seal_sha256': sha(P / 'SEAL.json')}, indent=2))

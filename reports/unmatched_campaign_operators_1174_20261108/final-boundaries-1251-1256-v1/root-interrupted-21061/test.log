@@ -1,0 +1,45 @@
+uv run --frozen --extra dev pytest tests/
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-9.0.2, pluggy-1.6.0
+rootdir: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree
+configfile: pyproject.toml
+plugins: cov-7.0.0, anyio-4.13.0
+collected 5891 items
+
+tests/test_agents_skills.py ..                                           [  0%]
+tests/test_aggregate_records.py ..................                       [  0%]
+tests/test_apply_claude_suggestions.py ........                          [  0%]
+tests/test_apply_role_research_results.py .....................          [  0%]
+tests/test_apply_role_research_sync.py .....                             [  0%]
+tests/test_audit_duplicate_identifiers.py ...................            [  1%]
+tests/test_audit_kg_microbe_node_ids.py ................                 [  1%]
+tests/test_backfill_surface_forms.py .................                   [  1%]
+tests/test_batch_review_diagnostics.py .....                             [  1%]
+tests/test_browser_accessibility.py ...                                  [  1%]
+tests/test_build_review_round.py .....                                   [  2%]
+tests/test_bump_sssom_header.py ............                             [  2%]
+tests/test_campaign_demotion_integration.py ..............
+
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/.venv/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+.venv/lib/python3.13/site-packages/sssom_schema/datamodel/sssom_schema.py:20
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/.venv/lib/python3.13/site-packages/sssom_schema/datamodel/sssom_schema.py:20: DeprecationWarning: The LinkML dataclass extension patch is deprecated and will be removed in a future release.
+  If you're currently using Python < 3.13, where this patch still applies, you should:
+    • Upgrade your LinkML tooling to version >= 1.9.0 (which no longer needs this patch), OR
+    • Migrate to Pydantic models if you're using LinkML's generated classes at runtime.
+  
+    from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
+
+.venv/lib/python3.13/site-packages/sssom/util.py:109
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/.venv/lib/python3.13/site-packages/sssom/util.py:109: Pandas4Warning: The 'mode.copy_on_write' option is deprecated. Copy-on-Write can no longer be disabled (it is always enabled with pandas >= 3.0), and setting the option has no impact. This option will be removed in pandas 4.0.
+    pd.options.mode.copy_on_write = True
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:1904: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+================= 145 passed, 14 warnings in 109.99s (0:01:49) =================
+error: recipe `test` failed on line 706 with exit code 2

@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T06:08:05.972430+00:00",
+  "reviewer": "/root/issue_context",
+  "task": "PR1205 final-head independent archive review",
+  "verdict": "PASS_WITH_STATED_SCOPE_NO_ARCHIVE_FINDING",
+  "reviewed_head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "base": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "base_is_ancestor": true,
+  "final_integration_status_short": "",
+  "scope": "Selection integrity, original-source provenance, duplicate mapping transparency, publication archive contents, and truthful retained review/failure history. Read-only integration worktree; outputs restricted to worker private archive review directory.",
+  "selection": {
+    "path": "SELECTION.json",
+    "sha256": "5f154af3da7b9c6111572da8a47ec0eba8468d979dcc49418ce715681a37c409"
+  },
+  "readme": {
+    "path": "README.md",
+    "sha256": "c137eba709c8d9089a5a9d59341623740413221b86dabf121b977fd6abcdd2cf"
+  },
+  "counts": {
+    "source_entries": 319,
+    "unique_files": 240,
+    "archive_files_with_metadata": 242,
+    "selected_bytes": 9117270,
+    "duplicate_mapping_count": 79,
+    "duplicate_target_groups": 45,
+    "original_available": 319,
+    "original_unavailable": 0
+  },
+  "integrity": {
+    "all_319_archive_hashes_and_sizes_match": true,
+    "all_319_available_original_hashes_and_sizes_match": true,
+    "all_242_archive_files_match_exact_head": true,
+    "all_declared_count_and_combined_review_hash_checks_pass": true,
+    "unsafe_archive_paths": 0,
+    "symlinks": 0,
+    "archive_errors": []
+  },
+  "deduplication": {
+    "redundant_mappings": 79,
+    "shared_target_groups": 45,
+    "every_group_consistent_sha_and_size": true,
+    "every_group_has_one_deduplicated_false_origin_and_explicit_true_duplicates": true,
+    "receipt_references_resolve_through_selection_when_relocated": true
+  },
+  "privacy_and_exclusions": {
+    "inventory_includes_ignored_and_hidden_files": true,
+    "method": "Complete os.walk without ignore filtering, exact Git HEAD byte comparison, archive path/extension and credential/runtime-signature scans, file-role inventory and inspection of bounded diagnostic logs.",
+    "archive_runtime_account_capture_or_fixture_git_tree_found": false,
+    "historical_provisional_manifest_entries": 711,
+    "historical_manifest_selected": 57,
+    "historical_manifest_excluded": 654,
+    "historical_git_references": 323,
+    "historical_git_references_copied": 0,
+    "excluded_original_groups": [
+      "chain-preflight-fixtures-v1",
+      "completed-inventory-fixtures-v1",
+      "global-suppression-fixture-v1",
+      "loaded-code-fixture-v1",
+      "loaded-code-private-package-v1",
+      "noncanonical-plan-fixture-v1",
+      "publisher-inventory-fixtures-v1",
+      "source-chain-fixture-v1"
+    ],
+    "explanation": "Original manifest references to excluded private fixture paths are preserved as historical provenance, as README explicitly explains. They are not copied runtime or fixture Git files. The 25 .log files are bounded tool/test/diagnostic outputs; absolute environment paths in warnings do not include runtime installations or account/session captures. The native diagnostic export triple is explicitly selected and labelled diagnostic.",
+    "scan_results": {
+      "scope": "Every file from os.walk, including hidden and ignored files; path and credential/runtime-signature scan, plus separately reviewed bounded log contents. Historical absolute provenance paths are not rewritten.",
+      "path_suspects": [],
+      "content_suspects": []
+    }
+  },
+  "review_chain": [
+    {
+      "path": "independent-v1/PROVISIONAL-REVIEW-v1.json",
+      "sha256": "d5c29a75751a529e0ebcd408bb9014f9239fc3d8b4737d9caaa52f72f909b6a5",
+      "scope": "Original provisional review: approval false, five confirmed findings, differing author bytes at seal disclosed."
+    },
+    {
+      "path": "independent-v2/source-first-fix-review-v1.json",
+      "sha256": "c4c6fb61133f900de53de88341c0ec534400a9f7557e3f99154b38fc2992286b",
+      "scope": "First repair: approval false, preloaded-dependency counterexample still accepted; manifest audit harness assumption disclosed."
+    },
+    {
+      "path": "independent-v3/source-v2-independent-review.json",
+      "sha256": "612e25d0c3e493d2d77e70e49eac0c0a3eec479eadaa8fda4b2f06514d6bbde8",
+      "scope": "Final source scope pass, focused independent scenarios separated from reused author tests; publisher pending at this stage."
+    },
+    {
+      "path": "independent-v3/COMBINED-REVIEW-v1.json",
+      "sha256": "3348c645fa9c2fea7428702c5783a8dd8de16552cb2034a4a36cd22846f593db",
+      "scope": "Final combined source/publisher contract scope pass; reused author tests, independent focused tests and native generation separately attributed. Exact two source and two test hashes match requested HEAD."
+    }
+  ],
+  "failed_and_corrected_evidence": [
+    {
+      "path": "independent-v1/completed-inventory-probe-v1.json",
+      "sha256": "783a5bd8416493e27bf2d66295eb1af98f55a1a520becf7b9669c60865abd9d4",
+      "assessment": "Original late owner falsely completed with reported4 versus actual5; retained as failure evidence."
+    },
+    {
+      "path": "independent-v1/loaded-code-probe-v1.json",
+      "sha256": "30e6a03adcb0a4c7acd048d4b75a61b7ca5664b8954b65330dbc6290169508a2",
+      "assessment": "Original stale imported producer accepted; retained."
+    },
+    {
+      "path": "independent-v1/source-chain-probe-v1.json",
+      "sha256": "72aacc23ef4f283f598282453c844f17f0f080f9868bfe68d2cbb199531fa974",
+      "assessment": "Original disconnected source history accepted/applied; retained."
+    },
+    {
+      "path": "independent-v1/noncanonical-plan-probe-v1.json",
+      "sha256": "e5eadc31942aa1f5a9d47fc46ab9ffb7e809e29b79b6ef48f7d3960bbcec14e2",
+      "assessment": "Original noncanonical proof applied then verification failed; retained."
+    },
+    {
+      "path": "independent-v1/global-suppression-probe-v1.json",
+      "sha256": "d4be7756d32dab29b6597f922bb9313d8192a96e06025d177cc28db9725aad5c",
+      "assessment": "Original projected canonical Rule K failure despite dry-run acceptance retained."
+    },
+    {
+      "path": "independent-v2/preloaded-dependency-result-v1.json",
+      "sha256": "d15db2944cc51b313b9bb0a4a46f059183d6ecec922aff870f2232fc82650d7e",
+      "assessment": "First repair still accepted cached dependency drift; first-repair review explicitly denied approval."
+    },
+    {
+      "path": "publisher-author/campaign-publication-native-smoke-v1/failure.json",
+      "sha256": "41b3aaf34937ab3b9a1b16918c11321ed7ded6cf8a0a60b47bad84c95004631c",
+      "assessment": "Original native smoke relocation fixture failure retained and identified as fixture source-reference mismatch."
+    },
+    {
+      "path": "publisher-author/campaign-publication-native-controls-v3/run.log",
+      "sha256": "beecac6906d84987c2beb5ad2b422c0f8c30aef2aa3b9c465f44eba89a077337",
+      "assessment": "Original syntactically invalid control harness retained beside corrected run-v2."
+    },
+    {
+      "path": "independent-v3/chain-preflight-probe-v1.json",
+      "sha256": "ca9bc17266a83ba11d4d83788eb34ea52671555fd830ee5b86fc8d73126b6741",
+      "assessment": "Initial final-code harness rejected both intended positive and negative due to source snapshot membership; not counted as successful targeted reproduction."
+    },
+    {
+      "path": "independent-v3/global_suppression-rerun-v2.log",
+      "sha256": "284c6c82ef74e81faa6e190051fb6ef63fd11c8ede652933522d544e3d15ceb2",
+      "assessment": "Initial stale protected-snapshot harness refusal retained; final combined review discloses it."
+    },
+    {
+      "path": "independent-v3/chain-preflight-probe-v3.json",
+      "sha256": "c98c84f5fddd87752a888c3a34beed69e913c9b2df7b461787fee93d32ad1496",
+      "assessment": "Corrected source snapshot fixture exercises intended history gap and true positive."
+    },
+    {
+      "path": "independent-v3/global-suppression-probe-v3.json",
+      "sha256": "b9ac615f03824cbff1c2249b0ce8328ea7c04d9a75540842af8bfa251c7ffd26",
+      "assessment": "Corrected fixture exercises diagnostic/prior-only Rule K negatives and unowned positive; mocks disclosed."
+    },
+    {
+      "path": "publisher-author/campaign-publication-checks-v1/mypy-current.log",
+      "sha256": "acb6556be7e6b12afc19140724f990883ea86369bb225a2c41a450aaafbaad35",
+      "assessment": "Earlier 3 type errors retained."
+    },
+    {
+      "path": "publisher-author/campaign-publication-checks-v1/mypy-private-native.log",
+      "sha256": "cb75163650d01635d64b87abb0b79d714d0234c6d711e84dc640ba27c20c264c",
+      "assessment": "Intermediate type error retained."
+    },
+    {
+      "path": "publisher-author/campaign-publication-checks-v1/mypy-package.log",
+      "sha256": "d4ae89b9742e207a2d05e177a1bcdfae1789b0d832bc6d6b42e64b2254aa8144",
+      "assessment": "Intermediate 5 package type errors retained beside final pass."
+    },
+    {
+      "path": "publisher-author/campaign-publication-checks-v1/mypy-package-final.log",
+      "sha256": "0f5e2c0f274fe3238699ff97fc09737970ee01e440d6d8f78a8522bdc43ee59b",
+      "assessment": "Final package type pass retained."
+    }
+  ],
+  "limitations_verified_honest": [
+    "Archive README and final combined review do not claim scientific campaign owner approval, actual campaign/canonical publication, supported export status or release approval.",
+    "Final combined review reserves whole-repository QC/full suite and committed-head review for separate coordinator work; no full suite is newly run here.",
+    "Initial fixture refusals are preserved and expressly distinguished from exercising the intended boundary.",
+    "Historical evidence paths are not rewritten; replay may require reconstruction/relocation of intentionally excluded private fixtures.",
+    "This review verifies archive content and provenance, not correctness of every implementation function or ingredient identity.",
+    "Credential signature scans are bounded; no unsupported universal secret-absence guarantee is made."
+  ],
+  "findings": [],
+  "proofs": [
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/audit-summary-v1.json",
+      "sha256": "91bbc780bdb3d96f691b452f37aeefe9a50ea6ddb66b1bb6848dbb0c94c3d9de",
+      "bytes": 4347
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/audit_archive_v1.py",
+      "sha256": "6c8443db64d7841ed97263b0ccb2d02392958f2cb96cf16d35566ea5f6137439",
+      "bytes": 11237
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/bounded-log-contents-v1.json",
+      "sha256": "c4f9e71d2e0b7e9f147c0d8eafa3dff03d046f899b0022d22eec3ae5ee48e550",
+      "bytes": 53637
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/combined-review-current-head-bindings-v1.json",
+      "sha256": "96cbd21620462471c0b372fa717aae1bc409842c72607dd279d3cbdc9a22f60e",
+      "bytes": 1032
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/duplicate-mapping-verification-v1.json",
+      "sha256": "34e6b7bcb82a0003966c7262f545d3998fc699db2d06c51837e8573d043910ac",
+      "bytes": 157875
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/entry-verification-v1.json",
+      "sha256": "23589abc0eeafff5da541b2d33427d54ea6c530f014eed483803bf72df7b186a",
+      "bytes": 298346
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/historical-manifest-selection-audit-v1.json",
+      "sha256": "c4d92c4970d7cd2f91439b858400050ebec7c3d706831477b66f04c41b8c6afa",
+      "bytes": 401965
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/ignored-inclusive-inventory-v1.json",
+      "sha256": "80be2fed1baddfc4d02cddb7557b5f6cdc135c1baf2f43ca3e511b19f70a1794",
+      "bytes": 82968
+    },
+    {
+      "path": ".temp/infrastructure-pr1205-final-head-review-v1/archive/review-receipts-binding-v1.json",
+      "sha256": "35993b1e05587c32d5f6487d6ea1b11c955d40b7126d3b82bc9116cf81dc9103",
+      "bytes": 30525
+    }
+  ],
+  "mutations": "Only new immutable proof files under worker .temp/infrastructure-pr1205-final-head-review-v1/archive; no integration writes, GitHub actions, commits/pushes, external sessions or scientific changes."
+}

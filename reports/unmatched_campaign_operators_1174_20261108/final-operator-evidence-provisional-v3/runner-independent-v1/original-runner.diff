@@ -1,0 +1,61 @@
+--- prior/validate_frozen_head.py
++++ successor/validate_frozen_head.py
+@@ -27,6 +27,9 @@
+ OLD_HEADS = {
+     "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+     "21061aa532401398db70c59a596debf330f70744",
++    "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
++    "5288c882def177b1b9a5eee2975f039db780ac4e",
++    "e0a75a0c48ba539426b1f70623ea376c7b379ecf",
+ }
+ 
+ 
+@@ -148,6 +151,20 @@
+ 
+ def equivalent(before, after):
+     return {key: before[key] == after[key] for key in before if key != "at"}
++
++
++def integration_marks(log, filename):
++    """Keep the original full-dot requirement for every pinned native integration file."""
++    lines = log.splitlines()
++    starts = [n for n, line in enumerate(lines) if line.startswith(filename + " ")]
++    require(len(starts) == 1, "Missing or repeated native integration file: " + filename)
++    first = starts[0]
++    block = [lines[first].split(".py ", 1)[1]]
++    for line in lines[first + 1:]:
++        if line.startswith("tests/"):
++            break
++        block.append(line)
++    return "".join(re.sub(r"\[.*?\]", "", line).strip() for line in block)
+ 
+ 
+ def main(argv=None):
+@@ -213,17 +230,17 @@
+     log = (output / "test.log").read_text()
+     result = [line for line in log.splitlines() if re.search(r"\d+ passed.* in \d+", line)]
+     require(len(result) == 1, "Missing unambiguous complete pytest summary")
+-    lines = log.splitlines()
+-    first = next(n for n, line in enumerate(lines) if line.startswith("tests/test_campaign_demotion_integration.py "))
+-    block = [lines[first].split(".py ", 1)[1]]
+-    for line in lines[first+1:]:
+-        if line.startswith("tests/"):
+-            break
+-        block.append(line)
+-    marks = "".join(re.sub(r"\[.*?\]", "", line).strip() for line in block)
+-    require(marks == "." * 20, "All20 real-generator integration cases must execute and pass")
++    expected_counts = json.loads((HERE / "expected-inputs.json").read_bytes())["required_native_cases"]
++    native_counts = {}
++    for filename, expected_count in expected_counts.items():
++        require(type(expected_count) is int and expected_count > 0, "Invalid native case count")
++        marks = integration_marks(log, filename)
++        require(marks == "." * expected_count,
++                f"Every required native integration case must execute and pass: {filename}")
++        native_counts[filename] = {"passed": expected_count, "skipped": 0}
+     summary = {"head": args.head, "scope": "Author native full validation; not scientific/application/merge approval",
+-               "pytest": result[0], "real_generator_cases_passed": 20, "real_generator_cases_skipped": 0,
++               "pytest": result[0], "real_generator_cases_passed": sum(v["passed"] for v in native_counts.values()),
++               "real_generator_cases_skipped": 0, "required_native_files": native_counts,
+                "coverage_lines": [line for line in lines if line.startswith("TOTAL") or "fail-under" in line],
+                "B4_lines": [line for line in (output / "qc.log").read_text().splitlines() if "B4" in line],
+                "all_tracked_inputs": len(before["tracked"]), "direct_owner_count": len(before["direct_owner_sha256"]),

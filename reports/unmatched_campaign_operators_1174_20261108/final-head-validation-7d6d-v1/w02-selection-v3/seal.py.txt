@@ -1,0 +1,131 @@
+"""Create-only closeout of the reviewed private packet; no archive operation."""
+from datetime import datetime, timezone
+from pathlib import Path
+import hashlib
+import json
+import os
+import re
+import subprocess
+import sys
+
+O = Path(__file__).resolve().parent
+W = O.parent.parent
+K = W.parents[2] / "integration/release-worktree"
+OUTER = {"MANIFEST.json", "SEAL.json", "SHA256SUMS"}
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load(name):
+    return json.loads((O / name).read_text())
+
+
+def check(base, row):
+    path = base / row["path"]
+    if row.get("kind") == "diagnostic_symlink" or "target" in row:
+        assert path.is_symlink() and os.readlink(path) == row["target"], path
+    else:
+        assert path.is_file() and not path.is_symlink(), path
+        assert sha(path) == row["sha256"], path
+        if "bytes" in row:
+            assert path.stat().st_size == row["bytes"], path
+
+
+def inventory():
+    rows, directories = [], []
+    for path in sorted(O.rglob("*")):
+        name = str(path.relative_to(O))
+        if name in OUTER:
+            continue
+        if path.is_symlink():
+            rows.append({"path": name, "kind": "diagnostic_symlink", "target": os.readlink(path)})
+        elif path.is_file():
+            rows.append({"path": name, "kind": "file", "sha256": sha(path), "bytes": path.stat().st_size})
+        elif path.is_dir():
+            directories.append(name)
+        else:
+            raise AssertionError(f"Unexpected private member: {path}")
+    return rows, directories
+
+
+def write(name, obj):
+    with (O / name).open("x") as stream:
+        stream.write(json.dumps(obj, indent=2) + "\n")
+
+
+assert len(sys.argv) == 4 and all(re.fullmatch(r"[0-9a-f]{64}", value) for value in sys.argv[1:])
+assert all(not os.path.lexists(O / name) for name in OUTER), "Already sealed"
+pins = {
+    "HANDOFF.json": "e0b6285d6f6d8b39492ba20a6962af351c31639bfa7de13c5db995c85cf4cadc",
+    "REVIEW-SELECTOR.json": "fd1c2ec21dbf4e451fc586471ac0714c4e22e1d2a62134f8ad847c8604d1c93b",
+    "ACCEPTANCE.json": "7078ed0f8e69d06e6d5ef2845e985d183f2af4af40306d100f76142bc8d722b4",
+    "FINDINGS.json": "0867fc17a0a3c24ea88f66452f82626784342df1efdca38bba7c1eb01e8e72b0",
+    "README.md": "f9a8bb532cbf19f6a33572329bd02f07cef5b6a00ab9ec96923fe602b8402dea",
+    "final-preservation.json": "ecac434fcf4b183858c2c07bfa74750220d81f45fcdbdff363860e47e359145a",
+    "technical/MANIFEST.json": "f960532bcf0446884750ee17fdc97e14b329d92563b3dfd86d47bfd2ec2ecde3",
+    "native/MANIFEST.json": "fc03d879a81d443b84cf0e665cbdac809f84ae821068e59bd016dca2ad90d31e",
+    "skeptic/MANIFEST-v1.json": "e985c571955977444df29edac29c999c4ede6d82f6d850223ab25c9e02d3583b",
+    "skeptic/final-native-review-v1.json": "6343c69a8ca17bf4d3739de54e2d4f809e34d794167b69f3184be2f294419550",
+    "skeptic/final-assembly-review-v1.json": sys.argv[1],
+    "skeptic/MANIFEST-final-v1.json": sys.argv[2],
+    "pre-seal-inventory.json": sys.argv[3],
+}
+for name, digest in pins.items():
+    assert sha(O / name) == digest, name
+pre = load("pre-seal-inventory.json")["members"]
+for row in pre:
+    check(O, row)
+for name in ("technical/MANIFEST.json", "native/MANIFEST.json", "skeptic/MANIFEST-v1.json", "skeptic/MANIFEST-final-v1.json"):
+    manifest = load(name)
+    for row in manifest["files"] + manifest.get("diagnostic_links", []):
+        check((O / name).parent, row)
+for name in ("skeptic/final-native-review-v1.json", "skeptic/final-assembly-review-v1.json"):
+    for row in load(name).get("input_hash_manifest", []):
+        check(O, row)
+for row in load("HANDOFF.json")["native_pair"].values():
+    check(O, row)
+rows, directories = inventory()
+expected = {row["path"] for row in pre} | {"pre-seal-inventory.json", "skeptic/MANIFEST-final-v1.json"}
+expected |= {"skeptic/" + row["path"] for row in load("skeptic/MANIFEST-final-v1.json")["files"]}
+assert {row["path"] for row in rows} == expected, "Unexpected private member"
+
+commands = []
+for root, head in ((W, "c91ccac1f91417ce376a2a83e871d6f6bf90912f"), (K, "7d6d44ea132e04709f81ebd9e1577643745110ad")):
+    for args in (("rev-parse", "HEAD"), ("status", "--porcelain=v1"), ("diff", "--name-only"), ("diff", "--cached", "--name-only")):
+        argv = ["git", "--no-optional-locks", "-C", str(root), *args]
+        result = subprocess.run(argv, capture_output=True, text=True)
+        commands.append({"argv": argv, "exit_code": result.returncode, "stdout": result.stdout, "stderr": result.stderr})
+        assert result.returncode == 0 and result.stdout.strip() == (head if args[0] == "rev-parse" else "")
+for row in load("input-freeze.json")["read_only_commands"]:
+    if "index_sha256" in row:
+        assert sha(Path(row["stdout"].strip())) == row["index_sha256"]
+selection = load("inputs/proposal/SELECTION.json")
+assert all(not os.path.lexists(K / row["archive_path"]) for row in selection["entries"] if row["disposition"] == "copy_exact_bytes_when_authorized")
+
+at = datetime.now(timezone.utc).isoformat()
+counts = {"members": len(rows), "regular_files": sum(row["kind"] == "file" for row in rows), "diagnostic_links": sum(row["kind"] == "diagnostic_symlink" for row in rows), "directories": len(directories)}
+write("MANIFEST.json", {"schema_version": 1, "at": at, "root": str(O), "reference_base": "Member paths relative to this explicit root; diagnostic links recorded literally, not traversed", "scope": "Complete private v3 review packet including all preserved failed, pending and superseded attempts; ignored and hidden included", "members": rows, "directories": directories, "counts": counts, "excluded_outer_seal_files": sorted(OUTER)})
+write("SEAL.json", {
+    "schema_version": 1, "at": at, "status": "SEALED_TECHNICAL_PASS_WITH_LIMITATIONS_EXACT_PROVISIONAL_V3",
+    "reference_base": "All path+sha256 references are absolute filesystem paths",
+    "manifest": {"path": str(O / "MANIFEST.json"), "sha256": sha(O / "MANIFEST.json")},
+    "handoff": {"path": str(O / "HANDOFF.json"), "sha256": sha(O / "HANDOFF.json")},
+    "final_pins": [{"path": str(O / name), "sha256": digest} for name, digest in pins.items()],
+    "counts": counts, "actual_read_only_Git_commands": commands,
+    "W02_and_K_raw_indexes_unchanged_since_v3_entry": True,
+    "all655_proposed_files_still_absent": True,
+    "native_pair": load("HANDOFF.json")["native_pair"],
+    "preserved_failures": "Original false joins/pair assumption, D pre-filing execution and all pending receipts remain immutable. Unused syntax builder and GraphQL checker remain unrepaired and excluded. Current review content was directly authored as data for unchanged native writer.",
+    "remaining_scope": "Full suite/QC/final maintained-head evidence, external final-head review, W07 private accounting and actual final archive copying are separate later dependencies.",
+    "scientific_review": False, "operator_code_source_application_final_head_validation_publication_or_final_archive_approval": False,
+    "archive_maintained_Git_GitHub_writes": False,
+    "actual_seal_command": [str(W / ".temp/all-unmatched-worker-02/venv/bin/python"), "-B", str(Path(__file__).resolve()), *sys.argv[1:]],
+})
+lines = [f'{row["sha256"]}  {row["path"]}' for row in rows if row["kind"] == "file"]
+lines += [f"{sha(O / name)}  {name}" for name in ("MANIFEST.json", "SEAL.json")]
+with (O / "SHA256SUMS").open("x") as stream:
+    stream.write("\n".join(sorted(lines)) + "\n")
+assert inventory() == (rows, directories)
+print(json.dumps({"status": "SEALED", "counts": counts, "hashes": {name: sha(O / name) for name in ("HANDOFF.json", "REVIEW-SELECTOR.json", "MANIFEST.json", "SEAL.json", "SHA256SUMS")}}, indent=2))

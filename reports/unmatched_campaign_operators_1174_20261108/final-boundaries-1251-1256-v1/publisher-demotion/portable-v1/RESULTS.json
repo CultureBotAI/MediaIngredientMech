@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "authorship": "Implementation and tests by /root/step7d_independent_review; this is not an independent review vote. Source operator authored separately by /root/next23_context.",
+  "base_commit": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "observed_at": "2026-11-08T11:35:12.288244+00:00",
+  "checks": {
+    "pytest": {
+      "exit_code": 0,
+      "passed": 140,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 12,
+      "seconds": 58.04,
+      "log_sha256": "c80793d99d9726a3a6278bb5b2b8c28f40c649606f3c50ceb0c0f6cfdfd6bb38",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_publication.py",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/tests/test_campaign_demotion_integration.py",
+        "-q",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cov",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp=/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-demotion-publisher-v1/final-fixture-v1"
+      ],
+      "environment": {
+        "CLAW_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw",
+        "CAMPAIGN_HISTORY_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+        "PYTHONPATH": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      }
+    },
+    "ruff": {
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "black": {
+      "exit_code": 0,
+      "log_sha256": "45a468fa6205768496f23f1716ebb7575e9b723449d2099b88bf2afef60b721f"
+    },
+    "mypy": {
+      "exit_code": 0,
+      "source_files": 1,
+      "log_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+    },
+    "git_diff_check": {
+      "exit_code": 0,
+      "scope": [
+        "src/mediaingredientmech/campaign_publication.py",
+        "tests/test_campaign_publication.py",
+        "tests/test_campaign_demotion_integration.py"
+      ]
+    },
+    "old_test_functions": {
+      "44_ast_exact": true
+    }
+  },
+  "native_integration": {
+    "tests": 9,
+    "source_proof_mocked": false,
+    "generation_mocked": false,
+    "sssom_external_validation": "passed",
+    "producer_revision": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+    "historical_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+    "historical_head": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+    "receipt_prefix_count": 27,
+    "new_private_receipt_sequence": 28,
+    "held_position_before": 436,
+    "held_position_after": 435,
+    "held_lineage": "PASS using actual native receipt checkpoints/Graph edge and source owner hash",
+    "full_semantic_release_approval": false,
+    "real_corpus_application": false,
+    "fixture_scope": "Tiny private owner catalog and private fixture scientific acceptance; historical case uses authentic Angust beforeimage, full current canonical/policy/sidecar/baseline and actual 1\u201327 receipts. It is not the final accepted campaign intake or actual Angust source approval."
+  },
+  "development_attempts": [
+    {
+      "log": "unit-tests-v1.log",
+      "disposition": "One new test expected a later error; actual null-before input was rejected earlier by historical-pin proof. Only new test expectation corrected."
+    },
+    {
+      "log": "native-tests-v1.log",
+      "disposition": "Private fixture omitted local ontology mapping, yielding no generated rows; native producer refused empty mapping set."
+    },
+    {
+      "log": "native-tests-v2.log",
+      "disposition": "Native guarded writer correctly refused invalid fixture ontology_source enum; fixture corrected to existing kgmicrobe.ingredient."
+    },
+    {
+      "log": "native-tests-v3.log",
+      "disposition": "New test asserted wrong API return key after successful native dry run; corrected to actual dry_run/verified statuses and exact manifest artifact update."
+    }
+  ],
+  "limitations": [
+    "No workflow/pin/gate/threshold change. CI without explicit CLAW_ROOT / CAMPAIGN_HISTORY_ROOT may skip these external integration tests; do not claim CI ran the native generator.",
+    "Full campaign curation/export review, actual corpus application, and full final-head suite are separate.",
+    "Standalone publication.validate reconstructs canonical/policy/native-chain state; publication recovery backups are verified at publication completion, not after arbitrary later backup drift.",
+    "Private fixture trees, .git objects and mypy caches remain outside the portable manifest. They are retained locally and are not publication artifacts."
+  ]
+}

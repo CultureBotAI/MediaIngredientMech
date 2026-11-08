@@ -1,0 +1,90 @@
+"""No QC/tests: runner expression/skip probes and exact fixture-input inventory."""
+import ast
+import hashlib
+import importlib.util
+import json
+import os
+import subprocess
+from pathlib import Path
+
+import yaml
+from mediaingredientmech import campaign_publication as c
+
+D=Path(__file__).absolute().parent
+C=D.parents[1]
+A=C/'preflight/final-suppression-validation-preparation-v1'
+P=C/'integration/campaign-suppressions1259-v1/runtime/repo'
+W=C/'workers/w07/worktree/.temp/four-suppression-policy-independent-v1'
+I=C/'integration/final-native-intake-v4-preparation'
+J=C/'integration/curation-worktree'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def pin(p):return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+def save(name,v):
+ with (D/name).open('x') as f:json.dump(v,f,indent=2);f.write('\n')
+runner=A/'validate_frozen_head.py'
+assert sha(runner)=='0cd77013743a522eafa0cea5e9cde84b86cc3f49aff8c48ccd2cfc5fd92ad1be'
+for p in [runner,A/'runner.diff',A/'expected-inputs.json',A/'PREPARATION.json',A/'parser-controls.json']:
+ with (D/('original-'+p.name+('.txt' if p.suffix=='.py' else ''))).open('xb') as f:f.write(p.read_bytes())
+spec=importlib.util.spec_from_file_location('reviewed_validation_runner',runner)
+m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+tree=ast.parse(runner.read_bytes())
+main=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='main')
+summary=next(n.value for n in ast.walk(main) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='summary' for t in n.targets))
+expr=next(v for k,v in zip(summary.keys,summary.values,strict=True) if isinstance(k,ast.Constant) and k.value=='coverage_lines')
+assert not any(isinstance(n,ast.Name) and isinstance(n.ctx,ast.Store) and n.id=='lines' for n in ast.walk(main))
+try:eval(compile(ast.Expression(expr),str(runner),'eval'),m.__dict__,{})
+except NameError as error:coverage={'result':'REFUSED_BY_NAMEERROR','message':str(error),'line':expr.lineno}
+else:raise AssertionError('expected original undefined-name failure')
+env=m.environment(D/'no-run')
+missing=[x for x in ('CAMPAIGN_SUPPRESSION_REVIEW_ROOT','CAMPAIGN_SUPPRESSION_INTAKE_ROOT') if x not in env]
+assert len(missing)==2
+spec=importlib.util.spec_from_file_location('real_suppression_fixture_for_skip',P/'tests/test_campaign_suppression_integration.py')
+fixture=importlib.util.module_from_spec(spec);spec.loader.exec_module(fixture)
+before_env=dict(os.environ)
+try:
+ os.environ.update(env)
+ for name in missing:os.environ.pop(name,None)
+ try:fixture.real_case(D/'must-not-exist')
+ except BaseException as error:
+  import pytest
+  assert isinstance(error,pytest.skip.Exception),type(error)
+  skip={'result':'ACTUAL_NATIVE_FIXTURE_SKIPPED','message':str(error),'condition':'runner declared environment with no ambient undeclared overrides','no_fixture_output_created':not (D/'must-not-exist').exists()}
+ else:raise AssertionError('expected missing-input skip')
+finally:
+ os.environ.clear();os.environ.update(before_env)
+save('RUNNER-FINDINGS.json',{'runner':pin(runner),'coverage_summary':coverage,'missing_explicit_fixture_environment':missing,'actual_skip_boundary':skip,'qc_or_full_suite_executed':False,'limitations':'Skip is demonstrated for the declared runner environment; an undisclosed inherited ambient variable could prevent it, which is precisely why the runner must explicitly bind these inputs.'})
+
+original_pair=W/'native-fixture/reviews/structured/20261108T124921Z-w07-four-suppression-policy-independent'
+doc=yaml.safe_load((original_pair/'review.yaml').read_bytes())
+files={str(p):pin(p) for p in (original_pair/'review.yaml',original_pair/'review.md')}
+for ref in doc['source']['inputs']:
+ p=W/'native-fixture'/ref['path'];assert sha(p)==ref['sha256'];files[str(p)]=pin(p)
+decision=json.loads((W/'native-fixture/review-inputs/conditional-decisions.json').read_bytes())
+plan_path=I/'owner-plan.draft.json';index_path=I/'materialization-index.draft.json'
+for p in (plan_path,index_path):files[str(p)]=pin(p)
+plan=json.loads(plan_path.read_bytes());index={x['destination']:x for x in json.loads(index_path.read_bytes())['files']}
+operations=[b['operation'] for pair in decision['pairs'] for b in pair['complete_owner_bindings'] if b['operation']]
+assert len(operations)==6
+needed={o[k] for op in operations for o in op['origins'] for k in ('proposal_binding','payload_binding')}
+needed.add(next(b['binding_id'] for b in plan['bindings'] if b['role']=='case_ledger'))
+bindings={b['binding_id']:b for b in plan['bindings']}
+selected=[];published=[]
+for name in sorted(needed):
+ b=bindings[name];entry=index[b['path']];p=Path(entry['source'])
+ assert sha(p)==b['sha256']==entry['sha256'];files[str(p)]=pin(p)
+ selected.append({'binding_id':name,'binding':b,'external_materialized_source':pin(p)})
+ if b['published_head']:
+  raw=subprocess.check_output(['git','show',b['published_head']+':'+b['published_path']],cwd=C/'integration/release-worktree',env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'})
+  assert hashlib.sha256(raw).hexdigest()==b['sha256']
+  published.append({'binding_id':name,'head':b['published_head'],'path':b['published_path'],'raw_sha256':b['sha256']})
+history=c.native.verify_mapping_chain(J)
+hist_files={p:h for p,h in history['input_hashes'].items()}
+for name in (c.POLICY,c.SIDECAR,c.BASELINE,'data/ingredients/mapped/Angustmycin.yaml'):
+ hist_files[name]=sha(J/name)
+for name,h in hist_files.items():assert sha(J/name)==h;files[str(J/name)]=pin(J/name)
+baseline_internal=['tests/test_campaign_suppressions.py','tests/test_campaign_suppression_integration.py','tests/test_campaign_demotion_integration.py','tests/test_campaign_publication.py','tests/test_campaign_owner_apply.py',c.MAKER,'pyproject.toml']
+baseline_internal+=list(c._source_owner.LOADED_PRODUCERS)+list(c.LOADED_PRODUCERS)
+internal={name:pin(P/name) for name in sorted(set(baseline_internal))}
+result={'scope':'Exact external immutable paths read by frozen faf71c2b ten integration cases, including real sequential prior fixture; not a full test run','fixture_sha256':sha(P/'tests/test_campaign_suppression_integration.py'),'original_review_root':str(W),'intake_root':str(I),'original_pair_plus_inputs':2+len(doc['source']['inputs']),'intake_control_files':2,'selected_materialization_bindings':selected,'actual_published_git_object_reads':published,'worker_object_repositories':[str(C/'workers'/s.replace('worker-','w')/'worktree') for s in sorted({o['worker_slot'] for op in operations for o in op['origins']})],'historical_inputs_including_prior_Angust':hist_files,'external_input_files':sorted(files.values(),key=lambda x:x['path']),'expected_internal_tracked_code_inputs':internal,'other_dependencies':'Retain complete existing Claw producer enumeration/revision, native environment and tracked-I snapshot. Git object storage may repack; bind requested head:path logical blobs, not pack filenames. Test-created files are outputs, not baseline source inputs.','recommended_guard':'Set both explicit root environment variables and rehash the closed external-input inventory plus re-read each published logical blob before/after every full validation phase. Freeze this inventory/selected-source controls alongside runner/expected-inputs; no absent/future receipt accepted.'}
+save('FIXTURE-INPUT-INVENTORY.json',result)
+print(json.dumps({'findings':2,'original_review_inputs':len(doc['source']['inputs']),'selected_bindings':len(selected),'published_blob_reads':len(published),'external_files':len(files),'historical_files':len(hist_files),'internal_files':len(internal)},indent=2))

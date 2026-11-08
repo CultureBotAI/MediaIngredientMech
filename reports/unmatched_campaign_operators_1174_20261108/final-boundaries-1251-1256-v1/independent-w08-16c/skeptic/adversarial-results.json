@@ -1,0 +1,292 @@
+{
+  "status": "PASS",
+  "at": "2026-11-08T11:45:29.232602+00:00",
+  "reviewer": "worker08:/root/organics",
+  "revision": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "runtime": {
+    "executable": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/all-unmatched-worker-08/venv/bin/python",
+    "version": "3.13.2",
+    "dont_write_bytecode": true
+  },
+  "executed_source_hashes": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/campaign_publication.py": "7e7aeeaedd04f7d57fd888a2f2d93663552a795e463a6809578bbee8e46f7b0d",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/curate/publication_guard.py": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/validation/mapping_change_receipts.py": "f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/export/reviewed_sssom.py": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/sssom_metadata.py": "0c5e08a55ff6845959ec84b1f530f9891e361f1a1b16b9f81b42beafb8a20d66",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/synonym_policy.py": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/scripts/validate_sssom_invariants.py": "3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78"
+  },
+  "test_fixture_hash": "c8f02f3da1f3ed07fcea8207d82abc636922fed85c8633a47180d4363ebde17e",
+  "actual_gate_functions_not_replaced": true,
+  "full_prepare_or_application_claimed": false,
+  "probe_count": 31,
+  "probes": [
+    {
+      "name": "all_four_ontology_and_registry_slots_removed",
+      "accepted": true,
+      "result": {
+        "after_sha256": "98f839be4365aae0b99cf3cdb8f33a06c9bf7a9afff100957c38b08e3484785c",
+        "trace_count": 4,
+        "preserved_unrelated_literal_line": true
+      },
+      "expected_rejection": false,
+      "pass": true
+    },
+    {
+      "name": "omit_slot_0",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "omit_slot_1",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "omit_slot_2",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "omit_slot_3",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "generated_demoted_CHEBI:8612",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "generated_demoted_cas:fixture",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "generated_demoted_kgmicrobe.ingredient:fixture",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "generated_demoted_kgmicrobe.compound:fixture",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "generated_demoted_UNKNOWN:fixture",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "invalid_relocation_kind",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "invalid_relocation_before_source_record",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "invalid_relocation_source_record",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "invalid_relocation_before_yaml_sha256",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "foreign_subject_deletion_not_smuggled",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: missing/extra/misowned row plan",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "duplicate_slot_ontology_refused",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: ambiguous native row slot",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "unrelated_generator_drift_preserved_not_applied",
+      "accepted": true,
+      "result": {
+        "after_sha256": "98f839be4365aae0b99cf3cdb8f33a06c9bf7a9afff100957c38b08e3484785c",
+        "trace_count": 4,
+        "preserved_unrelated_literal_line": true
+      },
+      "expected_rejection": false,
+      "pass": true
+    },
+    {
+      "name": "ambiguous_owner_subject_refused",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: ambiguous source subject",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "native_receipt_chain_none",
+      "accepted": true,
+      "result": {
+        "position_map": [
+          null,
+          null,
+          null,
+          null,
+          1
+        ],
+        "removed_rows": 4,
+        "approval": "NONE: all touched rows and changed owners require separate scientific review"
+      },
+      "expected_rejection": false,
+      "pass": true
+    },
+    {
+      "name": "native_receipt_chain_old",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: demotion old path has native owner-chain history; migration review required",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "native_receipt_chain_destination",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: demotion destination has native owner-chain history; migration review required",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_positive",
+      "accepted": true,
+      "result": null,
+      "expected_rejection": false,
+      "pass": true
+    },
+    {
+      "name": "source_completion_hidden_owner_addition",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: source completion owner membership or bytes changed",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_retired_old_reappears",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: source completion owner membership or bytes changed",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_retired_old_dangling_symlink",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Filesystem alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-retired_old_dangling_symlink/data/ingredients/mapped/Angustmycin.yaml",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_checkpoint_hidden_addition",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: source snapshot membership changed",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_protected_remove",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Campaign publication: source snapshot membership changed",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_immutable_input_drift",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-immutable_input_drift/evidence/proof.json",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_same_byte_inode_swap",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-same_byte_inode_swap/evidence/proof.json",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "source_completion_immutable_hardlink",
+      "accepted": false,
+      "error_type": "ValueError",
+      "message": "Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-immutable_hardlink/evidence/proof.json",
+      "expected_rejection": true,
+      "pass": true
+    },
+    {
+      "name": "policy_retains_old_owner_pin_and_history",
+      "accepted": true,
+      "result": {
+        "original_policy_unchanged": true,
+        "historical_owner_pin_retained": true
+      },
+      "expected_rejection": false,
+      "pass": true
+    }
+  ],
+  "scope": "Independent stage-level probes of actual frozen native projection, maker/chain, capture and policy functions. No replacement of owner/generation/gates. Root separately reruns full native suite; this does not claim that suite or actual campaign acceptance."
+}

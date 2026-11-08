@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-08T12:31:09.127497+00:00",
+  "reviewer": "worker08:/root",
+  "finding_id": "W08-7D4DB26-SRC-002",
+  "reviewed_head": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+  "script_review": "Read complete actual private fixture script, exact baseline repinning and three outcomes. No native replacements or timing injection.",
+  "results": [
+    {
+      "mode": "ordinary_working_drift",
+      "fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/technical/flag-fixtures/ordinary_working_drift",
+      "flag": "H notes/unrelated-tracked.txt\n",
+      "baseline_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "working_sha256": "71d95e363b14dedf359744ccaaa4b6d076bfe76054f5f73a020e94b4ab2dc6c8",
+      "completed_verifier": "not_applicable_no_receipt",
+      "receipt_sha256": null
+    },
+    {
+      "mode": "assume_unchanged",
+      "fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/technical/flag-fixtures/assume_unchanged",
+      "flag": "h notes/unrelated-tracked.txt\n",
+      "baseline_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "working_sha256": "71d95e363b14dedf359744ccaaa4b6d076bfe76054f5f73a020e94b4ab2dc6c8",
+      "completed_verifier": "complete",
+      "receipt_sha256": "84d9c0e3e9b4b095d76e81189df25a50652e92acc228afb084b5df688a612df8"
+    },
+    {
+      "mode": "skip_worktree",
+      "fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/technical/flag-fixtures/skip_worktree",
+      "flag": "S notes/unrelated-tracked.txt\n",
+      "baseline_sha256": "4660fd9db2431b4cc386ee503e352e836a5f92cc17b9fcc8161526fdf38e1379",
+      "working_sha256": "71d95e363b14dedf359744ccaaa4b6d076bfe76054f5f73a020e94b4ab2dc6c8",
+      "completed_verifier": "complete",
+      "receipt_sha256": "507c8856de671a110b86020543f2eda0f43732b87ffdbf1652fdd4f20584f2e6"
+    }
+  ],
+  "conclusion": "Confirmed live allowed-tracked-scope bypass. The operator did not write the unrelated notes file; its caller changed it before apply. The promised live guard accepts that already changed out-of-scope tracked file because Git flags suppress both diff views. This does not invalidate separate scientific payload content or require an eternal clean index for historical verification.",
+  "new_application_runs": 0,
+  "scientific_or_application_approval": false
+}

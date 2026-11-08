@@ -1,0 +1,744 @@
+{
+  "schema_version": 1,
+  "reviewer": "worker08:/root/vitamins",
+  "author_of_native_assembly": "worker08:/root",
+  "at": "2026-11-08T11:53:21.698713+00:00",
+  "status": "PASS",
+  "scope": "Independent final metadata/assembly check only. Actual native parse/read/current committed assertion and private evidence checks; no test suite, source application or science rerun.",
+  "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "native_verdict": "needs_curation",
+  "checks": [
+    {
+      "check": "native parse, validate and full rendered Markdown exact",
+      "passed": true
+    },
+    {
+      "check": "actual native committed-source assertion",
+      "passed": true
+    },
+    {
+      "check": "actual separate private evidence assertion",
+      "passed": true,
+      "count": 23
+    },
+    {
+      "check": "actual native read_review with explicit read-only Git root",
+      "passed": true,
+      "context": {
+        "GIT_DIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.git/worktrees/worktree8",
+        "GIT_WORK_TREE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "provenance": {
+        "status": "git_commit_verified",
+        "reason": "Historical regular-file blobs match the declared hashes."
+      }
+    },
+    {
+      "check": "two genuine prior pairs native-readable",
+      "passed": true
+    },
+    {
+      "check": "Git environment restored",
+      "passed": true
+    },
+    {
+      "check": "27 independently read actual regular Git blobs",
+      "passed": true
+    },
+    {
+      "check": "23 exact private evidence hashes, not represented as16c committed",
+      "passed": true
+    },
+    {
+      "check": "all18 native evidence snapshots exact",
+      "passed": true
+    },
+    {
+      "check": "all4 old W04 YAML/Markdown bytes preserved",
+      "passed": true
+    },
+    {
+      "check": "known finding stable targets and issue key retained",
+      "passed": true
+    },
+    {
+      "check": "two major findings and needs_curation remain",
+      "passed": true
+    },
+    {
+      "check": "exact5 committed code/test targets, not ingredient targets",
+      "passed": true
+    },
+    {
+      "check": "root findings equal authoritative native findings",
+      "passed": true
+    },
+    {
+      "check": "three peer verdicts agree",
+      "passed": true
+    },
+    {
+      "check": "actual19 source controls plus31 publisher stage probes accounted",
+      "passed": true
+    },
+    {
+      "check": "337 distinct successes across actual two runs only",
+      "passed": true
+    },
+    {
+      "check": "first9 native lock failures remain recorded",
+      "passed": true
+    },
+    {
+      "check": "actual hold/source/publication readback remains passing with exact inputs",
+      "passed": true
+    },
+    {
+      "check": "sealed lineage packet unchanged",
+      "passed": true
+    },
+    {
+      "check": "no scientific/future/application approval",
+      "passed": true
+    },
+    {
+      "check": "both required failed safety checks remain failed",
+      "passed": true
+    },
+    {
+      "check": "initial native build failure retained",
+      "passed": true
+    },
+    {
+      "check": "native pair byte-exact throughout independent readback",
+      "passed": true
+    },
+    {
+      "check": "three native metadata negatives refused",
+      "passed": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "bad committed digest",
+      "refused": true,
+      "error": "committed input digest disagrees: .claude/skills/reconcile-review-records/SKILL.md"
+    },
+    {
+      "name": "markdown mismatch",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "name": "pass cannot hide open major findings",
+      "refused": true,
+      "error": "a passing verdict cannot conceal unresolved major/blocker findings or failed required checks"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/ASSESSMENT.md",
+      "sha256": "3ffdf4a4dce0b6838365b667b9578dc990fd63fc7a356d4b8b8a510caeb4b140",
+      "size": 7036
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/findings.json",
+      "sha256": "4762b8e580744d5fedf8d6be3d0051f71c8e65ec3e01c837917ad0d0d4c74ffd",
+      "size": 3207
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native-validation.json",
+      "sha256": "f41a1f6b119088ff98687695e6f1694a0848841e1b7449c613e62bdcbba78bea",
+      "size": 2492
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/private-evidence-inspection.json",
+      "sha256": "28c6e4e808abe242fe04b0d6ac98effd4fed810288ad185be1e9bb7b45e1f8ed",
+      "size": 7983
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/provenance/build_native_review.py",
+      "sha256": "b012a47a39388ac65f9def6d14f64f6cd10382e89405ce0f3074a79f5d8a40d5",
+      "size": 21617
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/provenance/native_readback_v2.py",
+      "sha256": "d4c0ec461aeb6f9f885e16007a8baa4d1ffff0f8f7fd996b004f0b30d489c17c",
+      "size": 4072
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native-build.log",
+      "sha256": "a3c58ba9d34dbae15c6b5d0b49f5e8f422a43999c0d34b260a9a73b43bfb5e37",
+      "size": 802
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native-readback-v2.log",
+      "sha256": "aeb067aed3e4d680f49769a07d9d9c8e8f872d4b16146cc46c2659cdab1bed16",
+      "size": 2531
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/lineage/review.json",
+      "sha256": "9c39927c198d583bfb4c4028fe78c2b1d48ec69aeac3c99e435b7bc10bee778f",
+      "size": 9492
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/lineage/actual-integration-v2-readback.json",
+      "sha256": "5a6481014e8698e3a56fba2fd0fa94e98f9fe0eb38b4e64dc4e9acfea51f9230",
+      "size": 28335
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/review.json",
+      "sha256": "6f8b5f7043d59a3e0602d82bbce85206b7e9d1a4d6c9fb73fff86b9adc2df866",
+      "size": 8336
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/review.json",
+      "sha256": "08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1",
+      "size": 17651
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/results.json",
+      "sha256": "a4a3877e8c06e8dc6892bc42747020cb8d523044e4818a4805d347d63d984cb4",
+      "size": 24549
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/boundary-controls.json",
+      "sha256": "424e46f3eca22b608f844a81e3b007325a78a4faaf0a948007c3f9bee62fffbc",
+      "size": 5159
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/adversarial-results.json",
+      "sha256": "5d20e55dec76ca5996094bb9ee762242e9432c1610650bd739259ffedc24b0d3",
+      "size": 12548
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/scripts/record_review.py",
+      "sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d",
+      "size": 41900
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native/reviews/structured/20261108T115104Z-w08-combined-16c-independent/review.yaml",
+      "sha256": "e73327f51f0c72260e9c9938df54d20b830df7ddc13a0125e18b1e6403da4cd2",
+      "size": 27122
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native/reviews/structured/20261108T115104Z-w08-combined-16c-independent/review.md",
+      "sha256": "547e61017f62e48576704a7dfaf753bfff6d7f7ef97746f2a4b68114b3303c41",
+      "size": 42099
+    }
+  ],
+  "committed_blobs": [
+    {
+      "path": ".claude/skills/reconcile-review-records/SKILL.md",
+      "expected": "b8c3e3fdb31e58a49343f20b11c7a1c2a3616f16ef36601ccd072e2693031474",
+      "actual": "b8c3e3fdb31e58a49343f20b11c7a1c2a3616f16ef36601ccd072e2693031474",
+      "tree_entry": "100644 blob aa6b1aa55bdf7950d1519766527d20937d48cb04\t.claude/skills/reconcile-review-records/SKILL.md",
+      "passed": true
+    },
+    {
+      "path": "AGENTS.md",
+      "expected": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf",
+      "actual": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf",
+      "tree_entry": "100644 blob d4f96986adff28dda7ae02c2472d492865a0afd1\tAGENTS.md",
+      "passed": true
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "expected": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "actual": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "tree_entry": "100644 blob 0db96622190b91e80948f802b0378a7f5502b6ae\tMAPPING_SEMANTICS.md",
+      "passed": true
+    },
+    {
+      "path": "conf/record_review.yaml",
+      "expected": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e",
+      "actual": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e",
+      "tree_entry": "100644 blob f52355c5bfb4dbb7bede55ff9615b0f66d7a02d9\tconf/record_review.yaml",
+      "passed": true
+    },
+    {
+      "path": "docs/record-review-profile.md",
+      "expected": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+      "actual": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7",
+      "tree_entry": "100644 blob aebfb72165c548b9feb053bcca9cecfa00b993d7\tdocs/record-review-profile.md",
+      "passed": true
+    },
+    {
+      "path": "docs/record-reviews.md",
+      "expected": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+      "actual": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b",
+      "tree_entry": "100644 blob 326f100021054061ca323054a8f20b5228ce3a92\tdocs/record-reviews.md",
+      "passed": true
+    },
+    {
+      "path": "justfile",
+      "expected": "a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a",
+      "actual": "a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a",
+      "tree_entry": "100644 blob f16068fd4e3aebae526ac977395c28d366a6359c\tjustfile",
+      "passed": true
+    },
+    {
+      "path": "pyproject.toml",
+      "expected": "6f9eebf51774adb8c9ab742f832518ba1682fc43704ad994f73b25829645fef6",
+      "actual": "6f9eebf51774adb8c9ab742f832518ba1682fc43704ad994f73b25829645fef6",
+      "tree_entry": "100644 blob 95d6af25e747b6ca13154312203850163bf3a194\tpyproject.toml",
+      "passed": true
+    },
+    {
+      "path": "schema/record_review.yaml",
+      "expected": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb",
+      "actual": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb",
+      "tree_entry": "100644 blob 630d95bda4773785a2cdfe42d32561a9f1591c0f\tschema/record_review.yaml",
+      "passed": true
+    },
+    {
+      "path": "scripts/apply_unmatched_campaign_owners.py",
+      "expected": "d68fff3b69e6502bb8adad828019b91e9b664687cdaaf4453159dfb81f16cbdb",
+      "actual": "d68fff3b69e6502bb8adad828019b91e9b664687cdaaf4453159dfb81f16cbdb",
+      "tree_entry": "100644 blob c4b6ce1d3dfea563890757bf3b907d9ca9e5e0e0\tscripts/apply_unmatched_campaign_owners.py",
+      "passed": true
+    },
+    {
+      "path": "scripts/record_review.py",
+      "expected": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d",
+      "actual": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d",
+      "tree_entry": "100644 blob a7d0c238840d78e3328649819c4e589ff780015e\tscripts/record_review.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "expected": "7e7aeeaedd04f7d57fd888a2f2d93663552a795e463a6809578bbee8e46f7b0d",
+      "actual": "7e7aeeaedd04f7d57fd888a2f2d93663552a795e463a6809578bbee8e46f7b0d",
+      "tree_entry": "100644 blob da309128625c57514b78f5f8dc9e020587205a68\tsrc/mediaingredientmech/campaign_publication.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/curate/apply_receipt.py",
+      "expected": "6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f",
+      "actual": "6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f",
+      "tree_entry": "100644 blob b0090e80bb56c3ff64a24cbf129e4ebf57d9ea4a\tsrc/mediaingredientmech/curate/apply_receipt.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "expected": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+      "actual": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+      "tree_entry": "100644 blob 44c79ad16b493ca5dc44a730bfbd06b49e2cd46f\tsrc/mediaingredientmech/curate/campaign_owner_apply.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/curate/publication_guard.py",
+      "expected": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+      "actual": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+      "tree_entry": "100644 blob e2f1ea566f824e82fabffd7ab659e6e19b109f5f\tsrc/mediaingredientmech/curate/publication_guard.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/export/reviewed_sssom.py",
+      "expected": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2",
+      "actual": "2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2",
+      "tree_entry": "100644 blob 37312a1fc68b49e5591a46451b46a9bf287940f4\tsrc/mediaingredientmech/export/reviewed_sssom.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mech_shared.yaml",
+      "expected": "c2e7054fd32635e380c698282bd886a9105861009b9f0474f02bb1b80865e895",
+      "actual": "c2e7054fd32635e380c698282bd886a9105861009b9f0474f02bb1b80865e895",
+      "tree_entry": "100644 blob fa1f7956c6a83e04ffa96d02bdf911461d09705a\tsrc/mediaingredientmech/schema/mech_shared.yaml",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "expected": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+      "actual": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012",
+      "tree_entry": "100644 blob 7a0ecbc07e167376a18e5ea51d18931b0a7bb017\tsrc/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/validation/mapping_change_receipts.py",
+      "expected": "f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d",
+      "actual": "f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d",
+      "tree_entry": "100644 blob f6a3b0e4e0f8e9ee3bf9e1efce91a9f88b218522\tsrc/mediaingredientmech/validation/mapping_change_receipts.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/validation/semantic_release.py",
+      "expected": "a9bb99c665044bfbb008e9786f1a9aae92e291954f29c186f5c0d9c06f313867",
+      "actual": "a9bb99c665044bfbb008e9786f1a9aae92e291954f29c186f5c0d9c06f313867",
+      "tree_entry": "100644 blob fc950b955ce77f2788d57d97c700c4290cbf502d\tsrc/mediaingredientmech/validation/semantic_release.py",
+      "passed": true
+    },
+    {
+      "path": "src/mediaingredientmech/validation/write_validated.py",
+      "expected": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "actual": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+      "tree_entry": "100644 blob 3b63184aaff04abf5f44d11fb17af5cf87ec34f8\tsrc/mediaingredientmech/validation/write_validated.py",
+      "passed": true
+    },
+    {
+      "path": "tests/conftest.py",
+      "expected": "0d8f8f762981114967674c1b665378a2c9c448a6fcb8a2989db32948d6be8a5c",
+      "actual": "0d8f8f762981114967674c1b665378a2c9c448a6fcb8a2989db32948d6be8a5c",
+      "tree_entry": "100644 blob d6f7f7bd2e9dc5da9d543bac5fc25bf29ca79ac3\ttests/conftest.py",
+      "passed": true
+    },
+    {
+      "path": "tests/historical_source_anchors.py",
+      "expected": "ef3d28760a55a6ab17e78ba78ffce04f02825d8ea54e0bd4422322b510f2f2fd",
+      "actual": "ef3d28760a55a6ab17e78ba78ffce04f02825d8ea54e0bd4422322b510f2f2fd",
+      "tree_entry": "100644 blob c719f3e8fc17ede8e53ff8c09426c846f435d22e\ttests/historical_source_anchors.py",
+      "passed": true
+    },
+    {
+      "path": "tests/test_campaign_demotion_integration.py",
+      "expected": "4abdcca5f92ed97317f3768fb390f25060c3048e3d47180479aca57dbc45aa43",
+      "actual": "4abdcca5f92ed97317f3768fb390f25060c3048e3d47180479aca57dbc45aa43",
+      "tree_entry": "100644 blob c628e5dce15114750f4f16fb00b86684b04a22cc\ttests/test_campaign_demotion_integration.py",
+      "passed": true
+    },
+    {
+      "path": "tests/test_campaign_owner_apply.py",
+      "expected": "58ae678e1cc16dfd435758678be3a770f42ac9090403a403de6f2128d3dea180",
+      "actual": "58ae678e1cc16dfd435758678be3a770f42ac9090403a403de6f2128d3dea180",
+      "tree_entry": "100644 blob ee4d1252a9c0fe8be97140d6a6b907d0e570f34a\ttests/test_campaign_owner_apply.py",
+      "passed": true
+    },
+    {
+      "path": "tests/test_campaign_publication.py",
+      "expected": "c8f02f3da1f3ed07fcea8207d82abc636922fed85c8633a47180d4363ebde17e",
+      "actual": "c8f02f3da1f3ed07fcea8207d82abc636922fed85c8633a47180d4363ebde17e",
+      "tree_entry": "100644 blob ea17b516bb85230fe90006b7c2e32c71b06e28c7\ttests/test_campaign_publication.py",
+      "passed": true
+    },
+    {
+      "path": "uv.lock",
+      "expected": "f5ce4325376797ada321c0ffba1e6050355e3185c0a079d2c731d17480aeca1a",
+      "actual": "f5ce4325376797ada321c0ffba1e6050355e3185c0a079d2c731d17480aeca1a",
+      "tree_entry": "100644 blob 2ed076fa09ae8718a0130be65dba3b8035367278\tuv.lock",
+      "passed": true
+    }
+  ],
+  "private_evidence": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/ASSESSMENT.md",
+      "expected": "3ffdf4a4dce0b6838365b667b9578dc990fd63fc7a356d4b8b8a510caeb4b140",
+      "actual": "3ffdf4a4dce0b6838365b667b9578dc990fd63fc7a356d4b8b8a510caeb4b140",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/FINDING-W08-16C-CODE-002.json",
+      "expected": "948962221342c30a8420784b4d71ca4a063fafca357f775842f3fd6c3bb9b6fd",
+      "actual": "948962221342c30a8420784b4d71ca4a063fafca357f775842f3fd6c3bb9b6fd",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/committed-source-bindings.json",
+      "expected": "64731424218e489cbfabc620c6422ba51927336eab9c98e00380c5e0b072a535",
+      "actual": "64731424218e489cbfabc620c6422ba51927336eab9c98e00380c5e0b072a535",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/entry.json",
+      "expected": "9f8a977487812360e340ea7db0e118c69446a74019167fbde171c43c9c243028",
+      "actual": "9f8a977487812360e340ea7db0e118c69446a74019167fbde171c43c9c243028",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/command.json",
+      "expected": "c7b1016656b3f8107c314a4df3ece24ba53bd94e70a7e00c39bc3487b2092a3e",
+      "actual": "c7b1016656b3f8107c314a4df3ece24ba53bd94e70a7e00c39bc3487b2092a3e",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/fixtures/test_real_demotion_preserves_20/reports/hold-proof.json",
+      "expected": "e005a56af2e292988a7095f3a732caae830fb5cfbb6ce390b4d5075662eb8399",
+      "actual": "e005a56af2e292988a7095f3a732caae830fb5cfbb6ce390b4d5075662eb8399",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/result.json",
+      "expected": "ff518d5e66f5bb6b6d2a83f37d8bfc9c1d061ce129c16cf8044c999256aae11e",
+      "actual": "ff518d5e66f5bb6b6d2a83f37d8bfc9c1d061ce129c16cf8044c999256aae11e",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-summary.json",
+      "expected": "5d6b944c557b7183f7a3c0095cef2bd510b4f585055798edcc1feec50df5b631",
+      "actual": "5d6b944c557b7183f7a3c0095cef2bd510b4f585055798edcc1feec50df5b631",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/result.json",
+      "expected": "979149bbef1c3f9a4648f54f498fa847be32cebaf58d42cb00d662e1047ca240",
+      "actual": "979149bbef1c3f9a4648f54f498fa847be32cebaf58d42cb00d662e1047ca240",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/ARCHIVE.json",
+      "expected": "c5edc55b1aaa5f291f37fb62b94934b6754d64113e46d5bdcd889c93eb42d967",
+      "actual": "c5edc55b1aaa5f291f37fb62b94934b6754d64113e46d5bdcd889c93eb42d967",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/campaign_publication.py",
+      "expected": "7e7aeeaedd04f7d57fd888a2f2d93663552a795e463a6809578bbee8e46f7b0d",
+      "actual": "7e7aeeaedd04f7d57fd888a2f2d93663552a795e463a6809578bbee8e46f7b0d",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "expected": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+      "actual": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py",
+      "expected": "4abdcca5f92ed97317f3768fb390f25060c3048e3d47180479aca57dbc45aa43",
+      "actual": "4abdcca5f92ed97317f3768fb390f25060c3048e3d47180479aca57dbc45aa43",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_owner_apply.py",
+      "expected": "58ae678e1cc16dfd435758678be3a770f42ac9090403a403de6f2128d3dea180",
+      "actual": "58ae678e1cc16dfd435758678be3a770f42ac9090403a403de6f2128d3dea180",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_publication.py",
+      "expected": "c8f02f3da1f3ed07fcea8207d82abc636922fed85c8633a47180d4363ebde17e",
+      "actual": "c8f02f3da1f3ed07fcea8207d82abc636922fed85c8633a47180d4363ebde17e",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/inputs/issue1255-live.json",
+      "expected": "7e14b28e045863b5aabd0b7a9103d157edaff863008e016171dc25b7cf1d0bd2",
+      "actual": "7e14b28e045863b5aabd0b7a9103d157edaff863008e016171dc25b7cf1d0bd2",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/lineage/review.json",
+      "expected": "9c39927c198d583bfb4c4028fe78c2b1d48ec69aeac3c99e435b7bc10bee778f",
+      "actual": "9c39927c198d583bfb4c4028fe78c2b1d48ec69aeac3c99e435b7bc10bee778f",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/prior-finding-lineage.json",
+      "expected": "fc5f407724e9967fb45d7cc51a640eb9541cb63af08a0be253665b4cd2c063ab",
+      "actual": "fc5f407724e9967fb45d7cc51a640eb9541cb63af08a0be253665b4cd2c063ab",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/root-probes/late-head-results-v2.json",
+      "expected": "090be4930969fde0b830419d1c27f21feb7e36653f9b769a24b33b67ffe0417e",
+      "actual": "090be4930969fde0b830419d1c27f21feb7e36653f9b769a24b33b67ffe0417e",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/input-inspection.json",
+      "expected": "0241a2a8faa23d65676a6fe2689334ad06363fb4cce581cb3e264a15dd2372cc",
+      "actual": "0241a2a8faa23d65676a6fe2689334ad06363fb4cce581cb3e264a15dd2372cc",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/review.json",
+      "expected": "08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1",
+      "actual": "08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/ast-preservation.json",
+      "expected": "aea52a212251f80b07a81d1ae42cabb771908372a62f5ad7598e89b08754ddb3",
+      "actual": "aea52a212251f80b07a81d1ae42cabb771908372a62f5ad7598e89b08754ddb3",
+      "passed": true
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/review.json",
+      "expected": "6f8b5f7043d59a3e0602d82bbce85206b7e9d1a4d6c9fb73fff86b9adc2df866",
+      "actual": "6f8b5f7043d59a3e0602d82bbce85206b7e9d1a4d6c9fb73fff86b9adc2df866",
+      "passed": true
+    }
+  ],
+  "native_evidence": [
+    {
+      "evidence_id": "ENTRY",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/entry.json",
+      "expected": "9f8a977487812360e340ea7db0e118c69446a74019167fbde171c43c9c243028",
+      "actual": "9f8a977487812360e340ea7db0e118c69446a74019167fbde171c43c9c243028",
+      "passed": true
+    },
+    {
+      "evidence_id": "ARCHIVE",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/ARCHIVE.json",
+      "expected": "c5edc55b1aaa5f291f37fb62b94934b6754d64113e46d5bdcd889c93eb42d967",
+      "actual": "c5edc55b1aaa5f291f37fb62b94934b6754d64113e46d5bdcd889c93eb42d967",
+      "passed": true
+    },
+    {
+      "evidence_id": "COMMIT",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/committed-source-bindings.json",
+      "expected": "64731424218e489cbfabc620c6422ba51927336eab9c98e00380c5e0b072a535",
+      "actual": "64731424218e489cbfabc620c6422ba51927336eab9c98e00380c5e0b072a535",
+      "passed": true
+    },
+    {
+      "evidence_id": "TECHNICAL",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/review.json",
+      "expected": "6f8b5f7043d59a3e0602d82bbce85206b7e9d1a4d6c9fb73fff86b9adc2df866",
+      "actual": "6f8b5f7043d59a3e0602d82bbce85206b7e9d1a4d6c9fb73fff86b9adc2df866",
+      "passed": true
+    },
+    {
+      "evidence_id": "SKEPTIC",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/review.json",
+      "expected": "08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1",
+      "actual": "08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1",
+      "passed": true
+    },
+    {
+      "evidence_id": "LINEAGE",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/lineage/review.json",
+      "expected": "9c39927c198d583bfb4c4028fe78c2b1d48ec69aeac3c99e435b7bc10bee778f",
+      "actual": "9c39927c198d583bfb4c4028fe78c2b1d48ec69aeac3c99e435b7bc10bee778f",
+      "passed": true
+    },
+    {
+      "evidence_id": "TESTS",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-summary.json",
+      "expected": "5d6b944c557b7183f7a3c0095cef2bd510b4f585055798edcc1feec50df5b631",
+      "actual": "5d6b944c557b7183f7a3c0095cef2bd510b4f585055798edcc1feec50df5b631",
+      "passed": true
+    },
+    {
+      "evidence_id": "RUN1",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/result.json",
+      "expected": "979149bbef1c3f9a4648f54f498fa847be32cebaf58d42cb00d662e1047ca240",
+      "actual": "979149bbef1c3f9a4648f54f498fa847be32cebaf58d42cb00d662e1047ca240",
+      "passed": true
+    },
+    {
+      "evidence_id": "RUN2",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/result.json",
+      "expected": "ff518d5e66f5bb6b6d2a83f37d8bfc9c1d061ce129c16cf8044c999256aae11e",
+      "actual": "ff518d5e66f5bb6b6d2a83f37d8bfc9c1d061ce129c16cf8044c999256aae11e",
+      "passed": true
+    },
+    {
+      "evidence_id": "RUN2-COMMAND",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/command.json",
+      "expected": "c7b1016656b3f8107c314a4df3ece24ba53bd94e70a7e00c39bc3487b2092a3e",
+      "actual": "c7b1016656b3f8107c314a4df3ece24ba53bd94e70a7e00c39bc3487b2092a3e",
+      "passed": true
+    },
+    {
+      "evidence_id": "ROOT-PROBES",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/root-probes/late-head-results-v2.json",
+      "expected": "090be4930969fde0b830419d1c27f21feb7e36653f9b769a24b33b67ffe0417e",
+      "actual": "090be4930969fde0b830419d1c27f21feb7e36653f9b769a24b33b67ffe0417e",
+      "passed": true
+    },
+    {
+      "evidence_id": "NEW-FINDING",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/FINDING-W08-16C-CODE-002.json",
+      "expected": "948962221342c30a8420784b4d71ca4a063fafca357f775842f3fd6c3bb9b6fd",
+      "actual": "948962221342c30a8420784b4d71ca4a063fafca357f775842f3fd6c3bb9b6fd",
+      "passed": true
+    },
+    {
+      "evidence_id": "ISSUE1255",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/inputs/issue1255-live.json",
+      "expected": "7e14b28e045863b5aabd0b7a9103d157edaff863008e016171dc25b7cf1d0bd2",
+      "actual": "7e14b28e045863b5aabd0b7a9103d157edaff863008e016171dc25b7cf1d0bd2",
+      "passed": true
+    },
+    {
+      "evidence_id": "PRIOR-LINEAGE",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/prior-finding-lineage.json",
+      "expected": "fc5f407724e9967fb45d7cc51a640eb9541cb63af08a0be253665b4cd2c063ab",
+      "actual": "fc5f407724e9967fb45d7cc51a640eb9541cb63af08a0be253665b4cd2c063ab",
+      "passed": true
+    },
+    {
+      "evidence_id": "SOURCE-AST",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/ast-preservation.json",
+      "expected": "aea52a212251f80b07a81d1ae42cabb771908372a62f5ad7598e89b08754ddb3",
+      "actual": "aea52a212251f80b07a81d1ae42cabb771908372a62f5ad7598e89b08754ddb3",
+      "passed": true
+    },
+    {
+      "evidence_id": "PUB-AST",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/input-inspection.json",
+      "expected": "0241a2a8faa23d65676a6fe2689334ad06363fb4cce581cb3e264a15dd2372cc",
+      "actual": "0241a2a8faa23d65676a6fe2689334ad06363fb4cce581cb3e264a15dd2372cc",
+      "passed": true
+    },
+    {
+      "evidence_id": "HOLD",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/fixtures/test_real_demotion_preserves_20/reports/hold-proof.json",
+      "expected": "e005a56af2e292988a7095f3a732caae830fb5cfbb6ce390b4d5075662eb8399",
+      "actual": "e005a56af2e292988a7095f3a732caae830fb5cfbb6ce390b4d5075662eb8399",
+      "passed": true
+    },
+    {
+      "evidence_id": "ASSESSMENT",
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/ASSESSMENT.md",
+      "expected": "3ffdf4a4dce0b6838365b667b9578dc990fd63fc7a356d4b8b8a510caeb4b140",
+      "actual": "3ffdf4a4dce0b6838365b667b9578dc990fd63fc7a356d4b8b8a510caeb4b140",
+      "passed": true
+    }
+  ],
+  "prior_pairs": [
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/native-private-overlay/reviews/structured/20261108T113551Z-rejection-fix-independent/review.yaml",
+      "snapshot": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T113551Z-rejection-fix-independent/review.yaml",
+      "sha256": "ee816f2b084b33a9064373f873c7d9c8521c8fec9716aebb34db1b7fd882c85f",
+      "snapshot_actual": "ee816f2b084b33a9064373f873c7d9c8521c8fec9716aebb34db1b7fd882c85f",
+      "original_actual": "ee816f2b084b33a9064373f873c7d9c8521c8fec9716aebb34db1b7fd882c85f",
+      "passed": true
+    },
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/native-private-overlay/reviews/structured/20261108T113551Z-rejection-fix-independent/review.md",
+      "snapshot": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T113551Z-rejection-fix-independent/review.md",
+      "sha256": "773c791133dff96a562626a2f25773cdbf2a893e3fd63b20a5d38f3ffbdc2c84",
+      "snapshot_actual": "773c791133dff96a562626a2f25773cdbf2a893e3fd63b20a5d38f3ffbdc2c84",
+      "original_actual": "773c791133dff96a562626a2f25773cdbf2a893e3fd63b20a5d38f3ffbdc2c84",
+      "passed": true
+    },
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/native-private-overlay/reviews/structured/20261108T113742Z-rejection-fix-independent-v2/review.yaml",
+      "snapshot": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T113742Z-rejection-fix-independent-v2/review.yaml",
+      "sha256": "7a2e147cbedf6af3c71b13083a90e13f884dcec8a35be9e63e92b91558a697e8",
+      "snapshot_actual": "7a2e147cbedf6af3c71b13083a90e13f884dcec8a35be9e63e92b91558a697e8",
+      "original_actual": "7a2e147cbedf6af3c71b13083a90e13f884dcec8a35be9e63e92b91558a697e8",
+      "passed": true
+    },
+    {
+      "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/native-private-overlay/reviews/structured/20261108T113742Z-rejection-fix-independent-v2/review.md",
+      "snapshot": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T113742Z-rejection-fix-independent-v2/review.md",
+      "sha256": "bb61212f25185cfb53836d280a931a26b73508eb9c131c603b9fb4a4d4efb010",
+      "snapshot_actual": "bb61212f25185cfb53836d280a931a26b73508eb9c131c603b9fb4a4d4efb010",
+      "original_actual": "bb61212f25185cfb53836d280a931a26b73508eb9c131c603b9fb4a4d4efb010",
+      "passed": true
+    }
+  ],
+  "git_context": {
+    "GIT_DIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.git/worktrees/worktree8",
+    "GIT_WORK_TREE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native",
+    "GIT_OPTIONAL_LOCKS": "0"
+  },
+  "new_assembly_findings": [],
+  "open_code_findings": [
+    "REJECTION-CODE-001/#1255",
+    "W08-16C-CODE-002"
+  ],
+  "scientific_approval": false,
+  "code_acceptance": false,
+  "application_approval": false,
+  "limits": [
+    "PASS means the assembled needs_curation report faithfully binds its evidence, not that the code is safe to apply.",
+    "Root performs whole final preservation separately; this check rehashes only declared committed/private/peer inputs and prior review pairs.",
+    "Source19 and publisher31 are genuine peer-executed controls read from their receipts, not executions claimed by this reviewer.",
+    "Initial shared native-lock failure and native nested-root readback failure remain intact; supported private lock/Git context changes did not patch producer/helper or rewrite pair.",
+    "Prior source and design involvement is disclosed; no ingredient identity, Angust A/C, role, mapping or release approval is renewed."
+  ]
+}

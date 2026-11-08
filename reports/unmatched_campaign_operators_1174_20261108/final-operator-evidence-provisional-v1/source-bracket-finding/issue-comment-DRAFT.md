@@ -1,0 +1,7 @@
+The private bracket fix closes the two original one-way mutations, but an independent actual-native probe found a narrower within-observation mismatch at source `adba0b6b…`.
+
+Both full index snapshots contain the same invalid blob. Between those observations, real Git writes temporarily restore the accepted index while the separate cached-path/entry/blob checks run, then restore the invalid blob before the final snapshot. Both the unrelated-contract and planned-owner variants return `complete`; no mutation occurs after the final read. A clean control succeeds, and leaving the invalid blob visible throughout correctly refuses.
+
+The bounded fix should validate the captured stage/path/mode/blob snapshot itself, or prove every validated subview equals that captured view, then recheck the final logical snapshot. Preserve stat-cache refresh, legitimate installed staging, literal paths, and historical completed verification after later commits. This does not request global atomic protection or a current-index requirement on historical replay.
+
+Native functions/results were not replaced; the probe only schedules real private Git index writes. Source payloads, maintained checkouts and scientific approval are untouched. Exact original/final snapshots, receipts, probe and source hashes are retained in the independent packet. Finding `IR-INDEX-COHERENCE-001` is a continuation of `W08-7D4DB26-SRC-001` under #1256, not a new unrelated issue.

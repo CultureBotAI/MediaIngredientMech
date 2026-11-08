@@ -1,0 +1,91 @@
+--- preserved-failed-v1
++++ corrected-private-v2
+@@ -78,6 +78,8 @@
+         "CLAW_ROOT": str(T / "claw"),
+         "CLAW_SRC": str(T / "claw/src"),
+         "CAMPAIGN_HISTORY_ROOT": str(J),
++        "CAMPAIGN_SUPPRESSION_REVIEW_ROOT": str(C / "workers/w07/worktree/.temp/four-suppression-policy-independent-v1"),
++        "CAMPAIGN_SUPPRESSION_INTAKE_ROOT": str(C / "integration/final-native-intake-v4-preparation"),
+         "CULTUREMECH_ROOT": str(R.parent / "CultureMech"),
+         "KG_MICROBE_ROOT": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107",
+         "OPENCLAW_WORKSPACE": str(output / "private-openclaw-workspace"),
+@@ -102,6 +104,63 @@
+             require(stat.S_ISREG(info.st_mode), "Unexpected tracked file type: " + name)
+             result[name] = {"sha256": sha(path), "executable": bool(info.st_mode & 0o111)}
+     return result
++
++
++def suppression_fixture_snapshot(output):
++    """Bind original external fixture sources and logical Git blobs, never generated outputs."""
++    inventory_path = HERE / "fixture-input-inventory.json"
++    expected = json.loads((HERE / "expected-inputs.json").read_bytes())
++    require(sha(inventory_path) == expected["suppression_fixture_inventory_sha256"],
++            "Frozen external fixture inventory changed")
++    inventory = json.loads(inventory_path.read_bytes())
++    env = environment(output)
++    require(env["CAMPAIGN_SUPPRESSION_REVIEW_ROOT"] == inventory["original_review_root"],
++            "Original suppression review root differs")
++    require(env["CAMPAIGN_SUPPRESSION_INTAKE_ROOT"] == inventory["intake_root"],
++            "Original suppression intake root differs")
++    files = {}
++    for entry in inventory["external_input_files"]:
++        path = Path(entry["path"])
++        require(path.is_absolute() and not any(p.is_symlink() for p in (path, *path.parents)),
++                "Aliased external fixture input: " + str(path))
++        require(stat.S_ISREG(path.lstat().st_mode), "Nonregular external fixture input")
++        digest = sha(path)
++        require(digest == entry["sha256"] and path.stat().st_size == entry["bytes"],
++                "External fixture source changed: " + str(path))
++        require(str(path) not in files, "Repeated external fixture input")
++        files[str(path)] = digest
++    tracked_inputs = {}
++    for relative, entry in inventory["expected_internal_tracked_code_inputs"].items():
++        path = I / relative
++        require(not Path(relative).is_absolute() and ".." not in Path(relative).parts,
++                "Noncanonical tracked fixture input")
++        require(stat.S_ISREG(path.lstat().st_mode) and not path.is_symlink(),
++                "Nonregular tracked fixture input")
++        digest = sha(path)
++        require(digest == entry["sha256"] and path.stat().st_size == entry["bytes"],
++                "Tracked fixture producer changed: " + relative)
++        tracked_inputs[relative] = digest
++    repositories = [Path(value) for value in inventory["worker_object_repositories"]]
++    logical_blobs = []
++    for entry in inventory["actual_published_git_object_reads"]:
++        worker = entry["binding_id"].split("-", 1)[0]
++        matches = [p for p in repositories if p == C / "workers" / worker / "worktree"]
++        require(len(matches) == 1, "Missing exact worker object repository")
++        repo = matches[0]
++        require(not any(p.is_symlink() for p in (repo, *repo.parents)),
++                "Aliased worker object repository")
++        require(re.fullmatch(r"[0-9a-f]{40}", entry["head"]), "Invalid published fixture head")
++        path = Path(entry["path"])
++        require(not path.is_absolute() and ".." not in path.parts, "Invalid published fixture path")
++        content = git(repo, "show", entry["head"] + ":" + entry["path"])
++        digest = hashlib.sha256(content).hexdigest()
++        require(digest == entry["raw_sha256"], "Published fixture blob differs")
++        logical_blobs.append({"repository": str(repo), "head": entry["head"],
++                              "path": entry["path"], "sha256": digest})
++    return {"inventory_sha256": sha(inventory_path), "external_files": files,
++            "tracked_fixture_producers": tracked_inputs, "logical_published_blobs": logical_blobs,
++            "review_root": env["CAMPAIGN_SUPPRESSION_REVIEW_ROOT"],
++            "intake_root": env["CAMPAIGN_SUPPRESSION_INTAKE_ROOT"]}
+ 
+ 
+ def snapshot(output):
+@@ -133,6 +192,7 @@
+         "claw_head": head(T / "claw"), "claw_status": clean(T / "claw"),
+         "producer_sha256": {str(p): sha(p) for p in sorted(producer_paths)},
+         "history_head": head(J), "history_status": clean(J), "history": history,
++        "suppression_fixture_inputs": suppression_fixture_snapshot(output),
+     }
+ 
+ 
+@@ -228,6 +288,7 @@
+     final = snapshot(output)
+     require(all(equivalent(before, final).values()), "Final input drift")
+     log = (output / "test.log").read_text()
++    lines = log.splitlines()
+     result = [line for line in log.splitlines() if re.search(r"\d+ passed.* in \d+", line)]
+     require(len(result) == 1, "Missing unambiguous complete pytest summary")
+     expected_counts = json.loads((HERE / "expected-inputs.json").read_bytes())["required_native_cases"]

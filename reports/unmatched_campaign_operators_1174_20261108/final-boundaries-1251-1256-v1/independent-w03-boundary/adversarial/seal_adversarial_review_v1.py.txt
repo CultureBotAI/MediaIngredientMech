@@ -1,0 +1,60 @@
+from pathlib import Path
+import datetime,hashlib,json,os
+O=Path(__file__).resolve().parent;P=O.parent;R=next(p for p in O.parents if (p/'MAPPING_SEMANTICS.md').is_file());C=R.parents[2]
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def read(p):return json.loads(p.read_bytes())
+def put(name,obj):
+ p=O/name;assert not p.exists();p.write_text(json.dumps(obj,indent=2,ensure_ascii=False)+'\n');return {'path':name,'sha256':sha(p)}
+inputs=[]
+for n in ['frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py','frozen-src/tests/test_campaign_owner_apply.py','inputs/parent/src/mediaingredientmech/curate/campaign_owner_apply.py','inputs/exact-commit.patch','inputs/live/issue1251.json','inputs/live/issue1252.json','inputs/live/issue1251-comments.json','inputs/live/issue1252-comments.json','inputs/live/pr1205.json','inputs/live/remote-head.txt','inputs/author-packet/HANDOFF.json','inputs/author-packet/MANIFEST.json']:
+ f=P/n;inputs.append({'path':'../'+n,'sha256':sha(f),'inspected':True})
+W=C/'workers/w08/worktree/.temp/native-application-boundary-independent-v1'
+for n in ['HANDOFF.json','findings.json','skeptic/HANDOFF.json']:
+ f=W/n;inputs.append({'path':str(f),'sha256':sha(f),'inspected':True})
+assert sha(P/'frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py')=='4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70'
+assert sha(P/'frozen-src/tests/test_campaign_owner_apply.py')=='049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569'
+assert sha(W/'findings.json')=='dd40f468b21ee641a30a87d5e20bbad78907632a9b08bf4a3b2c7b7b042b549d'
+assert read(P/'inputs/live/pr1205.json')['head']['sha']=='d691c079cf3923daed89284b7579913b84c3a34c'
+v1=read(O/'probe-results-v1.json');overlap=read(O/'overlap-results-v1.json');v2=read(O/'membership-result-v2.json')
+assert v1['counts']=={'total':36,'pass':36,'fail':0};assert overlap['counts']=={'total':5,'pass':4,'fail':1};assert v2['status']=='PASS'
+fixture_rows=[];symlinks=[]
+for dirname,dirs,files in os.walk(O/'fixtures',followlinks=False):
+ dirs[:]=[d for d in dirs if d not in {'.git','__pycache__'}]
+ for name in files:
+  p=Path(dirname)/name;rel=str(p.relative_to(O))
+  if p.is_symlink():symlinks.append({'path':rel,'target':os.readlink(p)});continue
+  fixture_rows.append({'path':rel,'sha256':sha(p),'bytes':p.stat().st_size})
+fixture_ref=put('fixture-transport-v1.json',{'scope':'Durable private synthetic fixtures only. .git and __pycache__ excluded before traversal. Symlinks represented as descriptors, not followed. No full campaign application is represented.','members':sorted(fixture_rows,key=lambda x:x['path']),'symlinks':symlinks,'member_count':len(fixture_rows)})
+coverage=[]
+for filename in ['probe-results-v1.json','overlap-results-v1.json']:
+ for row in read(O/filename)['results']:
+  coverage.append({'name':row['name'],'status':row['status'],'stage':row.get('result',{}).get('stage'),'result_source':filename,'exception':row.get('result',{}).get('exception') or row.get('message')})
+coverage.append({'name':v2['name'],'status':'PASS','stage':v2['result']['stage'],'result_source':'membership-result-v2.json','exception':v2['result']['exception']})
+review={
+ 'reviewer':'/root/boundary_adversarial','independence':'Did not author the changed operator, appended tests, root review or technical review. Used only original unchanged fixture boilerplate setup/render/repin for structure, not appended inherited_family_case helper. Independent family construction and mutants are in the archived scripts.',
+ 'head':'d691c079cf3923daed89284b7579913b84c3a34c','parent':'eac469f1d94f06bab0714fff891abf64b8ebdbe9','started_at':v1['started_at'],'finished_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'status':'PASS_ADVERSARIAL_CODE_SCOPE_WITH_EXPLICIT_LIMITATIONS','scientific_review':False,'findings':[],
+ 'operator_assessment':[
+  {'lines':'701-734','claim':'Complete before/after keyed path-pair subset blocks newly introduced member/replacement/key collisions while allowing actual reductions. Each pair includes key kind, exact key value (casefolded name), and sorted paths; no family-size-only comparison or dictionary-order winner.','evidence':['same_count_replacement','new_third_member','family_identifier_swap','cross_key_family_join','overlap_exits_both_without_new_pair']},
+  {'lines':'735-751','claim':'Selected surviving colliding paths must retain both raw ID/name and status, including when one collision kind disappears but the other remains.','evidence':['both_surviving_pair_names_changed','surviving_pair_case_only_name','overlap_leaves_id_remains_name','overlap_leaves_name_remains_id']},
+  {'lines':'758-780','claim':'REJECTED exception is bounded to existing same-path same-ID/name REJECTED maintenance, including a genuine existing unmapped-path tombstone. Rejected owner cannot exit identity family by reidentification or revive.','evidence':['positive_rejected_unmapped_maintenance','rejected_revival','rejected_family_exit_reidentification','rejected_unmapped_key_change','relocated_rejected_edit']},
+  {'lines':'_load/prepare/_recheck/apply/verify_completed unchanged around new validator','claim':'Real prepared plans retain original published object, case, preimage, acceptance and history guards; post-prepare aliases/inodes/parent identity/membership/proof drift fail before application writes. Completed replay revalidates owner/proof inputs.','evidence':['wrong_causal_hash','wrong_preimage','stale_acceptance','history_prefix_removed','stale_published_original','late_owner_inode','late_owner_hardlink','late_owner_alias','late_owner_parent_identity','late_ignored_member','late_evidence_inode','late_producer_inode','late_valid_native_receipt_membership_v2','completed_revival','completed_backup_alias','completed_snapshot_addition','completed_origin_changed','completed_acceptance_changed']}
+ ],
+ 'counts':{'successful_native_outcomes':41,'positive_full_prepare_apply_completed_replay_scenarios':4,'expected_refusals':37,'prepare_refusals':20,'post_prepare_drift_refusals':11,'completed_replay_drift_refusals':6,'recorded_attempts_including_reviewer_harness_failure':42,'reviewer_harness_failures':1,'target_product_failures':0},
+ 'coverage':coverage,
+ 'failure_attribution':{'attempt':'overlap-results-v1.json: late_valid_native_receipt_membership','failure':'Reviewer NameError before fixture/native execution because prefix extraction omitted late_mutation helper.','original_script_and_log_preserved':True,'successor':'membership-result-v2.json loads the exact helper AST and requires Native receipt membership changed; no assertion weakened.','additional_qualifications':'Initial v1 malformed-receipt case proves malformed input refusal, not membership equality. Initial unknown-source case reached earlier destination collision; precise missing-preimage follow-up also refused. All results retain their actual messages.'},
+ 'prior_finding_lineage':[
+  {'previous_id':'W08-NATIVE-BOUNDARY-001','issue':1251,'assessment':'Exact new guard addresses selection-dependent structural rejection in synthetic code review. Root/assembly reviewer separately checks actual archived nickel pair and complete catalog. This reviewer does not retire scientific1050hold or approve owners.'},
+  {'previous_id':'W08-NATIVE-BOUNDARY-002','issue':1252,'assessment':'Bounded tombstone maintenance route works end-to-end and activation/key/path mutants refuse. Actual historical tombstone facts remain separately reviewed; no revival or representative selection is authorized.'},
+  {'issue':1251,'comment':6720714388,'assessment':'Corrected pair-subset design admits removal of both overlapping pair kinds while refusing key changes for surviving pairs. Original failed equality draft remains author evidence; no blanket equality gate added.'}
+ ],
+ 'input_hashes':inputs,'fixture_evidence':fixture_ref,
+ 'limitations':['No full campaign prepare/application or source-owner scientific review. Fixtures have small synthetic catalogs and native published Git object bindings; acceptance is explicitly approval-free fixture data.','Technical reviewer runs full owner/publisher tests and reduction permutations; assembly reviewer checks exact actual W08 captures/2956-record catalog. This scope does not duplicate those counts as its own.','Future demote design remains outside this commit; no TSB/Angustmycin source acceptance follows. Existing role/export/source scientific holds remain.','No I/J/maintained/corpus/gate/pin/workflow/source-branch/GitHub mutations. Private fixture repos and test writes are within this adversarial output only.']
+}
+review_ref=put('review.json',review)
+handoff=put('HANDOFF.json',{'reviewer':review['reviewer'],'status':review['status'],'head':review['head'],'review':review_ref,'findings':[],'counts':review['counts'],'fixture_evidence':fixture_ref,'remaining_holds':review['limitations'],'quiescent':True})
+rows=[]
+for p in sorted(O.iterdir()):
+ if p.is_file() and p.name!='MANIFEST.json':rows.append({'path':p.name,'sha256':sha(p),'bytes':p.stat().st_size})
+manifest=put('MANIFEST.json',{'members':rows,'member_count':len(rows),'excluded':['MANIFEST.json (self)','fixtures/** (durable private files independently hashed by fixture-transport-v1.json)','fixtures/**/.git/** (fixture Git bookkeeping, excluded before reading)','fixtures/**/__pycache__/** (runtime cache)'],'scope':'Portable independent adversarial review; no source application approval.'})
+print(json.dumps({'handoff':handoff,'manifest':manifest,'review':review_ref,'counts':review['counts']},indent=2))

@@ -1,0 +1,19 @@
+from pathlib import Path
+import datetime,hashlib,json,os,subprocess
+R=Path.cwd();O=R/'.temp/rejection-fix-independent-v1';sha=lambda b:hashlib.sha256(b).hexdigest();rows=[]
+for n in ['native-payload-normalization-independent-v1','promotion-relocation-independent-v1','positive-candidate-current-bridges-v1','tenvit-final-disposition-v1']:
+ P=R/'.temp'/n;m=json.loads((P/'MANIFEST.json').read_bytes())
+ for x in m['files']:assert sha((P/x['path']).read_bytes())==x['sha256'],(n,x['path'])
+ rows.append({'path':str(P),'manifest_sha256':sha((P/'MANIFEST.json').read_bytes()),'seal_sha256':sha((P/'SEAL.json').read_bytes()),'members_rehashed':len(m['files']),'preserved':True})
+F=O/'frozen-head';members=[]
+for name in ['FROZEN-HEAD-MANIFEST.json','FROZEN-HEAD-SUPPLEMENT-001.json']:
+ m=json.loads((O/name).read_bytes())
+ for x in m['members']:
+  p=F/x['path'];b=os.fsencode(os.readlink(p)) if p.is_symlink() else p.read_bytes();assert sha(b)==x['sha256'],p
+  assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==x['git_blob'],p
+  members.append(x['path'])
+assert len(set(members))==4183
+head=subprocess.check_output(['git','--no-optional-locks','rev-parse','HEAD']).decode().strip();status=subprocess.check_output(['git','--no-optional-locks','status','--short']).decode();assert head=='7cc3c2540fd1b55281c6f5551f13a90a1e7916b1' and not status
+out={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'prior_sealed_packets':rows,'frozen9a1_members':len(members),'frozen9a1_all_git_blob_and_sha256_preserved':True,'own_head':head,'own_status':status,'own_tracked_diff_empty':True,'actual_campaign_application':False,'mutable_I_or_J_read_as_reviewed_code':False,'GitHub_mutation':False,'all_new_writes_under':str(O),'source_holds':'All scientific/source/role/owner/export holds remain unchanged; this code review grants none of them.'}
+with (O/'FINAL-PRESERVATION-READBACK.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'old_packet_members':sum(r['members_rehashed'] for r in rows),'frozen_members':len(members),'own_head':head,'own_status':status}))

@@ -1,0 +1,107 @@
+{
+  "at": "2026-11-08T14:07:48.319087+00:00",
+  "filed_comment": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1254#issuecomment-6722465798",
+  "scope": "Two real positive contexts and seven wrong-origin/hash/path/size refusals; synthetic metadata mutations only, no input writes.",
+  "records": [
+    {
+      "receipt": "pytest-origin-v1/test_origin_relative_origin_0/result.json",
+      "sha256": "de45a2f9e6781bf0c4f624e5393ed6f095c000b94af40fa1c969267188463f97",
+      "result": {
+        "case": "relative_origin",
+        "status": "REFUSED_AS_EXPECTED",
+        "error": "upstream origin outside campaign"
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_wrong_hash_0/result.json",
+      "sha256": "55bd3b8c987f5967e761efcda337d80fad97c50154fb1ac3d5f9a03eae6f628f",
+      "result": {
+        "case": "wrong_hash",
+        "status": "REFUSED_AS_EXPECTED",
+        "error": "content hash drift"
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_symlink_origin_0/result.json",
+      "sha256": "60e163f8c371f4e2c96560eaeb64cf954644b92959c2e054c00b40faed6284cb",
+      "result": {
+        "case": "symlink_origin",
+        "status": "REFUSED_AS_EXPECTED",
+        "error": "symlink alias in path"
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_missing_origin_0/result.json",
+      "sha256": "f38f19b9fe2c9f42e00fe57e809ce15b41201b88dadfc7e3288de0cda5901629",
+      "result": {
+        "case": "missing_origin",
+        "status": "REFUSED_AS_EXPECTED",
+        "error": "declared upstream origin is missing"
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_outside_origin_0/result.json",
+      "sha256": "99545d83079a3c44bbea5e08c30c5387ce3ec44d4c119015d39b55043ce428a7",
+      "result": {
+        "case": "outside_origin",
+        "status": "REFUSED_AS_EXPECTED",
+        "error": "upstream origin outside campaign"
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_wrong_size_0/result.json",
+      "sha256": "a6a1f9d9806da3ba8ac86cc4bda69a9fa562cbc40403267f45e82bbe30c09311",
+      "result": {
+        "case": "wrong_size",
+        "status": "REFUSED_AS_EXPECTED",
+        "error": "size mismatch"
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_wrong_origin_0/result.json",
+      "sha256": "6e3b59a96e5d12b382ba9f271bea0d2d113a12a68c8c259f8d99725728a81369",
+      "result": {
+        "case": "wrong_origin",
+        "status": "REFUSED_AS_EXPECTED",
+        "error": "content hash drift"
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_ordinary_original_0/result.json",
+      "sha256": "6d01a4397c1ebc8b67b2243dd23f27ed09e858a98efc631274dcc23d2266ae8f",
+      "result": {
+        "case": "ordinary_original",
+        "status": "PASS",
+        "correct_member": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/HANDOFF.json",
+        "correct_member_sha256": "958d29fb02c5f6c8c9571711b1cca487467d9e9344040404b21f28c69232abc8",
+        "context": {
+          "basis": "original_selected_manifest_location",
+          "manifest": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/MANIFEST.json",
+          "manifest_sha256": "dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093",
+          "member_base": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final"
+        }
+      }
+    },
+    {
+      "receipt": "pytest-origin-v1/test_origin_real_collision_0/result.json",
+      "sha256": "316fce19d48fafd50ed296568839bc390444fe496a474b33bef5754772399f76",
+      "result": {
+        "case": "real_collision",
+        "status": "PASS",
+        "correct_member": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/HANDOFF.json",
+        "correct_member_sha256": "958d29fb02c5f6c8c9571711b1cca487467d9e9344040404b21f28c69232abc8",
+        "context": {
+          "basis": "explicit_byte_verified_upstream_manifest_origin",
+          "copied_manifest": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-suppressions1259-independent-v1/portable-final/author/portable-final-MANIFEST.json",
+          "copied_manifest_sha256": "dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093",
+          "upstream_manifest": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/MANIFEST.json",
+          "upstream_manifest_sha256": "dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093",
+          "bytes": 35277,
+          "member_base": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final",
+          "distinct_false_member": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-suppressions1259-independent-v1/portable-final/author/HANDOFF.json",
+          "distinct_false_member_sha256": "0b9ed5258a3a9c6e4bffe7a2759ebd2e3cccd170e01bab52654740d45f0c28da"
+        }
+      }
+    }
+  ]
+}

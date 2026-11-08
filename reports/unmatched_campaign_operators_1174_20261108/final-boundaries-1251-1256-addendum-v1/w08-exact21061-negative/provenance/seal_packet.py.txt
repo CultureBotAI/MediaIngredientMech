@@ -1,0 +1,90 @@
+import datetime,hashlib,json,os,stat,subprocess
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-21061-independent-v1'
+def read(p):return json.loads(p.read_text())
+def sha(p):
+ with p.open('rb') as s:return hashlib.file_digest(s,'sha256').hexdigest()
+def ref(name):
+ p=P/name;assert p.is_file() and not p.is_symlink();return {'path':str(p),'sha256':sha(p)}
+def save(p,d):
+ with p.open('x') as s:json.dump(d,s,indent=2,ensure_ascii=False);s.write('\n')
+native=read(P/'native-validation.json');exit_=read(P/'exit-verification.json');entry=read(P/'entry.json');suite=read(P/'focused-summary.json');assembly=read(P/'final-assembly/review.json')
+assert native['review_verdict']=='needs_curation' and suite['passed']==458 and suite['skipped']==suite['failed']==0
+assert exit_['status']=='PASS'
+assert assembly['status']=='PASS' and assembly['native_code_verdict']=='needs_curation' and not assembly['new_assembly_findings']
+assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==entry['roots']['own']['head']
+assert subprocess.check_output(['git','status','--porcelain'],text=True)==''
+for role in ['yaml','markdown']:assert sha(R/native[role]['path'])==native[role]['sha256']
+findings=read(P/'FINDINGS.json');assert [f['status'] for f in findings['findings']]==['resolved','open','open']
+last_roots={}
+for key,record in entry['roots'].items():
+ path=record['path'];head=subprocess.check_output(['git','-C',path,'rev-parse','HEAD'],text=True).strip();status=subprocess.check_output(['git','-C',path,'status','--porcelain'],text=True)
+ last_roots[key]={'path':path,'head':head,'status':status,'same_as_entry':head==record['head'] and status==record['status']}
+ if key in {'own','J','CLAW'}:assert last_roots[key]['same_as_entry']
+save(P/'seal-root-observation.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'roots':last_roots,'read_only':True,'scope':'Final local observation only; exact reviewed21061 frozen bytes do not change with external K/I movement.'})
+
+handoff={
+ 'schema_version':1,'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'task':'Independent adversarial final exact21061 combined source operator/publisher code re-review','reviewed_head':'21061aa532401398db70c59a596debf330f70744','parent':'7a990e36b0e08d1deff943fe58bdc40d24d3834f','earlier_head':'16c39b63bc95d3e7978ddccc6280b0d57954f4a5','reviewer':'worker08:/root','completion':'completed','verdict':'needs_curation',
+ 'resolved_scoped_finding':{'finding_id':'REJECTION-CODE-001','issue_key':'campaign-owner-apply-literal-git-paths','issue':1255,'scope':'Literal NUL Git paths corrected at21061. New observation only; old severity/failure and native predecessor closure preserved. No GitHub issue closed.'},
+ 'open_major_residuals':[
+ {'diagnostic_id':'W08-21061-SRC-001','native_finding_id':'W08-16C-CODE-002','issue_key':'campaign-owner-apply-late-baseline-freshness','related_issue':1256,'finding':ref('FINDING-W08-21061-SRC-001.json'),'summary':'Initial or late unrelated staged index-only contract drift can pass all live source checks and yield complete receipts when working bytes are restored. Original1256 stays open as partial correction.'},
+ {'diagnostic_id':'W08-21061-PUB-001','native_finding_id':'W08-21061-PUB-001','issue_key':'publisher-final-proof-head-freshness','related_issue':1256,'finding':ref('skeptic/FINDING-W08-21061-PUB-001-v2.json'),'summary':'A real commit during the final live source-proof replay occurs after the last HEAD callback; publisher still returns complete with native/publication success receipts.'}
+ ],
+ 'findings':ref('FINDINGS.json'),'assessment':ref('ASSESSMENT.md'),'file_ready_findings_before_fix':True,'new_findings_filed_by_reviewer':False,
+ 'tests':{'single_combined_run':True,'passed':458,'source':301,'publication':142,'actual_native_integration':15,'failed':0,'skipped':0,'pytest_elapsed_seconds':402.50,'summary':ref('focused-summary.json'),'actual_runtime_results':ref('focused/result.json'),'command_and_context':ref('focused/command.json'),'technical_additional_controls':29,'publisher_stage_probes':31,'root_source_scenarios':4,'skeptical_full_native_pipelines':2,'actual_native_generation_in_all15_cases':True,'author_runs_not_substituted':True},
+ 'test_preservation':{'original16c_source_test_prefix_bytes':80127,'all23_issue1255_inputs_retained':True,'two1255_negative_harnesses_strengthened_to_prewrite_no_receipt':True,'source_ast':ref('technical/ast-comparison.json'),'publisher_ast':ref('skeptic/input-inspection.json'),'original_assertions_retained':True},
+ 'scope_conclusion':'Exact tuple/origin/preimage demotion, no ontology/registry rows, all-subject removal, both-path chain refusal, collision/rejected maintenance restrictions and literal filename handling are supported within reviewed scope. The two actual adversarial residuals preclude whole-code acceptance despite458 green authored tests.',
+ 'historical_and_scientific_boundaries':{'historical_source_verify_completed_later_commit_supported':True,'historical_publisher_validate_later_commit_supported':True,'changed_current_proof_still_refused':True,'ordinary_tracked_uncommitted_derived_sync_supported':True,'J_head':'eac469f1d94f06bab0714fff891abf64b8ebdbe9','preserved_receipt_prefix':27,'held_checkpoint':431,'held_before':436,'held_after_private_demotion':435,'full_semantic_release_or_scientific_approval':False,'context_note':'Actual historical native continuity is a bounded mechanical proof, not wholeplan/candidate/owner-role/export acceptance.'},
+ 'actual_reviewers':{
+ 'technical':{'identity':'worker08:/root/inorganics','review':ref('technical/review.json'),'scope':'Complete source operator/tests; exact unchanged bridge;29 native controls and independent Git index readback.'},
+ 'skeptical':{'identity':'worker08:/root/organics','review':ref('skeptic/review.json'),'scope':'Complete publisher/test/interface scope;31 stage controls;2 real native pipelines; residual publisher discovery and source index confirmation.'},
+ 'lineage':{'identity':'worker08:/root/vitamins','review':ref('lineage/review.json'),'scope':'Author manifests31/85, prior sealed full evidence, native context and all15 case contracts.'},
+ 'final_assembly':{'identity':'worker08:/root/vitamins','review':ref('final-assembly/review.json'),'scope':'Separate complete final metadata/native pair and actual execution/receipt assembly readback; prior lineage receipt preserved.'},
+ 'root':{'identity':'worker08:/root','scope':'Exact archive/diffs, full combined458 run,4 new source scenarios, real publisher receipt readback, native structured assembly and seal.'}},
+ 'native_review_pair':native,'input_ref_index':ref('input-ref-index.json'),'committed_source':ref('committed-source-bindings.json'),'prior_native_finding_lineage':ref('prior-finding-lineage.json'),'archive':ref('frozen/ARCHIVE.json'),'archive_sha256':read(P/'frozen/ARCHIVE.json')['archive_sha256'],
+ 'preservation':ref('exit-verification.json'),'own_source_head_unchanged':entry['roots']['own']['head'],'remote_observations':{'entry':exit_['remote_head_entry'],'exit':exit_['remote_head_exit'],'receipt':ref('inputs/pr1205-exit.json')},'roots_entry':entry['roots'],'roots_exit':last_roots,'final_local_observation':ref('seal-root-observation.json'),
+ 'harness_and_environment_disclosures':[
+ 'No full-run test failures or skips at21061; all15 actual native cases used real pinned Claw and private absolute lock workspaces.',
+ 'Negative native tests deliberately alter some generated candidate/manifest fields after genuine generation; final fixture hashes preserve those adversarial end states and are not claimed to be unmodified original generator outputs. Actual command exit/producer context and case-specific receipt outcomes are separately recorded in final-assembly/integration-readback.json.',
+ 'Author source441 uses old16c publisher and is kept distinct from independent combined458 final execution. Author publisher157 likewise is not counted as our run.',
+ 'Technical first static AST counter could not literal-evaluate named path constants. Original failed attempt retained; corrected static301 count and actual301 runtime count are distinct.',
+ 'Root native builder first glob counted22 command paths including7 pytest current symlink aliases and refused its15 count assertion before reading command paths. Original script/log preserved. Successor excludes symlink directories and validates15 real native commands. Fixture links are inventoried literally, not followed in manifest.',
+ 'Root exit verifier initially refused I head movement16c→clean21061. Original failure preserved. Successor records actual movement; reviewer never wrote I. W08/J/Claw and K stayed at entry heads/status. Frozen review remains21061 only.',
+ 'One ad-hoc read-only JSON summary used a dictionary method on the list-shaped AST comparison and failed; no review/test/data payload was written by that display command. Full independent AST evidence remains intact.',
+ 'Exact tar and all14,723 original extracted regular files/2 literal symlinks rehashed; no added frozen files. Old49,189-member packet including raw lock/harness failures and old29 bytecode files remains unchanged.',
+ 'Private native readback uses explicit read-only GIT_DIR/GIT_WORK_TREE context because the packet is nested under W08; no refs/index or native helper changes.'
+ ],
+ 'optional_CI':'Missing CLAW_ROOT skips native integration and missing CAMPAIGN_HISTORY_ROOT skips historical hold case. This execution supplied exact76c/eac roots and skipped none; ordinary unit fixtures alone would not prove external integration.',
+ 'limitations':['No future fixes reviewed or accepted; root owns deduplication/filing and author fixes.','No actual campaign application, source/candidate science, wholeplan, owner, role, export or release approval.','No source/code/gate/pin/shared/K/I/J/W08 tracked changes, Git/GitHub mutations, new external sessions, paid provider or KG rebuild by this review.','All reviewed positive authorities are private mechanical fixture assertions, not manufactured scientific evidence.'],
+ 'next_state':'Idle after seal; ready for coordinator collection.'}
+save(P/'HANDOFF.json',handoff)
+with (P/'HANDOFF.md').open('x') as s:s.write('''# Exact21061 independent code re-review
+
+**Needs curation.** Reviewed `21061aa532401398db70c59a596debf330f70744` with separate technical, skeptical, lineage and final-assembly participation.
+
+- #1255 literal NUL filename correction is supported at these bytes, with original finding history retained.
+- #1256 source residual `W08-21061-SRC-001`: unrelated index-only staged drift can pass when working bytes are restored. Original native finding `W08-16C-CODE-002` remains open as partly corrected.
+- #1256 publisher residual `W08-21061-PUB-001`: real final source-proof replay can outlive the last live HEAD check and still leave complete success receipts.
+
+458/458 combined cases passed:301 source,142 publisher,15 actual native integration; zero skips or failures. New adversarial probes independently establish the residuals despite green tests. File-ready bounded fixes and reproduction hashes are in the two finding JSONs and `FINDINGS.json`; root owns filing and any correction.
+
+`native-validation.json` binds the canonical structured YAML/derived Markdown, exact21061 Git inputs and predecessor finding closure. All original16c source-test bytes and23 #1255 inputs survive; two negatives are explicitly stronger. Historical later-commit validation and ordinary tracked uncommitted derived synchronization remain supported. No scientific/application/role/export approval follows.
+
+Remote entry/exit and K are21061. I was observed advancing16c→clean21061; this reviewer did not write it. Own source ae1/J eac/Claw76c are unchanged. Prior49,189-member sealed16c packet and226-member design packet were rehashed; earlier failures retained. The two new report-only harness failures and exact corrections are disclosed in HANDOFF.json. No reviewed code was changed.
+
+Immutable manifest inventories fixture symlinks literally without following. Ready for collection; idle after seal.
+''')
+members=[];links=[];hardlinks=[]
+for parent,dirs,files in os.walk(P,followlinks=False):
+ for name in dirs+files:
+  path=Path(parent)/name;info=path.lstat();rel=str(path.relative_to(P))
+  if stat.S_ISLNK(info.st_mode):links.append({'path':rel,'literal_target':os.readlink(path)})
+  elif stat.S_ISREG(info.st_mode) and rel not in {'MANIFEST.json','SEAL.json'}:
+   members.append({'path':rel,'sha256':sha(path),'size':info.st_size})
+   if info.st_nlink>1:hardlinks.append({'path':rel,'device':info.st_dev,'inode':info.st_ino,'link_count':info.st_nlink})
+save(P/'MANIFEST.json',{'schema_version':1,'members':sorted(members,key=lambda x:x['path']),'literal_symlinks_not_followed':sorted(links,key=lambda x:x['path']),'private_fixture_hardlinks':sorted(hardlinks,key=lambda x:x['path']),'self_and_seal_excluded':True,'scope':'Complete NEW private21061 packet including exactarchive, ignored/hiddenfixtures, original failed attempts and raw findings. Literal symlinks not followed.'})
+seal={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'SEALED','reviewed_head':handoff['reviewed_head'],'verdict':'needs_curation','handoff':ref('HANDOFF.json'),'markdown_handoff':ref('HANDOFF.md'),'manifest':ref('MANIFEST.json'),'findings':ref('FINDINGS.json'),'source_residual':ref('FINDING-W08-21061-SRC-001.json'),'publisher_residual':ref('skeptic/FINDING-W08-21061-PUB-001-v2.json'),'native_yaml':native['yaml'],'native_markdown':native['markdown'],'members':len(members),'literal_symlinks_not_followed':len(links),'hardlink_fixture_paths':len(hardlinks),'scientific_or_application_approval':False}
+save(P/'SEAL.json',seal)
+for row in members:assert sha(P/row['path'])==row['sha256'],row['path']
+for row in links:assert (P/row['path']).is_symlink() and os.readlink(P/row['path'])==row['literal_target']
+print(json.dumps({**seal,'seal_sha256':sha(P/'SEAL.json')},indent=2))

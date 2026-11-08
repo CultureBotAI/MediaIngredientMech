@@ -1,0 +1,183 @@
+"""Read-only final Git/blob bridge; writes only new evidence in this reviewer lane."""
+from pathlib import Path
+import ast
+import datetime
+import difflib
+import hashlib
+import json
+import os
+import subprocess
+
+O = Path(__file__).resolve().parent
+W = O.parents[3]
+C = W.parents[2]
+K = C / "integration/release-worktree"
+HEAD = "7d6d44ea132e04709f81ebd9e1577643745110ad"
+PARENT = "e0a75a0c48ba539426b1f70623ea376c7b379ecf"
+environment = dict(os.environ, GIT_OPTIONAL_LOCKS="0", PYTHONDONTWRITEBYTECODE="1")
+commands = []
+
+
+def now():
+    return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def ref(path):
+    data = path.read_bytes()
+    return {"path": str(path), "sha256": sha(data), "bytes": len(data)}
+
+
+def git(*args):
+    argv = ["git", "-C", str(K), *args]
+    p = subprocess.run(argv, capture_output=True, env=environment, check=True)
+    commands.append({"at": now(), "argv": argv, "exit_code": p.returncode,
+                     "stdout_sha256": sha(p.stdout), "stdout_bytes": len(p.stdout),
+                     "stderr": p.stderr.decode()})
+    return p.stdout
+
+
+def dump_new(name, obj):
+    with (O / name).open("x") as handle:
+        json.dump(obj, handle, indent=2)
+        handle.write("\n")
+
+
+started = now()
+prep = json.loads((O / "PREPARATORY-MANIFEST.json").read_text())
+for entry in prep["files"]:
+    p = O / entry["path"]
+    assert sha(p.read_bytes()) == entry["sha256"], entry
+    assert p.stat().st_size == entry["bytes"], entry
+
+commit_receipt_path = C / "preflight/campaign-suppressions1259-commit-v1/receipt.json"
+commit_receipt = json.loads(commit_receipt_path.read_text())
+assert commit_receipt["head"] == HEAD and commit_receipt["parent"] == PARENT
+assert git("rev-parse", "HEAD").decode().strip() == HEAD
+assert git("show", "-s", "--format=%P", HEAD).decode().strip() == PARENT
+assert git("status", "--porcelain").decode() == ""
+changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", HEAD).decode().splitlines()
+assert set(changed) == set(commit_receipt["files"])
+
+pure = json.loads((O / "pure-controls-result.json").read_text())
+paths = {item["path"] for item in pure["executed_producers"]}
+paths |= set(commit_receipt["files"])
+paths |= {"scripts/publish_unmatched_campaign.py", "scripts/validate_unmatched_campaign_publication.py",
+          "tests/test_campaign_owner_apply.py", "tests/test_campaign_demotion_integration.py",
+          "MAPPING_SEMANTICS.md", "AGENTS.md"}
+blobs = {}
+for path in sorted(paths):
+    data = git("show", f"{HEAD}:{path}")
+    current = (K / path).read_bytes()
+    assert current == data, path
+    blobs[path] = {"sha256": sha(data), "bytes": len(data), "current_K_equals_final_git_blob": True}
+for item in pure["executed_producers"]:
+    assert blobs[item["path"]]["sha256"] == item["sha256"], item
+for path, expected in commit_receipt["files"].items():
+    assert blobs[path]["sha256"] == expected, path
+assert blobs["src/mediaingredientmech/campaign_publication.py"]["sha256"] == sha((O / "inputs/campaign_publication-candidate.py").read_bytes())
+copy_pairs = {
+    "scripts/publish_unmatched_campaign.py": "publish_unmatched_campaign.py",
+    "scripts/validate_unmatched_campaign_publication.py": "validate_unmatched_campaign_publication.py",
+    "tests/test_campaign_suppressions.py": "test_campaign_suppressions.py",
+    "tests/test_campaign_suppression_integration.py": "test_campaign_suppression_integration.py",
+    "src/mediaingredientmech/curate/publication_guard.py": "publication_guard.py",
+    "src/mediaingredientmech/validation/mapping_change_receipts.py": "mapping_change_receipts.py",
+    "src/mediaingredientmech/sssom_metadata.py": "sssom_metadata.py",
+}
+for path, copy in copy_pairs.items():
+    assert sha((O / "inputs/preparatory" / copy).read_bytes()) == blobs[path]["sha256"]
+
+test_diffs = {}
+for path in ["tests/test_campaign_owner_apply.py", "tests/test_campaign_publication.py", "tests/test_campaign_demotion_integration.py"]:
+    before = git("show", f"{PARENT}:{path}").decode()
+    after = (K / path).read_text()
+    b, a = ast.parse(before), ast.parse(after)
+    asserts = lambda t: [ast.dump(n, include_attributes=False) for n in ast.walk(t) if isinstance(n, ast.Assert)]
+    decorators = lambda t: {n.name: [ast.dump(d, include_attributes=False) for d in n.decorator_list] for n in t.body if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))}
+    assert asserts(a) == asserts(b), path
+    assert decorators(a) == decorators(b), path
+    diff = ''.join(difflib.unified_diff(before.splitlines(True), after.splitlines(True), fromfile=PARENT + ':' + path, tofile=HEAD + ':' + path))
+    test_diffs[path] = {"before_sha256": sha(before.encode()), "after_sha256": sha(after.encode()),
+                        "existing_asserts_exact": True, "function_decorators_exact": True, "diff": diff}
+    if path.endswith("test_campaign_publication.py"):
+        reconstructed = after.replace('        "scripts/record_review.py",\n        "schema/record_review.yaml",\n', '', 1)
+        assert reconstructed == before
+        test_diffs[path]["only_change_exact_two_real_dependency_paths"] = True
+    else:
+        assert before == after
+
+original_unit = C / "integration/campaign-suppressions1259-v1/fixture-correction-v1/before/tests/test_campaign_suppressions.py"
+before = original_unit.read_text()
+after = (K / "tests/test_campaign_suppressions.py").read_text()
+added = '''    if fault == "partial-reviewed-targets":
+        with pytest.raises(
+            module.ReviewError,
+            match="completed review has explicitly selected targets left unreviewed",
+        ):
+            module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+        return
+'''
+assert after.replace(added, '', 1) == before
+assert sha(before.encode()) == "d325f7f05744521a44c9cc309a387e153e9a73b0a57aa6105440f149932be816"
+test_diffs["tests/test_campaign_suppressions.py"] = {
+    "before": ref(original_unit), "after": blobs["tests/test_campaign_suppressions.py"],
+    "only_change_expected_native_partial_target_refusal_and_return": True,
+    "diff": ''.join(difflib.unified_diff(before.splitlines(True), after.splitlines(True), fromfile='failed-run-frozen', tofile=HEAD)),
+}
+
+root_receipt_path = W / ".temp/final-operator-head-review-v1/validation/final-head-readback.json"
+root_receipt = json.loads(root_receipt_path.read_text())
+assert sha(root_receipt_path.read_bytes()) == "93f8ec924d57db1bb33cbe29b59a7c2f145b4b0fd3f724f9bf4506f7781f542d"
+assert root_receipt["remote_head"] == root_receipt["PR1205_head"] == HEAD
+assert root_receipt["remote_command_receipts"][0]["exit_code"] == 0
+assert root_receipt["remote_command_receipts"][0]["stdout"].split()[0] == HEAD
+
+history_path = W / ".temp/final-operator-head-review-v1/validation/genuine-native-history-readback.json"
+history = json.loads(history_path.read_text())
+assert history["publisher_sha256"] == blobs["src/mediaingredientmech/campaign_publication.py"]["sha256"]
+history_summary = []
+for case in history["cases"]:
+    for name, expected in case.get("receipt_inputs", {}).items():
+        assert sha((Path(case["root"]) / name).read_bytes()) == expected
+    history_summary.append({key: case[key] for key in ["root", "receipt_count", "native_status", "all27_originals_exact", "sidecar_rows", "historical34_physical_prefix_exact", "native_inputs_unchanged"] if key in case})
+
+runtime_sources = [
+    ("author_original_combined", C / "integration/campaign-suppressions1259-v1/checks/combined-final-v1/run.json", "run.log"),
+    ("author_affected_rerun", C / "integration/campaign-suppressions1259-v1/checks/fixture-corrections-affected-v1/run.json", "run.log"),
+    ("other_independent_affected_rerun", C / "preflight/campaign-suppressions1259-independent-v1/test-correction-review-v1/RESULT.json", "stdout.log"),
+]
+runtime_summary = []
+for label, p, logname in runtime_sources:
+    x = json.loads(p.read_text())
+    log = p.parent / logname
+    expected = x.get("log_sha256", x.get("stdout_sha256"))
+    assert sha(log.read_bytes()) == expected
+    assert x["before"] == x["after"]
+    assert x["before"]["src/mediaingredientmech/campaign_publication.py"] == blobs["src/mediaingredientmech/campaign_publication.py"]["sha256"]
+    lines = log.read_text().splitlines()
+    summaries = [line for line in lines if (' passed' in line or ' failed' in line) and 'warnings in ' in line]
+    runtime_summary.append({"role": label, "receipt": ref(p), "log": ref(log), "exit_code": x["exit_code"],
+                            "actual_summary_lines": summaries, "source_and_tests_before_after_exact": True,
+                            "run_test_hashes": x["before"], "executed_by_this_child": False})
+
+dump_new("FINAL-HEAD-BRIDGE.json", {
+    "started_at": started, "finished_at": now(), "reviewer": "/root/operator_publication_technical",
+    "head": HEAD, "sole_parent": PARENT, "commit_receipt": ref(commit_receipt_path),
+    "current_K_clean": True, "changed_paths": changed, "blob_readbacks": blobs,
+    "all_executed_pure_control_producers_exact_to_final_git": True,
+    "pure_controls": ref(O / "pure-controls-result.json"), "pure_control_count": pure["control_count"],
+    "preparatory_manifest": ref(O / "PREPARATORY-MANIFEST.json"), "all_preparatory_members_preserved": len(prep["files"]),
+    "remote_PR_readback": ref(root_receipt_path),
+    "remote_scope": "Read and checked actual root W07 read-only ls-remote/PR receipts; this child did not independently repeat the network request.",
+    "test_diffs": test_diffs, "actual_runtime_receipts": runtime_summary,
+    "root_readonly_native_history": ref(history_path), "history_summary": history_summary,
+    "history_scope": "Rehashed every original/current native receipt referenced by root read-only replays. Child did not execute fixtures, application or Git writes.",
+    "commands": commands,
+    "full_committed_head_QC_suite": "PENDING in the actual root commit receipt; no single green combined run claimed",
+    "approval": "NONE: technical implementation review only; no source, owner, mapping, role, export or campaign application approval"
+})
+print(json.dumps({"result": "PASS", "artifact": ref(O / "FINAL-HEAD-BRIDGE.json"), "blobs": len(blobs), "preserved_preparatory_members": len(prep["files"])}))

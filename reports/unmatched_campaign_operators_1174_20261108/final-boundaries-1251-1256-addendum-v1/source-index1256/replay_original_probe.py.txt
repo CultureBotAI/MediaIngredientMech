@@ -1,0 +1,11 @@
+from pathlib import Path
+import hashlib,json,os,shutil,subprocess,sys
+D=Path(__file__).resolve().parent;W=D/'runtime/original-probe-v1';R=W/'.temp/final-21061-independent-v1';R.mkdir(parents=True,exist_ok=False)
+F=R/'frozen/repo';shutil.copytree(D/'portable',F,ignore=shutil.ignore_patterns('__pycache__','.ruff_cache','.mypy_cache'))
+script=D/'independent-inputs/evidence-02-probe_staged_index.py'
+env=os.environ.copy();env['PYTHONDONTWRITEBYTECODE']='1';proc=subprocess.run([sys.executable,'-I','-B',str(script)],cwd=W,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+out=D/'original-probe-replay-v1';out.mkdir();(out/'stdout.txt').write_bytes(proc.stdout);(out/'stderr.txt').write_bytes(proc.stderr)
+result=R/'root-probes/staged-index-results.json'
+if result.exists():shutil.copy2(result,out/'results.json')
+receipt={'command':[sys.executable,'-I','-B',str(script)],'cwd':str(W),'exit_code':proc.returncode,'script_sha256':hashlib.sha256(script.read_bytes()).hexdigest(),'script_unchanged':True,'qualification':'Exact original independent probe executed against corrected private source. Its hardcoded reviewed_head is historical21061; actual patched source/test hashes below and in result are authoritative. No native functions mocked. Runtime fixtures remain private and are omitted from the concise evidence manifest.', 'actual_inputs':{n:hashlib.sha256((F/n).read_bytes()).hexdigest() for n in ['src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py']}}
+(out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt));assert proc.returncode==0,proc.stderr.decode();data=json.loads(result.read_bytes());rows={x['mode']:x for x in data['results']};assert rows['positive']['apply']=='complete' and rows['positive']['verify_completed']=='complete';assert rows['initial_staged_index_only']['prepare']=='REFUSED' and not rows['initial_staged_index_only']['receipt_exists'];assert rows['late_staged_index_only']['apply']=='REFUSED' and not rows['late_staged_index_only']['receipt_exists'];assert rows['late_staged_worktree_control']['apply']=='REFUSED' and not rows['late_staged_worktree_control']['receipt_exists'];print('Original four-case adversarial replay: expected results PASS')

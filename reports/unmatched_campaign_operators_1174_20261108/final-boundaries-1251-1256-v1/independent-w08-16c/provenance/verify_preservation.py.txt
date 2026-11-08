@@ -1,0 +1,104 @@
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import stat
+import subprocess
+
+R = Path.cwd()
+P = R / '.temp/combined-16c-independent-v1'
+F = P / 'frozen/repo'
+C = R.parents[2]
+J = C / 'integration/curation-worktree'
+
+def sha(path):
+    with path.open('rb') as f:
+        return hashlib.file_digest(f, 'sha256').hexdigest()
+
+def read(path):
+    return json.loads(path.read_text())
+
+def inventory(root):
+    regular, links = [], []
+    for parent, dirs, files in os.walk(root, followlinks=False):
+        for name in dirs + files:
+            path = Path(parent) / name
+            info = path.lstat()
+            if stat.S_ISLNK(info.st_mode):
+                links.append({'path': str(path.relative_to(root)), 'target': os.readlink(path)})
+            elif stat.S_ISREG(info.st_mode):
+                regular.append(str(path.relative_to(root)))
+    return sorted(regular), sorted(links, key=lambda x: x['path'])
+
+entry = read(P / 'entry.json')
+roots = {}
+for label, initial in entry['roots'].items():
+    root = Path(initial['path'])
+    head = subprocess.check_output(['git', '-C', str(root), 'rev-parse', 'HEAD'], text=True).strip()
+    status = subprocess.check_output(['git', '-C', str(root), 'status', '--porcelain'], text=True)
+    roots[label] = {'path': str(root), 'head': head, 'status': status,
+                    'head_unchanged': head == initial['head'], 'status_unchanged': status == initial['status']}
+    assert roots[label]['head_unchanged'] and roots[label]['status_unchanged']
+remote = read(P / 'inputs/pr1205-live-exit.json')
+assert remote['head']['sha'] == entry['remote_head']
+archive = read(P / 'frozen/ARCHIVE.json')
+assert sha(R / archive['archive']) == archive['archive_sha256']
+for row in archive['files']:
+    assert not (F / row['path']).is_symlink()
+    assert sha(F / row['path']) == row['sha256']
+regular, links = inventory(F)
+assert regular == sorted(x['path'] for x in archive['files'])
+assert links == sorted(archive['literal_symlinks_not_followed'], key=lambda x: x['path'])
+
+lineage = read(P / 'lineage/binding-checks.json')
+actual_owners = {str(x.relative_to(J)): sha(x) for x in (J / 'data/ingredients').rglob('*.yaml')}
+assert actual_owners == lineage['owner_inventory']
+for row in lineage['receipt_prefix']:
+    assert sha(J / row['path']) == row['sha256']
+for row in lineage['native_context_inputs']:
+    assert sha(J / row['path']) == row['expected']
+for row in lineage['producer_graph']:
+    assert sha(Path(row['path'])) == row['expected']
+for row in lineage['held_context']:
+    assert sha(Path(row['path'])) == row['sha256']
+author_manifests = []
+for record in lineage['manifests']:
+    base = Path(record['manifest']['path']).parent
+    assert sha(base / 'MANIFEST.json') == record['manifest']['sha256']
+    for row in record['members']:
+        assert not (base / row['path']).is_symlink()
+        assert sha(base / row['path']) == row['expected']
+    author_manifests.append({'label': record['label'], 'manifest': record['manifest'],
+                             'members_rehashed': len(record['members'])})
+prior = []
+for name in ['angustmycin-demotion-design-independent-v1',
+             'native-application-boundary-independent-v1',
+             'ebios-candidate-independent-v1', 'mc-dependent-successor-v1']:
+    base = R / '.temp' / name
+    manifest = read(base / 'MANIFEST.json')
+    for row in manifest['members']:
+        assert not (base / row['path']).is_symlink()
+        assert sha(base / row['path']) == row['sha256']
+    expected_links = manifest.get('literal_symlinks_not_followed', manifest.get('symlinks_not_followed', []))
+    normalized = [{'path': x['path'], 'target': x.get('literal_target', x.get('target'))} for x in expected_links]
+    assert inventory(base)[1] == sorted(normalized, key=lambda x: x['path'])
+    prior.append({'packet': str(base), 'members': len(manifest['members']),
+                  'literal_symlinks_not_followed': len(normalized),
+                  'handoff_sha256': sha(base / 'HANDOFF.json'),
+                  'manifest_sha256': sha(base / 'MANIFEST.json'),
+                  'seal_sha256': sha(base / 'SEAL.json')})
+result = {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'status': 'PASS',
+          'roots_entry_exit': roots, 'remote_head_entry_exit': remote['head']['sha'],
+          'exact_archive_sha256': archive['archive_sha256'],
+          'frozen_regular_files_unchanged': len(regular), 'frozen_literal_links_unchanged': len(links),
+          'J_owners_unchanged': len(actual_owners), 'receipt_prefix_unchanged': len(lineage['receipt_prefix']),
+          'CLAW_producer_files_unchanged': len(lineage['producer_graph']),
+          'author_manifests_rehashed': author_manifests, 'prior_packets_unchanged': prior,
+          'shared_lock_attempt': 'Initial producer lock creation was refused by sandbox. Retry used native private OPENCLAW_WORKSPACE. Shared source bytes remain exact; no lock bypass.',
+          'all_writes_confined_to_new_private_packet': True,
+          'scientific_or_application_approval': False}
+with (P / 'exit-verification.json').open('x') as f:
+    json.dump(result, f, indent=2)
+    f.write('\n')
+print(json.dumps({k: v for k, v in result.items() if k not in ['prior_packets_unchanged', 'author_manifests_rehashed']}, indent=2))

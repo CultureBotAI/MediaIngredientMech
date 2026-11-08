@@ -1,0 +1,28 @@
+{
+  "verdict": "NEEDS_CURATION_FOR_LIVE_INDEX_SNAPSHOT_VALIDATION",
+  "at": "2026-11-08T12:34:29.931323+00:00",
+  "reviewer": "/root/step7d_science_c; did not author source operator/fix",
+  "source_sha256": "adba0b6b237de4fa8636fcdd7fa28c9d952859b6f0008d4e9d0671acdd323575",
+  "tests_sha256": "2e80e9288f6b02de4f9d797052e47f6e57ecd1bed10f75b2e50af3bc3f3d1830",
+  "static_preservation": {
+    "only_changed_top_level_AST": [
+      "_check_mutation_git_state"
+    ],
+    "historical_verifier_AST_unchanged": true,
+    "original_test_file_exact_prefix": true,
+    "no_gate_schema_pin_or_publisher_changes_in_source_delta": true
+  },
+  "positive_assessments": [
+    "The new brackets detect both originally filed one-way index mutations in the preserved actual-native author replay.",
+    "Logical ls-files --stage -z representation covers literal paths, entry mode, stage and blob while excluding harmless stat-cache bytes.",
+    "Existing cached scope/installed-owner/mode/conflict checks and historical verifier remain unchanged."
+  ],
+  "blocking_findings": [
+    "IR-INDEX-COHERENCE-001"
+  ],
+  "independent_actual_probes": 4,
+  "new_full_suite_run": false,
+  "author_tests": "Author reported20newfocused PASS and combined suite still running at review cutoff; this reviewer did not rerun354original cases or infer final fullsuite completion.",
+  "not_application_or_science_or_final_head_approval": true,
+  "next": "Root should publish scoped1256addendum before author repair, then require exact repaired-byte re-review and external W08 final-head review."
+}

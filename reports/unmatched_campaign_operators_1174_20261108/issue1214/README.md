@@ -1,0 +1,7 @@
+# PR1205 recovery-backup finding and fix evidence
+
+The worker01 independent review found issue1214 at commit4c8a987da40d48cceeb4390550f1ff7545927a0b. Its sealed original findings, counterexamples, failed harness attempts and exact-head checks are preserved unchanged in worker01-final-head-review-v1. SELECTION.json maps46 original paths to41 unique contents and explicitly identifies excluded fixture trees, duplicate historical source packages and the retained private symlink. These exclusions and historical local paths are evidence references, not missing promised portable files.
+
+issue1214-fix-v1 preserves the separate author's exact two-file patch, all118 publisher-test results (106 prior plus12 new), quality checks and first failed private harness/environment attempts. Its manifest deliberately contains only bounded code and evidence, not private fixtures. The patch validates both reserved recovery-copy contents after writing and at subsequent mutation/completion boundaries. Standalone verification remains accepted canonical/policy/native-chain replay; it does not claim perpetual recovery-directory validation.
+
+This archive is historical finding/fix evidence. It grants no scientific, owner, role or export approval. Independent review of the repaired committed endpoint is required separately and is recorded on PR1205. Existing immutable accepted beforeimages remain available; detection of a partial attempt does not claim automatic rollback.

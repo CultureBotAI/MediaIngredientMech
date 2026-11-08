@@ -1,0 +1,57 @@
+topClass is deprecated - use top_class
+{
+  "status": "PASS_NATIVE_REVIEW_CONTRACT",
+  "review_id": "20261108T121201Z-w08-final-21061-independent",
+  "review_verdict": "needs_curation",
+  "source_state": "git_commit",
+  "reviewed_head": "21061aa532401398db70c59a596debf330f70744",
+  "committed_inputs": 27,
+  "private_evidence_inputs": 25,
+  "targets": 5,
+  "yaml": {
+    "path": ".temp/final-21061-independent-v1/native/reviews/structured/20261108T121201Z-w08-final-21061-independent/review.yaml",
+    "sha256": "f9a6965873f46cfcbf071dab073316ea1885d4210464c2e3abefe61ccbc39c72"
+  },
+  "markdown": {
+    "path": ".temp/final-21061-independent-v1/native/reviews/structured/20261108T121201Z-w08-final-21061-independent/review.md",
+    "sha256": "1fc73987313563d542c4907633255233fdcd54d247f8404def3a4ad486ea3612"
+  },
+  "prior_pairs_verified": 3,
+  "actual_native_methods": [
+    "inspect_source",
+    "validate_review",
+    "assert_current_source",
+    "render_markdown",
+    "parse_review_bundle",
+    "read_review",
+    "source_provenance"
+  ],
+  "private_readonly_Git_context": {
+    "GIT_DIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.git/worktrees/worktree8",
+    "GIT_WORK_TREE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-21061-independent-v1/native",
+    "GIT_OPTIONAL_LOCKS": "0"
+  },
+  "provenance": {
+    "status": "git_commit_verified",
+    "reason": "Historical regular-file blobs match the declared hashes."
+  },
+  "negative_controls": [
+    {
+      "name": "false_committed_digest",
+      "refused": true,
+      "error": "committed input digest disagrees: .claude/skills/reconcile-review-records/SKILL.md"
+    },
+    {
+      "name": "markdown_drift",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "name": "false_pass_with_open_major_findings",
+      "refused": true,
+      "error": "a passing verdict cannot conceal unresolved major/blocker findings or failed required checks"
+    }
+  ],
+  "maintained_saver_used": false,
+  "scientific_or_application_approval": false
+}

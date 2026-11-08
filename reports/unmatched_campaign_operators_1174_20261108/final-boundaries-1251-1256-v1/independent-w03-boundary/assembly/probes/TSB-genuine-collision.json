@@ -1,0 +1,20 @@
+{
+  "name": "TSB-genuine-collision",
+  "expected_accepted": false,
+  "operations": [
+    {
+      "operation_id": "ORIGINAL-w08::op1201-trypticase-soy-broth",
+      "kind": "promote",
+      "before_source_record": "data/ingredients/unmapped/Trypticase_Soy_Broth.yaml",
+      "source_record": "data/ingredients/mapped/Trypticase_Soy_Broth.yaml"
+    }
+  ],
+  "payload_hashes": {
+    "ORIGINAL-w08::op1201-trypticase-soy-broth": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879"
+  },
+  "accepted": false,
+  "exception": "ValueError",
+  "message": "Final proposed owners introduce a new collision pair",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/assembly/inspect_and_probe_v1.py\", line 154, in main\n    native._validate_records(S, ops, payloads, before)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py\", line 729, in _validate_records\n    require(\n    ~~~~~~~^\n        final_pairs <= prior_pairs,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        \"Final proposed owners introduce a new collision pair\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py\", line 269, in require\n    raise ValueError(message)\nValueError: Final proposed owners introduce a new collision pair\n",
+  "expectation_met": true
+}

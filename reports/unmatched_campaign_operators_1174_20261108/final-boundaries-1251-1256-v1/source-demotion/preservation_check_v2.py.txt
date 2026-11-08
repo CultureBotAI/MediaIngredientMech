@@ -1,0 +1,19 @@
+from pathlib import Path
+import ast,hashlib,json,subprocess,datetime
+D=Path(__file__).resolve().parent;I=D.parent/'worktree';C=D.parents[1];sha=lambda b:hashlib.sha256(b).hexdigest()
+freeze=json.loads((D/'source-freeze-v1.json').read_text());assert sha((I/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes())==freeze['operator_sha256'];assert sha((I/'tests/test_campaign_owner_apply.py').read_bytes())==freeze['tests_sha256']
+assert (I/'tests/test_campaign_owner_apply.py').read_bytes().startswith((D/'before/test_campaign_owner_apply.py').read_bytes())
+expected=json.loads((C/'integration/native-boundary-full-candidate-probe-v1/before-inventory.json').read_text());actual={str(p.relative_to(I)):sha(p.read_bytes()) for cat in ('mapped','unmapped') for p in (I/'data/ingredients'/cat).glob('*.yaml')};assert actual==expected
+head=subprocess.check_output(['git','-C',str(I),'rev-parse','HEAD'],text=True).strip();assert head=='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b'
+changed=subprocess.check_output(['git','-C',str(I),'diff','--name-only'],text=True).splitlines();allowed={'src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py','src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py'};assert set(changed)<=allowed
+prefix_paths=subprocess.check_output(['git','-C',str(I),'ls-files','reports/mapping_change_receipts'],text=True).splitlines()
+# The exact native prefix lives in its own maintained directory; locate via current producer constant.
+import sys
+sys.path.insert(0,str(I/'src'))
+from mediaingredientmech.validation import mapping_change_receipts as native
+prefix={str(p.relative_to(I)):sha(p.read_bytes()) for p in (I/native.RECEIPTS_DIR).glob('*.json')}
+assert len(prefix)==27
+for p,h in prefix.items():assert sha(subprocess.check_output(['git','-C',str(I),'show',f'{head}:{p}']))==h
+result={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'head':head,'owner_count':len(actual),'all_authentic_owner_bytes_unchanged':True,'receipt_prefix_count':len(prefix),'receipt_prefix_sha256':prefix,'all_receipts_match_committed_head':True,'dirty_paths':changed,'no_source_application':True,'old_complete_test_prefix_preserved':True,'own_source_sha256':freeze}
+with (D/'preservation.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'owner_count':len(actual),'receipt_prefix':len(prefix),'unchanged':True}))

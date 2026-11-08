@@ -1,0 +1,70 @@
+F
+=================================== FAILURES ===================================
+__ test_real_1256_full_final_recheck_closes_head_after_proofs[2-source-proof] __
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/before-fix-v1/fixtures/test_real_1256_full_final_rech0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a3682b0>
+boundary = 'source-proof', complete_call = 2
+
+    @pytest.mark.parametrize("boundary", ["source-proof", "reserved-output-proof"])
+    @pytest.mark.parametrize("complete_call", [1, 2])
+    def test_real_1256_full_final_recheck_closes_head_after_proofs(tmp_path, monkeypatch, boundary, complete_call):
+        """W08-21061-PUB-001: real proof results are unchanged by the fault wrapper."""
+        source, plan, path, destination, proof = prepare_native_case(tmp_path)
+        mapping = fixture_module("test_campaign_publication")
+        native_path = tmp_path / native.RECEIPTS_DIR / (plan["batch"] + ".json")
+        log = destination / "publication.json"
+        seen = []
+        injected = []
+        def after_actual_proof():
+            if log.exists() and log.read_bytes() and json.loads(log.read_bytes()).get("status") == "complete":
+                seen.append(boundary)
+                if len(seen) == complete_call:
+                    mapping.commit_publication_boundary(tmp_path, unrelated=True)
+                    injected.append(source.run_git(tmp_path, "rev-parse", "HEAD"))
+        if boundary == "source-proof":
+            actual = publication._owner_proof
+            def source_proof(*args, **kwargs):
+                result = actual(*args, **kwargs)
+                after_actual_proof()
+                return result
+            monkeypatch.setattr(publication, "_owner_proof", source_proof)
+        else:
+            actual = publication.check_reserved
+            def reserved_proof(handle, target):
+                result = actual(handle, target)
+                if target == native_path:
+                    after_actual_proof()
+                return result
+            monkeypatch.setattr(publication, "check_reserved", reserved_proof)
+        error = None
+        result = None
+        try:
+            result = publication.publish(tmp_path, path, destination, apply=True)
+        except ValueError as caught:
+            error = str(caught)
+        source.put(tmp_path, "reports/final-recheck-observation.json", {
+            "scope": "Real source, native generation, native receipt and guarded publication; fault wrapper only commits after unchanged real proof",
+            "boundary": boundary, "complete_call": complete_call,
+            "baseline": proof["baseline_commit"],
+            "actual_head": source.run_git(tmp_path, "rev-parse", "HEAD"),
+            "injected": injected, "error": error, "returned_result": result,
+            "publication_receipt_nonempty": bool(log.read_bytes()),
+            "native_receipt_nonempty": bool(native_path.read_bytes()),
+        })
+        assert len(injected) == 1
+        assert injected[0] != proof["baseline_commit"]
+>       assert error is not None and "live publication HEAD changed" in error
+E       assert (None is not None)
+
+tests/test_campaign_demotion_integration.py:694: AssertionError
+=============================== warnings summary ===============================
+../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_demotion_integration.py::test_real_1256_full_final_recheck_closes_head_after_proofs[2-source-proof]
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 12 warnings in 7.44s

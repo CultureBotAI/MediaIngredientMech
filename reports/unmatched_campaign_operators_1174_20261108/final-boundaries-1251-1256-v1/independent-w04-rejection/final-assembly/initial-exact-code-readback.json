@@ -1,0 +1,377 @@
+{
+  "reviewer": "/root/correction_chemistry",
+  "at": "2026-11-08T11:27:44.818013+00:00",
+  "head": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "parent": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "exact_two_file_diff": true,
+  "files": [
+    {
+      "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "before_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+      "after_sha256": "14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f",
+      "before_lines": 1420,
+      "after_lines": 1430,
+      "old_top_level_functions_classes": 32,
+      "removed_nodes": [],
+      "changed_nodes": [
+        "_validate_records"
+      ],
+      "added_nodes": [],
+      "unchanged_nodes": [
+        {
+          "name": "Prepared",
+          "ast_sha256": "2e68e51e1da91cd2f0fb1666ab1face4521d0abffbd85bccc51ff3d43b653a32"
+        },
+        {
+          "name": "UniqueLoader",
+          "ast_sha256": "8ad1aa5578e5c4b39efd5d4f668627846082adcf982b7634cf565c541a776bcc"
+        },
+        {
+          "name": "_check_loaded_producers",
+          "ast_sha256": "9884a5b3e6b6438cc79c6e78226872837e2f70cdce35a74bf4b7406051972591"
+        },
+        {
+          "name": "_load",
+          "ast_sha256": "de8a57bb8fee290be7f8be5123bd987b8cd927f81a1d1531b10d4408069d58d3"
+        },
+        {
+          "name": "_map",
+          "ast_sha256": "e173c68bc77d35139f97892e8ce64a2ce64d2c8e1aea73ee0e432c911a916179"
+        },
+        {
+          "name": "_module_path",
+          "ast_sha256": "526f4369c2b352a994b42c623b52fe2363f62edc2c4847dc72028809aefb4a20"
+        },
+        {
+          "name": "_new_owner",
+          "ast_sha256": "1f52117ef70f0f05cbe93010ebca52f1ed1632b3531107ff9bfa2abe83324ad3"
+        },
+        {
+          "name": "_recheck",
+          "ast_sha256": "3d60f67d9f1845ba5160bcd09e5cd641c515cb65a9de05772737efda99da189b"
+        },
+        {
+          "name": "_ref",
+          "ast_sha256": "a1d9640c4de2b64b9119f3222f7612a6f0ea0dcdb28711fb54e159e807c537f8"
+        },
+        {
+          "name": "_rename_exclusive",
+          "ast_sha256": "a62b035abd0194bddcdb5bb166c63c1054b8eb81149e16fd301c2b1ba046967f"
+        },
+        {
+          "name": "_retire",
+          "ast_sha256": "5b793a893c38240066b6fbd7f81cd3bb8fb63a600c8d47808e2bad6344b5dd76"
+        },
+        {
+          "name": "_snapshot_members",
+          "ast_sha256": "393ccabab8341bea9885b696d7834605eece4465e8963b3239bce132e0f7c03f"
+        },
+        {
+          "name": "_yaml_mapping",
+          "ast_sha256": "893cdbf41f78456175e4afabdf59a0e4b355aa3997f23cf3264011f7270eecea"
+        },
+        {
+          "name": "apply",
+          "ast_sha256": "a6460dcf23b6f3ec43bfae75e90ac586fdb34fb88d15e5e1c0c80e60752711d4"
+        },
+        {
+          "name": "captured_native_modules",
+          "ast_sha256": "00f124c26e7b828f7d3a8f1d9943354b7171b044cc2ccf922226b7bace4b8bbb"
+        },
+        {
+          "name": "closed",
+          "ast_sha256": "c4ea2f239405ccd467d9e2b65966369cd5fab400f8efcba483f67ce43618829d"
+        },
+        {
+          "name": "commit",
+          "ast_sha256": "17796a9804e749e796dc2a8aff286d1127d8e28b7c315656a0fa51fc4681a7f6"
+        },
+        {
+          "name": "digest",
+          "ast_sha256": "d72f618c4bf81c2b39f5611c459bd8d3b197979c6bc7d317decc0d3e571a10de"
+        },
+        {
+          "name": "encoded",
+          "ast_sha256": "fbb1bafa078705b194ae2ece2c21ac4eee8462bd917e805897a0e7aa818a3585"
+        },
+        {
+          "name": "git",
+          "ast_sha256": "0094e27efd0277b9eb6bb4117b4f7c7b990ee97b15fbd0ff0ad56460cd286daa"
+        },
+        {
+          "name": "hashes",
+          "ast_sha256": "64a4c143c7ae41dd9a7cc9357b4cadec27ea7f82202e906d7f986561239f914f"
+        },
+        {
+          "name": "inventory",
+          "ast_sha256": "554e039ef6dba380b43eee0efed032559f553848b6b7405f041cabb377b1c9f3"
+        },
+        {
+          "name": "owner_path",
+          "ast_sha256": "f40e855ea9416ae9cb5eca4db8a5d5d4a797de4932ffd13544f922d409a1543e"
+        },
+        {
+          "name": "prepare",
+          "ast_sha256": "62d8024c04d600a7668776415e7509a7d7a7d970b668c3f9af12506775242654"
+        },
+        {
+          "name": "record",
+          "ast_sha256": "d72d52a909fc83cf5eff0038cdf85b5f2d064a3fb7004e77038bee7966f7aaf3"
+        },
+        {
+          "name": "relative",
+          "ast_sha256": "cc881d254fe6d6d94b0f545aa2e4bd1d616c6e88d3ecdece44a7d230200da713"
+        },
+        {
+          "name": "require",
+          "ast_sha256": "26e01a4d923f162ec7fde1717144479f05cf781d744155f167bd07dc922691f3"
+        },
+        {
+          "name": "sha",
+          "ast_sha256": "351607505b2b215dc1b1f74702c941b605f7d7d23abd4efa2c917bde9f0b704b"
+        },
+        {
+          "name": "text",
+          "ast_sha256": "9debdb47a003d89b27a5bc2a8eb90ff885ed4602d8d40a7808b88a86050c26b6"
+        },
+        {
+          "name": "unique_json",
+          "ast_sha256": "f8e0c871ce37345089d406bb34adcec3331d6a7e9f897b6fb64fe7e7e8a1d814"
+        },
+        {
+          "name": "verify_completed",
+          "ast_sha256": "fb4ffe9e367c8157ce96d75291dd27289df07b030b53f11103561f117ecfee6e"
+        }
+      ]
+    },
+    {
+      "path": "tests/test_campaign_owner_apply.py",
+      "before_sha256": "049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569",
+      "after_sha256": "2ede1b72bd369898f2ed99f093ec0700da404a9a85342ea2f15883e29eb272ce",
+      "before_lines": 1257,
+      "after_lines": 1404,
+      "old_top_level_functions_classes": 51,
+      "removed_nodes": [],
+      "changed_nodes": [],
+      "added_nodes": [
+        "test_1252_completed_rejection_rechecks_final_owner",
+        "test_1252_unmapped_rejection_real_application_and_completed_replay",
+        "test_1252_unmapped_rejection_refuses_unsafe_variants_before_write",
+        "unmapped_rejection_case"
+      ],
+      "unchanged_nodes": [
+        {
+          "name": "case",
+          "ast_sha256": "a8a37cc571b8fc3d453a4f6195bf0756f739ca3458f1adbafe5ce9f3d7d06cf6"
+        },
+        {
+          "name": "event",
+          "ast_sha256": "87e2a135bead14310938a8cc3645d6bdb2154342e8dc82217885d1314abba35d"
+        },
+        {
+          "name": "final_fixture_delta",
+          "ast_sha256": "7d12999558cdd1fbe4143c15adb2a45edbfee5285101121cd96b8e768b42021c"
+        },
+        {
+          "name": "ingredient",
+          "ast_sha256": "58eca4c340bf87b9a0c198b7157b010b12bb72110c93c5e6d286ec16545935a2"
+        },
+        {
+          "name": "inherited_family_case",
+          "ast_sha256": "a0009e75ccfe05100eb24fd148ba5af3cfdb27b2b27f61a67511f757f7488284"
+        },
+        {
+          "name": "prepare",
+          "ast_sha256": "a78fe8de0822c587abbcfb83b94f1a97b87331a495830fb7974d5edc0002fc33"
+        },
+        {
+          "name": "put",
+          "ast_sha256": "30106a21b7dd9f32e6fef1152602f1774d1d501708cb0dd3c6608b476b649630"
+        },
+        {
+          "name": "ref",
+          "ast_sha256": "1af1899752fc56cbb2e5a655c7e4399a0e07469fb88d9e599e240511b06b68e3"
+        },
+        {
+          "name": "render",
+          "ast_sha256": "f0fe5e08d126e0bcae6422dba41b8e109003482e41a5200dee6148d08e54a221"
+        },
+        {
+          "name": "repin",
+          "ast_sha256": "6da86e4e6cbaa86d2c2a01dc1c8ac7060cc013ba3dfada25094a847b9f12b8e2"
+        },
+        {
+          "name": "run_git",
+          "ast_sha256": "5af12c002fd0a0400663831f6b0f34b1ad1dcc8e5464fa2adf62b8afeb548468"
+        },
+        {
+          "name": "save_contract",
+          "ast_sha256": "2b463407876540a9e2c5b1c304759dfaf7360609926f8017aecb29cfdd5dac3b"
+        },
+        {
+          "name": "setup",
+          "ast_sha256": "967ebb2332bb92cce80091eafed4189e6983d896b223404b6a86398089f88e42"
+        },
+        {
+          "name": "test_1194_final_owner_membership_is_reenumerated",
+          "ast_sha256": "7cfd450d1fe2e9238db8efa4bd8eb1cc2c516e19b3bc55ead75328e3348febed"
+        },
+        {
+          "name": "test_1194_final_snapshot_membership_is_reenumerated",
+          "ast_sha256": "bcff17e2ca5073ff6706391e218e4e41cb58e6b45f226dea36480705bb0a8f0c"
+        },
+        {
+          "name": "test_1195_cached_dependency_is_reexecuted_privately_from_pinned_bytes",
+          "ast_sha256": "03650dcf55dd44eba7363fc4c380a636f665031cebf722591e95728f7ab6f92d"
+        },
+        {
+          "name": "test_1195_loaded_producer_bytes_and_locations_are_frozen",
+          "ast_sha256": "bb8ef616e5e15fc2ab2c42755f37a8c2c2c96e2bd1c402f500efa164b97ab5e4"
+        },
+        {
+          "name": "test_1195_private_capture_leaves_unchanged_public_dependency_untouched",
+          "ast_sha256": "1bede0eba462ff763b534e0742cbfa75bd15bc672aaa14562e5474d015c55dc1"
+        },
+        {
+          "name": "test_1197_disconnected_or_reused_owner_history_refused_before_write",
+          "ast_sha256": "17fcd786738c30c646d2f55f3c132e7913a23efec73311dae93d5401d896e2e5"
+        },
+        {
+          "name": "test_1197_explicit_native_bridge_can_connect_a_current_preimage",
+          "ast_sha256": "19f3898ea5c71bd3dd26bc5fec5ac2e3b3f6d70c23d7068bcfaed1a39294290f"
+        },
+        {
+          "name": "test_1197_matching_native_endpoint_can_continue_without_approval",
+          "ast_sha256": "10b9b8c258db8ec123c4b41cfd605f8cf78ba3fc7c2662b1ded1eae434631c39"
+        },
+        {
+          "name": "test_1198_noncanonical_top_level_arguments_refused_before_mutation",
+          "ast_sha256": "90888f62e2a3acefc8c2b9da96e56db6ce2485badf851d7b756aa359e95058ae"
+        },
+        {
+          "name": "test_1251_1252_family_changes_refused_before_any_write",
+          "ast_sha256": "58b0426525613a453bfd6ecbf205681a97241e05cb85039a8131baef7b95f1bb"
+        },
+        {
+          "name": "test_1251_1252_inherited_family_real_application_and_completed_replay",
+          "ast_sha256": "0a8ea7005f142e05c4a60f1829c8fa7e148fcecacb5eb0d2343c98ef8e6e22ce"
+        },
+        {
+          "name": "test_1251_1252_new_owner_does_not_inherit_exception",
+          "ast_sha256": "b515076dbcce77d4c7400bec5e67e3fdf5fdc387bd16e84547a61962e81c4126"
+        },
+        {
+          "name": "test_1251_reviewed_family_reduction_preserves_surviving_pairs",
+          "ast_sha256": "58d983251dfec30efa0ed9c9be7cb1ac7b0fe3dc1bfa810bedf853e597dc2e7a"
+        },
+        {
+          "name": "test_1252_completed_replay_rejects_changed_tombstone",
+          "ast_sha256": "7feba334c0d8a3db2bf5ba88cdca907734da142927386622bb82ddb22b4002f7"
+        },
+        {
+          "name": "test_1252_unique_tombstone_activation_and_key_changes_refused",
+          "ast_sha256": "058037b6a49ec6a200e0ed3ba8406b64bc5acb3c786bc03b1fa928cc5fdbbf68"
+        },
+        {
+          "name": "test_1252_unique_tombstone_real_application_and_completed_replay",
+          "ast_sha256": "07710e8533b0665903b604b0497117ebbca25c71f905360c572d3db143931d88"
+        },
+        {
+          "name": "test_actual_native_old_owner_chain_refuses_promotion",
+          "ast_sha256": "994374553d46ec27fcb1f54ed0a3b30bd6ab223bd676c0f1fb9fa9f9f221b1d5"
+        },
+        {
+          "name": "test_archived_protection_never_excuses_current_review_drift",
+          "ast_sha256": "059b7aa97f90992ae8b5f7d81d54586396241dddeb096c46866dec11cd46640c"
+        },
+        {
+          "name": "test_casefold_destination_collision_refused_before_write",
+          "ast_sha256": "b0ff92b74bf2d164ebffe4d09d478b1a55310056a315b691ad7603db65f59f47"
+        },
+        {
+          "name": "test_completed_verifier_rejects_current_or_archived_drift",
+          "ast_sha256": "459800acc2fa6fecbf070ce5e858e1badeb4710464b5b9dcb058d856d5c00382"
+        },
+        {
+          "name": "test_completed_verifier_replays_checkpoint_after_canonical_successor",
+          "ast_sha256": "246125548fdc17c29151646ac369133dc5211443e2ea2d851546ceeed1de748a"
+        },
+        {
+          "name": "test_direct_ignored_owner_is_inventory_but_nested_backup_is_not",
+          "ast_sha256": "68de4a1cf77213a7476c12dc919882fffd3daa76bc620dd760f069a25393b15f"
+        },
+        {
+          "name": "test_dry_run_and_cli_default_do_not_publish",
+          "ast_sha256": "453f94952a8911757fb5a7bd76b6fa5abce465f9803841246579cdeafa7287ac"
+        },
+        {
+          "name": "test_evidence_alias_refused",
+          "ast_sha256": "c5cb9c474ba9432fb76fe65f207a6e9b4efdff5d02d37625bdaad2863d007819"
+        },
+        {
+          "name": "test_exclusive_new_destination_race_preserves_competitor",
+          "ast_sha256": "dd398fd1bbc156d0bdd17fe80420cf0742d0b7235c04cc2d945cb6c2d6f67e1d"
+        },
+        {
+          "name": "test_exclusive_retirement_race_preserves_both_files",
+          "ast_sha256": "0cd187976fdb7a496d413f0df14703c92d166955049399e5e2643083726813f9"
+        },
+        {
+          "name": "test_final_verifier_rechecks_original_proof_roles",
+          "ast_sha256": "6315815cb9c21e263b498ca4aa34656499ca1009d331d6a8ffeed7fae9eb41df"
+        },
+        {
+          "name": "test_incomplete_or_false_lineage_fails",
+          "ast_sha256": "9c6fda88459150201145753a6d28551df6e0a2b6849fdbc60272dbf102b3a2c8"
+        },
+        {
+          "name": "test_late_archive_byte_drift_cannot_finish_success",
+          "ast_sha256": "294111243362838bcc465769d1b9c596f58cc900d93d762102bbe680b9de7caa"
+        },
+        {
+          "name": "test_late_drift_prevents_owner_mutation",
+          "ast_sha256": "2b39d461849d69a4631cc8692b19f769a4403724dcc24df44437573c1e1b37b8"
+        },
+        {
+          "name": "test_late_new_owner_parent_swap_cannot_write_into_replacement",
+          "ast_sha256": "ee0bda8c42b76c91f07fb965542669d5fb0dddc3780bc605c9044da408948c31"
+        },
+        {
+          "name": "test_mixed_application_and_native_completed_proof",
+          "ast_sha256": "29d6951c36338f5f684c87989e1b5e257766ddd6b97004d763f886c5d7de7242"
+        },
+        {
+          "name": "test_native_checkpoint_must_be_accepted_before_application",
+          "ast_sha256": "87509fc192558688ffbd59d07d4b1c7091074cef0756dab27d7972140afe8347"
+        },
+        {
+          "name": "test_noop_is_rejected_and_selected_case_subset_keeps_full_ledger",
+          "ast_sha256": "229b54d2a41d0f05f0eff93dc677cc94485f9a0b8ec2d2327fd05de8509a8d14"
+        },
+        {
+          "name": "test_payload_schema_history_and_owner_guards",
+          "ast_sha256": "7bb9fe2c5b826fb1ba04932a6ccad014d81a146fdedd9938871892a50c8afe8e"
+        },
+        {
+          "name": "test_receipt_directory_collision_is_preserved",
+          "ast_sha256": "c8a44ee11b25b07981bd9c74440324d632f9a5bcace19a348273f0406d0d32cd"
+        },
+        {
+          "name": "test_reserved_backups_precede_first_write_and_late_failure_is_honest",
+          "ast_sha256": "547b0beb4ea2b8d7071c40b0910241ce0df5a89eaaa9b5a69c394258c78909ec"
+        },
+        {
+          "name": "test_unknown_closed_fields_fail",
+          "ast_sha256": "c1596abf7c396b161a51b65e68f4a984f3567f1559186602cbc5da6d77631fa0"
+        }
+      ]
+    }
+  ],
+  "actual_scope": "Read exact full committed operator and complete tests, code diff and parent/new ASTs; no operator imported or executed. All51 preexisting top-level test/helper definitions preserve full ASTs and decorators. Only operator _validate_records changes, plus module docstring; no new operator function. Final core/native pair and separate execution evidence pending.",
+  "initial_assessment": "New rejection branch requires existing UNMAPPED preimage, unmapped source path, edit kind, equal source/destination and retained identifier/preferred term. Existing collision-pair status restriction still applies before schema/status logic. Schema validation, prefix extension and substantive-change guard remain; prepare, origin binding, captured producer and completed verification ASTs unchanged. No initial concern found; no final verdict yet.",
+  "prior_authorship": "Earlier W04 chemistry author and campaign scientific/technical reviewer; no authorship of this operator or exact tests. No new scientific assessment or owner acceptance.",
+  "mutable_I_read_or_import": false,
+  "operator_execution": false,
+  "scientific_approval": false,
+  "application_approval": false
+}

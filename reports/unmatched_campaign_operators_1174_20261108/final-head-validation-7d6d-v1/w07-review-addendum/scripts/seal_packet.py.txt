@@ -1,0 +1,21 @@
+from pathlib import Path
+import datetime,hashlib,json
+
+O=Path(__file__).resolve().parents[1]
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+assembly=O/'review/skeptical/ASSEMBLY-REVIEW-v2.json';assert assembly.is_file()
+pair=json.loads((O/'native-pair.json').read_text())
+for r in pair.values():assert sha(O/r['path'])==r['sha256']
+files=[]
+for p in sorted(O.rglob('*')):
+    if p.is_file():
+        assert not p.is_symlink(),p
+        files.append(dict(path=str(p.relative_to(O)),sha256=sha(p),bytes=p.stat().st_size))
+assert not (O/'MANIFEST.json').exists() and not (O/'SEAL.json').exists()
+manifest=dict(sealed_at=now(),algorithm='SHA256',scope='Only issue-linked private accounting correction and independent re-review; original reports immutable. No source/scientific/application/export approval.',member_count=len(files),total_bytes=sum(r['bytes'] for r in files),files=files,exclusions=['MANIFEST.json','SEAL.json'])
+with (O/'MANIFEST.json').open('x') as f:json.dump(manifest,f,indent=2);f.write('\n')
+for r in files:assert sha(O/r['path'])==r['sha256'],r
+seal=dict(sealed_at=now(),manifest_sha256=sha(O/'MANIFEST.json'),member_count=len(files),handoff_sha256=sha(O/'HANDOFF.json'),selector_sha256=sha(O/'SELECTOR.json'),native_pair=pair,independent_final_assembly_sha256=sha(assembly),finding='W07-OPERATOR-LOG-AUDIT-001',disposition='resolved_only_through_new_private_successor',old_helper_sha256='ab87b8b3b4c50c265480814bdaa9a7d9a0bebd69027876ad269f337d9b5e7533',new_helper_sha256=sha(O/'scripts/accounting_correction.py'),head='7d6d44ea132e04709f81ebd9e1577643745110ad',scientific_review=False,approval='NONE',full_suite='Pending at recorded bounded cutoff; no completed receipt read or inferred.')
+with (O/'SEAL.json').open('x') as f:json.dump(seal,f,indent=2);f.write('\n')
+print(json.dumps(seal,indent=2))

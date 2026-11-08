@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-11-08T14:05:20.814661+00:00",
+  "failed_read_probe": {
+    "command": "python3 subprocess.check_output([ps,-axo,pid,ppid,etime,args]) filtered to the private native check",
+    "exit_code": 1,
+    "exception": "PermissionError: [Errno 1] Operation not permitted: 'ps'",
+    "scope": "Read-only process inspection; sandbox denial, not an accounting/operator defect."
+  },
+  "successful_read_probe": {
+    "command": "ps -axo pid,ppid,etime,args | rg 'check_native_lineage.py|record_review.py --repo-root'",
+    "access": "approved read-only sandbox escalation",
+    "exit_code": 0,
+    "observed_private_parent_pid": 89986,
+    "observed_native_child_pid": 89996,
+    "elapsed_observed": "01:06",
+    "process_mutation": false
+  },
+  "result": "No process was stopped or changed. Native read-only check finished normally with exit0/1019declared-scope reviews. No helper repair resulted from these probes."
+}

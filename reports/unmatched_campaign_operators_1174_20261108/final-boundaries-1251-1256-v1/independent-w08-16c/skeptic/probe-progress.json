@@ -1,0 +1,266 @@
+[
+  {
+    "name": "all_four_ontology_and_registry_slots_removed",
+    "accepted": true,
+    "result": {
+      "after_sha256": "98f839be4365aae0b99cf3cdb8f33a06c9bf7a9afff100957c38b08e3484785c",
+      "trace_count": 4,
+      "preserved_unrelated_literal_line": true
+    },
+    "expected_rejection": false,
+    "pass": true
+  },
+  {
+    "name": "omit_slot_0",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "omit_slot_1",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "omit_slot_2",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "omit_slot_3",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: row plan does not cover every selected native/canonical slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "generated_demoted_CHEBI:8612",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "generated_demoted_cas:fixture",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "generated_demoted_kgmicrobe.ingredient:fixture",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "generated_demoted_kgmicrobe.compound:fixture",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "generated_demoted_UNKNOWN:fixture",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: native generation retained a demoted subject or registry slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "invalid_relocation_kind",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "invalid_relocation_before_source_record",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "invalid_relocation_source_record",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "invalid_relocation_before_yaml_sha256",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: demotion requires authentic same-subject mapped-to-unmapped relocation",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "foreign_subject_deletion_not_smuggled",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: missing/extra/misowned row plan",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "duplicate_slot_ontology_refused",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: ambiguous native row slot",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "unrelated_generator_drift_preserved_not_applied",
+    "accepted": true,
+    "result": {
+      "after_sha256": "98f839be4365aae0b99cf3cdb8f33a06c9bf7a9afff100957c38b08e3484785c",
+      "trace_count": 4,
+      "preserved_unrelated_literal_line": true
+    },
+    "expected_rejection": false,
+    "pass": true
+  },
+  {
+    "name": "ambiguous_owner_subject_refused",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: ambiguous source subject",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "native_receipt_chain_none",
+    "accepted": true,
+    "result": {
+      "position_map": [
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "removed_rows": 4,
+      "approval": "NONE: all touched rows and changed owners require separate scientific review"
+    },
+    "expected_rejection": false,
+    "pass": true
+  },
+  {
+    "name": "native_receipt_chain_old",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: demotion old path has native owner-chain history; migration review required",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "native_receipt_chain_destination",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: demotion destination has native owner-chain history; migration review required",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_positive",
+    "accepted": true,
+    "result": null,
+    "expected_rejection": false,
+    "pass": true
+  },
+  {
+    "name": "source_completion_hidden_owner_addition",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: source completion owner membership or bytes changed",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_retired_old_reappears",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: source completion owner membership or bytes changed",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_retired_old_dangling_symlink",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Filesystem alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-retired_old_dangling_symlink/data/ingredients/mapped/Angustmycin.yaml",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_checkpoint_hidden_addition",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: source snapshot membership changed",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_protected_remove",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Campaign publication: source snapshot membership changed",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_immutable_input_drift",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-immutable_input_drift/evidence/proof.json",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_same_byte_inode_swap",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-same_byte_inode_swap/evidence/proof.json",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "source_completion_immutable_hardlink",
+    "accepted": false,
+    "error_type": "ValueError",
+    "message": "Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/fixtures/capture-immutable_hardlink/evidence/proof.json",
+    "expected_rejection": true,
+    "pass": true
+  },
+  {
+    "name": "policy_retains_old_owner_pin_and_history",
+    "accepted": true,
+    "result": {
+      "original_policy_unchanged": true,
+      "historical_owner_pin_retained": true
+    },
+    "expected_rejection": false,
+    "pass": true
+  }
+]

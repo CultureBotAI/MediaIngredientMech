@@ -1,0 +1,37 @@
+{
+  "runtime": {
+    "path": "runtime.json",
+    "sha256": "40a55eb15abddac38094480fb7c07d032d8a57a71b99e270ef4cbd0bd45998e6"
+  },
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-08/venv/bin/python -B .temp/combined-16c-independent-v1/technical/probe.py",
+      "exit_code": 0,
+      "log": "probe.log",
+      "outcomes": "results.json",
+      "count": 15
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-08/venv/bin/python -B .temp/combined-16c-independent-v1/technical/boundary_controls.py",
+      "exit_code": 0,
+      "log": "boundary-controls.log",
+      "outcomes": "boundary-controls.json",
+      "count": 4
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-08/venv/bin/python -B .temp/combined-16c-independent-v1/technical/compare_ast.py",
+      "exit_code": 0,
+      "log": "ast.log",
+      "outcomes": "ast-preservation.json"
+    }
+  ],
+  "native_mocks": false,
+  "native_source_changes": false,
+  "full_suite_rerun": false,
+  "harness_failures": [],
+  "exploratory_read_notes": [
+    "An initial read looked for ARCHIVE.json at packet root; actual receipt is frozen/ARCHIVE.json. This was a read-only path mistake, not a failed native run.",
+    "One exploratory cat of the large archive manifest produced truncated tool output; claims use bounded JSON-parsed exact entries, not that truncated display."
+  ],
+  "fixture_constants": "Unicode/newline probe changes only imported test-helper path constants in process to author private fixture filenames; no native function or frozen test bytes modified."
+}

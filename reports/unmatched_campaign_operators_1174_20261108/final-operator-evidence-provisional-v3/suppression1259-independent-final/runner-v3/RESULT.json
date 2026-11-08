@@ -1,0 +1,59 @@
+{
+  "status": "EXACT_TEST_PIN_BRIDGE_PASS",
+  "runner_sha256": "0959ef080c4ca65b4c527e03a9670480d193d4e1f35f221cb535751c808ec336",
+  "expectations_sha256": "2eec493a7972623c165fbed07a5c49df3eeee18b82d4452cc09f7c2223c314eb",
+  "inventory_sha256": "d1ca173c3770310c2ccb600a5a58150062a7b828479cbe436a260aed245c0fc4",
+  "expectation_deltas": [
+    {
+      "path": "/expected_final_code/tests/test_campaign_publication.py",
+      "before": "d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa",
+      "after": "9c0da0b732189a8c0f34977d15cf0aeab3621fd34d2be075de7c96bef25d6236"
+    },
+    {
+      "path": "/expected_final_code/tests/test_campaign_suppressions.py",
+      "before": "d325f7f05744521a44c9cc309a387e153e9a73b0a57aa6105440f149932be816",
+      "after": "01cd4b67582e2cc0e9a5782ecddebfe35c7d3309636a3b2a0053a6b5699b3c23"
+    },
+    {
+      "path": "/suppression_fixture_inventory_sha256",
+      "before": "668e5e075ff66c58a1e16124e3adb330c3ca245bc09ba5e0592d5712e464207a",
+      "after": "d1ca173c3770310c2ccb600a5a58150062a7b828479cbe436a260aed245c0fc4"
+    }
+  ],
+  "inventory_deltas": [
+    {
+      "path": "/expected_internal_tracked_code_inputs/tests/test_campaign_publication.py/sha256",
+      "before": "d49d9204b8b621f8568ab86e984e3f829c0652bfc97b240b3868c9d7397768fa",
+      "after": "9c0da0b732189a8c0f34977d15cf0aeab3621fd34d2be075de7c96bef25d6236"
+    },
+    {
+      "path": "/expected_internal_tracked_code_inputs/tests/test_campaign_publication.py/bytes",
+      "before": 77631,
+      "after": 77704
+    },
+    {
+      "path": "/expected_internal_tracked_code_inputs/tests/test_campaign_suppressions.py/sha256",
+      "before": "d325f7f05744521a44c9cc309a387e153e9a73b0a57aa6105440f149932be816",
+      "after": "01cd4b67582e2cc0e9a5782ecddebfe35c7d3309636a3b2a0053a6b5699b3c23"
+    },
+    {
+      "path": "/expected_internal_tracked_code_inputs/tests/test_campaign_suppressions.py/bytes",
+      "before": 21857,
+      "after": 22158
+    }
+  ],
+  "actual_external_files_checked": 169,
+  "actual_private_internal_files_checked": 24,
+  "actual_logical_git_blobs_checked": 10,
+  "mandatory_old_and_new_native_cases": {
+    "tests/test_campaign_demotion_integration.py": 20,
+    "tests/test_campaign_suppression_integration.py": 10
+  },
+  "prior_runner_logic_and_all_other_membership_unchanged": true,
+  "independent_13_case_receipt_sha256": "7d2728807f02fd04796324d73af7b6a9d4efb0fe626123094d4fba48bc7e66ad",
+  "limitations": [
+    "This is a private fixture/code input bridge, not actual I/K readiness or full-run success.",
+    "Final ordinary code commit, root readiness evidence and complete native integration execution remain required.",
+    "Original runner v1 defects and v2 correction packet remain unchanged."
+  ]
+}

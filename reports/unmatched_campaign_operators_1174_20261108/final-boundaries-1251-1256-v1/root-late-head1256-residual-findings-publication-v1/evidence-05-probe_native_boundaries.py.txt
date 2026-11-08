@@ -1,0 +1,116 @@
+"""New reviewer probes using real source and pinned generation.
+
+The negative fault wrapper calls the real owner-proof function and returns its
+unchanged proof; it only creates a real private Git commit at a late boundary.
+"""
+import copy
+import hashlib
+import importlib.util
+import json
+import os
+import platform
+import subprocess
+import sys
+from pathlib import Path
+
+P=Path(__file__).resolve().parent
+F=P.parent/'frozen/repo'
+sys.path.insert(0,str(F/'src'))
+from mediaingredientmech import campaign_publication as c
+
+def load(name):
+    spec=importlib.util.spec_from_file_location(name,F/'tests'/f'{name}.py')
+    m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+integration=load('test_campaign_demotion_integration')
+fx=load('test_campaign_publication')
+results=[]
+def save():
+    (P/'native-boundary-progress.json').write_text(json.dumps(results,indent=2)+'\n')
+def h(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def outcome(call):
+    try:return {'accepted':True,'value':call()}
+    except (ValueError,RuntimeError) as e:return {'accepted':False,'type':type(e).__name__,'error':str(e)}
+W=P/'fixtures';W.mkdir()
+
+# Full native positive: make a tracked derived fixture file part of the accepted
+# private baseline, then alter it without committing after source completion.
+# Only fixture setup is extended; source/generator/publisher functions are real.
+real_make=integration.make_source_case
+def make_with_tracked_derived(root,historical_root=None):
+    values=real_make(root,historical_root)
+    source,_,plan,*_=values
+    source.put(root,'data/curated/derived-fixture.yaml',b'fixture: prior derived data\n')
+    source.run_git(root,'add','--','data/curated/derived-fixture.yaml')
+    source.run_git(root,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','Private tracked derived baseline')
+    plan['baseline_commit']=source.run_git(root,'rev-parse','HEAD')
+    source.repin_demotion(root,plan)
+    return values
+integration.make_source_case=make_with_tracked_derived
+root=W/'tracked-derived-positive';root.mkdir()
+source,plan,path,destination,proof=integration.prepare_native_case(root)
+integration.make_source_case=real_make
+derived=root/'data/curated/derived-fixture.yaml';derived.write_bytes(b'fixture: uncommitted synchronized data\n')
+assert b'data/curated/derived-fixture.yaml\0' in source.owner.git(root,'diff','--name-only','-z','HEAD','--')
+positive=c.publish(root,path,destination,apply=True)
+assert positive['status']=='complete'
+same_proof=source.owner.verify_completed(root,root/'plan.json',root/'source-receipt/application.json')
+assert same_proof==proof
+fx.commit_publication_boundary(root,unrelated=True)
+historical=c.validate(root,path)
+assert historical['status']=='verified'
+receipt_before=(destination/'publication.json').read_bytes()
+policy_before=(root/c.POLICY).read_bytes()
+owner=root/proof['records'][0]['source_record'];original=owner.read_bytes()
+owner.write_bytes(original+b'# unapproved current proof drift\n')
+changed=outcome(lambda:c.validate(root,path))
+assert not changed['accepted'] and 'inventory' in changed['error']
+assert receipt_before==(destination/'publication.json').read_bytes() and policy_before==(root/c.POLICY).read_bytes()
+results.append({'name':'tracked_derived_sync_and_later_historical_commit','scope':'Actual source prepare/apply and pinned generator and native publisher; no native gate/proof/generation stubs.',
+ 'fixture':str(root),'publication':positive,'historical_validation':historical,'tracked_derived_uncommitted':True,
+ 'source_proof_equal_before_later_commit':True,'later_current_owner_drift':changed,
+ 'artifacts':{str(p.relative_to(root)):h(p) for p in [path,destination/'publication.json',root/'source-receipt/application.json',root/'reports/native/generation.json',root/'reports/native/command.json',root/'reports/native/command.log']}})
+save()
+
+# New negative: real Git HEAD drift inside the final source-proof replay, after
+# that recheck's capture.verify has already performed its HEAD check. Unlike a
+# mocked proof, this wrapper returns precisely the actual verified proof.
+root=W/'late-head-inside-final-source-proof';root.mkdir()
+source,plan,path,destination,proof=integration.prepare_native_case(root)
+baseline=proof['baseline_commit'];real_proof=c._owner_proof
+calls=[];completed_log_calls=0;injected=[]
+def late_proof(actual_root,actual_plan):
+    global completed_log_calls
+    result=real_proof(actual_root,actual_plan)
+    log=destination/'publication.json'
+    complete_log=False
+    if log.exists() and log.read_bytes():
+        complete_log=json.loads(log.read_bytes()).get('status')=='complete'
+    calls.append({'log_complete':complete_log,'head':source.run_git(root,'rev-parse','HEAD')})
+    if complete_log:
+        completed_log_calls+=1
+        if completed_log_calls==2:
+            fx.commit_publication_boundary(root,unrelated=True)
+            injected.append({'baseline':baseline,'new_head':source.run_git(root,'rev-parse','HEAD'),
+                             'at':'real _owner_proof returned within final publisher recheck after capture HEAD callback'})
+    return result
+c._owner_proof=late_proof
+try:observed=outcome(lambda:c.publish(root,path,destination,apply=True))
+finally:c._owner_proof=real_proof
+assert len(injected)==1
+head=source.run_git(root,'rev-parse','HEAD')
+log=json.loads((destination/'publication.json').read_bytes()) if (destination/'publication.json').read_bytes() else None
+native_path=root/c.native.RECEIPTS_DIR/(plan['batch']+'.json')
+historical_after=outcome(lambda:c.validate(root,path))
+results.append({'name':'head_changes_inside_final_source_proof_replay','fixture':str(root),'observed':observed,
+ 'baseline':baseline,'head_at_return':head,'head_differs':head!=baseline,'injection':injected,
+ 'publication_log':log,'native_receipt_nonempty':bool(native_path.read_bytes()),'historical_validation_after':historical_after,
+ 'actual_owner_proof_calls':calls,'gate_or_source_proof_stubbed':False,'negative_fault_wrapper_disclosed':True,
+ 'artifacts':{str(p.relative_to(root)):h(p) for p in [path,destination/'publication.json',native_path,root/'source-receipt/application.json',root/'reports/native/generation.json',root/'reports/native/command.json',root/'reports/native/command.log']}})
+save()
+bindings={str(f.path):c.sha(f.content) for f in c.LOADED_PRODUCERS.values()}
+for f in c.LOADED_PRODUCERS.values():f.verify()
+out={'reviewed_head':'21061aa532401398db70c59a596debf330f70744','runtime':{'version':platform.python_version(),'executable':sys.executable},
+ 'executed_source_hashes':bindings,'fixture_test_sha256':h(F/'tests/test_campaign_demotion_integration.py'),
+ 'results':results,'whole_campaign_or_scientific_approval':False,'full_suite_repeated':False}
+(P/'native-boundary-results.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({'positive':'PASS','late_final_proof':observed,'late_head_differs':head!=baseline,'receipt_status':log.get('status') if log else None}))

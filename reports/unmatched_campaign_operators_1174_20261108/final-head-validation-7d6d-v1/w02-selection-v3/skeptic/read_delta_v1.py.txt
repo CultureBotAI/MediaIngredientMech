@@ -1,0 +1,179 @@
+"""Read selected immutable evidence only; no operator/runner or Git execution."""
+from pathlib import Path
+from datetime import datetime, timezone
+import collections
+import hashlib
+import importlib.util
+import json
+import os
+import re
+import sys
+
+S = Path(__file__).resolve().parent
+W = S.parents[2]
+C = W.parents[2]
+P = C / 'preflight/pr1205-evidence-final-selection-v3'
+inputs = {}
+
+
+def read(p, expected=None):
+    p = Path(p)
+    assert p.is_absolute() and p.is_file() and not p.is_symlink(), str(p)
+    b = p.read_bytes()
+    h = hashlib.sha256(b).hexdigest()
+    assert expected is None or h == expected, str(p)
+    inputs[str(p)] = {'path': str(p), 'sha256': h, 'bytes': len(b)}
+    return b
+
+
+def load(p, expected=None):
+    return json.loads(read(p, expected))
+
+
+def canon(x):
+    return json.dumps(x, sort_keys=True, ensure_ascii=False, separators=(',', ':')).encode()
+
+
+selection = load(P/'SELECTION.json', 'f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34')
+load(P/'HANDOFF.json', '006f4c4908660107ce7a8819a529bb2ec5da917ec0fb05aa23785ccc802f4ecd')
+pm = load(P/'MANIFEST.json', '6211bd44e3030171af9f463906f6a685a00f5df8f52eaca81344909e8005b8dd')
+for name in ['README.md', 'PACKETS.json', 'OMISSIONS.json', 'FAILURES-AND-INCOMPLETE.json', 'REQUIRED-FINAL-INPUTS.json', 'SUMMARY.json', 'SEAL.json', 'FINAL-RECHECK.json', 'build-v1.receipt.json', 'build-v1.stderr', 'build-v2.receipt.json']:
+    read(P/name)
+prior = load(C/'preflight/pr1205-evidence-final-selection-v2/SELECTION.json', '40b900ec95d849543f955e81d2ff7c043dfd09d469c1a9b7cc232aee8b55e85e')
+assert len(selection['entries']) == 1016 and canon(selection['entries'][:691]) == canon(prior['entries'])
+delta = selection['entries'][691:]
+assert len(delta) == 325
+lookup = {(r['packet'], r['packet_relative_path']): r for r in delta}
+assert len(lookup) == 325
+originals = {r['original_path']: r for r in delta}
+
+
+def selected(tag, path):
+    r = lookup[(tag, path)]
+    return Path(r['original_path'])
+
+
+patterns = {
+    'private_key_block': re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
+    'github_credential_shape': re.compile(r'\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,})\b'),
+    'aws_credential_shape': re.compile(r'\b(?:AKIA|ASIA)[A-Z0-9]{16}\b'),
+    'api_credential_shape': re.compile(r'\bsk-(?:proj-|ant-)?[A-Za-z0-9_-]{35,}\b'),
+    'bearer_value_shape': re.compile(r'(?i)\bBearer\s+[A-Za-z0-9_-]{30,}(?:\.[A-Za-z0-9_-]+)*'),
+}
+security_leads = []
+read_register = []
+json_receipts = []
+for r in delta:
+    p = Path(r['original_path']); raw = read(p, r['sha256'])
+    assert len(raw) == r['bytes'] and p.stat().st_nlink == 1
+    text = raw.decode('utf-8')
+    leads = []
+    for name, pattern in patterns.items():
+        matches = list(pattern.finditer(text))
+        if matches:
+            lead = {'path': str(p), 'category': name, 'occurrences': len(matches), 'matched_value_sha256': [hashlib.sha256(m.group().encode()).hexdigest() for m in matches]}
+            security_leads.append(lead); leads.append(name)
+    assert not any(part in {'.aws', '.ssh', '.codex', '.claude', 'sessions'} for part in Path(r['packet_relative_path']).parts)
+    if r['disposition'] == 'copy_exact_bytes_when_authorized' and p.name.endswith('.py'):
+        assert r['archive_path'].endswith('.py.txt')
+    parsed = None
+    if p.suffix == '.json':
+        parsed = json.loads(text)
+        if isinstance(parsed, dict) and 'exit_code' in parsed:
+            json_receipts.append({'path': str(p), 'sha256': r['sha256'], 'exit_code': parsed['exit_code'], 'started_at': parsed.get('started_at'), 'ended_at': parsed.get('ended_at'), 'scope': parsed.get('scope'), 'log_sha256': parsed.get('log_sha256')})
+    read_register.append({'packet': r['packet'], 'path': str(p), 'sha256': r['sha256'], 'bytes': len(raw), 'content_read': 'Full byte hash + full UTF8 content scan; JSON parsed when applicable. Semantic human/model read is separately scoped in review receipt.', 'security_lead_categories': leads})
+
+manifest_coverage = []
+for tag, count in [('suppression1259-author-final', 191), ('suppression1259-independent-final', 51), ('runner-independent-v1', 13), ('runner-independent-v2', 11), ('runner-final-test-pin-bridge', 8)]:
+    mpath = selected(tag, 'MANIFEST.json'); m = load(mpath)
+    assert len(m['files']) == count
+    for r in m['files']:
+        p = mpath.parent / r['path']; raw = read(p, r['sha256'])
+        declared_size = r['size'] if 'size' in r else r['bytes']
+        assert len(raw) == declared_size
+        current = lookup[(tag, r['path'])]
+        assert str(p) == current['original_path'] and current['sha256'] == r['sha256']
+    manifest_coverage.append({'packet': tag, 'path': str(mpath), 'sha256': inputs[str(mpath)]['sha256'], 'declared_members': count, 'all_selected_full_objects_match': True})
+
+locator_path = selected('suppression1259-author-locators', 'LOCATOR-ADDENDUM-v1.json')
+locator = load(locator_path, '7d32e7e25b628c948211dee91cd30c3b8faa2471f49735aed2bfb4d97f409d3d')
+locator_refs = []
+
+
+def locrefs(x, pointer=''):
+    if isinstance(x, dict):
+        if 'absolute_path' in x and 'sha256' in x:
+            p = Path(x['absolute_path']); read(p, x['sha256'])
+            locator_refs.append({'pointer': pointer, 'path': str(p), 'sha256': x['sha256']})
+        for k,v in x.items(): locrefs(v,pointer+'/'+k)
+    elif isinstance(x,list):
+        for i,v in enumerate(x):locrefs(v,pointer+'/'+str(i))
+
+
+locrefs(locator)
+outer = load(Path(locator['original_outer_handoff']['absolute_path']))
+innerpath = Path(locator['original_inner_handoff']['absolute_path']); inner = load(innerpath)
+authorbase = Path(locator['bases']['author_directory'])
+assert not os.path.lexists(authorbase / outer['patch'])
+assert not os.path.lexists(authorbase / outer['portable_manifest']['path'])
+assert innerpath.parent == Path(locator['bases']['portable_directory'])
+read(innerpath.parent / inner['patch'], inner['patch_sha256'])
+for k in ['original_combined', 'affected_fixture_rerun']:
+    rp = innerpath.parent / inner[k]['receipt']; rr = load(rp)
+    read(rp.parent/'run.log', inner[k]['log_sha256'])
+    assert rr['exit_code'] == inner[k]['exit_code']
+for relative, h in inner['files'].items():read(innerpath.parent/'after'/relative,h)
+
+combined = load(selected('suppression1259-author-final','checks/combined-final-v1/run.json'))
+combined_log = read(selected('suppression1259-author-final','checks/combined-final-v1/run.log'),combined['log_sha256']).decode()
+assert combined['exit_code'] == 1 and combined['before'] == combined['after']
+assert '11 failed, 619 passed, 12 warnings' in combined_log
+failures = [s for s in combined_log.splitlines() if s.startswith('FAILED ')]
+assert len(failures) == 11
+affected = load(selected('suppression1259-author-final','checks/fixture-corrections-affected-v1/run.json'))
+affected_log=read(selected('suppression1259-author-final','checks/fixture-corrections-affected-v1/run.log'),affected['log_sha256']).decode()
+assert affected['exit_code'] == 0 and '13 passed' in affected_log and 'skipped' not in affected_log
+independent13=load(selected('suppression1259-independent-final','test-correction/RESULT.json'))
+independent_log=read(selected('suppression1259-independent-final','test-correction/stdout.log'),independent13['stdout_sha256']).decode()
+assert independent13['exit_code'] == 0 and '13 passed' in independent_log
+
+publications=[]
+for r in delta:
+    if r['packet'].startswith('filed-') and Path(r['original_path']).name.startswith('publication-'):
+        pp=Path(r['original_path']); pub=load(pp); body=read(pp.parent/pub['row']['body_file'],pub['row']['body_sha256'])
+        suffix=pp.stem.removeprefix('publication-'); getp=pp.parent/f'readback-{suffix}.json'
+        get=load(getp,pub['readback_sha256'])
+        assert get['body'].encode()==body
+        publications.append({'packet':r['packet'],'publication':str(pp),'comment_id':get.get('id'),'created_at':get['created_at'],'body_exact':True,'actual_live_network_read_by_D':False})
+oldmap=load(W/'.temp/pr1205-final-archive-subset-independent-v2/HANDOFF-LOCATOR-ADDENDUM.json','3fb11ff59666f63cfb5d4ddc6cac2eee99abec7a791bbc5a31a78ecf569c4bdf')
+oldfile=C/'preflight/native-fixture-and-preparation-findings-publication-v1'
+oldpub=load(oldfile/'publication-01.json'); oldget=load(oldfile/'readback-01.json',oldpub['readback_sha256'])
+read(oldfile/oldpub['row']['body_file'],oldpub['row']['body_sha256'])
+assert datetime.fromisoformat(oldmap['at']) < datetime.fromisoformat(oldget['created_at'].replace('Z','+00:00'))
+chronology=load(C/'preflight/partial-native-fixture-finding-publication-v1/readback-01.json')
+assert chronology['id']==6722200972 and 'did **not** precede' in chronology['body']
+
+helper=W/'scripts/record_review.py';read(helper)
+spec=importlib.util.spec_from_file_location('d_v3_historical_native',helper)
+native=importlib.util.module_from_spec(spec);sys.modules[spec.name]=native;spec.loader.exec_module(native)
+pair_results=[]
+for r in delta:
+    p=Path(r['original_path'])
+    if p.suffix!='.yaml':continue
+    raw=read(p); doc=native.load_document(raw)
+    if 'review_id' not in doc:continue
+    mdpath=p.with_suffix('.md');md=read(mdpath)
+    native.validate_review(doc);assert native.render_markdown(doc).encode()==md
+    pair_results.append({'path':str(p),'yaml_sha256':r['sha256'],'markdown':str(mdpath),'markdown_sha256':inputs[str(mdpath)]['sha256'],'review_id':doc['review_id'],'verdict':doc['verdict'],'scientific_review_historical':doc['scientific_review'],'reviewer':doc['reviewer'],'scope':doc['scope'],'limitations':doc['limitations'],'target_count':len(doc['targets']),'input_count':len(doc['source']['inputs']),'native_validate_and_exact_render':True,'current_source_or_new_approval_asserted':False})
+assert len(pair_results)==6
+read(Path(__file__).resolve())
+out={'reviewer':'/root/final_reviewer','at':datetime.now(timezone.utc).isoformat(),'scope':'Read all325 immutable delta objects, parse JSON, bounded content/pattern/path scan, exact declared portable manifest and locator/native-history verification; no operator code acceptance or archived test execution.',
+ 'selection_sha256':inputs[str(P/'SELECTION.json')]['sha256'],'old691_canonical_type_sensitive_prefix_sha256':hashlib.sha256(canon(prior['entries'])).hexdigest(),
+ 'delta_count':len(delta),'delta_packets':dict(collections.Counter(r['packet'] for r in delta)),'read_register':read_register,'security_patterns':list(patterns),'security_leads':security_leads,'security_limit':'Pattern leads only, no universal secret guarantee; public GitHub actor metadata and local recorded environment paths are not credentials/session exports.',
+ 'portable_manifest_coverage':manifest_coverage,'locator_exact_references':locator_refs,'outer_original_short_locators_still_absent':True,'inner_declared_base_resolves':True,
+ 'actual_recorded_runs':json_receipts,'original_combined_failed_cases':failures,'run_scope':'Actual original combined11FAIL619PASS; author13PASS and distinct independent13PASS are separate, never combined into all-pass suite.',
+ 'filed_body_readbacks':publications,'chronology':{'own_prior_locator_addendum_at':oldmap['at'],'root_old_filing_comment':oldget['id'],'root_old_filing_at':oldget['created_at'],'correction_comment':chronology['id'],'own_addendum_before_GitHub_filing':True,'local_report_before_addendum_is_separate':True,'old_publication_body_extra_context_not_new_selection_claim':str(oldfile/'readback-01.json')},
+ 'historical_native_pairs':pair_results,'native_boundary':'Native schema validation and exact derived Markdown only. One genuine historical W07 science envelope and five synthetic transition/draft envelopes; no current-source, whole-owner or new independent science approval.',
+ 'input_hash_manifest':sorted(inputs.values(),key=lambda r:r['path'])}
+with (S/'delta-readback-v1.json').open('x') as f:f.write(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
+print(json.dumps({'status':'READBACK_COMPLETE','delta':len(delta),'manifests':[(r['packet'],r['declared_members']) for r in manifest_coverage],'native_pairs':len(pair_results),'security_leads':len(security_leads),'inputs':len(inputs),'sha256':hashlib.sha256((S/'delta-readback-v1.json').read_bytes()).hexdigest()},indent=2))

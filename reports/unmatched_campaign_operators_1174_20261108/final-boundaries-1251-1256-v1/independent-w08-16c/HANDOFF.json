@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T11:55:13.353985+00:00",
+  "task": "Final independent adversarial code review of exact pushed PR1205 head16c",
+  "reviewer": "worker08:/root",
+  "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "parent": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "historical_context_head": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+  "CLAW_head": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+  "own_source_head_unchanged": "ae1d085d5208f010150f9e27dfd9d9c26ec7d228",
+  "completion": "completed",
+  "verdict": "needs_curation",
+  "open_major_findings": [
+    {
+      "finding_id": "REJECTION-CODE-001",
+      "routing": "Existing filed issue1255",
+      "description": "Ordinary quoted/newline Git paths cause legitimate Unicode/control-character owner application to fail after intended mutation."
+    },
+    {
+      "finding_id": "W08-16C-CODE-002",
+      "routing": "New independent file-ready finding; coordinator owns deduplication/filing before fix.",
+      "description": "After prepare, HEAD/dirty baseline is not retained. A later unrelated commit can disappear from the final comparison against moving HEAD and yield a complete receipt; uncommitted unrelated drift is detected only after mutation."
+    }
+  ],
+  "new_findings_filed_on_GitHub_by_reviewer": false,
+  "findings": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/FINDINGS.json",
+    "sha256": "4762b8e580744d5fedf8d6be3d0051f71c8e65ec3e01c837917ad0d0d4c74ffd"
+  },
+  "new_finding_before_fix": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/FINDING-W08-16C-CODE-002.json",
+    "sha256": "948962221342c30a8420784b4d71ca4a063fafca357f775842f3fd6c3bb9b6fd"
+  },
+  "assessment": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/ASSESSMENT.md",
+    "sha256": "3ffdf4a4dce0b6838365b667b9578dc990fd63fc7a356d4b8b8a510caeb4b140"
+  },
+  "scope_conclusion": "The explicit demotion tuple, true original/preimage, same-basename MAPPED-to-AMBIGUOUS route, retirement/completed proof, all-subject-slot deletion and both-path chain refusal are supported within the tested scope. No separate publisher delta defect was confirmed. These observations do not waive the two inherited source-application defects, which block code acceptance at16c.",
+  "tests": {
+    "distinct_passed": 337,
+    "source": 197,
+    "publication": 131,
+    "real_integration": 9,
+    "initial_run": "328 passed,9 integration lock failures,0 skipped; exact failed output retained.",
+    "integration_retry": "Only9 rerun in new private fixtures with supported absolute OPENCLAW_WORKSPACE;9 passed,0 skipped. Same frozen tests and real pinned source/generator/publication/receipt paths.",
+    "summary": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-summary.json",
+      "sha256": "5d6b944c557b7183f7a3c0095cef2bd510b4f585055798edcc1feec50df5b631"
+    },
+    "original_run": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/result.json",
+      "sha256": "979149bbef1c3f9a4648f54f498fa847be32cebaf58d42cb00d662e1047ca240"
+    },
+    "retry": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/result.json",
+      "sha256": "ff518d5e66f5bb6b6d2a83f37d8bfc9c1d061ce129c16cf8044c999256aae11e"
+    },
+    "retry_runtime_and_context": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused-integration-v2/command.json",
+      "sha256": "c7b1016656b3f8107c314a4df3ece24ba53bd94e70a7e00c39bc3487b2092a3e"
+    },
+    "additional_source_controls": 19,
+    "additional_publisher_stage_probes": 31,
+    "root_baseline_scenarios": 5,
+    "scope": "Private mechanical fixtures only; no maintained source application or full campaign acceptance. Boundary fault injection is explicit; successful source/generator/receipt gates are not mocked."
+  },
+  "assertion_preservation": {
+    "old_source_functions": 55,
+    "old_source_assertions": 101,
+    "old_publisher_functions": 44,
+    "old_publisher_assertions": 80,
+    "prior_d691_to_9a1_functions": 51,
+    "prior_assertions": 85,
+    "old_test_prefixes_retained": true
+  },
+  "actual_history_integration": {
+    "receipt_prefix_unchanged": 27,
+    "new_private_receipt_sequence": 28,
+    "held_checkpoint": 431,
+    "held_before_position": 436,
+    "held_after_position": 435,
+    "held_owner_and_payload_preserved": true,
+    "readback": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/lineage/actual-integration-v2-readback.json",
+      "sha256": "5a6481014e8698e3a56fba2fd0fa94e98f9fe0eb38b4e64dc4e9acfea51f9230"
+    },
+    "full_semantic_release_approval": false
+  },
+  "optional_CI_coverage": "Without CLAW_ROOT integration tests skip; without CAMPAIGN_HISTORY_ROOT the historical hold case skips. Actual retry used both with zero skips. Read-only external roots need a native private lock workspace supplied by the caller.",
+  "archive": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/frozen/ARCHIVE.json",
+    "sha256": "c5edc55b1aaa5f291f37fb62b94934b6754d64113e46d5bdcd889c93eb42d967"
+  },
+  "exact_tar_sha256": "e2194d9bc3abd49881af457c5375e6684fcf83c8469a61ee0aee6a83d4a8dce4",
+  "committed_inputs": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/committed-source-bindings.json",
+    "sha256": "64731424218e489cbfabc620c6422ba51927336eab9c98e00380c5e0b072a535"
+  },
+  "input_ref_index": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/input-ref-index.json",
+    "sha256": "1d99febc57ebb155098a857f1760b7818a75cca58e243d6d8557f64112ffeab8"
+  },
+  "native_review_pair": {
+    "status": "PASS_NATIVE_REVIEW_CONTRACT",
+    "review_id": "20261108T115104Z-w08-combined-16c-independent",
+    "review_verdict": "needs_curation",
+    "source_state": "git_commit",
+    "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+    "committed_inputs": 27,
+    "private_evidence_inputs": 23,
+    "targets": 5,
+    "yaml": {
+      "path": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T115104Z-w08-combined-16c-independent/review.yaml",
+      "sha256": "e73327f51f0c72260e9c9938df54d20b830df7ddc13a0125e18b1e6403da4cd2"
+    },
+    "markdown": {
+      "path": ".temp/combined-16c-independent-v1/native/reviews/structured/20261108T115104Z-w08-combined-16c-independent/review.md",
+      "sha256": "547e61017f62e48576704a7dfaf753bfff6d7f7ef97746f2a4b68114b3303c41"
+    },
+    "actual_native_methods": [
+      "inspect_source",
+      "validate_review",
+      "assert_current_source",
+      "render_markdown",
+      "parse_review_bundle",
+      "read_review",
+      "source_provenance"
+    ],
+    "private_readonly_Git_context": {
+      "GIT_DIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.git/worktrees/worktree8",
+      "GIT_WORK_TREE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/native",
+      "GIT_OPTIONAL_LOCKS": "0"
+    },
+    "provenance": {
+      "status": "git_commit_verified",
+      "reason": "Historical regular-file blobs match the declared hashes."
+    },
+    "negative_controls": [
+      {
+        "name": "false_committed_digest",
+        "refused": true,
+        "error": "committed input digest disagrees: .claude/skills/reconcile-review-records/SKILL.md"
+      },
+      {
+        "name": "markdown_drift",
+        "refused": true,
+        "error": "Markdown does not match the authoritative structured review"
+      },
+      {
+        "name": "false_pass_with_open_major_findings",
+        "refused": true,
+        "error": "a passing verdict cannot conceal unresolved major/blocker findings or failed required checks"
+      }
+    ],
+    "prior_pairs_verified": 2,
+    "initial_harness_failure": "build_native_review.py wrote a valid exact-commit pair, then private nested-root read_review resolved ls-tree paths relative to the packet subdirectory and refused provenance. Original log/script/pair preserved. This readback supplies native explicit GIT_DIR/GIT_WORK_TREE context for read-only verification; no gate patch or pair rewrite.",
+    "maintained_saver_used": false,
+    "application_approval": false
+  },
+  "independent_reviewers": {
+    "technical": {
+      "identity": "worker08:/root/inorganics",
+      "receipt": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/review.json",
+        "sha256": "6f8b5f7043d59a3e0602d82bbce85206b7e9d1a4d6c9fb73fff86b9adc2df866"
+      }
+    },
+    "skeptical": {
+      "identity": "worker08:/root/organics",
+      "receipt": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/skeptic/review.json",
+        "sha256": "08f27b69c5e7743c726751b12dfe4c2abdc5e0c9a68594008e365bb9bcbbdaf1"
+      }
+    },
+    "lineage": {
+      "identity": "worker08:/root/vitamins",
+      "receipt": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/lineage/review.json",
+        "sha256": "9c39927c198d583bfb4c4028fe78c2b1d48ec69aeac3c99e435b7bc10bee778f"
+      }
+    },
+    "final_assembly": {
+      "identity": "worker08:/root/vitamins",
+      "receipt": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/final-assembly/review.json",
+        "sha256": "2ffb741701c0958b0ce03b704909f44e972328d9c33e5fb4b25518a5b9c2f336"
+      },
+      "successor_handoff": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/final-assembly/HANDOFF-v2.json",
+        "sha256": "6e9e25f751607c61257aa9cd33cfde5d4114b1419b04fc01dd27ec85c9bc3e8a"
+      }
+    }
+  },
+  "prior_finding_native_pairs": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/prior-finding-lineage.json",
+    "sha256": "fc5f407724e9967fb45d7cc51a640eb9541cb63af08a0be253665b4cd2c063ab"
+  },
+  "preservation": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/exit-verification.json",
+    "sha256": "80b775182ee9364cd0531aeebf8d880aa55c4e0e0d83fad505f90b24a551555a"
+  },
+  "remote_observation": {
+    "entry_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+    "exit_head": "7a990e36b0e08d1deff943fe58bdc40d24d3834f",
+    "later_successor_read_or_approved": false,
+    "scope_note": "PR head advanced to7a990e36 during review; clean I stayed16c. This report assesses only16c and does not infer a future fix."
+  },
+  "honest_harness_limits": [
+    "Initial full remote JSON captures failed network; empty capture retained; authorized read-only escalation succeeded. No GitHub mutation.",
+    "Initial integration run reached the real CLAW lock manager but default shared lock guard write was sandbox-refused. Retry uses native private lock workspace, not a lock bypass.",
+    "Root first late-head harness failed on fifth missing.gitignore assumption. Earlier four actual receipts retained/read back; successor completed fifth with staged unrelated file.",
+    "Initial native pair reader used a nested directory as Git root and refused historical path provenance. Exact pair unchanged; read-only explicit GIT_DIR/GIT_WORK_TREE context verifies all27 committed blobs through native helper.",
+    "First final preservation required remote equality and reported real remote movement. Successor records the later observation without substituting code.",
+    "Root -I ignored PYTHONDONTWRITEBYTECODE and29 private bytecode cache files were added beside extracted sources. All14,723 original Git files and exact tar remain unchanged; caches are inventoried and retained. Later verification uses -I -B."
+  ],
+  "limits": [
+    "Code review only; no Angust candidate science, whole-plan acceptance, owner, mapping, role or export approval.",
+    "No future1255 or baseline fix is inspected or approved. Root owns issue routing, fixes and exact-successor review.",
+    "The historical933 proof remains record-stage evidence only. No full campaign prepare/application or KG rebuild occurred.",
+    "All source scientific holds, archived semantic FAIL and earlier sealed design/source/review artifacts remain unchanged."
+  ],
+  "maintained_or_shared_mutations": false,
+  "existing_Git_or_GitHub_mutations": false,
+  "new_external_sessions_or_paid_providers": false,
+  "next_state": "Idle after seal; available for collection."
+}

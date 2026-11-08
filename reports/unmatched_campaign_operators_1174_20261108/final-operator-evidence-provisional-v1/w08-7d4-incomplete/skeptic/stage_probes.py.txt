@@ -1,0 +1,137 @@
+"""Independent bounded probes: frozen native functions, no replaced gates.
+
+These are stage-level tests, not a campaign prepare/application simulation.
+Every mutation and resulting fixture stays in this reviewer's private directory.
+"""
+import copy
+import datetime
+import hashlib
+import importlib.util
+import json
+import os
+import platform
+import sys
+from pathlib import Path
+
+P = Path(__file__).resolve().parent
+F = P.parent / 'frozen/repo'
+sys.path.insert(0, str(F/'src'))
+from mediaingredientmech import campaign_publication as c
+
+spec=importlib.util.spec_from_file_location('independent_publisher_fixture',F/'tests/test_campaign_publication.py')
+fx=importlib.util.module_from_spec(spec);spec.loader.exec_module(fx)
+assert Path(c.__file__).resolve()==F/'src/mediaingredientmech/campaign_publication.py'
+W=P/'stage-fixtures'; W.mkdir()
+results=[]
+def check(name, fn, error=None):
+    try:
+        value=fn()
+    except (ValueError,RuntimeError,FileNotFoundError) as exc:
+        result={'name':name,'accepted':False,'error_type':type(exc).__name__,'message':str(exc),'expected_rejection':error is not None,'pass':error is not None and error in str(exc)}
+    else:
+        result={'name':name,'accepted':True,'result':value,'expected_rejection':error is not None,'pass':error is None}
+    results.append(result)
+    (P/'probe-progress.json').write_text(json.dumps(results,indent=2)+'\n')
+    assert result['pass'],result
+
+oldpath='data/ingredients/mapped/Angustmycin.yaml'
+dest='data/ingredients/unmapped/Angustmycin.yaml'
+record={'kind':'demote','shape':'demotion','before_source_record':oldpath,'source_record':dest,
+        'before_yaml_sha256':c.sha(b'authentic private preimage'),
+        'after_yaml_sha256':c.sha(b'private final ambiguous payload'),
+        'change':'Private bounded stage probe','verification':'No scientific or application approval'}
+rows=[fx.row('Angustmycin',v) for v in ('CHEBI:8612','cas:fixture','kgmicrobe.ingredient:fixture','kgmicrobe.compound:fixture')]+[fx.row('Untouched','CHEBI:9')]
+before=fx.sssom(rows);candidate=fx.sssom([rows[-1]])
+ops=[{'owner':dest,'before_position':i,'native_position':None,'preserve_fields':[]} for i in range(1,5)]
+def project(old=before,new=candidate,recs=None,plan=None):
+    out,trace=c.row_projection(old,new,recs or [record],ops if plan is None else plan)
+    assert c.table(out)[3]==c.table(before)[3][-1:]
+    return {'after_sha256':c.sha(out),'trace_count':len(trace),'preserved_unrelated_literal_line':True}
+check('all_four_ontology_and_registry_slots_removed',project)
+for i in range(4):
+    check('omit_slot_'+str(i),lambda i=i:project(plan=[x for j,x in enumerate(ops) if i!=j]),'does not cover every')
+for target in ('CHEBI:8612','cas:fixture','kgmicrobe.ingredient:fixture','kgmicrobe.compound:fixture','UNKNOWN:fixture'):
+    check('generated_demoted_'+target,lambda target=target:project(new=fx.sssom([rows[-1],fx.row('Angustmycin',target)])),'retained a demoted subject')
+for key,val in [('kind','edit'),('before_source_record','data/ingredients/mapped/Renamed.yaml'),('source_record','data/ingredients/mapped/Angustmycin.yaml'),('before_yaml_sha256',None)]:
+    check('invalid_relocation_'+key,lambda key=key,val=val:project(recs=[record|{key:val}]),'authentic same-subject')
+check('foreign_subject_deletion_not_smuggled',lambda:project(plan=ops+[{'owner':dest,'before_position':5,'native_position':None,'preserve_fields':[]}]),'missing/extra/misowned')
+check('duplicate_slot_ontology_refused',lambda:project(old=fx.sssom(rows+[fx.row('Angustmycin','CHEBI:999')])),'ambiguous native row slot')
+check('unrelated_generator_drift_preserved_not_applied',lambda:project(new=fx.sssom([fx.row('Untouched','CHEBI:999',source='unrelated candidate drift')])))
+check('ambiguous_owner_subject_refused',lambda:project(recs=[record,record|{'source_record':oldpath}]),'ambiguous source subject')
+
+# Actual native chain verifier and native receipt alignment, with a private
+# baseline. Neither source proof nor native generation is claimed by this stage.
+for chain_role in ('none','old','destination'):
+    root=W/('receipt-'+chain_role);root.mkdir()
+    fx.put(root,c.SOURCE,before);fx.history(root,before)
+    fx.put(root,c.MAKER,(F/c.MAKER).read_bytes())
+    if chain_role!='none':
+        historical={'schema_version':1,'batch':'private-prior','sequence':1,'issue':'https://example.invalid/fixture',
+         'scope':'Private stage-level predecessor','approval':'NONE: fixture','before_sha256':c.sha(before),'after_sha256':c.sha(before),
+         'before_row_count':len(rows),'after_row_count':len(rows),'position_map':list(range(1,len(rows)+1)),
+         'changes':[],'changed_rows':0,'added_rows':0,'removed_rows':0,
+         'records':[{'source_record':oldpath if chain_role=='old' else dest,'shape':'existing',
+                     'before_yaml_sha256':record['before_yaml_sha256'],'after_yaml_sha256':record['before_yaml_sha256']}]}
+        fx.put(root,c.native.RECEIPTS_DIR+'/private-prior.json',historical)
+    proof=c.native.verify_mapping_chain(root)
+    def receipt_probe(root=root,proof=proof):
+        out,trace=c.row_projection(before,candidate,[record],ops)
+        receipt=c._receipt(proof,c._maker(c.Capture(root)),{'batch':'issue1174-independent-stage','scope':'Private bounded demotion stage'},[record],before,out)
+        assert receipt['position_map']==[None,None,None,None,1]
+        assert receipt['removed_rows']==4 and not receipt['added_rows'] and not receipt['changed_rows']
+        assert receipt['records'][0]['before_source_record']==oldpath
+        assert receipt['approval'].startswith('NONE')
+        return {'position_map':receipt['position_map'],'removed_rows':4,'approval':receipt['approval']}
+    check('native_receipt_chain_'+chain_role,receipt_probe,None if chain_role=='none' else 'native owner-chain history')
+
+def completion_fixture(label):
+    root=W/('capture-'+label);root.mkdir()
+    contents={dest:b'identifier: private\npreferred_term: Angustmycin\n',
+              'data/ingredients/mapped/Untouched.yaml':b'identifier: other\npreferred_term: Untouched\n'}
+    for name,raw in contents.items():fx.put(root,name,raw)
+    proof={'after_inventory':{n:c.sha(b) for n,b in contents.items()},
+           'immutable_input_sha256':{'evidence/proof.json':c.sha(b'{"real":"private fixture"}\n')},
+           'checkpoint':{'root':'evidence/checkpoint','input_sha256':{'native.json':c.sha(b'{}\n')}},
+           'protected_snapshot':{'root':'evidence/protected','input_sha256':{'policy.json':c.sha(b'{}\n')}},
+           'records':[record]}
+    fx.put(root,'evidence/proof.json',b'{"real":"private fixture"}\n')
+    fx.put(root,'evidence/checkpoint/native.json',b'{}\n');fx.put(root,'evidence/protected/policy.json',b'{}\n')
+    capture=c.Capture(root);c._capture_source_completion(capture,proof)
+    return root,capture
+mutations={
+ 'hidden_owner_addition':(lambda r:fx.put(r,'data/ingredients/unmapped/.late.yaml',b'new: owner\n'),'membership or bytes changed'),
+ 'retired_old_reappears':(lambda r:fx.put(r,oldpath,b'old: owner\n'),'membership or bytes changed'),
+ 'retired_old_dangling_symlink':(lambda r:(r/oldpath).symlink_to(r/'missing'),'alias'),
+ 'checkpoint_hidden_addition':(lambda r:fx.put(r,'evidence/checkpoint/.late.json',b'{}\n'),'snapshot membership changed'),
+ 'protected_remove':(lambda r:(r/'evidence/protected/policy.json').unlink(),'snapshot membership changed'),
+ 'immutable_input_drift':(lambda r:(r/'evidence/proof.json').write_bytes(b'{"drift":true}\n'),'Captured input changed'),
+ 'same_byte_inode_swap':(lambda r:((r/'evidence/proof.json').rename(r/'evidence/held.json'),(r/'evidence/proof.json').write_bytes(b'{"real":"private fixture"}\n')),'identity changed'),
+ 'immutable_hardlink':(lambda r:os.link(r/'evidence/proof.json',r/'evidence/extra-link.json'),'hardlink alias'),
+}
+root,cap=completion_fixture('positive');check('source_completion_positive',lambda:cap.verify())
+for name,(mutate,error) in mutations.items():
+    root,cap=completion_fixture(name);mutate(root)
+    check('source_completion_'+name,lambda cap=cap:cap.verify(),error)
+
+# Old policy and unrelated history must remain exact; only update append and
+# canonical artifact binding can change.
+policy={k:'private historical' for k in c.POLICY_REQUIRED}
+policy.update(schema_version=1,policy_version='owned-name-policy-v1',source_owner_sha256={oldpath:record['before_yaml_sha256']},artifacts={c.SOURCE:c.sha(before),c.SIDECAR:c.sha(b''),c.BASELINE:c.sha(b'')},decisions=['unchanged'],policy_evidence=['unchanged'],source_alias_addition_updates=[{'old':'unchanged'}])
+def policy_probe():
+    after=c._policy(c.encoded(policy),{'owner_plan':{'path':'plan','sha256':'a'*64},'owner_receipt':{'path':'receipt','sha256':'b'*64},'generation':{},'before':{'canonical':{'sha256':c.sha(before)}}},'c'*64,{'before_inventory':{oldpath:record['before_yaml_sha256']},'after_inventory':{dest:record['after_yaml_sha256']},'records':[record]},'native.json',b'{}',candidate,[])
+    actual=c.read_json(after);expected=copy.deepcopy(policy);expected['artifacts'][c.SOURCE]=c.sha(candidate)
+    assert {k:v for k,v in actual.items() if k!=c.UPDATE}==expected
+    assert actual[c.UPDATE][0]['approval'].startswith('NONE')
+    return {'original_policy_unchanged':True,'historical_owner_pin_retained':True}
+check('policy_retains_old_owner_pin_and_history',policy_probe)
+
+bindings={str(Path(c.__file__)):c.sha(Path(c.__file__).read_bytes())}
+for path,frozen in c.LOADED_PRODUCERS.items():
+    frozen.verify();bindings[str(frozen.path)]=c.sha(frozen.content)
+result={'status':'PASS','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'reviewer':'worker08:/root/organics',
+ 'revision':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','runtime':{'executable':sys.executable,'version':platform.python_version(),'dont_write_bytecode':sys.dont_write_bytecode},
+ 'executed_source_hashes':bindings,'test_fixture_hash':c.sha((F/'tests/test_campaign_publication.py').read_bytes()),
+ 'actual_gate_functions_not_replaced':True,'full_prepare_or_application_claimed':False,'probe_count':len(results),'probes':results,
+ 'scope':'Independent stage-level probes of actual frozen native projection, maker/chain, capture and policy functions. No replacement of owner/generation/gates. Root separately reruns full native suite; this does not claim that suite or actual campaign acceptance.'}
+(P/'adversarial-results.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps({'status':'PASS','probes':len(results),'executed_sources':len(bindings)}))

@@ -1,0 +1,5 @@
+# Superseded private endpoint-equality attempt
+
+Source adba0b6b and tests2e80e928 are preserved unchanged. Twenty focused new cases and static checks passed, and the original four-case real-native probe switched both late index races to refusal. Independent review then reproduced a separate within-observation failure: the captured invalid logical index could be temporarily hidden during validation and restored before the final snapshot. Thus equal endpoint snapshots did not prove that those entries were validated. This attempt is **needs_curation**, not usable application code.
+
+The authorized owned combined run was gracefully interrupted after84 passes, exit2/KeyboardInterrupt; it is not a full-source or full-suite pass. Exact process ancestry, signal authority, logs and actual independent counterexample are preserved. All354 prior source cases remain an exact byte prefix, and historical verifier AST remains unchanged. No I/K/J source or data write occurred. The successor must validate the snapshot itself or bind every observed cached/path/blob view to it, under a separately filed issue addendum.

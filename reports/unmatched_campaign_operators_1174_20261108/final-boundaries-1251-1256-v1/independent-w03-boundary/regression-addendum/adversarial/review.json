@@ -1,0 +1,116 @@
+{
+  "reviewer": "/root/boundary_adversarial",
+  "at": "2026-11-08T11:24:46.859944+00:00",
+  "head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "status": "NEEDS_CORRECTION_DO_NOT_APPROVE_D691",
+  "scientific_review": false,
+  "code_acceptance": false,
+  "finding": {
+    "finding_id": "ISSUE1252-RETIREMENT-REGRESSION",
+    "issue_key": "CultureBotAI/MediaIngredientMech#1252:incoming-unmapped-retirement",
+    "status": "open",
+    "severity": "major",
+    "certainty": "confirmed",
+    "existing_issue_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145",
+    "deduplication": "Already filed and read back by coordinator; do not file a duplicate.",
+    "title": "New either-side REJECTED guard blocks supported same-path UNMAPPED owner retirement",
+    "owner_path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+    "lines": [
+      760,
+      767
+    ],
+    "exact_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+    "operator_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+    "cause": "The outer condition is true when either old or new status is REJECTED, then the conjunction requires both old and new status to equal REJECTED. Any incoming UNMAPPED->REJECTED edit therefore fails even with unchanged path, identity/name and exact history prefix. This conflates maintaining an existing tombstone with retiring an existing unmapped owner.",
+    "reproduction": {
+      "script": "reproduce_retirement_v1.py",
+      "result": "counterexample-v1.json",
+      "result_sha256": "30bed3962179035f9555670c2588dc9e3ef4f43088470dd9217189c2e66b0cff",
+      "actual_d691_native_load": "PASS exact published synthetic origin/accepted payload/preimage/case bindings",
+      "actual_d691_prepare": "REFUSED Rejected owner requires same-path, same-key rejected maintenance",
+      "parent_comparison": "Exact parent _validate_records AST accepts the identical synthetic retirement; no old full-prepare claim.",
+      "positive_controls": "Same-path UNMAPPED->UNMAPPED and REJECTED->REJECTED controls complete actual frozen-d691 prepare/apply/completed replay; wrong retirement preimage is refused by native load.",
+      "no_owner_or_receipt_write_for_failed_retirement": true
+    },
+    "impact": "Capability regression blocks already supported retirement intake. It is not evidence of unsafe source application, whole-owner science acceptance, tombstone revival or a reason to edit source proposals.",
+    "bounded_repair_proposal": [
+      "Keep existing REJECTED-owner maintenance/revival protections. Separate narrowly authorized incoming retirement from that maintenance branch.",
+      "Allow only authentic existing-owner edit from UNMAPPED to REJECTED at the same declared unmapped owner path with exact ID and preferred name preserved. Retain native preimage, full published-origin/case/acceptance binding, schema, ordered history-prefix/extension and material-delta checks.",
+      "Do not admit rejected creates, unknown owners, relocation, identity/name replacement, outgoing revival, other status transitions or broader collision exceptions; all existing complete-catalog pair and surviving-family status guards remain.",
+      "Require a distinct review of actual successor bytes; do not present current d691 or a future uninspected implementation as accepted."
+    ],
+    "acceptance_checks": [
+      "Positive authenticated native prepare/apply/completed replay for genuine same-path UNMAPPED->REJECTED with exact keys and history.",
+      "Negative wrong kind/create, nonexistent owner, wrong path, changed ID/raw name, wrong original source binding or preimage, altered/missing history prefix, no-op/history-only request and stale acceptance.",
+      "Existing REJECTED revival/key/path changes, inherited collision changes/new pairs, original alias/inode/membership and protected-proof controls remain refused.",
+      "Run the same full933 selected operation record-stage cohort after repair without dropping known failures; separately distinguish record-stage success from actual full native prepare and scientific source acceptance."
+    ]
+  },
+  "coverage_gap": {
+    "path": "coverage-gap-v1.json",
+    "sha256": "25a88dda90d9a3d04abce51f3044908d2202e50e1fb704f2b8c953b09f1a0a49"
+  },
+  "counterexample": {
+    "path": "counterexample-v1.json",
+    "sha256": "30bed3962179035f9555670c2588dc9e3ef4f43088470dd9217189c2e66b0cff"
+  },
+  "fixture_evidence": {
+    "path": "fixture-transport-v1.json",
+    "sha256": "c66773fc90d716f4e2273341adaff52a0d978293ed9ac93c0049f54d4fa05ad4"
+  },
+  "inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/inputs/parent/src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/frozen-src/tests/test_campaign_owner_apply.py",
+      "sha256": "049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/inputs/parent/tests/test_campaign_owner_apply.py",
+      "sha256": "c86993e88a3b270789470aacf0312cc35e0d76c7a7c591808dd74b4db4a98bd2"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/regression-addendum/inputs/issue1252-comment6720840145.json",
+      "sha256": "ce7666a15cf444f5fabdac2324fed65526070db3e74922ed3d63ebf46ce81f33"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/regression-addendum/inputs/HANDOFF.json",
+      "sha256": "05c4a50ccffa42aa0581281d131e8dff06eb4f64e0f9491d01ab6a5b52dc5752"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/HANDOFF.json",
+      "sha256": "05c4a50ccffa42aa0581281d131e8dff06eb4f64e0f9491d01ab6a5b52dc5752"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/MANIFEST.json",
+      "sha256": "5bede9c0acb826024789a14b31407aeaf72047276cccf61ecd7304c7baad31b1"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/native-boundary-full-candidate-probe-v1/README.md",
+      "sha256": "819ccce83f373257f61527c087c303e5ffbee4582a06f35bf7e465d22851bcf3"
+    }
+  ],
+  "actual_scope": "Skeptical code/addendum review plus independently constructed synthetic native-load/prepare reproduction. Actual polymer source before/after and full-catalog comparisons belong to technical/assembly scopes, not self-approved here.",
+  "prior_assessment_preservation": {
+    "handoff": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/HANDOFF.json",
+    "sha256": "a12ad02972a48e5b16e0c49f9b73c0168c9cb04b4d3d19a91a1b4aa89ab52d84",
+    "manifest": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/MANIFEST.json",
+    "manifest_sha256": "4fe21e7b8d17057e4adb29aa547a71545358e9858244a1bc9863251ba137429d",
+    "all_portable_members_rehashed": 14,
+    "all41outcomes_untouched": true,
+    "effect": "Prior PASS remains an immutable observation of its stated examples. New confirmed omitted transition changes final code recommendation to needs correction."
+  },
+  "conflict_of_interest": "These affected actual polymer source proposals originated with W03. This independent in-process reviewer assesses code and synthetic authenticated inputs only; it does not independently approve W03 science, normalized payloads, source cases or integration coalescence.",
+  "limitations": [
+    "No mutable I code or future repair bytes read, changed or validated. Frozen d691 and exact parent function comparison only.",
+    "Parent comparison is record-stage AST only. Current full prepare fails before apply, so no current retirement completed-replay success can be claimed.",
+    "External full-cohort packet reports933 operations/931 traversed/2 known failures and normalization review pending; this reviewer rehashed its29manifest members but did not rerun that catalog or independently approve normalized science.",
+    "No source/maintained/I/J/other worker/GitHub/branch/gate writes. All new writes remain in this additive private subdirectory."
+  ]
+}

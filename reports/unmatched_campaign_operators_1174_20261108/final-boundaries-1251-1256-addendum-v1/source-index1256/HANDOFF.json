@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-08T12:23:34.911454+00:00",
+  "status": "AUTHOR_COMPLETE_PRIVATE_PATCH_PENDING_DISTINCT_REVIEW",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721304487",
+  "finding": "W08-21061-SRC-001",
+  "base_commit": "21061aa532401398db70c59a596debf330f70744",
+  "files": {
+    "src/mediaingredientmech/curate/campaign_owner_apply.py": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+    "tests/test_campaign_owner_apply.py": "8d272cd4f3479d3e6ba9e2ef5817a40428efd51ce57b554e7e814ed23e0984dc"
+  },
+  "patch": {
+    "path": "source-index1256.patch",
+    "sha256": "d51c7670cb4783f1f1bb064ebf6c690ab644c010ac40118347a44af27d3e3c46",
+    "private_exact_replay": "PASS"
+  },
+  "checks": {
+    "focused-v4": {
+      "receipt": "checks/focused-v4/receipt.json",
+      "receipt_sha256": "256a88b3e9bc0b21d3eb9bbe637c31dab122bfb3238b911ccf987d7772349274",
+      "exit_code": 0,
+      "seconds": 37.79589605331421,
+      "summary": "53 passed, 301 deselected, 12 warnings in 35.47s",
+      "passed": 53,
+      "skipped": 0
+    },
+    "ruff-v2": {
+      "receipt": "checks/ruff-v2/receipt.json",
+      "receipt_sha256": "8e18c04351ad55f8b985d6f0d819c31dbf1a94b14beaf92d9d1538855c1906c7",
+      "exit_code": 0,
+      "seconds": 0.015045881271362305
+    },
+    "black-v2": {
+      "receipt": "checks/black-v2/receipt.json",
+      "receipt_sha256": "7dde0b423431502874c4827c51343c441ba22bd14a6388e6786d6f01bc40d9f6",
+      "exit_code": 0,
+      "seconds": 0.3971712589263916
+    },
+    "mypy-v1": {
+      "receipt": "checks/mypy-v1/receipt.json",
+      "receipt_sha256": "5306cf5e5d45a2a110b95b8a22d32f7b341eab76d9236df22c71e8198d000b6a",
+      "exit_code": 0,
+      "seconds": 1.0010290145874023
+    },
+    "source_full": {
+      "collected_source_cases": 354,
+      "passed_source_cases": 354,
+      "failed_or_errored_source_cases": 0,
+      "combined_command_exit_code": 1,
+      "affected_publisher_cases": 157,
+      "setup_failures": "Missing receipt-maker Git blob in private minimal archive; one history-root control used original26-receipt M instead of frozen27-receipt K. No source or test change is needed.",
+      "full_failed_output_preserved": true
+    },
+    "separate_final_publisher_integration": {
+      "handoff_sha256": "752c761ac39fad36bc25c1d7e2727b1360ab8186205f57569f08dd11d411d7c3",
+      "manifest_sha256": "7646e523c9f7bc0c790250767091c568b1f81fb69eff3a90d2f815e10592c5fa",
+      "passed": 164,
+      "skipped": 0,
+      "failed": 0,
+      "warnings": 12,
+      "seconds": 177.75,
+      "log_sha256": "3e78fbdc7358cc0cb3ca12d760078a78e707b0c807b938b3f9f58527fbf07082",
+      "actual_native_generator_cases": 20,
+      "collection": "publisher-dependency/collection-receipt.json"
+    }
+  },
+  "original_four_case_adversarial_replay": {
+    "receipt": "original-probe-replay-v1/receipt.json",
+    "sha256": "02e4aef273581f6bdb759a9b4bb7d609824dc1d95095a66f05dd168bfc9ccd2b",
+    "native_functions_mocked": false,
+    "outcomes": "Clean actual prepare/apply/completed succeeds; initial and post-prepare hidden index plus ordinary working drift refuse before mutation. Hardcoded21061 reviewed_head is historical; actual patched source hash is explicitly recorded."
+  },
+  "preservation": {
+    "original_tests_exact_byte_prefix": true,
+    "original_tests_count": 301,
+    "new_cases": 53,
+    "source_only_changed_function": "_check_mutation_git_state",
+    "historical_verify_completed_AST_unchanged": true,
+    "proof": "preservation-proof-v2.json",
+    "proof_sha256": "0a72e0fdccea18ade78516f01593d255ab00737bdda0696423cb9252c6e07da5",
+    "I_K_J_maintained_writes": false
+  },
+  "index_contract": {
+    "all_changed_cached_paths": "Subset of authentic operation source/destination paths, literal NUL, no rename folding, intent-to-add visible",
+    "unchanged_baseline_index": "Allowed during native unstaged owner writes",
+    "changed_present_entry": "Unique regular stage0 blob; matches actual installed working bytes and authentic before or accepted after digest; mode matches working file",
+    "changed_absent_entry": "Only actual absent retired source not in after inventory",
+    "operator_stages_or_repairs_index": false,
+    "historical_verifier_current_index_constraint": false
+  },
+  "limits": [
+    "Author regression results are not an independent review.",
+    "No source science, final-plan acceptance, maintained application or release approval.",
+    "Separate publisher residual is not included in this patch.",
+    "All prior failed runs and unrun drafting artifacts retained; no original tests altered.",
+    "Runtime Git fixtures, complete extracted dependencies, caches and original-probe runtime trees are retained locally but omitted from selected evidence manifest; exact baseline archive is included."
+  ]
+}

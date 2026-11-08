@@ -1,0 +1,51 @@
+{
+  "runtime": {
+    "path": "runtime.json",
+    "sha256": "4b4aaf03d14797bb2ec4b57fe3cadf1cc42b41163d30d4c44e3de70524b2850d"
+  },
+  "commands": [
+    {
+      "script": "replay_prior.py",
+      "log": "replay-prior.log",
+      "exit_code": 0,
+      "controls": 15,
+      "notes": "Prior harness adapted only new packet/head literals; immutable old script preserved."
+    },
+    {
+      "script": "replay_boundary_controls.py",
+      "log": "replay-boundary.log",
+      "exit_code": 0,
+      "controls": 4
+    },
+    {
+      "script": "adversarial_boundaries.py",
+      "log": "adversarial-boundaries.log",
+      "exit_code": 0,
+      "controls": 10,
+      "injection": "sys.setprofile schedules real private Git commits/staging at original code-object call/return/flush boundaries; no native function replacement or fabricated proof."
+    },
+    {
+      "script": "readback_index.py",
+      "log": "index-readback.log",
+      "exit_code": 0,
+      "scope": "Four existing root fixtures read; actual verify_completed on three completed fixtures. No duplicate application."
+    },
+    {
+      "script": "static_counts.py",
+      "log": "static-counts.log",
+      "exit_code": 0,
+      "scope": "Static AST count only; not suite execution."
+    }
+  ],
+  "python": "Existing Python3.13.2 venv, each actual run uses -B and PYTHONDONTWRITEBYTECODE=1; no -I invocation. Each script inserts exact frozen/src path explicitly.",
+  "full_suite_run_by_this_reviewer": false,
+  "harness_attempt_history": [
+    {
+      "path": "static-counts-attempt1.json",
+      "sha256": "6d3d3ea9ce4226e52fc578b44c4929b68c5cbdadeccdca00b2a3dac1e82620ac",
+      "scope": "Read-only counting attempt failed on fixture ast.Name; corrected count-only AST script, no native/test change."
+    }
+  ],
+  "native_file_edits": false,
+  "existing_git_mutations": false
+}

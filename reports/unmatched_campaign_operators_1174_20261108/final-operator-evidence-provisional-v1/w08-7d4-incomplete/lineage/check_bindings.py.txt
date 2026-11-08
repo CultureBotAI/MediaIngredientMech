@@ -1,0 +1,127 @@
+"""Read-only exact lineage/preservation checks. Python -B; no native suite."""
+import ast
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+
+R=Path.cwd();C=R.parents[2];P=R/'.temp/final-7d4db26-independent-v1';O=P/'lineage';F=P/'frozen/repo'
+OLD=R/'.temp/combined-16c-independent-v1'; DESIGN=R/'.temp/angustmycin-demotion-design-independent-v1'
+A=C/'integration/source-index1256-fix-v1';B=C/'integration/publisher-late-head1256-fix-v2/portable'
+PREV=R/'.temp/final-21061-independent-v1'
+D=C/'preflight/late-head-transaction-independent-v1'
+
+def sha(p):
+    h=hashlib.sha256()
+    with p.open('rb') as f:
+        for b in iter(lambda:f.read(1024*1024),b''):h.update(b)
+    return h.hexdigest()
+def ref(p):return {'path':str(p),'sha256':sha(p),'size':p.stat().st_size}
+def js(p):return json.loads(p.read_text())
+def git(p,*args):
+    q=subprocess.run(['git','-C',str(p),*args],capture_output=True,text=True,env=os.environ|{'GIT_OPTIONAL_LOCKS':'0'})
+    return {'command':['git','-C',str(p),*args],'exit':q.returncode,'stdout':q.stdout,'stderr':q.stderr}
+checks=[]
+def ck(n,p,**kw):checks.append({'name':n,'passed':bool(p),**kw})
+entry=js(P/'entry.json')
+roots={k:Path(entry['roots'][k]['path']) for k in ['K','I','J','CLAW']}
+before={k:{'head':git(p,'rev-parse','HEAD'),'status':git(p,'status','--porcelain')} for k,p in roots.items()}
+ck('entry context heads and clean status',all(v['head']['stdout'].strip()==entry['roots'][k]['head'] and v['status']['stdout']=='' for k,v in before.items()))
+J=roots['J']; prior=js(OLD/'lineage/binding-checks.json')
+owners={str(p.relative_to(J)):sha(p) for p in (J/'data/ingredients').glob('*/*.yaml')}
+ck('2956 actual J owners equal prior sealed bindings',len(owners)==2956 and owners==prior['owner_inventory'])
+receipts=[]
+for row in prior['receipt_prefix']:
+    p=J/row['path']; receipts.append({'path':row['path'],'sha256':sha(p),'expected':row['sha256']})
+ck('27 native receipts exact prior sealed prefix',len(receipts)==27 and all(x['sha256']==x['expected'] for x in receipts))
+producers=[{'path':r['path'],'sha256':sha(Path(r['path'])),'expected':r['sha256']} for r in prior['producer_graph']]
+ck('14 CLAW native producer dependencies exact',len(producers)==14 and all(x['sha256']==x['expected'] for x in producers))
+
+manifest_results=[]
+for label,root in [('source75',A),('publisher132',B),('previous21061',PREV),('before_fix_addendum',D),('previous_combined16c',OLD),('previous_design',DESIGN)]:
+    m=js(root/'MANIFEST.json');items=m.get('members',m.get('files'))
+    if isinstance(items,dict):items=[{'path':k,'sha256':v} for k,v in items.items()]
+    failed=[];totalbytes=0;d=hashlib.sha256()
+    for x in items:
+        p=root/x['path'];h=sha(p) if p.is_file() and not p.is_symlink() else None
+        if h!=x['sha256']:failed.append({'path':x['path'],'expected':x['sha256'],'actual':h})
+        if h:totalbytes+=p.stat().st_size
+        d.update(json.dumps([x['path'],h],ensure_ascii=False,separators=(',',':')).encode()+b'\n')
+    syms=[]
+    for x in m.get('literal_symlinks_not_followed',[]):
+        p=root/x['path'];literal=os.readlink(p) if p.is_symlink() else None
+        syms.append({'path':x['path'],'expected':x['literal_target'],'actual':literal,'passed':literal==x['literal_target']})
+    hard=[]
+    for x in m.get('private_fixture_hardlinks',[]):
+        s=(root/x['path']).lstat();hard.append({'path':x['path'],'expected':[x['device'],x['inode'],x['link_count']],'actual':[s.st_dev,s.st_ino,s.st_nlink],'passed':(s.st_dev,s.st_ino,s.st_nlink)==(x['device'],x['inode'],x['link_count'])})
+    ck(label+' entire manifest preserved',not failed and all(x['passed'] for x in syms+hard),members=len(items),literal_symlinks=len(syms),hardlink_entries=len(hard))
+    manifest_results.append({'label':label,'manifest':ref(root/'MANIFEST.json'),'members_checked':len(items),'bytes_hashed':totalbytes,'ordered_actual_path_hash_digest':d.hexdigest(),'failed':failed,'literal_symlinks':syms,'hardlink_entries':hard,'method':'Every listed regular file read/hash checked; symlink literal targets compared with lstat/readlink without following; recorded hardlink inode/dev/link_count compared. No files copied/deleted.'})
+
+commit=js(C/'preflight/residual1256-commit-v1/receipt.json')
+five=[]
+for name,h in commit['files'].items():
+    blob=subprocess.check_output(['git','-C',str(roots['K']),'show',commit['head']+':'+name])
+    auth=(A/'portable'/name) if name in ['src/mediaingredientmech/curate/campaign_owner_apply.py','tests/test_campaign_owner_apply.py'] else (B/name)
+    five.append({'path':name,'expected':h,'frozen':sha(F/name),'actual_K':sha(roots['K']/name),'commit_blob':hashlib.sha256(blob).hexdigest(),'author':ref(auth)})
+ck('exact5 code files equal author and committed7d4db26 snapshot',all(x['expected']==x['frozen']==x['actual_K']==x['commit_blob']==x['author']['sha256'] for x in five))
+delta=git(roots['K'],'diff-tree','--no-commit-id','--name-only','-r',commit['head'])
+ck('commit changes exactly5 authorized files',set(delta['stdout'].splitlines())==set(commit['files']) and commit['parent']=='21061aa532401398db70c59a596debf330f70744')
+
+def funcs(p):return {n.name:ast.dump(n,include_attributes=False) for n in ast.parse(p.read_text()).body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))}
+oldintegration=funcs(PREV/'frozen/repo/tests/test_campaign_demotion_integration.py');newintegration=funcs(F/'tests/test_campaign_demotion_integration.py')
+oldtests={k:v for k,v in oldintegration.items() if k.startswith('test_')}
+ck('all original15 parameterized integration cases retain identical function ASTs',all(newintegration.get(k)==v for k,v in oldtests.items()),functions=len(oldtests))
+oldsource=funcs(OLD/'frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py');newsource=funcs(F/'src/mediaingredientmech/curate/campaign_owner_apply.py')
+ck('historical verify_completed AST exact16c',oldsource['verify_completed']==newsource['verify_completed'])
+ck('entire original16c source test file exact prefix',(F/'tests/test_campaign_owner_apply.py').read_bytes().startswith((OLD/'frozen/repo/tests/test_campaign_owner_apply.py').read_bytes()))
+ck('integration explicitly isolates lock workspace','"OPENCLAW_WORKSPACE": str(root / "private-openclaw-workspace")' in (F/'tests/test_campaign_demotion_integration.py').read_text())
+
+nativeindex=[]
+for case in sorted((B/'evidence/native-cases').iterdir()):
+    if case.is_symlink() or not case.is_dir():continue
+    command=js(case/'command.json');gen=js(case/'generation.json');application=js(case/'application.json')
+    nativeindex.append({'directory':str(case),'command':ref(case/'command.json'),'generator_exit':command['returncode'],'environment':command['environment'],'generation':ref(case/'generation.json'),'manifest_revision_after_control':gen['source_revisions'],'source_receipt':ref(case/'application.json'),'source_state':application['state'],'source_approval':application['approval'],'scope':'Actual author generator before test mutation; captured negative-case generation manifest may be deliberately changed afterward. Author execution is not independent final-head execution.'})
+ck('all20 author native command/source packets present',len(nativeindex)==20 and all(x['generator_exit']==0 and x['source_state']=='complete' and x['source_approval'].startswith('NONE') for x in nativeindex))
+
+after={k:{'head':git(p,'rev-parse','HEAD'),'status':git(p,'status','--porcelain')} for k,p in roots.items()}
+ck('all4 context heads/status unchanged during review',before==after)
+ck('all2956 J owners unchanged at exit',owners=={str(p.relative_to(J)):sha(p) for p in (J/'data/ingredients').glob('*/*.yaml')})
+ck('all27 receipt and14 producer bytes unchanged at exit',all(sha(J/x['path'])==x['sha256'] for x in receipts) and all(sha(Path(x['path']))==x['sha256'] for x in producers))
+extra_scope_checks=[]
+out={'reviewer':'/root/vitamins','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS' if all(x['passed'] for x in checks) else 'FAIL','scope':'Read-only byte/AST preservation and context binding. No suite or source application rerun.','checks':checks,'heads_before':before,'heads_after':after,'manifests':manifest_results,'source_commit_receipt':ref(C/'preflight/residual1256-commit-v1/receipt.json'),'commit_delta':delta,'five_files':five,'J_owner_inventory':owners,'J_receipt_prefix':receipts,'CLAW_producer_graph':producers,'author_native_packets':nativeindex,'original_integration_functions':list(oldtests)}
+
+# Exact live maker dependencies: the omitted minimal author archive is not the committed tree.
+maker='reports/sssom_completion_20260921/mapping_changes/make_receipt.py'
+maker_bindings={}
+for label,root,revision in [('final',roots['K'],commit['head']),('J',J,entry['roots']['J']['head'])]:
+    command=git(root,'ls-tree',revision,'--',maker)
+    blob=subprocess.check_output(['git','-C',str(root),'show',revision+':'+maker])
+    maker_bindings[label]={'tree_entry':command,'working':ref(root/maker),'git_sha256':hashlib.sha256(blob).hexdigest()}
+ck('receipt maker tracked regular in final and immutable J',all(x['tree_entry']['exit']==0 and x['tree_entry']['stdout'].startswith('100644 blob ') and x['working']['sha256']==x['git_sha256'] for x in maker_bindings.values()) and sha(F/maker)==maker_bindings['final']['git_sha256'])
+# Resolve actual parameterization from syntax, without executing pytest or importing production modules.
+def cases(p):
+    rows=[]
+    for n in ast.parse(p.read_text()).body:
+        if not isinstance(n,ast.FunctionDef) or not n.name.startswith('test_'):continue
+        count=1; params=[]
+        for d in n.decorator_list:
+            if isinstance(d,ast.Call) and isinstance(d.func,ast.Attribute) and d.func.attr=='parametrize':
+                name=ast.literal_eval(d.args[0]);values=ast.literal_eval(d.args[1]);count*=len(values);params.append({'names':name,'values':values})
+        rows.append({'function':n.name,'line':n.lineno,'end_line':n.end_lineno,'cases':count,'params':params,'ast_sha256':hashlib.sha256(ast.dump(n,include_attributes=False).encode()).hexdigest()})
+    return rows
+oldcases=cases(PREV/'frozen/repo/tests/test_campaign_demotion_integration.py');newcases=cases(F/'tests/test_campaign_demotion_integration.py')
+ck('15 old integration cases plus5 new equals20',sum(x['cases'] for x in oldcases)==15 and sum(x['cases'] for x in newcases)==20 and sum(x['cases'] for x in newcases if x['function'] not in oldintegration)==5)
+for name in ['tests/test_campaign_owner_apply.py','tests/test_campaign_publication.py']:
+    oldp=PREV/'frozen/repo'/name;newp=F/name;of=funcs(oldp);nf=funcs(newp)
+    ck(name+' complete old bytes and function ASTs preserved',newp.read_bytes().startswith(oldp.read_bytes()) and all(nf.get(k)==v for k,v in of.items()),old_functions=len(of))
+osrc=funcs(PREV/'frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py');nsrc=funcs(F/'src/mediaingredientmech/curate/campaign_owner_apply.py')
+ck('source only _check_mutation_git_state function changes',set(osrc)==set(nsrc) and [k for k in osrc if osrc[k]!=nsrc[k]]==['_check_mutation_git_state'])
+# Pinned handoffs and manifests, not only self-described checksums.
+pins={A/'MANIFEST.json':'c609c872e7a66a69d33640554653379c7d75a47d33c4caefa03e11fae83ea64c',A/'HANDOFF.json':'7eb272f65d179ce69532f7d42e4d4778e5764dfd4e047da89f03b1a8ce5daa0b',B/'MANIFEST.json':'7646e523c9f7bc0c790250767091c568b1f81fb69eff3a90d2f815e10592c5fa',B.parent/'HANDOFF.json':'752c761ac39fad36bc25c1d7e2727b1360ab8186205f57569f08dd11d411d7c3'}
+ck('exact assigned four author pins',all(sha(p)==h for p,h in pins.items()))
+out.update(status='PASS' if all(x['passed'] for x in checks) else 'FAIL',maker_bindings=maker_bindings,integration_cases=newcases,old_integration_cases=oldcases,author_pins=[ref(p) for p in pins])
+
+with (O/'binding-checks.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'status':out['status'],'checks':len(checks),'failed':[x for x in checks if not x['passed']],'output':ref(O/'binding-checks.json')},indent=2))

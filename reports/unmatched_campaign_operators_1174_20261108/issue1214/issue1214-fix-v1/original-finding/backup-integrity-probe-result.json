@@ -1,0 +1,99 @@
+{
+  "head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "publisher_sha256": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+  "fixture_sha256": "a45eb697a144fafb0e22282d6544337f186b84371a9e5db842485e7c25b383bb",
+  "scope": "Exact copied publisher and native code; existing synthetic fixture explicitly mocks owner proof and native generation. Actual projection, policy, receipt maker/replay, output reservation and publication/validation execute inside worker-private fixtures only.",
+  "results": [
+    {
+      "case": "positive",
+      "attack": null,
+      "returned_status": "complete",
+      "separate_validator_status": "verified",
+      "publication_log_status": "complete",
+      "native_receipt_approval": "NONE: all touched rows and changed owners require separate scientific review",
+      "native_receipt_sha256": "eb8c8a107afb74da4fa51d4185aa961805859e891a495b125ee23b47c57b0e5d",
+      "mutation": {},
+      "backup_checks": [
+        {
+          "backup": "canonical-before.tsv",
+          "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "actual_backup_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        },
+        {
+          "backup": "policy-before.json",
+          "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "actual_backup_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        }
+      ]
+    },
+    {
+      "case": "inplace-canonical-before.tsv",
+      "attack": "canonical-before.tsv",
+      "returned_status": "complete",
+      "separate_validator_status": "verified",
+      "publication_log_status": "complete",
+      "native_receipt_approval": "NONE: all touched rows and changed owners require separate scientific review",
+      "native_receipt_sha256": "eb8c8a107afb74da4fa51d4185aa961805859e891a495b125ee23b47c57b0e5d",
+      "mutation": {
+        "path": "fixtures/inplace-canonical-before.tsv/repository/reports/publication/canonical-before.tsv",
+        "original_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+        "corrupt_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+        "same_inode": true,
+        "phase": "immediately before the real native finish_receipt call"
+      },
+      "backup_checks": [
+        {
+          "backup": "canonical-before.tsv",
+          "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "actual_backup_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+          "backup_matches_beforeimage": false,
+          "immutable_plan_beforeimage_still_valid": true
+        },
+        {
+          "backup": "policy-before.json",
+          "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "actual_backup_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        }
+      ]
+    },
+    {
+      "case": "inplace-policy-before.json",
+      "attack": "policy-before.json",
+      "returned_status": "complete",
+      "separate_validator_status": "verified",
+      "publication_log_status": "complete",
+      "native_receipt_approval": "NONE: all touched rows and changed owners require separate scientific review",
+      "native_receipt_sha256": "eb8c8a107afb74da4fa51d4185aa961805859e891a495b125ee23b47c57b0e5d",
+      "mutation": {
+        "path": "fixtures/inplace-policy-before.json/repository/reports/publication/policy-before.json",
+        "original_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+        "corrupt_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+        "same_inode": true,
+        "phase": "immediately before the real native finish_receipt call"
+      },
+      "backup_checks": [
+        {
+          "backup": "canonical-before.tsv",
+          "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "actual_backup_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+          "backup_matches_beforeimage": true,
+          "immutable_plan_beforeimage_still_valid": true
+        },
+        {
+          "backup": "policy-before.json",
+          "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+          "actual_backup_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+          "backup_matches_beforeimage": false,
+          "immutable_plan_beforeimage_still_valid": true
+        }
+      ]
+    }
+  ],
+  "limits": "Immutable plan beforeimages remain intact and provide independent recovery evidence. No maintained source, real canonical publication, scientific approval, suite run or integration-worktree writes."
+}

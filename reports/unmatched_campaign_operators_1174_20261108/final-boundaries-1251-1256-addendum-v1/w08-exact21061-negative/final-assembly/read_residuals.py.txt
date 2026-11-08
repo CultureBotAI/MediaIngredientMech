@@ -1,0 +1,63 @@
+"""Independent assembly readback of retained actual residual evidence; no probes rerun."""
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+
+R=Path.cwd();P=R/'.temp/final-21061-independent-v1';O=P/'final-assembly'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def ref(p):return {'path':str(p),'sha256':sha(p),'size':p.stat().st_size}
+def js(p):return json.loads(p.read_text())
+def git(p,*args):return subprocess.check_output(['git','-C',str(p),*args],env=os.environ|{'GIT_OPTIONAL_LOCKS':'0'})
+checks=[]
+def ck(n,ok,**kw):checks.append({'check':n,'passed':bool(ok),**kw})
+src=P/'FINDING-W08-21061-SRC-001.json';pub=P/'skeptic/FINDING-W08-21061-PUB-001-v2.json'
+ck('exact source finding frozen input',sha(src)=='96a88a5dece7c67dfc193e8523c6ebc95c49e1df9968285dcbc356c0b83af30b')
+ck('exact publisher finding metadata successor',sha(pub)=='eae241050ef116b9d666613f87e8a768d137fe671188e78a57c7432b6bcc4d3c')
+source=js(src);publisher=js(pub);inputbindings=[]
+for label,d in [('source',source),('publisher',publisher)]:
+    for name,h in d['input_hashes'].items():
+        p=Path(name) if Path(name).is_absolute() else P/name
+        inputbindings.append({'finding':label,**ref(p),'expected':h,'passed':sha(p)==h})
+ck('all exact finding evidence hashes retained',all(r['passed'] for r in inputbindings))
+
+sourcecases=[]
+for row in js(P/'root-probes/staged-index-results.json')['results']:
+    path=Path(row['fixture']);baseline=row.get('baseline',row.get('accepted_baseline'))
+    if baseline is None:baseline=row.get('baseline_commit')
+    head=git(path,'rev-parse','HEAD').decode().strip()
+    contract=path/'MAPPING_SEMANTICS.md'
+    current=sha(contract); indexraw=git(path,'show',':MAPPING_SEMANTICS.md');index=hashlib.sha256(indexraw).hexdigest()
+    work=git(path,'diff','--name-only','-z',baseline,'--').split(b'\0')
+    cached=git(path,'diff','--cached','--name-only','-z',baseline,'--').split(b'\0')
+    receiptpath=path/'receipt/application.json'
+    if not receiptpath.exists():receiptpath=path/'source-receipt/application.json'
+    receipt=js(receiptpath) if receiptpath.exists() else None
+    sourcecases.append({'mode':row['mode'],'path':str(path),'actual_head':head,'baseline':baseline,
+                        'working_contract_sha256':current,'cached_contract_sha256':index,
+                        'working_delta_paths':[os.fsdecode(x) for x in work if x],
+                        'cached_delta_paths':[os.fsdecode(x) for x in cached if x],
+                        'receipt':ref(receiptpath) if receipt else None,
+                        'actual_state':receipt.get('state') if receipt else None,
+                        'recovery_required':receipt.get('recovery_required') if receipt else None})
+for x in sourcecases:
+    if x['mode'] in ['initial_staged_index_only','late_staged_index_only']:
+        ck(x['mode']+' actual index/working discrepancy and success receipt',x['actual_head']==x['baseline'] and x['working_contract_sha256']=='6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062' and x['cached_contract_sha256']=='15b1b311ea6841a0fae3110e618a1157dbebf7be7296e749bd5b9a699c6d55eb' and 'MAPPING_SEMANTICS.md' not in x['working_delta_paths'] and 'MAPPING_SEMANTICS.md' in x['cached_delta_paths'] and x['actual_state']=='complete' and x['recovery_required'] is False)
+
+neg=P/'skeptic/fixtures/late-head-inside-final-source-proof';a=js(neg/'source-receipt/application.json');p=js(neg/'reports/publication/publication.json');g=js(neg/'reports/native/generation.json');cmd=js(neg/'reports/native/command.json')
+native=neg/'reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json'
+head=git(neg,'rev-parse','HEAD').decode().strip()
+ck('actual publisher residual complete across real HEAD drift',a['state']==p['status']=='complete' and a['baseline_commit']!=head and bool(native.read_bytes()))
+ck('publisher negative really generated with pinned producer',cmd['returncode']==0 and g['external_sssom_validation']=='passed' and g['source_revisions']['claw']=='76c1ebeea3fc7f80bf1abe044688f298f390cfac' and g['source_revisions']['mim']==a['baseline_commit'])
+ck('source residual belongs to existing1256 native finding',source['native_predecessor_finding_id']=='W08-16C-CODE-002' and source['issue_key']=='campaign-owner-apply-late-baseline-freshness')
+ck('publisher is separate residual key without invented native predecessor',publisher['finding_id']=='W08-21061-PUB-001' and publisher['issue_key']=='publisher-final-proof-head-freshness')
+ck('publisher v1 metadata retained',sha(R/publisher['supersedes_metadata']['path'])==publisher['supersedes_metadata']['sha256'])
+tech=js(P/'technical/review.json');skeptic=js(P/'skeptic/review.json')
+ck('both complete peers keep needs_curation',tech['status']==skeptic['status']=='COMPLETE' and tech['verdict']==skeptic['verdict']=='needs_curation')
+ck('technical1255 resolution is scoped and1256partial',tech['prior_findings'][0]['finding_id']=='REJECTION-CODE-001' and 'resolved for scoped code behavior' in tech['prior_findings'][0]['disposition'] and tech['prior_findings'][1]['finding_id']=='W08-16C-CODE-002' and 'partially corrected' in tech['prior_findings'][1]['disposition'])
+ck('sealed own lineage unchanged',all(sha(P/'lineage'/n)==h for n,h in js(P/'lineage/MANIFEST.json')['files'].items()))
+out={'reviewer':'worker08:/root/vitamins','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS' if all(x['passed'] for x in checks) else 'FAIL','scope':'Assembly readback of retained actual findings/probes. No actual source/publisher application, native proof or generation rerun.','checks':checks,'findings':[ref(src),ref(pub)],'input_bindings':inputbindings,'source_case_readback':sourcecases,'publisher_readback':{'root':str(neg),'actual_head':head,'accepted_baseline':a['baseline_commit'],'source':ref(neg/'source-receipt/application.json'),'publication':ref(neg/'reports/publication/publication.json'),'native_receipt':ref(native),'command':ref(neg/'reports/native/command.json'),'generation':ref(neg/'reports/native/generation.json')},'peer_inputs':[ref(P/'technical/review.json'),ref(P/'skeptic/review.json'),ref(P/'publisher-finding-root-readback.json')],'assessment':'The residual source finding concerns cached index bytes excluded from net working-tree diff, while the publisher residual is a real commit after the last live capture callback during actual final source-proof replay. These are still open despite tested improvements. Preserve resolved1255 only as scoped exact21061 observation, not historical record rewriting or GitHub closure.','science_or_application_approval':False}
+with (O/'residual-readback.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'status':out['status'],'failed':[x for x in checks if not x['passed']],'output':ref(O/'residual-readback.json')},indent=2))

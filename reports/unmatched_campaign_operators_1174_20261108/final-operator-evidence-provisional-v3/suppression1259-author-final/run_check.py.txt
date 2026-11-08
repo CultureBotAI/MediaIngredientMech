@@ -1,0 +1,43 @@
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+R = C.parents[1]
+P = D / "runtime/repo"
+T = R / ".temp/kgm-unmapped-20261107"
+tag, *args = sys.argv[1:]
+out = D / "checks" / tag
+out.mkdir(exist_ok=False)
+env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1", UV_OFFLINE="1",
+           PYTHONPATH=str(P / "src") + os.pathsep + str(T / "claw/src"),
+           CLAW_ROOT=str(T / "claw"), CAMPAIGN_HISTORY_ROOT=str(C / "integration/curation-worktree"),
+           CAMPAIGN_SUPPRESSION_REVIEW_ROOT=str(C / "workers/w07/worktree/.temp/four-suppression-policy-independent-v1"),
+           CAMPAIGN_SUPPRESSION_INTAKE_ROOT=str(C / "integration/final-native-intake-v4-preparation"),
+           OPENCLAW_WORKSPACE=str(out / "openclaw-workspace"),
+           PYTEST_ADDOPTS="", UV_CACHE_DIR=str(T / "uv-cache"))
+def pins():
+    return {str(p.relative_to(P)): hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in [P / "src/mediaingredientmech/campaign_publication.py", P / "src/mediaingredientmech/curate/campaign_owner_apply.py", *sorted((P / "tests").glob("test_campaign*.py"))]}
+before = pins()
+command = [str(T / "env/bin/python"), "-B", *args]
+if args[:2] == ["-m", "pytest"]:
+    command += ["--basetemp", str(out / "fixtures")]
+started = datetime.now(timezone.utc).isoformat()
+start = time.monotonic()
+with (out / "run.log").open("xb") as log:
+    run = subprocess.run(command, cwd=P, env=env, stdout=log, stderr=subprocess.STDOUT)
+receipt = {"started_at": started, "ended_at": datetime.now(timezone.utc).isoformat(),
+           "argv": command, "cwd": str(P), "exit_code": run.returncode,
+           "elapsed_seconds": time.monotonic()-start, "before": before, "after": pins(),
+           "environment": {k:env[k] for k in env if k.startswith(("CAMPAIGN_", "CLAW_", "OPENCLAW_", "PYTHON", "UV_"))},
+           "log_sha256": hashlib.sha256((out / "run.log").read_bytes()).hexdigest()}
+(out / "run.json").write_text(json.dumps(receipt, indent=2) + "\n")
+print(json.dumps(receipt))
+raise SystemExit(run.returncode)

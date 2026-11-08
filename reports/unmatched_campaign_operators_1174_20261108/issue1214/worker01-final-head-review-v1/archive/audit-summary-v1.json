@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-11-08T06:06:35.981010+00:00",
+  "reviewer": "/root/issue_context",
+  "scope": "Read-only archive integrity, provenance, privacy and historical review scope; no scientific or integration approval.",
+  "integration_root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+  "requested_head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "observed_head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "base": "e000d66dd26ab053e9b17ce7bf8d3c873c3dde99",
+  "git_status_short": "",
+  "selection_sha256": "5f154af3da7b9c6111572da8a47ec0eba8468d979dcc49418ce715681a37c409",
+  "declared": {
+    "source_entries": 319,
+    "unique_files": 240,
+    "unique_bytes": 9117270,
+    "combined_review_sha256": "3348c645fa9c2fea7428702c5783a8dd8de16552cb2034a4a36cd22846f593db"
+  },
+  "observed": {
+    "source_entries": 319,
+    "unique_files": 240,
+    "archive_files_with_metadata": 242,
+    "selected_bytes": 9117270,
+    "duplicate_mapping_count": 79,
+    "duplicate_target_groups": 45,
+    "original_available": 319,
+    "original_unavailable": 0
+  },
+  "declared_checks": {
+    "source_entries": true,
+    "unique_files": true,
+    "unique_bytes": true,
+    "combined_review_sha256": true
+  },
+  "symlinks": [],
+  "unselected_files": [
+    "README.md",
+    "SELECTION.json"
+  ],
+  "privacy_scan": {
+    "scope": "Every file from os.walk, including hidden and ignored files; path and credential/runtime-signature scan, plus separately reviewed bounded log contents. Historical absolute provenance paths are not rewritten.",
+    "path_suspects": [],
+    "content_suspects": []
+  },
+  "errors": [],
+  "proofs": {
+    "entry-verification-v1.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/infrastructure-pr1205-final-head-review-v1/archive/entry-verification-v1.json",
+      "sha256": "23589abc0eeafff5da541b2d33427d54ea6c530f014eed483803bf72df7b186a"
+    },
+    "duplicate-mapping-verification-v1.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/infrastructure-pr1205-final-head-review-v1/archive/duplicate-mapping-verification-v1.json",
+      "sha256": "34e6b7bcb82a0003966c7262f545d3998fc699db2d06c51837e8573d043910ac"
+    },
+    "ignored-inclusive-inventory-v1.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/infrastructure-pr1205-final-head-review-v1/archive/ignored-inclusive-inventory-v1.json",
+      "sha256": "80be2fed1baddfc4d02cddb7557b5f6cdc135c1baf2f43ca3e511b19f70a1794"
+    },
+    "bounded-log-contents-v1.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/infrastructure-pr1205-final-head-review-v1/archive/bounded-log-contents-v1.json",
+      "sha256": "c4f9e71d2e0b7e9f147c0d8eafa3dff03d046f899b0022d22eec3ae5ee48e550"
+    },
+    "review-receipts-binding-v1.json": {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w01/worktree/.temp/infrastructure-pr1205-final-head-review-v1/archive/review-receipts-binding-v1.json",
+      "sha256": "35993b1e05587c32d5f6487d6ea1b11c955d40b7126d3b82bc9116cf81dc9103"
+    }
+  },
+  "audit_harness_notes": [
+    "Initial README lookup used report root instead of independent-review root and raised FileNotFoundError; corrected read succeeded without integration changes.",
+    "An accidental nonexistent shell command after creating the output directory returned127; no integration reads/writes or proof claims depended on it.",
+    "The preliminary filename search output was truncated; this audit uses complete os.walk inventory and no exclusion rules."
+  ],
+  "limits": [
+    "No independent rerun of archived probe programs or full test suite.",
+    "Credential/signature scan is bounded and cannot prove absence of every possible secret; file roles and bounded logs require reviewer inspection.",
+    "Historical source paths and manifests can reference intentionally excluded private fixtures; reference text is distinguished from copied fixture trees."
+  ]
+}

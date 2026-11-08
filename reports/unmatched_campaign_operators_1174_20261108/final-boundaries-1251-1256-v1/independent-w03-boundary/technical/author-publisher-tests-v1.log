@@ -1,0 +1,166 @@
+EF                                                                       [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_actual_native_multi_owner_new_promotion_and_source_only_publication _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/w...e/.temp/native-boundary-final-head-independent-v1/technical/author-publisher-tests-v1/test_actual_native_multi_owner0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a295e00>
+
+    @pytest.fixture
+    def case(tmp_path, monkeypatch):
+        root = tmp_path / "repository"
+        root.mkdir()
+        before = sssom([row("A"), row("Unrelated", "CHEBI:9")])
+        candidate = sssom(
+            [
+                row(
+                    "A",
+                    other="reviewed alias",
+                    source="native",
+                    comment="",
+                    confidence="0.8",
+                    mapping_date="2026-11-08",
+                ),
+                row("B", "CHEBI:2", mapping_date="2026-11-08"),
+                row("P", "CHEBI:3", mapping_date="2026-11-08"),
+                row("Unrelated", "CHEBI:999", source="unrelated native drift"),
+            ]
+        )
+        sidecar = b"subject_id\ttoken_key\ttoken\towner_subject_ids\tdisposition\tinput_surfaces\tsource_refs\tevidence_refs\n"
+        baseline = b"subject_id\ttoken_key\n"
+        owner_paths = [
+            "data/ingredients/mapped/A.yaml",
+            "data/ingredients/mapped/B.yaml",
+            "data/ingredients/unmapped/C.yaml",
+            "data/ingredients/mapped/P.yaml",
+        ]
+        for p in owner_paths:
+            put(root, p, ("identifier: CHEBI:1\npreferred_term: " + Path(p).stem + "\n").encode())
+        after_inventory = inventory(root)
+        before_inventory = {
+            owner_paths[0]: c.sha(b"old A"),
+            owner_paths[2]: c.sha(b"old C"),
+            "data/ingredients/unmapped/P_old.yaml": c.sha(b"old P"),
+        }
+        records = []
+        for i, path in enumerate(owner_paths):
+            old_path = "data/ingredients/unmapped/P_old.yaml" if i == 3 else path
+            kind = "create" if i == 1 else "promote" if i == 3 else "edit"
+            records.append(
+                {
+                    "operation_id": str(i),
+                    "kind": kind,
+                    "source_record": path,
+                    "source_path": None if i == 1 else old_path,
+                    "destination_path": path,
+                    "shape": (
+                        "new_record" if i == 1 else "promotion" if i == 3 else "campaign_owner_edit"
+                    ),
+                    "before_yaml_sha256": before_inventory.get(old_path),
+                    "after_yaml_sha256": after_inventory[path],
+                    "change": "Fixture reviewed change",
+                    "verification": "Fixture evidence; no approval",
+                }
+            )
+            if i == 3:
+                records[-1]["before_source_record"] = old_path
+        policy = dict.fromkeys(c.POLICY_REQUIRED, "historical")
+        policy.update(
+            schema_version=1,
+            policy_version="owned-name-policy-v1",
+            approval="NONE: original historical policy",
+            artifacts={c.SOURCE: c.sha(before), c.SIDECAR: c.sha(sidecar), c.BASELINE: c.sha(baseline)},
+            source_owner_sha256=dict(before_inventory),
+            decisions=[{"historic": "unchanged"}],
+            policy_evidence=["old evidence"],
+            source_alias_addition_updates=[{"old": "history"}],
+        )
+        for path, value in [
+            (c.SOURCE, before),
+            (c.POLICY, policy),
+            (c.SIDECAR, sidecar),
+            (c.BASELINE, baseline),
+>           (c.MAKER, (ROOT / c.MAKER).read_bytes()),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (
+                "src/mediaingredientmech/campaign_publication.py",
+                (ROOT / "src/mediaingredientmech/campaign_publication.py").read_bytes(),
+            ),
+        ]:
+
+../frozen-src/tests/test_campaign_publication.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/w...ative-boundary-final-head-independent-v1/frozen-src/reports/sssom_completion_20260921/mapping_changes/make_receipt.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/frozen-src/reports/sssom_completion_20260921/mapping_changes/make_receipt.py'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+=================================== FAILURES ===================================
+___ test_actual_owner_writer_checkpoint_survives_native_mapping_publication ____
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/w...e/.temp/native-boundary-final-head-independent-v1/technical/author-publisher-tests-v1/test_actual_owner_writer_check0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a295ba0>
+
+    def test_actual_owner_writer_checkpoint_survives_native_mapping_publication(tmp_path, monkeypatch):
+        """Real source apply/retirement plus real publisher/maker/chain; no owner stub."""
+        spec = importlib.util.spec_from_file_location(
+            "campaign_owner_fixture", ROOT / "tests/test_campaign_owner_apply.py"
+        )
+        fixture = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(fixture)
+        owner = fixture.owner
+        source_plan = fixture.setup(tmp_path)
+        before = sssom([row("Existing")])
+        put(tmp_path, c.SOURCE, before)
+        history(tmp_path, before)
+>       put(tmp_path, c.MAKER, (ROOT / c.MAKER).read_bytes())
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../frozen-src/tests/test_campaign_publication.py:710: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:625: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/w...ative-boundary-final-head-independent-v1/frozen-src/reports/sssom_completion_20260921/mapping_changes/make_receipt.py')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/frozen-src/reports/sssom_completion_20260921/mapping_changes/make_receipt.py'
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:537: FileNotFoundError
+=============================== warnings summary ===============================
+../../all-unmatched-worker-03/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/all-unmatched-worker-03/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../frozen-src/tests/test_campaign_publication.py::test_actual_owner_writer_checkpoint_survives_native_mapping_publication
+ERROR ../frozen-src/tests/test_campaign_publication.py::test_actual_native_multi_owner_new_promotion_and_source_only_publication
+1 failed, 116 deselected, 12 warnings, 1 error in 0.75s

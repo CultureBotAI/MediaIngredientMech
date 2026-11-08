@@ -1,0 +1,38 @@
+"""Private native pair assembly; unchanged mutation controls are reused, not rerun."""
+from pathlib import Path
+from datetime import datetime,timezone
+import copy,hashlib,importlib.util,json,os,sys
+W=Path.cwd();O=W/'.temp/pr1205-final-archive-subset-independent-v3';N=O/'native'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();load=lambda p:json.loads(p.read_text());now=lambda:datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00','Z')
+def save(p,x):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as f:json.dump(x,f,indent=2);f.write('\n')
+c=load(N/'final-content.json');assert c['verdict']=='pass_with_limitations' and c['scientific_review'] is False
+for row in c['stable_inputs']:assert sha(O/row['path'])==row['sha256'],row['path']
+for row in load(N/'input-freeze-v1.json')['source_copies']:assert sha(Path(row['original_path']))==sha(W/row['copy_path'])==row['sha256']
+reuse=load(N/'native-controls-reuse-v1.json')
+for row in reuse['current_contract_files_equal_to_reviewed_v2']:assert sha(W/row['path'])==row['sha256']
+assert not os.environ.get('GIT_DIR') and not os.environ.get('GIT_WORK_TREE')
+spec=importlib.util.spec_from_file_location('archive_v3_final_native',W/'scripts/record_review.py');m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+initial=load(N/'initial-inspection-v1.json');extra={r['path'] for r in initial['source']['inputs']}
+extra.update(str((O/r['path']).relative_to(W)) for r in c['stable_inputs'])
+extra.update(str(p.relative_to(W)) for p in N.rglob('*') if p.is_file())
+inspection=m.inspect_source(W,initial['targets'],sorted(extra));save(N/'final-inspection-v1.json',inspection)
+inputs={r['path']:r['sha256'] for r in inspection['source']['inputs']}
+assert all(inputs[r['path']]==r['sha256'] for r in initial['source']['inputs']) and len(inspection['targets'])==3
+evidence=[]
+for row in c['evidence_specs']:
+ row=copy.deepcopy(row);p=O/row.pop('path');row.update(reference=str(p.relative_to(W)),snapshot_sha256=sha(p),accessed_at=now());evidence.append(row)
+finish=now();rid=finish.replace('-','').replace(':','')+'-w02-pr1205-subset-v3-and-prior-copies-independent'
+r={k:v for k,v in c.items() if k not in ['stable_inputs','evidence_specs']}
+r.update(schema_version='1.0.0',review_id=rid,kind='batch',repository=inspection['repository'],started_at=load(N/'input-freeze-v1.json')['at'].replace('+00:00','Z'),finished_at=finish,source=inspection['source'],targets=inspection['targets'],evidence=evidence)
+m.validate_review(r);m.assert_current_source(W,r)
+yaml=m._dump_document(r).encode();md=m.render_markdown(r).encode();locator=f'reviews/structured/{rid}/review.yaml'
+assert m.parse_review_bundle(locator,yaml,md)==r
+p=N/'private-overlay'/locator;p.parent.mkdir(parents=True,exist_ok=False)
+with p.open('xb') as f:f.write(yaml)
+with p.with_name('review.md').open('xb') as f:f.write(md)
+assert m.read_review(N/'private-overlay',locator)==r;m.assert_current_source(W,r)
+receipt={'at':now(),'assembler':'worker02 /root/research_c','review_id':rid,'scientific_review':False,'verdict':r['verdict'],'targets':len(r['targets']),'assessments':len(r['assessments']),'evidence_entries':len(r['evidence']),'source_inputs':len(inputs),'all_initial54_inputs_preserved':True,'pair':{'yaml':str(p),'yaml_sha256':sha(p),'markdown':str(p.with_name('review.md')),'markdown_sha256':sha(p.with_name('review.md'))},'native_methods_current':['inspect_source(actual W02)','validate_review','assert_current_source(actual W02)','_dump_document','render_markdown','parse_review_bundle','read_review(private overlay)','assert_current_source(actual W02)'],'controls':{'new_generic_native_mutation_controls_run':0,'post_filing_numbered_pair_helper_actual_mismatch_refusals':6,'post_filing_helper_review':{'path':str(N/'numbered-pair-fix-review-v1.json'),'sha256':sha(N/'numbered-pair-fix-review-v1.json')},'reused_prior_native_control_count':6,'reuse_receipt':{'path':str(N/'native-controls-reuse-v1.json'),'sha256':sha(N/'native-controls-reuse-v1.json')},'actual_prior_fixture_scope':'Four-target v2 review; six outcomes reused only because all eight native contract files are exact. No claim those mutations were rerun on current three-target pair.'},'reference_bases':{'native_source_inputs_and_evidence':str(W),'controls_reuse_prior_pair_and_current_contract_files':str(W),'new_pair_paths':'absolute'},'canonical_saver':False,'REPORT_ROOT_override':False,'Git_environment_override':False,'private_read_provenance':m.source_provenance(N/'private-overlay',r),'D_final_pair_readback':'pending at write; separate additive readback required','stable_inputs':c['stable_inputs']}
+save(N/'native-pair-receipt-v1.json',receipt)
+print(json.dumps({'pair':receipt['pair'],'source_inputs':len(inputs),'targets':len(r['targets']),'reused_controls':6,'receipt_sha256':sha(N/'native-pair-receipt-v1.json')}))

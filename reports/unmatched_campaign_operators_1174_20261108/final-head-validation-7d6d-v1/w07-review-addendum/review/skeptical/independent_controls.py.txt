@@ -1,0 +1,76 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import copy,hashlib,importlib.util,json,os,re,subprocess,sys
+W=Path.cwd();N=W/'.temp/final-operator-head-review-addendum-v2';O=N/'review/skeptical';R=O/'controls';R.mkdir();script=N/'scripts/accounting_correction.py';expected='a58533a3d85bfe3706f5a3cd80118039314da96c1e372bcd6ce48284524a22f7';sha=lambda b:hashlib.sha256(b).hexdigest();assert sha(script.read_bytes())==expected
+spec=importlib.util.spec_from_file_location('independent_frozen_accounting',script);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);original=m.load_inputs(N/'inputs');baseline=m.audit(original);assert baseline==json.loads((N/'validation/accounting.json').read_text());results=[]
+def json_get(d,n):return json.loads(d[n])
+def json_put(d,n,v):d[n]=(json.dumps(v,indent=2)+'\n').encode()
+def field(d,n,path,v):
+ x=json_get(d,n);at=x
+ for k in path[:-1]:at=at[k]
+ at[path[-1]]=v;json_put(d,n,x)
+def replace_log(d,n,old,new):
+ assert old in d[n].decode();d[n]=d[n].replace(old.encode(),new.encode());receipt={'original-run.log':'original-run.json','corrected-run.log':'corrected-run.json','collection.log':'collection.json'}[n];field(d,receipt,['stdout_sha256' if n=='collection.log' else 'log_sha256'],sha(d[n]))
+def trace_change(d,old,new):
+ assert old in d['full-trace.stderr'].decode();d['full-trace.stderr']=d['full-trace.stderr'].replace(old.encode(),new.encode());p=json_get(d,'trace-result.json');r=next(r for r in p['runs'] if r['name']=='frozen-import-full-trace');r['stderr_sha256']=sha(d['full-trace.stderr']);json_put(d,'trace-result.json',p)
+def case(name,mutate,expect_refusal=True):
+ d=dict(original);mutate(d);changed={k:{'before':sha(original[k]),'after':sha(v)} for k,v in d.items() if v!=original[k]};error=None;out=None
+ try:out=m.audit(d)
+ except Exception as e:error=type(e).__name__+': '+str(e)
+ passed=(error is not None)==expect_refusal
+ results.append({'name':name,'boundary':'semantic audit(data), frozen load step intentionally bypassed for adversarial semantic control only','expected_refusal':expect_refusal,'refused':error is not None,'error':error,'passed':passed,'changed_inputs':changed,'output_equals_authentic':out==baseline if out is not None else None})
+case('authentic_semantic_positive',lambda d:None,False)
+fails=re.findall(r'^FAILED (tests/\S+)\s*$',original['original-run.log'].decode(),re.M)
+ids=[l for l in original['collection.log'].decode().splitlines() if l.startswith('tests/') and '::' in l]
+integration=next(i for i in ids if i.startswith('tests/test_campaign_demotion_integration.py::'))
+case('wrong_failure_member_same_total',lambda d:replace_log(d,'original-run.log','FAILED '+fails[0],'FAILED '+fails[0]+'wrong'))
+case('integration_failure_injected_same_total',lambda d:replace_log(d,'original-run.log','FAILED '+fails[0],'FAILED '+integration))
+case('missing_failure_member',lambda d:replace_log(d,'original-run.log','FAILED '+fails[0]+'\n',''))
+case('duplicate_failure_member_same_total',lambda d:replace_log(d,'original-run.log','FAILED '+fails[0],'FAILED '+fails[1]))
+case('original_false_complete_pass',lambda d:replace_log(d,'original-run.log','11 failed, 619 passed, 12 warnings','630 passed, 12 warnings'))
+case('original_arithmetic_union_false_pass',lambda d:replace_log(d,'original-run.log','11 failed, 619 passed, 12 warnings','632 passed, 12 warnings'))
+case('original_duplicate_final_summary',lambda d:replace_log(d,'original-run.log','11 failed, 619 passed, 12 warnings in','1 passed in 1.00s\n11 failed, 619 passed, 12 warnings in'))
+case('original_exit_zero',lambda d:field(d,'original-run.json',['exit_code'],0))
+case('original_before_after_drift',lambda d:field(d,'original-run.json',['after',m.SOURCE],'f'*64))
+case('original_receipt_log_mismatch',lambda d:field(d,'original-run.json',['log_sha256'],'f'*64))
+case('corrected_exit_one',lambda d:field(d,'corrected-run.json',['exit_code'],1))
+case('corrected_false_arithmetic_total',lambda d:replace_log(d,'corrected-run.log','13 passed, 12 warnings','632 passed, 12 warnings'))
+case('collection_duplicate_same_total',lambda d:replace_log(d,'collection.log',ids[0]+'\n',ids[1]+'\n'))
+case('collection_group_changed_same_total',lambda d:replace_log(d,'collection.log',ids[0]+'\n',ids[0].replace('test_campaign_owner_apply.py','test_unrelated.py')+'\n'))
+case('failed_node_absent_from_collection',lambda d:replace_log(d,'collection.log',fails[0]+'\n',fails[0]+'not_this_case\n'))
+case('partial_review_expected_member_changed',lambda d:replace_log(d,'collection.log',m.REVIEW+'[partial-coverage]\n',m.REVIEW+'[other-coverage]\n'))
+case('full_trace_wrong_missing_path_rebound_hash',lambda d:trace_change(d,'/scripts/record_review.py','/scripts/unrelated.py'))
+case('full_trace_exception_changed_rebound_hash',lambda d:trace_change(d,'FileNotFoundError: [Errno 2]','PermissionError: [Errno 2]'))
+case('full_trace_missing_header_rebound_hash',lambda d:trace_change(d,'Traceback (most recent call last):\n',''))
+case('trace_source_bytes_changed',lambda d:d.__setitem__('trace-source-operator.py.txt',d['trace-source-operator.py.txt']+b'\n'))
+case('trace_publisher_bytes_changed',lambda d:d.__setitem__('trace-publisher.py.txt',d['trace-publisher.py.txt']+b'\n'))
+case('trace_provenance_frozen_false',lambda d:field(d,'trace-result.json',['frozen_inputs_unchanged'],False))
+case('fixture_preservation_false',lambda d:field(d,'fixture-diff-proof.json',['exact_author_diff'],False))
+case('wrong_finding_receipt',lambda d:field(d,'issue-receipt.json',['finding'],'OTHER'))
+case('issue_GET_not_verified',lambda d:field(d,'issue-receipt.json',['readback_verified'],False))
+# Refuse changed captures at the pinned loader boundary; these are minimal private fixtures.
+for name,mutation in [('loader_manifest_changed','manifest'),('loader_capture_changed','capture'),('loader_capture_missing','missing')]:
+ p=R/name;p.mkdir();raw=(N/'inputs/BINDINGS.json').read_bytes();(p/'BINDINGS.json').write_bytes(raw+(b'\n' if mutation=='manifest' else b''))
+ if mutation=='capture':(p/'original-run.json').write_bytes(original['original-run.json']+b'\n')
+ error=None
+ try:m.load_inputs(p)
+ except Exception as e:error=type(e).__name__+': '+str(e)
+ results.append({'name':name,'boundary':'load_inputs pinned file captures','expected_refusal':True,'refused':error is not None,'error':error,'passed':error is not None})
+# Exact CLI positive and output/claim controls; no operator or full test suite is run.
+env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1',GIT_OPTIONAL_LOCKS='0')
+def cli(name,claim=None,outname=None,expect_refusal=False):
+ out=R/(outname or name+'.json');cmd=[sys.executable,'-B',str(script),'--inputs',str(N/'inputs'),'--out',str(out)]
+ if claim is not None:
+  p=R/(name+'-claim.json');p.write_text(json.dumps(claim,indent=2)+'\n');cmd+=['--claim',str(p)]
+ before=out.read_bytes() if out.exists() else None;run=subprocess.run(cmd,env=env,capture_output=True,text=True)
+ (R/(name+'.stdout')).write_text(run.stdout);(R/(name+'.stderr')).write_text(run.stderr)
+ passed=(run.returncode!=0)==expect_refusal and (not expect_refusal or (out.read_bytes() if out.exists() else None)==before)
+ if not expect_refusal:passed=passed and json.loads(out.read_text())==baseline
+ results.append({'name':name,'boundary':'exact frozen CLI','argv':cmd,'exit_code':run.returncode,'expected_refusal':expect_refusal,'passed':passed,'output_created':out.exists(),'existing_or_absent_output_preserved':(out.read_bytes() if out.exists() else None)==before if expect_refusal else None,'stdout':str((R/(name+'.stdout')).relative_to(O)),'stderr':str((R/(name+'.stderr')).relative_to(O))})
+cli('cli_positive')
+for name,mutator in [('cli_claim_original_PASS',lambda x:x['original_combined'].__setitem__('status','PASSED')),('cli_claim_future_suite_PASS',lambda x:x['full_suite'].__setitem__('status','PASSED')),('cli_claim_arithmetic_union632',lambda x:x['original_combined'].__setitem__('passed',632))]:
+ claim=copy.deepcopy(baseline);mutator(claim);cli(name,claim,expect_refusal=True)
+cli('cli_existing_output_refused',outname='cli_positive.json',expect_refusal=True)
+assert sha(script.read_bytes())==expected
+result={'reviewer':'/root/operator_final_skeptic','at':datetime.now(timezone.utc).isoformat(),'helper_sha256':expected,'binding_manifest_sha256':m.BINDINGS_SHA256,'actual_input_count':len(original),'controls':results,'total':len(results),'passed':sum(r['passed'] for r in results),'all_passed':all(r['passed'] for r in results),'scope':'Actual independent controls of frozen new private accounting helper. Semantic mutations rebind only run log hashes where declared to test meaning beyond checksum refusal. Pinned CLI/load boundary unchanged. No operator/source/test/full-suite execution or mutation.','native_original_scope':'Original619pass11fail and separate13pass remain unchanged; no final suite claim.'}
+p=O/'independent-controls-result.json';p.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'total':result['total'],'passed':result['passed'],'all_passed':result['all_passed'],'sha256':sha(p.read_bytes())}))

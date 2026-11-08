@@ -1,0 +1,86 @@
+{
+  "reviewed_head": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "findings": [
+    {
+      "finding_id": "W08-21061-PUB-001",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+      "status": "resolved_for_exact_reviewed_head",
+      "severity": "major",
+      "prior_artifacts_preserved": true,
+      "basis": "Exact original final real source-proof counterexample refuses at the new end-of-recheck live HEAD comparison. Positive tracked-derived and later historical validation remain valid; changed owner proof refuses. Additional later native-byte-read fault also refuses.",
+      "evidence": [
+        "INITIAL-PUBLISHER-RESIDUAL.json",
+        "native-boundary-results.json",
+        "fresh-native-results.json"
+      ],
+      "limits": "Resolution of this publisher diagnostic only; does not resolve the separate source freshness lineage or approve campaign source payloads."
+    },
+    {
+      "finding_id": "W08-7D4DB26-SRC-001",
+      "native_predecessor_finding_id": "W08-16C-CODE-002",
+      "issue_key": "campaign-owner-apply-late-baseline-freshness",
+      "severity": "major",
+      "status": "open",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+      "title": "Final live source check does not retain a coherent Git index through staged-entry verification",
+      "root_finding_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/FINDING-W08-7D4DB26-SRC-001.json",
+      "root_finding_sha256": "baeb59614d7c5622046168c1046da90871908dcca5de70156570a8582d816fbd",
+      "independent_confirmation": "Read the full actual source check, root reproduction script and all four saved fixture states; inspected actual Git staged blobs and unchanged installed bytes/HEAD; reran actual frozen completed verification. This is independent exact readback, not a second injection-lifecycle run.",
+      "reproduction": "Run provenance/probe_index_window.py under the recorded Python against frozen7d. Native apply and receipt helper functions are not replaced. A sys.setprofile hook stages actual installed accepted owner endpoints on entry to the real finish_receipt. Once the receipt is flushed complete, it schedules a real git hash-object/update-index operation either after the actual cached diff returns, or after actual cat-file returns. Hooks neither substitute results nor change native code. Both late modes complete and verify historically while the recorded real index differs from approved scope/bytes.",
+      "locators": [
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:973-1024 (cached listing and staged-entry reads)",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1025-1028 (final HEAD-only check)",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1338-1339 (finish_receipt final recheck followed by complete return)"
+      ],
+      "bounded_fix": "Bind the index state used for cached enumeration and stage/blob validation through the end of each live check, and refuse concurrent changes before success. Use a coherent stage/path/mode/blob snapshot or equivalent native-safe verification; account for legitimate Git stat-cache refresh instead of blindly prohibiting every index-file metadata change. Preserve legitimate installed endpoint staging between boundaries, literal paths, and historical completed verification without a current-index lock. Do not merely add a HEAD check, which cannot see index-only changes.",
+      "required_tests": [
+        "Actual final-recheck index addition after cached enumeration must refuse and leave honest failed recovery evidence.",
+        "Actual planned-owner index substitution after its genuine blob read must refuse; working bytes/HEAD remain unchanged to isolate index freshness.",
+        "Clean actual installed-endpoint staging and later historical validation still pass; initial/postprepare/midflight hidden-index controls remain refused.",
+        "Unrelated cached paths, conflict stages, mode mismatch, intent-to-add and premature deletion/accepted payload must remain refused with all original tests intact."
+      ],
+      "evidence": [
+        "source-index-window-readback.json"
+      ],
+      "fix_applied": false
+    },
+    {
+      "finding_id": "W08-7D4DB26-SRC-002",
+      "native_predecessor_finding_id": "W08-16C-CODE-002",
+      "issue_key": "campaign-owner-apply-late-baseline-freshness",
+      "severity": "major",
+      "status": "open",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256",
+      "title": "Stable Git index flags hide unrelated tracked working-byte drift from the live source scope guard",
+      "source_finding_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/technical/FINDING-W08-7D4DB26-SRC-002.json",
+      "source_finding_sha256": "a07a64aaa76b9b22ff16240fdd82a8e21b500b80df9a8decbb8c378818352a3c",
+      "independent_confirmation": "Confirmed separate stable-flag bypass of the live out-of-scope working-byte guard. Unlike SRC001 this needs no race: the caller sets assume-unchanged or skip-worktree and changes an ordinary tracked notes file before apply. Native code does not write that notes file; it fails to refuse the pre-existing unauthorized change. Actual baseline/index bytes and HEAD stay equal while current working bytes differ. Ordinary unflagged drift refuses before output or owner mutation. A coherent index snapshot alone would not fix this case; the live check must reject unsupported flags or verify actual flagged-path working state without silently changing the caller index. Historical completed verification keeps its separate scope.",
+      "evidence": [
+        "source-index-flags-readback.json"
+      ],
+      "locators": [
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:956-972 (_check_mutation_git_state working-tree scope from git diff)",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:975-989 (cached changed-path enumeration does not enumerate unchanged-blob flagged entries)",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1067 (_recheck invokes this live guard)"
+      ],
+      "bounded_fix": "Either explicitly reject unsupported assume-unchanged/skip-worktree state at the relevant live boundaries, or prove the actual working bytes for flagged tracked paths against the accepted baseline with literal path handling, regular-file/path checks and coherent index state. Do not clear flags or rewrite the caller\u2019s index as validation. Preserve legitimate staging of already-installed accepted owner endpoints and later-commit historical verification. Coordinate with the separate final-index consistency correction; a stable index alone is insufficient.",
+      "required_tests": [
+        "The exact two stable postprepare flag modes must refuse before owner mutation/receipt, with ordinary unflagged drift retained as a control.",
+        "Cover initially flagged baseline paths, later flag changes, flagged owned endpoints and literal paths without weakening independent source/proof checks.",
+        "If flagged state is supported instead of explicitly refused, demonstrate that unchanged real working bytes pass while changed real bytes fail despite identical HEAD/index blobs.",
+        "Retain all 301 old source cases and 53 index additions, plus positive installed-endpoint staging and historical completed verification."
+      ],
+      "fix_applied": false
+    }
+  ],
+  "new_publisher_findings": [],
+  "open_blocking_findings": [
+    "W08-7D4DB26-SRC-001",
+    "W08-7D4DB26-SRC-002"
+  ],
+  "supersedes_finding_set": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/skeptic/findings.json",
+    "sha256": "7fde310cb734414e340825bee182be3a7fe9086dfb26bd9bdd6d58024bda2650",
+    "reason": "New technical SRC002 arrived after the original skeptical receipt sealed; prior bytes remain immutable."
+  }
+}

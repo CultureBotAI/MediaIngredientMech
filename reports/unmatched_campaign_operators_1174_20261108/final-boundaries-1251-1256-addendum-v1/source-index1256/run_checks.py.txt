@@ -1,0 +1,9 @@
+from pathlib import Path
+import hashlib,json,os,subprocess,sys,time
+D=Path(__file__).resolve().parent;M=D.parents[3];T=M/'.temp/kgm-unmapped-20261107';P=D/'portable'
+tag=sys.argv[1];command=sys.argv[2:];out=D/'checks'/tag;out.mkdir(parents=True,exist_ok=False)
+env=os.environ.copy();env.update(PYTHONDONTWRITEBYTECODE='1',PYTHONPATH=str(P/'src'),UV_OFFLINE='1',CLAW_ROOT=str(T/'claw'),CAMPAIGN_HISTORY_ROOT=str(M),OPENCLAW_WORKSPACE=str(out/'openclaw'))
+start=time.time();p=subprocess.run(command,cwd=P,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+(out/'stdout.txt').write_bytes(p.stdout);(out/'stderr.txt').write_bytes(p.stderr)
+receipt={'command':command,'cwd':str(P),'environment':{k:env[k] for k in ['PYTHONDONTWRITEBYTECODE','PYTHONPATH','UV_OFFLINE','CLAW_ROOT','CAMPAIGN_HISTORY_ROOT','OPENCLAW_WORKSPACE']},'exit_code':p.returncode,'seconds':time.time()-start,'input_sha256':{str(q.relative_to(P)):hashlib.sha256(q.read_bytes()).hexdigest() for q in [P/'src/mediaingredientmech/curate/campaign_owner_apply.py',P/'tests/test_campaign_owner_apply.py']}}
+(out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt));print(p.stdout.decode(errors='replace')[-16000:]);print(p.stderr.decode(errors='replace')[-5000:]);sys.exit(p.returncode)

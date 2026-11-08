@@ -1,0 +1,22 @@
+{
+  "source_sha256": "f7350ba3487e12cf4ecd4abd85e6fb3663fe0eb454fcd1483602072eeba29274",
+  "scope": "Author's synthetic fixture isolates owner proof and generation as explicit mocks, while native receipt replay, projection, policy and publication filesystem operations are real. Demonstrates the outer validator's missing final membership recheck, not full native generation.",
+  "results": [
+    {
+      "case": "positive",
+      "outcome": {
+        "returned": "verified"
+      },
+      "unexpected_present": false,
+      "inventory_matches_claimed": true
+    },
+    {
+      "case": "late_addition",
+      "outcome": {
+        "returned": "verified"
+      },
+      "unexpected_present": true,
+      "inventory_matches_claimed": false
+    }
+  ]
+}

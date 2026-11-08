@@ -1,0 +1,87 @@
+{
+  "status": "PASS_EXPECTED_OUTCOMES",
+  "module_sha256": "4500c96280d717e7f2f34760c5f6bb7bbdde47ebe3356b8ccf18a29d13263f78",
+  "controls": [
+    {
+      "name": "ascii_rejection",
+      "phase": "completed",
+      "error": null,
+      "proof_complete": true,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "787e838106b3e99e9c375cb3914ddb1b5025b01d2c7c50425877a836920d648c"
+      },
+      "receipt_exists": true,
+      "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/ascii_rejection"
+    },
+    {
+      "name": "inherited_family_both",
+      "phase": "completed",
+      "error": null,
+      "proof_complete": true,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Family_Third.yaml": "65018b0e847b080a07498483d9ef5ddf0227efe978efc66aed5476528ee9cd30",
+        "data/ingredients/mapped/Untouched.yaml": "947e3cd48829a2b2d704b358856d4ba34039257ba110722a9cb174df12f6c011",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "a60833f655764610a6e92184b07855a1cc72bf90c43c28fdf039022981c7c934",
+        "data/ingredients/mapped/Family_Third.yaml": "65018b0e847b080a07498483d9ef5ddf0227efe978efc66aed5476528ee9cd30",
+        "data/ingredients/mapped/Untouched.yaml": "0f11e58764d591e54870288640eb13b684590796bd75e100d089cd2d96f28278",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "receipt_exists": true,
+      "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/inherited_family_both"
+    },
+    {
+      "name": "reviewed_family_reduction",
+      "phase": "completed",
+      "error": null,
+      "proof_complete": true,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Family_Third.yaml": "65018b0e847b080a07498483d9ef5ddf0227efe978efc66aed5476528ee9cd30",
+        "data/ingredients/mapped/Untouched.yaml": "947e3cd48829a2b2d704b358856d4ba34039257ba110722a9cb174df12f6c011",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "8cc24f95f820731edfabe91733dce3c7034a279401d82f981ecb2b7a7746e474",
+        "data/ingredients/mapped/Family_Third.yaml": "65018b0e847b080a07498483d9ef5ddf0227efe978efc66aed5476528ee9cd30",
+        "data/ingredients/mapped/Untouched.yaml": "0f11e58764d591e54870288640eb13b684590796bd75e100d089cd2d96f28278",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "receipt_exists": true,
+      "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/reviewed_family_reduction"
+    },
+    {
+      "name": "inherited_family_status_change",
+      "phase": "prepare",
+      "error": {
+        "type": "ValueError",
+        "message": "Inherited collision family requires unchanged paths, keys and statuses"
+      },
+      "proof_complete": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Family_Third.yaml": "65018b0e847b080a07498483d9ef5ddf0227efe978efc66aed5476528ee9cd30",
+        "data/ingredients/mapped/Untouched.yaml": "947e3cd48829a2b2d704b358856d4ba34039257ba110722a9cb174df12f6c011",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Family_Third.yaml": "65018b0e847b080a07498483d9ef5ddf0227efe978efc66aed5476528ee9cd30",
+        "data/ingredients/mapped/Untouched.yaml": "947e3cd48829a2b2d704b358856d4ba34039257ba110722a9cb174df12f6c011",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "receipt_exists": false,
+      "fixture": ".temp/combined-16c-independent-v1/technical/fixtures/inherited_family_status_change"
+    }
+  ]
+}

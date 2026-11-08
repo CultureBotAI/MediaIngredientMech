@@ -1,0 +1,47 @@
+import datetime,hashlib,json,os,stat,subprocess
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-21061-independent-v1';C=R.parents[2];F=P/'frozen/repo'
+def read(p):return json.loads(p.read_text())
+def sha(p):
+ with p.open('rb') as s:return hashlib.file_digest(s,'sha256').hexdigest()
+def save(p,d):
+ with p.open('x') as s:json.dump(d,s,indent=2);s.write('\n')
+entry=read(P/'entry.json');roots={}
+for k,old in entry['roots'].items():
+ p=Path(old['path']);head=subprocess.check_output(['git','-C',str(p),'rev-parse','HEAD'],text=True).strip();status=subprocess.check_output(['git','-C',str(p),'status','--porcelain'],text=True)
+ roots[k]={'path':str(p),'head':head,'status':status,'same_as_entry':head==old['head'] and status==old['status']}
+ assert roots[k]['same_as_entry'],roots[k]
+a=read(P/'frozen/ARCHIVE.json');assert sha(Path(a['archive']))==a['archive_sha256']
+expected=set()
+for row in a['files']:
+ p=F/row['path'];assert not p.is_symlink() and sha(p)==row['sha256'];expected.add(row['path'])
+links=a['literal_symlinks_not_followed']
+for row in links:
+ p=F/row['path'];assert p.is_symlink();assert os.readlink(p)==row['literal_target'];expected.add(row['path'])
+actual=set()
+for parent,ds,fs in os.walk(F,followlinks=False):
+ for name in ds+fs:
+  p=Path(parent)/name
+  if p.is_symlink() or p.is_file():actual.add(str(p.relative_to(F)))
+extra=sorted(actual-expected);assert not extra,extra
+binding=read(P/'lineage/binding-checks.json');preserved=[]
+for m in binding['manifests']:
+ path=Path(m['manifest']['path']);assert sha(path)==m['manifest']['sha256'];manifest=read(path);base=path.parent
+ members=manifest.get('members',manifest.get('files'))
+ if isinstance(members,dict):members=[{'path':k,'sha256':v} if isinstance(v,str) else {'path':k,**v} for k,v in members.items()]
+ assert isinstance(members,list)
+ for row in members:
+  p=base/row['path'];assert not p.is_symlink();assert sha(p)==row['sha256'],str(p)
+ linkrows=manifest.get('literal_symlinks_not_followed',[])
+ for row in linkrows:
+  p=base/row['path'];assert p.is_symlink();assert os.readlink(p)==row.get('literal_target',row.get('target'))
+ for row in manifest.get('private_fixture_hardlinks',[]):
+  st=(base/row['path']).lstat();assert st.st_ino==row['inode'] and st.st_dev==row['device'] and st.st_nlink==row['link_count']
+ preserved.append({'path':str(path),'sha256':sha(path),'members':len(members),'literal_symlinks':len(linkrows),'hardlinks':len(manifest.get('private_fixture_hardlinks',[]))})
+J=Path(roots['J']['path']);owners={str(p.relative_to(J)):sha(p) for d in ['mapped','unmapped'] for p in (J/'data/ingredients'/d).glob('*.yaml')};assert owners==binding['J_owner_inventory']
+for row in binding['J_receipt_prefix']:assert sha(J/row['path'])==row['sha256']
+for row in binding['CLAW_producer_graph']:assert sha(Path(row['path']))==row['sha256']
+for row in binding['five_files']:assert sha(F/row['path'])==row['expected']
+remote=read(P/'inputs/pr1205-exit.json')['head']['sha']
+result={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS','roots':roots,'frozen_original_regular_files':len(a['files']),'frozen_literal_symlinks':len(links),'frozen_added_files':extra,'exact_tar_sha256':a['archive_sha256'],'prior_and_author_manifests_rehashed':preserved,'J_owners':len(owners),'J_receipts':len(binding['J_receipt_prefix']),'CLAW_producer_dependencies':len(binding['CLAW_producer_graph']),'remote_head_entry':entry['remote_head'],'remote_head_exit':remote,'remote_capture_sha256':sha(P/'inputs/pr1205-exit.json'),'later_head_accepted_by_inference':False,'scope':'Full listed hashes; fixture symlinks inventoried literally without following. Every existing source tree/status preserved. Remote observation may differ without changing reviewed21061 bytes.'}
+save(P/'exit-verification.json',result);print(json.dumps(result,indent=2))

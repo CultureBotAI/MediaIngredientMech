@@ -1,0 +1,60 @@
+from pathlib import Path
+import datetime, hashlib, json, os, shutil, subprocess
+
+O=Path(__file__).resolve().parent;W=O.parents[1];C=W.parents[2]
+P=W/'.temp/final-operator-head-review-v1';K=C/'integration/release-worktree'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+(O/'inputs').mkdir();(O/'validation').mkdir();(O/'scripts').mkdir()
+source=C/'preflight/sequence-and-review-findings-publication-v1'
+auth=json.loads((source/'1259-receipt.json').read_text())
+assert auth['readback_verified'] is True and auth['repair_performed'] is False
+assert auth['finding_sha256']==sha(P/'findings/W07-OPERATOR-LOG-AUDIT-001/finding.json')
+assert auth['body_sha256']==sha(source/'1259-body.md')
+comments=json.loads((source/'1259-after.json').read_text())['comments']
+matching=[c for c in comments if c['url']==auth['url']]
+assert len(matching)==1 and matching[0]['body']==(source/'1259-body.md').read_text()
+manifest=json.loads((P/'MANIFEST.json').read_text())
+assert sha(P/'MANIFEST.json')=='c779acec69d8237cf95e5b5681a4645874aaeef4eea5089a2c383b39dd66c052'
+for row in manifest['files']:assert sha(P/row['path'])==row['sha256']
+mapping={
+ 'original-run.json':P/'inputs/author-checks/combined-final-v1/run.json',
+ 'original-run.log':P/'inputs/author-checks/combined-final-v1/run.log',
+ 'corrected-run.json':P/'inputs/author-checks/fixture-corrections-affected-v1/run.json',
+ 'corrected-run.log':P/'inputs/author-checks/fixture-corrections-affected-v1/run.log',
+ 'collection.json':P/'validation/collection-v1/receipt.json',
+ 'collection.log':P/'validation/collection-v1/stdout.log',
+ 'full-trace.stderr':P/'findings/W07-OPERATOR-LOG-AUDIT-001/authentic-full-trace.stderr',
+ 'trace-result.json':C/'integration/campaign-suppressions1259-v1/fixture-dependency-finding-v1/RESULT.json',
+ 'trace-test-before.py.txt':C/'integration/campaign-suppressions1259-v1/fixture-dependency-finding-v1/portable/test-before.py.txt',
+ 'trace-publisher.py.txt':C/'integration/campaign-suppressions1259-v1/fixture-dependency-finding-v1/portable/publisher1108.py.txt',
+ 'trace-source-operator.py.txt':P/'runtime-code/src/mediaingredientmech/curate/campaign_owner_apply.py',
+ 'issue-receipt.json':source/'1259-receipt.json',
+ 'issue-body.md':source/'1259-body.md',
+ 'issue-GET.json':source/'1259-after.json',
+ 'finding.json':P/'findings/W07-OPERATOR-LOG-AUDIT-001/finding.json',
+ 'failed-helper.py.txt':P/'scripts/assemble_preparatory_audit.py',
+ 'predecessor-MANIFEST.json':P/'MANIFEST.json',
+ 'predecessor-SEAL.json':P/'SEAL.json',
+ 'predecessor-pair.json':P/'native-pair.json',
+ 'prior-independent-reproduction.json':P/'review/skeptical/own-helper-finding-review.json',
+ 'fixture-diff-proof.json':P/'validation/fixture-diff-independent.json',
+}
+pair=json.loads((P/'native-pair.json').read_text())
+for k,r in pair.items():mapping['predecessor-'+('review.yaml' if k=='review' else 'review.md')]=P/r['path']
+files=[]
+for n,p in mapping.items():
+    q=O/'inputs'/n;b=p.read_bytes();q.write_bytes(b);assert q.read_bytes()==p.read_bytes()
+    files.append(dict(name=n,source=str(p),sha256=sha(q),bytes=len(b),accessed_at=now()))
+fixture_cwd=Path(next(r for r in json.loads((O/'inputs/trace-result.json').read_text())['runs'] if r['name']=='frozen-import-full-trace')['cwd'])
+fixture_pins={}
+for rel,n in [('src/mediaingredientmech/campaign_publication.py','trace-publisher.py.txt'),('src/mediaingredientmech/curate/campaign_owner_apply.py','trace-source-operator.py.txt')]:
+    assert sha(fixture_cwd/rel)==sha(O/'inputs'/n)
+    fixture_pins[str(fixture_cwd/rel)]=sha(fixture_cwd/rel)
+env=dict(os.environ,GIT_OPTIONAL_LOCKS='0');git=lambda root,*a:subprocess.check_output(['git',*a],cwd=root,env=env,text=True).strip()
+assert git(K,'rev-parse','HEAD')=='7d6d44ea132e04709f81ebd9e1577643745110ad'
+assert git(W,'rev-parse','HEAD')=='090b8933175271a3daf1e1b4483a10dc367ec32c'
+assert not git(K,'status','--short') and not git(W,'status','--short')
+obj=dict(captured_at=now(),files=files,original_fixture_code_currently_rehashed=fixture_pins,issue_verified_against_exact_GET=True,prior_packet=dict(path=str(P),manifest_sha256=sha(P/'MANIFEST.json'),members_verified=len(manifest['files'])),K_head=git(K,'rev-parse','HEAD'),own_head=git(W,'rev-parse','HEAD'),scope='Only new private accounting correction. Original receipts and code remain exact; trace is a preserved single-case shared-fixture diagnostic, not eleven newly obtained traces.',read_probe_note='One initial recursive fixture enumeration was overbroad and tool output truncated. No result inferred from truncated listing; all selected files were subsequently read and hashed directly.',competing_finding_heads='Ignored-aware rg over W/.temp review.yaml files found exactly the selected prior native review occurrence; no later saved competing observation found at capture.')
+(O/'inputs/BINDINGS.json').write_text(json.dumps(obj,indent=2)+'\n')
+print(json.dumps({'input_bindings_sha256':sha(O/'inputs/BINDINGS.json'),'copied_inputs':len(files),'prior_members_verified':len(manifest['files'])}))

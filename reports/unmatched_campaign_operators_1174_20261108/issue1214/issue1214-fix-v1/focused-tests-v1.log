@@ -1,0 +1,30 @@
+
+==================================== ERRORS ====================================
+_____________ ERROR collecting tests/test_campaign_publication.py ______________
+.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/tests/test_campaign_publication.py:20: in <module>
+    from mediaingredientmech import campaign_publication as c
+.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/src/mediaingredientmech/campaign_publication.py:27: in <module>
+    from mediaingredientmech.curate import campaign_owner_apply as _source_owner
+.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/src/mediaingredientmech/curate/campaign_owner_apply.py:248: in <module>
+    else FrozenFile.capture(_LOADED_LOCATIONS.get(name, _PACKAGE_ROOT / name))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/src/mediaingredientmech/curate/publication_guard.py:46: in capture
+    info = path.lstat()
+           ^^^^^^^^^^^^
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py:437: in lstat
+    return self.stat(follow_symlinks=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py:515: in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/MAPPING_SEMANTICS.md'
+=============================== warnings summary ===============================
+.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR .temp/all-unmatched-20261107/preflight/publisher-backup1214-fix-v1/package/tests/test_campaign_publication.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+12 warnings, 1 error in 0.74s

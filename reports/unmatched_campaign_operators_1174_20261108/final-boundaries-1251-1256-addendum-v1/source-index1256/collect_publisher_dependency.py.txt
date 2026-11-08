@@ -1,0 +1,17 @@
+from pathlib import Path
+import hashlib,json,re,shutil
+D=Path(__file__).resolve().parent;B=D.parent/'publisher-late-head1256-fix-v2';O=D/'publisher-dependency';O.mkdir()
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert sha(B/'HANDOFF.json')=='752c761ac39fad36bc25c1d7e2727b1360ab8186205f57569f08dd11d411d7c3'
+manifest=B/'portable/MANIFEST.json';assert sha(manifest)=='7646e523c9f7bc0c790250767091c568b1f81fb69eff3a90d2f815e10592c5fa'
+entries=json.loads(manifest.read_bytes())['files'];verified=[]
+for rel,expected in entries.items():
+ p=B/'portable'/rel;assert p.is_file() and not p.is_symlink(),rel;assert sha(p)==expected,rel;verified.append({'path':rel,'sha256':expected})
+hand=json.loads((B/'HANDOFF.json').read_bytes());assert hand['tests']['passed']==164 and hand['tests']['failed']==0 and hand['tests']['skipped']==0
+for rel,h in hand['source_dependency'].items():assert sha(D/'portable'/rel)==h
+for source,name in [(B/'HANDOFF.json','HANDOFF.json'),(manifest,'MANIFEST.json'),(B/'portable/RESULTS.json','RESULTS.json'),(B/'portable/evidence/combined-publisher-v1/run.log','run.log')]:shutil.copy2(source,O/name)
+collection=(D/'checks/collection-v1/stdout.txt').read_text();source_nodes=[x for x in collection.splitlines() if x.startswith('tests/test_campaign_owner_apply.py::')];assert len(source_nodes)==354
+failed=(D/'checks/combined-v1/stdout.txt').read_text();bad=[x for x in failed.splitlines() if x.startswith(('FAILED tests/','ERROR tests/'))];assert len(bad)==157 and all('test_campaign_owner_apply.py' not in x for x in bad)
+assert '26 failed, 354 passed, 12 warnings, 131 errors' in failed
+result={'external_packet':str(B),'handoff_sha256':sha(B/'HANDOFF.json'),'manifest_sha256':sha(manifest),'all_portable_manifest_members_verified':verified,'exact_source_dependency':hand['source_dependency'],'external_checks':hand['tests'],'actual_native_generator_cases':hand['actual_native_generator_cases'],'author_source_run':{'collected_source_cases':354,'passed_source_cases':354,'failed_or_errored_source_cases':0,'combined_command_exit_code':1,'affected_publisher_cases':157,'setup_failures':'Missing receipt-maker Git blob in private minimal archive; one history-root control used original26-receipt M instead of frozen27-receipt K. No source or test change is needed.','full_failed_output_preserved':True},'interpretation':'354 source cases pass in preserved setup-incomplete combined run; separate publisher author packet passes164 with exact same source and final publisher. This is not a single clean518/511 command or independent review.'}
+(O/'collection-receipt.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='all_portable_manifest_members_verified'},indent=2))

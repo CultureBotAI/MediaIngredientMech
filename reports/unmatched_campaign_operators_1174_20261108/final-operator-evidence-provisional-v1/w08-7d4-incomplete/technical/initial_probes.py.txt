@@ -1,0 +1,46 @@
+"""Independent actual-native index controls. Only isolated fixture Git is mutated."""
+from pathlib import Path
+import hashlib, importlib.util, json, sys, datetime
+W=Path.cwd(); P=W/'.temp/final-7d4db26-independent-v1'; F=P/'frozen/repo'; O=P/'technical'
+sys.path[:0]=[str(F/'src'),str(F)]
+from mediaingredientmech.curate import campaign_owner_apply as owner
+spec=importlib.util.spec_from_file_location('frozen_fixture_helpers',F/'tests/test_campaign_owner_apply.py'); f=importlib.util.module_from_spec(spec);spec.loader.exec_module(f)
+def h(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def save(n,d): (O/n).write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n')
+results=[]
+for mode in ['clean','initial_hidden_index','postprepare_hidden_index','hidden_index_before_write','hidden_index_after_write','hidden_index_final_flush']:
+ root=O/'initial-fixtures'/mode;root.mkdir(parents=True);plan=f.demotion_case(root);before=owner.hashes(owner.inventory(root));state={'fired':False,'event':None};phase='prepare';error=None;proof=None
+ def mutate():
+  assert not state['fired'];state['fired']=True
+  p=root/'MAPPING_SEMANTICS.md';raw=p.read_bytes();p.write_bytes(raw+b'\nIndependent staged context never authorized.\n');f.run_git(root,'add','--','MAPPING_SEMANTICS.md');p.write_bytes(raw)
+ def profile(frame,event,arg):
+  if state['fired']:return
+  trigger=False
+  if mode.endswith('before_write'):trigger=event=='call' and frame.f_code is owner._new_owner.__code__
+  if mode.endswith('after_write'):trigger=event=='return' and frame.f_code is owner._new_owner.__code__
+  if mode.endswith('final_flush'):trigger=event=='c_return' and frame.f_code is owner.finish_receipt.__code__ and getattr(arg,'__name__',None)=='flush'
+  if trigger:
+   state['event']={'function':frame.f_code.co_name,'event':event,'file':frame.f_code.co_filename,'line':frame.f_lineno};mutate()
+ try:
+  if mode=='initial_hidden_index':mutate()
+  ready=f.prepare(root);phase='apply'
+  if mode=='postprepare_hidden_index':mutate()
+  if mode.startswith('hidden_index_'):sys.setprofile(profile)
+  try:owner.apply(ready,root/'receipt',enabled=True)
+  finally:sys.setprofile(None)
+  phase='verify_completed';proof=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json');phase='complete'
+ except Exception as exc:error={'type':type(exc).__name__,'message':str(exc)}
+ finally:sys.setprofile(None)
+ receipt=root/'receipt/application.json';r=json.loads(receipt.read_bytes()) if receipt.exists() else None
+ row={'mode':mode,'fixture':str(root.relative_to(W)),'phase':phase,'error':error,'injection':state,'before_inventory':before,'after_inventory':owner.hashes(owner.inventory(root)),'baseline':plan['baseline_commit'],'head_after':f.run_git(root,'rev-parse','HEAD'),'working_diff_paths':f.run_git(root,'diff','--name-only','-z',plan['baseline_commit'],'--'),'cached_diff_paths':f.run_git(root,'diff','--cached','--name-only','-z',plan['baseline_commit'],'--'),'receipt_state':r.get('state') if r else None,'recovery_required':r.get('recovery_required') if r else None,'receipt_sha256':h(receipt) if r else None,'completed':proof is not None}
+ if mode=='clean':assert proof and r['state']=='complete'
+ else:
+  assert error and 'Unrelated staged file changed' in error['message'] and proof is None and state['fired']
+  if mode in ['initial_hidden_index','postprepare_hidden_index']:assert r is None and row['before_inventory']==row['after_inventory']
+  else:
+   assert r['state']=='failed' and r['recovery_required'] is True
+   if mode.endswith('before_write'):assert row['before_inventory']==row['after_inventory']
+   assert (root/'receipt/owner-before-0000.yaml').read_bytes()==ready.before[f.EDIT].content
+ results.append(row)
+ save('initial-results.json',{'status':'PASS_EXPECTED_OUTCOMES','reviewer':'/root/inorganics','revision':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','runtime':sys.version,'source_path':owner.__file__,'source_sha256':h(Path(owner.__file__)),'test_helpers_sha256':h(F/'tests/test_campaign_owner_apply.py'),'script_sha256':h(Path(__file__)),'function_replacements':False,'fault_injection':'sys.setprofile schedules actual private Git add then working-byte restoration at native boundaries; native function objects and frozen source bytes remain unchanged.','results':results})
+ print(json.dumps({k:row[k] for k in ['mode','phase','error','receipt_state','completed']}),flush=True)

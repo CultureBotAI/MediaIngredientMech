@@ -1,0 +1,543 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1259",
+  "operation": "select_campaign_suppression_transition",
+  "original_review": {
+    "inputs": {
+      "review-inputs/conditional-decisions.json": {
+        "path": "reports/science/review-inputs/conditional-decisions.json",
+        "sha256": "26c5f381bcf3600f18c54722213c076389d0d17d732bbf760783e1cfdc4d333c"
+      },
+      "review-inputs/findings-and-conditions.json": {
+        "path": "reports/science/review-inputs/findings-and-conditions.json",
+        "sha256": "2a85cbf7e886f7849821d27d94434dce9070ca25261d65f370275f36ae27e630"
+      },
+      "review-inputs/inputs/capture-ledger.json": {
+        "path": "reports/science/review-inputs/inputs/capture-ledger.json",
+        "sha256": "288c338959ad2ff9566e7a1135c4d8977cb44687359228e835978704493ffaa4"
+      },
+      "review-inputs/inputs/contracts/MAPPING_SEMANTICS.md": {
+        "path": "reports/science/review-inputs/inputs/contracts/MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+      },
+      "review-inputs/inputs/contracts/src/mediaingredientmech/synonym_policy.py": {
+        "path": "reports/science/review-inputs/inputs/contracts/src/mediaingredientmech/synonym_policy.py",
+        "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+      },
+      "review-inputs/inputs/four-suppression-pair-review-bindings.json": {
+        "path": "reports/science/review-inputs/inputs/four-suppression-pair-review-bindings.json",
+        "sha256": "09fe42cafd60a7bd01f8dc4256725ef95470f3fd315fbba1e372e621696f0f09"
+      },
+      "review-inputs/inputs/historical/mappings/suppressed_aliases.tsv": {
+        "path": "reports/science/review-inputs/inputs/historical/mappings/suppressed_aliases.tsv",
+        "sha256": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b"
+      },
+      "review-inputs/inputs/projected-generation/candidate.sssom.tsv": {
+        "path": "reports/science/review-inputs/inputs/projected-generation/candidate.sssom.tsv",
+        "sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de"
+      },
+      "review-inputs/inputs/projected-generation/generation-manifest.json": {
+        "path": "reports/science/review-inputs/inputs/projected-generation/generation-manifest.json",
+        "sha256": "4be70b978976662bbb78ca6e852f6dba48c5e3e5e9b6eb60d95b865a9a4695e6"
+      },
+      "review-inputs/inputs/suppression-owner-captures/before-Bacto_Peptone.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/before-Bacto_Peptone.yaml",
+        "sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655"
+      },
+      "review-inputs/inputs/suppression-owner-captures/before-Bluensomycin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/before-Bluensomycin.yaml",
+        "sha256": "1f46279fd2a89f00445da6eff7b79bbb8a686917030697c2cb99725b9855657d"
+      },
+      "review-inputs/inputs/suppression-owner-captures/before-Congocidin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/before-Congocidin.yaml",
+        "sha256": "225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0"
+      },
+      "review-inputs/inputs/suppression-owner-captures/before-Glebomycin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/before-Glebomycin.yaml",
+        "sha256": "f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed"
+      },
+      "review-inputs/inputs/suppression-owner-captures/before-Netropsin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/before-Netropsin.yaml",
+        "sha256": "b29f27812022327ca5b2b6b895a944a7d47188bfbf48b57c008fa13a6edb34aa"
+      },
+      "review-inputs/inputs/suppression-owner-captures/before-Peptone.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/before-Peptone.yaml",
+        "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa"
+      },
+      "review-inputs/inputs/suppression-owner-captures/before-Starch.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/before-Starch.yaml",
+        "sha256": "e379199c1864e376ff86fb6dfd64773b049a72651810134bcc7d7f0d0055397b"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Bacto_Peptone.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Bacto_Peptone.yaml",
+        "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Bluensomycin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Bluensomycin.yaml",
+        "sha256": "1f46279fd2a89f00445da6eff7b79bbb8a686917030697c2cb99725b9855657d"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Congocidin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Congocidin.yaml",
+        "sha256": "225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Corn_Starch.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Corn_Starch.yaml",
+        "sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Glebomycin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Glebomycin.yaml",
+        "sha256": "1824bb16095d78e4c17977b7699dd1380ea5cb11d7f48f45f5bfe818f30051d1"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Netropsin.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Netropsin.yaml",
+        "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Peptone.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Peptone.yaml",
+        "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+      },
+      "review-inputs/inputs/suppression-owner-captures/proposed-Starch.yaml": {
+        "path": "reports/science/review-inputs/inputs/suppression-owner-captures/proposed-Starch.yaml",
+        "sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d"
+      },
+      "review-inputs/review/antibiotics/HANDOFF.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/HANDOFF.json",
+        "sha256": "9085b527487a879b7f13a5af24d7eb448f2dfda1c911b8af5f45b8d5ec3e09c3"
+      },
+      "review-inputs/review/antibiotics/MANIFEST.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/MANIFEST.json",
+        "sha256": "6385f2ef5851709ecf6be8f0d0490f93a47e873073ec05b07e545f8f3d745696"
+      },
+      "review-inputs/review/antibiotics/SCIENTIFIC-REVIEW.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/SCIENTIFIC-REVIEW.json",
+        "sha256": "ec07fedafbeb2c637a13fd7c026b6e10453f45c3fce9f7883da08a8d9a25137a"
+      },
+      "review-inputs/review/antibiotics/SCIENTIFIC-REVIEW.md": {
+        "path": "reports/science/review-inputs/review/antibiotics/SCIENTIFIC-REVIEW.md",
+        "sha256": "b7da6b32b549c21ff942b662fa0d537516316d53eef30e533c8a68a8f1ed138d"
+      },
+      "review-inputs/review/antibiotics/bluensomycin-structure-comparison.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/bluensomycin-structure-comparison.json",
+        "sha256": "7be31b4b5eecd52f0cce412ae84a8f201db4a2e073d965c33039f1f70ab11e1f"
+      },
+      "review-inputs/review/antibiotics/build_evidence.py": {
+        "path": "reports/science/review-inputs/review/antibiotics/build_evidence.py",
+        "sha256": "8dfac01957928d377b1ff115c6682bd6e0b1410802e0220495b37c22acdb1c5f"
+      },
+      "review-inputs/review/antibiotics/canonical-projected-rows.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/canonical-projected-rows.json",
+        "sha256": "f1c0b5c30762e3691838cade5fdb27d498f413f33a7b99cd18afeb2abfbadb56"
+      },
+      "review-inputs/review/antibiotics/capture-index.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/capture-index.json",
+        "sha256": "36ce868265c8852b0431e5c3fb3b40bad8bd0533181d24645b1947cf54280b49"
+      },
+      "review-inputs/review/antibiotics/chebi-81193.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/chebi-81193.json",
+        "sha256": "57f5695d45cf555ff7a4e66629a878d8b0e721aa4811546df1b5fe581cab549d"
+      },
+      "review-inputs/review/antibiotics/chebi-81193.json.headers": {
+        "path": "reports/science/review-inputs/review/antibiotics/chebi-81193.json.headers",
+        "sha256": "eb80705154eb7da4c1201cb3c115aea1f89105060e5b8a346aa32555c3df159a"
+      },
+      "review-inputs/review/antibiotics/complete-owner-fieldtrace.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/complete-owner-fieldtrace.json",
+        "sha256": "19d1729d4d30f357be99ba8803f1a5c71dcdee81f34e210471e105658f5e223f"
+      },
+      "review-inputs/review/antibiotics/complete-scientific-fieldtrace.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/complete-scientific-fieldtrace.json",
+        "sha256": "57c4d8dc10bff6baec8990d484c57645a33e00dd2434f2b2b49d4d2767695c1e"
+      },
+      "review-inputs/review/antibiotics/conditional-pair-decisions.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/conditional-pair-decisions.json",
+        "sha256": "86826b0521801b1d412c49e477a78acb3ccb819371f4cf5f70bd3449c98764ce"
+      },
+      "review-inputs/review/antibiotics/contracts/MAPPING_SEMANTICS.md": {
+        "path": "reports/science/review-inputs/review/antibiotics/contracts/MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+      },
+      "review-inputs/review/antibiotics/contracts/synonym_policy.py": {
+        "path": "reports/science/review-inputs/review/antibiotics/contracts/synonym_policy.py",
+        "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+      },
+      "review-inputs/review/antibiotics/exact-structure-checks.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/exact-structure-checks.json",
+        "sha256": "18e0dba2e62f9950e71ad63b450b7088f12c7d13f37e1f5fba9e001c00f7973b"
+      },
+      "review-inputs/review/antibiotics/failed-local-probes.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/failed-local-probes.json",
+        "sha256": "f9031d26441631928857288127fa7ddf0edda5509dad7738bbbb373a82c2edef"
+      },
+      "review-inputs/review/antibiotics/fetch-receipts-sandbox-dns-failed.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/fetch-receipts-sandbox-dns-failed.json",
+        "sha256": "af0a6980c6f6f0e15332cd2ea184ce21f1238f00b05753cf6f5299f996672db9"
+      },
+      "review-inputs/review/antibiotics/fetch-receipts.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/fetch-receipts.json",
+        "sha256": "99483cf0f1e71e7081c2825f4c5c7517e3621945148084974cb5b4c0606873d4"
+      },
+      "review-inputs/review/antibiotics/fetch_primary.py": {
+        "path": "reports/science/review-inputs/review/antibiotics/fetch_primary.py",
+        "sha256": "bc6ac223b0a05531f0c69a423c13e510d5d0badcb59a820d3760fcbcd1d2b370"
+      },
+      "review-inputs/review/antibiotics/final-input-readback.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/final-input-readback.json",
+        "sha256": "997ce758a2b25e433812f3ff5cf4ed199b79cda03c1d4b8bfe6e845597af5a2e"
+      },
+      "review-inputs/review/antibiotics/inputs/four-pair-ledger.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/inputs/four-pair-ledger.json",
+        "sha256": "09fe42cafd60a7bd01f8dc4256725ef95470f3fd315fbba1e372e621696f0f09"
+      },
+      "review-inputs/review/antibiotics/native-preferred-owner-check.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/native-preferred-owner-check.json",
+        "sha256": "c31c5c0e18e1fa8906bbf46b7b82956aef949ba785afca8fd3a3cc5e1e99f111"
+      },
+      "review-inputs/review/antibiotics/origins/complete-frozen-source-cases.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/origins/complete-frozen-source-cases.json",
+        "sha256": "e7db526ac547bce2156b1cc494abcb7a614cf63673aff65f1a865f55cf45fa17"
+      },
+      "review-inputs/review/antibiotics/origins/git-blob-readback.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/origins/git-blob-readback.json",
+        "sha256": "f359323a96a2093c0c16d77e8c0568b724184ba4b2c3de4f188850b996c6f99a"
+      },
+      "review-inputs/review/antibiotics/origins/glebomycin-native-normalization-trace.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/origins/glebomycin-native-normalization-trace.json",
+        "sha256": "37026ffa5dec34d3f0b74aa224f314e9011ab7483d7fff3a119e876f4e40ee23"
+      },
+      "review-inputs/review/antibiotics/origins/glebomycin-native-normalization.diff": {
+        "path": "reports/science/review-inputs/review/antibiotics/origins/glebomycin-native-normalization.diff",
+        "sha256": "92dea5e5785fd2218f7996636ddb62b78d179b01ffc374cf8b000b79ed2b3493"
+      },
+      "review-inputs/review/antibiotics/origins/w02-published-payload.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/origins/w02-published-payload.yaml",
+        "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e"
+      },
+      "review-inputs/review/antibiotics/origins/w09-published-payload.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/origins/w09-published-payload.yaml",
+        "sha256": "bbcfa3f297cbfe58231197c60b99ff1f42e87d1015e8d78b7aedf98c1f4b4067"
+      },
+      "review-inputs/review/antibiotics/owners/before-Bluensomycin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/before-Bluensomycin.yaml",
+        "sha256": "1f46279fd2a89f00445da6eff7b79bbb8a686917030697c2cb99725b9855657d"
+      },
+      "review-inputs/review/antibiotics/owners/before-Congocidin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/before-Congocidin.yaml",
+        "sha256": "225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0"
+      },
+      "review-inputs/review/antibiotics/owners/before-Glebomycin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/before-Glebomycin.yaml",
+        "sha256": "f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed"
+      },
+      "review-inputs/review/antibiotics/owners/before-Netropsin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/before-Netropsin.yaml",
+        "sha256": "b29f27812022327ca5b2b6b895a944a7d47188bfbf48b57c008fa13a6edb34aa"
+      },
+      "review-inputs/review/antibiotics/owners/proposed-Bluensomycin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/proposed-Bluensomycin.yaml",
+        "sha256": "1f46279fd2a89f00445da6eff7b79bbb8a686917030697c2cb99725b9855657d"
+      },
+      "review-inputs/review/antibiotics/owners/proposed-Congocidin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/proposed-Congocidin.yaml",
+        "sha256": "225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0"
+      },
+      "review-inputs/review/antibiotics/owners/proposed-Glebomycin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/proposed-Glebomycin.yaml",
+        "sha256": "1824bb16095d78e4c17977b7699dd1380ea5cb11d7f48f45f5bfe818f30051d1"
+      },
+      "review-inputs/review/antibiotics/owners/proposed-Netropsin.yaml": {
+        "path": "reports/science/review-inputs/review/antibiotics/owners/proposed-Netropsin.yaml",
+        "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e"
+      },
+      "review-inputs/review/antibiotics/primary-lookups.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary-lookups.json",
+        "sha256": "4c5673c993a3537b15fe6f1031282d9dc95d909c85d8445c638f507e4de6d270"
+      },
+      "review-inputs/review/antibiotics/primary/w02/c/captures/chebi-201440.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/c/captures/chebi-201440.json",
+        "sha256": "1f6f275c7d04e4e8073a5340c84587c96684e844badc1e2a88afeaa0c1d2f379"
+      },
+      "review-inputs/review/antibiotics/primary/w02/c/captures/pubchem-synonyms-4461.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/c/captures/pubchem-synonyms-4461.json",
+        "sha256": "05c16667df0cbe2a0b8bf591e49362cd30de1c89e250b7f4502e02b4a4f14aa6"
+      },
+      "review-inputs/review/antibiotics/primary/w02/c/captures/root-congocidine-pubmed.xml": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/c/captures/root-congocidine-pubmed.xml",
+        "sha256": "6dff7492f35a4242ff2462d9d4f24656b408f62387d31dae5a50407c1531c23f"
+      },
+      "review-inputs/review/antibiotics/primary/w02/c/evidence.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/c/evidence.json",
+        "sha256": "3309aa8398baee4ed60ecadb72756c0754563c4ff43d14a56943acb357793c31"
+      },
+      "review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-congocidine-term.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-congocidine-term.json",
+        "sha256": "60f6ca04ecb98cd8bab12b90bd66a042a351c14fa77c364924acd177494ddd6d"
+      },
+      "review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-netropsin-browser.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-netropsin-browser.json",
+        "sha256": "81e277c20b650fbe836fb7d989a8ada2d3a3d07cda5895f7a12bc72158ef99ff"
+      },
+      "review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-netropsin-concept.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-netropsin-concept.json",
+        "sha256": "8a8ff663fc20a81e09e4b9c07c81f21c8df9ac64dc4333ea65fb05f85f7acede"
+      },
+      "review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-netropsin.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/captures/mesh-netropsin.json",
+        "sha256": "95e96d18d75d6114aaabdc01a4fe310c47b824f392df85683a1ac68b08a05215"
+      },
+      "review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/evidence.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w02/continuation-1201-v1/c/evidence.json",
+        "sha256": "629310cabb373620920fb83d749636ac7ddf7b0cc869bfb24de7b844533d9411"
+      },
+      "review-inputs/review/antibiotics/primary/w09/antibiotics/captures/search-14.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w09/antibiotics/captures/search-14.json",
+        "sha256": "11158d3410687047264f6027a6c9e5ce1b3adbeb78275dbff23304bab66d9eff"
+      },
+      "review-inputs/review/antibiotics/primary/w09/antibiotics/captures/term-NCIT-C90636.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w09/antibiotics/captures/term-NCIT-C90636.json",
+        "sha256": "e5723f7c539a3248767ef8ffc85d65652348b9fcce39b56eff5fa8f88da26f11"
+      },
+      "review-inputs/review/antibiotics/primary/w09/antibiotics/decisions.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w09/antibiotics/decisions.json",
+        "sha256": "d634535a227d6cc9734f6e47f6cbbbc4b9f750ec4f0470e7a145595c3331bebf"
+      },
+      "review-inputs/review/antibiotics/primary/w09/antibiotics/evidence.json": {
+        "path": "reports/science/review-inputs/review/antibiotics/primary/w09/antibiotics/evidence.json",
+        "sha256": "9dff28877b6f0463868c0afe36aec47168cc010d96a77db13b3f5ac03146a31d"
+      },
+      "review-inputs/review/antibiotics/pubmed-1698764.xml": {
+        "path": "reports/science/review-inputs/review/antibiotics/pubmed-1698764.xml",
+        "sha256": "717fab2f728a12fe0d8dc3aa1d8b821f697666bfa60dfee2a2f89821ff75a202"
+      },
+      "review-inputs/review/antibiotics/pubmed-1698764.xml.headers": {
+        "path": "reports/science/review-inputs/review/antibiotics/pubmed-1698764.xml.headers",
+        "sha256": "697bab2b17ee814238e24a41224892562cf74f26dae2101cc3be257f7a4a330a"
+      },
+      "review-inputs/review/antibiotics/write_review.py": {
+        "path": "reports/science/review-inputs/review/antibiotics/write_review.py",
+        "sha256": "d9fce9debbfe8e5d31e0e2f3ea8922939c8287fe07b2dc08fb7428cbf4c80f3d"
+      },
+      "review-inputs/review/materials/HANDOFF.json": {
+        "path": "reports/science/review-inputs/review/materials/HANDOFF.json",
+        "sha256": "9adf8fd9d43b7a0a61edde78ee59e2460ed8424e82667486633d1668ee025659"
+      },
+      "review-inputs/review/materials/MANIFEST.json": {
+        "path": "reports/science/review-inputs/review/materials/MANIFEST.json",
+        "sha256": "68611de051c80f31369f54b5c03fada4cebfc94a6f5c4c252a70b530fbee06d5"
+      },
+      "review-inputs/review/materials/context-equivalence.json": {
+        "path": "reports/science/review-inputs/review/materials/context-equivalence.json",
+        "sha256": "a47b39adc37565003a2d6a1b10fb0c76a7cc46186244178f144a15435888cdde"
+      },
+      "review-inputs/review/materials/execution-receipt.json": {
+        "path": "reports/science/review-inputs/review/materials/execution-receipt.json",
+        "sha256": "7ae0bae2d567a9a6517fee43ff17e03ed716d18672f16b34bf1bc5f695a19536"
+      },
+      "review-inputs/review/materials/materials-scientific-policy-review.json": {
+        "path": "reports/science/review-inputs/review/materials/materials-scientific-policy-review.json",
+        "sha256": "c7eac973659d345e4939cb128e3b37391cf143121094f49a036f3fadf401002d"
+      },
+      "review-inputs/review/materials/materials-scientific-policy-review.md": {
+        "path": "reports/science/review-inputs/review/materials/materials-scientific-policy-review.md",
+        "sha256": "bb905a6f69681d98c8f57ae1330ff30513572b8c066911de775bad65a90b812a"
+      },
+      "review-inputs/review/materials/owner-field-traces.json": {
+        "path": "reports/science/review-inputs/review/materials/owner-field-traces.json",
+        "sha256": "375cc9e0d40fe0a04fb46f19dd7da65cc67987fcbaa365a212ce2c923f2dd151"
+      },
+      "review-inputs/review/materials/preferred-owner-check.json": {
+        "path": "reports/science/review-inputs/review/materials/preferred-owner-check.json",
+        "sha256": "317173cc9e373e29c3221075c691129779433ce4abf6c5fb872047ea1337316d"
+      },
+      "review-inputs/review/materials/primary-captures/2f97555905632b4d--evidence.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/2f97555905632b4d--evidence.json",
+        "sha256": "2f97555905632b4d3ee28ad068fbdf48b846746eb43a441fa752e8bce277e3d6"
+      },
+      "review-inputs/review/materials/primary-captures/34b838bfe7b5021b--capture-log.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/34b838bfe7b5021b--capture-log.json",
+        "sha256": "34b838bfe7b5021b8a2db6711c6d628b1565998299cb5df98355b29ce5998eda"
+      },
+      "review-inputs/review/materials/primary-captures/445450c726a4a95c--mesh-M0016245-nlm.receipt.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/445450c726a4a95c--mesh-M0016245-nlm.receipt.json",
+        "sha256": "445450c726a4a95c888434cec116e9cbca19ec3d69bafb3012b688e2863450ba"
+      },
+      "review-inputs/review/materials/primary-captures/4fcd90f6c787cd36--mesh-D010461-browser.receipt.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/4fcd90f6c787cd36--mesh-D010461-browser.receipt.json",
+        "sha256": "4fcd90f6c787cd3631550cc201e518917b324267cae02f94fbb74512e46aabd2"
+      },
+      "review-inputs/review/materials/primary-captures/bacto-211677--primary-0357ad5e73d4f9f6.txt": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/bacto-211677--primary-0357ad5e73d4f9f6.txt",
+        "sha256": "ecfed6455cdbdde1d10f6ff236227bb1a0e5b09bc319d0bd4d9a61e0ebc2d9d6"
+      },
+      "review-inputs/review/materials/primary-captures/bio-primary-1ae977769a78791b--1ae977769a78791b": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/bio-primary-1ae977769a78791b--1ae977769a78791b",
+        "sha256": "cd290957ce921e694e0406b17f1653a0e3cf57f211c4e2f6a55cf37da5b5b7f7"
+      },
+      "review-inputs/review/materials/primary-captures/ca75cdf667220e44--mesh-D010461-nlm.receipt.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/ca75cdf667220e44--mesh-D010461-nlm.receipt.json",
+        "sha256": "ca75cdf667220e440674b0100b6d065d23b1397111c00a1661b24e9b8a703cff"
+      },
+      "review-inputs/review/materials/primary-captures/frozen-pair-ledger--four-suppression-pair-review-bindings.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/frozen-pair-ledger--four-suppression-pair-review-bindings.json",
+        "sha256": "09fe42cafd60a7bd01f8dc4256725ef95470f3fd315fbba1e372e621696f0f09"
+      },
+      "review-inputs/review/materials/primary-captures/kg-CHEBI_28017--CHEBI_28017.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/kg-CHEBI_28017--CHEBI_28017.json",
+        "sha256": "885e0dce214840a2de72cfd6da570974faa65354d1c6459eb99ca8cb3f5b3599"
+      },
+      "review-inputs/review/materials/primary-captures/mesh-D010461--mesh-D010461-nlm.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/mesh-D010461--mesh-D010461-nlm.json",
+        "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0"
+      },
+      "review-inputs/review/materials/primary-captures/mesh-D010461-browser--mesh-D010461-browser.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/mesh-D010461-browser--mesh-D010461-browser.json",
+        "sha256": "e46645ac754786528ef33c2957057d34d37386ad27f3af94574f2db1fabd3629"
+      },
+      "review-inputs/review/materials/primary-captures/mesh-M0016245--mesh-M0016245-nlm.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/mesh-M0016245--mesh-M0016245-nlm.json",
+        "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5"
+      },
+      "review-inputs/review/materials/primary-captures/native-owned-name-policy--synonym_policy.py": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/native-owned-name-policy--synonym_policy.py",
+        "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+      },
+      "review-inputs/review/materials/primary-captures/peptone-guide--primary-2e3878c52379fbef.pdf": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/peptone-guide--primary-2e3878c52379fbef.pdf",
+        "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+      },
+      "review-inputs/review/materials/primary-captures/peptone-guide-text--primary-2e3878c52379fbef.extracted.txt": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/peptone-guide-text--primary-2e3878c52379fbef.extracted.txt",
+        "sha256": "9e73ceb466dbe39fc34e7e1adb558bbd54d2652a9bbf4304c6e23ce1997a7401"
+      },
+      "review-inputs/review/materials/primary-captures/semantics-current--MAPPING_SEMANTICS.md": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/semantics-current--MAPPING_SEMANTICS.md",
+        "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+      },
+      "review-inputs/review/materials/primary-captures/sv1-bio-primary-f71f70a726e4215cd81b--f71f70a726e4215cd81b": {
+        "path": "reports/science/review-inputs/review/materials/primary-captures/sv1-bio-primary-f71f70a726e4215cd81b--f71f70a726e4215cd81b",
+        "sha256": "d43923021147ba5953be375dfa4d89d2f2145c3068581be36d0990f42fce6a6a"
+      },
+      "review-inputs/review/materials/primary-evidence.json": {
+        "path": "reports/science/review-inputs/review/materials/primary-evidence.json",
+        "sha256": "a50679aa2700f2386cee93237e4d829f6a9c766384a93a0e56f3511e16c150b5"
+      },
+      "review-inputs/review/materials/scripts/build_evidence.failed-path-v1.py": {
+        "path": "reports/science/review-inputs/review/materials/scripts/build_evidence.failed-path-v1.py",
+        "sha256": "f80eea98898a4ee487c2c69764c8676a6e03940c77eddb246be0cf29944682f5"
+      },
+      "review-inputs/review/materials/scripts/build_evidence.py": {
+        "path": "reports/science/review-inputs/review/materials/scripts/build_evidence.py",
+        "sha256": "46e248251a03354be18504670d8fa8630489ffd0dbf8bf303d361bdb0d4b072e"
+      },
+      "review-inputs/review/materials/scripts/preferred_owner_check.py": {
+        "path": "reports/science/review-inputs/review/materials/scripts/preferred_owner_check.py",
+        "sha256": "2c2bc55ed43e6d7f3d5b453699dbef450de674bc39c17e97bd03477e4e80c0a2"
+      },
+      "review-inputs/review/materials/scripts/seal_materials.failed-html-validation-v1.py": {
+        "path": "reports/science/review-inputs/review/materials/scripts/seal_materials.failed-html-validation-v1.py",
+        "sha256": "936c03a814a6ec84b99eb7d1b05e002e805802ddb7d7ba4aceb7d5279676a49e"
+      },
+      "review-inputs/review/materials/scripts/seal_materials.py": {
+        "path": "reports/science/review-inputs/review/materials/scripts/seal_materials.py",
+        "sha256": "33b798cf3726f8f193ec7e33fefa69525e0f6a554dad6ca912dca51fe8e078bf"
+      },
+      "review-inputs/review/materials/scripts/write_review.py": {
+        "path": "reports/science/review-inputs/review/materials/scripts/write_review.py",
+        "sha256": "8c0cae4b74c4369c0141f2c5a0f6dcae7fddde4de9078e4eacfaedcb88cd6163"
+      },
+      "review-inputs/review/materials/skeptical-message-receipt.json": {
+        "path": "reports/science/review-inputs/review/materials/skeptical-message-receipt.json",
+        "sha256": "accfbaebd6222a9fc3db0cd8d11e0db0d1fe566e46639cdad3ad0bedb5998a7f"
+      },
+      "review-inputs/review/materials/source-copy-index.json": {
+        "path": "reports/science/review-inputs/review/materials/source-copy-index.json",
+        "sha256": "f52eda6d89c6c27175bb7051b69b3bbca2c34dc41f920c9eea5524eaf4a6c0a5"
+      },
+      "review-inputs/review/skeptical/ASSESSMENT-v2.json": {
+        "path": "reports/science/review-inputs/review/skeptical/ASSESSMENT-v2.json",
+        "sha256": "c7886bf0ddca796d0fee8768d8e17ccccd30fe762b82551d243ac35d75a70336"
+      },
+      "review-inputs/review/skeptical/independent-byte-event-audit-v2.json": {
+        "path": "reports/science/review-inputs/review/skeptical/independent-byte-event-audit-v2.json",
+        "sha256": "4ab9d8e19412e1914011f2bd6948fa14a20c2d5434059a8b7ae1791268ce3553"
+      },
+      "review-inputs/validation/capability-observation.json": {
+        "path": "reports/science/review-inputs/validation/capability-observation.json",
+        "sha256": "87d587eb51d7736d832499adf7b0177ace74a570dd0a83acfe34b64161be8999"
+      },
+      "review-inputs/validation/native-bounded-checks.json": {
+        "path": "reports/science/review-inputs/validation/native-bounded-checks.json",
+        "sha256": "561cb3f80c90904de6113969c8f5b3a3a903ed6a5b42650f785398984202ee10"
+      },
+      "review-inputs/validation/native-review-context.json": {
+        "path": "reports/science/review-inputs/validation/native-review-context.json",
+        "sha256": "bbfbdede5671ac832319dc3d2863d32ead412ac74a505343ac5ebd097c1b7299"
+      },
+      "review-inputs/validation/origin-bridges.json": {
+        "path": "reports/science/review-inputs/validation/origin-bridges.json",
+        "sha256": "432e392de070103fcd170752ae52b8e88839bfce686efb8219438c32770e7fbe"
+      },
+      "review-inputs/validation/preserved-diagnostic.json": {
+        "path": "reports/science/review-inputs/validation/preserved-diagnostic.json",
+        "sha256": "b99de450f58ea68d5139228377f50152d373d137ae559f38e8ce37a1a1bb4cf7"
+      }
+    },
+    "markdown": {
+      "path": "reports/science/review.md",
+      "sha256": "f1fe21cb6616abc84c75ba5f05fb430d55ea7a7eb6fb034f614f24d3ab51087c"
+    },
+    "yaml": {
+      "path": "reports/science/review.yaml",
+      "sha256": "99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71"
+    }
+  },
+  "schema_version": 1,
+  "selected_by": "/root",
+  "selection_basis": "EXPLICIT SYNTHETIC MECHANICAL FIXTURE, not actual root acceptance",
+  "transition": {
+    "path": "reports/transition.json",
+    "sha256": "66c0b1d390f89a551259d90e117598ad32c9a2d3a476ba40f21bbdc0ef9e3b39"
+  },
+  "transition_review": {
+    "inputs": {
+      "reports/generation/candidate.tsv": {
+        "path": "reports/generation/candidate.tsv",
+        "sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de"
+      },
+      "reports/generation/manifest.json": {
+        "path": "reports/generation/manifest.json",
+        "sha256": "7ed75f50c4fc8296320713fe74c2f92169253538cf727467ae82fed6a740a2d2"
+      },
+      "reports/generation/sidecar.tsv": {
+        "path": "reports/generation/sidecar.tsv",
+        "sha256": "e7b283829a44eda5d406bad499da9bf1775c924fd08240b9812b3aa21e8634f8"
+      },
+      "reports/owner-plan.json": {
+        "path": "reports/owner-plan.json",
+        "sha256": "f06bc9dbd9517c61178bc2ba94c38826bf23d085be6e0310de2ec5eeb1919994"
+      },
+      "reports/owner-receipt.json": {
+        "path": "reports/owner-receipt.json",
+        "sha256": "1d44c75095d093b4a34b070975c874deadebb50c6a200c4b92936e0cf03d676b"
+      },
+      "reports/science/review-inputs/conditional-decisions.json": {
+        "path": "reports/science/review-inputs/conditional-decisions.json",
+        "sha256": "26c5f381bcf3600f18c54722213c076389d0d17d732bbf760783e1cfdc4d333c"
+      },
+      "reports/science/review.yaml": {
+        "path": "reports/science/review.yaml",
+        "sha256": "99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71"
+      },
+      "reports/transition.json": {
+        "path": "reports/transition.json",
+        "sha256": "66c0b1d390f89a551259d90e117598ad32c9a2d3a476ba40f21bbdc0ef9e3b39"
+      }
+    },
+    "markdown": {
+      "path": "reports/actual-review/review.md",
+      "sha256": "ec99aef3bc412ddef0a825ea72e4a3f1ba5f63aa3c22b480ab521ca7588bbe70"
+    },
+    "yaml": {
+      "path": "reports/actual-review/review.yaml",
+      "sha256": "2d91fdb94512798c3827ae92df21ca828a1a36aaaaf29763128f2fa0136ff6f1"
+    }
+  }
+}

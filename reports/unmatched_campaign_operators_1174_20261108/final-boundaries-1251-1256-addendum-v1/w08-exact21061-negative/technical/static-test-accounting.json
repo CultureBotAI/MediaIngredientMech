@@ -1,0 +1,751 @@
+{
+  "method": "Static AST literal-list cardinalities; named fixture constants are retained as expressions and need not be executed. This is not pytest execution.",
+  "source_cases": 301,
+  "1255_cases": 23,
+  "1256_cases": 81,
+  "all_1255_parameter_inputs_unchanged": true,
+  "rows": [
+    {
+      "name": "test_mixed_application_and_native_completed_proof",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_dry_run_and_cli_default_do_not_publish",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_unknown_closed_fields_fail",
+      "cases": 6,
+      "parameters": [
+        {
+          "names": "part",
+          "parameter_expression": "['plan', 'record', 'origin', 'binding', 'acceptance', 'inventory']",
+          "count": 6
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_incomplete_or_false_lineage_fails",
+      "cases": 6,
+      "parameters": [
+        {
+          "names": "part",
+          "parameter_expression": "['preimage', 'case', 'head', 'published_payload', 'promotion', 'acceptance']",
+          "count": 6
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_payload_schema_history_and_owner_guards",
+      "cases": 6,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['history_only', 'history_prefix', 'identity_collision', 'name_collision', 'unknown_yaml', 'wrong_state']",
+          "count": 6
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_actual_native_old_owner_chain_refuses_promotion",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_evidence_alias_refused",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "alias",
+          "parameter_expression": "['leaf', 'parent', 'hardlink']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_direct_ignored_owner_is_inventory_but_nested_backup_is_not",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_late_drift_prevents_owner_mutation",
+      "cases": 4,
+      "parameters": [
+        {
+          "names": "drift",
+          "parameter_expression": "['owner', 'evidence', 'new_destination', 'native_receipt']",
+          "count": 4
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_receipt_directory_collision_is_preserved",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_reserved_backups_precede_first_write_and_late_failure_is_honest",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_exclusive_new_destination_race_preserves_competitor",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_exclusive_retirement_race_preserves_both_files",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_completed_verifier_replays_checkpoint_after_canonical_successor",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_completed_verifier_rejects_current_or_archived_drift",
+      "cases": 6,
+      "parameters": [
+        {
+          "names": "drift",
+          "parameter_expression": "['review', 'owner', 'backup', 'checkpoint', 'receipt_alias', 'producer']",
+          "count": 6
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_late_archive_byte_drift_cannot_finish_success",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "role",
+          "parameter_expression": "['backup', 'protected', 'retired']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_final_verifier_rechecks_original_proof_roles",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "alias",
+          "parameter_expression": "['leaf', 'parent', 'hardlink']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_late_new_owner_parent_swap_cannot_write_into_replacement",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_archived_protection_never_excuses_current_review_drift",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_noop_is_rejected_and_selected_case_subset_keeps_full_ledger",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_casefold_destination_collision_refused_before_write",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1194_final_owner_membership_is_reenumerated",
+      "cases": 5,
+      "parameters": [
+        {
+          "names": "change",
+          "parameter_expression": "['addition', 'removal', 'symlink', 'hardlink', 'old_source_reappears']",
+          "count": 5
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1194_final_snapshot_membership_is_reenumerated",
+      "cases": 6,
+      "parameters": [
+        {
+          "names": "snapshot",
+          "parameter_expression": "['checkpoint', 'protected']",
+          "count": 2
+        },
+        {
+          "names": "change",
+          "parameter_expression": "['addition', 'removal', 'alias']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1195_loaded_producer_bytes_and_locations_are_frozen",
+      "cases": 6,
+      "parameters": [
+        {
+          "names": "change",
+          "parameter_expression": "['none', 'operator_content', 'dependency_content', 'operator_inode', 'dependency_alias', 'late_dependency']",
+          "count": 6
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1197_disconnected_or_reused_owner_history_refused_before_write",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "linked_owner",
+          "parameter_expression": "[EDIT, NEW, MOVED]",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1197_matching_native_endpoint_can_continue_without_approval",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1197_explicit_native_bridge_can_connect_a_current_preimage",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1198_noncanonical_top_level_arguments_refused_before_mutation",
+      "cases": 4,
+      "parameters": [
+        {
+          "names": "argument",
+          "parameter_expression": "['root', 'plan', 'acceptance', 'receipt']",
+          "count": 4
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_native_checkpoint_must_be_accepted_before_application",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1195_cached_dependency_is_reexecuted_privately_from_pinned_bytes",
+      "cases": 10,
+      "parameters": [
+        {
+          "names": "dependency",
+          "parameter_expression": "['mediaingredientmech.curate.publication_guard', 'mediaingredientmech.curate.apply_receipt', 'mediaingredientmech.validation.write_validated', 'mediaingredientmech.validation.mapping_change_receipts', 'mediaingredientmech.export.reviewed_sssom']",
+          "count": 5
+        },
+        {
+          "names": "mode",
+          "parameter_expression": "['fresh_capture', 'stale_pin']",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1195_private_capture_leaves_unchanged_public_dependency_untouched",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1251_1252_inherited_family_real_application_and_completed_replay",
+      "cases": 9,
+      "parameters": [
+        {
+          "names": "rejected,name_family",
+          "parameter_expression": "[(False, False), (True, False), (False, True)]",
+          "count": 3
+        },
+        {
+          "names": "selected",
+          "parameter_expression": "['one', 'both', 'reverse']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1251_1252_family_changes_refused_before_any_write",
+      "cases": 10,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['identifier', 'name', 'case_only_name', 'status', 'activate', 'new_member', 'same_count_swap', 'promotion_collision', 'stale_origin', 'relocate']",
+          "count": 10
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1251_1252_new_owner_does_not_inherit_exception",
+      "cases": 2,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['create_rejected', 'create_family_member']",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1252_completed_replay_rejects_changed_tombstone",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['activation', 'identity', 'name']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1252_unique_tombstone_real_application_and_completed_replay",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1252_unique_tombstone_activation_and_key_changes_refused",
+      "cases": 4,
+      "parameters": [
+        {
+          "names": "delta",
+          "parameter_expression": "[{'mapping_status': 'MAPPED'}, {'mapping_status': 'UNMAPPED'}, {'identifier': 'CHEBI:3'}, {'preferred_term': 'existing'}]",
+          "count": 4
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1251_reviewed_family_reduction_preserves_surviving_pairs",
+      "cases": 4,
+      "parameters": [
+        {
+          "names": "name_family",
+          "parameter_expression": "[False, True]",
+          "count": 2
+        },
+        {
+          "names": "third",
+          "parameter_expression": "[False, True]",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1252_unmapped_rejection_real_application_and_completed_replay",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1252_unmapped_rejection_refuses_unsafe_variants_before_write",
+      "cases": 9,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['create', 'promote', 'relocate', 'preimage', 'identifier', 'name', 'history', 'status_type', 'stale_origin']",
+          "count": 9
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1252_completed_rejection_rechecks_final_owner",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['revival', 'identity', 'history']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_real_application_and_completed_replay",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_review_must_bind_exact_closed_tuple",
+      "cases": 9,
+      "parameters": [
+        {
+          "names": "field",
+          "parameter_expression": "['schema_version', 'operation', 'operation_id', 'before_source_record', 'source_record', 'before_yaml_sha256', 'after_yaml_sha256', 'origins', 'extra']",
+          "count": 9
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_requires_explicit_accepted_review",
+      "cases": 4,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['missing', 'unrelated', 'unaccepted', 'wrong_role']",
+          "count": 4
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_refuses_false_operation_lineage_or_payload",
+      "cases": 17,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['ordinary_edit', 'same_path', 'renamed', 'reversal', 'new_owner', 'null_before', 'stale_before', 'stale_head', 'wrong_proposal', 'wrong_case', 'history', 'mapped_status', 'unmapped_status', 'rejected_status', 'ontology_mapping', 'empty_mapping', 'native_render']",
+          "count": 17
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_requires_genuine_mapped_status_predecessor",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "before_status",
+          "parameter_expression": "['UNMAPPED', 'AMBIGUOUS', 'REJECTED']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_refuses_either_preceding_owner_chain",
+      "cases": 2,
+      "parameters": [
+        {
+          "names": "linked_owner",
+          "parameter_expression": "[EDIT, DEMOTED]",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_review_proof_rejects_aliases",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "alias",
+          "parameter_expression": "['leaf', 'parent', 'hardlink']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_late_drift_refuses_before_mutation",
+      "cases": 4,
+      "parameters": [
+        {
+          "names": "change",
+          "parameter_expression": "['review', 'source', 'destination', 'membership']",
+          "count": 4
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_partial_failure_keeps_honest_recovery",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "failure",
+          "parameter_expression": "['before_retire', 'occupied_recovery', 'reappearing_source']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_completed_verification_rejects_false_recovery",
+      "cases": 5,
+      "parameters": [
+        {
+          "names": "fault",
+          "parameter_expression": "['backup', 'retired', 'source', 'review', 'receipt']",
+          "count": 5
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_composed_final_capture_keeps_original_published_origin",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_cannot_claim_a_genuinely_published_new_owner_origin",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_field_is_not_an_extension_to_existing_kinds",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "index",
+          "parameter_expression": "[0, 1, 2]",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_refuses_occupied_destination_including_casefold",
+      "cases": 2,
+      "parameters": [
+        {
+          "names": "destination",
+          "parameter_expression": "[DEMOTED, 'data/ingredients/unmapped/existing.yaml']",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_still_refuses_new_identity_collision",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_late_destination_parent_alias_fails_without_source_retirement",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_wrong_retired_inode_is_not_accepted_as_success",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_741_demotion_completed_recovery_alias_is_refused",
+      "cases": 2,
+      "parameters": [
+        {
+          "names": "role",
+          "parameter_expression": "['owner-before-0000.yaml', 'demotion-0000/retired-owner.yaml']",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1255_literal_git_paths_complete_rejection",
+      "cases": 12,
+      "parameters": [
+        {
+          "names": "quote_path",
+          "parameter_expression": "['true', 'false']",
+          "count": 2
+        },
+        {
+          "names": "name",
+          "parameter_expression": "['Poly-\u00df-hydroxybutyric_Acid.yaml', 'With space.yaml', 'Literal\\ttab.yaml', 'Literal\\nnewline.yaml', 'Literal\\rcarriage.yaml', 'Literal\"quote.yaml']",
+          "count": 6
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1255_unrelated_literal_tracked_file_still_refused",
+      "cases": 8,
+      "parameters": [
+        {
+          "names": "quote_path",
+          "parameter_expression": "['true', 'false']",
+          "count": 2
+        },
+        {
+          "names": "name",
+          "parameter_expression": "['unrelated.txt', 'unrelated_\u00df.txt', 'unrelated\\nfile.txt', 'unrelated\\tfile.txt']",
+          "count": 4
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1255_malformed_nul_listing_is_not_accepted",
+      "cases": 3,
+      "parameters": [
+        {
+          "names": "malformed",
+          "parameter_expression": "[b'unterminated', b'\\x00', b'name\\x00\\x00']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": true
+    },
+    {
+      "name": "test_1256_late_head_refused_before_receipt_or_source_write",
+      "cases": 16,
+      "parameters": [
+        {
+          "names": "kind",
+          "parameter_expression": "['edit', 'create', 'promote', 'demote']",
+          "count": 4
+        },
+        {
+          "names": "unrelated",
+          "parameter_expression": "[False, True]",
+          "count": 2
+        },
+        {
+          "names": "enabled",
+          "parameter_expression": "[False, True]",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": null
+    },
+    {
+      "name": "test_1256_head_drift_at_write_boundaries_invalidates_completion",
+      "cases": 24,
+      "parameters": [
+        {
+          "names": "kind",
+          "parameter_expression": "['edit', 'create', 'promote', 'demote']",
+          "count": 4
+        },
+        {
+          "names": "unrelated",
+          "parameter_expression": "[False, True]",
+          "count": 2
+        },
+        {
+          "names": "boundary",
+          "parameter_expression": "['before_write', 'after_write', 'final_receipt_flush']",
+          "count": 3
+        }
+      ],
+      "old_decorators_unchanged": null
+    },
+    {
+      "name": "test_1256_valid_completed_history_survives_later_commits",
+      "cases": 8,
+      "parameters": [
+        {
+          "names": "kind",
+          "parameter_expression": "['edit', 'create', 'promote', 'demote']",
+          "count": 4
+        },
+        {
+          "names": "unrelated",
+          "parameter_expression": "[False, True]",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": null
+    },
+    {
+      "name": "test_1256_historical_replay_still_refuses_changed_proof",
+      "cases": 8,
+      "parameters": [
+        {
+          "names": "kind",
+          "parameter_expression": "['edit', 'create', 'promote', 'demote']",
+          "count": 4
+        },
+        {
+          "names": "fault",
+          "parameter_expression": "['owner', 'receipt']",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": null
+    },
+    {
+      "name": "test_1256_scope_diff_uses_accepted_baseline_with_literal_paths",
+      "cases": 1,
+      "parameters": [],
+      "old_decorators_unchanged": null
+    },
+    {
+      "name": "test_1256_initial_head_drift_remains_refused",
+      "cases": 8,
+      "parameters": [
+        {
+          "names": "kind",
+          "parameter_expression": "['edit', 'create', 'promote', 'demote']",
+          "count": 4
+        },
+        {
+          "names": "unrelated",
+          "parameter_expression": "[False, True]",
+          "count": 2
+        }
+      ],
+      "old_decorators_unchanged": null
+    },
+    {
+      "name": "test_1256_unrelated_staged_drift_rechecked_throughout_transaction",
+      "cases": 16,
+      "parameters": [
+        {
+          "names": "kind",
+          "parameter_expression": "['edit', 'create', 'promote', 'demote']",
+          "count": 4
+        },
+        {
+          "names": "boundary",
+          "parameter_expression": "['before_apply', 'before_write', 'after_write', 'final_flush']",
+          "count": 4
+        }
+      ],
+      "old_decorators_unchanged": null
+    }
+  ]
+}

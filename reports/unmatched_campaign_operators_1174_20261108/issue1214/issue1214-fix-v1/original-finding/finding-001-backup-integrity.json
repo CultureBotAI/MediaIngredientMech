@@ -1,0 +1,85 @@
+{
+  "finding_id": "IR-PR1205-PUBLISHER-001",
+  "created_at": "2026-11-08T06:07:56.460343+00:00",
+  "severity": "medium",
+  "priority": "P2",
+  "state": "confirmed_by_narrow_private_probe",
+  "title": "Completed publication can retain corrupted recovery backup bytes",
+  "head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "source": "src/mediaingredientmech/campaign_publication.py",
+  "source_sha256": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+  "locations": [
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "line": 1217,
+      "detail": "All output handles receive identity/link checks, while only native_path receives an expected-byte comparison."
+    },
+    {
+      "path": "src/mediaingredientmech/campaign_publication.py",
+      "line": 1227,
+      "detail": "The two recovery backups are written and flushed but not captured for later byte verification."
+    },
+    {
+      "path": "src/mediaingredientmech/curate/publication_guard.py",
+      "line": 78,
+      "detail": "Unchanged check_reserved verifies location, type, link count and inode; it does not verify content."
+    }
+  ],
+  "cause": "After writing canonical-before.tsv and policy-before.json, recheck protects their path/inode identities but never compares their bytes to the captured beforeimages. An in-place modification retains the checked identities and passes the real final receipt rechecks.",
+  "reproduction": "Using exact copied head sources and the existing private fixture, run one unchanged positive and two mutations. Immediately before calling the real native finish_receipt, overwrite either reserved recovery backup in place. Both mutated cases return complete, leave publication.json with status complete, and subsequently return verified from validate. Both actual backup digests differ from the pinned beforeimage digest; the inode is unchanged.",
+  "observed_cases": [
+    {
+      "case": "positive",
+      "returned_status": "complete",
+      "separate_validator_status": "verified",
+      "publication_log_status": "complete",
+      "backup_matches": [
+        true,
+        true
+      ]
+    },
+    {
+      "case": "inplace-canonical-before.tsv",
+      "returned_status": "complete",
+      "separate_validator_status": "verified",
+      "publication_log_status": "complete",
+      "backup_matches": [
+        false,
+        true
+      ]
+    },
+    {
+      "case": "inplace-policy-before.json",
+      "returned_status": "complete",
+      "separate_validator_status": "verified",
+      "publication_log_status": "complete",
+      "backup_matches": [
+        true,
+        false
+      ]
+    }
+  ],
+  "impact": "The publication completion result can accompany invalid files presented as recovery beforeimages. This weakens recovery-evidence integrity and makes an unverified backup unsafe to use for restoration.",
+  "limits": [
+    "The immutable beforeimage references in the accepted plan remain correct and independently verified; alternative recovery evidence remains available.",
+    "The projected canonical and policy outputs and native receipt chain pass their actual verification. This is not evidence of an incorrect ontology identity, canonical mapping, scientific approval or release bypass.",
+    "The existing fixture explicitly stubs source-owner proof and external native generation. Actual publisher, output reservation, native check_reserved, real finish_receipt, projection, policy, maker, row replay and standalone validation run in private synthetic repositories.",
+    "No full test suite or real campaign application was run, and no integration or maintained source file was changed."
+  ],
+  "requested_change": "After backup writes, recheck their exact bytes against the captured beforeimages at the remaining publication and completion boundaries. Add deterministic in-place backup mutation controls for both backups and retain the unchanged positive. If standalone validate is intended to attest recovery outputs, bind their paths/hashes into its input contract; otherwise keep its projected-state verification scope explicit.",
+  "evidence": [
+    {
+      "path": "probe_backup_integrity.py",
+      "sha256": "4138f0998580397ff39646355840f9cba3894daf0fac974ed3bf08891c58015a"
+    },
+    {
+      "path": "backup-integrity-probe-result.json",
+      "sha256": "8af7c387698002126dd424daa515752ac6ce07074c6260cf8e032a94c77efaaa"
+    },
+    {
+      "path": "probe-input-manifest.json",
+      "sha256": "fd57d115a11678a4095252d641b5a453c954947179e2a31105886041107e324a"
+    }
+  ],
+  "github_action": "None; parent owns triage and any issue filing."
+}

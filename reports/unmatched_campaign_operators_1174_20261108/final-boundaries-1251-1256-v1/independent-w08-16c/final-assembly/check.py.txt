@@ -1,0 +1,138 @@
+"""Independent read-only native assembly verification. No suite or source writes."""
+import copy
+import datetime
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import subprocess
+import traceback
+
+R=Path.cwd()
+P=R/'.temp/combined-16c-independent-v1'
+O=P/'final-assembly'
+N=P/'native'
+OUT=N/'reviews/structured/20261108T115104Z-w08-combined-16c-independent/review.yaml'
+
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def ref(p): return {'path':str(p),'sha256':sha(p),'size':p.stat().st_size}
+def js(p): return json.loads(p.read_text())
+checks=[]
+def check(name, ok, **detail): checks.append({'check':name,'passed':bool(ok),**detail})
+def write(name,value):
+    with (O/name).open('x') as f:json.dump(value,f,indent=2);f.write('\n')
+
+pair_before=[ref(OUT),ref(OUT.with_suffix('.md'))]
+spec=importlib.util.spec_from_file_location('independent_native_record_review',R/'scripts/record_review.py')
+rr=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rr)
+relative=str(OUT.relative_to(N))
+review=rr.parse_review_bundle(relative,OUT.read_bytes(),OUT.with_suffix('.md').read_bytes())
+rr.validate_review(review)
+check('native parse, validate and full rendered Markdown exact',rr.render_markdown(review).encode()==OUT.with_suffix('.md').read_bytes())
+rr.assert_current_source(R,review)
+check('actual native committed-source assertion',True)
+inspection=js(P/'private-evidence-inspection.json')
+rr.assert_current_source(R,{'repository':inspection['repository'],'source':inspection['source']})
+check('actual separate private evidence assertion',True,count=len(inspection['source']['inputs']))
+settings={'GIT_DIR':subprocess.check_output(['git','rev-parse','--absolute-git-dir'],text=True).strip(),
+          'GIT_WORK_TREE':str(N),'GIT_OPTIONAL_LOCKS':'0'}
+prior_lineage=js(P/'prior-finding-lineage.json')
+before_env={k:os.environ.get(k) for k in settings}
+prior_reviews=[]
+try:
+    os.environ.update(settings)
+    reread=rr.read_review(N,relative)
+    provenance=rr.source_provenance(N,review)
+    check('actual native read_review with explicit read-only Git root',reread==review and provenance['status']=='git_commit_verified',context=settings,provenance=provenance)
+    for review_id in ['20261108T113551Z-rejection-fix-independent','20261108T113742Z-rejection-fix-independent-v2']:
+        prior=rr.read_review(N,f'reviews/structured/{review_id}/review.yaml')
+        prior_reviews.append(prior)
+finally:
+    for k,v in before_env.items():
+        if v is None:os.environ.pop(k,None)
+        else:os.environ[k]=v
+check('two genuine prior pairs native-readable',len(prior_reviews)==2)
+check('Git environment restored',all(os.environ.get(k)==v for k,v in before_env.items()))
+
+committed=[]
+for row in review['source']['inputs']:
+    name=row['path']; expected=row['sha256']
+    tree=subprocess.check_output(['git','ls-tree','16c39b63bc95d3e7978ddccc6280b0d57954f4a5','--',name],text=True).strip()
+    raw=subprocess.check_output(['git','show','16c39b63bc95d3e7978ddccc6280b0d57954f4a5:'+name])
+    actual=hashlib.sha256(raw).hexdigest()
+    committed.append({'path':name,'expected':expected,'actual':actual,'tree_entry':tree,
+                      'passed':actual==expected and tree.startswith('100644 blob ')})
+check('27 independently read actual regular Git blobs',len(committed)==27 and all(x['passed'] for x in committed))
+private=[]
+for row in inspection['source']['inputs']:
+    p=R/row['path'];private.append({'path':str(p),'expected':row['sha256'],'actual':sha(p),'passed':sha(p)==row['sha256']})
+check('23 exact private evidence hashes, not represented as16c committed',len(private)==23 and all(x['passed'] for x in private))
+evidence=[]
+for row in review['evidence']:
+    p=R/row['reference']; evidence.append({'evidence_id':row['evidence_id'],'path':str(p),'expected':row['snapshot_sha256'],'actual':sha(p),'passed':sha(p)==row['snapshot_sha256']})
+check('all18 native evidence snapshots exact',len(evidence)==18 and all(x['passed'] for x in evidence))
+retained=[]
+for row in prior_lineage['predecessors']:
+    actual=sha(R/row['snapshot']); original=sha(Path(row['original_path']))
+    retained.append({**row,'snapshot_actual':actual,'original_actual':original,'passed':row['sha256']==actual==original})
+check('all4 old W04 YAML/Markdown bytes preserved',len(retained)==4 and all(x['passed'] for x in retained))
+currentfinding={x['finding_id']:x for x in review['findings']}
+priorfinding=[next(x for x in old['findings'] if x['finding_id']=='REJECTION-CODE-001') for old in prior_reviews]
+f=currentfinding['REJECTION-CODE-001']
+check('known finding stable targets and issue key retained',all(x['target_ids']==f['target_ids'] and x['issue_key']==f['issue_key'] for x in priorfinding) and f['status']=='open' and f['previous_occurrences']==[{'repository':'CultureBotAI/MediaIngredientMech','review_id':prior_reviews[1]['review_id'],'finding_id':'REJECTION-CODE-001'}])
+check('two major findings and needs_curation remain',len(currentfinding)==2 and all(x['severity']=='major' and x['status']=='open' for x in currentfinding.values()) and review['verdict']=='needs_curation')
+check('exact5 committed code/test targets, not ingredient targets',len(review['targets'])==5 and all(x['kind']=='source' and '16c39b63bc95d3e7978ddccc6280b0d57954f4a5' in x['selector'] for x in review['targets']))
+check('root findings equal authoritative native findings',js(P/'findings.json')['findings']==review['findings'])
+tech=js(P/'technical/review.json'); skeptic=js(P/'skeptic/review.json');lin=js(P/'lineage/review.json')
+check('three peer verdicts agree',all(x['verdict']=='needs_curation' for x in [tech,skeptic,lin]))
+controls=js(P/'technical/results.json');extra=js(P/'technical/boundary-controls.json')['controls'];probes=js(P/'skeptic/adversarial-results.json')
+check('actual19 source controls plus31 publisher stage probes accounted',len(controls)+len(extra)==19 and tech['actual_private_controls']['count']==19 and len(probes['probes'])==probes['probe_count']==31 and not probes['full_prepare_or_application_claimed'])
+first=js(P/'focused/result.json'); second=js(P/'focused-integration-v2/result.json')
+firstreports=js(P/'focused/test-reports.json'); secondreports=js(P/'focused-integration-v2/test-reports.json')
+passed={x['nodeid'] for x in firstreports+secondreports if x['when']=='call' and x['outcome']=='passed'}
+check('337 distinct successes across actual two runs only',len(passed)==337 and first['passed_calls']==328 and len(first['failures'])==9 and second['passed_calls']==9 and not first['skips'] and not second['skips'] and not second['failures'])
+check('first9 native lock failures remain recorded',all('Failed to acquire lock on mediaingredientmech' in x['longrepr'] for x in first['failures']))
+holdread=js(P/'lineage/actual-integration-v2-readback.json')
+check('actual hold/source/publication readback remains passing with exact inputs',holdread['status']=='PASS' and all(x['passed'] for x in holdread['checks']) and all(sha(Path(x['path']))==x['sha256'] for x in holdread['inputs']))
+lineagemanifest=js(P/'lineage/MANIFEST.json')
+check('sealed lineage packet unchanged',all(sha(P/'lineage'/n)==h for n,h in lineagemanifest['files'].items()))
+limits=' '.join(review['limitations']+review['notes'])
+check('no scientific/future/application approval',review['scientific_review'] is False and 'no repaired successor' in limits and 'No scientific source/candidate/owner/mapping/role/export/whole-plan application' in limits)
+check('both required failed safety checks remain failed',set(x['check_id'] for x in review['checks'] if x['status']=='failed')=={'literal-path-safety','live-baseline'})
+check('initial native build failure retained',(P/'native-build.log').is_file() and 'ReviewError' in (P/'native-build.log').read_text() and (P/'provenance/build_native_review.py').is_file())
+check('native pair byte-exact throughout independent readback',pair_before==[ref(OUT),ref(OUT.with_suffix('.md'))])
+
+negatives=[]
+def refuse(name,fn):
+    try:fn()
+    except rr.ReviewError as e:negatives.append({'name':name,'refused':True,'error':str(e)})
+    else:negatives.append({'name':name,'refused':False})
+bad=copy.deepcopy(review);bad['source']['inputs'][0]['sha256']='0'*64
+refuse('bad committed digest',lambda:rr.assert_current_source(R,bad))
+refuse('markdown mismatch',lambda:rr.parse_review_bundle(relative,OUT.read_bytes(),OUT.with_suffix('.md').read_bytes()+b'wrong'))
+bad=copy.deepcopy(review);bad['verdict']='pass'
+refuse('pass cannot hide open major findings',lambda:rr.validate_review(bad))
+check('three native metadata negatives refused',all(x['refused'] for x in negatives))
+
+inputs=[P/'ASSESSMENT.md',P/'findings.json',P/'native-validation.json',P/'private-evidence-inspection.json',
+        P/'provenance/build_native_review.py',P/'provenance/native_readback_v2.py',P/'native-build.log',P/'native-readback-v2.log',
+        P/'lineage/review.json',P/'lineage/actual-integration-v2-readback.json',P/'technical/review.json',P/'skeptic/review.json',
+        P/'technical/results.json',P/'technical/boundary-controls.json',P/'skeptic/adversarial-results.json',
+        R/'scripts/record_review.py',OUT,OUT.with_suffix('.md')]
+result={'schema_version':1,'reviewer':'worker08:/root/vitamins','author_of_native_assembly':'worker08:/root',
+        'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS' if all(x['passed'] for x in checks) else 'FAIL',
+        'scope':'Independent final metadata/assembly check only. Actual native parse/read/current committed assertion and private evidence checks; no test suite, source application or science rerun.',
+        'reviewed_head':review['source']['git_revision'],'native_verdict':review['verdict'],
+        'checks':checks,'negative_controls':negatives,'inputs':[ref(p) for p in inputs],
+        'committed_blobs':committed,'private_evidence':private,'native_evidence':evidence,'prior_pairs':retained,
+        'git_context':settings,'new_assembly_findings':[],'open_code_findings':['REJECTION-CODE-001/#1255','W08-16C-CODE-002'],
+        'scientific_approval':False,'code_acceptance':False,'application_approval':False,
+        'limits':['PASS means the assembled needs_curation report faithfully binds its evidence, not that the code is safe to apply.',
+                  'Root performs whole final preservation separately; this check rehashes only declared committed/private/peer inputs and prior review pairs.',
+                  'Source19 and publisher31 are genuine peer-executed controls read from their receipts, not executions claimed by this reviewer.',
+                  'Initial shared native-lock failure and native nested-root readback failure remain intact; supported private lock/Git context changes did not patch producer/helper or rewrite pair.',
+                  'Prior source and design involvement is disclosed; no ingredient identity, Angust A/C, role, mapping or release approval is renewed.']}
+write('review.json',result)
+print(json.dumps({'status':result['status'],'checks':len(checks),'failed':[x for x in checks if not x['passed']],'review':ref(O/'review.json')},indent=2))

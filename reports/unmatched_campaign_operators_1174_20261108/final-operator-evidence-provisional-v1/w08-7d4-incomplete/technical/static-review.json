@@ -1,0 +1,695 @@
+{
+  "revision": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+  "tests_sha256": "8d272cd4f3479d3e6ba9e2ef5817a40428efd51ce57b554e7e814ed23e0984dc",
+  "source_changed_nodes": [
+    "_check_mutation_git_state"
+  ],
+  "source_removed_nodes": [],
+  "source_added_nodes": [],
+  "verify_completed_AST_unchanged": true,
+  "tests_21061_prefix_bytes": 95733,
+  "tests_21061_exact_byte_prefix": true,
+  "tests_16c_prefix_bytes": 80127,
+  "tests_16c_exact_byte_prefix": true,
+  "all_21061_test_helper_AST_preserved": true,
+  "old_function_class_nodes": 87,
+  "new_function_class_nodes": 99,
+  "old_source_cases": 301,
+  "new_added_cases": 53,
+  "total_source_cases": 354,
+  "old_assertions": 201,
+  "new_added_assertions": 38,
+  "total_assertions": 239,
+  "new_test_functions": [
+    {
+      "name": "test_1256_index_only_contract_drift_refused_at_every_live_boundary",
+      "cases": 20,
+      "assertions": 11,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('boundary', ['initial', 'before_apply', 'before_write', 'after_write', 'final_flush'])"
+      ]
+    },
+    {
+      "name": "test_1256_index_only_owner_bytes_cannot_hide_behind_allowed_path",
+      "cases": 12,
+      "assertions": 6,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('boundary', ['before_apply', 'after_write', 'final_flush'])"
+      ]
+    },
+    {
+      "name": "test_1256_staged_actual_accepted_endpoints_complete_and_verify_historically",
+      "cases": 4,
+      "assertions": 5,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])"
+      ]
+    },
+    {
+      "name": "test_1256_cached_literal_unrelated_path_cannot_disappear",
+      "cases": 4,
+      "assertions": 3,
+      "parameters": [
+        "pytest.mark.parametrize('name', ['notes/Poly-\u00df.txt', 'notes/new\\nline.txt', 'notes/tab\\tquote\".txt', 'notes/[literal]*?.txt'])"
+      ]
+    },
+    {
+      "name": "test_1256_malformed_cached_nul_listing_refused",
+      "cases": 3,
+      "assertions": 1,
+      "parameters": [
+        "pytest.mark.parametrize('malformed', [b'unterminated', b'\\x00', b'name\\x00\\x00'])"
+      ]
+    },
+    {
+      "name": "test_1256_staged_future_approved_payload_is_not_installed_authority",
+      "cases": 4,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])"
+      ]
+    },
+    {
+      "name": "test_1256_staged_deletion_cannot_precede_actual_retirement",
+      "cases": 3,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'promote', 'demote'])"
+      ]
+    },
+    {
+      "name": "test_1256_cached_rename_checks_unrelated_old_endpoint",
+      "cases": 1,
+      "assertions": 4,
+      "parameters": []
+    },
+    {
+      "name": "test_1256_intent_to_add_unrelated_index_entry_is_refused",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_1256_staged_owner_mode_must_match_installed_file",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    }
+  ],
+  "all_test_rows": [
+    {
+      "name": "test_mixed_application_and_native_completed_proof",
+      "cases": 1,
+      "assertions": 14,
+      "parameters": []
+    },
+    {
+      "name": "test_dry_run_and_cli_default_do_not_publish",
+      "cases": 1,
+      "assertions": 3,
+      "parameters": []
+    },
+    {
+      "name": "test_unknown_closed_fields_fail",
+      "cases": 6,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('part', ['plan', 'record', 'origin', 'binding', 'acceptance', 'inventory'])"
+      ]
+    },
+    {
+      "name": "test_incomplete_or_false_lineage_fails",
+      "cases": 6,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('part', ['preimage', 'case', 'head', 'published_payload', 'promotion', 'acceptance'])"
+      ]
+    },
+    {
+      "name": "test_payload_schema_history_and_owner_guards",
+      "cases": 6,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['history_only', 'history_prefix', 'identity_collision', 'name_collision', 'unknown_yaml', 'wrong_state'])"
+      ]
+    },
+    {
+      "name": "test_actual_native_old_owner_chain_refuses_promotion",
+      "cases": 1,
+      "assertions": 0,
+      "parameters": []
+    },
+    {
+      "name": "test_evidence_alias_refused",
+      "cases": 3,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('alias', ['leaf', 'parent', 'hardlink'])"
+      ]
+    },
+    {
+      "name": "test_direct_ignored_owner_is_inventory_but_nested_backup_is_not",
+      "cases": 1,
+      "assertions": 0,
+      "parameters": []
+    },
+    {
+      "name": "test_late_drift_prevents_owner_mutation",
+      "cases": 4,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('drift', ['owner', 'evidence', 'new_destination', 'native_receipt'])"
+      ]
+    },
+    {
+      "name": "test_receipt_directory_collision_is_preserved",
+      "cases": 1,
+      "assertions": 1,
+      "parameters": []
+    },
+    {
+      "name": "test_reserved_backups_precede_first_write_and_late_failure_is_honest",
+      "cases": 1,
+      "assertions": 7,
+      "parameters": []
+    },
+    {
+      "name": "test_exclusive_new_destination_race_preserves_competitor",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_exclusive_retirement_race_preserves_both_files",
+      "cases": 1,
+      "assertions": 4,
+      "parameters": []
+    },
+    {
+      "name": "test_completed_verifier_replays_checkpoint_after_canonical_successor",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_completed_verifier_rejects_current_or_archived_drift",
+      "cases": 6,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('drift', ['review', 'owner', 'backup', 'checkpoint', 'receipt_alias', 'producer'])"
+      ]
+    },
+    {
+      "name": "test_late_archive_byte_drift_cannot_finish_success",
+      "cases": 3,
+      "assertions": 1,
+      "parameters": [
+        "pytest.mark.parametrize('role', ['backup', 'protected', 'retired'])"
+      ]
+    },
+    {
+      "name": "test_final_verifier_rechecks_original_proof_roles",
+      "cases": 3,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('alias', ['leaf', 'parent', 'hardlink'])"
+      ]
+    },
+    {
+      "name": "test_late_new_owner_parent_swap_cannot_write_into_replacement",
+      "cases": 1,
+      "assertions": 4,
+      "parameters": []
+    },
+    {
+      "name": "test_archived_protection_never_excuses_current_review_drift",
+      "cases": 1,
+      "assertions": 0,
+      "parameters": []
+    },
+    {
+      "name": "test_noop_is_rejected_and_selected_case_subset_keeps_full_ledger",
+      "cases": 1,
+      "assertions": 4,
+      "parameters": []
+    },
+    {
+      "name": "test_casefold_destination_collision_refused_before_write",
+      "cases": 1,
+      "assertions": 0,
+      "parameters": []
+    },
+    {
+      "name": "test_1194_final_owner_membership_is_reenumerated",
+      "cases": 5,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('change', ['addition', 'removal', 'symlink', 'hardlink', 'old_source_reappears'])"
+      ]
+    },
+    {
+      "name": "test_1194_final_snapshot_membership_is_reenumerated",
+      "cases": 6,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('snapshot', ['checkpoint', 'protected'])",
+        "pytest.mark.parametrize('change', ['addition', 'removal', 'alias'])"
+      ]
+    },
+    {
+      "name": "test_1195_loaded_producer_bytes_and_locations_are_frozen",
+      "cases": 6,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('change', ['none', 'operator_content', 'dependency_content', 'operator_inode', 'dependency_alias', 'late_dependency'])"
+      ]
+    },
+    {
+      "name": "test_1197_disconnected_or_reused_owner_history_refused_before_write",
+      "cases": 3,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('linked_owner', [EDIT, NEW, MOVED])"
+      ]
+    },
+    {
+      "name": "test_1197_matching_native_endpoint_can_continue_without_approval",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_1197_explicit_native_bridge_can_connect_a_current_preimage",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_1198_noncanonical_top_level_arguments_refused_before_mutation",
+      "cases": 4,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('argument', ['root', 'plan', 'acceptance', 'receipt'])"
+      ]
+    },
+    {
+      "name": "test_native_checkpoint_must_be_accepted_before_application",
+      "cases": 1,
+      "assertions": 1,
+      "parameters": []
+    },
+    {
+      "name": "test_1195_cached_dependency_is_reexecuted_privately_from_pinned_bytes",
+      "cases": 10,
+      "assertions": 5,
+      "parameters": [
+        "pytest.mark.parametrize('dependency', ['mediaingredientmech.curate.publication_guard', 'mediaingredientmech.curate.apply_receipt', 'mediaingredientmech.validation.write_validated', 'mediaingredientmech.validation.mapping_change_receipts', 'mediaingredientmech.export.reviewed_sssom'])",
+        "pytest.mark.parametrize('mode', ['fresh_capture', 'stale_pin'])"
+      ]
+    },
+    {
+      "name": "test_1195_private_capture_leaves_unchanged_public_dependency_untouched",
+      "cases": 1,
+      "assertions": 3,
+      "parameters": []
+    },
+    {
+      "name": "test_1251_1252_inherited_family_real_application_and_completed_replay",
+      "cases": 9,
+      "assertions": 7,
+      "parameters": [
+        "pytest.mark.parametrize('rejected,name_family', [(False, False), (True, False), (False, True)])",
+        "pytest.mark.parametrize('selected', ['one', 'both', 'reverse'])"
+      ]
+    },
+    {
+      "name": "test_1251_1252_family_changes_refused_before_any_write",
+      "cases": 10,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['identifier', 'name', 'case_only_name', 'status', 'activate', 'new_member', 'same_count_swap', 'promotion_collision', 'stale_origin', 'relocate'])"
+      ]
+    },
+    {
+      "name": "test_1251_1252_new_owner_does_not_inherit_exception",
+      "cases": 2,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['create_rejected', 'create_family_member'])"
+      ]
+    },
+    {
+      "name": "test_1252_completed_replay_rejects_changed_tombstone",
+      "cases": 3,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['activation', 'identity', 'name'])"
+      ]
+    },
+    {
+      "name": "test_1252_unique_tombstone_real_application_and_completed_replay",
+      "cases": 1,
+      "assertions": 3,
+      "parameters": []
+    },
+    {
+      "name": "test_1252_unique_tombstone_activation_and_key_changes_refused",
+      "cases": 4,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('delta', [{'mapping_status': 'MAPPED'}, {'mapping_status': 'UNMAPPED'}, {'identifier': 'CHEBI:3'}, {'preferred_term': 'existing'}])"
+      ]
+    },
+    {
+      "name": "test_1251_reviewed_family_reduction_preserves_surviving_pairs",
+      "cases": 4,
+      "assertions": 4,
+      "parameters": [
+        "pytest.mark.parametrize('name_family', [False, True])",
+        "pytest.mark.parametrize('third', [False, True])"
+      ]
+    },
+    {
+      "name": "test_1252_unmapped_rejection_real_application_and_completed_replay",
+      "cases": 1,
+      "assertions": 14,
+      "parameters": []
+    },
+    {
+      "name": "test_1252_unmapped_rejection_refuses_unsafe_variants_before_write",
+      "cases": 9,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['create', 'promote', 'relocate', 'preimage', 'identifier', 'name', 'history', 'status_type', 'stale_origin'])"
+      ]
+    },
+    {
+      "name": "test_1252_completed_rejection_rechecks_final_owner",
+      "cases": 3,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['revival', 'identity', 'history'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_real_application_and_completed_replay",
+      "cases": 1,
+      "assertions": 15,
+      "parameters": []
+    },
+    {
+      "name": "test_741_demotion_review_must_bind_exact_closed_tuple",
+      "cases": 9,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('field', ['schema_version', 'operation', 'operation_id', 'before_source_record', 'source_record', 'before_yaml_sha256', 'after_yaml_sha256', 'origins', 'extra'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_requires_explicit_accepted_review",
+      "cases": 4,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['missing', 'unrelated', 'unaccepted', 'wrong_role'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_refuses_false_operation_lineage_or_payload",
+      "cases": 17,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['ordinary_edit', 'same_path', 'renamed', 'reversal', 'new_owner', 'null_before', 'stale_before', 'stale_head', 'wrong_proposal', 'wrong_case', 'history', 'mapped_status', 'unmapped_status', 'rejected_status', 'ontology_mapping', 'empty_mapping', 'native_render'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_requires_genuine_mapped_status_predecessor",
+      "cases": 3,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('before_status', ['UNMAPPED', 'AMBIGUOUS', 'REJECTED'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_refuses_either_preceding_owner_chain",
+      "cases": 2,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('linked_owner', [EDIT, DEMOTED])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_review_proof_rejects_aliases",
+      "cases": 3,
+      "assertions": 1,
+      "parameters": [
+        "pytest.mark.parametrize('alias', ['leaf', 'parent', 'hardlink'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_late_drift_refuses_before_mutation",
+      "cases": 4,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('change', ['review', 'source', 'destination', 'membership'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_partial_failure_keeps_honest_recovery",
+      "cases": 3,
+      "assertions": 6,
+      "parameters": [
+        "pytest.mark.parametrize('failure', ['before_retire', 'occupied_recovery', 'reappearing_source'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_completed_verification_rejects_false_recovery",
+      "cases": 5,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('fault', ['backup', 'retired', 'source', 'review', 'receipt'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_composed_final_capture_keeps_original_published_origin",
+      "cases": 1,
+      "assertions": 4,
+      "parameters": []
+    },
+    {
+      "name": "test_741_demotion_cannot_claim_a_genuinely_published_new_owner_origin",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_741_demotion_field_is_not_an_extension_to_existing_kinds",
+      "cases": 3,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('index', [0, 1, 2])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_refuses_occupied_destination_including_casefold",
+      "cases": 2,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('destination', [DEMOTED, 'data/ingredients/unmapped/existing.yaml'])"
+      ]
+    },
+    {
+      "name": "test_741_demotion_still_refuses_new_identity_collision",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_741_demotion_late_destination_parent_alias_fails_without_source_retirement",
+      "cases": 1,
+      "assertions": 3,
+      "parameters": []
+    },
+    {
+      "name": "test_741_demotion_wrong_retired_inode_is_not_accepted_as_success",
+      "cases": 1,
+      "assertions": 4,
+      "parameters": []
+    },
+    {
+      "name": "test_741_demotion_completed_recovery_alias_is_refused",
+      "cases": 2,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('role', ['owner-before-0000.yaml', 'demotion-0000/retired-owner.yaml'])"
+      ]
+    },
+    {
+      "name": "test_1255_literal_git_paths_complete_rejection",
+      "cases": 12,
+      "assertions": 10,
+      "parameters": [
+        "pytest.mark.parametrize('quote_path', ['true', 'false'])",
+        "pytest.mark.parametrize('name', ['Poly-\u00df-hydroxybutyric_Acid.yaml', 'With space.yaml', 'Literal\\ttab.yaml', 'Literal\\nnewline.yaml', 'Literal\\rcarriage.yaml', 'Literal\"quote.yaml'])"
+      ]
+    },
+    {
+      "name": "test_1255_unrelated_literal_tracked_file_still_refused",
+      "cases": 8,
+      "assertions": 5,
+      "parameters": [
+        "pytest.mark.parametrize('quote_path', ['true', 'false'])",
+        "pytest.mark.parametrize('name', ['unrelated.txt', 'unrelated_\u00df.txt', 'unrelated\\nfile.txt', 'unrelated\\tfile.txt'])"
+      ]
+    },
+    {
+      "name": "test_1255_malformed_nul_listing_is_not_accepted",
+      "cases": 3,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('malformed', [b'unterminated', b'\\x00', b'name\\x00\\x00'])"
+      ]
+    },
+    {
+      "name": "test_1256_late_head_refused_before_receipt_or_source_write",
+      "cases": 16,
+      "assertions": 4,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('unrelated', [False, True])",
+        "pytest.mark.parametrize('enabled', [False, True])"
+      ]
+    },
+    {
+      "name": "test_1256_head_drift_at_write_boundaries_invalidates_completion",
+      "cases": 24,
+      "assertions": 9,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('unrelated', [False, True])",
+        "pytest.mark.parametrize('boundary', ['before_write', 'after_write', 'final_receipt_flush'])"
+      ]
+    },
+    {
+      "name": "test_1256_valid_completed_history_survives_later_commits",
+      "cases": 8,
+      "assertions": 5,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('unrelated', [False, True])"
+      ]
+    },
+    {
+      "name": "test_1256_historical_replay_still_refuses_changed_proof",
+      "cases": 8,
+      "assertions": 0,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('fault', ['owner', 'receipt'])"
+      ]
+    },
+    {
+      "name": "test_1256_scope_diff_uses_accepted_baseline_with_literal_paths",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_1256_initial_head_drift_remains_refused",
+      "cases": 8,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('unrelated', [False, True])"
+      ]
+    },
+    {
+      "name": "test_1256_unrelated_staged_drift_rechecked_throughout_transaction",
+      "cases": 16,
+      "assertions": 10,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('boundary', ['before_apply', 'before_write', 'after_write', 'final_flush'])"
+      ]
+    },
+    {
+      "name": "test_1256_index_only_contract_drift_refused_at_every_live_boundary",
+      "cases": 20,
+      "assertions": 11,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('boundary', ['initial', 'before_apply', 'before_write', 'after_write', 'final_flush'])"
+      ]
+    },
+    {
+      "name": "test_1256_index_only_owner_bytes_cannot_hide_behind_allowed_path",
+      "cases": 12,
+      "assertions": 6,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])",
+        "pytest.mark.parametrize('boundary', ['before_apply', 'after_write', 'final_flush'])"
+      ]
+    },
+    {
+      "name": "test_1256_staged_actual_accepted_endpoints_complete_and_verify_historically",
+      "cases": 4,
+      "assertions": 5,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])"
+      ]
+    },
+    {
+      "name": "test_1256_cached_literal_unrelated_path_cannot_disappear",
+      "cases": 4,
+      "assertions": 3,
+      "parameters": [
+        "pytest.mark.parametrize('name', ['notes/Poly-\u00df.txt', 'notes/new\\nline.txt', 'notes/tab\\tquote\".txt', 'notes/[literal]*?.txt'])"
+      ]
+    },
+    {
+      "name": "test_1256_malformed_cached_nul_listing_refused",
+      "cases": 3,
+      "assertions": 1,
+      "parameters": [
+        "pytest.mark.parametrize('malformed', [b'unterminated', b'\\x00', b'name\\x00\\x00'])"
+      ]
+    },
+    {
+      "name": "test_1256_staged_future_approved_payload_is_not_installed_authority",
+      "cases": 4,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'create', 'promote', 'demote'])"
+      ]
+    },
+    {
+      "name": "test_1256_staged_deletion_cannot_precede_actual_retirement",
+      "cases": 3,
+      "assertions": 2,
+      "parameters": [
+        "pytest.mark.parametrize('kind', ['edit', 'promote', 'demote'])"
+      ]
+    },
+    {
+      "name": "test_1256_cached_rename_checks_unrelated_old_endpoint",
+      "cases": 1,
+      "assertions": 4,
+      "parameters": []
+    },
+    {
+      "name": "test_1256_intent_to_add_unrelated_index_entry_is_refused",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    },
+    {
+      "name": "test_1256_staged_owner_mode_must_match_installed_file",
+      "cases": 1,
+      "assertions": 2,
+      "parameters": []
+    }
+  ],
+  "method": "Direct exact-byte prefix comparison and complete top-level function/class AST comparison, with static parameter-list cardinality (not pytest execution). Entire source operator reread. All appended test bodies read; unchanged prior whole-test review is preserved by exact prefix and every function/helper AST, with authentic native regression probes separately rerun."
+}

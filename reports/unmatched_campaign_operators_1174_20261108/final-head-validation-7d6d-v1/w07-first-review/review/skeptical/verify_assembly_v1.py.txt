@@ -1,0 +1,52 @@
+from pathlib import Path
+from datetime import datetime,timezone
+import json,hashlib,subprocess,os,sys,importlib.util,collections,re
+W=Path.cwd();C=W.parents[2];K=C/'integration/release-worktree';O=W/'.temp/final-operator-head-review-v1';F=O/'native-fixture';S=O/'review/skeptical';started=datetime.now(timezone.utc).isoformat()
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def bind(p):return {'path':str(p),'sha256':sha(p),'bytes':p.stat().st_size}
+expected={'HANDOFF.json':'abda8236aadeead7b60e7b101915736701c5bea6bf8bda42c1828077d4983a59','SELECTOR.json':'065f03b75f206a68d1c81bfe3bc33f1064cc00f3d135df11f98bcba335f2c548'}
+for p,h in expected.items():assert sha(O/p)==h
+handoff=json.loads((O/'HANDOFF.json').read_text());selector=json.loads((O/'SELECTOR.json').read_text());pair=json.loads((O/'native-pair.json').read_text());assert handoff['native_pair']==selector['native_pair']==pair
+refs=[]
+def walk(x):
+ if isinstance(x,dict):
+  if isinstance(x.get('path'),str) and 'sha256' in x:
+   p=Path(x['path']);p=p if p.is_absolute() else O/p;assert sha(p)==x['sha256'];refs.append(bind(p))
+  for v in x.values():walk(v)
+ elif isinstance(x,list):
+  for v in x:walk(v)
+walk(handoff);walk(selector);walk(pair)
+content=json.loads((O/'native-review-successor-v1.json').read_text());old=json.loads((O/'native-review.json').read_text());lineage=json.loads((O/'validation/native-review-metadata-lineage-v1.json').read_text());changed=[k for k in content if content[k]!=old.get(k)];assert set(changed)==set(lineage['changed_top_level_keys'])
+for k in lineage['preserved_scopes']:assert content[k]==old[k]
+inputs=content['source']['inputs'];assert len(inputs)==387 and len({r['path'] for r in inputs})==387
+for row in inputs:
+ p=F/row['path'];assert sha(p)==row['sha256'];assert row['path'].startswith('review-inputs/');original=O/row['path'][len('review-inputs/'):];assert original.read_bytes()==p.read_bytes()
+assert collections.Counter(x['role'] for x in inputs)=={'context':384,'target':3}
+for e in content['evidence']:assert sha(Path(e['reference']))==e['snapshot_sha256']
+context=json.loads((O/'validation/native-review-context.json').read_text());env=dict(os.environ,**context['environment']);env['GIT_OPTIONAL_LOCKS']='0';assert context['native_base']==content['source']['git_revision']==handoff['head']=='7d6d44ea132e04709f81ebd9e1577643745110ad'
+for row in context['native_contracts']:
+ assert sha(F/row['path'])==row['sha256'];assert (F/row['path']).read_bytes()==subprocess.check_output(['git','-C',str(K),'show',handoff['head']+':'+row['path']],env=dict(os.environ,GIT_OPTIONAL_LOCKS='0'))
+command=[sys.executable,'-B',str(F/'scripts/record_review.py'),'--repo-root',str(F),'validate',str(O/pair['review']['path'])]
+run=subprocess.run(command,cwd=F,env=env,capture_output=True,text=True)
+for suffix,data in [('stdout',run.stdout),('stderr',run.stderr)]:
+ p=S/('assembly-native-validation.'+suffix);assert not p.exists();p.write_text(data)
+assert run.returncode==0,run.stderr
+spec=importlib.util.spec_from_file_location('w07_skeptic_native_review',F/'scripts/record_review.py');module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
+doc=module.load_document((O/pair['review']['path']).read_bytes());assert doc==content;module.validate_review(doc,F/'schema/record_review.yaml');render=module.render_markdown(doc,F/'schema/record_review.yaml').encode();assert render==(O/pair['markdown']['path']).read_bytes()
+assert doc['completion']=='completed' and doc['verdict']=='needs_curation' and doc['scientific_review'] is False
+assert all(c['status']=='passed' for c in doc['checks'] if c['required'])
+assert len(doc['targets'])==3 and len(doc['findings'])==1 and doc['findings'][0]['target_ids']==['private-review-helper']
+assert doc['findings'][0]['finding_id']=='W07-OPERATOR-LOG-AUDIT-001' and doc['findings'][0]['status']=='open'
+for a in doc['assessments']:
+ if any(t in {'source-operator','publication-operator'} for t in a['target_ids']):assert a['outcome']=='supported'
+assert sha(O/'scripts/assemble_preparatory_audit.py')=='ab87b8b3b4c50c265480814bdaa9a7d9a0bebd69027876ad269f337d9b5e7533'
+assert json.loads((O/'validation/native-validate-receipt.json').read_text())['exit_code']==1
+nodeids=[l for l in (O/'validation/collection-v1/stdout.log').read_text().splitlines() if l.startswith('tests/') and '::' in l];counts=collections.Counter(l.split('::')[0] for l in nodeids);assert len(nodeids)==len(set(nodeids))==630
+assert counts=={'tests/test_campaign_owner_apply.py':382,'tests/test_campaign_publication.py':176,'tests/test_campaign_suppressions.py':42,'tests/test_campaign_demotion_integration.py':20,'tests/test_campaign_suppression_integration.py':10}
+log=(O/'inputs/author-checks/combined-final-v1/run.log').read_text();fails=[l for l in log.splitlines() if l.startswith('FAILED tests/')];assert len(fails)==11 and not any('_integration.py' in f for f in fails);assert '11 failed, 619 passed, 12 warnings' in log
+assert '13 passed' in (O/'inputs/author-checks/fixture-corrections-affected-v1/run.log').read_text()
+gitenv=dict(os.environ,GIT_OPTIONAL_LOCKS='0');local=subprocess.check_output(['git','-C',str(K),'rev-parse','HEAD'],env=gitenv).decode().strip();own=subprocess.check_output(['git','-C',str(W),'rev-parse','HEAD'],env=gitenv).decode().strip();assert local==handoff['head'] and own==handoff['own_source_head_preserved'];assert subprocess.check_output(['git','-C',str(K),'status','--porcelain'],env=gitenv)==b''
+for row in json.loads((S/'MANIFEST-TECHNICAL.json').read_text())['members']:assert sha(S/row['path'])==row['sha256']
+fullsuite=C/'preflight/final-suppression-7d6d44ea-validation-v1/test-receipt.json'
+result={'schema_version':1,'reviewer':'/root/operator_final_skeptic','started_at':started,'finished_at':datetime.now(timezone.utc).isoformat(),'status':'FINAL_ASSEMBLY_SUPPORTED_WITH_EXPLICIT_LIMITS','scientific_review':False,'approval':'NONE','exact_root_handoff':bind(O/'HANDOFF.json'),'exact_selector':bind(O/'SELECTOR.json'),'native_pair':pair,'native_content_equal_to_selected_successor':True,'native_schema_and_semantic_validation':{'command':command,'exit_code':run.returncode,'stdout':bind(S/'assembly-native-validation.stdout'),'stderr':bind(S/'assembly-native-validation.stderr'),'helper':bind(F/'scripts/record_review.py'),'schema':bind(F/'schema/record_review.yaml'),'rendered_markdown_byte_exact':True},'source_input_pins':{'total':len(inputs),'context':384,'targets':3,'all_private_captures_and_actual_originals_exact':True,'native_contracts_final_Git_exact':len(context['native_contracts']),'evidence_snapshot_hashes_verified':len(doc['evidence']),'working_tree_attestation_not_claimed_committed':True},'root_pointer_bindings_checked':len(refs),'complete_native_content_review':{'targets':3,'checks':len(doc['checks']),'evidence':len(doc['evidence']),'assessments':len(doc['assessments']),'findings':1,'target_outcomes':{'source-operator':'supported with limits','publication-operator':'supported with limits','private-review-helper':'concern; open minor own-helper finding'}},'verdict_scope':'Overall native needs_curation correctly retains private-helper target concern. No new operator defect; no passing whole-packet claim, no author/source approval or application permission.','own_helper_unchanged':True,'first_rejected_native_draft_and_exit1_preserved':True,'native_metadata_successor_changed_keys':changed,'all_declared_preserved_scopes_exact':True,'test_accounting':{'collection_total':630,'group_counts':dict(counts),'original_run':'11 failed, 619 passed; retained FAILED','original_native_integrations_executed':30,'integration_scope':'20 old +10new actual original-run cases; not a later final clean run','affected_rerun':'13 passed separately; no619+13combinedgreenclaim'},'head':local,'own_source_head':own,'K_clean':True,'QC':'Actual root finalhead exit0 already independently rehashed; not application validation','full_suite_receipt_present_at_assembly':fullsuite.exists(),'full_suite_scope':'Handoff truthfully binds pending at observation; no suite result or actual application inferred. Future completed receipt remains separate.','actual_reviewers':['/root/operator_source_technical','/root/operator_publication_technical','/root/operator_final_skeptic','W07 /root technical assembly; prior science disclosed'],'new_assembly_findings':[],'retained_open_finding':'W07-OPERATOR-LOG-AUDIT-001; root issue receipt required before any helper correction','write_boundary':'Only new skeptical outputs; no root/previous child/code/source/Git/GitHub writes.','ready_for_root_seal':True}
+p=S/'ASSEMBLY-REVIEW-v1.json';assert not p.exists();p.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'review_sha256':sha(p),'pins':len(inputs),'native_validation':run.returncode,'render_exact':True,'full_suite_receipt_exists':fullsuite.exists()}))

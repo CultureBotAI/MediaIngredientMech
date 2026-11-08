@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "status": "frozen_for_independent_re_review_no_actual_application",
+  "plan_keys": [
+    "after_inventory",
+    "baseline_commit",
+    "before_inventory",
+    "bindings",
+    "intake_heads",
+    "operation",
+    "protected_inputs",
+    "records",
+    "repository",
+    "schema_version"
+  ],
+  "acceptance_keys": [
+    "accepted_operations",
+    "baseline_commit",
+    "binding_sha256",
+    "intake_heads",
+    "plan_sha256",
+    "review_bindings",
+    "schema_version",
+    "scope"
+  ],
+  "record_keys": [
+    "after_capture",
+    "before_source_record",
+    "before_yaml_sha256",
+    "change",
+    "kind",
+    "operation_id",
+    "origins",
+    "source_record",
+    "verification"
+  ],
+  "binding_keys": [
+    "binding_id",
+    "path",
+    "published_head",
+    "published_path",
+    "role",
+    "sha256"
+  ],
+  "origin_keys": [
+    "case_hashes",
+    "head_sha",
+    "payload_binding",
+    "proposal_binding",
+    "proposal_id",
+    "worker_slot"
+  ],
+  "binding_roles": [
+    "case_ledger",
+    "decision",
+    "evidence",
+    "producer",
+    "proposal",
+    "reconciliation",
+    "review",
+    "shard"
+  ],
+  "producer_paths": [
+    "src/mediaingredientmech/curate/campaign_owner_apply.py",
+    "scripts/apply_unmatched_campaign_owners.py",
+    "src/mediaingredientmech/curate/publication_guard.py",
+    "src/mediaingredientmech/curate/apply_receipt.py",
+    "src/mediaingredientmech/validation/write_validated.py",
+    "src/mediaingredientmech/validation/mapping_change_receipts.py",
+    "src/mediaingredientmech/export/reviewed_sssom.py",
+    "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+    "src/mediaingredientmech/schema/mech_shared.yaml",
+    "MAPPING_SEMANTICS.md",
+    "uv.lock"
+  ],
+  "approval_literal": "NONE: source application only; no scientific or mapping approval transfers",
+  "functions": [
+    "prepare(root, plan_path, acceptance_path) -> Prepared",
+    "apply(prepared, receipt_dir, enabled=False) -> dict",
+    "verify_completed(root, plan_path, receipt_path) -> dict"
+  ],
+  "protected_inputs_requirement": "All verify_mapping_chain(root).input_hashes; downstream publisher additionally requires policy manifest, suppression sidecar and Rule K baseline preimages.",
+  "complete_case_scope": "One full immutable case_ledger binding; selected owner origins cite exact case hashes. No source case, name or owner equivalence inferred. Final campaign accounting and accepted scientific reviews are separate prerequisites.",
+  "native_promotion": {
+    "shape": "promotion",
+    "source_record": "mapped destination",
+    "before_source_record": "authentic unmapped old path",
+    "before_yaml_sha256": "real non-null preimage",
+    "old_owner_chain": "must be absent",
+    "destination_owner_chain": "must be absent"
+  },
+  "return_proof_fields": "Saved complete receipt plus plan_sha256, receipt_sha256, immutable_input_sha256. Full before_inventory/after_inventory dictionaries and complete records are authoritative only after re-verification.",
+  "limitations": [
+    "No scientific or mapping approval",
+    "No full corpus application or full repository QC performed",
+    "No automatic rollback; partial failure retains reserved backups and failure receipt",
+    "Fresh external output directory required",
+    "Promotion retirement uses atomic no-replace OS primitive on Darwin/Linux, fails closed elsewhere",
+    "Active direct .yml owners currently refused rather than silently skipped",
+    "No coordinator campaign/shard acceptance inferred from a fixture or structural pass"
+  ]
+}

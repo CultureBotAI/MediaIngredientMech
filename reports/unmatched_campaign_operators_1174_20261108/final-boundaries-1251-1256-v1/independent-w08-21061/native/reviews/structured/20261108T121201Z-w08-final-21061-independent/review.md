@@ -1,0 +1,792 @@
+# Independent adversarial exact21061 combined source and publisher code re-review
+
+- Review: 20261108T121201Z-w08-final-21061-independent
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T12:03:49.089621Z
+- Finished UTC: 2026-11-08T12:12:01.165807Z
+- Reviewer: worker08:/root; technical /root/inorganics; skeptical /root/organics; lineage /root/vitamins (independent)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: false
+
+## Summary
+
+#1255 corrected at exact21061, but #1256 remains partly corrected: unrelated staged index-only drift can evade live source scope and a final publisher proof replay can outlive the last live HEAD check.458 combined tests pass including15 real native cases; adversarial residuals still preclude code acceptance.
+
+## Scope And Provenance
+
+Complete source operator and publisher, all3 test modules, exact changed/new code and hash-bound unchanged full16c body bridge; native interfaces and lineage.
+
+Selection: Exact pushed PR1205 head21061, parent7a and16c lineage; J eac/CLAW76c immutable context.
+Coverage: full; 5 reviewed / 5 in the declared population.
+Source: git_commit at Git base 21061aa532401398db70c59a596debf330f70744.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| exact9a1-operator | src/mediaingredientmech/curate/campaign_owner_apply.py # Git commit 21061aa532401398db70c59a596debf330f70744 | source | src/mediaingredientmech/curate/campaign_owner_apply.py |
+| exact9a1-tests | tests/test_campaign_owner_apply.py # Git commit 21061aa532401398db70c59a596debf330f70744 | source | tests/test_campaign_owner_apply.py |
+| combined-publisher | src/mediaingredientmech/campaign_publication.py # Git commit 21061aa532401398db70c59a596debf330f70744 | source | src/mediaingredientmech/campaign_publication.py |
+| combined-publication-tests | tests/test_campaign_publication.py # Git commit 21061aa532401398db70c59a596debf330f70744 | source | tests/test_campaign_publication.py |
+| combined-integration-tests | tests/test_campaign_demotion_integration.py # Git commit 21061aa532401398db70c59a596debf330f70744 | source | tests/test_campaign_demotion_integration.py |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Exact code/context | passed | True | exact9a1-operator, exact9a1-tests, combined-publisher, combined-publication-tests, combined-integration-tests | Exact21061 archive, five reviewed targets and pinned producer/history, local/remote entry observed. |
+| Combined focused tests | passed | True | exact9a1-operator, exact9a1-tests, combined-publisher, combined-publication-tests, combined-integration-tests | 458 pass,zero skip/fail;15 actual source→pinned Claw→publication cases. |
+| Literal filename regression | passed | True | exact9a1-operator, exact9a1-tests | #1255 corrected with full original input/assertion preservation. |
+| Live source staged scope | failed | True | exact9a1-operator, exact9a1-tests | Initial and late index-only unrelated drift completes despite altered staged contract. |
+| Publisher final live proof freshness | failed | True | combined-publisher, combined-publication-tests, combined-integration-tests | HEAD change inside last real source-proof replay escapes final live callback and leaves complete receipts. |
+
+## Scientific And Domain Assessments
+
+### Exact demotion and inherited owner boundaries
+
+provenance: supported. Targets: exact9a1-operator, exact9a1-tests.
+
+Genuine preimage/origin, closed reviewed tuple, same basename MAPPED→AMBIGUOUS/no ontology, exclusive destination/retirement/backups and both-path chain refusal preserved. No new collision or tombstone activation exception.
+
+### Partially corrected1256 source scope
+
+consistency: concern. Targets: exact9a1-operator, exact9a1-tests.
+
+Literal paths and live HEAD improve; cached Git index is omitted and two actual index-only cases falsely complete.
+
+### Native all-slot deletion, history and historical validation
+
+consistency: supported. Targets: combined-publisher, combined-publication-tests, combined-integration-tests.
+
+Zero ontology/registry rows for exact demotion, all old slots removed,27 prefix/held-position preservation, real producer/receipt pins, derived sync and later historical proof supported. No mapping/role approval.
+
+### Final proof replay late HEAD gap
+
+provenance: concern. Targets: combined-publisher, combined-publication-tests, combined-integration-tests.
+
+Actual native private pipeline completes when a commit is injected after the real final proof replay, after capture HEAD validation; success receipts persist.
+
+## Findings
+
+### REJECTION-CODE-001: Literal NUL-delimited Git paths now preserve Unicode and control characters
+
+major / resolved / confirmed; issue key: campaign-owner-apply-literal-git-paths.
+
+Exact21061 uses literal NUL-delimited paths at all live scope checks. Actual original Unicode/newline rejection and demotion controls complete. All23 authored1255 inputs remain; unrelated changes and malformed lists refuse earlier with no owned writes/receipt. No change to prior16c failure evidence.
+
+Disposition: Corrected at reviewed21061/ordinary7a successor. Complete source and test targets reassessed with exact AST/prefix and real native controls. This scoped observation does not close GitHub or accept the remaining1256 defects.
+
+### W08-16C-CODE-002: Unrelated staged index changes can evade all live source scope checks when working bytes are restored
+
+major / open / confirmed; issue key: campaign-owner-apply-late-baseline-freshness.
+
+The new live guard compares the working tree with the accepted commit using git diff --name-only -z &lt;baseline&gt; --. It never inspects the cached index delta. A real unrelated staged change to MAPPING_SEMANTICS.md with working bytes restored to the original passes prepare, apply, and verify_completed and emits a complete non-recovery receipt. This works when staged before prepare and after prepare. HEAD and working contract bytes remain exact, but the index contains a different contract outside the allowed owner paths.
+
+Disposition: Partly corrected: late HEAD and ordinary changed working bytes now refuse at live boundaries. Residual diagnostic W08-21061-SRC-001 demonstrates omitted index-only staged scope. Keep original1256 finding open; no historical proof HEAD lock requested.
+
+### W08-21061-PUB-001: Final source-proof replay can outlive the last live publisher HEAD check
+
+major / open / confirmed; issue key: publisher-final-proof-head-freshness.
+
+The registered HEAD check runs at the beginning of capture.verify. Live recheck subsequently performs the substantial source-proof replay and other checks without checking HEAD again at its completion. The added preflight/final-callback coverage therefore does not retain freshness through the entire final recheck. Run the retained probe with the frozen21061 source and actual pinned Claw76c. The independent negative wrapper calls the real _owner_proof and returns its unchanged result. During the second such call after the publication log has been flushed as complete, make a real private Git commit. This happens in the final live recheck after its capture.verify HEAD check. publish returns complete and both publication/native receipts remain nonempty although actual HEAD differs from accepted source baseline.
+
+## Recommended Actions And Acceptance Checks
+
+### index-scope-fix
+
+Retain exact baseline HEAD and literal NUL path handling, and independently include cached/index changes in the live tracked-scope check. Explicitly define allowed operation-path staged semantics rather than assuming working bytes prove the index. Run the combined checks at the same prewrite, transition, and final live boundaries. Do not extend current-HEAD checks to historical completed verification or weaken payload/content/proof checks.
+
+- Initial and post-prepare staged index-only unrelated drift must refuse before own writes and receipt creation.
+- Midflight index-only drift at actual transition/final live boundaries must fail with honest recovery evidence.
+- Unicode/newline literal paths, explicit reviewed demotion, positive clean apply, and later historical exact-content commits remain supported.
+- Both staged and unstaged unrelated tracked changes remain refused; negative controls keep original all23 #1255 inputs and all prior assertion coverage.
+
+### publisher-final-proof-fix
+
+Retain the live transaction HEAD check through the end of the live recheck after actual source-proof replay and remaining validation, before final success return. Keep the historical completed validator exempt and do not restrict ordinary uncommitted derived synchronization or weaken existing content/proof checks.
+
+- Actual source and pinned generation positive with tracked uncommitted derived sync remains complete.
+- Inject a real HEAD-changing commit after real source-proof replay during the final live publication recheck; publication must fail and clear success-shaped receipts, retaining recovery evidence.
+- Historical validate after a legitimate later commit still verifies exact required bytes; modified current owner/receipt/native proof still refuses.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| ENTRY | .temp/final-21061-independent-v1/entry.json; .temp/final-21061-independent-v1/entry.json | supports | Entry exactPR/local roots and clean source status. |
+| ARCHIVE | .temp/final-21061-independent-v1/frozen/ARCHIVE.json; .temp/final-21061-independent-v1/frozen/ARCHIVE.json | supports | Exact Git tar and complete extracted file/link inventory. |
+| COMMIT | .temp/final-21061-independent-v1/committed-source-bindings.json; .temp/final-21061-independent-v1/committed-source-bindings.json | supports | Exact committed code and contract blobs. |
+| TECHNICAL | .temp/final-21061-independent-v1/technical/review.json; .temp/final-21061-independent-v1/technical/review.json | supports | Whole source/test review,29 actual native controls, scoped1255 resolution and residual1256. |
+| SKEPTIC | .temp/final-21061-independent-v1/skeptic/review.json; .temp/final-21061-independent-v1/skeptic/review.json | supports | Whole publisher/test review,31 stage probes and2 real native pipelines; residual confirmed. |
+| LINEAGE | .temp/final-21061-independent-v1/lineage/review.json; .temp/final-21061-independent-v1/lineage/review.json | supports | Author31/85 and prior sealed archive/27receipts/producer provenance preservation. |
+| TESTS | .temp/final-21061-independent-v1/focused-summary.json; .temp/final-21061-independent-v1/focused-summary.json | supports | 458 actual combined passes:301+142+15, no skips/failures, actual native commands. |
+| RUN | .temp/final-21061-independent-v1/focused/result.json; .temp/final-21061-independent-v1/focused/result.json | supports | Actual executed modules, test runtime and outcome. |
+| COMMAND | .temp/final-21061-independent-v1/focused/command.json; .temp/final-21061-independent-v1/focused/command.json | supports | Exact Python/private workspace/pinned external context. |
+| SRC-PROBE | .temp/final-21061-independent-v1/root-probes/staged-index-results.json; .temp/final-21061-independent-v1/root-probes/staged-index-results.json | supports | Four actual source scenarios; both index-only drift cases falsely complete. |
+| SRC-FINDING | .temp/final-21061-independent-v1/FINDING-W08-21061-SRC-001.json; .temp/final-21061-independent-v1/FINDING-W08-21061-SRC-001.json | supports | File-ready original1256 residual with reproduction/bounded fix. |
+| INDEX-READBACK | .temp/final-21061-independent-v1/technical/index-readback.json; .temp/final-21061-independent-v1/technical/index-readback.json | supports | Independent index and working object reads plus historical verification. |
+| PUB-PROBE | .temp/final-21061-independent-v1/skeptic/native-boundary-results.json; .temp/final-21061-independent-v1/skeptic/native-boundary-results.json | supports | Real generator pipeline proves final proof late-HEAD bypass and tracked-derived/historical positive. |
+| PUB-FINDING | .temp/final-21061-independent-v1/skeptic/FINDING-W08-21061-PUB-001-v2.json; .temp/final-21061-independent-v1/skeptic/FINDING-W08-21061-PUB-001-v2.json | supports | File-ready publisher residual and actual tuple/receipt hashes. |
+| PUB-READBACK | .temp/final-21061-independent-v1/publisher-finding-root-readback.json; .temp/final-21061-independent-v1/publisher-finding-root-readback.json | supports | Root readback of exact actual generated proof and final successful receipt despite HEAD drift. |
+| ISSUE1256 | .temp/final-21061-independent-v1/inputs/issue1256-publisher-comment.json; .temp/final-21061-independent-v1/inputs/issue1256-publisher-comment.json | supports | Exact filed publisher addendum; prior stub limitation explicit. |
+| PRIOR | .temp/final-21061-independent-v1/prior-finding-lineage.json; .temp/final-21061-independent-v1/prior-finding-lineage.json | supports | Exact three native predecessor pairs preserved. |
+| AST | .temp/final-21061-independent-v1/technical/ast-comparison.json; .temp/final-21061-independent-v1/technical/ast-comparison.json | supports | 80,127 original source-test prefix and strengthened1255 tests; no old assertion removed. |
+| PUB-AST | .temp/final-21061-independent-v1/skeptic/input-inspection.json; .temp/final-21061-independent-v1/skeptic/input-inspection.json | supports | Publisher/integration AST and test function comparisons. |
+| ASSESSMENT | .temp/final-21061-independent-v1/ASSESSMENT.md; .temp/final-21061-independent-v1/ASSESSMENT.md | supports | Whole final bounded interpretation, controls, residuals and approval limits. |
+
+## Limits And Additional Notes
+
+- Code review only; no actual campaign source application, candidate/whole-owner/scientific/role/export/whole-plan approval.
+- Private test authority is synthetic mechanical input; successful schema/gates/tests cannot create scientific support.
+- OptionalCI without CLAW_ROOT skips integration; historical test also needs CAMPAIGN_HISTORY_ROOT. Actual run supplied both and zero skips.
+- Public publisher addendum predecessor used a disclosed generator fixture; this review used actual pinned Claw for all15 integration cases and2 separate skeptical pipelines.
+- Old sealed failures and artifacts preserved. Technical static-count first attempt encountered named AST constants and was retained; corrected static counts are separate from actual runtime counts.
+- Native pair source.state=git_commit21061. Supplemental private evidence inspection has unchanged W08 Git base and is not mislabeled as committed code.
+- Read-only explicit Git root context is used for private nested native bundle provenance; no Git metadata/helper changes.
+- No future repair is included. Root owns issue filing, code correction, whole-plan acceptance and final application decisions.
+- Stable exact9a1 target IDs preserve multi-target old finding lineage. All prior native pairs copied byte-exact; no old disposition changed.
+- #1255 resolved is a new scoped observation, not a GitHub issue mutation.1256 remains open and retains original severity.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T121201Z-w08-final-21061-independent
+kind: repository
+repository: CultureBotAI/MediaIngredientMech
+title: Independent adversarial exact21061 combined source and publisher code re-review
+started_at: '2026-11-08T12:03:49.089621Z'
+finished_at: '2026-11-08T12:12:01.165807Z'
+reviewer:
+  identity: worker08:/root; technical /root/inorganics; skeptical /root/organics;
+    lineage /root/vitamins
+  kind: agent
+  independence: independent
+  independence_basis: None authored reviewed code or tests. Earlier W08 source/design/code
+    review involvement disclosed; no self-science approval. Separate actual technical/skeptical
+    execution and reading are bound in receipts.
+skill: reconcile-review-records
+completion: completed
+verdict: needs_curation
+scientific_review: false
+summary: '#1255 corrected at exact21061, but #1256 remains partly corrected: unrelated
+  staged index-only drift can evade live source scope and a final publisher proof
+  replay can outlive the last live HEAD check.458 combined tests pass including15
+  real native cases; adversarial residuals still preclude code acceptance.'
+source:
+  git_revision: 21061aa532401398db70c59a596debf330f70744
+  state: git_commit
+  inputs:
+  - path: .claude/skills/reconcile-review-records/SKILL.md
+    sha256: b8c3e3fdb31e58a49343f20b11c7a1c2a3616f16ef36601ccd072e2693031474
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: justfile
+    sha256: a1237b64f4a5e11a473e99b34ed88b4a0d3a7f23e701bca649248325d83ba57a
+    role: context
+  - path: pyproject.toml
+    sha256: 6f9eebf51774adb8c9ab742f832518ba1682fc43704ad994f73b25829645fef6
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/apply_unmatched_campaign_owners.py
+    sha256: d68fff3b69e6502bb8adad828019b91e9b664687cdaaf4453159dfb81f16cbdb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/campaign_publication.py
+    sha256: 5abfc833c8b52ab1d83a13cf1cdfb67b8c325afc354d015b1e09e42e6ed0a60c
+    role: target
+  - path: src/mediaingredientmech/curate/apply_receipt.py
+    sha256: 6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f
+    role: context
+  - path: src/mediaingredientmech/curate/campaign_owner_apply.py
+    sha256: 21ced557b3ff36bb3db2ac8d092b0af3d46bff1db6045221bdeabb128d4b9022
+    role: target
+  - path: src/mediaingredientmech/curate/publication_guard.py
+    sha256: f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b
+    role: context
+  - path: src/mediaingredientmech/export/reviewed_sssom.py
+    sha256: 2aa3a795d0bd63c99d97883a492bd2654ecd94dd2aa2c000736b76d64b7099f2
+    role: context
+  - path: src/mediaingredientmech/schema/mech_shared.yaml
+    sha256: c2e7054fd32635e380c698282bd886a9105861009b9f0474f02bb1b80865e895
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+  - path: src/mediaingredientmech/validation/mapping_change_receipts.py
+    sha256: f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d
+    role: context
+  - path: src/mediaingredientmech/validation/semantic_release.py
+    sha256: a9bb99c665044bfbb008e9786f1a9aae92e291954f29c186f5c0d9c06f313867
+    role: context
+  - path: src/mediaingredientmech/validation/write_validated.py
+    sha256: 6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9
+    role: context
+  - path: tests/conftest.py
+    sha256: 0d8f8f762981114967674c1b665378a2c9c448a6fcb8a2989db32948d6be8a5c
+    role: context
+  - path: tests/historical_source_anchors.py
+    sha256: ef3d28760a55a6ab17e78ba78ffce04f02825d8ea54e0bd4422322b510f2f2fd
+    role: context
+  - path: tests/test_campaign_demotion_integration.py
+    sha256: 86673b32d4cc581b8dc639813afec6c971c0a38ec174c9d6ab8ea68545b425da
+    role: target
+  - path: tests/test_campaign_owner_apply.py
+    sha256: 6ead533c601956a0441e127cd411cb73c54b76fcfa8ab06a2890f4bd3e987189
+    role: target
+  - path: tests/test_campaign_publication.py
+    sha256: 7536ff9250c44bcceeb57e5a01162decc496b019e4695b23a6000558b2b1c47c
+    role: target
+  - path: uv.lock
+    sha256: f5ce4325376797ada321c0ffba1e6050355e3185c0a079d2c731d17480aeca1a
+    role: context
+scope:
+  description: Complete source operator and publisher, all3 test modules, exact changed/new
+    code and hash-bound unchanged full16c body bridge; native interfaces and lineage.
+  selection: Exact pushed PR1205 head21061, parent7a and16c lineage; J eac/CLAW76c
+    immutable context.
+  coverage: full
+  population_size: 5
+  reviewed_target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  exclusions:
+  - target: Scientific candidates, actual campaign plan/application, roles/export
+    reason: Independent bounded code review only; synthetic test acceptance is not
+      scientific support.
+  - target: Future repairs or broader fullQC in I
+    reason: No inference from future code or independent running full suite.
+targets:
+- target_id: exact9a1-operator
+  path: src/mediaingredientmech/curate/campaign_owner_apply.py
+  kind: source
+  label: src/mediaingredientmech/curate/campaign_owner_apply.py
+  selector: Git commit 21061aa532401398db70c59a596debf330f70744
+  ownership_note: Maintained code/test owned by coordinator/code author. Stable target
+    identifiers retain native predecessor lineage. No scientific/application approval.
+- target_id: exact9a1-tests
+  path: tests/test_campaign_owner_apply.py
+  kind: source
+  label: tests/test_campaign_owner_apply.py
+  selector: Git commit 21061aa532401398db70c59a596debf330f70744
+  ownership_note: Maintained code/test owned by coordinator/code author. Stable target
+    identifiers retain native predecessor lineage. No scientific/application approval.
+- target_id: combined-publisher
+  path: src/mediaingredientmech/campaign_publication.py
+  kind: source
+  label: src/mediaingredientmech/campaign_publication.py
+  selector: Git commit 21061aa532401398db70c59a596debf330f70744
+  ownership_note: Maintained code/test owned by coordinator/code author. Stable target
+    identifiers retain native predecessor lineage. No scientific/application approval.
+- target_id: combined-publication-tests
+  path: tests/test_campaign_publication.py
+  kind: source
+  label: tests/test_campaign_publication.py
+  selector: Git commit 21061aa532401398db70c59a596debf330f70744
+  ownership_note: Maintained code/test owned by coordinator/code author. Stable target
+    identifiers retain native predecessor lineage. No scientific/application approval.
+- target_id: combined-integration-tests
+  path: tests/test_campaign_demotion_integration.py
+  kind: source
+  label: tests/test_campaign_demotion_integration.py
+  selector: Git commit 21061aa532401398db70c59a596debf330f70744
+  ownership_note: Maintained code/test owned by coordinator/code author. Stable target
+    identifiers retain native predecessor lineage. No scientific/application approval.
+checks:
+- check_id: frozen-current
+  name: Exact code/context
+  status: passed
+  required: true
+  summary: Exact21061 archive, five reviewed targets and pinned producer/history,
+    local/remote entry observed.
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  evidence_ids:
+  - ENTRY
+  - ARCHIVE
+  - COMMIT
+  - LINEAGE
+- check_id: focused-native
+  name: Combined focused tests
+  status: passed
+  required: true
+  summary: 458 pass,zero skip/fail;15 actual source→pinned Claw→publication cases.
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  evidence_ids:
+  - TESTS
+  - RUN
+  - COMMAND
+- check_id: literal-paths
+  name: Literal filename regression
+  status: passed
+  required: true
+  summary: '#1255 corrected with full original input/assertion preservation.'
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  evidence_ids:
+  - TECHNICAL
+  - AST
+  - TESTS
+- check_id: live-source-scope
+  name: Live source staged scope
+  status: failed
+  required: true
+  summary: Initial and late index-only unrelated drift completes despite altered staged
+    contract.
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  evidence_ids:
+  - SRC-FINDING
+  - SRC-PROBE
+  - INDEX-READBACK
+- check_id: live-publisher-head
+  name: Publisher final live proof freshness
+  status: failed
+  required: true
+  summary: HEAD change inside last real source-proof replay escapes final live callback
+    and leaves complete receipts.
+  target_ids:
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  evidence_ids:
+  - PUB-FINDING
+  - PUB-PROBE
+  - PUB-READBACK
+evidence:
+- evidence_id: ENTRY
+  kind: validation
+  reference: .temp/final-21061-independent-v1/entry.json
+  locator: .temp/final-21061-independent-v1/entry.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Entry exactPR/local roots and clean source status.
+  snapshot_sha256: 90ae2a0071b798c5185e14186c30ee25d432e94b9f040ed75d12d3d7f06789f2
+- evidence_id: ARCHIVE
+  kind: validation
+  reference: .temp/final-21061-independent-v1/frozen/ARCHIVE.json
+  locator: .temp/final-21061-independent-v1/frozen/ARCHIVE.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Exact Git tar and complete extracted file/link inventory.
+  snapshot_sha256: 059185148d900939761b214a37d69ab580c58ea844e1e9f9e92eaff2c0b05e2e
+- evidence_id: COMMIT
+  kind: validation
+  reference: .temp/final-21061-independent-v1/committed-source-bindings.json
+  locator: .temp/final-21061-independent-v1/committed-source-bindings.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Exact committed code and contract blobs.
+  snapshot_sha256: c777d163c6d5311168532e175e2054bb2f1a887434dd17c10daf9220f35e82e5
+- evidence_id: TECHNICAL
+  kind: prior_review
+  reference: .temp/final-21061-independent-v1/technical/review.json
+  locator: .temp/final-21061-independent-v1/technical/review.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Whole source/test review,29 actual native controls, scoped1255 resolution
+    and residual1256.
+  snapshot_sha256: ec37fd8ddb2d10fb706644043fabf5230a62c90a2efca6d64f71ccfab70b01c6
+- evidence_id: SKEPTIC
+  kind: prior_review
+  reference: .temp/final-21061-independent-v1/skeptic/review.json
+  locator: .temp/final-21061-independent-v1/skeptic/review.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Whole publisher/test review,31 stage probes and2 real native pipelines;
+    residual confirmed.
+  snapshot_sha256: 460be7e1e5330eab40e32c83c2d0bc398aae9c30f990d4d25aefbbbec7258bdb
+- evidence_id: LINEAGE
+  kind: prior_review
+  reference: .temp/final-21061-independent-v1/lineage/review.json
+  locator: .temp/final-21061-independent-v1/lineage/review.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Author31/85 and prior sealed archive/27receipts/producer provenance preservation.
+  snapshot_sha256: 0633053d8f22b3a52e75bc33835a2a400eac2d5f3f313bf2dea598d0d64889fc
+- evidence_id: TESTS
+  kind: validation
+  reference: .temp/final-21061-independent-v1/focused-summary.json
+  locator: .temp/final-21061-independent-v1/focused-summary.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: 458 actual combined passes:301+142+15, no skips/failures, actual native
+    commands.
+  snapshot_sha256: e1f36e829ea823e2f859999a85b8149d3eb9270bef0ebedee3158295583f32f4
+- evidence_id: RUN
+  kind: validation
+  reference: .temp/final-21061-independent-v1/focused/result.json
+  locator: .temp/final-21061-independent-v1/focused/result.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Actual executed modules, test runtime and outcome.
+  snapshot_sha256: 173dbba2fd9b86f0c444e2e80732bc44fe753ea3b742bc3936afc15c3f99306b
+- evidence_id: COMMAND
+  kind: validation
+  reference: .temp/final-21061-independent-v1/focused/command.json
+  locator: .temp/final-21061-independent-v1/focused/command.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Exact Python/private workspace/pinned external context.
+  snapshot_sha256: 3aa2d5080ce468b5a96aec8e492eb6df636ed74a78e5354a53b26f0f76d8d7f3
+- evidence_id: SRC-PROBE
+  kind: validation
+  reference: .temp/final-21061-independent-v1/root-probes/staged-index-results.json
+  locator: .temp/final-21061-independent-v1/root-probes/staged-index-results.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Four actual source scenarios; both index-only drift cases falsely complete.
+  snapshot_sha256: 1eaf8dabd6d44c4586aca0f35a7f5c1bde43a5999f7984b794b4a67b57ca16cf
+- evidence_id: SRC-FINDING
+  kind: record_content
+  reference: .temp/final-21061-independent-v1/FINDING-W08-21061-SRC-001.json
+  locator: .temp/final-21061-independent-v1/FINDING-W08-21061-SRC-001.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: File-ready original1256 residual with reproduction/bounded fix.
+  snapshot_sha256: 96a88a5dece7c67dfc193e8523c6ebc95c49e1df9968285dcbc356c0b83af30b
+- evidence_id: INDEX-READBACK
+  kind: validation
+  reference: .temp/final-21061-independent-v1/technical/index-readback.json
+  locator: .temp/final-21061-independent-v1/technical/index-readback.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Independent index and working object reads plus historical verification.
+  snapshot_sha256: 435632fa0415692f4f08367ac9ec30adff16d33db2eae0cf8f6a3056e4d851a8
+- evidence_id: PUB-PROBE
+  kind: validation
+  reference: .temp/final-21061-independent-v1/skeptic/native-boundary-results.json
+  locator: .temp/final-21061-independent-v1/skeptic/native-boundary-results.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Real generator pipeline proves final proof late-HEAD bypass and tracked-derived/historical
+    positive.
+  snapshot_sha256: 6f26de0d1aedac258eed89d4498be53d04e4f119f7425f0c73592429095e6ab6
+- evidence_id: PUB-FINDING
+  kind: record_content
+  reference: .temp/final-21061-independent-v1/skeptic/FINDING-W08-21061-PUB-001-v2.json
+  locator: .temp/final-21061-independent-v1/skeptic/FINDING-W08-21061-PUB-001-v2.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: File-ready publisher residual and actual tuple/receipt hashes.
+  snapshot_sha256: eae241050ef116b9d666613f87e8a768d137fe671188e78a57c7432b6bcc4d3c
+- evidence_id: PUB-READBACK
+  kind: validation
+  reference: .temp/final-21061-independent-v1/publisher-finding-root-readback.json
+  locator: .temp/final-21061-independent-v1/publisher-finding-root-readback.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Root readback of exact actual generated proof and final successful receipt
+    despite HEAD drift.
+  snapshot_sha256: 69ffbd8cdeb0003235f492f4213943bc9d51297c1f65c5c83f36e0d65069a796
+- evidence_id: ISSUE1256
+  kind: authority
+  reference: .temp/final-21061-independent-v1/inputs/issue1256-publisher-comment.json
+  locator: .temp/final-21061-independent-v1/inputs/issue1256-publisher-comment.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Exact filed publisher addendum; prior stub limitation explicit.
+  snapshot_sha256: b9190ababbc0de787260ff4901cfc5412d5d7113fff65698df8bc073d98bd7b9
+- evidence_id: PRIOR
+  kind: prior_review
+  reference: .temp/final-21061-independent-v1/prior-finding-lineage.json
+  locator: .temp/final-21061-independent-v1/prior-finding-lineage.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Exact three native predecessor pairs preserved.
+  snapshot_sha256: d5afe10125c28df3a6ccdc43b93814091cc632e97840fa35dbf1b650d0a3f9e8
+- evidence_id: AST
+  kind: validation
+  reference: .temp/final-21061-independent-v1/technical/ast-comparison.json
+  locator: .temp/final-21061-independent-v1/technical/ast-comparison.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: 80,127 original source-test prefix and strengthened1255 tests; no old assertion
+    removed.
+  snapshot_sha256: 4d94971bc8f3ee6caa4443097033390b3daadac68bfdc6386571a1d10cb1aadf
+- evidence_id: PUB-AST
+  kind: validation
+  reference: .temp/final-21061-independent-v1/skeptic/input-inspection.json
+  locator: .temp/final-21061-independent-v1/skeptic/input-inspection.json
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Publisher/integration AST and test function comparisons.
+  snapshot_sha256: 94ee5b0996e6b816a12e8008c8f010d09310e8cabb6572644b5f664ebc9d3754
+- evidence_id: ASSESSMENT
+  kind: record_content
+  reference: .temp/final-21061-independent-v1/ASSESSMENT.md
+  locator: .temp/final-21061-independent-v1/ASSESSMENT.md
+  accessed_at: '2026-11-08T12:12:01.165807Z'
+  support: supports
+  summary: Whole final bounded interpretation, controls, residuals and approval limits.
+  snapshot_sha256: d0326736904b1e1f2522f8db8bc45bccf96fbed52c3f9a8b24cd28ac8370015b
+assessments:
+- assessment_id: source-route
+  area: provenance
+  topic: Exact demotion and inherited owner boundaries
+  outcome: supported
+  summary: Genuine preimage/origin, closed reviewed tuple, same basename MAPPED→AMBIGUOUS/no
+    ontology, exclusive destination/retirement/backups and both-path chain refusal
+    preserved. No new collision or tombstone activation exception.
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  evidence_ids:
+  - TECHNICAL
+  - AST
+  - TESTS
+- assessment_id: source-residual
+  area: consistency
+  topic: Partially corrected1256 source scope
+  outcome: concern
+  summary: Literal paths and live HEAD improve; cached Git index is omitted and two
+    actual index-only cases falsely complete.
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  evidence_ids:
+  - SRC-FINDING
+  - SRC-PROBE
+  - INDEX-READBACK
+- assessment_id: publisher-route
+  area: consistency
+  topic: Native all-slot deletion, history and historical validation
+  outcome: supported
+  summary: Zero ontology/registry rows for exact demotion, all old slots removed,27
+    prefix/held-position preservation, real producer/receipt pins, derived sync and
+    later historical proof supported. No mapping/role approval.
+  target_ids:
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  evidence_ids:
+  - SKEPTIC
+  - LINEAGE
+  - TESTS
+  - PUB-PROBE
+- assessment_id: publisher-residual
+  area: provenance
+  topic: Final proof replay late HEAD gap
+  outcome: concern
+  summary: Actual native private pipeline completes when a commit is injected after
+    the real final proof replay, after capture HEAD validation; success receipts persist.
+  target_ids:
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  evidence_ids:
+  - PUB-FINDING
+  - PUB-PROBE
+  - PUB-READBACK
+findings:
+- finding_id: REJECTION-CODE-001
+  issue_key: campaign-owner-apply-literal-git-paths
+  category: other
+  severity: major
+  status: resolved
+  certainty: confirmed
+  title: Literal NUL-delimited Git paths now preserve Unicode and control characters
+  description: Exact21061 uses literal NUL-delimited paths at all live scope checks.
+    Actual original Unicode/newline rejection and demotion controls complete. All23
+    authored1255 inputs remain; unrelated changes and malformed lists refuse earlier
+    with no owned writes/receipt. No change to prior16c failure evidence.
+  disposition_reason: Corrected at reviewed21061/ordinary7a successor. Complete source
+    and test targets reassessed with exact AST/prefix and real native controls. This
+    scoped observation does not close GitHub or accept the remaining1256 defects.
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  field_paths:
+  - _check_mutation_git_state
+  evidence_ids:
+  - TECHNICAL
+  - TESTS
+  - AST
+  - PRIOR
+  ownership_note: Coordinator/code author; no reviewer fix.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1255
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T115104Z-w08-combined-16c-independent
+    finding_id: REJECTION-CODE-001
+- finding_id: W08-16C-CODE-002
+  issue_key: campaign-owner-apply-late-baseline-freshness
+  category: provenance
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Unrelated staged index changes can evade all live source scope checks when
+    working bytes are restored
+  description: The new live guard compares the working tree with the accepted commit
+    using git diff --name-only -z <baseline> --. It never inspects the cached index
+    delta. A real unrelated staged change to MAPPING_SEMANTICS.md with working bytes
+    restored to the original passes prepare, apply, and verify_completed and emits
+    a complete non-recovery receipt. This works when staged before prepare and after
+    prepare. HEAD and working contract bytes remain exact, but the index contains
+    a different contract outside the allowed owner paths.
+  disposition_reason: 'Partly corrected: late HEAD and ordinary changed working bytes
+    now refuse at live boundaries. Residual diagnostic W08-21061-SRC-001 demonstrates
+    omitted index-only staged scope. Keep original1256 finding open; no historical
+    proof HEAD lock requested.'
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  field_paths:
+  - _check_mutation_git_state
+  - _recheck
+  - apply
+  evidence_ids:
+  - SRC-FINDING
+  - SRC-PROBE
+  - INDEX-READBACK
+  - TECHNICAL
+  - SKEPTIC
+  ownership_note: Coordinator deduplicates/files bounded residual before author correction.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1256
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T115104Z-w08-combined-16c-independent
+    finding_id: W08-16C-CODE-002
+- finding_id: W08-21061-PUB-001
+  issue_key: publisher-final-proof-head-freshness
+  category: provenance
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Final source-proof replay can outlive the last live publisher HEAD check
+  description: The registered HEAD check runs at the beginning of capture.verify.
+    Live recheck subsequently performs the substantial source-proof replay and other
+    checks without checking HEAD again at its completion. The added preflight/final-callback
+    coverage therefore does not retain freshness through the entire final recheck.
+    Run the retained probe with the frozen21061 source and actual pinned Claw76c.
+    The independent negative wrapper calls the real _owner_proof and returns its unchanged
+    result. During the second such call after the publication log has been flushed
+    as complete, make a real private Git commit. This happens in the final live recheck
+    after its capture.verify HEAD check. publish returns complete and both publication/native
+    receipts remain nonempty although actual HEAD differs from accepted source baseline.
+  target_ids:
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  field_paths:
+  - prepare.mutation_head_recheck
+  - publish.recheck
+  - publish.final_success
+  evidence_ids:
+  - PUB-FINDING
+  - PUB-PROBE
+  - PUB-READBACK
+  - SKEPTIC
+  - ISSUE1256
+  ownership_note: Coordinator owns filed1256 publisher lineage and any follow-up;
+    no reviewer code edit.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721136073
+actions:
+- action_id: index-scope-fix
+  description: Retain exact baseline HEAD and literal NUL path handling, and independently
+    include cached/index changes in the live tracked-scope check. Explicitly define
+    allowed operation-path staged semantics rather than assuming working bytes prove
+    the index. Run the combined checks at the same prewrite, transition, and final
+    live boundaries. Do not extend current-HEAD checks to historical completed verification
+    or weaken payload/content/proof checks.
+  finding_ids:
+  - W08-16C-CODE-002
+  target_ids:
+  - exact9a1-operator
+  - exact9a1-tests
+  ownership_note: Root files/deduplicates before author fix, then exact-successor
+    review.
+  acceptance_checks:
+  - Initial and post-prepare staged index-only unrelated drift must refuse before
+    own writes and receipt creation.
+  - Midflight index-only drift at actual transition/final live boundaries must fail
+    with honest recovery evidence.
+  - Unicode/newline literal paths, explicit reviewed demotion, positive clean apply,
+    and later historical exact-content commits remain supported.
+  - 'Both staged and unstaged unrelated tracked changes remain refused; negative controls
+    keep original all23 #1255 inputs and all prior assertion coverage.'
+- action_id: publisher-final-proof-fix
+  description: Retain the live transaction HEAD check through the end of the live
+    recheck after actual source-proof replay and remaining validation, before final
+    success return. Keep the historical completed validator exempt and do not restrict
+    ordinary uncommitted derived synchronization or weaken existing content/proof
+    checks.
+  finding_ids:
+  - W08-21061-PUB-001
+  target_ids:
+  - combined-publisher
+  - combined-publication-tests
+  - combined-integration-tests
+  ownership_note: Root/code author, no reviewer edit.
+  acceptance_checks:
+  - Actual source and pinned generation positive with tracked uncommitted derived
+    sync remains complete.
+  - Inject a real HEAD-changing commit after real source-proof replay during the final
+    live publication recheck; publication must fail and clear success-shaped receipts,
+    retaining recovery evidence.
+  - Historical validate after a legitimate later commit still verifies exact required
+    bytes; modified current owner/receipt/native proof still refuses.
+limitations:
+- Code review only; no actual campaign source application, candidate/whole-owner/scientific/role/export/whole-plan
+  approval.
+- Private test authority is synthetic mechanical input; successful schema/gates/tests
+  cannot create scientific support.
+- OptionalCI without CLAW_ROOT skips integration; historical test also needs CAMPAIGN_HISTORY_ROOT.
+  Actual run supplied both and zero skips.
+- Public publisher addendum predecessor used a disclosed generator fixture; this review
+  used actual pinned Claw for all15 integration cases and2 separate skeptical pipelines.
+- Old sealed failures and artifacts preserved. Technical static-count first attempt
+  encountered named AST constants and was retained; corrected static counts are separate
+  from actual runtime counts.
+- Native pair source.state=git_commit21061. Supplemental private evidence inspection
+  has unchanged W08 Git base and is not mislabeled as committed code.
+- Read-only explicit Git root context is used for private nested native bundle provenance;
+  no Git metadata/helper changes.
+- No future repair is included. Root owns issue filing, code correction, whole-plan
+  acceptance and final application decisions.
+notes:
+- Stable exact9a1 target IDs preserve multi-target old finding lineage. All prior
+  native pairs copied byte-exact; no old disposition changed.
+- '#1255 resolved is a new scoped observation, not a GitHub issue mutation.1256 remains
+  open and retains original severity.'
+```

@@ -1,0 +1,1727 @@
+........................................................................ [ 11%]
+........................................................................ [ 22%]
+........................................................................ [ 34%]
+........................................................................ [ 45%]
+........................................................................ [ 57%]
+........................................................................ [ 68%]
+.......................................................FFFFFFFFFF....... [ 80%]
+........................................................................ [ 91%]
+...........F..........................................                   [100%]
+=================================== FAILURES ===================================
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.curate.publication_guard] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep0')
+dependency = 'mediaingredientmech.curate.publication_guard', stale_pin = False
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...inal-v1/fixtures/test_1195_preloaded_public_dep0/workspace', 'mediaingredientmech.curate.publication_guard', 'False'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep0/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep0/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep0/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep0/workspace', 'mediaingredientmech.curate.publication_guard', 'False']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.validation.mapping_change_receipts] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep1')
+dependency = 'mediaingredientmech.validation.mapping_change_receipts'
+stale_pin = False
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...xtures/test_1195_preloaded_public_dep1/workspace', 'mediaingredientmech.validation.mapping_change_receipts', 'False'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep1/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep1/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep1/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep1/workspace', 'mediaingredientmech.validation.mapping_change_receipts', 'False']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.export.reviewed_sssom] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep2')
+dependency = 'mediaingredientmech.export.reviewed_sssom', stale_pin = False
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...d-final-v1/fixtures/test_1195_preloaded_public_dep2/workspace', 'mediaingredientmech.export.reviewed_sssom', 'False'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep2/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep2/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep2/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep2/workspace', 'mediaingredientmech.export.reviewed_sssom', 'False']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.sssom_metadata] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep3')
+dependency = 'mediaingredientmech.sssom_metadata', stale_pin = False
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...combined-final-v1/fixtures/test_1195_preloaded_public_dep3/workspace', 'mediaingredientmech.sssom_metadata', 'False'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep3/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep3/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep3/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep3/workspace', 'mediaingredientmech.sssom_metadata', 'False']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.synonym_policy] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep4')
+dependency = 'mediaingredientmech.synonym_policy', stale_pin = False
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...combined-final-v1/fixtures/test_1195_preloaded_public_dep4/workspace', 'mediaingredientmech.synonym_policy', 'False'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep4/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep4/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep4/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep4/workspace', 'mediaingredientmech.synonym_policy', 'False']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.curate.publication_guard] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep5')
+dependency = 'mediaingredientmech.curate.publication_guard', stale_pin = True
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...final-v1/fixtures/test_1195_preloaded_public_dep5/workspace', 'mediaingredientmech.curate.publication_guard', 'True'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep5/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep5/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep5/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep5/workspace', 'mediaingredientmech.curate.publication_guard', 'True']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.validation.mapping_change_receipts] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep6')
+dependency = 'mediaingredientmech.validation.mapping_change_receipts'
+stale_pin = True
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...ixtures/test_1195_preloaded_public_dep6/workspace', 'mediaingredientmech.validation.mapping_change_receipts', 'True'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep6/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep6/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep6/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep6/workspace', 'mediaingredientmech.validation.mapping_change_receipts', 'True']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.export.reviewed_sssom] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep7')
+dependency = 'mediaingredientmech.export.reviewed_sssom', stale_pin = True
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use...ed-final-v1/fixtures/test_1195_preloaded_public_dep7/workspace', 'mediaingredientmech.export.reviewed_sssom', 'True'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep7/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep7/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep7/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep7/workspace', 'mediaingredientmech.export.reviewed_sssom', 'True']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.sssom_metadata] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep8')
+dependency = 'mediaingredientmech.sssom_metadata', stale_pin = True
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use.../combined-final-v1/fixtures/test_1195_preloaded_public_dep8/workspace', 'mediaingredientmech.sssom_metadata', 'True'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep8/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep8/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep8/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep8/workspace', 'mediaingredientmech.sssom_metadata', 'True']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.synonym_policy] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep9')
+dependency = 'mediaingredientmech.synonym_policy', stale_pin = True
+
+    @pytest.mark.parametrize(
+        "dependency",
+        [
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.validation.mapping_change_receipts",
+            "mediaingredientmech.export.reviewed_sssom",
+            "mediaingredientmech.sssom_metadata",
+            "mediaingredientmech.synonym_policy",
+        ],
+    )
+    @pytest.mark.parametrize("stale_pin", [False, True])
+    def test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution(
+        tmp_path, dependency, stale_pin
+    ):
+        package = tmp_path / "private-package"
+        shutil.copytree(
+            ROOT / "src", package / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc")
+        )
+        for name in (
+            "scripts/apply_unmatched_campaign_owners.py",
+            "scripts/validate_sssom_invariants.py",
+            "MAPPING_SEMANTICS.md",
+            "uv.lock",
+            "tests/test_campaign_publication.py",
+            c.MAKER,
+        ):
+            put(package, name, (ROOT / name).read_bytes())
+        probe = put(
+            tmp_path,
+            "preloaded-publisher.py",
+            b"""import hashlib, importlib, importlib.util, json, sys
+    from pathlib import Path
+    import pytest
+    package, workspace, name, stale = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], sys.argv[4] == 'True'
+    public = importlib.import_module(name)
+    path = Path(public.__file__)
+    old = path.read_bytes()
+    marker = b"\\n_campaign_publication_test_marker = 'fresh captured execution'\\n"
+    path.write_bytes(old + marker)
+    from mediaingredientmech import campaign_publication as c
+    bound = c._BOUND_NATIVE[name]
+    spec = importlib.util.spec_from_file_location('fixture', package/'tests/test_campaign_publication.py')
+    fixture = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture)
+    workspace.mkdir()
+    case = fixture.case.__wrapped__(workspace, pytest.MonkeyPatch())
+    if stale:
+        relative = 'src/' + name.replace('.', '/') + '.py'
+        (case['root']/relative).write_bytes(old)
+        case['plan']['publication_producers'][relative] = hashlib.sha256(old).hexdigest()
+        fixture.save(case)
+    before = (case['root']/c.SOURCE).read_bytes()
+    try:
+        result = c.publish(case['root'], case['path'], case['out'])
+        outcome = {'accepted': True, 'status': result['status']}
+    except ValueError as error:
+        outcome = {'accepted': False, 'error': str(error)}
+    outcome.update(public_unchanged=sys.modules[name] is public and not hasattr(public, '_campaign_publication_test_marker'), private_executed=bound is not public and bound._campaign_publication_test_marker == 'fresh captured execution', executed_bytes=bound._campaign_executed_source.content == old + marker, source_unchanged=(case['root']/c.SOURCE).read_bytes() == before, no_publication_outputs=not list(case['out'].iterdir()))
+    print(json.dumps(outcome))
+    """,
+        )
+>       run = subprocess.run(
+            [
+                os.sys.executable,
+                str(probe),
+                str(package),
+                str(tmp_path / "workspace"),
+                dependency,
+                str(stale_pin),
+            ],
+            env=dict(os.environ, PYTHONPATH=str(package / "src"), PYTHONDONTWRITEBYTECODE="1"),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+tests/test_campaign_publication.py:1303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Use.../combined-final-v1/fixtures/test_1195_preloaded_public_dep9/workspace', 'mediaingredientmech.synonym_policy', 'True'],)
+kwargs = {'env': {'BUN_INSTALL': '/Users/marcin/.bun', 'CAMPAIGN_HISTORY_ROOT': '/Users/marcin/Documents/VIMSS/ontology/Mechs/M...107/workers/w07/worktree/.temp/four-suppression-policy-independent-v1', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 1 args: ['/Users/marcin/Documents/VIMSS/ontology/Mechs/M...>
+stdout = ''
+stderr = 'Traceback (most recent call last):\n  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/al...1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep9/private-package/scripts/record_review.py\'\n'
+retcode = 1
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep9/preloaded-publisher.py', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep9/private-package', '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/checks/combined-final-v1/fixtures/test_1195_preloaded_public_dep9/workspace', 'mediaingredientmech.synonym_policy', 'True']' returned non-zero exit status 1.
+
+/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/subprocess.py:579: CalledProcessError
+_ test_completed_native_review_requires_full_actual_transition_scope[partial-reviewed-targets] _
+
+suppression_case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'partial-reviewed-targets'
+
+    @pytest.mark.parametrize(
+        "fault", ["required-not-applicable", "partial-coverage", "partial-reviewed-targets"]
+    )
+    def test_completed_native_review_requires_full_actual_transition_scope(suppression_case, fault):
+        root, _, plan, *_ = suppression_case
+        selection, review = reviewed_selection(suppression_case)
+        if fault == "required-not-applicable":
+            review["checks"][0]["status"] = "not_applicable"
+        elif fault == "partial-coverage":
+            review["scope"]["coverage"] = "partial"
+        else:
+            review["scope"]["coverage"] = "partial"
+            review["scope"]["reviewed_target_ids"] = review["scope"]["reviewed_target_ids"][:-1]
+        module = c._BOUND_NATIVE["campaign_native_record_review"]
+>       module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+
+tests/test_campaign_suppressions.py:331: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...idence_ids': ['TRANSITION'], 'name': 'Fixture tuple equality', 'required': True, ...}], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+            raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+        start, finish = timestamp(review["started_at"]), timestamp(review["finished_at"])
+        if finish < start:
+            raise ReviewError("review finished_at precedes started_at")
+        if not review["review_id"].startswith(finish.strftime("%Y%m%dT%H%M%SZ") + "-"):
+            raise ReviewError("review_id must begin with the finished UTC timestamp and a hyphen")
+        targets = _unique([item["target_id"] for item in review["targets"]], "target IDs")
+        _unique([(item["path"], item.get("selector")) for item in review["targets"]], "target locators")
+        inputs = _unique([item["path"] for item in review["source"]["inputs"]], "input paths")
+        for name in inputs:
+            relative_path(name)
+        for item in review["targets"]:
+            relative_path(item["path"])
+            if item["path"] not in inputs:
+                raise ReviewError("each target path must identify a hashed source input")
+            if item["kind"] == "snapshot_row" and not item.get("selector"):
+                raise ReviewError("snapshot-row targets require an exact selector")
+            _owners(item, f"target {item['target_id']}")
+        scope = review["scope"]
+        _references(scope["reviewed_target_ids"], targets, "reviewed target IDs")
+        if scope["population_size"] < len(targets):
+            raise ReviewError("population_size is smaller than the explicitly selected targets")
+        if scope["coverage"] == "full" and scope["population_size"] != len(scope["reviewed_target_ids"]):
+            raise ReviewError("full coverage requires every population member to be reviewed")
+        if scope["coverage"] == "sampled" and not scope.get("sampling_method"):
+            raise ReviewError("sampled reviews require a sampling method")
+        if review["kind"] == "record" and (len(targets) != 1 or scope["population_size"] != 1):
+            raise ReviewError("a record review must identify exactly one record")
+        if review["completion"] == "completed" and set(scope["reviewed_target_ids"]) != targets:
+>           raise ReviewError("completed review has explicitly selected targets left unreviewed")
+E           _mim_campaign_native_be7547986c1d4cd09c3aba6e23f98138.campaign_native_record_review.ReviewError: completed review has explicitly selected targets left unreviewed
+
+scripts/record_review.py:240: ReviewError
+=============================== warnings summary ===============================
+../../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.curate.publication_guard]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.validation.mapping_change_receipts]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.export.reviewed_sssom]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.sssom_metadata]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.synonym_policy]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.curate.publication_guard]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.validation.mapping_change_receipts]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.export.reviewed_sssom]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.sssom_metadata]
+FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.synonym_policy]
+FAILED tests/test_campaign_suppressions.py::test_completed_native_review_requires_full_actual_transition_scope[partial-reviewed-targets]
+11 failed, 619 passed, 12 warnings in 1058.18s (0:17:38)

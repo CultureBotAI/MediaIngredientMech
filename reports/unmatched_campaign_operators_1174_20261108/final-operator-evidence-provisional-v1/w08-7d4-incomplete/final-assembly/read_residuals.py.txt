@@ -1,0 +1,55 @@
+"""Read existing actual proof objects. No application/probe or test rerun."""
+import datetime,hashlib,json,os,subprocess
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-7d4db26-independent-v1';O=P/'final-assembly'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def dig(b):return hashlib.sha256(b).hexdigest()
+def ref(p):return {'path':str(p),'sha256':sha(p),'size':p.stat().st_size}
+def js(p):return json.loads(p.read_text())
+def git(p,*args):return subprocess.check_output(['git','-C',str(p),*args],env=os.environ|{'GIT_OPTIONAL_LOCKS':'0'})
+checks=[]
+def ck(n,v,**k):checks.append({'check':n,'passed':bool(v),**k})
+win=[]
+for x in js(P/'index-window-probes/results.json')['results']:
+ d=Path(x['fixture']);receipt=d/'receipt/application.json';data=js(receipt);idx=d/'.git/index';idxbefore=sha(idx)
+ ck(x['mode']+' actual receipt exact',sha(receipt)==x['receipt_sha256'] and data['state']==x['receipt_state'] and data['recovery_required']==x['recovery_required'])
+ reads=[]
+ for inj in x['injections']:
+  actual=git(d,'show',':'+inj['path']);working=d/inj['path'];obj=git(d,'cat-file','blob',inj['git_blob'])
+  reads.append({'path':inj['path'],'index_sha256':dig(actual),'working':ref(working),'git_blob':inj['git_blob'],'git_blob_sha256':dig(obj)})
+  ck(x['mode']+' actual injected index differs from accepted working bytes',dig(actual)==inj['index_sha256']==dig(obj) and sha(working)==inj['working_sha256'] and dig(actual)!=sha(working))
+ head=git(d,'rev-parse','HEAD').decode().strip()
+ if x['mode']!='positive_staged_installed':ck(x['mode']+' actual head remains accepted',head==x['accepted_baseline'])
+ ck(x['mode']+' readback did not alter index',sha(idx)==idxbefore)
+ win.append({'mode':x['mode'],'fixture':str(d),'receipt':ref(receipt),'receipt_state':data['state'],'source_records':data.get('records'),'actual_head':head,'accepted_baseline':x['accepted_baseline'],'index_reads':reads,'historical_verification_from_original_runner':x['historical_verification'],'scope':'Actual Git/blob/receipt bytes inspected without applying or rerunning native historical proof; positive fixture intentionally has a later legitimate commit.'})
+flags=[]
+for x in js(P/'technical/index-flag-results.json')['results']:
+ d=R/x['fixture'];idx=d/'.git/index';ib=sha(idx);name=x['path'];base=git(d,'show',x['baseline']+':'+name);index=git(d,'show',':'+name);flag=git(d,'ls-files','-v','--',name).decode();head=git(d,'rev-parse','HEAD').decode().strip();wp=d/name;rp=d/'receipt/application.json'
+ ck(x['mode']+' actual stable flags and bytes',dig(base)==x['baseline_sha256'] and dig(index)==x['index_sha256'] and sha(wp)==x['working_sha256'] and flag==x['actual_flags'] and head==x['baseline'] and dig(base)==dig(index)!=sha(wp))
+ if x['receipt_sha256']:ck(x['mode']+' complete receipt exact',sha(rp)==x['receipt_sha256'] and js(rp)['state']=='complete')
+ else:ck(x['mode']+' no application receipt',not rp.exists())
+ ck(x['mode']+' readback leaves index exact',sha(idx)==ib)
+ flags.append({'mode':x['mode'],'path':name,'fixture':str(d),'working':ref(wp),'baseline_sha256':dig(base),'index_sha256':dig(index),'literal_flag':flag,'head':head,'receipt':ref(rp) if rp.exists() else None,'scope':'Ordinary baseline-tracked notes path outside accepted owners and protected inputs. Native code did not write this caller-modified file.'})
+protected=[]
+for x in js(P/'technical/protected-flag-results.json')['results']:
+ d=R/x['fixture'];ck(x['flag']+' captured contract control has no receipt',not (d/'receipt/application.json').exists() and x['owners_unchanged'] and x['receipt_absent']);protected.append({'fixture':str(d),'flag':x['flag'],'original_error':x['error'],'contract':ref(d/'MAPPING_SEMANTICS.md'),'scope':'Original actual native runner refused protected captured input; this check reads its bytes and absent receipt, not a new application.'})
+publisher=[]
+original=js(P/'skeptic/native-boundary-results.json')['results'];fresh=js(P/'skeptic/fresh-native-results.json')
+for x in original+[fresh]:
+ d=Path(x['fixture']);hashes=x.get('artifacts',x.get('artifact_hashes'));refs=[]
+ for name,h in hashes.items():
+  q=d/name;ck(d.name+' artifact '+name,sha(q)==h);refs.append(ref(q))
+ cmd=js(d/'reports/native/command.json');gen=js(d/'reports/native/generation.json');src=js(d/'source-receipt/application.json')
+ ck(d.name+' actual source and native generation',cmd['returncode']==0 and gen['external_sssom_validation']=='passed' and gen['source_revisions']['claw']=='76c1ebeea3fc7f80bf1abe044688f298f390cfac' and src['state']=='complete' and src['approval'].startswith('NONE'))
+ pp=d/'reports/publication/publication.json';np=d/'reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json'
+ if d.name=='tracked-derived-positive':ck('publisher positive receipt and native hash agree',js(pp)['status']=='complete' and js(pp)['receipt_sha256']==sha(np))
+ else:ck(d.name+' late refusal empties both success receipts',pp.stat().st_size==np.stat().st_size==0)
+ publisher.append({'fixture':str(d),'inputs':refs,'actual_generator_exit':cmd['returncode'],'source_records':src['records'],'current_publication_bytes':pp.stat().st_size,'current_native_bytes':np.stat().st_size,'qualification':'Existing authentic native fixture inspected, not rerun. Positive owner was deliberately changed after historical-positive validation; no claim current whole owner still valid.'})
+tech=js(P/'technical/review-v2.json');old=js(P/'technical/review.json')
+changed=[k for k in old if old[k]!=tech.get(k)]
+ck('technical metadata successor only output log map changes old fields',changed==['outputs'] and {k:v for k,v in old['outputs'].items() if k!='finalize-command.log'}=={k:v for k,v in tech['outputs'].items() if k!='finalize-command.log'} and sha(P/'technical/finalize-command.log')==tech['outputs']['finalize-command.log'])
+ck('technical prior receipt preserved',sha(P/'technical/review.json')==tech['metadata_correction']['predecessor_sha256'])
+inputs=[P/n for n in ['FINDING-W08-7D4DB26-SRC-001-v2.json','technical/FINDING-W08-7D4DB26-SRC-002-v2.json','technical/review-v2.json','skeptic/review-v2.json','flag-finding-root-readback.json','INITIAL-RESIDUAL-RESULTS.json','INITIAL-RESIDUAL-ADDENDUM-v1.json','index-window-probes/results.json','technical/index-flag-results.json','technical/protected-flag-results.json','skeptic/native-boundary-results.json','skeptic/fresh-native-results.json','provenance/probe_index_window.py','technical/index_flag_probes.py','technical/review.json','technical/finalize-command.log']]
+out={'reviewer':'worker08:/root/vitamins','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS' if all(x['passed'] for x in checks) else 'FAIL','scope':'Independent assembly readback of existing actual Git/index/receipt evidence; no new probes, native application or suite.','checks':checks,'inputs':[ref(p) for p in inputs],'index_window_actual_reads':win,'flag_actual_reads':flags,'protected_controls':protected,'publisher_actual_reads':publisher,'finding_accounting':'Two distinct diagnostic members belong to one still-open native W08-16C-CODE-002/#1256. Publisher W08-21061-PUB-001 correction is scoped to tested exact7d; #1255 remains resolved without altering prior receipts.','new_assembly_findings':[],'limitations':['Actual object readback confirms saved residual evidence; it does not reproduce application scheduling.','The flag defect excludes captured protected inputs, which separately refused.','Historical completed proof remains later-commit/index tolerant; no new permanent current-index lock is demanded.','Three actual publisher generator fixtures include five high-level scenarios: two initial full lifecycles and three additional probes sharing one fresh native fixture. Do not report five distinct generator runs.']}
+with (O/'residual-readback.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'status':out['status'],'checks':len(checks),'failed':[x for x in checks if not x['passed']],'output':ref(O/'residual-readback.json')},indent=2))

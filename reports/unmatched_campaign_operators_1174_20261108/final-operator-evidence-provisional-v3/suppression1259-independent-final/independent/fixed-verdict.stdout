@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-08T13:24:15.154881+00:00",
+  "draft_source_sha256": "1108dd82061a03a4348de447834577a389f2692f15627877042b35f615fd1e24",
+  "draft_test_sha256": "d325f7f05744521a44c9cc309a387e153e9a73b0a57aa6105440f149932be816",
+  "stable_during_probe": true,
+  "scope": "Actual pinned original119-input/native-parser and event/owner joins; synthetic transition review/proof/generation declarations in author focused fixture. No prepare/source/publish called.",
+  "results": [
+    {
+      "control": "positive",
+      "native_review_verdict": "pass_with_limitations",
+      "required_check": "passed",
+      "result": {
+        "status": "ACCEPTED_TRANSITION",
+        "rows": 38,
+        "approval": "NONE"
+      }
+    },
+    {
+      "control": "blocked-required-failure",
+      "native_review_verdict": "blocked",
+      "required_check": "failed",
+      "result": {
+        "status": "REFUSED",
+        "exception": "ValueError",
+        "message": "Campaign publication: transition review verdict/required checks do not pass"
+      }
+    },
+    {
+      "control": "needs-curation-required-failure",
+      "native_review_verdict": "needs_curation",
+      "required_check": "failed",
+      "result": {
+        "status": "REFUSED",
+        "exception": "ValueError",
+        "message": "Campaign publication: transition review verdict/required checks do not pass"
+      }
+    }
+  ],
+  "maintained_writes": false
+}

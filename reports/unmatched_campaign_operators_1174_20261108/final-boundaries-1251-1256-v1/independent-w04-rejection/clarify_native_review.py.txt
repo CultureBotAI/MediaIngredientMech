@@ -1,0 +1,32 @@
+from pathlib import Path
+import copy,datetime,hashlib,importlib.util,json,os,shlex,subprocess,sys
+R=Path.cwd();O=R/'.temp/rejection-fix-independent-v1';F=O/'frozen-head';V=O/'native-private-overlay';sha=lambda b:hashlib.sha256(b).hexdigest()
+def j(n):return json.loads((O/n).read_bytes())
+def put(p,b):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as h:h.write(b)
+def save(n,x):put(O/n,(json.dumps(x,indent=2,ensure_ascii=False)+'\n').encode())
+def ref(n):return {'path':n,'sha256':sha((O/n).read_bytes())}
+oldreceipt=j('native-review-receipt.json');now=datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+clarification={'at':now,'reported_before_correction':True,'scope':'Report-only precision; no source/code/test/assessment/finding change.','preserved_previous_native_pair':[ref(oldreceipt['yaml']),ref(oldreceipt['markdown'])],'qualification':'Six oldeac/d691/9a1 exact-function lineage calls used two-owner private inventories. Complete2956-before/933operation record-stage evidence is a separate technical replay.','execution_evidence':'technical/execution-receipts.json holds actual commands and process exit codes; test-coverage.json holds JUnit case-level outcomes. Both now explicitly bound.','verdict_unchanged':'needs_curation; open major REJECTION-CODE-001.','final_reviewer_requested_exact_scope':'/root/correction_chemistry'}
+save('NATIVE-REPORT-CLARIFICATION.json',clarification)
+for n in ['technical/execution-receipts.json','NATIVE-REPORT-CLARIFICATION.json']:put(V/n,(O/n).read_bytes())
+os.environ['GIT_DIR']=subprocess.check_output(['git','rev-parse','--absolute-git-dir'],text=True).strip();os.environ['GIT_WORK_TREE']=str(V);os.environ['GIT_OPTIONAL_LOCKS']='0'
+spec=importlib.util.spec_from_file_location('rejection_native_review_v2',F/'scripts/record_review.py');m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+old=m.read_review(V,str(Path(oldreceipt['yaml']).relative_to('native-private-overlay')));m.assert_current_source(V,old);review=copy.deepcopy(old)
+review['review_id']=now.replace('-','').replace(':','')+'-rejection-fix-independent-v2';review['finished_at']=now
+extras=[x['path'] for x in old['source']['inputs']]+['technical/execution-receipts.json','NATIVE-REPORT-CLARIFICATION.json'];review['source']=m.inspect_source(V,review['targets'],extras)['source']
+for ev in review['evidence']:
+ if ev['evidence_id']=='lineage':ev['summary']='Six exact-function lineage calls on the two authentic W03 before/after pairs in isolated two-owner inventories: oldeac passes2, d691 refuses2,9a1 passes2. Not full old-version prepare/apply or a whole-corpus lineage replay. The separate technical933record-stage proof carries full2956-before context.'
+ if ev['evidence_id']=='test-coverage':ev['summary']='JUnit case-level outcomes show134 source tests passing initially and118 publication tests passing after an exact missing-producer supplement. Full initial failure rows are preserved. Actual commands and return codes are in separately bound execution-receipts.json.'
+for eid,n,summary in [('executions','technical/execution-receipts.json','Actual four commands, return codes, runtime/dependency versions, log/JUnit hashes, missing-producer failure and bounded118-test rerun. No false claim of a clean initial252run.'),('clarification','NATIVE-REPORT-CLARIFICATION.json','Preserves the first native pair and records this narrow fixture-denominator and command-source clarification; source conclusions and major finding unchanged.')]:
+ review['evidence'].append({'evidence_id':eid,'kind':'validation','reference':str(O/n),'accessed_at':now,'support':'supports','summary':summary,'snapshot_sha256':sha((O/n).read_bytes())})
+ids=[t['target_id'] for t in review['targets']]
+for cmd in j('technical/execution-receipts.json')['commands']:
+ review['checks'].append({'check_id':'execution-'+cmd['id'],'name':cmd['id'],'status':'passed' if cmd['exit_code']==0 else 'failed','required':cmd['id']!='full252-initial','summary':cmd.get('result','Actual bounded private native command; exact result/log hashes in execution receipt.'),'target_ids':ids,'command':shlex.join(cmd['argv']),'exit_code':cmd['exit_code'],'evidence_ids':['executions'],'scope_note':'Initial full252 attempt retained as incomplete private fixture failure; source134 passed. Only affected publication118 rerun after exact committed missing-producer capture.' if cmd['id']=='full252-initial' else 'Native private execution only; no campaign application or scientific approval.'})
+review['related_reviews']=[{'repository':old['repository'],'review_id':old['review_id'],'relationship':'Immutable report-precision successor; prior pair preserved, same targets and open finding, no source correction.'}]
+review['findings'][0]['previous_occurrences']=[{'repository':old['repository'],'review_id':old['review_id'],'finding_id':'REJECTION-CODE-001'}]
+review['notes']=['Active report version2: precisely separates six two-owner historical-function calls from the separate full933record-stage replay and binds actual execution commands/exit codes. The previous native pair remains immutable.']
+m.validate_review(review);p=m.save_review(V,review);saved=m.read_review(V,str(p.relative_to(V)));m.assert_current_source(V,saved);assert p.with_suffix('.md').read_text()==m.render_markdown(saved)
+receipt={'status':'VALID_NATIVE_TECHNICAL_REVIEW_PAIR_WITH_OPEN_MAJOR_FINDING','yaml':str(p.relative_to(O)),'yaml_sha256':sha(p.read_bytes()),'markdown':str(p.with_suffix('.md').relative_to(O)),'markdown_sha256':sha(p.with_suffix('.md').read_bytes()),'targets':2,'inputs':len(review['source']['inputs']),'verdict':'needs_curation','scientific_review':False,'head':'9a1a4a35498a1bee0fc8b68653d1fc152cfff81b','native_validation_and_readback':'PASS','supersedes':ref('native-review-receipt.json'),'clarification':ref('NATIVE-REPORT-CLARIFICATION.json')};save('native-review-receipt-v2.json',receipt)
+core=j('REVIEW-CORE.json');core['files'] += [ref('native-review-receipt-v2.json'),ref(receipt['yaml']),ref(receipt['markdown']),ref('NATIVE-REPORT-CLARIFICATION.json'),ref('technical/execution-receipts.json')];core['active_native_receipt']='native-review-receipt-v2.json';core['supersedes_core']=ref('REVIEW-CORE.json');save('REVIEW-CORE-v2.json',core);print(json.dumps(receipt,indent=2))

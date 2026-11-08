@@ -1,0 +1,12 @@
+from pathlib import Path
+import subprocess, os, json, datetime, hashlib, sys
+d=Path(__file__).resolve().parent; w=d/'private'; c=d.parents[1]; r=c.parents[1]; t=r/'.temp/kgm-unmapped-20261107'
+out=d/sys.argv[1]; out.mkdir(); (out/'temporary').mkdir()
+files=sys.argv[2:] or ['tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py']
+cmd=[str(t/'env/bin/python'),'-B','-m','pytest','-q',*files,'-x','--basetemp='+str(out/'fixtures')]
+env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1','PYTHONPATH':str(w/'src'),'UV_OFFLINE':'1','GIT_OPTIONAL_LOCKS':'0','CLAW_ROOT':str(t/'claw'),'CAMPAIGN_HISTORY_ROOT':str(c/'integration/curation-worktree'),'TMPDIR':str(out/'temporary')}
+start=datetime.datetime.now(datetime.UTC).isoformat()
+(out/'command.json').write_text(json.dumps({'argv':cmd,'cwd':str(w),'environment':{k:env[k] for k in ['PYTHONPATH','CLAW_ROOT','CAMPAIGN_HISTORY_ROOT','TMPDIR','UV_OFFLINE','PYTHONDONTWRITEBYTECODE','GIT_OPTIONAL_LOCKS']},'started_at':start},indent=2)+'\n')
+with (out/'run.log').open('wb') as f: result=subprocess.run(cmd,cwd=w,env=env,stdout=f,stderr=subprocess.STDOUT)
+receipt={'started_at':start,'finished_at':datetime.datetime.now(datetime.UTC).isoformat(),'exit_code':result.returncode,'log_sha256':hashlib.sha256((out/'run.log').read_bytes()).hexdigest()}
+(out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n'); print(receipt)

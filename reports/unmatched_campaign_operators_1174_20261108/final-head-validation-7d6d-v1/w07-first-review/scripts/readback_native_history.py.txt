@@ -1,0 +1,23 @@
+from pathlib import Path
+import sys,os,json,hashlib,datetime,traceback
+O=Path(__file__).resolve().parents[1];W=O.parents[1];C=W.parents[2];P=O/'runtime-code';A=C/'integration/campaign-suppressions1259-v1';J=C/'integration/curation-worktree'
+assert sys.dont_write_bytecode
+os.environ.update(GIT_OPTIONAL_LOCKS='0',GIT_NO_LAZY_FETCH='1')
+sys.path.insert(0,str(P/'src'))
+from mediaingredientmech import campaign_publication as c
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+original=c.native.verify_mapping_chain(J)
+results=[dict(root=str(J),receipt_count=len(original['receipts']),input_hashes=original['input_hashes'],receipt_inputs=original['receipt_inputs'],native_status='PASS')]
+fixtures=A/'checks/combined-final-v1/fixtures'
+for name,n,plan in [('test_real_demotion_preserves_20',28,'reports/publication-input/plan.json'),('test_real_four_suppressions_so0',28,'reports/publication-plan.json'),('test_real_completed_native_suf0',29,'reports/publication-plan.json')]:
+ root=fixtures/name;start=now();proof=c.native.verify_mapping_chain(root);assert len(proof['receipts'])==n
+ assert all(proof['receipt_inputs'].get(p)==h for p,h in original['receipt_inputs'].items())
+ before={p:sha(root/p) for p in proof['input_hashes']}
+ validation=c.validate(root,root/plan);assert validation['status']=='verified'
+ after={p:sha(root/p) for p in proof['input_hashes']};assert before==after
+ side=(root/c.SIDECAR).read_bytes();old=(J/c.SIDECAR).read_bytes()
+ assert side.startswith(old)
+ results.append(dict(root=str(root),started_at=start,finished_at=now(),receipt_count=n,sequence=[r['sequence'] for r in proof['receipts']],receipt_inputs=proof['receipt_inputs'],all27_originals_exact=True,sidecar_rows=len(c._suppression_table(side)[0]),historical34_physical_prefix_exact=True,source_and_publication_standalone_validation=validation,native_inputs_unchanged=True,source_file_pins={p:sha(root/p) for p in ['src/mediaingredientmech/campaign_publication.py','src/mediaingredientmech/curate/campaign_owner_apply.py']},plan=dict(path=str(root/plan),sha256=sha(root/plan))))
+out=dict(at=now(),executed_module=str(P/'src/mediaingredientmech/campaign_publication.py'),publisher_sha256=sha(P/'src/mediaingredientmech/campaign_publication.py'),scope='Independent read-only native full-chain and completed-publication replay of already finished original author fixtures. No fixtures/application/Gitwrites are performed here. Synthetic mechanical fixture review/acceptance is not production science; prior one-op demotion fixture does not assert ancillary1258 application.',cases=results)
+(O/'validation/genuine-native-history-readback.json').write_text(json.dumps(out,indent=2,default=str)+'\n')
+print(json.dumps(dict(receipt_counts=[r['receipt_count'] for r in results],completed_publication_replays=len(results)-1,all27_originals_exact=True,actual_new_source_application=False)))

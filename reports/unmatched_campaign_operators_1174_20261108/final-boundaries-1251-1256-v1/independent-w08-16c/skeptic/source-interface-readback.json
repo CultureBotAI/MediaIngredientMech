@@ -1,0 +1,118 @@
+{
+  "status": "CONFIRMED_EXISTING_TWO_FINDINGS",
+  "read_only_external_fixture_verification": true,
+  "actual_publisher_owner_proof_called": true,
+  "full_publication_called": false,
+  "input_hashes": {
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/unicode_demote/plan.json": "613d8bc62a7972db240d69d5d390396d8cc6bcadd3672306f7420ffaffb12e7e",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/unicode_demote/acceptance.json": "4cd40cc758670516c7b67a4fea6df51548b90343c0704904125d97382eab067b",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/unicode_demote/receipt/application.json": "d5dfa34752b0a0f994ee640a6af2ca369cc4890c9359488359580200c318fabe",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/root-probes/late_unrelated_tracked_commit/plan.json": "ad81b73be34cd058263bc808955d44c27429c4dfa50b41147c85a30e748f285e",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/root-probes/late_unrelated_tracked_commit/acceptance.json": "44e03429569d62e9fbea7a5825aac4894bc2f14b2af1642e5c416af4a63920fb",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/root-probes/late_unrelated_tracked_commit/receipt/application.json": "069d78aa9c35f466466b8ad0af41fa74bdb68cc7c5d3ba4f82d00751887eb1bf",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_empty_commit/plan.json": "bab88ceac7a3be70897b1ed4a7a74f576dcb3c54392d9194220af12c3c5af0f1",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_empty_commit/acceptance.json": "20253fc14d1ccdd13b89bde5ef18adcde6649a22582a61b96938f6daa5194e67",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_empty_commit/receipt/application.json": "d480cd0dc7a2363170b05eec6686a1d6af2227e659f59c9aa64e34d1ca7d3065",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_unrelated_tracked/plan.json": "7821dceef0051b4b1ecaa8512651d6e7a8c74bb512f16886e29b9a5cfb26f1c2",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_unrelated_tracked/acceptance.json": "1082248825e8a66216cbedced40dfa1793531bdf6ec74a253dfbf5826de774ee",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_unrelated_tracked/receipt/application.json": "b84829cd8b7bf0fd9807876a680c5def969d9bd83c33a41b37788b3d5cf4ba0d"
+  },
+  "results": [
+    {
+      "name": "quoted_unicode_demotion",
+      "fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/unicode_demote",
+      "baseline_commit": "6a591e5b6968883a58ac067983621155bee30ca5",
+      "current_head": "6a591e5b6968883a58ac067983621155bee30ca5",
+      "diff_against_current_head": [
+        "data/ingredients/mapped/Poly-\u00df.yaml"
+      ],
+      "diff_against_accepted_baseline": [
+        "data/ingredients/mapped/Poly-\u00df.yaml"
+      ],
+      "allowed_paths": [
+        "data/ingredients/mapped/Poly-\u00df.yaml",
+        "data/ingredients/unmapped/Poly-\u00df.yaml"
+      ],
+      "unexpected_against_baseline": [],
+      "receipt_state": "failed",
+      "recovery_required": true,
+      "actual_publisher_owner_proof_verified": false,
+      "error": "Unexpected fields in completed source receipt",
+      "bound_bytes_unchanged": true
+    },
+    {
+      "name": "late_unrelated_committed",
+      "fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/root-probes/late_unrelated_tracked_commit",
+      "baseline_commit": "9caf0e9432b79986e49e2e69f15513a310105fa0",
+      "current_head": "f1447d06c37b7543de54138afe442a5cbe941565",
+      "diff_against_current_head": [
+        "data/ingredients/mapped/Existing.yaml"
+      ],
+      "diff_against_accepted_baseline": [
+        "data/ingredients/mapped/Existing.yaml",
+        "unrelated-after-acceptance.txt"
+      ],
+      "allowed_paths": [
+        "data/ingredients/mapped/Existing.yaml",
+        "data/ingredients/unmapped/Existing.yaml"
+      ],
+      "unexpected_against_baseline": [
+        "unrelated-after-acceptance.txt"
+      ],
+      "receipt_state": "complete",
+      "recovery_required": false,
+      "actual_publisher_owner_proof_verified": true,
+      "error": null,
+      "bound_bytes_unchanged": true
+    },
+    {
+      "name": "late_empty_commit",
+      "fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_empty_commit",
+      "baseline_commit": "2f5a00d573a54f368bab13cb2dad9b4fcbb8235c",
+      "current_head": "7685c1b8d22d54c4715a3ee06de833983f592f77",
+      "diff_against_current_head": [
+        "data/ingredients/mapped/Existing.yaml"
+      ],
+      "diff_against_accepted_baseline": [
+        "data/ingredients/mapped/Existing.yaml"
+      ],
+      "allowed_paths": [
+        "data/ingredients/mapped/Existing.yaml",
+        "data/ingredients/unmapped/Existing.yaml"
+      ],
+      "unexpected_against_baseline": [],
+      "receipt_state": "complete",
+      "recovery_required": false,
+      "actual_publisher_owner_proof_verified": true,
+      "error": null,
+      "bound_bytes_unchanged": true
+    },
+    {
+      "name": "late_uncommitted",
+      "fixture": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/technical/fixtures/late_unrelated_tracked",
+      "baseline_commit": "0381500850302d9c57b4a42c3fd74b5cbcd77bc7",
+      "current_head": "0381500850302d9c57b4a42c3fd74b5cbcd77bc7",
+      "diff_against_current_head": [
+        "data/ingredients/mapped/Existing.yaml",
+        "unrelated.txt"
+      ],
+      "diff_against_accepted_baseline": [
+        "data/ingredients/mapped/Existing.yaml",
+        "unrelated.txt"
+      ],
+      "allowed_paths": [
+        "data/ingredients/mapped/Existing.yaml",
+        "data/ingredients/unmapped/Existing.yaml"
+      ],
+      "unexpected_against_baseline": [
+        "unrelated.txt"
+      ],
+      "receipt_state": "failed",
+      "recovery_required": true,
+      "actual_publisher_owner_proof_verified": false,
+      "error": "Unexpected fields in completed source receipt",
+      "bound_bytes_unchanged": true
+    }
+  ],
+  "interpretation": "Known quoted-path failures correctly prevent publisher source-proof acceptance. A live source apply that completed after late HEAD drift is accepted by the historical source-proof interface: this confirms why freshness must be enforced during live prepare/apply, not by blanket rejection of later historical verification. No mapping publication bypass is claimed from this stage-level call."
+}

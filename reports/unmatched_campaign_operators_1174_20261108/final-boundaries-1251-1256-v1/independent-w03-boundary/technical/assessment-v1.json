@@ -1,0 +1,230 @@
+{
+  "reviewer": "/root/boundary_technical",
+  "status": "PASS_WITH_EXPLICIT_LIMITATIONS",
+  "reviewed_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "parent": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+  "review_is_independent_of_code_author": true,
+  "complete_operator_and_test_file_read": true,
+  "findings": [],
+  "operator_semantics": [
+    {
+      "topic": "Pair relation",
+      "assessment": "collision_pairs includes key_kind, value, sorted left/right paths across every before/after owner. final_pairs <= prior_pairs admits reductions without permitting count-preserving replacement/new members/key swaps. Before map reconstructs unselected owners, and _load forbids destination overwrite/reused source; iteration order cannot silently consume another edited owner."
+    },
+    {
+      "topic": "Surviving collision keys",
+      "assessment": "family_paths derives from final pairs. Every selected source still colliding must be an edit at the same path with exact identifier/preferred term/status. Source owners leaving all collision relations may use ordinary identity route; zero new collision pairs still required."
+    },
+    {
+      "topic": "Rejected route",
+      "assessment": "If either old or new status is REJECTED, only both REJECTED same-path same-key edit survives. This newly establishes revival refusal; it is not represented as an old guard. Other category rule and promotion lineage remain exact."
+    },
+    {
+      "topic": "Replay consistency",
+      "assessment": "prepare and verify_completed both call same _validate_records with exact complete before bytes. Original load, owner history, producer capture, byte/inode/alias guards, after-inventory validation and receipt recovery code ASTs remain unchanged."
+    }
+  ],
+  "original_AST_comparison": {
+    "path": "technical/ast-comparison-v1.json",
+    "sha256": "496cf4aa1c8ebc84ba33f703453377cc9c4ff1fe031ac422f716ac6e87704c7a"
+  },
+  "operator_AST_comparison": {
+    "path": "technical/operator-ast-comparison-v1.json",
+    "sha256": "529bacb8fd1308f99c6fa8fb62086afe0cd2de737544430abcc8161bbd4dea3e"
+  },
+  "added_definition_assessments": [
+    {
+      "name": "inherited_family_case",
+      "lines": [
+        995,
+        1060
+      ],
+      "kind": "helper",
+      "assessment": "Builds synthetic full inventoried two-member family, optional third unselected owner; real fixture Git publication binds unchanged source originals. Replaces two prior fixture records with existing-owner edits and preserves rest of native setup. Rehashes actual source bytes and heads before repin. No scientific source case is represented.",
+      "limits": "Third owner is not an operation in this helper; full three-selected coverage comes from independent builder."
+    },
+    {
+      "name": "final_fixture_delta",
+      "lines": [
+        1063,
+        1071
+      ],
+      "kind": "helper",
+      "assessment": "Writes a separate composed fixture payload and rebinds final accepted hash; original published proposal payload remains immutable. This matches legitimate reconciliation separation.",
+      "limits": "Mechanical fixture acceptance does not independently establish scientific review for arbitrary final deltas."
+    },
+    {
+      "name": "test_1251_1252_inherited_family_real_application_and_completed_replay",
+      "lines": [
+        1076,
+        1102
+      ],
+      "parametrized_cases": 9,
+      "assessment": "Identifier, name, mixed active/rejected families each exercised for one selected owner, both, reversed order through real prepare/apply/verify_completed. Asserts exact keys/status/history prefix, untouched old stock and no promotion artifact.",
+      "limits": "Only first owner singly selected; independent builder additionally tests second-only and all three."
+    },
+    {
+      "name": "test_1251_1252_family_changes_refused_before_any_write",
+      "lines": [
+        1120,
+        1150
+      ],
+      "parametrized_cases": 10,
+      "assessment": "Exercises shared-key replacement, preferred-name/case-only edits, status/revival, new member, constant-size swap, promotion-name collision, stale original head and relocation. Complete inventory/no receipt assertions prove pre-write refusal.",
+      "limits": "Broad ValueError catches do not isolate every named semantic branch; independent adversarial review must check precise refusal reasons. Shared-key identity mutation is not a legitimate reduction."
+    },
+    {
+      "name": "test_1251_1252_new_owner_does_not_inherit_exception",
+      "lines": [
+        1154,
+        1168
+      ],
+      "parametrized_cases": 2,
+      "assessment": "New colliding owner and rejected creation refused. Rejected creation deliberately routed to unmapped so previous category biconditional would have allowed it; now new explicit rejected guard rejects.",
+      "limits": "Synthetic fixtures only."
+    },
+    {
+      "name": "test_1252_completed_replay_rejects_changed_tombstone",
+      "lines": [
+        1172,
+        1189
+      ],
+      "parametrized_cases": 3,
+      "assessment": "After genuine completed application, direct current owner activation, ID change or rename causes completed replay refusal.",
+      "limits": "Complete current-inventory hash guard can reject before status-specific validator; tests are integrity controls, not isolated proof of rejected branch. Unique-tombstone prepare controls isolate the latter."
+    },
+    {
+      "name": "test_1252_unique_tombstone_real_application_and_completed_replay",
+      "lines": [
+        1192,
+        1203
+      ],
+      "parametrized_cases": 1,
+      "assessment": "Unique mapped tombstone maintenance succeeds through full pipeline; exact before SHA and full after inventory are retained.",
+      "limits": "Independent builder adds unmapped-category same-path rejected maintenance."
+    },
+    {
+      "name": "test_1252_unique_tombstone_activation_and_key_changes_refused",
+      "lines": [
+        1215,
+        1223
+      ],
+      "parametrized_cases": 4,
+      "assessment": "Unique tombstone MAPPED/UNMAPPED activation, identity replacement and case-only preferred name change explicitly match Rejected owner requires; no receipt or inventory changes.",
+      "limits": "No whole-owner identity semantics approved by refusal."
+    },
+    {
+      "name": "test_1251_reviewed_family_reduction_preserves_surviving_pairs",
+      "lines": [
+        1228,
+        1257
+      ],
+      "parametrized_cases": 4,
+      "assessment": "Two/three-member identifier/name families lose one participant via accepted distinct final key; real prepare/apply/completed replay succeeds; third unchanged and survivor keys retained. Corrects equality draft regression.",
+      "limits": "Only one leaving owner and one ordering in appended tests; independent builder adds two leavers, reversed/partial/full selection and exact historical-draft sensitivity."
+    }
+  ],
+  "contract_coverage": [
+    {
+      "contract": "1251 selection invariance for inherited unchanged pairs",
+      "code_lines": [
+        702,
+        749
+      ],
+      "author_cases": 9,
+      "independent_evidence": "independent-reduction-results-v1.json",
+      "assessment": "Complete catalogue after-map, keyed path-pair subset, single-first/single-second/reverse full selections preserve inherited keys/status."
+    },
+    {
+      "contract": "1251 comment6720714388 permits genuine 2/3-member reductions",
+      "code_lines": [
+        725,
+        737
+      ],
+      "author_cases": 4,
+      "independent_evidence": [
+        "independent-reduction-results-v1.json",
+        "predecessor-sensitivity-v1.json"
+      ],
+      "assessment": "Path pairs, not family equality; leaving all collision memberships releases only collision-specific key lock. Four independent reduction examples reject under preserved equality draft and pass exact final validator; actual full final prepare/apply/completed also passed."
+    },
+    {
+      "contract": "1251 no new pairs, replacement, added participant, key/status/name swap",
+      "code_lines": [
+        716,
+        748
+      ],
+      "author_cases": 10,
+      "independent_evidence": "Parent adversarial reviewer scope; not claimed independently repeated here.",
+      "assessment": "Key kind and key value participate in pair identity; complete path set forbids replacement at same count. Remaining colliders also require both exact keys and status."
+    },
+    {
+      "contract": "1252 same-path same-key rejected maintenance only",
+      "code_lines": [
+        758,
+        781
+      ],
+      "author_cases": 5,
+      "independent_evidence": "independent-reduction-results-v1.json",
+      "assessment": "Original or new REJECTED triggers one closed conjunction. Both statuses must remain REJECTED, operation edit and same path and exact ID/name. Unique mapped/unmapped tombstones and mixed active/rejected family tested."
+    },
+    {
+      "contract": "1252 revival/create/relocation refused",
+      "code_lines": [
+        553,
+        595,
+        758,
+        771
+      ],
+      "author_cases": 9,
+      "independent_evidence": "Author test replay plus static semantic assessment; adversarial reviewer supplies new negative fixtures.",
+      "assessment": "Existing _load path and source guards unchanged; rejected branch denies source/destination status crossing and create/promotion."
+    },
+    {
+      "contract": "Original origin/acceptance/schema/history/preimage/producer/filesystem/inventory/completion guards retained",
+      "code_lines": [
+        447,
+        699,
+        750,
+        802,
+        883,
+        926,
+        1028,
+        1322
+      ],
+      "author_cases": 88,
+      "independent_evidence": [
+        "ast-comparison-v1.json",
+        "operator-ast-comparison-v1.json",
+        "author-owner-tests-v1.log",
+        "author-publisher-tests-v2.log"
+      ],
+      "assessment": "All42 old test/helper ASTs unchanged, sole changed operator top-level definition _validate_records; 88 preexisting cases in 121 passed. 23 independent real complete pipelines retain exact inventory/history/no approval. No full-campaign source application claimed."
+    },
+    {
+      "contract": "TSB collision / Angustmycin demote and scientific holds remain separate",
+      "independent_evidence": "Inspected W08 findings.json dd40f468 and live issue contracts; exact actual-record replay is assembly reviewer scope.",
+      "assessment": "New collision pair remains disallowed; edit path/status biconditional unchanged except actual same-status REJECTED maintenance. No demote operation added."
+    }
+  ],
+  "test_counts": {
+    "owner_suite": 121,
+    "preexisting_owner_cases": 88,
+    "added_owner_cases": 33,
+    "publisher_subset": 2,
+    "publisher_deselected": 116,
+    "independent_full_pipeline_scenarios": 23,
+    "historical_AST_stage_sensitivity_comparisons": 6
+  },
+  "input_read_receipt": {
+    "path": "technical/inputs-read-v1.json",
+    "sha256": "0791d7bf164854de52c2b99d71da3461240a5a75e29337bd3c248a8c537abcbe"
+  },
+  "limitations": [
+    "All new independent full pipeline cases are synthetic private repositories with authentic fixture Git originals and mechanical fixture acceptance. No actual campaign plan/owner change or scientific approval.",
+    "Historical sensitivity extracts exact validator AST only, not full historical prepare/apply; final producer has independent full pipeline proof.",
+    "Author negative tests using generic ValueError are broader than branch-local assertions; exact new negative counterexamples are separately assigned to adversarial reviewer.",
+    "Initial publisher run failed due to omitted unchanged tracked receipt-maker helper in root archive. Exact d691 helper copied into separate private source overlay; affected two tests passed on retry. No operator/test assertions modified.",
+    "No demotion design, full repository QC/CI, KG rebuild or source/integration application included. Actual source-specific hold acceptance belongs to root and separate scientific reviews."
+  ]
+}

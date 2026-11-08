@@ -1,0 +1,513 @@
+[
+  {
+    "path": "independent-v1/PROVISIONAL-REVIEW-v1.json",
+    "sha256": "d5c29a75751a529e0ebcd408bb9014f9239fc3d8b4737d9caaa52f72f909b6a5",
+    "references": [
+      {
+        "path": "finding-001-late-owner-membership.json",
+        "expected_sha256": "8ae45b2b99a3da3010ebd76afc2e6ce3c01797188905d6ec95b89715f4126e84",
+        "resolved_archive_path": "independent-v1/finding-001-late-owner-membership.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "8ae45b2b99a3da3010ebd76afc2e6ce3c01797188905d6ec95b89715f4126e84",
+        "matches": true
+      },
+      {
+        "path": "finding-001-publisher-addendum.json",
+        "expected_sha256": "9ea2d071928aa60862d8a0473cdfd36b24bd0df155f82b430644d144b117c415",
+        "resolved_archive_path": "independent-v1/finding-001-publisher-addendum.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "9ea2d071928aa60862d8a0473cdfd36b24bd0df155f82b430644d144b117c415",
+        "matches": true
+      },
+      {
+        "path": "finding-002-loaded-producer-binding.json",
+        "expected_sha256": "4b4063a784418cfc8ff3f159c83f143396b15b3571b46be04b7263381aba8e47",
+        "resolved_archive_path": "independent-v1/finding-002-loaded-producer-binding.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "4b4063a784418cfc8ff3f159c83f143396b15b3571b46be04b7263381aba8e47",
+        "matches": true
+      },
+      {
+        "path": "finding-003-owner-chain-preflight.json",
+        "expected_sha256": "e7f24f6dc77a449d2a11493e88fb44cc27ab4b78f586fe25f0a8861c3e23c6b4",
+        "resolved_archive_path": "independent-v1/finding-003-owner-chain-preflight.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "e7f24f6dc77a449d2a11493e88fb44cc27ab4b78f586fe25f0a8861c3e23c6b4",
+        "matches": true
+      },
+      {
+        "path": "finding-004-top-level-proof-paths.json",
+        "expected_sha256": "1eb8040969565287cb758048ef9e015f85b4eab9fd385d3b04fcdf2b37911d85",
+        "resolved_archive_path": "independent-v1/finding-004-top-level-proof-paths.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "1eb8040969565287cb758048ef9e015f85b4eab9fd385d3b04fcdf2b37911d85",
+        "matches": true
+      },
+      {
+        "path": "finding-005-global-suppression-impact.json",
+        "expected_sha256": "44f8fda9fb51fc23ce1935e9b3defb28b11fb902276ad61e163182538df52b4a",
+        "resolved_archive_path": "independent-v1/finding-005-global-suppression-impact.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "44f8fda9fb51fc23ce1935e9b3defb28b11fb902276ad61e163182538df52b4a",
+        "matches": true
+      }
+    ],
+    "receipt": {
+      "created_at": "2026-11-08T05:40:56.249511+00:00",
+      "reviewer": "/root/step7d_science_c",
+      "phase": "provisional_frozen_snapshot_review",
+      "review_approval": false,
+      "scope": "Two new campaign operators and their wrappers/tests/native dependencies; read-only author checkout. Seven independent private probe programs, ten positive/negative scenarios. No actual campaign application, GitHub mutation, worker input or maintained edit.",
+      "source_pins": [
+        {
+          "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+          "reviewed_sha256": "74a448602d8d512a1b12037d88d0eba0a9ac9e1ea55c89e6bd3051afb23f0a99",
+          "current_author_sha256_at_seal": "d84ed7b82dfacb90a1c7bb7658c5b45b94a8a8271f4a96785daf5a74b774e010",
+          "same_at_seal": false
+        },
+        {
+          "path": "src/mediaingredientmech/campaign_publication.py",
+          "reviewed_sha256": "f7350ba3487e12cf4ecd4abd85e6fb3663fe0eb454fcd1483602072eeba29274",
+          "current_author_sha256_at_seal": "825ddf21c8c0382b4090bca64a283f6a438116e7e0eb328b3f1f20a47e169b3c",
+          "same_at_seal": false
+        }
+      ],
+      "findings": [
+        {
+          "path": "finding-001-late-owner-membership.json",
+          "sha256": "8ae45b2b99a3da3010ebd76afc2e6ce3c01797188905d6ec95b89715f4126e84",
+          "finding_id": "IR-CAMPAIGN-OPERATORS-1",
+          "title": "Campaign completed-source proof accepts a late extra owner outside its reported inventory"
+        },
+        {
+          "path": "finding-001-publisher-addendum.json",
+          "sha256": "9ea2d071928aa60862d8a0473cdfd36b24bd0df155f82b430644d144b117c415",
+          "finding_id": "IR-CAMPAIGN-OPERATORS-1",
+          "title": "additional_affected_operator"
+        },
+        {
+          "path": "finding-002-loaded-producer-binding.json",
+          "sha256": "4b4063a784418cfc8ff3f159c83f143396b15b3571b46be04b7263381aba8e47",
+          "finding_id": "IR-CAMPAIGN-OPERATORS-2",
+          "title": "Campaign owner producer pins verify current file bytes without binding the imported implementation"
+        },
+        {
+          "path": "finding-003-owner-chain-preflight.json",
+          "sha256": "e7f24f6dc77a449d2a11493e88fb44cc27ab4b78f586fe25f0a8861c3e23c6b4",
+          "finding_id": "IR-CAMPAIGN-OPERATORS-3",
+          "title": "Campaign preflight does not validate selected owner continuity before source/canonical writes"
+        },
+        {
+          "path": "finding-004-top-level-proof-paths.json",
+          "sha256": "1eb8040969565287cb758048ef9e015f85b4eab9fd385d3b04fcdf2b37911d85",
+          "finding_id": "IR-CAMPAIGN-OPERATORS-4",
+          "title": "Source application accepts noncanonical top-level proof paths and emits an unverifiable complete receipt"
+        },
+        {
+          "path": "finding-005-global-suppression-impact.json",
+          "sha256": "44f8fda9fb51fc23ce1935e9b3defb28b11fb902276ad61e163182538df52b4a",
+          "finding_id": "IR-CAMPAIGN-OPERATORS-5",
+          "title": "Selected new owner can leave an unselected canonical alias violating native Rule K"
+        }
+      ],
+      "tracked_issues_at_root_notice": {
+        "IR-CAMPAIGN-OPERATORS-1": 1194,
+        "IR-CAMPAIGN-OPERATORS-2": 1195,
+        "IR-CAMPAIGN-OPERATORS-3": 1197,
+        "IR-CAMPAIGN-OPERATORS-4": 1198,
+        "IR-CAMPAIGN-OPERATORS-5": "pending_root_deduplication_and_filing"
+      },
+      "coverage": {
+        "source_scope": "Closed plan/preimage/after inventory, published proposal origins/case hashes, promotion history, original source backups, native writer/retirement and completed proof inspected. Real native private fixtures exercised additions/promotions/history and completion boundaries.",
+        "publication_scope": "Closed row plan, retained unselected row bytes, native receipt row replay/owner history, historical policy fields and attribution, sidecar policy, plan/producer/input capture, held output reservation, completion invalidation inspected.",
+        "code_binding": "Stale import acceptance independently demonstrated with private producer copy; actual author code untouched.",
+        "suppression": "Actual native owner filter and Rule K corroborate cross-owner impact; candidate passes while bounded projection fails.",
+        "native_generation": "Implementation replay read, but this provisional packet does not rerun the author full3007-row native replay. Final author replay receipts and actual final imports require review after freeze.",
+        "review_evidence": "Owner acceptance binds exact plan and listed review bytes; no fixture or acceptance JSON is treated as scientific approval. The real1879-case accepted/reconciled intake remains external prerequisite."
+      },
+      "limits": [
+        "Five findings are confirmed against the captured provisional hashes; author files can change. Final acceptance requires immutable author handoffs and re-review of exact final implementation.",
+        "Publisher counterexamples explicitly mock source proof/generation boundaries from author unit fixture. Native row receipt, owner-chain primitives, policy projection and filesystem operations remain actual; source-specific counterexamples also use real source apply and native completed proof.",
+        "No external ontology-row admission, companion scientific review, role support or campaign mapping approval is inferred. Native gates and all held source decisions remain separate.",
+        "No blanket full test suite was repeated; these are independent targeted controls, with original author fixtures preserved by exact hashes."
+      ]
+    }
+  },
+  {
+    "path": "independent-v2/source-first-fix-review-v1.json",
+    "sha256": "c4c6fb61133f900de53de88341c0ec534400a9f7557e3f99154b38fc2992286b",
+    "references": [],
+    "receipt": {
+      "author_manifest_sha256": "eef70ce16ee8a558c98e7e6bc7d302fb9a2ade2450d355a355eee56af2d829c2",
+      "members_verified": 10,
+      "source_sha256": "d84ed7b82dfacb90a1c7bb7658c5b45b94a8a8271f4a96785daf5a74b774e010",
+      "independent_results": {
+        "1194_original_owner_addition": "refused; unchanged positive passes",
+        "1195_original_stale_operator": "refused",
+        "1195_preloaded_dependency": "STILL ACCEPTED; existing finding remains open",
+        "1197_original_history_gap": "refused before source mutation",
+        "1198_original_proof_path": "refused before source mutation"
+      },
+      "fixture_adaptations": "Only locator to new snapshot and full current PRODUCERS copied. No attack weakened or assertion waived.",
+      "audit_harness_note": "Initial manifest read assumed files was a list; actual author manifest uses a path-to-digest dictionary. Correct dictionary verification below succeeded; no code failure or maintained mutation resulted.",
+      "approval": false
+    }
+  },
+  {
+    "path": "independent-v3/source-v2-independent-review.json",
+    "sha256": "612e25d0c3e493d2d77e70e49eac0c0a3eec479eadaa8fda4b2f06514d6bbde8",
+    "references": [
+      {
+        "path": "completed-inventory-probe-v1.json",
+        "expected_sha256": "83ab09cf1ce145678a81371f8a89d608d9d4a48cff7d71d94e1fadecbad176f4",
+        "resolved_archive_path": "independent-v3/completed-inventory-probe-v1.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "83ab09cf1ce145678a81371f8a89d608d9d4a48cff7d71d94e1fadecbad176f4",
+        "matches": true
+      },
+      {
+        "path": "loaded-code-probe-v1.json",
+        "expected_sha256": "ba1b6dcc2660af777bad5b53506add87b8c0b50ffbb226f2b43c741916ac7d42",
+        "resolved_archive_path": "independent-v3/loaded-code-probe-v1.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "ba1b6dcc2660af777bad5b53506add87b8c0b50ffbb226f2b43c741916ac7d42",
+        "matches": true
+      },
+      {
+        "path": "source-chain-probe-v1.json",
+        "expected_sha256": "509f784bdd440f668634c2d6343db64892bb2f950aadab85aaabf5c032325537",
+        "resolved_archive_path": "independent-v2/source-chain-probe-v1.json",
+        "resolution": "SELECTION_original_to_archive",
+        "actual_sha256": "509f784bdd440f668634c2d6343db64892bb2f950aadab85aaabf5c032325537",
+        "matches": true
+      },
+      {
+        "path": "noncanonical-plan-probe-v1.json",
+        "expected_sha256": "971c3dfa98d1cbbb76c586b0fe652062c199a9f325646e651c103fc27d7fa73f",
+        "resolved_archive_path": "independent-v2/noncanonical-plan-probe-v1.json",
+        "resolution": "SELECTION_original_to_archive",
+        "actual_sha256": "971c3dfa98d1cbbb76c586b0fe652062c199a9f325646e651c103fc27d7fa73f",
+        "matches": true
+      },
+      {
+        "path": "cached-dependency-result-v2.json",
+        "expected_sha256": "c34e0d953f5330896d0090a32a5c5d6f30af31d469f583b335d456f64695ecd3",
+        "resolved_archive_path": "independent-v3/cached-dependency-result-v2.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "c34e0d953f5330896d0090a32a5c5d6f30af31d469f583b335d456f64695ecd3",
+        "matches": true
+      }
+    ],
+    "receipt": {
+      "at": "2026-11-08T05:51:38.780479+00:00",
+      "reviewer": "/root/step7d_science_c",
+      "author": "/root/next23_context",
+      "source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+      "author_manifest_sha256": "002afc3355556c9eaba492e05dee75985a33360f5c2a4beda053def1c94d5eb9",
+      "verdict": "source_operator_scoped_re_review_pass_no_new_finding",
+      "finding_dispositions": {
+        "1194": "Original late-owner completion counterexample now refused; true unchanged membership positive completes.",
+        "1195": "Original own-source loaded drift refused. Original dependency counterexample was adapted to test execution semantics: cached publicA remains unchanged; freshly captured privateB really executes; matchingBpins pass dry-run, staleApins fail without outputs.",
+        "1197": "Actual native history preimage disconnection rejected before source edits.",
+        "1198": "Original noncanonical proof path refused preflight without edits."
+      },
+      "results": {
+        "completed-inventory-probe-v1.json": {
+          "sha256": "83ab09cf1ce145678a81371f8a89d608d9d4a48cff7d71d94e1fadecbad176f4",
+          "result": {
+            "at": "2026-11-08T05:50:41.320072+00:00",
+            "source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+            "scope": "Private synthetic repositories; actual native source application and completion verifier. No maintained files or corpus edits.",
+            "results": [
+              {
+                "case": "positive",
+                "injected": [],
+                "outcome": {
+                  "returned": "complete",
+                  "reported_owner_count": 4
+                },
+                "actual_owner_count": 4,
+                "unexpected_present": false,
+                "actual_inventory_matches_proof": true
+              },
+              {
+                "case": "late_addition",
+                "injected": [
+                  "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/completed-inventory-fixtures-v1/late-addition/data/ingredients/unmapped/Unexpected_late.yaml"
+                ],
+                "outcome": {
+                  "error": "ValueError: Owner membership or bytes changed at completion"
+                },
+                "actual_owner_count": 5,
+                "unexpected_present": true,
+                "actual_inventory_matches_proof": false
+              }
+            ]
+          }
+        },
+        "loaded-code-probe-v1.json": {
+          "sha256": "ba1b6dcc2660af777bad5b53506add87b8c0b50ffbb226f2b43c741916ac7d42",
+          "result": {
+            "loaded_source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+            "pinned_on_disk_sha256": "5bae452020f1932738f710b227ba32a69ca7d63ec633032101c4eeb56690da18",
+            "fixture_producer_sha256": "5bae452020f1932738f710b227ba32a69ca7d63ec633032101c4eeb56690da18",
+            "outcome": {
+              "accepted": false,
+              "error": "ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/loaded-code-private-package-v1/src/mediaingredientmech/curate/campaign_owner_apply.py"
+            },
+            "scope": "Private changed-import proof; no actual owner application, scientific data or maintained code writes."
+          }
+        },
+        "source-chain-probe-v1.json": {
+          "sha256": "509f784bdd440f668634c2d6343db64892bb2f950aadab85aaabf5c032325537",
+          "result": {
+            "starting_native_chain_valid": true,
+            "latest_native_owner_sha256": "26968fb68023548a3a90a1cf6d4bf6a91c271af69e0dbbf3c4ef9531e4499f34",
+            "actual_owner_before_sha256": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+            "error": "ValueError: Selected owner preimage is disconnected from native history",
+            "source_owner_changed": false,
+            "scope": "Actual source apply and native checkpoint verifier; no owner-proof or native-generation mock. Private synthetic repo only."
+          }
+        },
+        "noncanonical-plan-probe-v1.json": {
+          "sha256": "971c3dfa98d1cbbb76c586b0fe652062c199a9f325646e651c103fc27d7fa73f",
+          "result": {
+            "preflight_error": "ValueError: Noncanonical relative path",
+            "source_changed": false,
+            "scope": "Actual native source application; all references address private fixture files, no symlinks or external filesystem writes."
+          }
+        },
+        "cached-dependency-result-v2.json": {
+          "sha256": "c34e0d953f5330896d0090a32a5c5d6f30af31d469f583b335d456f64695ecd3",
+          "result": {
+            "operator_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+            "public_cached_A_unchanged": true,
+            "private_B_executed": true,
+            "uses_private_class": true,
+            "exact_executed_capture": true,
+            "actual_A_sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+            "actual_B_sha256": "102c89221284fd13b52198ac4311a4ab4c455e17b6848522982b40dce3cd4a0a",
+            "results": [
+              {
+                "accepted": true,
+                "applied": false,
+                "stale": false,
+                "owners_unchanged": true,
+                "receipt_exists": false
+              },
+              {
+                "accepted": false,
+                "error": "ValueError: Loaded producer differs: src/mediaingredientmech/curate/publication_guard.py",
+                "stale": true,
+                "owners_unchanged": true,
+                "receipt_exists": false
+              }
+            ],
+            "limitations": "Actual native owner prepare/dry-run in private synthetic repositories; no corpus application or scientific approval."
+          }
+        }
+      },
+      "static_scope": [
+        "Complete first-freeze-to-v2 diff, private captured loader and bound imports",
+        "Captured native bytes and private dataclass module identity; public cached modules not reloaded or replaced",
+        "Deferred native receipt read_sssom import resolves through private captured imports",
+        "Full11producer input pins, schema capture and every-boundary loaded-producer checks retained",
+        "Existing preimage/promotion, owner/inventory/history/path/output guards retained"
+      ],
+      "author_test_evidence": "Author immutable summary records88focused tests plus staticPASS. This review reused that evidence and independently reran five adversarial programs; it did not claim an independent full88 rerun.",
+      "limits": [
+        "Publisher final freeze/re-review pending",
+        "No actual campaign owners applied",
+        "No1879case scientific acceptance or release approval",
+        "No full corpusQC/CI claim"
+      ]
+    }
+  },
+  {
+    "path": "independent-v3/COMBINED-REVIEW-v1.json",
+    "sha256": "3348c645fa9c2fea7428702c5783a8dd8de16552cb2034a4a36cd22846f593db",
+    "references": [
+      {
+        "path": "source-v2-independent-review.json",
+        "expected_sha256": "612e25d0c3e493d2d77e70e49eac0c0a3eec479eadaa8fda4b2f06514d6bbde8",
+        "resolved_archive_path": "independent-v3/source-v2-independent-review.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "612e25d0c3e493d2d77e70e49eac0c0a3eec479eadaa8fda4b2f06514d6bbde8",
+        "matches": true
+      },
+      {
+        "path": "publisher-inventory-probe-v1.json",
+        "expected_sha256": "45fabec239a26d240f9f6ead49d205a43c40a02d6a91f51795826d3677079c4d",
+        "resolved_archive_path": "independent-v3/publisher-inventory-probe-v1.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "45fabec239a26d240f9f6ead49d205a43c40a02d6a91f51795826d3677079c4d",
+        "matches": true
+      },
+      {
+        "path": "chain-preflight-probe-v3.json",
+        "expected_sha256": "c98c84f5fddd87752a888c3a34beed69e913c9b2df7b461787fee93d32ad1496",
+        "resolved_archive_path": "independent-v3/chain-preflight-probe-v3.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "c98c84f5fddd87752a888c3a34beed69e913c9b2df7b461787fee93d32ad1496",
+        "matches": true
+      },
+      {
+        "path": "global-suppression-probe-v3.json",
+        "expected_sha256": "b9ac615f03824cbff1c2249b0ce8328ea7c04d9a75540842af8bfa251c7ffd26",
+        "resolved_archive_path": "independent-v3/global-suppression-probe-v3.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "b9ac615f03824cbff1c2249b0ce8328ea7c04d9a75540842af8bfa251c7ffd26",
+        "matches": true
+      },
+      {
+        "path": "publisher-receipt-path-results-v1.json",
+        "expected_sha256": "b63b9ba8b58491e11e17d1514dd9bd092318eaae766dfe89e13313e9777ed51d",
+        "resolved_archive_path": "independent-v3/publisher-receipt-path-results-v1.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "b63b9ba8b58491e11e17d1514dd9bd092318eaae766dfe89e13313e9777ed51d",
+        "matches": true
+      },
+      {
+        "path": "actual-native-replay-result-v1.json",
+        "expected_sha256": "46cab6f88f5b2e3f22c2d058ca316551955386ceaa963c7f493193885d0a609a",
+        "resolved_archive_path": "independent-v3/actual-native-replay-result-v1.json",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "46cab6f88f5b2e3f22c2d058ca316551955386ceaa963c7f493193885d0a609a",
+        "matches": true
+      },
+      {
+        "path": "final-publisher-focused-v1.log",
+        "expected_sha256": "c89ed4ea25d04ff50e5f3485bb60dd4232f0e1b96ceaf9cb331159c050b2578e",
+        "resolved_archive_path": "independent-v3/final-publisher-focused-v1.log",
+        "resolution": "same_archive_directory",
+        "actual_sha256": "c89ed4ea25d04ff50e5f3485bb60dd4232f0e1b96ceaf9cb331159c050b2578e",
+        "matches": true
+      }
+    ],
+    "receipt": {
+      "schema_version": 1,
+      "reviewer": "/root/step7d_science_c",
+      "independent_of_authors": true,
+      "authors": {
+        "source": "/root/next23_context",
+        "publisher": "/root/step7d_independent_review"
+      },
+      "at": "2026-11-08T05:55:13.763254+00:00",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1174",
+      "verdict": "accept_infrastructure_scope_at_exact_reviewed_bytes_no_new_finding",
+      "source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+      "publisher_sha256": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+      "source_test_sha256": "c86993e88a3b270789470aacf0312cc35e0d76c7a7c591808dd74b4db4a98bd2",
+      "publisher_test_sha256": "a45eb697a144fafb0e22282d6544337f186b84371a9e5db842485e7c25b383bb",
+      "author_handoffs": {
+        "source_manifest": {
+          "path": ".temp/all-unmatched-20261107/preflight/campaign-owner-apply-handoff-v2/MANIFEST.json",
+          "sha256": "002afc3355556c9eaba492e05dee75985a33360f5c2a4beda053def1c94d5eb9"
+        },
+        "publisher": {
+          "path": ".temp/all-unmatched-20261107/integration/worktree/.temp/campaign-publication-handoff-v1/HANDOFF.json",
+          "sha256": "a53ab2d60eb7753b2482970db2b1d9cac510ec693f115e9b1cf1bcaefd3559e8"
+        },
+        "publisher_artifacts": {
+          "path": ".temp/all-unmatched-20261107/integration/worktree/.temp/campaign-publication-handoff-v1/ARTIFACTS.json",
+          "sha256": "239a43ca3041563058b410298993233637273bdf75bb9f6de5646d063068d2b8",
+          "verified_members": 41
+        }
+      },
+      "finding_dispositions": [
+        {
+          "id": "IR-CAMPAIGN-OPERATORS-1",
+          "issue": 1194,
+          "status": "fixed_reproductions_now_refused",
+          "evidence": "Source and publisher late owner additions are rejected at final completion. Exact true positives complete/verify. Final code re-enumerates owner, proof snapshot and receipt membership and retired promotion paths."
+        },
+        {
+          "id": "IR-CAMPAIGN-OPERATORS-2",
+          "issue": 1195,
+          "status": "fixed_including_cached_dependency_addendum",
+          "evidence": "Own-source post-import drift rejected; actual privateB marker executes without replacing public cachedA; matchingB accepted/staleA rejected. Independent final11 focused cases include10 publisher preloaded-dependency cases and actual owner-to-publisher native checkpoint integration."
+        },
+        {
+          "id": "IR-CAMPAIGN-OPERATORS-3",
+          "issue": 1197,
+          "status": "fixed_before_writes",
+          "evidence": "Actual source native-owner preimage gap rejected before application. Publisher prospective owner-chain gap rejected in dry-run and apply with unchanged canonical/policy and absent outputs; matched chain positive completes."
+        },
+        {
+          "id": "IR-CAMPAIGN-OPERATORS-4",
+          "issue": 1198,
+          "status": "fixed_including_author_receipt_directory_counterpart",
+          "evidence": "Original source noncanonical top-level proof refused. Publisher reports/../outside-reports and reports/unused/../publication refused before preparation/reservation for dry-run/apply; allfour publication inputs unchanged and nooutputs."
+        },
+        {
+          "id": "IR-CAMPAIGN-OPERATORS-5",
+          "issue": 1200,
+          "status": "fixed_entire_projection_gate",
+          "evidence": "Actual native RuleK now rejects unselected owner-name collisions for both native-diagnostic and prior-only aliases in dry-run/apply, preserving canonical/policy and nooutputs. Unowned prior alias positive completes without scope expansion. Nobaseline exemption or historical sidecar rewriting."
+        }
+      ],
+      "independent_validation": {
+        "source_original_replays": "Four original source counterexample programs replayed on finalsource; true application positive also verified. Separate private cached-dependency marker/freshB/staleA proof passed.",
+        "publisher_original_replays": "Final outer membership negative +positive; matched/disconnected actual native owner-chain paths; global suppression withdiagnostic/withoutdiagnostic andunownedpositive; noncanonical receipt directory counterparts.",
+        "focused_final_pytest": "11passed,95deselected,12thirdpartywarnings,8.72seconds. Exact final snapshot; private fixtures only.",
+        "actual_native_generation": "Final9e1 code independently reconstructed3007 diagnostic rows and exact suppression bytes with pinnedClaw76c1ebee,2699captured inputs/1absent,2956ownerinventoryunchanged,zero network attempts.",
+        "native_candidate_sha256": "0a5697d67e4bf19367a74d3ac4a29b101f13b17c8da672745451b3fb585f79db",
+        "native_sidecar_sha256": "74b4c432b91f0d0ba0c200f23cdf1fdd34f308648dcf7352ff3f37087a2fa00d"
+      },
+      "author_validation_reused": {
+        "source": "88focused+Ruff/Black/Mypy PASS; immutablehandoffverified.",
+        "publisher": "106focused+Ruff/Black/full63fileMypy PASS; all41bounded artifacts hashesverified.",
+        "native_controls": "12recorded actualnative controls/11expectedrefusals reviewed. Earliercacd source_generationAST independently identicaltofinal9e1; independentlyranfinalpositive asabove."
+      },
+      "harness_limitations": [
+        "First publisher reruns used old fixture proof snapshots. New snapshot guards refused those fixtures before the intended chain/global probes. Preserved initiallogs/results; compatible successor fixtures refresh only synthetic checkpoint/protected snapshot bytes and rerunactual intendedboundaries. These initialrefusals are not implementationfailures or successfultargetedreproductions.",
+        "Source/projection filesystemprobes use explicit isolated ownerproof/generation boundaries where indicated. The separate source-to-publisher integrationcase and finalactualnativegenerationprobe exercise those contracts withoutclaiming an actualcampaignpublication."
+      ],
+      "static_review_scope": [
+        "Full initial-to-final423line publisherdiff and sourceprivate-loaderdelta",
+        "Realpromotion preimage/oldpath retention/destination-history refusal; fullprospective ownerchain",
+        "Closed plan and exact producer/evidence hashes; full inventories andlate substitutions",
+        "Native reservations/hardlinkguards/partialfailure evidence; finalreceipt andmembership checks",
+        "Priorpolicydecisions/source_ownerattribution/history/sidecar/baseline preservation; untouchedphysicalrows",
+        "Entireprojection nativeRuleK andoffline currentgenerator reconstruction"
+      ],
+      "limits": [
+        "Infrastructure review only: no1879case scientificacceptance, ontologyidentity, alias, role or releaseapproval.",
+        "Noactualcampaignowner orcanonicalpublication occurred. Actual acceptedplan/sourceproof/currentgeneration/complete scientificreviews remain prerequisites.",
+        "Publisher intentionallyfailsclosed onunreviewed globalalias impacts and existingpromotionownerchain migration; reviewthose impacts withoutomitting settledscientificwork.",
+        "Whole-repositoryQC/fullsuite/CI and finalcommittedPRheadreview are coordinatorsteps; no claimthatthese ran aspartofthisreview.",
+        "GitHubissuesremainroot-owned; thisreportrecordsfix/re-reviewdispositions, notclosure."
+      ],
+      "evidence": [
+        {
+          "path": "source-v2-independent-review.json",
+          "sha256": "612e25d0c3e493d2d77e70e49eac0c0a3eec479eadaa8fda4b2f06514d6bbde8"
+        },
+        {
+          "path": "publisher-inventory-probe-v1.json",
+          "sha256": "45fabec239a26d240f9f6ead49d205a43c40a02d6a91f51795826d3677079c4d"
+        },
+        {
+          "path": "chain-preflight-probe-v3.json",
+          "sha256": "c98c84f5fddd87752a888c3a34beed69e913c9b2df7b461787fee93d32ad1496"
+        },
+        {
+          "path": "global-suppression-probe-v3.json",
+          "sha256": "b9ac615f03824cbff1c2249b0ce8328ea7c04d9a75540842af8bfa251c7ffd26"
+        },
+        {
+          "path": "publisher-receipt-path-results-v1.json",
+          "sha256": "b63b9ba8b58491e11e17d1514dd9bd092318eaae766dfe89e13313e9777ed51d"
+        },
+        {
+          "path": "actual-native-replay-result-v1.json",
+          "sha256": "46cab6f88f5b2e3f22c2d058ca316551955386ceaa963c7f493193885d0a609a"
+        },
+        {
+          "path": "final-publisher-focused-v1.log",
+          "sha256": "c89ed4ea25d04ff50e5f3485bb60dd4232f0e1b96ceaf9cb331159c050b2578e"
+        }
+      ]
+    }
+  }
+]

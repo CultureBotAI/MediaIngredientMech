@@ -1,0 +1,104 @@
+"""Pure actual-row projection/alignment probe; never an application receipt."""
+import ast
+from collections import Counter
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+D = Path(__file__).absolute().parent
+C = D.parents[1]
+P = D / 'private'
+sys.path.insert(0, str(P / 'src'))
+from mediaingredientmech import campaign_publication as pub
+
+O = D / 'full-projection-v2'
+O.mkdir()
+def pin(path):
+    raw = path.read_bytes()
+    return {'path': str(path), 'sha256': hashlib.sha256(raw).hexdigest(), 'bytes': len(raw)}
+def save(name, value):
+    with (O / name).open('x') as stream:
+        json.dump(value, stream, indent=2, ensure_ascii=False)
+        stream.write('\n')
+
+K = C / 'integration/release-worktree'
+W = C / 'workers/w07/worktree/.temp/final-projected-native-independent-v1'
+F = C / 'preflight/final-publication-plan-construction-v1'
+inputs = {
+    'source_plan': C / 'integration/final-native-intake-v4-preparation/owner-plan.draft.json',
+    'canonical': K / pub.SOURCE,
+    'native_candidate': W / 'generation/candidate.sssom.tsv',
+    'diagnostic_same_rowset': F / 'bounded-rowset-diagnostic.tsv',
+    'publisher': P / 'src/mediaingredientmech/campaign_publication.py',
+    'test': P / 'tests/test_campaign_publication.py',
+    'maker': P / pub.MAKER,
+    'source': P / 'src/mediaingredientmech/curate/campaign_owner_apply.py',
+}
+initial = {key: pin(path) for key, path in inputs.items()}
+assert initial['source_plan']['sha256'] == '039eecdae5c86b406f3622e8766095e7970dc7c8a1158c5a9fc0925c0ea06427'
+assert initial['canonical']['sha256'] == '097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221'
+assert initial['native_candidate']['sha256'] == 'e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de'
+assert initial['maker']['sha256'] == pub.MAKER_SHA
+source_plan = json.loads(inputs['source_plan'].read_text())
+# These are conditional source-operation fields, not a fabricated completed receipt.
+shapes = {'edit':'campaign_owner_edit', 'create':'new_record', 'promote':'promotion', 'demote':'demotion'}
+records = [dict(record, shape=shapes[record['kind']]) for record in source_plan['records']]
+selected = {pub.subject(r['source_record']): r['source_record'] for r in records}
+before = inputs['canonical'].read_bytes()
+candidate = inputs['native_candidate'].read_bytes()
+_, fields, old, lines = pub.table(before)
+_, new_fields, new, _ = pub.table(candidate)
+assert fields == new_fields
+old_slots = {pub.slot(row): i for i, row in enumerate(old, 1)}
+new_slots = {pub.slot(row): i for i, row in enumerate(new, 1)}
+assert len(old_slots) == len(old) and len(new_slots) == len(new)
+keys = [key for key in old_slots if key[0] in selected]
+keys += [key for key in new_slots if key[0] in selected and key not in old_slots]
+plan = [{'owner': selected[key[0]], 'before_position': old_slots.get(key), 'native_position': new_slots.get(key), 'preserve_fields': []} for key in keys]
+projected, trace = pub.row_projection(before, candidate, records, plan)
+_, _, after, after_lines = pub.table(projected)
+changes, positions = pub._align_rows(old, after)
+# Exercise the unchanged native row-level validator and replay. Deliberately do
+# not construct/store a complete campaign receipt or claim source completion.
+row_link = {'schema_version': 1, 'batch': 'PRIVATE-DIAGNOSTIC-NOT-A-CAMPAIGN-RECEIPT', 'sequence': 1,
+            'approval': 'NONE: private row-alignment diagnostic only', 'before_sha256': pub.sha(before),
+            'after_sha256': pub.sha(projected), 'before_row_count': len(old), 'after_row_count': len(after),
+            'changes': changes, 'position_map': positions}
+pub.native._validate_receipt(row_link, complete=False)
+replay = pub.native.walk_mapping_changes([row_link], start_sha256=pub.sha(before), reviewed_sha256=pub.sha(projected), baseline_rows=old, refreshed_rows={})
+assert replay[2] == after and replay[0] == positions
+unselected = [i for i, row in enumerate(old, 1) if row['subject_id'] not in selected]
+assert all(positions[i-1] is not None and after_lines[positions[i-1]-1] == lines[i-1] for i in unselected)
+assert all(old[i-1] == after[positions[i-1]-1] for i in unselected)
+assert Counter(tuple(sorted(row.items())) for row in after) == Counter(tuple(sorted(row.items())) for row in pub.table(inputs['diagnostic_same_rowset'].read_bytes())[2])
+assert len(records) == 934 and len(old) == 3014 and len(new) == 3750 and len(after) == 3756
+assert len(unselected) == 2719
+assert sum(row['subject_id'] in selected for row in new) == 1037
+assert all(row['subject_id'] != 'MIM:Angustmycin' for row in after)
+sodium = 'MIM:Sodium_Nitrate_070_M_Stock'
+assert sodium not in selected
+assert [row for row in old if row['subject_id'] == sodium] == [row for row in after if row['subject_id'] == sodium]
+actual_groups = {}
+for subject in ['MIM:Desicatted_Ox-bile', 'MIM:Na2so3_X_5_H2o', sodium, 'MIM:Trisodium_Citrate_X_3_H2o']:
+    actual_groups[subject] = {'selected': subject in selected, 'old': [r for r in old if r['subject_id']==subject], 'native': [r for r in new if r['subject_id']==subject], 'projected': [r for r in after if r['subject_id']==subject]}
+with (O/'projected-diagnostic.tsv').open('xb') as stream: stream.write(projected)
+save('conditional-row-plan.json', {'scope': 'PURE_DIAGNOSTIC_NOT_ACCEPTED_PLAN', 'rows': plan})
+save('cell-trace.json', trace)
+save('actual-four-groups.json', actual_groups)
+old_test = (D/'before/tests/test_campaign_publication.py').read_text()
+new_test = inputs['test'].read_text()
+def functions(text):
+    return {node.name: ast.dump(node, include_attributes=False) for node in ast.parse(text).body if isinstance(node,(ast.FunctionDef,ast.AsyncFunctionDef))}
+a,b = functions(old_test),functions(new_test)
+assert all(b[name] == value for name,value in a.items())
+assert new_test.startswith(old_test)
+assert all(pin(path) == initial[key] for key,path in inputs.items())
+summary = {'scope': 'AUTHOR MECHANICAL DIAGNOSTIC; no source application, completed owner receipt, scientific acceptance, or publication approval', 'inputs': initial,
+           'counts': {'conditional_operations': len(records),'canonical_rows':len(old),'native_rows':len(new),'projected_rows':len(after),'selected_native_rows':1037,'unselected_physical_lines_preserved':len(unselected),'row_operations':len(plan),'changed_cells':sum(len(x.get('changed_cells',[])) for x in trace),'alignment':dict(Counter(x['kind'] for x in changes))},
+           'native_row_validator_and_replay': 'PASS; incomplete diagnostic row link only, actual completed source/generator/publication covered separately by integration tests',
+           'same_row_multiset_as_prior_invariant_diagnostic': True,'no_unselected_native_adoption':True,'demotion_subject_absent':True,'all_input_hashes_unchanged':True,
+           'original_test_function_count':len(a),'original_function_AST_and_exact_file_prefix_unchanged':True,
+           'four_suppression_event_extension': 'Not implemented; current publisher policy guard remains a separate blocking prerequisite'}
+save('RESULT.json',summary)
+print(json.dumps(summary['counts'],indent=2))

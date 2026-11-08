@@ -1,0 +1,81 @@
+{
+  "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+  "verdict": "needs_curation",
+  "findings": [
+    {
+      "finding_id": "REJECTION-CODE-001",
+      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1255",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Literal Unicode and newline owner paths fail the final allowed-change check after intended writes",
+      "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+      "locators": [
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1256-1264"
+      ],
+      "lineage": "Inherited from the preceding implementation and already identified by W04 at exact9a1; independently reproduced unchanged at16c. This is not newly introduced by demotion or the rejection predicate.",
+      "reproduction": "Use unmodified frozen test helpers to build genuine private Git-published edit-existing-owner origins and actual native prepare/apply. With literal Poly-ß or A\\nB filenames, preparation passes and the intended rejection is written; apply then parses quoted line-delimited git diff output as literal paths and reports Unrelated tracked file changed. Unicode same-basename demotion also writes/retire successfully before this final guard fails.",
+      "observed_cases": [
+        "unicode_rejection",
+        "newline_rejection",
+        "unicode_demote"
+      ],
+      "actual_outcome": "All three owner inventories change as intended, but receipt state is failed and recovery_required is true; no completed proof is claimed.",
+      "bounded_fix": "Use NUL-delimited literal Git paths for complete allowed-set checks with correct filesystem decoding; never change global quotePath or weaken the allowed-change check. Add Unicode, newline and unrelated-change tests through actual prepare/apply/completed verification.",
+      "acceptance_tests": [
+        "ASCII and literal Unicode/newline same-path rejection complete with authentic before/history preserved.",
+        "Same-basename Unicode demotion completes with true retired inode and backup.",
+        "An actual unrelated tracked path remains refused; delimiters must not split a filename."
+      ],
+      "prior_evidence": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/FINDINGS-FOR-COORDINATOR.json",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/skeptical/actual-w03-path-results.json"
+      ],
+      "our_evidence": [
+        "probe.py",
+        "probe.log",
+        "results.json"
+      ],
+      "fix_applied": false
+    },
+    {
+      "finding_id": "W08-16C-CODE-002",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "title": "Prepared source application does not revalidate its accepted Git baseline before owner mutation",
+      "reviewed_head": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+      "locators": [
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:885-891",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:956-989",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1091-1113",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py:1256-1264"
+      ],
+      "lineage": "Inherited in the final combined code: _recheck is unchanged from d691/9a1, and the moving-HEAD final diff remains. New independent adversarial evidence confirms its relevance to the actual demotion lifecycle.",
+      "reproduction": "Create a valid private demotion plan and call real prepare. Before real apply, make a genuine empty commit. HEAD now differs from accepted plan.baseline_commit, but apply completes and actual verify_completed returns success. A separate fixture modifies an unrelated tracked file after preparation: apply still installs destination and retires source before reporting Unrelated tracked file changed.",
+      "observed_cases": [
+        "late_empty_commit",
+        "late_unrelated_tracked"
+      ],
+      "impact": "The accepted integration baseline is checked only once during prepare. _recheck verifies captured file/owner/checkpoint state but omits Git HEAD and unrelated tracked state. Source mutation can therefore proceed on an unaccepted baseline, or create avoidable recovery work when an unrelated tracked edit already exists before the first write. The final diff against moving HEAD cannot prove accepted-baseline scope.",
+      "bounded_fix": "Revalidate the accepted baseline and permitted tracked-state boundary at the final prepare handoff, before receipt reservation/first owner mutation, and at mutation/final checkpoints. Compare scope to the accepted immutable baseline using literal NUL-delimited paths while accounting for only the operator's own already completed/current transitions. Refuse external HEAD drift and unrelated tracked changes before mutation where observable; retain honest partial-failure recovery for races. Do not require historical verify_completed HEAD to equal the old baseline after legitimate later publication.",
+      "acceptance_tests": [
+        "Unchanged accepted baseline still completes edit/create/promote/demote and existing rejection/family routes.",
+        "Stale HEAD before prepare, empty commit after prepare, unrelated committed addition after prepare and unrelated uncommitted tracked edit after prepare refuse before owner writes.",
+        "Changes introduced at later write checkpoints produce failed/recovery_required receipts with authentic backups and no false complete state.",
+        "Historical completed verification remains valid after separately authorized canonical publication; freshness enforcement belongs to active application.",
+        "Keep existing producer/capture/owner/chain guards and distinguish the literal-path defect #1255."
+      ],
+      "our_evidence": [
+        "probe.py",
+        "probe.log",
+        "results.json",
+        "ast-preservation.json"
+      ],
+      "coordinator_supplement": "Root independently reports a separately executed unrelated committed-file variant. That variant is not counted among this reviewer's19 probes; root binds its own raw evidence.",
+      "fix_applied": false,
+      "issue_filing_owner": "Coordinator; this reviewer made no GitHub mutation."
+    }
+  ],
+  "new_science_or_application_approval": false
+}

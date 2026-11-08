@@ -1,0 +1,2029 @@
+{
+  "source_failed_combined_receipt": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index1256-fix-v1/checks/combined-v1/receipt.json",
+    "sha256": "c528dca45351dfa0c4b7f5240b6092b79ee2e5872c95ae47044a09f64967e25f",
+    "size": 1647
+  },
+  "source_full_log": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index1256-fix-v1/checks/combined-v1/stdout.txt",
+    "sha256": "43de856416c7f9e4e82f2f7bc7547e8a9b259b444dbf41b394e938030ec46b67",
+    "size": 888165
+  },
+  "source_summary": "26 failed, 354 passed, 12 warnings, 131 errors in 309.88s (0:05:09)",
+  "failed_or_error_nodeids": [
+    "FAILED tests/test_campaign_publication.py::test_actual_owner_writer_checkpoint_survives_native_mapping_publication",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.curate.publication_guard]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.validation.mapping_change_receipts]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.export.reviewed_sssom]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.sssom_metadata]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.synonym_policy]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.curate.publication_guard]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.validation.mapping_change_receipts]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.export.reviewed_sssom]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.sssom_metadata]",
+    "FAILED tests/test_campaign_publication.py::test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.synonym_policy]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[missing-slot]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[candidate-substitution]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[wrong-revision]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[retired-source]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[source-payload]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_preserves_27_receipts_and_frozen_hold",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_late_retired_source_never_emits_success[reserved]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_demotion_late_retired_source_never_emits_success[completion]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_source_generation_publication_demotion",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_1256_commit_between_source_generation_and_publication_refused[False]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_1256_commit_between_source_generation_and_publication_refused[True]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_1256_late_commit_rechecks_actual_source_generation_publication[reserved]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_1256_late_commit_rechecks_actual_source_generation_publication[before-completion]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_1256_late_commit_rechecks_actual_source_generation_publication[after-completion]",
+    "FAILED tests/test_campaign_demotion_integration.py::test_real_1256_historical_completed_validation_after_commit",
+    "ERROR tests/test_campaign_publication.py::test_demotion_publisher_policy_receipt_and_completed_replay",
+    "ERROR tests/test_campaign_publication.py::test_demotion_generated_identity_or_registry_slot_refused_before_write[CHEBI:1]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_generated_identity_or_registry_slot_refused_before_write[kgmicrobe.ingredient:a]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[kind]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[old-path]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[before-hash]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_explicit_relocation_and_complete_removal_required[omitted-row]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_must_remove_every_old_subject_slot",
+    "ERROR tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[False-before_source_record]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[False-source_record]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[True-before_source_record]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_either_preceding_native_owner_chain_refused[True-source_record]",
+    "ERROR tests/test_campaign_publication.py::test_demotion_retired_source_reappearance_invalidates_completion",
+    "ERROR tests/test_campaign_publication.py::test_actual_native_multi_owner_new_promotion_and_source_only_publication",
+    "ERROR tests/test_campaign_publication.py::test_dry_run_has_no_outputs - FileN...",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[unknown]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[approval]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-missing]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-extra]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-owner]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-native]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-preserve]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[row-position-bool]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[old-policy]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[prefix]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[source-extra]",
+    "ERROR tests/test_campaign_publication.py::test_closed_plan_and_current_input_refusals[new-suppression]",
+    "ERROR tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[existing-output]",
+    "ERROR tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[symlink-output]",
+    "ERROR tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[hardlink-input]",
+    "ERROR tests/test_campaign_publication.py::test_preexisting_or_aliased_paths_refused[aliased-role]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[candidate-before]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[candidate-after]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[manifest-before]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[manifest-after]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_plan-before]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_plan-after]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_receipt-before]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner_receipt-after]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner-before]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[owner-after]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[receipt_inventory-before]",
+    "ERROR tests/test_campaign_publication.py::test_late_drift_never_leaves_success_receipts[receipt_inventory-after]",
+    "ERROR tests/test_campaign_publication.py::test_changed_policy_history_cannot_be_validated_even_after_hash_restamping",
+    "ERROR tests/test_campaign_publication.py::test_native_receipt_approval_transfer_refused",
+    "ERROR tests/test_campaign_publication.py::test_final_completion_boundary_drift_invalidates_both_success_receipts",
+    "ERROR tests/test_campaign_publication.py::test_promotion_with_native_old_path_history_refused",
+    "ERROR tests/test_campaign_publication.py::test_bad_native_chain_refused - Fil...",
+    "ERROR tests/test_campaign_publication.py::test_selected_historical_owner_pin_requires_exact_native_bridge",
+    "ERROR tests/test_campaign_publication.py::test_missing_historical_owner_bridge_refused",
+    "ERROR tests/test_campaign_publication.py::test_source_swap_same_bytes_still_refused",
+    "ERROR tests/test_campaign_publication.py::test_late_output_parent_swap_never_writes_replacement_directory",
+    "ERROR tests/test_campaign_publication.py::test_removal_is_traced_and_unrelated_physical_line_preserved",
+    "ERROR tests/test_campaign_publication.py::test_untraced_candidate_cell_cannot_be_written_from_plan",
+    "ERROR tests/test_campaign_publication.py::test_hardlink_created_at_last_replace_is_refused_without_touching_old_inode[canonical]",
+    "ERROR tests/test_campaign_publication.py::test_hardlink_created_at_last_replace_is_refused_without_touching_old_inode[policy]",
+    "ERROR tests/test_campaign_publication.py::test_hidden_receipt_addition_after_completion_replay_is_rejected",
+    "ERROR tests/test_campaign_publication.py::test_sidecar_reattribution_is_refused_even_with_unchanged_canonical",
+    "ERROR tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[../outside]",
+    "ERROR tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[/absolute]",
+    "ERROR tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[a//b]",
+    "ERROR tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[a/./b]",
+    "ERROR tests/test_campaign_publication.py::test_noncanonical_plan_reference_refused[a\\\\b]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-owner-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-owner-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-checkpoint-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-checkpoint-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-protected_snapshot-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[addition-protected_snapshot-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-owner-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-owner-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-checkpoint-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-checkpoint-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-protected_snapshot-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[removal-protected_snapshot-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-owner-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-owner-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-checkpoint-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-checkpoint-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-protected_snapshot-False]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_complete_memberships[alias-protected_snapshot-True]",
+    "ERROR tests/test_campaign_publication.py::test_1194_final_verifier_rechecks_receipt_membership",
+    "ERROR tests/test_campaign_publication.py::test_policy_beforeimage_cannot_escape_source_protected_checkpoint",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-0]",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-1]",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-2]",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[False-3]",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-0]",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-1]",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-2]",
+    "ERROR tests/test_campaign_publication.py::test_1197_disconnected_prospective_owner_chain_refused_before_writes[True-3]",
+    "ERROR tests/test_campaign_publication.py::test_1195_publication_producer_pins_are_closed_and_loaded[missing]",
+    "ERROR tests/test_campaign_publication.py::test_1195_publication_producer_pins_are_closed_and_loaded[extra]",
+    "ERROR tests/test_campaign_publication.py::test_1195_publication_producer_pins_are_closed_and_loaded[stale]",
+    "ERROR tests/test_campaign_publication.py::test_1195_replaced_loaded_dependency_rejected_at_late_boundary",
+    "ERROR tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{\"approval\":\"NONE\",\"approval\":\"SUPPORTED\"}]",
+    "ERROR tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{\"value\":NaN}]",
+    "ERROR tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{\"value\":Infinity}]",
+    "ERROR tests/test_campaign_publication.py::test_plan_json_never_silently_selects_duplicate_or_nonfinite_values[{\"value\":-Infinity}]",
+    "ERROR tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[False-False]",
+    "ERROR tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[False-True]",
+    "ERROR tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[True-False]",
+    "ERROR tests/test_campaign_publication.py::test_1200_global_new_owner_impact_refused_without_touching_unselected_row[True-True]",
+    "ERROR tests/test_campaign_publication.py::test_1200_unowned_prior_alias_is_preserved_without_scope_expansion",
+    "ERROR tests/test_campaign_publication.py::test_1198_noncanonical_receipt_argument_refused_before_preparation[False-False]",
+    "ERROR tests/test_campaign_publication.py::test_1198_noncanonical_receipt_argument_refused_before_preparation[False-True]",
+    "ERROR tests/test_campaign_publication.py::test_1198_noncanonical_receipt_argument_refused_before_preparation[True-False]",
+    "ERROR tests/test_campaign_publication.py::test_1198_noncanonical_receipt_argument_refused_before_preparation[True-True]",
+    "ERROR tests/test_campaign_publication.py::test_1214_completed_publication_retains_exact_recovery_beforeimages",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[backup_flush-canonical-before.tsv]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[backup_flush-policy-before.json]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[before_publication-canonical-before.tsv]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[before_publication-policy-before.json]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[after_canonical-canonical-before.tsv]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[after_canonical-policy-before.json]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[before_finish-canonical-before.tsv]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[before_finish-policy-before.json]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[after_finish-canonical-before.tsv]",
+    "ERROR tests/test_campaign_publication.py::test_1214_inplace_recovery_corruption_never_completes[after_finish-policy-before.json]",
+    "ERROR tests/test_campaign_publication.py::test_1214_standalone_validation_scope_excludes_later_recovery_file_drift",
+    "ERROR tests/test_campaign_publication.py::test_1256_intervening_head_refused_before_publication_outputs[False-False]",
+    "ERROR tests/test_campaign_publication.py::test_1256_intervening_head_refused_before_publication_outputs[False-True]",
+    "ERROR tests/test_campaign_publication.py::test_1256_intervening_head_refused_before_publication_outputs[True-False]",
+    "ERROR tests/test_campaign_publication.py::test_1256_intervening_head_refused_before_publication_outputs[True-True]",
+    "ERROR tests/test_campaign_publication.py::test_1256_prepare_final_boundary_rechecks_head",
+    "ERROR tests/test_campaign_publication.py::test_1256_late_commit_never_leaves_success_receipts[reserved]",
+    "ERROR tests/test_campaign_publication.py::test_1256_late_commit_never_leaves_success_receipts[after-first-replace]",
+    "ERROR tests/test_campaign_publication.py::test_1256_late_commit_never_leaves_success_receipts[before-completion]",
+    "ERROR tests/test_campaign_publication.py::test_1256_late_commit_never_leaves_success_receipts[after-completion]",
+    "ERROR tests/test_campaign_publication.py::test_1256_completed_validation_permits_later_commit",
+    "ERROR tests/test_campaign_publication.py::test_1256_live_publication_allows_uncommitted_derived_sync"
+  ],
+  "classification": "354 source cases pass in a command that failed with157 publisher/integration cases affected by missing private fixture prerequisites. This is not a clean511 or518 run; it is not evidence that tracked production make_receipt.py is absent.",
+  "observed_error_sections": [
+    {
+      "lines": [
+        123,
+        138
+      ],
+      "fact": "Missing make_receipt.py inside author minimal private portable archive."
+    },
+    {
+      "lines": [
+        17760,
+        17782
+      ],
+      "fact": "Configured original repository history has26 receipts; actual test requires27. Author command names original root rather than frozen J."
+    }
+  ],
+  "actual_tracked_maker": {
+    "final": {
+      "tree_entry": {
+        "command": [
+          "git",
+          "-C",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+          "ls-tree",
+          "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+          "--",
+          "reports/sssom_completion_20260921/mapping_changes/make_receipt.py"
+        ],
+        "exit": 0,
+        "stdout": "100644 blob 025619b5a7417718023200320cc60b52ae25ff9e\treports/sssom_completion_20260921/mapping_changes/make_receipt.py\n",
+        "stderr": ""
+      },
+      "working": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/reports/sssom_completion_20260921/mapping_changes/make_receipt.py",
+        "sha256": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121",
+        "size": 6734
+      },
+      "git_sha256": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121"
+    },
+    "J": {
+      "tree_entry": {
+        "command": [
+          "git",
+          "-C",
+          "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+          "ls-tree",
+          "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+          "--",
+          "reports/sssom_completion_20260921/mapping_changes/make_receipt.py"
+        ],
+        "exit": 0,
+        "stdout": "100644 blob 025619b5a7417718023200320cc60b52ae25ff9e\treports/sssom_completion_20260921/mapping_changes/make_receipt.py\n",
+        "stderr": ""
+      },
+      "working": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree/reports/sssom_completion_20260921/mapping_changes/make_receipt.py",
+        "sha256": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121",
+        "size": 6734
+      },
+      "git_sha256": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121"
+    }
+  },
+  "separate_publisher_receipt": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/combined-publisher-v1/receipt.json",
+    "sha256": "51a2ea1fd42756a6333190d7e3538bd623d698f20c709f70fc826eed963ae9f4",
+    "size": 210
+  },
+  "separate_publisher_command": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/combined-publisher-v1/command.json",
+    "sha256": "9e061def343ac8e3c396dd32acdad5de8a1600f4577010ae8b9dc7a2ed5176ac",
+    "size": 1419
+  },
+  "separate_publisher_log": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/combined-publisher-v1/run.log",
+    "sha256": "3e78fbdc7358cc0cb3ca12d760078a78e707b0c807b938b3f9f58527fbf07082",
+    "size": 29852
+  },
+  "publisher_summary": "164 passed, zero skips,20 actual generator cases; separate author run with exact final source dependency.",
+  "original_probe_receipt": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index1256-fix-v1/original-probe-replay-v1/receipt.json",
+    "sha256": "02e4aef273581f6bdb759a9b4bb7d609824dc1d95095a66f05dd168bfc9ccd2b",
+    "size": 1244
+  },
+  "original_probe_qualification": "Hardcoded reviewed_head21061 is historical. Actual source hash is final; test helper hash d478... predates the corrected new rename-test expectation. Not mislabeled final full-suite proof.",
+  "actual_author_native_cases": [
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_commit_between_0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/00/command.json",
+          "sha256": "c7a422ccbb7adf3614adbe31a804bfcc11b7f28fcfea7459ef510760e3de0d29",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/00/command.log",
+          "sha256": "bcc19a66cd5d55c9271ac10ee46fa0d7c58068d079db34fae00fb1d54b152e69",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/00/generation.json",
+          "sha256": "2f21633e762b4e0896fe87738520af85fb3e1941c934f3b17ab6cd61f313bb19",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/00/application.json",
+          "sha256": "eebcc21fa6a0fb1b4c7d5eb4c31eaf8ad9a520fe7860ff1fbf1b37d4c868eb14",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "dff4da7c19142a26cc842b6bee8ec81e18144970",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "0cbaa2719c9201703b50b70e8e0cc2dc82f3dfe9",
+          "mim": "94ba64cab6eaca17928c6efcff7ce7de4cc14409"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_commit_between_1",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/01/command.json",
+          "sha256": "efbfb90709ad96fc5d99dad25cdd48625d545ce946d05984529652694e71af69",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/01/command.log",
+          "sha256": "fc677f97a49972b2d05f975b03008edfa1c059907ee01adf0bdce373a7d49e14",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/01/generation.json",
+          "sha256": "c217f4828372a60c7ab87650c1148ff8723ded96fed9560009677de00efb3fe5",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/01/application.json",
+          "sha256": "7f6d7e7a16383a6bd2bf3dc4c942d3394b224ff1ce501209ec2467e6b4d10b2c",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "92249979231baee68afafb7067ad850c2d17788e",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "9f9508364075b2fddc6605fbab01b64dc9920d3a",
+          "mim": "a22aa1a29e387e8bcac28b2c84d01d615db339ed"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/02/command.json",
+          "sha256": "8a90326e925bc338d01ca199e9cd8b9657024ece84f4879f3420f24c4f732763",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/02/command.log",
+          "sha256": "5f4b18926a750f26cd0b7f8d69f86afb886209c439da170328c9da730bed147f",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/02/generation.json",
+          "sha256": "7a8e4ca24d9a7b999947cdf9cb0f054b6db67a3dc581561e2bfc130e01c5b163",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/02/application.json",
+          "sha256": "ec956524a9cc57e1bbdd4eaf39770a00bcc72b728c23bd14f8c06425b373acfd",
+          "size": 4655
+        },
+        "final_recheck_observation": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/02/final-recheck-observation.json",
+          "sha256": "9a30bc249c65f3e973617d4923e6da1020c0f922786d873252f1c0c83be57c4a",
+          "size": 573
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "9928597b2822612c6ee5df938165a8c0d7fe9213",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "8b84b3d66fe39c5ca42c51a5770b0c8927341522",
+          "mim": "88e9828a8cc727242322dea9db1b3c9cfe8aed48"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation.",
+      "reports/final-recheck-observation.json": {
+        "input": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech0/reports/final-recheck-observation.json",
+          "sha256": "9a30bc249c65f3e973617d4923e6da1020c0f922786d873252f1c0c83be57c4a",
+          "size": 573
+        },
+        "actual": {
+          "scope": "Real source, native generation, native receipt and guarded publication; fault wrapper only commits after unchanged real proof",
+          "boundary": "source-proof",
+          "complete_call": 1,
+          "baseline": "88e9828a8cc727242322dea9db1b3c9cfe8aed48",
+          "actual_head": "5f1c97c5ecd38149f9aff22b912f2f9f97f46eae",
+          "injected": [
+            "5f1c97c5ecd38149f9aff22b912f2f9f97f46eae"
+          ],
+          "error": "Campaign publication: live publication HEAD changed from source baseline",
+          "returned_result": null,
+          "publication_receipt_nonempty": false,
+          "native_receipt_nonempty": false
+        }
+      }
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech1",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/03/command.json",
+          "sha256": "c3b4ea688eb3a0e66f4f339800d71df079933dab7d2ae2196d19708bd276a12f",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/03/command.log",
+          "sha256": "d8bb243dcbfa87bedafeece48ee0f5fa71f04f980d1adf6cf4d489b237151158",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/03/generation.json",
+          "sha256": "092fd6597c4ab8cc067e3774ebca6d57ac25c0ed45844cb3a04b8702043502d6",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/03/application.json",
+          "sha256": "2af8b9b69bd3ed5de31f1ae4eb3f3abd954d9ed40ad8522e0966e1397106d48a",
+          "size": 4655
+        },
+        "final_recheck_observation": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/03/final-recheck-observation.json",
+          "sha256": "79467788a561b7b42e3fb6a346afd7cb4a154e9ca0d993269e022987c8c4c1a6",
+          "size": 582
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "059b673156cda5ebcbc4eb63e92c799d35a2388e",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "cd7883e627532e863a1539b610657a743bc273a6",
+          "mim": "5b6888768673b9f7a13b35b65d88afe31a92aac1"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation.",
+      "reports/final-recheck-observation.json": {
+        "input": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech1/reports/final-recheck-observation.json",
+          "sha256": "79467788a561b7b42e3fb6a346afd7cb4a154e9ca0d993269e022987c8c4c1a6",
+          "size": 582
+        },
+        "actual": {
+          "scope": "Real source, native generation, native receipt and guarded publication; fault wrapper only commits after unchanged real proof",
+          "boundary": "reserved-output-proof",
+          "complete_call": 1,
+          "baseline": "5b6888768673b9f7a13b35b65d88afe31a92aac1",
+          "actual_head": "c7538d73d67fc27c0d28264a0ad01dc0757853a7",
+          "injected": [
+            "c7538d73d67fc27c0d28264a0ad01dc0757853a7"
+          ],
+          "error": "Campaign publication: live publication HEAD changed from source baseline",
+          "returned_result": null,
+          "publication_receipt_nonempty": false,
+          "native_receipt_nonempty": false
+        }
+      }
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech2",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/04/command.json",
+          "sha256": "1a9de4e1c6a60d45f769d48c0353d5c32d799909ac7a1164e21c9bcca73a1e7e",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/04/command.log",
+          "sha256": "0e611d5459c79067b073daef59f18a8458bbd880bd5d7a5c40e365c15eabae5b",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/04/generation.json",
+          "sha256": "d64edb45e1a160f4c80850267a4ef3410fe29ae6268614ba94e62f85c967a019",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/04/application.json",
+          "sha256": "2c5385b8b88f161f7ff1424991224e123ecd799c7a2e6790543fc62d136caba0",
+          "size": 4655
+        },
+        "final_recheck_observation": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/04/final-recheck-observation.json",
+          "sha256": "0e0a3f9e5e481e31c74235aa05690d52122a617758650ed3c59282dd85c6f1f2",
+          "size": 573
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "ed15cdaadecc88e6160fa8e87ec33fd1bea5421a",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "03026bb337dbdbf7f5e195612a3282868b64834d",
+          "mim": "0aeac0a0f5158309fdac81306c5579311c7be1c3"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation.",
+      "reports/final-recheck-observation.json": {
+        "input": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech2/reports/final-recheck-observation.json",
+          "sha256": "0e0a3f9e5e481e31c74235aa05690d52122a617758650ed3c59282dd85c6f1f2",
+          "size": 573
+        },
+        "actual": {
+          "scope": "Real source, native generation, native receipt and guarded publication; fault wrapper only commits after unchanged real proof",
+          "boundary": "source-proof",
+          "complete_call": 2,
+          "baseline": "0aeac0a0f5158309fdac81306c5579311c7be1c3",
+          "actual_head": "99c6a6c90bfcdf2a269634a789d97bf8f0ac812d",
+          "injected": [
+            "99c6a6c90bfcdf2a269634a789d97bf8f0ac812d"
+          ],
+          "error": "Campaign publication: live publication HEAD changed from source baseline",
+          "returned_result": null,
+          "publication_receipt_nonempty": false,
+          "native_receipt_nonempty": false
+        }
+      }
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech3",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/05/command.json",
+          "sha256": "d0b05bb5215140a44b5022d20ce7c8a611ff8fe0ffda9620126013c06f62c37a",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/05/command.log",
+          "sha256": "15b7fed14cea5ec71e87be45fcbb5abb7cd0135971c2ba590b8f9843243de4b6",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/05/generation.json",
+          "sha256": "f577b08fb9d0739ca291c69a5017bbda4ab99b4bed43b0c690e7cf3f1a6910fc",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/05/application.json",
+          "sha256": "e1685f6333caf9b13ab7ded4ae3a5ce5bedc9bc6151d23fe9b99c6b393483e44",
+          "size": 4655
+        },
+        "final_recheck_observation": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/05/final-recheck-observation.json",
+          "sha256": "a70921181fcfcfae3d1506c92fa2218c3611c6d206c2bff9c4562a0d094813cc",
+          "size": 582
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "e796aaba780a84cd7b3b9e623d35612b1d83846c",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "7e72458df5be3e9dbd1f6ba944422f596e1ad60f",
+          "mim": "7f6ce13a44b725116ecdaa12efc73ae99df18d97"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation.",
+      "reports/final-recheck-observation.json": {
+        "input": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_full_final_rech3/reports/final-recheck-observation.json",
+          "sha256": "a70921181fcfcfae3d1506c92fa2218c3611c6d206c2bff9c4562a0d094813cc",
+          "size": 582
+        },
+        "actual": {
+          "scope": "Real source, native generation, native receipt and guarded publication; fault wrapper only commits after unchanged real proof",
+          "boundary": "reserved-output-proof",
+          "complete_call": 2,
+          "baseline": "7f6ce13a44b725116ecdaa12efc73ae99df18d97",
+          "actual_head": "90228433322a2ca9f05d43cc3abeab10f538bf3b",
+          "injected": [
+            "90228433322a2ca9f05d43cc3abeab10f538bf3b"
+          ],
+          "error": "Campaign publication: live publication HEAD changed from source baseline",
+          "returned_result": null,
+          "publication_receipt_nonempty": false,
+          "native_receipt_nonempty": false
+        }
+      }
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_historical_comp0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/06/command.json",
+          "sha256": "cd6d4b466b6fa0e771e4c62f4212765be54c8191f5ad6d63963095aaec02d654",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/06/command.log",
+          "sha256": "84f683453f4556c5c6038578e034ce582693decd4957592725f8e2343ede75af",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/06/generation.json",
+          "sha256": "b8f07ef3ff05c2d7736db6f79ad382d546d4fbe8f7e5bd70ea7049f563d112d2",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/06/application.json",
+          "sha256": "aa0d98a679c3c7ca9dac9d5b227af3a17896d24642ff10ec60e0de9ab3a1c56d",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "62ef622e1e1dc3242d463ced33499ab3ff6b44f6",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "525fb3777204f0735eb3fe1ee8aee314d4c0081f",
+          "mim": "50873a70682202f7d005de4467b85fd504c4a73c"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_late_commit_rec0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/07/command.json",
+          "sha256": "5e8af0e73ecf6ee902b48bfb0ec6170c612a03fdd0e7f393b8d1bb12739bf405",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/07/command.log",
+          "sha256": "66a4d449ef4c4b9187e4d60ab9c34e27a4e299fcca4f775fe7616dbeaeaeb3bd",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/07/generation.json",
+          "sha256": "09f538c263b12650712be7c343382387585e11e9e4df565ab1b6d1cdb46bb4c3",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/07/application.json",
+          "sha256": "50eb4d29dd18676883b56165c8ec069c3d58c81ed53910755c1c83fe2484963c",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "7f147d8f70096baabdd1adaef86e8339a463ad37",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "a1fe4d22062368152cf32ad29006098fa73b5911",
+          "mim": "375225cfd1e69c949aead8f3462fcec891f7623f"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_late_commit_rec1",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/08/command.json",
+          "sha256": "871591d7b29f8ce32d1b3111b62ba0ad1497a45f8dbede75a966112ce00bb589",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/08/command.log",
+          "sha256": "846e24087c26dc8116056f46534ab3f3b26a503dce0a1ff8dc044a9a250c0bdf",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/08/generation.json",
+          "sha256": "1624bcbf9a029dc590741f1e680da4681b8a56b94ebc5647a13f97be8faccd89",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/08/application.json",
+          "sha256": "aa8b2e3856ba1d93aa61d602b21b7b88a6290e276be62272a8bb163707e084f5",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "2e302fd6549bc67e94d4a0dbed4469f117f9ada2",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "bbbc4a917cc5026d18c2989081d37a09a0cb128b",
+          "mim": "180a09a95be7d2bd5cc7cb42c8d41aae161809cd"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_late_commit_rec2",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/09/command.json",
+          "sha256": "507ae836773addd1100bd9d9123e8f8755a79b097e0042ccd84dcc7a157b66c3",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/09/command.log",
+          "sha256": "d3c0c8c02bb38d7a6bf0c98f438ccc95d9f2ef792db82f30851e590b80ef403b",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/09/generation.json",
+          "sha256": "ff46d7e917a385023bcac4907c820594fe44c2b0e943ac3e4c3483588646e6a0",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/09/application.json",
+          "sha256": "4cc726ec9af316dd725bc54f5a272a922388a0b68e92beed3d9fd3aa42a2e38b",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "92d2184affc613eb323d1cd003c9c12028cf35a2",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "665e17976aa82c9f2abceefed0c097d19d046e67",
+          "mim": "66738dfd06feed49653f21ccd2100dbca74a63e1"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_1256_tracked_derived0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/10/command.json",
+          "sha256": "8fe89cb9e5bd0bef39c19061dc8d8356a1721d6e5a72d0ecb369d2a8d7854a94",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/10/command.log",
+          "sha256": "510f839cd4699799d8aa0d3f9f1e52482b133f06b5a5608598bdb26fdda3d4e1",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/10/generation.json",
+          "sha256": "4599de87e8e35872743160250d91861c8ecb5760377f3d08710f724b32103574",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/10/application.json",
+          "sha256": "cca2f30f927eb175f17b20fb8e911c027fa14517d95d00ec06aa720e4b7c2c50",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "e92b2329bc58e677a60b00a923e49827c5127f4b",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "005b34a36b1673e7f34e2104a071cceaa71a2aec",
+          "mim": "e1ffb2e41df9a058dab7a2e402606c3a584aaa98"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_late_retire0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/11/command.json",
+          "sha256": "204ce3024756082e86ab879340e8b76d7668de3f932eef18be2f79fdb6a7767f",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/11/command.log",
+          "sha256": "1d04b1cc0df8bf43f445e254048abc068c3662af9b47fbaa5e851067de535872",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/11/generation.json",
+          "sha256": "12a3614f80df91d34a50b8514f5d0a7daf8ba03bda6c4629de9b52c6b3f6d935",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/11/application.json",
+          "sha256": "30b0b4c7252d64cafdc37041d4d36a0acf751cdebd269f008643de2c22b3d7ef",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "b743bfefc1d0388e93f7a5e3e8a555df2c1ea088",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "9dd13043c3568a109868113c777fc4879134830e",
+          "mim": "c7d679de0b16923bcd5819a8a7db9609aaa98b9a"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_late_retire1",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/12/command.json",
+          "sha256": "2ed4d9f66fa5af2636fa9966e149fd2874e8aab8642ea40a3e3a46d3dbc7c83f",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/12/command.log",
+          "sha256": "0c94c3e74581eb32db62ecf8b00cd237762f385085c419a2db8d3c7944d9ae95",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/12/generation.json",
+          "sha256": "54ef95c763248f6d66a413306d0fb76244ffeccf7e080ab2548a19f642e9fb1a",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/12/application.json",
+          "sha256": "8fa12438cdb19873a06fb2e412a35b690a4b703ec617a9e0d46fb62e869cf8a5",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "6d20b69764e9d34972963bd8c1c241a9eb370626",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "76ee373ee5645500dd158d9cb85fb5bfe7fd9bdf",
+          "mim": "82245e62effe71351ce96ec8ce3c2fc0a27753f0"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_preserves_20",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/13/command.json",
+          "sha256": "3807a3700b071488b1f719896622f573e258dc332bcf8135a5904434218bb59b",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/13/command.log",
+          "sha256": "272c557aedff8a08d890c5f2196510680a8d11f16587a584b40279becb02104d",
+          "size": 1238
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/13/generation.json",
+          "sha256": "0382b074f142799be2aff84c2fad22e41490f134a69897cdc51488460a02ce63",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/13/application.json",
+          "sha256": "97944f84292778c956baac55e98f88877466e3761f577d1389bc1d2b40bedfde",
+          "size": 13422
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Angustmycin.yaml",
+          "source_record": "data/ingredients/unmapped/Angustmycin.yaml",
+          "before_yaml_sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "dc2b2fa81b4de9bd115660e88ff52873aa29b48346bce224811705b2d6adac1d"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "164ca621a6b8da9af8e4032962088c35711ee650",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Angustmycin.yaml",
+          "source_path": "data/ingredients/mapped/Angustmycin.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0"
+          },
+          "after_yaml_sha256": "dc2b2fa81b4de9bd115660e88ff52873aa29b48346bce224811705b2d6adac1d"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "513ff3d3117da39ebbad8a04f20fc61a99ce68c8",
+          "mim": "164ca621a6b8da9af8e4032962088c35711ee650"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation.",
+      "reports/hold-proof.json": {
+        "input": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_preserves_20/reports/hold-proof.json",
+          "sha256": "e005a56af2e292988a7095f3a732caae830fb5cfbb6ce390b4d5075662eb8399",
+          "size": 10994
+        },
+        "actual": {
+          "scope": "Real receipt/checkpoint/held-owner lineage only; not full semantic-release validation or approval",
+          "receipt_prefix": {
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch1.json": "0554d4d32924eec4c9909d3c0ff36c8dd9d44ce426011ba42f0122d9172a41a0",
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch2.json": "c10ef0d7f577190f0d97a95c0482011d6abfaaf03fba2c509f98eec66694c373",
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch3.json": "aff24cdc08d1cb979795ffad227c03e9622733438ec7f94c5669ea05da6bfe88",
+            "reports/sssom_completion_20260921/mapping_changes/issue312-batch4.json": "2779f46e8ff8a2d0429fa382ce67dec6f7b2b43b02be3c316c5a7bdcf2138409",
+            "reports/sssom_completion_20260921/mapping_changes/issue232-wrong-form-names.json": "a94aab0d6d9e5cbf6fec1c6d3829981630bd2c40434b868a8d20526f4a7db985",
+            "reports/sssom_completion_20260921/mapping_changes/issue669-704-rulings.json": "0870e436e4f03a1ef2377a957fedab70b42d201b6f9b8935478c40ac647c90d8",
+            "reports/sssom_completion_20260921/mapping_changes/issue759-micro-source.json": "75008d33a173155a6bdccafb64bbee96b0a457f9da5b761bd7ee2aa9b74100aa",
+            "reports/sssom_completion_20260921/mapping_changes/chemical-scopes-20260923.json": "a31d5bae53211a7cdc008008b4eb8dd49d9e2ec3a62773c912dbdab8d0d0b7ae",
+            "reports/sssom_completion_20260921/mapping_changes/ingredient-identities-20260924.json": "1cf4c94c4ff4704c642297aafbc48d05b1978fcd67cbe88ff076e4def9c4be5b",
+            "reports/sssom_completion_20260921/mapping_changes/data-license-20261001.json": "6d89e96b3560bb2b237fc9a358b1ef68986f1361dc536a4e5872661aaf459403",
+            "reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json": "9b578f6c25c1ebabb8e58c5a59d6188b7c1f2dd3c8c70ed021b35144c6da1226",
+            "reports/sssom_completion_20260921/mapping_changes/claw571-hydrate-parent-identities.json": "2eeb7e2b9da164403cc715e6cc1b3a8c36f6f35d173bc1d740f8b90f7ce3d762",
+            "reports/sssom_completion_20260921/mapping_changes/issue878-hydrate-contradictions.json": "cdd362a5f2d34ebf6676a098869995ce41a8059285cbffc2f92bbc3e49c86ec3",
+            "reports/sssom_completion_20260921/mapping_changes/issue669-1003-scoped-alias-corrections.json": "00049aa1d2b19565020d4ecbec999fc723d2cf5954968ec6bf5cebdc0da73f34",
+            "reports/sssom_completion_20260921/mapping_changes/issue1014-provenance-restoration.json": "fbeec3fbfee71be85541353683df135f96dc1d0021c6bfb3877bcc5eca8813d0",
+            "reports/sssom_completion_20260921/mapping_changes/issue875-ncit-exact-heptahydrate.json": "28bd529e14104cfbf9160e9532b3d859dbe6259dbac00a9d877bac1daec8a2b8",
+            "reports/sssom_completion_20260921/mapping_changes/issue1004-carnitine-hydrochloride-merge.json": "e14ab50d5b981f2e003d755644ffcb98c901519fc0e8324658900ada1ae12e1c",
+            "reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json": "2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd",
+            "reports/sssom_completion_20260921/mapping_changes/issue669-owned-name-policy.json": "0ece81a8c97723fef6aeaff73693fa013aac1589727ed896400198ff8d4b98f7",
+            "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+            "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+            "reports/sssom_completion_20260921/mapping_changes/issue753-870-registry-and-node-corrections.json": "8139abdd7e82930b8a4fdee5872d049072e997f033860e81cc0bab02b320eb37",
+            "reports/sssom_completion_20260921/mapping_changes/issue871-268-hydrate-stock-chemistry.json": "f12080ebd7c63ea223ec8f7a2ab874078fc506c8f0d3df053bc4ab616bac6a2c",
+            "reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json": "3d8d3d1189d0393d5ccd23ce3b83a5196e1664f045269254160df33a20e6ea07",
+            "reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json": "45af9515590918e3420327668d4b89f564457cf97eea9404a34c4da7d17f0e4b",
+            "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+            "reports/sssom_completion_20260921/mapping_changes/issue1149-1151-kgm-source-corrections.json": "7e85407431d709192b3a702027fab9b398eb239570f901d8cdfd812a06602dec"
+          },
+          "new_receipt": "eb9e935fa742440882a1f0f5ef47f433f690030e98fa7d2ed0d802328e8b3c48",
+          "checkpoint": {
+            "sequence": 11,
+            "path": "reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json",
+            "sha256": "9b578f6c25c1ebabb8e58c5a59d6188b7c1f2dd3c8c70ed021b35144c6da1226",
+            "after_sha256": "2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e",
+            "position": 431
+          },
+          "before_position": 436,
+          "after_position": 435,
+          "lineage": {
+            "MIM.review:e619555259b8de4a7aed8090e7ac32562f3df3a23c34371cd9cf28647f6ef26f": {
+              "assertion_id": "MIM.review:acc57e8c6a4caa7daa88a3958426c48850967d11e4ef134ce4fd0bc41228dd90",
+              "edge_id": "MIM.assertion:08c53f674b8f25b58e9019fa04560d81b73035745721124ef2d4bdd93d5551cd",
+              "baseline_position": 431,
+              "current_position": 435,
+              "checkpoint": {
+                "sequence": 11,
+                "path": "reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json",
+                "sha256": "9b578f6c25c1ebabb8e58c5a59d6188b7c1f2dd3c8c70ed021b35144c6da1226",
+                "after_sha256": "2eae181f31d6433c20ffdb9dc2f8c8d7ad0a17a46a3189dea8c307fbc1c7b40e",
+                "position": 431
+              },
+              "receipts": [
+                {
+                  "sequence": 12,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/claw571-hydrate-parent-identities.json",
+                  "sha256": "2eeb7e2b9da164403cc715e6cc1b3a8c36f6f35d173bc1d740f8b90f7ce3d762",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 13,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue878-hydrate-contradictions.json",
+                  "sha256": "cdd362a5f2d34ebf6676a098869995ce41a8059285cbffc2f92bbc3e49c86ec3",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 14,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue669-1003-scoped-alias-corrections.json",
+                  "sha256": "00049aa1d2b19565020d4ecbec999fc723d2cf5954968ec6bf5cebdc0da73f34",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 15,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue1014-provenance-restoration.json",
+                  "sha256": "fbeec3fbfee71be85541353683df135f96dc1d0021c6bfb3877bcc5eca8813d0",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 16,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue875-ncit-exact-heptahydrate.json",
+                  "sha256": "28bd529e14104cfbf9160e9532b3d859dbe6259dbac00a9d877bac1daec8a2b8",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 17,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue1004-carnitine-hydrochloride-merge.json",
+                  "sha256": "e14ab50d5b981f2e003d755644ffcb98c901519fc0e8324658900ada1ae12e1c",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 18,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json",
+                  "sha256": "2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 19,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue669-owned-name-policy.json",
+                  "sha256": "0ece81a8c97723fef6aeaff73693fa013aac1589727ed896400198ff8d4b98f7",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 20,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json",
+                  "sha256": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 21,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+                  "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 22,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue753-870-registry-and-node-corrections.json",
+                  "sha256": "8139abdd7e82930b8a4fdee5872d049072e997f033860e81cc0bab02b320eb37",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 23,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue871-268-hydrate-stock-chemistry.json",
+                  "sha256": "f12080ebd7c63ea223ec8f7a2ab874078fc506c8f0d3df053bc4ab616bac6a2c",
+                  "before_position": 431,
+                  "after_position": 431
+                },
+                {
+                  "sequence": 24,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json",
+                  "sha256": "3d8d3d1189d0393d5ccd23ce3b83a5196e1664f045269254160df33a20e6ea07",
+                  "before_position": 431,
+                  "after_position": 432
+                },
+                {
+                  "sequence": 25,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json",
+                  "sha256": "45af9515590918e3420327668d4b89f564457cf97eea9404a34c4da7d17f0e4b",
+                  "before_position": 432,
+                  "after_position": 436
+                },
+                {
+                  "sequence": 26,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+                  "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+                  "before_position": 436,
+                  "after_position": 436
+                },
+                {
+                  "sequence": 27,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue1149-1151-kgm-source-corrections.json",
+                  "sha256": "7e85407431d709192b3a702027fab9b398eb239570f901d8cdfd812a06602dec",
+                  "before_position": 436,
+                  "after_position": 436
+                },
+                {
+                  "sequence": 28,
+                  "path": "reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json",
+                  "sha256": "eb9e935fa742440882a1f0f5ef47f433f690030e98fa7d2ed0d802328e8b3c48",
+                  "before_position": 436,
+                  "after_position": 435
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_publication0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/14/command.json",
+          "sha256": "78e752342e89244d954162285fa9c150e4b29772ce7b1ae4992e8d19296a017d",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/14/command.log",
+          "sha256": "3473b7b1f78257d85f0ae870b16bb51265c6469c321cdb307a6c51e2ca132f6e",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/14/generation.json",
+          "sha256": "61fe503ce59b837c51669b0489a226e1c3f25c910cdb42702037bc049c6fe3c1",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/14/application.json",
+          "sha256": "b3f68823d860162e9d9a99a87bf7035493d95b31b7cce4261d76f51ab0c39d62",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "7204bb2993ede3e7cec9a1b17cb37e649c0b8a47",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "1ef42bef4d2cf07dd447213522e1858a12e1f17c",
+          "mim": "35b7962a497331bbb06b3f1c5cd85a4a7f7410cb"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_publication1",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/15/command.json",
+          "sha256": "787014e821e3558c2c00f4e79a30e6a8fa1f5f921933f1cf73ab8b9e90133b50",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/15/command.log",
+          "sha256": "762a8adc0f5cafb63d326b4597ab17e2b002f5002d0be18855623924dc19c118",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/15/generation.json",
+          "sha256": "f7d9af6c329de98d8c3482d101c2de12862381a2d2ae03d95f6eaf1f55b001ed",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/15/application.json",
+          "sha256": "d3b92d9a6eb3dd7b3a3b9da7e68443a7edbc3115c14849930edeb3c617ae3edb",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "bd85dfbd04002a606d75a9389cded9b3d02bdd6f",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "e27495df9dcfe4bbe4418f648df11b6c4c7b1462",
+          "mim": "4276dd99b0a30b44cbc274556849be0e8a8e08af"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_publication2",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/16/command.json",
+          "sha256": "7afb43368a6d62b9a986a0766be500bb00fb5332b2d6ce709832565a69bc9ea7",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/16/command.log",
+          "sha256": "27b6b8fa322ac0a1497f8f4885ac87da404541b631137498ca596d2f8b56f03f",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/16/generation.json",
+          "sha256": "99ecbabf618d655ef53adf32e72a9d78b7be367270c8a27113697e863d1159c7",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/16/application.json",
+          "sha256": "4e90e1bd782c39509dd68793cd5502d64af1e07ea88818e0255e802c0a7b48e0",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "4207f370a19aca001d4636b07b0e6cc4ef40ea95",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "0ee7f492e62f2a1825cd583ae251f0e7cda54991",
+          "mim": "ffffffffffffffffffffffffffffffffffffffff"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_publication3",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/17/command.json",
+          "sha256": "614d9457e637a9de4eed40ef21a83f054b0335aa4cdaba40ac11b34bfcc29feb",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/17/command.log",
+          "sha256": "8692225991fc2b280d3d574562409cf81a78b8c8f2d779ef86e76fbfea01e09d",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/17/generation.json",
+          "sha256": "e1edee9d6ecf4c48f9d65e2ee51864bcf38484adf4339d00fdaacd6e32a98bc9",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/17/application.json",
+          "sha256": "a911e1681665940f7e1b556d0c1762ecffd0f8e41cb86b9da401086e32dea1c5",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "fe65f513cf38972bc6f82b072760fea501fd6687",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "3566c7c69a652fca8f06134e5d1339f00b78295d",
+          "mim": "c03e59b22e4c5630caae5ca32943453c01acceb0"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_demotion_publication4",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/18/command.json",
+          "sha256": "3c65cea1fe4702e0367684dd66647e92e4e30723d75f5dc34500837626be6670",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/18/command.log",
+          "sha256": "312e88e2c36f579ce1c08a481e10bcf5ddcced70e607be9e2533189cb0ca8a44",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/18/generation.json",
+          "sha256": "9baa608692833ad9c7dc801df7e7c6ef1427c95b23dcb27a5dad1d3eaefb5fd0",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/18/application.json",
+          "sha256": "b0c3cf02cb481017b8ad13bf03c4f53dd51c0b80f280ade676d27c770f38ab95",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "5f2d5192c268d15d89272422c25b39c98aa39334",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "cc70320338deaae753a2aecf190f0c23ca9fefbb",
+          "mim": "23892c173791ded2c2d6389e03968b2432fbe3da"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    },
+    {
+      "case_directory": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/combined-publisher-v1/fixtures/test_real_source_generation_pu0",
+      "symlink": false,
+      "evidence": {
+        "command": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/19/command.json",
+          "sha256": "2808c741b2939b16673bbebe122b4968cfe7f863f2a1c833e8e6db2c5e703bc8",
+          "size": 2354
+        },
+        "log": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/19/command.log",
+          "sha256": "653a4841e9cd4b4f5ae29290faf45103e90849c8b1148c3380091433154841df",
+          "size": 1232
+        },
+        "manifest_after_control": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/19/generation.json",
+          "sha256": "8f8da40fa5cab1a1fa352cf2c946b1dabe3eefebf66bf3854bd5aee6e7a4a315",
+          "size": 9772
+        },
+        "source_application": {
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-late-head1256-fix-v2/portable/evidence/native-cases/19/application.json",
+          "sha256": "cfd3f2a1756a9f0570c811f119208f001dfbbacfb67830d9ff06739186c469ba",
+          "size": 4655
+        }
+      },
+      "command_exit": 0,
+      "source_state": "complete",
+      "source_approval": "NONE: source application only; no scientific or mapping approval transfers",
+      "source_records": [
+        {
+          "operation_id": "o0",
+          "kind": "demote",
+          "before_source_record": "data/ingredients/mapped/Existing.yaml",
+          "source_record": "data/ingredients/unmapped/Existing.yaml",
+          "before_yaml_sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+          "after_capture": {
+            "path": "intake/payload-0.yaml",
+            "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+          },
+          "origins": [
+            {
+              "worker_slot": "worker-01",
+              "head_sha": "a80ae7b315b25ced757c8e30bc98c70f2ca0a907",
+              "proposal_id": "p0",
+              "proposal_binding": "proposals",
+              "payload_binding": "payload-0",
+              "case_hashes": {
+                "case-0": "8017bb0dc12fbcd6e8d998f3d42f6dc9cfce5926431d04299b033dde36a27d2c"
+              }
+            }
+          ],
+          "change": "Fixture source change with explicit paths",
+          "verification": "Schema and exact preimage; no scientific approval",
+          "relocation_review_binding": "demotion-review",
+          "shape": "demotion",
+          "destination_path": "data/ingredients/unmapped/Existing.yaml",
+          "source_path": "data/ingredients/mapped/Existing.yaml",
+          "before_capture": {
+            "path": "source-receipt/owner-before-0000.yaml",
+            "sha256": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b"
+          },
+          "after_yaml_sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        }
+      ],
+      "manifest_after_control": {
+        "external_sssom_validation": "passed",
+        "source_revisions": {
+          "claw": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+          "kg_microbe": "ebf2070d3ae1b9e6a4141d82ebdb097a2e331464",
+          "mim": "0bc34d2f5d7f6a9abc48247eaac814549dc99cd2"
+        }
+      },
+      "qualification": "Author execution, not independent final-head suite. Negative control manifests may be deliberately changed after actual generation."
+    }
+  ],
+  "root_final_combined_run": "Not executed or claimed by this reviewer. Root owns distinct exact-head combined run and residual replays."
+}

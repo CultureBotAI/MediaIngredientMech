@@ -1,0 +1,52 @@
+{
+  "reviewer": "worker03:/root",
+  "at": "2026-11-08T11:16:21.745557+00:00",
+  "scope": "Read preserved failures and compare with exact final code; author reports distinguished from independent run results. No files changed or issue closures claimed.",
+  "diagnostics": [
+    {
+      "capture": {
+        "path": "inputs/author-packet/pytest-v1.log",
+        "sha256": "0624da67b86b8725a9d1427abb2fbc7842efebefa5b088e3bd3f5398d9fc7779"
+      },
+      "observed_result": "45 failed, 67 passed; repeated captured-producer changed errors",
+      "attribution": "Author reports concurrent Black while tests were active; captured-source refusals visible in log. Not valid final-head regression evidence. Independent frozen-code rerun is separately required and underway.",
+      "disposition": "Preserved; never counted as final passing run."
+    },
+    {
+      "capture": {
+        "path": "inputs/author-packet/ruff-v1.log",
+        "sha256": "8dd31d6a7ae79772637965d9b0d645ff36f2616ccab6b29ed688b25e1f322acf"
+      },
+      "observed_result": "F402 imported field shadowed by loop variable",
+      "attribution": "Author draft lint defect; exact reviewed final uses key_kind, not field.",
+      "disposition": "Draft diagnostic retained; final source spelling independently inspected."
+    },
+    {
+      "capture": {
+        "path": "inputs/author-packet/actual-replay-v1.log",
+        "sha256": "c01526fddbe88051e0360fac9ac57d4bc1c72b3ecf06ac2be137aab86c438650"
+      },
+      "observed_result": "SyntaxError at ==not",
+      "attribution": "Author replay harness failed before record-stage execution.",
+      "disposition": "Preserved; excluded from claimed probes."
+    },
+    {
+      "capture": {
+        "path": "inputs/author-packet/actual-replay-v2.log",
+        "sha256": "13242d5767e7b133559c05fb73b37949493a8de2420b6fc85369a5e2a875d085"
+      },
+      "observed_result": "AttributeError on nullable destination_path",
+      "attribution": "Author replay harness could not select target; no valid record-stage run.",
+      "disposition": "Preserved; later exact independent actual-target probes required."
+    },
+    {
+      "capture": {
+        "path": "inputs/author-packet/equality-draft-v1/receipt.json",
+        "sha256": "dd95c81fdf92bd4cc167410edd431c98053b23e6b3c89572ee401fcf69b9070e"
+      },
+      "observed_result": "SUPERSEDED_DRAFT_PENDING_ISSUE1251_ADDENDUM",
+      "attribution": "Real draft algorithm regression: exact family equality rejects collision reductions; issue1251 comment6720714388 filed before correction.",
+      "disposition": "Current exact code uses pair subset. Two/three-member independent positive tests are required to establish corrected behavior; draft remains immutable."
+    }
+  ]
+}

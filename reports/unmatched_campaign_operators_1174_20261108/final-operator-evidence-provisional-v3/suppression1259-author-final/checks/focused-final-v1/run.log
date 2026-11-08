@@ -1,0 +1,78 @@
+.........F................................                               [100%]
+=================================== FAILURES ===================================
+_ test_completed_native_review_requires_full_actual_transition_scope[partial-reviewed-targets] _
+
+suppression_case = (PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/...ntMech/issues/669#issuecomment-6558035777"",""https://github.com/CultureBotAI/culturebotai-claw/issues/701""]"\n', ...)
+fault = 'partial-reviewed-targets'
+
+    @pytest.mark.parametrize("fault", ["required-not-applicable", "partial-coverage", "partial-reviewed-targets"])
+    def test_completed_native_review_requires_full_actual_transition_scope(suppression_case, fault):
+        root, _, plan, *_ = suppression_case
+        selection, review = reviewed_selection(suppression_case)
+        if fault == "required-not-applicable":
+            review["checks"][0]["status"] = "not_applicable"
+        elif fault == "partial-coverage":
+            review["scope"]["coverage"] = "partial"
+        else:
+            review["scope"]["reviewed_target_ids"] = review["scope"]["reviewed_target_ids"][:-1]
+        module = c._BOUND_NATIVE["campaign_native_record_review"]
+>       module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+
+tests/test_campaign_suppressions.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+review = {'actions': [], 'assessments': [{'area': 'provenance', 'assessment_id': 'W07-SUPPRESSION-01-transport', 'evidence_ids'...idence_ids': ['TRANSITION'], 'name': 'Fixture tuple equality', 'required': True, ...}], 'completion': 'completed', ...}
+schema_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/runtime/repo/schema/record_review.yaml')
+
+    def validate_review(review: dict, schema_path: Path = SCHEMA_PATH) -> None:
+        """Validate shape and semantics only, without reading current target files.
+    
+        Historical reviews remain valid observations when records later change.
+        Persistence separately binds the supplied provenance to the current bytes.
+        """
+        try:
+            json.dumps(review, allow_nan=False)
+            validator = _schema_validator(schema_path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, ValueError, RecursionError) as exc:
+            raise ReviewError(f"cannot validate review: {exc}") from exc
+        errors = sorted(validator.iter_errors(review), key=lambda error: str(list(error.path)))
+        if errors:
+            raise ReviewError("; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in errors[:20]
+            ))
+        start, finish = timestamp(review["started_at"]), timestamp(review["finished_at"])
+        if finish < start:
+            raise ReviewError("review finished_at precedes started_at")
+        if not review["review_id"].startswith(finish.strftime("%Y%m%dT%H%M%SZ") + "-"):
+            raise ReviewError("review_id must begin with the finished UTC timestamp and a hyphen")
+        targets = _unique([item["target_id"] for item in review["targets"]], "target IDs")
+        _unique([(item["path"], item.get("selector")) for item in review["targets"]], "target locators")
+        inputs = _unique([item["path"] for item in review["source"]["inputs"]], "input paths")
+        for name in inputs:
+            relative_path(name)
+        for item in review["targets"]:
+            relative_path(item["path"])
+            if item["path"] not in inputs:
+                raise ReviewError("each target path must identify a hashed source input")
+            if item["kind"] == "snapshot_row" and not item.get("selector"):
+                raise ReviewError("snapshot-row targets require an exact selector")
+            _owners(item, f"target {item['target_id']}")
+        scope = review["scope"]
+        _references(scope["reviewed_target_ids"], targets, "reviewed target IDs")
+        if scope["population_size"] < len(targets):
+            raise ReviewError("population_size is smaller than the explicitly selected targets")
+        if scope["coverage"] == "full" and scope["population_size"] != len(scope["reviewed_target_ids"]):
+>           raise ReviewError("full coverage requires every population member to be reviewed")
+E           _mim_campaign_native_fffec359f7ae4b43910a727fe49ab37b.campaign_native_record_review.ReviewError: full coverage requires every population member to be reviewed
+
+scripts/record_review.py:234: ReviewError
+=============================== warnings summary ===============================
+../../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_suppressions.py::test_completed_native_review_requires_full_actual_transition_scope[partial-reviewed-targets]
+1 failed, 41 passed, 12 warnings in 17.07s

@@ -1,0 +1,59 @@
+{
+  "reviewer": "/root/boundary_adversarial",
+  "head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "status": "PASS",
+  "name": "late_valid_native_receipt_membership_v2",
+  "result": {
+    "stage": "real_prepare_then_drift_then_apply",
+    "expected": "refusal before operator owner/receipt writes",
+    "returned": null,
+    "exception": {
+      "type": "ValueError",
+      "message": "Native receipt membership changed"
+    },
+    "external_mutation_expected": false,
+    "no_operator_writes": true
+  },
+  "positive_payload_retention_readback": [
+    {
+      "fixture": "positive_disjoint_edit_with_unselected_family",
+      "retention_checks": [
+        {
+          "owner_path": "data/ingredients/mapped/Third.yaml",
+          "identifier_name_status_exact": true
+        }
+      ]
+    },
+    {
+      "fixture": "positive_rejected_unmapped_maintenance",
+      "retention_checks": [
+        {
+          "owner_path": "data/ingredients/unmapped/Rejected.yaml",
+          "identifier_name_status_exact": true
+        }
+      ]
+    },
+    {
+      "fixture": "positive_both_collision_kinds",
+      "retention_checks": [
+        {
+          "owner_path": "data/ingredients/mapped/Untouched.yaml",
+          "identifier_name_status_exact": true
+        },
+        {
+          "owner_path": "data/ingredients/mapped/Existing.yaml",
+          "identifier_name_status_exact": true
+        }
+      ]
+    }
+  ],
+  "at": "2026-11-08T11:17:37.655291+00:00",
+  "corrected_private_harness_failure": {
+    "path": "overlap-results-v1.json",
+    "sha256": "1d371922000ec9549698c6064cc42c45337a9b8de87ca3f1fed9c2f16271f58f",
+    "failure": "NameError: late_mutation helper was outside the extracted prefix; native target did not execute for that one control.",
+    "repair": "Load exact original helper AST into private test namespace. No test assertions weakened; strict native-membership message additionally required.",
+    "prior_incorrect_prospective_qualification": "The v1 follow-up qualification described intended valid-membership proof, but its result failed before execution. Only this v2 result establishes that proof."
+  },
+  "operator_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70"
+}

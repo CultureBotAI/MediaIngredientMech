@@ -1,0 +1,31 @@
+--- before/campaign_owner_apply.py
++++ reviewed/campaign_owner_apply.py
+@@ -954,8 +954,16 @@
+ 
+ 
+ def _check_mutation_git_state(prepared: Prepared):
+-    """#1256: pin live transaction HEAD and scope, not later historical replay."""
++    """#1256: pin live transaction HEAD and scope, not later historical replay.
++
++    Bracket the complete check with Git's logical stage/path/mode/blob listing.
++    This excludes stat-cache-only refreshes, while detecting index changes during
++    cached enumeration or blob validation. Each check accepts legitimate staging
++    between boundaries afresh; no historical replay constraint or index lock is
++    imposed. This is a bounded read observation, not an atomic OS transaction.
++    """
+     root, baseline = prepared.root, prepared.plan["baseline_commit"]
++    index_before = git(root, "ls-files", "--stage", "-z")
+     require(
+         git(root, "rev-parse", "HEAD").decode().strip() == baseline,
+         "Integration HEAD changed during source application",
+@@ -1025,6 +1033,10 @@
+     require(
+         git(root, "rev-parse", "HEAD").decode().strip() == baseline,
+         "Integration HEAD changed during source application",
++    )
++    require(
++        git(root, "ls-files", "--stage", "-z") == index_before,
++        "Git index changed during live source check",
+     )
+ 
+ 

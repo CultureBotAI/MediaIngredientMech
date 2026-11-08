@@ -1,0 +1,164 @@
+{
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1257",
+  "status": "SAME_CAUSE_NEXT_NATIVE_BOUNDARY_NOT_FIXED",
+  "native_maker": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/reports/sssom_completion_20260921/mapping_changes/make_receipt.py",
+    "sha256": "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121"
+  },
+  "actual_native_function": "make_receipt.align",
+  "before": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/mappings/ingredient_mappings.sssom.tsv",
+    "sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221"
+  },
+  "conditional_full_rowset": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-publication-plan-construction-v1/bounded-rowset-diagnostic.tsv",
+    "sha256": "72c3e8fc9cbfa5b6a89cc3d237b80fd6d717a3a5991fbf04e8f16dde60f73925"
+  },
+  "before_rows": 3014,
+  "conditional_rows": 3756,
+  "actual_refusal": "Two post-batch rows share a slot: ('MIM:Na2so3_X_5_H2o', 'kgmicrobe.compound')",
+  "duplicate_post_slots": [
+    {
+      "slot": [
+        "MIM:Na2so3_X_5_H2o",
+        "kgmicrobe.compound"
+      ],
+      "rows": [
+        {
+          "position": 2043,
+          "row": {
+            "subject_id": "MIM:Na2so3_X_5_H2o",
+            "subject_label": "Na2SO3 x 5 H2O",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "kgmicrobe.compound:sodium_sulfite_pentahydrate",
+            "object_label": "Na2SO3 x 5 H2O",
+            "object_source": "kgm:compound",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:CultureMech|MIM:MIM curation (#321)|MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1353.pdf|MIM:curator=worker04_root_independent_finding_correction_proposal|kgm:native_ontology:chebi",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Registry/identity row preserving kgmicrobe.compound:sodium_sulfite_pentahydrate alongside parent CHEBI:86477.",
+            "other": "",
+            "validation_method": ""
+          }
+        },
+        {
+          "position": 2044,
+          "row": {
+            "subject_id": "MIM:Na2so3_X_5_H2o",
+            "subject_label": "Na2SO3 x 5 H2O",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "kgmicrobe.compound:na2so3_x_5_h2o",
+            "object_label": "Na2SO3 x 5 H2O",
+            "object_source": "kgm:compound",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:CultureMech|MIM:MIM curation (#321)|MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1353.pdf|MIM:curator=worker04_root_independent_finding_correction_proposal|kgm:native_ontology:chebi",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:na2so3_x_5_h2o alongside parent CHEBI:86477.",
+            "other": "",
+            "validation_method": ""
+          }
+        }
+      ]
+    },
+    {
+      "slot": [
+        "MIM:Desicatted_Ox-bile",
+        "kgmicrobe.ingredient"
+      ],
+      "rows": [
+        {
+          "position": 3114,
+          "row": {
+            "subject_id": "MIM:Desicatted_Ox-bile",
+            "subject_label": "Desiccated ox bile",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "kgmicrobe.ingredient:desiccated_ox_bile",
+            "object_label": "Desiccated ox bile",
+            "object_source": "kgm:ingredient",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:752954|MIM:https://www.sigmaaldrich.com/US/en/product/sial/70168|MIM:curator=Codex /root/step7d_science_c",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Registry/identity row preserving kgmicrobe.ingredient:desiccated_ox_bile alongside parent CHEBI:752954.",
+            "other": "",
+            "validation_method": ""
+          }
+        },
+        {
+          "position": 3115,
+          "row": {
+            "subject_id": "MIM:Desicatted_Ox-bile",
+            "subject_label": "Desiccated ox bile",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "kgmicrobe.ingredient:desicatted_ox-bile",
+            "object_label": "Desiccated ox bile",
+            "object_source": "kgm:ingredient",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:https://www.ebi.ac.uk/ols4/api/ontologies/chebi/terms?obo_id=CHEBI:752954|MIM:https://www.sigmaaldrich.com/US/en/product/sial/70168|MIM:curator=Codex /root/step7d_science_c",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.ingredient:desicatted_ox-bile alongside parent CHEBI:752954.",
+            "other": "",
+            "validation_method": ""
+          }
+        }
+      ]
+    },
+    {
+      "slot": [
+        "MIM:Trisodium_Citrate_X_3_H2o",
+        "kgmicrobe.compound"
+      ],
+      "rows": [
+        {
+          "position": 3506,
+          "row": {
+            "subject_id": "MIM:Trisodium_Citrate_X_3_H2o",
+            "subject_label": "Trisodium citrate x 3 H2O",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "kgmicrobe.compound:trisodium_citrate_trihydrate",
+            "object_label": "Trisodium citrate x 3 H2O",
+            "object_source": "kgm:compound",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium661.pdf|MIM:curator=/root/correction_chemistry|kgm:native_ontology:chebi",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Registry/identity row preserving kgmicrobe.compound:trisodium_citrate_trihydrate alongside parent CHEBI:53258.",
+            "other": "",
+            "validation_method": ""
+          }
+        },
+        {
+          "position": 3507,
+          "row": {
+            "subject_id": "MIM:Trisodium_Citrate_X_3_H2o",
+            "subject_label": "Trisodium citrate x 3 H2O",
+            "predicate_id": "skos:exactMatch",
+            "object_id": "kgmicrobe.compound:trisodium_citrate_x_3_h2o",
+            "object_label": "Trisodium citrate x 3 H2O",
+            "object_source": "kgm:compound",
+            "mapping_justification": "semapv:ManualMappingCuration",
+            "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium661.pdf|MIM:curator=/root/correction_chemistry|kgm:native_ontology:chebi",
+            "mapping_date": "2026-11-08",
+            "confidence": "0.99",
+            "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:trisodium_citrate_x_3_h2o alongside parent CHEBI:53258.",
+            "other": "",
+            "validation_method": ""
+          }
+        }
+      ]
+    }
+  ],
+  "test_receipt": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/checks/focused-v1/receipt.json",
+    "sha256": "fa6515b73cbe674097f813faa89b3cf8d6094f9ae6cbb03d6f083a6be7129578"
+  },
+  "test_stdout": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/publisher-local-slots1257-fix-v1/checks/focused-v1/stdout",
+    "sha256": "a66202e8ed62f912ee134f50c11e6d88b11961951de8ac332675c0ffdd310d54"
+  },
+  "scope": "Exact bounded row set diagnostic plus real fixture publisher.prepare failure; not actual campaign application or acceptance.",
+  "proposed_bound": "Keep historical maker bytes/hash and all1\u201327receipt JSON unchanged; reuse its verified alignment algorithm with an explicit narrowly bound current local-object slot adapter, preserving every genuine duplicate/coverage/position/replay guard. Root must file/authorize exact next-boundary correction before implementation."
+}

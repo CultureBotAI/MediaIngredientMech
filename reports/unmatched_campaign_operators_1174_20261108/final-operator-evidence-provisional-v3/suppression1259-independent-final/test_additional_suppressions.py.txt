@@ -1,0 +1,69 @@
+"""Independent final-byte supplemental probes; authentic native integration."""
+import importlib.util
+import json
+import os
+from contextlib import contextmanager
+from pathlib import Path
+
+import pytest
+from mediaingredientmech import campaign_publication as c
+
+R=Path(c.__file__).absolute().parents[2]
+spec=importlib.util.spec_from_file_location('author_real_suppression_fixture',R/'tests/test_campaign_suppression_integration.py')
+f=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(f)
+
+@pytest.mark.parametrize('fault',['positive-then-historical-tamper','late-live-sidecar','late-original-review-input','generation-after-reservation'])
+def test_additional_real_native_edges(tmp_path,monkeypatch,fault):
+    expected=os.environ['INDEPENDENT_EXPECTED_PUBLISHER_SHA']
+    assert c.sha(Path(c.__file__).read_bytes())==expected
+    plan,path,destination,before,_=f.real_case(tmp_path,prior_native=(fault=='positive-then-historical-tamper'))
+    if fault=='positive-then-historical-tamper':
+        assert len(plan['receipt_prefix'])==28
+        assert c.publish(tmp_path,path,destination,apply=True)['status']=='complete'
+        assert len(c.native.verify_mapping_chain(tmp_path)['receipts'])==29
+        assert len(c._suppression_table((tmp_path/c.SIDECAR).read_bytes())[0])==38
+        for name,digest in plan['receipt_prefix'].items():assert c.sha((tmp_path/name).read_bytes())==digest
+        f.git(tmp_path,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','--allow-empty','-qm','Independent historical verification control')
+        assert c.validate(tmp_path,path)['status']=='verified'
+        sidecar=tmp_path/c.SIDECAR
+        sidecar.write_bytes(sidecar.read_bytes()+b'\n')
+        with pytest.raises(ValueError):c.validate(tmp_path,path)
+        (tmp_path/'independent-result.json').write_text(json.dumps({'control':fault,'real_native_prefix_before':28,'real_native_prefix_after':29,'original34_to38':True,'all_prior_receipts_preserved':True,'historical_later_commit_positive':True,'historical_sidecar_tamper_refused':True},indent=2)+'\n')
+        return
+    touched=False
+    finish=c.finish_receipt
+    reserve=c._reserve
+    def completion(*args,**kwargs):
+        nonlocal touched
+        result=finish(*args,**kwargs)
+        if fault=='late-live-sidecar':
+            touched=True
+            p=tmp_path/c.SIDECAR;p.write_bytes(p.read_bytes()+b'\n')
+        elif fault=='late-original-review-input':
+            touched=True
+            selection=json.loads((tmp_path/plan['suppression_review']['path']).read_bytes())
+            ref=selection['original_review']['inputs']['review-inputs/conditional-decisions.json']
+            p=tmp_path/ref['path'];p.write_bytes(p.read_bytes()+b'\n')
+        return result
+    @contextmanager
+    def reservation(outputs):
+        nonlocal touched
+        with reserve(outputs) as state:
+            if fault=='generation-after-reservation':
+                touched=True
+                p=tmp_path/plan['generation']['sidecar']['path'];p.write_bytes(p.read_bytes()+b'\n')
+            yield state
+    monkeypatch.setattr(c,'finish_receipt',completion)
+    monkeypatch.setattr(c,'_reserve',reservation)
+    with pytest.raises(ValueError) as caught:
+        c.publish(tmp_path,path,destination,apply=True)
+    assert touched
+    assert (destination/'publication.json').read_bytes()==b''
+    native=tmp_path/c.native.RECEIPTS_DIR/(plan['batch']+'.json')
+    assert native.read_bytes()==b''
+    assert (tmp_path/c.BASELINE).read_bytes()==before['baseline']
+    for name,sha in plan['receipt_prefix'].items():assert c.sha((tmp_path/name).read_bytes())==sha
+    if fault=='generation-after-reservation':
+        for key,p in [('canonical',c.SOURCE),('policy',c.POLICY),('sidecar',c.SIDECAR)]:assert (tmp_path/p).read_bytes()==before[key]
+    (tmp_path/'independent-result.json').write_text(json.dumps({'fault':fault,'refusal':str(caught.value),'empty_success_and_native_receipts':True,'historical27_and_baseline_unchanged':True},indent=2)+'\n')

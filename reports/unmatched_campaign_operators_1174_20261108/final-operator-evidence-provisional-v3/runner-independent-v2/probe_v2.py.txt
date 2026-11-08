@@ -1,0 +1,56 @@
+from pathlib import Path
+import ast,hashlib,importlib.util,json,os,types
+D=Path(__file__).absolute().parent;C=D.parents[1];A=C/'preflight/final-suppression-validation-preparation-v2';P=C/'integration/campaign-suppressions1259-v1/runtime/repo'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def save(n,v):
+ with (D/n).open('x') as f:f.write(json.dumps(v,indent=2)+'\n')
+def load(name,path):
+ s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+runner=A/'validate_frozen_head.py';assert sha(runner)=='0959ef080c4ca65b4c527e03a9670480d193d4e1f35f221cb535751c808ec336'
+for p in A.iterdir():
+ if p.is_file() and p.name in ['validate_frozen_head.py','expected-inputs.json','runner.diff','fixture-input-inventory.json','PREPARATION.json']:
+  (D/('original-'+p.name+('.txt' if p.suffix=='.py' else ''))).write_bytes(p.read_bytes())
+m=load('corrected_private_runner',runner)
+tree=ast.parse(runner.read_bytes());main=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='main')
+summary=next(n.value for n in ast.walk(main) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='summary' for t in n.targets))
+expr=next(v for k,v in zip(summary.keys,summary.values,strict=True) if isinstance(k,ast.Constant) and k.value=='coverage_lines')
+assignment=next(n for n in ast.walk(main) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='lines' for t in n.targets))
+ns={'log':'TOTAL 100 0 100%\nrequired fail-under 80\nother\n'}
+exec(compile(ast.Module(body=[assignment],type_ignores=[]),str(runner),'exec'),ns)
+coverage=eval(compile(ast.Expression(expr),str(runner),'eval'),ns)
+assert coverage==['TOTAL 100 0 100%','required fail-under 80']
+env=m.environment(D/'no-run');expected=json.loads((A/'expected-inputs.json').read_bytes())
+assert env['CAMPAIGN_SUPPRESSION_REVIEW_ROOT'] and env['CAMPAIGN_SUPPRESSION_INTAKE_ROOT']
+f=load('native_fixture_for_explicit_environment_guard',P/'tests/test_campaign_suppression_integration.py')
+class ReachedOriginalInputs(Exception):pass
+def stop(root):raise ReachedOriginalInputs('actual native environment and Claw revision guards passed; intentionally stopped before original evidence copies/source application')
+f.helpers=lambda:types.SimpleNamespace(original_bundle=stop)
+old=dict(os.environ)
+try:
+ os.environ.update(env)
+ try:f.real_case(D/'must-not-exist')
+ except ReachedOriginalInputs as e:guard=str(e)
+ else:raise AssertionError('expected pre-write sentinel')
+finally:os.environ.clear();os.environ.update(old)
+assert not (D/'must-not-exist').exists()
+# Root I has not yet been fast-forwarded. Exercise the unchanged reader on the
+# exact frozen prospective producer files, never pretending this is actual I readiness.
+actual_I=m.I;m.I=P
+snapshot=m.suppression_fixture_snapshot(D/'no-run')
+m.I=actual_I
+assert len(snapshot['external_files'])==169 and len(snapshot['tracked_fixture_producers'])==24 and len(snapshot['logical_published_blobs'])==10
+save('fixture-snapshot-private-code-root.json',snapshot)
+counts=expected['required_native_cases'];assert counts=={'tests/test_campaign_demotion_integration.py':20,'tests/test_campaign_suppression_integration.py':10}
+controls=[]
+for filename,n in counts.items():
+ for fault,text,pass_expected in [('full',filename+' '+'.'*n+' [100%]\ntests/next.py .\n',True),('wrapped',filename+' '+'.'*(n-3)+' [70%]\n... [100%]\ntests/next.py .\n',True),('skip',filename+' '+'.'*(n-1)+'s [100%]\ntests/next.py .\n',False),('failure',filename+' '+'.'*(n-1)+'F [100%]\ntests/next.py .\n',False),('missing','tests/next.py .\n',False),('duplicate',(filename+' '+'.'*n+' [100%]\n')*2,False)]:
+  try:passed=m.integration_marks(text,filename)=='.'*n
+  except RuntimeError:passed=False
+  assert passed==pass_expected
+  controls.append({'file':filename,'case':fault,'passes':passed})
+oldrunner=C/'preflight/final-suppression-validation-preparation-v1/validate_frozen_head.py'
+def funcs(p):return {n.name:ast.dump(n,include_attributes=False) for n in ast.parse(p.read_bytes()).body if isinstance(n,ast.FunctionDef)}
+a,b=funcs(oldrunner),funcs(runner)
+assert all(a[n]==b[n] for n in ['verify_start','tracked_snapshot','equivalent','integration_marks','git','clean','head'])
+save('RESULT.json',{'status':'BOUNDED_RUNNER_CORRECTIONS_VERIFIED','source_sha256':sha(runner),'expected_sha256':sha(A/'expected-inputs.json'),'original_inventory_sha256':sha(A/'fixture-input-inventory.json'),'coverage_expression_actual_ast':coverage,'explicit_environment_guard':guard,'fixture_snapshot_scope':'169 actual external files and10 actual logical blobs;24 tracked code files checked against frozen private1108/c445 runtime because actual I is not yet final. This does not assert I readiness.','counts':{'external':169,'tracked_code':24,'logical_blobs':10},'mandatory_native_counts':counts,'parser_controls':controls,'old_start_history_tracked_and_parser_guard_ASTs_preserved':True,'full_qc_suite_or_campaign_apply_executed':False,'remaining_conditions':['Actual final code/head and independent publisher readiness still required.','Runner final production pins must be updated through an explicit reviewed successor if current publisher/test changes.','Actual I fast-forward and full snapshot capture remain root actions.']})
+print(json.dumps({'source':sha(runner),'result':sha(D/'RESULT.json'),'counts':[169,24,10],'qc_or_suite':False}))

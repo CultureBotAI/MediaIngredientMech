@@ -1,0 +1,30 @@
+import datetime, hashlib, json, os, stat, subprocess, tarfile
+from pathlib import Path
+R=Path.cwd(); P=R/'.temp/final-21061-independent-v1'; C=R.parents[2]
+REV='21061aa532401398db70c59a596debf330f70744'
+roots={'own':R,'K':C/'integration/release-worktree','I':C/'integration/worktree','J':C/'integration/curation-worktree','CLAW':C.parent/'kgm-unmapped-20261107/claw'}
+def sha(path):
+ with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def save(path,value):
+ with path.open('x') as f:json.dump(value,f,indent=2);f.write('\n')
+state={}
+for label,root in roots.items():
+ state[label]={'path':str(root),'head':subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),'status':subprocess.check_output(['git','-C',str(root),'status','--porcelain'],text=True)}
+ assert state[label]['status']==''
+assert state['K']['head']==REV
+remote=json.loads((P/'inputs/pr1205-entry.json').read_text());assert remote['head']['sha']==REV
+save(P/'entry.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'roots':state,'remote_head':remote['head']['sha'],'remote_capture_sha256':sha(P/'inputs/pr1205-entry.json')})
+archive=P/'frozen/21061aa.tar'
+with archive.open('xb') as f:subprocess.run(['git','-C',str(roots['K']),'archive','--format=tar',REV],stdout=f,check=True)
+with tarfile.open(archive) as f:f.extractall(P/'frozen/repo',filter='data')
+files=[];links=[]
+for parent,dirs,names in os.walk(P/'frozen/repo',followlinks=False):
+ for name in dirs+names:
+  p=Path(parent)/name;mode=p.lstat().st_mode;rel=str(p.relative_to(P/'frozen/repo'))
+  if stat.S_ISLNK(mode):links.append({'path':rel,'literal_target':os.readlink(p)})
+  elif stat.S_ISREG(mode):files.append({'path':rel,'sha256':sha(p),'size':p.stat().st_size})
+save(P/'frozen/ARCHIVE.json',{'revision':REV,'archive':str(archive),'archive_sha256':sha(archive),'size':archive.stat().st_size,'files':files,'literal_symlinks_not_followed':links})
+for base,label in [('16c39b63bc95d3e7978ddccc6280b0d57954f4a5','16c-to-21061'),('7a990e36b0e08d1deff943fe58bdc40d24d3834f','7a-to-21061')]:
+ raw=subprocess.check_output(['git','-C',str(roots['K']),'diff','--binary',base,REV])
+ with (P/'inputs'/f'{label}.patch').open('xb') as f:f.write(raw)
+print(json.dumps({'head':REV,'archive_sha256':sha(archive),'files':len(files),'literal_links':len(links)}))

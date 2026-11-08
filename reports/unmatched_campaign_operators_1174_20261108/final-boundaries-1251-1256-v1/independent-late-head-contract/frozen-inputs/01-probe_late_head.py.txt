@@ -1,0 +1,91 @@
+import datetime
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import sys
+
+R = Path.cwd()
+P = R / '.temp/combined-16c-independent-v1'
+F = P / 'frozen/repo'
+O = P / 'root-probes'
+O.mkdir(exist_ok=False)
+os.environ.update(PYTHONDONTWRITEBYTECODE='1', GIT_OPTIONAL_LOCKS='0')
+sys.path[:0] = [str(F / 'src'), str(F)]
+spec = importlib.util.spec_from_file_location('exact_source_fixture', F / 'tests/test_campaign_owner_apply.py')
+fixture = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(fixture)
+owner = fixture.owner
+assert Path(owner.__file__).resolve() == F / 'src/mediaingredientmech/curate/campaign_owner_apply.py'
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def commit(root, message):
+    fixture.run_git(root, '-c', 'user.email=fixture@example.invalid', '-c',
+                    'user.name=Independent W08 probe', 'commit', '--allow-empty', '-qm', message)
+
+results = []
+for mode in ['unchanged_positive', 'initial_moved_HEAD', 'late_empty_commit',
+             'late_unrelated_tracked_commit', 'late_uncommitted_unrelated_tracked_change']:
+    root = O / mode
+    root.mkdir()
+    plan = fixture.demotion_case(root)
+    original_head = fixture.run_git(root, 'rev-parse', 'HEAD')
+    result = {'mode': mode, 'fixture': str(root), 'accepted_baseline': original_head,
+              'source_before_sha256': sha(root / fixture.EDIT),
+              'source_module_sha256': sha(Path(owner.__file__)),
+              'fixture_module_sha256': sha(Path(fixture.__file__)),
+              'no_native_function_mocking': True}
+    if mode == 'initial_moved_HEAD':
+        commit(root, 'Independent initial stale-head negative')
+    try:
+        prepared = owner.prepare(root, root / 'plan.json', root / 'acceptance.json')
+        result['prepare'] = 'PASS'
+    except Exception as error:
+        result.update(prepare='REFUSED', error=repr(error),
+                      current_head=fixture.run_git(root, 'rev-parse', 'HEAD'))
+        results.append(result)
+        continue
+    if mode == 'late_empty_commit':
+        commit(root, 'Independent late empty-head probe')
+    elif mode == 'late_unrelated_tracked_commit':
+        (root / 'unrelated-after-acceptance.txt').write_text('Not an accepted owner or output.\n')
+        fixture.run_git(root, 'add', 'unrelated-after-acceptance.txt')
+        commit(root, 'Independent unrelated tracked change after prepare')
+    elif mode == 'late_uncommitted_unrelated_tracked_change':
+        (root / '.gitignore').write_text((root / '.gitignore').read_text() + '\n# independent unaccepted change\n')
+    result['head_at_apply'] = fixture.run_git(root, 'rev-parse', 'HEAD')
+    result['pre_apply_diff_from_accepted_baseline'] = fixture.run_git(root, 'diff', '--name-only', original_head, '--')
+    try:
+        applied = owner.apply(prepared, root / 'receipt', enabled=True)
+        result['apply'] = applied['state']
+        result['receipt_baseline'] = applied['baseline_commit']
+        proof = owner.verify_completed(root, root / 'plan.json', root / 'receipt/application.json')
+        result['verify_completed'] = proof['state']
+    except Exception as error:
+        result.update(apply='REFUSED', error=repr(error))
+    receipt = root / 'receipt/application.json'
+    if receipt.exists():
+        document = json.loads(receipt.read_text())
+        result.update(receipt_state=document['state'],
+                      recovery_required=document['recovery_required'],
+                      completed_operations=document['completed_operations'],
+                      receipt_sha256=sha(receipt))
+    result.update(current_head=fixture.run_git(root, 'rev-parse', 'HEAD'),
+                  source_still_exists=(root / fixture.EDIT).exists(),
+                  destination_exists=(root / fixture.DEMOTED).exists(),
+                  final_diff_from_accepted_baseline=fixture.run_git(root, 'diff', '--name-only', original_head, '--'),
+                  final_diff_from_current_HEAD=fixture.run_git(root, 'diff', '--name-only', 'HEAD', '--'))
+    results.append(result)
+
+output = {'reviewed_head': '16c39b63bc95d3e7978ddccc6280b0d57954f4a5',
+          'at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          'runtime': sys.version, 'python': sys.executable,
+          'scope': 'Actual prepare/apply/verify_completed on private mechanical demotion fixtures. No production source application, native mocks or scientific approval.',
+          'results': results}
+with (O / 'late-head-results.json').open('x') as f:
+    json.dump(output, f, indent=2)
+    f.write('\n')
+print(json.dumps(output, indent=2))

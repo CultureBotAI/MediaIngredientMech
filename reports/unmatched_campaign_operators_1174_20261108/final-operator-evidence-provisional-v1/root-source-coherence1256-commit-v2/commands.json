@@ -1,0 +1,208 @@
+[
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "4a9bdbf152b1c3f6db279d7d2ac2becbe433b409e0010863093b952ee8e9b69c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c4533c2dcfac9ef7b676492b56ba6416cc52fbf7a6bf59a15283236980ce5797",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "-uall"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/curate/all-unmatched-source-integration-20261107"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3c551960cb017f1f144b1a414336da7ecec001f2cf5e6fbea6649bf0a9bbe2f8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "--check",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/source-index-coherence1256.patch"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "apply",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/source-index-coherence1256.patch"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "-z"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "16e6167e6f634229608c456b2f9e4896d6ae9c432050f41e5a24d31d12fae42d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "tests/test_campaign_owner_apply.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only",
+      "-z"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "16e6167e6f634229608c456b2f9e4896d6ae9c432050f41e5a24d31d12fae42d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "commit",
+      "-m",
+      "fix: validate captured index state coherently (#1256)\n\nUse the captured literal mode, object, stage and path entries as the authority for live source checks. Preserve all existing354 source cases and add28 regression cases; retain later historical verification.\n\nPrivate combined validation:546 passed, zero skipped, including20 actual Claw integrations. Separate independent review passed12 native controls. Final combined operator review and whole-repository validation remain pending."
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "34ecd59cbc8a573fd6b349c2a5621d901d3ad9397f007f38098164715cbe97fc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "71bb343b11b2009a8f2553c2f528706afb2d93568a38a650c7aec633c26af28e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD^"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "4a9bdbf152b1c3f6db279d7d2ac2becbe433b409e0010863093b952ee8e9b69c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff-tree",
+      "--no-commit-id",
+      "--name-only",
+      "-r",
+      "-z",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "16e6167e6f634229608c456b2f9e4896d6ae9c432050f41e5a24d31d12fae42d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "5288c882def177b1b9a5eee2975f039db780ac4e:src/mediaingredientmech/curate/campaign_owner_apply.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "5288c882def177b1b9a5eee2975f039db780ac4e:tests/test_campaign_owner_apply.py"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "-uall"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "push",
+      "origin",
+      "HEAD:refs/heads/curate/all-unmatched-source-integration-20261107"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "c620c79298e73aab44350ed849df5c0688d0da0d339e07e92512396bfdde1039"
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/curate/all-unmatched-source-integration-20261107"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bc832ec06c63d9f3f27b6e791c66380494d54c5178988f2086ea7688fd3323b6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

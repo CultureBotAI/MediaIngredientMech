@@ -1,0 +1,18 @@
+from pathlib import Path
+import hashlib,json,os,sys
+W=Path.cwd();P=W/'.temp/final-21061-independent-v1';F=P/'frozen/repo';O=P/'technical';sys.path.insert(0,str(F/'src'));os.environ['GIT_OPTIONAL_LOCKS']='0'
+from mediaingredientmech.curate import campaign_owner_apply as owner
+h=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+p=P/'root-probes/staged-index-results.json';data=json.loads(p.read_text());rows=[]
+for row in data['results']:
+ root=Path(row['fixture']);index=root/'.git/index';index_before=h(index);receipt=root/'receipt/application.json';source=root/'MAPPING_SEMANTICS.md'
+ actual={'mode':row['mode'],'index_sha256':index_before,'working_contract_sha256':h(source),'cached_contract_sha256':hashlib.sha256(owner.git(root,'show',':MAPPING_SEMANTICS.md')).hexdigest(),'baseline':row['accepted_baseline'],'HEAD':owner.git(root,'rev-parse','HEAD').decode().strip(),'cached_paths':[os.fsdecode(x) for x in owner.git(root,'diff','--cached','--name-only','-z',row['accepted_baseline'],'--').split(b'\0')[:-1]],'worktree_paths':[os.fsdecode(x) for x in owner.git(root,'diff','--name-only','-z',row['accepted_baseline'],'--').split(b'\0')[:-1]]}
+ if receipt.exists():
+  assert h(receipt)==row['receipt_sha256'];proof=owner.verify_completed(root,root/'plan.json',receipt);actual.update(receipt_sha256=h(receipt),actual_native_verify_completed=proof['state'])
+ else:actual['receipt_exists']=False
+ assert h(index)==index_before;actual['readback_index_unchanged']=True
+ if row['mode'].endswith('index_only'):
+  assert actual['actual_native_verify_completed']=='complete' and actual['cached_contract_sha256']!=actual['working_contract_sha256'] and 'MAPPING_SEMANTICS.md' in actual['cached_paths'] and 'MAPPING_SEMANTICS.md' not in actual['worktree_paths'] and actual['HEAD']==actual['baseline']
+ rows.append(actual)
+report={'status':'CONFIRMED_RESIDUAL_STAGED_INDEX_GAP','reviewer':'worker08:/root/inorganics','root_source_script':{'path':str((P/'provenance/probe_staged_index.py').relative_to(W)),'sha256':h(P/'provenance/probe_staged_index.py')},'root_result':{'path':str(p.relative_to(W)),'sha256':h(p)},'scope':'Independent exact Git object/index/worktree readback and actual native historical verifier on already completed root private fixtures. No source application replay, no mocks, no existing fixture/index writes. This does not claim historical verification itself should enforce a current clean index.','runtime_source_sha256':h(Path(owner.__file__)),'rows':rows,'finding_summary':'Live prepare/apply still accept staged unrelated index bytes hidden by restoring worktree to baseline. Whole source byte capture and net baseline-worktree diff do not prove index cleanliness.'}
+(O/'index-readback.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'status':report['status'],'modes':len(rows),'sha256':h(O/'index-readback.json')}))

@@ -1,0 +1,33 @@
+{
+  "reviewed_head": "9a1a4a35498a1bee0fc8b68653d1fc152cfff81b",
+  "parent": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "verdict": "needs_curation",
+  "completion": "completed",
+  "newly_identified_findings": [
+    {
+      "finding_id": "REJECTION-CODE-001",
+      "severity": "major",
+      "status": "open",
+      "source": {
+        "path": "skeptical/finding-REJECTION-CODE-001.json",
+        "sha256": "06fc1e4aee66332acf59acd14d82f592a75153ac07c9797611ba510348a6bf32"
+      },
+      "actual_W03_reproduction": {
+        "path": "skeptical/actual-w03-path-results.json",
+        "sha256": "a09f45115732b2c84e00b403d5a55a627c4fcc03226f79272bf94cbfcf13d68a"
+      },
+      "root_independent_readback": {
+        "path": "ROOT-EXACT-READBACK.json",
+        "sha256": "dc06448af477e1dbba627d845f92c65b95812074fd2afa611fbf2b98d33e3a04"
+      },
+      "dedup_and_GitHub_filing_owner": "Coordinator; reviewer made no GitHub changes.",
+      "blocks": "Claim that both restored W03 cases complete native source application at this exact head.",
+      "lineage": "Preexisting apply Git-path decoding defect exposed by newly reachable legitimate Unicode W03 rejection; not introduced by the status predicate diff.",
+      "bounded_fix": "Use a NUL-delimited literal path listing (git diff --name-only -z HEAD --) and parse NUL-delimited decoded filesystem paths; do not rely on global core.quotePath settings or splitlines. Preserve nonempty-name and complete allowed-set checks. Add actual prepare/apply/verify_completed regression for literal Unicode and whitespace-control filenames with unrelated-file negative checks.",
+      "acceptance_check": "Exact successor commit must allow genuine same-path UNMAPPED→REJECTED Unicode owner to apply and verify_completed, retaining authentic preimage/history and all unrelated owners. Actual unapproved tracked path must remain refused; control characters/newlines must not be mistaken for separators."
+    }
+  ],
+  "status_predicate_assessment": "Exact narrow status repair is supported by full source and guards, all51 preserved prior helper/test ASTs,252 distinct tests and933 record-stage operations; these do not waive postwrite application defect.",
+  "source_scientific_role_whole_owner_export_or_application_approval": false,
+  "fix_applied": false
+}

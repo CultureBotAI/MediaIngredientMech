@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1174",
+  "observed_at": "2026-11-08T05:52:55.328140+00:00",
+  "state": "implementation_frozen_for_independent_review",
+  "approval": "NONE: author handoff only; no scientific/publication approval",
+  "worktree": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree",
+  "head": "1c5f6056c4054ceff0f5646944a1fb7f8c8329a6",
+  "branch": "curate/all-unmatched-source-integration-20261107",
+  "owned_sources": {
+    "src/mediaingredientmech/campaign_publication.py": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+    "scripts/publish_unmatched_campaign.py": "73739e37ca8c1cda8c713060b74e0929f5a75b4c92cc4652749f69c14f1e8b3c",
+    "scripts/validate_unmatched_campaign_publication.py": "f6f1f8a4ea88417d6434d5d6e63a4b3a3a94697591d4511b6ed9d87980b9b3d4",
+    "tests/test_campaign_publication.py": "a45eb697a144fafb0e22282d6544337f186b84371a9e5db842485e7c25b383bb"
+  },
+  "source_owner_dependency_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+  "checks": [
+    {
+      "command": "python -B -m pytest tests/test_campaign_publication.py --basetemp=.temp/campaign-publication-checks-v1/fixtures-path-fixed -q --no-cov",
+      "exit_code": 0,
+      "details": {
+        "passed": 106,
+        "failed": 0,
+        "warnings": 12,
+        "duration_seconds": 21.78
+      },
+      "log": {
+        "path": ".temp/campaign-publication-checks-v1/path-fixed-focused.log",
+        "sha256": "257f1080c0f45d2e038db1240d4f3273acdaf7e887adf095c178809d2a5372bc"
+      }
+    },
+    {
+      "command": "python -B -m mypy --cache-dir=.temp/campaign-publication-checks-v1/mypy-package-path-fixed src/mediaingredientmech",
+      "exit_code": 0,
+      "details": {
+        "source_files": 63
+      },
+      "log": {
+        "path": ".temp/campaign-publication-checks-v1/mypy-package-path-fixed.log",
+        "sha256": "0f5e2c0f274fe3238699ff97fc09737970ee01e440d6d8f78a8522bdc43ee59b"
+      }
+    },
+    {
+      "command": "python -B -m ruff check <four owned files>",
+      "exit_code": 0,
+      "details": {},
+      "log": {
+        "path": ".temp/campaign-publication-checks-v1/ruff-path-fixed.log",
+        "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+      }
+    },
+    {
+      "command": "python -B -m black --check <four owned files>",
+      "exit_code": 0,
+      "details": {},
+      "log": {
+        "path": ".temp/campaign-publication-checks-v1/black-path-fixed.log",
+        "sha256": "26a5fd9505f2b5608a20c4fed4b4c4795e0783d03b72ade02a6af34dae8ad086"
+      }
+    }
+  ],
+  "native_generation_controls": {
+    "result_path": ".temp/campaign-publication-native-controls-v4/results.json",
+    "controls": 12,
+    "expected_refusals": 11,
+    "native_rows": 3007,
+    "owner_count": 2956,
+    "network_attempts": 0,
+    "input_hashes_before_after_equal": true,
+    "source_sha256_at_run": "cacd6046fe11f97597cc5e4aa16737666f2d7d784a2eab429d0e1257ce7d4a9d",
+    "equivalence_path": ".temp/campaign-publication-handoff-v1/native-control-equivalence-final.json",
+    "limitation": "Mechanically relocated archived native triple; not an actual campaign generation or corpus publication. Exact fixture transformations and original provenance are preserved."
+  },
+  "repaired_issues": {
+    "1194": "Re-enumerate source owners, checkpoint/protected snapshot members, source retirement and receipt membership at completion and every publication boundary.",
+    "1195": "Use privately executed captured native dependencies, preserve public cached modules; verify exact executed-source snapshots and reject stale accepted pins.",
+    "1197": "Validate complete prospective native owner chain before reservation, including create/promote destinations and real old-path promotion boundary.",
+    "1198": "Reject noncanonical receipt-directory spelling before preparation/reservation; private pre-fix counterexample and source snapshot preserved.",
+    "1200": "Apply unchanged native Rule K to all projected rows before reservation; reject global/prior-only alias impacts without scope expansion or exemption edits."
+  },
+  "scope_preserved": {
+    "tracked_files_modified": false,
+    "real_campaign_owner_application": false,
+    "real_canonical_publication": false,
+    "commits": false,
+    "github_mutations": false,
+    "existing_gate_or_test_changes": false,
+    "paid_provider_calls": false
+  },
+  "git_status": "?? scripts/publish_unmatched_campaign.py\n?? scripts/validate_unmatched_campaign_publication.py\n?? src/mediaingredientmech/campaign_publication.py\n?? tests/test_campaign_publication.py\n",
+  "remaining_execution_requirements": [
+    "Independent author-disjoint review of final code and finding fixes.",
+    "Actual accepted campaign owner/evidence/review manifest and real generation triple before application.",
+    "Explicitly review any global suppression impact or prior-chain promotion migration boundary; do not omit settled owners to evade it.",
+    "Native QC, full suite, fresh full companion scientific review, separate positive mapping admission and reviewed release gates."
+  ],
+  "artifact_manifest": {
+    "path": ".temp/campaign-publication-handoff-v1/ARTIFACTS.json",
+    "sha256": "239a43ca3041563058b410298993233637273bdf75bb9f6de5646d063068d2b8"
+  }
+}

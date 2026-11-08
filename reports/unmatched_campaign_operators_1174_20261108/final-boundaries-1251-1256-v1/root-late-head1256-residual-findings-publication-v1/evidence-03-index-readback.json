@@ -1,0 +1,82 @@
+{
+  "status": "CONFIRMED_RESIDUAL_STAGED_INDEX_GAP",
+  "reviewer": "worker08:/root/inorganics",
+  "root_source_script": {
+    "path": ".temp/final-21061-independent-v1/provenance/probe_staged_index.py",
+    "sha256": "734c03e3e23fc0fa91d9e3d230fa68372571a826511a7a499f850ed47ee8465c"
+  },
+  "root_result": {
+    "path": ".temp/final-21061-independent-v1/root-probes/staged-index-results.json",
+    "sha256": "1eaf8dabd6d44c4586aca0f35a7f5c1bde43a5999f7984b794b4a67b57ca16cf"
+  },
+  "scope": "Independent exact Git object/index/worktree readback and actual native historical verifier on already completed root private fixtures. No source application replay, no mocks, no existing fixture/index writes. This does not claim historical verification itself should enforce a current clean index.",
+  "runtime_source_sha256": "21ced557b3ff36bb3db2ac8d092b0af3d46bff1db6045221bdeabb128d4b9022",
+  "rows": [
+    {
+      "mode": "positive",
+      "index_sha256": "7b09870547230c50e919aa98bdbb612aa4907162364a9a6e30033cf7bb568ada",
+      "working_contract_sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "cached_contract_sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "baseline": "ec7eb0c2fe2af33b45cff375be8723c51f6dc634",
+      "HEAD": "ec7eb0c2fe2af33b45cff375be8723c51f6dc634",
+      "cached_paths": [],
+      "worktree_paths": [
+        "data/ingredients/mapped/Existing.yaml"
+      ],
+      "receipt_sha256": "f4e30bb0772d7932cc370597275de8f9758304e71ac4219120488984a968661a",
+      "actual_native_verify_completed": "complete",
+      "readback_index_unchanged": true
+    },
+    {
+      "mode": "initial_staged_index_only",
+      "index_sha256": "6e26733d0ff1e75282f408260f9af3b94d0ab1c5968bad017e546937a4125514",
+      "working_contract_sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "cached_contract_sha256": "15b1b311ea6841a0fae3110e618a1157dbebf7be7296e749bd5b9a699c6d55eb",
+      "baseline": "e0a694e4ed65d84f35262ee5dd69aa67e654b221",
+      "HEAD": "e0a694e4ed65d84f35262ee5dd69aa67e654b221",
+      "cached_paths": [
+        "MAPPING_SEMANTICS.md"
+      ],
+      "worktree_paths": [
+        "data/ingredients/mapped/Existing.yaml"
+      ],
+      "receipt_sha256": "3ca36a0e5285a2249314304b7c6d3ec940f644d22719ef8b76ecebaec4c90746",
+      "actual_native_verify_completed": "complete",
+      "readback_index_unchanged": true
+    },
+    {
+      "mode": "late_staged_index_only",
+      "index_sha256": "a7a8c0f02835860f8c329774485fc0ec40a7dbfcb0f47dc2eb5f079a55b9ae95",
+      "working_contract_sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062",
+      "cached_contract_sha256": "15b1b311ea6841a0fae3110e618a1157dbebf7be7296e749bd5b9a699c6d55eb",
+      "baseline": "8e18908be34a6f7cb738341798b22723175df4c7",
+      "HEAD": "8e18908be34a6f7cb738341798b22723175df4c7",
+      "cached_paths": [
+        "MAPPING_SEMANTICS.md"
+      ],
+      "worktree_paths": [
+        "data/ingredients/mapped/Existing.yaml"
+      ],
+      "receipt_sha256": "4f5070c7d8f01579677629baed3eef3dea67d617a7240a6b07e27abf2de6e491",
+      "actual_native_verify_completed": "complete",
+      "readback_index_unchanged": true
+    },
+    {
+      "mode": "late_staged_worktree_control",
+      "index_sha256": "7c5f7250fe8a2a088151e741a36dd1fb49fc506a77b07286aa60c70f4d2dc28d",
+      "working_contract_sha256": "15b1b311ea6841a0fae3110e618a1157dbebf7be7296e749bd5b9a699c6d55eb",
+      "cached_contract_sha256": "15b1b311ea6841a0fae3110e618a1157dbebf7be7296e749bd5b9a699c6d55eb",
+      "baseline": "c86925fabd7aa470d057c2d2c793dc79545c9bc7",
+      "HEAD": "c86925fabd7aa470d057c2d2c793dc79545c9bc7",
+      "cached_paths": [
+        "MAPPING_SEMANTICS.md"
+      ],
+      "worktree_paths": [
+        "MAPPING_SEMANTICS.md"
+      ],
+      "receipt_exists": false,
+      "readback_index_unchanged": true
+    }
+  ],
+  "finding_summary": "Live prepare/apply still accept staged unrelated index bytes hidden by restoring worktree to baseline. Whole source byte capture and net baseline-worktree diff do not prove index cleanliness."
+}

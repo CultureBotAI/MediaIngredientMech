@@ -1,0 +1,79 @@
+"""Independent native assembly readback; no suites or source applications."""
+import copy,datetime,hashlib,importlib.util,json,os,subprocess
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-7d4db26-independent-v1';O=P/'final-assembly';N=P/'native';REV='7d4db26a2ce75e9942badaca954bb8e8f821c75c'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def ref(p):return {'path':str(p),'sha256':sha(p),'size':p.stat().st_size}
+def js(p):return json.loads(p.read_text())
+validation=js(P/'native-validation.json');Y=R/validation['yaml']['path'];M=R/validation['markdown']['path'];pair_before=[ref(Y),ref(M)]
+checks=[]
+def ck(n,v,**kw):checks.append({'check':n,'passed':bool(v),**kw})
+ck('native pair exact root final bindings',sha(Y)==validation['yaml']['sha256'] and sha(M)==validation['markdown']['sha256'])
+ck('unchanged native helper current and frozen exact',sha(R/'scripts/record_review.py')==sha(P/'frozen/repo/scripts/record_review.py'))
+spec=importlib.util.spec_from_file_location('independent_7d_record_review',R/'scripts/record_review.py');rr=importlib.util.module_from_spec(spec);spec.loader.exec_module(rr)
+relative=str(Y.relative_to(N));review=rr.parse_review_bundle(relative,Y.read_bytes(),M.read_bytes());rr.validate_review(review)
+ck('actual native parse validate and rendered Markdown exact',rr.render_markdown(review).encode()==M.read_bytes())
+rr.assert_current_source(R,review);ck('actual native committed source assertion',True)
+inspection=js(P/'private-evidence-inspection.json');rr.assert_current_source(R,{'repository':inspection['repository'],'source':inspection['source']});ck('actual separate private evidence assertion',True)
+settings={'GIT_DIR':subprocess.check_output(['git','rev-parse','--absolute-git-dir'],text=True).strip(),'GIT_WORK_TREE':str(N),'GIT_OPTIONAL_LOCKS':'0'};old={k:os.environ.get(k) for k in settings};prior=[]
+try:
+ os.environ.update(settings);reloaded=rr.read_review(N,relative);provenance=rr.source_provenance(N,review)
+ ck('actual native read and provenance in declared read-only Git context',reloaded==review and provenance['status']=='git_commit_verified')
+ for p in sorted((N/'reviews/structured').glob('*/review.yaml')):
+  if p!=Y:prior.append(rr.read_review(N,str(p.relative_to(N))))
+finally:
+ for k,v in old.items():
+  if v is None:os.environ.pop(k,None)
+  else:os.environ[k]=v
+ck('four exact predecessor pairs native-readable',len(prior)==4)
+ck('Git environment restored',all(os.environ.get(k)==v for k,v in old.items()))
+committed=[]
+for row in review['source']['inputs']:
+ raw=subprocess.check_output(['git','show',REV+':'+row['path']]);tree=subprocess.check_output(['git','ls-tree',REV,'--',row['path']],text=True).strip();h=hashlib.sha256(raw).hexdigest()
+ committed.append({**row,'git_tree':tree,'actual_sha256':h,'passed':h==row['sha256'] and tree.startswith('100644 blob ')})
+ck('28 regular committed7d inputs exact including maker',len(committed)==28 and all(x['passed'] for x in committed) and any(x['path']=='reports/sssom_completion_20260921/mapping_changes/make_receipt.py' for x in committed))
+private=[{**r,'actual_sha256':sha(R/r['path'])} for r in inspection['source']['inputs']]
+ck('27 private evidence inputs exact and distinct from committed code provenance',len(private)==27 and all(x['sha256']==x['actual_sha256'] for x in private) and inspection['source']['state']=='working_tree' and review['source']['state']=='git_commit')
+evidence=[{**r,'actual_sha256':sha(R/r['reference'])} for r in review['evidence']]
+ck('all22 native evidence rows exact',len(evidence)==22 and all(x['snapshot_sha256']==x['actual_sha256'] for x in evidence))
+previous=js(P/'prior-finding-lineage.json');copies=[]
+for r in previous['prior_pairs']:copies.append({**r,'actual_original':sha(Path(r['original_path'])),'actual_copy':sha(R/r['snapshot'])})
+ck('eight original and copied predecessor files exact',len(copies)==8 and all(x['sha256']==x['actual_copy']==x['actual_original'] for x in copies))
+oldreview=next(x for x in prior if x['review_id']=='20261108T121201Z-w08-final-21061-independent');oldfind={x['finding_id']:x for x in oldreview['findings']};find={x['finding_id']:x for x in review['findings']}
+for fid in ['REJECTION-CODE-001','W08-16C-CODE-002','W08-21061-PUB-001']:
+ ck(fid+' real21061 predecessor and stable targets',find[fid]['issue_key']==oldfind[fid]['issue_key'] and find[fid]['target_ids']==oldfind[fid]['target_ids'] and find[fid]['previous_occurrences']==[{'repository':'CultureBotAI/MediaIngredientMech','review_id':oldreview['review_id'],'finding_id':fid}])
+ck('1255 remains scoped resolved with original severity',find['REJECTION-CODE-001']['status']==oldfind['REJECTION-CODE-001']['status']=='resolved' and find['REJECTION-CODE-001']['severity']=='major')
+ck('one original1256 remains open with both diagnostic members',find['W08-16C-CODE-002']['status']==oldfind['W08-16C-CODE-002']['status']=='open' and 'W08-7D4DB26-SRC-001' in find['W08-16C-CODE-002']['disposition_reason'] and 'SRC002' in find['W08-16C-CODE-002']['disposition_reason'])
+ck('publisher resolved only in new scoped observation',find['W08-21061-PUB-001']['status']=='resolved' and oldfind['W08-21061-PUB-001']['status']=='open' and find['W08-21061-PUB-001']['severity']=='major')
+ck('needs_curation exactlyone openmajor threerecords',review['verdict']=='needs_curation' and len(find)==3 and sum(x['status']=='open' and x['severity']=='major' for x in find.values())==1)
+ck('five actual source code targets exactrevision',len(review['targets'])==5 and all(x['kind']=='source' and REV in x['selector'] for x in review['targets']))
+consolidated=js(P/'FINDINGS.json');ck('root finding accounting exact native',consolidated['findings']==review['findings'] and consolidated['open_major_diagnostic_members']==['W08-7D4DB26-SRC-001','W08-7D4DB26-SRC-002'])
+ck('both required source safety checks failed and publisher passed',{x['check_id'] for x in review['checks'] if x['status']=='failed'}=={'source-window','source-flags'} and next(x for x in review['checks'] if x['check_id']=='publisher')['status']=='passed')
+integration=js(O/'integration-readback.json');residual=js(O/'residual-readback.json')
+ck('actual20 native receipt and residual object readbacks passed',integration['status']==residual['status']=='PASS' and integration['actual_case_count']==20)
+summary=js(P/'focused-summary.json');ck('actual518 single run accurately accounted',summary['passed']==518 and summary['failed']==summary['skipped']==0 and summary['real_native_cases']==20 and summary['single_combined_run'] is True and summary['collected']=={'test_campaign_owner_apply.py':354,'test_campaign_publication.py':144,'test_campaign_demotion_integration.py':20})
+peerrefs=js(O/'peer-reference-readback.json');ck('all99 nested final peer direct digest bindings exact',peerrefs['status']=='PASS' and peerrefs['checked']==99)
+tech=js(P/'technical/review-v2.json');skeptic=js(P/'skeptic/review-v2.json')
+ck('final peer identities controls and code verdict represented',tech['actual_controls']['own_native_fixture_controls']==49 and skeptic['actual_counts']['reviewer_stage_probes']==31 and skeptic['actual_counts']['reviewer_actual_native_fixtures']==3 and tech['verdict']==skeptic['verdict']==review['verdict'])
+ck('peer final successor evidence selected',next(x for x in evidence if x['evidence_id']=='TECHNICAL')['reference'].endswith('technical/review-v2.json') and next(x for x in evidence if x['evidence_id']=='SKEPTIC')['reference'].endswith('skeptic/review-v2.json'))
+exitproof=js(P/'exit-verification-v2.json');entry=js(P/'entry.json');v1=js(P/'exit-verification.json')
+ck('I actual advancement disclosed',entry['roots']['I']['head']=='21061aa532401398db70c59a596debf330f70744' and exitproof['roots']['I']['head']==REV and exitproof['roots']['I']['same_as_entry'] is False and exitproof['later_head_accepted_by_inference'] is False)
+ck('exit v2 only corrects caption and preserves v1',sha(P/'exit-verification.json')==exitproof['metadata_correction']['predecessor_sha256'] and [k for k in v1 if v1[k]!=exitproof.get(k)]==['scope'])
+ck('root archive preservation 14723 no addedfiles and remote7d exact',exitproof['status']=='PASS' and exitproof['frozen_original_regular_files']==14723 and exitproof['frozen_added_files']==[] and exitproof['remote_head_entry']==exitproof['remote_head_exit']==REV)
+lineagem=js(P/'lineage/MANIFEST.json');ck('sealed lineage allmembers unchanged',all(sha(P/'lineage'/x['path'])==x['sha256'] for x in lineagem['members']))
+ck('initial residual and later addendum retained',sha(P/'INITIAL-RESIDUAL-RESULTS.json')==js(P/'INITIAL-RESIDUAL-ADDENDUM-v1.json')['initial_result_preserved']['sha256'])
+ck('science and application acceptance explicitly excluded',review['scientific_review'] is False and 'No scientific/candidate/wholeowner/wholeplan/application/role/export approval.' in review['limitations'] and 'No future repair approved by inference.' in ' '.join(review['limitations']))
+negative=[]
+def refused(name,fn):
+ try:fn()
+ except rr.ReviewError as e:negative.append({'name':name,'refused':True,'error':str(e)})
+ else:negative.append({'name':name,'refused':False})
+bad=copy.deepcopy(review);bad['source']['inputs'][0]['sha256']='0'*64;refused('incorrect committed digest',lambda:rr.assert_current_source(R,bad))
+refused('Markdown drift',lambda:rr.parse_review_bundle(relative,Y.read_bytes(),M.read_bytes()+b'incorrect'))
+bad=copy.deepcopy(review);bad['verdict']='pass';refused('false pass with unresolved major',lambda:rr.validate_review(bad))
+ck('three actual native metadata controls refuse',all(x['refused'] for x in negative))
+ck('pair unchanged during readback',pair_before==[ref(Y),ref(M)])
+inputs=[Y,M,P/'ASSESSMENT.md',P/'FINDINGS.json',P/'native-validation.json',P/'prior-finding-lineage.json',P/'private-evidence-inspection.json',P/'focused-summary.json',P/'exit-verification-v2.json',P/'exit-verification.json',P/'technical/review-v2.json',P/'skeptic/review-v2.json',P/'technical/review.json',P/'skeptic/review.json',P/'INITIAL-RESIDUAL-RESULTS.json',P/'INITIAL-RESIDUAL-ADDENDUM-v1.json',O/'integration-readback.json',O/'residual-readback.json',O/'peer-reference-readback.json',R/'scripts/record_review.py']
+out={'schema_version':1,'reviewer':'worker08:/root/vitamins','native_assembly_author':'worker08:/root','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS_NO_NEW_ASSEMBLY_FINDINGS' if all(x['passed'] for x in checks) else 'FAIL','code_verdict':'needs_curation','reviewed_head':REV,'scope':'Independent final native assembly and existing actual20 integration/diagnostic object readback. No code probes, application, suite rerun, or scientific acceptance.','checks':checks,'negative_controls':negative,'inputs':[ref(p) for p in inputs],'committed_inputs':committed,'private_inputs':private,'evidence_rows':evidence,'predecessor_pairs':copies,'read_only_git_context':settings,'new_assembly_findings':[],'open_native_findings':['W08-16C-CODE-002'],'open_diagnostic_members':['W08-7D4DB26-SRC-001','W08-7D4DB26-SRC-002'],'resolved_scoped_observations':['REJECTION-CODE-001/#1255','W08-21061-PUB-001/#1256 publisher'],'limitations':['Assembly PASS is faithful needs_curation metadata, not code readiness or source application authorization.','518 authored tests passed while two actual source diagnostic members remain open under one original native finding.','Exactly20 real native fixture directories were read; pytest literal aliases are inventoried and excluded from all execution counts.','Four real predecessor pairs are unchanged; two resolved statuses are scoped observations only and do not close issues or rewrite old findings.','Technical v2 corrects its redirected finalizer-log digest; root exit v2 corrects an inherited caption. Both originals and truthful failure history remain.','I moved externally from21061 to clean7d before lineage entry; no reviewer mutation or later-head acceptance inferred.','Root full exit preservation is read and hash-bound; this reviewer separately completed full prior64833/148/12, author75/132, earlier16c/design and J/CLAW lineage rehash.','Negative fixtures may mutate generated candidates/manifests and positive test may append deliberate owner drift after successful historical validation. Current file state is not mislabeled original producer output.','Historical hold431→436→435 and receipt27→28 are bounded lineage proof only, not full semantic_release or source/owner/role/merge/export approval.','No future correction or unrelated suite accepted.'],'scientific_or_application_approval':False,'suite_rerun':False}
+with (O/'review.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print(json.dumps({'status':out['status'],'checks':len(checks),'failed':[x for x in checks if not x['passed']],'review':ref(O/'review.json')},indent=2))

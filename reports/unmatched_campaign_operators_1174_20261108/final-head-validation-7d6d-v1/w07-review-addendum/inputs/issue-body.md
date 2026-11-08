@@ -1,0 +1,7 @@
+The final external operator reviewer independently reproduced W07-OPERATOR-LOG-AUDIT-001, a minor defect in its own private evidence-assembly script, not in the maintained source/publication operators.
+
+`assemble_preparatory_audit.py` SHA256 ab87b8b3b4c50c265480814bdaa9a7d9a0bebd69027876ad269f337d9b5e7533 incorrectly requires the literal FileNotFoundError class in abbreviated pytest failure text. The preserved original combined log truncates the child stderr, so the script raises AssertionError before writing its report. A separately captured complete original traceback contains the actual missing record_review.py dependency.
+
+No correction has been made. The bounded correction should use the actual failed node IDs and independently captured complete traceback, preserve the failed script/probe, and continue to distinguish the original 619-pass/11-failure run from the separate corrected 13-case pass. It must not alter operator code, tests or a validation verdict. The worker must independently re-review the corrected private accounting.
+
+Evidence: `.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/findings/W07-OPERATOR-LOG-AUDIT-001/finding.json` and `review/skeptical/own-helper-finding-review.json`. Original combined log SHA256 e961edb08f525ca80cf51d2252358fe12803a3139d8e1f1b438318197e49a4f3; complete traceback d5c1c29b2af12ae4f7d6ee73d59ebffab57900d257b05d6287e517ff605e1c0f. This finding is recorded before the private correction.

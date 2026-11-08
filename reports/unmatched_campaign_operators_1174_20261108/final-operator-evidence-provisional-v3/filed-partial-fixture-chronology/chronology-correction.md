@@ -1,0 +1,3 @@
+Chronology correction to my final sentence in the preceding comment: GitHub filing did **not** precede the additive locator correction. The local finding report preceded the worker's correction; `HANDOFF-LOCATOR-ADDENDUM.json` records creation at13:34:40.623819UTC, while GitHub comment6722193480 was created at13:38:42UTC. I verified both timestamps after posting. My earlier wording conflated local reporting with GitHub filing and was inaccurate.
+
+The original handoff remains unchanged, both actual evidence hashes still match, and the new addendum explicitly records that coordinator filing was pending when it was authored. Preserve that truthful chronology; no issue-first remediation claim applies to this private metadata correction.

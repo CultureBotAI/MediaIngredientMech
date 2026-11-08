@@ -1,0 +1,140 @@
+{
+  "at": "2026-11-08T11:25:52.925506+00:00",
+  "verdict": "NEEDS_CORRECTION_DO_NOT_APPROVE_D691",
+  "findings": [
+    {
+      "finding_id": "W03-NATIVE-1252-RETIREMENT-REGRESSION",
+      "issue_key": "MIM-NATIVE-1252-UNMAPPED-RETIREMENT-REGRESSION",
+      "severity": "major",
+      "status": "open",
+      "certainty": "confirmed",
+      "code_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+      "parent": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+      "file": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "lines": {
+        "start": 760,
+        "end": 771
+      },
+      "related_test_file": "tests/test_campaign_owner_apply.py",
+      "title": "New rejected-owner guard rejects genuine same-path UNMAPPED-to-REJECTED retirements",
+      "actual": "The guard activates when either old or new mapping_status is REJECTED, then demands old==new==REJECTED. A genuine existing UNMAPPED owner being rejected cannot satisfy this conjunction despite unchanged identity/name/path and valid appended history. Both exact committed W03 originals pass parent record validation but fail frozen d691; an independently authenticated synthetic plan passes _load then fails current prepare at this guard.",
+      "impact": "Regression blocks the two existing-owner retirement operations and therefore prevents the supplied933-operation cohort from completing even record validation. No overall prepare PASS exists.",
+      "source_code_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+      "exact_affected_sources": [
+        {
+          "proposal_id": "c-generic-polymer-tombstone",
+          "owner_path": "data/ingredients/unmapped/Poly-ß-hydroxybutyric_Acid.yaml",
+          "source_origin_head": "784ee2541506c914b4c34f091de688d39784d548",
+          "committed_payload_path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/generic-polymer-tombstone.yaml",
+          "proposal_object_sha256": "2438b8d1a6db54063f7332de112949aa10188ad10b2da0b1db07655bf3f2160e",
+          "before": {
+            "path": "regression-addendum/technical/inputs/c-generic-polymer-tombstone/before.yaml",
+            "sha256": "6bc65fb13e8851914d447ee47cecec0578720017cb8aea0b955a5d1674a1e640"
+          },
+          "original_payload": {
+            "path": "regression-addendum/technical/inputs/c-generic-polymer-tombstone/original-payload.yaml",
+            "sha256": "5cf380ae11959d0d5181ad9c3725597a2bfb9a9a75f0d339bf2870e0ec82d1b2"
+          },
+          "proposal": {
+            "path": "regression-addendum/technical/inputs/c-generic-polymer-tombstone/proposal.json",
+            "sha256": "116b49f5aa9cbdfee1777224b905644d0578f399ec4db2362ebc96d1079b4ae4"
+          },
+          "original_source_record_stage": "PASS",
+          "exact_d691_record_stage": "REFUSED",
+          "error": "Rejected owner requires same-path, same-key rejected maintenance",
+          "complete_before_catalog": 2956,
+          "same_identity_name_path": true,
+          "history_prefix_preserved": true,
+          "old_status": "UNMAPPED",
+          "new_status": "REJECTED",
+          "normalization_payload_used": false,
+          "source_scientific_approval": false,
+          "source_author_related_to_parent_W03": true,
+          "original_publication_obligations_retained": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+          "atomic_parent_relation_retained": "Retire generic beta-polymer duplicate UNMAPPED_0493 atomically with CHEBI:53389 owner alias update; retain distinction from R-specific polymer."
+        },
+        {
+          "proposal_id": "c-r-polymer-tombstone",
+          "owner_path": "data/ingredients/unmapped/PolyR-3-hydroxybutyric_Acid.yaml",
+          "source_origin_head": "784ee2541506c914b4c34f091de688d39784d548",
+          "committed_payload_path": "reports/all_unmatched_20261107/worker-03/chemicals/proposals/r-polymer-tombstone.yaml",
+          "proposal_object_sha256": "98059d7daa63f624fdcc9d8697fe32fe09c6bef320290518580dfd4412072df5",
+          "before": {
+            "path": "regression-addendum/technical/inputs/c-r-polymer-tombstone/before.yaml",
+            "sha256": "f5acc06a83a3438a156a9ae1806ceeda60caa8909f5b658e297999483ac5fde8"
+          },
+          "original_payload": {
+            "path": "regression-addendum/technical/inputs/c-r-polymer-tombstone/original-payload.yaml",
+            "sha256": "64cbde7a854c8c27d5c2da8bd0d43c54cd571b2ec11aad3d08d1d514b0a160a5"
+          },
+          "proposal": {
+            "path": "regression-addendum/technical/inputs/c-r-polymer-tombstone/proposal.json",
+            "sha256": "30f3dbcad95a66d7d8b1f5e31afc5e4b284b6a2b4191888730996e8bdaf2d71c"
+          },
+          "original_source_record_stage": "PASS",
+          "exact_d691_record_stage": "REFUSED",
+          "error": "Rejected owner requires same-path, same-key rejected maintenance",
+          "complete_before_catalog": 2956,
+          "same_identity_name_path": true,
+          "history_prefix_preserved": true,
+          "old_status": "UNMAPPED",
+          "new_status": "REJECTED",
+          "normalization_payload_used": false,
+          "source_scientific_approval": false,
+          "source_author_related_to_parent_W03": true,
+          "original_publication_obligations_retained": "Proposal only. Require guarded native write, complete-payload record review on these exact after bytes, independent review, synchronized maintained surfaces and SSSOM, and coordinator shared-owner conflict resolution. New-owner support admission remains withheld under issue1165; unchanged inherited holds are not removed.",
+          "atomic_parent_relation_retained": "Retire duplicate UNMAPPED_0494 only atomically with corrected R-specific CHEBI:131525 owner; no merge into generic polymer."
+        }
+      ],
+      "evidence": [
+        {
+          "path": "regression-addendum/technical/original-retirement-reproduction-v1.json",
+          "sha256": "0f8e548f4ab9133bd63bcc44db6e3b691ae525c4fa7f1bdab50c9fd49994e712"
+        },
+        {
+          "path": "regression-addendum/adversarial/counterexample-v1.json",
+          "sha256": "30bed3962179035f9555670c2588dc9e3ef4f43088470dd9217189c2e66b0cff"
+        },
+        {
+          "path": "regression-addendum/adversarial/coverage-gap-v1.json",
+          "sha256": "25a88dda90d9a3d04abce51f3044908d2202e50e1fb704f2b8c953b09f1a0a49"
+        },
+        {
+          "path": "regression-addendum/cohort-accounting-review-v1.json",
+          "sha256": "119adbfbe68e8b3156723e84f8d06d47b82520b2342ec9874b36dccbfb3c5972"
+        },
+        {
+          "path": "regression-addendum/inputs/issue1252-comment6720840145.json",
+          "sha256": "ce7666a15cf444f5fabdac2324fed65526070db3e74922ed3d63ebf46ce81f33"
+        }
+      ],
+      "reproduction": [
+        "Exact original payload/before/case/proposal bytes are captured from Git784 and d691 respectively by regression-addendum/technical/reproduce_original_retirements_v1.py; it evaluates exact parent validator AST and frozen d691 validator on the complete2956owner catalog.",
+        "regression-addendum/adversarial/reproduce_retirement_v1.py constructs an independent published existing-owner synthetic origin, native acceptance/preimage/case bindings, then executes current _load and full prepare. Its saved counterexample records the exact guard refusal, two matched positive full-pipeline controls, and wrong-preimage refusal.",
+        "Scripts/inputs/fixtures are immutable evidence; reproduce in a new private output location, never overwrite these seals or execute against mutable integration worktrees."
+      ],
+      "proposed_bounded_fix": "Preserve the native route for a genuine same-path existing UNMAPPED owner becoming REJECTED with identical identifier/preferred term and required material/history provenance. Keep same-status REJECTED maintenance and forbid revival, replacement, relocation, new rejected creates or invalid promotion. Do not add a blanket status bypass or weaken complete-catalog collisions and published-origin/preimage/schema/history/inventory/publication guards. No fix is implemented by this reviewer.",
+      "required_acceptance": [
+        "Add an authenticated UNMAPPED-to-REJECTED same-path retirement through native prepare, apply and completed replay.",
+        "Retain negative controls for rejected-owner revival, new rejected creation, wrong operation/path/preimage/history and changed identity/name.",
+        "Re-run the same full933-operation diagnostic without dropping either retirement; distinguish record-stage success from complete accepted prepare and actual application.",
+        "Obtain separately dispatched exact successor code review; no later commit inherits this d691 assessment."
+      ],
+      "test_gap": "All seven appended test functions and the first independent matrices omitted a positive incoming UNMAPPED-to-REJECTED retirement. Existing passing outcomes remain true within scope but do not establish compatibility of this missing route.",
+      "existing_issue": {
+        "number": 1252,
+        "comment_id": 6720840145,
+        "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145",
+        "already_filed_and_readback_verified": true,
+        "new_issue_requested": false
+      },
+      "COI_and_limits": [
+        "W03 authored both actual source proposals. Exact code/provenance behavior is reviewed; their scientific content, atomic parent relations and normalization are not independently approved here.",
+        "Parent comparison is exact extracted record-validator function with unchanged helpers, not historical full prepare/application.",
+        "The actual full933 diagnostic is retained coordinator evidence and statically accounted; it was not independently rerun. All its reported runs failed at known boundaries.",
+        "No maintained application, source editing, correction or future implementation review performed."
+      ]
+    }
+  ],
+  "deduplication": "Known filed1252addendum; no new issue or comment needed."
+}

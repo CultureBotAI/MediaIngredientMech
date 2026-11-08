@@ -1,0 +1,29 @@
+from pathlib import Path
+import ast, hashlib, json
+M=Path('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech')
+C=M/'.temp/all-unmatched-20261107'; A=C/'integration/campaign-suppressions1259-v1'; D=C/'preflight/campaign-suppressions1259-independent-v1/test-correction-review-v1'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+manifest=json.loads((A/'portable-final/MANIFEST.json').read_text())
+readback=[]
+for r in manifest['files']:
+ p=A/'portable-final'/r['path'];assert p.is_file() and not p.is_symlink()
+ assert sha(p)==r['sha256'] and p.stat().st_size==r['size']
+ readback.append(r)
+files=['tests/test_campaign_publication.py','tests/test_campaign_suppressions.py']
+proof=[]
+for f in files:
+ old=(A/'fixture-correction-v1/before'/f).read_text();new=(A/'runtime/repo'/f).read_text()
+ if 'test_campaign_publication' in f:
+  addition='        "scripts/record_review.py",\n        "schema/record_review.yaml",\n'
+ else:
+  addition='    if fault == "partial-reviewed-targets":\n        with pytest.raises(\n            module.ReviewError,\n            match="completed review has explicitly selected targets left unreviewed",\n        ):\n            module.validate_review(review, c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)\n        return\n'
+ assert new.count(addition)==1 and new.replace(addition,'',1)==old
+ def nodes(raw):
+  t=ast.parse(raw)
+  return {'asserts':[ast.dump(n,include_attributes=False) for n in ast.walk(t) if isinstance(n,ast.Assert)],'decorators':{n.name:[ast.dump(d,include_attributes=False) for d in n.decorator_list] for n in t.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))}}
+ assert nodes(old)==nodes(new)
+ proof.append({'path':f,'before':sha(A/'fixture-correction-v1/before'/f),'after':sha(A/'runtime/repo'/f),'exact_inverse':True,'assert_AST_and_parameter_decorators_unchanged':True})
+result={'status':'PASS','author_handoff_sha256':sha(A/'HANDOFF.json'),'author_manifest_sha256':sha(A/'portable-final/MANIFEST.json'),'author_manifest_members_rehashed':len(readback),'files':proof,'publisher_sha256':sha(A/'runtime/repo/src/mediaingredientmech/campaign_publication.py'),'original_combined_receipt_sha256':sha(A/'checks/combined-final-v1/run.json'),'original_combined_log_sha256':sha(A/'checks/combined-final-v1/run.log'),'independent_affected_receipt_sha256':sha(D/'RESULT.json'),'limits':'Two narrow test setup additions only. Original failing combined run preserved; no all-pass combined result inferred.'}
+(D/'PRESERVATION.json').write_text(json.dumps(result,indent=2)+'\n')
+(D/'AUTHOR-MANIFEST-READBACK.json').write_text(json.dumps({'manifest_sha256':result['author_manifest_sha256'],'members':readback},indent=2)+'\n')
+print(json.dumps(result,indent=2))

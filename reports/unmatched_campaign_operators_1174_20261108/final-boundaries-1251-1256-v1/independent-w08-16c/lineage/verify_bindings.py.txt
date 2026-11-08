@@ -1,0 +1,176 @@
+"""Read-only lineage binding checks; writes only this new review directory."""
+import ast
+import csv
+import datetime
+import hashlib
+import io
+import json
+import os
+from pathlib import Path
+import subprocess
+
+W = Path.cwd()
+C = W.parents[2]
+P = W / '.temp/combined-16c-independent-v1'
+OUT = P / 'lineage'
+F = P / 'frozen/repo'
+J = C / 'integration/curation-worktree'
+CLAW = C.parent / 'kgm-unmapped-20261107/claw'
+A = C / 'integration/campaign-demotion-source-v1'
+B = C / 'integration/campaign-demotion-publisher-v1/portable-v1'
+D = C / 'integration/native-rejection-regression-fix-v1'
+OLD = W / '.temp/angustmycin-demotion-design-independent-v1'
+R933 = C / 'integration/native-boundary-full-candidate-probe-v1'
+Q = C / 'workers/w04/worktree/.temp/rejection-fix-independent-v1'
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+def js(p):
+    return json.loads(p.read_bytes())
+
+def ref(p):
+    return {'path': str(p), 'sha256': sha(p.read_bytes()), 'size': p.stat().st_size}
+
+checks = []
+
+def check(name, passed, **details):
+    checks.append({'check': name, 'passed': bool(passed), **details})
+
+def command(root, *args):
+    result = subprocess.run(['git', '-C', str(root), *args], capture_output=True,
+                            env=os.environ | {'GIT_OPTIONAL_LOCKS': '0'})
+    return {'command': ['git', '-C', str(root), *args], 'exit_code': result.returncode,
+            'stdout': result.stdout.decode(), 'stderr': result.stderr.decode()}
+
+roots_entry = {n: {'head': command(p, 'rev-parse', 'HEAD'),
+                   'status': command(p, 'status', '--porcelain')} for n,p in [('J',J),('CLAW',CLAW)]}
+for n, expected in [('J','eac469f1d94f06bab0714fff891abf64b8ebdbe9'), ('CLAW','76c1ebeea3fc7f80bf1abe044688f298f390cfac')]:
+    check(n+' pinned clean context', roots_entry[n]['head']['stdout'].strip()==expected and
+          roots_entry[n]['status']['stdout']=='')
+
+manifests=[]
+for label, root in [('source',A),('publisher_portable',B),('prior_9a1_fix',D),('prior_sealed_design',OLD)]:
+    p=root/'MANIFEST.json'; m=js(p)
+    members=m.get('members') or [{'path':k,'sha256':v} for k,v in m['files'].items()]
+    records=[]
+    for row in members:
+        f=root/row['path']; actual=sha(f.read_bytes()) if f.is_file() and not f.is_symlink() else None
+        records.append({'path':row['path'],'expected':row['sha256'],'actual':actual,
+                        'matches':actual==row['sha256']})
+    syms=[]
+    for row in m.get('literal_symlinks_not_followed',[]):
+        f=root/row['path']; target=os.readlink(f) if f.is_symlink() else None
+        syms.append({'path':row['path'],'actual_literal_target':target,
+                     'expected_literal_target':row['literal_target'],'matches':target==row['literal_target']})
+    check(label+' complete manifest',all(r['matches'] for r in records+syms),
+          regular_files=len(records),literal_symlinks=len(syms))
+    manifests.append({'label':label,'manifest':ref(p),'members':records,'symlinks':syms})
+
+archive=js(B/'native-proof/archive.json'); portable=[]
+for row in archive:
+    copied=B/row['path']; original=Path(row['source'])
+    portable.append(dict(row,portable_actual=sha(copied.read_bytes()),
+                         original_actual=sha(original.read_bytes())))
+check('portable native proof exact original bytes',all(r['sha256']==r['portable_actual']==r['original_actual'] for r in portable),count=len(portable))
+
+frozen=js(P/'frozen/ARCHIVE.json')
+archivefiles={r['path']:r['sha256'] for r in frozen['files']}
+selected_code=[('src/mediaingredientmech/curate/campaign_owner_apply.py',A/'final-source/campaign_owner_apply.py'),
+ ('tests/test_campaign_owner_apply.py',A/'final-source/test_campaign_owner_apply.py'),
+ ('src/mediaingredientmech/campaign_publication.py',B/'after/src/mediaingredientmech/campaign_publication.py'),
+ ('tests/test_campaign_publication.py',B/'after/tests/test_campaign_publication.py'),
+ ('tests/test_campaign_demotion_integration.py',B/'after/tests/test_campaign_demotion_integration.py')]
+code=[]
+for name, source in selected_code:
+    r={'frozen':ref(F/name),'author':ref(source),'archive_sha256':archivefiles[name]};code.append(r)
+    check('frozen author code exact '+name, r['frozen']['sha256']==r['author']['sha256']==r['archive_sha256'])
+
+def funcs(p):
+    return {n.name:ast.dump(n,include_attributes=False) for n in ast.parse(p.read_text()).body
+            if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))}
+
+ast_checks=[]
+for label, old, new in [('source_9a1',D/'final-source/test_campaign_owner_apply.py',F/'tests/test_campaign_owner_apply.py'),
+ ('publisher_prior',B/'before/tests/test_campaign_publication.py',F/'tests/test_campaign_publication.py')]:
+    oldfunctions=funcs(old); newfunctions=funcs(new)
+    exact={k:newfunctions.get(k)==v for k,v in oldfunctions.items() if k.startswith('test_')}
+    ast_checks.append({'label':label,'before':ref(old),'after':ref(new),'test_functions':exact,
+                       'complete_old_file_byte_prefix':new.read_bytes().startswith(old.read_bytes())})
+    check(label+' test function AST preservation',all(exact.values()),count=len(exact))
+check('source entire old test byte prefix',ast_checks[0]['complete_old_file_byte_prefix'])
+
+chain=js(OLD/'lineage/mapping-chain-replay.json')
+context=[]
+for name,h in chain['all_replay_input_hashes'].items():
+    p=J/name; actual=sha(p.read_bytes())
+    context.append({'path':name,'expected':h,'actual':actual,'matches':h==actual})
+check('J exact prior native replay inputs preserved',all(r['matches'] for r in context),count=len(context))
+receipts=[]
+for row in chain['receipts']:
+    p=J/row['path']; raw=p.read_bytes(); gitraw=subprocess.check_output(['git','-C',str(J),'show','eac469f1d94f06bab0714fff891abf64b8ebdbe9:'+row['path']],env=os.environ|{'GIT_OPTIONAL_LOCKS':'0'})
+    receipts.append({'sequence':row['sequence'],'path':row['path'],'sha256':sha(raw),
+                     'prior_sha256':row['sha256'],'git_bytes_sha256':sha(gitraw),
+                     'matches':sha(raw)==row['sha256']==sha(gitraw)})
+check('27 receipt prefix exact J commit and sealed replay',len(receipts)==27 and all(r['matches'] for r in receipts))
+hp=js(B/'native-proof/historical-27-native/reports/hold-proof.json')
+print('hold prefix type',type(hp['receipt_prefix']).__name__)
+prefix=hp['receipt_prefix']
+if isinstance(prefix,dict):
+    prefixmatches=prefix=={r['path']:r['sha256'] for r in receipts}
+else:
+    prefixmatches=prefix==[{'path':r['path'],'sha256':r['sha256']} for r in receipts]
+check('portable historical proof exact 27 prefix',prefixmatches)
+hold=js(OLD/'lineage/hold-lineage-replay.json')
+holdbindings=[]
+for key in ['report','hold_document','actual_owner']:
+    r=hold[key]; p=Path(r['path']); holdbindings.append({'role':key,**ref(p),'expected':r['sha256']})
+check('actual held owner and report bytes preserved',all(r['sha256']==r['expected'] for r in holdbindings))
+actualrow=hold['frozen_payload']; current_lines=(J/'mappings/ingredient_mappings.sssom.tsv').read_text().splitlines()
+current=list(csv.DictReader(io.StringIO('\n'.join(l for l in current_lines if not l.startswith('#'))),delimiter='\t'))
+check('current held row436 exact frozen payload',current[435]==actualrow)
+check('actual Angust row389 retained in historical context',current[388]['subject_id']=='MIM:Angustmycin')
+newreceipt=js(B/'native-proof/historical-27-native/reports/sssom_completion_20260921/mapping_changes/issue1174-native-demotion.json')
+check('portable receipt28 preserves held position436 to435',newreceipt['sequence']==28 and newreceipt['position_map'][435]==435 and hp['before_position']==436 and hp['after_position']==435)
+
+owners={str(p.relative_to(J)):sha(p.read_bytes()) for p in (J/'data/ingredients').glob('*/*.yaml')}
+expectedowners=js(R933/'before-inventory.json')
+check('full J context owner inventory exact prior933 baseline',owners==expectedowners,count=len(owners))
+
+gen=js(B/'native-proof/historical-27-native/reports/native/generation.json')
+producer=[]
+for name,h in gen['producer_import_snapshot'].items():
+    p=Path(name); producer.append({'path':name,'sha256':sha(p.read_bytes()),'expected':h,'symlink':p.is_symlink()})
+check('actual CLAW full native producer graph bytes',all(r['sha256']==r['expected'] and not r['symlink'] for r in producer),count=len(producer))
+
+selection=js(R933/'selection.json'); originalresult=js(D/'same933-result.json'); selected933=[]
+for row in selection['selected']:
+    r=row['effective_candidate']; selected933.append({'action_id':row['action_id'],'path':r['path'],
+      'expected':r['sha256'],'actual':sha(Path(r['path']).read_bytes())})
+check('933 retained selected payload bindings',len(selected933)==933 and all(r['expected']==r['actual'] for r in selected933))
+check('933 exact selection pin and result limited scope',sha((R933/'selection.json').read_bytes())==originalresult['exact_selection_sha256'] and originalresult['status']=='PASS_RECORD_STAGE_ONLY' and originalresult['full_prepare'] is False and originalresult['source_application'] is False and originalresult['scientific_approval'] is False)
+projected=js(R933/'projected-inventory.json')
+check('933 projection accounting',len(expectedowners)==2956 and len(projected)==3550)
+
+qfiles=['HANDOFF.json','MANIFEST.json','FINAL-SELECTOR.json','FINDINGS-FOR-COORDINATOR.json','skeptical/actual-w03-path-results.json','REVIEW-CORE-v2.json']
+filedfinding=[ref(Q/n) for n in qfiles]
+operator=(F/'src/mediaingredientmech/curate/campaign_owner_apply.py').read_text()
+check('filed Unicode path hazard still visibly present at16c','set(git(root, "diff", "--name-only", "HEAD", "--").decode().splitlines())' in operator)
+
+roots_exit={n:{'head':command(p,'rev-parse','HEAD'),'status':command(p,'status','--porcelain')} for n,p in [('J',J),('CLAW',CLAW)]}
+check('J and CLAW heads and status unchanged during checks',roots_entry==roots_exit)
+check('context owner inventory unchanged at exit',owners=={str(p.relative_to(J)):sha(p.read_bytes()) for p in (J/'data/ingredients').glob('*/*.yaml')})
+check('context producer graph unchanged at exit',all(sha(Path(r['path']).read_bytes())==r['sha256'] for r in producer))
+
+result={'schema_version':1,'reviewer':'/root/vitamins','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'scope':'Read-only exact lineage bindings and static integration assessment. No pytest/native suite or source application executed by this script.',
+ 'status':'PASS' if all(r['passed'] for r in checks) else 'FAIL','checks':checks,'roots_entry':roots_entry,'roots_exit':roots_exit,
+ 'manifests':manifests,'portable_native_proof':portable,'frozen_code':code,'test_preservation':ast_checks,
+ 'prior_replay':ref(OLD/'lineage/mapping-chain-replay.json'),'prior_hold_replay':ref(OLD/'lineage/hold-lineage-replay.json'),
+ 'native_context_inputs':context,'receipt_prefix':receipts,'held_context':holdbindings,'owner_inventory':owners,
+ 'producer_graph':producer,'same933':{'selection':ref(R933/'selection.json'),'result':ref(D/'same933-result.json'),
+ 'replay_script':ref(D/'replay_same933.py'),'before_inventory':ref(R933/'before-inventory.json'),'projected_inventory':ref(R933/'projected-inventory.json'),'selected_payload_bindings':selected933,'scope':'Historical record-stage result, not repeated here, not full prepare/application/scientific approval.'},
+ 'existing_finding_core':filedfinding,'read_scope_limit':'Hashes establish preservation and binding, not a new scientific review of owners/payloads/papers.'}
+target=OUT/'binding-checks.json'
+with target.open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'status':result['status'],'checks':len(checks),'failed':[r for r in checks if not r['passed']],'output':ref(target)},indent=2))

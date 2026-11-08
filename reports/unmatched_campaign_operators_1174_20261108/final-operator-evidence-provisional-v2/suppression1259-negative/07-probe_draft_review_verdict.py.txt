@@ -1,0 +1,48 @@
+"""Bounded unfrozen-draft review-consumption probe, not source publication."""
+import hashlib
+import importlib.util
+import json
+import os
+from datetime import datetime, timezone
+from pathlib import Path
+
+from mediaingredientmech import campaign_publication as c
+
+D=Path(__file__).absolute().parent/'draft-verdict-v1'
+D.mkdir()
+C=D.parents[2]
+R=C/'integration/campaign-suppressions1259-v1/runtime/repo'
+source=R/'src/mediaingredientmech/campaign_publication.py'
+test=R/'tests/test_campaign_suppressions.py'
+def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def put_json(p,value):
+ with p.open('x') as f:json.dump(value,f,indent=2);f.write('\n')
+source_sha,test_sha=digest(source),digest(test)
+for p,name in ((source,'draft-publisher.py.txt'),(test,'draft-focused-fixture.py.txt')):
+ with (D/name).open('xb') as f:f.write(p.read_bytes())
+spec=importlib.util.spec_from_file_location('authentic_suppression_fixture',test)
+t=importlib.util.module_from_spec(spec);spec.loader.exec_module(t)
+out=[]
+for fault in ('positive','blocked-required-failure','needs-curation-required-failure'):
+ root=D/fault;root.mkdir()
+ case=t.suppression_case.__wrapped__(root)
+ selection,review=t.reviewed_selection(case)
+ if fault!='positive':
+  review['verdict']='blocked' if fault.startswith('blocked') else 'needs_curation'
+  review['checks'][0]['status']='failed'
+  review['checks'][0]['summary']='Explicit mechanical test rejection: actual transition must not proceed.'
+  module=c._BOUND_NATIVE['campaign_native_record_review']
+  module.validate_review(review,c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path)
+  selection['transition_review']['yaml']=t.put(root,'reports/actual-review/review.yaml',module._dump_document(review).encode())
+  selection['transition_review']['markdown']=t.put(root,'reports/actual-review/review.md',module.render_markdown(review,c.LOADED_PRODUCERS[c.REVIEW_SCHEMA].path).encode())
+  case[2]['suppression_review']=t.put(root,'reports/selection.json',selection)
+ try:
+  sidecar,evidence=t.project(case)
+  result={'status':'ACCEPTED_TRANSITION','rows':len(c._suppression_table(sidecar)[0]),'approval':evidence['approval']}
+ except Exception as error:
+  result={'status':'REFUSED','exception':type(error).__name__,'message':str(error)}
+ out.append({'control':fault,'native_review_verdict':review['verdict'],'required_check':review['checks'][0]['status'],'result':result})
+assert digest(source)==source_sha and digest(test)==test_sha,'moving draft: no stable finding claim'
+result={'at':datetime.now(timezone.utc).isoformat(),'draft_source_sha256':source_sha,'draft_test_sha256':test_sha,'stable_during_probe':True,'scope':'Actual pinned original119-input/native-parser and event/owner joins; synthetic transition review/proof/generation declarations in author focused fixture. No prepare/source/publish called.','results':out,'maintained_writes':False}
+put_json(D/'RESULT.json',result)
+print(json.dumps(result,indent=2))

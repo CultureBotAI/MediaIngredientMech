@@ -1,0 +1,135 @@
+{
+  "at": "2026-11-08T11:24:23.886408+00:00",
+  "reviewer": "worker03:/root",
+  "scope": "Independent rehash/accounting and read of coordinator diagnostic producer/outputs. Full933 native execution not repeated; independent exact two-case and synthetic counterexamples delegated separately.",
+  "input_manifest_sha256": "5bede9c0acb826024789a14b31407aeaf72047276cccf61ecd7304c7baad31b1",
+  "selection_unique_actions": 933,
+  "status_rows": 933,
+  "before_owners": 2956,
+  "projected_owners": 3550,
+  "new_pairs": 0,
+  "removed_pairs": 12,
+  "status_combinations": [
+    {
+      "kind": "create",
+      "before_status": null,
+      "after_status": "MAPPED",
+      "source_category": null,
+      "destination_category": "mapped",
+      "count": 594
+    },
+    {
+      "kind": "edit",
+      "before_status": "MAPPED",
+      "after_status": "MAPPED",
+      "source_category": "mapped",
+      "destination_category": "mapped",
+      "count": 249
+    },
+    {
+      "kind": "edit",
+      "before_status": "REJECTED",
+      "after_status": "REJECTED",
+      "source_category": "mapped",
+      "destination_category": "mapped",
+      "count": 3
+    },
+    {
+      "kind": "edit",
+      "before_status": "UNMAPPED",
+      "after_status": "REJECTED",
+      "source_category": "unmapped",
+      "destination_category": "unmapped",
+      "count": 2
+    },
+    {
+      "kind": "edit",
+      "before_status": "UNMAPPED",
+      "after_status": "UNMAPPED",
+      "source_category": "unmapped",
+      "destination_category": "unmapped",
+      "count": 18
+    },
+    {
+      "kind": "promote",
+      "before_status": "UNMAPPED",
+      "after_status": "MAPPED",
+      "source_category": "unmapped",
+      "destination_category": "mapped",
+      "count": 67
+    }
+  ],
+  "full_diagnostic_runs": [
+    {
+      "round": 0,
+      "native_result": "FAIL",
+      "complete_action_count": 933,
+      "first_failing_action": "ORIGINAL-w03::c-generic-polymer-tombstone",
+      "message": "Rejected owner requires same-path, same-key rejected maintenance",
+      "known_failures_at_end": []
+    },
+    {
+      "round": 1,
+      "native_result": "FAIL",
+      "complete_action_count": 933,
+      "first_failing_action": "ORIGINAL-w03::c-r-polymer-tombstone",
+      "message": "Rejected owner requires same-path, same-key rejected maintenance",
+      "known_failures_at_end": [
+        "ORIGINAL-w03::c-generic-polymer-tombstone"
+      ]
+    },
+    {
+      "round": 2,
+      "native_result": "FAIL",
+      "complete_action_count": 933,
+      "first_failing_action": "ORIGINAL-w03::c-generic-polymer-tombstone",
+      "message": "Rejected owner requires same-path, same-key rejected maintenance",
+      "known_failures_at_end": [
+        "ORIGINAL-w03::c-generic-polymer-tombstone",
+        "ORIGINAL-w03::c-r-polymer-tombstone"
+      ]
+    }
+  ],
+  "observed_coordinator_outcome": "FAIL_RECORD_STAGE",
+  "interpretation": "Diagnostic producer preserves every operation/payload in every call and only reorders known failures last. With2known failures at end, last call reaches a known failure after traversing remaining931per-record checks. This is not a successful933recordstage or full native prepare.",
+  "normalization_scope": "Effective normalized candidates are used by coordinator diagnostic. Original byte identities and parsed object equality are independently checked for the two counterexamples only; no full normalization or source-science approval.",
+  "exclusions": [
+    {
+      "action_id": "TENVIT-NOMINAL",
+      "reason": "explicit report-only action without an owner payload",
+      "registry_selected": false,
+      "candidate": null,
+      "origin_ids": [
+        "w06::C-P-JCM197",
+        "w08::vm1201-prop-nbrc903-vitamin"
+      ]
+    },
+    {
+      "action_id": "ORIGINAL-w08::op1201-trypticase-soy-broth",
+      "reason": "genuine new MICRO0000113 owner collision / owner-admission hold; no guard bypass",
+      "registry_selected": false,
+      "candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w08/reports/all_unmatched_20261107/worker-08/successors/issue-1227-v1/research/organic_products/proposed_owners/Trypticase_Soy_Broth.yaml",
+        "sha256": "8a3c82b77cf1d335e2aa67f396cfcbe4c2d68ec6985376951326d6b640847879"
+      },
+      "origin_ids": [
+        "w08::op1201-trypticase-soy-broth"
+      ]
+    },
+    {
+      "action_id": "ORIGINAL-w09::ab-proposal-angustmycin",
+      "reason": "explicit demotion is unsupported in current operator; no same-path exception or inferred relocation",
+      "registry_selected": true,
+      "candidate": {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w09/reports/all_unmatched_20261107/worker-09/antibiotics/after/Angustmycin.yaml",
+        "sha256": "87a83e5ffed51f1ee5ca26274458e2d375d1f741cc985e615bd98319eaf88e3f"
+      },
+      "origin_ids": [
+        "w09::ab-proposal-angustmycin"
+      ]
+    }
+  ],
+  "source_COI": "Two genuine original proposals are W03-authored. Root may report exact code behavior and provenance but does not independently approve their scientific content.",
+  "mutable_I_code_read": false,
+  "no_repair_or_future_head_review": true
+}

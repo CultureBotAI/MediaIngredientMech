@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-08T12:10:44.319100+00:00",
+  "status": "INTERRUPTED_FOR_CONFIRMED_DEFECT",
+  "authorization": "Root directed stopping only owned21061 fulltest session13816 after independent major1256 residuals were filed",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721304487",
+  "exact_owned_process_chain": {
+    "59534": {
+      "ppid": 59530,
+      "command": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/.venv/bin/python /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/.venv/bin/pytest tests/"
+    },
+    "59530": {
+      "ppid": 59520,
+      "command": "uv run --frozen --extra dev pytest tests/"
+    },
+    "59520": {
+      "ppid": 59509,
+      "command": "/opt/homebrew/bin/just test"
+    },
+    "59509": {
+      "ppid": 92477,
+      "command": ".temp/kgm-unmapped-20261107/env/bin/python -B .temp/all-unmatched-20261107/preflight/combined-operator-full-validation-21061-v1/run_checks.py test"
+    }
+  },
+  "signal_target": 59534,
+  "signal": "SIGINT",
+  "other_sessions_untouched": true,
+  "full_pass_claimed": false,
+  "prior_attempt": "Sandbox denied subprocess ps before any signal or file write"
+}

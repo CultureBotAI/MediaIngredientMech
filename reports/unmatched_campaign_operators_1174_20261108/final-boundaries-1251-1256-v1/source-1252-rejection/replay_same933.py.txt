@@ -1,0 +1,37 @@
+"""Replay the exact failed 933-operation selection after the bounded #1252 fix."""
+from pathlib import Path
+import hashlib,json,subprocess,traceback,datetime
+from mediaingredientmech.curate import campaign_owner_apply as owner
+D=Path(__file__).resolve().parent;C=D.parents[1];I=C/'integration/worktree';OLD=C/'integration/native-boundary-full-candidate-probe-v1';sha=lambda b:hashlib.sha256(b).hexdigest()
+freeze=json.loads((D/'source-freeze-v1.json').read_text());source=I/'src/mediaingredientmech/curate/campaign_owner_apply.py';assert sha(source.read_bytes())==freeze['operator_sha256']
+manifest=json.loads((OLD/'MANIFEST.json').read_text());assert all(sha((OLD/p).read_bytes())==h for p,h in manifest['files'].items())
+selection=json.loads((OLD/'selection.json').read_text());rows=selection['selected'];assert len(rows)==933
+pins=json.loads((OLD/'input-pins.json').read_text());historical_source=str(source);assert pins[historical_source]=='4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70'
+assert all(sha(Path(p).read_bytes())==h for p,h in pins.items() if p!=historical_source)
+expected=json.loads((OLD/'before-inventory.json').read_text());before={p:f.content for p,f in owner.inventory(I).items()};assert {p:sha(b) for p,b in before.items()}==expected
+payloads={};operations=[]
+for r in rows:
+ raw=Path(r['effective_candidate']['path']).read_bytes();assert sha(raw)==r['effective_candidate']['sha256'];payloads[r['action_id']]=raw
+ operations.append({'operation_id':r['action_id'],'kind':r['kind'],'source_record':r['destination'],'before_source_record':r['source']})
+after=dict(before)
+for op in operations:
+ if op['before_source_record'] is not None:del after[op['before_source_record']]
+ after[op['source_record']]=payloads[op['operation_id']]
+assert {p:sha(b) for p,b in after.items()}==json.loads((OLD/'projected-inventory.json').read_text())
+head=subprocess.check_output(['git','-C',str(I),'rev-parse','HEAD'],text=True).strip();assert head=='d691c079cf3923daed89284b7579913b84c3a34c'
+try:
+ owner._validate_records(I,operations,payloads,before)
+ result={'status':'PASS_RECORD_STAGE_ONLY','exception':None}
+except Exception as e:
+ tb=e.__traceback__;action=None
+ while tb:
+  if tb.tb_frame.f_code.co_name=='_validate_records':action=tb.tb_frame.f_locals.get('entry',{}).get('operation_id')
+  tb=tb.tb_next
+ result={'status':'FAIL_RECORD_STAGE','exception':{'type':type(e).__name__,'message':str(e),'action':action},'traceback':traceback.format_exc()}
+assert owner.hashes(owner.inventory(I))==expected
+assert all(sha(Path(p).read_bytes())==h for p,h in pins.items() if p!=historical_source)
+assert sha(source.read_bytes())==freeze['operator_sha256']
+status=subprocess.check_output(['git','-C',str(I),'status','--porcelain'],text=True);assert set(status.splitlines())=={' M src/mediaingredientmech/curate/campaign_owner_apply.py',' M tests/test_campaign_owner_apply.py'}
+result.update(at=datetime.datetime.now(datetime.timezone.utc).isoformat(),head=head,operator_sha256=freeze['operator_sha256'],original_failed_packet_manifest_sha256=sha((OLD/'MANIFEST.json').read_bytes()),exact_selection_sha256=sha((OLD/'selection.json').read_bytes()),complete_operations=len(operations),before_owners=len(before),projected_owners=len(after),all_candidate_bytes_and_original_order_unchanged=True,all_input_pins_unchanged_except_explicit_operator_fix=True,all_owner_bytes_unchanged=True,full_prepare=False,source_application=False,scientific_approval=False,normalization_independent_review='pending',exclusions=selection['excluded'])
+with (D/'same933-result.json').open('x') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps(result,indent=2))

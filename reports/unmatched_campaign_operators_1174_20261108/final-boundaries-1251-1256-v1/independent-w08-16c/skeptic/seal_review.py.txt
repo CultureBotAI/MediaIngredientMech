@@ -1,0 +1,99 @@
+import datetime
+import hashlib
+import json
+from pathlib import Path
+
+P=Path(__file__).resolve().parent
+F=P.parent/'frozen/repo'
+revision='16c39b63bc95d3e7978ddccc6280b0d57954f4a5'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def load(name):return json.loads((P/name).read_text())
+def write(name,data):
+    with (P/name).open('x') as f:json.dump(data,f,indent=2);f.write('\n')
+inspection=load('input-inspection.json');probes=load('adversarial-results.json');readback=load('source-interface-readback.json')
+bindings=dict(inspection['input_hashes'])|probes['executed_source_hashes']|readback['input_hashes']
+archive=json.loads((F.parent/'ARCHIVE.json').read_text()); archivefiles={r['path']:r['sha256'] for r in archive['files']}
+checks=[]
+for path,expected in bindings.items():
+    assert sha(Path(path))==expected,path
+    if Path(path).is_relative_to(F):
+        relative=Path(path).relative_to(F).as_posix()
+        assert archivefiles[relative]==expected
+        checks.append({'path':relative,'archive_and_current_sha256':expected,'pass':True})
+source='src/mediaingredientmech/curate/campaign_owner_apply.py'
+findings=[
+ {'finding_id':'REJECTION-CODE-001','coordinator_alias':'W08-16C-CODE-001','issue':'https://github.com/CultureBotAI/MediaIngredientMech/issues/1255',
+  'severity':'major','status':'open','introduced_by_publisher_delta':False,
+  'title':'Literal Git path decoding can fail after an intended source write',
+  'locator':source+':1256-1264','source_sha256':sha(F/source),
+  'evidence':'source-interface-readback.json /results/0; exact retained technical Unicode demotion receipt is failed with recovery_required true; actual publisher _owner_proof rejects it as incomplete.',
+  'reproduction_scope':'Independently read the actual retained lifecycle fixture and called the frozen publisher source-proof function read-only. Source execution was performed by the distinct technical reviewer. Complete frozen control flow was inspected.',
+  'cause':'git diff --name-only returns quoted pathname text for ordinary Unicode/control characters; .decode().splitlines() is compared to literal allowed paths only after owner mutation/retirement.',
+  'bounded_fix':'Parse literal NUL-delimited Git paths with the native allowed-set semantics intact, and verify unrelated paths remain refused. Do not weaken the guard or use global core.quotePath configuration as the fix.',
+  'required_regressions':['Actual prepare/apply/verify_completed with Unicode and newline owner paths for edit/rejection and demotion.','A genuine unrelated tracked modification remains rejected; failed partial operations preserve recovery evidence.'],
+  'publisher_consequence':'The common source apply failure affects demotion. The publisher correctly refuses the failed source receipt; no distinct publisher pathname parser defect was found.'},
+ {'finding_id':'W08-16C-CODE-002','severity':'major','status':'open','introduced_by_publisher_delta':False,
+  'title':'Live source apply does not retain accepted HEAD and tracked-scope freshness',
+  'locators':[source+':885-892',source+':958-989',source+':1256-1264'],
+  'source_sha256':sha(F/source),
+  'evidence':'source-interface-readback.json /results/1-3; root late_unrelated_tracked_commit and independent technical late_empty_commit/late_unrelated_tracked fixtures.',
+  'reproduction_scope':'Read exact plan, acceptance and receipt; compared literal NUL-delimited diffs against accepted baseline and current HEAD; called the actual frozen publisher source-proof interface without altering fixtures.',
+  'cause':'prepare checks HEAD and tracked cleanliness once. Repeated _recheck verifies selected owners and bound inputs but does not retain HEAD/tracked-scope checks. The final check compares against then-current HEAD, allowing a late committed unrelated file to disappear from its comparison.',
+  'observed':'The committed-unrelated fixture has a complete source receipt and verifies complete although its current HEAD differs from the accepted baseline and the accepted-baseline diff includes an unapproved tracked file. An uncommitted unrelated edit is noticed only after the owner mutation.',
+  'bounded_fix':'Enforce accepted-baseline HEAD and literal tracked-path scope throughout the live prepare/apply transition, including before writes and through completion; preserve intended-operation allowance and recovery behavior. Keep historical completed verification based on exact retained evidence rather than requiring HEAD to remain permanently frozen.',
+  'required_regressions':['Late empty commit after prepare must refuse before owner mutation.','Late committed unrelated addition must refuse before owner mutation.','Late uncommitted unrelated tracked edit must refuse before owner mutation.','Test late boundaries during publication and completion; intended owner changes remain allowed.','Positive later historical verify_completed after legitimate mapping publication must remain valid.'],
+  'publisher_consequence':'The publisher historical source-proof interface accepts the defective live-complete receipt, as designed for historical reconstruction. This is not proof of complete mapping publication bypass; the live source stage must prevent issuing the stale completion.'},
+]
+write('findings.json',{'reviewed_revision':revision,'verdict':'needs_curation','new_distinct_publisher_findings':[],
+                     'existing_or_coordinator_findings_assessed':findings,'fixes_applied':False})
+
+assessments=[
+ {'domain':'Full publisher execution binding','locators':['campaign_publication.py:22-130','campaign_publication.py:884-921'],
+  'assessment':'Closed source bindings capture the actually executed native modules, compare loaded bytes and current files, and recheck original file identities. All eight captured source entries in my execution are under the frozen archive. No gate or producer pin change was observed.'},
+ {'domain':'Explicit demotion tuple and source admission','locators':['campaign_owner_apply.py:577-724','campaign_owner_apply.py:819-865','campaign_publication.py:427-491'],
+  'assessment':'Source demotion is an explicit operation with authentic original edit-existing owner, non-null preimage, accepted exact relocation-review tuple, same basename, MAPPED-to-AMBIGUOUS and no grounding. Publisher invokes actual verify_completed and binds plan/receipt hashes rather than trusting a caller summary. Scientific source acceptance remains a separate input; neither implementation review nor a fixture grants it.'},
+ {'domain':'Complete slot removal and no generated row','locators':['campaign_publication.py:254-387'],
+  'assessment':'Every demoted subject must have an old canonical slot and zero generated slots. Expected coverage ranges over the union of native/canonical slots; explicit row plans must cover the entire selected scope. Independently tested four ontology/CAS/ingredient/compound slots, one-at-a-time omissions, retained generated slots including unknown prefixes, foreign deletion, duplicate ontology slots and unchanged physical unrelated lines.'},
+ {'domain':'Full generator and historical context','locators':['campaign_publication.py:574-789','campaign_publication.py:946-1040'],
+  'assessment':'Pinned native generation verifies real Claw HEAD/producer bytes and KG revision, exact mapped owner membership/input coverage, native imported producer graph and replayed rows/suppressions. Native current context/prefix and accepted source checkpoint are compared exactly. New integration tests exercise this boundary without owner-proof or generation stubs; root reruns those tests separately. This reviewer did not claim running their external suite.'},
+ {'domain':'Prior owner chains and exact receipt replay','locators':['campaign_publication.py:502-571','campaign_publication.py:969-993'],
+  'assessment':'Both old and destination chains must be absent for demotion, before and in prospective receipt construction. Native maker alignment, owner chains and row replay validate the new receipt. Independent private native-chain fixtures reject each preceding path and produce a four-removal receipt only for the no-history positive.'},
+ {'domain':'Late membership, evidence and retired owner','locators':['campaign_publication.py:390-424','campaign_publication.py:437-490','campaign_publication.py:1231-1280'],
+  'assessment':'Complete owner inventory, checkpoint/protected membership, immutable file bytes/inodes and retired-source absence are retained. My independent capture probes reject hidden members, retired source reappearance/dangling link, missing protected members, evidence byte drift, same-byte inode swap and new hardlinks. Source HEAD freshness remains the distinct open W08-16C-CODE-002.'},
+ {'domain':'Policy, suppression and full-output invariants','locators':['campaign_publication.py:792-880','campaign_publication.py:1027-1064'],
+  'assessment':'Historical owner pins and policy history remain unchanged; only new update history and canonical artifact hash are appended. Native global Rule K is applied over final projected rows, including untouched rows, while historical suppression sidecar/baseline stay exact. An independent policy probe confirms retained attribution and approval-free scope.'},
+ {'domain':'Publication backups and completion','locators':['campaign_publication.py:1113-1121','campaign_publication.py:1140-1310'],
+  'assessment':'Exclusive reservations and original descriptor/inode checks retain backups through final publication. Source proof is recomputed at rechecks, actual canonical/policy/native receipt is independently reconstructed, and exception paths empty success receipts. Standalone validate deliberately does not guarantee later arbitrary recovery-file integrity; no stronger claim is made.'},
+ {'domain':'Held-row lineage and release boundary','locators':['tests/test_campaign_demotion_integration.py:373-483'],
+  'assessment':'The historical integration test reads the actual 27-receipt baseline, authentic Angust owner, hold checkpoint and held owner digest. It removes only selected physical rows, appends receipt28 and computes the held assertion/edge lineage through native position maps. The test explicitly limits this to lineage, not full semantic-release approval; fixture scientific acceptance does not establish real campaign admission.'},
+ {'domain':'Regression preservation and inherited repairs','locators':['tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py','campaign_owner_apply.py:762-865'],
+  'assessment':'All44 preexisting publisher helper/test function ASTs and assertions are exact. Of28 publisher functions/classes only row_projection, _capture_source_completion and _receipt changed. Existing rule, generation, historical-pin, reservation and recovery functions remain AST-equal. Source collision-pair and tombstone protections remain in the inspected interface, with full source regression review assigned independently to inorganics; no whole-source approval is inferred here.'},
+]
+write('full-content-assessment.json',{'reviewed_revision':revision,'full_files_read':['src/mediaingredientmech/campaign_publication.py','tests/test_campaign_publication.py','tests/test_campaign_demotion_integration.py'],
+ 'source_interface_read':['campaign_owner_apply.py:435-989','campaign_owner_apply.py:1200-1508'],
+ 'assessments':assessments,'preserved_scientific_holds':['No A/C identity choice or alias/role approval.','No original87a or diagnostic d1 capture approval transferred.','TSB active-collision hold and nickel shared-ID/source holds not changed.','Native fixture acceptance is mechanical only.']})
+own=['inspect_inputs.py','input-inspection.json','input-inspection.log','adversarial_probes.py','adversarial-results.json','adversarial-probes.log','source_interface_readback.py','source-interface-readback.json','source-interface-readback.log','findings.json','full-content-assessment.json','seal_review.py']
+bindings.update({str(P/x):sha(P/x) for x in own})
+old=inspection['ast_comparison']['tests/test_campaign_publication.py']['functions']
+review={'status':'COMPLETE','verdict':'needs_curation','reviewer':'worker08:/root/organics',
+ 'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'revision':revision,
+ 'author':'Publisher /root/step7d_independent_review; source operator /root/next23_context',
+ 'independence':'Did not author this code or its tests. Previously independently reviewed the demotion design and native boundary; no prior design receipt is treated as current code proof. Prior TSB source authorship is unrelated and confers no science approval.',
+ 'whole_publisher_and_all_publication_tests_read':True,'whole_new_integration_tests_read':True,
+ 'input_hashes':bindings,'frozen_archive_input_checks':checks,
+ 'old_publisher_functions_ast_exact':len(old),'old_assertions_preserved':sum(r['before_assertions'] for r in old),
+ 'independent_actual_native_stage_probes':len(probes['probes']),'stage_probes_all_expected':all(p['pass'] for p in probes['probes']),
+ 'external_lifecycle_fixtures_read_and_source_proof_rechecked':len(readback['results']),
+ 'full_native_suite_repeated':False,'native_functions_replaced_in_probes':False,
+ 'open_blocking_findings':['REJECTION-CODE-001','W08-16C-CODE-002'],
+ 'new_distinct_publisher_findings':[],'assessment':'The explicit publisher demotion delta is narrowly supported by complete code/test inspection and independent stage probes. The exact combined16c revision is not clear for application because two inherited live source-application defects remain confirmed. Passing native tests does not waive these findings.',
+ 'limits':['Stage-level calls are not an actual campaign prepare/apply/publication proof.','Read-only external lifecycle fixtures were authored/executed by root and the separate technical reviewer; this reviewer independently inspected their retained inputs and invoked the real source-proof interface.','No full scientific, source-admission, role, mapping or release approval.','No post-review fix or later commit is substituted for the reviewed16c bytes.','No new network evidence was needed.'],
+ 'writes_scope':str(P),'scientific_approval':False,'application_approval':False,'release_approval':False}
+write('review.json',review)
+write('HANDOFF.json',{'status':'SEALED','verdict':'needs_curation','reviewed_revision':revision,
+ 'review':{'path':str(P/'review.json'),'sha256':sha(P/'review.json')},
+ 'findings':{'path':str(P/'findings.json'),'sha256':sha(P/'findings.json')},
+ 'input_inspection_sha256':sha(P/'input-inspection.json'),'adversarial_results_sha256':sha(P/'adversarial-results.json'),
+ 'source_interface_readback_sha256':sha(P/'source-interface-readback.json'),
+ 'open_findings':['REJECTION-CODE-001','W08-16C-CODE-002'],'code_or_payload_edits':False})
+print(json.dumps({'review_sha256':sha(P/'review.json'),'handoff_sha256':sha(P/'HANDOFF.json'),'findings_sha256':sha(P/'findings.json'),'native_probes':len(probes['probes']),'old_assertions':review['old_assertions_preserved'],'frozen_input_checks':len(checks)}))

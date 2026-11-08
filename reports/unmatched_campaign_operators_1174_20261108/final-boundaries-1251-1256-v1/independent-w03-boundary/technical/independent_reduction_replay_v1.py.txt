@@ -1,0 +1,185 @@
+"""Independent #1251/#1252 prepare/apply/completed proof.
+
+This fixture builder does not import author test helpers. Its synthetic case
+claims and Git objects are mechanical test evidence, never campaign sources.
+All writes stay in this technical review's new private fixture directory.
+"""
+from pathlib import Path
+import copy
+import datetime
+import hashlib
+import json
+import traceback
+
+from mediaingredientmech.curate import campaign_owner_apply as owner
+from mediaingredientmech.validation import mapping_change_receipts as chain
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE.parent / 'frozen-src'
+FIXTURES = HERE / 'independent-reduction-fixtures-v1'
+SCHEMA = 'src/mediaingredientmech/schema/mediaingredientmech.yaml'
+SSSOM_PATH = 'mappings/ingredient_mappings.sssom.tsv'
+SSSOM = b'# mapping_set_id: https://example.invalid/independent-technical-fixture\n# predicate_semantics: skos\nsubject_id\tsubject_label\tpredicate_id\tobject_id\tobject_label\tother\nMIM:A\tA\tskos:exactMatch\tCHEBI:100\tA\t\n'
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False).encode()
+
+
+def put(root, relative, value):
+    path = root / relative
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(value if isinstance(value, bytes) else owner.encoded(value))
+    return path
+
+
+def reference(root, path):
+    return {'path': path, 'sha256': sha((root / path).read_bytes())}
+
+
+def render(root, path, value):
+    owner.write_validated_ingredient(value, root / path, target_class='IngredientRecord', schema_path=root / SCHEMA)
+    return reference(root, path)
+
+
+def history(action, status):
+    return {'timestamp': '2026-11-08T11:15:00Z', 'curator': '/root/boundary_technical independent fixture', 'action': action, 'changes': 'Synthetic test change only; scientific hold remains.', 'new_status': status, 'llm_assisted': True}
+
+
+def build(root, *, size, key, selected, leavers=(), rejected=False, bucket='mapped', unique=False):
+    assert not root.exists()
+    root.mkdir(parents=True)
+    for path in owner.PRODUCERS:
+        put(root, path, (SOURCE / path).read_bytes())
+    for category in ['mapped', 'unmapped']:
+        (root / 'data/ingredients' / category).mkdir(parents=True)
+    records, paths = [], []
+    for i in range(size):
+        status = 'REJECTED' if rejected and i == 0 else 'MAPPED'
+        location = bucket if i == 0 else 'mapped'
+        name = ('Shared name', 'SHARED NAME', 'sHaReD nAmE')[i] if key == 'name' and not unique else 'Independent owner ' + str(i)
+        identifier = 'CHEBI:100' if key == 'identifier' and not unique else 'CHEBI:' + str(200 + i)
+        data = {'identifier': identifier, 'preferred_term': name, 'mapping_status': status, 'notes': 'Fixture scientific identity and role holds remain unresolved.', 'curation_history': [history('CREATED', status)]}
+        path = f'data/ingredients/{location}/Independent_{i}.yaml'
+        render(root, path, data)
+        paths.append(path)
+        records.append(data)
+    put(root, SSSOM_PATH, SSSOM)
+    before = owner.hashes(owner.inventory(root))
+    put(root, 'intake/before.json', {'schema_version': 1, 'owners': before})
+    put(root, 'intake/protected.json', {'schema_version': 1, 'files': chain.verify_mapping_chain(root)['input_hashes']})
+    cases = [{'case_id': f'INDEPENDENT_FIXTURE:{i}', 'label': records[i]['preferred_term'], 'source_id': 'synthetic-test-only', 'scientific_approval': False} for i in range(size)]
+    put(root, 'intake/cases.json', cases)
+    proposals, payload_refs = [], []
+    for i, data in enumerate(records):
+        changed = copy.deepcopy(data)
+        changed['notes'] += ' Bounded fixture maintenance.'
+        changed['curation_history'].append(history('ANNOTATED', data['mapping_status']))
+        if i in leavers:
+            changed['identifier' if key == 'identifier' else 'preferred_term'] = ('CHEBI:' + str(700 + i)) if key == 'identifier' else 'Separate reviewed fixture owner ' + str(i)
+        cap = render(root, f'intake/payload-{i}.yaml', changed)
+        payload_refs.append(cap)
+        proposals.append({'proposal_id': f'independent-{i}', 'case_ids': [cases[i]['case_id']], 'kind': 'edit_existing_owner', 'owner_path': paths[i], 'before_sha256': before[paths[i]], 'after_capture': {'root': 'artifact', **cap}})
+    put(root, 'intake/proposals.json', {'proposals': proposals})
+    for role in ['shard', 'decision', 'evidence', 'review', 'reconciliation']:
+        put(root, f'intake/{role}.json', {'fixture_only': True, 'role': role, 'scientific_approval': False})
+    owner.git(root, 'init', '-q')
+    owner.git(root, 'add', '.')
+    owner.git(root, '-c', 'user.email=fixture@example.invalid', '-c', 'user.name=Independent technical review', 'commit', '-qm', 'Private synthetic native fixture; no source application')
+    head = owner.git(root, 'rev-parse', 'HEAD').decode().strip()
+    bindings = []
+    def bind(name, role, path, published=False):
+        bindings.append({'binding_id': name, 'role': role, **reference(root, path), 'published_head': head if published else None, 'published_path': path if published else None})
+    bind('cases', 'case_ledger', 'intake/cases.json')
+    bind('proposals', 'proposal', 'intake/proposals.json', True)
+    for role in ['shard', 'decision', 'evidence', 'review', 'reconciliation']:
+        bind(role, role, f'intake/{role}.json')
+    for i, path in enumerate(owner.PRODUCERS):
+        bind('producer-' + str(i), 'producer', path)
+    for i, cap in enumerate(payload_refs):
+        bind('original-' + str(i), 'evidence', cap['path'], True)
+    operations = []
+    after = dict(before)
+    for i in selected:
+        operations.append({'operation_id': f'operation-{i}', 'kind': 'edit', 'before_source_record': paths[i], 'source_record': paths[i], 'before_yaml_sha256': before[paths[i]], 'after_capture': payload_refs[i], 'origins': [{'worker_slot': 'worker-01', 'head_sha': head, 'proposal_id': f'independent-{i}', 'proposal_binding': 'proposals', 'payload_binding': 'original-' + str(i), 'case_hashes': {cases[i]['case_id']: sha(canonical(cases[i]))}}], 'change': 'Private fixture maintenance with independently constructed exact source origin.', 'verification': 'Structural fixture only; no scientific, owner or export approval.'})
+        after[paths[i]] = payload_refs[i]['sha256']
+    put(root, 'intake/after.json', {'schema_version': 1, 'owners': after})
+    plan = {'schema_version': 1, 'operation': 'apply_reviewed_campaign_owners', 'repository': 'CultureBotAI/MediaIngredientMech', 'baseline_commit': head, 'intake_heads': {'worker-01': head}, 'before_inventory': reference(root, 'intake/before.json'), 'after_inventory': reference(root, 'intake/after.json'), 'protected_inputs': reference(root, 'intake/protected.json'), 'bindings': bindings, 'records': operations}
+    put(root, 'plan.json', plan)
+    acceptance = {'schema_version': 1, 'scope': 'source_application_only', 'plan_sha256': sha((root / 'plan.json').read_bytes()), 'baseline_commit': head, 'intake_heads': plan['intake_heads'], 'binding_sha256': {b['binding_id']: b['sha256'] for b in bindings}, 'accepted_operations': {r['operation_id']: r['after_capture']['sha256'] for r in operations}, 'review_bindings': ['review']}
+    put(root, 'acceptance.json', acceptance)
+    return records, paths, plan, before, after
+
+
+def exercise(name, kwargs):
+    root = FIXTURES / name
+    original, paths, plan, before, after = build(root, **kwargs)
+    ready = owner.prepare(root, root / 'plan.json', root / 'acceptance.json')
+    dry = owner.apply(ready, root / 'dry-receipt', enabled=False)
+    assert not dry['applied'] and not (root / 'dry-receipt').exists()
+    assert owner.hashes(owner.inventory(root)) == before
+    result = owner.apply(ready, root / 'receipt', enabled=True)
+    proof = owner.verify_completed(root, root / 'plan.json', root / 'receipt/application.json')
+    assert result['state'] == 'complete'
+    assert proof['completed_operations'] == [r['operation_id'] for r in plan['records']]
+    assert proof['before_inventory'] == before and proof['after_inventory'] == after
+    assert owner.hashes(owner.inventory(root)) == after
+    assert proof['approval'] == owner.APPROVAL
+    assert (root / SSSOM_PATH).read_bytes() == SSSOM
+    for i, path in enumerate(paths):
+        current = owner.record((root / path).read_bytes())
+        if i not in kwargs['selected']:
+            assert sha((root / path).read_bytes()) == before[path]
+        else:
+            assert current['curation_history'][:-1] == original[i]['curation_history']
+            assert current['mapping_status'] == original[i]['mapping_status']
+            assert current['notes'].startswith(original[i]['notes'])
+            for field in ['identifier', 'preferred_term']:
+                if i not in kwargs.get('leavers', ()) or field != ('identifier' if kwargs['key'] == 'identifier' else 'preferred_term'):
+                    assert current[field] == original[i][field]
+    return {'scenario': name, 'parameters': kwargs, 'status': 'PASS_REAL_PREPARE_DRY_APPLY_APPLY_COMPLETED', 'fixture_head': plan['baseline_commit'], 'fixture_head_is_campaign_head': False, 'plan': reference(root, 'plan.json'), 'acceptance': reference(root, 'acceptance.json'), 'receipt': reference(root, 'receipt/application.json'), 'before': before, 'after': after, 'canonical_unchanged': True, 'no_approval_transfer': proof['approval'], 'completed_order': proof['completed_operations']}
+
+
+def main():
+    assert not FIXTURES.exists()
+    started = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    scenarios = []
+    for key in ['identifier', 'name']:
+        for name, size, selected, leavers in [
+            ('pair-single-first', 2, [0], []),
+            ('pair-single-second', 2, [1], []),
+            ('pair-both-reverse', 2, [1, 0], []),
+            ('pair-reduction-single', 2, [0], [0]),
+            ('pair-reduction-both-reverse', 2, [1, 0], [0]),
+            ('triple-retain-all-reverse', 3, [2, 1, 0], []),
+            ('triple-reduction-leaver-only', 3, [0], [0]),
+            ('triple-reduction-partial-reverse', 3, [1, 0], [0]),
+            ('triple-reduction-all', 3, [0, 1, 2], [0]),
+            ('triple-two-leavers', 3, [2, 1, 0], [0, 1]),
+        ]:
+            scenarios.append((key + '-' + name, {'size': size, 'key': key, 'selected': selected, 'leavers': leavers}))
+    scenarios.extend([
+        ('unique-mapped-rejected', {'size': 2, 'key': 'identifier', 'selected': [0], 'rejected': True, 'unique': True}),
+        ('unique-unmapped-rejected', {'size': 2, 'key': 'identifier', 'selected': [0], 'rejected': True, 'unique': True, 'bucket': 'unmapped'}),
+        ('mixed-status-family-reverse', {'size': 2, 'key': 'identifier', 'selected': [1, 0], 'rejected': True}),
+    ])
+    results = []
+    for name, parameters in scenarios:
+        try:
+            result = exercise(name, parameters)
+        except Exception as error:
+            result = {'scenario': name, 'parameters': parameters, 'status': 'FAILED', 'error': repr(error), 'traceback': traceback.format_exc()}
+            results.append(result)
+            put(HERE, 'independent-reduction-results-v1.json', {'started': started, 'results': results, 'complete': False})
+            raise
+        results.append(result)
+        print(name, result['status'], flush=True)
+    put(HERE, 'independent-reduction-results-v1.json', {'started': started, 'finished': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'status': 'PASS', 'complete': True, 'scenario_count': len(results), 'uses_new_author_helpers': False, 'science_or_application_approval': False, 'results': results})
+
+
+if __name__ == '__main__':
+    main()

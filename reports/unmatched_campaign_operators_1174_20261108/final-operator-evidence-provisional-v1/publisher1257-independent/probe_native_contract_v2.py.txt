@@ -1,0 +1,63 @@
+"""Exact pinned native producer checks; no downloads, corpus writes or approval."""
+from pathlib import Path
+import copy,hashlib,importlib.util,json,os,sys,types
+D=Path(__file__).absolute().parent;C=D.parents[1];M=C.parents[1]
+P=C/'integration/publisher-local-slots1257-fix-v1/private';W=C/'workers/w07/worktree/.temp/final-projected-native-independent-v1';K=C/'integration/release-worktree'
+G=M/'.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py';R=W/'mim'
+KG=W/'kg'  # Exact original producer input root recorded in this immutable diagnostic.
+sys.path.insert(0,str(P/'src'));from mediaingredientmech import campaign_publication as pub
+import yaml
+O=D/'native-contract-v2';O.mkdir()
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def save(n,x):
+ with (O/n).open('x') as f:json.dump(x,f,indent=2,ensure_ascii=False);f.write('\n')
+net=[]
+def audit(event,args):
+ if event in ['socket.connect','socket.getaddrinfo']:
+  net.append(event);raise RuntimeError('Network forbidden in independent native contract check')
+sys.addaudithook(audit)
+manifest_path=W/'generation/generation-manifest.json';manifest=json.loads(manifest_path.read_text())
+expected={p['path']:p['sha256'] for p in manifest['source_inputs']}
+assert sha(G)=='38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc'
+os.environ.update(MEDIAINGREDIENTMECH_ROOT=str(R),KGMICROBE_ROOT=str(KG))
+g=types.ModuleType('independent_native_generator_1257');g.__file__=str(G);sys.modules[g.__name__]=g
+exec(compile(G.read_bytes(),str(G),'exec'),g.__dict__)
+graph={str(p):hashlib.sha256(b).hexdigest() for p,b in g._IMPORTED_PRODUCER_BYTES.items()}
+assert graph==manifest['producer_import_snapshot']
+records={}
+for name in manifest['mapped_record_paths']:
+ p=Path(name);assert sha(p)==expected[name];records[p]=yaml.safe_load(p.read_bytes())
+owned=g.build_owner_index({g._mim_curie(p.name):r for p,r in records.items()})
+def content(path):
+ h=expected[str(path)];assert (sha(path) if path.is_file() else None)==h
+ return path.read_bytes() if h else None
+residual_raw=content(g.RESIDUAL_JSON)
+residual={d['source_file']:d for d in json.loads(residual_raw).get('decisions',[])} if residual_raw else {}
+kg_raw=content(g.KGM_UNIFIED_TSV)
+kg_sources=g.load_kgm_source_index(g.KGM_UNIFIED_TSV) if kg_raw else {}
+kg_labels=g.load_kgm_labels(g.KGM_UNIFIED_TSV) if kg_raw else {}
+old=pub.table((K/pub.SOURCE).read_bytes())[2];new=pub.table((W/'generation/candidate.sssom.tsv').read_bytes())[2]
+stamps={(r['subject_id'],r['predicate_id'],r['object_id']):r['validation_method'].strip() for r in old if r.get('validation_method','').strip()}
+names=['Desicatted_Ox-bile','Na2so3_X_5_H2o','Sodium_Nitrate_070_M_Stock','Trisodium_Citrate_X_3_H2o'];groups=[]
+for name in names:
+ matches=[p for p in records if p.stem==name];assert len(matches)==1;p=matches[0];events=[]
+ actual=g._row_from_yaml(p,residual,kg_sources,kg_labels,manifest['canonical_label_resolution'],record=records[p],owners=owned,suppressions=events)
+ g.apply_replayed_stamps(actual,stamps)
+ expected_rows=[r for r in new if r['subject_id']==g._mim_curie(p.name)]
+ assert actual==expected_rows
+ groups.append({'owner':str(p),'sha256':sha(p),'rows':actual,'native_emission_equals_full_diagnostic':True,'suppression_events':len(events)})
+validator=P/'scripts/validate_sssom_invariants.py';assert sha(validator)=='3ae75d54a76b7b99a5018c4f8b0582f6a1563b35e43a8c29c1a3a88d7b592303'
+spec=importlib.util.spec_from_file_location('independent_B1_B5_1257',validator);v=importlib.util.module_from_spec(spec);sys.modules[spec.name]=v;spec.loader.exec_module(v)
+projected=pub.table((D/'run-v1/projected-diagnostic.tsv').read_bytes())[2]
+positive={n:len(list(getattr(v,n)(projected))) for n in ['evaluate_rule_b1','evaluate_rule_b2','evaluate_rule_b3','evaluate_rule_b5']};assert all(n==0 for n in positive.values())
+controls=[]
+for group in groups:
+ rows=group['rows'];subject=rows[0]['subject_id'];slug=subject[4:].lower();handle=next(r for r in rows if r['object_id'].split(':',1)[1]==slug and r['object_id'].startswith('kgmicrobe.'))
+ removed=[r for r in rows if r is not handle];bad=list(v.evaluate_rule_b1(removed));assert bad
+ opposite=copy.deepcopy(handle);prefix='kgmicrobe.compound' if handle['object_id'].startswith('kgmicrobe.ingredient:') else 'kgmicrobe.ingredient';opposite['object_id']=prefix+':'+handle['object_id'].split(':',1)[1]
+ collision=list(v.evaluate_rule_b5(rows+[opposite]));assert len(collision)>=2
+ controls.append({'subject':subject,'missing_required_handle_B1_rejects':len(bad),'opposite_namespace_B5_rejects':len(collision),'B1_reasons':[r[2] for r in bad],'B5_reasons':[r[2] for r in collision]})
+assert all(sha(Path(p))==h for p,h in expected.items() if h is not None)
+g._check_producer_bindings();assert not net
+save('RESULT.json',{'status':'PASS','scope':'Actual native _row_from_yaml for4 exact owner inputs with full frozen owner index; no generation output/repository write. Native B1/B2/B3/B5 projection checks independent of publisher row accounting.','generation_manifest':{'path':str(manifest_path),'sha256':sha(manifest_path)},'generator':{'path':str(G),'sha256':sha(G)},'producer_graph':graph,'mapped_owner_inputs_verified':len(records),'groups':groups,'projected_native_rules':positive,'controls':controls,'network_attempts':net,'all_captured_inputs_reverified':True})
+print(json.dumps({'groups':len(groups),'source_mapped_inputs':len(records),'projected_native_rules':positive,'negative_native_controls':len(controls)*2,'network_attempts':len(net)},indent=2))

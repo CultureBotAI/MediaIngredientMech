@@ -1,0 +1,114 @@
+"""Read-only exact committed polymer retirement regression reproduction.
+
+The two W03 source proposals are author-related to the parent session. This
+independent subagent assesses operator behavior only, never their chemistry,
+cross-owner atomic composition, normalization, or source acceptance.
+"""
+from pathlib import Path
+import ast
+import io
+import json
+import hashlib
+import subprocess
+import tarfile
+import datetime
+
+from mediaingredientmech.curate import campaign_owner_apply as owner
+
+T = Path(__file__).resolve().parent
+O = T.parents[1]
+R = next(p for p in O.parents if (p / 'MAPPING_SEMANTICS.md').exists())
+C = R.parents[2]
+I = C / 'integration/worktree'
+P = C / 'integration/native-boundary-full-candidate-probe-v1'
+CODE_HEAD = 'd691c079cf3923daed89284b7579913b84c3a34c'
+PARENT = 'eac469f1d94f06bab0714fff891abf64b8ebdbe9'
+ORIGIN_HEAD = '784ee2541506c914b4c34f091de688d39784d548'
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False).encode()
+
+
+def git(root, *args):
+    return subprocess.check_output(['git', '-C', str(root), *args])
+
+
+def save(name, value):
+    path = T / name
+    assert not path.exists()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(value if isinstance(value, bytes) else (json.dumps(value, indent=2, ensure_ascii=False) + '\n').encode())
+    return {'path': str(path.relative_to(O)), 'sha256': sha(path.read_bytes())}
+
+
+def main():
+    start = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    exact_current = git(I, 'show', CODE_HEAD + ':src/mediaingredientmech/curate/campaign_owner_apply.py')
+    exact_parent = git(I, 'show', PARENT + ':src/mediaingredientmech/curate/campaign_owner_apply.py')
+    assert exact_current == (O / 'frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes()
+    assert exact_parent == (O / 'inputs/parent/src/mediaingredientmech/curate/campaign_owner_apply.py').read_bytes()
+    assert Path(owner.__file__).resolve() == O / 'frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py'
+    node = next(n for n in ast.parse(exact_parent).body if isinstance(n, ast.FunctionDef) and n.name == '_validate_records')
+    namespace = dict(vars(owner))
+    exec(compile(ast.Module(body=[node], type_ignores=[]), str(O / 'inputs/parent/src/mediaingredientmech/curate/campaign_owner_apply.py'), 'exec'), namespace)
+    parent_validator = namespace['_validate_records']
+    archive = git(I, 'archive', CODE_HEAD, 'data/ingredients')
+    archive_ref = save('inputs/catalog-d691.tar', archive)
+    before = {}
+    with tarfile.open(fileobj=io.BytesIO(archive)) as tf:
+        for member in tf.getmembers():
+            parts = Path(member.name).parts
+            if member.isfile() and len(parts) == 4 and parts[:2] == ('data', 'ingredients') and parts[2] in {'mapped', 'unmapped'} and member.name.endswith('.yaml'):
+                before[member.name] = tf.extractfile(member).read()
+    before_hashes = {p: sha(b) for p, b in before.items()}
+    coordinator_before = json.loads((P / 'before-inventory.json').read_bytes())
+    assert before_hashes == coordinator_before and len(before) == 2956
+    before_ref = save('inputs/catalog-hashes.json', before_hashes)
+    ledger_path = 'reports/all_unmatched_20261107/worker-03/successors/issue1226-v1/proposals.json'
+    ledger_raw = git(R, 'show', ORIGIN_HEAD + ':' + ledger_path)
+    ledger_ref = save('inputs/committed-W03-proposals.json', ledger_raw)
+    selected = json.loads((P / 'selection.json').read_bytes())['selected']
+    rows = []
+    for pid in ['c-generic-polymer-tombstone', 'c-r-polymer-tombstone']:
+        proposal = next(p for p in json.loads(ledger_raw)['proposals'] if p['proposal_id'] == pid)
+        binding = next(r for r in selected if r['action_id'] == 'ORIGINAL-w03::' + pid)
+        origin = binding['origin_bindings'][0]
+        assert origin['published_head'] == ORIGIN_HEAD
+        assert sha(canonical(proposal)) == origin['proposal_object_sha256']
+        payload_path = 'reports/all_unmatched_20261107/worker-03/' + proposal['after_capture']['path']
+        payload = git(R, 'show', ORIGIN_HEAD + ':' + payload_path)
+        assert sha(payload) == proposal['after_capture']['sha256'] == binding['original_candidate']['sha256'] == origin['payload_sha256']
+        assert payload == Path(binding['original_candidate']['path']).read_bytes()
+        source = proposal['owner_path']
+        assert sha(before[source]) == proposal['before_sha256'] == binding['before_sha256']
+        assert binding['source'] == binding['destination'] == source
+        old, new = owner.record(before[source]), owner.record(payload)
+        assert old['mapping_status'] == 'UNMAPPED' and new['mapping_status'] == 'REJECTED'
+        assert all(old[k] == new[k] for k in ['identifier', 'preferred_term'])
+        assert new['curation_history'][:len(old['curation_history'])] == old['curation_history']
+        assert len(new['curation_history']) > len(old['curation_history'])
+        op = {'operation_id': pid, 'kind': 'edit', 'before_source_record': source, 'source_record': source}
+        parent_validator(O / 'frozen-src', [op], {pid: payload}, before)
+        try:
+            owner._validate_records(O / 'frozen-src', [op], {pid: payload}, before)
+        except ValueError as error:
+            assert str(error) == 'Rejected owner requires same-path, same-key rejected maintenance'
+            result = str(error)
+        else:
+            raise AssertionError('Exact final validator unexpectedly accepted retirement')
+        payload_ref = save('inputs/' + pid + '/original-payload.yaml', payload)
+        old_ref = save('inputs/' + pid + '/before.yaml', before[source])
+        proposal_ref = save('inputs/' + pid + '/proposal.json', proposal)
+        rows.append({'proposal_id': pid, 'owner_path': source, 'source_origin_head': ORIGIN_HEAD, 'committed_payload_path': payload_path, 'proposal_object_sha256': sha(canonical(proposal)), 'before': old_ref, 'original_payload': payload_ref, 'proposal': proposal_ref, 'original_source_record_stage': 'PASS', 'exact_d691_record_stage': 'REFUSED', 'error': result, 'complete_before_catalog': len(before), 'same_identity_name_path': True, 'history_prefix_preserved': True, 'old_status': old['mapping_status'], 'new_status': new['mapping_status'], 'normalization_payload_used': False, 'source_scientific_approval': False, 'source_author_related_to_parent_W03': True, 'original_publication_obligations_retained': proposal['publication_obligations'], 'atomic_parent_relation_retained': proposal['description']})
+    result = {'at': start, 'finish': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'status': 'CONFIRMED_FILED_REGRESSION_BOTH_EXACT_ORIGINAL_PAYLOADS', 'reviewer': '/root/boundary_technical', 'code_head': CODE_HEAD, 'parent': PARENT, 'code_sha256': sha(exact_current), 'parent_code_sha256': sha(exact_parent), 'parent_function_source_sha256': sha(ast.get_source_segment(exact_parent.decode(), node).encode()), 'catalog_tar': archive_ref, 'catalog_hashes': before_ref, 'catalog_boundary': 'All direct mapped/unmapped YAML tracked at exact d691. Exact set and bytes equal complete coordinator 2956-owner inventory; no mutable current-I code or owner bytes used.', 'committed_original_proposal_ledger': ledger_ref, 'rows': rows, 'limits': ['This reproduces code behavior using exact original payloads and complete before catalog; no chemistry or source-self-approval.', 'Parent validator is exact extracted AST executed with unchanged captured native helpers; it is a record-stage comparison, not historical full prepare/application.', 'The 933-operation coordinator result is evidence only; not rerun or treated as full preparation.', 'No maintained/source/GitHub edits; no fix attempted; future code not loaded.']}
+    save('original-retirement-reproduction-v1.json', result)
+    print(json.dumps({'status': result['status'], 'cases': len(rows), 'catalog': len(before), 'parent_code': result['parent_code_sha256'], 'exact_code': result['code_sha256']}, indent=2))
+
+
+if __name__ == '__main__':
+    main()

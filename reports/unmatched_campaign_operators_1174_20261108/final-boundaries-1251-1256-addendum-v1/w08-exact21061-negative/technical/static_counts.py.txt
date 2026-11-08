@@ -1,0 +1,17 @@
+from pathlib import Path
+import ast,json
+P=Path.cwd()/'.temp/final-21061-independent-v1';O=P/'technical';F=P/'frozen/repo'
+old=ast.parse((O/'inputs/7a-test_campaign_owner_apply.py').read_bytes());new=ast.parse((F/'tests/test_campaign_owner_apply.py').read_bytes())
+a={x.name:x for x in old.body if isinstance(x,ast.FunctionDef)}
+rows=[]
+for n in [x for x in new.body if isinstance(x,ast.FunctionDef) and x.name.startswith('test_')]:
+ count=1;params=[]
+ for d in n.decorator_list:
+  if isinstance(d,ast.Call) and isinstance(d.func,ast.Attribute) and d.func.attr=='parametrize':
+   assert isinstance(d.args[1],(ast.List,ast.Tuple));num=len(d.args[1].elts);count*=num
+   params.append({'names':ast.literal_eval(d.args[0]),'parameter_expression':ast.unparse(d.args[1]),'count':num})
+ rows.append({'name':n.name,'cases':count,'parameters':params,'old_decorators_unchanged':ast.dump(ast.Module(body=a[n.name].decorator_list,type_ignores=[]),include_attributes=False)==ast.dump(ast.Module(body=n.decorator_list,type_ignores=[]),include_attributes=False) if n.name in a else None})
+report={'method':'Static AST literal-list cardinalities; named fixture constants are retained as expressions and need not be executed. This is not pytest execution.','source_cases':sum(x['cases'] for x in rows),'1255_cases':sum(x['cases'] for x in rows if x['name'].startswith('test_1255')),'1256_cases':sum(x['cases'] for x in rows if x['name'].startswith('test_1256')),'all_1255_parameter_inputs_unchanged':all(x['old_decorators_unchanged'] for x in rows if x['name'].startswith('test_1255')),'rows':rows}
+assert report['source_cases']==301 and report['1255_cases']==23 and report['1256_cases']==81 and report['all_1255_parameter_inputs_unchanged']
+(O/'static-test-accounting.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps({k:v for k,v in report.items() if k!='rows'}))

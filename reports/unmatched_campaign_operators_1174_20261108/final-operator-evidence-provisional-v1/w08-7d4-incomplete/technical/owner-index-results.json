@@ -1,0 +1,530 @@
+{
+  "status": "PASS_EXPECTED_OUTCOMES",
+  "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+  "script_sha256": "5daccfbe75416e7e3eebb85e44e6b0ac37db8c3cd83484bf9acff95bc179200e",
+  "function_replacements": false,
+  "injection": "Only positive installed-endpoint staging uses sys.setprofile at actual native finish_receipt entry. All index mutations are actual private Git commands.",
+  "results": [
+    {
+      "mode": "installed_edit",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/installed_edit",
+      "phase": "complete",
+      "error": null,
+      "fired_staging_hook": true,
+      "receipt_state": "complete",
+      "receipt_sha256": "c6f1c11de27dd4e4e43ad3e1decf32b2b91942aff23373685139b6e687fbf972",
+      "completed": true,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "114973333a95558b47b702a10fa3231b386545041db3d9a47173b07efbfeea4d",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "d67654d6bae063e3882aadcd0adfeaf4fe826b7d",
+      "head": "bf501a483987c78f07fd8cafe8aa23ab8ef0bcc1",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000notes/post-acceptance.txt\u0000",
+      "index_entries": "100644 eeec7ba9421f8d7410a35c235ec2788bea6665b1 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "installed_create",
+      "kind": "create",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/installed_create",
+      "phase": "complete",
+      "error": null,
+      "fired_staging_hook": true,
+      "receipt_state": "complete",
+      "receipt_sha256": "cb76fab8fc0038c70def84c70229be6401118986ffa6c03057ea0986380cb8f8",
+      "completed": true,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/New.yaml": "4cf743cc58d36cfbbb0b9a32c2365e00757871419d73e6ad77d61a1dc58817b9",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "c7873bdbd8c8c573c3b32e4a6c9c3b411fee6c15",
+      "head": "f18940dc313c60ad76058b966f5ddc40b82fe078",
+      "cached_diff_names": "data/ingredients/mapped/New.yaml\u0000notes/post-acceptance.txt\u0000",
+      "index_entries": "100644 1d44b3bc23e6691cca06f700e49944b6d3741fa9 0\tdata/ingredients/mapped/New.yaml\u0000"
+    },
+    {
+      "mode": "installed_promote",
+      "kind": "promote",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/installed_promote",
+      "phase": "complete",
+      "error": null,
+      "fired_staging_hook": true,
+      "receipt_state": "complete",
+      "receipt_sha256": "50c3934ec37a86d3b1cd4aed712e81a38a10a6d17d2978823bc9a90c644197ca",
+      "completed": true,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Stock_curated.yaml": "3040c2137027e91baae1e4ae7741e3cedb21ca4eb0886e7b3a914b397a944a22",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8"
+      },
+      "baseline": "6c072e5b9e7240a557ecd2e76c3a3c21951e99e1",
+      "head": "bef8cd49291ce433e29ace10eccaff38e621ec15",
+      "cached_diff_names": "data/ingredients/mapped/Stock_curated.yaml\u0000data/ingredients/unmapped/Stock_old.yaml\u0000notes/post-acceptance.txt\u0000",
+      "index_entries": "100644 db013e9761f854e44d100a75663cacb3ebe30407 0\tdata/ingredients/mapped/Stock_curated.yaml\u0000"
+    },
+    {
+      "mode": "installed_demote",
+      "kind": "demote",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/installed_demote",
+      "phase": "complete",
+      "error": null,
+      "fired_staging_hook": true,
+      "receipt_state": "complete",
+      "receipt_sha256": "20e95adfd30c1a10471703f28f5b95097ee22be618c263214d8d8bd50ac4c217",
+      "completed": true,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "f9f7474ea8d093c2fef9c3dc1ae66d5d2bfbe43e",
+      "head": "7e2a425502934b31f183db0a513fa7a5f581e143",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000data/ingredients/unmapped/Existing.yaml\u0000notes/post-acceptance.txt\u0000",
+      "index_entries": "100644 3975a924966ae393fcb9acfd4ca5e734d89167db 0\tdata/ingredients/unmapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "future_edit",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/future_edit",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Staged owner bytes differ from installed accepted endpoint"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "883b6dd51fad3be47eddf7cca5316f50f50a8e59",
+      "head": "883b6dd51fad3be47eddf7cca5316f50f50a8e59",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000",
+      "index_entries": "100644 eeec7ba9421f8d7410a35c235ec2788bea6665b1 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "future_create",
+      "kind": "create",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/future_create",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Staged owner endpoint is not installed"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "5603322b933608ca1a810737fe5b774d1040c2c1",
+      "head": "5603322b933608ca1a810737fe5b774d1040c2c1",
+      "cached_diff_names": "data/ingredients/mapped/New.yaml\u0000",
+      "index_entries": "100644 1d44b3bc23e6691cca06f700e49944b6d3741fa9 0\tdata/ingredients/mapped/New.yaml\u0000"
+    },
+    {
+      "mode": "future_promote",
+      "kind": "promote",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/future_promote",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Staged owner endpoint is not installed"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "5603322b933608ca1a810737fe5b774d1040c2c1",
+      "head": "5603322b933608ca1a810737fe5b774d1040c2c1",
+      "cached_diff_names": "data/ingredients/mapped/Stock_curated.yaml\u0000",
+      "index_entries": "100644 db013e9761f854e44d100a75663cacb3ebe30407 0\tdata/ingredients/mapped/Stock_curated.yaml\u0000"
+    },
+    {
+      "mode": "future_demote",
+      "kind": "demote",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/future_demote",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Staged owner endpoint is not installed"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "4cd4809e0d266445b9c42bcb9bba158e5d8ee847",
+      "head": "4cd4809e0d266445b9c42bcb9bba158e5d8ee847",
+      "cached_diff_names": "data/ingredients/unmapped/Existing.yaml\u0000",
+      "index_entries": "100644 3975a924966ae393fcb9acfd4ca5e734d89167db 0\tdata/ingredients/unmapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "wrong_blob",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/wrong_blob",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Staged owner bytes differ from installed accepted endpoint"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "5d97b140540c2f8a4a8ea95b9ebd8eeb19baa324",
+      "head": "5d97b140540c2f8a4a8ea95b9ebd8eeb19baa324",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000",
+      "index_entries": "100644 1348b6228734c7bfdd5202685e96cb85e0e1d918 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "premature_deletion",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/premature_deletion",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Staged owner deletion differs from actual retirement"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "5d97b140540c2f8a4a8ea95b9ebd8eeb19baa324",
+      "head": "5d97b140540c2f8a4a8ea95b9ebd8eeb19baa324",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000",
+      "index_entries": ""
+    },
+    {
+      "mode": "mode",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/mode",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Staged owner mode differs from working file"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "5d97b140540c2f8a4a8ea95b9ebd8eeb19baa324",
+      "head": "5d97b140540c2f8a4a8ea95b9ebd8eeb19baa324",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000",
+      "index_entries": "100755 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "conflict",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/conflict",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Ambiguous staged owner entry"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "e209e7c5acf7d23968b1dc9cfa3db8cd2689b84a",
+      "head": "e209e7c5acf7d23968b1dc9cfa3db8cd2689b84a",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000",
+      "index_entries": "100644 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 1\tdata/ingredients/mapped/Existing.yaml\u0000100644 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 2\tdata/ingredients/mapped/Existing.yaml\u0000100644 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 3\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "symlink_index",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/symlink_index",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Nonregular or conflicted staged owner entry"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "e209e7c5acf7d23968b1dc9cfa3db8cd2689b84a",
+      "head": "e209e7c5acf7d23968b1dc9cfa3db8cd2689b84a",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000",
+      "index_entries": "120000 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "literal_unicode",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/literal_unicode",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "d731d77b618668caca2536804cd8480c8a1cd0d1",
+      "head": "d731d77b618668caca2536804cd8480c8a1cd0d1",
+      "cached_diff_names": "notes/Poly-ß.txt\u0000",
+      "index_entries": "100644 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "literal_newline",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/literal_newline",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "d731d77b618668caca2536804cd8480c8a1cd0d1",
+      "head": "d731d77b618668caca2536804cd8480c8a1cd0d1",
+      "cached_diff_names": "notes/A\nB.txt\u0000",
+      "index_entries": "100644 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "literal_tab_quote",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/literal_tab_quote",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "d731d77b618668caca2536804cd8480c8a1cd0d1",
+      "head": "d731d77b618668caca2536804cd8480c8a1cd0d1",
+      "cached_diff_names": "notes/A\t\"B.txt\u0000",
+      "index_entries": "100644 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "literal_glob",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/literal_glob",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": null,
+      "receipt_sha256": null,
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "cd02e9cde44ff0d703da77b6a054e30149baefad",
+      "head": "cd02e9cde44ff0d703da77b6a054e30149baefad",
+      "cached_diff_names": "notes/[abc]*?.txt\u0000",
+      "index_entries": "100644 bdb3c9d53eb261fa82e432c16af457e0f68b5d4c 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "historical_owner_drift",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/historical_owner_drift",
+      "phase": "verify_completed",
+      "error": {
+        "type": "ValueError",
+        "message": "Current after-owner inventory differs"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": "complete",
+      "receipt_sha256": "3d2d32c24db1aff5e57bb6e665b52d6d3ec6ff4af91ae45d33b25afe34f9540d",
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "e897a5ff9973a5e97f158b80952564d9e9bfffffca04fa6ec16a2c68ff86f67b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "cd02e9cde44ff0d703da77b6a054e30149baefad",
+      "head": "aeec4cbdfdee2d9df7d75a5d8798b17ea44bb00b",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000notes/post-acceptance.txt\u0000",
+      "index_entries": "100644 eeec7ba9421f8d7410a35c235ec2788bea6665b1 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    },
+    {
+      "mode": "historical_receipt_drift",
+      "kind": "edit",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/index-fixtures/historical_receipt_drift",
+      "phase": "verify_completed",
+      "error": {
+        "type": "ValueError",
+        "message": "Not a complete approval-free source receipt"
+      },
+      "fired_staging_hook": false,
+      "receipt_state": "failed",
+      "receipt_sha256": "ef12226b44ea54d2c110570838f7b0d8ce15d1b6ff2044fd1b4b19f5d38f78d5",
+      "completed": false,
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "114973333a95558b47b702a10fa3231b386545041db3d9a47173b07efbfeea4d",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "1ce3eccbe6eb5f5e702798119b03752ce369e7fb",
+      "head": "3bdd09f45828c03ce855eee4199b606a1820e211",
+      "cached_diff_names": "data/ingredients/mapped/Existing.yaml\u0000notes/post-acceptance.txt\u0000",
+      "index_entries": "100644 eeec7ba9421f8d7410a35c235ec2788bea6665b1 0\tdata/ingredients/mapped/Existing.yaml\u0000"
+    }
+  ]
+}

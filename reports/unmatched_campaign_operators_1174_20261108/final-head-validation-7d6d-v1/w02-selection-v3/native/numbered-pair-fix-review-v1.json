@@ -1,0 +1,161 @@
+{
+  "at": "2026-11-08T14:06:53.331943+00:00",
+  "reviewer": "worker02 /root/research_c",
+  "status": "PASS_BOUNDED_POST_FILING_HELPER_REVIEW",
+  "scope": "Exact D helper v1-to-v2 delta and actual6selected historical pairs; no whole helper/operator/scientific or current-source approval.",
+  "independent_of_helper_author": true,
+  "scientific_review": false,
+  "filing_receipt": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w02-v3-checker-findings-publication-v1/receipt.json",
+    "sha256": "b14bd6455fc130adcbb1aef3460f3a4ca949f1ba514ca906df76796e0e523a9f"
+  },
+  "actual_filing_url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1254#issuecomment-6722465798",
+  "pre_filing_D_successor_chronology_preserved": true,
+  "no_retroactive_issue_first_claim": true,
+  "helper_diff": "--- /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/read_delta_v1.py\n+++ /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/read_delta_v2.py\n@@ -162,7 +162,9 @@\n     if p.suffix!='.yaml':continue\n     raw=read(p); doc=native.load_document(raw)\n     if 'review_id' not in doc:continue\n-    mdpath=p.with_suffix('.md');md=read(mdpath)\n+    numbered_pairs = {'13-review.yaml':'14-review.md','17-review.yaml':'18-review.md','21-review.yaml':'22-review.md'}\n+    mdpath=p.with_name(numbered_pairs[p.name]) if p.name in numbered_pairs else p.with_suffix('.md')\n+    md=read(mdpath)\n     native.validate_review(doc);assert native.render_markdown(doc).encode()==md\n     pair_results.append({'path':str(p),'yaml_sha256':r['sha256'],'markdown':str(mdpath),'markdown_sha256':inputs[str(mdpath)]['sha256'],'review_id':doc['review_id'],'verdict':doc['verdict'],'scientific_review_historical':doc['scientific_review'],'reviewer':doc['reviewer'],'scope':doc['scope'],'limitations':doc['limitations'],'target_count':len(doc['targets']),'input_count':len(doc['source']['inputs']),'native_validate_and_exact_render':True,'current_source_or_new_approval_asserted':False})\n assert len(pair_results)==6\n",
+  "only_change": "Explicit three numbered YAML/Markdown basename pairs; ordinary suffix fallback and all other source/hash/native assertions byte-exact.",
+  "positive_actual_pairs": [
+    {
+      "yaml": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/native-witnesses/original27/reports/actual-review/review.yaml",
+      "yaml_sha256": "fd0b44a54419f72a44d5fd104344ad74a3959cea04a6913fdf599398ea6d83b2",
+      "markdown": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/native-witnesses/original27/reports/actual-review/review.md",
+      "markdown_sha256": "4618b194eb1e638e26aee5e8812b00934e9c0cc1dd146b238f7829135cce9d73",
+      "review_id": "20261108T124921Z-mechanical-fixture-transition-review",
+      "numbered_explicit_map": false,
+      "positive_validate_render_parse": true,
+      "current_source_or_fresh_science_approval": false
+    },
+    {
+      "yaml": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/native-witnesses/prior-native-suffix28/reports/actual-review/review.yaml",
+      "yaml_sha256": "cde0218901f1d7a4e0f3b25a27c714a8701500671f271074617cf5f5a73e3d5d",
+      "markdown": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/native-witnesses/prior-native-suffix28/reports/actual-review/review.md",
+      "markdown_sha256": "fcc5fca81c47bcc8456dc89cad874231825e8854f6317ce02c4fa59c5f8d6889",
+      "review_id": "20261108T124921Z-mechanical-fixture-transition-review",
+      "numbered_explicit_map": false,
+      "positive_validate_render_parse": true,
+      "current_source_or_fresh_science_approval": false
+    },
+    {
+      "yaml": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/original-review.yaml",
+      "yaml_sha256": "99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71",
+      "markdown": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/original-review.md",
+      "markdown_sha256": "f1fe21cb6616abc84c75ba5f05fb430d55ea7a7eb6fb034f614f24d3ab51087c",
+      "review_id": "20261108T124921Z-w07-four-suppression-policy-independent",
+      "numbered_explicit_map": false,
+      "positive_validate_render_parse": true,
+      "current_source_or_fresh_science_approval": false
+    },
+    {
+      "yaml": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/recorded-verdict-finding/13-review.yaml",
+      "yaml_sha256": "26d00872fecc2b439a2b0d69a1fd52730d863000f57ddd326f6aa6f843c1eb20",
+      "markdown": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/recorded-verdict-finding/14-review.md",
+      "markdown_sha256": "6df3a5cb19f38a2944c590e757b3e605f2e396ecfaed60f56d83a8ae7febbfdd",
+      "review_id": "20261108T124921Z-mechanical-fixture-transition-review",
+      "numbered_explicit_map": true,
+      "positive_validate_render_parse": true,
+      "current_source_or_fresh_science_approval": false
+    },
+    {
+      "yaml": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/recorded-verdict-finding/17-review.yaml",
+      "yaml_sha256": "1cbf3ffa949011e774fca1b851b62c23a3ed2b843119ef78dd8d0f854c29a08b",
+      "markdown": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/recorded-verdict-finding/18-review.md",
+      "markdown_sha256": "0dcfe4a75770744d198716b3a042546f9419a2c5228f93a465dbda75b8461be2",
+      "review_id": "20261108T124921Z-mechanical-fixture-transition-review",
+      "numbered_explicit_map": true,
+      "positive_validate_render_parse": true,
+      "current_source_or_fresh_science_approval": false
+    },
+    {
+      "yaml": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/recorded-verdict-finding/21-review.yaml",
+      "yaml_sha256": "2d91fdb94512798c3827ae92df21ca828a1a36aaaaf29763128f2fa0136ff6f1",
+      "markdown": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/recorded-verdict-finding/22-review.md",
+      "markdown_sha256": "ec99aef3bc412ddef0a825ea72e4a3f1ba5f63aa3c22b480ab521ca7588bbe70",
+      "review_id": "20261108T124921Z-mechanical-fixture-transition-review",
+      "numbered_explicit_map": true,
+      "positive_validate_render_parse": true,
+      "current_source_or_fresh_science_approval": false
+    }
+  ],
+  "mismatched_actual_pair_controls": [
+    {
+      "yaml_sha256": "fd0b44a54419f72a44d5fd104344ad74a3959cea04a6913fdf599398ea6d83b2",
+      "mismatched_actual_markdown_sha256": "fcc5fca81c47bcc8456dc89cad874231825e8854f6317ce02c4fa59c5f8d6889",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "yaml_sha256": "cde0218901f1d7a4e0f3b25a27c714a8701500671f271074617cf5f5a73e3d5d",
+      "mismatched_actual_markdown_sha256": "4618b194eb1e638e26aee5e8812b00934e9c0cc1dd146b238f7829135cce9d73",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "yaml_sha256": "99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71",
+      "mismatched_actual_markdown_sha256": "4618b194eb1e638e26aee5e8812b00934e9c0cc1dd146b238f7829135cce9d73",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "yaml_sha256": "26d00872fecc2b439a2b0d69a1fd52730d863000f57ddd326f6aa6f843c1eb20",
+      "mismatched_actual_markdown_sha256": "4618b194eb1e638e26aee5e8812b00934e9c0cc1dd146b238f7829135cce9d73",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "yaml_sha256": "1cbf3ffa949011e774fca1b851b62c23a3ed2b843119ef78dd8d0f854c29a08b",
+      "mismatched_actual_markdown_sha256": "4618b194eb1e638e26aee5e8812b00934e9c0cc1dd146b238f7829135cce9d73",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    },
+    {
+      "yaml_sha256": "2d91fdb94512798c3827ae92df21ca828a1a36aaaaf29763128f2fa0136ff6f1",
+      "mismatched_actual_markdown_sha256": "4618b194eb1e638e26aee5e8812b00934e9c0cc1dd146b238f7829135cce9d73",
+      "refused": true,
+      "error": "Markdown does not match the authoritative structured review"
+    }
+  ],
+  "prior_six_generic_native_controls": "Separate sealed reuse proof; these six actual pair mismatches are bounded new helper re-review, not rerun of previous generic native mutation suite.",
+  "input_hash_manifest": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w02-v3-checker-findings-publication-v1/receipt.json",
+      "sha256": "b14bd6455fc130adcbb1aef3460f3a4ca949f1ba514ca906df76796e0e523a9f"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w02-v3-checker-findings-publication-v1/body.md",
+      "sha256": "cb6443f68fd3d794f77ab24a7e367a1db8654356a97adbab105d606790850711"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/checker-filing-readback.json",
+      "sha256": "1e7bfc5d93be6312dd9e309d75b6107d17dc7c9b6c381844ac91e715f696fb5d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/read_delta_v1.py",
+      "sha256": "450e4142898e21181c64dc7a8af541665f460f6e35b4058e3547d22a10dae14b"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/read_delta_v2.py",
+      "sha256": "3626ddbadad8fce36217c794c35453831a807464f08e2cec8d07eb3924733d68"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/finding-numbered-pair-helper-v1.json",
+      "sha256": "4c437292e0f9b45811c01a3c8fa1fdc3c3c90e7e9dbd427322f23227194e80e7"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/readback-attempt-v1.json",
+      "sha256": "f37d1a6185b38d60eac2fac725688f247d1bcb75f9dcd19b96929df379cc6519"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/skeptic/delta-readback-v1.json",
+      "sha256": "069f04d05ff324a39db5b59d615ab883ebfd3a7598acc549dac801492e426b42"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/scripts/record_review.py",
+      "sha256": "95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SELECTION.json",
+      "sha256": "f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34"
+    }
+  ],
+  "original_helper_or_candidate_writes": false
+}

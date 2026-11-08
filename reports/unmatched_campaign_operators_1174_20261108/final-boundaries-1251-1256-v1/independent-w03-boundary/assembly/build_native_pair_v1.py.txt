@@ -1,0 +1,246 @@
+"""Persist a bounded, historical technical code review through native APIs.
+
+Run only after the two separate reviewer final receipts have arrived. The
+source is d691 Git bytes; private dynamic proofs are individually hashed evidence.
+This writes only the user-authorized private review pair and metadata controls.
+"""
+from pathlib import Path
+import argparse
+import copy
+import datetime
+import hashlib
+import importlib.util
+import json
+import sys
+
+O = Path(__file__).resolve().parents[1]
+R = next(p for p in O.parents if (p / 'MAPPING_SEMANTICS.md').is_file())
+I = R.parents[2] / 'integration/worktree'
+N = O / 'native'
+
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read(path):
+    return json.loads(path.read_bytes())
+
+
+def save(path, data, raw=False):
+    assert not path.exists(), str(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(data if raw else (json.dumps(data, indent=2, ensure_ascii=False) + '\n').encode())
+
+
+def main():
+    args = argparse.ArgumentParser()
+    args.add_argument('--technical', required=True)
+    args.add_argument('--adversarial', required=True)
+    a = args.parse_args()
+    technical_path, adversarial_path = O / a.technical, O / a.adversarial
+    technical, adversarial = read(technical_path), read(adversarial_path)
+    assert 'PASS' in str(technical.get('status', ''))
+    assert 'PASS' in str(adversarial.get('status', ''))
+    for review in [technical, adversarial]:
+        assert not review.get('findings') and not review.get('new_findings')
+    own = read(O / 'assembly/lineage-and-actual-probes.json')
+    exact = read(O / 'assembly/exact-code-and-tests-readback.json')
+    reductions = read(O / 'technical/independent-reduction-results-v1.json')
+    base_probes = read(O / 'adversarial/probe-results-v1.json')
+    follow = read(O / 'adversarial/overlap-results-v1.json')
+    member = read(O / 'adversarial/membership-result-v2.json')
+    assert reductions['scenario_count'] == 23 and all(x['status'].startswith('PASS') for x in reductions['results'])
+    assert base_probes['counts'] == {'total': 36, 'pass': 36, 'fail': 0}
+    assert follow['counts'] == {'total': 5, 'pass': 4, 'fail': 1} and member['status'] == 'PASS'
+    assert own['catalog_records'] == 2956 and len(own['results']) == 13
+    assert all(x['expectation_met'] for x in own['results'])
+    assert exact['original_test_helper_ASTs_unchanged'] == 42
+    for rel in ['technical/author-owner-tests-v1-receipt.json', 'technical/author-publisher-tests-v2-receipt.json']:
+        assert read(O / rel)['exit_code'] == 0
+    assert '121 passed' in (O / 'technical/author-owner-tests-v1.log').read_text()
+    assert '2 passed, 116 deselected' in (O / 'technical/author-publisher-tests-v2.log').read_text()
+
+    spec = importlib.util.spec_from_file_location('boundary_final_native_pair', O / 'frozen-src/scripts/record_review.py')
+    native = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = native
+    spec.loader.exec_module(native)
+    inspection = read(O / 'assembly/native-frozen-inspection.json')
+    assert inspection['source']['state'] == 'git_commit'
+    assert inspection['source']['git_revision'] == 'd691c079cf3923daed89284b7579913b84c3a34c'
+    native.assert_current_source(I, inspection)
+    now = datetime.datetime.now(datetime.timezone.utc)
+    finish = now.isoformat().replace('+00:00', 'Z')
+    rid = now.strftime('%Y%m%dT%H%M%SZ') + '-w03-native-boundary-final-head-independent'
+    targets = inspection['targets']
+    tids = [x['target_id'] for x in targets]
+    evidence = []
+
+    def ev(eid, relative, kind, support, summary, locator=None):
+        path = relative if isinstance(relative, Path) else O / relative
+        row = {'evidence_id': eid, 'kind': kind, 'reference': str(path.relative_to(R)),
+               'snapshot_sha256': sha(path), 'accessed_at': finish, 'support': support, 'summary': summary}
+        if locator:
+            row['locator'] = locator
+        evidence.append(row)
+
+    ev('operator', 'frozen-src/src/mediaingredientmech/curate/campaign_owner_apply.py', 'record_content', 'supports',
+       'Complete exact d691 operator bytes; collision pair subset and same-key REJECTED maintenance are the only changed function behavior.', '_validate_records lines701-791 and full unchanged prepare/apply/completed context')
+    ev('tests', 'frozen-src/tests/test_campaign_owner_apply.py', 'record_content', 'supports',
+       'Exact appended tests and helpers at d691; old test/helper ASTs and original byte prefix remain unchanged.')
+    ev('patch', 'inputs/exact-commit.patch', 'record_content', 'supports',
+       'Exact two-file patch d691 versus eac469; no gate, threshold, workflow, pin, schema or corpus changes.')
+    ev('remote', 'inputs/live/receipt.json', 'validation', 'supports',
+       'Read-only PR and Git remote observations both bind d691 at capture time; no transfer to a later head.')
+    ev('issue1251', 'inputs/live/issue1251.json', 'authority', 'supports',
+       'Filed collision capability boundary with exact surviving path-pair restrictions; unresolved nickel identity remains separate.')
+    ev('reduction-addendum', 'inputs/live/issue1251-comments.json', 'authority', 'supports',
+       'Filed correction rejects family equality; removing pairs is allowed, new pairs and changed surviving keys/statuses remain refused.', 'comment6720714388')
+    ev('issue1252', 'inputs/live/issue1252.json', 'authority', 'supports',
+       'Filed bounded same-path REJECTED maintenance route excludes revival, key changes, relocation, new tombstones, Angust demotion and TSB collision.')
+    ev('w08-findings', 'assembly/w08-context/findings.json', 'prior_review', 'context_only',
+       'Exact earlier W08 capability findings and scientific boundaries retained; current code review does not close their source/owner/role/export holds.')
+    ev('actual-records', 'assembly/lineage-and-actual-probes.json', 'validation', 'supports',
+       'Independent thirteen exact archived W08 record-stage calls over full2956 frozen catalog; nickel and retained tombstone maintenance pass, actual TSB/Angust remain refused. All2231 original W08 manifest members rehashed; only scoped context copied.')
+    ev('exact-static', 'assembly/exact-code-and-tests-readback.json', 'validation', 'supports',
+       'Separate exact code/test hash and old42 AST/prefix corroboration.')
+    ev('root-static', 'root-static-assessment-v1.json', 'prior_review', 'supports',
+       'Root read complete operator safety context, exact622-file snapshot and unchanged native guards; only _validate_records changed among32 declarations.')
+    ev('module-safety', 'module-safety-retention-v1.json', 'validation', 'supports',
+       'Entire module AST equals parent after removing only documentation, added itertools import and changed _validate_records; constants, operation kinds, roles, producer set and approval marker are retained.')
+    ev('technical-final', technical_path, 'prior_review', 'supports',
+       'Separate technical reviewer final assessment of every changed test/helper and independent full-route reductions.')
+    ev('adversarial-final', adversarial_path, 'prior_review', 'supports',
+       'Separate adversarial reviewer final assessment; findings and failed harness attempts remain explicit.')
+    ev('owner-tests', 'technical/author-owner-tests-v1-receipt.json', 'validation', 'supports',
+       'Independent exact frozen operator suite rerun exits0; separate retained log records121 passed.')
+    ev('owner-test-log', 'technical/author-owner-tests-v1.log', 'validation', 'supports', 'Actual121-test rerun log, including dependency warnings.')
+    ev('publisher-tests', 'technical/author-publisher-tests-v2-receipt.json', 'validation', 'supports',
+       'Two unchanged publisher integration tests pass in exact private overlay;116 other publisher tests intentionally deselected.')
+    ev('publisher-overlay', 'technical/publisher-private-overlay-v2.json', 'validation', 'supports',
+       'Initial copied source omitted unchanged receipt maker; private v2 adds exact d691 Git bytes only. The root frozen snapshot and operator remain unchanged.')
+    ev('reductions', 'technical/independent-reduction-results-v1.json', 'validation', 'supports',
+       'Twenty-three independent synthetic scenarios exercise actual prepare, dry apply, enabled apply and completed replay, including2/3-member reductions, selection orders and preserved keys/statuses.')
+    ev('historical-sensitivity', 'technical/predecessor-sensitivity-v1.json', 'validation', 'supports',
+       'Six comparisons execute exact historical validator-function ASTs against unchanged fixture data to distinguish original capability/equality-draft behavior from final code; not historical full-pipeline replay.')
+    ev('adversarial-base', 'adversarial/probe-results-v1.json', 'validation', 'supports',
+       'Thirty-six independently designed full native route scenarios, including replacement/new-member/key/status and stale/alias/inode/late-drift counterexamples; all meet recorded expectations.')
+    ev('overlap', 'adversarial/overlap-results-v1.json', 'validation', 'partial',
+       'Four successful overlapping-family/precise-preimage followups and one preserved reviewer NameError before membership target execution. The failed attempt is not a passing operator result.')
+    ev('membership', 'adversarial/membership-result-v2.json', 'validation', 'supports',
+       'Corrected private harness executes shape-valid native receipt membership drift and reaches the specific membership guard; no assertions weakened.')
+    ev('author-failures', 'author-diagnostics-dispositions-v1.json', 'validation', 'context_only',
+       'Preserved author draft failures include real equality-regression, concurrent-producer refusals, draft lint and replay-harness failures; independently distinguished from final-head results.')
+    checks = [
+        {'check_id': 'exact-source', 'name': 'Exact head, parent, two-file diff and immutable author/context bindings', 'status': 'passed', 'required': True,
+         'summary': 'Exact committed bytes, old AST/prefix and observed remote are bound; no gate/corpus change.', 'target_ids': tids, 'evidence_ids': ['operator', 'tests', 'patch', 'remote', 'exact-static', 'root-static']},
+        {'check_id': 'regressions', 'name': 'Existing and appended tests plus unchanged publisher integration', 'status': 'passed', 'required': True,
+         'summary': '121 owner tests and2 focused publisher tests passed; first publisher setup failure remains preserved with exact overlay repair.',
+         'target_ids': tids, 'evidence_ids': ['owner-tests', 'owner-test-log', 'publisher-tests', 'publisher-overlay', 'technical-final']},
+        {'check_id': 'independent-positive', 'name': 'Independent real prepare/apply/completed replay reductions', 'status': 'passed', 'required': True,
+         'summary': '23 synthetic scenarios exercise2/3-member identity/name families, single/full/reverse selection, real reductions and positive retained tombstones.',
+         'target_ids': tids, 'evidence_ids': ['reductions', 'historical-sensitivity', 'technical-final']},
+        {'check_id': 'independent-adversarial', 'name': 'Independent new-pair, tombstone and unchanged-guard counterexamples', 'status': 'passed', 'required': True,
+         'summary': '36 base scenarios,4 successful overlap followups and corrected shape-valid membership proof meet their expected native outcomes. One NameError attempt is preserved and excluded from passing counts.',
+         'target_ids': tids, 'evidence_ids': ['adversarial-base', 'overlap', 'membership', 'adversarial-final']},
+        {'check_id': 'actual-boundaries', 'name': 'Actual archived payloads against complete frozen catalog', 'status': 'passed', 'required': True,
+         'summary': '13 independent record-stage probes preserve unresolved science: actual TSB and samepath Angust still refused; nickname/tombstone maintenance follows bounded contract.',
+         'target_ids': tids, 'evidence_ids': ['actual-records', 'w08-findings', 'issue1251', 'issue1252']},
+        {'check_id': 'production-application', 'name': 'Current campaign application and future demote implementation', 'status': 'not_applicable', 'required': False,
+         'summary': 'Neither is authorized or claimed in this bounded code review.', 'target_ids': tids}
+    ]
+    review = {
+        'schema_version': '1.0.0', 'review_id': rid, 'kind': 'repository', 'repository': inspection['repository'],
+        'title': 'Independent adversarial code review of PR1205 native boundary fixes at d691c079',
+        'started_at': read(O / 'entry.json')['at'].replace('+00:00', 'Z'), 'finished_at': finish,
+        'reviewer': {'identity': 'worker03:/root/boundary_assembly', 'kind': 'agent', 'independence': 'independent',
+                     'independence_basis': 'Separate in-process assembly reviewer; did not author this operator patch or appended tests. Independently inspected issue/W08 lineage, full catalog source bindings,13 actual record-stage probes and exact code/old-test ASTs; reviewed distinct technical/adversarial results. Prior W03 ingredient authorship confers no scientific approval in this code review.'},
+        'skill': 'user-assigned native technical code review using docs/record-reviews.md',
+        'completion': 'completed', 'verdict': 'pass_with_limitations',
+        'native_verdict': 'No new code finding in the exact d691 two-file boundary change; bounded implementation addresses filed1251/1252 capability constraints, with scientific and application holds retained.',
+        'scientific_review': False,
+        'summary': 'The complete keyed path-pair subset admits genuine collision reductions and preserves every surviving colliding owner key/status/path. REJECTED maintenance requires a real same-path edit retaining identity/name/status; revival remains refused. Independent real-route fixtures and actual archived catalog probes support the bounded code result, without approving demotion, whole owners or campaign application.',
+        'source': inspection['source'],
+        'scope': {'description': 'Complete exact changed operator/test files at d691 and their native guard context, issue lineage and retained scientific holds.',
+                  'selection': 'Both files changed by d691 versus eac469; all tests reviewed by technical peer. Independent synthetic scenarios and exact actual record-stage probes are supplemental evidence, not a sample claim over every possible input.',
+                  'coverage': 'full', 'population_size': 2, 'reviewed_target_ids': tids,
+                  'exclusions': [{'target': 'Current complete campaign prepare/apply/export and individual source scientific approval', 'reason': 'Read-only bounded code review; synthetic native application has no authority over maintained catalog or releases.'},
+                                 {'target': 'Future demote operation, Angust relocation, TSB owner reconciliation', 'reason': 'Not in this two-file commit; samepath Angust and genuine TSB collision remain refusals.'}]},
+        'targets': targets, 'checks': checks, 'evidence': evidence,
+        'assessments': [
+            {'assessment_id': 'collision-boundary', 'area': 'consistency', 'topic': 'Complete catalog keyed path-pair subset and surviving-owner invariants', 'outcome': 'supported', 'target_ids': ['native-owner-operator'],
+             'evidence_ids': ['operator', 'reduction-addendum', 'root-static', 'reductions', 'adversarial-base', 'overlap'],
+             'summary': 'Final pairs are a subset of prior pairs, keyed by identity/name and exact sorted owner paths. Surviving members retain raw keys/status/path; leaving all collision families follows ordinary guards.',
+             'details': 'No family equality or count-only exception remains. Cross-key overlap, same-count replacement, new third members, shared new keys and case-only changes are independently exercised. Order safety additionally relies on unchanged _load unique source/destination and preimage checks.'},
+            {'assessment_id': 'tombstone-boundary', 'area': 'representation', 'topic': 'Same-path REJECTED maintenance without revival', 'outcome': 'supported', 'target_ids': ['native-owner-operator'],
+             'evidence_ids': ['operator', 'issue1252', 'actual-records', 'adversarial-base'],
+             'summary': 'Old or new REJECTED requires existing edit, identical path, equal raw identity/name and REJECTED status on both sides. Other statuses retain category checks.',
+             'details': 'Actual three tombstone maintenance records pass without activating them. Create, reidentification, rename, relocation and revival controls refuse. This does not approve a representative, merge or chemistry.'},
+            {'assessment_id': 'guard-retention', 'area': 'provenance', 'topic': 'Other native safety guards and completed replay', 'outcome': 'supported', 'target_ids': tids,
+             'evidence_ids': ['root-static', 'module-safety', 'owner-tests', 'publisher-tests', 'reductions', 'adversarial-base', 'membership'],
+             'summary': 'Existing source/proposal/acceptance/preimage/history/schema/inventory/capture/publication protections remain; independent late drift and completed replay checks corroborate structural retention.'},
+            {'assessment_id': 'tests', 'area': 'completeness', 'topic': 'Exact appended test coverage and independent challenge', 'outcome': 'supported', 'target_ids': ['native-owner-tests'],
+             'evidence_ids': ['tests', 'exact-static', 'technical-final', 'owner-tests', 'reductions', 'adversarial-final'],
+             'summary': 'Original42 test/helper ASTs remain unchanged and the old file is an exact byte prefix. All121 owner tests passed; separate scenarios exercise claims beyond the author helper.'},
+            {'assessment_id': 'scope-retention', 'area': 'scope', 'topic': 'Scientific holds and capability versus integration authority', 'outcome': 'supported', 'target_ids': tids,
+             'evidence_ids': ['issue1251', 'issue1252', 'w08-findings', 'actual-records', 'author-failures'],
+             'summary': 'Nickel1050, Bacto representative, rejected-owner science, TSB collision and Angust relocation remain explicit. Earlier W08 findings are context, not silently regraded scientific approvals.'}
+        ],
+        'findings': [], 'actions': [],
+        'limitations': [
+            'This is CODE review with scientific_review:false. No source-case, whole-owner, role, supported export, release or maintained application approval follows.',
+            'The source is the exact d691 Git commit, not any later integration HEAD. Live remote observations apply only to their captured times.',
+            'Independent prepare/apply/completed replay occurred only in synthetic private fixture repositories. Their acceptance files and fixture Git heads are not actual campaign acceptance or publication.',
+            'Actual2956-catalog probes execute _validate_records only; no claim of complete actual campaign prepare/apply. Thirteen independently executed calls are separate from the author14 reported probes.',
+            'All prior scientific holds remain. Genuine TSB collision and samepath Angust refusal are expected; explicit demotion design is outside this commit.',
+            'Only2 focused publisher tests ran;116 publisher tests were deselected. No extra whole-repository QC or provider research was run.',
+            'The original W08 manifest was fully rehashed at its original root. w08-context holds selected exact copies and the captured original manifest, not a portable copy of all2231 members.',
+            'Author failed drafts, root intake mistakes, publisher missing-receipt-maker setup failure and adversarial membership followup NameError remain preserved with attribution; none is hidden or counted as a final passing result.',
+            'Private pair persistence is authorized by this task. Native validation/render/currentness/parse APIs ran; canonical reviews/structured and all source/I/J/worker branches remain untouched.',
+            'No GitHub issue mutation or automatic closure is performed. Root controls filing/deduplication and final application decisions.'
+        ],
+        'notes': ['No new confirmed code finding in the exact two-file scope. Filed1251/1252 implementation behavior is supported, while old scientific findings are neither closed nor promoted.',
+                  'The original mapped/unmapped native inventory search includes ignored owner files and was checked against exact Git catalog membership. No historical/private repository-wide absence claim is made.'],
+        'links': ['https://github.com/CultureBotAI/MediaIngredientMech/pull/1205', 'https://github.com/CultureBotAI/MediaIngredientMech/issues/1251',
+                  'https://github.com/CultureBotAI/MediaIngredientMech/issues/1251#issuecomment-6720714388', 'https://github.com/CultureBotAI/MediaIngredientMech/issues/1252'],
+        'tags': ['code-review', 'native-boundary', 'independent', 'no-scientific-approval', 'no-application-approval']
+    }
+    native.validate_review(review)
+    native.assert_current_source(I, review)
+    raw = native._dump_document(review).encode()
+    markdown = native.render_markdown(review).encode()
+    virtual = 'reviews/structured/' + rid + '/review.yaml'
+    native.parse_review_bundle(virtual, raw, markdown)
+    controls = []
+    bad_hash = copy.deepcopy(review)
+    bad_hash['source']['inputs'][0]['sha256'] = '0' * 64
+    bad_coverage = copy.deepcopy(review)
+    bad_coverage['scope']['reviewed_target_ids'] = tids[:1]
+    for name, operation in [
+        ('wrong_committed_input_hash', lambda: native.assert_current_source(I, bad_hash)),
+        ('false_complete_coverage', lambda: native.validate_review(bad_coverage)),
+        ('mismatched_rendered_pair', lambda: native.parse_review_bundle(virtual, raw, markdown + b'\nCounterfeit text\n'))]:
+        try:
+            operation()
+        except native.ReviewError as error:
+            controls.append({'name': name, 'result': 'REFUSED', 'message': str(error)})
+        else:
+            raise AssertionError('negative control failed: ' + name)
+    save(N / 'review.yaml', raw, raw=True)
+    save(N / 'review.md', markdown, raw=True)
+    save(N / 'metadata-negative-controls.json', {'status': 'PASS', 'controls': controls, 'scope': 'Native review metadata only, not operator counterexamples.'})
+    receipt = {'status': 'PASS_BOUNDED_TECHNICAL_REVIEW_PAIR_WITH_LIMITATIONS', 'reviewer': '/root/boundary_assembly',
+               'review_id': rid, 'head': inspection['source']['git_revision'], 'source_state': 'git_commit',
+               'source_inputs': len(review['source']['inputs']), 'targets': len(targets), 'scientific_review': False,
+               'yaml_sha256': sha(N / 'review.yaml'), 'markdown_sha256': sha(N / 'review.md'),
+               'native_calls': ['inspect_source', 'assert_current_source', 'validate_review', 'render_markdown', 'parse_review_bundle'],
+               'metadata_negatives': 3, 'canonical_saver_called': False, 'private_persistence': True,
+               'technical_receipt': {'path': a.technical, 'sha256': sha(technical_path)},
+               'adversarial_receipt': {'path': a.adversarial, 'sha256': sha(adversarial_path)},
+               'findings': [], 'full_campaign_prepared': False, 'maintained_application': False}
+    save(N / 'validation.json', receipt)
+    print(json.dumps(receipt, indent=2))
+
+
+if __name__ == '__main__':
+    main()

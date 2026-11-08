@@ -1,0 +1,89 @@
+{
+  "observed_at": "2026-11-08T12:33:37.278738+00:00",
+  "readback": {
+    "before": {
+      "result_sha256": "42932ffda78d1a8b20328d011b6b716145422793fffe5099298e619f8704ae6a",
+      "probe_sha256": "9c322a4aacbfca33a693459b94bf89ef3e371003302f410b552cde37c06a14ee",
+      "log_sha256": "513b51b14f925293b2f104e11d1ed8a8617969f7ab4d9a71a46631c893165eaa",
+      "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+      "outcomes": [
+        [
+          "positive_staged_installed",
+          {
+            "accepted": true,
+            "state": "complete"
+          },
+          "complete"
+        ],
+        [
+          "before_cached_control",
+          {
+            "accepted": false,
+            "error": "ValueError('Unrelated staged file changed')"
+          },
+          "failed"
+        ],
+        [
+          "after_cached_enumeration",
+          {
+            "accepted": true,
+            "state": "complete"
+          },
+          "complete"
+        ],
+        [
+          "after_owner_blob",
+          {
+            "accepted": true,
+            "state": "complete"
+          },
+          "complete"
+        ]
+      ]
+    },
+    "runtime": {
+      "result_sha256": "bbbe94f0b89eaa58f2947f0c11db8e7aad394a7d5f4bd878a3b2e26bc772b55f",
+      "probe_sha256": "109a6b45e99f2fe2f71e90f44ae6a5d6f27ad5df128efaf686f3a3ca8806c04f",
+      "log_sha256": "ae65106fdaaa7d472136dbd712103966349f6912785bb0136ddd71f5bc9e9355",
+      "source_sha256": "adba0b6b237de4fa8636fcdd7fa28c9d952859b6f0008d4e9d0671acdd323575",
+      "outcomes": [
+        [
+          "positive_staged_installed",
+          {
+            "accepted": true,
+            "state": "complete"
+          },
+          "complete"
+        ],
+        [
+          "before_cached_control",
+          {
+            "accepted": false,
+            "error": "ValueError('Unrelated staged file changed')"
+          },
+          "failed"
+        ],
+        [
+          "after_cached_enumeration",
+          {
+            "accepted": false,
+            "error": "ValueError('Git index changed during live source check')"
+          },
+          "failed"
+        ],
+        [
+          "after_owner_blob",
+          {
+            "accepted": false,
+            "error": "ValueError('Git index changed during live source check')"
+          },
+          "failed"
+        ]
+      ]
+    }
+  },
+  "adaptation": "Only declared fixture/output root literals changed; original native functions and sys.setprofile fault schedule preserved.",
+  "native_functions_replaced": false,
+  "source_receipts_preserved": true,
+  "historical_reviewed_head_note": "The original probe retains historical7d4 reviewed_head; source_sha256 distinguishes exact patched bytes."
+}

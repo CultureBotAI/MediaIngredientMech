@@ -1,0 +1,165 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ test_real_four_suppressions_source_generation_publication_and_historical_replay _
+
+tmp_path = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11287/test_real_four_suppressions_so0')
+
+    def test_real_four_suppressions_source_generation_publication_and_historical_replay(tmp_path):
+>       plan,path,destination,before,proof = real_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^
+
+tests/test_campaign_suppression_integration.py:176: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11287/test_real_four_suppressions_so0')
+
+    def real_case(root):
+        h = helpers()
+        original_root = os.environ.get("CAMPAIGN_SUPPRESSION_REVIEW_ROOT")
+        history_root = os.environ.get("CAMPAIGN_HISTORY_ROOT")
+        claw = os.environ.get("CLAW_ROOT")
+        intake_root = os.environ.get("CAMPAIGN_SUPPRESSION_INTAKE_ROOT")
+        if not all((original_root, history_root, claw, intake_root)):
+            pytest.skip("Actual W07, historical27, pinned Claw and immutable intake roots required")
+        original_root, history_root, claw, intake_root = map(Path, (original_root, history_root, claw, intake_root))
+        assert git(claw, "rev-parse", "HEAD") == c.PRODUCER_REVISION
+        original_review, original_document = h.original_bundle(root)
+        def original(path):
+            return (root / original_review["inputs"]["review-inputs/" + path]["path"]).read_bytes()
+        decision = c.read_json(original("conditional-decisions.json"))
+        bindings = json.loads((intake_root / "owner-plan.draft.json").read_bytes())["bindings"]
+        materialization = {f["destination"]: f for f in json.loads((intake_root / "materialization-index.draft.json").read_bytes())["files"]}
+        all_bindings = {b["binding_id"]:b for b in bindings}
+        operations, originals = [], {}
+        for pair in decision["pairs"]:
+            for binding in pair["complete_owner_bindings"]:
+                _, path = c._record_path(binding["proposed"]["original_path"])
+                originals[path] = binding
+                if binding["before"]:
+                    h.put(root, path, original(binding["before"]["capture"]))
+                if binding["operation"]:
+                    op = copy.deepcopy(binding["operation"])
+                    op["after_capture"] = h.put(root, "intake/final/" + Path(path).name, original(binding["proposed"]["capture"]))
+                    operations.append(op)
+        for bucket in ("mapped", "unmapped"):
+            (root / "data/ingredients" / bucket).mkdir(parents=True, exist_ok=True)
+        for path, frozen in {**owner.LOADED_PRODUCERS, **c.LOADED_PRODUCERS}.items():
+            h.put(root, path, frozen.content)
+        h.put(root, c.MAKER, (ROOT / c.MAKER).read_bytes())
+        h.put(root, "pyproject.toml", (ROOT / "pyproject.toml").read_bytes())
+        checkpoint = c.native.verify_mapping_chain(history_root)
+        assert len(checkpoint["receipts"]) == 27
+        for path, expected in checkpoint["input_hashes"].items():
+            raw = (history_root / path).read_bytes()
+            assert c.sha(raw) == expected
+            h.put(root, path, raw)
+        before = {key:(history_root / path).read_bytes() for key,path in (
+            ("canonical", c.SOURCE), ("policy", c.POLICY), ("sidecar", c.SIDECAR), ("baseline", c.BASELINE))}
+        for key,path in (("canonical",c.SOURCE),("policy",c.POLICY),("sidecar",c.SIDECAR),("baseline",c.BASELINE)):
+            h.put(root,path,before[key])
+        needed = {o[key] for op in operations for o in op["origins"] for key in ("proposal_binding", "payload_binding")}
+        needed.add(next(b["binding_id"] for b in bindings if b["role"] == "case_ledger"))
+        selected = []
+        for name in sorted(needed):
+            b = copy.deepcopy(all_bindings[name])
+            item = materialization[b["path"]]
+            raw = Path(item["source"]).read_bytes()
+            assert c.sha(raw) == b["sha256"] == item["sha256"]
+            h.put(root,b["path"],raw)
+            selected.append(b)
+        for role in sorted(owner.ROLES - {b["role"] for b in selected} - {"producer"}):
+            # Explicit private activation metadata, not fabricated source science.
+            ref = h.put(root, "intake/mechanical-" + role + ".json", {"scope":"PRIVATE MECHANICAL INTEGRATION FIXTURE ONLY", "role":role})
+            selected.append({"binding_id":"fixture-" + role,"role":role,**ref,"published_head":None,"published_path":None})
+        for path,frozen in owner.LOADED_PRODUCERS.items():
+            selected.append({"binding_id":"producer-" + path,"role":"producer","path":path,"sha256":c.sha(frozen.content),"published_head":None,"published_path":None})
+        git(root,"init","-q")
+        # Read existing authentic published objects through private alternates.
+        campaign = intake_root.parents[1]
+        object_roots = set()
+        for slot in {o["worker_slot"] for op in operations for o in op["origins"]}:
+            repository = campaign / "workers" / slot.replace("worker-","w") / "worktree"
+            value = Path(git(repository,"rev-parse","--git-path","objects"))
+            object_roots.add(str(value if value.is_absolute() else (repository / value).resolve()))
+        (root / ".git/objects/info/alternates").write_text("\n".join(sorted(object_roots)) + "\n")
+        for b in selected:
+            if b["published_head"]:
+                assert subprocess.check_output(["git","show",f'{b["published_head"]}:{b["published_path"]}'],cwd=root) == (root / b["path"]).read_bytes()
+        before_inventory = owner.hashes(owner.inventory(root))
+        after_inventory = dict(before_inventory)
+        for op in operations:
+            after_inventory[op["source_record"]] = op["after_capture"]["sha256"]
+        protected = dict(checkpoint["input_hashes"])
+        protected.update({p:c.sha((root / p).read_bytes()) for p in (c.POLICY,c.SIDECAR,c.BASELINE)})
+        plan = {"schema_version":1,"operation":"apply_reviewed_campaign_owners","repository":"CultureBotAI/MediaIngredientMech",
+                "baseline_commit":"", "intake_heads":{o["worker_slot"]:o["head_sha"] for op in operations for o in op["origins"]},
+                "before_inventory":h.put(root,"intake/before.json",{"schema_version":1,"owners":before_inventory}),
+                "after_inventory":h.put(root,"intake/after.json",{"schema_version":1,"owners":after_inventory}),
+                "protected_inputs":h.put(root,"intake/protected.json",{"schema_version":1,"files":protected}),
+                "bindings":selected,"records":operations}
+        git(root,"add",".")
+        git(root,"-c","user.name=Fixture","-c","user.email=fixture@example.invalid","commit","-qm","Private authentic-input suppression fixture baseline")
+        plan["baseline_commit"] = git(root,"rev-parse","HEAD")
+        plan_ref = h.put(root,"intake/plan.json",plan)
+        acceptance = {"schema_version":1,"scope":"source_application_only","plan_sha256":plan_ref["sha256"],
+                      "baseline_commit":plan["baseline_commit"],"intake_heads":plan["intake_heads"],
+                      "binding_sha256":{b["binding_id"]:b["sha256"] for b in selected},
+                      "accepted_operations":{op["operation_id"]:op["after_capture"]["sha256"] for op in operations},
+                      "review_bindings":[b["binding_id"] for b in selected if b["role"]=="review"]}
+        h.put(root,"intake/acceptance.json",acceptance)
+        owner.apply(owner.prepare(root,root / "intake/plan.json",root / "intake/acceptance.json"),root / "source-receipt",enabled=True)
+        proof = owner.verify_completed(root,root / "intake/plan.json",root / "source-receipt/application.json")
+        assert len(proof["records"]) == 6
+        kg = root / "private-kg";kg.mkdir();git(kg,"init","-q");git(kg,"-c","user.name=Fixture","-c","user.email=fixture@example.invalid","commit","--allow-empty","-qm","Empty fixture enrichment")
+        output = root / "reports/generated";output.mkdir(parents=True)
+        paths = {"candidate":output / "candidate.tsv","sidecar":output / "sidecar.tsv","manifest":output / "manifest.json"}
+        temporary = root / "temporary";temporary.mkdir()
+        env = dict(os.environ,MEDIAINGREDIENTMECH_ROOT=str(root),KGMICROBE_ROOT=str(kg),TMPDIR=str(temporary),
+                   OPENCLAW_WORKSPACE=str(root / "private-openclaw"),PYTHONDONTWRITEBYTECODE="1",
+                   PATH="/usr/bin:/bin",HTTPS_PROXY="http://127.0.0.1:9",HTTP_PROXY="http://127.0.0.1:9",NO_PROXY="")
+        command = [sys.executable,"-B",str(claw / "scripts/build_mim_ingredient_sssom.py"),"--output",str(paths["candidate"]),
+                   "--suppressed-aliases-output",str(paths["sidecar"]),"--generation-manifest-output",str(paths["manifest"]),
+                   "--prior-stamps-from",str(root / c.SOURCE)]
+        run = subprocess.run(command,cwd=root,env=env,capture_output=True,text=True)
+        h.put(root,"reports/generated/run.log",(run.stdout+run.stderr).encode())
+        h.put(root,"reports/generated/run.json",{"argv":command,"exit_code":run.returncode,"label_provider_condition":"Native documented stored-label fallback: runoak unavailable and explicit unavailable local proxy; no native function replacement", "source_receipt_sha256":c.sha((root / "source-receipt/application.json").read_bytes())})
+>       assert run.returncode == 0,run.stdout+run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/private/var/folders/8w/lrmvnnnj0n57zm8b9rnhw76m0000gn/T/pytest-of-marcin/pytest-11287/test_real_four_suppressions_so0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 8 MIM ingredient YAMLs...
+E         Fetching rdfs:labels for 2 CHEBI ids from OAK...
+E           (OAK unavailable — falling back to MIM-stored ontology_label)
+E         Fetching rdfs:labels for 1 FOODON ids from OLS4...
+E           resolved 0 / 1
+E           (no label loader for NCIT:; falling back to MIM-stored labels)
+E           (no label loader for MICRO:; falling back to MIM-stored labels)
+E           (no label loader for mesh:; falling back to MIM-stored labels)
+E           (no label loader for kgmicrobe.compound:; falling back to MIM-stored labels)
+E         Replayed 6 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=2868; 2868 unique)
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1542, in _build_candidate
+E             raise ValueError("SSSOM validation FAILED: " + "; ".join(errors[:20]))
+E         ValueError: SSSOM validation FAILED: sssom CLI not on PATH; skipping validation
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/e...AILED: " + "; ".join(errors[:20]))\nValueError: SSSOM validation FAILED: sssom CLI not on PATH; skipping validation\n').returncode
+
+tests/test_campaign_suppression_integration.py:146: AssertionError
+=============================== warnings summary ===============================
+../../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_suppression_integration.py::test_real_four_suppressions_source_generation_publication_and_historical_replay
+1 failed, 12 warnings in 7.48s

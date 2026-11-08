@@ -1,0 +1,40 @@
+--- verify_v3.py
++++ verify_v3_origin_successor.py
+@@ -109,6 +109,7 @@
+ 
+ 
+ from v3_guards import manifest_coverage
++from manifest_origin_v1 import manifest_context
+ 
+ def run():
+     start = datetime.now(timezone.utc).isoformat()
+@@ -222,15 +223,18 @@
+             portable.extend(manifest_coverage(packet, json.loads(raw), selected["entries"], by_omission[packet["packet"]]))
+     require(len(portable) == 596, "complete portable member count differs")
+     bypath = {r["original_path"]: r for r in selected["entries"]}
+-    nested = []
++    nested = []; manifest_origin_bindings = []
+     for row in selected["entries"]:
+         path = Path(row["original_path"])
+         if "MANIFEST" not in path.name or path.suffix != ".json": continue
++        member_base, origin_binding = manifest_context(row, C)
++        manifest_origin_bindings.append(origin_binding)
+         for member in manifest_members(read(path)):
+             if not isinstance(member, dict) or not isinstance(member.get("path"), str) or not isinstance(member.get("sha256"), str): continue
+-            target = str(path.parent / member["path"])
++            target = str(member_base / str(relative(member["path"])))
+             selected_row = bypath.get(target)
+             nested.append({"manifest": str(path), "manifest_sha256": row["sha256"], "member": member["path"],
++                           "member_base": str(member_base), "manifest_origin_basis": origin_binding["basis"],
+                            "declared_sha256": member["sha256"], "selected_original": target if selected_row else None,
+                            "selected_sha256": selected_row["sha256"] if selected_row else None,
+                            "mapping": "selected_exact" if selected_row and selected_row["sha256"] == member["sha256"] else
+@@ -258,7 +262,7 @@
+             "actual_directory_inventories": [{"selection_sha256": r["sha256"], "directories": r["directory_members"]} for r in prior_sets],
+             "legacy_archive_inventory": legacy, "legacy_python_preserved": sorted(allowed_python),
+             "old_negative_object_current_closure": closed, "portable_manifest_joins": portable,
+-            "all_selected_manifest_member_mappings": nested, "omission_mappings": omissions,
++            "all_selected_manifest_member_mappings": nested, "manifest_origin_bindings": manifest_origin_bindings, "omission_mappings": omissions,
+             "extra_git_references": extra_git, "git_checks": git.checked, "proposal_wrapper_members": wrappers,
+             "tracked_before": before, "tracked_after": {k: v for k, v in after.items() if k != "rows"},
+             "scope": "Exact byte/path/manifest mapping review only; provisional union with old691 unchanged; no source/operator/code/final-head approval."}

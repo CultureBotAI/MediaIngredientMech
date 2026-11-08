@@ -1,0 +1,423 @@
+--- initial-reviewed
++++ final-publisher
+@@ -8,6 +8,7 @@
+ from __future__ import annotations
+ 
+ import csv
++import hashlib
+ import io
+ import json
+ import os
+@@ -19,21 +20,40 @@
+ from contextlib import ExitStack, contextmanager
+ from copy import deepcopy
+ from pathlib import Path, PurePosixPath
+-from typing import Any, cast
++from typing import TYPE_CHECKING, Any, BinaryIO, TextIO, cast
+ 
+ import yaml  # type: ignore[import-untyped]
+ 
+-from mediaingredientmech.curate.publication_guard import (
+-    FrozenFile,
+-    check_reserved,
+-    finish_receipt,
+-    no_alias,
+-    publish_validated,
++from mediaingredientmech.curate import campaign_owner_apply as _source_owner
++
++_NATIVE_SOURCES = {
++    "mediaingredientmech.curate.publication_guard": "src/mediaingredientmech/curate/publication_guard.py",
++    "mediaingredientmech.validation.mapping_change_receipts": "src/mediaingredientmech/validation/mapping_change_receipts.py",
++    "mediaingredientmech.export.reviewed_sssom": "src/mediaingredientmech/export/reviewed_sssom.py",
++    "mediaingredientmech.sssom_metadata": "src/mediaingredientmech/sssom_metadata.py",
++    "mediaingredientmech.synonym_policy": "src/mediaingredientmech/synonym_policy.py",
++    "campaign_native_sssom_invariants": "scripts/validate_sssom_invariants.py",
++}
++_BOUND_NATIVE = _source_owner.captured_native_modules(
++    Path(__file__).absolute().parents[2], _NATIVE_SOURCES
+ )
+-from mediaingredientmech.ingredient_bundle_contract import content_sha256 as sha
+-from mediaingredientmech.ingredient_bundle_contract import read_json
+-from mediaingredientmech.sssom_metadata import subset_date_metadata
+-from mediaingredientmech.validation import mapping_change_receipts as native
++if TYPE_CHECKING:
++    from mediaingredientmech.curate.publication_guard import (
++        FrozenFile,
++        check_reserved,
++        finish_receipt,
++        no_alias,
++        publish_validated,
++    )
++    from mediaingredientmech.sssom_metadata import subset_date_metadata
++    from mediaingredientmech.validation import mapping_change_receipts as native
++else:
++    _guard = _BOUND_NATIVE["mediaingredientmech.curate.publication_guard"]
++    FrozenFile, check_reserved = _guard.FrozenFile, _guard.check_reserved
++    finish_receipt, no_alias = _guard.finish_receipt, _guard.no_alias
++    publish_validated = _guard.publish_validated
++    subset_date_metadata = _BOUND_NATIVE["mediaingredientmech.sssom_metadata"].subset_date_metadata
++    native = _BOUND_NATIVE["mediaingredientmech.validation.mapping_change_receipts"]
+ 
+ SOURCE = native.SSSOM_SOURCE
+ POLICY = SOURCE + ".manifest.json"
+@@ -89,6 +109,7 @@
+         "scope",
+         "owner_plan",
+         "owner_receipt",
++        "publication_producers",
+         "before",
+         "generation",
+         "receipt_prefix",
+@@ -97,11 +118,38 @@
+     }
+ )
+ _LOADED = Path(__file__).read_bytes()
++LOADED_PRODUCERS = {
++    path: _BOUND_NATIVE[name]._campaign_executed_source for name, path in _NATIVE_SOURCES.items()
++}
++LOADED_PRODUCERS["src/mediaingredientmech/campaign_publication.py"] = FrozenFile.capture(
++    Path(__file__).absolute()
++)
++LOADED_PRODUCERS["src/mediaingredientmech/curate/campaign_owner_apply.py"] = (
++    _source_owner.LOADED_PRODUCERS["src/mediaingredientmech/curate/campaign_owner_apply.py"]
++)
+ 
+ 
+ def require(condition: object, message: str) -> None:
+     if not condition:
+         raise ValueError("Campaign publication: " + message)
++
++
++def sha(raw: bytes) -> str:
++    return hashlib.sha256(raw).hexdigest()
++
++
++def read_json(raw: bytes) -> Any:
++    def pairs(items):
++        result = {}
++        for key, value in items:
++            require(key not in result, "duplicate JSON field")
++            result[key] = value
++        return result
++
++    def invalid_number(value):
++        raise ValueError("Campaign publication: non-finite JSON value " + value)
++
++    return json.loads(raw, object_pairs_hook=pairs, parse_constant=invalid_number)
+ 
+ 
+ def closed(value: Any, keys: set[str] | frozenset[str], label: str) -> dict:
+@@ -337,7 +385,7 @@
+         self.files[item.path] = item
+         if expected is not None:
+             require(sha(item.content) == digest(expected), "input digest differs: " + str(path))
+-        return cast(bytes, item.content)
++        return item.content
+ 
+     def ref(self, value: dict) -> bytes:
+         closed(value, {"path", "sha256"}, "file reference")
+@@ -357,14 +405,67 @@
+ def _owner_proof(root: Path, plan: dict) -> dict:
+     from mediaingredientmech.curate.campaign_owner_apply import verify_completed
+ 
+-    return cast(
+-        dict,
+-        verify_completed(
+-            root,
+-            member(root, plan["owner_plan"]["path"]),
+-            member(root, plan["owner_receipt"]["path"]),
+-        ),
+-    )
++    return verify_completed(
++        root,
++        member(root, plan["owner_plan"]["path"]),
++        member(root, plan["owner_receipt"]["path"]),
++    )
++
++
++def _capture_source_completion(capture: Capture, proof: dict) -> None:
++    """Hold complete inventories, not just the initially enumerated files (#1194)."""
++    from mediaingredientmech.curate.campaign_owner_apply import hashes, inventory
++
++    root = capture.root
++    expected = hash_map(proof["after_inventory"])
++    require(hashes(inventory(root)) == expected, "source completion inventory differs")
++    for path, expected_sha in expected.items():
++        capture.read(path, expected_sha)
++    for path, expected_sha in hash_map(proof["immutable_input_sha256"]).items():
++        capture.read(path, expected_sha)
++
++    def owners_recheck() -> None:
++        require(
++            hashes(inventory(root)) == expected,
++            "source completion owner membership or bytes changed",
++        )
++
++    capture.checks.append(owners_recheck)
++
++    def snapshot_members(directory: Path) -> set[str]:
++        no_alias(directory)
++        require(directory.is_dir(), "source snapshot disappeared")
++        members = set()
++        for parent, directories, files in os.walk(directory, followlinks=False):
++            for name in directories:
++                no_alias(Path(parent) / name)
++            for name in files:
++                path = Path(parent) / name
++                no_alias(path)
++                members.add(str(path.relative_to(directory)))
++        return members
++
++    for role in ("checkpoint", "protected_snapshot"):
++        snapshot = closed(proof[role], {"root", "input_sha256"}, "source snapshot")
++        directory = member(root, relative(snapshot["root"]))
++        members = hash_map(snapshot["input_sha256"])
++        require(snapshot_members(directory) == set(members), "source snapshot membership differs")
++        for path, expected_sha in members.items():
++            capture.external(member(directory, path), expected_sha)
++
++        def snapshot_recheck(directory=directory, members=frozenset(members)) -> None:
++            require(
++                snapshot_members(directory) == members,
++                "source snapshot membership changed",
++            )
++
++        capture.checks.append(snapshot_recheck)
++
++    for record in proof["records"]:
++        if record["shape"] == "promotion":
++            old_path = member(root, relative(record["before_source_record"]))
++            require(not os.path.lexists(old_path), "retired source reappeared")
++            capture.absent.add(old_path)
+ 
+ 
+ def _maker(capture: Capture):
+@@ -400,6 +501,10 @@
+                 not proof["owner_chains"].get(previous),
+                 "promotion old path has native owner-chain history; migration review required",
+             )
++            require(
++                not proof["owner_chains"].get(owner["source_record"]),
++                "promotion destination has native owner-chain history; migration review required",
++            )
+             record["before_source_record"] = previous
+         records.append(record)
+     result = {
+@@ -425,6 +530,14 @@
+         }
+     )
+     native._validate_receipt(result, complete=True)
++    # #1197: row replay alone cannot detect a disconnected owner preimage.
++    # Validate the complete prospective owner chain before reserving outputs.
++    receipt_path = native.RECEIPTS_DIR + "/" + plan["batch"] + ".json"
++    native._owner_chains(
++        proof["receipts"] + [result],
++        proof["receipt_paths"] + [receipt_path],
++        {**proof["receipt_inputs"], receipt_path: sha(encoded(result))},
++    )
+     replay = native.walk_mapping_changes(
+         proof["receipts"] + [result],
+         start_sha256=proof["start_sha256"],
+@@ -479,6 +592,16 @@
+     producer_root, kg_root = Path(config["producer_root"]), Path(config["kg_root"])
+     for path in (producer_root, kg_root):
+         absolute(path)
++    revisions = closed(
++        manifest["source_revisions"], {"claw", "mim", "kg_microbe"}, "source revisions"
++    )
++    require(
++        all(
++            isinstance(value, str) and re.fullmatch(r"[0-9a-f]{40}", value)
++            for value in revisions.values()
++        ),
++        "invalid source revision",
++    )
+     require(
+         manifest["source_revisions"]["claw"] == PRODUCER_REVISION, "unreviewed producer revision"
+     )
+@@ -486,6 +609,11 @@
+         subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=producer_root, text=True).strip()
+         == PRODUCER_REVISION,
+         "producer revision moved",
++    )
++    require(
++        subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=kg_root, text=True).strip()
++        == revisions["kg_microbe"],
++        "kg-microbe revision moved",
+     )
+     producer = producer_root / "scripts/build_mim_ingredient_sssom.py"
+     source = capture.external(producer, PRODUCER_SHA)
+@@ -522,7 +650,9 @@
+         input_names[path] = content
+     require(
+         all(
+-            root / p in input_names and sha(input_names[root / p]) == h
++            root / p in input_names
++            and isinstance(input_names[root / p], bytes)
++            and sha(cast(bytes, input_names[root / p])) == h
+             for p, h in inventory.items()
+             if p.startswith("data/ingredients/mapped/")
+         ),
+@@ -627,6 +757,11 @@
+             "producer revision changed",
+         )
+         module._check_producer_bindings()
++        require(
++            subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=kg_root, text=True).strip()
++            == revisions["kg_microbe"],
++            "kg-microbe revision changed",
++        )
+ 
+     capture.checks.append(producer_recheck)
+     return candidate, sidecar, manifest
+@@ -684,6 +819,46 @@
+     return encoded(result)
+ 
+ 
++def _verify_projected_rule_k(capture: Capture, canonical: bytes) -> None:
++    """#1200: unchanged native ownership rule over all final rows, no exemptions added."""
++    names = {
++        name: path
++        for name, path in _NATIVE_SOURCES.items()
++        if name
++        in {
++            "mediaingredientmech.curate.publication_guard",
++            "mediaingredientmech.synonym_policy",
++            "campaign_native_sssom_invariants",
++        }
++    }
++    original_path = list(sys.path)
++    try:
++        modules = _source_owner.captured_native_modules(capture.root, names)
++    finally:
++        sys.path[:] = original_path
++    for name, module in modules.items():
++        executed = module._campaign_executed_source
++        require(
++            executed.content == capture.files[capture.root / names[name]].content,
++            "native Rule K producer changed before execution",
++        )
++        executed.verify()
++    failures = list(
++        modules["campaign_native_sssom_invariants"].evaluate_rule_k(table(canonical)[2])
++    )
++    require(
++        not failures,
++        "global projected Rule K impact requires reviewed scope: "
++        + json.dumps(
++            [
++                {"source_position": position, "subject_id": row["subject_id"], "reason": reason}
++                for position, row, reason in failures
++            ],
++            sort_keys=True,
++        ),
++    )
++
++
+ def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
+     capture = Capture(root)
+     root = capture.root
+@@ -696,6 +871,18 @@
+     )
+     plan_raw = capture.external(plan_path)
+     plan = closed(read_json(plan_raw), PLAN_KEYS, "publication plan")
++    producers = hash_map(plan["publication_producers"])
++    require(set(producers) == set(LOADED_PRODUCERS), "publication producer set differs")
++    for path, loaded in LOADED_PRODUCERS.items():
++        loaded.verify()
++        require(sha(loaded.content) == producers[path], "loaded publication producer differs")
++        capture.read(path, producers[path])
++
++    def loaded_recheck() -> None:
++        for loaded in LOADED_PRODUCERS.values():
++            loaded.verify()
++
++    capture.checks.append(loaded_recheck)
+     require(
+         type(plan["schema_version"]) is int
+         and plan["schema_version"] == 1
+@@ -717,6 +904,7 @@
+         and owner_proof["receipt_sha256"] == plan["owner_receipt"]["sha256"],
+         "source application binding differs",
+     )
++    _capture_source_completion(capture, owner_proof)
+     before_config = closed(
+         plan["before"], {"canonical", "policy", "sidecar", "baseline"}, "beforeimages"
+     )
+@@ -765,6 +953,8 @@
+         previous = dict(proof)
+         require(proof["receipt_paths"][-1] == receipt_name, "publication is not latest receipt")
+         previous["receipts"] = proof["receipts"][:-1]
++        previous["receipt_paths"] = proof["receipt_paths"][:-1]
++        previous["receipt_inputs"] = prefix
+         previous["owner_chains"] = native._owner_chains(
+             previous["receipts"], proof["receipt_paths"][:-1], prefix
+         )
+@@ -817,6 +1007,10 @@
+     candidate, diagnostic_sidecar, manifest = _generation(
+         capture, plan, before["canonical"], owner_proof["after_inventory"]
+     )
++    require(
++        manifest["source_revisions"]["mim"] == owner_proof["baseline_commit"],
++        "generation revision differs from accepted source baseline",
++    )
+     selected = {subject(r["source_record"]) for r in records}
+ 
+     def suppressions(raw):
+@@ -835,6 +1029,7 @@
+     ]
+     require(not needs, "new suppression review required: " + json.dumps(needs, sort_keys=True))
+     canonical, trace = row_projection(before["canonical"], candidate, records, plan["rows"])
++    _verify_projected_rule_k(capture, canonical)
+     receipt = _receipt(previous, _maker(capture), plan, records, before["canonical"], canonical)
+     receipt_raw = encoded(receipt)
+     policy = _policy(
+@@ -871,6 +1066,10 @@
+         "evidence aliases publication surface",
+     )
+     capture.verify()
++    require(
++        set(native._names(root)) == set(prefix) | ({receipt_name} if completed else set()),
++        "native receipt membership changed during verification",
++    )
+     return {
+         "capture": capture,
+         "plan": plan,
+@@ -945,7 +1144,7 @@
+                 info = os.fstat(handle.fileno())
+                 created.append((path, descriptors[parent], (info.st_dev, info.st_ino)))
+                 handles.append(handle)
+-                check_reserved(handle, path)
++                check_reserved(cast(BinaryIO | TextIO, handle), path)
+                 for ancestor, identity in parents.items():
+                     no_alias(ancestor)
+                     require(
+@@ -965,6 +1164,8 @@
+ 
+ 
+ def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = False) -> dict:
++    # #1198: lexical reports/../outside is not a confined receipt directory.
++    absolute(receipt_dir)
+     prepared = prepare(root, plan_path)
+     capture: Capture = prepared["capture"]
+     root = capture.root
+@@ -1030,10 +1231,17 @@
+                 handle.write(content)
+                 handle.flush()
+             for target, content in destinations.items():
++
++                def render(staged: Path, value: bytes = content) -> None:
++                    staged.write_bytes(value)
++
++                def check_target(path: Path = target) -> None:
++                    recheck(path)
++
+                 current[target] = publish_validated(
+                     current[target],
+-                    lambda staged, value=content: staged.write_bytes(value),
+-                    lambda p=target: recheck(p),
++                    render,
++                    check_target,
+                 )
+                 recheck()
+             native_handle.write(prepared["receipt"])

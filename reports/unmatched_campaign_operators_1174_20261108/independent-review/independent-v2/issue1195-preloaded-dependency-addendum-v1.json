@@ -1,0 +1,25 @@
+{
+  "finding_id": "IR-CAMPAIGN-OPERATORS-2",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1195",
+  "state": "still_open_in_first_frozen_fix",
+  "operator_sha256": "d84ed7b82dfacb90a1c7bb7658c5b45b94a8a8271f4a96785daf5a74b774e010",
+  "title": "Preloaded dependency can still be misattributed to later on-disk bytes",
+  "cause": "LOADED_PRODUCERS captures a dependency file at owner-operator import time, not necessarily when that dependency module was imported. An already cached dependency retains its original function/class objects after its file changes. The new owner import records the newer file as the loaded dependency and accepts matching plan pins.",
+  "reproduction": "Fresh private process imports native publication_guard first, changes only its private file, then imports frozen new owner operator. owner.FrozenFile is the already imported class. prepare/dry-run accepts while reported loaded guard hash82c34680 differs from its captured actual import-source hashf6d1e625.",
+  "required_fix": "Ensure the dependency execution is freshly bound to verified captured bytes or reject preloaded/unprovable implementations. Capturing a cached module file later is insufficient. Preserve existing globals used by native consumers and do not silently reload unrelated shared modules. A bounded private subprocess with verified inputs is one possible design, but implementation choice belongs to the author.",
+  "artifacts": [
+    {
+      "path": "probe_preloaded_dependency_v1.py",
+      "sha256": "25a08268a260b09883f9c0f2ceada3740232ab5e67419c78a275041e3d842a21"
+    },
+    {
+      "path": "preloaded-dependency-result-v1.json",
+      "sha256": "d15db2944cc51b313b9bb0a4a46f059183d6ecec922aff870f2232fc82650d7e"
+    },
+    {
+      "path": "preloaded-dependency-result-v1.log",
+      "sha256": "d15db2944cc51b313b9bb0a4a46f059183d6ecec922aff870f2232fc82650d7e"
+    }
+  ],
+  "scope": "Same existing1195 finding, no new issue needed. Private dry-run only; no author/maintained edits."
+}

@@ -1,0 +1,213 @@
+{
+  "status": "PASS_EXPECTED_OUTCOMES",
+  "reviewer": "/root/inorganics",
+  "revision": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "runtime": "3.13.2 (main, Mar 17 2025, 21:26:38) [Clang 20.1.0 ]",
+  "source_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py",
+  "source_sha256": "72e084da60235b8b285a27c603d4715edf087c82957f555e1e631cf9e338bbd6",
+  "test_helpers_sha256": "8d272cd4f3479d3e6ba9e2ef5817a40428efd51ce57b554e7e814ed23e0984dc",
+  "script_sha256": "f01504cb8c9b04eae9ac23432a12d553e0271c5ac523df8c85ef4c8bfa59eca3",
+  "function_replacements": false,
+  "fault_injection": "sys.setprofile schedules actual private Git add then working-byte restoration at native boundaries; native function objects and frozen source bytes remain unchanged.",
+  "results": [
+    {
+      "mode": "clean",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/initial-fixtures/clean",
+      "phase": "complete",
+      "error": null,
+      "injection": {
+        "fired": false,
+        "event": null
+      },
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "d2efa92a79bec26d53fcd061d0732f144fdbc734",
+      "head_after": "d2efa92a79bec26d53fcd061d0732f144fdbc734",
+      "working_diff_paths": "data/ingredients/mapped/Existing.yaml\u0000",
+      "cached_diff_paths": "",
+      "receipt_state": "complete",
+      "recovery_required": false,
+      "receipt_sha256": "457cde0c4e76f997c9801614f9f309c7e0f895ac329c3b187fec9bd16952c225",
+      "completed": true
+    },
+    {
+      "mode": "initial_hidden_index",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/initial-fixtures/initial_hidden_index",
+      "phase": "prepare",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "injection": {
+        "fired": true,
+        "event": null
+      },
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "bcda13398e9ad5eb8d07f1ba6d6657d721e81e28",
+      "head_after": "bcda13398e9ad5eb8d07f1ba6d6657d721e81e28",
+      "working_diff_paths": "",
+      "cached_diff_paths": "MAPPING_SEMANTICS.md\u0000",
+      "receipt_state": null,
+      "recovery_required": null,
+      "receipt_sha256": null,
+      "completed": false
+    },
+    {
+      "mode": "postprepare_hidden_index",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/initial-fixtures/postprepare_hidden_index",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "injection": {
+        "fired": true,
+        "event": null
+      },
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "bcda13398e9ad5eb8d07f1ba6d6657d721e81e28",
+      "head_after": "bcda13398e9ad5eb8d07f1ba6d6657d721e81e28",
+      "working_diff_paths": "",
+      "cached_diff_paths": "MAPPING_SEMANTICS.md\u0000",
+      "receipt_state": null,
+      "recovery_required": null,
+      "receipt_sha256": null,
+      "completed": false
+    },
+    {
+      "mode": "hidden_index_before_write",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/initial-fixtures/hidden_index_before_write",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "injection": {
+        "fired": true,
+        "event": {
+          "function": "_new_owner",
+          "event": "call",
+          "file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py",
+          "line": 1068
+        }
+      },
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "f1141570e3ad70aafc71cad5fadcd16226e43cfe",
+      "head_after": "f1141570e3ad70aafc71cad5fadcd16226e43cfe",
+      "working_diff_paths": "",
+      "cached_diff_paths": "MAPPING_SEMANTICS.md\u0000",
+      "receipt_state": "failed",
+      "recovery_required": true,
+      "receipt_sha256": "8d67f6f3157890381533b3140b4104a905db83994b9bd186b2bbee4fd0106ad9",
+      "completed": false
+    },
+    {
+      "mode": "hidden_index_after_write",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/initial-fixtures/hidden_index_after_write",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "injection": {
+        "fired": true,
+        "event": {
+          "function": "_new_owner",
+          "event": "return",
+          "file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/frozen/repo/src/mediaingredientmech/curate/campaign_owner_apply.py",
+          "line": 1105
+        }
+      },
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "21d6c33e110d8d8d70fcf0dc68eb9019dada3dba",
+      "head_after": "21d6c33e110d8d8d70fcf0dc68eb9019dada3dba",
+      "working_diff_paths": "",
+      "cached_diff_paths": "MAPPING_SEMANTICS.md\u0000",
+      "receipt_state": "failed",
+      "recovery_required": true,
+      "receipt_sha256": "c229dbd4d60e2545b61cdc4c2101dc8e3079e30405aae178b46ec0e2d60a8171",
+      "completed": false
+    },
+    {
+      "mode": "hidden_index_final_flush",
+      "fixture": ".temp/final-7d4db26-independent-v1/technical/initial-fixtures/hidden_index_final_flush",
+      "phase": "apply",
+      "error": {
+        "type": "ValueError",
+        "message": "Unrelated staged file changed"
+      },
+      "injection": {
+        "fired": true,
+        "event": {
+          "function": "finish_receipt",
+          "event": "c_return",
+          "file": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/final-7d4db26-independent-v1/frozen/repo/src/mediaingredientmech/curate/publication_guard.py",
+          "line": 138
+        }
+      },
+      "before_inventory": {
+        "data/ingredients/mapped/Existing.yaml": "12bf079c1e8ea56f7faf9790510057c58ed5aef36eb6ade5a63cf9eaab63ad1b",
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "after_inventory": {
+        "data/ingredients/mapped/Untouched.yaml": "acedb7066cc04fad8841422a7dbfac554c5e9c9876415eeb3b09894d6e6440a8",
+        "data/ingredients/unmapped/Existing.yaml": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413",
+        "data/ingredients/unmapped/Stock_old.yaml": "59e633b44fb1285a8816c2bb522785da8dd01ffd0bbf69940d7663a6fbc731e9"
+      },
+      "baseline": "ff744caff4a6a1f732f508f98e5905a88f502388",
+      "head_after": "ff744caff4a6a1f732f508f98e5905a88f502388",
+      "working_diff_paths": "data/ingredients/mapped/Existing.yaml\u0000",
+      "cached_diff_paths": "MAPPING_SEMANTICS.md\u0000",
+      "receipt_state": "failed",
+      "recovery_required": true,
+      "receipt_sha256": "eb326f906bc1c4046c6688c556f115ecc36ab0d7aaa3d6403257fb0d21c2aeb0",
+      "completed": false
+    }
+  ]
+}

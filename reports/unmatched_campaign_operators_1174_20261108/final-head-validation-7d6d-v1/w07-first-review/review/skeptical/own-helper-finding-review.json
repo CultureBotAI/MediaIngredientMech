@@ -1,0 +1,80 @@
+{
+  "reviewer": "/root/operator_final_skeptic",
+  "at": "2026-11-08T13:47:01.713075+00:00",
+  "finding_id": "W07-OPERATOR-LOG-AUDIT-001",
+  "independently_confirmed": true,
+  "scope": "Own private audit helper only; not a product/source/operator defect. No code change or approval.",
+  "reproduction": {
+    "argv": [
+      "/opt/homebrew/Caskroom/miniforge/base/bin/python",
+      "-B",
+      "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/scripts/assemble_preparatory_audit.py"
+    ],
+    "exit_code": 1,
+    "stdout_path": "own-helper-finding-reproduction.stdout",
+    "stderr_path": "own-helper-finding-reproduction.stderr"
+  },
+  "actual_failure_blocks": [
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.curate.publication_guard]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.validation.mapping_change_receipts]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.export.reviewed_sssom]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.sssom_metadata]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[False-mediaingredientmech.synonym_policy]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.curate.publication_guard]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.validation.mapping_change_receipts]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.export.reviewed_sssom]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.sssom_metadata]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_1195_preloaded_public_dependencies_do_not_supply_publisher_execution[True-mediaingredientmech.synonym_policy]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    },
+    {
+      "name": "test_completed_native_review_requires_full_actual_transition_scope[partial-reviewed-targets]",
+      "record_review_path_visible": true,
+      "exception_class_visible": false
+    }
+  ],
+  "full_trace_sha256": "d5c1c29b2af12ae4f7d6ee73d59ebffab57900d257b05d6287e517ff605e1c0f",
+  "full_trace_equals_original": true,
+  "full_trace_contains_exception_and_missing_path": true,
+  "proposed_disposition": "Confirmed minor private evidence assembly error. Preserve failed script/probe. Root must file/deduplicate and deliver issue receipt before any correction. Existing1259 fixture cause unchanged; source operator verdict unaffected.",
+  "fix_performed": false,
+  "final_committed_head_receipt_present": true
+}

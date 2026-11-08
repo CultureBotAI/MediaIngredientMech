@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T12:47:47.368903+00:00",
+  "status": "SEALED_TECHNICAL_PASS_WITH_LIMITATIONS",
+  "manifest": {
+    "path": "MANIFEST.json",
+    "sha256": "088bf43175d0129cc002375cac0b06fe8b055db038ec3ac162e41b5faebeb0e5"
+  },
+  "immutable_final_pins": {
+    "HANDOFF.json": "336a7cb21448891f7aacfb0fd261e2e122a8b91c853111c39c9f47d67c069107",
+    "REVIEW-SELECTOR.json": "089335d0084a41f463b91888f8965e8fddf57c71a15b6924345ad519bdc91e5d",
+    "pre-seal-inventory.json": "4331b4b50cf1c24668a5a2b2710a5c0a83322289a953c0153d7a11d313755601",
+    "technical/MANIFEST.json": "dd45836b10b4fe694baec68d098daadf5e3a31eb46822702e7e77539ed2bc0a7",
+    "native/MANIFEST.json": "6b48a90891aeeb5891e44948c969ed8cf90bd1a733713b6a05d929e55e119ce7",
+    "skeptic/MANIFEST-v1.json": "e331db1a4c6fcbe59932f2400f3e067a0e7f6824bc6e5d57321c8f4b663dff70",
+    "skeptic/MANIFEST-final-v1.json": "52bfd1fb06877f6bfc215aa79b2f9bb9ab54aafaca505b713047765e3cf3aab2",
+    "skeptic/final-native-review-v1.json": "43b42d936efecf6fe49805f17419ece2b1688f6663ac02f4a12da937e43e8e97",
+    "skeptic/final-assembly-review-v1.json": "1cec79c681a50373ae7d15bb5e6535df635ce63715f8e18100baab111a71ec31",
+    "root-preservation-final-v1.json": "3b00f612fcbacaf51964ac902dd6d5dd4af2d0a864f0595a187e16eb3e55d20a"
+  },
+  "native_pair": {
+    "yaml": {
+      "path": "native/private-overlay/reviews/structured/20261108T124206Z-w02-pr1205-addendum-actual-copy-independent/review.yaml",
+      "sha256": "8fe9b5c688e4d5c9a0e353a4b18079600b1510e27e19485dcfae6049e8c8e5ca"
+    },
+    "markdown": {
+      "path": "native/private-overlay/reviews/structured/20261108T124206Z-w02-pr1205-addendum-actual-copy-independent/review.md",
+      "sha256": "0980539729eb739197d2ba80eb844109554d6cc925e49465cb7ee03ebdab8566"
+    }
+  },
+  "native_receipt": {
+    "path": "native/native-pair-receipt-v2.json",
+    "sha256": "a5e112f30bbe9661c9211e1e1cf5ebcc5e5c7f39d2ad9d4c8758098ecf8fb8e1"
+  },
+  "counts": {
+    "members": 287,
+    "regular_files": 224,
+    "diagnostic_links": 63,
+    "directories": 124
+  },
+  "source_heads": {
+    "W02": "c91ccac1f91417ce376a2a83e871d6f6bf90912f",
+    "K": "7d4db26a2ce75e9942badaca954bb8e8f821c75c"
+  },
+  "final_read_only_git_commands": [
+    {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "c91ccac1f91417ce376a2a83e871d6f6bf90912f\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree",
+        "status",
+        "--porcelain=v1"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "7d4db26a2ce75e9942badaca954bb8e8f821c75c\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "diff",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "--no-optional-locks",
+        "-C",
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "K_raw_index_matches_pinned_before_after": true,
+  "addendum_copied": false,
+  "reviewed_targets": "Exact uncopied c57116fd addendum selection and actual uncommitted v4 copy at K7d4; no future additions selected.",
+  "actual_participants": {
+    "/root": "Scope, actual-copy/preservation checks, existing comment capture and handoff assembly",
+    "/root/research_b": "Full reference/Git/copy/alias/inventory checks and47 final verifier controls",
+    "/root/final_reviewer": "Skeptical history/content/secret-pattern/native-pair checks, then final native/assembly readback",
+    "/root/research_c": "Independent structure checks and native review assembly with6 negative controls"
+  },
+  "independence_boundary": "Independent of NEW addendum selection, actual copier and source/publisher operator authors. This team participated in the earlier W02 v4 review, including its selected root collection and D closure ledger; those own historical artifacts receive exact-byte continuity only, not renewed independent approval or a second vote. Separate prior crosswalk author-team roles are disclosed and outside operator/archive authorship.",
+  "new_findings": [],
+  "pending": [
+    "W08-7D4DB26-SRC-001 remains existing open1256 context; no code acceptance or finding closure here.",
+    "Later repaired code, exact distinct independent review and actual completed final root QC/full-suite evidence.",
+    "Authorized addendum copy/readback and later final archive additions/diff/head review."
+  ],
+  "scientific_review": false,
+  "code_owner_application_export_or_final_archive_approval": false,
+  "seal_boundary": "Mechanical outer seal only after final independent skeptical readback; no earlier artifact rewritten. SHA256SUMS covers regular members plus MANIFEST and SEAL; literal diagnostic links are covered in MANIFEST."
+}

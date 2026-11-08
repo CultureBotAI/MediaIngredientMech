@@ -1,0 +1,218 @@
+"""Immutable addendum: reject exact d691 because of the filed first-rejection regression.
+
+Original review bytes remain historical. Native source currentness reads only
+committed d691 Git blobs, never mutable integration code or a future repair.
+"""
+from pathlib import Path
+import argparse
+import copy
+import datetime
+import hashlib
+import importlib.util
+import json
+import sys
+
+A = Path(__file__).resolve().parent
+ADD = A.parent
+O = ADD.parent
+R = next(p for p in O.parents if (p / 'MAPPING_SEMANTICS.md').is_file())
+I = R.parents[2] / 'integration/worktree'
+N = ADD / 'native'
+
+
+def sha(p):
+    return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def read(p):
+    return json.loads(p.read_bytes())
+
+
+def save(p, d, raw=False):
+    assert not p.exists(), str(p)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_bytes(d if raw else (json.dumps(d, indent=2, ensure_ascii=False) + '\n').encode())
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--technical', required=True)
+    parser.add_argument('--adversarial', required=True)
+    args = parser.parse_args()
+    tp, ap = ADD / args.technical, ADD / args.adversarial
+    t, a = read(tp), read(ap)
+    spec = importlib.util.spec_from_file_location('native_regression_addendum', O / 'frozen-src/scripts/record_review.py')
+    native = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = native
+    spec.loader.exec_module(native)
+    prior = native.load_document((O / 'native/review.yaml').read_bytes())
+    native.validate_review(prior)
+    native.assert_current_source(I, prior)
+    assert prior['source']['git_revision'] == 'd691c079cf3923daed89284b7579913b84c3a34c'
+    assert prior['source']['state'] == 'git_commit'
+    assert sha(O / 'native/review.yaml') == 'a95f9ef88daf78d69d5228e871ea5c94c1b403a95030bcf851f302e65e6d03e7'
+    assert sha(O / 'native/review.md') == '3f697db8946afba3d36d8785ef19604d502d0393de917fb2c26c2e588d1324cf'
+    bindings = read(A / 'context-and-original-bindings.json')
+    assert len(bindings['exact_counterexample_facts']) == 2
+    adversarial = read(ADD / 'adversarial/counterexample-v1.json')
+    assert adversarial['result'] == 'CONFIRMED_ALREADY_FILED_REGRESSION_DO_NOT_APPROVE_D691'
+    example = adversarial['results'][0]
+    assert example['current_native_load_passed'] is True
+    assert example['original_parent_record_stage']['exception'] is None
+    assert example['full_prepare_exception']['message'] == 'Rejected owner requires same-path, same-key rejected maintenance'
+    assert not example['native_apply_called'] and example['receipt_absent']
+    now = datetime.datetime.now(datetime.timezone.utc)
+    finish = now.isoformat().replace('+00:00', 'Z')
+    rid = now.strftime('%Y%m%dT%H%M%SZ') + '-w03-d691-first-rejection-regression'
+    review = copy.deepcopy(prior)
+    tids = [x['target_id'] for x in review['targets']]
+    assert tids == ['native-owner-operator', 'native-owner-tests']
+    issue = 'https://github.com/CultureBotAI/MediaIngredientMech/issues/1252#issuecomment-6720840145'
+    fid = 'W03-NATIVE-1252-RETIREMENT-REGRESSION'
+    review.update(
+        review_id=rid,
+        title='Superseding independent code review: d691 rejects valid first retirement of an unmapped owner',
+        started_at=bindings['at'].replace('+00:00', 'Z'),
+        finished_at=finish,
+        completion='completed',
+        verdict='needs_curation',
+        native_verdict='DO_NOT_ACCEPT_EXACT_D691: confirmed major regression already filed under1252 comment6720840145; a separately reviewed repair is required.',
+        summary='The exact d691 two-file change retains previously tested collision reductions and existing-tombstone maintenance, but its new REJECTED condition also blocks valid same-path UNMAPPED-to-REJECTED retirement. Two genuine published W03 origins and a separate authenticated synthetic native prepare counterexample establish the regression. Earlier positive results remain true within their tested scope; the earlier overall technical pass is superseded. No future repair, source science, normalization or campaign application is approved.',
+        scientific_review=False,
+    )
+    review['reviewer']['identity'] = 'worker03:/root/boundary_assembly'
+    review['reviewer']['independence_basis'] = (
+        'Separate in-process reviewer of the code change, not its author. Independently verified two actual preimages against d691 Git and both original payloads against784 Git, and reviewed separate technical/adversarial confirmations. W03 authored those source proposals: they are author-related code counterexamples only, with no independent scientific self-approval or normalization acceptance.'
+    )
+    review['scope']['description'] = 'Superseding complete assessment of the same exact two d691 changed files, including the newly filed valid-retirement regression and preserved earlier bounded positive evidence.'
+    review['scope']['selection'] = 'Both files changed by d691 versus eac469 remain the same fully covered target set. Added evidence includes both genuine W03 retirement origins and a synthetic full native prepare counterexample; no source-scientific population approval.'
+    review['scope']['exclusions'].append({'target': 'Current mutable I code, any future fix, and normalization acceptance for the polymer candidates', 'reason': 'All code inputs remain committed d691 bytes. Normalization needs distinct review; source authorship conflict is explicit.'})
+
+    def ev(eid, p, kind, support, summary, locator=None):
+        row = {'evidence_id': eid, 'kind': kind, 'reference': str(p.relative_to(R)),
+               'snapshot_sha256': sha(p), 'accessed_at': finish, 'support': support, 'summary': summary}
+        if locator:
+            row['locator'] = locator
+        review['evidence'].append(row)
+
+    ev('filed-retirement-regression', ADD / 'inputs/issue1252-comment6720840145.json', 'authority', 'refutes',
+       'Filed and readback-verified addendum identifies the valid first-rejection capability regression; same-path UNMAPPED retirement is neither revival nor create.', 'issue1252 comment6720840145')
+    ev('original-retirement-bindings', A / 'context-and-original-bindings.json', 'validation', 'supports',
+       'Both actual beforeimages equal d691 Git; original payloads equal784 Git and retain source/destination path, identifier, preferred name and ordered history prefix. Normalized objects compare equal only as diagnostic context, without normalization or scientific approval.')
+    ev('coordinator-failed-cohort', A / 'coordinator-capture/HANDOFF.json', 'validation', 'context_only',
+       'Coordinator933-operation diagnostic remains FAIL_RECORD_STAGE with two distinct known refusals, zero new pairs and12 removed. It is not a successful full prepare or campaign acceptance.')
+    ev('coordinator-boundary-details', A / 'coordinator-capture/remaining-native-boundaries.json', 'validation', 'supports',
+       'The same complete933 cohort is reordered only to expose first errors; all payloads remain. Other931 checks were traversed before reaching a known refusal, with both polymer first-rejection failures retained.')
+    ev('cohort-accounting', ADD / 'cohort-accounting-review-v1.json', 'validation', 'supports',
+       'Root independently checked933 unique selected actions and status inventory,2956 before and3550 projected owners,0 new and12 removed collision pairs. Diagnostic producer logic and all failed calls were inspected; no fresh full prepare or passing cohort is claimed.')
+    ev('regression-technical', tp, 'prior_review', 'refutes',
+       'Separate technical reviewer confirms each exact original retirement passes the unchanged parent validator function and fails exact d691; code/source scope and COI remain bounded.')
+    ev('regression-adversarial', ap, 'prior_review', 'refutes',
+       'Separate adversarial reviewer confirms authenticated native load then full prepare refusal for valid synthetic first retirement, with maintenance positive controls and wrong-preimage negative.')
+    ev('synthetic-retirement-counterexample', ADD / 'adversarial/counterexample-v1.json', 'validation', 'refutes',
+       'Valid same-path first retirement passes native load but fails full d691 prepare specifically at the new REJECTED guard. No apply or receipt follows that counterexample. Two maintenance controls complete apply/replay; wrong preimage is refused.')
+    ev('prior-native-review', O / 'native/review.yaml', 'prior_review', 'context_only',
+       'Earlier exactd691 technical pass remains immutable, including genuine bounded positive results; this same-target review supersedes its overall verdict after the newly confirmed regression.')
+    review['checks'].append({
+        'check_id': 'valid-first-retirement-regression', 'name': 'Previously supported first retirement of existing unmapped owner',
+        'status': 'failed', 'required': True,
+        'summary': 'Exactd691 rejects both authentic same-path UNMAPPED-to-REJECTED originals. Independent authenticated synthetic native load succeeds but full prepare fails at line764; expected capability is lost. This is a confirmed product regression, not a harness failure.',
+        'target_ids': tids, 'evidence_ids': ['filed-retirement-regression', 'original-retirement-bindings', 'regression-technical', 'synthetic-retirement-counterexample', 'regression-adversarial']})
+    for assessment in review['assessments']:
+        if assessment['assessment_id'] == 'tests':
+            assessment['outcome'] = 'concern'
+            assessment['summary'] = 'The old42 ASTs and121 passing tests remain verified, but the appended tests omit valid existing UNMAPPED-to-REJECTED retirement and therefore miss a real regression.'
+            assessment['evidence_ids'] += ['filed-retirement-regression', 'regression-technical', 'synthetic-retirement-counterexample']
+        if assessment['assessment_id'] == 'tombstone-boundary':
+            assessment['outcome'] = 'concern'
+            assessment['summary'] = 'Samepath REJECTED maintenance and revival refusal work in their tested scopes, but requiring both statuses REJECTED whenever either is REJECTED incorrectly rejects a genuine first rejection.'
+            assessment['details'] = 'Lines760-767 cover old or new REJECTED and require old==new==REJECTED. A genuine existing unmapped owner can first become REJECTED under the prior ordinary category rule without any revival/new owner/path/key change. Such first retirement must not be treated as existing-tombstone maintenance.'
+            assessment['evidence_ids'] += ['filed-retirement-regression', 'original-retirement-bindings', 'regression-technical', 'synthetic-retirement-counterexample']
+    review['assessments'].append({
+        'assessment_id': 'first-retirement-regression', 'area': 'representation', 'topic': 'New rejection versus maintenance of an already rejected owner',
+        'outcome': 'concern', 'target_ids': tids,
+        'evidence_ids': ['filed-retirement-regression', 'original-retirement-bindings', 'regression-technical', 'regression-adversarial', 'synthetic-retirement-counterexample', 'coordinator-failed-cohort'],
+        'summary': 'The exactd691 implementation is unacceptable until a bounded repair restores previously supported genuine unmapped retirement without weakening existing-tombstone guards.',
+        'details': 'Both original actual payloads are W03-authored and are used only to demonstrate code behavior. Full synthetic prepare refusal removes the possibility that the actual record-stage regression is solely caused by unrelated cohort state. No actual full933 campaign prepare/apply is claimed.'})
+    finding = {
+        'finding_id': fid, 'issue_key': 'MIM-NATIVE-1252-UNMAPPED-RETIREMENT-REGRESSION',
+        'category': 'representation', 'severity': 'major', 'status': 'open', 'certainty': 'confirmed',
+        'title': 'First retirement of an existing unmapped owner is blocked by the new rejected-maintenance guard',
+        'description': 'At exactd691, _validate_records lines760-767 enter the REJECTED branch whenever old or new status is REJECTED, then line764 requires both statuses REJECTED. This blocks real edit operations preserving same unmapped owner path, identifier, preferred name and history while changing UNMAPPED to REJECTED. The unchanged parent function accepts both original W03 polymer retirements against the full2956-owner baseline. A separate authenticated synthetic plan passes _load but d691 prepare refuses with Rejected owner requires same-path, same-key rejected maintenance. This is already filed under1252 comment6720840145; no duplicate issue is requested.',
+        'target_ids': tids, 'field_paths': ['_validate_records:760-767', 'tests/test_campaign_owner_apply.py:995-1257 missing valid UNMAPPED-to-REJECTED positive'],
+        'evidence_ids': ['filed-retirement-regression', 'original-retirement-bindings', 'regression-technical', 'regression-adversarial', 'synthetic-retirement-counterexample'],
+        'rule_id': 'issue1252-comment6720840145',
+        'owner_paths': [{'repository': 'CultureBotAI/MediaIngredientMech', 'path': 'src/mediaingredientmech/curate/campaign_owner_apply.py', 'role': 'maintained_operator'},
+                        {'repository': 'CultureBotAI/MediaIngredientMech', 'path': 'tests/test_campaign_owner_apply.py', 'role': 'maintained_regression_tests'}],
+        'external_issues': [issue],
+        'tags': ['already-filed', 'capability-regression', 'd691-not-accepted', 'no-source-self-approval']}
+    review['findings'] = [finding]
+    review['actions'] = [{
+        'action_id': 'restore-bounded-existing-unmapped-retirement',
+        'description': 'Separately authorize and implement a narrow path for genuine same-path existing UNMAPPED-to-REJECTED retirement retaining identity/name, while keeping existing REJECTED maintenance/revival/create/relocation and every ordinary provenance/schema/history/collision guard. Do not expand unrelated status routes.',
+        'finding_ids': [fid], 'target_ids': tids, 'owner_paths': finding['owner_paths'],
+        'acceptance_checks': [
+            'Separate independent review of the exact repaired head; no approval transferred from this rejected d691 review.',
+            'Real prepare, enabled private application and completed-verifier parity for valid samepath unmapped retirement, with original published before/payload bindings and substantive history.',
+            'Negative wrong kind, wrong path, unknown/stale preimage, altered history, identity/name mutation, new rejected create, revival and relocation must retain precise native refusals and no operator writes.',
+            'Retain collision reductions and surviving-pair invariants, existing rejected maintenance, original safety suite and publisher guards.',
+            'Rerun the same full933 diagnostic cohort with no silent removal of the two retirements; any remaining refusal stays explicit. This still does not itself grant complete campaign/application/scientific approval.',
+            'Normalization and scientific assessment of W03-authored source payloads remain distinct and independently reviewed.']}]
+    review['limitations'] += [
+        'This addendum explicitly supersedes the earlier overall pass for the same exactd691 targets. Earlier passing test/probe results remain correct only within their recorded cases and cannot override the known regression.',
+        'I is mutable while a separate fix is developed. No current or future operator bytes were inspected for this addendum; native source rechecks use committed d691 Git blobs only.',
+        'W03 authored the two actual source proposals. Their identity/name/path/history facts are code-counterexample bindings, not independent scientific self-approval.',
+        'The coordinator serialization successors have equal parsed objects in the diagnostic but await independent normalization review; this packet grants none.',
+        'The full933-operation coordinator diagnostic failed in every reordered call. Traversal of the other931 per-record checks is not a successful full prepare or source-application approval.']
+    review['notes'] = [
+        'Known major regression is already filed under1252 comment6720840145. Root controls issue disposition; no duplicate GitHub mutation or fix is performed here.',
+        'Both exact target IDs of the prior native pair are retained. No fabricated prior finding occurrence: v1 had findings:[]; the new regression is distinct from earlier W08 capability findings.',
+        'Earlier positive checks are retained from their exact same-head executed evidence rather than rerun unnecessarily; they cannot override the failed newly required retirement check.',
+        'The earlier native pair and assembly manifest were rehashed and preserved unchanged. Its overall acceptance is superseded, not its empirical bounded positive outputs.']
+    review['related_reviews'] = [{'repository': 'CultureBotAI/MediaIngredientMech', 'review_id': prior['review_id'],
+                                  'relationship': 'supersedes overall technical verdict for the identical two-target set; earlier positive case results preserved as bounded historical evidence'}]
+    review['links'] += [issue]
+    review['tags'] += ['superseding-review', 'known-regression', 'needs-curation']
+    native.validate_review(review)
+    native.assert_current_source(I, review)
+    raw = native._dump_document(review).encode()
+    markdown = native.render_markdown(review).encode()
+    virtual = 'reviews/structured/' + rid + '/review.yaml'
+    native.parse_review_bundle(virtual, raw, markdown)
+    controls = []
+    false_pass = copy.deepcopy(review); false_pass['verdict'] = 'pass_with_limitations'
+    bad_source = copy.deepcopy(review); bad_source['source']['inputs'][0]['sha256'] = '0' * 64
+    missing_target = copy.deepcopy(review); missing_target['scope']['reviewed_target_ids'] = tids[:1]
+    for name, fn in [
+        ('passing_verdict_with_open_major_and_failed_required_check', lambda: native.validate_review(false_pass)),
+        ('wrong_exact_git_source_hash', lambda: native.assert_current_source(I, bad_source)),
+        ('dropped_prior_target_coverage', lambda: native.validate_review(missing_target)),
+        ('mismatched_rendered_pair', lambda: native.parse_review_bundle(virtual, raw, markdown + b'\nCounterfeit\n'))]:
+        try:
+            fn()
+        except native.ReviewError as error:
+            controls.append({'name': name, 'result': 'REFUSED', 'message': str(error)})
+        else:
+            raise AssertionError('negative metadata control passed: ' + name)
+    save(N / 'review.yaml', raw, raw=True)
+    save(N / 'review.md', markdown, raw=True)
+    save(N / 'metadata-negative-controls.json', {'status': 'PASS_METADATA_ONLY', 'controls': controls})
+    receipt = {
+        'status': 'VALID_NATIVE_METADATA_FOR_NEEDS_CURATION_CODE_REVIEW', 'code_verdict': 'DO_NOT_ACCEPT_EXACT_D691',
+        'reviewer': '/root/boundary_assembly', 'review_id': rid, 'supersedes_review_id': prior['review_id'],
+        'head': review['source']['git_revision'], 'source_state': 'git_commit', 'targets': tids,
+        'yaml_sha256': sha(N / 'review.yaml'), 'markdown_sha256': sha(N / 'review.md'),
+        'source_inputs': len(review['source']['inputs']), 'scientific_review': False,
+        'known_findings': [{'finding_id': fid, 'severity': 'major', 'status': 'open', 'external_issue': issue}],
+        'technical_receipt': {'path': args.technical, 'sha256': sha(tp)}, 'adversarial_receipt': {'path': args.adversarial, 'sha256': sha(ap)},
+        'native_calls': ['load_document', 'validate_review', 'assert_current_source using git_commit only', 'render_markdown', 'parse_review_bundle'],
+        'prior_source_inspection_reused_with_fresh_exact_git_verification': True,
+        'current_or_future_mutable_I_code_read': False, 'metadata_negatives': len(controls),
+        'canonical_saver_called': False, 'private_persistence': True, 'source_or_normalization_approval': False,
+        'full_campaign_prepared': False, 'maintained_application': False}
+    save(N / 'validation.json', receipt)
+    print(json.dumps(receipt, indent=2))
+
+
+if __name__ == '__main__':
+    main()

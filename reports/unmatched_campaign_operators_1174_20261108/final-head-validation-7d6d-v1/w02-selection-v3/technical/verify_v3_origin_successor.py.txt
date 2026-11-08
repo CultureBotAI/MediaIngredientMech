@@ -1,0 +1,273 @@
+"""Independent read-only subset/copy verifier. No archived program is executed."""
+from pathlib import Path
+from datetime import datetime, timezone
+from collections import Counter
+import hashlib
+import json
+import os
+import stat
+import sys
+from guards_snapshot import (GitRead, require, sha, read, relative, no_alias,
+                             regular_snapshot, destination, copy_index, reused_target,
+                             manifest_members)
+from verify_addendum_v3 import inventory, exact_members, copied_file, closure_rows, check_population
+from verify_directory_membership import directories
+
+T = Path(__file__).resolve().parent
+W = T.parents[2]
+C = W.parents[2]
+K = C / "integration/release-worktree"
+P = C / "preflight/pr1205-evidence-final-selection-v3"
+HEAD = "7d6d44ea132e04709f81ebd9e1577643745110ad"
+SELECTION_SHA = "f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34"
+P1 = C / "preflight/pr1205-evidence-final-selection-v1"
+P2 = C / "preflight/pr1205-evidence-final-selection-v2"
+from v3_guards import union_delta, union_copies, union_destination, OLD_SHA, BASES
+ARCHIVE = "reports/unmatched_campaign_operators_1174_20261108"
+PREVIOUS = {
+    "1f14ef2e3ee950fdf3c6b7fe8e8605d4c129aad9aae8ee10b3783890171dee44":
+        ("0073d442b55bd221f6aa840f5a75bffe127c695540ea03f760a8e4cacb1e2e3c", 1088, 787, 789),
+    "c57116fd4d9329a3521aed2317efa4e5ca69ec2c44a35bc88a4667e72bf27c49":
+        ("25c10a17b52f3d316cb35f1549fd4bf85450ce6d83f76e8dfde6725116382baa", 451, 286, 288),
+}
+
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode()
+
+
+def source_identity(row):
+    root = Path(row["packet_root"])
+    require(root.is_absolute() and root.is_relative_to(C), "source root outside campaign")
+    no_alias(root)
+    original = root / str(relative(row["packet_relative_path"]))
+    require(str(original) == row["original_path"], "original path differs from root/relative identity")
+    return original
+
+
+def tracked_state(git):
+    require(git.git("rev-parse", "HEAD").decode().strip() == HEAD, "head differs")
+    index = Path(git.git("rev-parse", "--git-path", "index").decode().strip())
+    if not index.is_absolute(): index = K / index
+    index_raw = index.read_bytes()
+    staged = git.git("ls-files", "--stage", "-z")
+    tree = git.tree(HEAD)
+    rows = []
+    for item in staged.split(b"\0"):
+        if not item: continue
+        meta, name = item.split(b"\t", 1)
+        mode, oid, stage = meta.decode().split()
+        path = name.decode()
+        require(stage == "0" and tree.get(path) == (mode, "blob", oid), "index differs from HEAD")
+        physical = K / str(relative(path))
+        if mode == "120000":
+            require(physical.is_symlink(), "tracked symlink changed")
+            no_alias(physical.parent)
+            raw = os.fsencode(os.readlink(physical))
+        else:
+            require(mode in {"100644", "100755"}, "unhandled tracked mode")
+            raw, _ = regular_snapshot(physical)
+            require(bool(physical.stat().st_mode & stat.S_IXUSR) == (mode == "100755"), "tracked mode differs")
+        require(hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest() == oid, "tracked bytes differ")
+        rows.append({"path": path, "mode": mode, "git_blob": oid, "sha256": sha(raw), "bytes": len(raw)})
+    require({r["path"] for r in rows} == set(tree), "tracked membership differs")
+    require(index.read_bytes() == index_raw, "index changed during snapshot")
+    return {"head": HEAD, "index_path": str(index), "index_sha256": sha(index_raw),
+            "staged_sha256": sha(staged), "tracked_count": len(rows),
+            "tracked_rows_sha256": sha(canonical(rows)), "rows": rows}
+
+
+def existing_reuse(row, actual, receipts):
+    path = row["archive_path"]
+    require(path in actual, "existing-copy target missing")
+    target = actual[path]
+    require((row["sha256"], row["bytes"]) == (target["sha256"], target["bytes"]), "existing-copy target differs")
+    receipt_key = row["verified_copy_receipt"]
+    require(receipt_key in receipts and row["copy_receipt_sha256"] == receipts[receipt_key]["sha256"], "existing-copy receipt differs")
+    require(path in receipts[receipt_key]["paths"], "copy not present in cited receipt")
+    return target
+
+
+def predecessor_manifest_coverage(packet, manifest, entries, omission):
+    members = manifest_members(manifest)
+    require(len(members) == packet["manifest_members"], "portable manifest denominator differs")
+    require(len({m["path"] for m in members}) == len(members), "duplicate portable manifest member")
+    require(omission["packet"] == packet["packet"] and
+            omission.get("original_manifest_exclusions", []) == manifest.get("excluded", []), "omission mapping differs")
+    bypath = {r["original_path"]: r for r in entries}
+    base = Path(packet["portable_manifest"]).parent
+    result = []
+    for member in members:
+        path = str(base / str(relative(member["path"])))
+        require(path in bypath, "portable member missing from selection")
+        row = bypath[path]
+        require(member["sha256"] == row["sha256"], "portable member selected hash differs")
+        require("bytes" not in member or member["bytes"] == row["bytes"], "portable member selected size differs")
+        result.append({"manifest": packet["portable_manifest"], "member": member["path"],
+                       "original_path": path, "sha256": member["sha256"], "disposition": row["disposition"], "status": "PASS"})
+    return result
+
+
+from v3_guards import manifest_coverage
+from manifest_origin_v1 import manifest_context
+
+def run():
+    start = datetime.now(timezone.utc).isoformat()
+    selected_raw, _ = regular_snapshot(P / "SELECTION.json", SELECTION_SHA)
+    selected = json.loads(selected_raw)
+    old_raw, _ = regular_snapshot(P2 / "SELECTION.json", OLD_SHA)
+    old = json.loads(old_raw)
+    delta = union_delta(old, selected)
+    old_paths = {r["archive_path"] for r in old["entries"] if r["disposition"] == "copy_exact_bytes_when_authorized"}
+    require(selected["observed_K_head_at_selection"] == HEAD, "selection head differs")
+    check_population(selected["entries"], {"copy_exact_bytes_when_authorized": 655,
+                     "reference_exact_committed_blob": 28, "reuse_committed_archive": 105,
+                     "reuse_selected_new_archive_bytes": 207, "reuse_existing_copied_archive": 21})
+    git = GitRead(K)
+    before = tracked_state(git)
+    new_base = K / str(relative(selected["archive_base"]))
+    no_alias(new_base)
+    require(not new_base.exists(), "new selection already copied")
+    new_copies = union_copies(old, selected, K)
+    require(sum(r["bytes"] for r in new_copies.values()) == 25737294, "new copy byte count differs")
+    require(sum(r["packet_relative_path"].endswith(".py") for r in new_copies.values()) == 54, "new Python count differs")
+    require({r["sha256"] for r in selected["predecessor_selections"]} == set(PREVIOUS), "predecessor selection set differs")
+    all_actual = {}; prior_copies = {}; prior_sets = []; receipts = {}; inventories = []
+    for predecessor in selected["predecessor_selections"]:
+        receipt_sha, refs, originals, total = PREVIOUS[predecessor["sha256"]]
+        require(predecessor["copy_receipt_sha256"] == receipt_sha, "copy receipt pin differs")
+        raw, _ = regular_snapshot(Path(predecessor["selection"]), predecessor["sha256"])
+        selection = json.loads(raw)
+        receipt_raw, _ = regular_snapshot(Path(predecessor["copy_receipt"]), receipt_sha)
+        receipt = json.loads(receipt_raw)
+        require(receipt["selection_sha256"] == predecessor["sha256"] and len(selection["entries"]) == refs, "prior identity/count differs")
+        copies = {r["archive_path"]: r for r in selection["entries"] if r["disposition"] == "copy_exact_bytes_when_authorized"}
+        actual = {r["path"]: r for r in receipt["copied"]}
+        require(len(copies) == originals and len(actual) == len(receipt["copied"]) == total, "prior copy count differs")
+        base = selection["archive_base"]
+        descriptors = {base + "/ARCHIVE-SELECTION.json", base + "/ARCHIVE-README.md"}
+        exact_members(actual, set(copies) | descriptors)
+        physical = inventory(K / base, K)
+        exact_members(physical, actual)
+        dirs = directories(K / base, {str(Path(p).relative_to(base)) for p in actual})
+        for path, row in actual.items():
+            _, fact = regular_snapshot(physical[path], row["sha256"], row["bytes"])
+            if path in copies:
+                require((row["sha256"], row["bytes"]) == (copies[path]["sha256"], copies[path]["bytes"]), "prior copied declaration differs")
+            inventories.append({"path": path, **fact, "status": "PASS"})
+        regular_snapshot(K / base / "ARCHIVE-SELECTION.json", predecessor["sha256"], len(raw))
+        require(not set(all_actual) & set(actual), "prior copy overlap")
+        all_actual.update(actual); prior_copies.update(copies)
+        receipts[predecessor["copy_receipt"]] = {"sha256": receipt_sha, "paths": set(actual)}
+        prior_sets.append({"selection": selection, "sha256": predecessor["sha256"], "directory_members": dirs,
+                           "receipt": predecessor["copy_receipt"], "receipt_sha256": receipt_sha})
+    require(len(all_actual) == 1077 and len(prior_copies) == 1073, "combined old copy count differs")
+    require(not set(all_actual) & set(new_copies), "new/prior destination overlap")
+    row_checks = []; source_inputs = []
+    for label, selection in [("prior-" + r["sha256"][:8], r["selection"]) for r in prior_sets] + [("new", selected)]:
+        for index, row in enumerate(selection["entries"]):
+            original = source_identity(row)
+            raw, fact = regular_snapshot(original, row["sha256"], row["bytes"])
+            require(fact["inode"] == row["inode"] and fact["link_count"] == row["link_count"], "source inode/link drift")
+            source_inputs.append({"path": str(original), **fact})
+            disposition = row["disposition"]
+            if disposition in {"reference_exact_committed_blob", "reuse_committed_archive"}:
+                target_raw, target = git.check(row["target"])
+                require(target_raw == raw, "source/Git exact bytes differ")
+                if disposition == "reuse_committed_archive":
+                    require(row["target"]["path"].startswith(ARCHIVE + "/"), "committed reuse outside archive")
+                    regular_snapshot(K / row["target"]["path"], row["sha256"], row["bytes"])
+            else:
+                path = row["archive_path"]
+                if label == "new" and disposition in {"copy_exact_bytes_when_authorized", "reuse_selected_new_archive_bytes"}:
+                    reused_target(row, new_copies)
+                    union_destination(path, old_paths, K)
+                    require(not (K / path).exists(), "new copy target exists")
+                    target = {"archive_path": path, "state": "proposed_absent", "selected_copy_original": new_copies[path]["original_path"]}
+                else:
+                    if label == "new": existing_reuse(row, all_actual, receipts)
+                    else: reused_target(row, prior_copies)
+                    target = {"archive_path": path, "state": "actual_copy",
+                              **copied_file(original, K / path, row["sha256"], row["bytes"])}
+            row_checks.append({"set": label, "index": index, "packet": row["packet"],
+                               "original_path": str(original), "packet_relative_path": row["packet_relative_path"],
+                               **fact, "disposition": disposition, "target": target, "status": "PASS"})
+    prior_refs = read(C / "preflight/pr1205-evidence-archive-selection-v2/GIT-REFERENCES.json")["archive_content_map"]
+    require(len(prior_refs) == 310, "legacy archive count differs")
+    legacy = []
+    for ref in prior_refs:
+        raw, checked = git.check(ref)
+        current, _ = regular_snapshot(K / ref["path"], ref["sha256"], ref["bytes"])
+        require(raw == current, "legacy archive changed")
+        legacy.append(checked)
+    allowed_python = {r["path"] for r in legacy if Path(r["path"]).suffix == ".py"}
+    require(len(allowed_python) == 116, "legacy Python path population differs")
+    exact_members(inventory(K / ARCHIVE, K, allowed_python), set(all_actual) | {r["path"] for r in legacy})
+    closure = read(C / "preflight/pr1205-evidence-archive-addendum-v1/EIGHT-PENDING-ORIGINALS-CLOSURE.json")
+    ledger_raw, _ = regular_snapshot(Path(closure["original_ledger"]), closure["original_sha256"])
+    addendum = next(r["selection"] for r in prior_sets if r["sha256"].startswith("c571"))
+    closed = closure_rows(closure, json.loads(ledger_raw), addendum["entries"])
+    for row in closed:
+        matched = next(r for r in row_checks if r["set"].startswith("prior-c571") and r["original_path"] == row["path"])
+        row["actual_current_target"] = matched["target"]
+    packets = read(P / "PACKETS.json"); omissions = read(P / "OMISSIONS.json")
+    require(len(packets) == 13 and len(omissions) == 14, "packet/omission count differs")
+    by_omission = {r["packet"]: r for r in omissions}
+    require(set(by_omission) == {r["packet"] for r in packets} | {"root_issue_batches"}, "omission packet mapping differs")
+    portable = []
+    for packet in packets:
+        if packet.get("portable_manifest") or packet.get("manifest"):
+            mp = packet.get("portable_manifest", packet.get("manifest"))
+            mh = packet.get("portable_manifest_sha256", packet.get("manifest_sha256"))
+            raw, _ = regular_snapshot(Path(mp), mh)
+            portable.extend(manifest_coverage(packet, json.loads(raw), selected["entries"], by_omission[packet["packet"]]))
+    require(len(portable) == 596, "complete portable member count differs")
+    bypath = {r["original_path"]: r for r in selected["entries"]}
+    nested = []; manifest_origin_bindings = []
+    for row in selected["entries"]:
+        path = Path(row["original_path"])
+        if "MANIFEST" not in path.name or path.suffix != ".json": continue
+        member_base, origin_binding = manifest_context(row, C)
+        manifest_origin_bindings.append(origin_binding)
+        for member in manifest_members(read(path)):
+            if not isinstance(member, dict) or not isinstance(member.get("path"), str) or not isinstance(member.get("sha256"), str): continue
+            target = str(member_base / str(relative(member["path"])))
+            selected_row = bypath.get(target)
+            nested.append({"manifest": str(path), "manifest_sha256": row["sha256"], "member": member["path"],
+                           "member_base": str(member_base), "manifest_origin_basis": origin_binding["basis"],
+                           "declared_sha256": member["sha256"], "selected_original": target if selected_row else None,
+                           "selected_sha256": selected_row["sha256"] if selected_row else None,
+                           "mapping": "selected_exact" if selected_row and selected_row["sha256"] == member["sha256"] else
+                                      "selected_hash_mismatch" if selected_row else "retained_original_manifest_member_not_selected_at_this_relative_path"})
+    require(not any(r["mapping"] == "selected_hash_mismatch" for r in nested), "selected nested manifest hash mismatch")
+    extra_git = []
+    for ref in read(P1 / "GIT-REFERENCES.json"):
+        _, checked = git.check(ref); extra_git.append(checked)
+    wrappers = []
+    for row in read(P / "MANIFEST.json")["files"]:
+        _, fact = regular_snapshot(P / row["path"], row["sha256"], row.get("bytes"))
+        wrappers.append({"path": str(P / row["path"]), **fact})
+    for row in source_inputs:
+        regular_snapshot(Path(row["path"]), row["sha256"], row["bytes"])
+    for row in inventories + legacy:
+        regular_snapshot(K / row["path"], row["sha256"], row["bytes"])
+    after = tracked_state(git)
+    require(before == after, "tracked/index change during review")
+    require(all(not (K / base).exists() for base in BASES), "new archive appeared during review")
+    return {"status": "PASS_WITH_SCOPE_LIMITATIONS", "reviewer": "/root/research_b", "started_at": start,
+            "completed_at": datetime.now(timezone.utc).isoformat(), "selection_sha256": SELECTION_SHA,
+            "head": HEAD, "new_dispositions": dict(Counter(r["disposition"] for r in selected["entries"])),
+            "union_delta_entries": delta, "old691_preserved_exact_order_and_JSON_types": True, "new_copy_bytes": 25737294, "new_python_py_txt": 54, "new_destination_absent_before_after": True,
+            "row_checks": row_checks, "actual_copy_inventory": inventories,
+            "actual_directory_inventories": [{"selection_sha256": r["sha256"], "directories": r["directory_members"]} for r in prior_sets],
+            "legacy_archive_inventory": legacy, "legacy_python_preserved": sorted(allowed_python),
+            "old_negative_object_current_closure": closed, "portable_manifest_joins": portable,
+            "all_selected_manifest_member_mappings": nested, "manifest_origin_bindings": manifest_origin_bindings, "omission_mappings": omissions,
+            "extra_git_references": extra_git, "git_checks": git.checked, "proposal_wrapper_members": wrappers,
+            "tracked_before": before, "tracked_after": {k: v for k, v in after.items() if k != "rows"},
+            "scope": "Exact byte/path/manifest mapping review only; provisional union with old691 unchanged; no source/operator/code/final-head approval."}
+
+
+if __name__ == "__main__":
+    json.dump(run(), sys.stdout, indent=2, ensure_ascii=False)
+    print()

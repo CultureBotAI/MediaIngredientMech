@@ -1,0 +1,1253 @@
+........................................................................ [ 21%]
+........................................................................ [ 42%]
+........................................................................ [ 64%]
+........................................................................ [ 85%]
+........................................FFFFFFFFF                        [100%]
+=================================== FAILURES ===================================
+_ test_real_demotion_publication_refuses_stale_or_incomplete_input[missing-slot] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication0')
+fault = 'missing-slot'
+
+    @pytest.mark.parametrize(
+        "fault",
+        [
+            "missing-slot",
+            "candidate-substitution",
+            "wrong-revision",
+            "retired-source",
+            "source-payload",
+        ],
+    )
+    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication0')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+_ test_real_demotion_publication_refuses_stale_or_incomplete_input[candidate-substitution] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication1')
+fault = 'candidate-substitution'
+
+    @pytest.mark.parametrize(
+        "fault",
+        [
+            "missing-slot",
+            "candidate-substitution",
+            "wrong-revision",
+            "retired-source",
+            "source-payload",
+        ],
+    )
+    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication1')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication1/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+_ test_real_demotion_publication_refuses_stale_or_incomplete_input[wrong-revision] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication2')
+fault = 'wrong-revision'
+
+    @pytest.mark.parametrize(
+        "fault",
+        [
+            "missing-slot",
+            "candidate-substitution",
+            "wrong-revision",
+            "retired-source",
+            "source-payload",
+        ],
+    )
+    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication2')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication2/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+_ test_real_demotion_publication_refuses_stale_or_incomplete_input[retired-source] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication3')
+fault = 'retired-source'
+
+    @pytest.mark.parametrize(
+        "fault",
+        [
+            "missing-slot",
+            "candidate-substitution",
+            "wrong-revision",
+            "retired-source",
+            "source-payload",
+        ],
+    )
+    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication3')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication3/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+_ test_real_demotion_publication_refuses_stale_or_incomplete_input[source-payload] _
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication4')
+fault = 'source-payload'
+
+    @pytest.mark.parametrize(
+        "fault",
+        [
+            "missing-slot",
+            "candidate-substitution",
+            "wrong-revision",
+            "retired-source",
+            "source-payload",
+        ],
+    )
+    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication4')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication4/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+___________ test_real_demotion_preserves_27_receipts_and_frozen_hold ___________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_preserves_20')
+
+    def test_real_demotion_preserves_27_receipts_and_frozen_hold(tmp_path):
+        configured = os.environ.get("CAMPAIGN_HISTORY_ROOT")
+        if not configured:
+            pytest.skip("CAMPAIGN_HISTORY_ROOT is required for the actual 27-receipt hold integration")
+        historical = Path(configured).resolve()
+        original = native.verify_mapping_chain(historical)
+        assert len(original["receipts"]) == 27
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path, historical)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:388: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_preserves_20')
+historical_root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree')
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_preserves_20/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 0 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=2868; 2868 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+_____ test_real_demotion_late_retired_source_never_emits_success[reserved] _____
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x129a78f30>
+phase = 'reserved'
+
+    @pytest.mark.parametrize("phase", ["reserved", "completion"])
+    def test_real_demotion_late_retired_source_never_emits_success(tmp_path, monkeypatch, phase):
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:484: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire0')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+____ test_real_demotion_late_retired_source_never_emits_success[completion] ____
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12a1b6890>
+phase = 'completion'
+
+    @pytest.mark.parametrize("phase", ["reserved", "completion"])
+    def test_real_demotion_late_retired_source_never_emits_success(tmp_path, monkeypatch, phase):
+>       source, plan, path, destination, _ = prepare_native_case(tmp_path)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:484: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire1')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire1/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+_______________ test_real_source_generation_publication_demotion _______________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_source_generation_pu0')
+
+    def test_real_source_generation_publication_demotion(tmp_path):
+>       source, plan, plan_path, destination, source_proof = prepare_native_case(tmp_path)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:525: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_source_generation_pu0')
+historical_root = None
+
+    def prepare_native_case(root, historical_root=None):
+        claw = pinned_claw()
+        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(
+            root, historical_root
+        )
+        prefix = native.verify_mapping_chain(root)["receipt_inputs"]
+        owner_receipt = root / "source-receipt/application.json"
+        source.owner.apply(
+            source.owner.prepare(root, root / "plan.json", root / "acceptance.json"),
+            owner_receipt.parent,
+            enabled=True,
+        )
+        source_proof = source.owner.verify_completed(root, root / "plan.json", owner_receipt)
+        kg = root / "private-kg"
+        kg.mkdir()
+        source.run_git(kg, "init", "-q")
+        source.run_git(
+            kg,
+            "-c",
+            "user.email=fixture@example.invalid",
+            "-c",
+            "user.name=Fixture",
+            "commit",
+            "--allow-empty",
+            "-qm",
+            "Private empty KG fixture",
+        )
+        output = root / "reports/native"
+        output.mkdir(parents=True)
+        temporary = root / "temporary"
+        temporary.mkdir()
+        paths = {
+            "candidate": output / "candidate.tsv",
+            "sidecar": output / "suppressed.tsv",
+            "manifest": output / "generation.json",
+        }
+        command = [
+            sys.executable,
+            "-B",
+            str(claw / "scripts/build_mim_ingredient_sssom.py"),
+            "--output",
+            str(paths["candidate"]),
+            "--suppressed-aliases-output",
+            str(paths["sidecar"]),
+            "--generation-manifest-output",
+            str(paths["manifest"]),
+            "--prior-stamps-from",
+            str(root / publication.SOURCE),
+        ]
+        environment = {
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "MEDIAINGREDIENTMECH_ROOT": str(root),
+            "KGMICROBE_ROOT": str(kg),
+            "TMPDIR": str(temporary),
+            "PATH": str(Path(sys.executable).parent) + os.pathsep + os.environ.get("PATH", ""),
+        }
+        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)
+        source.put(
+            root,
+            "reports/native/command.json",
+            {
+                "argv": command,
+                "returncode": run.returncode,
+                "environment": {
+                    key: environment[key]
+                    for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT", "TMPDIR")
+                },
+            },
+        )
+        source.put(root, "reports/native/command.log", (run.stdout + run.stderr).encode())
+>       assert run.returncode == 0, run.stdout + run.stderr
+E       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_source_generation_pu0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.
+E         Scanning 1 MIM ingredient YAMLs...
+E           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)
+E         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)
+E         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'
+E         Traceback (most recent call last):
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1601, in <module>
+E             main()
+E             ~~~~^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1396, in main
+E             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,
+E             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              records, owners, residual, kgm_sources, kgm_labels,
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E                              stage, check_inputs, working_copy_input)
+E                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py", line 1547, in _build_candidate
+E             result = publish_candidate_artifacts(
+E                 args.output, proposed, sidecar,
+E             ...<19 lines>...
+E                 sidecar_output=paths[1], manifest_output=paths[2],
+E             )
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py", line 217, in publish_candidate_artifacts
+E             with locker.lock("mediaingredientmech", "build owned-name SSSOM candidate"):
+E                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py", line 141, in __enter__
+E             return next(self.gen)
+E           File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py", line 403, in lock
+E             raise RuntimeError(f"Failed to acquire lock on {resource}")
+E         RuntimeError: Failed to acquire lock on mediaingredientmech
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f"Failed to acquire lock on {resource}")\nRuntimeError: Failed to acquire lock on mediaingredientmech\n').returncode
+
+.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError
+=========================== short test summary info ============================
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[missing-slot]
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[candidate-substitution]
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[wrong-revision]
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[retired-source]
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[source-payload]
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_preserves_27_receipts_and_frozen_hold
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_late_retired_source_never_emits_success[reserved]
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_demotion_late_retired_source_never_emits_success[completion]
+FAILED .temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py::test_real_source_generation_publication_demotion
+9 failed, 328 passed in 191.38s (0:03:11)
+{
+  "exit_code": 1,
+  "started_at": "2026-11-08T11:43:39.409247+00:00",
+  "finished_at": "2026-11-08T11:46:52.628718+00:00",
+  "collected": 337,
+  "passed_calls": 328,
+  "skips": [],
+  "failures": [
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[missing-slot]",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.99403779162094,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication0')\nfault = 'missing-slot'\n\n    @pytest.mark.parametrize(\n        \"fault\",\n        [\n            \"missing-slot\",\n            \"candidate-substitution\",\n            \"wrong-revision\",\n            \"retired-source\",\n            \"source-payload\",\n        ],\n    )\n    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication0')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[candidate-substitution]",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.3478881251066923,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication1')\nfault = 'candidate-substitution'\n\n    @pytest.mark.parametrize(\n        \"fault\",\n        [\n            \"missing-slot\",\n            \"candidate-substitution\",\n            \"wrong-revision\",\n            \"retired-source\",\n            \"source-payload\",\n        ],\n    )\n    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication1')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication1/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[wrong-revision]",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.3750987080857158,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication2')\nfault = 'wrong-revision'\n\n    @pytest.mark.parametrize(\n        \"fault\",\n        [\n            \"missing-slot\",\n            \"candidate-substitution\",\n            \"wrong-revision\",\n            \"retired-source\",\n            \"source-payload\",\n        ],\n    )\n    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication2')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication2/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[retired-source]",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.37575866561383,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication3')\nfault = 'retired-source'\n\n    @pytest.mark.parametrize(\n        \"fault\",\n        [\n            \"missing-slot\",\n            \"candidate-substitution\",\n            \"wrong-revision\",\n            \"retired-source\",\n            \"source-payload\",\n        ],\n    )\n    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication3')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication3/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_publication_refuses_stale_or_incomplete_input[source-payload]",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.4488538750447333,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication4')\nfault = 'source-payload'\n\n    @pytest.mark.parametrize(\n        \"fault\",\n        [\n            \"missing-slot\",\n            \"candidate-substitution\",\n            \"wrong-revision\",\n            \"retired-source\",\n            \"source-payload\",\n        ],\n    )\n    def test_real_demotion_publication_refuses_stale_or_incomplete_input(tmp_path, fault):\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:344: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication4')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_publication4/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_preserves_27_receipts_and_frozen_hold",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 4.2195042092353106,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_preserves_20')\n\n    def test_real_demotion_preserves_27_receipts_and_frozen_hold(tmp_path):\n        configured = os.environ.get(\"CAMPAIGN_HISTORY_ROOT\")\n        if not configured:\n            pytest.skip(\"CAMPAIGN_HISTORY_ROOT is required for the actual 27-receipt hold integration\")\n        historical = Path(configured).resolve()\n        original = native.verify_mapping_chain(historical)\n        assert len(original[\"receipts\"]) == 27\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path, historical)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:388: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_preserves_20')\nhistorical_root = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree')\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_preserves_20/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 0 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=2868; 2868 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_late_retired_source_never_emits_success[reserved]",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.32427716627717,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire0')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x129a78f30>\nphase = 'reserved'\n\n    @pytest.mark.parametrize(\"phase\", [\"reserved\", \"completion\"])\n    def test_real_demotion_late_retired_source_never_emits_success(tmp_path, monkeypatch, phase):\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:484: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire0')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_demotion_late_retired_source_never_emits_success[completion]",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.3247387907467782,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire1')\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x12a1b6890>\nphase = 'completion'\n\n    @pytest.mark.parametrize(\"phase\", [\"reserved\", \"completion\"])\n    def test_real_demotion_late_retired_source_never_emits_success(tmp_path, monkeypatch, phase):\n>       source, plan, path, destination, _ = prepare_native_case(tmp_path)\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:484: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire1')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_demotion_late_retire1/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    },
+    {
+      "nodeid": "tests/test_campaign_demotion_integration.py::test_real_source_generation_publication_demotion",
+      "when": "call",
+      "outcome": "failed",
+      "duration": 2.3607772919349372,
+      "longrepr": "tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_source_generation_pu0')\n\n    def test_real_source_generation_publication_demotion(tmp_path):\n>       source, plan, plan_path, destination, source_proof = prepare_native_case(tmp_path)\n                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:525: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nroot = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_source_generation_pu0')\nhistorical_root = None\n\n    def prepare_native_case(root, historical_root=None):\n        claw = pinned_claw()\n        source, mapping, source_plan, before, policy, sidecar, baseline = make_source_case(\n            root, historical_root\n        )\n        prefix = native.verify_mapping_chain(root)[\"receipt_inputs\"]\n        owner_receipt = root / \"source-receipt/application.json\"\n        source.owner.apply(\n            source.owner.prepare(root, root / \"plan.json\", root / \"acceptance.json\"),\n            owner_receipt.parent,\n            enabled=True,\n        )\n        source_proof = source.owner.verify_completed(root, root / \"plan.json\", owner_receipt)\n        kg = root / \"private-kg\"\n        kg.mkdir()\n        source.run_git(kg, \"init\", \"-q\")\n        source.run_git(\n            kg,\n            \"-c\",\n            \"user.email=fixture@example.invalid\",\n            \"-c\",\n            \"user.name=Fixture\",\n            \"commit\",\n            \"--allow-empty\",\n            \"-qm\",\n            \"Private empty KG fixture\",\n        )\n        output = root / \"reports/native\"\n        output.mkdir(parents=True)\n        temporary = root / \"temporary\"\n        temporary.mkdir()\n        paths = {\n            \"candidate\": output / \"candidate.tsv\",\n            \"sidecar\": output / \"suppressed.tsv\",\n            \"manifest\": output / \"generation.json\",\n        }\n        command = [\n            sys.executable,\n            \"-B\",\n            str(claw / \"scripts/build_mim_ingredient_sssom.py\"),\n            \"--output\",\n            str(paths[\"candidate\"]),\n            \"--suppressed-aliases-output\",\n            str(paths[\"sidecar\"]),\n            \"--generation-manifest-output\",\n            str(paths[\"manifest\"]),\n            \"--prior-stamps-from\",\n            str(root / publication.SOURCE),\n        ]\n        environment = {\n            **os.environ,\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"MEDIAINGREDIENTMECH_ROOT\": str(root),\n            \"KGMICROBE_ROOT\": str(kg),\n            \"TMPDIR\": str(temporary),\n            \"PATH\": str(Path(sys.executable).parent) + os.pathsep + os.environ.get(\"PATH\", \"\"),\n        }\n        run = subprocess.run(command, cwd=root, env=environment, capture_output=True, text=True)\n        source.put(\n            root,\n            \"reports/native/command.json\",\n            {\n                \"argv\": command,\n                \"returncode\": run.returncode,\n                \"environment\": {\n                    key: environment[key]\n                    for key in (\"MEDIAINGREDIENTMECH_ROOT\", \"KGMICROBE_ROOT\", \"TMPDIR\")\n                },\n            },\n        )\n        source.put(root, \"reports/native/command.log\", (run.stdout + run.stderr).encode())\n>       assert run.returncode == 0, run.stdout + run.stderr\nE       AssertionError: WARNING: kg-microbe unified mapping not found (/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/focused/fixtures/test_real_source_generation_pu0/private-kg/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz); building SSSOM with NO kg-microbe cross-reference enrichment. Regenerate it in kg-microbe with `poetry run python scripts/consolidate_chemical_mappings.py`.\nE         Scanning 1 MIM ingredient YAMLs...\nE           (no label loader for kgmicrobe.ingredient:; falling back to MIM-stored labels)\nE         Replayed 1 validation_method stamps (prior sources: ingredient_mappings.sssom.tsv=3; 3 unique)\nE         Failed to write lock file /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/mediaingredientmech.lock: [Errno 1] Operation not permitted: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/workspace/locks/.lock-hierarchy.guard'\nE         Traceback (most recent call last):\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1601, in <module>\nE             main()\nE             ~~~~^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1396, in main\nE             _build_candidate(args, paths, before, stamp_sources, snapshot, frozen_paths,\nE             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              records, owners, residual, kgm_sources, kgm_labels,\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE                              stage, check_inputs, working_copy_input)\nE                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py\", line 1547, in _build_candidate\nE             result = publish_candidate_artifacts(\nE                 args.output, proposed, sidecar,\nE             ...<19 lines>...\nE                 sidecar_output=paths[1], manifest_output=paths[2],\nE             )\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/src/kg_microbe_utils/sssom_artifacts.py\", line 217, in publish_candidate_artifacts\nE             with locker.lock(\"mediaingredientmech\", \"build owned-name SSSOM candidate\"):\nE                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           File \"/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/contextlib.py\", line 141, in __enter__\nE             return next(self.gen)\nE           File \"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/plugins/lock_manager.py\", line 403, in lock\nE             raise RuntimeError(f\"Failed to acquire lock on {resource}\")\nE         RuntimeError: Failed to acquire lock on mediaingredientmech\nE         \nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/... RuntimeError(f\"Failed to acquire lock on {resource}\")\\nRuntimeError: Failed to acquire lock on mediaingredientmech\\n').returncode\n\n.temp/combined-16c-independent-v1/frozen/repo/tests/test_campaign_demotion_integration.py:270: AssertionError"
+    }
+  ],
+  "integration_executed": 9,
+  "integration_passed": 0
+}
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w08/worktree/.temp/combined-16c-independent-v1/provenance/run_focused.py", line 99, in <module>
+    assert code == 0 and summary['collected'] == 337 and summary['passed_calls'] == 337
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

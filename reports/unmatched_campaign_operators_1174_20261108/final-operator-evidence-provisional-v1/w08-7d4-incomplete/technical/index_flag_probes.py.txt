@@ -1,0 +1,19 @@
+"""Actual private Git flag probes; native functions remain intact."""
+from pathlib import Path
+import hashlib,importlib.util,json,subprocess,sys
+W=Path.cwd();P=W/'.temp/final-7d4db26-independent-v1';F=P/'frozen/repo';O=P/'technical';sys.path[:0]=[str(F/'src'),str(F)]
+from mediaingredientmech.curate import campaign_owner_apply as owner
+s=importlib.util.spec_from_file_location('index_flag_helpers',F/'tests/test_campaign_owner_apply.py');f=importlib.util.module_from_spec(s);s.loader.exec_module(f)
+def h(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+results=[]
+for mode in ['ordinary_working_drift','assume_unchanged','skip_worktree']:
+ root=O/'flag-fixtures'/mode;root.mkdir(parents=True);plan=f.head_lifecycle_case(root,'edit');name='notes/unrelated-tracked.txt';f.put(root,name,b'authentic unrelated baseline\n');f.run_git(root,'add','--',name);f.run_git(root,'-c','user.email=fixture@example.invalid','-c','user.name=Fixture','commit','-qm','private unrelated baseline');plan['baseline_commit']=f.run_git(root,'rev-parse','HEAD');f.repin(root,plan);ready=f.prepare(root);before=owner.hashes(owner.inventory(root));phase='apply';error=None;proof=None
+ if mode!='ordinary_working_drift':f.run_git(root,'--literal-pathspecs','update-index','--'+mode.replace('_','-'),'--',name)
+ (root/name).write_bytes(b'NOT authorized working change\n')
+ try:owner.apply(ready,root/'receipt',enabled=True);phase='verify_completed';proof=owner.verify_completed(root,root/'plan.json',root/'receipt/application.json');phase='complete'
+ except Exception as exc:error={'type':type(exc).__name__,'message':str(exc)}
+ p=root/'receipt/application.json';r=json.loads(p.read_bytes()) if p.exists() else None
+ baseline=owner.git(root,'show',plan['baseline_commit']+':'+name);index=owner.git(root,'show',':'+name)
+ row={'mode':mode,'fixture':str(root.relative_to(W)),'source_sha256':h(Path(owner.__file__)),'phase':phase,'error':error,'receipt_state':r.get('state') if r else None,'receipt_sha256':h(p) if p.exists() else None,'completed':proof is not None,'baseline':plan['baseline_commit'],'head':f.run_git(root,'rev-parse','HEAD'),'path':name,'baseline_sha256':hashlib.sha256(baseline).hexdigest(),'index_sha256':hashlib.sha256(index).hexdigest(),'working_sha256':h(root/name),'working_diff':owner.git(root,'diff','--name-only','-z',plan['baseline_commit'],'--').decode(),'cached_diff':owner.git(root,'diff','--cached','--no-renames','--ita-visible-in-index','--name-only','-z',plan['baseline_commit'],'--').decode(),'actual_flags':owner.git(root,'ls-files','-v','--',name).decode(),'before_inventory':before,'after_inventory':owner.hashes(owner.inventory(root)),'native_function_replacements':False}
+ if mode=='ordinary_working_drift':assert error and p.exists() is False and before==row['after_inventory']
+ results.append(row);(O/'index-flag-results.json').write_text(json.dumps({'reviewed_head':'7d4db26a2ce75e9942badaca954bb8e8f821c75c','script_sha256':h(Path(__file__)),'results':results},indent=2)+'\n');print(json.dumps({k:row[k] for k in ['mode','phase','error','receipt_state','completed','actual_flags']}),flush=True)

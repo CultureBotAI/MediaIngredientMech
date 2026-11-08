@@ -1,0 +1,58 @@
+identifier: UNMAPPED_0493
+preferred_term: poly-ß-hydroxybutyric acid
+synonyms:
+- synonym_text: poly-ß-hydroxybutyric acid
+  synonym_type: REJECTED_LABEL
+  source: mim-queue
+mapping_status: REJECTED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2121); no CAS-RN or CHEBI/NCIT match.
+    Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:14:56Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_POLYMER
+  changes: Classified as a single polymer ingredient and left unmapped because the surface form lacks
+    CAS/stereochemistry support for safe merge to the existing poly(3-hydroxybutyric acid) mapped record.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Poly-ß-hydroxybutyric_acid-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report
+    verdict: **Recommended interpretation:** an ambiguous legacy polymer label, most likely intended to
+    denote **polyhydroxybutyrate (PHB), P(3HB), or poly(3-hydroxybutyrate)**. Reviews use PHB, P(3HB),
+    and poly(3-hydroxybutyrate) for a bacterial intracellular storage homopolyester and distinguish it
+    from the broader polyhydroxyalkanoate family. However, the submitted form does not explicitly state
+    the hydroxy No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from
+    this run. Edison''s recommendations are deliberately conservative, and a plausible identifier promoted
+    by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is
+    a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-11-08T05:29:01.443067+00:00'
+  curator: all-unmatched-worker-03/chemicals
+  action: SOURCE_REVIEW_PROPOSAL
+  changes: 'Retire generic beta-polymer duplicate UNMAPPED_0493 atomically with CHEBI:53389 owner alias
+    update; retain distinction from R-specific polymer. Source binding: frozen preliminary-v5/shards/shard-03.json
+    cases[173] case_id=KG_CASE:bccd56e067ebcf9a8203e72c38a9247b961bfe2e0e5a701faf868bc59c71aeba; source=mediadive;
+    source_case_id=mediadive.ingredient:2121; Primary evidence: https://mediadive.dsmz.de/finder/poly-%C3%9F-hydroxybutyric+acid///;
+    Primary evidence: https://mediadive.dsmz.de/ingredients/2121; Primary evidence: https://mediadive.dsmz.de/medium/474;
+    Primary evidence: https://mediadive.dsmz.de/solution-finder/poly-%C3%9F-hydroxybutyric+acid///?mainsol=1&optional=1;
+    Primary evidence: https://mediadive.dsmz.de/solutions/5634; Primary evidence: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium474.pdf'
+  previous_status: UNMAPPED
+  new_status: REJECTED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2121); no CAS-RN or CHEBI/NCIT match. Curator
+  review needed. Reviewed on 2026-05-11 as a PHB-like polymer surface form; not merged without exact CAS/stereochemistry
+  evidence. Proposed duplicate retirement is atomic with canonical target update; preserve source provenance.
+ingredient_type: SINGLE_INGREDIENT
+representative: CHEBI:53389

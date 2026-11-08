@@ -1,0 +1,138 @@
+import collections,copy,datetime,hashlib,importlib.util,json,os,subprocess
+from pathlib import Path
+R=Path.cwd();P=R/'.temp/final-21061-independent-v1';O=R/'.temp/combined-16c-independent-v1';F=P/'frozen/repo';N=P/'native'
+REV='21061aa532401398db70c59a596debf330f70744';REPO='CultureBotAI/MediaIngredientMech'
+def sha(p):
+ with p.open('rb') as s:return hashlib.file_digest(s,'sha256').hexdigest()
+def read(p):return json.loads(p.read_text())
+def save(p,obj):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as s:json.dump(obj,s,indent=2,ensure_ascii=False);s.write('\n')
+def write(p,text):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as s:s.write(text)
+run=read(P/'focused/result.json');collected=read(P/'focused/collected.json');reports=read(P/'focused/test-reports.json')
+counts=collections.Counter(x.split('::')[0].split('/')[-1] for x in collected)
+assert counts=={'test_campaign_owner_apply.py':301,'test_campaign_publication.py':142,'test_campaign_demotion_integration.py':15}
+assert run['exit_code']==0 and run['passed_calls']==run['collected']==458 and run['integration_executed']==run['integration_passed']==15
+assert not run['skips'] and not run['failures']
+commands=sorted(d/'reports/native/command.json' for d in (P/'focused/fixtures').iterdir() if not d.is_symlink() and (d/'reports/native/command.json').is_file());assert len(commands)==15
+actual=[]
+for c in commands:
+ d=read(c);assert d['returncode']==0
+ root=c.parents[2];application=root/'source-receipt/application.json';assert read(application)['state']=='complete'
+ assert Path(d['environment']['OPENCLAW_WORKSPACE']).is_relative_to(root)
+ actual.append({'fixture':str(root),'command_sha256':sha(c),'generation_sha256':sha(c.with_name('generation.json')),'source_receipt_sha256':sha(application),'returncode':d['returncode'],'workspace':d['environment']['OPENCLAW_WORKSPACE']})
+summary={'reviewed_head':REV,'status':'PASS_FOCUSED_TESTS','collected':counts,'passed':458,'failed':0,'skipped':0,'real_native_cases':15,'single_combined_run':True,'run':{'path':'focused/result.json','sha256':sha(P/'focused/result.json')},'command':{'path':'focused/command.json','sha256':sha(P/'focused/command.json')},'actual_native_commands':actual,'boundaries':'Private mechanical fixtures; no campaign scientific/application acceptance. Fault injection disclosed in tests and separate probes.'}
+save(P/'focused-summary.json',summary)
+src=read(P/'FINDING-W08-21061-SRC-001.json');pub=read(P/'skeptic/FINDING-W08-21061-PUB-001-v2.json')
+write(P/'ASSESSMENT.md',f'''# Independent code review of exact 21061aa
+
+Verdict: **needs_curation**. The complete source operator, publisher and three focused test modules at `{REV}` were reviewed. The literal Git-path defect #1255 is corrected at these bytes. Issue #1256 remains partly corrected with two independently confirmed residuals, filed here for coordinator deduplication before any author repair. No reviewed file was changed.
+
+`W08-21061-SRC-001` retains native predecessor `W08-16C-CODE-002` and its issue key. The live operator compares the working tree against the accepted commit, but omits the Git index. In two actual private fixtures, a staged unrelated MAPPING_SEMANTICS.md change was hidden by restoring its working bytes. Both initial and post-prepare cases passed actual prepare/apply/verify_completed with complete non-recovery receipts and owner retirement. The index still held different contract bytes. A clean positive completed; ordinary staged working-byte drift refused before writes/receipt. Technical and skeptical agents independently inspected real Git index objects and completed proof. Fix scope: include the cached/index delta with literal paths at existing live boundaries and explicitly retain allowed-path semantics. Do not impose an eternal HEAD lock on historical verification.
+
+`W08-21061-PUB-001` is the narrower live publisher residual from the filed #1256 addendum. Its final recheck calls capture.verify (including HEAD callback), then replays the substantial genuine source proof and other checks. A private commit immediately after that real proof returned in the last recheck escaped the earlier HEAD check: publish returned complete and native/publication success receipts remained. This negative used actual source application and real pinned Claw76c generation; a disclosed wrapper schedules a real commit and returns the unchanged real proof. Root independently read the complete script, final code order, command/generation and receipt bytes. The bounded remedy is a live HEAD check after proof and other final checks before successful completion. Historical validation must remain exempt and exact proof/content guards must remain intact.
+
+Positive boundaries remain supported. Actual Poly-ß, Unicode, newline, tab, quote and carriage-return cases now use literal NUL-delimited Git paths. Existing late commits and ordinary staged/unstaged drift refuse before owned writes when present early; midflight failures retain honest recovery evidence. A historical source receipt still verifies after legitimate later commits and refuses changed owner or receipt proof. Publisher ordinary tracked, uncommitted derived synchronization completes; later historical validation verifies exact bytes, while altered current owner proof refuses.
+
+The explicit demotion remains a closed integer-version reviewed tuple for the exact operation ID, source and destination paths, both payload hashes and genuine published origins. A genuine mapped MAPPED beforeimage must become unmapped AMBIGUOUS at the same basename with no ontology mapping. Exclusive outputs, backups, retirement, complete current inventories and refusal of either prior owner chain remain enforced. No generic chain migration is added. Publication removes every old subject slot, requires zero native ontology/registry rows, and preserves all 27 historical receipt bytes and held position translation. These mechanical statements do not decide Angustmycin science or approve mapping/roles. Inherited collision and REJECTED maintenance controls remain constrained to exact existing boundaries; no new owner collision, activation, path/promotion, tombstone or changed-identity bypass is authorized.
+
+The independent combined run completed **458/458** cases: **301 source +142 publisher +15 real native integration**, zero failed/skipped. The actual executed files are the frozen exact21061 archive, Python3.13.2, Claw `{ '76c1ebeea3fc7f80bf1abe044688f298f390cfac' }` and J `eac469f1d94f06bab0714fff891abf64b8ebdbe9`. Each native command exited zero with its own absolute private OPENCLAW_WORKSPACE. The author source441 run used the old publisher and is not substituted; author157 results also remain separate. Additional reviewer execution:29 technical controls (19 previous scenarios plus10 new boundary controls),31 publisher-stage probes,4 root staged-index scenarios, and2 skeptical full native pipelines. Independent readbacks do not count as new full applications.
+
+All original16c source-test bytes (80,127) are retained. All23 #1255 parameter inputs remain; the two modified negatives demand earlier prewrite refusal/no receipt. The 75 original source-test functions/154 assertions, 51 old publisher-test functions/101 assertions and original integration assertions are retained in the exact comparison receipts. The publisher fixture now uses a genuine Git baseline; the native integration fixture uses private lock storage. Test-only synthetic accepted reviews are disclosed and confer no scientific authority. Optional CI without external CLAW_ROOT skips native integration, and the historical hold test also requires CAMPAIGN_HISTORY_ROOT; this run supplied both and skipped none.
+
+Actual participants: worker08:/root coordinated and executed the combined suite/root probes; /root/inorganics independently reviewed the source lifecycle and all source tests; /root/organics independently reviewed the full publisher/test scope, unchanged-body bridge and actual native interface; /root/vitamins verified lineage and all15 case contracts, with a separate final assembly observation. Unchanged function bodies are bound to the exact sealed16c full-content review; every changed/new body and test was read. All earlier reviewer identities/severities, failed attempts and findings remain immutable. Author manifests31/85, root five-file commit receipt, prior49,189 regular members/135 symlinks/12 hardlink paths and prior design226 members were rehashed. No later code is approved by inference.
+
+The new native structured pair retains five stable targets, exact committed source provenance and the prior native finding closure. #1255 is a scoped resolved observation; #1256 source remains open with partial-fix reason. Publisher addendum has public/file lineage, not an invented historical native ID. Root alone files/deduplicates and authorizes fixes. Review-document validation does not override these major failures or establish whole-plan, candidate science, owner application, role or export approval. No maintained source application, shared-input change, code/gate/pin edit, Git/GitHub mutation, paid provider, additional external session or KG rebuild occurred.
+''')
+assert sha(R/'scripts/record_review.py')==sha(F/'scripts/record_review.py')
+spec=importlib.util.spec_from_file_location('native_record_review',F/'scripts/record_review.py');rr=importlib.util.module_from_spec(spec);spec.loader.exec_module(rr)
+oldrid='20261108T115104Z-w08-combined-16c-independent'
+oldyaml=O/f'native/reviews/structured/{oldrid}/review.yaml'
+oldreview=rr.parse_review_bundle(str(oldyaml.relative_to(O/'native')),oldyaml.read_bytes(),oldyaml.with_suffix('.md').read_bytes())
+targets=copy.deepcopy(oldreview['targets'])
+for t in targets:
+ t['selector']='Git commit '+REV;t['ownership_note']='Maintained code/test owned by coordinator/code author. Stable target identifiers retain native predecessor lineage. No scientific/application approval.'
+ids=[t['target_id'] for t in targets];source=copy.deepcopy(oldreview['source']);source['git_revision']=REV
+for inp in source['inputs']:
+ p=F/inp['path'];raw=subprocess.check_output(['git','show',REV+':'+inp['path']]);assert raw==p.read_bytes();inp['sha256']=sha(p)
+rr.assert_current_source(R,{'repository':REPO,'source':source});save(P/'committed-source-bindings.json',source)
+priorrefs=[]
+for p in sorted((O/'native/reviews/structured').glob('*/review.*')):
+ out=N/p.relative_to(O/'native');out.parent.mkdir(parents=True,exist_ok=True)
+ with out.open('xb') as s:s.write(p.read_bytes())
+ priorrefs.append({'original_path':str(p),'snapshot':str(out.relative_to(R)),'sha256':sha(out)})
+save(P/'prior-finding-lineage.json',{'previous_review_id':oldrid,'prior_pairs':priorrefs,'retained_target_ids':ids,'native_dispositions':'#1255 resolved in this observation; original #1256 source finding remains open, partial correction; publisher residual extends filed public addendum without invented predecessor review.'})
+now=datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00','Z');rid=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-w08-final-21061-independent'
+specs=[
+ ('ENTRY','entry.json','validation','Entry exactPR/local roots and clean source status.'),('ARCHIVE','frozen/ARCHIVE.json','validation','Exact Git tar and complete extracted file/link inventory.'),('COMMIT','committed-source-bindings.json','validation','Exact committed code and contract blobs.'),
+ ('TECHNICAL','technical/review.json','prior_review','Whole source/test review,29 actual native controls, scoped1255 resolution and residual1256.'),('SKEPTIC','skeptic/review.json','prior_review','Whole publisher/test review,31 stage probes and2 real native pipelines; residual confirmed.'),('LINEAGE','lineage/review.json','prior_review','Author31/85 and prior sealed archive/27receipts/producer provenance preservation.'),
+ ('TESTS','focused-summary.json','validation','458 actual combined passes:301+142+15, no skips/failures, actual native commands.'),('RUN','focused/result.json','validation','Actual executed modules, test runtime and outcome.'),('COMMAND','focused/command.json','validation','Exact Python/private workspace/pinned external context.'),
+ ('SRC-PROBE','root-probes/staged-index-results.json','validation','Four actual source scenarios; both index-only drift cases falsely complete.'),('SRC-FINDING','FINDING-W08-21061-SRC-001.json','record_content','File-ready original1256 residual with reproduction/bounded fix.'),('INDEX-READBACK','technical/index-readback.json','validation','Independent index and working object reads plus historical verification.'),
+ ('PUB-PROBE','skeptic/native-boundary-results.json','validation','Real generator pipeline proves final proof late-HEAD bypass and tracked-derived/historical positive.'),('PUB-FINDING','skeptic/FINDING-W08-21061-PUB-001-v2.json','record_content','File-ready publisher residual and actual tuple/receipt hashes.'),('PUB-READBACK','publisher-finding-root-readback.json','validation','Root readback of exact actual generated proof and final successful receipt despite HEAD drift.'),
+ ('ISSUE1256','inputs/issue1256-publisher-comment.json','authority','Exact filed publisher addendum; prior stub limitation explicit.'),('PRIOR','prior-finding-lineage.json','prior_review','Exact three native predecessor pairs preserved.'),('AST','technical/ast-comparison.json','validation','80,127 original source-test prefix and strengthened1255 tests; no old assertion removed.'),('PUB-AST','skeptic/input-inspection.json','validation','Publisher/integration AST and test function comparisons.'),('ASSESSMENT','ASSESSMENT.md','record_content','Whole final bounded interpretation, controls, residuals and approval limits.')]
+evidence=[]
+for eid,path,kind,desc in specs:
+ p=P/path;evidence.append({'evidence_id':eid,'kind':kind,'reference':str(p.relative_to(R)),'locator':str(p.relative_to(R)),'accessed_at':now,'support':'supports','summary':desc,'snapshot_sha256':sha(p)})
+inspection=rr.inspect_source(R,[{**t,'path':str((F/t['path']).relative_to(R))} for t in targets],[e['reference'] for e in evidence]);save(P/'private-evidence-inspection.json',inspection)
+save(P/'input-ref-index.json',{'committed_source':source,'private_evidence':evidence,'prior_finding_lineage':priorrefs,'private_inspection_base_is_not_reviewed_code_revision':True})
+previous=lambda fid:[{'repository':REPO,'review_id':oldrid,'finding_id':fid}]
+findings=[
+ {'finding_id':'REJECTION-CODE-001','issue_key':'campaign-owner-apply-literal-git-paths','category':'other','severity':'major','status':'resolved','certainty':'confirmed','title':'Literal NUL-delimited Git paths now preserve Unicode and control characters','description':'Exact21061 uses literal NUL-delimited paths at all live scope checks. Actual original Unicode/newline rejection and demotion controls complete. All23 authored1255 inputs remain; unrelated changes and malformed lists refuse earlier with no owned writes/receipt. No change to prior16c failure evidence.','disposition_reason':'Corrected at reviewed21061/ordinary7a successor. Complete source and test targets reassessed with exact AST/prefix and real native controls. This scoped observation does not close GitHub or accept the remaining1256 defects.','target_ids':ids[:2],'field_paths':['_check_mutation_git_state'],'evidence_ids':['TECHNICAL','TESTS','AST','PRIOR'],'ownership_note':'Coordinator/code author; no reviewer fix.','external_issues':['https://github.com/CultureBotAI/MediaIngredientMech/issues/1255'],'previous_occurrences':previous('REJECTION-CODE-001')},
+ {'finding_id':'W08-16C-CODE-002','issue_key':'campaign-owner-apply-late-baseline-freshness','category':'provenance','severity':'major','status':'open','certainty':'confirmed','title':src['title'],'description':src['description'],'disposition_reason':'Partly corrected: late HEAD and ordinary changed working bytes now refuse at live boundaries. Residual diagnostic W08-21061-SRC-001 demonstrates omitted index-only staged scope. Keep original1256 finding open; no historical proof HEAD lock requested.','target_ids':ids[:2],'field_paths':['_check_mutation_git_state','_recheck','apply'],'evidence_ids':['SRC-FINDING','SRC-PROBE','INDEX-READBACK','TECHNICAL','SKEPTIC'],'ownership_note':'Coordinator deduplicates/files bounded residual before author correction.','external_issues':['https://github.com/CultureBotAI/MediaIngredientMech/issues/1256'],'previous_occurrences':previous('W08-16C-CODE-002')},
+ {'finding_id':pub['finding_id'],'issue_key':pub['issue_key'],'category':'provenance','severity':'major','status':'open','certainty':'confirmed','title':pub['title'],'description':pub['cause']+' '+pub['reproduction'],'target_ids':ids[2:],'field_paths':['prepare.mutation_head_recheck','publish.recheck','publish.final_success'],'evidence_ids':['PUB-FINDING','PUB-PROBE','PUB-READBACK','SKEPTIC','ISSUE1256'],'ownership_note':'Coordinator owns filed1256 publisher lineage and any follow-up; no reviewer code edit.','external_issues':['https://github.com/CultureBotAI/MediaIngredientMech/issues/1256#issuecomment-6721136073']}
+]
+save(P/'FINDINGS.json',{'reviewed_head':REV,'verdict':'needs_curation','findings':findings,'new_residual_diagnostic_ids':['W08-21061-SRC-001','W08-21061-PUB-001'],'file_ready_before_fix':True,'fixes_applied':False,'GitHub_mutation':False})
+checks=[
+ ('frozen-current','Exact code/context','passed','Exact21061 archive, five reviewed targets and pinned producer/history, local/remote entry observed.',['ENTRY','ARCHIVE','COMMIT','LINEAGE'],ids),
+ ('focused-native','Combined focused tests','passed','458 pass,zero skip/fail;15 actual source→pinned Claw→publication cases.',['TESTS','RUN','COMMAND'],ids),
+ ('literal-paths','Literal filename regression','passed','#1255 corrected with full original input/assertion preservation.',['TECHNICAL','AST','TESTS'],ids[:2]),
+ ('live-source-scope','Live source staged scope','failed','Initial and late index-only unrelated drift completes despite altered staged contract.',['SRC-FINDING','SRC-PROBE','INDEX-READBACK'],ids[:2]),
+ ('live-publisher-head','Publisher final live proof freshness','failed','HEAD change inside last real source-proof replay escapes final live callback and leaves complete receipts.',['PUB-FINDING','PUB-PROBE','PUB-READBACK'],ids[2:])]
+review={'schema_version':'1.0.0','review_id':rid,'kind':'repository','repository':REPO,'title':'Independent adversarial exact21061 combined source and publisher code re-review','started_at':read(P/'entry.json')['at'].replace('+00:00','Z'),'finished_at':now,
+ 'reviewer':{'identity':'worker08:/root; technical /root/inorganics; skeptical /root/organics; lineage /root/vitamins','kind':'agent','independence':'independent','independence_basis':'None authored reviewed code or tests. Earlier W08 source/design/code review involvement disclosed; no self-science approval. Separate actual technical/skeptical execution and reading are bound in receipts.'},'skill':'reconcile-review-records','completion':'completed','verdict':'needs_curation','scientific_review':False,
+ 'summary':'#1255 corrected at exact21061, but #1256 remains partly corrected: unrelated staged index-only drift can evade live source scope and a final publisher proof replay can outlive the last live HEAD check.458 combined tests pass including15 real native cases; adversarial residuals still preclude code acceptance.',
+ 'source':source,'scope':{'description':'Complete source operator and publisher, all3 test modules, exact changed/new code and hash-bound unchanged full16c body bridge; native interfaces and lineage.','selection':'Exact pushed PR1205 head21061, parent7a and16c lineage; J eac/CLAW76c immutable context.','coverage':'full','population_size':5,'reviewed_target_ids':ids,'exclusions':[{'target':'Scientific candidates, actual campaign plan/application, roles/export','reason':'Independent bounded code review only; synthetic test acceptance is not scientific support.'},{'target':'Future repairs or broader fullQC in I','reason':'No inference from future code or independent running full suite.'}]},'targets':targets,
+ 'checks':[{'check_id':cid,'name':name,'status':status,'required':True,'summary':desc,'target_ids':tids,'evidence_ids':ev} for cid,name,status,desc,ev,tids in checks],
+ 'evidence':evidence,
+ 'assessments':[
+ {'assessment_id':'source-route','area':'provenance','topic':'Exact demotion and inherited owner boundaries','outcome':'supported','summary':'Genuine preimage/origin, closed reviewed tuple, same basename MAPPED→AMBIGUOUS/no ontology, exclusive destination/retirement/backups and both-path chain refusal preserved. No new collision or tombstone activation exception.','target_ids':ids[:2],'evidence_ids':['TECHNICAL','AST','TESTS']},
+ {'assessment_id':'source-residual','area':'consistency','topic':'Partially corrected1256 source scope','outcome':'concern','summary':'Literal paths and live HEAD improve; cached Git index is omitted and two actual index-only cases falsely complete.','target_ids':ids[:2],'evidence_ids':['SRC-FINDING','SRC-PROBE','INDEX-READBACK']},
+ {'assessment_id':'publisher-route','area':'consistency','topic':'Native all-slot deletion, history and historical validation','outcome':'supported','summary':'Zero ontology/registry rows for exact demotion, all old slots removed,27 prefix/held-position preservation, real producer/receipt pins, derived sync and later historical proof supported. No mapping/role approval.','target_ids':ids[2:],'evidence_ids':['SKEPTIC','LINEAGE','TESTS','PUB-PROBE']},
+ {'assessment_id':'publisher-residual','area':'provenance','topic':'Final proof replay late HEAD gap','outcome':'concern','summary':'Actual native private pipeline completes when a commit is injected after the real final proof replay, after capture HEAD validation; success receipts persist.','target_ids':ids[2:],'evidence_ids':['PUB-FINDING','PUB-PROBE','PUB-READBACK']},
+ ],'findings':findings,'actions':[
+ {'action_id':'index-scope-fix','description':src['minimal_fix_scope'],'finding_ids':['W08-16C-CODE-002'],'target_ids':ids[:2],'ownership_note':'Root files/deduplicates before author fix, then exact-successor review.','acceptance_checks':src['required_tests']},
+ {'action_id':'publisher-final-proof-fix','description':pub['bounded_fix'],'finding_ids':[pub['finding_id']],'target_ids':ids[2:],'ownership_note':'Root/code author, no reviewer edit.','acceptance_checks':pub['acceptance_tests']}
+ ],'limitations':[
+ 'Code review only; no actual campaign source application, candidate/whole-owner/scientific/role/export/whole-plan approval.',
+ 'Private test authority is synthetic mechanical input; successful schema/gates/tests cannot create scientific support.',
+ 'OptionalCI without CLAW_ROOT skips integration; historical test also needs CAMPAIGN_HISTORY_ROOT. Actual run supplied both and zero skips.',
+ 'Public publisher addendum predecessor used a disclosed generator fixture; this review used actual pinned Claw for all15 integration cases and2 separate skeptical pipelines.',
+ 'Old sealed failures and artifacts preserved. Technical static-count first attempt encountered named AST constants and was retained; corrected static counts are separate from actual runtime counts.',
+ 'Native pair source.state=git_commit21061. Supplemental private evidence inspection has unchanged W08 Git base and is not mislabeled as committed code.',
+ 'Read-only explicit Git root context is used for private nested native bundle provenance; no Git metadata/helper changes.',
+ 'No future repair is included. Root owns issue filing, code correction, whole-plan acceptance and final application decisions.'
+ ],'notes':['Stable exact9a1 target IDs preserve multi-target old finding lineage. All prior native pairs copied byte-exact; no old disposition changed.','#1255 resolved is a new scoped observation, not a GitHub issue mutation.1256 remains open and retains original severity.']}
+rr.validate_review(review);rr.assert_current_source(R,review)
+out=N/f'reviews/structured/{rid}/review.yaml';write(out,rr._dump_document(review));md=out.with_suffix('.md');write(md,rr.render_markdown(review));relative=str(out.relative_to(N))
+assert rr.parse_review_bundle(relative,out.read_bytes(),md.read_bytes())==review
+settings={'GIT_DIR':subprocess.check_output(['git','rev-parse','--absolute-git-dir'],text=True).strip(),'GIT_WORK_TREE':str(N),'GIT_OPTIONAL_LOCKS':'0'};before={k:os.environ.get(k) for k in settings}
+try:
+ os.environ.update(settings);assert rr.read_review(N,relative)==review;provenance=rr.source_provenance(N,review);assert provenance['status']=='git_commit_verified'
+ for p in sorted((N/'reviews/structured').glob('*/review.yaml')):rr.read_review(N,str(p.relative_to(N)))
+finally:
+ for k,v in before.items():
+  if v is None:os.environ.pop(k,None)
+  else:os.environ[k]=v
+controls=[]
+def refuse(name,fn):
+ try:fn()
+ except rr.ReviewError as e:controls.append({'name':name,'refused':True,'error':str(e)})
+ else:raise AssertionError(name)
+bad=copy.deepcopy(review);bad['source']['inputs'][0]['sha256']='0'*64;refuse('false_committed_digest',lambda:rr.assert_current_source(R,bad))
+refuse('markdown_drift',lambda:rr.parse_review_bundle(relative,out.read_bytes(),md.read_bytes()+b'changed'))
+bad=copy.deepcopy(review);bad['verdict']='pass';refuse('false_pass_with_open_major_findings',lambda:rr.validate_review(bad))
+rr.assert_current_source(R,{'repository':inspection['repository'],'source':inspection['source']})
+save(P/'native-validation.json',{'status':'PASS_NATIVE_REVIEW_CONTRACT','review_id':rid,'review_verdict':review['verdict'],'source_state':'git_commit','reviewed_head':REV,'committed_inputs':len(source['inputs']),'private_evidence_inputs':len(inspection['source']['inputs']),'targets':5,'yaml':{'path':str(out.relative_to(R)),'sha256':sha(out)},'markdown':{'path':str(md.relative_to(R)),'sha256':sha(md)},'prior_pairs_verified':3,'actual_native_methods':['inspect_source','validate_review','assert_current_source','render_markdown','parse_review_bundle','read_review','source_provenance'],'private_readonly_Git_context':settings,'provenance':provenance,'negative_controls':controls,'maintained_saver_used':False,'scientific_or_application_approval':False})
+print(json.dumps(read(P/'native-validation.json'),indent=2))

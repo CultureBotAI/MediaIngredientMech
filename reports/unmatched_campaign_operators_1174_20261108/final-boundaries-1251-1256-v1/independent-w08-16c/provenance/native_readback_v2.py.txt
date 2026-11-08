@@ -1,0 +1,80 @@
+import copy
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import subprocess
+
+R = Path.cwd()
+P = R / '.temp/combined-16c-independent-v1'
+N = P / 'native'
+spec = importlib.util.spec_from_file_location('native_record_review', R / 'scripts/record_review.py')
+rr = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rr)
+paths = list((N / 'reviews/structured').glob('*-w08-combined-16c-independent/review.yaml'))
+assert len(paths) == 1
+out = paths[0]
+md = out.with_suffix('.md')
+relative = str(out.relative_to(N))
+review = rr.parse_review_bundle(relative, out.read_bytes(), md.read_bytes())
+rr.assert_current_source(R, review)
+inspection = json.loads((P / 'private-evidence-inspection.json').read_text())
+rr.assert_current_source(R, {'repository': inspection['repository'], 'source': inspection['source']})
+# The private packet is nested under W08, so bare `git -C native ls-tree`
+# interprets pathspecs relative to that subdirectory. Supply a native Git-root
+# context for these read-only calls. No index, ref, repository or code is edited.
+gitdir = subprocess.check_output(['git', 'rev-parse', '--absolute-git-dir'], text=True).strip()
+settings = {'GIT_DIR': gitdir, 'GIT_WORK_TREE': str(N), 'GIT_OPTIONAL_LOCKS': '0'}
+old = {k: os.environ.get(k) for k in settings}
+try:
+    os.environ.update(settings)
+    assert rr.read_review(N, relative) == review
+    provenance = rr.source_provenance(N, review)
+    assert provenance['status'] == 'git_commit_verified'
+    for prior in ['20261108T113551Z-rejection-fix-independent',
+                  '20261108T113742Z-rejection-fix-independent-v2']:
+        rr.read_review(N, f'reviews/structured/{prior}/review.yaml')
+finally:
+    for k, v in old.items():
+        if v is None:
+            os.environ.pop(k, None)
+        else:
+            os.environ[k] = v
+controls = []
+def refuse(name, call):
+    try:
+        call()
+    except rr.ReviewError as error:
+        controls.append({'name': name, 'refused': True, 'error': str(error)})
+    else:
+        raise AssertionError(name)
+bad = copy.deepcopy(review)
+bad['source']['inputs'][0]['sha256'] = '0' * 64
+refuse('false_committed_digest', lambda: rr.assert_current_source(R, bad))
+refuse('markdown_drift', lambda: rr.parse_review_bundle(relative, out.read_bytes(), md.read_bytes() + b'changed'))
+bad = copy.deepcopy(review)
+bad['verdict'] = 'pass'
+refuse('false_pass_with_open_major_findings', lambda: rr.validate_review(bad))
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+result = {'status': 'PASS_NATIVE_REVIEW_CONTRACT', 'review_id': review['review_id'],
+          'review_verdict': review['verdict'], 'source_state': review['source']['state'],
+          'reviewed_head': review['source']['git_revision'],
+          'committed_inputs': len(review['source']['inputs']),
+          'private_evidence_inputs': len(inspection['source']['inputs']),
+          'targets': len(review['targets']),
+          'yaml': {'path': str(out.relative_to(R)), 'sha256': sha(out)},
+          'markdown': {'path': str(md.relative_to(R)), 'sha256': sha(md)},
+          'actual_native_methods': ['inspect_source', 'validate_review', 'assert_current_source',
+                                   'render_markdown', 'parse_review_bundle', 'read_review', 'source_provenance'],
+          'private_readonly_Git_context': settings,
+          'provenance': provenance,
+          'negative_controls': controls,
+          'prior_pairs_verified': 2,
+          'initial_harness_failure': 'build_native_review.py wrote a valid exact-commit pair, then private nested-root read_review resolved ls-tree paths relative to the packet subdirectory and refused provenance. Original log/script/pair preserved. This readback supplies native explicit GIT_DIR/GIT_WORK_TREE context for read-only verification; no gate patch or pair rewrite.',
+          'maintained_saver_used': False, 'application_approval': False}
+with (P / 'native-validation.json').open('x') as f:
+    json.dump(result, f, indent=2)
+    f.write('\n')
+print(json.dumps(result, indent=2))

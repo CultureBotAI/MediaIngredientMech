@@ -1,0 +1,124 @@
+{
+  "at": "2026-11-08T05:51:38.780479+00:00",
+  "reviewer": "/root/step7d_science_c",
+  "author": "/root/next23_context",
+  "source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+  "author_manifest_sha256": "002afc3355556c9eaba492e05dee75985a33360f5c2a4beda053def1c94d5eb9",
+  "verdict": "source_operator_scoped_re_review_pass_no_new_finding",
+  "finding_dispositions": {
+    "1194": "Original late-owner completion counterexample now refused; true unchanged membership positive completes.",
+    "1195": "Original own-source loaded drift refused. Original dependency counterexample was adapted to test execution semantics: cached publicA remains unchanged; freshly captured privateB really executes; matchingBpins pass dry-run, staleApins fail without outputs.",
+    "1197": "Actual native history preimage disconnection rejected before source edits.",
+    "1198": "Original noncanonical proof path refused preflight without edits."
+  },
+  "results": {
+    "completed-inventory-probe-v1.json": {
+      "sha256": "83ab09cf1ce145678a81371f8a89d608d9d4a48cff7d71d94e1fadecbad176f4",
+      "result": {
+        "at": "2026-11-08T05:50:41.320072+00:00",
+        "source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+        "scope": "Private synthetic repositories; actual native source application and completion verifier. No maintained files or corpus edits.",
+        "results": [
+          {
+            "case": "positive",
+            "injected": [],
+            "outcome": {
+              "returned": "complete",
+              "reported_owner_count": 4
+            },
+            "actual_owner_count": 4,
+            "unexpected_present": false,
+            "actual_inventory_matches_proof": true
+          },
+          {
+            "case": "late_addition",
+            "injected": [
+              "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/completed-inventory-fixtures-v1/late-addition/data/ingredients/unmapped/Unexpected_late.yaml"
+            ],
+            "outcome": {
+              "error": "ValueError: Owner membership or bytes changed at completion"
+            },
+            "actual_owner_count": 5,
+            "unexpected_present": true,
+            "actual_inventory_matches_proof": false
+          }
+        ]
+      }
+    },
+    "loaded-code-probe-v1.json": {
+      "sha256": "ba1b6dcc2660af777bad5b53506add87b8c0b50ffbb226f2b43c741916ac7d42",
+      "result": {
+        "loaded_source_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+        "pinned_on_disk_sha256": "5bae452020f1932738f710b227ba32a69ca7d63ec633032101c4eeb56690da18",
+        "fixture_producer_sha256": "5bae452020f1932738f710b227ba32a69ca7d63ec633032101c4eeb56690da18",
+        "outcome": {
+          "accepted": false,
+          "error": "ValueError: Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-operators-independent-v3/loaded-code-private-package-v1/src/mediaingredientmech/curate/campaign_owner_apply.py"
+        },
+        "scope": "Private changed-import proof; no actual owner application, scientific data or maintained code writes."
+      }
+    },
+    "source-chain-probe-v1.json": {
+      "sha256": "509f784bdd440f668634c2d6343db64892bb2f950aadab85aaabf5c032325537",
+      "result": {
+        "starting_native_chain_valid": true,
+        "latest_native_owner_sha256": "26968fb68023548a3a90a1cf6d4bf6a91c271af69e0dbbf3c4ef9531e4499f34",
+        "actual_owner_before_sha256": "1bb898eb444b87b254b2832ab11d65e1fbda23f953cc9d491e58b26d5844f8e2",
+        "error": "ValueError: Selected owner preimage is disconnected from native history",
+        "source_owner_changed": false,
+        "scope": "Actual source apply and native checkpoint verifier; no owner-proof or native-generation mock. Private synthetic repo only."
+      }
+    },
+    "noncanonical-plan-probe-v1.json": {
+      "sha256": "971c3dfa98d1cbbb76c586b0fe652062c199a9f325646e651c103fc27d7fa73f",
+      "result": {
+        "preflight_error": "ValueError: Noncanonical relative path",
+        "source_changed": false,
+        "scope": "Actual native source application; all references address private fixture files, no symlinks or external filesystem writes."
+      }
+    },
+    "cached-dependency-result-v2.json": {
+      "sha256": "c34e0d953f5330896d0090a32a5c5d6f30af31d469f583b335d456f64695ecd3",
+      "result": {
+        "operator_sha256": "4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca",
+        "public_cached_A_unchanged": true,
+        "private_B_executed": true,
+        "uses_private_class": true,
+        "exact_executed_capture": true,
+        "actual_A_sha256": "f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b",
+        "actual_B_sha256": "102c89221284fd13b52198ac4311a4ab4c455e17b6848522982b40dce3cd4a0a",
+        "results": [
+          {
+            "accepted": true,
+            "applied": false,
+            "stale": false,
+            "owners_unchanged": true,
+            "receipt_exists": false
+          },
+          {
+            "accepted": false,
+            "error": "ValueError: Loaded producer differs: src/mediaingredientmech/curate/publication_guard.py",
+            "stale": true,
+            "owners_unchanged": true,
+            "receipt_exists": false
+          }
+        ],
+        "limitations": "Actual native owner prepare/dry-run in private synthetic repositories; no corpus application or scientific approval."
+      }
+    }
+  },
+  "static_scope": [
+    "Complete first-freeze-to-v2 diff, private captured loader and bound imports",
+    "Captured native bytes and private dataclass module identity; public cached modules not reloaded or replaced",
+    "Deferred native receipt read_sssom import resolves through private captured imports",
+    "Full11producer input pins, schema capture and every-boundary loaded-producer checks retained",
+    "Existing preimage/promotion, owner/inventory/history/path/output guards retained"
+  ],
+  "author_test_evidence": "Author immutable summary records88focused tests plus staticPASS. This review reused that evidence and independently reran five adversarial programs; it did not claim an independent full88 rerun.",
+  "limits": [
+    "Publisher final freeze/re-review pending",
+    "No actual campaign owners applied",
+    "No1879case scientific acceptance or release approval",
+    "No full corpusQC/CI claim"
+  ]
+}

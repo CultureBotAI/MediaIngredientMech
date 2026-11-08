@@ -1,0 +1,125 @@
+"""Seal this technical review; preserve failures and runtime fixtures."""
+from pathlib import Path
+import ast, collections, datetime, hashlib, importlib.metadata, json, os, platform, stat, subprocess, sys, xml.etree.ElementTree as ET
+T=Path(__file__).resolve().parent;O=T.parent;F=O/'frozen-head';R=O.parents[1]
+HEAD='9a1a4a35498a1bee0fc8b68653d1fc152cfff81b';PARENT='d691c079cf3923daed89284b7579913b84c3a34c'
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def save(name,obj):
+    with (T/name).open('x') as stream:json.dump(obj,stream,indent=2,ensure_ascii=False);stream.write('\n')
+def ref(p):return {'path':str(p),'sha256':sha(p.read_bytes())}
+def git(*args,cwd=R):return subprocess.check_output(['git','--no-optional-locks',*args],cwd=cwd)
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+assert git('show','-s','--format=%P',HEAD).decode().strip()==PARENT
+assert git('rev-parse','HEAD').decode().strip()=='7cc3c2540fd1b55281c6f5551f13a90a1e7916b1'
+assert not git('status','--short')
+frozen=json.loads((O/'FROZEN-HEAD-MANIFEST.json').read_bytes());supp=json.loads((O/'FROZEN-HEAD-SUPPLEMENT-001.json').read_bytes())
+assert sha((O/'FROZEN-HEAD-MANIFEST.json').read_bytes())=='99b4182f57b740e002a136032978c83e6cd39d7cca80e47d669a273e2dfb5557'
+assert sha((O/'PINNED-INPUTS.json').read_bytes())=='b2bdc7f4b81c6acbf28b5d05032efc8c319656b666653507a255e049696b0d29'
+members=frozen['members']+supp['members'];git_tree={}
+for entry in git('ls-tree','-r','-z',HEAD).split(b'\0'):
+    if not entry:continue
+    meta,name=entry.split(b'\t',1);mode,kind,blob=meta.decode().split();git_tree[os.fsdecode(name)]=(mode,kind,blob)
+for entry in members:
+    p=F/entry['path'];raw=os.fsencode(os.readlink(p)) if p.is_symlink() else p.read_bytes()
+    assert sha(raw)==entry['sha256']
+    blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+    assert blob==entry['git_blob']==git_tree[entry['path']][2]
+paths=set()
+for here,dirs,files in os.walk(F,followlinks=False):
+    for name in list(dirs):
+        p=Path(here)/name
+        if p.is_symlink():paths.add(p.relative_to(F).as_posix());dirs.remove(name)
+    for name in files:paths.add((Path(here)/name).relative_to(F).as_posix())
+assert paths=={x['path'] for x in members}, paths.symmetric_difference(x['path'] for x in members)
+
+from mediaingredientmech.curate import campaign_owner_apply as owner
+from mediaingredientmech import campaign_publication as publication
+executed=[]
+for name,module in sorted(sys.modules.items()):
+    file=getattr(module,'__file__',None)
+    if file and ('mediaingredientmech' in name or name.startswith('_mim_campaign_native')):
+        p=Path(file).resolve();assert p.is_relative_to(F),(name,str(p))
+        executed.append({'module':name,**ref(p)})
+private=[]
+for caller,module in [('owner',owner),('publication',publication)]:
+    for name,mod in module._BOUND_NATIVE.items():
+        capture=mod._campaign_executed_source;capture.verify()
+        assert capture.content==Path(mod.__file__).read_bytes()
+        private.append({'caller':caller,'module':name,'path':str(capture.path),'sha256':sha(capture.content),'compiled_capture_reverified':True})
+context={'at':now(),'reviewed_head':HEAD,'parent':PARENT,'frozen_manifest':ref(O/'FROZEN-HEAD-MANIFEST.json'),'additive_supplement':ref(O/'FROZEN-HEAD-SUPPLEMENT-001.json'),'root_pin':ref(O/'PINNED-INPUTS.json'),'all_git_blob_and_sha256_matches':True,'frozen_files':len(members),'initial_frozen_files':len(frozen['members']),'exact_additional_files':supp['members'],'working_head_unchanged':'7cc3c2540fd1b55281c6f5551f13a90a1e7916b1','working_tracked_status':'clean','mim_modules_observed_in_independent_postrun_import':executed,'actual_private_captured_modules':private,'scope_note':'Postrun exact-import audit plus recorded test PYTHONPATH/context, not a claim to have instrumented every pytest child import. Tests intentionally create and modify private source copies for stale producer controls; shared frozen source remains exact. Mutable integration checkout was not imported or read as reviewed code.'}
+save('context-integrity.json',context)
+
+def junit(path):
+    tree=ET.parse(path);rows=[]
+    for case in tree.iter('testcase'):
+        error=case.find('error');failure=case.find('failure');skipped=case.find('skipped')
+        status='error' if error is not None else 'failed' if failure is not None else 'skipped' if skipped is not None else 'passed'
+        issue=error if error is not None else failure
+        row={'classname':case.attrib.get('classname'),'name':case.attrib['name'],'time_seconds':float(case.attrib.get('time',0)),'status':status}
+        if issue is not None:row.update(message=issue.attrib.get('message'),error_type=issue.attrib.get('type'),traceback_sha256=sha((issue.text or '').encode()),missing_historical_maker='make_receipt.py' in (issue.text or '') and 'FileNotFoundError' in (issue.text or ''))
+        rows.append(row)
+    return rows
+first=junit(T/'pytest-252.xml');second=junit(T/'pytest-publication-supplement.xml')
+assert len(first)==252 and len(second)==118
+source=[x for x in first if 'test_campaign_owner_apply' in x['classname']]
+publication_first=[x for x in first if 'test_campaign_publication' in x['classname']]
+assert len(source)==134 and all(x['status']=='passed' for x in source)
+assert len(publication_first)==118 and all(x.get('missing_historical_maker') for x in publication_first)
+assert all(x['status']=='passed' for x in second)
+assert {(x['classname'],x['name']) for x in publication_first}=={(x['classname'],x['name']) for x in second}
+coverage=source+second;assert len({(x['classname'],x['name']) for x in coverage})==252
+save('test-coverage.json',{'full_initial_run':first,'targeted_publication_successor_run':second,'effective_distinct_cases':coverage,'effective_passed':252,'initial_count_by_status':dict(collections.Counter(x['status'] for x in first)),'initial_failure_preserved':True,'rerun_reason':'One required historical committed producer was omitted with reports/ from root archive. Added exact Gitblob; no source or tests changed. Only blocked/failed118 publication tests rerun.','no_claim_of_clean_first_run':True})
+env={'PYTHONDONTWRITEBYTECODE':'1','PYTHONPATH':str(F/'src')}
+py=str(R/'.temp/all-unmatched-worker-04/venv/bin/python')
+cmds=[{'id':'full252-initial','argv':[py,'-B','-m','pytest',str(F/'tests/test_campaign_owner_apply.py'),str(F/'tests/test_campaign_publication.py'),'-o','addopts=','-p','no:cacheprovider','--basetemp='+str(T/'runtime-fixtures/pytest'),'--junitxml='+str(T/'pytest-252.xml'),'-q'],'exit_code':1,'result':'134 passed,11 failed,107 errors; all118 publication failures caused by missing frozen historical helper.','log':ref(T/'pytest-252.log'),'junit':ref(T/'pytest-252.xml')},{'id':'publication118-supplement','argv':[py,'-B','-m','pytest',str(F/'tests/test_campaign_publication.py'),'-o','addopts=','-p','no:cacheprovider','--basetemp='+str(T/'runtime-fixtures/pytest-publication-supplement'),'--junitxml='+str(T/'pytest-publication-supplement.xml'),'-q'],'exit_code':0,'result':'118 passed,12 upstream deprecation warnings,32.57s.','log':ref(T/'pytest-publication-supplement.log'),'junit':ref(T/'pytest-publication-supplement.xml')},{'id':'same933','argv':[py,'-B',str(T/'replay_933.py')],'exit_code':0,'result_ref':ref(T/'same933-result.json'),'log':ref(T/'same933-replay.log')},{'id':'additional-path-controls','argv':[py,'-B',str(T/'path_controls.py')],'exit_code':0,'result_ref':ref(T/'additional-path-controls.json'),'log':ref(T/'additional-path-controls.log')}]
+save('execution-receipts.json',{'at':now(),'cwd':str(R),'environment':env,'python':sys.version,'platform':platform.platform(),'dependency_versions':{p:importlib.metadata.version(p) for p in ['pytest','linkml','linkml-runtime','PyYAML','jsonschema','pydantic']},'commands':cmds,'pytest_addopts_override_reason':'W04 existing venv lacks optional pytest-cov plugin; no dependency install or external network. Test source and parametrization unmodified.','warnings':'LinkML Pydantic model_fields access deprecation only in passing runs.','denied_requests_in_this_technical_scope':[],'exploratory_diagnostics':'A manifest-printer list/dict assumption, one relative-path typo, one guessed documentation path, and an accidental unused shell token produced diagnostic errors. None changed code or source inputs. Test failure listed separately with full preserved logs.'})
+
+# Independent readback of separate skeptical reviewer real W03 fixtures.
+S=O/'skeptical';finding=json.loads((S/'finding-REJECTION-CODE-001.json').read_bytes());actual=json.loads((S/'actual-w03-path-results.json').read_bytes())
+readback=[];selection=json.loads((T/'same933-coverage.json').read_bytes())
+for row in actual['results']:
+    original=next(x for x in selection if x['operation_id']==row['action_id'])
+    assert original['payload_sha256']==row['accepted_normalized_sha256'] and original['before_sha256']==row['before_sha256']
+    root=Path(row['fixture_path']);receipt=json.loads((root/'receipt/application.json').read_bytes());plan=json.loads((root/'plan.json').read_bytes())
+    assert sha((root/'receipt/application.json').read_bytes())==row['receipt_sha256']
+    assert sha((root/row['source']).read_bytes())==row['accepted_normalized_sha256']
+    assert sha((root/'receipt/owner-before-0000.yaml').read_bytes())==row['before_sha256']
+    assert receipt['state']==row['receipt_state'] and receipt['recovery_required']==row['recovery_required']
+    origin=plan['records'][0]['origins'][0]
+    assert origin['head_sha']==row['original_published_head'] and origin['case_hashes']==row['case_hashes']
+    cases=json.loads((root/'intake/cases.json').read_bytes())
+    for cid,h in row['case_hashes'].items():
+        case=next(x for x in cases if x['case_id']==cid)
+        assert sha(json.dumps(case,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode())==h
+    ordinary=git('diff','--name-only','HEAD','--',cwd=root)
+    literal=git('diff','--name-only','-z','HEAD','--',cwd=root)
+    assert os.fsdecode(literal).split('\0')[:-1]==[row['source']]
+    readback.append({'action_id':row['action_id'],'source':row['source'],'source_plan':ref(root/'plan.json'),'source_receipt':ref(root/'receipt/application.json'),'state':receipt['state'],'recovery_required':receipt['recovery_required'],'case_hashes_and_original_head_reverified':True,'before_and_after_exact':True,'ordinary_diff':ordinary.decode(),'literal_nul_diff':os.fsdecode(literal),'only_intended_tracked_path_changed':True})
+save('skeptical-finding-readback.json',{'at':now(),'reviewer':'/root/assembly_review','finding':ref(S/'finding-REJECTION-CODE-001.json'),'actual_probe':ref(S/'actual-w03-path-probe.py'),'actual_results':ref(S/'actual-w03-path-results.json'),'readback':readback,'adjudication':'CONFIRMED_REJECTION_CODE_001; full bounded compatibility not established despite record-stage and automated test passes.','new_duplicate_finding_created':False,'independent_scope':'Read exact scripts, receipt, payload, beforeimage, case ledger, plan/origin and literal Git diff in both existing private fixtures; did not rerun or modify those fixtures.'})
+
+# Bind runtime proofs without following deliberate negative-control aliases.
+fixture_rows=[]
+for here,dirs,files in os.walk(T/'runtime-fixtures',followlinks=False):
+    for name in list(dirs):
+        p=Path(here)/name
+        if p.is_symlink():fixture_rows.append({'path':p.relative_to(T).as_posix(),'type':'symlink','target':os.readlink(p)});dirs.remove(name)
+    for name in files:
+        p=Path(here)/name;s=p.lstat();entry={'path':p.relative_to(T).as_posix(),'nlink':s.st_nlink,'mode':oct(stat.S_IMODE(s.st_mode))}
+        if p.is_symlink():entry.update(type='symlink',target=os.readlink(p))
+        elif stat.S_ISREG(s.st_mode):entry.update(type='regular',sha256=sha(p.read_bytes()),bytes=s.st_size)
+        else:entry.update(type='other')
+        fixture_rows.append(entry)
+save('runtime-fixture-inventory.json',{'at':now(),'root':str(T/'runtime-fixtures'),'entries':fixture_rows,'count':len(fixture_rows),'scope':'Private mechanical test repositories and negative-control files, including ignored files and private Git objects. Deliberate symlinks/hardlinks remain preserved. Listed for reproduction, excluded from portable artifact manifest; never candidate/source outputs.'})
+
+save('assessment.json',{'schema':'independent-technical-review-v1','reviewer':'/root/assembly_review','finished_at':now(),'reviewed_head':HEAD,'parent':PARENT,'reviewed_operator_sha256':'14df29400c6182af8a5dd6d2d491be5f3ff2fe854eec7660cfaa955fc28ba41f','reviewed_test_sha256':'2ede1b72bd369898f2ed99f093ec0700da404a9a85342ea2f15883e29eb272ce','verdict':'NEEDS_CODE_FIX','narrow_status_predicate_verdict':'Narrow same-path same-identifier same-preferred-term UNMAPPED→REJECTED admission is supported; 933 record-stage validation passes.','complete_application_compatibility_verdict':'NOT_READY: actual W03 Unicode owner is changed and then apply fails; retain REJECTION-CODE-001.','findings':[{'finding_id':'REJECTION-CODE-001','disposition':'confirmed via independent exact-code and actual-fixture readback','original_reviewer':'/root/biological','source_finding':ref(S/'finding-REJECTION-CODE-001.json'),'bounded_fix':'Use NUL-delimited literal Git filename output in final allowed-path guard. Add real Unicode and special-character path application/completed-replay positives and unrelated tracked-path negative. No fix applied here.'}],'new_unique_findings':[],'technical_evidence':{'distinct_tests_passed':252,'source_tests':134,'publication_tests':118,'initial_test_failures_retained':'11 failed+107 errors from missing frozen historical maker; additive exact Git capture followed by118-only successful run','same_frozen_record_stage_operations':933,'before_owners':2956,'projected_owners':3550,'operation_kinds':{'edit':272,'promote':67,'create':594},'additional_real_path_control_outcomes':7,'complete_frozen_context_files_rehashed':len(members),'test_results':ref(T/'test-coverage.json'),'exact933':ref(T/'same933-result.json'),'controls':ref(T/'additional-path-controls.json'),'context':ref(T/'context-integrity.json'),'finding_readback':ref(T/'skeptical-finding-readback.json')},'static_assessment':['Only operator and its test file changed; prior 51 test/helper/class definitions preserved by AST comparison. No schema, gate, source or scientific changes assessed as part of this commit.','New rejection branch requires edit, original unmapped path, exact keys; existing rejected maintenance remains same-path same-key. MAPPED and AMBIGUOUS demotion to REJECTED, revival, relocation, creation, key change, history/no-op and false-origin controls remain refused.','Global inherited collision-pair policy and unchanged surviving-family status requirement run before rejection admission. No new collision-pair waiver.','Apply failure is in a pre-existing final Git filename parsing guard, not newly added status logic. New reachable legitimate Unicode rejection route exposes it. Full test and record-stage passes cannot certify full application compatibility.'],'independence_disclosure':'This reviewer previously authored W04 assembly/technical review artifacts and tested six private candidates, relocation and156 serialization bridges; no authorship of9a1 operator or tests, no author science approval. Reused unchanged native test helpers for own7 fixture controls; independently executed tests and exact933 replay. Separate skeptical reviewer authored the Unicode finding and actual W03 fixtures; this reviewer independently verified their bytes and cause. Prior W04 source/proposal authorship is not approval of any included candidate.','read_scope':'Complete exact operator source and parent diff, full added regressions and helper contracts, executed all252 parametrized tests, exact full933 selected candidate bytes plus2956 before records passed through native record parser/schema, all1406 nonsource pin hashes, all4183 frozen context members against Git, actual W03 original-case and receipt bindings. Scientific chemistry and raw primary source applicability not reassessed.','limitations':['933 validation is only _validate_records, not full campaign prepare/apply/verify or independent acceptance.','Real apply/completed replay proofs use isolated fixture inventories and mechanical fixture acceptance, never real campaign acceptance.','No mutable integration code or concurrent demotion code selected; no conclusion about a later successor.','No scientific, candidate, source, maintained-owner, role, merge or export approval.','No GitHub mutation, source branch mutation, maintained data edit or code fix. Private fixture commits only, all runtime state preserved.','Paid providers and external agent sessions not used.'],'preserved_exclusions':json.loads((T/'same933-result.json').read_bytes())['exclusions'],'scope_holds':'Existing candidate/source/family/science holds and pending broader acceptance remain unchanged. TENVIT report-only, Trypticase new-collision admission and Angustmycin demotion exclusions retained exactly.'})
+
+readrefs=[T/'git-preflight.json',O/'FROZEN-HEAD-MANIFEST.json',O/'FROZEN-HEAD-SUPPLEMENT-001.json',O/'PINNED-INPUTS.json',O/'inputs/REMOTE-PR-PROOF.json',F/'MAPPING_SEMANTICS.md',R/'docs/record-reviews.md',R/'.claude/skills/review-yaml-category/SKILL.md',F/'src/mediaingredientmech/curate/campaign_owner_apply.py',F/'tests/test_campaign_owner_apply.py',F/'tests/test_campaign_publication.py',F/'src/mediaingredientmech/campaign_publication.py',F/'src/mediaingredientmech/validation/write_validated.py',S/'finding-REJECTION-CODE-001.json',S/'actual-w03-path-results.json',S/'actual-w03-path-probe.py']
+save('read-register.json',{'at':now(),'reviewer':'/root/assembly_review','human_assessed_inputs':[ref(p) for p in readrefs],'mechanical_fullbyte_scope':{'context':ref(T/'context-integrity.json'),'same933_inputs':ref(T/'same933-inputs.json'),'same933_records':ref(T/'same933-coverage.json')},'scope_notes':['All byte/hash/schema reads distinguished from scientific primary-evidence inspection.','Relevant review skills/contracts consulted as scope/provenance guidance; task is code review, not fresh ingredient category or source curation. Root handles any native final review packaging.','Exhaustive frozen and runtime inventories include ignored and hidden paths; symlink targets are recorded without traversal.']})
+manifest_files=[]
+for p in sorted(T.iterdir()):
+    if p.name in {'runtime-fixtures','MANIFEST.json','SEAL.json'}:continue
+    assert p.is_file() and not p.is_symlink() and p.stat().st_nlink==1,p
+    manifest_files.append({'path':p.name,'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size})
+save('MANIFEST.json',{'schema':'technical-portable-manifest-v1','root':str(T),'files':manifest_files,'excluded':[{'path':'runtime-fixtures/**','reason':'Private fixture repositories and deliberate negative-control symlink/hardlink proofs; separately bound in runtime-fixture-inventory.json, preserved in place, never candidate outputs.'},{'path':'MANIFEST.json','reason':'Self-reference excluded.'},{'path':'SEAL.json','reason':'Final seal binds manifest; circularity excluded.'}],'frozen_external_context':ref(O/'FROZEN-HEAD-MANIFEST.json'),'frozen_external_supplement':ref(O/'FROZEN-HEAD-SUPPLEMENT-001.json')})
+save('SEAL.json',{'schema':'independent-review-seal-v1','reviewer':'/root/assembly_review','sealed_at':now(),'head':HEAD,'assessment':ref(T/'assessment.json'),'manifest':ref(T/'MANIFEST.json'),'verdict':'NEEDS_CODE_FIX','open_finding':'REJECTION-CODE-001','publication_or_application_approval':False,'immutable_outputs':'All direct technical files sealed; runtime fixtures preserved and separately inventoried, no cleanup.'})
+print(json.dumps({'assessment':ref(T/'assessment.json'),'manifest':ref(T/'MANIFEST.json'),'seal':ref(T/'SEAL.json'),'portable_files':len(manifest_files),'runtime_entries':len(fixture_rows)},indent=2))

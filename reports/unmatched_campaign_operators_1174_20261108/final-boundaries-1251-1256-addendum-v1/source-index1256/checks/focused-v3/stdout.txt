@@ -1,0 +1,70 @@
+..................................................F..                    [100%]
+=================================== FAILURES ===================================
+____________ test_1256_cached_rename_checks_unrelated_old_endpoint _____________
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index1256-fix-v1/runtime/focused-v3/test_1256_cached_rename_checks0')
+
+    def test_1256_cached_rename_checks_unrelated_old_endpoint(tmp_path):
+        """#1256: a destination in scope cannot hide a renamed unrelated source."""
+        plan = head_lifecycle_case(tmp_path, "create")
+        ready = prepare(tmp_path)
+        destination = plan["records"][0]["source_record"]
+        original = (tmp_path / "MAPPING_SEMANTICS.md").read_bytes()
+        stage_index_only_1256(tmp_path, destination, original)
+        run_git(tmp_path, "rm", "--cached", "--", "MAPPING_SEMANTICS.md")
+        assert b"R100\0MAPPING_SEMANTICS.md\0" in owner.git(
+            tmp_path, "diff", "--cached", "--find-renames", "--name-status", "-z", "HEAD", "--"
+        )
+        with pytest.raises(ValueError, match="Unrelated staged file changed"):
+>           owner.apply(ready, tmp_path / "receipt", enabled=True)
+
+tests/test_campaign_owner_apply.py:2561: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/mediaingredientmech/curate/campaign_owner_apply.py:1187: in apply
+    _recheck(prepared)
+src/mediaingredientmech/curate/campaign_owner_apply.py:1065: in _recheck
+    _check_mutation_git_state(prepared)
+src/mediaingredientmech/curate/campaign_owner_apply.py:969: in _check_mutation_git_state
+    require(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+condition = False, message = 'Unrelated tracked file changed'
+
+    def require(condition: Any, message: str) -> None:
+        if not condition:
+>           raise ValueError(message)
+E           ValueError: Unrelated tracked file changed
+
+src/mediaingredientmech/curate/campaign_owner_apply.py:283: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index1256-fix-v1/runtime/focused-v3/test_1256_cached_rename_checks0')
+
+    def test_1256_cached_rename_checks_unrelated_old_endpoint(tmp_path):
+        """#1256: a destination in scope cannot hide a renamed unrelated source."""
+        plan = head_lifecycle_case(tmp_path, "create")
+        ready = prepare(tmp_path)
+        destination = plan["records"][0]["source_record"]
+        original = (tmp_path / "MAPPING_SEMANTICS.md").read_bytes()
+        stage_index_only_1256(tmp_path, destination, original)
+        run_git(tmp_path, "rm", "--cached", "--", "MAPPING_SEMANTICS.md")
+        assert b"R100\0MAPPING_SEMANTICS.md\0" in owner.git(
+            tmp_path, "diff", "--cached", "--find-renames", "--name-status", "-z", "HEAD", "--"
+        )
+>       with pytest.raises(ValueError, match="Unrelated staged file changed"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'Unrelated staged file changed'
+E         Actual message: 'Unrelated tracked file changed'
+
+tests/test_campaign_owner_apply.py:2560: AssertionError
+=============================== warnings summary ===============================
+../../../../kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: 12 warnings
+  /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/lib/python3.13/site-packages/linkml/generators/pydanticgen/template.py:553: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    imports=imports, **{k: getattr(self, k, None) for k in self.model_fields if k != "imports"}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_campaign_owner_apply.py::test_1256_cached_rename_checks_unrelated_old_endpoint
+1 failed, 52 passed, 301 deselected, 12 warnings in 32.69s

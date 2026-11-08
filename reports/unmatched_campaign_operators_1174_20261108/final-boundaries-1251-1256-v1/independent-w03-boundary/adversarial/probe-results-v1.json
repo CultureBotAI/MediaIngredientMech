@@ -1,0 +1,574 @@
+{
+  "reviewer": "/root/boundary_adversarial",
+  "head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "operator_sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70",
+  "started_at": "2026-11-08T11:16:11.057628+00:00",
+  "finished_at": "2026-11-08T11:16:24.220944+00:00",
+  "scope": "Independent synthetic counterexamples; actual native prepare/apply/completed replay. Prior unchanged boilerplate helpers used, appended family helper never called. Private fixture acceptance grants no scientific approval.",
+  "results": [
+    {
+      "name": "positive_disjoint_edit_with_unselected_family",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:11.057634+00:00",
+      "result": {
+        "stage": "real_prepare_apply_completed_replay",
+        "state": "complete",
+        "operations": 1,
+        "unchanged_identity_and_status": true,
+        "approval": "NONE: source application only; no scientific or mapping approval transfers"
+      }
+    },
+    {
+      "name": "positive_rejected_unmapped_maintenance",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:11.677179+00:00",
+      "result": {
+        "stage": "real_prepare_apply_completed_replay",
+        "state": "complete",
+        "operations": 1,
+        "unchanged_identity_and_status": true,
+        "approval": "NONE: source application only; no scientific or mapping approval transfers"
+      }
+    },
+    {
+      "name": "positive_both_collision_kinds",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:12.220686+00:00",
+      "result": {
+        "stage": "real_prepare_apply_completed_replay",
+        "state": "complete",
+        "operations": 2,
+        "unchanged_identity_and_status": true,
+        "approval": "NONE: source application only; no scientific or mapping approval transfers"
+      }
+    },
+    {
+      "name": "same_count_replacement",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:13.080479+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Final proposed owners introduce a new collision pair"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "new_third_member",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:13.339455+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Final proposed owners introduce a new collision pair"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "family_identifier_swap",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:13.566750+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Final proposed owners introduce a new collision pair"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "both_surviving_pair_names_changed",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:13.809461+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Inherited collision family requires unchanged paths, keys and statuses"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "surviving_pair_case_only_name",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:14.055942+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Inherited collision family requires unchanged paths, keys and statuses"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "cross_key_family_join",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:14.291202+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Final proposed owners introduce a new collision pair"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "surviving_pair_status_change",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:14.527429+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Inherited collision family requires unchanged paths, keys and statuses"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "rejected_revival",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:14.794194+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Inherited collision family requires unchanged paths, keys and statuses"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "rejected_family_exit_reidentification",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:15.043596+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Rejected owner requires same-path, same-key rejected maintenance"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "rejected_unmapped_key_change",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:15.366372+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Rejected owner requires same-path, same-key rejected maintenance"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "unknown_owner_source",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:15.645180+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Destination collides with an existing owner path"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "relocated_rejected_edit",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:15.851839+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Edit cannot relocate an owner"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "wrong_causal_hash",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:16.059347+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Source case hash differs"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "wrong_preimage",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:16.268111+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Missing, reused or stale owner preimage"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "stale_acceptance",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:16.473337+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Acceptance does not bind plan"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "history_prefix_removed",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:16.624862+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "History prefix was altered or not extended"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "stale_published_original",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:16.907078+00:00",
+      "result": {
+        "stage": "real_prepare",
+        "expected": "refusal before owner or receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Published artifact bytes differ"
+        },
+        "owner_bytes_unchanged": true,
+        "receipt_absent": true
+      }
+    },
+    {
+      "name": "late_owner_inode",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:17.088253+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_inode/data/ingredients/mapped/Existing.yaml"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_owner_hardlink",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:17.378849+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_hardlink/data/ingredients/mapped/Existing.yaml"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_owner_alias",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:17.672255+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Filesystem alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_alias/data/ingredients/mapped/Existing.yaml"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_owner_parent_identity",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:17.989971+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Input parent changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_owner_parent_identity/data/ingredients/mapped"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_ignored_member",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:18.273787+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Owner membership changed"
+        },
+        "external_mutation_expected": true,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_removed_owner",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:18.577897+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Owner membership changed"
+        },
+        "external_mutation_expected": true,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_acceptance_bytes",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:18.869520+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Captured input changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_acceptance_bytes/acceptance.json"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_evidence_inode",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:19.155873+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_evidence_inode/intake/independent-0.yaml"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_producer_inode",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:19.495721+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "File identity changed: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/late_producer_inode/src/mediaingredientmech/curate/campaign_owner_apply.py"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "late_native_receipt_membership",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:19.790967+00:00",
+      "result": {
+        "stage": "real_prepare_then_drift_then_apply",
+        "expected": "refusal before operator owner/receipt writes",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Missing receipt batch"
+        },
+        "external_mutation_expected": false,
+        "no_operator_writes": true
+      }
+    },
+    {
+      "name": "completed_revival",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:20.081693+00:00",
+      "result": {
+        "stage": "completed_replay_after_external_drift",
+        "expected": "refusal",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Current after-owner inventory differs"
+        },
+        "initial_completed_replay_passed": true
+      }
+    },
+    {
+      "name": "completed_unselected_member_added",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:20.775680+00:00",
+      "result": {
+        "stage": "completed_replay_after_external_drift",
+        "expected": "refusal",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Current after-owner inventory differs"
+        },
+        "initial_completed_replay_passed": true
+      }
+    },
+    {
+      "name": "completed_backup_alias",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:21.582753+00:00",
+      "result": {
+        "stage": "completed_replay_after_external_drift",
+        "expected": "refusal",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Nonregular file or hardlink alias refused: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial/fixtures/completed_backup_alias/receipt/owner-before-0000.yaml"
+        },
+        "initial_completed_replay_passed": true
+      }
+    },
+    {
+      "name": "completed_snapshot_addition",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:22.239137+00:00",
+      "result": {
+        "stage": "completed_replay_after_external_drift",
+        "expected": "refusal",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Historical snapshot membership changed"
+        },
+        "initial_completed_replay_passed": true
+      }
+    },
+    {
+      "name": "completed_origin_changed",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:22.888596+00:00",
+      "result": {
+        "stage": "completed_replay_after_external_drift",
+        "expected": "refusal",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Input hash differs: intake/proposals.json"
+        },
+        "initial_completed_replay_passed": true
+      }
+    },
+    {
+      "name": "completed_acceptance_changed",
+      "status": "PASS",
+      "started_at": "2026-11-08T11:16:23.532077+00:00",
+      "result": {
+        "stage": "completed_replay_after_external_drift",
+        "expected": "refusal",
+        "returned": null,
+        "exception": {
+          "type": "ValueError",
+          "message": "Receipt plan binding differs"
+        },
+        "initial_completed_replay_passed": true
+      }
+    }
+  ],
+  "counts": {
+    "total": 36,
+    "pass": 36,
+    "fail": 0
+  },
+  "writes_only": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/native-boundary-final-head-independent-v1/adversarial"
+}

@@ -1,0 +1,2103 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-08T12:49:21.145868+00:00",
+  "scope": "Exactly four owned-name event/credit obligations on complete frozen candidate bytes; independent scientific/policy review, not implementation authorization.",
+  "frozen_binding": {
+    "path": "inputs/four-suppression-pair-review-bindings.json",
+    "sha256": "09fe42cafd60a7bd01f8dc4256725ef95470f3fd315fbba1e372e621696f0f09"
+  },
+  "candidate": {
+    "path": "inputs/projected-generation/candidate.sssom.tsv",
+    "sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de"
+  },
+  "native_sidecar": {
+    "path": "inputs/projected-generation/suppressed-aliases.tsv",
+    "sha256": "c47c62a7aced3c503180928373f5df13610a7ba8fa75705d89c134753ca2950a"
+  },
+  "producer": {
+    "path": "inputs/contracts/src/mediaingredientmech/synonym_policy.py",
+    "sha256": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+  },
+  "candidate_row_count": 3750,
+  "pairs": [
+    {
+      "decision_id": "W07-SUPPRESSION-01",
+      "subject": "MIM:Bacto_Peptone",
+      "token": "Peptone",
+      "token_key": "peptone",
+      "normalization": "Native strip then Unicode casefold; event display is minimum actual trimmed spelling; no chemical/form normalization.",
+      "recommendation": "SUPPRESS",
+      "status": "CONDITIONAL_RECOMMENDATION_ONLY",
+      "execution_disposition": "WITHHOLD",
+      "owner_merge_disposition": "WITHHOLD",
+      "row_admission": "WITHHOLD",
+      "role_approval": "WITHHOLD",
+      "new_external_mapping": "WITHHOLD",
+      "complete_credited_owner_set": [
+        "MIM:Peptone"
+      ],
+      "complete_owner_bindings": [
+        {
+          "subject": "MIM:Bacto_Peptone",
+          "before": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Bacto_Peptone.yaml",
+            "capture": "inputs/suppression-owner-captures/before-Bacto_Peptone.yaml",
+            "sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655"
+          },
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bacto_Peptone.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Bacto_Peptone.yaml",
+            "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b"
+          },
+          "complete_selected_fields": {
+            "identifier": "MICRO:0000178",
+            "preferred_term": "Bacto peptone",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "UNDEFINED_MIXTURE",
+            "ontology_mapping": {
+              "ontology_id": "MICRO:0000178",
+              "ontology_label": "peptone",
+              "ontology_source": "MICRO",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "CURATOR_JUDGMENT",
+                  "source": "cbclaw_foodon_promotion",
+                  "notes": "Commercial food mixture - FOODON is correct parent ontology. Bacto Peptone (BD/Difco) is an enzymatic digest of animal protein (per Difco manual, primarily meat tissue); mapped to FOODON parent 'animal protein (hydrolyzed)'. No exact FOODON term for bacto peptone. CLOSE_MATCH."
+                },
+                {
+                  "evidence_type": "CURATOR_JUDGMENT",
+                  "source": "manual review of MICRO ontology coverage",
+                  "notes": "Bacto Peptone is the brand name for generic peptone. MICRO:0000178 is the precise term; FOODON:03315718 was a less-specific parent."
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": {
+            "operation_id": "ORIGINAL-w05::W05-FINAL-MAT-001",
+            "kind": "edit",
+            "before_source_record": "data/ingredients/mapped/Bacto_Peptone.yaml",
+            "source_record": "data/ingredients/mapped/Bacto_Peptone.yaml",
+            "before_yaml_sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+            "after_capture": {
+              "path": "reports/all_unmatched_20261107/final-native-intake-v2/payloads/c2af3725016ec276291a-Bacto_Peptone.yaml",
+              "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b"
+            },
+            "origins": [
+              {
+                "worker_slot": "worker-05",
+                "head_sha": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                "proposal_id": "W05-FINAL-MAT-001",
+                "proposal_binding": "w05-proposals",
+                "payload_binding": "w05-capture-8ee1b93f9e8742078714",
+                "case_hashes": {
+                  "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc": "18c7017114412024d725e5900908d6ba1741d73933425207f3fae219e31c8245",
+                  "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d": "59e1f79ae07c705576c0a5b55643cc98030c143d0271e40db8b3e829c8f6de10",
+                  "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6": "d92bede60084b8f58e01934b55bfcb05b0b1c5ad93e5387b1c69df4d1f6b2ec4"
+                }
+              }
+            ],
+            "change": "Apply exact source/composition successor ORIGINAL-w05::W05-FINAL-MAT-001 under the separately bound final plan acceptance. Complete original proposal objects, authentic preimage, source cases, history and independent review scopes remain bound; this change grants no role or export approval.",
+            "verification": "Native closed source transition with exact original-source joins, current complete owner inventory, guarded serialization and owner-chain checks. Distinct complete-byte scientific and technical evidence is bound separately; no scientific or mapping approval transfers from source publication."
+          },
+          "origin_bridge": [
+            {
+              "subject": "MIM:Bacto_Peptone",
+              "operation_id": "ORIGINAL-w05::W05-FINAL-MAT-001",
+              "origin": {
+                "worker_slot": "worker-05",
+                "head_sha": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                "proposal_id": "W05-FINAL-MAT-001",
+                "proposal_binding": "w05-proposals",
+                "payload_binding": "w05-capture-8ee1b93f9e8742078714",
+                "case_hashes": {
+                  "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc": "18c7017114412024d725e5900908d6ba1741d73933425207f3fae219e31c8245",
+                  "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d": "59e1f79ae07c705576c0a5b55643cc98030c143d0271e40db8b3e829c8f6de10",
+                  "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6": "d92bede60084b8f58e01934b55bfcb05b0b1c5ad93e5387b1c69df4d1f6b2ec4"
+                }
+              },
+              "bindings": [
+                {
+                  "binding": {
+                    "binding_id": "w05-proposals",
+                    "role": "proposal",
+                    "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+                    "sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+                    "published_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                    "published_path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json"
+                  },
+                  "git_blob_sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w05/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+                    "sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+                    "size": 631664
+                  },
+                  "complete_original_proposal": {
+                    "proposal_id": "W05-FINAL-MAT-001",
+                    "case_ids": [
+                      "KG_CASE:ea5b7d3c67c1e428a33cb7be4cc4b4afc24f62c213a1503f309d26a793339dcc",
+                      "KG_CASE:f02aa363d6c588b1fef28e3db13dbe67497f71560acb9f994473f75a1414eb8d",
+                      "KG_CASE:9ab19b29b19ad61ef5d6525bc19221d095359608ece067d94cddcb56feec05a6"
+                    ],
+                    "description": "Reject the three Neopeptone and two Universal peptone aliases as identities of Bacto Peptone; retain labels and sources as provenance. Also reject the two Oxoid supplier-product aliases as identities of the proprietary BD Bacto Peptone product; the exact Oxoid digest/catalog remains unresolved and no substitute product is assigned. Final correction: Reject the Fish peptone (Fluka) identity alias on Bacto Peptone because the inspected Bacto 211677 specification names bovine and porcine protein, whereas the rejected token explicitly names fish. Preserve the exact text, original source and all history; no Fluka catalog or replacement identity is inferred.",
+                    "evidence_ids": [
+                      "MATERIALS-CAP-f1265bc5398a7f56",
+                      "MATERIALS-CAP-e55374c088422d1f",
+                      "MATERIALS-MERCK-UNIVERSAL",
+                      "MATERIALS-OLS-NEOPEPTONE-TERM",
+                      "MATERIALS-OWNER-Bacto_Peptone",
+                      "MATERIALS-SHARD",
+                      "MATERIALS-ATTEMPT-44917674df89c384",
+                      "MATERIALS-CAP-a1d17581eca50e64",
+                      "MATERIALS-CAP-31a954364e3e6346",
+                      "MATERIALS-CAP-956ee8047a762899",
+                      "MATERIALS-C1193-CATALOG",
+                      "MATERIALS-C1193-CONTEXT",
+                      "MATERIALS-C1193-CONTEXT-INDEX",
+                      "MATERIALS-C1193-OXOID-SPECIAL-PEPTONE",
+                      "FINAL-MATERIALS-W08-FINDINGS",
+                      "FINAL-MATERIALS-W02-PROVENANCE"
+                    ],
+                    "owner_path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+                    "kind": "edit_existing_owner",
+                    "before_sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+                    "after_capture": {
+                      "root": "artifact",
+                      "path": "final-correction-v1/materials/proposed/Bacto_Peptone.yaml",
+                      "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b"
+                    },
+                    "changed_labels": [
+                      "Neopeptone",
+                      "Neopeptone (BD-Difco)",
+                      "Neopeptone (Difco Laboratories, Detroit, Ml)",
+                      "Universal peptone",
+                      "Universal peptone (Merck)",
+                      "Peptone (Oxoid)",
+                      "Oxoid peptone",
+                      "Fish peptone (Fluka)"
+                    ],
+                    "identity_consequence": "Primary identity unchanged. Only specified incorrect resolving labels become REJECTED_LABEL.",
+                    "predicate_consequence": "Coordinator must regenerate aliases/export rows; rejected labels must no longer resolve. Mapping identity/predicate unchanged.",
+                    "publication_obligations": "Keep all WITHHOLD/REJECTED/source-material holds. Native guarded write, full changed-owner claim review, synchronized surfaces and canonical SSSOM validation required at coordinator integration. No complete-owner or roles approval.",
+                    "cross_shard_conflict": "Compare every campaign proposal touching data/ingredients/mapped/Bacto_Peptone.yaml against this unchanged before hash; reconcile whole owner before any integration.",
+                    "replaces_proposal_ids": [
+                      "MATERIALS-C1193-bacto-aliases",
+                      "MATERIALS-P-bacto-aliases"
+                    ],
+                    "predecessor_capture": {
+                      "root": "artifact",
+                      "path": "correction-1193-v1/materials/proposed-v2/Bacto_Peptone.yaml",
+                      "sha256": "90d4b4f04e9619f91b8a36af0ea737ce6b43cc6b291b5939854f57f94dd56896"
+                    },
+                    "predecessor_copy": {
+                      "root": "artifact",
+                      "path": "final-correction-v1/materials/predecessor/Bacto_Peptone.yaml",
+                      "sha256": "90d4b4f04e9619f91b8a36af0ea737ce6b43cc6b291b5939854f57f94dd56896"
+                    },
+                    "before_capture": {
+                      "root": "artifact",
+                      "path": "final-correction-v1/materials/before/Bacto_Peptone.yaml",
+                      "sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655"
+                    },
+                    "primary_author": "/root/materials_research",
+                    "independent_review": {
+                      "status": "pending",
+                      "evidence_ids": []
+                    },
+                    "successor_scope": "W05 assigned source cases only; no whole-owner, component-coupling or export approval."
+                  }
+                },
+                {
+                  "binding": {
+                    "binding_id": "w05-capture-8ee1b93f9e8742078714",
+                    "role": "evidence",
+                    "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Peptone.yaml",
+                    "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+                    "published_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                    "published_path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Peptone.yaml"
+                  },
+                  "git_blob_sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Peptone.yaml",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w05/reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Peptone.yaml",
+                    "sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+                    "size": 9503
+                  },
+                  "rendered_candidate_sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+                  "source_bytes_equal_candidate": true,
+                  "parsed_complete_object_equal": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "MIM:Peptone",
+          "before": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Peptone.yaml",
+            "capture": "inputs/suppression-owner-captures/before-Peptone.yaml",
+            "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa"
+          },
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Peptone.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Peptone.yaml",
+            "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+          },
+          "complete_selected_fields": {
+            "identifier": "mesh:D010461",
+            "preferred_term": "Peptone",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "UNDEFINED_MIXTURE",
+            "ontology_mapping": {
+              "ontology_id": "mesh:D010461",
+              "ontology_label": "Peptones",
+              "ontology_source": "MESH",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+                  "notes": "Primary manufacturer guide defines peptones as protein hydrolysates of varied animal/vegetable starting materials. Existing unqualified Peptone owner has only lexical MICRO mammalian grounding, not source-origin evidence. Own variable-material identity does not assign a particular digest or supplier."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://id.nlm.nih.gov/mesh/M0017860",
+                  "notes": "Primary NLM concept for active descriptor D011492 defines a complex mixture produced by partial or extensive hydrolysis. Compared with the manufacturer generic partial-protein-hydrolysate definition, this supports a broader material relation only: NARROW_MATCH / native broadMatch, preserving kgmicrobe.ingredient:peptone. The descriptor indexing annotation does not establish clinical use or approve an organism/assay role."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+                  "notes": "Printed page7 defines generic peptones as water-soluble partial protein hydrolysates from plant, yeast or animal sources and includes acid, base or enzyme processing. This supports broader Protein Hydrolysates membership without selecting feedstock, enzyme, supplier, lot, numerical composition or organism role."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://id.nlm.nih.gov/mesh/M0016245",
+                  "notes": "The direct Peptones descriptor D010461 was assessed under native section3 exact-term precedence. Its primary concept specifies acid-or-enzyme partial hydrolysis and solubility/nonprecipitation criteria. The source-unspecified owner and two observations do not establish that complete narrower specification; manufacturer generic scope also includes base hydrolysis. No exact D010461 identity is asserted merely from its matching name."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl",
+                  "notes": "Full FOODON:03315306 class has an actual subclass restriction member_of some FOODON:03400181 food additive (us cfr), in addition to its SIREN flavoring rdfs:comment. The initial private FoodOn candidate is unselected because these source peptones do not establish that membership. This statement is a negative applicability finding; it does not edit or disapprove other owners automatically."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://id.nlm.nih.gov/mesh/D010461",
+                  "notes": "The complete active NLM Peptones descriptor, its explicit Peptone entry term and preferred concept M0016245 support the ordinary generic material identity. Under native section3, this supported unspecified sense takes precedence over a local fallback. The conventional partial-hydrolysis/solubility description does not create a new lot-specific assay gate when no different actual source preparation is established. This is not supplier-product or source-assay approval."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+                  "notes": "Printed page7 independently identifies generic peptones as water-soluble partial protein-hydrolysis products while explaining variable feedstocks and product profiles. Mention of possible acid, base or enzyme processing is not positive evidence that the unqualified assigned owner denotes a different preparation from the ordinary MeSH Peptones sense. Earlier process/precipitation-gate inference is superseded; no numeric composition or role is imported."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://foodon.org/design/foodon-relations/",
+                  "notes": "The official member_of guidance connects products to external product-type categories rather than asserting subclass identity in agency classifications. The verified FoodOn03315306 existential member_of axiom is real, but does not by itself impose food-use, has-role, regulatory approval or lot eligibility on a MIM material broader mapping. Earlier stronger negative applicability wording is retained historically and superseded here. Selection of direct generic mesh:D010461 follows the closer supported material term, not an invented FoodOn gate."
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": {
+            "operation_id": "ORIGINAL-w05::W05-FINAL-MAT-039",
+            "kind": "edit",
+            "before_source_record": "data/ingredients/mapped/Peptone.yaml",
+            "source_record": "data/ingredients/mapped/Peptone.yaml",
+            "before_yaml_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+            "after_capture": {
+              "path": "reports/all_unmatched_20261107/final-native-intake-v2/payloads/1ebb1ba09c8566d27c39-Peptone.yaml",
+              "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+            },
+            "origins": [
+              {
+                "worker_slot": "worker-05",
+                "head_sha": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                "proposal_id": "W05-FINAL-MAT-039",
+                "proposal_binding": "w05-proposals",
+                "payload_binding": "w05-capture-32c009c9a3ab0c14aebd",
+                "case_hashes": {
+                  "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6"
+                }
+              }
+            ],
+            "change": "Apply exact source/composition successor ORIGINAL-w05::W05-FINAL-MAT-039 under the separately bound final plan acceptance. Complete original proposal objects, authentic preimage, source cases, history and independent review scopes remain bound; this change grants no role or export approval.",
+            "verification": "Native closed source transition with exact original-source joins, current complete owner inventory, guarded serialization and owner-chain checks. Distinct complete-byte scientific and technical evidence is bound separately; no scientific or mapping approval transfers from source publication."
+          },
+          "origin_bridge": [
+            {
+              "subject": "MIM:Peptone",
+              "operation_id": "ORIGINAL-w05::W05-FINAL-MAT-039",
+              "origin": {
+                "worker_slot": "worker-05",
+                "head_sha": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                "proposal_id": "W05-FINAL-MAT-039",
+                "proposal_binding": "w05-proposals",
+                "payload_binding": "w05-capture-32c009c9a3ab0c14aebd",
+                "case_hashes": {
+                  "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6"
+                }
+              },
+              "bindings": [
+                {
+                  "binding": {
+                    "binding_id": "w05-proposals",
+                    "role": "proposal",
+                    "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+                    "sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+                    "published_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                    "published_path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json"
+                  },
+                  "git_blob_sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w05/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+                    "sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842",
+                    "size": 631664
+                  },
+                  "complete_original_proposal": {
+                    "proposal_id": "W05-FINAL-MAT-039",
+                    "case_ids": [
+                      "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+                    ],
+                    "description": "Use the ordinary generic Peptone identity mesh:D010461 (Peptones) under MAPPING_SEMANTICS section3 exact-term and unspecified-sense priority. The active primary NLM descriptor explicitly supplies Peptone as an entry term and a conventional water-soluble partial protein-hydrolysis material definition, independently consistent with the manufacturer generic peptone description. The earlier requirement for a source-specific acid-or-enzyme/precipitation certificate was overstated: the general possibility of base hydrolysis does not establish a different actual preparation or sense for this unqualified owner. This is generic material identity, not identity with every supplier product or a newly verified assay preparation. The earlier FoodOn inference was also overstated: its actual member_of external category relation is not a has-role, food-use, regulatory-approval or lot-eligibility requirement, and the axiom alone does not refute a material broader mapping. The closer direct generic MeSH term, rather than that invented gate, determines the corrected identity choice. Retain all earlier evidence and histories as authentic superseded interpretation; preserve raw plural and rejected truncated label, occurrence statistics, provisional roles and all frozen source/owner/export holds. Five reviewed generic dependent references and the separate RCM reference must follow this actual identifier in independently authored source-specific successors; no global replacement, named-product merge or source-observation redirect is authorized.",
+                    "evidence_ids": [
+                      "MATERIALS-SHARD",
+                      "MATERIALS-CAP-a1d17581eca50e64",
+                      "MATERIALS-CAP-31a954364e3e6346",
+                      "MATERIALS-OWNER-Peptone",
+                      "MATERIALS-BERGEY-gbm00716",
+                      "MATERIALS-BERGEY-gbm01250",
+                      "MATERIALS-C1193-CATALOG",
+                      "MATERIALS-C1193-CONTEXT",
+                      "MATERIALS-C1193-CONTEXT-INDEX",
+                      "MATERIALS-C1193-PEPTONE-DUPLICATES",
+                      "FINAL-MATERIALS-W08-FINDINGS",
+                      "FINAL-MATERIALS-W02-PROVENANCE",
+                      "W05-PARENTS-CHEBI-PEPTONE-SEARCH",
+                      "W05-PARENTS-CHEBI749541",
+                      "W05-PARENTS-FOODON-PEPTONE-SEARCH",
+                      "W05-PARENTS-FOODON15306-PARENTS",
+                      "W05-PARENTS-FOODON15306",
+                      "W05-PARENTS-FOODON15720-PARENTS",
+                      "W05-PARENTS-FOODON15720",
+                      "W05-PARENTS-MEDIADIVE75",
+                      "W05-PARENTS-MICRO-PEPTONE-SEARCH",
+                      "W05-PARENTS-MICRO172-CHILDREN",
+                      "W05-PARENTS-MICRO172-DESCENDANTS",
+                      "W05-PARENTS-MICRO172",
+                      "W05-PARENTS-MICRO178",
+                      "W05-PARENTS-MICRO181",
+                      "W05-PARENTS-PROTEIN-HYDROLYSATE-SEARCH",
+                      "W05-PARENTS-THERMO",
+                      "W05-PARENTS-FROZEN-CASES",
+                      "W05-PARENTS-OWNER-SEARCH",
+                      "W05-PARENTS-COMMENT6719578158",
+                      "W05-PARENTS-COMMENT6719660443",
+                      "W05-PARENTS-CHEBI749541-ENTRY",
+                      "W05-PARENTS-CHEBI749541-PARENTS",
+                      "W05-PARENTS-EXACT-PEPTONE-SEARCH",
+                      "W05-PARENTS-FOODON-OFFICIAL-OWL",
+                      "W05-PARENTS-FOODON15306-GRAPH",
+                      "W05-PARENTS-FOODON15306-MEMBEROF",
+                      "W05-PARENTS-MESH-D010461-BROWSER",
+                      "W05-PARENTS-MESH-D010461-NLM",
+                      "W05-PARENTS-MESH-D010461-OLS",
+                      "W05-PARENTS-MESH-D011492-BROWSER",
+                      "W05-PARENTS-MESH-D011492-NLM",
+                      "W05-PARENTS-MESH-D011492-OLS",
+                      "W05-PARENTS-MESH-M0016245-NLM",
+                      "W05-PARENTS-MESH-M0017860-NLM",
+                      "W05-PARENTS-MICRO167-CHILDREN",
+                      "W05-PARENTS-MICRO167-GRAPH",
+                      "W05-PARENTS-MICRO167",
+                      "W05-PARENTS-MICRO172-ANCESTORS",
+                      "W05-PARENTS-MICRO172-PARENTS",
+                      "W05-PARENTS-MICRO181-PARENTS",
+                      "W05-PARENTS-PRIMARY-ASSESSMENT",
+                      "W05-PARENTS-NEW01",
+                      "W05-PARENTS-COMMENT6719869465",
+                      "W05-PARENTS-SOY-NATIVE",
+                      "W05-DIRECT-PEPTONE-NLM-DESCRIPTOR",
+                      "W05-DIRECT-PEPTONE-NLM-CONCEPT",
+                      "W05-DIRECT-PEPTONE-THERMO",
+                      "W05-DIRECT-PEPTONE-FOODON-RELATIONS",
+                      "W05-DIRECT-PEPTONE-OWL-SEMANTICS",
+                      "W05-DIRECT-PEPTONE-COORDINATOR-REASSESSMENT",
+                      "W05-DIRECT-PEPTONE-SCIENCE",
+                      "W05-DIRECT-PEPTONE-OWNER-SEARCH"
+                    ],
+                    "owner_path": "data/ingredients/mapped/Peptone.yaml",
+                    "kind": "edit_existing_owner",
+                    "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+                    "after_capture": {
+                      "root": "artifact",
+                      "path": "buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+                      "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+                    },
+                    "identity_consequence": "Existing ordinary generic Peptone owner uses mesh:D010461. Supplier-specific products, source assay materials and raw organism observations retain their own boundaries and holds.",
+                    "predicate_consequence": "Native single exactMatch mesh:D010461 replaces prior broader Protein Hydrolysates plus local registry rows. Source-specific five generic child references and RCM require separately authored exact-identifier continuity; no global retarget.",
+                    "publication_obligations": "Reconcile all campaign proposed owners, apply via guarded writer, preserve every prior source/owner/export hold, review complete changed payload and run native synchronization/QC before publication.",
+                    "cross_shard_conflict": "Coordinator must compare all actual proposed owner paths and source-qualified identities; no worker merge or maintained write.",
+                    "replaces_proposal_ids": [
+                      "MATERIALS-C1193-peptone-identity"
+                    ],
+                    "predecessor_capture": {
+                      "root": "artifact",
+                      "path": "correction-1193-v1/materials/proposed-v2/Peptone.yaml",
+                      "sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523"
+                    },
+                    "predecessor_copy": {
+                      "root": "artifact",
+                      "path": "final-correction-v1/materials/predecessor/Peptone.yaml",
+                      "sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523"
+                    },
+                    "before_capture": {
+                      "root": "artifact",
+                      "path": "final-correction-v1/materials/before/Peptone.yaml",
+                      "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa"
+                    },
+                    "primary_author": "/root/materials_research",
+                    "independent_review": {
+                      "status": "pending exact direct-term successor and full composed source decision; previous reviews remain historical",
+                      "evidence_ids": []
+                    },
+                    "successor_scope": "W05 assigned source cases only; no whole-owner, component-coupling or export approval.",
+                    "changed_labels": [
+                      "Peptone (0.01 %"
+                    ],
+                    "parent_predecessor_capture": {
+                      "root": "artifact",
+                      "path": "final-correction-v1/materials/proposed/Peptone.yaml",
+                      "sha256": "61590bc2de78646c368ed1fb21c2c29bbc041d9f248e8a712c578376e776996d"
+                    },
+                    "unselected_private_candidate_capture": {
+                      "root": "artifact",
+                      "path": "buffer-parts-v1/parents/proposed/Peptone.yaml",
+                      "sha256": "614b433ee0664b9ece52b275875ad1fa11660c7e97a7c9ce2dc23ccd2e3e66e6"
+                    },
+                    "parent_successor_author": "/root/buffer_hepes",
+                    "parent_successor_at": "2026-11-08T09:36:38.806015+00:00",
+                    "direct_term_predecessor_capture": {
+                      "root": "artifact",
+                      "path": "buffer-parts-v1/parents/proposed-v2/Peptone.yaml",
+                      "sha256": "d1668cfd863e02bfb1b9b82a86db213c1cfd850ab3b216abdb81cba4761e1e91"
+                    },
+                    "direct_term_predecessor_description": "Reconcile existing generic Peptone owner to local protein-digest material identity, removing unsupported exact mammalian MICRO0000178 scope. Keep raw plural provenance, all existing role/count/truncated-alias holds and both MicrobeDecoder source-case holds; no new owner or catalog assignment. Final correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Reject only the incomplete concentration token Peptone (0.01 % as an identity name of generic Peptone. Preserve its original microbedecoder provenance and plural Peptones. Do not invent a missing parenthesis, percent basis or preparation. Eighteen retained historical inbound MICRO:0000178 component references and current proposed components remain a source-level integration dependency; no automatic retargeting is authorized. Consolidated parent-grounding successor: Complete the supported nonidentity family grounding: retain kgmicrobe.ingredient:peptone and use NARROW_MATCH to mesh:D011492 Protein Hydrolysates, with native broadMatch plus the local B1 identity row. The active primary NLM concept M0017860 defines a complex mixture produced by partial or extensive hydrolysis; the manufacturer guide defines generic peptones as water-soluble partial protein hydrolysates and includes plant, yeast or animal material and acid, base or enzyme processing. Assess the direct MeSH Peptones term D010461 before this broader route: its acid-or-enzyme and precipitation criteria are not established for the complete source-unspecified generic scope. MICRO:0000178 adds unsupported mammalian origin, MICRO:0000174 an unverified enzymatic process, and MICRO:0000172 does not establish yeast coverage. Do not select FOODON:03315306 after full OWL inspection reveals an actual member-of food-additive restriction in addition to its SIREN comment; preserve the initial private candidate and NEW01 report as unselected evidence. CHEBI:749541 is a sparse imported molecular-entity class without established whole-mixture scope. MICRO:0000167 is a supported but less specific undefined-mixture option. The MeSH descriptor indexing annotation about therapeutic/nutrient use is not imported as a clinical or assay role. Preserve the two MicrobeDecoder observations, raw plural, rejected truncated token, all previous history/evidence/statistics, provisional roles, source holds and source-specific incoming-reference reconciliation; no owner, source-case or export admission.",
+                    "direct_term_successor_author": "/root/buffer_hepes",
+                    "direct_term_successor_at": "2026-11-08T09:46:57.767703+00:00"
+                  }
+                },
+                {
+                  "binding": {
+                    "binding_id": "w05-capture-32c009c9a3ab0c14aebd",
+                    "role": "evidence",
+                    "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+                    "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+                    "published_head": "a43ada344e30ddf5843dd3dddc3b3fafbe29cedd",
+                    "published_path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml"
+                  },
+                  "git_blob_sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w05/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+                    "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+                    "size": 18647
+                  },
+                  "rendered_candidate_sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7",
+                  "source_bytes_equal_candidate": true,
+                  "parsed_complete_object_equal": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source_fields": [
+        {
+          "source_ref": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bacto_Peptone.yaml#ontology_mapping.ontology_label",
+          "source_owner_sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+          "literal_field": "peptone"
+        },
+        {
+          "source_ref": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bacto_Peptone.yaml#synonyms[28]",
+          "source_owner_sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+          "literal_field": {
+            "synonym_text": "peptone",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "manual"
+          }
+        },
+        {
+          "source_ref": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bacto_Peptone.yaml#synonyms[29]",
+          "source_owner_sha256": "42fdcb34ce61e437b22ce702d43a775b6e0f84804cde1372194034a1789a296b",
+          "literal_field": {
+            "synonym_text": "Peptone",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "manual"
+          }
+        }
+      ],
+      "exact_native_event": {
+        "disposition": "SUPPRESS",
+        "evidence_refs": "[\"https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-6558035777\",\"https://github.com/CultureBotAI/culturebotai-claw/issues/701\"]",
+        "input_surfaces": "[\"mim.ontology_label\",\"mim.synonym\"]",
+        "owner_subject_ids": "[\"MIM:Peptone\"]",
+        "source_refs": "[\"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bacto_Peptone.yaml#ontology_mapping.ontology_label\",\"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bacto_Peptone.yaml#synonyms[28]\",\"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bacto_Peptone.yaml#synonyms[29]\"]",
+        "subject_id": "MIM:Bacto_Peptone",
+        "token": "Peptone",
+        "token_key": "peptone"
+      },
+      "historical_event": null,
+      "scientific_rationale": "Manufacturer guide printed page 7 describes variable partial protein hydrolysates from plant, yeast or animal sources and explicitly does not assign its typical composition chart to any specific product. Printed page 48 identifies Bacto Peptone as an enzymatic animal-protein digest, with 211677 among package catalogues. Exact 211677 page specifies bovine and porcine protein. NLM D010461/M0016245 defines the generic Peptones material. These support the bare-name relationship, not automatic substitution of Bacto for an unqualified recipe input.",
+      "scope_rationale": "The generic peptone name is a legitimate retained term associated with this enzymatic animal-protein digest product; the generic Peptone owner covers the ordinary source-unspecified hydrolysate material. Neither a generic class nor this collision establishes whole-owner product identity.",
+      "whole_field_review": "Emitter MICRO:0000178 / ontology label peptone / EXACT_MATCH and UNDEFINED_MIXTURE are unchanged by this review. Source token is repeated at ontology label and synonyms[28]/[29]. Generic Peptone now mesh:D010461 EXACT_MATCH, UNDEFINED_MIXTURE. Whole before/after records include original histories and rejected-product labels; no component or supplied_form is invented.",
+      "retained_scientific_holds": [
+        "No endorsement of inherited brand-versus-generic exact MICRO grounding, inherited BBL 11910/meat/pepsin/bacteriological/gelatin/mixture aliases, or whole-owner identity equivalence.",
+        "Historical duplicate statistics and all source-specific consumer references remain outside this token decision.",
+        "Existing provisional PROTEIN_SOURCE evidence remains provisional; product nitrogen-use discussion does not approve roles."
+      ],
+      "alternatives": {
+        "KEEP": "Not the supported conditional export outcome when the exact generic preferred owner remains selected; would leave the owned generic name on the product emitter.",
+        "DROP": "No claim-specific finding that the sourced bare peptone name is false; preserve both YAML entries and ontology label.",
+        "MERGE": "No source-backed same-substance/supplied-form equality of every generic peptone and Bacto product.",
+        "SUPPRESS": "Preferred-name exclusivity can omit only peptone from Bacto other, preserving all emitter and owner bytes/history and exact credited owner."
+      },
+      "application_conditions": [
+        "Conditional scientific/policy recommendation only, not authorization to suppress, apply, publish, admit a mapping row, approve a whole owner, source case, role or new external mapping. All such dispositions remain WITHHOLD.",
+        "Do not change YAML synonyms, ontology labels, source fields, identities, components, histories or old human/method claims under this recommendation. No DROP/REJECTED_LABEL, owner merge or namespace choice is authorized.",
+        "Actual root generation from accepted applied owners must independently establish exact whole-owner/source-path/event equivalence, complete preferred-name owner credits, native selected output and publication receipt. This private 3750-row diagnostic is not that receipt.",
+        "The observed native publisher rejects these new selected events and exposes no authorization field. Separate reviewed capability and root acceptance are required; no bypass, handwritten canonical sidecar or wholesale replacement.",
+        "Preserve all34 historical sidecar rows, original source credits and all27 mapping-change receipts. Other17 candidate events and all other tokens are outside these four scientific/policy decisions."
+      ],
+      "congocidin_specific_condition": null,
+      "canonical_vs_native": {
+        "canonical": {
+          "input_sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+          "rows": [
+            {
+              "subject_id": "MIM:Bacto_Peptone",
+              "subject_label": "Bacto peptone",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "MICRO:0000178",
+              "object_label": "peptone",
+              "object_source": "obo:micro.owl",
+              "mapping_justification": "semapv:LexicalMatching",
+              "source": "MIM:cbclaw_foodon_promotion|MIM:manual review of MICRO ontology coverage|MIM:curator=refresh_occurrence_statistics",
+              "mapping_date": "2026-09-24",
+              "confidence": "0.99",
+              "comment": "[other: dropped ['Meat peptone', 'Fish peptone']: REJECTED_LABEL on the record (#669/#704)]",
+              "other": "Bacto peptone (BD-Difco)|Bacto Peptone (Difco)|Bacto-Peptone (BD)|Peptone, Bacto (BD 211677)|Peptone (Oxoid)|Peptone (BD--Difco)|Peptone (BD Bacto)|Peptone (BD-Difco)|Peptone (BBL 11910)|Oxoid peptone|Bacto peptone (BD--Difco)|Peptone from meat|Peptone (meat)|Peptone from meat (pepsin-digested)|Bacteriological peptone|Neopeptone|Neopeptone (BD-Difco)|Neopeptone (Difco Laboratories, Detroit, Ml)|Gelatin peptone|Universal peptone|Universal peptone (Merck)|Peptone mixture|Fish peptone (Fluka)",
+              "validation_method": "manual:apply_669_704_rulings|OTHER|2026-09-24"
+            }
+          ],
+          "all_other_tokens": [
+            "Bacto peptone (BD-Difco)",
+            "Bacto Peptone (Difco)",
+            "Bacto-Peptone (BD)",
+            "Peptone, Bacto (BD 211677)",
+            "Peptone (Oxoid)",
+            "Peptone (BD--Difco)",
+            "Peptone (BD Bacto)",
+            "Peptone (BD-Difco)",
+            "Peptone (BBL 11910)",
+            "Oxoid peptone",
+            "Bacto peptone (BD--Difco)",
+            "Peptone from meat",
+            "Peptone (meat)",
+            "Peptone from meat (pepsin-digested)",
+            "Bacteriological peptone",
+            "Neopeptone",
+            "Neopeptone (BD-Difco)",
+            "Neopeptone (Difco Laboratories, Detroit, Ml)",
+            "Gelatin peptone",
+            "Universal peptone",
+            "Universal peptone (Merck)",
+            "Peptone mixture",
+            "Fish peptone (Fluka)"
+          ],
+          "selected_token_present": false
+        },
+        "candidate": {
+          "input_sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de",
+          "rows": [
+            {
+              "subject_id": "MIM:Bacto_Peptone",
+              "subject_label": "Bacto peptone",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "MICRO:0000178",
+              "object_label": "peptone",
+              "object_source": "obo:micro.owl",
+              "mapping_justification": "semapv:LexicalMatching",
+              "source": "MIM:cbclaw_foodon_promotion|MIM:manual review of MICRO ontology coverage|MIM:curator=Codex /root/materials_research; W05 final report-only correction",
+              "mapping_date": "2026-11-08",
+              "confidence": "0.99",
+              "comment": "",
+              "other": "Bacto peptone (BD-Difco)|Bacto Peptone (Difco)|Bacto-Peptone (BD)|Peptone, Bacto (BD 211677)|Peptone (BD--Difco)|Peptone (BD Bacto)|Peptone (BD-Difco)|Peptone (BBL 11910)|Bacto peptone (BD--Difco)|Peptone from meat|Peptone (meat)|Peptone from meat (pepsin-digested)|Bacteriological peptone|Gelatin peptone|Peptone mixture",
+              "validation_method": "manual:apply_669_704_rulings|OTHER|2026-09-24"
+            }
+          ],
+          "all_other_tokens": [
+            "Bacto peptone (BD-Difco)",
+            "Bacto Peptone (Difco)",
+            "Bacto-Peptone (BD)",
+            "Peptone, Bacto (BD 211677)",
+            "Peptone (BD--Difco)",
+            "Peptone (BD Bacto)",
+            "Peptone (BD-Difco)",
+            "Peptone (BBL 11910)",
+            "Bacto peptone (BD--Difco)",
+            "Peptone from meat",
+            "Peptone (meat)",
+            "Peptone from meat (pepsin-digested)",
+            "Bacteriological peptone",
+            "Gelatin peptone",
+            "Peptone mixture"
+          ],
+          "selected_token_present": false
+        }
+      },
+      "primary_proof_keys": [
+        "manufacturer_guide",
+        "manufacturer_guide_text",
+        "bacto_211677",
+        "peptones_descriptor",
+        "peptones_concept"
+      ],
+      "independent_scientific_reviewer": "/root/suppression_materials_science",
+      "independent_skeptical_reviewer": "/root/suppression_skeptic",
+      "proofs": [
+        {
+          "path": "review/materials/materials-scientific-policy-review.json",
+          "sha256": "c7eac973659d345e4939cb128e3b37391cf143121094f49a036f3fadf401002d"
+        },
+        {
+          "path": "review/skeptical/ASSESSMENT-v2.json",
+          "sha256": "c7886bf0ddca796d0fee8768d8e17ccccd30fe762b82551d243ac35d75a70336"
+        },
+        {
+          "path": "review/skeptical/independent-byte-event-audit-v2.json",
+          "sha256": "4ab9d8e19412e1914011f2bd6948fa14a20c2d5434059a8b7ae1791268ce3553"
+        },
+        {
+          "path": "validation/origin-bridges.json",
+          "sha256": "432e392de070103fcd170752ae52b8e88839bfce686efb8219438c32770e7fbe"
+        },
+        {
+          "path": "validation/native-bounded-checks.json",
+          "sha256": "561cb3f80c90904de6113969c8f5b3a3a903ed6a5b42650f785398984202ee10"
+        }
+      ]
+    },
+    {
+      "decision_id": "W07-SUPPRESSION-02",
+      "subject": "MIM:Glebomycin",
+      "token": "Bluensomycin",
+      "token_key": "bluensomycin",
+      "normalization": "Native strip then Unicode casefold; event display is minimum actual trimmed spelling; no chemical/form normalization.",
+      "recommendation": "SUPPRESS",
+      "status": "CONDITIONAL_RECOMMENDATION_ONLY",
+      "execution_disposition": "WITHHOLD",
+      "owner_merge_disposition": "WITHHOLD",
+      "row_admission": "WITHHOLD",
+      "role_approval": "WITHHOLD",
+      "new_external_mapping": "WITHHOLD",
+      "complete_credited_owner_set": [
+        "MIM:Bluensomycin"
+      ],
+      "complete_owner_bindings": [
+        {
+          "subject": "MIM:Glebomycin",
+          "before": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Glebomycin.yaml",
+            "capture": "inputs/suppression-owner-captures/before-Glebomycin.yaml",
+            "sha256": "f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed"
+          },
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Glebomycin.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Glebomycin.yaml",
+            "sha256": "1824bb16095d78e4c17977b7699dd1380ea5cb11d7f48f45f5bfe818f30051d1"
+          },
+          "complete_selected_fields": {
+            "identifier": "NCIT:C90636",
+            "preferred_term": "Glebomycin",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "ontology_mapping": {
+              "ontology_id": "NCIT:C90636",
+              "ontology_label": "Bluensomycin",
+              "ontology_source": "NCIT",
+              "mapping_quality": "SYNONYM_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "kg-microbe metatraits unmapped_compounds.tsv",
+                  "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=MEDIUM; rationale=single lexical candidate; top OLS candidates: NCIT:C90636(Bluensomycin). Pending curator promotion to a CHEBI/NCIT primary identifier."
+                },
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "NCIT via EBI OLS exact synonym search",
+                  "notes": "Promoted from kgmicrobe.compound:glebomycin after OLS returned NCIT:C90636 with exact synonym \"Glebomycin\"."
+                },
+                {
+                  "evidence_type": "LITERATURE",
+                  "source": "https://doi.org/10.1128/jb.172.10.5844-5851.1990",
+                  "notes": "Independent1990 biosynthetic research explicitly identifies Bluensomycin(glebomycin), corroborating NCIT:C90636. This supplies chemical identity evidence that the prior hold lacked. Propose evidence enrichment and SYNONYM_MATCH grade, preserving all inherited release holds until fresh full-payload review. Exact primary-source capture and live ontology record are in worker09 antibiotic evidence; this proposal does not clear publication holds."
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": {
+            "operation_id": "ORIGINAL-w09::ab-proposal-glebomycin",
+            "kind": "edit",
+            "before_source_record": "data/ingredients/mapped/Glebomycin.yaml",
+            "source_record": "data/ingredients/mapped/Glebomycin.yaml",
+            "before_yaml_sha256": "f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed",
+            "after_capture": {
+              "path": "reports/all_unmatched_20261107/final-native-intake-v2/payloads/5ee2523f6fbf2c934860-Glebomycin.yaml",
+              "sha256": "1824bb16095d78e4c17977b7699dd1380ea5cb11d7f48f45f5bfe818f30051d1"
+            },
+            "origins": [
+              {
+                "worker_slot": "worker-09",
+                "head_sha": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+                "proposal_id": "ab-proposal-glebomycin",
+                "proposal_binding": "w09-proposals",
+                "payload_binding": "w09-capture-fdc1921ec88eaafa2733",
+                "case_hashes": {
+                  "KG_CASE:4386590aa16f403589f31e38422bc8d99a1b53cb2fbfaa47e0889c5ec22744a4": "d03310a75e007e16a1501866aabd58dec07f1ec6c9ec41b61077b37b344789e6",
+                  "KG_CASE:6989e61ec701125fde733f22457e20134886d123f3ff7c50abaecb8b1261db94": "0a1c099fe5284fe0aae34f50db6dbac6c922446a47b58b9fb0339f7fa81b9cb4"
+                }
+              }
+            ],
+            "change": "Apply exact source/composition successor ORIGINAL-w09::ab-proposal-glebomycin under the separately bound final plan acceptance. Complete original proposal objects, authentic preimage, source cases, history and independent review scopes remain bound; this change grants no role or export approval.",
+            "verification": "Native closed source transition with exact original-source joins, current complete owner inventory, guarded serialization and owner-chain checks. Distinct complete-byte scientific and technical evidence is bound separately; no scientific or mapping approval transfers from source publication."
+          },
+          "origin_bridge": [
+            {
+              "subject": "MIM:Glebomycin",
+              "operation_id": "ORIGINAL-w09::ab-proposal-glebomycin",
+              "origin": {
+                "worker_slot": "worker-09",
+                "head_sha": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+                "proposal_id": "ab-proposal-glebomycin",
+                "proposal_binding": "w09-proposals",
+                "payload_binding": "w09-capture-fdc1921ec88eaafa2733",
+                "case_hashes": {
+                  "KG_CASE:4386590aa16f403589f31e38422bc8d99a1b53cb2fbfaa47e0889c5ec22744a4": "d03310a75e007e16a1501866aabd58dec07f1ec6c9ec41b61077b37b344789e6",
+                  "KG_CASE:6989e61ec701125fde733f22457e20134886d123f3ff7c50abaecb8b1261db94": "0a1c099fe5284fe0aae34f50db6dbac6c922446a47b58b9fb0339f7fa81b9cb4"
+                }
+              },
+              "bindings": [
+                {
+                  "binding": {
+                    "binding_id": "w09-proposals",
+                    "role": "proposal",
+                    "path": "reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/proposals.json",
+                    "sha256": "1ccab8a007b80ffa335d6913439cfde4d95075192a727b90863243a176e96cfc",
+                    "published_head": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+                    "published_path": "reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/proposals.json"
+                  },
+                  "git_blob_sha256": "1ccab8a007b80ffa335d6913439cfde4d95075192a727b90863243a176e96cfc",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/proposals.json",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w09/reports/all_unmatched_20261107/worker-09/followups/provenance1226-v1/proposals.json",
+                    "sha256": "1ccab8a007b80ffa335d6913439cfde4d95075192a727b90863243a176e96cfc",
+                    "size": 56044
+                  },
+                  "complete_original_proposal": {
+                    "proposal_id": "ab-proposal-glebomycin",
+                    "case_ids": [
+                      "KG_CASE:4386590aa16f403589f31e38422bc8d99a1b53cb2fbfaa47e0889c5ec22744a4",
+                      "KG_CASE:6989e61ec701125fde733f22457e20134886d123f3ff7c50abaecb8b1261db94"
+                    ],
+                    "description": "Enrich existing mapping with independent chemical synonym evidence and correct quality to SYNONYM_MATCH.",
+                    "evidence_ids": [
+                      "ab-term-NCIT-C90636",
+                      "ab-primary-glebomycin",
+                      "ab-ols-26",
+                      "ab-frozen-cases",
+                      "ab-owner-snapshots",
+                      "ab-local-terms"
+                    ],
+                    "owner_path": "data/ingredients/mapped/Glebomycin.yaml",
+                    "kind": "edit_existing_owner",
+                    "before_sha256": "f14ec57e02fe9731bb5318f0491635540564ec1e7d376d9509eb03ac4eeea1ed",
+                    "after_capture": {
+                      "root": "artifact",
+                      "path": "antibiotics/after/Glebomycin.yaml",
+                      "sha256": "bbcfa3f297cbfe58231197c60b99ff1f42e87d1015e8d78b7aedf98c1f4b4067"
+                    },
+                    "prior_mapping_payload": {
+                      "ontology_id": "NCIT:C90636",
+                      "ontology_label": "Bluensomycin",
+                      "ontology_source": "NCIT",
+                      "mapping_quality": "EXACT_MATCH",
+                      "evidence": [
+                        {
+                          "evidence_type": "DATABASE_MATCH",
+                          "source": "kg-microbe metatraits unmapped_compounds.tsv",
+                          "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=MEDIUM; rationale=single lexical candidate; top OLS candidates: NCIT:C90636(Bluensomycin). Pending curator promotion to a CHEBI/NCIT primary identifier."
+                        },
+                        {
+                          "evidence_type": "DATABASE_MATCH",
+                          "source": "NCIT via EBI OLS exact synonym search",
+                          "notes": "Promoted from kgmicrobe.compound:glebomycin after OLS returned NCIT:C90636 with exact synonym \"Glebomycin\"."
+                        }
+                      ]
+                    },
+                    "identity_consequence": "NCIT:C90636",
+                    "intended_predicate": "skos:exactMatch (reviewed single chemical identity)",
+                    "alias_consequence": "Preserve all original raw/rejected synonyms and preferred label; review any proposed canonical synonym against full publication payload.",
+                    "publication_obligations": [
+                      "Every changed owner invalidates inherited content-bound support; fresh native complete-payload mapping review before publication.",
+                      "Preserve all existing WITHHOLD/REJECTED decisions until exact obligations independently resolved.",
+                      "Coordinator must synchronize YAML surfaces and regenerate SSSOM only through native guarded integration; no generation performed here.",
+                      "Cross-shard owner overlap must be reconciled by coordinator."
+                    ]
+                  }
+                },
+                {
+                  "binding": {
+                    "binding_id": "w09-capture-fdc1921ec88eaafa2733",
+                    "role": "evidence",
+                    "path": "reports/all_unmatched_20261107/worker-09/antibiotics/after/Glebomycin.yaml",
+                    "sha256": "bbcfa3f297cbfe58231197c60b99ff1f42e87d1015e8d78b7aedf98c1f4b4067",
+                    "published_head": "bf75ca9a93579e50140a63b4426dbdf8913afe11",
+                    "published_path": "reports/all_unmatched_20261107/worker-09/antibiotics/after/Glebomycin.yaml"
+                  },
+                  "git_blob_sha256": "bbcfa3f297cbfe58231197c60b99ff1f42e87d1015e8d78b7aedf98c1f4b4067",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-09/antibiotics/after/Glebomycin.yaml",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w09/reports/all_unmatched_20261107/worker-09/antibiotics/after/Glebomycin.yaml",
+                    "sha256": "bbcfa3f297cbfe58231197c60b99ff1f42e87d1015e8d78b7aedf98c1f4b4067",
+                    "size": 4140
+                  },
+                  "rendered_candidate_sha256": "1824bb16095d78e4c17977b7699dd1380ea5cb11d7f48f45f5bfe818f30051d1",
+                  "source_bytes_equal_candidate": false,
+                  "parsed_complete_object_equal": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "MIM:Bluensomycin",
+          "before": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Bluensomycin.yaml",
+            "capture": "inputs/suppression-owner-captures/before-Bluensomycin.yaml",
+            "sha256": "1f46279fd2a89f00445da6eff7b79bbb8a686917030697c2cb99725b9855657d"
+          },
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Bluensomycin.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Bluensomycin.yaml",
+            "sha256": "1f46279fd2a89f00445da6eff7b79bbb8a686917030697c2cb99725b9855657d"
+          },
+          "complete_selected_fields": {
+            "identifier": "CHEBI:81193",
+            "preferred_term": "Bluensomycin",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:81193",
+              "ontology_label": "Bluensomycin",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "LEXICAL_MATCH",
+                  "source": "microbedecoder",
+                  "notes": "Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:bluensomycin; "
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": null,
+          "origin_bridge": [
+            {
+              "subject": "MIM:Bluensomycin",
+              "operation": null,
+              "source": "Unchanged authentic maintained baseline",
+              "git_commit": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+              "git_path": "data/ingredients/mapped/Bluensomycin.yaml",
+              "sha256": "1f46279fd2a89f00445da6eff7b79bbb8a686917030697c2cb99725b9855657d"
+            }
+          ]
+        }
+      ],
+      "source_fields": [
+        {
+          "source_ref": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Glebomycin.yaml#ontology_mapping.ontology_label",
+          "source_owner_sha256": "1824bb16095d78e4c17977b7699dd1380ea5cb11d7f48f45f5bfe818f30051d1",
+          "literal_field": "Bluensomycin"
+        }
+      ],
+      "exact_native_event": {
+        "disposition": "SUPPRESS",
+        "evidence_refs": "[\"https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-6558035777\",\"https://github.com/CultureBotAI/culturebotai-claw/issues/701\"]",
+        "input_surfaces": "[\"mim.ontology_label\"]",
+        "owner_subject_ids": "[\"MIM:Bluensomycin\"]",
+        "source_refs": "[\"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Glebomycin.yaml#ontology_mapping.ontology_label\"]",
+        "subject_id": "MIM:Glebomycin",
+        "token": "Bluensomycin",
+        "token_key": "bluensomycin"
+      },
+      "historical_event": null,
+      "scientific_rationale": "The original 1990 biosynthetic research abstract PMID1698764 explicitly identifies Bluensomycin (glebomycin) in a detailed aminocyclitol comparison. The current official ChEBI81193 capture supplies the same formula, molecular weight, stereochemical SMILES and InChI as the credited Bluensomycin owner. This is evidence for the name relationship, not a source observation of a purchased salt, concentration, preparation or lot.",
+      "scope_rationale": "Bluensomycin is a supported name for the bare compound Glebomycin. The ontology-label token is legitimate, and its preferred-name owner exists separately.",
+      "whole_field_review": "Emitter NCIT:C90636 with ontology label Bluensomycin, SYNONYM_MATCH, MAPPED and SINGLE_INGREDIENT; source token only ontology_mapping.ontology_label. Credited owner remains authentic unchanged CHEBI:81193 EXACT_MATCH with complete structure. Original lexical evidence and new LITERATURE record remain both present; history prefix preserved.",
+      "retained_scientific_holds": [
+        "No automatic Glebomycin/Bluensomycin owner merge or replacement of the two historical identifiers.",
+        "No assigned hydrochloride/sulfate/hydrate, concentration, preparation, supplier or source-organism role.",
+        "Inherited SELECTIVE_AGENT computational role and whole-row mapping/admission remain outside this pair policy."
+      ],
+      "alternatives": {
+        "KEEP": "The valid ontology label is still another exact preferred owner name; keeping it in emitter other is not the conditional exclusivity outcome.",
+        "DROP": "Primary evidence contradicts a claim that the name relationship is false; do not invent a rejected synonym.",
+        "MERGE": "Bare-compound equivalence warrants separate owner/source/form reconciliation, not a merge by collision.",
+        "SUPPRESS": "Omit only the generated ontology-label token from Glebomycin other and retain NCIT mapping/evidence/history unchanged."
+      },
+      "application_conditions": [
+        "Conditional scientific/policy recommendation only, not authorization to suppress, apply, publish, admit a mapping row, approve a whole owner, source case, role or new external mapping. All such dispositions remain WITHHOLD.",
+        "Do not change YAML synonyms, ontology labels, source fields, identities, components, histories or old human/method claims under this recommendation. No DROP/REJECTED_LABEL, owner merge or namespace choice is authorized.",
+        "Actual root generation from accepted applied owners must independently establish exact whole-owner/source-path/event equivalence, complete preferred-name owner credits, native selected output and publication receipt. This private 3750-row diagnostic is not that receipt.",
+        "The observed native publisher rejects these new selected events and exposes no authorization field. Separate reviewed capability and root acceptance are required; no bypass, handwritten canonical sidecar or wholesale replacement.",
+        "Preserve all34 historical sidecar rows, original source credits and all27 mapping-change receipts. Other17 candidate events and all other tokens are outside these four scientific/policy decisions."
+      ],
+      "congocidin_specific_condition": null,
+      "canonical_vs_native": {
+        "canonical": {
+          "input_sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+          "rows": [
+            {
+              "subject_id": "MIM:Glebomycin",
+              "subject_label": "Glebomycin",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "NCIT:C90636",
+              "object_label": "Bluensomycin",
+              "object_source": "obo:ncit.owl",
+              "mapping_justification": "semapv:LexicalMatching",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:NCIT via EBI OLS exact synonym search|MIM:curator=migrate_media_roles_to_facets",
+              "mapping_date": "2026-07-20",
+              "confidence": "0.99",
+              "comment": "",
+              "other": "",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            }
+          ],
+          "all_other_tokens": [],
+          "selected_token_present": false
+        },
+        "candidate": {
+          "input_sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de",
+          "rows": [
+            {
+              "subject_id": "MIM:Glebomycin",
+              "subject_label": "Glebomycin",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "NCIT:C90636",
+              "object_label": "Bluensomycin",
+              "object_source": "obo:ncit.owl",
+              "mapping_justification": "semapv:ManualMappingCuration",
+              "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:NCIT via EBI OLS exact synonym search|MIM:https://doi.org/10.1128/jb.172.10.5844-5851.1990|MIM:curator=codex_worker09_antibiotics_primary",
+              "mapping_date": "2026-11-08",
+              "confidence": "0.99",
+              "comment": "",
+              "other": "",
+              "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+            }
+          ],
+          "all_other_tokens": [],
+          "selected_token_present": false
+        }
+      },
+      "primary_proof_keys": [
+        "glebomycin_research",
+        "bluensomycin_chebi",
+        "glebomycin_ncit"
+      ],
+      "independent_scientific_reviewer": "/root/suppression_antibiotics_science",
+      "independent_skeptical_reviewer": "/root/suppression_skeptic",
+      "proofs": [
+        {
+          "path": "review/antibiotics/SCIENTIFIC-REVIEW.json",
+          "sha256": "ec07fedafbeb2c637a13fd7c026b6e10453f45c3fce9f7883da08a8d9a25137a"
+        },
+        {
+          "path": "review/skeptical/ASSESSMENT-v2.json",
+          "sha256": "c7886bf0ddca796d0fee8768d8e17ccccd30fe762b82551d243ac35d75a70336"
+        },
+        {
+          "path": "review/skeptical/independent-byte-event-audit-v2.json",
+          "sha256": "4ab9d8e19412e1914011f2bd6948fa14a20c2d5434059a8b7ae1791268ce3553"
+        },
+        {
+          "path": "validation/origin-bridges.json",
+          "sha256": "432e392de070103fcd170752ae52b8e88839bfce686efb8219438c32770e7fbe"
+        },
+        {
+          "path": "validation/native-bounded-checks.json",
+          "sha256": "561cb3f80c90904de6113969c8f5b3a3a903ed6a5b42650f785398984202ee10"
+        }
+      ]
+    },
+    {
+      "decision_id": "W07-SUPPRESSION-03",
+      "subject": "MIM:Netropsin",
+      "token": "Congocidin",
+      "token_key": "congocidin",
+      "normalization": "Native strip then Unicode casefold; event display is minimum actual trimmed spelling; no chemical/form normalization.",
+      "recommendation": "SUPPRESS",
+      "status": "CONDITIONAL_RECOMMENDATION_ONLY",
+      "execution_disposition": "WITHHOLD",
+      "owner_merge_disposition": "WITHHOLD",
+      "row_admission": "WITHHOLD",
+      "role_approval": "WITHHOLD",
+      "new_external_mapping": "WITHHOLD",
+      "complete_credited_owner_set": [
+        "MIM:Congocidin"
+      ],
+      "complete_owner_bindings": [
+        {
+          "subject": "MIM:Netropsin",
+          "before": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Netropsin.yaml",
+            "capture": "inputs/suppression-owner-captures/before-Netropsin.yaml",
+            "sha256": "b29f27812022327ca5b2b6b895a944a7d47188bfbf48b57c008fa13a6edb34aa"
+          },
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Netropsin.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Netropsin.yaml",
+            "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e"
+          },
+          "complete_selected_fields": {
+            "identifier": "mesh:D009429",
+            "preferred_term": "Netropsin",
+            "mapping_status": "MAPPED",
+            "ingredient_type": null,
+            "ontology_mapping": {
+              "ontology_id": "mesh:D009429",
+              "ontology_label": "Netropsin",
+              "ontology_source": "MESH",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "MIM curation (#213)",
+                  "notes": "Exact MeSH label match; absent from CHEBI and NCIT (#213)."
+                },
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://id.nlm.nih.gov/mesh/M0014675.json",
+                  "notes": "Official MeSH places Congocidine within the preferred Netropsin concept M0014675, while netropsin hydrochloride is a separate narrower concept. PubChem CID4461 also records Congocidin as a synonym. This supports the source bare antibiotic name, without a hydrochloride/dihydrochloride assignment. Existing Congocidin.yaml remains a separately held placeholder owner; no owner merge or duplicate closure is proposed. The owned-name/export conflict must be reconciled before publishing this new alias under MAPPING_SEMANTICS section3; adding the isolated alias does not release it."
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": {
+            "operation_id": "ORIGINAL-w02::c2-proposal-netropsin-congocidin-alias",
+            "kind": "edit",
+            "before_source_record": "data/ingredients/mapped/Netropsin.yaml",
+            "source_record": "data/ingredients/mapped/Netropsin.yaml",
+            "before_yaml_sha256": "b29f27812022327ca5b2b6b895a944a7d47188bfbf48b57c008fa13a6edb34aa",
+            "after_capture": {
+              "path": "reports/all_unmatched_20261107/final-native-intake-v2/payloads/178ce5987dddb499ed3d-Netropsin.yaml",
+              "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e"
+            },
+            "origins": [
+              {
+                "worker_slot": "worker-02",
+                "head_sha": "c91ccac1f91417ce376a2a83e871d6f6bf90912f",
+                "proposal_id": "c2-proposal-netropsin-congocidin-alias",
+                "proposal_binding": "w02-proposals",
+                "payload_binding": "w02-capture-359c460ba1b6d3e3bceb",
+                "case_hashes": {
+                  "KG_CASE:96d8ecb6c781fa8e567937a84b0f668eebae5dec838143f1c96e10b1c9c10bdd": "ff3d16ccc29f3249c869429d7e087bdc4d12c348ebc18bc845edafe6c900935d"
+                }
+              }
+            ],
+            "change": "Apply exact source/composition successor ORIGINAL-w02::c2-proposal-netropsin-congocidin-alias under the separately bound final plan acceptance. Complete original proposal objects, authentic preimage, source cases, history and independent review scopes remain bound; this change grants no role or export approval.",
+            "verification": "Native closed source transition with exact original-source joins, current complete owner inventory, guarded serialization and owner-chain checks. Distinct complete-byte scientific and technical evidence is bound separately; no scientific or mapping approval transfers from source publication."
+          },
+          "origin_bridge": [
+            {
+              "subject": "MIM:Netropsin",
+              "operation_id": "ORIGINAL-w02::c2-proposal-netropsin-congocidin-alias",
+              "origin": {
+                "worker_slot": "worker-02",
+                "head_sha": "c91ccac1f91417ce376a2a83e871d6f6bf90912f",
+                "proposal_id": "c2-proposal-netropsin-congocidin-alias",
+                "proposal_binding": "w02-proposals",
+                "payload_binding": "w02-capture-359c460ba1b6d3e3bceb",
+                "case_hashes": {
+                  "KG_CASE:96d8ecb6c781fa8e567937a84b0f668eebae5dec838143f1c96e10b1c9c10bdd": "ff3d16ccc29f3249c869429d7e087bdc4d12c348ebc18bc845edafe6c900935d"
+                }
+              },
+              "bindings": [
+                {
+                  "binding": {
+                    "binding_id": "w02-proposals",
+                    "role": "proposal",
+                    "path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v3/proposals.json",
+                    "sha256": "062a71f90bd78a2161853ea8448e69bcc21b656f212f01747c6d4b81e27f7ae9",
+                    "published_head": "c91ccac1f91417ce376a2a83e871d6f6bf90912f",
+                    "published_path": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v3/proposals.json"
+                  },
+                  "git_blob_sha256": "062a71f90bd78a2161853ea8448e69bcc21b656f212f01747c6d4b81e27f7ae9",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v3/proposals.json",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w02/reports/all_unmatched_20261107/worker-02/seven-preparation-types-v1/selected-v3/proposals.json",
+                    "sha256": "062a71f90bd78a2161853ea8448e69bcc21b656f212f01747c6d4b81e27f7ae9",
+                    "size": 336368
+                  },
+                  "complete_original_proposal": {
+                    "proposal_id": "c2-proposal-netropsin-congocidin-alias",
+                    "case_ids": [
+                      "KG_CASE:96d8ecb6c781fa8e567937a84b0f668eebae5dec838143f1c96e10b1c9c10bdd"
+                    ],
+                    "description": "Official MeSH places Congocidine within the preferred Netropsin concept M0014675, while netropsin hydrochloride is a separate narrower concept. PubChem CID4461 also records Congocidin as a synonym. This supports the source bare antibiotic name, without a hydrochloride/dihydrochloride assignment. Existing Congocidin.yaml remains a separately held placeholder owner; no owner merge or duplicate closure is proposed. The owned-name/export conflict must be reconciled before publishing this new alias under MAPPING_SEMANTICS section3; adding the isolated alias does not release it.",
+                    "evidence_ids": [
+                      "c2-mesh-netropsin-concept",
+                      "c2-mesh-congocidine-term",
+                      "c2-ols-congocidin",
+                      "c-pubchem-synonyms-4461",
+                      "c-root-congocidine-pubmed",
+                      "w02-final-58-claim-specific-type-correction"
+                    ],
+                    "owner_path": "data/ingredients/mapped/Netropsin.yaml",
+                    "kind": "edit_existing_owner",
+                    "before_sha256": "b29f27812022327ca5b2b6b895a944a7d47188bfbf48b57c008fa13a6edb34aa",
+                    "after_capture": {
+                      "root": "artifact",
+                      "path": "final-corrections-v1/typed-v1/after/c2-proposal-netropsin-congocidin-alias.yaml",
+                      "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e"
+                    },
+                    "publication_obligations": "Artifact-only native guarded write. Preserve every inherited source/owner/row/export hold. Root must integrate reviewed final bytes, reconcile overlapping proposals, synchronize maintained surfaces and perform native release review; this proposal clears no hold.",
+                    "intended_mapped_owner_path": "data/ingredients/mapped/Netropsin.yaml",
+                    "cross_shard_conflict": "Reconcile exact frozen owner dependencies before integration; no external shard cases approved."
+                  }
+                },
+                {
+                  "binding": {
+                    "binding_id": "w02-capture-359c460ba1b6d3e3bceb",
+                    "role": "evidence",
+                    "path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-netropsin-congocidin-alias.yaml",
+                    "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e",
+                    "published_head": "c91ccac1f91417ce376a2a83e871d6f6bf90912f",
+                    "published_path": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-netropsin-congocidin-alias.yaml"
+                  },
+                  "git_blob_sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-netropsin-congocidin-alias.yaml",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-campaign-planning-v1/observed-inputs-v1/snapshot/w02/reports/all_unmatched_20261107/worker-02/final-corrections-v1/typed-v1/after/c2-proposal-netropsin-congocidin-alias.yaml",
+                    "sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e",
+                    "size": 3793
+                  },
+                  "rendered_candidate_sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e",
+                  "source_bytes_equal_candidate": true,
+                  "parsed_complete_object_equal": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "MIM:Congocidin",
+          "before": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Congocidin.yaml",
+            "capture": "inputs/suppression-owner-captures/before-Congocidin.yaml",
+            "sha256": "225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0"
+          },
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Congocidin.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Congocidin.yaml",
+            "sha256": "225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0"
+          },
+          "complete_selected_fields": {
+            "identifier": "kgmicrobe.compound:congocidin",
+            "preferred_term": "Congocidin",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "ontology_mapping": {
+              "ontology_id": "kgmicrobe.compound:congocidin",
+              "ontology_label": "Congocidin",
+              "ontology_source": "kgmicrobe.compound",
+              "mapping_quality": "PLACEHOLDER",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "kg-microbe metatraits unmapped_compounds.tsv",
+                  "notes": "Imported from kg-microbe's unmapped placeholder namespace. Ingested into MIM's pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none. Pending curator promotion to a CHEBI/NCIT primary identifier."
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": null,
+          "origin_bridge": [
+            {
+              "subject": "MIM:Congocidin",
+              "operation": null,
+              "source": "Unchanged authentic maintained baseline",
+              "git_commit": "16c39b63bc95d3e7978ddccc6280b0d57954f4a5",
+              "git_path": "data/ingredients/mapped/Congocidin.yaml",
+              "sha256": "225020d08be1cccc33b93278160757c86734273ff37e3093a57fd86124eb96e0"
+            }
+          ]
+        }
+      ],
+      "source_fields": [
+        {
+          "source_ref": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Netropsin.yaml#synonyms[1]",
+          "source_owner_sha256": "4c269715d3efce13094b9893a1f344471e43cdd51a215a3ff94289c43e74941e",
+          "literal_field": {
+            "synonym_text": "Congocidin",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "NLM MeSH D009429/M0014675; PubChem CID4461; PubMed19389628"
+          }
+        }
+      ],
+      "exact_native_event": {
+        "disposition": "SUPPRESS",
+        "evidence_refs": "[\"https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-6558035777\",\"https://github.com/CultureBotAI/culturebotai-claw/issues/701\"]",
+        "input_surfaces": "[\"mim.synonym\"]",
+        "owner_subject_ids": "[\"MIM:Congocidin\"]",
+        "source_refs": "[\"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Netropsin.yaml#synonyms[1]\"]",
+        "subject_id": "MIM:Netropsin",
+        "token": "Congocidin",
+        "token_key": "congocidin"
+      },
+      "historical_event": null,
+      "scientific_rationale": "PMID19389628 original research identifies Congocidine with netropsin. NLM M0014675 links the preferred Netropsin concept to T028107 Congocidine and retains narrower concepts and registry distinctions. Exact Congocidin spelling is additionally supported by the source worker PubChem record reviewed in the independent antibiotics lane. No shared synonym list can select a hydrochloride or dihydrochloride form.",
+      "scope_rationale": "Congocidin/Congocidine is a supported bare-name synonym of netropsin; ownership credit to the still-placeholder Congocidin record is a routing obligation, not resolution of that record.",
+      "whole_field_review": "Netropsin mesh:D009429 EXACT_MATCH has source-backed Congocidin EXACT_SYNONYM at synonyms[1], Congocidine at [2], and preserved raw preferred label. Credited Congocidin remains byte-identical kgmicrobe.compound:congocidin, mapping_status MAPPED but mapping_quality PLACEHOLDER, old no-hit provenance and no verified supplied_form. The native complete-index function credits this record despite that unresolved scientific state.",
+      "retained_scientific_holds": [
+        "SUPPRESS is CONDITIONAL routing recommendation only. The §3 resolved-owner wording cannot be used to certify the PLACEHOLDER scientifically resolved because native membership includes it.",
+        "Final owner/source-form reconciliation and actual row admission remain held. The existing local primary is not a newly approved external identity.",
+        "Do not merge Netropsin/Congocidin or infer salt/neutral form from NLM narrower concepts or mixed PubChem synonyms.",
+        "No automatic suppression of Congocidine: that different token has no credited-owner collision in this four-pair scope and remains in candidate other."
+      ],
+      "alternatives": {
+        "KEEP": "If actual final routing cannot substantiate a resolved accepted preferred owner, retain the execution hold/staged obligation for root decision rather than publishing an automatic suppression; not evidence against the valid alias.",
+        "DROP": "Alias falsity is unsupported and contradicted by primary name evidence.",
+        "MERGE": "A separate actual-source/supplied-form continuity decision is needed; this packet does not choose a winner or rewrite the local placeholder.",
+        "SUPPRESS": "Conditionally omit Congocidin only under exact accepted owner/event equivalence; leave source alias and both record identities/history intact and keep placeholder admission unresolved."
+      },
+      "application_conditions": [
+        "Conditional scientific/policy recommendation only, not authorization to suppress, apply, publish, admit a mapping row, approve a whole owner, source case, role or new external mapping. All such dispositions remain WITHHOLD.",
+        "Do not change YAML synonyms, ontology labels, source fields, identities, components, histories or old human/method claims under this recommendation. No DROP/REJECTED_LABEL, owner merge or namespace choice is authorized.",
+        "Actual root generation from accepted applied owners must independently establish exact whole-owner/source-path/event equivalence, complete preferred-name owner credits, native selected output and publication receipt. This private 3750-row diagnostic is not that receipt.",
+        "The observed native publisher rejects these new selected events and exposes no authorization field. Separate reviewed capability and root acceptance are required; no bypass, handwritten canonical sidecar or wholesale replacement.",
+        "Preserve all34 historical sidecar rows, original source credits and all27 mapping-change receipts. Other17 candidate events and all other tokens are outside these four scientific/policy decisions."
+      ],
+      "congocidin_specific_condition": "Native ownership of the MAPPED PLACEHOLDER is not a resolved scientific identity. Keep its original source/form, duplicate-continuity, row-admission and UNKNOWN_TERM holds. Suppression may be recommended for exact name routing without curing or promoting the credited owner; actual publication remains withheld.",
+      "canonical_vs_native": {
+        "canonical": {
+          "input_sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+          "rows": [
+            {
+              "subject_id": "MIM:Netropsin",
+              "subject_label": "Netropsin",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "mesh:D009429",
+              "object_label": "Netropsin",
+              "object_source": "registry:mesh",
+              "mapping_justification": "semapv:LexicalMatching",
+              "source": "MIM:MIM curation (#213)|MIM:curator=promote_resolved_unmapped",
+              "mapping_date": "2026-08-06",
+              "confidence": "0.99",
+              "comment": "",
+              "other": "",
+              "validation_method": "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+            }
+          ],
+          "all_other_tokens": [],
+          "selected_token_present": false
+        },
+        "candidate": {
+          "input_sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de",
+          "rows": [
+            {
+              "subject_id": "MIM:Netropsin",
+              "subject_label": "Netropsin",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "mesh:D009429",
+              "object_label": "Netropsin",
+              "object_source": "registry:mesh",
+              "mapping_justification": "semapv:LexicalMatching",
+              "source": "MIM:MIM curation (#213)|MIM:https://id.nlm.nih.gov/mesh/M0014675.json|MIM:curator=worker02 /root",
+              "mapping_date": "2026-11-08",
+              "confidence": "0.99",
+              "comment": "",
+              "other": "Congocidine",
+              "validation_method": "manual:promote_resolved_unmapped|PROMOTED|2026-08-06"
+            }
+          ],
+          "all_other_tokens": [
+            "Congocidine"
+          ],
+          "selected_token_present": false
+        }
+      },
+      "primary_proof_keys": [
+        "netropsin_research",
+        "netropsin_concept",
+        "congocidine_term",
+        "netropsin_pubchem"
+      ],
+      "independent_scientific_reviewer": "/root/suppression_antibiotics_science",
+      "independent_skeptical_reviewer": "/root/suppression_skeptic",
+      "proofs": [
+        {
+          "path": "review/antibiotics/SCIENTIFIC-REVIEW.json",
+          "sha256": "ec07fedafbeb2c637a13fd7c026b6e10453f45c3fce9f7883da08a8d9a25137a"
+        },
+        {
+          "path": "review/skeptical/ASSESSMENT-v2.json",
+          "sha256": "c7886bf0ddca796d0fee8768d8e17ccccd30fe762b82551d243ac35d75a70336"
+        },
+        {
+          "path": "review/skeptical/independent-byte-event-audit-v2.json",
+          "sha256": "4ab9d8e19412e1914011f2bd6948fa14a20c2d5434059a8b7ae1791268ce3553"
+        },
+        {
+          "path": "validation/origin-bridges.json",
+          "sha256": "432e392de070103fcd170752ae52b8e88839bfce686efb8219438c32770e7fbe"
+        },
+        {
+          "path": "validation/native-bounded-checks.json",
+          "sha256": "561cb3f80c90904de6113969c8f5b3a3a903ed6a5b42650f785398984202ee10"
+        }
+      ]
+    },
+    {
+      "decision_id": "W07-SUPPRESSION-04",
+      "subject": "MIM:Starch",
+      "token": "Corn Starch",
+      "token_key": "corn starch",
+      "normalization": "Native strip then Unicode casefold; event display is minimum actual trimmed spelling; no chemical/form normalization.",
+      "recommendation": "SUPPRESS",
+      "status": "CONDITIONAL_RECOMMENDATION_ONLY",
+      "execution_disposition": "WITHHOLD",
+      "owner_merge_disposition": "WITHHOLD",
+      "row_admission": "WITHHOLD",
+      "role_approval": "WITHHOLD",
+      "new_external_mapping": "WITHHOLD",
+      "complete_credited_owner_set": [
+        "MIM:Corn_Starch"
+      ],
+      "complete_owner_bindings": [
+        {
+          "subject": "MIM:Starch",
+          "before": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/data/ingredients/mapped/Starch.yaml",
+            "capture": "inputs/suppression-owner-captures/before-Starch.yaml",
+            "sha256": "e379199c1864e376ff86fb6dfd64773b049a72651810134bcc7d7f0d0055397b"
+          },
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Starch.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Starch.yaml",
+            "sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d"
+          },
+          "complete_selected_fields": {
+            "identifier": "CHEBI:28017",
+            "preferred_term": "Starch",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "SINGLE_INGREDIENT",
+            "ontology_mapping": {
+              "ontology_id": "CHEBI:28017",
+              "ontology_label": "starch",
+              "ontology_source": "CHEBI",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "DATABASE_MATCH",
+                  "source": "CultureMech",
+                  "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": {
+            "operation_id": "ORIGINAL-w10::sv1-kg-starch-rice-alias",
+            "kind": "edit",
+            "before_source_record": "data/ingredients/mapped/Starch.yaml",
+            "source_record": "data/ingredients/mapped/Starch.yaml",
+            "before_yaml_sha256": "e379199c1864e376ff86fb6dfd64773b049a72651810134bcc7d7f0d0055397b",
+            "after_capture": {
+              "path": "reports/all_unmatched_20261107/final-native-intake-v2/payloads/98c41fe8dc931e172e48-Starch.yaml",
+              "sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d"
+            },
+            "origins": [
+              {
+                "worker_slot": "worker-10",
+                "head_sha": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                "proposal_id": "sv1-kg-starch-rice-alias",
+                "proposal_binding": "w10-proposals",
+                "payload_binding": "w10-capture-bbabd0ed9d87342a30ce",
+                "case_hashes": {
+                  "KG_CASE:cc7e7f8c315b429506d4610b0310eb73fb99d323743139edd72f89a4dd0949f6": "94c871ea03bf0e04c8a88c42558a7362f1fdf77405b31a9f84c31521cbc0b323"
+                }
+              }
+            ],
+            "change": "Apply exact source/composition successor ORIGINAL-w10::sv1-kg-starch-rice-alias under the separately bound final plan acceptance. Complete original proposal objects, authentic preimage, source cases, history and independent review scopes remain bound; this change grants no role or export approval.",
+            "verification": "Native closed source transition with exact original-source joins, current complete owner inventory, guarded serialization and owner-chain checks. Distinct complete-byte scientific and technical evidence is bound separately; no scientific or mapping approval transfers from source publication."
+          },
+          "origin_bridge": [
+            {
+              "subject": "MIM:Starch",
+              "operation_id": "ORIGINAL-w10::sv1-kg-starch-rice-alias",
+              "origin": {
+                "worker_slot": "worker-10",
+                "head_sha": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                "proposal_id": "sv1-kg-starch-rice-alias",
+                "proposal_binding": "w10-proposals",
+                "payload_binding": "w10-capture-bbabd0ed9d87342a30ce",
+                "case_hashes": {
+                  "KG_CASE:cc7e7f8c315b429506d4610b0310eb73fb99d323743139edd72f89a4dd0949f6": "94c871ea03bf0e04c8a88c42558a7362f1fdf77405b31a9f84c31521cbc0b323"
+                }
+              },
+              "bindings": [
+                {
+                  "binding": {
+                    "binding_id": "w10-proposals",
+                    "role": "proposal",
+                    "path": "reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json",
+                    "sha256": "6e6367865112579cec265451760c22662428d8bce373754ffdeb05697f58c1dd",
+                    "published_head": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                    "published_path": "reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json"
+                  },
+                  "git_blob_sha256": "6e6367865112579cec265451760c22662428d8bce373754ffdeb05697f58c1dd",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w10/reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json",
+                    "sha256": "6e6367865112579cec265451760c22662428d8bce373754ffdeb05697f58c1dd",
+                    "size": 493840
+                  },
+                  "complete_original_proposal": {
+                    "proposal_id": "sv1-kg-starch-rice-alias",
+                    "case_ids": [
+                      "KG_CASE:cc7e7f8c315b429506d4610b0310eb73fb99d323743139edd72f89a4dd0949f6"
+                    ],
+                    "description": "Reject rice-specific labels on generic starch; exact rice material has a distinct ontology identity.",
+                    "evidence_ids": [
+                      "kg-md2354",
+                      "kg-medium_C39",
+                      "sv1-kg-CHEBI_753027",
+                      "sv1-kg-FOODON_03310073",
+                      "sv1-kg-owner-lookup",
+                      "sv1-kg-owner-baselines"
+                    ],
+                    "owner_path": "data/ingredients/mapped/Starch.yaml",
+                    "kind": "edit_existing_owner",
+                    "before_sha256": "e379199c1864e376ff86fb6dfd64773b049a72651810134bcc7d7f0d0055397b",
+                    "after_capture": {
+                      "root": "artifact",
+                      "path": "successor-v1/kg/proposed/starch-rice-alias.yaml",
+                      "sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d"
+                    },
+                    "publication_holds": [
+                      "No whole-owner, role, downstream or release approval is implied; preserve every inherited hold.",
+                      "Other inherited botanical-source and soluble-starch aliases are not approved by this bounded rice correction."
+                    ],
+                    "prior_proposal_overlap": [],
+                    "integration_limit": "Successor proposal only; if prior_proposal_overlap is nonempty, require a reviewed combined superseding payload rather than applying both independently."
+                  }
+                },
+                {
+                  "binding": {
+                    "binding_id": "w10-capture-bbabd0ed9d87342a30ce",
+                    "role": "evidence",
+                    "path": "reports/all_unmatched_20261107/worker-10/successor-v1/kg/proposed/starch-rice-alias.yaml",
+                    "sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d",
+                    "published_head": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                    "published_path": "reports/all_unmatched_20261107/worker-10/successor-v1/kg/proposed/starch-rice-alias.yaml"
+                  },
+                  "git_blob_sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-10/successor-v1/kg/proposed/starch-rice-alias.yaml",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w10/reports/all_unmatched_20261107/worker-10/successor-v1/kg/proposed/starch-rice-alias.yaml",
+                    "sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d",
+                    "size": 9669
+                  },
+                  "rendered_candidate_sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d",
+                  "source_bytes_equal_candidate": true,
+                  "parsed_complete_object_equal": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subject": "MIM:Corn_Starch",
+          "before": null,
+          "proposed": {
+            "original_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Corn_Starch.yaml",
+            "capture": "inputs/suppression-owner-captures/proposed-Corn_Starch.yaml",
+            "sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a"
+          },
+          "complete_selected_fields": {
+            "identifier": "FOODON:00005791",
+            "preferred_term": "Corn starch",
+            "mapping_status": "MAPPED",
+            "ingredient_type": "UNDEFINED_MIXTURE",
+            "ontology_mapping": {
+              "ontology_id": "FOODON:00005791",
+              "ontology_label": "corn starch",
+              "ontology_source": "FOODON",
+              "mapping_quality": "EXACT_MATCH",
+              "evidence": [
+                {
+                  "evidence_type": "LLM_SUGGESTION",
+                  "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M1812",
+                  "notes": "TOGO M1812 names Sigma corn-origin starch. FOODON00005791 specifically defines starch powder from maize grain and is the supported exact material identity. Existing generic Starch has inherited CornStarch aliases; those require owned-name reconciliation before publication, not automatic equivalence or silent removal."
+                }
+              ]
+            },
+            "representative": null
+          },
+          "operation": {
+            "operation_id": "ORIGINAL-w10::sv1-bio-corn_starch",
+            "kind": "create",
+            "before_source_record": null,
+            "source_record": "data/ingredients/mapped/Corn_Starch.yaml",
+            "before_yaml_sha256": null,
+            "after_capture": {
+              "path": "reports/all_unmatched_20261107/final-native-intake-v2/payloads/380caad5fc6ac40eab5f-Corn_Starch.yaml",
+              "sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a"
+            },
+            "origins": [
+              {
+                "worker_slot": "worker-10",
+                "head_sha": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                "proposal_id": "sv1-bio-corn_starch",
+                "proposal_binding": "w10-proposals",
+                "payload_binding": "w10-capture-d3e6f9ddd0142bdb7fa0",
+                "case_hashes": {
+                  "CM_NAME:9b665709b81f53d526a43f36e0973a1456f2696f6609f25261a6462815db309f": "8680797ead8d31fb73516bed69a4ea46d1b4a924a0d403816aa878b1dc2c4b45"
+                }
+              }
+            ],
+            "change": "Apply exact source/composition successor ORIGINAL-w10::sv1-bio-corn_starch under the separately bound final plan acceptance. Complete original proposal objects, authentic preimage, source cases, history and independent review scopes remain bound; this change grants no role or export approval.",
+            "verification": "Native closed source transition with exact original-source joins, current complete owner inventory, guarded serialization and owner-chain checks. Distinct complete-byte scientific and technical evidence is bound separately; no scientific or mapping approval transfers from source publication."
+          },
+          "origin_bridge": [
+            {
+              "subject": "MIM:Corn_Starch",
+              "operation_id": "ORIGINAL-w10::sv1-bio-corn_starch",
+              "origin": {
+                "worker_slot": "worker-10",
+                "head_sha": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                "proposal_id": "sv1-bio-corn_starch",
+                "proposal_binding": "w10-proposals",
+                "payload_binding": "w10-capture-d3e6f9ddd0142bdb7fa0",
+                "case_hashes": {
+                  "CM_NAME:9b665709b81f53d526a43f36e0973a1456f2696f6609f25261a6462815db309f": "8680797ead8d31fb73516bed69a4ea46d1b4a924a0d403816aa878b1dc2c4b45"
+                }
+              },
+              "bindings": [
+                {
+                  "binding": {
+                    "binding_id": "w10-proposals",
+                    "role": "proposal",
+                    "path": "reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json",
+                    "sha256": "6e6367865112579cec265451760c22662428d8bce373754ffdeb05697f58c1dd",
+                    "published_head": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                    "published_path": "reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json"
+                  },
+                  "git_blob_sha256": "6e6367865112579cec265451760c22662428d8bce373754ffdeb05697f58c1dd",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w10/reports/all_unmatched_20261107/worker-10/successor-v7/final-core/proposals.json",
+                    "sha256": "6e6367865112579cec265451760c22662428d8bce373754ffdeb05697f58c1dd",
+                    "size": 493840
+                  },
+                  "complete_original_proposal": {
+                    "proposal_id": "sv1-bio-corn_starch",
+                    "case_ids": [
+                      "CM_NAME:9b665709b81f53d526a43f36e0973a1456f2696f6609f25261a6462815db309f"
+                    ],
+                    "description": "TOGO M1812 names Sigma corn-origin starch. FOODON00005791 specifically defines starch powder from maize grain and is the supported exact material identity. Existing generic Starch has inherited CornStarch aliases; those require owned-name reconciliation before publication, not automatic equivalence or silent removal.",
+                    "evidence_ids": [
+                      "bio-primary-1ae977769a78791b",
+                      "sv1-bio-frozen-contexts",
+                      "sv1-bio-guarded-partonomy",
+                      "sv1-bio-lookup-78",
+                      "sv1-bio-parent-retrievals",
+                      "sv1-bio-primary-4f023b6e3b32ff417eca",
+                      "sv1-bio-primary-f71f70a726e4215cd81b",
+                      "sv1-bio-proposal-owner-collisions",
+                      "sv1-bio-retrievals",
+                      "sv1-bio-strict-log",
+                      "sv1-bio-strict-tsv",
+                      "sv1-bio-term-retrievals",
+                      "sv3-provenance-claim-dispositions",
+                      "sv3-provenance-change-proof",
+                      "sv3-provenance-negative-controls"
+                    ],
+                    "owner_path": "data/ingredients/mapped/Corn_Starch.yaml",
+                    "kind": "new_owner",
+                    "after_capture": {
+                      "root": "artifact",
+                      "path": "successor-v3/enum/proposed/sv1-bio-corn_starch.yaml",
+                      "sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a"
+                    },
+                    "identity_consequences": "Exact source scope stated in proposed payload. No mixture-to-component identity or cross-source preparation equivalence is inferred.",
+                    "predicate_consequences": "Exact ontology identity when explicitly stated; otherwise broader material parent plus own local registry identity, or registry-only when no supported parent identified.",
+                    "publication_review_obligations": [
+                      "Preserve all native rejected labels, WITHHOLD and source-material holds.",
+                      "Reconcile source-association and owned-name conflicts, before hashes and other worker proposals.",
+                      "Guarded coordinator integration, synchronized maintained surfaces and complete final-payload review required; no role/export approval."
+                    ],
+                    "cross_shard_conflicts": "No prior36 owner overlap for authored existing-owner edits; sources shared with KG explicitly documented.",
+                    "before_sha256": null,
+                    "provenance_successor": {
+                      "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1226",
+                      "previous_capture": {
+                        "root": "artifact",
+                        "path": "successor-v1/bio/owners/Corn_Starch.after.yaml",
+                        "sha256": "017dd4ddd8152fb91cc345e47cb1577c5ddf72034d8a5c5970c32406692ceed9"
+                      },
+                      "exact_claim_indices": [
+                        0
+                      ],
+                      "scope": "MappingEvidence type and one appended truthful history event only; source science retained."
+                    },
+                    "prior_independent_review": null,
+                    "independent_review": {
+                      "status": "complete",
+                      "evidence_ids": [
+                        "sv3-independent-source-provenance"
+                      ]
+                    },
+                    "review_status_explanation": "Exact final payload separately reviewed: claim-specific provenance/context, with inherited scientific judgments preserved rather than reapproved. Author-stage pending-review text remains historical. Coordinator whole-owner/source/role/export acceptance remains pending."
+                  }
+                },
+                {
+                  "binding": {
+                    "binding_id": "w10-capture-d3e6f9ddd0142bdb7fa0",
+                    "role": "evidence",
+                    "path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-bio-corn_starch.yaml",
+                    "sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a",
+                    "published_head": "2c16c0e0f6b1e733493cb5a4a77ee5807ebac732",
+                    "published_path": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-bio-corn_starch.yaml"
+                  },
+                  "git_blob_sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a",
+                  "materialization": {
+                    "destination": "reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-bio-corn_starch.yaml",
+                    "source": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-native-intake-v1/observed-inputs-v1/snapshot/w10/reports/all_unmatched_20261107/worker-10/successor-v3/enum/proposed/sv1-bio-corn_starch.yaml",
+                    "sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a",
+                    "size": 2961
+                  },
+                  "rendered_candidate_sha256": "6d412231000c6e8ddd3a27a0b6117ae82ad5ed0738af79ec87ab56a9d833fb5a",
+                  "source_bytes_equal_candidate": true,
+                  "parsed_complete_object_equal": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source_fields": [
+        {
+          "source_ref": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Starch.yaml#synonyms[7]",
+          "source_owner_sha256": "6c0361172aa5b3a86b4e3bf0780dc7ab73f1a9ea169c9693d50791b0afbd739d",
+          "literal_field": {
+            "synonym_text": "Corn Starch",
+            "synonym_type": "EXACT_SYNONYM",
+            "source": "kg_microbe"
+          }
+        }
+      ],
+      "exact_native_event": {
+        "disposition": "SUPPRESS",
+        "evidence_refs": "[\"https://github.com/CultureBotAI/MediaIngredientMech/issues/669#issuecomment-6558035777\",\"https://github.com/CultureBotAI/culturebotai-claw/issues/701\"]",
+        "input_surfaces": "[\"mim.synonym\"]",
+        "owner_subject_ids": "[\"MIM:Corn_Starch\"]",
+        "source_refs": "[\"/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/data/ingredients/mapped/Starch.yaml#synonyms[7]\"]",
+        "subject_id": "MIM:Starch",
+        "token": "Corn Starch",
+        "token_key": "corn starch"
+      },
+      "historical_event": null,
+      "scientific_rationale": "FoodOn00005791 describes maize-grain starch powder; TOGO M1812/NBRC1042 prints Starch from corn (SIGMA), 2g, which supports source origin but not a catalogue or pregelatinization. ChEBI28017 defines the generic plant reserve glucan comprising amylose and amylopectin. The inherited Corn alias and old merged histories are authentic provenance, not a new conclusion that all generic starch sources are corn.",
+      "scope_rationale": "Corn starch is an authentic retained source term on the generic Starch owner, with a separately proposed source-specific Corn starch preferred owner. Exclusivity can preserve both records without treating the generic/source-specific relationship as same-product equality.",
+      "whole_field_review": "Starch CHEBI:28017 EXACT_MATCH and Corn Starch synonym[7] EXACT_SYNONYM from kg_microbe are retained. Historical corn-owner merges and soluble-starch aliases remain in full original history. Selected W10 change only rejects rice labels. New Corn_Starch FOODON:00005791 EXACT_MATCH UNDEFINED_MIXTURE has a genuine null beforeimage, supplier Sigma only as printed source, and original creation/provenance-correction events.",
+      "retained_scientific_holds": [
+        "No automatic redirection of generic, soluble, rice or historical starch observations to corn.",
+        "No current Sigma SKU, preparation, concentration conversion, pregelatinization or cultivar inferred.",
+        "Inherited broad exact-synonym typing, old occurrence-count winner merge, soluble-starch family aliases, and CARBON_SOURCE annotation are not whole-owner approved.",
+        "Retain the receiving-medium dose/unit repairs as separate source work."
+      ],
+      "alternatives": {
+        "KEEP": "Corn starch preferred-name exclusivity now has a selected separate owner; keeping the resolving token on generic Starch does not implement that scoped policy.",
+        "DROP": "Generic-versus-source-specific relationship alone does not establish scientific falsity of the authentic source label; no rejection is minted.",
+        "MERGE": "The generic class and corn-origin material are not shown identical in all source/supplied forms; do not repeat the historical occurrence-count winner decision.",
+        "SUPPRESS": "Omit Corn Starch only from generic Starch other, preserve YAML synonym/history, and credit exactly MIM:Corn_Starch conditionally."
+      },
+      "application_conditions": [
+        "Conditional scientific/policy recommendation only, not authorization to suppress, apply, publish, admit a mapping row, approve a whole owner, source case, role or new external mapping. All such dispositions remain WITHHOLD.",
+        "Do not change YAML synonyms, ontology labels, source fields, identities, components, histories or old human/method claims under this recommendation. No DROP/REJECTED_LABEL, owner merge or namespace choice is authorized.",
+        "Actual root generation from accepted applied owners must independently establish exact whole-owner/source-path/event equivalence, complete preferred-name owner credits, native selected output and publication receipt. This private 3750-row diagnostic is not that receipt.",
+        "The observed native publisher rejects these new selected events and exposes no authorization field. Separate reviewed capability and root acceptance are required; no bypass, handwritten canonical sidecar or wholesale replacement.",
+        "Preserve all34 historical sidecar rows, original source credits and all27 mapping-change receipts. Other17 candidate events and all other tokens are outside these four scientific/policy decisions."
+      ],
+      "congocidin_specific_condition": null,
+      "canonical_vs_native": {
+        "canonical": {
+          "input_sha256": "097b612c4cce6144a426b64757ea76d447c1d12efcee540dfaac0b6ce163c221",
+          "rows": [
+            {
+              "subject_id": "MIM:Starch",
+              "subject_label": "Starch",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "CHEBI:28017",
+              "object_label": "starch",
+              "object_source": "obo:chebi.owl",
+              "mapping_justification": "semapv:LexicalMatching",
+              "source": "MIM:CultureMech|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals|kgm:metatraits_special_chemicals[corrected_2026-04-08]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[kegg_compound]",
+              "mapping_date": "2026-09-02",
+              "confidence": "0.99",
+              "comment": "",
+              "other": "Soluble starch|Amidon (starch)|Corn Starch|Rice starch|Staerke|amidon|amylum|Starch soluble|Starch (soluble)|Starch, soluble|Soluble starch (BD-Difco)|Soluble starch (Sigma)|Rice starch|CAS:9005-25-8",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            }
+          ],
+          "all_other_tokens": [
+            "Soluble starch",
+            "Amidon (starch)",
+            "Corn Starch",
+            "Rice starch",
+            "Staerke",
+            "amidon",
+            "amylum",
+            "Starch soluble",
+            "Starch (soluble)",
+            "Starch, soluble",
+            "Soluble starch (BD-Difco)",
+            "Soluble starch (Sigma)",
+            "Rice starch",
+            "CAS:9005-25-8"
+          ],
+          "selected_token_present": true
+        },
+        "candidate": {
+          "input_sha256": "e99e5ea55c04d7b9d6e6b07feb603a556dc4785f4696553509aa0dd81ebc21de",
+          "rows": [
+            {
+              "subject_id": "MIM:Starch",
+              "subject_label": "Starch",
+              "predicate_id": "skos:exactMatch",
+              "object_id": "CHEBI:28017",
+              "object_label": "starch",
+              "object_source": "obo:chebi.owl",
+              "mapping_justification": "semapv:LexicalMatching",
+              "source": "MIM:CultureMech|MIM:curator=worker10_successor_kg_source_review|kgm:native_ontology:chebi",
+              "mapping_date": "2026-11-08",
+              "confidence": "0.99",
+              "comment": "",
+              "other": "Soluble starch|Amidon (starch)|Staerke|amidon|amylum|Starch soluble|Starch (soluble)|Starch, soluble|Soluble starch (BD-Difco)|Soluble starch (Sigma)|CAS:9005-25-8",
+              "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+            }
+          ],
+          "all_other_tokens": [
+            "Soluble starch",
+            "Amidon (starch)",
+            "Staerke",
+            "amidon",
+            "amylum",
+            "Starch soluble",
+            "Starch (soluble)",
+            "Starch, soluble",
+            "Soluble starch (BD-Difco)",
+            "Soluble starch (Sigma)",
+            "CAS:9005-25-8"
+          ],
+          "selected_token_present": false
+        }
+      },
+      "primary_proof_keys": [
+        "corn_source",
+        "corn_foodon",
+        "starch_chebi"
+      ],
+      "independent_scientific_reviewer": "/root/suppression_materials_science",
+      "independent_skeptical_reviewer": "/root/suppression_skeptic",
+      "proofs": [
+        {
+          "path": "review/materials/materials-scientific-policy-review.json",
+          "sha256": "c7eac973659d345e4939cb128e3b37391cf143121094f49a036f3fadf401002d"
+        },
+        {
+          "path": "review/skeptical/ASSESSMENT-v2.json",
+          "sha256": "c7886bf0ddca796d0fee8768d8e17ccccd30fe762b82551d243ac35d75a70336"
+        },
+        {
+          "path": "review/skeptical/independent-byte-event-audit-v2.json",
+          "sha256": "4ab9d8e19412e1914011f2bd6948fa14a20c2d5434059a8b7ae1791268ce3553"
+        },
+        {
+          "path": "validation/origin-bridges.json",
+          "sha256": "432e392de070103fcd170752ae52b8e88839bfce686efb8219438c32770e7fbe"
+        },
+        {
+          "path": "validation/native-bounded-checks.json",
+          "sha256": "561cb3f80c90904de6113969c8f5b3a3a903ed6a5b42650f785398984202ee10"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "pairs": 4,
+    "owners": 8,
+    "beforeimages": 7,
+    "proposed": 8,
+    "null_beforeimages": 1
+  },
+  "historical_retention": {
+    "sidecar": {
+      "path": "inputs/historical/mappings/suppressed_aliases.tsv",
+      "sha256": "ca9baa50726acbd0a338dcd77ed3ef3625da59254ca22e887e3bf2bf90b0560b"
+    },
+    "historical_rows": 34,
+    "historical_receipts": [
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/chemical-scopes-20260923.json",
+        "sha256": "a31d5bae53211a7cdc008008b4eb8dd49d9e2ec3a62773c912dbdab8d0d0b7ae",
+        "size": 43969
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/claw571-hydrate-parent-identities.json",
+        "sha256": "2eeb7e2b9da164403cc715e6cc1b3a8c36f6f35d173bc1d740f8b90f7ce3d762",
+        "size": 35436
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/data-license-20261001.json",
+        "sha256": "6d89e96b3560bb2b237fc9a358b1ef68986f1361dc536a4e5872661aaf459403",
+        "size": 29686
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/ingredient-identities-20260924.json",
+        "sha256": "1cf4c94c4ff4704c642297aafbc48d05b1978fcd67cbe88ff076e4def9c4be5b",
+        "size": 80966
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue1004-carnitine-hydrochloride-merge.json",
+        "sha256": "e14ab50d5b981f2e003d755644ffcb98c901519fc0e8324658900ada1ae12e1c",
+        "size": 49483
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue1005-lithium-glycerophosphate-identity.json",
+        "sha256": "2c791f6f00f23352ce3e459a6a5d4d21319e41cc6bb1146b59797d9f06b518bd",
+        "size": 40306
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue1014-provenance-restoration.json",
+        "sha256": "fbeec3fbfee71be85541353683df135f96dc1d0021c6bfb3877bcc5eca8813d0",
+        "size": 34929
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue1149-1151-kgm-source-corrections.json",
+        "sha256": "7e85407431d709192b3a702027fab9b398eb239570f901d8cdfd812a06602dec",
+        "size": 34118
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue232-wrong-form-names.json",
+        "sha256": "a94aab0d6d9e5cbf6fec1c6d3829981630bd2c40434b868a8d20526f4a7db985",
+        "size": 61998
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue312-batch1.json",
+        "sha256": "0554d4d32924eec4c9909d3c0ff36c8dd9d44ce426011ba42f0122d9172a41a0",
+        "size": 80472
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue312-batch2.json",
+        "sha256": "c10ef0d7f577190f0d97a95c0482011d6abfaaf03fba2c509f98eec66694c373",
+        "size": 77583
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue312-batch3.json",
+        "sha256": "aff24cdc08d1cb979795ffad227c03e9622733438ec7f94c5669ea05da6bfe88",
+        "size": 52737
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue312-batch4.json",
+        "sha256": "2779f46e8ff8a2d0429fa382ce67dec6f7b2b43b02be3c316c5a7bdcf2138409",
+        "size": 47283
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue669-1003-scoped-alias-corrections.json",
+        "sha256": "00049aa1d2b19565020d4ecbec999fc723d2cf5954968ec6bf5cebdc0da73f34",
+        "size": 60554
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue669-704-rulings.json",
+        "sha256": "0870e436e4f03a1ef2377a957fedab70b42d201b6f9b8935478c40ac647c90d8",
+        "size": 69553
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue669-deferred-owned-aliases.json",
+        "sha256": "121b8d6026d6af9a6692966b024398706eb518dbd30506d10a44364c8f8a24b6",
+        "size": 104477
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue669-owned-name-policy.json",
+        "sha256": "0ece81a8c97723fef6aeaff73693fa013aac1589727ed896400198ff8d4b98f7",
+        "size": 81754
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue751-313-235-stock-and-source-labels.json",
+        "sha256": "3d8d3d1189d0393d5ccd23ce3b83a5196e1664f045269254160df33a20e6ea07",
+        "size": 61448
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue753-870-registry-and-node-corrections.json",
+        "sha256": "8139abdd7e82930b8a4fdee5872d049072e997f033860e81cc0bab02b320eb37",
+        "size": 41198
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue759-micro-source.json",
+        "sha256": "75008d33a173155a6bdccafb64bbee96b0a457f9da5b761bd7ee2aa9b74100aa",
+        "size": 40835
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue871-268-hydrate-stock-chemistry.json",
+        "sha256": "f12080ebd7c63ea223ec8f7a2ab874078fc506c8f0d3df053bc4ab616bac6a2c",
+        "size": 62870
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue875-ncit-exact-heptahydrate.json",
+        "sha256": "28bd529e14104cfbf9160e9532b3d859dbe6259dbac00a9d877bac1daec8a2b8",
+        "size": 36462
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue878-hydrate-contradictions.json",
+        "sha256": "cdd362a5f2d34ebf6676a098869995ce41a8059285cbffc2f92bbc3e49c86ec3",
+        "size": 83443
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue901-melezitose-form.json",
+        "sha256": "019e5a9bf82778d7d6749a47b8f2ef131ea80426f6cd166d31d8fd31e6829b87",
+        "size": 36334
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue901-sodium-perchlorate-form.json",
+        "sha256": "0ee67f6deeda9bfa685889f50eaf5e6e411ddc43803247837b7e843e613bf2dd",
+        "size": 36810
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/issue901-step7d-reviewed-owner-forms.json",
+        "sha256": "45af9515590918e3420327668d4b89f564457cf97eea9404a34c4da7d17f0e4b",
+        "size": 307047
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-projected-native-independent-v1/mim/reports/sssom_completion_20260921/mapping_changes/review-record-issues-20261003.json",
+        "sha256": "9b578f6c25c1ebabb8e58c5a59d6188b7c1f2dd3c8c70ed021b35144c6da1226",
+        "size": 52839
+      }
+    ],
+    "receipt_count": 27,
+    "native_events": 21,
+    "shared_event_keys": 7,
+    "native_only_event_keys": 14,
+    "historical_only_event_keys": 27,
+    "shared_event_differences": [
+      {
+        "subject": "MIM:Beta-lactose",
+        "token_key": "lactose",
+        "different_fields": [
+          "source_refs"
+        ]
+      },
+      {
+        "subject": "MIM:D-mannitol",
+        "token_key": "mannitol",
+        "different_fields": [
+          "source_refs"
+        ]
+      },
+      {
+        "subject": "MIM:L-asparagine",
+        "token_key": "asparagine",
+        "different_fields": [
+          "source_refs"
+        ]
+      },
+      {
+        "subject": "MIM:L-cysteine",
+        "token_key": "cysteine",
+        "different_fields": [
+          "source_refs"
+        ]
+      },
+      {
+        "subject": "MIM:L-glutamic_Acid",
+        "token_key": "glutamic acid",
+        "different_fields": [
+          "source_refs"
+        ]
+      },
+      {
+        "subject": "MIM:L-proline",
+        "token_key": "proline",
+        "different_fields": [
+          "source_refs"
+        ]
+      },
+      {
+        "subject": "MIM:L-tryptophan",
+        "token_key": "tryptophan",
+        "different_fields": [
+          "source_refs"
+        ]
+      }
+    ],
+    "reviewed_new_event_keys": [
+      [
+        "MIM:Bacto_Peptone",
+        "peptone"
+      ],
+      [
+        "MIM:Glebomycin",
+        "bluensomycin"
+      ],
+      [
+        "MIM:Netropsin",
+        "congocidin"
+      ],
+      [
+        "MIM:Starch",
+        "corn starch"
+      ]
+    ],
+    "wholesale_replacement_authorized": false
+  },
+  "authorship": {
+    "current_source_workers": [
+      "worker-05",
+      "worker-09",
+      "worker-02",
+      "worker-10"
+    ],
+    "W07_authored_any_selected_origin": false,
+    "W07_authored_prior_projected_diagnostic": true,
+    "prior_review_does_not_transfer": true,
+    "unchanged_historical_owners": [
+      "MIM:Bluensomycin",
+      "MIM:Congocidin"
+    ]
+  },
+  "limits": [
+    "Conditional scientific/policy recommendation only, not authorization to suppress, apply, publish, admit a mapping row, approve a whole owner, source case, role or new external mapping. All such dispositions remain WITHHOLD.",
+    "Do not change YAML synonyms, ontology labels, source fields, identities, components, histories or old human/method claims under this recommendation. No DROP/REJECTED_LABEL, owner merge or namespace choice is authorized.",
+    "Actual root generation from accepted applied owners must independently establish exact whole-owner/source-path/event equivalence, complete preferred-name owner credits, native selected output and publication receipt. This private 3750-row diagnostic is not that receipt.",
+    "The observed native publisher rejects these new selected events and exposes no authorization field. Separate reviewed capability and root acceptance are required; no bypass, handwritten canonical sidecar or wholesale replacement.",
+    "Preserve all34 historical sidecar rows, original source credits and all27 mapping-change receipts. Other17 candidate events and all other tokens are outside these four scientific/policy decisions."
+  ]
+}

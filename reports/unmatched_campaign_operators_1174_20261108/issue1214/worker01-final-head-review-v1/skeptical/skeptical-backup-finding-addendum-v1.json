@@ -1,0 +1,126 @@
+{
+  "reviewer": "/root/skeptical_review",
+  "at": "2026-11-08T06:08:34.942760+00:00",
+  "head": "4c8a987da40d48cceeb4390550f1ff7545927a0b",
+  "verdict": "byte_and_transport_verification_passes_but_new_P2_recovery_integrity_finding_independently_confirmed",
+  "prior_scoped_review": {
+    "path": ".temp/infrastructure-pr1205-final-head-review-v1/skeptical/skeptical-final-head-review-v1.json",
+    "sha256": "31badf4ec2a00ed181148e6a3d22de890d79569b4c146101910c89582515c011",
+    "preserved": true,
+    "scope_note": "Earlier receipt verified exact-head transport and explicitly delegated semantic review. Its transport conclusions remain valid; it is not an all-findings-clear acceptance in light of this addendum."
+  },
+  "finding": {
+    "id": "IR-PR1205-PUBLISHER-001",
+    "origin": "Separate publisher reviewer; independently reproduced here",
+    "priority": "P2",
+    "severity": "medium",
+    "state": "open_confirmed_at_exact_head",
+    "peer_finding": ".temp/infrastructure-pr1205-final-head-review-v1/publisher/finding-001-backup-integrity.json",
+    "peer_finding_sha256": "54c9f4e1cfc187c17bd86bb707a4c392b73d3d0d2f52b2bd2087744b6f82dc41",
+    "summary": "An in-place overwrite of either reserved local recovery backup immediately before real finish_receipt is not rejected; publish returns complete and standalone validate verifies the projected state."
+  },
+  "independent_proof": {
+    "exact_source_sha256": "9e1aa0767f1501a89dffb78402d89b96b66ecbe18b9a08b9daa0b9b8ca2fd832",
+    "exact_test_fixture_sha256": "a45eb697a144fafb0e22282d6544337f186b84371a9e5db842485e7c25b383bb",
+    "all_native_fixture_inputs_byte_verified": 97,
+    "probe_sha256": "4138f0998580397ff39646355840f9cba3894daf0fac974ed3bf08891c58015a",
+    "result_path": ".temp/infrastructure-pr1205-final-head-review-v1/skeptical/backup-integrity-probe-result.json",
+    "result_sha256": "8af7c387698002126dd424daa515752ac6ce07074c6260cf8e032a94c77efaaa",
+    "peer_and_independent_results_byte_identical": true,
+    "cases": [
+      {
+        "case": "positive",
+        "returned_status": "complete",
+        "separate_validator_status": "verified",
+        "publication_log_status": "complete",
+        "backup_checks": [
+          {
+            "backup": "canonical-before.tsv",
+            "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+            "actual_backup_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+            "backup_matches_beforeimage": true,
+            "immutable_plan_beforeimage_still_valid": true
+          },
+          {
+            "backup": "policy-before.json",
+            "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+            "actual_backup_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+            "backup_matches_beforeimage": true,
+            "immutable_plan_beforeimage_still_valid": true
+          }
+        ]
+      },
+      {
+        "case": "inplace-canonical-before.tsv",
+        "returned_status": "complete",
+        "separate_validator_status": "verified",
+        "publication_log_status": "complete",
+        "backup_checks": [
+          {
+            "backup": "canonical-before.tsv",
+            "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+            "actual_backup_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+            "backup_matches_beforeimage": false,
+            "immutable_plan_beforeimage_still_valid": true
+          },
+          {
+            "backup": "policy-before.json",
+            "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+            "actual_backup_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+            "backup_matches_beforeimage": true,
+            "immutable_plan_beforeimage_still_valid": true
+          }
+        ]
+      },
+      {
+        "case": "inplace-policy-before.json",
+        "returned_status": "complete",
+        "separate_validator_status": "verified",
+        "publication_log_status": "complete",
+        "backup_checks": [
+          {
+            "backup": "canonical-before.tsv",
+            "expected_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+            "actual_backup_sha256": "f03c3c51bd6ced66da75a39156c672446e8e03b10256a0daa7f5de7ee441604d",
+            "backup_matches_beforeimage": true,
+            "immutable_plan_beforeimage_still_valid": true
+          },
+          {
+            "backup": "policy-before.json",
+            "expected_sha256": "ccf170affa3658839bd1df38c29eb5ff237723f15e8ba34c6bb8e6c5b5f00a3c",
+            "actual_backup_sha256": "cbe86151e40ef8f3616347c720c444f133841b9355be4e9019e473d2a5ef0b70",
+            "backup_matches_beforeimage": false,
+            "immutable_plan_beforeimage_still_valid": true
+          }
+        ]
+      }
+    ],
+    "successful_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=.temp/infrastructure-pr1205-final-head-review-v1/skeptical/exact-head-package/src .temp/all-unmatched-worker-01/shard-venv/bin/python3.13 .temp/infrastructure-pr1205-final-head-review-v1/skeptical/probe_backup_integrity.py",
+    "exit_code": 0,
+    "stdout_path": ".temp/infrastructure-pr1205-final-head-review-v1/skeptical/independent-backup-probe-run-v2.log",
+    "stdout_sha256": "8af7c387698002126dd424daa515752ac6ce07074c6260cf8e032a94c77efaaa",
+    "stderr_bytes": 0,
+    "harness_note": "First setup used a symlink to the peer private package. Native loader correctly refused the alias before any fixture ran (exit1). That setup and receipt remain preserved. Actual second run uses97 verbatim regular-file copies; it reached allthree intended controls."
+  },
+  "source_assessment": {
+    "publication_module": "src/mediaingredientmech/campaign_publication.py",
+    "lines": [
+      1091,
+      1217,
+      1223,
+      1227,
+      1256
+    ],
+    "guard_module": "src/mediaingredientmech/curate/publication_guard.py",
+    "guard_line": 78,
+    "mechanism": "recheck validates output handles/path identities; only native_path receives explicit expected-byte comparison. Recovery handles are written and flushed without subsequent byte capture/check. check_reserved compares path/inode/link/type, so same-inode corruption survives. Standalone validate takes root andplan and verifies projection/native lineage; it does not attest the local recovery-directory contents."
+  },
+  "limits": [
+    "Plan beforeimage files remain byte-valid and provide alternate recovery evidence.",
+    "Canonical/policy projection and native receipt approvalNONE remain valid in the probe; no scientific, mapping or release bypass is demonstrated.",
+    "Existing fixture mocks owner proof and external generation; real publisher/reservation/rechecks/finish_receipt/receipt maker/replay andstandalone validation ran.",
+    "This was a narrow private three-case probe, not fullsuite/fullQC or actualcampaignpublication.",
+    "All writes stayed in this reviewer private directory. Integration remained clean and exacthead, all97inputs unchanged; no GitHub/code/data/commit/push/checkout mutation."
+  ],
+  "recommended_disposition": "Retain the P2 finding for parent/coordinator remediation or explicit disposition. Add exact backup-byte checks at publication/completion boundaries with both in-place negative controls. Do not represent the prior archived or transport review as clearing this newly reproduced gap."
+}

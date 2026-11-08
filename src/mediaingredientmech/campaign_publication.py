@@ -1,0 +1,1969 @@
+"""Closed, approval-free campaign publication (#1174).
+
+Source curation, scientific approval and companion review are separate. This
+module reconstructs a reviewed row plan, preserves the old policy history, and
+uses native receipt alignment/replay and guarded filesystem publication.
+"""
+
+from __future__ import annotations
+
+import csv
+import hashlib
+import io
+import json
+import os
+import re
+import subprocess
+import sys
+import types
+from collections.abc import Callable
+from contextlib import ExitStack, contextmanager
+from copy import deepcopy
+from functools import lru_cache
+from pathlib import Path, PurePosixPath
+from typing import TYPE_CHECKING, Any, BinaryIO, TextIO, cast
+
+import yaml  # type: ignore[import-untyped]
+
+from mediaingredientmech.curate import campaign_owner_apply as _source_owner
+
+_NATIVE_SOURCES = {
+    "mediaingredientmech.curate.publication_guard": "src/mediaingredientmech/curate/publication_guard.py",
+    "mediaingredientmech.validation.mapping_change_receipts": "src/mediaingredientmech/validation/mapping_change_receipts.py",
+    "mediaingredientmech.export.reviewed_sssom": "src/mediaingredientmech/export/reviewed_sssom.py",
+    "mediaingredientmech.sssom_metadata": "src/mediaingredientmech/sssom_metadata.py",
+    "mediaingredientmech.synonym_policy": "src/mediaingredientmech/synonym_policy.py",
+    "campaign_native_sssom_invariants": "scripts/validate_sssom_invariants.py",
+    "campaign_native_record_review": "scripts/record_review.py",
+}
+_BOUND_NATIVE = _source_owner.captured_native_modules(
+    Path(__file__).absolute().parents[2], _NATIVE_SOURCES
+)
+if TYPE_CHECKING:
+    from mediaingredientmech.curate.publication_guard import (
+        FrozenFile,
+        check_reserved,
+        finish_receipt,
+        no_alias,
+        publish_validated,
+    )
+    from mediaingredientmech.sssom_metadata import subset_date_metadata
+    from mediaingredientmech.validation import mapping_change_receipts as native
+else:
+    _guard = _BOUND_NATIVE["mediaingredientmech.curate.publication_guard"]
+    FrozenFile, check_reserved = _guard.FrozenFile, _guard.check_reserved
+    finish_receipt, no_alias = _guard.finish_receipt, _guard.no_alias
+    publish_validated = _guard.publish_validated
+    subset_date_metadata = _BOUND_NATIVE["mediaingredientmech.sssom_metadata"].subset_date_metadata
+    native = _BOUND_NATIVE["mediaingredientmech.validation.mapping_change_receipts"]
+
+SOURCE = native.SSSOM_SOURCE
+POLICY = SOURCE + ".manifest.json"
+SIDECAR = "mappings/suppressed_aliases.tsv"
+BASELINE = "mappings/other_cross_record_baseline.tsv"
+MAKER = "reports/sssom_completion_20260921/mapping_changes/make_receipt.py"
+MAKER_SHA = "2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121"
+UPDATE = "campaign_publication_updates"
+ISSUE = "https://github.com/CultureBotAI/MediaIngredientMech/issues/1174"
+PRODUCER_REVISION = "76c1ebeea3fc7f80bf1abe044688f298f390cfac"
+PRODUCER_SHA = "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+APPROVAL = "NONE: all touched rows and changed owners require separate scientific review"
+HISTORICAL_FIELDS = frozenset({"source", "comment", "confidence", "validation_method"})
+POLICY_KEYS = frozenset(
+    {
+        "schema_version",
+        "policy_version",
+        "approval",
+        "scope",
+        "decisions",
+        "policy_evidence",
+        "producer_revision",
+        "generation_manifest_sha256",
+        "generation_receipt_sha256",
+        "source_receipt_sha256",
+        "sssom_before_sha256",
+        "baseline_before_sha256",
+        "artifacts",
+        "source_owner_sha256",
+        "form_projection_updates",
+        "registry_correction_updates",
+        "stock_cas_removal_updates",
+        "owned_name_suppression_updates",
+        "source_alias_addition_updates",
+        UPDATE,
+    }
+)
+POLICY_REQUIRED = POLICY_KEYS - {
+    "form_projection_updates",
+    "registry_correction_updates",
+    "stock_cas_removal_updates",
+    "owned_name_suppression_updates",
+    "source_alias_addition_updates",
+    UPDATE,
+}
+PLAN_KEYS = frozenset(
+    {
+        "schema_version",
+        "kind",
+        "issue",
+        "approval",
+        "batch",
+        "scope",
+        "owner_plan",
+        "owner_receipt",
+        "publication_producers",
+        "before",
+        "generation",
+        "receipt_prefix",
+        "native_context",
+        "rows",
+    }
+)
+SUPPRESSION_ISSUE = "https://github.com/CultureBotAI/MediaIngredientMech/issues/1259"
+SUPPRESSION_DECISION_SHA = "26c5f381bcf3600f18c54722213c076389d0d17d732bbf760783e1cfdc4d333c"
+SUPPRESSION_REVIEW_SHA = "99bef708606134cf404608f52e4fa61696fb67412122a27ade5c789d345c1f71"
+REVIEW_SCHEMA = "schema/record_review.yaml"
+SUPPRESSION_COLUMNS = (
+    "subject_id",
+    "token_key",
+    "token",
+    "owner_subject_ids",
+    "disposition",
+    "input_surfaces",
+    "source_refs",
+    "evidence_refs",
+)
+_LOADED = Path(__file__).read_bytes()
+LOADED_PRODUCERS = {
+    path: _BOUND_NATIVE[name]._campaign_executed_source for name, path in _NATIVE_SOURCES.items()
+}
+LOADED_PRODUCERS["src/mediaingredientmech/campaign_publication.py"] = FrozenFile.capture(
+    Path(__file__).absolute()
+)
+LOADED_PRODUCERS["src/mediaingredientmech/curate/campaign_owner_apply.py"] = (
+    _source_owner.LOADED_PRODUCERS["src/mediaingredientmech/curate/campaign_owner_apply.py"]
+)
+
+LOADED_PRODUCERS[REVIEW_SCHEMA] = FrozenFile.capture(
+    Path(__file__).absolute().parents[2] / REVIEW_SCHEMA
+)
+
+
+def require(condition: object, message: str) -> None:
+    if not condition:
+        raise ValueError("Campaign publication: " + message)
+
+
+def sha(raw: bytes) -> str:
+    return hashlib.sha256(raw).hexdigest()
+
+
+def read_json(raw: bytes) -> Any:
+    def pairs(items):
+        result = {}
+        for key, value in items:
+            require(key not in result, "duplicate JSON field")
+            result[key] = value
+        return result
+
+    def invalid_number(value):
+        raise ValueError("Campaign publication: non-finite JSON value " + value)
+
+    return json.loads(raw, object_pairs_hook=pairs, parse_constant=invalid_number)
+
+
+def closed(value: Any, keys: set[str] | frozenset[str], label: str) -> dict:
+    require(isinstance(value, dict) and set(value) == keys, "unknown/missing " + label + " fields")
+    return cast(dict, value)
+
+
+def digest(value: Any) -> str:
+    require(isinstance(value, str) and re.fullmatch(r"[0-9a-f]{64}", value), "invalid digest")
+    return cast(str, value)
+
+
+def relative(value: Any) -> str:
+    require(isinstance(value, str) and value, "missing relative path")
+    p = PurePosixPath(value)
+    require(
+        not p.is_absolute() and str(p) == value and not {".", ".."} & set(p.parts),
+        "unsafe relative path",
+    )
+    require("\\" not in value and "\x00" not in value, "nonportable path")
+    return cast(str, value)
+
+
+def member(root: Path, name: str) -> Path:
+    p = root / relative(name)
+    no_alias(p)
+    require(p.absolute().is_relative_to(root), "path outside root")
+    return p
+
+
+def absolute(path: Path) -> Path:
+    require(
+        path.is_absolute() and str(path) == os.path.normpath(str(path)) and ".." not in path.parts,
+        "noncanonical absolute path",
+    )
+    no_alias(path)
+    return path
+
+
+def encoded(value: Any) -> bytes:
+    return (
+        json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n"
+    ).encode()
+
+
+def hash_map(value: Any) -> dict[str, str]:
+    require(isinstance(value, dict), "missing hash inventory")
+    for name, expected in value.items():
+        relative(name)
+        digest(expected)
+    return cast(dict[str, str], value)
+
+
+def table(raw: bytes) -> tuple[list[str], list[str], list[dict[str, str]], list[str]]:
+    """Keep unrelated physical rows byte-identical; reject multiline ambiguity."""
+    lines = raw.decode("utf-8").splitlines(keepends=True)
+    require(all(line.endswith("\n") for line in lines), "unterminated SSSOM line")
+    i = next((i for i, line in enumerate(lines) if not line.startswith("#")), None)
+    require(i is not None, "missing SSSOM header")
+    i = cast(int, i)
+    header, body = lines[:i], lines[i + 1 :]
+    require(
+        not any(line.startswith("#") or not line.strip() for line in body),
+        "embedded SSSOM metadata",
+    )
+    fields = next(csv.reader([lines[i]], delimiter="\t"))
+    require(len(fields) == len(set(fields)), "duplicate SSSOM column")
+    values = [next(csv.reader([line], delimiter="\t")) for line in body]
+    require(all(len(row) == len(fields) for row in values), "nonphysical SSSOM row")
+    return (
+        header + [lines[i]],
+        fields,
+        [dict(zip(fields, row, strict=True)) for row in values],
+        body,
+    )
+
+
+def render_row(fields: list[str], row: dict[str, str]) -> str:
+    require(
+        set(row) == set(fields) and all(isinstance(v, str) for v in row.values()),
+        "row fields differ",
+    )
+    require(not any("\n" in v or "\r" in v for v in row.values()), "multiline row")
+    output = io.StringIO(newline="")
+    csv.DictWriter(output, fieldnames=fields, delimiter="\t", lineterminator="\n").writerow(row)
+    return output.getvalue()
+
+
+def subject(path: str) -> str:
+    return "MIM:" + re.sub(
+        r"[^A-Za-z0-9_\-.]", lambda m: f"~{ord(m.group(0)):02X}", Path(path).stem
+    )
+
+
+def slot(row: dict) -> tuple[str, str]:
+    """Preserve distinct local primaries and B1 handles (#1257; Claw #683).
+
+    A curated local primary can differ from the mandatory subject-slug handle,
+    including only by case. Both are native rows in the same namespace. A local
+    target change therefore removes its old slot and adds its new slot; it is
+    never an implicit pairing that transfers another identity's provenance.
+    """
+    object_id = row["object_id"]
+    prefix = object_id.split(":", 1)[0]
+    key = (
+        object_id
+        if prefix in {"kgmicrobe.ingredient", "kgmicrobe.compound"}
+        else "cas" if prefix == "cas" else "ontology"
+    )
+    return row["subject_id"], key
+
+
+def _align_rows(before: list[dict], after: list[dict]) -> tuple[list[dict], list[int | None]]:
+    """Use native deterministic alignment with explicit local objects (#1257).
+
+    The historical maker remains immutable. Stable local IDs and ordinary
+    ontology/CAS slots retain its algorithm; replacing a local object removes
+    its old position and adds its successor without transferring identity.
+    """
+    before_by = {}
+    for i, row in enumerate(before, 1):
+        key = slot(row)
+        require(key not in before_by, f"Two pre-batch rows share a slot: {key}")
+        before_by[key] = (i, row)
+    after_by = {}
+    for j, row in enumerate(after, 1):
+        key = slot(row)
+        require(key not in after_by, f"Two post-batch rows share a slot: {key}")
+        after_by[key] = (j, row)
+    changes = []
+    position_map: list[int | None] = [None] * len(before)
+    for key, (i, old) in before_by.items():
+        if key in after_by:
+            j, new = after_by[key]
+            position_map[i - 1] = j
+            if old != new:
+                changes.append(
+                    {
+                        "kind": "changed",
+                        "before_position": i,
+                        "after_position": j,
+                        "before": old,
+                        "after": new,
+                    }
+                )
+        else:
+            changes.append(
+                {
+                    "kind": "removed",
+                    "before_position": i,
+                    "after_position": None,
+                    "before": old,
+                    "after": None,
+                }
+            )
+    for key, (j, new) in after_by.items():
+        if key not in before_by:
+            changes.append(
+                {
+                    "kind": "added",
+                    "before_position": None,
+                    "after_position": j,
+                    "before": None,
+                    "after": new,
+                }
+            )
+    changes.sort(key=lambda change: (change["after_position"] or 0, change["before_position"] or 0))
+    return changes, position_map
+
+
+def row_projection(
+    before: bytes, candidate: bytes, records: list[dict], plan: list[dict]
+) -> tuple[bytes, list[dict]]:
+    header, fields, old, lines = table(before)
+    _, candidate_fields, generated, _ = table(candidate)
+    require(fields == candidate_fields, "native/canonical columns differ")
+    owners = {r["source_record"]: r for r in records}
+    subject_owners = {subject(p): p for p in owners}
+    require(len(subject_owners) == len(owners), "ambiguous source subject")
+    old_slots = {slot(r): i for i, r in enumerate(old, 1)}
+    new_slots = {slot(r): i for i, r in enumerate(generated, 1)}
+    require(
+        len(old_slots) == len(old) and len(new_slots) == len(generated), "ambiguous native row slot"
+    )
+    for record in records:
+        if record["shape"] == "demotion":
+            previous = relative(record["before_source_record"])
+            destination = relative(record["source_record"])
+            require(
+                record.get("kind") == "demote"
+                and PurePosixPath(previous).parent == PurePosixPath("data/ingredients/mapped")
+                and PurePosixPath(destination).parent == PurePosixPath("data/ingredients/unmapped")
+                and PurePosixPath(previous).name == PurePosixPath(destination).name
+                and subject(previous) == subject(destination)
+                and record["before_yaml_sha256"] is not None,
+                "demotion requires authentic same-subject mapped-to-unmapped relocation",
+            )
+            demoted_subject = subject(destination)
+            require(
+                any(key[0] == demoted_subject for key in old_slots),
+                "demotion has no canonical subject slots to remove",
+            )
+            require(
+                not any(key[0] == demoted_subject for key in new_slots),
+                "native generation retained a demoted subject or registry slot",
+            )
+    expected = {}
+    for key in old_slots.keys() | new_slots.keys():
+        if key[0] in subject_owners:
+            expected[key] = (old_slots.get(key), new_slots.get(key), subject_owners[key[0]])
+    require(isinstance(plan, list), "row plan must be a list")
+    seen, replacements, appended, trace = set(), {}, [], []
+    for operation in plan:
+        closed(
+            operation,
+            {"owner", "before_position", "native_position", "preserve_fields"},
+            "row plan",
+        )
+        owner = relative(operation["owner"])
+        require(owner in owners, "row owner not in applied source scope")
+        a, b = operation["before_position"], operation["native_position"]
+        require(a is not None or b is not None, "empty row operation")
+        for pos, rows in ((a, old), (b, generated)):
+            require(
+                pos is None or (type(pos) is int and 1 <= pos <= len(rows)),
+                "row position outside source",
+            )
+        left, right = old[a - 1] if a else None, generated[b - 1] if b else None
+        key = slot(cast(dict, right or left))
+        require(
+            key not in seen and expected.get(key) == (a, b, owner),
+            "missing/extra/misowned row plan",
+        )
+        seen.add(key)
+        preserve = operation["preserve_fields"]
+        require(
+            isinstance(preserve, list)
+            and len(preserve) == len(set(preserve))
+            and set(preserve) <= HISTORICAL_FIELDS,
+            "invalid preserved provenance fields",
+        )
+        require(
+            not preserve or (left is not None and right is not None),
+            "provenance has no historical row",
+        )
+        result = dict(right) if right is not None else None
+        if result is not None:
+            for field in preserve:
+                require(field in fields, "preserved field not in schema")
+                result[field] = cast(dict, left)[field]
+        if a:
+            replacements[a] = result
+        else:
+            appended.append((b, result))
+        trace.append(
+            {
+                "owner": owner,
+                "before_position": a,
+                "native_position": b,
+                "preserve_fields": preserve,
+                "before": left,
+                "after": result,
+                "changed_cells": [
+                    {
+                        "field": field,
+                        "before": left.get(field) if left else None,
+                        "after": result.get(field) if result else None,
+                        "basis": "native_owner_projection" if result else "native_slot_absent",
+                    }
+                    for field in fields
+                    if (left or {}).get(field) != (result or {}).get(field)
+                ],
+            }
+        )
+    require(seen == set(expected), "row plan does not cover every selected native/canonical slot")
+    out_rows, body = [], []
+    for i, row in enumerate(old, 1):
+        result = replacements.get(i, row)
+        if result is not None:
+            out_rows.append(result)
+            body.append(lines[i - 1] if result == row else render_row(fields, result))
+    for _, added_row in sorted(appended):
+        out_rows.append(cast(dict, added_row))
+        body.append(render_row(fields, cast(dict, added_row)))
+    dates = subset_date_metadata({}, out_rows)
+    for date_key in ("mapping_date", "mapping_set_version"):
+        indices = [
+            i for i, line in enumerate(header[:-1]) if line.startswith("# " + date_key + ":")
+        ]
+        require(
+            len(indices) == 1 and date_key in dates, "missing/duplicate canonical date metadata"
+        )
+        previous = header[indices[0]]
+        header[indices[0]] = f"# {date_key}: {dates[date_key]}\n"
+        if previous != header[indices[0]]:
+            trace.append(
+                {
+                    "metadata_field": date_key,
+                    "before": previous,
+                    "after": header[indices[0]],
+                    "basis": "native subset_date_metadata over exact projected rows",
+                }
+            )
+    return ("".join(header + body)).encode(), trace
+
+
+class Capture:
+    """Immutable input roles, membership, and original path identities."""
+
+    def __init__(self, root: Path):
+        self.root = absolute(root)
+        self.files: dict[Path, FrozenFile] = {}
+        self.absent: set[Path] = set()
+        self.checks: list[Callable[[], None]] = []
+        self.pair_validator: Callable[[bytes, bytes], None] | None = None
+        self.review_refs: set[Path] = set()
+
+    def read(self, name: str, expected: str | None = None) -> bytes:
+        return self.external(member(self.root, name), expected)
+
+    def external(self, path: Path, expected: str | None = None) -> bytes:
+        absolute(path)
+        item = FrozenFile.capture(path)
+        if item.path in self.files:
+            require(item == self.files[item.path], "input changed between roles")
+        self.files[item.path] = item
+        if expected is not None:
+            require(sha(item.content) == digest(expected), "input digest differs: " + str(path))
+        return item.content
+
+    def ref(self, value: dict) -> bytes:
+        closed(value, {"path", "sha256"}, "file reference")
+        return self.read(relative(value["path"]), digest(value["sha256"]))
+
+    def verify(self, exclude: set[Path] | None = None) -> None:
+        for check in self.checks:
+            check()
+        for path, item in self.files.items():
+            if path not in (exclude or set()):
+                item.verify()
+        for path in self.absent:
+            no_alias(path)
+            require(not path.exists(), "previously absent input appeared")
+
+
+def _owner_proof(root: Path, plan: dict) -> dict:
+    from mediaingredientmech.curate.campaign_owner_apply import verify_completed
+
+    return verify_completed(
+        root,
+        member(root, plan["owner_plan"]["path"]),
+        member(root, plan["owner_receipt"]["path"]),
+    )
+
+
+def _capture_source_completion(capture: Capture, proof: dict) -> None:
+    """Hold complete inventories, not just the initially enumerated files (#1194)."""
+    from mediaingredientmech.curate.campaign_owner_apply import hashes, inventory
+
+    root = capture.root
+    expected = hash_map(proof["after_inventory"])
+    require(hashes(inventory(root)) == expected, "source completion inventory differs")
+    for path, expected_sha in expected.items():
+        capture.read(path, expected_sha)
+    for path, expected_sha in hash_map(proof["immutable_input_sha256"]).items():
+        capture.read(path, expected_sha)
+
+    def owners_recheck() -> None:
+        require(
+            hashes(inventory(root)) == expected,
+            "source completion owner membership or bytes changed",
+        )
+
+    capture.checks.append(owners_recheck)
+
+    def snapshot_members(directory: Path) -> set[str]:
+        no_alias(directory)
+        require(directory.is_dir(), "source snapshot disappeared")
+        members = set()
+        for parent, directories, files in os.walk(directory, followlinks=False):
+            for name in directories:
+                no_alias(Path(parent) / name)
+            for name in files:
+                path = Path(parent) / name
+                no_alias(path)
+                members.add(str(path.relative_to(directory)))
+        return members
+
+    for role in ("checkpoint", "protected_snapshot"):
+        snapshot = closed(proof[role], {"root", "input_sha256"}, "source snapshot")
+        directory = member(root, relative(snapshot["root"]))
+        members = hash_map(snapshot["input_sha256"])
+        require(snapshot_members(directory) == set(members), "source snapshot membership differs")
+        for path, expected_sha in members.items():
+            capture.external(member(directory, path), expected_sha)
+
+        def snapshot_recheck(directory=directory, members=frozenset(members)) -> None:
+            require(
+                snapshot_members(directory) == members,
+                "source snapshot membership changed",
+            )
+
+        capture.checks.append(snapshot_recheck)
+
+    for record in proof["records"]:
+        if record["shape"] in {"promotion", "demotion"}:
+            old_path = member(root, relative(record["before_source_record"]))
+            require(not os.path.lexists(old_path), "retired source reappeared")
+            capture.absent.add(old_path)
+
+
+def _maker(capture: Capture):
+    raw = capture.read(MAKER)
+    require(sha(raw) == MAKER_SHA, "native receipt maker changed")
+    module = types.ModuleType("campaign_native_receipt_maker")
+    module.__file__ = str(member(capture.root, MAKER))
+    exec(compile(raw, module.__file__, "exec"), module.__dict__)
+    return module
+
+
+def _receipt(
+    proof: dict, maker: Any, plan: dict, owners: list[dict], before: bytes, after: bytes
+) -> dict:
+    old, new = maker.rows_of(before), maker.rows_of(after)
+    changes, positions = _align_rows(old, new)
+    records = []
+    for owner in owners:
+        record = {
+            key: owner[key]
+            for key in (
+                "source_record",
+                "shape",
+                "before_yaml_sha256",
+                "after_yaml_sha256",
+                "change",
+                "verification",
+            )
+        }
+        if owner["shape"] in {"promotion", "demotion"}:
+            previous = relative(owner["before_source_record"])
+            require(
+                not proof["owner_chains"].get(previous),
+                f"{owner['shape']} old path has native owner-chain history; migration review required",
+            )
+            require(
+                not proof["owner_chains"].get(owner["source_record"]),
+                f"{owner['shape']} destination has native owner-chain history; migration review required",
+            )
+            record["before_source_record"] = previous
+        records.append(record)
+    result = {
+        "schema_version": 1,
+        "batch": plan["batch"],
+        "sequence": len(proof["receipts"]) + 1,
+        "issue": ISSUE,
+        "scope": plan["scope"],
+        "approval": APPROVAL,
+        "before_sha256": sha(before),
+        "after_sha256": sha(after),
+        "before_row_count": len(old),
+        "after_row_count": len(new),
+        "records": records,
+        "changes": changes,
+        "position_map": positions,
+        "touched_subjects": sorted({(c["after"] or c["before"])["subject_id"] for c in changes}),
+    }
+    result.update(
+        {
+            kind + "_rows": sum(c["kind"] == kind for c in changes)
+            for kind in ("changed", "added", "removed")
+        }
+    )
+    native._validate_receipt(result, complete=True)
+    # #1197: row replay alone cannot detect a disconnected owner preimage.
+    # Validate the complete prospective owner chain before reserving outputs.
+    receipt_path = native.RECEIPTS_DIR + "/" + plan["batch"] + ".json"
+    native._owner_chains(
+        proof["receipts"] + [result],
+        proof["receipt_paths"] + [receipt_path],
+        {**proof["receipt_inputs"], receipt_path: sha(encoded(result))},
+    )
+    replay = native.walk_mapping_changes(
+        proof["receipts"] + [result],
+        start_sha256=proof["start_sha256"],
+        reviewed_sha256=sha(after),
+        baseline_rows=proof["baseline_rows"],
+        refreshed_rows=proof["refreshed_rows"],
+    )
+    require(replay[2] == new, "native row replay differs from projection")
+    return result
+
+
+def _generation(
+    capture: Capture, plan: dict, before: bytes, inventory: dict
+) -> tuple[bytes, bytes, dict]:
+    """Replay the captured native producer without network label lookups."""
+    config = closed(
+        plan["generation"],
+        {"candidate", "sidecar", "manifest", "producer_root", "kg_root"},
+        "generation",
+    )
+    candidate, sidecar, raw_manifest = (
+        capture.ref(config[key]) for key in ("candidate", "sidecar", "manifest")
+    )
+    manifest = closed(
+        read_json(raw_manifest),
+        {
+            "schema_version",
+            "policy_version",
+            "artifacts",
+            "scope",
+            "external_sssom_validation",
+            "prior_stamp_sources",
+            "source_inputs",
+            "producer_import_snapshot",
+            "producer_binding_scope",
+            "mapped_record_paths",
+            "source_revisions",
+            "canonical_label_resolution",
+            "policy_evidence",
+            "emitted_rows",
+        },
+        "native generation manifest",
+    )
+    require(
+        type(manifest["schema_version"]) is int
+        and manifest["schema_version"] == 1
+        and manifest["policy_version"] == "owned-name-policy-v1"
+        and manifest["external_sssom_validation"] == "passed",
+        "unvalidated native candidate",
+    )
+    root = capture.root
+    producer_root, kg_root = Path(config["producer_root"]), Path(config["kg_root"])
+    for path in (producer_root, kg_root):
+        absolute(path)
+    revisions = closed(
+        manifest["source_revisions"], {"claw", "mim", "kg_microbe"}, "source revisions"
+    )
+    require(
+        all(
+            isinstance(value, str) and re.fullmatch(r"[0-9a-f]{40}", value)
+            for value in revisions.values()
+        ),
+        "invalid source revision",
+    )
+    require(
+        manifest["source_revisions"]["claw"] == PRODUCER_REVISION, "unreviewed producer revision"
+    )
+    require(
+        subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=producer_root, text=True).strip()
+        == PRODUCER_REVISION,
+        "producer revision moved",
+    )
+    require(
+        subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=kg_root, text=True).strip()
+        == revisions["kg_microbe"],
+        "kg-microbe revision moved",
+    )
+    producer = producer_root / "scripts/build_mim_ingredient_sssom.py"
+    source = capture.external(producer, PRODUCER_SHA)
+    mapped = {
+        str(root / p): h for p, h in inventory.items() if p.startswith("data/ingredients/mapped/")
+    }
+    require(
+        manifest["mapped_record_paths"] == sorted(mapped), "generation mapped membership differs"
+    )
+    input_names = {}
+    for item in manifest["source_inputs"]:
+        closed(item, {"path", "sha256"}, "generation source")
+        path = Path(item["path"])
+        absolute(path)
+        require(
+            path.is_absolute()
+            and path not in input_names
+            and any(path.is_relative_to(r) for r in (root, producer_root, kg_root)),
+            "unconfined/duplicate native source",
+        )
+        no_alias(path)
+        expected = item["sha256"]
+        if path == root / SOURCE:
+            require(
+                expected == sha(before), "native stamp source differs from canonical beforeimage"
+            )
+            content = before
+        elif expected is None:
+            require(not path.exists(), "absent native source appeared")
+            capture.absent.add(path)
+            content = None
+        else:
+            content = capture.external(path, expected)
+        input_names[path] = content
+    require(
+        all(
+            root / p in input_names
+            and isinstance(input_names[root / p], bytes)
+            and sha(cast(bytes, input_names[root / p])) == h
+            for p, h in inventory.items()
+            if p.startswith("data/ingredients/mapped/")
+        ),
+        "generation omitted current owners",
+    )
+    artifacts = manifest["artifacts"]
+    require(isinstance(artifacts, list) and len(artifacts) == 2, "native artifact count differs")
+    for item, role, ref in zip(
+        artifacts,
+        ("sssom", "suppressed_aliases"),
+        (config["candidate"], config["sidecar"]),
+        strict=True,
+    ):
+        require(
+            item == {"role": role, "path": str(root / ref["path"]), "sha256": ref["sha256"]},
+            "native artifact roles differ",
+        )
+    old_environment = {
+        key: os.environ.get(key) for key in ("MEDIAINGREDIENTMECH_ROOT", "KGMICROBE_ROOT")
+    }
+    try:
+        os.environ.update(MEDIAINGREDIENTMECH_ROOT=str(root), KGMICROBE_ROOT=str(kg_root))
+        module = types.ModuleType("campaign_pinned_native_generator")
+        module.__file__ = str(producer)
+        sys.modules[module.__name__] = module
+        exec(compile(source, str(producer), "exec"), module.__dict__)
+    finally:
+        for key, value in old_environment.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
+    producers = set(module._producer_paths())
+    expected_inputs = (
+        {Path(p) for p in mapped}
+        | producers
+        | {module.RESIDUAL_JSON, module.KGM_UNIFIED_TSV, root / SOURCE}
+    )
+    require(set(input_names) == expected_inputs, "native input coverage differs")
+    require(manifest["prior_stamp_sources"] == [str(root / SOURCE)], "unsupported stamp history")
+    actual_graph = {str(p): sha(b) for p, b in module._IMPORTED_PRODUCER_BYTES.items()}
+    require(manifest["producer_import_snapshot"] == actual_graph, "native producer graph differs")
+    for graph_path, expected in actual_graph.items():
+        capture.external(Path(graph_path), expected)
+    records = {Path(p): yaml.safe_load(input_names[Path(p)]) for p in mapped}
+    owned = module.build_owner_index(
+        {module._mim_curie(p.name): data for p, data in records.items()}
+    )
+    residual_raw = input_names[module.RESIDUAL_JSON]
+    residual = (
+        {d["source_file"]: d for d in json.loads(residual_raw).get("decisions", [])}
+        if residual_raw
+        else {}
+    )
+    kg_path = module.KGM_UNIFIED_TSV
+    kg_sources = module.load_kgm_source_index(kg_path) if input_names[kg_path] else {}
+    kg_labels = module.load_kgm_labels(kg_path) if input_names[kg_path] else {}
+    labels = manifest["canonical_label_resolution"]
+    require(
+        isinstance(labels, dict)
+        and all(isinstance(k, str) and isinstance(v, str) for k, v in labels.items()),
+        "invalid native label capture",
+    )
+    generated: list[dict] = []
+    suppressions: list[Any] = []
+    for path in sorted(records):
+        generated.extend(
+            module._row_from_yaml(
+                path,
+                residual,
+                kg_sources,
+                kg_labels,
+                labels,
+                record=records[path],
+                owners=owned,
+                suppressions=suppressions,
+            )
+        )
+    unique = {(r["subject_id"], r["object_id"]): r for r in generated}
+    generated = list(unique.values())
+    stamps = {
+        (r["subject_id"], r["predicate_id"], r["object_id"]): r["validation_method"].strip()
+        for r in table(before)[2]
+        if r.get("validation_method", "").strip()
+    }
+    module.apply_replayed_stamps(generated, stamps)
+    require(generated == table(candidate)[2], "native row replay differs from diagnostic candidate")
+    require(
+        module.render_suppressed_aliases(suppressions) == sidecar,
+        "native suppression replay differs",
+    )
+    require(manifest["emitted_rows"] == len(generated), "native row count differs")
+    module._check_producer_bindings()
+
+    def producer_recheck():
+        require(set(module._producer_paths()) == producers, "producer membership changed")
+        require(
+            subprocess.check_output(
+                ["git", "rev-parse", "HEAD"], cwd=producer_root, text=True
+            ).strip()
+            == PRODUCER_REVISION,
+            "producer revision changed",
+        )
+        module._check_producer_bindings()
+        require(
+            subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=kg_root, text=True).strip()
+            == revisions["kg_microbe"],
+            "kg-microbe revision changed",
+        )
+
+    capture.checks.append(producer_recheck)
+    capture.pair_validator = module._ARTIFACT_PRODUCER._validate_pair
+    return candidate, sidecar, manifest
+
+
+@lru_cache(maxsize=8)
+def _validated_review(raw: bytes, schema_raw: bytes) -> dict:
+    """Validate immutable content; callers separately verify every input byte."""
+    validator = _BOUND_NATIVE["campaign_native_record_review"]
+    schema_path = LOADED_PRODUCERS[REVIEW_SCHEMA].path
+    require(schema_path.read_bytes() == schema_raw, "review schema changed")
+    review = validator.load_document(raw)
+    validator.validate_review(review, schema_path)
+    return cast(dict, review)
+
+
+def _review_bundle(capture: Capture, config: dict) -> tuple[dict, dict[str, bytes]]:
+    closed(config, {"yaml", "markdown", "inputs"}, "review bundle")
+    raw = capture.ref(config["yaml"])
+    markdown = capture.ref(config["markdown"])
+    schema_raw = capture.read(REVIEW_SCHEMA, sha(LOADED_PRODUCERS[REVIEW_SCHEMA].content))
+    review = deepcopy(_validated_review(raw, schema_raw))
+    validator = _BOUND_NATIVE["campaign_native_record_review"]
+    require(
+        validator.render_markdown(review, LOADED_PRODUCERS[REVIEW_SCHEMA].path).encode()
+        == markdown,
+        "review Markdown is not its native rendering",
+    )
+    declared = {i["path"]: i["sha256"] for i in review["source"]["inputs"]}
+    require(
+        isinstance(config["inputs"], dict) and set(config["inputs"]) == set(declared),
+        "review input capture membership differs",
+    )
+    inputs = {}
+    seen = {config["yaml"]["path"], config["markdown"]["path"]}
+    require(len(seen) == 2, "review document roles alias")
+    for recorded, expected in declared.items():
+        relative(recorded)
+        ref = config["inputs"][recorded]
+        require(
+            ref["sha256"] == expected and ref["path"] not in seen,
+            "review input digest/role differs",
+        )
+        inputs[recorded] = capture.ref(ref)
+        seen.add(ref["path"])
+    capture.review_refs.update(capture.root / p for p in seen)
+    require(review["completion"] == "completed", "incomplete transition review")
+    require(
+        review["verdict"] in {"pass", "pass_with_limitations"}
+        and all(not check["required"] or check["status"] == "passed" for check in review["checks"]),
+        "transition review verdict/required checks do not pass",
+    )
+    require(
+        review["reviewer"]["independence"] == "independent"
+        and bool(review["reviewer"].get("independence_basis")),
+        "review lacks an independent provenance basis",
+    )
+    return review, inputs
+
+
+def _suppression_table(raw: bytes) -> tuple[list[dict], list[bytes]]:
+    require(raw.endswith(b"\n"), "suppression input lacks final newline")
+    reader = csv.DictReader(io.StringIO(raw.decode()), delimiter="\t")
+    require(reader.fieldnames == list(SUPPRESSION_COLUMNS), "suppression header differs")
+    rows = list(reader)
+    lines = raw.splitlines(keepends=True)[1:]
+    require(len(rows) == len(lines), "suppression physical row boundary differs")
+    seen = set()
+    for row in rows:
+        require(
+            set(row) == set(SUPPRESSION_COLUMNS) and None not in row.values(),
+            "malformed suppression row",
+        )
+        key = row["subject_id"], row["token_key"]
+        require(
+            key not in seen
+            and row["token"].strip().casefold() == key[1]
+            and key[1]
+            and "|" not in row["token"]
+            and row["disposition"] == "SUPPRESS",
+            "duplicate/malformed suppression pair",
+        )
+        seen.add(key)
+        for name in ("owner_subject_ids", "input_surfaces", "source_refs", "evidence_refs"):
+            value = read_json(row[name].encode())
+            require(
+                isinstance(value, list)
+                and value
+                and all(isinstance(v, str) and v for v in value)
+                and value == sorted(set(value)),
+                "invalid native suppression provenance",
+            )
+        require(
+            row["subject_id"] not in read_json(row["owner_subject_ids"].encode()),
+            "self suppression",
+        )
+    return rows, lines
+
+
+def _record_path(original: str) -> tuple[str, str]:
+    """An archived root/path tuple, never a rewritten source-ref string."""
+    require(isinstance(original, str), "invalid original source path")
+    p = PurePosixPath(original)
+    require(
+        p.is_absolute()
+        and str(p) == original
+        and ".." not in p.parts
+        and p.suffix == ".yaml"
+        and p.parent.name == "mapped"
+        and p.parent.parent.name == "ingredients"
+        and p.parent.parent.parent.name == "data",
+        "original owner path is not a canonical mapped-record tuple",
+    )
+    name = "data/ingredients/mapped/" + p.name
+    return str(p.parents[3]), relative(name)
+
+
+def _field(record: dict, locator: str) -> Any:
+    if locator == "ontology_mapping.ontology_label":
+        return record.get("ontology_mapping", {}).get("ontology_label")
+    match = re.fullmatch(r"synonyms\[(0|[1-9][0-9]*)\]", locator)
+    require(match is not None, "unsupported reviewed suppression field locator")
+    values = record.get("synonyms", [])
+    index = int(cast(re.Match, match)[1])
+    require(index < len(values), "reviewed synonym locator missing")
+    return values[index]
+
+
+def derive_suppression_transition(
+    capture: Capture,
+    plan: dict,
+    before: dict,
+    proof: dict,
+    diagnostic: bytes,
+    canonical: bytes,
+    needs: list[dict],
+    original_review: dict,
+) -> tuple[bytes, dict, dict]:
+    """Construct exact technical evidence for a subsequent independent review.
+
+    This function consumes the fixed original scientific review but does not
+    select or authenticate a future actual-transition review. prepare() replays
+    the native/source chain and separately consumes that review/root selection.
+    Returning this object is never publication or scientific authorization.
+    """
+    original, inputs = _review_bundle(capture, original_review)
+    require(
+        original_review["yaml"]["sha256"] == SUPPRESSION_REVIEW_SHA,
+        "unreviewed original suppression science",
+    )
+    decision_path = "review-inputs/conditional-decisions.json"
+    require(
+        decision_path in inputs and sha(inputs[decision_path]) == SUPPRESSION_DECISION_SHA,
+        "original conditional decision differs",
+    )
+    decision = read_json(inputs[decision_path])
+    pairs = decision["pairs"]
+    require(
+        len(pairs) == 4 and original["scientific_review"] is True,
+        "original four-event scientific scope differs",
+    )
+    old_rows, _ = _suppression_table(before["sidecar"])
+    native_rows, native_lines = _suppression_table(diagnostic)
+    require(len(old_rows) == 34, "historical suppression scope differs")
+    require(
+        before["sidecar"].splitlines(keepends=True)[0] == diagnostic.splitlines(keepends=True)[0],
+        "native/historical suppression headers differ",
+    )
+    old_keys = {(r["subject_id"], r["token_key"]) for r in old_rows}
+    by_key = {
+        (r["subject_id"], r["token_key"]): (r, line)
+        for r, line in zip(native_rows, native_lines, strict=True)
+    }
+    keys = {(p["subject"], p["token_key"]) for p in pairs}
+    require(
+        len(keys) == 4
+        and {(n["subject_id"], n["token_key"]) for n in needs} == keys
+        and not keys & old_keys,
+        "reviewed new suppression set differs or reattributes history",
+    )
+    original_prefix = {
+        native.RECEIPTS_DIR + "/" + Path(ref["path"]).name: ref["sha256"]
+        for ref in decision["historical_retention"]["historical_receipts"]
+    }
+    require(
+        len(original_prefix) == 27
+        and all(
+            plan["receipt_prefix"].get(path) == expected
+            for path, expected in original_prefix.items()
+        ),
+        "reviewed historical receipt prefix differs",
+    )
+    # prepare() independently replays the complete contiguous native chain and
+    # binds it to the completed source checkpoint. These immutable original
+    # receipts are sequences 1–27; any already-completed suffix is carried in
+    # full by receipt_prefix and the exact actual-transition review below.
+    require(
+        sha(before["sidecar"]) == decision["historical_retention"]["sidecar"]["sha256"],
+        "reviewed historical sidecar differs",
+    )
+    mapped = {
+        p: h
+        for p, h in proof["after_inventory"].items()
+        if p.startswith("data/ingredients/mapped/")
+    }
+    records = {subject(p): yaml.safe_load(capture.read(p, h)) for p, h in mapped.items()}
+    owner_policy = _BOUND_NATIVE["mediaingredientmech.synonym_policy"]
+    credits = owner_policy.preferred_term_owners(records)
+    operations = {r["source_record"]: r for r in proof["records"]}
+    targets = {t["target_id"]: t for t in original["targets"]}
+    events, after_lines, owners_seen = [], [], {}
+    for pair in pairs:
+        key = pair["subject"], pair["token_key"]
+        actual, line = by_key[key]
+        original_event = pair["exact_native_event"]
+        require(
+            all(actual[k] == original_event[k] for k in SUPPRESSION_COLUMNS if k != "source_refs"),
+            "reviewed native event columns/credits differ",
+        )
+        require(
+            sorted(credits.get(key[1], ())) == read_json(actual["owner_subject_ids"].encode()),
+            "complete native credited-owner set differs",
+        )
+        require(
+            pair["recommendation"] == "SUPPRESS"
+            and pair["status"] == "CONDITIONAL_RECOMMENDATION_ONLY"
+            and all(
+                pair[k] == "WITHHOLD"
+                for k in (
+                    "execution_disposition",
+                    "owner_merge_disposition",
+                    "row_admission",
+                    "role_approval",
+                    "new_external_mapping",
+                )
+            ),
+            "original suppression holds changed",
+        )
+        target = targets[pair["decision_id"]]
+        require(
+            target["selector"] == f"subject={key[0]}; token_key={key[1]}"
+            and any(
+                a["outcome"] == "supported" and pair["decision_id"] in a["target_ids"]
+                for a in original["assessments"]
+            ),
+            "original pair assessment differs",
+        )
+        for ref in pair["proofs"]:
+            raw = inputs.get("review-inputs/" + relative(ref["path"]))
+            require(raw is not None and sha(raw) == ref["sha256"], "original peer proof omitted")
+            require(isinstance(read_json(cast(bytes, raw)), dict), "invalid original peer proof")
+        owner_rows = []
+        for binding in pair["complete_owner_bindings"]:
+            original_root, path = _record_path(binding["proposed"]["original_path"])
+            proposed = inputs["review-inputs/" + relative(binding["proposed"]["capture"])]
+            expected = binding["proposed"]["sha256"]
+            require(
+                sha(proposed) == expected
+                and mapped.get(path) == expected
+                and subject(path) == binding["subject"],
+                "reviewed complete owner differs",
+            )
+            before_owner = binding["before"]
+            previous = None
+            if before_owner is not None:
+                _, before_path = _record_path(before_owner["original_path"])
+                previous = inputs["review-inputs/" + relative(before_owner["capture"])]
+                require(
+                    before_path == path
+                    and sha(previous) == before_owner["sha256"]
+                    and proof["before_inventory"].get(path) == before_owner["sha256"],
+                    "authentic reviewed before-owner differs",
+                )
+            else:
+                require(
+                    path not in proof["before_inventory"], "genuine create preimage is not absent"
+                )
+            frozen_operation = binding["operation"]
+            operation = operations.get(path)
+            role: dict[str, Any]
+            if frozen_operation is None:
+                require(
+                    operation is None
+                    and previous == proposed
+                    and proof["before_inventory"].get(path) == expected,
+                    "unchanged credited owner acquired an invented operation",
+                )
+                role = {"kind": "unchanged", "operation": None}
+            else:
+                require(operation is not None, "reviewed source operation missing")
+                operation = cast(dict, operation)
+                for field in (
+                    "operation_id",
+                    "kind",
+                    "before_source_record",
+                    "source_record",
+                    "before_yaml_sha256",
+                    "origins",
+                ):
+                    require(
+                        operation.get(field) == frozen_operation.get(field),
+                        "reviewed original operation/case join differs: " + field,
+                    )
+                require(
+                    operation["after_yaml_sha256"] == expected
+                    and (operation["kind"] == "create") == (previous is None),
+                    "reviewed operation endpoint differs",
+                )
+                role = {"kind": "selected", "operation": operation}
+            row = {
+                "subject": binding["subject"],
+                "source_record": path,
+                "original_root": original_root,
+                "before_sha256": sha(previous) if previous else None,
+                "after_sha256": expected,
+                **role,
+            }
+            owners_seen[path] = row
+            owner_rows.append(row)
+        require(
+            {r["subject"] for r in owner_rows}
+            == {key[0], *read_json(actual["owner_subject_ids"].encode())},
+            "reviewed whole-owner role coverage differs",
+        )
+        emitter = next(r for r in owner_rows if r["subject"] == key[0])
+        joins = []
+        for field in pair["source_fields"]:
+            original_ref = field["source_ref"]
+            original_path, locator = original_ref.rsplit("#", 1)
+            old_root, path = _record_path(original_path)
+            require(
+                old_root == emitter["original_root"]
+                and path == emitter["source_record"]
+                and field["source_owner_sha256"] == emitter["after_sha256"]
+                and _field(records[key[0]], locator) == field["literal_field"],
+                "source-ref owner/field/literal join differs",
+            )
+            actual_ref = str(capture.root / path) + "#" + locator
+            joins.append(
+                {
+                    "original_ref": original_ref,
+                    "actual_ref": actual_ref,
+                    "original_root": old_root,
+                    "actual_root": str(capture.root),
+                    "source_record": path,
+                    "owner_sha256": emitter["after_sha256"],
+                    "field_locator": locator,
+                    "literal": field["literal_field"],
+                }
+            )
+        require(
+            sorted(j["original_ref"] for j in joins)
+            == read_json(original_event["source_refs"].encode())
+            and sorted(j["actual_ref"] for j in joins) == read_json(actual["source_refs"].encode()),
+            "actual native source refs differ from reviewed tuples",
+        )
+        events.append(
+            {
+                "decision_id": pair["decision_id"],
+                "native_event": actual,
+                "owners": owner_rows,
+                "source_ref_joins": joins,
+            }
+        )
+        after_lines.append(line)
+    require(
+        len(owners_seen) == 8
+        and sum(r["kind"] == "selected" for r in owners_seen.values()) == 6
+        and sum(r["before_sha256"] is None for r in owners_seen.values()) == 1,
+        "original eight-owner role counts differ",
+    )
+    sidecar = before["sidecar"] + b"".join(after_lines)
+    require(
+        capture.pair_validator is not None, "native pair validator was not captured by generation"
+    )
+    cast(Callable[[bytes, bytes], Any], capture.pair_validator)(canonical, sidecar)
+    expected_transition = {
+        "schema_version": 1,
+        "operation": "campaign_suppression_transition",
+        "issue": SUPPRESSION_ISSUE,
+        "original_decision_sha256": SUPPRESSION_DECISION_SHA,
+        "owner_plan": plan["owner_plan"],
+        "owner_receipt": plan["owner_receipt"],
+        "generation": plan["generation"],
+        "publication_producers": plan["publication_producers"],
+        "before": plan["before"],
+        "receipt_prefix": plan["receipt_prefix"],
+        "native_context": plan["native_context"],
+        "mapped_inventory": mapped,
+        "events": events,
+        "after_sha256": {
+            "canonical": sha(canonical),
+            "sidecar": sha(sidecar),
+            "baseline": sha(before["baseline"]),
+        },
+        "approval": "NONE",
+    }
+    return sidecar, expected_transition, original
+
+
+def _suppression_projection(
+    capture: Capture,
+    plan: dict,
+    before: dict,
+    proof: dict,
+    diagnostic: bytes,
+    canonical: bytes,
+    needs: list[dict],
+) -> tuple[bytes, dict]:
+    """Consume original science and a distinct exact actual-transition review.
+
+    Root selects the review artifacts in this plan. Metadata cannot authenticate
+    a human/agent assignment: that remains an audited external acceptance act.
+    This guard proves the complete selected evidence/transition, never approval
+    of source owners, mapping rows, quantities, roles or companion claims.
+    """
+    selection_raw = capture.ref(plan["suppression_review"])
+    capture.review_refs.add(capture.root / plan["suppression_review"]["path"])
+    selection = closed(
+        read_json(selection_raw),
+        {
+            "schema_version",
+            "operation",
+            "issue",
+            "selected_by",
+            "selection_basis",
+            "original_review",
+            "transition",
+            "transition_review",
+        },
+        "suppression review selection",
+    )
+    require(
+        type(selection["schema_version"]) is int
+        and selection["schema_version"] == 1
+        and selection["operation"] == "select_campaign_suppression_transition"
+        and selection["issue"] == SUPPRESSION_ISSUE
+        and selection["selected_by"] == "/root"
+        and isinstance(selection["selection_basis"], str)
+        and selection["selection_basis"].strip(),
+        "unsupported suppression selection",
+    )
+    sidecar, expected_transition, _ = derive_suppression_transition(
+        capture, plan, before, proof, diagnostic, canonical, needs, selection["original_review"]
+    )
+    events = expected_transition["events"]
+    transition_raw = capture.ref(selection["transition"])
+    capture.review_refs.add(capture.root / selection["transition"]["path"])
+    transition = read_json(transition_raw)
+    require(
+        type(transition.get("schema_version")) is int and transition == expected_transition,
+        "independently reviewed actual suppression transition differs",
+    )
+    review, review_inputs = _review_bundle(capture, selection["transition_review"])
+    require(
+        review["reviewer"]["identity"] != selection["selected_by"]
+        and review["source"]["git_revision"] == proof["baseline_commit"]
+        and review["source"]["state"] == "working_tree",
+        "actual transition reviewer/base provenance differs",
+    )
+    require(
+        any(raw == transition_raw for raw in review_inputs.values()),
+        "transition review does not bind the actual transition bytes",
+    )
+    required_hashes = {
+        SUPPRESSION_DECISION_SHA,
+        SUPPRESSION_REVIEW_SHA,
+        plan["owner_plan"]["sha256"],
+        plan["owner_receipt"]["sha256"],
+        *[plan["generation"][k]["sha256"] for k in ("candidate", "sidecar", "manifest")],
+    }
+    require(
+        required_hashes <= {sha(raw) for raw in review_inputs.values()},
+        "transition review omits source/generation/original review inputs",
+    )
+    target_ids = set()
+    for event in events:
+        key = event["native_event"]["subject_id"], event["native_event"]["token_key"]
+        matches = [
+            t
+            for t in review["targets"]
+            if t["selector"] == f"subject={key[0]}; token_key={key[1]}"
+            and review_inputs.get(t["path"]) == transition_raw
+        ]
+        require(len(matches) == 1, "actual transition review target differs")
+        target_ids.add(matches[0]["target_id"])
+        require(
+            any(
+                a["outcome"] == "supported" and matches[0]["target_id"] in a["target_ids"]
+                for a in review["assessments"]
+            ),
+            "actual transition lacks a supported assessment",
+        )
+    require(
+        len(review["targets"]) == 4
+        and review["scope"]["coverage"] == "full"
+        and set(review["scope"]["reviewed_target_ids"]) == target_ids
+        and not any(
+            f["status"] in {"open", "deferred"} and set(f["target_ids"]) & target_ids
+            for f in review["findings"]
+        ),
+        "actual suppression transition has unresolved review findings",
+    )
+    return sidecar, {
+        "issue": SUPPRESSION_ISSUE,
+        "selection": plan["suppression_review"],
+        "transition": selection["transition"],
+        "original_decision_sha256": SUPPRESSION_DECISION_SHA,
+        "before_sha256": sha(before["sidecar"]),
+        "after_sha256": sha(sidecar),
+        "events": events,
+        "approval": "NONE",
+    }
+
+
+def _policy(
+    before: bytes,
+    plan: dict,
+    plan_sha: str,
+    owner_proof: dict,
+    receipt_name: str,
+    receipt_raw: bytes,
+    canonical: bytes,
+    trace: list[dict],
+    suppression: dict | None = None,
+) -> bytes:
+    old = read_json(before)
+    require(
+        set(old) <= POLICY_KEYS and POLICY_REQUIRED <= set(old), "unknown/missing old policy fields"
+    )
+    require(
+        type(old["schema_version"]) is int
+        and old["schema_version"] == 1
+        and old["policy_version"] == "owned-name-policy-v1",
+        "unknown policy version",
+    )
+    hash_map(old["source_owner_sha256"])
+    require(
+        set(old["artifacts"]) == {SOURCE, SIDECAR, BASELINE}, "policy artifact membership differs"
+    )
+    history = old.get(UPDATE, [])
+    require(isinstance(history, list), "invalid campaign history")
+    result = deepcopy(old)
+    result["artifacts"][SOURCE] = sha(canonical)
+    result[UPDATE] = history + [
+        {
+            "schema_version": 1,
+            "issue": ISSUE,
+            "approval": APPROVAL,
+            "plan_sha256": plan_sha,
+            "owner_plan": plan["owner_plan"],
+            "owner_receipt": plan["owner_receipt"],
+            "prior_manifest_sha256": sha(before),
+            "mapping_receipt": {"path": receipt_name, "sha256": sha(receipt_raw)},
+            "generation": plan["generation"],
+            "before_inventory": owner_proof["before_inventory"],
+            "after_inventory": owner_proof["after_inventory"],
+            "records": owner_proof["records"],
+            "sssom_before_sha256": plan["before"]["canonical"]["sha256"],
+            "sssom_after_sha256": sha(canonical),
+            "trace_sha256": sha(encoded(trace)),
+            "suppression_policy": "unchanged historical sidecar and baseline",
+        }
+    ]
+    if suppression is not None:
+        result["artifacts"][SIDECAR] = suppression["after_sha256"]
+        result[UPDATE][-1]["schema_version"] = 2
+        result[UPDATE][-1]["suppression_policy"] = suppression
+        result[UPDATE][-1]["native_mapping_receipt"] = result[UPDATE][-1].pop("mapping_receipt")
+    # Deliberately leave every historical owner attribution and old history untouched.
+    return encoded(result)
+
+
+def _verify_projected_rule_k(capture: Capture, canonical: bytes) -> None:
+    """#1200: unchanged native ownership rule over all final rows, no exemptions added."""
+    names = {
+        name: path
+        for name, path in _NATIVE_SOURCES.items()
+        if name
+        in {
+            "mediaingredientmech.curate.publication_guard",
+            "mediaingredientmech.synonym_policy",
+            "campaign_native_sssom_invariants",
+        }
+    }
+    original_path = list(sys.path)
+    try:
+        modules = _source_owner.captured_native_modules(capture.root, names)
+    finally:
+        sys.path[:] = original_path
+    for name, module in modules.items():
+        executed = module._campaign_executed_source
+        require(
+            executed.content == capture.files[capture.root / names[name]].content,
+            "native Rule K producer changed before execution",
+        )
+        executed.verify()
+    failures = list(
+        modules["campaign_native_sssom_invariants"].evaluate_rule_k(table(canonical)[2])
+    )
+    require(
+        not failures,
+        "global projected Rule K impact requires reviewed scope: "
+        + json.dumps(
+            [
+                {"source_position": position, "subject_id": row["subject_id"], "reason": reason}
+                for position, row, reason in failures
+            ],
+            sort_keys=True,
+        ),
+    )
+
+
+def _require_live_source_head(root: Path, baseline_commit: str) -> None:
+    current_head = subprocess.check_output(
+        ["git", "rev-parse", "--verify", "HEAD"], cwd=root, text=True
+    ).strip()
+    require(current_head == baseline_commit, "live publication HEAD changed from source baseline")
+
+
+def prepare(root: Path, plan_path: Path, *, completed: bool = False) -> dict:
+    capture = Capture(root)
+    root = capture.root
+    require(
+        capture.read("src/mediaingredientmech/campaign_publication.py") == _LOADED,
+        "loaded publication code differs",
+    )
+    require(
+        plan_path.is_absolute() and plan_path.is_relative_to(root), "plan must be inside repository"
+    )
+    plan_raw = capture.external(plan_path)
+    raw_plan = read_json(plan_raw)
+    require(
+        isinstance(raw_plan, dict)
+        and type(raw_plan.get("schema_version")) is int
+        and raw_plan["schema_version"] in (1, 2),
+        "unsupported publication plan version",
+    )
+    version = raw_plan["schema_version"]
+    plan = closed(
+        raw_plan,
+        PLAN_KEYS | ({"suppression_review"} if version == 2 else set()),
+        "publication plan",
+    )
+    producers = hash_map(plan["publication_producers"])
+    require(set(producers) == set(LOADED_PRODUCERS), "publication producer set differs")
+    for path, loaded in LOADED_PRODUCERS.items():
+        loaded.verify()
+        require(sha(loaded.content) == producers[path], "loaded publication producer differs")
+        capture.read(path, producers[path])
+
+    def loaded_recheck() -> None:
+        for loaded in LOADED_PRODUCERS.values():
+            loaded.verify()
+
+    capture.checks.append(loaded_recheck)
+    require(
+        type(plan["schema_version"]) is int
+        and plan["schema_version"] == version
+        and plan["kind"] == f"unmatched_campaign_publication_v{version}"
+        and plan["issue"] == ISSUE
+        and plan["approval"] == "NONE",
+        "unsupported plan contract/approval",
+    )
+    require(
+        isinstance(plan["batch"], str) and re.fullmatch(r"issue1174-[a-z0-9-]+", plan["batch"]),
+        "invalid batch name",
+    )
+    require(isinstance(plan["scope"], str) and plan["scope"].strip(), "missing scope")
+    for key in ("owner_plan", "owner_receipt"):
+        capture.ref(plan[key])
+    owner_proof = _owner_proof(root, plan)
+    if not completed:
+        # #1256: source application and live publication are one uncommitted
+        # transaction. Historical standalone verification may follow commits.
+        baseline_commit = owner_proof["baseline_commit"]
+
+        def mutation_head_recheck() -> None:
+            _require_live_source_head(root, baseline_commit)
+
+        mutation_head_recheck()
+        capture.checks.append(mutation_head_recheck)
+    require(
+        owner_proof["plan_sha256"] == plan["owner_plan"]["sha256"]
+        and owner_proof["receipt_sha256"] == plan["owner_receipt"]["sha256"],
+        "source application binding differs",
+    )
+    _capture_source_completion(capture, owner_proof)
+    before_config = closed(
+        plan["before"], {"canonical", "policy", "sidecar", "baseline"}, "beforeimages"
+    )
+    before = {key: capture.ref(ref) for key, ref in before_config.items()}
+    actual = {
+        key: capture.read(path)
+        for key, path in (
+            ("canonical", SOURCE),
+            ("policy", POLICY),
+            ("sidecar", SIDECAR),
+            ("baseline", BASELINE),
+        )
+    }
+    require(
+        (version == 2 or actual["sidecar"] == before["sidecar"])
+        and actual["baseline"] == before["baseline"],
+        "historical suppression sidecar/baseline changed",
+    )
+    if not completed:
+        require(actual == before, "canonical/policy baseline differs")
+    proof = native.verify_mapping_chain(root)
+    prefix = hash_map(plan["receipt_prefix"])
+    contexts = hash_map(plan["native_context"])
+    require(set(contexts) == set(native.HISTORICAL_CONTEXT), "incomplete native historical context")
+    require(
+        owner_proof["checkpoint"]["input_sha256"]
+        == {**prefix, **contexts, SOURCE: sha(before["canonical"])},
+        "publication checkpoint differs from verified source application",
+    )
+    protected = owner_proof["protected_snapshot"]["input_sha256"]
+    require(
+        all(
+            protected.get(path) == sha(before[key])
+            for key, path in (("policy", POLICY), ("sidecar", SIDECAR), ("baseline", BASELINE))
+        ),
+        "policy beforeimages lack source-application protection",
+    )
+    for path, expected in {**prefix, **contexts}.items():
+        capture.read(path, expected)
+    receipt_name = native.RECEIPTS_DIR + "/" + plan["batch"] + ".json"
+    require(receipt_name not in prefix, "receipt would overwrite prior history")
+    if completed:
+        require(
+            set(proof["receipt_inputs"]) == set(prefix) | {receipt_name},
+            "receipt inventory differs after publication",
+        )
+        previous = dict(proof)
+        require(proof["receipt_paths"][-1] == receipt_name, "publication is not latest receipt")
+        previous["receipts"] = proof["receipts"][:-1]
+        previous["receipt_paths"] = proof["receipt_paths"][:-1]
+        previous["receipt_inputs"] = prefix
+        previous["owner_chains"] = native._owner_chains(
+            previous["receipts"], proof["receipt_paths"][:-1], prefix
+        )
+    else:
+        require(proof["receipt_inputs"] == prefix, "native receipt prefix differs")
+        previous = proof
+    require(
+        all(proof["input_hashes"].get(p) == h for p, h in contexts.items())
+        and all(proof["receipt_inputs"].get(p) == h for p, h in prefix.items()),
+        "native history rewritten",
+    )
+    require(
+        not previous["receipts"]
+        or previous["receipts"][-1]["after_sha256"] == sha(before["canonical"]),
+        "receipt checkpoint differs",
+    )
+    records = owner_proof["records"]
+    require(
+        records and len({r["source_record"] for r in records}) == len(records),
+        "duplicate/empty applied source scope",
+    )
+    old_policy = read_json(before["policy"])
+    require(
+        old_policy["artifacts"]
+        == {
+            SOURCE: sha(before["canonical"]),
+            SIDECAR: sha(before["sidecar"]),
+            BASELINE: sha(before["baseline"]),
+        },
+        "old policy artifact bindings differ",
+    )
+    for record in records:
+        old_path = record.get("before_source_record") or record["source_record"]
+        old_hash = record["before_yaml_sha256"]
+        historical = old_policy["source_owner_sha256"].get(old_path)
+        if record["shape"] == "promotion":
+            require(
+                not any(
+                    row["subject_id"] == subject(old_path) for row in table(before["canonical"])[2]
+                ),
+                "promotion old unmapped path already has canonical rows; explicit migration required",
+            )
+        if historical is not None and historical != old_hash:
+            require(
+                native.record_supersession(
+                    previous, owner=old_path, reviewed_sha256=historical, current_sha256=old_hash
+                ),
+                "selected historical owner pin lacks native bridge",
+            )
+    candidate, diagnostic_sidecar, manifest = _generation(
+        capture, plan, before["canonical"], owner_proof["after_inventory"]
+    )
+    require(
+        manifest["source_revisions"]["mim"] == owner_proof["baseline_commit"],
+        "generation revision differs from accepted source baseline",
+    )
+    selected = {subject(r["source_record"]) for r in records}
+
+    def suppressions(raw):
+        return list(csv.DictReader(io.StringIO(raw.decode()), delimiter="\t"))
+
+    old_suppressed = {(r["subject_id"], r["token_key"]): r for r in suppressions(before["sidecar"])}
+    needs = [
+        r
+        for r in suppressions(diagnostic_sidecar)
+        if r["subject_id"] in selected
+        and (
+            (r["subject_id"], r["token_key"]) not in old_suppressed
+            or r["owner_subject_ids"]
+            != old_suppressed[(r["subject_id"], r["token_key"])]["owner_subject_ids"]
+        )
+    ]
+    if version == 1:
+        require(not needs, "new suppression review required: " + json.dumps(needs, sort_keys=True))
+    canonical, trace = row_projection(before["canonical"], candidate, records, plan["rows"])
+    sidecar, suppression = before["sidecar"], None
+    if version == 2:
+        sidecar, suppression = _suppression_projection(
+            capture, plan, before, owner_proof, diagnostic_sidecar, canonical, needs
+        )
+    _verify_projected_rule_k(capture, canonical)
+    receipt = _receipt(previous, _maker(capture), plan, records, before["canonical"], canonical)
+    receipt_raw = encoded(receipt)
+    policy = _policy(
+        before["policy"],
+        plan,
+        sha(plan_raw),
+        owner_proof,
+        receipt_name,
+        receipt_raw,
+        canonical,
+        trace,
+        suppression,
+    )
+    if completed:
+        require(
+            actual["canonical"] == canonical
+            and actual["policy"] == policy
+            and actual["sidecar"] == sidecar,
+            "published projection/policy differs",
+        )
+        require(capture.read(receipt_name) == receipt_raw, "published native receipt differs")
+        require(proof["state"] == table(canonical)[2], "native completed replay differs")
+    # Distinct file roles, no overlap between input snapshots and publication targets.
+    immutable_refs = [plan_path] + [
+        root / ref["path"]
+        for ref in [
+            *before_config.values(),
+            plan["owner_plan"],
+            plan["owner_receipt"],
+            *[plan["generation"][k] for k in ("candidate", "sidecar", "manifest")],
+        ]
+    ]
+    require(len(immutable_refs) == len(set(immutable_refs)), "input roles alias")
+    require(
+        not set(immutable_refs)
+        & {root / SOURCE, root / POLICY, root / SIDECAR, root / BASELINE, root / receipt_name},
+        "evidence aliases publication surface",
+    )
+    require(
+        not capture.review_refs
+        & {root / SOURCE, root / POLICY, root / SIDECAR, root / BASELINE, root / receipt_name},
+        "review evidence aliases publication surface",
+    )
+    capture.verify()
+    require(
+        set(native._names(root)) == set(prefix) | ({receipt_name} if completed else set()),
+        "native receipt membership changed during verification",
+    )
+    if not completed:
+        _require_live_source_head(root, owner_proof["baseline_commit"])
+    return {
+        "capture": capture,
+        "plan": plan,
+        "plan_path": plan_path,
+        "plan_sha256": sha(plan_raw),
+        "owner_proof": owner_proof,
+        "before": before,
+        "canonical": canonical,
+        "policy": policy,
+        "sidecar": sidecar,
+        "suppression": suppression,
+        "receipt": receipt_raw,
+        "receipt_name": receipt_name,
+        "trace": trace,
+        "generation_sha256": sha(
+            capture.files[root / plan["generation"]["manifest"]["path"]].content
+        ),
+    }
+
+
+def validate(root: Path, plan_path: Path) -> dict:
+    """Replay accepted canonical/policy/native-chain state, not recovery files.
+
+    The plan binds immutable beforeimages; it does not name a publication
+    receipt directory. Recovery-backup integrity is checked by ``publish``
+    through its final completion boundary, not by this standalone verifier.
+    """
+    prepared = prepare(root, plan_path, completed=True)
+    return summary(prepared, "verified")
+
+
+def summary(prepared: dict, status: str) -> dict:
+    result = {
+        "schema_version": 1,
+        "status": status,
+        "approval": APPROVAL,
+        "plan_sha256": prepared["plan_sha256"],
+        "canonical_sha256": sha(prepared["canonical"]),
+        "policy_sha256": sha(prepared["policy"]),
+        "receipt_path": prepared["receipt_name"],
+        "receipt_sha256": sha(prepared["receipt"]),
+        "trace_sha256": sha(encoded(prepared["trace"])),
+        "owner_count": len(prepared["owner_proof"]["records"]),
+    }
+    if prepared["plan"]["schema_version"] == 2:
+        result["sidecar_sha256"] = sha(prepared["sidecar"])
+        result["suppression_review"] = prepared["plan"]["suppression_review"]
+    return result
+
+
+@contextmanager
+def _reserve(paths: tuple[Path, ...]):
+    """Exclusively reserve via held parent descriptors, preserving native semantics.
+
+    Every parent must already exist. A late path swap cannot redirect a new
+    evidence file through a substituted directory. Cleanup removes only the
+    entries created by this reservation, through their original descriptors.
+    """
+    parents = {p: (p.stat().st_dev, p.stat().st_ino) for path in paths for p in path.parents}
+    created = []
+    with ExitStack() as stack:
+        descriptors = {}
+        handles = []
+        try:
+            for path in paths:
+                no_alias(path)
+                parent = path.parent
+                if parent not in descriptors:
+                    fd = os.open(parent, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+                    stack.callback(os.close, fd)
+                    require(
+                        (os.fstat(fd).st_dev, os.fstat(fd).st_ino) == parents[parent],
+                        "reservation parent changed",
+                    )
+                    descriptors[parent] = fd
+                fd = os.open(
+                    path.name,
+                    os.O_CREAT | os.O_EXCL | os.O_RDWR | os.O_NOFOLLOW,
+                    0o600,
+                    dir_fd=descriptors[parent],
+                )
+                binary = path != paths[0]
+                handle = stack.enter_context(os.fdopen(fd, "w+b" if binary else "w+"))
+                info = os.fstat(handle.fileno())
+                created.append((path, descriptors[parent], (info.st_dev, info.st_ino)))
+                handles.append(handle)
+                check_reserved(cast(BinaryIO | TextIO, handle), path)
+                for ancestor, identity in parents.items():
+                    no_alias(ancestor)
+                    require(
+                        (ancestor.stat().st_dev, ancestor.stat().st_ino) == identity,
+                        "reservation ancestor changed",
+                    )
+        except Exception:
+            for path, fd, identity in created:
+                try:
+                    info = os.stat(path.name, dir_fd=fd, follow_symlinks=False)
+                    if (info.st_dev, info.st_ino) == identity:
+                        os.unlink(path.name, dir_fd=fd)
+                except FileNotFoundError:
+                    pass
+            raise
+        yield handles, parents
+
+
+def publish(root: Path, plan_path: Path, receipt_dir: Path, *, apply: bool = False) -> dict:
+    # #1198: lexical reports/../outside is not a confined receipt directory.
+    absolute(receipt_dir)
+    prepared = prepare(root, plan_path)
+    capture: Capture = prepared["capture"]
+    root = capture.root
+    no_alias(receipt_dir)
+    require(
+        receipt_dir.is_absolute()
+        and receipt_dir.is_relative_to(root / "reports")
+        and receipt_dir.is_dir(),
+        "receipt directory must be an existing unaliased report directory",
+    )
+    log = receipt_dir / "publication.json"
+    backups: tuple[Path, ...] = (
+        receipt_dir / "canonical-before.tsv",
+        receipt_dir / "policy-before.json",
+    )
+    if prepared["plan"]["schema_version"] == 2:
+        backups += (receipt_dir / "sidecar-before.tsv",)
+    native_path = member(root, prepared["receipt_name"])
+    outputs = (log, *backups, native_path)
+    require(
+        len(set(outputs)) == len(outputs) and not set(outputs) & set(capture.files),
+        "output aliases input",
+    )
+    for path in outputs:
+        no_alias(path)
+        require(
+            path.parent.is_dir() and not path.exists(), "output already exists or parent absent"
+        )
+    if not apply:
+        _require_live_source_head(root, prepared["owner_proof"]["baseline_commit"])
+        return summary(prepared, "dry_run")
+    destinations = {root / SOURCE: prepared["canonical"], root / POLICY: prepared["policy"]}
+    if prepared["plan"]["schema_version"] == 2:
+        destinations[root / SIDECAR] = prepared["sidecar"]
+    current = {p: capture.files[p] for p in destinations}
+    original_inventory = set(prepared["plan"]["receipt_prefix"])
+    with _reserve(outputs) as (handles, parents):
+        receipt_handle, *backup_handles, native_handle = handles
+        all_handles = list(zip(outputs, handles, strict=True))
+        native_written = False
+        expected_backups = dict.fromkeys(backups, b"")
+
+        def recheck(skip: Path | None = None) -> None:
+            capture.verify(set(destinations))
+            require(
+                _owner_proof(root, prepared["plan"]) == prepared["owner_proof"],
+                "source application changed during publication",
+            )
+            require(
+                set(native._names(root)) == original_inventory | {prepared["receipt_name"]},
+                "receipt membership changed during publication",
+            )
+            for path, identity in parents.items():
+                no_alias(path)
+                require(
+                    (path.stat().st_dev, path.stat().st_ino) == identity, "output parent changed"
+                )
+            for path, handle in all_handles:
+                check_reserved(handle, path)
+            for path, content in expected_backups.items():
+                require(path.read_bytes() == content, "reserved recovery backup changed")
+            for path, item in current.items():
+                if path != skip:
+                    item.verify()
+            expected_native = prepared["receipt"] if native_written else b""
+            require(native_path.read_bytes() == expected_native, "reserved native receipt changed")
+            # #1256 residual: the actual source proof and remaining checks can
+            # outlive capture.verify's initial HEAD check. Close this complete
+            # live boundary before another write or a success return.
+            _require_live_source_head(root, prepared["owner_proof"]["baseline_commit"])
+
+        try:
+            recheck()
+            backup_roles = ["canonical", "policy"] + (["sidecar"] if len(backups) == 3 else [])
+            for path, handle, role in zip(backups, backup_handles, backup_roles, strict=True):
+                content = prepared["before"][role]
+                handle.write(content)
+                handle.flush()
+                expected_backups[path] = content
+                recheck()
+            for target, content in destinations.items():
+
+                def render(staged: Path, value: bytes = content) -> None:
+                    staged.write_bytes(value)
+
+                def check_target(path: Path = target) -> None:
+                    recheck(path)
+
+                current[target] = publish_validated(
+                    current[target],
+                    render,
+                    check_target,
+                )
+                recheck()
+            native_handle.write(prepared["receipt"])
+            native_handle.flush()
+            native_written = True
+            recheck()
+            result = validate(root, plan_path)
+            require(
+                result == summary(prepared, "verified"),
+                "completed independent verification differs",
+            )
+            finish_receipt(receipt_handle, log, summary(prepared, "complete"), recheck)
+            recheck()
+            return summary(prepared, "complete")
+        except Exception:
+            # A partial attempt is evidence, never a success-shaped mapping link.
+            for handle in (receipt_handle, native_handle):
+                handle.seek(0)
+                handle.truncate()
+                handle.flush()
+            raise

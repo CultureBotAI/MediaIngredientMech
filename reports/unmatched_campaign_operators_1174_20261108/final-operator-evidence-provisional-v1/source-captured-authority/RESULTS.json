@@ -1,0 +1,190 @@
+{
+  "at": "2026-11-08T12:48:49.153072+00:00",
+  "status": "AUTHOR_REGRESSIONS_PASS_PRIVATE_SUCCESSOR",
+  "base_commit": "7d4db26a2ce75e9942badaca954bb8e8f821c75c",
+  "files": {
+    "src/mediaingredientmech/curate/campaign_owner_apply.py": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+    "tests/test_campaign_owner_apply.py": "27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3"
+  },
+  "patch_sha256": "d9af0f15386ccb6ef5d6d1520ab84b6092e07b5e7121919ddc17beb585fa1bf6",
+  "combined_summary": "546 passed, 12 warnings in 679.20s (0:11:19)",
+  "passed": 546,
+  "skipped": 0,
+  "source_cases": 382,
+  "existing_source_cases_preserved": 354,
+  "new_source_cases": 28,
+  "unchanged_publisher_cases": 144,
+  "real_generator_cases": 20,
+  "checks": {
+    "focused-v1": {
+      "at": "2026-11-08T12:36:25.989265+00:00",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-o",
+        "addopts=",
+        "-q",
+        "tests/test_campaign_owner_apply.py",
+        "-k",
+        "coherent or captured_invalid_index"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "UV_OFFLINE": "1",
+        "PYTHONPATH": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo/src",
+        "CLAW_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw",
+        "CAMPAIGN_HISTORY_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+        "OPENCLAW_WORKSPACE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/focused-v1/openclaw",
+        "TMPDIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/focused-v1/temporary"
+      },
+      "exit_code": 0,
+      "seconds": 41.91970104072243,
+      "log_sha256": "fc1230435a094344f21c94ddf7d3c01e4a05aecf15ad9e7124bd7c275dafe87d"
+    },
+    "ruff-v1": {
+      "at": "2026-11-08T12:37:00.428412+00:00",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py",
+        "tests/test_campaign_owner_apply.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "UV_OFFLINE": "1",
+        "PYTHONPATH": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo/src",
+        "CLAW_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw",
+        "CAMPAIGN_HISTORY_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+        "OPENCLAW_WORKSPACE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/ruff-v1/openclaw",
+        "TMPDIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/ruff-v1/temporary"
+      },
+      "exit_code": 0,
+      "seconds": 0.07031220803037286,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "black-v1": {
+      "at": "2026-11-08T12:37:15.488555+00:00",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-B",
+        "-m",
+        "black",
+        "--check",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py",
+        "tests/test_campaign_owner_apply.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "UV_OFFLINE": "1",
+        "PYTHONPATH": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo/src",
+        "CLAW_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw",
+        "CAMPAIGN_HISTORY_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+        "OPENCLAW_WORKSPACE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/black-v1/openclaw",
+        "TMPDIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/black-v1/temporary"
+      },
+      "exit_code": 0,
+      "seconds": 0.3974672919139266,
+      "log_sha256": "b9cf511501d306d2bd8355ccb165c8ddc0a6fdd62d7c72c4a7b1795cf8934c8c"
+    },
+    "mypy-v1": {
+      "at": "2026-11-08T12:37:00.560527+00:00",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-B",
+        "-m",
+        "mypy",
+        "--cache-dir",
+        ".mypy-coherence-v2",
+        "src/mediaingredientmech/curate/campaign_owner_apply.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "UV_OFFLINE": "1",
+        "PYTHONPATH": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo/src",
+        "CLAW_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw",
+        "CAMPAIGN_HISTORY_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+        "OPENCLAW_WORKSPACE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/mypy-v1/openclaw",
+        "TMPDIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/mypy-v1/temporary"
+      },
+      "exit_code": 0,
+      "seconds": 1.0580283752642572,
+      "log_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e"
+    },
+    "combined-v1": {
+      "at": "2026-11-08T12:37:14.328985+00:00",
+      "command": [
+        "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-o",
+        "addopts=",
+        "-q",
+        "tests/test_campaign_owner_apply.py",
+        "tests/test_campaign_publication.py",
+        "tests/test_campaign_demotion_integration.py"
+      ],
+      "cwd": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "UV_OFFLINE": "1",
+        "PYTHONPATH": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/runtime/repo/src",
+        "CLAW_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw",
+        "CAMPAIGN_HISTORY_ROOT": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/curation-worktree",
+        "OPENCLAW_WORKSPACE": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/combined-v1/openclaw",
+        "TMPDIR": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/source-index-coherence1256-fix-v2/checks/combined-v1/temporary"
+      },
+      "exit_code": 0,
+      "seconds": 690.919380958192,
+      "log_sha256": "9da55e4535c1e236a3f292c87fbef9e4a56322ded77ef0659a23aa1307d9daf3"
+    }
+  },
+  "independent_review": {
+    "at": "2026-11-08T12:40:22.539400+00:00",
+    "handoff_path": ".temp/all-unmatched-20261107/preflight/index-coherence1256-private-independent-v2/portable/HANDOFF.json",
+    "handoff_sha256": "aa53194fde36f8e7ef0857a46d4fbe06bc7b7e6f4b0f188e95fa02207a40a5fc",
+    "manifest_sha256": "3ed4f07deb1407a0752e1fdcfa5cd6ae0d5da921aa36cddd54232f62b0811b0b",
+    "verified_members": 43,
+    "assessment": {
+      "status": "SEALED_INDEPENDENT_PASS_WITH_LIMITATIONS",
+      "source_sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+      "tests_sha256": "27205b429ce817c7663051e7d72e142ca04c5419e9014f116d51ed4186453fb3",
+      "assessment": {
+        "path": "ASSESSMENT.json",
+        "sha256": "bdcc1b3ccf0259b3bae10b575cab5ad683731ce691af4e580b6f3096d2890e29"
+      },
+      "report": {
+        "path": "REPORT.md",
+        "sha256": "909b1a6a35b08fa7d30aa0323a117ca9335e4aebfa96f944a7653ec8024398cb"
+      },
+      "prior_finding": "IR-INDEX-COHERENCE-001",
+      "finding_disposition": "resolved_in_exact_private_successor",
+      "independent_actual_native_controls": 12,
+      "fullsuite_run": false,
+      "new_findings": [],
+      "no_maintained_writes": true,
+      "final_external_head_review_required": true,
+      "broader_author_combined_result_pending_at_cutoff": true
+    },
+    "independent_author": "step7d_science_c",
+    "role_of_this_packet": "Source correction author; this binds the separate independent assessment without substituting its conclusions."
+  },
+  "historical_verifier_AST_unchanged": true,
+  "publisher_unchanged_sha256": "25f61c126362511b23ef4a5ebd69d955811c4898a019183f370b1104fb1c1cb9",
+  "observation_limit": "Captured logical tuple itself is validated and reobserved through the final live check; no global atomicity guarantee.",
+  "no_application_or_export_approval": true
+}

@@ -1,0 +1,28 @@
+from pathlib import Path
+import datetime, hashlib, json, shutil
+
+O=Path(__file__).resolve().parents[1];W=O.parents[1];C=W.parents[2]
+R=C/'preflight/final-suppression-7d6d44ea-validation-v1'
+D=O/'inputs/runtime-observation';D.mkdir()
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+files=sorted(p.name for p in R.iterdir())
+results={};sources=[]
+for label in ['qc','test']:
+    receipt=R/(label+'-receipt.json')
+    if receipt.name not in files:
+        results[label]=dict(status='PENDING_NO_COMPLETED_RECEIPT',completed_result_read=False)
+        continue
+    obj=json.loads(receipt.read_text());assert obj['head']=='7d6d44ea132e04709f81ebd9e1577643745110ad'
+    log=R/(label+'.log');assert sha(log)==obj['log_sha256']
+    before=json.loads((R/'before.json').read_text());after=json.loads((R/(label+'-after.json')).read_text())
+    actual={k:before[k]==after[k] for k in before if k!='at'}
+    assert actual==obj['input_equivalence']
+    for p in [receipt,R/(label+'-command.json'),log]:
+        q=D/p.name;shutil.copyfile(p,q);assert sha(q)==sha(p)
+        sources.append(dict(path=str(p),copy=str(q.relative_to(O)),sha256=sha(q),bytes=q.stat().st_size))
+    results[label]=dict(status='PASS' if obj['exit_code']==0 and all(actual.values()) else 'FAILED_OR_INPUT_DRIFT',exit_code=obj['exit_code'],input_equivalence=actual,receipt_sha256=sha(receipt),completed_result_read=True)
+    for name in ['before.json',label+'-after.json']:
+        sources.append(dict(path=str(R/name),sha256=sha(R/name),bytes=(R/name).stat().st_size,reference_only=True))
+out=dict(observed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),source_directory=str(R),members_including_ignored=files,results=results,source_bindings=sources,scope='Single final bounded observation. Read completed results only when their actual receipt exists. Pending test.log is not read or promoted. Actual root maintained-head runtime result is separate from original619/11 and corrected13, private helper controls, scientific cases and future source-plan acceptance.')
+(O/'validation/runtime-observation.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps(results))

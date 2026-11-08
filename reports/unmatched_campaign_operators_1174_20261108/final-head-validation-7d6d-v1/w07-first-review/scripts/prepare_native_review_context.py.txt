@@ -1,0 +1,26 @@
+from pathlib import Path
+import datetime, hashlib, json, os, subprocess
+
+O = Path(__file__).resolve().parents[1]
+W = O.parents[1]
+K = W.parents[2] / 'integration/release-worktree'
+F = O / 'native-fixture'
+F.mkdir()
+base = '7d6d44ea132e04709f81ebd9e1577643745110ad'
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=K,text=True).strip() == base
+pins = []
+for rel in ['scripts/record_review.py','schema/record_review.yaml','docs/record-reviews.md','docs/record-review-profile.md','conf/record_review.yaml','MAPPING_SEMANTICS.md','.claude/skills/review-sssom-output/SKILL.md']:
+    b = (K/rel).read_bytes()
+    assert b == subprocess.check_output(['git','show',base+':'+rel],cwd=K)
+    q = F/rel
+    q.parent.mkdir(parents=True,exist_ok=True)
+    q.write_bytes(b)
+    pins.append({'path':rel,'sha256':hashlib.sha256(b).hexdigest(),'exact_final_Git_blob':True})
+gitdir = subprocess.check_output(['git','rev-parse','--absolute-git-dir'],cwd=K,text=True).strip()
+env = dict(GIT_DIR=gitdir,GIT_WORK_TREE=str(F),GIT_OPTIONAL_LOCKS='0',GIT_NO_LAZY_FETCH='1',GIT_TERMINAL_PROMPT='0',PYTHONDONTWRITEBYTECODE='1')
+effective = dict(os.environ, **env)
+assert subprocess.check_output(['git','-C',str(F),'rev-parse','--show-toplevel'],env=effective,text=True).strip() == str(F)
+assert subprocess.check_output(['git','-C',str(F),'rev-parse','HEAD'],env=effective,text=True).strip() == base
+obj = {'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'native_base':base,'environment':env,'native_contracts':pins,'copied_historical_review_files':0,'scope':'Exact final K native helper with read-only actual Git metadata and private review working tree. No Git metadata/index/ref writes. Bounded native inspect/validate/save/render; no global historical review-corpus check claimed.'}
+(O/'validation/native-review-context.json').write_text(json.dumps(obj,indent=2)+'\n')
+print(json.dumps({'base':base,'private_fixture':str(F),'copied_native_files':len(pins)}))

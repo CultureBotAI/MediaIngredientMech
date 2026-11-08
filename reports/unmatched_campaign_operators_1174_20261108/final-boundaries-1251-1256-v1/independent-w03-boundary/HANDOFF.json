@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "at": "2026-11-08T11:21:42.931498+00:00",
+  "status": "PASS_EXACT_COMMIT_CODE_REVIEW_WITH_EXPLICIT_LIMITATIONS",
+  "reviewed_PR": 1205,
+  "reviewed_head": "d691c079cf3923daed89284b7579913b84c3a34c",
+  "parent": "eac469f1d94f06bab0714fff891abf64b8ebdbe9",
+  "review_type": "Independent adversarial code review; read-only maintained inputs",
+  "scientific_review": false,
+  "recommendation": "The bounded1251/1252 implementation at this exact commit is supported by independent code review and the recorded native tests. No new product defect confirmed. Coordinator retains issue disposition, future demotion design and actual campaign acceptance/application.",
+  "exact_changed_files": [
+    {
+      "path": "src/mediaingredientmech/curate/campaign_owner_apply.py",
+      "sha256": "4e74cb2dd227540f138175fdaa4fcd5aacc0c80bc2704b119560733aeb222b70"
+    },
+    {
+      "path": "tests/test_campaign_owner_apply.py",
+      "sha256": "049d3b35559a1808ab7f026e2c06894a563a0c42f80bc45658423db50ef7d569"
+    }
+  ],
+  "patch": {
+    "path": "inputs/exact-commit.patch",
+    "sha256": "8dd79435db858aff52ec008132f078da2339516277e3660ed082bc3cc6180021"
+  },
+  "entry": {
+    "path": "entry.json",
+    "sha256": "a46951b1d5a416dcc49285be83e4e9f45cc3bee74b2f0f8436acc87b08bf08d4"
+  },
+  "initial_live_bindings": {
+    "path": "inputs/live/receipt.json",
+    "sha256": "b63260985727aef2d651e2f28920c574c78d9ec7de5c70828f68ed891421b96e"
+  },
+  "latest_head_observation": {
+    "path": "latest-head-observations-v1.json",
+    "sha256": "5862f1d161f8ec583ee5afa968be6122b493d762363bf8af4257482fff9572fe"
+  },
+  "author_packet": {
+    "handoff": {
+      "path": "inputs/author-packet/HANDOFF.json",
+      "sha256": "833e005328f680899c286eaf0ee0a29f8583d3dfadb9778a9cb152b6ad282774"
+    },
+    "manifest": {
+      "path": "inputs/author-packet/MANIFEST.json",
+      "sha256": "252c5674db28ac9dff15a3b384175140531da7033eb4a8f7df09bb3aecaebfdd"
+    },
+    "verified_members": 30,
+    "verification": {
+      "path": "inputs/author-manifest-verification.json",
+      "sha256": "598ebf014adf6c5f04318c4a009b357573ba59d757b9847e14fa0d6d662d00b0"
+    },
+    "boundary": "Pre-commit author packet retained honestly; exact pushed commit and remote binding are separately independently verified."
+  },
+  "code_snapshot": {
+    "path": "inputs/frozen-code-manifest.json",
+    "sha256": "e97b7999366b09ec7567b59de2c6529f678908320cb32c2b41ea0bce0ec3468f"
+  },
+  "independent_scopes": {
+    "path": "reviewer-scopes.json",
+    "sha256": "66badb503ed8a96cf6d6fb75e07a42fbaed704f28ba34393a64dda01578b66ea"
+  },
+  "peer_reviews": [
+    {
+      "path": "technical/HANDOFF.json",
+      "sha256": "45bedb7688990c4ac6840e16027dfa77b224e430e0e2078c20b2000c3f690c4a"
+    },
+    {
+      "path": "adversarial/HANDOFF.json",
+      "sha256": "a12ad02972a48e5b16e0c49f9b73c0168c9cb04b4d3d19a91a1b4aa89ab52d84"
+    },
+    {
+      "path": "assembly/HANDOFF.json",
+      "sha256": "3bedb39e0e3a97f5cbc82eb4745794bdfd5a131a002253381ade11593e166c79"
+    }
+  ],
+  "final_assembly": {
+    "path": "assembly/final-assembly-review.json",
+    "sha256": "a737c80cb521b0d38dd7983cb14ec838ca0e00b96cdbda8c3d7e62e810b55979"
+  },
+  "native_pair": {
+    "yaml": {
+      "path": "native/review.yaml",
+      "sha256": "a95f9ef88daf78d69d5228e871ea5c94c1b403a95030bcf851f302e65e6d03e7"
+    },
+    "markdown": {
+      "path": "native/review.md",
+      "sha256": "3f697db8946afba3d36d8785ef19604d502d0393de917fb2c26c2e588d1324cf"
+    },
+    "validation": {
+      "path": "native/validation.json",
+      "sha256": "85aecd18e9f601630cb5a437f2a538df66ba5723800c356391be06bec83b4eb5"
+    },
+    "negative_controls": {
+      "path": "native/metadata-negative-controls.json",
+      "sha256": "54b094919cd37b5323396113f2c807282208978f8f241025650129cdce0a0102"
+    }
+  },
+  "native_metadata": {
+    "source_state": "git_commit",
+    "git_base": "d691c079cf3923daed89284b7579913b84c3a34c",
+    "source_inputs": 10,
+    "targets": 2,
+    "scientific_review": false,
+    "negative_controls": 3,
+    "canonical_saver_called": false,
+    "private_output_user_authorized": true
+  },
+  "coverage": {
+    "source_files": 2,
+    "old_test_helper_ASTs_preserved": 42,
+    "author_owner_tests_independently_rerun": 121,
+    "focused_unchanged_publisher_tests_rerun": 2,
+    "independent_technical_full_pipeline_scenarios": 23,
+    "exact_historical_function_sensitivity_comparisons": 6,
+    "adversarial_successful_native_outcomes": 41,
+    "adversarial_total_recorded_attempts": 42,
+    "adversarial_reviewer_harness_failures": 1,
+    "independent_actual_catalog_record_stage_probes": 13,
+    "actual_catalog_records": 2956,
+    "original_W08_manifest_members_rehashed": 2231,
+    "native_metadata_negative_controls": 3
+  },
+  "counts_not_combined_as_unique_tests": true,
+  "new_findings": [],
+  "findings_and_precise_issue_disposition": {
+    "path": "findings-and-issue-lineage-v1.json",
+    "sha256": "35f9634ce14d83cd5612603aa4784c29f258280f65ce95fc17d292625768eb72"
+  },
+  "actual_source_proof": {
+    "path": "assembly/lineage-and-actual-probes.json",
+    "sha256": "6e3d2b78a42a4d83e154f5aa07dfc0fcf8274850f0f08c7ee5b413c8e33933ad"
+  },
+  "actual_source_bindings": {
+    "path": "assembly/actual-source-bindings.json",
+    "sha256": "2793dfff45b7d701e463e119131091fa2dffe4e442d3935ca27a945c21a0563c"
+  },
+  "original_W08_boundary": {
+    "original_manifest": {
+      "path": "assembly/w08-context/MANIFEST.json",
+      "sha256": "985a603e69415ab8a9ecdd25b9a50940fb5ac17997bf18097e88fe8abf90462f"
+    },
+    "original_findings": {
+      "path": "assembly/w08-context/findings.json",
+      "sha256": "dd40f468b21ee641a30a87d5e20bbad78907632a9b08bf4a3b2c7b7b042b549d"
+    },
+    "original_members_verified_at_original_root": 2231,
+    "copied_context_files": 12,
+    "actual_before_and_after_captures": 16,
+    "warning": "The captured original W08 MANIFEST is historical evidence, not a portable subset manifest. Only explicitly bound context and source captures are copied here; the full original packet remains immutable at its original worker08 path."
+  },
+  "failed_attempts_preserved": [
+    "Author five diagnostic histories including initial equality regression retained in root author-diagnostics-dispositions-v1.json.",
+    "Root two intake read/parser mistakes retained entry.json and author-manifest-verification.json.",
+    "Technical publisher v1 source-copy missing-helper failure retained; exact Git helper overlay v2 passes without changing tested code.",
+    "Adversarial followup NameError before native execution retained; corrected immutable v2 reaches exact valid receipt membership refusal."
+  ],
+  "author_diagnostic_dispositions": {
+    "path": "author-diagnostics-dispositions-v1.json",
+    "sha256": "9af4d40056462e82eae6c4d6d3c8f3c9f3cf961eab1448e87e669270f6aae1ca"
+  },
+  "source_and_publication_preservation": {
+    "path": "source-preservation-v1.json",
+    "sha256": "dc362bbbd113868c5460ac5b253c36a45f5054f52866b93a472c01c19320e95d"
+  },
+  "W03_published_source_head_unchanged": "f167aa0ca9cd05bb652bf5ebf54d315279e13b18",
+  "remaining_holds": [
+    "No scientific source-case, whole-owner, role, release or supported-export approval.",
+    "No actual campaign prepare/apply; synthetic fixtures only for full route; actual catalog13 probes are record-stage only.",
+    "Nickel1050 hydration/CAS and merger identity unresolved; three tombstones remain REJECTED, Bacto representative withheld.",
+    "Actual TSB genuine collision and samepath Angust remain refused; explicit demote design outside exactcommit.",
+    "Root controls issue disposition and future application.",
+    "Full repository QC/CI was not run; focused owner and publisher tests plus independent probes were run as recorded.",
+    "Full native fixture application uses synthetic private repositories and authentic fixture Git bindings; actual2956catalog probes execute only record validation, never maintained prepare/apply.",
+    "Later commits, future demote design, current campaign source reconciliation/application and release do not inherit this exact-head review."
+  ],
+  "writes_scope": "Only .temp/native-boundary-final-head-independent-v1 and its private fixtures; no code/source/I/J/other-worker/GitHub/source-branch/maintained/gate/pin/workflow edits or publication. Private fixture Git histories are test evidence only.",
+  "search_boundary": "Native direct data/ingredients/{mapped,unmapped} owner inventory includes ignored direct children and was compared byte-for-byte with d691 tracked catalog; no assertion about absence of all historical/private files. No credential paths were scanned.",
+  "manifest": "MANIFEST.json",
+  "transport": "SHA256SUMS",
+  "seal": "SEAL.json",
+  "next": "Await coordinator collection; no fixes or application performed."
+}

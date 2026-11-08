@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-08T11:35:36.810897+00:00",
+  "reported_to_root_before_correction": true,
+  "scope": "Review packaging only, no source/code/test/science result changed.",
+  "original_manifest": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/technical/MANIFEST.json",
+    "sha256": "5be87de0b9a6be6442a86ca83dc79af5abcf7cdcfb8fde9246b9b2624df16435"
+  },
+  "original_seal": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w04/worktree/.temp/rejection-fix-independent-v1/technical/SEAL.json",
+    "sha256": "b298abbe4d45a200d5a774a8ace8694cc667c3a925b8ffc09072bf3e1666676d"
+  },
+  "observed_mismatches": [
+    {
+      "path": "finalize-review.log",
+      "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual": "b80915417573e8e0b3509a033dc09c0bcf205c74d5ed60850eeab582698f73e2"
+    }
+  ],
+  "cause": "Finalizer hashed its redirected stdout log before printing final receipt hashes. The log was empty when hashed and complete after process exit.",
+  "bounded_correction": "Preserve all original files; add MANIFEST-v2/SEAL-v2 binding the now-finished log, observation and historical initial seal. Authoritative assessment unchanged.",
+  "original_pair_status": "Superseded packaging draft; original MANIFEST/SEAL must not be used as the final portable checksum contract."
+}

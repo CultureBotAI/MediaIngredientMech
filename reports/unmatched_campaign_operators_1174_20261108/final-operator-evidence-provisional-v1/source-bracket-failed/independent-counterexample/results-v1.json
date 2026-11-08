@@ -1,0 +1,187 @@
+{
+  "at": "2026-11-08T12:33:26.095171+00:00",
+  "source_sha256": "adba0b6b237de4fa8636fcdd7fa28c9d952859b6f0008d4e9d0671acdd323575",
+  "fixture_sha256": "2e80e9288f6b02de4f9d797052e47f6e57ecd1bed10f75b2e50af3bc3f3d1830",
+  "results": [
+    {
+      "mode": "clean",
+      "observed": {
+        "complete": true,
+        "state": "complete"
+      },
+      "events": [],
+      "actual_receipt_state": "complete",
+      "recovery_required": false,
+      "actual_bad_path": "MAPPING_SEMANTICS.md",
+      "actual_index_blob": "0db96622190b91e80948f802b0378a7f5502b6ae",
+      "snapshots_equal": false,
+      "baseline": "8f7a61af0e64657fccf2965d98377afbb44f9c1b",
+      "head": "8f7a61af0e64657fccf2965d98377afbb44f9c1b",
+      "all_installed_owners_accepted": true,
+      "receipt_sha256": "a48f5834ab230ec3d8f08b01d47c652387231f143838ab48569d5d913b28b466",
+      "native_functions_or_outputs_replaced": false,
+      "mutations_after_final_observation": false,
+      "historical_verifier": "complete"
+    },
+    {
+      "mode": "invalid_snapshot_stays",
+      "observed": {
+        "complete": false,
+        "error": "ValueError('Unrelated staged file changed')"
+      },
+      "events": [
+        {
+          "event": "before_initial_snapshot",
+          "path": "MAPPING_SEMANTICS.md",
+          "bad_blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48",
+          "good_blob": "0db96622190b91e80948f802b0378a7f5502b6ae"
+        },
+        {
+          "event": "actual_snapshot",
+          "number": 1,
+          "sha256": "1d4874173b8ca1cfa0941958383ed45ec731c52d0d519c8cc31b1ed6ea357c52",
+          "affected_entry": [
+            "100644 15eda7d2a175e095b316e5dd7e2c05e225c28b48 0\tMAPPING_SEMANTICS.md"
+          ]
+        },
+        {
+          "event": "actual_cached_validation_paths",
+          "paths": "MAPPING_SEMANTICS.md\u0000data/ingredients/mapped/Existing.yaml\u0000data/ingredients/unmapped/Existing.yaml\u0000"
+        }
+      ],
+      "actual_receipt_state": "failed",
+      "recovery_required": true,
+      "actual_bad_path": "MAPPING_SEMANTICS.md",
+      "actual_index_blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48",
+      "snapshots_equal": false,
+      "baseline": "6653a0ef8b4db651f1c138851e9a8faf8c236350",
+      "head": "6653a0ef8b4db651f1c138851e9a8faf8c236350",
+      "all_installed_owners_accepted": true,
+      "receipt_sha256": "99c842d7bde24bc94fb66b34e4eda22574f17e333ff4606d2a96e0bcd74c7789",
+      "native_functions_or_outputs_replaced": false,
+      "mutations_after_final_observation": false,
+      "historical_verifier": "ValueError('Unexpected fields in completed source receipt')"
+    },
+    {
+      "mode": "invalid_contract_hidden_between_equal_snapshots",
+      "observed": {
+        "complete": true,
+        "state": "complete"
+      },
+      "events": [
+        {
+          "event": "before_initial_snapshot",
+          "path": "MAPPING_SEMANTICS.md",
+          "bad_blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48",
+          "good_blob": "0db96622190b91e80948f802b0378a7f5502b6ae"
+        },
+        {
+          "event": "actual_snapshot",
+          "number": 1,
+          "sha256": "1d4874173b8ca1cfa0941958383ed45ec731c52d0d519c8cc31b1ed6ea357c52",
+          "affected_entry": [
+            "100644 15eda7d2a175e095b316e5dd7e2c05e225c28b48 0\tMAPPING_SEMANTICS.md"
+          ]
+        },
+        {
+          "event": "hide_bad_during_validation",
+          "blob": "0db96622190b91e80948f802b0378a7f5502b6ae"
+        },
+        {
+          "event": "actual_cached_validation_paths",
+          "paths": "data/ingredients/mapped/Existing.yaml\u0000data/ingredients/unmapped/Existing.yaml\u0000"
+        },
+        {
+          "event": "actual_validated_blob",
+          "oid": "3975a924966ae393fcb9acfd4ca5e734d89167db",
+          "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        },
+        {
+          "event": "restore_bad_before_final_snapshot",
+          "blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48"
+        },
+        {
+          "event": "actual_snapshot",
+          "number": 2,
+          "sha256": "1d4874173b8ca1cfa0941958383ed45ec731c52d0d519c8cc31b1ed6ea357c52",
+          "affected_entry": [
+            "100644 15eda7d2a175e095b316e5dd7e2c05e225c28b48 0\tMAPPING_SEMANTICS.md"
+          ]
+        }
+      ],
+      "actual_receipt_state": "complete",
+      "recovery_required": false,
+      "actual_bad_path": "MAPPING_SEMANTICS.md",
+      "actual_index_blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48",
+      "snapshots_equal": true,
+      "baseline": "3e145b8a5ba7949f6a2d8487a119b98a61db7c3a",
+      "head": "3e145b8a5ba7949f6a2d8487a119b98a61db7c3a",
+      "all_installed_owners_accepted": true,
+      "receipt_sha256": "1e1abc9e4af1c4a75853e69a1ea0c3379cb3ee3c19ea5d8e215cb6976d1badc8",
+      "native_functions_or_outputs_replaced": false,
+      "mutations_after_final_observation": false,
+      "historical_verifier": "complete"
+    },
+    {
+      "mode": "invalid_owner_hidden_between_equal_snapshots",
+      "observed": {
+        "complete": true,
+        "state": "complete"
+      },
+      "events": [
+        {
+          "event": "before_initial_snapshot",
+          "path": "data/ingredients/unmapped/Existing.yaml",
+          "bad_blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48",
+          "good_blob": "3975a924966ae393fcb9acfd4ca5e734d89167db"
+        },
+        {
+          "event": "actual_snapshot",
+          "number": 1,
+          "sha256": "ff67151453080dcafd8ec7b7f9a834f32fe87d6cf315f5535e71ffa1f7154b97",
+          "affected_entry": [
+            "100644 15eda7d2a175e095b316e5dd7e2c05e225c28b48 0\tdata/ingredients/unmapped/Existing.yaml"
+          ]
+        },
+        {
+          "event": "hide_bad_during_validation",
+          "blob": "3975a924966ae393fcb9acfd4ca5e734d89167db"
+        },
+        {
+          "event": "actual_cached_validation_paths",
+          "paths": "data/ingredients/mapped/Existing.yaml\u0000data/ingredients/unmapped/Existing.yaml\u0000"
+        },
+        {
+          "event": "actual_validated_blob",
+          "oid": "3975a924966ae393fcb9acfd4ca5e734d89167db",
+          "sha256": "5b81c3ba38c06b05a0ed624fd881e89bcf38514418c891d7f3287d139e528413"
+        },
+        {
+          "event": "restore_bad_before_final_snapshot",
+          "blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48"
+        },
+        {
+          "event": "actual_snapshot",
+          "number": 2,
+          "sha256": "ff67151453080dcafd8ec7b7f9a834f32fe87d6cf315f5535e71ffa1f7154b97",
+          "affected_entry": [
+            "100644 15eda7d2a175e095b316e5dd7e2c05e225c28b48 0\tdata/ingredients/unmapped/Existing.yaml"
+          ]
+        }
+      ],
+      "actual_receipt_state": "complete",
+      "recovery_required": false,
+      "actual_bad_path": "data/ingredients/unmapped/Existing.yaml",
+      "actual_index_blob": "15eda7d2a175e095b316e5dd7e2c05e225c28b48",
+      "snapshots_equal": true,
+      "baseline": "1c7c6c87632ab9d9f5d2a25f8e74158a2c9e0984",
+      "head": "1c7c6c87632ab9d9f5d2a25f8e74158a2c9e0984",
+      "all_installed_owners_accepted": true,
+      "receipt_sha256": "a08f50aff1fbe668a9a0f8c0c0781ade6fa5dc83c4e15409f28f3536a36303eb",
+      "native_functions_or_outputs_replaced": false,
+      "mutations_after_final_observation": false,
+      "historical_verifier": "complete"
+    }
+  ],
+  "scope": "Actual native lifecycle in private fixtures. sys.setprofile schedules real Git writes only. Initial and final observed tuples contain the same bad blob; no mutation occurs after final snapshot. This tests validation of the observed tuple, not global atomicity."
+}

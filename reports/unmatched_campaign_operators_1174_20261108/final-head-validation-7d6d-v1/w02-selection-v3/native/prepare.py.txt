@@ -1,0 +1,93 @@
+"""Read-only v3 structure and native contract inspection; no operator execution."""
+from pathlib import Path
+from collections import Counter
+from datetime import datetime,timezone
+import hashlib,json,importlib.util,sys
+W=Path.cwd();C=W.parents[2];O=W/'.temp/pr1205-final-archive-subset-independent-v3';N=O/'native';P=C/'preflight/pr1205-evidence-final-selection-v3';P2=C/'preflight/pr1205-evidence-final-selection-v2';OLD=W/'.temp/pr1205-final-archive-subset-independent-v2/native'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();load=lambda p:json.loads(p.read_text());canonical=lambda x:json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode();now=lambda:datetime.now(timezone.utc).isoformat()
+def save(p,x):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('x') as f:json.dump(x,f,indent=2);f.write('\n')
+pins={'HANDOFF.json':'006f4c4908660107ce7a8819a529bb2ec5da917ec0fb05aa23785ccc802f4ecd','MANIFEST.json':'6211bd44e3030171af9f463906f6a685a00f5df8f52eaca81344909e8005b8dd','SELECTION.json':'f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34'}
+for k,h in pins.items():assert sha(P/k)==h
+copies=[]
+def capture(src,dest):
+ assert src.is_file() and not src.is_symlink()
+ raw=src.read_bytes();dest.parent.mkdir(parents=True,exist_ok=True)
+ with dest.open('xb') as f:f.write(raw)
+ copies.append({'original_path':str(src),'copy_path':str(dest.relative_to(W)),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'accessed_at':now()})
+manifest=load(P/'MANIFEST.json')
+for row in manifest['files']:
+ p=P/row['path'];assert sha(p)==row['sha256'] and p.stat().st_size==row['bytes'];capture(p,N/'inputs/proposal'/row['path'])
+for name in ['HANDOFF.json','MANIFEST.json','SEAL.json']:capture(P/name,N/'inputs/proposal'/name)
+for name in ['SELECTION.json','PACKETS.json','OMISSIONS.json']:capture(P2/name,N/'inputs/predecessor'/name)
+s=load(P/'SELECTION.json');before=load(P2/'SELECTION.json');entries=s['entries'];old=before['entries'];delta=entries[len(old):]
+assert len(old)==691 and canonical(entries[:len(old)])==canonical(old)
+assert len(entries)==1016 and len(delta)==325
+assert canonical(load(P/'PACKETS.json')[:len(load(P2/'PACKETS.json'))])==canonical(load(P2/'PACKETS.json'))
+assert canonical(load(P/'OMISSIONS.json')[:len(load(P2/'OMISSIONS.json'))])==canonical(load(P2/'OMISSIONS.json'))
+byoriginal={r['original_path']:r for r in entries};assert len(byoriginal)==len(entries)
+coverage=[]
+for packet in load(P/'PACKETS.json'):
+ mpath=packet.get('portable_manifest',packet.get('manifest'))
+ if not mpath:continue
+ mp=Path(mpath);assert sha(mp)==packet.get('portable_manifest_sha256',packet.get('manifest_sha256'))
+ d=load(mp);rows=d['files'];shape='dict:path_to_sha' if isinstance(rows,dict) else 'list'
+ if isinstance(rows,dict):rows=[{'path':k,'sha256':v} for k,v in rows.items()]
+ assert len(rows)==packet.get('manifest_members',packet.get('members'))
+ member_checks=[]
+ for row in rows:
+  rel=Path(row['path']);assert not rel.is_absolute() and '..' not in rel.parts
+  p=mp.parent/rel;assert p.is_file() and not p.is_symlink() and sha(p)==row['sha256']
+  sizekey='bytes' if 'bytes' in row else 'size' if 'size' in row else None
+  if sizekey:assert p.stat().st_size==row[sizekey]
+  selection=byoriginal[str(p)];assert selection['sha256']==row['sha256'] and selection['bytes']==p.stat().st_size
+  member_checks.append({'path':str(p),'sha256':row['sha256'],'bytes':p.stat().st_size,'size_field':sizekey,'disposition':selection['disposition']})
+ capture(mp,N/'inputs/manifests'/(packet['packet']+'.json'))
+ coverage.append({'packet':packet['packet'],'manifest_path':str(mp),'sha256':sha(mp),'shape':shape,'members':member_checks})
+# Current author HANDOFF relative locators are resolved from its own directory.
+refs=[]
+def refwalk(x,pointer=''):
+ if isinstance(x,dict):
+  if isinstance(x.get('path'),str) and isinstance(x.get('sha256'),str):
+   p=Path(x['path']);q=p if p.is_absolute() else P/p
+   assert sha(q)==x['sha256'];refs.append({'pointer':pointer,'literal':str(p),'base':'absolute' if p.is_absolute() else str(P),'resolved_path':str(q),'sha256':x['sha256']})
+  for k,v in x.items():refwalk(v,pointer+'/'+k)
+ elif isinstance(x,list):
+  for i,v in enumerate(x):refwalk(v,pointer+'/'+str(i))
+refwalk(load(P/'HANDOFF.json'))
+new=[r for r in entries if r['disposition']=='copy_exact_bytes_when_authorized'];newdelta=[r for r in delta if r['disposition']=='copy_exact_bytes_when_authorized']
+assert len(new)==655 and sum(r['bytes'] for r in new)==25737294
+assert len(newdelta)==217 and sum(r['bytes'] for r in newdelta)==10948146
+transport={'converted_py':sum(r['original_path'].endswith('.py') for r in new),'already_inert_py_txt':sum(r['original_path'].endswith('.py.txt') for r in new),'all_py_txt_destinations':sum(r['archive_path'].endswith('.py.txt') for r in new)}
+assert transport['converted_py']+transport['already_inert_py_txt']==transport['all_py_txt_destinations']
+for r in new:
+ assert not (C/'integration/release-worktree'/r['archive_path']).exists()
+ if r['original_path'].endswith(('.py','.py.txt')):assert r['archive_path'].endswith('.py.txt')
+required=load(P/'REQUIRED-FINAL-INPUTS.json')['required'];assert [r['id'] for r in required if r['required_hash'] is None]==['R3','R4','R5','R6','R7']
+structure={'at':now(),'actor':'worker02 /root/research_c','status':'STRUCTURE_CHECKED_PENDING_PEER_FINAL_ASSESSMENT','scientific_review':False,'pins':pins,'author_wrapper_members':len(manifest['files']),'author_handoff_reference_resolution':refs,'ordered_prefix':{'entries':len(old),'canonical_sha256':hashlib.sha256(canonical(old)).hexdigest(),'all_values_and_JSON_types_preserved':True},'counts':{'references':len(entries),'delta':len(delta),'new_files':len(new),'new_bytes':sum(r['bytes'] for r in new),'delta_files':len(newdelta),'delta_bytes':sum(r['bytes'] for r in newdelta),'dispositions':dict(Counter(r['disposition'] for r in entries)),'portable_manifests':len(coverage),'portable_members':sum(len(r['members']) for r in coverage)},'transport':transport,'portable_coverage':coverage,'pending_required_ids':['R3','R4','R5','R6','R7'],'R1_R2':'Actual private author and independent review artifacts now hash-bound; not final maintained-head acceptance.','absence_scope':'Exact655literal proposed paths checked including hidden/ignored names; no broader absence assertion for later root work.','limits':['All selected source hash verification, Git and actual-copy membership independently supplied by B/root later.','No archived operator or tests executed.','Concise membership is not full runtime/corpus relocation.','Historical old W02 locator map is context only, no fresh map vote.']}
+save(N/'structure-readback-v1.json',structure)
+# Reuse sealed native controls only when the actual native contract is unchanged.
+receipt=OLD/'native-pair-receipt-v2.json';assert sha(receipt)=='103c2234ba15ccdb240e79f35a962cc5764a9ae0e1fbdfd6244084e8258cb974'
+oldm=load(OLD/'MANIFEST.json');assert sha(OLD/'MANIFEST.json')=='68ba084458f5472e591bc90556eba432f67b2a9a6d03487fbc2ce9c9367ee5bc'
+sealed={r['path']:r['sha256'] for r in oldm['files']};assert sealed[receipt.name]==sha(receipt)
+rc=load(receipt)
+spec=importlib.util.spec_from_file_location('archive_v3_native',W/'scripts/record_review.py');m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+y=W/rc['pair']['yaml'];md=W/rc['pair']['markdown'];assert sha(y)==rc['pair']['yaml_sha256'] and sha(md)==rc['pair']['markdown_sha256']
+oldreview=m.read_review(OLD/'private-overlay',str(y.relative_to(OLD/'private-overlay')))
+contracts=[]
+for row in oldreview['source']['inputs']:
+ if not row['path'].startswith('.temp/'):
+  assert sha(W/row['path'])==row['sha256'];contracts.append(row)
+assert len(contracts)==8 and len(rc['negative_controls'])==6 and all(r['refused'] for r in rc['negative_controls'])
+reuse={'at':now(),'actor':'worker02 /root/research_c','scope':'Six unchanged native contract control outcomes reused by exact sealed provenance; not rerun, no inherited scientific approval. Fresh actual current-pair validation/render/read follows after peers.','prior_receipt':{'path':str(receipt),'sha256':sha(receipt)},'prior_manifest':{'path':str(OLD/'MANIFEST.json'),'sha256':sha(OLD/'MANIFEST.json')},'prior_pair':rc['pair'],'actual_old_pair_read_review_passed':True,'current_contract_files_equal_to_reviewed_v2':contracts,'controls_reused_not_rerun':rc['negative_controls'],'historical_participation':'C authored old native assembly; no new independent vote on that old artifact.'}
+save(N/'native-controls-reuse-v1.json',reuse)
+copyroots=[]
+for label,receiptroot in [('v4',C/'preflight/pr1205-archive-copy-v4-v1'),('addendum',C/'preflight/pr1205-archive-addendum-copy-v1')]:
+ capture(receiptroot/'receipt.json',N/'inputs'/label/'receipt.json');copyroots.append((label,N/'inputs'/label/'receipt.json'))
+save(N/'input-freeze-v1.json',{'at':now(),'source_copies':copies,'scope':'Exact current wrapper, predecessor selectors, concise manifest copies and actual earlier-copy receipts; source materials remain at explicit originals.'})
+targets=[{'target_id':'PR1205-PROVISIONAL-FINAL-SELECTION','path':str((N/'inputs/proposal/SELECTION.json').relative_to(W)),'kind':'source','record_class':'ArchiveSelectionProposal','label':'Provisional v3 evidence union and delta; not copied/final-head approval','ownership_note':'Original archive selector /root/next23_context; earlier self-authored evidence is not independent code approval.'}]
+for label,p in copyroots:targets.append({'target_id':'PR1205-ACTUAL-'+('V4' if label=='v4' else 'ADDENDUM')+'-COPY','path':str(p.relative_to(W)),'kind':'source','record_class':'ArchiveCopyReceipt','label':'Retained actual '+label+' archive-copy receipt','ownership_note':'Historical receipt/current destination-byte proof from actual B/root checks must remain separate; not a newly executed copy.'})
+extras={str(p.relative_to(W)) for p in N.rglob('*') if p.is_file()};extras.update(r['path'] for r in contracts);extras.update([str(receipt.relative_to(W)),str((OLD/'MANIFEST.json').relative_to(W)),str(y.relative_to(W)),str(md.relative_to(W))])
+inspection=m.inspect_source(W,targets,sorted(extras));save(N/'initial-inspection-v1.json',inspection)
+print(json.dumps({'wrapper_members':len(manifest['files']),'copies':len(copies),'reference_pairs':len(refs),'portable_manifests':len(coverage),'portable_members':sum(len(r['members']) for r in coverage),'transport':transport,'native_targets':len(targets),'native_inputs':len(inspection['source']['inputs']),'structure_sha':sha(N/'structure-readback-v1.json'),'controls_reuse_sha':sha(N/'native-controls-reuse-v1.json')}))

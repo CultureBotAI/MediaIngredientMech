@@ -1,0 +1,73 @@
+"""Real native prepare refusal of a truthful synthetic UNMAPPED retirement.
+
+V1 is preserved separately: its after inventory was recomputed after committing
+that inventory, and the unchanged dirty-worktree guard refused it first.
+V2 fixes only fixture construction order, retaining the precise refusal check.
+"""
+from pathlib import Path
+import copy
+import importlib.util
+import json
+from mediaingredientmech.curate import campaign_owner_apply as owner
+
+T = Path(__file__).resolve().parent
+O = T.parents[1]
+ROOT = T / 'synthetic-retirement-fixture-v2'
+
+
+def main():
+    spec = importlib.util.spec_from_file_location('sealed_independent_fixture_builder', O / 'technical/independent_reduction_replay_v1.py')
+    f = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(f)
+    records, paths, plan, before, after = f.build(ROOT, size=2, key='identifier', selected=[0], unique=True, bucket='unmapped')
+    old = copy.deepcopy(records[0])
+    old.update(identifier='UNMAPPED_9000', mapping_status='UNMAPPED')
+    old['curation_history'] = [f.history('CREATED', 'UNMAPPED')]
+    f.render(ROOT, paths[0], old)
+    new = copy.deepcopy(old)
+    new['mapping_status'] = 'REJECTED'
+    new['notes'] += ' Synthetic bounded retirement; not actual source approval.'
+    new['curation_history'].append(f.history('REJECTED', 'REJECTED'))
+    f.render(ROOT, 'intake/payload-0.yaml', new)
+    before = owner.hashes(owner.inventory(ROOT))
+    f.put(ROOT, 'intake/before.json', {'schema_version': 1, 'owners': before})
+    proposals = json.loads((ROOT / 'intake/proposals.json').read_bytes())
+    proposals['proposals'][0].update(before_sha256=before[paths[0]], after_capture={'root': 'artifact', **f.reference(ROOT, 'intake/payload-0.yaml')})
+    f.put(ROOT, 'intake/proposals.json', proposals)
+    after = dict(before)
+    after[paths[0]] = f.sha((ROOT / 'intake/payload-0.yaml').read_bytes())
+    f.put(ROOT, 'intake/after.json', {'schema_version': 1, 'owners': after})
+    owner.git(ROOT, 'add', 'data/ingredients', 'intake')
+    owner.git(ROOT, '-c', 'user.email=fixture@example.invalid', '-c', 'user.name=Independent technical review', 'commit', '-qm', 'Truthful synthetic unmapped retirement original and full inventories')
+    head = owner.git(ROOT, 'rev-parse', 'HEAD').decode().strip()
+    plan.update(baseline_commit=head, intake_heads={'worker-01': head}, before_inventory=f.reference(ROOT, 'intake/before.json'), after_inventory=f.reference(ROOT, 'intake/after.json'))
+    for binding in plan['bindings']:
+        binding.update(f.reference(ROOT, binding['path']))
+        if binding['published_head'] is not None:
+            binding['published_head'] = head
+    for op in plan['records']:
+        op['before_yaml_sha256'] = before[op['before_source_record']]
+        op['after_capture'] = f.reference(ROOT, op['after_capture']['path'])
+        for origin in op['origins']:
+            origin['head_sha'] = head
+    f.put(ROOT, 'plan.json', plan)
+    acceptance = {'schema_version': 1, 'scope': 'source_application_only', 'plan_sha256': f.sha((ROOT / 'plan.json').read_bytes()), 'baseline_commit': head, 'intake_heads': plan['intake_heads'], 'binding_sha256': {b['binding_id']: b['sha256'] for b in plan['bindings']}, 'accepted_operations': {r['operation_id']: r['after_capture']['sha256'] for r in plan['records']}, 'review_bindings': ['review']}
+    f.put(ROOT, 'acceptance.json', acceptance)
+    assert not owner.git(ROOT, 'diff', '--name-only', 'HEAD', '--').strip()
+    try:
+        owner.prepare(ROOT, ROOT / 'plan.json', ROOT / 'acceptance.json')
+    except ValueError as error:
+        assert str(error) == 'Rejected owner requires same-path, same-key rejected maintenance'
+        message = str(error)
+    else:
+        raise AssertionError('Expected exact native prepare refusal')
+    assert owner.hashes(owner.inventory(ROOT)) == before and not (ROOT / 'receipt').exists()
+    result = {'status': 'CONFIRMED_FULL_NATIVE_PREPARE_REFUSAL', 'reviewer': '/root/boundary_technical', 'code_head': 'd691c079cf3923daed89284b7579913b84c3a34c', 'operator_sha256': f.sha(Path(owner.__file__).read_bytes()), 'fixture_root': str(ROOT.relative_to(O)), 'fixture_head': head, 'fixture_head_is_campaign_head': False, 'plan': f.reference(ROOT, 'plan.json'), 'acceptance': f.reference(ROOT, 'acceptance.json'), 'original_proposal_ledger': f.reference(ROOT, 'intake/proposals.json'), 'old_status': 'UNMAPPED', 'new_status': 'REJECTED', 'source_record': paths[0], 'destination': paths[0], 'same_identifier_name': all(old[k] == new[k] for k in ['identifier', 'preferred_term']), 'history_prefix_retained': new['curation_history'][:len(old['curation_history'])] == old['curation_history'], 'refusal': message, 'no_owner_write_or_receipt': True, 'actual_apply_called': False, 'scientific_approval': False, 'builder_source': {'path': 'technical/independent_reduction_replay_v1.py', 'sha256': f.sha((O / 'technical/independent_reduction_replay_v1.py').read_bytes())}, 'method': 'Immutable prior independent fixture builder imported read-only. New private fixture Git commit binds genuine UNMAPPED before, same-path REJECTED original payload and full inventories. All original bindings/plan/acceptance freshly derived; no production input changed.', 'preserved_failed_attempt': 'synthetic-prepare-failed-attempt-v1.json'}
+    path = T / 'synthetic-native-prepare-refusal-v2.json'
+    assert not path.exists()
+    path.write_text(json.dumps(result, indent=2) + '\n')
+    print(result['status'], result['refusal'])
+
+
+if __name__ == '__main__':
+    main()

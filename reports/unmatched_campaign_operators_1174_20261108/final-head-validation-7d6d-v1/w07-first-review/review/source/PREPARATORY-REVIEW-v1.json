@@ -1,0 +1,611 @@
+{
+  "review_id": "W07-FINAL-OPERATOR-SOURCE-PREPARATORY-v1",
+  "reviewer": "/root/operator_source_technical",
+  "created_at": "2026-11-08T13:45:15.117409+00:00",
+  "scientific_review": false,
+  "source_code_sha256": "c4452c59e5d16ee85bca6fe3be273b8427719ec604f259bf11fe9f41dd18db52",
+  "observed_committed_source_head": "e0a75a0c48ba539426b1f70623ea376c7b379ecf",
+  "status": "PREPARATORY_COMPLETE_PENDING_FINAL_COMMITTED_HEAD",
+  "final_root_receipt_exists_at_assessment": false,
+  "final_head_approval": false,
+  "source_application": false,
+  "scope": "Whole source operator1635lines, complete CLI/guard/reservation and source contract review; all top-level source functions/classes enumerated. Related native test AST/collection and focused bodies inspected; root independently audits unchanged assertions and actual native run receipts.",
+  "coverage_matrix": [
+    {
+      "id": "captured-dependencies",
+      "functions": [
+        "captured_native_modules",
+        "_check_loaded_producers"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Execute native guard/writer/receipt/parser dependencies from captured bytes in private module namespaces; reject noncanonical/symlink/hardlink/identity changes. Deferred receipt-parser import is bound to the same captured source. Public modules remain separate; producer set and loaded bytes are acceptance-bound."
+    },
+    {
+      "id": "closed-plan-and-acceptance",
+      "functions": [
+        "_load",
+        "closed",
+        "unique_json"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Exact closed plan/acceptance/operation/origin/binding/inventory keys; duplicate JSON/YAML keys rejected. Schema versions are explicit integer1. Acceptance binds exact plan, accepted baseline, declared worker heads, every artifact hash, every final operation payload and named review bindings. Scope literal source_application_only and receipt approval literal NONE prevent a scientific approval claim."
+    },
+    {
+      "id": "eight-roles",
+      "functions": [
+        "ROLES",
+        "_load"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "All eight roles required: case_ledger,shard,decision,evidence,proposal,review,reconciliation,producer. Nonempty unique review binding IDs must identify role=review; all11 producer paths exact. Source operator proves these artifacts and root acceptance, not their scientific verdict or complete review semantics. Independent scientific review and full campaign accounting are explicitly external prerequisites in actual source-author README/interface."
+    },
+    {
+      "id": "published-origin-and-case-coverage",
+      "functions": [
+        "_load"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "One complete immutable list case ledger; duplicate case IDs refuse. Each selected origin matches declared worker/head and exact Git show proposal/payload bytes; unique worker/proposal ownership, genuine before kind/path/hash and artifact-root payload retained. Case set must exactly equal original proposal case_ids and every canonical case digest must match. Final reconciled payload may differ but is separately acceptance-bound; no original approval transfers."
+    },
+    {
+      "id": "ordinary-ten-worker-scope",
+      "functions": [
+        "_load"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "worker-01 through worker-10 only, one head per slot. No worker11 alias or reattribution route. Ancillary1258 requires its genuine separate one-worker10 operation before later main934 baseline/inventory/checkpoint freeze. Operator cannot accept two heads under one slot or invent source queue membership."
+    },
+    {
+      "id": "inventory-and-paths",
+      "functions": [
+        "relative",
+        "owner_path",
+        "inventory",
+        "_map",
+        "_load"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Full direct mapped/unmapped YAML inventory includes ignored files, rejects direct .yml and aliases, excludes nested backups. Exact before/after transition and casefold destination collision checks; canonical relative paths/no dotdot/backslash. Unknown path/output membership cannot silently enter selected operations."
+    },
+    {
+      "id": "operation-shapes",
+      "functions": [
+        "_load",
+        "_record_keys"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Edit same path; create true null predecessor plus absent destination; promotion authentic unmapped old owner to exclusive mapped destination. Demotion separately requires accepted closed exact relocation tuple with origins and real hashes, same basename, mapped-to-unmapped paths. Existing shapes have no silent new keys."
+    },
+    {
+      "id": "native-record-content",
+      "functions": [
+        "_validate_records",
+        "prepare"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Complete projected collision-pair comparison allows no new pair and preserves surviving inherited pair paths/keys/status; reviewed family reductions remain possible. Native closed-schema validation, exact ordered history prefix plus new event and substantive nonhistory difference required. Prepare guarded-renders all selected payloads and requires exact bytes before receipt reservation or owner mutation."
+    },
+    {
+      "id": "rejected-record-boundary",
+      "functions": [
+        "_validate_records"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Only genuine same-path same-key REJECTED maintenance, or existing unmapped-path UNMAPPED-to-REJECTED retirement allowed. Revival, rename/reidentification, new rejected creation or relocation cannot exploit this route. Existing catalog collision exception is not identity approval."
+    },
+    {
+      "id": "native-history-chain",
+      "functions": [
+        "prepare",
+        "verify_completed"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Every edit preimage connects to native owner-chain endpoint where present. New/promotion/demotion destinations cannot reuse prior chains; promotion/demotion old paths must lack previous chain links. Entire native checkpoint input map must be included in accepted protected pins."
+    },
+    {
+      "id": "initial-clean-head",
+      "functions": [
+        "prepare"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Actual integration HEAD equals accepted baseline and tracked checkout has no outstanding work before preparation. Private normalization occurs only after input and native chain validation. No application enabled by default."
+    },
+    {
+      "id": "index-captured-authority",
+      "functions": [
+        "_index_entries",
+        "_baseline_index_entries",
+        "_check_mutation_git_state"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "#1256 validates one captured logical stage/path/mode/blob map against immutable baseline tree; separate cached path view must equal captured changes and each owner stage view must equal its captured entry. Hash-addressed blob equals actual installed before/after accepted endpoint, with real mode and stage0 requirement. Ending full logical index equality and HEAD recheck close observed within-check drift. Not a global atomicity claim; stat-cache-only refresh remains allowed."
+    },
+    {
+      "id": "literal-git-scope",
+      "functions": [
+        "_check_mutation_git_state"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "#1255 uses NUL-delimited literal bytes/os.fsdecode, disables rename folding, enables intent-to-add visibility, retains exact allowed source/destination set. Tabs/newlines/Unicode are not parsed as quoted or split-line paths. Cached unrelated paths cannot hide behind restored working bytes."
+    },
+    {
+      "id": "input-and-membership-rechecks",
+      "functions": [
+        "_recheck"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Every live boundary re-enumerates native receipt and historical-context membership, complete owner states, frozen proof and protected bytes, loaded producers and actual Git state. Transition exceptions are limited to the currently written operation; all other states remain frozen."
+    },
+    {
+      "id": "reservation-and-guards",
+      "functions": [
+        "apply",
+        "reserve_receipt_outputs",
+        "FrozenFile",
+        "publish_validated"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Receipt directory new/canonical/outside data; all logs/backups/checkpoint/protected snapshots reserved before owner mutation. Inode/parent/hardlink checks surround existing-owner guarded replacement; no competitor is unlinked on failure. Original beforeimage and checkpoint histories retained."
+    },
+    {
+      "id": "exclusive-create-retire",
+      "functions": [
+        "_new_owner",
+        "_rename_exclusive",
+        "_retire"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Creates install via exclusive link, never replacement over a competing destination. Promotion/demotion retire actual old inode using OS no-replace primitive, refusing unsupported platforms. Retired bytes/source absence checked; races retained as recovery evidence rather than destructive auto-recovery."
+    },
+    {
+      "id": "failure-and-recovery",
+      "functions": [
+        "apply",
+        "finish_receipt"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Any detected mutation-time exception records failed/recovery_required via held descriptor and retains backups/partial writes. Receipt final flush rechecks invalidate success-shaped output on late drift. Batch explicitly recoverable, not atomic rollback."
+    },
+    {
+      "id": "historical-verifier",
+      "functions": [
+        "verify_completed"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Completed receipt closed/approval-free; reconstruct exact before/after from authentic backup/current inventory, replay accepted archived checkpoint, recheck operation rows and retired proofs, source input/code hashes and final snapshot/owner memberships. Later valid commits/canonical advance are permitted; mutation-only HEAD/index lock does not pollute historical semantics."
+    },
+    {
+      "id": "CLI",
+      "functions": [
+        "scripts/apply_unmatched_campaign_owners.py"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Required root/plan/acceptance/receipt-dir; --apply and --dry-run mutually exclusive; default apply enabled=False. Source operator does not run downstream canonical builder, role approval or scientific export."
+    },
+    {
+      "id": "preserved-boundaries",
+      "functions": [
+        "MAPPING_SEMANTICS.md",
+        "AGENTS.md"
+      ],
+      "status": "reviewed_supported_with_limits",
+      "assessment": "Identity, supplied form, has-part, synonym/export scope and native QC remain separate. This technical review does not approve original W07 science or reuse previous four-suppression scientific participation as another independent science vote. Whole corpus QC/application remain root-owned prerequisites."
+    }
+  ],
+  "source_functions": [
+    {
+      "name": "captured_native_modules",
+      "line": 38,
+      "end_line": 101
+    },
+    {
+      "name": "_module_path",
+      "line": 241,
+      "end_line": 245
+    },
+    {
+      "name": "_check_loaded_producers",
+      "line": 276,
+      "end_line": 278
+    },
+    {
+      "name": "require",
+      "line": 281,
+      "end_line": 283
+    },
+    {
+      "name": "digest",
+      "line": 286,
+      "end_line": 287
+    },
+    {
+      "name": "encoded",
+      "line": 290,
+      "end_line": 291
+    },
+    {
+      "name": "closed",
+      "line": 294,
+      "end_line": 297
+    },
+    {
+      "name": "text",
+      "line": 300,
+      "end_line": 303
+    },
+    {
+      "name": "sha",
+      "line": 306,
+      "end_line": 309
+    },
+    {
+      "name": "commit",
+      "line": 312,
+      "end_line": 315
+    },
+    {
+      "name": "relative",
+      "line": 318,
+      "end_line": 328
+    },
+    {
+      "name": "owner_path",
+      "line": 331,
+      "end_line": 341
+    },
+    {
+      "name": "unique_json",
+      "line": 344,
+      "end_line": 352
+    },
+    {
+      "name": "UniqueLoader",
+      "line": 355,
+      "end_line": 356
+    },
+    {
+      "name": "_yaml_mapping",
+      "line": 359,
+      "end_line": 365
+    },
+    {
+      "name": "record",
+      "line": 371,
+      "end_line": 375
+    },
+    {
+      "name": "git",
+      "line": 378,
+      "end_line": 379
+    },
+    {
+      "name": "inventory",
+      "line": 382,
+      "end_line": 393
+    },
+    {
+      "name": "_snapshot_members",
+      "line": 396,
+      "end_line": 403
+    },
+    {
+      "name": "hashes",
+      "line": 406,
+      "end_line": 407
+    },
+    {
+      "name": "Prepared",
+      "line": 411,
+      "end_line": 424
+    },
+    {
+      "name": "_ref",
+      "line": 427,
+      "end_line": 446
+    },
+    {
+      "name": "_map",
+      "line": 449,
+      "end_line": 459
+    },
+    {
+      "name": "_load",
+      "line": 462,
+      "end_line": 750
+    },
+    {
+      "name": "_record_keys",
+      "line": 753,
+      "end_line": 759
+    },
+    {
+      "name": "_validate_records",
+      "line": 762,
+      "end_line": 865
+    },
+    {
+      "name": "prepare",
+      "line": 868,
+      "end_line": 953
+    },
+    {
+      "name": "_index_entries",
+      "line": 956,
+      "end_line": 975
+    },
+    {
+      "name": "_baseline_index_entries",
+      "line": 978,
+      "end_line": 991
+    },
+    {
+      "name": "_check_mutation_git_state",
+      "line": 994,
+      "end_line": 1094
+    },
+    {
+      "name": "_recheck",
+      "line": 1097,
+      "end_line": 1131
+    },
+    {
+      "name": "_new_owner",
+      "line": 1134,
+      "end_line": 1171
+    },
+    {
+      "name": "_rename_exclusive",
+      "line": 1174,
+      "end_line": 1199
+    },
+    {
+      "name": "_retire",
+      "line": 1202,
+      "end_line": 1230
+    },
+    {
+      "name": "apply",
+      "line": 1233,
+      "end_line": 1418
+    },
+    {
+      "name": "verify_completed",
+      "line": 1421,
+      "end_line": 1635
+    }
+  ],
+  "proofs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/reports/unmatched_campaign_operators_1174_20261108/independent-review/source-author-v1/README.md",
+      "sha256": "9a4d418bcb3502aca59a1c13a62b7f586f92ebe68756a8528afaf0f09f27e5e0",
+      "bytes": 4603,
+      "read_at": "2026-11-08T13:45:15.112982+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/reports/unmatched_campaign_operators_1174_20261108/independent-review/source-author-v1/interface.json",
+      "sha256": "ea736eaaf444d6264fed2be0b8ad64c44b306c06c90fcab6540366b4f3e6d96c",
+      "bytes": 3557,
+      "read_at": "2026-11-08T13:45:15.113000+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/release-worktree/reports/unmatched_campaign_operators_1174_20261108/final-boundaries-1251-1256-v1/source-demotion/INTERFACE.md",
+      "sha256": "c5f5ef77bc16c9a9932ac93dee7d6a017ff40c685b96a7ad5e34bc0dde28474f",
+      "bytes": 3542,
+      "read_at": "2026-11-08T13:45:15.113018+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/index-coherence1256-private-independent-v1/portable/FINDING.json",
+      "sha256": "0894edfa518f009e9c8f4f39ee8f894a9642015dc5e7db4ba4b5a3e72f033753",
+      "bytes": 4076,
+      "read_at": "2026-11-08T13:45:15.113034+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/source-index-coherence1256-v2-root-collection-v1/HANDOFF.json",
+      "sha256": "1d222eeff11b9d2b86f9ed9566fd853fab4aa268f3b0610ff96a4626a25fed2a",
+      "bytes": 1402,
+      "read_at": "2026-11-08T13:45:15.113050+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/source-coherence1256-commit-v2/receipt.json",
+      "sha256": "d618abc122912a192feaa28babf6d0666e65a8596b9e9d0b98e7133cf73ee871",
+      "bytes": 843,
+      "read_at": "2026-11-08T13:45:15.113065+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/w01-ancillary1258-route-root-collection-v1/HANDOFF.json",
+      "sha256": "576a1ad22765326b51d7d7c1ce0a60d47c3af5b1323e80c5f34beb1aaa3b8751",
+      "bytes": 14209,
+      "read_at": "2026-11-08T13:45:15.113084+00:00"
+    }
+  ],
+  "issue_inputs": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1251-body.json",
+      "sha256": "b33cbc7b77e0cfc82dbc3a6f880c06586d23ed4f4e8ed572ea1359aec6e739c1",
+      "bytes": 5642,
+      "read_at": "2026-11-08T13:45:15.112448+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1251-comments.json",
+      "sha256": "edc195968a0dae2898f940720740ff7b4263f09e96e6ab03e086e738e4ade36c",
+      "bytes": 3652,
+      "read_at": "2026-11-08T13:45:15.112521+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1252-body.json",
+      "sha256": "1e7073fd2278e6439b58c3c0ef33a07751944a534dbda8d324393af738d8c1ef",
+      "bytes": 5664,
+      "read_at": "2026-11-08T13:45:15.112551+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1252-comments.json",
+      "sha256": "802115e335c19fd079de0e684f023637a56a7e431e6250a052b94f2a5b3d2c91",
+      "bytes": 5858,
+      "read_at": "2026-11-08T13:45:15.112578+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1253-body.json",
+      "sha256": "b672d8601cfe0410b38e7f3c55613621c70a86b393d56fb7d6a5ed86e15f82fd",
+      "bytes": 8031,
+      "read_at": "2026-11-08T13:45:15.112607+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1253-comments.json",
+      "sha256": "64f2a29719212dbf27f0a09b8960df1b823ee2958bc1f2ac1713945048f973b6",
+      "bytes": 6028,
+      "read_at": "2026-11-08T13:45:15.112634+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1254-body.json",
+      "sha256": "82dcb89757cca2060c9b6c1d52bed424a0c7dc4061f0cc776c297698d745b9a3",
+      "bytes": 5826,
+      "read_at": "2026-11-08T13:45:15.112661+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1254-comments.json",
+      "sha256": "cb3b2ac91eeb445478793a4cc68362e72e70b18899614031ad9af4409621f84d",
+      "bytes": 19241,
+      "read_at": "2026-11-08T13:45:15.112692+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1255-body.json",
+      "sha256": "2030a837b7cbdac7dc7cb8cbe3dbfb0d420f5098c26bc9eddc287118f2a1c5bd",
+      "bytes": 5384,
+      "read_at": "2026-11-08T13:45:15.112718+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1255-comments.json",
+      "sha256": "cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05",
+      "bytes": 4,
+      "read_at": "2026-11-08T13:45:15.112743+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1256-body.json",
+      "sha256": "a62c2d1a0b7bca5d210b8cef642d4c8b8b333eba8ecae6f3eabba04e09b239eb",
+      "bytes": 5884,
+      "read_at": "2026-11-08T13:45:15.112769+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1256-comments.json",
+      "sha256": "753f6fdf6d6890ebcc56ccc24816ec633d861a13a3d4b0f8cde52027f16224ed",
+      "bytes": 16339,
+      "read_at": "2026-11-08T13:45:15.112798+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1257-body.json",
+      "sha256": "8d8ff6e75f31c39e2fc3c310377de6737d9d2c26088743a91daa03cb3533d5a2",
+      "bytes": 6340,
+      "read_at": "2026-11-08T13:45:15.112824+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1257-comments.json",
+      "sha256": "e4cd4599f83958f224d54f0d5a6a64b6c2e0bb061846921f4e22f14fb74fd6b6",
+      "bytes": 3932,
+      "read_at": "2026-11-08T13:45:15.112850+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1258-body.json",
+      "sha256": "f2697611edde443d71c1722e60196c0c580ae002be6b2e06065ea772128bacd0",
+      "bytes": 5461,
+      "read_at": "2026-11-08T13:45:15.112876+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1258-comments.json",
+      "sha256": "2db410b84e826625464b9a80b4758797dc174818480ef372349b2b0b76464e7d",
+      "bytes": 3324,
+      "read_at": "2026-11-08T13:45:15.112903+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1259-body.json",
+      "sha256": "4c52447942fca35fd1cd67ee2032b5abf85fca82229ca4f8a5599fe23750fcd6",
+      "bytes": 6047,
+      "read_at": "2026-11-08T13:45:15.112930+00:00"
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/inputs/issues-live/1259-comments.json",
+      "sha256": "dbaf0d778a9a77a2608ec969ae529e69bb0e39e8853b8fd42cf380e355cf7ae7",
+      "bytes": 19342,
+      "read_at": "2026-11-08T13:45:15.112962+00:00"
+    }
+  ],
+  "pure_controls": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/review/source/pure-controls.json",
+    "sha256": "8385464f02b1c69efcd98a06bef40d388ba83185ec52a2e0898b7082bacf4624",
+    "bytes": 6347,
+    "read_at": "2026-11-08T13:45:15.117713+00:00"
+  },
+  "native_source_test_collection": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w07/worktree/.temp/final-operator-head-review-v1/review/source/source-test-collection-receipt.json",
+    "sha256": "1d955ee94f70941de83e9fc1643d73eda5cb2db9ae22d9947e1a6cf1b1f712b3",
+    "bytes": 933,
+    "read_at": "2026-11-08T13:45:15.117768+00:00"
+  },
+  "test_cases_collected": 382,
+  "test_functions": 83,
+  "test_execution": "No Git-writing test fixtures executed.30pure/read-only controls actually ran. Native source/integration execution claims must come from actual root/author receipts; collection is not pass.",
+  "new_confirmed_findings": [],
+  "source_contract_limit": "Independent review role hashes and root acceptance are necessary input integrity, not proof of scientific truth. Whole campaign/source case review, genuine independent scopes and final review acceptance remain external prerequisites explicitly documented by the source contract.",
+  "existing_finding_dispositions": [
+    {
+      "issue": 1251,
+      "status": "code-scope-addressed; actual final-head runtime gate remains separate",
+      "basis": "Full before/after no-new-collision-pair subset plus retained-key/status rule; reductions allowed."
+    },
+    {
+      "issue": 1252,
+      "status": "code-scope-addressed",
+      "basis": "Same-path same-key maintenance and unmapped rejection explicit; no revival/new rejected loophole."
+    },
+    {
+      "issue": 1253,
+      "status": "native guard retained",
+      "basis": "Exact guarded-render byte equality still required; scientific payload normalization external."
+    },
+    {
+      "issue": 1254,
+      "status": "historical metadata findings preserved, no operator correction inferred",
+      "basis": "Current authentic bodies/comments retain chronology and corrected locators."
+    },
+    {
+      "issue": 1255,
+      "status": "code-scope-addressed",
+      "basis": "Literal NUL path framing/os.fsdecode in cached and working scope checks."
+    },
+    {
+      "issue": 1256,
+      "status": "current source guard addresses staged-index coherence finding; final receipt still pending",
+      "basis": "Captured index tuple is itself baseline-validated; each subview bound, actual object read, final logical equality. Earlier failed bracket-only attempt and original evidence stay referenced."
+    },
+    {
+      "issue": 1258,
+      "status": "separate ancillary transaction requirement retained",
+      "basis": "Do not add worker11, relabel original934 origins or make new sourcequeue cases; ordinary published W10 ancillary origin needed before final main freeze."
+    },
+    {
+      "issue": 1259,
+      "status": "publisher/nativeintegration review delegated to separate lane and parent",
+      "basis": "No claim that initial11 failures are pass; source content unchanged and final committed-head receipt not yet available in this assessment."
+    }
+  ],
+  "failed_probes": [
+    {
+      "probe": "rg docs/*campaign*",
+      "result": "No glob match; ignored-aware repository search located actual report contracts. No repository-wide absence conclusion."
+    },
+    {
+      "probe": "first issue JSON body reader",
+      "result": "AttributeError: body capture was paginated list, not object. Retained original file; subsequent list-aware reading succeeded."
+    },
+    {
+      "probe": "broad descendant artifact discovery",
+      "result": "Output truncated from numerous native testfixture copies; not used as complete evidence inventory. Subsequent references use exact known files."
+    }
+  ],
+  "limitations": [
+    "No source/K/I/J/CM/KG/Claw/Git/GitHub mutation, code fix or source application.",
+    "Only30bounded pure/read-only controls execute here; not a substitute for actual complete native tests.",
+    "Final commit/ordinary parent/remote equality not yet available. Do not call this a final committed-head approval.",
+    "Whole source content review does not establish complete campaign partonomy/scientific acceptance or full QC.",
+    "Runtime/model remains existing account/environment; no paid provider or new external session."
+  ]
+}

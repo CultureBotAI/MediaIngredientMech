@@ -1,0 +1,939 @@
+# Independent technical review of provisional PR1205 archive selection v3 and retained actual copies
+
+- Review: 20261108T141344Z-w02-pr1205-subset-v3-and-prior-copies-independent
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T13:56:41.886070Z
+- Finished UTC: 2026-11-08T14:13:44Z
+- Reviewer: Codex worker02 /root/research_b: technical verification; /root/final_reviewer: skeptical assessment; /root/research_c: structure, distinct numbered-pair review and native assembly (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: false
+
+## Summary
+
+The exact provisional v3 selection and two retained actual copied archives are supported within technical archive scope. All 691 predecessor entries survive unchanged; the 325-reference delta adds private author, reviewer and runner evidence with its failures and limitations. The 655 proposed files remain uncopied. This review supplies no source-scientific, code, application, maintained-head validation or final archive approval.
+
+## Scope And Provenance
+
+Three complete technical targets: exact v3 selection and delta, the historical actual v4 copy receipt, and the historical actual addendum copy receipt. Current destination integrity is supplied by fresh B verification. Prior unchanged proofs are reused by exact hash with their original scope.
+
+Selection: Selection f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34; v4 receipt 0073d442b55bd221f6aa840f5a75bffe127c695540ea03f760a8e4cacb1e2e3c; addendum receipt 25c10a17b52f3d316cb35f1549fd4bf85450ce6d83f76e8dfde6725116382baa.
+Coverage: full; 3 reviewed / 3 in the declared population.
+Source: working_tree at Git base c91ccac1f91417ce376a2a83e871d6f6bf90912f.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| PR1205-PROVISIONAL-FINAL-SELECTION | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SELECTION.json | source | Provisional v3 evidence union and delta; not copied/final-head approval |
+| PR1205-ACTUAL-V4-COPY | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/v4/receipt.json | source | Retained actual v4 archive-copy receipt |
+| PR1205-ACTUAL-ADDENDUM-COPY | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/addendum/receipt.json | source | Retained actual addendum archive-copy receipt |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Exact prefix, handoff references and concise membership | passed | True | PR1205-PROVISIONAL-FINAL-SELECTION | C verified the full canonical 691-entry prefix and order, the 325-entry delta, three author handoff references, all 18 wrapper members and all 596 members in twelve declared concise manifests. Exact proposed destination checks include ignored paths. |
+| All reference and actual-copy checks | passed | True | PR1205-PROVISIONAL-FINAL-SELECTION, PR1205-ACTUAL-V4-COPY, PR1205-ACTUAL-ADDENDUM-COPY | B verified 2,555 reference rows, 655 absent proposed destinations, 1,077 actual copied files, 310 legacy archive files and current tracked/index context. Its 34 delta controls and nine post-filing origin controls passed. D separately reviewed the bounded origin correction. |
+| Actual history and attribution assessment | passed | True | PR1205-PROVISIONAL-FINAL-SELECTION | D assessed the complete added evidence scope, actual private run outcomes, original native envelopes, locator bases, omissions and pending requirements. Its 325-content pattern scan found no leads, with explicit limits. This is not line-by-line operator review or fresh science approval. |
+| Distinct post-filing helper review | passed | True | PR1205-PROVISIONAL-FINAL-SELECTION | After the actual filing receipt, C checked that the D helper delta only supplies three explicit numbered partners. Six actual retained pairs validated, rendered and parsed; six swaps with different actual retained Markdown files were refused. The earlier pre-filing execution remains disclosed. |
+| Stable peer and native-control provenance | passed | True | PR1205-PROVISIONAL-FINAL-SELECTION, PR1205-ACTUAL-V4-COPY, PR1205-ACTUAL-ADDENDUM-COPY | C rehashed 86 sealed peer files, 15 diagnostic links and 426 declared input rows, and read the actual 34-plus-nine XML results without rerunning those tests. Six generic native control outcomes are reused from sealed v2 after all eight contract files match; current pair validation remains a fresh operation. |
+
+## Scientific And Domain Assessments
+
+### Exact provisional union and delta
+
+provenance: supported. Targets: PR1205-PROVISIONAL-FINAL-SELECTION.
+
+The 1,016 references preserve all 691 predecessor objects, JSON types, order and destinations. The 325 added references require 217 new files and 10,948,146 bytes. The full proposal has 655 files and 25,737,294 bytes, all still absent. There are 28 Git-blob references, 105 committed-archive reuses, 207 selected-new-byte reuses and 21 existing-copy reuses. The 80 inert .py.txt destinations comprise 54 converted .py originals and 26 already-inert originals.
+
+### Included private author and review evidence
+
+evidence: supported. Targets: PR1205-PROVISIONAL-FINAL-SELECTION.
+
+R1 and R2 now bind actual private author and distinct private review artifacts, including all 191 declared author members and 51 independent packet members. The original combined result remains 11 failed, 619 passed and no skips; the corrected 13-case author rerun and distinct 13-case reviewer rerun are separate. Selection of those records does not turn them into a clean combined suite or renew operator correctness approval by this team.
+
+### Runner preparation and historical native authority
+
+scope: supported. Targets: PR1205-PROVISIONAL-FINAL-SELECTION.
+
+The original preparation defects, bounded runner correction and exact two-test inventory bridge remain distinct from validation execution. Six historical native pairs include one genuine historical W07 scientific envelope and five synthetic transition/draft envelopes. Native shape and rendering checks do not establish current-source authority, fresh scientific acceptance or actual campaign approval. Earlier failed and interrupted runs and the captured incomplete W08 state remain visible.
+
+### Retained actual v4 archive
+
+provenance: supported. Targets: PR1205-ACTUAL-V4-COPY.
+
+Fresh B verification supports the existing 789 files, comprising 787 originals and two descriptors. The original receipt and historical selection remain unchanged. At the observed K7d6 head these files remain physical, ignored and untracked; this is not a new copy or a committed archive claim.
+
+### Retained actual addendum archive
+
+provenance: supported. Targets: PR1205-ACTUAL-ADDENDUM-COPY.
+
+Fresh B verification supports the existing 288 files, comprising 286 originals and two descriptors. The eight earlier missing negative objects remain exact actual copies. These files remain ignored and untracked at observed K7d6. Their preservation does not close operator findings or imply that any of the 655 newly proposed files was copied.
+
+### Original manifest and locator context
+
+scope: supported. Targets: PR1205-PROVISIONAL-FINAL-SELECTION.
+
+Twelve concise manifests cover 596 exact original members. B accounts for 1,789 retained manifest-member mappings, including 892 exact selected-relative joins and 897 not selected at that relative location. Four relocated manifest contexts use explicit byte-verified upstream origins; distinct inner and outer handoffs are not interchangeable. Full retained manifests do not imply complete runtime, corpus, cache or execution-layout relocation. Explicit locator addenda preserve old broken literals rather than creating aliases or rewriting history.
+
+### Actual correction and review ordering
+
+provenance: supported. Targets: PR1205-PROVISIONAL-FINAL-SELECTION.
+
+The old W02 private locator addendum preceded GitHub filing; the saved subsequent comment explicitly corrected contrary wording. It remains historical C/D-reviewed context with disclosed root authorship, not a fresh fourth target. The new manifest-origin checker correction followed its filing and has distinct D support. The numbered-pair successor ran before the required filing receipt; that violation remains explicit, followed by actual independent C post-filing verification. The unused GraphQL checker and unexecuted syntax-error builder remain unrepaired and are not relied upon.
+
+### Final maintained-head and archive work remains separate
+
+scope: supported. Targets: PR1205-PROVISIONAL-FINAL-SELECTION, PR1205-ACTUAL-V4-COPY, PR1205-ACTUAL-ADDENDUM-COPY.
+
+R3 through R7 remain not included or verified by this exact selection. Their null fields do not assert global absence of later work. The inherited e0a75 labels and directory observations are historical; the observed K7d6 head is context without authenticated root publication or final code acceptance. Final QC, full suite, external final-head review, W07 private-accounting additions and final archive copying are outside this review and were not awaited or reclassified as completed.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+### LATER-EXACT-ARCHIVE-REVIEW
+
+Review an immutable later selection when actual maintained-head and final archive evidence is included.
+
+- Bind actual root commit/push/readback and reviewed source/test hashes.
+- Preserve actual final-head QC and full-suite outcomes, including failures and interruptions.
+- Bind distinct external final-head review and any required evidence delta.
+- Verify any authorized final copy and content-only diff against exact selected bytes.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| E-SELECTION | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SELECTION.json | supports | Exact complete v3 selection and original source-to-destination mappings. |
+| E-POLICY | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/README.md | supports | Current effective scope, historical status qualifications and explicit future requirements. |
+| E-REQUIRED | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/REQUIRED-FINAL-INPUTS.json | supports | Actual private R1/R2 handoff hashes and still-unselected R3-R7 requirements. |
+| E-HISTORY | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/FAILURES-AND-INCOMPLETE.json | supports | Preserved original failures, separate successes, runner preparation and incomplete historical W08 authority. |
+| E-OMISSIONS | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/OMISSIONS.json | supports | Concise portable selection versus omitted full runtime, corpus and execution contexts. |
+| E-STRUCTURE | .temp/pr1205-final-archive-subset-independent-v3/native/structure-readback-v1.json | supports | C exact prefix, delta, reference and 596-member manifest checks. |
+| E-V4 | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/v4/receipt.json | supports | Original receipt for 789 actual v4 copy files, with historical scope retained. |
+| E-ADDENDUM | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/addendum/receipt.json | supports | Original receipt for 288 actual addendum files, with historical scope retained. |
+| E-B | .temp/pr1205-final-archive-subset-independent-v3/technical/technical-review-v1.json | supports | B complete bounded byte, Git, deduplication, copy and control assessment after the filed private-helper correction. |
+| E-B-LEDGER | .temp/pr1205-final-archive-subset-independent-v3/technical/full-verification-v2.json | supports | Actual full reference, destination, membership and current Git/index accounting, bound directly without duplicate copying. |
+| E-D | .temp/pr1205-final-archive-subset-independent-v3/skeptic/review-v1.json | supports | D complete selected-content/history/attribution assessment with explicit prior participation and correction chronology. |
+| E-ORIGIN | .temp/pr1205-final-archive-subset-independent-v3/skeptic/manifest-origin-post-filing-review-v1.json | supports | D distinct post-filing check of B manifest-origin correction, real collision, direct positive/refusal calls and nine recorded controls. |
+| E-NUMBERED | .temp/pr1205-final-archive-subset-independent-v3/native/numbered-pair-fix-review-v1.json | supports | C distinct post-filing exact helper diff and six actual positive pairs plus six actual mismatched-pair refusals. |
+| E-FILING | .temp/pr1205-final-archive-subset-independent-v3/native/inputs/checker-filing/receipt.json | supports | Actual saved filing receipt for the two required checker corrections, preserving the pre-filing D execution deviation. |
+| E-PEERS | .temp/pr1205-final-archive-subset-independent-v3/native/peer-readback-v1.json | supports | C readback of 86 sealed files, 15 diagnostic links, 426 declared input rows and actual 43 XML cases; tests not rerun. |
+| E-CONTROLS | .temp/pr1205-final-archive-subset-independent-v3/native/native-controls-reuse-v1.json | supports | Exact provenance for six reused v2 native controls and unchanged eight-file native contract; no mutation-test rerun. |
+| E-CHRONOLOGY | .temp/pr1205-final-archive-subset-independent-v3/native/chronology-readback-v1.json | supports | Actual saved filing order, correction body, explicit source-author locator references and original failed outer bases. |
+| E-ROOT-CONTEXT | .temp/pr1205-final-archive-subset-independent-v3/context-and-chronology.json | supports | Root immutable prior-packet and locator context; root-authored old map is not independently reapproved. |
+| E-ACCEPTANCE | .temp/pr1205-final-archive-subset-independent-v3/ACCEPTANCE.json | supports | Root compilation of actual separate archive assessments and exact scope; final native pair and external work remain distinct. |
+| E-FINDINGS | .temp/pr1205-final-archive-subset-independent-v3/FINDINGS.json | context_only | Private checker dispositions, preserved ordering violation and two unrepaired unused diagnostics; no source/archive defect inferred. |
+
+## Limits And Additional Notes
+
+- Three exact technical archive targets only. No source science, operator code correctness, mapping, owner, role, application, campaign, export, final-head validation or final archive approval.
+- The 655 proposed files remain uncopied. Existing 1,077 copied files are a separate physical inventory; the observed K head does not supply a root publication receipt.
+- Private R1/R2 artifacts are included; R3-R7 remain unselected requirements. Pending means not included or verified here, not that later work cannot exist elsewhere.
+- Original 11-failure/619-pass combined evidence and separate 13-case successes are not a clean combined or full suite. Runner preparation and a test-pin bridge are not execution.
+- Complete concise manifests and byte-equal alternate locations do not establish full runtime/corpus preservation or relocated replayability.
+- Earlier W02 review participation, C native assembly and crosswalk authorship are disclosed. Own historical evidence continuity is not another independent scientific or code vote. Root-authored old locator metadata receives no fresh independent approval here.
+- The numbered-pair helper successor preceded filing, contrary to the required order; later C verification does not retroactively make it issue-first. All earlier helpers, failures and observations remain preserved.
+- The unused syntax-error builder and duplicate GraphQL checker remain unrepaired and excluded. Final review content was authored directly as data; neither failed helper was executed to generate it.
+- Six generic native control outcomes are reused from sealed v2 after eight exact contract checks, without rerunning them. Six actual mismatched-pair refusals are separate post-filing helper verification. Fresh current pair API checks are recorded by the assembly receipt.
+- D scanned all 325 new selected contents with bounded patterns; zero leads is not a universal credential-absence or security guarantee. No archived operator, mutable full-suite log or current validation run was executed by C.
+- Native working-tree provenance binds actual W02c91 and current input hashes. Private outputs are not committed-byte proof. No canonical saver, REPORT_ROOT override or Git environment override is used.
+- Empty findings means no defect in the three archive targets. The separate exact FINDINGS ledger preserves private helper findings, their qualified corrections and unused diagnostics without implying all issues are closed.
+- The finding for the unused builder refers to the preceding edit tool chunk and a follow-up AST parse; the exact AST tool chunk was not captured. Python parsing failed while a later listing made the combined shell status zero. No review data or pair had been emitted by that attempt.
+- Native source.inputs, evidence references, and the reused-control prior_pair/current_contract_files paths are relative to the actual W02 worktree root. New generic handoff references will use explicit absolute paths.
+- Distinct D readback of this newly assembled pair remains pending at write and must be recorded additively.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+title: Independent technical review of provisional PR1205 archive selection v3 and
+  retained actual copies
+reviewer:
+  identity: 'Codex worker02 /root/research_b: technical verification; /root/final_reviewer:
+    skeptical assessment; /root/research_c: structure, distinct numbered-pair review
+    and native assembly'
+  kind: agent
+  independence: independent
+  independence_basis: Independent of the external archive selector, copier and operator
+    authors. Historical author/reviewer labels identify those original actors, not
+    current W02 agents. Earlier W02 archive reviews, C native assembly and crosswalk
+    author-team participation are disclosed; continuity of our own historical bytes
+    is not another scientific or code vote. B authored its private manifest-origin
+    correction, separately reviewed by D. D authored the numbered-pair correction,
+    separately reviewed by C. Root authored the old W02 locator map; no fresh independent
+    map approval is claimed.
+skill: reconcile-review-records
+completion: completed
+verdict: pass_with_limitations
+native_verdict: EXACT_PROVISIONAL_V3_AND_PRIOR_COPIES_SUPPORTED_FINAL_HEAD_AND_ARCHIVE_REQUIREMENTS_SEPARATE
+scientific_review: false
+summary: The exact provisional v3 selection and two retained actual copied archives
+  are supported within technical archive scope. All 691 predecessor entries survive
+  unchanged; the 325-reference delta adds private author, reviewer and runner evidence
+  with its failures and limitations. The 655 proposed files remain uncopied. This
+  review supplies no source-scientific, code, application, maintained-head validation
+  or final archive approval.
+scope:
+  description: 'Three complete technical targets: exact v3 selection and delta, the
+    historical actual v4 copy receipt, and the historical actual addendum copy receipt.
+    Current destination integrity is supplied by fresh B verification. Prior unchanged
+    proofs are reused by exact hash with their original scope.'
+  selection: Selection f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34;
+    v4 receipt 0073d442b55bd221f6aa840f5a75bffe127c695540ea03f760a8e4cacb1e2e3c; addendum
+    receipt 25c10a17b52f3d316cb35f1549fd4bf85450ce6d83f76e8dfde6725116382baa.
+  coverage: full
+  population_size: 3
+  reviewed_target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  - PR1205-ACTUAL-V4-COPY
+  - PR1205-ACTUAL-ADDENDUM-COPY
+  exclusions:
+  - target: Maintained-head publication, QC, full suite and external final-head review
+    reason: Not included or authenticated by this selection; this is not a claim that
+      later work cannot already exist elsewhere.
+  - target: New archive copy, final delta and content-only publication
+    reason: The proposed files remain uncopied; actual final copy and diff/head review
+      are separate.
+  - target: Source science, operator correctness and campaign acceptance
+    reason: Archive integrity and evidence scope only; no new mapping, owner, role,
+      application or export approval.
+  - target: Unused native-content builder and duplicate GraphQL checker
+    reason: Both remain unrepaired, preserved and excluded from acceptance. Final
+      review data is directly authored; neither failed helper supplies a required
+      result.
+checks:
+- check_id: C-STRUCTURE
+  name: Exact prefix, handoff references and concise membership
+  status: passed
+  required: true
+  summary: C verified the full canonical 691-entry prefix and order, the 325-entry
+    delta, three author handoff references, all 18 wrapper members and all 596 members
+    in twelve declared concise manifests. Exact proposed destination checks include
+    ignored paths.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-STRUCTURE
+  - E-SELECTION
+- check_id: B-TECHNICAL
+  name: All reference and actual-copy checks
+  status: passed
+  required: true
+  summary: B verified 2,555 reference rows, 655 absent proposed destinations, 1,077
+    actual copied files, 310 legacy archive files and current tracked/index context.
+    Its 34 delta controls and nine post-filing origin controls passed. D separately
+    reviewed the bounded origin correction.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  - PR1205-ACTUAL-V4-COPY
+  - PR1205-ACTUAL-ADDENDUM-COPY
+  evidence_ids:
+  - E-B
+  - E-B-LEDGER
+  - E-ORIGIN
+- check_id: D-SCOPE
+  name: Actual history and attribution assessment
+  status: passed
+  required: true
+  summary: D assessed the complete added evidence scope, actual private run outcomes,
+    original native envelopes, locator bases, omissions and pending requirements.
+    Its 325-content pattern scan found no leads, with explicit limits. This is not
+    line-by-line operator review or fresh science approval.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-D
+  - E-HISTORY
+  - E-POLICY
+- check_id: C-NUMBERED-PAIR
+  name: Distinct post-filing helper review
+  status: passed
+  required: true
+  summary: After the actual filing receipt, C checked that the D helper delta only
+    supplies three explicit numbered partners. Six actual retained pairs validated,
+    rendered and parsed; six swaps with different actual retained Markdown files were
+    refused. The earlier pre-filing execution remains disclosed.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-NUMBERED
+  - E-FILING
+- check_id: C-READBACK
+  name: Stable peer and native-control provenance
+  status: passed
+  required: true
+  summary: C rehashed 86 sealed peer files, 15 diagnostic links and 426 declared input
+    rows, and read the actual 34-plus-nine XML results without rerunning those tests.
+    Six generic native control outcomes are reused from sealed v2 after all eight
+    contract files match; current pair validation remains a fresh operation.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  - PR1205-ACTUAL-V4-COPY
+  - PR1205-ACTUAL-ADDENDUM-COPY
+  evidence_ids:
+  - E-PEERS
+  - E-CONTROLS
+assessments:
+- assessment_id: A-UNION
+  area: provenance
+  topic: Exact provisional union and delta
+  outcome: supported
+  summary: The 1,016 references preserve all 691 predecessor objects, JSON types,
+    order and destinations. The 325 added references require 217 new files and 10,948,146
+    bytes. The full proposal has 655 files and 25,737,294 bytes, all still absent.
+    There are 28 Git-blob references, 105 committed-archive reuses, 207 selected-new-byte
+    reuses and 21 existing-copy reuses. The 80 inert .py.txt destinations comprise
+    54 converted .py originals and 26 already-inert originals.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-SELECTION
+  - E-STRUCTURE
+  - E-B
+- assessment_id: A-PRIVATE
+  area: evidence
+  topic: Included private author and review evidence
+  outcome: supported
+  summary: R1 and R2 now bind actual private author and distinct private review artifacts,
+    including all 191 declared author members and 51 independent packet members. The
+    original combined result remains 11 failed, 619 passed and no skips; the corrected
+    13-case author rerun and distinct 13-case reviewer rerun are separate. Selection
+    of those records does not turn them into a clean combined suite or renew operator
+    correctness approval by this team.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-REQUIRED
+  - E-HISTORY
+  - E-D
+  - E-STRUCTURE
+- assessment_id: A-RUNNER
+  area: scope
+  topic: Runner preparation and historical native authority
+  outcome: supported
+  summary: The original preparation defects, bounded runner correction and exact two-test
+    inventory bridge remain distinct from validation execution. Six historical native
+    pairs include one genuine historical W07 scientific envelope and five synthetic
+    transition/draft envelopes. Native shape and rendering checks do not establish
+    current-source authority, fresh scientific acceptance or actual campaign approval.
+    Earlier failed and interrupted runs and the captured incomplete W08 state remain
+    visible.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-D
+  - E-HISTORY
+  - E-NUMBERED
+- assessment_id: A-V4
+  area: provenance
+  topic: Retained actual v4 archive
+  outcome: supported
+  summary: Fresh B verification supports the existing 789 files, comprising 787 originals
+    and two descriptors. The original receipt and historical selection remain unchanged.
+    At the observed K7d6 head these files remain physical, ignored and untracked;
+    this is not a new copy or a committed archive claim.
+  target_ids:
+  - PR1205-ACTUAL-V4-COPY
+  evidence_ids:
+  - E-V4
+  - E-B
+  - E-B-LEDGER
+- assessment_id: A-ADDENDUM
+  area: provenance
+  topic: Retained actual addendum archive
+  outcome: supported
+  summary: Fresh B verification supports the existing 288 files, comprising 286 originals
+    and two descriptors. The eight earlier missing negative objects remain exact actual
+    copies. These files remain ignored and untracked at observed K7d6. Their preservation
+    does not close operator findings or imply that any of the 655 newly proposed files
+    was copied.
+  target_ids:
+  - PR1205-ACTUAL-ADDENDUM-COPY
+  evidence_ids:
+  - E-ADDENDUM
+  - E-B
+  - E-B-LEDGER
+- assessment_id: A-CONTEXT
+  area: scope
+  topic: Original manifest and locator context
+  outcome: supported
+  summary: Twelve concise manifests cover 596 exact original members. B accounts for
+    1,789 retained manifest-member mappings, including 892 exact selected-relative
+    joins and 897 not selected at that relative location. Four relocated manifest
+    contexts use explicit byte-verified upstream origins; distinct inner and outer
+    handoffs are not interchangeable. Full retained manifests do not imply complete
+    runtime, corpus, cache or execution-layout relocation. Explicit locator addenda
+    preserve old broken literals rather than creating aliases or rewriting history.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-OMISSIONS
+  - E-STRUCTURE
+  - E-B
+  - E-ORIGIN
+  - E-CHRONOLOGY
+- assessment_id: A-CHRONOLOGY
+  area: provenance
+  topic: Actual correction and review ordering
+  outcome: supported
+  summary: The old W02 private locator addendum preceded GitHub filing; the saved
+    subsequent comment explicitly corrected contrary wording. It remains historical
+    C/D-reviewed context with disclosed root authorship, not a fresh fourth target.
+    The new manifest-origin checker correction followed its filing and has distinct
+    D support. The numbered-pair successor ran before the required filing receipt;
+    that violation remains explicit, followed by actual independent C post-filing
+    verification. The unused GraphQL checker and unexecuted syntax-error builder remain
+    unrepaired and are not relied upon.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  evidence_ids:
+  - E-CHRONOLOGY
+  - E-ROOT-CONTEXT
+  - E-ORIGIN
+  - E-NUMBERED
+  - E-FINDINGS
+- assessment_id: A-BOUNDARY
+  area: scope
+  topic: Final maintained-head and archive work remains separate
+  outcome: supported
+  summary: R3 through R7 remain not included or verified by this exact selection.
+    Their null fields do not assert global absence of later work. The inherited e0a75
+    labels and directory observations are historical; the observed K7d6 head is context
+    without authenticated root publication or final code acceptance. Final QC, full
+    suite, external final-head review, W07 private-accounting additions and final
+    archive copying are outside this review and were not awaited or reclassified as
+    completed.
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  - PR1205-ACTUAL-V4-COPY
+  - PR1205-ACTUAL-ADDENDUM-COPY
+  evidence_ids:
+  - E-REQUIRED
+  - E-POLICY
+  - E-D
+  - E-ACCEPTANCE
+findings: []
+actions:
+- action_id: LATER-EXACT-ARCHIVE-REVIEW
+  description: Review an immutable later selection when actual maintained-head and
+    final archive evidence is included.
+  finding_ids: []
+  target_ids:
+  - PR1205-PROVISIONAL-FINAL-SELECTION
+  - PR1205-ACTUAL-V4-COPY
+  - PR1205-ACTUAL-ADDENDUM-COPY
+  ownership_note: Future coordinator, operator and archive work; this review neither
+    executes nor approves it.
+  acceptance_checks:
+  - Bind actual root commit/push/readback and reviewed source/test hashes.
+  - Preserve actual final-head QC and full-suite outcomes, including failures and
+    interruptions.
+  - Bind distinct external final-head review and any required evidence delta.
+  - Verify any authorized final copy and content-only diff against exact selected
+    bytes.
+limitations:
+- Three exact technical archive targets only. No source science, operator code correctness,
+  mapping, owner, role, application, campaign, export, final-head validation or final
+  archive approval.
+- The 655 proposed files remain uncopied. Existing 1,077 copied files are a separate
+  physical inventory; the observed K head does not supply a root publication receipt.
+- Private R1/R2 artifacts are included; R3-R7 remain unselected requirements. Pending
+  means not included or verified here, not that later work cannot exist elsewhere.
+- Original 11-failure/619-pass combined evidence and separate 13-case successes are
+  not a clean combined or full suite. Runner preparation and a test-pin bridge are
+  not execution.
+- Complete concise manifests and byte-equal alternate locations do not establish full
+  runtime/corpus preservation or relocated replayability.
+- Earlier W02 review participation, C native assembly and crosswalk authorship are
+  disclosed. Own historical evidence continuity is not another independent scientific
+  or code vote. Root-authored old locator metadata receives no fresh independent approval
+  here.
+- The numbered-pair helper successor preceded filing, contrary to the required order;
+  later C verification does not retroactively make it issue-first. All earlier helpers,
+  failures and observations remain preserved.
+- The unused syntax-error builder and duplicate GraphQL checker remain unrepaired
+  and excluded. Final review content was authored directly as data; neither failed
+  helper was executed to generate it.
+- Six generic native control outcomes are reused from sealed v2 after eight exact
+  contract checks, without rerunning them. Six actual mismatched-pair refusals are
+  separate post-filing helper verification. Fresh current pair API checks are recorded
+  by the assembly receipt.
+- D scanned all 325 new selected contents with bounded patterns; zero leads is not
+  a universal credential-absence or security guarantee. No archived operator, mutable
+  full-suite log or current validation run was executed by C.
+- Native working-tree provenance binds actual W02c91 and current input hashes. Private
+  outputs are not committed-byte proof. No canonical saver, REPORT_ROOT override or
+  Git environment override is used.
+notes:
+- Empty findings means no defect in the three archive targets. The separate exact
+  FINDINGS ledger preserves private helper findings, their qualified corrections and
+  unused diagnostics without implying all issues are closed.
+- The finding for the unused builder refers to the preceding edit tool chunk and a
+  follow-up AST parse; the exact AST tool chunk was not captured. Python parsing failed
+  while a later listing made the combined shell status zero. No review data or pair
+  had been emitted by that attempt.
+- Native source.inputs, evidence references, and the reused-control prior_pair/current_contract_files
+  paths are relative to the actual W02 worktree root. New generic handoff references
+  will use explicit absolute paths.
+- Distinct D readback of this newly assembled pair remains pending at write and must
+  be recorded additively.
+tags:
+- PR1205
+- provisional-v3
+- archive
+- independent
+- technical-only
+schema_version: 1.0.0
+review_id: 20261108T141344Z-w02-pr1205-subset-v3-and-prior-copies-independent
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+started_at: '2026-11-08T13:56:41.886070Z'
+finished_at: '2026-11-08T14:13:44Z'
+source:
+  git_revision: c91ccac1f91417ce376a2a83e871d6f6bf90912f
+  state: working_tree
+  inputs:
+  - path: .claude/skills/reconcile-review-records/SKILL.md
+    sha256: b8c3e3fdb31e58a49343f20b11c7a1c2a3616f16ef36601ccd072e2693031474
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v2/native/MANIFEST.json
+    sha256: 68ba084458f5472e591bc90556eba432f67b2a9a6d03487fbc2ce9c9367ee5bc
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v2/native/native-pair-receipt-v2.json
+    sha256: 103c2234ba15ccdb240e79f35a962cc5764a9ae0e1fbdfd6244084e8258cb974
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v2/native/private-overlay/reviews/structured/20261108T134100Z-w02-pr1205-subset-v2-copies-locator-independent/review.md
+    sha256: e22b2065aa82fabf1c3a6bf7adca8f79ae9773b72a562b643d9f4cddf1fd21b5
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v2/native/private-overlay/reviews/structured/20261108T134100Z-w02-pr1205-subset-v2-copies-locator-independent/review.yaml
+    sha256: 344675c9a6faa393b32f7c0121eeb9bd8698fea2854284a8f9d96e9ed32c8907
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/ACCEPTANCE.json
+    sha256: 7078ed0f8e69d06e6d5ef2845e985d183f2af4af40306d100f76142bc8d722b4
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/FINDINGS.json
+    sha256: 0867fc17a0a3c24ea88f66452f82626784342df1efdca38bba7c1eb01e8e72b0
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/checker-filing-readback.json
+    sha256: 1e7bfc5d93be6312dd9e309d75b6107d17dc7c9b6c381844ac91e715f696fb5d
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/context-and-chronology.json
+    sha256: 3bb09812be83e2cd89674bec86f51a08290e14fa329e5078ff0e84fc08b344b2
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/input-freeze.json
+    sha256: 8640c0b701f5d6a04dbb46d7d628208fb7d41004816fb2cdb86b74ee1a298c4e
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/assemble.py
+    sha256: ddefa11dcccf7a32a706c592db54fec2c5335a10790bd00d275c1ce45c9be756
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/build_content.py
+    sha256: e18cf2b6b9e0b4ea65732ac088baa4f9ed20fecec6bd214e8bb9f077b5566cda
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/check_chronology.py
+    sha256: 7fa766bfa03de4951b1b401d15ac498817dc3c231491c75def589e7cc4e65317
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/chronology-readback-v1.json
+    sha256: 08fb9d91f1c3355893ea8a101734c6225e21b865838179d7e1d9505134f036d5
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/final-content.json
+    sha256: 6b3e9725940401be6a97ee3f9943b86931237609ac5e17a3b100d6bbe9cfdc9f
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/finding-builder-syntax-v1.json
+    sha256: c75abbb40117078023b528e6c6c9cd28ab098d3e664a1c96efa9bffbc69a1351
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/initial-inspection-v1.json
+    sha256: ee374d92deb3f1948900472f889ce7639ffd16fafc8160c2907c6dc44062618f
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/input-freeze-v1.json
+    sha256: ab703c4eb21ce75288156fdda01e8dca1aa29c3d050c72b1dd95a2da94904934
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/addendum/receipt.json
+    sha256: 25c10a17b52f3d316cb35f1549fd4bf85450ce6d83f76e8dfde6725116382baa
+    role: target
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/checker-filing/body.md
+    sha256: cb6443f68fd3d794f77ab24a7e367a1db8654356a97adbab105d606790850711
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/checker-filing/receipt.json
+    sha256: b14bd6455fc130adcbb1aef3460f3a4ca949f1ba514ca906df76796e0e523a9f
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/checker-filing/root-readback.json
+    sha256: 1e7bfc5d93be6312dd9e309d75b6107d17dc7c9b6c381844ac91e715f696fb5d
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/chronology/0-body.md
+    sha256: d2700d8bd54b67f66016631735f5968cac5bbab584ce55f8b762bcf5bcec9196
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/chronology/0-readback.json
+    sha256: fcdd8431a3a690c903245a17e6888668a9df282645e4012ad64376d8c7e1eaff
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/chronology/0-receipt.json
+    sha256: 875f6d312db7243a40a84757db221cf9c9d98f887ecc53ac44c9f146d5f8465f
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/chronology/1-body.md
+    sha256: fdd437c516acf5b547da7913c234996a79db4b7a0f35c06f24bbdcd1258ed480
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/chronology/1-readback.json
+    sha256: 1443505546362262744a38542c6e3907bba29c145f5e87633269826cbed391bd
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/chronology/1-receipt.json
+    sha256: 994aa98389e9bf7abcaf89974b5913db8c068ab639af54670d3c45b68f16882d
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/chronology/author-1259-LOCATOR-ADDENDUM.json
+    sha256: 7d32e7e25b628c948211dee91cd30c3b8faa2471f49735aed2bfb4d97f409d3d
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/publisher1257-author.json
+    sha256: 5fa828faa0f77ba405805461ad50bda899592852429c9e336ae8a4ee8ee77df9
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/publisher1257-independent.json
+    sha256: 5ca6398a0914ebbf0b49f91a8f7f22e0aa057d8c16207b53c2d5e1e4409a1450
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/runner-final-test-pin-bridge.json
+    sha256: cd0ad867fadea3341ca17b784d3aa2b79e8f4a7c3fc17bd615d3542cbc168ecf
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/runner-independent-v1.json
+    sha256: 95d9112fee229c51371de715edbe13532b25c69947f712c8c666a9d9ca16cd3e
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/runner-independent-v2.json
+    sha256: f5c93552ebc34d2d681af0e867ebea761dbae71680ae5338e95bcebb1fa604fb
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/source-bracket-failed.json
+    sha256: 14a59036c0b34a7e873ac5d5ede21a3d5a7f04dc4435569d11a5c2d2a3963f88
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/source-bracket-finding.json
+    sha256: ff24de5e0ce8480e52177837ce6068fa4e08b508e4afd5ddabee38fa37548c15
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/source-captured-authority-independent.json
+    sha256: 3ed4f07deb1407a0752e1fdcfa5cd6ae0d5da921aa36cddd54232f62b0811b0b
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/source-captured-authority.json
+    sha256: 7f8b9f8c7183137b5fb090b2ea9a98555327a00e9922e62fb5e9f7e7791a798d
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/suppression1259-author-final.json
+    sha256: dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/suppression1259-independent-final.json
+    sha256: 1f40046e745ab9181aecb04357bb36704a6fa4e6e9142e5f542f28ad4d5be786
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/manifests/suppression1259-negative.json
+    sha256: b3fabb3721b42aab734cf03d6e1ce4daea3c5301b5a868c93803e5748a64fadf
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/predecessor/OMISSIONS.json
+    sha256: 36bddd66c8532eadc882448c0f8dccab43a279f806500a894a95cc7678eb3a16
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/predecessor/PACKETS.json
+    sha256: 2e2363a13dab3a8d19bd3f7c2ce42054a775cb7b2207a5f11735c7af422a33ee
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/predecessor/SELECTION.json
+    sha256: 40b900ec95d849543f955e81d2ff7c043dfd09d469c1a9b7cc232aee8b55e85e
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/FAILURES-AND-INCOMPLETE.json
+    sha256: 67405b33d879da3e68d66d17c09dcef15d53523f6c4c899dfef8be398a2a711e
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/FINAL-RECHECK.json
+    sha256: 1f55dbb6e200c30c1bfb3addb8c0e4a7bd202490e93321ebd9017ff5abba2d1f
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/HANDOFF.json
+    sha256: 006f4c4908660107ce7a8819a529bb2ec5da917ec0fb05aa23785ccc802f4ecd
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/MANIFEST.json
+    sha256: 6211bd44e3030171af9f463906f6a685a00f5df8f52eaca81344909e8005b8dd
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/OMISSIONS.json
+    sha256: 890faddabcf8aad40a299947fc81692ddae64f59b5028aaca06dcf8a81b9ff93
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/PACKETS.json
+    sha256: 188123e4dd1ec46248066046323e694bdf6c62d66e57150ed97a1f1e9aac3ac4
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/README.md
+    sha256: 63bc636b4c38e4200b992f8d5a1d5f87acf19f7a317bc6e1d46db1fb259c7e2a
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/REQUIRED-FINAL-INPUTS.json
+    sha256: aeceb9308245826206ae92447829da2878b1410e3db4be1e642b1e2e5765f856
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SEAL.json
+    sha256: 0089ddc712c21d97c03ada3654c8b2850a94f9cfa7fd237421ec1cf71f534322
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SELECTION.json
+    sha256: f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34
+    role: target
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SUMMARY.json
+    sha256: f339e9e0fd4d168cb9d7e6fea758854f06580498d59ee5889d8dfe671e82b2f7
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build-v1.receipt.json
+    sha256: 1c2aaaa1190d7d9f24a4d70deb77a77fe7b7854b519327e5c63edd574ac6d19a
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build-v1.stderr
+    sha256: da2a9be2d5a7136133d7c3a9fe398fa62cdab6feb7cf43082ce2698a7eee5829
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build-v1.stdout
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build-v2.receipt.json
+    sha256: bf1bd8662aab756afce36a9b7cdd77824bc06bdee9d5da350a8c5631c4f772d1
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build-v2.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build-v2.stdout
+    sha256: f339e9e0fd4d168cb9d7e6fea758854f06580498d59ee5889d8dfe671e82b2f7
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build_successor-original-v1.py
+    sha256: f1d53c6f5eb0e4217d330cb16aebbc65e00cf4007e7d7824ad1d089c024d4cd2
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/build_successor.py
+    sha256: 633ccb6373b5b2b77cc130efc2974617ab912b74ad22a5d879e5b6a15d1b4879
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/finalize_metadata.py
+    sha256: 36a039d1aad58e40e3d14e9dcb23337678bc8e84221a3695544fb6a4e26843f7
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/verification.json
+    sha256: 88434eb7c855ea3cbd8cc5210ac5cc733b57bb16854f2bca5d81ec682ee42571
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/v4/receipt.json
+    sha256: 0073d442b55bd221f6aa840f5a75bffe127c695540ea03f760a8e4cacb1e2e3c
+    role: target
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/native-controls-reuse-v1.json
+    sha256: 287d5556744b5a3f6730344596781921668d1a27f5f7571e65601541c45d85ed
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/numbered-pair-fix-review-v1.json
+    sha256: f4cd83e6ea7e84f79912aeff784737f50e960e71b639bd2893f2e2af5f64a808
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/peer-readback-v1.json
+    sha256: 9279f2cfdcc3a50d3fc0a24d158d79c5bde0c6e30118e823d1435f9981eedfac
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/prepare.py
+    sha256: f6a83f5821139526bfb9625992c65e85f417089865c731c9d8243223fcd18c77
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/review_numbered_pair_fix.py
+    sha256: f1c6edb0860bfed1dd21ae503e8595bdeefa1fc80fef960c739a63632f42b435
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/native/structure-readback-v1.json
+    sha256: 805a2f1399912dcf85a223256ede3798ad193f0b768ebefdc23d8e75cfddcc89
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/skeptic/MANIFEST-v1.json
+    sha256: e985c571955977444df29edac29c999c4ede6d82f6d850223ab25c9e02d3583b
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/skeptic/manifest-origin-post-filing-review-v1.json
+    sha256: 962227ce27a9e73f3239b6611fbbbe305e4162ca682571174add9d4cf916f883
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/skeptic/review-v1.json
+    sha256: a1820e0f9d68d42490cc8c120ba8dc0f39032ea7ba2350d145144da10b71a212
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/technical/MANIFEST.json
+    sha256: f960532bcf0446884750ee17fdc97e14b329d92563b3dfd86d47bfd2ec2ecde3
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/technical/full-verification-v2.json
+    sha256: 02f3243f6464f3bf8b72a2ec7506bc15f36520cf0a0813da25fb2d5def7c4843
+    role: context
+  - path: .temp/pr1205-final-archive-subset-independent-v3/technical/technical-review-v1.json
+    sha256: 71af09e1ed2e0385cfabe9d2c4dd61d26452870ac6d097ba01abc9265b7ab1ee
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: conf/record_review.yaml
+    sha256: 07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+targets:
+- target_id: PR1205-PROVISIONAL-FINAL-SELECTION
+  path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SELECTION.json
+  kind: source
+  record_class: ArchiveSelectionProposal
+  label: Provisional v3 evidence union and delta; not copied/final-head approval
+  ownership_note: Original archive selector /root/next23_context; earlier self-authored
+    evidence is not independent code approval.
+- target_id: PR1205-ACTUAL-V4-COPY
+  path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/v4/receipt.json
+  kind: source
+  record_class: ArchiveCopyReceipt
+  label: Retained actual v4 archive-copy receipt
+  ownership_note: Historical receipt/current destination-byte proof from actual B/root
+    checks must remain separate; not a newly executed copy.
+- target_id: PR1205-ACTUAL-ADDENDUM-COPY
+  path: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/addendum/receipt.json
+  kind: source
+  record_class: ArchiveCopyReceipt
+  label: Retained actual addendum archive-copy receipt
+  ownership_note: Historical receipt/current destination-byte proof from actual B/root
+    checks must remain separate; not a newly executed copy.
+evidence:
+- evidence_id: E-SELECTION
+  kind: record_content
+  support: supports
+  summary: Exact complete v3 selection and original source-to-destination mappings.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/SELECTION.json
+  snapshot_sha256: f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-POLICY
+  kind: record_content
+  support: supports
+  summary: Current effective scope, historical status qualifications and explicit
+    future requirements.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/README.md
+  snapshot_sha256: 63bc636b4c38e4200b992f8d5a1d5f87acf19f7a317bc6e1d46db1fb259c7e2a
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-REQUIRED
+  kind: record_content
+  support: supports
+  summary: Actual private R1/R2 handoff hashes and still-unselected R3-R7 requirements.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/REQUIRED-FINAL-INPUTS.json
+  snapshot_sha256: aeceb9308245826206ae92447829da2878b1410e3db4be1e642b1e2e5765f856
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-HISTORY
+  kind: record_content
+  support: supports
+  summary: Preserved original failures, separate successes, runner preparation and
+    incomplete historical W08 authority.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/FAILURES-AND-INCOMPLETE.json
+  snapshot_sha256: 67405b33d879da3e68d66d17c09dcef15d53523f6c4c899dfef8be398a2a711e
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-OMISSIONS
+  kind: record_content
+  support: supports
+  summary: Concise portable selection versus omitted full runtime, corpus and execution
+    contexts.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/proposal/OMISSIONS.json
+  snapshot_sha256: 890faddabcf8aad40a299947fc81692ddae64f59b5028aaca06dcf8a81b9ff93
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-STRUCTURE
+  kind: validation
+  support: supports
+  summary: C exact prefix, delta, reference and 596-member manifest checks.
+  search_scope: Literal proposed paths checked directly, including ignored and hidden
+    names; no global absence claim about later work.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/structure-readback-v1.json
+  snapshot_sha256: 805a2f1399912dcf85a223256ede3798ad193f0b768ebefdc23d8e75cfddcc89
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-V4
+  kind: record_content
+  support: supports
+  summary: Original receipt for 789 actual v4 copy files, with historical scope retained.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/v4/receipt.json
+  snapshot_sha256: 0073d442b55bd221f6aa840f5a75bffe127c695540ea03f760a8e4cacb1e2e3c
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-ADDENDUM
+  kind: record_content
+  support: supports
+  summary: Original receipt for 288 actual addendum files, with historical scope retained.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/addendum/receipt.json
+  snapshot_sha256: 25c10a17b52f3d316cb35f1549fd4bf85450ce6d83f76e8dfde6725116382baa
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-B
+  kind: prior_review
+  support: supports
+  summary: B complete bounded byte, Git, deduplication, copy and control assessment
+    after the filed private-helper correction.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/technical/technical-review-v1.json
+  snapshot_sha256: 71af09e1ed2e0385cfabe9d2c4dd61d26452870ac6d097ba01abc9265b7ab1ee
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-B-LEDGER
+  kind: validation
+  support: supports
+  summary: Actual full reference, destination, membership and current Git/index accounting,
+    bound directly without duplicate copying.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/technical/full-verification-v2.json
+  snapshot_sha256: 02f3243f6464f3bf8b72a2ec7506bc15f36520cf0a0813da25fb2d5def7c4843
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-D
+  kind: prior_review
+  support: supports
+  summary: D complete selected-content/history/attribution assessment with explicit
+    prior participation and correction chronology.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/skeptic/review-v1.json
+  snapshot_sha256: a1820e0f9d68d42490cc8c120ba8dc0f39032ea7ba2350d145144da10b71a212
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-ORIGIN
+  kind: prior_review
+  support: supports
+  summary: D distinct post-filing check of B manifest-origin correction, real collision,
+    direct positive/refusal calls and nine recorded controls.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/skeptic/manifest-origin-post-filing-review-v1.json
+  snapshot_sha256: 962227ce27a9e73f3239b6611fbbbe305e4162ca682571174add9d4cf916f883
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-NUMBERED
+  kind: validation
+  support: supports
+  summary: C distinct post-filing exact helper diff and six actual positive pairs
+    plus six actual mismatched-pair refusals.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/numbered-pair-fix-review-v1.json
+  snapshot_sha256: f4cd83e6ea7e84f79912aeff784737f50e960e71b639bd2893f2e2af5f64a808
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-FILING
+  kind: prior_review
+  support: supports
+  summary: Actual saved filing receipt for the two required checker corrections, preserving
+    the pre-filing D execution deviation.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/inputs/checker-filing/receipt.json
+  snapshot_sha256: b14bd6455fc130adcbb1aef3460f3a4ca949f1ba514ca906df76796e0e523a9f
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-PEERS
+  kind: validation
+  support: supports
+  summary: C readback of 86 sealed files, 15 diagnostic links, 426 declared input
+    rows and actual 43 XML cases; tests not rerun.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/peer-readback-v1.json
+  snapshot_sha256: 9279f2cfdcc3a50d3fc0a24d158d79c5bde0c6e30118e823d1435f9981eedfac
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-CONTROLS
+  kind: validation
+  support: supports
+  summary: Exact provenance for six reused v2 native controls and unchanged eight-file
+    native contract; no mutation-test rerun.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/native-controls-reuse-v1.json
+  snapshot_sha256: 287d5556744b5a3f6730344596781921668d1a27f5f7571e65601541c45d85ed
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-CHRONOLOGY
+  kind: validation
+  support: supports
+  summary: Actual saved filing order, correction body, explicit source-author locator
+    references and original failed outer bases.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/native/chronology-readback-v1.json
+  snapshot_sha256: 08fb9d91f1c3355893ea8a101734c6225e21b865838179d7e1d9505134f036d5
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-ROOT-CONTEXT
+  kind: validation
+  support: supports
+  summary: Root immutable prior-packet and locator context; root-authored old map
+    is not independently reapproved.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/context-and-chronology.json
+  snapshot_sha256: 3bb09812be83e2cd89674bec86f51a08290e14fa329e5078ff0e84fc08b344b2
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-ACCEPTANCE
+  kind: prior_review
+  support: supports
+  summary: Root compilation of actual separate archive assessments and exact scope;
+    final native pair and external work remain distinct.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/ACCEPTANCE.json
+  snapshot_sha256: 7078ed0f8e69d06e6d5ef2845e985d183f2af4af40306d100f76142bc8d722b4
+  accessed_at: '2026-11-08T14:13:44Z'
+- evidence_id: E-FINDINGS
+  kind: prior_review
+  support: context_only
+  summary: Private checker dispositions, preserved ordering violation and two unrepaired
+    unused diagnostics; no source/archive defect inferred.
+  reference: .temp/pr1205-final-archive-subset-independent-v3/FINDINGS.json
+  snapshot_sha256: 0867fc17a0a3c24ea88f66452f82626784342df1efdca38bba7c1eb01e8e72b0
+  accessed_at: '2026-11-08T14:13:44Z'
+```

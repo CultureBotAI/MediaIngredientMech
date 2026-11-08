@@ -1,0 +1,76 @@
+{
+  "id": "W02-ARCHIVE-RELOCATED-MANIFEST-001",
+  "at": "2026-11-08T13:58:08.714894+00:00",
+  "status": "CONFIRMED_PRIVATE_REVIEWER_HELPER_FALSE_POSITIVE_AWAITING_COORDINATOR_ISSUE_RECEIPT",
+  "affected_helper": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/technical/verify_v3.py",
+  "selection_sha256": "f73e3ee793f85fbf4afdf320070a4903f1c45a45ee155b2da7addc2905925a34",
+  "problem": "The generic nested-manifest join uses copied_manifest.parent/member.path, ignoring the selected entry\u2019s explicit byte-verified upstream_origin_path. A renamed retained manifest is therefore incorrectly joined to a different outer HANDOFF.json beside its copied location.",
+  "reproduction": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 ../../all-unmatched-worker-02/venv/bin/python -B verify_v3.py",
+    "exit_code": 1,
+    "message": "ValueError: selected nested manifest hash mismatch",
+    "copied_manifest": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-suppressions1259-independent-v1/portable-final/author/portable-final-MANIFEST.json",
+    "copied_manifest_sha256": "dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093",
+    "declared_member": {
+      "path": "HANDOFF.json",
+      "sha256": "958d29fb02c5f6c8c9571711b1cca487467d9e9344040404b21f28c69232abc8",
+      "size": 2888
+    },
+    "false_join": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-suppressions1259-independent-v1/portable-final/author/HANDOFF.json",
+    "false_join_sha256": "0b9ed5258a3a9c6e4bffe7a2759ebd2e3cccd170e01bab52654740d45f0c28da",
+    "explicit_true_manifest_origin": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/MANIFEST.json",
+    "correct_selected_member": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/HANDOFF.json",
+    "correct_member_sha256": "958d29fb02c5f6c8c9571711b1cca487467d9e9344040404b21f28c69232abc8"
+  },
+  "impact": "Review helper stops with a false mismatch. No original, proposal, copied archive or test result corruption observed. Both distinct handoffs and the exact original portable manifest are selected and retain their proper identities.",
+  "proposed_fix": "After issue receipt, add immutable helper successor resolving retained manifest members against the explicit upstream origin only after verifying source/copy hash equality; otherwise keep actual original manifest-relative context. Record the chosen base and provenance. Add positive collision and negative wrong-origin/hash controls. Preserve current failure and helper unchanged.",
+  "fix_performed": false,
+  "input_bindings": [
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-suppressions1259-independent-v1/portable-final/author/portable-final-MANIFEST.json",
+      "sha256": "dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093",
+      "bytes": 35277,
+      "inode": 158114497,
+      "link_count": 1
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/MANIFEST.json",
+      "sha256": "dbbb96b81b3d6f1d48a6d7811888f002bb521429d1d398142f53754db6c51093",
+      "bytes": 35277,
+      "inode": 158105298,
+      "link_count": 1
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/campaign-suppressions1259-v1/portable-final/HANDOFF.json",
+      "sha256": "958d29fb02c5f6c8c9571711b1cca487467d9e9344040404b21f28c69232abc8",
+      "bytes": 2888,
+      "inode": 158105297,
+      "link_count": 1
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/campaign-suppressions1259-independent-v1/portable-final/author/HANDOFF.json",
+      "sha256": "0b9ed5258a3a9c6e4bffe7a2759ebd2e3cccd170e01bab52654740d45f0c28da",
+      "bytes": 3057,
+      "inode": 158114480,
+      "link_count": 1
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/technical/verify_v3.py",
+      "sha256": "c2d2678a08edf80f11fc472ae690d3cc177aa8445f78a5308b744fa7fa9a8860",
+      "bytes": 17344,
+      "inode": 158250688,
+      "link_count": 1
+    },
+    {
+      "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w02/worktree/.temp/pr1205-final-archive-subset-independent-v3/technical/full-verification-v1.stderr.txt",
+      "sha256": "5d54188f591261f25c091ac97b52617f1d7c5264bb487ffce7abc2255a932f0f",
+      "bytes": 1097,
+      "inode": 158250691,
+      "link_count": 1
+    }
+  ],
+  "observation_receipt": {
+    "path": "nested-mismatch-observation-v1.json",
+    "sha256": "5b9b5ec1643db1bdf7b8ce1446497ffab970c0b777b04e5010f1c6302f30f6db"
+  }
+}
