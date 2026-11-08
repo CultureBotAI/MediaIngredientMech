@@ -1,0 +1,51 @@
+identifier: kgmicrobe.ingredient:dsmz_29_40_sodium_carbonate_1m_stock
+preferred_term: DSMZ 29/40 sodium carbonate 1 M stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:dsmz_29_40_sodium_carbonate_1m_stock
+  ontology_label: DSMZ 29/40 sodium carbonate 1 M stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Na2CO3
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: M
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf
+    source_record: DSMZ 29/40 sodium carbonate 1 M stock
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: DSMZ29 uses filter-sterilized1M Na2CO3 to adjust the receiving medium to
+    pH6.8–7.1; DSMZ40 inherits29 with1%NaCl. Water solvent follows the aqueous stock
+    context; no dry hydrate, water grade, preparation volume or dissolved-gas amount
+    is specified. This pH target belongs to the receiving medium, not to the stock.
+notes: 'DSMZ29 uses filter-sterilized1M Na2CO3 to adjust the receiving medium to pH6.8–7.1;
+  DSMZ40 inherits29 with1%NaCl. Water solvent follows the aqueous stock context; no
+  dry hydrate, water grade, preparation volume or dissolved-gas amount is specified.
+  This pH target belongs to the receiving medium, not to the stock. Raw source label
+  retained for this occurrence only: ''1M Na2CO3''. Generic wording is not a global
+  resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true

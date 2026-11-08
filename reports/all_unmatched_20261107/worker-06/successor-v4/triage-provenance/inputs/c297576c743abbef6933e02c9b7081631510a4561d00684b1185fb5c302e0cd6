@@ -1,0 +1,50 @@
+identifier: kgmicrobe.ingredient:togo_2665_koh_solution_unspecified_strength
+preferred_term: TOGO M2665 potassium hydroxide solution, strength unspecified
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:togo_2665_koh_solution_unspecified_strength
+  ontology_label: TOGO M2665 potassium hydroxide solution, strength unspecified
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2665
+    notes: Source-qualified preparation/material identity; no chemical, taxon or generic
+      product exact mapping is asserted.
+notes: 'Live TOGO2665 explicitly preserves KOH solusion, identifies it as potassium
+  hydroxide solution and types it as Solution. ATCC1775 specifies KOH for NTA dissolution
+  atpH6.5 and laterpH7.0 adjustment but does not itself specify the supplied KOH form
+  or concentration. The bounded source stock records unquantified KOH and water inferred
+  from aqueous solution context; no molarity, volume, dry hydrate or final neutralization
+  species is asserted. Raw labels retained as occurrence provenance only: [''KOH solusion''].'
+curation_history:
+- timestamp: '2026-11-08T05:39:31.366018+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CREATED
+  changes: Propose source-qualified identity with literal primary preparation/material
+    limits. No maintained data or source-release state changed.
+  new_status: MAPPED
+  llm_assisted: true
+solution_type: OTHER
+components:
+- component_name: KOH
+  reference_scope: UNMAPPED
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2665
+    source_record: TOGO M2665 potassium hydroxide solution, strength unspecified
+    notes: Literal preparation inputs; unspecified child forms and amounts stay unmapped.
+      These are not receiving-medium doses or post-reaction speciation.
+    supports: SUPPORT
+  notes: Live TOGO2665 explicitly preserves KOH solusion, identifies it as potassium
+    hydroxide solution and types it as Solution. ATCC1775 specifies KOH for NTA dissolution
+    atpH6.5 and laterpH7.0 adjustment but does not itself specify the supplied KOH
+    form or concentration. The bounded source stock records unquantified KOH and water
+    inferred from aqueous solution context; no molarity, volume, dry hydrate or final
+    neutralization species is asserted.

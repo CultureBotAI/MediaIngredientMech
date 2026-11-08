@@ -1,0 +1,7 @@
+The exact apple payload and both revised source outcomes are scientifically supported within their report-only scope. No new defect was identified.
+
+Apple pectin is explicitly distinguished from citrus-peel pectin in the complete TOGO M2313 source. Official NCIT C84042 supplies the apple-specific material identity. The proposal preserves the raw label, uses truthful LLM-assisted evidence, and creates a genuine null-before origin; it copies no generic Pectin history, CAS, formula, species assertion, component list or role. SINGLE_INGREDIENT is explicitly granularity, not sample purity. The one-of0.2% receiving-medium amount has unspecified basis. The frozen CM normalized w/v field remains historical input and is not promoted into the new material claim.
+
+J240 names BD-Difco and1g. The two DSMZ recipes specify6.7g without that brand qualifier. All three retain the unresolved formulation/catalogue and amino-acid/ammonium-sulfate scope; no common product is guessed.
+
+The machine receipt traces every payload, case and proposal leaf, records exact hashes, verifies old evidence objects/times and byte-identical new ontology copies, and binds the current duplicate search. It covers one full payload and two full source outcomes; the seven Water removals are outside this reviewer scope. Final review metadata must be rebound without changing the scientific claim projection. Source-case intake, role, application and release acceptance remain separate.

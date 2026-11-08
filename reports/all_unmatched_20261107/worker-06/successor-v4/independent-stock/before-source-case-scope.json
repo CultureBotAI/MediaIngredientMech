@@ -1,0 +1,842 @@
+{
+  "native_auditor_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py",
+  "native_auditor_sha256": "3bde4d7fa3aca41c6962a7c61b15f9709b98acdbbe936cdb498b3bca68600fad",
+  "frozen_shard_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-06.json",
+  "frozen_shard_sha256": "6e5d487b0ffb05a867766fe51bc90074c7aa2e48459335cf983f021720ce2808",
+  "cases": [
+    {
+      "full_case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:037e958a66f64078d543213f3a007cfc1d873519d9274fb48f506ac94bb3bc31",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 2,
+        "occurrences": [
+          {
+            "component_path": "ingredients/2",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2258_Pfennig_s_Medium_II_With_Salt.yaml",
+            "native_name": "1M Na2CO3",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:6d66121c6c78b0fbd2c8394f14dafa77dbca2aec50401777aaf0364c92f917a7",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "1M Na2CO3"
+            },
+            "raw_preferred_term": "1M Na2CO3",
+            "recipe_id": "CultureMech:008844",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:008844"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2258"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2258_Pfennig_s_Medium_II_With_Salt.yaml",
+            "source_file_sha256": "0d8c7ed3bc4764a132d1dfbdccc58c20b8a3b7a1d066d82ce925812bd9e2e101",
+            "source_identifiers": []
+          },
+          {
+            "component_path": "ingredients/0",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2595_Pfennig_s_Medium_II.yaml",
+            "native_name": "1M Na2CO3",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:08558eb8cc674db76653dcd0ed52d971f7df09f36297ca38cfa730fa3efb57a6",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "1M Na2CO3"
+            },
+            "raw_preferred_term": "1M Na2CO3",
+            "recipe_id": "CultureMech:009162",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:009162"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2595"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2595_Pfennig_s_Medium_II.yaml",
+            "source_file_sha256": "22085d028396087ab491478963f876170670457067bdeeaa8a9fa82110715fb2",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 2105,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:008844; CultureMech:009162",
+          "ingredient_name": "1M Na2CO3",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "2",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "1M Na2CO3",
+        "source": "culturemech",
+        "source_case_id": "1M Na2CO3",
+        "source_identity_claimed": false,
+        "source_label": "1M Na2CO3"
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:037e958a66f64078d543213f3a007cfc1d873519d9274fb48f506ac94bb3bc31",
+        "case_input_sha256": "f42178724238680fb0355df8abd74926b2a9cf51f9bf1ea1412dcfd965d3458a",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "1M Na2CO3",
+          "source_label": "1M Na2CO3",
+          "raw_source_label": "1M Na2CO3"
+        },
+        "occurrence_ids": [
+          "CM_OCC:6d66121c6c78b0fbd2c8394f14dafa77dbca2aec50401777aaf0364c92f917a7",
+          "CM_OCC:08558eb8cc674db76653dcd0ed52d971f7df09f36297ca38cfa730fa3efb57a6"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "DSMZ29 prepares a sterile 1M sodium-carbonate stock for pH adjustment; DSMZ40 explicitly derives from29 with added NaCl. Molar concentration is part of the supplied solution identity. Existing Sodium_Carbonate_Solution is typed STOCK_SOLUTION but carries the bare-solute CHEBI29377 identity and assorted solid/buffer aliases, so extending it would propagate a known form conflation.",
+        "applicability": "Both frozen occurrences describe the same 1M stock instruction in DSMZ29/40, not weighed carbonate solid or the 4% stock in case24. Exact frozen scopes: CultureMech:008844:ingredients/2; CultureMech:009162:ingredients/0",
+        "evidence_ids": [
+          "A-E-OWNER-01",
+          "A-E-03-S00",
+          "A-E-03-S01",
+          "A-E-CAPTURE-035",
+          "A-E-CAPTURE-040",
+          "A-E-CAPTURE-091",
+          "A-E-CAPTURE-092",
+          "A-E-NATIVE-OWNER-DEDUP"
+        ],
+        "proposal_ids": [
+          "A-P-DSMZ29-CARBONATE-1M"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "Exact starting carbonate hydrate and solvent/preparation details are unspecified; the bounded1M stock proposal retains them as unknown. Existing generic solute-grounded Sodium_Carbonate_Solution remains a separate review defect.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+            "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+          }
+        ],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "IR-A"
+          ]
+        }
+      },
+      "native_case_digest": "f42178724238680fb0355df8abd74926b2a9cf51f9bf1ea1412dcfd965d3458a",
+      "occurrence_ids": [
+        "CM_OCC:6d66121c6c78b0fbd2c8394f14dafa77dbca2aec50401777aaf0364c92f917a7",
+        "CM_OCC:08558eb8cc674db76653dcd0ed52d971f7df09f36297ca38cfa730fa3efb57a6"
+      ]
+    },
+    {
+      "full_case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:1f2b92647e0cf40d84143aa15ca22db0cda14f5f8695a06efae27fe70424a05a",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 1,
+        "occurrences": [
+          {
+            "component_path": "ingredients/13",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/etsa_medium.yaml",
+            "native_name": "4% Na2CO3",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:f32814cc4e01d32041f6dcfd7d439809bf0a3992c00bd34d478ec853eac6981f",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "10"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "4% Na2CO3"
+            },
+            "raw_preferred_term": "4% Na2CO3",
+            "recipe_id": "CultureMech:009136",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:009136"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2568"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/etsa_medium.yaml",
+            "source_file_sha256": "e0dd7228c9f1befd256aa206da12d6e244b54719e7612a922e9af7ba767ecefe",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 3407,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:009136",
+          "ingredient_name": "4% Na2CO3",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "1",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "4% Na2CO3",
+        "source": "culturemech",
+        "source_case_id": "4% Na2CO3",
+        "source_identity_claimed": false,
+        "source_label": "4% Na2CO3"
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:1f2b92647e0cf40d84143aa15ca22db0cda14f5f8695a06efae27fe70424a05a",
+        "case_input_sha256": "36b4ab28d56e9fa92a342449fbe0834e5d780cd5d346ed14a89bcde2e2ab54d6",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "4% Na2CO3",
+          "source_label": "4% Na2CO3",
+          "raw_source_label": "4% Na2CO3"
+        },
+        "occurrence_ids": [
+          "CM_OCC:f32814cc4e01d32041f6dcfd7d439809bf0a3992c00bd34d478ec853eac6981f"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "ATCC1257 explicitly calls for freshly prepared, filter-sterilized4%Na2CO3 and adds10mL to the base medium. The percent basis is not explicitly spelled out and must not be silently equated to1M or to solid sodium carbonate.",
+        "applicability": "The one ETSA occurrence is a distinct4%stock. Existing Sodium_Carbonate_Solution carries a solute identifier and is not safe for concentration-qualified alias extension. Exact frozen scopes: CultureMech:009136:ingredients/13",
+        "evidence_ids": [
+          "A-E-OWNER-01",
+          "A-E-24-S00",
+          "A-E-CAPTURE-039",
+          "A-E-CAPTURE-079",
+          "A-E-NATIVE-OWNER-DEDUP"
+        ],
+        "proposal_ids": [
+          "A-P-ATCC1257-CARBONATE-4PCT"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "Percent basis and starting hydrate remain unreported; no derived concentration is authorized by this bounded proposal.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+            "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+          }
+        ],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "IR-A"
+          ]
+        }
+      },
+      "native_case_digest": "36b4ab28d56e9fa92a342449fbe0834e5d780cd5d346ed14a89bcde2e2ab54d6",
+      "occurrence_ids": [
+        "CM_OCC:f32814cc4e01d32041f6dcfd7d439809bf0a3992c00bd34d478ec853eac6981f"
+      ]
+    },
+    {
+      "full_case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 1,
+        "occurrences": [
+          {
+            "component_path": "ingredients/12",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/JCM_J1344_SEA_WATER_MEDIUM_WITH_ACETATE.yaml",
+            "native_name": "1% Yeast extract solution",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:5d86b87cffe1c4d677773bae272d0af5ebc48f3e0940dedf7f7bd022e907ed82",
+            "raw_component": {
+              "concentration": {
+                "unit": "ML_PER_L",
+                "value": "1.0"
+              },
+              "preferred_term": "1% Yeast extract solution"
+            },
+            "raw_preferred_term": "1% Yeast extract solution",
+            "recipe_id": "CultureMech:015834",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:015834"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "jcm.grmd:1344"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/JCM_J1344_SEA_WATER_MEDIUM_WITH_ACETATE.yaml",
+            "source_file_sha256": "dbca2226c4db49bf1d9bd882196a33f41d69099c12fee95162e98c8c8a90b0e8",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 2665,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:015834",
+          "ingredient_name": "1% Yeast extract solution",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "1",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "1% Yeast extract solution",
+        "source": "culturemech",
+        "source_case_id": "1% Yeast extract solution",
+        "source_identity_claimed": false,
+        "source_label": "1% Yeast extract solution"
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658",
+        "case_input_sha256": "c58ecd4e84187fab073feabecbe6eaaa45963b4db7b6556c0040cc1cd2c8af2b",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "1% Yeast extract solution",
+          "source_label": "1% Yeast extract solution",
+          "raw_source_label": "1% Yeast extract solution"
+        },
+        "occurrence_ids": [
+          "CM_OCC:5d86b87cffe1c4d677773bae272d0af5ebc48f3e0940dedf7f7bd022e907ed82"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "JCM1344 separately prepares1%yeast-extract solution, sterilizes it and adds1mL. This is a concentration-qualified aqueous stock, not dry yeast extract. The source does not specify the extract product or explicitly define the percent basis.",
+        "applicability": "The one JCM1344 occurrence is a prepared stock addition, distinct from the RST mineral stock in the same recipe and the25%boiled-baker-yeast extract in case1. Exact frozen scopes: CultureMech:015834:ingredients/12",
+        "evidence_ids": [
+          "A-E-OWNER-18",
+          "A-E-38-S00",
+          "A-E-CAPTURE-102",
+          "A-E-NATIVE-OWNER-DEDUP"
+        ],
+        "proposal_ids": [
+          "A-P-JCM1344-YEAST-1PCT"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "Percent basis, extract product and complete stock solvent preparation remain unspecified; the bounded proposal preserves those limitations.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Yeast_Extract.yaml",
+            "sha256": "e7cdc5aa92020487a97c08814514fa48b852ff48c78a1d1890b69afaaf372d28"
+          }
+        ],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "IR-A"
+          ]
+        }
+      },
+      "native_case_digest": "c58ecd4e84187fab073feabecbe6eaaa45963b4db7b6556c0040cc1cd2c8af2b",
+      "occurrence_ids": [
+        "CM_OCC:5d86b87cffe1c4d677773bae272d0af5ebc48f3e0940dedf7f7bd022e907ed82"
+      ]
+    },
+    {
+      "full_case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 1,
+        "occurrences": [
+          {
+            "component_path": "ingredients/27",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/archaea/archaeoglobus_medium_dsm_399.yaml",
+            "native_name": "KOH solusion",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:0aedb54c475214aee9fe439653a935255c2a9dd3cb262c1260d2a11af0e3b0fd",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Role: Mineral source; Properties: Defined component, Solution",
+              "preferred_term": "KOH solusion"
+            },
+            "raw_preferred_term": "KOH solusion",
+            "recipe_id": "CultureMech:009220",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:009220"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2665"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/archaea/archaeoglobus_medium_dsm_399.yaml",
+            "source_file_sha256": "bc3f31daaf7fb549ae44d034375d60f1de6a6c063b807273e4e7ed5dd0005112",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 2622,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:009220",
+          "ingredient_name": "KOH solusion",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "1",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "KOH solusion",
+        "source": "culturemech",
+        "source_case_id": "KOH solusion",
+        "source_identity_claimed": false,
+        "source_label": "KOH solusion"
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34",
+        "case_input_sha256": "f3537ff48bec8488115c73b81263f8cf946fb1bf53a3b12f76150220c3a710f3",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "KOH solusion",
+          "source_label": "KOH solusion",
+          "raw_source_label": "KOH solusion"
+        },
+        "occurrence_ids": [
+          "CM_OCC:0aedb54c475214aee9fe439653a935255c2a9dd3cb262c1260d2a11af0e3b0fd"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "LiveTOGOM2665 confirms the raw misspelling KOH solusion and explicitly classifies a potassium-hydroxide solution. The linked ATCC1775 describes KOH pH adjustments but omits strength and form. An unspecified-strength source-qualified stock can represent the provider claim without collapsing it into pureKOH.",
+        "applicability": "This ATCC1775/Archaeoglobus-medium occurrence is a pH-adjusting reagent instruction within trace-stock preparation. It is not a weighed KOH solid and not evidence for a fixed-strength commercial solution. Exact frozen scopes: CultureMech:009220:ingredients/27",
+        "evidence_ids": [
+          "A-E-OWNER-11",
+          "A-E-20-S00",
+          "A-E-CAPTURE-043",
+          "A-E-CAPTURE-078",
+          "A-E-COMPLETION-09",
+          "A-E-NATIVE-OWNER-DEDUP"
+        ],
+        "proposal_ids": [
+          "A-P-TOGO2665-KOH-STOCK"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "Strength, solvent grade, exact preparation and titrant amount remain unspecified; no derived quantities or equivalence to a standard KOH stock is claimed.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Koh.yaml",
+            "sha256": "ae478c37c1f269d5ac551c7773568cdbaf81a7d5af752f33e58775f8c18037c1"
+          }
+        ],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "IR-A"
+          ]
+        }
+      },
+      "native_case_digest": "f3537ff48bec8488115c73b81263f8cf946fb1bf53a3b12f76150220c3a710f3",
+      "occurrence_ids": [
+        "CM_OCC:0aedb54c475214aee9fe439653a935255c2a9dd3cb262c1260d2a11af0e3b0fd"
+      ]
+    },
+    {
+      "full_case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:67b97cde045959a5f5754cebd9e262c5fbe9699e7c1b4bb5a1015386c6caadeb",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 1,
+        "occurrences": [
+          {
+            "component_path": "ingredients/0",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2298_Thermus_Medium.yaml",
+            "native_name": "0.17 mM FeCl3 x 6 H2O",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:9d53d4c982ecd89c68906fd58815bc8e75b5ce85d8e85f6347978ebd08fe6895",
+            "raw_component": {
+              "concentration": {
+                "unit": "G_PER_L",
+                "value": "10"
+              },
+              "notes": "Role: Mineral source",
+              "preferred_term": "0.17 mM FeCl3 x 6 H2O"
+            },
+            "raw_preferred_term": "0.17 mM FeCl3 x 6 H2O",
+            "recipe_id": "CultureMech:008884",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:008884"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2298"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2298_Thermus_Medium.yaml",
+            "source_file_sha256": "e41581fcee96c1924d325e47a8f33758fe252865a9045b115386d4a36140007a",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 2949,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:008884",
+          "ingredient_name": "0.17 mM FeCl3 x 6 H2O",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "1",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "0.17 mM FeCl3 x 6 H2O",
+        "source": "culturemech",
+        "source_case_id": "0.17 mM FeCl3 x 6 H2O",
+        "source_identity_claimed": false,
+        "source_label": "0.17 mM FeCl3 x 6 H2O"
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:67b97cde045959a5f5754cebd9e262c5fbe9699e7c1b4bb5a1015386c6caadeb",
+        "case_input_sha256": "a6b1a7635c6eeb3bdbff046e22224f2f267541f2d4ba6394e20f5630258e1ac7",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "0.17 mM FeCl3 x 6 H2O",
+          "source_label": "0.17 mM FeCl3 x 6 H2O",
+          "raw_source_label": "0.17 mM FeCl3 x 6 H2O"
+        },
+        "occurrence_ids": [
+          "CM_OCC:9d53d4c982ecd89c68906fd58815bc8e75b5ce85d8e85f6347978ebd08fe6895"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "DSMZ1033 Thermus medium lists10 ml of0.17 mM FeCl3·6H2O stock. The label states a dilute stock made from a specific hydrate; neither10 G_PER_L nor pure ferric chloride hexahydrate is the identity of the supplied solution. Its concentration and hydrate can be represented without converting it into an anhydrous salt.",
+        "applicability": "The single TOGO2298 occurrence uses the DSMZ1033 recipe. The proposed stock preserves the0.17 mM formulation and leaves the10 ml usage in occurrence provenance.",
+        "evidence_ids": [
+          "B-59-frozen-0",
+          "B-http-655217ec6658eef1"
+        ],
+        "proposal_ids": [
+          "B-P-DSMZ1033-ferric-stock"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": null,
+        "owner_records": [],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "IR-B"
+          ]
+        },
+        "shard_index": 59,
+        "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed."
+      },
+      "native_case_digest": "a6b1a7635c6eeb3bdbff046e22224f2f267541f2d4ba6394e20f5630258e1ac7",
+      "occurrence_ids": [
+        "CM_OCC:9d53d4c982ecd89c68906fd58815bc8e75b5ce85d8e85f6347978ebd08fe6895"
+      ]
+    },
+    {
+      "full_case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:59124a174f61aef7996a991b5ebcd6f8915ffee8721654101f87cea90f834be6",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 2,
+        "occurrences": [
+          {
+            "component_path": "ingredients/10",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2736_Acetobacterium_Medium.yaml",
+            "native_name": "Na2CO3 (5% w/v)",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:12ed215c80c06ded23a07609f7b6bc6d826f3e8fdb3af6426e1502939e295346",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "Na2CO3 (5% w/v)"
+            },
+            "raw_preferred_term": "Na2CO3 (5% w/v)",
+            "recipe_id": "CultureMech:009287",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:009287"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2736"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2736_Acetobacterium_Medium.yaml",
+            "source_file_sha256": "0684ef2ddfa755b6c3ee7767824cc28adff5a5f6e33380e6491d6147aa64a993",
+            "source_identifiers": []
+          },
+          {
+            "component_path": "ingredients/5",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/wilkins_chalgren_anaerobe_broth_n2_co2_for_dsm_15567.yaml",
+            "native_name": "Na2CO3 (5% w/v)",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:4f677bb7b7e4d5c56458081e5abcfb238458b02f10c30f784ceea0fbd0c3806b",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "Na2CO3 (5% w/v)"
+            },
+            "raw_preferred_term": "Na2CO3 (5% w/v)",
+            "recipe_id": "CultureMech:009286",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:009286"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2735"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/wilkins_chalgren_anaerobe_broth_n2_co2_for_dsm_15567.yaml",
+            "source_file_sha256": "1b48d77db267ddb488d2a397a2ac941ab29d61a80a83b78686fcf158bb74ce17",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 2128,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:009287; CultureMech:009286",
+          "ingredient_name": "Na2CO3 (5% w/v)",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "2",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "Na2CO3 (5% w/v)",
+        "source": "culturemech",
+        "source_case_id": "Na2CO3 (5% w/v)",
+        "source_identity_claimed": false,
+        "source_label": "Na2CO3 (5% w/v)"
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:59124a174f61aef7996a991b5ebcd6f8915ffee8721654101f87cea90f834be6",
+        "case_input_sha256": "fe86097e51f888985afb7b465983bd573c7d588ddeef56ca84ad4deab0beb2a7",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "Na2CO3 (5% w/v)",
+          "source_label": "Na2CO3 (5% w/v)",
+          "raw_source_label": "Na2CO3 (5% w/v)"
+        },
+        "occurrence_ids": [
+          "CM_OCC:12ed215c80c06ded23a07609f7b6bc6d826f3e8fdb3af6426e1502939e295346",
+          "CM_OCC:4f677bb7b7e4d5c56458081e5abcfb238458b02f10c30f784ceea0fbd0c3806b"
+        ],
+        "disposition": "new_distinct_ingredient_proposal",
+        "reasoning": "DSMZ135 and339a use sodium carbonate as a 5% w/v solution for anaerobic pH adjustment. The supplied object is an aqueous stock, not anhydrous Na2CO3 or the carbonate anion. The current Sodium_Carbonate_Solution owner carries a solute CHEBI identity and lacks a verified formulation, so adding this concentration-bearing string there would perpetuate the stock/solute collapse.",
+        "applicability": "Both source recipes preserve 5% w/v; their use as pH-adjustment reagent does not give a fixed final-medium concentration.",
+        "evidence_ids": [
+          "B-51-frozen-0",
+          "B-51-frozen-1",
+          "B-http-ea9cb2ab0c21925e",
+          "B-http-d2660a1591be1f66",
+          "B-owner-Sodium_Carbonate_Solution"
+        ],
+        "proposal_ids": [
+          "B-P-DSMZ135-339a-carbonate5"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "The source-specific proposal avoids the incorrect generic solute-grounded owner; exact solute hydrate and complete preparation remain unspecified.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+            "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+          }
+        ],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "IR-B"
+          ]
+        },
+        "shard_index": 51,
+        "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed."
+      },
+      "native_case_digest": "fe86097e51f888985afb7b465983bd573c7d588ddeef56ca84ad4deab0beb2a7",
+      "occurrence_ids": [
+        "CM_OCC:12ed215c80c06ded23a07609f7b6bc6d826f3e8fdb3af6426e1502939e295346",
+        "CM_OCC:4f677bb7b7e4d5c56458081e5abcfb238458b02f10c30f784ceea0fbd0c3806b"
+      ]
+    },
+    {
+      "full_case": {
+        "baseline_outcome": "native_no_mim_match",
+        "campaign_requirement": "complete_source_bound_review",
+        "case_id": "CM_NAME:6931e380b00e2e4e9520805af8858749b2d73569f675747eb6e17ffd60d5c644",
+        "native_match_result": {
+          "effective_term_id": "",
+          "matched": false,
+          "resolved_record": null
+        },
+        "native_occurrence_count": 1,
+        "occurrences": [
+          {
+            "component_path": "ingredients/13",
+            "full_recipe_snapshot": "inputs/culturemech/data/normalized_yaml/bacterial/TOGO_M2749_Acetobacterium_medium.yaml",
+            "native_name": "5% Na2CO3",
+            "native_scope": "root_component",
+            "occurrence_id": "CM_OCC:8e0bb765da37fb4b451aa97fb665f49828f6d1d07ee31a87a8c3fb181ddbe2fd",
+            "raw_component": {
+              "concentration": {
+                "unit": "VARIABLE",
+                "value": "variable"
+              },
+              "notes": "Role: Buffer; Properties: Defined component, Inorganic compound, Solution",
+              "preferred_term": "5% Na2CO3"
+            },
+            "raw_preferred_term": "5% Na2CO3",
+            "recipe_id": "CultureMech:009299",
+            "recipe_source_identifiers": [
+              {
+                "path": "/id",
+                "value": "CultureMech:009299"
+              },
+              {
+                "path": "/media_term/term/id",
+                "value": "TOGO:M2749"
+              }
+            ],
+            "record_shape": "MediaRecipe",
+            "source_file": "data/normalized_yaml/bacterial/TOGO_M2749_Acetobacterium_medium.yaml",
+            "source_file_sha256": "db98319ce24a249cc86e672280e31c49437912ea20718112ea2594ae4f339b5b",
+            "source_identifiers": []
+          }
+        ],
+        "original_unified_position": 3023,
+        "original_unified_row": {
+          "cas_rn": "",
+          "chebi_id": "",
+          "culturemech_term_id": "",
+          "example_media": "CultureMech:009299",
+          "ingredient_name": "5% Na2CO3",
+          "kg_microbe_node_id": "",
+          "mapping_status": "UNMAPPED",
+          "mim_id": "",
+          "occurrence_count": "1",
+          "synonyms": ""
+        },
+        "prior_dependency": "PR1158 candidate baseline, not merged",
+        "raw_source_label": "5% Na2CO3",
+        "source": "culturemech",
+        "source_case_id": "5% Na2CO3",
+        "source_identity_claimed": false,
+        "source_label": "5% Na2CO3"
+      },
+      "prior_decision": {
+        "case_id": "CM_NAME:6931e380b00e2e4e9520805af8858749b2d73569f675747eb6e17ffd60d5c644",
+        "case_input_sha256": "6830a69d1d34daf9ccc264e27793eac320e47e0e59518222bc0af21563d0bd35",
+        "source": {
+          "source": "culturemech",
+          "source_case_id": "5% Na2CO3",
+          "source_label": "5% Na2CO3",
+          "raw_source_label": "5% Na2CO3"
+        },
+        "occurrence_ids": [
+          "CM_OCC:8e0bb765da37fb4b451aa97fb665f49828f6d1d07ee31a87a8c3fb181ddbe2fd"
+        ],
+        "disposition": "stock_product_mixture_context",
+        "reasoning": "ATCC1612 uses sterile anaerobic5% sodium-carbonate solution,0.25 ml per10 ml culture medium, to reach pH8.2. Unlike case51, the primary text does not state w/v. It does establish a solution rather than a pure chemical and does not license borrowing the percentage basis from a differently sourced recipe. A bounded ATCC1612 stock proposal retains the literal5% qualification with unspecified basis, rather than treating the missing basis as a blocker to representing the observed preparation.",
+        "applicability": "Only the acetobacterium occurrence CultureMech:009299 and its ATCC1612 preparation instructions support this conclusion.",
+        "evidence_ids": [
+          "B-62-frozen-0",
+          "B-http-7e9bca86608c6dd0",
+          "B-owner-Sodium_Carbonate_Solution"
+        ],
+        "proposal_ids": [
+          "B-P-ATCC1612-CARBONATE5"
+        ],
+        "no_change_reason": null,
+        "missing_requirement": "Percentage basis, solvent grade, starting carbonate hydrate and stock preparation details remain unspecified. They must be verified before any quantitative conversion or merge with an explicit5%w/v stock; they do not prevent the source-qualified literal5% proposal.",
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Sodium_Carbonate_Solution.yaml",
+            "sha256": "537baefadff4ad57ce2f405300b09f74b82962990fb4e6f5673a406ac83e00d6"
+          }
+        ],
+        "issue_refs": [],
+        "independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "IR-B"
+          ]
+        },
+        "shard_index": 62,
+        "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed."
+      },
+      "native_case_digest": "6830a69d1d34daf9ccc264e27793eac320e47e0e59518222bc0af21563d0bd35",
+      "occurrence_ids": [
+        "CM_OCC:8e0bb765da37fb4b451aa97fb665f49828f6d1d07ee31a87a8c3fb181ddbe2fd"
+      ]
+    }
+  ]
+}

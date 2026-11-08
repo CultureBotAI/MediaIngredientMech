@@ -1,0 +1,808 @@
+{
+  "schema_version": "1.0.0",
+  "review_id": "w06-stock-science-final-core-binding-v1",
+  "reviewed_at": "2026-11-08T08:08:30.990112+00:00",
+  "reviewer": "/root/residual_stock_review",
+  "llm_assisted": true,
+  "status": "PASS_EXACT_FINAL_CORE_BINDING",
+  "predecessor_science": {
+    "path": ".temp/residual1217-correction-v1/independent-stock/final-science-review-v1.json",
+    "sha256": "24d271d9b7552fcdc57290cef715b01c01037cde799219f078bb46cdfd49095f",
+    "sealed_manifest_sha256": "fb67796b6a2bfce13645418d43cf41670fe14180c58d3f7f43e7c2ef2f48a0eb",
+    "all_31_sealed_members_preserved": true
+  },
+  "final_core_sha256": {
+    "reports/all_unmatched_20261107/worker-06/successor-v4/selection.json": "bf5d6bec45951e4966062cf5d574231d51bf17b83fe3c92b57c7a16d38889232",
+    "reports/all_unmatched_20261107/worker-06/successor-v4/decisions.json": "07deb03c96685c80e10e5b9de9d5e9f5eb081c880caea35cf33509f7804ba650",
+    "reports/all_unmatched_20261107/worker-06/successor-v4/proposals.json": "6c19c41754652e313dfbc41bb576cc54ad70ecd4d05b7301625c109a657b900d",
+    "reports/all_unmatched_20261107/worker-06/successor-v4/evidence.json": "3dcaef8d19f978c4c9c3d9618edf0a5f97886831a5ca850f9f5c87258c3ae5b6"
+  },
+  "comparison_method": "For each complete reviewed proposal and source-case object, construct the expected final object by applying only exact named, exact-valued metadata mutations to a deep copy. Assert full object equality. No field is removed, filtered recursively or broadly excluded; all nested scientific and provenance fields remain subject to equality. Independently rehash every exact selected stock YAML and compare capture bindings.",
+  "allowed_mutations": {
+    "proposals": [
+      "/independent_review: pending empty -> complete [V4-IR-STOCK]",
+      "/evidence_ids: append exactly V4-IR-STOCK once"
+    ],
+    "source_cases": [
+      "/independent_review: pending empty -> complete [V4-IR-STOCK]",
+      "/evidence_ids: append exactly V4-IR-STOCK once",
+      "/current_review_scope: add exact recorded top-level string only"
+    ]
+  },
+  "stock_bindings": [
+    {
+      "proposal_id": "A-P-DSMZ29-CARBONATE-1M",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v4/payloads/dsmz_29_40_sodium_carbonate_1m_stock.yaml",
+        "sha256": "03f5f19acf11b2c806c7995768f86fe16f73f885dfa8805b609aec2ebf06b14e"
+      },
+      "reviewed_draft_proposal_canonical_sha256": "2a4c31951017c9395487200fb66095677c560c7c0c62cf01b0830e6781d555cb",
+      "final_proposal_canonical_sha256": "bd8cd9fb06470e0f9fadb5f90a692cf536e95bcab0c6f9059219fb19b232f6dc",
+      "exact_metadata_delta": [
+        {
+          "pointer": "/independent_review",
+          "before": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "after": {
+            "status": "complete",
+            "evidence_ids": [
+              "V4-IR-STOCK"
+            ]
+          }
+        },
+        {
+          "pointer": "/evidence_ids",
+          "before": [
+            "A-E-OWNER-01",
+            "A-E-03-S00",
+            "A-E-03-S01",
+            "A-E-CAPTURE-035",
+            "A-E-CAPTURE-040",
+            "A-E-CAPTURE-091",
+            "A-E-CAPTURE-092",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT"
+          ],
+          "after": [
+            "A-E-OWNER-01",
+            "A-E-03-S00",
+            "A-E-03-S01",
+            "A-E-CAPTURE-035",
+            "A-E-CAPTURE-040",
+            "A-E-CAPTURE-091",
+            "A-E-CAPTURE-092",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT",
+            "V4-IR-STOCK"
+          ]
+        }
+      ],
+      "all_other_complete_fields_equal": true,
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:037e958a66f64078d543213f3a007cfc1d873519d9274fb48f506ac94bb3bc31",
+          "case_index": 3,
+          "frozen_case_digest": "f42178724238680fb0355df8abd74926b2a9cf51f9bf1ea1412dcfd965d3458a",
+          "reviewed_draft_canonical_sha256": "df50e40666b1a8cbbe297cc7d21f07af306990bcbb8baa7e3dde5846a0183762",
+          "final_canonical_sha256": "b1d15a290f8ec8f7ce898476134bf80bd380e0c213f863bd1c8991da0ee768fb",
+          "exact_metadata_delta": [
+            {
+              "pointer": "/independent_review",
+              "before": {
+                "status": "pending",
+                "evidence_ids": []
+              },
+              "after": {
+                "status": "complete",
+                "evidence_ids": [
+                  "V4-IR-STOCK"
+                ]
+              }
+            },
+            {
+              "pointer": "/evidence_ids",
+              "before": [
+                "A-E-OWNER-01",
+                "A-E-03-S00",
+                "A-E-03-S01",
+                "A-E-CAPTURE-035",
+                "A-E-CAPTURE-040",
+                "A-E-CAPTURE-091",
+                "A-E-CAPTURE-092",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT"
+              ],
+              "after": [
+                "A-E-OWNER-01",
+                "A-E-03-S00",
+                "A-E-03-S01",
+                "A-E-CAPTURE-035",
+                "A-E-CAPTURE-040",
+                "A-E-CAPTURE-091",
+                "A-E-CAPTURE-092",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT",
+                "V4-IR-STOCK"
+              ]
+            },
+            {
+              "pointer": "/current_review_scope",
+              "before_present": false,
+              "after": "Exact author-draft scientific fields and payload hash independently reviewed; final core adds this receipt binding only. Historical reviews remain historical evidence."
+            }
+          ],
+          "all_other_complete_fields_equal": true,
+          "occurrence_ids": [
+            "CM_OCC:6d66121c6c78b0fbd2c8394f14dafa77dbca2aec50401777aaf0364c92f917a7",
+            "CM_OCC:08558eb8cc674db76653dcd0ed52d971f7df09f36297ca38cfa730fa3efb57a6"
+          ]
+        }
+      ]
+    },
+    {
+      "proposal_id": "A-P-ATCC1257-CARBONATE-4PCT",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v4/payloads/atcc_1257_sodium_carbonate_4_percent_stock.yaml",
+        "sha256": "19e7642e7901a2229626f807eea2364c85d884f1d66ec8b3cd046c33309cdefb"
+      },
+      "reviewed_draft_proposal_canonical_sha256": "b554e90f336aa64e94f9b212e8409ddd712728a8e3b1711b2f9163e63bce214d",
+      "final_proposal_canonical_sha256": "584e1ba39a5562c7c4f6910dbb8e8c820cb9011d001b56ebb87efc322cca4834",
+      "exact_metadata_delta": [
+        {
+          "pointer": "/independent_review",
+          "before": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "after": {
+            "status": "complete",
+            "evidence_ids": [
+              "V4-IR-STOCK"
+            ]
+          }
+        },
+        {
+          "pointer": "/evidence_ids",
+          "before": [
+            "A-E-OWNER-01",
+            "A-E-24-S00",
+            "A-E-CAPTURE-039",
+            "A-E-CAPTURE-079",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT"
+          ],
+          "after": [
+            "A-E-OWNER-01",
+            "A-E-24-S00",
+            "A-E-CAPTURE-039",
+            "A-E-CAPTURE-079",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT",
+            "V4-IR-STOCK"
+          ]
+        }
+      ],
+      "all_other_complete_fields_equal": true,
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:1f2b92647e0cf40d84143aa15ca22db0cda14f5f8695a06efae27fe70424a05a",
+          "case_index": 24,
+          "frozen_case_digest": "36b4ab28d56e9fa92a342449fbe0834e5d780cd5d346ed14a89bcde2e2ab54d6",
+          "reviewed_draft_canonical_sha256": "3c126fc246d7e8370e9f03ccf98e2caf66f6ba2262ff36265e996cdc311be246",
+          "final_canonical_sha256": "916f5b2ddb19ba294f8d6224f8964117206da56ef45290b89c66c1d2f1ef0985",
+          "exact_metadata_delta": [
+            {
+              "pointer": "/independent_review",
+              "before": {
+                "status": "pending",
+                "evidence_ids": []
+              },
+              "after": {
+                "status": "complete",
+                "evidence_ids": [
+                  "V4-IR-STOCK"
+                ]
+              }
+            },
+            {
+              "pointer": "/evidence_ids",
+              "before": [
+                "A-E-OWNER-01",
+                "A-E-24-S00",
+                "A-E-CAPTURE-039",
+                "A-E-CAPTURE-079",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT"
+              ],
+              "after": [
+                "A-E-OWNER-01",
+                "A-E-24-S00",
+                "A-E-CAPTURE-039",
+                "A-E-CAPTURE-079",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT",
+                "V4-IR-STOCK"
+              ]
+            },
+            {
+              "pointer": "/current_review_scope",
+              "before_present": false,
+              "after": "Exact author-draft scientific fields and payload hash independently reviewed; final core adds this receipt binding only. Historical reviews remain historical evidence."
+            }
+          ],
+          "all_other_complete_fields_equal": true,
+          "occurrence_ids": [
+            "CM_OCC:f32814cc4e01d32041f6dcfd7d439809bf0a3992c00bd34d478ec853eac6981f"
+          ]
+        }
+      ]
+    },
+    {
+      "proposal_id": "A-P-JCM1344-YEAST-1PCT",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v4/payloads/jcm_1344_yeast_extract_1_percent_stock.yaml",
+        "sha256": "9b55a41e7081f3642a4e7786a3f2261c54dcc264e39ca356ddcd16759f726599"
+      },
+      "reviewed_draft_proposal_canonical_sha256": "a934204226d1caa22c7a6c869bcb18cc4201d19616c8756cd54827924f868584",
+      "final_proposal_canonical_sha256": "bf369cfe965d54f346bcc023564a054dd56c6497213ccc5fedf66c1b153848a6",
+      "exact_metadata_delta": [
+        {
+          "pointer": "/independent_review",
+          "before": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "after": {
+            "status": "complete",
+            "evidence_ids": [
+              "V4-IR-STOCK"
+            ]
+          }
+        },
+        {
+          "pointer": "/evidence_ids",
+          "before": [
+            "A-E-OWNER-18",
+            "A-E-38-S00",
+            "A-E-CAPTURE-102",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT"
+          ],
+          "after": [
+            "A-E-OWNER-18",
+            "A-E-38-S00",
+            "A-E-CAPTURE-102",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT",
+            "V4-IR-STOCK"
+          ]
+        }
+      ],
+      "all_other_complete_fields_equal": true,
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658",
+          "case_index": 38,
+          "frozen_case_digest": "c58ecd4e84187fab073feabecbe6eaaa45963b4db7b6556c0040cc1cd2c8af2b",
+          "reviewed_draft_canonical_sha256": "4c293f4508dae56086a145d118f02c389363e144a3de559ba11e09b0339bcb8d",
+          "final_canonical_sha256": "acd741781c046978e4638ae6615f0646580c24e2d4d139f009bebda4da26b449",
+          "exact_metadata_delta": [
+            {
+              "pointer": "/independent_review",
+              "before": {
+                "status": "pending",
+                "evidence_ids": []
+              },
+              "after": {
+                "status": "complete",
+                "evidence_ids": [
+                  "V4-IR-STOCK"
+                ]
+              }
+            },
+            {
+              "pointer": "/evidence_ids",
+              "before": [
+                "A-E-OWNER-18",
+                "A-E-38-S00",
+                "A-E-CAPTURE-102",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT"
+              ],
+              "after": [
+                "A-E-OWNER-18",
+                "A-E-38-S00",
+                "A-E-CAPTURE-102",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT",
+                "V4-IR-STOCK"
+              ]
+            },
+            {
+              "pointer": "/current_review_scope",
+              "before_present": false,
+              "after": "Exact author-draft scientific fields and payload hash independently reviewed; final core adds this receipt binding only. Historical reviews remain historical evidence."
+            }
+          ],
+          "all_other_complete_fields_equal": true,
+          "occurrence_ids": [
+            "CM_OCC:5d86b87cffe1c4d677773bae272d0af5ebc48f3e0940dedf7f7bd022e907ed82"
+          ]
+        }
+      ]
+    },
+    {
+      "proposal_id": "A-P-TOGO2665-KOH-STOCK",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v4/payloads/togo_2665_koh_solution_unspecified_strength.yaml",
+        "sha256": "5a5924089053b8f2820ece0bf6e19cb229fe19e61a9249b6fdc0681f3ada5cc3"
+      },
+      "reviewed_draft_proposal_canonical_sha256": "06411b9ff0bd5c3afe332e1fec986dd3fcb4d1af059c0c85bad5879b1398ac12",
+      "final_proposal_canonical_sha256": "458d2943b42320e7c9071c18f86821bc4289f0a680e6623eef1fb23ef47e4c11",
+      "exact_metadata_delta": [
+        {
+          "pointer": "/independent_review",
+          "before": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "after": {
+            "status": "complete",
+            "evidence_ids": [
+              "V4-IR-STOCK"
+            ]
+          }
+        },
+        {
+          "pointer": "/evidence_ids",
+          "before": [
+            "A-E-OWNER-11",
+            "A-E-20-S00",
+            "A-E-CAPTURE-043",
+            "A-E-CAPTURE-078",
+            "A-E-COMPLETION-09",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT"
+          ],
+          "after": [
+            "A-E-OWNER-11",
+            "A-E-20-S00",
+            "A-E-CAPTURE-043",
+            "A-E-CAPTURE-078",
+            "A-E-COMPLETION-09",
+            "A-E-NATIVE-OWNER-DEDUP",
+            "V4-E-AUTHOR-ASSESSMENT",
+            "V4-IR-STOCK"
+          ]
+        }
+      ],
+      "all_other_complete_fields_equal": true,
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34",
+          "case_index": 20,
+          "frozen_case_digest": "f3537ff48bec8488115c73b81263f8cf946fb1bf53a3b12f76150220c3a710f3",
+          "reviewed_draft_canonical_sha256": "164efd718d2f6c2ee6b630b03d06012f8bc5be0c516b20679a4b4263e2815d06",
+          "final_canonical_sha256": "229fc25a6b325cb5602199eb859fa570173a8418590b2a540141c6eb2c12a1e8",
+          "exact_metadata_delta": [
+            {
+              "pointer": "/independent_review",
+              "before": {
+                "status": "pending",
+                "evidence_ids": []
+              },
+              "after": {
+                "status": "complete",
+                "evidence_ids": [
+                  "V4-IR-STOCK"
+                ]
+              }
+            },
+            {
+              "pointer": "/evidence_ids",
+              "before": [
+                "A-E-OWNER-11",
+                "A-E-20-S00",
+                "A-E-CAPTURE-043",
+                "A-E-CAPTURE-078",
+                "A-E-COMPLETION-09",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT"
+              ],
+              "after": [
+                "A-E-OWNER-11",
+                "A-E-20-S00",
+                "A-E-CAPTURE-043",
+                "A-E-CAPTURE-078",
+                "A-E-COMPLETION-09",
+                "A-E-NATIVE-OWNER-DEDUP",
+                "V4-E-AUTHOR-ASSESSMENT",
+                "V4-IR-STOCK"
+              ]
+            },
+            {
+              "pointer": "/current_review_scope",
+              "before_present": false,
+              "after": "Exact author-draft scientific fields and payload hash independently reviewed; final core adds this receipt binding only. Historical reviews remain historical evidence."
+            }
+          ],
+          "all_other_complete_fields_equal": true,
+          "occurrence_ids": [
+            "CM_OCC:0aedb54c475214aee9fe439653a935255c2a9dd3cb262c1260d2a11af0e3b0fd"
+          ]
+        }
+      ]
+    },
+    {
+      "proposal_id": "B-P-DSMZ1033-ferric-stock",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v4/payloads/dsmz_1033_ferric_chloride_0p17_mm_stock.yaml",
+        "sha256": "b4c7893eedb7cc34d2a779a6913fbc1f6098f748667fafadb0191b293945f9b6"
+      },
+      "reviewed_draft_proposal_canonical_sha256": "b9f4866cd8ca34b70e190aa0ea72243a76fec02e17846ad768efee8cb53d9eb1",
+      "final_proposal_canonical_sha256": "54bc3f4dda05ba6943bfa1e9764c56d1bf50907f18a50e2204227d513201a3e0",
+      "exact_metadata_delta": [
+        {
+          "pointer": "/independent_review",
+          "before": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "after": {
+            "status": "complete",
+            "evidence_ids": [
+              "V4-IR-STOCK"
+            ]
+          }
+        },
+        {
+          "pointer": "/evidence_ids",
+          "before": [
+            "B-59-frozen-0",
+            "B-http-655217ec6658eef1",
+            "V4-E-AUTHOR-ASSESSMENT"
+          ],
+          "after": [
+            "B-59-frozen-0",
+            "B-http-655217ec6658eef1",
+            "V4-E-AUTHOR-ASSESSMENT",
+            "V4-IR-STOCK"
+          ]
+        }
+      ],
+      "all_other_complete_fields_equal": true,
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:67b97cde045959a5f5754cebd9e262c5fbe9699e7c1b4bb5a1015386c6caadeb",
+          "case_index": 59,
+          "frozen_case_digest": "a6b1a7635c6eeb3bdbff046e22224f2f267541f2d4ba6394e20f5630258e1ac7",
+          "reviewed_draft_canonical_sha256": "488a761ae49804170d6a800de0b618f7df7dbb1cd06b310511df9d30c85d3caa",
+          "final_canonical_sha256": "d294fa6d9f53fd0a106bc5c08c10692ad27f64e2a90a22268a7b1cc35d23426c",
+          "exact_metadata_delta": [
+            {
+              "pointer": "/independent_review",
+              "before": {
+                "status": "pending",
+                "evidence_ids": []
+              },
+              "after": {
+                "status": "complete",
+                "evidence_ids": [
+                  "V4-IR-STOCK"
+                ]
+              }
+            },
+            {
+              "pointer": "/evidence_ids",
+              "before": [
+                "B-59-frozen-0",
+                "B-http-655217ec6658eef1",
+                "V4-E-AUTHOR-ASSESSMENT"
+              ],
+              "after": [
+                "B-59-frozen-0",
+                "B-http-655217ec6658eef1",
+                "V4-E-AUTHOR-ASSESSMENT",
+                "V4-IR-STOCK"
+              ]
+            },
+            {
+              "pointer": "/current_review_scope",
+              "before_present": false,
+              "after": "Exact author-draft scientific fields and payload hash independently reviewed; final core adds this receipt binding only. Historical reviews remain historical evidence."
+            }
+          ],
+          "all_other_complete_fields_equal": true,
+          "occurrence_ids": [
+            "CM_OCC:9d53d4c982ecd89c68906fd58815bc8e75b5ce85d8e85f6347978ebd08fe6895"
+          ]
+        }
+      ]
+    },
+    {
+      "proposal_id": "B-P-DSMZ135-339a-carbonate5",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v4/payloads/dsmz_135_339a_sodium_carbonate_5_percent_wv_stock.yaml",
+        "sha256": "866dd3c927fb890fd66f7d9cdc6db46aa5fea6b97b733109297631f795beee53"
+      },
+      "reviewed_draft_proposal_canonical_sha256": "73de3c354f505597c4c9470cec008558e3776a4572dbb97f5cfd6da2f3150161",
+      "final_proposal_canonical_sha256": "cf500bceba2bdab97ef611e55b9e27811583267bcbfa848c7f99e543a825f66d",
+      "exact_metadata_delta": [
+        {
+          "pointer": "/independent_review",
+          "before": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "after": {
+            "status": "complete",
+            "evidence_ids": [
+              "V4-IR-STOCK"
+            ]
+          }
+        },
+        {
+          "pointer": "/evidence_ids",
+          "before": [
+            "B-51-frozen-0",
+            "B-51-frozen-1",
+            "B-http-d2660a1591be1f66",
+            "B-http-ea9cb2ab0c21925e",
+            "B-owner-Sodium_Carbonate_Solution",
+            "V4-E-AUTHOR-ASSESSMENT"
+          ],
+          "after": [
+            "B-51-frozen-0",
+            "B-51-frozen-1",
+            "B-http-d2660a1591be1f66",
+            "B-http-ea9cb2ab0c21925e",
+            "B-owner-Sodium_Carbonate_Solution",
+            "V4-E-AUTHOR-ASSESSMENT",
+            "V4-IR-STOCK"
+          ]
+        }
+      ],
+      "all_other_complete_fields_equal": true,
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:59124a174f61aef7996a991b5ebcd6f8915ffee8721654101f87cea90f834be6",
+          "case_index": 51,
+          "frozen_case_digest": "fe86097e51f888985afb7b465983bd573c7d588ddeef56ca84ad4deab0beb2a7",
+          "reviewed_draft_canonical_sha256": "ea6bdf51bed7838bf1cb76cab59779514e37cd01c8cc25d56a25b5c56baa0f40",
+          "final_canonical_sha256": "86f67570c9e5e2fa2e61ff14981f20b3a874eb6d8b721882167c4fb8ebd7bd9c",
+          "exact_metadata_delta": [
+            {
+              "pointer": "/independent_review",
+              "before": {
+                "status": "pending",
+                "evidence_ids": []
+              },
+              "after": {
+                "status": "complete",
+                "evidence_ids": [
+                  "V4-IR-STOCK"
+                ]
+              }
+            },
+            {
+              "pointer": "/evidence_ids",
+              "before": [
+                "B-51-frozen-0",
+                "B-51-frozen-1",
+                "B-http-ea9cb2ab0c21925e",
+                "B-http-d2660a1591be1f66",
+                "B-owner-Sodium_Carbonate_Solution",
+                "V4-E-AUTHOR-ASSESSMENT"
+              ],
+              "after": [
+                "B-51-frozen-0",
+                "B-51-frozen-1",
+                "B-http-ea9cb2ab0c21925e",
+                "B-http-d2660a1591be1f66",
+                "B-owner-Sodium_Carbonate_Solution",
+                "V4-E-AUTHOR-ASSESSMENT",
+                "V4-IR-STOCK"
+              ]
+            },
+            {
+              "pointer": "/current_review_scope",
+              "before_present": false,
+              "after": "Exact author-draft scientific fields and payload hash independently reviewed; final core adds this receipt binding only. Historical reviews remain historical evidence."
+            }
+          ],
+          "all_other_complete_fields_equal": true,
+          "occurrence_ids": [
+            "CM_OCC:12ed215c80c06ded23a07609f7b6bc6d826f3e8fdb3af6426e1502939e295346",
+            "CM_OCC:4f677bb7b7e4d5c56458081e5abcfb238458b02f10c30f784ceea0fbd0c3806b"
+          ]
+        }
+      ]
+    },
+    {
+      "proposal_id": "B-P-ATCC1612-CARBONATE5",
+      "payload": {
+        "root": "artifact",
+        "path": "successor-v4/payloads/atcc_1612_sodium_carbonate_5_percent_stock.yaml",
+        "sha256": "44f0a08ee463ba99ffff5417fddf6628acf2183d6c5c412f98db51cd13fe8309"
+      },
+      "reviewed_draft_proposal_canonical_sha256": "9a76d8bc6e74ce3ad30f0b5de016014df0781b1401cc48862aab73824f01a4c6",
+      "final_proposal_canonical_sha256": "df5402f0b88fbe10b2ac047e0084fcbce5066589904dfcae65fa43d589ccb499",
+      "exact_metadata_delta": [
+        {
+          "pointer": "/independent_review",
+          "before": {
+            "status": "pending",
+            "evidence_ids": []
+          },
+          "after": {
+            "status": "complete",
+            "evidence_ids": [
+              "V4-IR-STOCK"
+            ]
+          }
+        },
+        {
+          "pointer": "/evidence_ids",
+          "before": [
+            "B-62-frozen-0",
+            "B-http-7e9bca86608c6dd0",
+            "V4-E-AUTHOR-ASSESSMENT"
+          ],
+          "after": [
+            "B-62-frozen-0",
+            "B-http-7e9bca86608c6dd0",
+            "V4-E-AUTHOR-ASSESSMENT",
+            "V4-IR-STOCK"
+          ]
+        }
+      ],
+      "all_other_complete_fields_equal": true,
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:6931e380b00e2e4e9520805af8858749b2d73569f675747eb6e17ffd60d5c644",
+          "case_index": 62,
+          "frozen_case_digest": "6830a69d1d34daf9ccc264e27793eac320e47e0e59518222bc0af21563d0bd35",
+          "reviewed_draft_canonical_sha256": "1d93d6dfc5ba28470ff70a56bd6bee70aeeca438f3a01172d3d15d5252a8f229",
+          "final_canonical_sha256": "d81c4a228827c7e1df0b3e834f40e5800507b9ee062291328d9b6e9c381e2f83",
+          "exact_metadata_delta": [
+            {
+              "pointer": "/independent_review",
+              "before": {
+                "status": "pending",
+                "evidence_ids": []
+              },
+              "after": {
+                "status": "complete",
+                "evidence_ids": [
+                  "V4-IR-STOCK"
+                ]
+              }
+            },
+            {
+              "pointer": "/evidence_ids",
+              "before": [
+                "B-62-frozen-0",
+                "B-http-7e9bca86608c6dd0",
+                "B-owner-Sodium_Carbonate_Solution",
+                "V4-E-AUTHOR-ASSESSMENT"
+              ],
+              "after": [
+                "B-62-frozen-0",
+                "B-http-7e9bca86608c6dd0",
+                "B-owner-Sodium_Carbonate_Solution",
+                "V4-E-AUTHOR-ASSESSMENT",
+                "V4-IR-STOCK"
+              ]
+            },
+            {
+              "pointer": "/current_review_scope",
+              "before_present": false,
+              "after": "Exact author-draft scientific fields and payload hash independently reviewed; final core adds this receipt binding only. Historical reviews remain historical evidence."
+            }
+          ],
+          "all_other_complete_fields_equal": true,
+          "occurrence_ids": [
+            "CM_OCC:8e0bb765da37fb4b451aa97fb665f49828f6d1d07ee31a87a8c3fb181ddbe2fd"
+          ]
+        }
+      ]
+    }
+  ],
+  "evidence_binding": {
+    "all_1096_draft_entries_preserved_exact": true,
+    "added_entries": [
+      {
+        "evidence_id": "V4-IR-STOCK",
+        "kind": "independent_review",
+        "capture": {
+          "root": "artifact",
+          "path": "successor-v4/independent-stock/final-science-review-v1.json",
+          "sha256": "24d271d9b7552fcdc57290cef715b01c01037cde799219f078bb46cdfd49095f"
+        },
+        "locator": "Complete exact scientific payload/source outcome review with declared independent scope",
+        "supports_or_contradicts": "Independent reviewer distinct from author assesses final candidate fields and affected source outcomes; no role, whole-owner or release approval. Final full core adds review-binding metadata only.",
+        "url": null
+      },
+      {
+        "evidence_id": "V4-IR-MATERIAL",
+        "kind": "independent_review",
+        "capture": {
+          "root": "artifact",
+          "path": "successor-v4/independent-material/final-science-review-v1.json",
+          "sha256": "6583caf316f684b4be6ba84c64610f3d51d1169a681b26dd5a1c576da2c739da"
+        },
+        "locator": "Complete exact scientific payload/source outcome review with declared independent scope",
+        "supports_or_contradicts": "Independent reviewer distinct from author assesses final candidate fields and affected source outcomes; no role, whole-owner or release approval. Final full core adds review-binding metadata only.",
+        "url": null
+      }
+    ],
+    "stock_receipt_copy_byte_identical": true,
+    "material_receipt_hash_only_checked": true,
+    "material_science_outside_reviewer_scope": true
+  },
+  "coverage_binding": {
+    "reviewer": "/root/residual_stock_review",
+    "author": "/root",
+    "evidence_id": "V4-IR-STOCK",
+    "review_capture": {
+      "root": "artifact",
+      "path": "successor-v4/independent-stock/final-science-review-v1.json",
+      "sha256": "24d271d9b7552fcdc57290cef715b01c01037cde799219f078bb46cdfd49095f"
+    },
+    "case_indices": [
+      3,
+      20,
+      24,
+      38,
+      51,
+      59,
+      62
+    ],
+    "proposal_ids": [
+      "A-P-DSMZ29-CARBONATE-1M",
+      "A-P-ATCC1257-CARBONATE-4PCT",
+      "A-P-JCM1344-YEAST-1PCT",
+      "A-P-TOGO2665-KOH-STOCK",
+      "B-P-DSMZ1033-ferric-stock",
+      "B-P-DSMZ135-339a-carbonate5",
+      "B-P-ATCC1612-CARBONATE5"
+    ],
+    "scope": "Whole exact final changed payloads and affected source outcomes, not append-count review. Final review metadata separately bound by assembly reviewer.",
+    "draft_cases": {
+      "3": "df50e40666b1a8cbbe297cc7d21f07af306990bcbb8baa7e3dde5846a0183762",
+      "20": "164efd718d2f6c2ee6b630b03d06012f8bc5be0c516b20679a4b4263e2815d06",
+      "24": "3c126fc246d7e8370e9f03ccf98e2caf66f6ba2262ff36265e996cdc311be246",
+      "38": "4c293f4508dae56086a145d118f02c389363e144a3de559ba11e09b0339bcb8d",
+      "51": "ea6bdf51bed7838bf1cb76cab59779514e37cd01c8cc25d56a25b5c56baa0f40",
+      "59": "488a761ae49804170d6a800de0b618f7df7dbb1cd06b310511df9d30c85d3caa",
+      "62": "1d93d6dfc5ba28470ff70a56bd6bee70aeeca438f3a01172d3d15d5252a8f229"
+    }
+  },
+  "positive_control_payload_sha256": "b7d4302d035ca9b3dad366d1ef0f4abd08691415ee8c682251bba482c9f7c2d0",
+  "source_holds_sha256": "eaddfd7ffe5ba2ba1be011696ad741e1b010db2cc9ca4678954a640484f70b77",
+  "counts": {
+    "bound_stock_payloads": 7,
+    "bound_stock_cases": 7,
+    "bound_CM_occurrences": 9,
+    "observed_final_container_cases": 188,
+    "observed_final_container_proposals": 104,
+    "observed_final_container_evidence": 1098
+  },
+  "findings": [],
+  "coordinator_source_case_acceptance": "pending independent successor re-review and coordinator intake",
+  "whole_owner_role_export_approval": false,
+  "maintained_application": false,
+  "limits": [
+    "Only the seven-stock scientific scope is bound here; apple pectin and YNB are independently reviewed by a different reviewer.",
+    "This receipt binds current exact final core bytes, not a future Git commit or changed selector.",
+    "Final assembly, publication and coordinator acceptance remain separate; this receipt confers none."
+  ]
+}

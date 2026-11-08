@@ -1,0 +1,942 @@
+[
+  {
+    "finding_id": "W06-S1217-NEW-001",
+    "issue_key": "w06-successor1217-seven-inferred-water-method",
+    "category": "provenance",
+    "severity": "minor",
+    "status": "open",
+    "certainty": "confirmed",
+    "title": "Seven additional stock payloads label inferred water as literal recipe transcription",
+    "description": "All seven full selected payloads contain Water under RECIPE_TRANSCRIPTION although their notes acknowledge inference. Complete cited recipes name the stock and strength but do not enumerate its water; printed water belongs to basal or separately named preparations. Source-defined stock identity remains supported. These are outside the six corrected original005 members.",
+    "target_ids": [
+      "A-P-DSMZ29-CARBONATE-1M",
+      "A-P-ATCC1257-CARBONATE-4PCT",
+      "A-P-JCM1344-YEAST-1PCT",
+      "A-P-TOGO2665-KOH-STOCK",
+      "B-P-DSMZ1033-ferric-stock",
+      "B-P-DSMZ135-339a-carbonate5",
+      "B-P-ATCC1612-CARBONATE5"
+    ],
+    "members": [
+      {
+        "proposal_id": "A-P-DSMZ29-CARBONATE-1M",
+        "after_sha256": "c739d5e2a0901ffa8766b47220bcf1baaf29deb05a1f52f10f0301ab6f193968",
+        "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/selected-payloads/A-P-DSMZ29-CARBONATE-1M.yaml",
+        "case_ids": [
+          "CM_NAME:037e958a66f64078d543213f3a007cfc1d873519d9274fb48f506ac94bb3bc31"
+        ],
+        "reproduction": {
+          "water_component": {
+            "component_index": 1,
+            "value": {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          },
+          "component_assertion": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf",
+                "source_record": "DSMZ 29/40 sodium carbonate 1 M stock",
+                "notes": "Source ingredient names and batch amounts are retained. UNMAPPED child references deliberately withhold exact substance/hydrate identifiers until independently established.",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "DSMZ29 uses filter-sterilized1M Na2CO3 to adjust the receiving medium to pH6.8–7.1; DSMZ40 inherits29 with1%NaCl. Water solvent follows the aqueous stock context; no dry hydrate, water grade, preparation volume or dissolved-gas amount is specified. This pH target belongs to the receiving medium, not to the stock."
+          }
+        },
+        "primary_references": [
+          {
+            "evidence_id": "A-E-CAPTURE-091",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/d8d1f6cf56b42751.raw",
+            "sha256": "3e0b0022af9a84e7afa31b12bab088f5ed658274e2f6377e692f0024e4f22afb",
+            "kind": "primary_source",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf",
+            "original_accessed_at": "2026-11-08T05:06:55.548514+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-a/captures/d8d1f6cf56b42751.raw",
+              "old_raw_sha256": "3e0b0022af9a84e7afa31b12bab088f5ed658274e2f6377e692f0024e4f22afb",
+              "current_raw_sha256": "3e0b0022af9a84e7afa31b12bab088f5ed658274e2f6377e692f0024e4f22afb",
+              "raw_bytes_equal": true
+            }
+          },
+          {
+            "evidence_id": "A-E-CAPTURE-092",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/f5ae8bbd6edc4eab.raw",
+            "sha256": "be72d79bdb9c6cbd3529573a4a22c969c33cbd3999cb292ca54e778345ac262d",
+            "kind": "primary_source",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium40.pdf",
+            "original_accessed_at": "2026-11-08T05:06:55.652315+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-a/captures/f5ae8bbd6edc4eab.raw",
+              "old_raw_sha256": "be72d79bdb9c6cbd3529573a4a22c969c33cbd3999cb292ca54e778345ac262d",
+              "current_raw_sha256": "be72d79bdb9c6cbd3529573a4a22c969c33cbd3999cb292ca54e778345ac262d",
+              "raw_bytes_equal": true
+            }
+          }
+        ],
+        "reason": "DSMZ29/40 1M carbonate nominalstock supported. Water membership only inferred; RECIPE_TRANSCRIPTION overstates its source. No carrier amount, purity, grade or finalmedium concentration follows.",
+        "scope": "assigned a payload; not supplemental or double-counted"
+      },
+      {
+        "proposal_id": "A-P-ATCC1257-CARBONATE-4PCT",
+        "after_sha256": "42bb0651b003a22ab9a2a2ca754f72dd3f6cc0cec5dc1fe4f46a9e3c80701cad",
+        "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/selected-payloads/A-P-ATCC1257-CARBONATE-4PCT.yaml",
+        "case_ids": [
+          "CM_NAME:1f2b92647e0cf40d84143aa15ca22db0cda14f5f8695a06efae27fe70424a05a"
+        ],
+        "reproduction": {
+          "water_component": {
+            "component_index": 1,
+            "value": {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          },
+          "component_assertion": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx",
+                "source_record": "ATCC 1257 sodium carbonate 4% stock",
+                "notes": "Source ingredient names and batch amounts are retained. UNMAPPED child references deliberately withhold exact substance/hydrate identifiers until independently established.",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "ATCC1257 names freshly prepared, filter-sterilized4%Na2CO3 and uses10ml as a separate supplement. The percent basis is not specified; PERCENT preserves the literal source rather than asserting w/v, w/w, g/L or molarity. Solvent follows aqueous stock context; exact hydrate and water grade are not stated."
+          }
+        },
+        "primary_references": [
+          {
+            "evidence_id": "A-E-CAPTURE-079",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/9f1823cb1943c3d0.raw",
+            "sha256": "d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58",
+            "kind": "primary_source",
+            "url": "https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx",
+            "original_accessed_at": "2026-11-08T05:06:53.811623+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-a/captures/9f1823cb1943c3d0.raw",
+              "old_raw_sha256": "d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58",
+              "current_raw_sha256": "d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58",
+              "raw_bytes_equal": true
+            }
+          }
+        ],
+        "reason": "ATCC1257fresh4%carbonate filtersterile stock supported. Percentbasis andwater not stated; solventassertionmethod needs correction, notstockidentityrejection.",
+        "scope": "assigned a payload; not supplemental or double-counted"
+      },
+      {
+        "proposal_id": "A-P-JCM1344-YEAST-1PCT",
+        "after_sha256": "66cce4c6df6a38d3241527db9da2a9a12061b8cfb340cb1f626d82d93bc746a3",
+        "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/selected-payloads/A-P-JCM1344-YEAST-1PCT.yaml",
+        "case_ids": [
+          "CM_NAME:3b349c72b9fd9b3e3a66970a7d3a916a563d56a85cee50b5f2de431387c55658"
+        ],
+        "reproduction": {
+          "water_component": {
+            "component_index": 1,
+            "value": {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          },
+          "component_assertion": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344",
+                "source_record": "JCM 1344 yeast extract 1% stock",
+                "notes": "Source ingredient names and batch amounts are retained. UNMAPPED child references deliberately withhold exact substance/hydrate identifiers until independently established.",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "JCM1344 adds1ml of separately autoclaved1%yeast-extract solution after cooling the basal medium. Percent basis and commercial extract are not specified. PERCENT retains literal source wording without conversion to10g/L; water follows aqueous solution context. This stock is not the NBRC1407 boiled-biomass extract or dry commercial yeast extract."
+          }
+        },
+        "primary_references": [
+          {
+            "evidence_id": "A-E-CAPTURE-102",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/98d5aedf61df406f.raw",
+            "sha256": "c76ed3357a704676c28aea56780d6d255ef3392ae17019c960f4a7fb26fe0a63",
+            "kind": "primary_source",
+            "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344",
+            "original_accessed_at": "2026-11-08T05:06:57.155796+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-a/captures/98d5aedf61df406f.raw",
+              "old_raw_sha256": "c76ed3357a704676c28aea56780d6d255ef3392ae17019c960f4a7fb26fe0a63",
+              "current_raw_sha256": "c76ed3357a704676c28aea56780d6d255ef3392ae17019c960f4a7fb26fe0a63",
+              "raw_bytes_equal": true
+            }
+          }
+        ],
+        "reason": "JCM1344 1%yeastextract stock supported withunspecifiedpercentbasis. Waterinferred butmislabelledtranscribed. No dryproductidentity orsolventgrade/volumeassertion.",
+        "scope": "assigned a payload; not supplemental or double-counted"
+      },
+      {
+        "proposal_id": "A-P-TOGO2665-KOH-STOCK",
+        "after_sha256": "c297576c743abbef6933e02c9b7081631510a4561d00684b1185fb5c302e0cd6",
+        "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/selected-payloads/A-P-TOGO2665-KOH-STOCK.yaml",
+        "case_ids": [
+          "CM_NAME:15b5758bf3f61382021511df819630931004403ec89a84bac892db53f1117f34"
+        ],
+        "reproduction": {
+          "water_component": {
+            "component_index": 1,
+            "value": {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          },
+          "component_assertion": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2665",
+                "source_record": "TOGO M2665 potassium hydroxide solution, strength unspecified",
+                "notes": "Literal preparation inputs; unspecified child forms and amounts stay unmapped. These are not receiving-medium doses or post-reaction speciation.",
+                "supports": "SUPPORT"
+              }
+            ],
+            "notes": "Live TOGO2665 explicitly preserves KOH solusion, identifies it as potassium hydroxide solution and types it as Solution. ATCC1775 specifies KOH for NTA dissolution atpH6.5 and laterpH7.0 adjustment but does not itself specify the supplied KOH form or concentration. The bounded source stock records unquantified KOH and water inferred from aqueous solution context; no molarity, volume, dry hydrate or final neutralization species is asserted."
+          }
+        },
+        "primary_references": [
+          {
+            "evidence_id": "A-E-CAPTURE-078",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/c7657f0c7b4b95f6.raw",
+            "sha256": "4e3d3202d90e3388d7165803bd3a62fdfcb591beec25fa8bd47fed0975cd7592",
+            "kind": "primary_source",
+            "url": "https://www.atcc.org/~/media/385F0331DBAE42A3B87040A1D040AC39.ashx",
+            "original_accessed_at": "2026-11-08T05:06:53.626932+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-a/captures/c7657f0c7b4b95f6.raw",
+              "old_raw_sha256": "4e3d3202d90e3388d7165803bd3a62fdfcb591beec25fa8bd47fed0975cd7592",
+              "current_raw_sha256": "4e3d3202d90e3388d7165803bd3a62fdfcb591beec25fa8bd47fed0975cd7592",
+              "raw_bytes_equal": true
+            }
+          },
+          {
+            "evidence_id": "A-E-COMPLETION-09",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/delta-togo-M2665.raw",
+            "sha256": "4ddbfe8173e144bfe61200a4dbe4924a887374deea0542e82268961292d995f6",
+            "kind": "primary_source",
+            "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2665",
+            "original_accessed_at": "2026-11-08T05:37:31.922063+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-a/captures/delta-togo-M2665.raw",
+              "old_raw_sha256": "4ddbfe8173e144bfe61200a4dbe4924a887374deea0542e82268961292d995f6",
+              "current_raw_sha256": "4ddbfe8173e144bfe61200a4dbe4924a887374deea0542e82268961292d995f6",
+              "raw_bytes_equal": true
+            }
+          }
+        ],
+        "reason": "TOGO2665 explicitlyKOHsolution butcarrierandstrengthmissing; ATCC1775onlypHreagent. Nominalsource-qualifiedunknownstock is reasonable; Watermustbeinterpretednottranscribed.",
+        "scope": "assigned a payload; not supplemental or double-counted"
+      },
+      {
+        "proposal_id": "B-P-DSMZ1033-ferric-stock",
+        "after_sha256": "5f320423784377266082ee69866d36bd543d76d255f43dfbd4b876f6f09a1299",
+        "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/selected-payloads/B-P-DSMZ1033-ferric-stock.yaml",
+        "case_ids": [
+          "CM_NAME:67b97cde045959a5f5754cebd9e262c5fbe9699e7c1b4bb5a1015386c6caadeb"
+        ],
+        "reproduction": {
+          "water_component": {
+            "component_index": 1,
+            "value": {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          },
+          "component_assertion": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1033.pdf",
+                "source_record": "DSMZ 1033 ferric chloride hexahydrate 0.17 mM stock",
+                "notes": "Verbatim constituent names and source batch quantities; water is a preparation input. Child reference_scope UNMAPPED means no exact child identifier was independently established."
+              }
+            ],
+            "notes": "Source names a0.17 mMFeCl3·6H2O stock and10 ml usage. Water solvent is implied by the solution context; purity and preparation method are not supplied. No exact ontology mapping to the solid hydrate."
+          }
+        },
+        "primary_references": [
+          {
+            "evidence_id": "B-http-655217ec6658eef1",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-d2fed586077b37098ae0.pdf",
+            "sha256": "4411256ce7ac5dbc5182da120fec026f70a1e858612e14134f00b353f5a15644",
+            "kind": "primary_source",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1033.pdf",
+            "original_accessed_at": "2026-11-08T05:06:59.360451+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-b/captures/http-d2fed586077b37098ae0.pdf",
+              "old_raw_sha256": "4411256ce7ac5dbc5182da120fec026f70a1e858612e14134f00b353f5a15644",
+              "current_raw_sha256": "4411256ce7ac5dbc5182da120fec026f70a1e858612e14134f00b353f5a15644",
+              "raw_bytes_equal": true
+            }
+          }
+        ],
+        "reason": "DSMZ1033 FeCl3·6H2O 0.17 mM stock is supported with a 10 ml receiver dose. Hexahydrate is explicit; carrier and stock pH are missing; Waterassertioninferred notRECIPE_TRANSCRIPTION.",
+        "scope": "assigned a payload; not supplemental or double-counted"
+      },
+      {
+        "proposal_id": "B-P-DSMZ135-339a-carbonate5",
+        "after_sha256": "fffd3b28254ce6f5ce4b13fedd34232627385da7f09a51fe4fc6851fda2c9837",
+        "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/selected-payloads/B-P-DSMZ135-339a-carbonate5.yaml",
+        "case_ids": [
+          "CM_NAME:59124a174f61aef7996a991b5ebcd6f8915ffee8721654101f87cea90f834be6"
+        ],
+        "reproduction": {
+          "water_component": {
+            "component_index": 1,
+            "value": {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          },
+          "component_assertion": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium135.pdf",
+                "source_record": "DSMZ 135/339a sodium carbonate 5% w/v stock",
+                "notes": "Verbatim constituent names and source batch quantities; water is a preparation input. Child reference_scope UNMAPPED means no exact child identifier was independently established."
+              }
+            ],
+            "notes": "Both primary recipes specify5%w/vNa2CO3 stock forpH adjustment, prepared sterile andanoxic under80%N2/20%CO2 gas. Dissolvedgas/speciation is notquantified. Solvent water follows aqueous preparationcontext; the source doesnot specify crystalhydrate orcompletepreparation. The stock isnot exactidentity withpureNa2CO3. Separate5%withoutbasis ATCC1612 case62 isnotautomaticallyincluded."
+          }
+        },
+        "primary_references": [
+          {
+            "evidence_id": "B-http-d2660a1591be1f66",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-ce15dc1073b0219c2ebf.pdf",
+            "sha256": "9ff090b899a6b1e26c5d8e89342eaf6236590f1f156aad650813ff117a944de7",
+            "kind": "primary_source",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium339a.pdf",
+            "original_accessed_at": "2026-11-08T05:06:57.558558+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-b/captures/http-ce15dc1073b0219c2ebf.pdf",
+              "old_raw_sha256": "9ff090b899a6b1e26c5d8e89342eaf6236590f1f156aad650813ff117a944de7",
+              "current_raw_sha256": "9ff090b899a6b1e26c5d8e89342eaf6236590f1f156aad650813ff117a944de7",
+              "raw_bytes_equal": true
+            }
+          },
+          {
+            "evidence_id": "B-http-ea9cb2ab0c21925e",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-da185fd18e912291b94c.pdf",
+            "sha256": "f9388f5457dcbd475b3029e82c6606cae47432af22b81aacb537f3e01daf763f",
+            "kind": "primary_source",
+            "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium135.pdf",
+            "original_accessed_at": "2026-11-08T05:06:57.388682+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-b/captures/http-da185fd18e912291b94c.pdf",
+              "old_raw_sha256": "f9388f5457dcbd475b3029e82c6606cae47432af22b81aacb537f3e01daf763f",
+              "current_raw_sha256": "f9388f5457dcbd475b3029e82c6606cae47432af22b81aacb537f3e01daf763f",
+              "raw_bytes_equal": true
+            }
+          }
+        ],
+        "reason": "DSM135/339a5%w/vcarbonate supportedwithanaerobicpreparation. Carrierwaterreasonablebutnotenumeratedstockinput,so methodneeds correction; noassumedhydrationorfinalreceiverquantity.",
+        "scope": "assigned a payload; not supplemental or double-counted"
+      },
+      {
+        "proposal_id": "B-P-ATCC1612-CARBONATE5",
+        "after_sha256": "f19b8aff1cc059931a95681949a1abd4d1a7a30dec36a360b1fa6b5ddde6c73e",
+        "after_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/selected-payloads/B-P-ATCC1612-CARBONATE5.yaml",
+        "case_ids": [
+          "CM_NAME:6931e380b00e2e4e9520805af8858749b2d73569f675747eb6e17ffd60d5c644"
+        ],
+        "reproduction": {
+          "water_component": {
+            "component_index": 1,
+            "value": {
+              "component_name": "Water",
+              "reference_scope": "UNMAPPED"
+            }
+          },
+          "component_assertion": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.atcc.org/~/media/BFCCC10871CB40E8A84CDDC2504F7A2E.ashx",
+                "source_record": "ATCC 1612 sodium carbonate 5% stock",
+                "notes": "Source names and stated quantities retained without inferred salt, hydrate, stereochemistry or percentage basis."
+              }
+            ],
+            "notes": "ATCC1612 specifies sterile anaerobic5%Na2CO3, adding0.25ml per10ml receiving medium to adjust that medium to pH8.2. PERCENT preserves the literal unspecified basis; it does not assertw/v,w/w,g/L or molarity. Water follows aqueous solution context, but grade, stock volume, preparation gas and starting carbonate hydrate are unspecified. The main medium80%N2/20%CO2 condition is not automatically an explicit stock preparation recipe. This stock is kept separate from the source-explicit5%w/v DSMZ135/339a preparation and from pure sodium carbonate."
+          }
+        },
+        "primary_references": [
+          {
+            "evidence_id": "B-http-7e9bca86608c6dd0",
+            "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-bd58d6bd6be4ed529c1b.pdf",
+            "sha256": "6805f1916bfc4fe440208f5f0d00ccf4bf65b5ac7f0c0ede324a244248e7b8b1",
+            "kind": "primary_source",
+            "url": "https://www.atcc.org/~/media/BFCCC10871CB40E8A84CDDC2504F7A2E.ashx",
+            "original_accessed_at": "2026-11-08T05:06:59.883206+00:00",
+            "locator": "Named recipe or product table, preparation and qualifications discussed in the target-specific reason",
+            "representation": "Archived raw provider response",
+            "exact_prior_capture_comparison": {
+              "old_entry_exists": true,
+              "entry_unchanged": true,
+              "capture_unchanged": true,
+              "old_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/prior-review/input-snapshot/reports/all_unmatched_20261107/worker-06/research-b/captures/http-bd58d6bd6be4ed529c1b.pdf",
+              "old_raw_sha256": "6805f1916bfc4fe440208f5f0d00ccf4bf65b5ac7f0c0ede324a244248e7b8b1",
+              "current_raw_sha256": "6805f1916bfc4fe440208f5f0d00ccf4bf65b5ac7f0c0ede324a244248e7b8b1",
+              "raw_bytes_equal": true
+            }
+          }
+        ],
+        "reason": "ATCC16125%carbonate nominalstock,unspecifiedpercentbasis/carrier. Anaerobic processing is not water enumeration; provenancecorrectionneededwithout5%w/vnormalization.",
+        "scope": "assigned a payload; not supplemental or double-counted"
+      }
+    ],
+    "evidence_ids": [
+      "A-E-CAPTURE-078",
+      "A-E-CAPTURE-079",
+      "A-E-CAPTURE-091",
+      "A-E-CAPTURE-092",
+      "A-E-CAPTURE-102",
+      "A-E-COMPLETION-09",
+      "B-http-655217ec6658eef1",
+      "B-http-7e9bca86608c6dd0",
+      "B-http-d2660a1591be1f66",
+      "B-http-ea9cb2ab0c21925e"
+    ],
+    "primary_references": [
+      {
+        "evidence_id": "A-E-CAPTURE-078",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/c7657f0c7b4b95f6.raw",
+        "sha256": "4e3d3202d90e3388d7165803bd3a62fdfcb591beec25fa8bd47fed0975cd7592",
+        "url": "https://www.atcc.org/~/media/385F0331DBAE42A3B87040A1D040AC39.ashx",
+        "original_accessed_at": "2026-11-08T05:06:53.626932+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "A-E-CAPTURE-079",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/9f1823cb1943c3d0.raw",
+        "sha256": "d6850c489dcd3b2bda52928e1c13ba507b57ce9cddfb2407757dcf13ace54c58",
+        "url": "https://www.atcc.org/~/media/AE1BC225B681490BA78D21448457E756.ashx",
+        "original_accessed_at": "2026-11-08T05:06:53.811623+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "A-E-CAPTURE-091",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/d8d1f6cf56b42751.raw",
+        "sha256": "3e0b0022af9a84e7afa31b12bab088f5ed658274e2f6377e692f0024e4f22afb",
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium29.pdf",
+        "original_accessed_at": "2026-11-08T05:06:55.548514+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "A-E-CAPTURE-092",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/f5ae8bbd6edc4eab.raw",
+        "sha256": "be72d79bdb9c6cbd3529573a4a22c969c33cbd3999cb292ca54e778345ac262d",
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium40.pdf",
+        "original_accessed_at": "2026-11-08T05:06:55.652315+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "A-E-CAPTURE-102",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/98d5aedf61df406f.raw",
+        "sha256": "c76ed3357a704676c28aea56780d6d255ef3392ae17019c960f4a7fb26fe0a63",
+        "url": "https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344",
+        "original_accessed_at": "2026-11-08T05:06:57.155796+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "A-E-COMPLETION-09",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/delta-togo-M2665.raw",
+        "sha256": "4ddbfe8173e144bfe61200a4dbe4924a887374deea0542e82268961292d995f6",
+        "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2665",
+        "original_accessed_at": "2026-11-08T05:37:31.922063+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "B-http-655217ec6658eef1",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-d2fed586077b37098ae0.pdf",
+        "sha256": "4411256ce7ac5dbc5182da120fec026f70a1e858612e14134f00b353f5a15644",
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1033.pdf",
+        "original_accessed_at": "2026-11-08T05:06:59.360451+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "B-http-7e9bca86608c6dd0",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-bd58d6bd6be4ed529c1b.pdf",
+        "sha256": "6805f1916bfc4fe440208f5f0d00ccf4bf65b5ac7f0c0ede324a244248e7b8b1",
+        "url": "https://www.atcc.org/~/media/BFCCC10871CB40E8A84CDDC2504F7A2E.ashx",
+        "original_accessed_at": "2026-11-08T05:06:59.883206+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "B-http-d2660a1591be1f66",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-ce15dc1073b0219c2ebf.pdf",
+        "sha256": "9ff090b899a6b1e26c5d8e89342eaf6236590f1f156aad650813ff117a944de7",
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium339a.pdf",
+        "original_accessed_at": "2026-11-08T05:06:57.558558+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "B-http-ea9cb2ab0c21925e",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-da185fd18e912291b94c.pdf",
+        "sha256": "f9388f5457dcbd475b3029e82c6606cae47432af22b81aacb537f3e01daf763f",
+        "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium135.pdf",
+        "original_accessed_at": "2026-11-08T05:06:57.388682+00:00",
+        "kind": "primary_source"
+      }
+    ],
+    "reviewers": [
+      "Codex /root/antibiotics",
+      "Codex worker09 /root",
+      "Codex /root/w06_final_assembly"
+    ],
+    "bounded_fix": "Remove Water from literal recipe components, or accurately mark the applicable component assertion as CURATED_INTERPRETATION and preserve truthful curator/LLM provenance. Retain source-qualified stock identities, strengths, unknown quantity/grade/form and receiver processing. Do not replace missing carrier facts with invented values.",
+    "acceptance_conditions": [
+      "For every listed exact payload, either omit untranscribed Water or truthfully distinguish CURATED_INTERPRETATION with LLM provenance from literal source transcription.",
+      "Retain source-qualified identity, literal stock strength, concentration basis, unknown carrier amount/grade/form, and source-specific processing. Do not transfer receiving pH or gas to an unstated stock recipe.",
+      "Obtain separate review of corrected complete payloads and exact affected case decisions; preserve original and failed attempts. No source/role/export release follows."
+    ],
+    "deduplication_context": "Related mechanism to original005 in open issue1217, distinct seven-member scope. Coordinator should deduplicate/file before author correction; no GitHub mutation performed."
+  },
+  {
+    "finding_id": "W06-S1217-NEW-002",
+    "issue_key": "w06-successor1217-apple-pectin-missing-requirement",
+    "category": "completeness",
+    "severity": "minor",
+    "status": "open",
+    "certainty": "confirmed",
+    "title": "Apple-pectin missing requirement overstates the evidence needed for a bounded source material",
+    "description": "Case82 already has explicit apple-derived pectin as one alternative carbon material in TOGO M2313. Supplier, esterification and grade remain unknown, but those facts are not necessary to preserve the apple-specific heterogeneous-material boundary. Current missing_requirement couples the representability decision to obtaining the actual supplier/grade. This is a narrow evidence-versus-curation distinction, not an exact pectin mapping approval.",
+    "target_ids": [
+      "CM_NAME:84b6710e91dc085f4d30b1dc733b19613ec56fb8f712d3ac0103c8ad60e74f12"
+    ],
+    "members": [
+      {
+        "case_id": "CM_NAME:84b6710e91dc085f4d30b1dc733b19613ec56fb8f712d3ac0103c8ad60e74f12",
+        "case_input_sha256": "cde4d450761ad857a15657dd276af21125d65d2a166a84f3a38d1d078a5dd244",
+        "decision_sha256": "965d712fdc7658d9dbc30394e255b995e63591b5740b239213810b4d29c60d7a",
+        "current_decision": {
+          "case_id": "CM_NAME:84b6710e91dc085f4d30b1dc733b19613ec56fb8f712d3ac0103c8ad60e74f12",
+          "case_input_sha256": "cde4d450761ad857a15657dd276af21125d65d2a166a84f3a38d1d078a5dd244",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "pectin (apple)",
+            "source_label": "pectin (apple)",
+            "raw_source_label": "pectin (apple)"
+          },
+          "occurrence_ids": [
+            "CM_OCC:c9ec99f6f56a15fd66153f124f05930f01fe3c8ebee1c9b69bb19b113eabf7bd"
+          ],
+          "disposition": "broad_parent_relation_only",
+          "reasoning": "The source specifies apple-derived pectin as an alternate carbon material. CHEBI:17309 is a pectin class, not a guarantee of identical esterification, molecular-weight distribution or botanical preparation. An apple-source restriction is meaningful for a heterogeneous polysaccharide material; a broad parent relation can support it, but generic pectin exact identity would erase that restriction.",
+          "applicability": "Applies to the sole minimal-media occurrence and its explicit apple qualifier; no supplier or grade is specified in the frozen recipe.",
+          "evidence_ids": [
+            "B-82-frozen-0",
+            "B-http-6b506f15e54a5ced",
+            "B-attempts-extra-manifest.json",
+            "B-attempts-retry-manifest.json",
+            "B-ontology-CHEBI-17309",
+            "B-owner-Pectin"
+          ],
+          "proposal_ids": [],
+          "no_change_reason": "A separate source-qualified apple-pectin identity needs a primary procurement/material specification; genericPectin is only a parent candidate.",
+          "missing_requirement": "Identify the recipe's actual apple-pectin supplier/grade and whether source-specific material identity can be represented with a stable registry identifier and broad pectin mapping.",
+          "owner_records": [
+            {
+              "path": "data/ingredients/mapped/Pectin.yaml",
+              "sha256": "3489bfd4caa455faadf6c0e474ad1eac96b4f69ce89518e922c1e8ebc70c06c2"
+            }
+          ],
+          "issue_refs": [],
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-B"
+            ]
+          },
+          "shard_index": 82,
+          "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed."
+        }
+      }
+    ],
+    "evidence_ids": [
+      "B-http-6b506f15e54a5ced"
+    ],
+    "primary_references": [
+      {
+        "evidence_id": "B-http-6b506f15e54a5ced",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/final-61217b46be42b027b36e.txt",
+        "sha256": "5fa9f5e652ed2f6cfa5cbe63402338d87899e77e0c56a2d42ac1939aca3572b3",
+        "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2313",
+        "original_accessed_at": "2026-11-08T05:16:45.556655+00:00",
+        "kind": "primary_source"
+      }
+    ],
+    "reviewers": [
+      "Codex /root/materials",
+      "Codex worker09 /root",
+      "Codex /root/w06_final_assembly"
+    ],
+    "bounded_fix": "Separate unknown supplier/grade/esterification from the already established apple-material identity. Assess a duplicate-safe source-qualified material or occurrence route, or explain a precise remaining boundary obstacle. Keep source alternatives and unknown fine identity explicit; do not exact-map to generic pectin.",
+    "acceptance_conditions": [
+      "The decision acknowledges the supported apple-material boundary and identifies bounded curation separately from missing supplier/grade.",
+      "Preserve the0.2% alternative-source context; do not turn the alternative list into simultaneous recipe components or infer product composition/roles.",
+      "Any later payload receives full independent review and coordinator selection; no forced new owner or exact class mapping."
+    ],
+    "deduplication_context": "Related completion theme to original007, which concerned four different cases and is now resolved within that original scope. Coordinator owns deduplication/file-first triage."
+  },
+  {
+    "finding_id": "W06-S1217-NEW-003",
+    "issue_key": "w06-successor1217-j240-known-supplier",
+    "category": "evidence",
+    "severity": "minor",
+    "status": "open",
+    "certainty": "confirmed",
+    "title": "J240 missing requirement should preserve its already known BD-Difco supplier",
+    "description": "The current quantity rationale is corrected: J2401g versus DSM1682/1837each6.7g. The complete J240 original response also explicitly gives attribute BD-Difco. Asking to resolve manufacturer for every recipe overstates what is missing for J240; formulation variant, catalogue/lot and the other occurrences remain unresolved.",
+    "target_ids": [
+      "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f"
+    ],
+    "members": [
+      {
+        "case_id": "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f",
+        "case_input_sha256": "e3552f28e90115fec608420c3c978f0e1e731798d1a1d64154bab4ebdd9c4534",
+        "decision_sha256": "0f9719324a840459474961b5dfeaae54439f81de55bbeb5bb19a61993e48843b",
+        "current_decision": {
+          "case_id": "KG_CASE:442638fbaf9486d3f85d1c63733180f44384aa3d3ac95c8082dec759a5998e2f",
+          "case_input_sha256": "e3552f28e90115fec608420c3c978f0e1e731798d1a1d64154bab4ebdd9c4534",
+          "source": {
+            "source": "mediadive",
+            "source_case_id": "mediadive.ingredient:1507",
+            "source_label": "Yeast Nitrogen Base",
+            "raw_source_label": "Yeast Nitrogen Base"
+          },
+          "occurrence_ids": [],
+          "disposition": "stock_product_mixture_context",
+          "reasoning": "MediaDive1507 is a complex Yeast Nitrogen Base entry used at 1 g in J240 and at 6.7 g in each of DSMZ1682 and DSMZ1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used.",
+          "applicability": "Assigned shard index161; source mediadive.ingredient:1507; exact frozen source_record={\"amount\": 6.7, \"compound\": \"Yeast Nitrogen Base\", \"compound_id\": 1507, \"g_l\": 6.7, \"optional\": 0, \"recipe_order\": 1, \"unit\": \"g\"}. Assessed all 0 embedded downstream holds without changing them. The case digest preserves full nested provenance; KG helper occurrence counts are not measured recipe frequencies.",
+          "evidence_ids": [
+            "R-frozen-shard",
+            "R-ingredient-1507",
+            "R-medium-J240",
+            "R-medium-1682",
+            "R-medium-1837",
+            "C-V3-E-SOURCE-RECONCILIATION"
+          ],
+          "proposal_ids": [],
+          "no_change_reason": "Retain the frozen owner/source state for this case: MediaDive1507 is a complex Yeast Nitrogen Base entry used at 1 g in J240 and at 6.7 g in each of DSMZ1682 and DSMZ1837. The original KG case gives no exclusion qualifiers or catalog number. Commercial variants differ by amino acids and ammonium sulfate; the shared base name and concentration cannot decide which formulation all these occurrences used.",
+          "missing_requirement": "Resolve amino-acid and ammonium-sulfate inclusion and manufacturer/catalog for each recipe; no generic merge into a w/o-amino-acids or w/o-ammonium-sulfate owner.",
+          "owner_records": [],
+          "issue_refs": [
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/1217"
+          ],
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-R",
+              "V3-IR-SOURCE"
+            ]
+          },
+          "author": "Codex /root",
+          "source_holds_preserved": true,
+          "native_review_scope": "Existing owner mapping/source-bound assessment only; source-only entries use campaign format and never invent MIM owners.",
+          "prior_independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-R"
+            ]
+          },
+          "successor_review_evidence_ids": [
+            "V3-IR-SOURCE"
+          ],
+          "successor_review_scope": "Seven exact literal-membership payload corrections and fourteen complete source outcomes, plus five evidence corrections and three proposal metadata patches."
+        }
+      }
+    ],
+    "evidence_ids": [
+      "R-medium-J240",
+      "R-medium-1682",
+      "R-medium-1837"
+    ],
+    "primary_references": [
+      {
+        "evidence_id": "R-medium-J240",
+        "path": "snapshot/current/reports/all_unmatched_20261107/worker-06/research-root/captures/medium-J240.body",
+        "sha256": "a59c9a368c6ed11e3f7b81d9c16433b1e47f20951c90f46eea72b59286e3564f",
+        "url": "https://mediadive.dsmz.de/rest/medium/J240",
+        "original_accessed_at": "2026-11-08T05:09:48.268290+00:00",
+        "kind": "primary_source",
+        "locator": "/data/solutions/0/recipe: compound_id=1507, amount=1, unit=g, attribute=BD-Difco"
+      },
+      {
+        "evidence_id": "R-medium-1682",
+        "path": "snapshot/current/reports/all_unmatched_20261107/worker-06/research-root/captures/medium-1682.body",
+        "sha256": "99cb8bd758abf6ea36da04ccb57702e7b08fd61f93d07c2c2bf8086768622a9e",
+        "url": "https://mediadive.dsmz.de/rest/medium/1682",
+        "original_accessed_at": "2026-11-08T05:09:48.149924+00:00",
+        "kind": "primary_source",
+        "locator": "/data/solutions: recipe compound_id=1507, amount=6.7 g; no manufacturer qualifier"
+      },
+      {
+        "evidence_id": "R-medium-1837",
+        "path": "snapshot/current/reports/all_unmatched_20261107/worker-06/research-root/captures/medium-1837.body",
+        "sha256": "a506053e8c2517513c8763c6aeb60e8c92456618cee9cb224c1c22786a6fea1b",
+        "url": "https://mediadive.dsmz.de/rest/medium/1837",
+        "original_accessed_at": "2026-11-08T05:09:48.341827+00:00",
+        "kind": "primary_source",
+        "locator": "/data/solutions: recipe compound_id=1507, amount=6.7 g; no manufacturer qualifier"
+      }
+    ],
+    "reviewers": [
+      "Codex /root/salts",
+      "Codex worker09 /root",
+      "Codex /root/w06_final_assembly"
+    ],
+    "bounded_fix": "Record BD-Difco as the known J240 supplier; require unresolved amino-acid/ammonium-sulfate variant, catalog/lot details for J240 and supplier/formulation details for the unqualified DSM1682/1837 contexts. Preserve the no-generic-merge outcome.",
+    "acceptance_conditions": [
+      "J240 manufacturer is not described as unavailable.",
+      "J2401g and DSM1682/1837 6.7g remain correct.",
+      "No exact SKU/grade/lot, w/o-amino-acids or w/o-ammonium-sulfate equivalence is inferred."
+    ],
+    "deduplication_context": "Narrow residual related to original011 quantity finding; does not reopen the accepted quantity correction or justify YNB exact identity. Coordinator owns filing/deduplication."
+  },
+  {
+    "finding_id": "W06-S1217-INFO-004",
+    "issue_key": "w06-successor1217-bounded-curation-opportunities",
+    "category": "completeness",
+    "severity": "informational",
+    "status": "open",
+    "certainty": "confirmed",
+    "title": "Three supported source boundaries allow bounded follow-up without clearing finer identity holds",
+    "description": "Cases28PPG2000,80DI WATER and112A5 already contain useful nominal material/preparation facts. Their exact product/structure, water preparation routing, or normalized copper-formulation questions remain distinct. The A5 decision correctly blocks a complete normalized payload/exact merge until its literal CuSO2·5H2O conflict is resolved; it does not falsely deny every possible partial transcription. These are follow-up opportunities, not new unsafe-mapping defects or mandatory identity releases.",
+    "target_ids": [
+      "CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+      "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e",
+      "CM_NAME:af18c0210c7e1d43eb9e4323199db8c1ea5e5dc5c2b547427efdb09a7dc35d6e"
+    ],
+    "members": [
+      {
+        "case_id": "CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+        "case_input_sha256": "c299c4138f544c827a95cc3e4f2126564855c363d10c1817fadf2b7992e18ceb",
+        "decision_sha256": "dd043c3b0f3498dd98b6bf613509e9d36909826d29cbac616d5c05821328e991",
+        "current_decision": {
+          "case_id": "CM_NAME:218432d882460975316e929fa9c30f55e6e2207cdb6522f7cd200165c55b6d25",
+          "case_input_sha256": "c299c4138f544c827a95cc3e4f2126564855c363d10c1817fadf2b7992e18ceb",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Polypropylene glycol 2000 (PPG 2000)",
+            "source_label": "Polypropylene glycol 2000 (PPG 2000)",
+            "raw_source_label": "Polypropylene glycol 2000 (PPG 2000)"
+          },
+          "occurrence_ids": [
+            "CM_OCC:d028235ce925d4b86ef5cd4e61f3bbf74e09929bb5c90efa200bcc304ccc41ca"
+          ],
+          "disposition": "unresolved",
+          "reasoning": "NBRC1400 names polypropylene glycol2000 and prepares an emulsion by sonication. The2000 denotes a nominal polymer-molecular-weight grade, not one molecule; it does not identify chain-length distribution or end-group/product specification. Polyethylene glycol2000 is chemically different.",
+          "applicability": "The sole NBRC1400 occurrence uses2g/LPPG2000. The source determines polymer family and nominal grade while leaving commercial specification unreported. Exact frozen scopes: CultureMech:008679:ingredients/6",
+          "evidence_ids": [
+            "A-E-28-S00",
+            "A-E-CAPTURE-032",
+            "A-E-CAPTURE-150"
+          ],
+          "proposal_ids": [],
+          "no_change_reason": "No fixed molecular formula, monomer ontology identity or PEG2000 alias is justified.",
+          "missing_requirement": "Obtain a manufacturer/catalog or polymer specification tied to NBRC1400 that defines end groups and nominal molecular-weight grade; select a polymer-grade registry identity rather than a monomer/PEG mapping.",
+          "owner_records": [],
+          "issue_refs": [],
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-A"
+            ]
+          }
+        }
+      },
+      {
+        "case_id": "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e",
+        "case_input_sha256": "47d61b48a75496eb951ca71d9c137ff53c0d63f6070dc086658d9e0f4c923758",
+        "decision_sha256": "29908a7f44793fab755178ad143d09ff430a43be3389028ecc0125164b9f2a95",
+        "current_decision": {
+          "case_id": "CM_NAME:8051bc95622d911398c1aa3f42b12389f9f026c600b93f990fc4b98e7969225e",
+          "case_input_sha256": "47d61b48a75496eb951ca71d9c137ff53c0d63f6070dc086658d9e0f4c923758",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "DI WATER",
+            "source_label": "DI WATER",
+            "raw_source_label": "DI WATER"
+          },
+          "occurrence_ids": [
+            "CM_OCC:e5238b57003649de712fdf634e72e56341dd386dd450c3339968c92b38f4d98a"
+          ],
+          "disposition": "supplied_form_correction",
+          "reasoning": "ATCC2686 gives DI WATER1 L. DI indicates deionized water, while the current Distilled_Water owner specifically represents distillation and already rejects several other preparation labels. The common H2O molecular identityCHEBI:15377 does not prove preparation equivalence, and the frozen1 G_PER_L is an import unit error.",
+          "applicability": "The sole Nautilia profundicola medium occurrence is solvent water prepared by deionization; its1 L quantity is not1 g/L solute.",
+          "evidence_ids": [
+            "B-80-frozen-0",
+            "B-http-a1e8c98f7ff8b1e8",
+            "B-ontology-CHEBI-15377",
+            "B-owner-Distilled_Water"
+          ],
+          "proposal_ids": [],
+          "no_change_reason": "Do not addDI WATER as an exact synonym of the distilled-water preparation.",
+          "missing_requirement": "Represent deionized-water preparation separately or use a verified preparation-neutral water owner with deionization retained at the occurrence; do not collapse the distinct water-preparation records.",
+          "owner_records": [
+            {
+              "path": "data/ingredients/mapped/Distilled_Water.yaml",
+              "sha256": "458e87161555bb11415b5155a30085120b121c07ee6612f8d7a5b6f0eb22ff56"
+            }
+          ],
+          "issue_refs": [],
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-B"
+            ]
+          },
+          "shard_index": 80,
+          "native_review_scope": "Source case review and candidate-owner inspection only. No full native owner review or scientific approval is claimed."
+        }
+      },
+      {
+        "case_id": "CM_NAME:af18c0210c7e1d43eb9e4323199db8c1ea5e5dc5c2b547427efdb09a7dc35d6e",
+        "case_input_sha256": "6182fd637894ede7467b59e9229fffe5f2a3a0943546eb30103bbf7b7ae9e30f",
+        "decision_sha256": "811ec029e93837242a8ab8617936de91694207a4f5bb13a0b474f3b817279a43",
+        "current_decision": {
+          "case_id": "CM_NAME:af18c0210c7e1d43eb9e4323199db8c1ea5e5dc5c2b547427efdb09a7dc35d6e",
+          "case_input_sha256": "6182fd637894ede7467b59e9229fffe5f2a3a0943546eb30103bbf7b7ae9e30f",
+          "source": {
+            "source": "culturemech",
+            "source_case_id": "Trace-metal mix A5",
+            "source_label": "Trace-metal mix A5",
+            "raw_source_label": "Trace-metal mix A5"
+          },
+          "occurrence_ids": [
+            "CM_OCC:8205fcbfde1a3ddef443dc3c7a2869dff2bef197cb4f74d55df681e57bcabbca"
+          ],
+          "disposition": "stock_product_mixture_context",
+          "reasoning": "The A5 trace-metal mix is a source-defined multimetal stock. TOGO2499 supplies the full list, but its copper line reads CuSO2·5H2O, which cannot safely be silently normalized to common copper sulfate pentahydrate. Existing generic A5 naming alone does not resolve that formula conflict.",
+          "applicability": "The single BG11 occurrence adds1ml stock, whereas the flattened frozen unit isG_PER_L. The captured exact A5 formulation is the relevant scope.",
+          "evidence_ids": [
+            "C-E-112-SOURCE-1",
+            "C-E-togo-M2499"
+          ],
+          "proposal_ids": [],
+          "no_change_reason": "Resolve the copper formula against the original BG11/A5 specification before a complete component payload or exact-owner merge; retain the ml addition and all source qualifiers.",
+          "missing_requirement": "Resolve the copper formula against the original BG11/A5 specification before a complete component payload or exact-owner merge; retain the ml addition and all source qualifiers.",
+          "owner_records": [],
+          "issue_refs": [],
+          "independent_review": {
+            "status": "complete",
+            "evidence_ids": [
+              "IR-C"
+            ]
+          },
+          "reviewed_source_index": 112
+        }
+      }
+    ],
+    "evidence_ids": [
+      "A-E-CAPTURE-150",
+      "B-http-a1e8c98f7ff8b1e8",
+      "C-E-togo-M2499"
+    ],
+    "primary_references": [
+      {
+        "evidence_id": "A-E-CAPTURE-150",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-a/captures/12e21708aed81da6.raw",
+        "sha256": "344ca20b9bc56c7a00b27df21627b5c1d380cb20a138442746b559c88104c79c",
+        "url": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1400",
+        "original_accessed_at": "2026-11-08T05:07:02.132184+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "B-http-a1e8c98f7ff8b1e8",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-b/captures/http-bd4af7c1c26cc007cb85.pdf",
+        "sha256": "35aba51157d12d455b13a05ccfee84a2042e696b96835e0b67df0ea0a87c1190",
+        "url": "https://www.atcc.org/~/media/ED2F144D72B749E9B32F46C366F07F69.ashx",
+        "original_accessed_at": "2026-11-08T05:07:03.550684+00:00",
+        "kind": "primary_source"
+      },
+      {
+        "evidence_id": "C-E-togo-M2499",
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w09/worktree/.temp/w06-successor1217-independent-v1/snapshot/current/reports/all_unmatched_20261107/worker-06/research-c/captures/togo-M2499.txt",
+        "sha256": "cfae1307b544707a3446bc452815eabb9b9398184e5a310a9b3ea65055b3dcdc",
+        "url": "https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2499",
+        "original_accessed_at": "2026-11-08T05:07:58.812301+00:00",
+        "kind": "primary_source"
+      }
+    ],
+    "reviewers": [
+      "Codex /root/antibiotics",
+      "Codex /root/materials",
+      "Codex worker09 /root",
+      "Codex /root/w06_final_assembly"
+    ],
+    "bounded_fix": "When resuming bounded curation, consider nominal PPG2000 material, a deionized-water preparation or neutral-water occurrence route, and an A5 literal partial source stock retaining the unresolved copper label. Run duplicate review and preserve all genuine unknowns; no correction is applied by this review.",
+    "acceptance_conditions": [
+      "Keep PPG end-group/distribution/product limitations, deionized-versus-distilled distinction and A5 copper-form conflict explicit.",
+      "Do not force an exact chemical map, normalized complete A5 formulation, new owner, global A5 alias or role/export approval."
+    ],
+    "deduplication_context": "Informational follow-up only; not a claim that current withholding is chemically unsafe."
+  }
+]

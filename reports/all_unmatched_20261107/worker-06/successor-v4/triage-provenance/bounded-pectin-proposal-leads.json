@@ -1,0 +1,201 @@
+{
+  "source_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/all-active-proposal-entries-v1.json",
+  "source_sha256": "686f9cc38f17e00c0dde9b0af1a634090b1ad3896c2b539f265163f5731a5814",
+  "created_at": "2026-11-08T06:43:05.576180+00:00",
+  "scope": "Historical frozen intake only; later worker corrections require fresh duplicate review before authoring.",
+  "entries": [
+    {
+      "index": 247,
+      "entry_id": "w03::m-dsmz1245_sugar_stock_s5688",
+      "worker": 3,
+      "head": "1196d5bc3aaba7563b829d5cbe7e54722fccc35d",
+      "provisional": false,
+      "proposal_id": "m-dsmz1245_sugar_stock_s5688",
+      "kind": "new_owner",
+      "owner_path": "data/ingredients/mapped/dsmz1245_sugar_stock_s5688.yaml",
+      "destination_path_as_declared": "data/ingredients/mapped/dsmz1245_sugar_stock_s5688.yaml",
+      "before_sha256": null,
+      "payload_path": "snapshot/workers/w03/reports/all_unmatched_20261107/worker-03/materials/proposed-owners/dsmz1245_sugar_stock_s5688.yaml",
+      "payload_sha256": "2fa5a41c601eaabf9e95660ddbb6c443254ff55ad82e6c419c017fce242c2813",
+      "proposal_ledger_sha256": "605b035aa8623e2696aa6304f7560bde028d5f5be665c9088cc305babb159a42",
+      "identifier": "kgmicrobe.ingredient:dsmz1245_sugar_stock_s5688",
+      "preferred_term": "DSMZ1245 Sugar Stock Solution (MediaDive S5688)",
+      "case_ids": [
+        "CM_NAME:09425422bf6f2b0272f897b60becd790003ebf354d175363effbe78ad3c5c152"
+      ],
+      "case_bindings": [
+        {
+          "case_id": "CM_NAME:09425422bf6f2b0272f897b60becd790003ebf354d175363effbe78ad3c5c152",
+          "input_sha256": "db19f9990d27c468f474673208f92981b80f05f92d5a016454a83630dda33d3c",
+          "occurrence_ids": [
+            "CM_OCC:eaa8e798994c3a2f2c9083bb7949632462b20286f1265e4ca367f7a6eabde104"
+          ],
+          "missing_requirement": "Supplier/source clarification of the repeated Maltose 8 g rows is needed before quantitative complete partonomy or preparation use.",
+          "issue_refs": [
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/1196"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "m-mediadive-solution-5688",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/mediadive-solution-5688.txt",
+            "sha256": "2c318327c05d9c02fcd04f1d14e52fa2c4d4d0e71f54f74ebc9d63049c49ce9d"
+          },
+          "url": "https://mediadive.dsmz.de/rest/solution/5688",
+          "locator": "MediaDive REST solution data: recipe entries, nested solution references and concentrations; exact solution number in URL/filename. Read as source batch inputs, not computed final concentrations."
+        },
+        {
+          "evidence_id": "m-dsmz-1245",
+          "kind": "primary_source",
+          "capture": {
+            "root": "artifact",
+            "path": "materials/dsmz-1245.pdf",
+            "sha256": "6f58650c6ca9e458921a320d8f0ba9f166e837c771b79a489f10aef2fd3142ae"
+          },
+          "url": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf",
+          "locator": "PDF p1 sugar stock table, duplicated Maltose8g rows."
+        }
+      ],
+      "record": {
+        "identifier": "kgmicrobe.ingredient:dsmz1245_sugar_stock_s5688",
+        "preferred_term": "DSMZ1245 Sugar Stock Solution (MediaDive S5688)",
+        "synonyms": [
+          {
+            "synonym_text": "Sugar Stock Solution",
+            "synonym_type": "REJECTED_LABEL",
+            "source": "Frozen worker-03 case CM_NAME:09425422bf6f2b0272f897b60becd790003ebf354d175363effbe78ad3c5c152; retained provenance only, requires source-context routing."
+          }
+        ],
+        "mapping_status": "MAPPED",
+        "ingredient_type": "STOCK_SOLUTION",
+        "solution_type": "OTHER",
+        "ontology_mapping": {
+          "ontology_id": "kgmicrobe.ingredient:dsmz1245_sugar_stock_s5688",
+          "ontology_label": "DSMZ1245 Sugar Stock Solution (MediaDive S5688)",
+          "ontology_source": "kgmicrobe.ingredient",
+          "mapping_quality": "FALLBACK_REGISTRY",
+          "evidence": [
+            {
+              "evidence_type": "MANUAL_CURATION",
+              "source": "https://mediadive.dsmz.de/rest/solution/5688",
+              "notes": "Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted, and supplier clarification remains required for complete quantitative composition."
+            }
+          ]
+        },
+        "notes": "Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted, and supplier clarification remains required for complete quantitative composition.",
+        "curation_history": [
+          {
+            "timestamp": "2026-11-08T05:20:19.103865+00:00",
+            "curator": "all-unmatched-worker-03/materials",
+            "action": "SOURCE_REVIEW_PROPOSAL",
+            "changes": "Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted, and supplier clarification remains required for complete quantitative composition.",
+            "llm_assisted": true,
+            "new_status": "MAPPED"
+          }
+        ],
+        "components": [
+          {
+            "component_name": "Glucose",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Fructose",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Sucrose",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Maltose",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Ribose",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Xylose",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Pectin",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Soluble starch",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Sodium pyruvate",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Thiamine pyrophosphate",
+            "reference_scope": "UNMAPPED"
+          },
+          {
+            "component_name": "Distilled water",
+            "reference_scope": "UNMAPPED"
+          }
+        ],
+        "component_assertion": {
+          "method": "RECIPE_TRANSCRIPTION",
+          "completeness": "PARTIAL",
+          "evidence": [
+            {
+              "evidence_type": "RECIPE_SOURCE",
+              "source": "https://mediadive.dsmz.de/rest/solution/5688",
+              "source_record": "DSMZ1245 Sugar Stock Solution (MediaDive S5688)",
+              "notes": "Distinct DSMZ1245/S5688 multicomponent sugar stock. Qualitative component list is PARTIAL: both primary sources duplicate Maltose8g; no deduplicated/summed mass is asserted, and supplier clarification remains required for complete quantitative composition."
+            }
+          ],
+          "notes": "Component identifiers deliberately remain unresolved; chemical forms and source batch units are transcribed without lexical identity promotion."
+        }
+      },
+      "changed_fields": [
+        "component_assertion",
+        "components",
+        "curation_history",
+        "identifier",
+        "ingredient_type",
+        "mapping_status",
+        "notes",
+        "ontology_mapping",
+        "preferred_term",
+        "solution_type",
+        "synonyms"
+      ],
+      "names": [
+        {
+          "text": "DSMZ1245 Sugar Stock Solution (MediaDive S5688)",
+          "type": "PREFERRED",
+          "role": "preferred"
+        },
+        {
+          "text": "Sugar Stock Solution",
+          "type": "REJECTED_LABEL",
+          "role": "synonym"
+        }
+      ],
+      "source_recipe_leads": [
+        "DSMZ:1245"
+      ],
+      "url_leads": [
+        "https://mediadive.dsmz.de/rest/solution/5688",
+        "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium1245.pdf"
+      ],
+      "prior_inventory_status": "same_payload_as_previous_inventory",
+      "prior_inventory_payload_sha256": "2fa5a41c601eaabf9e95660ddbb6c443254ff55ad82e6c419c017fce242c2813",
+      "known_family_recommendations": [],
+      "authorship_exclusions": [
+        "w03"
+      ],
+      "scientific_equivalence": null
+    }
+  ]
+}

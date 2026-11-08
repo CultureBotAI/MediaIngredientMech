@@ -1,0 +1,1278 @@
+[
+  {
+    "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients",
+    "ignored_files_included": true,
+    "files": 2956,
+    "pectin_named_owners": [
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients/mapped/PY-pectin.yaml",
+        "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6",
+        "identifier": "kgmicrobe.ingredient:py_pectin",
+        "preferred_term": "PY-pectin",
+        "names": [
+          "PY-pectin",
+          "kgmicrobe.ingredient:py_pectin",
+          "PY-pectin"
+        ],
+        "full_record": {
+          "identifier": "kgmicrobe.ingredient:py_pectin",
+          "preferred_term": "PY-pectin",
+          "synonyms": [
+            {
+              "synonym_text": "PY-pectin",
+              "synonym_type": "RAW_TEXT",
+              "source": "microbedecoder"
+            }
+          ],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0,
+            "source_occurrences": [
+              {
+                "source": "microbedecoder",
+                "count": 1,
+                "source_columns": "bergey:substrates"
+              }
+            ]
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-08-04T02:54:09.684805+00:00",
+              "curator": "audit_import_ingredients[microbedecoder]",
+              "action": "CREATED_AS_UNMAPPED",
+              "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+              "new_status": "UNMAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-06T00:00:00+00:00",
+              "curator": "issue_213_residual_triage",
+              "action": "FLAGGED_NEEDS_EXPERT",
+              "changes": "Not an ingredient: a PY (peptone-yeast) medium name; belongs with the decomposition workstream. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus exact queries across all of live OLS4.",
+              "previous_status": "UNMAPPED",
+              "new_status": "NEEDS_EXPERT",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-06T00:00:00+00:00",
+              "curator": "edison_literature_identity",
+              "action": "ANNOTATED",
+              "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/PY-pectin-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** unresolved, probably composite media notation—not a demonstrated single chemical or recognized pectin grade. No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-15T00:00:00+00:00",
+              "curator": "decompose_py_media_and_ground_categories",
+              "action": "DECOMPOSED_TO_COMPONENTS",
+              "previous_status": "NEEDS_EXPERT",
+              "new_status": "MAPPED",
+              "changes": "UNMAPPED_0770 -> kgmicrobe.ingredient:py_pectin (FALLBACK_REGISTRY). Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe base. The curated research file already decomposes `PY-glucose-rumen Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion follows an existing precedent in the corpus rather than a guess. Minted under the #288 STOCK_SOLUTION convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states none.",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-15T00:00:00+00:00",
+              "curator": "move_mapped_out_of_unmapped_collection",
+              "action": "MOVED_TO_MAPPED_COLLECTION",
+              "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-24T00:00:00+00:00",
+              "curator": "migrate_component_partonomy",
+              "action": "TYPED_COMPONENT_PARTONOMY",
+              "changes": "#369: added method/evidence/completeness and explicit reference scope to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+              "llm_assisted": false
+            }
+          ],
+          "notes": "Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "components": [
+            {
+              "component_name": "peptone",
+              "component_id": "MICRO:0000178",
+              "reference_scope": "MIM_CATALOG",
+              "source": "MIM curation (#213/#308)"
+            },
+            {
+              "component_name": "yeast extract",
+              "component_id": "FOODON:03315426",
+              "reference_scope": "MIM_CATALOG",
+              "source": "MIM curation (#213/#308)"
+            },
+            {
+              "component_name": "pectin",
+              "component_id": "CHEBI:17309",
+              "reference_scope": "MIM_CATALOG",
+              "source": "MIM curation (#213/#308)"
+            }
+          ],
+          "component_assertion": {
+            "method": "ABBREVIATION_EXPANSION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "scripts/decompose_py_media_and_ground_categories.py",
+                "source_record": "PY-pectin",
+                "notes": "The checked-in curation script records this expansion explicitly."
+              }
+            ],
+            "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+          },
+          "ingredient_type": "UNDEFINED_MIXTURE",
+          "ontology_mapping": {
+            "ontology_id": "kgmicrobe.ingredient:py_pectin",
+            "ontology_label": "PY-pectin",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "MIM curation (#213/#308)",
+                "notes": "Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe base. The curated research file already decomposes `PY-glucose-rumen Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion follows an existing precedent in the corpus rather than a guess. Minted under the #288 STOCK_SOLUTION convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states none."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients/mapped/Pectin.yaml",
+        "sha256": "3489bfd4caa455faadf6c0e474ad1eac96b4f69ce89518e922c1e8ebc70c06c2",
+        "identifier": "CHEBI:17309",
+        "preferred_term": "Pectin",
+        "names": [
+          "Pectin",
+          "CHEBI:17309",
+          "Role: Carbon source; Properties: Defined component, Organic compound, Simple component",
+          "Role: Carbon source; Properties: Organic compound, Defined component, Simple component",
+          "Role: Carbon source; Properties: Organic compound, Simple component, Defined component",
+          "Pektin",
+          "Pektine",
+          "Poly(1,4-alpha-D-galacturonide)",
+          "pectic substance",
+          "pectina",
+          "pectinas",
+          "pectine",
+          "pectines",
+          "pectins",
+          "poly[(1->4)-alpha-D-GalpA]"
+        ],
+        "full_record": {
+          "identifier": "CHEBI:17309",
+          "preferred_term": "Pectin",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17309",
+            "ontology_label": "pectin",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "synonyms": [
+            {
+              "synonym_text": "Role: Carbon source; Properties: Defined component, Organic compound, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Role: Carbon source; Properties: Organic compound, Defined component, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Role: Carbon source; Properties: Organic compound, Simple component, Defined component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Pektin",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Pektine",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Poly(1,4-alpha-D-galacturonide)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectic substance",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectina",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectinas",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectine",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectines",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectins",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "poly[(1->4)-alpha-D-GalpA]",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            }
+          ],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 13,
+            "media_count": 13
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-03-09T06:54:18.022301+00:00",
+              "curator": "import_from_culturemech",
+              "action": "IMPORTED",
+              "changes": "Initial import from CultureMech pipeline",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T19:53:37.333247+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:232-553-0 from PubChem API via name lookup (Pectin)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-09T00:32:50.689620+00:00",
+              "curator": "enrich_mim_cas_rn_batch",
+              "action": "CAS_RN_ADDED",
+              "changes": "Added CAS-RN 9000-69-5 from CultureBotHT/compounds_to_cas.csv",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-18T00:00:00+00:00",
+              "curator": "cbclaw_kg_microbe_sweep",
+              "action": "ADDED_SYNONYMS",
+              "changes": "Added 10 synonyms from kg-microbe P4.4 enrichment: Pektin, Pektine, Poly(1,4-alpha-D-galacturonide), pectic substance, pectina, ... (5 more)",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-05-01T07:35:35.721900+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:17.665241+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-29T23:35:36.112563+00:00",
+              "curator": "extract_roles_from_synonyms",
+              "action": "ANNOTATED",
+              "changes": "Added media role: CARBON_SOURCE (confidence: 1.00)"
+            },
+            {
+              "timestamp": "2026-06-09T05:23:46.818420+00:00",
+              "curator": "correct_stale_ontology_labels.py",
+              "action": "CORRECTED",
+              "changes": "ontology_label 'Pectin' -> 'pectin': synced to canonical CHEBI label (preferred_term 'Pectin' unchanged)."
+            },
+            {
+              "timestamp": "2026-07-20T00:00:00+00:00",
+              "curator": "migrate_media_roles_to_facets",
+              "action": "ANNOTATED",
+              "changes": "Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE"
+            },
+            {
+              "timestamp": "2026-08-27T03:16:39.519667+00:00",
+              "curator": "refresh_occurrence_statistics",
+              "action": "CORRECTED",
+              "changes": "occurrence_statistics 9/9 -> 13/13 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "9000-69-5",
+            "data_source": "CultureBotHT/compounds_to_cas.csv",
+            "retrieval_date": "2026-04-09T00:32:50.689620+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT",
+          "nutritional_roles": [
+            {
+              "role": "CARBON_SOURCE",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "reference_type": "DATABASE_ENTRY",
+                  "reference_text": "Imported from CultureMech pipeline",
+                  "curator_note": "Original role text: Carbon Source"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml",
+        "sha256": "1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da",
+        "identifier": "CHEBI:9217",
+        "preferred_term": "Spectinomycin dihydrochloride pentahydrate",
+        "names": [
+          "Spectinomycin dihydrochloride pentahydrate",
+          "CHEBI:9217",
+          "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride pentahydrate",
+          "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride--water (1/5)",
+          "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-N,N',2-trimethyl-4-oxodecahydro-2H-pyrano[2,3-b][1,4]benzodioxine-6,8-diaminium dichloride--water (1/5)"
+        ],
+        "full_record": {
+          "identifier": "CHEBI:9217",
+          "preferred_term": "Spectinomycin dihydrochloride pentahydrate",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:9217",
+            "ontology_label": "spectinomycin hydrochloride hydrate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CAS_RN_LOOKUP",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti, FEBA_stress."
+              }
+            ]
+          },
+          "synonyms": [
+            {
+              "synonym_text": "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride pentahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            },
+            {
+              "synonym_text": "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride--water (1/5)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            },
+            {
+              "synonym_text": "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-N,N',2-trimethyl-4-oxodecahydro-2H-pyrano[2,3-b][1,4]benzodioxine-6,8-diaminium dichloride--water (1/5)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            }
+          ],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:34:31.158938+00:00",
+              "curator": "audit_cas_chebi_followup",
+              "action": "CREATED_FROM_CAS_LOOKUP",
+              "changes": "Created from CultureBotHT CAS-RN=22189-32-8; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti, FEBA_stress.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.407472+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T08:08:32.486228+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+              "changes": "molecular_formula=C14H24N2O7.5H2O.2HCl; inchi=InChI=1S/C14H24N2O7.2ClH.5H2O/c1-5-4-6(17)14(20)13; smiles=Cl.Cl.O.O.O.O.O.[H][C@]12O[C@@H]3[C@@H](O)[C@H](NC",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.570665+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-06-02T07:05:13.394238+00:00",
+              "curator": "infer_roles_from_name_lists",
+              "action": "ANNOTATED",
+              "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+            },
+            {
+              "timestamp": "2026-07-20T00:00:00+00:00",
+              "curator": "migrate_media_roles_to_facets",
+              "action": "ANNOTATED",
+              "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+            },
+            {
+              "timestamp": "2026-08-24T00:00:00+00:00",
+              "curator": "regrade_synonym_matches",
+              "action": "REGRADED_TO_CAS_RN_LOOKUP",
+              "changes": "mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created by an explicit CAS-to-ChEBI lookup and its current CAS RN 22189-32-8 uniquely resolves by ChEBI xref to CHEBI:9217 'spectinomycin hydrochloride hydrate'. CAS_RN_LOOKUP records the method that established this mapping; a lexical grade would discard that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under Rule D (#438), independently of mapping quality.",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "22189-32-8",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+            "molecular_formula": "C14H24N2O7.5H2O.2HCl",
+            "inchi": "InChI=1S/C14H24N2O7.2ClH.5H2O/c1-5-4-6(17)14(20)13(21-5)22-12-10(19)7(15-2)9(18)8(16-3)11(12)23-14;;;;;;;/h5,7-13,15-16,18-20H,4H2,1-3H3;2*1H;5*1H2/t5-,7-,8+,9+,10+,11-,12-,13+,14+;;;;;;;/m1......./s1",
+            "smiles": "Cl.Cl.O.O.O.O.O.[H][C@]12O[C@@H]3[C@@H](O)[C@H](NC)[C@H](O)[C@H](NC)[C@H]3O[C@@]1(O)C(=O)C[C@@H](C)O2"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT",
+          "physicochemical_roles": [
+            {
+              "role": "SELECTIVE_AGENT",
+              "confidence": 0.8,
+              "evidence": [
+                {
+                  "reference_type": "COMPUTATIONAL_PREDICTION",
+                  "reference_text": "Inferred from curated media-role name pattern",
+                  "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients/mapped/Amylopectin_From_Maize.yaml",
+        "sha256": "e35f6b30ae1fbc8c17847d3b2d3ed6d38bd28e08ec2fef36bddecbf12435e4f7",
+        "identifier": "kgmicrobe.ingredient:amylopectin_from_maize",
+        "preferred_term": "amylopectin from maize",
+        "names": [
+          "amylopectin from maize",
+          "kgmicrobe.ingredient:amylopectin_from_maize"
+        ],
+        "full_record": {
+          "identifier": "kgmicrobe.ingredient:amylopectin_from_maize",
+          "preferred_term": "amylopectin from maize",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:28057",
+            "ontology_label": "amylopectin",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#322)",
+                "notes": "mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:28057 carries no structural definition, so it is a class rather than an individual, and the record's label 'amylopectin from maize' does not equal the term label 'amylopectin'. EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded because the label carries a botanical source the term does not encode."
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:34:31.158938+00:00",
+              "curator": "audit_cas_chebi_followup",
+              "action": "CREATED_FROM_CAS_LOOKUP",
+              "changes": "Created from CultureBotHT CAS-RN=9037-22-3; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). ",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:32.185605+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:12.484263+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-13T00:00:00+00:00",
+              "curator": "regrade_class_overstatements",
+              "action": "REGRADED_CLASS_OVERSTATEMENT",
+              "changes": "mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); the label carries a botanical source the term does not encode.",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-13T00:00:00+00:00",
+              "curator": "mint_registry_for_narrow_records",
+              "action": "MINTED_REGISTRY_IDENTIFIER",
+              "changes": "identifier CHEBI:28057 -> kgmicrobe.ingredient:amylopectin_from_maize. The record is narrower than CHEBI:28057 (source-, form- or scope-qualified), and §3 forbids expressing a more specific thing by sharing a broader term's identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded to narrow/broad.",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "9037-22-3",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:34:31.158938+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w06/worktree/data/ingredients/mapped/Spectinomycin.yaml",
+        "sha256": "205e16d6ca957fd18e72b4ae276b2ce1363c43bf7bc20488ce6ef23283d5aa5c",
+        "identifier": "CHEBI:9215",
+        "preferred_term": "Spectinomycin",
+        "names": [
+          "Spectinomycin",
+          "CHEBI:9215"
+        ],
+        "full_record": {
+          "identifier": "CHEBI:9215",
+          "preferred_term": "Spectinomycin",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:9215",
+            "ontology_label": "spectinomycin",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "LEXICAL_MATCH",
+                "source": "microbedecoder",
+                "notes": "Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:spectinomycin; "
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 1,
+            "media_count": 1,
+            "source_occurrences": [
+              {
+                "source": "microbedecoder",
+                "count": 50,
+                "source_columns": "BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity|BacDive_Metabolite_production"
+              }
+            ]
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-08-04T02:54:09.684805+00:00",
+              "curator": "audit_import_ingredients[microbedecoder]",
+              "action": "CREATED_FROM_INGREDIENT_IMPORT",
+              "changes": "Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:spectinomycin; ",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-04T03:08:34.142678+00:00",
+              "curator": "microbedecoder-import-review",
+              "action": "FLAGGED_FOR_REVIEW",
+              "changes": "mapping_status MAPPED -> PENDING_REVIEW",
+              "notes": "Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW so the mapping does not reach the published SSSOM before a review-ingredients pass. See reports/microbedecoder_auto_mapped_review.tsv.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-04T00:00:00+00:00",
+              "curator": "review-ingredients",
+              "action": "REVIEWED_AND_PROMOTED",
+              "changes": "mapping_status PENDING_REVIEW -> MAPPED",
+              "previous_status": "PENDING_REVIEW",
+              "new_status": "MAPPED",
+              "notes": "Reviewed by review-ingredients: id resolves in local OAK adapter and its canonical label exact-matches the record ontology_label (case-insensitive). This does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted PENDING_REVIEW -> MAPPED.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-13T00:00:00+00:00",
+              "curator": "classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural definition) (#323)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-27T03:16:39.520260+00:00",
+              "curator": "refresh_occurrence_statistics",
+              "action": "CORRECTED",
+              "changes": "occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+            }
+          ],
+          "ingredient_type": "SINGLE_INGREDIENT",
+          "chemical_properties": {
+            "molecular_formula": "C14H24N2O7",
+            "smiles": "[H][C@]12O[C@@H]3[C@@H](O)[C@H](NC)[C@H](O)[C@H](NC)[C@H]3O[C@@]1(O)C(=O)C[C@@H](C)O2",
+            "inchi": "InChI=1S/C14H24N2O7/c1-5-4-6(17)14(20)13(21-5)22-12-10(19)7(15-2)9(18)8(16-3)11(12)23-14/h5,7-13,15-16,18-20H,4H2,1-3H3/t5-,7-,8+,9+,10+,11-,12-,13+,14+/m1/s1",
+            "molecular_weight": 332.353,
+            "data_source": "ChEBI+PubChem",
+            "retrieval_date": "2026-08-13T04:30:09.499290+00:00"
+          }
+        }
+      }
+    ],
+    "apple_qualified_identity_matches": []
+  },
+  {
+    "root": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients",
+    "ignored_files_included": true,
+    "files": 2956,
+    "pectin_named_owners": [
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients/mapped/PY-pectin.yaml",
+        "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6",
+        "identifier": "kgmicrobe.ingredient:py_pectin",
+        "preferred_term": "PY-pectin",
+        "names": [
+          "PY-pectin",
+          "kgmicrobe.ingredient:py_pectin",
+          "PY-pectin"
+        ],
+        "full_record": {
+          "identifier": "kgmicrobe.ingredient:py_pectin",
+          "preferred_term": "PY-pectin",
+          "synonyms": [
+            {
+              "synonym_text": "PY-pectin",
+              "synonym_type": "RAW_TEXT",
+              "source": "microbedecoder"
+            }
+          ],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0,
+            "source_occurrences": [
+              {
+                "source": "microbedecoder",
+                "count": 1,
+                "source_columns": "bergey:substrates"
+              }
+            ]
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-08-04T02:54:09.684805+00:00",
+              "curator": "audit_import_ingredients[microbedecoder]",
+              "action": "CREATED_AS_UNMAPPED",
+              "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+              "new_status": "UNMAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-06T00:00:00+00:00",
+              "curator": "issue_213_residual_triage",
+              "action": "FLAGGED_NEEDS_EXPERT",
+              "changes": "Not an ingredient: a PY (peptone-yeast) medium name; belongs with the decomposition workstream. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus exact queries across all of live OLS4.",
+              "previous_status": "UNMAPPED",
+              "new_status": "NEEDS_EXPERT",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-06T00:00:00+00:00",
+              "curator": "edison_literature_identity",
+              "action": "ANNOTATED",
+              "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/PY-pectin-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** unresolved, probably composite media notation—not a demonstrated single chemical or recognized pectin grade. No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-15T00:00:00+00:00",
+              "curator": "decompose_py_media_and_ground_categories",
+              "action": "DECOMPOSED_TO_COMPONENTS",
+              "previous_status": "NEEDS_EXPERT",
+              "new_status": "MAPPED",
+              "changes": "UNMAPPED_0770 -> kgmicrobe.ingredient:py_pectin (FALLBACK_REGISTRY). Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe base. The curated research file already decomposes `PY-glucose-rumen Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion follows an existing precedent in the corpus rather than a guess. Minted under the #288 STOCK_SOLUTION convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states none.",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-15T00:00:00+00:00",
+              "curator": "move_mapped_out_of_unmapped_collection",
+              "action": "MOVED_TO_MAPPED_COLLECTION",
+              "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-24T00:00:00+00:00",
+              "curator": "migrate_component_partonomy",
+              "action": "TYPED_COMPONENT_PARTONOMY",
+              "changes": "#369: added method/evidence/completeness and explicit reference scope to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+              "llm_assisted": false
+            }
+          ],
+          "notes": "Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "components": [
+            {
+              "component_name": "peptone",
+              "component_id": "MICRO:0000178",
+              "reference_scope": "MIM_CATALOG",
+              "source": "MIM curation (#213/#308)"
+            },
+            {
+              "component_name": "yeast extract",
+              "component_id": "FOODON:03315426",
+              "reference_scope": "MIM_CATALOG",
+              "source": "MIM curation (#213/#308)"
+            },
+            {
+              "component_name": "pectin",
+              "component_id": "CHEBI:17309",
+              "reference_scope": "MIM_CATALOG",
+              "source": "MIM curation (#213/#308)"
+            }
+          ],
+          "component_assertion": {
+            "method": "ABBREVIATION_EXPANSION",
+            "completeness": "UNKNOWN",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "scripts/decompose_py_media_and_ground_categories.py",
+                "source_record": "PY-pectin",
+                "notes": "The checked-in curation script records this expansion explicitly."
+              }
+            ],
+            "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+          },
+          "ingredient_type": "UNDEFINED_MIXTURE",
+          "ontology_mapping": {
+            "ontology_id": "kgmicrobe.ingredient:py_pectin",
+            "ontology_label": "PY-pectin",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "MIM curation (#213/#308)",
+                "notes": "Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe base. The curated research file already decomposes `PY-glucose-rumen Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion follows an existing precedent in the corpus rather than a guess. Minted under the #288 STOCK_SOLUTION convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states none."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients/mapped/Pectin.yaml",
+        "sha256": "3489bfd4caa455faadf6c0e474ad1eac96b4f69ce89518e922c1e8ebc70c06c2",
+        "identifier": "CHEBI:17309",
+        "preferred_term": "Pectin",
+        "names": [
+          "Pectin",
+          "CHEBI:17309",
+          "Role: Carbon source; Properties: Defined component, Organic compound, Simple component",
+          "Role: Carbon source; Properties: Organic compound, Defined component, Simple component",
+          "Role: Carbon source; Properties: Organic compound, Simple component, Defined component",
+          "Pektin",
+          "Pektine",
+          "Poly(1,4-alpha-D-galacturonide)",
+          "pectic substance",
+          "pectina",
+          "pectinas",
+          "pectine",
+          "pectines",
+          "pectins",
+          "poly[(1->4)-alpha-D-GalpA]"
+        ],
+        "full_record": {
+          "identifier": "CHEBI:17309",
+          "preferred_term": "Pectin",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:17309",
+            "ontology_label": "pectin",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureMech",
+                "notes": "Imported from CultureMech pipeline, quality=DIRECT_MATCH"
+              }
+            ]
+          },
+          "synonyms": [
+            {
+              "synonym_text": "Role: Carbon source; Properties: Defined component, Organic compound, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Role: Carbon source; Properties: Organic compound, Defined component, Simple component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Role: Carbon source; Properties: Organic compound, Simple component, Defined component",
+              "synonym_type": "RAW_TEXT",
+              "source": "CultureMech"
+            },
+            {
+              "synonym_text": "Pektin",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Pektine",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "Poly(1,4-alpha-D-galacturonide)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectic substance",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectina",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectinas",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectine",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectines",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "pectins",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            },
+            {
+              "synonym_text": "poly[(1->4)-alpha-D-GalpA]",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "kg_microbe"
+            }
+          ],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 13,
+            "media_count": 13
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-03-09T06:54:18.022301+00:00",
+              "curator": "import_from_culturemech",
+              "action": "IMPORTED",
+              "changes": "Initial import from CultureMech pipeline",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-05T19:53:37.333247+00:00",
+              "curator": "fetch_cas_rn_from_pubchem",
+              "action": "ADDED_CAS_RN",
+              "changes": "Added CAS-RN:232-553-0 from PubChem API via name lookup (Pectin)",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-09T00:32:50.689620+00:00",
+              "curator": "enrich_mim_cas_rn_batch",
+              "action": "CAS_RN_ADDED",
+              "changes": "Added CAS-RN 9000-69-5 from CultureBotHT/compounds_to_cas.csv",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-04-18T00:00:00+00:00",
+              "curator": "cbclaw_kg_microbe_sweep",
+              "action": "ADDED_SYNONYMS",
+              "changes": "Added 10 synonyms from kg-microbe P4.4 enrichment: Pektin, Pektine, Poly(1,4-alpha-D-galacturonide), pectic substance, pectina, ... (5 more)",
+              "new_status": "MAPPED",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-05-01T07:35:35.721900+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:17.665241+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-29T23:35:36.112563+00:00",
+              "curator": "extract_roles_from_synonyms",
+              "action": "ANNOTATED",
+              "changes": "Added media role: CARBON_SOURCE (confidence: 1.00)"
+            },
+            {
+              "timestamp": "2026-06-09T05:23:46.818420+00:00",
+              "curator": "correct_stale_ontology_labels.py",
+              "action": "CORRECTED",
+              "changes": "ontology_label 'Pectin' -> 'pectin': synced to canonical CHEBI label (preferred_term 'Pectin' unchanged)."
+            },
+            {
+              "timestamp": "2026-07-20T00:00:00+00:00",
+              "curator": "migrate_media_roles_to_facets",
+              "action": "ANNOTATED",
+              "changes": "Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE"
+            },
+            {
+              "timestamp": "2026-08-27T03:16:39.519667+00:00",
+              "curator": "refresh_occurrence_statistics",
+              "action": "CORRECTED",
+              "changes": "occurrence_statistics 9/9 -> 13/13 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "9000-69-5",
+            "data_source": "CultureBotHT/compounds_to_cas.csv",
+            "retrieval_date": "2026-04-09T00:32:50.689620+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT",
+          "nutritional_roles": [
+            {
+              "role": "CARBON_SOURCE",
+              "confidence": 1.0,
+              "evidence": [
+                {
+                  "reference_type": "DATABASE_ENTRY",
+                  "reference_text": "Imported from CultureMech pipeline",
+                  "curator_note": "Original role text: Carbon Source"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients/mapped/Spectinomycin_Dihydrochloride_Pentahydrate.yaml",
+        "sha256": "1b05f89b24790d65f1318b4499e5aa93ad57d2acc52facdaa1e70cd2cfb012da",
+        "identifier": "CHEBI:9217",
+        "preferred_term": "Spectinomycin dihydrochloride pentahydrate",
+        "names": [
+          "Spectinomycin dihydrochloride pentahydrate",
+          "CHEBI:9217",
+          "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride pentahydrate",
+          "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride--water (1/5)",
+          "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-N,N',2-trimethyl-4-oxodecahydro-2H-pyrano[2,3-b][1,4]benzodioxine-6,8-diaminium dichloride--water (1/5)"
+        ],
+        "full_record": {
+          "identifier": "CHEBI:9217",
+          "preferred_term": "Spectinomycin dihydrochloride pentahydrate",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:9217",
+            "ontology_label": "spectinomycin hydrochloride hydrate",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "CAS_RN_LOOKUP",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti, FEBA_stress."
+              }
+            ]
+          },
+          "synonyms": [
+            {
+              "synonym_text": "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride pentahydrate",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            },
+            {
+              "synonym_text": "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)decahydro-4H-pyrano[2,3-b][1,4]benzodioxin-4-one dihydrochloride--water (1/5)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            },
+            {
+              "synonym_text": "(2R,4aR,5aR,6S,7S,8R,9S,9aR,10aS)-4a,7,9-trihydroxy-N,N',2-trimethyl-4-oxodecahydro-2H-pyrano[2,3-b][1,4]benzodioxine-6,8-diaminium dichloride--water (1/5)",
+              "synonym_type": "EXACT_SYNONYM",
+              "source": "chebi_synonym_review"
+            }
+          ],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:34:31.158938+00:00",
+              "curator": "audit_cas_chebi_followup",
+              "action": "CREATED_FROM_CAS_LOOKUP",
+              "changes": "Created from CultureBotHT CAS-RN=22189-32-8; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti, FEBA_stress.",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:36.407472+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T08:08:32.486228+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+              "changes": "molecular_formula=C14H24N2O7.5H2O.2HCl; inchi=InChI=1S/C14H24N2O7.2ClH.5H2O/c1-5-4-6(17)14(20)13; smiles=Cl.Cl.O.O.O.O.O.[H][C@]12O[C@@H]3[C@@H](O)[C@H](NC",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:18.570665+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-06-02T07:05:13.394238+00:00",
+              "curator": "infer_roles_from_name_lists",
+              "action": "ANNOTATED",
+              "changes": "Added media role: SELECTIVE_AGENT (confidence: 0.80)"
+            },
+            {
+              "timestamp": "2026-07-20T00:00:00+00:00",
+              "curator": "migrate_media_roles_to_facets",
+              "action": "ANNOTATED",
+              "changes": "Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT -> physicochemical_roles.SELECTIVE_AGENT"
+            },
+            {
+              "timestamp": "2026-08-24T00:00:00+00:00",
+              "curator": "regrade_synonym_matches",
+              "action": "REGRADED_TO_CAS_RN_LOOKUP",
+              "changes": "mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created by an explicit CAS-to-ChEBI lookup and its current CAS RN 22189-32-8 uniquely resolves by ChEBI xref to CHEBI:9217 'spectinomycin hydrochloride hydrate'. CAS_RN_LOOKUP records the method that established this mapping; a lexical grade would discard that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under Rule D (#438), independently of mapping quality.",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "22189-32-8",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:34:31.158938+00:00",
+            "molecular_formula": "C14H24N2O7.5H2O.2HCl",
+            "inchi": "InChI=1S/C14H24N2O7.2ClH.5H2O/c1-5-4-6(17)14(20)13(21-5)22-12-10(19)7(15-2)9(18)8(16-3)11(12)23-14;;;;;;;/h5,7-13,15-16,18-20H,4H2,1-3H3;2*1H;5*1H2/t5-,7-,8+,9+,10+,11-,12-,13+,14+;;;;;;;/m1......./s1",
+            "smiles": "Cl.Cl.O.O.O.O.O.[H][C@]12O[C@@H]3[C@@H](O)[C@H](NC)[C@H](O)[C@H](NC)[C@H]3O[C@@]1(O)C(=O)C[C@@H](C)O2"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT",
+          "physicochemical_roles": [
+            {
+              "role": "SELECTIVE_AGENT",
+              "confidence": 0.8,
+              "evidence": [
+                {
+                  "reference_type": "COMPUTATIONAL_PREDICTION",
+                  "reference_text": "Inferred from curated media-role name pattern",
+                  "curator_note": "Provisional role from a curated name-pattern rule; review recommended."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients/mapped/Amylopectin_From_Maize.yaml",
+        "sha256": "e35f6b30ae1fbc8c17847d3b2d3ed6d38bd28e08ec2fef36bddecbf12435e4f7",
+        "identifier": "kgmicrobe.ingredient:amylopectin_from_maize",
+        "preferred_term": "amylopectin from maize",
+        "names": [
+          "amylopectin from maize",
+          "kgmicrobe.ingredient:amylopectin_from_maize"
+        ],
+        "full_record": {
+          "identifier": "kgmicrobe.ingredient:amylopectin_from_maize",
+          "preferred_term": "amylopectin from maize",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:28057",
+            "ontology_label": "amylopectin",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "NARROW_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "CultureBotHT",
+                "notes": "Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). "
+              },
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MIM curation (#322)",
+                "notes": "mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:28057 carries no structural definition, so it is a class rather than an individual, and the record's label 'amylopectin from maize' does not equal the term label 'amylopectin'. EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded because the label carries a botanical source the term does not encode."
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 0,
+            "media_count": 0
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-04-29T06:34:31.158938+00:00",
+              "curator": "audit_cas_chebi_followup",
+              "action": "CREATED_FROM_CAS_LOOKUP",
+              "changes": "Created from CultureBotHT CAS-RN=9037-22-3; CHEBI resolved via OAK CHEBI sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI sqlite (cas xref). ",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-01T07:35:32.185605+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-05-02T03:12:12.484263+00:00",
+              "curator": "auto_classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-13T00:00:00+00:00",
+              "curator": "regrade_class_overstatements",
+              "action": "REGRADED_CLASS_OVERSTATEMENT",
+              "changes": "mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); the label carries a botanical source the term does not encode.",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-13T00:00:00+00:00",
+              "curator": "mint_registry_for_narrow_records",
+              "action": "MINTED_REGISTRY_IDENTIFIER",
+              "changes": "identifier CHEBI:28057 -> kgmicrobe.ingredient:amylopectin_from_maize. The record is narrower than CHEBI:28057 (source-, form- or scope-qualified), and §3 forbids expressing a more specific thing by sharing a broader term's identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded to narrow/broad.",
+              "llm_assisted": false
+            }
+          ],
+          "chemical_properties": {
+            "cas_rn": "9037-22-3",
+            "data_source": "CultureBotHT compounds_to_cas.csv",
+            "retrieval_date": "2026-04-29T06:34:31.158938+00:00"
+          },
+          "ingredient_type": "SINGLE_INGREDIENT"
+        }
+      },
+      {
+        "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/data/ingredients/mapped/Spectinomycin.yaml",
+        "sha256": "205e16d6ca957fd18e72b4ae276b2ce1363c43bf7bc20488ce6ef23283d5aa5c",
+        "identifier": "CHEBI:9215",
+        "preferred_term": "Spectinomycin",
+        "names": [
+          "Spectinomycin",
+          "CHEBI:9215"
+        ],
+        "full_record": {
+          "identifier": "CHEBI:9215",
+          "preferred_term": "Spectinomycin",
+          "ontology_mapping": {
+            "ontology_id": "CHEBI:9215",
+            "ontology_label": "spectinomycin",
+            "ontology_source": "CHEBI",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "LEXICAL_MATCH",
+                "source": "microbedecoder",
+                "notes": "Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:spectinomycin; "
+              }
+            ]
+          },
+          "synonyms": [],
+          "mapping_status": "MAPPED",
+          "occurrence_statistics": {
+            "total_occurrences": 1,
+            "media_count": 1,
+            "source_occurrences": [
+              {
+                "source": "microbedecoder",
+                "count": 50,
+                "source_columns": "BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity|BacDive_Metabolite_production"
+              }
+            ]
+          },
+          "curation_history": [
+            {
+              "timestamp": "2026-08-04T02:54:09.684805+00:00",
+              "curator": "audit_import_ingredients[microbedecoder]",
+              "action": "CREATED_FROM_INGREDIENT_IMPORT",
+              "changes": "Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:spectinomycin; ",
+              "new_status": "MAPPED",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-04T03:08:34.142678+00:00",
+              "curator": "microbedecoder-import-review",
+              "action": "FLAGGED_FOR_REVIEW",
+              "changes": "mapping_status MAPPED -> PENDING_REVIEW",
+              "notes": "Auto-grounded by the microbedecoder import via ols-label-exact. Held at PENDING_REVIEW so the mapping does not reach the published SSSOM before a review-ingredients pass. See reports/microbedecoder_auto_mapped_review.tsv.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-04T00:00:00+00:00",
+              "curator": "review-ingredients",
+              "action": "REVIEWED_AND_PROMOTED",
+              "changes": "mapping_status PENDING_REVIEW -> MAPPED",
+              "previous_status": "PENDING_REVIEW",
+              "new_status": "MAPPED",
+              "notes": "Reviewed by review-ingredients: id resolves in local OAK adapter and its canonical label exact-matches the record ontology_label (case-insensitive). This does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted PENDING_REVIEW -> MAPPED.",
+              "llm_assisted": true
+            },
+            {
+              "timestamp": "2026-08-13T00:00:00+00:00",
+              "curator": "classify_ingredient_type",
+              "action": "AUTO_CLASSIFY_INGREDIENT_TYPE",
+              "changes": "set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural definition) (#323)",
+              "llm_assisted": false
+            },
+            {
+              "timestamp": "2026-08-27T03:16:39.520260+00:00",
+              "curator": "refresh_occurrence_statistics",
+              "action": "CORRECTED",
+              "changes": "occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived from distinct CultureMech recipe ids in the #337 occurrence table. The prior values came from the importer retired in #453, whose media_count counted a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08 rows=194137 distinct_recipes=15257]"
+            }
+          ],
+          "ingredient_type": "SINGLE_INGREDIENT",
+          "chemical_properties": {
+            "molecular_formula": "C14H24N2O7",
+            "smiles": "[H][C@]12O[C@@H]3[C@@H](O)[C@H](NC)[C@H](O)[C@H](NC)[C@H]3O[C@@]1(O)C(=O)C[C@@H](C)O2",
+            "inchi": "InChI=1S/C14H24N2O7/c1-5-4-6(17)14(20)13(21-5)22-12-10(19)7(15-2)9(18)8(16-3)11(12)23-14/h5,7-13,15-16,18-20H,4H2,1-3H3/t5-,7-,8+,9+,10+,11-,12-,13+,14+/m1/s1",
+            "molecular_weight": 332.353,
+            "data_source": "ChEBI+PubChem",
+            "retrieval_date": "2026-08-13T04:30:09.499290+00:00"
+          }
+        }
+      }
+    ],
+    "apple_qualified_identity_matches": []
+  }
+]

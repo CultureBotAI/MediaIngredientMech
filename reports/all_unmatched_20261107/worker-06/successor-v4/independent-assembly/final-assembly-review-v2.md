@@ -1,0 +1,9 @@
+Independent assembly review: PASS_EXACT_FINAL_CORE_AND_BOUNDED_SCIENCE_ASSEMBLY
+
+Reviewed the exact final selector bf5d6bec45951e4966062cf5d574231d51bf17b83fe3c92b57c7a16d38889232 and full core. All 103 predecessor payloads are accounted for: 96 byte-identical, seven source-specific Water corrections, and one genuine new Apple Pectin origin (104 selected). All 188 source cases, 310 frozen CM occurrences and 88 downstream holds remain. Only nine case outcomes changed, covering ten CM occurrences and three YNB receiving contexts.
+
+Read all eight changed/new payloads and nine changed source outcomes, challenged the separately authored stock and material reviews against actual primary and ontology capture bodies, and validated every recorded science leaf against exact inputs. Final cases/proposals equal those reviewed objects plus precisely enumerated reviewer metadata. No new confirmed scientific or assembly finding. The complete field trace, native structural audit, two science reviews, and additive material binding remain separately attributable.
+
+W06-S1217-NEW-001 removes seven unsupported Water components while retaining literal solutes/strengths and UNKNOWN completeness. The explicit 10% in H2O stock remains byte-identical. NEW-002 creates apple-specific NCIT:C84042 from null before, with raw pectin (apple) and product/polymer unknowns. NEW-003 keeps J240 BD-Difco/1 g distinct from DSMZ1682/1837 6.7 g and preserves all exact-variant holds. No generic owner, CAS, formula, grade, species, role, solvent, gas content or final volume is inferred. All twelve historical independent dispositions and inherited Modified Trace Vitamins/PYGS evidence remain unchanged.
+
+Full final gates, native saved report and actual published-head binding are subsequent separate checks. This receipt does not grant source-case integration, whole-owner, role, application, export or release approval.

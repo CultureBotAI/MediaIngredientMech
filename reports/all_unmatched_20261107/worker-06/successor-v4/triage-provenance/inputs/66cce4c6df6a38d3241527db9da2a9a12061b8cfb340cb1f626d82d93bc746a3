@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:jcm_1344_yeast_extract_1_percent_stock
+preferred_term: JCM 1344 yeast extract 1% stock
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:jcm_1344_yeast_extract_1_percent_stock
+  ontology_label: JCM 1344 yeast extract 1% stock
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344
+    notes: Source-qualified whole preparation identity. No identity mapping to a single
+      constituent or generic stock is asserted.
+components:
+- component_name: Yeast extract
+  reference_scope: UNMAPPED
+  concentration_value: '1'
+  concentration_unit: PERCENT
+- component_name: Water
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1344
+    source_record: JCM 1344 yeast extract 1% stock
+    notes: Source ingredient names and batch amounts are retained. UNMAPPED child
+      references deliberately withhold exact substance/hydrate identifiers until independently
+      established.
+    supports: SUPPORT
+  notes: JCM1344 adds1ml of separately autoclaved1%yeast-extract solution after cooling
+    the basal medium. Percent basis and commercial extract are not specified. PERCENT
+    retains literal source wording without conversion to10g/L; water follows aqueous
+    solution context. This stock is not the NBRC1407 boiled-biomass extract or dry
+    commercial yeast extract.
+notes: 'JCM1344 adds1ml of separately autoclaved1%yeast-extract solution after cooling
+  the basal medium. Percent basis and commercial extract are not specified. PERCENT
+  retains literal source wording without conversion to10g/L; water follows aqueous
+  solution context. This stock is not the NBRC1407 boiled-biomass extract or dry commercial
+  yeast extract. Raw source label retained for this occurrence only: ''1% Yeast extract
+  solution''. Generic wording is not a global resolving alias.'
+curation_history:
+- timestamp: '2026-11-08T05:27:45.953257+00:00'
+  curator: all_unmatched_20261107_worker06_research_a
+  action: CORRECTED
+  changes: Proposed source-qualified whole stock with literal components and preparation
+    limits; no maintained data changed.
+  new_status: MAPPED
+  llm_assisted: true

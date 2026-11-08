@@ -1,0 +1,44 @@
+identifier: NCIT:C84042
+preferred_term: Apple pectin
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: NCIT:C84042
+  ontology_label: Pectin, Apple
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://togomedium.org/sparqlist/api/gmdb_medium_by_gmid?gm_id=M2313
+    notes: 'Codex worker06 source assessment: the literal apple-pectin material boundary
+      agrees with the apple-specific NCIt C84042 label. This is an LLM-assisted proposed
+      identity, not human curation or product/structure approval.'
+  - evidence_type: LLM_SUGGESTION
+    source: https://api-evsrest.nci.nih.gov/api/v1/concept/ncit/C84042?include=full
+    notes: NCI EVS and independent OLS term capture identify active NCIT:C84042, preferred
+      Pectin, Apple, exact synonym Apple Pectin and parent Pectin. Mapping denotes
+      the apple-derived pectin material only. Generic ChEBI annotation, CAS and chemical
+      formula are not transferred as source facts.
+synonyms:
+- synonym_text: pectin (apple)
+  synonym_type: RAW_TEXT
+  source: TOGO M2313; frozen CultureMech source case CM_NAME:84b6710e91dc085f4d30b1dc733b19613ec56fb8f712d3ac0103c8ad60e74f12
+notes: Apple-derived pectin material named in TOGO M2313 and its frozen source occurrence.
+  The source lists 0.2% with unspecified basis as one of the alternative carbon materials,
+  including separately named citrus-peel pectin; these alternatives are not simultaneous
+  recipe components. The receiving-medium amount does not define an apple-pectin stock
+  or intrinsic material concentration. Supplier, catalog, grade, exact botanical species,
+  esterification, molecular-weight distribution and supplied physical form are unknown.
+  SINGLE_INGREDIENT denotes the ingredient granularity, not chemical purity or a homogeneous
+  polymer. No components, CAS, formula, structure, generic-pectin exact identity,
+  nutritional role or whole-owner approval is inferred. The maintained generic Pectin
+  owner is unchanged; no predecessor owner or promotion is invented.
+curation_history:
+- timestamp: '2026-11-08T08:03:06.967987+00:00'
+  curator: Codex worker06 /root
+  action: CREATED
+  changes: 'Issue 1217 W09 residual 002: propose a new apple-pectin material using
+    source-qualified identity and independently captured NCIT:C84042. Genuine null-before
+    origin; no generic Pectin approval/history copied and no maintained data changed.'
+  new_status: MAPPED
+  llm_assisted: true
