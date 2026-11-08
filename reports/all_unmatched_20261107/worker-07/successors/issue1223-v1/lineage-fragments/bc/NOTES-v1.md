@@ -1,0 +1,17 @@
+# Nine issue1223 lineage mappings
+
+Author: `/root/w07_lineage_bc_author`. Scope is metadata only, covering the five `A-REVIEW-B-*` findings and coordinator labels `B-C-01` through `B-C-04`. No scientific decision, payload, source capture, native review, historical review or other-worker input was edited.
+
+`bc-lineage-v1.json` preserves each exact finding object and points to its original and final review by repository-relative path, SHA256 and JSON pointer. It binds the actual B draft snapshots, actual C pre-completeness source-decision snapshot, corrected artifacts, direct independent reviews and current selected payloads. Each historical artifact binding was compared byte-for-byte with its publication commit (`be2f4c36d3d4ed79aabe29401c555ae3fd65d7b0`); issue1203 successor bindings were compared with current published `fbfa032435ea1c399ae9b98bfedadb9ed639430d`. Publication commits are not presented as separate correction commits or observed edit timestamps.
+
+The five A-to-B findings were independently re-reviewed by `/root/primary_a`, distinct from `/root/primary_b`. The four B-to-C findings were independently re-reviewed by `primary_b`, distinct from `primary_c`, as the original receipts record. This metadata author does not independently approve that author's own supplement; a separate metadata skeptic must review these mappings.
+
+The original B-to-C findings do not carry IDs. `B-C-01` through `B-C-04` are the coordinator's issue1223 labels for `findings[0]` through `findings[3]`. Both saved B-to-C receipts already report resolution, so no original open timestamp is invented. The A initial receipt has a file-level review timestamp earlier than two appended finding-specific `observed_at` fields; both remain literal recorded timestamps without an inferred chronology.
+
+The preserved C decision snapshot proves actual before/after source-disposition changes. It does not prove a pre-correction C-P06/C-P07/C-P08 payload. The bounded ignored-inclusive filename search is saved in `c-draft-availability-search-v1.json`; it found the corrected payloads, decision snapshot and root finding/re-review receipts but no separate earlier C payload snapshot. Consequently those mappings bind the actual published correction artifacts and original independent direct re-review. They do not reconstruct or invent lost payload bytes. This does not defer a scientific correction: the corrected payloads are already preserved and independently reviewed.
+
+The evidence-kind correction covers ten ledger entries across six endpoints, including repeated JCM665/688 failures. Their actual response bytes and original retrieval timestamps are identical before and after; classification and explanatory text changed. Historical failed probes remain evidence of access limitations.
+
+Historical C-P08 is kept separate from the current issue1203 stock successor and its `/root/mg_independent_reviewer` receipts. The historical B reviewer did not review those later bytes. Issue1210 remains a separate cross-shard property/parent and final combined-payload review condition for the sodium ammonium hydrogenphosphate tetrahydrate proposal. Neither issue1203 nor issue1210 is closed by this supplement.
+
+All current source-specific requirements, identity distinctions, role/export holds, native owner findings and coordinator integration obligations remain. This fragment supplies no whole-owner approval, final cross-shard union approval or supported-export approval.
