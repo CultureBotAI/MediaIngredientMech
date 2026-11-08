@@ -1,0 +1,91 @@
+{
+  "finding_id": "W05-FINAL-CHEM-NEW-02",
+  "author": "/root/chemicals_research",
+  "status": "reported_before_fix",
+  "origin": "Root independent full-payload challenge, independently checked by chemical author against exact sources and selected payloads.",
+  "scope": [
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1221",
+      "payload": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1221.yaml",
+        "sha256": "05cf4a1b09aff0fd1954ef0ac1aa563844414f4896261eaca48271323d9f8a46"
+      },
+      "components": [
+        {
+          "component_name": "HEPES buffer moiety, total",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "M"
+        },
+        {
+          "component_name": "Potassium-containing buffer species",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221",
+            "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+          }
+        ],
+        "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+      },
+      "case_ids": [
+        "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"
+      ]
+    },
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1474",
+      "payload": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1474.yaml",
+        "sha256": "6ba28f7de8b9b6387fb38f44ec01ce9b9626a84bea256ea63b7d0df07b109fad"
+      },
+      "components": [
+        {
+          "component_name": "HEPES buffer moiety, total",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "M"
+        },
+        {
+          "component_name": "Potassium-containing buffer species",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474",
+            "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+          }
+        ],
+        "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+      },
+      "case_ids": [
+        "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"
+      ],
+      "occurrence_ids": [
+        "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"
+      ]
+    }
+  ],
+  "evidence_ids": [
+    "CHEM-CAP-b4a1db85c19c42e5",
+    "CHEM-CAP-c801a5637573d5ae"
+  ],
+  "finding": "NBRC 1221 and 1474 name only the supplied 1 M HEPES-KOH stock. The candidates instead assert HEPES buffer moiety, total and Potassium-containing buffer species as material has-part constituents using RECIPE_TRANSCRIPTION. These labels describe inferred chemical/speciation classes, not material inputs transcribed from the sources. The 1 M nominal stock strength does not establish the stated constituent basis, potassium stoichiometry or free KOH input.",
+  "proposed_bounded_fix": "Keep the useful named nominal whole-stock description and conditional family owner handles. Remove unsupported component/speciation assertions and represent composition as unknown with source-name evidence and explicit limits, if permitted by native schema; do not infer solvent, free KOH or neutralization ratio. Preserve full original component objects in this immutable finding and original history.",
+  "approval_scope": "No maintained edit, owner selection or release. Separate coordinator routing pending."
+}

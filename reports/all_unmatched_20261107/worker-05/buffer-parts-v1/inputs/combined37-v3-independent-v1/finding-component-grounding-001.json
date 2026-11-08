@@ -1,0 +1,82 @@
+{
+  "finding_id": "COMBINED37-COMPONENT-GROUNDING-001",
+  "status": "open",
+  "severity": "low",
+  "category": "completeness",
+  "summary": "At least three source-explicit nominal salt parts remain unnecessarily UNMAPPED; hydrate uncertainty is overgeneralized.",
+  "targets": [
+    "TARGET-012",
+    "TARGET-032"
+  ],
+  "evidence": {
+    "component-grounding-probe.json": "1073a4f8c620e6121345897881f5a52cfa9d0313f01131012820d1d4c81f0bba",
+    "component_grounding_probe.py": "2c647aeb44395f69a3f9b02221f7cba6fb2777da5c78e6d1d1fcfa5acf661f8e",
+    "salt-component-current-owners.json": "fe0bfdb284b41a281f1afb0b9383797df87a89f29b108075928a44985ff18e5a",
+    "salt-component-primary-web.json": "eaf48426b74068904184b4acc5feeed36da9d9f1ce502ce02cbafaccd946224e",
+    "component-grounding-followup.md": "50d1fb2209add3dd458f62d4a47e45a8dd3db3108844ffd495f9d01231b20fe8",
+    "live-issues/1208.json": "e8deea16783421c54303d062fe94d89ad40664b441541772a6c5dc1c43ddc1b9",
+    "live-issues/1224.json": "cf74b34da1acfffd346fa0fcba04aa3632ea7095e8f78d2055780e64987a0e39"
+  },
+  "controls": [
+    {
+      "target": "TARGET-012",
+      "field": "components/3",
+      "before": {
+        "component_name": "Sodium chloride",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "19.45",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+      },
+      "counterfactual": {
+        "component_name": "Sodium chloride",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "19.45",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+        "component_id": "CHEBI:26710"
+      },
+      "owner_path": "data/ingredients/mapped/Nacl.yaml",
+      "owner_sha256": "41c45e2a588da9811c8f20f7bf5c2c80dc15945cf8fdee5673d4143a8af62e68"
+    },
+    {
+      "target": "TARGET-012",
+      "field": "components/7",
+      "before": {
+        "component_name": "Potassium chloride",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": ".55",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+      },
+      "counterfactual": {
+        "component_name": "Potassium chloride",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": ".55",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+        "component_id": "CHEBI:32588"
+      },
+      "owner_path": "data/ingredients/mapped/Kcl.yaml",
+      "owner_sha256": "c265e25d76e9e9a9ec1f234b0ab0a4c6a51e7585d9fb442fd46045753369b4dc"
+    },
+    {
+      "target": "TARGET-032",
+      "field": "components/4",
+      "before": {
+        "component_name": "Sodium chloride",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "5",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+      },
+      "counterfactual": {
+        "component_name": "Sodium chloride",
+        "reference_scope": "MIM_CATALOG",
+        "concentration_value": "5",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+        "component_id": "CHEBI:26710"
+      },
+      "owner_path": "data/ingredients/mapped/Nacl.yaml",
+      "owner_sha256": "41c45e2a588da9811c8f20f7bf5c2c80dc15945cf8fdee5673d4143a8af62e68"
+    }
+  ],
+  "recommendation": "Existing1193 scoped followup, crosslink1208/1224; exact3references then independently assess remainingparts, preserve genuine form/owner/role/releaseholds.",
+  "no_application": true,
+  "at": "2026-11-08T09:01:16.151357+00:00"
+}

@@ -1,0 +1,112 @@
+{
+  "schema": "w05-assembly-preliminary-helper-review-v1",
+  "at": "2026-11-08T09:46:24.938569+00:00",
+  "reviewer": "/root/assembly_audit",
+  "independence": "Separate mechanical reviewer; no author payload, helper or report edits.",
+  "status": "preliminary_findings_reported_not_final_assembly_approval",
+  "head": "0bac12cabfd1f67f212631d8eef9aa46379f6b41",
+  "reviewed_files": [
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/compose_v3.py",
+      "sha256": "c8dab558d80745b64f88222cae90e55d4f4113466499075f3054d2e64fec9588",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-compose_v3.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/assemble_reviewed.py",
+      "sha256": "7cd359a9be956dcd6852091f78c9301402916408db93bdb13bddf9fa514a95ec",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-assemble_reviewed.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/validate_consolidated.py",
+      "sha256": "ea43ebf7c9a7d6d4f4292aff800dbaefd8f8fca8424aed9c14e83d8016cbb53f",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-validate_consolidated.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/write_accounting.py",
+      "sha256": "d251889569d5a08bceeb9757b4fd2626592be4d7592ce8f9636f8c0b30310b59",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-write_accounting.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/write_final_reports.py",
+      "sha256": "ab7e73007b8f1a33b85b5d3f82fb4861ef697c271c0a78d0e29873831a1743ed",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-write_final_reports.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/build_native_consolidated.py",
+      "sha256": "86a89b33c8d4ebe005d954c106f9cda0059ee28fc7501c7317dfb5878a91e4d0",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-build_native_consolidated.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/seal_consolidated.py",
+      "sha256": "af1b16c7819ea32a77446b5950b8d47ea341656f13d650d10751a75b1a94c2b1",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-seal_consolidated.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/preserve_final.py",
+      "sha256": "d2da082c4205c30bae102a08da5f3f6837e1e78bd9f57e1a7b6ba694afdf793c",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-preserve_final.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/write_handoff_consolidated.py",
+      "sha256": "07c8a9d91febea2b57cdbb2ebae03ebe31b839141b0c65277323efac2684e254",
+      "preserved_reproduction": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-write_handoff_consolidated.py"
+    }
+  ],
+  "contracts": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf"
+    },
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": "docs/record-review-profile.md",
+      "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7"
+    },
+    {
+      "path": "conf/record_review.yaml",
+      "sha256": "07a8fa6d17ee664c7a2bc2d5b5821bd106f6aa454299b4f3e0440176876cd82e"
+    },
+    {
+      "path": "schema/record_review.yaml",
+      "sha256": "229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-001",
+      "severity": "minor",
+      "status": "open",
+      "scope": "Native review command provenance only; no source/payload scientific finding.",
+      "file": "control/build_native_consolidated.py",
+      "reproduction": "The checks comprehension creates four passed checks with status/evidence only. No command, exit_code or expected_exit_code is written, despite actual command receipts existing for accounting/full-overlay/full-strict.",
+      "contract": "docs/record-reviews.md Capture And Save requires actual documented commands and actual exit codes. schema/record_review.yaml ReviewCheck supports command, exit_code and expected_exit_code.",
+      "bounded_fix": "Before creating final native review, retain exact actual validation receipt commands and exit codes as separate executable checks; keep scientific judgment as a non-command review check. Do not invent an executed command for SCIENCE."
+    },
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-002",
+      "severity": "minor",
+      "status": "open",
+      "scope": "Finding-register assembly coverage only; primary artifacts remain intact.",
+      "file": "control/write_final_reports.py",
+      "reproduction": "scoped_bindings requests tris/primary-assessment.json and parents/final/assessment.json; both do not exist in the current complete ignored-inclusive lane trees. The existing Tris assessment is tris/source-assessment.json; parent assessments reside in the selected decision records and parents/authorship-and-delta.json / parents/selection-receipt.json. if q.is_file() silently drops the two requested scope bindings.",
+      "bounded_fix": "Use explicit existent exact selected assessment/binding paths for each required lane and fail if required paths are missing; reflect any later parent/Polypeptone successor selection. Preserve all predecessor assessments without reattributing them."
+    }
+  ],
+  "scope_limitations": [
+    "No final payload, final core, native pair or complete final selector is certified by this preliminary review.",
+    "Parent reports final Polypeptone/Peptone scientific selection remains in progress; draft-v3 cannot be sealed as final.",
+    "No data-loss or source-boundary defect established in the current compose_v3/assemble_reviewed logic. Final actual assembled bytes still require review."
+  ],
+  "absence_search": {
+    "includes_ignored": true,
+    "method": "path existence and Path.rglob complete lane trees"
+  },
+  "deduplication": "These findings concern new compiler helper provenance/indexing. They do not duplicate source-scientific findings in parents-new-finding-v1, media-new-finding-v1 or chemical-report findings. Final register deduplication remains to be checked against final selected artifacts."
+}

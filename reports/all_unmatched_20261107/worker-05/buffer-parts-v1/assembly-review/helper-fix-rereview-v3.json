@@ -1,0 +1,66 @@
+{
+  "at": "2026-11-08T09:52:34.983385+00:00",
+  "reviewer": "/root/assembly_audit",
+  "scope": "Final helper fixes rereviewed; final generated artifacts still require exact-byte review.",
+  "bindings": [
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/write_final_reports_v4.py",
+      "sha256": "407c41cd4c54d32a554ba058767a8878cf0b06278bc32803241aba2879431d33"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/build_native_consolidated_v2.py",
+      "sha256": "64aca2602ddcf5b6f722b20fafce71f3365747d8c420aaaa9b12b6c9242bfcac"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-001",
+      "status": "helper_fix_verified_pending_generated_pair",
+      "reason": "Actual executable check receipts bound with command and exit fields."
+    },
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-002",
+      "status": "helper_fix_verified_pending_generated_reports",
+      "reason": "Required final and historical assessments bound explicitly; individual finding IDs flattened with exact source locators and deduplication."
+    }
+  ],
+  "simulated_register_reproductions": [
+    {
+      "finding_id": "W05-PARENTS-NEW01",
+      "path": "parents/new-finding-before-fix.json",
+      "sha256": "82f0607107c34315a68784d5189555d25596e2dc9dc017bd4cf30483d202037f",
+      "locator": "$"
+    },
+    {
+      "finding_id": "W05-CONSOLIDATED-MEDIA-REVIEW-001",
+      "path": "review/media-new-finding-v1.json",
+      "sha256": "686b4bca414d6e2147876575555b206f1c24d242425290dd617bade58128b626",
+      "locator": "$"
+    },
+    {
+      "finding_id": "W05-CONSOLIDATED-PARENTS-REVIEW-001",
+      "path": "review/parents-new-finding-v1.json",
+      "sha256": "17e72ff4bf099defa115d92c5e960212301607a25dc1be0474c2ec992684f9b7",
+      "locator": "$"
+    },
+    {
+      "finding_id": "W05-CONSOLIDATED-POLYPEPTONE-METADATA-001",
+      "path": "polypeptone-final/status-finding-before-fix.json",
+      "sha256": "ebc9cacc5b494c63e7ff75dcc49b5ab06ed9e006ba6d27e161b42f58a996e1e0",
+      "locator": "$"
+    },
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-001",
+      "path": "assembly-review/preliminary-helper-review-v1.json",
+      "sha256": "d5cb4017340332cfcfd9beed9ee8211fa3f6cb6dca8dfcb77d305b0875d069c9",
+      "locator": "findings[0]"
+    },
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-002",
+      "path": "assembly-review/preliminary-helper-review-v1.json",
+      "sha256": "d5cb4017340332cfcfd9beed9ee8211fa3f6cb6dca8dfcb77d305b0875d069c9",
+      "locator": "findings[1]"
+    }
+  ],
+  "no_new_finding_ids": true
+}

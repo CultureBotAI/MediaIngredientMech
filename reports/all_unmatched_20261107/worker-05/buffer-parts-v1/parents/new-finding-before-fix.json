@@ -1,0 +1,35 @@
+{
+  "finding_id": "W05-PARENTS-NEW01",
+  "reported_at": "2026-11-08T09:31:42.873818+00:00",
+  "reporter": "/root/buffer_hepes",
+  "scope": "Generic Peptone FOODON:03315306 candidate; possible shared protein-hydrolyzate parent applicability issue for coordinator triage only.",
+  "status": "Reported before additional correction; initial private candidate retained unchanged pending triage.",
+  "source": {
+    "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon-official-owl.json",
+    "sha256": "b897bf64c1b265c422db9ee01e1235c10c0b809e7f02326ef810a52068347edf",
+    "receipt": {
+      "url": "https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl",
+      "accessed_at": "2026-11-08T09:31:15.869103+00:00",
+      "author": "/root/buffer_hepes",
+      "provider": "Free public primary ontology endpoint",
+      "path": "foodon-official-owl.json",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "b897bf64c1b265c422db9ee01e1235c10c0b809e7f02326ef810a52068347edf",
+      "bytes": 40779019
+    }
+  },
+  "reproduction": {
+    "FOODON_03315306": "<owl:Class rdf:about=\"http://purl.obolibrary.org/obo/FOODON_03315306\">\n        <rdfs:subClassOf rdf:resource=\"http://purl.obolibrary.org/obo/FOODON_00001872\"/>\n        <rdfs:subClassOf>\n            <owl:Restriction>\n                <owl:onProperty rdf:resource=\"http://purl.obolibrary.org/obo/RO_0002350\"/>\n                <owl:someValuesFrom rdf:resource=\"http://purl.obolibrary.org/obo/FOODON_03400181\"/>\n            </owl:Restriction>\n        </rdfs:subClassOf>\n        <obo:IAO_0000114 rdf:resource=\"http://purl.obolibrary.org/obo/IAO_0000428\"/>\n        <oboInOwl:hasDbXref rdf:resource=\"https://bioregistry.io/reference/siren:F15306\"/>\n        <rdfs:comment xml:lang=\"en\">SIREN DB annotation:\n* ingredient: flavoring, spice or herb added FOODON:03460227</rdfs:comment>\n        <rdfs:label xml:lang=\"en\">protein hydrolyzates</rdfs:label>\n    </owl:Class>",
+    "FOODON_00001872": "<owl:Class rdf:about=\"http://purl.obolibrary.org/obo/FOODON_00001872\">\n        <rdfs:subClassOf rdf:resource=\"http://purl.obolibrary.org/obo/FOODON_00002403\"/>\n        <obo:IAO_0000115 xml:lang=\"en\">This is a working folder that holds LanguaL SIREN database product types that need to be reviewed for placement within the food product hierarchy.</obo:IAO_0000115>\n        <dcterms:contributor rdf:resource=\"https://orcid.org/0000-0002-8844-9165\"/>\n        <rdfs:label xml:lang=\"en\">food material (to be processed)</rdfs:label>\n    </owl:Class>",
+    "FOODON_03400181": "<owl:Class rdf:about=\"http://purl.obolibrary.org/obo/FOODON_03400181\">\n        <rdfs:subClassOf rdf:resource=\"http://purl.obolibrary.org/obo/FOODON_03401270\"/>\n        <obo:IAO_0000114 rdf:resource=\"http://purl.obolibrary.org/obo/IAO_0000122\"/>\n        <obo:IAO_0000115 xml:lang=\"en\">Substance that is added to food or that is used to treat food and that becomes a component of the food or otherwise affects the functional or nutritional characteristics of the food; for purposes of this vocabulary it excludes products that fall under other categories, such as flavors and sweeteners.</obo:IAO_0000115>\n        <obo:IAO_0000117 rdf:resource=\"https://orcid.org/0000-0002-8844-9165\"/>\n        <obo:IAO_0000119>FDA CFSAN 1995</obo:IAO_0000119>\n        <oboInOwl:hasDbXref rdf:resource=\"http://www.langual.org/langual_thesaurus.asp?termid=A0181\"/>\n        <rdfs:label xml:lang=\"en\">food additive (us cfr)</rdfs:label>\n        <rdfs:seeAlso rdf:resource=\"https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?CFRPart=170&amp;showFR=1\"/>\n        <rdfs:seeAlso rdf:resource=\"https://www.fda.gov/food/food-ingredients-packaging/overview-food-ingredients-additives-colors#foodadd\"/>\n    </owl:Class>",
+    "FOODON_03460227": "<owl:Class rdf:about=\"http://purl.obolibrary.org/obo/FOODON_03460227\">\n        <rdfs:subClassOf rdf:resource=\"http://purl.obolibrary.org/obo/FOODON_03460117\"/>\n        <obo:IAO_0000114 rdf:resource=\"http://purl.obolibrary.org/obo/IAO_0000428\"/>\n        <obo:IAO_0000118 xml:lang=\"en\">flavoring, spice or herb added</obo:IAO_0000118>\n        <oboInOwl:hasDbXref rdf:resource=\"http://www.langual.org/langual_thesaurus.asp?termid=H0227\"/>\n        <rdfs:comment xml:lang=\"en\">LanguaL curation note: Used when flavoring, spice or herb is added at any level.</rdfs:comment>\n        <rdfs:label xml:lang=\"en\">flavoring, spice or herb</rdfs:label>\n    </owl:Class>"
+  },
+  "problem": "Full official FoodOn OWL declares FOODON:03315306 subClassOf a restriction member_of some FOODON:03400181 food additive (us cfr), in addition to the rdfs:comment flavoring annotation. Thus a material-family interpretation must address an actual formal food-additive membership restriction, not only exclude the comment as a role. Unqualified source peptones do not establish the required food-additive scope. The initial private guarded FoodOn candidate is not yet independently approved.",
+  "initial_candidate": {
+    "path": "proposed/Peptone.yaml",
+    "sha256": "614b433ee0664b9ece52b275875ad1fa11660c7e97a7c9ce2dc23ccd2e3e66e6"
+  },
+  "bounded_next_step": "Do not publish the initial FoodOn candidate as approved. Independently triage applicability and inspect alternative broader MicrO class context; preserve local Peptone identity, all source/role/owner holds and earlier histories. Report any affected coordinator union separately; no Polypeptone edit by this author."
+}

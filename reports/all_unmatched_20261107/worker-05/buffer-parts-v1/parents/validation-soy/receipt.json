@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-08T09:33:39.397358+00:00",
+  "author": "/root/buffer_hepes",
+  "status": "PASS",
+  "proposal_id": "W05-FINAL-MAT-032",
+  "after_capture": {
+    "root": "artifact",
+    "path": "buffer-parts-v1/parents/proposed/Soy_Peptone.yaml",
+    "sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee"
+  },
+  "guarded_validation": "PASS",
+  "strict_command": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python",
+    "scripts/validate_strict.py",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/parents/proposed/Soy_Peptone.yaml",
+    "--workers",
+    "1",
+    "--out",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/parents/validation-soy/strict-failures.tsv"
+  ],
+  "strict_exit_code": 0,
+  "builder": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "full_current_W05_owner_index_records": 3029,
+  "native_rows": [
+    {
+      "subject_id": "MIM:Soy_Peptone",
+      "subject_label": "Soy peptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "MICRO:0000181",
+      "object_label": "soy peptone",
+      "object_source": "obo:micro.owl",
+      "mapping_justification": "semapv:LexicalMatching",
+      "source": "MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000181|MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=Codex /root/buffer_hepes; W05 consolidated report-only parent correction",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "",
+      "other": "Soybean peptone|Peptone from soymeal|Peptic digest of soybean meal",
+      "validation_method": ""
+    }
+  ],
+  "suppressions": [],
+  "rejected_aliases_absent": [
+    "Phytone peptone",
+    "Phytone peptone (BD-BBL)",
+    "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+    "Soytone",
+    "Bacto Soytone",
+    "Properties: Undefined component"
+  ],
+  "scope": "Selected Soy payload only; current full W05 proposal overlay supplies the owner index. Peptone candidate remains unselected pending scientific scope triage. This technical projection is not whole-owner, source or export approval."
+}

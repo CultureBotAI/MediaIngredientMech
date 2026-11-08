@@ -1,0 +1,77 @@
+identifier: UNMAPPED_0454
+preferred_term: MRS medium
+synonyms:
+- synonym_text: MRS medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: MRS medium (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: MRS medium (Scharlau Chemie)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: UNMAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1626); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:03:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named MRS medium formulation and left unmapped rather than
+    identity-mapping to a single component or generic medium parent.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/MRS_Medium-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended ontology decision:** retain the record
+    as `UNMAPPED`. Use the label-only candidate **“de Man–Rogosa–Sharpe medium”**
+    until a stable resource is verified to represent the formulation itself. Do **not**
+    use `skos:exactMatch` to a generic culture-medium parent. With no verified target
+    CURIE, the safest action is **no SSSOM row**. If a project requires non-identity
+    class grounding, a ver No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''MRS medium (Difco)'' (x1 CultureMech mentions); ''MRS medium
+    (Scharlau Chemie)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T06:00:37.045833+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: Existing generic MRS owner includes scratch JCM1 and branded Difco/Scharlau
+    uses. Preserve its UNMAPPED identity and original authentic aliases, with explicit
+    source partition and no universal component assertion. The separately proposed
+    source-qualified JCM1 preparation carries the exact11-input recipe for JCM111;
+    commercial variants are not assigned to it. Isolated proposal only; inherited
+    holds remain.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1626); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as a named MRS medium formulation pending
+  formulation-specific curation. Correction1193: Existing generic MRS owner includes
+  scratch JCM1 and branded Difco/Scharlau uses. Preserve its UNMAPPED identity and
+  original authentic aliases, with explicit source partition and no universal component
+  assertion. The separately proposed source-qualified JCM1 preparation carries the
+  exact11-input recipe for JCM111; commercial variants are not assigned to it.'
+ingredient_type: NAMED_MEDIUM

@@ -1,0 +1,46 @@
+{
+  "finding_id": "W05-FINAL-SKEPTIC-CHEM-006",
+  "reviewer": "/root/materials_research",
+  "at": "2026-11-08T08:15:48.016176+00:00",
+  "status": "reported_before_fix",
+  "kind": "supplement_outcome_disposition_enum",
+  "input": {
+    "path": ".temp/w05-final-correction-v1/chemical-supplement-v1/decisions-v1.json",
+    "sha256": "ed425aa6d0925c8ca5fd73568220c3d18562078d3af065f4e760347f99d80c14"
+  },
+  "auditor": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py",
+    "sha256": "3bde4d7fa3aca41c6962a7c61b15f9709b98acdbbe936cdb498b3bca68600fad",
+    "allowed_dispositions_from_actual_AST": [
+      "broad_parent_relation_only",
+      "existing_identity_or_alias",
+      "malformed_or_nonchemical_token",
+      "new_distinct_ingredient_proposal",
+      "stock_product_mixture_context",
+      "supplied_form_correction",
+      "unresolved"
+    ]
+  },
+  "reproduction_scope": "Exact membership check against the unmodified auditor AST; this is not a claim that the whole 188-case campaign validator was executed by this reviewer.",
+  "invalid_cases": [
+    {
+      "lane_index": 10,
+      "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+      "disposition": "curation_proposal",
+      "proposal_ids": [
+        "FINAL-CHEM-P-thiamine-hcl-monohydrate"
+      ]
+    },
+    {
+      "lane_index": 48,
+      "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+      "disposition": "curation_proposal",
+      "proposal_ids": [
+        "FINAL-CHEM-P-thiamine-hcl-monohydrate"
+      ]
+    }
+  ],
+  "bounded_fix": "Preserve original supplement v1. Change only these two disposition values to new_distinct_ingredient_proposal and update exact source-conclusion decision hash bindings and ancestry. Preserve all scientific reasoning, raw cases, primary evidence, holds, proposal and complete YAML bytes.",
+  "scientific_limit": "The proposed source-defined monohydrate material is supported within its explicit molecular-grounding limits. This finding concerns report shape only.",
+  "reported_to_root_before_fix": true
+}

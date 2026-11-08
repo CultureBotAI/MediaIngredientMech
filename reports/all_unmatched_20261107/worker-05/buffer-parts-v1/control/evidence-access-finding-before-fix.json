@@ -1,0 +1,70 @@
+{
+  "finding_id": "W05-ASSEMBLY-EVIDENCE-004",
+  "at": "2026-11-08T09:57:41.662981+00:00",
+  "reporter": "/root",
+  "status": "confirmed_before_fix",
+  "reproduction": {
+    "core_evidence_sha256": "70413a104b3040d80d1c0c4d5f6fe68952f5d88a849d1ffd4734dc4c1e2d92e7",
+    "audit_receipt_sha256": "d7d3929fc58421afd366b66688e35b2dd021257a5ab39be349aa8a747bda04c2",
+    "audit_stderr_sha256": "60f1123f0891d693b801062509249e95b9bb578b64c274b0a84c9138550b8be2"
+  },
+  "entries": [
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-FOODON-RELATIONS",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/input/coordinator-reassessment/captures/web-foodon-nlm-response.json",
+        "sha256": "75acdee90644da43e10566ad3308a7cd4a4ac9d29f36b3b88d111afe54c26991"
+      },
+      "kind": "primary_source",
+      "locator": "Exact successful web response; FoodOn relations member_of row and full primary NLM source extracts.",
+      "supports_or_contradicts": "External category membership is not a food-use, has-role or lot gate.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": "https://foodon.org/design/foodon-relations/",
+      "original_capture_attribution": {
+        "reviewer": "/root/step7d_independent_review",
+        "successful_web_response_absolute_retrieval_time": "not recorded in response; not inferred from separate failed shell receipt",
+        "current_assessor": "/root/buffer_hepes"
+      }
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-OWL-SEMANTICS",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/input/coordinator-reassessment/captures/web-w3c-semantics-response.json",
+        "sha256": "5cf42c72700dd7d4df6655a231132fe3c47621fd62668468e1f0c6d29bda2abf"
+      },
+      "kind": "primary_source",
+      "locator": "Exact successful W3C primary web response, class-expression and subclass semantics.",
+      "supports_or_contradicts": "Existential member relation does not itself assert source membership in filler class or a has-role.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": "https://www.w3.org/TR/owl2-direct-semantics/",
+      "original_capture_attribution": {
+        "reviewer": "/root/step7d_independent_review",
+        "successful_web_response_absolute_retrieval_time": "not recorded in response; not inferred from separate failed shell receipt",
+        "current_assessor": "/root/buffer_hepes"
+      }
+    },
+    {
+      "evidence_id": "W05-PARENTS-COMMENT6719869465",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/input/issues/issue1193-comments-followup-v2.json",
+        "sha256": "8796a47bd390a1791a5bf5d6882159244451cdebed9da0a09f15dc1cbb7ae032"
+      },
+      "kind": "source_snapshot",
+      "locator": "Complete current issue comment collection; comment6719869465 created09:34:21Z.",
+      "supports_or_contradicts": "Coordinator audit reports no demonstrated additional incoming Soy components, while shared-ID occurrence membership and tombstone representative remain separate pre-integration obligations. This author does not claim to have reaudited its entire59-member packet.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+        "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+      ],
+      "url": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719869465"
+    }
+  ],
+  "bounded_fix": "Represent three reused captured documents as source_snapshot with null direct URL; preserve exact original URL under original_source_url and original kind/unknown acquisition attribution. Do not invent capture timestamps, relabel local read as original network acquisition, refetch or change bytes. Source scientific assessment and original source fragments remain intact."
+}

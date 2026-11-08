@@ -1,0 +1,64 @@
+{
+  "observed_at": "2026-11-08T08:15:53.664425+00:00",
+  "observer_cutoff": "2026-11-08T07:59:05.182653+00:00",
+  "population": {
+    "baseline_claims_affected": 27,
+    "new_MRSSI_claims": 1,
+    "distinct_claims_for_coupling_plan": 28,
+    "published_MIM_CATALOG_claims": 435,
+    "combined_candidates": 37,
+    "selected_origin_proposals": 985
+  },
+  "baseline_transition_claim_breakdown": {
+    "MICRO:0000520": 3,
+    "FOODON:03305103": 2,
+    "MICRO:0000178": 19,
+    "CHEBI:131366": 3
+  },
+  "peptone20_dispositions": {
+    "EXISTING_PROPOSAL_WITHDRAWS_REFERENCE": 1,
+    "GENERIC_REFERENCE_MIGRATION_CANDIDATE": 8,
+    "HOLD_SOURCE_COMPONENT_IDENTITY": 10,
+    "RETAIN_SOURCE_SPECIFIC_BACTO_REFERENCE": 1
+  },
+  "same_consumer_compositions": [
+    {
+      "consumer_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+      "claim_keys": [
+        "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[0]",
+        "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]"
+      ],
+      "obligation": "Compose all claim corrections on one exact final before-image; preserve every unrelated field/history and verify the combined final consumer. Do not apply independent stale payloads sequentially."
+    },
+    {
+      "consumer_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+      "claim_keys": [
+        "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]",
+        "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[3]"
+      ],
+      "obligation": "Compose all claim corrections on one exact final before-image; preserve every unrelated field/history and verify the combined final consumer. Do not apply independent stale payloads sequentially."
+    },
+    {
+      "consumer_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+      "claim_keys": [
+        "data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[0]",
+        "data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[3]"
+      ],
+      "obligation": "Compose all claim corrections on one exact final before-image; preserve every unrelated field/history and verify the combined final consumer. Do not apply independent stale payloads sequentially."
+    }
+  ],
+  "new_target_claims": 11,
+  "shared_identifier_claims": 12,
+  "status": "CONDITIONAL_INTEGRATION_DEPENDENCY_PLAN_NOT_APPLICATION_APPROVAL",
+  "limits": [
+    "Observer cutoff explicitly predates later worker scientific/provenance successors. Each final payload needs exact published-head bridge and re-enumeration before source application.",
+    "The405 no-ID-impact claims are not scientific approval: source applicability, label/form changes, rejected aliases, full-record roles and component completeness remain covered by separate exact-head reviews.",
+    "37 shared-ID groups are mechanically listed; MIM_CATALOG means at least one active represented identity under semantics6, not a unique document. No arbitrary owner winner or new duplicate-ID gate was imposed.",
+    "Generic Peptone transition structurally passes while silently narrowing19 references to Bacto. Native green does not settle source identity.",
+    "10 ambiguous peptone source claims require evidence or reviewed ID withdrawal; a hold note cannot justify retaining a now-wrong resolving ID.",
+    "Two of the three rumen consumers, plus Fastidious, have overlapping claim repairs. Use one composed final payload per consumer.",
+    "Mg/Cr negative-ledger/override migration is delegated under1245; PIPES stale kg_microbe_node_id under1211 remains outside component changes.",
+    "Family v2 metadata/evidence successor has unchanged component fields; Columbia remains blocked for genuine source-owner partition.",
+    "No changes to native rules, thresholds, sidecar provenance, code, candidate files or corpus occurred."
+  ]
+}

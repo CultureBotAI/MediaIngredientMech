@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-08T10:00:30.646679+00:00",
+  "reviewer": "/root/assembly_audit",
+  "status": "PASS_READBACK_OF_ROOT_RETAINED_REVIEW_CHECK",
+  "scope": "Post-seal append-only readback of root actual gate completion. Original packet accurately recorded this gate as pending when sealed; it remains unchanged.",
+  "command_execution_by": "/root",
+  "command": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python",
+    "scripts/record_review.py",
+    "check",
+    "--base",
+    "0bac12cabfd1f67f212631d8eef9aa46379f6b41",
+    "--require-reviews"
+  ],
+  "exit_code": 0,
+  "valid_reviews": 1025,
+  "coverage": "declared_scopes_only",
+  "bindings": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-retained-review-check.json",
+      "sha256": "fe95466262d72a67c663fadb45e4f6315ce69a29a9bd5757ff79646311694c8a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-retained-review-check.stdout.log",
+      "sha256": "046c00cac1f0010c2fdea127534474abce43815c5426802a8f351c36cb0a6ab1"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-retained-review-check.stderr.log",
+      "sha256": "e2cf5a8ee56373cb7afeb23be8ac2a30d67f13afa55bb51424877fc908e2a25f"
+    }
+  ],
+  "all_exact_final_review_bindings_rechecked_unchanged": true,
+  "previous_manifest": {
+    "path": "MANIFEST.json",
+    "sha256": "ecd68d0cf54294eb51810a27043fa98608f169a586586de57a46f926d5b09aa5"
+  },
+  "no_whole_corpus_scientific_or_export_approval": true
+}

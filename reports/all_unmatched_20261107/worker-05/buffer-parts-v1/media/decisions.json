@@ -1,0 +1,1114 @@
+{
+  "decisions": [
+    {
+      "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+      "case_input_sha256": "8e896e0ba3dafa169970f56ccf1429597e692b8c2fa9801251fcb7ee3539908b",
+      "source": {
+        "source": "culturemech",
+        "source_case_id": "Difco Marine Broth 2216",
+        "source_label": "Difco Marine Broth 2216",
+        "raw_source_label": "Difco Marine Broth 2216"
+      },
+      "occurrence_ids": [
+        "CM_OCC:a74a96f03a905868769b28aca9d191d2ef477e363631b55c808eabde3c470da1",
+        "CM_OCC:432cc90659dd3c147962c14c35f5b74e88e621f9c83e54d808c18be9ce889d59",
+        "CM_OCC:f23017e41a699d752c82811af924efbd8db16207359b9a7d033dc87deb196687"
+      ],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The existing registry denotes the named commercial Difco Marine Broth 2216 preparation. The manufacturer manual, printed pages 351-352, independently lists broth and agar formulas: broth has magnesium chloride 5.9 g and magnesium sulfate 3.24 g per litre at standard reconstitution; agar has magnesium chloride 8.8 g and sodium sulfate 3.24 g. Thus the products do not differ only by agar. The corrected sixteen-part commercial broth formula is retained; unspecified salt forms remain UNMAPPED. The old MIM curation (#260) assertion and ATCC agar-minus-agar transcription are historical provenance, not the active identity basis. This source-bound correction does not merge generic marine-medium owners or resolve worker03 same-owner alias reconciliation. The manufacturer labels the printed broth table an approximate formula per litre and permits adjustment or supplementation to meet performance criteria. COMPLETE covers all 16 nominal printed dry-product inputs, not exact chemical closure for every manufactured lot. The existing component names and quantities remain unchanged on their standard-reconstitution basis; water remains outside the dry product, and unspecified salt forms and generic Peptone remain unresolved. No extra ingredient, lot-specific adjustment or forced PARTIAL status is inferred.",
+      "applicability": "Whole preparation is supported at the stated source/product scope; no equivalence to adjacent products or component identities follows. All inherited source/owner/export holds remain.",
+      "evidence_ids": [
+        "MEDIA-CASE-017",
+        "MEDIA-P013",
+        "MEDIA-P014",
+        "MEDIA-P015",
+        "MEDIA-P016",
+        "MEDIA-RECIPE-017-00",
+        "MEDIA-RECIPE-017-01",
+        "MEDIA-RECIPE-017-02",
+        "MEDIA-MARINE-COMPARISON-0",
+        "MEDIA-MARINE-COMPARISON-1",
+        "MEDIA-MARINE-COMPARISON-2",
+        "M1193-OWNER-Marine_Broth_2216",
+        "M1193-OWNER-Marine_Broth",
+        "M1193-OWNER-Difco_Marine_Broth",
+        "M1193-SCOPE-17",
+        "M1193-WEB-web-next-3-17",
+        "M1193-DIRECT-15",
+        "M1193-OLS-BROAD-18",
+        "M-FINAL-PRIMARY-READ-LEDGER",
+        "FINAL-ROOT-MEDIA-REPORT-AMENDMENT-V3",
+        "FINAL-SCIENTIFIC-REVIEW-MEDIA",
+        "W05-PS-MEDIA-MANUAL-352",
+        "W05-PS-MEDIA-PAGE-352",
+        "W05-PS-MEDIA-ISSUE1208",
+        "W05-PS-MEDIA-DNS-ATTEMPT",
+        "POSTSEAL-INDEPENDENT-SCIENTIFIC-REVIEW",
+        "W05-REMAINING-MEDIA-COMPONENT-ASSESSMENT"
+      ],
+      "proposal_ids": [
+        "M1193-P-MARINE2216"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+          "sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/unmapped/Marine_Broth.yaml",
+          "sha256": "42a5aea4f5671ea994f55a48fd75e00b0c0e6ce37d592ab31d5ae537bb6ed960",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/unmapped/Difco_Marine_Broth.yaml",
+          "sha256": "84a2137a9ab6453f32ded2cc4d579be6e16015e293ce1720ee535012202c4abc",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "POSTSEAL-INDEPENDENT-SCIENTIFIC-REVIEW"
+        ],
+        "reviewer": "/root/final_skeptical",
+        "scope": "Exact full selected source decision and linked changed payload reviewed; no whole-owner, source-role or export admission."
+      },
+      "source_index": 17,
+      "native_profile_applicability": "Bounded native owner/proposal review applies to recorded existing and newly proposed owners; coordinator performs native profile. Source assignment and release holds remain.",
+      "authored_fragment_decision_sha256": "f32acee17ad44b75bdde22ffca2a0896eb5d0a5449aaec186a67adf04fea2ad2",
+      "primary_author": "/root/media_research",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+        "downstream_holds": [],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": []
+      },
+      "case_index": 17,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "Exact Difco2216 source cases identify commercial broth37.4g, with separate receiving supplements. Existing mapped2216 record erroneously treats the ATCC agar-minus-agar scratch recipe as the commercial broth formula. Manufacturer-authored Difco manual distinguishes broth MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4 3.24g. Correct commercial product composition and retain source recipe variants as distinct.",
+        "primary_searches_performed": [
+          "Re-read full frozen source contexts and all current matching occurrences in saved family inventory.",
+          "Re-read captured primary supplier or culture collection source at cited precise locator; compare exact product identity and separate added supplements.",
+          "Search complete maintained owner catalog including ignored files and inspect candidate full bytes; check proposed registry identifier against all active records.",
+          "OLS MICRO searches retained with exact query, response and timestamp; no verified exact ontology term was adopted for this product-specific scope."
+        ],
+        "owner_and_occurrence_inventory": "correction-1193-v1/media/owner-occurrence-inventory.json",
+        "component_grounding_not_used_as_whole_identity_blocker": true
+      },
+      "final_correction_reassessment": {
+        "status": "complete",
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T07:39:34.583422+00:00",
+        "predecessor_decision_object_sha256": "69867814c19ce9516d091e9f0acc0ec6d0bad2e42d9024032d173aea7adac294",
+        "assessment": "Commercial Difco Marine Broth 2216 is supported, while the ATCC agar-minus-agar scratch recipe is a separate formulation. Manufacturer printed pages 351-352 distinguish broth magnesium chloride 5.9 g and magnesium sulfate 3.24 g from agar magnesium chloride 8.8 g and sodium sulfate 3.24 g. Withdraw the active agar-only-difference premise, preserve its historical assertion, all sixteen corrected parts and the worker03 same-owner reconciliation dependency.",
+        "raw_source_case_and_occurrence_ids_preserved": true,
+        "original_before_hashes_preserved": true,
+        "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+        "new_network_queries": [],
+        "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/remediation/media-report-v3/decisions.json",
+        "selected_fragment_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+        "selected_decision_object_sha256": "c797532d7c63334d6a40037e76e5cd4e181b54fbf0456c5ed73aeba204b7d9bd",
+        "predecessor_decision_object_sha256": "385d5977c52ff14128c51686f66e97979ff5aa514898f4e9b72fe2cded3dc058",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "postseal_reassessment": {
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T08:29:39.343065+00:00",
+        "source_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+        "predecessor_decision_object_sha256": "6453a7f4962a53eabf30de903394aa57f7311d12f94c6b07f351462f4cd400c5",
+        "assessment": "The manufacturer labels the printed broth table an approximate formula per litre and permits adjustment or supplementation to meet performance criteria. COMPLETE covers all 16 nominal printed dry-product inputs, not exact chemical closure for every manufactured lot. The existing component names and quantities remain unchanged on their standard-reconstitution basis; water remains outside the dry product, and unspecified salt forms and generic Peptone remain unresolved. No extra ingredient, lot-specific adjustment or forced PARTIAL status is inferred.",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1208#issuecomment-6718748333",
+        "new_finding_id": "W06-TU-005",
+        "prior_independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+          ],
+          "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+          "reviewer": "/root/final_skeptical"
+        },
+        "review_scope": "Complete selected Marine Broth 2216 payload, both linked source decisions, three frozen CultureMech contexts and the KG source assertion; only the nominal-formula qualification changes.",
+        "raw_source_and_occurrences_preserved": true,
+        "substantive_holds_preserved": true,
+        "no_source_or_owner_release": true
+      },
+      "previous_independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/final_skeptical"
+      },
+      "postseal_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/media/decisions.json",
+        "selected_fragment_sha256": "218b2c0d11612a29703d4151530e464de110607b690fb777bfa22aaa2750fd1f",
+        "selected_decision_object_sha256": "a1af0aa8b87cc5583b455ade77486ff09a46d8c86c8c4e35a2b19fa69348a15f",
+        "predecessor_decision_object_sha256": "6453a7f4962a53eabf30de903394aa57f7311d12f94c6b07f351462f4cd400c5",
+        "predecessor_source_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+        "historical_final_assembly_provenance_scope": "The retained earlier provenance binds the predecessor snapshot only; current binding is this postseal object."
+      },
+      "media_component_reassessment": {
+        "author": "/root",
+        "at": "2026-11-08T09:30:56.384212+00:00",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719577911",
+        "proposal_id": "M1193-P-MARINE2216",
+        "assessment": "Under the filed COMBINED37-COMPONENT-GROUNDING-001 follow-up, each printed component was assessed separately. Supported existing MIM material references are added for Sodium chloride, Potassium chloride, Sodium bicarbonate, Potassium bromide, Boric acid, Sodium fluoride, Ammonium nitrate. All literal names, nominal amounts and units are retained. Other entries remain UNMAPPED for the specific form, processing or product prerequisites recorded in the source ledger; there is no blanket unspecified-salt rule or whole-owner approval.",
+        "whole_source_holds_unchanged": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+      "case_input_sha256": "b62729c11d6e49e63656101ce94b5ce7e7ca73768e9f42a37f863587352a6837",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1379",
+        "source_label": "Difco Marine Broth 2216",
+        "raw_source_label": "Difco Marine Broth 2216"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "The existing registry denotes the named commercial Difco Marine Broth 2216 preparation. The manufacturer manual, printed pages 351-352, independently lists broth and agar formulas: broth has magnesium chloride 5.9 g and magnesium sulfate 3.24 g per litre at standard reconstitution; agar has magnesium chloride 8.8 g and sodium sulfate 3.24 g. Thus the products do not differ only by agar. The corrected sixteen-part commercial broth formula is retained; unspecified salt forms remain UNMAPPED. The old MIM curation (#260) assertion and ATCC agar-minus-agar transcription are historical provenance, not the active identity basis. This source-bound correction does not merge generic marine-medium owners or resolve worker03 same-owner alias reconciliation. The manufacturer labels the printed broth table an approximate formula per litre and permits adjustment or supplementation to meet performance criteria. COMPLETE covers all 16 nominal printed dry-product inputs, not exact chemical closure for every manufactured lot. The existing component names and quantities remain unchanged on their standard-reconstitution basis; water remains outside the dry product, and unspecified salt forms and generic Peptone remain unresolved. No extra ingredient, lot-specific adjustment or forced PARTIAL status is inferred.",
+      "applicability": "Whole preparation is supported at the stated source/product scope; no equivalence to adjacent products or component identities follows. All inherited source/owner/export holds remain.",
+      "evidence_ids": [
+        "MEDIA-CASE-136",
+        "MEDIA-P084",
+        "MEDIA-P013",
+        "MEDIA-P014",
+        "MEDIA-P015",
+        "MEDIA-P016",
+        "MEDIA-MARINE-COMPARISON-0",
+        "MEDIA-MARINE-COMPARISON-1",
+        "MEDIA-MARINE-COMPARISON-2",
+        "M1193-OWNER-Marine_Broth_2216",
+        "M1193-OWNER-Marine_Broth",
+        "M1193-OWNER-Difco_Marine_Broth",
+        "M1193-SCOPE-17",
+        "M1193-WEB-web-next-3-17",
+        "M1193-DIRECT-15",
+        "M1193-OLS-BROAD-18",
+        "M-FINAL-PRIMARY-READ-LEDGER",
+        "FINAL-ROOT-MEDIA-REPORT-AMENDMENT-V3",
+        "FINAL-SCIENTIFIC-REVIEW-MEDIA",
+        "W05-PS-MEDIA-MANUAL-352",
+        "W05-PS-MEDIA-PAGE-352",
+        "W05-PS-MEDIA-ISSUE1208",
+        "W05-PS-MEDIA-DNS-ATTEMPT",
+        "POSTSEAL-INDEPENDENT-SCIENTIFIC-REVIEW",
+        "W05-REMAINING-MEDIA-COMPONENT-ASSESSMENT"
+      ],
+      "proposal_ids": [
+        "M1193-P-MARINE2216"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+          "sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/unmapped/Marine_Broth.yaml",
+          "sha256": "42a5aea4f5671ea994f55a48fd75e00b0c0e6ce37d592ab31d5ae537bb6ed960",
+          "relationship": "comparison only; source assignment withheld"
+        },
+        {
+          "path": "data/ingredients/unmapped/Difco_Marine_Broth.yaml",
+          "sha256": "84a2137a9ab6453f32ded2cc4d579be6e16015e293ce1720ee535012202c4abc",
+          "relationship": "comparison only; source assignment withheld"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "POSTSEAL-INDEPENDENT-SCIENTIFIC-REVIEW"
+        ],
+        "reviewer": "/root/final_skeptical",
+        "scope": "Exact full selected source decision and linked changed payload reviewed; no whole-owner, source-role or export admission."
+      },
+      "source_index": 136,
+      "native_profile_applicability": "Bounded native owner/proposal review applies to recorded existing and newly proposed owners; coordinator performs native profile. Source assignment and release holds remain.",
+      "authored_fragment_decision_sha256": "8e02b7bdb0dedf7b2cc0c9dd8202e07cef6d76f38850f0a7ad753b30d3e9bf09",
+      "primary_author": "/root/media_research",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+        "downstream_holds": [
+          {
+            "row": {
+              "authority_label": "6-Methylpenicillin",
+              "authority_uri": "https://mediadive.dsmz.de/ingredients/1379",
+              "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mediadive_material_grounding_review.json",
+              "candidate_input_sha256": "b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03",
+              "candidate_record": "{\"comment\":\"synonym\",\"confidence\":\"\",\"mapping_date\":\"2026-09-04\",\"mapping_justification\":\"semapv:LexicalMatching\",\"object_category\":\"biolink:ChemicalEntity\",\"object_formula\":\"\",\"object_id\":\"CHEBI:2216\",\"object_label\":\"6-Methylpenicillin\",\"object_source\":\"obo:chebi.owl\",\"predicate_id\":\"skos:closeMatch\",\"source\":\"chebi_xrefs|mediadive_compounds|primary_mappings[kegg_compound]\",\"subject_id\":\"kgm.name:difco_marine_broth_2216\",\"subject_label\":\"Difco Marine Broth 2216\"}",
+              "candidate_record_locator": "historical-baseline-sha256=67c48e1bf6bed1f1fef03a0da1d7d1b56af9fc72374dddd703c222fb36df3cd4;data-record=306843",
+              "candidate_route": "material_scope_reviewed_claims",
+              "candidate_target": "CHEBI:2216",
+              "disposition": "historical_quarantined_grounding_claim",
+              "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+              "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+              "qualifier_evidence": "{}",
+              "reason": "source_material_not_native_molecular_identity",
+              "retained_target": "mediadive.ingredient:1379",
+              "source_assertion_id": "mediadive.solution:3119#recipe/1",
+              "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+              "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+              "source_record": "{\"amount\":37.4,\"compound\":\"Difco Marine Broth 2216\",\"compound_id\":1379,\"g_l\":37.4,\"optional\":0,\"recipe_order\":1,\"unit\":\"g\"}",
+              "source_record_sha256": "40829697cd81b2417596d87b13889f87428f5aba4acba30c7676c700b15c2129"
+            },
+            "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+          },
+          {
+            "row": {
+              "authority_label": "6-Methylpenicillin",
+              "authority_uri": "https://mediadive.dsmz.de/ingredients/1379",
+              "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mediadive_material_grounding_review.json",
+              "candidate_input_sha256": "b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03",
+              "candidate_record": "{\"comment\":\"synonym\",\"confidence\":\"\",\"mapping_date\":\"2026-09-04\",\"mapping_justification\":\"semapv:LexicalMatching\",\"object_category\":\"biolink:ChemicalEntity\",\"object_formula\":\"\",\"object_id\":\"CHEBI:2216\",\"object_label\":\"6-Methylpenicillin\",\"object_source\":\"obo:chebi.owl\",\"predicate_id\":\"skos:closeMatch\",\"source\":\"chebi_xrefs|mediadive_compounds|primary_mappings[kegg_compound]\",\"subject_id\":\"kgm.name:difco_marine_broth_difco2216\",\"subject_label\":\"Difco marine broth (Difco2216)\"}",
+              "candidate_record_locator": "historical-baseline-sha256=67c48e1bf6bed1f1fef03a0da1d7d1b56af9fc72374dddd703c222fb36df3cd4;data-record=306844",
+              "candidate_route": "material_scope_reviewed_claims",
+              "candidate_target": "CHEBI:2216",
+              "disposition": "historical_quarantined_grounding_claim",
+              "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+              "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+              "qualifier_evidence": "{}",
+              "reason": "source_material_not_native_molecular_identity",
+              "retained_target": "mediadive.ingredient:1379",
+              "source_assertion_id": "mediadive.solution:3119#recipe/1",
+              "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+              "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+              "source_record": "{\"amount\":37.4,\"compound\":\"Difco Marine Broth 2216\",\"compound_id\":1379,\"g_l\":37.4,\"optional\":0,\"recipe_order\":1,\"unit\":\"g\"}",
+              "source_record_sha256": "40829697cd81b2417596d87b13889f87428f5aba4acba30c7676c700b15c2129"
+            },
+            "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+          },
+          {
+            "row": {
+              "authority_label": "6-Methylpenicillin",
+              "authority_uri": "https://mediadive.dsmz.de/ingredients/1379",
+              "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mediadive_material_grounding_review.json",
+              "candidate_input_sha256": "b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03",
+              "candidate_record": "{\"comment\":\"synonym\",\"confidence\":\"\",\"mapping_date\":\"2026-09-04\",\"mapping_justification\":\"semapv:LexicalMatching\",\"object_category\":\"biolink:ChemicalEntity\",\"object_formula\":\"\",\"object_id\":\"CHEBI:2216\",\"object_label\":\"6-Methylpenicillin\",\"object_source\":\"obo:chebi.owl\",\"predicate_id\":\"skos:closeMatch\",\"source\":\"chebi_xrefs|mediadive_compounds|primary_mappings[kegg_compound]\",\"subject_id\":\"kgm.name:difco_marine_broth_difco_2216\",\"subject_label\":\"Difco marine broth (Difco 2216)\"}",
+              "candidate_record_locator": "historical-baseline-sha256=67c48e1bf6bed1f1fef03a0da1d7d1b56af9fc72374dddd703c222fb36df3cd4;data-record=306845",
+              "candidate_route": "material_scope_reviewed_claims",
+              "candidate_target": "CHEBI:2216",
+              "disposition": "historical_quarantined_grounding_claim",
+              "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+              "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+              "qualifier_evidence": "{}",
+              "reason": "source_material_not_native_molecular_identity",
+              "retained_target": "mediadive.ingredient:1379",
+              "source_assertion_id": "mediadive.solution:3119#recipe/1",
+              "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+              "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+              "source_record": "{\"amount\":37.4,\"compound\":\"Difco Marine Broth 2216\",\"compound_id\":1379,\"g_l\":37.4,\"optional\":0,\"recipe_order\":1,\"unit\":\"g\"}",
+              "source_record_sha256": "40829697cd81b2417596d87b13889f87428f5aba4acba30c7676c700b15c2129"
+            },
+            "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+          }
+        ],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": []
+      },
+      "case_index": 136,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "Exact Difco2216 source cases identify commercial broth37.4g, with separate receiving supplements. Existing mapped2216 record erroneously treats the ATCC agar-minus-agar scratch recipe as the commercial broth formula. Manufacturer-authored Difco manual distinguishes broth MgCl2 5.9g/MgSO4 3.24g from agar MgCl2 8.8g/Na2SO4 3.24g. Correct commercial product composition and retain source recipe variants as distinct.",
+        "primary_searches_performed": [
+          "Re-read full frozen source contexts and all current matching occurrences in saved family inventory.",
+          "Re-read captured primary supplier or culture collection source at cited precise locator; compare exact product identity and separate added supplements.",
+          "Search complete maintained owner catalog including ignored files and inspect candidate full bytes; check proposed registry identifier against all active records.",
+          "OLS MICRO searches retained with exact query, response and timestamp; no verified exact ontology term was adopted for this product-specific scope."
+        ],
+        "owner_and_occurrence_inventory": "correction-1193-v1/media/owner-occurrence-inventory.json",
+        "component_grounding_not_used_as_whole_identity_blocker": true
+      },
+      "final_correction_reassessment": {
+        "status": "complete",
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T07:39:34.583422+00:00",
+        "predecessor_decision_object_sha256": "c6dc05a5d1eac1550a83b6a644d0f5987bfc344ce3c4c9e0515032c8e4aa12e6",
+        "assessment": "The full Marine_Broth_2216 owner and commercial manufacturer table support the already corrected sixteen-part broth recipe. Correct its remaining active mapping premise that agar differs only by gelling agent; preserve the complete historical MANUAL_CURATION assertion (original human/process supplier not established), ATCC scratch-recipe history and same-owner worker03 dependency. No broad generic-owner merge follows.",
+        "raw_source_case_and_occurrence_ids_preserved": true,
+        "original_before_hashes_preserved": true,
+        "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+        "new_network_queries": [],
+        "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/remediation/media-report-v3/decisions.json",
+        "selected_fragment_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+        "selected_decision_object_sha256": "59fcf25741079ef94cb5bcade9120c493c8775362190c6a4c96fbd7a59ae9435",
+        "predecessor_decision_object_sha256": "0b471fc99e812b16add66cc8b6b03e60111988c06ff04f0eae3ca671ecab2395",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "postseal_reassessment": {
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T08:29:39.343065+00:00",
+        "source_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+        "predecessor_decision_object_sha256": "c71135d0c73e6e68ce936465a7b0543c4aff0de0dcce061a7d52ba8f5fe82e55",
+        "assessment": "The manufacturer labels the printed broth table an approximate formula per litre and permits adjustment or supplementation to meet performance criteria. COMPLETE covers all 16 nominal printed dry-product inputs, not exact chemical closure for every manufactured lot. The existing component names and quantities remain unchanged on their standard-reconstitution basis; water remains outside the dry product, and unspecified salt forms and generic Peptone remain unresolved. No extra ingredient, lot-specific adjustment or forced PARTIAL status is inferred.",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1208#issuecomment-6718748333",
+        "new_finding_id": "W06-TU-005",
+        "prior_independent_review": {
+          "status": "complete",
+          "evidence_ids": [
+            "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+          ],
+          "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+          "reviewer": "/root/final_skeptical"
+        },
+        "review_scope": "Complete selected Marine Broth 2216 payload, both linked source decisions, three frozen CultureMech contexts and the KG source assertion; only the nominal-formula qualification changes.",
+        "raw_source_and_occurrences_preserved": true,
+        "substantive_holds_preserved": true,
+        "no_source_or_owner_release": true
+      },
+      "previous_independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/final_skeptical"
+      },
+      "postseal_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/media/decisions.json",
+        "selected_fragment_sha256": "218b2c0d11612a29703d4151530e464de110607b690fb777bfa22aaa2750fd1f",
+        "selected_decision_object_sha256": "dd70c5146752cdc03f7320bc26fa8056eb94139793db14adc90f0695aac6d7be",
+        "predecessor_decision_object_sha256": "c71135d0c73e6e68ce936465a7b0543c4aff0de0dcce061a7d52ba8f5fe82e55",
+        "predecessor_source_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+        "historical_final_assembly_provenance_scope": "The retained earlier provenance binds the predecessor snapshot only; current binding is this postseal object."
+      },
+      "media_component_reassessment": {
+        "author": "/root",
+        "at": "2026-11-08T09:30:56.384212+00:00",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719577911",
+        "proposal_id": "M1193-P-MARINE2216",
+        "assessment": "Under the filed COMBINED37-COMPONENT-GROUNDING-001 follow-up, each printed component was assessed separately. Supported existing MIM material references are added for Sodium chloride, Potassium chloride, Sodium bicarbonate, Potassium bromide, Boric acid, Sodium fluoride, Ammonium nitrate. All literal names, nominal amounts and units are retained. Other entries remain UNMAPPED for the specific form, processing or product prerequisites recorded in the source ledger; there is no blanket unspecified-salt rule or whole-owner approval.",
+        "whole_source_holds_unchanged": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd",
+      "case_input_sha256": "633885bc7239951b8cb7ec904e6bf2149cfb8ad981c82a1faa5006413e8f7e24",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1769",
+        "source_label": "Reinforced clostridial medium",
+        "raw_source_label": "Reinforced clostridial medium"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer nine-part recipe. The existing Oxoid aliases are excluded from this product identity because manufacturer formulations use different peptone/extract products; retain raw strings as rejected for this selected BD product, not as rejected source facts.",
+      "applicability": "Whole preparation is supported at the stated source/product scope; no equivalence to adjacent products or component identities follows. All inherited source/owner/export holds remain.",
+      "evidence_ids": [
+        "MEDIA-CASE-182",
+        "MEDIA-P104",
+        "M1193-OWNER-Reinforced_Clostridial_Medium",
+        "M1193-SCOPE-182",
+        "M1193-WEB-web-b5-2-182",
+        "M1193-WEB-web-b4-0-182",
+        "M1193-WEB-web-b8-1-182",
+        "M1193-DIRECT-100",
+        "M1193-DIRECT-103",
+        "M1193-DIRECT-110",
+        "M1193-DIRECT-113",
+        "M1193-DIRECT-19",
+        "M1193-DIRECT-20",
+        "M1193-DIRECT-21",
+        "M1193-WEB-rcm-open-142",
+        "M1193-WEB-oxoid-rcm-open-142",
+        "M1193-OLS-33",
+        "M1193-OLS-BROAD-10",
+        "M-FINAL-PRIMARY-READ-LEDGER",
+        "FINAL-ROOT-MEDIA-REPORT-AMENDMENT-V3",
+        "FINAL-SCIENTIFIC-REVIEW-MEDIA",
+        "W05-REMAINING-MEDIA-COMPONENT-ASSESSMENT"
+      ],
+      "proposal_ids": [
+        "M1193-P-RCM-182"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+          "sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/final_skeptical"
+      },
+      "source_index": 182,
+      "native_profile_applicability": "Bounded native owner/proposal review applies to recorded existing and newly proposed owners; coordinator performs native profile. Source assignment and release holds remain.",
+      "authored_fragment_decision_sha256": "c9012bb261fa0cafa727658c68778ee722933496a3d6f92fbc22cf025a4e9369",
+      "primary_author": "/root/media_research",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+        "downstream_holds": [],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": [
+          {
+            "identifier": "UNMAPPED_0507",
+            "mapping_status": "UNMAPPED",
+            "native_review_rows": [],
+            "ontology_mapping": null,
+            "path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+            "preferred_term": "Reinforced clostridial medium",
+            "sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e",
+            "subject_id": "MIM:Reinforced_Clostridial_Medium"
+          }
+        ]
+      },
+      "case_index": 182,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer nine-part recipe. The existing Oxoid aliases are excluded from this product identity because manufacturer formulations use different peptone/extract products; retain raw strings as rejected for this selected BD product, not as rejected source facts.",
+        "primary_searches_performed": [
+          "Re-read full frozen source contexts and all current matching occurrences in saved family inventory.",
+          "Re-read captured primary supplier or culture collection source at cited precise locator; compare exact product identity and separate added supplements.",
+          "Search complete maintained owner catalog including ignored files and inspect candidate full bytes; check proposed registry identifier against all active records.",
+          "OLS MICRO searches retained with exact query, response and timestamp; no verified exact ontology term was adopted for this product-specific scope."
+        ],
+        "owner_and_occurrence_inventory": "correction-1193-v1/media/owner-occurrence-inventory.json",
+        "component_grounding_not_used_as_whole_identity_blocker": true
+      },
+      "final_correction_reassessment": {
+        "status": "complete",
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T07:39:34.583422+00:00",
+        "predecessor_decision_object_sha256": "c85e997b376e633113fe88cec4c26d8dfa68a2229606fa1a136211ff7a2afa6d",
+        "assessment": "Source1769's three recipes identify BD-Difco RCM38 g. Retain its manufacturer nine-part powder formula and preserve the original raw Oxoid labels as rejected for this particular product, not false source labels. The brand-ambiguous DSMZ634 owner remains separate with eight common parts and no imposed vendor.",
+        "raw_source_case_and_occurrence_ids_preserved": true,
+        "original_before_hashes_preserved": true,
+        "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+        "new_network_queries": [],
+        "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/remediation/media-report-v3/decisions.json",
+        "selected_fragment_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+        "selected_decision_object_sha256": "5810e09cdb5818474643f37d6830e9dcb0622edeff527afa1c6e9b89edfe320c",
+        "predecessor_decision_object_sha256": "b1e775cea192c7549d63ccef753a8e05a3746bde41bcb8ec6a5e7cf87dd69bef",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "media_component_reassessment": {
+        "author": "/root",
+        "at": "2026-11-08T09:30:56.384212+00:00",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719577911",
+        "proposal_id": "M1193-P-RCM-182",
+        "assessment": "Under the filed COMBINED37-COMPONENT-GROUNDING-001 follow-up, each printed component was assessed separately. Supported existing MIM material references are added for Sodium chloride, Agar. All literal names, nominal amounts and units are retained. Other entries remain UNMAPPED for the specific form, processing or product prerequisites recorded in the source ledger; there is no blanket unspecified-salt rule or whole-owner approval. The manufacturer describes an approximate formula per litre, adjusted and/or supplemented to meet performance criteria. COMPLETE refers to all nine nominal printed inputs, not every lot or molecular closure. Reconstitution water remains outside the dry product.",
+        "whole_source_holds_unchanged": true
+      }
+    },
+    {
+      "case_id": "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8",
+      "case_input_sha256": "2ec736685a259c1ec660a838197d43a9af1faf65e7ce6745e04aef7d9d08b33b",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:559",
+        "source_label": "Pennassay Broth",
+        "raw_source_label": "Pennassay Broth"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine. BD manufacturer manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part formula. Source spelling Pennassay is preserved as a contextual raw synonym; added glucose/thymine and assay agars are excluded.",
+      "applicability": "Whole preparation is supported at the stated source/product scope; no equivalence to adjacent products or component identities follows. All inherited source/owner/export holds remain.",
+      "evidence_ids": [
+        "MEDIA-CASE-130",
+        "MEDIA-P081",
+        "MEDIA-P050",
+        "MEDIA-P051",
+        "M1193-SCOPE-87",
+        "M1193-WEB-web-search-03-87",
+        "M1193-DIRECT-100",
+        "M1193-DIRECT-111",
+        "M1193-DIRECT-6",
+        "M1193-OLS-28",
+        "M1193-OLS-BROAD-7",
+        "M-FINAL-PRIMARY-READ-LEDGER",
+        "FINAL-ROOT-MEDIA-REPORT-AMENDMENT-V3",
+        "FINAL-SCIENTIFIC-REVIEW-MEDIA",
+        "W05-REMAINING-CAPTION-130"
+      ],
+      "proposal_ids": [
+        "M1193-P-PENASSAY_BROTH_DIFCO"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/final_skeptical"
+      },
+      "source_index": 130,
+      "native_profile_applicability": "Bounded native owner/proposal review applies to recorded existing and newly proposed owners; coordinator performs native profile. Source assignment and release holds remain.",
+      "authored_fragment_decision_sha256": "b01814c9ac4e66329d4004e4541162e69c0563a337704b8a37062da8855c8150",
+      "primary_author": "/root/media_research",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+        "downstream_holds": [],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": []
+      },
+      "case_index": 130,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "DSMZ542 names Pennassay Broth17.5g and separately adds20g glucose and thymine. BD manufacturer manual identifies Penassay as Antibiotic Medium3 with17.5g seven-part formula. Source spelling Pennassay is preserved as a contextual raw synonym; added glucose/thymine and assay agars are excluded.",
+        "primary_searches_performed": [
+          "Re-read full frozen source contexts and all current matching occurrences in saved family inventory.",
+          "Re-read captured primary supplier or culture collection source at cited precise locator; compare exact product identity and separate added supplements.",
+          "Search complete maintained owner catalog including ignored files and inspect candidate full bytes; check proposed registry identifier against all active records.",
+          "OLS MICRO searches retained with exact query, response and timestamp; no verified exact ontology term was adopted for this product-specific scope."
+        ],
+        "owner_and_occurrence_inventory": "correction-1193-v1/media/owner-occurrence-inventory.json",
+        "component_grounding_not_used_as_whole_identity_blocker": true
+      },
+      "final_correction_reassessment": {
+        "status": "complete",
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T07:39:34.583422+00:00",
+        "predecessor_decision_object_sha256": "a85b2eea4bf7c41545c2436b8de2efb1fe707c068f8cb689e092914eddb20da8",
+        "assessment": "mediadive.ingredient:559 in mediadive.solution:1201 / DSMZ medium 542 identifies Penassay/Pennassay broth as the weighed17.5 g product, not the whole supplemented sporulation medium. The full manufacturer Medium3 table supports the same seven parts and product name; source glucose20 g and thymine remain additions.",
+        "raw_source_case_and_occurrence_ids_preserved": true,
+        "original_before_hashes_preserved": true,
+        "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+        "new_network_queries": [],
+        "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/remediation/media-report-v3/decisions.json",
+        "selected_fragment_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+        "selected_decision_object_sha256": "52bd6e47ab38531f512772426ec6b00333264e6a59951144fea3d7d8e685c8d6",
+        "predecessor_decision_object_sha256": "bdea520de0bb8b4bbdc53f4821314203b0e528dc70768b2bd2537f39f4ff13c6",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "caption_correction": {
+        "author": "/root",
+        "at": "2026-11-08T09:30:56.384212+00:00",
+        "finding_id": "W07-W05-MEDIA-REPORT-001",
+        "field": "final_correction_reassessment.assessment",
+        "previous_full_reassessment": {
+          "status": "complete",
+          "author": "Codex GPT-6 /root/media_research",
+          "at": "2026-11-08T07:39:34.583422+00:00",
+          "predecessor_decision_object_sha256": "a85b2eea4bf7c41545c2436b8de2efb1fe707c068f8cb689e092914eddb20da8",
+          "assessment": "MediaDive1315/DSMZ542 identifies Penassay/Pennassay broth as the weighed17.5 g product, not the whole supplemented sporulation medium. The full manufacturer Medium3 table supports the same seven parts and product name; source glucose20 g and thymine remain additions.",
+          "raw_source_case_and_occurrence_ids_preserved": true,
+          "original_before_hashes_preserved": true,
+          "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+          "new_network_queries": [],
+          "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+        },
+        "new_assessment": "mediadive.ingredient:559 in mediadive.solution:1201 / DSMZ medium 542 identifies Penassay/Pennassay broth as the weighed17.5 g product, not the whole supplemented sporulation medium. The full manufacturer Medium3 table supports the same seven parts and product name; source glucose20 g and thymine remain additions.",
+        "source_case_unchanged": true,
+        "authorship": "Only the explicitly qualified numeric caption is changed by /root. All other inherited scientific prose remains attributed to its actual original author/time; the exact original reassessment is preserved here and in the predecessor.",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719578394"
+      }
+    },
+    {
+      "case_id": "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2",
+      "case_input_sha256": "2816f85f1e96abc6b0a0f49c28a990d85b3883334507a6b0bf7b484963d89034",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:1467",
+        "source_label": "ISP 7 Medium",
+        "raw_source_label": "ISP 7 Medium"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "Existing ISP7 owner has only DSMZ1619 occurrences explicitly naming HiMedia. Manufacturer M362 recipe corroborates 23.74g powder plus separately added15ml glycerol; powder is distinct from the completed glycerol medium.",
+      "applicability": "Whole preparation is supported at the stated source/product scope; no equivalence to adjacent products or component identities follows. All inherited source/owner/export holds remain.",
+      "evidence_ids": [
+        "MEDIA-CASE-135",
+        "MEDIA-P083",
+        "MEDIA-P017",
+        "M1193-OWNER-ISP_7_Medium",
+        "M1193-ISP7-M362",
+        "M1193-SCOPE-21",
+        "M1193-OLS-6",
+        "M1193-OLS-7",
+        "M1193-OLS-BROAD-6",
+        "M-FINAL-PRIMARY-READ-LEDGER",
+        "FINAL-ROOT-MEDIA-REPORT-AMENDMENT-V3",
+        "FINAL-SCIENTIFIC-REVIEW-MEDIA",
+        "W05-REMAINING-CAPTION-135"
+      ],
+      "proposal_ids": [
+        "M1193-P-ISP7"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/ISP_7_Medium.yaml",
+          "sha256": "66048f6ccdbbf9ff496ec4c5c653f7617305a021266d857b0c4853d57a3357d9"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/final_skeptical"
+      },
+      "source_index": 135,
+      "native_profile_applicability": "Bounded native owner/proposal review applies to recorded existing and newly proposed owners; coordinator performs native profile. Source assignment and release holds remain.",
+      "authored_fragment_decision_sha256": "da999495431308a96a83555c698abf4bdaef12a014e6b8bc503b935ddb7af694",
+      "primary_author": "/root/media_research",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+        "downstream_holds": [],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": [
+          {
+            "identifier": "UNMAPPED_0408",
+            "mapping_status": "UNMAPPED",
+            "native_review_rows": [],
+            "ontology_mapping": null,
+            "path": "data/ingredients/unmapped/ISP_7_Medium.yaml",
+            "preferred_term": "ISP 7 Medium",
+            "sha256": "66048f6ccdbbf9ff496ec4c5c653f7617305a021266d857b0c4853d57a3357d9",
+            "subject_id": "MIM:ISP_7_Medium"
+          }
+        ]
+      },
+      "case_index": 135,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "Existing ISP7 owner has only DSMZ1619 occurrences explicitly naming HiMedia. Manufacturer M362 recipe corroborates 23.74g powder plus separately added15ml glycerol; powder is distinct from the completed glycerol medium.",
+        "primary_searches_performed": [
+          "Re-read full frozen source contexts and all current matching occurrences in saved family inventory.",
+          "Re-read captured primary supplier or culture collection source at cited precise locator; compare exact product identity and separate added supplements.",
+          "Search complete maintained owner catalog including ignored files and inspect candidate full bytes; check proposed registry identifier against all active records.",
+          "OLS MICRO searches retained with exact query, response and timestamp; no verified exact ontology term was adopted for this product-specific scope."
+        ],
+        "owner_and_occurrence_inventory": "correction-1193-v1/media/owner-occurrence-inventory.json",
+        "component_grounding_not_used_as_whole_identity_blocker": true
+      },
+      "final_correction_reassessment": {
+        "status": "complete",
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T07:39:34.583422+00:00",
+        "predecessor_decision_object_sha256": "2e1cfb01bcb49bc4628c9ce647656549ecf40a580d6a162c0d31535e5e8d9056",
+        "assessment": "mediadive.ingredient:1467 in mediadive.solution:3366 / DSMZ medium 1619 identify HiMedia ISP7 M362 powder. Preserve the seven immediate named inputs and partial trace-mixture assertion, separate glycerol15 ml, source dosage and existing-owner continuity. Exact whole-product identity does not require every part to have an ontology ID.",
+        "raw_source_case_and_occurrence_ids_preserved": true,
+        "original_before_hashes_preserved": true,
+        "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+        "new_network_queries": [],
+        "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/remediation/media-report-v3/decisions.json",
+        "selected_fragment_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+        "selected_decision_object_sha256": "4155362ba87b948668530949672ab5a98a2ff0d1e59c8ab8f20b55bc5f560beb",
+        "predecessor_decision_object_sha256": "6cf655985714c8cbe840dc7d3258d45b6073ad758430726f31cc314e193c5420",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "caption_correction": {
+        "author": "/root",
+        "at": "2026-11-08T09:30:56.384212+00:00",
+        "finding_id": "W07-W05-MEDIA-REPORT-001",
+        "field": "final_correction_reassessment.assessment",
+        "previous_full_reassessment": {
+          "status": "complete",
+          "author": "Codex GPT-6 /root/media_research",
+          "at": "2026-11-08T07:39:34.583422+00:00",
+          "predecessor_decision_object_sha256": "2e1cfb01bcb49bc4628c9ce647656549ecf40a580d6a162c0d31535e5e8d9056",
+          "assessment": "MediaDive2528 and its DSMZ1619 uses identify HiMedia ISP7 M362 powder. Preserve the seven immediate named inputs and partial trace-mixture assertion, separate glycerol15 ml, source dosage and existing-owner continuity. Exact whole-product identity does not require every part to have an ontology ID.",
+          "raw_source_case_and_occurrence_ids_preserved": true,
+          "original_before_hashes_preserved": true,
+          "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+          "new_network_queries": [],
+          "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+        },
+        "new_assessment": "mediadive.ingredient:1467 in mediadive.solution:3366 / DSMZ medium 1619 identify HiMedia ISP7 M362 powder. Preserve the seven immediate named inputs and partial trace-mixture assertion, separate glycerol15 ml, source dosage and existing-owner continuity. Exact whole-product identity does not require every part to have an ontology ID.",
+        "source_case_unchanged": true,
+        "authorship": "Only the explicitly qualified numeric caption is changed by /root. All other inherited scientific prose remains attributed to its actual original author/time; the exact original reassessment is preserved here and in the predecessor.",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719578394"
+      }
+    },
+    {
+      "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+      "case_input_sha256": "d2743c804676b04cc902473447dc56fd98bd20210e9c2c3ce801046411d7b97f",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:748",
+        "source_label": "Mueller-Hinton broth",
+        "raw_source_label": "Mueller-Hinton broth"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ804 primary PDF identifies21gMueller-Hintonbroth as a dry medium input, separate from5gyeast,1000mlwater andX/Vfactor supplements. Register this source-supplied powder without selecting a manufacturer or cation adjustment. Current OxoidCM0405 is a comparison, not a catalog assignment. Existing MuellerHintonIIagar is a different solid medium preparation; no maintained MHbroth owner exists. The M2937prepared broth is a separate supplied state whose reconstitution/equivalence is not inferred.",
+      "applicability": "Whole source-named preparation/product is supported at the explicit source scope. Unknown internal variant/constituents constrain partonomy and cross-source equivalence, not this registry identity. No inherited source, role, owner or export hold is released.",
+      "evidence_ids": [
+        "MEDIA-CASE-144",
+        "MEDIA-P086",
+        "MEDIA-P006",
+        "M1193-SCOPE-12",
+        "M1193-WEB-web-b4-2-12",
+        "M1193-DIRECT-23",
+        "M1193-COMPLETE-122",
+        "M1193-COMPLETE-130",
+        "MEDIA-CASE-012",
+        "MEDIA-ARCHIVE-M2937",
+        "MEDIA-RECIPE-012-00",
+        "MEDIA-RECIPE-012-01",
+        "M1193-OWNER-Mueller_Hinton_II_Agar",
+        "M-FINAL-PRIMARY-READ-LEDGER",
+        "FINAL-ROOT-MEDIA-REPORT-AMENDMENT-V3",
+        "FINAL-SCIENTIFIC-REVIEW-MEDIA",
+        "W05-REMAINING-CAPTION-144"
+      ],
+      "proposal_ids": [
+        "M1193-P-MH-POWDER-DSMZ804"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": "Internal supplied formulation, quantities and any catalog/variant not stated by the source remain unknown; no standard formula, reconstitution or cross-source product equivalence is inferred.",
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Mueller_Hinton_II_Agar.yaml",
+          "sha256": "a0f0c5365069fa748d0a83b0a196e2bdb3c4ea7c9cd8705b79ba46cce0a90a5f",
+          "relationship": "comparison_only; not a positive source assignment or approval"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/final_skeptical"
+      },
+      "source_index": 144,
+      "native_profile_applicability": "Source-only case with no existing or proposed owner; no owner invented.",
+      "authored_fragment_decision_sha256": "9ec5d0b1c591ddb3e36ae9c8bc66e7130c0d054e50239d43c3bbf0ab666850ad",
+      "primary_author": "/root/media_research",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+        "downstream_holds": [
+          {
+            "row": {
+              "authority_label": "12alpha-Hydroxyamoorstatin",
+              "authority_uri": "https://mediadive.dsmz.de/ingredients/748",
+              "candidate_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/mediadive_material_grounding_review.json",
+              "candidate_input_sha256": "b94ecaa4935082a6ed79faddfa448ed3a1768a858a572bc63306d20f43701e03",
+              "candidate_record": "{\"comment\":\"synonym\",\"confidence\":\"\",\"mapping_date\":\"2026-09-04\",\"mapping_justification\":\"semapv:LexicalMatching\",\"object_category\":\"biolink:ChemicalEntity\",\"object_formula\":\"\",\"object_id\":\"CHEBI:748\",\"object_label\":\"12alpha-Hydroxyamoorstatin\",\"object_source\":\"obo:chebi.owl\",\"predicate_id\":\"skos:closeMatch\",\"source\":\"chebi_xrefs|mediadive_compounds|primary_mappings[kegg_compound]\",\"subject_id\":\"kgm.name:mueller-hinton_broth\",\"subject_label\":\"Mueller-Hinton broth\"}",
+              "candidate_record_locator": "historical-baseline-sha256=67c48e1bf6bed1f1fef03a0da1d7d1b56af9fc72374dddd703c222fb36df3cd4;data-record=527611",
+              "candidate_route": "material_scope_reviewed_claims",
+              "candidate_target": "CHEBI:748",
+              "disposition": "historical_quarantined_grounding_claim",
+              "policy_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/mappings/ingredient_identity_exclusions.tsv",
+              "policy_input_sha256": "adee54d81504734c1c6c164346c3c4db600da6840a7ed3908325ca712a528499",
+              "qualifier_evidence": "{}",
+              "reason": "source_material_not_native_molecular_identity",
+              "retained_target": "mediadive.ingredient:748",
+              "source_assertion_id": "mediadive.solution:1635#recipe/1",
+              "source_input_path": "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe-mim-1788-20261107/data/raw/mediadive/generations/resolution-admitted-r2/solutions.json",
+              "source_input_sha256": "5b136571fa52fb2a698069d6ce7117717bb6eb4c572fa3b9a6af167e7d054e63",
+              "source_record": "{\"amount\":21,\"compound\":\"Mueller-Hinton broth\",\"compound_id\":748,\"g_l\":21,\"optional\":0,\"recipe_order\":1,\"unit\":\"g\"}",
+              "source_record_sha256": "5097622c3b01e50b035c78bcfce95b2205c72f29ffaba2ca2fa64a1f36dd15c3"
+            },
+            "table": "snapshots/data/transformed/mediadive/mediadive_material_scope_quarantine.tsv"
+          }
+        ],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": []
+      },
+      "case_index": 144,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "DSMZ804 primary PDF identifies21gMueller-Hintonbroth as a dry medium input, separate from5gyeast,1000mlwater andX/Vfactor supplements. Register this source-supplied powder without selecting a manufacturer or cation adjustment. Current OxoidCM0405 is a comparison, not a catalog assignment. Existing MuellerHintonIIagar is a different solid medium preparation; no maintained MHbroth owner exists. The M2937prepared broth is a separate supplied state whose reconstitution/equivalence is not inferred.",
+        "primary_searches_performed": [
+          "Re-read full frozen source contexts and all current matching occurrences in saved family inventory.",
+          "Re-read captured primary supplier or culture collection source at cited precise locator; compare exact product identity and separate added supplements.",
+          "Search complete maintained owner catalog including ignored files and inspect candidate full bytes; check proposed registry identifier against all active records.",
+          "OLS MICRO searches retained with exact query, response and timestamp; no verified exact ontology term was adopted for this product-specific scope."
+        ],
+        "owner_and_occurrence_inventory": "correction-1193-v1/media/owner-occurrence-inventory.json",
+        "component_grounding_not_used_as_whole_identity_blocker": true
+      },
+      "final_correction_reassessment": {
+        "status": "complete",
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T07:39:34.583422+00:00",
+        "predecessor_decision_object_sha256": "073098f07eb108beab44a6bd7a36f78ce78e451502dab57a9eb7a4ff737d4eb1",
+        "assessment": "mediadive.ingredient:748 in mediadive.solution:1635 / DSMZ medium 804 weighs21 g Mueller-Hinton broth powder with separately added yeast and X/V factors. Preserve this dry source preparation without guessing a vendor, cation adjustment or internal recipe; keep the prepared TOGO M2937 supplied state separately represented.",
+        "raw_source_case_and_occurrence_ids_preserved": true,
+        "original_before_hashes_preserved": true,
+        "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+        "new_network_queries": [],
+        "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/remediation/media-report-v3/decisions.json",
+        "selected_fragment_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+        "selected_decision_object_sha256": "67f9183a43f823ec8dcc5d9b4ff69ed6664534082565975bcf6ad3b3db1ef8da",
+        "predecessor_decision_object_sha256": "8646161d375121757513ba1e6cc9a52b481fdfe9d8d95e06f9705f73b4421b11",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "caption_correction": {
+        "author": "/root",
+        "at": "2026-11-08T09:30:56.384212+00:00",
+        "finding_id": "W07-W05-MEDIA-REPORT-001",
+        "field": "final_correction_reassessment.assessment",
+        "previous_full_reassessment": {
+          "status": "complete",
+          "author": "Codex GPT-6 /root/media_research",
+          "at": "2026-11-08T07:39:34.583422+00:00",
+          "predecessor_decision_object_sha256": "073098f07eb108beab44a6bd7a36f78ce78e451502dab57a9eb7a4ff737d4eb1",
+          "assessment": "MediaDive1137/DSMZ804 weighs21 g Mueller-Hinton broth powder with separately added yeast and X/V factors. Preserve this dry source preparation without guessing a vendor, cation adjustment or internal recipe; keep the prepared TOGO M2937 supplied state separately represented.",
+          "raw_source_case_and_occurrence_ids_preserved": true,
+          "original_before_hashes_preserved": true,
+          "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+          "new_network_queries": [],
+          "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+        },
+        "new_assessment": "mediadive.ingredient:748 in mediadive.solution:1635 / DSMZ medium 804 weighs21 g Mueller-Hinton broth powder with separately added yeast and X/V factors. Preserve this dry source preparation without guessing a vendor, cation adjustment or internal recipe; keep the prepared TOGO M2937 supplied state separately represented.",
+        "source_case_unchanged": true,
+        "authorship": "Only the explicitly qualified numeric caption is changed by /root. All other inherited scientific prose remains attributed to its actual original author/time; the exact original reassessment is preserved here and in the predecessor.",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719578394"
+      }
+    },
+    {
+      "case_id": "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79",
+      "case_input_sha256": "5f295e791c9cc9b1ce39c909b1afca231870a4819f66f8c8729e48c586b29e12",
+      "source": {
+        "source": "mediadive",
+        "source_case_id": "mediadive.ingredient:2095",
+        "source_label": "dehydrated Wilkins-Chalgren medium",
+        "raw_source_label": "dehydrated Wilkins-Chalgren medium"
+      },
+      "occurrence_ids": [],
+      "disposition": "stock_product_mixture_context",
+      "reasoning": "DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer confirms the nine-part product. MICRO0002186 definition explicitly denotes liquid medium after reconstitution, so it is not exact identity for supplied powder; DSMZ339a also includes separate supplements.",
+      "applicability": "Whole preparation is supported at the stated source/product scope; no equivalence to adjacent products or component identities follows. All inherited source/owner/export holds remain.",
+      "evidence_ids": [
+        "MEDIA-CASE-158",
+        "MEDIA-P093",
+        "MEDIA-P022",
+        "MEDIA-P042",
+        "M1193-OWNER-Dehydrated_Wilkins-Chalgren_Medium",
+        "M1193-OWNER-Wilkins-Chalgren-Anaerobe-Broth",
+        "M1193-OWNER-Wilkins_Chalgrene_Anaerobe_Broth",
+        "M1193-SCOPE-36",
+        "M1193-WILKINS-ONTOLOGY",
+        "M1193-WEB-web-open-02-36",
+        "M1193-DIRECT-4",
+        "M1193-OLS-14",
+        "M1193-OLS-15",
+        "M-FINAL-PRIMARY-READ-LEDGER",
+        "FINAL-ROOT-MEDIA-REPORT-AMENDMENT-V3",
+        "FINAL-SCIENTIFIC-REVIEW-MEDIA",
+        "W05-REMAINING-CAPTION-158"
+      ],
+      "proposal_ids": [
+        "M1193-P-CM0643"
+      ],
+      "no_change_reason": null,
+      "missing_requirement": null,
+      "owner_records": [
+        {
+          "path": "data/ingredients/unmapped/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+          "sha256": "e08067576d6dfbb31963df2400ef5090aa40b5f0751d99982f3a11cfbe0780d9"
+        },
+        {
+          "path": "data/ingredients/unmapped/Wilkins-Chalgren-Anaerobe-Broth.yaml",
+          "sha256": "22d4e4be05de3a308f5aacebd8e6fb4b871577ae7612de08cd3a44f46f6cf0dd"
+        },
+        {
+          "path": "data/ingredients/unmapped/Wilkins_Chalgrene_Anaerobe_Broth.yaml",
+          "sha256": "62caf082e8739b58a0bafa548b0f5a8a6eff664a25b10b22839a9b5cb46d6d79"
+        }
+      ],
+      "issue_refs": [],
+      "independent_review": {
+        "status": "complete",
+        "evidence_ids": [
+          "FINAL-SCIENTIFIC-REVIEW-MEDIA"
+        ],
+        "scope": "Review complete, not all scientific questions resolved or any admission approved.",
+        "reviewer": "/root/final_skeptical"
+      },
+      "source_index": 158,
+      "native_profile_applicability": "Bounded native owner/proposal review applies to recorded existing and newly proposed owners; coordinator performs native profile. Source assignment and release holds remain.",
+      "authored_fragment_decision_sha256": "229b062b34bb989604815e109bc4f58c789b5d97d92b12d4b760855349864efc",
+      "primary_author": "/root/media_research",
+      "preserved_source_holds": {
+        "policy": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+        "downstream_holds": [],
+        "consumed_name_hits": [],
+        "native_review_rows": [],
+        "owners": [
+          {
+            "identifier": "UNMAPPED_0373",
+            "mapping_status": "UNMAPPED",
+            "native_review_rows": [],
+            "ontology_mapping": null,
+            "path": "data/ingredients/unmapped/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+            "preferred_term": "dehydrated Wilkins-Chalgren medium",
+            "sha256": "e08067576d6dfbb31963df2400ef5090aa40b5f0751d99982f3a11cfbe0780d9",
+            "subject_id": "MIM:Dehydrated_Wilkins-Chalgren_Medium"
+          }
+        ]
+      },
+      "case_index": 158,
+      "correction_reassessment": {
+        "status": "complete",
+        "issue": 1193,
+        "changed": true,
+        "assessment": "DSMZ339/339a source rows name OxoidCM0643 and33g dehydrated powder. Manufacturer confirms the nine-part product. MICRO0002186 definition explicitly denotes liquid medium after reconstitution, so it is not exact identity for supplied powder; DSMZ339a also includes separate supplements.",
+        "primary_searches_performed": [
+          "Re-read full frozen source contexts and all current matching occurrences in saved family inventory.",
+          "Re-read captured primary supplier or culture collection source at cited precise locator; compare exact product identity and separate added supplements.",
+          "Search complete maintained owner catalog including ignored files and inspect candidate full bytes; check proposed registry identifier against all active records.",
+          "OLS MICRO searches retained with exact query, response and timestamp; no verified exact ontology term was adopted for this product-specific scope."
+        ],
+        "owner_and_occurrence_inventory": "correction-1193-v1/media/owner-occurrence-inventory.json",
+        "component_grounding_not_used_as_whole_identity_blocker": true
+      },
+      "final_correction_reassessment": {
+        "status": "complete",
+        "author": "Codex GPT-6 /root/media_research",
+        "at": "2026-11-08T07:39:34.583422+00:00",
+        "predecessor_decision_object_sha256": "8325ac9635953611cdf2df7b15b18a5ae4b5fe3ea03033e5c8fc07869a399122",
+        "assessment": "mediadive.ingredient:2095 in mediadive.solution:651 and mediadive.solution:5601 / DSMZ media 339 and 339a identify33 g CM0643 powder. The nine manufacturer parts and dry state remain supported; liquid MICRO:0002186 and worker03 prepared broth are different supplied-form scopes. Keep the issue1237 integration dependency explicit.",
+        "raw_source_case_and_occurrence_ids_preserved": true,
+        "original_before_hashes_preserved": true,
+        "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+        "new_network_queries": [],
+        "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+      },
+      "final_assembly_provenance": {
+        "compiler": "/root",
+        "primary_lane": "media",
+        "selected_fragment_path": ".temp/w05-final-correction-v1/remediation/media-report-v3/decisions.json",
+        "selected_fragment_sha256": "87dd746c0a709c4e427a005c99deb98b9a083d39a9424f7e7ded4a1605e797ae",
+        "selected_decision_object_sha256": "38e45b3d4d8ed308f27f3642af1bf0f49bf285aa5022a159f93e15b8b9deccbf",
+        "predecessor_decision_object_sha256": "35ec3eeeef9b0a03e3f5b115c64823fe0eb3373517bc5236200345e4901110ca",
+        "source_hold_policy_wording": {
+          "before": "All existing source/material/owner/export holds remain. Source-bound reassessment and isolated proposal only; no release admission.",
+          "after": "All existing source/material/owner/export holds remain. Scope is source-bound assessment and isolated proposal; no release admission.",
+          "substantive_hold_objects_unchanged": true
+        },
+        "prior_review_scope": "Historical reviews do not approve successor bytes.",
+        "native_scope": "This final source-case snapshot and each complete linked proposal are explicit native review targets. No owner or export admission follows."
+      },
+      "caption_correction": {
+        "author": "/root",
+        "at": "2026-11-08T09:30:56.384212+00:00",
+        "finding_id": "W07-W05-MEDIA-REPORT-001",
+        "field": "final_correction_reassessment.assessment",
+        "previous_full_reassessment": {
+          "status": "complete",
+          "author": "Codex GPT-6 /root/media_research",
+          "at": "2026-11-08T07:39:34.583422+00:00",
+          "predecessor_decision_object_sha256": "8325ac9635953611cdf2df7b15b18a5ae4b5fe3ea03033e5c8fc07869a399122",
+          "assessment": "MediaDive581 and complete DSMZ339/339a recipes identify33 g CM0643 powder. The nine manufacturer parts and dry state remain supported; liquid MICRO:0002186 and worker03 prepared broth are different supplied-form scopes. Keep the issue1237 integration dependency explicit.",
+          "raw_source_case_and_occurrence_ids_preserved": true,
+          "original_before_hashes_preserved": true,
+          "prior_review_attribution": "Historical predecessor review only; this successor awaits a separately authored skeptical review.",
+          "new_network_queries": [],
+          "retrieval_policy": "Reused exact free primary captures with original timestamps and hashes; no fabricated fresh retrieval. Discovery wrappers are not standalone primary support."
+        },
+        "new_assessment": "mediadive.ingredient:2095 in mediadive.solution:651 and mediadive.solution:5601 / DSMZ media 339 and 339a identify33 g CM0643 powder. The nine manufacturer parts and dry state remain supported; liquid MICRO:0002186 and worker03 prepared broth are different supplied-form scopes. Keep the issue1237 integration dependency explicit.",
+        "source_case_unchanged": true,
+        "authorship": "Only the explicitly qualified numeric caption is changed by /root. All other inherited scientific prose remains attributed to its actual original author/time; the exact original reassessment is preserved here and in the predecessor.",
+        "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193#issuecomment-6719578394"
+      }
+    }
+  ]
+}

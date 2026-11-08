@@ -1,0 +1,120 @@
+{
+  "finding_id": "W05-CONSOLIDATED-MEDIA-REVIEW-001",
+  "reviewer": "/root/final_skeptical",
+  "reported_at": "2026-11-08T09:31:38.269794+00:00",
+  "severity": "moderate",
+  "status": "reported_before_remedy",
+  "scope": "RCM peptone component assessment provenance and remaining prerequisite only; no forced component mapping or new owner.",
+  "before": {
+    "path": ".temp/w05-buffer-parts-v1/media/component-assessments-v1.json",
+    "sha256": "a91d5e8f7cde1b78108fca6065db0ce695f9bd1eb9ab27105fd2fabe4d349c6d",
+    "locator": "rows[16] / proposal_id M1193-P-RCM-182 / index0",
+    "object": {
+      "proposal_id": "M1193-P-RCM-182",
+      "index": 0,
+      "original_component": {
+        "component_name": "Peptone",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "10",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+      },
+      "selected_component": {
+        "component_name": "Peptone",
+        "reference_scope": "UNMAPPED",
+        "concentration_value": "10",
+        "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+      },
+      "disposition": "retain_UNMAPPED_specific_unresolved_scope",
+      "selected_identifier": null,
+      "assessment": "The manufacturer prints generic Peptone, not Bacto or a documented digest/source product. The separate #1176 per-consumer review preserves these commercial-formula claims as unresolved; neither MICRO:0000178 mammalian digest nor the generic owner transition is automatically transferred here.",
+      "owner_candidates": [
+        {
+          "path": "data/ingredients/mapped/Peptone.yaml",
+          "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+          "capture": "inputs/owners/Peptone.yaml",
+          "matches": [
+            "peptone"
+          ],
+          "identifier": "MICRO:0000178",
+          "ontology_mapping": {
+            "ontology_id": "MICRO:0000178",
+            "ontology_label": "peptone",
+            "ontology_source": "MICRO",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "DATABASE_MATCH",
+                "source": "MICRO via OLS search",
+                "notes": "Auto-created from foodon_pass; label-exact (micro)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "data/ingredients/mapped/Bacto_Peptone.yaml",
+          "sha256": "864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655",
+          "capture": "inputs/owners/Bacto_Peptone.yaml",
+          "matches": [
+            "peptone"
+          ],
+          "identifier": "MICRO:0000178",
+          "ontology_mapping": {
+            "ontology_id": "MICRO:0000178",
+            "ontology_label": "peptone",
+            "ontology_source": "MICRO",
+            "mapping_quality": "EXACT_MATCH",
+            "evidence": [
+              {
+                "evidence_type": "CURATOR_JUDGMENT",
+                "source": "cbclaw_foodon_promotion",
+                "notes": "Commercial food mixture - FOODON is correct parent ontology. Bacto Peptone (BD/Difco) is an enzymatic digest of animal protein (per Difco manual, primarily meat tissue); mapped to FOODON parent 'animal protein (hydrolyzed)'. No exact FOODON term for bacto peptone. CLOSE_MATCH."
+              },
+              {
+                "evidence_type": "CURATOR_JUDGMENT",
+                "source": "manual review of MICRO ontology coverage",
+                "notes": "Bacto Peptone is the brand name for generic peptone. MICRO:0000178 is the precise term; FOODON:03315718 was a less-specific parent."
+              }
+            ]
+          }
+        }
+      ],
+      "ontology_bindings": [
+        {
+          "term": "MICRO:0000178",
+          "source_url": "https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO%3A0000178",
+          "capture": "captures/ols-MICRO-0000178.json",
+          "sha256": "e2e9700817ba948efd859f935e005f1c6dc58998ca48ee039e9ee2c8b23a232d"
+        }
+      ]
+    }
+  },
+  "reproduction": {
+    "w03_ledger": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w03/worktree/.temp/peptone-consumer-independent-v1/machine-ledger.json",
+    "sha256": "339ce01608cd712ac135313750dfc4a762253264079cc9fb379f1a4ee2a693b8",
+    "all20_owner_paths": [
+      "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+      "data/ingredients/mapped/GYPS.yaml",
+      "data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml",
+      "data/ingredients/mapped/Marine_Broth_2216.yaml",
+      "data/ingredients/mapped/Marine_agar_2216.yaml",
+      "data/ingredients/mapped/PY-cellobiose.yaml",
+      "data/ingredients/mapped/PY-fructose.yaml",
+      "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+      "data/ingredients/mapped/PY-maltose.yaml",
+      "data/ingredients/mapped/PY-pectin.yaml",
+      "data/ingredients/mapped/PYEG.yaml",
+      "data/ingredients/mapped/PYG-002_Tween_80.yaml",
+      "data/ingredients/mapped/PYG.yaml",
+      "data/ingredients/mapped/PYGS.yaml",
+      "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+      "data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml",
+      "data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml",
+      "data/ingredients/mapped/Peptone_Yeast_Extract.yaml",
+      "data/ingredients/mapped/Yeast_Extract_Peptone.yaml",
+      "data/ingredients/mapped/togo_m2491_mrssi_base.yaml"
+    ],
+    "rcm_rows": 0
+  },
+  "finding": "The RCM row says the separate #1176 per-consumer review preserves this commercial-formula claim unresolved. That exact 20-claim ledger contains Marine Broth but no RCM claim. Its source attribution cannot be transferred to RCM. RCM primary manufacturer explicitly names unqualified Peptone; missing supplier/digest specificity alone does not defeat a reference to a genuinely generic Peptone owner, consistent with the five authorized literal-name dependent references. The current generic owner grounding is independently being reassessed, so target acceptance is a separate application prerequisite.",
+  "bounded_remedy": "Preserve original row/history. Append an exact RCM-specific assessment without claiming prior per-consumer review coverage. Assess the unqualified Peptone part against the final reviewed generic owner in the same application phase; if unresolved, identify a material mismatch or explicit pending target-acceptance dependency rather than requiring a supplier/product fact for a generic named part. Do not alter the separately directed Marine peptone withdrawal or infer Bacto/digest/substrate/quantity."
+}

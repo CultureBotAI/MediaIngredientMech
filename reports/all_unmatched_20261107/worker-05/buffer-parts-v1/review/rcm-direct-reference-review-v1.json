@@ -1,0 +1,90 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "completed_at": "2026-11-08T09:49:54.453636+00:00",
+  "primary_author": "/root",
+  "verdict": "pass_with_limitations",
+  "before": {
+    "path": ".temp/w05-buffer-parts-v1/media/proposed-v2/Reinforced_Clostridial_Medium.yaml",
+    "sha256": "0417c3d7b1e28b8b94ee7b74fcc320ce0cc93bb3dec549447c23b03a4d11e88d"
+  },
+  "after": {
+    "path": ".temp/w05-buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml",
+    "sha256": "089960c4d8a03718b71801622afa270f443ee109eb045c43b16677a9dbb6c7a6"
+  },
+  "parent": {
+    "path": ".temp/w05-buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+    "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+  },
+  "parent_review": {
+    "path": ".temp/w05-buffer-parts-v1/review/direct-parent-independent-review-v1.json",
+    "sha256": "98bd8081855ab166d43528cdfa1e2f1ff7f0546bf1398d8b7d8baa76a7e2de49"
+  },
+  "earlier_full_media_science": {
+    "path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"
+  },
+  "payload_reviews": [
+    {
+      "proposal_id": "M1193-P-RCM-182",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml",
+        "sha256": "089960c4d8a03718b71801622afa270f443ee109eb045c43b16677a9dbb6c7a6"
+      },
+      "proposal_object_sha256": "262233347af7a56c4ff982a427ea6c9df4141479f77eade2b7192ac03d508f96",
+      "assessment": "The complete manufacturer RCM formula explicitly names generic Peptone10g per litre at standard reconstitution. This is a valid generic input independent of an unidentified supplier or a hypothetical lot assay. The exact already-reviewed generic owner now uses mesh:D010461; updating this single conditional catalog reference is scientifically consistent. All other eight parts, all nine printed amounts/units, dry-product identity, COMPLETE nominal enumeration and approximate/performance-adjustable footnote remain unchanged. New ComponentEvidence is explicitly agent-assisted RECIPE_SOURCE, distinct from human-only MappingEvidence. No Bacto, animal origin, enzyme, supplier or whole-formulation equality is inferred. All old source/product/role/export holds remain.",
+      "complete_payload_read": true,
+      "all_unchanged_fields_and_history_preserved": true,
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Reinforced_Clostridial_Medium",
+          "subject_label": "Reinforced clostridial medium (BD Difco)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+          "object_label": "Reinforced clostridial medium (BD Difco)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf|MIM:curator=Codex W05 /root consolidated component re-review",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Reinforced clostridial medium|Reinforced clostridial medium (BD-Difco)",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Reinforced_Clostridial_Medium",
+          "subject_label": "Reinforced clostridial medium (BD Difco)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+          "object_label": "Reinforced clostridial medium (BD Difco)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf|MIM:curator=Codex W05 /root consolidated exact component continuity",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Reinforced clostridial medium|Reinforced clostridial medium (BD-Difco)",
+          "validation_method": ""
+        }
+      ],
+      "native_scope": "Whole-product row identity/predicate unchanged; only last-curator source provenance may differ with truthful appended history."
+    }
+  ],
+  "case_reviews": [
+    {
+      "case_id": "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd",
+      "selected_decision_object_sha256": "ce10d7c47eed94cabc7f346987e040f14564f6225d7669f2e8d46aee40ae9afd",
+      "assessment": "RCM final source decision preserves its exact raw case, occurrences and product/source holds. The added direct-parent continuity field qualifies the earlier local generic reference only; no 20-claim W03 attribution or supplier-missing hold is restored."
+    }
+  ],
+  "finding_dispositions": [
+    {
+      "finding_id": "W05-CONSOLIDATED-MEDIA-REVIEW-001",
+      "disposition": "RESOLVED_V2_SOURCE_ASSESSMENT_RETAINED_V3_ACTUAL_PARENT_REFERENCE",
+      "assessment": "RCM source scope is assessed directly from manufacturer, and the final generic reference follows the reviewed owner. Earlier wrong review-ledger attribution remains preserved as history."
+    }
+  ],
+  "source_owner_export_approval": false
+}

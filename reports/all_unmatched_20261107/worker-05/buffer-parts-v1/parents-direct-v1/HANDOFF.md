@@ -1,0 +1,18 @@
+# W05 direct generic Peptone successor
+
+Author: `/root/buffer_hepes`. Independent scientist/reviewer: `/root/final_skeptical`.
+Sealed at 2026-11-08T09:50:20.443978+00:00. This is an append-only report proposal; no maintained changes, Git/GitHub writes or export approval.
+
+Select `proposals.json` and `decisions.json` as the complete two-parent fragment. Soy proposal `W05-FINAL-MAT-032` and its full source decision are unchanged. Peptone `W05-FINAL-MAT-039` now uses `mesh:D010461` / `Peptones` / `EXACT_MATCH`; exact after SHA is `c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7`. The authentic maintained beforeimage remains `e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa`, and sealed prior local-plus-broader payload remains `d1668cfd863e02bfb1b9b82a86db213c1cfd850ab3b216abdb81cba4761e1e91`. Do not combine this parent fragment with the earlier parent fragment as duplicate selections.
+
+The primary NLM generic sense and independent manufacturer definition support this exact unspecified material identity under native section3. The earlier process/precipitation certificate requirement and FoodOn food-use/lot eligibility inference were overstated. Original interpretations remain as dated evidence/history and are expressly superseded by this successor. No different assigned actual preparation was established. No source-assay, product, enzyme, feedstock, role, owner or release approval follows.
+
+`evidence.json` adds 8 entries to the old complete evidence set; it does not replace the old44 parent entries. All11 prior curation events and5 MappingEvidence objects are intact, with one genuine new event and3 claim-specific `LLM_SUGGESTION` entries. Neither old enum values nor historical authorship are rewritten. Native/closed-schema/guarded checks pass in `validation/receipt.json`; Peptone projection changes two prior rows into one exact MeSH row, and Soy retains its exact MICRO row. Rejected identity tokens remain absent from exported `other`.
+
+The source Peptone case remains unresolved for its specific assays and all frozen hold objects, original labels, two observations and owner bindings are unchanged. Full Soy decision is an exact carry. The201-member old parents manifest was reverified without changes. Its Bacto_Soytone tombstone v2 successor stays selected separately and unchanged. There are no new source cases.
+
+Exact author payload science review passed at 2026-11-08T09:48:04.229331+00:00 in `review/direct-parent-independent-review-v1.json`; full assembled source decisions, final manifest and source-specific dependencies still require root's final composition review. Root will separately use reviewed successors for only the five generic child references plus RCM against the actual final `mesh:D010461` identifier; no global replace or arbitrary owner union.
+
+The coordinator35-member reassessment is copied exactly under `input/coordinator-reassessment/`, HANDOFF SHA `ed4b490104249457bbb557767418eff3d19437aab459a5084cb91a2658c41663`. This receipt supplies scientific context, not blanket final owner approval. Original failed shell receipts and successful web-response evidence remain distinct; no missing retrieval time was invented. The author event at 2026-11-08T09:46:57.767703+00:00 follows receipt of the sealed reassessment; no new formal GitHub filing time is claimed. Prior report/private-selection/publication chronology remains in the sealed predecessor packet.
+
+See `selected-files.json`, `read-ledger.json`, `scientific-plan.json`, `case-deltas.json` and `MANIFEST.json` for exact composition bindings. Root owns final integration, final native full-corpus checks, acceptance and publication.

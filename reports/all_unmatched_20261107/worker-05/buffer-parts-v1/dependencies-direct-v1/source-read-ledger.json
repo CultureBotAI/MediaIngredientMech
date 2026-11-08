@@ -1,0 +1,175 @@
+{
+  "at": "2026-11-08T09:49:28.127997+00:00",
+  "reader": "/root/buffer_tris",
+  "sources": [
+    {
+      "path": "inputs/primary/mesh-D010461-browser.json",
+      "sha256": "e46645ac754786528ef33c2957057d34d37386ad27f3af94574f2db1fabd3629",
+      "original_receipt": {
+        "url": "https://meshb.nlm.nih.gov/record/ui?ui=D010461",
+        "accessed_at": "2026-11-08T09:33:10.976930+00:00",
+        "author": "/root/buffer_hepes",
+        "provider": "Free public primary ontology endpoint",
+        "path": "mesh-D010461-browser.json",
+        "http_status": 200,
+        "final_url": "https://meshb.nlm.nih.gov/record/ui?ui=D010461",
+        "content_type": "text/html; charset=utf-8",
+        "sha256": "e46645ac754786528ef33c2957057d34d37386ad27f3af94574f2db1fabd3629",
+        "bytes": 81052
+      }
+    },
+    {
+      "path": "inputs/primary/mesh-M0016245-nlm.json",
+      "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5",
+      "original_receipt": {
+        "url": "https://id.nlm.nih.gov/mesh/M0016245.json",
+        "accessed_at": "2026-11-08T09:34:06.870746+00:00",
+        "author": "/root/buffer_hepes",
+        "provider": "Free public primary ontology endpoint",
+        "path": "mesh-M0016245-nlm.json",
+        "http_status": 200,
+        "final_url": "https://id.nlm.nih.gov/mesh/M0016245.json",
+        "content_type": "application/rdf+json;charset=utf-8",
+        "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5",
+        "bytes": 1350
+      }
+    },
+    {
+      "path": "inputs/primary/thermo.pdf",
+      "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6",
+      "original_receipt": {
+        "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+        "accessed_at": "2026-11-08T08:55:52.232871+00:00",
+        "completed_at": "2026-11-08T08:55:52.704585+00:00",
+        "command": [
+          "curl",
+          "-L",
+          "--retry",
+          "2",
+          "--connect-timeout",
+          "10",
+          "--max-time",
+          "45",
+          "--silent",
+          "--show-error",
+          "--output",
+          ".temp/w05-tellurium-polypeptone-v1/polypeptone/captures/thermo.pdf",
+          "--write-out",
+          "%{http_code}",
+          "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf"
+        ],
+        "exit_code": 0,
+        "http_status": "200",
+        "stderr": "",
+        "path": "thermo.pdf",
+        "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6",
+        "bytes": 6855956
+      }
+    },
+    {
+      "path": "inputs/primary/mesh-D010461-nlm.json",
+      "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0",
+      "original_receipt": {
+        "url": "https://id.nlm.nih.gov/mesh/D010461.json",
+        "accessed_at": "2026-11-08T09:33:10.976798+00:00",
+        "author": "/root/buffer_hepes",
+        "provider": "Free public primary ontology endpoint",
+        "path": "mesh-D010461-nlm.json",
+        "http_status": 200,
+        "final_url": "https://id.nlm.nih.gov/mesh/D010461.json",
+        "content_type": "application/rdf+json;charset=utf-8",
+        "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0",
+        "bytes": 3143
+      }
+    }
+  ],
+  "read_extent": {
+    "mesh_descriptor": "Complete descriptor JSON plus browser descriptor/entry-term/preferred concept scope text; HTML scripts not substantive evidence.",
+    "mesh_concept": "Complete scope-note JSON.",
+    "thermo": "Printed pp7-8 generic material and manufacturing description; no supplier product identity transferred.",
+    "coordinator": "Complete sealed HANDOFF, decision and ASSESSMENT; all35manifestmembers verified.",
+    "old_dependencies": "All449manifestmembers reverified; all15 complete selected payloads parsed and guarded unchanged-field comparisons performed for the5retargets.",
+    "source_rows": "All130 original observations carried byte-identically; earlier source scientists and exact capture timestamps remain in preserved predecessor source-read-ledger. No new130-paper retrieval claimed."
+  },
+  "new_network_fetches": 0,
+  "prior_source_authors": [
+    "/root/peptone_ambiguous_sources",
+    "/root/peptone_other_sources"
+  ],
+  "prior_source_skeptic": "/root/peptone_skeptic",
+  "parent_author": "/root/buffer_hepes",
+  "coordinator_scientific_reviewer": "/root/step7d_independent_review",
+  "new_exact_byte_skeptical_review": "pending /root/final_skeptical assignment; no reused approval",
+  "chronology": {
+    "coordinator_assessment_sealed": "2026-11-08T09:44:22.440738+00:00",
+    "parent_authored_at": "2026-11-08T09:46:57.767703+00:00",
+    "child_new_events": [
+      {
+        "target_id": "PC03",
+        "event": {
+          "timestamp": "2026-11-08T09:49:28.241585+00:00",
+          "curator": "Codex worker05 /root/buffer_tris",
+          "action": "RETARGET_DIRECT_GENERIC_PEPTONE",
+          "changes": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true,
+          "llm_model": "gpt-6"
+        }
+      },
+      {
+        "target_id": "PC16",
+        "event": {
+          "timestamp": "2026-11-08T09:49:28.408933+00:00",
+          "curator": "Codex worker05 /root/buffer_tris",
+          "action": "RETARGET_DIRECT_GENERIC_PEPTONE",
+          "changes": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true,
+          "llm_model": "gpt-6"
+        }
+      },
+      {
+        "target_id": "PC17",
+        "event": {
+          "timestamp": "2026-11-08T09:49:28.418942+00:00",
+          "curator": "Codex worker05 /root/buffer_tris",
+          "action": "RETARGET_DIRECT_GENERIC_PEPTONE",
+          "changes": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true,
+          "llm_model": "gpt-6"
+        }
+      },
+      {
+        "target_id": "PC18",
+        "event": {
+          "timestamp": "2026-11-08T09:49:28.428773+00:00",
+          "curator": "Codex worker05 /root/buffer_tris",
+          "action": "RETARGET_DIRECT_GENERIC_PEPTONE",
+          "changes": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true,
+          "llm_model": "gpt-6"
+        }
+      },
+      {
+        "target_id": "PC19",
+        "event": {
+          "timestamp": "2026-11-08T09:49:28.438605+00:00",
+          "curator": "Codex worker05 /root/buffer_tris",
+          "action": "RETARGET_DIRECT_GENERIC_PEPTONE",
+          "changes": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement.",
+          "previous_status": "MAPPED",
+          "new_status": "MAPPED",
+          "llm_assisted": true,
+          "llm_model": "gpt-6"
+        }
+      }
+    ]
+  },
+  "full_parent_claim_approval": false
+}

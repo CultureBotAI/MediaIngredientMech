@@ -1,0 +1,114 @@
+--- buffer-parts-v1/dependencies/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
++++ buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
+@@ -92,6 +92,28 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T09:49:28.418942+00:00'
++  curator: Codex worker05 /root/buffer_tris
++  action: RETARGET_DIRECT_GENERIC_PEPTONE
++  changes: Retarget only this source-supported generic peptone part from the earlier
++    conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct
++    generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The
++    primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis
++    definition and the manufacturer generic description support the ordinary unspecified
++    peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier,
++    lot or digestion detail does not itself establish a different material or require
++    a new process/precipitation assay gate. The raw named-input evidence and material
++    scope are unchanged. The previous local-target event and assertion notes are preserved
++    as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative
++    to the named inputs, all quantities and their absence, raw labels, source occurrences
++    and all other parts. This does not assign Bacto, animal origin, supplier product,
++    formulation equivalence, source-assay admission, roles or export approval. Apply
++    only with the exact reviewed direct Peptone parent in the same phase; no global
++    identifier replacement.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_beef_extract_yeast_extract);
+   no CAS-RN or CHEBI/NCIT match. Curator review needed. Successor dependency assessment:
+   The exact MicrobeDecoder source label explicitly names generic peptone. Retarget
+@@ -105,12 +127,26 @@
+   quantities, unrelated components, all historical evidence and source/role/export
+   holds are preserved. Historical all-components-identified statements describe prior
+   states, not a new approval. No new MappingEvidence is added; historical human/component
+-  evidence enums are not rewritten.'
++  evidence enums are not rewritten. Direct generic identity successor: Retarget only
++  this source-supported generic peptone part from the earlier conditional local identity
++  kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461
++  (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly
++  includes Peptone; its conventional partial protein-hydrolysis definition and the
++  manufacturer generic description support the ordinary unspecified peptone sense
++  under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion
++  detail does not itself establish a different material or require a new process/precipitation
++  assay gate. The raw named-input evidence and material scope are unchanged. The previous
++  local-target event and assertion notes are preserved as superseded routing history.
++  Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities
++  and their absence, raw labels, source occurrences and all other parts. This does
++  not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay
++  admission, roles or export approval. Apply only with the exact reviewed direct Peptone
++  parent in the same phase; no global identifier replacement.'
+ ingredient_type: UNDEFINED_MIXTURE
+ components:
+ - component_name: Peptone
+   source: MIM label decomposition (#213/#308)
+-  component_id: kgmicrobe.ingredient:peptone
++  component_id: mesh:D010461
+   reference_scope: MIM_CATALOG
+ - component_name: Beef Extract
+   source: MIM label decomposition (#213/#308)
+@@ -151,6 +187,29 @@
+       and skeptical review by /root/peptone_skeptic are reused only at their exact
+       unchanged source-claim scope; neither approves these new payload bytes. Current
+       candidate author /root/buffer_tris; independent final byte review remains separate.
++  - evidence_type: CURATED_DATASET
++    source: https://id.nlm.nih.gov/mesh/D010461
++    source_record: NLM descriptor D010461 Peptones, entry term Peptone, preferred
++      concept M0016245; PC17 exact raw MicrobeDecoder labels retained in buffer-parts-v1/dependencies-direct-v1/source-observations.json
++    notes: The descriptor and manufacturer generic definition support the reviewed
++      generic Peptone owner identity; the exact source labels support this named part.
++      LLM-assisted applicability assessment by /root/buffer_tris, following separate
++      primary author /root/buffer_hepes and coordinator skeptical reassessment /root/step7d_independent_review.
++      Retarget only this source-supported generic peptone part from the earlier conditional
++      local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity
++      mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor
++      explicitly includes Peptone; its conventional partial protein-hydrolysis definition
++      and the manufacturer generic description support the ordinary unspecified peptone
++      sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier,
++      lot or digestion detail does not itself establish a different material or require
++      a new process/precipitation assay gate. The raw named-input evidence and material
++      scope are unchanged. The previous local-target event and assertion notes are
++      preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE
++      relative to the named inputs, all quantities and their absence, raw labels,
++      source occurrences and all other parts. This does not assign Bacto, animal origin,
++      supplier product, formulation equivalence, source-assay admission, roles or
++      export approval. Apply only with the exact reviewed direct Peptone parent in
++      the same phase; no global identifier replacement.
+   notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
+     variant hierarchy, or complete culturing recipe. Successor dependency assessment:
+     The exact MicrobeDecoder source label explicitly names generic peptone. Retarget
+@@ -164,7 +223,22 @@
+     quantities, unrelated components, all historical evidence and source/role/export
+     holds are preserved. Historical all-components-identified statements describe
+     prior states, not a new approval. No new MappingEvidence is added; historical
+-    human/component evidence enums are not rewritten.'
++    human/component evidence enums are not rewritten. Direct generic identity successor:
++    Retarget only this source-supported generic peptone part from the earlier conditional
++    local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity
++    mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor
++    explicitly includes Peptone; its conventional partial protein-hydrolysis definition
++    and the manufacturer generic description support the ordinary unspecified peptone
++    sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier,
++    lot or digestion detail does not itself establish a different material or require
++    a new process/precipitation assay gate. The raw named-input evidence and material
++    scope are unchanged. The previous local-target event and assertion notes are preserved
++    as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative
++    to the named inputs, all quantities and their absence, raw labels, source occurrences
++    and all other parts. This does not assign Bacto, animal origin, supplier product,
++    formulation equivalence, source-assay admission, roles or export approval. Apply
++    only with the exact reviewed direct Peptone parent in the same phase; no global
++    identifier replacement.'
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:peptone_beef_extract_yeast_extract
+   ontology_label: Peptone + Beef Extract + Yeast Extract

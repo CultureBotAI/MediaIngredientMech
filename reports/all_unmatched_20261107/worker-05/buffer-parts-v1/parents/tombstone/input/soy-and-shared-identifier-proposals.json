@@ -1,0 +1,186 @@
+[
+  {
+    "worker": "w05",
+    "head": "0bac12cabfd1f67f212631d8eef9aa46379f6b41",
+    "proposal_id": "W05-FINAL-MAT-032",
+    "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+    "case_ids": [
+      "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+    ],
+    "kind": "edit_existing_owner",
+    "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+    "payload_path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Soy_Peptone.yaml",
+    "payload_sha256": "e37e3230f9b4489e715cda9c1785f30ea97305d1d6264045bea75b92312bf236",
+    "identifier": "kgmicrobe.ingredient:soy_peptone",
+    "component_count": 0,
+    "exact_scalar_matches": [
+      {
+        "pointer": "/identifier",
+        "value": "kgmicrobe.ingredient:soy_peptone"
+      },
+      {
+        "pointer": "/ontology_mapping/ontology_id",
+        "value": "kgmicrobe.ingredient:soy_peptone"
+      }
+    ],
+    "ontology_mapping": {
+      "ontology_id": "kgmicrobe.ingredient:soy_peptone",
+      "ontology_label": "Soy peptone",
+      "ontology_source": "kgmicrobe.ingredient",
+      "mapping_quality": "FALLBACK_REGISTRY",
+      "evidence": [
+        {
+          "evidence_type": "LLM_SUGGESTION",
+          "source": "https://mediadive.dsmz.de/rest/ingredient/75",
+          "notes": "Soy-derived complex digest material; FOODON03315720 includes other vegetable hydrolysates and is not its identity."
+        }
+      ]
+    },
+    "proposal": {
+      "proposal_id": "W05-FINAL-MAT-032",
+      "case_ids": [
+        "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+      ],
+      "description": "Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein identifier to a local material identity. Preserve source75 unspecified soy digest and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone or Phytone formula to it. Existing branded alias claims require separate complete-owner reconciliation before export. Final correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Retire five branded or alternative identity aliases on the generic soy-digest owner. The three Phytone-bearing dispositions reuse the bounded coordinator conclusion in issue 1212 comment 6718503130. Separate review of the original kg_microbe Soytone token, Bacto Soytone merge history and manufacturer guide pages 13, 33 and 92 confirms distinct named products and processing; generic soy digest is not their exact product identity. Preserve raw texts, original sources, merge history, occurrence totals, all quarantine holds and the Bacto Soytone tombstone. This does not merge or select the competing W08/W10 owner deltas. Optionally classify the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy already excludes these texts; this is provenance classification only, with no resolver change, filter change or release blocker.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-0787250d0c92c239",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-fd95ea8d26cdd5fc",
+        "MATERIALS-CAP-4425f492734e8c24",
+        "MATERIALS-OWNER-Soy_Peptone",
+        "MATERIALS-C1193-CATALOG",
+        "MATERIALS-C1193-CONTEXT",
+        "MATERIALS-C1193-CONTEXT-INDEX",
+        "MATERIALS-C1193-DIFCO-SOYTONE",
+        "MATERIALS-C1193-MEDIADIVE75",
+        "MATERIALS-C1193-MEDIADIVE1466",
+        "MATERIALS-C1193-SOYA-DUPLICATE",
+        "MATERIALS-C1193-OWNER-Soy_Peptone",
+        "FINAL-MATERIALS-W08-FINDINGS",
+        "FINAL-MATERIALS-W02-PROVENANCE"
+      ],
+      "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Soy_Peptone.yaml",
+        "sha256": "e37e3230f9b4489e715cda9c1785f30ea97305d1d6264045bea75b92312bf236"
+      },
+      "identity_consequence": "Only explicitly described scope; complete inherited owner claims remain unapproved.",
+      "predicate_consequence": "Native integration must regenerate registry/ontology and synonym surfaces; no SSSOM mutation here.",
+      "publication_obligations": "Reconcile all campaign proposed owners, apply via guarded writer, preserve every prior source/owner/export hold, review complete changed payload and run native synchronization/QC before publication.",
+      "cross_shard_conflict": "Coordinator must compare all actual proposed owner paths and source-qualified identities; no worker merge or maintained write.",
+      "replaces_proposal_ids": [
+        "MATERIALS-C1193-soy-peptone-boundary"
+      ],
+      "predecessor_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+        "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a"
+      },
+      "predecessor_copy": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/predecessor/Soy_Peptone.yaml",
+        "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a"
+      },
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/before/Soy_Peptone.yaml",
+        "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c"
+      },
+      "primary_author": "/root/materials_research",
+      "independent_review": {
+        "status": "pending",
+        "evidence_ids": []
+      },
+      "successor_scope": "W05 assigned source cases only; no whole-owner, component-coupling or export approval.",
+      "changed_labels": [
+        "Phytone peptone",
+        "Phytone peptone (BD-BBL)",
+        "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+        "Soytone",
+        "Bacto Soytone",
+        "Properties: Undefined component"
+      ]
+    }
+  },
+  {
+    "worker": "w08",
+    "head": "a0190fed72b8f5119432003d1f9c84b8c1de7a48",
+    "proposal_id": "op1201-soy-family-source-boundary",
+    "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+    "case_ids": [
+      "KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee",
+      "KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67"
+    ],
+    "kind": "edit_existing_owner",
+    "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+    "payload_path": "reports/all_unmatched_20261107/worker-08/successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml",
+    "payload_sha256": "4462bd50f9119be857ee659e217f23ac6c01f77497b5bee16a7e544a38de7b91",
+    "identifier": "FOODON:03315720",
+    "component_count": 0,
+    "exact_scalar_matches": [
+      {
+        "pointer": "/identifier",
+        "value": "FOODON:03315720"
+      },
+      {
+        "pointer": "/ontology_mapping/ontology_id",
+        "value": "FOODON:03315720"
+      }
+    ],
+    "ontology_mapping": {
+      "ontology_id": "FOODON:03315720",
+      "ontology_label": "vegetable protein, hydrolyzed",
+      "ontology_source": "FOODON",
+      "mapping_quality": "CLOSE_MATCH",
+      "evidence": [
+        {
+          "evidence_type": "CURATOR_JUDGMENT",
+          "source": "cbclaw_foodon_promotion",
+          "notes": "Commercial food mixture - FOODON is correct parent ontology. Soy peptone is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH."
+        },
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "MIM curation (#260)",
+          "notes": "Added 'Peptic digest of soybean meal' as a EXACT_SYNONYM (#260): the USP/compendial descriptor for soy peptone — the same product the record already lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`. Names the manufacturing process rather than a different substance. CultureMech uses this surface form and label_index did not contain it, so the lookup missed. No new record: FOODON:03315720 is this record's identifier, and in MIM the identifier IS the ontology CURIE, so a second record on it would be a duplicate primary key rather than added coverage."
+        }
+      ]
+    },
+    "proposal": {
+      "proposal_id": "op1201-soy-family-source-boundary",
+      "case_ids": [
+        "KG_CASE:311abe8d156e6808b18312dc9de45b58cffda26e63c334ce54296d0f9bbb77ee",
+        "KG_CASE:4ea6865780bad07526d2ee2ce388fe0f6c0613044110e41ab215648dd4601b67"
+      ],
+      "description": "Primary product evidence identifies Soytone as an enzymatic soybean digest. Record that evidence and the exact scope of the four-member family on the active representative, without treating generic soy peptone, Soytone and every Phytone product as a reviewed exact identity. Three active owners share a broad vegetable-hydrolysate identifier; Bacto_Soytone remains rejected.",
+      "evidence_ids": [
+        "op-case-154",
+        "op-case-159",
+        "op-owner-search",
+        "op-soy-parent",
+        "op-soytone",
+        "op1201-ontology-lookup",
+        "op1201-owner-lookup",
+        "op1201-private-retention"
+      ],
+      "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "successors/issue-1201-v1/research/organic_products/proposals/Soy_Peptone.yaml",
+        "sha256": "4462bd50f9119be857ee659e217f23ac6c01f77497b5bee16a7e544a38de7b91"
+      },
+      "identity_predicate_alias_consequences": "Preserve source-specific scope and inherited holds. No global alias is inferred from a source-local abbreviation. Registry identities require a registry row; ontology parent relations remain broadMatch. This proposal is not applied and does not approve export.",
+      "publication_review_obligations": [
+        "Independently review the exact successor bytes.",
+        "Do not transfer earlier whole-payload approvals onto changed owners.",
+        "Preserve frozen source decisions, native holds and receiving-dose defects. No maintained or export changes are authorized."
+      ],
+      "cross_shard_conflict": "Deduplicate against coordinator proposals before integration. The lookup covers 2956 maintained records and the 46 published proposal payloads."
+    }
+  }
+]

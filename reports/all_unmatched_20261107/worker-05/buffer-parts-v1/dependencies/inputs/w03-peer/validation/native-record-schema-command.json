@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-11-08T08:42:32.358520+00:00",
+  "actual_command_kind": "inline Python heredoc executed in functions.exec/exec_command during this task",
+  "runtime": ".temp/all-unmatched-worker-03/env/bin/python",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "entrypoint": "mediaingredientmech.validation.write_validated.validate_ingredient",
+  "module_path": "src/mediaingredientmech/validation/write_validated.py",
+  "module_sha256": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+  "invocation_excerpt": "sys.path.insert(0,'src'); from mediaingredientmech.validation.write_validated import validate_ingredient\nfor row in json.loads((O/'context/owner-bindings-20.json').read_text()):\n    p=Path(row['capture']['captured_path'])\n    errors=[str(e) for e in validate_ingredient(yaml.safe_load(p.read_text()))]\n",
+  "receipt_path": ".temp/peptone-consumer-independent-v1/validation/native-record-schema.json",
+  "receipt_sha256": "7aee5fadd1d823a70443dbbf57041d81e4aeceff368a7f5134c5cc4f46632360",
+  "actual_exit_code": 0,
+  "actual_stdout": "schema 20 error records 0\n",
+  "rerun": false,
+  "limits": "Native closed-schema callable over 20 exact snapshots. No source identity or component-material proof; no writes through native ingredient serializer."
+}

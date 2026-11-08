@@ -1,0 +1,1045 @@
+# Independent Polypeptone grounding and catalogue-alias decision review
+
+- Review: 20261108T093552Z-polypeptone-grounding-independent
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T09:33:30.009296Z
+- Finished UTC: 2026-11-08T09:35:52.438796Z
+- Reviewer: Codex /root/step7d_independent_review (independent)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Retain local generic named Polypeptone with FOODON03315306 broader mapping; withdraw three BD catalogue identity aliases while preserving five prior rejections and histories. No lot-proof gate, branded composition import, role or release approval. M122 source units remain separate.
+
+## Scope And Provenance
+
+One exact W05 owner proposal and its authentic before/W06 context; assess A grounding decision, not all campaign cases.
+
+Selection: Entire specified W05 payload and all relevant bound evidence; no sampling.
+Coverage: full; 1 reviewed / 1 in the declared population.
+Source: working_tree at Git base 0dac278466699129a083343a921c2e0ca18a9ab4.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| TARGET-019 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-Polypeptone.yaml # Complete W05 proposal at 0bac12cabfd1f67f212631d8eef9aa46379f6b41; authentic before and W06 proposal are separately inspected context. | snapshot_row | Polypeptone, exact W05 source proposal |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Exact source and author-packet verification | passed | True | TARGET-019 | 100 author members and52 originals, including committed blobs and maintained beforeimage. |
+| Native strict record schema and direct projection | passed | True | TARGET-019 | All three complete source objects pass; minimum in-memory correction produces expected parent and registry rows without rejected tokens. |
+| Final corpus QC, companion and SSSOM release checks | not_applicable | False | TARGET-019 | No applied or final composed candidate exists in this planning review; no gate pass asserted. |
+
+## Scientific And Domain Assessments
+
+### Named preparation versus material parent and specific BD product
+
+identity: concern. Targets: TARGET-019.
+
+The generic local-plus-broader correction is supported; actual selected self-only grounding and BD aliases still require curation.
+
+No universal crystallographic, lot or peptide-profile prerequisite. Exact FoodOn class would be too broad; exact MicrO179 would import a specific blend unsupported for generic source442.
+
+### History, source product holds, five rejections and provisional roles
+
+provenance: supported. Targets: TARGET-019.
+
+Both genuine histories and source distinctions survive the proposed guidance. Preserve exact five existing rejections, unchanged135 statistics and provisional computational role; new mapping evidence remains agent-assisted.
+
+### Separate M122 source-unit mismatch
+
+consistency: concern. Targets: TARGET-019.
+
+300G_PER_L in local recipe conflicts with primary literal300mg. This separate CultureMech defect neither proves product equality nor blocks the supported broader mapping.
+
+## Findings
+
+### POLYPEPTONE-001: Exact W05 source proposal still omits the supported material parent
+
+major / open / confirmed; issue key: CultureBotAI.MediaIngredientMech.polypeptone-registry-proposal-omits-supported-parent.
+
+The independently supported correction is local Polypeptone plus FOODON03315306 NARROW_MATCH/broadMatch, with native registry identity. This is guidance; actual selected bytes still use self-only fallback. No arbitrary BD exact identity or generic FOODON collapse.
+
+### POLYPEPTONE-BD-ALIAS-SCOPE: Three BD catalogue aliases still resolve on the supplier-unspecified owner
+
+major / open / confirmed; issue key: CultureBotAI.MediaIngredientMech.polypeptone-generic-owner-bd-catalogue-alias-scope.
+
+For the supported generic scope, preserve each exact product-specific label and source as REJECTED_LABEL, with the broader-versus-specific rationale. Notes alone leave label-index and SSSOM resolution active. Do not declare the BD product nonexistent or import its components into generic identity.
+
+## Recommended Actions And Acceptance Checks
+
+### correct-grounding-and-aliases
+
+Compose a truthful source-bound successor using the supported local/FOODON mapping and three provenance-only BD alias dispositions, preserving all source histories and five prior rejections.
+
+- Independent final complete-byte owner review, including all aliases and mapping evidence.
+- Native guarded write/schema and synchronization, actual generated parent+B1 rows, no rejected aliases in resolving exports.
+- Preserve case/form/quantity/role/release holds; no BD component import or generic release approval.
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| semantics | MAPPING_SEMANTICS.md | supports | Exact versus broader identity; local registry and mandatory B1; specific product/source scope and claim-specific rejected aliases. |
+| decision | .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/decision.json | supports | Independent supported field-level guidance; no final candidate or release approval. |
+| assessment | .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/ASSESSMENT.md | supports | Complete independent grounding, product alias, history, quantity and limitation assessment. |
+| integrity | .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/integrity.json | supports | 100 author members and52 originals rehashed; Git objects and maintained authentic preimage checked. |
+| native | .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/native-checks.json | supports | Three source schemas and actual native two-row counterfactual with eight nonresolving tokens; no candidate published. |
+| before | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/authentic-before-Polypeptone.yaml | supports | Full authentic owner and original mixed-family creation history. |
+| w05 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-Polypeptone.yaml | supports | Full selected source proposal: local fallback, five rejected labels, three resolving BD catalogue aliases and inherited roles. |
+| w06 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w06-Polypeptone.yaml | supports | Full other authentic-origin correction; historical rationale qualified and three Hipolypepton labels rejected. |
+| foodon | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/foodon.json | supports | Active protein hydrolyzates term; sparse SIREN annotation not interpreted as a flavouring role or identity. |
+| parents | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-parents.json | supports | Actual direct SIREN working-folder parent. |
+| ancestors | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-ancestors.json | supports | Actual food material and material entity ancestry. |
+| micro179 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/micro-polypeptone.json | supports | BD mixed-digest definition and equal-parts product citation; not exact generic owner identity. |
+| micro178 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/micro-peptone.json | supports | Mammalian enzymatic process scope excludes using this as an unrestricted parent. |
+| thermo | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/thermo.txt | supports | Inspected manufacturer printed7 hydrolysate definition and printed49 specific blend; raw PDF is separately hash-bound. |
+| thermo-page | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/thermo-page49.png | supports | Visually inspected actual product formulation and catalogue211910/297108 table. |
+| wako-page | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/wako-2001-page15.png | supports | Visually inspected historical casein/pig-enzyme versus soy alternative table; no lot equality inferred. |
+| mediadive | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive442.json | supports | Named complex Polypeptone record without supplier/formula; no automatic Japanese/BD identity bridge. |
+| mediadive2060 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive2060.json | supports | Separate Hipolypepton source entity, not generic Polypeptone identity. |
+| jcm130 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/jcm130.html | supports | 300mg current product wording, one litre added water and sodium-carbonate pH adjustment; no exact final volume. |
+| togo122 | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/togo-gmdb-retry-M122.json | supports | Original historical label with literal300mg and JCM130 source linkage. |
+| cm | .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/current-CultureMech007758.yaml | supports | Frozen/current-local300G_PER_L discrepancy; no remote-main statement. |
+| web-limits | .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/web-attempts.json | context_only | Fresh web PDF succeeded; web OLS requests inaccessible, so inspected complete bound raw OLS responses support hierarchy. No failed-request absence claim. |
+
+## Limits And Additional Notes
+
+- Scoped decision review, not final integrated-owner or source-case release approval.
+- Native validation/rendering is private; no canonical review save, source change or fabricated Git binding.
+- Fresh OLS web-tool calls were inaccessible; complete exact captured OLS evidence was inspected. No absence inferred.
+- FoodOn hierarchy is sparsely curated; actual material ancestry supports the broad claim, not role assignment.
+- The original full37 Japanese-alias finding remains a historical combined-candidate condition until actual recomposition; newer W05 five-rejection scope is verified without silently closing it.
+- M122 quantity requires source-owner correction independently; no final concentration invented.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T093552Z-polypeptone-grounding-independent
+kind: record
+repository: CultureBotAI/MediaIngredientMech
+title: Independent Polypeptone grounding and catalogue-alias decision review
+started_at: '2026-11-08T09:33:30.009296Z'
+finished_at: '2026-11-08T09:35:52.438796Z'
+reviewer:
+  identity: Codex /root/step7d_independent_review
+  kind: agent
+  independence: independent
+  independence_basis: Authored neither the decision packet nor the W05/W06 proposals.
+    Independently read complete records, primary captures/hierarchy and executed narrow
+    native checks.
+skill: review-yaml-record
+completion: completed
+verdict: needs_curation
+native_verdict: Concrete grounding and alias correction supported; actual source proposal
+  remains uncorrected.
+scientific_review: true
+summary: Retain local generic named Polypeptone with FOODON03315306 broader mapping;
+  withdraw three BD catalogue identity aliases while preserving five prior rejections
+  and histories. No lot-proof gate, branded composition import, role or release approval.
+  M122 source units remain separate.
+source:
+  git_revision: 0dac278466699129a083343a921c2e0ca18a9ab4
+  state: working_tree
+  inputs:
+  - path: .claude/skills/review-yaml-record/SKILL.md
+    sha256: 4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/ASSESSMENT.md
+    sha256: 01d3973bedaca2838788eab05557d76dfe23b1b0f1534749339442fc4e6969e7
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/HANDOFF.json
+    sha256: 0e98e7a0bb64b76ae7cf5bc81d04a8e02e5a6f8cade180100a83896f42e583b9
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/MANIFEST.json
+    sha256: 36fc016671b2f50bf1e2a6c56c080f07c1fbedc9c9ccd4163e6a0e45765e35a3
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/build_packet.py
+    sha256: 84ed376018f3153e8c40f3b3427c4075bd1f577a6ef2529a8c3a3628ece72382
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/foodon.json
+    sha256: c6264c268afeadcb47631173e6a803cbf9a0b7a8c08fda990df55ee260680f28
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/foodon.json.receipt.json
+    sha256: 3797f60fe1015d8ee89af3e99bc938489f3a3dfb5d2020443bab726707667b37
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/jcm130.html
+    sha256: 9af3a9bafa1325cbea9bcfe1a02259b5dab7e8f0110c6928f9b5aec81406e920
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/jcm130.html.receipt.json
+    sha256: eb0d54b12f0c3c710395b069f80ec11d673e363781d218a9eb70217e667502a0
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/jcm181.html
+    sha256: b5fc1968bb2d3f31a32d2e886ea904673a3ab97f9703b9f343ca85732c271540
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/jcm181.html.receipt.json
+    sha256: dccaa39df7739da491b0198a686e58bebcbc1c8e68eddbb9128a3c03133081af
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive2060.json
+    sha256: 3bb59834f17512fd7111562b8725feea0e7dad31f13f61c016f35a2eae0f0676
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive2060.json.receipt.json
+    sha256: c6c046ef9bef64397c9ed6037cceb10541ee59c4311b321f02eaf7048b8ec70f
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive442.json
+    sha256: 436c3cac7e4e9aa55d42e644af1b9f17d92eb8138884c17c5509b84b849ff397
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive442.json.receipt.json
+    sha256: 38e9a18ecc49783abfbc58a8b5bf3cc223835c1ff18d841c4271bef2a0f74bea
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/micro-polypeptone-parents.json
+    sha256: 75170d06725f97f2bf39139585b48443a7a760944d305595100347a383439797
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/micro-polypeptone-parents.json.receipt.json
+    sha256: 2656d5d10dc44f52338d9847607411a7ba995fa89187476690f9dffa5cb71c5e
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/micro-polypeptone.json
+    sha256: 81455e3fbddb0a31ea64fc1019ffd28d2adca8784c0d71abb51faf25429a426c
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/micro-polypeptone.json.receipt.json
+    sha256: 3c7d49fcfee4b38fadbceb1ce0810d16e3d94f748a74862c7597c851823f91ee
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/nihon-manufacturing-2007.pdf.receipt.json
+    sha256: be8332f12a321a93ea2f5ab482fda0e74c1971db9d2039521f3fa3518c9eb1bd
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/thermo.pdf.receipt.json
+    sha256: 2d50308201fdc1e4287eaede9cc69143375f4d66b967ef568032d1f4db3c37b4
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/togo-gmdb-retry-M122.json
+    sha256: 9b438b843f4ef66eaa8f5990a836f81526869cab79ae0b3ac1410e34ed58ed27
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/togo-gmdb-retry-M122.json.receipt.json
+    sha256: 5869050df8e5690df55863ece42150ab0e9820a8d6b7fedce90b7ca8bfe65552
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/wako-2001.pdf.receipt.json
+    sha256: df1bca76f0420d4fb075d114669b4593f1ebe765b61baad036c7f1758bef37e6
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/wako-2002.pdf.receipt.json
+    sha256: ea163ee921a502c4fbc1add57096fb87874502f3d9110abbdfe4fdd684fef25f
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/wako.pdf.receipt.json
+    sha256: 73666905724c3f4692aa14e8297acce6971f8ac0b5c08dc4c2f02d04121e4096
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue118-body.json
+    sha256: ccd0aa0786f7f3b8c6b964bc4763b6a6e073e85b87085181903da1a0694b53e6
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue118-body.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue118-comments.json
+    sha256: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue118-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue150-body.json
+    sha256: 7e15e7413bb0e96810f32092e2564c59dd772bb99178f8c6c44967a69cbe4c01
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue150-body.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue150-comments.json
+    sha256: 457fd873968a5ca0e87f409664534644cffd1f84769d6d6fe47a3c93f746001c
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue150-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue408-body.json
+    sha256: 1909228c8fe76f7272e52742231175ddd716db9cff2eb1ba61a3a4e7ef6687c9
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue408-body.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue408-comments.json
+    sha256: 1b01962fe5bf64d51a2444874d99b96afdb24eb48f6234f44b031bd5bb7a96fd
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cm-issue408-comments.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/contract/.claude-skills-review-yaml-record-SKILL.md
+    sha256: 4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/contract/AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/contract/MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/contract/docs-record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/decision.json
+    sha256: e0f589660957d47b71d476d02e46e58c19fec8c39ca01173d5f7ceba94da00d4
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/dedup_live_queries.py
+    sha256: ae69e9449b67b04a6f39e52740ec846030d957b64a6ec9dda427cf543833f940
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/nihon-manufacturing-2007.txt
+    sha256: f746d9c4ba1a4076be9f1bda4206a624bf5e53ff926e85e8b4503dafc1e08c00
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/thermo-page49.png
+    sha256: 5bf5fc06994f5ba2459067a84e04ac9deed39f133d22ca1941c0d623125ea865
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/thermo.txt
+    sha256: 9e73ceb466dbe39fc34e7e1adb558bbd54d2652a9bbf4304c6e23ce1997a7401
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/wako-2001-page15.png
+    sha256: 278b09aac78d960b4a16cbe9a29bae9e648672a94297cce95a6db185bf246d70
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/wako-2001.txt
+    sha256: 0dea6e3f322bfd2236af7af1a7f2c3d4508e51325056e29027bdbf87036a1f88
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/wako-2002.txt
+    sha256: fd190298c7e2f8a4ea75d79fac1e0066a976e96b027da3e097c84407ce76c743
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/wako-page8.png
+    sha256: 18483eec83ed9d23120d60a23a4004063fe5bb99d9b92db2336b314ea81d1b08
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/wako.txt
+    sha256: 38bf86f503636f9b4110bc9bcffb3089bd627f2bb3295f17d5cca6dd7463f602
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fetch-primary.log
+    sha256: 2ece94bf04481b66b845d3a37a707f7fce4b19777cd88970bc7c5fe0c284b2f9
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fetch_micro178.py
+    sha256: 1f9396d0d06012e122fda96fe6676c94f34dd2706bfdc982377f0622461e9e1a
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fetch_primary.py
+    sha256: 29c24e86f95d43dead1788dbc15bc84ec90ca0dcba892401016cba78defa7f07
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fetch_quantity_issues.py
+    sha256: 688219ddb2520897639702f0c1739c745b537a6f3c84cdf4b431a32bdd537ad8
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary-receipts.json
+    sha256: 16fabf99bb528f61a817bf0e8c1d0277dc2c57cdafe36c18a8d3424582d9cf81
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-ancestors.json
+    sha256: 33b60621273f015ad07fa0f6b135db84d7d3ec3e3696c1a88b067a25c8eb4941
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-ancestors.json.receipt.json
+    sha256: 92267572bc33de25b8d2dbe049e89667c77d890c2c8c2b5676b9121f599a7e70
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-parents.json
+    sha256: 576477566c50ad60c747f5c1d993f585ad0b04627468298d56a0fbb6ea5dc07f
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-parents.json.receipt.json
+    sha256: 3272cbe63d959cc8c38c5ad5edb2ff35a7cf8df80a20ab9892bf837b093540e9
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/micro-peptone.json
+    sha256: ef45aa186438f91d015280171fde8ccb25740a50cc6f2c6e848de6aad3339b31
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/micro-peptone.receipt.json
+    sha256: fd045588578d42b42d51dd4f7ec3831ff02e881b7b885c439c470c56e988d3a8
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/peptone-search.json
+    sha256: af3a3ba5be2bce38d3c0ec83ece6ad8ba4a6629754d2a4c78c905913637e9c58
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/peptone-search.json.receipt.json
+    sha256: 3446d4ad5784a441b667062432fa8d05b9363b85f1007521dbfd3527501462a6
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/integrity-checks.json
+    sha256: 89611be760407c76cbf390fa4046ee16dc33acf72ec89399cc7f8d79adad7525
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/issue1202-addendum-draft.md
+    sha256: 19290d245878ba1cca0e13a73f199dadbc40a09de0e7ccd6094dda0913c12914
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/issue1202-comments.json
+    sha256: 8e128065439e305b8acff010f39d129dcf4f57198dbdce94ef4610889ea80b7e
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/issue1202.json
+    sha256: ac888c3a86c71e36749699153ca935021cdc1e4cb3548be01fe04120e7e4d604
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-current-source-comparison.json
+    sha256: abb71f14d390c1ae4a76b023f5a7415ca04706c1b85e5445b79356b5bd5fa724
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-1.json
+    sha256: c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-1.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-2.json
+    sha256: c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-2.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-3.json
+    sha256: c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-3.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-receipts.json
+    sha256: 7986c4659e12e19c27df08d1bce25baf350ebaf713000cbc25423d031cb7b1b8
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-dedup-live-unit-import.json
+    sha256: cf5bd4a98a049bcaa05485677106e73eec3d4c905937efc0dde13453b835f341
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-issue-receipts.json
+    sha256: 4bf82075fb4978dffdfe53a5c1128d68ced1c2290a71542e417257d9677035b0
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-note.md
+    sha256: ce9aa32979e97bd92c36f2b9be26822c6720b60f465e7a8e6e2b8533c64b6c8d
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-original-finding.json
+    sha256: 630e74999ff908be3d4bd0dcb83f4c264e1cb7a35b249fa04780578bee977a80
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/quantity-saved-dedup.json
+    sha256: c107041bf83a6dff98530cb6e0ef74745fe050e5eb50000e0f328d170ac76374
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/remote-w05.txt
+    sha256: 02a719ce7df5632399a5dcba87c2e5e8233d86d3266a83945655dc9de8cf586a
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/remote-w06.txt
+    sha256: 086eae8386619a851a218f4d15eebc74d22ae16876a2bc3e2f064a0cb2e67719
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/seal_packet.py
+    sha256: 3f15fd754b0dbcfe321ad3df5203b1274f8f61840416ca46b8f0c32570dc1cae
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/authentic-before-Polypeptone.yaml
+    sha256: 5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/current-CultureMech007758.yaml
+    sha256: 696b9677e90c0b7b59e246b23367612f3687ec9cff6a1afd53c88ad27d0a2518
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/frozen-CultureMech007758.json
+    sha256: 6116002caa3ab456a46f7d37eff69f841767a917636234b085bfb3b9cfb64832
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-MANIFEST.json
+    sha256: 5ceac9279e63f4a98804dcb301811eef1c7d1a22be1aac322dab5bac382b55bb
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-Polypeptone.yaml
+    sha256: be254d39d8edd3664f74f0ecb76dd0cfdd5d8c597930b088fba3f55e84d18525
+    role: target
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-README.md
+    sha256: 898c90d1879d22e6bdae7f63620f189cda771c52bb52ace5b167b6afccdc4128
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-review-main-review.json
+    sha256: 0a030319cd5a7835bd077bc77da54ce795493a93117b757508990d23de34df17
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-selected-decisions.json
+    sha256: 2d73b24cb855d74c209a2700d8565adccf36bf05b10a997145517c5c0b75d28e
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-selected-evidence.json
+    sha256: 71849c3fe80d805f73940aee75e82e4a950f7134a878103bd782d2058fc4d56a
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-selected-origin-bindings.json
+    sha256: 22ef4978ec29377402a02f34f136dbfe307a9aafeed4ca6a904b446cf3812993
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-selected-proposal.json
+    sha256: da39cd865398351a7effdbcec1d4fda6aa76bd895f72b1238811bb188399473b
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w06-Polypeptone.yaml
+    sha256: 33e474e0751408a59734c527303219dcb5eeb486ced170f9207548a415b0ee9a
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w06-selected-decisions.json
+    sha256: 8f461ad56ed8aaf961c0d97379140fc9a0f7e216e53c9a713be6fc638e351a1d
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w06-selected-evidence.json
+    sha256: b8c66bdd48398852b5923aafab6dc2be47d5dd544ea7f9c73d69d94d6e870b66
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w06-selected-proposal.json
+    sha256: 9f542838f4dd39a19d6da2e558aecbfa297d517ce75eaf4823f82c2036b6cff4
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w06-selection.json
+    sha256: 2a8a71a478814d89169122ed3ef6c34ee26bc9ba0d75dbb62d6e349468864348
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/source-bindings.json
+    sha256: e581cb206ddc4f03e2fca18e0216c1d173ea209e19829af30b40520b143776d0
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/ASSESSMENT.md
+    sha256: 327fc5db544d4f63493b5b41852009c4f780284fb7b6dbecc36e99c2318bb6be
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review.py
+    sha256: fb0366d25966ccd7c315b7627013c43474de87a2dd3a51b822a76a977cff9f45
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review_v2.py
+    sha256: 1df520579872424a426409527b083f293eafcb2e3ffdc726f2aba4d33611ec21
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review_v3.py
+    sha256: 669804cbf33d73932c25a53321ecff341b9f8b0148b4b7c39299be79cc79e586
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/decision.json
+    sha256: 233307d186872422df234ba45ff6c1e6676f3834f1461f0d4af4a14e37cdcee5
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/integrity.json
+    sha256: 04291cf2249d5edd6d0ddf3fa2d4d9b1a2bbbf9163c76c28bea00be189329faa
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/native-checks.json
+    sha256: 8ea54871bed41b229e7fa9c7eee1c615901eb543c948d9896c3a4d2f0ddeea43
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/web-attempts.json
+    sha256: 12493050001157d38b72460ff176d240297b38c827bd79091eaae0672e8ea0bd
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/MANIFEST.json
+    sha256: 5ceac9279e63f4a98804dcb301811eef1c7d1a22be1aac322dab5bac382b55bb
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/README.md
+    sha256: 898c90d1879d22e6bdae7f63620f189cda771c52bb52ace5b167b6afccdc4128
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/core/decisions.json
+    sha256: c7d4ac9b9aa19e8950f9e21d4d1d8736d3dea7e3c8b05c0fbd38e6fbf8336795
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/core/evidence.json
+    sha256: 201d1a73f4dbf91f8decf36275e95d15cf427a46e6b1807be8fe4dd373f719af
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/core/proposals.json
+    sha256: 64b4bd3e7611456ac3e44f7a15c90a8acea32d511113398384a2637abf867911
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/foodon.json
+    sha256: c6264c268afeadcb47631173e6a803cbf9a0b7a8c08fda990df55ee260680f28
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/foodon.json.receipt.json
+    sha256: 3797f60fe1015d8ee89af3e99bc938489f3a3dfb5d2020443bab726707667b37
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/jcm130.html
+    sha256: 9af3a9bafa1325cbea9bcfe1a02259b5dab7e8f0110c6928f9b5aec81406e920
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/jcm130.html.receipt.json
+    sha256: eb0d54b12f0c3c710395b069f80ec11d673e363781d218a9eb70217e667502a0
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/jcm181.html
+    sha256: b5fc1968bb2d3f31a32d2e886ea904673a3ab97f9703b9f343ca85732c271540
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/jcm181.html.receipt.json
+    sha256: dccaa39df7739da491b0198a686e58bebcbc1c8e68eddbb9128a3c03133081af
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/mediadive2060.json
+    sha256: 3bb59834f17512fd7111562b8725feea0e7dad31f13f61c016f35a2eae0f0676
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/mediadive2060.json.receipt.json
+    sha256: c6c046ef9bef64397c9ed6037cceb10541ee59c4311b321f02eaf7048b8ec70f
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/mediadive442.json
+    sha256: 436c3cac7e4e9aa55d42e644af1b9f17d92eb8138884c17c5509b84b849ff397
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/mediadive442.json.receipt.json
+    sha256: 38e9a18ecc49783abfbc58a8b5bf3cc223835c1ff18d841c4271bef2a0f74bea
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/micro-polypeptone-parents.json
+    sha256: 75170d06725f97f2bf39139585b48443a7a760944d305595100347a383439797
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/micro-polypeptone-parents.json.receipt.json
+    sha256: 2656d5d10dc44f52338d9847607411a7ba995fa89187476690f9dffa5cb71c5e
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/micro-polypeptone.json
+    sha256: 81455e3fbddb0a31ea64fc1019ffd28d2adca8784c0d71abb51faf25429a426c
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/micro-polypeptone.json.receipt.json
+    sha256: 3c7d49fcfee4b38fadbceb1ce0810d16e3d94f748a74862c7597c851823f91ee
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/nihon-manufacturing-2007.pdf
+    sha256: 4c9be7079def263c167e9c7760027bc08b81d1f5843d290ec6f499976933f0c7
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/nihon-manufacturing-2007.pdf.receipt.json
+    sha256: be8332f12a321a93ea2f5ab482fda0e74c1971db9d2039521f3fa3518c9eb1bd
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/thermo.pdf
+    sha256: 963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/thermo.pdf.receipt.json
+    sha256: 2d50308201fdc1e4287eaede9cc69143375f4d66b967ef568032d1f4db3c37b4
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/togo-gmdb-retry-M122.json
+    sha256: 9b438b843f4ef66eaa8f5990a836f81526869cab79ae0b3ac1410e34ed58ed27
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/togo-gmdb-retry-M122.json.receipt.json
+    sha256: 5869050df8e5690df55863ece42150ab0e9820a8d6b7fedce90b7ca8bfe65552
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/wako-2001.pdf
+    sha256: d953a5864ecf6d3ead107730dfd5a30f8ca660d75c7c42a25c9477b1341adf86
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/wako-2001.pdf.receipt.json
+    sha256: df1bca76f0420d4fb075d114669b4593f1ebe765b61baad036c7f1758bef37e6
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/wako-2002.pdf
+    sha256: 172877986b36aab106203a3b300019b2696ca2c298d8704a7103ab45ef352005
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/wako-2002.pdf.receipt.json
+    sha256: ea163ee921a502c4fbc1add57096fb87874502f3d9110abbdfe4fdd684fef25f
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/wako.pdf
+    sha256: 2ca0443638e265d07e39cc07f15eb5f55b5750886ad6f80e1302767f53506c9b
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/captures/wako.pdf.receipt.json
+    sha256: 73666905724c3f4692aa14e8297acce6971f8ac0b5c08dc4c2f02d04121e4096
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/conditional-grounding-matrix.json
+    sha256: 37ef74a69474aa616513df50dfb01de46303a3b7c42e41492e65e04a5315a79f
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/context-ledger-v2.json
+    sha256: 96e93bcc4c6a2675ffc05aba0ba0ec1e49a4827acc9d51d66894536af1dc1020
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/findings.json
+    sha256: bb832da670aa19e36ec59a9713c1448c770ab57b412b3b845a3fd1d7a43b1daa
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/input/complete-150-context-recipes.json
+    sha256: a19ac47a4a3891163f639f1721a81feba814f02d1d0c1c58a0d42acfaee07407
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/proposed/Polypeptone.yaml
+    sha256: be254d39d8edd3664f74f0ecb76dd0cfdd5d8c597930b088fba3f55e84d18525
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/read/dedup-search.json
+    sha256: 3414791dd144771c044f009449d1a1bd7b1171f116aacf083863cc2a7ec6cba0
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/source-assessment.json
+    sha256: 28117c75d685c9e3a7803cc7f862ae26599e61b0a268a1d1e783e354e682e168
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/polypeptone/source-read-ledger.json
+    sha256: 797bb0e0c9f80df18edebf1acfc1ddec36fdb0b66578c009976acc6b6e198791
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/review/main-review.json
+    sha256: 0a030319cd5a7835bd077bc77da54ce795493a93117b757508990d23de34df17
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/tellurium-polypeptone-v1/selected-origin-bindings.json
+    sha256: 22ef4978ec29377402a02f34f136dbfe307a9aafeed4ca6a904b446cf3812993
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/research-a/payloads/Polypeptone.yaml
+    sha256: 33e474e0751408a59734c527303219dcb5eeb486ced170f9207548a415b0ee9a
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/decisions.json
+    sha256: e626c5147747389c1f1125a22d9b09698700b3e5b4f7bc83b42964c9b47ba54a
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/evidence.json
+    sha256: a4fdf58bd18e78de1ce824a90d9bf4704db1720a27a76915a6355042dd778914
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/proposals.json
+    sha256: e7dee1ca808d8e97e5bdca0462cdf5bafef6fc15e69555b159c5f59d6dc926f7
+    role: context
+  - path: .temp/all-unmatched-20261107/workers/w06/worktree/reports/all_unmatched_20261107/worker-06/successor-v5/selection.json
+    sha256: 2a8a71a478814d89169122ed3ef6c34ee26bc9ba0d75dbb62d6e349468864348
+    role: context
+  - path: .temp/kgm-unmapped-20261107/worktree/data/ingredients/mapped/Polypeptone.yaml
+    sha256: 5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa
+    role: context
+  - path: AGENTS.md
+    sha256: fc7728986d82b43359a9055ae233bcf0d4ebaef8bb657ef1b4bb4aa87b2cbaaf
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: data/ingredients/mapped/Polypeptone.yaml
+    sha256: 5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+  - path: src/mediaingredientmech/schema/mediaingredientmech.yaml
+    sha256: bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012
+    role: context
+scope:
+  description: One exact W05 owner proposal and its authentic before/W06 context;
+    assess A grounding decision, not all campaign cases.
+  selection: Entire specified W05 payload and all relevant bound evidence; no sampling.
+  coverage: full
+  population_size: 1
+  reviewed_target_ids:
+  - TARGET-019
+  exclusions:
+  - target: Final recomposed owner, whole source-case membership, roles and release
+      admission
+    reason: Not authored or installed; future exact-byte review and native receipt/release
+      checks remain.
+targets:
+- target_id: TARGET-019
+  path: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-Polypeptone.yaml
+  label: Polypeptone, exact W05 source proposal
+  kind: snapshot_row
+  selector: Complete W05 proposal at 0bac12cabfd1f67f212631d8eef9aa46379f6b41; authentic
+    before and W06 proposal are separately inspected context.
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Polypeptone.yaml
+    role: maintained_record
+  ownership_note: One existing owner; no maintained write or claim that this proposal
+    is installed.
+checks:
+- check_id: source
+  name: Exact source and author-packet verification
+  status: passed
+  required: true
+  summary: 100 author members and52 originals, including committed blobs and maintained
+    beforeimage.
+  target_ids:
+  - TARGET-019
+  evidence_ids:
+  - integrity
+- check_id: schema
+  name: Native strict record schema and direct projection
+  status: passed
+  required: true
+  summary: All three complete source objects pass; minimum in-memory correction produces
+    expected parent and registry rows without rejected tokens.
+  target_ids:
+  - TARGET-019
+  evidence_ids:
+  - native
+- check_id: release
+  name: Final corpus QC, companion and SSSOM release checks
+  status: not_applicable
+  required: false
+  summary: No applied or final composed candidate exists in this planning review;
+    no gate pass asserted.
+  target_ids:
+  - TARGET-019
+evidence:
+- evidence_id: semantics
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Exact versus broader identity; local registry and mandatory B1; specific
+    product/source scope and claim-specific rejected aliases.
+- evidence_id: decision
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/decision.json
+  snapshot_sha256: 233307d186872422df234ba45ff6c1e6676f3834f1461f0d4af4a14e37cdcee5
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Independent supported field-level guidance; no final candidate or release
+    approval.
+- evidence_id: assessment
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/ASSESSMENT.md
+  snapshot_sha256: 327fc5db544d4f63493b5b41852009c4f780284fb7b6dbecc36e99c2318bb6be
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Complete independent grounding, product alias, history, quantity and limitation
+    assessment.
+- evidence_id: integrity
+  kind: validation
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/integrity.json
+  snapshot_sha256: 04291cf2249d5edd6d0ddf3fa2d4d9b1a2bbbf9163c76c28bea00be189329faa
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: 100 author members and52 originals rehashed; Git objects and maintained
+    authentic preimage checked.
+- evidence_id: native
+  kind: validation
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/native-checks.json
+  snapshot_sha256: 8ea54871bed41b229e7fa9c7eee1c615901eb543c948d9896c3a4d2f0ddeea43
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Three source schemas and actual native two-row counterfactual with eight
+    nonresolving tokens; no candidate published.
+- evidence_id: before
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/authentic-before-Polypeptone.yaml
+  snapshot_sha256: 5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Full authentic owner and original mixed-family creation history.
+- evidence_id: w05
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w05-Polypeptone.yaml
+  snapshot_sha256: be254d39d8edd3664f74f0ecb76dd0cfdd5d8c597930b088fba3f55e84d18525
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: 'Full selected source proposal: local fallback, five rejected labels, three
+    resolving BD catalogue aliases and inherited roles.'
+- evidence_id: w06
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/w06-Polypeptone.yaml
+  snapshot_sha256: 33e474e0751408a59734c527303219dcb5eeb486ced170f9207548a415b0ee9a
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Full other authentic-origin correction; historical rationale qualified
+    and three Hipolypepton labels rejected.
+- evidence_id: foodon
+  kind: authority
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/foodon.json
+  snapshot_sha256: c6264c268afeadcb47631173e6a803cbf9a0b7a8c08fda990df55ee260680f28
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Active protein hydrolyzates term; sparse SIREN annotation not interpreted
+    as a flavouring role or identity.
+- evidence_id: parents
+  kind: authority
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-parents.json
+  snapshot_sha256: 576477566c50ad60c747f5c1d993f585ad0b04627468298d56a0fbb6ea5dc07f
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Actual direct SIREN working-folder parent.
+- evidence_id: ancestors
+  kind: authority
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/foodon-ancestors.json
+  snapshot_sha256: 33b60621273f015ad07fa0f6b135db84d7d3ec3e3696c1a88b067a25c8eb4941
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Actual food material and material entity ancestry.
+- evidence_id: micro179
+  kind: authority
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/micro-polypeptone.json
+  snapshot_sha256: 81455e3fbddb0a31ea64fc1019ffd28d2adca8784c0d71abb51faf25429a426c
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: BD mixed-digest definition and equal-parts product citation; not exact
+    generic owner identity.
+- evidence_id: micro178
+  kind: authority
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/fresh-primary/micro-peptone.json
+  snapshot_sha256: ef45aa186438f91d015280171fde8ccb25740a50cc6f2c6e848de6aad3339b31
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Mammalian enzymatic process scope excludes using this as an unrestricted
+    parent.
+- evidence_id: thermo
+  kind: primary_source
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/thermo.txt
+  snapshot_sha256: 9e73ceb466dbe39fc34e7e1adb558bbd54d2652a9bbf4304c6e23ce1997a7401
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Inspected manufacturer printed7 hydrolysate definition and printed49 specific
+    blend; raw PDF is separately hash-bound.
+- evidence_id: thermo-page
+  kind: primary_source
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/thermo-page49.png
+  snapshot_sha256: 5bf5fc06994f5ba2459067a84e04ac9deed39f133d22ca1941c0d623125ea865
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Visually inspected actual product formulation and catalogue211910/297108
+    table.
+- evidence_id: wako-page
+  kind: primary_source
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/derived-primary/wako-2001-page15.png
+  snapshot_sha256: 278b09aac78d960b4a16cbe9a29bae9e648672a94297cce95a6db185bf246d70
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Visually inspected historical casein/pig-enzyme versus soy alternative
+    table; no lot equality inferred.
+- evidence_id: mediadive
+  kind: primary_source
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive442.json
+  snapshot_sha256: 436c3cac7e4e9aa55d42e644af1b9f17d92eb8138884c17c5509b84b849ff397
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Named complex Polypeptone record without supplier/formula; no automatic
+    Japanese/BD identity bridge.
+- evidence_id: mediadive2060
+  kind: primary_source
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/mediadive2060.json
+  snapshot_sha256: 3bb59834f17512fd7111562b8725feea0e7dad31f13f61c016f35a2eae0f0676
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Separate Hipolypepton source entity, not generic Polypeptone identity.
+- evidence_id: jcm130
+  kind: primary_source
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/jcm130.html
+  snapshot_sha256: 9af3a9bafa1325cbea9bcfe1a02259b5dab7e8f0110c6928f9b5aec81406e920
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: 300mg current product wording, one litre added water and sodium-carbonate
+    pH adjustment; no exact final volume.
+- evidence_id: togo122
+  kind: primary_source
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/cached-primary/togo-gmdb-retry-M122.json
+  snapshot_sha256: 9b438b843f4ef66eaa8f5990a836f81526869cab79ae0b3ac1410e34ed58ed27
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Original historical label with literal300mg and JCM130 source linkage.
+- evidence_id: cm
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-final-grounding-decision-v1/snapshot/current-CultureMech007758.yaml
+  snapshot_sha256: 696b9677e90c0b7b59e246b23367612f3687ec9cff6a1afd53c88ad27d0a2518
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: supports
+  summary: Frozen/current-local300G_PER_L discrepancy; no remote-main statement.
+- evidence_id: web-limits
+  kind: validation
+  reference: .temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/web-attempts.json
+  snapshot_sha256: 12493050001157d38b72460ff176d240297b38c827bd79091eaae0672e8ea0bd
+  accessed_at: '2026-11-08T09:35:52.438796Z'
+  support: context_only
+  summary: Fresh web PDF succeeded; web OLS requests inaccessible, so inspected complete
+    bound raw OLS responses support hierarchy. No failed-request absence claim.
+assessments:
+- assessment_id: grounding
+  area: identity
+  topic: Named preparation versus material parent and specific BD product
+  outcome: concern
+  summary: The generic local-plus-broader correction is supported; actual selected
+    self-only grounding and BD aliases still require curation.
+  details: No universal crystallographic, lot or peptide-profile prerequisite. Exact
+    FoodOn class would be too broad; exact MicrO179 would import a specific blend
+    unsupported for generic source442.
+  target_ids:
+  - TARGET-019
+  evidence_ids:
+  - semantics
+  - decision
+  - assessment
+  - foodon
+  - parents
+  - ancestors
+  - micro179
+  - micro178
+  - thermo
+  - wako-page
+  - w05
+- assessment_id: preservation
+  area: provenance
+  topic: History, source product holds, five rejections and provisional roles
+  outcome: supported
+  summary: Both genuine histories and source distinctions survive the proposed guidance.
+    Preserve exact five existing rejections, unchanged135 statistics and provisional
+    computational role; new mapping evidence remains agent-assisted.
+  target_ids:
+  - TARGET-019
+  evidence_ids:
+  - before
+  - w05
+  - w06
+  - mediadive
+  - mediadive2060
+  - decision
+- assessment_id: quantity
+  area: consistency
+  topic: Separate M122 source-unit mismatch
+  outcome: concern
+  summary: 300G_PER_L in local recipe conflicts with primary literal300mg. This separate
+    CultureMech defect neither proves product equality nor blocks the supported broader
+    mapping.
+  target_ids:
+  - TARGET-019
+  evidence_ids:
+  - togo122
+  - jcm130
+  - cm
+  - assessment
+findings:
+- finding_id: POLYPEPTONE-001
+  issue_key: CultureBotAI.MediaIngredientMech.polypeptone-registry-proposal-omits-supported-parent
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Exact W05 source proposal still omits the supported material parent
+  description: The independently supported correction is local Polypeptone plus FOODON03315306
+    NARROW_MATCH/broadMatch, with native registry identity. This is guidance; actual
+    selected bytes still use self-only fallback. No arbitrary BD exact identity or
+    generic FOODON collapse.
+  target_ids:
+  - TARGET-019
+  field_paths:
+  - /ontology_mapping
+  evidence_ids:
+  - semantics
+  - w05
+  - foodon
+  - parents
+  - ancestors
+  - thermo
+  - micro179
+  - micro178
+  - decision
+  - native
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Polypeptone.yaml
+    role: maintained_record
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1202
+  previous_occurrences:
+  - repository: CultureBotAI/MediaIngredientMech
+    review_id: 20261108T091324Z-combined37-independent-frozen-candidates
+    finding_id: POLYPEPTONE-001
+  ownership_note: Same affected owner target, later authentic W05 fragment; historical
+    combined candidate is not silently replaced or fixed.
+- finding_id: POLYPEPTONE-BD-ALIAS-SCOPE
+  issue_key: CultureBotAI.MediaIngredientMech.polypeptone-generic-owner-bd-catalogue-alias-scope
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Three BD catalogue aliases still resolve on the supplier-unspecified owner
+  description: For the supported generic scope, preserve each exact product-specific
+    label and source as REJECTED_LABEL, with the broader-versus-specific rationale.
+    Notes alone leave label-index and SSSOM resolution active. Do not declare the
+    BD product nonexistent or import its components into generic identity.
+  target_ids:
+  - TARGET-019
+  field_paths:
+  - /synonyms
+  evidence_ids:
+  - semantics
+  - w05
+  - thermo-page
+  - micro179
+  - mediadive
+  - decision
+  - native
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Polypeptone.yaml
+    role: maintained_record
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1202
+  ownership_note: Concrete remainder already described in A decision packet; no new
+    unrelated tracker or corpus edit.
+actions:
+- action_id: correct-grounding-and-aliases
+  description: Compose a truthful source-bound successor using the supported local/FOODON
+    mapping and three provenance-only BD alias dispositions, preserving all source
+    histories and five prior rejections.
+  finding_ids:
+  - POLYPEPTONE-001
+  - POLYPEPTONE-BD-ALIAS-SCOPE
+  target_ids:
+  - TARGET-019
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Polypeptone.yaml
+    role: maintained_record
+  acceptance_checks:
+  - Independent final complete-byte owner review, including all aliases and mapping
+    evidence.
+  - Native guarded write/schema and synchronization, actual generated parent+B1 rows,
+    no rejected aliases in resolving exports.
+  - Preserve case/form/quantity/role/release holds; no BD component import or generic
+    release approval.
+limitations:
+- Scoped decision review, not final integrated-owner or source-case release approval.
+- Native validation/rendering is private; no canonical review save, source change
+  or fabricated Git binding.
+- Fresh OLS web-tool calls were inaccessible; complete exact captured OLS evidence
+  was inspected. No absence inferred.
+- FoodOn hierarchy is sparsely curated; actual material ancestry supports the broad
+  claim, not role assignment.
+- The original full37 Japanese-alias finding remains a historical combined-candidate
+  condition until actual recomposition; newer W05 five-rejection scope is verified
+  without silently closing it.
+- M122 quantity requires source-owner correction independently; no final concentration
+  invented.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T091324Z-combined37-independent-frozen-candidates
+  relationship: Earlier full combined owner retained parent finding; current source
+    fragment and bounded decision reassessed without final composition approval.
+tags:
+- independent
+- read-only
+- polypeptone
+- grounding-decision
+- no-release-approval
+```

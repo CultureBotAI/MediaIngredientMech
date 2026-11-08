@@ -1,0 +1,109 @@
+{
+  "schema_version": "conditional-component-dependency-plan-v1",
+  "completed_at": "2026-11-08T08:18:11.321239+00:00",
+  "reviewer": "/root/step7d_independent_review",
+  "status": "COMPLETE_READONLY_PLAN_NO_CORPUS_APPROVAL",
+  "summary": {
+    "observed_at": "2026-11-08T08:15:53.664425+00:00",
+    "observer_cutoff": "2026-11-08T07:59:05.182653+00:00",
+    "population": {
+      "baseline_claims_affected": 27,
+      "new_MRSSI_claims": 1,
+      "distinct_claims_for_coupling_plan": 28,
+      "published_MIM_CATALOG_claims": 435,
+      "combined_candidates": 37,
+      "selected_origin_proposals": 985
+    },
+    "baseline_transition_claim_breakdown": {
+      "MICRO:0000520": 3,
+      "FOODON:03305103": 2,
+      "MICRO:0000178": 19,
+      "CHEBI:131366": 3
+    },
+    "peptone20_dispositions": {
+      "EXISTING_PROPOSAL_WITHDRAWS_REFERENCE": 1,
+      "GENERIC_REFERENCE_MIGRATION_CANDIDATE": 8,
+      "HOLD_SOURCE_COMPONENT_IDENTITY": 10,
+      "RETAIN_SOURCE_SPECIFIC_BACTO_REFERENCE": 1
+    },
+    "same_consumer_compositions": [
+      {
+        "consumer_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+        "claim_keys": [
+          "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[0]",
+          "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]"
+        ],
+        "obligation": "Compose all claim corrections on one exact final before-image; preserve every unrelated field/history and verify the combined final consumer. Do not apply independent stale payloads sequentially."
+      },
+      {
+        "consumer_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+        "claim_keys": [
+          "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]",
+          "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[3]"
+        ],
+        "obligation": "Compose all claim corrections on one exact final before-image; preserve every unrelated field/history and verify the combined final consumer. Do not apply independent stale payloads sequentially."
+      },
+      {
+        "consumer_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+        "claim_keys": [
+          "data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[0]",
+          "data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[3]"
+        ],
+        "obligation": "Compose all claim corrections on one exact final before-image; preserve every unrelated field/history and verify the combined final consumer. Do not apply independent stale payloads sequentially."
+      }
+    ],
+    "new_target_claims": 11,
+    "shared_identifier_claims": 12,
+    "status": "CONDITIONAL_INTEGRATION_DEPENDENCY_PLAN_NOT_APPLICATION_APPROVAL",
+    "limits": [
+      "Observer cutoff explicitly predates later worker scientific/provenance successors. Each final payload needs exact published-head bridge and re-enumeration before source application.",
+      "The405 no-ID-impact claims are not scientific approval: source applicability, label/form changes, rejected aliases, full-record roles and component completeness remain covered by separate exact-head reviews.",
+      "37 shared-ID groups are mechanically listed; MIM_CATALOG means at least one active represented identity under semantics6, not a unique document. No arbitrary owner winner or new duplicate-ID gate was imposed.",
+      "Generic Peptone transition structurally passes while silently narrowing19 references to Bacto. Native green does not settle source identity.",
+      "10 ambiguous peptone source claims require evidence or reviewed ID withdrawal; a hold note cannot justify retaining a now-wrong resolving ID.",
+      "Two of the three rumen consumers, plus Fastidious, have overlapping claim repairs. Use one composed final payload per consumer.",
+      "Mg/Cr negative-ledger/override migration is delegated under1245; PIPES stale kg_microbe_node_id under1211 remains outside component changes.",
+      "Family v2 metadata/evidence successor has unchanged component fields; Columbia remains blocked for genuine source-owner partition.",
+      "No changes to native rules, thresholds, sidecar provenance, code, candidate files or corpus occurred."
+    ]
+  },
+  "authoritative_outputs": {
+    "PLAN.md": "86fc189507e289f80d12a23e204b2c6dc47f2d2084ec84414ee41e0a995c33c9",
+    "minimal-couplings-28.json": "7eb99113fdc99ffff567042daf40a49e3d771b4c907ad624957d7eec3a2ff537",
+    "new-target-obligations-11.json": "e4650482c8d8b60ba8abcea6f06e85a37946c985d6454316b17e6de69746b1eb",
+    "shared-identifier-claims-12.json": "46538e9c9c21592c294a4853fb093e1fcd157e97e8173554b08f8704a6eacea7",
+    "composed-consumer-obligations.json": "9161b8d4e59b25396f666e6093a8a3a651f3aeffdddc7585b68e5b4565bfa3a9",
+    "source-evidence-refcheck-32.json": "2016a0abdde4d92f8637ed126ba1097bb4ed176a9a4c8c8d4493981293255724",
+    "analysis-v3/summary-v1.json": "313b6f7e851115253e021751f77951bb9ae17f5c74488ea565181e7008d798f0",
+    "analysis-v3/all-435-proposed-claims.json": "63d3320f0446f1f74edd25ed968a01de55ddc0e05acee89b691cf974d451a8d5",
+    "native-dependency-probe.json": "042b422c42d61f7ec18065cad27cbf21e9b2a964fe06c1d75b85e093754e36ef",
+    "family-v2-independent/ASSESSMENT.json": "0d062680189e4f892e49426c249572f028d499c5d13a755047387516a2a2ce40",
+    "final-input-readback.json": "55c615ecd9aad78f0ac1ea1c1f36fa662f698091c970d67d382746154a8d76f6",
+    "issue-material/comment-1176-component-coupling.md": "dd0934b1b65473dd77cc5c797b51a0bbaee8a8deb4c649018f6ec922329eed15",
+    "issue-material/dedup.json": "d6e620872033c7090206311582ccbe8a0e7cbfd5f4ae4f721676df7cdccb711b",
+    "native-review-v2.yaml": "8c3877f930d2af59e3b34543667e35c139cc69a19ad7b51726f3eaeb1860cc17",
+    "native-review-v2.md": "50e80913ed83ee2b9b4ec14f0ae0b9cf89946f611fa4ce12d64ecbe8cf0c08b8",
+    "native-review-validation-v2.json": "9dc032380646807373eccf1f1384bfe3c71c08b764fd7cae51371e8c8faaf0cd"
+  },
+  "native_review": {
+    "review_id": "20261108T081710Z-component-dependencies-and-four-family-successor",
+    "targets": 5,
+    "inputs": 100,
+    "state": "working_tree",
+    "base": "0dac278466699129a083343a921c2e0ca18a9ab4",
+    "validated_and_rendered_privately": true,
+    "maintained_save": false,
+    "reason": "Assignment authorizes writes only inside this private reviewer packet."
+  },
+  "new_issue_drafts": 0,
+  "existing_issue_comment_draft": 1176,
+  "family_successor_disposition": "FF001 and FF002 resolved; no new bounded delta finding; Columbia remains blocked.",
+  "authorship_limits": "No worker proposal, candidate, maintained data/code/test/workflow/pin or GitHub/session mutations. Read-only native checks and private artifacts only; no implementation or source-owner approval.",
+  "preserved_development_attempts": [
+    "collector-v1 failed before table writes; helper eager default expression",
+    "collector-v2 count340 superseded by analysis-v3 count27; empty defaultdict membership bug",
+    "assemble_plan.py SyntaxError before execution; assemble_plan_v2.py completed",
+    "native-review.yaml/.md first private draft retained; final v2 clarifies32captures rehashed versus full peer science"
+  ],
+  "source_accounting_cutoff_is_not_latest_head_claim": true
+}

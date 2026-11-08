@@ -1,0 +1,113 @@
+identifier: kgmicrobe.ingredient:cooked_meat_medium_oxoid
+preferred_term: Cooked meat medium (Oxoid)
+synonyms:
+- synonym_text: Cooked meat medium
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Cooked meat medium (Oxoid)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T17:59:59.284679+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0364 → FOODON:03305103 (fuzzy-top)
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.512701+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'meat')
+  llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518602+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Cooked meat medium (Oxoid)'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-11-08T05:52:12.254602+00:00'
+  curator: Codex worker05 correction1193 source review
+  action: CORRECTED
+  changes: 'Source1824 and all exact cooked-meat owner uses trace to JCM605 Oxoid
+    commercial growth medium55g, not the food meat(cooked). Replace the incorrect
+    FOODON03305103 whole mapping with a source-product registry identity. Robertson
+    TOGO M2793 is a distinct unspecified prepared-medium context: this repair does
+    not assert it is the same Oxoid product. Isolated proposal only; whole-owner/source/export
+    holds remain and integration requires separate native review.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:34.583422+00:00'
+  curator: Codex GPT-6 /root/media_research
+  action: CORRECTED
+  changes: Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION
+    to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except
+    any separately listed finding. Isolated report-only successor; maintained data
+    and all original source, owner, role, cross-shard and export holds remain unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Correction1193: Source1824 and all exact
+  cooked-meat owner uses trace to JCM605 Oxoid commercial growth medium55g, not the
+  food meat(cooked). Replace the incorrect FOODON03305103 whole mapping with a source-product
+  registry identity. Robertson TOGO M2793 is a distinct unspecified prepared-medium
+  context: this repair does not assert it is the same Oxoid product. Manufacturer-version
+  differences remain explicit in component assertion. All prior food-mapping history
+  retained for audit.'
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:cooked_meat_medium_oxoid
+  ontology_label: Cooked meat medium (Oxoid)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.fishersci.com/TFS-Assets/MBD/Specification-Sheets/BT-SPEC-0078%20V4.pdf
+    notes: 'Source1824 and all exact cooked-meat owner uses trace to JCM605 Oxoid
+      commercial growth medium55g, not the food meat(cooked). Replace the incorrect
+      FOODON03305103 whole mapping with a source-product registry identity. Robertson
+      TOGO M2793 is a distinct unspecified prepared-medium context: this repair does
+      not assert it is the same Oxoid product.'
+ingredient_type: NAMED_MEDIUM
+components:
+- component_name: Desiccated beef-heart material
+  reference_scope: UNMAPPED
+- component_name: Protein hydrolysate
+  reference_scope: UNMAPPED
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: PARTIAL
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://assets.fishersci.com/TFS-Assets/MBD/Specification-Sheets/BT-SPEC-0078%20V4.pdf
+    notes: Current manufacturer CM0081 revision4 lists beef-heart substance,protein
+      hydrolysate,proprietaryblend,sodiumsulphite; older specification instead listsheartmuscle,peptone,LabLemco,NaCl,glucose.
+      The source recipe has no catalog/revision; only common named components are
+      represented and quantities are not imposed.
+supplied_form:
+- name: Cooked meat medium
+  supplier: Oxoid
+  notes: Source names Oxoid, not a specific catalog or product revision; do not silently
+    equate55g source dose with100g/L manufacturer reconstitution.

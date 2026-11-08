@@ -1,0 +1,1168 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "completed_at": "2026-11-08T09:51:16.676468+00:00",
+  "verdict": "pass_with_limitations",
+  "payload_reviews": [
+    {
+      "target_id": "PC03",
+      "proposal_id": "W05-DEP-PEPTONE-PC03",
+      "proposal_object_sha256": "5e8759e2537b57c413bccec5d2c09b45bb12e51923a6894cc41b8619ec5bfe21",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml",
+        "sha256": "f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034"
+      },
+      "reviewer": "/root/final_skeptical",
+      "primary_author": "/root/buffer_tris",
+      "assessment": "The glucose peptone-yeast extract observation explicitly names peptone; glucose and yeast remain separate. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.",
+      "complete_payload_read": true,
+      "protected_fields": {
+        "ontology_mapping": true,
+        "identifier": true,
+        "occurrence_statistics": true,
+        "ingredient_type": true,
+        "mapping_status": true,
+        "synonyms": true,
+        "preferred_term": true
+      },
+      "component_before": {
+        "component_name": "peptone",
+        "component_id": "kgmicrobe.ingredient:peptone",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "component_after": {
+        "component_name": "peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "actual_source_rows": [
+        {
+          "csv_row": 1597,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "glucose peptone-yeast extract",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerofustis-stercorihominis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00628"
+          },
+          "source_taxon": "Anaerofustis stercorihominis",
+          "complete_source_object_sha256": "bc01ca0e23e58f23c37aaa82b5b2c6cb06861ed93b3d1d9fb6fc7b62cd32e42f"
+        }
+      ],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Glucose_Peptone-yeast_Extract",
+          "subject_label": "Glucose Peptone-yeast Extract",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:glucose_peptone_yeast_extract",
+          "object_label": "Glucose Peptone-yeast Extract",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Glucose_Peptone-yeast_Extract",
+          "subject_label": "Glucose Peptone-yeast Extract",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:glucose_peptone_yeast_extract",
+          "object_label": "Glucose Peptone-yeast Extract",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "previous_full_scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "previous_reviewer": "/root/final_skeptical/preservation_audit",
+      "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review."
+    },
+    {
+      "target_id": "PC16",
+      "proposal_id": "W05-DEP-PEPTONE-PC16",
+      "proposal_object_sha256": "ffa97a20b66f8e0f466faebad54e7f8dfe4a0cfdc4f1f6e31bce5fac69cb4208",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml",
+        "sha256": "c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d"
+      },
+      "reviewer": "/root/final_skeptical",
+      "primary_author": "/root/buffer_tris",
+      "assessment": "The Peptone-yeast extract-glucose observation explicitly names the generic input; it is not made identical to the reordered PC03 preparation. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.",
+      "complete_payload_read": true,
+      "protected_fields": {
+        "ontology_mapping": true,
+        "identifier": true,
+        "occurrence_statistics": true,
+        "ingredient_type": true,
+        "mapping_status": true,
+        "synonyms": true,
+        "preferred_term": true
+      },
+      "component_before": {
+        "component_name": "peptone",
+        "component_id": "kgmicrobe.ingredient:peptone",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "component_after": {
+        "component_name": "peptone",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "actual_source_rows": [
+        {
+          "csv_row": 1622,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "peptone-yeast extract-glucose",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerorhabdus-furcosa",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00237"
+          },
+          "source_taxon": "Anaerorhabdus furcosa",
+          "complete_source_object_sha256": "a68918d043f0c376a3713739739a43b79ce02d824c8184d712cbcf0b3fe2fd5b"
+        }
+      ],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Peptone-yeast_Extract-glucose",
+          "subject_label": "Peptone-yeast Extract-glucose",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone_yeast_extract_glucose",
+          "object_label": "Peptone-yeast Extract-glucose",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Peptone-yeast_Extract-glucose",
+          "subject_label": "Peptone-yeast Extract-glucose",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone_yeast_extract_glucose",
+          "object_label": "Peptone-yeast Extract-glucose",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "previous_full_scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "previous_reviewer": "/root/final_skeptical/preservation_audit",
+      "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review."
+    },
+    {
+      "target_id": "PC17",
+      "proposal_id": "W05-DEP-PEPTONE-PC17",
+      "proposal_object_sha256": "99219a43b9a1e5cb8923639c0895df4ca852b04027bcbf4a6c3f6a4677c3e9c4",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml",
+        "sha256": "579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163"
+      },
+      "reviewer": "/root/final_skeptical",
+      "primary_author": "/root/buffer_tris",
+      "assessment": "The explicit peptone+beef+yeast list does not imply the peptone itself derives from beef; adjacent extract scope stays separate. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.",
+      "complete_payload_read": true,
+      "protected_fields": {
+        "ontology_mapping": true,
+        "identifier": true,
+        "occurrence_statistics": true,
+        "ingredient_type": true,
+        "mapping_status": true,
+        "synonyms": true,
+        "preferred_term": true
+      },
+      "component_before": {
+        "component_name": "Peptone",
+        "source": "MIM label decomposition (#213/#308)",
+        "component_id": "kgmicrobe.ingredient:peptone",
+        "reference_scope": "MIM_CATALOG"
+      },
+      "component_after": {
+        "component_name": "Peptone",
+        "source": "MIM label decomposition (#213/#308)",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG"
+      },
+      "actual_source_rows": [
+        {
+          "csv_row": 3775,
+          "field": "Literature_Substrates_for_end_products",
+          "literal": "peptone + beef extract + yeast extract",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/chordicoccus-furentiruminis"
+          },
+          "source_taxon": "Chordicoccus furentiruminis",
+          "complete_source_object_sha256": "6f37cc946bffe198fe6e6164c1079cd98a463c51fd4b81389c0a335b816090e4"
+        }
+      ],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Peptone_Beef_Extract_Yeast_Extract",
+          "subject_label": "Peptone + Beef Extract + Yeast Extract",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone_beef_extract_yeast_extract",
+          "object_label": "Peptone + Beef Extract + Yeast Extract",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Peptone_Beef_Extract_Yeast_Extract",
+          "subject_label": "Peptone + Beef Extract + Yeast Extract",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone_beef_extract_yeast_extract",
+          "object_label": "Peptone + Beef Extract + Yeast Extract",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "previous_full_scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "previous_reviewer": "/root/final_skeptical/preservation_audit",
+      "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review."
+    },
+    {
+      "target_id": "PC18",
+      "proposal_id": "W05-DEP-PEPTONE-PC18",
+      "proposal_object_sha256": "27d678472937207c2fd7422bfecda77a02980528e7be740f78d566e5e079f9a2",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml",
+        "sha256": "eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8"
+      },
+      "reviewer": "/root/final_skeptical",
+      "primary_author": "/root/buffer_tris",
+      "assessment": "Both peptone+yeast observations retain their original source columns and two distinct source contexts; no whole-formulation equivalence is inferred. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.",
+      "complete_payload_read": true,
+      "protected_fields": {
+        "ontology_mapping": true,
+        "identifier": true,
+        "occurrence_statistics": true,
+        "ingredient_type": true,
+        "mapping_status": true,
+        "synonyms": true,
+        "preferred_term": true
+      },
+      "component_before": {
+        "component_name": "Peptone",
+        "source": "MIM label decomposition (#213/#308)",
+        "component_id": "kgmicrobe.ingredient:peptone",
+        "reference_scope": "MIM_CATALOG"
+      },
+      "component_after": {
+        "component_name": "Peptone",
+        "source": "MIM label decomposition (#213/#308)",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG"
+      },
+      "actual_source_rows": [
+        {
+          "csv_row": 1652,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "peptone + yeast extract",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerotruncus-colihominis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00673"
+          },
+          "source_taxon": "Anaerotruncus colihominis",
+          "complete_source_object_sha256": "812999068d91813377fb30935ada3f2d576c2f6ce03ae646a3b53b7f756aea5d"
+        },
+        {
+          "csv_row": 15057,
+          "field": "Literature_Substrates_for_end_products",
+          "literal": "peptone + yeast extract",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniclasticum-ruminis"
+          },
+          "source_taxon": "Proteiniclasticum ruminis",
+          "complete_source_object_sha256": "625fddc513ca947d99add5770ba795d47ce8667c1d954861604532c3d2b37230"
+        }
+      ],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Peptone_Yeast_Extract",
+          "subject_label": "Peptone + Yeast Extract",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone_yeast_extract",
+          "object_label": "Peptone + Yeast Extract",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Peptone_Yeast_Extract",
+          "subject_label": "Peptone + Yeast Extract",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone_yeast_extract",
+          "object_label": "Peptone + Yeast Extract",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "previous_full_scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "previous_reviewer": "/root/final_skeptical/preservation_audit",
+      "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review."
+    },
+    {
+      "target_id": "PC19",
+      "proposal_id": "W05-DEP-PEPTONE-PC19",
+      "proposal_object_sha256": "4f4336bef7dba643ca0ff624d27cfee952498be828d5cd7650bcd8a0a69676dc",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml",
+        "sha256": "a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d"
+      },
+      "reviewer": "/root/final_skeptical",
+      "primary_author": "/root/buffer_tris",
+      "assessment": "The yeast extract+peptone observation names the generic part; it is not merged with the reversed-order owner. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.",
+      "complete_payload_read": true,
+      "protected_fields": {
+        "ontology_mapping": true,
+        "identifier": true,
+        "occurrence_statistics": true,
+        "ingredient_type": true,
+        "mapping_status": true,
+        "synonyms": true,
+        "preferred_term": true
+      },
+      "component_before": {
+        "component_name": "Peptone",
+        "source": "MIM label decomposition (#213/#308)",
+        "component_id": "kgmicrobe.ingredient:peptone",
+        "reference_scope": "MIM_CATALOG"
+      },
+      "component_after": {
+        "component_name": "Peptone",
+        "source": "MIM label decomposition (#213/#308)",
+        "component_id": "mesh:D010461",
+        "reference_scope": "MIM_CATALOG"
+      },
+      "actual_source_rows": [
+        {
+          "csv_row": 15054,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "yeast extract + peptone",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniborus-ethanoligenes",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01395"
+          },
+          "source_taxon": "Proteiniborus ethanoligenes",
+          "complete_source_object_sha256": "fbcf90159fc0d57dac3e2ef7da9b55dbf7b049f682485160fafc05cb3061baf5"
+        }
+      ],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Yeast_Extract_Peptone",
+          "subject_label": "Yeast Extract + Peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:yeast_extract_peptone",
+          "object_label": "Yeast Extract + Peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Yeast_Extract_Peptone",
+          "subject_label": "Yeast Extract + Peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:yeast_extract_peptone",
+          "object_label": "Yeast Extract + Peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "previous_full_scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "previous_reviewer": "/root/final_skeptical/preservation_audit",
+      "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review."
+    }
+  ],
+  "unchanged_payload_reuse": [
+    {
+      "proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+        "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "W05-DEP-PEPTONE-PC06",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml",
+        "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "W05-DEP-PEPTONE-PC07",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PY-fructose.yaml",
+        "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyglucose",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml",
+        "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "W05-DEP-PEPTONE-PC09",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PY-maltose.yaml",
+        "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "W05-DEP-PEPTONE-PC10",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PY-pectin.yaml",
+        "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "W05-DEP-PEPTONE-PC11",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PYEG.yaml",
+        "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "W05-DEP-PEPTONE-PC12",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml",
+        "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "W05-DEP-PEPTONE-PC13",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PYG.yaml",
+        "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    },
+    {
+      "proposal_id": "R1193-DEP-rumen-pyg",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml",
+        "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"
+      },
+      "scientific_review": {
+        "path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+        "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"
+      },
+      "actual_reviewer": "/root/final_skeptical/preservation_audit"
+    }
+  ],
+  "manifest": {
+    "path": ".temp/w05-buffer-parts-v1/dependencies-direct-v1/MANIFEST.json",
+    "sha256": "520d56c147bfb6ff5964e18376d4bb6be7f92769436328678f59a664beb80eec"
+  },
+  "verified_manifest_members": [
+    {
+      "path": "HANDOFF.json",
+      "sha256": "6f59d197a2015cd21b0cd379c941c33209d8bc528e3c745f012fc7006ce29c35"
+    },
+    {
+      "path": "build_successor.py",
+      "sha256": "90377bf275c29e3830627ed62782c34f8b94f4a4617a35720ba6a1ecddccaef4"
+    },
+    {
+      "path": "case-deltas.json",
+      "sha256": "63fcc402e83834b9cca78bb2149dbdacec479b2fd5e04a1a7a2bd1f12c049e2c"
+    },
+    {
+      "path": "diffs/Glucose_Peptone-yeast_Extract.diff",
+      "sha256": "24e6b6dd78a88ff19887e2c7afe34c579982082fa60d5c42e1d29e79c8e41c76"
+    },
+    {
+      "path": "diffs/Peptone-yeast_Extract-glucose.diff",
+      "sha256": "af7a9c1538733014eef6bbfd0bf825bb78d2639f50389b51f8aa79e48ac4ffd3"
+    },
+    {
+      "path": "diffs/Peptone_Beef_Extract_Yeast_Extract.diff",
+      "sha256": "65db34bce50983ea4a3f4b2e9391251e682f48c04b0ee81cc1482026781e9b75"
+    },
+    {
+      "path": "diffs/Peptone_Yeast_Extract.diff",
+      "sha256": "9a18595d7824c2d7d77034504e616a0314db74789faef9fddc73df0827555373"
+    },
+    {
+      "path": "diffs/Yeast_Extract_Peptone.diff",
+      "sha256": "4cf1208689f0a1a274dbdc8783f72c4cdc1b9411154fa582b4fd710f29803f79"
+    },
+    {
+      "path": "evidence.json",
+      "sha256": "e02172369e0f6822ec7a3a3576b041e5ed65b03c0e2d117db1a0c1f82822dd9e"
+    },
+    {
+      "path": "inputs/all20-original-machine-ledger.json",
+      "sha256": "339ce01608cd712ac135313750dfc4a762253264079cc9fb379f1a4ee2a693b8"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/ASSESSMENT.md",
+      "sha256": "9237c12eab409245c5dd8221cb227a0bcf608444906d17867af7d6ba22a44c87"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/HANDOFF.json",
+      "sha256": "ed4b490104249457bbb557767418eff3d19437aab459a5084cb91a2658c41663"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/MANIFEST.json",
+      "sha256": "f9aa228a3dee456ec0da909a3ce1de0288e82aa00f89481527ed502d5c200b32"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/assemble-review-v2.log",
+      "sha256": "0be6da54bc5ce4740b290db5a3af5b12155cdac5506b006dd32ce5eb9c926da2"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/assemble-review-v3.log",
+      "sha256": "ef7675aecb08b5f019140d162d6b2301dac9b75fe077f20c39d01347c2b3e098"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/assemble-review.log",
+      "sha256": "f33accae68fbf1034eafd9e9dde55abe44995a72419fe13d402833f9f0e450c3"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/assemble_review.py",
+      "sha256": "ea5049c0428a595f15f919a3e8aab382960c45b5ccb47106be5f7d7ea2ebe5ba"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/assemble_review_v2.py",
+      "sha256": "a8b1e681d9d5b3543babccae79c425e9e0154be0a3462eaacefaf7886d409581"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/assemble_review_v3.py",
+      "sha256": "fa49dfb6279a51311d8131a91fffc7188d71035e4629a4be80b76476eac1a37d"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/captures/foodon-relations.receipt.json",
+      "sha256": "bd33ab1de029755a20226167f9a552903a55c30c278d471b0cbea5bfeb673957"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/captures/nlm-hydrolysates.receipt.json",
+      "sha256": "db11e32423bad85979c5c4f9fd0be7510d9bb2ca80c1d647cd0e3b1db067c615"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/captures/nlm-peptones.receipt.json",
+      "sha256": "eafc65107829176f022427d44d27848861fa6114191f1629aa2e674077ae2eba"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/captures/w3c-owl-semantics.receipt.json",
+      "sha256": "cf1a58b583fa60fc5d34226cc2bcb714f344135b27c6da9ff78731afc5801787"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/captures/web-foodon-nlm-response.json",
+      "sha256": "75acdee90644da43e10566ad3308a7cd4a4ac9d29f36b3b88d111afe54c26991"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/captures/web-w3c-semantics-response.json",
+      "sha256": "5cf42c72700dd7d4df6655a231132fe3c47621fd62668468e1f0c6d29bda2abf"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/decision.json",
+      "sha256": "05aeca29288fb098ddeb98d7a99266df6e5fad5db47ef85202dab5f35ee39f40"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/final-readback.json",
+      "sha256": "f966be2f28a05d12f1532bb4197a1eb9ddea4361ce215ea14858d8b343059ac5"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/historical-preservation.json",
+      "sha256": "eabd86fafbda53078d73351bf4f01ea46f62b17258cfec0ea04cbdcb5adf941c"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/issue1202-addendum-draft.md",
+      "sha256": "952b64e6b8e8b7b5810611a631aa2963b444ae819b309737861c65b01537187c"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/native/inspection.json",
+      "sha256": "81f699b84f14b848d23439be0bb4611ea7de4fb732d3d18a85a7f9d651bfd3ca"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/native-mechanism-checks.json",
+      "sha256": "66908e43e5b81e505e2226e94502a27646dfac63071083eb5bb5779eba62f556"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/native-v2/inspection.json",
+      "sha256": "4169ed7ef25915d0a583709f48795058f5fae50863499075b26eaea48ded7b93"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/native-v3/inspection.json",
+      "sha256": "d2e716530787bf3949d3a15dd18b6da38efc1842f437c005ffd110e93cc5da0e"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/native-v3/review.md",
+      "sha256": "91989a62c830285643ef60f6abe9418d9a3dbb74b297af4d6c029a72232d855a"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/native-v3/review.yaml",
+      "sha256": "5bb8ad5476a1f6149c098eb2bdb4f47417cc73e8e7cf351babdf001350fc4bd8"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/native-v3/validation.json",
+      "sha256": "b154d151635be060ab0237a6dc6f9e134724a41ef4b8cafcb547b407975636df"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/probe.log",
+      "sha256": "f164caba6c1cf8ee4692f1d5a3df09386f98fbde6640f614920861f60262a136"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/probe.py",
+      "sha256": "1327996bdfcd52576027c2114d0d015eb5b6d8e11d323c1e654382f0d0a7ebb4"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/exact-owl-entities.json",
+      "sha256": "f0f8874cfd4bc607be004ab4536b9f8f4401003b7d6a72b0c0daf7cb694b191f"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/foodon-official-owl.receipt.json",
+      "sha256": "9c3774022e59540f219eb9951a356015543cb659ed4be50cfd5ad8c45c841546"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/mesh-D010461-nlm.json",
+      "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/mesh-D011492-nlm.json",
+      "sha256": "b8b489b6edae57949fc26c826174cd3ceed7a584bf62323bd252936adec4970d"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/mesh-M0016245-nlm.json",
+      "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/mesh-M0017860-nlm.json",
+      "sha256": "aaa3bfee496e22a75aaa60eadcb1fc618ede7008d53fe3a3d63a0011a74682be"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/new-finding-before-fix.json",
+      "sha256": "82f0607107c34315a68784d5189555d25596e2dc9dc017bd4cf30483d202037f"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-extracts/primary-assessment.json",
+      "sha256": "8f66cdcd0291183efeb3b3c40557ad15b2a7854438b653eadddb86aa5447d412"
+    },
+    {
+      "path": "inputs/coordinator-reassessment/source-inputs.json",
+      "sha256": "10de9a7cbd54ff8a32e0f450c45c2896e2cd99da0523f22eebc3e15a449dcdae"
+    },
+    {
+      "path": "inputs/final-parent/author-receipt.json",
+      "sha256": "6f15c4d12ee6ac6242d91d5f6e66c36a5271c441be2dddcea0a1fdf5ba024ff4"
+    },
+    {
+      "path": "inputs/final-parent/proposals.json",
+      "sha256": "f5111ce8e388f6762a38cb84770ef7017fe21b09bea03871eb6317a85b589a03"
+    },
+    {
+      "path": "inputs/final-parent/proposed/Peptone.yaml",
+      "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+    },
+    {
+      "path": "inputs/final-parent/read/thermo.txt",
+      "sha256": "9e73ceb466dbe39fc34e7e1adb558bbd54d2652a9bbf4304c6e23ce1997a7401"
+    },
+    {
+      "path": "inputs/final-parent/scientific-plan.json",
+      "sha256": "7afc8bd6c225632bc9894a702b50d736c57faa4a79c9b8ce308c8f66e0bfc137"
+    },
+    {
+      "path": "inputs/original-capture-metadata.json",
+      "sha256": "0e44a74a51648ab426eb3eb3ad4e28ebaa0e1d71334d322c81ae63487ac20ddf"
+    },
+    {
+      "path": "inputs/primary/mesh-D010461-browser.json",
+      "sha256": "e46645ac754786528ef33c2957057d34d37386ad27f3af94574f2db1fabd3629"
+    },
+    {
+      "path": "inputs/primary/mesh-D010461-browser.receipt.json",
+      "sha256": "4fcd90f6c787cd3631550cc201e518917b324267cae02f94fbb74512e46aabd2"
+    },
+    {
+      "path": "inputs/primary/mesh-D010461-nlm.json",
+      "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0"
+    },
+    {
+      "path": "inputs/primary/mesh-D010461-nlm.receipt.json",
+      "sha256": "ca75cdf667220e440674b0100b6d065d23b1397111c00a1661b24e9b8a703cff"
+    },
+    {
+      "path": "inputs/primary/mesh-M0016245-nlm.json",
+      "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5"
+    },
+    {
+      "path": "inputs/primary/mesh-M0016245-nlm.receipt.json",
+      "sha256": "445450c726a4a95c888434cec116e9cbca19ec3d69bafb3012b688e2863450ba"
+    },
+    {
+      "path": "inputs/primary/thermo.pdf",
+      "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+    },
+    {
+      "path": "inputs/primary/thermo.pdf.receipt.json",
+      "sha256": "2d50308201fdc1e4287eaede9cc69143375f4d66b967ef568032d1f4db3c37b4"
+    },
+    {
+      "path": "inputs/sealed-dependencies/HANDOFF.json",
+      "sha256": "34b00b366410e10d8a4f06fdcf9fe44dd60bfa13a8223d7d9e963efeb00a71bd"
+    },
+    {
+      "path": "inputs/sealed-dependencies/MANIFEST.json",
+      "sha256": "4bf5f4806299a58ef9d6af22c93beca0f576dee0989ecf438114d3499ef4b514"
+    },
+    {
+      "path": "inputs/sealed-dependencies/SEAL.json",
+      "sha256": "575a610cb678916b76969200b9d2d3bbdd8e4c8487574bff2a886b957404be0d"
+    },
+    {
+      "path": "inputs/sealed-dependencies/case-deltas.json",
+      "sha256": "3ea0e31439366b8c49c03e0908349a24e3c4a3e9f8f4f6b880087fd993ce3931"
+    },
+    {
+      "path": "inputs/sealed-dependencies/chronology.json",
+      "sha256": "5f2599f3ae91f1a073e3ee1c39eb20e5cb24900959569ec34b5d66a350e43bc7"
+    },
+    {
+      "path": "inputs/sealed-dependencies/evidence.json",
+      "sha256": "cf7950ce9fbfe19794f85a994017b86c09aab80d9bfed75908e68746958386e8"
+    },
+    {
+      "path": "inputs/sealed-dependencies/input-bindings.json",
+      "sha256": "8392e30e928337558584b0fffa3e8f792949c4fcd6964931eaaf0244703293b6"
+    },
+    {
+      "path": "inputs/sealed-dependencies/proposals.json",
+      "sha256": "f8b94ca8127cfc4fafa6b2ba6b2a40ba60519418191f2da192f280123368d2c9"
+    },
+    {
+      "path": "inputs/sealed-dependencies/source-assessment.json",
+      "sha256": "e25a225091f95e839f95b61f79ac5c6299c4198a80b197fb08f23ae59c771520"
+    },
+    {
+      "path": "inputs/sealed-dependencies/source-observations.json",
+      "sha256": "4e6ee96a23aa79843cfe72c78afd6d24817e5ad3f10071d459dcedf4cb93ceb1"
+    },
+    {
+      "path": "inputs/sealed-dependencies/source-read-ledger.json",
+      "sha256": "7abd537cb5297ade73351a15b386709ee12f2584ff27d7e84739a74b15f8ec10"
+    },
+    {
+      "path": "proposals.json",
+      "sha256": "6f2ecab0f078c873c5139a52727566567956ab0dbeade82e9553068cbdabefd7"
+    },
+    {
+      "path": "proposed/Glucose_Peptone-yeast_Extract.yaml",
+      "sha256": "f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034"
+    },
+    {
+      "path": "proposed/Peptone-yeast_Extract-glucose.yaml",
+      "sha256": "c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d"
+    },
+    {
+      "path": "proposed/Peptone_Beef_Extract_Yeast_Extract.yaml",
+      "sha256": "579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163"
+    },
+    {
+      "path": "proposed/Peptone_Yeast_Extract.yaml",
+      "sha256": "eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8"
+    },
+    {
+      "path": "proposed/Yeast_Extract_Peptone.yaml",
+      "sha256": "a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d"
+    },
+    {
+      "path": "seal_packet.py",
+      "sha256": "f8549b77ef37dd4b30169aa6c13caa220ddc141ef65353c21bf14606ee1a2a84"
+    },
+    {
+      "path": "selected-predecessor/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+      "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"
+    },
+    {
+      "path": "selected-predecessor/Glucose_Peptone-yeast_Extract.yaml",
+      "sha256": "99ca0aa08be8b603c92d7b650e87c5cceed681de3b1bd5c6f8715c1dcb53dbdb"
+    },
+    {
+      "path": "selected-predecessor/PY-cellobiose.yaml",
+      "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"
+    },
+    {
+      "path": "selected-predecessor/PY-fructose.yaml",
+      "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"
+    },
+    {
+      "path": "selected-predecessor/PY-glucose-rumen_Fluid.yaml",
+      "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"
+    },
+    {
+      "path": "selected-predecessor/PY-maltose.yaml",
+      "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"
+    },
+    {
+      "path": "selected-predecessor/PY-pectin.yaml",
+      "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"
+    },
+    {
+      "path": "selected-predecessor/PYEG.yaml",
+      "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"
+    },
+    {
+      "path": "selected-predecessor/PYG-002_Tween_80.yaml",
+      "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"
+    },
+    {
+      "path": "selected-predecessor/PYG.yaml",
+      "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"
+    },
+    {
+      "path": "selected-predecessor/PYG_Rumen_Fluid.yaml",
+      "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"
+    },
+    {
+      "path": "selected-predecessor/Peptone-yeast_Extract-glucose.yaml",
+      "sha256": "5d83351bac7301e277aeaec3948dcc2c7658fe5fc2af1ad90eaed2fb40f5546c"
+    },
+    {
+      "path": "selected-predecessor/Peptone_Beef_Extract_Yeast_Extract.yaml",
+      "sha256": "ddd15836dc3b6e1613bd5b60fe36855d70b4a4855ae0424b190661d14364a988"
+    },
+    {
+      "path": "selected-predecessor/Peptone_Yeast_Extract.yaml",
+      "sha256": "5e5be6907c94552c62119a0c9a762b9524864f2fabfa84a649b14dbbbb28311f"
+    },
+    {
+      "path": "selected-predecessor/Yeast_Extract_Peptone.yaml",
+      "sha256": "b12b24ded2bf47e8df05ea6dd06d341ea5bd0bc350c7967718dc605ceb92806c"
+    },
+    {
+      "path": "selected-unchanged/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+      "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"
+    },
+    {
+      "path": "selected-unchanged/PY-cellobiose.yaml",
+      "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"
+    },
+    {
+      "path": "selected-unchanged/PY-fructose.yaml",
+      "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"
+    },
+    {
+      "path": "selected-unchanged/PY-glucose-rumen_Fluid.yaml",
+      "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"
+    },
+    {
+      "path": "selected-unchanged/PY-maltose.yaml",
+      "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"
+    },
+    {
+      "path": "selected-unchanged/PY-pectin.yaml",
+      "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"
+    },
+    {
+      "path": "selected-unchanged/PYEG.yaml",
+      "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"
+    },
+    {
+      "path": "selected-unchanged/PYG-002_Tween_80.yaml",
+      "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"
+    },
+    {
+      "path": "selected-unchanged/PYG.yaml",
+      "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"
+    },
+    {
+      "path": "selected-unchanged/PYG_Rumen_Fluid.yaml",
+      "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"
+    },
+    {
+      "path": "selection-and-bindings.json",
+      "sha256": "93218bc728dcdb550f81c5930b385156b96b513654afa567bdc2ec2990cca04a"
+    },
+    {
+      "path": "source-assessment.json",
+      "sha256": "14b6593741a8c0600340e09bf0fe326f13f7367a4daed856f7120dd37afc5cd9"
+    },
+    {
+      "path": "source-observations.json",
+      "sha256": "4e6ee96a23aa79843cfe72c78afd6d24817e5ad3f10071d459dcedf4cb93ceb1"
+    },
+    {
+      "path": "source-read-ledger.json",
+      "sha256": "9be68710ca9c9772458210e2923ce0a2b181b2fd1488997df13e5ca47043d209"
+    },
+    {
+      "path": "validation/final-reference-accounting.json",
+      "sha256": "6494cf4b87ceaa9d8b233e2bf663a152dcb986f0aa800e24d8ebd8cf4928ab75"
+    },
+    {
+      "path": "validation/guarded-focused.json",
+      "sha256": "c87dbd785e8cd3108e6564e863fdd389bd381c7881dde4d3a6f2fb30ab7c2c6c"
+    },
+    {
+      "path": "validation/strict-failures.tsv",
+      "sha256": "4ccba8b77ce80cf210105b5284b5953747729aba576ccdeecb81f7db84eb721b"
+    },
+    {
+      "path": "validation/strict-receipt.json",
+      "sha256": "15f924e47f37dddb43d6583a7b425dfa8e82c9f5e947d91f5fc5e9a07b1de478"
+    },
+    {
+      "path": "validation/strict.stderr.log",
+      "sha256": "f1f07d242ed06c9c78a6fb73eb53fa859e2017e8ca46367cf15f7bab245210b4"
+    },
+    {
+      "path": "validation/strict.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_observations": {
+    "path": ".temp/w05-buffer-parts-v1/dependencies-direct-v1/source-observations.json",
+    "sha256": "4e6ee96a23aa79843cfe72c78afd6d24817e5ad3f10071d459dcedf4cb93ceb1"
+  },
+  "source_observations_exact_prior": true,
+  "actual_read_scope": "All five complete final YAMLs, source literal/column/taxon/citation fields of six rows, exact prior full scientific assessments and current source/case-delta metadata. The child independently reviewed all130 complete database rows and source passages; no new full underlying-paper or organism-taxonomy approval is claimed here.",
+  "new_evidence_reviews": [
+    {
+      "evidence_id": "W05-DEP-DIRECT-PC03",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/source-assessment.json",
+        "sha256": "14b6593741a8c0600340e09bf0fe326f13f7367a4daed856f7120dd37afc5cd9"
+      },
+      "supports_or_contradicts": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-PC16",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/source-assessment.json",
+        "sha256": "14b6593741a8c0600340e09bf0fe326f13f7367a4daed856f7120dd37afc5cd9"
+      },
+      "supports_or_contradicts": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-PC17",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/source-assessment.json",
+        "sha256": "14b6593741a8c0600340e09bf0fe326f13f7367a4daed856f7120dd37afc5cd9"
+      },
+      "supports_or_contradicts": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-PC18",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/source-assessment.json",
+        "sha256": "14b6593741a8c0600340e09bf0fe326f13f7367a4daed856f7120dd37afc5cd9"
+      },
+      "supports_or_contradicts": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-PC19",
+      "kind": "source_snapshot",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/source-assessment.json",
+        "sha256": "14b6593741a8c0600340e09bf0fe326f13f7367a4daed856f7120dd37afc5cd9"
+      },
+      "supports_or_contradicts": "Retarget only this source-supported generic peptone part from the earlier conditional local identity kgmicrobe.ingredient:peptone to the reviewed direct generic identity mesh:D010461 (Peptones), represented by the Peptone owner. The primary NLM descriptor explicitly includes Peptone; its conventional partial protein-hydrolysis definition and the manufacturer generic description support the ordinary unspecified peptone sense under MAPPING_SEMANTICS section3 exact-term priority. Unknown supplier, lot or digestion detail does not itself establish a different material or require a new process/precipitation assay gate. The raw named-input evidence and material scope are unchanged. The previous local-target event and assertion notes are preserved as superseded routing history. Preserve LABEL_ENUMERATION and COMPLETE relative to the named inputs, all quantities and their absence, raw labels, source occurrences and all other parts. This does not assign Bacto, animal origin, supplier product, formulation equivalence, source-assay admission, roles or export approval. Apply only with the exact reviewed direct Peptone parent in the same phase; no global identifier replacement."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-NLM",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/inputs/primary/mesh-D010461-nlm.json",
+        "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0"
+      },
+      "supports_or_contradicts": "Active generic Peptones descriptor; direct generic identity priority applies to the explicit source peptone sense."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-NLM-CONCEPT",
+      "kind": "ontology",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/inputs/primary/mesh-M0016245-nlm.json",
+        "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5"
+      },
+      "supports_or_contradicts": "Conventional partial hydrolysis definition; no source-specific lot/assay gate inferred."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-THERMO",
+      "kind": "primary_source",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/inputs/primary/thermo.pdf",
+        "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+      },
+      "supports_or_contradicts": "Independent manufacturer generic partial protein-hydrolysate description. Product differences are preserved, not collapsed into one branded material."
+    },
+    {
+      "evidence_id": "W05-DEP-DIRECT-COORDINATOR",
+      "kind": "independent_review",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/dependencies-direct-v1/inputs/coordinator-reassessment/HANDOFF.json",
+        "sha256": "ed4b490104249457bbb557767418eff3d19437aab459a5084cb91a2658c41663"
+      },
+      "supports_or_contradicts": "Separate /root/step7d_independent_review directs native exact generic sense priority and distinguishes source/product holds; this old comparison does not approve the five new final payload bytes."
+    }
+  ],
+  "parent_exact_review": {
+    "path": ".temp/w05-buffer-parts-v1/review/direct-parent-independent-review-v1.json",
+    "sha256": "98bd8081855ab166d43528cdfa1e2f1ff7f0546bf1398d8b7d8baa76a7e2de49"
+  },
+  "interpretation": {
+    "path": ".temp/w05-buffer-parts-v1/review/ontology-interpretation-reassessment-v1.json",
+    "sha256": "292ee8fd6a7e1b175d51e76ad0e01328a143f9cd9549c58d353e6e33c084bd8d"
+  },
+  "case_deltas": {
+    "path": ".temp/w05-buffer-parts-v1/dependencies-direct-v1/case-deltas.json",
+    "sha256": "63fcc402e83834b9cca78bb2149dbdacec479b2fd5e04a1a7a2bd1f12c049e2c"
+  },
+  "finding_dispositions": [
+    {
+      "finding_id": "PEPTONE-SOURCE-001",
+      "status": "EXACT_PRIOR_BOUNDED_CORRECTIONS_RETAINED",
+      "assessment": "All ten prior ambiguous withdrawals including FAB and rumen-base references remain exact. No withdrawn component is restored by the direct generic identifier update."
+    }
+  ],
+  "source_owner_export_approval": false
+}

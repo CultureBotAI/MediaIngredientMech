@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-NLM-DESCRIPTOR",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/captures/mesh-D010461-nlm.json",
+        "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0"
+      },
+      "kind": "ontology",
+      "locator": "Full active NLM descriptor, preferred concept pointer and Peptone term.",
+      "supports_or_contradicts": "Supports ordinary generic descriptor identity; not a product, lot or assay approval.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": "https://id.nlm.nih.gov/mesh/D010461",
+      "accessed_at": "2026-11-08T09:33:10.976798+00:00"
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-NLM-CONCEPT",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/captures/mesh-M0016245-nlm.json",
+        "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5"
+      },
+      "kind": "ontology",
+      "locator": "Full primary preferred concept M0016245 and conventional material scope.",
+      "supports_or_contradicts": "Generic partial protein-hydrolysate sense; no new lot-specific precipitation certificate required.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": "https://id.nlm.nih.gov/mesh/M0016245",
+      "accessed_at": "2026-11-08T09:34:06.870746+00:00"
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-THERMO",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/captures/thermo.pdf",
+        "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6"
+      },
+      "kind": "primary_source",
+      "locator": "Manufacturer guide printed page7; full exact PDF preserved.",
+      "supports_or_contradicts": "Independent generic material description, variable product profiles, no contrary actual assigned preparation.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+      "accessed_at": "2026-11-08T08:55:52.232871+00:00",
+      "original_capture_attribution": {
+        "author": "/root/polypeptone_supplement",
+        "reused_exact_bytes_and_original_time": true
+      }
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-FOODON-RELATIONS",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/input/coordinator-reassessment/captures/web-foodon-nlm-response.json",
+        "sha256": "75acdee90644da43e10566ad3308a7cd4a4ac9d29f36b3b88d111afe54c26991"
+      },
+      "kind": "primary_source",
+      "locator": "Exact successful web response; FoodOn relations member_of row and full primary NLM source extracts.",
+      "supports_or_contradicts": "External category membership is not a food-use, has-role or lot gate.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": "https://foodon.org/design/foodon-relations/",
+      "original_capture_attribution": {
+        "reviewer": "/root/step7d_independent_review",
+        "successful_web_response_absolute_retrieval_time": "not recorded in response; not inferred from separate failed shell receipt",
+        "current_assessor": "/root/buffer_hepes"
+      }
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-OWL-SEMANTICS",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/input/coordinator-reassessment/captures/web-w3c-semantics-response.json",
+        "sha256": "5cf42c72700dd7d4df6655a231132fe3c47621fd62668468e1f0c6d29bda2abf"
+      },
+      "kind": "primary_source",
+      "locator": "Exact successful W3C primary web response, class-expression and subclass semantics.",
+      "supports_or_contradicts": "Existential member relation does not itself assert source membership in filler class or a has-role.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": "https://www.w3.org/TR/owl2-direct-semantics/",
+      "original_capture_attribution": {
+        "reviewer": "/root/step7d_independent_review",
+        "successful_web_response_absolute_retrieval_time": "not recorded in response; not inferred from separate failed shell receipt",
+        "current_assessor": "/root/buffer_hepes"
+      }
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-COORDINATOR-REASSESSMENT",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/input/coordinator-reassessment/HANDOFF.json",
+        "sha256": "ed4b490104249457bbb557767418eff3d19437aab459a5084cb91a2658c41663"
+      },
+      "kind": "source_snapshot",
+      "locator": "Sealed full coordinator reassessment, 35 manifest members rehashed.",
+      "supports_or_contradicts": "Independent terminology comparison by /root/step7d_independent_review; not source-case, candidate or release approval.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": null
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-SCIENCE",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/scientific-plan.json",
+        "sha256": "7afc8bd6c225632bc9894a702b50d736c57faa4a79c9b8ce308c8f66e0bfc137"
+      },
+      "kind": "source_snapshot",
+      "locator": "Current independent author reasoning and explicit correction of earlier overstatement.",
+      "supports_or_contradicts": "One Peptone identity successor; Soy and tombstone remain unchanged.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": null
+    },
+    {
+      "evidence_id": "W05-DIRECT-PEPTONE-OWNER-SEARCH",
+      "capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents-direct-v1/owner-search.json",
+        "sha256": "fc034495378735fa2e4ef0c16983be51ea51e1a3ccb36d05a911417a54cefc12"
+      },
+      "kind": "source_snapshot",
+      "locator": "All maintained records and specified exact selectors; ignored files included.",
+      "supports_or_contradicts": "No competing primary mesh:D010461 found in this bounded scan; no owner merge.",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "url": null
+    }
+  ]
+}

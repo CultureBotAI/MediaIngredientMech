@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "W05-FINAL-MAT-032",
+      "case_ids": [
+        "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+      ],
+      "description": "Correct generic soy-peptone whole identity from the broader FOODON hydrolyzed-vegetable-protein identifier to a local material identity. Preserve source75 unspecified soy digest and all prior catalog/tombstone provenance; do not assign Difco Soytone, Bacto Soytone or Phytone formula to it. Existing branded alias claims require separate complete-owner reconciliation before export. Final correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Retire five branded or alternative identity aliases on the generic soy-digest owner. The three Phytone-bearing dispositions reuse the bounded coordinator conclusion in issue 1212 comment 6718503130. Separate review of the original kg_microbe Soytone token, Bacto Soytone merge history and manufacturer guide pages 13, 33 and 92 confirms distinct named products and processing; generic soy digest is not their exact product identity. Preserve raw texts, original sources, merge history, occurrence totals, all quarantine holds and the Bacto Soytone tombstone. This does not merge or select the competing W08/W10 owner deltas. Optionally classify the retained Properties metadata tokens as REJECTED_LABEL. Native synonym policy already excludes these texts; this is provenance classification only, with no resolver change, filter change or release blocker. Consolidated parent-grounding successor: Replace the provisional local self-mapping with the supported generic MICRO:0000181 soy peptone identity under MAPPING_SEMANTICS section 3. The complete active term and its BD definition-source discussion describe generic enzymatic soy-flour digest; MediaDive ingredient 75 names Soy peptone with soybean/soymeal synonyms, and the Thermo Fisher guide independently defines generic soy peptones as enzymatic digests of soy flour. This is not an identity assertion for Phytone, Difco/Bacto Soytone or any supplier, enzyme or lot. Do not import the erroneous Hordeum vulgare parenthesis, branded/papaic synonyms, or annotated ash/NaCl numbers. Preserve all prior aliases and five branded/alternative withdrawals, complete original histories, occurrence totals, Bacto Soytone tombstone, source quarantines, sibling/incoming-reference obligations, and physical-form/role/export holds. The inherited Peptic digest of soybean meal alias is not newly supported or approved by this generic term assessment.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-ATTEMPT-0787250d0c92c239",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-fd95ea8d26cdd5fc",
+        "MATERIALS-CAP-4425f492734e8c24",
+        "MATERIALS-OWNER-Soy_Peptone",
+        "MATERIALS-C1193-CATALOG",
+        "MATERIALS-C1193-CONTEXT",
+        "MATERIALS-C1193-CONTEXT-INDEX",
+        "MATERIALS-C1193-DIFCO-SOYTONE",
+        "MATERIALS-C1193-MEDIADIVE75",
+        "MATERIALS-C1193-MEDIADIVE1466",
+        "MATERIALS-C1193-SOYA-DUPLICATE",
+        "MATERIALS-C1193-OWNER-Soy_Peptone",
+        "FINAL-MATERIALS-W08-FINDINGS",
+        "FINAL-MATERIALS-W02-PROVENANCE",
+        "W05-PARENTS-CHEBI-PEPTONE-SEARCH",
+        "W05-PARENTS-CHEBI749541",
+        "W05-PARENTS-FOODON-PEPTONE-SEARCH",
+        "W05-PARENTS-FOODON15306-PARENTS",
+        "W05-PARENTS-FOODON15306",
+        "W05-PARENTS-FOODON15720-PARENTS",
+        "W05-PARENTS-FOODON15720",
+        "W05-PARENTS-MEDIADIVE75",
+        "W05-PARENTS-MICRO-PEPTONE-SEARCH",
+        "W05-PARENTS-MICRO172-CHILDREN",
+        "W05-PARENTS-MICRO172-DESCENDANTS",
+        "W05-PARENTS-MICRO172",
+        "W05-PARENTS-MICRO178",
+        "W05-PARENTS-MICRO181",
+        "W05-PARENTS-PROTEIN-HYDROLYSATE-SEARCH",
+        "W05-PARENTS-THERMO",
+        "W05-PARENTS-FROZEN-CASES",
+        "W05-PARENTS-OWNER-SEARCH",
+        "W05-PARENTS-COMMENT6719578158",
+        "W05-PARENTS-COMMENT6719660443"
+      ],
+      "owner_path": "data/ingredients/mapped/Soy_Peptone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed/Soy_Peptone.yaml",
+        "sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee"
+      },
+      "identity_consequence": "Existing generic Soy Peptone owner receives the supported MICRO:0000181 primary identity; no owner merge or sibling/product identity decision. The provisional local identity remains in immutable predecessor history.",
+      "predicate_consequence": "Native exactMatch to MICRO:0000181 replaces the provisional local self row; no parent identity or arbitrary winning owner. Source, role, alias and export holds remain.",
+      "publication_obligations": "Reconcile all campaign proposed owners, apply via guarded writer, preserve every prior source/owner/export hold, review complete changed payload and run native synchronization/QC before publication.",
+      "cross_shard_conflict": "Coordinator must compare all actual proposed owner paths and source-qualified identities; no worker merge or maintained write.",
+      "replaces_proposal_ids": [
+        "MATERIALS-C1193-soy-peptone-boundary"
+      ],
+      "predecessor_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/materials/proposed/Soy_Peptone.yaml",
+        "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a"
+      },
+      "predecessor_copy": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/predecessor/Soy_Peptone.yaml",
+        "sha256": "31604ade8446bf5d5140befbc7bcef8abf759b89f5b198fea9a2affa72b10a7a"
+      },
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/before/Soy_Peptone.yaml",
+        "sha256": "54575fd2ae67a2e848eba71a756a8dd3e6ca977a401d9fd20893d974fada2e8c"
+      },
+      "primary_author": "/root/materials_research",
+      "independent_review": {
+        "status": "pending exact successor bytes; historical reviews retained separately",
+        "evidence_ids": []
+      },
+      "successor_scope": "W05 assigned source cases only; no whole-owner, component-coupling or export approval.",
+      "changed_labels": [
+        "Phytone peptone",
+        "Phytone peptone (BD-BBL)",
+        "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+        "Soytone",
+        "Bacto Soytone",
+        "Properties: Undefined component"
+      ],
+      "parent_predecessor_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Soy_Peptone.yaml",
+        "sha256": "e37e3230f9b4489e715cda9c1785f30ea97305d1d6264045bea75b92312bf236"
+      },
+      "parent_successor_author": "/root/buffer_hepes",
+      "parent_successor_at": "2026-11-08T09:30:33.717645+00:00"
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-039",
+      "case_ids": [
+        "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"
+      ],
+      "description": "Reconcile existing generic Peptone owner to local protein-digest material identity, removing unsupported exact mammalian MICRO0000178 scope. Keep raw plural provenance, all existing role/count/truncated-alias holds and both MicrobeDecoder source-case holds; no new owner or catalog assignment. Final correction: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process evidence and ComponentEvidence types are unchanged. Reject only the incomplete concentration token Peptone (0.01 % as an identity name of generic Peptone. Preserve its original microbedecoder provenance and plural Peptones. Do not invent a missing parenthesis, percent basis or preparation. Eighteen retained historical inbound MICRO:0000178 component references and current proposed components remain a source-level integration dependency; no automatic retargeting is authorized. Consolidated parent-grounding successor: Complete the previously missing nonidentity family grounding: generic Peptone remains kgmicrobe.ingredient:peptone and maps NARROW_MATCH to FOODON:03315306 protein hydrolyzates, yielding native broadMatch plus the local B1 identity row. The manufacturer guide defines peptones as water-soluble products of partial protein hydrolysis from plant, yeast or animal material; the protein-hydrolyzate family is broader than this unspecified peptone material. The complete FoodOn record is an active SIREN-derived material class with a flavoring annotation and a pending-classification food-material parent; neither annotation establishes an assay role, supplier, feedstock, enzyme, processing specification or exact peptone identity. MICRO:0000178 adds unsupported mammalian origin; MICRO:0000174 adds an unestablished enzymatic process; MICRO:0000172 explicitly discusses plant/animal protein and does not establish coverage of the source-unspecified yeast possibility. No exact applicable generic Peptone identity was established in the bounded official searches. Preserve both MicrobeDecoder observations, plural/raw provenance, truncated-token rejection, all histories/statistics, provisional roles and all source/owner/export holds. Incoming MICRO:0000178 references require separately authored source-specific reconciliation, not a blanket retarget.",
+      "evidence_ids": [
+        "MATERIALS-SHARD",
+        "MATERIALS-CAP-a1d17581eca50e64",
+        "MATERIALS-CAP-31a954364e3e6346",
+        "MATERIALS-OWNER-Peptone",
+        "MATERIALS-BERGEY-gbm00716",
+        "MATERIALS-BERGEY-gbm01250",
+        "MATERIALS-C1193-CATALOG",
+        "MATERIALS-C1193-CONTEXT",
+        "MATERIALS-C1193-CONTEXT-INDEX",
+        "MATERIALS-C1193-PEPTONE-DUPLICATES",
+        "FINAL-MATERIALS-W08-FINDINGS",
+        "FINAL-MATERIALS-W02-PROVENANCE",
+        "W05-PARENTS-CHEBI-PEPTONE-SEARCH",
+        "W05-PARENTS-CHEBI749541",
+        "W05-PARENTS-FOODON-PEPTONE-SEARCH",
+        "W05-PARENTS-FOODON15306-PARENTS",
+        "W05-PARENTS-FOODON15306",
+        "W05-PARENTS-FOODON15720-PARENTS",
+        "W05-PARENTS-FOODON15720",
+        "W05-PARENTS-MEDIADIVE75",
+        "W05-PARENTS-MICRO-PEPTONE-SEARCH",
+        "W05-PARENTS-MICRO172-CHILDREN",
+        "W05-PARENTS-MICRO172-DESCENDANTS",
+        "W05-PARENTS-MICRO172",
+        "W05-PARENTS-MICRO178",
+        "W05-PARENTS-MICRO181",
+        "W05-PARENTS-PROTEIN-HYDROLYSATE-SEARCH",
+        "W05-PARENTS-THERMO",
+        "W05-PARENTS-FROZEN-CASES",
+        "W05-PARENTS-OWNER-SEARCH",
+        "W05-PARENTS-COMMENT6719578158",
+        "W05-PARENTS-COMMENT6719660443"
+      ],
+      "owner_path": "data/ingredients/mapped/Peptone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed/Peptone.yaml",
+        "sha256": "614b433ee0664b9ece52b275875ad1fa11660c7e97a7c9ce2dc23ccd2e3e66e6"
+      },
+      "identity_consequence": "Preserve kgmicrobe.ingredient:peptone as the existing generic material identity. The two source observations remain unresolved as to actual supplier, feedstock, process and assay identity.",
+      "predicate_consequence": "Native broadMatch to FOODON:03315306 plus exactMatch kgmicrobe.ingredient:peptone B1 registry row; no broad/parent identity substitution.",
+      "publication_obligations": "Reconcile all campaign proposed owners, apply via guarded writer, preserve every prior source/owner/export hold, review complete changed payload and run native synchronization/QC before publication.",
+      "cross_shard_conflict": "Coordinator must compare all actual proposed owner paths and source-qualified identities; no worker merge or maintained write.",
+      "replaces_proposal_ids": [
+        "MATERIALS-C1193-peptone-identity"
+      ],
+      "predecessor_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/materials/proposed-v2/Peptone.yaml",
+        "sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523"
+      },
+      "predecessor_copy": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/predecessor/Peptone.yaml",
+        "sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523"
+      },
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/before/Peptone.yaml",
+        "sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa"
+      },
+      "primary_author": "/root/materials_research",
+      "independent_review": {
+        "status": "pending exact successor bytes; historical reviews retained separately",
+        "evidence_ids": []
+      },
+      "successor_scope": "W05 assigned source cases only; no whole-owner, component-coupling or export approval.",
+      "changed_labels": [
+        "Peptone (0.01 %"
+      ],
+      "parent_predecessor_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Peptone.yaml",
+        "sha256": "61590bc2de78646c368ed1fb21c2c29bbc041d9f248e8a712c578376e776996d"
+      },
+      "parent_successor_author": "/root/buffer_hepes",
+      "parent_successor_at": "2026-11-08T09:30:33.717645+00:00"
+    }
+  ]
+}

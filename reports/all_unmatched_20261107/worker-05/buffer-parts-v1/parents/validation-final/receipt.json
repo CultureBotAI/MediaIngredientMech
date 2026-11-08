@@ -1,0 +1,204 @@
+{
+  "at": "2026-11-08T09:37:45.433271+00:00",
+  "author": "/root/buffer_hepes",
+  "status": "PASS",
+  "selected_payloads": [
+    {
+      "proposal_id": "W05-FINAL-MAT-032",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed/Soy_Peptone.yaml",
+        "sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee"
+      },
+      "guarded_readback_sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee",
+      "strict_closed_schema": "PASS",
+      "all_other_fields_unchanged": true,
+      "prior_history_count": 11,
+      "prior_evidence_count": 1
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-039",
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed-v2/Peptone.yaml",
+        "sha256": "d1668cfd863e02bfb1b9b82a86db213c1cfd850ab3b216abdb81cba4761e1e91"
+      },
+      "guarded_readback_sha256": "d1668cfd863e02bfb1b9b82a86db213c1cfd850ab3b216abdb81cba4761e1e91",
+      "strict_closed_schema": "PASS",
+      "all_other_fields_unchanged": true,
+      "prior_history_count": 10,
+      "prior_evidence_count": 1
+    }
+  ],
+  "strict_command": [
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python",
+    "scripts/validate_strict.py",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/parents/proposed/Soy_Peptone.yaml",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/parents/proposed-v2/Peptone.yaml",
+    "--workers",
+    "1",
+    "--out",
+    "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/parents/validation-final/strict-failures.tsv"
+  ],
+  "strict_exit_code": 0,
+  "partonomy_check": "PASS; neither selected parent creates components",
+  "current_full_W05_owner_index_records": 3029,
+  "selected_current_core_proposals": 142,
+  "native_projections": [
+    {
+      "proposal_id": "W05-FINAL-MAT-032",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Soy_Peptone.yaml",
+        "sha256": "e37e3230f9b4489e715cda9c1785f30ea97305d1d6264045bea75b92312bf236"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed/Soy_Peptone.yaml",
+        "sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee"
+      },
+      "before_rows": [
+        {
+          "subject_id": "MIM:Soy_Peptone",
+          "subject_label": "Soy peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:soy_peptone",
+          "object_label": "Soy peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:curator=Codex /root/materials_research; W05 final report-only correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Soybean peptone|Peptone from soymeal|Peptic digest of soybean meal",
+          "validation_method": ""
+        }
+      ],
+      "after_rows": [
+        {
+          "subject_id": "MIM:Soy_Peptone",
+          "subject_label": "Soy peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "MICRO:0000181",
+          "object_label": "soy peptone",
+          "object_source": "obo:micro.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000181|MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=Codex /root/buffer_hepes; W05 consolidated report-only parent correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "",
+          "other": "Soybean peptone|Peptone from soymeal|Peptic digest of soybean meal",
+          "validation_method": ""
+        }
+      ],
+      "before_suppressions": [],
+      "after_suppressions": [],
+      "rejected_aliases_absent": [
+        "Phytone peptone",
+        "Phytone peptone (BD-BBL)",
+        "Soytone (BD-Difco) or Phytone peptone (BD-BBL)",
+        "Soytone",
+        "Bacto Soytone",
+        "Properties: Undefined component"
+      ]
+    },
+    {
+      "proposal_id": "W05-FINAL-MAT-039",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Peptone.yaml",
+        "sha256": "61590bc2de78646c368ed1fb21c2c29bbc041d9f248e8a712c578376e776996d"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed-v2/Peptone.yaml",
+        "sha256": "d1668cfd863e02bfb1b9b82a86db213c1cfd850ab3b216abdb81cba4761e1e91"
+      },
+      "before_rows": [
+        {
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone",
+          "object_label": "Peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=Codex /root/materials_research; W05 final report-only correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Peptones",
+          "validation_method": ""
+        }
+      ],
+      "after_rows": [
+        {
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "mesh:D011492",
+          "object_label": "Protein Hydrolysates",
+          "object_source": "registry:mesh",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0017860|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0016245|MIM:https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl|MIM:curator=Codex /root/buffer_hepes; W05 consolidated report-only parent correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Peptones",
+          "validation_method": ""
+        },
+        {
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone",
+          "object_label": "Peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0017860|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0016245|MIM:https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl|MIM:curator=Codex /root/buffer_hepes; W05 consolidated report-only parent correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving kgmicrobe.ingredient:peptone alongside parent mesh:D011492.",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "before_suppressions": [],
+      "after_suppressions": [],
+      "rejected_aliases_absent": [
+        "Peptone (0.01 %"
+      ]
+    }
+  ],
+  "case_checks": [
+    {
+      "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+      "base_decision_sha256": "4c4a649dd74d01d8fbc8da86f46e9068b6accaa453b5b569e1643cdc657e8363",
+      "selected_decision_sha256": "83a89abadec1e3a43b98fd74b19df718466215ec00129ec2cee90fbc10a4020c",
+      "changed_fields": [
+        "evidence_ids",
+        "issue_refs",
+        "parents_reassessment",
+        "reasoning"
+      ],
+      "all_inherited_scope_and_holds_unchanged": true
+    },
+    {
+      "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+      "base_decision_sha256": "25620cc55faea0ece5384506614d39560878effcacd898291e01ddc112b17e60",
+      "selected_decision_sha256": "636700e21ad22b3987e836d1ea7ed4b00098290282d1db533aa1a05502101cb5",
+      "changed_fields": [
+        "evidence_ids",
+        "issue_refs",
+        "parents_reassessment",
+        "reasoning"
+      ],
+      "all_inherited_scope_and_holds_unchanged": true
+    }
+  ],
+  "builder": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "scope": "Two final parent payloads and complete source-case deltas. Native row projection uses the full current W05 overlay with only these two parent replacements. Root must separately compose dependency/source deltas and run full campaign accounting and native checks; no maintained changes or export approval."
+}

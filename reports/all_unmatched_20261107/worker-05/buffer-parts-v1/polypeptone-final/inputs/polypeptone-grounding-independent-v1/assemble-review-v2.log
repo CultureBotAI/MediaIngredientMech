@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review_v2.py", line 31, in <module>
+    ev('native',O/'native-v2-checks.json','validation','Three source schemas and actual native two-row counterfactual with eight nonresolving tokens; no candidate published.')
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review_v2.py", line 26, in ev
+    e.append({'evidence_id':id,'kind':kind,'reference':rel(p),'snapshot_sha256':H(p),'accessed_at':finished,'support':support,'summary':summary})
+                                                                                ~^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review_v2.py", line 5, in <lambda>
+    J=lambda p:json.loads(p.read_text());H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();rel=lambda p:p.relative_to(R).as_posix();now=lambda:datetime.datetime.now(datetime.UTC).isoformat().replace('+00:00','Z')
+                                                                   ~~~~~~~~~~~~^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/native-v2-checks.json'

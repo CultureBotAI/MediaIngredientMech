@@ -1,0 +1,1118 @@
+[
+  {
+    "consumer_path": "data/ingredients/mapped/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
+    "consumer_sha256": "8ce8d3f6c8e8bd0a2548f088e5308a9453319e830e094d3e7785734605ea0da5",
+    "selector": "components[2]",
+    "component": {
+      "component_name": "clarified rumen fluid",
+      "component_id": "MICRO:0000520",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "LABEL_ENUMERATION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "SOURCE_LABEL",
+          "source": "microbedecoder",
+          "source_record": "Casitone + Yeast Extract + Rumen Fluid",
+          "notes": "The source label explicitly names every retained top-level part."
+        },
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "Casitone + Yeast Extract + Rumen Fluid",
+          "notes": "Reviewed row: strategy=split, confidence=high; Undefined rumen-anaerobe base."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::R1193-P-clarifiedrumen266",
+        "before_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+        "declared_owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "after_payload_sha256": "5208cc34210f4bf08f6b024d0e72b7b5f02b84c95b1454445f2353ad94e4913c",
+        "before_identifier": "MICRO:0000520",
+        "after_identifier": "kgmicrobe.ingredient:clarified_rumen_fluid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      },
+      {
+        "source": "combined_candidate_alternative",
+        "origin_id": "TARGET-006",
+        "before_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+        "declared_owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "after_payload_sha256": "5562466ed880fd3a6abd45249489ff80be412d217260398cbb8dfadcaff121c1",
+        "before_identifier": "MICRO:0000520",
+        "after_identifier": "kgmicrobe.ingredient:clarified_rumen_fluid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+    "consumer_sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "meat (cooked)",
+      "component_id": "FOODON:03305103",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "CURATED_INTERPRETATION",
+      "completeness": "PARTIAL",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "Fastidious Anaerobe Broth With Meat Granules",
+          "notes": "Reviewed row: strategy=map_to_medium, confidence=medium; FAB (LabM/Neogen) commercial rich medium + cooked-meat granules. Best as complex medium; no single component captures it."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::M1193-P-COOKED-MEAT",
+        "before_path": "data/ingredients/mapped/Cooked_Meat_Medium.yaml",
+        "before_sha256": "518ebaf0c08461cf8c33a8599406efd69aa30594f6a531dde9ff37af21ca06cc",
+        "declared_owner_path": "data/ingredients/mapped/Cooked_Meat_Medium.yaml",
+        "after_payload_sha256": "5fe68992d28bff2bb970ddb39cc92a5c337bf25ca8f93a815aed2419d2af7aaa",
+        "before_identifier": "FOODON:03305103",
+        "after_identifier": "kgmicrobe.ingredient:cooked_meat_medium_oxoid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+    "consumer_sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+    "selector": "components[1]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "CURATED_INTERPRETATION",
+      "completeness": "PARTIAL",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "Fastidious Anaerobe Broth With Meat Granules",
+          "notes": "Reviewed row: strategy=map_to_medium, confidence=medium; FAB (LabM/Neogen) commercial rich medium + cooked-meat granules. Best as complex medium; no single component captures it."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/GYPS.yaml",
+    "consumer_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+    "selector": "components[2]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+    },
+    "assertion": {
+      "method": "RECIPE_TRANSCRIPTION",
+      "completeness": "PARTIAL",
+      "evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621",
+          "source_record": "p. 1622, Culture medium and conditions",
+          "notes": "Original Caminicella sporogenes description explicitly defines GYPS using glucose, yeast extract, peptone and elemental sulfur. This partial constituent list omits documented sea salts, buffer, redox indicator and reducing agent; quantities are not projected."
+        },
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "reports/semantic_review_20260921/resolution/components/source-contexts.json",
+          "source_record": "database.csv row 3351; Bergey doi:10.1002/9781118960608.gbm00618",
+          "notes": "Exact raw MicrobeDecoder substrate label GYPS belongs to Caminicella sporogenes. This source context distinguishes the preparation from unrelated GYPS expansions."
+        }
+      ],
+      "notes": "Source-specific partial partonomy. S means sulfur here, not starch. Original guessed assertions are retained in the review before-records.json audit."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml",
+    "consumer_sha256": "e37175824a9e5c477fedd007a279b35056d89ab2b8c4ab5f8f8b9504e09794a5",
+    "selector": "components[1]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "LABEL_ENUMERATION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "SOURCE_LABEL",
+          "source": "microbedecoder",
+          "source_record": "Glucose Peptone-yeast Extract",
+          "notes": "The source label explicitly names every retained top-level part."
+        },
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "Glucose Peptone-yeast Extract",
+          "notes": "Reviewed row: strategy=split, confidence=high; PYG-family reordering."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+    "consumer_sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "Peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "5.0",
+      "concentration_unit": "G_PER_L"
+    },
+    "assertion": {
+      "method": "RECIPE_TRANSCRIPTION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx",
+          "source_record": "ATCC Medium 2887 Marine Agar/Broth 2216",
+          "notes": "ATCC Medium 2887 lists the Difco Marine Agar 2216 scratch formula with peptone, yeast extract, ferric citrate, salts, agar, and distilled water per liter, and says to omit agar for broth medium."
+        }
+      ]
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Marine_agar_2216.yaml",
+    "consumer_sha256": "7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "Peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "5.0",
+      "concentration_unit": "G_PER_L"
+    },
+    "assertion": {
+      "method": "RECIPE_TRANSCRIPTION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx",
+          "source_record": "ATCC Medium 2887 Marine Agar/Broth 2216",
+          "notes": "ATCC Medium 2887 lists the Difco Marine Agar 2216 scratch formula with peptone, yeast extract, ferric citrate, salts, agar, and distilled water per liter."
+        }
+      ]
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Modified_Cooked_Meat_Medium.yaml",
+    "consumer_sha256": "85ab9042f8e67c7ec43210a485b7a9f872d43fc769dc315887fd5d8c1cdacf97",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "meat (cooked)",
+      "component_id": "FOODON:03305103",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "CURATED_INTERPRETATION",
+      "completeness": "PARTIAL",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "Modified Cooked Meat Medium",
+          "notes": "Reviewed row: strategy=map_to_medium, confidence=high; Robertson's cooked-meat anaerobe medium; repo 'Cooked meat medium' already grounds to FOODON:03305103. Undefined parts: beef-heart granules, peptone, glucose."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::M1193-P-COOKED-MEAT",
+        "before_path": "data/ingredients/mapped/Cooked_Meat_Medium.yaml",
+        "before_sha256": "518ebaf0c08461cf8c33a8599406efd69aa30594f6a531dde9ff37af21ca06cc",
+        "declared_owner_path": "data/ingredients/mapped/Cooked_Meat_Medium.yaml",
+        "after_payload_sha256": "5fe68992d28bff2bb970ddb39cc92a5c337bf25ca8f93a815aed2419d2af7aaa",
+        "before_identifier": "FOODON:03305103",
+        "after_identifier": "kgmicrobe.ingredient:cooked_meat_medium_oxoid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PY-cellobiose.yaml",
+    "consumer_sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "MIM curation (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "scripts/decompose_py_media_and_ground_categories.py",
+          "source_record": "PY-cellobiose",
+          "notes": "The checked-in curation script records this expansion explicitly."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PY-fructose.yaml",
+    "consumer_sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "MIM curation (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "scripts/decompose_py_media_and_ground_categories.py",
+          "source_record": "PY-fructose",
+          "notes": "The checked-in curation script records this expansion explicitly."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+    "consumer_sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "PY-glucose-rumen Fluid",
+          "notes": "Reviewed row: strategy=split, confidence=high; PY base + glucose + clarified rumen fluid. Rumen fluid: MICRO:0000520 (broadMatch) / UBERON:0010228 ruminal fluid; no exact term."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+    "consumer_sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+    "selector": "components[3]",
+    "component": {
+      "component_name": "clarified rumen fluid",
+      "component_id": "MICRO:0000520",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "PY-glucose-rumen Fluid",
+          "notes": "Reviewed row: strategy=split, confidence=high; PY base + glucose + clarified rumen fluid. Rumen fluid: MICRO:0000520 (broadMatch) / UBERON:0010228 ruminal fluid; no exact term."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::R1193-P-clarifiedrumen266",
+        "before_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+        "declared_owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "after_payload_sha256": "5208cc34210f4bf08f6b024d0e72b7b5f02b84c95b1454445f2353ad94e4913c",
+        "before_identifier": "MICRO:0000520",
+        "after_identifier": "kgmicrobe.ingredient:clarified_rumen_fluid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      },
+      {
+        "source": "combined_candidate_alternative",
+        "origin_id": "TARGET-006",
+        "before_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+        "declared_owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "after_payload_sha256": "5562466ed880fd3a6abd45249489ff80be412d217260398cbb8dfadcaff121c1",
+        "before_identifier": "MICRO:0000520",
+        "after_identifier": "kgmicrobe.ingredient:clarified_rumen_fluid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PY-maltose.yaml",
+    "consumer_sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "MIM curation (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "scripts/decompose_py_media_and_ground_categories.py",
+          "source_record": "PY-maltose",
+          "notes": "The checked-in curation script records this expansion explicitly."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PY-pectin.yaml",
+    "consumer_sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "MIM curation (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "scripts/decompose_py_media_and_ground_categories.py",
+          "source_record": "PY-pectin",
+          "notes": "The checked-in curation script records this expansion explicitly."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PYEG.yaml",
+    "consumer_sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "PYEG",
+          "notes": "Reviewed row: strategy=split, confidence=high; Peptone-Yeast Extract-Glucose; same composition as PYG."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PYG-002_Tween_80.yaml",
+    "consumer_sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "MIM curation (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "MANUAL_CURATION",
+          "source": "scripts/decompose_py_media_and_ground_categories.py",
+          "source_record": "PYG-0.02% Tween 80",
+          "notes": "The checked-in curation script records this expansion explicitly."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PYG.yaml",
+    "consumer_sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "PYG",
+          "notes": "Reviewed row: strategy=split, confidence=high; Peptone-Yeast extract-Glucose (VPI/DSMZ Medium 104 family). Undefined biologicals carry own terms."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PYGS.yaml",
+    "consumer_sha256": "b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "PYGS",
+          "notes": "Reviewed row: strategy=split, confidence=medium; PYG + mineral Salts (usually); 'S' occasionally soluble Starch (CHEBI:28017). Ambiguity flagged."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+    "consumer_sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "PYG + Rumen Fluid",
+          "notes": "Reviewed row: strategy=split, confidence=high; PYG + rumen fluid supplement."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+    "consumer_sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+    "selector": "components[3]",
+    "component": {
+      "component_name": "clarified rumen fluid",
+      "component_id": "MICRO:0000520",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "ABBREVIATION_EXPANSION",
+      "completeness": "UNKNOWN",
+      "evidence": [
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "PYG + Rumen Fluid",
+          "notes": "Reviewed row: strategy=split, confidence=high; PYG + rumen fluid supplement."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::R1193-P-clarifiedrumen266",
+        "before_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+        "declared_owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "after_payload_sha256": "5208cc34210f4bf08f6b024d0e72b7b5f02b84c95b1454445f2353ad94e4913c",
+        "before_identifier": "MICRO:0000520",
+        "after_identifier": "kgmicrobe.ingredient:clarified_rumen_fluid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      },
+      {
+        "source": "combined_candidate_alternative",
+        "origin_id": "TARGET-006",
+        "before_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "before_sha256": "e5a88c110395ed09177e49f864d0e64c72a50d18702692a787860bd776805967",
+        "declared_owner_path": "data/ingredients/mapped/Clarified_rumen_fluid.yaml",
+        "after_payload_sha256": "5562466ed880fd3a6abd45249489ff80be412d217260398cbb8dfadcaff121c1",
+        "before_identifier": "MICRO:0000520",
+        "after_identifier": "kgmicrobe.ingredient:clarified_rumen_fluid",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml",
+    "consumer_sha256": "e4594106002c7e2d51922d22ea48f16a6f4a35b9ceb148fae129271453593cc7",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "peptone",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG",
+      "source": "microbedecoder research decomposition (#213/#308)"
+    },
+    "assertion": {
+      "method": "LABEL_ENUMERATION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "SOURCE_LABEL",
+          "source": "microbedecoder",
+          "source_record": "Peptone-yeast Extract-glucose",
+          "notes": "The source label explicitly names every retained top-level part."
+        },
+        {
+          "evidence_type": "CURATED_DATASET",
+          "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+          "source_record": "Peptone-yeast Extract-glucose",
+          "notes": "Reviewed row: strategy=split, confidence=high; Full spelling of PYG."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml",
+    "consumer_sha256": "49e7a167fca66a424c4eb725784d9c2e8f3870519a5a283dd62e3896d03f1139",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "Peptone",
+      "source": "MIM label decomposition (#213/#308)",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG"
+    },
+    "assertion": {
+      "method": "LABEL_ENUMERATION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "SOURCE_LABEL",
+          "source": "microbedecoder",
+          "source_record": "Peptone + Beef Extract + Yeast Extract",
+          "notes": "The source label explicitly names every retained top-level part."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Peptone_Yeast_Extract.yaml",
+    "consumer_sha256": "90be7b1c6cdc8ff087497dfea1c920d5705a56ef6c0bea156ada6d26c6754d3a",
+    "selector": "components[0]",
+    "component": {
+      "component_name": "Peptone",
+      "source": "MIM label decomposition (#213/#308)",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG"
+    },
+    "assertion": {
+      "method": "LABEL_ENUMERATION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "SOURCE_LABEL",
+          "source": "microbedecoder",
+          "source_record": "Peptone + Yeast Extract",
+          "notes": "The source label explicitly names every retained top-level part."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/UW_Concentrated_Base.yaml",
+    "consumer_sha256": "e676b9237eadf613f04db4121c47cf5b273cf3e8322c1f01e367b9eb5d83b427",
+    "selector": "components[10]",
+    "component": {
+      "component_name": "sodium tetraborate decahydrate",
+      "component_id": "CHEBI:131366",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "0.0177",
+      "concentration_unit": "G_PER_L"
+    },
+    "assertion": {
+      "method": "RECIPE_TRANSCRIPTION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84",
+          "source_record": "Mixes!1602:1612 UW concentrated base",
+          "notes": "CultureBotHT's media definitions Mixes tab defines UW concentrated base as an eleven-component 1000X concentrated mineral and trace-element base."
+        }
+      ]
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w01::KG26-PROP-175-STRUCTURAL-IDENTITY",
+        "before_path": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+        "before_sha256": "596380ddafeefb860cebe7e69d4ac6f336b93987ece57a2d005a86a2d6a29d09",
+        "declared_owner_path": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+        "after_payload_sha256": "b93a00e61c3a9ecc88328c44897808c0dd93d89f45ffb1c3e79f8ba1b5d8d69b",
+        "before_identifier": "CHEBI:131366",
+        "after_identifier": "CHEBI:38888",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/UW_Concentrated_Base_No_Mo.yaml",
+    "consumer_sha256": "daa15aae2de103e20e4916c105333d51581a8da24616ef312ba0b6a98d05fb0c",
+    "selector": "components[9]",
+    "component": {
+      "component_name": "sodium tetraborate decahydrate",
+      "component_id": "CHEBI:131366",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "0.0177",
+      "concentration_unit": "G_PER_L"
+    },
+    "assertion": {
+      "method": "RECIPE_TRANSCRIPTION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84",
+          "source_record": "Mixes!1618:1627 UW concentrated base no Mo",
+          "notes": "CultureBotHT's media definitions Mixes tab defines UW concentrated base no Mo as a ten-component 1000X concentrated base omitting ammonium molybdate tetrahydrate."
+        }
+      ]
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w01::KG26-PROP-175-STRUCTURAL-IDENTITY",
+        "before_path": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+        "before_sha256": "596380ddafeefb860cebe7e69d4ac6f336b93987ece57a2d005a86a2d6a29d09",
+        "declared_owner_path": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+        "after_payload_sha256": "b93a00e61c3a9ecc88328c44897808c0dd93d89f45ffb1c3e79f8ba1b5d8d69b",
+        "before_identifier": "CHEBI:131366",
+        "after_identifier": "CHEBI:38888",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/UW_Concentrated_Base_No_Sulfur.yaml",
+    "consumer_sha256": "ab68055139180f35162d25ad6f43160fbad7e09838d653419b10967c3558a28f",
+    "selector": "components[10]",
+    "component": {
+      "component_name": "sodium tetraborate decahydrate",
+      "component_id": "CHEBI:131366",
+      "reference_scope": "MIM_CATALOG",
+      "concentration_value": "0.0177",
+      "concentration_unit": "G_PER_L"
+    },
+    "assertion": {
+      "method": "RECIPE_TRANSCRIPTION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "RECIPE_SOURCE",
+          "source": "https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84",
+          "source_record": "Mixes!1633:1643 UW concentrated base no sulfur",
+          "notes": "CultureBotHT's media definitions Mixes tab defines UW concentrated base no sulfur as an eleven-component 1000X concentrated base using chloride salts in place of sulfate salts."
+        }
+      ]
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w01::KG26-PROP-175-STRUCTURAL-IDENTITY",
+        "before_path": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+        "before_sha256": "596380ddafeefb860cebe7e69d4ac6f336b93987ece57a2d005a86a2d6a29d09",
+        "declared_owner_path": "data/ingredients/mapped/Na2b4o7_X_10_H2o.yaml",
+        "after_payload_sha256": "b93a00e61c3a9ecc88328c44897808c0dd93d89f45ffb1c3e79f8ba1b5d8d69b",
+        "before_identifier": "CHEBI:131366",
+        "after_identifier": "CHEBI:38888",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  },
+  {
+    "consumer_path": "data/ingredients/mapped/Yeast_Extract_Peptone.yaml",
+    "consumer_sha256": "6659173de7a86924183da69f502b4827d6583f5a5f50966a3158bb3f64243ab6",
+    "selector": "components[1]",
+    "component": {
+      "component_name": "Peptone",
+      "source": "MIM label decomposition (#213/#308)",
+      "component_id": "MICRO:0000178",
+      "reference_scope": "MIM_CATALOG"
+    },
+    "assertion": {
+      "method": "LABEL_ENUMERATION",
+      "completeness": "COMPLETE",
+      "evidence": [
+        {
+          "evidence_type": "SOURCE_LABEL",
+          "source": "microbedecoder",
+          "source_record": "Yeast Extract + Peptone",
+          "notes": "The source label explicitly names every retained top-level part."
+        }
+      ],
+      "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+    },
+    "conditional_owner_transitions": [
+      {
+        "source": "published_origin",
+        "origin_id": "w05::MATERIALS-C1193-peptone-identity",
+        "before_path": "data/ingredients/mapped/Peptone.yaml",
+        "before_sha256": "e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa",
+        "declared_owner_path": "data/ingredients/mapped/Peptone.yaml",
+        "after_payload_sha256": "5f38609e7132029576571ec6eea96c9cbb692e346d27e56730fbde7144ecd523",
+        "before_identifier": "MICRO:0000178",
+        "after_identifier": "kgmicrobe.ingredient:peptone",
+        "before_status": "MAPPED",
+        "after_status": "MAPPED",
+        "application_approved": false
+      }
+    ]
+  }
+]

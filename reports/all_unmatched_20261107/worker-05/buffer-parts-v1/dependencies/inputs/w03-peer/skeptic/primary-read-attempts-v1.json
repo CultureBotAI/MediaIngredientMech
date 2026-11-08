@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-08T08:39:06.202892+00:00",
+  "reviewer": "/root/peptone_skeptic",
+  "attempts": [
+    {
+      "command": "pdftotext -layout ambiguous/captures/moore1976-primary-mirror.pdf skeptic/moore1976-primary-mirror.txt",
+      "exit_code": 1,
+      "result": "Input is HTML, not PDF; no primary PDF inspected and no extraction output accepted.",
+      "input_sha256": "25d825ba87a8faa6b7e9be41084e397f3a1b1b55b50ca8e8423b5c6ba6bfd675"
+    },
+    {
+      "command": "Python import bs4 and strip DSMZ HTML",
+      "exit_code": 1,
+      "result": "ModuleNotFoundError; fallback standard-library HTMLParser used successfully without installing anything."
+    }
+  ]
+}

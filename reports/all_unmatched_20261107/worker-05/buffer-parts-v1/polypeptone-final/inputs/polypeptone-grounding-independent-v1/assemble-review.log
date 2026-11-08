@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review.py", line 23, in <module>
+    inspection=rr.inspect_source(R,targets,sorted(set(rel(p)for p in inputs)));put(O/'native/inspection.json',inspection)
+                                                  ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review.py", line 23, in <genexpr>
+    inspection=rr.inspect_source(R,targets,sorted(set(rel(p)for p in inputs)));put(O/'native/inspection.json',inspection)
+                                                      ~~~^^^
+  File "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/polypeptone-grounding-independent-v1/assemble_review.py", line 5, in <lambda>
+    J=lambda p:json.loads(p.read_text());H=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();rel=lambda p:p.relative_to(R).as_posix();now=lambda:datetime.datetime.now(datetime.UTC).isoformat().replace('+00:00','Z')
+                                                                                                            ~~~~~~~~~~~~~^^^
+  File "/Users/marcin/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/pathlib/_local.py", line 385, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: '/Users/marcin/Documents/VIMSS/ontology/Mechs/CultureMech/data/normalized_yaml/bacterial/TOGO_M122_Alkaline_Xylan_Medium.yaml' is not in the subpath of '/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech'

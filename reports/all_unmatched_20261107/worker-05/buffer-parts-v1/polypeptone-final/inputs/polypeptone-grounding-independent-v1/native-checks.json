@@ -1,0 +1,121 @@
+{
+  "at": "2026-11-08T09:33:30.794065+00:00",
+  "schemas": 3,
+  "actual_records": [
+    {
+      "snapshot": "authentic-before-Polypeptone.yaml",
+      "sha256": "5ecabcf8a37d4c2218e12fb3112f17b79d103abfa5f0a6a64322d7bf19c56baa",
+      "schema": "PASS",
+      "rows": [
+        {
+          "subject_id": "MIM:Polypeptone",
+          "subject_label": "Polypeptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "FOODON:03315306",
+          "object_label": "protein hydrolyzates",
+          "object_source": "obo:foodon.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:cbclaw_foodon_promotion|MIM:curator=claude_culturemech_alias_backfill",
+          "mapping_date": "2026-08-30",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Polypepton|Polypepton (Nihon Pharm. Co.)|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Hipolypepton|Hipolypepton (Nihon seiyaku)|Hipolypepton*|Polypepton (Nihon Seiyaku)|Polypeptone (BBL)",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "snapshot": "w05-Polypeptone.yaml",
+      "sha256": "be254d39d8edd3664f74f0ecb76dd0cfdd5d8c597930b088fba3f55e84d18525",
+      "schema": "PASS",
+      "rows": [
+        {
+          "subject_id": "MIM:Polypeptone",
+          "subject_label": "Polypeptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:polypeptone",
+          "object_label": "Polypeptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Polypepton|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypeptone (BBL)",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "snapshot": "w06-Polypeptone.yaml",
+      "sha256": "33e474e0751408a59734c527303219dcb5eeb486ced170f9207548a415b0ee9a",
+      "schema": "PASS",
+      "rows": [
+        {
+          "subject_id": "MIM:Polypeptone",
+          "subject_label": "Polypeptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "FOODON:03315306",
+          "object_label": "protein hydrolyzates",
+          "object_source": "obo:foodon.owl",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:cbclaw_foodon_promotion|MIM:https://labchem-wako.fujifilm.com/us/catalog/pdf/catalog_0005.pdf|MIM:curator=all_unmatched_20261107_worker06_research_a",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Polypepton|Polypepton (Nihon Pharm. Co.)|Polypeptone peptone (BD-BBL)|Polypeptone Peptone (BD 211910)|Polypepton (Nihon Seiyaku)|Polypeptone (BBL)",
+          "validation_method": ""
+        }
+      ]
+    }
+  ],
+  "counterfactual": "In-memory minimum mapping/alias field substitutions only; not a complete authored candidate or application. Notes/evidence/history require future truthful curation.",
+  "counterfactual_schema": "PASS",
+  "counterfactual_rows": [
+    {
+      "subject_id": "MIM:Polypeptone",
+      "subject_label": "Polypeptone",
+      "predicate_id": "skos:broadMatch",
+      "object_id": "FOODON:03315306",
+      "object_label": "protein hydrolyzates",
+      "object_source": "obo:foodon.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "Polypepton",
+      "validation_method": ""
+    },
+    {
+      "subject_id": "MIM:Polypeptone",
+      "subject_label": "Polypeptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.ingredient:polypeptone",
+      "object_label": "Polypeptone",
+      "object_source": "kgm:ingredient",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=/root/polypeptone_supplement; W05 report-only source-origin supplement",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "Registry/identity row preserving kgmicrobe.ingredient:polypeptone alongside parent FOODON:03315306.",
+      "other": "",
+      "validation_method": ""
+    }
+  ],
+  "five_existing_rejections_retained": true,
+  "three_BD_aliases_nonresolving": true,
+  "generic_resolving_tokens": [
+    "Polypeptone",
+    "Polypepton",
+    "polypeptone"
+  ],
+  "producers": {
+    ".temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc",
+    ".temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/validation/write_validated.py": "6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9",
+    ".temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/synonym_policy.py": "f57df13c28f2c2dd2abd3bfcb139094410dd0db4be7fdaffa533ba827c8ca069"
+  },
+  "claw_head": "76c1ebeea3fc7f80bf1abe044688f298f390cfac",
+  "maintained_writes": false,
+  "candidate_writes": false
+}

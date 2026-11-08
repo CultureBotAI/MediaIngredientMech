@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-08T09:51:20.370976+00:00",
+  "reviewer": "/root/assembly_audit",
+  "scope": "Helper fix re-review only; final native pair/core not yet assessed.",
+  "previous": {
+    "path": "preliminary-helper-review-v1.json",
+    "sha256": "d5cb4017340332cfcfd9beed9ee8211fa3f6cb6dca8dfcb77d305b0875d069c9"
+  },
+  "bindings": [
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/build_native_consolidated_v2.py",
+      "sha256": "64aca2602ddcf5b6f722b20fafce71f3365747d8c420aaaa9b12b6c9242bfcac",
+      "reproduction_path": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-build_native_consolidated_v2.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/write_final_reports_v2.py",
+      "sha256": "973c999c4c42e0fb1c56200bf7edf5ece522e813eda10f518f0e717cef247231",
+      "reproduction_path": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-write_final_reports_v2.py"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/control/compose_v4.py",
+      "sha256": "89192ac30561fe7e99b708fafb17c0c54b2e8d17abffeb5cab4054e4ff9ba292",
+      "reproduction_path": ".temp/w05-buffer-parts-v1/assembly-review/reviewed-compose_v4.py"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-001",
+      "status": "corrected_in_helper_pending_exact_generated_review",
+      "reason": "Executable checks now load actual receipt commands/exit codes and hash-bind the receipt files; SCIENCE retains explicitly non-command judgment."
+    },
+    {
+      "finding_id": "W05-ASSEMBLY-MECH-002",
+      "status": "partially_corrected_before_final_report_generation",
+      "reason": "The two nonexistent assessment paths were corrected and required-path assertions replace silent omission.",
+      "remaining": "Bind dependencies-direct-v1/source-assessment.json as final dependency retarget assessment alongside its historical predecessor.",
+      "new_reproduction": "The helper reads preliminary-helper-review-v1.json into x then uses x.get(finding_id); the packet has two finding objects in x[findings] and no top-level finding_id. The resulting register entry has null finding_id. Flatten the list with per-finding locator and real ID, retaining original packet."
+    }
+  ],
+  "proposed_fix_scope": "Bounded report indexing only; no source or payload changes.",
+  "new_scientific_findings": 0
+}

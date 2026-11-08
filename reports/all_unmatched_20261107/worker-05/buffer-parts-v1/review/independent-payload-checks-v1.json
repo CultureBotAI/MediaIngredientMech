@@ -1,0 +1,841 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "at": "2026-11-08T09:22:31.386684+00:00",
+  "base": "0bac12cabfd1f67f212631d8eef9aa46379f6b41",
+  "inputs": [
+    {
+      "path": "MAPPING_SEMANTICS.md",
+      "sha256": "6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062"
+    },
+    {
+      "path": ".claude/skills/review-yaml-record/SKILL.md",
+      "sha256": "4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1"
+    },
+    {
+      "path": ".claude/skills/add-media/SKILL.md",
+      "sha256": "c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b"
+    },
+    {
+      "path": "docs/record-reviews.md",
+      "sha256": "452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b"
+    },
+    {
+      "path": "docs/record-review-profile.md",
+      "sha256": "da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7"
+    },
+    {
+      "path": "docs/stock_components.md",
+      "sha256": "62a8a5393db91e943f6f3903bd624a00e3567f6f0a2ca2391742e97dc0c19d49"
+    },
+    {
+      "path": "src/mediaingredientmech/schema/mediaingredientmech.yaml",
+      "sha256": "bb43dee29b21fdee72a48022456e733e49e95824c4c09674f9b3165c290fe012"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/ASSESSMENT.json",
+      "sha256": "53e137bc1f567a810258a1d552fa001b5dd10ebffd83f3654695a5053a7b07b0"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/primary-capture-index.json",
+      "sha256": "9de10ff9198d479dd2c51d49d97ba6e74c15261b9640862a4954098af3b3057d"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/new-hepes-components-finding-v1.json",
+      "sha256": "ef1bc8a7f7ea8ff459305fb71b1864baec2d3c8fff72df3855d79b428aea0f49"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/new-tris-components-finding-v1.json",
+      "sha256": "99be33af59ae5ea2abad4f7df98b414b528147047076357bc5b21b48043412f9"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/nbrc1221.txt",
+      "sha256": "236d335d5412a6f8db28da4b26bd4f01904ac6a97165622531f47d383a58ae92"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/nbrc1474.txt",
+      "sha256": "18230d6d1161d8843f7bd74cc77b081c13bc873c924742c6d02998e0e3573a4e"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/dsm394.txt",
+      "sha256": "f0c1170d4a6d5e94f415685de051f1b8c3543bfad18c3056842ed3c5584547a4"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/dsm1137.txt",
+      "sha256": "e0ef24e446efa182625b122fb59f296b2ec5c0b367e1b43bb06fee56e267f146"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/jcm1061.txt",
+      "sha256": "fd12704582eee3de6f3c120af2633084b50108d9abead491e6af5590f830b7f7"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/dsm394.pdf",
+      "sha256": "94d13e3f293952062acbcfb8a5ce7c58ae252ee2e753154741bf4d1302bbc975"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/inputs/buffer-source-parts-triage-v1/dsm1137.pdf",
+      "sha256": "198531d5f08ebf394167346ace4ebd41a7f0136a699aaa802e4675c501c998ce"
+    }
+  ],
+  "builder": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "payload_checks": [
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1221",
+      "selected_proposal_object_sha256": "e330bba81afde04b201a2df4c140262dda83d00d143fc22c735d8ee5253694b8",
+      "old_capture": {
+        "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1221.yaml",
+        "sha256": "05cf4a1b09aff0fd1954ef0ac1aa563844414f4896261eaca48271323d9f8a46"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml",
+        "sha256": "35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450"
+      },
+      "selected_yaml": {
+        "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml",
+        "sha256": "35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450"
+      },
+      "strict_errors": [],
+      "old_material_components": [
+        {
+          "component_name": "HEPES buffer moiety, total",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "M"
+        },
+        {
+          "component_name": "Potassium-containing buffer species",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "old_component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221",
+            "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+          }
+        ],
+        "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+      },
+      "historical_to_selected_changes": {
+        "components": {
+          "before": [
+            {
+              "component_name": "HEPES buffer moiety, total",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "1",
+              "concentration_unit": "M"
+            },
+            {
+              "component_name": "Potassium-containing buffer species",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": null
+        },
+        "ontology_mapping": {
+          "before": {
+            "ontology_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1221",
+            "ontology_label": "1 M HEPES-KOH stock (NBRC 1221)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221",
+                "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+              }
+            ]
+          },
+          "after": {
+            "ontology_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1221",
+            "ontology_label": "1 M HEPES-KOH stock (NBRC 1221)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "LLM_SUGGESTION",
+                "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221",
+                "notes": "NBRC 1221 and NBRC 1474 each name a 1 M HEPES-KOH stock and add 20 ml. The reported pH values 7.14 and 9.0 belong to the receiving media. Stock pH, neutralization ratio and solvent are unreported. These omissions prove neither equality nor difference. The two accessions support the same bounded nominal preparation description; whether one shared nominal owner or a more specific source-supported representation should be installed remains a coordinator decision under #1237. This identifier is retained only as a conditional historical proposal handle, not a selected stable owner. Do not install both candidates as proven distinct substances. Preserve both source and occurrence routes, all component uncertainty and all inherited holds."
+              }
+            ]
+          }
+        },
+        "notes": {
+          "before": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established. Original label1M HEPES-KOH remains in frozen source/decision ledger; no global alias is added because stockpH/equivalence are unknown.",
+          "after": "NBRC 1221 and NBRC 1474 each name a 1 M HEPES-KOH stock and add 20 ml. The reported pH values 7.14 and 9.0 belong to the receiving media. Stock pH, neutralization ratio and solvent are unreported. These omissions prove neither equality nor difference. The two accessions support the same bounded nominal preparation description; whether one shared nominal owner or a more specific source-supported representation should be installed remains a coordinator decision under #1237. This identifier is retained only as a conditional historical proposal handle, not a selected stable owner. Do not install both candidates as proven distinct substances. Preserve both source and occurrence routes, all component uncertainty and all inherited holds. W05-FINAL-CHEM-NEW-02 was reported before correction. Withdraw inferred buffer-moiety and potassium-species material partonomy. The source names only the 1 M HEPES-KOH stock; composition remains unknown. Preserve its nominal strength in the whole-stock description. No solvent, free KOH, neutralization ratio or component molarity is inferred. The original component objects are preserved in the immutable finding and prior payload."
+        },
+        "curation_history": {
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_QUALIFIED_STOCK",
+              "changes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_QUALIFIED_STOCK",
+              "changes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            },
+            {
+              "timestamp": "2026-11-08T07:40:53.320531+00:00",
+              "curator": "Codex worker05 /root/chemicals_research final report correction",
+              "action": "CORRECTED_REPORT_PROPOSAL",
+              "changes": "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types. Withdraw unsupported inference of distinct preparation identity from accession number or missing qualifiers. Retain exact candidate/source/occurrence lineage for conditional family reconciliation under #1237. W05-FINAL-CHEM-NEW-02 was reported before correction. Withdraw inferred buffer-moiety and potassium-species material partonomy. The source names only the 1 M HEPES-KOH stock; composition remains unknown. Preserve its nominal strength in the whole-stock description. No solvent, free KOH, neutralization ratio or component molarity is inferred. The original component objects are preserved in the immutable finding and prior payload. Report-only candidate; separate final scientific review and coordinator integration remain required.",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "llm_model": "gpt-6"
+            }
+          ]
+        },
+        "component_assertion": {
+          "before": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "PARTIAL",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221",
+                "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+              }
+            ],
+            "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1221. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+          },
+          "after": null
+        }
+      },
+      "unchanged_fields": [
+        "identifier",
+        "preferred_term",
+        "mapping_status",
+        "ingredient_type",
+        "synonyms",
+        "solution_type"
+      ],
+      "current_native_rows": [
+        {
+          "subject_id": "MIM:HEPES_KOH_1M_NBRC_1221",
+          "subject_label": "1 M HEPES-KOH stock (NBRC 1221)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1221",
+          "object_label": "1 M HEPES-KOH stock (NBRC 1221)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "original_native_rows": [
+        {
+          "subject_id": "MIM:HEPES_KOH_1M_NBRC_1221",
+          "subject_label": "1 M HEPES-KOH stock (NBRC 1221)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1221",
+          "object_label": "1 M HEPES-KOH stock (NBRC 1221)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221|MIM:curator=Codex worker05 chemical correction1193",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "all_prior_history_preserved": true,
+      "present_at_first_publication_5156_and_base_0bac": true,
+      "payload_change_in_this_supplement": false
+    },
+    {
+      "proposal_id": "CHEM-C1193-HEPES-1474",
+      "selected_proposal_object_sha256": "cc1a4ea0eb091e03a354c20db6004c50f7351f8046f198be3f90d0af977a621b",
+      "old_capture": {
+        "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed/HEPES_KOH_1M_NBRC_1474.yaml",
+        "sha256": "6ba28f7de8b9b6387fb38f44ec01ce9b9626a84bea256ea63b7d0df07b109fad"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml",
+        "sha256": "add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd"
+      },
+      "selected_yaml": {
+        "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml",
+        "sha256": "add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd"
+      },
+      "strict_errors": [],
+      "old_material_components": [
+        {
+          "component_name": "HEPES buffer moiety, total",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "M"
+        },
+        {
+          "component_name": "Potassium-containing buffer species",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "old_component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474",
+            "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+          }
+        ],
+        "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+      },
+      "historical_to_selected_changes": {
+        "components": {
+          "before": [
+            {
+              "component_name": "HEPES buffer moiety, total",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "1",
+              "concentration_unit": "M"
+            },
+            {
+              "component_name": "Potassium-containing buffer species",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": null
+        },
+        "ontology_mapping": {
+          "before": {
+            "ontology_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474",
+            "ontology_label": "1 M HEPES-KOH stock (NBRC 1474)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474",
+                "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+              }
+            ]
+          },
+          "after": {
+            "ontology_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474",
+            "ontology_label": "1 M HEPES-KOH stock (NBRC 1474)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "LLM_SUGGESTION",
+                "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474",
+                "notes": "NBRC 1221 and NBRC 1474 each name a 1 M HEPES-KOH stock and add 20 ml. The reported pH values 7.14 and 9.0 belong to the receiving media. Stock pH, neutralization ratio and solvent are unreported. These omissions prove neither equality nor difference. The two accessions support the same bounded nominal preparation description; whether one shared nominal owner or a more specific source-supported representation should be installed remains a coordinator decision under #1237. This identifier is retained only as a conditional historical proposal handle, not a selected stable owner. Do not install both candidates as proven distinct substances. Preserve both source and occurrence routes, all component uncertainty and all inherited holds."
+              }
+            ]
+          }
+        },
+        "notes": {
+          "before": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established. Original label1M HEPES-KOH remains in frozen source/decision ledger; no global alias is added because stockpH/equivalence are unknown.",
+          "after": "NBRC 1221 and NBRC 1474 each name a 1 M HEPES-KOH stock and add 20 ml. The reported pH values 7.14 and 9.0 belong to the receiving media. Stock pH, neutralization ratio and solvent are unreported. These omissions prove neither equality nor difference. The two accessions support the same bounded nominal preparation description; whether one shared nominal owner or a more specific source-supported representation should be installed remains a coordinator decision under #1237. This identifier is retained only as a conditional historical proposal handle, not a selected stable owner. Do not install both candidates as proven distinct substances. Preserve both source and occurrence routes, all component uncertainty and all inherited holds. W05-FINAL-CHEM-NEW-02 was reported before correction. Withdraw inferred buffer-moiety and potassium-species material partonomy. The source names only the 1 M HEPES-KOH stock; composition remains unknown. Preserve its nominal strength in the whole-stock description. No solvent, free KOH, neutralization ratio or component molarity is inferred. The original component objects are preserved in the immutable finding and prior payload."
+        },
+        "curation_history": {
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_QUALIFIED_STOCK",
+              "changes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_QUALIFIED_STOCK",
+              "changes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            },
+            {
+              "timestamp": "2026-11-08T07:40:53.320531+00:00",
+              "curator": "Codex worker05 /root/chemicals_research final report correction",
+              "action": "CORRECTED_REPORT_PROPOSAL",
+              "changes": "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types. Withdraw unsupported inference of distinct preparation identity from accession number or missing qualifiers. Retain exact candidate/source/occurrence lineage for conditional family reconciliation under #1237. W05-FINAL-CHEM-NEW-02 was reported before correction. Withdraw inferred buffer-moiety and potassium-species material partonomy. The source names only the 1 M HEPES-KOH stock; composition remains unknown. Preserve its nominal strength in the whole-stock description. No solvent, free KOH, neutralization ratio or component molarity is inferred. The original component objects are preserved in the immutable finding and prior payload. Report-only candidate; separate final scientific review and coordinator integration remain required.",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "llm_model": "gpt-6"
+            }
+          ]
+        },
+        "component_assertion": {
+          "before": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "PARTIAL",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474",
+                "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+              }
+            ],
+            "notes": "Source-defined 1 M HEPES-KOH stock used as20ml additive in NBRC1474. Whole stock identity is preserved independently of incomplete component grounding. Stock pH, exact neutralization ratio and solvent specification are absent; final-medium pH must not be substituted. Source qualification deliberately keeps NBRC1221 and1474 stocks separate until equivalence is established."
+          },
+          "after": null
+        }
+      },
+      "unchanged_fields": [
+        "identifier",
+        "preferred_term",
+        "mapping_status",
+        "ingredient_type",
+        "synonyms",
+        "solution_type"
+      ],
+      "current_native_rows": [
+        {
+          "subject_id": "MIM:HEPES_KOH_1M_NBRC_1474",
+          "subject_label": "1 M HEPES-KOH stock (NBRC 1474)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474",
+          "object_label": "1 M HEPES-KOH stock (NBRC 1474)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "original_native_rows": [
+        {
+          "subject_id": "MIM:HEPES_KOH_1M_NBRC_1474",
+          "subject_label": "1 M HEPES-KOH stock (NBRC 1474)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474",
+          "object_label": "1 M HEPES-KOH stock (NBRC 1474)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474|MIM:curator=Codex worker05 chemical correction1193",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "all_prior_history_preserved": true,
+      "present_at_first_publication_5156_and_base_0bac": true,
+      "payload_change_in_this_supplement": false
+    },
+    {
+      "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+      "selected_proposal_object_sha256": "87e5487ea868793a2771a59a6623f02279567d0904c2c23e60696c14f2c5331b",
+      "old_capture": {
+        "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "0f8cf263079c547959a4b82831900988b2e07df24eb59c51e62e97fb675733ac"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"
+      },
+      "selected_yaml": {
+        "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"
+      },
+      "strict_errors": [],
+      "old_material_components": [
+        {
+          "component_name": "Tris buffer moiety, total",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "1",
+          "concentration_unit": "M"
+        },
+        {
+          "component_name": "Chloride in Tris-HCl buffer",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "old_component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf",
+            "notes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+          }
+        ],
+        "notes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+      },
+      "historical_to_selected_changes": {
+        "components": {
+          "before": [
+            {
+              "component_name": "Tris buffer moiety, total",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "1",
+              "concentration_unit": "M"
+            },
+            {
+              "component_name": "Chloride in Tris-HCl buffer",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": null
+        },
+        "ontology_mapping": {
+          "before": {
+            "ontology_id": "kgmicrobe.ingredient:tris_hcl_1m_ph_7_5_dsmz_394_1137",
+            "ontology_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf",
+                "notes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+              }
+            ]
+          },
+          "after": {
+            "ontology_id": "kgmicrobe.ingredient:tris_hcl_1m_ph_7_5_dsmz_394_1137",
+            "ontology_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "LLM_SUGGESTION",
+                "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf",
+                "notes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+              }
+            ]
+          }
+        },
+        "notes": {
+          "before": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+          "after": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption. W05-FINAL-CHEM-NEW-03 was reported before correction. Withdraw inferred Tris-moiety and chloride-species material partonomy. Preserve the source-defined nominal buffer strength and pH as whole-preparation specifications; the source does not enumerate its material inputs. No solvent, free-base/salt ratio, HCl input or component molarity is inferred. Original component objects and historical claims remain available in the immutable finding and prior payload."
+        },
+        "curation_history": {
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_DEFINED_BUFFER",
+              "changes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_DEFINED_BUFFER",
+              "changes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            },
+            {
+              "timestamp": "2026-11-08T07:40:53.320531+00:00",
+              "curator": "Codex worker05 /root/chemicals_research final report correction",
+              "action": "CORRECTED_REPORT_PROPOSAL",
+              "changes": "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types. W05-FINAL-CHEM-NEW-03 was reported before correction. Withdraw inferred Tris-moiety and chloride-species material partonomy. Preserve the source-defined nominal buffer strength and pH as whole-preparation specifications; the source does not enumerate its material inputs. No solvent, free-base/salt ratio, HCl input or component molarity is inferred. Original component objects and historical claims remain available in the immutable finding and prior payload. Report-only candidate; separate final scientific review and coordinator integration remain required.",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "llm_model": "gpt-6"
+            }
+          ]
+        },
+        "component_assertion": {
+          "before": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "PARTIAL",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf",
+                "notes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+              }
+            ],
+            "notes": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+          },
+          "after": null
+        }
+      },
+      "unchanged_fields": [
+        "identifier",
+        "preferred_term",
+        "mapping_status",
+        "ingredient_type",
+        "synonyms",
+        "solution_type"
+      ],
+      "current_native_rows": [
+        {
+          "subject_id": "MIM:Tris_HCl_1M_pH_7_5_DSMZ_394_1137",
+          "subject_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:tris_hcl_1m_ph_7_5_dsmz_394_1137",
+          "object_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "original_native_rows": [
+        {
+          "subject_id": "MIM:Tris_HCl_1M_pH_7_5_DSMZ_394_1137",
+          "subject_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:tris_hcl_1m_ph_7_5_dsmz_394_1137",
+          "object_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf|MIM:curator=Codex worker05 chemical correction1193",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "all_prior_history_preserved": true,
+      "present_at_first_publication_5156_and_base_0bac": true,
+      "payload_change_in_this_supplement": false
+    },
+    {
+      "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+      "selected_proposal_object_sha256": "d6dd1f8fd1d3d19adf51de1d6a0e1655ae68e4a54d38ad4b16d9248377a60e3f",
+      "old_capture": {
+        "path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/chemicals/proposed/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "9009b7dc6651004a025591c4e9376e117d4978bc7049b91e2001352bcf83561b"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"
+      },
+      "selected_yaml": {
+        "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"
+      },
+      "strict_errors": [],
+      "old_material_components": [
+        {
+          "component_name": "Tris buffer moiety, total",
+          "reference_scope": "UNMAPPED",
+          "concentration_value": "0.5",
+          "concentration_unit": "M"
+        },
+        {
+          "component_name": "Chloride in Tris-HCl buffer",
+          "reference_scope": "UNMAPPED"
+        }
+      ],
+      "old_component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061",
+            "notes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+          }
+        ],
+        "notes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+      },
+      "historical_to_selected_changes": {
+        "components": {
+          "before": [
+            {
+              "component_name": "Tris buffer moiety, total",
+              "reference_scope": "UNMAPPED",
+              "concentration_value": "0.5",
+              "concentration_unit": "M"
+            },
+            {
+              "component_name": "Chloride in Tris-HCl buffer",
+              "reference_scope": "UNMAPPED"
+            }
+          ],
+          "after": null
+        },
+        "ontology_mapping": {
+          "before": {
+            "ontology_id": "kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061",
+            "ontology_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "MANUAL_CURATION",
+                "source": "https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061",
+                "notes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+              }
+            ]
+          },
+          "after": {
+            "ontology_id": "kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061",
+            "ontology_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)",
+            "ontology_source": "kgmicrobe.ingredient",
+            "mapping_quality": "FALLBACK_REGISTRY",
+            "evidence": [
+              {
+                "evidence_type": "LLM_SUGGESTION",
+                "source": "https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061",
+                "notes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+              }
+            ]
+          }
+        },
+        "notes": {
+          "before": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+          "after": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption. W05-FINAL-CHEM-NEW-03 was reported before correction. Withdraw inferred Tris-moiety and chloride-species material partonomy. Preserve the source-defined nominal buffer strength and pH as whole-preparation specifications; the source does not enumerate its material inputs. No solvent, free-base/salt ratio, HCl input or component molarity is inferred. Original component objects and historical claims remain available in the immutable finding and prior payload."
+        },
+        "curation_history": {
+          "before": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_DEFINED_BUFFER",
+              "changes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            }
+          ],
+          "after": [
+            {
+              "timestamp": "2026-11-08T05:49:52.389819+00:00",
+              "curator": "Codex worker05 chemical correction1193",
+              "action": "CREATED_SOURCE_DEFINED_BUFFER",
+              "changes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+              "llm_assisted": true,
+              "llm_model": "gpt-6",
+              "new_status": "MAPPED"
+            },
+            {
+              "timestamp": "2026-11-08T07:40:53.320531+00:00",
+              "curator": "Codex worker05 /root/chemicals_research final report correction",
+              "action": "CORRECTED_REPORT_PROPOSAL",
+              "changes": "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types. W05-FINAL-CHEM-NEW-03 was reported before correction. Withdraw inferred Tris-moiety and chloride-species material partonomy. Preserve the source-defined nominal buffer strength and pH as whole-preparation specifications; the source does not enumerate its material inputs. No solvent, free-base/salt ratio, HCl input or component molarity is inferred. Original component objects and historical claims remain available in the immutable finding and prior payload. Report-only candidate; separate final scientific review and coordinator integration remain required.",
+              "previous_status": "MAPPED",
+              "new_status": "MAPPED",
+              "llm_assisted": true,
+              "llm_model": "gpt-6"
+            }
+          ]
+        },
+        "component_assertion": {
+          "before": {
+            "method": "RECIPE_TRANSCRIPTION",
+            "completeness": "PARTIAL",
+            "evidence": [
+              {
+                "evidence_type": "RECIPE_SOURCE",
+                "source": "https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061",
+                "notes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+              }
+            ],
+            "notes": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption."
+          },
+          "after": null
+        }
+      },
+      "unchanged_fields": [
+        "identifier",
+        "preferred_term",
+        "mapping_status",
+        "ingredient_type",
+        "synonyms",
+        "solution_type"
+      ],
+      "current_native_rows": [
+        {
+          "subject_id": "MIM:Tris_HCl_0_5M_pH_8_JCM_1061",
+          "subject_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061",
+          "object_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061|MIM:curator=Codex worker05 /root/chemicals_research final report correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "original_native_rows": [
+        {
+          "subject_id": "MIM:Tris_HCl_0_5M_pH_8_JCM_1061",
+          "subject_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061",
+          "object_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061|MIM:curator=Codex worker05 chemical correction1193",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "all_prior_history_preserved": true,
+      "present_at_first_publication_5156_and_base_0bac": true,
+      "payload_change_in_this_supplement": false
+    }
+  ],
+  "chronology": {
+    "prior_selected_history_timestamp": "2026-11-08T07:40:53.320531+00:00",
+    "triage_at": "2026-11-08T07:43:20.043834+00:00",
+    "github_comment_created_at": "2026-11-08T07:43:24Z",
+    "first_publication_commit": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+    "first_publication_commit_author_and_committer_time": [
+      "2026-11-08T00:25:04-08:00",
+      "2026-11-08T00:25:04-08:00"
+    ],
+    "conclusion": "The preserved private correction history precedes the triage and current GitHub filing. The filing precedes first Git publication. Original before-fix reports carry no independently verified report time; no precise before-fix disclosure time or retroactive filing-first claim is inferred."
+  },
+  "limitations": [
+    "Native rows are exact producer projections with empty owner/suppression indexes, not maintained export release or coordinator family-owner selection.",
+    "Historical-to-selected changes occurred in the prior final-correction packet; this supplement does not reauthor or reapply them.",
+    "Full campaign accounting/overlay validation and saved native review are root-owned and are not claimed by these four-record checks."
+  ]
+}

@@ -1,0 +1,118 @@
+--- reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml
++++ buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml
+@@ -120,7 +120,28 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
+-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_glucose_rumen_fluid);
++- timestamp: '2026-11-08T09:30:25.514419+00:00'
++  curator: Codex worker05 /root/buffer_tris
++  action: WITHDRAW_UNSUPPORTED_COMPONENT_ID
++  changes: The raw PY-glucose-rumen fluid observation is Treponema socranskii with
++    the source LPSN link naming subsp. paredis. The matched Smibert 1984 abstract
++    describes rumen-fluid or fatty-acid requirements but supplies no source peptone
++    recipe. Full original methods were not recovered. Unrelated Prevotella cultures
++    cannot bind this preparation. Preserve the already withdrawn clarification and
++    all rumen-fluid uncertainty. Withdraw the unsupported peptone component_id and
++    set reference_scope UNMAPPED; retain its existing component_name as historical
++    interpretation, not a newly observed expanded source label. The original assertion
++    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
++    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
++    unrelated components, all historical evidence and source/role/export holds are
++    preserved. Historical all-components-identified statements describe prior states,
++    not a new approval. No new MappingEvidence is added; historical human/component
++    evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:py_glucose_rumen_fluid);
+   no CAS-RN or CHEBI/NCIT match. Curator review needed. The rumen-fluid component
+   is retained at the literal source-label scope as rumen fluid, UNMAPPED, with no
+   component identifier. The recovered MicrobeDecoder observation does not specify
+@@ -136,12 +157,24 @@
+   describe this successor. The prior 2026-11-08 dependency-only redirect event is
+   preserved as superseded history. No generic UBERON grounding, recipe equivalence,
+   animal-origin claim or downstream approval is added. MicrobeDecoder database.csv
+-  record 20394, Bergey_Substrates_for_end_products = 'PY-glucose-rumen fluid'; full
++  record 20394, Bergey_Substrates_for_end_products = ''PY-glucose-rumen fluid''; full
+   source-row capture and database SHA are retained in postseal-source-corrections-v1/chemicals/microbedecoder-three-parent-source-records-v1.json.
++  Successor dependency assessment: The raw PY-glucose-rumen fluid observation is Treponema
++  socranskii with the source LPSN link naming subsp. paredis. The matched Smibert
++  1984 abstract describes rumen-fluid or fatty-acid requirements but supplies no source
++  peptone recipe. Full original methods were not recovered. Unrelated Prevotella cultures
++  cannot bind this preparation. Preserve the already withdrawn clarification and all
++  rumen-fluid uncertainty. Withdraw the unsupported peptone component_id and set reference_scope
++  UNMAPPED; retain its existing component_name as historical interpretation, not a
++  newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL
++  completeness remain unchanged. This is a bounded part-reference correction only.
++  Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components,
++  all historical evidence and source/role/export holds are preserved. Historical all-components-identified
++  statements describe prior states, not a new approval. No new MappingEvidence is
++  added; historical human/component evidence enums are not rewritten.'
+ components:
+ - component_name: peptone
+-  component_id: MICRO:0000178
+-  reference_scope: MIM_CATALOG
++  reference_scope: UNMAPPED
+   source: microbedecoder research decomposition (#213/#308)
+ - component_name: yeast extract
+   component_id: FOODON:03315426
+@@ -176,7 +209,33 @@
+       but does not establish clarification. Earlier CURATED_DATASET assertions are
+       preserved as superseded provenance for this component, not renewed scientific
+       support. Component evidence typing is distinct from MappingEvidence typing.
+-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
++  - evidence_type: SOURCE_LABEL
++    source: microbedecoder
++    source_record: CSV row 20395 (header included), Bergey_Substrates_for_end_products
++      = 'PY-glucose-rumen fluid', Treponema socranskii
++    notes: Raw source name and taxon scope only; no claim this abbreviation or whole-medium
++      label independently proves the interpreted peptone constituent. Exact archive/member
++      bytes and complete source rows are preserved in buffer-parts-v1/dependencies/source-observations.json.
++      Independently re-extracted by /root/buffer_tris with LLM assistance; original
++      source scientists and skeptical review remain attributed in the preserved W03
++      packet.
++  - evidence_type: CURATED_DATASET
++    source: buffer-parts-v1/dependencies/source-assessment.json
++    source_record: PC08 data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]
++    notes: The raw PY-glucose-rumen fluid observation is Treponema socranskii with
++      the source LPSN link naming subsp. paredis. The matched Smibert 1984 abstract
++      describes rumen-fluid or fatty-acid requirements but supplies no source peptone
++      recipe. Full original methods were not recovered. Unrelated Prevotella cultures
++      cannot bind this preparation. Preserve the already withdrawn clarification and
++      all rumen-fluid uncertainty. Withdraw the unsupported peptone component_id and
++      set reference_scope UNMAPPED; retain its existing component_name as historical
++      interpretation, not a newly observed expanded source label. The original assertion
++      method and UNKNOWN/PARTIAL completeness remain unchanged. Independent prior
++      source work by /root/peptone_ambiguous_sources and skeptical review by /root/peptone_skeptic
++      are reused only at their exact unchanged source-claim scope; neither approves
++      these new payload bytes. Current candidate author /root/buffer_tris; independent
++      final byte review remains separate.
++  notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
+     variant hierarchy, or complete culturing recipe. The rumen-fluid component is
+     retained at the literal source-label scope as rumen fluid, UNMAPPED, with no component
+     identifier. The recovered MicrobeDecoder observation does not specify clarification,
+@@ -191,7 +250,21 @@
+     historical provenance; their clarification claims and historical all-components-identified
+     counts do not describe this successor. The prior 2026-11-08 dependency-only redirect
+     event is preserved as superseded history. No generic UBERON grounding, recipe
+-    equivalence, animal-origin claim or downstream approval is added.
++    equivalence, animal-origin claim or downstream approval is added. Successor dependency
++    assessment: The raw PY-glucose-rumen fluid observation is Treponema socranskii
++    with the source LPSN link naming subsp. paredis. The matched Smibert 1984 abstract
++    describes rumen-fluid or fatty-acid requirements but supplies no source peptone
++    recipe. Full original methods were not recovered. Unrelated Prevotella cultures
++    cannot bind this preparation. Preserve the already withdrawn clarification and
++    all rumen-fluid uncertainty. Withdraw the unsupported peptone component_id and
++    set reference_scope UNMAPPED; retain its existing component_name as historical
++    interpretation, not a newly observed expanded source label. The original assertion
++    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
++    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
++    unrelated components, all historical evidence and source/role/export holds are
++    preserved. Historical all-components-identified statements describe prior states,
++    not a new approval. No new MappingEvidence is added; historical human/component
++    evidence enums are not rewritten.'
+ ingredient_type: UNDEFINED_MIXTURE
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:py_glucose_rumen_fluid

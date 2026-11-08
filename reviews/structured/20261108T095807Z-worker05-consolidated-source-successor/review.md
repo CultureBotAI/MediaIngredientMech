@@ -1,0 +1,4882 @@
+# W05 consolidated remaining source corrections
+
+- Review: 20261108T095807Z-worker05-consolidated-source-successor
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T09:58:07Z
+- Finished UTC: 2026-11-08T09:58:07Z
+- Reviewer: Codex W05 /root compiler; separate scientific review by /root/final_skeptical and named delegated reviewer (self_review)
+- Completion: completed
+- Verdict: needs_curation
+- Scientific review: true
+
+## Summary
+
+Complete report-only source successor with independent exact payload review, authentic dependent owner origins and explicit unresolved source/owner/application limits. Existing campaign and family findings remain scoped in the preserved register; this review does not silently retire historical or whole-union findings.
+
+## Scope And Provenance
+
+Full selected composed cases and complete payloads listed in the exact peer receipt; all other original cases retain their own unchanged historical scientific reviews.
+
+Selection: Actual selected primary fragments and final composed decision hashes in source-ledger. Source ownership remains frozen; dependent children are not new shard observations.
+Coverage: full; 56 reviewed / 56 in the declared population.
+Source: working_tree at Git base 0bac12cabfd1f67f212631d8eef9aa46379f6b41.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| CASE-003 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0 | snapshot_row | Bottom layer |
+| CASE-017 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636 | snapshot_row | Difco Marine Broth 2216 |
+| CASE-019 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378 | snapshot_row | MKP medium |
+| CASE-028 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a | snapshot_row | Thiamine-HCl·H2O (Vitamin B1) |
+| CASE-053 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f | snapshot_row | 1M HEPES-KOH |
+| CASE-076 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4 | snapshot_row | Tris-HCl |
+| CASE-091 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8 | snapshot_row | Rumen fluid, clarified (see Medium No. 266) |
+| CASE-111 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da | snapshot_row | 95% ethanol |
+| CASE-117 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3 | snapshot_row | Thiamine-HCl⋅H2O (Vitamin B1) |
+| CASE-124 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac | snapshot_row | Ethanol (95 %) |
+| CASE-127 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9 | snapshot_row | Hipolypepton |
+| CASE-130 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8 | snapshot_row | Pennassay Broth |
+| CASE-135 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2 | snapshot_row | ISP 7 Medium |
+| CASE-136 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c | snapshot_row | Difco Marine Broth 2216 |
+| CASE-144 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47 | snapshot_row | Mueller-Hinton broth |
+| CASE-158 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79 | snapshot_row | dehydrated Wilkins-Chalgren medium |
+| CASE-160 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c | snapshot_row | Polypeptone |
+| CASE-173 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151 | snapshot_row | peptones |
+| CASE-176 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25 | snapshot_row | Soy peptone |
+| CASE-181 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a | snapshot_row | Cooked meat medium |
+| CASE-182 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json # KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd | snapshot_row | Reinforced clostridial medium |
+| CHEM-C1193-DSMZ_394_1137-Tris | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml | source | Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137) |
+| CHEM-C1193-HEPES-1221 | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml | source | 1 M HEPES-KOH stock (NBRC 1221) |
+| CHEM-C1193-HEPES-1474 | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml | source | 1 M HEPES-KOH stock (NBRC 1474) |
+| CHEM-C1193-JCM_1061-Tris | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml | source | Tris-HCl 0.5 M pH 8 stock (JCM 1061) |
+| CHEM-C1193-Tris-HCl-salt | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml | source | Tris hydrochloride salt |
+| CHEM-C1193-ethanol95-dsmz_78 | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml | source | 95% ethanol preparation (DSMZ 78) |
+| FINAL-CHEM-P-thiamine-hcl-monohydrate | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemical-supplement-v1/proposed-v1/Thiamine_Hcl_Monohydrate.yaml | source | Thiamine-HCl monohydrate |
+| M1193-P-CM0643 | reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml | source | Wilkins-Chalgren medium powder (Oxoid CM0643) |
+| M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml | source | Fastidious Anaerobe Broth With Meat Granules |
+| M1193-P-ISP7 | reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/ISP_7_Medium.yaml | source | ISP 7 medium powder (HiMedia M362) |
+| M1193-P-MARINE2216 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed/Marine_Broth_2216.yaml | source | Marine broth 2216 |
+| M1193-P-MH-POWDER-DSMZ804 | reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml | source | Mueller-Hinton broth powder (DSMZ804) |
+| M1193-P-PENASSAY_BROTH_DIFCO | reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml | source | Penassay Broth (Difco Antibiotic Medium3) |
+| M1193-P-RCM-182 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml | source | Reinforced clostridial medium (BD Difco) |
+| R1193-DEP-rumen-pyg | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml | source | PYG + Rumen Fluid |
+| R1193-DEP-rumen-pyglucose | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml | source | PY-glucose-rumen Fluid |
+| R1193-P-bottom-628 | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml | source | Bottom layer (JCM628) |
+| R1193-P-bottom-629 | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml | source | Bottom layer (JCM629) |
+| R1193-P-mkp | reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml | source | MKP medium (MediaDive1895 solution6635) |
+| W05-DEP-PEPTONE-PC03 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml | source | Glucose Peptone-yeast Extract |
+| W05-DEP-PEPTONE-PC06 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml | source | PY-cellobiose |
+| W05-DEP-PEPTONE-PC07 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml | source | PY-fructose |
+| W05-DEP-PEPTONE-PC09 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml | source | PY-maltose |
+| W05-DEP-PEPTONE-PC10 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml | source | PY-pectin |
+| W05-DEP-PEPTONE-PC11 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml | source | PYEG |
+| W05-DEP-PEPTONE-PC12 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml | source | PYG-0.02% Tween 80 |
+| W05-DEP-PEPTONE-PC13 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml | source | PYG |
+| W05-DEP-PEPTONE-PC16 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml | source | Peptone-yeast Extract-glucose |
+| W05-DEP-PEPTONE-PC17 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml | source | Peptone + Beef Extract + Yeast Extract |
+| W05-DEP-PEPTONE-PC18 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml | source | Peptone + Yeast Extract |
+| W05-DEP-PEPTONE-PC19 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml | source | Yeast Extract + Peptone |
+| W05-FINAL-MAT-030 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/polypeptone-final/proposed-v2/Polypeptone.yaml | source | Polypeptone |
+| W05-FINAL-MAT-032 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/proposed/Soy_Peptone.yaml | source | Soy peptone |
+| W05-FINAL-MAT-039 | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml | source | Peptone |
+| W05-PARENTS-BACTO-SOYTONE-CONTINUITY | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/tombstone/proposed-v2/Bacto_Soytone.yaml | source | Bacto Soytone |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Independent complete selected source and payload review | passed | True | CASE-003, CASE-017, CASE-019, CASE-028, CASE-053, CASE-076, CASE-091, CASE-111, CASE-117, CASE-124, CASE-127, CASE-130, CASE-135, CASE-136, CASE-144, CASE-158, CASE-160, CASE-173, CASE-176, CASE-181, CASE-182, CHEM-C1193-DSMZ_394_1137-Tris, CHEM-C1193-HEPES-1221, CHEM-C1193-HEPES-1474, CHEM-C1193-JCM_1061-Tris, CHEM-C1193-Tris-HCl-salt, CHEM-C1193-ethanol95-dsmz_78, FINAL-CHEM-P-thiamine-hcl-monohydrate, M1193-P-CM0643, M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, M1193-P-ISP7, M1193-P-MARINE2216, M1193-P-MH-POWDER-DSMZ804, M1193-P-PENASSAY_BROTH_DIFCO, M1193-P-RCM-182, R1193-DEP-rumen-pyg, R1193-DEP-rumen-pyglucose, R1193-P-bottom-628, R1193-P-bottom-629, R1193-P-mkp, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19, W05-FINAL-MAT-030, W05-FINAL-MAT-032, W05-FINAL-MAT-039, W05-PARENTS-BACTO-SOYTONE-CONTINUITY | Non-command scientific judgment by the separately named reviewer, exact scope in PEER. |
+| Exact frozen campaign accounting | passed | True | CASE-003, CASE-017, CASE-019, CASE-028, CASE-053, CASE-076, CASE-091, CASE-111, CASE-117, CASE-124, CASE-127, CASE-130, CASE-135, CASE-136, CASE-144, CASE-158, CASE-160, CASE-173, CASE-176, CASE-181, CASE-182, CHEM-C1193-DSMZ_394_1137-Tris, CHEM-C1193-HEPES-1221, CHEM-C1193-HEPES-1474, CHEM-C1193-JCM_1061-Tris, CHEM-C1193-Tris-HCl-salt, CHEM-C1193-ethanol95-dsmz_78, FINAL-CHEM-P-thiamine-hcl-monohydrate, M1193-P-CM0643, M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, M1193-P-ISP7, M1193-P-MARINE2216, M1193-P-MH-POWDER-DSMZ804, M1193-P-PENASSAY_BROTH_DIFCO, M1193-P-RCM-182, R1193-DEP-rumen-pyg, R1193-DEP-rumen-pyglucose, R1193-P-bottom-628, R1193-P-bottom-629, R1193-P-mkp, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19, W05-FINAL-MAT-030, W05-FINAL-MAT-032, W05-FINAL-MAT-039, W05-PARENTS-BACTO-SOYTONE-CONTINUITY | Actual command completed against the declared final selected bytes; no maintained or release approval. |
+| Original proposal lineage audit | passed | True | CASE-003, CASE-017, CASE-019, CASE-028, CASE-053, CASE-076, CASE-091, CASE-111, CASE-117, CASE-124, CASE-127, CASE-130, CASE-135, CASE-136, CASE-144, CASE-158, CASE-160, CASE-173, CASE-176, CASE-181, CASE-182, CHEM-C1193-DSMZ_394_1137-Tris, CHEM-C1193-HEPES-1221, CHEM-C1193-HEPES-1474, CHEM-C1193-JCM_1061-Tris, CHEM-C1193-Tris-HCl-salt, CHEM-C1193-ethanol95-dsmz_78, FINAL-CHEM-P-thiamine-hcl-monohydrate, M1193-P-CM0643, M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, M1193-P-ISP7, M1193-P-MARINE2216, M1193-P-MH-POWDER-DSMZ804, M1193-P-PENASSAY_BROTH_DIFCO, M1193-P-RCM-182, R1193-DEP-rumen-pyg, R1193-DEP-rumen-pyglucose, R1193-P-bottom-628, R1193-P-bottom-629, R1193-P-mkp, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19, W05-FINAL-MAT-030, W05-FINAL-MAT-032, W05-FINAL-MAT-039, W05-PARENTS-BACTO-SOYTONE-CONTINUITY | Actual command completed against the declared final selected bytes; no maintained or release approval. |
+| Guarded full payloads and complete substituted baseline | passed | True | CASE-003, CASE-017, CASE-019, CASE-028, CASE-053, CASE-076, CASE-091, CASE-111, CASE-117, CASE-124, CASE-127, CASE-130, CASE-135, CASE-136, CASE-144, CASE-158, CASE-160, CASE-173, CASE-176, CASE-181, CASE-182, CHEM-C1193-DSMZ_394_1137-Tris, CHEM-C1193-HEPES-1221, CHEM-C1193-HEPES-1474, CHEM-C1193-JCM_1061-Tris, CHEM-C1193-Tris-HCl-salt, CHEM-C1193-ethanol95-dsmz_78, FINAL-CHEM-P-thiamine-hcl-monohydrate, M1193-P-CM0643, M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, M1193-P-ISP7, M1193-P-MARINE2216, M1193-P-MH-POWDER-DSMZ804, M1193-P-PENASSAY_BROTH_DIFCO, M1193-P-RCM-182, R1193-DEP-rumen-pyg, R1193-DEP-rumen-pyglucose, R1193-P-bottom-628, R1193-P-bottom-629, R1193-P-mkp, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19, W05-FINAL-MAT-030, W05-FINAL-MAT-032, W05-FINAL-MAT-039, W05-PARENTS-BACTO-SOYTONE-CONTINUITY | Actual command completed against the declared final selected bytes; no maintained or release approval. |
+| Strict closed-schema complete payload checks | passed | True | CASE-003, CASE-017, CASE-019, CASE-028, CASE-053, CASE-076, CASE-091, CASE-111, CASE-117, CASE-124, CASE-127, CASE-130, CASE-135, CASE-136, CASE-144, CASE-158, CASE-160, CASE-173, CASE-176, CASE-181, CASE-182, CHEM-C1193-DSMZ_394_1137-Tris, CHEM-C1193-HEPES-1221, CHEM-C1193-HEPES-1474, CHEM-C1193-JCM_1061-Tris, CHEM-C1193-Tris-HCl-salt, CHEM-C1193-ethanol95-dsmz_78, FINAL-CHEM-P-thiamine-hcl-monohydrate, M1193-P-CM0643, M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, M1193-P-ISP7, M1193-P-MARINE2216, M1193-P-MH-POWDER-DSMZ804, M1193-P-PENASSAY_BROTH_DIFCO, M1193-P-RCM-182, R1193-DEP-rumen-pyg, R1193-DEP-rumen-pyglucose, R1193-P-bottom-628, R1193-P-bottom-629, R1193-P-mkp, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19, W05-FINAL-MAT-030, W05-FINAL-MAT-032, W05-FINAL-MAT-039, W05-PARENTS-BACTO-SOYTONE-CONTINUITY | Actual command completed against the declared final selected bytes; no maintained or release approval. |
+| Full native mapping projections and invariant assertions | passed | True | CASE-003, CASE-017, CASE-019, CASE-028, CASE-053, CASE-076, CASE-091, CASE-111, CASE-117, CASE-124, CASE-127, CASE-130, CASE-135, CASE-136, CASE-144, CASE-158, CASE-160, CASE-173, CASE-176, CASE-181, CASE-182, CHEM-C1193-DSMZ_394_1137-Tris, CHEM-C1193-HEPES-1221, CHEM-C1193-HEPES-1474, CHEM-C1193-JCM_1061-Tris, CHEM-C1193-Tris-HCl-salt, CHEM-C1193-ethanol95-dsmz_78, FINAL-CHEM-P-thiamine-hcl-monohydrate, M1193-P-CM0643, M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES, M1193-P-ISP7, M1193-P-MARINE2216, M1193-P-MH-POWDER-DSMZ804, M1193-P-PENASSAY_BROTH_DIFCO, M1193-P-RCM-182, R1193-DEP-rumen-pyg, R1193-DEP-rumen-pyglucose, R1193-P-bottom-628, R1193-P-bottom-629, R1193-P-mkp, W05-DEP-PEPTONE-PC03, W05-DEP-PEPTONE-PC06, W05-DEP-PEPTONE-PC07, W05-DEP-PEPTONE-PC09, W05-DEP-PEPTONE-PC10, W05-DEP-PEPTONE-PC11, W05-DEP-PEPTONE-PC12, W05-DEP-PEPTONE-PC13, W05-DEP-PEPTONE-PC16, W05-DEP-PEPTONE-PC17, W05-DEP-PEPTONE-PC18, W05-DEP-PEPTONE-PC19, W05-FINAL-MAT-030, W05-FINAL-MAT-032, W05-FINAL-MAT-039, W05-PARENTS-BACTO-SOYTONE-CONTINUITY | Actual command completed against the declared final selected bytes; no maintained or release approval. |
+
+## Scientific And Domain Assessments
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-003.
+
+The complete JCM628 recipe explicitly defines a lower layer from 50 ml washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose. The candidate transcribes these named material inputs without identifying the whole as FeS or importing the upper layer. Washing and suspension are retained; amounts remain batch inputs rather than invented final concentrations. JCM629 positively replaces the JCM628 mineral solution with its artificial saltwater. It retains the same washed FeS preparation and agarose. This is a demonstrated preparation difference; no zero-valent-iron substitution is present. The complete payload preserves the one-level preparation scope and exact original occurrence route.
+
+{"assessment": "The complete JCM628 recipe explicitly defines a lower layer from 50 ml washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose. The candidate transcribes these named material inputs without identifying the whole as FeS or importing the upper layer. Washing and suspension are retained; amounts remain batch inputs rather than invented final concentrations. JCM629 positively replaces the JCM628 mineral solution with its artificial saltwater. It retains the same washed FeS preparation and agarose. This is a demonstrated preparation difference; no zero-valent-iron substitution is present. The complete payload preserves the one-level preparation scope and exact original occurrence route.", "assessment_origins": [{"assessment": "The complete JCM628 recipe explicitly defines a lower layer from 50 ml washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose. The candidate transcribes these named material inputs without identifying the whole as FeS or importing the upper layer. Washing and suspension are retained; amounts remain batch inputs rather than invented final concentrations. JCM629 positively replaces the JCM628 mineral solution with its artificial saltwater. It retains the same washed FeS preparation and agarose. This is a demonstrated preparation difference; no zero-valent-iron substitution is present. The complete payload preserves the one-level preparation scope and exact original occurrence route.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0", "case_input_sha256": "ed7724fe9de22b1ead260c656ebdca2bfcf625faffb13e887601ed2cbcc0bd53", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111", "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"], "selected_decision_object_sha256": "8e6eeee195b8dbcbd397065370ea35e2617a85dbd16f83962594636cda571219", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Bottom layer", "source": "culturemech", "source_case_id": "Bottom layer", "source_label": "Bottom layer"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-017.
+
+The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.
+
+{"assessment": "The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.", "assessment_origins": [{"assessment": "The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636", "case_input_sha256": "8e896e0ba3dafa169970f56ccf1429597e692b8c2fa9801251fcb7ee3539908b", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:a74a96f03a905868769b28aca9d191d2ef477e363631b55c808eabde3c470da1", "CM_OCC:432cc90659dd3c147962c14c35f5b74e88e621f9c83e54d808c18be9ce889d59", "CM_OCC:f23017e41a699d752c82811af924efbd8db16207359b9a7d033dc87deb196687"], "selected_decision_object_sha256": "3c306601d79e58251a21bf21dc5a6204c4e5d0291ab4f45f0e9ab9ac80d5dd72", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Difco Marine Broth 2216", "source": "culturemech", "source_case_id": "Difco Marine Broth 2216", "source_label": "Difco Marine Broth 2216"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-019.
+
+The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a separate HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named 100 ml input of unspecified stock strength, the seven additional weighed ingredients, 5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to the receiving HS-RFB solution and are correctly excluded. This is a medium base, not a JCM salt solution.
+
+{"assessment": "The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a separate HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named 100 ml input of unspecified stock strength, the seven additional weighed ingredients, 5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to the receiving HS-RFB solution and are correctly excluded. This is a medium base, not a JCM salt solution.", "assessment_origins": [{"assessment": "The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a separate HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named 100 ml input of unspecified stock strength, the seven additional weighed ingredients, 5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to the receiving HS-RFB solution and are correctly excluded. This is a medium base, not a JCM salt solution.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378", "case_input_sha256": "a8e35ff3593e9f4209bdb837b76e599c4c89c63f5c29f96cf60463ceb5e4e4ca", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:61e4ba696ad5b790b82da57aab32682afcc95f60d319304d8671f957eee5e83f"], "selected_decision_object_sha256": "02c6b75bf51af272627d8859ec0400e398078f634bb2c12c4a2e6ca689c4c51b", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "MKP medium", "source": "culturemech", "source_case_id": "MKP medium", "source_label": "MKP medium"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-028.
+
+All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.
+
+{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.", "assessment_origins": [{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a", "case_input_sha256": "3609bf355091abb3388887deed3fbae6391a329338e77d05a32dddfbdcaf8526", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:750ca6e602619153bc2d9d97925f9cfe29b1faab5283067e75d49f8b0770fb51", "CM_OCC:3b8df504b3fea449da7cb5de638db5e6102c008a346ea7c8babe1b53cc9514cb", "CM_OCC:e88296a7c96873bbbdbd2ee0b767815c0d4345c674957212c3bd225be8e22010", "CM_OCC:7d7cda807fa9cb5685230b5b1e1f1ed0e6340636a9a4fdbd0d843d094093c90a", "CM_OCC:4b6fa456271f78e5b2f2f23b280d935b58cc57a0249fcb0cac625c0328ba25ef"], "selected_decision_object_sha256": "8c1b8db0ce2d8ca69115d9de6def11c193843491fef9de560d96d36d95ca5d50", "selected_disposition": "new_distinct_ingredient_proposal", "source": {"raw_source_label": "Thiamine-HCl·H2O (Vitamin B1)", "source": "culturemech", "source_case_id": "Thiamine-HCl·H2O (Vitamin B1)", "source_label": "Thiamine-HCl·H2O (Vitamin B1)"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-053.
+
+The complete decision for two source contexts correctly retains 1 M HEPES-KOH as a nominal whole stock used at 20 ml in each receiving recipe. NBRC1221 medium pH7.14 and NBRC1474 medium pH9.0 do not establish stock pH. The full primary recipes do not enumerate stock material inputs. Both exact current candidates already omit the unsupported moiety/species components and paired assertion. Added evidence and chronology are source-qualified, while the conditional family decision, all raw occurrence IDs, prior negative/owner/export holds and historical reviews remain intact.
+
+{"assessment": "The complete decision for two source contexts correctly retains 1 M HEPES-KOH as a nominal whole stock used at 20 ml in each receiving recipe. NBRC1221 medium pH7.14 and NBRC1474 medium pH9.0 do not establish stock pH. The full primary recipes do not enumerate stock material inputs. Both exact current candidates already omit the unsupported moiety/species components and paired assertion. Added evidence and chronology are source-qualified, while the conditional family decision, all raw occurrence IDs, prior negative/owner/export holds and historical reviews remain intact.", "assessment_origins": [{"assessment": "The complete decision for two source contexts correctly retains 1 M HEPES-KOH as a nominal whole stock used at 20 ml in each receiving recipe. NBRC1221 medium pH7.14 and NBRC1474 medium pH9.0 do not establish stock pH. The full primary recipes do not enumerate stock material inputs. Both exact current candidates already omit the unsupported moiety/species components and paired assertion. Added evidence and chronology are source-qualified, while the conditional family decision, all raw occurrence IDs, prior negative/owner/export holds and historical reviews remain intact.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f", "case_input_sha256": "739005188a7a39f95be15e621098c805b702ea323fa15c50539bd4d0bc0b1e48", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac", "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"], "selected_decision_object_sha256": "9563a0b90cfe2002f84b39500347e3c6dcc9e3fcdcf5bd346ff8645561bb1cb9", "selected_disposition": "new_distinct_ingredient_proposal", "source": {"raw_source_label": "1M HEPES-KOH", "source": "culturemech", "source_case_id": "1M HEPES-KOH", "source_label": "1M HEPES-KOH"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-076.
+
+The complete 16-occurrence decision preserves its established split and all historical evidence. Fresh scientific scope covers the eight stock routes: DSMZ394/1137 specify 1 M pH7.5 with 20/5 ml receiving doses; JCM1061 specifies 0.5 M pH8.0 with 100 ml dose. These are positive nominal stock specifications. No preparation inputs, solvent, free HCl or moiety/species material list are established. Both selected stock payloads already omit the unsupported components and paired assertion; the seven dry-reagent contexts and one final-medium context remain unchanged with prior attribution, without new approval from this stock review. The manufacturer sheet explicitly identifies the neutralized crystalline hydrochloride, CAS1185-53-1 and C4H11NO3.HCl. The complete salt payload preserves this distinct form and excludes inference of a source supplier. It stores NARROW_MATCH; independently replayed complete native output has broadMatch to CHEBI9754, exact CAS and B1 compound identity rows. Its seven weighed contexts and eight buffer-stock contexts are not conflated; the buffer review is separately bound.
+
+{"assessment": "The complete 16-occurrence decision preserves its established split and all historical evidence. Fresh scientific scope covers the eight stock routes: DSMZ394/1137 specify 1 M pH7.5 with 20/5 ml receiving doses; JCM1061 specifies 0.5 M pH8.0 with 100 ml dose. These are positive nominal stock specifications. No preparation inputs, solvent, free HCl or moiety/species material list are established. Both selected stock payloads already omit the unsupported components and paired assertion; the seven dry-reagent contexts and one final-medium context remain unchanged with prior attribution, without new approval from this stock review. The manufacturer sheet explicitly identifies the neutralized crystalline hydrochloride, CAS1185-53-1 and C4H11NO3.HCl. The complete salt payload preserves this distinct form and excludes inference of a source supplier. It stores NARROW_MATCH; independently replayed complete native output has broadMatch to CHEBI9754, exact CAS and B1 compound identity rows. Its seven weighed contexts and eight buffer-stock contexts are not conflated; the buffer review is separately bound.", "assessment_origins": [{"assessment": "The complete 16-occurrence decision preserves its established split and all historical evidence. Fresh scientific scope covers the eight stock routes: DSMZ394/1137 specify 1 M pH7.5 with 20/5 ml receiving doses; JCM1061 specifies 0.5 M pH8.0 with 100 ml dose. These are positive nominal stock specifications. No preparation inputs, solvent, free HCl or moiety/species material list are established. Both selected stock payloads already omit the unsupported components and paired assertion; the seven dry-reagent contexts and one final-medium context remain unchanged with prior attribution, without new approval from this stock review.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"}, "reviewer": "/root/final_skeptical"}, {"assessment": "The manufacturer sheet explicitly identifies the neutralized crystalline hydrochloride, CAS1185-53-1 and C4H11NO3.HCl. The complete salt payload preserves this distinct form and excludes inference of a source supplier. It stores NARROW_MATCH; independently replayed complete native output has broadMatch to CHEBI9754, exact CAS and B1 compound identity rows. Its seven weighed contexts and eight buffer-stock contexts are not conflated; the buffer review is separately bound.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4", "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc", "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132", "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11", "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f", "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102", "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857", "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e", "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed", "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74", "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1", "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67", "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807", "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9", "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b", "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8", "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"], "selected_decision_object_sha256": "445e0af5d52cceaf76ed89991a634559c703f26493714299b3fac915687c079f", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Tris-HCl", "source": "culturemech", "source_case_id": "Tris-HCl", "source_label": "Tris-HCl"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-091.
+
+The authentic clarified-rumen JCM1423/1424 reference266 facts and distinct held companion remain unchanged. The current dependency additions concern two PYG/PY-glucose composites whose rumen component stays literal and UNMAPPED; they do not reinterpret the clarified source case or establish untreated fluid. Their unsupported peptone references are independently withdrawn, preserving the exact earlier processing and recipe holds. Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.
+
+{"assessment": "The authentic clarified-rumen JCM1423/1424 reference266 facts and distinct held companion remain unchanged. The current dependency additions concern two PYG/PY-glucose composites whose rumen component stays literal and UNMAPPED; they do not reinterpret the clarified source case or establish untreated fluid. Their unsupported peptone references are independently withdrawn, preserving the exact earlier processing and recipe holds. Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.", "assessment_origins": [{"assessment": "Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "reviewer": "/root/final_skeptical/preservation_audit", "scope": "Actual independent source/payload dependency assessment; final composed complete decision independently bound by parent reviewer."}], "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8", "case_input_sha256": "d338d1888332d7b1d4bcdee63f7a88c5c4658974375bf1f9ed6adbd49e7fa541", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:5935adfdab3abba3ad49de3bf66b06bd6ab425af20ea315a7c169ae4ec4a36b8", "CM_OCC:39c25bd01d2ee83bcda7de5b99ec410dab0b50232ce71a257cb1ad3d4adbd3ac"], "selected_decision_object_sha256": "272d14669e08bdccf6a667f953db69468d15019aaab21d0071e583545e884ed5", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Rumen fluid, clarified (see Medium No. 266)", "source": "culturemech", "source_case_id": "Rumen fluid, clarified (see Medium No. 266)", "source_label": "Rumen fluid, clarified (see Medium No. 266)"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-111.
+
+The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.
+
+{"assessment": "The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.", "assessment_origins": [{"assessment": "The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da", "case_input_sha256": "59becf6c2d9ffd925ad28c8515705125e5986e629fd9ab182e0c15a14f92d82b", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e", "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45", "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5", "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1", "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b", "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1", "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd", "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e", "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc", "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53", "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"], "selected_decision_object_sha256": "e27e7434b7c42f2db6edb7a8e4143f45639f87a5805a17e75afd6480dbc03f04", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "95% ethanol", "source": "culturemech", "source_case_id": "95% ethanol", "source_label": "95% ethanol"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-117.
+
+All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.
+
+{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.", "assessment_origins": [{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3", "case_input_sha256": "ff67d450affc1426840c96f3a73b32777864fd9ebb2c6386b63678d2630306fb", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:b5ef25941cd0463e766a67f3b3c1bb336460bc9a91b8978a7a87c74e022ad650"], "selected_decision_object_sha256": "bfb407ec8e46a53f76b689968ef2d61812d4b3aaf62bf7223a16f832427ed79d", "selected_disposition": "new_distinct_ingredient_proposal", "source": {"raw_source_label": "Thiamine-HCl⋅H2O (Vitamin B1)", "source": "culturemech", "source_case_id": "Thiamine-HCl⋅H2O (Vitamin B1)", "source_label": "Thiamine-HCl⋅H2O (Vitamin B1)"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-124.
+
+The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.
+
+{"assessment": "The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.", "assessment_origins": [{"assessment": "The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac", "case_input_sha256": "651d454a4e1fc51478afb0dcc97c7851022db21c2b168a6cc514f2566413ff34", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": ["CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"], "selected_decision_object_sha256": "f331c6ad70eb3b437dc79414ac7c25143502999b5c03c1c25284a74a87159de1", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Ethanol (95 %)", "source": "culturemech", "source_case_id": "Ethanol (95 %)", "source_label": "Ethanol (95 %)"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-127.
+
+The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion. The exact v3 report-only status correction has been independently rereviewed: current supported source-proposal grounding replaces stale self-only wording, while historical status and all source/owner/role/export limitations remain.
+
+{"assessment": "The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion. The exact v3 report-only status correction has been independently rereviewed: current supported source-proposal grounding replaces stale self-only wording, while historical status and all source/owner/role/export limitations remain.", "assessment_origins": [{"assessment": "The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-scientific-review-v1.json", "sha256": "5ca37ac611783e6de3ecc61a2d8ab80558de553703ebf42cf4194cecf8d0a577"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9", "case_input_sha256": "085cddfb99c7a52418ce5a67f3e3657ffb6142eab3d4528e1d1f94b9685425d1", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "8465032966d52fc5a13bd4c31fc5b5f69a9d452b6fc5a4c8d09658f70a7610c9", "selected_disposition": "new_distinct_ingredient_proposal", "source": {"raw_source_label": "Hipolypepton", "source": "mediadive", "source_case_id": "mediadive.ingredient:2060", "source_label": "Hipolypepton"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-130.
+
+The namespace-correct source is MediaDive ingredient559, solution1201 and DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay dry powder and its seven named formula inputs. Extra receiving glucose/thymine are excluded. Only the report caption changes; the exact previously reviewed source-specific powder payload and all holds remain.
+
+{"assessment": "The namespace-correct source is MediaDive ingredient559, solution1201 and DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay dry powder and its seven named formula inputs. Extra receiving glucose/thymine are excluded. Only the report caption changes; the exact previously reviewed source-specific powder payload and all holds remain.", "assessment_origins": [{"assessment": "The namespace-correct source is MediaDive ingredient559, solution1201 and DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay dry powder and its seven named formula inputs. Extra receiving glucose/thymine are excluded. Only the report caption changes; the exact previously reviewed source-specific powder payload and all holds remain.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8", "case_input_sha256": "2ec736685a259c1ec660a838197d43a9af1faf65e7ce6745e04aef7d9d08b33b", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "4ea610baad9232d6f7597df843a1abd3c9f62c6275980ba3c642df281e9ebe80", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Pennassay Broth", "source": "mediadive", "source_case_id": "mediadive.ingredient:559", "source_label": "Pennassay Broth"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-135.
+
+The corrected caption identifies ingredient1467, solution3366 and DSMZ1619. The full retained HiMediaM362 powder payload preserves23.74g powder, its six major named inputs and trace-mixture boundary; the separate15ml glycerol is not converted into dry-powder composition. Product, trace-formula and source/application holds remain.
+
+{"assessment": "The corrected caption identifies ingredient1467, solution3366 and DSMZ1619. The full retained HiMediaM362 powder payload preserves23.74g powder, its six major named inputs and trace-mixture boundary; the separate15ml glycerol is not converted into dry-powder composition. Product, trace-formula and source/application holds remain.", "assessment_origins": [{"assessment": "The corrected caption identifies ingredient1467, solution3366 and DSMZ1619. The full retained HiMediaM362 powder payload preserves23.74g powder, its six major named inputs and trace-mixture boundary; the separate15ml glycerol is not converted into dry-powder composition. Product, trace-formula and source/application holds remain.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2", "case_input_sha256": "2816f85f1e96abc6b0a0f49c28a990d85b3883334507a6b0bf7b484963d89034", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "5d09893a43ac89709541891b83e466e54fcb63af289ecdf8393dce353e9758c0", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "ISP 7 Medium", "source": "mediadive", "source_case_id": "mediadive.ingredient:1467", "source_label": "ISP 7 Medium"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-136.
+
+The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.
+
+{"assessment": "The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.", "assessment_origins": [{"assessment": "The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c", "case_input_sha256": "b62729c11d6e49e63656101ce94b5ce7e7ca73768e9f42a37f863587352a6837", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "b8a1bcca600a2af7ff367344ad65bcf00e40791388eb77e919484a1a1a09fc55", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Difco Marine Broth 2216", "source": "mediadive", "source_case_id": "mediadive.ingredient:1379", "source_label": "Difco Marine Broth 2216"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-144.
+
+The corrected caption identifies ingredient748, solution1635 and DSMZ804. The complete candidate is a source-qualified21g Mueller-Hinton broth powder input; separate yeast extract and XV factors remain receiving-medium ingredients. Unknown supplier/formula are not replaced by a Sigma prepared-medium identity or guessed component recipe.
+
+{"assessment": "The corrected caption identifies ingredient748, solution1635 and DSMZ804. The complete candidate is a source-qualified21g Mueller-Hinton broth powder input; separate yeast extract and XV factors remain receiving-medium ingredients. Unknown supplier/formula are not replaced by a Sigma prepared-medium identity or guessed component recipe.", "assessment_origins": [{"assessment": "The corrected caption identifies ingredient748, solution1635 and DSMZ804. The complete candidate is a source-qualified21g Mueller-Hinton broth powder input; separate yeast extract and XV factors remain receiving-medium ingredients. Unknown supplier/formula are not replaced by a Sigma prepared-medium identity or guessed component recipe.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47", "case_input_sha256": "d2743c804676b04cc902473447dc56fd98bd20210e9c2c3ce801046411d7b97f", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "4acfd4b1d6ca8152551f35058cab3368e3ebc5f5e0b9a743f1da1b577d26d245", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Mueller-Hinton broth", "source": "mediadive", "source_case_id": "mediadive.ingredient:748", "source_label": "Mueller-Hinton broth"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-158.
+
+The corrected caption identifies ingredient2095 and solutions651/5601 in DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder, its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren medium. The source caption correction neither approves a W03 owner union nor adds a receiving-medium component.
+
+{"assessment": "The corrected caption identifies ingredient2095 and solutions651/5601 in DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder, its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren medium. The source caption correction neither approves a W03 owner union nor adds a receiving-medium component.", "assessment_origins": [{"assessment": "The corrected caption identifies ingredient2095 and solutions651/5601 in DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder, its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren medium. The source caption correction neither approves a W03 owner union nor adds a receiving-medium component.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79", "case_input_sha256": "5f295e791c9cc9b1ce39c909b1afca231870a4819f66f8c8729e48c586b29e12", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "69b1ca1405c62626b16a5e00b7d87085117476651134d41963e35652ffa2c271", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "dehydrated Wilkins-Chalgren medium", "source": "mediadive", "source_case_id": "mediadive.ingredient:2095", "source_label": "dehydrated Wilkins-Chalgren medium"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-160.
+
+The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion. The exact v3 report-only status correction has been independently rereviewed: current supported source-proposal grounding replaces stale self-only wording, while historical status and all source/owner/role/export limitations remain.
+
+{"assessment": "The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion. The exact v3 report-only status correction has been independently rereviewed: current supported source-proposal grounding replaces stale self-only wording, while historical status and all source/owner/role/export limitations remain.", "assessment_origins": [{"assessment": "The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-scientific-review-v1.json", "sha256": "5ca37ac611783e6de3ecc61a2d8ab80558de553703ebf42cf4194cecf8d0a577"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c", "case_input_sha256": "6aefe4857dc7de8c44c7ceeef99f0ad8ac708faaedc834443d3a6e24b6ac8aa0", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "c93b199495211691e6fcd89392683a4a080726e19db691fa44293809fb275cff", "selected_disposition": "supplied_form_correction", "source": {"raw_source_label": "Polypeptone", "source": "mediadive", "source_case_id": "mediadive.ingredient:442", "source_label": "Polypeptone"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-173.
+
+The complete frozen two-observation peptones case has the ordinary generic Peptone material sense. NLM D010461 explicitly names Peptone and defines conventional partial protein hydrolysates, consistent with the manufacturer definition. The merely possible base-hydrolysis route or absent precipitation assay does not establish a different actual preparation and must not block exact-term priority. The selected generic owner is mesh:D010461; the older local/D011492 proposal and its stronger food-use/assay reasoning remain preserved as history and are explicitly qualified. Neither source process nor measured lot behavior is invented. Twelve authentic child origins are dependency corrections attached to this existing case, not new W05 source ownership; their literal/raw scopes remain intact. Five genuine named generic parts now reference this exact parent; the other unsupported parts remain UNMAPPED. Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.
+
+{"assessment": "The complete frozen two-observation peptones case has the ordinary generic Peptone material sense. NLM D010461 explicitly names Peptone and defines conventional partial protein hydrolysates, consistent with the manufacturer definition. The merely possible base-hydrolysis route or absent precipitation assay does not establish a different actual preparation and must not block exact-term priority. The selected generic owner is mesh:D010461; the older local/D011492 proposal and its stronger food-use/assay reasoning remain preserved as history and are explicitly qualified. Neither source process nor measured lot behavior is invented. Twelve authentic child origins are dependency corrections attached to this existing case, not new W05 source ownership; their literal/raw scopes remain intact. Five genuine named generic parts now reference this exact parent; the other unsupported parts remain UNMAPPED. Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.", "assessment_origins": [{"assessment": "The complete frozen two-observation peptones case has the ordinary generic Peptone material sense. NLM D010461 explicitly names Peptone and defines conventional partial protein hydrolysates, consistent with the manufacturer definition. The merely possible base-hydrolysis route or absent precipitation assay does not establish a different actual preparation and must not block exact-term priority. The selected generic owner is mesh:D010461; the older local/D011492 proposal and its stronger food-use/assay reasoning remain preserved as history and are explicitly qualified. Neither source process nor measured lot behavior is invented. Twelve authentic child origins are dependency corrections attached to this existing case, not new W05 source ownership; their literal/raw scopes remain intact. Five genuine named generic parts now reference this exact parent; the other unsupported parts remain UNMAPPED.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/direct-parent-independent-review-v1.json", "sha256": "98bd8081855ab166d43528cdfa1e2f1ff7f0546bf1398d8b7d8baa76a7e2de49"}, "reviewer": "/root/final_skeptical"}, {"assessment": "Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "reviewer": "/root/final_skeptical/preservation_audit", "scope": "Actual independent source/payload dependency assessment; final composed complete decision independently bound by parent reviewer."}], "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151", "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "612356cba964889397f06c75030bce5e7a2774d057817e32451845b3cea722c9", "selected_disposition": "unresolved", "source": {"raw_source_label": "peptones", "source": "microbedecoder", "source_case_id": "kgmicrobe.compound:peptones", "source_label": "peptones"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-176.
+
+Full MICRO:0000181 definition and its source discussion describe generic enzymatic soy-flour digest, consistent with MediaDive75 and the independent manufacturer definition. This is a supported exact generic identity. The erroneous Hordeum parenthesis, branded/papaic synonyms and numerical product annotations are not imported. The complete final payload preserves five existing alias exclusions, the unresolved peptic-process alias context, old evidence/history, statistics and roles. The separately reviewed rejected Bacto tombstone prevents the inherited shared-ID representative from acquiring an unsupported generic-Soy equivalence. Neither shared-ID source membership nor export admission is established. The authentic rejected Bacto Soytone tombstone now has an explicitly empty representative, preventing native shared-FOODON fallback while retaining its own rejected continuity. This is neither branded/generic synonym equality nor a reassignment of the shared source associations. Exact original owner binding is deduplicated; current shared-owner/source, role and export holds remain.
+
+{"assessment": "Full MICRO:0000181 definition and its source discussion describe generic enzymatic soy-flour digest, consistent with MediaDive75 and the independent manufacturer definition. This is a supported exact generic identity. The erroneous Hordeum parenthesis, branded/papaic synonyms and numerical product annotations are not imported. The complete final payload preserves five existing alias exclusions, the unresolved peptic-process alias context, old evidence/history, statistics and roles. The separately reviewed rejected Bacto tombstone prevents the inherited shared-ID representative from acquiring an unsupported generic-Soy equivalence. Neither shared-ID source membership nor export admission is established. The authentic rejected Bacto Soytone tombstone now has an explicitly empty representative, preventing native shared-FOODON fallback while retaining its own rejected continuity. This is neither branded/generic synonym equality nor a reassignment of the shared source associations. Exact original owner binding is deduplicated; current shared-owner/source, role and export holds remain.", "assessment_origins": [{"assessment": "Full MICRO:0000181 definition and its source discussion describe generic enzymatic soy-flour digest, consistent with MediaDive75 and the independent manufacturer definition. This is a supported exact generic identity. The erroneous Hordeum parenthesis, branded/papaic synonyms and numerical product annotations are not imported. The complete final payload preserves five existing alias exclusions, the unresolved peptic-process alias context, old evidence/history, statistics and roles. The separately reviewed rejected Bacto tombstone prevents the inherited shared-ID representative from acquiring an unsupported generic-Soy equivalence. Neither shared-ID source membership nor export admission is established.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/parents-scientific-review-v1.json", "sha256": "25889e17450b8e7503a816355727345160fb4dc3af872e70a8647e1116169c3b"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25", "case_input_sha256": "1d9a6c0b9074035cc4ed54f5ea2cdd4f8a2a9b59bc565759d3038158263320d9", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "5627f294f358fe6e5576646b4d0a9c49e3a201b1ae77898e6e75904f5339014d", "selected_disposition": "supplied_form_correction", "source": {"raw_source_label": "Soy peptone", "source": "mediadive", "source_case_id": "mediadive.ingredient:75", "source_label": "Soy peptone"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-181.
+
+The complete existing cooked-meat source decision remains intact. Only the FAB dependency report/evidence is added: actual methods associate FAB with Oxoid, while the separate PYG assay and LabM/Neogen comparator cannot supply its historical formula. The unsupported peptone resolving reference is withdrawn without asserting peptone absent. Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.
+
+{"assessment": "The complete existing cooked-meat source decision remains intact. Only the FAB dependency report/evidence is added: actual methods associate FAB with Oxoid, while the separate PYG assay and LabM/Neogen comparator cannot supply its historical formula. The unsupported peptone resolving reference is withdrawn without asserting peptone absent. Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.", "assessment_origins": [{"assessment": "Additive causal dependency delta is justified for these exact child proposals. The frozen case remains the original assigned source object; child source observations do not become new W05 cases. Union fields and separate dependency_reassessment preserve parent reassessment and earlier reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages remain selected.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "reviewer": "/root/final_skeptical/preservation_audit", "scope": "Actual independent source/payload dependency assessment; final composed complete decision independently bound by parent reviewer."}], "case_id": "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a", "case_input_sha256": "590323eb3fa1cd984565c5eb371fd4cdfe185fdd607ad99ae089928324480a6e", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "27a5357c8c99038debf77b5020cae4c715c1755fe734f76b727af6dadef000c9", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Cooked meat medium", "source": "mediadive", "source_case_id": "mediadive.ingredient:1824", "source_label": "Cooked meat medium"}, "source_owner_export_approval": false}
+
+### Complete selected case within explicit source and curation scope
+
+identity: supported. Targets: CASE-182.
+
+The complete Difco document supports the nine-input dehydrated RCM formula and standard38g/L reconstitution. Sodium chloride and agar identities are supported. The printed generic Peptone input also supports the conditional kgmicrobe.ingredient:peptone reference without an unsupported mammalian/Bacto/substrate/enzyme inference. The v2 successor correctly removes the false attribution of RCM to the20-claim consumer review, retains Marine separately, and preserves all quantities, approximate-formula footnote and unresolved specific form/processing facts. Whole product remains distinct in source scope from Oxoid labels. RCM final source decision preserves its exact raw case, occurrences and product/source holds. The added direct-parent continuity field qualifies the earlier local generic reference only; no 20-claim W03 attribution or supplier-missing hold is restored.
+
+{"assessment": "The complete Difco document supports the nine-input dehydrated RCM formula and standard38g/L reconstitution. Sodium chloride and agar identities are supported. The printed generic Peptone input also supports the conditional kgmicrobe.ingredient:peptone reference without an unsupported mammalian/Bacto/substrate/enzyme inference. The v2 successor correctly removes the false attribution of RCM to the20-claim consumer review, retains Marine separately, and preserves all quantities, approximate-formula footnote and unresolved specific form/processing facts. Whole product remains distinct in source scope from Oxoid labels. RCM final source decision preserves its exact raw case, occurrences and product/source holds. The added direct-parent continuity field qualifies the earlier local generic reference only; no 20-claim W03 attribution or supplier-missing hold is restored.", "assessment_origins": [{"assessment": "The complete Difco document supports the nine-input dehydrated RCM formula and standard38g/L reconstitution. Sodium chloride and agar identities are supported. The printed generic Peptone input also supports the conditional kgmicrobe.ingredient:peptone reference without an unsupported mammalian/Bacto/substrate/enzyme inference. The v2 successor correctly removes the false attribution of RCM to the20-claim consumer review, retains Marine separately, and preserves all quantities, approximate-formula footnote and unresolved specific form/processing facts. Whole product remains distinct in source scope from Oxoid labels.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer": "/root/final_skeptical"}, {"assessment": "RCM final source decision preserves its exact raw case, occurrences and product/source holds. The added direct-parent continuity field qualifies the earlier local generic reference only; no 20-claim W03 attribution or supplier-missing hold is restored.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/rcm-direct-reference-review-v1.json", "sha256": "fa6f76aa6a58e308befe1483bbf45454eb1f274db2af9332b0632d59ffeb7785"}, "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd", "case_input_sha256": "633885bc7239951b8cb7ec904e6bf2149cfb8ad981c82a1faa5006413e8f7e24", "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json", "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"}, "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer": "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256": "ce10d7c47eed94cabc7f346987e040f14564f6225d7669f2e8d46aee40ae9afd", "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label": "Reinforced clostridial medium", "source": "mediadive", "source_case_id": "mediadive.ingredient:1769", "source_label": "Reinforced clostridial medium"}, "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: CHEM-C1193-DSMZ_394_1137-Tris.
+
+Complete stock candidate retains the source-defined nominal 1 M Tris-HCl pH7.5 preparation and all six occurrence routes. Both material component slots are absent; the stock is not mapped to dry hydrochloride or free-base species. DSMZ394 and1137 support the same bounded nominal strength/pH despite different receiving doses, without proving unknown full formulation details equal. Original identity, evidence, source-specific constraints and history are unchanged.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml", "root": "artifact", "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"}, "applies_to_occurrence_ids": ["CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102", "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857", "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed", "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807", "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b", "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"], "assessment": "Complete stock candidate retains the source-defined nominal 1 M Tris-HCl pH7.5 preparation and all six occurrence routes. Both material component slots are absent; the stock is not mapped to dry hydrochloride or free-base species. DSMZ394 and1137 support the same bounded nominal strength/pH despite different receiving doses, without proving unknown full formulation details equal. Original identity, evidence, source-specific constraints and history are unchanged.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"}, "case_ids": ["CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"], "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_assessments": {"history": "Exact prior history preserved with no new no-op event. Recorded private correction predates filing; filing precedes first publication.", "identity": "Whole nominal stock identity retained; no solute identity substitution. HEPES family owner choice remains conditional.", "mapping_evidence": "Current LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite in this supplement.", "material_partonomy": "components and component_assertion both absent; unsupported historical moieties/species are preserved only in immutable old payload/finding.", "other_fields": "All selected payload fields are identical to base0bac and first corrected publication5156; no source, role, count or negative-object change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium pH and water remain separate."}, "limits": ["No final owner installation or family reconciliation.", "No complete formulation, solvent, titrant, component molarity or free-base/salt proportion inferred."], "native_check": {"capture": {"path": ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256": "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors": [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:tris_hcl_1m_ph_7_5_dsmz_394_1137", "object_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf&#124;MIM:curator=Codex worker05 /root/chemicals_research final report correction", "subject_id": "MIM:Tris_HCl_1M_pH_7_5_DSMZ_394_1137", "subject_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)", "validation_method": ""}]}, "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base": true, "payload_author": "/root/chemicals_research, historical correction preserved", "primary_reassessment_author": "/root/buffer_tris", "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris", "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "87e5487ea868793a2771a59a6623f02279567d0904c2c23e60696c14f2c5331b", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: CHEM-C1193-HEPES-1221.
+
+Complete NBRC1221 candidate preserves the whole 1 M HEPES-KOH name, source URL, LLM interpretation and two authentic historical events. Neither material component slot is present. The source receiving pH7.14, water and other nested recipes have not been imported as stock properties. Historical local identity is conditional, not a claim of distinctness from NBRC1474.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml", "root": "artifact", "sha256": "35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450"}, "applies_to_occurrence_ids": ["CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"], "assessment": "Complete NBRC1221 candidate preserves the whole 1 M HEPES-KOH name, source URL, LLM interpretation and two authentic historical events. Neither material component slot is present. The source receiving pH7.14, water and other nested recipes have not been imported as stock properties. Historical local identity is conditional, not a claim of distinctness from NBRC1474.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"}, "case_ids": ["CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"], "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_assessments": {"history": "Exact prior history preserved with no new no-op event. Recorded private correction predates filing; filing precedes first publication.", "identity": "Whole nominal stock identity retained; no solute identity substitution. HEPES family owner choice remains conditional.", "mapping_evidence": "Current LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite in this supplement.", "material_partonomy": "components and component_assertion both absent; unsupported historical moieties/species are preserved only in immutable old payload/finding.", "other_fields": "All selected payload fields are identical to base0bac and first corrected publication5156; no source, role, count or negative-object change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium pH and water remain separate."}, "limits": ["No final owner installation or family reconciliation.", "No complete formulation, solvent, titrant, component molarity or free-base/salt proportion inferred."], "native_check": {"capture": {"path": ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256": "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors": [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1221", "object_label": "1 M HEPES-KOH stock (NBRC 1221)", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221&#124;MIM:curator=Codex worker05 /root/chemicals_research final report correction", "subject_id": "MIM:HEPES_KOH_1M_NBRC_1221", "subject_label": "1 M HEPES-KOH stock (NBRC 1221)", "validation_method": ""}]}, "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base": true, "payload_author": "/root/chemicals_research, historical correction preserved", "primary_reassessment_author": "/root/buffer_hepes", "proposal_id": "CHEM-C1193-HEPES-1221", "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "e330bba81afde04b201a2df4c140262dda83d00d143fc22c735d8ee5253694b8", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: CHEM-C1193-HEPES-1474.
+
+Complete NBRC1474 candidate preserves the whole 1 M HEPES-KOH name, source URL, LLM interpretation and two authentic historical events. Neither material component slot is present. Receiving pH9.0 is correctly kept separate from unknown stock pH. Missing formulation facts do not prove equality or difference from NBRC1221; no owner winner or co-installation is approved.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml", "root": "artifact", "sha256": "add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd"}, "applies_to_occurrence_ids": ["CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"], "assessment": "Complete NBRC1474 candidate preserves the whole 1 M HEPES-KOH name, source URL, LLM interpretation and two authentic historical events. Neither material component slot is present. Receiving pH9.0 is correctly kept separate from unknown stock pH. Missing formulation facts do not prove equality or difference from NBRC1221; no owner winner or co-installation is approved.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"}, "case_ids": ["CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"], "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_assessments": {"history": "Exact prior history preserved with no new no-op event. Recorded private correction predates filing; filing precedes first publication.", "identity": "Whole nominal stock identity retained; no solute identity substitution. HEPES family owner choice remains conditional.", "mapping_evidence": "Current LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite in this supplement.", "material_partonomy": "components and component_assertion both absent; unsupported historical moieties/species are preserved only in immutable old payload/finding.", "other_fields": "All selected payload fields are identical to base0bac and first corrected publication5156; no source, role, count or negative-object change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium pH and water remain separate."}, "limits": ["No final owner installation or family reconciliation.", "No complete formulation, solvent, titrant, component molarity or free-base/salt proportion inferred."], "native_check": {"capture": {"path": ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256": "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors": [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474", "object_label": "1 M HEPES-KOH stock (NBRC 1474)", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474&#124;MIM:curator=Codex worker05 /root/chemicals_research final report correction", "subject_id": "MIM:HEPES_KOH_1M_NBRC_1474", "subject_label": "1 M HEPES-KOH stock (NBRC 1474)", "validation_method": ""}]}, "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base": true, "payload_author": "/root/chemicals_research, historical correction preserved", "primary_reassessment_author": "/root/buffer_hepes", "proposal_id": "CHEM-C1193-HEPES-1474", "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "cc1a4ea0eb091e03a354c20db6004c50f7351f8046f198be3f90d0af977a621b", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: CHEM-C1193-JCM_1061-Tris.
+
+Complete stock candidate retains the explicit 0.5 M Tris-HCl solution pH8.0 and both JCM1061 routes. Both material component slots are absent. Source water/final1L instructions describe the receiving medium, not the stock. No frozen100G_PER_L or990.099percent corruption is adopted, no molecular salt/base split is invented, and all original identity, evidence and history are unchanged.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml", "root": "artifact", "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"}, "applies_to_occurrence_ids": ["CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11", "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"], "assessment": "Complete stock candidate retains the explicit 0.5 M Tris-HCl solution pH8.0 and both JCM1061 routes. Both material component slots are absent. Source water/final1L instructions describe the receiving medium, not the stock. No frozen100G_PER_L or990.099percent corruption is adopted, no molecular salt/base split is invented, and all original identity, evidence and history are unchanged.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"}, "case_ids": ["CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"], "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_assessments": {"history": "Exact prior history preserved with no new no-op event. Recorded private correction predates filing; filing precedes first publication.", "identity": "Whole nominal stock identity retained; no solute identity substitution. HEPES family owner choice remains conditional.", "mapping_evidence": "Current LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite in this supplement.", "material_partonomy": "components and component_assertion both absent; unsupported historical moieties/species are preserved only in immutable old payload/finding.", "other_fields": "All selected payload fields are identical to base0bac and first corrected publication5156; no source, role, count or negative-object change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium pH and water remain separate."}, "limits": ["No final owner installation or family reconciliation.", "No complete formulation, solvent, titrant, component molarity or free-base/salt proportion inferred."], "native_check": {"capture": {"path": ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256": "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors": [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061", "object_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061&#124;MIM:curator=Codex worker05 /root/chemicals_research final report correction", "subject_id": "MIM:Tris_HCl_0_5M_pH_8_JCM_1061", "subject_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)", "validation_method": ""}]}, "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base": true, "payload_author": "/root/chemicals_research, historical correction preserved", "primary_reassessment_author": "/root/buffer_tris", "proposal_id": "CHEM-C1193-JCM_1061-Tris", "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "d6dd1f8fd1d3d19adf51de1d6a0e1655ae68e4a54d38ad4b16d9248377a60e3f", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: CHEM-C1193-Tris-HCl-salt.
+
+The complete weighed Tris hydrochloride salt payload retains CAS1185-53-1, form-specific registry identity and NARROW_MATCH to CHEBI9754. Native output correctly contains the broader parent row plus the CAS and local compound identity rows. The weighed salt contexts remain distinct from the nominal buffer-stock contexts reviewed separately; no salt substitution, acid/base partonomy or pH-derived stoichiometry is inferred. Full unchanged source-supported payload, historical evidence and holds were reread.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml", "root": "artifact", "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"}, "assessment": "The complete weighed Tris hydrochloride salt payload retains CAS1185-53-1, form-specific registry identity and NARROW_MATCH to CHEBI9754. Native output correctly contains the broader parent row plus the CAS and local compound identity rows. The weighed salt contexts remain distinct from the nominal buffer-stock contexts reviewed separately; no salt substitution, acid/base partonomy or pH-derived stoichiometry is inferred. Full unchanged source-supported payload, historical evidence and holds were reread.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "case_ids": ["CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "CHEM-C1193-Tris-HCl-salt", "selected_proposal_object_sha256": "223e958b6b4fcee3332cd579e37102d7d0c645ae62d641c8d2a865b3327244a5", "source_owner_export_approval": false, "unchanged_from_published_base": true, "wording_clarification": "This avoids reading the prior lane receipt phrase about seven weighed contexts as a count of seven salt-only occurrences. No payload, source or decision count changes."}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: CHEM-C1193-ethanol95-dsmz_78.
+
+The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml", "root": "artifact", "sha256": "2212227cc2fafd1aa465189994c6b928af8769629448678c98743cda87969c85"}, "assessment": "The complete candidate correctly states twelve routed occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established. The candidate retains only the named ethanol component, conditional preparation-family handles and all original equality/difference and owner holds. The count repair adds no formulation conclusion.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "case_ids": ["CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da", "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "CHEM-C1193-ethanol95-dsmz_78", "selected_proposal_object_sha256": "1f1bad71c15b462be66fd76bf0feb3c0bb18f224d6cbb716d4735c59d56724a9", "source_owner_export_approval": false, "unchanged_from_published_base": true}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: FINAL-CHEM-P-thiamine-hcl-monohydrate.
+
+All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemical-supplement-v1/proposed-v1/Thiamine_Hcl_Monohydrate.yaml", "root": "artifact", "sha256": "15861ae70999bed905cfe24576f2004ea0985da541023ef07a56935d1b28705b"}, "assessment": "All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg within their vitamin preparations. One local source-defined material is supported across both raw spelling cases. The full candidate preserves the hydration qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin preparation and its receiving doses do not become properties of the single ingredient. Existing source and integration holds remain.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "case_ids": ["CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a", "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "FINAL-CHEM-P-thiamine-hcl-monohydrate", "selected_proposal_object_sha256": "f4e6d00a107e9e7b846b5e46d384aebfc22067e84d65d3ac233822e8d7f67e34", "source_owner_export_approval": false, "unchanged_from_published_base": true}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: M1193-P-CM0643.
+
+The corrected caption identifies ingredient2095 and solutions651/5601 in DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder, its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren medium. The source caption correction neither approves a W03 owner union nor adds a receiving-medium component.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml", "root": "artifact", "sha256": "cee20ef5c36ecce85e5e562c5818d6870c17f91cb6c0cce6b7547b9c248aefc9"}, "assessment": "The corrected caption identifies ingredient2095 and solutions651/5601 in DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder, its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren medium. The source caption correction neither approves a W03 owner union nor adds a receiving-medium component.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "case_ids": ["CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85", "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b", "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-CM0643", "selected_proposal_object_sha256": "cff72b2896f93e6f2776a21520ef6bec65e513b48d309bc38dd8ace3d0238f47", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES.
+
+The Falsen passages explicitly assign FAB to Oxoid and separately describe Anaerobe Systems PYG fermentation broth. The complete Neogen sheet establishes a LabM/Neogen comparator, not the original FAB formula. Removing the peptone resolving ID is supported without claiming peptone absent. The prior meat-granule withdrawal remains unchanged; starch/glucose and other inherited parts remain unverified.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml", "root": "artifact", "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"}, "assessment": "The Falsen passages explicitly assign FAB to Oxoid and separately describe Anaerobe Systems PYG fermentation broth. The complete Neogen sheet establishes a LabM/Neogen comparator, not the original FAB formula. Removing the peptone resolving ID is supported without claiming peptone absent. The prior meat-granule withdrawal remains unchanged; starch/glucose and other inherited parts remain unverified.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml", "sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5"}, "case_ids": ["KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "component_index": 1, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The original Falsen 2005 methods/results text associates Fastidious Anaerobe Broth with Oxoid. Its separately named Anaerobe Systems peptone/yeast/glucose fermentation broth is a different preparation and supplies no FAB recipe. The Neogen NCM0199 sheet is a LabM/Neogen product comparator, unselected for this source. Original Oxoid catalogue/formula and the historical peptone material remain unresolved. The existing meat-granule withdrawal is retained; starch/glucose and other inherited component claims are unchanged and remain unverified. No claim that peptone is absent is made. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666 and https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719468092.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.359663+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Original Oxoid historical FAB product/formula and source-bound peptone constituent remain missing; no substitute from the separate PYG assay.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml", "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"}, "primary_author": "/root/buffer_tris", "proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml", "sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99"}, "selected_proposal_object_sha256": "de23dd6b60fc245aac9b4783ba9364b5286e084fd130dd24e73b654d4a33907b", "source_ids": ["FAB_ORIGINAL", "NEOGEN_NCM0199", "ACUMEDIA7110"], "source_observation_rows": [6029], "source_owner_export_approval": false, "target_id": "PC01"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: M1193-P-ISP7.
+
+The corrected caption identifies ingredient1467, solution3366 and DSMZ1619. The full retained HiMediaM362 powder payload preserves23.74g powder, its six major named inputs and trace-mixture boundary; the separate15ml glycerol is not converted into dry-powder composition. Product, trace-formula and source/application holds remain.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/media/proposed/ISP_7_Medium.yaml", "root": "artifact", "sha256": "82cf5273f8018fec8ad20a956e8bfa2fc1a997f28f2025bebf510658e987fde3"}, "assessment": "The corrected caption identifies ingredient1467, solution3366 and DSMZ1619. The full retained HiMediaM362 powder payload preserves23.74g powder, its six major named inputs and trace-mixture boundary; the separate15ml glycerol is not converted into dry-powder composition. Product, trace-formula and source/application holds remain.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "case_ids": ["CM_NAME:3a71f979a20ccc7a9e900d1b92ba2dbeefc6b76bf95c72aa79079be2cdf048d5", "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-ISP7", "selected_proposal_object_sha256": "8ee1ea628294960cd7f048076dfc18aed1bdc13bd1fc23f98ee743184b7f17aa", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: M1193-P-MARINE2216.
+
+The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "buffer-parts-v1/media/proposed/Marine_Broth_2216.yaml", "root": "artifact", "sha256": "e5be534e5df60f0089cdba02e083d8390113f08550e09b89dbcdc67eda9c00e6"}, "assessment": "The complete BD manufacturer document identifies dry Marine Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative to the approximate/performance-adjustable formula, not a lot analysis. Seven new material references are supported by the corresponding full term definitions and native owners. Salt hydrate/stoichiometry, extract processing and the separately directed Peptone withdrawal remain explicit; no reconstitution water is inserted into the dry product.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "case_ids": ["CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636", "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-MARINE2216", "selected_proposal_object_sha256": "4ec547fe987beeb91a72ebc55dda8202af393c45909d096860bf67e007794a11", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: M1193-P-MH-POWDER-DSMZ804.
+
+The corrected caption identifies ingredient748, solution1635 and DSMZ804. The complete candidate is a source-qualified21g Mueller-Hinton broth powder input; separate yeast extract and XV factors remain receiving-medium ingredients. Unknown supplier/formula are not replaced by a Sigma prepared-medium identity or guessed component recipe.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml", "root": "artifact", "sha256": "cb8d8111cd0163507fc4e595e59e4371c711a3f085b53776821676e538d6504b"}, "assessment": "The corrected caption identifies ingredient748, solution1635 and DSMZ804. The complete candidate is a source-qualified21g Mueller-Hinton broth powder input; separate yeast extract and XV factors remain receiving-medium ingredients. Unknown supplier/formula are not replaced by a Sigma prepared-medium identity or guessed component recipe.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "case_ids": ["CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4", "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-MH-POWDER-DSMZ804", "selected_proposal_object_sha256": "78c7f488d9d1721fcf562e490aeb22d78b4d269b2d8f8101d57ad823365db831", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: M1193-P-PENASSAY_BROTH_DIFCO.
+
+The namespace-correct source is MediaDive ingredient559, solution1201 and DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay dry powder and its seven named formula inputs. Extra receiving glucose/thymine are excluded. Only the report caption changes; the exact previously reviewed source-specific powder payload and all holds remain.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml", "root": "artifact", "sha256": "8a546e0756ecfd879fc9c1da6583433a007ee207b3c47959c94f808ec17e92e7"}, "assessment": "The namespace-correct source is MediaDive ingredient559, solution1201 and DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay dry powder and its seven named formula inputs. Extra receiving glucose/thymine are excluded. Only the report caption changes; the exact previously reviewed source-specific powder payload and all holds remain.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "case_ids": ["CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b", "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-PENASSAY_BROTH_DIFCO", "selected_proposal_object_sha256": "54345a62c712911b7090598636d50b13e0e005368e7e6834fe569858a8798228", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: M1193-P-RCM-182.
+
+The complete manufacturer RCM formula explicitly names generic Peptone10g per litre at standard reconstitution. This is a valid generic input independent of an unidentified supplier or a hypothetical lot assay. The exact already-reviewed generic owner now uses mesh:D010461; updating this single conditional catalog reference is scientifically consistent. All other eight parts, all nine printed amounts/units, dry-product identity, COMPLETE nominal enumeration and approximate/performance-adjustable footnote remain unchanged. New ComponentEvidence is explicitly agent-assisted RECIPE_SOURCE, distinct from human-only MappingEvidence. No Bacto, animal origin, enzyme, supplier or whole-formulation equality is inferred. All old source/product/role/export holds remain.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml", "root": "artifact", "sha256": "089960c4d8a03718b71801622afa270f443ee109eb045c43b16677a9dbb6c7a6"}, "all_unchanged_fields_and_history_preserved": true, "assessment": "The complete manufacturer RCM formula explicitly names generic Peptone10g per litre at standard reconstitution. This is a valid generic input independent of an unidentified supplier or a hypothetical lot assay. The exact already-reviewed generic owner now uses mesh:D010461; updating this single conditional catalog reference is scientifically consistent. All other eight parts, all nine printed amounts/units, dry-product identity, COMPLETE nominal enumeration and approximate/performance-adjustable footnote remain unchanged. New ComponentEvidence is explicitly agent-assisted RECIPE_SOURCE, distinct from human-only MappingEvidence. No Bacto, animal origin, enzyme, supplier or whole-formulation equality is inferred. All old source/product/role/export holds remain.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/rcm-direct-reference-review-v1.json", "sha256": "fa6f76aa6a58e308befe1483bbf45454eb1f274db2af9332b0632d59ffeb7785"}, "case_ids": ["KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd"], "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco", "object_label": "Reinforced clostridial medium (BD Difco)", "object_source": "kgm:ingredient", "other": "Reinforced clostridial medium&#124;Reinforced clostridial medium (BD-Difco)", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf&#124;MIM:curator=Codex W05 /root consolidated exact component continuity", "subject_id": "MIM:Reinforced_Clostridial_Medium", "subject_label": "Reinforced clostridial medium (BD Difco)", "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco", "object_label": "Reinforced clostridial medium (BD Difco)", "object_source": "kgm:ingredient", "other": "Reinforced clostridial medium&#124;Reinforced clostridial medium (BD-Difco)", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf&#124;MIM:curator=Codex W05 /root consolidated component re-review", "subject_id": "MIM:Reinforced_Clostridial_Medium", "subject_label": "Reinforced clostridial medium (BD Difco)", "validation_method": ""}], "complete_payload_read": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "native_scope": "Whole-product row identity/predicate unchanged; only last-curator source provenance may differ with truthful appended history.", "proposal_id": "M1193-P-RCM-182", "selected_proposal_object_sha256": "262233347af7a56c4ff982a427ea6c9df4141479f77eade2b7192ac03d508f96", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: R1193-DEP-rumen-pyg.
+
+The source is E. ruminantium PYG+rumen fluid. Bryant original body is challenge-blocked, Wiley source inaccessible, and the captured ATCC17233 Medium602 recommendation is not a bridge to this historical PYG preparation. The peptone withdrawal retains the earlier literal rumen-fluid uncertainty.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml", "root": "artifact", "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"}, "assessment": "The source is E. ruminantium PYG+rumen fluid. Bryant original body is challenge-blocked, Wiley source inaccessible, and the captured ATCC17233 Medium602 recommendation is not a bridge to this historical PYG preparation. The peptone withdrawal retains the earlier literal rumen-fluid uncertainty.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYG_Rumen_Fluid.yaml", "sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01"}, "case_ids": ["CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "ingredient_type", "components", "component_assertion", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PYG + rumen fluid observation belongs to Eubacterium ruminantium. The original source chapter was inaccessible and the Bryant 1959 body access was challenge-blocked; the captured ATCC alternative medium listing is not a source recipe bridge. The original PYG base remains unresolved. Preserve the already corrected literal rumen-fluid UNMAPPED part and its processing/animal-origin holds. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.583291+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Original E. ruminantium PYG-rumen base formulation; processing/animal-origin holds of the rumen input remain separate.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml", "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"}, "primary_author": "/root/buffer_tris", "proposal_id": "R1193-DEP-rumen-pyg", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml", "sha256": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a"}, "selected_proposal_object_sha256": "67fa7e975aa77f175b410c400fe4e03db0e3f97c497a8f6e7f62f8217078155a", "source_ids": ["RUMINANTIUM1959", "BERGEY_ORIGINAL"], "source_observation_rows": [5906], "source_owner_export_approval": false, "target_id": "PC15"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: R1193-DEP-rumen-pyglucose.
+
+The raw observation is T. socranskii with the original source link naming subsp. paredis. Smibert1984 abstract supports rumen or fatty-acid requirements, but not the peptone recipe. The peptone withdrawal correctly composes with the previous unclarified rumen-fluid correction; no Prevotella recipe is imported.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml", "root": "artifact", "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"}, "assessment": "The raw observation is T. socranskii with the original source link naming subsp. paredis. Smibert1984 abstract supports rumen or fatty-acid requirements, but not the peptone recipe. The peptone withdrawal correctly composes with the previous unclarified rumen-fluid correction; no Prevotella recipe is imported.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-glucose-rumen_Fluid.yaml", "sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777"}, "case_ids": ["CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PY-glucose-rumen fluid observation is Treponema socranskii with the source LPSN link naming subsp. paredis. The matched Smibert 1984 abstract describes rumen-fluid or fatty-acid requirements but supplies no source peptone recipe. Full original methods were not recovered. Unrelated Prevotella cultures cannot bind this preparation. Preserve the already withdrawn clarification and all rumen-fluid uncertainty. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.514419+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Original Treponema PY base or a demonstrated historical recipe bridge; rumen processing/animal origin remains independently unresolved.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml", "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"}, "primary_author": "/root/buffer_tris", "proposal_id": "R1193-DEP-rumen-pyglucose", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml", "sha256": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de"}, "selected_proposal_object_sha256": "932e3c61ed82cad28bb0b8efb2046fb405dbc873f4ec37cd457a7776161e4b85", "source_ids": ["SMIBERT1984", "BERGEY_ORIGINAL"], "source_observation_rows": [20395], "source_owner_export_approval": false, "target_id": "PC08"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: R1193-P-bottom-628.
+
+The complete JCM628 recipe explicitly defines a lower layer from 50 ml washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose. The candidate transcribes these named material inputs without identifying the whole as FeS or importing the upper layer. Washing and suspension are retained; amounts remain batch inputs rather than invented final concentrations.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml", "root": "artifact", "sha256": "8a6073d7ada0e2a1e1d2b7de8fd598796d81a7910eb3dd6f48a5db8927490eab"}, "assessment": "The complete JCM628 recipe explicitly defines a lower layer from 50 ml washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose. The candidate transcribes these named material inputs without identifying the whole as FeS or importing the upper layer. Washing and suspension are retained; amounts remain batch inputs rather than invented final concentrations.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "case_ids": ["CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "R1193-P-bottom-628", "selected_proposal_object_sha256": "06300b2a56c6ce643a09601a5866bca5bd84239876aaee2b1e32097d2c5fcf1e", "source_owner_export_approval": false, "unchanged_from_published_base": true}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: R1193-P-bottom-629.
+
+JCM629 positively replaces the JCM628 mineral solution with its artificial saltwater. It retains the same washed FeS preparation and agarose. This is a demonstrated preparation difference; no zero-valent-iron substitution is present. The complete payload preserves the one-level preparation scope and exact original occurrence route.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml", "root": "artifact", "sha256": "a6026a950d64b03bad39ad9da2464f2af0d59c396198e83b146d6924879f2fdd"}, "assessment": "JCM629 positively replaces the JCM628 mineral solution with its artificial saltwater. It retains the same washed FeS preparation and agarose. This is a demonstrated preparation difference; no zero-valent-iron substitution is present. The complete payload preserves the one-level preparation scope and exact original occurrence route.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "case_ids": ["CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "R1193-P-bottom-629", "selected_proposal_object_sha256": "284d8b48ec05a9bfe47755071927777c77bf978fb0c4df132a99f13f0ee9f233", "source_owner_export_approval": false, "unchanged_from_published_base": true}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: R1193-P-mkp.
+
+The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a separate HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named 100 ml input of unspecified stock strength, the seven additional weighed ingredients, 5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to the receiving HS-RFB solution and are correctly excluded. This is a medium base, not a JCM salt solution.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml", "root": "artifact", "sha256": "346e5c5c969b0de395ea6303eb8501fbfec954299726dcd203d42e4c692cc5b7"}, "assessment": "The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a separate HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named 100 ml input of unspecified stock strength, the seven additional weighed ingredients, 5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to the receiving HS-RFB solution and are correctly excluded. This is a medium base, not a JCM salt solution.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json", "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"}, "case_ids": ["CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "R1193-P-mkp", "selected_proposal_object_sha256": "48eb6df96a0cc57598efb71b705f6902977e466f6702fe3499bb919a46dd289f", "source_owner_export_approval": false, "unchanged_from_published_base": true}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC03.
+
+The glucose peptone-yeast extract observation explicitly names peptone; glucose and yeast remain separate. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows": [{"complete_source_object_sha256": "bc01ca0e23e58f23c37aaa82b5b2c6cb06861ed93b3d1d9fb6fc7b62cd32e42f", "csv_row": 1597, "field": "Bergey_Substrates_for_end_products", "literal": "glucose peptone-yeast extract", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00628", "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerofustis-stercorihominis"}, "source_taxon": "Anaerofustis stercorihominis"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml", "root": "artifact", "sha256": "f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034"}, "assessment": "The glucose peptone-yeast extract observation explicitly names peptone; glucose and yeast remain separate. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json", "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:glucose_peptone_yeast_extract", "object_label": "Glucose Peptone-yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Glucose_Peptone-yeast_Extract", "subject_label": "Glucose Peptone-yeast Extract", "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:glucose_peptone_yeast_extract", "object_label": "Glucose Peptone-yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Glucose_Peptone-yeast_Extract", "subject_label": "Glucose Peptone-yeast Extract", "validation_method": ""}], "complete_payload_read": true, "component_after": {"component_id": "mesh:D010461", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review.", "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC03", "protected_fields": {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics": true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "5e8759e2537b57c413bccec5d2c09b45bb12e51923a6894cc41b8619ec5bfe21", "source_owner_export_approval": false, "target_id": "PC03"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC06.
+
+Both raw PY-cellobiose occurrences are retained. Moore supplies positive peptone-basal support for E. siraeum, but that cannot establish C. polysaccharolyticum preparation. Captured taxonomy/original-paper leads do not supply the missing second recipe. Keeping the interpreted label while withdrawing a single aggregate resolving identity is supported.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml", "root": "artifact", "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"}, "assessment": "Both raw PY-cellobiose occurrences are retained. Moore supplies positive peptone-basal support for E. siraeum, but that cannot establish C. polysaccharolyticum preparation. Captured taxonomy/original-paper leads do not supply the missing second recipe. Keeping the interpreted label while withdrawing a single aggregate resolving identity is supported.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-cellobiose.yaml", "sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PY-cellobiose label occurs for two distinct taxa. Moore 1976 explicitly discusses peptone basal medium for the Eubacterium siraeum occurrence, which is positive occurrence-bound support. It does not establish the Clostridium polysaccharolyticum formulation. Its cited 1975 manual recipe was not recovered. A single resolving identity across both observations remains unsupported; retain this positive partial evidence without generalizing it to the aggregate owner. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.491564+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["C. polysaccharolyticum original recipe or defensible occurrence-separated preparation scopes; historic manual formula not recovered.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml", "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"}, "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC06", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-cellobiose.yaml", "sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f"}, "selected_proposal_object_sha256": "eb39ccf857abcd390ca103fe63db72524e9ca6c8664eafac6972341324dd9c42", "source_ids": ["MOORE1976", "POLYSACCHAROLYTICUM1980", "BERGEY_ORIGINAL"], "source_observation_rows": [4163, 5908], "source_owner_export_approval": false, "target_id": "PC06"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC07.
+
+The observation is C. formicaceticum PY-fructose. The Andreesen abstract supports organism/fructose context, while original recipe methods remain behind subscription access. An abbreviation and later culture medium cannot resolve this peptone; UNMAPPED preserves the interpretation without inventing chemistry.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-fructose.yaml", "root": "artifact", "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"}, "assessment": "The observation is C. formicaceticum PY-fructose. The Andreesen abstract supports organism/fructose context, while original recipe methods remain behind subscription access. An abbreviation and later culture medium cannot resolve this peptone; UNMAPPED preserves the interpretation without inventing chemistry.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-fructose.yaml", "sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PY-fructose observation is Clostridium formicaceticum. Andreesen 1970 publisher abstract confirms the organism and fructose metabolism but does not expose the recipe or digest. Full text is subscription-only in the captured free access. Later current culture media do not establish this historical PY formulation. The inherited peptone expansion remains interpreted and ungrounded. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.502323+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Original source-bound PY-fructose basal recipe and its peptone/digest identity.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-fructose.yaml", "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"}, "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC07", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-fructose.yaml", "sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6"}, "selected_proposal_object_sha256": "cec5b171e3a2a571412593306d1be517bcc064cfee67d125cb9f827d33f3a707", "source_ids": ["ANDREESEN1970", "BERGEY_ORIGINAL"], "source_observation_rows": [4104], "source_owner_export_approval": false, "target_id": "PC07"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC09.
+
+Moore documents historical C. leptum PY-maltose. The complete current DSM753 recipe distinguishes Trypticase(BD BBL) and pepsin-digested meat peptone, 5g each, with maltose modification. This does not identify which, if either, corresponds to a historical single peptone edge. The withdrawal and preservation of original quantities are justified.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-maltose.yaml", "root": "artifact", "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"}, "assessment": "Moore documents historical C. leptum PY-maltose. The complete current DSM753 recipe distinguishes Trypticase(BD BBL) and pepsin-digested meat peptone, 5g each, with maltose modification. This does not identify which, if either, corresponds to a historical single peptone edge. The withdrawal and preservation of original quantities are justified.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-maltose.yaml", "sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "Moore 1976 confirms the historical Clostridium leptum PY-maltose use; its referenced manual formulation remains unread. The current exact-strain DSM 753 recipe has separate Trypticase peptone (BD BBL) and pepsin-digested meat peptone, 5 g each, and a maltose modification. This comparator demonstrates why neither ingredient may be chosen for the historical single peptone edge without a source bridge. No comparator quantities are imported. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.528698+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Historical manual/base formula and a source bridge selecting the represented digest(s); no current comparator quantities may be imported.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-maltose.yaml", "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"}, "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC09", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-maltose.yaml", "sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0"}, "selected_proposal_object_sha256": "3a33ab67a35165a136d476ca4854f10843dcc26aea795d4ad308c75719e6d653", "source_ids": ["MOORE1976", "DSMZ104C_DSM753", "BERGEY_ORIGINAL"], "source_observation_rows": [4130], "source_owner_export_approval": false, "target_id": "PC09"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC10.
+
+The raw T. pectinovorum PY-pectin occurrence and Smibert abstract do not expose a historical digest. ATCC1223 explicitly separates BD211910 Polypeptone and BD238400 Heart Infusion; this current recipe cannot silently replace historical PY. UNMAPPED is justified without asserting no peptone.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-pectin.yaml", "root": "artifact", "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"}, "assessment": "The raw T. pectinovorum PY-pectin occurrence and Smibert abstract do not expose a historical digest. ATCC1223 explicitly separates BD211910 Polypeptone and BD238400 Heart Infusion; this current recipe cannot silently replace historical PY. UNMAPPED is justified without asserting no peptone.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-pectin.yaml", "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PY-pectin observation is Treponema pectinovorum. Smibert 1983 abstract confirms the study but not the historical recipe. The complete current ATCC 1223 sheet names Polypeptone Peptone BD 211910, 5 g, separately from heart-infusion broth. A documented bridge to the historical PY-pectin observation is missing. Neither Bacto Peptone nor Hipolypepton is substituted. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.539051+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Original PY-pectin recipe or demonstrated historical linkage to ATCC1223, with supplier/product boundaries preserved.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-pectin.yaml", "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"}, "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC10", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-pectin.yaml", "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6"}, "selected_proposal_object_sha256": "79f77eba973fb9aebbd8fb9364c585e718b91647c2f694d1e2d0f1be3ee76b3f", "source_ids": ["SMIBERT1983", "ATCC1223", "BERGEY_ORIGINAL"], "source_observation_rows": [20383], "source_owner_export_approval": false, "target_id": "PC10"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC11.
+
+The raw PYEG occurrence belongs to C. scindens. Morris1985 captured abstract identifies the original study but supplies no methods recipe. The inherited three-part expansion therefore remains interpreted; unrelated taxon leads are not source support. The resolving peptone ID is correctly removed.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYEG.yaml", "root": "artifact", "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"}, "assessment": "The raw PYEG occurrence belongs to C. scindens. Morris1985 captured abstract identifies the original study but supplies no methods recipe. The inherited three-part expansion therefore remains interpreted; unrelated taxon leads are not source support. The resolving peptone ID is correctly removed.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYEG.yaml", "sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PYEG observation belongs to Clostridium scindens. The original Morris 1985 abstract and metadata identify the study, but full methods access failed and no formula was recovered. Earlier Caulobacter-related recipe leads concern a different taxon. The inherited abbreviation expansion does not establish a common digest or a three-component identity. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.549265+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Original C. scindens PYEG preparation, including the meaning/completeness of the abbreviation.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PYEG.yaml", "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"}, "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC11", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PYEG.yaml", "sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a"}, "selected_proposal_object_sha256": "c3e505ee05d6607b8bf102c6eda41f4a78faf33e310ddcee968a2293b3ec0cb0", "source_ids": ["MORRIS1985", "BERGEY_ORIGINAL"], "source_observation_rows": [4180], "source_owner_export_approval": false, "target_id": "PC11"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC12.
+
+The source observation is Holdemanella biformis/Eubacterium biforme PYG-0.02% Tween80. The ATCC27806 preview gives alternative media, including a different Tween amount, without binding this preparation. The exact raw strength and existing components remain intact while the unsupported peptone identity is withdrawn.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml", "root": "artifact", "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"}, "assessment": "The source observation is Holdemanella biformis/Eubacterium biforme PYG-0.02% Tween80. The ATCC27806 preview gives alternative media, including a different Tween amount, without binding this preparation. The exact raw strength and existing components remain intact while the unsupported peptone identity is withdrawn.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYG-002_Tween_80.yaml", "sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PYG-0.02% Tween 80 observation belongs to Holdemanella biformis (historical Eubacterium biforme). The captured current ATCC lead lists alternative growth media; it does not bind the original 0.02% Tween 80 preparation. The original base formulation remains unread. Preserve the exact strength in the raw name and do not infer a peptone quantity or replace the preparation from current alternative media. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.559695+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Original source-bound 0.02% Tween80 PYG base recipe; current alternatives do not resolve the historical formulation.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml", "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"}, "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC12", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PYG-002_Tween_80.yaml", "sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f"}, "selected_proposal_object_sha256": "c0f97d63b6d984052f5820de82a514fabb16f108acf5f8dec8cee9e72a1d01cc", "source_ids": ["BIFORMIS_CURRENT", "BERGEY_ORIGINAL"], "source_observation_rows": [8051], "source_owner_export_approval": false, "target_id": "PC12"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC13.
+
+All114 raw PYG observations and their taxa/chapter routes were individually read and matched to original full rows. The limited source passages cannot justify one common digest for every occurrence. A single resolving peptone ID is unsupported; retaining the interpreted part and all raw occurrences makes the uncertainty explicit.
+
+{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit", "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG.yaml", "root": "artifact", "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"}, "assessment": "All114 raw PYG observations and their taxa/chapter routes were individually read and matched to original full rows. The limited source passages cannot justify one common digest for every occurrence. A single resolving peptone ID is unsupported; retaining the interpreted part and all raw occurrences makes the uncertainty explicit.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYG.yaml", "sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks": {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status", "occurrence_statistics", "curation_history", "notes", "components", "component_assertion", "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved": true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields": ["component_assertion", "components", "curation_history", "notes"], "component_after": {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "All 114 raw PYG source observations were re-extracted from the exact archived database member and remain accounted for. They span multiple taxa and chapters. The inspected occurrence-limited papers and current DSMZ comparator do not establish one shared digest identity across the aggregate owner. This review does not claim to have retrieved 114 underlying papers. The precise prerequisite is occurrence-specific recipe binding or justified disjoint formulation cohorts; an abbreviation alone is insufficient. Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED; retain its existing component_name as historical interpretation, not a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference correction only. Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components, all historical evidence and source/role/export holds are preserved. Historical all-components-identified statements describe prior states, not a new approval. No new MappingEvidence is added; historical human/component evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.", "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model": "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.570546+00:00"}], "new_notes_and_component_evidence": "Read in full; accurately distinguish source literal from interpretation, condition generic reference, preserve unresolved product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved": true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved": true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations": ["Occurrence-specific recipe bindings or source-supported disjoint cohorts for114 observations. This review has not read114 full underlying publications.", "No final generic Peptone parent grounding/ontology target approval; stable local identity reference only.", "No whole-owner application, new source-case adoption, roles, export, arbitrary merge or equality of complete preparations approved."], "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PYG.yaml", "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"}, "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC13", "review_scope": "Complete selected YAML field read and source-bound peptone-reference successor assessment; not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PYG.yaml", "sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83"}, "selected_proposal_object_sha256": "cb47498b03d055775a899dafe783e787278ab65ac4b430deccf4386d7bdd6154", "source_ids": ["MOORE1976", "DSMZ104C_DSM753", "BERGEY_ORIGINAL"], "source_observation_rows": [840, 1397, 1569, 1587, 1641, 2734, 4043, 4060, 4063, 4065, 4067, 4070, 4072, 4073, 4076, 4078, 4082, 4085, 4086, 4088, 4090, 4114, 4121, 4123, 4140, 4146, 4147, 4149, 4150, 4154, 4156, 4158, 4168, 4171, 4175, 4176, 4178, 4183, 4185, 4193, 4196, 4206, 4412, 4413, 4414, 5742, 5891, 5893, 5896, 5897, 5900, 5901, 5903, 5905, 5907, 5909, 5910, 5911, 5912, 5913, 5915, 5916, 5917, 5987, 5989, 5998, 6554, 6756, 7187, 7543, 7893, 8852, 8888, 8889, 8891, 8893, 12981, 14283, 14291, 14292, 14293, 14295, 14310, 14867, 14869, 14870, 14871, 14872, 14873, 14874, 14875, 14876, 14877, 14878, 14880, 14884, 14885, 14915, 14916, 14927, 14931, 14935, 14940, 14946, 14956, 14966, 14968, 14969, 15012, 15751, 16279, 17346, 19988, 20356], "source_owner_export_approval": false, "target_id": "PC13"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC16.
+
+The Peptone-yeast extract-glucose observation explicitly names the generic input; it is not made identical to the reordered PC03 preparation. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows": [{"complete_source_object_sha256": "a68918d043f0c376a3713739739a43b79ce02d824c8184d712cbcf0b3fe2fd5b", "csv_row": 1622, "field": "Bergey_Substrates_for_end_products", "literal": "peptone-yeast extract-glucose", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00237", "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerorhabdus-furcosa"}, "source_taxon": "Anaerorhabdus furcosa"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml", "root": "artifact", "sha256": "c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d"}, "assessment": "The Peptone-yeast extract-glucose observation explicitly names the generic input; it is not made identical to the reordered PC03 preparation. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json", "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:peptone_yeast_extract_glucose", "object_label": "Peptone-yeast Extract-glucose", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Peptone-yeast_Extract-glucose", "subject_label": "Peptone-yeast Extract-glucose", "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:peptone_yeast_extract_glucose", "object_label": "Peptone-yeast Extract-glucose", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Peptone-yeast_Extract-glucose", "subject_label": "Peptone-yeast Extract-glucose", "validation_method": ""}], "complete_payload_read": true, "component_after": {"component_id": "mesh:D010461", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone", "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review.", "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC16", "protected_fields": {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics": true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "ffa97a20b66f8e0f466faebad54e7f8dfe4a0cfdc4f1f6e31bce5fac69cb4208", "source_owner_export_approval": false, "target_id": "PC16"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC17.
+
+The explicit peptone+beef+yeast list does not imply the peptone itself derives from beef; adjacent extract scope stays separate. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows": [{"complete_source_object_sha256": "6f37cc946bffe198fe6e6164c1079cd98a463c51fd4b81389c0a335b816090e4", "csv_row": 3775, "field": "Literature_Substrates_for_end_products", "literal": "peptone + beef extract + yeast extract", "source_links": {"LPSN_Page_link": "https://lpsn.dsmz.de/species/chordicoccus-furentiruminis"}, "source_taxon": "Chordicoccus furentiruminis"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml", "root": "artifact", "sha256": "579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163"}, "assessment": "The explicit peptone+beef+yeast list does not imply the peptone itself derives from beef; adjacent extract scope stays separate. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json", "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:peptone_beef_extract_yeast_extract", "object_label": "Peptone + Beef Extract + Yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Peptone_Beef_Extract_Yeast_Extract", "subject_label": "Peptone + Beef Extract + Yeast Extract", "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:peptone_beef_extract_yeast_extract", "object_label": "Peptone + Beef Extract + Yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Peptone_Beef_Extract_Yeast_Extract", "subject_label": "Peptone + Beef Extract + Yeast Extract", "validation_method": ""}], "complete_payload_read": true, "component_after": {"component_id": "mesh:D010461", "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone", "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review.", "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC17", "protected_fields": {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics": true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "99219a43b9a1e5cb8923639c0895df4ca852b04027bcbf4a6c3f6a4677c3e9c4", "source_owner_export_approval": false, "target_id": "PC17"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC18.
+
+Both peptone+yeast observations retain their original source columns and two distinct source contexts; no whole-formulation equivalence is inferred. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows": [{"complete_source_object_sha256": "812999068d91813377fb30935ada3f2d576c2f6ce03ae646a3b53b7f756aea5d", "csv_row": 1652, "field": "Bergey_Substrates_for_end_products", "literal": "peptone + yeast extract", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00673", "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerotruncus-colihominis"}, "source_taxon": "Anaerotruncus colihominis"}, {"complete_source_object_sha256": "625fddc513ca947d99add5770ba795d47ce8667c1d954861604532c3d2b37230", "csv_row": 15057, "field": "Literature_Substrates_for_end_products", "literal": "peptone + yeast extract", "source_links": {"LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniclasticum-ruminis"}, "source_taxon": "Proteiniclasticum ruminis"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml", "root": "artifact", "sha256": "eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8"}, "assessment": "Both peptone+yeast observations retain their original source columns and two distinct source contexts; no whole-formulation equivalence is inferred. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json", "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:peptone_yeast_extract", "object_label": "Peptone + Yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Peptone_Yeast_Extract", "subject_label": "Peptone + Yeast Extract", "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:peptone_yeast_extract", "object_label": "Peptone + Yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Peptone_Yeast_Extract", "subject_label": "Peptone + Yeast Extract", "validation_method": ""}], "complete_payload_read": true, "component_after": {"component_id": "mesh:D010461", "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone", "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review.", "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC18", "protected_fields": {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics": true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "27d678472937207c2fd7422bfecda77a02980528e7be740f78d566e5e079f9a2", "source_owner_export_approval": false, "target_id": "PC18"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-DEP-PEPTONE-PC19.
+
+The yeast extract+peptone observation names the generic part; it is not merged with the reversed-order owner. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows": [{"complete_source_object_sha256": "fbcf90159fc0d57dac3e2ef7da9b55dbf7b049f682485160fafc05cb3061baf5", "csv_row": 15054, "field": "Bergey_Substrates_for_end_products", "literal": "yeast extract + peptone", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01395", "LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniborus-ethanoligenes"}, "source_taxon": "Proteiniborus ethanoligenes"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml", "root": "artifact", "sha256": "a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d"}, "assessment": "The yeast extract+peptone observation names the generic part; it is not merged with the reversed-order owner. The final reference to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final payload read, with original labels, quantities/absence, all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics and source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe completeness, source-assay or export approval follows.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json", "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:yeast_extract_peptone", "object_label": "Yeast Extract + Peptone", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Yeast_Extract_Peptone", "subject_label": "Yeast Extract + Peptone", "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:yeast_extract_peptone", "object_label": "Yeast Extract + Peptone", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)&#124;MIM:curator=Codex worker05 /root/buffer_tris", "subject_id": "MIM:Yeast_Extract_Peptone", "subject_label": "Yeast Extract + Peptone", "validation_method": ""}], "complete_payload_read": true, "component_after": {"component_id": "mesh:D010461", "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone", "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "limitations": "Unchanged whole-owner mappings/other part references are preserved historical claims, not newly approved by this bounded generic-reference review.", "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC19", "protected_fields": {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics": true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "4f4336bef7dba643ca0ff624d27cfee952498be828d5cd7650bcd8a0a69676dc", "source_owner_export_approval": false, "target_id": "PC19"}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-FINAL-MAT-030.
+
+The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "buffer-parts-v1/polypeptone-final/proposed-v2/Polypeptone.yaml", "root": "artifact", "sha256": "1eff09e546e9dcf0c0ae6c10e7da74488301f1f50d4270b2310c48b5122ea89d"}, "assessment": "The ordinary named Polypeptone preparation retains its local identity and is a supported kind of the closer generic MeSH Peptones material category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become nonresolving provenance, retaining exact text/source prefixes, while five earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity, with truthful LLM evidence and no BD formula or lot-property assertion.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-scientific-review-v1.json", "sha256": "5ca37ac611783e6de3ecc61a2d8ab80558de553703ebf42cf4194cecf8d0a577"}, "case_ids": ["KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9", "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c"], "complete_native_rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "mesh:D010461", "object_label": "Peptones", "object_source": "registry:mesh", "other": "Polypepton", "predicate_id": "skos:broadMatch", "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf&#124;MIM:https://id.nlm.nih.gov/mesh/D010461&#124;MIM:curator=Codex W05 /root consolidated source-origin correction", "subject_id": "MIM:Polypeptone", "subject_label": "Polypeptone", "validation_method": ""}, {"comment": "Registry/identity row preserving kgmicrobe.ingredient:polypeptone alongside parent mesh:D010461.", "confidence": "0.99", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:polypeptone", "object_label": "Polypeptone", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf&#124;MIM:https://id.nlm.nih.gov/mesh/D010461&#124;MIM:curator=Codex W05 /root consolidated source-origin correction", "subject_id": "MIM:Polypeptone", "subject_label": "Polypeptone", "validation_method": ""}], "complete_payload_read": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "exact_alias_changes": [{"after": {"source": "manual; Issue1202 comment6719869255: this label names the specific documented BD casein/animal-tissue blended product. The present owner denotes the supplier-unspecified named Polypeptone preparation; exact interchangeability with this catalogue product is unproved. Preserve the original literal/source as nonresolving provenance. This does not deny the product or prove chemical difference, import its equal-parts formula, mint a BD owner, merge owners, or approve source/role/export.", "synonym_text": "Polypeptone peptone (BD-BBL)", "synonym_type": "REJECTED_LABEL"}, "before": {"source": "manual", "synonym_text": "Polypeptone peptone (BD-BBL)", "synonym_type": "CATALOG_VARIANT"}}, {"after": {"source": "manual; Issue1202 comment6719869255: this label names the specific documented BD casein/animal-tissue blended product. The present owner denotes the supplier-unspecified named Polypeptone preparation; exact interchangeability with this catalogue product is unproved. Preserve the original literal/source as nonresolving provenance. This does not deny the product or prove chemical difference, import its equal-parts formula, mint a BD owner, merge owners, or approve source/role/export.", "synonym_text": "Polypeptone Peptone (BD 211910)", "synonym_type": "REJECTED_LABEL"}, "before": {"source": "manual", "synonym_text": "Polypeptone Peptone (BD 211910)", "synonym_type": "CATALOG_VARIANT"}}, {"after": {"source": "culturemech:output/ingredient_occurrences.tsv; Issue1202 comment6719869255: this label names the specific documented BD casein/animal-tissue blended product. The present owner denotes the supplier-unspecified named Polypeptone preparation; exact interchangeability with this catalogue product is unproved. Preserve the original literal/source as nonresolving provenance. This does not deny the product or prove chemical difference, import its equal-parts formula, mint a BD owner, merge owners, or approve source/role/export.", "synonym_text": "Polypeptone (BBL)", "synonym_type": "REJECTED_LABEL"}, "before": {"source": "culturemech:output/ingredient_occurrences.tsv", "synonym_text": "Polypeptone (BBL)", "synonym_type": "CATALOG_VARIANT"}}], "history_exact_prefix": true, "mapping_evidence_exact_prefix": true, "metadata_rereview": {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-metadata-v3-rereview.json", "sha256": "4617143472841b7dfc98dbd3b3418e74adb25539e2f6a95102be4348ed33166d"}, "proposal_id": "W05-FINAL-MAT-030", "protected_fields": {"identifier": true, "ingredient_type": true, "mapping_status": true, "nutritional_roles": true, "occurrence_statistics": true, "preferred_term": true}, "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "7a14bb31c5de66b869104127bb52d3874a910287b73db9d853373a520cd37925", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-FINAL-MAT-032.
+
+Full MICRO:0000181 definition and its source discussion describe generic enzymatic soy-flour digest, consistent with MediaDive75 and the independent manufacturer definition. This is a supported exact generic identity. The erroneous Hordeum parenthesis, branded/papaic synonyms and numerical product annotations are not imported. The complete final payload preserves five existing alias exclusions, the unresolved peptic-process alias context, old evidence/history, statistics and roles. The separately reviewed rejected Bacto tombstone prevents the inherited shared-ID representative from acquiring an unsupported generic-Soy equivalence. Neither shared-ID source membership nor export admission is established.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "buffer-parts-v1/parents/proposed/Soy_Peptone.yaml", "root": "artifact", "sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee"}, "assessment": "Full MICRO:0000181 definition and its source discussion describe generic enzymatic soy-flour digest, consistent with MediaDive75 and the independent manufacturer definition. This is a supported exact generic identity. The erroneous Hordeum parenthesis, branded/papaic synonyms and numerical product annotations are not imported. The complete final payload preserves five existing alias exclusions, the unresolved peptic-process alias context, old evidence/history, statistics and roles. The separately reviewed rejected Bacto tombstone prevents the inherited shared-ID representative from acquiring an unsupported generic-Soy equivalence. Neither shared-ID source membership nor export admission is established.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/parents-scientific-review-v1.json", "sha256": "25889e17450b8e7503a816355727345160fb4dc3af872e70a8647e1116169c3b"}, "case_ids": ["KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"], "complete_payload_read": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "W05-FINAL-MAT-032", "protected_fields": "Original history/evidence, roles, statistics, source forms and raw names checked in complete payloads and independent parsed comparisons. No source/owner/export approval.", "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "fc0442db6ea19430c6ed56cf89ee9c29c99deeaa28f708c8dcdf06c333d4d943", "source_owner_export_approval": false, "unchanged_final_direct_lane_binding": {"path": ".temp/w05-buffer-parts-v1/parents-direct-v1/proposals.json", "sha256": "f5111ce8e388f6762a38cb84770ef7017fe21b09bea03871eb6317a85b589a03"}}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-FINAL-MAT-039.
+
+Complete final Peptone payload read. The direct ordinary generic material sense is supported by NLM definition/entry term and manufacturer material description; source labels have no independently established different specified preparation. Current notes clearly supersede prior assay-gate/FoodOn inference while retaining the actual earlier history and evidence. No process, manufacturer, nutrient role or source-occurrence approval is added. Exact one-row native identity agrees with selected semantics; generic references require separate final byte review.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml", "root": "artifact", "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"}, "assessment": "Complete final Peptone payload read. The direct ordinary generic material sense is supported by NLM definition/entry term and manufacturer material description; source labels have no independently established different specified preparation. Current notes clearly supersede prior assay-gate/FoodOn inference while retaining the actual earlier history and evidence. No process, manufacturer, nutrient role or source-occurrence approval is added. Exact one-row native identity agrees with selected semantics; generic references require separate final byte review.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/direct-parent-independent-review-v1.json", "sha256": "98bd8081855ab166d43528cdfa1e2f1ff7f0546bf1398d8b7d8baa76a7e2de49"}, "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"], "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "interpretation_reassessment": {"path": ".temp/w05-buffer-parts-v1/review/ontology-interpretation-reassessment-v1.json", "sha256": "292ee8fd6a7e1b175d51e76ad0e01328a143f9cd9549c58d353e6e33c084bd8d"}, "proposal_id": "W05-FINAL-MAT-039", "selected_proposal_object_sha256": "c52010aa91f4484edff947cff7498356bd2119f63ab2f3723389137858aa94e1", "source_owner_export_approval": false}
+
+### Complete exact payload and primary-source applicability
+
+identity: supported. Targets: W05-PARENTS-BACTO-SOYTONE-CONTINUITY.
+
+The authentic rejected Bacto Soytone tombstone previously redirected through a nonunique FOODON identifier. Explicit empty representative is the native unresolved-target mechanism; removal instead invokes legacy identifier fallback. Independent execution confirms the empty value retains the tombstone name and emits no SSSOM rows while avoiding active shared-ID owner credit. A redirect to generic MICRO181 would assert unsupported product equivalence. All original identity/mapping/status/aliases/zero statistics/history/evidence remain unchanged; only the bounded continuity annotation and event are appended. The new unsupported human attribution was removed in exact v2; historical enums and objects remain intact. This does not reconstruct a branded owner or repartition historic source membership.
+
+{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture": {"path": "buffer-parts-v1/parents/tombstone/proposed-v2/Bacto_Soytone.yaml", "root": "artifact", "sha256": "f242b5c54ac1f1785200c1f604be368d8dabd47ef553164dee8c8e291b6d7a7d"}, "assessment": "The authentic rejected Bacto Soytone tombstone previously redirected through a nonunique FOODON identifier. Explicit empty representative is the native unresolved-target mechanism; removal instead invokes legacy identifier fallback. Independent execution confirms the empty value retains the tombstone name and emits no SSSOM rows while avoiding active shared-ID owner credit. A redirect to generic MICRO181 would assert unsupported product equivalence. All original identity/mapping/status/aliases/zero statistics/history/evidence remain unchanged; only the bounded continuity annotation and event are appended. The new unsupported human attribution was removed in exact v2; historical enums and objects remain intact. This does not reconstruct a branded owner or repartition historic source membership.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/parents-scientific-review-v1.json", "sha256": "25889e17450b8e7503a816355727345160fb4dc3af872e70a8647e1116169c3b"}, "case_ids": ["KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"], "complete_payload_read": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "W05-PARENTS-BACTO-SOYTONE-CONTINUITY", "protected_fields": "Original history/evidence, roles, statistics, source forms and raw names checked in complete payloads and independent parsed comparisons. No source/owner/export approval.", "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "2e8a5972ac6ef387b9f34c126b2099eb1c8c7d044b1adaaf81097bb5fe495361", "source_owner_export_approval": false}
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| PEER | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/review/main-review.json | supports | Exact independent source and full payload assessment with real primary/reviewer scopes. |
+| ACCOUNTING | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/final-structural-audit.json | supports | All frozen cases and current complete proposal/evidence accounting. |
+| LINEAGE | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/original-lineage-audit.json | supports | Every original proposal lineage, history, negative labels and original evidence typing retained. |
+| NATIVE | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-overlay/native-validation.json | supports | Guarded full payloads plus full substituted baseline partonomy, identifiers and filename checks. |
+| STRICT | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-strict.receipt.json | supports | Strict closed-schema checks of every selected full payload. |
+| ROWS | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-row-projections.json | supports | Exact native before/after rows for every selected payload; no exported products or producer changes. |
+| FINDINGS | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/finding-register.json | supports | Original and supplemental finding identities, scoped deltas and unresolved coordinator decisions. |
+| LEDGER | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/source-ledger.json | supports | Canonical final fragment selection, source hashes/times and actual scientist attributions. |
+| PREDECESSOR | reviews/structured/20261108T091207Z-worker05-tellurium-polypeptone-supplement/review.yaml | supports | Immutable predecessor native review; no silent finding retirement or broader approval. |
+| ACCOUNTING-COMMAND | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/final-structural-audit.receipt.json | supports | Actual executable command, completion time and exit code. |
+| LINEAGE-COMMAND | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/lineage.receipt.json | supports | Actual executable command, completion time and exit code. |
+| OVERLAY-COMMAND | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-overlay.receipt.json | supports | Actual executable command, completion time and exit code. |
+| STRICT-COMMAND | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-strict.receipt.json | supports | Actual executable command, completion time and exit code. |
+| ROWS-COMMAND | reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/consolidated-validation.receipt.json | supports | Actual executable command, completion time and exit code. |
+
+## Limits And Additional Notes
+
+- needs_curation records residual coordinator family, source membership, shared-ID/tombstone and owner/application obligations; it is not a blocked report or an export approval.
+- No historical structured finding is terminally closed by omission from this scoped supplemental review. The exact predecessor and original finding register remain authoritative for those occurrences; legacy supplemental findings are not fabricated as native predecessor IDs.
+- All inherited source, raw-label, occurrence, stock/form, organism, role and release holds remain. HEPES/Wolfe/ethanol equivalence or distinction is not inferred from unknown formulation facts.
+- MappingEvidence remains claim-specific and truthful under1226; historical human and separate ComponentEvidence typing are preserved.
+- No maintained data/source, owner merge, gate, producer, pin, workflow, export or GitHub write is performed. Coordinator final acceptance/integration remains separate.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T095807Z-worker05-consolidated-source-successor
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: W05 consolidated remaining source corrections
+started_at: '2026-11-08T09:58:07Z'
+finished_at: '2026-11-08T09:58:07Z'
+reviewer:
+  identity: Codex W05 /root compiler; separate scientific review by /root/final_skeptical
+    and named delegated reviewer
+  kind: agent
+  independence: self_review
+  independence_basis: Compiler authored media/report and envelope portions. The independent
+    source/full-payload decisions are by separate named reviewers in PEER, not attributed
+    to compiler independence.
+skill: add-media; reconcile-review-records
+completion: completed
+verdict: needs_curation
+scientific_review: true
+summary: Complete report-only source successor with independent exact payload review,
+  authentic dependent owner origins and explicit unresolved source/owner/application
+  limits. Existing campaign and family findings remain scoped in the preserved register;
+  this review does not silently retire historical or whole-union findings.
+source:
+  git_revision: 0bac12cabfd1f67f212631d8eef9aa46379f6b41
+  state: working_tree
+  inputs:
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+    sha256: 741bf2c03be4b5ec1ec8dc170508cf6b5d40f606bfacdc10dd2f1d109fda827e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/evidence.json
+    sha256: 19d0abc950cc07581e4593c81dfffb2a41fa9a680ada388f91faac1fbc28ad1a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposal-lineage.json
+    sha256: 642b2b8cd17e58f2e37d5b404baa427b8e9dfa508a83547934c7edd1b9991919
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json
+    sha256: 0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml
+    sha256: f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml
+    sha256: c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
+    sha256: 579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml
+    sha256: eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml
+    sha256: a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    sha256: 99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml
+    sha256: fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml
+    sha256: dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml
+    sha256: 8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml
+    sha256: ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml
+    sha256: 57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml
+    sha256: e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml
+    sha256: 1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml
+    sha256: c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml
+    sha256: 4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/finding-register.json
+    sha256: 294cfc0a04158c4b1a659e439ddf9943a9f49f0cc71747fcb9df623ab10e4999
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml
+    sha256: 089960c4d8a03718b71801622afa270f443ee109eb045c43b16677a9dbb6c7a6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed/Marine_Broth_2216.yaml
+    sha256: e5be534e5df60f0089cdba02e083d8390113f08550e09b89dbcdc67eda9c00e6
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml
+    sha256: c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/proposed/Soy_Peptone.yaml
+    sha256: d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/tombstone/proposed-v2/Bacto_Soytone.yaml
+    sha256: f242b5c54ac1f1785200c1f604be368d8dabd47ef553164dee8c8e291b6d7a7d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/polypeptone-final/proposed-v2/Polypeptone.yaml
+    sha256: 1eff09e546e9dcf0c0ae6c10e7da74488301f1f50d4270b2310c48b5122ea89d
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/review/main-review.json
+    sha256: fa267f423149b4dbbcf5c10df55a2746f33058db2364aafd88cb8f8585313da0
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/source-ledger.json
+    sha256: 538c89e26fe351d7d049a0d227ca5ac51f56efede6e9b3e1657680a0e8ffddfe
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/consolidated-validation.receipt.json
+    sha256: a996e56cf4a113db170d0929baeedd81194ea916acab29280867269a9b22a997
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/final-structural-audit.json
+    sha256: 9566c58c621660c3e91cf87aad74b8fe51ab0d0eb2162246dff64d344b8f3c62
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/final-structural-audit.receipt.json
+    sha256: f38080e347f579f1fde385fa351219e0eba88d025a3071992163316a06595f81
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-overlay.receipt.json
+    sha256: 4dde286a523b78155a5d70a65220597f2047679de32d3bb330e6ad2d093f60f7
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-overlay/native-validation.json
+    sha256: 4193911412040bc8639bf7495cf52a8fc9374d036a6bb30df849a0e1b5e0bf9d
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-strict.receipt.json
+    sha256: 12568a2cf612965764749ed3f0377c6c353e9afd58de8e9438340de50b7477e2
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/lineage.receipt.json
+    sha256: 7de9f5005fb99e5846e51da234ad1fcdd1d666519398faf119676155d35eef6a
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-row-projections.json
+    sha256: b1bba4fcf5baffcd88cf9dcb5d9ab81a6abb94b57b99c38deb8118ab78724c54
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/original-lineage-audit.json
+    sha256: b3995a8a004364bf8a9648ff65fec09932d6c7e902d9b13b65b68e38ebb94d56
+    role: context
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemical-supplement-v1/proposed-v1/Thiamine_Hcl_Monohydrate.yaml
+    sha256: 15861ae70999bed905cfe24576f2004ea0985da541023ef07a56935d1b28705b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml
+    sha256: 8a6073d7ada0e2a1e1d2b7de8fd598796d81a7910eb3dd6f48a5db8927490eab
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml
+    sha256: a6026a950d64b03bad39ad9da2464f2af0d59c396198e83b146d6924879f2fdd
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml
+    sha256: 2212227cc2fafd1aa465189994c6b928af8769629448678c98743cda87969c85
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml
+    sha256: 35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml
+    sha256: add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml
+    sha256: 346e5c5c969b0de395ea6303eb8501fbfec954299726dcd203d42e4c692cc5b7
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml
+    sha256: 1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml
+    sha256: 6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml
+    sha256: 8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml
+    sha256: cee20ef5c36ecce85e5e562c5818d6870c17f91cb6c0cce6b7547b9c248aefc9
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/ISP_7_Medium.yaml
+    sha256: 82cf5273f8018fec8ad20a956e8bfa2fc1a997f28f2025bebf510658e987fde3
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml
+    sha256: cb8d8111cd0163507fc4e595e59e4371c711a3f085b53776821676e538d6504b
+    role: target
+  - path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml
+    sha256: 8a546e0756ecfd879fc9c1da6583433a007ee207b3c47959c94f808ec17e92e7
+    role: target
+  - path: reviews/structured/20261108T091207Z-worker05-tellurium-polypeptone-supplement/review.yaml
+    sha256: d86e891daeb0e57f78b7f44843ee45383027af20cefa6986fa81d8bc955e52b1
+    role: context
+scope:
+  description: Full selected composed cases and complete payloads listed in the exact
+    peer receipt; all other original cases retain their own unchanged historical scientific
+    reviews.
+  selection: Actual selected primary fragments and final composed decision hashes
+    in source-ledger. Source ownership remains frozen; dependent children are not
+    new shard observations.
+  coverage: full
+  population_size: 56
+  reviewed_target_ids:
+  - CASE-003
+  - CASE-017
+  - CASE-019
+  - CASE-028
+  - CASE-053
+  - CASE-076
+  - CASE-091
+  - CASE-111
+  - CASE-117
+  - CASE-124
+  - CASE-127
+  - CASE-130
+  - CASE-135
+  - CASE-136
+  - CASE-144
+  - CASE-158
+  - CASE-160
+  - CASE-173
+  - CASE-176
+  - CASE-181
+  - CASE-182
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  - CHEM-C1193-HEPES-1221
+  - CHEM-C1193-HEPES-1474
+  - CHEM-C1193-JCM_1061-Tris
+  - CHEM-C1193-Tris-HCl-salt
+  - CHEM-C1193-ethanol95-dsmz_78
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  - M1193-P-CM0643
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - M1193-P-ISP7
+  - M1193-P-MARINE2216
+  - M1193-P-MH-POWDER-DSMZ804
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  - M1193-P-RCM-182
+  - R1193-DEP-rumen-pyg
+  - R1193-DEP-rumen-pyglucose
+  - R1193-P-bottom-628
+  - R1193-P-bottom-629
+  - R1193-P-mkp
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  - W05-FINAL-MAT-030
+  - W05-FINAL-MAT-032
+  - W05-FINAL-MAT-039
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+targets:
+- target_id: CASE-003
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Bottom layer
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-017
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Difco Marine Broth 2216
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-019
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: MKP medium
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-028
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Thiamine-HCl·H2O (Vitamin B1)
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-053
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: 1M HEPES-KOH
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-076
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Tris-HCl
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-091
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Rumen fluid, clarified (see Medium No. 266)
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-111
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: 95% ethanol
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-117
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Thiamine-HCl⋅H2O (Vitamin B1)
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-124
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Ethanol (95 %)
+  record_class: SourceCaseDisposition
+  selector: CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-127
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Hipolypepton
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-130
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Pennassay Broth
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-135
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: ISP 7 Medium
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-136
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Difco Marine Broth 2216
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-144
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Mueller-Hinton broth
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-158
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: dehydrated Wilkins-Chalgren medium
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-160
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Polypeptone
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-173
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: peptones
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-176
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Soy peptone
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-181
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Cooked meat medium
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CASE-182
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+  kind: snapshot_row
+  label: Reinforced clostridial medium
+  record_class: SourceCaseDisposition
+  selector: KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd
+  ownership_note: Exact existing frozen W05 case. Dependent child owner proposals
+    are causal consequences explicitly distinguished from observed source recipes.
+- target_id: CHEM-C1193-DSMZ_394_1137-Tris
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml
+  kind: source
+  label: Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: CHEM-C1193-HEPES-1221
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml
+  kind: source
+  label: 1 M HEPES-KOH stock (NBRC 1221)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/HEPES_KOH_1M_NBRC_1221.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: CHEM-C1193-HEPES-1474
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml
+  kind: source
+  label: 1 M HEPES-KOH stock (NBRC 1474)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/HEPES_KOH_1M_NBRC_1474.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: CHEM-C1193-JCM_1061-Tris
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml
+  kind: source
+  label: Tris-HCl 0.5 M pH 8 stock (JCM 1061)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tris_HCl_0_5M_pH_8_JCM_1061.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: CHEM-C1193-Tris-HCl-salt
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml
+  kind: source
+  label: Tris hydrochloride salt
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Tris_Hydrochloride_Salt.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: CHEM-C1193-ethanol95-dsmz_78
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml
+  kind: source
+  label: 95% ethanol preparation (DSMZ 78)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Ethanol_95_Preparation_DSMZ_78.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: FINAL-CHEM-P-thiamine-hcl-monohydrate
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemical-supplement-v1/proposed-v1/Thiamine_Hcl_Monohydrate.yaml
+  kind: source
+  label: Thiamine-HCl monohydrate
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Thiamine_Hcl_Monohydrate.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: M1193-P-CM0643
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml
+  kind: source
+  label: Wilkins-Chalgren medium powder (Oxoid CM0643)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Dehydrated_Wilkins-Chalgren_Medium.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+  kind: source
+  label: Fastidious Anaerobe Broth With Meat Granules
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: M1193-P-ISP7
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/ISP_7_Medium.yaml
+  kind: source
+  label: ISP 7 medium powder (HiMedia M362)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/ISP_7_Medium.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: M1193-P-MARINE2216
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed/Marine_Broth_2216.yaml
+  kind: source
+  label: Marine broth 2216
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Marine_Broth_2216.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: M1193-P-MH-POWDER-DSMZ804
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml
+  kind: source
+  label: Mueller-Hinton broth powder (DSMZ804)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Mueller_Hinton_Broth_Powder_DSMZ804.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: M1193-P-PENASSAY_BROTH_DIFCO
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml
+  kind: source
+  label: Penassay Broth (Difco Antibiotic Medium3)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Penassay_Broth_Difco.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: M1193-P-RCM-182
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml
+  kind: source
+  label: Reinforced clostridial medium (BD Difco)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: R1193-DEP-rumen-pyg
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml
+  kind: source
+  label: PYG + Rumen Fluid
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG_Rumen_Fluid.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: R1193-DEP-rumen-pyglucose
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml
+  kind: source
+  label: PY-glucose-rumen Fluid
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: R1193-P-bottom-628
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml
+  kind: source
+  label: Bottom layer (JCM628)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bottom_Layer_JCM628.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: R1193-P-bottom-629
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml
+  kind: source
+  label: Bottom layer (JCM629)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bottom_Layer_JCM629.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: R1193-P-mkp
+  path: reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml
+  kind: source
+  label: MKP medium (MediaDive1895 solution6635)
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/MKP_Medium_MediaDive1895.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC03
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml
+  kind: source
+  label: Glucose Peptone-yeast Extract
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC06
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml
+  kind: source
+  label: PY-cellobiose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-cellobiose.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC07
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml
+  kind: source
+  label: PY-fructose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-fructose.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC09
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml
+  kind: source
+  label: PY-maltose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-maltose.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC10
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml
+  kind: source
+  label: PY-pectin
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-pectin.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC11
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml
+  kind: source
+  label: PYEG
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYEG.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC12
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml
+  kind: source
+  label: PYG-0.02% Tween 80
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG-002_Tween_80.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC13
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml
+  kind: source
+  label: PYG
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC16
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml
+  kind: source
+  label: Peptone-yeast Extract-glucose
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC17
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
+  kind: source
+  label: Peptone + Beef Extract + Yeast Extract
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC18
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml
+  kind: source
+  label: Peptone + Yeast Extract
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Yeast_Extract.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-DEP-PEPTONE-PC19
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml
+  kind: source
+  label: Yeast Extract + Peptone
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Yeast_Extract_Peptone.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-FINAL-MAT-030
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/polypeptone-final/proposed-v2/Polypeptone.yaml
+  kind: source
+  label: Polypeptone
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Polypeptone.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-FINAL-MAT-032
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/proposed/Soy_Peptone.yaml
+  kind: source
+  label: Soy peptone
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Soy_Peptone.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-FINAL-MAT-039
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml
+  kind: source
+  label: Peptone
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+- target_id: W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  path: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/tombstone/proposed-v2/Bacto_Soytone.yaml
+  kind: source
+  label: Bacto Soytone
+  record_class: IngredientRecord
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Bacto_Soytone.yaml
+    role: Authentic existing/new proposal origin; coordinator owns maintained application.
+assessments:
+- assessment_id: ASSESS-CASE-003
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The complete JCM628 recipe explicitly defines a lower layer from 50 ml
+    washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose.
+    The candidate transcribes these named material inputs without identifying the
+    whole as FeS or importing the upper layer. Washing and suspension are retained;
+    amounts remain batch inputs rather than invented final concentrations. JCM629
+    positively replaces the JCM628 mineral solution with its artificial saltwater.
+    It retains the same washed FeS preparation and agarose. This is a demonstrated
+    preparation difference; no zero-valent-iron substitution is present. The complete
+    payload preserves the one-level preparation scope and exact original occurrence
+    route.
+  target_ids:
+  - CASE-003
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete JCM628 recipe explicitly defines a lower
+    layer from 50 ml washed FeS suspension, 50 ml Modified Wolfe mineral solution
+    and 1 g agarose. The candidate transcribes these named material inputs without
+    identifying the whole as FeS or importing the upper layer. Washing and suspension
+    are retained; amounts remain batch inputs rather than invented final concentrations.
+    JCM629 positively replaces the JCM628 mineral solution with its artificial saltwater.
+    It retains the same washed FeS preparation and agarose. This is a demonstrated
+    preparation difference; no zero-valent-iron substitution is present. The complete
+    payload preserves the one-level preparation scope and exact original occurrence
+    route.", "assessment_origins": [{"assessment": "The complete JCM628 recipe explicitly
+    defines a lower layer from 50 ml washed FeS suspension, 50 ml Modified Wolfe mineral
+    solution and 1 g agarose. The candidate transcribes these named material inputs
+    without identifying the whole as FeS or importing the upper layer. Washing and
+    suspension are retained; amounts remain batch inputs rather than invented final
+    concentrations. JCM629 positively replaces the JCM628 mineral solution with its
+    artificial saltwater. It retains the same washed FeS preparation and agarose.
+    This is a demonstrated preparation difference; no zero-valent-iron substitution
+    is present. The complete payload preserves the one-level preparation scope and
+    exact original occurrence route.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+    "case_input_sha256": "ed7724fe9de22b1ead260c656ebdca2bfcf625faffb13e887601ed2cbcc0bd53",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:4c51ad2e5abbc185786fe8ec893283dba9c684ed342c6899d3e32aa72a3eb111",
+    "CM_OCC:7bcfe2b29212c847e65e45674fe22599bd99f8045189f23985deb6abe2514068"], "selected_decision_object_sha256":
+    "8e6eeee195b8dbcbd397065370ea35e2617a85dbd16f83962594636cda571219", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Bottom layer",
+    "source": "culturemech", "source_case_id": "Bottom layer", "source_label": "Bottom
+    layer"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-017
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The complete BD manufacturer document identifies dry Marine Broth2216,
+    including its distinct broth magnesium-chloride and magnesium-sulfate formula.
+    All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly
+    relative to the approximate/performance-adjustable formula, not a lot analysis.
+    Seven new material references are supported by the corresponding full term definitions
+    and native owners. Salt hydrate/stoichiometry, extract processing and the separately
+    directed Peptone withdrawal remain explicit; no reconstitution water is inserted
+    into the dry product.
+  target_ids:
+  - CASE-017
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete BD manufacturer document identifies dry Marine
+    Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate
+    formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE
+    explicitly relative to the approximate/performance-adjustable formula, not a lot
+    analysis. Seven new material references are supported by the corresponding full
+    term definitions and native owners. Salt hydrate/stoichiometry, extract processing
+    and the separately directed Peptone withdrawal remain explicit; no reconstitution
+    water is inserted into the dry product.", "assessment_origins": [{"assessment":
+    "The complete BD manufacturer document identifies dry Marine Broth2216, including
+    its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen
+    nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative
+    to the approximate/performance-adjustable formula, not a lot analysis. Seven new
+    material references are supported by the corresponding full term definitions and
+    native owners. Salt hydrate/stoichiometry, extract processing and the separately
+    directed Peptone withdrawal remain explicit; no reconstitution water is inserted
+    into the dry product.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+    "case_input_sha256": "8e896e0ba3dafa169970f56ccf1429597e692b8c2fa9801251fcb7ee3539908b",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:a74a96f03a905868769b28aca9d191d2ef477e363631b55c808eabde3c470da1",
+    "CM_OCC:432cc90659dd3c147962c14c35f5b74e88e621f9c83e54d808c18be9ce889d59", "CM_OCC:f23017e41a699d752c82811af924efbd8db16207359b9a7d033dc87deb196687"],
+    "selected_decision_object_sha256": "3c306601d79e58251a21bf21dc5a6204c4e5d0291ab4f45f0e9ab9ac80d5dd72",
+    "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label":
+    "Difco Marine Broth 2216", "source": "culturemech", "source_case_id": "Difco Marine
+    Broth 2216", "source_label": "Difco Marine Broth 2216"}, "source_owner_export_approval":
+    false}'
+- assessment_id: ASSESS-CASE-019
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a
+    separate HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named
+    100 ml input of unspecified stock strength, the seven additional weighed ingredients,
+    5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to
+    the receiving HS-RFB solution and are correctly excluded. This is a medium base,
+    not a JCM salt solution.
+  target_ids:
+  - CASE-019
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The full MediaDive1895 response identifies DSMZ, MKP solution6635
+    and a separate HS-RFB solution6636. The complete candidate preserves CMRL1066
+    as a named 100 ml input of unspecified stock strength, the seven additional weighed
+    ingredients, 5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin
+    belong to the receiving HS-RFB solution and are correctly excluded. This is a
+    medium base, not a JCM salt solution.", "assessment_origins": [{"assessment":
+    "The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a separate
+    HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named 100
+    ml input of unspecified stock strength, the seven additional weighed ingredients,
+    5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to
+    the receiving HS-RFB solution and are correctly excluded. This is a medium base,
+    not a JCM salt solution.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+    "case_input_sha256": "a8e35ff3593e9f4209bdb837b76e599c4c89c63f5c29f96cf60463ceb5e4e4ca",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:61e4ba696ad5b790b82da57aab32682afcc95f60d319304d8671f957eee5e83f"],
+    "selected_decision_object_sha256": "02c6b75bf51af272627d8859ec0400e398078f634bb2c12c4a2e6ca689c4c51b",
+    "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label":
+    "MKP medium", "source": "culturemech", "source_case_id": "MKP medium", "source_label":
+    "MKP medium"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-028
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg
+    within their vitamin preparations. One local source-defined material is supported
+    across both raw spelling cases. The full candidate preserves the hydration qualifier,
+    six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred
+    chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin
+    preparation and its receiving doses do not become properties of the single ingredient.
+    Existing source and integration holds remain.
+  target_ids:
+  - CASE-028
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl
+    at 5 mg within their vitamin preparations. One local source-defined material is
+    supported across both raw spelling cases. The full candidate preserves the hydration
+    qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula,
+    CAS, inferred chloride stoichiometry, parent, supplier or stock components. The
+    1 L vitamin preparation and its receiving doses do not become properties of the
+    single ingredient. Existing source and integration holds remain.", "assessment_origins":
+    [{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl
+    at 5 mg within their vitamin preparations. One local source-defined material is
+    supported across both raw spelling cases. The full candidate preserves the hydration
+    qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula,
+    CAS, inferred chloride stoichiometry, parent, supplier or stock components. The
+    1 L vitamin preparation and its receiving doses do not become properties of the
+    single ingredient. Existing source and integration holds remain.", "origin": {"path":
+    ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+    "case_input_sha256": "3609bf355091abb3388887deed3fbae6391a329338e77d05a32dddfbdcaf8526",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:750ca6e602619153bc2d9d97925f9cfe29b1faab5283067e75d49f8b0770fb51",
+    "CM_OCC:3b8df504b3fea449da7cb5de638db5e6102c008a346ea7c8babe1b53cc9514cb", "CM_OCC:e88296a7c96873bbbdbd2ee0b767815c0d4345c674957212c3bd225be8e22010",
+    "CM_OCC:7d7cda807fa9cb5685230b5b1e1f1ed0e6340636a9a4fdbd0d843d094093c90a", "CM_OCC:4b6fa456271f78e5b2f2f23b280d935b58cc57a0249fcb0cac625c0328ba25ef"],
+    "selected_decision_object_sha256": "8c1b8db0ce2d8ca69115d9de6def11c193843491fef9de560d96d36d95ca5d50",
+    "selected_disposition": "new_distinct_ingredient_proposal", "source": {"raw_source_label":
+    "Thiamine-HCl·H2O (Vitamin B1)", "source": "culturemech", "source_case_id": "Thiamine-HCl·H2O
+    (Vitamin B1)", "source_label": "Thiamine-HCl·H2O (Vitamin B1)"}, "source_owner_export_approval":
+    false}'
+- assessment_id: ASSESS-CASE-053
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The complete decision for two source contexts correctly retains 1 M HEPES-KOH
+    as a nominal whole stock used at 20 ml in each receiving recipe. NBRC1221 medium
+    pH7.14 and NBRC1474 medium pH9.0 do not establish stock pH. The full primary recipes
+    do not enumerate stock material inputs. Both exact current candidates already
+    omit the unsupported moiety/species components and paired assertion. Added evidence
+    and chronology are source-qualified, while the conditional family decision, all
+    raw occurrence IDs, prior negative/owner/export holds and historical reviews remain
+    intact.
+  target_ids:
+  - CASE-053
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete decision for two source contexts correctly
+    retains 1 M HEPES-KOH as a nominal whole stock used at 20 ml in each receiving
+    recipe. NBRC1221 medium pH7.14 and NBRC1474 medium pH9.0 do not establish stock
+    pH. The full primary recipes do not enumerate stock material inputs. Both exact
+    current candidates already omit the unsupported moiety/species components and
+    paired assertion. Added evidence and chronology are source-qualified, while the
+    conditional family decision, all raw occurrence IDs, prior negative/owner/export
+    holds and historical reviews remain intact.", "assessment_origins": [{"assessment":
+    "The complete decision for two source contexts correctly retains 1 M HEPES-KOH
+    as a nominal whole stock used at 20 ml in each receiving recipe. NBRC1221 medium
+    pH7.14 and NBRC1474 medium pH9.0 do not establish stock pH. The full primary recipes
+    do not enumerate stock material inputs. Both exact current candidates already
+    omit the unsupported moiety/species components and paired assertion. Added evidence
+    and chronology are source-qualified, while the conditional family decision, all
+    raw occurrence IDs, prior negative/owner/export holds and historical reviews remain
+    intact.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json",
+    "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+    "case_input_sha256": "739005188a7a39f95be15e621098c805b702ea323fa15c50539bd4d0bc0b1e48",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac",
+    "CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"], "selected_decision_object_sha256":
+    "9563a0b90cfe2002f84b39500347e3c6dcc9e3fcdcf5bd346ff8645561bb1cb9", "selected_disposition":
+    "new_distinct_ingredient_proposal", "source": {"raw_source_label": "1M HEPES-KOH",
+    "source": "culturemech", "source_case_id": "1M HEPES-KOH", "source_label": "1M
+    HEPES-KOH"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-076
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: 'The complete 16-occurrence decision preserves its established split and
+    all historical evidence. Fresh scientific scope covers the eight stock routes:
+    DSMZ394/1137 specify 1 M pH7.5 with 20/5 ml receiving doses; JCM1061 specifies
+    0.5 M pH8.0 with 100 ml dose. These are positive nominal stock specifications.
+    No preparation inputs, solvent, free HCl or moiety/species material list are established.
+    Both selected stock payloads already omit the unsupported components and paired
+    assertion; the seven dry-reagent contexts and one final-medium context remain
+    unchanged with prior attribution, without new approval from this stock review.
+    The manufacturer sheet explicitly identifies the neutralized crystalline hydrochloride,
+    CAS1185-53-1 and C4H11NO3.HCl. The complete salt payload preserves this distinct
+    form and excludes inference of a source supplier. It stores NARROW_MATCH; independently
+    replayed complete native output has broadMatch to CHEBI9754, exact CAS and B1
+    compound identity rows. Its seven weighed contexts and eight buffer-stock contexts
+    are not conflated; the buffer review is separately bound.'
+  target_ids:
+  - CASE-076
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete 16-occurrence decision preserves its established
+    split and all historical evidence. Fresh scientific scope covers the eight stock
+    routes: DSMZ394/1137 specify 1 M pH7.5 with 20/5 ml receiving doses; JCM1061 specifies
+    0.5 M pH8.0 with 100 ml dose. These are positive nominal stock specifications.
+    No preparation inputs, solvent, free HCl or moiety/species material list are established.
+    Both selected stock payloads already omit the unsupported components and paired
+    assertion; the seven dry-reagent contexts and one final-medium context remain
+    unchanged with prior attribution, without new approval from this stock review.
+    The manufacturer sheet explicitly identifies the neutralized crystalline hydrochloride,
+    CAS1185-53-1 and C4H11NO3.HCl. The complete salt payload preserves this distinct
+    form and excludes inference of a source supplier. It stores NARROW_MATCH; independently
+    replayed complete native output has broadMatch to CHEBI9754, exact CAS and B1
+    compound identity rows. Its seven weighed contexts and eight buffer-stock contexts
+    are not conflated; the buffer review is separately bound.", "assessment_origins":
+    [{"assessment": "The complete 16-occurrence decision preserves its established
+    split and all historical evidence. Fresh scientific scope covers the eight stock
+    routes: DSMZ394/1137 specify 1 M pH7.5 with 20/5 ml receiving doses; JCM1061 specifies
+    0.5 M pH8.0 with 100 ml dose. These are positive nominal stock specifications.
+    No preparation inputs, solvent, free HCl or moiety/species material list are established.
+    Both selected stock payloads already omit the unsupported components and paired
+    assertion; the seven dry-reagent contexts and one final-medium context remain
+    unchanged with prior attribution, without new approval from this stock review.",
+    "origin": {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256":
+    "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"}, "reviewer":
+    "/root/final_skeptical"}, {"assessment": "The manufacturer sheet explicitly identifies
+    the neutralized crystalline hydrochloride, CAS1185-53-1 and C4H11NO3.HCl. The
+    complete salt payload preserves this distinct form and excludes inference of a
+    source supplier. It stores NARROW_MATCH; independently replayed complete native
+    output has broadMatch to CHEBI9754, exact CAS and B1 compound identity rows. Its
+    seven weighed contexts and eight buffer-stock contexts are not conflated; the
+    buffer review is separately bound.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+    "case_input_sha256": "449c82c1dc7d2fe7abe48e6b4f9784223cf29e4adf77fe23a7a22d129567edec",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:21d2954a24b1f7ee8656c39b65527b8500f9b837d62831d8eff091cf25b540bc",
+    "CM_OCC:76fd9d6f0646883b870c08bf256928087b92f6f0c197cc1931732ba0de589132", "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+    "CM_OCC:21843595a129813768755856a05e9f29cb472d27916a9d0a527336764652905f", "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+    "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857", "CM_OCC:8645279dbcbd38889fc1e4377357bbd95b0db243a939d505c73061803d8ac30e",
+    "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed", "CM_OCC:cdbf93b292e6d933c6078447a8721b5b967f16cc610cd48990428b5e8c5e9f74",
+    "CM_OCC:d135d5ec595b83f51455fe2cee1e43d039b17a9246061136ae4bae7f22e026a1", "CM_OCC:ec0c77161a90a3a99aec6109824803e88b2ebc7738f1e79ee596df42091b2b67",
+    "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807", "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9",
+    "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b", "CM_OCC:ff294de18a2e1e7feac35da898e1c3b9189fca7f600d617cc7fd74dcf64d0ad8",
+    "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"], "selected_decision_object_sha256":
+    "445e0af5d52cceaf76ed89991a634559c703f26493714299b3fac915687c079f", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Tris-HCl", "source":
+    "culturemech", "source_case_id": "Tris-HCl", "source_label": "Tris-HCl"}, "source_owner_export_approval":
+    false}'
+- assessment_id: ASSESS-CASE-091
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The authentic clarified-rumen JCM1423/1424 reference266 facts and distinct
+    held companion remain unchanged. The current dependency additions concern two
+    PYG/PY-glucose composites whose rumen component stays literal and UNMAPPED; they
+    do not reinterpret the clarified source case or establish untreated fluid. Their
+    unsupported peptone references are independently withdrawn, preserving the exact
+    earlier processing and recipe holds. Additive causal dependency delta is justified
+    for these exact child proposals. The frozen case remains the original assigned
+    source object; child source observations do not become new W05 cases. Union fields
+    and separate dependency_reassessment preserve parent reassessment and earlier
+    reasoning. Existing child proposal identities/case IDs and authentic owner beforeimages
+    remain selected.
+  target_ids:
+  - CASE-091
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The authentic clarified-rumen JCM1423/1424 reference266
+    facts and distinct held companion remain unchanged. The current dependency additions
+    concern two PYG/PY-glucose composites whose rumen component stays literal and
+    UNMAPPED; they do not reinterpret the clarified source case or establish untreated
+    fluid. Their unsupported peptone references are independently withdrawn, preserving
+    the exact earlier processing and recipe holds. Additive causal dependency delta
+    is justified for these exact child proposals. The frozen case remains the original
+    assigned source object; child source observations do not become new W05 cases.
+    Union fields and separate dependency_reassessment preserve parent reassessment
+    and earlier reasoning. Existing child proposal identities/case IDs and authentic
+    owner beforeimages remain selected.", "assessment_origins": [{"assessment": "Additive
+    causal dependency delta is justified for these exact child proposals. The frozen
+    case remains the original assigned source object; child source observations do
+    not become new W05 cases. Union fields and separate dependency_reassessment preserve
+    parent reassessment and earlier reasoning. Existing child proposal identities/case
+    IDs and authentic owner beforeimages remain selected.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "reviewer": "/root/final_skeptical/preservation_audit", "scope": "Actual independent
+    source/payload dependency assessment; final composed complete decision independently
+    bound by parent reviewer."}], "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+    "case_input_sha256": "d338d1888332d7b1d4bcdee63f7a88c5c4658974375bf1f9ed6adbd49e7fa541",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:5935adfdab3abba3ad49de3bf66b06bd6ab425af20ea315a7c169ae4ec4a36b8",
+    "CM_OCC:39c25bd01d2ee83bcda7de5b99ec410dab0b50232ce71a257cb1ad3d4adbd3ac"], "selected_decision_object_sha256":
+    "272d14669e08bdccf6a667f953db69468d15019aaab21d0071e583545e884ed5", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Rumen fluid,
+    clarified (see Medium No. 266)", "source": "culturemech", "source_case_id": "Rumen
+    fluid, clarified (see Medium No. 266)", "source_label": "Rumen fluid, clarified
+    (see Medium No. 266)"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-111
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: 'The complete candidate correctly states twelve routed occurrences: eleven
+    frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78
+    primary preparation text distinguishes nominal 95% ethanol input from the later
+    vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established.
+    The candidate retains only the named ethanol component, conditional preparation-family
+    handles and all original equality/difference and owner holds. The count repair
+    adds no formulation conclusion.'
+  target_ids:
+  - CASE-111
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete candidate correctly states twelve routed
+    occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route.
+    The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol
+    input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent
+    balance is established. The candidate retains only the named ethanol component,
+    conditional preparation-family handles and all original equality/difference and
+    owner holds. The count repair adds no formulation conclusion.", "assessment_origins":
+    [{"assessment": "The complete candidate correctly states twelve routed occurrences:
+    eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected
+    DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the
+    later vitamin-K3 dilution in water. Neither percent basis nor solvent balance
+    is established. The candidate retains only the named ethanol component, conditional
+    preparation-family handles and all original equality/difference and owner holds.
+    The count repair adds no formulation conclusion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+    "case_input_sha256": "59becf6c2d9ffd925ad28c8515705125e5986e629fd9ab182e0c15a14f92d82b",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+    "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45", "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+    "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1", "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+    "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1", "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+    "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e", "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+    "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53", "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1"],
+    "selected_decision_object_sha256": "e27e7434b7c42f2db6edb7a8e4143f45639f87a5805a17e75afd6480dbc03f04",
+    "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label":
+    "95% ethanol", "source": "culturemech", "source_case_id": "95% ethanol", "source_label":
+    "95% ethanol"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-117
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg
+    within their vitamin preparations. One local source-defined material is supported
+    across both raw spelling cases. The full candidate preserves the hydration qualifier,
+    six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred
+    chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin
+    preparation and its receiving doses do not become properties of the single ingredient.
+    Existing source and integration holds remain.
+  target_ids:
+  - CASE-117
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl
+    at 5 mg within their vitamin preparations. One local source-defined material is
+    supported across both raw spelling cases. The full candidate preserves the hydration
+    qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula,
+    CAS, inferred chloride stoichiometry, parent, supplier or stock components. The
+    1 L vitamin preparation and its receiving doses do not become properties of the
+    single ingredient. Existing source and integration holds remain.", "assessment_origins":
+    [{"assessment": "All six complete NBRC source pages print one-water Thiamine-HCl
+    at 5 mg within their vitamin preparations. One local source-defined material is
+    supported across both raw spelling cases. The full candidate preserves the hydration
+    qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula,
+    CAS, inferred chloride stoichiometry, parent, supplier or stock components. The
+    1 L vitamin preparation and its receiving doses do not become properties of the
+    single ingredient. Existing source and integration holds remain.", "origin": {"path":
+    ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+    "case_input_sha256": "ff67d450affc1426840c96f3a73b32777864fd9ebb2c6386b63678d2630306fb",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:b5ef25941cd0463e766a67f3b3c1bb336460bc9a91b8978a7a87c74e022ad650"],
+    "selected_decision_object_sha256": "bfb407ec8e46a53f76b689968ef2d61812d4b3aaf62bf7223a16f832427ed79d",
+    "selected_disposition": "new_distinct_ingredient_proposal", "source": {"raw_source_label":
+    "Thiamine-HCl⋅H2O (Vitamin B1)", "source": "culturemech", "source_case_id": "Thiamine-HCl⋅H2O
+    (Vitamin B1)", "source_label": "Thiamine-HCl⋅H2O (Vitamin B1)"}, "source_owner_export_approval":
+    false}'
+- assessment_id: ASSESS-CASE-124
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: 'The complete candidate correctly states twelve routed occurrences: eleven
+    frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78
+    primary preparation text distinguishes nominal 95% ethanol input from the later
+    vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established.
+    The candidate retains only the named ethanol component, conditional preparation-family
+    handles and all original equality/difference and owner holds. The count repair
+    adds no formulation conclusion.'
+  target_ids:
+  - CASE-124
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete candidate correctly states twelve routed
+    occurrences: eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route.
+    The inspected DSMZ78 primary preparation text distinguishes nominal 95% ethanol
+    input from the later vitamin-K3 dilution in water. Neither percent basis nor solvent
+    balance is established. The candidate retains only the named ethanol component,
+    conditional preparation-family handles and all original equality/difference and
+    owner holds. The count repair adds no formulation conclusion.", "assessment_origins":
+    [{"assessment": "The complete candidate correctly states twelve routed occurrences:
+    eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected
+    DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the
+    later vitamin-K3 dilution in water. Neither percent basis nor solvent balance
+    is established. The candidate retains only the named ethanol component, conditional
+    preparation-family handles and all original equality/difference and owner holds.
+    The count repair adds no formulation conclusion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+    "case_input_sha256": "651d454a4e1fc51478afb0dcc97c7851022db21c2b168a6cc514f2566413ff34",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": ["CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"],
+    "selected_decision_object_sha256": "f331c6ad70eb3b437dc79414ac7c25143502999b5c03c1c25284a74a87159de1",
+    "selected_disposition": "stock_product_mixture_context", "source": {"raw_source_label":
+    "Ethanol (95 %)", "source": "culturemech", "source_case_id": "Ethanol (95 %)",
+    "source_label": "Ethanol (95 %)"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-127
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: 'The ordinary named Polypeptone preparation retains its local identity
+    and is a supported kind of the closer generic MeSH Peptones material category.
+    Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact
+    identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels
+    correctly become nonresolving provenance, retaining exact text/source prefixes,
+    while five earlier Japanese/Hipolypepton exclusions remain exact. This does not
+    prove every product chemically distinct. Current notes explicitly supersede earlier
+    self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical
+    counts, provisional role, source/product/quantity holds and supplied-form boundaries
+    are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity,
+    with truthful LLM evidence and no BD formula or lot-property assertion. The exact
+    v3 report-only status correction has been independently rereviewed: current supported
+    source-proposal grounding replaces stale self-only wording, while historical status
+    and all source/owner/role/export limitations remain.'
+  target_ids:
+  - CASE-127
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The ordinary named Polypeptone preparation retains its
+    local identity and is a supported kind of the closer generic MeSH Peptones material
+    category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply
+    exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels
+    correctly become nonresolving provenance, retaining exact text/source prefixes,
+    while five earlier Japanese/Hipolypepton exclusions remain exact. This does not
+    prove every product chemically distinct. Current notes explicitly supersede earlier
+    self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical
+    counts, provisional role, source/product/quantity holds and supplied-form boundaries
+    are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity,
+    with truthful LLM evidence and no BD formula or lot-property assertion. The exact
+    v3 report-only status correction has been independently rereviewed: current supported
+    source-proposal grounding replaces stale self-only wording, while historical status
+    and all source/owner/role/export limitations remain.", "assessment_origins": [{"assessment":
+    "The ordinary named Polypeptone preparation retains its local identity and is
+    a supported kind of the closer generic MeSH Peptones material category. Full MICRO179
+    defines the BD casein/animal-tissue blend; it cannot supply exact identity for
+    bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become
+    nonresolving provenance, retaining exact text/source prefixes, while five earlier
+    Japanese/Hipolypepton exclusions remain exact. This does not prove every product
+    chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate
+    conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity
+    holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting
+    broadMatch plus local identity, with truthful LLM evidence and no BD formula or
+    lot-property assertion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-scientific-review-v1.json",
+    "sha256": "5ca37ac611783e6de3ecc61a2d8ab80558de553703ebf42cf4194cecf8d0a577"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+    "case_input_sha256": "085cddfb99c7a52418ce5a67f3e3657ffb6142eab3d4528e1d1f94b9685425d1",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "8465032966d52fc5a13bd4c31fc5b5f69a9d452b6fc5a4c8d09658f70a7610c9", "selected_disposition":
+    "new_distinct_ingredient_proposal", "source": {"raw_source_label": "Hipolypepton",
+    "source": "mediadive", "source_case_id": "mediadive.ingredient:2060", "source_label":
+    "Hipolypepton"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-130
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The namespace-correct source is MediaDive ingredient559, solution1201 and
+    DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay
+    dry powder and its seven named formula inputs. Extra receiving glucose/thymine
+    are excluded. Only the report caption changes; the exact previously reviewed source-specific
+    powder payload and all holds remain.
+  target_ids:
+  - CASE-130
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The namespace-correct source is MediaDive ingredient559,
+    solution1201 and DSMZ542. The full retained payload preserves Difco Antibiotic
+    Medium3/Penassay dry powder and its seven named formula inputs. Extra receiving
+    glucose/thymine are excluded. Only the report caption changes; the exact previously
+    reviewed source-specific powder payload and all holds remain.", "assessment_origins":
+    [{"assessment": "The namespace-correct source is MediaDive ingredient559, solution1201
+    and DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay
+    dry powder and its seven named formula inputs. Extra receiving glucose/thymine
+    are excluded. Only the report caption changes; the exact previously reviewed source-specific
+    powder payload and all holds remain.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8",
+    "case_input_sha256": "2ec736685a259c1ec660a838197d43a9af1faf65e7ce6745e04aef7d9d08b33b",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "4ea610baad9232d6f7597df843a1abd3c9f62c6275980ba3c642df281e9ebe80", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Pennassay Broth",
+    "source": "mediadive", "source_case_id": "mediadive.ingredient:559", "source_label":
+    "Pennassay Broth"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-135
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The corrected caption identifies ingredient1467, solution3366 and DSMZ1619.
+    The full retained HiMediaM362 powder payload preserves23.74g powder, its six major
+    named inputs and trace-mixture boundary; the separate15ml glycerol is not converted
+    into dry-powder composition. Product, trace-formula and source/application holds
+    remain.
+  target_ids:
+  - CASE-135
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The corrected caption identifies ingredient1467, solution3366
+    and DSMZ1619. The full retained HiMediaM362 powder payload preserves23.74g powder,
+    its six major named inputs and trace-mixture boundary; the separate15ml glycerol
+    is not converted into dry-powder composition. Product, trace-formula and source/application
+    holds remain.", "assessment_origins": [{"assessment": "The corrected caption identifies
+    ingredient1467, solution3366 and DSMZ1619. The full retained HiMediaM362 powder
+    payload preserves23.74g powder, its six major named inputs and trace-mixture boundary;
+    the separate15ml glycerol is not converted into dry-powder composition. Product,
+    trace-formula and source/application holds remain.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2",
+    "case_input_sha256": "2816f85f1e96abc6b0a0f49c28a990d85b3883334507a6b0bf7b484963d89034",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "5d09893a43ac89709541891b83e466e54fcb63af289ecdf8393dce353e9758c0", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "ISP 7 Medium",
+    "source": "mediadive", "source_case_id": "mediadive.ingredient:1467", "source_label":
+    "ISP 7 Medium"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-136
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The complete BD manufacturer document identifies dry Marine Broth2216,
+    including its distinct broth magnesium-chloride and magnesium-sulfate formula.
+    All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly
+    relative to the approximate/performance-adjustable formula, not a lot analysis.
+    Seven new material references are supported by the corresponding full term definitions
+    and native owners. Salt hydrate/stoichiometry, extract processing and the separately
+    directed Peptone withdrawal remain explicit; no reconstitution water is inserted
+    into the dry product.
+  target_ids:
+  - CASE-136
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete BD manufacturer document identifies dry Marine
+    Broth2216, including its distinct broth magnesium-chloride and magnesium-sulfate
+    formula. All sixteen nominal printed inputs and amounts remain exact, with COMPLETE
+    explicitly relative to the approximate/performance-adjustable formula, not a lot
+    analysis. Seven new material references are supported by the corresponding full
+    term definitions and native owners. Salt hydrate/stoichiometry, extract processing
+    and the separately directed Peptone withdrawal remain explicit; no reconstitution
+    water is inserted into the dry product.", "assessment_origins": [{"assessment":
+    "The complete BD manufacturer document identifies dry Marine Broth2216, including
+    its distinct broth magnesium-chloride and magnesium-sulfate formula. All sixteen
+    nominal printed inputs and amounts remain exact, with COMPLETE explicitly relative
+    to the approximate/performance-adjustable formula, not a lot analysis. Seven new
+    material references are supported by the corresponding full term definitions and
+    native owners. Salt hydrate/stoichiometry, extract processing and the separately
+    directed Peptone withdrawal remain explicit; no reconstitution water is inserted
+    into the dry product.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+    "case_input_sha256": "b62729c11d6e49e63656101ce94b5ce7e7ca73768e9f42a37f863587352a6837",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "b8a1bcca600a2af7ff367344ad65bcf00e40791388eb77e919484a1a1a09fc55", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Difco Marine
+    Broth 2216", "source": "mediadive", "source_case_id": "mediadive.ingredient:1379",
+    "source_label": "Difco Marine Broth 2216"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-144
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The corrected caption identifies ingredient748, solution1635 and DSMZ804.
+    The complete candidate is a source-qualified21g Mueller-Hinton broth powder input;
+    separate yeast extract and XV factors remain receiving-medium ingredients. Unknown
+    supplier/formula are not replaced by a Sigma prepared-medium identity or guessed
+    component recipe.
+  target_ids:
+  - CASE-144
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The corrected caption identifies ingredient748, solution1635
+    and DSMZ804. The complete candidate is a source-qualified21g Mueller-Hinton broth
+    powder input; separate yeast extract and XV factors remain receiving-medium ingredients.
+    Unknown supplier/formula are not replaced by a Sigma prepared-medium identity
+    or guessed component recipe.", "assessment_origins": [{"assessment": "The corrected
+    caption identifies ingredient748, solution1635 and DSMZ804. The complete candidate
+    is a source-qualified21g Mueller-Hinton broth powder input; separate yeast extract
+    and XV factors remain receiving-medium ingredients. Unknown supplier/formula are
+    not replaced by a Sigma prepared-medium identity or guessed component recipe.",
+    "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+    "case_input_sha256": "d2743c804676b04cc902473447dc56fd98bd20210e9c2c3ce801046411d7b97f",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "4acfd4b1d6ca8152551f35058cab3368e3ebc5f5e0b9a743f1da1b577d26d245", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Mueller-Hinton
+    broth", "source": "mediadive", "source_case_id": "mediadive.ingredient:748", "source_label":
+    "Mueller-Hinton broth"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-158
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The corrected caption identifies ingredient2095 and solutions651/5601 in
+    DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder,
+    its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren
+    medium. The source caption correction neither approves a W03 owner union nor adds
+    a receiving-medium component.
+  target_ids:
+  - CASE-158
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The corrected caption identifies ingredient2095 and solutions651/5601
+    in DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder,
+    its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren
+    medium. The source caption correction neither approves a W03 owner union nor adds
+    a receiving-medium component.", "assessment_origins": [{"assessment": "The corrected
+    caption identifies ingredient2095 and solutions651/5601 in DSMZ339/339a. The whole
+    retained payload preserves OxoidCM0643 dehydrated powder, its nine named typical-formula
+    inputs and the distinction from prepared Wilkins-Chalgren medium. The source caption
+    correction neither approves a W03 owner union nor adds a receiving-medium component.",
+    "origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79",
+    "case_input_sha256": "5f295e791c9cc9b1ce39c909b1afca231870a4819f66f8c8729e48c586b29e12",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "69b1ca1405c62626b16a5e00b7d87085117476651134d41963e35652ffa2c271", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "dehydrated Wilkins-Chalgren
+    medium", "source": "mediadive", "source_case_id": "mediadive.ingredient:2095",
+    "source_label": "dehydrated Wilkins-Chalgren medium"}, "source_owner_export_approval":
+    false}'
+- assessment_id: ASSESS-CASE-160
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: 'The ordinary named Polypeptone preparation retains its local identity
+    and is a supported kind of the closer generic MeSH Peptones material category.
+    Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact
+    identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels
+    correctly become nonresolving provenance, retaining exact text/source prefixes,
+    while five earlier Japanese/Hipolypepton exclusions remain exact. This does not
+    prove every product chemically distinct. Current notes explicitly supersede earlier
+    self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical
+    counts, provisional role, source/product/quantity holds and supplied-form boundaries
+    are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity,
+    with truthful LLM evidence and no BD formula or lot-property assertion. The exact
+    v3 report-only status correction has been independently rereviewed: current supported
+    source-proposal grounding replaces stale self-only wording, while historical status
+    and all source/owner/role/export limitations remain.'
+  target_ids:
+  - CASE-160
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The ordinary named Polypeptone preparation retains its
+    local identity and is a supported kind of the closer generic MeSH Peptones material
+    category. Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply
+    exact identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels
+    correctly become nonresolving provenance, retaining exact text/source prefixes,
+    while five earlier Japanese/Hipolypepton exclusions remain exact. This does not
+    prove every product chemically distinct. Current notes explicitly supersede earlier
+    self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical
+    counts, provisional role, source/product/quantity holds and supplied-form boundaries
+    are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity,
+    with truthful LLM evidence and no BD formula or lot-property assertion. The exact
+    v3 report-only status correction has been independently rereviewed: current supported
+    source-proposal grounding replaces stale self-only wording, while historical status
+    and all source/owner/role/export limitations remain.", "assessment_origins": [{"assessment":
+    "The ordinary named Polypeptone preparation retains its local identity and is
+    a supported kind of the closer generic MeSH Peptones material category. Full MICRO179
+    defines the BD casein/animal-tissue blend; it cannot supply exact identity for
+    bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly become
+    nonresolving provenance, retaining exact text/source prefixes, while five earlier
+    Japanese/Hipolypepton exclusions remain exact. This does not prove every product
+    chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate
+    conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity
+    holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting
+    broadMatch plus local identity, with truthful LLM evidence and no BD formula or
+    lot-property assertion.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-scientific-review-v1.json",
+    "sha256": "5ca37ac611783e6de3ecc61a2d8ab80558de553703ebf42cf4194cecf8d0a577"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c",
+    "case_input_sha256": "6aefe4857dc7de8c44c7ceeef99f0ad8ac708faaedc834443d3a6e24b6ac8aa0",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "c93b199495211691e6fcd89392683a4a080726e19db691fa44293809fb275cff", "selected_disposition":
+    "supplied_form_correction", "source": {"raw_source_label": "Polypeptone", "source":
+    "mediadive", "source_case_id": "mediadive.ingredient:442", "source_label": "Polypeptone"},
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-173
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The complete frozen two-observation peptones case has the ordinary generic
+    Peptone material sense. NLM D010461 explicitly names Peptone and defines conventional
+    partial protein hydrolysates, consistent with the manufacturer definition. The
+    merely possible base-hydrolysis route or absent precipitation assay does not establish
+    a different actual preparation and must not block exact-term priority. The selected
+    generic owner is mesh:D010461; the older local/D011492 proposal and its stronger
+    food-use/assay reasoning remain preserved as history and are explicitly qualified.
+    Neither source process nor measured lot behavior is invented. Twelve authentic
+    child origins are dependency corrections attached to this existing case, not new
+    W05 source ownership; their literal/raw scopes remain intact. Five genuine named
+    generic parts now reference this exact parent; the other unsupported parts remain
+    UNMAPPED. Additive causal dependency delta is justified for these exact child
+    proposals. The frozen case remains the original assigned source object; child
+    source observations do not become new W05 cases. Union fields and separate dependency_reassessment
+    preserve parent reassessment and earlier reasoning. Existing child proposal identities/case
+    IDs and authentic owner beforeimages remain selected.
+  target_ids:
+  - CASE-173
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete frozen two-observation peptones case has
+    the ordinary generic Peptone material sense. NLM D010461 explicitly names Peptone
+    and defines conventional partial protein hydrolysates, consistent with the manufacturer
+    definition. The merely possible base-hydrolysis route or absent precipitation
+    assay does not establish a different actual preparation and must not block exact-term
+    priority. The selected generic owner is mesh:D010461; the older local/D011492
+    proposal and its stronger food-use/assay reasoning remain preserved as history
+    and are explicitly qualified. Neither source process nor measured lot behavior
+    is invented. Twelve authentic child origins are dependency corrections attached
+    to this existing case, not new W05 source ownership; their literal/raw scopes
+    remain intact. Five genuine named generic parts now reference this exact parent;
+    the other unsupported parts remain UNMAPPED. Additive causal dependency delta
+    is justified for these exact child proposals. The frozen case remains the original
+    assigned source object; child source observations do not become new W05 cases.
+    Union fields and separate dependency_reassessment preserve parent reassessment
+    and earlier reasoning. Existing child proposal identities/case IDs and authentic
+    owner beforeimages remain selected.", "assessment_origins": [{"assessment": "The
+    complete frozen two-observation peptones case has the ordinary generic Peptone
+    material sense. NLM D010461 explicitly names Peptone and defines conventional
+    partial protein hydrolysates, consistent with the manufacturer definition. The
+    merely possible base-hydrolysis route or absent precipitation assay does not establish
+    a different actual preparation and must not block exact-term priority. The selected
+    generic owner is mesh:D010461; the older local/D011492 proposal and its stronger
+    food-use/assay reasoning remain preserved as history and are explicitly qualified.
+    Neither source process nor measured lot behavior is invented. Twelve authentic
+    child origins are dependency corrections attached to this existing case, not new
+    W05 source ownership; their literal/raw scopes remain intact. Five genuine named
+    generic parts now reference this exact parent; the other unsupported parts remain
+    UNMAPPED.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/direct-parent-independent-review-v1.json",
+    "sha256": "98bd8081855ab166d43528cdfa1e2f1ff7f0546bf1398d8b7d8baa76a7e2de49"},
+    "reviewer": "/root/final_skeptical"}, {"assessment": "Additive causal dependency
+    delta is justified for these exact child proposals. The frozen case remains the
+    original assigned source object; child source observations do not become new W05
+    cases. Union fields and separate dependency_reassessment preserve parent reassessment
+    and earlier reasoning. Existing child proposal identities/case IDs and authentic
+    owner beforeimages remain selected.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "reviewer": "/root/final_skeptical/preservation_audit", "scope": "Actual independent
+    source/payload dependency assessment; final composed complete decision independently
+    bound by parent reviewer."}], "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+    "case_input_sha256": "d42806e437d2e4c72f3e148314c5ef72e8c21f08c78b7b70eebe3d32c83b67d6",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "612356cba964889397f06c75030bce5e7a2774d057817e32451845b3cea722c9", "selected_disposition":
+    "unresolved", "source": {"raw_source_label": "peptones", "source": "microbedecoder",
+    "source_case_id": "kgmicrobe.compound:peptones", "source_label": "peptones"},
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-176
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: Full MICRO:0000181 definition and its source discussion describe generic
+    enzymatic soy-flour digest, consistent with MediaDive75 and the independent manufacturer
+    definition. This is a supported exact generic identity. The erroneous Hordeum
+    parenthesis, branded/papaic synonyms and numerical product annotations are not
+    imported. The complete final payload preserves five existing alias exclusions,
+    the unresolved peptic-process alias context, old evidence/history, statistics
+    and roles. The separately reviewed rejected Bacto tombstone prevents the inherited
+    shared-ID representative from acquiring an unsupported generic-Soy equivalence.
+    Neither shared-ID source membership nor export admission is established. The authentic
+    rejected Bacto Soytone tombstone now has an explicitly empty representative, preventing
+    native shared-FOODON fallback while retaining its own rejected continuity. This
+    is neither branded/generic synonym equality nor a reassignment of the shared source
+    associations. Exact original owner binding is deduplicated; current shared-owner/source,
+    role and export holds remain.
+  target_ids:
+  - CASE-176
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "Full MICRO:0000181 definition and its source discussion
+    describe generic enzymatic soy-flour digest, consistent with MediaDive75 and the
+    independent manufacturer definition. This is a supported exact generic identity.
+    The erroneous Hordeum parenthesis, branded/papaic synonyms and numerical product
+    annotations are not imported. The complete final payload preserves five existing
+    alias exclusions, the unresolved peptic-process alias context, old evidence/history,
+    statistics and roles. The separately reviewed rejected Bacto tombstone prevents
+    the inherited shared-ID representative from acquiring an unsupported generic-Soy
+    equivalence. Neither shared-ID source membership nor export admission is established.
+    The authentic rejected Bacto Soytone tombstone now has an explicitly empty representative,
+    preventing native shared-FOODON fallback while retaining its own rejected continuity.
+    This is neither branded/generic synonym equality nor a reassignment of the shared
+    source associations. Exact original owner binding is deduplicated; current shared-owner/source,
+    role and export holds remain.", "assessment_origins": [{"assessment": "Full MICRO:0000181
+    definition and its source discussion describe generic enzymatic soy-flour digest,
+    consistent with MediaDive75 and the independent manufacturer definition. This
+    is a supported exact generic identity. The erroneous Hordeum parenthesis, branded/papaic
+    synonyms and numerical product annotations are not imported. The complete final
+    payload preserves five existing alias exclusions, the unresolved peptic-process
+    alias context, old evidence/history, statistics and roles. The separately reviewed
+    rejected Bacto tombstone prevents the inherited shared-ID representative from
+    acquiring an unsupported generic-Soy equivalence. Neither shared-ID source membership
+    nor export admission is established.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/parents-scientific-review-v1.json",
+    "sha256": "25889e17450b8e7503a816355727345160fb4dc3af872e70a8647e1116169c3b"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+    "case_input_sha256": "1d9a6c0b9074035cc4ed54f5ea2cdd4f8a2a9b59bc565759d3038158263320d9",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "5627f294f358fe6e5576646b4d0a9c49e3a201b1ae77898e6e75904f5339014d", "selected_disposition":
+    "supplied_form_correction", "source": {"raw_source_label": "Soy peptone", "source":
+    "mediadive", "source_case_id": "mediadive.ingredient:75", "source_label": "Soy
+    peptone"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-181
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: 'The complete existing cooked-meat source decision remains intact. Only
+    the FAB dependency report/evidence is added: actual methods associate FAB with
+    Oxoid, while the separate PYG assay and LabM/Neogen comparator cannot supply its
+    historical formula. The unsupported peptone resolving reference is withdrawn without
+    asserting peptone absent. Additive causal dependency delta is justified for these
+    exact child proposals. The frozen case remains the original assigned source object;
+    child source observations do not become new W05 cases. Union fields and separate
+    dependency_reassessment preserve parent reassessment and earlier reasoning. Existing
+    child proposal identities/case IDs and authentic owner beforeimages remain selected.'
+  target_ids:
+  - CASE-181
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete existing cooked-meat source decision remains
+    intact. Only the FAB dependency report/evidence is added: actual methods associate
+    FAB with Oxoid, while the separate PYG assay and LabM/Neogen comparator cannot
+    supply its historical formula. The unsupported peptone resolving reference is
+    withdrawn without asserting peptone absent. Additive causal dependency delta is
+    justified for these exact child proposals. The frozen case remains the original
+    assigned source object; child source observations do not become new W05 cases.
+    Union fields and separate dependency_reassessment preserve parent reassessment
+    and earlier reasoning. Existing child proposal identities/case IDs and authentic
+    owner beforeimages remain selected.", "assessment_origins": [{"assessment": "Additive
+    causal dependency delta is justified for these exact child proposals. The frozen
+    case remains the original assigned source object; child source observations do
+    not become new W05 cases. Union fields and separate dependency_reassessment preserve
+    parent reassessment and earlier reasoning. Existing child proposal identities/case
+    IDs and authentic owner beforeimages remain selected.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "reviewer": "/root/final_skeptical/preservation_audit", "scope": "Actual independent
+    source/payload dependency assessment; final composed complete decision independently
+    bound by parent reviewer."}], "case_id": "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a",
+    "case_input_sha256": "590323eb3fa1cd984565c5eb371fd4cdfe185fdd607ad99ae089928324480a6e",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "27a5357c8c99038debf77b5020cae4c715c1755fe734f76b727af6dadef000c9", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Cooked meat medium",
+    "source": "mediadive", "source_case_id": "mediadive.ingredient:1824", "source_label":
+    "Cooked meat medium"}, "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CASE-182
+  area: identity
+  topic: Complete selected case within explicit source and curation scope
+  outcome: supported
+  summary: The complete Difco document supports the nine-input dehydrated RCM formula
+    and standard38g/L reconstitution. Sodium chloride and agar identities are supported.
+    The printed generic Peptone input also supports the conditional kgmicrobe.ingredient:peptone
+    reference without an unsupported mammalian/Bacto/substrate/enzyme inference. The
+    v2 successor correctly removes the false attribution of RCM to the20-claim consumer
+    review, retains Marine separately, and preserves all quantities, approximate-formula
+    footnote and unresolved specific form/processing facts. Whole product remains
+    distinct in source scope from Oxoid labels. RCM final source decision preserves
+    its exact raw case, occurrences and product/source holds. The added direct-parent
+    continuity field qualifies the earlier local generic reference only; no 20-claim
+    W03 attribution or supplier-missing hold is restored.
+  target_ids:
+  - CASE-182
+  evidence_ids:
+  - PEER
+  details: '{"assessment": "The complete Difco document supports the nine-input dehydrated
+    RCM formula and standard38g/L reconstitution. Sodium chloride and agar identities
+    are supported. The printed generic Peptone input also supports the conditional
+    kgmicrobe.ingredient:peptone reference without an unsupported mammalian/Bacto/substrate/enzyme
+    inference. The v2 successor correctly removes the false attribution of RCM to
+    the20-claim consumer review, retains Marine separately, and preserves all quantities,
+    approximate-formula footnote and unresolved specific form/processing facts. Whole
+    product remains distinct in source scope from Oxoid labels. RCM final source decision
+    preserves its exact raw case, occurrences and product/source holds. The added
+    direct-parent continuity field qualifies the earlier local generic reference only;
+    no 20-claim W03 attribution or supplier-missing hold is restored.", "assessment_origins":
+    [{"assessment": "The complete Difco document supports the nine-input dehydrated
+    RCM formula and standard38g/L reconstitution. Sodium chloride and agar identities
+    are supported. The printed generic Peptone input also supports the conditional
+    kgmicrobe.ingredient:peptone reference without an unsupported mammalian/Bacto/substrate/enzyme
+    inference. The v2 successor correctly removes the false attribution of RCM to
+    the20-claim consumer review, retains Marine separately, and preserves all quantities,
+    approximate-formula footnote and unresolved specific form/processing facts. Whole
+    product remains distinct in source scope from Oxoid labels.", "origin": {"path":
+    ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json", "sha256":
+    "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"}, "reviewer":
+    "/root/final_skeptical"}, {"assessment": "RCM final source decision preserves
+    its exact raw case, occurrences and product/source holds. The added direct-parent
+    continuity field qualifies the earlier local generic reference only; no 20-claim
+    W03 attribution or supplier-missing hold is restored.", "origin": {"path": ".temp/w05-buffer-parts-v1/review/rcm-direct-reference-review-v1.json",
+    "sha256": "fa6f76aa6a58e308befe1483bbf45454eb1f274db2af9332b0632d59ffeb7785"},
+    "reviewer": "/root/final_skeptical"}], "case_id": "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd",
+    "case_input_sha256": "633885bc7239951b8cb7ec904e6bf2149cfb8ad981c82a1faa5006413e8f7e24",
+    "composition_check": {"path": ".temp/w05-buffer-parts-v1/review/composition-independent-final-v5.json",
+    "sha256": "74be11684bba965a76c151b018a94bc4e47583f64a8d243d5459c5c3e0f93efd"},
+    "conclusion": "PASS_BOUNDED_COMPOSED_DECISION_WITH_SOURCE_HOLDS", "final_composition_reviewer":
+    "/root/final_skeptical", "occurrence_ids": [], "selected_decision_object_sha256":
+    "ce10d7c47eed94cabc7f346987e040f14564f6225d7669f2e8d46aee40ae9afd", "selected_disposition":
+    "stock_product_mixture_context", "source": {"raw_source_label": "Reinforced clostridial
+    medium", "source": "mediadive", "source_case_id": "mediadive.ingredient:1769",
+    "source_label": "Reinforced clostridial medium"}, "source_owner_export_approval":
+    false}'
+- assessment_id: ASSESS-CHEM-C1193-DSMZ_394_1137-Tris
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Complete stock candidate retains the source-defined nominal 1 M Tris-HCl
+    pH7.5 preparation and all six occurrence routes. Both material component slots
+    are absent; the stock is not mapped to dry hydrochloride or free-base species.
+    DSMZ394 and1137 support the same bounded nominal strength/pH despite different
+    receiving doses, without proving unknown full formulation details equal. Original
+    identity, evidence, source-specific constraints and history are unchanged.
+  target_ids:
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+    "root": "artifact", "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"},
+    "applies_to_occurrence_ids": ["CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+    "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857", "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+    "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807", "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+    "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"], "assessment":
+    "Complete stock candidate retains the source-defined nominal 1 M Tris-HCl pH7.5
+    preparation and all six occurrence routes. Both material component slots are absent;
+    the stock is not mapped to dry hydrochloride or free-base species. DSMZ394 and1137
+    support the same bounded nominal strength/pH despite different receiving doses,
+    without proving unknown full formulation details equal. Original identity, evidence,
+    source-specific constraints and history are unchanged.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"},
+    "case_ids": ["CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"],
+    "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "field_assessments": {"history": "Exact prior history preserved with no new no-op
+    event. Recorded private correction predates filing; filing precedes first publication.",
+    "identity": "Whole nominal stock identity retained; no solute identity substitution.
+    HEPES family owner choice remains conditional.", "mapping_evidence": "Current
+    LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite
+    in this supplement.", "material_partonomy": "components and component_assertion
+    both absent; unsupported historical moieties/species are preserved only in immutable
+    old payload/finding.", "other_fields": "All selected payload fields are identical
+    to base0bac and first corrected publication5156; no source, role, count or negative-object
+    change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium
+    pH and water remain separate."}, "limits": ["No final owner installation or family
+    reconciliation.", "No complete formulation, solvent, titrant, component molarity
+    or free-base/salt proportion inferred."], "native_check": {"capture": {"path":
+    ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256":
+    "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors":
+    [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08",
+    "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:tris_hcl_1m_ph_7_5_dsmz_394_1137",
+    "object_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)", "object_source":
+    "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium394.pdf|MIM:curator=Codex
+    worker05 /root/chemicals_research final report correction", "subject_id": "MIM:Tris_HCl_1M_pH_7_5_DSMZ_394_1137",
+    "subject_label": "Tris-HCl 1 M pH 7.5 stock (DSMZ 394 1137)", "validation_method":
+    ""}]}, "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base":
+    true, "payload_author": "/root/chemicals_research, historical correction preserved",
+    "primary_reassessment_author": "/root/buffer_tris", "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+    "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "87e5487ea868793a2771a59a6623f02279567d0904c2c23e60696c14f2c5331b",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CHEM-C1193-HEPES-1221
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Complete NBRC1221 candidate preserves the whole 1 M HEPES-KOH name, source
+    URL, LLM interpretation and two authentic historical events. Neither material
+    component slot is present. The source receiving pH7.14, water and other nested
+    recipes have not been imported as stock properties. Historical local identity
+    is conditional, not a claim of distinctness from NBRC1474.
+  target_ids:
+  - CHEM-C1193-HEPES-1221
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml",
+    "root": "artifact", "sha256": "35b4d6500cea4b441b25dd7e0f9e6f5f93ea6192b5f83f9e15f8a606b71db450"},
+    "applies_to_occurrence_ids": ["CM_OCC:51c80ad1ebe74ca8bcbb279fa49801bafefa559ab08a4dbdcc247e04685220ac"],
+    "assessment": "Complete NBRC1221 candidate preserves the whole 1 M HEPES-KOH name,
+    source URL, LLM interpretation and two authentic historical events. Neither material
+    component slot is present. The source receiving pH7.14, water and other nested
+    recipes have not been imported as stock properties. Historical local identity
+    is conditional, not a claim of distinctness from NBRC1474.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"},
+    "case_ids": ["CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"],
+    "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "field_assessments": {"history": "Exact prior history preserved with no new no-op
+    event. Recorded private correction predates filing; filing precedes first publication.",
+    "identity": "Whole nominal stock identity retained; no solute identity substitution.
+    HEPES family owner choice remains conditional.", "mapping_evidence": "Current
+    LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite
+    in this supplement.", "material_partonomy": "components and component_assertion
+    both absent; unsupported historical moieties/species are preserved only in immutable
+    old payload/finding.", "other_fields": "All selected payload fields are identical
+    to base0bac and first corrected publication5156; no source, role, count or negative-object
+    change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium
+    pH and water remain separate."}, "limits": ["No final owner installation or family
+    reconciliation.", "No complete formulation, solvent, titrant, component molarity
+    or free-base/salt proportion inferred."], "native_check": {"capture": {"path":
+    ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256":
+    "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors":
+    [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08",
+    "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1221",
+    "object_label": "1 M HEPES-KOH stock (NBRC 1221)", "object_source": "kgm:ingredient",
+    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1221|MIM:curator=Codex
+    worker05 /root/chemicals_research final report correction", "subject_id": "MIM:HEPES_KOH_1M_NBRC_1221",
+    "subject_label": "1 M HEPES-KOH stock (NBRC 1221)", "validation_method": ""}]},
+    "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base":
+    true, "payload_author": "/root/chemicals_research, historical correction preserved",
+    "primary_reassessment_author": "/root/buffer_hepes", "proposal_id": "CHEM-C1193-HEPES-1221",
+    "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "e330bba81afde04b201a2df4c140262dda83d00d143fc22c735d8ee5253694b8",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CHEM-C1193-HEPES-1474
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Complete NBRC1474 candidate preserves the whole 1 M HEPES-KOH name, source
+    URL, LLM interpretation and two authentic historical events. Neither material
+    component slot is present. Receiving pH9.0 is correctly kept separate from unknown
+    stock pH. Missing formulation facts do not prove equality or difference from NBRC1221;
+    no owner winner or co-installation is approved.
+  target_ids:
+  - CHEM-C1193-HEPES-1474
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml",
+    "root": "artifact", "sha256": "add1caec01a54bf3f62a1390f29c1c67c090ffe612ad3f425f5b96de1b252bdd"},
+    "applies_to_occurrence_ids": ["CM_OCC:a5462d9bff6e42bb654523d8878bd831fe7ec360a9c6defc92a67e39ddba79bd"],
+    "assessment": "Complete NBRC1474 candidate preserves the whole 1 M HEPES-KOH name,
+    source URL, LLM interpretation and two authentic historical events. Neither material
+    component slot is present. Receiving pH9.0 is correctly kept separate from unknown
+    stock pH. Missing formulation facts do not prove equality or difference from NBRC1221;
+    no owner winner or co-installation is approved.", "assessment_origin": {"path":
+    ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"},
+    "case_ids": ["CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f"],
+    "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "field_assessments": {"history": "Exact prior history preserved with no new no-op
+    event. Recorded private correction predates filing; filing precedes first publication.",
+    "identity": "Whole nominal stock identity retained; no solute identity substitution.
+    HEPES family owner choice remains conditional.", "mapping_evidence": "Current
+    LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite
+    in this supplement.", "material_partonomy": "components and component_assertion
+    both absent; unsupported historical moieties/species are preserved only in immutable
+    old payload/finding.", "other_fields": "All selected payload fields are identical
+    to base0bac and first corrected publication5156; no source, role, count or negative-object
+    change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium
+    pH and water remain separate."}, "limits": ["No final owner installation or family
+    reconciliation.", "No complete formulation, solvent, titrant, component molarity
+    or free-base/salt proportion inferred."], "native_check": {"capture": {"path":
+    ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256":
+    "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors":
+    [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08",
+    "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:hepes_koh_1m_nbrc_1474",
+    "object_label": "1 M HEPES-KOH stock (NBRC 1474)", "object_source": "kgm:ingredient",
+    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://www.nite.go.jp/nbrc/catalogue/NBRCMediumDetailServlet?NO=1474|MIM:curator=Codex
+    worker05 /root/chemicals_research final report correction", "subject_id": "MIM:HEPES_KOH_1M_NBRC_1474",
+    "subject_label": "1 M HEPES-KOH stock (NBRC 1474)", "validation_method": ""}]},
+    "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base":
+    true, "payload_author": "/root/chemicals_research, historical correction preserved",
+    "primary_reassessment_author": "/root/buffer_hepes", "proposal_id": "CHEM-C1193-HEPES-1474",
+    "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "cc1a4ea0eb091e03a354c20db6004c50f7351f8046f198be3f90d0af977a621b",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CHEM-C1193-JCM_1061-Tris
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Complete stock candidate retains the explicit 0.5 M Tris-HCl solution pH8.0
+    and both JCM1061 routes. Both material component slots are absent. Source water/final1L
+    instructions describe the receiving medium, not the stock. No frozen100G_PER_L
+    or990.099percent corruption is adopted, no molecular salt/base split is invented,
+    and all original identity, evidence and history are unchanged.
+  target_ids:
+  - CHEM-C1193-JCM_1061-Tris
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+    "root": "artifact", "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"},
+    "applies_to_occurrence_ids": ["CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+    "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"], "assessment":
+    "Complete stock candidate retains the explicit 0.5 M Tris-HCl solution pH8.0 and
+    both JCM1061 routes. Both material component slots are absent. Source water/final1L
+    instructions describe the receiving medium, not the stock. No frozen100G_PER_L
+    or990.099percent corruption is adopted, no molecular salt/base split is invented,
+    and all original identity, evidence and history are unchanged.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/buffer-review-v1.json", "sha256": "dede3317317c9b919e26d31164a08c9c4bbc64d20798cdebd2d39fe73c2d22d5"},
+    "case_ids": ["CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"],
+    "complete_payload_reviewed": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "field_assessments": {"history": "Exact prior history preserved with no new no-op
+    event. Recorded private correction predates filing; filing precedes first publication.",
+    "identity": "Whole nominal stock identity retained; no solute identity substitution.
+    HEPES family owner choice remains conditional.", "mapping_evidence": "Current
+    LLM_SUGGESTION is honest agent interpretation; no human claim or enum rewrite
+    in this supplement.", "material_partonomy": "components and component_assertion
+    both absent; unsupported historical moieties/species are preserved only in immutable
+    old payload/finding.", "other_fields": "All selected payload fields are identical
+    to base0bac and first corrected publication5156; no source, role, count or negative-object
+    change.", "strength_pH_and_source": "Supported source strengths/pH retained; final-medium
+    pH and water remain separate."}, "limits": ["No final owner installation or family
+    reconciliation.", "No complete formulation, solvent, titrant, component molarity
+    or free-base/salt proportion inferred."], "native_check": {"capture": {"path":
+    ".temp/w05-buffer-parts-v1/review/independent-payload-checks-v1.json", "sha256":
+    "d0181b716c9643ad7179ba8478805a28e23e1b32ff114806f1438a42cf7fd477"}, "closed_schema_errors":
+    [], "rows": [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08",
+    "mapping_justification": "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061",
+    "object_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)", "object_source": "kgm:ingredient",
+    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061|MIM:curator=Codex
+    worker05 /root/chemicals_research final report correction", "subject_id": "MIM:Tris_HCl_0_5M_pH_8_JCM_1061",
+    "subject_label": "Tris-HCl 0.5 M pH 8 stock (JCM 1061)", "validation_method":
+    ""}]}, "outcome": "pass_with_limitations", "payload_and_proposal_unchanged_from_base":
+    true, "payload_author": "/root/chemicals_research, historical correction preserved",
+    "primary_reassessment_author": "/root/buffer_tris", "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+    "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "d6dd1f8fd1d3d19adf51de1d6a0e1655ae68e4a54d38ad4b16d9248377a60e3f",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-CHEM-C1193-Tris-HCl-salt
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The complete weighed Tris hydrochloride salt payload retains CAS1185-53-1,
+    form-specific registry identity and NARROW_MATCH to CHEBI9754. Native output correctly
+    contains the broader parent row plus the CAS and local compound identity rows.
+    The weighed salt contexts remain distinct from the nominal buffer-stock contexts
+    reviewed separately; no salt substitution, acid/base partonomy or pH-derived stoichiometry
+    is inferred. Full unchanged source-supported payload, historical evidence and
+    holds were reread.
+  target_ids:
+  - CHEM-C1193-Tris-HCl-salt
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml",
+    "root": "artifact", "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"},
+    "assessment": "The complete weighed Tris hydrochloride salt payload retains CAS1185-53-1,
+    form-specific registry identity and NARROW_MATCH to CHEBI9754. Native output correctly
+    contains the broader parent row plus the CAS and local compound identity rows.
+    The weighed salt contexts remain distinct from the nominal buffer-stock contexts
+    reviewed separately; no salt substitution, acid/base partonomy or pH-derived stoichiometry
+    is inferred. Full unchanged source-supported payload, historical evidence and
+    holds were reread.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "case_ids": ["CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id":
+    "CHEM-C1193-Tris-HCl-salt", "selected_proposal_object_sha256": "223e958b6b4fcee3332cd579e37102d7d0c645ae62d641c8d2a865b3327244a5",
+    "source_owner_export_approval": false, "unchanged_from_published_base": true,
+    "wording_clarification": "This avoids reading the prior lane receipt phrase about
+    seven weighed contexts as a count of seven salt-only occurrences. No payload,
+    source or decision count changes."}'
+- assessment_id: ASSESS-CHEM-C1193-ethanol95-dsmz_78
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: 'The complete candidate correctly states twelve routed occurrences: eleven
+    frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected DSMZ78
+    primary preparation text distinguishes nominal 95% ethanol input from the later
+    vitamin-K3 dilution in water. Neither percent basis nor solvent balance is established.
+    The candidate retains only the named ethanol component, conditional preparation-family
+    handles and all original equality/difference and owner holds. The count repair
+    adds no formulation conclusion.'
+  target_ids:
+  - CHEM-C1193-ethanol95-dsmz_78
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml",
+    "root": "artifact", "sha256": "2212227cc2fafd1aa465189994c6b928af8769629448678c98743cda87969c85"},
+    "assessment": "The complete candidate correctly states twelve routed occurrences:
+    eleven frozen flat routes and the DSMZ212a nested vitamin-K1 route. The inspected
+    DSMZ78 primary preparation text distinguishes nominal 95% ethanol input from the
+    later vitamin-K3 dilution in water. Neither percent basis nor solvent balance
+    is established. The candidate retains only the named ethanol component, conditional
+    preparation-family handles and all original equality/difference and owner holds.
+    The count repair adds no formulation conclusion.", "assessment_origin": {"path":
+    ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "case_ids": ["CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+    "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac"], "conclusion":
+    "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+    "selected_proposal_object_sha256": "1f1bad71c15b462be66fd76bf0feb3c0bb18f224d6cbb716d4735c59d56724a9",
+    "source_owner_export_approval": false, "unchanged_from_published_base": true}'
+- assessment_id: ASSESS-FINAL-CHEM-P-thiamine-hcl-monohydrate
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: All six complete NBRC source pages print one-water Thiamine-HCl at 5 mg
+    within their vitamin preparations. One local source-defined material is supported
+    across both raw spelling cases. The full candidate preserves the hydration qualifier,
+    six RAW_TEXT source routes, six occurrences and no molecular formula, CAS, inferred
+    chloride stoichiometry, parent, supplier or stock components. The 1 L vitamin
+    preparation and its receiving doses do not become properties of the single ingredient.
+    Existing source and integration holds remain.
+  target_ids:
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemical-supplement-v1/proposed-v1/Thiamine_Hcl_Monohydrate.yaml",
+    "root": "artifact", "sha256": "15861ae70999bed905cfe24576f2004ea0985da541023ef07a56935d1b28705b"},
+    "assessment": "All six complete NBRC source pages print one-water Thiamine-HCl
+    at 5 mg within their vitamin preparations. One local source-defined material is
+    supported across both raw spelling cases. The full candidate preserves the hydration
+    qualifier, six RAW_TEXT source routes, six occurrences and no molecular formula,
+    CAS, inferred chloride stoichiometry, parent, supplier or stock components. The
+    1 L vitamin preparation and its receiving doses do not become properties of the
+    single ingredient. Existing source and integration holds remain.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "case_ids": ["CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+    "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3"], "conclusion":
+    "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "FINAL-CHEM-P-thiamine-hcl-monohydrate",
+    "selected_proposal_object_sha256": "f4e6d00a107e9e7b846b5e46d384aebfc22067e84d65d3ac233822e8d7f67e34",
+    "source_owner_export_approval": false, "unchanged_from_published_base": true}'
+- assessment_id: ASSESS-M1193-P-CM0643
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The corrected caption identifies ingredient2095 and solutions651/5601 in
+    DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder,
+    its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren
+    medium. The source caption correction neither approves a W03 owner union nor adds
+    a receiving-medium component.
+  target_ids:
+  - M1193-P-CM0643
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+    "root": "artifact", "sha256": "cee20ef5c36ecce85e5e562c5818d6870c17f91cb6c0cce6b7547b9c248aefc9"},
+    "assessment": "The corrected caption identifies ingredient2095 and solutions651/5601
+    in DSMZ339/339a. The whole retained payload preserves OxoidCM0643 dehydrated powder,
+    its nine named typical-formula inputs and the distinction from prepared Wilkins-Chalgren
+    medium. The source caption correction neither approves a W03 owner union nor adds
+    a receiving-medium component.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "case_ids": ["CM_NAME:550525f17a26d409df9fcee138a490320ad6aacdc77461be179e3523e41bcb85",
+    "CM_NAME:7b2278bb7122519b4c16728236bb81d44c9b747068b4b40628ad57b7278c647b", "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id":
+    "M1193-P-CM0643", "selected_proposal_object_sha256": "cff72b2896f93e6f2776a21520ef6bec65e513b48d309bc38dd8ace3d0238f47",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The Falsen passages explicitly assign FAB to Oxoid and separately describe
+    Anaerobe Systems PYG fermentation broth. The complete Neogen sheet establishes
+    a LabM/Neogen comparator, not the original FAB formula. Removing the peptone resolving
+    ID is supported without claiming peptone absent. The prior meat-granule withdrawal
+    remains unchanged; starch/glucose and other inherited parts remain unverified.
+  target_ids:
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+    "root": "artifact", "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"},
+    "assessment": "The Falsen passages explicitly assign FAB to Oxoid and separately
+    describe Anaerobe Systems PYG fermentation broth. The complete Neogen sheet establishes
+    a LabM/Neogen comparator, not the original FAB formula. Removing the peptone resolving
+    ID is supported without claiming peptone absent. The prior meat-granule withdrawal
+    remains unchanged; starch/glucose and other inherited parts remain unverified.",
+    "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+    "sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5"},
+    "case_ids": ["KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178",
+    "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_index": 1, "mapping_evidence_and_enums_preserved":
+    true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes":
+    "The original Falsen 2005 methods/results text associates Fastidious Anaerobe
+    Broth with Oxoid. Its separately named Anaerobe Systems peptone/yeast/glucose
+    fermentation broth is a different preparation and supplies no FAB recipe. The
+    Neogen NCM0199 sheet is a LabM/Neogen product comparator, unselected for this
+    source. Original Oxoid catalogue/formula and the historical peptone material remain
+    unresolved. The existing meat-granule withdrawal is retained; starch/glucose and
+    other inherited component claims are unchanged and remain unverified. No claim
+    that peptone is absent is made. Withdraw the unsupported peptone component_id
+    and set reference_scope UNMAPPED; retain its existing component_name as historical
+    interpretation, not a newly observed expanded source label. The original assertion
+    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
+    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
+    unrelated components, all historical evidence and source/role/export holds are
+    preserved. Historical all-components-identified statements describe prior states,
+    not a new approval. No new MappingEvidence is added; historical human/component
+    evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666
+    and https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719468092.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.359663+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Original Oxoid historical FAB product/formula and source-bound peptone constituent
+    remain missing; no substitute from the separate PYG assay.", "No final generic
+    Peptone parent grounding/ontology target approval; stable local identity reference
+    only.", "No whole-owner application, new source-case adoption, roles, export,
+    arbitrary merge or equality of complete preparations approved."], "local_after_capture":
+    {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+    "sha256": "99a108d9eb40a862484ce123b19297e6b9312d1b843f4a56fa68acefe1acdf1e"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+    "sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99"},
+    "selected_proposal_object_sha256": "de23dd6b60fc245aac9b4783ba9364b5286e084fd130dd24e73b654d4a33907b",
+    "source_ids": ["FAB_ORIGINAL", "NEOGEN_NCM0199", "ACUMEDIA7110"], "source_observation_rows":
+    [6029], "source_owner_export_approval": false, "target_id": "PC01"}'
+- assessment_id: ASSESS-M1193-P-ISP7
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The corrected caption identifies ingredient1467, solution3366 and DSMZ1619.
+    The full retained HiMediaM362 powder payload preserves23.74g powder, its six major
+    named inputs and trace-mixture boundary; the separate15ml glycerol is not converted
+    into dry-powder composition. Product, trace-formula and source/application holds
+    remain.
+  target_ids:
+  - M1193-P-ISP7
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/media/proposed/ISP_7_Medium.yaml", "root": "artifact",
+    "sha256": "82cf5273f8018fec8ad20a956e8bfa2fc1a997f28f2025bebf510658e987fde3"},
+    "assessment": "The corrected caption identifies ingredient1467, solution3366 and
+    DSMZ1619. The full retained HiMediaM362 powder payload preserves23.74g powder,
+    its six major named inputs and trace-mixture boundary; the separate15ml glycerol
+    is not converted into dry-powder composition. Product, trace-formula and source/application
+    holds remain.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "case_ids": ["CM_NAME:3a71f979a20ccc7a9e900d1b92ba2dbeefc6b76bf95c72aa79079be2cdf048d5",
+    "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2"], "conclusion":
+    "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-ISP7",
+    "selected_proposal_object_sha256": "8ee1ea628294960cd7f048076dfc18aed1bdc13bd1fc23f98ee743184b7f17aa",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-M1193-P-MARINE2216
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The complete BD manufacturer document identifies dry Marine Broth2216,
+    including its distinct broth magnesium-chloride and magnesium-sulfate formula.
+    All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly
+    relative to the approximate/performance-adjustable formula, not a lot analysis.
+    Seven new material references are supported by the corresponding full term definitions
+    and native owners. Salt hydrate/stoichiometry, extract processing and the separately
+    directed Peptone withdrawal remain explicit; no reconstitution water is inserted
+    into the dry product.
+  target_ids:
+  - M1193-P-MARINE2216
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "buffer-parts-v1/media/proposed/Marine_Broth_2216.yaml", "root": "artifact",
+    "sha256": "e5be534e5df60f0089cdba02e083d8390113f08550e09b89dbcdc67eda9c00e6"},
+    "assessment": "The complete BD manufacturer document identifies dry Marine Broth2216,
+    including its distinct broth magnesium-chloride and magnesium-sulfate formula.
+    All sixteen nominal printed inputs and amounts remain exact, with COMPLETE explicitly
+    relative to the approximate/performance-adjustable formula, not a lot analysis.
+    Seven new material references are supported by the corresponding full term definitions
+    and native owners. Salt hydrate/stoichiometry, extract processing and the separately
+    directed Peptone withdrawal remain explicit; no reconstitution water is inserted
+    into the dry product.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "case_ids": ["CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+    "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c"], "conclusion":
+    "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-MARINE2216",
+    "selected_proposal_object_sha256": "4ec547fe987beeb91a72ebc55dda8202af393c45909d096860bf67e007794a11",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-M1193-P-MH-POWDER-DSMZ804
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The corrected caption identifies ingredient748, solution1635 and DSMZ804.
+    The complete candidate is a source-qualified21g Mueller-Hinton broth powder input;
+    separate yeast extract and XV factors remain receiving-medium ingredients. Unknown
+    supplier/formula are not replaced by a Sigma prepared-medium identity or guessed
+    component recipe.
+  target_ids:
+  - M1193-P-MH-POWDER-DSMZ804
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+    "root": "artifact", "sha256": "cb8d8111cd0163507fc4e595e59e4371c711a3f085b53776821676e538d6504b"},
+    "assessment": "The corrected caption identifies ingredient748, solution1635 and
+    DSMZ804. The complete candidate is a source-qualified21g Mueller-Hinton broth
+    powder input; separate yeast extract and XV factors remain receiving-medium ingredients.
+    Unknown supplier/formula are not replaced by a Sigma prepared-medium identity
+    or guessed component recipe.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "case_ids": ["CM_NAME:29aeebbd1e468c755c5cfc246918dfb07e66749110ce4a3ba026eaa2f9a6f4f4",
+    "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47"], "conclusion":
+    "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-MH-POWDER-DSMZ804",
+    "selected_proposal_object_sha256": "78c7f488d9d1721fcf562e490aeb22d78b4d269b2d8f8101d57ad823365db831",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-M1193-P-PENASSAY_BROTH_DIFCO
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The namespace-correct source is MediaDive ingredient559, solution1201 and
+    DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay
+    dry powder and its seven named formula inputs. Extra receiving glucose/thymine
+    are excluded. Only the report caption changes; the exact previously reviewed source-specific
+    powder payload and all holds remain.
+  target_ids:
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml", "root":
+    "artifact", "sha256": "8a546e0756ecfd879fc9c1da6583433a007ee207b3c47959c94f808ec17e92e7"},
+    "assessment": "The namespace-correct source is MediaDive ingredient559, solution1201
+    and DSMZ542. The full retained payload preserves Difco Antibiotic Medium3/Penassay
+    dry powder and its seven named formula inputs. Extra receiving glucose/thymine
+    are excluded. Only the report caption changes; the exact previously reviewed source-specific
+    powder payload and all holds remain.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/media-scientific-review-v1.json",
+    "sha256": "c7d52219765441312f0754a74e7a2857c7ff08717b8b8663fb3049fbf8f2bcad"},
+    "case_ids": ["CM_NAME:c20c258343d9e09bed43e93fc8f8b1c9aa97a52c4d1c60184980d3ba2667cb7b",
+    "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8"], "conclusion":
+    "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id": "M1193-P-PENASSAY_BROTH_DIFCO",
+    "selected_proposal_object_sha256": "54345a62c712911b7090598636d50b13e0e005368e7e6834fe569858a8798228",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-M1193-P-RCM-182
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The complete manufacturer RCM formula explicitly names generic Peptone10g
+    per litre at standard reconstitution. This is a valid generic input independent
+    of an unidentified supplier or a hypothetical lot assay. The exact already-reviewed
+    generic owner now uses mesh:D010461; updating this single conditional catalog
+    reference is scientifically consistent. All other eight parts, all nine printed
+    amounts/units, dry-product identity, COMPLETE nominal enumeration and approximate/performance-adjustable
+    footnote remain unchanged. New ComponentEvidence is explicitly agent-assisted
+    RECIPE_SOURCE, distinct from human-only MappingEvidence. No Bacto, animal origin,
+    enzyme, supplier or whole-formulation equality is inferred. All old source/product/role/export
+    holds remain.
+  target_ids:
+  - M1193-P-RCM-182
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml",
+    "root": "artifact", "sha256": "089960c4d8a03718b71801622afa270f443ee109eb045c43b16677a9dbb6c7a6"},
+    "all_unchanged_fields_and_history_preserved": true, "assessment": "The complete
+    manufacturer RCM formula explicitly names generic Peptone10g per litre at standard
+    reconstitution. This is a valid generic input independent of an unidentified supplier
+    or a hypothetical lot assay. The exact already-reviewed generic owner now uses
+    mesh:D010461; updating this single conditional catalog reference is scientifically
+    consistent. All other eight parts, all nine printed amounts/units, dry-product
+    identity, COMPLETE nominal enumeration and approximate/performance-adjustable
+    footnote remain unchanged. New ComponentEvidence is explicitly agent-assisted
+    RECIPE_SOURCE, distinct from human-only MappingEvidence. No Bacto, animal origin,
+    enzyme, supplier or whole-formulation equality is inferred. All old source/product/role/export
+    holds remain.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/rcm-direct-reference-review-v1.json",
+    "sha256": "fa6f76aa6a58e308befe1483bbf45454eb1f274db2af9332b0632d59ffeb7785"},
+    "case_ids": ["KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd"],
+    "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:reinforced_clostridial_medium_difco", "object_label": "Reinforced
+    clostridial medium (BD Difco)", "object_source": "kgm:ingredient", "other": "Reinforced
+    clostridial medium|Reinforced clostridial medium (BD-Difco)", "predicate_id":
+    "skos:exactMatch", "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf|MIM:curator=Codex
+    W05 /root consolidated exact component continuity", "subject_id": "MIM:Reinforced_Clostridial_Medium",
+    "subject_label": "Reinforced clostridial medium (BD Difco)", "validation_method":
+    ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:reinforced_clostridial_medium_difco", "object_label": "Reinforced
+    clostridial medium (BD Difco)", "object_source": "kgm:ingredient", "other": "Reinforced
+    clostridial medium|Reinforced clostridial medium (BD-Difco)", "predicate_id":
+    "skos:exactMatch", "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf|MIM:curator=Codex
+    W05 /root consolidated component re-review", "subject_id": "MIM:Reinforced_Clostridial_Medium",
+    "subject_label": "Reinforced clostridial medium (BD Difco)", "validation_method":
+    ""}], "complete_payload_read": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "native_scope": "Whole-product row identity/predicate unchanged; only last-curator
+    source provenance may differ with truthful appended history.", "proposal_id":
+    "M1193-P-RCM-182", "selected_proposal_object_sha256": "262233347af7a56c4ff982a427ea6c9df4141479f77eade2b7192ac03d508f96",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-R1193-DEP-rumen-pyg
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The source is E. ruminantium PYG+rumen fluid. Bryant original body is challenge-blocked,
+    Wiley source inaccessible, and the captured ATCC17233 Medium602 recommendation
+    is not a bridge to this historical PYG preparation. The peptone withdrawal retains
+    the earlier literal rumen-fluid uncertainty.
+  target_ids:
+  - R1193-DEP-rumen-pyg
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml",
+    "root": "artifact", "sha256": "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"},
+    "assessment": "The source is E. ruminantium PYG+rumen fluid. Bryant original body
+    is challenge-blocked, Wiley source inaccessible, and the captured ATCC17233 Medium602
+    recommendation is not a bridge to this historical PYG preparation. The peptone
+    withdrawal retains the earlier literal rumen-fluid uncertainty.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256":
+    "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before":
+    {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYG_Rumen_Fluid.yaml",
+    "sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01"},
+    "case_ids": ["CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "ingredient_type", "components",
+    "component_assertion", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178",
+    "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved":
+    true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes":
+    "The raw PYG + rumen fluid observation belongs to Eubacterium ruminantium. The
+    original source chapter was inaccessible and the Bryant 1959 body access was challenge-blocked;
+    the captured ATCC alternative medium listing is not a source recipe bridge. The
+    original PYG base remains unresolved. Preserve the already corrected literal rumen-fluid
+    UNMAPPED part and its processing/animal-origin holds. Withdraw the unsupported
+    peptone component_id and set reference_scope UNMAPPED; retain its existing component_name
+    as historical interpretation, not a newly observed expanded source label. The
+    original assertion method and UNKNOWN/PARTIAL completeness remain unchanged. This
+    is a bounded part-reference correction only. Whole-owner identity, raw labels,
+    occurrence counts, quantities, unrelated components, all historical evidence and
+    source/role/export holds are preserved. Historical all-components-identified statements
+    describe prior states, not a new approval. No new MappingEvidence is added; historical
+    human/component evidence enums are not rewritten. Filed before this private correction
+    at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.583291+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Original E. ruminantium PYG-rumen base formulation; processing/animal-origin
+    holds of the rumen input remain separate.", "No final generic Peptone parent grounding/ontology
+    target approval; stable local identity reference only.", "No whole-owner application,
+    new source-case adoption, roles, export, arbitrary merge or equality of complete
+    preparations approved."], "local_after_capture": {"hash_matches": true, "path":
+    ".temp/w05-buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml", "sha256":
+    "4149a2c294cb1b7d62419238112f524e8a900d37106bcdd136c85132756136ec"}, "primary_author":
+    "/root/buffer_tris", "proposal_id": "R1193-DEP-rumen-pyg", "review_scope": "Complete
+    selected YAML field read and source-bound peptone-reference successor assessment;
+    not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor":
+    {"hash_matches": true, "path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/chemicals/proposed/PYG_Rumen_Fluid.yaml",
+    "sha256": "9dc301466f728dcca2c600c7c056d37330f006d6fd7a31571864b13a78ee523a"},
+    "selected_proposal_object_sha256": "67fa7e975aa77f175b410c400fe4e03db0e3f97c497a8f6e7f62f8217078155a",
+    "source_ids": ["RUMINANTIUM1959", "BERGEY_ORIGINAL"], "source_observation_rows":
+    [5906], "source_owner_export_approval": false, "target_id": "PC15"}'
+- assessment_id: ASSESS-R1193-DEP-rumen-pyglucose
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The raw observation is T. socranskii with the original source link naming
+    subsp. paredis. Smibert1984 abstract supports rumen or fatty-acid requirements,
+    but not the peptone recipe. The peptone withdrawal correctly composes with the
+    previous unclarified rumen-fluid correction; no Prevotella recipe is imported.
+  target_ids:
+  - R1193-DEP-rumen-pyglucose
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml",
+    "root": "artifact", "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"},
+    "assessment": "The raw observation is T. socranskii with the original source link
+    naming subsp. paredis. Smibert1984 abstract supports rumen or fatty-acid requirements,
+    but not the peptone recipe. The peptone withdrawal correctly composes with the
+    previous unclarified rumen-fluid correction; no Prevotella recipe is imported.",
+    "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-glucose-rumen_Fluid.yaml",
+    "sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777"},
+    "case_ids": ["CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178",
+    "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved":
+    true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes":
+    "The raw PY-glucose-rumen fluid observation is Treponema socranskii with the source
+    LPSN link naming subsp. paredis. The matched Smibert 1984 abstract describes rumen-fluid
+    or fatty-acid requirements but supplies no source peptone recipe. Full original
+    methods were not recovered. Unrelated Prevotella cultures cannot bind this preparation.
+    Preserve the already withdrawn clarification and all rumen-fluid uncertainty.
+    Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED;
+    retain its existing component_name as historical interpretation, not a newly observed
+    expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness
+    remain unchanged. This is a bounded part-reference correction only. Whole-owner
+    identity, raw labels, occurrence counts, quantities, unrelated components, all
+    historical evidence and source/role/export holds are preserved. Historical all-components-identified
+    statements describe prior states, not a new approval. No new MappingEvidence is
+    added; historical human/component evidence enums are not rewritten. Filed before
+    this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.514419+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Original Treponema PY base or a demonstrated historical recipe bridge; rumen
+    processing/animal origin remains independently unresolved.", "No final generic
+    Peptone parent grounding/ontology target approval; stable local identity reference
+    only.", "No whole-owner application, new source-case adoption, roles, export,
+    arbitrary merge or equality of complete preparations approved."], "local_after_capture":
+    {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml",
+    "sha256": "8744bd6b4dca684c9177ebf97819c1cba643360d9d09a927bb56ee0fa73e8096"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "R1193-DEP-rumen-pyglucose",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/chemicals/proposed/PY-glucose-rumen_Fluid.yaml",
+    "sha256": "10aa01615bec5405ebf17c403ccdff52264b4ba56a127d48324984b4757b15de"},
+    "selected_proposal_object_sha256": "932e3c61ed82cad28bb0b8efb2046fb405dbc873f4ec37cd457a7776161e4b85",
+    "source_ids": ["SMIBERT1984", "BERGEY_ORIGINAL"], "source_observation_rows": [20395],
+    "source_owner_export_approval": false, "target_id": "PC08"}'
+- assessment_id: ASSESS-R1193-P-bottom-628
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The complete JCM628 recipe explicitly defines a lower layer from 50 ml
+    washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose.
+    The candidate transcribes these named material inputs without identifying the
+    whole as FeS or importing the upper layer. Washing and suspension are retained;
+    amounts remain batch inputs rather than invented final concentrations.
+  target_ids:
+  - R1193-P-bottom-628
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml",
+    "root": "artifact", "sha256": "8a6073d7ada0e2a1e1d2b7de8fd598796d81a7910eb3dd6f48a5db8927490eab"},
+    "assessment": "The complete JCM628 recipe explicitly defines a lower layer from
+    50 ml washed FeS suspension, 50 ml Modified Wolfe mineral solution and 1 g agarose.
+    The candidate transcribes these named material inputs without identifying the
+    whole as FeS or importing the upper layer. Washing and suspension are retained;
+    amounts remain batch inputs rather than invented final concentrations.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "case_ids": ["CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id":
+    "R1193-P-bottom-628", "selected_proposal_object_sha256": "06300b2a56c6ce643a09601a5866bca5bd84239876aaee2b1e32097d2c5fcf1e",
+    "source_owner_export_approval": false, "unchanged_from_published_base": true}'
+- assessment_id: ASSESS-R1193-P-bottom-629
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: JCM629 positively replaces the JCM628 mineral solution with its artificial
+    saltwater. It retains the same washed FeS preparation and agarose. This is a demonstrated
+    preparation difference; no zero-valent-iron substitution is present. The complete
+    payload preserves the one-level preparation scope and exact original occurrence
+    route.
+  target_ids:
+  - R1193-P-bottom-629
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml",
+    "root": "artifact", "sha256": "a6026a950d64b03bad39ad9da2464f2af0d59c396198e83b146d6924879f2fdd"},
+    "assessment": "JCM629 positively replaces the JCM628 mineral solution with its
+    artificial saltwater. It retains the same washed FeS preparation and agarose.
+    This is a demonstrated preparation difference; no zero-valent-iron substitution
+    is present. The complete payload preserves the one-level preparation scope and
+    exact original occurrence route.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "case_ids": ["CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id":
+    "R1193-P-bottom-629", "selected_proposal_object_sha256": "284d8b48ec05a9bfe47755071927777c77bf978fb0c4df132a99f13f0ee9f233",
+    "source_owner_export_approval": false, "unchanged_from_published_base": true}'
+- assessment_id: ASSESS-R1193-P-mkp
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The full MediaDive1895 response identifies DSMZ, MKP solution6635 and a
+    separate HS-RFB solution6636. The complete candidate preserves CMRL1066 as a named
+    100 ml input of unspecified stock strength, the seven additional weighed ingredients,
+    5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin belong to
+    the receiving HS-RFB solution and are correctly excluded. This is a medium base,
+    not a JCM salt solution.
+  target_ids:
+  - R1193-P-mkp
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml",
+    "root": "artifact", "sha256": "346e5c5c969b0de395ea6303eb8501fbfec954299726dcd203d42e4c692cc5b7"},
+    "assessment": "The full MediaDive1895 response identifies DSMZ, MKP solution6635
+    and a separate HS-RFB solution6636. The complete candidate preserves CMRL1066
+    as a named 100 ml input of unspecified stock strength, the seven additional weighed
+    ingredients, 5 M NaOH for pH adjustment and water to 1 L. Human serum and albumin
+    belong to the receiving HS-RFB solution and are correctly excluded. This is a
+    medium base, not a JCM salt solution.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/chemical-report-scientific-review-v1.json",
+    "sha256": "b0b9304207440a65a50e615a37c7c46b7cc731363cba09ef347e22553663de19"},
+    "case_ids": ["CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "proposal_id":
+    "R1193-P-mkp", "selected_proposal_object_sha256": "48eb6df96a0cc57598efb71b705f6902977e466f6702fe3499bb919a46dd289f",
+    "source_owner_export_approval": false, "unchanged_from_published_base": true}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC03
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The glucose peptone-yeast extract observation explicitly names peptone;
+    glucose and yeast remain separate. The final reference to the independently reviewed
+    ordinary generic mesh:D010461 Peptone owner is supported. Exact complete final
+    payload read, with original labels, quantities/absence, all other parts, prior
+    assertion evidence, history, whole-owner identity, roles/statistics and source
+    holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET,
+    not a new human MappingEvidence assertion. COMPLETE remains relative to named-input
+    enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe
+    completeness, source-assay or export approval follows.
+  target_ids:
+  - W05-DEP-PEPTONE-PC03
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows":
+    [{"complete_source_object_sha256": "bc01ca0e23e58f23c37aaa82b5b2c6cb06861ed93b3d1d9fb6fc7b62cd32e42f",
+    "csv_row": 1597, "field": "Bergey_Substrates_for_end_products", "literal": "glucose
+    peptone-yeast extract", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00628",
+    "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerofustis-stercorihominis"},
+    "source_taxon": "Anaerofustis stercorihominis"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml",
+    "root": "artifact", "sha256": "f5ae1f6a215d9c34c306e72a7c5515b7c01a70e136df6ddba5215d1118e0c034"},
+    "assessment": "The glucose peptone-yeast extract observation explicitly names
+    peptone; glucose and yeast remain separate. The final reference to the independently
+    reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete
+    final payload read, with original labels, quantities/absence, all other parts,
+    prior assertion evidence, history, whole-owner identity, roles/statistics and
+    source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET,
+    not a new human MappingEvidence assertion. COMPLETE remains relative to named-input
+    enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe
+    completeness, source-assay or export approval follows.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json",
+    "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:glucose_peptone_yeast_extract", "object_label": "Glucose
+    Peptone-yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id":
+    "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05
+    /root/buffer_tris", "subject_id": "MIM:Glucose_Peptone-yeast_Extract", "subject_label":
+    "Glucose Peptone-yeast Extract", "validation_method": ""}], "complete_native_before":
+    [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification":
+    "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:glucose_peptone_yeast_extract",
+    "object_label": "Glucose Peptone-yeast Extract", "object_source": "kgm:ingredient",
+    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex
+    worker05 /root/buffer_tris", "subject_id": "MIM:Glucose_Peptone-yeast_Extract",
+    "subject_label": "Glucose Peptone-yeast Extract", "validation_method": ""}], "complete_payload_read":
+    true, "component_after": {"component_id": "mesh:D010461", "component_name": "peptone",
+    "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition
+    (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone",
+    "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "limitations": "Unchanged whole-owner mappings/other part references are preserved
+    historical claims, not newly approved by this bounded generic-reference review.",
+    "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author":
+    "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC03", "protected_fields":
+    {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics":
+    true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer":
+    "/root/final_skeptical", "selected_proposal_object_sha256": "5e8759e2537b57c413bccec5d2c09b45bb12e51923a6894cc41b8619ec5bfe21",
+    "source_owner_export_approval": false, "target_id": "PC03"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC06
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Both raw PY-cellobiose occurrences are retained. Moore supplies positive
+    peptone-basal support for E. siraeum, but that cannot establish C. polysaccharolyticum
+    preparation. Captured taxonomy/original-paper leads do not supply the missing
+    second recipe. Keeping the interpreted label while withdrawing a single aggregate
+    resolving identity is supported.
+  target_ids:
+  - W05-DEP-PEPTONE-PC06
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml",
+    "root": "artifact", "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"},
+    "assessment": "Both raw PY-cellobiose occurrences are retained. Moore supplies
+    positive peptone-basal support for E. siraeum, but that cannot establish C. polysaccharolyticum
+    preparation. Captured taxonomy/original-paper leads do not supply the missing
+    second recipe. Keeping the interpreted label while withdrawing a single aggregate
+    resolving identity is supported.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-cellobiose.yaml",
+    "sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation
+    (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name":
+    "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"},
+    "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events":
+    [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PY-cellobiose
+    label occurs for two distinct taxa. Moore 1976 explicitly discusses peptone basal
+    medium for the Eubacterium siraeum occurrence, which is positive occurrence-bound
+    support. It does not establish the Clostridium polysaccharolyticum formulation.
+    Its cited 1975 manual recipe was not recovered. A single resolving identity across
+    both observations remains unsupported; retain this positive partial evidence without
+    generalizing it to the aggregate owner. Withdraw the unsupported peptone component_id
+    and set reference_scope UNMAPPED; retain its existing component_name as historical
+    interpretation, not a newly observed expanded source label. The original assertion
+    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
+    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
+    unrelated components, all historical evidence and source/role/export holds are
+    preserved. Historical all-components-identified statements describe prior states,
+    not a new approval. No new MappingEvidence is added; historical human/component
+    evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.491564+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["C. polysaccharolyticum original recipe or defensible occurrence-separated preparation
+    scopes; historic manual formula not recovered.", "No final generic Peptone parent
+    grounding/ontology target approval; stable local identity reference only.", "No
+    whole-owner application, new source-case adoption, roles, export, arbitrary merge
+    or equality of complete preparations approved."], "local_after_capture": {"hash_matches":
+    true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml",
+    "sha256": "fc6e2ad5c8d0221ccb20d272990bfa2b8cff93d76ae4ccb0c7c752d1fc5f922f"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC06",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-cellobiose.yaml",
+    "sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f"},
+    "selected_proposal_object_sha256": "eb39ccf857abcd390ca103fe63db72524e9ca6c8664eafac6972341324dd9c42",
+    "source_ids": ["MOORE1976", "POLYSACCHAROLYTICUM1980", "BERGEY_ORIGINAL"], "source_observation_rows":
+    [4163, 5908], "source_owner_export_approval": false, "target_id": "PC06"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC07
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The observation is C. formicaceticum PY-fructose. The Andreesen abstract
+    supports organism/fructose context, while original recipe methods remain behind
+    subscription access. An abbreviation and later culture medium cannot resolve this
+    peptone; UNMAPPED preserves the interpretation without inventing chemistry.
+  target_ids:
+  - W05-DEP-PEPTONE-PC07
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-fructose.yaml",
+    "root": "artifact", "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"},
+    "assessment": "The observation is C. formicaceticum PY-fructose. The Andreesen
+    abstract supports organism/fructose context, while original recipe methods remain
+    behind subscription access. An abbreviation and later culture medium cannot resolve
+    this peptone; UNMAPPED preserves the interpretation without inventing chemistry.",
+    "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-fructose.yaml",
+    "sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation
+    (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name":
+    "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"},
+    "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events":
+    [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PY-fructose
+    observation is Clostridium formicaceticum. Andreesen 1970 publisher abstract confirms
+    the organism and fructose metabolism but does not expose the recipe or digest.
+    Full text is subscription-only in the captured free access. Later current culture
+    media do not establish this historical PY formulation. The inherited peptone expansion
+    remains interpreted and ungrounded. Withdraw the unsupported peptone component_id
+    and set reference_scope UNMAPPED; retain its existing component_name as historical
+    interpretation, not a newly observed expanded source label. The original assertion
+    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
+    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
+    unrelated components, all historical evidence and source/role/export holds are
+    preserved. Historical all-components-identified statements describe prior states,
+    not a new approval. No new MappingEvidence is added; historical human/component
+    evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.502323+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Original source-bound PY-fructose basal recipe and its peptone/digest identity.",
+    "No final generic Peptone parent grounding/ontology target approval; stable local
+    identity reference only.", "No whole-owner application, new source-case adoption,
+    roles, export, arbitrary merge or equality of complete preparations approved."],
+    "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-fructose.yaml",
+    "sha256": "dd198082c657f22cfbde94650f7eea0a76ca7ff8e8751484592401c7bd4dfe4a"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC07",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-fructose.yaml",
+    "sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6"},
+    "selected_proposal_object_sha256": "cec5b171e3a2a571412593306d1be517bcc064cfee67d125cb9f827d33f3a707",
+    "source_ids": ["ANDREESEN1970", "BERGEY_ORIGINAL"], "source_observation_rows":
+    [4104], "source_owner_export_approval": false, "target_id": "PC07"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC09
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Moore documents historical C. leptum PY-maltose. The complete current DSM753
+    recipe distinguishes Trypticase(BD BBL) and pepsin-digested meat peptone, 5g each,
+    with maltose modification. This does not identify which, if either, corresponds
+    to a historical single peptone edge. The withdrawal and preservation of original
+    quantities are justified.
+  target_ids:
+  - W05-DEP-PEPTONE-PC09
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-maltose.yaml",
+    "root": "artifact", "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"},
+    "assessment": "Moore documents historical C. leptum PY-maltose. The complete current
+    DSM753 recipe distinguishes Trypticase(BD BBL) and pepsin-digested meat peptone,
+    5g each, with maltose modification. This does not identify which, if either, corresponds
+    to a historical single peptone edge. The withdrawal and preservation of original
+    quantities are justified.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-maltose.yaml",
+    "sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation
+    (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name":
+    "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"},
+    "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events":
+    [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "Moore 1976 confirms
+    the historical Clostridium leptum PY-maltose use; its referenced manual formulation
+    remains unread. The current exact-strain DSM 753 recipe has separate Trypticase
+    peptone (BD BBL) and pepsin-digested meat peptone, 5 g each, and a maltose modification.
+    This comparator demonstrates why neither ingredient may be chosen for the historical
+    single peptone edge without a source bridge. No comparator quantities are imported.
+    Withdraw the unsupported peptone component_id and set reference_scope UNMAPPED;
+    retain its existing component_name as historical interpretation, not a newly observed
+    expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness
+    remain unchanged. This is a bounded part-reference correction only. Whole-owner
+    identity, raw labels, occurrence counts, quantities, unrelated components, all
+    historical evidence and source/role/export holds are preserved. Historical all-components-identified
+    statements describe prior states, not a new approval. No new MappingEvidence is
+    added; historical human/component evidence enums are not rewritten. Filed before
+    this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.528698+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Historical manual/base formula and a source bridge selecting the represented
+    digest(s); no current comparator quantities may be imported.", "No final generic
+    Peptone parent grounding/ontology target approval; stable local identity reference
+    only.", "No whole-owner application, new source-case adoption, roles, export,
+    arbitrary merge or equality of complete preparations approved."], "local_after_capture":
+    {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-maltose.yaml",
+    "sha256": "ecb49d8732a4c922efd5c987a4b5cd4188122b645a145b3c8aefce3ee7bf5bb7"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC09",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-maltose.yaml",
+    "sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0"},
+    "selected_proposal_object_sha256": "3a33ab67a35165a136d476ca4854f10843dcc26aea795d4ad308c75719e6d653",
+    "source_ids": ["MOORE1976", "DSMZ104C_DSM753", "BERGEY_ORIGINAL"], "source_observation_rows":
+    [4130], "source_owner_export_approval": false, "target_id": "PC09"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC10
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The raw T. pectinovorum PY-pectin occurrence and Smibert abstract do not
+    expose a historical digest. ATCC1223 explicitly separates BD211910 Polypeptone
+    and BD238400 Heart Infusion; this current recipe cannot silently replace historical
+    PY. UNMAPPED is justified without asserting no peptone.
+  target_ids:
+  - W05-DEP-PEPTONE-PC10
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PY-pectin.yaml",
+    "root": "artifact", "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"},
+    "assessment": "The raw T. pectinovorum PY-pectin occurrence and Smibert abstract
+    do not expose a historical digest. ATCC1223 explicitly separates BD211910 Polypeptone
+    and BD238400 Heart Infusion; this current recipe cannot silently replace historical
+    PY. UNMAPPED is justified without asserting no peptone.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256":
+    "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before":
+    {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PY-pectin.yaml",
+    "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation
+    (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name":
+    "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"},
+    "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events":
+    [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PY-pectin
+    observation is Treponema pectinovorum. Smibert 1983 abstract confirms the study
+    but not the historical recipe. The complete current ATCC 1223 sheet names Polypeptone
+    Peptone BD 211910, 5 g, separately from heart-infusion broth. A documented bridge
+    to the historical PY-pectin observation is missing. Neither Bacto Peptone nor
+    Hipolypepton is substituted. Withdraw the unsupported peptone component_id and
+    set reference_scope UNMAPPED; retain its existing component_name as historical
+    interpretation, not a newly observed expanded source label. The original assertion
+    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
+    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
+    unrelated components, all historical evidence and source/role/export holds are
+    preserved. Historical all-components-identified statements describe prior states,
+    not a new approval. No new MappingEvidence is added; historical human/component
+    evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.539051+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Original PY-pectin recipe or demonstrated historical linkage to ATCC1223, with
+    supplier/product boundaries preserved.", "No final generic Peptone parent grounding/ontology
+    target approval; stable local identity reference only.", "No whole-owner application,
+    new source-case adoption, roles, export, arbitrary merge or equality of complete
+    preparations approved."], "local_after_capture": {"hash_matches": true, "path":
+    ".temp/w05-buffer-parts-v1/dependencies/proposed/PY-pectin.yaml", "sha256": "57073a21461e236425e9943abae51fd61c38fcd949c6242ff449e5435080ef48"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC10",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PY-pectin.yaml",
+    "sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6"},
+    "selected_proposal_object_sha256": "79f77eba973fb9aebbd8fb9364c585e718b91647c2f694d1e2d0f1be3ee76b3f",
+    "source_ids": ["SMIBERT1983", "ATCC1223", "BERGEY_ORIGINAL"], "source_observation_rows":
+    [20383], "source_owner_export_approval": false, "target_id": "PC10"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC11
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The raw PYEG occurrence belongs to C. scindens. Morris1985 captured abstract
+    identifies the original study but supplies no methods recipe. The inherited three-part
+    expansion therefore remains interpreted; unrelated taxon leads are not source
+    support. The resolving peptone ID is correctly removed.
+  target_ids:
+  - W05-DEP-PEPTONE-PC11
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYEG.yaml", "root":
+    "artifact", "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"},
+    "assessment": "The raw PYEG occurrence belongs to C. scindens. Morris1985 captured
+    abstract identifies the original study but supplies no methods recipe. The inherited
+    three-part expansion therefore remains interpreted; unrelated taxon leads are
+    not source support. The resolving peptone ID is correctly removed.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json", "sha256":
+    "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"}, "authentic_before":
+    {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYEG.yaml",
+    "sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178",
+    "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved":
+    true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes":
+    "The raw PYEG observation belongs to Clostridium scindens. The original Morris
+    1985 abstract and metadata identify the study, but full methods access failed
+    and no formula was recovered. Earlier Caulobacter-related recipe leads concern
+    a different taxon. The inherited abbreviation expansion does not establish a common
+    digest or a three-component identity. Withdraw the unsupported peptone component_id
+    and set reference_scope UNMAPPED; retain its existing component_name as historical
+    interpretation, not a newly observed expanded source label. The original assertion
+    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
+    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
+    unrelated components, all historical evidence and source/role/export holds are
+    preserved. Historical all-components-identified statements describe prior states,
+    not a new approval. No new MappingEvidence is added; historical human/component
+    evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.549265+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Original C. scindens PYEG preparation, including the meaning/completeness of
+    the abbreviation.", "No final generic Peptone parent grounding/ontology target
+    approval; stable local identity reference only.", "No whole-owner application,
+    new source-case adoption, roles, export, arbitrary merge or equality of complete
+    preparations approved."], "local_after_capture": {"hash_matches": true, "path":
+    ".temp/w05-buffer-parts-v1/dependencies/proposed/PYEG.yaml", "sha256": "e5971301e638c1a4bfd8483aec6525f66e99251abdfaf5dbfad848e7dac6d5d0"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC11",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PYEG.yaml",
+    "sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a"},
+    "selected_proposal_object_sha256": "c3e505ee05d6607b8bf102c6eda41f4a78faf33e310ddcee968a2293b3ec0cb0",
+    "source_ids": ["MORRIS1985", "BERGEY_ORIGINAL"], "source_observation_rows": [4180],
+    "source_owner_export_approval": false, "target_id": "PC11"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC12
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The source observation is Holdemanella biformis/Eubacterium biforme PYG-0.02%
+    Tween80. The ATCC27806 preview gives alternative media, including a different
+    Tween amount, without binding this preparation. The exact raw strength and existing
+    components remain intact while the unsupported peptone identity is withdrawn.
+  target_ids:
+  - W05-DEP-PEPTONE-PC12
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml",
+    "root": "artifact", "sha256": "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"},
+    "assessment": "The source observation is Holdemanella biformis/Eubacterium biforme
+    PYG-0.02% Tween80. The ATCC27806 preview gives alternative media, including a
+    different Tween amount, without binding this preparation. The exact raw strength
+    and existing components remain intact while the unsupported peptone identity is
+    withdrawn.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYG-002_Tween_80.yaml",
+    "sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "MIM curation
+    (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178", "component_name":
+    "peptone", "reference_scope": "MIM_CATALOG", "source": "MIM curation (#213/#308)"},
+    "component_index": 0, "mapping_evidence_and_enums_preserved": true, "new_history_events":
+    [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes": "The raw PYG-0.02%
+    Tween 80 observation belongs to Holdemanella biformis (historical Eubacterium
+    biforme). The captured current ATCC lead lists alternative growth media; it does
+    not bind the original 0.02% Tween 80 preparation. The original base formulation
+    remains unread. Preserve the exact strength in the raw name and do not infer a
+    peptone quantity or replace the preparation from current alternative media. Withdraw
+    the unsupported peptone component_id and set reference_scope UNMAPPED; retain
+    its existing component_name as historical interpretation, not a newly observed
+    expanded source label. The original assertion method and UNKNOWN/PARTIAL completeness
+    remain unchanged. This is a bounded part-reference correction only. Whole-owner
+    identity, raw labels, occurrence counts, quantities, unrelated components, all
+    historical evidence and source/role/export holds are preserved. Historical all-components-identified
+    statements describe prior states, not a new approval. No new MappingEvidence is
+    added; historical human/component evidence enums are not rewritten. Filed before
+    this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.559695+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Original source-bound 0.02% Tween80 PYG base recipe; current alternatives do
+    not resolve the historical formulation.", "No final generic Peptone parent grounding/ontology
+    target approval; stable local identity reference only.", "No whole-owner application,
+    new source-case adoption, roles, export, arbitrary merge or equality of complete
+    preparations approved."], "local_after_capture": {"hash_matches": true, "path":
+    ".temp/w05-buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml", "sha256":
+    "1f06472746a7e168c3a0d085f0c69b8c114616b5a6a0646cac7d4d19ba5bbcec"}, "primary_author":
+    "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC12", "review_scope": "Complete
+    selected YAML field read and source-bound peptone-reference successor assessment;
+    not a fresh approval of unchanged whole-owner chemistry.", "selected_predecessor":
+    {"hash_matches": true, "path": "data/ingredients/mapped/PYG-002_Tween_80.yaml",
+    "sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f"},
+    "selected_proposal_object_sha256": "c0f97d63b6d984052f5820de82a514fabb16f108acf5f8dec8cee9e72a1d01cc",
+    "source_ids": ["BIFORMIS_CURRENT", "BERGEY_ORIGINAL"], "source_observation_rows":
+    [8051], "source_owner_export_approval": false, "target_id": "PC12"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC13
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: All114 raw PYG observations and their taxa/chapter routes were individually
+    read and matched to original full rows. The limited source passages cannot justify
+    one common digest for every occurrence. A single resolving peptone ID is unsupported;
+    retaining the interpreted part and all raw occurrences makes the uncertainty explicit.
+  target_ids:
+  - W05-DEP-PEPTONE-PC13
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical/preservation_audit",
+    "after_capture": {"path": "buffer-parts-v1/dependencies/proposed/PYG.yaml", "root":
+    "artifact", "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"},
+    "assessment": "All114 raw PYG observations and their taxa/chapter routes were
+    individually read and matched to original full rows. The limited source passages
+    cannot justify one common digest for every occurrence. A single resolving peptone
+    ID is unsupported; retaining the interpreted part and all raw occurrences makes
+    the uncertainty explicit.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "authentic_before": {"authentic_hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/before/PYG.yaml",
+    "sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "field_checks":
+    {"all_field_names_read": ["identifier", "preferred_term", "synonyms", "mapping_status",
+    "occurrence_statistics", "curation_history", "notes", "components", "component_assertion",
+    "ingredient_type", "ontology_mapping"], "all_other_fields_including_roles_statistics_causal_graphs_or_their_absence_preserved":
+    true, "assertion_method_and_completeness_preserved": true, "changed_top_level_fields":
+    ["component_assertion", "components", "curation_history", "notes"], "component_after":
+    {"component_name": "peptone", "reference_scope": "UNMAPPED", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_before": {"component_id": "MICRO:0000178",
+    "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "component_index": 0, "mapping_evidence_and_enums_preserved":
+    true, "new_history_events": [{"action": "WITHDRAW_UNSUPPORTED_COMPONENT_ID", "changes":
+    "All 114 raw PYG source observations were re-extracted from the exact archived
+    database member and remain accounted for. They span multiple taxa and chapters.
+    The inspected occurrence-limited papers and current DSMZ comparator do not establish
+    one shared digest identity across the aggregate owner. This review does not claim
+    to have retrieved 114 underlying papers. The precise prerequisite is occurrence-specific
+    recipe binding or justified disjoint formulation cohorts; an abbreviation alone
+    is insufficient. Withdraw the unsupported peptone component_id and set reference_scope
+    UNMAPPED; retain its existing component_name as historical interpretation, not
+    a newly observed expanded source label. The original assertion method and UNKNOWN/PARTIAL
+    completeness remain unchanged. This is a bounded part-reference correction only.
+    Whole-owner identity, raw labels, occurrence counts, quantities, unrelated components,
+    all historical evidence and source/role/export holds are preserved. Historical
+    all-components-identified statements describe prior states, not a new approval.
+    No new MappingEvidence is added; historical human/component evidence enums are
+    not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.",
+    "curator": "Codex worker05 /root/buffer_tris", "llm_assisted": true, "llm_model":
+    "gpt-6", "new_status": "MAPPED", "previous_status": "MAPPED", "timestamp": "2026-11-08T09:30:25.570546+00:00"}],
+    "new_notes_and_component_evidence": "Read in full; accurately distinguish source
+    literal from interpretation, condition generic reference, preserve unresolved
+    product/recipe holds, and attribute LLM-assisted author action.", "original_history_prefix_preserved":
+    true, "other_components_quantities_identifiers_and_sources_preserved": true, "prior_component_evidence_and_enum_objects_preserved":
+    true}, "independent_reviewer": "/root/final_skeptical/preservation_audit", "limitations":
+    ["Occurrence-specific recipe bindings or source-supported disjoint cohorts for114
+    observations. This review has not read114 full underlying publications.", "No
+    final generic Peptone parent grounding/ontology target approval; stable local
+    identity reference only.", "No whole-owner application, new source-case adoption,
+    roles, export, arbitrary merge or equality of complete preparations approved."],
+    "local_after_capture": {"hash_matches": true, "path": ".temp/w05-buffer-parts-v1/dependencies/proposed/PYG.yaml",
+    "sha256": "c3b5141b79259addb407d7cbc3ada9638808e7165753702e1eb4aca29a356af9"},
+    "primary_author": "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC13",
+    "review_scope": "Complete selected YAML field read and source-bound peptone-reference
+    successor assessment; not a fresh approval of unchanged whole-owner chemistry.",
+    "selected_predecessor": {"hash_matches": true, "path": "data/ingredients/mapped/PYG.yaml",
+    "sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83"},
+    "selected_proposal_object_sha256": "cb47498b03d055775a899dafe783e787278ab65ac4b430deccf4386d7bdd6154",
+    "source_ids": ["MOORE1976", "DSMZ104C_DSM753", "BERGEY_ORIGINAL"], "source_observation_rows":
+    [840, 1397, 1569, 1587, 1641, 2734, 4043, 4060, 4063, 4065, 4067, 4070, 4072,
+    4073, 4076, 4078, 4082, 4085, 4086, 4088, 4090, 4114, 4121, 4123, 4140, 4146,
+    4147, 4149, 4150, 4154, 4156, 4158, 4168, 4171, 4175, 4176, 4178, 4183, 4185,
+    4193, 4196, 4206, 4412, 4413, 4414, 5742, 5891, 5893, 5896, 5897, 5900, 5901,
+    5903, 5905, 5907, 5909, 5910, 5911, 5912, 5913, 5915, 5916, 5917, 5987, 5989,
+    5998, 6554, 6756, 7187, 7543, 7893, 8852, 8888, 8889, 8891, 8893, 12981, 14283,
+    14291, 14292, 14293, 14295, 14310, 14867, 14869, 14870, 14871, 14872, 14873, 14874,
+    14875, 14876, 14877, 14878, 14880, 14884, 14885, 14915, 14916, 14927, 14931, 14935,
+    14940, 14946, 14956, 14966, 14968, 14969, 15012, 15751, 16279, 17346, 19988, 20356],
+    "source_owner_export_approval": false, "target_id": "PC13"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC16
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The Peptone-yeast extract-glucose observation explicitly names the generic
+    input; it is not made identical to the reordered PC03 preparation. The final reference
+    to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported.
+    Exact complete final payload read, with original labels, quantities/absence, all
+    other parts, prior assertion evidence, history, whole-owner identity, roles/statistics
+    and source holds preserved. New ComponentEvidence is explicitly agent-assisted
+    CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative
+    to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer,
+    culture recipe completeness, source-assay or export approval follows.
+  target_ids:
+  - W05-DEP-PEPTONE-PC16
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows":
+    [{"complete_source_object_sha256": "a68918d043f0c376a3713739739a43b79ce02d824c8184d712cbcf0b3fe2fd5b",
+    "csv_row": 1622, "field": "Bergey_Substrates_for_end_products", "literal": "peptone-yeast
+    extract-glucose", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00237",
+    "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerorhabdus-furcosa"}, "source_taxon":
+    "Anaerorhabdus furcosa"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml",
+    "root": "artifact", "sha256": "c3c55cb7d7b4a8e8e8e96d8e919c2b01e145e798bd75a12f72940aaf391f215d"},
+    "assessment": "The Peptone-yeast extract-glucose observation explicitly names
+    the generic input; it is not made identical to the reordered PC03 preparation.
+    The final reference to the independently reviewed ordinary generic mesh:D010461
+    Peptone owner is supported. Exact complete final payload read, with original labels,
+    quantities/absence, all other parts, prior assertion evidence, history, whole-owner
+    identity, roles/statistics and source holds preserved. New ComponentEvidence is
+    explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion.
+    COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin,
+    enzyme, manufacturer, culture recipe completeness, source-assay or export approval
+    follows.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json",
+    "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:peptone_yeast_extract_glucose", "object_label": "Peptone-yeast
+    Extract-glucose", "object_source": "kgm:ingredient", "other": "", "predicate_id":
+    "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05
+    /root/buffer_tris", "subject_id": "MIM:Peptone-yeast_Extract-glucose", "subject_label":
+    "Peptone-yeast Extract-glucose", "validation_method": ""}], "complete_native_before":
+    [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification":
+    "semapv:ManualMappingCuration", "object_id": "kgmicrobe.ingredient:peptone_yeast_extract_glucose",
+    "object_label": "Peptone-yeast Extract-glucose", "object_source": "kgm:ingredient",
+    "other": "", "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex
+    worker05 /root/buffer_tris", "subject_id": "MIM:Peptone-yeast_Extract-glucose",
+    "subject_label": "Peptone-yeast Extract-glucose", "validation_method": ""}], "complete_payload_read":
+    true, "component_after": {"component_id": "mesh:D010461", "component_name": "peptone",
+    "reference_scope": "MIM_CATALOG", "source": "microbedecoder research decomposition
+    (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone",
+    "component_name": "peptone", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+    research decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "limitations": "Unchanged whole-owner mappings/other part references are preserved
+    historical claims, not newly approved by this bounded generic-reference review.",
+    "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author":
+    "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC16", "protected_fields":
+    {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics":
+    true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer":
+    "/root/final_skeptical", "selected_proposal_object_sha256": "ffa97a20b66f8e0f466faebad54e7f8dfe4a0cfdc4f1f6e31bce5fac69cb4208",
+    "source_owner_export_approval": false, "target_id": "PC16"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC17
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The explicit peptone+beef+yeast list does not imply the peptone itself
+    derives from beef; adjacent extract scope stays separate. The final reference
+    to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported.
+    Exact complete final payload read, with original labels, quantities/absence, all
+    other parts, prior assertion evidence, history, whole-owner identity, roles/statistics
+    and source holds preserved. New ComponentEvidence is explicitly agent-assisted
+    CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative
+    to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer,
+    culture recipe completeness, source-assay or export approval follows.
+  target_ids:
+  - W05-DEP-PEPTONE-PC17
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows":
+    [{"complete_source_object_sha256": "6f37cc946bffe198fe6e6164c1079cd98a463c51fd4b81389c0a335b816090e4",
+    "csv_row": 3775, "field": "Literature_Substrates_for_end_products", "literal":
+    "peptone + beef extract + yeast extract", "source_links": {"LPSN_Page_link": "https://lpsn.dsmz.de/species/chordicoccus-furentiruminis"},
+    "source_taxon": "Chordicoccus furentiruminis"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml",
+    "root": "artifact", "sha256": "579b1bfb0cb23ceab46c6504622bf5c0ad9c715720e4b5ac4cd841872437a163"},
+    "assessment": "The explicit peptone+beef+yeast list does not imply the peptone
+    itself derives from beef; adjacent extract scope stays separate. The final reference
+    to the independently reviewed ordinary generic mesh:D010461 Peptone owner is supported.
+    Exact complete final payload read, with original labels, quantities/absence, all
+    other parts, prior assertion evidence, history, whole-owner identity, roles/statistics
+    and source holds preserved. New ComponentEvidence is explicitly agent-assisted
+    CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative
+    to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer,
+    culture recipe completeness, source-assay or export approval follows.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json",
+    "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:peptone_beef_extract_yeast_extract", "object_label": "Peptone
+    + Beef Extract + Yeast Extract", "object_source": "kgm:ingredient", "other": "",
+    "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex
+    worker05 /root/buffer_tris", "subject_id": "MIM:Peptone_Beef_Extract_Yeast_Extract",
+    "subject_label": "Peptone + Beef Extract + Yeast Extract", "validation_method":
+    ""}], "complete_native_before": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:peptone_beef_extract_yeast_extract", "object_label": "Peptone
+    + Beef Extract + Yeast Extract", "object_source": "kgm:ingredient", "other": "",
+    "predicate_id": "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex
+    worker05 /root/buffer_tris", "subject_id": "MIM:Peptone_Beef_Extract_Yeast_Extract",
+    "subject_label": "Peptone + Beef Extract + Yeast Extract", "validation_method":
+    ""}], "complete_payload_read": true, "component_after": {"component_id": "mesh:D010461",
+    "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM
+    label decomposition (#213/#308)"}, "component_before": {"component_id": "kgmicrobe.ingredient:peptone",
+    "component_name": "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM
+    label decomposition (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "limitations": "Unchanged whole-owner mappings/other part references are preserved
+    historical claims, not newly approved by this bounded generic-reference review.",
+    "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author":
+    "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC17", "protected_fields":
+    {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics":
+    true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer":
+    "/root/final_skeptical", "selected_proposal_object_sha256": "99219a43b9a1e5cb8923639c0895df4ca852b04027bcbf4a6c3f6a4677c3e9c4",
+    "source_owner_export_approval": false, "target_id": "PC17"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC18
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Both peptone+yeast observations retain their original source columns and
+    two distinct source contexts; no whole-formulation equivalence is inferred. The
+    final reference to the independently reviewed ordinary generic mesh:D010461 Peptone
+    owner is supported. Exact complete final payload read, with original labels, quantities/absence,
+    all other parts, prior assertion evidence, history, whole-owner identity, roles/statistics
+    and source holds preserved. New ComponentEvidence is explicitly agent-assisted
+    CURATED_DATASET, not a new human MappingEvidence assertion. COMPLETE remains relative
+    to named-input enumeration. No Bacto, mammalian origin, enzyme, manufacturer,
+    culture recipe completeness, source-assay or export approval follows.
+  target_ids:
+  - W05-DEP-PEPTONE-PC18
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows":
+    [{"complete_source_object_sha256": "812999068d91813377fb30935ada3f2d576c2f6ce03ae646a3b53b7f756aea5d",
+    "csv_row": 1652, "field": "Bergey_Substrates_for_end_products", "literal": "peptone
+    + yeast extract", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00673",
+    "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerotruncus-colihominis"}, "source_taxon":
+    "Anaerotruncus colihominis"}, {"complete_source_object_sha256": "625fddc513ca947d99add5770ba795d47ce8667c1d954861604532c3d2b37230",
+    "csv_row": 15057, "field": "Literature_Substrates_for_end_products", "literal":
+    "peptone + yeast extract", "source_links": {"LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniclasticum-ruminis"},
+    "source_taxon": "Proteiniclasticum ruminis"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml",
+    "root": "artifact", "sha256": "eec81669166d23b869a9806a2a224cde18a6e9e2418487eb2aa3f35033dd0ab8"},
+    "assessment": "Both peptone+yeast observations retain their original source columns
+    and two distinct source contexts; no whole-formulation equivalence is inferred.
+    The final reference to the independently reviewed ordinary generic mesh:D010461
+    Peptone owner is supported. Exact complete final payload read, with original labels,
+    quantities/absence, all other parts, prior assertion evidence, history, whole-owner
+    identity, roles/statistics and source holds preserved. New ComponentEvidence is
+    explicitly agent-assisted CURATED_DATASET, not a new human MappingEvidence assertion.
+    COMPLETE remains relative to named-input enumeration. No Bacto, mammalian origin,
+    enzyme, manufacturer, culture recipe completeness, source-assay or export approval
+    follows.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json",
+    "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:peptone_yeast_extract", "object_label": "Peptone + Yeast
+    Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch",
+    "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+    "subject_id": "MIM:Peptone_Yeast_Extract", "subject_label": "Peptone + Yeast Extract",
+    "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence":
+    "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration",
+    "object_id": "kgmicrobe.ingredient:peptone_yeast_extract", "object_label": "Peptone
+    + Yeast Extract", "object_source": "kgm:ingredient", "other": "", "predicate_id":
+    "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05
+    /root/buffer_tris", "subject_id": "MIM:Peptone_Yeast_Extract", "subject_label":
+    "Peptone + Yeast Extract", "validation_method": ""}], "complete_payload_read":
+    true, "component_after": {"component_id": "mesh:D010461", "component_name": "Peptone",
+    "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"},
+    "component_before": {"component_id": "kgmicrobe.ingredient:peptone", "component_name":
+    "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition
+    (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "limitations": "Unchanged whole-owner mappings/other part references are preserved
+    historical claims, not newly approved by this bounded generic-reference review.",
+    "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author":
+    "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC18", "protected_fields":
+    {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics":
+    true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer":
+    "/root/final_skeptical", "selected_proposal_object_sha256": "27d678472937207c2fd7422bfecda77a02980528e7be740f78d566e5e079f9a2",
+    "source_owner_export_approval": false, "target_id": "PC18"}'
+- assessment_id: ASSESS-W05-DEP-PEPTONE-PC19
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The yeast extract+peptone observation names the generic part; it is not
+    merged with the reversed-order owner. The final reference to the independently
+    reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete
+    final payload read, with original labels, quantities/absence, all other parts,
+    prior assertion evidence, history, whole-owner identity, roles/statistics and
+    source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET,
+    not a new human MappingEvidence assertion. COMPLETE remains relative to named-input
+    enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe
+    completeness, source-assay or export approval follows.
+  target_ids:
+  - W05-DEP-PEPTONE-PC19
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "actual_source_rows":
+    [{"complete_source_object_sha256": "fbcf90159fc0d57dac3e2ef7da9b55dbf7b049f682485160fafc05cb3061baf5",
+    "csv_row": 15054, "field": "Bergey_Substrates_for_end_products", "literal": "yeast
+    extract + peptone", "source_links": {"Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01395",
+    "LPSN_Page_link": "https://lpsn.dsmz.de/species/proteiniborus-ethanoligenes"},
+    "source_taxon": "Proteiniborus ethanoligenes"}], "after_capture": {"path": "buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml",
+    "root": "artifact", "sha256": "a1675126f07471361c181073dc0346b6f6ed16554ffb78724055cc8c221ce98d"},
+    "assessment": "The yeast extract+peptone observation names the generic part; it
+    is not merged with the reversed-order owner. The final reference to the independently
+    reviewed ordinary generic mesh:D010461 Peptone owner is supported. Exact complete
+    final payload read, with original labels, quantities/absence, all other parts,
+    prior assertion evidence, history, whole-owner identity, roles/statistics and
+    source holds preserved. New ComponentEvidence is explicitly agent-assisted CURATED_DATASET,
+    not a new human MappingEvidence assertion. COMPLETE remains relative to named-input
+    enumeration. No Bacto, mammalian origin, enzyme, manufacturer, culture recipe
+    completeness, source-assay or export approval follows.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/dependency-direct-reference-review-v1.json",
+    "sha256": "fa2d77fc45855eac0609c08357fb9608ee5179b7a31f37696386a4c0792c1876"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "complete_native_after": [{"comment": "", "confidence": "0.9", "mapping_date":
+    "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration", "object_id":
+    "kgmicrobe.ingredient:yeast_extract_peptone", "object_label": "Yeast Extract +
+    Peptone", "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch",
+    "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05 /root/buffer_tris",
+    "subject_id": "MIM:Yeast_Extract_Peptone", "subject_label": "Yeast Extract + Peptone",
+    "validation_method": ""}], "complete_native_before": [{"comment": "", "confidence":
+    "0.9", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration",
+    "object_id": "kgmicrobe.ingredient:yeast_extract_peptone", "object_label": "Yeast
+    Extract + Peptone", "object_source": "kgm:ingredient", "other": "", "predicate_id":
+    "skos:exactMatch", "source": "MIM:MIM curation (#213/#308)|MIM:curator=Codex worker05
+    /root/buffer_tris", "subject_id": "MIM:Yeast_Extract_Peptone", "subject_label":
+    "Yeast Extract + Peptone", "validation_method": ""}], "complete_payload_read":
+    true, "component_after": {"component_id": "mesh:D010461", "component_name": "Peptone",
+    "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition (#213/#308)"},
+    "component_before": {"component_id": "kgmicrobe.ingredient:peptone", "component_name":
+    "Peptone", "reference_scope": "MIM_CATALOG", "source": "MIM label decomposition
+    (#213/#308)"}, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "limitations": "Unchanged whole-owner mappings/other part references are preserved
+    historical claims, not newly approved by this bounded generic-reference review.",
+    "previous_full_scientific_review": {"path": ".temp/w05-buffer-parts-v1/review/dependencies/main-review.json",
+    "sha256": "940e0c9271e1d6b5beeaa36e0ffda432ecaccad089151febce26c9cf80a41e83"},
+    "previous_reviewer": "/root/final_skeptical/preservation_audit", "primary_author":
+    "/root/buffer_tris", "proposal_id": "W05-DEP-PEPTONE-PC19", "protected_fields":
+    {"identifier": true, "ingredient_type": true, "mapping_status": true, "occurrence_statistics":
+    true, "ontology_mapping": true, "preferred_term": true, "synonyms": true}, "reviewer":
+    "/root/final_skeptical", "selected_proposal_object_sha256": "4f4336bef7dba643ca0ff624d27cfee952498be828d5cd7650bcd8a0a69676dc",
+    "source_owner_export_approval": false, "target_id": "PC19"}'
+- assessment_id: ASSESS-W05-FINAL-MAT-030
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The ordinary named Polypeptone preparation retains its local identity and
+    is a supported kind of the closer generic MeSH Peptones material category. Full
+    MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact identity
+    for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels correctly
+    become nonresolving provenance, retaining exact text/source prefixes, while five
+    earlier Japanese/Hipolypepton exclusions remain exact. This does not prove every
+    product chemically distinct. Current notes explicitly supersede earlier self-only/pending/FoodOn-gate
+    conclusions. Complete history, 135/135 historical counts, provisional role, source/product/quantity
+    holds and supplied-form boundaries are preserved. Mapping is NARROW_MATCH emitting
+    broadMatch plus local identity, with truthful LLM evidence and no BD formula or
+    lot-property assertion.
+  target_ids:
+  - W05-FINAL-MAT-030
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "buffer-parts-v1/polypeptone-final/proposed-v2/Polypeptone.yaml", "root":
+    "artifact", "sha256": "1eff09e546e9dcf0c0ae6c10e7da74488301f1f50d4270b2310c48b5122ea89d"},
+    "assessment": "The ordinary named Polypeptone preparation retains its local identity
+    and is a supported kind of the closer generic MeSH Peptones material category.
+    Full MICRO179 defines the BD casein/animal-tissue blend; it cannot supply exact
+    identity for bare MediaDive442 or Hipolypepton2060. Three BD catalogue labels
+    correctly become nonresolving provenance, retaining exact text/source prefixes,
+    while five earlier Japanese/Hipolypepton exclusions remain exact. This does not
+    prove every product chemically distinct. Current notes explicitly supersede earlier
+    self-only/pending/FoodOn-gate conclusions. Complete history, 135/135 historical
+    counts, provisional role, source/product/quantity holds and supplied-form boundaries
+    are preserved. Mapping is NARROW_MATCH emitting broadMatch plus local identity,
+    with truthful LLM evidence and no BD formula or lot-property assertion.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-scientific-review-v1.json",
+    "sha256": "5ca37ac611783e6de3ecc61a2d8ab80558de553703ebf42cf4194cecf8d0a577"},
+    "case_ids": ["KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+    "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c"], "complete_native_rows":
+    [{"comment": "", "confidence": "0.9", "mapping_date": "2026-11-08", "mapping_justification":
+    "semapv:ManualMappingCuration", "object_id": "mesh:D010461", "object_label": "Peptones",
+    "object_source": "registry:mesh", "other": "Polypepton", "predicate_id": "skos:broadMatch",
+    "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/D010461|MIM:curator=Codex
+    W05 /root consolidated source-origin correction", "subject_id": "MIM:Polypeptone",
+    "subject_label": "Polypeptone", "validation_method": ""}, {"comment": "Registry/identity
+    row preserving kgmicrobe.ingredient:polypeptone alongside parent mesh:D010461.",
+    "confidence": "0.99", "mapping_date": "2026-11-08", "mapping_justification": "semapv:ManualMappingCuration",
+    "object_id": "kgmicrobe.ingredient:polypeptone", "object_label": "Polypeptone",
+    "object_source": "kgm:ingredient", "other": "", "predicate_id": "skos:exactMatch",
+    "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/D010461|MIM:curator=Codex
+    W05 /root consolidated source-origin correction", "subject_id": "MIM:Polypeptone",
+    "subject_label": "Polypeptone", "validation_method": ""}], "complete_payload_read":
+    true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "exact_alias_changes":
+    [{"after": {"source": "manual; Issue1202 comment6719869255: this label names the
+    specific documented BD casein/animal-tissue blended product. The present owner
+    denotes the supplier-unspecified named Polypeptone preparation; exact interchangeability
+    with this catalogue product is unproved. Preserve the original literal/source
+    as nonresolving provenance. This does not deny the product or prove chemical difference,
+    import its equal-parts formula, mint a BD owner, merge owners, or approve source/role/export.",
+    "synonym_text": "Polypeptone peptone (BD-BBL)", "synonym_type": "REJECTED_LABEL"},
+    "before": {"source": "manual", "synonym_text": "Polypeptone peptone (BD-BBL)",
+    "synonym_type": "CATALOG_VARIANT"}}, {"after": {"source": "manual; Issue1202 comment6719869255:
+    this label names the specific documented BD casein/animal-tissue blended product.
+    The present owner denotes the supplier-unspecified named Polypeptone preparation;
+    exact interchangeability with this catalogue product is unproved. Preserve the
+    original literal/source as nonresolving provenance. This does not deny the product
+    or prove chemical difference, import its equal-parts formula, mint a BD owner,
+    merge owners, or approve source/role/export.", "synonym_text": "Polypeptone Peptone
+    (BD 211910)", "synonym_type": "REJECTED_LABEL"}, "before": {"source": "manual",
+    "synonym_text": "Polypeptone Peptone (BD 211910)", "synonym_type": "CATALOG_VARIANT"}},
+    {"after": {"source": "culturemech:output/ingredient_occurrences.tsv; Issue1202
+    comment6719869255: this label names the specific documented BD casein/animal-tissue
+    blended product. The present owner denotes the supplier-unspecified named Polypeptone
+    preparation; exact interchangeability with this catalogue product is unproved.
+    Preserve the original literal/source as nonresolving provenance. This does not
+    deny the product or prove chemical difference, import its equal-parts formula,
+    mint a BD owner, merge owners, or approve source/role/export.", "synonym_text":
+    "Polypeptone (BBL)", "synonym_type": "REJECTED_LABEL"}, "before": {"source": "culturemech:output/ingredient_occurrences.tsv",
+    "synonym_text": "Polypeptone (BBL)", "synonym_type": "CATALOG_VARIANT"}}], "history_exact_prefix":
+    true, "mapping_evidence_exact_prefix": true, "metadata_rereview": {"path": ".temp/w05-buffer-parts-v1/review/polypeptone-metadata-v3-rereview.json",
+    "sha256": "4617143472841b7dfc98dbd3b3418e74adb25539e2f6a95102be4348ed33166d"},
+    "proposal_id": "W05-FINAL-MAT-030", "protected_fields": {"identifier": true, "ingredient_type":
+    true, "mapping_status": true, "nutritional_roles": true, "occurrence_statistics":
+    true, "preferred_term": true}, "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256":
+    "7a14bb31c5de66b869104127bb52d3874a910287b73db9d853373a520cd37925", "source_owner_export_approval":
+    false}'
+- assessment_id: ASSESS-W05-FINAL-MAT-032
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Full MICRO:0000181 definition and its source discussion describe generic
+    enzymatic soy-flour digest, consistent with MediaDive75 and the independent manufacturer
+    definition. This is a supported exact generic identity. The erroneous Hordeum
+    parenthesis, branded/papaic synonyms and numerical product annotations are not
+    imported. The complete final payload preserves five existing alias exclusions,
+    the unresolved peptic-process alias context, old evidence/history, statistics
+    and roles. The separately reviewed rejected Bacto tombstone prevents the inherited
+    shared-ID representative from acquiring an unsupported generic-Soy equivalence.
+    Neither shared-ID source membership nor export admission is established.
+  target_ids:
+  - W05-FINAL-MAT-032
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "buffer-parts-v1/parents/proposed/Soy_Peptone.yaml", "root": "artifact",
+    "sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee"},
+    "assessment": "Full MICRO:0000181 definition and its source discussion describe
+    generic enzymatic soy-flour digest, consistent with MediaDive75 and the independent
+    manufacturer definition. This is a supported exact generic identity. The erroneous
+    Hordeum parenthesis, branded/papaic synonyms and numerical product annotations
+    are not imported. The complete final payload preserves five existing alias exclusions,
+    the unresolved peptic-process alias context, old evidence/history, statistics
+    and roles. The separately reviewed rejected Bacto tombstone prevents the inherited
+    shared-ID representative from acquiring an unsupported generic-Soy equivalence.
+    Neither shared-ID source membership nor export admission is established.", "assessment_origin":
+    {"path": ".temp/w05-buffer-parts-v1/review/parents-scientific-review-v1.json",
+    "sha256": "25889e17450b8e7503a816355727345160fb4dc3af872e70a8647e1116169c3b"},
+    "case_ids": ["KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"],
+    "complete_payload_read": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "proposal_id": "W05-FINAL-MAT-032", "protected_fields": "Original history/evidence,
+    roles, statistics, source forms and raw names checked in complete payloads and
+    independent parsed comparisons. No source/owner/export approval.", "reviewer":
+    "/root/final_skeptical", "selected_proposal_object_sha256": "fc0442db6ea19430c6ed56cf89ee9c29c99deeaa28f708c8dcdf06c333d4d943",
+    "source_owner_export_approval": false, "unchanged_final_direct_lane_binding":
+    {"path": ".temp/w05-buffer-parts-v1/parents-direct-v1/proposals.json", "sha256":
+    "f5111ce8e388f6762a38cb84770ef7017fe21b09bea03871eb6317a85b589a03"}}'
+- assessment_id: ASSESS-W05-FINAL-MAT-039
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: Complete final Peptone payload read. The direct ordinary generic material
+    sense is supported by NLM definition/entry term and manufacturer material description;
+    source labels have no independently established different specified preparation.
+    Current notes clearly supersede prior assay-gate/FoodOn inference while retaining
+    the actual earlier history and evidence. No process, manufacturer, nutrient role
+    or source-occurrence approval is added. Exact one-row native identity agrees with
+    selected semantics; generic references require separate final byte review.
+  target_ids:
+  - W05-FINAL-MAT-039
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml", "root": "artifact",
+    "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"},
+    "assessment": "Complete final Peptone payload read. The direct ordinary generic
+    material sense is supported by NLM definition/entry term and manufacturer material
+    description; source labels have no independently established different specified
+    preparation. Current notes clearly supersede prior assay-gate/FoodOn inference
+    while retaining the actual earlier history and evidence. No process, manufacturer,
+    nutrient role or source-occurrence approval is added. Exact one-row native identity
+    agrees with selected semantics; generic references require separate final byte
+    review.", "assessment_origin": {"path": ".temp/w05-buffer-parts-v1/review/direct-parent-independent-review-v1.json",
+    "sha256": "98bd8081855ab166d43528cdfa1e2f1ff7f0546bf1398d8b7d8baa76a7e2de49"},
+    "case_ids": ["KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151"],
+    "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS", "interpretation_reassessment":
+    {"path": ".temp/w05-buffer-parts-v1/review/ontology-interpretation-reassessment-v1.json",
+    "sha256": "292ee8fd6a7e1b175d51e76ad0e01328a143f9cd9549c58d353e6e33c084bd8d"},
+    "proposal_id": "W05-FINAL-MAT-039", "selected_proposal_object_sha256": "c52010aa91f4484edff947cff7498356bd2119f63ab2f3723389137858aa94e1",
+    "source_owner_export_approval": false}'
+- assessment_id: ASSESS-W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  area: identity
+  topic: Complete exact payload and primary-source applicability
+  outcome: supported
+  summary: The authentic rejected Bacto Soytone tombstone previously redirected through
+    a nonunique FOODON identifier. Explicit empty representative is the native unresolved-target
+    mechanism; removal instead invokes legacy identifier fallback. Independent execution
+    confirms the empty value retains the tombstone name and emits no SSSOM rows while
+    avoiding active shared-ID owner credit. A redirect to generic MICRO181 would assert
+    unsupported product equivalence. All original identity/mapping/status/aliases/zero
+    statistics/history/evidence remain unchanged; only the bounded continuity annotation
+    and event are appended. The new unsupported human attribution was removed in exact
+    v2; historical enums and objects remain intact. This does not reconstruct a branded
+    owner or repartition historic source membership.
+  target_ids:
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  evidence_ids:
+  - PEER
+  - ROWS
+  details: '{"actual_scientific_reviewer": "/root/final_skeptical", "after_capture":
+    {"path": "buffer-parts-v1/parents/tombstone/proposed-v2/Bacto_Soytone.yaml", "root":
+    "artifact", "sha256": "f242b5c54ac1f1785200c1f604be368d8dabd47ef553164dee8c8e291b6d7a7d"},
+    "assessment": "The authentic rejected Bacto Soytone tombstone previously redirected
+    through a nonunique FOODON identifier. Explicit empty representative is the native
+    unresolved-target mechanism; removal instead invokes legacy identifier fallback.
+    Independent execution confirms the empty value retains the tombstone name and
+    emits no SSSOM rows while avoiding active shared-ID owner credit. A redirect to
+    generic MICRO181 would assert unsupported product equivalence. All original identity/mapping/status/aliases/zero
+    statistics/history/evidence remain unchanged; only the bounded continuity annotation
+    and event are appended. The new unsupported human attribution was removed in exact
+    v2; historical enums and objects remain intact. This does not reconstruct a branded
+    owner or repartition historic source membership.", "assessment_origin": {"path":
+    ".temp/w05-buffer-parts-v1/review/parents-scientific-review-v1.json", "sha256":
+    "25889e17450b8e7503a816355727345160fb4dc3af872e70a8647e1116169c3b"}, "case_ids":
+    ["KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"],
+    "complete_payload_read": true, "conclusion": "PASS_BOUNDED_SOURCE_PROPOSAL_WITH_LIMITATIONS",
+    "proposal_id": "W05-PARENTS-BACTO-SOYTONE-CONTINUITY", "protected_fields": "Original
+    history/evidence, roles, statistics, source forms and raw names checked in complete
+    payloads and independent parsed comparisons. No source/owner/export approval.",
+    "reviewer": "/root/final_skeptical", "selected_proposal_object_sha256": "2e8a5972ac6ef387b9f34c126b2099eb1c8c7d044b1adaaf81097bb5fe495361",
+    "source_owner_export_approval": false}'
+checks:
+- check_id: SCIENCE
+  name: Independent complete selected source and payload review
+  status: passed
+  required: true
+  summary: Non-command scientific judgment by the separately named reviewer, exact
+    scope in PEER.
+  target_ids:
+  - CASE-003
+  - CASE-017
+  - CASE-019
+  - CASE-028
+  - CASE-053
+  - CASE-076
+  - CASE-091
+  - CASE-111
+  - CASE-117
+  - CASE-124
+  - CASE-127
+  - CASE-130
+  - CASE-135
+  - CASE-136
+  - CASE-144
+  - CASE-158
+  - CASE-160
+  - CASE-173
+  - CASE-176
+  - CASE-181
+  - CASE-182
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  - CHEM-C1193-HEPES-1221
+  - CHEM-C1193-HEPES-1474
+  - CHEM-C1193-JCM_1061-Tris
+  - CHEM-C1193-Tris-HCl-salt
+  - CHEM-C1193-ethanol95-dsmz_78
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  - M1193-P-CM0643
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - M1193-P-ISP7
+  - M1193-P-MARINE2216
+  - M1193-P-MH-POWDER-DSMZ804
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  - M1193-P-RCM-182
+  - R1193-DEP-rumen-pyg
+  - R1193-DEP-rumen-pyglucose
+  - R1193-P-bottom-628
+  - R1193-P-bottom-629
+  - R1193-P-mkp
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  - W05-FINAL-MAT-030
+  - W05-FINAL-MAT-032
+  - W05-FINAL-MAT-039
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  evidence_ids:
+  - PEER
+- check_id: ACCOUNTING
+  name: Exact frozen campaign accounting
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/scripts/audit_worker_outcomes_v1.py
+    --shard /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5/shards/shard-05.json
+    --decisions /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json
+    --evidence /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/evidence.json
+    --proposals /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json
+    --artifact-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05
+    --source-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/queue/preliminary-v5
+    --mim-root /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree
+    --output /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/final-structural-audit.json
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Actual command completed against the declared final selected bytes; no
+    maintained or release approval.
+  target_ids:
+  - CASE-003
+  - CASE-017
+  - CASE-019
+  - CASE-028
+  - CASE-053
+  - CASE-076
+  - CASE-091
+  - CASE-111
+  - CASE-117
+  - CASE-124
+  - CASE-127
+  - CASE-130
+  - CASE-135
+  - CASE-136
+  - CASE-144
+  - CASE-158
+  - CASE-160
+  - CASE-173
+  - CASE-176
+  - CASE-181
+  - CASE-182
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  - CHEM-C1193-HEPES-1221
+  - CHEM-C1193-HEPES-1474
+  - CHEM-C1193-JCM_1061-Tris
+  - CHEM-C1193-Tris-HCl-salt
+  - CHEM-C1193-ethanol95-dsmz_78
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  - M1193-P-CM0643
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - M1193-P-ISP7
+  - M1193-P-MARINE2216
+  - M1193-P-MH-POWDER-DSMZ804
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  - M1193-P-RCM-182
+  - R1193-DEP-rumen-pyg
+  - R1193-DEP-rumen-pyglucose
+  - R1193-P-bottom-628
+  - R1193-P-bottom-629
+  - R1193-P-mkp
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  - W05-FINAL-MAT-030
+  - W05-FINAL-MAT-032
+  - W05-FINAL-MAT-039
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  evidence_ids:
+  - ACCOUNTING
+  - ACCOUNTING-COMMAND
+- check_id: LINEAGE
+  name: Original proposal lineage audit
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/final-correction-v1/control/audit_lineage.py
+    --core /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core
+    --out /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/original-lineage-audit.json
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Actual command completed against the declared final selected bytes; no
+    maintained or release approval.
+  target_ids:
+  - CASE-003
+  - CASE-017
+  - CASE-019
+  - CASE-028
+  - CASE-053
+  - CASE-076
+  - CASE-091
+  - CASE-111
+  - CASE-117
+  - CASE-124
+  - CASE-127
+  - CASE-130
+  - CASE-135
+  - CASE-136
+  - CASE-144
+  - CASE-158
+  - CASE-160
+  - CASE-173
+  - CASE-176
+  - CASE-181
+  - CASE-182
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  - CHEM-C1193-HEPES-1221
+  - CHEM-C1193-HEPES-1474
+  - CHEM-C1193-JCM_1061-Tris
+  - CHEM-C1193-Tris-HCl-salt
+  - CHEM-C1193-ethanol95-dsmz_78
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  - M1193-P-CM0643
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - M1193-P-ISP7
+  - M1193-P-MARINE2216
+  - M1193-P-MH-POWDER-DSMZ804
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  - M1193-P-RCM-182
+  - R1193-DEP-rumen-pyg
+  - R1193-DEP-rumen-pyglucose
+  - R1193-P-bottom-628
+  - R1193-P-bottom-629
+  - R1193-P-mkp
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  - W05-FINAL-MAT-030
+  - W05-FINAL-MAT-032
+  - W05-FINAL-MAT-039
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  evidence_ids:
+  - LINEAGE
+  - LINEAGE-COMMAND
+- check_id: OVERLAY
+  name: Guarded full payloads and complete substituted baseline
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/final-correction-v1/control/validate_overlay_v2.py
+    --proposals /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/input-proposals.json
+    --out /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-overlay
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Actual command completed against the declared final selected bytes; no
+    maintained or release approval.
+  target_ids:
+  - CASE-003
+  - CASE-017
+  - CASE-019
+  - CASE-028
+  - CASE-053
+  - CASE-076
+  - CASE-091
+  - CASE-111
+  - CASE-117
+  - CASE-124
+  - CASE-127
+  - CASE-130
+  - CASE-135
+  - CASE-136
+  - CASE-144
+  - CASE-158
+  - CASE-160
+  - CASE-173
+  - CASE-176
+  - CASE-181
+  - CASE-182
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  - CHEM-C1193-HEPES-1221
+  - CHEM-C1193-HEPES-1474
+  - CHEM-C1193-JCM_1061-Tris
+  - CHEM-C1193-Tris-HCl-salt
+  - CHEM-C1193-ethanol95-dsmz_78
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  - M1193-P-CM0643
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - M1193-P-ISP7
+  - M1193-P-MARINE2216
+  - M1193-P-MH-POWDER-DSMZ804
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  - M1193-P-RCM-182
+  - R1193-DEP-rumen-pyg
+  - R1193-DEP-rumen-pyglucose
+  - R1193-P-bottom-628
+  - R1193-P-bottom-629
+  - R1193-P-mkp
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  - W05-FINAL-MAT-030
+  - W05-FINAL-MAT-032
+  - W05-FINAL-MAT-039
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  evidence_ids:
+  - NATIVE
+  - OVERLAY-COMMAND
+- check_id: STRICT
+  name: Strict closed-schema complete payload checks
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    scripts/validate_strict.py reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Fatty_Acid_Mixture_See_Medium_No_266.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM628.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bottom_Layer_JCM629.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Pfennigs_Medium_II_DSMZ29.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Chloroflexus_Medium_Modified_DSMZ87.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/MKP_Medium_MediaDive1895.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Thiamine_Solution_See_Medium_No_403.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Sulfolobus_Medium_ATCC1256.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/VFA_Mix_JCM1130.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Trypticase_Soy_Broth_Agar_DSMZ535.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Wolfe_Mineral_Elixir_JCM470.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Wolfes_Modified_Mineral_Elixir_ATCC1190.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Wolfes_Modified_Mineral_Elixir_JCM221.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Wolfe_Mineral_Elixir_DSMZ792.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Modified_Chopped_Meat_Agar_Base_ATCC1490.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HS_Medium_Base_TOGO_M2643.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/M2SGC_Broth_TOGO_M2789.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Mineral_Medium_Base_JCM521.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Non_Nutrient_Medium_Carrier_MediaDive_P4.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Medium_D_Base_TOGO_M2241.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Sludge_fluid.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Clarified_rumen_fluid.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-glucose-rumen_Fluid.yaml
+    reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/chemicals/proposed/Casitone_Yeast_Extract_Rumen_Fluid.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG_Rumen_Fluid.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/D-glucose.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Iron.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Na-formate.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Mgso4_X_7_H2o.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Sulfur.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Riboflavin.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Mncl2_X_4_H2o.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Nicotinic_Acid.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Thiamine_Hcl.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Hepes.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Bacteriocin_Isk_1.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Thiamine_pyrophosphate.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Lab_Lemco_Powder.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Chitin_From_Shrimp_Shells.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1221.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/HEPES_KOH_1M_NBRC_1474.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Iron_Precipitate_Suspension_JCM_1030.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Iron_Precipitate_Suspension_JCM_411.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_Base.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v3/Tellurium_Dioxide.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/02_Thiamine_Pyrophosphate.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Complan.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_ATCC_1490.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_ATCC_1257.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_ATCC_1524.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ethanol_95_Preparation_DSMZ_78.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Thiamine-hcl_X_2_H2o.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Ki.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemicals/proposed-v2/Fe_Iii_Citrate.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/chemical-supplement-v1/proposed-v1/Thiamine_Hcl_Monohydrate.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Proteose_Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Sucrose.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Leafy_Soil_TOGO_M230.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Liver_Extract_JCM1474.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Meat_Extract.yaml
+    reports/all_unmatched_20261107/worker-05/postseal-source-corrections-v1/materials/proposed/Bovine_Serum_Albumin.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Pooled_Sterile_Human_Urine.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Oxoid_Peptonised_Milk.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Meat_peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Chrysalis_Extract_NBRC907.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Gelatin_Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Cows_Milk.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/CrystalSea_Marine_Mix.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Panton.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Bacto_Bitone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Fish-sperm_Dna.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Sucrose_20_Percent_Stock.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Fish_Meat_Extract.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Proteose_Peptone_No_3.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Difco_Soytone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Small_Dried_Sardine.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Oxoid_Special_Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Rice_Extract_NBRC1372.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Skim_milk_powder.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Catalase.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Liver_Extract_Concentrate.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Maize_Extract.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Hipolypepton.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/polypeptone-final/proposed-v2/Polypeptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Phytone.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/proposed/Soy_Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Malt_Extract_Agar_Oxoid.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Tomato_Extract.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Merck_Universal_Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Neopeptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Sea_Salts.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/materials/proposed/Organic_Peat.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Graces_Insect_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Gamborg_B5_Medium_Incl_Vitamins.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Murashige_Skoog_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Horikoshi-I_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/S6_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/M9_salts_5x_TOGO_M2790.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/ISP_7_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/API_50_CHBE_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Daigo_IMK_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/CMRL_1066_10x_ATCC_20_2207.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/R2A_Broth_Daigo.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/MEM_Gibco_31095.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/ISP_1_Difco.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Leptospira_Medium_Base_EMJH.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/TNM-FH_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/SI_Medium_Nippon_Jozo_Kyokai.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/PolyViteX_Enrichment.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/L15_Powder_Gibco_41300039.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/LB_Broth_Lennox_Difco.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Cooked_Meat_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Malt_Extract_Broth.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed/Marine_Broth_2216.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Schneider_Drosophila_Gibco_NBRC400.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/CMRL1066_Gibco_10x_DSMZ1076b.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Thioglycollate_Sigma_JCM529.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/media/proposed-v3/Reinforced_Clostridial_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Dehydrated_RCM_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/MRS_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/MRS_Medium_JCM1.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Czapek-Dox_Liquid_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Czapek_Dox_Oxoid_CM0095.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/L15_Prepared_Medium_DSMZ1670.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/IMDM_Prepared_Medium_DSMZ1193_1198.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/RPMI_Invitrogen_Preparation_M2958.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/M17_Scharlau_Preparation_M2230.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/MEM_Nissui_Preparation_M2847.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Thioglycolate_Medium_Wako_Source_Preparation.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/LB_Broth_Powder_JCM1111.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Mueller_Hinton_Broth_Preparation_M2937.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Methanol_Utilizing_Bacteria_Medium_B_JCM79.yaml
+    reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Modified_Cooked_Meat_Medium.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Glucose_Peptone-yeast_Extract.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-cellobiose.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-fructose.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-maltose.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PY-pectin.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYEG.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG-002_Tween_80.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies/proposed/PYG.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone-yeast_Extract-glucose.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Beef_Extract_Yeast_Extract.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Peptone_Yeast_Extract.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/dependencies-direct-v1/proposed/Yeast_Extract_Peptone.yaml
+    reports/all_unmatched_20261107/worker-05/buffer-parts-v1/parents/tombstone/proposed-v2/Bacto_Soytone.yaml
+    --workers 1 --out /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-strict/failures.tsv
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Actual command completed against the declared final selected bytes; no
+    maintained or release approval.
+  target_ids:
+  - CASE-003
+  - CASE-017
+  - CASE-019
+  - CASE-028
+  - CASE-053
+  - CASE-076
+  - CASE-091
+  - CASE-111
+  - CASE-117
+  - CASE-124
+  - CASE-127
+  - CASE-130
+  - CASE-135
+  - CASE-136
+  - CASE-144
+  - CASE-158
+  - CASE-160
+  - CASE-173
+  - CASE-176
+  - CASE-181
+  - CASE-182
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  - CHEM-C1193-HEPES-1221
+  - CHEM-C1193-HEPES-1474
+  - CHEM-C1193-JCM_1061-Tris
+  - CHEM-C1193-Tris-HCl-salt
+  - CHEM-C1193-ethanol95-dsmz_78
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  - M1193-P-CM0643
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - M1193-P-ISP7
+  - M1193-P-MARINE2216
+  - M1193-P-MH-POWDER-DSMZ804
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  - M1193-P-RCM-182
+  - R1193-DEP-rumen-pyg
+  - R1193-DEP-rumen-pyglucose
+  - R1193-P-bottom-628
+  - R1193-P-bottom-629
+  - R1193-P-mkp
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  - W05-FINAL-MAT-030
+  - W05-FINAL-MAT-032
+  - W05-FINAL-MAT-039
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  evidence_ids:
+  - STRICT
+  - STRICT-COMMAND
+- check_id: ROWS
+  name: Full native mapping projections and invariant assertions
+  status: passed
+  required: true
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/all-unmatched-worker-05/venv/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/control/validate_consolidated_v2.py
+    --core /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/workers/w05/worktree/.temp/w05-buffer-parts-v1/control/composed-final-v5
+  exit_code: 0
+  expected_exit_code: 0
+  summary: Actual command completed against the declared final selected bytes; no
+    maintained or release approval.
+  target_ids:
+  - CASE-003
+  - CASE-017
+  - CASE-019
+  - CASE-028
+  - CASE-053
+  - CASE-076
+  - CASE-091
+  - CASE-111
+  - CASE-117
+  - CASE-124
+  - CASE-127
+  - CASE-130
+  - CASE-135
+  - CASE-136
+  - CASE-144
+  - CASE-158
+  - CASE-160
+  - CASE-173
+  - CASE-176
+  - CASE-181
+  - CASE-182
+  - CHEM-C1193-DSMZ_394_1137-Tris
+  - CHEM-C1193-HEPES-1221
+  - CHEM-C1193-HEPES-1474
+  - CHEM-C1193-JCM_1061-Tris
+  - CHEM-C1193-Tris-HCl-salt
+  - CHEM-C1193-ethanol95-dsmz_78
+  - FINAL-CHEM-P-thiamine-hcl-monohydrate
+  - M1193-P-CM0643
+  - M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES
+  - M1193-P-ISP7
+  - M1193-P-MARINE2216
+  - M1193-P-MH-POWDER-DSMZ804
+  - M1193-P-PENASSAY_BROTH_DIFCO
+  - M1193-P-RCM-182
+  - R1193-DEP-rumen-pyg
+  - R1193-DEP-rumen-pyglucose
+  - R1193-P-bottom-628
+  - R1193-P-bottom-629
+  - R1193-P-mkp
+  - W05-DEP-PEPTONE-PC03
+  - W05-DEP-PEPTONE-PC06
+  - W05-DEP-PEPTONE-PC07
+  - W05-DEP-PEPTONE-PC09
+  - W05-DEP-PEPTONE-PC10
+  - W05-DEP-PEPTONE-PC11
+  - W05-DEP-PEPTONE-PC12
+  - W05-DEP-PEPTONE-PC13
+  - W05-DEP-PEPTONE-PC16
+  - W05-DEP-PEPTONE-PC17
+  - W05-DEP-PEPTONE-PC18
+  - W05-DEP-PEPTONE-PC19
+  - W05-FINAL-MAT-030
+  - W05-FINAL-MAT-032
+  - W05-FINAL-MAT-039
+  - W05-PARENTS-BACTO-SOYTONE-CONTINUITY
+  evidence_ids:
+  - ROWS
+  - ROWS-COMMAND
+evidence:
+- evidence_id: PEER
+  kind: prior_review
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/review/main-review.json
+  snapshot_sha256: fa267f423149b4dbbcf5c10df55a2746f33058db2364aafd88cb8f8585313da0
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Exact independent source and full payload assessment with real primary/reviewer
+    scopes.
+- evidence_id: ACCOUNTING
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/final-structural-audit.json
+  snapshot_sha256: 9566c58c621660c3e91cf87aad74b8fe51ab0d0eb2162246dff64d344b8f3c62
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: All frozen cases and current complete proposal/evidence accounting.
+- evidence_id: LINEAGE
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/original-lineage-audit.json
+  snapshot_sha256: b3995a8a004364bf8a9648ff65fec09932d6c7e902d9b13b65b68e38ebb94d56
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Every original proposal lineage, history, negative labels and original
+    evidence typing retained.
+- evidence_id: NATIVE
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-overlay/native-validation.json
+  snapshot_sha256: 4193911412040bc8639bf7495cf52a8fc9374d036a6bb30df849a0e1b5e0bf9d
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Guarded full payloads plus full substituted baseline partonomy, identifiers
+    and filename checks.
+- evidence_id: STRICT
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-strict.receipt.json
+  snapshot_sha256: 12568a2cf612965764749ed3f0377c6c353e9afd58de8e9438340de50b7477e2
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Strict closed-schema checks of every selected full payload.
+- evidence_id: ROWS
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/native-row-projections.json
+  snapshot_sha256: b1bba4fcf5baffcd88cf9dcb5d9ab81a6abb94b57b99c38deb8118ab78724c54
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Exact native before/after rows for every selected payload; no exported
+    products or producer changes.
+- evidence_id: FINDINGS
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/finding-register.json
+  snapshot_sha256: 294cfc0a04158c4b1a659e439ddf9943a9f49f0cc71747fcb9df623ab10e4999
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Original and supplemental finding identities, scoped deltas and unresolved
+    coordinator decisions.
+- evidence_id: LEDGER
+  kind: record_content
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/source-ledger.json
+  snapshot_sha256: 538c89e26fe351d7d049a0d227ca5ac51f56efede6e9b3e1657680a0e8ffddfe
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Canonical final fragment selection, source hashes/times and actual scientist
+    attributions.
+- evidence_id: PREDECESSOR
+  kind: prior_review
+  reference: reviews/structured/20261108T091207Z-worker05-tellurium-polypeptone-supplement/review.yaml
+  snapshot_sha256: d86e891daeb0e57f78b7f44843ee45383027af20cefa6986fa81d8bc955e52b1
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Immutable predecessor native review; no silent finding retirement or broader
+    approval.
+- evidence_id: ACCOUNTING-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/final-structural-audit.receipt.json
+  snapshot_sha256: f38080e347f579f1fde385fa351219e0eba88d025a3071992163316a06595f81
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Actual executable command, completion time and exit code.
+- evidence_id: LINEAGE-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/lineage.receipt.json
+  snapshot_sha256: 7de9f5005fb99e5846e51da234ad1fcdd1d666519398faf119676155d35eef6a
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Actual executable command, completion time and exit code.
+- evidence_id: OVERLAY-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-overlay.receipt.json
+  snapshot_sha256: 4dde286a523b78155a5d70a65220597f2047679de32d3bb330e6ad2d093f60f7
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Actual executable command, completion time and exit code.
+- evidence_id: STRICT-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/full-strict.receipt.json
+  snapshot_sha256: 12568a2cf612965764749ed3f0377c6c353e9afd58de8e9438340de50b7477e2
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Actual executable command, completion time and exit code.
+- evidence_id: ROWS-COMMAND
+  kind: validation
+  reference: reports/all_unmatched_20261107/worker-05/buffer-parts-v1/validation/consolidated-validation.receipt.json
+  snapshot_sha256: a996e56cf4a113db170d0929baeedd81194ea916acab29280867269a9b22a997
+  accessed_at: '2026-11-08T09:58:07Z'
+  support: supports
+  summary: Actual executable command, completion time and exit code.
+findings: []
+actions: []
+limitations:
+- needs_curation records residual coordinator family, source membership, shared-ID/tombstone
+  and owner/application obligations; it is not a blocked report or an export approval.
+- No historical structured finding is terminally closed by omission from this scoped
+  supplemental review. The exact predecessor and original finding register remain
+  authoritative for those occurrences; legacy supplemental findings are not fabricated
+  as native predecessor IDs.
+- All inherited source, raw-label, occurrence, stock/form, organism, role and release
+  holds remain. HEPES/Wolfe/ethanol equivalence or distinction is not inferred from
+  unknown formulation facts.
+- MappingEvidence remains claim-specific and truthful under1226; historical human
+  and separate ComponentEvidence typing are preserved.
+- No maintained data/source, owner merge, gate, producer, pin, workflow, export or
+  GitHub write is performed. Coordinator final acceptance/integration remains separate.
+links:
+- reports/all_unmatched_20261107/worker-05/buffer-parts-v1/README.md
+- reports/all_unmatched_20261107/worker-05/buffer-parts-v1/selected-origin-bindings.json
+```

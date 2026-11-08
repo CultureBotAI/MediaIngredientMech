@@ -1,0 +1,154 @@
+[
+  {
+    "proposal_id": "M1193-P-MARINE2216",
+    "case_ids": [
+      "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+      "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c"
+    ],
+    "description": "The existing registry denotes the named commercial Difco Marine Broth 2216 preparation. The manufacturer manual, printed pages 351-352, independently lists broth and agar formulas: broth has magnesium chloride 5.9 g and magnesium sulfate 3.24 g per litre at standard reconstitution; agar has magnesium chloride 8.8 g and sodium sulfate 3.24 g. Thus the products do not differ only by agar. The corrected sixteen-part commercial broth formula is retained; unspecified salt forms remain UNMAPPED. The old MIM curation (#260) assertion and ATCC agar-minus-agar transcription are historical provenance, not the active identity basis. This source-bound correction does not merge generic marine-medium owners or resolve worker03 same-owner alias reconciliation. The manufacturer labels the printed broth table an approximate formula per litre and permits adjustment or supplementation to meet performance criteria. COMPLETE covers all 16 nominal printed dry-product inputs, not exact chemical closure for every manufactured lot. The existing component names and quantities remain unchanged on their standard-reconstitution basis; water remains outside the dry product, and unspecified salt forms and generic Peptone remain unresolved. No extra ingredient, lot-specific adjustment or forced PARTIAL status is inferred.",
+    "evidence_ids": [
+      "M1193-SCOPE-17",
+      "M1193-WEB-web-next-3-17",
+      "MEDIA-CASE-017",
+      "MEDIA-P013",
+      "MEDIA-P014",
+      "MEDIA-P015",
+      "MEDIA-P016",
+      "MEDIA-RECIPE-017-00",
+      "MEDIA-RECIPE-017-01",
+      "MEDIA-RECIPE-017-02",
+      "MEDIA-MARINE-COMPARISON-0",
+      "MEDIA-MARINE-COMPARISON-1",
+      "MEDIA-MARINE-COMPARISON-2",
+      "M1193-OWNER-Marine_Broth_2216",
+      "M1193-OWNER-Marine_Broth",
+      "M1193-OWNER-Difco_Marine_Broth",
+      "M1193-DIRECT-15",
+      "M1193-OLS-BROAD-18",
+      "MEDIA-CASE-136",
+      "MEDIA-P084",
+      "M-FINAL-PRIMARY-READ-LEDGER",
+      "W05-PS-MEDIA-MANUAL-352",
+      "W05-PS-MEDIA-PAGE-352",
+      "W05-PS-MEDIA-ISSUE1208",
+      "W05-PS-MEDIA-DNS-ATTEMPT"
+    ],
+    "owner_path": "data/ingredients/mapped/Marine_Broth_2216.yaml",
+    "kind": "edit_existing_owner",
+    "before_sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+    "after_capture": {
+      "root": "artifact",
+      "path": "postseal-source-corrections-v1/media/proposed/Marine_Broth_2216.yaml",
+      "sha256": "1aff9c58110b7c111d5930fe60fd935f932ff0437ec17d12fc01e22da0c820be"
+    },
+    "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+    "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+    "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+    "replaces_proposal_ids": [],
+    "cross_shard_dependencies": [
+      "worker03:b-proposal-marine-aliases"
+    ],
+    "predecessor_proposal": {
+      "source_head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+      "proposal_id": "M1193-P-MARINE2216",
+      "proposal_object_sha256": "ae4609a33223fa2635d34638dd6d10b733ed14dec144f18f7fa3f078d96cdb83",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/media/proposed/Marine_Broth_2216.yaml",
+        "sha256": "b7c5a00a78f1c6120e52ac3d88eb16833be86df317680d593e53f21047418abd"
+      }
+    },
+    "final_correction": {
+      "author": "Codex GPT-6 /root/media_research",
+      "at": "2026-11-08T07:39:34.583422+00:00",
+      "scope": "Full assigned case, owner payload and applicable primary-source reassessment; isolated successor only.",
+      "changes": [
+        "W05-MEDIA-F01: replace the false active agar-equivalence premise with the directly supported commercial broth basis. Preserve every component, alias, owner identifier and historical event."
+      ]
+    },
+    "postseal_correction": {
+      "author": "Codex GPT-6 /root/media_research",
+      "at": "2026-11-08T08:29:39.343065+00:00",
+      "source_head": "5156d92bec6bd885ca8bae3c5e18bfdce0069176",
+      "predecessor_proposal_object_sha256": "1033e408c42d91f9f58a6432598e6c4fb571680ece2a611c985f78cdfe18fa9a",
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Marine_Broth_2216.yaml",
+        "sha256": "0629311e2cd70175064d910a739ce425c05a6eece9fc3493738e06d67101ed63"
+      },
+      "original_maintained_before_sha256": "adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216",
+      "issue_ref": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1208#issuecomment-6718748333",
+      "finding_id": "W06-TU-005",
+      "assessment": "The manufacturer labels the printed broth table an approximate formula per litre and permits adjustment or supplementation to meet performance criteria. COMPLETE covers all 16 nominal printed dry-product inputs, not exact chemical closure for every manufactured lot. The existing component names and quantities remain unchanged on their standard-reconstitution basis; water remains outside the dry product, and unspecified salt forms and generic Peptone remain unresolved. No extra ingredient, lot-specific adjustment or forced PARTIAL status is inferred.",
+      "whole_payload_review_status": "Primary assessment complete; independent exact-byte review pending.",
+      "changed_payload_fields": [
+        "component_assertion.evidence[0].notes",
+        "curation_history append only"
+      ],
+      "historical_reviews_not_transferred": true
+    },
+    "independent_review": {
+      "status": "pending",
+      "evidence_ids": []
+    }
+  },
+  {
+    "proposal_id": "M1193-P-RCM-182",
+    "case_ids": [
+      "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd"
+    ],
+    "description": "Original1769andits three source media explicitly name BD-DifcoRCM38g. Curate that whole named product with its manufacturer nine-part recipe. The existing Oxoid aliases are excluded from this product identity because manufacturer formulations use different peptone/extract products; retain raw strings as rejected for this selected BD product, not as rejected source facts.",
+    "evidence_ids": [
+      "M1193-SCOPE-182",
+      "M1193-WEB-web-b5-2-182",
+      "M1193-WEB-web-b4-0-182",
+      "M1193-WEB-web-b8-1-182",
+      "MEDIA-CASE-182",
+      "MEDIA-P104",
+      "M1193-OWNER-Reinforced_Clostridial_Medium",
+      "M1193-DIRECT-100",
+      "M1193-DIRECT-103",
+      "M1193-DIRECT-110",
+      "M1193-DIRECT-113",
+      "M1193-DIRECT-19",
+      "M1193-DIRECT-20",
+      "M1193-DIRECT-21",
+      "M1193-WEB-rcm-open-142",
+      "M1193-WEB-oxoid-rcm-open-142",
+      "M1193-OLS-33",
+      "M1193-OLS-BROAD-10",
+      "M-FINAL-PRIMARY-READ-LEDGER"
+    ],
+    "owner_path": "data/ingredients/unmapped/Reinforced_Clostridial_Medium.yaml",
+    "kind": "edit_existing_owner",
+    "before_sha256": "7f94183c0d9b070b57c1ffa8beab53817b48791a75278957163619ece7a24c2e",
+    "after_capture": {
+      "root": "artifact",
+      "path": "final-correction-v1/media/proposed/Reinforced_Clostridial_Medium.yaml",
+      "sha256": "0fb8cf4c4ec591566243b63e48b8c68acea1cf8e84cfdd6e7433dd9e1e304686"
+    },
+    "identity_consequence": "Source-defined whole preparation; named components are not whole-record identity.",
+    "predicate_consequence": "Registry exact identity only when promoted; no invented ontology-parent or component identity row.",
+    "publication_obligations": "Coordinator must integrate through native gates and retain all inherited source/owner/export holds. Ingredient grounding is separate from part grounding.",
+    "replaces_proposal_ids": [],
+    "destination_owner_path": "data/ingredients/mapped/Reinforced_Clostridial_Medium.yaml",
+    "predecessor_proposal": {
+      "source_head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+      "proposal_id": "M1193-P-RCM-182",
+      "proposal_object_sha256": "de44a5722bc84348da4faa81eef7e8711ac96c5ff1d0b177e79094805b71982d",
+      "after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/media/proposed/Reinforced_Clostridial_Medium.yaml",
+        "sha256": "21ae9f818beef065d14b1562cf7d968dc8441a7edc6dd3c7ea7e7e87d2d26b30"
+      }
+    },
+    "final_correction": {
+      "author": "Codex GPT-6 /root/media_research",
+      "at": "2026-11-08T07:39:34.583422+00:00",
+      "scope": "Full assigned case, owner payload and applicable primary-source reassessment; isolated successor only.",
+      "changes": [
+        "Retype the documented campaign-agent mapping judgment from human-only MANUAL_CURATION to LLM_SUGGESTION under issue1226; scientific assertion and source unchanged except any separately listed finding."
+      ]
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-08T08:44:33.375417+00:00",
+  "reviewer": "/root/peptone_skeptic",
+  "command": "PYTHONDONTWRITEBYTECODE=1 .temp/all-unmatched-worker-03/env/bin/python .temp/peptone-consumer-independent-v1/skeptic/build_native_review_v2.py",
+  "exit_code": 1,
+  "failure": "Native ReviewError: review YAML must not contain aliases, anchors, or explicit tags",
+  "producer_sha256": "2bde549f9f38dc1dbb8b68a1e99780e32cf9382fade0f1a4e462fc81a92521d0",
+  "prior_native_calls_passed": [
+    "validate_review",
+    "assert_current_source",
+    "render_markdown"
+  ],
+  "failed_call": "parse_review_bundle",
+  "outputs_before_failure": [
+    "native/inspect-final-inputs-v2.json"
+  ],
+  "review_yaml_written": false,
+  "candidate_or_source_mutation": false,
+  "bounded_repair": "Use actual native _dump_document instead of generic yaml.safe_dump; preserve failed producer and receipt; science/dispositions unchanged."
+}

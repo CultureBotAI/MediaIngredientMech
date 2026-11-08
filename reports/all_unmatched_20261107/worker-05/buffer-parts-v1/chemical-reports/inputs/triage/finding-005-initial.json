@@ -1,0 +1,30 @@
+{
+  "finding_id": "W05-FINAL-SKEPTIC-CHEM-005",
+  "reviewer": "/root/materials_research",
+  "at": "2026-11-08T08:15:08.359456+00:00",
+  "status": "reported_before_fix",
+  "kind": "review_report_grade_predicate_wording",
+  "source_path": ".temp/w05-final-correction-v1/review-chemicals/main-review-v1.json",
+  "source_sha256": "9c46f53b9d4cc8eae9439e381c4b4f94a005c0852ace18331e4d6e1afa13a2a6",
+  "field_pointers": [
+    "/payload_reviews/44/assessment",
+    "/finding_dispositions/11/assessment"
+  ],
+  "observed": [
+    "Solid Tris hydrochloride CAS1185-53-1 is separate from free Tris. Native BROAD_MATCH semantics produce a broad-parent row plus CAS and local registry identity rows; no export is performed.",
+    "Solid Tris hydrochloride retains CAS1185-53-1 and receives native BROAD_MATCH to Tris, with CAS and local identity rows both present. The grade correction is separate from nominal buffer components."
+  ],
+  "reproduction": [
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/proposed-v2/Tris_Hydrochloride_Salt.yaml",
+      "sha256": "8d2cdaf4aad9ccff4eaed80b2d12ff9848e1c2ed786e62e7550ecb9670c07a44"
+    },
+    {
+      "path": ".temp/w05-final-correction-v1/chemicals/native-projections-v3.json",
+      "sha256": "a1568768e95019a2e1033a8903758d9fe69eb102300fbad2406ae502e58fbc29"
+    }
+  ],
+  "actual": "The exact final YAML stores ontology_mapping.mapping_quality=NARROW_MATCH. The pinned native builder emits skos:broadMatch to CHEBI:9754 plus exact CAS and local registry identity rows. The two review sentences incorrectly use the enum spelling BROAD_MATCH instead of distinguishing the emitted predicate.",
+  "bounded_fix": "Preserve v1; correct only these two sentences in the successor review to state stored NARROW_MATCH and emitted skos:broadMatch. No payload, projection, chemical identity, or installation conclusion changes.",
+  "reported_to_root_before_fix": true
+}

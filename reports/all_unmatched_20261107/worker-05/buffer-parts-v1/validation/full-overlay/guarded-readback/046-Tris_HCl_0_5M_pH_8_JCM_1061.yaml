@@ -1,0 +1,61 @@
+identifier: kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061
+preferred_term: Tris-HCl 0.5 M pH 8 stock (JCM 1061)
+mapping_status: MAPPED
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:tris_hcl_0_5m_ph_8_jcm_1061
+  ontology_label: Tris-HCl 0.5 M pH 8 stock (JCM 1061)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://jcm.brc.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=1061
+    notes: Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration
+      andpH define the bounded stock; exact protonated/free-base ratio and preparation
+      inputs remain unspecified. Neither all total Tris as pure hydrochloride nor
+      all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock
+      description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from
+      frozen volume-to-mass corruption.
+synonyms: []
+notes: Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration
+  andpH define the bounded stock; exact protonated/free-base ratio and preparation
+  inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all
+  as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description;
+  JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass
+  corruption. W05-FINAL-CHEM-NEW-03 was reported before correction. Withdraw inferred
+  Tris-moiety and chloride-species material partonomy. Preserve the source-defined
+  nominal buffer strength and pH as whole-preparation specifications; the source does
+  not enumerate its material inputs. No solvent, free-base/salt ratio, HCl input or
+  component molarity is inferred. Original component objects and historical claims
+  remain available in the immutable finding and prior payload.
+solution_type: BUFFER_SOLUTION
+curation_history:
+- timestamp: '2026-11-08T05:49:52.389819+00:00'
+  curator: Codex worker05 chemical correction1193
+  action: CREATED_SOURCE_DEFINED_BUFFER
+  changes: Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration
+    andpH define the bounded stock; exact protonated/free-base ratio and preparation
+    inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all
+    as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description;
+    JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass
+    corruption.
+  llm_assisted: true
+  llm_model: gpt-6
+  new_status: MAPPED
+- timestamp: '2026-11-08T07:40:53.320531+00:00'
+  curator: Codex worker05 /root/chemicals_research final report correction
+  action: CORRECTED_REPORT_PROPOSAL
+  changes: Correct only the exact new campaign MappingEvidence entry identified by
+    the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited
+    evidence and ComponentAssertion evidence types. W05-FINAL-CHEM-NEW-03 was reported
+    before correction. Withdraw inferred Tris-moiety and chloride-species material
+    partonomy. Preserve the source-defined nominal buffer strength and pH as whole-preparation
+    specifications; the source does not enumerate its material inputs. No solvent,
+    free-base/salt ratio, HCl input or component molarity is inferred. Original component
+    objects and historical claims remain available in the immutable finding and prior
+    payload. Report-only candidate; separate final scientific review and coordinator
+    integration remain required.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6

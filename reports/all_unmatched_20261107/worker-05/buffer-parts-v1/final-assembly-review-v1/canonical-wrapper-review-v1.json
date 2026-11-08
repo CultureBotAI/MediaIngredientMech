@@ -1,0 +1,284 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "completed_at": "2026-11-08T09:58:28.255810+00:00",
+  "verdict": "PASS_EXACT_SEVEN_METADATA_ADAPTATIONS_AND_CANONICAL_WRAPPER",
+  "inputs": [
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/decisions.json",
+      "sha256": "741bf2c03be4b5ec1ec8dc170508cf6b5d40f606bfacdc10dd2f1d109fda827e"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposals.json",
+      "sha256": "0ffa5a4a2fe7d5c4fc75e6296fa31f258d3d14a33245598036965c58425af842"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/evidence.json",
+      "sha256": "19d0abc950cc07581e4593c81dfffb2a41fa9a680ada388f91faac1fbc28ad1a"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/proposal-lineage.json",
+      "sha256": "642b2b8cd17e58f2e37d5b404baa427b8e9dfa508a83547934c7edd1b9991919"
+    },
+    {
+      "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/core/assembly-receipt.json",
+      "sha256": "21eea42ec88cb10230c4ba628aba82252f4d0fa41268f0ecc70e504564682701"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/review/main-review.json",
+      "sha256": "fa267f423149b4dbbcf5c10df55a2746f33058db2364aafd88cb8f8585313da0"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/review/FINAL-MANIFEST-v1.json",
+      "sha256": "344d398c5084b9cd88128cd3e042224f65d8183c2a6eb4a4d45180b76c7fa569"
+    }
+  ],
+  "finding_dispositions": [
+    {
+      "finding_id": "W05-ASSEMBLY-EVIDENCE-003",
+      "disposition": "RESOLVED_EXACT_CANONICAL_METADATA",
+      "adaptation": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/control/evidence-envelope-adaptation.json",
+        "sha256": "b8bea9801a8b541b5c5d5deb176529ae1cdd23d2663ac02787b697ee2929d21e"
+      },
+      "before_finding": {
+        "path": ".temp/w05-buffer-parts-v1/control/evidence-kind-finding-before-fix.json",
+        "sha256": "f803557c916c8635ec100c77c673955d27db77d6ff2c26ee5ba18d15c51a2c92"
+      },
+      "entry_reviews": [
+        {
+          "evidence_id": "W05-BUFFER-TRIS-ASSESSMENT",
+          "before_object_sha256": "30e0a7f50459fa8278bc05f7614c8a36aa831c7a6adadb80f6c175d62c64b5da",
+          "after_object_sha256": "aa0d8b97b5d59c2b899cad113b713364ec98793d17287649054098e24338f72a",
+          "capture": {
+            "root": "artifact",
+            "path": "buffer-parts-v1/tris/source-assessment.json",
+            "sha256": "c4d258dc3f262bbb413c62f5d5e8f745166e9cff466985cb7329a1c466466c30"
+          },
+          "assessment": "Exact captured document, claims, locator and actual attribution remain unchanged. Canonical source_snapshot describes retained author/context/beforeimage documents or reused source-document snapshots without claiming new network acquisition. Original type and, where applicable, URL are explicitly preserved. Unknown original acquisition time is not guessed or replaced by failed-shell/local-read time. No MappingEvidence enum, primary interpretation or scientific payload changes."
+        },
+        {
+          "evidence_id": "W05-BUFFER-TRIS-CHRONOLOGY",
+          "before_object_sha256": "3b2b7f9efe2d8b6a5228bd49194f23e1aef3ec06b9266b959a0a478b1aa16174",
+          "after_object_sha256": "c34d8c49ecde231790da4d55b716e5b51df18f89222f12dd1cdcd31b150fcbe9",
+          "capture": {
+            "root": "artifact",
+            "path": "buffer-parts-v1/tris/chronology.json",
+            "sha256": "3dd0cf82af1dfddd2e09b95f9eac288d2efd05ed198de9177c05b3178bebadea"
+          },
+          "assessment": "Exact captured document, claims, locator and actual attribution remain unchanged. Canonical source_snapshot describes retained author/context/beforeimage documents or reused source-document snapshots without claiming new network acquisition. Original type and, where applicable, URL are explicitly preserved. Unknown original acquisition time is not guessed or replaced by failed-shell/local-read time. No MappingEvidence enum, primary interpretation or scientific payload changes."
+        },
+        {
+          "evidence_id": "W05-BUFFER-TRIS-FILING",
+          "before_object_sha256": "0c7254b13eef23b870bc1928866e0d34804af8da896ffff1342f6326ea916588",
+          "after_object_sha256": "2429a3dcf146bdbb3b2c06e9ef3aa8849849d83ee70df4c64b802d4e0206a99a",
+          "capture": {
+            "root": "artifact",
+            "path": "buffer-parts-v1/tris/inputs/comment-live.json",
+            "sha256": "c6650fb553036d78cf7cfc3d7be9e35cdc523d87433f645c88259d024a0a9645"
+          },
+          "assessment": "Exact captured document, claims, locator and actual attribution remain unchanged. Canonical source_snapshot describes retained author/context/beforeimage documents or reused source-document snapshots without claiming new network acquisition. Original type and, where applicable, URL are explicitly preserved. Unknown original acquisition time is not guessed or replaced by failed-shell/local-read time. No MappingEvidence enum, primary interpretation or scientific payload changes."
+        },
+        {
+          "evidence_id": "W05-PARENTS-TOMBSTONE-BEFORE",
+          "before_object_sha256": "bc89d2556a67513f1f861fddb6599f8e070eea8adc79ebb5bdaf7c0e98df3c2a",
+          "after_object_sha256": "8fcddf314ae2e93a6594f807c28c0eba13ac592df2deb9415da9d77d25e7bd46",
+          "capture": {
+            "root": "artifact",
+            "path": "buffer-parts-v1/parents/tombstone/before/Bacto_Soytone.yaml",
+            "sha256": "b9c7e1b675da46d8733749a16b9c56f07618bb63ab5ecd71bdef1bf1cc2d2535"
+          },
+          "assessment": "Exact captured document, claims, locator and actual attribution remain unchanged. Canonical source_snapshot describes retained author/context/beforeimage documents or reused source-document snapshots without claiming new network acquisition. Original type and, where applicable, URL are explicitly preserved. Unknown original acquisition time is not guessed or replaced by failed-shell/local-read time. No MappingEvidence enum, primary interpretation or scientific payload changes."
+        }
+      ]
+    },
+    {
+      "finding_id": "W05-ASSEMBLY-EVIDENCE-004",
+      "disposition": "RESOLVED_EXACT_CANONICAL_METADATA",
+      "adaptation": {
+        "path": "reports/all_unmatched_20261107/worker-05/buffer-parts-v1/control/capture-access-adaptation.json",
+        "sha256": "d5289bb41243eea264c70b8a3918c54ff13cbef92b1b25dcd0a93ed0428b29ff"
+      },
+      "before_finding": {
+        "path": ".temp/w05-buffer-parts-v1/control/evidence-access-finding-before-fix.json",
+        "sha256": "0865c11aae8d1bbd640bbe15b8daa2b716e1c7647b7972a43d2b24761a7cc852"
+      },
+      "entry_reviews": [
+        {
+          "evidence_id": "W05-DIRECT-PEPTONE-FOODON-RELATIONS",
+          "before_object_sha256": "97724595bf1ca67e053fdcf00f1a87fec8f1918d78a886a75203456b56e58383",
+          "after_object_sha256": "9075af5227c7aca78b6fb7d8945d00846593fce7fde8445c6328ff89a80295d4",
+          "capture": {
+            "root": "artifact",
+            "path": "buffer-parts-v1/parents-direct-v1/input/coordinator-reassessment/captures/web-foodon-nlm-response.json",
+            "sha256": "75acdee90644da43e10566ad3308a7cd4a4ac9d29f36b3b88d111afe54c26991"
+          },
+          "assessment": "Exact captured document, claims, locator and actual attribution remain unchanged. Canonical source_snapshot describes retained author/context/beforeimage documents or reused source-document snapshots without claiming new network acquisition. Original type and, where applicable, URL are explicitly preserved. Unknown original acquisition time is not guessed or replaced by failed-shell/local-read time. No MappingEvidence enum, primary interpretation or scientific payload changes."
+        },
+        {
+          "evidence_id": "W05-DIRECT-PEPTONE-OWL-SEMANTICS",
+          "before_object_sha256": "4f2df38ec4432df4cc2dda00f7f77d80993bf5c049deff982b3af117dabd2886",
+          "after_object_sha256": "7ee34d7f6534f0d80d7d1318a8dc44459eb7c32d97db5b51d0abddfe20bd3501",
+          "capture": {
+            "root": "artifact",
+            "path": "buffer-parts-v1/parents-direct-v1/input/coordinator-reassessment/captures/web-w3c-semantics-response.json",
+            "sha256": "5cf42c72700dd7d4df6655a231132fe3c47621fd62668468e1f0c6d29bda2abf"
+          },
+          "assessment": "Exact captured document, claims, locator and actual attribution remain unchanged. Canonical source_snapshot describes retained author/context/beforeimage documents or reused source-document snapshots without claiming new network acquisition. Original type and, where applicable, URL are explicitly preserved. Unknown original acquisition time is not guessed or replaced by failed-shell/local-read time. No MappingEvidence enum, primary interpretation or scientific payload changes."
+        },
+        {
+          "evidence_id": "W05-PARENTS-COMMENT6719869465",
+          "before_object_sha256": "93d1b0f8c905784d80ccc5debe35447c6e0ccd8c107278ea169cb9586977c4b3",
+          "after_object_sha256": "65aacf9d00f2b34959b02f8e2c266c2a4f400b056f59e4aa741ce696da20fda6",
+          "capture": {
+            "root": "artifact",
+            "path": "buffer-parts-v1/parents/input/issues/issue1193-comments-followup-v2.json",
+            "sha256": "8796a47bd390a1791a5bf5d6882159244451cdebed9da0a09f15dc1cbb7ae032"
+          },
+          "assessment": "Exact captured document, claims, locator and actual attribution remain unchanged. Canonical source_snapshot describes retained author/context/beforeimage documents or reused source-document snapshots without claiming new network acquisition. Original type and, where applicable, URL are explicitly preserved. Unknown original acquisition time is not guessed or replaced by failed-shell/local-read time. No MappingEvidence enum, primary interpretation or scientific payload changes."
+        }
+      ]
+    }
+  ],
+  "canonical_case_reviews": [
+    {
+      "case_id": "CM_NAME:0aaa9e92307c43baf12b66d61715b0bb66b69a915820768fc229f570b35e73a0",
+      "scientifically_reviewed_object_sha256": "8e6eeee195b8dbcbd397065370ea35e2617a85dbd16f83962594636cda571219",
+      "canonical_object_sha256": "2853d9f3e4c6b5d40ecc373d90dc084a0c9795f7f695798d9c666c946f891766",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+      "scientifically_reviewed_object_sha256": "3c306601d79e58251a21bf21dc5a6204c4e5d0291ab4f45f0e9ab9ac80d5dd72",
+      "canonical_object_sha256": "465a1ab0e137c4841ee172d126bf327589323487e07bcbed2050a4a2e0deb49f",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:3437c5815531d7b813f567330874f6dfd126a47d95ace324ac6970ce89d00378",
+      "scientifically_reviewed_object_sha256": "02c6b75bf51af272627d8859ec0400e398078f634bb2c12c4a2e6ca689c4c51b",
+      "canonical_object_sha256": "7ce6dfdf11221330545d11a3c949ffc67d8bd267a90282b509778617723f556d",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:4a602cf2af568c51b80bdd8dc6514107a8a094d2a53fe65b8a2a4b8a0933ea1a",
+      "scientifically_reviewed_object_sha256": "8c1b8db0ce2d8ca69115d9de6def11c193843491fef9de560d96d36d95ca5d50",
+      "canonical_object_sha256": "b9cf4e5f07e8bc48bec08010f685f103c89a806bb447d63f0a8817b69d3b5a75",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:6bb791d024e4025f398cd7b81fa3a943646581daf6079a42d779d6efa87ec78f",
+      "scientifically_reviewed_object_sha256": "9563a0b90cfe2002f84b39500347e3c6dcc9e3fcdcf5bd346ff8645561bb1cb9",
+      "canonical_object_sha256": "9f34a66028e3868b0a2cf201d0c0006fdc98cf385fc67371bde90c78e266bbcc",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4",
+      "scientifically_reviewed_object_sha256": "445e0af5d52cceaf76ed89991a634559c703f26493714299b3fac915687c079f",
+      "canonical_object_sha256": "d79405d6e8f0c43bffd1481d2488e67beef8107e78d1c846d662f855ac36fcf6",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:c98f85469e959e1e268c0a4c07a445d17a3e19ba15f579493d946f9cac1c92c8",
+      "scientifically_reviewed_object_sha256": "272d14669e08bdccf6a667f953db69468d15019aaab21d0071e583545e884ed5",
+      "canonical_object_sha256": "f760b107d7198c1de7820812159db0a40567dc49ead9f3a8c0c67dfe2dc1eff8",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+      "scientifically_reviewed_object_sha256": "e27e7434b7c42f2db6edb7a8e4143f45639f87a5805a17e75afd6480dbc03f04",
+      "canonical_object_sha256": "5fdf45f07b41a6124e732302c70a261ab6288719cc8983509f98523d6ea31342",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:ef3a95588a1dfecc735c5d308d75dec5bc4f80d1fef9efa8f557e82ad2c611a3",
+      "scientifically_reviewed_object_sha256": "bfb407ec8e46a53f76b689968ef2d61812d4b3aaf62bf7223a16f832427ed79d",
+      "canonical_object_sha256": "065ec77076711259a198c97b78f5248f4c141167021f156b4b70a869e7d57e76",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+      "scientifically_reviewed_object_sha256": "f331c6ad70eb3b437dc79414ac7c25143502999b5c03c1c25284a74a87159de1",
+      "canonical_object_sha256": "4a0d29df7b33df5b8bac0941e757148be50d240497b9af1158086ce4aa73bdf4",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+      "scientifically_reviewed_object_sha256": "8465032966d52fc5a13bd4c31fc5b5f69a9d452b6fc5a4c8d09658f70a7610c9",
+      "canonical_object_sha256": "3e22c4e3f0ce89e5351a26fe2f424d2fa333d6307dc2999f63c3242dd81d1e8a",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8",
+      "scientifically_reviewed_object_sha256": "4ea610baad9232d6f7597df843a1abd3c9f62c6275980ba3c642df281e9ebe80",
+      "canonical_object_sha256": "7a464c13b5355fbf875fdd83800f98cad08b45676a2831efea72410b3f85d880",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2",
+      "scientifically_reviewed_object_sha256": "5d09893a43ac89709541891b83e466e54fcb63af289ecdf8393dce353e9758c0",
+      "canonical_object_sha256": "52926c21b175c552242b703bbd1700b63512b5edd8e05f8fec9417e3a47c2621",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+      "scientifically_reviewed_object_sha256": "b8a1bcca600a2af7ff367344ad65bcf00e40791388eb77e919484a1a1a09fc55",
+      "canonical_object_sha256": "e0d7b282ffd62a2e8568fda46495728f63616b3ea5da05c13df40bae4587504d",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+      "scientifically_reviewed_object_sha256": "4acfd4b1d6ca8152551f35058cab3368e3ebc5f5e0b9a743f1da1b577d26d245",
+      "canonical_object_sha256": "22bcf9fa9d37c4a727e7c72ed5117a468748b4a60f025122811a895de3cbb3c1",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79",
+      "scientifically_reviewed_object_sha256": "69b1ca1405c62626b16a5e00b7d87085117476651134d41963e35652ffa2c271",
+      "canonical_object_sha256": "a6756c9776c29d05aa14789120457377a59c1e3e46c0215afbcbd3826737ac96",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c",
+      "scientifically_reviewed_object_sha256": "c93b199495211691e6fcd89392683a4a080726e19db691fa44293809fb275cff",
+      "canonical_object_sha256": "7c0a920db0356c79dc30eaded8d30d34d64e6e07aa33af2717b0ccc516107e8c",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+      "scientifically_reviewed_object_sha256": "612356cba964889397f06c75030bce5e7a2774d057817e32451845b3cea722c9",
+      "canonical_object_sha256": "794cfb038adb6051188cd72832890c0d5c1d633bce9a106c4329aab128ce25cf",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+      "scientifically_reviewed_object_sha256": "5627f294f358fe6e5576646b4d0a9c49e3a201b1ae77898e6e75904f5339014d",
+      "canonical_object_sha256": "d3429b549406c22b5ffb03f562d266a57a6909eec1dda4c932115ba1d98154eb",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:d987d7fef6b2a7e4162cfe6eefc6ca350a825368479583e9234adfd79185142a",
+      "scientifically_reviewed_object_sha256": "27a5357c8c99038debf77b5020cae4c715c1755fe734f76b727af6dadef000c9",
+      "canonical_object_sha256": "4da28990775e00dcec17f81221d436f29cda5f9bb602e86d6219faceb30634e1",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    },
+    {
+      "case_id": "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd",
+      "scientifically_reviewed_object_sha256": "ce10d7c47eed94cabc7f346987e040f14564f6225d7669f2e8d46aee40ae9afd",
+      "canonical_object_sha256": "7c156f77b3cb6691b39559f401b6c6425f8b4e11b551abd04ab7148faac26a69",
+      "assessment": "Canonical wrapper adds only exact current peer attribution/evidence and authentic predecessor scope. Complete source fields, occurrences, case disposition and every authored source/owner/role/export limitation equal the independently scientifically reviewed composed object after removing this explicit wrapper."
+    }
+  ],
+  "counts": {
+    "cases": 188,
+    "wrapped_review_cases": 21,
+    "unchanged_other_cases": 167,
+    "proposals": 155,
+    "scientifically_reviewed_payloads": 35,
+    "evidence": 1767,
+    "retained_prior_evidence": 1627,
+    "canonical_metadata_adaptations": 7,
+    "peer_evidence_addition": 1
+  },
+  "proposals_and_lineage_exact_science_inputs": true,
+  "sealed74member_science_packet_unchanged": true,
+  "limitation": "This verifies exact scientific-scope and provenance preservation. Final README/register/source-ledger/native saved review and publication controls are reviewed in the final receipt after stable inputs arrive. It is not fresh whole-campaign chemical or owner/export acceptance."
+}

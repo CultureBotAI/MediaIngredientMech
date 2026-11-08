@@ -1,0 +1,118 @@
+id: CultureMech:005178
+name: chi_1776_medium
+original_name: CHI 1776 medium
+category: bacterial
+medium_type: COMPLEX
+composition_type: UNDEFINED
+physical_state: LIQUID
+media_term:
+  preferred_term: KOMODO Medium 394
+  term:
+    id: komodo.medium:394
+    label: CHI 1776 medium
+notes: 'Source: KOMODO ModelSEED | ID: 394 | DSMZ Medium: 394 (mediadive.medium:394)
+  | Aerobic: No'
+ingredients:
+- preferred_term: Tryptone
+  concentration:
+    value: '23.3645'
+    unit: G_PER_L
+- preferred_term: Yeast extract
+  concentration:
+    value: '7.00935'
+    unit: G_PER_L
+- preferred_term: Tris-HCl
+  concentration:
+    value: '20'
+    unit: G_PER_L
+- preferred_term: MgCl2
+  term:
+    id: CHEBI:6636
+    label: magnesium dichloride
+  concentration:
+    value: '0.47605'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:6636
+    label: magnesium dichloride
+- preferred_term: Diaminopimelic acid
+  term:
+    id: CHEBI:23673
+    label: 2,6-diaminopimelic acid
+  concentration:
+    value: '0.1'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:23673
+    label: 2,6-diaminopimelic acid
+- preferred_term: Thymidine
+  term:
+    id: CHEBI:17748
+    label: thymidine
+  concentration:
+    value: '0.04'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17748
+    label: thymidine
+- preferred_term: Glucose
+  term:
+    id: CHEBI:17234
+    label: glucose
+  concentration:
+    value: '5'
+    unit: G_PER_L
+  mediaingredientmech_chebi_term:
+    id: CHEBI:17234
+    label: glucose
+applications:
+- Microbial cultivation
+curation_history:
+- timestamp: '2026-06-14T05:58:58.561437+00:00'
+  curator: idnf-grounding-fix-v1.0
+  action: Fixed ID_NOT_FOUND term groundings
+  notes: 'Absent/obsolete CHEBI term ids fixed - 2 re-grounded to the correct CHEBI, 0 de-grounded (mixture or unverifiable).'
+- timestamp: 2026-01-27T01:15:02.fZ
+  curator: komodo-web-import
+  action: Imported from KOMODO web table
+  notes: 'Source: KOMODO, ID: 394'
+- timestamp: '2026-02-03T11:19:13.139060'
+  curator: dsmz-resolver-v1.0
+  action: Enriched with DSMZ composition
+  notes: Copied ingredients from DSMZ Medium 394
+- timestamp: '2026-02-06T05:10:43.882969Z'
+  curator: invalid-chebi-removal
+  action: Removed 1 invalid CHEBI ID(s)
+  notes: Removed CHEBI IDs with invalid format (7+ digits) from MicrobeMediaParam
+    source data
+- timestamp: '2026-03-13T06:19:30.849394Z'
+  curator: culturemech-id-assigner-v1.0
+  action: Assigned CultureMech ID
+  notes: 'Assigned stable identifier: CultureMech:005178'
+- timestamp: '2026-03-17T06:30:37.000000Z'
+  curator: mediaingredientmech-enrichment-v1.0
+  action: Added MediaIngredientMech links
+  notes: Linked ingredients to MediaIngredientMech identifiers
+- timestamp: '2026-03-17T19:45:46.660328+00:00'
+  curator: normalize_media_names_to_snake_case.py
+  action: NAME_NORMALIZED
+  notes: Normalized name from "CHI 1776 medium" to "chi_1776_medium" for consistent
+    matching
+- timestamp: '2026-06-05T07:40:22.993371+00:00'
+  curator: mim-legacy-to-chebi-migration-v1.0
+  action: Refreshed legacy MediaIngredientMech links to CHEBI keying
+  notes: 'Replaced 4 legacy mediaingredientmech_term link(s) with mediaingredientmech_chebi_term
+    (id-safe: ingredient''s own CHEBI + label). MIM deprecated the MediaIngredientMech:NNNNNN
+    id scheme.'
+parent_media:
+  path: data/normalized_yaml/bacterial/chi_1776_medium.yaml
+  relationship: SOURCE_DUPLICATE
+  id: CultureMech:001501
+  name: chi_1776_medium
+  notes: KOMODO record explicitly cites DSMZ Medium 394; one unlinked DSMZ parent
+    record exists and the local physical state, pH, ingredient, and concentration
+    signatures match exactly.
+variant_relationship: SOURCE_DUPLICATE
+variant_modifications:
+- KOMODO record is an exact source duplicate of DSMZ Medium 394; local ingredient
+  and concentration signatures match.

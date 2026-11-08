@@ -1,0 +1,47 @@
+{
+  "findings": [
+    {
+      "finding_id": "PEPTONE-SOURCE-001",
+      "issue_key": "MediaIngredientMech:Fastidious_Anaerobe_Broth_With_Meat_Granules:FAB-source-applicability",
+      "status": "CONFIRMED_REPORTED_TO_ROOT_BEFORE_ANY_FIX",
+      "severity": "major",
+      "native_rule": "MAPPING_SEMANTICS sections3 and6; record-review evidence scope",
+      "affected_claims": [
+        "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]"
+      ],
+      "owner_before_sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+      "affected_fields": [
+        "component_assertion.evidence[0].notes",
+        "components[1].component_id",
+        "historical research/decomposition provenance (preserve)"
+      ],
+      "title": "Fastidious source attribution uses LabM/Neogen without a bridge to the original Oxoid-attributed preparation",
+      "description": "The inherited active assertion identifies a LabM/Neogen FAB basis. The matched original Fastidiosipila sanguinis paper instead attributes FAB to Oxoid. Its separate Anaerobe Systems PYG fermentation broth must not be substituted as FAB composition. Exact historical FAB formula remains unresolved; the comparator discrepancy does not itself prove that peptone is absent.",
+      "evidence_ids": [
+        "FAB_ORIGINAL",
+        "NEOGEN_NCM0199"
+      ],
+      "reproduction": [
+        "Verify beforeimage SHA256 aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5; inspect component_assertion and source-research notes for LabM/Neogen.",
+        "Verify original-source-read-7.json hash against source-evidence-catalog.json; inspect archived original-paper mirror paragraph p854 (web extraction turn62view3 line26) for explicit Fastidious Anaerobe Broth (Oxoid).",
+        "Check original-paper publisher DOI/title metadata in original-paper-pages-web.json; no publisher PDF is claimed read.",
+        "Verify preserved NCM0199 original PDF hash3ca3efc02a4a025b34ecb3126924fdb8d6fdfe011ba5a1d543af01a344268354 and read named manufacturer scope. No equivalent historical Oxoid recipe bridge is established."
+      ],
+      "bounded_proposed_fix": "Coordinator deduplicates against #1176/#1193 before author work. In an authentic separately reviewed dependent successor, withdraw unsupported resolving peptone ID to UNMAPPED while retaining inherited literal peptone/provenance; append source-applicability correction and explicitly mark Neogen comparator unselected. Preserve raw FAB-with-meat-granules observation and all historical research text. Do not invent an Oxoid catalogue number or replace all composition from a current comparator. Compose with existing meat-granule withdrawal, preserving all other unreviewed component assertions as holds.",
+      "acceptance_checks": [
+        "Exact owner/candidate beforeimage binding; source explanation cites archived p854 text and access limits.",
+        "No promotion of comparator or of separate PYG medium to FAB ingredient proof.",
+        "Existing cooked-meat/granule UNMAPPED repair retained; no starch/glucose or quantity invention/deletion from this bounded fix.",
+        "No component_id remains under peptone if identity unresolved; native schema/partonomy and exact-successor independent review pass, without whole-owner approval."
+      ],
+      "dedup_context": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/1193"
+      ],
+      "github_mutation": false,
+      "fix_applied": false,
+      "reported_to_root_before_fix": true,
+      "independent_confirmation": "/root/peptone_skeptic independently read exact archived Falsen passage and confirmed discrepancy by in-process message; its final review is separate."
+    }
+  ]
+}

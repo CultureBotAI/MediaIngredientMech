@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-08T09:59:41.305015+00:00",
+  "reviewer": "/root/assembly_audit",
+  "scope": "Reviewer diagnostic only; not a source/payload/compiler finding",
+  "failed_script": ".temp/w05-buffer-parts-v1/assembly-review/audit_final_reports_v1.py",
+  "exception": "AttributeError str object has no attribute get",
+  "cause": "Reviewer assumed campaign input_hashes list but native format is dictionary path to hash.",
+  "remedy": "v2 reads native dictionary by exact absolute core path; original script preserved.",
+  "final_report_written": false
+}

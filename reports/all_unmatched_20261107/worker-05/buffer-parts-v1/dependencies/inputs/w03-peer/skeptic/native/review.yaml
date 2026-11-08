@@ -1,0 +1,3040 @@
+schema_version: 1.0.0
+review_id: 20261108T084433Z-peptone-consumer-independent-v1
+kind: category
+repository: CultureBotAI/MediaIngredientMech
+title: Independent source and skeptical review of twenty peptone component claims
+started_at: '2026-11-08T08:40:13.051833Z'
+finished_at: '2026-11-08T08:44:33.885306Z'
+reviewer:
+  identity: Codex /root/peptone_skeptic
+  kind: agent
+  independence: independent
+  independence_basis: Separate in-process reviewer from both primary-source agents;
+    independently read raw observations, current owners, archived primary evidence
+    and actual composed proposals. Parent W03 authored Marine alias work and prior
+    audit; PC04 is explicitly author-related and no final W03 payload is approved.
+skill: review-yaml-category
+completion: completed
+verdict: needs_curation
+native_verdict: All twenty bounded component-source dispositions reviewed; conditional
+  authoring recommendations and unresolved identity holds preserved.
+scientific_review: true
+summary: Eight generic recommendations, ten unresolved identity withdrawals, one source-specific
+  Bacto retention, and one existing Marine product withdrawal. These are claim dispositions
+  only, never whole-owner, role, form, supported-export or release approval. One new
+  Fastidious source-applicability finding is reported to root before fixes.
+source:
+  git_revision: fe31a02850932a7bdf2fe65c93cb636a86f82a2c
+  state: working_tree
+  inputs:
+  - path: .claude/skills/review-yaml-category/SKILL.md
+    sha256: 154758ee4b3bd401e19c89d488ff648014c5ec4282c6c1b710de5093ce36c101
+    role: context
+  - path: .claude/skills/review-yaml-record/SKILL.md
+    sha256: 4f3142cc2c7e8884ffc049ad81fd9b6fcf076bd40579b43d80d8652679630bd1
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/HANDOFF.json
+    sha256: 55581e1946af2245c4f90981a50ec4992262a011652a6d61dad5e47b9f6ef1d6
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/MANIFEST.json
+    sha256: 13b7eabd69d12f9bec6e078f23d5345afe703b36a10a3cebb2b4af2cb86993f2
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/access-and-limitations.json
+    sha256: ed4dbf0e4e16bb12b310e82825fede762ef6b98595cb856752cd34fb3e75fe7e
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/assemble_primary_ledger.py
+    sha256: 40488daaa0e3afcf6a799026ffcd1769a9b86075a5e044f0c9086efbfbd35a68
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    sha256: aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PY-cellobiose.yaml
+    sha256: 43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PY-fructose.yaml
+    sha256: 44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PY-glucose-rumen_Fluid.yaml
+    sha256: 0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PY-maltose.yaml
+    sha256: 2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PY-pectin.yaml
+    sha256: fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PYEG.yaml
+    sha256: 59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PYG-002_Tween_80.yaml
+    sha256: 39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PYG.yaml
+    sha256: 2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/beforeimages/PYG_Rumen_Fluid.yaml
+    sha256: 833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/candidate-context-pins.json
+    sha256: 6dd05fc5317e6bbf0ef472337223b6995ca6622c9cf2d54a3c4b3537130481d1
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/atcc1223.extracted.txt
+    sha256: 7185888f217b2b8c41a3b3a9f29f6959e80ba663aaf073c85fb36e829739dbdc
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/atcc1223.pdf
+    sha256: e2957346d4080023473f8cca8eaf72a6a22b523a2cffbe6ed29685a8384c4867
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/atcc1223.pdf.capture.json
+    sha256: 6f648e39d7bc5dcc084a22a1e263dfd3a0745a753f2127e7d75f15f133ff2132
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/dsmz104c-dsm753.html
+    sha256: aade50e41ec462a73e20f3c4d5f4e6da2ddb3c1dcbbcf842918b169aa9968305
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/dsmz104c-dsm753.html.capture.json
+    sha256: 9cc9d2298591ee920fc507f6070bd5fec49056084682769d364271845729676d
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/falsen2005-page.html
+    sha256: 47fa3a148f16a26e0f801f95987315c21e501498cfef9d300febaa1751d917cf
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/falsen2005-page.html.capture.json
+    sha256: 24440ef3fcfe14059d5fd647343a6092c65d7dcb948b22ca079db9d7f826e1fb
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/falsen2005-scispace.html
+    sha256: 7b5127e8ff7c6f094b1ecc58bf3d0874a06f505690459c657f3e94ca067c4bd4
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/falsen2005-scispace.html.capture.json
+    sha256: 4982fe55b09e0c7cbe13fa62bc70d2989bcea7f2ab5011021d7cd29b8fef792f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/moore1976-page.html
+    sha256: d8e95cf68cc73dad09965c7efd4958e0cbf938894232862276f5d259b833812c
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/moore1976-page.html.capture.json
+    sha256: d323091e5dfc8ffc5abd127cd0317350917e8d94eb7e1d890f76f1b0ce6a31c1
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/moore1976-primary-mirror.pdf
+    sha256: 25d825ba87a8faa6b7e9be41084e397f3a1b1b55b50ca8e8423b5c6ba6bfd675
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/moore1976-primary-mirror.pdf.capture.json
+    sha256: cfea18446ed293568d76ffb116400f355703ccc7a7f54ebd24a3b5598ac7a059
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/morris1985-page.html
+    sha256: fe02da9840ae74a25820dd6af8514e21f8b6bfff4eb4198eac7eab912fc105e4
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/morris1985-page.html.capture.json
+    sha256: 31b1dfb2fd7c3c37589e1d774fc2e5498d1f4ec394974c26c38c3823f7b97ec8
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/smibert1983-page.html
+    sha256: 2452a73f63d95513d3df226ed4d08ac20101ee10da62479b3c7f53601fd6048f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/smibert1983-page.html.capture.json
+    sha256: b9318622f8837685abaefecc3e406469f069dff21dbfe20cf501b4c8e9cbe0f6
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/smibert1984-page.html
+    sha256: 73bae79bbbce3f68c477c7d2ac700371af546b1c013eb46e519f4e85f65bfdd2
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/smibert1984-page.html.capture.json
+    sha256: 3c0bd8b1214cf21bd0cf4119cff1895c97bfd29587c26e64fd7c36c61563d2e2
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-151.body
+    sha256: 3ca3efc02a4a025b34ecb3126924fdb8d6fdfe011ba5a1d543af01a344268354
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-151.body.reuse.json
+    sha256: 1061a07dc46598dd817d8c64719fc9ff0110ab3e523c6c7cd7d49daa2c4d5e67
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-151.extracted.txt
+    sha256: 6ac107cbc598b0851bd1fc815c5f76c06f572108a0155f660e1f9713586fc3fc
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-155.body
+    sha256: 331a9e069e2db9f48dae756b62cf5eb33bff6e08f65ae3ce3916b5794132b060
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-155.body.reuse.json
+    sha256: dfad0b89e1d3a0a806ad13b026400782abad54e74c8376e17eaf1c29693b0ddb
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-155.extracted.txt
+    sha256: ca7b7e4d0d18ae92ca75fe764817e98dfd75a8f806b57c75cf8e381d98c7fae9
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/confirmed-findings.json
+    sha256: 09aa2526a78eff13e6e4821fff95e0f3972b7ab5c64e0116aa132788ef235793
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/fetch-original-pages.json
+    sha256: d53263b421ebd26bf68d58131da2ce297ae482f3c6837456dd5ddff0014583c4
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/fetch-primary-comparators.json
+    sha256: ce248e5ca85d2d415229b3ec1f6ca8eb5c2b68444788d9c01f3e167831f264a0
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/fetch_primary.py
+    sha256: 0d353bba352df6a1a8b5b80fe1221f38a75c0e2de6b2b9429c9716963f892552
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/finding-native-key-binding.json
+    sha256: 0b66def504b151221aaf4d61a020a32f9b93f92d70636ec14f7b5d6448c8749e
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/input-pins.json
+    sha256: d47c3cca21d882dfce26e5960e30f5a375a206dc39acd8ba6e01d6e37e6b0e09
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/moore1976-find-web.json
+    sha256: 454b38a3b98c4bca27ae03af29b2a33b7be4f909935bd06ccb3967cd59096806
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/named-part-evidence-standard.md
+    sha256: f7f9d08f520870739fcce6057361e045c0ff1a5ebeb2c3a9d2ee088abfd990a5
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/original-fulltext-web-attempts.json
+    sha256: 8302daa3774a3b4463a3edc4d01907e37bbde911d41bdbf4701199295cb5538f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/original-paper-pages-web.json
+    sha256: 3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-attempts-9.json
+    sha256: 20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-read-10.json
+    sha256: c657e5a5d760469ab57438b096f44292f289221783df178b15d44340ed7efdfc
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/original-source-observations.json
+    sha256: a540d464fcf629b1b8c4fe4705b93ba6cb3bfa7f5f2b12edc314db8764bc5c30
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+    sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+    sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/owner-beforeimage-pins.json
+    sha256: 43e840b6f5819d831de9729e32b5f9235c85b0fdfd1b3c08e2f543af7f391c54
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/pdf-access-web-attempts.json
+    sha256: 71af3c4f860783f4d86904f9fce9645d700ff4dca6d4f8a7aabd4b6a146babd3
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/per-claim-scientific-ledger.json
+    sha256: d11939a62a6a7bfb0e4dde358e95d116309ad440a5cd555278dbded4c5ae9843
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/preflight-emission-failure-v1.json
+    sha256: 9d47691bde948e6e2de5352b3358932c89570613fced94e6b10ac0d5e6ed10ff
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-lead-pins.json
+    sha256: 87625d6042216b260497ff564a081ca8ccbe51a581a3191f9e658cf98015f05e
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/Fastidious_Anaerobe_Broth_With_Meat_Granules-edison-literature-citations.md
+    sha256: 80d7281772fddb67ab6f0bd77023c7c6e4d270fc3a901ca615116eab98d5a27c
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PY-cellobiose-edison-literature-citations.md
+    sha256: b644294f6505ed73fd028d8f143f22af20a1917dce80fb9c608c14dba2742e29
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PY-fructose-edison-literature-citations.md
+    sha256: 498b7d0070e2a0ce023f4c0a284966e4e032984cdf30d175a352da07b80c8563
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PY-glucose-rumen_Fluid-edison-literature-citations.md
+    sha256: c6f126c49a20ef8e0d28b76074353b5738a0ea8b4f52a0ca75ebdf1ac5afaf37
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PY-maltose-edison-literature-citations.md
+    sha256: a36b7fc0031c219258de6f5cfd5fc354a7fef94650c81bce707112491962b7e7
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PY-pectin-edison-literature-citations.md
+    sha256: 729a3ce02ad463e28f77fc2c951142e5f3ea948e35c6b7771b715e0708f75b6a
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PYEG-edison-literature-citations.md
+    sha256: 9e9f8c6bff215f95dbe4adfbc40a3d78a17e7a8d4c4aa5d8f75d3d5ee770548c
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PYG-002_Tween_80-edison-literature-citations.md
+    sha256: beac581b10c871d790bfc35a572e77a014359c10009ee2ed35a0f3fbc8ac2176
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PYG-edison-literature-citations.md
+    sha256: 4662ddced3b28e97ed050c25e1e337edb4ebadac584f3c9bcdfd67feb5533f43
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/research-leads/PYG_Rumen_Fluid-edison-literature-citations.md
+    sha256: 3b636121d12ac6553c3ae20e4e97aa4eb144d580822637d97eb2d7498ba3aabd
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/search-original-specific-8.json
+    sha256: db500532c3863151fa877fbae4d4cc13ddf0b0f073d9a5e4d4f32fe8dfc2967b
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/search-paper-copies-4.json
+    sha256: 43d52fd9dc84a4b876f3a7dc5c0111d5a2ef43dc97110c6f060db8e560e57a81
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/search-primary-2.json
+    sha256: 7c84a13e7756c5925c482d6a0c8b4b04eacd8b96566f51dc9b301db3baba8e27
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/search-primary-3.json
+    sha256: 536c0a6f759ca22025a93fedd772f252468c61fb9b320450ec806616c140b99f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/search-primary-5.json
+    sha256: 7164137ad2f80ff58169a942cae14fccc5aba4538b97dcda72f34782308372c1
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/selected-claims.json
+    sha256: 2f542b727acd097eb785e6cdf043fe721d96f4d2a6646549faac4714e20c5d65
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/source-evidence-catalog.json
+    sha256: 13dcb3da964e0cb9b052b8eeb69b8dd809a7940bc689882b4267c98a0a10c0ee
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/validate_primary_bundle.py
+    sha256: 19eae55c7104369d58920d9a457861162befd912c8d2243bffbcf0983f2f0464
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/ambiguous/validation-receipt.json
+    sha256: e13b77bb1e6aa034bc0e7bb6be7e897c219fc5be7e74bb6f3c289b768085f576
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/ROUTES.md
+    sha256: 1c521b76c69b512e1531e9896d0e543b0f2983efa184814412d491ba591c65ac
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/authentic-causal-case.json
+    sha256: ebb4791a1c8f0d56d2e6aecf44ac4cfda02f441f997d83680ed56cb692d15e55
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/claims-20.json
+    sha256: 6168e25227f27280e59b7eaa18d60ae44a5f22418bb4a2673639e6d7d9eeaf04
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/input-receipt.json
+    sha256: 260ac3c583be9320a680b21245c34358abe0099bf4cf78d1967647f3f2001c9b
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/issue1176-comment-6719248666.json
+    sha256: 60c2ededb281d6be095a4162e130232f908c6b894ade8955758a57aa3edcec7d
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/native-dependency-probe.json
+    sha256: 042b422c42d61f7ec18065cad27cbf21e9b2a964fe06c1d75b85e093754e36ef
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/owner-bindings-20.json
+    sha256: 680f23d123bcae4eefffbd29306c7c379194c87da649884f2e0fceae29b5daa4
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    sha256: aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/GYPS.yaml
+    sha256: 36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Glucose_Peptone-yeast_Extract.yaml
+    sha256: e37175824a9e5c477fedd007a279b35056d89ab2b8c4ab5f8f8b9504e09794a5
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Marine_Broth_2216.yaml
+    sha256: adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Marine_agar_2216.yaml
+    sha256: 7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PY-cellobiose.yaml
+    sha256: 43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PY-fructose.yaml
+    sha256: 44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PY-glucose-rumen_Fluid.yaml
+    sha256: 0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PY-maltose.yaml
+    sha256: 2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PY-pectin.yaml
+    sha256: fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PYEG.yaml
+    sha256: 59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PYG-002_Tween_80.yaml
+    sha256: 39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PYG.yaml
+    sha256: 2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PYGS.yaml
+    sha256: b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/PYG_Rumen_Fluid.yaml
+    sha256: 833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Peptone-yeast_Extract-glucose.yaml
+    sha256: e4594106002c7e2d51922d22ea48f16a6f4a35b9ceb148fae129271453593cc7
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Peptone_Beef_Extract_Yeast_Extract.yaml
+    sha256: 49e7a167fca66a424c4eb725784d9c2e8f3870519a5a283dd62e3896d03f1139
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Peptone_Yeast_Extract.yaml
+    sha256: 90be7b1c6cdc8ff087497dfea1c920d5705a56ef6c0bea156ada6d26c6754d3a
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/Yeast_Extract_Peptone.yaml
+    sha256: 6659173de7a86924183da69f502b4827d6583f5a5f50966a3158bb3f64243ab6
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/owners/togo_m2491_mrssi_base.yaml
+    sha256: 3838ea36856afdd637869e7818a855779a60d63067406ba08ede81bc80f045c4
+    role: target
+  - path: .temp/peptone-consumer-independent-v1/context/target-owners/Bacto_Peptone.yaml
+    sha256: 864e86820c578ff82b2b32e075c6fb428e704907f78a250c2733b06a70d8e655
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/context/target-owners/Peptone.yaml
+    sha256: e00551197758fb417846becc5c14e931f614bc00887609b8749d734ad2f8d4aa
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/ASSESSMENT.md
+    sha256: f0c26fe2f41b362d2a4e464a70962068d4353680b36e14f7f6c40837d0c1135b
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/HANDOFF.json
+    sha256: 5ce316133ee3fd79800a65b3e06a8cabd088f947e4d7fc39d41b672fcb22147b
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/MANIFEST.json
+    sha256: cc5354fd0920fbd1c7569ab451b149ce44602d6d87e2309733f51134eb9294c8
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/assemble_assessment_v1.py
+    sha256: 6919d69e8feb26d72d45caaeaf9861741bf0b850ec4e8c9a23c700e71b741db5
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/atcc-2887.pdf
+    sha256: 08814051e89760e337cfb5569ecb60ddc5cb2979e676daa5ec652600f4f10ca6
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/atcc-2887.txt
+    sha256: 73e56f0e21d72d0b4fc7f633faa1fa12df8f1099bc929ba388d204bbc5c89912
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/epmc-algidixylanolyticum.json
+    sha256: 0cc89e98e8d4f67ef41faade46f3ca1e5f3b8c6d4dd0ed2015df86ddec48767d
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/epmc-frigidicarnis.json
+    sha256: 574c149a422fc9db98e0a71cc25e4b8e2000142d1b6b792e1444fb136ee9853b
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/epmc-gasigenes.json
+    sha256: 0eda4ebadf8d8a487eb29992202b29ec428fcb881d42bf0cf28c2bec5dcab57d
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/gyps-publication-528.pdf
+    sha256: a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/gyps-publication-528.txt
+    sha256: b5e33274a56df95973ad157275b8ebbdc22be8d25a459cbf2d76c1ef6a4ffda5
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/marine-manufacturer.pdf
+    sha256: de2504598b1133074ba2239c045958e9a6564dc1b2a2d8f13ab4bac99233199f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/marine-manufacturer.txt
+    sha256: 03b4dc21e82a1908c891e97a76338dd76c1731e7a002cf1b0a8001e5d3eba2e7
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+    sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/captures/togo-M2491.json
+    sha256: 1b2e805c573ebcb9b5495f978ae93679a4c6839920502d547a1796ee23380511
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/checks.json
+    sha256: 02e903bec3b57016a1e9a491add3ad4ae12f2a4a399c93f5cc2405b3f7e2b058
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/HANDOFF.json.binding.json
+    sha256: eabd9915892700946e3d4b1ae9b53a97ac84c7c4997eab2716dd9ebfa56bd3dc
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/candidate-bindings.json
+    sha256: 922ef68b8b4304b173e71af95bd65cdaa69a25334db0b94be696ef48657d6dc3
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/captured-source-files.json
+    sha256: fc7a67f2f979b36083546087f906e2bf7d44c8ed121e4518bfb8193ccefad901
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/minimal-couplings-28.json.binding.json
+    sha256: 513596244a3fa7d72c86cb13411e96ed672e818537c453f9ae800d884fe77e7c
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/original-capture-metadata.json
+    sha256: 0e44a74a51648ab426eb3eb3ad4e28ebaa0e1d71334d322c81ae63487ac20ddf
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/original-network-receipt.json
+    sha256: 3bfdff96a77ab6bd1e3df5c77c6ea8f56ac8b647c97bc363fc08f5d2104f07e3
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/original-source-row-recheck.json
+    sha256: ffc0c826c444b441fe78062794d438f0fd3a7f6b6dbb4b5804cdeb10d6c19ffb
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/owner-beforeimages.json
+    sha256: 999b2122ec6b17e861a51f9a03f5c1327c10411ce2a3e83dcbcd496488ebfa8e
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/selected-plan-claims.json
+    sha256: 979a7be218337b2111ec7d7e4eed2537e436dbf124030d8060e17715876caad9
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/source-bindings.json.binding.json
+    sha256: e1759e75d8a427d0915e12be3f80181466eeb4efdbf37567f41be82467fbe6b0
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/source-evidence-refcheck-32.json.binding.json
+    sha256: 88843ce467b6c5361d3cd19928012e0850d311fa1e47739c8ded6d87977c08a9
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/source-read-attempt-v1.json
+    sha256: e9fb2eec48003966ed95478eb682034bfd3c276421fd54319688bf457e446ccd
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/w02-retrieval-manifest.json
+    sha256: 8a3c65fda768acf2665e0648244226bb3a37afcec2628dce8cfcd02b120740fc
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/w05-evidence.json
+    sha256: 9065622a1fb2123a85bb881db2ca5fec9502ee464bb37d01f7deff8974c0f4c7
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/context/w06-evidence.json
+    sha256: 3abee21eb759145e210d5fa5ee3f77fcc3aba0bc0c71eccde35d9b890022fec3
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/findings.json
+    sha256: 6400f899b2b05b58e6cfb40887790cac4b6994a7b3c24cedf4a17f5460740eaa
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/other/per-claim-assessment.json
+    sha256: 6289096ee1e0f5fe102685e0228f7b047815b27c2f80b280d7ec3d4c2835d25f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/route-and-composition-v2.json
+    sha256: 5a74dec3132794c56d4913a22d54963420242418f520851c7add150cc84e37c0
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/additional-primary-independent-readback-v1.json
+    sha256: 4ffd1eacbf4972a4cfee0456d49cfefe3e642d1324101673eaca8a855e6fef68
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/ambiguous-peer-seal-recheck.json
+    sha256: 962fcc5a20d4468000dd0b2eb935d0134fd1f1961fd6c680db5f07e87db9a080
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/build_native_review.py
+    sha256: bc0d3fa3d83f0306765f4baddfa9662dfbb58f75fe746eb4ba0fa97963053fa5
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/build_native_review_v2.py
+    sha256: 2bde549f9f38dc1dbb8b68a1e99780e32cf9382fade0f1a4e462fc81a92521d0
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/build_native_review_v3.py
+    sha256: 626a85a84c765477d38e530fc46f2ac25a4ca341e3544360c5ffc35ec55607b6
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/combined-candidate-composition-readback.json
+    sha256: a5875a8c1595f98e15e78741e40a345a3fb7c28bca4d4eedcb06fc550af05637
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/dsmz104c-dsm753-derived.txt
+    sha256: 9c0421eabca441d2d81356d28b04783a87d869ae74fe5417b92984df515285da
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/final-owner-component-recheck.json
+    sha256: 02ef48fc9be51d68fc42d7f82d5e9d3c3764e5d5e2ff2ea37802d0b66090c88a
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/final-perclaim-assessment-v1.json
+    sha256: ca9edcdf7658d4f517963ad00cf9a39cd013614623bea16a84b3eb9cf0cbd056
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/initial-perclaim-assessment-v1.json
+    sha256: f6f7684bae0d2bd49128fa11ceb1dc58a9d6214c4fa8e35d6124eceb75d25d6d
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/input-claims.json
+    sha256: bceee1a22d784969d9f6f08ead894eac55880d4a6bd3e7a0b1bf4a9be7dd3ca8
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/other-peer-seal-recheck.json
+    sha256: b0649da10eef373300a14e58ee43060449ba82ae5f2e13853b5dc3900bec4cb1
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/primary-08814051e897.txt
+    sha256: 73e56f0e21d72d0b4fc7f633faa1fa12df8f1099bc929ba388d204bbc5c89912
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/primary-331a9e069e2d.txt
+    sha256: ca7b7e4d0d18ae92ca75fe764817e98dfd75a8f806b57c75cf8e381d98c7fae9
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/primary-3ca3efc02a4a.txt
+    sha256: 6ac107cbc598b0851bd1fc815c5f76c06f572108a0155f660e1f9713586fc3fc
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/primary-a89cbee98ab8.txt
+    sha256: b5e33274a56df95973ad157275b8ebbdc22be8d25a459cbf2d76c1ef6a4ffda5
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/primary-de2504598b11.txt
+    sha256: 03b4dc21e82a1908c891e97a76338dd76c1731e7a002cf1b0a8001e5d3eba2e7
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/primary-read-attempts-v1.json
+    sha256: f1743d54dfadf816b7e85c8694c330d207df9cdc71797274e25a3ed183bee3cb
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/raw-archive-read-attempt-v1.json
+    sha256: 10488028648dff64a32fdb95fe6654c866c05540cf8f388adb91ddee44ed3677
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/raw-archive-recheck.json
+    sha256: 348d67e000f345ee1026d4c377250285825496d15caaea0e0a06076538de657f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/reference-readback.json
+    sha256: 71b4dbe8a4adfa92a80d7201763c6236503c0b4b960e5f718f5addd9520c012f
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/skeptic/selected-payload-readback.json
+    sha256: 020a5cf556082bf1ed88dd1869d7bf7df15fb29098e376e58963f8d144693243
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/targets.json
+    sha256: eed9f25e85e05506a2e29cb709823b768ea46b3986f7b2076c1e0e3349dad330
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/validation/native-probe-reuse.json
+    sha256: 1a185f377921b6ad80d8fcf63aeccfc2292cdc1352d04a9aa094874e37daf778
+    role: context
+  - path: .temp/peptone-consumer-independent-v1/validation/native-record-schema.json
+    sha256: 7aee5fadd1d823a70443dbbf57041d81e4aeceff368a7f5134c5cc4f46632360
+    role: context
+  - path: MAPPING_SEMANTICS.md
+    sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+    role: context
+  - path: docs/record-review-profile.md
+    sha256: da17e2048a13514a422bc94bd2f8d48943cffc5689b96e3f07da26423248d1a7
+    role: context
+  - path: docs/record-reviews.md
+    sha256: 452a19ab688276747b7c4308523a14d4d99c1c39ef6909ae8a90b85b7a9b3e9b
+    role: context
+  - path: schema/record_review.yaml
+    sha256: 229baf9b69118a1fe318e4c31085c0820e4e3d1365e7b04d6ace451b7c35f9bb
+    role: context
+  - path: scripts/record_review.py
+    sha256: 95a4ec41e38ec47ba3578e76838c46a0adbf47e49ad3636524735d08cfcb1c4d
+    role: context
+scope:
+  description: Exact twenty incoming peptone component claims, including nineteen
+    maintained beforeimages and one authentic MRSsi new-owner proposal.
+  selection: Complete explicit PC01-PC20 targets frozen from minimal-couplings-28
+    and root claims-20.json; no sampling.
+  coverage: full
+  population_size: 20
+  reviewed_target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  exclusions:
+  - target: Whole owners, other components, ontology/role/form/export eligibility
+      and final cross-shard merges
+    reason: Outside this bounded component-source review; preserved as holds.
+targets:
+- target_id: PC01
+  path: .temp/peptone-consumer-independent-v1/context/owners/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+  label: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]
+  kind: snapshot_row
+  selector: components[1]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC02
+  path: .temp/peptone-consumer-independent-v1/context/owners/GYPS.yaml
+  label: data/ingredients/mapped/GYPS.yaml#components[2]
+  kind: snapshot_row
+  selector: components[2]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/GYPS.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC03
+  path: .temp/peptone-consumer-independent-v1/context/owners/Glucose_Peptone-yeast_Extract.yaml
+  label: data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml#components[1]
+  kind: snapshot_row
+  selector: components[1]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC04
+  path: .temp/peptone-consumer-independent-v1/context/owners/Marine_Broth_2216.yaml
+  label: data/ingredients/mapped/Marine_Broth_2216.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Marine_Broth_2216.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC05
+  path: .temp/peptone-consumer-independent-v1/context/owners/Marine_agar_2216.yaml
+  label: data/ingredients/mapped/Marine_agar_2216.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Marine_agar_2216.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC06
+  path: .temp/peptone-consumer-independent-v1/context/owners/PY-cellobiose.yaml
+  label: data/ingredients/mapped/PY-cellobiose.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-cellobiose.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC07
+  path: .temp/peptone-consumer-independent-v1/context/owners/PY-fructose.yaml
+  label: data/ingredients/mapped/PY-fructose.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-fructose.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC08
+  path: .temp/peptone-consumer-independent-v1/context/owners/PY-glucose-rumen_Fluid.yaml
+  label: data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC09
+  path: .temp/peptone-consumer-independent-v1/context/owners/PY-maltose.yaml
+  label: data/ingredients/mapped/PY-maltose.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-maltose.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC10
+  path: .temp/peptone-consumer-independent-v1/context/owners/PY-pectin.yaml
+  label: data/ingredients/mapped/PY-pectin.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-pectin.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC11
+  path: .temp/peptone-consumer-independent-v1/context/owners/PYEG.yaml
+  label: data/ingredients/mapped/PYEG.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYEG.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC12
+  path: .temp/peptone-consumer-independent-v1/context/owners/PYG-002_Tween_80.yaml
+  label: data/ingredients/mapped/PYG-002_Tween_80.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG-002_Tween_80.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC13
+  path: .temp/peptone-consumer-independent-v1/context/owners/PYG.yaml
+  label: data/ingredients/mapped/PYG.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC14
+  path: .temp/peptone-consumer-independent-v1/context/owners/PYGS.yaml
+  label: data/ingredients/mapped/PYGS.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYGS.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC15
+  path: .temp/peptone-consumer-independent-v1/context/owners/PYG_Rumen_Fluid.yaml
+  label: data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG_Rumen_Fluid.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC16
+  path: .temp/peptone-consumer-independent-v1/context/owners/Peptone-yeast_Extract-glucose.yaml
+  label: data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC17
+  path: .temp/peptone-consumer-independent-v1/context/owners/Peptone_Beef_Extract_Yeast_Extract.yaml
+  label: data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC18
+  path: .temp/peptone-consumer-independent-v1/context/owners/Peptone_Yeast_Extract.yaml
+  label: data/ingredients/mapped/Peptone_Yeast_Extract.yaml#components[0]
+  kind: snapshot_row
+  selector: components[0]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Yeast_Extract.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC19
+  path: .temp/peptone-consumer-independent-v1/context/owners/Yeast_Extract_Peptone.yaml
+  label: data/ingredients/mapped/Yeast_Extract_Peptone.yaml#components[1]
+  kind: snapshot_row
+  selector: components[1]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Yeast_Extract_Peptone.yaml
+    role: maintained_record
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Complete current maintained owner byte-identical to frozen baseline.
+- target_id: PC20
+  path: .temp/peptone-consumer-independent-v1/context/owners/togo_m2491_mrssi_base.yaml
+  label: data/ingredients/mapped/togo_m2491_mrssi_base.yaml#components[8]
+  kind: snapshot_row
+  selector: components[8]
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/togo_m2491_mrssi_base.yaml
+    role: proposed_owner
+  ownership_note: Exact source-supported component identity only; no whole-owner approval.
+    Unapplied W02 new-owner proposal with genuine null beforeimage.
+checks:
+- check_id: owner-bytes
+  name: Exact beforeimage and component accounting
+  status: passed
+  required: true
+  summary: Nineteen current owners equal frozen bytes; one genuine MRSsi new-owner
+    payload; twenty unique claims checked.
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  evidence_ids:
+  - owner-check
+- check_id: raw-binding
+  name: Original dataset readback
+  status: passed
+  required: true
+  summary: 134 exact source row/column/literal bindings verified independently; no
+    abbreviation treated as ingredient proof.
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  evidence_ids:
+  - raw-check
+- check_id: source-adjudication
+  name: Primary and independent skeptical adjudication
+  status: passed
+  required: true
+  summary: Every claim assessed against actual readable source context; unavailable
+    exact sources yield explicit holds rather than forced identity.
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  evidence_ids:
+  - ledger
+  - rules
+- check_id: native-inspection
+  name: Native input capture before final adjudication
+  status: passed
+  required: true
+  summary: Native inspect_source and assert_current_source executed successfully;
+    inspection itself supplies no scientific or schema verdict.
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+- check_id: native-schema-reuse
+  name: Exact twenty-record closed-schema result reused
+  status: passed
+  required: true
+  summary: Read and bound root actual focused validation receipt on unchanged target
+    bytes; not rerun by skeptic and not chemistry proof.
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  evidence_ids:
+  - schema-check
+- check_id: native-probe-limit
+  name: Existing native partonomy counterfactual retained
+  status: passed
+  required: true
+  summary: Reused exact frozen counterfactual showing generic-owner-only migration
+    can pass despite semantic narrowing to remaining Bacto owner.
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  evidence_ids:
+  - probe
+- check_id: full-owner-gates
+  name: Full corpus, ontology, role and export approval
+  status: not_applicable
+  required: false
+  summary: Outside bounded read-only claim review; no extra full repository QC or
+    export generation authorized.
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+evidence:
+- evidence_id: rules
+  kind: authority
+  reference: MAPPING_SEMANTICS.md
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Sections 3 and 6 require source-specific identity and distinguish named
+    unresolved parts from resolving MIM references.
+  snapshot_sha256: 6b52f2ac48109ddd5d81996a136b19776cab55efa69a5ec832cf716d6885a062
+  locator: Sections 3 and 6
+- evidence_id: ledger
+  kind: prior_review
+  reference: .temp/peptone-consumer-independent-v1/skeptic/final-perclaim-assessment-v1.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Separate skeptical adjudication of every PC01-PC20 claim, with exact source
+    scopes and limitations.
+  snapshot_sha256: ca9edcdf7658d4f517963ad00cf9a39cd013614623bea16a84b3eb9cf0cbd056
+- evidence_id: raw-check
+  kind: validation
+  reference: .temp/peptone-consumer-independent-v1/skeptic/raw-archive-recheck.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Independent exact archive/member hash check and 134 row/column/literal
+    readbacks; abbreviation literals are not ingredient expansions.
+  snapshot_sha256: 348d67e000f345ee1026d4c377250285825496d15caaea0e0a06076538de657f
+- evidence_id: owner-check
+  kind: validation
+  reference: .temp/peptone-consumer-independent-v1/skeptic/final-owner-component-recheck.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: All 19 maintained beforeimages match the frozen bytes; MRSsi remains an
+    authentic new-owner payload with null beforeimage.
+  snapshot_sha256: 02ef48fc9be51d68fc42d7f82d5e9d3c3764e5d5e2ff2ea37802d0b66090c88a
+- evidence_id: composition
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/skeptic/combined-candidate-composition-readback.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: 'Exact three combined proposal hashes checked: existing Marine withdrawal
+    and two literal rumen withdrawals preserved; no final candidate approval.'
+  snapshot_sha256: a5875a8c1595f98e15e78741e40a345a3fb7c28bca4d4eedcb06fc550af05637
+- evidence_id: routes
+  kind: prior_review
+  reference: .temp/peptone-consumer-independent-v1/route-and-composition-v2.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Read-only authoring routes retain actual origins and distinguish causal
+    W05 peptone case from observed child recipes.
+  snapshot_sha256: 5a74dec3132794c56d4913a22d54963420242418f520851c7add150cc84e37c0
+- evidence_id: issue1176
+  kind: prior_review
+  reference: .temp/peptone-consumer-independent-v1/context/issue1176-comment-6719248666.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Existing filed dependency finding and selected authoring route; no issue
+    closure or mutation.
+  snapshot_sha256: 60c2ededb281d6be095a4162e130232f908c6b894ade8955758a57aa3edcec7d
+- evidence_id: schema-check
+  kind: validation
+  reference: .temp/peptone-consumer-independent-v1/validation/native-record-schema.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Root closed-schema validation on the exact 20 snapshot bytes; reused without
+    claiming scientific support.
+  snapshot_sha256: 7aee5fadd1d823a70443dbbf57041d81e4aeceff368a7f5134c5cc4f46632360
+- evidence_id: probe
+  kind: validation
+  reference: .temp/peptone-consumer-independent-v1/validation/native-probe-reuse.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Frozen native probe remains structurally green when generic peptone moves
+    but Bacto retains MICRO:0000178. This is an explicit limit, not identity proof.
+  snapshot_sha256: 1a185f377921b6ad80d8fcf63aeccfc2292cdc1352d04a9aa094874e37daf778
+- evidence_id: fab-primary
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: refutes
+  summary: Falsen 2005 primary-paper text mirror names Oxoid Fastidious Anaerobe Broth,
+    not the inherited LabM/Neogen attribution. Its separate Anaerobe Systems PYG tests
+    do not define FAB.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  locator: Printed p854; archived text extraction, not publisher PDF
+- evidence_id: owner-PC01
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5
+  locator: components[1]
+- evidence_id: PC01-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Fastidiosipila sanguinis original study. Supports source-attribution discrepancy
+    only; historical catalogue formulation and meat-granule composition unresolved.
+    Original-paper mirror text: title/authors/DOI and methods/results/species-description
+    passages, pp853–856; publisher abstract/title independently matched. Tables, sequence
+    analysis and references not exhaustively reviewed. No raw publisher PDF obtained.'
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  locator: FAB_ORIGINAL
+- evidence_id: PC01-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Fastidiosipila sanguinis original study. Supports source-attribution discrepancy
+    only; historical catalogue formulation and meat-granule composition unresolved.
+    Original-paper mirror text: title/authors/DOI and methods/results/species-description
+    passages, pp853–856; publisher abstract/title independently matched. Tables, sequence
+    analysis and references not exhaustively reviewed. No raw publisher PDF obtained.'
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  locator: FAB_ORIGINAL
+- evidence_id: PC01-source-3
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-paper-pages-web.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Fastidiosipila sanguinis original study. Supports source-attribution discrepancy
+    only; historical catalogue formulation and meat-granule composition unresolved.
+    Original-paper mirror text: title/authors/DOI and methods/results/species-description
+    passages, pp853–856; publisher abstract/title independently matched. Tables, sequence
+    analysis and references not exhaustively reviewed. No raw publisher PDF obtained.'
+  snapshot_sha256: 3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887
+  locator: FAB_ORIGINAL
+- evidence_id: PC01-source-4
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-151.body
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Comparator only. No bridge to original-paper Oxoid attribution; cannot
+    approve original FAB ingredient or starch/glucose assertions. Entire two-page
+    manufacturer PDF read via pdftotext; exact archived bytes and original access
+    timestamp 2026-11-08T06:22:02.501887+00:00 reused.
+  snapshot_sha256: 3ca3efc02a4a025b34ecb3126924fdb8d6fdfe011ba5a1d543af01a344268354
+  locator: NEOGEN_NCM0199
+- evidence_id: PC01-source-5
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/captures/w05-direct-155.body
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Negative comparator against treating meat granules automatically as pure
+    food meat; does not establish Fastidiosipila granule product. Entire three-page
+    manufacturer PDF read via pdftotext; exact archived bytes and original access
+    timestamp 2026-11-08T06:22:43.890414+00:00 reused.
+  snapshot_sha256: 331a9e069e2db9f48dae756b62cf5eb33bff6e08f65ae3ce3916b5794132b060
+  locator: ACUMEDIA7110
+- evidence_id: owner-PC02
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/GYPS.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e
+  locator: components[2]
+- evidence_id: PC02-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Original repository-hosted article title, abstract/species context and
+    p1622 culture methods inspected; unrelated paper results not reviewed.
+  snapshot_sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+  locator: database.csv, rows 3351 Bergey_Substrates_for_end_products; entire member
+    SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95
+- evidence_id: PC02-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/gyps-publication-528.pdf
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Original repository-hosted article title, abstract/species context and
+    p1622 culture methods inspected; unrelated paper results not reviewed.
+  snapshot_sha256: a89cbee98ab86fc02044b4344e617dcf705907820e0acc83cdd8948d9bcaf661
+  locator: Printed p1622, Culture medium and conditions; p1621 title/species context
+- evidence_id: owner-PC03
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Glucose_Peptone-yeast_Extract.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: e37175824a9e5c477fedd007a279b35056d89ab2b8c4ab5f8f8b9504e09794a5
+  locator: components[1]
+- evidence_id: PC03-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Re-extracted and rechecked all matching literal fields in the exact original
+    public dataset archive; underlying Bergey chapters and species papers were not
+    inspected for this generic label claim.
+  snapshot_sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+  locator: database.csv, rows 1597 Bergey_Substrates_for_end_products; entire member
+    SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95
+- evidence_id: owner-PC04
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Marine_Broth_2216.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: adb50a0f63cdf490b5b46491e69240cc5c4ef2841412fb556a98602a31454216
+  locator: components[0]
+- evidence_id: PC04-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/marine-manufacturer.pdf
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete two-page manufacturer capture and complete two-page ATCC2887 capture
+    inspected for the peptone claim and formulation boundary.
+  snapshot_sha256: de2504598b1133074ba2239c045958e9a6564dc1b2a2d8f13ab4bac99233199f
+  locator: Printed p352, Difco Marine Broth2216 approximate formula and standard reconstitution;
+    p351 product identity
+- evidence_id: PC04-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/atcc-2887.pdf
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete two-page manufacturer capture and complete two-page ATCC2887 capture
+    inspected for the peptone claim and formulation boundary.
+  snapshot_sha256: 08814051e89760e337cfb5569ecb60ddc5cb2979e676daa5ec652600f4f10ca6
+  locator: p1 scratch agar recipe and omit-agar note, separately scoped source variant
+- evidence_id: owner-PC05
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Marine_agar_2216.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 7b9ca92398062ef3901dc2aabcbd3f2bae57d64f60fd34ddd450d833be607baf
+  locator: components[0]
+- evidence_id: PC05-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/atcc-2887.pdf
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete two-page ATCC primary-repository formula/preparation capture.
+  snapshot_sha256: 08814051e89760e337cfb5569ecb60ddc5cb2979e676daa5ec652600f4f10ca6
+  locator: p1, Difco Marine Agar2216 scratch formulation, peptone row and water basis
+- evidence_id: owner-PC06
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PY-cellobiose.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f
+  locator: components[0]
+- evidence_id: PC06-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/pdf-access-web-attempts.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: 71af3c4f860783f4d86904f9fce9645d700ff4dca6d4f8a7aabd4b6a146babd3
+  locator: MOORE1976
+- evidence_id: PC06-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/moore1976-find-web.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: 454b38a3b98c4bca27ae03af29b2a33b7be4f909935bd06ccb3967cd59096806
+  locator: MOORE1976
+- evidence_id: PC06-source-3
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  locator: MOORE1976
+- evidence_id: PC06-source-4
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/search-original-specific-8.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Does not extend E.siraeum occurrence support to C.polysaccharolyticum.
+    Exact citation verified from inspected Bergey reference list; search preview only,
+    attempted original publisher page timed out. Full methods unread.
+  snapshot_sha256: db500532c3863151fa877fbae4d4cc13ddf0b0f073d9a5e4d4f32fe8dfc2967b
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: POLYSACCHAROLYTICUM1980
+- evidence_id: PC06-source-5
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-attempts-9.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Does not extend E.siraeum occurrence support to C.polysaccharolyticum.
+    Exact citation verified from inspected Bergey reference list; search preview only,
+    attempted original publisher page timed out. Full methods unread.
+  snapshot_sha256: 20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: POLYSACCHAROLYTICUM1980
+- evidence_id: PC06-source-6
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC06-source-7
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC07
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PY-fructose.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6
+  locator: components[0]
+- evidence_id: PC07-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-attempts-9.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Bibliographic/source-access evidence only. Publisher abstract, article
+    metadata and explicit subscription-preview boundary inspected. Full text not purchased
+    or read.
+  snapshot_sha256: 20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe
+  locator: ANDREESEN1970
+- evidence_id: PC07-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-read-10.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Bibliographic/source-access evidence only. Publisher abstract, article
+    metadata and explicit subscription-preview boundary inspected. Full text not purchased
+    or read.
+  snapshot_sha256: c657e5a5d760469ab57438b096f44292f289221783df178b15d44340ed7efdfc
+  locator: ANDREESEN1970
+- evidence_id: PC07-source-3
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC07-source-4
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC08
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PY-glucose-rumen_Fluid.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777
+  locator: components[0]
+- evidence_id: PC08-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-paper-pages-web.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: No resolution of inherited PY-glucose-rumen-fluid digest identity or clarified-rumen
+    assertion. Publisher abstract/metadata/references read; original complete methods
+    unavailable.
+  snapshot_sha256: 3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887
+  locator: SMIBERT1984
+- evidence_id: PC08-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-fulltext-web-attempts.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: No resolution of inherited PY-glucose-rumen-fluid digest identity or clarified-rumen
+    assertion. Publisher abstract/metadata/references read; original complete methods
+    unavailable.
+  snapshot_sha256: 8302daa3774a3b4463a3edc4d01907e37bbde911d41bdbf4701199295cb5538f
+  locator: SMIBERT1984
+- evidence_id: PC08-source-3
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC08-source-4
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC09
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PY-maltose.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0
+  locator: components[0]
+- evidence_id: PC09-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/pdf-access-web-attempts.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: 71af3c4f860783f4d86904f9fce9645d700ff4dca6d4f8a7aabd4b6a146babd3
+  locator: MOORE1976
+- evidence_id: PC09-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/moore1976-find-web.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: 454b38a3b98c4bca27ae03af29b2a33b7be4f909935bd06ccb3967cd59096806
+  locator: MOORE1976
+- evidence_id: PC09-source-3
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  locator: MOORE1976
+- evidence_id: PC09-source-4
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/captures/dsmz104c-dsm753.html
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Current strain-specific comparator, not proof that the historic PY-maltose
+    single peptone edge denotes either product. Captured original HTML inspected at
+    strain selection/modification, Main sol.104c component table and named digest
+    rows. No historical equivalence certificate.
+  snapshot_sha256: aade50e41ec462a73e20f3c4d5f4e6da2ddb3c1dcbbcf842918b169aa9968305
+  locator: DSMZ104C_DSM753
+- evidence_id: PC09-source-5
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC09-source-6
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC10
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PY-pectin.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6
+  locator: components[0]
+- evidence_id: PC10-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-paper-pages-web.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: No formula or historical bridge to ATCC1223 inspected. Publisher abstract/metadata/references
+    read; original complete methods unavailable.
+  snapshot_sha256: 3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887
+  locator: SMIBERT1983
+- evidence_id: PC10-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-fulltext-web-attempts.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: No formula or historical bridge to ATCC1223 inspected. Publisher abstract/metadata/references
+    read; original complete methods unavailable.
+  snapshot_sha256: 8302daa3774a3b4463a3edc4d01907e37bbde911d41bdbf4701199295cb5538f
+  locator: SMIBERT1983
+- evidence_id: PC10-source-3
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/captures/atcc1223.pdf
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Current authentic repository recipe; no demonstrated identity with historic
+    PY-pectin observation. Polypeptone must not be replaced by Bacto Peptone or Hipolypepton.
+    Entire one-page authentic ATCC PDF read via pdftotext, including composition and
+    preparation.
+  snapshot_sha256: e2957346d4080023473f8cca8eaf72a6a22b523a2cffbe6ed29685a8384c4867
+  locator: ATCC1223
+- evidence_id: PC10-source-4
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC10-source-5
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC11
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PYEG.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a
+  locator: components[0]
+- evidence_id: PC11-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-paper-pages-web.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Bibliographic/source-access evidence only. Publisher title/abstract/references
+    inspected; offered HTML full text unavailable. No original formula inspected.
+  snapshot_sha256: 3650d98ec4200d15e89931d693facc976bfef27a8dc4d652e168571cf31ba887
+  locator: MORRIS1985
+- evidence_id: PC11-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-fulltext-web-attempts.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Bibliographic/source-access evidence only. Publisher title/abstract/references
+    inspected; offered HTML full text unavailable. No original formula inspected.
+  snapshot_sha256: 8302daa3774a3b4463a3edc4d01907e37bbde911d41bdbf4701199295cb5538f
+  locator: MORRIS1985
+- evidence_id: PC11-source-3
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC11-source-4
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC12
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PYG-002_Tween_80.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f
+  locator: components[0]
+- evidence_id: PC12-source-1
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/search-original-specific-8.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Discovery/access evidence only, not chemistry proof. Current repository
+    search preview offered different growth media; direct page timed out. No original
+    0.02%Tween80 recipe inspected.
+  snapshot_sha256: db500532c3863151fa877fbae4d4cc13ddf0b0f073d9a5e4d4f32fe8dfc2967b
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BIFORMIS_CURRENT
+- evidence_id: PC12-source-2
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-attempts-9.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Discovery/access evidence only, not chemistry proof. Current repository
+    search preview offered different growth media; direct page timed out. No original
+    0.02%Tween80 recipe inspected.
+  snapshot_sha256: 20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BIFORMIS_CURRENT
+- evidence_id: PC12-source-3
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC12-source-4
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC13
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PYG.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83
+  locator: components[0]
+- evidence_id: PC13-source-1
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC13-source-2
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC13-source-3
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/pdf-access-web-attempts.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: 71af3c4f860783f4d86904f9fce9645d700ff4dca6d4f8a7aabd4b6a146babd3
+  locator: MOORE1976
+- evidence_id: PC13-source-4
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/moore1976-find-web.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: 454b38a3b98c4bca27ae03af29b2a33b7be4f909935bd06ccb3967cd59096806
+  locator: MOORE1976
+- evidence_id: PC13-source-5
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: partial
+  summary: 'Occurrence-bound evidence; neither supplier-specific identity nor one
+    common formulation for all PY/PYG labels is established. Web-tool PDF text extraction
+    of original-paper mirror: p238 methods, p239 medium context, p242 Butyrivibrio
+    context, pp250–251 E.siraeum and C.leptum passages, pp251–252 references. Not
+    every page/table read. Publisher metadata matched. Direct raw PDF request returned
+    HTML403, retained as denial, not PDF evidence.'
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  locator: MOORE1976
+- evidence_id: owner-PC14
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PYGS.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: b5d43cabed7ee976f44bb5bbc6a3f0ecc127c9bb6097c36c9b5e7ba433aa6f52
+  locator: components[0]
+- evidence_id: PC14-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete archived EuropePMC primary article abstracts and bibliographic
+    records inspected; underlying full papers are not inspected and their unknown
+    details are not asserted.
+  snapshot_sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+  locator: database.csv, rows 4105 Bergey_Substrates_for_end_products, 4110 Bergey_Substrates_for_end_products,
+    8884 Bergey_Substrates_for_end_products; entire member SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95
+- evidence_id: PC14-source-2
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/epmc-algidixylanolyticum.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete archived EuropePMC primary article abstracts and bibliographic
+    records inspected; underlying full papers are not inspected and their unknown
+    details are not asserted.
+  snapshot_sha256: 0cc89e98e8d4f67ef41faade46f3ca1e5f3b8c6d4dd0ed2015df86ddec48767d
+  locator: resultList.result[0].abstractText; PMID10758868
+- evidence_id: PC14-source-3
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/epmc-frigidicarnis.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete archived EuropePMC primary article abstracts and bibliographic
+    records inspected; underlying full papers are not inspected and their unknown
+    details are not asserted.
+  snapshot_sha256: 574c149a422fc9db98e0a71cc25e4b8e2000142d1b6b792e1444fb136ee9853b
+  locator: resultList.result[0].abstractText; PMID10555335
+- evidence_id: PC14-source-4
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/epmc-gasigenes.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete archived EuropePMC primary article abstracts and bibliographic
+    records inspected; underlying full papers are not inspected and their unknown
+    details are not asserted.
+  snapshot_sha256: 0eda4ebadf8d8a487eb29992202b29ec428fcb881d42bf0cf28c2bec5dcab57d
+  locator: resultList.result[0].abstractText; PMID10826793
+- evidence_id: owner-PC15
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/PYG_Rumen_Fluid.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01
+  locator: components[0]
+- evidence_id: PC15-source-1
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-attempts-9.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Current ATCC17233 alternative medium602 listing does not prove original
+    PYG-rumen composition. Bibliographic search discovery and PMC access attempt;
+    PMC returned browser challenge. No original body inspected.
+  snapshot_sha256: 20fdc3f5ab0555c7ea82f6e140f62276462d8d89519593096194bfdd304748fe
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: RUMINANTIUM1959
+- evidence_id: PC15-source-2
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-primary-read-10.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Current ATCC17233 alternative medium602 listing does not prove original
+    PYG-rumen composition. Bibliographic search discovery and PMC access attempt;
+    PMC returned browser challenge. No original body inspected.
+  snapshot_sha256: c657e5a5d760469ab57438b096f44292f289221783df178b15d44340ed7efdfc
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: RUMINANTIUM1959
+- evidence_id: PC15-source-3
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-6.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: ee21ef8e53654973748f3060843b6f89443a6ea9949bd4cf27e53fe854e4554d
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: PC15-source-4
+  kind: search
+  reference: .temp/peptone-consumer-independent-v1/ambiguous/original-source-read-7.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Raw-source observation lineage verified separately; unavailable chapter
+    contents are not presented as inspected. Clostridium and Treponema abstract/metadata
+    and selected reference lists inspected; full-text links redirected to abstracts.
+    Eubacterium chapter returned403.
+  snapshot_sha256: 1a5c9515cb2e7502156700531711ce93d73d80be14506f37f8cded81f0798eca
+  search_scope: Exact bound source-access attempts and publication/repository leads
+    listed in the fourteen-source catalog; no exhaustive claim about all library,
+    historical or private files. Unread methods and inaccessible sources are explicitly
+    recorded, never treated as inspected.
+  locator: BERGEY_ORIGINAL
+- evidence_id: owner-PC16
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Peptone-yeast_Extract-glucose.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: e4594106002c7e2d51922d22ea48f16a6f4a35b9ceb148fae129271453593cc7
+  locator: components[0]
+- evidence_id: PC16-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Re-extracted and rechecked all matching literal fields in the exact original
+    public dataset archive; underlying Bergey chapters and species papers were not
+    inspected for this generic label claim.
+  snapshot_sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+  locator: database.csv, rows 1622 Bergey_Substrates_for_end_products; entire member
+    SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95
+- evidence_id: owner-PC17
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Peptone_Beef_Extract_Yeast_Extract.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 49e7a167fca66a424c4eb725784d9c2e8f3870519a5a283dd62e3896d03f1139
+  locator: components[0]
+- evidence_id: PC17-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Re-extracted and rechecked all matching literal fields in the exact original
+    public dataset archive; underlying Bergey chapters and species papers were not
+    inspected for this generic label claim.
+  snapshot_sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+  locator: database.csv, rows 3775 Literature_Substrates_for_end_products; entire
+    member SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95
+- evidence_id: owner-PC18
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Peptone_Yeast_Extract.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 90be7b1c6cdc8ff087497dfea1c920d5705a56ef6c0bea156ada6d26c6754d3a
+  locator: components[0]
+- evidence_id: PC18-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Re-extracted and rechecked all matching literal fields in the exact original
+    public dataset archive; underlying Bergey chapters and species papers were not
+    inspected for this generic label claim.
+  snapshot_sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+  locator: database.csv, rows 1652 Bergey_Substrates_for_end_products, 15057 Literature_Substrates_for_end_products;
+    entire member SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95
+- evidence_id: owner-PC19
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/Yeast_Extract_Peptone.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 6659173de7a86924183da69f502b4827d6583f5a5f50966a3158bb3f64243ab6
+  locator: components[1]
+- evidence_id: PC19-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/microbedecoder_database.zip
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Re-extracted and rechecked all matching literal fields in the exact original
+    public dataset archive; underlying Bergey chapters and species papers were not
+    inspected for this generic label claim.
+  snapshot_sha256: b56da1f59051884eb6531ecda8ee5e93240ac1caca520c954c33b633ea1aea4e
+  locator: database.csv, rows 15054 Bergey_Substrates_for_end_products; entire member
+    SHA256 0c6ff730a108720a5d6972400f2bccf2eca8621713b62736abdf5df0fb188c95
+- evidence_id: owner-PC20
+  kind: record_content
+  reference: .temp/peptone-consumer-independent-v1/context/owners/togo_m2491_mrssi_base.yaml
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: context_only
+  summary: Exact owner beforeimage or genuine new-owner proposal; complete bytes retained,
+    review limited to specified component claim.
+  snapshot_sha256: 3838ea36856afdd637869e7818a855779a60d63067406ba08ede81bc80f045c4
+  locator: components[8]
+- evidence_id: PC20-source-1
+  kind: primary_source
+  reference: .temp/peptone-consumer-independent-v1/other/captures/togo-M2491.json
+  accessed_at: '2026-11-08T08:44:33.885306Z'
+  support: supports
+  summary: Complete TOGO API JSON including all component tables and preparation comments.
+  snapshot_sha256: 1b2e805c573ebcb9b5495f978ae93679a4c6839920502d547a1796ee23380511
+  locator: components[1] Sol.1 items[8]; comments paragraphs1-4
+assessments:
+- assessment_id: assessment-PC01
+  area: identity
+  topic: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]
+  outcome: concern
+  summary: Source-specific vendor discrepancy confirmed; a current LabM/Neogen formula
+    cannot support original Oxoid-attributed FAB. Peptone composition and granule
+    product remain unresolved. Withdraw the unsupported component_id and use reference_scope
+    UNMAPPED in a future authentic reviewed successor. Retain the existing component_name
+    as historical research interpretation, not a newly observed primary-source constituent.
+    Preserve source labels, methods/completeness, history, unknown quantities and
+    all unrelated fields.
+  target_ids:
+  - PC01
+  evidence_ids:
+  - owner-PC01
+  - rules
+  - ledger
+  - raw-check
+  - PC01-source-1
+  - PC01-source-2
+  - PC01-source-3
+  - PC01-source-4
+  - PC01-source-5
+  details: 'No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Original FAB
+    catalogue/formula and historical product identity; do not substitute the separate
+    Anaerobe Systems PYG broth. This missing evidence prevents identity resolution;
+    no supplier/quantity prerequisite is imposed on genuinely generic peptone. Compose
+    with existing cooked-meat/granule withdrawal proposal; preserve its exact correction
+    and all uncertainty. New finding PEPTONE-SOURCE-001 requires coordinator issue-first
+    disposition. Confirmed PEPTONE-SOURCE-001 independently: actual primary paper
+    attributes FAB to Oxoid. Neogen current comparator and separate Anaerobe Systems
+    PYG assay cannot establish historical FAB peptone. This does not prove that peptone
+    is absent.'
+- assessment_id: assessment-PC02
+  area: identity
+  topic: data/ingredients/mapped/GYPS.yaml#components[2]
+  outcome: supported
+  summary: Raw dataset row3351 binds GYPS to Caminicella sporogenes. Alain et al.
+    original species paper names bacto-peptone (Difco), 1 g per litre, in its source-specific
+    GYPS method. This is direct product wording rather than an abbreviation expansion.
+    Do not retarget this part to generic Peptone. The source identifies Bacto-peptone
+    (Difco); retain the represented Bacto identity MICRO:0000178 conditional on separate
+    final Bacto owner review. A future wording clarification may expose the product
+    qualifier, but this review creates no candidate.
+  target_ids:
+  - PC02
+  evidence_ids:
+  - owner-PC02
+  - rules
+  - ledger
+  - raw-check
+  - PC02-source-1
+  - PC02-source-2
+  details: Source1g/L known; current component list deliberately omits all quantities.
+    Do not add one amount outside authorized scope. Final Bacto owner acceptance;
+    no dictionary-order winner selection The source explicitly identifies Bacto-peptone
+    (Difco); no generic retarget is scientifically supported. This confirms the intended
+    product class only, not the current Bacto owner aliases or ontology target.
+- assessment_id: assessment-PC03
+  area: identity
+  topic: data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml#components[1]
+  outcome: supported
+  summary: The original MicrobeDecoder database field explicitly spells peptone within
+    the literal constituent list. This supports an unspecified peptone part at label-enumeration
+    scope; it does not identify Bacto, a digest substrate, manufacturing process,
+    supplier or catalogue. Retarget only the component identity to the separately
+    reviewed generic Peptone owner kgmicrobe.ingredient:peptone in the coupled phase;
+    preserve literal component spelling, LABEL_ENUMERATION, existing completeness
+    relative to the named parts, source/history and all unrelated fields. Do not require
+    supplier details or use UNMAPPED merely to avoid the coupled generic-owner acceptance.
+  target_ids:
+  - PC03
+  evidence_ids:
+  - owner-PC03
+  - rules
+  - ledger
+  - raw-check
+  - PC03-source-1
+  details: Source label does not specify amounts; preserve absence of concentration.
+    Underlying publication not inspected for whole-recipe approval. Final generic
+    Peptone identity accepted separately; Authentic dependent edit_existing_owner
+    proposal on this actual beforeimage, with W05 causal peptone source case explicitly
+    distinguished from observing this child recipe; Independent exact final child-payload
+    review Original source literal names peptone. LABEL_ENUMERATION supports a generic
+    part; no full recipe or supplier is needed for that bounded claim.
+- assessment_id: assessment-PC04
+  area: identity
+  topic: data/ingredients/mapped/Marine_Broth_2216.yaml#components[0]
+  outcome: supported
+  summary: Manufacturer formula for Difco Marine Broth2216 names Peptone5g, unbranded.
+    The source does not identify its internal peptone as Bacto. Manufacturer broth
+    and ATCC agar-minus-agar scratch variant are distinct contexts; do not transfer
+    other salt/form values between them. Preserve the existing W05 product proposal
+    and composed TARGET-012 withdrawal of component_id, retaining literal Peptone
+    UNMAPPED at5 g per litre at standard reconstitution. W03 alias-only payload still
+    carries the inherited MICRO ID and must not overwrite the reviewed product correction.
+    No final payload approval is supplied here.
+  target_ids:
+  - PC04
+  evidence_ids:
+  - owner-PC04
+  - rules
+  - ledger
+  - raw-check
+  - PC04-source-1
+  - PC04-source-2
+  details: Preserve5G_PER_L_AT_STANDARD_RECONSTITUTION in the combined proposal; do
+    not reuse ATCC agar-minus-agar as identical commercial broth. Use a final independently
+    reviewed composed product payload; Preserve all existing component and provenance
+    corrections when combining W03/W04 aliases with W05 formula changes The manufacturer
+    names an unbranded Peptone part. Preserve existing W05/combined UNMAPPED product
+    correction; this is not a rule that generic peptone requires a supplier. W03 alias
+    payload remains author-related and is not independently approved.
+- assessment_id: assessment-PC05
+  area: identity
+  topic: data/ingredients/mapped/Marine_agar_2216.yaml#components[0]
+  outcome: supported
+  summary: ATCC2887 gives an unqualified Peptone5.0g row in the scratch composition
+    and lists1000mL distilled water. Neither the whole agar product catalogue nor
+    the broth product catalogue establishes a Bacto-peptone part. Retarget only the
+    peptone reference to separately accepted generic Peptone kgmicrobe.ingredient:peptone
+    while preserving the ATCC scratch-formula scope and existing5.0G_PER_L value;
+    do not infer a Bacto product from the Difco whole-medium label.
+  target_ids:
+  - PC05
+  evidence_ids:
+  - owner-PC05
+  - rules
+  - ledger
+  - raw-check
+  - PC05-source-1
+  details: Preserve existing5.0G_PER_L and scratch-formula scope; no product/lot inference.
+    Accepted generic Peptone target and coupled exact child candidate; Compose with
+    existing w04 Marine agar alias proposal without dropping source scope ATCC scratch
+    agar formula explicitly names generic Peptone. Whole-product brand/catalogue does
+    not make its peptone Bacto; commercial broth is a different formula context.
+- assessment_id: assessment-PC06
+  area: identity
+  topic: data/ingredients/mapped/PY-cellobiose.yaml#components[0]
+  outcome: concern
+  summary: E.siraeum original paper supports occurrence-bound peptone basal-medium
+    class; C.polysaccharolyticum is a separate source occurrence with unread formulation.
+    No whole-owner generic or product identity established. Withdraw the unsupported
+    component_id and use reference_scope UNMAPPED in a future authentic reviewed successor.
+    Retain the existing component_name as historical research interpretation, not
+    a newly observed primary-source constituent. Preserve source labels, methods/completeness,
+    history, unknown quantities and all unrelated fields.
+  target_ids:
+  - PC06
+  evidence_ids:
+  - owner-PC06
+  - rules
+  - ledger
+  - raw-check
+  - PC06-source-1
+  - PC06-source-2
+  - PC06-source-3
+  - PC06-source-4
+  - PC06-source-5
+  - PC06-source-6
+  - PC06-source-7
+  details: 'No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Resolve the
+    C.polysaccharolyticum PY-cellobiose recipe or separate occurrence ownership; historical
+    PY manual recipe remains unread. This missing evidence prevents identity resolution;
+    no supplier/quantity prerequisite is imposed on genuinely generic peptone. No
+    supplier detail is demanded for genuine generic peptone. One supported occurrence
+    is insufficient for both observations. Positive partial evidence retained: Moore1976
+    explicitly calls the E.siraeum basal preparation peptone medium and reports PY-cellobiose.
+    That supports generic peptone for raw row5908 only. The C.polysaccharolyticum
+    row4163 recipe remains unread; the aggregate claim cannot be narrowed or universally
+    approved.'
+- assessment_id: assessment-PC07
+  area: identity
+  topic: data/ingredients/mapped/PY-fructose.yaml#components[0]
+  outcome: concern
+  summary: Original C.formicaceticum paper abstract inspected; it does not spell out
+    the inherited peptone component. PY abbreviation alone does not establish the
+    material edge. Withdraw the unsupported component_id and use reference_scope UNMAPPED
+    in a future authentic reviewed successor. Retain the existing component_name as
+    historical research interpretation, not a newly observed primary-source constituent.
+    Preserve source labels, methods/completeness, history, unknown quantities and
+    all unrelated fields.
+  target_ids:
+  - PC07
+  evidence_ids:
+  - owner-PC07
+  - rules
+  - ledger
+  - raw-check
+  - PC07-source-1
+  - PC07-source-2
+  - PC07-source-3
+  - PC07-source-4
+  details: No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Original PY-fructose
+    preparation/formulation for C.formicaceticum; subscription full text unavailable
+    in this bounded free review. This missing evidence prevents identity resolution;
+    no supplier/quantity prerequisite is imposed on genuinely generic peptone. Retain
+    raw PY-fructose label, inherited expansion provenance and missing quantities.
+    C.formicoaceticum publisher abstract supports species/fructose context, not peptone
+    formulation. Subscription methods remain unread; no product or generic whole-claim
+    identity forced.
+- assessment_id: assessment-PC08
+  area: identity
+  topic: data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]
+  outcome: concern
+  summary: Exact raw context is T.socranskii (source LPSN subspecies paredis). Inspected
+    original-paper abstract lacks peptone specification; unrelated Prevotella research
+    is not applicable. Withdraw the unsupported component_id and use reference_scope
+    UNMAPPED in a future authentic reviewed successor. Retain the existing component_name
+    as historical research interpretation, not a newly observed primary-source constituent.
+    Preserve source labels, methods/completeness, history, unknown quantities and
+    all unrelated fields.
+  target_ids:
+  - PC08
+  evidence_ids:
+  - owner-PC08
+  - rules
+  - ledger
+  - raw-check
+  - PC08-source-1
+  - PC08-source-2
+  - PC08-source-3
+  - PC08-source-4
+  details: 'No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Original PY
+    base/digest in the stated Treponema preparation, or a primary recipe with a demonstrated
+    source bridge. This missing evidence prevents identity resolution; no supplier/quantity
+    prerequisite is imposed on genuinely generic peptone. Compose with literal rumen
+    fluid UNMAPPED correction under #204/#1204; never restore clarified rumen fluid.
+    Treponema socranskii paredis source context differs from unrelated prior research.
+    Peptone unresolved; retain component3 literal rumen-fluid UNMAPPED correction
+    under204/1204.'
+- assessment_id: assessment-PC09
+  area: identity
+  topic: data/ingredients/mapped/PY-maltose.yaml#components[0]
+  outcome: concern
+  summary: Original C.leptum PY-maltose experiment verified; referenced manual formulation
+    unread. Current exact-strain repository recipe has two distinguishable peptones
+    and cannot identify the inherited single edge. Withdraw the unsupported component_id
+    and use reference_scope UNMAPPED in a future authentic reviewed successor. Retain
+    the existing component_name as historical research interpretation, not a newly
+    observed primary-source constituent. Preserve source labels, methods/completeness,
+    history, unknown quantities and all unrelated fields.
+  target_ids:
+  - PC09
+  evidence_ids:
+  - owner-PC09
+  - rules
+  - ledger
+  - raw-check
+  - PC09-source-1
+  - PC09-source-2
+  - PC09-source-3
+  - PC09-source-4
+  - PC09-source-5
+  - PC09-source-6
+  details: No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Original manual
+    recipe and which peptone constituent the historical single component was intended
+    to represent. This missing evidence prevents identity resolution; no supplier/quantity
+    prerequisite is imposed on genuinely generic peptone. Retain current recipe as
+    comparator, not an instruction to inject quantities or collapse two digests. Moore1976
+    verifies the original C.leptum PY-maltose experiment, not its digest recipe. Current
+    DSM753 formula explicitly has two separate digests; neither can be substituted
+    for the inherited single peptone edge without historical applicability evidence.
+- assessment_id: assessment-PC10
+  area: identity
+  topic: data/ingredients/mapped/PY-pectin.yaml#components[0]
+  outcome: concern
+  summary: Original T.pectinovorum source identified; full historical formula unread.
+    Authentic ATCC1223 specifically uses Polypeptone BD211910, but no bridge to original
+    PY-pectin is demonstrated. Withdraw the unsupported component_id and use reference_scope
+    UNMAPPED in a future authentic reviewed successor. Retain the existing component_name
+    as historical research interpretation, not a newly observed primary-source constituent.
+    Preserve source labels, methods/completeness, history, unknown quantities and
+    all unrelated fields.
+  target_ids:
+  - PC10
+  evidence_ids:
+  - owner-PC10
+  - rules
+  - ledger
+  - raw-check
+  - PC10-source-1
+  - PC10-source-2
+  - PC10-source-3
+  - PC10-source-4
+  - PC10-source-5
+  details: No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Original PY-pectin
+    ingredient list or historical identity linkage to ATCC1223. This missing evidence
+    prevents identity resolution; no supplier/quantity prerequisite is imposed on
+    genuinely generic peptone. Do not turn Polypeptone comparator into Bacto Peptone,
+    Hipolypepton, or a broad product-family approval. ATCC1223 is an authentic current
+    comparator naming Polypeptone BD211910. It does not establish the historical PY-pectin
+    preparation; do not substitute Bacto, Hipolypepton or a product family.
+- assessment_id: assessment-PC11
+  area: identity
+  topic: data/ingredients/mapped/PYEG.yaml#components[0]
+  outcome: concern
+  summary: Exact raw taxon is C.scindens. Existing research citation leads concern
+    other taxa (including Caulobacter); publisher original study abstract does not
+    resolve PYEG ingredient identity. Withdraw the unsupported component_id and use
+    reference_scope UNMAPPED in a future authentic reviewed successor. Retain the
+    existing component_name as historical research interpretation, not a newly observed
+    primary-source constituent. Preserve source labels, methods/completeness, history,
+    unknown quantities and all unrelated fields.
+  target_ids:
+  - PC11
+  evidence_ids:
+  - owner-PC11
+  - rules
+  - ledger
+  - raw-check
+  - PC11-source-1
+  - PC11-source-2
+  - PC11-source-3
+  - PC11-source-4
+  details: No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. C.scindens
+    original PYEG preparation, including whether the abbreviation denotes the inherited
+    three-component interpretation. This missing evidence prevents identity resolution;
+    no supplier/quantity prerequisite is imposed on genuinely generic peptone. The
+    retained peptone label remains an inherited interpretation, not a newly observed
+    ingredient. Raw source binds PYEG to C.scindens; prior Caulobacter expansion is
+    not applicable. Publisher abstract contains no PYEG composition; source methods
+    unavailable.
+- assessment_id: assessment-PC12
+  area: identity
+  topic: data/ingredients/mapped/PYG-002_Tween_80.yaml#components[0]
+  outcome: concern
+  summary: Exact source observation is Holdemanella biformis (legacy Eubacterium biforme).
+    No inspected original formulation establishes the inherited peptone edge; current
+    alternative growth media are not the observed recipe. Withdraw the unsupported
+    component_id and use reference_scope UNMAPPED in a future authentic reviewed successor.
+    Retain the existing component_name as historical research interpretation, not
+    a newly observed primary-source constituent. Preserve source labels, methods/completeness,
+    history, unknown quantities and all unrelated fields.
+  target_ids:
+  - PC12
+  evidence_ids:
+  - owner-PC12
+  - rules
+  - ledger
+  - raw-check
+  - PC12-source-1
+  - PC12-source-2
+  - PC12-source-3
+  - PC12-source-4
+  details: No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Original E.biforme
+    PYG-0.02%Tween80 base recipe and source applicability. This missing evidence prevents
+    identity resolution; no supplier/quantity prerequisite is imposed on genuinely
+    generic peptone. Preserve 0.02% as raw label information; no new quantitative
+    component assertion inferred from it. Holdemanella biformis raw PYG-0.02%Tween80
+    observation does not spell peptone. Alternative current growth media cannot supply
+    original recipe identity or new quantities.
+- assessment_id: assessment-PC13
+  area: identity
+  topic: data/ingredients/mapped/PYG.yaml#components[0]
+  outcome: concern
+  summary: All114 raw observations were accounted for across multiple genera/chapters.
+    Inspected occurrence-limited papers and a general DSMZ/VPI association do not
+    establish one shared formula or digest identity for the aggregate owner. Withdraw
+    the unsupported component_id and use reference_scope UNMAPPED in a future authentic
+    reviewed successor. Retain the existing component_name as historical research
+    interpretation, not a newly observed primary-source constituent. Preserve source
+    labels, methods/completeness, history, unknown quantities and all unrelated fields.
+  target_ids:
+  - PC13
+  evidence_ids:
+  - owner-PC13
+  - rules
+  - ledger
+  - raw-check
+  - PC13-source-1
+  - PC13-source-2
+  - PC13-source-3
+  - PC13-source-4
+  - PC13-source-5
+  details: No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Occurrence-specific
+    recipe binding or supported disjoint formulation cohorts for114 observations;
+    this bounded task does not claim exhaustive retrieval of114 papers. This missing
+    evidence prevents identity resolution; no supplier/quantity prerequisite is imposed
+    on genuinely generic peptone. Do not promote a single occurrence or comparator
+    to all114 uses; no source-global Bacto assignment. All114 source observations
+    were directly accounted for; no universal PYG formulation was established. Partial
+    historical occurrences and repository comparators cannot be generalized to this
+    aggregate owner.
+- assessment_id: assessment-PC14
+  area: identity
+  topic: data/ingredients/mapped/PYGS.yaml#components[0]
+  outcome: supported
+  summary: The original dataset supplies three PYGS observations for the organisms
+    named in the three inspected article abstracts. Each abstract independently spells
+    peptone in the peptone/yeast-extract/glucose/starch medium. This settles generic
+    part naming in those contexts without selecting a branded digest. Correct only
+    the generic peptone component reference conditional on accepted generic owner.
+    Compose with the exact W06 source-evidence payload; retain the three organism/source
+    contexts, UNKNOWN completeness, absent quantities and all material-edge holds.
+    Do not claim universal PYGS identity.
+  target_ids:
+  - PC14
+  evidence_ids:
+  - owner-PC14
+  - rules
+  - ledger
+  - raw-check
+  - PC14-source-1
+  - PC14-source-2
+  - PC14-source-3
+  - PC14-source-4
+  details: Amounts/product/animal/digest remain unspecified; no quantity fill. Existing
+    expanded source-evidence proposal remains separately reviewed. Accepted generic
+    Peptone target; Compose with W06 exact final evidence successor and retain source-specific
+    holds; Independent review of eventual complete child payload Allthree source taxa
+    match the three primary abstracts, each spelling peptone in PYGS. Generic naming
+    is supported without claiming unread full methods or supplier/quantities.
+- assessment_id: assessment-PC15
+  area: identity
+  topic: data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[0]
+  outcome: concern
+  summary: Exact raw source taxon is E.ruminantium. Original source chapter inaccessible
+    and original-paper body challenge-blocked; existing interpretation does not establish
+    a digest material identity. Withdraw the unsupported component_id and use reference_scope
+    UNMAPPED in a future authentic reviewed successor. Retain the existing component_name
+    as historical research interpretation, not a newly observed primary-source constituent.
+    Preserve source labels, methods/completeness, history, unknown quantities and
+    all unrelated fields.
+  target_ids:
+  - PC15
+  evidence_ids:
+  - owner-PC15
+  - rules
+  - ledger
+  - raw-check
+  - PC15-source-1
+  - PC15-source-2
+  - PC15-source-3
+  - PC15-source-4
+  details: 'No source-bound peptone amount established for this current owner; retain
+    no peptone concentration. Do not import comparator recipe amounts. Original E.ruminantium
+    PYG-rumen base formulation; later unrelated Prevotella cultures do not bind it.
+    This missing evidence prevents identity resolution; no supplier/quantity prerequisite
+    is imposed on genuinely generic peptone. Compose with literal rumen fluid UNMAPPED
+    correction under #204/#1204; retain native scope/method uncertainty. E.ruminantium
+    exact original recipe remains unread after actual access limits. Do not substitute
+    later unrelated cultures; compose component3 literal rumen-fluid UNMAPPED repair.'
+- assessment_id: assessment-PC16
+  area: identity
+  topic: data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml#components[0]
+  outcome: supported
+  summary: The original MicrobeDecoder database field explicitly spells peptone within
+    the literal constituent list. This supports an unspecified peptone part at label-enumeration
+    scope; it does not identify Bacto, a digest substrate, manufacturing process,
+    supplier or catalogue. Retarget only the component identity to the separately
+    reviewed generic Peptone owner kgmicrobe.ingredient:peptone in the coupled phase;
+    preserve literal component spelling, LABEL_ENUMERATION, existing completeness
+    relative to the named parts, source/history and all unrelated fields. Do not require
+    supplier details or use UNMAPPED merely to avoid the coupled generic-owner acceptance.
+  target_ids:
+  - PC16
+  evidence_ids:
+  - owner-PC16
+  - rules
+  - ledger
+  - raw-check
+  - PC16-source-1
+  details: Source label does not specify amounts; preserve absence of concentration.
+    Underlying publication not inspected for whole-recipe approval. Final generic
+    Peptone identity accepted separately; Authentic dependent edit_existing_owner
+    proposal on this actual beforeimage, with W05 causal peptone source case explicitly
+    distinguished from observing this child recipe; Independent exact final child-payload
+    review Original source literal explicitly names peptone. Bounded generic part
+    is supported without supplier or complete recipe.
+- assessment_id: assessment-PC17
+  area: identity
+  topic: data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml#components[0]
+  outcome: supported
+  summary: The original MicrobeDecoder database field explicitly spells peptone within
+    the literal constituent list. This supports an unspecified peptone part at label-enumeration
+    scope; it does not identify Bacto, a digest substrate, manufacturing process,
+    supplier or catalogue. Retarget only the component identity to the separately
+    reviewed generic Peptone owner kgmicrobe.ingredient:peptone in the coupled phase;
+    preserve literal component spelling, LABEL_ENUMERATION, existing completeness
+    relative to the named parts, source/history and all unrelated fields. Do not require
+    supplier details or use UNMAPPED merely to avoid the coupled generic-owner acceptance.
+  target_ids:
+  - PC17
+  evidence_ids:
+  - owner-PC17
+  - rules
+  - ledger
+  - raw-check
+  - PC17-source-1
+  details: Source label does not specify amounts; preserve absence of concentration.
+    Underlying publication not inspected for whole-recipe approval. Final generic
+    Peptone identity accepted separately; Authentic dependent edit_existing_owner
+    proposal on this actual beforeimage, with W05 causal peptone source case explicitly
+    distinguished from observing this child recipe; Independent exact final child-payload
+    review Original source literal explicitly names peptone. Bounded generic part
+    is supported without supplier or complete recipe.
+- assessment_id: assessment-PC18
+  area: identity
+  topic: data/ingredients/mapped/Peptone_Yeast_Extract.yaml#components[0]
+  outcome: supported
+  summary: The original MicrobeDecoder database field explicitly spells peptone within
+    the literal constituent list. This supports an unspecified peptone part at label-enumeration
+    scope; it does not identify Bacto, a digest substrate, manufacturing process,
+    supplier or catalogue. Retarget only the component identity to the separately
+    reviewed generic Peptone owner kgmicrobe.ingredient:peptone in the coupled phase;
+    preserve literal component spelling, LABEL_ENUMERATION, existing completeness
+    relative to the named parts, source/history and all unrelated fields. Do not require
+    supplier details or use UNMAPPED merely to avoid the coupled generic-owner acceptance.
+  target_ids:
+  - PC18
+  evidence_ids:
+  - owner-PC18
+  - rules
+  - ledger
+  - raw-check
+  - PC18-source-1
+  details: Source label does not specify amounts; preserve absence of concentration.
+    Underlying publication not inspected for whole-recipe approval. Final generic
+    Peptone identity accepted separately; Authentic dependent edit_existing_owner
+    proposal on this actual beforeimage, with W05 causal peptone source case explicitly
+    distinguished from observing this child recipe; Independent exact final child-payload
+    review Both original observations explicitly spell peptone plus yeast extract.
+    Bounded generic part applies to both; no brand/digest assertion follows.
+- assessment_id: assessment-PC19
+  area: identity
+  topic: data/ingredients/mapped/Yeast_Extract_Peptone.yaml#components[1]
+  outcome: supported
+  summary: The original MicrobeDecoder database field explicitly spells peptone within
+    the literal constituent list. This supports an unspecified peptone part at label-enumeration
+    scope; it does not identify Bacto, a digest substrate, manufacturing process,
+    supplier or catalogue. Retarget only the component identity to the separately
+    reviewed generic Peptone owner kgmicrobe.ingredient:peptone in the coupled phase;
+    preserve literal component spelling, LABEL_ENUMERATION, existing completeness
+    relative to the named parts, source/history and all unrelated fields. Do not require
+    supplier details or use UNMAPPED merely to avoid the coupled generic-owner acceptance.
+  target_ids:
+  - PC19
+  evidence_ids:
+  - owner-PC19
+  - rules
+  - ledger
+  - raw-check
+  - PC19-source-1
+  details: Source label does not specify amounts; preserve absence of concentration.
+    Underlying publication not inspected for whole-recipe approval. Final generic
+    Peptone identity accepted separately; Authentic dependent edit_existing_owner
+    proposal on this actual beforeimage, with W05 causal peptone source case explicitly
+    distinguished from observing this child recipe; Independent exact final child-payload
+    review Original source literal explicitly names yeast extract plus peptone. Bounded
+    generic part is supported; no complete recipe assertion follows.
+- assessment_id: assessment-PC20
+  area: identity
+  topic: data/ingredients/mapped/togo_m2491_mrssi_base.yaml#components[8]
+  outcome: supported
+  summary: TOGO M2491 Sol.1 item8 and paragraph3 explicitly list peptone5g. Paragraph1
+    names Becton Dickinson only for original solid MRS maintenance medium; paragraph2
+    introduces simplified MRSsi as a separate test formulation. Correct component8
+    of the authentic new MRSsi base proposal to the separately accepted generic Peptone
+    target. Preserve new_owner/null-before origin, literal transcription and all existing
+    quantity/completeness holds. Do not fabricate an edit beforeimage or infer Bacto
+    from the separate commercial MRS maintenance medium.
+  target_ids:
+  - PC20
+  evidence_ids:
+  - owner-PC20
+  - rules
+  - ledger
+  - raw-check
+  - PC20-source-1
+  details: Selected proposal has no component concentration fields; retain literal5g
+    source input in evidence, no normalization/final-volume calculation. Accepted
+    generic Peptone target; Maintain W02 actual new-owner origin/nullbefore and independently
+    review exact final payload TOGO M2491 Sol.1 and paragraph3 explicitly list peptone;
+    Becton Dickinson paragraph1 names separate commercial maintenance MRS. Preserve
+    genuine new_owner/null-before and no UNMAPPED fallback just because generic owner
+    awaits reviewed application.
+findings:
+- finding_id: PEPTONE-1176-COUPLING
+  issue_key: CultureBotAI.MediaIngredientMech.issue-1176.peptone-consumer-coupling
+  category: identity
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Known generic-peptone retirement still requires source-specific consumer
+    corrections
+  description: 'Eight claims support generic peptone, ten require withdrawal of unsupported
+    resolving identity, and the existing Marine product proposal already withdraws
+    its link. None may silently inherit Bacto identity through MICRO:0000178. This
+    is the existing #1176 dependency, not a new issue or an assertion that all current
+    components denote Bacto.'
+  target_ids:
+  - PC01
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  evidence_ids:
+  - ledger
+  - issue1176
+  - rules
+  - probe
+  - routes
+  - composition
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Marine_Broth_2216.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Marine_agar_2216.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-cellobiose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-fructose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-maltose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-pectin.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYEG.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG-002_Tween_80.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYGS.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG_Rumen_Fluid.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Yeast_Extract.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Yeast_Extract_Peptone.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/togo_m2491_mrssi_base.yaml
+    role: proposed_owner
+  ownership_note: W05 authors authentic dependent proposals; compose existing worker
+    origins and preserve W02 true new-owner MRSsi lineage. Root controls final integration.
+  external_issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666
+  rule_id: MAPPING_SEMANTICS sections 3 and 6
+- finding_id: PEPTONE-SOURCE-001
+  issue_key: MediaIngredientMech.Fastidious_Anaerobe_Broth_With_Meat_Granules.FAB-source-applicability
+  category: evidence
+  severity: major
+  status: open
+  certainty: confirmed
+  title: Fastidious source context does not support inherited LabM/Neogen attribution
+  description: The exact raw observation belongs to Fastidiosipila sanguinis. The
+    inspected original Falsen 2005 article text identifies Oxoid Fastidious Anaerobe
+    Broth; the active component evidence names LabM/Neogen. No inspected evidence
+    equates these historical products. The Neogen 2019 formula and the paper's separate
+    PYG assay are comparators, not applicable proof of the retained FAB peptone. Root
+    was notified before any fix; root deduplicates and files the finding.
+  target_ids:
+  - PC01
+  field_paths:
+  - /component_assertion/evidence/0/notes
+  - /components/1
+  evidence_ids:
+  - fab-primary
+  - owner-PC01
+  - ledger
+  - rules
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    role: maintained_record
+  ownership_note: Bounded future source-attribution correction only; preserve inherited
+    provenance and compose with existing meat-granule withdrawal. No recipe reconstruction
+    or owner approval.
+  rule_id: MAPPING_SEMANTICS sections 3 and 6; record review evidence applicability
+actions:
+- action_id: generic-coupling
+  description: Prepare the eight exact generic component corrections through the authentic
+    existing/new child routes; apply only with separately accepted generic Peptone
+    owner.
+  finding_ids:
+  - PEPTONE-1176-COUPLING
+  target_ids:
+  - PC03
+  - PC05
+  - PC14
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Glucose_Peptone-yeast_Extract.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Marine_agar_2216.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYGS.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone-yeast_Extract-glucose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Beef_Extract_Yeast_Extract.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Peptone_Yeast_Extract.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Yeast_Extract_Peptone.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/togo_m2491_mrssi_base.yaml
+    role: proposed_owner
+  acceptance_checks:
+  - Every claim remains bound to its exact source label, formula or primary abstract.
+  - No supplier or catalogue is required merely to represent generic peptone.
+  - Final exact child payloads receive independent review; preserve histories, quantities
+    and holds.
+  - MRSsi retains authentic new_owner/null-before; generic owner acceptance is an
+    application prerequisite, not a reason for UNMAPPED fallback.
+- action_id: minimal-withdrawals
+  description: For the ten unresolved whole-claim identities, propose minimal component_id
+    withdrawal and UNMAPPED reference scope with honest provenance of the retained
+    interpreted name.
+  finding_ids:
+  - PEPTONE-1176-COUPLING
+  target_ids:
+  - PC01
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC15
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-cellobiose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-fructose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-maltose.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PY-pectin.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYEG.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG-002_Tween_80.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG.yaml
+    role: maintained_record
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/PYG_Rumen_Fluid.yaml
+    role: maintained_record
+  acceptance_checks:
+  - Retained peptone spelling is historical research interpretation where primary
+    labels say only PY/PYG, not a new observed source constituent.
+  - Preserve unknown quantities and component-assertion methods/completeness; append
+    narrow evidence/history without erasing prior assertions.
+  - Compose PC01 with meat-granule repair and PC08/PC15 with literal rumen-fluid UNMAPPED
+    repair.
+  - Do not transfer DSMZ/ATCC comparators or partial occurrence support to whole legacy
+    owners.
+- action_id: marine-withdrawal
+  description: Preserve W05/TARGET-012 existing product withdrawal while composing
+    W03 alias lineage.
+  finding_ids:
+  - PEPTONE-1176-COUPLING
+  target_ids:
+  - PC04
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Marine_Broth_2216.yaml
+    role: maintained_record
+  acceptance_checks:
+  - Keep literal Peptone UNMAPPED and nominal 5 g/L at standard reconstitution in
+    the existing product correction.
+  - Do not substitute the ATCC agar-minus-agar scratch formulation for commercial
+    broth.
+  - Separate final reviewer accepts the complete composed payload; this review does
+    not approve parent-authored W03 alias proposal.
+- action_id: fab-source-attribution
+  description: After root issue deduplication, supersede the active LabM/Neogen applicability
+    assertion while retaining its exact historical provenance; document the original
+    Oxoid wording and unresolved formulation.
+  finding_ids:
+  - PEPTONE-SOURCE-001
+  target_ids:
+  - PC01
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+    role: maintained_record
+  acceptance_checks:
+  - Exact Falsen source and raw occurrence binding retained with mirror/read limitations.
+  - No guessed Oxoid catalogue, historical formula, peptone identity or amount is
+    introduced.
+  - No FAB constituent is inferred from the paper's separate Anaerobe Systems PYG
+    experiment.
+  - Preserve cooked-meat withdrawal and all unrelated components/holds; independent
+    exact successor review.
+- action_id: gyps-retain
+  description: Retain the intended source-specific Bacto peptone reference for GYPS;
+    do not include it in generic migration.
+  finding_ids: []
+  target_ids:
+  - PC02
+  owner_paths:
+  - repository: CultureBotAI/MediaIngredientMech
+    path: data/ingredients/mapped/GYPS.yaml
+    role: maintained_record
+  acceptance_checks:
+  - Alain 2002 p1622 explicit Bacto-peptone (Difco) remains the narrow source proof.
+  - No quantity expansion is made; final Bacto owner/alias/ontology/role/export approval
+    remains separate.
+boundary_decisions:
+- action: split
+  target_ids:
+  - PC01
+  - PC02
+  - PC03
+  - PC04
+  - PC05
+  - PC06
+  - PC07
+  - PC08
+  - PC09
+  - PC10
+  - PC11
+  - PC12
+  - PC13
+  - PC14
+  - PC15
+  - PC16
+  - PC17
+  - PC18
+  - PC19
+  - PC20
+  rationale: Partition component-claim decisions by actual evidence strength and migration
+    need. Consumer owners are not asserted synonymous or mergeable.
+  evidence_ids:
+  - ledger
+  - rules
+  proposed_groups:
+  - label: Eight conditional generic component migrations
+    target_ids:
+    - PC03
+    - PC05
+    - PC14
+    - PC16
+    - PC17
+    - PC18
+    - PC19
+    - PC20
+  - label: Ten unresolved component identities with minimal withdrawals
+    target_ids:
+    - PC01
+    - PC06
+    - PC07
+    - PC08
+    - PC09
+    - PC10
+    - PC11
+    - PC12
+    - PC13
+    - PC15
+  - label: One source-specific GYPS Bacto retention
+    target_ids:
+    - PC02
+  - label: One existing Marine product withdrawal
+    target_ids:
+    - PC04
+limitations:
+- Complete coverage means every exact component claim received a bounded source disposition;
+  it does not mean every original publication or all114 PYG recipes were retrieved
+  or read.
+- Five generic labels are grounded in literal original dataset fields; underlying
+  Bergey chapters/full experimental recipes were not inspected and are not required
+  for label-enumeration scope.
+- PYGS support is limited to three inspected primary article abstracts; full papers,
+  exact digest product and unknown quantities remain unasserted.
+- Falsen and Moore original papers were read through captured mirror/web text in specified
+  passages; no publisher PDFs were obtained. Moore direct PDF fetch was403HTML; failed
+  extraction and missing optional HTML parser dependency are preserved in primary-read-attempts-v1.json.
+- Positive E.siraeum peptone support applies only to one PY-cellobiose occurrence.
+  The aggregate owner still includes a separately unresolved C.polysaccharolyticum
+  occurrence.
+- Current DSMZ104c and ATCC1223 recipes are comparators with distinct digest products,
+  not source-global proof for historical PY labels.
+- Original Fab catalogue/formula, several PY/PYG methods and prior manual chapters
+  remain unavailable or unread. Paywall/challenge/timeout evidence is retained honestly;
+  no paid provider was used.
+- This review makes no claim that peptone is absent from the ten held recipes; it
+  withholds the unsupported resolving identity at the present aggregate scope.
+- No final consumer candidate was created or accepted. W05 causal generic-peptone
+  source case is not an observation of dependent child recipes; authentic origins,
+  final exact bytes and independent successor review remain required.
+- Generic target acceptance is an application dependency. Missing supplier data is
+  not a reason to withdraw a directly supported generic part.
+- W03 Marine alias proposal is author-related and not approved here. The W05 product
+  withdrawal and composed TARGET-012 remain separate exact proposals; commercial broth
+  and ATCC scratch agar-minus-agar formulas are not conflated.
+- All whole-owner, role, form, ontology-target and supported/export/release holds
+  remain. No current Bacto aliases or registry winner are approved.
+- 'Native saver is intentionally not called: user restricts all outputs to the new
+  private review subtree. Native YAML/Markdown validation, currentness and virtual
+  canonical bundle parsing are performed without writing reviews/structured.'
+- 'Review source state is working_tree: private capture hashes are reviewer attestation,
+  while exact source proposal Git-blob readbacks are separately recorded. No claim
+  that private review files are committed.'
+- All scientific flags apply only to bounded claim dispositions; unresolved facts
+  and unavailable sources remain explicit. No payload edits or proposal approval occurs.
+notes:
+- 'Primary scopes: /root/peptone_ambiguous_sources ten holds; /root/peptone_other_sources
+  eight generic plus GYPS and Marine; /root/peptone_skeptic all twenty. Parent /root
+  assembles final handoff and does not independently approve its own Marine proposal.'
+- PEPTONE-SOURCE-001 retains original issue key MediaIngredientMech:Fastidious_Anaerobe_Broth_With_Meat_Granules:FAB-source-applicability
+  in ambiguous/finding-native-key-binding.json; the native Token-compatible dot spelling
+  identifies the same finding, not a duplicate issue.
+- Original captures retain original timestamps; independent read timestamps are not
+  substituted as source retrieval times.
+- No new provider calls by skeptical reviewer; primary agents used free read-only
+  retrieval only.
+links:
+- https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666
+tags:
+- read-only
+- component-source-review
+- peptone
+- no-owner-approval

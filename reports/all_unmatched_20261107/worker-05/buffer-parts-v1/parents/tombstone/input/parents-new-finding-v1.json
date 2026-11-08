@@ -1,0 +1,17 @@
+{
+  "finding_id": "W05-CONSOLIDATED-PARENTS-REVIEW-001",
+  "reviewer": "/root/final_skeptical",
+  "recorded_at": "2026-11-08T09:40:19.343337+00:00",
+  "status": "reported_before_fix",
+  "severity": "minor",
+  "category": "new_evidence_authorship_wording",
+  "input": {
+    "path": ".temp/w05-buffer-parts-v1/parents/tombstone/proposed/Bacto_Soytone.yaml",
+    "sha256": "acd8c572a047d9da64cc6805ec79449da11e2fafb612827bd7bb4b1f37add972"
+  },
+  "field_pointer": "/ontology_mapping/evidence/2/notes",
+  "observed": "This supports withholding the active representative redirect, not a new ontology identity or a revision of historical human evidence.",
+  "basis": "The preserved historical entries are DATABASE_MATCH from CultureMech pipeline and CURATOR_JUDGMENT from fix_obsolete_chebi_8150_mapping; history identifies automated/process curators. Their enums and llm_assisted:false values do not authenticate actual human supply. The new sentence unnecessarily characterizes the old entries as human.",
+  "bounded_fix": "Preserve the complete initial candidate and all historical evidence objects/enums. In a successor change only the new wording historical human evidence to historical evidence (or historical evidence types). Retain the scientific empty-representative decision. Record the exact predecessor and rerun exact native/schema checks as appropriate.",
+  "scope_limit": "This is a claim-specific provenance wording correction, not authorization to retype old evidence or alter identity, aliases, counts, status or source membership."
+}

@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "native_module": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/validation/component_partonomy.py",
+  "native_module_sha256": "d2ec0640fb3d9bbb71d69cd285397a8b6a95876a199957c5b164908fec0f8696",
+  "baseline_records": 2956,
+  "scope": "Private in-memory exact-byte counterfactuals only, not corpus application or scientific approval",
+  "cases": [
+    {
+      "name": "baseline",
+      "errors": 0,
+      "violations": []
+    },
+    {
+      "name": "borax-owner-alone",
+      "errors": 3,
+      "violations": [
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:uw_concentrated_base",
+          "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+        },
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_mo",
+          "message": "component 10 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+        },
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:uw_concentrated_base_no_sulfur",
+          "message": "component 11 (sodium tetraborate decahydrate): no active MIM record has identifier CHEBI:131366"
+        }
+      ]
+    },
+    {
+      "name": "generic-peptone-owner-alone",
+      "errors": 0,
+      "violations": []
+    },
+    {
+      "name": "clarified-rumen-owner-alone",
+      "errors": 3,
+      "violations": [
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid",
+          "message": "component 3 (clarified rumen fluid): no active MIM record has identifier MICRO:0000520"
+        },
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:py_glucose_rumen_fluid",
+          "message": "component 4 (clarified rumen fluid): no active MIM record has identifier MICRO:0000520"
+        },
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:pyg_rumen_fluid",
+          "message": "component 4 (clarified rumen fluid): no active MIM record has identifier MICRO:0000520"
+        }
+      ]
+    },
+    {
+      "name": "cooked-meat-owner-alone",
+      "errors": 2,
+      "violations": [
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules",
+          "message": "component 1 (meat (cooked)): no active MIM record has identifier FOODON:03305103"
+        },
+        {
+          "code": "UNRESOLVED_MIM_REFERENCE",
+          "record_id": "kgmicrobe.ingredient:modified_cooked_meat_medium",
+          "message": "component 1 (meat (cooked)): no active MIM record has identifier FOODON:03305103"
+        }
+      ]
+    },
+    {
+      "name": "borax-with-exact-three-coupled-payloads",
+      "errors": 0,
+      "violations": []
+    }
+  ],
+  "semantic_limit": "Peptone owner-only transition is structurally green because Bacto Peptone remains at MICRO:0000178. This does not prove the19 inherited generic references are source-valid Bacto references. Exact source-specific dispositions remain mandatory."
+}

@@ -1,0 +1,1 @@
+The first private native pair remains preserved. The v2 pair corrects one evidence-summary phrase: 32 referenced captures were rehashed; selected primary passages and raw-source claims were inspected. It does not imply a new complete source-science review of every prior peer input. Findings/dispositions and target bytes are unchanged. Only v2 is the final handoff.

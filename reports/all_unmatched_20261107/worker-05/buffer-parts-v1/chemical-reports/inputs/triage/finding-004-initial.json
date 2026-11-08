@@ -1,0 +1,43 @@
+{
+  "finding_id": "W05-FINAL-SKEPTIC-CHEM-004",
+  "reviewer": "/root/materials_research",
+  "at": "2026-11-08T08:12:55.325528+00:00",
+  "status": "reported_before_fix",
+  "kind": "review_report_prose_count",
+  "source_path": ".temp/w05-final-correction-v1/review-chemicals/main-review-v1.json",
+  "source_sha256": "9c46f53b9d4cc8eae9439e381c4b4f94a005c0852ace18331e4d6e1afa13a2a6",
+  "field_pointer": "/payload_reviews/53/assessment",
+  "observed": "DSMZ78's nominal 95% ethanol handle preserves eleven routes and receiving-stock facts. Neither aqueous95%v/v ontology identity nor a different product is established.",
+  "reproduction": {
+    "matrix_path": ".temp/w05-final-correction-v1/chemicals/conditional-family-matrix-v1.json",
+    "matrix_sha256": "940b81f35eaeff5beb8cba71feac6457f034345e75652a7743c6d0ed2b1d1572",
+    "proposal_id": "CHEM-C1193-ethanol95-dsmz_78",
+    "applicable_occurrence_ids": [
+      "CM_OCC:88b1cfd04c18f59882eef3bb5c740b2774e459b6a1dfc1133a0a982910cb3c4e",
+      "CM_OCC:27797b7025f6ecd77ff61d294222210bb09902290a63bdf93af8778263b56e45",
+      "CM_OCC:0bf71d66f27536c8cbb73f5f5171203bebfb82e2ecb73b7aec1ecc42cde8cec5",
+      "CM_OCC:708354a4a10f016219ce60ada195a05bb4a10904046645e4f62862c09ce1d1b1",
+      "CM_OCC:0af34e50ce4e6ebb5caa43375ef1542ff4f0dbbfd15066e0741a3a5ade553a3b",
+      "CM_OCC:37d58d0fe69aa1d2b4aca83fd756362f70f6ff189b0e1ba536275e6195bf26f1",
+      "CM_OCC:b5c0212ad1f97ffa2d5553c2c09f2f00df6970fb8018962bef8232c173c03dfd",
+      "CM_OCC:61eeeeb0f6e492ef435b7fece66fe1c26d52172bdead86ed4aea903130ec165e",
+      "CM_OCC:1c4a3d13d1a93d21cd7489c33461c28db24b2dd5fede10beba0f4241d43681bc",
+      "CM_OCC:cfcefe50583ab7a9ca4fafab956f084e6c82918d8a7b17c89510f3b05d701a53",
+      "CM_OCC:1dd32668ab4fae4e64fca3f88dfb81044183011550ce2f95d853bb412ef271c1",
+      "CM_OCC:a041ac90e1eefb190bbd37dfeaba979fb124a3bdff2e52f2c7b3b70961f93078"
+    ],
+    "count": 12,
+    "case_scope": [
+      {
+        "case_id": "CM_NAME:e56f64c93c94d3ae719a19c4aed635437b7172cd38eb6e4099740780e0c8e2da",
+        "assessment": "The eleven DSMZ-derived ethanol occurrences share the published vitamin-K preparation lineage but do not establish percentage basis or product balance. Their route grouping is supported; it supplies no evidence that their ethanol differs from ATCC's nominal 95% reagent."
+      },
+      {
+        "case_id": "CM_NAME:fddd9315d7231b1b5a11f98a7424dbf1c27e78964249cd2240ed46d59eb3baac",
+        "assessment": "DSMZ212a explicitly uses 20 ml of 95% ethanol in its vitamin-K1 stock. It supports the preparation context but does not resolve the same percent-basis/product questions as the other nominal ethanol sources; neither a neat-ethanol equivalence nor a new disjoint product is inferred."
+      }
+    ]
+  },
+  "bounded_fix": "In a successor review, replace eleven with twelve applicable source occurrences: eleven flat occurrences plus the DSMZ 212a occurrence. Preserve original v1 and all exact source/payload bindings. This count correction establishes no product equivalence or difference and releases no conditional family hold.",
+  "reported_to_root_before_fix": true
+}

@@ -1,0 +1,64 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "completed_at": "2026-11-08T09:55:56.399103+00:00",
+  "finding_id": "W05-CONSOLIDATED-POLYPEPTONE-METADATA-001",
+  "disposition": "RESOLVED_EXACT_V3_METADATA_ONLY",
+  "finding": {
+    "path": ".temp/w05-buffer-parts-v1/polypeptone-final/status-finding-before-fix.json",
+    "sha256": "ebc9cacc5b494c63e7ff75dcc49b5ab06ed9e006ba6d27e161b42f58a996e1e0"
+  },
+  "inputs": [
+    {
+      "path": ".temp/w05-buffer-parts-v1/polypeptone-final/proposals-v2.json",
+      "sha256": "540e6ca21d307843a2e1e3ae10c6463370f3c0b645d37bb8a97a54cfd1cd04e0"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/polypeptone-final/proposals-v3.json",
+      "sha256": "186a9728cdb79d239fd6e5db7231cc3784d57ec730f31449869a80939af0680d"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/polypeptone-final/decisions-v2.json",
+      "sha256": "7105af47b488559bf12161053fc5240f05103299b488eba6876aab4e4e28fd80"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/polypeptone-final/decisions-v3.json",
+      "sha256": "92c505727828c1117a41b53c7cc8a18a121c6952332fef33cbe7d5fe79035054"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/polypeptone-final/evidence-v2.json",
+      "sha256": "495143700c6e594ded4b62e8af9151c5211d3c5cd6f3cd5024f32708a6e1e3c8"
+    },
+    {
+      "path": ".temp/w05-buffer-parts-v1/polypeptone-final/evidence-v3.json",
+      "sha256": "eeddc14c68cc8affb58e149a5d4027de53ed32545a79d389f663e39ce4296896"
+    }
+  ],
+  "changed_proposal_fields": [
+    "evidence_ids",
+    "final_grounding_status",
+    "metadata_correction",
+    "predicate_consequence",
+    "previous_final_grounding_status"
+  ],
+  "selected_proposal_object_sha256": "7a14bb31c5de66b869104127bb52d3874a910287b73db9d853373a520cd37925",
+  "after_capture": {
+    "root": "artifact",
+    "path": "buffer-parts-v1/polypeptone-final/proposed-v2/Polypeptone.yaml",
+    "sha256": "1eff09e546e9dcf0c0ae6c10e7da74488301f1f50d4270b2310c48b5122ea89d"
+  },
+  "case_reviews": [
+    {
+      "case_id": "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+      "selected_decision_object_sha256": "8465032966d52fc5a13bd4c31fc5b5f69a9d452b6fc5a4c8d09658f70a7610c9"
+    },
+    {
+      "case_id": "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c",
+      "selected_decision_object_sha256": "c93b199495211691e6fcd89392683a4a080726e19db691fa44293809fb275cff"
+    }
+  ],
+  "assessment": "The stale self-only/open status is preserved as previous_final_grounding_status. Current status and native predicate consequence now describe the already independently reviewed local named Polypeptone identity with NARROW_MATCH mesh:D010461. Both complete source decisions only add this status and its exact evidence link. Old evidence entries and full YAML are identical. Source associations, quantities, coupled-owner continuity, role and export holds remain; no other worker review is closed. The new consistency entry is a report assertion supported by the retained before-fix finding, not a fresh primary acquisition.",
+  "limitations": [
+    "No new payload change or extension of the previously reviewed scientific scope.",
+    "No whole-owner application or coordinator acceptance."
+  ]
+}

@@ -1,0 +1,136 @@
+--- reports/all_unmatched_20261107/worker-05/final-correction-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
++++ buffer-parts-v1/dependencies/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml
+@@ -88,6 +88,30 @@
+   new_status: MAPPED
+   llm_assisted: true
+   llm_model: gpt-6
++- timestamp: '2026-11-08T09:30:25.359663+00:00'
++  curator: Codex worker05 /root/buffer_tris
++  action: WITHDRAW_UNSUPPORTED_COMPONENT_ID
++  changes: The original Falsen 2005 methods/results text associates Fastidious Anaerobe
++    Broth with Oxoid. Its separately named Anaerobe Systems peptone/yeast/glucose
++    fermentation broth is a different preparation and supplies no FAB recipe. The
++    Neogen NCM0199 sheet is a LabM/Neogen product comparator, unselected for this
++    source. Original Oxoid catalogue/formula and the historical peptone material remain
++    unresolved. The existing meat-granule withdrawal is retained; starch/glucose and
++    other inherited component claims are unchanged and remain unverified. No claim
++    that peptone is absent is made. Withdraw the unsupported peptone component_id
++    and set reference_scope UNMAPPED; retain its existing component_name as historical
++    interpretation, not a newly observed expanded source label. The original assertion
++    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
++    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
++    unrelated components, all historical evidence and source/role/export holds are
++    preserved. Historical all-components-identified statements describe prior states,
++    not a new approval. No new MappingEvidence is added; historical human/component
++    evidence enums are not rewritten. Filed before this private correction at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666
++    and https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719468092.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
+ notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:fastidious_anaerobe_broth_with_meat_granules);
+   no CAS-RN or CHEBI/NCIT match. Curator review needed. Follow-on source review: The
+   authentic imported label names meatgranules in FAB, not a whole Oxoid cooked-meat
+@@ -100,15 +124,29 @@
+   retrospectively select the unspecified original formula. Legacy first-part assertion
+   retained here as provenance, not active grounding: {"component_name": "meat (cooked)",
+   "component_id": "FOODON:03305103", "reference_scope": "MIM_CATALOG", "source": "microbedecoder
+-  research decomposition (#213/#308)"}.'
++  research decomposition (#213/#308)"}. Successor dependency assessment: The original
++  Falsen 2005 methods/results text associates Fastidious Anaerobe Broth with Oxoid.
++  Its separately named Anaerobe Systems peptone/yeast/glucose fermentation broth is
++  a different preparation and supplies no FAB recipe. The Neogen NCM0199 sheet is
++  a LabM/Neogen product comparator, unselected for this source. Original Oxoid catalogue/formula
++  and the historical peptone material remain unresolved. The existing meat-granule
++  withdrawal is retained; starch/glucose and other inherited component claims are
++  unchanged and remain unverified. No claim that peptone is absent is made. Withdraw
++  the unsupported peptone component_id and set reference_scope UNMAPPED; retain its
++  existing component_name as historical interpretation, not a newly observed expanded
++  source label. The original assertion method and UNKNOWN/PARTIAL completeness remain
++  unchanged. This is a bounded part-reference correction only. Whole-owner identity,
++  raw labels, occurrence counts, quantities, unrelated components, all historical
++  evidence and source/role/export holds are preserved. Historical all-components-identified
++  statements describe prior states, not a new approval. No new MappingEvidence is
++  added; historical human/component evidence enums are not rewritten.'
+ components:
+ - component_name: Meat granules (source preparation unspecified)
+   reference_scope: UNMAPPED
+   source: Correction1193 dependent-reference review; literal ingredient material retained
+     without unsupported FoodOn or product identity.
+ - component_name: peptone
+-  component_id: MICRO:0000178
+-  reference_scope: MIM_CATALOG
++  reference_scope: UNMAPPED
+   source: microbedecoder research decomposition (#213/#308)
+ - component_name: starch
+   component_id: CHEBI:28017
+@@ -145,6 +183,44 @@
+     notes: Manufacturer7110 comparator establishes that namedmeatgranules can contain
+       beefheart,animaldigest,dextrose andNaCl. It is not the selected formula or manufacturer
+       of this imported owner.
++  - evidence_type: SOURCE_LABEL
++    source: microbedecoder
++    source_record: CSV row 6029 (header included), Bergey_Substrates_for_end_products
++      = 'Fastidious Anaerobe Broth with meat granules', Fastidiosipila sanguinis
++    notes: Raw source name and taxon scope only; no claim this abbreviation or whole-medium
++      label independently proves the interpreted peptone constituent. Exact archive/member
++      bytes and complete source rows are preserved in buffer-parts-v1/dependencies/source-observations.json.
++      Independently re-extracted by /root/buffer_tris with LLM assistance; original
++      source scientists and skeptical review remain attributed in the preserved W03
++      packet.
++  - evidence_type: PUBLICATION
++    source: https://doi.org/10.1099/ijs.0.63327-0
++    source_record: Falsen et al. 2005, pp. 853–856, especially p. 854 methods/results;
++      archived full-paper mirror text
++    notes: The inspected primary text names Fastidious Anaerobe Broth (Oxoid). The
++      separate Anaerobe Systems PYG fermentation broth is not a FAB formulation. No
++      raw publisher PDF or historical Oxoid catalogue was recovered. Earlier LabM/Neogen
++      attribution and comparator claims remain historical provenance and are explicitly
++      unselected here. This publication supports attribution correction, not the unknown
++      peptone formula or unrelated inherited components.
++  - evidence_type: CURATED_DATASET
++    source: buffer-parts-v1/dependencies/source-assessment.json
++    source_record: PC01 data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]
++    notes: The original Falsen 2005 methods/results text associates Fastidious Anaerobe
++      Broth with Oxoid. Its separately named Anaerobe Systems peptone/yeast/glucose
++      fermentation broth is a different preparation and supplies no FAB recipe. The
++      Neogen NCM0199 sheet is a LabM/Neogen product comparator, unselected for this
++      source. Original Oxoid catalogue/formula and the historical peptone material
++      remain unresolved. The existing meat-granule withdrawal is retained; starch/glucose
++      and other inherited component claims are unchanged and remain unverified. No
++      claim that peptone is absent is made. Withdraw the unsupported peptone component_id
++      and set reference_scope UNMAPPED; retain its existing component_name as historical
++      interpretation, not a newly observed expanded source label. The original assertion
++      method and UNKNOWN/PARTIAL completeness remain unchanged. Independent prior
++      source work by /root/peptone_ambiguous_sources and skeptical review by /root/peptone_skeptic
++      are reused only at their exact unchanged source-claim scope; neither approves
++      these new payload bytes. Current candidate author /root/buffer_tris; independent
++      final byte review remains separate.
+   notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
+     variant hierarchy, or complete culturing recipe. Follow-on scope: The authentic
+     imported label names meatgranules in FAB, not a whole Oxoid cooked-meat medium.
+@@ -154,7 +230,23 @@
+     owner. Retain named meatgranules without guessing tissue, cookingstate, productcatalog
+     or FOODON skeletal-food identity. The other inherited peptone,starch,glucose parts
+     are not newly approved; the current Neogen comparator lacks starch/glucose and
+-    cannot retrospectively select the unspecified original formula.'
++    cannot retrospectively select the unspecified original formula. Successor dependency
++    assessment: The original Falsen 2005 methods/results text associates Fastidious
++    Anaerobe Broth with Oxoid. Its separately named Anaerobe Systems peptone/yeast/glucose
++    fermentation broth is a different preparation and supplies no FAB recipe. The
++    Neogen NCM0199 sheet is a LabM/Neogen product comparator, unselected for this
++    source. Original Oxoid catalogue/formula and the historical peptone material remain
++    unresolved. The existing meat-granule withdrawal is retained; starch/glucose and
++    other inherited component claims are unchanged and remain unverified. No claim
++    that peptone is absent is made. Withdraw the unsupported peptone component_id
++    and set reference_scope UNMAPPED; retain its existing component_name as historical
++    interpretation, not a newly observed expanded source label. The original assertion
++    method and UNKNOWN/PARTIAL completeness remain unchanged. This is a bounded part-reference
++    correction only. Whole-owner identity, raw labels, occurrence counts, quantities,
++    unrelated components, all historical evidence and source/role/export holds are
++    preserved. Historical all-components-identified statements describe prior states,
++    not a new approval. No new MappingEvidence is added; historical human/component
++    evidence enums are not rewritten.'
+ ingredient_type: UNDEFINED_MIXTURE
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules

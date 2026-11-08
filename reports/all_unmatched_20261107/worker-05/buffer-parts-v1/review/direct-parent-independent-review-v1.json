@@ -1,0 +1,86 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "at": "2026-11-08T09:48:04.229331+00:00",
+  "before": {
+    "path": ".temp/w05-buffer-parts-v1/parents/proposed-v2/Peptone.yaml",
+    "sha256": "d1668cfd863e02bfb1b9b82a86db213c1cfd850ab3b216abdb81cba4761e1e91"
+  },
+  "after": {
+    "path": ".temp/w05-buffer-parts-v1/parents-direct-v1/proposed/Peptone.yaml",
+    "sha256": "c083794668a362203de6430eaa2609c34cd8ef78574a1230aa25b4a64fb55fd7"
+  },
+  "protected_fields": {
+    "synonyms": true,
+    "occurrence_statistics": true,
+    "preferred_term": true,
+    "mapping_status": true,
+    "ingredient_type": true,
+    "nutritional_roles": true
+  },
+  "old_history_and_evidence_exact_prefix": true,
+  "new_mapping_evidence": [
+    {
+      "evidence_type": "LLM_SUGGESTION",
+      "source": "https://id.nlm.nih.gov/mesh/D010461",
+      "notes": "The complete active NLM Peptones descriptor, its explicit Peptone entry term and preferred concept M0016245 support the ordinary generic material identity. Under native section3, this supported unspecified sense takes precedence over a local fallback. The conventional partial-hydrolysis/solubility description does not create a new lot-specific assay gate when no different actual source preparation is established. This is not supplier-product or source-assay approval."
+    },
+    {
+      "evidence_type": "LLM_SUGGESTION",
+      "source": "https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf",
+      "notes": "Printed page7 independently identifies generic peptones as water-soluble partial protein-hydrolysis products while explaining variable feedstocks and product profiles. Mention of possible acid, base or enzyme processing is not positive evidence that the unqualified assigned owner denotes a different preparation from the ordinary MeSH Peptones sense. Earlier process/precipitation-gate inference is superseded; no numeric composition or role is imported."
+    },
+    {
+      "evidence_type": "LLM_SUGGESTION",
+      "source": "https://foodon.org/design/foodon-relations/",
+      "notes": "The official member_of guidance connects products to external product-type categories rather than asserting subclass identity in agency classifications. The verified FoodOn03315306 existential member_of axiom is real, but does not by itself impose food-use, has-role, regulatory approval or lot eligibility on a MIM material broader mapping. Earlier stronger negative applicability wording is retained historically and superseded here. Selection of direct generic mesh:D010461 follows the closer supported material term, not an invented FoodOn gate."
+    }
+  ],
+  "complete_native_rows": [
+    {
+      "subject_id": "MIM:Peptone",
+      "subject_label": "Peptone",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "mesh:D010461",
+      "object_label": "Peptones",
+      "object_source": "registry:mesh",
+      "mapping_justification": "semapv:LexicalMatching",
+      "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0017860|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0016245|MIM:https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl|MIM:https://id.nlm.nih.gov/mesh/D010461|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://foodon.org/design/foodon-relations/|MIM:curator=Codex /root/buffer_hepes; W05 direct generic Peptone reassessment",
+      "mapping_date": "2026-11-08",
+      "confidence": "0.99",
+      "comment": "",
+      "other": "",
+      "validation_method": ""
+    }
+  ],
+  "builder": {
+    "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/claw/scripts/build_mim_ingredient_sssom.py",
+    "sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc"
+  },
+  "maintained_search": {
+    "count": 2956,
+    "all_paths_including_ignored": true,
+    "direct_identifier_hits": []
+  },
+  "decision_checks": [
+    {
+      "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+      "object_sha256": "2a35ce2dfc33d0d2a56be42a9a1d9e43c5285fc224c72666ca7bc657cea2d9a3",
+      "changed_fields": [
+        "parents_direct_reassessment",
+        "evidence_ids",
+        "reasoning"
+      ]
+    },
+    {
+      "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+      "object_sha256": "636700e21ad22b3987e836d1ea7ed4b00098290282d1db533aa1a05502101cb5",
+      "changed_fields": []
+    }
+  ],
+  "scientific_interpretation": {
+    "path": ".temp/w05-buffer-parts-v1/review/ontology-interpretation-reassessment-v1.json",
+    "sha256": "292ee8fd6a7e1b175d51e76ad0e01328a143f9cd9549c58d353e6e33c084bd8d"
+  },
+  "assessment": "Complete final Peptone payload read. The direct ordinary generic material sense is supported by NLM definition/entry term and manufacturer material description; source labels have no independently established different specified preparation. Current notes clearly supersede prior assay-gate/FoodOn inference while retaining the actual earlier history and evidence. No process, manufacturer, nutrient role or source-occurrence approval is added. Exact one-row native identity agrees with selected semantics; generic references require separate final byte review.",
+  "status": "EXACT_PAYLOAD_SCIENCE_PASS_PENDING_FINAL_MANIFEST_AND_COMPOSITION"
+}

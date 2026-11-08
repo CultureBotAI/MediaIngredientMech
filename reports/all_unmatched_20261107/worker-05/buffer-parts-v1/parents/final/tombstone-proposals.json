@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "proposals": [
+    {
+      "proposal_id": "W05-PARENTS-BACTO-SOYTONE-CONTINUITY",
+      "case_ids": [
+        "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25"
+      ],
+      "description": "Mark the historical Bacto Soytone merge representative explicitly unresolved with an empty representative string. The old FOODON:03315720 identifier is shared by active owners and cannot establish a unique current generic-Soy representative after the source-qualified Soy identity correction. A direct redirect to MICRO:0000181 would assert unsupported equality of a named Bacto product and generic soy digest. Native preferred-term ownership treats an explicit unresolved representative as retaining the rejected tombstone name; removing the field would instead fall back to the old shared identifier. Preserve the original identifier, ontology mapping and historical evidence, rejected status, all source names, zero statistics and complete merge history as historical provenance. No active Bacto owner is minted, no prior occurrence is reassigned, no branded/generic equality is inferred, and no role/source/export admission follows. Root must reconcile a scientifically supported branded representative and historical source membership before any later identity redirect.",
+      "owner_path": "data/ingredients/mapped/Bacto_Soytone.yaml",
+      "kind": "edit_existing_owner",
+      "before_sha256": "b9c7e1b675da46d8733749a16b9c56f07618bb63ab5ecd71bdef1bf1cc2d2535",
+      "before_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/tombstone/before/Bacto_Soytone.yaml",
+        "sha256": "b9c7e1b675da46d8733749a16b9c56f07618bb63ab5ecd71bdef1bf1cc2d2535"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/tombstone/proposed/Bacto_Soytone.yaml",
+        "sha256": "acd8c572a047d9da64cc6805ec79449da11e2fafb612827bd7bb4b1f37add972"
+      },
+      "evidence_ids": [
+        "W05-PARENTS-TOMBSTONE-BEFORE",
+        "W05-PARENTS-TOMBSTONE-INVENTORY",
+        "W05-PARENTS-TOMBSTONE-POLICY",
+        "W05-PARENTS-TOMBSTONE-AUDIT",
+        "W05-PARENTS-THERMO",
+        "W05-PARENTS-COMMENT6719869465"
+      ],
+      "primary_author": "/root/buffer_hepes",
+      "source_trigger_proposal_id": "W05-FINAL-MAT-032",
+      "source_trigger_case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+      "dependency_kind": "historical merge representative continuity",
+      "identity_consequence": "No replacement material identity or active owner. Historical rejected identifier/mapping remain; explicit empty representative withholds unsafe live identity credit.",
+      "predicate_consequence": "REJECTED tombstone emits no mapping row; native preferred-name ownership remains on its own tombstone subject, not shared live FOODON owners.",
+      "publication_obligations": "Root composes the full Soy source decision and requires exact independent review, authentic-before verification, complete native alias/guarded/full-overlay checks. All source membership, sibling and export holds persist.",
+      "cross_shard_conflict": "Coordinator exact committed inventory checked before adding this dependent owner proposal; root must check any later selector deltas.",
+      "independent_review": {
+        "status": "pending exact full payload and composed source decision",
+        "evidence_ids": []
+      }
+    }
+  ]
+}

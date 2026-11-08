@@ -1,0 +1,395 @@
+# Authentic child origins and existing guarded dependency-edit routes
+
+- Review: 20261108T082344Z-component-origin-and-guarded-route-addendum
+- Repository: CultureBotAI/MediaIngredientMech
+- Started UTC: 2026-11-08T08:18:12Z
+- Finished UTC: 2026-11-08T08:23:44.559351Z
+- Reviewer: Codex /root/step7d_independent_review (independent)
+- Completion: completed
+- Verdict: pass_with_limitations
+- Scientific review: false
+
+## Summary
+
+Existing published origins cover15claims on12owners;GYPSretains withoutedit;12missingchildorigins need a truthful route. Native source-only receipt semantics support a separate directguardedphase, while the fixed campaign constructor requires explicit publishedchildorigin. No gate or sourceidentitydecision changed.
+
+## Scope And Provenance
+
+Mechanical child-origin and native publication/checkpoint route assessment only.
+
+Selection: All28claims in sealedv1dependencyplan and two documentedwrite-route alternatives.
+Coverage: full; 2 reviewed / 2 in the declared population.
+Source: working_tree at Git base 0dac278466699129a083343a921c2e0ca18a9ab4.
+Working-tree hashes do not imply those bytes were committed.
+
+| Target | Path / selector | Kind | Label |
+| --- | --- | --- | --- |
+| ORIGINS | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/claim-origin-qualification-28.json | source | Authentic28claim origin qualification |
+| ROUTES | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/ROUTES.md | source | Supported guarded route and checkpoint options |
+
+## Validation
+
+| Check | Status | Required | Targets | Result |
+| --- | --- | --- | --- | --- |
+| Published child origin and native source-only chain probe | passed | True | ORIGINS, ROUTES | 28claim25ownerqualification; real27prefix plus approval-free in-memory source-only receipt validates/replays withoutcanonicalchange. |
+| Read-only actual worker remote-head observation | passed | True | ORIGINS | 6actualremote/localheadsread;advancedW01andW06explicitselector bridges checked narrowly. Initialnetworkfailure retained. |
+
+## Scientific And Domain Assessments
+
+### True same-child source lineage
+
+provenance: supported. Targets: ORIGINS.
+
+ThreeR1193rumen and two cookedmeatfollowons are realpublishedchildedits, notborrowedparentorigins. Sourceconstructorconditions are recordedperclaim;12missingorigins remain explicit and cannotbeinvented.
+
+### No universal campaign-operator requirement
+
+scope: supported. Targets: ROUTES.
+
+Direct nativeguarded curation with independent evidence and a source-only mapping-chain receipt is allowed. It needs its own closedphase and truthfulbefore/afterinventory; it cannot mutate an alreadyfrozen campaignafterinventory between source and publication. Fivefuture-targetgenericretargets require explicitsequencing; sevenunsupported-IDwithdrawals do not require that futuretarget.
+
+## Findings
+
+No findings recorded within this review's declared scope.
+
+## Recommended Actions And Acceptance Checks
+
+## Category Boundaries
+
+
+## Evidence
+
+| Evidence | Reference / locator | Support | Observation |
+| --- | --- | --- | --- |
+| origins | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/owner-origin-qualification.json | supports | All25consumer paths compared to real published proposal kind/path/preimage and exact case sets;15claims on12owners qualify,1noeditGYPS,12missingorigins. |
+| native | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/native-source-only-contract-probe.json | supports | Native current27link chain plus hypothetical owner-only link replays unchanged3014canonicalrows. In-memory contract probe, not appliedreceipt or candidate. |
+| current | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads-v2.json | supports | Actual read-only remote/local observation of6worker heads; first DNSrestricted attempt retained. |
+| uw | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/w01-current-origin-bridge.json | supports | Three exactUWpayloads, publishededitpreimages/cases unchanged atactualW01da45. |
+| pygs | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/w06-current-origin-bridge.json | supports | ExactPYGSpayload with actualcommitted authoritative selector atW061d62; wholeW06review separate. |
+| routes | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/ROUTES.md | supports | Documented directguardedroute and strictcampaign constructors; explicit checkpoint ordering, no unreservedmakerCLI, no extraorigins universallyrequired. |
+| prior | .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v1/native-review-v2.yaml | supports | Previous conditionaldependency/scopedfamilyreview retained unchanged; this addendum does not re-adjudicate its science or findingdispositions. |
+
+## Limits And Additional Notes
+
+- No actual application or receipt waswritten. The nativeprobe afterdigest is explicitlyhypothetical; no completedsourcepublication claim.
+- Publishedorigin shape eligibility is not scientificapproval, currentcaseacceptance or automaticfinaloperation acceptance.
+- The archived native makerCLI is not a safe unreservedoverwrite route; use nativealignment within supportedguardedpublication with pre-reservedfreshoutputs.
+- For a single unchanged-constructor campaignbatch,12authenticW05childproposals have the smallest newimplementation burden. This is a route recommendation, not a new scientificgate or universal originrequirement.
+- This nativepair is validated/rendered onlyinsideprivatepacket. No maintainedreview save is claimed.
+
+## Complete Structured Record
+
+The sibling review.yaml is authoritative.
+
+```yaml
+schema_version: 1.0.0
+review_id: 20261108T082344Z-component-origin-and-guarded-route-addendum
+kind: batch
+repository: CultureBotAI/MediaIngredientMech
+title: Authentic child origins and existing guarded dependency-edit routes
+started_at: '2026-11-08T08:18:12Z'
+finished_at: '2026-11-08T08:23:44.559351Z'
+reviewer:
+  identity: Codex /root/step7d_independent_review
+  kind: agent
+  independence: independent
+  independence_basis: Did not author the worker source proposals, component validator
+    or owner-apply constructor. Previously authored the separately independently reviewed
+    campaign canonical publisher; this audit discloses that implementation familiarity
+    and makes no independent code-approval claim for it.
+skill: reconcile-review-records
+completion: completed
+verdict: pass_with_limitations
+native_verdict: Conditional authentic-origin/route options; no source application
+  or finalapproval.
+scientific_review: false
+summary: Existing published origins cover15claims on12owners;GYPSretains withoutedit;12missingchildorigins
+  need a truthful route. Native source-only receipt semantics support a separate directguardedphase,
+  while the fixed campaign constructor requires explicit publishedchildorigin. No
+  gate or sourceidentitydecision changed.
+source:
+  git_revision: 0dac278466699129a083343a921c2e0ca18a9ab4
+  state: working_tree
+  inputs:
+  - path: .claude/skills/add-media/SKILL.md
+    sha256: c028f19594ed2c9584afc0caa9e083590d0f114d85f50805d97a8592325dd94b
+    role: context
+  - path: .claude/skills/curate-yaml-record/SKILL.md
+    sha256: 4ea8fcaf92b4c05f17c6bee8daa9485bc58da1bb93103a53a582dc1a891b6f7a
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/final-application-accounting-v1/materialized-v4/origins.json
+    sha256: 044bea808ddd39726587d48af32733243625433d162804b2f33bcb30545e55f8
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/final-application-accounting-v1/observer-config-v4.json
+    sha256: 524d0f18df77527f8f5d8211c5d40b8eef130c21097eaee24d561bd360569b51
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/worktree/reports/sssom_completion_20260921/mapping_changes/make_receipt.py
+    sha256: 2d007139f3cea26df86217807c263fd3580771034719fb1fd79361d884b5a121
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/campaign_publication.py
+    sha256: 0960c9865c9cb218eca8d91f1326fafd19bd589b1f2cefb67d9622ac16e2c582
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/apply_receipt.py
+    sha256: 6c7c613a1a9c2211c68b20a2483e99009c34fd908c9bf3b3acbac63eedb72a3f
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/campaign_owner_apply.py
+    sha256: 4fb9bf0339d4621e56ee4278ae1b68eeadd371d6a7991a4c99ec7ee832670dca
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/curate/publication_guard.py
+    sha256: f6d1e625b3bd2c7e01cd938cb00e77c57bdfc7ffda350b8925ef690c0e4b464b
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/validation/mapping_change_receipts.py
+    sha256: f9f8f4dfa7ca9ea37b8a39da1d22b6173fe63429212735150e4607c99f35407d
+    role: context
+  - path: .temp/all-unmatched-20261107/integration/worktree/src/mediaingredientmech/validation/write_validated.py
+    sha256: 6763083be385b38dceb911f13dbd9575aea0dc42425204ccc43360f93c0dcbc9
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v1/HANDOFF.json
+    sha256: 9a876245834dfe418301781b94e0026836809d67a899933a058ced0d9bbed358
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v1/MANIFEST.json
+    sha256: 95cfc48d9fd943d9fca75c09c787b9e83521bb052e9c4909b3ad984b7539956e
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v1/analysis-v3/source-bindings.json
+    sha256: 322b8c94e4063ec00c5ca435672b4742a0eac76d80d96638f941368b2edada3e
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v1/minimal-couplings-28.json
+    sha256: 7eb99113fdc99ffff567042daf40a49e3d771b4c907ad624957d7eec3a2ff537
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v1/native-review-v2.yaml
+    sha256: 8c3877f930d2af59e3b34543667e35c139cc69a19ad7b51726f3eaeb1860cc17
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/ROUTES.md
+    sha256: 1c521b76c69b512e1531e9896d0e543b0f2983efa184814412d491ba591c65ac
+    role: target
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/causal-worker05-peptone-source.json
+    sha256: 68caca183073713a6b51a6094aca03ca9d1bfe3dd06be6efc5811bc3752ce808
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/claim-origin-qualification-28.json
+    sha256: 6537a2050c423b338bbcc1fe9f126d582cce32f176126bd54c5743f58501b03c
+    role: target
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/input-pins.json
+    sha256: b7347b615fb7c64febb992fb93b260b8c567322f6200bbda2bce25bae66f7d49
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/inspect_origins_and_routes.py
+    sha256: 57a1c42534c0fb5353599056b98d1b0c53208dcafe7f38966e9f0f0a6b109139
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads-v2.json
+    sha256: 195d06bc9ad17a03e042763b40815a9773557409a7d409359860597cb9d71a18
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads-v2.stderr
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads-v2.stdout
+    sha256: 42f5f6798e083dd8f68ed8b110e0a8037ec3bfeb211d947359f624fa38b072fb
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads.json
+    sha256: 332e071131da823d5a6476c51ada4bd1377fb474e9c2f3cedef69f94a03ac79b
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads.stderr
+    sha256: 95edf4398880ac475763c45b1ceb8517c3fcb66cf0edf0fdfda62a551666a812
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads.stdout
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/missing-origin-options-12.json
+    sha256: 8dc049c1709aa220d90e78d67c1f8526d80102ca37e4e03c73cdf30c5a94226f
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/native-inspection.json
+    sha256: 2b36b7860fc6c044a15f58c30329801f0af1f16cbe17ff36385ab26eb7bc2b61
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/native-review-first-validation-failure.json
+    sha256: 01ef622b78d3042295efd1ed72e8838569395065b5afbd47789edcfc3901d608
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/native-source-only-contract-probe.json
+    sha256: fc0bde0142f661b22b52097f667bab42fb8095214bdcbc000fb38744a2761607
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/native_and_seal.py
+    sha256: bbf5ef731b751f22362d9ad19660d580d28c845f4b1be794e75d8a2cc6ff1fc9
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/native_and_seal_v2.py
+    sha256: 0405af420e496fca50c0466336083f42cc738150b31e3c22c9d434b0c8f96b21
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/observe_source_heads.py
+    sha256: e5a9c04a727f622407373e517dc1d0f88f0e3906a9d72833f943a0b662a7beb0
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/observe_source_heads_v2.py
+    sha256: 29fde59691b3c4f29769c8540d44eabb912a1a8c3a972d328c4d59e0417aacc6
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/owner-origin-qualification.json
+    sha256: fc2af5a92be0b2fda562d353ce57c344bc1c0cef8a2ed8ecf08616cee377e7ca
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/summary.json
+    sha256: 244c9823bd19787b4285ce984bf4e87d90f70d3a329c35a61df43dccb50dc131
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/w01-current-origin-bridge.json
+    sha256: 48372a581a608007f299c5abcae6b66a93277429621935f4c032d2cb00eee435
+    role: context
+  - path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/w06-current-origin-bridge.json
+    sha256: 2312d080c178449c2d979d968b0909111689e2e130bfb2641e4bc2e96cf132f0
+    role: context
+  - path: docs/stock_components.md
+    sha256: 62a8a5393db91e943f6f3903bd624a00e3567f6f0a2ca2391742e97dc0c19d49
+    role: context
+scope:
+  description: Mechanical child-origin and native publication/checkpoint route assessment
+    only.
+  selection: All28claims in sealedv1dependencyplan and two documentedwrite-route alternatives.
+  coverage: full
+  population_size: 2
+  reviewed_target_ids:
+  - ORIGINS
+  - ROUTES
+  exclusions:
+  - target: Scientific disposition of ambiguouspeptoneclaims, wholeW06currenthead,
+      finalcampaignexecution
+    reason: Separate source-specific review and finalacceptedpayload gates retained.
+targets:
+- target_id: ORIGINS
+  path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/claim-origin-qualification-28.json
+  label: Authentic28claim origin qualification
+  kind: source
+  ownership_note: Read-only author-independent audit of published child origins; no
+    new source binding is invented.
+- target_id: ROUTES
+  path: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/ROUTES.md
+  label: Supported guarded route and checkpoint options
+  kind: source
+  ownership_note: Coordinator chooses concrete valid route; no implementation, application
+    or authority transfer.
+checks:
+- check_id: origin-and-native
+  name: Published child origin and native source-only chain probe
+  status: passed
+  required: true
+  target_ids:
+  - ORIGINS
+  - ROUTES
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/inspect_origins_and_routes.py
+  exit_code: 0
+  summary: 28claim25ownerqualification; real27prefix plus approval-free in-memory
+    source-only receipt validates/replays withoutcanonicalchange.
+  evidence_ids:
+  - origins
+  - native
+- check_id: live
+  name: Read-only actual worker remote-head observation
+  status: passed
+  required: true
+  target_ids:
+  - ORIGINS
+  command: /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/kgm-unmapped-20261107/env/bin/python
+    /Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/observe_source_heads_v2.py
+  exit_code: 0
+  summary: 6actualremote/localheadsread;advancedW01andW06explicitselector bridges
+    checked narrowly. Initialnetworkfailure retained.
+  evidence_ids:
+  - current
+  - uw
+  - pygs
+evidence:
+- evidence_id: origins
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/owner-origin-qualification.json
+  accessed_at: '2026-11-08T08:23:44.559351Z'
+  support: supports
+  summary: All25consumer paths compared to real published proposal kind/path/preimage
+    and exact case sets;15claims on12owners qualify,1noeditGYPS,12missingorigins.
+  snapshot_sha256: fc2af5a92be0b2fda562d353ce57c344bc1c0cef8a2ed8ecf08616cee377e7ca
+- evidence_id: native
+  kind: validation
+  reference: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/native-source-only-contract-probe.json
+  accessed_at: '2026-11-08T08:23:44.559351Z'
+  support: supports
+  summary: Native current27link chain plus hypothetical owner-only link replays unchanged3014canonicalrows.
+    In-memory contract probe, not appliedreceipt or candidate.
+  snapshot_sha256: fc0bde0142f661b22b52097f667bab42fb8095214bdcbc000fb38744a2761607
+- evidence_id: current
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/live-source-heads-v2.json
+  accessed_at: '2026-11-08T08:23:44.559351Z'
+  support: supports
+  summary: Actual read-only remote/local observation of6worker heads; first DNSrestricted
+    attempt retained.
+  snapshot_sha256: 195d06bc9ad17a03e042763b40815a9773557409a7d409359860597cb9d71a18
+- evidence_id: uw
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/w01-current-origin-bridge.json
+  accessed_at: '2026-11-08T08:23:44.559351Z'
+  support: supports
+  summary: Three exactUWpayloads, publishededitpreimages/cases unchanged atactualW01da45.
+  snapshot_sha256: 48372a581a608007f299c5abcae6b66a93277429621935f4c032d2cb00eee435
+- evidence_id: pygs
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/w06-current-origin-bridge.json
+  accessed_at: '2026-11-08T08:23:44.559351Z'
+  support: supports
+  summary: ExactPYGSpayload with actualcommitted authoritative selector atW061d62;
+    wholeW06review separate.
+  snapshot_sha256: 2312d080c178449c2d979d968b0909111689e2e130bfb2641e4bc2e96cf132f0
+- evidence_id: routes
+  kind: record_content
+  reference: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v2/ROUTES.md
+  accessed_at: '2026-11-08T08:23:44.559351Z'
+  support: supports
+  summary: Documented directguardedroute and strictcampaign constructors; explicit
+    checkpoint ordering, no unreservedmakerCLI, no extraorigins universallyrequired.
+  snapshot_sha256: 1c521b76c69b512e1531e9896d0e543b0f2983efa184814412d491ba591c65ac
+- evidence_id: prior
+  kind: prior_review
+  reference: .temp/all-unmatched-20261107/preflight/final-component-dependency-plan-v1/native-review-v2.yaml
+  accessed_at: '2026-11-08T08:23:44.559351Z'
+  support: supports
+  summary: Previous conditionaldependency/scopedfamilyreview retained unchanged; this
+    addendum does not re-adjudicate its science or findingdispositions.
+  snapshot_sha256: 8c3877f930d2af59e3b34543667e35c139cc69a19ad7b51726f3eaeb1860cc17
+assessments:
+- assessment_id: origin-bounded
+  area: provenance
+  topic: True same-child source lineage
+  outcome: supported
+  target_ids:
+  - ORIGINS
+  evidence_ids:
+  - origins
+  - current
+  - uw
+  - pygs
+  summary: ThreeR1193rumen and two cookedmeatfollowons are realpublishedchildedits,
+    notborrowedparentorigins. Sourceconstructorconditions are recordedperclaim;12missingorigins
+    remain explicit and cannotbeinvented.
+- assessment_id: route-bounded
+  area: scope
+  topic: No universal campaign-operator requirement
+  outcome: supported
+  target_ids:
+  - ROUTES
+  evidence_ids:
+  - native
+  - routes
+  summary: Direct nativeguarded curation with independent evidence and a source-only
+    mapping-chain receipt is allowed. It needs its own closedphase and truthfulbefore/afterinventory;
+    it cannot mutate an alreadyfrozen campaignafterinventory between source and publication.
+    Fivefuture-targetgenericretargets require explicitsequencing; sevenunsupported-IDwithdrawals
+    do not require that futuretarget.
+findings: []
+actions: []
+limitations:
+- No actual application or receipt waswritten. The nativeprobe afterdigest is explicitlyhypothetical;
+  no completedsourcepublication claim.
+- Publishedorigin shape eligibility is not scientificapproval, currentcaseacceptance
+  or automaticfinaloperation acceptance.
+- The archived native makerCLI is not a safe unreservedoverwrite route; use nativealignment
+  within supportedguardedpublication with pre-reservedfreshoutputs.
+- For a single unchanged-constructor campaignbatch,12authenticW05childproposals have
+  the smallest newimplementation burden. This is a route recommendation, not a new
+  scientificgate or universal originrequirement.
+- This nativepair is validated/rendered onlyinsideprivatepacket. No maintainedreview
+  save is claimed.
+related_reviews:
+- repository: CultureBotAI/MediaIngredientMech
+  review_id: 20261108T081710Z-component-dependencies-and-four-family-successor
+  relationship: Adds explicit origin/route qualification without superseding prior
+    familyfindingdispositions or source-specific scientific limits.
+```

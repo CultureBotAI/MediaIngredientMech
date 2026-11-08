@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "author": "/root/next23_context",
+  "kind": "proposed_scientific_decision_preflight",
+  "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/1202",
+  "status": "RECOMMEND_GENERIC_LOCAL_PLUS_SUPPORTED_BROADER_MATERIAL",
+  "final_candidate_authored": false,
+  "independent_final_owner_approval": false,
+  "recommended_scope": "Named Polypeptone preparation with supplier/product version unspecified; not a union claiming all peptone brands are identical.",
+  "identifier": "kgmicrobe.ingredient:polypeptone",
+  "ontology_mapping": {
+    "ontology_id": "FOODON:03315306",
+    "ontology_label": "protein hydrolyzates",
+    "mapping_quality": "NARROW_MATCH",
+    "expected_predicate": "skos:broadMatch",
+    "expected_own_registry_identity_row": true,
+    "output_generated": false
+  },
+  "supports_now": [
+    "Primary peptone/protein-hydrolysate material relation",
+    "FoodOn material ancestry, not a flavouring-role edge",
+    "Local distinct named preparation instead of parent-as-identity",
+    "No need for unknown supplier, lot or peptide formula to assert broader material relation"
+  ],
+  "not_supported": [
+    "MICRO:0000179 exact identity for bare MediaDive442 or all original owner routes",
+    "MICRO:0000178 as unrestricted generic peptone term",
+    "BD equal-parts components on generic owner",
+    "Automatic product-specific synonym resolution to generic owner",
+    "Role or release approval"
+  ],
+  "remaining_coupling": {
+    "bd_specific_aliases": [
+      "Polypeptone peptone (BD-BBL)",
+      "Polypeptone Peptone (BD 211910)",
+      "Polypeptone (BBL)"
+    ],
+    "recommendation": "Preserve text/source as provenance-only with specific-versus-generic claim rationale, or retain these exact token claims withheld pending source-qualified representation. Notes alone do not change resolver behavior.",
+    "retain_five_existing_rejected_labels": [
+      "Polypepton (Nihon Pharm. Co.)",
+      "Hipolypepton",
+      "Hipolypepton (Nihon seiyaku)",
+      "Hipolypepton*",
+      "Polypepton (Nihon Seiyaku)"
+    ],
+    "retain_cases": [
+      "KG_CASE:0255021af572a3cbc0e60e67ba55eaae86d104e1416fe0a29b100c39b085aee9",
+      "KG_CASE:8f455740bace0eed0eb0d1fa3d964121fc7b129894938f7646e578062f755b7c",
+      "CM_NAME:4a6653ffe2ccb9bccc2c85168233e12e2b236e6a766010f0189e1501ae2f4497"
+    ],
+    "retain_both_author_histories": true,
+    "retain_mapping_source_withhold_and_roles": true
+  },
+  "alternatives": [
+    {
+      "id": "BD_exact_scope",
+      "id_candidate": "MICRO:0000179",
+      "science": "Supported for the explicitly BD equal-parts blended product; not selected for the current mixed-source generic owner. Requires authentic bounded continuity and source applicability, not lot-level formula research."
+    },
+    {
+      "id": "self_only_registry",
+      "science": "Current fragment is incomplete under semantics§3; do not keep self-only grounding as final while the broader material relation is supported."
+    }
+  ],
+  "quantity_gap": {
+    "original_finding": "W05-POLY-SOURCE-001",
+    "deduplicated_tracking": [
+      "https://github.com/CultureBotAI/CultureMech/issues/150",
+      "https://github.com/CultureBotAI/CultureMech/issues/408"
+    ],
+    "separate_from_parent_relation": true,
+    "current_local_recipe_matches_frozen": true,
+    "remote_main_not_checked": true,
+    "quantity_corrected": false
+  },
+  "source_bindings_sha256": "e581cb206ddc4f03e2fca18e0216c1d173ea209e19829af30b40520b143776d0",
+  "assessment_sha256": "01d3973bedaca2838788eab05557d76dfe23b1b0f1534749339442fc4e6969e7",
+  "issue_draft_sha256": "19290d245878ba1cca0e13a73f199dadbc40a09de0e7ccd6094dda0913c12914"
+}

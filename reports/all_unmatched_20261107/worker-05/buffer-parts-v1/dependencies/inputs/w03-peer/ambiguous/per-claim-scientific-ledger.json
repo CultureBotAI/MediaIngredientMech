@@ -1,0 +1,2411 @@
+{
+  "schema_version": "1.0.0",
+  "reviewer": "/root/peptone_ambiguous_sources",
+  "completed_at": "2026-11-08T08:41:38.763783+00:00",
+  "scope": "Exact ten ambiguous peptone component claims; full owner/recipe approval excluded.",
+  "coverage": {
+    "claims": 10,
+    "owners": 10,
+    "source_observations": 124,
+    "pyg_observations": 114,
+    "original_full_papers_exhaustively_read": 0
+  },
+  "claims": [
+    {
+      "claim_key": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml#components[1]",
+      "owner_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+      "owner_before_sha256": "aa56347529508fd0c082571cfd39540c6ac3205ba587c992594015c1e881c6a5",
+      "component_index": 1,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "CURATED_INTERPRETATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Fastidious Anaerobe Broth With Meat Granules",
+            "notes": "Reviewed row: strategy=map_to_medium, confidence=medium; FAB (LabM/Neogen) commercial rich medium + cooked-meat granules. Best as complex medium; no single component captures it."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+          "csv_row_including_header": 6029,
+          "record_index_zero_based": 6027,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "Fastidious Anaerobe Broth with meat granules",
+          "genus": "Fastidiosipila",
+          "species": "sanguinis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/fastidiosipila-sanguinis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00675"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "FAB_ORIGINAL",
+        "NEOGEN_NCM0199",
+        "ACUMEDIA7110"
+      ],
+      "assessment": "Source-specific vendor discrepancy confirmed; a current LabM/Neogen formula cannot support original Oxoid-attributed FAB. Peptone composition and granule product remain unresolved.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Original FAB catalogue/formula and historical product identity; do not substitute the separate Anaerobe Systems PYG broth.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Compose with existing cooked-meat/granule withdrawal proposal; preserve its exact correction and all uncertainty. New finding PEPTONE-SOURCE-001 requires coordinator issue-first disposition.",
+      "candidate_contexts_rehashed": [
+        {
+          "origin_id": "w05::M1193-P-FOLLOWON-FASTIDIOUS_ANAEROBE_BROTH_WITH_MEAT_GRANULES",
+          "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+          "payload_sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99",
+          "git_path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+          "component_at_selected_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w05/reports/all_unmatched_20261107/worker-05/correction-1193-v1/media/proposed/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
+          "independently_rehashed_sha256": "734f0a2a69b9736f76ff895dcc9d62e8f413e1eb61000df002f8da02a1a90d99",
+          "scientific_approval": false
+        }
+      ],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PY-cellobiose.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PY-cellobiose.yaml",
+      "owner_before_sha256": "43affad15730fa118b5a490edeb105cc9ca4b3967851eede7a94addf4746683f",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "MIM curation (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-cellobiose",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 2,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PY-cellobiose.yaml",
+          "csv_row_including_header": 4163,
+          "record_index_zero_based": 4161,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PY-cellobiose",
+          "genus": "Clostridium",
+          "species": "polysaccharolyticum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-polysaccharolyticum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PY-cellobiose.yaml",
+          "csv_row_including_header": 5908,
+          "record_index_zero_based": 5906,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PY-cellobiose",
+          "genus": "Eubacterium",
+          "species": "siraeum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-siraeum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "MOORE1976",
+        "POLYSACCHAROLYTICUM1980",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "E.siraeum original paper supports occurrence-bound peptone basal-medium class; C.polysaccharolyticum is a separate source occurrence with unread formulation. No whole-owner generic or product identity established.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": true,
+      "supported_occurrence_limit": {
+        "csv_row_including_header": 5908,
+        "taxon": "Eubacterium siraeum",
+        "support": "Peptone medium at that occurrence; no formulation/product/whole-owner approval."
+      },
+      "precise_unresolved_fact": "Resolve the C.polysaccharolyticum PY-cellobiose recipe or separate occurrence ownership; historical PY manual recipe remains unread.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "No supplier detail is demanded for genuine generic peptone. One supported occurrence is insufficient for both observations.",
+      "candidate_contexts_rehashed": [],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PY-fructose.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PY-fructose.yaml",
+      "owner_before_sha256": "44809853b4659af251e0de30e48eb959d678de126e40dacebddc68bd0561d5e6",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "MIM curation (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-fructose",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PY-fructose.yaml",
+          "csv_row_including_header": 4104,
+          "record_index_zero_based": 4102,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PY-fructose",
+          "genus": "Clostridium",
+          "species": "formicaceticum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-formicaceticum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "ANDREESEN1970",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "Original C.formicaceticum paper abstract inspected; it does not spell out the inherited peptone component. PY abbreviation alone does not establish the material edge.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Original PY-fructose preparation/formulation for C.formicaceticum; subscription full text unavailable in this bounded free review.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Retain raw PY-fructose label, inherited expansion provenance and missing quantities.",
+      "candidate_contexts_rehashed": [],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+      "owner_before_sha256": "0d9423c4dde8bee8140bab7b0cc6b27bcfa2e2a1c7c617ff454df19fbc17f777",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PY-glucose-rumen Fluid",
+            "notes": "Reviewed row: strategy=split, confidence=high; PY base + glucose + clarified rumen fluid. Rumen fluid: MICRO:0000520 (broadMatch) / UBERON:0010228 ruminal fluid; no exact term."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+          "csv_row_including_header": 20395,
+          "record_index_zero_based": 20393,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PY-glucose-rumen fluid",
+          "genus": "Treponema",
+          "species": "socranskii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/subspecies/treponema-socranskii-paredis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "SMIBERT1984",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "Exact raw context is T.socranskii (source LPSN subspecies paredis). Inspected original-paper abstract lacks peptone specification; unrelated Prevotella research is not applicable.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Original PY base/digest in the stated Treponema preparation, or a primary recipe with a demonstrated source bridge.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Compose with literal rumen fluid UNMAPPED correction under #204/#1204; never restore clarified rumen fluid.",
+      "candidate_contexts_rehashed": [
+        {
+          "origin_id": "w05::R1193-DEP-rumen-pyglucose",
+          "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+          "payload_sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8",
+          "git_path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/dependencies/after/PY-glucose-rumen_Fluid.yaml",
+          "component_at_selected_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w05/reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/dependencies/after/PY-glucose-rumen_Fluid.yaml",
+          "independently_rehashed_sha256": "19e946b9dccdd82ccbcb7875baaac768a7761fd0155f78a97c70f62119b8ebe8",
+          "scientific_approval": false
+        },
+        {
+          "candidate_id": "DEP-R1193-DEP-rumen-pyglucose",
+          "source_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/DEP-R1193-DEP-rumen-pyglucose/PY-glucose-rumen_Fluid.yaml",
+          "owner_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+          "source_before_path": "data/ingredients/mapped/PY-glucose-rumen_Fluid.yaml",
+          "candidate_sha256": "a32a36ecbfad94478fe65ab97c61414519cdbe895440d41bb0c9ca8e16babcc5",
+          "operation": "edit",
+          "status": "BOUNDED_DEPENDENT_CLAIM_CORRECTION",
+          "dependency_notes": null,
+          "scientific_approval": false,
+          "independently_rehashed_sha256": "a32a36ecbfad94478fe65ab97c61414519cdbe895440d41bb0c9ca8e16babcc5"
+        }
+      ],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PY-maltose.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PY-maltose.yaml",
+      "owner_before_sha256": "2541f490f2d97f40eb21139dfd94373a90d419f91aaeabd111e8af711d7f44f0",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "MIM curation (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-maltose",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PY-maltose.yaml",
+          "csv_row_including_header": 4130,
+          "record_index_zero_based": 4128,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PY-maltose",
+          "genus": "Clostridium",
+          "species": "leptum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-leptum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "MOORE1976",
+        "DSMZ104C_DSM753",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "Original C.leptum PY-maltose experiment verified; referenced manual formulation unread. Current exact-strain repository recipe has two distinguishable peptones and cannot identify the inherited single edge.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Original manual recipe and which peptone constituent the historical single component was intended to represent.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Retain current recipe as comparator, not an instruction to inject quantities or collapse two digests.",
+      "candidate_contexts_rehashed": [],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PY-pectin.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PY-pectin.yaml",
+      "owner_before_sha256": "fe00f8b6439c9d1c86c68ce20efdf672115465cd58b2455edf4ddf30c1e4a6e6",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "MIM curation (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-pectin",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PY-pectin.yaml",
+          "csv_row_including_header": 20383,
+          "record_index_zero_based": 20381,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PY-pectin",
+          "genus": "Treponema",
+          "species": "pectinovorum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/treponema-pectinovorum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "SMIBERT1983",
+        "ATCC1223",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "Original T.pectinovorum source identified; full historical formula unread. Authentic ATCC1223 specifically uses Polypeptone BD211910, but no bridge to original PY-pectin is demonstrated.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Original PY-pectin ingredient list or historical identity linkage to ATCC1223.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Do not turn Polypeptone comparator into Bacto Peptone, Hipolypepton, or a broad product-family approval.",
+      "candidate_contexts_rehashed": [],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PYEG.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PYEG.yaml",
+      "owner_before_sha256": "59aa22d3f741cba3f712bb3294adc7abc1f1e6933dad74b9d79001299c88dd0a",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PYEG",
+            "notes": "Reviewed row: strategy=split, confidence=high; Peptone-Yeast Extract-Glucose; same composition as PYG."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PYEG.yaml",
+          "csv_row_including_header": 4180,
+          "record_index_zero_based": 4178,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYEG",
+          "genus": "Clostridium",
+          "species": "scindens",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-scindens",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "MORRIS1985",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "Exact raw taxon is C.scindens. Existing research citation leads concern other taxa (including Caulobacter); publisher original study abstract does not resolve PYEG ingredient identity.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "C.scindens original PYEG preparation, including whether the abbreviation denotes the inherited three-component interpretation.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "The retained peptone label remains an inherited interpretation, not a newly observed ingredient.",
+      "candidate_contexts_rehashed": [],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PYG-002_Tween_80.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PYG-002_Tween_80.yaml",
+      "owner_before_sha256": "39aa2fd4d32cd75ab37ad154727c197daa5303d9d40fb21771c7bad63e6e489f",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "MIM curation (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PYG-0.02% Tween 80",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PYG-002_Tween_80.yaml",
+          "csv_row_including_header": 8051,
+          "record_index_zero_based": 8049,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG-0.02% Tween 80",
+          "genus": "Holdemanella",
+          "species": "biformis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/holdemanella-biformis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "BIFORMIS_CURRENT",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "Exact source observation is Holdemanella biformis (legacy Eubacterium biforme). No inspected original formulation establishes the inherited peptone edge; current alternative growth media are not the observed recipe.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Original E.biforme PYG-0.02%Tween80 base recipe and source applicability.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Preserve 0.02% as raw label information; no new quantitative component assertion inferred from it.",
+      "candidate_contexts_rehashed": [],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PYG.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PYG.yaml",
+      "owner_before_sha256": "2560177ec64534d39f8b7a9a151bbddd08b70f1c34ce50d7cc6f603dd44ddb83",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PYG",
+            "notes": "Reviewed row: strategy=split, confidence=high; Peptone-Yeast extract-Glucose (VPI/DSMZ Medium 104 family). Undefined biologicals carry own terms."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 114,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 840,
+          "record_index_zero_based": 838,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Agathobacter",
+          "species": "rectalis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/agathobacter-rectalis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 1397,
+          "record_index_zero_based": 1395,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Amedibacillus",
+          "species": "dolichus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/amedibacillus-dolichus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 1569,
+          "record_index_zero_based": 1567,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Anaerobutyricum",
+          "species": "hallii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerobutyricum-hallii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 1587,
+          "record_index_zero_based": 1585,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Anaerococcus",
+          "species": "vaginalis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerococcus-vaginalis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00712"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 1641,
+          "record_index_zero_based": 1639,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Anaerostipes",
+          "species": "hadrus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/anaerostipes-hadrus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 2734,
+          "record_index_zero_based": 2732,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Blautia",
+          "species": "coccoides",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/blautia-coccoides",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4043,
+          "record_index_zero_based": 4041,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridioides",
+          "species": "difficile",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridioides-difficile",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4060,
+          "record_index_zero_based": 4058,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "arcticum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-arcticum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4063,
+          "record_index_zero_based": 4061,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "baratii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-baratii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4065,
+          "record_index_zero_based": 4063,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "beijerinckii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-beijerinckii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4067,
+          "record_index_zero_based": 4065,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "botulinum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-botulinum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4070,
+          "record_index_zero_based": 4068,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "budayi",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-budayi",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4072,
+          "record_index_zero_based": 4070,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "butyricum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-butyricum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4073,
+          "record_index_zero_based": 4071,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "cadaveris",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-cadaveris",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4076,
+          "record_index_zero_based": 4074,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "carnis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-carnis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4078,
+          "record_index_zero_based": 4076,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "celatum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-celatum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4082,
+          "record_index_zero_based": 4080,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "chauvoei",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-chauvoei",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4085,
+          "record_index_zero_based": 4083,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "cochlearium",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-cochlearium",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4086,
+          "record_index_zero_based": 4084,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "cocleatum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-cocleatum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4088,
+          "record_index_zero_based": 4086,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "colinum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-colinum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4090,
+          "record_index_zero_based": 4088,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "combesii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-combesii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4114,
+          "record_index_zero_based": 4112,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "haemolyticum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-haemolyticum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4121,
+          "record_index_zero_based": 4119,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "innocuum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-innocuum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4123,
+          "record_index_zero_based": 4121,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "isatidis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-isatidis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4140,
+          "record_index_zero_based": 4138,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "moniliforme",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-moniliforme",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4146,
+          "record_index_zero_based": 4144,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "nexile",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-nexile",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4147,
+          "record_index_zero_based": 4145,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "nitritogenes",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-nitritogenes",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4149,
+          "record_index_zero_based": 4147,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "novyi",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-novyi",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4150,
+          "record_index_zero_based": 4148,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "oceanicum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-oceanicum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4154,
+          "record_index_zero_based": 4152,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "paraputrificum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-paraputrificum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4156,
+          "record_index_zero_based": 4154,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "pasteurianum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-pasteurianum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4158,
+          "record_index_zero_based": 4156,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "perfringens",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-perfringens",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4168,
+          "record_index_zero_based": 4166,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "puniceum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-puniceum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4171,
+          "record_index_zero_based": 4169,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "ramosum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-ramosum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4175,
+          "record_index_zero_based": 4173,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "sardiniense",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-sardiniense",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4176,
+          "record_index_zero_based": 4174,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "sartagoforme",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-sartagoforme",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4178,
+          "record_index_zero_based": 4176,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "scatologenes",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-scatologenes",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4183,
+          "record_index_zero_based": 4181,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "septicum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-septicum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4185,
+          "record_index_zero_based": 4183,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "spiroforme",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-spiroforme",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4193,
+          "record_index_zero_based": 4191,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "tarantellae",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-tarantellae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4196,
+          "record_index_zero_based": 4194,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "tertium",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-tertium",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4206,
+          "record_index_zero_based": 4204,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Clostridium",
+          "species": "tyrobutyricum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/clostridium-tyrobutyricum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4412,
+          "record_index_zero_based": 4410,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Coprococcus",
+          "species": "catus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/coprococcus-catus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00642"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4413,
+          "record_index_zero_based": 4411,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Coprococcus",
+          "species": "comes",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/coprococcus-comes",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00642"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 4414,
+          "record_index_zero_based": 4412,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Coprococcus",
+          "species": "eutactus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/coprococcus-eutactus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00642"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5742,
+          "record_index_zero_based": 5740,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Enterocloster",
+          "species": "clostridioformis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/enterocloster-clostridioformis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5891,
+          "record_index_zero_based": 5889,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "brachy",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-brachy",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5893,
+          "record_index_zero_based": 5891,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "cellulosolvens",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-cellulosolvens",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5896,
+          "record_index_zero_based": 5894,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "infirmum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-infirmum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5897,
+          "record_index_zero_based": 5895,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "limosum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-limosum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5900,
+          "record_index_zero_based": 5898,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "multiforme",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-multiforme",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5901,
+          "record_index_zero_based": 5899,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "nodatum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-nodatum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5903,
+          "record_index_zero_based": 5901,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "plexicaudatum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-plexicaudatum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5905,
+          "record_index_zero_based": 5903,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "ramulus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-ramulus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5907,
+          "record_index_zero_based": 5905,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "saphenum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-saphenum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5909,
+          "record_index_zero_based": 5907,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "sulci",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-sulci",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5910,
+          "record_index_zero_based": 5908,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "tenue",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-tenue",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5911,
+          "record_index_zero_based": 5909,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "tortuosum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-tortuosum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5912,
+          "record_index_zero_based": 5910,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "uniforme",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-uniforme",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5913,
+          "record_index_zero_based": 5911,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "ventriosum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-ventriosum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5915,
+          "record_index_zero_based": 5913,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "yurii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/subspecies/eubacterium-yurii-margaretiae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5916,
+          "record_index_zero_based": 5914,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "yurii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/subspecies/eubacterium-yurii-schtitka",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5917,
+          "record_index_zero_based": 5915,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Eubacterium",
+          "species": "yurii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/subspecies/eubacterium-yurii-yurii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5987,
+          "record_index_zero_based": 5985,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Faecalicatena",
+          "species": "contorta",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/faecalicatena-contorta",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5989,
+          "record_index_zero_based": 5987,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Faecalicatena",
+          "species": "fissicatena",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/faecalicatena-fissicatena",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 5998,
+          "record_index_zero_based": 5996,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Faecalitalea",
+          "species": "cylindroides",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/faecalitalea-cylindroides",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 6554,
+          "record_index_zero_based": 6552,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Flavonifractor",
+          "species": "plautii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/flavonifractor-plautii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01733"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 6756,
+          "record_index_zero_based": 6754,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Fusobacterium",
+          "species": "canifelinum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/fusobacterium-canifelinum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00768"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 7187,
+          "record_index_zero_based": 7185,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Gottschalkia",
+          "species": "purinilytica",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/gottschalkia-purinilytica",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 7543,
+          "record_index_zero_based": 7541,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Haloimpatiens",
+          "species": "lingqiaonensis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/haloimpatiens-lingqiaonensis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01634"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 7893,
+          "record_index_zero_based": 7891,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Hathewaya",
+          "species": "limosa",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/hathewaya-limosa",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 8852,
+          "record_index_zero_based": 8850,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Lachnospira",
+          "species": "eligens",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/lachnospira-eligens",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 8888,
+          "record_index_zero_based": 8886,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Lacrimispora",
+          "species": "indolis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/lacrimispora-indolis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 8889,
+          "record_index_zero_based": 8887,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Lacrimispora",
+          "species": "saccharolytica",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/lacrimispora-saccharolytica",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 8891,
+          "record_index_zero_based": 8889,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Lacrimispora",
+          "species": "sphenoides",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/lacrimispora-sphenoides",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 8893,
+          "record_index_zero_based": 8891,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Lacrimispora",
+          "species": "xylanolytica",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/lacrimispora-xylanolytica",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00619"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 12981,
+          "record_index_zero_based": 12979,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Oceanirhabdus",
+          "species": "sediminicola",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/oceanirhabdus-sediminicola",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01632"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14283,
+          "record_index_zero_based": 14281,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Peptoniphilus",
+          "species": "asaccharolyticus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/peptoniphilus-asaccharolyticus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00717"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14291,
+          "record_index_zero_based": 14289,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Peptoniphilus",
+          "species": "harei",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/peptoniphilus-harei",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00717"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14292,
+          "record_index_zero_based": 14290,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Peptoniphilus",
+          "species": "indolicus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/peptoniphilus-indolicus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00717"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14293,
+          "record_index_zero_based": 14291,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Peptoniphilus",
+          "species": "ivorii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/peptoniphilus-ivorii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00717"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14295,
+          "record_index_zero_based": 14293,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Peptoniphilus",
+          "species": "lacrimalis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/peptoniphilus-lacrimalis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00717"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14310,
+          "record_index_zero_based": 14308,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Peptostreptococcus",
+          "species": "stomatis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/peptostreptococcus-stomatis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00668"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14867,
+          "record_index_zero_based": 14865,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "asaccharolytica",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-asaccharolytica",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14869,
+          "record_index_zero_based": 14867,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "cangingivalis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-cangingivalis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14870,
+          "record_index_zero_based": 14868,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "canoris",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-canoris",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14871,
+          "record_index_zero_based": 14869,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "catoniae",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-catoniae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14872,
+          "record_index_zero_based": 14870,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "circumdentaria",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-circumdentaria",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14873,
+          "record_index_zero_based": 14871,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "crevioricanis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-crevioricanis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14874,
+          "record_index_zero_based": 14872,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "endodontalis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-endodontalis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14875,
+          "record_index_zero_based": 14873,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "gingivalis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-gingivalis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14876,
+          "record_index_zero_based": 14874,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "gingivicanis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-gingivicanis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14877,
+          "record_index_zero_based": 14875,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "gulae",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-gulae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14878,
+          "record_index_zero_based": 14876,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "levii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-levii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14880,
+          "record_index_zero_based": 14878,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "macacae",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-macacae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14884,
+          "record_index_zero_based": 14882,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "somerae",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-somerae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14885,
+          "record_index_zero_based": 14883,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Porphyromonas",
+          "species": "uenonis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/porphyromonas-uenonis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00246"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14915,
+          "record_index_zero_based": 14913,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "baroniae",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-baroniae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14916,
+          "record_index_zero_based": 14914,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "bergensis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-bergensis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14927,
+          "record_index_zero_based": 14925,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "corporis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-corporis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14931,
+          "record_index_zero_based": 14929,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "disiens",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-disiens",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14935,
+          "record_index_zero_based": 14933,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "heparinolytica",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-heparinolytica",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14940,
+          "record_index_zero_based": 14938,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "intermedia",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-intermedia",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14946,
+          "record_index_zero_based": 14944,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "marshii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-marshii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14956,
+          "record_index_zero_based": 14954,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "oris",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-oris",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14966,
+          "record_index_zero_based": 14964,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "salivae",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-salivae",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14968,
+          "record_index_zero_based": 14966,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "shahii",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-shahii",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 14969,
+          "record_index_zero_based": 14967,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Prevotella",
+          "species": "stercorea",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/prevotella-stercorea",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00249"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 15012,
+          "record_index_zero_based": 15010,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Propionibacterium",
+          "species": "acidifaciens",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/propionibacterium-acidifaciens",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00167"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 15751,
+          "record_index_zero_based": 15749,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Pseudoramibacter",
+          "species": "alactolyticus",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/pseudoramibacter-alactolyticus",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00631"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 16279,
+          "record_index_zero_based": 16277,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Rhizomicrobium",
+          "species": "palustre",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/rhizomicrobium-palustre",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01536"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 17346,
+          "record_index_zero_based": 17344,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Selenomonas",
+          "species": "flueggei",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/selenomonas-flueggei",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00705"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 19988,
+          "record_index_zero_based": 19986,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Thermoanaerobacterium",
+          "species": "thermosaccharolyticum",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/thermoanaerobacterium-thermosaccharolyticum",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00755"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        },
+        {
+          "owner_path": "data/ingredients/mapped/PYG.yaml",
+          "csv_row_including_header": 20356,
+          "record_index_zero_based": 20354,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG",
+          "genus": "Tolumonas",
+          "species": "auensis",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/tolumonas-auensis",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm01083"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "BERGEY_ORIGINAL",
+        "MOORE1976"
+      ],
+      "assessment": "All114 raw observations were accounted for across multiple genera/chapters. Inspected occurrence-limited papers and a general DSMZ/VPI association do not establish one shared formula or digest identity for the aggregate owner.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Occurrence-specific recipe binding or supported disjoint formulation cohorts for114 observations; this bounded task does not claim exhaustive retrieval of114 papers.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Do not promote a single occurrence or comparator to all114 uses; no source-global Bacto assignment.",
+      "candidate_contexts_rehashed": [],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    },
+    {
+      "claim_key": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml#components[0]",
+      "owner_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+      "owner_before_sha256": "833d1bf421b60fb474361c29a35f88d5702c790d5385221d6fa6757199801c01",
+      "component_index": 0,
+      "before_component": {
+        "component_name": "peptone",
+        "component_id": "MICRO:0000178",
+        "reference_scope": "MIM_CATALOG",
+        "source": "microbedecoder research decomposition (#213/#308)"
+      },
+      "before_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PYG + Rumen Fluid",
+            "notes": "Reviewed row: strategy=split, confidence=high; PYG + rumen fluid supplement."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "original_source_observation_count": 1,
+      "original_observations": [
+        {
+          "owner_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+          "csv_row_including_header": 5906,
+          "record_index_zero_based": 5904,
+          "field": "Bergey_Substrates_for_end_products",
+          "literal": "PYG + rumen fluid",
+          "genus": "Eubacterium",
+          "species": "ruminantium",
+          "source_links": {
+            "LPSN_Page_link": "https://lpsn.dsmz.de/species/eubacterium-ruminantium",
+            "Bergey_Article_link": "https://doi.org/10.1002/9781118960608.gbm00629"
+          },
+          "source_field_status": "Raw source observation; abbreviations do not themselves prove a component/product formula."
+        }
+      ],
+      "source_evidence_ids": [
+        "RUMINANTIUM1959",
+        "BERGEY_ORIGINAL"
+      ],
+      "assessment": "Exact raw source taxon is E.ruminantium. Original source chapter inaccessible and original-paper body challenge-blocked; existing interpretation does not establish a digest material identity.",
+      "scientific_disposition": "HOLD_EXACT_COMPONENT_IDENTITY_WITH_REVIEWED_MINIMAL_WITHDRAWAL",
+      "whole_claim_generic_identity_supported": false,
+      "specific_product_identity_supported": false,
+      "occurrence_bound_generic_support": false,
+      "supported_occurrence_limit": null,
+      "precise_unresolved_fact": "Original E.ruminantium PYG-rumen base formulation; later unrelated Prevotella cultures do not bind it.",
+      "minimal_withdrawal_recommendation": {
+        "component_name": "peptone",
+        "component_name_status": "Retain existing interpreted label, not newly asserted direct source observation.",
+        "component_id": "REMOVE_UNSUPPORTED_RESOLVING_ID",
+        "reference_scope": "UNMAPPED",
+        "quantities": "Preserve current absence; do not invent.",
+        "provenance": "Append narrow explanation preserving every historical assertion and original raw label. Preserve ABBREVIATION_EXPANSION/CURATED_INTERPRETATION method and UNKNOWN/PARTIAL completeness."
+      },
+      "coupled_requirements": "Compose with literal rumen fluid UNMAPPED correction under #204/#1204; retain native scope/method uncertainty.",
+      "candidate_contexts_rehashed": [
+        {
+          "origin_id": "w05::R1193-DEP-rumen-pyg",
+          "head": "43f7cf6e8681fa617b5d6d3529d94d537ca01f0d",
+          "payload_sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6",
+          "git_path": "reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/dependencies/after/PYG_Rumen_Fluid.yaml",
+          "component_at_selected_index": {
+            "component_name": "peptone",
+            "component_id": "MICRO:0000178",
+            "reference_scope": "MIM_CATALOG",
+            "source": "microbedecoder research decomposition (#213/#308)"
+          },
+          "path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/preflight/final-intake-candidate-v1/snapshot/workers/w05/reports/all_unmatched_20261107/worker-05/correction-1193-v1/root/dependencies/after/PYG_Rumen_Fluid.yaml",
+          "independently_rehashed_sha256": "d206663deee28b310c3ef45f4a16fa47407aa9ba140e7fbfb5ec465d4857a9e6",
+          "scientific_approval": false
+        },
+        {
+          "candidate_id": "DEP-R1193-DEP-rumen-pyg",
+          "source_path": "/Users/marcin/Documents/VIMSS/ontology/Mechs/MediaIngredientMech/.temp/all-unmatched-20261107/integration/final-same-target-reconciliation-v2/publication-v4/candidates/DEP-R1193-DEP-rumen-pyg/PYG_Rumen_Fluid.yaml",
+          "owner_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+          "source_before_path": "data/ingredients/mapped/PYG_Rumen_Fluid.yaml",
+          "candidate_sha256": "07219a665fdd5346077f30b4a389a9f4fa9cac88020e24699d2a5a93f685d573",
+          "operation": "edit",
+          "status": "BOUNDED_DEPENDENT_CLAIM_CORRECTION",
+          "dependency_notes": null,
+          "scientific_approval": false,
+          "independently_rehashed_sha256": "07219a665fdd5346077f30b4a389a9f4fa9cac88020e24699d2a5a93f685d573"
+        }
+      ],
+      "origin_constraint": "W05 causal generic-peptone source case may motivate a dependent child; it is not evidence that the child recipe occurred in that source case. Authentic child-origin and exact successor review remain required.",
+      "source_case_accepted_for_integration": false,
+      "whole_owner_approved": false,
+      "role_approved": false,
+      "supported_export_approved": false,
+      "reviewer": "/root/peptone_ambiguous_sources",
+      "peer_review_required": "/root/peptone_skeptic (separate sibling agent; final assessment maintained separately by parent)",
+      "author_related_to_previous_worker03_dependency_audit": true,
+      "worker03_own_proposals_approved": false
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "author": "/root/buffer_hepes",
+  "deltas": [
+    {
+      "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+      "base_decision_sha256": "25620cc55faea0ece5384506614d39560878effcacd898291e01ddc112b17e60",
+      "additions": {
+        "proposal_ids": [
+          "W05-PARENTS-BACTO-SOYTONE-CONTINUITY"
+        ],
+        "evidence_ids": [
+          "W05-PARENTS-TOMBSTONE-BEFORE",
+          "W05-PARENTS-TOMBSTONE-INVENTORY",
+          "W05-PARENTS-TOMBSTONE-POLICY",
+          "W05-PARENTS-TOMBSTONE-AUDIT",
+          "W05-PARENTS-THERMO",
+          "W05-PARENTS-COMMENT6719869465"
+        ],
+        "owner_records": [
+          {
+            "path": "data/ingredients/mapped/Bacto_Soytone.yaml",
+            "sha256": "b9c7e1b675da46d8733749a16b9c56f07618bb63ab5ecd71bdef1bf1cc2d2535"
+          }
+        ]
+      },
+      "owner_before_binding_already_present": true,
+      "soy_continuity_reassessment": {
+        "author": "/root/buffer_hepes",
+        "at": "2026-11-08T09:39:35.518271+00:00",
+        "status": "bounded authentic dependent proposal prepared; exact independent review pending",
+        "proposal_id": "W05-PARENTS-BACTO-SOYTONE-CONTINUITY",
+        "source_trigger_proposal_id": "W05-FINAL-MAT-032",
+        "source_case_ownership_unchanged": true,
+        "new_source_cases": 0,
+        "before_representative": "FOODON:03315720",
+        "proposed_representative": "",
+        "rationale": "Mark the historical Bacto Soytone merge representative explicitly unresolved with an empty representative string. The old FOODON:03315720 identifier is shared by active owners and cannot establish a unique current generic-Soy representative after the source-qualified Soy identity correction. A direct redirect to MICRO:0000181 would assert unsupported equality of a named Bacto product and generic soy digest. Native preferred-term ownership treats an explicit unresolved representative as retaining the rejected tombstone name; removing the field would instead fall back to the old shared identifier. Preserve the original identifier, ontology mapping and historical evidence, rejected status, all source names, zero statistics and complete merge history as historical provenance. No active Bacto owner is minted, no prior occurrence is reassigned, no branded/generic equality is inferred, and no role/source/export admission follows. Root must reconcile a scientifically supported branded representative and historical source membership before any later identity redirect.",
+        "shared_membership_not_partitioned": true,
+        "whole_owner_or_release_approval": false
+      },
+      "composition": "Add unique arrays and the distinct soy_continuity_reassessment field only. Preserve the full parent decision, all original owner bindings, holds and source occurrences; root reviews full final composed decision."
+    }
+  ]
+}

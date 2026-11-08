@@ -1,0 +1,5 @@
+{
+  "at": "2026-11-08T08:35:23.201626+00:00",
+  "failure": "Initial inline source CSV verifier assumed utf-8-sig and failed at byte2137653;10 beforeimage copies completed first and preserved. Fetch list not yet emitted, so subsequent helper failed missing list; no requests ran.",
+  "correction": "Decode raw historical CSV as latin-1 (lossless bytes-to-codepoints) and compare exact target labels and source links; raw hashes remain authoritative. Existing beforeimages verified, not overwritten."
+}

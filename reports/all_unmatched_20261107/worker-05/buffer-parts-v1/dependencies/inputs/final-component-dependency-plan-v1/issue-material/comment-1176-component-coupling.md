@@ -1,0 +1,14 @@
+The final integration dependency scan confirms that the proposed generic `Peptone.yaml` identity correction must be coupled to its component consumers. The frozen baseline has 19 incoming `MICRO:0000178` component claims; the proposed W02 MRSsi base contributes one additional claim. These are 20 distinct claims, not 20 approved target migrations.
+
+The source-specific disposition is:
+
+- Eight generic-reference migration candidates: `Glucose_Peptone-yeast_Extract[1]`, `Marine_agar_2216[0]`, `PYGS[0]`, `Peptone-yeast_Extract-glucose[0]`, `Peptone_Beef_Extract_Yeast_Extract[0]`, `Peptone_Yeast_Extract[0]`, `Yeast_Extract_Peptone[1]`, and new `togo_m2491_mrssi_base[8]`. The literal source evidence supports generic peptone; it does not establish Bacto, animal origin, digest method or a supplier. Retarget only after the exact final generic owner and consumer are reviewed together.
+- Ten unresolved source-identity claims: `Fastidious_Anaerobe_Broth_With_Meat_Granules[1]`, `PY-cellobiose[0]`, `PY-fructose[0]`, `PY-glucose-rumen_Fluid[0]`, `PY-maltose[0]`, `PY-pectin[0]`, `PYEG[0]`, `PYG-002_Tween_80[0]`, `PYG[0]`, `PYG_Rumen_Fluid[0]`. The inherited edges depend on abbreviations or research interpretation. Recover the source identity, or independently review withdrawal of the unsupported resolving identifier to `UNMAPPED` while retaining the literal component and provenance. A hold note must not leave a now-misleading Bacto-resolving identifier in place.
+- Retain the source-specific `GYPS[2]` Bacto reference: its original publication p.1622 explicitly specifies Bacto-peptone (Difco). Do not globally replace this reference with generic peptone.
+- The current combined Marine Broth proposal already withdraws `Marine_Broth_2216[0]` to `UNMAPPED`; preserve its nominal-formula scope and existing product/lot limits.
+
+The actual native counterfactual is important: changing generic Peptone alone produces zero component-partonomy errors, because the Bacto owner still represents `MICRO:0000178`. Structural green therefore cannot authorize these source referents. This follows MAPPING_SEMANTICS §6: the CURIE denotes the part identity, not a unique document.
+
+Compose overlapping corrections on one final payload: Fastidious also has a cooked-meat withdrawal; PY-glucose-rumen and PYG_Rumen also have rumen withdrawals under #1204. Preserve every preimage, quantity, source assertion and history; no global identifier replacement, owner merging, or approval transfer. The broader source/role/export holds remain.
+
+Evidence is pinned in `preflight/final-component-dependency-plan-v1/minimal-couplings-28.json` and its complete 435-claim replay. The explicit accounting cutoff is 2026-11-08T07:59:05Z; later accepted worker heads must be rebound and re-enumerated before application. #710 is retained as historical semantic-review context, not an open implementation tracker.

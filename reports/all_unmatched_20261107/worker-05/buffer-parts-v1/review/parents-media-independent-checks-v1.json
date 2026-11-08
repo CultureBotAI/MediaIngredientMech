@@ -1,0 +1,1460 @@
+{
+  "reviewer": "/root/final_skeptical",
+  "at": "2026-11-08T09:38:21.402560+00:00",
+  "native_builder_sha256": "38d59f42953305f6fc51e4fc24dfc59ee1919bfb961595b67a8afe9f8a46a1bc",
+  "payload_checks": [
+    {
+      "lane": "parents",
+      "proposal_id": "W05-FINAL-MAT-032",
+      "proposal_object_sha256": "fc0442db6ea19430c6ed56cf89ee9c29c99deeaa28f708c8dcdf06c333d4d943",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Soy_Peptone.yaml",
+        "sha256": "e37e3230f9b4489e715cda9c1785f30ea97305d1d6264045bea75b92312bf236"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed/Soy_Peptone.yaml",
+        "sha256": "d7b33ac1b22e870286902ae2c8a756884aa5066fb5acb94f464c6be1675b7cee"
+      },
+      "changed_top_fields": [
+        "identifier",
+        "curation_history",
+        "ontology_mapping",
+        "notes"
+      ],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Soy_Peptone",
+          "subject_label": "Soy peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:soy_peptone",
+          "object_label": "Soy peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:curator=Codex /root/materials_research; W05 final report-only correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Soybean peptone|Peptone from soymeal|Peptic digest of soybean meal",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Soy_Peptone",
+          "subject_label": "Soy peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "MICRO:0000181",
+          "object_label": "soy peptone",
+          "object_source": "obo:micro.owl",
+          "mapping_justification": "semapv:LexicalMatching",
+          "source": "MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000181|MIM:https://mediadive.dsmz.de/rest/ingredient/75|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=Codex /root/buffer_hepes; W05 consolidated report-only parent correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "",
+          "other": "Soybean peptone|Peptone from soymeal|Peptic digest of soybean meal",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "lane": "parents",
+      "proposal_id": "W05-FINAL-MAT-039",
+      "proposal_object_sha256": "49519103ad106575e6be4d1f1cf43ac32d6533d1d49a3afde768e3161d066529",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/materials/proposed/Peptone.yaml",
+        "sha256": "61590bc2de78646c368ed1fb21c2c29bbc041d9f248e8a712c578376e776996d"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/parents/proposed-v2/Peptone.yaml",
+        "sha256": "d1668cfd863e02bfb1b9b82a86db213c1cfd850ab3b216abdb81cba4761e1e91"
+      },
+      "changed_top_fields": [
+        "curation_history",
+        "ontology_mapping",
+        "notes"
+      ],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone",
+          "object_label": "Peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:curator=Codex /root/materials_research; W05 final report-only correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Peptones",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "predicate_id": "skos:broadMatch",
+          "object_id": "mesh:D011492",
+          "object_label": "Protein Hydrolysates",
+          "object_source": "registry:mesh",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0017860|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0016245|MIM:https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl|MIM:curator=Codex /root/buffer_hepes; W05 consolidated report-only parent correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Peptones",
+          "validation_method": ""
+        },
+        {
+          "subject_id": "MIM:Peptone",
+          "subject_label": "Peptone",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:peptone",
+          "object_label": "Peptone",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0017860|MIM:https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf|MIM:https://id.nlm.nih.gov/mesh/M0016245|MIM:https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl|MIM:curator=Codex /root/buffer_hepes; W05 consolidated report-only parent correction",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.99",
+          "comment": "Registry/identity row preserving kgmicrobe.ingredient:peptone alongside parent mesh:D011492.",
+          "other": "",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "lane": "media",
+      "proposal_id": "M1193-P-MARINE2216",
+      "proposal_object_sha256": "4ec547fe987beeb91a72ebc55dda8202af393c45909d096860bf67e007794a11",
+      "before_capture": {
+        "root": "artifact",
+        "path": "postseal-source-corrections-v1/media/proposed/Marine_Broth_2216.yaml",
+        "sha256": "1aff9c58110b7c111d5930fe60fd935f932ff0437ec17d12fc01e22da0c820be"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/media/proposed/Marine_Broth_2216.yaml",
+        "sha256": "e5be534e5df60f0089cdba02e083d8390113f08550e09b89dbcdc67eda9c00e6"
+      },
+      "changed_top_fields": [
+        "component_assertion",
+        "curation_history",
+        "components"
+      ],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [
+        {
+          "index": 3,
+          "before": {
+            "component_name": "Sodium chloride",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": "19.45",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Sodium chloride",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": "19.45",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:26710"
+          }
+        },
+        {
+          "index": 7,
+          "before": {
+            "component_name": "Potassium chloride",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": ".55",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Potassium chloride",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": ".55",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:32588"
+          }
+        },
+        {
+          "index": 8,
+          "before": {
+            "component_name": "Sodium bicarbonate",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": ".16",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Sodium bicarbonate",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": ".16",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:32139"
+          }
+        },
+        {
+          "index": 9,
+          "before": {
+            "component_name": "Potassium bromide",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": ".08",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Potassium bromide",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": ".08",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:32030"
+          }
+        },
+        {
+          "index": 11,
+          "before": {
+            "component_name": "Boric acid",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": ".022",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Boric acid",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": ".022",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:33118"
+          }
+        },
+        {
+          "index": 13,
+          "before": {
+            "component_name": "Sodium fluoride",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": ".0024",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Sodium fluoride",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": ".0024",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:28741"
+          }
+        },
+        {
+          "index": 14,
+          "before": {
+            "component_name": "Ammonium nitrate",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": ".0016",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Ammonium nitrate",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": ".0016",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:63038"
+          }
+        }
+      ],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Marine_Broth_2216",
+          "subject_label": "Marine broth 2216",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:marine_broth_2216",
+          "object_label": "Marine broth 2216",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Marine broth 2216 (BD-Difco)|Marine Broth  (MB) 2216  (Difco)|Marine Broth 2216 (BD 279110)|Marine Broth 2216 (BD--Difco)",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Marine_Broth_2216",
+          "subject_label": "Marine broth 2216",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:marine_broth_2216",
+          "object_label": "Marine broth 2216",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://cdn.media.interlabdist.com.br/uploads/2021/01/Marine-2216-Agar-e-Broth.pdf|MIM:curator=Codex W05 /root consolidated source supplement",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Marine broth 2216 (BD-Difco)|Marine Broth  (MB) 2216  (Difco)|Marine Broth 2216 (BD 279110)|Marine Broth 2216 (BD--Difco)",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "lane": "media",
+      "proposal_id": "M1193-P-RCM-182",
+      "proposal_object_sha256": "7ef9b61bd12e2c9ea29f8a84eb123abf65efb0892d0d50930339bd2e2dc66c7e",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Reinforced_Clostridial_Medium.yaml",
+        "sha256": "0fb8cf4c4ec591566243b63e48b8c68acea1cf8e84cfdd6e7433dd9e1e304686"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "buffer-parts-v1/media/proposed-v2/Reinforced_Clostridial_Medium.yaml",
+        "sha256": "0417c3d7b1e28b8b94ee7b74fcc320ce0cc93bb3dec549447c23b03a4d11e88d"
+      },
+      "changed_top_fields": [
+        "component_assertion",
+        "curation_history",
+        "components"
+      ],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [
+        {
+          "index": 0,
+          "before": {
+            "component_name": "Peptone",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": "10",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Peptone",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": "10",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "kgmicrobe.ingredient:peptone"
+          }
+        },
+        {
+          "index": 4,
+          "before": {
+            "component_name": "Sodium chloride",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": "5",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Sodium chloride",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": "5",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:26710"
+          }
+        },
+        {
+          "index": 8,
+          "before": {
+            "component_name": "Agar",
+            "reference_scope": "UNMAPPED",
+            "concentration_value": ".5",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION"
+          },
+          "after": {
+            "component_name": "Agar",
+            "reference_scope": "MIM_CATALOG",
+            "concentration_value": ".5",
+            "concentration_unit": "G_PER_L_AT_STANDARD_RECONSTITUTION",
+            "component_id": "CHEBI:2509"
+          }
+        }
+      ],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Reinforced_Clostridial_Medium",
+          "subject_label": "Reinforced clostridial medium (BD Difco)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+          "object_label": "Reinforced clostridial medium (BD Difco)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Reinforced clostridial medium|Reinforced clostridial medium (BD-Difco)",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Reinforced_Clostridial_Medium",
+          "subject_label": "Reinforced clostridial medium (BD Difco)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:reinforced_clostridial_medium_difco",
+          "object_label": "Reinforced clostridial medium (BD Difco)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.maplica.com/Manual%20Difco%20P-S.pdf|MIM:curator=Codex W05 /root consolidated component re-review",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "Reinforced clostridial medium|Reinforced clostridial medium (BD-Difco)",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "lane": "media",
+      "proposal_id": "M1193-P-PENASSAY_BROTH_DIFCO",
+      "proposal_object_sha256": "54345a62c712911b7090598636d50b13e0e005368e7e6834fe569858a8798228",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml",
+        "sha256": "8a546e0756ecfd879fc9c1da6583433a007ee207b3c47959c94f808ec17e92e7"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Penassay_Broth_Difco.yaml",
+        "sha256": "8a546e0756ecfd879fc9c1da6583433a007ee207b3c47959c94f808ec17e92e7"
+      },
+      "changed_top_fields": [],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Penassay_Broth_Difco",
+          "subject_label": "Penassay Broth (Difco Antibiotic Medium3)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:penassay_broth_difco",
+          "object_label": "Penassay Broth (Difco Antibiotic Medium3)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://static.bd.com/assets/product/Documents/Integrated%20Diagnostic%20Solutions%20%28IDS%29/DS_CM_Difco-and-BBL-culture-media-manual_UG_EN.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Penassay_Broth_Difco",
+          "subject_label": "Penassay Broth (Difco Antibiotic Medium3)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:penassay_broth_difco",
+          "object_label": "Penassay Broth (Difco Antibiotic Medium3)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://static.bd.com/assets/product/Documents/Integrated%20Diagnostic%20Solutions%20%28IDS%29/DS_CM_Difco-and-BBL-culture-media-manual_UG_EN.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "lane": "media",
+      "proposal_id": "M1193-P-ISP7",
+      "proposal_object_sha256": "8ee1ea628294960cd7f048076dfc18aed1bdc13bd1fc23f98ee743184b7f17aa",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/ISP_7_Medium.yaml",
+        "sha256": "82cf5273f8018fec8ad20a956e8bfa2fc1a997f28f2025bebf510658e987fde3"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/ISP_7_Medium.yaml",
+        "sha256": "82cf5273f8018fec8ad20a956e8bfa2fc1a997f28f2025bebf510658e987fde3"
+      },
+      "changed_top_fields": [],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:ISP_7_Medium",
+          "subject_label": "ISP 7 medium powder (HiMedia M362)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:isp_7_himedia_m362",
+          "object_label": "ISP 7 medium powder (HiMedia M362)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://exodocientifica.com.br/_technical-data/M362.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "ISP 7 Medium|ISP 7 Medium (Himedia)",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:ISP_7_Medium",
+          "subject_label": "ISP 7 medium powder (HiMedia M362)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:isp_7_himedia_m362",
+          "object_label": "ISP 7 medium powder (HiMedia M362)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://exodocientifica.com.br/_technical-data/M362.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "ISP 7 Medium|ISP 7 Medium (Himedia)",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "lane": "media",
+      "proposal_id": "M1193-P-MH-POWDER-DSMZ804",
+      "proposal_object_sha256": "78c7f488d9d1721fcf562e490aeb22d78b4d269b2d8f8101d57ad823365db831",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+        "sha256": "cb8d8111cd0163507fc4e595e59e4371c711a3f085b53776821676e538d6504b"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Mueller_Hinton_Broth_Powder_DSMZ804.yaml",
+        "sha256": "cb8d8111cd0163507fc4e595e59e4371c711a3f085b53776821676e538d6504b"
+      },
+      "changed_top_fields": [],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Mueller_Hinton_Broth_Powder_DSMZ804",
+          "subject_label": "Mueller-Hinton broth powder (DSMZ804)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:mueller_hinton_broth_powder_dsmz804",
+          "object_label": "Mueller-Hinton broth powder (DSMZ804)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium804.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Mueller_Hinton_Broth_Powder_DSMZ804",
+          "subject_label": "Mueller-Hinton broth powder (DSMZ804)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:mueller_hinton_broth_powder_dsmz804",
+          "object_label": "Mueller-Hinton broth powder (DSMZ804)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://www.dsmz.de/microorganisms/medium/pdf/DSMZ_Medium804.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "",
+          "validation_method": ""
+        }
+      ]
+    },
+    {
+      "lane": "media",
+      "proposal_id": "M1193-P-CM0643",
+      "proposal_object_sha256": "cff72b2896f93e6f2776a21520ef6bec65e513b48d309bc38dd8ace3d0238f47",
+      "before_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+        "sha256": "cee20ef5c36ecce85e5e562c5818d6870c17f91cb6c0cce6b7547b9c248aefc9"
+      },
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/media/proposed/Dehydrated_Wilkins-Chalgren_Medium.yaml",
+        "sha256": "cee20ef5c36ecce85e5e562c5818d6870c17f91cb6c0cce6b7547b9c248aefc9"
+      },
+      "changed_top_fields": [],
+      "protected_fields_identical": {
+        "occurrence_statistics": true,
+        "nutritional_roles": true,
+        "biological_roles": true,
+        "roles": true,
+        "causal_graphs": true,
+        "synonyms": true,
+        "merged": true,
+        "chemical_properties": true,
+        "supplied_form": true
+      },
+      "old_history_exact_prefix": true,
+      "mapping_evidence_old_prefix_identical": true,
+      "component_changes": [],
+      "complete_native_before": [
+        {
+          "subject_id": "MIM:Dehydrated_Wilkins-Chalgren_Medium",
+          "subject_label": "Wilkins-Chalgren medium powder (Oxoid CM0643)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:wilkins_chalgren_cm0643_powder",
+          "object_label": "Wilkins-Chalgren medium powder (Oxoid CM0643)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0643-V2.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "dehydrated Wilkins-Chalgren medium",
+          "validation_method": ""
+        }
+      ],
+      "complete_native_after": [
+        {
+          "subject_id": "MIM:Dehydrated_Wilkins-Chalgren_Medium",
+          "subject_label": "Wilkins-Chalgren medium powder (Oxoid CM0643)",
+          "predicate_id": "skos:exactMatch",
+          "object_id": "kgmicrobe.ingredient:wilkins_chalgren_cm0643_powder",
+          "object_label": "Wilkins-Chalgren medium powder (Oxoid CM0643)",
+          "object_source": "kgm:ingredient",
+          "mapping_justification": "semapv:ManualMappingCuration",
+          "source": "MIM:https://assets.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/PS-CM0643-V2.pdf|MIM:curator=Codex GPT-6 /root/media_research",
+          "mapping_date": "2026-11-08",
+          "confidence": "0.9",
+          "comment": "",
+          "other": "dehydrated Wilkins-Chalgren medium",
+          "validation_method": ""
+        }
+      ]
+    }
+  ],
+  "decision_checks": [
+    {
+      "lane": "parents",
+      "case_id": "KG_CASE:ba039f9e4a33baf69eb111ceb979cf6c9ad8fe788c13488f256336508ce94151",
+      "before_object_sha256": "4c4a649dd74d01d8fbc8da86f46e9068b6accaa453b5b569e1643cdc657e8363",
+      "selected_decision_object_sha256": "83a89abadec1e3a43b98fd74b19df718466215ec00129ec2cee90fbc10a4020c",
+      "changed_top_fields": [
+        "evidence_ids",
+        "reasoning",
+        "issue_refs",
+        "parents_reassessment"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "parents",
+      "case_id": "KG_CASE:c32b77bb4cf6ac08f95e5ee9c40834693b98899db178b6451c581aabf6cccb25",
+      "before_object_sha256": "25620cc55faea0ece5384506614d39560878effcacd898291e01ddc112b17e60",
+      "selected_decision_object_sha256": "636700e21ad22b3987e836d1ea7ed4b00098290282d1db533aa1a05502101cb5",
+      "changed_top_fields": [
+        "evidence_ids",
+        "reasoning",
+        "issue_refs",
+        "parents_reassessment"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "media",
+      "case_id": "CM_NAME:32b06237696788298a03e6c3900723deaf31743d74b09be5175ab235d5ee0636",
+      "before_object_sha256": "9d4c2a497ef06712fe00d470f34d9c35fc636d0ba01b9cd8ecab6905326ade32",
+      "selected_decision_object_sha256": "3c306601d79e58251a21bf21dc5a6204c4e5d0291ab4f45f0e9ab9ac80d5dd72",
+      "changed_top_fields": [
+        "media_component_reassessment",
+        "evidence_ids"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "media",
+      "case_id": "KG_CASE:2a19456ad4d3a90dc9436563e0922096d9bfc8c5d8cf8613a297b4fb0c2edd9c",
+      "before_object_sha256": "4302d121ec37bc5e3161583b6d92c8da1505573728328e6d52577599840a7d88",
+      "selected_decision_object_sha256": "b8a1bcca600a2af7ff367344ad65bcf00e40791388eb77e919484a1a1a09fc55",
+      "changed_top_fields": [
+        "media_component_reassessment",
+        "evidence_ids"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "media",
+      "case_id": "KG_CASE:deb11ac97bd19cd33a5b09abfc21a6f25108c238ab3ae43b7037b520466325bd",
+      "before_object_sha256": "465b97aac504455fd4e6f8f9ff558c9daaecfc3096a726683281bb3eb48c1768",
+      "selected_decision_object_sha256": "529daaa6f530ae96dba64c5dcdc3e9ec0902679cbe01cc3906129ccc94daea76",
+      "changed_top_fields": [
+        "media_component_reassessment",
+        "evidence_ids"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "media",
+      "case_id": "KG_CASE:06f9cbd23076e5393e5c9b5b49491f892d1c30a648d31d2eb8f6ad9d7a98b8c8",
+      "before_object_sha256": "0a934ea5cc68420c1b6649e432bb58b1dbb434e9376b6c3603f9d761d151610f",
+      "selected_decision_object_sha256": "4ea610baad9232d6f7597df843a1abd3c9f62c6275980ba3c642df281e9ebe80",
+      "changed_top_fields": [
+        "evidence_ids",
+        "final_correction_reassessment",
+        "caption_correction"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "media",
+      "case_id": "KG_CASE:27ea583dd84737dcc73b43b5a708e12295dc7dfa55df8a771ac9e4028c94d2c2",
+      "before_object_sha256": "9b03be0a297f1a4f232b57b7abe6a14247da3e4d4dc964f530d976e62def5243",
+      "selected_decision_object_sha256": "5d09893a43ac89709541891b83e466e54fcb63af289ecdf8393dce353e9758c0",
+      "changed_top_fields": [
+        "evidence_ids",
+        "final_correction_reassessment",
+        "caption_correction"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "media",
+      "case_id": "KG_CASE:4cfb448f0a243ba668a82bdd02fdbb4947fc775aa91a4cd42d296663b259db47",
+      "before_object_sha256": "6d66089fc7727102e2a77a26ddd953abaf8c4883f1dce75301a5ce5e5f3328eb",
+      "selected_decision_object_sha256": "4acfd4b1d6ca8152551f35058cab3368e3ebc5f5e0b9a743f1da1b577d26d245",
+      "changed_top_fields": [
+        "evidence_ids",
+        "final_correction_reassessment",
+        "caption_correction"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    },
+    {
+      "lane": "media",
+      "case_id": "KG_CASE:76ff0689723dd97323dbfcdc69aef3dc5887e6504f58cf201fc9c5713a4f3a79",
+      "before_object_sha256": "0623e6539c420e1e9215f36d29e622bd97fa0521d320b6e02dd01e098eca4a33",
+      "selected_decision_object_sha256": "69b1ca1405c62626b16a5e00b7d87085117476651134d41963e35652ffa2c271",
+      "changed_top_fields": [
+        "evidence_ids",
+        "final_correction_reassessment",
+        "caption_correction"
+      ],
+      "protected_fields_equal": {
+        "case_id": true,
+        "source": true,
+        "occurrence_ids": true
+      }
+    }
+  ],
+  "evidence_capture_checks": [
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-CHEBI-PEPTONE-SEARCH",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/chebi-peptone-search.json",
+      "sha256": "fce55f7a2566ad982f71816cfd824bd34a8bf0ca892536434fbda4d0020d048a",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-CHEBI749541",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/chebi749541.json",
+      "sha256": "b3a6d2517e59f42ad8885906d37d3de41611f031d3464a62de1f92bac4eee8b8",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON-PEPTONE-SEARCH",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon-peptone-search.json",
+      "sha256": "fce55f7a2566ad982f71816cfd824bd34a8bf0ca892536434fbda4d0020d048a",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON15306-PARENTS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon15306-parents.json",
+      "sha256": "576477566c50ad60c747f5c1d993f585ad0b04627468298d56a0fbb6ea5dc07f",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON15306",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon15306.json",
+      "sha256": "9910ea3108c6697ac861ebf6ecb666bdcafeda15a504496ed680fbf419722eab",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON15720-PARENTS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon15720-parents.json",
+      "sha256": "d3faa857e5eda76dd1a83a64b0978ef9132326de076f46142d58587480b7348c",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON15720",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon15720.json",
+      "sha256": "005b9d0502c269bda18ceb26d64975f072abde3b8a3296b85341a52b4b39e633",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MEDIADIVE75",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mediadive75.json",
+      "sha256": "96988f7bda2d96e92ead61edd385a8f50523aaae8f0b0f48e5f1e6f37e341ecd",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO-PEPTONE-SEARCH",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro-peptone-search.json",
+      "sha256": "af3a3ba5be2bce38d3c0ec83ece6ad8ba4a6629754d2a4c78c905913637e9c58",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO172-CHILDREN",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro172-children.json",
+      "sha256": "174d11b31ed5f71502b291858a5cb31d5c55c62107d6e7097aa6f0a38a3032cd",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO172-DESCENDANTS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro172-descendants.json",
+      "sha256": "f1481a77f4fa12d27c5755c7e0fd2b40a559779c9229b613b1df00a50d8d999e",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO172",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro172.json",
+      "sha256": "47cd11d9730d513ff4cdf56f1450a35e37641c93c76d6c64afac998c8eb56aa9",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO178",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro178.json",
+      "sha256": "9e75ef7e4747eb4a12968935133bba17fd45c02bb1a02514f2dce96f760cec58",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO181",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro181.json",
+      "sha256": "f393d77792f89038c81a39654e606a34d5396ecd04e3d7d105ac3e192ae3ab37",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-PROTEIN-HYDROLYSATE-SEARCH",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/protein-hydrolysate-search.json",
+      "sha256": "b824b7a8a640609296313c119650df7abc6f339bd1464403e168d19dd3870cb7",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-THERMO",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/thermo.pdf",
+      "sha256": "963de777a42013795b1dd6f3fd2820ef3010d659fa501d5991d18cebd0243fa6",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FROZEN-CASES",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/input/frozen-cases.json",
+      "sha256": "92866fc1551ded3376c72859ee898d96e3503069a6e7c187d29f1694834b4367",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-OWNER-SEARCH",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/owner-identity-search.json",
+      "sha256": "11dbae7cb05b5e903c2b4abdd0a9c166c2e0829b8bfb134801c9a7f118377e03",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-COMMENT6719578158",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/input/issues/comment6719578158.json",
+      "sha256": "e25ae8d5ff641f67ef7fd271a9de81039f72c197932109a90acee7c9f14d36b3",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-COMMENT6719660443",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/input/issues/comment6719660443.json",
+      "sha256": "61081b2bd119ded680d4489d9a41d4cb6cdaefce22cb8b4d77962c108eab08f7",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-CHEBI749541-ENTRY",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/chebi749541-entry.json",
+      "sha256": "54ce3c9aa5e812fce725c7ccc291deaf78a23e625fa36fc7d5d6ff7783c5e0dd",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-CHEBI749541-PARENTS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/chebi749541-parents.json",
+      "sha256": "5649fa4fca614b77826b2b89183975192f8ff6e9ee4cf9a4cfafdc1d1243ebc0",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-EXACT-PEPTONE-SEARCH",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/exact-peptone-search.json",
+      "sha256": "f1850377042ebd7f2dcdf3e0b5a07a9a71cb564b271c5b2a4193b69c253adaee",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON-OFFICIAL-OWL",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon-official-owl.json",
+      "sha256": "b897bf64c1b265c422db9ee01e1235c10c0b809e7f02326ef810a52068347edf",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON15306-GRAPH",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon15306-graph.json",
+      "sha256": "f0be6e27bcce78ce39bb42b7ad02d695819d2af58c783ead3579f60aecab73c3",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-FOODON15306-MEMBEROF",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/foodon15306-memberof.json",
+      "sha256": "959b1dfe59c8e69bcf8f0a0d1a825227ccad10c1c7be9dd87e2806abd41d5edb",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-D010461-BROWSER",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-D010461-browser.json",
+      "sha256": "e46645ac754786528ef33c2957057d34d37386ad27f3af94574f2db1fabd3629",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-D010461-NLM",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-D010461-nlm.json",
+      "sha256": "a8413770cb989591c7fc7a382f57762999c7151741024465494342ec90f043a0",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-D010461-OLS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-D010461-ols.json",
+      "sha256": "5cd6d361764c604a8cc7dade3b74bed9d82b371fed59b4663c5705cd547ea085",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-D011492-BROWSER",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-D011492-browser.json",
+      "sha256": "7dc4a3b49ee97e9ca57d9cfd645679971f326371d30d72fbd907b8d6b92d7a4c",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-D011492-NLM",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-D011492-nlm.json",
+      "sha256": "b8b489b6edae57949fc26c826174cd3ceed7a584bf62323bd252936adec4970d",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-D011492-OLS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-D011492-ols.json",
+      "sha256": "14ddd8ca1927e1804be143ea738813b84766211be898972ad9e5a6de38d94e6c",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-M0016245-NLM",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-M0016245-nlm.json",
+      "sha256": "85726c7e99b37a9f39141878f68092695b93059debf4ad9ba383be5fcb5108c5",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MESH-M0017860-NLM",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/mesh-M0017860-nlm.json",
+      "sha256": "aaa3bfee496e22a75aaa60eadcb1fc618ede7008d53fe3a3d63a0011a74682be",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO167-CHILDREN",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro167-children.json",
+      "sha256": "f9480382f150947a9cae1f073cf43106c2d981609923825d3035d91a55e59de2",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO167-GRAPH",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro167-graph.json",
+      "sha256": "10810fbda53ab60520ef83defc8ba70b30ba34eed8914d6901ebc0f8e2120bc6",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO167",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro167.json",
+      "sha256": "c3f029f43b752cdeec4c569c270dcb7e2aee470c91bd00da76403086da1ed178",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO172-ANCESTORS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro172-ancestors.json",
+      "sha256": "c2d705e93f866411acb58cf40d6e9df9a9171b272abe35597659a745f1a84a89",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO172-PARENTS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro172-parents.json",
+      "sha256": "8bb4bfb73688c90d57c16a663ad63b72300b8bb17a7e85fa08b9b8f110eaef9d",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-MICRO181-PARENTS",
+      "kind": "ontology",
+      "path": ".temp/w05-buffer-parts-v1/parents/captures/micro181-parents.json",
+      "sha256": "b659167396b0772bef2714e1cbec80fe453a72d128adf3cc9cd8714a6474dd66",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-PRIMARY-ASSESSMENT",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/primary-assessment.json",
+      "sha256": "8f66cdcd0291183efeb3b3c40557ad15b2a7854438b653eadddb86aa5447d412",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-NEW01",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/new-finding-before-fix.json",
+      "sha256": "82f0607107c34315a68784d5189555d25596e2dc9dc017bd4cf30483d202037f",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-COMMENT6719869465",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/input/issues/issue1193-comments-followup-v2.json",
+      "sha256": "8796a47bd390a1791a5bf5d6882159244451cdebed9da0a09f15dc1cbb7ae032",
+      "capture_verified": true
+    },
+    {
+      "lane": "parents",
+      "evidence_id": "W05-PARENTS-SOY-NATIVE",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/parents/validation-soy/receipt.json",
+      "sha256": "3c2d7b4bac69d641159b3bacdb53458fc34381f3b5f63b98cc4af14611f02e4e",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-COMPONENT-ASSESSMENT",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/media/component-assessments-v1.json",
+      "sha256": "a91d5e8f7cde1b78108fca6065db0ce695f9bd1eb9ab27105fd2fabe4d349c6d",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-MARINE-PRIMARY",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/marine.pdf",
+      "sha256": "de2504598b1133074ba2239c045958e9a6564dc1b2a2d8f13ab4bac99233199f",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-RCM-PRIMARY",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/rcm.pdf",
+      "sha256": "e11b1ff246e72286261ac3d7117711bde8b59669a8ea365fa9dd75d298cb2864",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-144421",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-144421.json",
+      "sha256": "a4ea9e283d4255f531a7ca128b37acf6743e3d01c4b17867792ffd3458c51d1b",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-17634",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-17634.json",
+      "sha256": "a557836e39f28a1be2a6105b65ff759776a5c90d3f247e09e87812f39e310d8d",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-2509",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-2509.json",
+      "sha256": "210844edfcc1a9934214a819033c68e26930bf12af298d5ca3e84bbb5ba22add",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-26710",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-26710.json",
+      "sha256": "3f327713638f5617a2fecbcf311e236aea379d1a3d4542847a198f3c7cde02ff",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-28017",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-28017.json",
+      "sha256": "a6b184e8727577a0381b57fbf6f5e8091d0b1f206619f51757b2eeada902e968",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-28741",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-28741.json",
+      "sha256": "35c2095149e5c1a2f2fd0ac5424ed5716d58c272a7330d80a74c23e34259b997",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-32030",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-32030.json",
+      "sha256": "650faa243eee9c59c5432c54cdb708c5f235b56e9b3d1c3f70b615222921a23b",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-32139",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-32139.json",
+      "sha256": "9e690684e4b377ea35066db91a3662e7d8f3a35f9fe764436c24b59ab03fbae0",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-32588",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-32588.json",
+      "sha256": "d75b764a1edace35c971d1a0f980cfba2ff6b2e434ab8aa77030a67947492c60",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-32599",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-32599.json",
+      "sha256": "69610b08009266299eaf586c8a1792cb12cac745f76a4b28564ebb74fad6b241",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-32954",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-32954.json",
+      "sha256": "11a79866f7a3cc707ab5f998f7adc3bd855a52c00322d149865edc54e18fdd93",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-33118",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-33118.json",
+      "sha256": "656cc01ebb9db2cba2b4abfd3f6e8be585af09209dde0228ba07d63a6adc4e08",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-3312",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-3312.json",
+      "sha256": "c6037a745449222956f4fecdae06bc9a0b6ae96fbf7db24536c74f832a4b0db2",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-34683",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-34683.json",
+      "sha256": "707296b8b9e1432c4b765468cecdc7f5cab4d1eac135ab8b1295126be5abc47d",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-36383",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-36383.json",
+      "sha256": "7ecaa21ee5eae583b8febff49c626b3e298e63d6c44c367899cafb2dca077283",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-60720",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-60720.json",
+      "sha256": "336312b4b374353cab7f9878fa0db42379320eba634e7d9e9e1d9bdb7b5a62aa",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-63038",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-63038.json",
+      "sha256": "aff476dfa21d45f77c5ddcf12b8fb5f67ef75f490f11daedd71d8e9306e06392",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-86345",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-86345.json",
+      "sha256": "541c376a21a489cfeea59ecdaf2e9cf7b7cc80ff8900ec1aec7ce4e51232f657",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-CHEBI-91248",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-CHEBI-91248.json",
+      "sha256": "684c0b7083e9e5ec24ab847fa15fa98ef463faa0dc7f82de4b42fc15651a6a68",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-FOODON-03302088",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-FOODON-03302088.json",
+      "sha256": "5fa2c404fe9ca7fb2af72e252ac9604606e22dc5f385e7c95a3b94e4823b1315",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-FOODON-03315426",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-FOODON-03315426.json",
+      "sha256": "65bb64869edc4110f2dfac9fb0d0150db2c1608b4013b6ca3d156236873175f0",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-MICRO-0000178",
+      "kind": "primary_source",
+      "path": ".temp/w05-buffer-parts-v1/media/captures/ols-MICRO-0000178.json",
+      "sha256": "e2e9700817ba948efd859f935e005f1c6dc58998ca48ee039e9ee2c8b23a232d",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-CAPTION-130",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/media/caption-corrections-v1.json",
+      "sha256": "c1a45c166081fa7db72353a4c53ce84ca25d45e7825e6bad66a0df31e7bc915b",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-CAPTION-135",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/media/caption-corrections-v1.json",
+      "sha256": "c1a45c166081fa7db72353a4c53ce84ca25d45e7825e6bad66a0df31e7bc915b",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-CAPTION-144",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/media/caption-corrections-v1.json",
+      "sha256": "c1a45c166081fa7db72353a4c53ce84ca25d45e7825e6bad66a0df31e7bc915b",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-CAPTION-158",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/media/caption-corrections-v1.json",
+      "sha256": "c1a45c166081fa7db72353a4c53ce84ca25d45e7825e6bad66a0df31e7bc915b",
+      "capture_verified": true
+    },
+    {
+      "lane": "media",
+      "evidence_id": "W05-REMAINING-MEDIA-RCM-REREVIEW",
+      "kind": "source_snapshot",
+      "path": ".temp/w05-buffer-parts-v1/media/component-assessments-v2.json",
+      "sha256": "5969e41d2a606e6fcfd0354a566d8754c3959de42dd4d974f092348e6e0dae2c",
+      "capture_verified": true
+    }
+  ],
+  "bounded_duplicate_check": {
+    "method": "Path.rglob all individual YAML and all published selected W05 proposal YAML; includes ignored paths",
+    "maintained_scanned": 2956,
+    "selected_scanned": 142,
+    "maintained_MICRO181_hits": [],
+    "selected_MICRO181_hits": [],
+    "limit": "No cross-worker merge, tombstone or global source membership conclusion."
+  }
+}

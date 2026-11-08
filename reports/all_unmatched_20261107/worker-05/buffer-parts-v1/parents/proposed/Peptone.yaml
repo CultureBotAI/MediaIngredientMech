@@ -1,0 +1,200 @@
+identifier: kgmicrobe.ingredient:peptone
+preferred_term: Peptone
+ontology_mapping:
+  ontology_id: FOODON:03315306
+  ontology_label: protein hydrolyzates
+  ontology_source: FOODON
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Primary manufacturer guide defines peptones as protein hydrolysates of
+      varied animal/vegetable starting materials. Existing unqualified Peptone owner
+      has only lexical MICRO mammalian grounding, not source-origin evidence. Own
+      variable-material identity does not assign a particular digest or supplier.
+  - evidence_type: LLM_SUGGESTION
+    source: https://assets.thermofisher.com/TFS-Assets/BPD/brochures/peptones-supplements-feeds-technical-reference-guide.pdf
+    notes: Printed page 7 defines peptones as water-soluble products of partial hydrolysis
+      of proteins from plant, yeast or animal sources. This supports nonidentity membership
+      in the broader protein-hydrolyzate material family without supplying the source
+      observations' feedstock, enzyme, manufacturer, lot or role.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/foodon/terms?obo_id=FOODON:03315306
+    notes: The complete active term protein hydrolyzates, including SIREN annotation
+      and pending-classification parent, was compared with the manufacturer material
+      definition. Use only the broader protein-hydrolyzate material relation, NARROW_MATCH
+      / native broadMatch, retaining local Peptone identity. The flavoring annotation
+      is not evidence of an assay or nutritional role. No exact identity or animal/plant
+      substrate is inferred from the label.
+  - evidence_type: LLM_SUGGESTION
+    source: https://www.ebi.ac.uk/ols4/api/ontologies/micro/terms?obo_id=MICRO:0000178
+    notes: The complete MICRO peptone definition restricts its material to enzymatic
+      mammalian protein digest. The two frozen unqualified MicrobeDecoder peptones
+      observations do not supply that origin or process, so this term is excluded
+      as their exact generic owner identity.
+mapping_status: MAPPED
+curation_history:
+- timestamp: '2026-05-01T19:55:09.679469+00:00'
+  curator: foodon_pass
+  action: AUTO_CREATE_FROM_MICRO
+  changes: created with primary MICRO:0000178
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.686332+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Peptone')
+  llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.747135+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-08T23:23:58.335580+00:00'
+  curator: audit_occurrence_stats
+  action: CORRECTED
+  changes: 'Backfilled missing occurrence_statistics (0/0): ontology-derived record
+    with no tracked media occurrences.'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0718 ''Peptones'' as a RAW_TEXT synonym -- plural of
+    the already-mapped peptone record. No new SSSOM row; MICRO:0000178 is already
+    mapped. Source: kgmicrobe.compound:peptones.'
+  llm_assisted: true
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0835 ''Peptone (0.01 %'' as a RAW_TEXT synonym -- concentration-truncated
+    duplicate of peptone. No new SSSOM row; MICRO:0000178 is already mapped. Source:
+    kgmicrobe.trait:peptone_0_01.'
+  llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.519680+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 2251/2255 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-11-08T05:54:48.074406+00:00'
+  curator: worker05/materials_research skeptical remediation1193
+  action: CORRECTED
+  changes: Reconcile existing generic Peptone owner to local protein-digest material
+    identity, removing unsupported exact mammalian MICRO0000178 scope. Keep raw plural
+    provenance, all existing role/count/truncated-alias holds and both MicrobeDecoder
+    source-case holds; no new owner or catalog assignment. Exact isolated guarded
+    proposal only.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T07:39:04.974035+00:00'
+  curator: Codex /root/materials_research; W05 final report-only correction
+  action: CORRECTED
+  changes: Correct the exact campaign MappingEvidence method under issue 1226 to LLM_SUGGESTION;
+    preserve its source and claim. Inherited human/process evidence and ComponentEvidence
+    types are unchanged. Reject only the incomplete concentration token Peptone (0.01
+    % as an identity name of generic Peptone. Preserve its original microbedecoder
+    provenance and plural Peptones. Do not invent a missing parenthesis, percent basis
+    or preparation. Eighteen retained historical inbound MICRO:0000178 component references
+    and current proposed components remain a source-level integration dependency;
+    no automatic retargeting is authorized. Isolated proposal only; no maintained
+    data or source membership change.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+- timestamp: '2026-11-08T09:30:33.717645+00:00'
+  curator: Codex /root/buffer_hepes; W05 consolidated report-only parent correction
+  action: CORRECTED
+  changes: 'Complete the previously missing nonidentity family grounding: generic
+    Peptone remains kgmicrobe.ingredient:peptone and maps NARROW_MATCH to FOODON:03315306
+    protein hydrolyzates, yielding native broadMatch plus the local B1 identity row.
+    The manufacturer guide defines peptones as water-soluble products of partial protein
+    hydrolysis from plant, yeast or animal material; the protein-hydrolyzate family
+    is broader than this unspecified peptone material. The complete FoodOn record
+    is an active SIREN-derived material class with a flavoring annotation and a pending-classification
+    food-material parent; neither annotation establishes an assay role, supplier,
+    feedstock, enzyme, processing specification or exact peptone identity. MICRO:0000178
+    adds unsupported mammalian origin; MICRO:0000174 adds an unestablished enzymatic
+    process; MICRO:0000172 explicitly discusses plant/animal protein and does not
+    establish coverage of the source-unspecified yeast possibility. No exact applicable
+    generic Peptone identity was established in the bounded official searches. Preserve
+    both MicrobeDecoder observations, plural/raw provenance, truncated-token rejection,
+    all histories/statistics, provisional roles and all source/owner/export holds.
+    Incoming MICRO:0000178 references require separately authored source-specific
+    reconciliation, not a blanket retarget. Isolated guarded successor proposal only;
+    no maintained write or source admission.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+ingredient_type: UNDEFINED_MIXTURE
+occurrence_statistics:
+  total_occurrences: 2255
+  media_count: 2251
+  source_occurrences:
+  - source: microbedecoder
+    count: 48
+    source_columns: BacDive_Metabolite_utilization
+nutritional_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+synonyms:
+- synonym_text: Peptones
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: Peptone (0.01 %
+  synonym_type: REJECTED_LABEL
+  source: microbedecoder
+notes: 'Previous published proposal scope, preserved as historical provenance and
+  superseded where corrected below:
+
+  Correction1193: Existing generic Peptone material owner includes unqualified MicrobeDecoder
+  plural peptones; primary protein-digest family is known but mammalian source is
+  not. MICRO0000178 definition restricts to mammalian animal-protein digest, so its
+  old exact identity is replaced with local material identity without adding an unsupported
+  ontology relation. This removes a narrower origin assertion; it does not identify
+  the actual assay supplier or composition, approve PROTEIN_SOURCE, repair the truncated
+  Peptone (0.01 % alias, or release any source/export hold. All current exact-label
+  occurrences and full recipes were inspected as bound context. Preserve raw observations
+  and original organism relations independently.
+
+
+  Final W05 report-only correction: Correct the exact campaign MappingEvidence method
+  under issue 1226 to LLM_SUGGESTION; preserve its source and claim. Inherited human/process
+  evidence and ComponentEvidence types are unchanged. Reject only the incomplete concentration
+  token Peptone (0.01 % as an identity name of generic Peptone. Preserve its original
+  microbedecoder provenance and plural Peptones. Do not invent a missing parenthesis,
+  percent basis or preparation. Eighteen retained historical inbound MICRO:0000178
+  component references and current proposed components remain a source-level integration
+  dependency; no automatic retargeting is authorized. All original source, organism,
+  role, owner and export holds remain. Independent review of these exact successor
+  bytes is pending.
+
+
+  Consolidated parent-grounding successor (prior scope text retained as historical
+  provenance): Complete the previously missing nonidentity family grounding: generic
+  Peptone remains kgmicrobe.ingredient:peptone and maps NARROW_MATCH to FOODON:03315306
+  protein hydrolyzates, yielding native broadMatch plus the local B1 identity row.
+  The manufacturer guide defines peptones as water-soluble products of partial protein
+  hydrolysis from plant, yeast or animal material; the protein-hydrolyzate family
+  is broader than this unspecified peptone material. The complete FoodOn record is
+  an active SIREN-derived material class with a flavoring annotation and a pending-classification
+  food-material parent; neither annotation establishes an assay role, supplier, feedstock,
+  enzyme, processing specification or exact peptone identity. MICRO:0000178 adds unsupported
+  mammalian origin; MICRO:0000174 adds an unestablished enzymatic process; MICRO:0000172
+  explicitly discusses plant/animal protein and does not establish coverage of the
+  source-unspecified yeast possibility. No exact applicable generic Peptone identity
+  was established in the bounded official searches. Preserve both MicrobeDecoder observations,
+  plural/raw provenance, truncated-token rejection, all histories/statistics, provisional
+  roles and all source/owner/export holds. Incoming MICRO:0000178 references require
+  separately authored source-specific reconciliation, not a blanket retarget. Independent
+  exact-byte review and root integration remain pending.'

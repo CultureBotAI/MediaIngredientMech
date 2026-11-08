@@ -1,0 +1,196 @@
+{
+  "proposals": [
+    {
+      "proposal_id": "CHEM-C1193-DSMZ_394_1137-Tris",
+      "case_ids": [
+        "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+      ],
+      "description": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+      "evidence_ids": [
+        "CHEM-C1193-OWNER-Tris_Base",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-WEB-1",
+        "CHEM-C1193-WEB-3",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-nta-ols",
+        "CHEM-C1193-ols-search-0",
+        "CHEM-C1193-ols2-tris-cas",
+        "CHEM-C1193-ols3-tris1061",
+        "CHEM-C1193-ols3-tris1137",
+        "CHEM-C1193-ols3-tris394",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-tris-hcl-ols",
+        "CHEM-C1193-tris-pis",
+        "CHEM-CAP-1da688425060d238",
+        "CHEM-CAP-45911559f6556094",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-b5fc743d359ea6a4",
+        "CHEM-CAP-ca0c0dd760014335",
+        "CHEM-CAP-d38c10241cb6daa0",
+        "CHEM-CAP-d8ba59dcb901ea12",
+        "CHEM-CAP-e5cca8a3bc6f121e",
+        "CHEM-RECIPE-076-01",
+        "CHEM-RECIPE-076-02",
+        "CHEM-RECIPE-076-03",
+        "CHEM-RECIPE-076-04",
+        "CHEM-RECIPE-076-05",
+        "CHEM-RECIPE-076-06",
+        "CHEM-RECIPE-076-07",
+        "CHEM-RECIPE-076-08",
+        "CHEM-RECIPE-076-09",
+        "CHEM-RECIPE-076-10",
+        "CHEM-RECIPE-076-11",
+        "CHEM-RECIPE-076-12",
+        "CHEM-RECIPE-076-13",
+        "CHEM-RECIPE-076-14",
+        "CHEM-RECIPE-076-15",
+        "CHEM-RECIPE-076-16",
+        "CHEM-SRC-076"
+      ],
+      "owner_path": "data/ingredients/mapped/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"
+      },
+      "publication_obligations": "Coordinator must guard exact baseline before bytes, reconcile cross-shard owners, apply via guarded writer, synchronize individual/aggregate/SSSOM, and pass native full QC. Preserve every WITHHOLD/REJECTED/source-material/export decision. These isolated proposals confer no release or full-owner approval.",
+      "identity_consequence": "Source-defined 1M Tris-HCl buffer stock atpH7.5. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+      "predicate_consequence": "Regenerate registry sibling and asymmetric broadMatch if present; never collapse stock/mixture to component. No SSSOM written in worker artifact.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:35338f0e6d732d182724c6de5130764da51271f6fd53b7fcba7d7d05a6587102",
+        "CM_OCC:1aabbfcba8a1bdb2504232b662ecae617e30aded45957604da1dca6d49721857",
+        "CM_OCC:1ff30b7f9227724a07b2eca1f7ce2a4898bf9f582a4138431b2fec1019bb90ed",
+        "CM_OCC:ea7ba5a64cae51509896f3a6d8ceea10b5ac506f758b84f254d4f67081b76807",
+        "CM_OCC:7eb5f78265857fd53f37858b46532038d346e2a0c6183dbc258402c0c7c4683b",
+        "CM_OCC:59506c41159734e029fa5cc0c27a86a05371b02633d1adc729d8d6781612c50e"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+        "sha256": "0f8cf263079c547959a4b82831900988b2e07df24eb59c51e62e97fb675733ac"
+      },
+      "final_correction": {
+        "author": "Codex worker05 /root/chemicals_research final report correction",
+        "timestamp": "2026-11-08T07:40:53.320531+00:00",
+        "changes": [
+          "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types.",
+          "W05-FINAL-CHEM-NEW-03 was reported before correction. Withdraw inferred Tris-moiety and chloride-species material partonomy. Preserve the source-defined nominal buffer strength and pH as whole-preparation specifications; the source does not enumerate its material inputs. No solvent, free-base/salt ratio, HCl input or component molarity is inferred. Original component objects and historical claims remain available in the immutable finding and prior payload."
+        ],
+        "native_guarded_write": "PASS",
+        "independent_review": "pending",
+        "prior_proposal_object_sha256": "5ba4e3fead7b1e83b279dc176970803ffcb25f478c4ef1017e68546c7eb92ded",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v1/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.diff",
+          "sha256": "01348c6f0d8003a76a84d80d055f63d82829f69babf9bc39e818f434ddcc0080"
+        },
+        "v1_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v1/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.yaml",
+          "sha256": "6943abdd2cbafe9b14b9447e6eddb31594f9e7c83435b8f00674e0c7439e431e"
+        },
+        "v2_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v2/Tris_HCl_1M_pH_7_5_DSMZ_394_1137.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "proposal_id": "CHEM-C1193-JCM_1061-Tris",
+      "case_ids": [
+        "CM_NAME:9558a75c197cfda4c3def53eadc24fd61287448ec78b6642a3835678b80fcfe4"
+      ],
+      "description": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+      "evidence_ids": [
+        "CHEM-C1193-OWNER-Tris_Base",
+        "CHEM-C1193-REINSPECTION",
+        "CHEM-C1193-WEB-1",
+        "CHEM-C1193-WEB-3",
+        "CHEM-C1193-complete-owner-context-inspection",
+        "CHEM-C1193-nta-ols",
+        "CHEM-C1193-ols-search-0",
+        "CHEM-C1193-ols2-tris-cas",
+        "CHEM-C1193-ols3-tris1061",
+        "CHEM-C1193-ols3-tris1137",
+        "CHEM-C1193-ols3-tris394",
+        "CHEM-C1193-owner-occurrence-table-inspection",
+        "CHEM-C1193-tris-hcl-ols",
+        "CHEM-C1193-tris-pis",
+        "CHEM-CAP-1da688425060d238",
+        "CHEM-CAP-45911559f6556094",
+        "CHEM-CAP-61217b46be42b027",
+        "CHEM-CAP-b5fc743d359ea6a4",
+        "CHEM-CAP-ca0c0dd760014335",
+        "CHEM-CAP-d38c10241cb6daa0",
+        "CHEM-CAP-d8ba59dcb901ea12",
+        "CHEM-CAP-e5cca8a3bc6f121e",
+        "CHEM-RECIPE-076-01",
+        "CHEM-RECIPE-076-02",
+        "CHEM-RECIPE-076-03",
+        "CHEM-RECIPE-076-04",
+        "CHEM-RECIPE-076-05",
+        "CHEM-RECIPE-076-06",
+        "CHEM-RECIPE-076-07",
+        "CHEM-RECIPE-076-08",
+        "CHEM-RECIPE-076-09",
+        "CHEM-RECIPE-076-10",
+        "CHEM-RECIPE-076-11",
+        "CHEM-RECIPE-076-12",
+        "CHEM-RECIPE-076-13",
+        "CHEM-RECIPE-076-14",
+        "CHEM-RECIPE-076-15",
+        "CHEM-RECIPE-076-16",
+        "CHEM-SRC-076"
+      ],
+      "owner_path": "data/ingredients/mapped/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+      "kind": "new_owner",
+      "before_sha256": null,
+      "after_capture": {
+        "root": "artifact",
+        "path": "final-correction-v1/chemicals/proposed-v2/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"
+      },
+      "publication_obligations": "Coordinator must guard exact baseline before bytes, reconcile cross-shard owners, apply via guarded writer, synchronize individual/aggregate/SSSOM, and pass native full QC. Preserve every WITHHOLD/REJECTED/source-material/export decision. These isolated proposals confer no release or full-owner approval.",
+      "identity_consequence": "Source-defined 0.5M Tris-HCl buffer stock atpH8. Total buffer concentration andpH define the bounded stock; exact protonated/free-base ratio and preparation inputs remain unspecified. Neither all total Tris as pure hydrochloride nor all as free base is asserted. DSMZ394 and1137 explicitly share1M,pH7.5 stock description; JCM1061 separately uses0.5M,pH8.0. No quantity is imported from frozen volume-to-mass corruption.",
+      "predicate_consequence": "Regenerate registry sibling and asymmetric broadMatch if present; never collapse stock/mixture to component. No SSSOM written in worker artifact.",
+      "applies_to_occurrence_ids": [
+        "CM_OCC:219213577a8af3402068e8b0ed3924a2b50c21ef8929266a458e614d3a986b11",
+        "CM_OCC:15e83611b4845a2f4b6caa9c6d1ac2da6151dbec4292b4b9687197ce463dc2f9"
+      ],
+      "predecessor_after_capture": {
+        "root": "artifact",
+        "path": "correction-1193-v1/chemicals/proposed/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+        "sha256": "9009b7dc6651004a025591c4e9376e117d4978bc7049b91e2001352bcf83561b"
+      },
+      "final_correction": {
+        "author": "Codex worker05 /root/chemicals_research final report correction",
+        "timestamp": "2026-11-08T07:40:53.320531+00:00",
+        "changes": [
+          "Correct only the exact new campaign MappingEvidence entry identified by the W02 provenance audit from MANUAL_CURATION to LLM_SUGGESTION. Preserve inherited evidence and ComponentAssertion evidence types.",
+          "W05-FINAL-CHEM-NEW-03 was reported before correction. Withdraw inferred Tris-moiety and chloride-species material partonomy. Preserve the source-defined nominal buffer strength and pH as whole-preparation specifications; the source does not enumerate its material inputs. No solvent, free-base/salt ratio, HCl input or component molarity is inferred. Original component objects and historical claims remain available in the immutable finding and prior payload."
+        ],
+        "native_guarded_write": "PASS",
+        "independent_review": "pending",
+        "prior_proposal_object_sha256": "4205c92560cbafa16debe73e956e9d154f4160bae10659f8de5b3e93b30e37f1",
+        "predecessor_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v1/Tris_HCl_0_5M_pH_8_JCM_1061.diff",
+          "sha256": "3b7d5f15a14c30ed58f06fa68a029961a71cd14a46a789bd3c90e71bb0d5544b"
+        },
+        "v1_after_capture": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/proposed-v1/Tris_HCl_0_5M_pH_8_JCM_1061.yaml",
+          "sha256": "1cf9b2dd4d098cdb51c1bc345cb71c3ad625ff5bdf34b09b3264a4e2de2ce623"
+        },
+        "v2_diff": {
+          "root": "artifact",
+          "path": "final-correction-v1/chemicals/diffs-v2/Tris_HCl_0_5M_pH_8_JCM_1061.diff",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  ]
+}

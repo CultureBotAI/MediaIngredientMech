@@ -1,0 +1,99 @@
+--- data/ingredients/mapped/Peptone_Yeast_Extract.yaml
++++ buffer-parts-v1/dependencies/proposed/Peptone_Yeast_Extract.yaml
+@@ -68,13 +68,45 @@
+     to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+     concentrations were not changed.'
+   llm_assisted: false
+-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract);
+-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
++- timestamp: '2026-11-08T09:30:25.618906+00:00'
++  curator: Codex worker05 /root/buffer_tris
++  action: RETARGET_SUPPORTED_GENERIC_COMPONENT
++  changes: The exact MicrobeDecoder source label explicitly names generic peptone.
++    Retarget this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone only
++    with the reviewed generic Peptone owner in the same application phase. The source
++    does not select Bacto, mammalian origin, digest method or a supplier, and none
++    is inferred. A supplier or detailed formulation is not a prerequisite for retaining
++    this genuinely generic named part. LABEL_ENUMERATION and COMPLETE remain relative
++    to the cited named-input list; this does not assert a complete growth recipe.
++    This is a bounded part-reference correction only. Whole-owner identity, raw labels,
++    occurrence counts, quantities, unrelated components, all historical evidence and
++    source/role/export holds are preserved. Historical all-components-identified statements
++    describe prior states, not a new approval. No new MappingEvidence is added; historical
++    human/component evidence enums are not rewritten. Filed before this private correction
++    at https://github.com/CultureBotAI/MediaIngredientMech/issues/1176#issuecomment-6719248666.
++  previous_status: MAPPED
++  new_status: MAPPED
++  llm_assisted: true
++  llm_model: gpt-6
++notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract);
++  no CAS-RN or CHEBI/NCIT match. Curator review needed. Successor dependency assessment:
++  The exact MicrobeDecoder source label explicitly names generic peptone. Retarget
++  this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone only with the
++  reviewed generic Peptone owner in the same application phase. The source does not
++  select Bacto, mammalian origin, digest method or a supplier, and none is inferred.
++  A supplier or detailed formulation is not a prerequisite for retaining this genuinely
++  generic named part. LABEL_ENUMERATION and COMPLETE remain relative to the cited
++  named-input list; this does not assert a complete growth recipe. This is a bounded
++  part-reference correction only. Whole-owner identity, raw labels, occurrence counts,
++  quantities, unrelated components, all historical evidence and source/role/export
++  holds are preserved. Historical all-components-identified statements describe prior
++  states, not a new approval. No new MappingEvidence is added; historical human/component
++  evidence enums are not rewritten.'
+ ingredient_type: UNDEFINED_MIXTURE
+ components:
+ - component_name: Peptone
+   source: MIM label decomposition (#213/#308)
+-  component_id: MICRO:0000178
++  component_id: kgmicrobe.ingredient:peptone
+   reference_scope: MIM_CATALOG
+ - component_name: Yeast Extract
+   source: MIM label decomposition (#213/#308)
+@@ -88,8 +120,45 @@
+     source: microbedecoder
+     source_record: Peptone + Yeast Extract
+     notes: The source label explicitly names every retained top-level part.
+-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+-    variant hierarchy, or complete culturing recipe.
++  - evidence_type: SOURCE_LABEL
++    source: microbedecoder
++    source_record: CSV row 1652 (header included), Bergey_Substrates_for_end_products
++      = 'peptone + yeast extract', Anaerotruncus colihominis; CSV row 15057 (header
++      included), Literature_Substrates_for_end_products = 'peptone + yeast extract',
++      Proteiniclasticum ruminis
++    notes: Literal named-input evidence supports generic peptone at this scope. Exact
++      archive/member bytes and complete source rows are preserved in buffer-parts-v1/dependencies/source-observations.json.
++      Independently re-extracted by /root/buffer_tris with LLM assistance; original
++      source scientists and skeptical review remain attributed in the preserved W03
++      packet.
++  - evidence_type: CURATED_DATASET
++    source: buffer-parts-v1/dependencies/source-assessment.json
++    source_record: PC18 data/ingredients/mapped/Peptone_Yeast_Extract.yaml#components[0]
++    notes: The exact MicrobeDecoder source label explicitly names generic peptone.
++      Retarget this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone
++      only with the reviewed generic Peptone owner in the same application phase.
++      The source does not select Bacto, mammalian origin, digest method or a supplier,
++      and none is inferred. A supplier or detailed formulation is not a prerequisite
++      for retaining this genuinely generic named part. LABEL_ENUMERATION and COMPLETE
++      remain relative to the cited named-input list; this does not assert a complete
++      growth recipe. Independent prior source work by /root/peptone_other_sources
++      and skeptical review by /root/peptone_skeptic are reused only at their exact
++      unchanged source-claim scope; neither approves these new payload bytes. Current
++      candidate author /root/buffer_tris; independent final byte review remains separate.
++  notes: 'This is an ingredient/mixture has-part assertion, not an identity mapping,
++    variant hierarchy, or complete culturing recipe. Successor dependency assessment:
++    The exact MicrobeDecoder source label explicitly names generic peptone. Retarget
++    this named part from MICRO:0000178 to kgmicrobe.ingredient:peptone only with the
++    reviewed generic Peptone owner in the same application phase. The source does
++    not select Bacto, mammalian origin, digest method or a supplier, and none is inferred.
++    A supplier or detailed formulation is not a prerequisite for retaining this genuinely
++    generic named part. LABEL_ENUMERATION and COMPLETE remain relative to the cited
++    named-input list; this does not assert a complete growth recipe. This is a bounded
++    part-reference correction only. Whole-owner identity, raw labels, occurrence counts,
++    quantities, unrelated components, all historical evidence and source/role/export
++    holds are preserved. Historical all-components-identified statements describe
++    prior states, not a new approval. No new MappingEvidence is added; historical
++    human/component evidence enums are not rewritten.'
+ ontology_mapping:
+   ontology_id: kgmicrobe.ingredient:peptone_yeast_extract
+   ontology_label: Peptone + Yeast Extract
